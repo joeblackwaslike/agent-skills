@@ -3,7 +3,7 @@ title: Programmatic Domain Management
 product: vercel
 url: /docs/domains/registrar-api
 canonical_url: "https://vercel.com/docs/domains/registrar-api"
-last_updated: 2025-10-08
+last_updated: 2026-08-11
 type: reference
 prerequisites:
   - /docs/domains
@@ -12,8 +12,8 @@ related:
 summary: "Programmatically search, price, purchase, renew, and manage domains with Vercel's domains registrar API endpoints."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/registrar-api.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "5a2ff7f6d71c4e4471fe8e989547d43b154fcd6a2b8f6ee1f151977406660c8f"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "7767f1bfececfa311e3e27f3fd811ce243bce18e22abee2dc174a8e8239087d2"
 ---
 
 # Programmatic Domain Management
@@ -26,12 +26,12 @@ The domains registrar API enables you to programmatically manage your domain lif
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Get contact verification status for a domain](https://vercel.com/docs/rest-api/domains-registrar/get-contact-verification-status-for-a-domain?from=related)
-- [List all the domains](https://vercel.com/docs/rest-api/domains/list-all-the-domains?from=related)
-- [Working with Domains](https://vercel.com/docs/domains/working-with-domains?from=related) — Learn how domains work and the options Vercel provides for managing them.
-- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
+- [New Domains Registrar API for domain search, pricing, purchase, and management](https://vercel.com/changelog/new-domains-registrar-api-for-domain-search-pricing-purchase-and-management?from=related&source_path=%2Fdocs%2Fdomains%2Fregistrar-api&source_site=vercel-docs&relationship=related)
+- [Get contact verification status for a domain](https://vercel.com/docs/rest-api/domains-registrar/get-contact-verification-status-for-a-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fregistrar-api&source_site=vercel-docs&relationship=related) — GET /v1/registrar/domains/{domain}/contact-verification — Get the registrant contact verification status for a domain. U
+- [List all the domains](https://vercel.com/docs/rest-api/domains/list-all-the-domains?from=related&source_path=%2Fdocs%2Fdomains%2Fregistrar-api&source_site=vercel-docs&relationship=related) — GET /v5/domains — Retrieves a list of domains registered for the authenticated user or team. By default it returns the l
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fdomains%2Fregistrar-api&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
-Full cross-link map for this page: [/docs/domains/registrar-api.graph.md](/docs/domains/registrar-api.graph.md)
+Full cross-link map for this page: [/docs/domains/registrar-api.graph.md](/docs/domains/registrar-api.graph.md?from=related&source_path=%2Fdocs%2Fdomains%2Fregistrar-api&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Getting started with the API

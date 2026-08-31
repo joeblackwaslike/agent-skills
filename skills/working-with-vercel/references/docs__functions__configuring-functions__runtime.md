@@ -3,7 +3,7 @@ title: Configuring the Runtime for Vercel Functions
 product: vercel
 url: /docs/functions/configuring-functions/runtime
 canonical_url: "https://vercel.com/docs/functions/configuring-functions/runtime"
-last_updated: 2026-06-29
+last_updated: 2026-08-12
 type: how-to
 prerequisites:
   - /docs/functions/configuring-functions
@@ -16,8 +16,8 @@ related:
 summary: Learn how to configure the runtime for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/runtime.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "0cc86e066603145bef7b415b5789842c20e25496897bd36e134584fa915d9e07"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "ea4098c18583a37eb1d57cca6d6ef24bc4d1d80252b701afce3de3c8a2d7f6a3"
 ---
 
 # Configuring the Runtime for Vercel Functions
@@ -30,13 +30,14 @@ The runtime of your function determines the environment in which your function w
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Ruby](https://vercel.com/docs/functions/runtimes/ruby?from=related) — Learn how to use the Ruby runtime to compile Ruby Vercel Functions on Vercel.
-- [Go](https://vercel.com/docs/functions/runtimes/go?from=related) — Learn how to use the Go runtime to run Go APIs on Vercel.
-- [Node.js](https://vercel.com/docs/functions/runtimes/node-js?from=related) — Learn how to use the Node.js runtime to create functions and deploy Node.js servers on Vercel.
-- [Rust](https://vercel.com/docs/functions/runtimes/rust?from=related) — Build fast, memory-safe serverless functions with Rust on Vercel.
-- [Getting Started](https://vercel.com/docs/functions/quickstart?from=related) — Build your first Vercel Function in a few steps.
+- [Customizing Serverless Functions](https://vercel.com/blog/customizing-serverless-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fruntime&source_site=vercel-docs&relationship=related)
+- [Using the Ruby Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/ruby?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fruntime&source_site=vercel-docs&relationship=related) — Learn how to use the Ruby runtime to compile Ruby Vercel Functions on Vercel.
+- [Using the Go Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/go?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fruntime&source_site=vercel-docs&relationship=related) — Learn how to use the Go runtime to run Go APIs on Vercel.
+- [Using the Node.js Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/node-js?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fruntime&source_site=vercel-docs&relationship=related) — Learn how to use the Node.js runtime to create functions and deploy Node.js servers on Vercel.
+- [Using the Rust Runtime with Vercel functions](https://vercel.com/docs/functions/runtimes/rust?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fruntime&source_site=vercel-docs&relationship=related) — Build fast, memory-safe serverless functions with Rust on Vercel.
+- [Getting started with Vercel Functions](https://vercel.com/docs/functions/quickstart?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fruntime&source_site=vercel-docs&relationship=related) — Build your first Vercel Function in a few steps.
 
-Full cross-link map for this page: [/docs/functions/configuring-functions/runtime.graph.md](/docs/functions/configuring-functions/runtime.graph.md)
+Full cross-link map for this page: [/docs/functions/configuring-functions/runtime.graph.md](/docs/functions/configuring-functions/runtime.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fruntime&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Node.js

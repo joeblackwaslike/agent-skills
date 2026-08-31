@@ -3,7 +3,7 @@ title: OpenAI Codex
 product: vercel
 url: /docs/ai-gateway/coding-agents/openai-codex
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/openai-codex"
-last_updated: 2026-07-28
+last_updated: 2026-08-18
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/coding-agents
@@ -16,8 +16,8 @@ related:
 summary: Use OpenAI Codex CLI with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/openai-codex.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "ade78d6822bdd88bd24c0de9029b0026a56d91e4bf9e0a35623a098ba168e31d"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "38e93dd576842a39217a8ad1222293956b74eb7b682485e994875fd040fc6437"
 ---
 
 # OpenAI Codex
@@ -30,17 +30,20 @@ sha256: "ade78d6822bdd88bd24c0de9029b0026a56d91e4bf9e0a35623a098ba168e31d"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Codex CLI](https://ai-sdk.dev/providers/community-providers/codex-cli?from=related)
-- [Codex CLI (App Server)](https://ai-sdk.dev/providers/community-providers/codex-app-server?from=related)
-- [Codex](https://ai-sdk.dev/providers/ai-sdk-harnesses/codex?from=related)
-- [How I use OpenCode with Vercel AI Gateway to build features fast](https://vercel.com/kb/guide/how-i-use-opencode-with-vercel-ai-gateway-to-build-features-fast?from=related) — How to route different AI models to different coding tasks automatically, cutting token costs by ~70% without losing qua
-- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related) — Use OpenCode with the AI Gateway.
-- [Claude Code](https://vercel.com/docs/ai-gateway/coding-agents/claude-code?from=related) — Use Claude Code and the Claude Agent SDK with AI Gateway.
-- [Kilo Code](https://vercel.com/docs/ai-gateway/coding-agents/kilo-code?from=related) — Learn about kilo code on Vercel.
-- [OpenClaw](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related) — Learn about openclaw on Vercel.
-- [Superset](https://vercel.com/docs/ai-gateway/coding-agents/superset?from=related) — Use Superset with the AI Gateway.
+- [GPT 5.2 Codex now available on Vercel AI Gateway](https://vercel.com/changelog/gpt-5-2-codex-now-available-on-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related)
+- [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related)
+- [GPT 5.1 Codex Max now available on Vercel AI Gateway](https://vercel.com/changelog/gpt-5-1-codex-max-now-available-on-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related)
+- [Codex CLI](https://ai-sdk.dev/providers/community-providers/codex-cli?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related)
+- [GPT 5.1 Codex models now available in Vercel AI Gateway](https://vercel.com/changelog/gpt-5-1-codex-models-now-available-in-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related)
+- [Codex CLI (App Server)](https://ai-sdk.dev/providers/community-providers/codex-app-server?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related)
+- [Vercel plugin now supported on OpenAI Codex and Codex CLI](https://vercel.com/changelog/vercel-plugin-openai-codex-and-codex-cli-support?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related)
+- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related) — Use OpenCode with the AI Gateway.
+- [Xcode](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related) — Use Xcode's coding assistant with the AI Gateway.
+- [Kilo Code](https://vercel.com/docs/ai-gateway/coding-agents/kilo-code?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related) — Use the Kilo Code CLI with the AI Gateway as an OpenAI-compatible provider.
+- [Claude Code and Claude Agent SDK](https://vercel.com/docs/ai-gateway/coding-agents/claude-code?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related) — Use Claude Code and the Claude Agent SDK with AI Gateway.
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
-Full cross-link map for this page: [/docs/ai-gateway/coding-agents/openai-codex.graph.md](/docs/ai-gateway/coding-agents/openai-codex.graph.md)
+Full cross-link map for this page: [/docs/ai-gateway/coding-agents/openai-codex.graph.md](/docs/ai-gateway/coding-agents/openai-codex.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 - Route requests through multiple AI providers

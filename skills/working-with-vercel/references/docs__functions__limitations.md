@@ -3,7 +3,7 @@ title: Vercel Functions Limits
 product: vercel
 url: /docs/functions/limitations
 canonical_url: "https://vercel.com/docs/functions/limitations"
-last_updated: 2026-07-01
+last_updated: 2026-08-24
 type: reference
 prerequisites:
   - /docs/functions
@@ -16,8 +16,8 @@ related:
 summary: Learn about the limits and restrictions of using Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/limitations.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "c286519efb77b526cce2157a1c041c8700f44663f4ac0e7ecd45e46827ef394d"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "aa9556693145a8d3d482649e25f4f4383c9505b2bdeb63fe52e7e4a3e18c74d5"
 ---
 
 # Vercel Functions Limits
@@ -30,18 +30,20 @@ The table below outlines the limits and restrictions of using Vercel Functions w
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Can I deploy Discord bots to Vercel?](https://vercel.com/kb/guide/can-i-deploy-discord-bots-to-vercel?from=related) — Learn about whether it's possible to deploy Discord Bots to Vercel.
-- [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
-- [Do Vercel Serverless Functions support WebSocket connections?](https://vercel.com/kb/guide/do-vercel-serverless-functions-support-websocket-connections?from=related) — Information on Vercel's support for WebSocket connections with Vercel Functions.
-- [Running Docker on Vercel vs Render](https://vercel.com/kb/guide/docker-on-vercel-vs-render?from=related) — Compare how Vercel and Render run Docker workloads, including deployment model, scaling, image sources, state, and netwo
-- [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments?from=related) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
-- [Legacy Usage & Pricing](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related) — Learn about legacy usage and pricing for Vercel Functions.
-- [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives?from=related) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
-- [Pricing and Limits](https://vercel.com/docs/eve/pricing?from=related) — Understand how eve usage maps to Vercel resources and inherited platform limits.
-- [Core](https://vercel.com/docs/flags/vercel-flags/sdks/core?from=related) — Use the Vercel Flags core evaluation library directly for custom setups.
-- [Backends](https://vercel.com/docs/frameworks/backend?from=related) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
+- [Bun runtime now supports large functions and extended max duration](https://vercel.com/changelog/bun-runtime-now-supports-large-functions-and-extended-max-duration?from=related&source_path=%2Fdocs%2Ffunctions%2Flimitations&source_site=vercel-docs&relationship=related)
+- [Higher defaults and limits for Vercel Functions running Fluid compute](https://vercel.com/changelog/higher-defaults-and-limits-for-vercel-functions-running-fluid-compute?from=related&source_path=%2Fdocs%2Ffunctions%2Flimitations&source_site=vercel-docs&relationship=related)
+- [Python Vercel Functions bundle size limit increased to 500MB](https://vercel.com/changelog/python-vercel-functions-bundle-size-limit-increased-to-500mb?from=related&source_path=%2Fdocs%2Ffunctions%2Flimitations&source_site=vercel-docs&relationship=related)
+- [Vercel Functions can now be up to 5GB in package size](https://vercel.com/changelog/vercel-functions-can-now-be-up-to-5-gb-in-package-size?from=related&source_path=%2Fdocs%2Ffunctions%2Flimitations&source_site=vercel-docs&relationship=related)
+- [WebSocket support is now in Public Beta](https://vercel.com/changelog/websocket-support-is-now-in-public-beta?from=related&source_path=%2Fdocs%2Ffunctions%2Flimitations&source_site=vercel-docs&relationship=related)
+- [Can I deploy Discord bots to Vercel?](https://vercel.com/kb/guide/can-i-deploy-discord-bots-to-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Flimitations&source_site=vercel-docs&relationship=related) — Learn about whether it's possible to deploy Discord Bots to Vercel.
+- [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related&source_path=%2Fdocs%2Ffunctions%2Flimitations&source_site=vercel-docs&relationship=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
+- [Do Vercel Serverless Functions support WebSocket connections?](https://vercel.com/kb/guide/do-vercel-serverless-functions-support-websocket-connections?from=related&source_path=%2Fdocs%2Ffunctions%2Flimitations&source_site=vercel-docs&relationship=related) — Information on Vercel's support for WebSocket connections with Vercel Functions.
+- [Running Docker on Vercel vs Render](https://vercel.com/kb/guide/docker-on-vercel-vs-render?from=related&source_path=%2Fdocs%2Ffunctions%2Flimitations&source_site=vercel-docs&relationship=related) — Compare how Vercel and Render run Docker workloads, including deployment model, scaling, image sources, state, and netwo
+- [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments?from=related&source_path=%2Fdocs%2Ffunctions%2Flimitations&source_site=vercel-docs&relationship=related) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
+- [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives?from=related&source_path=%2Fdocs%2Ffunctions%2Flimitations&source_site=vercel-docs&relationship=related) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
+- [Pricing and Limits](https://vercel.com/docs/eve/pricing?from=related&source_path=%2Fdocs%2Ffunctions%2Flimitations&source_site=vercel-docs&relationship=related) — Understand how eve usage maps to Vercel resources and inherited platform limits.
 
-Full cross-link map for this page: [/docs/functions/limitations.graph.md](/docs/functions/limitations.graph.md)
+Full cross-link map for this page: [/docs/functions/limitations.graph.md](/docs/functions/limitations.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Flimitations&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 | Feature                                                                          | Limits                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
@@ -72,7 +74,7 @@ You can use [`includeFiles` and `excludeFiles`](/docs/project-configuration/verc
 
 ## Large functions&#x20;
 
-Large functions let you deploy uncompressed bundles up to **5 GB**. Use them for workloads that ship large dependencies, model files, or binaries. Large functions are supported on Node.js and Python runtimes.
+Large functions let you deploy uncompressed bundles up to **5 GB**. Use them for workloads that ship large dependencies, model files, or binaries. Large functions are supported on Node.js, Bun, and Python runtimes.
 
 Large functions require [fluid compute](/docs/fluid-compute) with [Active CPU](/docs/functions/usage-and-pricing#active-cpu) enabled. Fluid compute is enabled by default for new projects.
 
@@ -91,6 +93,7 @@ In eligible projects, Vercel only uses the large functions beta for Functions th
 Large functions are supported on the following runtimes:
 
 - [`nodejs`](/docs/functions/runtimes/node-js)
+- [`bun`](/docs/functions/runtimes/bun)
 - [`python`](/docs/functions/runtimes/python)
 
 > **💡 Note:** Large functions are not yet supported for projects using
@@ -105,7 +108,7 @@ While Vercel Functions have a default duration, this duration can be extended us
 
 With [fluid compute](/docs/fluid-compute) enabled, Vercel Functions have the following defaults and maximum limits:
 
-### Node.js and Python runtimes
+### Node.js, Bun, and Python runtimes
 
 |            | Default          | Maximum | Extended maximum |
 | ---------- | ---------------- | ------- | ---------------- |
@@ -115,8 +118,8 @@ With [fluid compute](/docs/fluid-compute) enabled, Vercel Functions have the fol
 
 > **💡 Note:** The 800 second maximum is generally available for Pro and Enterprise teams.
 > The 1800 second extended maximum is in beta. Values above 800 seconds require
-> function-level configuration and are only supported for specific Node.js and
-> Python runtime versions. [Secure Compute](/docs/networking/secure-compute)
+> function-level configuration and are only supported for specific Node.js,
+> Bun, and Python runtime versions. [Secure Compute](/docs/networking/secure-compute)
 > and [Static IPs](/docs/networking/static-ips) do not support durations above
 > 800 seconds during the beta. See [configuring maximum
 > duration](/docs/functions/configuring-functions/duration#extended-max-duration-beta)

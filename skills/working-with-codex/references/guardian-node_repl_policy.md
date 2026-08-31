@@ -1,5 +1,5 @@
 ---
-source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/core/src/guardian/node_repl_policy.md"
+source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/core/assets/guardian/node_repl_policy.md"
 fetched_at: "2026-08-24T04:46:00.419Z"
 sha256: "cbeac65723cf1476dce0680b5b27484640472ef413436074ca8d8cefbf94c787"
 ---

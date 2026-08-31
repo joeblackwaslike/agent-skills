@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/cohere.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "b60c0dc8673ddc566abe83e06d4a0985eb3551bafd08eacf1bcd959f26c17ee8"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "ce6c3176a7f19702d91e3c7053b4bbd39e227c8ad73686d0b1206df7db35c030"
 ---
 
 # Cohere Provider
@@ -376,6 +376,7 @@ The following provider options are available:
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
 - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
+- [Z.AI](/providers/ai-sdk-providers/zai)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)
 - [Fireworks](/providers/ai-sdk-providers/fireworks)

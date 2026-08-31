@@ -3,7 +3,7 @@ title: Grok Build
 product: vercel
 url: /docs/ai-gateway/coding-agents/grok-build
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/grok-build"
-last_updated: 2026-07-28
+last_updated: 2026-08-24
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/coding-agents
@@ -14,8 +14,8 @@ related:
 summary: Use Grok Build with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/grok-build.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "3e85b1b22f480b67dcaac888f608b8dd7281e98b533fa67eb76cd2f9c9543820"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "d60460566619f64c45d45db04028609e69e023eda4bef1c068f045f3affea7bd"
 ---
 
 # Grok Build
@@ -28,14 +28,18 @@ sha256: "3e85b1b22f480b67dcaac888f608b8dd7281e98b533fa67eb76cd2f9c9543820"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Grok Build](https://ai-sdk.dev/providers/ai-sdk-harnesses/grok-build?from=related)
-- [Groq](https://vercel.com/docs/agent-resources/integrations-for-models/groq?from=related) — Learn how to add the Groq native integration with Vercel.
-- [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model?from=related) — Learn how to add a new AI model to your Vercel projects
-- [OpenClaw](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related) — Learn about openclaw on Vercel.
-- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related) — Use OpenCode with the AI Gateway.
-- [Roo Code](https://vercel.com/docs/ai-gateway/coding-agents/roo-code?from=related) — Use Roo Code with the AI Gateway.
+- [Grok Build 0.1 now available on Vercel AI Gateway](https://vercel.com/changelog/grok-build-0-1-now-available-on-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fgrok-build&source_site=vercel-docs&relationship=related)
+- [Grok 4.6 now available on AI Gateway](https://vercel.com/changelog/grok-4-6-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fgrok-build&source_site=vercel-docs&relationship=related)
+- [Grok 4.3 on AI Gateway](https://vercel.com/changelog/grok-4-3-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fgrok-build&source_site=vercel-docs&relationship=related)
+- [Grok 4.5 now available on AI Gateway](https://vercel.com/changelog/grok-4-5-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fgrok-build&source_site=vercel-docs&relationship=related)
+- [Try Grok 4.20 on AI Gateway](https://vercel.com/changelog/grok-4-20-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fgrok-build&source_site=vercel-docs&relationship=related)
+- [Vercel Groq Integration](https://vercel.com/docs/agent-resources/integrations-for-models/groq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fgrok-build&source_site=vercel-docs&relationship=related) — Learn how to add the Groq native integration with Vercel.
+- [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fgrok-build&source_site=vercel-docs&relationship=related) — Learn how to add a new AI model to your Vercel projects
+- [Xcode](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fgrok-build&source_site=vercel-docs&relationship=related) — Use Xcode's coding assistant with the AI Gateway.
+- [OpenClaw](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fgrok-build&source_site=vercel-docs&relationship=related) — Use OpenClaw with the AI Gateway as a model provider.
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fgrok-build&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
-Full cross-link map for this page: [/docs/ai-gateway/coding-agents/grok-build.graph.md](/docs/ai-gateway/coding-agents/grok-build.graph.md)
+Full cross-link map for this page: [/docs/ai-gateway/coding-agents/grok-build.graph.md](/docs/ai-gateway/coding-agents/grok-build.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fgrok-build&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 - Use any model available through the gateway
@@ -80,7 +84,7 @@ Set two environment variables and every request routes through AI Gateway, with 
   Press `Ctrl+M` to open the model picker. It lists every model AI Gateway exposes at `/v1/models`. To set a default model, add it to `~/.grok/config.toml`:
   ```toml filename="~/.grok/config.toml"
   [models]
-  default = "xai/grok-4.5"
+  default = "spacexai/grok-4.5"
   # Or try other models:
   # default = "anthropic/claude-sonnet-5"
   # default = "openai/gpt-5.6-sol"
@@ -96,7 +100,7 @@ Grok Build's web search tool requires a separate model configured to use the Ope
   Add the entry below to `~/.grok/config.toml`:
   ```toml filename="~/.grok/config.toml"
   [model.vercel-search]
-  model = "xai/grok-4.5"
+  model = "spacexai/grok-4.5"
   base_url = "https://ai-gateway.vercel.sh/coding-agent/v1"
   api_backend = "responses"
   ```

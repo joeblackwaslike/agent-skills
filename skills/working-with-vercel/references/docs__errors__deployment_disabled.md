@@ -3,7 +3,7 @@ title: DEPLOYMENT_DISABLED
 product: vercel
 url: /docs/errors/DEPLOYMENT_DISABLED
 canonical_url: "https://vercel.com/docs/errors/DEPLOYMENT_DISABLED"
-last_updated: 2026-06-24
+last_updated: 2026-08-10
 type: reference
 prerequisites:
   []
@@ -12,8 +12,8 @@ related:
 summary: The deployment is disabled. This is a deployment error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/deployment_disabled.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "d264b639fd4b458b61fdbed8f9625e3dc13cb52165be4c055a770b0656cac043"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "e06f2682a179565ffad4ed6e128b13b496692eb632fea44dc8bb172b610f189c"
 ---
 
 # DEPLOYMENT_DISABLED

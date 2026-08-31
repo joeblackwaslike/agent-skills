@@ -1,10 +1,10 @@
 ---
-title: Rest API
+title: Vercel REST API Reference
 product: vercel
 url: /docs/rest-api
 canonical_url: "https://vercel.com/docs/rest-api"
-last_updated: 2026-08-24
-type: conceptual
+last_updated: 2026-08-31
+type: reference
 prerequisites:
   []
 related:
@@ -13,11 +13,11 @@ related:
   - /docs/rest-api/access-groups/deletes-an-access-group.md
   - /docs/rest-api/access-groups/list-members-of-an-access-group.md
   - /docs/rest-api/access-groups/list-access-groups-for-a-team-project-or-member.md
-summary: Learn about rest api on Vercel.
+summary: Interact programmatically with your Vercel account using the SDK or direct HTTP requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rest-api.md"
-fetched_at: "2026-08-24T04:53:14.265Z"
-sha256: "6f47289e4d993d966517e9e03bcd6b3fe5b6f75c417cd079717544dc77b03ccf"
+fetched_at: "2026-08-31T10:45:05.170Z"
+sha256: "8bb8ad6f8bb5006d7f4b58d0a4e46b7f7f884180b7b0dc779ec2c2e0bfd5a250"
 ---
 
 # Vercel REST API Reference
@@ -123,9 +123,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 |---|---|---|
 | **POST** | [`/v1/connect/connectors`](/docs/rest-api/connect/create-a-connector.md) | Create a connector |
 | **POST** | [`/v1/connect/token/{connector}`](/docs/rest-api/connect/get-a-connect-token.md) | Get a Connect token |
-| **POST** | [`/v1/connect/token/{connector}/import`](/docs/rest-api/connect/import-connect-tokens.md) | Import Connect tokens |
 | **POST** | [`/v1/connect/authorize/{connector}`](/docs/rest-api/connect/create-a-connect-authorization-request.md) | Create a Connect authorization request |
-| **POST** | [`/v1/connect/install/{connector}`](/docs/rest-api/connect/create-a-connect-installation-request.md) | Create a Connect installation request |
 
 ## deployments
 
@@ -316,6 +314,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **GET** | [`/v1/installations/{integrationConfigurationId}/account`](/docs/rest-api/marketplace/get-account-information.md) | Get Account Information |
 | **GET** | [`/v1/installations/{integrationConfigurationId}/member/{memberId}`](/docs/rest-api/marketplace/get-member-information.md) | Get Member Information |
 | **POST** | [`/v1/installations/{integrationConfigurationId}/credentials/rotate`](/docs/rest-api/marketplace/rotate-installation-credential.md) | Rotate Installation Credential |
+| **POST** | [`/v1/installations/{integrationConfigurationId}/credentials/revoke`](/docs/rest-api/marketplace/revoke-installation-credential.md) | Revoke Installation Credential |
 | **POST** | [`/v1/installations/{integrationConfigurationId}/events`](/docs/rest-api/marketplace/create-event.md) | Create Event |
 | **GET** | [`/v1/installations/{integrationConfigurationId}/resources`](/docs/rest-api/marketplace/get-integration-resources.md) | Get Integration Resources |
 | **GET** | [`/v1/installations/{integrationConfigurationId}/resources/{resourceId}`](/docs/rest-api/marketplace/get-integration-resource.md) | Get Integration Resource |

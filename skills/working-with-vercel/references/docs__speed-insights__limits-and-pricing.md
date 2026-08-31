@@ -3,7 +3,7 @@ title: Limits and Pricing for Speed Insights
 product: vercel
 url: /docs/speed-insights/limits-and-pricing
 canonical_url: "https://vercel.com/docs/speed-insights/limits-and-pricing"
-last_updated: 2026-06-16
+last_updated: 2026-08-25
 type: reference
 prerequisites:
   - /docs/speed-insights
@@ -12,12 +12,11 @@ related:
   - /docs/speed-insights/package
   - /docs/speed-insights/managing-usage
   - /docs/manage-and-optimize-observability
-  - /docs/speed-insights/metrics
 summary: Learn about our limits and pricing when using Vercel Speed Insights. Different limitations are applied depending on your plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/limits-and-pricing.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "600c6dc74520ba1538c2af10964649384b40a0332677072de78dcc70f8f08b46"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "7dbeac4cea42ad6469191f36508c1e44acc95f9546b71048e5feec708450d70e"
 ---
 
 # Limits and Pricing for Speed Insights
@@ -30,15 +29,16 @@ sha256: "600c6dc74520ba1538c2af10964649384b40a0332677072de78dcc70f8f08b46"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Improve Cumulative Layout Shift \\(CLS\\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel?from=related) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
-- [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent?from=related) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
-- [Using Speed Insights](https://vercel.com/docs/speed-insights/using-speed-insights?from=related) — Learn how to use Speed Insights to analyze your application's performance data.
-- [Pricing](https://vercel.com/docs/analytics/limits-and-pricing?from=related) — Learn about pricing for Vercel Web Analytics.
-- [Manage and Optimize Usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
-- [Pricing](https://vercel.com/docs/pricing?from=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Observability Plus](https://vercel.com/docs/observability/observability-plus?from=related) — Learn about using Observability Plus and its limits.
+- [Improve Cumulative Layout Shift \\(CLS\\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel?from=related&source_path=%2Fdocs%2Fspeed-insights%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
+- [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent?from=related&source_path=%2Fdocs%2Fspeed-insights%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
+- [Speed Insights now has a free tier](https://vercel.com/changelog/speed-insights-free-tier?from=related&source_path=%2Fdocs%2Fspeed-insights%2Flimits-and-pricing&source_site=vercel-docs&relationship=related)
+- [Using Speed Insights](https://vercel.com/docs/speed-insights/using-speed-insights?from=related&source_path=%2Fdocs%2Fspeed-insights%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn how to use Speed Insights to analyze your application's performance data.
+- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fspeed-insights%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Pricing for Web Analytics](https://vercel.com/docs/analytics/limits-and-pricing?from=related&source_path=%2Fdocs%2Fspeed-insights%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn about pricing for Vercel Web Analytics.
+- [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fspeed-insights%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Observability Plus](https://vercel.com/docs/observability/observability-plus?from=related&source_path=%2Fdocs%2Fspeed-insights%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn about using Observability Plus and its limits.
 
-Full cross-link map for this page: [/docs/speed-insights/limits-and-pricing.graph.md](/docs/speed-insights/limits-and-pricing.graph.md)
+Full cross-link map for this page: [/docs/speed-insights/limits-and-pricing.graph.md](/docs/speed-insights/limits-and-pricing.graph.md?from=related&source_path=%2Fdocs%2Fspeed-insights%2Flimits-and-pricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Pricing
@@ -62,10 +62,10 @@ Pro teams can [set up Spend Management](/docs/spend-management#managing-your-spe
 
 Once you've enabled Speed Insights, different limitations are applied depending on your plan:
 
-|                                         | Hobby  | Pro     | Enterprise |
-| --------------------------------------- | ------ | ------- | ---------- |
-| Reporting Window for Events        | 7 Day  | 30 Days | 90 Days    |
-| Maximum Number of Events per Month | 10,000 | None    | None       |
+|                                          | Hobby  | Pro     | Enterprise |
+| ---------------------------------------- | ------ | ------- | ---------- |
+| Reporting Window for Events              | 7 Day  | 30 Days | 90 Days    |
+| Maximum Number of Events per Month       | 10,000 | None    | None       |
 
 After a Hobby team reaches the maximum event limit, Vercel pauses event recording until the next day. When recording is paused, you can still access all existing events.
 
@@ -97,13 +97,9 @@ The table below shows the metrics for the [**Observability**](/docs/manage-and-o
 
 To view information on managing each resource, select the resource link in the **Metric** column. To jump straight to guidance on optimization, select the corresponding resource link in the **Optimize** column.
 
-See the [manage and optimize Observability usage](/docs/manage-and-optimize-observability) section for more information on how to optimize your usage.
 
-> **💡 Note:** Speed Insights and Web Analytics require scripts to do collection of [data
-> points](/docs/speed-insights/metrics#understanding-data-points). These scripts
-> are loaded on the client-side and therefore may incur additional usage and
-> costs for [Data Transfer](/docs/manage-cdn-usage#fast-data-transfer) and [Edge
-> Requests](/docs/manage-cdn-usage#edge-requests).
+
+See the [manage and optimize Observability usage](/docs/manage-and-optimize-observability) section for more information on how to optimize your usage.
 
 
 ---

@@ -15,8 +15,8 @@ related:
 summary: Configure AI chat platforms to use the AI Gateway for unified model access and spend monitoring.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/chat-platforms.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "e8550987453f5b88c0b5a9f14af9de42defc05a434bf761fc0b26779880a8b3a"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "a9ef3c080401df8cda1b2b5e999dbaa6fadd3d367d99462abcf6ef81f747c349"
 ---
 
 # Chat Platforms
@@ -29,14 +29,14 @@ AI chat platforms provide conversational interfaces for interacting with AI mode
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to build an AI agent for Slack with Chat SDK and AI SDK](https://vercel.com/kb/guide/how-to-build-an-ai-agent-for-slack-with-chat-sdk-and-ai-sdk?from=related) — Build a Slack AI agent using Chat SDK, AI SDK's ToolLoopAgent, and Vercel AI Gateway. Covers project setup, tool definit
-- [OpenClaw](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related) — Learn about openclaw on Vercel.
-- [Coding Agents](https://vercel.com/docs/ai-gateway/coding-agents?from=related) — Configure popular AI coding agents to use the AI Gateway for unified model access and spend monitoring.
-- [SDKs & APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis?from=related) — Use the AI Gateway with various SDKs and API specifications including OpenAI, Anthropic, and OpenResponses.
-- [Ecosystem](https://vercel.com/docs/ai-gateway/ecosystem?from=related) — Explore community framework integrations and ecosystem features for the AI Gateway.
-- [OpenAI Chat Completions API](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions?from=related) — Use the OpenAI Chat Completions API with AI Gateway for seamless integration with existing tools and libraries.
+- [How to build an AI agent for Slack with Chat SDK and AI SDK](https://vercel.com/kb/guide/how-to-build-an-ai-agent-for-slack-with-chat-sdk-and-ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms&source_site=vercel-docs&relationship=related) — Build a Slack AI agent using Chat SDK, AI SDK's ToolLoopAgent, and Vercel AI Gateway. Covers project setup, tool definit
+- [OpenClaw](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms&source_site=vercel-docs&relationship=related) — Use OpenClaw with the AI Gateway as a model provider.
+- [SDKs & APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms&source_site=vercel-docs&relationship=related) — Use the AI Gateway with various SDKs and API specifications including OpenAI, Anthropic, and OpenResponses.
+- [Coding Agents](https://vercel.com/docs/ai-gateway/coding-agents?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms&source_site=vercel-docs&relationship=related) — Configure popular AI coding agents to use the AI Gateway for unified model access and spend monitoring.
+- [Xcode](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms&source_site=vercel-docs&relationship=related) — Use Xcode's coding assistant with the AI Gateway.
+- [Ecosystem](https://vercel.com/docs/ai-gateway/ecosystem?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms&source_site=vercel-docs&relationship=related) — Explore community framework integrations and ecosystem features for the AI Gateway.
 
-Full cross-link map for this page: [/docs/ai-gateway/chat-platforms.graph.md](/docs/ai-gateway/chat-platforms.graph.md)
+Full cross-link map for this page: [/docs/ai-gateway/chat-platforms.graph.md](/docs/ai-gateway/chat-platforms.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Why route chat platforms here?

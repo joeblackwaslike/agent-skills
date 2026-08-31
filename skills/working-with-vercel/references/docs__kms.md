@@ -3,7 +3,7 @@ title: Key Management Service (KMS)
 product: vercel
 url: /docs/kms
 canonical_url: "https://vercel.com/docs/kms"
-last_updated: 2026-07-21
+last_updated: 2026-08-18
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Sign JWTs and messages with Vercel-managed signing keys. Learn about issuers, keys, and policies, and how to sign from Vercel Functions with...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "99e3d5c20f79aef5ec71ead7b5989635f47365ec11453000b9f9a31740cfa832"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "6b069c8d94ea2c35ed81f14dd7629c310d0b5e2ca467033ce474be5058e125ee"
 ---
 
 # Key Management Service (KMS)
@@ -30,13 +30,14 @@ sha256: "99e3d5c20f79aef5ec71ead7b5989635f47365ec11453000b9f9a31740cfa832"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Create a signing key](https://vercel.com/docs/rest-api/kms/create-a-signing-key?from=related)
-- [Activate a signing key](https://vercel.com/docs/rest-api/kms/activate-a-signing-key?from=related)
-- [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token?from=related)
-- [Revoke a signing key](https://vercel.com/docs/rest-api/kms/revoke-a-signing-key?from=related)
-- [Create an issuer](https://vercel.com/docs/rest-api/kms/create-an-issuer?from=related)
+- [Sign JWTs from your Functions without managing private keys](https://vercel.com/changelog/sign-jwts-from-your-functions-without-managing-private-keys?from=related&source_path=%2Fdocs%2Fkms&source_site=vercel-docs&relationship=related)
+- [Create a signing key](https://vercel.com/docs/rest-api/kms/create-a-signing-key?from=related&source_path=%2Fdocs%2Fkms&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/keys — Create a new signing key for a KMS issuer. Depending on the activation mode, the
+- [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token?from=related&source_path=%2Fdocs%2Fkms&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
+- [Activate a signing key](https://vercel.com/docs/rest-api/kms/activate-a-signing-key?from=related&source_path=%2Fdocs%2Fkms&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/keys/{keyId}/activate — Activate a pending signing key so the issuer starts signing with
+- [Revoke a signing key](https://vercel.com/docs/rest-api/kms/revoke-a-signing-key?from=related&source_path=%2Fdocs%2Fkms&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/keys/{keyId}/revoke — Immediately revoke a signing key that is already scheduled for rev
+- [Sign a message](https://vercel.com/docs/rest-api/kms/sign-a-message?from=related&source_path=%2Fdocs%2Fkms&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/sign/message — Sign a raw message with a KMS issuer's active signing key. Authenticate t
 
-Full cross-link map for this page: [/docs/kms.graph.md](/docs/kms.graph.md)
+Full cross-link map for this page: [/docs/kms.graph.md](/docs/kms.graph.md?from=related&source_path=%2Fdocs%2Fkms&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Vercel Key Management Service (KMS) gives you managed signing keys that live on Vercel. You sign JWTs and messages by calling the KMS signing API from your Vercel Functions, and Vercel publishes the matching public keys so any relying party can verify the result. Your private keys never leave Vercel, so you avoid storing signing material in environment variables.

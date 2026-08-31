@@ -3,7 +3,7 @@ title: Chat
 product: vercel
 url: /docs/agent/chat
 canonical_url: "https://vercel.com/docs/agent/chat"
-last_updated: 2026-08-18
+last_updated: 2026-08-19
 type: conceptual
 prerequisites:
   - /docs/agent
@@ -15,8 +15,8 @@ related:
 summary: Use Vercel Agent from your dashboard or Slack
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/chat.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "b864d24e8c658d31f5995e1f3038d7b0b9865477af66c1de8cbccfdb171fe438"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "bb2f6720a787326102629fe73a3f84ada1d4f5b858557a35e1f30d1eca5eba32"
 ---
 
 # Chat

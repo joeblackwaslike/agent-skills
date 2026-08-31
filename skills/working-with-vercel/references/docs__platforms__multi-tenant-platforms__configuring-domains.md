@@ -3,7 +3,7 @@ title: Configuring Custom Domains
 product: vercel
 url: /docs/platforms/multi-tenant-platforms/configuring-domains
 canonical_url: "https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains"
-last_updated: 2026-06-26
+last_updated: 2026-08-25
 type: how-to
 prerequisites:
   - /docs/platforms/multi-tenant-platforms
@@ -14,8 +14,8 @@ related:
 summary: Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "412f006539dfa42ab24bcd2f57cb8bda28f561a8ca18e540980b189ae23d6ec7"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "4908759eab96cffadc4372c35773395f153e3bb3a3d02c495ffdc4cd69c6666a"
 ---
 
 # Configuring Custom Domains
@@ -28,17 +28,17 @@ sha256: "412f006539dfa42ab24bcd2f57cb8bda28f561a8ca18e540980b189ae23d6ec7"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Build a multi-tenant app with Next.js and Vercel](https://vercel.com/kb/guide/nextjs-multi-tenant-application?from=related) — Create a Next.js application with multi-tenancy and custom domain support on Vercel.
-- [How do I add a custom domain to my Vercel project?](https://vercel.com/kb/guide/how-do-i-add-a-custom-domain-to-my-vercel-project?from=related) — Learn how to add a custom domain to your Vercel project.
-- [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related) — Point your apex domain to Vercel with an A record \\(76.76.21.21 or your domain card's value\\), pair it with a www CNAME,
-- [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records?from=related) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
-- [Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart?from=related) — Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
-- [Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference?from=related) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
-- [Adding a Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain?from=related) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
-- [Set Up Custom Domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related) — Add and configure a custom domain for your Vercel project using the CLI.
-- [Limits](https://vercel.com/docs/platforms/multi-tenant-platforms/limits?from=related) — Understand the limits and features available for Vercel for Platforms.
+- [Build a multi-tenant app with Next.js and Vercel](https://vercel.com/kb/guide/nextjs-multi-tenant-application?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Create a Next.js application with multi-tenancy and custom domain support on Vercel.
+- [How do I add a custom domain to my Vercel project?](https://vercel.com/kb/guide/how-do-i-add-a-custom-domain-to-my-vercel-project?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Learn how to add a custom domain to your Vercel project.
+- [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Point your apex domain to Vercel with an A record \\(76.76.21.21 or your domain card's value\\), pair it with a www CNAME,
+- [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
+- [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
+- [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
+- [Troubleshooting domains](https://vercel.com/docs/domains/troubleshooting?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
+- [Working with domains](https://vercel.com/docs/domains/working-with-domains?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Learn how domains work and the options Vercel provides for managing them.
+- [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 
-Full cross-link map for this page: [/docs/platforms/multi-tenant-platforms/configuring-domains.graph.md](/docs/platforms/multi-tenant-platforms/configuring-domains.graph.md)
+Full cross-link map for this page: [/docs/platforms/multi-tenant-platforms/configuring-domains.graph.md](/docs/platforms/multi-tenant-platforms/configuring-domains.graph.md?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 If you plan on offering subdomains like `*.acme.com`, add a wildcard domain to your Vercel project. This requires using [Vercel's nameservers](/docs/domains/working-with-nameservers) so that Vercel can manage the DNS challenges necessary for generating wildcard SSL certificates.
@@ -48,6 +48,55 @@ If you plan on offering subdomains like `*.acme.com`, add a wildcard domain to y
 3. Add a wildcard domain: `.acme.com`.
 
 Now, any `tenant.acme.com` you create—whether it's `tenant1.acme.com` or `docs.tenant1.acme.com`—automatically resolves to your Vercel deployment. Vercel issues individual certificates for each subdomain on the fly.
+
+### Protecting tenant subdomains with the Public Suffix List
+
+If tenants can publish content or run code on your subdomains, submit your shared domain to the [Public Suffix List](https://publicsuffix.org/learn/) (PSL). The PSL is a public list of domains, such as `vercel.app`, whose subdomains belong to different owners. Browsers read the list and treat each subdomain of a listed domain as its own site.
+
+Without a PSL entry, browsers treat `tenant1.acme.com` and `tenant2.acme.com` as part of the same site. This affects how browsers scope cookies and apply `SameSite` rules.
+
+For example, `tenant1.acme.com` can set a cookie with `Domain=acme.com`. The browser then sends that cookie to `tenant2.acme.com`, `app.acme.com`, and the apex domain. This can add unwanted cookies to requests for another tenant or your dashboard.
+
+Submit the domain that sits directly above each tenant name:
+
+- For `<tenant>.acme.com`, submit `acme.com`
+- For `<tenant>.sites.acme.com`, submit `sites.acme.com`
+
+After receiving the PSL update, browsers treat each tenant subdomain as a separate site. Browsers also block tenant attempts to set cookies for the shared domain. You don't need to submit custom domains that tenants own.
+
+#### Submitting your suffix
+
+The PSL's private section covers domains that give subdomains to parties that do not trust each other. Adding an entry changes existing cookie and sign-in behavior.
+
+Before you submit, test parent-scoped cookies, cross-subdomain sign-in, and code that identifies a site from its hostname. Then follow these steps:
+
+1. Confirm that your service meets the [PSL private-domain criteria](https://github.com/publicsuffix/list/wiki/Guidelines). Only an authorized representative of the domain owner can submit the change.
+2. Add the exact shared suffix to the `PRIVATE DOMAINS` section with the required company header and sort order.
+3. Open a pull request with your service details, example domains, and expected site boundaries in the required template.
+4. Create a permanent `_psl.<suffix>` DNS `TXT` record that contains the pull request URL.
+5. Respond to the maintainers' review.
+6. Wait for browsers and other clients to receive the updated list after the maintainers merge the change.
+
+The PSL maintainers do not guarantee a review time. After a change is merged, each browser receives the update on its own schedule.
+
+#### Protecting your platform during rollout
+
+PSL review and browser updates can take time. Use these controls until browsers recognize your shared domain:
+
+- Put your dashboard and authentication service under a different apex domain when possible. For example, use `app.acme.net` for tenants under `*.acme.com`.
+- Prefix sensitive cookie names with [`__Host-`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie#cookie_prefixes).
+- Set `Secure`, `HttpOnly`, and `Path=/` on session cookies. Omit the `Domain` attribute.
+- Validate the `Origin` header or use a cross-site request forgery token for requests that change data.
+
+A cookie without a `Domain` attribute is only sent to the host that set it. For example, set a session cookie with this response header:
+
+```http
+Set-Cookie: __Host-session=your_session_value_here; Secure; HttpOnly; Path=/; SameSite=Lax
+```
+
+Browsers that support `__Host-` reject prefixed cookies with a `Domain` attribute or a path other than `/`. This prevents a sibling tenant from setting `__Host-session` for your host.
+
+The `__Host-` prefix does not change `SameSite` behavior, so keep the `Origin` or cross-site request forgery token checks. These controls add protection but do not replace a PSL entry.
 
 ## Offering custom domains
 

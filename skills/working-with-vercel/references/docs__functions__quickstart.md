@@ -16,8 +16,8 @@ related:
 summary: Build your first Vercel Function in a few steps.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/quickstart.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "904f525144d94919ff7294692f94ec9a24b89b41a2453bbc434cad69ebbe1530"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "30e3cd2c6e77bdfb11e2be5e4f38fe2f68732c3149b810f2bd7b5308f1e66b99"
 ---
 
 # Getting started with Vercel Functions
@@ -30,14 +30,16 @@ In this guide, you'll learn how to get started with Vercel Functions using your 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel?from=related) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
-- [Node.js](https://vercel.com/docs/functions/runtimes/node-js?from=related) — Learn how to use the Node.js runtime to create functions and deploy Node.js servers on Vercel.
-- [Rust](https://vercel.com/docs/functions/runtimes/rust?from=related) — Build fast, memory-safe serverless functions with Rust on Vercel.
-- [Runtime](https://vercel.com/docs/functions/configuring-functions/runtime?from=related) — Learn how to configure the runtime for Vercel Functions.
-- [Go](https://vercel.com/docs/functions/runtimes/go?from=related) — Learn how to use the Go runtime to run Go APIs on Vercel.
-- [Vite](https://vercel.com/docs/frameworks/frontend/vite?from=related) — Learn how to use Vercel's features with Vite.
+- [Function invocations now billed per unit](https://vercel.com/changelog/function-invocations-now-billed-per-unit?from=related&source_path=%2Fdocs%2Ffunctions%2Fquickstart&source_site=vercel-docs&relationship=related)
+- [Vercel Functions now have faster and fewer cold starts](https://vercel.com/changelog/vercel-functions-now-have-faster-and-fewer-cold-starts?from=related&source_path=%2Fdocs%2Ffunctions%2Fquickstart&source_site=vercel-docs&relationship=related)
+- [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fquickstart&source_site=vercel-docs&relationship=related) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
+- [Using the Node.js Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/node-js?from=related&source_path=%2Fdocs%2Ffunctions%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to use the Node.js runtime to create functions and deploy Node.js servers on Vercel.
+- [Using the Rust Runtime with Vercel functions](https://vercel.com/docs/functions/runtimes/rust?from=related&source_path=%2Fdocs%2Ffunctions%2Fquickstart&source_site=vercel-docs&relationship=related) — Build fast, memory-safe serverless functions with Rust on Vercel.
+- [Configuring the Runtime for Vercel Functions](https://vercel.com/docs/functions/configuring-functions/runtime?from=related&source_path=%2Fdocs%2Ffunctions%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to configure the runtime for Vercel Functions.
+- [Fastify on Vercel](https://vercel.com/docs/frameworks/backend/fastify?from=related&source_path=%2Fdocs%2Ffunctions%2Fquickstart&source_site=vercel-docs&relationship=related) — Deploy Fastify applications to Vercel with zero configuration.
+- [Express on Vercel](https://vercel.com/docs/frameworks/backend/express?from=related&source_path=%2Fdocs%2Ffunctions%2Fquickstart&source_site=vercel-docs&relationship=related) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
 
-Full cross-link map for this page: [/docs/functions/quickstart.graph.md](/docs/functions/quickstart.graph.md)
+Full cross-link map for this page: [/docs/functions/quickstart.graph.md](/docs/functions/quickstart.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fquickstart&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Prerequisites

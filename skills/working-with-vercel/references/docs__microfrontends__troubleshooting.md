@@ -1,10 +1,10 @@
 ---
-title: Testing & Troubleshooting
+title: Testing & troubleshooting microfrontends
 product: vercel
 url: /docs/microfrontends/troubleshooting
 canonical_url: "https://vercel.com/docs/microfrontends/troubleshooting"
 last_updated: 2018-10-20
-type: conceptual
+type: reference
 prerequisites:
   - /docs/microfrontends
 related:
@@ -13,11 +13,11 @@ related:
   - /docs/observability
   - /docs/tracing/session-tracing
   - /docs/tracing
-summary: Learn about testing & troubleshooting on Vercel.
+summary: Learn about testing, common issues, and how to troubleshoot microfrontends on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/troubleshooting.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "bd3396b81a69f2a7e788665868399f98dc204b2485c755fa82aa020c008f12ca"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "68a2c31befcc6aae682ddde6dd8a29ee108599b791bd2cd477b189bf92bb3db1"
 ---
 
 # Testing & troubleshooting microfrontends
@@ -30,17 +30,17 @@ sha256: "bd3396b81a69f2a7e788665868399f98dc204b2485c755fa82aa020c008f12ca"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Microfrontends](https://turborepo.dev/docs/guides/microfrontends?from=related) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
-- [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related) — Learn how to debug how Vercel decides where to route your request
-- [Why is my deployed project giving a 404?](https://vercel.com/kb/guide/why-is-my-deployed-project-giving-404?from=related) — Vercel 404 errors often hit healthy builds when routing metadata does not match the request path. Learn the causes and h
-- [Incremental Migrations with Microfrontends](https://vercel.com/kb/guide/incremental-migrations-with-microfrontends?from=related) — Learn how to migrate legacy applications using microfrontends
-- [Managing Microfrontends](https://vercel.com/docs/microfrontends/managing-microfrontends?from=related) — Learn about managing microfrontends on Vercel.
-- [Security](https://vercel.com/docs/microfrontends/managing-microfrontends/security?from=related) — Learn about security on Vercel.
-- [Getting Started](https://vercel.com/docs/routing-middleware/getting-started?from=related) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
-- [Incremental Migration](https://vercel.com/docs/incremental-migration?from=related) — Learn how to migrate your app or website to Vercel with minimal risk and high impact.
-- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
+- [Microfrontends](https://turborepo.dev/docs/guides/microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
+- [Microfrontends support is now in Public Beta](https://vercel.com/changelog/microfrontends-support-is-now-in-public-beta?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Ftroubleshooting&source_site=vercel-docs&relationship=related)
+- [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Learn how to debug how Vercel decides where to route your request
+- [How Vercel adopted microfrontends](https://vercel.com/blog/how-vercel-adopted-microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Ftroubleshooting&source_site=vercel-docs&relationship=related)
+- [Why is my deployed project giving a 404?](https://vercel.com/kb/guide/why-is-my-deployed-project-giving-404?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Vercel 404 errors often hit healthy builds when routing metadata does not match the request path. Learn the causes and h
+- [Incremental Migrations with Microfrontends](https://vercel.com/kb/guide/incremental-migrations-with-microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Learn how to migrate legacy applications using microfrontends
+- [Managing microfrontends](https://vercel.com/docs/microfrontends/managing-microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Learn how to manage your microfrontends on Vercel.
+- [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
-Full cross-link map for this page: [/docs/microfrontends/troubleshooting.graph.md](/docs/microfrontends/troubleshooting.graph.md)
+Full cross-link map for this page: [/docs/microfrontends/troubleshooting.graph.md](/docs/microfrontends/troubleshooting.graph.md?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Ftroubleshooting&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 The `@vercel/microfrontends` package includes test utilities to help avoid common misconfigurations.

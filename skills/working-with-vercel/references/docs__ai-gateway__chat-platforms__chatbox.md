@@ -13,8 +13,8 @@ related:
 summary: Use Chatbox with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/chat-platforms/chatbox.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "e6210c7b520291936726ee69d205afd0fe6c2e73d435730c69a269f9d0ef6038"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "a3dfbe0060c6020d2013893631d28a666f22e59cf9631d285333ff993a2dd3c4"
 ---
 
 # Chatbox
@@ -27,13 +27,13 @@ sha256: "e6210c7b520291936726ee69d205afd0fe6c2e73d435730c69a269f9d0ef6038"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [LibreChat](https://vercel.com/docs/ai-gateway/chat-platforms/librechat?from=related) — Use LibreChat with the AI Gateway.
-- [Blackbox AI](https://vercel.com/docs/ai-gateway/coding-agents/blackbox?from=related) — Use the Blackbox AI CLI with the AI Gateway.
-- [OpenClaw \\(Clawdbot\\)](https://vercel.com/docs/ai-gateway/chat-platforms/openclaw?from=related) — Use OpenClaw \\(formerly Clawdbot\\) with AI Gateway.
-- [Open WebUI](https://vercel.com/docs/ai-gateway/chat-platforms/open-webui?from=related) — Use Open WebUI with the AI Gateway.
-- [OpenClaw](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related) — Learn about openclaw on Vercel.
+- [LibreChat](https://vercel.com/docs/ai-gateway/chat-platforms/librechat?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms%2Fchatbox&source_site=vercel-docs&relationship=related) — Use LibreChat with the AI Gateway.
+- [Blackbox AI](https://vercel.com/docs/ai-gateway/coding-agents/blackbox?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms%2Fchatbox&source_site=vercel-docs&relationship=related) — Use the Blackbox AI CLI with the AI Gateway.
+- [OpenClaw \\(Clawdbot\\)](https://vercel.com/docs/ai-gateway/chat-platforms/openclaw?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms%2Fchatbox&source_site=vercel-docs&relationship=related) — Use OpenClaw \\(formerly Clawdbot\\) with AI Gateway.
+- [Xcode](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms%2Fchatbox&source_site=vercel-docs&relationship=related) — Use Xcode's coding assistant with the AI Gateway.
+- [Open WebUI](https://vercel.com/docs/ai-gateway/chat-platforms/open-webui?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms%2Fchatbox&source_site=vercel-docs&relationship=related) — Use Open WebUI with the AI Gateway.
 
-Full cross-link map for this page: [/docs/ai-gateway/chat-platforms/chatbox.graph.md](/docs/ai-gateway/chat-platforms/chatbox.graph.md)
+Full cross-link map for this page: [/docs/ai-gateway/chat-platforms/chatbox.graph.md](/docs/ai-gateway/chat-platforms/chatbox.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms%2Fchatbox&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Configuring Chatbox

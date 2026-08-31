@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/claude-code.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "da0fbb5882cac33ae9829296306bd6fddc273c084240a5e3cb304e9f0bc402ef"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "21782466fd7867387bf8883d0cb1138a1203159e3dff8475116239a47449c778"
 ---
 
 # Claude Code Harness
@@ -93,7 +93,16 @@ const harness = createClaudeCode({
 
 Settings:
 
-- `auth`: authentication mode: `auto`, `direct`, or `ai-gateway`.
+- `auth`: authentication mode (`auto`, `direct`, or `ai-gateway`) or an
+  isolated authentication environment.
+- `credentialForwarding`: optional synchronous or asynchronous callback that
+  customizes each credential immediately before the harness adapter forwards it
+  into a sandbox process. It receives the credential value that would otherwise
+  be forwarded (either the real credential or a masked value) and the
+  environment variable name used to expose it. This callback only controls the
+  value forwarded into the sandbox process. It does not restrict which
+  credentials the harness adapter can discover, read, or otherwise access in
+  the host process.
 - `mcpServers`: MCP server definitions keyed by server name.
 - `model`: Anthropic model id passed to the underlying Claude Code runtime.
 - `maxTurns`: maximum internal turns before yielding.
@@ -147,6 +156,18 @@ const directHarness = createClaudeCode({ auth: 'direct' });
 const gatewayHarness = createClaudeCode({ auth: 'ai-gateway' });
 ```
 
+Pass an authentication environment to use programmatically resolved
+credentials without reading `process.env`:
+
+```ts
+const harness = createClaudeCode({
+  auth: { ANTHROPIC_API_KEY: await resolveAnthropicToken() },
+});
+```
+
+The supplied record replaces the host environment for authentication
+discovery. Only recognized authentication variables are forwarded.
+
 ## Sandbox
 
 Claude Code requires a network sandbox with at least one exposed port,
@@ -194,6 +215,8 @@ Claude Code supports built-in tool approval requests when `permissionMode` is
 - [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
 - [Grok Build](/providers/ai-sdk-harnesses/grok-build)
 - [Cline](/providers/ai-sdk-harnesses/cline)
+- [Cursor](/providers/ai-sdk-harnesses/cursor)
+- [fx](/providers/ai-sdk-harnesses/fx)
 
 
 [Full Sitemap](/sitemap.md)

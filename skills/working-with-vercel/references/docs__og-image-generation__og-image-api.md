@@ -3,7 +3,7 @@ title: @vercel/og Reference
 product: vercel
 url: /docs/og-image-generation/og-image-api
 canonical_url: "https://vercel.com/docs/og-image-generation/og-image-api"
-last_updated: 2025-07-18
+last_updated: 2026-08-11
 type: reference
 prerequisites:
   - /docs/og-image-generation
@@ -12,8 +12,8 @@ related:
 summary: This reference provides information on how the @vercel/og package works on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/og-image-generation/og-image-api.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "f89c8e8201ab7cb2288e8209713460380ef813c063740b531b9412e6bcc4832b"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "444c3001e5d6c5773897ff15c3f44d07e82052a8bab22ac55c1a086de5009e77"
 ---
 
 # @vercel/og Reference
@@ -26,19 +26,18 @@ The package exposes an `ImageResponse` constructor, with the following parameter
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [ImageResponse](https://nextjs.org/docs/app/api-reference/functions/image-response?from=related) — API Reference for the ImageResponse constructor.
-- [Using emoji in your OG image](https://vercel.com/kb/guide/using-emoji-in-image?from=related) — Learn how to use emojis to generate an OG image.
-- [Using an SVG image in your OG image](https://vercel.com/kb/guide/using-svg-image?from=related) — Learn how to use SVG embedded content to generate your OG images.
-- [Using Tailwind CSS with your OG Image](https://vercel.com/kb/guide/using-tailwind?from=related) — Learn how to use Tailwind CSS to style your OG images.
-- [Using an external image as OG image](https://vercel.com/kb/guide/using-an-external-dynamic-image?from=related) — Learn how to pass the username as a URL parameter to pull an external profile image for the image generation.
-- [Displaying headlines in social previews with Vercel OG](https://vercel.com/kb/guide/displaying-article-headlines-in-social-previews?from=related) — Twitter/X is planning to remove headlines from social previews. To get around this limitation, Vercel OG offers a way to
-- [opengraph-image and twitter-image](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image?from=related) — API Reference for the Open Graph Image and Twitter Image file conventions.
-- [Metadata and OG images](https://nextjs.org/docs/app/getting-started/metadata-and-og-images?from=related) — Learn how to add metadata to your pages and create dynamic OG images.
-- [Next.js](https://vercel.com/docs/frameworks/full-stack/nextjs?from=related) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
-- [Image Optimization](https://vercel.com/docs/image-optimization?from=related) — Transform and optimize images to improve page load performance.
-- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
+- [ImageResponse](https://nextjs.org/docs/app/api-reference/functions/image-response?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fog-image-api&source_site=vercel-docs&relationship=related) — API Reference for the ImageResponse constructor.
+- [Using emoji in your OG image](https://vercel.com/kb/guide/using-emoji-in-image?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fog-image-api&source_site=vercel-docs&relationship=related) — Learn how to use emojis to generate an OG image.
+- [Using an SVG image in your OG image](https://vercel.com/kb/guide/using-svg-image?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fog-image-api&source_site=vercel-docs&relationship=related) — Learn how to use SVG embedded content to generate your OG images.
+- [Using Tailwind CSS with your OG Image](https://vercel.com/kb/guide/using-tailwind?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fog-image-api&source_site=vercel-docs&relationship=related) — Learn how to use Tailwind CSS to style your OG images.
+- [Using an external image as OG image](https://vercel.com/kb/guide/using-an-external-dynamic-image?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fog-image-api&source_site=vercel-docs&relationship=related) — Learn how to pass the username as a URL parameter to pull an external profile image for the image generation.
+- [Displaying headlines in social previews with Vercel OG](https://vercel.com/kb/guide/displaying-article-headlines-in-social-previews?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fog-image-api&source_site=vercel-docs&relationship=related) — Twitter/X is planning to remove headlines from social previews. To get around this limitation, Vercel OG offers a way to
+- [opengraph-image and twitter-image](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fog-image-api&source_site=vercel-docs&relationship=related) — API Reference for the Open Graph Image and Twitter Image file conventions.
+- [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fog-image-api&source_site=vercel-docs&relationship=related) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
+- [Image Optimization with Vercel](https://vercel.com/docs/image-optimization?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fog-image-api&source_site=vercel-docs&relationship=related) — Transform and optimize images to improve page load performance.
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fog-image-api&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
-Full cross-link map for this page: [/docs/og-image-generation/og-image-api.graph.md](/docs/og-image-generation/og-image-api.graph.md)
+Full cross-link map for this page: [/docs/og-image-generation/og-image-api.graph.md](/docs/og-image-generation/og-image-api.graph.md?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fog-image-api&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ```ts v0="build" filename="ImageResponse Interface" framework=all

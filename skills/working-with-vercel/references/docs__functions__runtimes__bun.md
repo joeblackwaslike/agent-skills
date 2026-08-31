@@ -3,7 +3,7 @@ title: Using the Bun Runtime with Vercel Functions
 product: vercel
 url: /docs/functions/runtimes/bun
 canonical_url: "https://vercel.com/docs/functions/runtimes/bun"
-last_updated: 2026-07-15
+last_updated: 2026-08-24
 type: reference
 prerequisites:
   - /docs/functions/runtimes
@@ -13,12 +13,12 @@ related:
   - /docs/functions/websockets
   - /docs/incremental-static-regeneration
   - /docs/routing-middleware
-  - /docs/functions/runtimes/node-js
+  - /docs/functions/limitations
 summary: Learn how to use the Bun runtime with Vercel Functions to create fast, efficient functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/bun.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "b68892e82a811825c023af11a4fab5ab4ad2bd05e7498d2ccede1788bd2ccd92"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "a51dc9309ae7c0c5fbd54e983c1b854c753c9ebafc5060052ee8b352d6ee3a76"
 ---
 
 # Using the Bun Runtime with Vercel Functions
@@ -31,18 +31,20 @@ sha256: "b68892e82a811825c023af11a4fab5ab4ad2bd05e7498d2ccede1788bd2ccd92"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Build with an Express starter template](https://vercel.com/kb/guide/build-with-a-express-starter-template?from=related) — Deploy an Express app to Vercel from a template. Browse Express starters from Vercel and the community, then run them lo
-- [How to ship an Elysia app on Vercel](https://vercel.com/kb/guide/ship-a-elysia-app-on-vercel?from=related) — Deploy a Elysia app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and co
-- [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel?from=related) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
-- [How to ship an H3 app on Vercel](https://vercel.com/kb/guide/ship-a-h3-app-on-vercel?from=related) — Deploy an H3 app to Vercel with zero configuration. Learn to configure streaming, middleware, cron jobs, the Bun runtime
-- [How to ship a Hono app on Vercel](https://vercel.com/kb/guide/ship-a-hono-app-on-vercel?from=related) — Deploy a Hono app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and conf
-- [Runtime](https://vercel.com/docs/functions/configuring-functions/runtime?from=related) — Learn how to configure the runtime for Vercel Functions.
-- [Supported Frameworks](https://vercel.com/docs/frameworks?from=related) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
-- [Full-stack](https://vercel.com/docs/frameworks/full-stack?from=related) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
-- [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration?from=related) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
-- [Elysia](https://vercel.com/docs/frameworks/backend/elysia?from=related) — Build fast TypeScript backends with Elysia and deploy to Vercel. Learn the project structure, plugins, middleware, and h
+- [Bun runtime on Vercel Functions](https://vercel.com/blog/bun-runtime-on-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=related)
+- [Bun runtime now in Public Beta for Vercel Functions](https://vercel.com/changelog/bun-runtime-now-in-public-beta-for-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=related)
+- [Bun runtime for Vercel Functions now accepts Bun.serve as an entrypoint](https://vercel.com/changelog/bun-serve-entrypoint-for-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=related)
+- [Bun 1.4 is now available in Vercel Functions](https://vercel.com/changelog/bun-1-4-is-now-available-in-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=related)
+- [Bun runtime now supports large functions and extended max duration](https://vercel.com/changelog/bun-runtime-now-supports-large-functions-and-extended-max-duration?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=related)
+- [Elysia can now be automatically deployed on Vercel](https://vercel.com/changelog/support-for-elysia?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=related)
+- [Build with an Express starter template](https://vercel.com/kb/guide/build-with-a-express-starter-template?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=related) — Deploy an Express app to Vercel from a template. Browse Express starters from Vercel and the community, then run them lo
+- [How to ship an Elysia app on Vercel](https://vercel.com/kb/guide/ship-a-elysia-app-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=related) — Deploy a Elysia app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and co
+- [How to ship a Nitro app on Vercel](https://vercel.com/kb/guide/ship-a-nitro-app-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=related) — Deploy a Nitro app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
+- [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=related) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
+- [Frameworks on Vercel](https://vercel.com/docs/frameworks?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
+- [Elysia on Vercel](https://vercel.com/docs/frameworks/backend/elysia?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=related) — Build fast TypeScript backends with Elysia and deploy to Vercel. Learn the project structure, plugins, middleware, and h
 
-Full cross-link map for this page: [/docs/functions/runtimes/bun.graph.md](/docs/functions/runtimes/bun.graph.md)
+Full cross-link map for this page: [/docs/functions/runtimes/bun.graph.md](/docs/functions/runtimes/bun.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Bun is a fast, all-in-one JavaScript runtime that serves as an alternative to Node.js.
@@ -156,6 +158,8 @@ The Bun runtime works with [Routing Middleware](/docs/routing-middleware) the sa
 ## Feature support
 
 The Bun runtime on Vercel supports most Node.js features. The main differences relate to automatic source maps, bytecode caching, and request metrics on the `node:http` and `node:https` modules. Request metrics using `fetch` work with both runtimes.
+
+Vercel Functions using the Bun runtime support [large functions](/docs/functions/limitations#large-functions-beta) with uncompressed bundles up to 5 GB and [extended max duration](/docs/functions/configuring-functions/duration#extended-max-duration-beta) up to 30 minutes. Both features are in beta.
 
 See the table below for a detailed comparison:
 

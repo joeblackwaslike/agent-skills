@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/prodia.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "27cfd12f8c52b0a272766b0cf163c041c4968ef7bf8e05734ba66f139dc6a64d"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "8b011b4b0e8c0b232f044b261d6c090db93b83dbdff6d713e2fcbdb0f0456136"
 ---
 
 # Prodia Provider
@@ -212,6 +212,7 @@ console.log('Elapsed:', metadata?.elapsed);
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
 - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
+- [Z.AI](/providers/ai-sdk-providers/zai)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)
 - [Fireworks](/providers/ai-sdk-providers/fireworks)

@@ -12,8 +12,8 @@ related:
 summary: Discover agent skills relevant to your project using the vercel skills CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/skills.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "dc08fe1a710f0cb1fa62530f018060df59cca58604d7cd209b3a25b207c52bbb"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "148a3fd48f812a35a3b63ccd5172e7cee44b7db4a2a3c712a6897f798f8e5946"
 ---
 
 # vercel skills
@@ -26,17 +26,19 @@ The `vercel skills` command surfaces agent skills relevant to your project. When
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Agent Skills: Creating, Installing, and Sharing Reusable Agent Context](https://vercel.com/kb/guide/agent-skills-creating-installing-and-sharing-reusable-agent-context?from=related) — This guide will cover what skills are, how to create custom skills for yourself and your team, and how to publish them t
-- [How to add skills to your eve agent](https://vercel.com/kb/guide/how-to-add-eve-skills?from=related) — Add skills to an eve agent by creating a file under agent/skills/ or installing a published skill with the npx skills ad
-- [Skills](https://eve.dev/docs/skills?from=related) — Author load-on-demand procedures the model pulls into context with load_skill.
-- [Skills](https://vercel.com/docs/agent-resources/skills?from=related) — Install skills to enhance AI coding agents with specialized capabilities for React, Next.js, deployment, and more.
-- [Choosing between TanStack Intent and \\`skills\\`](https://vercel.com/kb/guide/tanstack-intent-vs-skills?from=related) — TanStack Intent vs skills: compare how each tool sources, versions, and discovers agent skills for AI coding agents, and
-- [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
-- [vercel api](https://vercel.com/docs/cli/api?from=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel agent](https://vercel.com/docs/cli/agent?from=related) — Generate an AGENTS.md file with Vercel deployment best practices using the vercel agent CLI command.
-- [Agent Resources](https://vercel.com/docs/agent-resources?from=related) — Resources for building with AI on Vercel, including documentation access, MCP servers, and agent skills.
+- [Agent Skills: Creating, Installing, and Sharing Reusable Agent Context](https://vercel.com/kb/guide/agent-skills-creating-installing-and-sharing-reusable-agent-context?from=related&source_path=%2Fdocs%2Fcli%2Fskills&source_site=vercel-docs&relationship=related) — This guide will cover what skills are, how to create custom skills for yourself and your team, and how to publish them t
+- [Agent skills explained: An FAQ](https://vercel.com/blog/agent-skills-explained-an-faq?from=related&source_path=%2Fdocs%2Fcli%2Fskills&source_site=vercel-docs&relationship=related)
+- [Introducing skills, the open agent skills ecosystem](https://vercel.com/changelog/introducing-skills-the-open-agent-skills-ecosystem?from=related&source_path=%2Fdocs%2Fcli%2Fskills&source_site=vercel-docs&relationship=related)
+- [How to add skills to your eve agent](https://vercel.com/kb/guide/how-to-add-eve-skills?from=related&source_path=%2Fdocs%2Fcli%2Fskills&source_site=vercel-docs&relationship=related) — Add skills to an eve agent by creating a file under agent/skills/ or installing a published skill with the npx skills ad
+- [Skills v1.1.1: Interactive discovery, open source release, and agent support](https://vercel.com/changelog/skills-v1-1-1-interactive-discovery-open-source-release-and-agent-support?from=related&source_path=%2Fdocs%2Fcli%2Fskills&source_site=vercel-docs&relationship=related)
+- [Skills](https://eve.dev/docs/skills?from=related&source_path=%2Fdocs%2Fcli%2Fskills&source_site=vercel-docs&relationship=related) — Author load-on-demand procedures the model pulls into context with load_skill.
+- [Agent Skills](https://vercel.com/docs/agent-resources/skills?from=related&source_path=%2Fdocs%2Fcli%2Fskills&source_site=vercel-docs&relationship=related) — Install skills to enhance AI coding agents with specialized capabilities for React, Next.js, deployment, and more.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fcli%2Fskills&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fskills&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [Agent Resources](https://vercel.com/docs/agent-resources?from=related&source_path=%2Fdocs%2Fcli%2Fskills&source_site=vercel-docs&relationship=related) — Resources for building with AI on Vercel, including documentation access, MCP servers, and agent skills.
+- [vercel agent](https://vercel.com/docs/cli/agent?from=related&source_path=%2Fdocs%2Fcli%2Fskills&source_site=vercel-docs&relationship=related) — Generate an AGENTS.md file with Vercel deployment best practices using the vercel agent CLI command.
 
-Full cross-link map for this page: [/docs/cli/skills.graph.md](/docs/cli/skills.graph.md)
+Full cross-link map for this page: [/docs/cli/skills.graph.md](/docs/cli/skills.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fskills&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Usage

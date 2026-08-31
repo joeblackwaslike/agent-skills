@@ -3,7 +3,7 @@ title: Vercel Integrations
 product: vercel
 url: /docs/integrations
 canonical_url: "https://vercel.com/docs/integrations"
-last_updated: 2026-06-22
+last_updated: 2026-08-11
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: "Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless content, commerce, and more."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "a245a2afcb02913ad876c4d22715a719991271f9e6e02e8f73bda7edecd4a36f"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "4c68fe077a15c9b51bacc4b4eb260815ecfa9be31fcdc17a7316a04f74e3fe5d"
 ---
 
 # Vercel Integrations
@@ -30,15 +30,20 @@ Integrations allow you to extend the capabilities of Vercel by connecting with t
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Give your agents secure access to third-party APIs](https://vercel.com/kb/guide/vercel-connect?from=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Discord, Notion, Figma, Snowflake, and Salesforce f
-- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
-- [Marketplace](https://vercel.com/docs/marketplace-storage?from=related) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
-- [Integrations for Agents](https://vercel.com/docs/agent-resources/integrations-for-agents?from=related) — Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
-- [Deep Infra](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra?from=related) — Learn how to add the Deep Infra native integration with Vercel.
-- [Audit Logs](https://vercel.com/docs/audit-log?from=related) — Learn how to track and analyze your team members' activities.
-- [Checks](https://vercel.com/docs/checks?from=related) — Vercel automatically keeps an eye on various aspects of your web application using the Checks API. Learn how to use Chec
+- [AI Integrations and playground in the Vercel Dashboard](https://vercel.com/changelog/ai-integration-and-playground-in-the-vercel-dashboard?from=related&source_path=%2Fdocs%2Fintegrations&source_site=vercel-docs&relationship=related)
+- [Install Marketplace Integrations from the Vercel CLI](https://vercel.com/changelog/install-marketplace-integrations-from-the-vercel-cli?from=related&source_path=%2Fdocs%2Fintegrations&source_site=vercel-docs&relationship=related)
+- [Integration Webhooks are now easier to configure](https://vercel.com/changelog/integration-webhooks-are-now-easier-to-configure?from=related&source_path=%2Fdocs%2Fintegrations&source_site=vercel-docs&relationship=related)
+- [Integrations can now be managed more efficiently](https://vercel.com/changelog/integrations-can-now-be-managed-more-efficiently?from=related&source_path=%2Fdocs%2Fintegrations&source_site=vercel-docs&relationship=related)
+- [Improvements and fixes](https://vercel.com/changelog/may-2022-papercuts?from=related&source_path=%2Fdocs%2Fintegrations&source_site=vercel-docs&relationship=related)
+- [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect?from=related&source_path=%2Fdocs%2Fintegrations&source_site=vercel-docs&relationship=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
+- [Expanding observability on Vercel](https://vercel.com/blog/expanding-observability-on-vercel?from=related&source_path=%2Fdocs%2Fintegrations&source_site=vercel-docs&relationship=related)
+- [Supercharge your Vercel Projects with Integrations](https://vercel.com/blog/integrations-marketplace?from=related&source_path=%2Fdocs%2Fintegrations&source_site=vercel-docs&relationship=related)
+- [Log Drains](https://vercel.com/blog/log-drains?from=related&source_path=%2Fdocs%2Fintegrations&source_site=vercel-docs&relationship=related)
+- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related&source_path=%2Fdocs%2Fintegrations&source_site=vercel-docs&relationship=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
+- [Storage on Vercel Marketplace](https://vercel.com/docs/marketplace-storage?from=related&source_path=%2Fdocs%2Fintegrations&source_site=vercel-docs&relationship=related) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
+- [Vercel Deep Infra Integration](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra?from=related&source_path=%2Fdocs%2Fintegrations&source_site=vercel-docs&relationship=related) — Learn how to add the Deep Infra native integration with Vercel.
 
-Full cross-link map for this page: [/docs/integrations.graph.md](/docs/integrations.graph.md)
+Full cross-link map for this page: [/docs/integrations.graph.md](/docs/integrations.graph.md?from=related&source_path=%2Fdocs%2Fintegrations&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 - Work with [storage](/docs/storage) products from third-party solutions

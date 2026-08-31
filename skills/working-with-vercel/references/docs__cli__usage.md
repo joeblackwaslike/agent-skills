@@ -12,8 +12,8 @@ related:
 summary: Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/usage.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "b159a1c185a0bea8dd9374288951fcdbe47adf94829648dd6d55b6ae151db872"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "3d87d29b6d171e7394b370d8cf9681e5c3ae3baa3e386bdb33df6888a2ba8fee"
 ---
 
 # vercel usage
@@ -26,14 +26,15 @@ The `vercel usage` command displays billing usage for the current billing period
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Get Usage Summary](https://v0.app/docs/api/v2/reference/usage/get-usage-summary?from=related) — Returns credit usage for the active billing scope. Team owners and billing members receive team-wide usage by default; o
-- [vercel metrics](https://vercel.com/docs/cli/metrics?from=related) — Query observability metrics and inspect available metrics, dimensions, and aggregations using the Vercel CLI.
-- [Manage and Optimize Usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
-- [vercel api](https://vercel.com/docs/cli/api?from=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel help](https://vercel.com/docs/cli/help?from=related) — Learn how to use the vercel help CLI command to get information about all available Vercel CLI commands.
-- [vercel buy](https://vercel.com/docs/cli/buy?from=related) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
+- [Access billing usage and cost data via API](https://vercel.com/changelog/access-billing-usage-cost-data-api?from=related&source_path=%2Fdocs%2Fcli%2Fusage&source_site=vercel-docs&relationship=related)
+- [Get Usage Summary](https://v0.app/docs/api/v2/reference/usage/get-usage-summary?from=related&source_path=%2Fdocs%2Fcli%2Fusage&source_site=vercel-docs&relationship=related) — Returns credit usage for the active billing scope. Team owners and billing members receive team-wide usage by default; o
+- [vercel metrics](https://vercel.com/docs/cli/metrics?from=related&source_path=%2Fdocs%2Fcli%2Fusage&source_site=vercel-docs&relationship=related) — List and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
+- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fcli%2Fusage&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fusage&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel help](https://vercel.com/docs/cli/help?from=related&source_path=%2Fdocs%2Fcli%2Fusage&source_site=vercel-docs&relationship=related) — Learn how to use the vercel help CLI command to get information about all available Vercel CLI commands.
+- [vercel buy](https://vercel.com/docs/cli/buy?from=related&source_path=%2Fdocs%2Fcli%2Fusage&source_site=vercel-docs&relationship=related) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
 
-Full cross-link map for this page: [/docs/cli/usage.graph.md](/docs/cli/usage.graph.md)
+Full cross-link map for this page: [/docs/cli/usage.graph.md](/docs/cli/usage.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fusage&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 This is only available for Owner, Member, Developer, Security, Billing, and Enterprise Viewer [roles](/docs/rbac/access-roles#team-level-roles) for the current active team.

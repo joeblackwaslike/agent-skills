@@ -3,7 +3,7 @@ title: Getting started with Global Config
 product: vercel
 url: /docs/global-config/get-started
 canonical_url: "https://vercel.com/docs/global-config/get-started"
-last_updated: 2026-07-29
+last_updated: 2026-08-11
 type: tutorial
 prerequisites:
   - /docs/global-config
@@ -16,8 +16,8 @@ related:
 summary: Learn how to create a Global Config store and read from it in your project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/get-started.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "fc4abd9b15b75956336b289f4b0ca0d8185ad01ccb253272ad5a810e9b712ec0"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "f57757141c400d02a5321776aa7b033260a0b7f7ff2cf65aaaaf3fae4ff04184"
 ---
 
 # Getting started with Global Config
@@ -30,16 +30,15 @@ Global Config is a distributed key-value store that allows you to store and retr
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Redirecting](https://nextjs.org/docs/app/guides/redirecting?from=related) — Learn the different ways to handle redirects in Next.js.
-- [Redirecting](https://nextjs.org/docs/pages/guides/redirecting?from=related) — Learn the different ways to handle redirects in Next.js.
-- [Global Config](https://flags-sdk.dev/docs/providers/global-config?from=related)
-- [LaunchDarkly](https://vercel.com/docs/global-config/global-config-integrations/launchdarkly-global-config?from=related) — Learn how to use Global Config with Vercel's LaunchDarkly integration.
-- [DevCycle](https://vercel.com/docs/global-config/global-config-integrations/devcycle-global-config?from=related) — Learn how to use Global Config with Vercel's DevCycle integration.
-- [Statsig](https://vercel.com/docs/global-config/global-config-integrations/statsig-global-config?from=related) — Learn how to use Global Config with Vercel's Statsig integration.
-- [vercel global-config](https://vercel.com/docs/cli/global-config?from=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
-- [Overview](https://vercel.com/docs/storage?from=related) — Store large files and global configuration with Vercel's storage products.
+- [How to handle redirects in Next.js](https://nextjs.org/docs/app/guides/redirecting?from=related&source_path=%2Fdocs%2Fglobal-config%2Fget-started&source_site=vercel-docs&relationship=related) — Learn the different ways to handle redirects in Next.js.
+- [How to handle redirects in Next.js](https://nextjs.org/docs/pages/guides/redirecting?from=related&source_path=%2Fdocs%2Fglobal-config%2Fget-started&source_site=vercel-docs&relationship=related) — Learn the different ways to handle redirects in Next.js.
+- [Using Global Config with LaunchDarkly](https://vercel.com/docs/global-config/global-config-integrations/launchdarkly-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fget-started&source_site=vercel-docs&relationship=related) — Learn how to use Global Config with Vercel's LaunchDarkly integration.
+- [Using Global Config with DevCycle](https://vercel.com/docs/global-config/global-config-integrations/devcycle-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fget-started&source_site=vercel-docs&relationship=related) — Learn how to use Global Config with Vercel's DevCycle integration.
+- [Using Global Config with Statsig](https://vercel.com/docs/global-config/global-config-integrations/statsig-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fget-started&source_site=vercel-docs&relationship=related) — Learn how to use Global Config with Vercel's Statsig integration.
+- [vercel global-config](https://vercel.com/docs/cli/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fget-started&source_site=vercel-docs&relationship=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
+- [Vercel Storage overview](https://vercel.com/docs/storage?from=related&source_path=%2Fdocs%2Fglobal-config%2Fget-started&source_site=vercel-docs&relationship=related) — Store large files and global configuration with Vercel's storage products.
 
-Full cross-link map for this page: [/docs/global-config/get-started.graph.md](/docs/global-config/get-started.graph.md)
+Full cross-link map for this page: [/docs/global-config/get-started.graph.md](/docs/global-config/get-started.graph.md?from=related&source_path=%2Fdocs%2Fglobal-config%2Fget-started&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 This guide will help you create a Global Config called `hello_world_store` at the project-level, through the Vercel [dashboard](/dashboard). A token and environment variable `GLOBAL_CONFIG`, that stores the connection string, will be automatically created for you. You'll update the store with a key-value data pair and read the value of `"greeting"` from a local Next.js project.

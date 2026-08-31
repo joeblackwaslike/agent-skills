@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-video-generated-error.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "86f31aae5b2e2f7bd3be9f7207079883aa764a198cebcccc1bb2fde45156e559"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "b862dc454e0ed2111c18d841922f982203ae1f4e0ddfce557452396859ff9384"
 ---
 
 # AI_NoVideoGeneratedError
@@ -70,6 +70,7 @@ try {
 - [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
 - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
+- [AI_StreamProviderError](/docs/reference/ai-sdk-errors/ai-stream-provider-error)
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
 - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
 - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)

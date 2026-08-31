@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/togetherai.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "24c456ebbcf2a55f6da394f765f640b71b2343781efcc9d631a1c60b4b66ce57"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "780a555bd4cc2bc3a8445a1861c58d7b9242d6a59efc9cc41e65e1df814e6acb"
 ---
 
 # Together.ai Provider
@@ -401,6 +401,7 @@ The following provider options are available:
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
 - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
+- [Z.AI](/providers/ai-sdk-providers/zai)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)
 - [Fireworks](/providers/ai-sdk-providers/fireworks)

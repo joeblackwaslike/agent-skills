@@ -3,7 +3,7 @@ title: Models & Providers
 product: vercel
 url: /docs/ai-gateway/models-and-providers
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers"
-last_updated: 2026-07-28
+last_updated: 2026-08-24
 type: conceptual
 prerequisites:
   - /docs/ai-gateway
@@ -16,8 +16,8 @@ related:
 summary: "Work with models and providers in AI Gateway: provider routing and fallbacks, filtering, timeouts, caching, service tiers, uptime and metrics, plus..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "9f0060e28178dfe82c7dadf388eb11b6acab5e65a84dcd4cd179f43879dad9ee"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "846498ff57b6ad78dfecab3ae4d8a95fdbcf7737f5c481e20d281f2d4900b416"
 ---
 
 # Models & Providers
@@ -30,19 +30,20 @@ The AI Gateway's unified API provides flexibility, allowing you to switch betwee
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel?from=related) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
-- [How to run a multi-step research agent on Vercel](https://vercel.com/kb/guide/how-to-run-a-multi-step-research-agent-on-vercel?from=related) — An end-to-end architecture for production research agents on Vercel using Sandbox, Workflows, and AI Gateway with isolat
-- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related)
-- [Choosing a Provider](https://ai-sdk.dev/docs/getting-started/choosing-a-provider?from=related)
-- [Cloudflare AI Gateway](https://ai-sdk.dev/providers/community-providers/cloudflare-ai-gateway?from=related)
-- [Providers and Models](https://ai-sdk.dev/docs/foundations/providers-and-models?from=related)
-- [Advanced](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API.
-- [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model?from=related) — Learn how to add a new AI model to your Vercel projects
-- [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
-- [Video Generation](https://vercel.com/docs/ai-gateway/modalities/video-generation?from=related) — Generate videos from text prompts, images, or video input using AI models through Vercel AI Gateway.
-- [vercel ai-gateway](https://vercel.com/docs/cli/ai-gateway?from=related) — Manage AI Gateway resources from the Vercel CLI: API keys, routing rules, models, and coding agent setup.
+- [Customize timeouts for faster automatic failover on Vercel AI Gateway](https://vercel.com/changelog/provider-level-custom-timeouts-for-faster-fail-over-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=related)
+- [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=related) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
+- [How to run a multi-step research agent on Vercel](https://vercel.com/kb/guide/how-to-run-a-multi-step-research-agent-on-vercel?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=related) — An end-to-end architecture for production research agents on Vercel using Sandbox, Workflows, and AI Gateway with isolat
+- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=related)
+- [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=related)
+- [Choosing a Provider](https://ai-sdk.dev/docs/getting-started/choosing-a-provider?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=related)
+- [Model fallbacks now available in Vercel AI Gateway](https://vercel.com/changelog/model-fallbacks-now-available-in-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=related)
+- [Provider Options](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API.
+- [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=related) — Learn how to add a new AI model to your Vercel projects
+- [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
+- [Video Generation](https://vercel.com/docs/ai-gateway/modalities/video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=related) — Generate videos from text prompts, images, or video input using AI models through Vercel AI Gateway.
+- [vercel ai-gateway](https://vercel.com/docs/cli/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=related) — Manage AI Gateway resources from the Vercel CLI: API keys, budgets, routing rules, models, leaderboards, and coding agen
 
-Full cross-link map for this page: [/docs/ai-gateway/models-and-providers.graph.md](/docs/ai-gateway/models-and-providers.graph.md)
+Full cross-link map for this page: [/docs/ai-gateway/models-and-providers.graph.md](/docs/ai-gateway/models-and-providers.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 > **💡 Note:** To view the list of supported models and providers, check out the [AI Gateway
@@ -60,7 +61,7 @@ Configure how AI Gateway selects providers and routes requests, and apply capabi
 
 Models are AI algorithms that process your input data to generate responses, such as [Grok 4.3](/ai-gateway/models/grok-4.3), [GPT-5.5](/ai-gateway/models/gpt-5.5), or [Claude Opus 4.7](/ai-gateway/models/claude-opus-4.7). Providers are the companies or services that host these models, such as SpaceXAI, OpenAI, or Anthropic.
 
-In some cases, multiple providers, including the model creator, host the same model. For example, you can use the `xai/grok-4.5` model from SpaceXAI or the `openai/gpt-5.6-sol` model from OpenAI, following the format `creator/model-name`.
+In some cases, multiple providers, including the model creator, host the same model. For example, you can use the `spacexai/grok-4.5` model from SpaceXAI or the `openai/gpt-5.6-sol` model from OpenAI, following the format `creator/model-name`.
 
 Different providers may have different specifications for the same model such as different pricing and performance. You can choose the one that best fits your needs, and compare options on the [AI Gateway leaderboards](/docs/ai-gateway/leaderboards) to see which models and providers developers use most.
 
@@ -104,7 +105,7 @@ import { NextRequest } from 'next/server';
 
 export async function GET() {
   const result = await generateText({
-    model: 'xai/grok-4.5',
+    model: 'spacexai/grok-4.5',
     prompt: 'Tell me the history of the San Francisco Mission-style burrito.',
   });
   return Response.json(result);
@@ -118,7 +119,7 @@ You can also use a provider instance. This can be useful if you'd like to create
 Install the `@ai-sdk/gateway` package directly as a dependency in your project.
 
 ```bash filename="terminal"
-pnpm install @ai-sdk/gateway
+pnpm install @ai-sdk/gateway@latest
 ```
 
 You can change the model by changing the string passed to `gateway()`.

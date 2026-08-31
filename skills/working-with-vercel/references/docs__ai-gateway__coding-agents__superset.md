@@ -3,7 +3,7 @@ title: Superset
 product: vercel
 url: /docs/ai-gateway/coding-agents/superset
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/superset"
-last_updated: 2026-06-20
+last_updated: 2026-08-12
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/coding-agents
@@ -14,8 +14,8 @@ related:
 summary: Use Superset with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/superset.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "53aef682883b8193459896c4e740e62e10dca83b1c9d93df43e9cae7d767b5b8"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "8c7a46311c6e49d590f9c3eea663623949efe2b8f4a8e81bd94b01b32c32394e"
 ---
 
 # Superset
@@ -28,14 +28,15 @@ sha256: "53aef682883b8193459896c4e740e62e10dca83b1c9d93df43e9cae7d767b5b8"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
-- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related) — Use OpenCode with the AI Gateway.
-- [LibreChat](https://vercel.com/docs/ai-gateway/chat-platforms/librechat?from=related) — Use LibreChat with the AI Gateway.
-- [Claude Code](https://vercel.com/docs/ai-gateway/coding-agents/claude-code?from=related) — Use Claude Code and the Claude Agent SDK with AI Gateway.
-- [SDKs & APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis?from=related) — Use the AI Gateway with various SDKs and API specifications including OpenAI, Anthropic, and OpenResponses.
-- [Conductor](https://vercel.com/docs/ai-gateway/coding-agents/conductor?from=related) — Use Conductor with the AI Gateway.
+- [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fsuperset&source_site=vercel-docs&relationship=related)
+- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fsuperset&source_site=vercel-docs&relationship=related) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
+- [Xcode](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fsuperset&source_site=vercel-docs&relationship=related) — Use Xcode's coding assistant with the AI Gateway.
+- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fsuperset&source_site=vercel-docs&relationship=related) — Use OpenCode with the AI Gateway.
+- [LibreChat](https://vercel.com/docs/ai-gateway/chat-platforms/librechat?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fsuperset&source_site=vercel-docs&relationship=related) — Use LibreChat with the AI Gateway.
+- [Claude Code and Claude Agent SDK](https://vercel.com/docs/ai-gateway/coding-agents/claude-code?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fsuperset&source_site=vercel-docs&relationship=related) — Use Claude Code and the Claude Agent SDK with AI Gateway.
+- [Conductor](https://vercel.com/docs/ai-gateway/coding-agents/conductor?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fsuperset&source_site=vercel-docs&relationship=related) — Use Conductor with the AI Gateway.
 
-Full cross-link map for this page: [/docs/ai-gateway/coding-agents/superset.graph.md](/docs/ai-gateway/coding-agents/superset.graph.md)
+Full cross-link map for this page: [/docs/ai-gateway/coding-agents/superset.graph.md](/docs/ai-gateway/coding-agents/superset.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fsuperset&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Terminal configuration

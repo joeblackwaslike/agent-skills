@@ -3,7 +3,7 @@ title: Slack
 product: vercel
 url: /docs/agent/chat/slack
 canonical_url: "https://vercel.com/docs/agent/chat/slack"
-last_updated: 2018-10-20
+last_updated: 2026-08-20
 type: conceptual
 prerequisites:
   - /docs/agent/chat
@@ -17,8 +17,8 @@ related:
 summary: Use Vercel Agent in Slack by mentioning @Vercel in a supported channel or thread
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/chat/slack.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "39c61d84ecf11f64bf983ad5e888445747935a74dbb6f2c7c6c204ebbc1876de"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "5e4a545a2cad78d7de5ec9e909b4af94daa1fa579ad25024554e0d87deef26bf"
 ---
 
 # Slack

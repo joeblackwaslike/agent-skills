@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-download-error.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "d1dfacc253905d7f3e4d750983622660d586449d775d8763bffeb5495eec71c0"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "72f3e5fcc88ec8d191348da606de9fd825dbcbad39f00e53a3a83bcda357228d"
 ---
 
 # AI_DownloadError
@@ -59,6 +59,7 @@ if (DownloadError.isInstance(error)) {
 - [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
 - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
+- [AI_StreamProviderError](/docs/reference/ai-sdk-errors/ai-stream-provider-error)
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
 - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
 - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)

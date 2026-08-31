@@ -12,8 +12,8 @@ related:
 summary: Learn how to view contract commitment information for your Vercel account using the vercel contract CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/contract.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "c88cf0cace428e6231c8e0df1a6c41a1269dd7614c9727edd4bc03ab46cb20c3"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "c4760b80233296d562f1802a5da8fb2fa12239412dd2834e7767eb9237560ca1"
 ---
 
 # vercel contract
@@ -26,13 +26,13 @@ The `vercel contract` command displays contract commitment information for your 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [List FOCUS contract commitments](https://vercel.com/docs/rest-api/billing/list-focus-contract-commitments?from=related)
-- [vercel usage](https://vercel.com/docs/cli/usage?from=related) — Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
-- [vercel help](https://vercel.com/docs/cli/help?from=related) — Learn how to use the vercel help CLI command to get information about all available Vercel CLI commands.
-- [vercel list](https://vercel.com/docs/cli/list?from=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel buy](https://vercel.com/docs/cli/buy?from=related) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
+- [List FOCUS contract commitments](https://vercel.com/docs/rest-api/billing/list-focus-contract-commitments?from=related&source_path=%2Fdocs%2Fcli%2Fcontract&source_site=vercel-docs&relationship=related) — GET /v1/billing/contract-commitments — Returns commitment allocations per contract period in FOCUS v1.3 JSONL format for
+- [vercel usage](https://vercel.com/docs/cli/usage?from=related&source_path=%2Fdocs%2Fcli%2Fcontract&source_site=vercel-docs&relationship=related) — Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
+- [vercel help](https://vercel.com/docs/cli/help?from=related&source_path=%2Fdocs%2Fcli%2Fcontract&source_site=vercel-docs&relationship=related) — Learn how to use the vercel help CLI command to get information about all available Vercel CLI commands.
+- [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fcontract&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel buy](https://vercel.com/docs/cli/buy?from=related&source_path=%2Fdocs%2Fcli%2Fcontract&source_site=vercel-docs&relationship=related) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
 
-Full cross-link map for this page: [/docs/cli/contract.graph.md](/docs/cli/contract.graph.md)
+Full cross-link map for this page: [/docs/cli/contract.graph.md](/docs/cli/contract.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fcontract&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Usage

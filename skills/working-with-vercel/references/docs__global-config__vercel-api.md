@@ -3,7 +3,7 @@ title: Managing Global Configs with Vercel REST API
 product: vercel
 url: /docs/global-config/vercel-api
 canonical_url: "https://vercel.com/docs/global-config/vercel-api"
-last_updated: 2026-07-29
+last_updated: 2026-08-11
 type: conceptual
 prerequisites:
   - /docs/global-config
@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel REST API to create and update Global Configs. You can also read data stored in Global Configs with the Vercel REST API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/vercel-api.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "fd942dd4561b34a1b7e93c2af4c7fde3f8efb9bb6538b8c13305f24a707f7483"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "4b4911599872b5e81f9104b03a091488136a03cc78082bf49dcdaca1500e3286"
 ---
 
 # Managing Global Configs with Vercel REST API
@@ -30,14 +30,14 @@ We recommend you use the Vercel REST API only for creating and updating a [Globa
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy?from=related) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
-- [Global Configs & Dashboard](https://vercel.com/docs/global-config/global-config-dashboard?from=related) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
-- [vercel global-config](https://vercel.com/docs/cli/global-config?from=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
-- [Get Global Config items](https://vercel.com/docs/rest-api/global-config/get-global-config-items?from=related)
-- [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config?from=related)
-- [Get Global Configs](https://vercel.com/docs/rest-api/global-config/get-global-configs?from=related)
+- [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy?from=related&source_path=%2Fdocs%2Fglobal-config%2Fvercel-api&source_site=vercel-docs&relationship=related) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
+- [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fvercel-api&source_site=vercel-docs&relationship=related) — POST /v1/global-config — Creates a Global Config.
+- [Get Global Configs](https://vercel.com/docs/rest-api/global-config/get-global-configs?from=related&source_path=%2Fdocs%2Fglobal-config%2Fvercel-api&source_site=vercel-docs&relationship=related) — GET /v1/global-config — Returns all Global Configs.
+- [Get Global Config items](https://vercel.com/docs/rest-api/global-config/get-global-config-items?from=related&source_path=%2Fdocs%2Fglobal-config%2Fvercel-api&source_site=vercel-docs&relationship=related) — GET /v1/global-config/{edgeConfigId}/items — Returns all items of a Global Config.
+- [Get a Global Config](https://vercel.com/docs/rest-api/global-config/get-a-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fvercel-api&source_site=vercel-docs&relationship=related) — GET /v1/global-config/{edgeConfigId} — Returns a Global Config.
+- [Managing Global Configs with the Dashboard](https://vercel.com/docs/global-config/global-config-dashboard?from=related&source_path=%2Fdocs%2Fglobal-config%2Fvercel-api&source_site=vercel-docs&relationship=related) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
 
-Full cross-link map for this page: [/docs/global-config/vercel-api.graph.md](/docs/global-config/vercel-api.graph.md)
+Full cross-link map for this page: [/docs/global-config/vercel-api.graph.md](/docs/global-config/vercel-api.graph.md?from=related&source_path=%2Fdocs%2Fglobal-config%2Fvercel-api&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Updates to your Global Config can take up to a few seconds to propagate globally, and therefore might not be available from the Global Config API endpoint immediately. However, fetching your Global Config data from the Vercel REST API will always return the latest version of your Config. The request will not have Vercel's optimizations, and the response will not be served through Vercel's [CDN](/docs/cdn).

@@ -3,7 +3,7 @@ title: Managing the visibility of the Vercel Toolbar
 product: vercel
 url: /docs/vercel-toolbar/managing-toolbar
 canonical_url: "https://vercel.com/docs/vercel-toolbar/managing-toolbar"
-last_updated: 2025-07-18
+last_updated: 2026-08-11
 type: how-to
 prerequisites:
   - /docs/vercel-toolbar
@@ -16,8 +16,8 @@ related:
 summary: Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar/managing-toolbar.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "f6ed6c68bb575db051d3f9f98a7e17a955ab84b7577bd64921d79e39eac82de7"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "1f985820c9bd657bdcc58b280c8850fc900d20c3132fd0e5e8442736b891d7c1"
 ---
 
 # Managing the visibility of the Vercel Toolbar
@@ -30,13 +30,17 @@ sha256: "f6ed6c68bb575db051d3f9f98a7e17a955ab84b7577bd64921d79e39eac82de7"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Add to Production](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-production?from=related) — Learn how to add the Vercel Toolbar to your production environment and how your team members can use tooling to access t
-- [Using Vercel Toolbar](https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar?from=related) — Learn about using vercel toolbar on Vercel.
-- [Add to Environments](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost?from=related) — Learn how to use the Vercel Toolbar in production and local environments.
-- [Enabling Comments](https://vercel.com/docs/comments/how-comments-work?from=related) — Learn when and where Comments are available, and how to enable and disable Comments at the account, project, and session
-- [Add to Localhost](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-localhost?from=related) — Learn how to use the Vercel Toolbar in your local environment.
+- [Introducing new developer tools in the Vercel Toolbar](https://vercel.com/blog/introducing-new-developer-tools-in-the-vercel-toolbar?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fmanaging-toolbar&source_site=vercel-docs&relationship=related)
+- [@vercel/toolbar available to use collaboration features in production](https://vercel.com/changelog/vercel-toolbar-now-available-to-use-collaboration-features-in-production?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fmanaging-toolbar&source_site=vercel-docs&relationship=related)
+- [Use the Vercel Toolbar in Production with the Chrome Extension or the toolbar menu](https://vercel.com/changelog/use-the-vercel-toolbar-in-production?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fmanaging-toolbar&source_site=vercel-docs&relationship=related)
+- [Add the Vercel Toolbar to your production environment](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-production?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fmanaging-toolbar&source_site=vercel-docs&relationship=related) — Learn how to add the Vercel Toolbar to your production environment and how your team members can use tooling to access t
+- [Easier toolbar setup for SvelteKit and other Vite-based frameworks](https://vercel.com/changelog/easier-toolbar-setup-for-sveltekit-and-other-vite-based-frameworks?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fmanaging-toolbar&source_site=vercel-docs&relationship=related)
+- [Improvements to Vercel Toolbar: Shrinking when inactive, removal of avatars, and more](https://vercel.com/changelog/improvements-to-vercel-toolbar?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fmanaging-toolbar&source_site=vercel-docs&relationship=related)
+- [Enabling and Disabling Comments](https://vercel.com/docs/comments/how-comments-work?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fmanaging-toolbar&source_site=vercel-docs&relationship=related) — Learn when and where Comments are available, and how to enable and disable Comments at the account, project, and session
+- [Accessibility Audit Tool](https://vercel.com/docs/vercel-toolbar/accessibility-audit-tool?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fmanaging-toolbar&source_site=vercel-docs&relationship=related) — Learn how to use the Accessibility Audit Tool to automatically check the Web Content Accessibility Guidelines 2.0 level
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fmanaging-toolbar&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
-Full cross-link map for this page: [/docs/vercel-toolbar/managing-toolbar.graph.md](/docs/vercel-toolbar/managing-toolbar.graph.md)
+Full cross-link map for this page: [/docs/vercel-toolbar/managing-toolbar.graph.md](/docs/vercel-toolbar/managing-toolbar.graph.md?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fmanaging-toolbar&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Viewing the toolbar

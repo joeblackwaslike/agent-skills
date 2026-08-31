@@ -3,7 +3,7 @@ title: Dashboard
 product: vercel
 url: /docs/agent/chat/dashboard
 canonical_url: "https://vercel.com/docs/agent/chat/dashboard"
-last_updated: 2018-10-20
+last_updated: 2026-08-19
 type: how-to
 prerequisites:
   - /docs/agent/chat
@@ -16,8 +16,8 @@ related:
 summary: Use Vercel Agent from your Vercel dashboard
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/chat/dashboard.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "5b855449c822fb921ef713add8623ab44840798abed8b0f30c2cfc0bfe09bcc8"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "1191aec0d7d319e010a14f91bc88a26a9bfc2a8e71aab05a36da89ec2c31937c"
 ---
 
 # Dashboard

@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/reference/workflows-and-actions/events-that-trigger-workflows.md"
-fetched_at: "2026-08-10T05:30:56.796Z"
-sha256: "5a46bd2f89362a7ce938f37a0e728fbc2c02ee9254f027ce30ec3e74456364cb"
+fetched_at: "2026-08-31T10:42:32.997Z"
+sha256: "fc133cf7c2da7796476acbbaa037c0463cadb5ed96da7b0f252c3750437b575d"
 ---
 
 ## About events that trigger workflows
@@ -1234,6 +1234,9 @@ on:
 jobs:
   download:
     runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      issues: write
     steps:
       - name: 'Download artifact'
         uses: {% data reusables.actions.action-download-artifact %}

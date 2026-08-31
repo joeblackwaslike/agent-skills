@@ -12,8 +12,8 @@ related:
 summary: Learn how to promote an existing deployment using the vercel promote CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/promote.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "44646353a7ea709a1bb6554627801c93aeb40596087f47f742fec9fb4ad3bdb8"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "c62e9f0633a168cf19e4dd027337a43a0676cf20978f70fd98fceda51af7865f"
 ---
 
 # vercel promote
@@ -26,13 +26,14 @@ The `vercel promote` command is used to promote an existing deployment to be the
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Promote Preview to Production](https://vercel.com/docs/deployments/promote-preview-to-production?from=related) — Test a preview deployment and promote it to production using the CLI.
-- [Promoting Deployments](https://vercel.com/docs/deployments/promoting-a-deployment?from=related) — Learn how to promote deployments to production on Vercel.
-- [Deploying from CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
-- [vercel rollback](https://vercel.com/docs/cli/rollback?from=related) — Learn how to roll back your production deployments to previous deployments using the vercel rollback CLI command.
-- [vercel redeploy](https://vercel.com/docs/cli/redeploy?from=related) — Learn how to redeploy your project using the vercel redeploy CLI command.
+- [Stage and manually promote deployments to production](https://vercel.com/changelog/stage-and-manually-promote-deployments-to-production?from=related&source_path=%2Fdocs%2Fcli%2Fpromote&source_site=vercel-docs&relationship=related)
+- [Promoting a preview deployment to production](https://vercel.com/docs/deployments/promote-preview-to-production?from=related&source_path=%2Fdocs%2Fcli%2Fpromote&source_site=vercel-docs&relationship=related) — Test a preview deployment and promote it to production using the CLI.
+- [Promoting Deployments](https://vercel.com/docs/deployments/promoting-a-deployment?from=related&source_path=%2Fdocs%2Fcli%2Fpromote&source_site=vercel-docs&relationship=related) — Learn how to promote deployments to production on Vercel.
+- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related&source_path=%2Fdocs%2Fcli%2Fpromote&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
+- [vercel rollback](https://vercel.com/docs/cli/rollback?from=related&source_path=%2Fdocs%2Fcli%2Fpromote&source_site=vercel-docs&relationship=related) — Learn how to roll back your production deployments to previous deployments using the vercel rollback CLI command.
+- [vercel redeploy](https://vercel.com/docs/cli/redeploy?from=related&source_path=%2Fdocs%2Fcli%2Fpromote&source_site=vercel-docs&relationship=related) — Learn how to redeploy your project using the vercel redeploy CLI command.
 
-Full cross-link map for this page: [/docs/cli/promote.graph.md](/docs/cli/promote.graph.md)
+Full cross-link map for this page: [/docs/cli/promote.graph.md](/docs/cli/promote.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fpromote&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 > **💡 Note:** Deployments built for the Production environment are the typical promote

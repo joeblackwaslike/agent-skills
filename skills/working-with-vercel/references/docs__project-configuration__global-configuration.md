@@ -3,7 +3,7 @@ title: Global Vercel CLI Configuration
 product: vercel
 url: /docs/project-configuration/global-configuration
 canonical_url: "https://vercel.com/docs/project-configuration/global-configuration"
-last_updated: 2025-12-19
+last_updated: 2026-08-25
 type: reference
 prerequisites:
   - /docs/project-configuration
@@ -12,8 +12,8 @@ related:
 summary: Learn how to configure Vercel CLI under your system user.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/global-configuration.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "ca5875886e5540a06826c2291c0509f8d3d386483e6ab366ad108aa1c35b296e"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "bfb9c0dea9358134a2287e51847f124d9a6d2a33e382ae04dc570e7979e887dc"
 ---
 
 # Global Vercel CLI Configuration
@@ -26,13 +26,13 @@ Using the following files and configuration options, you can configure [Vercel C
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Global Options](https://vercel.com/docs/cli/global-options?from=related) — Global options are commonly available to use with multiple Vercel CLI commands. Learn about Vercel CLI's global options
-- [vercel global-config](https://vercel.com/docs/cli/global-config?from=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
-- [Using Global Config](https://vercel.com/docs/global-config/using-global-config?from=related) — Learn how to use Global Configs in your projects.
-- [Global Configs & Dashboard](https://vercel.com/docs/global-config/global-config-dashboard?from=related) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
-- [Global Config](https://vercel.com/docs/global-config?from=related) — A Global Config is a global data store that enables experimentation with feature flags, A/B testing, critical redirects,
+- [Vercel CLI Global Options](https://vercel.com/docs/cli/global-options?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fglobal-configuration&source_site=vercel-docs&relationship=related) — Global options are commonly available to use with multiple Vercel CLI commands. Learn about Vercel CLI's global options
+- [vercel global-config](https://vercel.com/docs/cli/global-config?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fglobal-configuration&source_site=vercel-docs&relationship=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
+- [Using Global Config](https://vercel.com/docs/global-config/using-global-config?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fglobal-configuration&source_site=vercel-docs&relationship=related) — Learn how to use Global Configs in your projects.
+- [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fglobal-configuration&source_site=vercel-docs&relationship=related) — POST /v1/global-config — Creates a Global Config.
+- [Managing Global Configs with the Dashboard](https://vercel.com/docs/global-config/global-config-dashboard?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fglobal-configuration&source_site=vercel-docs&relationship=related) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
 
-Full cross-link map for this page: [/docs/project-configuration/global-configuration.graph.md](/docs/project-configuration/global-configuration.graph.md)
+Full cross-link map for this page: [/docs/project-configuration/global-configuration.graph.md](/docs/project-configuration/global-configuration.graph.md?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fglobal-configuration&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 The two global configuration files are: `config.json` and `auth.json`. These files are stored in the `com.vercel.cli` directory inside [`XDG_DATA_HOME`](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html), which defaults to:

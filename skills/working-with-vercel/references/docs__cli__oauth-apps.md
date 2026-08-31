@@ -12,8 +12,8 @@ related:
 summary: "Register Vercel Apps (OAuth) and manage team installations from the CLI: register new apps, list and dismiss installation requests, install apps to a..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/oauth-apps.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "5c20720be1d470f13ed427e6381f7233701c8686b02a9c351fa01e9ae5841f02"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "a0c9e2eba4b7740b77187f3587ef115d6e977e8907e0e102a41efd0657dea4ed"
 ---
 
 # vercel oauth-apps
@@ -26,13 +26,13 @@ The `vercel oauth-apps` command registers Vercel Apps (OAuth) and manages team i
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [vercel api](https://vercel.com/docs/cli/api?from=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel teams](https://vercel.com/docs/cli/teams?from=related) — Learn how to list, add, switch, invite, and manage your teams with the vercel teams CLI command.
-- [vercel tokens](https://vercel.com/docs/cli/tokens?from=related) — Manage your personal Vercel authentication tokens from the CLI: list, create, and remove access tokens for use with the
-- [Manage from Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related) — Learn how to manage Sign in with Vercel from the Dashboard
-- [vercel webhooks](https://vercel.com/docs/cli/webhooks?from=related) — Learn how to manage webhooks for your Vercel account using the vercel webhooks CLI command.
+- [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Foauth-apps&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel teams](https://vercel.com/docs/cli/teams?from=related&source_path=%2Fdocs%2Fcli%2Foauth-apps&source_site=vercel-docs&relationship=related) — Learn how to list, add, switch, invite, and manage your teams with the vercel teams CLI command.
+- [vercel tokens](https://vercel.com/docs/cli/tokens?from=related&source_path=%2Fdocs%2Fcli%2Foauth-apps&source_site=vercel-docs&relationship=related) — Manage your personal Vercel authentication tokens from the CLI: list, create, and remove access tokens for use with the
+- [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related&source_path=%2Fdocs%2Fcli%2Foauth-apps&source_site=vercel-docs&relationship=related) — Learn how to manage Sign in with Vercel from the Dashboard
+- [vercel webhooks](https://vercel.com/docs/cli/webhooks?from=related&source_path=%2Fdocs%2Fcli%2Foauth-apps&source_site=vercel-docs&relationship=related) — Learn how to manage webhooks for your Vercel account using the vercel webhooks CLI command.
 
-Full cross-link map for this page: [/docs/cli/oauth-apps.graph.md](/docs/cli/oauth-apps.graph.md)
+Full cross-link map for this page: [/docs/cli/oauth-apps.graph.md](/docs/cli/oauth-apps.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Foauth-apps&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 > **💡 Note:** These subcommands act on team-scoped resources. Make sure your current scope

@@ -3,7 +3,7 @@ title: Managing Code Reviews
 product: vercel
 url: /docs/agent/pr-review/usage
 canonical_url: "https://vercel.com/docs/agent/pr-review/usage"
-last_updated: 2026-06-26
+last_updated: 2026-08-19
 type: integration
 prerequisites:
   - /docs/agent/pr-review
@@ -14,8 +14,8 @@ related:
 summary: Customize which repositories get reviewed and track your review metrics and spending.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/pr-review/usage.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "86a53817475797f881c521d649c93d9d4c58d623e01c9bf04ad39adf465e4f06"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "ac990b1feb7bc9910c2991578ef72f3a411bc3633bc43da03bd890f25d00257f"
 ---
 
 # Managing Code Reviews
@@ -28,17 +28,20 @@ Once you've [set up Code Review](/docs/agent/pr-review#how-to-set-up-code-review
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Using Vercel Agent to review pull requests](https://vercel.com/kb/guide/vercel-agent-code-review?from=related) — Set up Vercel Agent Code Review to automatically review pull requests, apply validated fixes, request reviews with @verc
-- [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent?from=related) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
-- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
-- [Ship a GitHub code review bot with Hono and Redis](https://vercel.com/kb/guide/ship-a-github-code-review-bot-with-hono-and-redis?from=related) — This guide walks through building a GitHub bot that reviews pull requests on demand. When a user @mentions the bot on a
-- [Installation](https://vercel.com/docs/agent/installation?from=related) — Let AI automatically install Web Analytics and Speed Insights in your app
-- [Investigation](https://vercel.com/docs/agent/investigation?from=related) — Let AI investigate your error alerts to help you debug faster
-- [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
-- [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Bitbucket](https://vercel.com/docs/git/vercel-for-bitbucket?from=related) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
+- [Using Vercel Agent to review pull requests](https://vercel.com/kb/guide/vercel-agent-code-review?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related) — Set up Vercel Agent Code Review to automatically review pull requests, apply validated fixes, request reviews with @verc
+- [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
+- [On-demand Vercel Agent code reviews](https://vercel.com/changelog/on-demand-vercel-agent-code-reviews?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related)
+- [Apply code suggestions from Vercel Agent with one click](https://vercel.com/changelog/apply-code-suggestions-from-vercel-agent-with-one-click?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related)
+- [Introducing the new Vercel Agent](https://vercel.com/blog/vercel-agent?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related)
+- [AI code reviews by Vercel Agent now in Public Beta](https://vercel.com/changelog/ai-code-reviews-by-vercel-agent-now-in-beta?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related)
+- [Introducing Vercel for Slack](https://vercel.com/blog/introducing-vercel-for-slack?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related)
+- [Automatic build fix suggestions with Vercel Agent](https://vercel.com/changelog/automatic-build-fix-suggestions-with-vercel-agent?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related)
+- [Installation](https://vercel.com/docs/agent/installation?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related) — Let AI automatically install Web Analytics and Speed Insights in your app
+- [Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related) — Monitor AI Gateway requests and manage spend: observability, custom reporting, usage and billing APIs, and spending budg
+- [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Investigation](https://vercel.com/docs/agent/investigation?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related) — Let AI investigate your error alerts to help you debug faster
 
-Full cross-link map for this page: [/docs/agent/pr-review/usage.graph.md](/docs/agent/pr-review/usage.graph.md)
+Full cross-link map for this page: [/docs/agent/pr-review/usage.graph.md](/docs/agent/pr-review/usage.graph.md?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Choose which repositories to review
@@ -124,17 +127,17 @@ The exported data includes all metrics from the dashboard, letting you:
 - Calculate ROI by comparing review costs to time saved
 - Track adoption and usage patterns over time
 
-## Disable Vercel Agent
+## Turn off automatic Code Reviews
 
-If you need to turn off Vercel Agent completely, you can disable it from the **Agent** page. This stops all reviews across all repositories.
+You can stop automatic reviews from the **Agent** page. Manual reviews and explicit `@vercel` requests remain available and can create paid usage.
 
-To disable Vercel Agent:
+To turn off automatic Code Reviews:
 
 1. Select [**Agent**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fagent\&title=Open+Vercel+Agent) in the top-right corner of the dashboard.
-2. Click the **…** button, and then select **Disable Vercel Agent**.
+2. Click the **…** button, and then select **Turn off automatic Code Reviews…**.
 3. Confirm the action in the prompt that appears.
 
-Once disabled, Code Review won't run on any new pull requests. You can re-enable Vercel Agent at any time from the same menu.
+Once disabled, Code Review won't run automatically on new pull requests. You can re-enable automatic reviews at any time from the same menu.
 
 
 ---

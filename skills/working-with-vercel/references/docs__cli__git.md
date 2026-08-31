@@ -12,8 +12,8 @@ related:
 summary: Learn how to manage your Git provider connections using the vercel git CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/git.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "78f0f479cf3fc03f0d5df173e1cbfb120e000d97ff4a1734abe0e02760b51e53"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "df0ffb9cef9f8936f3407f0eae2cb53604bb6eda88b2194fdaceb3f9cc228e26"
 ---
 
 # vercel git
@@ -27,13 +27,13 @@ enabling deployments to Vercel through Git.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Git Settings](https://vercel.com/docs/project-configuration/git-settings?from=related) — Use the project settings to manage the Git connection, enable Git LFS, and create deploy hooks.
-- [vercel link](https://vercel.com/docs/cli/link?from=related) — Learn how to link a local directory to a Vercel Project using the vercel link CLI command.
-- [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration?from=related) — Learn how to configure Git for your project through vercel.json or vercel.ts.
-- [vercel build](https://vercel.com/docs/cli/build?from=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
-- [vercel dev](https://vercel.com/docs/cli/dev?from=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
+- [Git settings](https://vercel.com/docs/project-configuration/git-settings?from=related&source_path=%2Fdocs%2Fcli%2Fgit&source_site=vercel-docs&relationship=related) — Use the project settings to manage the Git connection, enable Git LFS, and create deploy hooks.
+- [vercel link](https://vercel.com/docs/cli/link?from=related&source_path=%2Fdocs%2Fcli%2Fgit&source_site=vercel-docs&relationship=related) — Learn how to link a local directory to a Vercel Project using the vercel link CLI command.
+- [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration?from=related&source_path=%2Fdocs%2Fcli%2Fgit&source_site=vercel-docs&relationship=related) — Learn how to configure Git for your project through vercel.json or vercel.ts.
+- [vercel build](https://vercel.com/docs/cli/build?from=related&source_path=%2Fdocs%2Fcli%2Fgit&source_site=vercel-docs&relationship=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
+- [vercel dev](https://vercel.com/docs/cli/dev?from=related&source_path=%2Fdocs%2Fcli%2Fgit&source_site=vercel-docs&relationship=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
 
-Full cross-link map for this page: [/docs/cli/git.graph.md](/docs/cli/git.graph.md)
+Full cross-link map for this page: [/docs/cli/git.graph.md](/docs/cli/git.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fgit&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 When run, Vercel CLI searches for a local `.git` config file containing at least one remote URL.

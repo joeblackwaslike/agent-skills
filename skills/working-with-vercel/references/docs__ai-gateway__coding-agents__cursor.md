@@ -3,7 +3,7 @@ title: Cursor
 product: vercel
 url: /docs/ai-gateway/coding-agents/cursor
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/cursor"
-last_updated: 2018-10-20
+last_updated: 2026-08-12
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/coding-agents
@@ -11,11 +11,11 @@ prerequisites:
 related:
   - /docs/cli/ai-gateway
   - /docs/ai-gateway/observability-and-spend/budgets
-summary: Learn about cursor on Vercel.
+summary: Use Cursor with the AI Gateway through its OpenAI base URL override.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/cursor.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "93b2b62eaed42f4a43e23aaf1cd189eeddec5be720afbc100aa8d0ee3e08705c"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "6b8eda1ab44e3928deef46535d3fb7cdb56f67e2275f256558a0ccf48d11e006"
 ---
 
 # Cursor
@@ -28,13 +28,17 @@ sha256: "93b2b62eaed42f4a43e23aaf1cd189eeddec5be720afbc100aa8d0ee3e08705c"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [OpenClaw](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related) — Learn about openclaw on Vercel.
-- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related) — Use OpenCode with the AI Gateway.
-- [Migrate to AI Gateway](https://vercel.com/docs/ai-gateway/getting-started/migrate-to-ai-gateway?from=related) — Move your app's model calls to Vercel AI Gateway with a single coding-agent prompt, whatever provider or SDK you use tod
-- [LibreChat](https://vercel.com/docs/ai-gateway/chat-platforms/librechat?from=related) — Use LibreChat with the AI Gateway.
-- [Hermes](https://vercel.com/docs/ai-gateway/coding-agents/hermes?from=related) — Use the Hermes agent with the AI Gateway.
+- [Cursor](https://ai-sdk.dev/providers/ai-sdk-harnesses/cursor?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcursor&source_site=vercel-docs&relationship=related)
+- [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcursor&source_site=vercel-docs&relationship=related)
+- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcursor&source_site=vercel-docs&relationship=related) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
+- [Cursor is now available in the AI SDK harness layer](https://vercel.com/changelog/cursor-ai-sdk-harness-adapter?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcursor&source_site=vercel-docs&relationship=related)
+- [OpenClaw](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcursor&source_site=vercel-docs&relationship=related) — Use OpenClaw with the AI Gateway as a model provider.
+- [Xcode](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcursor&source_site=vercel-docs&relationship=related) — Use Xcode's coding assistant with the AI Gateway.
+- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcursor&source_site=vercel-docs&relationship=related) — Use OpenCode with the AI Gateway.
+- [LibreChat](https://vercel.com/docs/ai-gateway/chat-platforms/librechat?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcursor&source_site=vercel-docs&relationship=related) — Use LibreChat with the AI Gateway.
+- [Hermes](https://vercel.com/docs/ai-gateway/coding-agents/hermes?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcursor&source_site=vercel-docs&relationship=related) — Use the Hermes agent with the AI Gateway.
 
-Full cross-link map for this page: [/docs/ai-gateway/coding-agents/cursor.graph.md](/docs/ai-gateway/coding-agents/cursor.graph.md)
+Full cross-link map for this page: [/docs/ai-gateway/coding-agents/cursor.graph.md](/docs/ai-gateway/coding-agents/cursor.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcursor&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 > **💡 Note:** Cursor keeps API-key settings in its own account-synced store, not in a file

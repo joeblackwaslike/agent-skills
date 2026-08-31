@@ -3,7 +3,7 @@ title: Snapshots
 product: vercel
 url: /docs/sandbox/concepts/snapshots
 canonical_url: "https://vercel.com/docs/sandbox/concepts/snapshots"
-last_updated: 2026-08-04
+last_updated: 2026-08-26
 type: conceptual
 prerequisites:
   - /docs/sandbox/concepts
@@ -17,8 +17,8 @@ related:
 summary: Save and restore sandbox state with snapshots for faster startups and environment sharing.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/snapshots.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "d52903b3427b37c22b48b55593b993e88a2dde8e52bb077c16cbc0de0d0807cc"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "4882c6670870dca582afe2facd2e55c71b29624bed8061597b0ef787e0b6b3cc"
 ---
 
 # Snapshots
@@ -31,17 +31,20 @@ Snapshots capture the state of a running sandbox, including the filesystem and i
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup?from=related) — Learn how to save sandbox state with snapshots and skip installation on future runs.
-- [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
-- [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence?from=related) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
-- [How to reconnect to a running Sandbox](https://vercel.com/kb/guide/how-to-reconnect-to-a-running-sandbox?from=related) — Learn how to use \\`Sandbox.get\\(\\)\\` to reconnect to an existing sandbox from a different process or after a script rest
-- [Examples](https://vercel.com/docs/sandbox/working-with-sandbox?from=related) — Task-oriented examples for common Vercel Sandbox operations in TypeScript and Python.
-- [Create a snapshot](https://vercel.com/docs/rest-api/sandboxes/create-a-snapshot?from=related)
-- [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
-- [Get a snapshot](https://vercel.com/docs/rest-api/sandboxes/get-a-snapshot?from=related)
-- [List snapshots](https://vercel.com/docs/rest-api/sandboxes/list-snapshots?from=related)
+- [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=related) — Learn how to save sandbox state with snapshots and skip installation on future runs.
+- [Vercel Sandbox now supports Devin Outposts](https://vercel.com/changelog/vercel-sandbox-now-supports-devin-outposts?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=related)
+- [How to install system packages in Vercel Sandbox](https://vercel.com/kb/guide/how-to-install-system-packages-in-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=related) — Learn how to install additional system packages in Vercel Sandbox with apt-get on the default Ubuntu-based managed image
+- [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
+- [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=related) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
+- [Filesystem snapshots supported on Vercel Sandboxes](https://vercel.com/changelog/filesystem-snapshots-supported-on-vercel-sandboxes?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=related)
+- [Vercel Sandbox snapshots now allow custom retention periods](https://vercel.com/changelog/vercel-sandbox-snapshots-now-allow-custom-retention-periods?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=related)
+- [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
+- [Create a snapshot](https://vercel.com/docs/rest-api/sandboxes/create-a-snapshot?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=related) — POST /v2/sandboxes/sessions/{sessionId}/snapshot — Creates a point-in-time snapshot of a running session's filesystem. S
+- [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
+- [Get a snapshot](https://vercel.com/docs/rest-api/sandboxes/get-a-snapshot?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=related) — GET /v2/sandboxes/snapshots/{snapshotId} — Retrieves detailed information about a specific snapshot, including its creat
+- [List snapshots](https://vercel.com/docs/rest-api/sandboxes/list-snapshots?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=related) — GET /v2/sandboxes/snapshots — Retrieves a paginated list of snapshots for a specific project.
 
-Full cross-link map for this page: [/docs/sandbox/concepts/snapshots.graph.md](/docs/sandbox/concepts/snapshots.graph.md)
+Full cross-link map for this page: [/docs/sandbox/concepts/snapshots.graph.md](/docs/sandbox/concepts/snapshots.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 For [persistent sandboxes](/docs/sandbox/concepts/persistent-sandboxes) (the default), snapshots are created automatically whenever a session stops, and the next session resumes from the most recent snapshot. You can still call `snapshot()` manually to create a checkpoint between sessions, or to fork a child sandbox from a known state.
@@ -104,7 +107,7 @@ Pass the snapshot ID when creating a new sandbox:
 
 ## Snapshots and regions
 
-A snapshot is stored in the [region](/docs/sandbox/concepts/regions) of the sandbox it was created from. You can only create or resume a sandbox from a snapshot in a region where that snapshot is available. Creating a sandbox from a snapshot in another region fails with a `snapshot_region_mismatch` error.
+A snapshot is stored in the [region](/docs/sandbox/concepts/regions) of the sandbox it was created from. You can only create or resume a sandbox from a snapshot in a region where that snapshot is available. Creating a sandbox from a snapshot in another region fails with a `snapshot_region_mismatch` error. [Failover](/docs/sandbox/concepts/regions#failover-regions) is the exception. When creation falls back to a failover region, Vercel loads the snapshot from the closest region where it's available.
 
 Snapshots can't be moved between regions. To run an environment in another region, create a new sandbox in that region, run your setup again, and snapshot it there.
 

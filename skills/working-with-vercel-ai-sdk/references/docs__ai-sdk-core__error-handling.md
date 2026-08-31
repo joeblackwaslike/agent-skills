@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/error-handling.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "188c7972031d103052c3e205b2b8187c4cf75e9af4371afe2b071c8dc75ef040"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "a8481a1647ef8c571f27b7c8b5a7c3a8d50f4f85369320193c25a7c5c306fcb1"
 ---
 
 # Error Handling
@@ -58,7 +58,7 @@ It is recommended to also add a try-catch block for errors that
 happen outside of the streaming.
 
 ```ts highlight="14-22"
-import { streamText } from 'ai';
+import { StreamProviderError, streamText } from 'ai';
 __PROVIDER_IMPORT__;
 
 try {
@@ -73,7 +73,15 @@ try {
 
       case 'error': {
         const error = part.error;
-        // handle error
+
+        if (StreamProviderError.isInstance(error)) {
+          console.error(error.message, {
+            type: error.type,
+            code: error.code,
+            statusCode: error.statusCode,
+            isRetryable: error.isRetryable,
+          });
+        }
         break;
       }
 
@@ -93,6 +101,13 @@ try {
   // handle error
 }
 ```
+
+Well-formed provider error events that arrive after streaming starts are
+normalized into [`StreamProviderError`](/docs/reference/ai-sdk-errors/ai-stream-provider-error)
+instances. The same instance is supplied to callbacks such as `onError` and to
+the `error` part in the full stream. The SDK does not automatically restart a
+partially consumed stream; use `isRetryable` to implement application-managed
+retries and decide how to handle any partial output.
 
 ## Handling stream aborts
 

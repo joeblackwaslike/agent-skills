@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/xai.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "9253b484925e2d69dcd45610f142eefcd4a7abfe3b6be0b5027d27b4b2e8999d"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "4fc7f544ee557f5310f246745f55a13c990fc5918bed22e665b5ca0c1d7a3a7c"
 ---
 
 # xAI Grok Provider
@@ -624,6 +624,66 @@ The following provider options are available:
 <Note>
   The Responses API only supports server-side tools. You cannot mix server-side
   tools with client-side function tools in the same request.
+</Note>
+
+## Text Batches
+
+<Note type="warning">
+  Text batch support is experimental and the API may change in patch releases.
+</Note>
+
+The xAI provider supports asynchronous text generation through the
+[Batch API](https://docs.x.ai/developers/advanced-api-usage/batch-api). Use the
+experimental text batch APIs to start a batch, poll its status, and stream its
+results:
+
+```ts
+import { xai } from '@ai-sdk/xai';
+import {
+  experimental_getBatchResults as getBatchResults,
+  experimental_getBatchStatus as getBatchStatus,
+  experimental_startTextBatch as startTextBatch,
+} from 'ai';
+import { setTimeout } from 'node:timers/promises';
+
+const model = xai('grok-4.3');
+
+const batch = await startTextBatch({
+  model,
+  requests: [
+    { id: 'capital-france', prompt: 'What is the capital of France?' },
+    { id: 'capital-germany', prompt: 'What is the capital of Germany?' },
+  ],
+});
+
+let status = batch.status;
+while (status === 'pending') {
+  await setTimeout(60_000);
+  ({ status } = await getBatchStatus({ model, batch }));
+}
+
+for await (const item of getBatchResults({ model, batch })) {
+  if (item.status === 'succeeded') {
+    console.log(item.id, item.text);
+  } else {
+    console.error(item.id, item.error);
+  }
+}
+```
+
+`startTextBatch` returns a serializable batch reference. Persist this reference
+to check the batch status or retrieve its results from another process. Results
+can arrive in a different order from the input requests, so match each result by
+its `id`.
+
+Text batches are available through `xai(modelId)` and
+`xai.responses(modelId)`. The legacy `xai.chat(modelId)` models do not expose
+the batch APIs.
+
+<Note>
+  The xAI Batch API does not support per-batch webhooks. When you provide a
+  `webhookUrl`, the provider returns an unsupported warning and starts the batch
+  without a webhook.
 </Note>
 
 ## Model Capabilities
@@ -1500,6 +1560,7 @@ is capped at `720p` — a `1080p` request is downgraded with a warning.
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
 - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
+- [Z.AI](/providers/ai-sdk-providers/zai)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)
 - [Fireworks](/providers/ai-sdk-providers/fireworks)

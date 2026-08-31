@@ -3,7 +3,7 @@ title: Speed Insights Drains Reference
 product: vercel
 url: /docs/drains/reference/speed-insights
 canonical_url: "https://vercel.com/docs/drains/reference/speed-insights"
-last_updated: 2025-09-24
+last_updated: 2026-08-25
 type: reference
 prerequisites:
   - /docs/drains
@@ -13,8 +13,8 @@ related:
 summary: Learn about Speed Insights Drains - data formats and performance metrics configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/reference/speed-insights.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "7ce31e019a863abcff7527afebc508869f656ac1ec8bd139481952e7449c7b87"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "b6e1415815bddb13e2006988a66b820482f06cbd7679843f85add89953514ac5"
 ---
 
 # Speed Insights Drains Reference
@@ -27,13 +27,15 @@ Speed Insights Drains send performance metrics and web vitals from your applicat
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Web Analytics](https://vercel.com/docs/drains/reference/analytics?from=related) — Learn about Web Analytics Drains - data formats and custom events configuration.
-- [Traces](https://vercel.com/docs/drains/reference/traces?from=related) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
-- [Audit Logs](https://vercel.com/docs/drains/reference/audit-logs?from=related) — Learn about Audit Log Drains - data formats, fields, and team activity events.
-- [Create a new Drain](https://vercel.com/docs/rest-api/drains/create-a-new-drain?from=related)
-- [@vercel/speed-insights](https://vercel.com/docs/speed-insights/package?from=related) — Learn how to configure your application to capture and send web performance metrics to Vercel using the @vercel/speed-in
+- [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Fspeed-insights&source_site=vercel-docs&relationship=related)
+- [Export traces, web analytics events, and speed insights datapoints to any destination](https://vercel.com/changelog/export-more-data-with-vercel-drains?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Fspeed-insights&source_site=vercel-docs&relationship=related)
+- [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Fspeed-insights&source_site=vercel-docs&relationship=related) — Learn about Web Analytics Drains - data formats and custom events configuration.
+- [Trace Drains Reference](https://vercel.com/docs/drains/reference/traces?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Fspeed-insights&source_site=vercel-docs&relationship=related) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
+- [Audit Log Drains Reference](https://vercel.com/docs/drains/reference/audit-logs?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Fspeed-insights&source_site=vercel-docs&relationship=related) — Learn about Audit Log Drains - data formats, fields, and team activity events.
+- [Speed Insights Configuration with @vercel/speed-insights](https://vercel.com/docs/speed-insights/package?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Fspeed-insights&source_site=vercel-docs&relationship=related) — Learn how to configure your application to capture and send web performance metrics to Vercel using the @vercel/speed-in
+- [Find a Drain by id](https://vercel.com/docs/rest-api/drains/find-a-drain-by-id?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Fspeed-insights&source_site=vercel-docs&relationship=related) — GET /v1/drains/{id} — Get the information for a specific Drain by passing the drain id in the URL.
 
-Full cross-link map for this page: [/docs/drains/reference/speed-insights.graph.md](/docs/drains/reference/speed-insights.graph.md)
+Full cross-link map for this page: [/docs/drains/reference/speed-insights.graph.md](/docs/drains/reference/speed-insights.graph.md?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Fspeed-insights&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Vercel sends Speed Insights data to endpoint URLs over HTTPS when your application collects performance metrics.

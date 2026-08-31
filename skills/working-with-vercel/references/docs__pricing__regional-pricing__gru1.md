@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the São Paulo, Brazil (gru1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/gru1.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "d40e907c437b4c895d3525e5fcb1fd4e9ebaa6ee3a21c33648deb45f13c57a90"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "41f78492817aa688d238278e659d3e0fb2a385f736a4fe8d0746c88594deb607"
 ---
 
 # São Paulo, Brazil (gru1) pricing
@@ -31,13 +31,13 @@ The table below shows Managed Infrastructure products with pricing specific to t
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [San Francisco, USA \\(sfo1\\)](https://vercel.com/docs/pricing/regional-pricing/sfo1?from=related) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
-- [Paris, France \\(cdg1\\)](https://vercel.com/docs/pricing/regional-pricing/cdg1?from=related) — Vercel pricing for the Paris, France \\(cdg1\\) region.
-- [Seoul, South Korea \\(icn1\\)](https://vercel.com/docs/pricing/regional-pricing/icn1?from=related) — Vercel pricing for the Seoul, South Korea \\(icn1\\) region.
-- [Stockholm, Sweden \\(arn1\\)](https://vercel.com/docs/pricing/regional-pricing/arn1?from=related) — Vercel pricing for the Stockholm, Sweden \\(arn1\\) region.
-- [Portland, USA \\(pdx1\\)](https://vercel.com/docs/pricing/regional-pricing/pdx1?from=related) — Vercel pricing for the Portland, USA \\(pdx1\\) region.
+- [San Francisco, USA \\(sfo1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sfo1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fgru1&source_site=vercel-docs&relationship=related) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
+- [Paris, France \\(cdg1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cdg1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fgru1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Paris, France \\(cdg1\\) region.
+- [Seoul, South Korea \\(icn1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/icn1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fgru1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Seoul, South Korea \\(icn1\\) region.
+- [Stockholm, Sweden \\(arn1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/arn1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fgru1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Stockholm, Sweden \\(arn1\\) region.
+- [Portland, USA \\(pdx1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/pdx1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fgru1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Portland, USA \\(pdx1\\) region.
 
-Full cross-link map for this page: [/docs/pricing/regional-pricing/gru1.graph.md](/docs/pricing/regional-pricing/gru1.graph.md)
+Full cross-link map for this page: [/docs/pricing/regional-pricing/gru1.graph.md](/docs/pricing/regional-pricing/gru1.graph.md?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fgru1&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 The **Included** column shows the amount of usage covered in your [billing cycle](/docs/pricing/understanding-my-invoice#understanding-your-invoice). If you use more than this amount, the **Additional** column lists the rates for any extra usage.

@@ -3,7 +3,7 @@ title: Using Monorepos
 product: vercel
 url: /docs/monorepos
 canonical_url: "https://vercel.com/docs/monorepos"
-last_updated: 2026-07-21
+last_updated: 2026-08-11
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Vercel provides support for monorepos. Learn how to deploy a monorepo here.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "eb70b98a7b54d95e0811780187e6d09aa656122094dbd0234cc50af417dd4fff"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "61411da9edd1a5619c4654066f6675fb88a459e6c6e717fc39286ab65c153911"
 ---
 
 # Using Monorepos
@@ -30,19 +30,20 @@ Monorepos allow you to manage multiple projects in a single directory. They are 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How can I use files in Vercel Functions?](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions?from=related) — Learn how to import files inside Serverless Functions on Vercel.
-- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel?from=related) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
-- [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors?from=related) — Learn the systematic steps to identify and resolve 404 issues.
-- [Incremental Migrations with Microfrontends](https://vercel.com/kb/guide/incremental-migrations-with-microfrontends?from=related) — Learn how to migrate legacy applications using microfrontends
-- [Choosing how to structure your application on Vercel](https://vercel.com/kb/guide/structure-your-application?from=related) — Compare three ways to structure an application on Vercel \\(a single framework, one project with Services, or separate pr
-- [Vercel](https://turborepo.dev/docs/guides/ci-vendors/vercel?from=related) — Deploy your Turborepo on Vercel with zero-config Remote Caching.
-- [Project Linking](https://vercel.com/docs/cli/project-linking?from=related) — Learn how to link existing Vercel Projects with Vercel CLI.
-- [Quickstart](https://vercel.com/docs/platforms/multi-project-platforms/quickstart?from=related) — Programmatically host code for user-generated or AI-generated applications on Vercel.
-- [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
-- [Reference](https://vercel.com/docs/platforms/multi-project-platforms/reference?from=related) — API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
-- [Concepts](https://vercel.com/docs/platforms/multi-project-platforms/concepts?from=related) — Understand projects, deployments, domains, and architecture for multi-project platforms on Vercel.
+- [Automatically skip unnecessary deployments in monorepos](https://vercel.com/changelog/automatically-skip-unnecessary-deployments-in-monorepos?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=related)
+- [Lockfile-aware deployment skipping for monorepos](https://vercel.com/changelog/lockfile-aware-deployment-skipping-for-monorepos?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=related)
+- [New monorepo projects now skip builds with unchanged code by default](https://vercel.com/changelog/new-monorepo-projects-now-skip-builds-with-unchanged-code-by-default?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=related)
+- [Skip unaffected builds for projects in Bun monorepos](https://vercel.com/changelog/skip-unaffected-builds-for-projects-in-bun-monorepos?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=related)
+- [Sync projects with @vercel/related-projects](https://vercel.com/changelog/sync-projects-with-vercel-related-projects?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=related)
+- [How can I use files in Vercel Functions?](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=related) — Learn how to import files inside Serverless Functions on Vercel.
+- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=related) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
+- [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=related) — Learn the systematic steps to identify and resolve 404 issues.
+- [Incremental Migrations with Microfrontends](https://vercel.com/kb/guide/incremental-migrations-with-microfrontends?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=related) — Learn how to migrate legacy applications using microfrontends
+- [Choosing how to structure your application on Vercel](https://vercel.com/kb/guide/structure-your-application?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=related) — Compare three ways to structure an application on Vercel \\(a single framework, one project with Services, or separate pr
+- [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=related)
+- [How to scale a large codebase](https://vercel.com/blog/how-to-scale-a-large-codebase?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=related)
 
-Full cross-link map for this page: [/docs/monorepos.graph.md](/docs/monorepos.graph.md)
+Full cross-link map for this page: [/docs/monorepos.graph.md](/docs/monorepos.graph.md?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Deploy a template monorepo

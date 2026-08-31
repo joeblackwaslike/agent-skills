@@ -3,17 +3,17 @@ title: Queues Observability
 product: vercel
 url: /docs/queues/observability
 canonical_url: "https://vercel.com/docs/queues/observability"
-last_updated: 2026-03-03
+last_updated: 2026-08-12
 type: how-to
 prerequisites:
   - /docs/queues
 related:
   - /docs/queues/sdk
-summary: Monitor queue throughput, message age, and consumer performance to optimize your queue-based workflows.
+summary: Monitor queue throughput, message age, retries, and consumer performance to optimize your queue-based workflows.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/observability.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "5d9030edc495d9f57b33a666c499b10f178e0287b8334909ccf96e70bf6be01c"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "108eefb7bd34101345582551833bf9ab23f6eed4bffa30d348a46ae7843caae3"
 ---
 
 # Queues Observability
@@ -26,13 +26,14 @@ The **Queues** observability tab provides visibility into your queue operations,
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Insights](https://vercel.com/docs/observability/insights?from=related) — List of available data sources that you can view and monitor with Observability on Vercel.
-- [Concepts](https://vercel.com/docs/queues/concepts?from=related) — Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
-- [Pricing and Limits](https://vercel.com/docs/queues/pricing?from=related) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
-- [Overview](https://vercel.com/docs/observability?from=related) — Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application perfor
-- [API Reference](https://vercel.com/docs/queues/api?from=related) — HTTP API reference for Vercel Queues. Publish, consume, acknowledge, and manage messages.
+- [Vercel Queues now in public beta](https://vercel.com/changelog/vercel-queues-now-in-public-beta?from=related&source_path=%2Fdocs%2Fqueues%2Fobservability&source_site=vercel-docs&relationship=related)
+- [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fqueues%2Fobservability&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
+- [Queues concepts](https://vercel.com/docs/queues/concepts?from=related&source_path=%2Fdocs%2Fqueues%2Fobservability&source_site=vercel-docs&relationship=related) — Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
+- [Pricing and Limits](https://vercel.com/docs/queues/pricing?from=related&source_path=%2Fdocs%2Fqueues%2Fobservability&source_site=vercel-docs&relationship=related) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
+- [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fqueues%2Fobservability&source_site=vercel-docs&relationship=related) — Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application perfor
+- [API Reference](https://vercel.com/docs/queues/api?from=related&source_path=%2Fdocs%2Fqueues%2Fobservability&source_site=vercel-docs&relationship=related) — HTTP API reference for Vercel Queues. Publish, consume, acknowledge, and manage messages.
 
-Full cross-link map for this page: [/docs/queues/observability.graph.md](/docs/queues/observability.graph.md)
+Full cross-link map for this page: [/docs/queues/observability.graph.md](/docs/queues/observability.graph.md?from=related&source_path=%2Fdocs%2Fqueues%2Fobservability&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Finding Queues observability

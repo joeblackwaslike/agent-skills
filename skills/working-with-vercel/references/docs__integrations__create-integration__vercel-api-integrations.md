@@ -3,7 +3,7 @@ title: Building Integrations with Vercel REST API
 product: vercel
 url: /docs/integrations/create-integration/vercel-api-integrations
 canonical_url: "https://vercel.com/docs/integrations/create-integration/vercel-api-integrations"
-last_updated: 2026-07-29
+last_updated: 2026-08-11
 type: reference
 prerequisites:
   - /docs/integrations/create-integration
@@ -17,8 +17,8 @@ related:
 summary: Learn how to use Vercel REST API to build your integrations and work with redirect URLs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/vercel-api-integrations.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "924b33ace6978a5b33edf8e6f237d1d363c05c0cf8e244c64b43fdf87a9b0b32"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "2768e2985379c4a42310b9a7cb2492d40b9c7729172b9824982034bcf3ed69e7"
 ---
 
 # Building Integrations with Vercel REST API
@@ -31,13 +31,13 @@ sha256: "924b33ace6978a5b33edf8e6f237d1d363c05c0cf8e244c64b43fdf87a9b0b32"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference?from=related) — Learn how to manage project access and added products for your integrations.
-- [Upgrade an Integration](https://vercel.com/docs/integrations/create-integration/upgrade-integration?from=related) — Lean more about when you may need to upgrade your Integration.
-- [Retrieve an integration configuration](https://vercel.com/docs/rest-api/integrations/retrieve-an-integration-configuration?from=related)
-- [Get configurations for the authenticated user or team](https://vercel.com/docs/rest-api/integrations/get-configurations-for-the-authenticated-user-or-team?from=related)
-- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related) — Learn how you can add a product to your Vercel project through a native integration.
+- [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fvercel-api-integrations&source_site=vercel-docs&relationship=related) — Learn how to manage project access and added products for your integrations.
+- [Upgrade an Integration](https://vercel.com/docs/integrations/create-integration/upgrade-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fvercel-api-integrations&source_site=vercel-docs&relationship=related) — Lean more about when you may need to upgrade your Integration.
+- [Get configurations for the authenticated user or team](https://vercel.com/docs/rest-api/integrations/get-configurations-for-the-authenticated-user-or-team?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fvercel-api-integrations&source_site=vercel-docs&relationship=related) — GET /v1/integrations/configurations — Allows to retrieve all configurations for an authenticated integration. When the \\
+- [Connect integration resource to project](https://vercel.com/docs/rest-api/integrations/connect-integration-resource-to-project?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fvercel-api-integrations&source_site=vercel-docs&relationship=related) — POST /v1/integrations/installations/{integrationConfigurationId}/resources/{resourceId}/connections — Connects an integr
+- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fvercel-api-integrations&source_site=vercel-docs&relationship=related) — Learn how you can add a product to your Vercel project through a native integration.
 
-Full cross-link map for this page: [/docs/integrations/create-integration/vercel-api-integrations.graph.md](/docs/integrations/create-integration/vercel-api-integrations.graph.md)
+Full cross-link map for this page: [/docs/integrations/create-integration/vercel-api-integrations.graph.md](/docs/integrations/create-integration/vercel-api-integrations.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fvercel-api-integrations&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 See the following API reference documentation for how to use Vercel REST API to create integrations:

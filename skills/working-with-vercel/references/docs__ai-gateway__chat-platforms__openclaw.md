@@ -13,8 +13,8 @@ related:
 summary: Use OpenClaw (formerly Clawdbot) with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/chat-platforms/openclaw.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "b855355e4b33f0caea83a3e0a2aef840f85fc307abe13f18fd5a2e11f36a2d5b"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "d5a208f941b398f8ccbd787b04039be3b55b45cfbac6672f7e5857566c8bb376"
 ---
 
 # OpenClaw (Clawdbot)
@@ -27,14 +27,15 @@ sha256: "b855355e4b33f0caea83a3e0a2aef840f85fc307abe13f18fd5a2e11f36a2d5b"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [OpenClaw](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related) — Learn about openclaw on Vercel.
-- [Running OpenClaw in Vercel Sandbox](https://vercel.com/kb/guide/running-openclaw-in-vercel-sandbox?from=related) — This guide walks you through setting up OpenClaw inside a Vercel Sandbox and configuring the WhatsApp channel.
-- [LibreChat](https://vercel.com/docs/ai-gateway/chat-platforms/librechat?from=related) — Use LibreChat with the AI Gateway.
-- [Chatbox](https://vercel.com/docs/ai-gateway/chat-platforms/chatbox?from=related) — Use Chatbox with the AI Gateway.
-- [Blackbox AI](https://vercel.com/docs/ai-gateway/coding-agents/blackbox?from=related) — Use the Blackbox AI CLI with the AI Gateway.
-- [Cline](https://vercel.com/docs/ai-gateway/coding-agents/cline?from=related) — Use Cline with the AI Gateway.
+- [Use AI Gateway with Clawdbot](https://vercel.com/changelog/use-ai-gateway-with-clawdbot?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms%2Fopenclaw&source_site=vercel-docs&relationship=related)
+- [OpenClaw](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms%2Fopenclaw&source_site=vercel-docs&relationship=related) — Use OpenClaw with the AI Gateway as a model provider.
+- [Running OpenClaw in Vercel Sandbox](https://vercel.com/kb/guide/running-openclaw-in-vercel-sandbox?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms%2Fopenclaw&source_site=vercel-docs&relationship=related) — This guide walks you through setting up OpenClaw inside a Vercel Sandbox and configuring the WhatsApp channel.
+- [LibreChat](https://vercel.com/docs/ai-gateway/chat-platforms/librechat?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms%2Fopenclaw&source_site=vercel-docs&relationship=related) — Use LibreChat with the AI Gateway.
+- [Chatbox](https://vercel.com/docs/ai-gateway/chat-platforms/chatbox?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms%2Fopenclaw&source_site=vercel-docs&relationship=related) — Use Chatbox with the AI Gateway.
+- [Blackbox AI](https://vercel.com/docs/ai-gateway/coding-agents/blackbox?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms%2Fopenclaw&source_site=vercel-docs&relationship=related) — Use the Blackbox AI CLI with the AI Gateway.
+- [Cline](https://vercel.com/docs/ai-gateway/coding-agents/cline?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms%2Fopenclaw&source_site=vercel-docs&relationship=related) — Use Cline with the AI Gateway.
 
-Full cross-link map for this page: [/docs/ai-gateway/chat-platforms/openclaw.graph.md](/docs/ai-gateway/chat-platforms/openclaw.graph.md)
+Full cross-link map for this page: [/docs/ai-gateway/chat-platforms/openclaw.graph.md](/docs/ai-gateway/chat-platforms/openclaw.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms%2Fopenclaw&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Configuring OpenClaw (Clawdbot)

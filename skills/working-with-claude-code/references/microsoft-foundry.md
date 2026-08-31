@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/microsoft-foundry.md"
-fetched_at: "2026-08-10T05:26:58.686Z"
-sha256: "29f3e08b5adc3143f136139dd3d3e6196feb79c9032994be6fce3490b14dc7aa"
+fetched_at: "2026-08-31T10:37:20.620Z"
+sha256: "2b5f9e4235f1dda584b53ee1d2d96bef8b4ca13dde339afb3572d9194cfdc7f7"
 ---
 
 > ## Documentation Index
@@ -193,6 +193,8 @@ For current and legacy model IDs, see [Models overview](https://platform.claude.
 ```bash theme={null}
 export ENABLE_PROMPT_CACHING_1H=1
 ```
+
+To set different TTLs for your main conversation and for the requests Claude Code makes outside it, [choose the TTL yourself](/docs/en/prompt-caching#choose-the-ttl-yourself).
 
 ### 5. Run Claude Code
 

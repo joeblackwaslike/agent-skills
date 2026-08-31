@@ -3,7 +3,7 @@ title: Configuring regions for Vercel Functions
 product: vercel
 url: /docs/functions/configuring-functions/region
 canonical_url: "https://vercel.com/docs/functions/configuring-functions/region"
-last_updated: 2026-07-15
+last_updated: 2026-08-11
 type: how-to
 prerequisites:
   - /docs/functions/configuring-functions
@@ -17,8 +17,8 @@ related:
 summary: Learn how to configure regions for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/region.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "6a73eefc7d90070f73bace4e56aa028835adc9dd9c156009b5f299e5e24917fe"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "f534617d5f32582eec9df8c338af04abe912658979fbcbc2df3781d19bbc62ab"
 ---
 
 # Configuring regions for Vercel Functions
@@ -31,19 +31,20 @@ The Vercel platform caches all static content in [the CDN](/docs/caching/cdn-cac
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Data Locality](https://flags-sdk.dev/docs/principles/data-locality?from=related)
-- [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis?from=related) — Learn how to build and scale performant APIs on Vercel.
-- [How can I reduce my Vercel Functions usage on Vercel?](https://vercel.com/kb/guide/how-can-i-reduce-my-serverless-execution-usage-on-vercel?from=related) — Reduce Vercel Functions usage and cost under Fluid compute pricing with caching, rendering strategies, and function conf
-- [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime?from=related) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
-- [How can I improve function cold start performance on Vercel?](https://vercel.com/kb/guide/improve-function-cold-start-performance-on-vercel?from=related) — Learn how to confirm whether cold starts cause function latency on Vercel, and how Fluid compute reduces how often they
-- [Troubleshooting request ECONNRESET errors](https://vercel.com/kb/guide/troubleshooting-request-econnreset-errors?from=related) — Understand what ECONNRESET means in Vercel runtime logs, why it happens when calling external APIs, how to diagnose it,
-- [Regions](https://vercel.com/docs/sandbox/concepts/regions?from=related) — Learn about regions on Vercel.
-- [Project Configuration](https://vercel.com/docs/project-configuration?from=related) — Learn how to configure your Vercel projects using vercel.json, vercel.ts, or the dashboard to control builds, routing, f
-- [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [How Vercel CDN works](https://vercel.com/docs/how-vercel-cdn-works?from=related) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
-- [Caching](https://vercel.com/docs/caching?from=related) — Learn how Vercel caches content across multiple layers to deliver fast responses and reduce load on your backend.
+- [Data Locality](https://flags-sdk.dev/docs/principles/data-locality?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fregion&source_site=vercel-docs&relationship=related)
+- [Improved resiliency for Vercel Functions with inter-region failover support](https://vercel.com/changelog/improved-resiliency-for-vercel-functions-with-failover-support?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fregion&source_site=vercel-docs&relationship=related)
+- [Manage multiple Vercel Function regions in the dashboard](https://vercel.com/changelog/manage-multiple-vercel-function-regions-in-the-dashboard?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fregion&source_site=vercel-docs&relationship=related)
+- [OpenAI will not support the Hong Kong region (hkg1) for Functions](https://vercel.com/changelog/openai-will-not-support-the-hong-kong-region-hkg1-for-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fregion&source_site=vercel-docs&relationship=related)
+- [Pro customers can now configure up to 3 regions for Vercel Functions](https://vercel.com/changelog/pro-customers-can-now-configure-up-to-3-regions-for-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fregion&source_site=vercel-docs&relationship=related)
+- [Vercel Edge Functions can now be regional or global](https://vercel.com/changelog/regional-edge-functions-are-now-available?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fregion&source_site=vercel-docs&relationship=related)
+- [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fregion&source_site=vercel-docs&relationship=related) — Learn how to build and scale performant APIs on Vercel.
+- [How can I reduce my Vercel Functions usage on Vercel?](https://vercel.com/kb/guide/how-can-i-reduce-my-serverless-execution-usage-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fregion&source_site=vercel-docs&relationship=related) — Reduce Vercel Functions usage and cost under Fluid compute pricing with caching, rendering strategies, and function conf
+- [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fregion&source_site=vercel-docs&relationship=related) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
+- [Troubleshooting request ECONNRESET errors](https://vercel.com/kb/guide/troubleshooting-request-econnreset-errors?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fregion&source_site=vercel-docs&relationship=related) — Understand what ECONNRESET means in Vercel runtime logs, why it happens when calling external APIs, how to diagnose it,
+- [Deploying AI-driven apps on Vercel](https://vercel.com/blog/deploying-ai-applications?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fregion&source_site=vercel-docs&relationship=related)
+- [Effortless high availability for dynamic frontends](https://vercel.com/blog/effortless-high-availability-for-dynamic-frontends?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fregion&source_site=vercel-docs&relationship=related)
 
-Full cross-link map for this page: [/docs/functions/configuring-functions/region.graph.md](/docs/functions/configuring-functions/region.graph.md)
+Full cross-link map for this page: [/docs/functions/configuring-functions/region.graph.md](/docs/functions/configuring-functions/region.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fregion&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 In a globally distributed application, the physical distance between your function and its data source can impact latency and response times. Therefore, Vercel allows you to specify the region in which your functions execute, ideally close to your data source (such as your [database](/marketplace/category/database)).

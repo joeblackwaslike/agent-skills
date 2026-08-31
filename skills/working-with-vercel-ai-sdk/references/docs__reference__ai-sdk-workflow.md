@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-workflow.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "6f7164d36997d275b50481548a01fdbe2610b70b1988e1186a3d60f474059ef8"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "28174fe5996bc69ef7e4ef6d7cd63928a9492b0cc87728c52f33c80f974c2f92"
 ---
 
 # AI SDK Workflow
@@ -21,6 +21,12 @@ sha256: "6f7164d36997d275b50481548a01fdbe2610b70b1988e1186a3d60f474059ef8"
       description:
         'Chat transport with automatic stream reconnection for workflow-based apps.',
       href: '/docs/reference/ai-sdk-workflow/workflow-chat-transport',
+    },
+    {
+      title: 'generateVideo',
+      description:
+        'Generate videos durably with provider webhooks and no implicit downloads.',
+      href: '/docs/reference/ai-sdk-workflow/generate-video',
     },
   ]}
 />
@@ -114,6 +120,7 @@ sha256: "6f7164d36997d275b50481548a01fdbe2610b70b1988e1186a3d60f474059ef8"
 - [AI SDK Workflow](/docs/reference/ai-sdk-workflow)
   - [WorkflowAgent](/docs/reference/ai-sdk-workflow/workflow-agent)
   - [WorkflowChatTransport](/docs/reference/ai-sdk-workflow/workflow-chat-transport)
+  - [generateVideo](/docs/reference/ai-sdk-workflow/generate-video)
 - [AI SDK Errors](/docs/reference/ai-sdk-errors)
   - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
   - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
@@ -143,6 +150,7 @@ sha256: "6f7164d36997d275b50481548a01fdbe2610b70b1988e1186a3d60f474059ef8"
   - [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
   - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
   - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
+  - [AI_StreamProviderError](/docs/reference/ai-sdk-errors/ai-stream-provider-error)
   - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
   - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
   - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)

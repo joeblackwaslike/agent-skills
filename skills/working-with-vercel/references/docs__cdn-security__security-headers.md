@@ -12,8 +12,8 @@ related:
 summary: Learn how the Content Security Policy (CSP) offers defense against web vulnerabilities, its key features, and best practices.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cdn-security/security-headers.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "f2bb9da51abe0a11ec8895353b88fbb23aa8f4fb7541941e10cfe181a7136978"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "07ce09dabbe96eec125bc5834a122d91ce8affa37594775f6a503723bbea2327"
 ---
 
 # Content Security Policy
@@ -26,17 +26,17 @@ Content Security Policy is a browser feature designed to prevent cross-site scri
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Content Security Policy](https://nextjs.org/docs/pages/guides/content-security-policy?from=related) — Learn how to set a Content Security Policy (CSP) for your Next.js application.
-- [Content Security Policy](https://nextjs.org/docs/app/guides/content-security-policy?from=related) — Learn how to set a Content Security Policy (CSP) for your Next.js application.
-- [Understanding CSRF attacks](https://vercel.com/kb/guide/understanding-csrf-attacks?from=related) — Understand the mechanics and risks of Cross-Site Request Forgery \\(CSRF\\) attacks, and discover crucial development prac
-- [Enhancing Security for Redirects and Rewrites](https://vercel.com/kb/guide/enhancing-security-for-redirects-and-rewrites?from=related) — Learn how security measures in URI handling can prevent semantic attacks, where malicious hosts exploit redirects and re
-- [Overview](https://vercel.com/docs/security?from=related) — Vercel provides built-in and customizable features to ensure that your site is secure.
-- [Security](https://vercel.com/docs/vercel-blob/security?from=related) — Learn how your Vercel Blob store is secured
-- [Encryption & TLS](https://vercel.com/docs/cdn-security/encryption?from=related) — Learn how Vercel encrypts data in transit and at rest.
-- [Examples](https://vercel.com/docs/vercel-firewall/vercel-waf/examples?from=related) — Learn how to use Vercel WAF to protect your site in specific situations.
-- [Security](https://vercel.com/docs/microfrontends/managing-microfrontends/security?from=related) — Learn about security on Vercel.
+- [How to set a Content Security Policy (CSP) for your Next.js application](https://nextjs.org/docs/pages/guides/content-security-policy?from=related&source_path=%2Fdocs%2Fcdn-security%2Fsecurity-headers&source_site=vercel-docs&relationship=related) — Learn how to set a Content Security Policy (CSP) for your Next.js application.
+- [How to set a Content Security Policy (CSP) for your Next.js application](https://nextjs.org/docs/app/guides/content-security-policy?from=related&source_path=%2Fdocs%2Fcdn-security%2Fsecurity-headers&source_site=vercel-docs&relationship=related) — Learn how to set a Content Security Policy (CSP) for your Next.js application.
+- [Security](https://vercel.com/docs/vercel-blob/security?from=related&source_path=%2Fdocs%2Fcdn-security%2Fsecurity-headers&source_site=vercel-docs&relationship=related) — Learn how your Vercel Blob store is secured
+- [Understanding CSRF attacks](https://vercel.com/kb/guide/understanding-csrf-attacks?from=related&source_path=%2Fdocs%2Fcdn-security%2Fsecurity-headers&source_site=vercel-docs&relationship=related) — Understand the mechanics and risks of Cross-Site Request Forgery \\(CSRF\\) attacks, and discover crucial development prac
+- [Enhancing Security for Redirects and Rewrites](https://vercel.com/kb/guide/enhancing-security-for-redirects-and-rewrites?from=related&source_path=%2Fdocs%2Fcdn-security%2Fsecurity-headers&source_site=vercel-docs&relationship=related) — Learn how security measures in URI handling can prevent semantic attacks, where malicious hosts exploit redirects and re
+- [Vercel security overview](https://vercel.com/docs/security?from=related&source_path=%2Fdocs%2Fcdn-security%2Fsecurity-headers&source_site=vercel-docs&relationship=related) — Vercel provides built-in and customizable features to ensure that your site is secure.
+- [Encryption and TLS](https://vercel.com/docs/cdn-security/encryption?from=related&source_path=%2Fdocs%2Fcdn-security%2Fsecurity-headers&source_site=vercel-docs&relationship=related) — Learn how Vercel encrypts data in transit and at rest.
+- [WAF Examples](https://vercel.com/docs/vercel-firewall/vercel-waf/examples?from=related&source_path=%2Fdocs%2Fcdn-security%2Fsecurity-headers&source_site=vercel-docs&relationship=related) — Learn how to use Vercel WAF to protect your site in specific situations.
+- [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fcdn-security%2Fsecurity-headers&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 
-Full cross-link map for this page: [/docs/cdn-security/security-headers.graph.md](/docs/cdn-security/security-headers.graph.md)
+Full cross-link map for this page: [/docs/cdn-security/security-headers.graph.md](/docs/cdn-security/security-headers.graph.md?from=related&source_path=%2Fdocs%2Fcdn-security%2Fsecurity-headers&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 When a browser receives the `Content-Security-Policy` HTTP header from a web server it adheres to the defined policy, blocking or allowing content loads based on the provided rules.

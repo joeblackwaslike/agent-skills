@@ -3,7 +3,7 @@ title: vercel security
 product: vercel
 url: /docs/cli/security
 canonical_url: "https://vercel.com/docs/cli/security"
-last_updated: 2018-10-20
+last_updated: 2026-08-17
 type: reference
 prerequisites:
   - /docs/cli
@@ -11,11 +11,11 @@ related:
   - /docs/security/security-dashboard
   - /docs/security
   - /docs/rbac/access-roles
-summary: Learn about vercel security on Vercel.
+summary: "Inspect the security posture of your Vercel team from the terminal: run every security check, list findings, and scope the report to a project."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/security.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "a060ee3339ca59b5afc0e9871dfc189f0d39bd885036d72e154f17d09edf05a0"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "ccaa8ad4f8c2422493f24ee976f5451d7271ef4893abf1360649262bafb15a62"
 ---
 
 # vercel security
@@ -28,13 +28,14 @@ The `vercel security` command runs your team's security checks and prints them i
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [List all checks for a project](https://vercel.com/docs/rest-api/checks-v2/list-all-checks-for-a-project?from=related)
-- [List runs for a check](https://vercel.com/docs/rest-api/checks-v2/list-runs-for-a-check?from=related)
-- [Get a check run](https://vercel.com/docs/rest-api/checks-v2/get-a-check-run?from=related)
-- [vercel api](https://vercel.com/docs/cli/api?from=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [Get a check](https://vercel.com/docs/rest-api/checks-v2/get-a-check?from=related)
+- [Vercel Security Dashboard is now generally available](https://vercel.com/changelog/vercel-security-dashboard-is-now-generally-available?from=related&source_path=%2Fdocs%2Fcli%2Fsecurity&source_site=vercel-docs&relationship=related)
+- [List all checks for a project](https://vercel.com/docs/rest-api/checks-v2/list-all-checks-for-a-project?from=related&source_path=%2Fdocs%2Fcli%2Fsecurity&source_site=vercel-docs&relationship=related) — GET /v2/projects/{projectIdOrName}/checks — List all checks for a project, optionally filtered by target.
+- [List runs for a check](https://vercel.com/docs/rest-api/checks-v2/list-runs-for-a-check?from=related&source_path=%2Fdocs%2Fcli%2Fsecurity&source_site=vercel-docs&relationship=related) — GET /v2/projects/{projectIdOrName}/checks/{checkId}/runs — List all runs associated with a given check.
+- [Get a check run](https://vercel.com/docs/rest-api/checks-v2/get-a-check-run?from=related&source_path=%2Fdocs%2Fcli%2Fsecurity&source_site=vercel-docs&relationship=related) — GET /v2/deployments/{deploymentId}/check-runs/{checkRunId} — Return a detailed response for a single check run.
+- [Get a check](https://vercel.com/docs/rest-api/checks-v2/get-a-check?from=related&source_path=%2Fdocs%2Fcli%2Fsecurity&source_site=vercel-docs&relationship=related) — GET /v2/projects/{projectIdOrName}/checks/{checkId} — Return a detailed response for a single check.
+- [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fsecurity&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 
-Full cross-link map for this page: [/docs/cli/security.graph.md](/docs/cli/security.graph.md)
+Full cross-link map for this page: [/docs/cli/security.graph.md](/docs/cli/security.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fsecurity&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Security checks run against the current team, so you need a team scope. If no team is selected, run `vercel switch` to choose one before running the command.

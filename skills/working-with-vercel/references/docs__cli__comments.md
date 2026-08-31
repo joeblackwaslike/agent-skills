@@ -3,7 +3,7 @@ title: vercel comments
 product: vercel
 url: /docs/cli/comments
 canonical_url: "https://vercel.com/docs/cli/comments"
-last_updated: 2018-10-20
+last_updated: 2026-08-19
 type: reference
 prerequisites:
   - /docs/cli
@@ -12,11 +12,11 @@ related:
   - /docs/vercel-toolbar
   - /docs/comments/using-comments
   - /docs/cli
-summary: Learn about vercel comments on Vercel.
+summary: Review and manage Vercel Toolbar comment threads from the terminal with the vercel comments CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/comments.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "8f1ba8981dd8b1463de11a062170f0f99f342f8ec65bfeb6b6396dcf8901a50b"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "a81aedcc35d194ba4161989374d8d53c6cb7c4843131bcfe61a18f10cc9d6f1e"
 ---
 
 # vercel comments
@@ -29,13 +29,14 @@ sha256: "8f1ba8981dd8b1463de11a062170f0f99f342f8ec65bfeb6b6396dcf8901a50b"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Integrations](https://vercel.com/docs/comments/integrations?from=related) — Learn how Comments integrates with Git providers like GitHub, GitLab, and BitBucket, as well as the Vercel app for Slack
-- [vercel api](https://vercel.com/docs/cli/api?from=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [Managing Comments](https://vercel.com/docs/comments/managing-comments?from=related) — Learn how to manage Comments on your Preview Deployments from Team members and invited collaborators.
-- [Enabling Comments](https://vercel.com/docs/comments/how-comments-work?from=related) — Learn when and where Comments are available, and how to enable and disable Comments at the account, project, and session
-- [vercel connect](https://vercel.com/docs/cli/connect?from=related) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
+- [Manage Vercel Toolbar comments from the CLI](https://vercel.com/changelog/manage-vercel-toolbar-comments-from-the-cli?from=related&source_path=%2Fdocs%2Fcli%2Fcomments&source_site=vercel-docs&relationship=related)
+- [Integrations for Comments](https://vercel.com/docs/comments/integrations?from=related&source_path=%2Fdocs%2Fcli%2Fcomments&source_site=vercel-docs&relationship=related) — Learn how Comments integrates with Git providers like GitHub, GitLab, and BitBucket, as well as the Vercel app for Slack
+- [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fcomments&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [Managing Comments on Preview Deployments](https://vercel.com/docs/comments/managing-comments?from=related&source_path=%2Fdocs%2Fcli%2Fcomments&source_site=vercel-docs&relationship=related) — Learn how to manage Comments on your Preview Deployments from Team members and invited collaborators.
+- [Enabling and Disabling Comments](https://vercel.com/docs/comments/how-comments-work?from=related&source_path=%2Fdocs%2Fcli%2Fcomments&source_site=vercel-docs&relationship=related) — Learn when and where Comments are available, and how to enable and disable Comments at the account, project, and session
+- [vercel connect](https://vercel.com/docs/cli/connect?from=related&source_path=%2Fdocs%2Fcli%2Fcomments&source_site=vercel-docs&relationship=related) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
 
-Full cross-link map for this page: [/docs/cli/comments.graph.md](/docs/cli/comments.graph.md)
+Full cross-link map for this page: [/docs/cli/comments.graph.md](/docs/cli/comments.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fcomments&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 The `vercel comments` command lets you review and manage existing [Vercel Toolbar Comments](/docs/comments) from the terminal. You can list, inspect, reply to, resolve, reopen, and open threads, as well as edit or delete their messages. Use the [Vercel Toolbar](/docs/vercel-toolbar) to create new comment threads.

@@ -12,8 +12,8 @@ related:
 summary: Vercel CLI collects telemetry data about general usage.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/about-telemetry.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "1ca14c6ed9044e0e003d4e9b9f07f2267325bb7ce99511a9a2a0bbe134f06a28"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "1a7a2daae79f17f557615012e39061ec7591d0bd888a707a932fe8f3470bb0c7"
 ---
 
 # Telemetry
@@ -28,15 +28,15 @@ sha256: "1ca14c6ed9044e0e003d4e9b9f07f2267325bb7ce99511a9a2a0bbe134f06a28"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Telemetry](https://turborepo.dev/docs/telemetry?from=related) — Understand what anonymous telemetry data Turborepo collects and how to opt out.
-- [telemetry](https://turborepo.dev/docs/reference/telemetry?from=related) — Reference for the `turbo telemetry` command that manages anonymous usage data collection.
-- [Using with CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
-- [Overview](https://vercel.com/docs/observability?from=related) — Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application perfor
-- [vercel metrics](https://vercel.com/docs/cli/metrics?from=related) — Query observability metrics and inspect available metrics, dimensions, and aggregations using the Vercel CLI.
-- [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics?from=related) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
-- [vercel api](https://vercel.com/docs/cli/api?from=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [Telemetry](https://turborepo.dev/docs/telemetry?from=related&source_path=%2Fdocs%2Fcli%2Fabout-telemetry&source_site=vercel-docs&relationship=related) — Understand what anonymous telemetry data Turborepo collects and how to opt out.
+- [telemetry](https://turborepo.dev/docs/reference/telemetry?from=related&source_path=%2Fdocs%2Fcli%2Fabout-telemetry&source_site=vercel-docs&relationship=related) — Reference for the `turbo telemetry` command that manages anonymous usage data collection.
+- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fcli%2Fabout-telemetry&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
+- [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fcli%2Fabout-telemetry&source_site=vercel-docs&relationship=related) — Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application perfor
+- [vercel metrics](https://vercel.com/docs/cli/metrics?from=related&source_path=%2Fdocs%2Fcli%2Fabout-telemetry&source_site=vercel-docs&relationship=related) — List and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
+- [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics?from=related&source_path=%2Fdocs%2Fcli%2Fabout-telemetry&source_site=vercel-docs&relationship=related) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
+- [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fabout-telemetry&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 
-Full cross-link map for this page: [/docs/cli/about-telemetry.graph.md](/docs/cli/about-telemetry.graph.md)
+Full cross-link map for this page: [/docs/cli/about-telemetry.graph.md](/docs/cli/about-telemetry.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fabout-telemetry&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Why is telemetry collected?

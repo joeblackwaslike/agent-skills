@@ -13,8 +13,8 @@ related:
 summary: "Global options are commonly available to use with multiple Vercel CLI commands. Learn about Vercel CLI's global options here."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/global-options.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "bebd1db24aa016d6fb0511dce39232f055b7be61cec3a3efb569a78af692d4c9"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "707a0d154dbf68c4c97d0117a17e2bba4384a4623f6cd96afab33027d682461f"
 ---
 
 # Vercel CLI Global Options
@@ -27,13 +27,13 @@ Global options are commonly available to use with multiple Vercel CLI commands.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
-- [vercel api](https://vercel.com/docs/cli/api?from=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel env](https://vercel.com/docs/cli/env?from=related) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
-- [vercel list](https://vercel.com/docs/cli/list?from=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [Project Configuration](https://vercel.com/docs/project-configuration?from=related) — Learn how to configure your Vercel projects using vercel.json, vercel.ts, or the dashboard to control builds, routing, f
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-options&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-options&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel env](https://vercel.com/docs/cli/env?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-options&source_site=vercel-docs&relationship=related) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
+- [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-options&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [Linking Projects with Vercel CLI](https://vercel.com/docs/cli/project-linking?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-options&source_site=vercel-docs&relationship=related) — Learn how to link existing Vercel Projects with Vercel CLI.
 
-Full cross-link map for this page: [/docs/cli/global-options.graph.md](/docs/cli/global-options.graph.md)
+Full cross-link map for this page: [/docs/cli/global-options.graph.md](/docs/cli/global-options.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-options&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Current Working Directory

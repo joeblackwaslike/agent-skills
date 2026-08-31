@@ -3,7 +3,7 @@ title: Images
 product: vercel
 url: /docs/sandbox/concepts/images
 canonical_url: "https://vercel.com/docs/sandbox/concepts/images"
-last_updated: 2026-08-03
+last_updated: 2026-08-11
 type: how-to
 prerequisites:
   - /docs/sandbox/concepts
@@ -12,11 +12,11 @@ related:
   - /docs/container-registry
   - /docs/container-registry/public-and-shared-repositories
   - /docs/container-registry/getting-started
-summary: Start sandboxes from custom OCI images stored in Vercel Container Registry to ship your own system packages, tooling, and filesystem layout.
+summary: "Start sandboxes from Vercel's Managed Images, or custom OCI images stored in Vercel Container Registry to ship your own system packages, tooling, and..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/images.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "20ea77ed49e780a430f32486d279b72e6272678739ddb3a0e7ac83957750692b"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "46ffbd2884a8f6cc24e2e37850a11c2b01cf657eb12497d7de6ee38889b8fc66"
 ---
 
 # Images
@@ -29,17 +29,17 @@ Custom images give you full control over the sandbox environment. Define the Lin
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Running Docker on Vercel](https://vercel.com/kb/guide/docker?from=related) — Learn how to run Docker on Vercel by deploying OCI container images as Vercel Functions, storing them in Vercel Containe
-- [How to use Vercel Container Registry](https://vercel.com/kb/guide/how-to-use-vercel-container-registry?from=related) — Push, store, and pull OCI container images with Vercel Container Registry, then deploy them to Vercel Functions and Verc
-- [How to migrate from GHCR to Vercel Container Registry](https://vercel.com/kb/guide/migrate-ghcr-to-vcr?from=related) — Migrate container images from GitHub Container Registry \\(GHCR\\) to Vercel Container Registry \\(VCR\\), including authent
-- [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
-- [Examples](https://vercel.com/docs/sandbox/working-with-sandbox?from=related) — Task-oriented examples for common Vercel Sandbox operations in TypeScript and Python.
-- [JS SDK Reference](https://vercel.com/docs/sandbox/sdk-reference?from=related) — A comprehensive reference for the Vercel Sandbox JavaScript SDK, which lets you run code in a secure, isolated environme
-- [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes?from=related) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem
-- [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
-- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
+- [Share Vercel Container Registry repositories across teams](https://vercel.com/changelog/share-vercel-container-registry-repositories-across-teams?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fimages&source_site=vercel-docs&relationship=related)
+- [Vercel Container Registry repositories can now be made public](https://vercel.com/changelog/vercel-container-registry-repositories-can-now-be-made-public?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fimages&source_site=vercel-docs&relationship=related)
+- [Vercel Sandbox now support Custom Images](https://vercel.com/changelog/vercel-sandbox-now-support-custom-images?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fimages&source_site=vercel-docs&relationship=related)
+- [Running Docker on Vercel](https://vercel.com/kb/guide/docker?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fimages&source_site=vercel-docs&relationship=related) — Learn how to run Docker on Vercel by deploying OCI container images as Vercel Functions, storing them in Vercel Containe
+- [How to install system packages in Vercel Sandbox](https://vercel.com/kb/guide/how-to-install-system-packages-in-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fimages&source_site=vercel-docs&relationship=related) — Learn how to install additional system packages in Vercel Sandbox with apt-get on the default Ubuntu-based managed image
+- [How to use Vercel Container Registry](https://vercel.com/kb/guide/how-to-use-vercel-container-registry?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fimages&source_site=vercel-docs&relationship=related) — Push, store, and pull OCI container images with Vercel Container Registry, then deploy them to Vercel Functions and Verc
+- [Vercel Sandbox now runs on Vercel Managed Images](https://vercel.com/changelog/vercel-sandbox-managed-images?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fimages&source_site=vercel-docs&relationship=related)
+- [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fimages&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fimages&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
-Full cross-link map for this page: [/docs/sandbox/concepts/images.graph.md](/docs/sandbox/concepts/images.graph.md)
+Full cross-link map for this page: [/docs/sandbox/concepts/images.graph.md](/docs/sandbox/concepts/images.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fimages&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Sandbox pulls images from [Vercel Container Registry (VCR)](/docs/container-registry), a project-scoped registry for OCI images. Pin environments with tags and digests, [share a repository](/docs/container-registry/public-and-shared-repositories#share-a-repository) to reuse one image across projects and teams, or [mark a repository public](/docs/container-registry/public-and-shared-repositories#public-repositories) to let any other team use your image.

@@ -3,7 +3,7 @@ title: Firewall Observability
 product: vercel
 url: /docs/vercel-firewall/firewall-observability
 canonical_url: "https://vercel.com/docs/vercel-firewall/firewall-observability"
-last_updated: 2026-07-17
+last_updated: 2026-08-11
 type: how-to
 prerequisites:
   - /docs/vercel-firewall
@@ -16,8 +16,8 @@ related:
 summary: Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/firewall-observability.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "978a79d961275c53f7d5d11a0433ef00f2f06a919e57ebd161c0e235bf3da79d"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "16b266a4240999a3e8490133682c1bca9f6adeb4fcf8ddbce27589741afa567a"
 ---
 
 # Firewall Observability
@@ -30,14 +30,20 @@ The project **Firewall** page of your Vercel dashboard provides a consolidated v
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
-- [Web Application Firewall](https://vercel.com/docs/vercel-firewall/vercel-waf?from=related) — Learn how to secure your website with the Vercel Web Application Firewall \\(WAF\\)
-- [Overview](https://vercel.com/docs/security?from=related) — Vercel provides built-in and customizable features to ensure that your site is secure.
-- [Attack Mode](https://vercel.com/docs/vercel-firewall/attack-mode?from=related) — Learn how to use Attack Mode to help control who has access to your site when it's under attack.
-- [WAF Managed Rulesets](https://vercel.com/docs/vercel-firewall/vercel-waf/managed-rulesets?from=related) — Learn how to use WAF Managed Rulesets with the Vercel Web Application Firewall \\(WAF\\)
-- [Examples](https://vercel.com/docs/vercel-firewall/vercel-waf/examples?from=related) — Learn how to use Vercel WAF to protect your site in specific situations.
+- [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
+- [Preview your site's Firewall status and Web Analytics from the Project Overview](https://vercel.com/changelog/preview-firewall-status-and-web-analytics-from-project-overview?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related)
+- [Security through design: Creating the improved Firewall experience](https://vercel.com/blog/security-through-design-creating-the-improved-firewall-experience?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related)
+- [Preventing infrastructure abuse with Vercel Firewall](https://vercel.com/blog/preventing-infrastructure-abuse-with-vercel-firewall?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related)
+- [Introducing Vercel Firewall DDoS mitigation notifications](https://vercel.com/changelog/introducing-vercel-firewall-notifications?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related)
+- [Vercel security roundup: improved bot defenses, DoS mitigations, and insights](https://vercel.com/blog/vercel-security-roundup-improved-bot-defenses-dos-mitigations-and-insights?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related)
+- [Improved analytics experience now available on the Vercel Firewall](https://vercel.com/changelog/improved-analytics-experience-now-available-on-the-vercel-firewall?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related)
+- [Improved traffic visibility on Firewall overview page](https://vercel.com/changelog/improved-traffic-visibility-on-firewall-overview-page?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related)
+- [Protecting your app (and wallet) against malicious traffic](https://vercel.com/blog/protecting-your-app-and-wallet-against-malicious-traffic?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related)
+- [Vercel security roundup: Faster defenses and better visibility for your apps](https://vercel.com/blog/vercel-security-roundup-faster-defenses-and-better-visibility-for-your-apps?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related)
+- [Vercel WAF](https://vercel.com/docs/vercel-firewall/vercel-waf?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related) — Learn how to secure your website with the Vercel Web Application Firewall \\(WAF\\)
+- [Vercel security overview](https://vercel.com/docs/security?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related) — Vercel provides built-in and customizable features to ensure that your site is secure.
 
-Full cross-link map for this page: [/docs/vercel-firewall/firewall-observability.graph.md](/docs/vercel-firewall/firewall-observability.graph.md)
+Full cross-link map for this page: [/docs/vercel-firewall/firewall-observability.graph.md](/docs/vercel-firewall/firewall-observability.graph.md?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Overview

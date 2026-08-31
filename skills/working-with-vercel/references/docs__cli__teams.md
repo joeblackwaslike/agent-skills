@@ -3,7 +3,7 @@ title: vercel teams
 product: vercel
 url: /docs/cli/teams
 canonical_url: "https://vercel.com/docs/cli/teams"
-last_updated: 2026-07-15
+last_updated: 2026-08-11
 type: reference
 prerequisites:
   - /docs/cli
@@ -13,8 +13,8 @@ related:
 summary: Learn how to list, add, switch, invite, and manage your teams with the vercel teams CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/teams.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "822b51e33568f13bf3995b042d9771a9a445609c11b5a9b55e530377c68b1195"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "c9a989b648d6c6c87090ee8d175447250782b75a10fe9d68e9ca9df7476a1fc2"
 ---
 
 # vercel teams
@@ -27,13 +27,13 @@ The `vercel teams` command manages [Teams](/docs/accounts#creating-a-team): list
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [List team members](https://vercel.com/docs/rest-api/teams/list-team-members?from=related)
-- [List all teams](https://vercel.com/docs/rest-api/teams/list-all-teams?from=related)
-- [vercel switch](https://vercel.com/docs/cli/switch?from=related) — Learn how to switch between different team scopes using the vercel switch CLI command.
-- [Join a team](https://vercel.com/docs/rest-api/teams/join-a-team?from=related)
-- [vercel list](https://vercel.com/docs/cli/list?from=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [List team members](https://vercel.com/docs/rest-api/teams/list-team-members?from=related&source_path=%2Fdocs%2Fcli%2Fteams&source_site=vercel-docs&relationship=related) — GET /v3/teams/{teamId}/members — Get a paginated list of team members for the provided team.
+- [List all teams](https://vercel.com/docs/rest-api/teams/list-all-teams?from=related&source_path=%2Fdocs%2Fcli%2Fteams&source_site=vercel-docs&relationship=related) — GET /v2/teams — Get a paginated list of all the Teams the authenticated User is a member of.
+- [vercel switch](https://vercel.com/docs/cli/switch?from=related&source_path=%2Fdocs%2Fcli%2Fteams&source_site=vercel-docs&relationship=related) — Learn how to switch between different team scopes using the vercel switch CLI command.
+- [Join a team](https://vercel.com/docs/rest-api/teams/join-a-team?from=related&source_path=%2Fdocs%2Fcli%2Fteams&source_site=vercel-docs&relationship=related) — POST /v1/teams/{teamId}/members/teams/join — Join a team with a provided invite code or team ID.
+- [Invite a user](https://vercel.com/docs/rest-api/teams/invite-a-user?from=related&source_path=%2Fdocs%2Fcli%2Fteams&source_site=vercel-docs&relationship=related) — POST /v2/teams/{teamId}/members — Invite a user to join the team specified in the URL. The authenticated user needs to b
 
-Full cross-link map for this page: [/docs/cli/teams.graph.md](/docs/cli/teams.graph.md)
+Full cross-link map for this page: [/docs/cli/teams.graph.md](/docs/cli/teams.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fteams&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 `vercel team` is an alias for the same command, and `vercel switch` is a top-level alias for `vercel teams switch`.

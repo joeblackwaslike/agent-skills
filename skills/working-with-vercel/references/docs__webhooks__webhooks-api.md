@@ -3,7 +3,7 @@ title: Webhooks API Reference
 product: vercel
 url: /docs/webhooks/webhooks-api
 canonical_url: "https://vercel.com/docs/webhooks/webhooks-api"
-last_updated: 2026-07-15
+last_updated: 2026-08-11
 type: reference
 prerequisites:
   - /docs/webhooks
@@ -16,8 +16,8 @@ related:
 summary: Vercel Integrations allow you to subscribe to certain trigger-based events through webhooks. Learn about the supported webhook events and how to use...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/webhooks/webhooks-api.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "1fd52ad36a9f92534291612e9539b5f972fcc43f21de2681d062ccf2365e2ba6"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "811c079095ba0b2d972017cf99c9a0ccb8850f0036499c34a43f0d5812b3f49b"
 ---
 
 # Webhooks API Reference
@@ -30,14 +30,15 @@ Vercel Integrations allow you to subscribe to certain trigger-based events throu
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel?from=related) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
-- [List deployments](https://vercel.com/docs/rest-api/deployments/list-deployments?from=related)
-- [Deployment integration actions](https://vercel.com/docs/integrations/create-integration/deployment-integration-action?from=related) — These actions allow integration providers to set up automated tasks with Vercel deployments.
-- [Instant Rollback](https://vercel.com/docs/instant-rollback?from=related) — Learn how to perform an Instant Rollback on your production deployments and quickly roll back to a previously deployed p
-- [Get deployment events](https://vercel.com/docs/rest-api/deployments/get-deployment-events?from=related)
-- [Audit Logs](https://vercel.com/docs/audit-log?from=related) — Learn how to track and analyze your team members' activities.
+- [New webhook events for domain management](https://vercel.com/changelog/new-webhook-events-for-domain-management?from=related&source_path=%2Fdocs%2Fwebhooks%2Fwebhooks-api&source_site=vercel-docs&relationship=related)
+- [Subscribe to webhook events for Vercel Flags](https://vercel.com/changelog/subscribe-to-webhook-events-for-vercel-flags?from=related&source_path=%2Fdocs%2Fwebhooks%2Fwebhooks-api&source_site=vercel-docs&relationship=related)
+- [Audit Logs](https://vercel.com/docs/audit-log?from=related&source_path=%2Fdocs%2Fwebhooks%2Fwebhooks-api&source_site=vercel-docs&relationship=related) — Learn how to track and analyze your team members' activities.
+- [Deployment integration actions](https://vercel.com/docs/integrations/create-integration/deployment-integration-action?from=related&source_path=%2Fdocs%2Fwebhooks%2Fwebhooks-api&source_site=vercel-docs&relationship=related) — These actions allow integration providers to set up automated tasks with Vercel deployments.
+- [Performing an Instant Rollback on a Deployment](https://vercel.com/docs/instant-rollback?from=related&source_path=%2Fdocs%2Fwebhooks%2Fwebhooks-api&source_site=vercel-docs&relationship=related) — Learn how to perform an Instant Rollback on your production deployments and quickly roll back to a previously deployed p
+- [Get deployment events](https://vercel.com/docs/rest-api/deployments/get-deployment-events?from=related&source_path=%2Fdocs%2Fwebhooks%2Fwebhooks-api&source_site=vercel-docs&relationship=related) — GET /v3/deployments/{idOrUrl}/events — Get the build logs of a deployment by deployment ID and build ID. It can work as
+- [List deployments](https://vercel.com/docs/rest-api/deployments/list-deployments?from=related&source_path=%2Fdocs%2Fwebhooks%2Fwebhooks-api&source_site=vercel-docs&relationship=related) — GET /v7/deployments — List deployments under the authenticated user or team. If a deployment hasn't finished uploading \\
 
-Full cross-link map for this page: [/docs/webhooks/webhooks-api.graph.md](/docs/webhooks/webhooks-api.graph.md)
+Full cross-link map for this page: [/docs/webhooks/webhooks-api.graph.md](/docs/webhooks/webhooks-api.graph.md?from=related&source_path=%2Fdocs%2Fwebhooks%2Fwebhooks-api&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Payload

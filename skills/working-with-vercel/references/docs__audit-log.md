@@ -3,7 +3,7 @@ title: Audit Logs
 product: vercel
 url: /docs/audit-log
 canonical_url: "https://vercel.com/docs/audit-log"
-last_updated: 2026-07-29
+last_updated: 2026-08-26
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: "Learn how to track and analyze your team members' activities."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/audit-log.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "78273d0b8a113aeb5eaf1d198a272c287b4bbb4cad40ae7544c347b45abaf6a3"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "bd4fd67567b952ebd166cfd364eeddcb22bf224c98a55278d6bdd2e0a350dc9f"
 ---
 
 # Audit Logs
@@ -30,16 +30,20 @@ sha256: "78273d0b8a113aeb5eaf1d198a272c287b4bbb4cad40ae7544c347b45abaf6a3"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to build and maintain HIPAA-compliant applications on Vercel](https://vercel.com/kb/guide/hipaa-compliance-guide-vercel?from=related) — Deploy HIPAA-compliant healthcare apps on Vercel with built-in security, BAAs, and scalable serverless infrastructure.
-- [Encryption](https://workflow-sdk.dev/docs/how-it-works/encryption?from=related) — Understand how workflow and step data is encrypted at rest.
-- [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
-- [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [CLI](https://vercel.com/docs/cli?from=related) — Learn how to use the Vercel command-line interface \\(CLI\\) to manage and configure your Vercel Projects from the command
-- [System Environment Variables](https://vercel.com/docs/environment-variables/system-environment-variables?from=related) — System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the
-- [vercel project](https://vercel.com/docs/cli/project?from=related) — Perform the following commands from the terminal for your Vercel Projects: list, add, inspect, update settings, rename,
-- [Activity Log](https://vercel.com/docs/activity-log?from=related) — Learn how to use the Activity Log, which provides a list of all events on a team, chronologically organized since its cr
+- [Audit Log Drains now support Datadog, Splunk, and Panther](https://vercel.com/changelog/audit-log-drains-now-support-datadog-splunk-and-panther?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related)
+- [Expanded Audit Log coverage, now delivered through Vercel Drains](https://vercel.com/changelog/expanded-audit-log-coverage-now-delivered-through-vercel-drains?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related)
+- [Vercel MCP now supports purchases](https://vercel.com/changelog/vercel-mcp-now-supports-purchases?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related)
+- [Vercel Passport is now generally available](https://vercel.com/changelog/vercel-passport-generally-available?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related)
+- [End-to-end encryption for Vercel Workflow](https://vercel.com/changelog/workflow-encryption?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related)
+- [How to build and maintain HIPAA-compliant applications on Vercel](https://vercel.com/kb/guide/hipaa-compliance-guide-vercel?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related) — Deploy HIPAA-compliant healthcare apps on Vercel with built-in security, BAAs, and scalable serverless infrastructure.
+- [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related)
+- [Encryption](https://workflow-sdk.dev/docs/how-it-works/encryption?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related) — Understand how workflow and step data is encrypted at rest.
+- [Simpler Pricing](https://vercel.com/blog/simpler-pricing?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related)
+- [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
+- [June 2020](https://vercel.com/blog/changelog-june-2020?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related)
+- [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 
-Full cross-link map for this page: [/docs/audit-log.graph.md](/docs/audit-log.graph.md)
+Full cross-link map for this page: [/docs/audit-log.graph.md](/docs/audit-log.graph.md?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Audit logs help you track and analyze your [team members'](/docs/rbac/managing-team-members) activity. They can be accessed by team members with the [owner](/docs/rbac/access-roles#owner-role) role, and are available to customers on [enterprise](/docs/plans/enterprise) plans.
@@ -163,6 +167,15 @@ A digital certificate to manage SSL/TLS certificates for your custom domains thr
 | **`cert.created`** | Indicates that a new certificate was created |
 | **`cert.deleted`** | Indicates that a new certificate was deleted |
 | **`cert.renewed`** | Indicates that a new certificate was renewed |
+
+### `compliance`
+
+Tracks when team members access [compliance documents](/docs/security/attestations-and-compliance-report). Bulk downloads create one audit log action for each document in the archive.
+
+| **Action Name**                      | **Description**                                  |
+| ------------------------------------ | ------------------------------------------------ |
+| **`compliance.document.downloaded`** | A team member downloaded a compliance document.  |
+| **`compliance.document.previewed`**  | A team member previewed a compliance document.   |
 
 ### `deploy_hook`
 

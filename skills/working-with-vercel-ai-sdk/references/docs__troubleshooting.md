@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/troubleshooting.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "e0c3bfb386cede7207ad523602367e35f62bba9d58ab2c45cc71c8fe3b212348"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "922c55cb55f1ebb8c0a67b1638fe021b6e6fee6535dcdd3deebb04f1b394ab93"
 ---
 
 # Troubleshooting
@@ -208,6 +208,7 @@ This section is designed to help you quickly identify and resolve common issues 
   - [AI SDK Workflow](/docs/reference/ai-sdk-workflow)
     - [WorkflowAgent](/docs/reference/ai-sdk-workflow/workflow-agent)
     - [WorkflowChatTransport](/docs/reference/ai-sdk-workflow/workflow-chat-transport)
+    - [generateVideo](/docs/reference/ai-sdk-workflow/generate-video)
   - [AI SDK Errors](/docs/reference/ai-sdk-errors)
     - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
     - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
@@ -237,6 +238,7 @@ This section is designed to help you quickly identify and resolve common issues 
     - [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
     - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
     - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
+    - [AI_StreamProviderError](/docs/reference/ai-sdk-errors/ai-stream-provider-error)
     - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
     - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
     - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)

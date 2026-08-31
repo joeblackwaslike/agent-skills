@@ -3,7 +3,7 @@ title: Security & Compliance Measures
 product: vercel
 url: /docs/security/compliance
 canonical_url: "https://vercel.com/docs/security/compliance"
-last_updated: 2026-07-08
+last_updated: 2026-08-26
 type: reference
 prerequisites:
   - /docs/security
@@ -16,8 +16,8 @@ related:
 summary: Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS mitigation and SOC 2 compliance.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/compliance.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "ab029f803fba9761583e1b7701246908d801263449b69d828a47cc1d82d600e6"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "beedfb5c35782d7dc112d25ad63ba4454ed9a27d662df4e333eb51ba03b02048"
 ---
 
 # Security & Compliance Measures
@@ -30,20 +30,20 @@ This page covers the protection and compliance measures Vercel takes to ensure t
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [v0 vs Base44](https://v0.app/docs/compare/v0-vs-base44?from=related) — A source-backed comparison of v0 and Base44.
-- [v0 vs Bolt](https://v0.app/docs/compare/v0-vs-bolt?from=related) — A source-backed comparison of v0 and Bolt.
-- [v0 vs Figma Make](https://v0.app/docs/compare/v0-vs-figma-make?from=related) — A source-backed comparison of v0 and Figma Make.
-- [v0 vs Replit](https://v0.app/docs/compare/v0-vs-replit?from=related) — A source-backed comparison of v0 and Replit.
-- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel?from=related) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
-- [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
-- [How to build and maintain HIPAA-compliant applications on Vercel](https://vercel.com/kb/guide/hipaa-compliance-guide-vercel?from=related) — Deploy HIPAA-compliant healthcare apps on Vercel with built-in security, BAAs, and scalable serverless infrastructure.
-- [Does Vercel have a SOC 2 Type 2 attestation?](https://vercel.com/kb/guide/is-vercel-soc-2-compliant?from=related) — Vercel holds a SOC 2 Type 2 attestation for Security, Confidentiality, and Availability. See what the report covers, how
-- [Ensuring safe and effective infrastructure testing](https://vercel.com/kb/guide/ensuring-safe-and-effective-infrastructure-testing?from=related) — We conduct regular penetration testing through certified third-party assessors to secure the Vercel platform. This guide
-- [Request Lifecycle](https://vercel.com/docs/fundamentals/infrastructure?from=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
-- [Encryption & TLS](https://vercel.com/docs/cdn-security/encryption?from=related) — Learn how Vercel encrypts data in transit and at rest.
-- [Security](https://vercel.com/docs/cdn-security?from=related) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
+- [v0 vs Base44](https://v0.app/docs/compare/v0-vs-base44?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related) — A source-backed comparison of v0 and Base44.
+- [v0 vs Bolt](https://v0.app/docs/compare/v0-vs-bolt?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related) — A source-backed comparison of v0 and Bolt.
+- [v0 vs Figma Make](https://v0.app/docs/compare/v0-vs-figma-make?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related) — A source-backed comparison of v0 and Figma Make.
+- [v0 vs Replit](https://v0.app/docs/compare/v0-vs-replit?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related) — A source-backed comparison of v0 and Replit.
+- [Compliance documents are now available in Team settings](https://vercel.com/changelog/compliance-documents-are-now-available-in-team-settings?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related)
+- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
+- [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
+- [How to build and maintain HIPAA-compliant applications on Vercel](https://vercel.com/kb/guide/hipaa-compliance-guide-vercel?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related) — Deploy HIPAA-compliant healthcare apps on Vercel with built-in security, BAAs, and scalable serverless infrastructure.
+- [Does Vercel have a SOC 2 Type 2 attestation?](https://vercel.com/kb/guide/is-vercel-soc-2-compliant?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related) — Vercel holds a SOC 2 Type 2 attestation for Security, Confidentiality, and Availability. See what the report covers, how
+- [Ensuring safe and effective infrastructure testing](https://vercel.com/kb/guide/ensuring-safe-and-effective-infrastructure-testing?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related) — We conduct regular penetration testing through certified third-party assessors to secure the Vercel platform. This guide
+- [Simpler Pricing](https://vercel.com/blog/simpler-pricing?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related)
+- [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
 
-Full cross-link map for this page: [/docs/security/compliance.graph.md](/docs/security/compliance.graph.md)
+Full cross-link map for this page: [/docs/security/compliance.graph.md](/docs/security/compliance.graph.md?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 To understand how security responsibilities are divided between you (the customer) and Vercel, see the [shared responsibility model](/docs/security/shared-responsibility). It explains who is responsible for each aspect of keeping your cloud services secure and running smoothly.
@@ -62,7 +62,7 @@ More information is available at [security.vercel.com](https://security.vercel.c
 
 ISO 27001 is an internationally recognized standard, developed by the International Organization for Standardization (ISO) and International Electrotechnical Commission (IEC), that provides organizations with a systematic approach to securing confidential company and customer information.
 
-**Vercel is ISO 27001:2022 certified**. Our certificate is available [here](https://www.schellman.com/certificate-directory?certificateNumber=1868222-1).
+**Vercel is ISO 27001:2022 certified**. Our certificate is available [here](https://www.schellman.com/certificate-directory?certificateNumber=1868222-4).
 
 ### GDPR
 
@@ -116,7 +116,7 @@ Customers subject to HIPAA may enable [Vercel Secure Compute (available on Enter
 
 [Learn](https://security.vercel.com/?itemUid=aec41c33-0f3a-4030-ac59-49adfd4a975b\&source=click) about how Vercel supports HIPAA compliance.
 
-[Contact us](https://vercel.com/contact/sales) to request a **BAA**. Enterprise customers can also contact us to add Secure Compute to their plan.
+Pro teams can purchase the HIPAA BAA add-on from their team's [Billing settings](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fbilling%23paid-add-ons). Enterprise teams can [contact us](https://vercel.com/contact/sales) to request a **BAA** or add Secure Compute to their plan.
 
 ### EU-U.S Data Privacy Framework
 

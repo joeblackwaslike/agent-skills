@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/settings-example.md"
-fetched_at: "2026-08-24T04:44:18.863Z"
-sha256: "ffa1249c2fdab2f432dd80d4f996f22bc5337a496fc6227a342795693f9c640c"
+fetched_at: "2026-08-31T10:37:20.620Z"
+sha256: "c04b742b421dcb2591a55cba80ba2b5692346ffd0631d7438e4058059109ac31"
 ---
 
 > ## Documentation Index
@@ -62,7 +62,7 @@ One developer's personal settings. It picks a model and effort, adjusts the term
     {
       // Start every session on Sonnet 5
       "model": "claude-sonnet-5",
-      // Reason more deeply than the default high level; /effort saves a new level, and --effort overrides it for one session
+      // Reason more deeply than the default high level on models without a saved level; /effort saves a level per model, and --effort sets one for a single session
       "effortLevel": "xhigh",
       // Vim keybindings in the prompt
       "editorMode": "vim",

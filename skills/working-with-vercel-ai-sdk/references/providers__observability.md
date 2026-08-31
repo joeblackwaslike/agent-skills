@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "c8b6ee9ff1818b2f61cd089e7348869197e25e7a1609d924b8518a8737e8fa79"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "6bc156f58ea63843a5305510fdf94dc87a619244f54cd01f9d73f7e724d22c87"
 ---
 
 # Observability Integrations
@@ -68,6 +68,7 @@ There are also providers that provide monitoring and tracing for the AI SDK thro
   - [QuiverAI](/providers/ai-sdk-providers/quiverai)
   - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
   - [Mistral AI](/providers/ai-sdk-providers/mistral)
+  - [Z.AI](/providers/ai-sdk-providers/zai)
   - [Together.ai](/providers/ai-sdk-providers/togetherai)
   - [Cohere](/providers/ai-sdk-providers/cohere)
   - [Fireworks](/providers/ai-sdk-providers/fireworks)
@@ -94,6 +95,8 @@ There are also providers that provide monitoring and tracing for the AI SDK thro
   - [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
   - [Grok Build](/providers/ai-sdk-harnesses/grok-build)
   - [Cline](/providers/ai-sdk-harnesses/cline)
+  - [Cursor](/providers/ai-sdk-harnesses/cursor)
+  - [fx](/providers/ai-sdk-harnesses/fx)
 - [Observability Integrations](/providers/observability)
   - [Arize AX](/providers/observability/arize-ax)
   - [Axiom](/providers/observability/axiom)

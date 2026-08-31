@@ -3,7 +3,7 @@ title: Manage and optimize usage
 product: vercel
 url: /docs/pricing/manage-and-optimize-usage
 canonical_url: "https://vercel.com/docs/pricing/manage-and-optimize-usage"
-last_updated: 2026-07-29
+last_updated: 2026-08-21
 type: reference
 prerequisites:
   - /docs/pricing
@@ -16,8 +16,8 @@ related:
 summary: Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize your usage to save costs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/manage-and-optimize-usage.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "75132054a0ce2c5ce3340cbd3967831b956bc334b264290e3398f4271a47b8b3"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "7cd1158fa3b7f444d07d3ffb39d75c13e1aeeb1aff0ca9da27eeaace799d577d"
 ---
 
 # Manage and optimize usage
@@ -30,14 +30,20 @@ sha256: "75132054a0ce2c5ce3340cbd3967831b956bc334b264290e3398f4271a47b8b3"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute?from=related) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
-- [Plans](https://vercel.com/docs/plans?from=related) — Learn about the different plans available on Vercel.
-- [Limits and Pricing](https://vercel.com/docs/speed-insights/limits-and-pricing?from=related) — Learn about our limits and pricing when using Vercel Speed Insights. Different limitations are applied depending on your
-- [Pricing & Usage](https://vercel.com/docs/manage-cdn-usage?from=related) — Understand CDN pricing resources, monitor usage from your dashboard, and optimize Fast Data Transfer, Fast Origin Transf
-- [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage?from=related) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
-- [Legacy Usage & Pricing](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related) — Learn about legacy usage and pricing for Vercel Functions.
+- [Log Drains are now generally available](https://vercel.com/changelog/log-drains-are-now-generally-available?from=related&source_path=%2Fdocs%2Fpricing%2Fmanage-and-optimize-usage&source_site=vercel-docs&relationship=related)
+- [Lower pricing for Log Drains](https://vercel.com/changelog/lower-pricing-for-log-drains?from=related&source_path=%2Fdocs%2Fpricing%2Fmanage-and-optimize-usage&source_site=vercel-docs&relationship=related)
+- [One-click linking from Usage to Vercel Observability dashboards](https://vercel.com/changelog/one-click-linking-from-usage-to-vercel-observability-dashboards?from=related&source_path=%2Fdocs%2Fpricing%2Fmanage-and-optimize-usage&source_site=vercel-docs&relationship=related)
+- [Speed Insights usage can now be viewed by Project](https://vercel.com/changelog/speed-insights-usage-can-now-be-viewed-by-project?from=related&source_path=%2Fdocs%2Fpricing%2Fmanage-and-optimize-usage&source_site=vercel-docs&relationship=related)
+- [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute?from=related&source_path=%2Fdocs%2Fpricing%2Fmanage-and-optimize-usage&source_site=vercel-docs&relationship=related) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
+- [Protecting your app (and wallet) against malicious traffic](https://vercel.com/blog/protecting-your-app-and-wallet-against-malicious-traffic?from=related&source_path=%2Fdocs%2Fpricing%2Fmanage-and-optimize-usage&source_site=vercel-docs&relationship=related)
+- [Simpler Pricing](https://vercel.com/blog/simpler-pricing?from=related&source_path=%2Fdocs%2Fpricing%2Fmanage-and-optimize-usage&source_site=vercel-docs&relationship=related)
+- [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Fpricing%2Fmanage-and-optimize-usage&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
+- [Account Plans on Vercel](https://vercel.com/docs/plans?from=related&source_path=%2Fdocs%2Fpricing%2Fmanage-and-optimize-usage&source_site=vercel-docs&relationship=related) — Learn about the different plans available on Vercel.
+- [CDN pricing and usage](https://vercel.com/docs/manage-cdn-usage?from=related&source_path=%2Fdocs%2Fpricing%2Fmanage-and-optimize-usage&source_site=vercel-docs&relationship=related) — Understand CDN pricing resources, monitor usage from your dashboard, and optimize Fast Data Transfer, Fast Origin Transf
+- [Limits and Pricing for Speed Insights](https://vercel.com/docs/speed-insights/limits-and-pricing?from=related&source_path=%2Fdocs%2Fpricing%2Fmanage-and-optimize-usage&source_site=vercel-docs&relationship=related) — Learn about our limits and pricing when using Vercel Speed Insights. Different limitations are applied depending on your
+- [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related&source_path=%2Fdocs%2Fpricing%2Fmanage-and-optimize-usage&source_site=vercel-docs&relationship=related) — Learn about legacy usage and pricing for Vercel Functions.
 
-Full cross-link map for this page: [/docs/pricing/manage-and-optimize-usage.graph.md](/docs/pricing/manage-and-optimize-usage.graph.md)
+Full cross-link map for this page: [/docs/pricing/manage-and-optimize-usage.graph.md](/docs/pricing/manage-and-optimize-usage.graph.md?from=related&source_path=%2Fdocs%2Fpricing%2Fmanage-and-optimize-usage&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 There are three plans on Vercel: Hobby, Pro, and Enterprise. To see which plan you are on, select your team from the team switcher. Next to your team name, you will see the plan you are on.

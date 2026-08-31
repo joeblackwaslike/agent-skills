@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/agents/tool-approvals.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "a52e0b9f44e1a498c35a046fd455011832054ac06e1a53ac98265d64c5aef96b"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "6810f73ccec2420421662af63066765b0cd9922b1d65fdb0ccbb74fb03e9362b"
 ---
 
 # Tool Approvals
@@ -237,6 +237,9 @@ export default function Chat() {
       if (part.state === 'approval-requested' && !part.approval.isAutomatic) {
         return (
           <div key={part.toolCallId}>
+            {part.approval.requestReason && (
+              <p>{part.approval.requestReason}</p>
+            )}
             <button
               onClick={() =>
                 addToolApprovalResponse({
@@ -266,6 +269,9 @@ export default function Chat() {
 ```
 
 Only call `addToolApprovalResponse` for manual approvals. Automatic approvals and denials already include approval state in the stream.
+When a manual approval status includes a reason, it is available as
+`part.approval.requestReason`. A reason supplied with
+`addToolApprovalResponse` is stored separately as `part.approval.reason`.
 
 ## Security Considerations
 

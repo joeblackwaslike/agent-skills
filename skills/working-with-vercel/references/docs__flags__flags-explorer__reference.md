@@ -15,8 +15,8 @@ related:
 summary: In-depth reference for configuring the Flags Explorer
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/flags-explorer/reference.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "793fe4740135f62f6cc02ab729b3f593cce9c68a9b2905e03ad808eb091a378f"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "3e4bf8542b8251644fd65fbc5f54db61f677e848af2dd339a1b21db3337ec903"
 ---
 
 # Reference
@@ -29,15 +29,16 @@ sha256: "793fe4740135f62f6cc02ab729b3f593cce9c68a9b2905e03ad808eb091a378f"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit?from=related) — Using the Flags SDK in SvelteKit
-- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related)
-- [Quickstart](https://flags-sdk.dev/docs/frameworks/next?from=related) — Learn how to start using the Flags SDK in your Next.js project.
-- [flags/next](https://flags-sdk.dev/docs/api-reference/frameworks/next?from=related) — APIs for working with feature flags in Next.js.
-- [Statsig](https://flags-sdk.dev/docs/providers/statsig?from=related)
-- [Flags SDK](https://vercel.com/docs/flags/flags-sdk-reference?from=related) — API reference for the Flags SDK for Next.js and SvelteKit.
-- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
+- [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Freference&source_site=vercel-docs&relationship=related) — Using the Flags SDK in SvelteKit
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Freference&source_site=vercel-docs&relationship=related)
+- [Quickstart](https://flags-sdk.dev/docs/frameworks/next?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Freference&source_site=vercel-docs&relationship=related) — Learn how to start using the Flags SDK in your Next.js project.
+- [flags/next](https://flags-sdk.dev/docs/api-reference/frameworks/next?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Freference&source_site=vercel-docs&relationship=related) — APIs for working with feature flags in Next.js.
+- [Statsig](https://flags-sdk.dev/docs/providers/statsig?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Freference&source_site=vercel-docs&relationship=related)
+- [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Freference&source_site=vercel-docs&relationship=related) — API reference for the Flags SDK for Next.js and SvelteKit.
+- [Create a flag](https://vercel.com/docs/rest-api/feature-flags/create-a-flag?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Freference&source_site=vercel-docs&relationship=related) — PUT /v1/projects/{projectIdOrName}/feature-flags/flags — Create a new feature flag for a project. The flag must have a u
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Freference&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
-Full cross-link map for this page: [/docs/flags/flags-explorer/reference.graph.md](/docs/flags/flags-explorer/reference.graph.md)
+Full cross-link map for this page: [/docs/flags/flags-explorer/reference.graph.md](/docs/flags/flags-explorer/reference.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Freference&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 The Flags Explorer has five main concepts: the [Discovery Endpoint](/docs/flags/flags-explorer/reference#discovery-endpoint), the [FLAGS\_SECRET environment variable](/docs/flags/flags-explorer/reference#flags_secret-environment-variable), the [override cookie](/docs/flags/flags-explorer/reference#override-cookie), [flag definitions](/docs/flags/flags-explorer/reference#definitions), and [flag values](/docs/flags/flags-explorer/reference#values).

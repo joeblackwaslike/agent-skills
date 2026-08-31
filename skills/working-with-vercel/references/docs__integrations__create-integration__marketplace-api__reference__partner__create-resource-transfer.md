@@ -3,7 +3,7 @@ title: create-resource-transfer
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/create-resource-transfer
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/create-resource-transfer"
-last_updated: 2026-08-24
+last_updated: 2026-08-31
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn about create-resource-transfer on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/create-resource-transfer.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "aa81d78ab19a306351a62ec48cff92a2ea2ce05ab7780d4f251aef5dceeca2d0"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "e2473783b7ecd60a0dd8f849602849e591ce5df1425d125fc6185a267fced6c7"
 ---
 
 # Create Resources Transfer Request
@@ -70,6 +70,15 @@ System Auth OIDC token claims schema:
     },
     "account_id": {
       "type": "string"
+    },
+    "parent_account_id": {
+      "type": "string",
+      "description": "For platform org-child installations (integration opt-in): the opaque account id of the parent (root) team. Identical to the `account_id` claim on the parent team’s own installation tokens."
+    },
+    "parent_installation_id": {
+      "type": "string",
+      "nullable": true,
+      "description": "For platform org-child installations (integration opt-in): the parent team’s installation of this integration, or null when the parent has none."
     }
   },
   "required": [

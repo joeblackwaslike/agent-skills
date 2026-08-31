@@ -3,7 +3,7 @@ title: Workflows with Python
 product: workflows
 url: /docs/workflows/python
 canonical_url: "https://vercel.com/docs/workflows/python"
-last_updated: 2026-07-15
+last_updated: 2026-08-18
 type: conceptual
 prerequisites:
   - /docs/workflows
@@ -12,8 +12,8 @@ related:
 summary: Build durable workflows and AI agents in Python with the Vercel SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/workflows/python.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "8edebbd4fed268ed1df0a998aba4cd27bec9110accac9e7a2d0bf50e3f95c285"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "29459118edab1ad488467ac02c969ba27c4a5b01be3f2299f30be650851fbcee"
 ---
 
 # Workflows with Python
@@ -29,19 +29,20 @@ Workflow SDK.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Python](https://workflow-sdk.dev/docs/getting-started/python?from=related) — Set up the Workflow Python SDK in your Python application.
-- [Building stateful Slack bots with Vercel Workflow](https://vercel.com/kb/guide/stateful-slack-bots-with-vercel-workflow?from=related) — Learn how to build Slack bots that maintain state and handle long-running processes without managing queues, databases,
-- [Human-in-the-Loop with Chat SDK and Workflow SDK](https://vercel.com/kb/guide/human-in-the-loop-with-chat-sdk-and-workflow-sdk?from=related) — Combine Chat SDK and Workflow SDK to suspend workflows on approval cards in a chat platform, then resume on click via cr
-- [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel?from=related) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
-- [Building Durable AI Agents](https://workflow-sdk.dev/docs/ai?from=related) — Convert a basic AI chat app into a durable, resumable agent using Workflow SDK.
-- [Workflows and Steps](https://workflow-sdk.dev/docs/foundations/workflows-and-steps?from=related) — Understand the two function types that make up a workflow.
-- [Building a Slack agent with durable workflows](https://vercel.com/kb/guide/building-a-slack-agent-with-durable-workflows?from=related) — Build an AI-powered Slack bot that gathers team data, drafts a summary, and refines it through conversation.
-- [Versioning](https://workflow-sdk.dev/docs/foundations/versioning?from=related) — Keep in-flight runs stable by default, then choose explicit upgrade boundaries when you need them.
-- [Concepts](https://vercel.com/docs/workflows/concepts?from=related) — Learn how workflows, steps, sleeps, and hooks work together to build durable applications.
-- [CLI Workflows](https://vercel.com/docs/agent-resources/workflows?from=related) — End-to-end workflows that show how to compose Vercel CLI commands into complete debugging, deployment, and recovery sess
-- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
+- [Python](https://workflow-sdk.dev/docs/getting-started/python?from=related&source_path=%2Fdocs%2Fworkflows%2Fpython&source_site=vercel-docs&relationship=related) — Set up the Workflow Python SDK in your Python application.
+- [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution?from=related&source_path=%2Fdocs%2Fworkflows%2Fpython&source_site=vercel-docs&relationship=related)
+- [Building stateful Slack bots with Vercel Workflow](https://vercel.com/kb/guide/stateful-slack-bots-with-vercel-workflow?from=related&source_path=%2Fdocs%2Fworkflows%2Fpython&source_site=vercel-docs&relationship=related) — Learn how to build Slack bots that maintain state and handle long-running processes without managing queues, databases,
+- [Human-in-the-Loop with Chat SDK and Workflow SDK](https://vercel.com/kb/guide/human-in-the-loop-with-chat-sdk-and-workflow-sdk?from=related&source_path=%2Fdocs%2Fworkflows%2Fpython&source_site=vercel-docs&relationship=related) — Combine Chat SDK and Workflow SDK to suspend workflows on approval cards in a chat platform, then resume on click via cr
+- [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel?from=related&source_path=%2Fdocs%2Fworkflows%2Fpython&source_site=vercel-docs&relationship=related) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
+- [Building Durable AI Agents](https://workflow-sdk.dev/docs/ai?from=related&source_path=%2Fdocs%2Fworkflows%2Fpython&source_site=vercel-docs&relationship=related) — Convert a basic AI chat app into a durable, resumable agent using Workflow SDK.
+- [Workflows and Steps](https://workflow-sdk.dev/docs/foundations/workflows-and-steps?from=related&source_path=%2Fdocs%2Fworkflows%2Fpython&source_site=vercel-docs&relationship=related) — Understand the two function types that make up a workflow.
+- [How to run background jobs in Next.js](https://vercel.com/kb/guide/how-to-run-background-jobs-in-nextjs-on-vercel?from=related&source_path=%2Fdocs%2Fworkflows%2Fpython&source_site=vercel-docs&relationship=related) — Learn the durable way to run background jobs in Next.js on Vercel with the Workflow SDK, and when to reach for Queues or
+- [Building a Slack agent with durable workflows](https://vercel.com/kb/guide/building-a-slack-agent-with-durable-workflows?from=related&source_path=%2Fdocs%2Fworkflows%2Fpython&source_site=vercel-docs&relationship=related) — Build an AI-powered Slack bot that gathers team data, drafts a summary, and refines it through conversation.
+- [Workflow Concepts](https://vercel.com/docs/workflows/concepts?from=related&source_path=%2Fdocs%2Fworkflows%2Fpython&source_site=vercel-docs&relationship=related) — Learn how workflows, steps, sleeps, and hooks work together to build durable applications.
+- [CLI Workflows](https://vercel.com/docs/agent-resources/workflows?from=related&source_path=%2Fdocs%2Fworkflows%2Fpython&source_site=vercel-docs&relationship=related) — End-to-end workflows that show how to compose Vercel CLI commands into complete debugging, deployment, and recovery sess
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fworkflows%2Fpython&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
-Full cross-link map for this page: [/docs/workflows/python.graph.md](/docs/workflows/python.graph.md)
+Full cross-link map for this page: [/docs/workflows/python.graph.md](/docs/workflows/python.graph.md?from=related&source_path=%2Fdocs%2Fworkflows%2Fpython&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 > **💡 Note:** Workflow support in the Python SDK is currently in **beta**. APIs and behavior may change.

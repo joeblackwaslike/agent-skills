@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/gmicloud.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "5746c4b7b207828b991c2a2831ea91344dbaddedc8ebacbce67283359a14259d"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "9c62bd73ddea29d003ed7d9bc5058e723e3536425cfb50ebf8e5350f52e50ff0"
 ---
 
 # GMI Cloud Provider
@@ -101,6 +101,7 @@ GMI Cloud's edge reports a generic banner in `error.message` on rejections and n
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
 - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
+- [Z.AI](/providers/ai-sdk-providers/zai)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)
 - [Fireworks](/providers/ai-sdk-providers/fireworks)

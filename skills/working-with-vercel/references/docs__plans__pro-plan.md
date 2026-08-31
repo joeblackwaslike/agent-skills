@@ -3,7 +3,7 @@ title: Vercel Pro Plan
 product: vercel
 url: /docs/plans/pro-plan
 canonical_url: "https://vercel.com/docs/plans/pro-plan"
-last_updated: 2026-07-15
+last_updated: 2026-08-25
 type: reference
 prerequisites:
   - /docs/plans
@@ -16,8 +16,8 @@ related:
 summary: Learn about the Vercel Pro plan with credit-based billing, free viewer seats, and self-serve enterprise features for professional teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/pro-plan.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "c9cad8fab44a92c89d0ab5eb09c234e3d1c781ca25492faf144827cf1bfb2169"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "15f281eeb2eb2d3f5e7f787ec955c52ce7e15cf4dc621a7066db617f73999d88"
 ---
 
 # Vercel Pro Plan
@@ -30,16 +30,20 @@ The Vercel Pro plan is designed for professional developers, freelancers, and bu
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team?from=related) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
-- [Why has my account or deployment been paused?](https://vercel.com/kb/guide/why-is-my-account-deployment-blocked?from=related) — Learn why a Vercel account or deployment gets paused, from budget and usage limits to policy violations, and how to resu
-- [Hobby Plan](https://vercel.com/docs/plans/hobby?from=related) — Learn about the Hobby plan and how it compares to the Pro plan.
-- [Teams](https://v0.app/docs/teams?from=related) — Collaborate with your team on projects with shared resources.
-- [Account Management](https://vercel.com/docs/accounts?from=related) — Learn how to manage your Vercel account and team members.
-- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
-- [Enterprise Plan](https://vercel.com/docs/plans/enterprise?from=related) — Learn about the Enterprise plan for Vercel, including features, pricing, and more.
-- [Manage and Optimize Usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Free domain for one year, now for all Pro teams](https://vercel.com/changelog/free-domain-for-one-year-now-for-all-pro-teams?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related)
+- [Free domain now included with new Pro subscriptions](https://vercel.com/changelog/free-domain-now-included-with-new-pro-subscriptions?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related)
+- [Vercel MCP now supports purchases](https://vercel.com/changelog/vercel-mcp-now-supports-purchases?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related)
+- [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
+- [Why has my account or deployment been paused?](https://vercel.com/kb/guide/why-is-my-account-deployment-blocked?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related) — Learn why a Vercel account or deployment gets paused, from budget and usage limits to policy violations, and how to resu
+- [Simpler Pricing](https://vercel.com/blog/simpler-pricing?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related)
+- [A more flexible Pro plan for modern teams](https://vercel.com/blog/new-pro-pricing-plan?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related)
+- [Included Pro usage is now credit-based](https://vercel.com/changelog/included-pro-usage-is-now-credit-based?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related)
+- [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related) — Learn about the Hobby plan and how it compares to the Pro plan.
+- [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related)
+- [Account Management](https://vercel.com/docs/accounts?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related) — Learn how to manage your Vercel account and team members.
+- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
 
-Full cross-link map for this page: [/docs/plans/pro-plan.graph.md](/docs/plans/pro-plan.graph.md)
+Full cross-link map for this page: [/docs/plans/pro-plan.graph.md](/docs/plans/pro-plan.graph.md?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Pro plan features
@@ -122,7 +126,7 @@ Viewers cannot configure or deploy projects.
 
 ### Additional team seats
 
-- Seats with [Owner](/docs/rbac/access-roles#owner-role) or [Member](/docs/rbac/access-roles#member-role) roles: $20/month each
+- Seats with [Owner](/docs/rbac/access-roles#owner-role) or [Member](/docs/rbac/access-roles#member-role) roles: $/month each
   - These team seats have the ability to configure & deploy projects
 - [Viewer Pro](/docs/rbac/access-roles#pro-viewer-role) (read-only) seats: Free
 
@@ -130,17 +134,18 @@ Viewers cannot configure or deploy projects.
 
 The following features are available as add-ons:
 
-- **[SAML Single Sign-On](/docs/saml)**: $300/month
-- **[HIPAA BAA](/docs/security/compliance#hipaa)**: Healthcare compliance agreements for $350/month
+- **[SAML Single Sign-On](/docs/saml)**: $/month
+- **[HIPAA BAA](/docs/security/compliance#hipaa)**: Healthcare compliance agreements for $/month
 
-* **[Advanced Deployment Protection](/docs/deployment-protection#advanced-deployment-protection)**: $150/month
+* **[Advanced Deployment Protection](/docs/deployment-protection#advanced-deployment-protection)**: $/month
 
-- **[Flags Explorer](/docs/flags/flags-explorer)**: $250/month
+- **[Flags Explorer](/docs/flags/flags-explorer)**: $/month
 - **[Observability Plus](/docs/observability/observability-plus)**: $1.20 per 1 million events
-- **[Preview Deployment Suffix](/docs/deployments/preview-deployment-suffix)**: $100/month
-- **[Static IPs](/docs/networking/static-ips)**: $100/month per project, plus Private Data Transfer
-- **[Web Analytics Plus](/docs/analytics/limits-and-pricing#pro-with-web-analytics-plus)**: $10/month
-- **[Speed Insights](/docs/speed-insights)**: $10/month per project
+- **[Preview Deployment Suffix](/docs/deployments/preview-deployment-suffix)**: $/month
+- **[Static IPs](/docs/networking/static-ips)**: $/month per project, plus Private Data Transfer
+- **[Web Analytics Plus](/docs/analytics/limits-and-pricing#pro-with-web-analytics-plus)**: $/month
+
+* **[Speed Insights](/docs/speed-insights)**: $10/month per project
 
 ## Downgrading to Hobby
 

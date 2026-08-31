@@ -3,7 +3,7 @@ title: Set up Passport with an identity provider
 product: vercel
 url: /docs/passport/set-up-identity-provider
 canonical_url: "https://vercel.com/docs/passport/set-up-identity-provider"
-last_updated: 2026-07-20
+last_updated: 2026-08-26
 type: tutorial
 prerequisites:
   - /docs/passport
@@ -12,8 +12,8 @@ related:
 summary: Configure Passport with Okta, Microsoft Entra ID, or another OpenID Connect provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport/set-up-identity-provider.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "d0368ba219f05fda5ec17a5231b911bd5b087c60c23c966e206c0695e5f67b7f"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "2cbbd349914263e859491349f69f566fad2f96692ac451f1c45f5fe6d51de33c"
 ---
 
 # Set up Passport with an identity provider
@@ -26,15 +26,17 @@ sha256: "d0368ba219f05fda5ec17a5231b911bd5b087c60c23c966e206c0695e5f67b7f"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [The Complete Guide to Vercel Passport](https://vercel.com/kb/guide/vercel-passport?from=related) — Vercel Passport protects deployments behind your own identity provider, such as Okta or Auth0. Learn how Passport works,
-- [How to identify and authorize visitors with the Vercel Passport token in Next.js](https://vercel.com/kb/guide/vercel-passport-nextjs?from=related) — Read the Vercel Passport token server-side in a Next.js app to identify visitors with the external_sub claim and authori
-- [Read Identity](https://vercel.com/docs/passport/read-identity?from=related) — Read verified Passport identity in server-side code and apply application-level authorization.
-- [Additional Scopes](https://vercel.com/docs/passport/additional-identity-scopes?from=related) — Request group membership and other provider-specific identity claims when using Passport.
-- [Verify Tokens](https://vercel.com/docs/passport/verify-identity?from=related) — Verify a Passport token forwarded to your backend as a signed JWT.
-- [Token Claims](https://vercel.com/docs/passport/token-claims?from=related) — Review the standard, deployment, and visitor identity claims in a Passport token.
-- [OIDC](https://vercel.com/docs/oidc?from=related) — Secure the access to your backend using OIDC Federation to enable auto-generated, short-lived, and non-persistent creden
+- [The Complete Guide to Vercel Passport](https://vercel.com/kb/guide/vercel-passport?from=related&source_path=%2Fdocs%2Fpassport%2Fset-up-identity-provider&source_site=vercel-docs&relationship=related) — Vercel Passport protects deployments behind your own identity provider, such as Okta or Auth0. Learn how Passport works,
+- [Vercel Passport is now generally available](https://vercel.com/changelog/vercel-passport-generally-available?from=related&source_path=%2Fdocs%2Fpassport%2Fset-up-identity-provider&source_site=vercel-docs&relationship=related)
+- [How to identify and authorize visitors with the Vercel Passport token in Next.js](https://vercel.com/kb/guide/vercel-passport-nextjs?from=related&source_path=%2Fdocs%2Fpassport%2Fset-up-identity-provider&source_site=vercel-docs&relationship=related) — Read the Vercel Passport token server-side in a Next.js app to identify visitors with the external_sub claim and authori
+- [Vercel Passport is now in Public Beta](https://vercel.com/changelog/vercel-passport-is-now-in-public-beta?from=related&source_path=%2Fdocs%2Fpassport%2Fset-up-identity-provider&source_site=vercel-docs&relationship=related)
+- [Read Passport identity in your application](https://vercel.com/docs/passport/read-identity?from=related&source_path=%2Fdocs%2Fpassport%2Fset-up-identity-provider&source_site=vercel-docs&relationship=related) — Read verified Passport identity in server-side code and apply application-level authorization.
+- [Configure additional identity scopes](https://vercel.com/docs/passport/additional-identity-scopes?from=related&source_path=%2Fdocs%2Fpassport%2Fset-up-identity-provider&source_site=vercel-docs&relationship=related) — Request group membership and other provider-specific identity claims when using Passport.
+- [Auth.js](https://vercel.com/docs/connect/frameworks/authjs?from=related&source_path=%2Fdocs%2Fpassport%2Fset-up-identity-provider&source_site=vercel-docs&relationship=related) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
+- [SAML Single Sign-On](https://vercel.com/docs/saml?from=related&source_path=%2Fdocs%2Fpassport%2Fset-up-identity-provider&source_site=vercel-docs&relationship=related) — Learn how to configure SAML SSO for your organization on Vercel.
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fpassport%2Fset-up-identity-provider&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
-Full cross-link map for this page: [/docs/passport/set-up-identity-provider.graph.md](/docs/passport/set-up-identity-provider.graph.md)
+Full cross-link map for this page: [/docs/passport/set-up-identity-provider.graph.md](/docs/passport/set-up-identity-provider.graph.md?from=related&source_path=%2Fdocs%2Fpassport%2Fset-up-identity-provider&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 This guide covers the common Passport setup flow for OpenID Connect providers, including Okta and Microsoft Entra ID.
@@ -74,7 +76,13 @@ Create an Okta OpenID Connect web application, then add its credentials to a Ver
 
 5. Copy the Okta application's client ID and client secret. In **Security** > **API** > **Authorization Servers**, copy the issuer URI for the authorization server that should authenticate visitors.
 
-6. In the Vercel dashboard, create a **Generic OAuth** Connect application. Enter the exact issuer URI and select **Discover**, then enter the Okta client ID and client secret.
+6. In the Vercel dashboard, configure the Connect application:
+   - Create an **OAuth** Connect application.
+   - Select **Your own credentials**.
+   - Enter the exact issuer URI in the **Server URL** field.
+   - Select **Discover** to fill the **Authorization Endpoint** and **Token Endpoint**.
+   - Enter the Okta client ID and client secret.
+   - Select **Create Connector**.
 
 For Okta's default custom authorization server, the issuer URI is similar to:
 
@@ -90,13 +98,22 @@ The Connect application that Passport uses requests the `openid` scope. Make the
 
 Create a web application registration in the Microsoft Entra admin center. Add `https://connect.vercel.com/callback` as a web redirect URI, create a client secret, and assign users or groups when your tenant requires user assignment.
 
-In the Vercel dashboard, create a **Generic OAuth** Connect application. Use the tenant-specific issuer URI, such as:
+Use the tenant-specific issuer URI, such as:
 
 ```txt
 https://login.microsoftonline.com/your_tenant_id/v2.0
 ```
 
-Select **Discover**, then enter the Microsoft Entra application client ID and client secret. Use a tenant-specific issuer rather than a multi-tenant endpoint so Passport can validate a stable issuer.
+In the Vercel dashboard, configure the Connect application:
+
+- Create an **OAuth** Connect application.
+- Select **Your own credentials**.
+- Enter that issuer URI in the **Server URL** field.
+- Select **Discover** to fill the **Authorization Endpoint** and **Token Endpoint**.
+- Enter the Microsoft Entra application client ID and client secret.
+- Select **Create Connector**.
+
+Use a tenant-specific issuer rather than a multi-tenant endpoint so Passport can validate a stable issuer.
 
 ## Configure Passport for a project
 
@@ -109,7 +126,7 @@ Select **Discover**, then enter the Microsoft Entra application client ID and cl
 - ### Select or create a Connect application
   Select an existing Connect application, or create a new one from the Passport setup flow.
 
-  When you create an application, choose **Generic OAuth** for an OpenID Connect provider. If discovery works, enter your provider's server URL and click **Discover**. If discovery does not work, enter the OAuth endpoints manually.
+  When you create an application, choose **OAuth** for an OpenID Connect provider, then select **Your own credentials** because you bring an existing identity provider application with a client secret. Enter your provider's issuer URI in the **Server URL** field and select **Discover**. If discovery does not work, enter the OAuth endpoints manually.
 
   Your provider must allow this redirect URI:
   ```txt

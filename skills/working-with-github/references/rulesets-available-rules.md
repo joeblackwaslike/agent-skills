@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets.md"
-fetched_at: "2026-08-24T04:49:51.110Z"
-sha256: "03876051b6ca412d9b0283d55bf6c0a019b733e1e4615a0ac76af93921134ff5"
+fetched_at: "2026-08-31T10:43:01.027Z"
+sha256: "e9409d8a35a72479301d9691a11a10fc8c76a2a8037cb039c4cd4e6252754848"
 ---
 
 You can create branch or tag rulesets to control how users can interact with selected branches and tags in a repository. You can also create push rulesets to block pushes to a private or internal repository and that repository's entire fork network.
@@ -309,6 +309,14 @@ Prevent commits that include changes in specified file paths from being pushed t
 
 {% data reusables.repositories.rulesets-push-rules-path-example %}
 
+{% ifversion push-rule-allowed-exceptions %}
+
+You can also add allowed exceptions to this rule. A file matching an allowed exception can be pushed even when it also matches a restricted path.
+
+{% data reusables.repositories.rulesets-push-rules-allowed-exceptions %}
+
+{% endif %}
+
 ## Restrict file path length
 
 Prevent commits that include file paths that exceed a specified character limit from being pushed to the repository.
@@ -317,6 +325,20 @@ Prevent commits that include file paths that exceed a specified character limit 
 
 Prevent commits that include files with specified file extensions from being pushed to the repository. {% ifversion available-rules-limit %}Limit is 200 entries and up to 200 characters in each entry.{% endif %}
 
+{% ifversion push-rule-allowed-exceptions %}
+
+If you need to allow an exception for a single file of an otherwise blocked file type, use "Restrict file paths" with a pattern such as `**/*.jar`. Only the "Restrict file paths" and "Restrict file size" rules support allowed exceptions.
+
+{% endif %}
+
 ## Restrict file size
 
 Prevent commits that exceed a specified file size limit from being pushed to the repository.
+
+{% ifversion push-rule-allowed-exceptions %}
+
+You can also add allowed exceptions to this rule. A file matching an allowed exception can exceed the file size limit.
+
+{% data reusables.repositories.rulesets-push-rules-allowed-exceptions %}
+
+{% endif %}

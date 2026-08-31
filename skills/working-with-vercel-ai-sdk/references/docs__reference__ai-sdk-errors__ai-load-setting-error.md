@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-load-setting-error.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "6813706bc24bad5feb7fad387b6f894bd7df70efc5f570f75dc725a6629f700a"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "748797f6730ef1ad0d6a1d38b31ce2ad78e76055306cb66be33ef559afd1ac3e"
 ---
 
 # AI_LoadSettingError
@@ -55,6 +55,7 @@ if (LoadSettingError.isInstance(error)) {
 - [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
 - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
+- [AI_StreamProviderError](/docs/reference/ai-sdk-errors/ai-stream-provider-error)
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
 - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
 - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)

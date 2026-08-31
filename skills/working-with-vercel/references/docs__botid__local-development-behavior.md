@@ -12,8 +12,8 @@ related:
 summary: How BotID behaves in local development environments and testing options
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/botid/local-development-behavior.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "01db6281f6cf9a57807cd524d7d105ba170826ecdac892569806d44171b62db5"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "29fa9a2eaed0f9a6becb5a02c8afe6010dacdffcb89b5578c5183290448aaeb5"
 ---
 
 # Local Development Behavior
@@ -26,18 +26,18 @@ During local development, BotID behaves differently than in production to facili
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to protect your AI endpoints with Vercel BotID](https://vercel.com/kb/guide/protect-ai-endpoints-with-vercel-botid?from=related) — Gate every request to your AI endpoints with Vercel BotID and checkBotId\\(\\) so inference runs only for verified callers
-- [Deploying and testing BotID](https://vercel.com/kb/guide/deploying-and-testing-botid?from=related) — This guide gives an overview on Vercel BotID and how to deploy and test it in production
-- [How to test a Slack bot with your Vercel preview deployment](https://vercel.com/kb/guide/test-slack-bot-with-vercel-preview-deployment?from=related) — Learn how to build and test a Slack bot using Vercel preview deployments. This guide covers setting up your Slack app, c
-- [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
-- [Vercel BotID vs Cloudflare Turnstile](https://vercel.com/kb/guide/vercel-botid-vs-cloudflare-turnstile?from=related) — Compare Vercel BotID and Cloudflare Turnstile for bot protection, including detection model, hosting requirements, check
-- [Advanced BotID Configuration](https://vercel.com/docs/botid/advanced-configuration?from=related) — Fine-grained control over BotID detection levels and backend domain configuration
-- [vercel dev](https://vercel.com/docs/cli/dev?from=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
-- [Add to Environments](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost?from=related) — Learn how to use the Vercel Toolbar in production and local environments.
-- [Local Development](https://vercel.com/docs/microfrontends/local-development?from=related) — Learn about local development on Vercel.
-- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
+- [How to protect your AI endpoints with Vercel BotID](https://vercel.com/kb/guide/protect-ai-endpoints-with-vercel-botid?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=related) — Gate every request to your AI endpoints with Vercel BotID and checkBotId\\(\\) so inference runs only for verified callers
+- [Deploying and testing BotID](https://vercel.com/kb/guide/deploying-and-testing-botid?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=related) — This guide gives an overview on Vercel BotID and how to deploy and test it in production
+- [​Introducing BotID, invisible bot filtering for critical routes](https://vercel.com/blog/introducing-botid?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=related)
+- [Vercel BotID now leverages Vercel's verified bot directory](https://vercel.com/changelog/vercel-botid-now-leverages-vercels-verified-bot-directory?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=related)
+- [How to test a Slack bot with your Vercel preview deployment](https://vercel.com/kb/guide/test-slack-bot-with-vercel-preview-deployment?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=related) — Learn how to build and test a Slack bot using Vercel preview deployments. This guide covers setting up your Slack app, c
+- [Vercel BotID now  available for all frameworks](https://vercel.com/changelog/botid-now-available-for-all-frameworks?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=related)
+- [vercel dev](https://vercel.com/docs/cli/dev?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
+- [Bot Management](https://vercel.com/docs/bot-management?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=related) — Learn how to manage bot traffic to your site.
+- [Add the Vercel Toolbar to local and production environments](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel Toolbar in production and local environments.
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
-Full cross-link map for this page: [/docs/botid/local-development-behavior.graph.md](/docs/botid/local-development-behavior.graph.md)
+Full cross-link map for this page: [/docs/botid/local-development-behavior.graph.md](/docs/botid/local-development-behavior.graph.md?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ### Using developmentOptions

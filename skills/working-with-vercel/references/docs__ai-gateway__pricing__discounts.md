@@ -1,9 +1,9 @@
 ---
-title: Discounts
+title: AI Gateway Discounts
 product: vercel
 url: /docs/ai-gateway/pricing/discounts
 canonical_url: "https://vercel.com/docs/ai-gateway/pricing/discounts"
-last_updated: 2018-10-20
+last_updated: 2026-08-23
 type: reference
 prerequisites:
   - /docs/ai-gateway/pricing
@@ -11,11 +11,11 @@ prerequisites:
 related:
   - /docs/ai-gateway
   - /docs/ai-gateway/pricing
-summary: Learn about discounts on Vercel.
+summary: "Discounts on AI Gateway token spend: models already priced below list for every team, plus custom volume discounts with zero-fee ACH payments."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/pricing/discounts.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "836471afb1bbbf3abce3c7d85fd896f7de0731a17527a3603ae180004fa59892"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "d23810e2295da7c2f7e8eddac9720533a436e73931e8f52a86637af060cc496d"
 ---
 
 # AI Gateway Discounts
@@ -28,13 +28,18 @@ Discounts on [AI Gateway](/docs/ai-gateway) token spend come in two forms: model
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Usage & Billing](https://vercel.com/docs/ai-gateway/observability-and-spend/usage?from=related) — Monitor your AI Gateway credit balance, usage, and generation details.
-- [Pricing](https://vercel.com/docs/agent/pricing?from=related) — Understand Vercel Agent pricing and how to track costs
-- [Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend?from=related) — Monitor AI Gateway requests and manage spend: observability, custom reporting, usage and billing APIs, and spending budg
-- [Products](https://vercel.com/docs/products?from=related) — Explore all Vercel products and capabilities.
-- [Pricing](https://vercel.com/docs/pricing?from=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related)
+- [AI Gateway is now available on AWS Marketplace](https://vercel.com/changelog/ai-gateway-is-now-available-on-aws-marketplace?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related)
+- [Introducing the AI Gateway](https://vercel.com/blog/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related)
+- [AI Gateway is now generally available](https://vercel.com/changelog/ai-gateway-is-now-generally-available?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related)
+- [AI Gateway is now in Beta](https://vercel.com/changelog/ai-gateway-is-now-in-beta?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related)
+- [DeepSeek V4 Flash is 90% off through Novita on AI Gateway](https://vercel.com/changelog/deepseek-v4-flash-is-90-off-through-novita?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related)
+- [Blackbox AI](https://vercel.com/docs/ai-gateway/coding-agents/blackbox?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related) — Use the Blackbox AI CLI with the AI Gateway.
+- [Model Allowlist](https://vercel.com/docs/ai-gateway/security-and-compliance/model-allowlist?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related) — Restrict which AI models your team can use through AI Gateway. Available on Pro and Enterprise.
+- [Xcode](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related) — Use Xcode's coding assistant with the AI Gateway.
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
-Full cross-link map for this page: [/docs/ai-gateway/pricing/discounts.graph.md](/docs/ai-gateway/pricing/discounts.graph.md)
+Full cross-link map for this page: [/docs/ai-gateway/pricing/discounts.graph.md](/docs/ai-gateway/pricing/discounts.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Discounted models

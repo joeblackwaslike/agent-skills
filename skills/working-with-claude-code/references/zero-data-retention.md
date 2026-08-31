@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/zero-data-retention.md"
-fetched_at: "2026-08-17T04:41:37.014Z"
-sha256: "218ed0e3c97a0f8f6f17679d701f1d1e77d844b65ebd54aef0e1f7eb929aaf95"
+fetched_at: "2026-08-31T10:37:20.620Z"
+sha256: "8d25777cb26c94442d949bd7d0d0c5dcb53b7523548fabcd3c905ae9edf4f81e"
 ---
 
 > ## Documentation Index
@@ -63,6 +63,7 @@ When ZDR is enabled for a Claude Code organization on Claude for Enterprise, cer
 | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
 | [Claude Code on the Web](/docs/en/claude-code-on-the-web)              | Requires server-side storage of conversation history.                                       |
 | [Cloud sessions](/docs/en/desktop#cloud-sessions) from the Desktop app | Requires persistent session data that includes prompts and completions.                     |
+| [Claude Tag](/docs/en/claude-tag)                                      | Retains channel memory and session transcripts.                                             |
 | [Artifacts](/docs/en/artifacts)                                        | Requires storing published page content on Anthropic-operated infrastructure.               |
 | Feedback submission (`/feedback`, `/bug`, `/share`)               | Submitting feedback sends conversation data to Anthropic.                                   |
 | [Remote Control](/docs/en/remote-control)                              | Stores the session transcript on Anthropic servers to sync the conversation across devices. |

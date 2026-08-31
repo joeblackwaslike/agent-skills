@@ -3,7 +3,7 @@ title: Global network and regions
 product: vercel
 url: /docs/regions
 canonical_url: "https://vercel.com/docs/regions"
-last_updated: 2026-03-05
+last_updated: 2026-08-11
 type: reference
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: "View the list of regions supported by Vercel's CDN and learn about our global infrastructure."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/regions.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "946a03c65931f69a6d56cb0567e38047520d7e8d658eb051a7c1df8259b21f75"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "c450db824854b585edc3ce7a28e7f87d5018ae94e42821e67067aa6e0d23ec89"
 ---
 
 # Global network and regions
@@ -28,15 +28,20 @@ sha256: "946a03c65931f69a6d56cb0567e38047520d7e8d658eb051a7c1df8259b21f75"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects?from=related) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
-- [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel?from=related) — Migrate containers from AWS to Vercel: deploy with Dockerfile.vercel, keep RDS, S3, and SQS in AWS over OIDC, and cut ov
-- [Overview](https://vercel.com/docs/cdn?from=related) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
-- [How Vercel CDN works](https://vercel.com/docs/how-vercel-cdn-works?from=related) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
-- [Security & Compliance Measures](https://vercel.com/docs/security/compliance?from=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
-- [Request Lifecycle](https://vercel.com/docs/fundamentals/infrastructure?from=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
-- [Runtimes](https://vercel.com/docs/functions/runtimes?from=related) — Runtimes transform your source code into Functions, which are served by our CDN. Learn about the official runtimes suppo
+- [Custom OIDC Token Audiences](https://vercel.com/changelog/custom-oidc-token-audiences?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related)
+- [Expanded search for workflow runs in Vercel Observability](https://vercel.com/changelog/expanded-search-for-workflow-runs-in-vercel-observability?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related)
+- [Introducing the Montréal, Canada region (yul1) ](https://vercel.com/changelog/introducing-the-montreal-canada-vercel-region-yul1?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related)
+- [How can I use geolocation IP headers?](https://vercel.com/kb/guide/geo-ip-headers-geolocation-vercel-functions?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related) — Learn how to read geolocation headers on Vercel with Next.js or any frontend framework.
+- [How can I use AWS SDK Environment Variables on Vercel?](https://vercel.com/kb/guide/how-can-i-use-aws-sdk-environment-variables-on-vercel?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related) — How to use AWS SDK Environment Variables on Vercel
+- [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
+- [Update regarding Vercel service disruption on October 20, 2025](https://vercel.com/blog/update-regarding-vercel-service-disruption-on-october-20-2025?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related)
+- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related)
+- [Effortless high availability for dynamic frontends](https://vercel.com/blog/effortless-high-availability-for-dynamic-frontends?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related)
+- [Vercel CDN overview](https://vercel.com/docs/cdn?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
+- [Security & Compliance Measures](https://vercel.com/docs/security/compliance?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 
-Full cross-link map for this page: [/docs/regions.graph.md](/docs/regions.graph.md)
+Full cross-link map for this page: [/docs/regions.graph.md](/docs/regions.graph.md?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ![Image](https://vercel.com/front/docs/edge-network/cdn-pops-light.png)

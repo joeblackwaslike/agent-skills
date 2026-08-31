@@ -3,7 +3,7 @@ title: Vercel Agent Permissions
 product: vercel
 url: /docs/agent/chat/permissions
 canonical_url: "https://vercel.com/docs/agent/chat/permissions"
-last_updated: 2018-10-20
+last_updated: 2026-08-19
 type: reference
 prerequisites:
   - /docs/agent/chat
@@ -13,8 +13,8 @@ related:
 summary: Understand how Vercel Agent scopes access, requests approval, and attributes changes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/chat/permissions.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "44a638dd0f88025b2ecb65e90deacfa7d7eb83fbc673ce7478c0888383e7b01f"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "5fa9e7a68345bb466e524d9c3e89971979f6cebba487a9a3c96e59cce55cbe5d"
 ---
 
 # Vercel Agent Permissions

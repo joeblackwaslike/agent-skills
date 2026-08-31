@@ -1,15 +1,19 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/embed-many.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "1a6e08cb5017d212f00bdaef7136e6a33c3b78b34298fec9df661f1ea9d8bffb"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "e9ea11e5406c095f02b056f560be93f1965dd06f9f3bace67f3a3b8fb8eba208"
 ---
 
 # `embedMany()`
 
 Embed several values using an embedding model.
 
-`embedMany` automatically splits large requests into smaller chunks if the model
-has a limit on how many embeddings can be generated in a single call.
+`embedMany` automatically splits large requests into smaller chunks when the
+model has a limit on either the number of embeddings or the UTF-8 input bytes
+that can be processed in a single call. Providers can use a conservative byte
+budget to keep requests below aggregate token limits without adding a tokenizer
+to the AI SDK core package. An individual value larger than the byte budget is
+sent in its own call because splitting it would change the resulting embedding.
 
 ```ts
 import { embedMany } from 'ai';

@@ -17,8 +17,8 @@ related:
 summary: Learn how to authenticate and use the Integrations REST API to build your integration server.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "9683efe602e4a6947f31d2c6fccdb608f223331574b3338131b362e248a917be"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "6a3bad0316c88450b4a40a58dc3c9c768a6cbf801fb7647f4f88827b232e07fa"
 ---
 
 # Using the Integrations REST API
@@ -31,14 +31,14 @@ Learn how to authenticate and use the Integrations REST API to build your native
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
-- [vercel integration](https://vercel.com/docs/cli/integration?from=related) — Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover avai
-- [Building Integrations with Vercel REST API](https://vercel.com/docs/integrations/create-integration/vercel-api-integrations?from=related) — Learn how to use Vercel REST API to build your integrations and work with redirect URLs.
-- [Audit Logs](https://vercel.com/docs/audit-log?from=related) — Learn how to track and analyze your team members' activities.
-- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related) — Learn how you can add a product to your Vercel project through a native integration.
-- [Update Resource Secrets](https://vercel.com/docs/rest-api/marketplace/update-resource-secrets?from=related)
+- [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-api&source_site=vercel-docs&relationship=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
+- [vercel integration](https://vercel.com/docs/cli/integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-api&source_site=vercel-docs&relationship=related) — Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover avai
+- [Building Integrations with Vercel REST API](https://vercel.com/docs/integrations/create-integration/vercel-api-integrations?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-api&source_site=vercel-docs&relationship=related) — Learn how to use Vercel REST API to build your integrations and work with redirect URLs.
+- [Update Resource Secrets](https://vercel.com/docs/rest-api/marketplace/update-resource-secrets?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-api&source_site=vercel-docs&relationship=related) — PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId}/secrets — This endpoint updates the secrets of
+- [Update Installation](https://vercel.com/docs/rest-api/marketplace/update-installation?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-api&source_site=vercel-docs&relationship=related) — PATCH /v1/installations/{integrationConfigurationId} — This endpoint updates an integration installation.
+- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-api&source_site=vercel-docs&relationship=related) — Learn how you can add a product to your Vercel project through a native integration.
 
-Full cross-link map for this page: [/docs/integrations/create-integration/marketplace-api.graph.md](/docs/integrations/create-integration/marketplace-api.graph.md)
+Full cross-link map for this page: [/docs/integrations/create-integration/marketplace-api.graph.md](/docs/integrations/create-integration/marketplace-api.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-api&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## How it works

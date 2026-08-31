@@ -3,7 +3,7 @@ title: Managing Deployments
 product: vercel
 url: /docs/deployments/managing-deployments
 canonical_url: "https://vercel.com/docs/deployments/managing-deployments"
-last_updated: 2026-07-01
+last_updated: 2026-08-21
 type: how-to
 prerequisites:
   - /docs/deployments
@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at any time and even delete a...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/managing-deployments.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "422bd3dded72c6c12cb94d1b8488e3c29cdb07a2b4eda4da49be4da1b9f9a635"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "33e0923feaf736ad17cdf2283a7c4ff33830781a6a361a837dd37404ff4c0c21"
 ---
 
 # Managing Deployments
@@ -30,19 +30,20 @@ You can manage all current and previous deployments regardless of environment, s
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Memory Usage](https://nextjs.org/docs/app/guides/memory-usage?from=related) — Optimize memory used by your application in development and production.
-- [Implementing Blue-Green Deployments on Vercel](https://vercel.com/kb/guide/blue_green_deployments_on_vercel?from=related) — This guide outlines how to implement blue-green deployments on Vercel, leveraging GitHub Actions for seamless and contro
-- [Deploy a Bolt.new app with Vercel Drop](https://vercel.com/kb/guide/bolt-vercel-drop?from=related) — Export your Bolt.new project as a .zip and deploy it to Vercel with Vercel Drop. Vercel detects the framework and builds
-- [Deploy a Claude Design project to Vercel](https://vercel.com/kb/guide/claude-design?from=related) — Publish a Claude Design project to Vercel for a live production URL with the Vercel connector, or by exporting a .zip to
-- [Deploy a Google Stitch design with Vercel Drop](https://vercel.com/kb/guide/google-stitch-vercel-drop?from=related) — Download the HTML from your Google Stitch screens and deploy them to production with Vercel Drop, with no Git or CLI req
-- [How do I delete an individual deployment?](https://vercel.com/kb/guide/how-do-i-delete-an-individual-deployment?from=related) — Information on deleting an individual deployment.
-- [vercel redeploy](https://vercel.com/docs/cli/redeploy?from=related) — Learn how to redeploy your project using the vercel redeploy CLI command.
-- [Deploy from CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
-- [Managing projects](https://vercel.com/docs/projects/managing-projects?from=related) — Learn how to manage your projects through the Vercel Dashboard.
-- [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [How to optimize memory usage](https://nextjs.org/docs/app/guides/memory-usage?from=related&source_path=%2Fdocs%2Fdeployments%2Fmanaging-deployments&source_site=vercel-docs&relationship=related) — Optimize memory used by your application in development and production.
+- [New deployment promotion event](https://vercel.com/changelog/new-webhook-for-promotion-events?from=related&source_path=%2Fdocs%2Fdeployments%2Fmanaging-deployments&source_site=vercel-docs&relationship=related)
+- [Revert and pin deployments with Instant Rollback](https://vercel.com/changelog/revert-and-pin-deployments-with-instant-rollback?from=related&source_path=%2Fdocs%2Fdeployments%2Fmanaging-deployments&source_site=vercel-docs&relationship=related)
+- [Stage and manually promote deployments to production](https://vercel.com/changelog/stage-and-manually-promote-deployments-to-production?from=related&source_path=%2Fdocs%2Fdeployments%2Fmanaging-deployments&source_site=vercel-docs&relationship=related)
+- [Implementing Blue-Green Deployments on Vercel](https://vercel.com/kb/guide/blue_green_deployments_on_vercel?from=related&source_path=%2Fdocs%2Fdeployments%2Fmanaging-deployments&source_site=vercel-docs&relationship=related) — This guide outlines how to implement blue-green deployments on Vercel, leveraging GitHub Actions for seamless and contro
+- [Deploy a Bolt.new app with Vercel Drop](https://vercel.com/kb/guide/bolt-vercel-drop?from=related&source_path=%2Fdocs%2Fdeployments%2Fmanaging-deployments&source_site=vercel-docs&relationship=related) — Export your Bolt.new project as a .zip and deploy it to Vercel with Vercel Drop. Vercel detects the framework and builds
+- [Deploy a Claude Design project to Vercel](https://vercel.com/kb/guide/claude-design?from=related&source_path=%2Fdocs%2Fdeployments%2Fmanaging-deployments&source_site=vercel-docs&relationship=related) — Publish a Claude Design project to Vercel for a live production URL with the Vercel connector, or by exporting a .zip to
+- [How do I delete an individual deployment?](https://vercel.com/kb/guide/how-do-i-delete-an-individual-deployment?from=related&source_path=%2Fdocs%2Fdeployments%2Fmanaging-deployments&source_site=vercel-docs&relationship=related) — Information on deleting an individual deployment.
+- [Implementing Canary Deployments on Vercel](https://vercel.com/kb/guide/implementing_canary_deployments_on_vercel?from=related&source_path=%2Fdocs%2Fdeployments%2Fmanaging-deployments&source_site=vercel-docs&relationship=related) — This guide explains how to set up canary deployments on Vercel, enabling developers to gradually roll out new versions t
+- [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues?from=related&source_path=%2Fdocs%2Fdeployments%2Fmanaging-deployments&source_site=vercel-docs&relationship=related)
+- [vercel redeploy](https://vercel.com/docs/cli/redeploy?from=related&source_path=%2Fdocs%2Fdeployments%2Fmanaging-deployments&source_site=vercel-docs&relationship=related) — Learn how to redeploy your project using the vercel redeploy CLI command.
+- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fdeployments%2Fmanaging-deployments&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
 
-Full cross-link map for this page: [/docs/deployments/managing-deployments.graph.md](/docs/deployments/managing-deployments.graph.md)
+Full cross-link map for this page: [/docs/deployments/managing-deployments.graph.md](/docs/deployments/managing-deployments.graph.md?from=related&source_path=%2Fdocs%2Fdeployments%2Fmanaging-deployments&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 1. Ensure your team is selected from the team switcher

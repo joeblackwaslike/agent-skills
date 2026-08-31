@@ -3,7 +3,7 @@ title: get-installation
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/get-installation
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/get-installation"
-last_updated: 2026-08-24
+last_updated: 2026-08-31
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn about get-installation on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/get-installation.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "7b70e25c25fcecb2ee5812ebeb23694ab287272ffd1228f697a4212c77d72a6f"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "90485e092bb78b7b69b758dbd7d58fb06d01f391d72bd77019bf4e03d35d996b"
 ---
 
 # Get Installation
@@ -70,6 +70,15 @@ System Auth OIDC token claims schema:
     },
     "account_id": {
       "type": "string"
+    },
+    "parent_account_id": {
+      "type": "string",
+      "description": "For platform org-child installations (integration opt-in): the opaque account id of the parent (root) team. Identical to the `account_id` claim on the parent team’s own installation tokens."
+    },
+    "parent_installation_id": {
+      "type": "string",
+      "nullable": true,
+      "description": "For platform org-child installations (integration opt-in): the parent team’s installation of this integration, or null when the parent has none."
     }
   },
   "required": [

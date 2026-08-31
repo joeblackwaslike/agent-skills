@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-tui.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "fa767f42625032c4f639437c872f8a16013e73a864c7d5c2718818e88582445c"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "d8e33bb023d168f5a53b4de673887e9739656ee48f439fba7a0f35143a2f7b81"
 ---
 
 # AI SDK TUI
@@ -109,6 +109,7 @@ from free-form terminal input.
 - [AI SDK Workflow](/docs/reference/ai-sdk-workflow)
   - [WorkflowAgent](/docs/reference/ai-sdk-workflow/workflow-agent)
   - [WorkflowChatTransport](/docs/reference/ai-sdk-workflow/workflow-chat-transport)
+  - [generateVideo](/docs/reference/ai-sdk-workflow/generate-video)
 - [AI SDK Errors](/docs/reference/ai-sdk-errors)
   - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
   - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
@@ -138,6 +139,7 @@ from free-form terminal input.
   - [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
   - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
   - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
+  - [AI_StreamProviderError](/docs/reference/ai-sdk-errors/ai-stream-provider-error)
   - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
   - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
   - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)

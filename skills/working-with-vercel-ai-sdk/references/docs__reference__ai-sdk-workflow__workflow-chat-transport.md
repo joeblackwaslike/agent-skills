@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-workflow/workflow-chat-transport.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "e4fcf4be23439d73d0e30e9b3788a4231091512fcb02ac7c30d71ce6832f5bb0"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "61d831c8bd54cacd420bed32b138a44a4ebbdd6aff057f5a3e71cc1893e1a3da"
 ---
 
 # `WorkflowChatTransport`
@@ -366,6 +366,7 @@ stream whose stored objects are already `UIMessageChunk` objects.
 
 - [WorkflowAgent](/docs/reference/ai-sdk-workflow/workflow-agent)
 - [WorkflowChatTransport](/docs/reference/ai-sdk-workflow/workflow-chat-transport)
+- [generateVideo](/docs/reference/ai-sdk-workflow/generate-video)
 
 
 [Full Sitemap](/sitemap.md)

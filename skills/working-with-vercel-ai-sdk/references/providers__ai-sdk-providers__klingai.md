@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/klingai.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "0d5db14c864cff462b4ac20622e0a1dedf4d5b2e82b98f3b5bdc134df0d35b79"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "146021c87645d489d516cd46b20c731abe4668d7a9e4a150f9a31c1a9ee6d630"
 ---
 
 # Kling AI Provider
@@ -406,6 +406,7 @@ The following provider options are available via `providerOptions.klingai`. Opti
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
 - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
+- [Z.AI](/providers/ai-sdk-providers/zai)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)
 - [Fireworks](/providers/ai-sdk-providers/fireworks)

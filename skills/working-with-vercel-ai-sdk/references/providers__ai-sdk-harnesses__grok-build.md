@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/grok-build.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "933eade03a07f51735b12ed82e7ddd0a59e95138845e122a0785a30c7ea0ef1c"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "1de22dd2a9bd286751424d79e1f27f0140ddd507fdbaa608cacedc4890a0e3e5"
 ---
 
 # Grok Build Harness
@@ -89,9 +89,18 @@ const harness = createGrokBuild({
 
 Settings:
 
-- `auth`: selects `auto`, `direct`, or `ai-gateway` authentication. The default
-  is `auto`, which selects AI Gateway when Gateway credentials are present and
-  direct xAI authentication otherwise.
+- `auth`: selects `auto`, `direct`, or `ai-gateway` authentication, or accepts
+  an isolated authentication environment. The default is `auto`, which selects
+  AI Gateway when Gateway credentials are present and direct xAI
+  authentication otherwise.
+- `credentialForwarding`: optional synchronous or asynchronous callback that
+  customizes each credential immediately before the harness adapter forwards it
+  into a sandbox process. It receives the credential value that would otherwise
+  be forwarded (either the real credential or a masked value) and the
+  environment variable name used to expose it. This callback only controls the
+  value forwarded into the sandbox process. It does not restrict which
+  credentials the harness adapter can discover, read, or otherwise access in
+  the host process.
 - `model`: Grok model id selected through ACP. When omitted, Grok Build chooses
   its own default model.
 - `mcpServers`: MCP server definitions keyed by server name.
@@ -138,6 +147,21 @@ available:
 const directHarness = createGrokBuild({ auth: 'direct' });
 const gatewayHarness = createGrokBuild({ auth: 'ai-gateway' });
 ```
+
+Pass an authentication environment when the host resolves credentials at
+runtime:
+
+```ts
+const gatewayHarness = createGrokBuild({
+  auth: {
+    AI_GATEWAY_API_KEY: await resolveGatewayToken(),
+    AI_GATEWAY_BASE_URL: 'https://ai-gateway.vercel.sh',
+  },
+});
+```
+
+The supplied record replaces the host environment for authentication
+discovery, so it can also select direct authentication with `XAI_API_KEY`.
 
 ## Sandbox
 
@@ -204,6 +228,8 @@ safe built-in operations internally without sending a permission request.
 - [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
 - [Grok Build](/providers/ai-sdk-harnesses/grok-build)
 - [Cline](/providers/ai-sdk-harnesses/cline)
+- [Cursor](/providers/ai-sdk-harnesses/cursor)
+- [fx](/providers/ai-sdk-harnesses/fx)
 
 
 [Full Sitemap](/sitemap.md)

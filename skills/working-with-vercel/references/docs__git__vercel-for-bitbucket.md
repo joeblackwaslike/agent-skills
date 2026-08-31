@@ -3,7 +3,7 @@ title: Deploying Bitbucket Projects with Vercel
 product: vercel
 url: /docs/git/vercel-for-bitbucket
 canonical_url: "https://vercel.com/docs/git/vercel-for-bitbucket"
-last_updated: 2025-11-25
+last_updated: 2026-08-11
 type: conceptual
 prerequisites:
   - /docs/git
@@ -16,8 +16,8 @@ related:
 summary: ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and automatic Custom Domain...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git/vercel-for-bitbucket.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "a29e5a69d44e718537c399af6949dbd73a8a3b93de56414661e4fdd3b81bf619"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "c9a486e4220b0ade3b229b30ad7ee65a230ca29197644ca883e33e9227f560c4"
 ---
 
 # Deploying Bitbucket Projects with Vercel
@@ -30,15 +30,18 @@ Vercel for Bitbucket automatically deploys your Bitbucket projects with [Vercel]
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How do I disable Git Notifications from Deployments?](https://vercel.com/kb/guide/how-do-i-disable-git-notifications-from-deployments?from=related) — If your project is connected via a Git account to your deployment, you will receive email notifications whenever the dep
-- [GitLab](https://vercel.com/docs/git/vercel-for-gitlab?from=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
-- [How can I use GitLab Pipelines with Vercel?](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel?from=related) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
-- [GitHub](https://vercel.com/docs/git/vercel-for-github?from=related) — Vercel for GitHub automatically deploys your GitHub projects with Vercel, providing Preview Deployment URLs, and automat
-- [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
-- [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Builds](https://vercel.com/docs/builds?from=related) — Understand how the build step works when creating a Vercel Deployment.
+- [How do I disable Git Notifications from Deployments?](https://vercel.com/kb/guide/how-do-i-disable-git-notifications-from-deployments?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-bitbucket&source_site=vercel-docs&relationship=related) — If your project is connected via a Git account to your deployment, you will receive email notifications whenever the dep
+- [Vercel for Bitbucket](https://vercel.com/blog/bitbucket?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-bitbucket&source_site=vercel-docs&relationship=related)
+- [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-bitbucket&source_site=vercel-docs&relationship=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
+- [How can I use GitLab Pipelines with Vercel?](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-bitbucket&source_site=vercel-docs&relationship=related) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
+- [September 2020](https://vercel.com/blog/changelog-september-2020?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-bitbucket&source_site=vercel-docs&relationship=related)
+- [July 2020](https://vercel.com/blog/changelog-july-2020?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-bitbucket&source_site=vercel-docs&relationship=related)
+- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-bitbucket&source_site=vercel-docs&relationship=related) — Learn how to create and manage deployments on Vercel.
+- [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-bitbucket&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Builds](https://vercel.com/docs/builds?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-bitbucket&source_site=vercel-docs&relationship=related) — Understand how the build step works when creating a Vercel Deployment.
+- [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-bitbucket&source_site=vercel-docs&relationship=related) — Learn how to configure Git for your project through vercel.json or vercel.ts.
 
-Full cross-link map for this page: [/docs/git/vercel-for-bitbucket.graph.md](/docs/git/vercel-for-bitbucket.graph.md)
+Full cross-link map for this page: [/docs/git/vercel-for-bitbucket.graph.md](/docs/git/vercel-for-bitbucket.graph.md?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-bitbucket&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Supported Bitbucket Products

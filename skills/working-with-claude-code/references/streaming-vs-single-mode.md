@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/streaming-vs-single-mode.md"
-fetched_at: "2026-08-17T04:41:37.014Z"
-sha256: "2069707484bdaf2f6b5cdf3d665fce355474b92481d903970b9e9d66a708fbff"
+fetched_at: "2026-08-31T10:37:20.620Z"
+sha256: "2f93a33306a429379f467bb73a7cc45e3adce502fb03fe65d3f74c6980863530"
 ---
 
 > ## Documentation Index
@@ -24,44 +24,6 @@ The Claude Agent SDK supports two distinct input modes for interacting with agen
 Streaming input mode is the **preferred** way to use the Claude Agent SDK. It provides full access to the agent's capabilities and enables rich, interactive experiences.
 
 It allows the agent to operate as a long lived process that takes in user input, handles interruptions, surfaces permission requests, and handles session management.
-
-### How It Works
-
-```mermaid theme={null}
-sequenceDiagram
-    participant App as Your Application
-    participant Agent as Claude Agent
-    participant Tools as Tools/Hooks
-    participant FS as Environment/<br/>File System
-
-    App->>Agent: Initialize with AsyncGenerator
-    activate Agent
-
-    App->>Agent: Yield Message 1
-    Agent->>Tools: Execute tools
-    Tools->>FS: Read files
-    FS-->>Tools: File contents
-    Tools->>FS: Write/Edit files
-    FS-->>Tools: Success/Error
-    Agent-->>App: Stream partial response
-    Agent-->>App: Stream more content...
-    Agent->>App: Complete Message 1
-
-    App->>Agent: Yield Message 2 + Image
-    Agent->>Tools: Process image & execute
-    Tools->>FS: Access filesystem
-    FS-->>Tools: Operation results
-    Agent-->>App: Stream response 2
-
-    App->>Agent: Queue Message 3
-    App->>Agent: Interrupt/Cancel
-    Agent->>App: Handle interruption
-
-    Note over App,Agent: Session stays alive
-    Note over Tools,FS: Persistent file system<br/>state maintained
-
-    deactivate Agent
-```
 
 ### Benefits
 
@@ -282,7 +244,7 @@ If a query ends with an error result, such as `error_max_turns`, a single messag
 
   async def single_message_example():
       # Simple one-shot query using query() function
-      # query() raises after an error result, such as error_max_turns
+      # query() raises ResultError after an error result, such as error_max_turns
       try:
           async for message in query(
               prompt="Explain the authentication flow",
@@ -290,7 +252,6 @@ If a query ends with an error result, such as `error_max_turns`, a single messag
           ):
               if isinstance(message, ResultMessage) and message.subtype == "success":
                   print(message.result)
-      # The SDK raises a plain Exception for error results, so match Exception here
       except Exception as e:
           print(f"Query failed: {e}")
 

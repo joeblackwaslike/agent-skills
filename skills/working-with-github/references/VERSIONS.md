@@ -1,12 +1,12 @@
 ---
 source: "generated"
-fetched_at: "2026-08-24T04:49:51.110Z"
-sha256: "e4ab5fd0abbc62ae33d294e0eff00ed6b3ee98d21838eead87430c52ee4444c8"
+fetched_at: "2026-08-31T10:43:01.027Z"
+sha256: "d8500d011d6232af443aca824b18a499564bdb81a0a6f3cb0e496d6d97b45886"
 ---
 
 # Pinned versions
 
-Auto-stamped by `scripts/update_docs.js`. Last run: 2026-08-24
+Auto-stamped by `scripts/update_docs.js`. Last run: 2026-08-31
 
 - **gh CLI:** `2.94.0` — CLI reference in `references/cli/` was NOT regenerated this run (local gh absent or mismatched; committed reference retained).
 - **docs.github.com guides:** fetched from the `github/docs` `main` branch (always current).

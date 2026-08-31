@@ -16,8 +16,8 @@ related:
 summary: Track Vercel Flags evaluations and see which variant each evaluation returns.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/evaluation-metrics.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "6c72213cfd152ba0559fd33e6af1fb7e27bc1b8dc489a119a166c8261c15f733"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "0765eca229058fb89f46f3f9d1940f8375f5dcac4728b8df23e5b618e8b10064"
 ---
 
 # Flag Evaluation Metrics
@@ -30,16 +30,16 @@ Evaluation metrics show how often a feature flag is evaluated and which variants
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated?from=related) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
-- [How to use Vercel Flags across projects](https://vercel.com/kb/guide/how-to-use-vercel-flags-across-projects?from=related) — Evaluate flags across projects using a source project SDK Key in the consumer project via a custom adapter
-- [Data Locality](https://flags-sdk.dev/docs/principles/data-locality?from=related)
-- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
-- [Observability](https://vercel.com/docs/flags/observability?from=related) — Track feature flag evaluations and analyze their impact with Web Analytics.
-- [Core](https://vercel.com/docs/flags/vercel-flags/sdks/core?from=related) — Use the Vercel Flags core evaluation library directly for custom setups.
-- [Flags SDK](https://vercel.com/docs/flags/flags-sdk-reference?from=related) — API reference for the Flags SDK for Next.js and SvelteKit.
-- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
+- [Evaluation metrics for Vercel Flags](https://vercel.com/changelog/evaluation-metrics-for-vercel-flags?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fevaluation-metrics&source_site=vercel-docs&relationship=related)
+- [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fevaluation-metrics&source_site=vercel-docs&relationship=related) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
+- [How to use Vercel Flags across projects](https://vercel.com/kb/guide/how-to-use-vercel-flags-across-projects?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fevaluation-metrics&source_site=vercel-docs&relationship=related) — Evaluate flags across projects using a source project SDK Key in the consumer project via a custom adapter
+- [Data Locality](https://flags-sdk.dev/docs/principles/data-locality?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fevaluation-metrics&source_site=vercel-docs&relationship=related)
+- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fevaluation-metrics&source_site=vercel-docs&relationship=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
+- [Observability](https://vercel.com/docs/flags/observability?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fevaluation-metrics&source_site=vercel-docs&relationship=related) — Track feature flag evaluations and analyze their impact with Web Analytics.
+- [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fevaluation-metrics&source_site=vercel-docs&relationship=related) — API reference for the Flags SDK for Next.js and SvelteKit.
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fevaluation-metrics&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
-Full cross-link map for this page: [/docs/flags/vercel-flags/evaluation-metrics.graph.md](/docs/flags/vercel-flags/evaluation-metrics.graph.md)
+Full cross-link map for this page: [/docs/flags/vercel-flags/evaluation-metrics.graph.md](/docs/flags/vercel-flags/evaluation-metrics.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fevaluation-metrics&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Where to find evaluation metrics

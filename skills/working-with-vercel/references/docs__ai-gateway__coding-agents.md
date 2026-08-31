@@ -3,7 +3,7 @@ title: Coding Agents
 product: vercel
 url: /docs/ai-gateway/coding-agents
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents"
-last_updated: 2026-07-30
+last_updated: 2026-08-26
 type: conceptual
 prerequisites:
   - /docs/ai-gateway
@@ -16,8 +16,8 @@ related:
 summary: Configure popular AI coding agents to use the AI Gateway for unified model access and spend monitoring.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "85f7742b2bd7e47352e53911a1138230b1a6d8f6b52641d978a87819e70b99a9"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "9a5ee56a7cca03a1d833deca1910e12f176b802a2536e51a5b776d5f0c46196d"
 ---
 
 # Coding Agents
@@ -30,16 +30,19 @@ AI coding agents are transforming how developers write, debug, and refactor code
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How I use OpenCode with Vercel AI Gateway to build features fast](https://vercel.com/kb/guide/how-i-use-opencode-with-vercel-ai-gateway-to-build-features-fast?from=related) — How to route different AI models to different coding tasks automatically, cutting token costs by ~70% without losing qua
-- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
-- [Build an agent with Vercel and Flue](https://vercel.com/kb/guide/build-an-agent-with-vercel-and-flue?from=related) — Build and deploy an agent with Flue, Vercel Sandbox, and AI Gateway
-- [How to build AI Agents with Vercel and the AI SDK](https://vercel.com/kb/guide/how-to-build-ai-agents-with-vercel-and-the-ai-sdk?from=related) — Learn how to build, deploy, and scale AI agents on Vercel using the AI SDK. This guide covers calling LLMs, defining too
-- [How to build an AI agent for Slack with Chat SDK and AI SDK](https://vercel.com/kb/guide/how-to-build-an-ai-agent-for-slack-with-chat-sdk-and-ai-sdk?from=related) — Build a Slack AI agent using Chat SDK, AI SDK's ToolLoopAgent, and Vercel AI Gateway. Covers project setup, tool definit
-- [SDKs & APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis?from=related) — Use the AI Gateway with various SDKs and API specifications including OpenAI, Anthropic, and OpenResponses.
-- [Agent Resources](https://vercel.com/docs/agent-resources?from=related) — Resources for building with AI on Vercel, including documentation access, MCP servers, and agent skills.
-- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
+- [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related)
+- [10x more capacity for Laguna S 2.1 on AI Gateway](https://vercel.com/changelog/10x-more-capacity-for-laguna-s-2-1-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related)
+- [DeepSeek V4 Flash now runs updated weights on AI Gateway](https://vercel.com/changelog/deepseek-v4-flash-now-runs-updated-weights-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related)
+- [DeepSeek V4 Flash Vision Experimental now available on AI Gateway](https://vercel.com/changelog/deepseek-v4-flash-with-vision-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related)
+- [DeepSeek V4 Pro now runs updated weights on AI Gateway](https://vercel.com/changelog/deepseek-v4-pro-now-runs-updated-weights-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related)
+- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
+- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
+- [Collaborating with Anthropic on Claude Sonnet 4.5 to power intelligent coding agents](https://vercel.com/blog/collaborating-with-anthropic-on-claude-sonnet-4-5?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related)
+- [Xcode](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related) — Use Xcode's coding assistant with the AI Gateway.
+- [Agent Resources](https://vercel.com/docs/agent-resources?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related) — Resources for building with AI on Vercel, including documentation access, MCP servers, and agent skills.
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
-Full cross-link map for this page: [/docs/ai-gateway/coding-agents.graph.md](/docs/ai-gateway/coding-agents.graph.md)
+Full cross-link map for this page: [/docs/ai-gateway/coding-agents.graph.md](/docs/ai-gateway/coding-agents.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Set up with the Vercel CLI
@@ -62,6 +65,7 @@ Read the [full documentation for the command](/docs/cli/ai-gateway#coding-agents
 | [Cursor](/docs/ai-gateway/coding-agents/cursor) | `cursor` |
 | [Hermes](/docs/ai-gateway/coding-agents/hermes) | `hermes` |
 | [Kilo Code](/docs/ai-gateway/coding-agents/kilo-code) | `kilo` |
+| [omp](/docs/ai-gateway/coding-agents/omp) | `omp` |
 | [OpenClaw](/docs/ai-gateway/coding-agents/openclaw) | `openclaw` |
 | [OpenCode](/docs/ai-gateway/coding-agents/opencode) | `opencode` |
 | [Pi](/docs/ai-gateway/coding-agents/pi) | `pi` |
@@ -92,7 +96,7 @@ Three agents have a dedicated endpoint, because each needs something the generic
 | [OpenAI Codex](/docs/ai-gateway/coding-agents/openai-codex) | `https://ai-gateway.vercel.sh/codex/v1` |
 | [Cursor](/docs/ai-gateway/coding-agents/cursor) | `https://ai-gateway.vercel.sh/cursor/v1` |
 
-See each agent's page for what its endpoint adds. Agents with a first-party AI Gateway provider, such as Cline, OpenCode, and Pi, already know the URL and only need your API key.
+See each agent's page for what its endpoint adds. Agents with a first-party AI Gateway provider, such as Cline, OpenCode, Pi, and omp, already know the URL and only need your API key.
 
 ## Why route coding agents here?
 
@@ -276,6 +280,12 @@ Kilo Code fetches the model list from the gateway automatically, so you pick a m
 
 See the [Kilo Code documentation](/docs/ai-gateway/coding-agents/kilo-code) for manual setup.
 
+### omp
+
+[omp](https://omp.sh) (oh-my-pi) is an open-source terminal coding agent forked from Pi, inheriting its first-class `vercel-ai-gateway` provider. The CLI connects it with `--agent omp`, adding only an `AI_GATEWAY_API_KEY` export to your shell profile. omp reads the key from the environment and fills its `/model` picker from the gateway catalog.
+
+See the [omp documentation](/docs/ai-gateway/coding-agents/omp) for manual setup and model selection.
+
 ### OpenClaw
 
 [OpenClaw](https://github.com/openclaw/openclaw) is an open-source agent gateway that routes work to multiple providers. The CLI connects it for you with `--agent openclaw`, adding a `vercel-ai-gateway` provider and a starter model list to `~/.openclaw/openclaw.json`.
@@ -327,6 +337,7 @@ Once your coding agents are connected, view usage in the [Observability section 
 - [Configure Grok Build](/docs/ai-gateway/coding-agents/grok-build) for SpaceXAI's terminal coding agent
 - [Configure Hermes](/docs/ai-gateway/coding-agents/hermes) for Nous Research's terminal coding agent
 - [Configure Kilo Code](/docs/ai-gateway/coding-agents/kilo-code) as an OpenAI-compatible provider
+- [Configure omp](/docs/ai-gateway/coding-agents/omp) for its inherited first-class gateway provider
 - [Configure OpenClaw](/docs/ai-gateway/coding-agents/openclaw) for multi-provider routing
 - [Configure Superset](/docs/ai-gateway/coding-agents/superset) for terminal-first AI coding
 

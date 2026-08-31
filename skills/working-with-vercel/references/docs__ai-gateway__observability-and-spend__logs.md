@@ -3,7 +3,7 @@ title: Logs
 product: vercel
 url: /docs/ai-gateway/observability-and-spend/logs
 canonical_url: "https://vercel.com/docs/ai-gateway/observability-and-spend/logs"
-last_updated: 2026-07-30
+last_updated: 2026-08-13
 type: how-to
 prerequisites:
   - /docs/ai-gateway/observability-and-spend
@@ -14,8 +14,8 @@ related:
 summary: Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the results as CSV or JSON.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/logs.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "63de9101c7fded999f70d15db46c09b837b2c42ad6e66f144c129e5ef406a696"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "9a37c328f1c21851cf7e27ce678d4b90c3cdd3faaf48da8ebca88c655a70248f"
 ---
 
 # Logs
@@ -28,15 +28,18 @@ The Logs page lists every request and asynchronous job your team sends through A
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
-- [Usage & Activity](https://v0.app/docs/usage-dashboard?from=related) — Track your credit consumption and activity, or review usage across your team.
-- [Runtime](https://vercel.com/docs/logs/runtime?from=related) — Learn how to search, inspect, and share your runtime logs with the Logs tab.
-- [Logs](https://vercel.com/docs/logs?from=related) — Use logs to find information on deployment builds, function executions, and more.
-- [vercel logs](https://vercel.com/docs/cli/logs?from=related) — View and filter request logs for your Vercel project, or stream live runtime logs from a deployment.
-- [Usage & Billing](https://vercel.com/docs/ai-gateway/observability-and-spend/usage?from=related) — Monitor your AI Gateway credit balance, usage, and generation details.
-- [Insights](https://vercel.com/docs/observability/insights?from=related) — List of available data sources that you can view and monitor with Observability on Vercel.
+- [AI Gateway logs now have a dedicated page](https://vercel.com/changelog/ai-gateway-logs?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related)
+- [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related)
+- [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
+- [Access and share AI Gateway leaderboard data](https://vercel.com/changelog/open-data-and-shareable-charts-for-ai-gateway-leaderboards?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related)
+- [Usage & Activity](https://v0.app/docs/usage-dashboard?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — Track your credit consumption and activity, or review usage across your team.
+- [Runtime Logs](https://vercel.com/docs/logs/runtime?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to search, inspect, and share your runtime logs with the Logs tab.
+- [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
+- [AI Gateway Usage & Billing](https://vercel.com/docs/ai-gateway/observability-and-spend/usage?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — Monitor your AI Gateway credit balance, usage, and generation details.
+- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application perfor
 
-Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend/logs.graph.md](/docs/ai-gateway/observability-and-spend/logs.graph.md)
+Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend/logs.graph.md](/docs/ai-gateway/observability-and-spend/logs.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 For aggregate charts and spend totals, see [Observability](/docs/ai-gateway/observability-and-spend/observability). For usage grouped by model, user, or tag, see [Custom Reporting](/docs/ai-gateway/observability-and-spend/custom-reporting).
@@ -81,7 +84,7 @@ Hover a Usage cell for the long form, which names the components. For language m
 
 A dash means the request reported nothing for that column. A request that failed before reaching a provider shows one for both Usage and Cost.
 
-The list is always ordered newest first and can't be re-sorted. To narrow it, use the filters below.
+Running asynchronous jobs appear first. The remaining rows are ordered newest first, and the list can't be re-sorted. To narrow it, use the filters below.
 
 > **💡 Note:** Token splits, the cost breakdown, whether the request was billed to AI Gateway or BYOK, Zero Data Retention, and the full video measures all live in the request details panel rather than the table. Click any row to see them.
 
@@ -93,18 +96,18 @@ The filter bar sits above the table.
 
 **Dropdowns** each accept multiple values:
 
-| Filter             | Options                                                                                                                       |
-| ------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
-| **Status**         | `2xx`, `4xx`, `5xx`, or an exact code you enter, such as `429`                                                               |
-| **Model**          | Any model your team has used                                                                                                  |
-| **Provider**       | Any provider your team has used                                                                                               |
-| **Authentication** | API keys, projects that used OIDC tokens, app tokens, and personal access tokens                                              |
-| **Routing**        | AI Gateway system credentials, BYOK credentials, Virtual Models, or Private Inference                                         |
-| **Modality**       | Any modality your team has used, such as Language or Embedding                                                               |
-| **Request Mode**   | Synchronous requests or asynchronous jobs                                                                                     |
-| **Latency**        | Minimum request duration or time to first token                                                                               |
-| **Tokens**         | Minimum input or output token count                                                                                           |
-| **Cost**           | Minimum inference cost                                                                                                        |
+| Filter             | What it filters                                                                                                                   |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
+| **Status**         | Response outcomes by `2xx`, `4xx`, `5xx`, or an exact status code such as `429`                                                  |
+| **Model**          | The model that handled the request or job                                                                                         |
+| **Provider**       | The provider that served the model                                                                                                |
+| **Authentication** | The API key, project OpenID Connect (OIDC) token, app token, or personal access token that authenticated the operation             |
+| **Routing**        | How AI Gateway routed the operation: system credentials, bring your own key (BYOK), or Virtual Models                                |
+| **Modality**       | The model's input or output type, such as Language, Embedding, Image, or Video                                                    |
+| **Request Mode**   | Synchronous requests or asynchronous jobs                                                                                         |
+| **Latency**        | Request duration or time to first token                                                                                            |
+| **Tokens**         | Input or output token count                                                                                                        |
+| **Cost**           | Inference cost                                                                                                                      |
 
 **Date range** offers presets from the last 5 minutes to the last 30 days. You can look back at most 36 days.
 
@@ -130,15 +133,23 @@ With Live off, the list loads 50 more rows each time you scroll to the bottom.
 
 Click any row to open its details beside the list. The panel is resizable by dragging its left edge. The selected log ID is stored in the URL, so you can copy the address to share the same log and filtered list.
 
+![Image](https://vercel.com/docs-assets/static/docs/ai-gateway/logs/request-details-light.png)
+
 The header carries the generation or job ID with a copy button. **Request started** identifies the authentication input, inference region, and whether Zero Data Retention applied. OIDC-authenticated requests name their project because the token itself has no API key name. App tokens and personal access tokens appear as team-scoped authentication.
 
 **Routing** describes what happened after AI Gateway received the request. A single provider attempt appears in one Routing card. A request that needed multiple attempts shows one **Routed to \[provider]** card per attempt. Each card can include the provider, provider region, served model, credential source, time to first token, compact timing spans, status, and provider response.
 
 Timing spans use green for successful work, amber for a 4xx response, and red for a 5xx response or timeout. A recovered request also has a refresh icon in the table's Status cell.
 
-**Transcript** shows captured inputs and outputs when content capture is available. Structured JSON uses an expandable JSON view, while chat and tool calls use their modality-specific presentation. Zero Data Retention, privacy settings, size limits, or capture failures can make transcript content unavailable.
-
 **Usage** and **Cost** break the request down line by line, so you can see which tokens and which charges made up the total.
+
+### Inspect an asynchronous job
+
+Use the **Request Mode** filter to show asynchronous jobs, or search for an exact job ID. Click a job to open its details beside the list:
+
+![Image](https://vercel.com/docs-assets/static/docs/ai-gateway/logs/async-job-details-light.png)
+
+Running asynchronous jobs stay at the top of the table so you can monitor them until they complete, fail, or are canceled. The timeline identifies when AI Gateway submitted the job. The details include its authentication, model, provider, and inference region.
 
 ## Export logs
 
@@ -147,8 +158,6 @@ Timing spans use green for successful work, amber for a 4xx response, and red fo
 ## Retention and limits
 
 Routing attempt details are kept for **30 days**. Older requests still appear in the list but open with a message saying their routing details are no longer available.
-
-The date range picker allows up to 36 days, which is longer than the 30-day detail retention. Requests in that 6-day gap are listed without details.
 
 ## Roles and permissions
 

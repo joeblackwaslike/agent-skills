@@ -3,7 +3,7 @@ title: Troubleshooting Build Errors
 product: vercel
 url: /docs/deployments/troubleshoot-a-build
 canonical_url: "https://vercel.com/docs/deployments/troubleshoot-a-build"
-last_updated: 2026-06-15
+last_updated: 2026-08-11
 type: conceptual
 prerequisites:
   - /docs/deployments
@@ -16,8 +16,8 @@ related:
 summary: Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a deployment and long build times.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/troubleshoot-a-build.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "43d75b6e95ed920792a79eb1e4cf3736fd94745207fc47eb65ee782249f72957"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "ab22f454c2de9746ab642ab53ab59f25a348f21cc97c472e7bb4ad7378633135"
 ---
 
 # Troubleshooting Build Errors
@@ -30,17 +30,20 @@ You can troubleshoot build errors that occur during the Build step of your deplo
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Troubleshooting Build Error: "Build step did not complete within the maximum of 45 minutes"](https://vercel.com/kb/guide/troubleshooting-build-error-build-step-did-not-complete-within-45-minutes?from=related) — Learn common reasons Vercel builds hit the 45-minute limit and how to reduce build times so your deployments stay fast a
-- [Troubleshooting Builds Failing with SIGKILL or Out of Memory Errors](https://vercel.com/kb/guide/troubleshooting-sigkill-out-of-memory-errors?from=related) — Learn how to troubleshoot builds failing with SIGKILL or Out of Memory errors on a Vercel Deployment.
-- [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors?from=related) — Learn the systematic steps to identify and resolve 404 issues.
-- [Why are my Vercel builds queued?](https://vercel.com/kb/guide/why-are-my-vercel-builds-queued?from=related) — Learn about why your Vercel builds may be getting queued and how to resolve this.
-- [Builds](https://vercel.com/docs/builds?from=related) — Understand how the build step works when creating a Vercel Deployment.
-- [Turborepo](https://vercel.com/docs/monorepos/turborepo?from=related) — Learn about Turborepo, a build system for monorepos that allows you to have faster incremental builds, content-aware has
-- [Debug Cache Issues](https://vercel.com/docs/caching/cdn-cache/debug-cache-issues?from=related) — Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
-- [Build Features](https://vercel.com/docs/builds/build-features?from=related) — Learn how to customize your deployments using Vercel's build features.
-- [Deploy Hooks](https://vercel.com/docs/deploy-hooks?from=related) — Learn how to create and trigger deploy hooks to integrate Vercel deployments with other systems.
+- [Build cache storage increased for larger build machines](https://vercel.com/changelog/build-cache-storage-increased-for-larger-build-machines?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-a-build&source_site=vercel-docs&relationship=related)
+- [Enhanced Builds now have double the compute](https://vercel.com/changelog/enhanced-builds-now-have-double-the-compute?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-a-build&source_site=vercel-docs&relationship=related)
+- [Improved error messages for failed or canceled builds](https://vercel.com/changelog/improved-error-messages-for-failed-or-canceled-builds?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-a-build&source_site=vercel-docs&relationship=related)
+- [More detailed report on out of memory or disk space errors on builds](https://vercel.com/changelog/report-on-out-of-memory-or-disk-space?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-a-build&source_site=vercel-docs&relationship=related)
+- [Yarn 2+ dependency caching now supported](https://vercel.com/changelog/yarn-2-dependency-caching-now-supported?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-a-build&source_site=vercel-docs&relationship=related)
+- [Troubleshooting Build Error: "Build step did not complete within the maximum of 45 minutes"](https://vercel.com/kb/guide/troubleshooting-build-error-build-step-did-not-complete-within-45-minutes?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-a-build&source_site=vercel-docs&relationship=related) — Learn common reasons Vercel builds hit the 45-minute limit and how to reduce build times so your deployments stay fast a
+- [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-a-build&source_site=vercel-docs&relationship=related) — Learn the systematic steps to identify and resolve 404 issues.
+- [Deploying Turborepo to Vercel](https://vercel.com/docs/monorepos/turborepo?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-a-build&source_site=vercel-docs&relationship=related) — Learn about Turborepo, a build system for monorepos that allows you to have faster incremental builds, content-aware has
+- [Diagnosing and fixing cache issues](https://vercel.com/docs/caching/cdn-cache/debug-cache-issues?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-a-build&source_site=vercel-docs&relationship=related) — Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
+- [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-a-build&source_site=vercel-docs&relationship=related) — Learn how to customize your deployments using Vercel's build features.
+- [Creating & Triggering Deploy Hooks](https://vercel.com/docs/deploy-hooks?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-a-build&source_site=vercel-docs&relationship=related) — Learn how to create and trigger deploy hooks to integrate Vercel deployments with other systems.
+- [Integrating Vercel and Kubernetes](https://vercel.com/docs/integrations/external-platforms/kubernetes?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-a-build&source_site=vercel-docs&relationship=related) — Deploy your frontend on Vercel alongside your existing Kubernetes infrastructure.
 
-Full cross-link map for this page: [/docs/deployments/troubleshoot-a-build.graph.md](/docs/deployments/troubleshoot-a-build.graph.md)
+Full cross-link map for this page: [/docs/deployments/troubleshoot-a-build.graph.md](/docs/deployments/troubleshoot-a-build.graph.md?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-a-build&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Troubleshooting views

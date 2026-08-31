@@ -17,8 +17,8 @@ related:
 summary: Learn about the Edge runtime, an environment in which Vercel Functions can run.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/edge.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "c4e0fb77d03cc9e66a98a7896b8dfe2cbcad770b651716b963915a60f934f9de"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "a57f3529ccc6604d8e8ad3f4b4df4487f72de0e50fc3c4081fb390523d6e1759"
 ---
 
 # Edge Runtime
@@ -33,19 +33,20 @@ sha256: "c4e0fb77d03cc9e66a98a7896b8dfe2cbcad770b651716b963915a60f934f9de"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
-- [How can I make my library compatible with the Vercel Edge Runtime?](https://vercel.com/kb/guide/library-sdk-compatible-with-vercel-edge-runtime-and-functions?from=related) — Learn how to make your library or SDK compatible with the Edge Runtime for existing Edge Runtime code and Routing Middle
-- [Sending Emails from an application on Vercel](https://vercel.com/kb/guide/sending-emails-from-an-application-on-vercel?from=related) — SMTP is the harder path inside Vercel Functions. Learn how to send emails over an HTTP API, which Next.js pattern fits y
-- [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out?from=related) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
-- [Edge Runtime](https://nextjs.org/docs/pages/api-reference/edge?from=related) — API Reference for the Edge Runtime.
-- [Edge Runtime](https://nextjs.org/docs/app/api-reference/edge?from=related) — API Reference for the Edge Runtime.
-- [vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
-- [Node.js](https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package?from=related) — Learn about available APIs when working with Vercel Functions.
-- [Frontends](https://vercel.com/docs/frameworks/frontend?from=related) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
-- [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives?from=related) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
-- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
+- [Edge Functions are now generally available](https://vercel.com/changelog/edge-functions-are-now-generally-available?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related)
+- [Improved Node.js compatibility for Edge Middleware and Edge Functions](https://vercel.com/changelog/improved-node-js-compatibility-for-edge-middleware-and-edge-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related)
+- [New execution duration limit for Edge Functions](https://vercel.com/changelog/new-execution-duration-limit-for-edge-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related)
+- [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
+- [How can I make my library compatible with the Vercel Edge Runtime?](https://vercel.com/kb/guide/library-sdk-compatible-with-vercel-edge-runtime-and-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related) — Learn how to make your library or SDK compatible with the Edge Runtime for existing Edge Runtime code and Routing Middle
+- [Sending Emails from an application on Vercel](https://vercel.com/kb/guide/sending-emails-from-an-application-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related) — SMTP is the harder path inside Vercel Functions. Learn how to send emails over an HTTP API, which Next.js pattern fits y
+- [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
+- [Edge Runtime](https://nextjs.org/docs/pages/api-reference/edge?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related) — API Reference for the Edge Runtime.
+- [Edge Runtime](https://nextjs.org/docs/app/api-reference/edge?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related) — API Reference for the Edge Runtime.
+- [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
+- [@vercel/functions API Reference \\(Node.js\\)](https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related) — Learn about available APIs when working with Vercel Functions.
+- [Frontends on Vercel](https://vercel.com/docs/frameworks/frontend?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
 
-Full cross-link map for this page: [/docs/functions/runtimes/edge.graph.md](/docs/functions/runtimes/edge.graph.md)
+Full cross-link map for this page: [/docs/functions/runtimes/edge.graph.md](/docs/functions/runtimes/edge.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 > **💡 Note:** Starting in Next.js 16.3, setting `runtime = 'edge'` is no longer supported.

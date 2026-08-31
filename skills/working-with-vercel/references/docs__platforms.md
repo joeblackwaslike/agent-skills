@@ -3,7 +3,7 @@ title: Vercel for Platforms
 product: vercel
 url: /docs/platforms
 canonical_url: "https://vercel.com/docs/platforms"
-last_updated: 2026-07-28
+last_updated: 2026-08-11
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Build platforms that serve multiple customers from a single codebase, with custom domains, wildcard subdomains, and automatic SSL.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "8241eefeccb9b3140fdbdc94d79f8fdd128f557eb8fa001d36bb41c1c489e623"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "1d1ebdd736e366c738062503821f5e9742eff6a31813a6c524437c73bbdfb93f"
 ---
 
 # Vercel for Platforms
@@ -30,12 +30,14 @@ sha256: "8241eefeccb9b3140fdbdc94d79f8fdd128f557eb8fa001d36bb41c1c489e623"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Build a multi-tenant app with Next.js and Vercel](https://vercel.com/kb/guide/nextjs-multi-tenant-application?from=related) — Create a Next.js application with multi-tenancy and custom domain support on Vercel.
-- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
-- [Supported Frameworks](https://vercel.com/docs/frameworks?from=related) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
-- [Next.js](https://vercel.com/docs/frameworks/full-stack/nextjs?from=related) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
+- [Vercel for Platforms can now deploy from your users' GitHub repositories](https://vercel.com/changelog/vercel-for-platforms-can-now-deploy-from-your-users-github-repositories?from=related&source_path=%2Fdocs%2Fplatforms&source_site=vercel-docs&relationship=related)
+- [Introducing Vercel for Platforms](https://vercel.com/changelog/introducing-vercel-for-platforms?from=related&source_path=%2Fdocs%2Fplatforms&source_site=vercel-docs&relationship=related)
+- [Introducing the Vercel Platforms Starter Kit](https://vercel.com/blog/platforms-starter-kit?from=related&source_path=%2Fdocs%2Fplatforms&source_site=vercel-docs&relationship=related)
+- [Build a multi-tenant app with Next.js and Vercel](https://vercel.com/kb/guide/nextjs-multi-tenant-application?from=related&source_path=%2Fdocs%2Fplatforms&source_site=vercel-docs&relationship=related) — Create a Next.js application with multi-tenancy and custom domain support on Vercel.
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fplatforms&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
+- [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs?from=related&source_path=%2Fdocs%2Fplatforms&source_site=vercel-docs&relationship=related) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
 
-Full cross-link map for this page: [/docs/platforms.graph.md](/docs/platforms.graph.md)
+Full cross-link map for this page: [/docs/platforms.graph.md](/docs/platforms.graph.md?from=related&source_path=%2Fdocs%2Fplatforms&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Most platforms on Vercel follow one of two patterns. Pick the one that matches how isolated each customer needs to be:

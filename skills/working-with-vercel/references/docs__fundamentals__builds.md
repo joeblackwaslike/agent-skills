@@ -3,7 +3,7 @@ title: How Vercel builds your application
 product: vercel
 url: /docs/fundamentals/builds
 canonical_url: "https://vercel.com/docs/fundamentals/builds"
-last_updated: 2026-06-17
+last_updated: 2026-08-11
 type: conceptual
 prerequisites:
   - /docs/fundamentals
@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel transforms your source code into optimized assets ready to serve globally.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/fundamentals/builds.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "8c4b0bef618f6743c00d084cdbe26ef9beb189f3e95a14eca1db58a6c6aff874"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "749008ca14917e9c4ff6a61e2081b10e4d43595b50a18d71c2bb0287b3d320e1"
 ---
 
 # How Vercel builds your application
@@ -30,16 +30,16 @@ When you push code to Vercel, your source files need to be transformed into some
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to Deploy a Vue.js Site with Vercel](https://vercel.com/kb/guide/deploying-vuejs-to-vercel?from=related) — Create your Vue.js app and deploy it with Vercel.
-- [Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel?from=related) — Learn how to deploy a TanStack Start app to Vercel using the Nitro Vite plugin. Covers framework setup, Git and CLI depl
-- [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
-- [vercel build](https://vercel.com/docs/cli/build?from=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
-- [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
-- [Deploy from CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
-- [How Vercel CDN works](https://vercel.com/docs/how-vercel-cdn-works?from=related) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
-- [Vite](https://vercel.com/docs/frameworks/frontend/vite?from=related) — Learn how to use Vercel's features with Vite.
+- [Announcing the Build Output API](https://vercel.com/blog/build-output-api?from=related&source_path=%2Fdocs%2Ffundamentals%2Fbuilds&source_site=vercel-docs&relationship=related)
+- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure?from=related&source_path=%2Fdocs%2Ffundamentals%2Fbuilds&source_site=vercel-docs&relationship=related)
+- [How to Deploy a Vue.js Site with Vercel](https://vercel.com/kb/guide/deploying-vuejs-to-vercel?from=related&source_path=%2Fdocs%2Ffundamentals%2Fbuilds&source_site=vercel-docs&relationship=related) — Create your Vue.js app and deploy it with Vercel.
+- [vercel build](https://vercel.com/docs/cli/build?from=related&source_path=%2Fdocs%2Ffundamentals%2Fbuilds&source_site=vercel-docs&relationship=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Ffundamentals%2Fbuilds&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Ffundamentals%2Fbuilds&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [How Vercel CDN works](https://vercel.com/docs/how-vercel-cdn-works?from=related&source_path=%2Fdocs%2Ffundamentals%2Fbuilds&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
+- [Vite on Vercel](https://vercel.com/docs/frameworks/frontend/vite?from=related&source_path=%2Fdocs%2Ffundamentals%2Fbuilds&source_site=vercel-docs&relationship=related) — Deploy Vite projects to Vercel and configure environment variables, Vercel Functions, server-side rendering, and SPA rew
 
-Full cross-link map for this page: [/docs/fundamentals/builds.graph.md](/docs/fundamentals/builds.graph.md)
+Full cross-link map for this page: [/docs/fundamentals/builds.graph.md](/docs/fundamentals/builds.graph.md?from=related&source_path=%2Fdocs%2Ffundamentals%2Fbuilds&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 This guide explains what happens during that transformation, from the moment Vercel receives your code to when your application is ready to handle its first request.

@@ -3,7 +3,7 @@ title: Managing environment variables across environments
 product: vercel
 url: /docs/environment-variables/manage-across-environments
 canonical_url: "https://vercel.com/docs/environment-variables/manage-across-environments"
-last_updated: 2026-02-24
+last_updated: 2026-08-20
 type: how-to
 prerequisites:
   - /docs/environment-variables
@@ -16,8 +16,8 @@ related:
 summary: Add, sync, and verify environment variables across development, preview, production, and custom environments using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/manage-across-environments.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "eaafedc0c0206524bd0fb6e50c385e7dc1627839f728032d03a2dc75000efd20"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "b075fb4f643702aa22fb5d0c2be3356a65b552c767aef53061be589398cc0809"
 ---
 
 # Managing environment variables across environments
@@ -30,16 +30,17 @@ Use this guide to manage environment variables across multiple environments. You
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Full-stack previews on Vercel](https://vercel.com/kb/guide/full-stack-preview-deployments-on-vercel?from=related) — Learn how to use full-stack previews for your Vercel projects. Deploy Next.js, FastAPI, and a containerized Go service t
-- [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
-- [How do I set up a staging environment on Vercel?](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel?from=related) — Information on how to set up a staging environment on Vercel.
-- [Managing Environment Variables](https://vercel.com/docs/environment-variables/managing-environment-variables?from=related) — Learn how to create and manage environment variables for Vercel.
-- [Environments](https://vercel.com/docs/deployments/environments?from=related) — Environments are for developing locally, testing changes in a pre-production environment, and serving end-users in produ
-- [Sensitive Environment Variables](https://vercel.com/docs/environment-variables/sensitive-environment-variables?from=related) — Environment variables that cannot be decrypted once created.
-- [Shared Environment Variables](https://vercel.com/docs/environment-variables/shared-environment-variables?from=related) — Learn how to use Shared environment variables, which are environment variables that you define at the Team level and can
-- [Edit an environment variable](https://vercel.com/docs/rest-api/projects/edit-an-environment-variable?from=related)
+- [Full-stack previews on Vercel](https://vercel.com/kb/guide/full-stack-preview-deployments-on-vercel?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Learn how to use full-stack previews for your Vercel projects. Deploy Next.js, FastAPI, and a containerized Go service t
+- [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
+- [Environment Variables UI](https://vercel.com/blog/environment-variables-ui?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related)
+- [How do I set up a staging environment on Vercel?](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Information on how to set up a staging environment on Vercel.
+- [Managing environment variables](https://vercel.com/docs/environment-variables/managing-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Learn how to create and manage environment variables for Vercel.
+- [Environments](https://vercel.com/docs/deployments/environments?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Environments are for developing locally, testing changes in a pre-production environment, and serving end-users in produ
+- [Sensitive environment variables](https://vercel.com/docs/environment-variables/sensitive-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Environment variables that cannot be decrypted once created.
+- [Shared environment variables](https://vercel.com/docs/environment-variables/shared-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Learn how to use Shared environment variables, which are environment variables that you define at the Team level and can
+- [Edit an environment variable](https://vercel.com/docs/rest-api/projects/edit-an-environment-variable?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — PATCH /v9/projects/{idOrName}/env/{id} — Edit a specific environment variable for a given project by passing the environ
 
-Full cross-link map for this page: [/docs/environment-variables/manage-across-environments.graph.md](/docs/environment-variables/manage-across-environments.graph.md)
+Full cross-link map for this page: [/docs/environment-variables/manage-across-environments.graph.md](/docs/environment-variables/manage-across-environments.graph.md?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 > **💡 Note:** This guide requires a [linked Vercel project](/docs/cli/project-linking). Run

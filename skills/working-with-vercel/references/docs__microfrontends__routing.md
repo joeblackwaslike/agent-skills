@@ -1,5 +1,5 @@
 ---
-title: Routing
+title: Microfrontends Routing
 product: vercel
 url: /docs/microfrontends/routing
 canonical_url: "https://vercel.com/docs/microfrontends/routing"
@@ -13,11 +13,11 @@ related:
   - /docs/projects/managing-projects
   - /docs/routing/rewrites
   - /docs/flags
-summary: Learn about routing on Vercel.
+summary: Configure which microfrontend handles each path and understand how Vercel selects deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/routing.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "7786b607c67999d1eae3ca5b5ba8eb77c69e36e7ad1538ae006f5411405524aa"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "f15d4acb4b91ba4b53154ae3afeaad822dd7342ca085545a99f98438f8619871"
 ---
 
 # Microfrontends Routing
@@ -30,16 +30,18 @@ Microfrontends routing determines which application handles a path and which dep
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related) — Learn how to debug how Vercel decides where to route your request
-- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain?from=related) — Learn how to serve multiple Vercel projects from a single domain.
-- [Microfrontends](https://turborepo.dev/docs/guides/microfrontends?from=related) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
-- [Getting Started](https://vercel.com/docs/microfrontends/quickstart?from=related) — Learn about getting started on Vercel.
-- [Using Vercel Toolbar](https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar?from=related) — Learn about using vercel toolbar on Vercel.
-- [Security](https://vercel.com/docs/microfrontends/managing-microfrontends/security?from=related) — Learn about security on Vercel.
-- [Routing](https://vercel.com/docs/routing?from=related) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
-- [Request Lifecycle](https://vercel.com/docs/fundamentals/infrastructure?from=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
+- [Microfrontends previews now link across repositories](https://vercel.com/changelog/microfrontends-previews-now-link-across-repositories?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=related)
+- [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=related) — Learn how to debug how Vercel decides where to route your request
+- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=related) — Learn how to serve multiple Vercel projects from a single domain.
+- [Microfrontends](https://turborepo.dev/docs/guides/microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=related) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
+- [Life of a Vercel request: Application-aware routing](https://vercel.com/blog/life-of-a-request-application-aware-routing?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=related)
+- [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=related) — Learn how to get started with microfrontends on Vercel.
+- [Managing with the Vercel Toolbar](https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel Toolbar to make it easier to manage microfrontends.
+- [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=related) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
+- [Routing](https://vercel.com/docs/routing?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
+- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 
-Full cross-link map for this page: [/docs/microfrontends/routing.graph.md](/docs/microfrontends/routing.graph.md)
+Full cross-link map for this page: [/docs/microfrontends/routing.graph.md](/docs/microfrontends/routing.graph.md?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 When Vercel receives a request to a domain that uses microfrontends, it reads the `microfrontends.json` file in the live deployment to determine which application handles the path. This happens within the same request. It is not a rewrite that results in a second outbound request to the child application's URL, so there is no additional network hop.

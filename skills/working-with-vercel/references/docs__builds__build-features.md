@@ -3,7 +3,7 @@ title: Build Features for Customizing Deployments
 product: vercel
 url: /docs/builds/build-features
 canonical_url: "https://vercel.com/docs/builds/build-features"
-last_updated: 2026-06-09
+last_updated: 2026-08-11
 type: reference
 prerequisites:
   - /docs/builds
@@ -16,8 +16,8 @@ related:
 summary: "Learn how to customize your deployments using Vercel's build features."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/build-features.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "0bbc15e3dbe42e250e06a2d4747a1ea54f22f74eb76b98afa37e8b2688f2c3aa"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "ca21be8a04eb63b037f00384ec2ae5d44a37446545adf21cc318aa9800753166"
 ---
 
 # Build Features for Customizing Deployments
@@ -30,13 +30,13 @@ Vercel provides the following features to customize your deployments:
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [GitLab](https://vercel.com/docs/git/vercel-for-gitlab?from=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
-- [Bitbucket](https://vercel.com/docs/git/vercel-for-bitbucket?from=related) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
-- [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-features&source_site=vercel-docs&relationship=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
+- [Deploying Bitbucket Projects with Vercel](https://vercel.com/docs/git/vercel-for-bitbucket?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-features&source_site=vercel-docs&relationship=related) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
+- [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-features&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-features&source_site=vercel-docs&relationship=related) — Learn how to create and manage deployments on Vercel.
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-features&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 
-Full cross-link map for this page: [/docs/builds/build-features.graph.md](/docs/builds/build-features.graph.md)
+Full cross-link map for this page: [/docs/builds/build-features.graph.md](/docs/builds/build-features.graph.md?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-features&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 - [Private npm packages](#private-npm-packages)

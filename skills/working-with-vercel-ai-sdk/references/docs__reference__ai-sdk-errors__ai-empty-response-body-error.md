@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-empty-response-body-error.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "7763a5ba85d6c338723ef12ee9491f2ad4abf9d7d244b136b2b0f94c2afc5305"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "e9244fc6db961c2691b15511bed68dc1920fafbdc6166478c42ac8ff56a9b066"
 ---
 
 # AI_EmptyResponseBodyError
@@ -55,6 +55,7 @@ if (EmptyResponseBodyError.isInstance(error)) {
 - [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
 - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
+- [AI_StreamProviderError](/docs/reference/ai-sdk-errors/ai-stream-provider-error)
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
 - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
 - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)

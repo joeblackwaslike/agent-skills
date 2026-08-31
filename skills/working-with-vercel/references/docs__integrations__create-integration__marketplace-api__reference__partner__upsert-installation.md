@@ -3,7 +3,7 @@ title: upsert-installation
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/upsert-installation
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/upsert-installation"
-last_updated: 2026-08-24
+last_updated: 2026-08-31
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn about upsert-installation on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/upsert-installation.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "bfe16da92a18cf4f8f673dd178e256eaa9e030dab7fe9f9df0106d5b921dc058"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "940fb3fa3ab970964daac0ef70b88a5540969e89cf47e90b3897a074697f2e0f"
 ---
 
 # Upsert Installation
@@ -62,6 +62,15 @@ User Auth OIDC token claims schema:
     "account_id": {
       "type": "string"
     },
+    "parent_account_id": {
+      "type": "string",
+      "description": "For platform org-child installations (integration opt-in): the opaque account id of the parent (root) team. Identical to the `account_id` claim on the parent team’s own installation tokens."
+    },
+    "parent_installation_id": {
+      "type": "string",
+      "nullable": true,
+      "description": "For platform org-child installations (integration opt-in): the parent team’s installation of this integration, or null when the parent has none."
+    },
     "sub": {
       "type": "string",
       "description": "Denotes the User who is making the change (matches `/^account:[0-9a-fA-F]+:user:[0-9a-fA-F]+$/`)"
@@ -83,7 +92,11 @@ User Auth OIDC token claims schema:
     },
     "user_email": {
       "type": "string",
-      "description": "The user's verified email address. This is included for all Marketplace integrations by default."
+      "description": "The user's email address. This is included for all Marketplace integrations by default."
+    },
+    "user_email_verified": {
+      "type": "boolean",
+      "description": "Whether the user's email address has been verified."
     },
     "user_name": {
       "type": "string",
@@ -136,6 +149,14 @@ User Auth OIDC token claims schema:
     "token_type": "string" // required // The type of token (default: `Bearer`).
   },
   "account": { // required
+    "name": "string",
+    "url": "string" // required,
+    "contact": {
+      "email": "string" // required,
+      "name": "string"
+    }
+  },
+  "parentAccount": {
     "name": "string",
     "url": "string" // required,
     "contact": {

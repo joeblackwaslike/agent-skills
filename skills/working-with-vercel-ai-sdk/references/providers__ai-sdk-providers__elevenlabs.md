@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/elevenlabs.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "7d3cada3e730bb4822d803a1ace531e2607fdcde2f89d84ec4c97caaf7a0e805"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "9222a62964a525a5618fc8f955b70cc2830576165d5f491ab6cd9a9cfa2fb8fd"
 ---
 
 # ElevenLabs Provider
@@ -347,6 +347,7 @@ streaming transcription.
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
 - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
+- [Z.AI](/providers/ai-sdk-providers/zai)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)
 - [Fireworks](/providers/ai-sdk-providers/fireworks)

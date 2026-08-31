@@ -3,7 +3,7 @@ title: Functions API Reference
 product: vercel
 url: /docs/functions/functions-api-reference
 canonical_url: "https://vercel.com/docs/functions/functions-api-reference"
-last_updated: 2026-08-03
+last_updated: 2026-08-11
 type: reference
 prerequisites:
   - /docs/functions
@@ -16,8 +16,8 @@ related:
 summary: Learn about available APIs when working with Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/functions-api-reference.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "593494e44bd281f1117c25cbec98c5a02da5d26a7da85e93039f56e0734df987"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "671628dad5848de17cc5e32d36f25728943e4460c06698b75afa83a3bb1f6c00"
 ---
 
 # Functions API Reference
@@ -30,20 +30,20 @@ sha256: "593494e44bd281f1117c25cbec98c5a02da5d26a7da85e93039f56e0734df987"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Stopping Streams](https://ai-sdk.dev/docs/advanced/stopping-streams?from=related)
-- [Vercel Deployment Guide](https://ai-sdk.dev/docs/advanced/vercel-deployment-guide?from=related)
-- [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
-- [How can I use geolocation IP headers?](https://vercel.com/kb/guide/geo-ip-headers-geolocation-vercel-functions?from=related) — Learn how to read geolocation headers on Vercel with Next.js or any frontend framework.
-- [Can I use SMTP with Vercel?](https://vercel.com/kb/guide/serverless-functions-and-smtp?from=related) — Vercel Functions can open SMTP connections on the Node.js runtime. Learn which ports are open, why you must await the se
-- [Streaming](https://workflow-sdk.dev/docs/foundations/streaming?from=related) — Stream real-time data to clients without waiting for workflow completion.
-- [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis?from=related) — Learn how to build and scale performant APIs on Vercel.
-- [AWS](https://vercel.com/docs/oidc/aws?from=related) — Learn how to configure your AWS account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
-- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
-- [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration?from=related) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
-- [Insights](https://vercel.com/docs/observability/insights?from=related) — List of available data sources that you can view and monitor with Observability on Vercel.
-- [API](https://vercel.com/docs/routing-middleware/api?from=related) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
+- [Stopping Streams](https://ai-sdk.dev/docs/advanced/stopping-streams?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference&source_site=vercel-docs&relationship=related)
+- [Vercel Deployment Guide](https://ai-sdk.dev/docs/advanced/vercel-deployment-guide?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference&source_site=vercel-docs&relationship=related)
+- [Node.js Vercel Functions now support fetch web handlers](https://vercel.com/changelog/node-js-vercel-functions-now-support-fetch-web-handlers?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference&source_site=vercel-docs&relationship=related)
+- [Node.js Vercel Functions now support per-path request cancellation ](https://vercel.com/changelog/node-js-vercel-functions-now-support-per-path-request-cancellation?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference&source_site=vercel-docs&relationship=related)
+- [Node.js Vercel Functions now support request cancellation](https://vercel.com/changelog/node-js-vercel-functions-now-support-request-cancellation?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference&source_site=vercel-docs&relationship=related)
+- [Vercel Functions now support graceful shutdown](https://vercel.com/changelog/vercel-functions-now-support-graceful-shutdown?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference&source_site=vercel-docs&relationship=related)
+- [waitUntil is now available for Vercel Functions](https://vercel.com/changelog/waituntil-is-now-available-for-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference&source_site=vercel-docs&relationship=related)
+- [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference&source_site=vercel-docs&relationship=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
+- [How can I use geolocation IP headers?](https://vercel.com/kb/guide/geo-ip-headers-geolocation-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference&source_site=vercel-docs&relationship=related) — Learn how to read geolocation headers on Vercel with Next.js or any frontend framework.
+- [Streaming](https://workflow-sdk.dev/docs/foundations/streaming?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference&source_site=vercel-docs&relationship=related) — Stream real-time data to clients without waiting for workflow completion.
+- [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference&source_site=vercel-docs&relationship=related) — Learn how to build and scale performant APIs on Vercel.
+- [Connect to Amazon Web Services \\(AWS\\)](https://vercel.com/docs/oidc/aws?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference&source_site=vercel-docs&relationship=related) — Learn how to configure your AWS account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
 
-Full cross-link map for this page: [/docs/functions/functions-api-reference.graph.md](/docs/functions/functions-api-reference.graph.md)
+Full cross-link map for this page: [/docs/functions/functions-api-reference.graph.md](/docs/functions/functions-api-reference.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Functions are defined similar to a [Route Handler](https://nextjs.org/docs/app/api-reference/file-conventions/route) in Next.js. When using Next.js App Router, you can define a function in a file under  in your project. Vercel will deploy any file under `app/api/` as a function.

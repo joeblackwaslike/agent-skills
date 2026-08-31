@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/opencode.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "ee6cb2ee0f30cabc1e1c9d7a09861c2b4d362fe01df427272c58783ae9fd8516"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "162a05189fb32c67ab87b1c0a570f23336385870c26033d67de4c81a5ba08049"
 ---
 
 # OpenCode Harness
@@ -87,7 +87,16 @@ const harness = createOpenCode({
 
 Settings:
 
-- `auth`: authentication mode: `auto`, `anthropic`, `openai`, or `ai-gateway`.
+- `auth`: authentication mode (`auto`, `anthropic`, `openai`, or `ai-gateway`)
+  or an isolated authentication environment.
+- `credentialForwarding`: optional synchronous or asynchronous callback that
+  customizes each credential immediately before the harness adapter forwards it
+  into a sandbox process. It receives the credential value that would otherwise
+  be forwarded (either the real credential or a masked value) and the
+  environment variable name used to expose it. This callback only controls the
+  value forwarded into the sandbox process. It does not restrict which
+  credentials the harness adapter can discover, read, or otherwise access in
+  the host process.
 - `mcpServers`: MCP server definitions keyed by server name.
 - `model`: OpenCode model id. Provider-prefixed values such as
   `anthropic/claude-sonnet-4-6` are passed through to OpenCode.
@@ -144,6 +153,19 @@ const openAIHarness = createOpenCode({ auth: 'openai' });
 const gatewayHarness = createOpenCode({ auth: 'ai-gateway' });
 ```
 
+Pass an authentication environment to use programmatically resolved
+credentials without reading `process.env`:
+
+```ts
+const harness = createOpenCode({
+  auth: { OPENAI_API_KEY: await resolveOpenAIToken() },
+  provider: 'openai',
+});
+```
+
+The supplied record replaces the host environment for authentication
+discovery. Only recognized authentication variables are forwarded.
+
 For OpenAI-compatible endpoints, select `openai` and set `OPENAI_BASE_URL`.
 
 ## Sandbox
@@ -197,6 +219,8 @@ OpenCode supports built-in tool approval requests when `permissionMode` is
 - [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
 - [Grok Build](/providers/ai-sdk-harnesses/grok-build)
 - [Cline](/providers/ai-sdk-harnesses/cline)
+- [Cursor](/providers/ai-sdk-harnesses/cursor)
+- [fx](/providers/ai-sdk-harnesses/fx)
 
 
 [Full Sitemap](/sitemap.md)

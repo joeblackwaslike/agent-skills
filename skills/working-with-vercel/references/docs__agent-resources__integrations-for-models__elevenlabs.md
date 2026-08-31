@@ -13,8 +13,8 @@ related:
 summary: Learn how to add the ElevenLabs connectable account integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/elevenlabs.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "52f227f4afc9d80520a8b441a2296924417542618a0b6978b0eac62ddc76990a"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "bec8ed58d36e068e91b333ce590996e3b484ddfc8c7a6beb4e23e2d71d7dfec5"
 ---
 
 # Vercel ElevenLabs Integration
@@ -30,13 +30,13 @@ applications, ideal for creating interactive media experiences.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [xAI](https://vercel.com/docs/agent-resources/integrations-for-models/xai?from=related) — Learn how to add the xAI native integration with Vercel.
-- [LMNT](https://vercel.com/docs/agent-resources/integrations-for-models/lmnt?from=related) — Learn how to add LMNT connectable account integration with Vercel.
-- [Together AI](https://vercel.com/docs/agent-resources/integrations-for-models/togetherai?from=related) — Learn how to add Together AI connectable account integration with Vercel.
-- [fal](https://vercel.com/docs/agent-resources/integrations-for-models/fal?from=related) — Learn how to add the fal native integration with Vercel.
-- [Deep Infra](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra?from=related) — Learn how to add the Deep Infra native integration with Vercel.
+- [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Felevenlabs&source_site=vercel-docs&relationship=related) — Learn how to add the xAI native integration with Vercel.
+- [Vercel LMNT Integration](https://vercel.com/docs/agent-resources/integrations-for-models/lmnt?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Felevenlabs&source_site=vercel-docs&relationship=related) — Learn how to add LMNT connectable account integration with Vercel.
+- [Vercel Together AI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/togetherai?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Felevenlabs&source_site=vercel-docs&relationship=related) — Learn how to add Together AI connectable account integration with Vercel.
+- [Vercel fal Integration](https://vercel.com/docs/agent-resources/integrations-for-models/fal?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Felevenlabs&source_site=vercel-docs&relationship=related) — Learn how to add the fal native integration with Vercel.
+- [Vercel Deep Infra Integration](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Felevenlabs&source_site=vercel-docs&relationship=related) — Learn how to add the Deep Infra native integration with Vercel.
 
-Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/elevenlabs.graph.md](/docs/agent-resources/integrations-for-models/elevenlabs.graph.md)
+Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/elevenlabs.graph.md](/docs/agent-resources/integrations-for-models/elevenlabs.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Felevenlabs&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Use cases

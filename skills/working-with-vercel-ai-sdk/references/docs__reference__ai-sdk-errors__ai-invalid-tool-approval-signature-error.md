@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-signature-error.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "ce18ea89646cb237dcb4e7107ae168e88019d8dac315593ac6718531b3150d47"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "0006a95b516876fe049a8b0a31e4e39d05641ae66ae46ed17b55543434c05ea0"
 ---
 
 # AI_InvalidToolApprovalSignatureError
@@ -62,6 +62,7 @@ if (InvalidToolApprovalSignatureError.isInstance(error)) {
 - [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
 - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
+- [AI_StreamProviderError](/docs/reference/ai-sdk-errors/ai-stream-provider-error)
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
 - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
 - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)

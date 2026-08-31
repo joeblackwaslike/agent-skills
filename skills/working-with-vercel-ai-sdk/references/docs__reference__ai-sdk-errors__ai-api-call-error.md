@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-api-call-error.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "d676842319d0e163e283b3d503dcd13c42ad717adad196c354d1a26eaf55336e"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "5b91df3fd8a06a79b765fc6300be056748fac94f77c3545a1fdcb82e75802a6c"
 ---
 
 # AI_APICallError
@@ -62,6 +62,7 @@ if (APICallError.isInstance(error)) {
 - [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
 - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
+- [AI_StreamProviderError](/docs/reference/ai-sdk-errors/ai-stream-provider-error)
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
 - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
 - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)

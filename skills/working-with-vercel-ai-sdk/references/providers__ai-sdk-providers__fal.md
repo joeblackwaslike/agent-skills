@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/fal.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "cee289a7dbc4c5bbb34f3611058016b98e43ac23b4b650c098bcfe12f730ff6e"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "c557b833b1c58d0385240fe796864038ff315f25a8207154c668b7be7bcfcf8e"
 ---
 
 # Fal Provider
@@ -337,6 +337,7 @@ Model-specific parameters (e.g., `audio_url`, `prompt`, `preview_text`, `ref_aud
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
 - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
+- [Z.AI](/providers/ai-sdk-providers/zai)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)
 - [Fireworks](/providers/ai-sdk-providers/fireworks)

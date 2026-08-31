@@ -15,8 +15,8 @@ related:
 summary: Use the vendor-neutral OpenFeature API with Vercel Flags as your provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/sdks/openfeature.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "217cab821e5239adb49afc582bccc88871e7b204600f7a1dd91b541ae26da550"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "8dc4b4055e49b53aa90a8918d4bcbb112d965bdeed1c99460fd2345b59bc6d2f"
 ---
 
 # Using OpenFeature with Vercel Flags
@@ -29,16 +29,18 @@ sha256: "217cab821e5239adb49afc582bccc88871e7b204600f7a1dd91b541ae26da550"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [OpenFeature](https://flags-sdk.dev/docs/providers/openfeature?from=related)
-- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related)
-- [Quickstart](https://flags-sdk.dev/docs/frameworks/next?from=related) — Learn how to start using the Flags SDK in your Next.js project.
-- [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit?from=related) — Using the Flags SDK in SvelteKit
-- [DevCycle](https://flags-sdk.dev/docs/providers/openfeature/devcycle?from=related) — Use DevCycle with the Flags SDK
-- [Core](https://vercel.com/docs/flags/vercel-flags/sdks/core?from=related) — Use the Vercel Flags core evaluation library directly for custom setups.
-- [Getting Started](https://vercel.com/docs/flags/flags-explorer/getting-started?from=related) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
-- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
+- [Vercel Flags is now generally available](https://vercel.com/changelog/vercel-flags-ga?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fopenfeature&source_site=vercel-docs&relationship=related)
+- [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fopenfeature&source_site=vercel-docs&relationship=related)
+- [OpenFeature](https://flags-sdk.dev/docs/providers/openfeature?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fopenfeature&source_site=vercel-docs&relationship=related)
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fopenfeature&source_site=vercel-docs&relationship=related)
+- [Flags as code in Next.js](https://vercel.com/blog/flags-as-code-in-next-js?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fopenfeature&source_site=vercel-docs&relationship=related)
+- [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fopenfeature&source_site=vercel-docs&relationship=related)
+- [Flags SDK now supports OpenFeature](https://vercel.com/changelog/flags-sdk-now-supports-openfeature?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fopenfeature&source_site=vercel-docs&relationship=related)
+- [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fopenfeature&source_site=vercel-docs&relationship=related) — API reference for the Flags SDK for Next.js and SvelteKit.
+- [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fopenfeature&source_site=vercel-docs&relationship=related) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fopenfeature&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
-Full cross-link map for this page: [/docs/flags/vercel-flags/sdks/openfeature.graph.md](/docs/flags/vercel-flags/sdks/openfeature.graph.md)
+Full cross-link map for this page: [/docs/flags/vercel-flags/sdks/openfeature.graph.md](/docs/flags/vercel-flags/sdks/openfeature.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fopenfeature&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 The [Getting Started guide](/docs/flags/vercel-flags/quickstart) covers creating a flag in the dashboard, pulling local OpenID Connect (OIDC) credentials, and evaluating a flag with OpenFeature. This page goes deeper into initialization options, typed evaluation methods, context passing, and debugging.

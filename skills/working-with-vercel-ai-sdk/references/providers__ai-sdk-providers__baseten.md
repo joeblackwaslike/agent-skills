@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/baseten.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "3971f6d5ab27d06e2144c4cfdb2e69753282eeff06786a2ae83efbaf9caf6a13"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "3e5143e9236ae80132e54b919f3cfc50799224671ab7da1daa3e8fd750825e10"
 ---
 
 # Baseten Provider
@@ -298,6 +298,7 @@ try {
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
 - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
+- [Z.AI](/providers/ai-sdk-providers/zai)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)
 - [Fireworks](/providers/ai-sdk-providers/fireworks)

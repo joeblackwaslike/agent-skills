@@ -17,8 +17,8 @@ related:
 summary: Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain billing.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "9d59b4337aef1c360eefa91aa4b88796f36fcfd981b07dd5439b01eb3cdc5087"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "97fe17de0f8ded93c6f9f33b8826374c2be09083ad0fb2af704f9924ee8ee03f"
 ---
 
 # Trace Drains
@@ -31,13 +31,16 @@ AI Gateway produces an [OpenTelemetry](https://opentelemetry.io/docs/concepts/si
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Tracing](https://vercel.com/docs/tracing?from=related) — Learn how to trace your application to understand performance and infrastructure details.
-- [Web Analytics](https://vercel.com/docs/drains/reference/analytics?from=related) — Learn about Web Analytics Drains - data formats and custom events configuration.
-- [Audit Logs](https://vercel.com/docs/drains/reference/audit-logs?from=related) — Learn about Audit Log Drains - data formats, fields, and team activity events.
-- [Migrating from SIEM](https://vercel.com/docs/audit-log/migrating-to-drains?from=related) — Move your SIEM integration from Custom SIEM Log Streaming to Audit Log Drains, with wider event coverage and a new event
-- [Drain Audit Logs to S3](https://vercel.com/docs/drains/audit-logs-to-s3?from=related) — Learn how to configure AWS IAM and Amazon S3 so Vercel can write Audit Log Drain events to your S3 bucket.
+- [Export AI Gateway traces with Vercel Drains](https://vercel.com/changelog/export-ai-gateway-traces-with-vercel-drains?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Ftrace-drains&source_site=vercel-docs&relationship=related)
+- [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Ftrace-drains&source_site=vercel-docs&relationship=related)
+- [Introducing Trace Drains on the Vercel Marketplace](https://vercel.com/changelog/introducing-trace-drains-on-the-vercel-marketplace?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Ftrace-drains&source_site=vercel-docs&relationship=related)
+- [Tracing](https://vercel.com/docs/tracing?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Ftrace-drains&source_site=vercel-docs&relationship=related) — Learn how to trace your application to understand performance and infrastructure details.
+- [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Ftrace-drains&source_site=vercel-docs&relationship=related) — Learn about Web Analytics Drains - data formats and custom events configuration.
+- [Audit Log Drains Reference](https://vercel.com/docs/drains/reference/audit-logs?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Ftrace-drains&source_site=vercel-docs&relationship=related) — Learn about Audit Log Drains - data formats, fields, and team activity events.
+- [Drain Audit Logs to S3](https://vercel.com/docs/drains/audit-logs-to-s3?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Ftrace-drains&source_site=vercel-docs&relationship=related) — Learn how to configure AWS IAM and Amazon S3 so Vercel can write Audit Log Drain events to your S3 bucket.
+- [Speed Insights Drains Reference](https://vercel.com/docs/drains/reference/speed-insights?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Ftrace-drains&source_site=vercel-docs&relationship=related) — Learn about Speed Insights Drains - data formats and performance metrics configuration.
 
-Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend/trace-drains.graph.md](/docs/ai-gateway/observability-and-spend/trace-drains.graph.md)
+Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend/trace-drains.graph.md](/docs/ai-gateway/observability-and-spend/trace-drains.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Ftrace-drains&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 > **🔒 Permissions Required**: Trace Drains

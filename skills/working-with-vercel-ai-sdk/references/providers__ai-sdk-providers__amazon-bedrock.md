@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "21c9be31cf58d50bd4ade1b7360054c933431a44e61fe1c1fc61656651317fbe"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "ab88f92ba6c4a501a93214a105910a5717b8055122d964c211f19a079d4001c0"
 ---
 
 # Amazon Bedrock Provider
@@ -292,6 +292,83 @@ if (result.providerMetadata?.bedrock.trace) {
 ```
 
 See the [Amazon Bedrock Guardrails documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html) for more information.
+
+#### Guard Content
+
+You can mark individual text or image parts as guard content using `providerOptions` on the part itself. This wraps the part in a [`guardContent`](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_GuardrailConverseContentBlock.html) block, which tells Bedrock Guardrails to evaluate that content specifically.
+
+For text parts, you can also specify `guardContentQualifiers` to indicate how the content should be treated by the guardrail (e.g. as a grounding source, a query, or guard content):
+
+```ts
+const result = await generateText({
+  model: bedrock('anthropic.claude-3-sonnet-20240229-v1:0'),
+  providerOptions: {
+    bedrock: {
+      guardrailConfig: {
+        guardrailIdentifier: '1abcd2ef34gh',
+        guardrailVersion: '1',
+      },
+    },
+  },
+  messages: [
+    {
+      role: 'user',
+      content: [
+        {
+          type: 'text',
+          text: 'London is the capital of UK. Tokyo is the capital of Japan.',
+          providerOptions: {
+            bedrock: {
+              guardContent: true,
+              guardContentQualifiers: ['grounding_source'],
+            },
+          },
+        },
+        {
+          type: 'text',
+          text: 'Some additional background information.',
+        },
+        {
+          type: 'text',
+          text: 'What is the capital of Japan?',
+          providerOptions: {
+            bedrock: {
+              guardContent: true,
+              guardContentQualifiers: ['query'],
+            },
+          },
+        },
+      ],
+    },
+  ],
+});
+```
+
+Image parts can also be marked as guard content:
+
+```ts
+{
+  type: 'file',
+  data: {
+    type: 'data',
+    data: imageBase64,
+  },
+  mediaType: 'image/png',
+  providerOptions: {
+    bedrock: {
+      guardContent: true,
+    },
+  },
+}
+```
+
+The available `guardContentQualifiers` are:
+
+- `'grounding_source'` — content used as a grounding source for the guardrail
+- `'query'` — content treated as a query to evaluate
+- `'guard_content'` — content to be evaluated by the guardrail
+
+See the [Amazon Bedrock Guardrails with Converse API documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-use-converse-api.html) for more information.
 
 ### Citations
 
@@ -1827,6 +1904,7 @@ Static IAM user keys do not require `sessionToken`.
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
 - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
+- [Z.AI](/providers/ai-sdk-providers/zai)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)
 - [Fireworks](/providers/ai-sdk-providers/fireworks)

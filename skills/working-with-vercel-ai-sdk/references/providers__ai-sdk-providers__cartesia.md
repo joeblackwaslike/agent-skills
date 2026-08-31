@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/cartesia.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "23ce0b556412bc7b6c7aebe8502a5027f60ad544655456a85f2cd10af5f72274"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "94a30d99f2f21013a817ed31b8b34eb84cfe6fea029ef1618f877266e70de9e0"
 ---
 
 # Cartesia Provider
@@ -368,6 +368,7 @@ The following provider options are available:
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
 - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
+- [Z.AI](/providers/ai-sdk-providers/zai)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)
 - [Fireworks](/providers/ai-sdk-providers/fireworks)

@@ -3,18 +3,18 @@ title: Limits and Pricing for Vercel Flags
 product: vercel
 url: /docs/flags/vercel-flags/limits-and-pricing
 canonical_url: "https://vercel.com/docs/flags/vercel-flags/limits-and-pricing"
-last_updated: 2026-04-30
+last_updated: 2026-08-26
 type: reference
 prerequisites:
   - /docs/flags/vercel-flags
   - /docs/flags
 related:
   []
-summary: Learn about limits and pricing for Vercel Flags.
+summary: Review Vercel Flags request pricing and limits for flags, segments, configuration size, and connected projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/limits-and-pricing.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "0f7ce30f4489aa6a5da55f2507cd581131442b568c646f02a25379909642ebca"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "92254ae1c0408e1a908355be9355824a30407673496f6443e6fb50d67e7e3681"
 ---
 
 # Limits and Pricing for Vercel Flags
@@ -27,13 +27,14 @@ sha256: "0f7ce30f4489aa6a5da55f2507cd581131442b568c646f02a25379909642ebca"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Pricing](https://vercel.com/docs/flags/flags-explorer/limits-and-pricing?from=related) — Learn about pricing for Flags Explorer.
-- [Limits & Pricing](https://vercel.com/docs/container-registry/limits-and-pricing?from=related) — Storage pricing, size limits, plan limits, and compatibility limits for Vercel Container Registry.
-- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
-- [Feature Flag](https://vercel.com/docs/flags/vercel-flags/dashboard/feature-flag?from=related) — Learn how to configure individual feature flags in the Vercel Dashboard.
-- [Create a flag](https://vercel.com/docs/rest-api/feature-flags/create-a-flag?from=related)
+- [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Flimits-and-pricing&source_site=vercel-docs&relationship=related)
+- [Pricing for Flags Explorer](https://vercel.com/docs/flags/flags-explorer/limits-and-pricing?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Compare monthly Flags Explorer override limits and the price of unlimited overrides across Vercel plans.
+- [Container Registry limits and pricing](https://vercel.com/docs/container-registry/limits-and-pricing?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Storage pricing, size limits, plan limits, and compatibility limits for Vercel Container Registry.
+- [Feature Flag Configuration](https://vercel.com/docs/flags/vercel-flags/dashboard/feature-flag?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn how to configure individual feature flags in the Vercel Dashboard.
+- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
+- [List segments](https://vercel.com/docs/rest-api/feature-flags/list-segments?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — GET /v1/projects/{projectIdOrName}/feature-flags/segments — List all feature flag segments for a project.
 
-Full cross-link map for this page: [/docs/flags/vercel-flags/limits-and-pricing.graph.md](/docs/flags/vercel-flags/limits-and-pricing.graph.md)
+Full cross-link map for this page: [/docs/flags/vercel-flags/limits-and-pricing.graph.md](/docs/flags/vercel-flags/limits-and-pricing.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Flimits-and-pricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ### Flag requests

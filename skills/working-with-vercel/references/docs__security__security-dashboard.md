@@ -3,7 +3,7 @@ title: Security Dashboard
 product: vercel
 url: /docs/security/security-dashboard
 canonical_url: "https://vercel.com/docs/security/security-dashboard"
-last_updated: 2018-10-20
+last_updated: 2026-08-17
 type: conceptual
 prerequisites:
   - /docs/security
@@ -13,11 +13,11 @@ related:
   - /docs/accounts/access-tokens
   - /docs/oidc
   - /docs/project-configuration/security-settings
-summary: Learn about security dashboard on Vercel.
+summary: The Security Dashboard aggregates the security posture of every account and project on your team, flags misconfigurations, and shows how to fix them.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/security-dashboard.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "af8f031e240c6c4a25213003cfb37d582c76cdec9d27dbc0ac7c57aac330e7ab"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "2ecaa4bbe0568c8080b33a4e23b6863f2e8fcd485bbaa2a6853d983f6de4eead"
 ---
 
 # Security Dashboard
@@ -30,14 +30,17 @@ The Security Dashboard aggregates the security posture of every account and proj
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Security](https://v0.app/docs/security?from=related) — Learn about v0's security practices, threat modeling, and enterprise security features.
-- [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Manage from Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related) — Learn how to manage Sign in with Vercel from the Dashboard
-- [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication?from=related) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
-- [Access Control](https://vercel.com/docs/security/access-control?from=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
-- [Global Configs & Dashboard](https://vercel.com/docs/global-config/global-config-dashboard?from=related) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
+- [Vercel Security Dashboard is now generally available](https://vercel.com/changelog/vercel-security-dashboard-is-now-generally-available?from=related&source_path=%2Fdocs%2Fsecurity%2Fsecurity-dashboard&source_site=vercel-docs&relationship=related)
+- [Unified security actions dashboard](https://vercel.com/changelog/unified-security-actions-dashboard?from=related&source_path=%2Fdocs%2Fsecurity%2Fsecurity-dashboard&source_site=vercel-docs&relationship=related)
+- [Vercel Security Dashboard is in private beta](https://vercel.com/changelog/vercel-security-dashboard-is-in-private-beta?from=related&source_path=%2Fdocs%2Fsecurity%2Fsecurity-dashboard&source_site=vercel-docs&relationship=related)
+- [Security](https://v0.app/docs/security?from=related&source_path=%2Fdocs%2Fsecurity%2Fsecurity-dashboard&source_site=vercel-docs&relationship=related) — Learn about v0's security practices, threat modeling, and enterprise security features.
+- [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fsecurity%2Fsecurity-dashboard&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Attestations and Compliance Report](https://vercel.com/docs/security/attestations-and-compliance-report?from=related&source_path=%2Fdocs%2Fsecurity%2Fsecurity-dashboard&source_site=vercel-docs&relationship=related) — Learn how to preview and download Vercel compliance documents from the dashboard.
+- [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related&source_path=%2Fdocs%2Fsecurity%2Fsecurity-dashboard&source_site=vercel-docs&relationship=related) — Learn how to manage Sign in with Vercel from the Dashboard
+- [List all checks for a project](https://vercel.com/docs/rest-api/checks-v2/list-all-checks-for-a-project?from=related&source_path=%2Fdocs%2Fsecurity%2Fsecurity-dashboard&source_site=vercel-docs&relationship=related) — GET /v2/projects/{projectIdOrName}/checks — List all checks for a project, optionally filtered by target.
+- [Access Control](https://vercel.com/docs/security/access-control?from=related&source_path=%2Fdocs%2Fsecurity%2Fsecurity-dashboard&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 
-Full cross-link map for this page: [/docs/security/security-dashboard.graph.md](/docs/security/security-dashboard.graph.md)
+Full cross-link map for this page: [/docs/security/security-dashboard.graph.md](/docs/security/security-dashboard.graph.md?from=related&source_path=%2Fdocs%2Fsecurity%2Fsecurity-dashboard&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 As your team grows and coding agents make it faster to spin up projects, small oversights accumulate such as:

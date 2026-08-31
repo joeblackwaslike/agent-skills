@@ -16,8 +16,8 @@ related:
 summary: "Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you get started with using..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/quickstart.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "44648eb4d740e86c2bee89d6a3929bf22f917eb9c76d63a13c2b0bac13ae351e"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "41b4a10d612dd5070bcb386af82ca4403a9e3fb9384fb60928e78d71375c1c38"
 ---
 
 # Getting started with Vercel Web Analytics
@@ -30,15 +30,20 @@ This guide will help you get started with using Vercel Web Analytics on your pro
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Analytics](https://docs.vercel.shop/docs/skills/enable-analytics?from=related) — Add Vercel Analytics, Vercel Speed Insights, and Google Tag Manager to the storefront.
-- [Deploy a headless BigCommerce storefront with Vercel](https://vercel.com/kb/guide/deploy-headless-bigcommerce-storefront-with-vercel?from=related) — Deploy a headless BigCommerce storefront using Catalyst and Next.js on Vercel
-- [Getting Started](https://vercel.com/docs/speed-insights/quickstart?from=related) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
-- [Create React App](https://vercel.com/docs/frameworks/frontend/create-react-app?from=related) — Learn how to use Vercel's features with Create React App
-- [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
-- [Overview](https://vercel.com/docs/observability?from=related) — Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application perfor
-- [Getting Started](https://vercel.com/docs/microfrontends/quickstart?from=related) — Learn about getting started on Vercel.
+- [Improved data collection for Web Analytics and Speed Insights with resilient intake](https://vercel.com/changelog/improved-data-collection-for-web-analytics-and-speed-insights-with-resilient?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related)
+- [Preview your site's Firewall status and Web Analytics from the Project Overview](https://vercel.com/changelog/preview-firewall-status-and-web-analytics-from-project-overview?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related)
+- [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related)
+- [Nuxt Analytics on Vercel](https://vercel.com/blog/nuxt-analytics-on-vercel?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related)
+- [How we made the Vercel Dashboard twice as fast](https://vercel.com/blog/how-we-made-the-vercel-dashboard-twice-as-fast?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related)
+- [Analytics](https://docs.vercel.shop/docs/skills/enable-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related) — Add Vercel Analytics, Vercel Speed Insights, and Google Tag Manager to the storefront.
+- [Vercel Analytics for Gatsby](https://vercel.com/blog/gatsby-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related)
+- [Create React App on Vercel](https://vercel.com/docs/frameworks/frontend/create-react-app?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related) — Deploy Create React App projects to Vercel and add Preview Deployments, Web Analytics, Speed Insights, and Observability
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related) — Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application perfor
+- [Getting started with Image Optimization](https://vercel.com/docs/image-optimization/quickstart?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how you can leverage Vercel Image Optimization in your projects.
+- [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 
-Full cross-link map for this page: [/docs/analytics/quickstart.graph.md](/docs/analytics/quickstart.graph.md)
+Full cross-link map for this page: [/docs/analytics/quickstart.graph.md](/docs/analytics/quickstart.graph.md?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 **Select your framework to view instructions on using the Vercel Web Analytics in your project**.

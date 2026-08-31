@@ -15,8 +15,8 @@ related:
 summary: Learn how to secure your Drains endpoints with authentication and signature verification.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/security.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "d769a73558413a3a341dac2d2386cda2f011e45f1c0183ab5e487ef7ac441262"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "eaa89808c17260cb972469ddd05c1ffbae64abd068a62af1ccc27bafe4c0eb06"
 ---
 
 # Drains Security
@@ -29,13 +29,14 @@ All Drains support transport-level encryption using HTTPS protocol.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Create a new Drain](https://vercel.com/docs/rest-api/drains/create-a-new-drain?from=related)
-- [Update an existing Drain](https://vercel.com/docs/rest-api/drains/update-an-existing-drain?from=related)
-- [Find a Drain by id](https://vercel.com/docs/rest-api/drains/find-a-drain-by-id?from=related)
-- [Drain Audit Logs to S3](https://vercel.com/docs/drains/audit-logs-to-s3?from=related) — Learn how to configure AWS IAM and Amazon S3 so Vercel can write Audit Log Drain events to your S3 bucket.
-- [Traces](https://vercel.com/docs/drains/reference/traces?from=related) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
+- [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains?from=related&source_path=%2Fdocs%2Fdrains%2Fsecurity&source_site=vercel-docs&relationship=related)
+- [Retrieve a list of all Drains](https://vercel.com/docs/rest-api/drains/retrieve-a-list-of-all-drains?from=related&source_path=%2Fdocs%2Fdrains%2Fsecurity&source_site=vercel-docs&relationship=related) — GET /v1/drains — Allows to retrieve the list of Drains of the authenticated team.
+- [Find a Drain by id](https://vercel.com/docs/rest-api/drains/find-a-drain-by-id?from=related&source_path=%2Fdocs%2Fdrains%2Fsecurity&source_site=vercel-docs&relationship=related) — GET /v1/drains/{id} — Get the information for a specific Drain by passing the drain id in the URL.
+- [Validate Drain delivery configuration](https://vercel.com/docs/rest-api/drains/validate-drain-delivery-configuration?from=related&source_path=%2Fdocs%2Fdrains%2Fsecurity&source_site=vercel-docs&relationship=related) — POST /v1/drains/test — Validate the delivery configuration of a Drain using sample events.
+- [Delete a drain](https://vercel.com/docs/rest-api/drains/delete-a-drain?from=related&source_path=%2Fdocs%2Fdrains%2Fsecurity&source_site=vercel-docs&relationship=related) — DELETE /v1/drains/{id} — Delete a specific Drain by passing the drain id in the URL.
+- [Update an existing Drain](https://vercel.com/docs/rest-api/drains/update-an-existing-drain?from=related&source_path=%2Fdocs%2Fdrains%2Fsecurity&source_site=vercel-docs&relationship=related) — PATCH /v1/drains/{id} — Update the configuration of an existing drain.
 
-Full cross-link map for this page: [/docs/drains/security.graph.md](/docs/drains/security.graph.md)
+Full cross-link map for this page: [/docs/drains/security.graph.md](/docs/drains/security.graph.md?from=related&source_path=%2Fdocs%2Fdrains%2Fsecurity&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 When your server starts receiving payloads, a third party could send data to your server if it knows the URL. Therefore, you should verify the request is coming from Vercel.

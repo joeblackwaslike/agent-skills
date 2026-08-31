@@ -3,7 +3,7 @@ title: DEPLOYMENT_NOT_FOUND
 product: vercel
 url: /docs/errors/DEPLOYMENT_NOT_FOUND
 canonical_url: "https://vercel.com/docs/errors/DEPLOYMENT_NOT_FOUND"
-last_updated: 2026-02-26
+last_updated: 2026-08-10
 type: reference
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: The deployment was not found. This is a deployment error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/deployment_not_found.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "1e9625c44e3b0535515bd29cc51be33074ad4b53f391774b0dbc96e5385f6425"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "e04954970cf295c9ffac71d1c47ea552df920d181c470fc59a0394f56acf0fa4"
 ---
 
 # DEPLOYMENT_NOT_FOUND

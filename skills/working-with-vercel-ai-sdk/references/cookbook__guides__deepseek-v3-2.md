@@ -1,10 +1,17 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides/deepseek-v3-2.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "88e3f51ce40ab46ded04e4469a30cda0b5163240df4254d06a1d72eb98235fdb"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "1959b9ec3a3d2a9a0089744b61034df7444b6d9525ff99bfb9211e58b79e6fd4"
 ---
 
 # Get started with DeepSeek V3.2
+
+<Note>
+  DeepSeek retired the `deepseek-chat` and `deepseek-reasoner` API aliases on
+  July 24, 2026. The examples in this historical V3.2 guide are preserved for
+  reference and no longer run against the current service. For current
+  applications, use `deepseek-v4-flash` or `deepseek-v4-pro`.
+</Note>
 
 With the [release of DeepSeek V3.2](https://api-docs.deepseek.com/news/news251201), there has never been a better time to start building AI applications that require advanced reasoning and agentic capabilities.
 

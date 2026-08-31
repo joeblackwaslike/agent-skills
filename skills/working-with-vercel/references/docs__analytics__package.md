@@ -14,8 +14,8 @@ related:
 summary: With the @vercel/analytics npm package, you are able to configure your application to send analytics data to Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/package.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "9ade549d4b2747c9bbec83a9074ed23146cec103bf50c8d2f4971cc0e9f9e09d"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "65d38a63d90632103f74910f38edf34bc0c9cd4ca2025c785b626dd17d6fea75"
 ---
 
 # Advanced Web Analytics Config with @vercel/analytics
@@ -28,17 +28,18 @@ sha256: "9ade549d4b2747c9bbec83a9074ed23146cec103bf50c8d2f4971cc0e9f9e09d"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [layout.js](https://nextjs.org/docs/app/api-reference/file-conventions/layout?from=related) — API reference for the layout.js file.
-- [Preventing Flash](https://nextjs.org/docs/app/guides/preventing-flash-before-hydration?from=related) — Learn how to correct server-rendered content before the browser paints, avoiding visible flash when the page hydrates.
-- [Adopting Partial Prefetching](https://nextjs.org/docs/app/guides/adopting-partial-prefetching?from=related) — Learn how to enable Partial Prefetching and what changes for `\<Link\>`.
-- [Version 15](https://nextjs.org/docs/app/guides/upgrading/version-15?from=related) — Upgrade your Next.js Application from Version 14 to 15.
-- [Third Party Libraries](https://nextjs.org/docs/app/guides/third-party-libraries?from=related) — Optimize the performance of third-party libraries in your application with the `@next/third-parties` package.
-- [React Router](https://vercel.com/docs/frameworks/frontend/react-router?from=related) — Learn how to use Vercel's features with React Router as a framework.
-- [Remix](https://vercel.com/docs/frameworks/full-stack/remix?from=related) — Learn how to use Vercel's features with Remix.
-- [Manage & Optimize](https://vercel.com/docs/manage-and-optimize-observability?from=related) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
-- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
+- [Web Analytics now has route support](https://vercel.com/changelog/web-analytics-now-has-route-support?from=related&source_path=%2Fdocs%2Fanalytics%2Fpackage&source_site=vercel-docs&relationship=related)
+- [layout.js](https://nextjs.org/docs/app/api-reference/file-conventions/layout?from=related&source_path=%2Fdocs%2Fanalytics%2Fpackage&source_site=vercel-docs&relationship=related) — API reference for the layout.js file.
+- [How to prevent flash before hydration](https://nextjs.org/docs/app/guides/preventing-flash-before-hydration?from=related&source_path=%2Fdocs%2Fanalytics%2Fpackage&source_site=vercel-docs&relationship=related) — Learn how to correct server-rendered content before the browser paints, avoiding visible flash when the page hydrates.
+- [Adopting Partial Prefetching](https://nextjs.org/docs/app/guides/adopting-partial-prefetching?from=related&source_path=%2Fdocs%2Fanalytics%2Fpackage&source_site=vercel-docs&relationship=related) — Learn how to enable Partial Prefetching and what changes for `\<Link\>`.
+- [How to upgrade to version 15](https://nextjs.org/docs/app/guides/upgrading/version-15?from=related&source_path=%2Fdocs%2Fanalytics%2Fpackage&source_site=vercel-docs&relationship=related) — Upgrade your Next.js Application from Version 14 to 15.
+- [Link Component](https://nextjs.org/docs/app/api-reference/components/link?from=related&source_path=%2Fdocs%2Fanalytics%2Fpackage&source_site=vercel-docs&relationship=related) — Enable fast client-side navigation with the built-in `next/link` component.
+- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fanalytics%2Fpackage&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
+- [Remix on Vercel](https://vercel.com/docs/frameworks/full-stack/remix?from=related&source_path=%2Fdocs%2Fanalytics%2Fpackage&source_site=vercel-docs&relationship=related) — Deploy Remix applications to Vercel and configure the Vercel Vite preset, SSR, streaming, caching, and analytics.
+- [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability?from=related&source_path=%2Fdocs%2Fanalytics%2Fpackage&source_site=vercel-docs&relationship=related) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fanalytics%2Fpackage&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
-Full cross-link map for this page: [/docs/analytics/package.graph.md](/docs/analytics/package.graph.md)
+Full cross-link map for this page: [/docs/analytics/package.graph.md](/docs/analytics/package.graph.md?from=related&source_path=%2Fdocs%2Fanalytics%2Fpackage&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 To get started with analytics, follow our [Quickstart](/docs/analytics/quickstart) guide which will walk you through the process of setting up analytics for your project.

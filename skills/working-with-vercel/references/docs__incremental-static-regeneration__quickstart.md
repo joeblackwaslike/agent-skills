@@ -3,7 +3,7 @@ title: Getting started with ISR
 product: vercel
 url: /docs/incremental-static-regeneration/quickstart
 canonical_url: "https://vercel.com/docs/incremental-static-regeneration/quickstart"
-last_updated: 2026-07-14
+last_updated: 2026-08-11
 type: tutorial
 prerequisites:
   - /docs/incremental-static-regeneration
@@ -14,8 +14,8 @@ related:
 summary: Learn how to set up Incremental Static Regeneration (ISR) with time-based and on-demand revalidation.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/incremental-static-regeneration/quickstart.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "b4f1f5ab7105d90cec5cf9758dc2dd8f8f0f5c9a42620b94b308247519dd5b5f"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "be508876610b4249ca10f4414d62574f16c997aca24a98e3a86111a0b407cc8d"
 ---
 
 # Getting started with ISR
@@ -28,19 +28,20 @@ This guide helps you set up Incremental Static Regeneration (ISR) with your Verc
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs?from=related) — Reduce ISR costs by analyzing Incremental Static Regeneration \\(ISR\\) behavior to find pages and tags that revalidate to
-- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel?from=related) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
-- [Updating large-scale site navigation with minimal revalidation](https://vercel.com/kb/guide/update-mega-nav-min-reval?from=related) — When working with a large number of pages that share a common multi-level navigation, making a navigation update require
-- [ISR](https://nextjs.org/docs/app/guides/incremental-static-regeneration?from=related) — Learn how to create or update static pages at runtime with Incremental Static Regeneration.
-- [ISR](https://nextjs.org/docs/pages/guides/incremental-static-regeneration?from=related) — Learn how to create or update static pages at runtime with Incremental Static Regeneration.
-- [How to move from time-based to on-demand revalidation](https://vercel.com/kb/guide/how-to-move-to-on-demand-revalidation?from=related) — Replace fixed revalidation timers with scoped updates triggered by changes to content, product data, or other applicatio
-- [Data Cache](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
-- [Partial Prerendering](https://vercel.com/docs/partial-prerendering?from=related) — Partial Prerendering serves a cached static shell instantly, then renders and streams the dynamic parts of a page per re
-- [Insights](https://vercel.com/docs/observability/insights?from=related) — List of available data sources that you can view and monitor with Observability on Vercel.
-- [Features](https://vercel.com/docs/build-output-api/features?from=related) — Learn how to implement common Vercel platform features through the Build Output API.
-- [Vite + Nitro](https://vercel.com/docs/frameworks/full-stack/vite-with-nitro?from=related) — Add a backend to any Vite app with Nitro and deploy to Vercel with zero configuration.
+- [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related) — Reduce ISR costs by analyzing Incremental Static Regeneration \\(ISR\\) behavior to find pages and tags that revalidate to
+- [ISR: A flexible way to cache dynamic content](https://vercel.com/blog/isr-a-flexible-way-to-cache-dynamic-content?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related)
+- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
+- [Updating large-scale site navigation with minimal revalidation](https://vercel.com/kb/guide/update-mega-nav-min-reval?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related) — When working with a large number of pages that share a common multi-level navigation, making a navigation update require
+- [How to implement Incremental Static Regeneration (ISR)](https://nextjs.org/docs/app/guides/incremental-static-regeneration?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to create or update static pages at runtime with Incremental Static Regeneration.
+- [ISR on Vercel is now faster and more cost-efficient](https://vercel.com/blog/isr-on-vercel-is-now-faster-and-more-cost-efficient?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related)
+- [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related)
+- [How to move from time-based to on-demand revalidation](https://vercel.com/kb/guide/how-to-move-to-on-demand-revalidation?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related) — Replace fixed revalidation timers with scoped updates triggered by changes to content, product data, or other applicatio
+- [Incremental Static Regeneration (ISR) is now faster and more cost-efficient](https://vercel.com/changelog/incremental-static-regeneration-is-now-faster-and-cheaper?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related)
+- [Partial Prerendering \\(PPR\\)](https://vercel.com/docs/partial-prerendering?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related) — Partial Prerendering serves a cached static shell instantly, then renders and streams the dynamic parts of a page per re
+- [Vercel CDN overview](https://vercel.com/docs/cdn?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
+- [Vercel Function Logs](https://vercel.com/docs/functions/logs?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related) — Use runtime logs to debug and monitor your Vercel Functions.
 
-Full cross-link map for this page: [/docs/incremental-static-regeneration/quickstart.graph.md](/docs/incremental-static-regeneration/quickstart.graph.md)
+Full cross-link map for this page: [/docs/incremental-static-regeneration/quickstart.graph.md](/docs/incremental-static-regeneration/quickstart.graph.md?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 - **Time-based revalidation**: Regeneration that recurs automatically at a set interval

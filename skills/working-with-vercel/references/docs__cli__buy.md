@@ -13,8 +13,8 @@ related:
 summary: Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/buy.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "80cca48c3b7d3ff114fd43f7e3fb80f01c8017c6342fab3782931993c87198b1"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "5021bac70a1e347035407442e12ff88fbf3623a91dc342a2e5b7b34e985cd306"
 ---
 
 # vercel buy
@@ -27,13 +27,14 @@ The `vercel buy` command allows you to purchase Vercel products for your team di
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Purchase credits](https://vercel.com/docs/rest-api/billing/purchase-credits?from=related)
-- [vercel api](https://vercel.com/docs/cli/api?from=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel usage](https://vercel.com/docs/cli/usage?from=related) — Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
-- [Global Options](https://vercel.com/docs/cli/global-options?from=related) — Global options are commonly available to use with multiple Vercel CLI commands. Learn about Vercel CLI's global options
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [Inside the Vercel intern experience](https://vercel.com/blog/inside-the-vercel-intern-experience?from=related&source_path=%2Fdocs%2Fcli%2Fbuy&source_site=vercel-docs&relationship=related)
+- [Purchase credits](https://vercel.com/docs/rest-api/billing/purchase-credits?from=related&source_path=%2Fdocs%2Fcli%2Fbuy&source_site=vercel-docs&relationship=related) — POST /v1/billing/buy — Purchases credits for a Vercel team using the default payment method on file. The purchase is cha
+- [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fbuy&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel usage](https://vercel.com/docs/cli/usage?from=related&source_path=%2Fdocs%2Fcli%2Fbuy&source_site=vercel-docs&relationship=related) — Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
+- [Vercel CLI Global Options](https://vercel.com/docs/cli/global-options?from=related&source_path=%2Fdocs%2Fcli%2Fbuy&source_site=vercel-docs&relationship=related) — Global options are commonly available to use with multiple Vercel CLI commands. Learn about Vercel CLI's global options
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fbuy&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 
-Full cross-link map for this page: [/docs/cli/buy.graph.md](/docs/cli/buy.graph.md)
+Full cross-link map for this page: [/docs/cli/buy.graph.md](/docs/cli/buy.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fbuy&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 > **💡 Note:** All subcommands except `domain` require a team scope. Use `--scope` to

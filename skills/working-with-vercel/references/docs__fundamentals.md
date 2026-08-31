@@ -14,8 +14,8 @@ related:
 summary: Learn about the core concepts of Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/fundamentals.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "61d889d89b7611c6f282bc9fada73ad231e149988318058992c9d6b6bc39982c"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "4e696f0033e4e63daae70742989a256304b8ba276e829cb357012d8c83acd166"
 ---
 
 # Vercel fundamental concepts
@@ -28,13 +28,13 @@ The articles below explain core concepts that shape how Vercel works:
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How Vercel CDN works](https://vercel.com/docs/how-vercel-cdn-works?from=related) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
-- [Products](https://vercel.com/docs/products?from=related) — Explore all Vercel products and capabilities.
-- [Concepts](https://vercel.com/docs/kms/concepts?from=related) — Understand how Vercel KMS rotates signing keys and how it authorizes signing, management, and verification.
-- [Concepts](https://vercel.com/docs/connect/concepts?from=related) — Understand the core building blocks of Vercel Connect: connectors, installations, tokens, project links, triggers, and a
-- [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [How Vercel CDN works](https://vercel.com/docs/how-vercel-cdn-works?from=related&source_path=%2Fdocs%2Ffundamentals&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
+- [Products](https://vercel.com/docs/products?from=related&source_path=%2Fdocs%2Ffundamentals&source_site=vercel-docs&relationship=related) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
+- [Vercel KMS Concepts](https://vercel.com/docs/kms/concepts?from=related&source_path=%2Fdocs%2Ffundamentals&source_site=vercel-docs&relationship=related) — Understand how Vercel KMS rotates signing keys and how it authorizes signing, management, and verification.
+- [Vercel Connect Concepts](https://vercel.com/docs/connect/concepts?from=related&source_path=%2Fdocs%2Ffundamentals&source_site=vercel-docs&relationship=related) — Understand the core building blocks of Vercel Connect: connectors, installations, tokens, project links, triggers, and a
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Ffundamentals&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 
-Full cross-link map for this page: [/docs/fundamentals.graph.md](/docs/fundamentals.graph.md)
+Full cross-link map for this page: [/docs/fundamentals.graph.md](/docs/fundamentals.graph.md?from=related&source_path=%2Fdocs%2Ffundamentals&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 **Request Lifecycle**: Learn how requests flow through Vercel's global network, from user to response. Covers global load balancing, security layers, caching, and compute. [Learn more →](/docs/fundamentals/infrastructure)

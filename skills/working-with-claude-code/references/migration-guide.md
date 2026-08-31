@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/migration-guide.md"
-fetched_at: "2026-08-17T04:41:37.014Z"
-sha256: "3dd004c9084cd0dbc4abd8db3fa899a0538d319be848fd63db7ae960c3754795"
+fetched_at: "2026-08-31T10:37:20.620Z"
+sha256: "5c55aecef4913f5a9bed665f7f5907cb933b579e7f4c584086b1b3fa721ebdd4"
 ---
 
 > ## Documentation Index
@@ -52,29 +52,9 @@ import { query, tool, createSdkMcpServer } from "@anthropic-ai/claude-code";
 import { query, tool, createSdkMcpServer } from "@anthropic-ai/claude-agent-sdk";
 ```
 
-**4. Update package.json dependencies:**
+**4. Update package.json:**
 
-If you have the package listed in your `package.json`, update it:
-
-Before:
-
-```json theme={null}
-{
-  "dependencies": {
-    "@anthropic-ai/claude-code": "^0.0.42"
-  }
-}
-```
-
-After:
-
-```json theme={null}
-{
-  "dependencies": {
-    "@anthropic-ai/claude-agent-sdk": "^0.3.0"
-  }
-}
-```
+If `@anthropic-ai/claude-code` is still listed in your `package.json`, replace it with `@anthropic-ai/claude-agent-sdk` and update the version range as well, for example from `"^0.0.42"` to `"^0.3.0"`.
 
 **5. Review [breaking changes](#breaking-changes)**
 
@@ -201,61 +181,13 @@ options = ClaudeAgentOptions(model="claude-opus-4-7", permission_mode="acceptEdi
   ```
 </CodeGroup>
 
-**Why this changed:** Provides better control and isolation for SDK applications. You can now build agents with custom behavior without inheriting Claude Code's CLI-focused instructions.
-
 ### Settings sources default
 
 This default was briefly changed in v0.1.0 to load no filesystem settings and then reverted, so no migration action is needed.
 
 **Current behavior:** Omitting `settingSources` on `query()` loads user, project, and local filesystem settings, matching the CLI. This includes `~/.claude/settings.json`, `.claude/settings.json`, `.claude/settings.local.json`, CLAUDE.md files, and custom commands.
 
-To run isolated from filesystem settings, pass an empty array:
-
-<CodeGroup>
-  ```typescript TypeScript theme={null}
-  import { query } from "@anthropic-ai/claude-agent-sdk";
-
-  const isolatedResult = query({
-    prompt: "Hello",
-    options: {
-      settingSources: [] // No filesystem settings loaded
-    }
-  });
-
-  // Or load only specific sources:
-  const projectOnlyResult = query({
-    prompt: "Hello",
-    options: {
-      settingSources: ["project"] // Only project settings
-    }
-  });
-  ```
-
-  ```python Python theme={null}
-  from claude_agent_sdk import query, ClaudeAgentOptions
-  import asyncio
-
-
-  async def main():
-      async for message in query(
-          prompt="Hello",
-          options=ClaudeAgentOptions(setting_sources=[]),  # No filesystem settings loaded
-      ):
-          print(message)
-
-      # Or load only specific sources:
-      async for message in query(
-          prompt="Hello",
-          options=ClaudeAgentOptions(
-              setting_sources=["project"]  # Only project settings
-          ),
-      ):
-          print(message)
-
-
-  asyncio.run(main())
-  ```
-</CodeGroup>
+To run isolated from filesystem settings, pass `settingSources: []`, or `setting_sources=[]` in Python. See [Control filesystem settings with settingSources](/docs/en/agent-sdk/claude-code-features#control-filesystem-settings-with-settingsources) for what each source loads.
 
 Isolation is especially important for CI/CD pipelines, deployed applications, test environments, and multi-tenant systems where local customizations should not leak in.
 

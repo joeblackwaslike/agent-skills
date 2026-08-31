@@ -14,8 +14,8 @@ related:
 summary: Learn how to implement secrets rotation in your integration to allow users to rotate credentials securely.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/secrets-rotation.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "7ea7660ad3447ef6cdba81bf4ba756d5461d0a3cfb60104a7f7b987d1e9eb829"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "0b4ca954797b4890673133a82c6488b781498741ba3fed06a0efc55e05f8b93e"
 ---
 
 # Implementing secrets rotation
@@ -28,18 +28,18 @@ When your integration provisions resources with credentials (like API keys, data
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to rotate the secrets of your Supabase integration](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-supabase-integration?from=related) — Rotate Supabase API keys, JWT secrets, and database passwords.
-- [How to rotate the secrets of your Hypertune integration](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-hypertune-integration?from=related) — Rotate Hypertune API keys with zero-downtime.
-- [How to rotate the secrets of your Clerk integration](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-clerk-integration?from=related) — Rotate Clerk API keys
-- [How to rotate the secrets of your Upstash integration](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-upstash-integration?from=related) — Rotate Upstash API keys, JWT secrets, and database passwords.
-- [How to rotate the secrets of your Redis integration](https://vercel.com/kb/guide/how-to-reset-the-secret-for-your-redis-integration?from=related) — This will guide you how to update the password for a Redis databse.
-- [Rotating Environment Variables](https://vercel.com/docs/environment-variables/rotating-secrets?from=related) — Safely rotate API keys, tokens, and other secrets in your Vercel environment variables.
-- [Rotate Installation Credential](https://vercel.com/docs/rest-api/marketplace/rotate-installation-credential?from=related)
-- [Key rotation](https://vercel.com/docs/kms/concepts/key-rotation?from=related) — How Vercel KMS stages a pending signing key, schedules its activation, and retires the previous key so already-issued to
-- [Update Resource Secrets](https://vercel.com/docs/rest-api/marketplace/update-resource-secrets?from=related)
-- [Native Integration Flows](https://vercel.com/docs/integrations/create-integration/marketplace-flows?from=related) — Learn how information flows between the integration user, Vercel, and the integration provider for Vercel native integra
+- [How to rotate the secrets of your Supabase integration](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-supabase-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fsecrets-rotation&source_site=vercel-docs&relationship=related) — Rotate Supabase API keys, JWT secrets, and database passwords.
+- [How to rotate the secrets of your Hypertune integration](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-hypertune-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fsecrets-rotation&source_site=vercel-docs&relationship=related) — Rotate Hypertune API keys with zero-downtime.
+- [How to rotate the secrets of your Clerk integration](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-clerk-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fsecrets-rotation&source_site=vercel-docs&relationship=related) — Rotate Clerk API keys
+- [How to rotate the secrets of your Upstash integration](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-upstash-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fsecrets-rotation&source_site=vercel-docs&relationship=related) — Rotate Upstash API keys, JWT secrets, and database passwords.
+- [How to rotate the secrets of your Redis integration](https://vercel.com/kb/guide/how-to-reset-the-secret-for-your-redis-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fsecrets-rotation&source_site=vercel-docs&relationship=related) — This will guide you how to update the password for a Redis databse.
+- [Rotating environment variables](https://vercel.com/docs/environment-variables/rotating-secrets?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fsecrets-rotation&source_site=vercel-docs&relationship=related) — Safely rotate API keys, tokens, and other secrets in your Vercel environment variables.
+- [Rotate Installation Credential](https://vercel.com/docs/rest-api/marketplace/rotate-installation-credential?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fsecrets-rotation&source_site=vercel-docs&relationship=related) — POST /v1/installations/{integrationConfigurationId}/credentials/rotate — Issues a replacement access token for an instal
+- [Vercel KMS Key Rotation](https://vercel.com/docs/kms/concepts/key-rotation?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fsecrets-rotation&source_site=vercel-docs&relationship=related) — How Vercel KMS stages a pending signing key, schedules its activation, and retires the previous key so already-issued to
+- [Update Resource Secrets](https://vercel.com/docs/rest-api/marketplace/update-resource-secrets?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fsecrets-rotation&source_site=vercel-docs&relationship=related) — PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId}/secrets — This endpoint updates the secrets of
+- [Revoke Installation Credential](https://vercel.com/docs/rest-api/marketplace/revoke-installation-credential?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fsecrets-rotation&source_site=vercel-docs&relationship=related) — POST /v1/installations/{integrationConfigurationId}/credentials/revoke — Retires a superseded installation credential, s
 
-Full cross-link map for this page: [/docs/integrations/create-integration/secrets-rotation.graph.md](/docs/integrations/create-integration/secrets-rotation.graph.md)
+Full cross-link map for this page: [/docs/integrations/create-integration/secrets-rotation.graph.md](/docs/integrations/create-integration/secrets-rotation.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fsecrets-rotation&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 > **💡 Note:** This functionality must be turned on by Vercel for your integration. Contact your partner support team in Slack to have it enabled on your test integration(s) to begin development and then on your production integration once you're ready to go live.

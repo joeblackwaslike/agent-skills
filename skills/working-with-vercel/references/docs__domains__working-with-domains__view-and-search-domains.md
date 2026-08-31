@@ -13,8 +13,8 @@ related:
 summary: Learn how to view and search all registered domains that are assigned to Vercel Projects through the Vercel dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/view-and-search-domains.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "4348a89ec3b7390692f0fb56d753187567482f5169ea62bc497fe3cec1d726b6"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "2320cb3155907015a4c8174a97cc8f0898566a9c0f268bbe53df496e3f43477e"
 ---
 
 # Viewing & Searching Domains
@@ -27,13 +27,16 @@ sha256: "4348a89ec3b7390692f0fb56d753187567482f5169ea62bc497fe3cec1d726b6"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [vercel domains](https://vercel.com/docs/cli/domains?from=related) — Learn how to buy, sell, transfer, and manage your domains using the vercel domains CLI command.
-- [List all the domains](https://vercel.com/docs/rest-api/domains/list-all-the-domains?from=related)
-- [Adding a Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain?from=related) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
-- [List Project Domains by Apex Domain](https://vercel.com/docs/rest-api/domains/list-project-domains-by-apex-domain?from=related)
-- [Using Domains API](https://vercel.com/docs/domains/registrar-api?from=related) — Programmatically search, price, purchase, renew, and manage domains with Vercel's domains registrar API endpoints.
+- [Search domains on the Vercel dashboard](https://vercel.com/changelog/search-domains-on-the-vercel-dashboard?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fview-and-search-domains&source_site=vercel-docs&relationship=related)
+- [Search and buy domains in the dashboard](https://vercel.com/changelog/search-and-buy-domains-in-the-dashboard?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fview-and-search-domains&source_site=vercel-docs&relationship=related)
+- [How do I add a custom domain to my Vercel project?](https://vercel.com/kb/guide/how-do-i-add-a-custom-domain-to-my-vercel-project?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fview-and-search-domains&source_site=vercel-docs&relationship=related) — Learn how to add a custom domain to your Vercel project.
+- [vercel domains](https://vercel.com/docs/cli/domains?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fview-and-search-domains&source_site=vercel-docs&relationship=related) — Learn how to buy, sell, transfer, and manage your domains using the vercel domains CLI command.
+- [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fview-and-search-domains&source_site=vercel-docs&relationship=related) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
+- [List all the domains](https://vercel.com/docs/rest-api/domains/list-all-the-domains?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fview-and-search-domains&source_site=vercel-docs&relationship=related) — GET /v5/domains — Retrieves a list of domains registered for the authenticated user or team. By default it returns the l
+- [Programmatic Domain Management](https://vercel.com/docs/domains/registrar-api?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fview-and-search-domains&source_site=vercel-docs&relationship=related) — Programmatically search, price, purchase, renew, and manage domains with Vercel's domains registrar API endpoints.
+- [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fview-and-search-domains&source_site=vercel-docs&relationship=related) — Add and configure a custom domain for your Vercel project using the CLI.
 
-Full cross-link map for this page: [/docs/domains/working-with-domains/view-and-search-domains.graph.md](/docs/domains/working-with-domains/view-and-search-domains.graph.md)
+Full cross-link map for this page: [/docs/domains/working-with-domains/view-and-search-domains.graph.md](/docs/domains/working-with-domains/view-and-search-domains.graph.md?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fview-and-search-domains&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 To view all your registered domains, open [**Domains**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fdomains\&title=Go+to+Domains) in your Vercel dashboard.

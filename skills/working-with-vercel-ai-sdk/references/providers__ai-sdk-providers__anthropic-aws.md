@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic-aws.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "3c4516e0eb024b9b813734cb8ed6361f4494222cfa6303e7aefe05236f311261"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "e20ae6f0a4f99c322ee588ff96f85af252a799ca325c0145a8654e6380744b32"
 ---
 
 # Claude Platform on AWS Provider
@@ -167,6 +167,7 @@ Your IAM principal needs permission to call the Claude Platform on AWS actions o
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
 - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
+- [Z.AI](/providers/ai-sdk-providers/zai)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)
 - [Fireworks](/providers/ai-sdk-providers/fireworks)

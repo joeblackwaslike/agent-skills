@@ -3,7 +3,7 @@ title: Configuring a Build
 product: vercel
 url: /docs/builds/configure-a-build
 canonical_url: "https://vercel.com/docs/builds/configure-a-build"
-last_updated: 2026-07-15
+last_updated: 2026-08-11
 type: reference
 prerequisites:
   - /docs/builds
@@ -16,8 +16,8 @@ related:
 summary: Vercel automatically configures the build settings for many front-end frameworks, but you can also customize the build according to your requirements.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/configure-a-build.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "dc3a4a57d5ebb470b521fa117ccec65ce95e6018498d15f725a080245cccfd67"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "6bac511c25f7a44b1f529c6a6a3254f19f374b65d2467a671dfee4059c1a8ce7"
 ---
 
 # Configuring a Build
@@ -30,18 +30,20 @@ When you make a [deployment](/docs/deployments), Vercel **builds** your project.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Does Vercel support Yarn 2?](https://vercel.com/kb/guide/does-vercel-support-yarn-2?from=related) — Information on Vercel's support for Yarn 2.
-- [Does Vercel support Yarn 3?](https://vercel.com/kb/guide/does-vercel-support-yarn-3?from=related) — Information on Vercel's support for Yarn 3.
-- [Does Vercel support Yarn 4?](https://vercel.com/kb/guide/does-vercel-support-yarn-4?from=related) — Information on Vercel's support for Yarn 4.
-- [How to pin a specific Bun version for Vercel builds?](https://vercel.com/kb/guide/how-to-pin-a-specific-bun-version-for-vercel-builds?from=related) — Learn how to use a specific Bun version for Vercel builds.
-- [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare?from=related) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
-- [Supported Frameworks](https://vercel.com/docs/frameworks?from=related) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
-- [All Frameworks](https://vercel.com/docs/frameworks/more-frameworks?from=related) — Learn about the frameworks that can be deployed to Vercel.
-- [Build Output API](https://vercel.com/docs/build-output-api?from=related) — The Build Output API is a file-system-based specification for a directory structure that can produce a Vercel deployment
-- [Frontends](https://vercel.com/docs/frameworks/frontend?from=related) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [Vercel now supports Build Commands for FastAPI and Flask](https://vercel.com/changelog/vercel-now-supports-build-commands-for-fastapi-and-flask?from=related&source_path=%2Fdocs%2Fbuilds%2Fconfigure-a-build&source_site=vercel-docs&relationship=related)
+- [Yarn 2+ dependency caching now supported](https://vercel.com/changelog/yarn-2-dependency-caching-now-supported?from=related&source_path=%2Fdocs%2Fbuilds%2Fconfigure-a-build&source_site=vercel-docs&relationship=related)
+- [Does Vercel support Yarn 2?](https://vercel.com/kb/guide/does-vercel-support-yarn-2?from=related&source_path=%2Fdocs%2Fbuilds%2Fconfigure-a-build&source_site=vercel-docs&relationship=related) — Information on Vercel's support for Yarn 2.
+- [Does Vercel support Yarn 3?](https://vercel.com/kb/guide/does-vercel-support-yarn-3?from=related&source_path=%2Fdocs%2Fbuilds%2Fconfigure-a-build&source_site=vercel-docs&relationship=related) — Information on Vercel's support for Yarn 3.
+- [Does Vercel support Yarn 4?](https://vercel.com/kb/guide/does-vercel-support-yarn-4?from=related&source_path=%2Fdocs%2Fbuilds%2Fconfigure-a-build&source_site=vercel-docs&relationship=related) — Information on Vercel's support for Yarn 4.
+- [How to pin a specific Bun version for Vercel builds?](https://vercel.com/kb/guide/how-to-pin-a-specific-bun-version-for-vercel-builds?from=related&source_path=%2Fdocs%2Fbuilds%2Fconfigure-a-build&source_site=vercel-docs&relationship=related) — Learn how to use a specific Bun version for Vercel builds.
+- [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare?from=related&source_path=%2Fdocs%2Fbuilds%2Fconfigure-a-build&source_site=vercel-docs&relationship=related) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
+- [Announcing the Build Output API](https://vercel.com/blog/build-output-api?from=related&source_path=%2Fdocs%2Fbuilds%2Fconfigure-a-build&source_site=vercel-docs&relationship=related)
+- [Advanced Project Settings](https://vercel.com/blog/advanced-project-settings?from=related&source_path=%2Fdocs%2Fbuilds%2Fconfigure-a-build&source_site=vercel-docs&relationship=related)
+- [Frameworks on Vercel](https://vercel.com/docs/frameworks?from=related&source_path=%2Fdocs%2Fbuilds%2Fconfigure-a-build&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
+- [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks?from=related&source_path=%2Fdocs%2Fbuilds%2Fconfigure-a-build&source_site=vercel-docs&relationship=related) — Learn about the frameworks that can be deployed to Vercel.
+- [Frontends on Vercel](https://vercel.com/docs/frameworks/frontend?from=related&source_path=%2Fdocs%2Fbuilds%2Fconfigure-a-build&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
 
-Full cross-link map for this page: [/docs/builds/configure-a-build.graph.md](/docs/builds/configure-a-build.graph.md)
+Full cross-link map for this page: [/docs/builds/configure-a-build.graph.md](/docs/builds/configure-a-build.graph.md?from=related&source_path=%2Fdocs%2Fbuilds%2Fconfigure-a-build&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Vercel automatically configures the build settings for many front-end frameworks, but you can also customize the build according to your requirements.

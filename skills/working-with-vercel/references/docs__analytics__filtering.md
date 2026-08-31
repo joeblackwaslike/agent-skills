@@ -3,7 +3,7 @@ title: Filtering Analytics
 product: vercel
 url: /docs/analytics/filtering
 canonical_url: "https://vercel.com/docs/analytics/filtering"
-last_updated: 2026-06-26
+last_updated: 2026-08-11
 type: how-to
 prerequisites:
   - /docs/analytics
@@ -15,8 +15,8 @@ related:
 summary: "Learn how filters allow you to explore insights about your website's visitors."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/filtering.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "10ecb2a3f8f9dcc80fedb0c7ef90c29057169145b728fb3831aabc9d509e85d2"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "12416a4b3c8c25366c09a9075b3c46a41163373beb6f7fc1ceddcf8ca17c51d0"
 ---
 
 # Filtering Analytics
@@ -31,13 +31,19 @@ to use it to answer specific questions.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics?from=related) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
-- [Web Analytics API](https://vercel.com/docs/analytics/web-analytics-api?from=related) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
-- [Using with CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
-- [Troubleshooting](https://vercel.com/docs/analytics/troubleshooting?from=related) — Learn how to troubleshoot common issues with Vercel Web Analytics.
-- [Privacy](https://vercel.com/docs/analytics/privacy-policy?from=related) — Learn how Vercel supports privacy and data compliance standards with Vercel Web Analytics.
+- [Bounce rate support in Web Analytics](https://vercel.com/changelog/bounce-rate-support-in-web-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=related)
+- [Device type support and improved breakdowns in Web Analytics](https://vercel.com/changelog/device-type-support-and-improved-breakdowns-in-web-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=related)
+- [Hostname support in Web Analytics](https://vercel.com/changelog/hostname-support-in-web-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=related)
+- [Web Analytics now has route support](https://vercel.com/changelog/web-analytics-now-has-route-support?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=related)
+- [Filter Analytics traffic data](https://vercel.com/changelog/filter-analytics-traffic-data?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=related)
+- [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=related)
+- [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=related) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
+- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
+- [Privacy and Compliance](https://vercel.com/docs/analytics/privacy-policy?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=related) — Learn how Vercel supports privacy and data compliance standards with Vercel Web Analytics.
+- [Speed Insights Overview](https://vercel.com/docs/speed-insights?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=related) — This page lists out and explains all the performance metrics provided by Vercel's Speed Insights feature.
+- [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
 
-Full cross-link map for this page: [/docs/analytics/filtering.graph.md](/docs/analytics/filtering.graph.md)
+Full cross-link map for this page: [/docs/analytics/filtering.graph.md](/docs/analytics/filtering.graph.md?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Using filters

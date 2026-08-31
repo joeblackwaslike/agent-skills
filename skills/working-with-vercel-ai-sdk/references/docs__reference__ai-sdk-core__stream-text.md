@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/stream-text.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "794aee23a223108c58ba9631fa6a094b9b6ac9b9537235e15bd9e64680cae5e8"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "433d7a59cd6a8913e97128256eb50bb3a415f4c737bf40bf8117b6bcffbd55c9"
 ---
 
 # `streamText()`
@@ -621,7 +621,7 @@ To see `streamText` in action, check out [these examples](#examples).
       type: 'ToolApprovalConfiguration<TOOLS, RUNTIME_CONTEXT>',
       isOptional: true,
       description:
-        "Approval configuration for this call. Pass a `GenericToolApprovalFunction` to handle all tool calls in one callback with `toolCall`, `tools`, `toolsContext`, `messages`, and `runtimeContext`, or pass a per-tool object where each key can be a status (`'not-applicable'`, `'approved'`, `'denied'`, or `'user-approval'`), an object form such as `{ type: 'denied', reason: 'blocked by policy' }`, or a `SingleToolApprovalFunction` that receives the tool input and options `toolCallId`, `messages`, `toolContext`, and `runtimeContext` (same shape as tool execution options without `abortSignal`, with `context` renamed to `toolContext`). The `RUNTIME_CONTEXT` type parameter matches the call's `runtimeContext`. A `GenericToolApprovalFunction` or `SingleToolApprovalFunction` may return `undefined` for the same effect as `'not-applicable'`. `'not-applicable'` is the default execution path and runs the tool without approval metadata. Use `'approved'`, `'denied'`, or their object forms when you want explicit automatic approval request/response parts in the output. Automatic approvals and denials can include a `reason`, which is forwarded to the emitted approval response. This setting takes precedence over a tool's `needsApproval` default.",
+        "Approval configuration for this call. Pass a `GenericToolApprovalFunction` to handle all tool calls in one callback with `toolCall`, `tools`, `toolsContext`, `messages`, and `runtimeContext`, or pass a per-tool object where each key can be a status (`'not-applicable'`, `'approved'`, `'denied'`, or `'user-approval'`), an object form such as `{ type: 'denied', reason: 'blocked by policy' }`, or a `SingleToolApprovalFunction` that receives the tool input and options `toolCallId`, `messages`, `toolContext`, and `runtimeContext` (same shape as tool execution options without `abortSignal`, with `context` renamed to `toolContext`). The `RUNTIME_CONTEXT` type parameter matches the call's `runtimeContext`. A `GenericToolApprovalFunction` or `SingleToolApprovalFunction` may return `undefined` for the same effect as `'not-applicable'`. `'not-applicable'` is the default execution path and runs the tool without approval metadata. Use `'approved'`, `'denied'`, or their object forms when you want explicit automatic approval request/response parts in the output. Object statuses can include a `reason`: automatic approvals and denials forward it to the approval response, while manual user approvals forward it to the approval request for the human approver. This setting takes precedence over a tool's `needsApproval` default.",
     },
     {
       name: 'experimental_toolCallers',
@@ -1188,7 +1188,7 @@ To see `streamText` in action, check out [these examples](#examples).
       type: '(event: OnErrorResult) => Promise<void> |void',
       isOptional: true,
       description:
-        'Callback that is called when an error occurs during streaming. You can use it to log errors.',
+        'Callback that is called when an error occurs during streaming. Well-formed mid-stream provider error events are exposed as StreamProviderError instances.',
       properties: [
         {
           type: 'OnErrorResult',
@@ -1196,7 +1196,8 @@ To see `streamText` in action, check out [these examples](#examples).
             {
               name: 'error',
               type: 'unknown',
-              description: 'The error that occurred.',
+              description:
+                'The error that occurred. Use StreamProviderError.isInstance to identify normalized provider error events and inspect their retry metadata.',
             },
           ],
         },
@@ -3300,7 +3301,7 @@ To see `streamText` in action, check out [these examples](#examples).
       name: 'stream',
       type: 'AsyncIterable<TextStreamPart<TOOLS>> & ReadableStream<TextStreamPart<TOOLS>>',
       description:
-        'A stream with all events, including text deltas, tool calls, tool results, and errors. You can use it as either an AsyncIterable or a ReadableStream. Only errors that stop the stream, such as network errors, are thrown.',
+        'A stream with all events, including text deltas, tool calls, tool results, and errors. Well-formed mid-stream provider failures are emitted in error parts as StreamProviderError instances. You can use it as either an AsyncIterable or a ReadableStream. Only errors that stop the stream, such as network errors, are thrown.',
       properties: [
         {
           type: 'TextStreamPart',
@@ -4034,13 +4035,13 @@ To see `streamText` in action, check out [these examples](#examples).
             },
             {
               name: 'onEnd',
-              type: '(options: { messages: UIMessage[]; isContinuation: boolean; responseMessage: UIMessage; isAborted: boolean; }) => void',
+              type: '(options: { messages: UIMessage[]; isContinuation: boolean; responseMessage: UIMessage; isAborted: boolean; outcome: UIMessageStreamOutcome; finishReason?: FinishReason; }) => PromiseLike<void> | void',
               isOptional: true,
-              description: 'Callback function called when the stream ends. Provides the updated list of UI messages, whether the response is a continuation, the response message, and whether the stream was aborted.',
+              description: 'Callback function called when the stream ends. Provides the updated messages, continuation and abort state, model finish reason, and operation-level outcome.',
             },
             {
               name: 'onFinish',
-              type: '(options: { messages: UIMessage[]; isContinuation: boolean; responseMessage: UIMessage; isAborted: boolean; }) => void',
+              type: '(options: { messages: UIMessage[]; isContinuation: boolean; responseMessage: UIMessage; isAborted: boolean; outcome: UIMessageStreamOutcome; finishReason?: FinishReason; }) => PromiseLike<void> | void',
               isOptional: true,
               description: 'Deprecated alias for `onEnd`.',
             },

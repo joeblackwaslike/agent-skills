@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/foundations/providers-and-models.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "59e5e704011c2a6e421aea748bf8322fecc910acb872bc2d27629ac0a08c3066"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "77f461d8955f3a20f9d343cc345fb478e76c9c12edfd1866d8ad8044811227d3"
 ---
 
 # Providers and Models
@@ -163,10 +163,9 @@ Here are the capabilities of popular models:
 | [Mistral](/providers/ai-sdk-providers/mistral)     | `mistral-medium-3.5`                        | <Cross />   | <Check />         | <Check />  | <Check />      |
 | [Mistral](/providers/ai-sdk-providers/mistral)     | `mistral-small-latest`                      | <Cross />   | <Check />         | <Check />  | <Check />      |
 | [Mistral](/providers/ai-sdk-providers/mistral)     | `pixtral-12b-2409`                          | <Check />   | <Check />         | <Check />  | <Check />      |
-| [DeepSeek](/providers/ai-sdk-providers/deepseek)   | `deepseek-chat`                             | <Cross />   | <Check />         | <Check />  | <Check />      |
-| [DeepSeek](/providers/ai-sdk-providers/deepseek)   | `deepseek-reasoner`                         | <Cross />   | <Check />         | <Check />  | <Check />      |
+| [DeepSeek](/providers/ai-sdk-providers/deepseek)   | `deepseek-v4-flash`                         | <Cross />   | <Check />         | <Check />  | <Check />      |
+| [DeepSeek](/providers/ai-sdk-providers/deepseek)   | `deepseek-v4-pro`                           | <Cross />   | <Check />         | <Check />  | <Check />      |
 | [Cerebras](/providers/ai-sdk-providers/cerebras)   | `gpt-oss-120b`                              | <Cross />   | <Check />         | <Check />  | <Check />      |
-| [Cerebras](/providers/ai-sdk-providers/cerebras)   | `zai-glm-4.7`                               | <Cross />   | <Check />         | <Check />  | <Check />      |
 | [Cerebras](/providers/ai-sdk-providers/cerebras)   | `gemma-4-31b`                               | <Check />   | <Check />         | <Check />  | <Check />      |
 | [Groq](/providers/ai-sdk-providers/groq)           | `meta-llama/llama-4-scout-17b-16e-instruct` | <Check />   | <Check />         | <Check />  | <Check />      |
 | [Groq](/providers/ai-sdk-providers/groq)           | `llama-3.3-70b-versatile`                   | <Cross />   | <Check />         | <Check />  | <Check />      |

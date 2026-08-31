@@ -13,8 +13,8 @@ related:
 summary: Learn how to redeploy your project using the vercel redeploy CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/redeploy.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "f15977808c4f60be7b368b4dc55d8a5437c4642196f3f6789858122224506e47"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "6cbdde2081d44c55d0616e189da4654d4c39a6d7d754fc544de54facf9d81218"
 ---
 
 # vercel redeploy
@@ -27,13 +27,13 @@ The `vercel redeploy` command is used to rebuild and [redeploy an existing deplo
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
-- [Deploying from CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
-- [vercel promote](https://vercel.com/docs/cli/promote?from=related) — Learn how to promote an existing deployment using the vercel promote CLI command.
-- [vercel remove](https://vercel.com/docs/cli/remove?from=related) — Learn how to remove a deployment using the vercel remove CLI command.
-- [vercel list](https://vercel.com/docs/cli/list?from=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fredeploy&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related&source_path=%2Fdocs%2Fcli%2Fredeploy&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
+- [vercel promote](https://vercel.com/docs/cli/promote?from=related&source_path=%2Fdocs%2Fcli%2Fredeploy&source_site=vercel-docs&relationship=related) — Learn how to promote an existing deployment using the vercel promote CLI command.
+- [vercel remove](https://vercel.com/docs/cli/remove?from=related&source_path=%2Fdocs%2Fcli%2Fredeploy&source_site=vercel-docs&relationship=related) — Learn how to remove a deployment using the vercel remove CLI command.
+- [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fredeploy&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 
-Full cross-link map for this page: [/docs/cli/redeploy.graph.md](/docs/cli/redeploy.graph.md)
+Full cross-link map for this page: [/docs/cli/redeploy.graph.md](/docs/cli/redeploy.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fredeploy&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Usage

@@ -3,7 +3,7 @@ title: DEPLOYMENT_PAUSED
 product: vercel
 url: /docs/errors/DEPLOYMENT_PAUSED
 canonical_url: "https://vercel.com/docs/errors/DEPLOYMENT_PAUSED"
-last_updated: 2026-02-09
+last_updated: 2026-08-10
 type: reference
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: The deployment was paused. This is a deployment error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/deployment_paused.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "226f78a3fa54dd6a38e24246ad529b51cdac1f831b23df90bf5ed32272dfc236"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "892cf451d8e9f11ca49800ade8e3c7356ecc229b7db359811a0e51bdfe1e8828"
 ---
 
 # DEPLOYMENT_PAUSED

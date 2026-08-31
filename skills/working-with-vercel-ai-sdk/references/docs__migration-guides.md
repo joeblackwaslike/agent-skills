@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/migration-guides.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "999a0d62dea0f8ba887a070556937848f08cc6bcbb95a5acf1a9899207b584ee"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "7e08b52eb203b45cd72fd27ae2e1f18bb079cef5d6d300a81f0126d1352255c6"
 ---
 
 # Migration Guides
@@ -220,6 +220,7 @@ sha256: "999a0d62dea0f8ba887a070556937848f08cc6bcbb95a5acf1a9899207b584ee"
   - [AI SDK Workflow](/docs/reference/ai-sdk-workflow)
     - [WorkflowAgent](/docs/reference/ai-sdk-workflow/workflow-agent)
     - [WorkflowChatTransport](/docs/reference/ai-sdk-workflow/workflow-chat-transport)
+    - [generateVideo](/docs/reference/ai-sdk-workflow/generate-video)
   - [AI SDK Errors](/docs/reference/ai-sdk-errors)
     - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
     - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
@@ -249,6 +250,7 @@ sha256: "999a0d62dea0f8ba887a070556937848f08cc6bcbb95a5acf1a9899207b584ee"
     - [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
     - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
     - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
+    - [AI_StreamProviderError](/docs/reference/ai-sdk-errors/ai-stream-provider-error)
     - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
     - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
     - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)

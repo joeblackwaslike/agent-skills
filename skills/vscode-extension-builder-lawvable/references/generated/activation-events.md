@@ -1,8 +1,8 @@
 ---
 title: "Activation Events"
 source: "https://code.visualstudio.com/api/references/activation-events"
-fetched_at: "2026-08-24T04:43:15.398Z"
-sha256: "b40784970b42bc5716876a8bdd03108f99266bf05c2d744278bd5b9a02a6a197"
+fetched_at: "2026-08-31T10:36:32.244Z"
+sha256: "14ccf459effa073b90c031385e2ab8fcd64d3d8b0103f9543d1302177f2b2647"
 ---
 
 # Activation Events
@@ -449,4 +449,4 @@ The `*` activation event is emitted and interested extensions will be activated 
 **Note:** An extension **must** export an `activate()` function from its main module and it will be invoked **only once** by VS Code when any of the specified activation events is emitted. Also, an extension **should** export a `deactivate()` function from its main module to perform cleanup tasks on VS Code shutdown. Extension **must** return a Promise from `deactivate()` if the cleanup process is asynchronous. An extension may return `undefined` from `deactivate()` if the cleanup runs synchronously.
 
  
- 8/19/2026
+ 8/26/2026

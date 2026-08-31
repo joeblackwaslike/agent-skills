@@ -1,5 +1,5 @@
 ---
-source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/core/src/guardian/policy_template.md"
+source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/core/assets/guardian/policy_template.md"
 fetched_at: "2026-08-10T05:28:15.238Z"
 sha256: "f47fbb2bdba5e7528bfae7f5e2844a7d45a3a922fa74b718f22b22917376cfcf"
 ---

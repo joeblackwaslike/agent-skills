@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/computer-use.md"
-fetched_at: "2026-08-24T04:44:18.863Z"
-sha256: "d90e96e21ce9d96ecb7981424801172db338d8f49cdc827c4de00a8409c9d2f1"
+fetched_at: "2026-08-31T10:37:20.620Z"
+sha256: "ca890ccf3f7241255a576174d50be10e5ddf01a6660700c64b0f6f9ae3e16b7f"
 ---
 
 > ## Documentation Index
@@ -95,6 +95,8 @@ Apps with broad reach show an extra warning in the prompt so you know what appro
 | Can change system settings | System Settings                                              |
 
 These apps aren't blocked. The warning lets you decide whether the task warrants that level of access.
+
+Approve Finder to let Claude click the desktop, the Dock, or a Finder window.
 
 Claude's level of control also varies by app category: browsers and trading platforms are view-only, terminals and IDEs are click-only, and everything else gets full control. See [app permissions in Desktop](/docs/en/desktop#app-permissions) for the complete tier breakdown.
 

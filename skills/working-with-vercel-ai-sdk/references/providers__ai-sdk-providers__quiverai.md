@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/quiverai.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "b5bfd317b59ecb5cf2cdaa5b20805205c30ec1ffaeeadc156e043f205b312e55"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "70881c909c6735672531b80ea1e8d9869db6e037d3a200b73585283442ef32b4"
 ---
 
 # QuiverAI Provider
@@ -219,6 +219,7 @@ fs.writeFileSync('logo.svg', image.uint8Array);
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
 - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
+- [Z.AI](/providers/ai-sdk-providers/zai)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)
 - [Fireworks](/providers/ai-sdk-providers/fireworks)

@@ -3,7 +3,7 @@ title: Notifications
 product: vercel
 url: /docs/notifications
 canonical_url: "https://vercel.com/docs/notifications"
-last_updated: 2026-07-29
+last_updated: 2026-08-11
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how to use Notifications to view and manage important alerts about your deployments, domains, integrations, account, and usage.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/notifications.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "28129933ad8ed65c8a1d6166487bc78637b1fb425aba536da0b767456daeca16"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "a8809e01b31ca913e26e04ec712a8f0a5799a4e1a19e75eea424155c35d0ca09"
 ---
 
 # Notifications
@@ -30,15 +30,17 @@ sha256: "28129933ad8ed65c8a1d6166487bc78637b1fb425aba536da0b767456daeca16"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How do I disable Git Notifications from Deployments?](https://vercel.com/kb/guide/how-do-i-disable-git-notifications-from-deployments?from=related) — If your project is connected via a Git account to your deployment, you will receive email notifications whenever the dep
-- [Monitor uptime for AI-native apps with Vercel Alerts](https://vercel.com/kb/guide/monitor-uptime-for-ai-native-apps-with-vercel-alerts?from=related) — Learn how to use Vercel Anomaly Alerts as an early-warning system for AI-powered apps, helping you catch 5xx spikes and
-- [Configure Alerts](https://vercel.com/docs/alerts/configure-alerts?from=related) — Configure alert rules and notification destinations for Vercel Observability alerts.
-- [GitHub](https://vercel.com/docs/git/vercel-for-github?from=related) — Vercel for GitHub automatically deploys your GitHub projects with Vercel, providing Preview Deployment URLs, and automat
-- [Billing FAQ](https://vercel.com/docs/plans/pro-plan/billing?from=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
-- [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Audit Logs](https://vercel.com/docs/audit-log?from=related) — Learn how to track and analyze your team members' activities.
+- [Push notifications support on desktop and mobile](https://vercel.com/changelog/push-notifications-support-on-desktop-and-mobile?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related)
+- [Get notified on build failures and more with new notification controls](https://vercel.com/changelog/new-notification-controls-available-in-public-beta?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related)
+- [Building a powerful notification system for Vercel with Knock](https://vercel.com/blog/building-a-powerful-notification-system-for-vercel-with-knock-app?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related)
+- [How do I disable Git Notifications from Deployments?](https://vercel.com/kb/guide/how-do-i-disable-git-notifications-from-deployments?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related) — If your project is connected via a Git account to your deployment, you will receive email notifications whenever the dep
+- [Configure alerts](https://vercel.com/docs/alerts/configure-alerts?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related) — Configure alert rules and notification destinations for Vercel Observability alerts.
+- [Audit Logs](https://vercel.com/docs/audit-log?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related) — Learn how to track and analyze your team members' activities.
+- [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
+- [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Alerts](https://vercel.com/docs/alerts?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related) — Get notified when something's wrong with your Vercel projects. Set up alerts through Slack, webhooks, or email so you ca
 
-Full cross-link map for this page: [/docs/notifications.graph.md](/docs/notifications.graph.md)
+Full cross-link map for this page: [/docs/notifications.graph.md](/docs/notifications.graph.md?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Vercel sends configurable notifications to you through the [dashboard](https://vercel.com/d?to=%2Fdashboard\&title=Open+Dashboard) and email. These notifications enable you to view and manage important alerts about your [deployments](/docs/deployments), [domains](/docs/domains), [integrations](/docs/integrations), [account](/docs/accounts), and [usage](/docs/pricing/manage-and-optimize-usage).

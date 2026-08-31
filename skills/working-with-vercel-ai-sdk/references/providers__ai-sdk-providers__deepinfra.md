@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/deepinfra.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "dff0b63be229d20084a0015a298498d7af251bb78f450eee84290473aeb2c901"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "ef85366735f649bda7c9aa1bda2e9cb3cbf463223e5a7e4f121501de24dee28c"
 ---
 
 # DeepInfra Provider
@@ -351,6 +351,7 @@ const { embedding } = await embed({
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
 - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
+- [Z.AI](/providers/ai-sdk-providers/zai)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)
 - [Fireworks](/providers/ai-sdk-providers/fireworks)

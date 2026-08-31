@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "cc809b966227d8a19ef9a7672ea3f1a67b97096b253dcabf5e79551054f2f976"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "b0a3488961c928e8ce9d2715714ccd501dbb9028c81ded083171b232621c3feb"
 ---
 
 # AI SDK Harnesses
@@ -258,6 +258,7 @@ running established agent harnesses such as Claude Code, Codex, and Pi.
   - [AI SDK Workflow](/docs/reference/ai-sdk-workflow)
     - [WorkflowAgent](/docs/reference/ai-sdk-workflow/workflow-agent)
     - [WorkflowChatTransport](/docs/reference/ai-sdk-workflow/workflow-chat-transport)
+    - [generateVideo](/docs/reference/ai-sdk-workflow/generate-video)
   - [AI SDK Errors](/docs/reference/ai-sdk-errors)
     - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
     - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
@@ -287,6 +288,7 @@ running established agent harnesses such as Claude Code, Codex, and Pi.
     - [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
     - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
     - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
+    - [AI_StreamProviderError](/docs/reference/ai-sdk-errors/ai-stream-provider-error)
     - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
     - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
     - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)

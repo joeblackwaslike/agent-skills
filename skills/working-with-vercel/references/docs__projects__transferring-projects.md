@@ -3,7 +3,7 @@ title: Transferring a project
 product: vercel
 url: /docs/projects/transferring-projects
 canonical_url: "https://vercel.com/docs/projects/transferring-projects"
-last_updated: 2026-07-29
+last_updated: 2026-08-11
 type: how-to
 prerequisites:
   - /docs/projects
@@ -16,8 +16,8 @@ related:
 summary: Learn how to transfer a project between Vercel teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/projects/transferring-projects.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "e2c8fecd7132d85cc992735b4695bdc2211f917d37b62a2445097fc946cbc4ca"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "aa397804bb6fc3a0faa4c90c746947796ffe974efdef1ebee1e23ce14b924240"
 ---
 
 # Transferring a project
@@ -30,18 +30,20 @@ You can transfer projects between your Vercel teams with **zero downtime** and *
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How can I move a domain to a Vercel team?](https://vercel.com/kb/guide/how-can-i-move-a-domain-to-a-team?from=related) — Information on how to move domains between accounts on Vercel.
-- [How do I delete a Vercel team?](https://vercel.com/kb/guide/how-do-i-delete-a-vercel-team?from=related) — Information on deleting a Vercel team.
-- [Transferring Domains to Vercel](https://vercel.com/kb/guide/transferring-domains-to-vercel?from=related) — How to transfer your domain to Vercel.
-- [How do I transfer my domain to Vercel?](https://vercel.com/kb/guide/how-do-i-transfer-my-domain-to-vercel?from=related) — Information on how to transfer a domain to Vercel.
-- [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team?from=related) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
-- [Transferring Domains](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain?from=related) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
-- [Create project transfer request](https://vercel.com/docs/rest-api/projects/create-project-transfer-request?from=related)
-- [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Accept project transfer request](https://vercel.com/docs/rest-api/projects/accept-project-transfer-request?from=related)
-- [Claim Deployments](https://vercel.com/docs/deployments/claim-deployments?from=related) — Learn how to take ownership of deployments on Vercel with the Claim Deployments feature.
+- [Projects can now be transferred to Personal Accounts](https://vercel.com/changelog/projects-can-now-be-transferred-to-personal-accounts?from=related&source_path=%2Fdocs%2Fprojects%2Ftransferring-projects&source_site=vercel-docs&relationship=related)
+- [How can I move a domain to a Vercel team?](https://vercel.com/kb/guide/how-can-i-move-a-domain-to-a-team?from=related&source_path=%2Fdocs%2Fprojects%2Ftransferring-projects&source_site=vercel-docs&relationship=related) — Information on how to move domains between accounts on Vercel.
+- [How do I delete a Vercel team?](https://vercel.com/kb/guide/how-do-i-delete-a-vercel-team?from=related&source_path=%2Fdocs%2Fprojects%2Ftransferring-projects&source_site=vercel-docs&relationship=related) — Information on deleting a Vercel team.
+- [Transfer Vercel projects with zero downtime](https://vercel.com/blog/transfer-vercel-projects-with-zero-downtime?from=related&source_path=%2Fdocs%2Fprojects%2Ftransferring-projects&source_site=vercel-docs&relationship=related)
+- [Projects can now be transferred without downtime](https://vercel.com/changelog/projects-can-now-be-transferred-without-downtime?from=related&source_path=%2Fdocs%2Fprojects%2Ftransferring-projects&source_site=vercel-docs&relationship=related)
+- [Transferring Domains to Vercel](https://vercel.com/kb/guide/transferring-domains-to-vercel?from=related&source_path=%2Fdocs%2Fprojects%2Ftransferring-projects&source_site=vercel-docs&relationship=related) — How to transfer your domain to Vercel.
+- [How do I transfer my domain to Vercel?](https://vercel.com/kb/guide/how-do-i-transfer-my-domain-to-vercel?from=related&source_path=%2Fdocs%2Fprojects%2Ftransferring-projects&source_site=vercel-docs&relationship=related) — Information on how to transfer a domain to Vercel.
+- [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team?from=related&source_path=%2Fdocs%2Fprojects%2Ftransferring-projects&source_site=vercel-docs&relationship=related) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
+- [Create project transfer request](https://vercel.com/docs/rest-api/projects/create-project-transfer-request?from=related&source_path=%2Fdocs%2Fprojects%2Ftransferring-projects&source_site=vercel-docs&relationship=related) — POST /projects/{idOrName}/transfer-request — Initiates a project transfer request from one team to another. \<br/\> Return
+- [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fprojects%2Ftransferring-projects&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Claim Deployments](https://vercel.com/docs/deployments/claim-deployments?from=related&source_path=%2Fdocs%2Fprojects%2Ftransferring-projects&source_site=vercel-docs&relationship=related) — Learn how to take ownership of deployments on Vercel with the Claim Deployments feature.
+- [Accept project transfer request](https://vercel.com/docs/rest-api/projects/accept-project-transfer-request?from=related&source_path=%2Fdocs%2Fprojects%2Ftransferring-projects&source_site=vercel-docs&relationship=related) — PUT /projects/transfer-request/{code} — Accept a project transfer request initated by another team. \<br/\> The \\`code\\` i
 
-Full cross-link map for this page: [/docs/projects/transferring-projects.graph.md](/docs/projects/transferring-projects.graph.md)
+Full cross-link map for this page: [/docs/projects/transferring-projects.graph.md](/docs/projects/transferring-projects.graph.md?from=related&source_path=%2Fdocs%2Fprojects%2Ftransferring-projects&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 You must be an [owner](/docs/rbac/access-roles#owner-role) of the team you're transferring from, and a member of the team you're transferring to. For example, you can transfer a project from your Hobby team to a Pro team, and vice versa if you're an owner on the Pro team.

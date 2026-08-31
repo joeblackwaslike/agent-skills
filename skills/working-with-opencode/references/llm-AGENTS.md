@@ -1,6 +1,6 @@
 ---
 source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/packages/opencode/src/session/llm/AGENTS.md"
-fetched_at: "2026-08-24T04:50:17.163Z"
+fetched_at: "2026-08-31T10:43:22.630Z"
 sha256: "f1c14f72f12e42b5683cd1a021cb7b1c46b92f30d0c0986940655420b99172f4"
 ---
 

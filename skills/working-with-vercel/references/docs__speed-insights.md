@@ -3,7 +3,7 @@ title: Speed Insights Overview
 product: vercel
 url: /docs/speed-insights
 canonical_url: "https://vercel.com/docs/speed-insights"
-last_updated: 2026-06-16
+last_updated: 2026-08-25
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: "This page lists out and explains all the performance metrics provided by Vercel's Speed Insights feature."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "d9a2b1635e042cb8a944d76f3dfd615d4b3a0874d30012973e23d9769d1c6eef"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "62147cbbf7123480487d81051deebdf4ed1028aa4e623c183fb725f23e5f5589"
 ---
 
 # Speed Insights Overview
@@ -30,18 +30,20 @@ sha256: "d9a2b1635e042cb8a944d76f3dfd615d4b3a0874d30012973e23d9769d1c6eef"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud?from=related) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
-- [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation?from=related) — A practical checklist for keeping your storefront fast and your checkout path healthy through Black Friday and Cyber Mon
-- [Improve Cumulative Layout Shift \\(CLS\\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel?from=related) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
-- [Deploy a headless BigCommerce storefront with Vercel](https://vercel.com/kb/guide/deploy-headless-bigcommerce-storefront-with-vercel?from=related) — Deploy a headless BigCommerce storefront using Catalyst and Next.js on Vercel
-- [First Input Delay \\(FID\\) vs. Interaction to Next Paint \\(INP\\)](https://vercel.com/kb/guide/first-input-delay-vs-interaction-to-next-paint?from=related) — Learn about the differences between FID and INP and how to optimize your website's INP score.
-- [Insights](https://vercel.com/docs/observability/insights?from=related) — List of available data sources that you can view and monitor with Observability on Vercel.
-- [Manage and Optimize Usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
-- [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics?from=related) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
-- [Checks](https://vercel.com/docs/checks?from=related) — Vercel automatically keeps an eye on various aspects of your web application using the Checks API. Learn how to use Chec
-- [vercel project](https://vercel.com/docs/cli/project?from=related) — Perform the following commands from the terminal for your Vercel Projects: list, add, inspect, update settings, rename,
+- [Automatically detect and replay layout shifts from the Vercel Toolbar](https://vercel.com/changelog/automatically-detect-and-replay-layout-shifts?from=related&source_path=%2Fdocs%2Fspeed-insights&source_site=vercel-docs&relationship=related)
+- [Export traces, web analytics events, and speed insights datapoints to any destination](https://vercel.com/changelog/export-more-data-with-vercel-drains?from=related&source_path=%2Fdocs%2Fspeed-insights&source_site=vercel-docs&relationship=related)
+- [Filter by custom date ranges in Speed Insights](https://vercel.com/changelog/filter-by-custom-date-ranges-in-speed-insights?from=related&source_path=%2Fdocs%2Fspeed-insights&source_site=vercel-docs&relationship=related)
+- [Improved data collection for Web Analytics and Speed Insights with resilient intake](https://vercel.com/changelog/improved-data-collection-for-web-analytics-and-speed-insights-with-resilient?from=related&source_path=%2Fdocs%2Fspeed-insights&source_site=vercel-docs&relationship=related)
+- [Improved Speed Insights experience](https://vercel.com/changelog/improved-speed-insights-experience?from=related&source_path=%2Fdocs%2Fspeed-insights&source_site=vercel-docs&relationship=related)
+- [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud?from=related&source_path=%2Fdocs%2Fspeed-insights&source_site=vercel-docs&relationship=related) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
+- [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation?from=related&source_path=%2Fdocs%2Fspeed-insights&source_site=vercel-docs&relationship=related) — A practical checklist for keeping your storefront fast and your checkout path healthy through Black Friday and Cyber Mon
+- [Improve Cumulative Layout Shift \\(CLS\\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel?from=related&source_path=%2Fdocs%2Fspeed-insights&source_site=vercel-docs&relationship=related) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
+- [First Input Delay \\(FID\\) vs. Interaction to Next Paint \\(INP\\)](https://vercel.com/kb/guide/first-input-delay-vs-interaction-to-next-paint?from=related&source_path=%2Fdocs%2Fspeed-insights&source_site=vercel-docs&relationship=related) — Learn about the differences between FID and INP and how to optimize your website's INP score.
+- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel?from=related&source_path=%2Fdocs%2Fspeed-insights&source_site=vercel-docs&relationship=related) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
+- [First Input Delay (FID) vs. Interaction to Next Paint (INP)](https://vercel.com/blog/first-input-delay-vs-interaction-to-next-paint?from=related&source_path=%2Fdocs%2Fspeed-insights&source_site=vercel-docs&relationship=related)
+- [How Core Web Vitals affect SEO](https://vercel.com/blog/how-core-web-vitals-affect-seo?from=related&source_path=%2Fdocs%2Fspeed-insights&source_site=vercel-docs&relationship=related)
 
-Full cross-link map for this page: [/docs/speed-insights.graph.md](/docs/speed-insights.graph.md)
+Full cross-link map for this page: [/docs/speed-insights.graph.md](/docs/speed-insights.graph.md?from=related&source_path=%2Fdocs%2Fspeed-insights&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 - To set up Speed Insights for your project, see the [Quickstart](/docs/speed-insights/quickstart).

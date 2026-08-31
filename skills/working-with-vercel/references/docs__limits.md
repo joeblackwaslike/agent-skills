@@ -3,7 +3,7 @@ title: Limits
 product: vercel
 url: /docs/limits
 canonical_url: "https://vercel.com/docs/limits"
-last_updated: 2026-08-03
+last_updated: 2026-08-25
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/limits.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "77cfd7e1484c5aac0e8990280c6f03750e5fd91fd5b98b88c9821810a4837a3e"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "a8a5fcc29c5facc8f2fa0f4cd400df8aae0f92d2269acd1084b840bdbf58ba40"
 ---
 
 # Limits
@@ -30,25 +30,26 @@ sha256: "77cfd7e1484c5aac0e8990280c6f03750e5fd91fd5b98b88c9821810a4837a3e"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Integration](https://v0.app/docs/vercel-integration?from=related) — How v0 and Vercel work in tandem.
-- [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
-- [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall?from=related) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
-- [Troubleshooting Build Error: "Build step did not complete within the maximum of 45 minutes"](https://vercel.com/kb/guide/troubleshooting-build-error-build-step-did-not-complete-within-45-minutes?from=related) — Learn common reasons Vercel builds hit the 45-minute limit and how to reduce build times so your deployments stay fast a
-- [Why has my account or deployment been paused?](https://vercel.com/kb/guide/why-is-my-account-deployment-blocked?from=related) — Learn why a Vercel account or deployment gets paused, from budget and usage limits to policy violations, and how to resu
-- [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel?from=related) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
-- [Legacy Usage & Pricing](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related) — Learn about legacy usage and pricing for Vercel Functions.
-- [Pricing](https://vercel.com/docs/pricing?from=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Plans](https://vercel.com/docs/plans?from=related) — Learn about the different plans available on Vercel.
-- [Limits](https://vercel.com/docs/platforms/multi-tenant-platforms/limits?from=related) — Understand the limits and features available for Vercel for Platforms.
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [Vercel Integration](https://v0.app/docs/vercel-integration?from=related&source_path=%2Fdocs%2Flimits&source_site=vercel-docs&relationship=related) — How v0 and Vercel work in tandem.
+- [CDN origin timeout increased to two minutes](https://vercel.com/changelog/cdn-origin-timeout-increased-to-two-minutes?from=related&source_path=%2Fdocs%2Flimits&source_site=vercel-docs&relationship=related)
+- [CLI deployment limits removed](https://vercel.com/changelog/cli-deployment-limits-removed?from=related&source_path=%2Fdocs%2Flimits&source_site=vercel-docs&relationship=related)
+- [Increased limit for projects per Git repo](https://vercel.com/changelog/increased-limit-for-projects-per-git-repo?from=related&source_path=%2Fdocs%2Flimits&source_site=vercel-docs&relationship=related)
+- [Vercel Sandbox now supports 10,000 concurrent sandboxes and 5,000 vCPUs per minute](https://vercel.com/changelog/vercel-sandbox-now-supports-10-000-concurrent-sandboxes-and-5-000-vcpus-per-minute?from=related&source_path=%2Fdocs%2Flimits&source_site=vercel-docs&relationship=related)
+- [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related&source_path=%2Fdocs%2Flimits&source_site=vercel-docs&relationship=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
+- [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall?from=related&source_path=%2Fdocs%2Flimits&source_site=vercel-docs&relationship=related) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
+- [Troubleshooting Build Error: "Build step did not complete within the maximum of 45 minutes"](https://vercel.com/kb/guide/troubleshooting-build-error-build-step-did-not-complete-within-45-minutes?from=related&source_path=%2Fdocs%2Flimits&source_site=vercel-docs&relationship=related) — Learn common reasons Vercel builds hit the 45-minute limit and how to reduce build times so your deployments stay fast a
+- [Why has my account or deployment been paused?](https://vercel.com/kb/guide/why-is-my-account-deployment-blocked?from=related&source_path=%2Fdocs%2Flimits&source_site=vercel-docs&relationship=related) — Learn why a Vercel account or deployment gets paused, from budget and usage limits to policy violations, and how to resu
+- [Simpler Pricing](https://vercel.com/blog/simpler-pricing?from=related&source_path=%2Fdocs%2Flimits&source_site=vercel-docs&relationship=related)
+- [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Flimits&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
+- [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel?from=related&source_path=%2Fdocs%2Flimits&source_site=vercel-docs&relationship=related) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
 
-Full cross-link map for this page: [/docs/limits.graph.md](/docs/limits.graph.md)
+Full cross-link map for this page: [/docs/limits.graph.md](/docs/limits.graph.md?from=related&source_path=%2Fdocs%2Flimits&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 You can raise many of the limits on this page. The process depends on your plan:
 
 - **Enterprise**: Contact your Vercel account team to request a limit increase. Limits marked as **Custom** are set in your contract.
-- **Pro**: [Contact our support team](/help) to request a limit increase, or [talk to sales](/contact/sales) about Enterprise for custom limits.
+- **Pro**: [Talk to sales](/contact/sales) about Enterprise for custom limits.
 - **Hobby**: [Upgrade to Pro](/docs/plans/pro-plan) for higher limits.
 
 ## General limits
@@ -74,11 +75,11 @@ To prevent abuse of our platform, we apply the following limits to all accounts.
 
 |                      | Hobby       | Pro         |
 | -------------------- | ----------- | ----------- |
-| Active CPU           | 4 CPU-hrs   | Usage-based |
-| Provisioned Memory   | 360 GB-hrs  | Usage-based |
-| Invocations          | 1 million   | Usage-based |
-| Fast Data Transfer   | 100 GB      | 1 TB        |
-| Fast Origin Transfer | Up to 10 GB | Usage-based |
+| Active CPU           |  CPU-hrs   | Usage-based |
+| Provisioned Memory   |  GB-hrs  | Usage-based |
+| Invocations          |  million   | Usage-based |
+| Fast Data Transfer   |  GB      |  TB        |
+| Fast Origin Transfer | Up to  GB | Usage-based |
 
 For Teams on the Pro plan, a monthly usage credit applies to billable resources. After applicable included allowances and credit, Vercel bills usage [on demand](/docs/limits#on-demand-resources-for-pro).
 
@@ -164,7 +165,7 @@ There are two types of logs: **build logs** and **runtime logs**. Both have diff
 
 [Build logs](/docs/deployments/logs) are stored indefinitely for each deployment.
 
-[Runtime logs](/docs/logs/runtime) are stored for **1 hour** on Hobby, **1 day** on Pro, and for **3 days** on Enterprise accounts. To learn more about these log limits, [read here](/docs/logs/runtime#limits).
+[Runtime logs](/docs/logs/runtime) are stored for&#x20;**&#x20;hour** on Hobby,&#x20;**&#x20;day** on Pro, and for&#x20;**&#x20;days** on Enterprise accounts. To learn more about these log limits, [read here](/docs/logs/runtime#limits).
 
 ## Environment variables
 

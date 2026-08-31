@@ -3,7 +3,7 @@ title: Vercel CMS Integrations
 product: vercel
 url: /docs/integrations/cms
 canonical_url: "https://vercel.com/docs/integrations/cms"
-last_updated: 2026-04-07
+last_updated: 2026-08-11
 type: how-to
 prerequisites:
   - /docs/integrations
@@ -16,8 +16,8 @@ related:
 summary: Learn how to integrate Vercel with CMS platforms, including Contentful, Sanity, and Sitecore XM Cloud.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/cms.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "36540200decd4ec32bdae675ee753c333af33e4a6845d90633022eee5af6ddd1"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "cd965d5ab0fcd08b656c645957e546a350898dbd43a44e1534be14b87e9b85e9"
 ---
 
 # Vercel CMS Integrations
@@ -30,14 +30,15 @@ Vercel Content Management System (CMS) Integrations allow you to connect your pr
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Using a Headless CMS with Vercel](https://vercel.com/kb/guide/using-a-headless-cms-with-vercel?from=related) — Learn best practices for using databases in a serverless environment with Vercel
-- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
-- [Commerce and Payments](https://vercel.com/docs/integrations/ecommerce?from=related) — Learn how to integrate Vercel with payment processors and ecommerce platforms, including Stripe, Shopify, BigCommerce, a
-- [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
-- [Marketplace Vercel API](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel?from=related) — Learn about marketplace vercel api on Vercel.
-- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
+- [Introducing new developer tools in the Vercel Toolbar](https://vercel.com/blog/introducing-new-developer-tools-in-the-vercel-toolbar?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms&source_site=vercel-docs&relationship=related)
+- [Using a Headless CMS with Vercel](https://vercel.com/kb/guide/using-a-headless-cms-with-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms&source_site=vercel-docs&relationship=related) — Learn best practices for using databases in a serverless environment with Vercel
+- [Supercharge your Vercel Projects with Integrations](https://vercel.com/blog/integrations-marketplace?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms&source_site=vercel-docs&relationship=related)
+- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms&source_site=vercel-docs&relationship=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
+- [Vercel Commerce and Payments Integrations](https://vercel.com/docs/integrations/ecommerce?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms&source_site=vercel-docs&relationship=related) — Learn how to integrate Vercel with payment processors and ecommerce platforms, including Stripe, Shopify, BigCommerce, a
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
-Full cross-link map for this page: [/docs/integrations/cms.graph.md](/docs/integrations/cms.graph.md)
+Full cross-link map for this page: [/docs/integrations/cms.graph.md](/docs/integrations/cms.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 You can use the following methods to integrate your CMS with Vercel:

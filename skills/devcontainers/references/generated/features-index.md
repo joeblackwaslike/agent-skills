@@ -1,8 +1,8 @@
 ---
 title: "Available features index"
 source: "https://containers.dev/features"
-fetched_at: "2026-08-24T04:42:55.961Z"
-sha256: "e88f8290b9bc0d023dcd877f8f27ebd6f0ad7b8d7ecf29dc491dc3709bfc8c1e"
+fetched_at: "2026-08-31T10:36:13.334Z"
+sha256: "26d581631b5fa9e0aa5c0eec5818f70c03ae4fbd06b66f8932930f4e8c632c57"
 ---
 
 # Available features index
@@ -112,7 +112,7 @@ Features
 | Conda | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/conda:2` | `2.0.1` |
 | GitHub Copilot CLI | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/copilot-cli:1` | `1.1.3` |
 | Light-weight Desktop | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/desktop-lite:1` | `1.2.10` |
-| Docker (Docker-in-Docker) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/docker-in-docker:4` | `4.0.0` |
+| Docker (Docker-in-Docker) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/docker-in-docker:4` | `4.1.0` |
 | Docker (docker-outside-of-docker) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/docker-outside-of-docker:1` | `1.10.0` |
 | Dotnet CLI | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/dotnet:2` | `2.5.0` |
 | Git (from source) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/git:1` | `1.3.8` |
@@ -120,7 +120,7 @@ Features
 | GitHub CLI | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/github-cli:1` | `1.1.1` |
 | Go | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/go:1` | `1.3.4` |
 | Hugo | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/hugo:1` | `1.1.3` |
-| Java (via SDKMAN!) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/java:1` | `1.8.1` |
+| Java (via SDKMAN!) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/java:1` | `1.8.2` |
 | Kubectl, Helm, and Minikube | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/kubectl-helm-minikube:1` | `1.3.1` |
 | Nix Package Manager | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/nix:1` | `1.3.1` |
 | Node.js (via nvm), yarn and pnpm. | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/node:2` | `2.1.0` |
@@ -490,7 +490,7 @@ Features
 | alpine-mage2postman | cirolosapio | `ghcr.io/cirolosapio/devcontainers-features/alpine-mage2postman:0` | `0.0.3` |
 | alpine-magento-cloud-cli | cirolosapio | `ghcr.io/cirolosapio/devcontainers-features/alpine-magento-cloud-cli:0` | `0.0.8` |
 | alpine-make | cirolosapio | `ghcr.io/cirolosapio/devcontainers-features/alpine-make:0` | `0.0.2` |
-| alpine-n98-magerun2 | cirolosapio | `ghcr.io/cirolosapio/devcontainers-features/alpine-n98-magerun2:0` | `0.0.32` |
+| alpine-n98-magerun2 | cirolosapio | `ghcr.io/cirolosapio/devcontainers-features/alpine-n98-magerun2:0` | `0.0.33` |
 | alpine-nano | cirolosapio | `ghcr.io/cirolosapio/devcontainers-features/alpine-nano:0` | `0.0.2` |
 | alpine-navi | cirolosapio | `ghcr.io/cirolosapio/devcontainers-features/alpine-navi:0` | `0.0.12` |
 | alpine-node | cirolosapio | `ghcr.io/cirolosapio/devcontainers-features/alpine-node:0` | `0.0.16` |
@@ -502,7 +502,7 @@ Features
 | alpine-patch | cirolosapio | `ghcr.io/cirolosapio/devcontainers-features/alpine-patch:0` | `0.0.2` |
 | alpine-pgsql-client | cirolosapio | `ghcr.io/cirolosapio/devcontainers-features/alpine-pgsql-client:0` | `0.0.3` |
 | alpine-php-bcmath | cirolosapio | `ghcr.io/cirolosapio/devcontainers-features/alpine-php-bcmath:0` | `0.0.2` |
-| alpine-php-composer | cirolosapio | `ghcr.io/cirolosapio/devcontainers-features/alpine-php-composer:0` | `0.0.34` |
+| alpine-php-composer | cirolosapio | `ghcr.io/cirolosapio/devcontainers-features/alpine-php-composer:0` | `0.0.35` |
 | alpine-php-ftp | cirolosapio | `ghcr.io/cirolosapio/devcontainers-features/alpine-php-ftp:0` | `0.0.3` |
 | alpine-php-gd | cirolosapio | `ghcr.io/cirolosapio/devcontainers-features/alpine-php-gd:0` | `0.0.2` |
 | alpine-php-intl | cirolosapio | `ghcr.io/cirolosapio/devcontainers-features/alpine-php-intl:0` | `0.0.3` |
@@ -617,11 +617,11 @@ Features
 | uv | Valentin Heiligers | `ghcr.io/va-h/devcontainers-features/uv:1` | `1.1.4` |
 | AWS CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/aws-cli:1` | `1.6.27` |
 | Azure CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/azure-cli:1` | `1.0.21` |
-| Common Utilities | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/common-utils:1` | `1.4.126` |
+| Common Utilities | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/common-utils:1` | `1.4.128` |
 | Docker (Docker-in-Docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-in-docker:1` | `1.3.38` |
 | Docker (docker-outside-of-docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-outside-of-docker:1` | `1.3.38` |
-| Google Cloud CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/gcloud-cli:1` | `1.0.73` |
-| Go | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/go:1` | `1.7.37` |
+| Google Cloud CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/gcloud-cli:1` | `1.0.74` |
+| Go | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/go:1` | `1.7.38` |
 | Terraform, tflint, and TFGrunt | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/terraform:1` | `1.3.28` |
 | bpmnlint | Waqqas Jabbar | `ghcr.io/waqqas/feature/bpmnlint:1` | `1.0.1` |
 | dmnlint | Waqqas Jabbar | `ghcr.io/waqqas/feature/dmnlint:1` | `1.0.1` |
@@ -1268,7 +1268,7 @@ Features
 | gcx | TheDiveO | `ghcr.io/thediveo/devcontainer-features/gcx:0` | `0.0.2` |
 | Go ebpf development | TheDiveO | `ghcr.io/thediveo/devcontainer-features/go-ebpf:1` | `1.0.0` |
 | go-mod-upgrade | TheDiveO | `ghcr.io/thediveo/devcontainer-features/go-mod-upgrade:1` | `1.0.0` |
-| Go Coverage with Badge | TheDiveO | `ghcr.io/thediveo/devcontainer-features/gocover:1` | `1.0.0` |
+| Go Coverage with Badge | TheDiveO | `ghcr.io/thediveo/devcontainer-features/gocover:1` | `1.0.1` |
 | Go Report Card | TheDiveO | `ghcr.io/thediveo/devcontainer-features/goreportcard:1` | `1.0.0` |
 | lazygit | TheDiveO | `ghcr.io/thediveo/devcontainer-features/lazygit:0` | `0.0.2` |
 | Local Go Pkgsite | TheDiveO | `ghcr.io/thediveo/devcontainer-features/local-pkgsite:1` | `1.0.2` |
@@ -1346,17 +1346,17 @@ Features
 | Vercel CLI | siri404 | `ghcr.io/siri404/devcontainer-ai-features/vercel-cli:1` | `1.0.1` |
 | Angular Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/angular-dev:1` | `1.0.6` |
 | Automatic File Headers | baxyz | `ghcr.io/helpers4/devcontainer/auto-header:1` | `1.0.8` |
-| Claude Code Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/claude-dev:1` | `1.0.5` |
+| Claude Code Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/claude-dev:1` | `1.0.6` |
 | GitHub Copilot Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/copilot-dev:1` | `1.0.3` |
 | Dotfiles Sync | baxyz | `ghcr.io/helpers4/devcontainer/dotfiles-sync:1` | `1.0.8` |
 | Essential Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/essential-dev:1` | `1.0.9` |
 | git-absorb | baxyz | `ghcr.io/helpers4/devcontainer/git-absorb:1` | `1.0.7` |
 | GitHub Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/github-dev:1` | `1.0.5` |
 | helpers4 Common Library | baxyz | `ghcr.io/helpers4/devcontainer/helpers4-common:1` | `1.0.1` |
-| Mistral Vibe Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/mistral-dev:1` | `1.0.3` |
+| Mistral Vibe Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/mistral-dev:1` | `1.0.4` |
 | Nub — Fast TypeScript/Node Toolchain | baxyz | `ghcr.io/helpers4/devcontainer/nub:1` | `1.0.0` |
 | Automatic Package Installation | baxyz | `ghcr.io/helpers4/devcontainer/package-auto-install:1` | `1.0.9` |
-| Peon Ping — AI Agent Sound Notifications | baxyz | `ghcr.io/helpers4/devcontainer/peon-ping:1` | `1.0.5` |
+| Peon Ping — AI Agent Sound Notifications | baxyz | `ghcr.io/helpers4/devcontainer/peon-ping:1` | `1.0.6` |
 | Playwright Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/playwright-dev:1` | `1.0.1` |
 | pnpm Store (shared) | baxyz | `ghcr.io/helpers4/devcontainer/pnpm-store:1` | `1.0.7` |
 | Shell History Per Project | baxyz | `ghcr.io/helpers4/devcontainer/shell-history-per-project:1` | `1.0.7` |
@@ -1481,7 +1481,7 @@ Features
 | Set a specific timezone | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/timezone:1` | `1.0.0` |
 | Vault CLI | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/vault-cli:1` | `1.0.0` |
 | Zig | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/zig:1` | `1.0.0` |
-| Claude config mount | NicoVIII | `ghcr.io/nicoviii/devcontainer-features/claude-mount:0` | `0.1.0` |
+| Roc (nightly, via GitHub Releases) | NicoVIII | `ghcr.io/nicoviii/devcontainer-features/roc:0` | `0.1.0` |
 | Linux PulseAudio Forwarding | althack | `ghcr.io/althack/devcontainers/linux-pulseaudio-forwarding:0` | `0.4.0` |
 | Linux X11 Forwarding | althack | `ghcr.io/althack/devcontainers/linux-x11-forwarding:0` | `0.4.0` |
 | ROS 2 | althack | `ghcr.io/althack/devcontainers/ros2:0` | `0.4.0` |
@@ -1522,7 +1522,7 @@ Features
 | prek | Stephen Mott | `ghcr.io/srzstephen/devcontainer-features/prek:1` | `1.0.1` |
 | LazyVim | XavierBeheydt | `ghcr.io/xavierbeheydt/devcontainer-extras/lazyvim:0` | `0.1.0` |
 | Tectonic | sjp | `ghcr.io/sjp/tectonic-feature/tectonic:1` | `1.0.0` |
-| Dev Container Development Certificates | dnegstad | `ghcr.io/dnegstad/devcontainer-dev-certs/devcontainer-dev-certs:1` | `1.3.2` |
+| Dev Container Development Certificates | dnegstad | `ghcr.io/dnegstad/devcontainer-dev-certs/devcontainer-dev-certs:1` | `1.4.0` |
 | Crush | jrussellsmyth | `ghcr.io/jrussellsmyth/devcontainer-features/crush:1` | `1.0.0` |
 | OpenSpec | jrussellsmyth | `ghcr.io/jrussellsmyth/devcontainer-features/openspec:1` | `1.0.0` |
 | Yarn APT Public Key Update | jrussellsmyth | `ghcr.io/jrussellsmyth/devcontainer-features/yarn-apt-publickey:1` | `1.0.0` |
@@ -1533,6 +1533,7 @@ Features
 | Matt Pocock's Skills | NolanJX | `ghcr.io/nolanjx/devcontainer-features/mattpocock-skills:1` | `1.0.0` |
 | Pi Coding Agent | NolanJX | `ghcr.io/nolanjx/devcontainer-features/pi-coding-agent:1` | `1.0.0` |
 | Claude Code (apt) | Andrii Pravorskyi | `registry.gitlab.com/pravorskyi/devcontainer-features/claude-code:1` | `1.0.0` |
+| LiquiLens Evidence Carrier | beepboop2025 | `ghcr.io/beepboop2025/liquilens-devcontainer-features/liquilens-evidence:1` | `1.0.0` |
 
 
             

@@ -3,7 +3,7 @@ title: Vercel CLI Overview
 product: vercel
 url: /docs/cli
 canonical_url: "https://vercel.com/docs/cli"
-last_updated: 2026-07-29
+last_updated: 2026-08-25
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel command-line interface (CLI) to manage and configure your Vercel Projects from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "e2919923cf1f853783f775bb5bb8f9cefb8cc9f68135fc31f89024105f455ce8"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "b4fc0d1c597699181d66560b6706c6f8c769d2ef74d5b66a3290e57dcc0b65b1"
 ---
 
 # Vercel CLI Overview
@@ -30,20 +30,20 @@ Vercel gives you multiple ways to interact with and configure your Vercel Projec
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related)
-- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related)
-- [Terminal commands](https://v0.app/docs/terminal-commands?from=related) — v0 can run bash commands in your project sandbox to test, debug, and use platform CLIs. Control its autonomy with three
-- [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related) — Point your apex domain to Vercel with an A record \\(76.76.21.21 or your domain card's value\\), pair it with a www CNAME,
-- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
-- [How to build a browser agent that works behind a login](https://vercel.com/kb/guide/build-a-browser-agent?from=related) — Build a browser agent with eve, Vercel Connect, and KERNEL managed auth that signs a user in through a human-in-the-loop
-- [Build with an Express starter template](https://vercel.com/kb/guide/build-with-a-express-starter-template?from=related) — Deploy an Express app to Vercel from a template. Browse Express starters from Vercel and the community, then run them lo
-- [Build with a FastAPI starter template](https://vercel.com/kb/guide/build-with-a-fastapi-starter-template?from=related) — Browse FastAPI starter templates for Vercel and deploy one in a few steps. Compare minimal, AI, agent, and full-stack Fa
-- [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
-- [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
-- [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Deploy from CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related)
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related)
+- [Terminal commands](https://v0.app/docs/terminal-commands?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related) — v0 can run bash commands in your project sandbox to test, debug, and use platform CLIs. Control its autonomy with three
+- [Agent Runs now available in the Vercel MCP and CLI](https://vercel.com/changelog/agent-runs-vercel-mcp-cli?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related)
+- [Configure weighted traffic splits for Vercel Flags from the Vercel CLI](https://vercel.com/changelog/configure-weighted-traffic-splits-for-vercel-flags-from-the-vercel-cli?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related)
+- [Copy-to-Prompt instructions now available for Flags](https://vercel.com/changelog/copy-to-prompt-instructions-now-available-for-flags?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related)
+- [Deploy Hono backends with zero configuration](https://vercel.com/changelog/deploy-hono-backends-with-zero-configuration?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related)
+- [Experimental native binaries for Vercel CLI](https://vercel.com/changelog/experimental-native-binaries-for-vercel-cli?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related)
+- [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related) — Point your apex domain to Vercel with an A record \\(76.76.21.21 or your domain card's value\\), pair it with a www CNAME,
+- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
+- [Build with an Express starter template](https://vercel.com/kb/guide/build-with-a-express-starter-template?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related) — Deploy an Express app to Vercel from a template. Browse Express starters from Vercel and the community, then run them lo
+- [Build with a FastAPI starter template](https://vercel.com/kb/guide/build-with-a-fastapi-starter-template?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related) — Browse FastAPI starter templates for Vercel and deploy one in a few steps. Compare minimal, AI, agent, and full-stack Fa
 
-Full cross-link map for this page: [/docs/cli.graph.md](/docs/cli.graph.md)
+Full cross-link map for this page: [/docs/cli.graph.md](/docs/cli.graph.md?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 If you'd like to interface with the platform programmatically, check out the [REST API documentation](/docs/rest-api).
@@ -909,6 +909,13 @@ vercel traces get [request-id] --open
 vercel traces config ls
 vercel traces config set production 25
 vercel traces config rm production
+```
+
+Open a trace directly in the tree or waterfall view:
+
+```bash
+vercel traces get [request-id] --open --view=tree
+vercel traces get [request-id] --open --view=waterfall
 ```
 
 [Learn more about the traces command](/docs/cli/traces)

@@ -3,21 +3,21 @@ title: Project Configuration
 product: vercel
 url: /docs/project-configuration
 canonical_url: "https://vercel.com/docs/project-configuration"
-last_updated: 2026-06-16
+last_updated: 2026-08-25
 type: conceptual
 prerequisites:
   []
 related:
   - /docs/project-configuration/project-settings
   - /docs/project-configuration/vercel-json
+  - /docs/project-configuration/vercel-toml
   - /docs/project-configuration/vercel-ts
   - /docs/project-configuration/global-configuration
-  - /docs/project-configuration/general-settings
-summary: Learn how to configure your Vercel projects using vercel.json, vercel.ts, or the dashboard to control builds, routing, functions, and more.
+summary: Learn how to configure your Vercel projects using vercel.json, vercel.toml, vercel.ts, or the dashboard to control builds, routing, functions, and...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "0d69f020def871a8f63d72ad020fd21846d86d883443ce676e34d0a513b0bff2"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "cf0063c9e02ff7c7546f995d900e09c776679fc061e8004a275f9c2c1c47abbb"
 ---
 
 # Project Configuration
@@ -30,23 +30,26 @@ Vercel automatically detects your framework and sets sensible defaults for build
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Can I redirect from a subdomain to a subpath?](https://vercel.com/kb/guide/can-i-redirect-from-a-subdomain-to-a-subpath?from=related) — Learn how to redirect from your subdomain to a subpath on Vercel with a vercel.json file or with Next.js
-- [Can I route based on letter casing on Vercel?](https://vercel.com/kb/guide/can-i-route-based-on-letter-casing-on-vercel?from=related) — Information on whether or not it is possible to route based on letting casing with Vercel.
-- [Does Vercel support Ruby on Rails applications?](https://vercel.com/kb/guide/does-vercel-support-ruby-on-rails-applications?from=related) — Learn how you can use Ruby on Rails with your frontend on Vercel.
-- [How can I increase the limit of redirects or use dynamic redirects on Vercel?](https://vercel.com/kb/guide/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel?from=related) — Instructions on how to use Serverless Functions to handle redirects on Vercel.
-- [How can I reduce my Vercel Functions usage on Vercel?](https://vercel.com/kb/guide/how-can-i-reduce-my-serverless-execution-usage-on-vercel?from=related) — Reduce Vercel Functions usage and cost under Fluid compute pricing with caching, rendering strategies, and function conf
-- [Global Options](https://vercel.com/docs/cli/global-options?from=related) — Global options are commonly available to use with multiple Vercel CLI commands. Learn about Vercel CLI's global options
-- [Global Configs & Dashboard](https://vercel.com/docs/global-config/global-config-dashboard?from=related) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
-- [Service configuration reference](https://vercel.com/docs/services/config-reference?from=related) — Options available for service configuration.
-- [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration?from=related) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
-- [Configuration](https://vercel.com/docs/microfrontends/configuration?from=related) — Learn about configuration on Vercel.
+- [New configuration overrides available per-deployment](https://vercel.com/changelog/new-configuration-overrides-available-per-deployment?from=related&source_path=%2Fdocs%2Fproject-configuration&source_site=vercel-docs&relationship=related)
+- [Support for now.json will be removed on March 31, 2026](https://vercel.com/changelog/support-for-now-json-will-be-removed-on-march-31-2026?from=related&source_path=%2Fdocs%2Fproject-configuration&source_site=vercel-docs&relationship=related)
+- [Transform rules are now available in vercel.json](https://vercel.com/changelog/transform-rules-are-now-available-in-vercel-json?from=related&source_path=%2Fdocs%2Fproject-configuration&source_site=vercel-docs&relationship=related)
+- [Introducing vercel.ts: Programmatic project configuration](https://vercel.com/changelog/vercel-ts?from=related&source_path=%2Fdocs%2Fproject-configuration&source_site=vercel-docs&relationship=related)
+- [Web Application Firewall control now available with vercel.json](https://vercel.com/changelog/web-application-firewall-control-now-available-with-vercel-json?from=related&source_path=%2Fdocs%2Fproject-configuration&source_site=vercel-docs&relationship=related)
+- [Can I redirect from a subdomain to a subpath?](https://vercel.com/kb/guide/can-i-redirect-from-a-subdomain-to-a-subpath?from=related&source_path=%2Fdocs%2Fproject-configuration&source_site=vercel-docs&relationship=related) — Learn how to redirect from your subdomain to a subpath on Vercel with a vercel.json file or with Next.js
+- [Can I route based on letter casing on Vercel?](https://vercel.com/kb/guide/can-i-route-based-on-letter-casing-on-vercel?from=related&source_path=%2Fdocs%2Fproject-configuration&source_site=vercel-docs&relationship=related) — Information on whether or not it is possible to route based on letting casing with Vercel.
+- [Does Vercel support Ruby on Rails applications?](https://vercel.com/kb/guide/does-vercel-support-ruby-on-rails-applications?from=related&source_path=%2Fdocs%2Fproject-configuration&source_site=vercel-docs&relationship=related) — Learn how you can use Ruby on Rails with your frontend on Vercel.
+- [How can I increase the limit of redirects or use dynamic redirects on Vercel?](https://vercel.com/kb/guide/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel?from=related&source_path=%2Fdocs%2Fproject-configuration&source_site=vercel-docs&relationship=related) — Instructions on how to use Serverless Functions to handle redirects on Vercel.
+- [How can I reduce my Vercel Functions usage on Vercel?](https://vercel.com/kb/guide/how-can-i-reduce-my-serverless-execution-usage-on-vercel?from=related&source_path=%2Fdocs%2Fproject-configuration&source_site=vercel-docs&relationship=related) — Reduce Vercel Functions usage and cost under Fluid compute pricing with caching, rendering strategies, and function conf
+- [Vercel CLI Global Options](https://vercel.com/docs/cli/global-options?from=related&source_path=%2Fdocs%2Fproject-configuration&source_site=vercel-docs&relationship=related) — Global options are commonly available to use with multiple Vercel CLI commands. Learn about Vercel CLI's global options
+- [Managing Global Configs with the Dashboard](https://vercel.com/docs/global-config/global-config-dashboard?from=related&source_path=%2Fdocs%2Fproject-configuration&source_site=vercel-docs&relationship=related) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
 
-Full cross-link map for this page: [/docs/project-configuration.graph.md](/docs/project-configuration.graph.md)
+Full cross-link map for this page: [/docs/project-configuration.graph.md](/docs/project-configuration.graph.md?from=related&source_path=%2Fdocs%2Fproject-configuration&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 In addition to configuring your project through [Project Settings](/docs/project-configuration/project-settings), you have the following options:
 
 - [Static file-based configuration](/docs/project-configuration/vercel-json) - Static JSON configuration in your repository
+- [Static TOML configuration](/docs/project-configuration/vercel-toml) - Static TOML configuration in your repository
 - [Programmatic file-based configuration](/docs/project-configuration/vercel-ts) - Dynamic TypeScript configuration that runs at build time
 - [Global CLI configuration](/docs/project-configuration/global-configuration) - System-wide Vercel CLI settings
 
@@ -54,7 +57,7 @@ Each method lets you control different aspects of your project.
 
 ## File-based configuration
 
-File-based configuration lives in your repository and gets version-controlled with your code. You can use either [`vercel.json`](/docs/project-configuration/vercel-json) for static configuration or [`vercel.ts`](/docs/project-configuration/vercel-ts) for programmatic configuration that runs at build time. Both support the same properties, but `vercel.ts` lets you generate configuration dynamically using environment variables, API calls, or other build-time logic. You can only use one configuration file per project.
+File-based configuration lives in your repository and gets version-controlled with your code. You can use [`vercel.json`](/docs/project-configuration/vercel-json) or [`vercel.toml`](/docs/project-configuration/vercel-toml) for static configuration, or [`vercel.ts`](/docs/project-configuration/vercel-ts) for programmatic configuration that runs at build time. The static formats support the same properties, while `vercel.ts` lets you generate configuration dynamically using environment variables, API calls, or other build-time logic. You can only use one configuration file per project.
 
 The table below shows all available configuration properties:
 

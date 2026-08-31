@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/open-responses.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "b48d27d304e4f7743a819259dabbdc55e51f6567d6cc1988e7600a3797dee5ad"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "2e997d66a8e812e924be34f7cdfc0136268e6cb8c8bb6c4797b2c6ba4a0ff048"
 ---
 
 # Open Responses Provider
@@ -277,6 +277,7 @@ provider.
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
 - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
+- [Z.AI](/providers/ai-sdk-providers/zai)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)
 - [Fireworks](/providers/ai-sdk-providers/fireworks)

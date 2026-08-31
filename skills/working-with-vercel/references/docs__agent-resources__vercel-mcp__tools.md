@@ -3,7 +3,7 @@ title: Tools
 product: vercel
 url: /docs/agent-resources/vercel-mcp/tools
 canonical_url: "https://vercel.com/docs/agent-resources/vercel-mcp/tools"
-last_updated: 2026-07-23
+last_updated: 2026-08-11
 type: conceptual
 prerequisites:
   - /docs/agent-resources/vercel-mcp
@@ -17,8 +17,8 @@ related:
 summary: Available tools in Vercel MCP for searching docs, managing teams, projects, deployments, Web Analytics, runtime logs and errors, Agent Runs, design...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "b7930222d5394bb81a69fbd0528b86e6c5a5b7d5dd4590b553be77d0a37f243d"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "ca1415821a99a07ef093427734e8680fcfd8da63bd9174d892a1012503e2f776"
 ---
 
 # Tools
@@ -31,13 +31,15 @@ The Vercel MCP server provides [MCP tools](https://modelcontextprotocol.io/speci
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics?from=related) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
-- [Using with CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
-- [Getting Started](https://vercel.com/docs/analytics/quickstart?from=related) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
-- [vercel metrics](https://vercel.com/docs/cli/metrics?from=related) — Query observability metrics and inspect available metrics, dimensions, and aggregations using the Vercel CLI.
-- [Aggregates page views](https://vercel.com/docs/rest-api/web-analytics/aggregates-page-views?from=related)
+- [Agent Runs now available in the Vercel MCP and CLI](https://vercel.com/changelog/agent-runs-vercel-mcp-cli?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools&source_site=vercel-docs&relationship=related)
+- [Query Web Analytics from the Vercel CLI](https://vercel.com/changelog/query-web-analytics-from-the-vercel-cli?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools&source_site=vercel-docs&relationship=related)
+- [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools&source_site=vercel-docs&relationship=related) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
+- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
+- [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools&source_site=vercel-docs&relationship=related) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
+- [vercel metrics](https://vercel.com/docs/cli/metrics?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools&source_site=vercel-docs&relationship=related) — List and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
+- [Audit Logs](https://vercel.com/docs/audit-log?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools&source_site=vercel-docs&relationship=related) — Learn how to track and analyze your team members' activities.
 
-Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools.graph.md](/docs/agent-resources/vercel-mcp/tools.graph.md)
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools.graph.md](/docs/agent-resources/vercel-mcp/tools.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Each tool below includes a sample prompt: a message you can send to your AI assistant (such as Claude Code, Cursor, or ChatGPT) after [connecting it to Vercel MCP](/docs/agent-resources/vercel-mcp). The assistant selects and calls the appropriate tools for you.

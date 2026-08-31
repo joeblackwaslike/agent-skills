@@ -1,10 +1,10 @@
 ---
-title: Managing Microfrontends
+title: Managing microfrontends
 product: vercel
 url: /docs/microfrontends/managing-microfrontends
 canonical_url: "https://vercel.com/docs/microfrontends/managing-microfrontends"
 last_updated: 2018-10-20
-type: conceptual
+type: how-to
 prerequisites:
   - /docs/microfrontends
 related:
@@ -13,11 +13,11 @@ related:
   - /docs/deployments/environments
   - /docs/errors/microfrontends_missing_fallback_error
   - /docs/domains/working-with-domains/assign-domain-to-a-git-branch
-summary: Learn about managing microfrontends on Vercel.
+summary: Learn how to manage your microfrontends on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/managing-microfrontends.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "22cbb316ef239a756a4df5abd40db7c71f521e194b23fcdea8b176bb3351f1b4"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "c08c4b801ffc4677a665fc2917dfc2208e4fd9941b4b0644bba73e55c3c92c48"
 ---
 
 # Managing microfrontends
@@ -30,17 +30,19 @@ With a project's **Microfrontends** settings of the Vercel dashboard, you can:
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Microfrontends](https://turborepo.dev/docs/guides/microfrontends?from=related) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
-- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain?from=related) — Learn how to serve multiple Vercel projects from a single domain.
-- [Incremental Migrations with Microfrontends](https://vercel.com/kb/guide/incremental-migrations-with-microfrontends?from=related) — Learn how to migrate legacy applications using microfrontends
-- [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related) — Learn how to debug how Vercel decides where to route your request
-- [Routing](https://vercel.com/docs/microfrontends/routing?from=related) — Learn about routing on Vercel.
-- [Getting Started](https://vercel.com/docs/microfrontends/quickstart?from=related) — Learn about getting started on Vercel.
-- [Testing & Troubleshooting](https://vercel.com/docs/microfrontends/troubleshooting?from=related) — Learn about testing & troubleshooting on Vercel.
-- [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Monorepos FAQ](https://vercel.com/docs/monorepos/monorepo-faq?from=related) — Learn the answer to common questions about deploying monorepos on Vercel.
+- [Microfrontends support is now in Public Beta](https://vercel.com/changelog/microfrontends-support-is-now-in-public-beta?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends&source_site=vercel-docs&relationship=related)
+- [Preview links between microfrontends projects now serve all paths](https://vercel.com/changelog/preview-links-between-microfrontends-projects-now-serve-all-paths?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends&source_site=vercel-docs&relationship=related)
+- [Microfrontends](https://turborepo.dev/docs/guides/microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends&source_site=vercel-docs&relationship=related) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
+- [How Vercel adopted microfrontends](https://vercel.com/blog/how-vercel-adopted-microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends&source_site=vercel-docs&relationship=related)
+- [Microfrontends now generally available](https://vercel.com/changelog/microfrontends-now-generally-available?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends&source_site=vercel-docs&relationship=related)
+- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends&source_site=vercel-docs&relationship=related) — Learn how to serve multiple Vercel projects from a single domain.
+- [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends&source_site=vercel-docs&relationship=related) — Learn how to get started with microfrontends on Vercel.
+- [Testing & troubleshooting microfrontends](https://vercel.com/docs/microfrontends/troubleshooting?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends&source_site=vercel-docs&relationship=related) — Learn about testing, common issues, and how to troubleshoot microfrontends on Vercel.
+- [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Monorepos FAQ](https://vercel.com/docs/monorepos/monorepo-faq?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends&source_site=vercel-docs&relationship=related) — Learn the answer to common questions about deploying monorepos on Vercel.
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
-Full cross-link map for this page: [/docs/microfrontends/managing-microfrontends.graph.md](/docs/microfrontends/managing-microfrontends.graph.md)
+Full cross-link map for this page: [/docs/microfrontends/managing-microfrontends.graph.md](/docs/microfrontends/managing-microfrontends.graph.md?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 - [Add](#adding-microfrontends) and [remove](#removing-microfrontends) microfrontends

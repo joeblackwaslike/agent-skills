@@ -3,7 +3,7 @@ title: provision-purchase
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/provision-purchase
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/provision-purchase"
-last_updated: 2026-08-24
+last_updated: 2026-08-31
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn about provision-purchase on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/provision-purchase.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "bd5a4fd226d0b6875db4e4bebf550cc9767de92add754e1309fb3cc9b4bedfc3"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "cbdd6c60eed64a4aba1b1a960b124dd112478edc803cd79c24cda5eb28dc37fb"
 ---
 
 # Provision Purchase
@@ -62,6 +62,15 @@ User Auth OIDC token claims schema:
     "account_id": {
       "type": "string"
     },
+    "parent_account_id": {
+      "type": "string",
+      "description": "For platform org-child installations (integration opt-in): the opaque account id of the parent (root) team. Identical to the `account_id` claim on the parent team’s own installation tokens."
+    },
+    "parent_installation_id": {
+      "type": "string",
+      "nullable": true,
+      "description": "For platform org-child installations (integration opt-in): the parent team’s installation of this integration, or null when the parent has none."
+    },
     "sub": {
       "type": "string",
       "description": "Denotes the User who is making the change (matches `/^account:[0-9a-fA-F]+:user:[0-9a-fA-F]+$/`)"
@@ -83,7 +92,11 @@ User Auth OIDC token claims schema:
     },
     "user_email": {
       "type": "string",
-      "description": "The user's verified email address. This is included for all Marketplace integrations by default."
+      "description": "The user's email address. This is included for all Marketplace integrations by default."
+    },
+    "user_email_verified": {
+      "type": "boolean",
+      "description": "Whether the user's email address has been verified."
     },
     "user_name": {
       "type": "string",
@@ -145,6 +158,15 @@ System Auth OIDC token claims schema:
     },
     "account_id": {
       "type": "string"
+    },
+    "parent_account_id": {
+      "type": "string",
+      "description": "For platform org-child installations (integration opt-in): the opaque account id of the parent (root) team. Identical to the `account_id` claim on the parent team’s own installation tokens."
+    },
+    "parent_installation_id": {
+      "type": "string",
+      "nullable": true,
+      "description": "For platform org-child installations (integration opt-in): the parent team’s installation of this integration, or null when the parent has none."
     }
   },
   "required": [

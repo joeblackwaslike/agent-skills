@@ -1,5 +1,5 @@
 ---
-title: Using Vercel Toolbar
+title: Managing with the Vercel Toolbar
 product: vercel
 url: /docs/microfrontends/managing-microfrontends/vercel-toolbar
 canonical_url: "https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar"
@@ -13,11 +13,11 @@ related:
   - /docs/microfrontends/quickstart
   - /docs/vercel-toolbar/in-production-and-localhost
   - /docs/microfrontends/troubleshooting
-summary: Learn about using vercel toolbar on Vercel.
+summary: Learn how to use the Vercel Toolbar to make it easier to manage microfrontends.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "6bdb5e692053fc9bb8a88c1382c31dad6a598995e75e444a148cc55cba434fd3"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "d7cdf439d5eea9326ffd52c84f4228c37052ab398546a2bbeb80aa4bb0bb3cfa"
 ---
 
 # Managing with the Vercel Toolbar
@@ -30,13 +30,16 @@ Using the [Vercel Toolbar](/docs/vercel-toolbar), you can visualize and independ
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Managing Toolbar](https://vercel.com/docs/vercel-toolbar/managing-toolbar?from=related) — Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
-- [Add to Production](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-production?from=related) — Learn how to add the Vercel Toolbar to your production environment and how your team members can use tooling to access t
-- [Routing](https://vercel.com/docs/microfrontends/routing?from=related) — Learn about routing on Vercel.
-- [Add to Localhost](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-localhost?from=related) — Learn how to use the Vercel Toolbar in your local environment.
-- [Browser Extensions](https://vercel.com/docs/vercel-toolbar/browser-extension?from=related) — The browser extensions enable you to use the toolbar in production environments, take screenshots and attach them to com
+- [Microfrontends support is now in Public Beta](https://vercel.com/changelog/microfrontends-support-is-now-in-public-beta?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends%2Fvercel-toolbar&source_site=vercel-docs&relationship=related)
+- [Introducing new developer tools in the Vercel Toolbar](https://vercel.com/blog/introducing-new-developer-tools-in-the-vercel-toolbar?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends%2Fvercel-toolbar&source_site=vercel-docs&relationship=related)
+- [Easier toolbar setup for SvelteKit and other Vite-based frameworks](https://vercel.com/changelog/easier-toolbar-setup-for-sveltekit-and-other-vite-based-frameworks?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends%2Fvercel-toolbar&source_site=vercel-docs&relationship=related)
+- [Managing the visibility of the Vercel Toolbar](https://vercel.com/docs/vercel-toolbar/managing-toolbar?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends%2Fvercel-toolbar&source_site=vercel-docs&relationship=related) — Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
+- [Add the Vercel Toolbar to your production environment](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-production?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends%2Fvercel-toolbar&source_site=vercel-docs&relationship=related) — Learn how to add the Vercel Toolbar to your production environment and how your team members can use tooling to access t
+- [Microfrontends Routing](https://vercel.com/docs/microfrontends/routing?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends%2Fvercel-toolbar&source_site=vercel-docs&relationship=related) — Configure which microfrontend handles each path and understand how Vercel selects deployments.
+- [Toolbar Browser Extensions](https://vercel.com/docs/vercel-toolbar/browser-extension?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends%2Fvercel-toolbar&source_site=vercel-docs&relationship=related) — The browser extensions enable you to use the toolbar in production environments, take screenshots and attach them to com
+- [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends%2Fvercel-toolbar&source_site=vercel-docs&relationship=related) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
 
-Full cross-link map for this page: [/docs/microfrontends/managing-microfrontends/vercel-toolbar.graph.md](/docs/microfrontends/managing-microfrontends/vercel-toolbar.graph.md)
+Full cross-link map for this page: [/docs/microfrontends/managing-microfrontends/vercel-toolbar.graph.md](/docs/microfrontends/managing-microfrontends/vercel-toolbar.graph.md?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends%2Fvercel-toolbar&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 You can access it in all microfrontends that you have [enabled the toolbar for](/docs/vercel-toolbar/in-production-and-localhost).

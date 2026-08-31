@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "7cf32a59255a44bb2da11a248aaab6dff48eb35b0d43aad4f78561f9a3157961"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "6c549f459c16cfcd712417d4ce88c1b0dc59a614f1cb53e0f7fd9615135d51c0"
 ---
 
 # AI SDK Harnesses
@@ -26,6 +26,16 @@ and response primitives.
       title: 'Codex',
       description: 'Use Codex through the AI SDK harness abstraction.',
       href: '/providers/ai-sdk-harnesses/codex',
+    },
+    {
+      title: 'Cursor',
+      description: 'Use Cursor through the AI SDK harness abstraction.',
+      href: '/providers/ai-sdk-harnesses/cursor',
+    },
+    {
+      title: 'fx',
+      description: 'Use fx through the AI SDK harness abstraction.',
+      href: '/providers/ai-sdk-harnesses/fx',
     },
     {
       title: 'Grok Build',
@@ -102,6 +112,7 @@ tools, UI, and terminal usage.
   - [QuiverAI](/providers/ai-sdk-providers/quiverai)
   - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
   - [Mistral AI](/providers/ai-sdk-providers/mistral)
+  - [Z.AI](/providers/ai-sdk-providers/zai)
   - [Together.ai](/providers/ai-sdk-providers/togetherai)
   - [Cohere](/providers/ai-sdk-providers/cohere)
   - [Fireworks](/providers/ai-sdk-providers/fireworks)
@@ -128,6 +139,8 @@ tools, UI, and terminal usage.
   - [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
   - [Grok Build](/providers/ai-sdk-harnesses/grok-build)
   - [Cline](/providers/ai-sdk-harnesses/cline)
+  - [Cursor](/providers/ai-sdk-harnesses/cursor)
+  - [fx](/providers/ai-sdk-harnesses/fx)
 - [Observability Integrations](/providers/observability)
   - [Arize AX](/providers/observability/arize-ax)
   - [Axiom](/providers/observability/axiom)

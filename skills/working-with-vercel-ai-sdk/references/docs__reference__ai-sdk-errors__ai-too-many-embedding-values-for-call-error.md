@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "db9bb69bc20fed3dfbb95b2e0eb73da0890a9de8cc92c3fb90f5efb0f7da6c75"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "211d447b760541ceae44fb807f533c5c8f3f7c39168322e024b917148fdcf50f"
 ---
 
 # AI_TooManyEmbeddingValuesForCallError
@@ -58,6 +58,7 @@ if (TooManyEmbeddingValuesForCallError.isInstance(error)) {
 - [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
 - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
+- [AI_StreamProviderError](/docs/reference/ai-sdk-errors/ai-stream-provider-error)
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
 - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
 - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)

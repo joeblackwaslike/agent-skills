@@ -3,7 +3,7 @@ title: DEPLOYMENT_BLOCKED
 product: vercel
 url: /docs/errors/DEPLOYMENT_BLOCKED
 canonical_url: "https://vercel.com/docs/errors/DEPLOYMENT_BLOCKED"
-last_updated: 2026-02-09
+last_updated: 2026-08-10
 type: reference
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: The deployment was blocked due to certain conditions. This is a deployment error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/deployment_blocked.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "a3f49deb18ee10a6b7f6aa5f0c30ba1233b11b6029b950ac8432ea90998b6f69"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "efd46e5c0563b87fef3924cfcac19647c3b1202aa6593fa252098fd3166f010d"
 ---
 
 # DEPLOYMENT_BLOCKED

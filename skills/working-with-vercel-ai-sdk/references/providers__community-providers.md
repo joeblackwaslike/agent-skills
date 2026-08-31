@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "0e616147b06f019f53ad44b1398f50e1a98cc43f3e0d2fe4dd7b1ef7fe4b2222"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "9084ea5a1b4ea2240017f8d50922cbf7c75dcdc12c5a4d23ef6e8ebf7bcf8b3a"
 ---
 
 # Community Providers
@@ -43,6 +43,7 @@ Here are the community providers that implement the Language Model Specification
   - [QuiverAI](/providers/ai-sdk-providers/quiverai)
   - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
   - [Mistral AI](/providers/ai-sdk-providers/mistral)
+  - [Z.AI](/providers/ai-sdk-providers/zai)
   - [Together.ai](/providers/ai-sdk-providers/togetherai)
   - [Cohere](/providers/ai-sdk-providers/cohere)
   - [Fireworks](/providers/ai-sdk-providers/fireworks)
@@ -69,6 +70,8 @@ Here are the community providers that implement the Language Model Specification
   - [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
   - [Grok Build](/providers/ai-sdk-harnesses/grok-build)
   - [Cline](/providers/ai-sdk-harnesses/cline)
+  - [Cursor](/providers/ai-sdk-harnesses/cursor)
+  - [fx](/providers/ai-sdk-harnesses/fx)
 - [Observability Integrations](/providers/observability)
   - [Arize AX](/providers/observability/arize-ax)
   - [Axiom](/providers/observability/axiom)

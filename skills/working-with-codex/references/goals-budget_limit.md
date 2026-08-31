@@ -1,5 +1,5 @@
 ---
-source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/prompts/templates/goals/budget_limit.md"
+source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/ext/goal/templates/goals/budget_limit.md"
 fetched_at: "2026-06-15T05:54:26.964Z"
 sha256: "ee40c96b4d75b53eb8d43f93018f200c21a8eef93d0a8adb7bc74ebbf406dcd2"
 ---

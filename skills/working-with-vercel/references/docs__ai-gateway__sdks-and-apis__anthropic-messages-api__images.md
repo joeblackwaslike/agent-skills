@@ -13,8 +13,8 @@ related:
 summary: Send images and PDF documents as part of your Anthropic API message requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/images.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "c2f266c5bb86954652adcce3a0432608718fd12a1bb2b4d5ca8a8f4230b217e6"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "25e6bc6886866bc7ef0a94326cabf18b9c48db4a6e61cde0dee64b369af15163"
 ---
 
 # File Attachments
@@ -27,15 +27,15 @@ Send images and PDF documents as part of your message request.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Images](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/images?from=related) — Send images and PDF documents to a model using the OpenAI Chat Completions API.
-- [Images](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/images?from=related) — Send images and PDF documents for analysis using the OpenResponses API.
-- [Images](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/images?from=related) — Send images and PDF documents for analysis using the OpenAI Responses API through AI Gateway.
-- [File Uploads](https://chat-sdk.dev/docs/files?from=related) — Send and receive files across chat platforms.
-- [Images, videos, and file uploads](https://v0.app/docs/images-and-videos?from=related) — Attach media, documents, code, and other supported assets to give v0 context or add them to your application.
-- [Messages](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages?from=related) — Create messages using the Anthropic Messages API format with support for streaming.
-- [Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related) — Use the AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
+- [File Attachments](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/images?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fimages&source_site=vercel-docs&relationship=related) — Send images and PDF documents to a model using the OpenAI Chat Completions API.
+- [File Attachments](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/images?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fimages&source_site=vercel-docs&relationship=related) — Send images and PDF documents for analysis using the OpenResponses API.
+- [File Attachments](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/images?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fimages&source_site=vercel-docs&relationship=related) — Send images and PDF documents for analysis using the OpenAI Responses API through AI Gateway.
+- [File Uploads](https://chat-sdk.dev/docs/files?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fimages&source_site=vercel-docs&relationship=related) — Send and receive files across chat platforms.
+- [Images, videos, and file uploads](https://v0.app/docs/images-and-videos?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fimages&source_site=vercel-docs&relationship=related) — Attach media, documents, code, and other supported assets to give v0 context or add them to your application.
+- [Messages](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fimages&source_site=vercel-docs&relationship=related) — Create messages using the Anthropic Messages API format with support for streaming.
+- [Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fimages&source_site=vercel-docs&relationship=related) — Use the AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
 
-Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/images.graph.md](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/images.graph.md)
+Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/images.graph.md](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/images.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fimages&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Example request

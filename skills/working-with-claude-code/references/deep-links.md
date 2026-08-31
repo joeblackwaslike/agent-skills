@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/deep-links.md"
-fetched_at: "2026-08-24T04:44:18.863Z"
-sha256: "b2ae72421804bb771a722a88a711ea7fc742dd630cb85e67effa547f626b8299"
+fetched_at: "2026-08-31T10:37:20.620Z"
+sha256: "d20562bb5b5d199e84e3dbf6adad50addd8baa8a4ae13d2bb17fc348e8bc51a5"
 ---
 
 > ## Documentation Index
@@ -25,7 +25,7 @@ Because a deep link is a URL, you can put one anywhere a link can go:
 
 This page covers how to [build a link](#build-a-link), [embed one in a runbook or trigger it from the shell](#examples), and [manage or disable handler registration](#registration-and-supported-platforms) on each platform.
 
-## How it works
+## How deep links work
 
 The `claude-cli://` prefix is a custom URL scheme that Claude Code registers with your operating system, similar to how `mailto:` links open your email client. When you click a deep link:
 
@@ -123,6 +123,8 @@ You can also open a deep link from a shell script, alias, or automation rather t
     ```bash theme={null}
     open "claude-cli://open?repo=acme/payments&q=review%20open%20PRs"
     ```
+
+    On success, a new terminal window opens with Claude Code running and the prompt pre-filled.
   </Tab>
 
   <Tab title="Linux">
@@ -147,6 +149,8 @@ You can also open a deep link from a shell script, alias, or automation rather t
     ```cmd theme={null}
     start "" "claude-cli://open?repo=acme/payments&q=review%20open%20PRs"
     ```
+
+    On success, a new terminal window opens with Claude Code running and the prompt pre-filled.
   </Tab>
 </Tabs>
 

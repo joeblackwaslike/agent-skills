@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/cline.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "b990df3341331cccc424964a158e75a8957588fd89bd17e9d6667c0aa5edee2f"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "36450023d33b33f69068a632ecac98a7e1ff573903a0d245d77becdaa1d438ab"
 ---
 
 # Cline Harness
@@ -86,7 +86,8 @@ const harness = createCline({
 
 Settings:
 
-- `auth`: authentication mode: `auto`, `direct`, or `ai-gateway`.
+- `auth`: authentication mode (`auto`, `direct`, or `ai-gateway`) or an
+  isolated authentication environment.
 - `mcpServers`: MCP server definitions keyed by server name.
 - `providerId`: Cline LLM provider id (e.g. `anthropic`, `openai`, `gemini`).
   When omitted, direct authentication uses the Cline backend. Explicit custom
@@ -128,11 +129,26 @@ environment:
 const harness = createCline({ auth: 'ai-gateway' });
 ```
 
+Pass an authentication environment when the host resolves credentials at
+runtime:
+
+```ts
+const harness = createCline({
+  auth: {
+    AI_GATEWAY_API_KEY: await resolveGatewayToken(),
+    AI_GATEWAY_BASE_URL: 'https://ai-gateway.vercel.sh',
+  },
+});
+```
+
+The supplied record replaces the host environment for authentication
+discovery, so it can also select direct authentication with `CLINE_API_KEY`.
+
 `CLINE_API_BASE_URL` is Cline's backend root URL; the SDK's `/api/v1` provider
 path is appended to it. For AI Gateway, the adapter instead overrides Cline's
 in-process provider configuration with the Gateway credential and its `/v1`
 endpoint. Direct Cline credentials are never used as a fallback in explicit
-Gateway mode.
+Gateway mode or when a supplied authentication environment selects Gateway.
 
 ## Sandbox
 
@@ -204,6 +220,8 @@ runtime and throws `HarnessCapabilityUnsupportedError`.
 - [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
 - [Grok Build](/providers/ai-sdk-harnesses/grok-build)
 - [Cline](/providers/ai-sdk-harnesses/cline)
+- [Cursor](/providers/ai-sdk-harnesses/cursor)
+- [fx](/providers/ai-sdk-harnesses/fx)
 
 
 [Full Sitemap](/sitemap.md)

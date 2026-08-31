@@ -3,7 +3,7 @@ title: @vercel/functions API Reference (Node.js)
 product: vercel
 url: /docs/functions/functions-api-reference/vercel-functions-package
 canonical_url: "https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package"
-last_updated: 2026-07-27
+last_updated: 2026-08-19
 type: reference
 prerequisites:
   - /docs/functions/functions-api-reference
@@ -17,8 +17,8 @@ related:
 summary: Learn about available APIs when working with Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "e1d1f447ab31ce136ae7d37d2a5620ebf47f1e361b68b2ef610bd31d3eeb5606"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "0cb7e7f461cd6a96cbb6c5ecc142b44549a05614c2ab0bfe4f9eeaf838a111e5"
 ---
 
 # @vercel/functions API Reference (Node.js)
@@ -31,20 +31,20 @@ sha256: "e1d1f447ab31ce136ae7d37d2a5620ebf47f1e361b68b2ef610bd31d3eeb5606"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Version 15](https://nextjs.org/docs/app/guides/upgrading/version-15?from=related) — Upgrade your Next.js Application from Version 14 to 15.
-- [Efficiently manage database connection pools with Fluid compute](https://vercel.com/kb/guide/efficiently-manage-database-connection-pools-with-fluid-compute?from=related) — How to create high-performance database connection pools without leaking connections
-- [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute?from=related) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
-- [Build a real-time chat app with WebSockets on Vercel](https://vercel.com/kb/guide/real-time-chat-websockets?from=related) — Build and deploy a single-room messaging app in Next.js with real-time chat, typing indicators, and live online user cou
-- [Sending Emails from an application on Vercel](https://vercel.com/kb/guide/sending-emails-from-an-application-on-vercel?from=related) — SMTP is the harder path inside Vercel Functions. Learn how to send emails over an HTTP API, which Next.js pattern fits y
-- [Can I use SMTP with Vercel?](https://vercel.com/kb/guide/serverless-functions-and-smtp?from=related) — Vercel Functions can open SMTP connections on the Node.js runtime. Learn which ports are open, why you must await the se
-- [Streaming](https://workflow-sdk.dev/docs/foundations/streaming?from=related) — Stream real-time data to clients without waiting for workflow completion.
-- [cacheHandlers](https://nextjs.org/docs/app/api-reference/config/next-config-js/cacheHandlers?from=related) — Configure custom cache handlers for use cache directives in Next.js.
-- [Migrating to Cache Components](https://nextjs.org/docs/app/guides/migrating-to-cache-components?from=related) — Learn how to migrate from route segment configs to Cache Components in Next.js.
-- [Data Cache](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
-- [CDN Cache](https://vercel.com/docs/caching/cdn-cache?from=related) — Learn how Vercel's CDN cache stores your content across a global network to reduce latency and origin load.
-- [Cache-Control Headers](https://vercel.com/docs/caching/cache-control-headers?from=related) — Learn about the cache-control headers sent to each Vercel deployment and how to use them to control the caching behavior
+- [How to upgrade to version 15](https://nextjs.org/docs/app/guides/upgrading/version-15?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related) — Upgrade your Next.js Application from Version 14 to 15.
+- [Add cache tags from Function responses, regardless of framework](https://vercel.com/changelog/add-cache-tags-from-function-responses-regardless-of-framework?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related)
+- [Introducing the Runtime Cache API](https://vercel.com/changelog/introducing-the-runtime-cache-api?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related)
+- [Tag-based cache invalidation now available for all responses](https://vercel.com/changelog/tag-based-cache-invalidation-now-available-for-all-responses?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related)
+- [You can now invalidate the CDN cache by providing a source image](https://vercel.com/changelog/you-can-now-invalidate-the-cdn-cache-by-providing-a-source-image?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related)
+- [Efficiently manage database connection pools with Fluid compute](https://vercel.com/kb/guide/efficiently-manage-database-connection-pools-with-fluid-compute?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related) — How to create high-performance database connection pools without leaking connections
+- [Can I use SMTP with Vercel?](https://vercel.com/kb/guide/serverless-functions-and-smtp?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related) — Vercel Functions can open SMTP connections on the Node.js runtime. Learn which ports are open, why you must await the se
+- [Troubleshooting Inconsistent Logs in Vercel Functions](https://vercel.com/kb/guide/troubleshooting-inconsistent-logs-in-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot and resolve logs that appear mixed in Vercel Functions. This guide explains why logs from diff
+- [The real serverless compute to database connection problem, solved](https://vercel.com/blog/the-real-serverless-compute-to-database-connection-problem-solved?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related)
+- [Streaming](https://workflow-sdk.dev/docs/foundations/streaming?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related) — Stream real-time data to clients without waiting for workflow completion.
+- [cacheHandlers](https://nextjs.org/docs/app/api-reference/config/next-config-js/cacheHandlers?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related) — Configure custom cache handlers for use cache directives in Next.js.
+- [Set cache control headers for functions](https://vercel.com/kb/guide/set-cache-control-headers?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related) — Learn how to set headers to cache your function's responses.
 
-Full cross-link map for this page: [/docs/functions/functions-api-reference/vercel-functions-package.graph.md](/docs/functions/functions-api-reference/vercel-functions-package.graph.md)
+Full cross-link map for this page: [/docs/functions/functions-api-reference/vercel-functions-package.graph.md](/docs/functions/functions-api-reference/vercel-functions-package.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 1. Install the `@vercel/functions` package:

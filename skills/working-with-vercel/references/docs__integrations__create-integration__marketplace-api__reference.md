@@ -3,7 +3,7 @@ title: reference
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference"
-last_updated: 2026-08-24
+last_updated: 2026-08-31
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn about reference on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "806a22ac40a64d598753771aac37c59ffc150ec66e55433c4b578335f3e7cdd7"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "f20051503ae2fa42eb511e7b58e62838861d4adbae3544943ab4cea5d7e25e81"
 ---
 
 # Vercel Marketplace REST API
@@ -69,6 +69,15 @@ User Auth OIDC token claims schema:
     "account_id": {
       "type": "string"
     },
+    "parent_account_id": {
+      "type": "string",
+      "description": "For platform org-child installations (integration opt-in): the opaque account id of the parent (root) team. Identical to the `account_id` claim on the parent team’s own installation tokens."
+    },
+    "parent_installation_id": {
+      "type": "string",
+      "nullable": true,
+      "description": "For platform org-child installations (integration opt-in): the parent team’s installation of this integration, or null when the parent has none."
+    },
     "sub": {
       "type": "string",
       "description": "Denotes the User who is making the change (matches `/^account:[0-9a-fA-F]+:user:[0-9a-fA-F]+$/`)"
@@ -90,7 +99,11 @@ User Auth OIDC token claims schema:
     },
     "user_email": {
       "type": "string",
-      "description": "The user's verified email address. This is included for all Marketplace integrations by default."
+      "description": "The user's email address. This is included for all Marketplace integrations by default."
+    },
+    "user_email_verified": {
+      "type": "boolean",
+      "description": "Whether the user's email address has been verified."
     },
     "user_name": {
       "type": "string",
@@ -153,6 +166,15 @@ System Auth OIDC token claims schema:
     },
     "account_id": {
       "type": "string"
+    },
+    "parent_account_id": {
+      "type": "string",
+      "description": "For platform org-child installations (integration opt-in): the opaque account id of the parent (root) team. Identical to the `account_id` claim on the parent team’s own installation tokens."
+    },
+    "parent_installation_id": {
+      "type": "string",
+      "nullable": true,
+      "description": "For platform org-child installations (integration opt-in): the parent team’s installation of this integration, or null when the parent has none."
     }
   },
   "required": [
@@ -217,6 +239,7 @@ Content-Type: `application/json`
 - `acceptedPolicies` (required): object - Policies accepted by the customer. Example: { "toc": "2024-02-28T10:00:00Z" }
 - `credentials` (required): object - The service-account access token to access marketplace and integration APIs on behalf of a customer's installation.
 - `account` (required): object - The account information for this installation. Use Get Account Info API to re-fetch this data post installation.
+- `parentAccount`: object - For platform org-child installations (integration opt-in): the account information of the parent (root) team. Only present when the parent team has its own installation of this integration; join to it via the parent_account_id token claim.
 
 **Responses:**
 
@@ -781,6 +804,38 @@ One of the provided values in the request query is invalid.
 
 Content-Type: `application/json`
 
+- `client_secret` (required): string
+- `client_id`: string
+
+**Responses:**
+
+- **200**: Success
+  - Content-Type: `application/json`
+- **400**: One of the provided values in the request body is invalid.
+One of the provided values in the request query is invalid.
+- **401**: The request is not authorized.
+- **403**: You do not have permission to access this resource.
+- **404**: Success
+- **409**: Success
+- **410**: Success
+
+---
+
+#### Revoke Installation Credential
+
+`POST /v1/installations/{integrationConfigurationId}/credentials/revoke`
+
+**Description:** Retires a superseded installation credential, so a partner can complete a rotation it started with `POST /credentials/rotate` — the leaked credential stops working without the customer having to reinstall. Authenticated by a live installation credential plus the integration's client secret. The credential to retire is named in the body rather than being the one that authenticates, so the ordinary flow is: rotate, store the replacement, then authenticate with the replacement and revoke the old one. Refuses to retire an installation's last live credential. Rotation exists so remediation is not customer-visible; revoking the only credential would undo that and leave the install needing a reinstall.
+
+**Parameters:**
+
+- `integrationConfigurationId` (path) (required)
+
+**Request Body:**
+
+Content-Type: `application/json`
+
+- `token` (required): string
 - `client_secret` (required): string
 - `client_id`: string
 

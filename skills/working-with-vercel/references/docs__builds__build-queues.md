@@ -3,7 +3,7 @@ title: Build Queues
 product: vercel
 url: /docs/builds/build-queues
 canonical_url: "https://vercel.com/docs/builds/build-queues"
-last_updated: 2026-06-24
+last_updated: 2026-08-11
 type: conceptual
 prerequisites:
   - /docs/builds
@@ -13,8 +13,8 @@ related:
 summary: Understand how concurrency and same branch build queues manage multiple simultaneous deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/build-queues.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "c4932ded7b9e72e032aea48add04590d53559c98451ed68344c6d40bf1e3f72a"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "7a0ba581963306e5d9375450c9070df8307a175c7027c3252554867f4492ee1f"
 ---
 
 # Build Queues
@@ -27,15 +27,19 @@ Build queueing is when a build must wait for resources to become available befor
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Why are my Vercel builds queued?](https://vercel.com/kb/guide/why-are-my-vercel-builds-queued?from=related) — Learn about why your Vercel builds may be getting queued and how to resolve this.
-- [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel?from=related) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
-- [Queues](https://vercel.com/docs/queues?from=related) — Durable event streaming for serverless. Publish messages to topics and process them reliably with managed consumer group
-- [Build System](https://vercel.com/docs/fundamentals/builds?from=related) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
-- [Troubleshoot Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build?from=related) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
-- [Concepts](https://vercel.com/docs/queues/concepts?from=related) — Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
-- [vercel build](https://vercel.com/docs/cli/build?from=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
+- [Why are my Vercel builds queued?](https://vercel.com/kb/guide/why-are-my-vercel-builds-queued?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-queues&source_site=vercel-docs&relationship=related) — Learn about why your Vercel builds may be getting queued and how to resolve this.
+- [Pro customers can now deploy faster without build queues](https://vercel.com/changelog/pro-customers-can-now-deploy-faster-with-on-demand-concurrency-builds?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-queues&source_site=vercel-docs&relationship=related)
+- [No build queues: On-demand concurrent builds now on by default](https://vercel.com/changelog/no-build-queues-on-demand-concurrent-builds-now-on-by-default?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-queues&source_site=vercel-docs&relationship=related)
+- [Limit on-demand concurrent builds to one build per branch](https://vercel.com/changelog/limit-on-demand-concurrent-builds-to-one-build-per-branch?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-queues&source_site=vercel-docs&relationship=related)
+- [Commits to the same branch now build with no queues](https://vercel.com/changelog/build-commits-to-the-same-branch-without-waiting?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-queues&source_site=vercel-docs&relationship=related)
+- [Enterprise teams can now ship faster without build queues](https://vercel.com/changelog/enterprise-teams-can-now-ship-faster-without-build-queues?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-queues&source_site=vercel-docs&relationship=related)
+- [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-queues&source_site=vercel-docs&relationship=related)
+- [Vercel Queues](https://vercel.com/docs/queues?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-queues&source_site=vercel-docs&relationship=related) — Durable event streaming for serverless. Publish messages to topics and process them reliably with managed consumer group
+- [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-queues&source_site=vercel-docs&relationship=related) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
+- [Queues concepts](https://vercel.com/docs/queues/concepts?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-queues&source_site=vercel-docs&relationship=related) — Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-queues&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
-Full cross-link map for this page: [/docs/builds/build-queues.graph.md](/docs/builds/build-queues.graph.md)
+Full cross-link map for this page: [/docs/builds/build-queues.graph.md](/docs/builds/build-queues.graph.md?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-queues&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 - [With On-Demand Concurrent Builds](#with-on-demand-concurrent-builds), builds will never queue.

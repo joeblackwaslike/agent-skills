@@ -2,7 +2,7 @@
 
 Latest release versions for commonly used GitHub Actions.
 Auto-updated by `scripts/update_docs.js` — do not edit manually.
-Last updated: 2026-08-24
+Last updated: 2026-08-31
 
 ## GitHub Official
 
@@ -11,7 +11,7 @@ Last updated: 2026-08-24
 | `actions/checkout` | `v7.0.1` | `uses: actions/checkout@v7.0.1` |
 | `actions/setup-node` | `v7.0.0` | `uses: actions/setup-node@v7.0.0` |
 | `actions/setup-python` | `v7.0.0` | `uses: actions/setup-python@v7.0.0` |
-| `actions/setup-java` | `v5.7.0` | `uses: actions/setup-java@v5.7.0` |
+| `actions/setup-java` | `v6.0.0` | `uses: actions/setup-java@v6.0.0` |
 | `actions/setup-go` | `v7.0.0` | `uses: actions/setup-go@v7.0.0` |
 | `actions/cache` | `v6.1.0` | `uses: actions/cache@v6.1.0` |
 | `actions/upload-artifact` | `v7.0.1` | `uses: actions/upload-artifact@v7.0.1` |
@@ -45,14 +45,14 @@ Last updated: 2026-08-24
 | `aws-actions/amazon-ecr-login` | `v2.1.7` | `uses: aws-actions/amazon-ecr-login@v2.1.7` |
 | `google-github-actions/auth` | `v3` | `uses: google-github-actions/auth@v3` |
 | `google-github-actions/setup-gcloud` | `v3.0.1` | `uses: google-github-actions/setup-gcloud@v3.0.1` |
-| `azure/login` | `v3.0.1` | `uses: azure/login@v3.0.1` |
+| `azure/login` | `v3.0.2` | `uses: azure/login@v3.0.2` |
 
 ## Release & Publishing
 
 | Action | Latest tag | Pin usage |
 |--------|-----------|-----------|
 | `googleapis/release-please-action` | `v5.0.0` | `uses: googleapis/release-please-action@v5.0.0` |
-| `softprops/action-gh-release` | `v3.0.2` | `uses: softprops/action-gh-release@v3.0.2` |
+| `softprops/action-gh-release` | `v3.0.3` | `uses: softprops/action-gh-release@v3.0.3` |
 | `peaceiris/actions-gh-pages` | `v4.1.0` | `uses: peaceiris/actions-gh-pages@v4.1.0` |
 
 ## Code Quality
@@ -60,7 +60,7 @@ Last updated: 2026-08-24
 | Action | Latest tag | Pin usage |
 |--------|-----------|-----------|
 | `codecov/codecov-action` | `v7.0.0` | `uses: codecov/codecov-action@v7.0.0` |
-| `github/codeql-action/init` | `codeql-bundle-v2.26.3` | `uses: github/codeql-action/init@codeql-bundle-v2.26.3` |
+| `github/codeql-action/init` | `codeql-bundle-v2.26.4` | `uses: github/codeql-action/init@codeql-bundle-v2.26.4` |
 | `dependabot/fetch-metadata` | `v3.1.0` | `uses: dependabot/fetch-metadata@v3.1.0` |
 
 ## Pinning to SHA (recommended for production)

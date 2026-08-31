@@ -12,8 +12,8 @@ related:
 summary: Learn how to redact sensitive data from your Web Analytics events.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/redacting-sensitive-data.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "64d19500247e8ea4ee3de19f2e2cace6b1b13aa23e355ad91a59390ba99c240c"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "7d2a233de325dfa26699399e9faa7bed3c26b9d00e4db28c6493307349be8958"
 ---
 
 # Redacting Sensitive Data from Web Analytics Events
@@ -26,20 +26,20 @@ Sometimes, URLs and query parameters may contain sensitive data. This could be a
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Version 15](https://nextjs.org/docs/app/guides/upgrading/version-15?from=related) — Upgrade your Next.js Application from Version 14 to 15.
-- [Adopting Partial Prefetching](https://nextjs.org/docs/app/guides/adopting-partial-prefetching?from=related) — Learn how to enable Partial Prefetching and what changes for `\<Link\>`.
-- [Build Imgur-style image hosting with Nuxt and Vercel Blob](https://vercel.com/kb/guide/vercel-blob-nuxt-imgur-clone?from=related) — Learn how to build an Imgur-style paste-to-share image host using Nuxt and Vercel Blob, with direct-to-storage client up
-- [Third Party Libraries](https://nextjs.org/docs/app/guides/third-party-libraries?from=related) — Optimize the performance of third-party libraries in your application with the `@next/third-parties` package.
-- [Build a Claude Managed Agent with Vercel Sandbox](https://vercel.com/kb/guide/run-claude-managed-agent-tools-with-vercel-sandbox?from=related) — Build a Claude Managed Agent with Vercel Sandbox: each session runs in a fresh microVM with credential brokering and a w
-- [Backend for Frontend](https://nextjs.org/docs/app/guides/backend-for-frontend?from=related) — Learn how to use Next.js as a backend framework
-- [Third Party Libraries](https://nextjs.org/docs/pages/guides/third-party-libraries?from=related) — Optimize the performance of third-party libraries in your application with the `@next/third-parties` package.
-- [Getting Started](https://vercel.com/docs/analytics/quickstart?from=related) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
-- [Custom Events](https://vercel.com/docs/analytics/custom-events?from=related) — Learn how to send custom analytics events from your application.
-- [React Router](https://vercel.com/docs/frameworks/frontend/react-router?from=related) — Learn how to use Vercel's features with React Router as a framework.
-- [Get Started with BotID](https://vercel.com/docs/botid/get-started?from=related) — Step-by-step guide to setting up BotID protection in your Vercel project
-- [Remix](https://vercel.com/docs/frameworks/full-stack/remix?from=related) — Learn how to use Vercel's features with Remix.
+- [How to upgrade to version 15](https://nextjs.org/docs/app/guides/upgrading/version-15?from=related&source_path=%2Fdocs%2Fanalytics%2Fredacting-sensitive-data&source_site=vercel-docs&relationship=related) — Upgrade your Next.js Application from Version 14 to 15.
+- [Adopting Partial Prefetching](https://nextjs.org/docs/app/guides/adopting-partial-prefetching?from=related&source_path=%2Fdocs%2Fanalytics%2Fredacting-sensitive-data&source_site=vercel-docs&relationship=related) — Learn how to enable Partial Prefetching and what changes for `\<Link\>`.
+- [Build Imgur-style image hosting with Nuxt and Vercel Blob](https://vercel.com/kb/guide/vercel-blob-nuxt-imgur-clone?from=related&source_path=%2Fdocs%2Fanalytics%2Fredacting-sensitive-data&source_site=vercel-docs&relationship=related) — Learn how to build an Imgur-style paste-to-share image host using Nuxt and Vercel Blob, with direct-to-storage client up
+- [How to optimize third-party libraries](https://nextjs.org/docs/app/guides/third-party-libraries?from=related&source_path=%2Fdocs%2Fanalytics%2Fredacting-sensitive-data&source_site=vercel-docs&relationship=related) — Optimize the performance of third-party libraries in your application with the `@next/third-parties` package.
+- [Build a Claude Managed Agent with Vercel Sandbox](https://vercel.com/kb/guide/run-claude-managed-agent-tools-with-vercel-sandbox?from=related&source_path=%2Fdocs%2Fanalytics%2Fredacting-sensitive-data&source_site=vercel-docs&relationship=related) — Build a Claude Managed Agent with Vercel Sandbox: each session runs in a fresh microVM with credential brokering and a w
+- [How to use Next.js as a backend for your frontend](https://nextjs.org/docs/app/guides/backend-for-frontend?from=related&source_path=%2Fdocs%2Fanalytics%2Fredacting-sensitive-data&source_site=vercel-docs&relationship=related) — Learn how to use Next.js as a backend framework
+- [How to optimize third-party libraries](https://nextjs.org/docs/pages/guides/third-party-libraries?from=related&source_path=%2Fdocs%2Fanalytics%2Fredacting-sensitive-data&source_site=vercel-docs&relationship=related) — Optimize the performance of third-party libraries in your application with the `@next/third-parties` package.
+- [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart?from=related&source_path=%2Fdocs%2Fanalytics%2Fredacting-sensitive-data&source_site=vercel-docs&relationship=related) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
+- [Tracking custom events](https://vercel.com/docs/analytics/custom-events?from=related&source_path=%2Fdocs%2Fanalytics%2Fredacting-sensitive-data&source_site=vercel-docs&relationship=related) — Learn how to send custom analytics events from your application.
+- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fanalytics%2Fredacting-sensitive-data&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
+- [Get Started with BotID](https://vercel.com/docs/botid/get-started?from=related&source_path=%2Fdocs%2Fanalytics%2Fredacting-sensitive-data&source_site=vercel-docs&relationship=related) — Step-by-step guide to setting up BotID protection in your Vercel project
+- [Remix on Vercel](https://vercel.com/docs/frameworks/full-stack/remix?from=related&source_path=%2Fdocs%2Fanalytics%2Fredacting-sensitive-data&source_site=vercel-docs&relationship=related) — Deploy Remix applications to Vercel and configure the Vercel Vite preset, SSR, streaming, caching, and analytics.
 
-Full cross-link map for this page: [/docs/analytics/redacting-sensitive-data.graph.md](/docs/analytics/redacting-sensitive-data.graph.md)
+Full cross-link map for this page: [/docs/analytics/redacting-sensitive-data.graph.md](/docs/analytics/redacting-sensitive-data.graph.md?from=related&source_path=%2Fdocs%2Fanalytics%2Fredacting-sensitive-data&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 To prevent sensitive data from being sent to Vercel, you can pass in the `beforeSend` function that modifies the event before it is sent. To learn more about the `beforeSend` function and how it can be used with other frameworks, see the [@vercel/analytics](/docs/analytics/package) package documentation.

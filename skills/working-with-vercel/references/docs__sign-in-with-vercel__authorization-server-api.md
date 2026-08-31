@@ -3,7 +3,7 @@ title: Authorization Server API
 product: vercel
 url: /docs/sign-in-with-vercel/authorization-server-api
 canonical_url: "https://vercel.com/docs/sign-in-with-vercel/authorization-server-api"
-last_updated: 2026-03-30
+last_updated: 2026-08-21
 type: how-to
 prerequisites:
   - /docs/sign-in-with-vercel
@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Authorization Server API
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/authorization-server-api.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "56f7d01fc11faa3ae5643c4b32f5fc3730164fc713b3ad71edab786fd4b41801"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "68188276f9be0ba3e5395a7bfdb8e7448dc568185529e38fdeb6bbb2ddfc1827"
 ---
 
 # Authorization Server API
@@ -30,14 +30,15 @@ The Authorization Server API exposes a set of endpoints which are used by your a
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Authentication](https://eve.dev/docs/guides/auth-and-route-protection?from=related) — Secure your agent's HTTP routes with an ordered auth walk, verifier helpers, and connection OAuth via Vercel Connect.
-- [Getting Started](https://vercel.com/docs/sign-in-with-vercel/getting-started?from=related) — Learn how to get started with Sign in with Vercel
-- [Authentication](https://vercel.com/docs/kms/concepts/authentication?from=related) — How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel ac
-- [Quickstart](https://vercel.com/docs/kms/quickstart?from=related) — Create a KMS issuer, sign a JWT from a Vercel Function with @vercel/kms, and verify it against the published JWKS.
-- [OIDC Reference](https://vercel.com/docs/oidc/reference?from=related) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
-- [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token?from=related)
+- [Sign JWTs from your Functions without managing private keys](https://vercel.com/changelog/sign-jwts-from-your-functions-without-managing-private-keys?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fauthorization-server-api&source_site=vercel-docs&relationship=related)
+- [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fauthorization-server-api&source_site=vercel-docs&relationship=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
+- [Getting started with Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel/getting-started?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fauthorization-server-api&source_site=vercel-docs&relationship=related) — Learn how to get started with Sign in with Vercel
+- [Vercel KMS Authentication](https://vercel.com/docs/kms/concepts/authentication?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fauthorization-server-api&source_site=vercel-docs&relationship=related) — How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel ac
+- [Vercel KMS Quickstart](https://vercel.com/docs/kms/quickstart?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fauthorization-server-api&source_site=vercel-docs&relationship=related) — Create a KMS issuer, sign a JWT from a Vercel Function with @vercel/kms, and verify it against the published JWKS.
+- [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fauthorization-server-api&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
+- [OIDC Federation Reference](https://vercel.com/docs/oidc/reference?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fauthorization-server-api&source_site=vercel-docs&relationship=related) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
 
-Full cross-link map for this page: [/docs/sign-in-with-vercel/authorization-server-api.graph.md](/docs/sign-in-with-vercel/authorization-server-api.graph.md)
+Full cross-link map for this page: [/docs/sign-in-with-vercel/authorization-server-api.graph.md](/docs/sign-in-with-vercel/authorization-server-api.graph.md?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fauthorization-server-api&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 | Endpoint                     | URL                                                 |

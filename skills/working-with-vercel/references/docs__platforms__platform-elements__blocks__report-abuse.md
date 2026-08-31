@@ -13,8 +13,8 @@ related:
 summary: A content moderation interface for reporting abuse with categorization, validation, and privacy-focused design.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/blocks/report-abuse.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "81e3fddbb76c8e0cf84e9801ce67c453420f110a3f1f1ff96163969c36ba8389"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "8133ff0e42c344bfdd09fe1ccd49ebe1f63928ff795af1f35d56015958af9a4b"
 ---
 
 # Report Abuse
@@ -27,19 +27,20 @@ sha256: "81e3fddbb76c8e0cf84e9801ce67c453420f110a3f1f1ff96163969c36ba8389"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Modals](https://chat-sdk.dev/docs/modals?from=related) — Collect structured user input through modal dialogs with text fields, dropdowns, and validation.
-- [Triage form submissions with Chat SDK](https://vercel.com/kb/guide/triage-form-submissions-with-chat-sdk?from=related) — Build a Slack bot that triages form submissions with interactive cards. Forward, edit, or mark as spam without leaving S
-- [useReportWebVitals](https://nextjs.org/docs/pages/api-reference/functions/use-report-web-vitals?from=related) — useReportWebVitals
-- [Cards](https://chat-sdk.dev/docs/cards?from=related) — Send rich interactive cards with buttons, fields, and images across all platforms.
-- [useReportWebVitals](https://nextjs.org/docs/app/api-reference/functions/use-report-web-vitals?from=related) — API Reference for the useReportWebVitals function.
-- [Error Reports for Your Projects with URIports and Vercel](https://vercel.com/kb/guide/client-side-error-reports-with-uriports-vercel?from=related) — Enable error reporting for your websites deployed with Vercel and act fast on issues.
-- [Redacting Sensitive Data](https://vercel.com/docs/analytics/redacting-sensitive-data?from=related) — Learn how to redact sensitive data from your Web Analytics events.
-- [Claim Deployment](https://vercel.com/docs/platforms/platform-elements/blocks/claim-deployment?from=related) — A component for users to claim ownership of Vercel deployments created on their behalf.
-- [Get Started with BotID](https://vercel.com/docs/botid/get-started?from=related) — Step-by-step guide to setting up BotID protection in your Vercel project
-- [DNS Table](https://vercel.com/docs/platforms/platform-elements/blocks/dns-table?from=related) — A DNS record display component with one-click copying for guiding users through domain configuration.
-- [Accessibility Audit Tool](https://vercel.com/docs/vercel-toolbar/accessibility-audit-tool?from=related) — Learn how to use the Accessibility Audit Tool to automatically check the Web Content Accessibility Guidelines 2.0 level
+- [Introducing Platform Elements](https://vercel.com/changelog/introducing-platform-elements?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Freport-abuse&source_site=vercel-docs&relationship=related)
+- [Modals](https://chat-sdk.dev/docs/modals?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Freport-abuse&source_site=vercel-docs&relationship=related) — Collect structured user input through modal dialogs with text fields, dropdowns, and validation.
+- [Triage form submissions with Chat SDK](https://vercel.com/kb/guide/triage-form-submissions-with-chat-sdk?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Freport-abuse&source_site=vercel-docs&relationship=related) — Build a Slack bot that triages form submissions with interactive cards. Forward, edit, or mark as spam without leaving S
+- [useReportWebVitals](https://nextjs.org/docs/pages/api-reference/functions/use-report-web-vitals?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Freport-abuse&source_site=vercel-docs&relationship=related) — useReportWebVitals
+- [Cards](https://chat-sdk.dev/docs/cards?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Freport-abuse&source_site=vercel-docs&relationship=related) — Send rich interactive cards with buttons, fields, and images across all platforms.
+- [useReportWebVitals](https://nextjs.org/docs/app/api-reference/functions/use-report-web-vitals?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Freport-abuse&source_site=vercel-docs&relationship=related) — API Reference for the useReportWebVitals function.
+- [Error Reports for Your Projects with URIports and Vercel](https://vercel.com/kb/guide/client-side-error-reports-with-uriports-vercel?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Freport-abuse&source_site=vercel-docs&relationship=related) — Enable error reporting for your websites deployed with Vercel and act fast on issues.
+- [Redacting Sensitive Data from Web Analytics Events](https://vercel.com/docs/analytics/redacting-sensitive-data?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Freport-abuse&source_site=vercel-docs&relationship=related) — Learn how to redact sensitive data from your Web Analytics events.
+- [Claim Deployment](https://vercel.com/docs/platforms/platform-elements/blocks/claim-deployment?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Freport-abuse&source_site=vercel-docs&relationship=related) — A component for users to claim ownership of Vercel deployments created on their behalf.
+- [Get Started with BotID](https://vercel.com/docs/botid/get-started?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Freport-abuse&source_site=vercel-docs&relationship=related) — Step-by-step guide to setting up BotID protection in your Vercel project
+- [DNS Table](https://vercel.com/docs/platforms/platform-elements/blocks/dns-table?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Freport-abuse&source_site=vercel-docs&relationship=related) — A DNS record display component with one-click copying for guiding users through domain configuration.
+- [Accessibility Audit Tool](https://vercel.com/docs/vercel-toolbar/accessibility-audit-tool?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Freport-abuse&source_site=vercel-docs&relationship=related) — Learn how to use the Accessibility Audit Tool to automatically check the Web Content Accessibility Guidelines 2.0 level
 
-Full cross-link map for this page: [/docs/platforms/platform-elements/blocks/report-abuse.graph.md](/docs/platforms/platform-elements/blocks/report-abuse.graph.md)
+Full cross-link map for this page: [/docs/platforms/platform-elements/blocks/report-abuse.graph.md](/docs/platforms/platform-elements/blocks/report-abuse.graph.md?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Freport-abuse&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 The Report Abuse block provides platforms with a professional content moderation interface. Essential for platforms like Mintlify and Hashnode that host user-generated content, this component enables visitors to report inappropriate content while maintaining user privacy and preventing false reports. It features a clean dialog interface with comprehensive form validation and clear submission flow.

@@ -3,7 +3,7 @@ title: Firewall concepts
 product: vercel
 url: /docs/vercel-firewall/firewall-concepts
 canonical_url: "https://vercel.com/docs/vercel-firewall/firewall-concepts"
-last_updated: 2026-06-16
+last_updated: 2026-08-11
 type: conceptual
 prerequisites:
   - /docs/vercel-firewall
@@ -16,8 +16,8 @@ related:
 summary: Understand the fundamentals behind the Vercel Firewall.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/firewall-concepts.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "ff6b71971cb843f8e0de482b48c29b4e845e110d113758ed594e23cd4101977e"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "29963a3c1402b17f6b8985dc694235178e0abb9fd8abda7993c4bd853945b488"
 ---
 
 # Firewall concepts
@@ -30,18 +30,20 @@ sha256: "ff6b71971cb843f8e0de482b48c29b4e845e110d113758ed594e23cd4101977e"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall?from=related) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
-- [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
-- [How to protect your AI endpoints with Vercel BotID](https://vercel.com/kb/guide/protect-ai-endpoints-with-vercel-botid?from=related) — Gate every request to your AI endpoints with Vercel BotID and checkBotId\\(\\) so inference runs only for verified callers
-- [Vercel BotID vs Cloudflare Turnstile](https://vercel.com/kb/guide/vercel-botid-vs-cloudflare-turnstile?from=related) — Compare Vercel BotID and Cloudflare Turnstile for bot protection, including detection model, hosting requirements, check
-- [Supporting Compliance with Vercel WAF](https://vercel.com/kb/guide/supporting-compliance-with-vercel-waf?from=related) — Vercel Firewall provides edge-based traffic filtering and monitoring to help teams meet compliance requirements in secur
-- [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability?from=related) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
-- [DDoS Mitigation](https://vercel.com/docs/vercel-firewall/ddos-mitigation?from=related) — Learn how the Vercel Firewall mitigates against DoS and DDoS attacks
-- [Security](https://vercel.com/docs/cdn-security?from=related) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
-- [Overview](https://vercel.com/docs/security?from=related) — Vercel provides built-in and customizable features to ensure that your site is secure.
-- [Encryption & TLS](https://vercel.com/docs/cdn-security/encryption?from=related) — Learn how Vercel encrypts data in transit and at rest.
+- [Bot Protection is now generally available](https://vercel.com/changelog/bot-protection-is-now-generally-available?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-concepts&source_site=vercel-docs&relationship=related)
+- [Bot Protection is now in public beta](https://vercel.com/changelog/bot-protection-is-now-in-public-beta?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-concepts&source_site=vercel-docs&relationship=related)
+- [New firewall challenge metrics now available](https://vercel.com/changelog/new-firewall-challenge-metrics-now-available?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-concepts&source_site=vercel-docs&relationship=related)
+- [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-concepts&source_site=vercel-docs&relationship=related) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
+- [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-concepts&source_site=vercel-docs&relationship=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
+- [How to protect your AI endpoints with Vercel BotID](https://vercel.com/kb/guide/protect-ai-endpoints-with-vercel-botid?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-concepts&source_site=vercel-docs&relationship=related) — Gate every request to your AI endpoints with Vercel BotID and checkBotId\\(\\) so inference runs only for verified callers
+- [Protectd: Evolving Vercel’s always-on denial-of-service mitigations](https://vercel.com/blog/protectd-evolving-vercels-always-on-denial-of-service-mitigations?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-concepts&source_site=vercel-docs&relationship=related)
+- [Life of a Vercel request: Securing your app's traffic with Vercel](https://vercel.com/blog/life-of-a-request-securing-your-apps-traffic-with-vercel?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-concepts&source_site=vercel-docs&relationship=related)
+- [Preventing infrastructure abuse with Vercel Firewall](https://vercel.com/blog/preventing-infrastructure-abuse-with-vercel-firewall?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-concepts&source_site=vercel-docs&relationship=related)
+- [Vercel security roundup: improved bot defenses, DoS mitigations, and insights](https://vercel.com/blog/vercel-security-roundup-improved-bot-defenses-dos-mitigations-and-insights?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-concepts&source_site=vercel-docs&relationship=related)
+- [Vercel security roundup: Faster defenses and better visibility for your apps](https://vercel.com/blog/vercel-security-roundup-faster-defenses-and-better-visibility-for-your-apps?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-concepts&source_site=vercel-docs&relationship=related)
+- [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-concepts&source_site=vercel-docs&relationship=related) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 
-Full cross-link map for this page: [/docs/vercel-firewall/firewall-concepts.graph.md](/docs/vercel-firewall/firewall-concepts.graph.md)
+Full cross-link map for this page: [/docs/vercel-firewall/firewall-concepts.graph.md](/docs/vercel-firewall/firewall-concepts.graph.md?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-concepts&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 To safeguard your application against malicious activity, Vercel's platform-wide firewall is the first line of defense, inspecting requests as they arrive at Vercel's CDN. Once a request passes this layer, [deployment protection](/docs/deployment-protection) checks whether it can continue based on access rules set at the level of your project.

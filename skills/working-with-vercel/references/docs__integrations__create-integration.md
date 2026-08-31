@@ -3,7 +3,7 @@ title: Create an Integration
 product: vercel
 url: /docs/integrations/create-integration
 canonical_url: "https://vercel.com/docs/integrations/create-integration"
-last_updated: 2026-07-29
+last_updated: 2026-08-24
 type: how-to
 prerequisites:
   - /docs/integrations
@@ -16,8 +16,8 @@ related:
 summary: Learn how to create and manage your own integration for internal or public use with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "d1097177d55ba1492c9180f15d683bd54d86ed30621a6edc9f880cbdcdfab3c3"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "afa18ab234fa0a474d702bc049b4f3b43fc91192dbac1aaabb782c6f22bef53a"
 ---
 
 # Create an Integration
@@ -30,14 +30,15 @@ Learn the process of creating and managing integrations on Vercel, helping you e
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
-- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related) — Learn how you can add a product to your Vercel project through a native integration.
-- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
-- [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference?from=related) — Learn how to manage project access and added products for your integrations.
-- [Integrations for Agents](https://vercel.com/docs/agent-resources/integrations-for-agents?from=related) — Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
-- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
+- [Introducing AI Integrations on Vercel](https://vercel.com/blog/ai-integrations?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration&source_site=vercel-docs&relationship=related)
+- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration&source_site=vercel-docs&relationship=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
+- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration&source_site=vercel-docs&relationship=related) — Learn how you can add a product to your Vercel project through a native integration.
+- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration&source_site=vercel-docs&relationship=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
+- [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration&source_site=vercel-docs&relationship=related) — Learn how to manage project access and added products for your integrations.
+- [Storage on Vercel Marketplace](https://vercel.com/docs/marketplace-storage?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration&source_site=vercel-docs&relationship=related) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
-Full cross-link map for this page: [/docs/integrations/create-integration.graph.md](/docs/integrations/create-integration.graph.md)
+Full cross-link map for this page: [/docs/integrations/create-integration.graph.md](/docs/integrations/create-integration.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 1. Submit a [create integration form](#creating-an-integration) request to Vercel
@@ -87,7 +88,7 @@ The **Create Integration** form must be completed in full before you can submit 
 | [Privacy Policy URL](/docs/integrations/create-integration/submit-integration#urls)                                                                | The URL to your Privacy Policy for your integration.                                                                                     |     |
 | [Overview](/docs/integrations/create-integration/submit-integration#overview)                                                                      | A detailed overview of your integration.                                                                                                 |     |
 | [Additional Information](/docs/integrations/create-integration/submit-integration#additional-information)                                          | Additional information about configuring your integration.                                                                               |  |
-| [Feature Media](/docs/integrations/create-integration/submit-integration#feature-media)                                                            | A featured image or video for your integration. You can link up to 5 images or videos for your integration with an aspect ratio of 16:9. |     |
+| [Feature Media](/docs/integrations/create-integration/submit-integration#feature-media)                                                            | Images featured on your integration details page. You can upload 1 to 8 images with an aspect ratio of 16:9. |     |
 | [Redirect URL](/docs/integrations/create-integration/submit-integration#redirect-url)                                                              | The URL the user sees during installation.                                                                                               |     |
 | [API Scopes](/docs/integrations/create-integration/submit-integration#api-scopes)                                                                  | The API scopes for your integration.                                                                                                     |  |
 | [Webhook URL](/docs/integrations/create-integration/submit-integration#webhook-url)                                                                | The URL to receive webhooks from Vercel.                                                                                                 |  |

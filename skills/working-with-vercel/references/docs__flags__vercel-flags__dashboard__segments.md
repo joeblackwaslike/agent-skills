@@ -16,8 +16,8 @@ related:
 summary: Create reusable user segments for targeting feature flags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/segments.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "6995477a3f0d9b87249ede9fcc5813e96254e17c872ca5db6651bdcdddb5fd94"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "f2e2ac76375db7d8aae1b013d64384badb9118ff00e80c617f3b0123bde1b326"
 ---
 
 # Segments
@@ -30,16 +30,18 @@ Segments are reusable groups of users for targeting feature flags. Instead of re
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How Splits Work in Vercel Flags](https://vercel.com/kb/guide/how-splits-work-in-vercel-flags?from=related) — Use weighted splits in Vercel Flags to deterministically bucket users into variants by percentage for gradual rollouts a
-- [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated?from=related) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
-- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
-- [Create a segment](https://vercel.com/docs/rest-api/feature-flags/create-a-segment?from=related)
-- [List segments](https://vercel.com/docs/rest-api/feature-flags/list-segments?from=related)
-- [Get a segment](https://vercel.com/docs/rest-api/feature-flags/get-a-segment?from=related)
-- [Getting Started](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
-- [Update a segment](https://vercel.com/docs/rest-api/feature-flags/update-a-segment?from=related)
+- [Manage Vercel Flags targeting rules from the CLI](https://vercel.com/changelog/manage-vercel-flags-targeting-rules-from-the-cli?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fsegments&source_site=vercel-docs&relationship=related)
+- [How Splits Work in Vercel Flags](https://vercel.com/kb/guide/how-splits-work-in-vercel-flags?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fsegments&source_site=vercel-docs&relationship=related) — Use weighted splits in Vercel Flags to deterministically bucket users into variants by percentage for gradual rollouts a
+- [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fsegments&source_site=vercel-docs&relationship=related) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
+- [Manage Vercel Flags segments with Vercel CLI](https://vercel.com/changelog/manage-vercel-flags-segments-with-vercel-cli?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fsegments&source_site=vercel-docs&relationship=related)
+- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fsegments&source_site=vercel-docs&relationship=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
+- [Create a segment](https://vercel.com/docs/rest-api/feature-flags/create-a-segment?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fsegments&source_site=vercel-docs&relationship=related) — PUT /v1/projects/{projectIdOrName}/feature-flags/segments — Create a new feature flag segment.
+- [List segments](https://vercel.com/docs/rest-api/feature-flags/list-segments?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fsegments&source_site=vercel-docs&relationship=related) — GET /v1/projects/{projectIdOrName}/feature-flags/segments — List all feature flag segments for a project.
+- [Get a segment](https://vercel.com/docs/rest-api/feature-flags/get-a-segment?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fsegments&source_site=vercel-docs&relationship=related) — GET /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug} — Retrieve a feature flag segment by ID or s
+- [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fsegments&source_site=vercel-docs&relationship=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
+- [Delete a segment](https://vercel.com/docs/rest-api/feature-flags/delete-a-segment?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fsegments&source_site=vercel-docs&relationship=related) — DELETE /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug} — Delete a feature flag segment.
 
-Full cross-link map for this page: [/docs/flags/vercel-flags/dashboard/segments.graph.md](/docs/flags/vercel-flags/dashboard/segments.graph.md)
+Full cross-link map for this page: [/docs/flags/vercel-flags/dashboard/segments.graph.md](/docs/flags/vercel-flags/dashboard/segments.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fsegments&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 When you update a segment's rules, every flag using that segment updates automatically. This keeps targeting consistent and makes bulk changes simple.

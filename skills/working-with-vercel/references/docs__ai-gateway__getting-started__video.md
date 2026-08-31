@@ -3,7 +3,7 @@ title: Video Generation Quickstart
 product: vercel
 url: /docs/ai-gateway/getting-started/video
 canonical_url: "https://vercel.com/docs/ai-gateway/getting-started/video"
-last_updated: 2026-07-24
+last_updated: 2026-08-22
 type: tutorial
 prerequisites:
   - /docs/ai-gateway/getting-started
@@ -16,8 +16,8 @@ related:
 summary: Generate videos from text prompts, images, or video input using AI Gateway, either over a single request or as a background job.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/video.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "99a114458a7239f321074898901e73ec4ac9d5972099fb498e94b2c074790c46"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "eaebc8efb2df97a7c05fc790726ef1a60ff888bacfb1896f5dee5687fb614f3a"
 ---
 
 # Video Generation Quickstart
@@ -30,22 +30,25 @@ This quickstart walks you through generating your first video with AI Gateway. S
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation?from=related) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
-- [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation?from=related)
-- [What are the best practices for hosting videos on Vercel?](https://vercel.com/kb/guide/best-practices-for-hosting-videos-on-vercel-nextjs-mp4-gif?from=related) — Learn the ideal solutions for using video files like .mp4 and .gif on Vercel to prevent excess bandwidth consumption.
-- [ByteDance](https://ai-sdk.dev/providers/ai-sdk-providers/bytedance?from=related)
-- [Reference-to-Video](https://vercel.com/docs/ai-gateway/modalities/video-generation/reference-to-video?from=related) — Generate videos featuring characters from reference images or videos using Google Veo, KlingAI, Wan, Seedance, or Grok I
-- [Video Editing](https://vercel.com/docs/ai-gateway/modalities/video-generation/video-editing?from=related) — Edit existing videos using text prompts with Grok Imagine Video through AI Gateway.
-- [Image](https://vercel.com/docs/ai-gateway/getting-started/image?from=related) — Generate images from text prompts using AI Gateway.
-- [Using Chat Completions API](https://vercel.com/docs/ai-gateway/modalities/image-generation/openai?from=related) — Generate and edit images using AI models through Vercel AI Gateway with the Chat Completions API.
-- [Video Extension](https://vercel.com/docs/ai-gateway/modalities/video-generation/video-extension?from=related) — Extend existing videos from their last frame with Grok Imagine Video through AI Gateway.
+- [Grok Imagine Video on AI Gateway](https://vercel.com/changelog/grok-imagine-video-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fvideo&source_site=vercel-docs&relationship=related)
+- [Kling video models on AI Gateway](https://vercel.com/changelog/kling-video-models-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fvideo&source_site=vercel-docs&relationship=related)
+- [Veo video models on AI Gateway](https://vercel.com/changelog/veo-video-models-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fvideo&source_site=vercel-docs&relationship=related)
+- [Wan models on AI Gateway](https://vercel.com/changelog/wan-models-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fvideo&source_site=vercel-docs&relationship=related)
+- [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fvideo&source_site=vercel-docs&relationship=related)
+- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fvideo&source_site=vercel-docs&relationship=related) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
+- [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fvideo&source_site=vercel-docs&relationship=related)
+- [AI Gateway now supports asynchronous video generation](https://vercel.com/changelog/ai-gateway-now-supports-asynchronous-video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fvideo&source_site=vercel-docs&relationship=related)
+- [Reference-to-Video Generation](https://vercel.com/docs/ai-gateway/modalities/video-generation/reference-to-video?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fvideo&source_site=vercel-docs&relationship=related) — Generate videos featuring characters from reference images or videos using Google Veo, KlingAI, Wan, Seedance, or Grok I
+- [Video Editing](https://vercel.com/docs/ai-gateway/modalities/video-generation/video-editing?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fvideo&source_site=vercel-docs&relationship=related) — Edit existing videos using text prompts with Grok Imagine Video through AI Gateway.
+- [Image Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/image?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fvideo&source_site=vercel-docs&relationship=related) — Generate images from text prompts using AI Gateway.
+- [Video Extension](https://vercel.com/docs/ai-gateway/modalities/video-generation/video-extension?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fvideo&source_site=vercel-docs&relationship=related) — Extend existing videos from their last frame with Grok Imagine Video through AI Gateway.
 
-Full cross-link map for this page: [/docs/ai-gateway/getting-started/video.graph.md](/docs/ai-gateway/getting-started/video.graph.md)
+Full cross-link map for this page: [/docs/ai-gateway/getting-started/video.graph.md](/docs/ai-gateway/getting-started/video.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fvideo&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Generations can take minutes. The quickstart below holds one request to AI Gateway open for the whole generation, which is fine for scripts and long-lived servers. If you run somewhere with request timeouts, use [asynchronous video generation](#asynchronous-video-generation) instead and let AI Gateway run the generation as a background job.
 
-> **💡 Note:** Video generation requires the latest version of AI SDK v6. Check your `ai` package version with `npm list ai`.
+> **💡 Note:** Video generation requires AI SDK 6 or later. Check your `ai` package version with `npm list ai`.
 
 - ### Set up your project
   Create a new directory and initialize a Node.js project:
@@ -56,22 +59,22 @@ Generations can take minutes. The quickstart below holds one request to AI Gatew
   ```
 
 - ### Install dependencies
-  Install AI SDK v6 and development dependencies:
+  Install the AI SDK and development dependencies:
   #### npm
   ```bash filename="Terminal"
-  npm install ai dotenv @types/node tsx typescript
+  npm install ai@latest dotenv @types/node tsx typescript
   ```
   #### yarn
   ```bash filename="Terminal"
-  yarn add ai dotenv @types/node tsx typescript
+  yarn add ai@latest dotenv @types/node tsx typescript
   ```
   #### pnpm
   ```bash filename="Terminal"
-  pnpm add ai dotenv @types/node tsx typescript
+  pnpm add ai@latest dotenv @types/node tsx typescript
   ```
   #### bun
   ```bash filename="Terminal"
-  bun add ai dotenv @types/node tsx typescript
+  bun add ai@latest dotenv @types/node tsx typescript
   ```
   If you already have AI SDK installed, upgrade to the latest version of AI SDK v6:
   ```bash filename="Terminal"
@@ -383,7 +386,7 @@ const firstFrame = fs.readFileSync('start.png');
 const lastFrame = fs.readFileSync('end.png');
 
 const result = await generateVideo({
-  model: 'klingai/kling-v2.6-i2v',
+  model: 'klingai/kling-v3.0-i2v',
   prompt: {
     image: firstFrame,
     text: 'Smooth transition between the two scenes',
@@ -409,7 +412,7 @@ import fs from 'node:fs';
 import 'dotenv/config';
 
 const result = await generateVideo({
-  model: 'klingai/kling-v2.6-motion-control',
+  model: 'klingai/kling-v3.0-motion-control',
   prompt: {
     image: fs.readFileSync('./character.png'),
   },
@@ -493,7 +496,7 @@ const { url: imageUrl } = await put('input.png', imageBuffer, {
 });
 
 const result = await generateVideo({
-  model: 'klingai/kling-v2.6-i2v',
+  model: 'klingai/kling-v3.0-i2v',
   prompt: {
     image: imageUrl, // Pass URL instead of buffer
     text: 'The scene slowly comes to life with gentle movement',

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/mistral.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "da8253c28318ac115ebae0638edfb31f3d00dbae1893079cffa1dfbf1fb4c343"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "b6d978bdd589dd358fa138e791b2ede7da31f1010d19e66ad9d23807e7d7dd9e"
 ---
 
 # Mistral AI Provider
@@ -119,6 +119,43 @@ The following optional provider options are available for Mistral models:
   Whether to enable parallel function calling during tool use. When set to false, the model will use at most one tool per response.
 
   Defaults to `true`.
+
+- **promptCacheKey** _string_
+
+  A stable identifier used to improve cache affinity for requests that share a prompt prefix.
+
+### Prompt Cache Affinity
+
+[Mistral prompt caching](https://docs.mistral.ai/studio/conversations/advanced/prompt-caching)
+reuses shared prompt prefixes. Set `promptCacheKey` to a stable workflow,
+session, or conversation identifier to improve cache affinity. The provider
+sends it as Mistral's `prompt_cache_key` request field:
+
+```ts
+import { mistral, type MistralLanguageModelChatOptions } from '@ai-sdk/mistral';
+import { generateText } from 'ai';
+
+const result = await generateText({
+  model: mistral('mistral-medium-3.5'),
+  system: 'Classify each support request as account, billing, or technical.',
+  prompt: 'The dashboard shows an error when I open an invoice.',
+  providerOptions: {
+    mistral: {
+      promptCacheKey: 'support-classification-workflow-v1',
+    } satisfies MistralLanguageModelChatOptions,
+  },
+});
+
+console.log(result.usage.inputTokenDetails.cacheReadTokens);
+```
+
+Use the same key for requests with the same stable prefix. Multi-step
+`generateText` and `streamText` calls reuse their provider options for every
+step, so a single key applies across the complete tool loop. Prompt cache
+affinity is best-effort and does not guarantee a cache hit.
+
+Treat cache keys as opaque identifiers. Do not include API keys, secrets, email
+addresses, or other sensitive personal data.
 
 ### Document OCR
 
@@ -569,6 +606,7 @@ models:
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
 - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
+- [Z.AI](/providers/ai-sdk-providers/zai)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)
 - [Fireworks](/providers/ai-sdk-providers/fireworks)

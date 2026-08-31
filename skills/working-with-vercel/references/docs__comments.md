@@ -3,7 +3,7 @@ title: Comments Overview
 product: vercel
 url: /docs/comments
 canonical_url: "https://vercel.com/docs/comments"
-last_updated: 2026-06-16
+last_updated: 2026-08-19
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Comments allow teams and invited participants to give direct feedback on preview deployments. Learn more about Comments in this overview.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/comments.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "21a4af2b089ea2771a05a8dd33d758b4d03e8616cfe3cc82ca245f4f8e59e8b8"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "119a193c9e61db114f6afdf214e6b8db108c486bdf4c96f1cbeaae758645ac73"
 ---
 
 # Comments Overview
@@ -30,14 +30,20 @@ sha256: "21a4af2b089ea2771a05a8dd33d758b4d03e8616cfe3cc82ca245f4f8e59e8b8"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How do I prevent the Vercel for GitHub integration comments?](https://vercel.com/kb/guide/how-to-prevent-vercel-github-comments?from=related) — Information on how to prevent the Vercel for GitHub integration from adding comments.
-- [Managing Toolbar](https://vercel.com/docs/vercel-toolbar/managing-toolbar?from=related) — Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
-- [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
-- [General Settings](https://vercel.com/docs/project-configuration/general-settings?from=related) — Configure basic settings for your Vercel project, including the project name, build and development settings, root direc
-- [Browser Extensions](https://vercel.com/docs/vercel-toolbar/browser-extension?from=related) — The browser extensions enable you to use the toolbar in production environments, take screenshots and attach them to com
-- [Bitbucket](https://vercel.com/docs/git/vercel-for-bitbucket?from=related) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
+- [Introducing Commenting on Preview Deployments](https://vercel.com/blog/introducing-commenting-on-preview-deployments?from=related&source_path=%2Fdocs%2Fcomments&source_site=vercel-docs&relationship=related)
+- [Enhanced Preview experience](https://vercel.com/blog/making-live-reviews-a-reality-enhanced-preview-experience?from=related&source_path=%2Fdocs%2Fcomments&source_site=vercel-docs&relationship=related)
+- [Using Vercel comments to improve the Next.js 13 documentation](https://vercel.com/blog/using-vercel-comments-to-improve-the-next-js-13-documentation?from=related&source_path=%2Fdocs%2Fcomments&source_site=vercel-docs&relationship=related)
+- [Commenting on Previews is now in Public Beta](https://vercel.com/changelog/commenting-on-previews-is-now-in-public-beta?from=related&source_path=%2Fdocs%2Fcomments&source_site=vercel-docs&relationship=related)
+- [Manage Vercel Toolbar comments from the CLI](https://vercel.com/changelog/manage-vercel-toolbar-comments-from-the-cli?from=related&source_path=%2Fdocs%2Fcomments&source_site=vercel-docs&relationship=related)
+- [Comments now available in Vercel's Slack integration](https://vercel.com/changelog/comments-now-available-in-vercels-slack-integration?from=related&source_path=%2Fdocs%2Fcomments&source_site=vercel-docs&relationship=related)
+- [Comments on Preview Deployments are now generally available](https://vercel.com/changelog/comments-on-preview-deployments-are-now-generally-available?from=related&source_path=%2Fdocs%2Fcomments&source_site=vercel-docs&relationship=related)
+- [Comments are now visible in your dashboard notifications](https://vercel.com/changelog/comments-are-now-visible-in-your-dashboard-notifications?from=related&source_path=%2Fdocs%2Fcomments&source_site=vercel-docs&relationship=related)
+- [Account Management](https://vercel.com/docs/accounts?from=related&source_path=%2Fdocs%2Fcomments&source_site=vercel-docs&relationship=related) — Learn how to manage your Vercel account and team members.
+- [Tools](https://vercel.com/docs/agent-resources/vercel-mcp/tools?from=related&source_path=%2Fdocs%2Fcomments&source_site=vercel-docs&relationship=related) — Available tools in Vercel MCP for searching docs, managing teams, projects, deployments, Web Analytics, runtime logs and
+- [Vercel CLI Overview](https://vercel.com/docs/cli?from=related&source_path=%2Fdocs%2Fcomments&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel command-line interface \\(CLI\\) to manage and configure your Vercel Projects from the command
+- [Bypass Deployment Protection for testing, sharing, and automation](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection?from=related&source_path=%2Fdocs%2Fcomments&source_site=vercel-docs&relationship=related) — Learn how to bypass Deployment Protection for specific domains, or for all deployments in a project.
 
-Full cross-link map for this page: [/docs/comments.graph.md](/docs/comments.graph.md)
+Full cross-link map for this page: [/docs/comments.graph.md](/docs/comments.graph.md?from=related&source_path=%2Fdocs%2Fcomments&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Comments allow teams [and invited participants](/docs/comments/how-comments-work#sharing) to give direct feedback on [preview deployments](/docs/deployments/environments#preview-environment-pre-production) or other environments through the Vercel Toolbar. Comments can be added to any part of the UI, opening discussion threads that [can be linked to Slack threads](/docs/comments/integrations#use-the-vercel-app-for-slack). This feature is **enabled by default** on *all* preview deployments, for all account plans, free of charge. The only requirement is that all users must have a Vercel account.

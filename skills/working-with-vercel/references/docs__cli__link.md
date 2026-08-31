@@ -3,7 +3,7 @@ title: vercel link
 product: vercel
 url: /docs/cli/link
 canonical_url: "https://vercel.com/docs/cli/link"
-last_updated: 2026-03-17
+last_updated: 2026-08-11
 type: reference
 prerequisites:
   - /docs/cli
@@ -14,8 +14,8 @@ related:
 summary: Learn how to link a local directory to a Vercel Project using the vercel link CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/link.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "19ca25fb887f2816f5d92b9ecd6dff02e45d97c0ce4f74964a79dbeeb5f064e4"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "e6d9980f03b88f3862ca189f9cba0163694633722f9a8c156f47850dba6ee241"
 ---
 
 # vercel link
@@ -28,13 +28,15 @@ The `vercel link` command links your local directory to a [Vercel Project](/docs
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Project Linking](https://vercel.com/docs/cli/project-linking?from=related) — Learn how to link existing Vercel Projects with Vercel CLI.
-- [vercel open](https://vercel.com/docs/cli/open?from=related) — Learn how to open your current project in the Vercel Dashboard using the vercel open CLI command.
-- [vercel build](https://vercel.com/docs/cli/build?from=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
-- [vercel git](https://vercel.com/docs/cli/git?from=related) — Learn how to manage your Git provider connections using the vercel git CLI command.
-- [vercel dev](https://vercel.com/docs/cli/dev?from=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
+- [Faster, predictable project linking in the Vercel CLI](https://vercel.com/changelog/faster-predictable-project-linking-in-the-vercel-cli?from=related&source_path=%2Fdocs%2Fcli%2Flink&source_site=vercel-docs&relationship=related)
+- [Preserve local environment variables when linking with the Vercel CLI](https://vercel.com/changelog/preserve-local-environment-variables-when-linking-with-the-vercel-cli?from=related&source_path=%2Fdocs%2Fcli%2Flink&source_site=vercel-docs&relationship=related)
+- [Linking Projects with Vercel CLI](https://vercel.com/docs/cli/project-linking?from=related&source_path=%2Fdocs%2Fcli%2Flink&source_site=vercel-docs&relationship=related) — Learn how to link existing Vercel Projects with Vercel CLI.
+- [vercel open](https://vercel.com/docs/cli/open?from=related&source_path=%2Fdocs%2Fcli%2Flink&source_site=vercel-docs&relationship=related) — Learn how to open your current project in the Vercel Dashboard using the vercel open CLI command.
+- [vercel build](https://vercel.com/docs/cli/build?from=related&source_path=%2Fdocs%2Fcli%2Flink&source_site=vercel-docs&relationship=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
+- [vercel git](https://vercel.com/docs/cli/git?from=related&source_path=%2Fdocs%2Fcli%2Flink&source_site=vercel-docs&relationship=related) — Learn how to manage your Git provider connections using the vercel git CLI command.
+- [vercel dev](https://vercel.com/docs/cli/dev?from=related&source_path=%2Fdocs%2Fcli%2Flink&source_site=vercel-docs&relationship=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
 
-Full cross-link map for this page: [/docs/cli/link.graph.md](/docs/cli/link.graph.md)
+Full cross-link map for this page: [/docs/cli/link.graph.md](/docs/cli/link.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Flink&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Usage

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/replicate.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "eb888c1bdc8ff5d0e120976f66fc02962278d4021f567b2d636e3565c277fa65"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "d4ac1d13679bcf58c2c02e98d672829504e25dba75db3fe20ce82410cf6df9a4"
 ---
 
 # Replicate Provider
@@ -296,6 +296,7 @@ For more details, see the [Replicate models page](https://replicate.com/explore)
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
 - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
+- [Z.AI](/providers/ai-sdk-providers/zai)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)
 - [Fireworks](/providers/ai-sdk-providers/fireworks)

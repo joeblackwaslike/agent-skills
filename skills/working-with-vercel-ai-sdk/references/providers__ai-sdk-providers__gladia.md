@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/gladia.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "d98efa596bd45361371b2916d3a38a6ed49b0653b5156e48c63b6660ffb6af8b"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "56919804034f4ea364fcd729e3a48d36c40e4dd911a5d35d67fb17cb1627f176"
 ---
 
 # Gladia Provider
@@ -303,6 +303,7 @@ The following provider options are available:
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
 - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
+- [Z.AI](/providers/ai-sdk-providers/zai)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)
 - [Fireworks](/providers/ai-sdk-providers/fireworks)

@@ -3,7 +3,7 @@ title: Flags Explorer
 product: vercel
 url: /docs/flags/flags-explorer
 canonical_url: "https://vercel.com/docs/flags/flags-explorer"
-last_updated: 2026-06-26
+last_updated: 2026-08-11
 type: how-to
 prerequisites:
   - /docs/flags
@@ -16,8 +16,8 @@ related:
 summary: "View and override your application's feature flags from the Vercel Toolbar"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/flags-explorer.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "010898c297486beae0080548f8735a3aecfec16db9a264a2c95ad3e3e26661e8"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "e57fdca1991707db9cde4568be770de87b3264f1b1b9a34a10b99893ddc51076"
 ---
 
 # Flags Explorer
@@ -30,20 +30,20 @@ sha256: "010898c297486beae0080548f8735a3aecfec16db9a264a2c95ad3e3e26661e8"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Quickstart](https://flags-sdk.dev/docs/frameworks/next?from=related) — Learn how to start using the Flags SDK in your Next.js project.
-- [Providers](https://flags-sdk.dev/docs/providers?from=related) — Combine your feature flag provider with the Flags SDK using an adapter.
-- [Flagsmith](https://flags-sdk.dev/docs/providers/flagsmith?from=related)
-- [GrowthBook](https://flags-sdk.dev/docs/providers/growthbook?from=related)
-- [Hypertune](https://flags-sdk.dev/docs/providers/hypertune?from=related)
-- [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
-- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
-- [Set Up Flags Explorer](https://vercel.com/docs/flags/vercel-flags/cli/set-up-flags-explorer?from=related) — Add the Flags Explorer to the Vercel Toolbar so you can override flag values on preview deployments without affecting ot
-- [Run an A/B Test](https://vercel.com/docs/flags/vercel-flags/cli/run-ab-test?from=related) — Set up an A/B test with a feature flag, track results through Web Analytics, and clean up afterward using the Vercel CLI
-- [Pro Plan](https://vercel.com/docs/plans/pro-plan?from=related) — Learn about the Vercel Pro plan with credit-based billing, free viewer seats, and self-serve enterprise features for pro
-- [Pricing](https://vercel.com/docs/pricing?from=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
+- [Quickstart](https://flags-sdk.dev/docs/frameworks/next?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer&source_site=vercel-docs&relationship=related) — Learn how to start using the Flags SDK in your Next.js project.
+- [Providers](https://flags-sdk.dev/docs/providers?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer&source_site=vercel-docs&relationship=related) — Combine your feature flag provider with the Flags SDK using an adapter.
+- [Flagsmith](https://flags-sdk.dev/docs/providers/flagsmith?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer&source_site=vercel-docs&relationship=related)
+- [GrowthBook](https://flags-sdk.dev/docs/providers/growthbook?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer&source_site=vercel-docs&relationship=related)
+- [Hypertune](https://flags-sdk.dev/docs/providers/hypertune?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer&source_site=vercel-docs&relationship=related)
+- [LaunchDarkly is now available on the Vercel Marketplace](https://vercel.com/changelog/launchdarkly-is-now-available-on-the-vercel-marketplace?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer&source_site=vercel-docs&relationship=related)
+- [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer&source_site=vercel-docs&relationship=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
+- [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer&source_site=vercel-docs&relationship=related)
+- [Introducing feature flag management from the Vercel Toolbar](https://vercel.com/blog/toolbar-feature-flags?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer&source_site=vercel-docs&relationship=related)
+- [View and override feature flags from the Vercel Toolbar](https://vercel.com/changelog/view-and-override-feature-flags-from-the-vercel-toolbar?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer&source_site=vercel-docs&relationship=related)
+- [Flags Explorer is now generally available](https://vercel.com/changelog/flags-explorer-is-now-generally-available?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer&source_site=vercel-docs&relationship=related)
+- [Setting up Flags Explorer](https://vercel.com/docs/flags/vercel-flags/cli/set-up-flags-explorer?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer&source_site=vercel-docs&relationship=related) — Add the Flags Explorer to the Vercel Toolbar so you can override flag values on preview deployments without affecting ot
 
-Full cross-link map for this page: [/docs/flags/flags-explorer.graph.md](/docs/flags/flags-explorer.graph.md)
+Full cross-link map for this page: [/docs/flags/flags-explorer.graph.md](/docs/flags/flags-explorer.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 The Flags Explorer is a feature of the [Vercel Toolbar](/docs/vercel-toolbar) that allows you to view and override your application's feature flags without leaving your browser tab. You can also share and recommend overrides to team members. Follow the [Quickstart](/docs/flags/flags-explorer/getting-started) to make the Flags Explorer aware of your application's feature flags.

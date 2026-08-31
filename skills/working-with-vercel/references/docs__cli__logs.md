@@ -12,8 +12,8 @@ related:
 summary: View and filter request logs for your Vercel project, or stream live runtime logs from a deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/logs.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "1481330602b2969dea2c75fe612ee0ad77edd51e0f88fa98b8e5e6e590b71724"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "a4f7cec9bd6bfeff0e9ede5f306d4ffcd838cdd083b402e7ac93d874fc108e7d"
 ---
 
 # vercel logs
@@ -26,13 +26,15 @@ The `vercel logs` command displays request logs for your project or streams live
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [vercel activity](https://vercel.com/docs/cli/activity?from=related) — View activity events for your Vercel project or team, filtered by type, date range, and project.
-- [vercel list](https://vercel.com/docs/cli/list?from=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [Runtime](https://vercel.com/docs/logs/runtime?from=related) — Learn how to search, inspect, and share your runtime logs with the Logs tab.
-- [Logs](https://vercel.com/docs/logs?from=related) — Use logs to find information on deployment builds, function executions, and more.
-- [Get logs for a deployment](https://vercel.com/docs/rest-api/logs/get-logs-for-a-deployment?from=related)
+- [Improvements to command line logs](https://vercel.com/changelog/improvements-to-command-line-logs?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related)
+- [vercel logs CLI command now optimized for agents with historical log querying](https://vercel.com/changelog/vercel-logs-cli-command-now-optimized-for-agents-with-historical-log?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related)
+- [vercel activity](https://vercel.com/docs/cli/activity?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related) — View activity events for your Vercel project or team, filtered by type, date range, and project.
+- [Get logs for a deployment](https://vercel.com/docs/rest-api/logs/get-logs-for-a-deployment?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related) — GET /v1/projects/{projectId}/deployments/{deploymentId}/runtime-logs — Returns a stream of logs for a given deployment.
+- [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [Runtime Logs](https://vercel.com/docs/logs/runtime?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to search, inspect, and share your runtime logs with the Logs tab.
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 
-Full cross-link map for this page: [/docs/cli/logs.graph.md](/docs/cli/logs.graph.md)
+Full cross-link map for this page: [/docs/cli/logs.graph.md](/docs/cli/logs.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 By default, running `vercel logs` shows request logs from the last 24 hours for the linked project and branch. You can filter logs by environment, log level, status code, source, and more.

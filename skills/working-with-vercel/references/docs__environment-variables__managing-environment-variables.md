@@ -13,8 +13,8 @@ related:
 summary: Learn how to create and manage environment variables for Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/managing-environment-variables.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "0cf40db8cb00dff8aba88cd41a998fe2001e619e287388197651b889c6f507a1"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "6d898eeef3bd22530be9ba7079f1964e247acbf5eaa580f2f61ecb3e8f38f2d9"
 ---
 
 # Managing environment variables
@@ -27,16 +27,19 @@ Environment variables are key-value pairs configured outside your source code so
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
-- [How do I migrate away from \\`vercel.json\\` env and build.env?](https://vercel.com/kb/guide/how-do-i-migrate-away-from-vercel-json-env-and-build-env?from=related) — Information on how to migrate your \\`vercel.json\\` environment variables to the Environment Variables UI.
-- [How do I set up a staging environment on Vercel?](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel?from=related) — Information on how to set up a staging environment on Vercel.
-- [Manage Across Environments](https://vercel.com/docs/environment-variables/manage-across-environments?from=related) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
-- [Shared Environment Variables](https://vercel.com/docs/environment-variables/shared-environment-variables?from=related) — Learn how to use Shared environment variables, which are environment variables that you define at the Team level and can
-- [Sensitive Environment Variables](https://vercel.com/docs/environment-variables/sensitive-environment-variables?from=related) — Environment variables that cannot be decrypted once created.
-- [Edit an environment variable](https://vercel.com/docs/rest-api/projects/edit-an-environment-variable?from=related)
-- [Create one or more environment variables](https://vercel.com/docs/rest-api/projects/create-one-or-more-environment-variables?from=related)
+- [Bun runtime now supports large functions and extended max duration](https://vercel.com/changelog/bun-runtime-now-supports-large-functions-and-extended-max-duration?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanaging-environment-variables&source_site=vercel-docs&relationship=related)
+- [Vercel Functions can now be up to 5GB in package size](https://vercel.com/changelog/vercel-functions-can-now-be-up-to-5-gb-in-package-size?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanaging-environment-variables&source_site=vercel-docs&relationship=related)
+- [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanaging-environment-variables&source_site=vercel-docs&relationship=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
+- [Environment Variables UI](https://vercel.com/blog/environment-variables-ui?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanaging-environment-variables&source_site=vercel-docs&relationship=related)
+- [How do I migrate away from \\`vercel.json\\` env and build.env?](https://vercel.com/kb/guide/how-do-i-migrate-away-from-vercel-json-env-and-build-env?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanaging-environment-variables&source_site=vercel-docs&relationship=related) — Information on how to migrate your \\`vercel.json\\` environment variables to the Environment Variables UI.
+- [How do I set up a staging environment on Vercel?](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanaging-environment-variables&source_site=vercel-docs&relationship=related) — Information on how to set up a staging environment on Vercel.
+- [Managing environment variables across environments](https://vercel.com/docs/environment-variables/manage-across-environments?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanaging-environment-variables&source_site=vercel-docs&relationship=related) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
+- [Shared environment variables](https://vercel.com/docs/environment-variables/shared-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanaging-environment-variables&source_site=vercel-docs&relationship=related) — Learn how to use Shared environment variables, which are environment variables that you define at the Team level and can
+- [Sensitive environment variables](https://vercel.com/docs/environment-variables/sensitive-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanaging-environment-variables&source_site=vercel-docs&relationship=related) — Environment variables that cannot be decrypted once created.
+- [Edit an environment variable](https://vercel.com/docs/rest-api/projects/edit-an-environment-variable?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanaging-environment-variables&source_site=vercel-docs&relationship=related) — PATCH /v9/projects/{idOrName}/env/{id} — Edit a specific environment variable for a given project by passing the environ
+- [vercel env](https://vercel.com/docs/cli/env?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanaging-environment-variables&source_site=vercel-docs&relationship=related) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
 
-Full cross-link map for this page: [/docs/environment-variables/managing-environment-variables.graph.md](/docs/environment-variables/managing-environment-variables.graph.md)
+Full cross-link map for this page: [/docs/environment-variables/managing-environment-variables.graph.md](/docs/environment-variables/managing-environment-variables.graph.md?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanaging-environment-variables&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Changes to environment variables are not applied to previous deployments, they only apply to new deployments. You must redeploy your project to update the value of any variables you change in the deployment.

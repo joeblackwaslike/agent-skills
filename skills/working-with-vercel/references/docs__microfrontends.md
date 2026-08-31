@@ -13,11 +13,11 @@ related:
   - /docs/microfrontends/local-development
   - /docs/microfrontends/quickstart
   - /docs/vercel-toolbar/in-production-and-localhost
-summary: Learn about microfrontends on Vercel.
+summary: Learn how to use microfrontends on Vercel to split apart large applications, improve developer experience and make incremental migrations easier.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "0c10170637b2062b2ea9e2458b222c24651ec9f6d048e0a724804a8e37d44e5a"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "997662317bd153cc74121a85deb5e4555c656b8f70550cb4b33db73500aace29"
 ---
 
 # Microfrontends
@@ -30,18 +30,20 @@ Microfrontends allow you to split a single application into smaller, independent
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Microfrontends](https://turborepo.dev/docs/guides/microfrontends?from=related) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
-- [Build with an Express starter template](https://vercel.com/kb/guide/build-with-a-express-starter-template?from=related) — Deploy an Express app to Vercel from a template. Browse Express starters from Vercel and the community, then run them lo
-- [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related) — Learn how to debug how Vercel decides where to route your request
-- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain?from=related) — Learn how to serve multiple Vercel projects from a single domain.
-- [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel?from=related) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
-- [vercel microfrontends](https://vercel.com/docs/cli/microfrontends?from=related) — Manage microfrontends groups from the CLI. Learn how to create groups, inspect group metadata, add and remove projects,
-- [Monorepos FAQ](https://vercel.com/docs/monorepos/monorepo-faq?from=related) — Learn the answer to common questions about deploying monorepos on Vercel.
-- [List projects in a microfrontends group](https://vercel.com/docs/rest-api/microfrontends/list-projects-in-a-microfrontends-group?from=related)
-- [Get microfrontends config for a project](https://vercel.com/docs/rest-api/microfrontends/get-microfrontends-config-for-a-project?from=related)
-- [Reference](https://vercel.com/docs/flags/flags-explorer/reference?from=related) — In-depth reference for configuring the Flags Explorer
+- [Microfrontends](https://turborepo.dev/docs/guides/microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends&source_site=vercel-docs&relationship=related) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
+- [Microfrontends now generally available](https://vercel.com/changelog/microfrontends-now-generally-available?from=related&source_path=%2Fdocs%2Fmicrofrontends&source_site=vercel-docs&relationship=related)
+- [Microfrontends routing now applies to vc alias and branch domains](https://vercel.com/changelog/microfrontends-routing-now-applies-to-vc-alias-and-branch-domains?from=related&source_path=%2Fdocs%2Fmicrofrontends&source_site=vercel-docs&relationship=related)
+- [Microfrontends support is now in Public Beta](https://vercel.com/changelog/microfrontends-support-is-now-in-public-beta?from=related&source_path=%2Fdocs%2Fmicrofrontends&source_site=vercel-docs&relationship=related)
+- [Preview links between microfrontends projects now serve all paths](https://vercel.com/changelog/preview-links-between-microfrontends-projects-now-serve-all-paths?from=related&source_path=%2Fdocs%2Fmicrofrontends&source_site=vercel-docs&relationship=related)
+- [Vercel Microfrontends checks for missing configuration](https://vercel.com/changelog/vercel-microfrontends-checks-for-missing-configuration?from=related&source_path=%2Fdocs%2Fmicrofrontends&source_site=vercel-docs&relationship=related)
+- [Build with an Express starter template](https://vercel.com/kb/guide/build-with-a-express-starter-template?from=related&source_path=%2Fdocs%2Fmicrofrontends&source_site=vercel-docs&relationship=related) — Deploy an Express app to Vercel from a template. Browse Express starters from Vercel and the community, then run them lo
+- [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related&source_path=%2Fdocs%2Fmicrofrontends&source_site=vercel-docs&relationship=related) — Learn how to debug how Vercel decides where to route your request
+- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain?from=related&source_path=%2Fdocs%2Fmicrofrontends&source_site=vercel-docs&relationship=related) — Learn how to serve multiple Vercel projects from a single domain.
+- [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel?from=related&source_path=%2Fdocs%2Fmicrofrontends&source_site=vercel-docs&relationship=related) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
+- [How we run Vercel's CDN in front of Discourse](https://vercel.com/blog/how-we-run-vercels-cdn-in-front-of-discourse?from=related&source_path=%2Fdocs%2Fmicrofrontends&source_site=vercel-docs&relationship=related)
+- [Reference](https://vercel.com/docs/flags/flags-explorer/reference?from=related&source_path=%2Fdocs%2Fmicrofrontends&source_site=vercel-docs&relationship=related) — In-depth reference for configuring the Flags Explorer
 
-Full cross-link map for this page: [/docs/microfrontends.graph.md](/docs/microfrontends.graph.md)
+Full cross-link map for this page: [/docs/microfrontends.graph.md](/docs/microfrontends.graph.md?from=related&source_path=%2Fdocs%2Fmicrofrontends&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## When to use microfrontends?

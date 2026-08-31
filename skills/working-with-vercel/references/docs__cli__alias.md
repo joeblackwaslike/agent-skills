@@ -3,7 +3,7 @@ title: vercel alias
 product: vercel
 url: /docs/cli/alias
 canonical_url: "https://vercel.com/docs/cli/alias"
-last_updated: 2026-03-17
+last_updated: 2026-08-11
 type: reference
 prerequisites:
   - /docs/cli
@@ -16,8 +16,8 @@ related:
 summary: Learn how to apply custom domain aliases to your Vercel deployments using the vercel alias CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/alias.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "239c536c6cf742e497d3755d9a8f0a59f649dd8db0643d7bf396833884b00f10"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "9c6020086aa70499d1cd6586b8b66d5a54e2ca44869f07aadc8b38607f1af6a8"
 ---
 
 # vercel alias
@@ -30,15 +30,16 @@ The `vercel alias` command allows you to apply [custom domains](/docs/domains/wo
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to alias a preview deployment using the CLI](https://vercel.com/kb/guide/how-to-alias-a-preview-deployment-using-the-cli?from=related) — Learn how to automatically alias a Vercel preview deployment.
-- [Why do my Vercel deployments have multiple domains?](https://vercel.com/kb/guide/why-do-my-vercel-deployments-have-multiple-domains?from=related) — Learn about why Vercel auto generates URLs for your deployments.
-- [Assign an Alias](https://vercel.com/docs/rest-api/aliases/assign-an-alias?from=related)
-- [Deploying & Redirecting Domains](https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting?from=related) — Learn how to deploy your domains and set up domain redirects with this guide.
-- [Get an Alias](https://vercel.com/docs/rest-api/aliases/get-an-alias?from=related)
-- [vercel domains](https://vercel.com/docs/cli/domains?from=related) — Learn how to buy, sell, transfer, and manage your domains using the vercel domains CLI command.
-- [List aliases](https://vercel.com/docs/rest-api/aliases/list-aliases?from=related)
+- [Microfrontends routing now applies to vc alias and branch domains](https://vercel.com/changelog/microfrontends-routing-now-applies-to-vc-alias-and-branch-domains?from=related&source_path=%2Fdocs%2Fcli%2Falias&source_site=vercel-docs&relationship=related)
+- [How to alias a preview deployment using the CLI](https://vercel.com/kb/guide/how-to-alias-a-preview-deployment-using-the-cli?from=related&source_path=%2Fdocs%2Fcli%2Falias&source_site=vercel-docs&relationship=related) — Learn how to automatically alias a Vercel preview deployment.
+- [Why do my Vercel deployments have multiple domains?](https://vercel.com/kb/guide/why-do-my-vercel-deployments-have-multiple-domains?from=related&source_path=%2Fdocs%2Fcli%2Falias&source_site=vercel-docs&relationship=related) — Learn about why Vercel auto generates URLs for your deployments.
+- [Assign an Alias](https://vercel.com/docs/rest-api/aliases/assign-an-alias?from=related&source_path=%2Fdocs%2Fcli%2Falias&source_site=vercel-docs&relationship=related) — POST /v2/deployments/{id}/aliases — Creates a new alias for the deployment resolved from the given deployment or alias I
+- [Deploying & Redirecting Domains](https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting?from=related&source_path=%2Fdocs%2Fcli%2Falias&source_site=vercel-docs&relationship=related) — Learn how to deploy your domains and set up domain redirects with this guide.
+- [vercel domains](https://vercel.com/docs/cli/domains?from=related&source_path=%2Fdocs%2Fcli%2Falias&source_site=vercel-docs&relationship=related) — Learn how to buy, sell, transfer, and manage your domains using the vercel domains CLI command.
+- [Get an Alias](https://vercel.com/docs/rest-api/aliases/get-an-alias?from=related&source_path=%2Fdocs%2Fcli%2Falias&source_site=vercel-docs&relationship=related) — GET /v4/aliases/{idOrAlias} — Retrieves an Alias for the given host name or alias ID.
+- [List Deployment Aliases](https://vercel.com/docs/rest-api/aliases/list-deployment-aliases?from=related&source_path=%2Fdocs%2Fcli%2Falias&source_site=vercel-docs&relationship=related) — GET /v2/deployments/{id}/aliases — Retrieves all Aliases for the Deployment with the given ID. The authenticated user or
 
-Full cross-link map for this page: [/docs/cli/alias.graph.md](/docs/cli/alias.graph.md)
+Full cross-link map for this page: [/docs/cli/alias.graph.md](/docs/cli/alias.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Falias&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 When a new deployment is created (with our [Git Integration](/docs/git), Vercel CLI, or the [REST API](/docs/rest-api)), the platform will automatically apply any [custom domains](/docs/domains/working-with-domains/add-a-domain) configured in the project settings.

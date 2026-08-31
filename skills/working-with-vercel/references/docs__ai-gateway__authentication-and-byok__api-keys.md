@@ -3,7 +3,7 @@ title: API Keys
 product: vercel
 url: /docs/ai-gateway/authentication-and-byok/api-keys
 canonical_url: "https://vercel.com/docs/ai-gateway/authentication-and-byok/api-keys"
-last_updated: 2026-07-31
+last_updated: 2026-08-11
 type: how-to
 prerequisites:
   - /docs/ai-gateway/authentication-and-byok
@@ -14,11 +14,11 @@ related:
   - /docs/ai-gateway/authentication-and-byok/oidc
   - /docs/cli
   - /docs/rest-api
-summary: Create, view, and delete AI Gateway API keys from the dashboard, CLI, or API.
+summary: "Create, view, and delete AI Gateway API keys, and set each key's budget and spend attribution, from the dashboard, CLI, or API."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok/api-keys.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "90ce3787f05805c294760fe752c251b6ee9e66667f9b43ce9cd8af8a132e18bb"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "e2d24e6cc68de8f248fedc480b40d38bcefadef29956a0199c86edd334c784c6"
 ---
 
 # API Keys
@@ -31,27 +31,32 @@ API keys authenticate your requests to the AI Gateway. This page covers how to:
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel?from=related) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
-- [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway?from=related) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
-- [BYOK](https://vercel.com/docs/ai-gateway/authentication-and-byok/byok?from=related) — Learn how to configure your own provider keys with the AI Gateway.
-- [Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend?from=related) — Monitor AI Gateway requests and manage spend: observability, custom reporting, usage and billing APIs, and spending budg
-- [Revoke a signing key](https://vercel.com/docs/rest-api/kms/revoke-a-signing-key?from=related)
-- [Create an SDK key](https://vercel.com/docs/rest-api/feature-flags/create-an-sdk-key?from=related)
-- [Delete an SDK key](https://vercel.com/docs/rest-api/feature-flags/delete-an-sdk-key?from=related)
+- [Budgets for API keys on AI Gateway](https://vercel.com/changelog/budgets-for-api-keys-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fapi-keys&source_site=vercel-docs&relationship=related)
+- [Claude Sonnet 5 now available on Vercel AI Gateway](https://vercel.com/changelog/claude-sonnet-5-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fapi-keys&source_site=vercel-docs&relationship=related)
+- [DeepSeek models now available via Azure on AI Gateway](https://vercel.com/changelog/deepseek-models-now-available-via-azure-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fapi-keys&source_site=vercel-docs&relationship=related)
+- [Gemini 3.6 Flash and Gemini 3.5 Flash-Lite are now available on AI Gateway](https://vercel.com/changelog/gemini-3-6-flash-3-5-flash-lite-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fapi-keys&source_site=vercel-docs&relationship=related)
+- [Gemini 3.7 Flash now available on AI Gateway for 50% off](https://vercel.com/changelog/gemini-3-7-flash-now-available-on-ai-gateway-for-50-off?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fapi-keys&source_site=vercel-docs&relationship=related)
+- [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fapi-keys&source_site=vercel-docs&relationship=related) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
+- [Bring Your Own Key \\(BYOK\\)](https://vercel.com/docs/ai-gateway/authentication-and-byok/byok?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fapi-keys&source_site=vercel-docs&relationship=related) — Learn how to configure your own provider keys with the AI Gateway.
+- [Create an SDK key](https://vercel.com/docs/rest-api/feature-flags/create-an-sdk-key?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fapi-keys&source_site=vercel-docs&relationship=related) — PUT /v1/projects/{projectIdOrName}/feature-flags/sdk-keys — Creates an SDK key.
+- [Revoke a signing key](https://vercel.com/docs/rest-api/kms/revoke-a-signing-key?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fapi-keys&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/keys/{keyId}/revoke — Immediately revoke a signing key that is already scheduled for rev
+- [Delete an SDK key](https://vercel.com/docs/rest-api/feature-flags/delete-an-sdk-key?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fapi-keys&source_site=vercel-docs&relationship=related) — DELETE /v1/projects/{projectIdOrName}/feature-flags/sdk-keys/{hashKey} — Deletes an SDK key.
+- [Create a signing key](https://vercel.com/docs/rest-api/kms/create-a-signing-key?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fapi-keys&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/keys — Create a new signing key for a KMS issuer. Depending on the activation mode, the
 
-Full cross-link map for this page: [/docs/ai-gateway/authentication-and-byok/api-keys.graph.md](/docs/ai-gateway/authentication-and-byok/api-keys.graph.md)
+Full cross-link map for this page: [/docs/ai-gateway/authentication-and-byok/api-keys.graph.md](/docs/ai-gateway/authentication-and-byok/api-keys.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fapi-keys&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 - **Create** a key in the dashboard, with the Vercel CLI, or via the Vercel API
 - **View** your keys and their usage
+- **Attribute** a key's spend to your team or an individual member
 - **Delete or revoke** a key
 
-You can optionally give any key a **budget** to cap how much it can spend; see [Budgets](/docs/ai-gateway/observability-and-spend/budgets#api-key-budgets). For how to use a key in your code, see [Authentication](/docs/ai-gateway/authentication-and-byok#api-keys).
+You can optionally give any key a **budget** to cap how much it can spend (see [Budgets](/docs/ai-gateway/observability-and-spend/budgets#api-key-budgets)), and choose whether its spend is attributed to your team or to a member (see [Spend attribution](#spend-attribution)). For how to use a key in your code, see [Authentication](/docs/ai-gateway/authentication-and-byok#api-keys).
 
 > **💡 Note:** When a team member leaves your team, Vercel deactivates any API keys they
 > created. If you need authentication that isn't tied to a specific person, use
-> [OIDC tokens](/docs/ai-gateway/authentication-and-byok/oidc)
-> on Vercel deployments.
+> [OIDC tokens](/docs/ai-gateway/authentication-and-byok/oidc) on Vercel
+> deployments.
 
 ## Create a key
 
@@ -93,7 +98,45 @@ curl -X POST "https://api.vercel.com/v1/api-keys?teamId=$VERCEL_TEAM_ID" \
 
 The response includes `apiKeyString` (the secret; save it now) and the key's `id`.
 
-To cap how much a key can spend, add a budget when you create it. See [Budgets](/docs/ai-gateway/observability-and-spend/budgets#set-an-api-key-budget-at-creation).
+To cap how much a key can spend, add a budget when you create it. See [Budgets](/docs/ai-gateway/observability-and-spend/budgets#set-an-api-key-budget-at-creation). By default, a new key's spend is attributed to you. To attribute it to your team instead, see [Spend attribution](#spend-attribution).
+
+## Spend attribution
+
+Every AI Gateway API key is attributed to either your team or a single team member. Attribution controls whose [budget](/docs/ai-gateway/observability-and-spend/budgets) the key's spend counts against:
+
+- **User**: the key's spend counts toward both the team budget and the key creator's [user budget](/docs/ai-gateway/observability-and-spend/budgets#user-budgets).
+- **Team**: the key's spend counts toward the team budget only.
+
+Budgets stack rather than split. A key attributed to a member counts against both that member's budget and the team budget on every request, and the request is rejected if either is exceeded. The team budget caps total spend, and a user budget caps one member's share of it.
+
+New keys default to **User** attribution. A key with no attribution set counts toward the **Team**, which covers keys created before spend attribution shipped and any key created through the API without `metadata.spendAttribution`. Only team **Owners** and **AI Gateway Budget Managers** can set or change a key's attribution.
+
+#### Dashboard
+
+1. **Open the create- or edit-key dialog.** On the [AI Gateway API Keys page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fapi-keys\&title=AI+Gateway+API+Keys), click **Create key**, or open a key's **···** menu and select **Edit key**.
+2. **Set spend attribution.** Under **Spend attribution**, choose **User** or **Team**.
+3. **Save.**
+
+#### API
+
+Set `metadata.spendAttribution` when you create a key:
+
+```bash filename="terminal"
+curl -X POST "https://api.vercel.com/v1/api-keys?teamId=$VERCEL_TEAM_ID" \
+  -H "Authorization: Bearer $VERCEL_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "purpose": "ai-gateway",
+    "name": "my-api-key",
+    "metadata": { "spendAttribution": "user" }
+  }'
+```
+
+| Field                       | Type   | Description                                                                          |
+| --------------------------- | ------ | ------------------------------------------------------------------------------------ |
+| `metadata.spendAttribution` | string | `user` (default) or `team`. Only team Owners and Budget Managers can set this field. |
+
+To change the attribution of an existing key, use the dashboard.
 
 ## View a key
 
@@ -120,7 +163,7 @@ curl "https://api.vercel.com/v1/api-keys?teamId=$VERCEL_TEAM_ID&purpose=ai-gatew
 
 ## Edit a key
 
-A key's only editable property is its budget. To add, change, or remove a budget, see [Budgets](/docs/ai-gateway/observability-and-spend/budgets#add-or-change-an-api-key-budget). To change anything else, such as the name, [delete the key](#delete-a-key) and create a new one.
+A key's editable properties are its budget and its spend attribution. To add, change, or remove a budget, see [Budgets](/docs/ai-gateway/observability-and-spend/budgets#add-or-change-an-api-key-budget). To change attribution, see [Spend attribution](#spend-attribution). To change anything else, such as the name, [delete the key](#delete-a-key) and create a new one.
 
 ## Delete a key
 

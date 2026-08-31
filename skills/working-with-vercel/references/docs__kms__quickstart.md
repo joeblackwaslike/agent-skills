@@ -3,7 +3,7 @@ title: Vercel KMS Quickstart
 product: vercel
 url: /docs/kms/quickstart
 canonical_url: "https://vercel.com/docs/kms/quickstart"
-last_updated: 2018-10-20
+last_updated: 2026-08-18
 type: tutorial
 prerequisites:
   - /docs/kms
@@ -16,8 +16,8 @@ related:
 summary: Create a KMS issuer, sign a JWT from a Vercel Function with @vercel/kms, and verify it against the published JWKS.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms/quickstart.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "ae1174835294856694fc2ba2d2c6ca167bf8692798ba35757f3160a18e6174ae"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "ec74b25a6a7e5b2274fcccb3d2bc588789300ff1888f7a4778904bcc1b62be2a"
 ---
 
 # Vercel KMS Quickstart
@@ -30,13 +30,14 @@ Sign a JWT from a Vercel Function with a Vercel-managed key, then verify it agai
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Concepts](https://vercel.com/docs/kms/concepts?from=related) — Understand how Vercel KMS rotates signing keys and how it authorizes signing, management, and verification.
-- [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token?from=related)
-- [Create a signing key](https://vercel.com/docs/rest-api/kms/create-a-signing-key?from=related)
-- [Pricing and Limits](https://vercel.com/docs/kms/pricing?from=related) — How Vercel KMS is billed per signing operation, the platform limits that apply, and how to stop being billed.
-- [Activate a signing key](https://vercel.com/docs/rest-api/kms/activate-a-signing-key?from=related)
+- [Sign JWTs from your Functions without managing private keys](https://vercel.com/changelog/sign-jwts-from-your-functions-without-managing-private-keys?from=related&source_path=%2Fdocs%2Fkms%2Fquickstart&source_site=vercel-docs&relationship=related)
+- [Vercel KMS Concepts](https://vercel.com/docs/kms/concepts?from=related&source_path=%2Fdocs%2Fkms%2Fquickstart&source_site=vercel-docs&relationship=related) — Understand how Vercel KMS rotates signing keys and how it authorizes signing, management, and verification.
+- [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token?from=related&source_path=%2Fdocs%2Fkms%2Fquickstart&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
+- [Create a signing key](https://vercel.com/docs/rest-api/kms/create-a-signing-key?from=related&source_path=%2Fdocs%2Fkms%2Fquickstart&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/keys — Create a new signing key for a KMS issuer. Depending on the activation mode, the
+- [Vercel KMS Pricing and Limits](https://vercel.com/docs/kms/pricing?from=related&source_path=%2Fdocs%2Fkms%2Fquickstart&source_site=vercel-docs&relationship=related) — How Vercel KMS is billed per signing operation, the platform limits that apply, and how to stop being billed.
+- [Vercel KMS Project Grants](https://vercel.com/docs/kms/concepts/project-grants?from=related&source_path=%2Fdocs%2Fkms%2Fquickstart&source_site=vercel-docs&relationship=related) — How a project grant authorizes a Vercel deployment to sign with a KMS issuer using its OIDC token, scoped to a team, pro
 
-Full cross-link map for this page: [/docs/kms/quickstart.graph.md](/docs/kms/quickstart.graph.md)
+Full cross-link map for this page: [/docs/kms/quickstart.graph.md](/docs/kms/quickstart.graph.md?from=related&source_path=%2Fdocs%2Fkms%2Fquickstart&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Prerequisites

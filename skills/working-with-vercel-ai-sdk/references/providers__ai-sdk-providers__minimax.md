@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/minimax.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "bd5922caf24e65688d315797546534f700cf242c0a4ba351016a35d08b602061"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "b0803e3b438651cde829f6b79414ae247db4d90d9670dcb2c43d9fc6feb78cb6"
 ---
 
 # MiniMax Provider
@@ -316,6 +316,7 @@ MiniMax video results include `providerMetadata.minimax`:
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
 - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
+- [Z.AI](/providers/ai-sdk-providers/zai)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)
 - [Fireworks](/providers/ai-sdk-providers/fireworks)

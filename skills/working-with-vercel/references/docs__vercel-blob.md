@@ -3,7 +3,7 @@ title: Vercel Blob
 product: vercel
 url: /docs/vercel-blob
 canonical_url: "https://vercel.com/docs/vercel-blob"
-last_updated: 2026-07-15
+last_updated: 2026-08-26
 type: conceptual
 prerequisites:
   []
@@ -13,11 +13,11 @@ related:
   - /docs/vercel-blob/private-storage
   - /docs/vercel-blob/public-storage
   - /docs/cli/blob
-summary: Vercel Blob is a scalable, cost-effective object storage service with private and public access modes for files of any size.
+summary: Vercel Blob is a scalable, cost-effective object storage service with private and public access modes for files up to 5 TB.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "e63d356a38dac0ddc3a4c5f766bffd1d11bf62a5dc3c3e836b894ce840a44f25"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "61a3e0688da8a3951f43184c50c6d2de9e7a15464049f0cbcb9070ee082fc398"
 ---
 
 # Vercel Blob
@@ -30,20 +30,20 @@ sha256: "e63d356a38dac0ddc3a4c5f766bffd1d11bf62a5dc3c3e836b894ce840a44f25"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Videos](https://nextjs.org/docs/app/guides/videos?from=related) — Recommendations and best practices for optimizing videos in your Next.js application.
-- [Databases](https://v0.app/docs/databases?from=related) — Build full-stack applications with v0's database integrations.
-- [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide?from=related) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
-- [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel?from=related) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
-- [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud?from=related) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
-- [What are the best practices for hosting videos on Vercel?](https://vercel.com/kb/guide/best-practices-for-hosting-videos-on-vercel-nextjs-mp4-gif?from=related) — Learn the ideal solutions for using video files like .mp4 and .gif on Vercel to prevent excess bandwidth consumption.
-- [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker?from=related) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
-- [Image-to-Video](https://vercel.com/docs/ai-gateway/modalities/video-generation/image-to-video?from=related) — Animate static images into videos using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI G
-- [Motion Control](https://vercel.com/docs/ai-gateway/modalities/video-generation/motion-control?from=related) — Transfer motion from a reference video to a character image using KlingAI through AI Gateway.
-- [Reference-to-Video](https://vercel.com/docs/ai-gateway/modalities/video-generation/reference-to-video?from=related) — Generate videos featuring characters from reference images or videos using Google Veo, KlingAI, Wan, Seedance, or Grok I
-- [Optimize Deployment Storage](https://vercel.com/docs/deployment-storage/optimize?from=related) — Learn about optimize deployment storage on Vercel.
-- [Image Optimization](https://vercel.com/docs/image-optimization?from=related) — Transform and optimize images to improve page load performance.
+- [How to use and optimize videos](https://nextjs.org/docs/app/guides/videos?from=related&source_path=%2Fdocs%2Fvercel-blob&source_site=vercel-docs&relationship=related) — Recommendations and best practices for optimizing videos in your Next.js application.
+- [Databases](https://v0.app/docs/databases?from=related&source_path=%2Fdocs%2Fvercel-blob&source_site=vercel-docs&relationship=related) — Build full-stack applications with v0's database integrations.
+- [Create private blob stores with a single click in v0](https://vercel.com/changelog/create-private-blob-stores-with-a-single-click-in-v0?from=related&source_path=%2Fdocs%2Fvercel-blob&source_site=vercel-docs&relationship=related)
+- [Signed URLs are now available for Vercel Blob](https://vercel.com/changelog/signed-urls-are-now-available-for-vercel-blob?from=related&source_path=%2Fdocs%2Fvercel-blob&source_site=vercel-docs&relationship=related)
+- [Vercel Blob CLI is now available](https://vercel.com/changelog/vercel-blob-cli-is-now-available?from=related&source_path=%2Fdocs%2Fvercel-blob&source_site=vercel-docs&relationship=related)
+- [Vercel Blob is now generally available](https://vercel.com/changelog/vercel-blob-is-now-generally-available?from=related&source_path=%2Fdocs%2Fvercel-blob&source_site=vercel-docs&relationship=related)
+- [Vercel Blob now supports consistent reads on private storage](https://vercel.com/changelog/vercel-blob-now-supports-consistent-reads-on-private-storage?from=related&source_path=%2Fdocs%2Fvercel-blob&source_site=vercel-docs&relationship=related)
+- [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide?from=related&source_path=%2Fdocs%2Fvercel-blob&source_site=vercel-docs&relationship=related) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
+- [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel?from=related&source_path=%2Fdocs%2Fvercel-blob&source_site=vercel-docs&relationship=related) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
+- [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud?from=related&source_path=%2Fdocs%2Fvercel-blob&source_site=vercel-docs&relationship=related) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
+- [What are the best practices for hosting videos on Vercel?](https://vercel.com/kb/guide/best-practices-for-hosting-videos-on-vercel-nextjs-mp4-gif?from=related&source_path=%2Fdocs%2Fvercel-blob&source_site=vercel-docs&relationship=related) — Learn the ideal solutions for using video files like .mp4 and .gif on Vercel to prevent excess bandwidth consumption.
+- [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fvercel-blob&source_site=vercel-docs&relationship=related) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
 
-Full cross-link map for this page: [/docs/vercel-blob.graph.md](/docs/vercel-blob.graph.md)
+Full cross-link map for this page: [/docs/vercel-blob.graph.md](/docs/vercel-blob.graph.md?from=related&source_path=%2Fdocs%2Fvercel-blob&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Use cases
@@ -103,10 +103,10 @@ Connected projects authenticate with OpenID Connect (OIDC) by default. When you 
 | Environment variable      | What it is                                                                                                             |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | `BLOB_STORE_ID`           | The id of your Blob store. The SDK pairs it with the OIDC token to authenticate requests. It's an identifier, not a secret. |
-| `VERCEL_OIDC_TOKEN`       | A short-lived OIDC token that Vercel populates and rotates automatically on every deployment.                            |
+| `VERCEL_OIDC_TOKEN`       | A short-lived OIDC token that Vercel issues and rotates automatically. You never handle it directly.                     |
 | `BLOB_WEBHOOK_PUBLIC_KEY` | The public key the SDK uses to verify webhook callbacks signed by Vercel Blob. It's a public value, not a secret.        |
 
-The SDK reads these variables automatically. Code running in [Vercel Functions](/docs/functions) and builds works out of the box, and local development works after you run `vercel env pull`. Because OIDC tokens rotate automatically, no long-lived secret can leak from your codebase or environment. Learn more about [how OIDC token federation works](/docs/oidc#how-oidc-token-federation-works).
+The SDK reads these variables automatically, and you never need to read or pass the OIDC token yourself. Code running in [Vercel Functions](/docs/functions) and builds works out of the box. Local development works after you run `vercel env pull` once: when the token expires, the SDK refreshes it automatically using your Vercel CLI credentials. Because OIDC tokens rotate automatically, no long-lived secret can leak from your codebase or environment. Learn more about [how OIDC token federation works](/docs/oidc#how-oidc-token-federation-works).
 
 ### When to use a read-write token
 

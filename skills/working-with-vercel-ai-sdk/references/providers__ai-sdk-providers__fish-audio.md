@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/fish-audio.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "8923228897c85d5734a5e7332150324018b80b2fc19a0b94a5bbb8b132cffced"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "93fa850554e8d68eecef121b6c50987b964ec2d8e1060d6e28354c4d065d1409"
 ---
 
 # Fish Audio Provider
@@ -375,6 +375,7 @@ console.log(result.providerMetadata?.fishAudio?.language); // 'English'
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
 - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
+- [Z.AI](/providers/ai-sdk-providers/zai)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)
 - [Fireworks](/providers/ai-sdk-providers/fireworks)

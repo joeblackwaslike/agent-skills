@@ -3,7 +3,7 @@ title: vercel curl
 product: vercel
 url: /docs/cli/curl
 canonical_url: "https://vercel.com/docs/cli/curl"
-last_updated: 2026-07-15
+last_updated: 2026-08-21
 type: reference
 prerequisites:
   - /docs/cli
@@ -16,8 +16,8 @@ related:
 summary: Learn how to make HTTP requests to your Vercel deployments with automatic deployment protection bypass using the vercel curl CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/curl.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "8e0d6b1fc067db25b11f38bc743dab22cc31cb601a48b0607252d796cf3562b5"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "371f557e183d85499a7bf045347dd7fa03dd93e818ab0552815a05eca4e12721"
 ---
 
 # vercel curl
@@ -30,13 +30,15 @@ sha256: "8e0d6b1fc067db25b11f38bc743dab22cc31cb601a48b0607252d796cf3562b5"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [vercel httpstat](https://vercel.com/docs/cli/httpstat?from=related) — Learn how to visualize HTTP request timing statistics for your Vercel deployments using the vercel httpstat CLI command.
-- [vercel api](https://vercel.com/docs/cli/api?from=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [Deploy from CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
-- [Deploying from CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
-- [vercel list](https://vercel.com/docs/cli/list?from=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [Trace any Vercel request from the CLI](https://vercel.com/changelog/trace-any-vercel-request-from-the-cli?from=related&source_path=%2Fdocs%2Fcli%2Fcurl&source_site=vercel-docs&relationship=related)
+- [Use native curl syntax with Vercel CLI](https://vercel.com/changelog/use-native-curl-syntax-with-vercel-cli?from=related&source_path=%2Fdocs%2Fcli%2Fcurl&source_site=vercel-docs&relationship=related)
+- [vercel httpstat](https://vercel.com/docs/cli/httpstat?from=related&source_path=%2Fdocs%2Fcli%2Fcurl&source_site=vercel-docs&relationship=related) — Learn how to visualize HTTP request timing statistics for your Vercel deployments using the vercel httpstat CLI command.
+- [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fcurl&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fcli%2Fcurl&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related&source_path=%2Fdocs%2Fcli%2Fcurl&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
+- [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fcurl&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 
-Full cross-link map for this page: [/docs/cli/curl.graph.md](/docs/cli/curl.graph.md)
+Full cross-link map for this page: [/docs/cli/curl.graph.md](/docs/cli/curl.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fcurl&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 The `vercel curl` command works like `curl`, but automatically handles deployment protection bypass tokens for you. When your project has [Deployment Protection](/docs/deployment-protection) enabled, this command lets you test protected deployments without manually managing bypass secrets.

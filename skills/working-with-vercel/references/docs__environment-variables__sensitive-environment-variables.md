@@ -3,7 +3,7 @@ title: Sensitive environment variables
 product: vercel
 url: /docs/environment-variables/sensitive-environment-variables
 canonical_url: "https://vercel.com/docs/environment-variables/sensitive-environment-variables"
-last_updated: 2026-06-03
+last_updated: 2026-08-20
 type: how-to
 prerequisites:
   - /docs/environment-variables
@@ -16,8 +16,8 @@ related:
 summary: Environment variables that cannot be decrypted once created.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/sensitive-environment-variables.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "42feef615a8130f80d9b12bd5af3cc504facd90b099262adee77e9fb981ab743"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "05d4b6e9dbe5db2561362c03330a6e2b9ae0b300e8a711f47f6bfb119e650970"
 ---
 
 # Sensitive environment variables
@@ -30,17 +30,20 @@ Sensitive environment variables are [environment variables](/docs/environment-va
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Integration](https://v0.app/docs/vercel-integration?from=related) — How v0 and Vercel work in tandem.
-- [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
-- [Sending Emails from an application on Vercel](https://vercel.com/kb/guide/sending-emails-from-an-application-on-vercel?from=related) — SMTP is the harder path inside Vercel Functions. Learn how to send emails over an HTTP API, which Next.js pattern fits y
-- [Can I use SMTP with Vercel?](https://vercel.com/kb/guide/serverless-functions-and-smtp?from=related) — Vercel Functions can open SMTP connections on the Node.js runtime. Learn which ports are open, why you must await the se
-- [Managing Environment Variables](https://vercel.com/docs/environment-variables/managing-environment-variables?from=related) — Learn how to create and manage environment variables for Vercel.
-- [vercel env](https://vercel.com/docs/cli/env?from=related) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
-- [Manage Across Environments](https://vercel.com/docs/environment-variables/manage-across-environments?from=related) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
-- [Edit an environment variable](https://vercel.com/docs/rest-api/projects/edit-an-environment-variable?from=related)
-- [Create one or more environment variables](https://vercel.com/docs/rest-api/projects/create-one-or-more-environment-variables?from=related)
+- [Vercel Integration](https://v0.app/docs/vercel-integration?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsensitive-environment-variables&source_site=vercel-docs&relationship=related) — How v0 and Vercel work in tandem.
+- [Build logs now redact Sensitive Environment Variable values](https://vercel.com/changelog/build-logs-now-redact-sensitive-environment-variable-values?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsensitive-environment-variables&source_site=vercel-docs&relationship=related)
+- [Secure Marketplace credentials with Production-only access](https://vercel.com/changelog/secure-marketplace-credentials-with-production-only-access?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsensitive-environment-variables&source_site=vercel-docs&relationship=related)
+- [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsensitive-environment-variables&source_site=vercel-docs&relationship=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
+- [Sending Emails from an application on Vercel](https://vercel.com/kb/guide/sending-emails-from-an-application-on-vercel?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsensitive-environment-variables&source_site=vercel-docs&relationship=related) — SMTP is the harder path inside Vercel Functions. Learn how to send emails over an HTTP API, which Next.js pattern fits y
+- [Can I use SMTP with Vercel?](https://vercel.com/kb/guide/serverless-functions-and-smtp?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsensitive-environment-variables&source_site=vercel-docs&relationship=related) — Vercel Functions can open SMTP connections on the Node.js runtime. Learn which ports are open, why you must await the se
+- [Sensitive environment variables are now available](https://vercel.com/changelog/sensitive-environment-variables-are-now-available?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsensitive-environment-variables&source_site=vercel-docs&relationship=related)
+- [Environment variables now use Config and Secret types](https://vercel.com/changelog/environment-variables-now-use-config-and-secret-types?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsensitive-environment-variables&source_site=vercel-docs&relationship=related)
+- [Legacy environment variable secrets are being sunset](https://vercel.com/changelog/legacy-environment-variable-secrets-are-being-sunset?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsensitive-environment-variables&source_site=vercel-docs&relationship=related)
+- [Environment Variables UI](https://vercel.com/blog/environment-variables-ui?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsensitive-environment-variables&source_site=vercel-docs&relationship=related)
+- [Managing environment variables](https://vercel.com/docs/environment-variables/managing-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsensitive-environment-variables&source_site=vercel-docs&relationship=related) — Learn how to create and manage environment variables for Vercel.
+- [vercel env](https://vercel.com/docs/cli/env?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsensitive-environment-variables&source_site=vercel-docs&relationship=related) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
 
-Full cross-link map for this page: [/docs/environment-variables/sensitive-environment-variables.graph.md](/docs/environment-variables/sensitive-environment-variables.graph.md)
+Full cross-link map for this page: [/docs/environment-variables/sensitive-environment-variables.graph.md](/docs/environment-variables/sensitive-environment-variables.graph.md?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsensitive-environment-variables&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 To mark an existing environment variable as sensitive, remove and re-add it with the **Sensitive** option enabled. Once you mark it as sensitive, Vercel stores the variable in an unreadable format. This is only possible for environment variables in the [production](/docs/deployments/environments#production-environment) and [preview](/docs/deployments/environments#preview-environment-pre-production) environments.

@@ -3,18 +3,18 @@ title: Web Search
 product: vercel
 url: /docs/ai-gateway/models-and-providers/web-search
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/web-search"
-last_updated: 2026-07-28
+last_updated: 2026-08-26
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/models-and-providers
   - /docs/ai-gateway
 related:
   - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced
-summary: Enable AI models to search the web for current information using built-in tools through AI Gateway.
+summary: Enable AI models to search the web and retrieve source-grounded data using built-in tools through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/web-search.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "6ae00908dbd99fd3664429ec587535338a51559caed1bff43d5faaa974b94e82"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "d4744fc9407c1fdc383cf3e98ac4d808457a345a1d080cc7ddaa3aef0bff2f48"
 ---
 
 # Web Search
@@ -27,17 +27,18 @@ AI Gateway provides built-in search tools that let AI models access current web 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Web Search Agent](https://ai-sdk.dev/cookbook/node/web-search-agent?from=related)
-- [Google](https://ai-sdk.dev/providers/ai-sdk-providers/google?from=related)
-- [xAI Grok](https://ai-sdk.dev/providers/ai-sdk-providers/xai?from=related)
-- [Tools](https://ai-sdk.dev/docs/foundations/tools?from=related)
-- [Groq](https://ai-sdk.dev/providers/ai-sdk-providers/groq?from=related)
-- [REST API](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api?from=related) — Use the AI Gateway API directly without client libraries using curl and fetch.
-- [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
-- [Text](https://vercel.com/docs/ai-gateway/getting-started/text?from=related) — Generate and stream text responses using AI Gateway.
-- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
+- [Exa web search free through August 31 on AI Gateway and eve](https://vercel.com/changelog/exa-web-search-free-through-august-31-on-ai-gateway-and-eve?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
+- [Web Search Agent](https://ai-sdk.dev/cookbook/node/web-search-agent?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
+- [Groq](https://ai-sdk.dev/providers/ai-sdk-providers/groq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
+- [xAI Grok](https://ai-sdk.dev/providers/ai-sdk-providers/xai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
+- [OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
+- [Use Perplexity Web Search with Vercel AI Gateway](https://vercel.com/blog/use-perplexity-web-search-with-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
+- [Parallel's Web Search and tools are live on Vercel](https://vercel.com/changelog/parallel-web-search-is-now-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
+- [Google](https://ai-sdk.dev/providers/ai-sdk-providers/google?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
+- [Access Perplexity Web Search on Vercel AI Gateway with any model](https://vercel.com/changelog/access-perplexity-web-search-on-vercel-ai-gateway-with-any-model?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
-Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/web-search.graph.md](/docs/ai-gateway/models-and-providers/web-search.graph.md)
+Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/web-search.graph.md](/docs/ai-gateway/models-and-providers/web-search.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 AI Gateway supports two types of web search:
@@ -318,10 +319,13 @@ For more details on search parameters and API options, see the [Exa Search API d
 
 ## Using Tako Search
 
-The `takoSearch` tool searches the web and Tako's curated knowledge graph in
-one call. It returns token-efficient web excerpts and data cards with structured
-data, source attribution, and embed-ready visualizations. Use it when your agent
-needs structured data, citations, or visualizations in addition to web search.
+The `takoSearch` tool searches the web and Tako's curated, real-time knowledge
+graph in one call. It returns token-efficient web excerpts and knowledge graph
+results backed by structured data, source attribution, and embed-ready
+visualizations. Use it when your agent needs access to authoritative, real-time
+finance, sports, weather, macroeconomics, and politics data or results from the
+web. Set `sources.data.includeContents` to return the raw structured data that
+backs the data results.
 
 To use Tako Search, import `gateway` from `ai` and pass
 `gateway.tools.takoSearch()` to `tools`:
@@ -350,19 +354,53 @@ export async function POST(request: Request) {
 }
 ```
 
-> **💡 Note:** Tako Search costs $7 per 1,000 instant or fast requests and $24 per 1,000 deep
-> requests. Setting `includeContents` on a source can add a variable inline-data
-> charge. Omit `includeContents` when your agent does not need the underlying card
-> data or webpage text. See [Tako pricing](https://tako.com/pricing/) for current
-> pricing details.
+> **💡 Note:** Tako Search costs $7 per 1,000 instant or fast requests and $12 per 1,000 deep
+> requests. `sources.data.includeContents` adds variable export surcharges based
+> on the requested rows and underlying data source. Guide agents to search without
+> it first, then inspect each card's `content.export_pricing` before exporting.
+> See [Contents pricing](https://docs.tako.com/documentation/integrating-tako/contents/pricing)
+> for details.
 
-Common configuration options include:
+### Tako parameters
 
-- `effort`: Use `'instant'`, `'fast'`, or `'deep'` to balance latency, retrieval depth, and cost.
-- `sources`: Omit it to search both curated `data` and live `web` sources. Set one or both sources to limit the search. Configure result counts, domains, dates, and categories per source.
-- `sources.web.highlights`: AI Gateway returns query-relevant passages by default. Set `highlights` to `false` to return opening text instead.
-- `includeContents`: Set this on `data` or `web` to inline card data or webpage text for your model.
-- `countryCode`, `locale`, and `timezone`: Localize search and rendered results when your application knows the end user's location.
+You can configure the `takoSearch` tool with these parameters:
+
+- `effort`: Retrieval depth. Values: `'instant'` (cached, lowest latency),
+  `'fast'` (default), or `'deep'` (broader retrieval with reranking, billed at
+  the higher request rate).
+- `sources`: Omit it to search both curated `data` and live `web`. When set,
+  only the source keys present are searched.
+- `sources.web`: Configure web results.
+  - `count`: Maximum web results (1-20).
+  - `includeDomains` / `excludeDomains`: Only return, or drop, results from
+    these bare domains. Up to 20 each.
+  - `publishedAfter` / `publishedBefore`: Keep results published on or after,
+    or on or before, this `YYYY-MM-DD` date.
+  - `highlights`: Return query-relevant passages as each result's snippet
+    instead of the opening text of the page. Defaults to `true`.
+  - `snippetMaxChars`: Character cap on each result's snippet. Maximum 20,000.
+  - `includeContents`: Inline each page's extracted full text.
+    `articleContentMaxChars` caps it, defaulting to 30,000 (maximum 1,000,000).
+- `sources.data`: Configure knowledge graph results.
+  - `count`: Maximum data results (1-20). Defaults to 5. The free row
+    allowance is per result, so raising `count` raises both the rows you get
+    and the baseline you pay.
+  - `includeContents`: Inline each card's underlying rows in `content.dataset`
+    as typed, unit-labeled columns. This is the parameter that adds row charges.
+  - `maxRows`: Row cap per result. Omit it and each result returns the free
+    allowance only (20 rows) with `truncated: true`. You pay for rows actually
+    returned, so a value above the series length costs the series length. Each
+    card reports its own ceiling in `content.export_pricing.max_rows_ceiling`.
+  - `contentFormat`: Serialization for inlined card data. Values:
+    `'json_compact'` (default), `'json_records'`, `'csv'`, or `'card_json'`.
+  - `nodeIds`: Data Graph node IDs to prioritize. Up to 20.
+  - `strict`: Only return cards matching `nodeIds`. Requires at least one
+    `nodeIds` value.
+- `includeRelated`: Number of related search suggestions to return (1-20).
+- `location`: End-user `{ latitude, longitude }` coordinates for localized results.
+- `countryCode`: ISO 3166-1 alpha-2 country code, such as `'US'`.
+- `locale`: BCP-47 locale, such as `'en-US'`.
+- `timezone`: IANA timezone, such as `'America/New_York'`.
 
 AI Gateway applies options you set in `takoSearch()` as developer defaults, overriding model-generated values.
 
@@ -901,7 +939,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const result = streamText({
-    model: 'xai/grok-4.20-non-reasoning',
+    model: 'spacexai/grok-4.20-non-reasoning',
     prompt,
     tools: {
       web_search: xai.tools.webSearch({}),
@@ -922,7 +960,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const { text } = await generateText({
-    model: 'xai/grok-4.20-non-reasoning',
+    model: 'spacexai/grok-4.20-non-reasoning',
     prompt,
     tools: {
       web_search: xai.tools.webSearch({}),
@@ -952,7 +990,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const result = streamText({
-    model: 'xai/grok-4.20-non-reasoning',
+    model: 'spacexai/grok-4.20-non-reasoning',
     prompt,
     tools: {
       web_search: xai.tools.webSearch({
@@ -976,7 +1014,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const { text } = await generateText({
-    model: 'xai/grok-4.20-non-reasoning',
+    model: 'spacexai/grok-4.20-non-reasoning',
     prompt,
     tools: {
       web_search: xai.tools.webSearch({

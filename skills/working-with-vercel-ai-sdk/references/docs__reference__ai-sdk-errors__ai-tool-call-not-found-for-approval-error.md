@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "3a8d778343241821ed0fb64ccc5906525284d4c55e2d21aef3fb7e10656d7f35"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "0531554e0e640cf79d43645ac369ee03664515bda17854a89c8bcff4bc4c0719"
 ---
 
 # AI_ToolCallNotFoundForApprovalError
@@ -56,6 +56,7 @@ if (ToolCallNotFoundForApprovalError.isInstance(error)) {
 - [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
 - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
+- [AI_StreamProviderError](/docs/reference/ai-sdk-errors/ai-stream-provider-error)
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
 - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
 - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)

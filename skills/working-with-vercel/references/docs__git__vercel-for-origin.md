@@ -1,9 +1,9 @@
 ---
-title: Origin
+title: Deploying Origin Repositories with Vercel
 product: vercel
 url: /docs/git/vercel-for-origin
 canonical_url: "https://vercel.com/docs/git/vercel-for-origin"
-last_updated: 2018-10-20
+last_updated: 2026-08-14
 type: conceptual
 prerequisites:
   - /docs/git
@@ -12,11 +12,11 @@ related:
   - /docs/rbac/access-roles
   - /docs/builds/configure-a-build
   - /docs/git
-summary: Learn about origin on Vercel.
+summary: Connect Origin to Vercel to create automatic Preview and Production Deployments from your repositories.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git/vercel-for-origin.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "fa7b7e0a7ae1c34f22cc91bdbc58510a8f67e3736a7a2429a2785b9a34d56305"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "05e85d6f2b07805aac24083c35778303e724e1010473ce4cae3dd2cc7fc7b96e"
 ---
 
 # Deploying Origin Repositories with Vercel

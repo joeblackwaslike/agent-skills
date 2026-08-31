@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/azure.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "0630f1046abd16472a2cb2002dad4c2df5d3d3f659c16292b28c68741fe8fe25"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "f83ee019b968c653ba83b5256d89b0bdb72c6fc3755491881b136cb146300604"
 ---
 
 # Azure OpenAI Provider
@@ -1189,6 +1189,7 @@ Azure OpenAI supports TTS models through deployments. The capabilities depend on
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
 - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
+- [Z.AI](/providers/ai-sdk-providers/zai)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)
 - [Fireworks](/providers/ai-sdk-providers/fireworks)

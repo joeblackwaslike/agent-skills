@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "146602b9a860cbd93fe54aee5ff7ae34613d8c9859399b2ed68e682ba7790e9b"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "b525b781c29e55457f81eb512d8aeacfa04a91ee114bdc81c39b888513c0578d"
 ---
 
 # Anthropic Provider
@@ -156,12 +156,6 @@ Anthropic language models support asynchronous text generation through the
 Use the experimental text batch APIs to start a batch, poll its status, and
 stream its results:
 
-<Note>
-  Anthropic Message Batches do not support the `speed` option. Explicit
-  `anthropicBeta` values must be configured when starting the batch rather than
-  on an individual request.
-</Note>
-
 ```ts
 import { anthropic } from '@ai-sdk/anthropic';
 import {
@@ -176,8 +170,8 @@ const model = anthropic('claude-haiku-4-5');
 const batch = await startTextBatch({
   model,
   requests: [
-    { id: 'first', prompt: 'What is the capital of France?' },
-    { id: 'second', prompt: 'What is the capital of Germany?' },
+    { id: 'capital-france', prompt: 'What is the capital of France?' },
+    { id: 'capital-germany', prompt: 'What is the capital of Germany?' },
   ],
 });
 
@@ -195,6 +189,21 @@ for await (const item of getBatchResults({ model, batch })) {
   }
 }
 ```
+
+`startTextBatch` returns a serializable batch reference. Persist this reference
+to check the batch status or retrieve its results from another process. Results
+can arrive in a different order from the input requests, so match each result by
+its `id`.
+
+#### Batch Limitations
+
+<Note>
+  Anthropic Message Batches do not support the `speed` option or completion
+  webhooks. Explicit `anthropicBeta` values must be configured when starting the
+  batch rather than on an individual request. When you provide a `webhookUrl`,
+  the provider returns an unsupported warning and starts the batch without a
+  webhook.
+</Note>
 
 ### Structured Outputs and Tool Input Streaming
 
@@ -1800,6 +1809,7 @@ and the `mediaType` should be set to `'application/pdf'`.
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
 - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
+- [Z.AI](/providers/ai-sdk-providers/zai)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)
 - [Fireworks](/providers/ai-sdk-providers/fireworks)

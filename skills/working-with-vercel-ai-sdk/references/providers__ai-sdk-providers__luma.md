@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/luma.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "bd1017dec387e2c3ee893b898eb0fd8f6d9906951c9c80a42341942f8edf7eb7"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "5fdd4748536ab2eb5c186c418b44bd807ab9f933eb4e59c2d8a340b610dc6f48"
 ---
 
 # Luma Provider
@@ -281,6 +281,7 @@ Learn more at https://docs.lumalabs.ai/docs/image-generation#character-reference
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
 - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
+- [Z.AI](/providers/ai-sdk-providers/zai)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)
 - [Fireworks](/providers/ai-sdk-providers/fireworks)

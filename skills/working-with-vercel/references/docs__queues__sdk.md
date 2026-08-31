@@ -1,9 +1,9 @@
 ---
-title: SDK Reference
+title: "Vercel Queues: JS SDK Reference"
 product: vercel
 url: /docs/queues/sdk
 canonical_url: "https://vercel.com/docs/queues/sdk"
-last_updated: 2026-07-02
+last_updated: 2026-08-12
 type: reference
 prerequisites:
   - /docs/queues
@@ -12,11 +12,11 @@ related:
   - /docs/queues
   - /docs/queues/api
   - /docs/queues/poll-mode
-summary: Publish and consume messages with the @vercel/queue SDK.
+summary: Publish and consume messages with the Vercel Queues SDK for JavaScript and TypeScript.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/sdk.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "8523c58db2f25308f6fce34cddba54008b804730f3c5656ba94dea052de7ba50"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "f359e73a4a6f5fff5e0ebcfa4bcb037477dfbcb735819b55f05bba59db685e77"
 ---
 
 # Vercel Queues: JS SDK Reference
@@ -29,13 +29,17 @@ The `@vercel/queue` SDK lets JavaScript and TypeScript apps publish and consume 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Quickstart](https://vercel.com/docs/queues/quickstart?from=related) — Set up Vercel Queues with the SDK.
-- [Concepts](https://vercel.com/docs/queues/concepts?from=related) — Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
-- [Celery](https://vercel.com/docs/frameworks/backend/celery?from=related) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
-- [Dramatiq](https://vercel.com/docs/frameworks/backend/dramatiq?from=related) — Deploy Dramatiq workers on Vercel. Learn how Dramatiq actors use Vercel Queues and Vercel Functions to process backgroun
-- [API Reference](https://vercel.com/docs/functions/functions-api-reference?from=related) — Learn about available APIs when working with Vercel Functions.
+- [Vercel Python Queues SDK is now available in beta](https://vercel.com/changelog/vercel-python-queues-sdk-is-now-available-in-beta?from=related&source_path=%2Fdocs%2Fqueues%2Fsdk&source_site=vercel-docs&relationship=related)
+- [Vercel Queues now in public beta](https://vercel.com/changelog/vercel-queues-now-in-public-beta?from=related&source_path=%2Fdocs%2Fqueues%2Fsdk&source_site=vercel-docs&relationship=related)
+- [Vercel Queues is now in Limited Beta](https://vercel.com/changelog/vercel-queues-is-now-in-limited-beta?from=related&source_path=%2Fdocs%2Fqueues%2Fsdk&source_site=vercel-docs&relationship=related)
+- [How to run background jobs in Next.js](https://vercel.com/kb/guide/how-to-run-background-jobs-in-nextjs-on-vercel?from=related&source_path=%2Fdocs%2Fqueues%2Fsdk&source_site=vercel-docs&relationship=related) — Learn the durable way to run background jobs in Next.js on Vercel with the Workflow SDK, and when to reach for Queues or
+- [Quickstart](https://vercel.com/docs/queues/quickstart?from=related&source_path=%2Fdocs%2Fqueues%2Fsdk&source_site=vercel-docs&relationship=related) — Set up Vercel Queues with the SDK.
+- [Queues concepts](https://vercel.com/docs/queues/concepts?from=related&source_path=%2Fdocs%2Fqueues%2Fsdk&source_site=vercel-docs&relationship=related) — Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
+- [Run background tasks with Celery on Vercel](https://vercel.com/docs/frameworks/backend/celery?from=related&source_path=%2Fdocs%2Fqueues%2Fsdk&source_site=vercel-docs&relationship=related) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
+- [Vercel Workflows](https://vercel.com/docs/workflows?from=related&source_path=%2Fdocs%2Fqueues%2Fsdk&source_site=vercel-docs&relationship=related) — Vercel Workflows is a fully managed platform for building durable, reliable, and observable applications and AI agents w
+- [Queues Observability](https://vercel.com/docs/queues/observability?from=related&source_path=%2Fdocs%2Fqueues%2Fsdk&source_site=vercel-docs&relationship=related) — Monitor queue throughput, message age, retries, and consumer performance to optimize your queue-based workflows.
 
-Full cross-link map for this page: [/docs/queues/sdk.graph.md](/docs/queues/sdk.graph.md)
+Full cross-link map for this page: [/docs/queues/sdk.graph.md](/docs/queues/sdk.graph.md?from=related&source_path=%2Fdocs%2Fqueues%2Fsdk&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Installation

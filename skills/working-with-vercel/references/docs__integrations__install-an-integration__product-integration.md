@@ -17,8 +17,8 @@ related:
 summary: Learn how you can add a product to your Vercel project through a native integration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/install-an-integration/product-integration.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "d1834cc91d7ea3639bd1fa6b37d4980c77bb935faf6502ccbdb2983ee98a9f28"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "061f0e571d1094efcbb6868aa27a6089e51d6bc8c801e5b4e564b7942b430341"
 ---
 
 # Add a Native Integration
@@ -31,14 +31,14 @@ sha256: "d1834cc91d7ea3639bd1fa6b37d4980c77bb935faf6502ccbdb2983ee98a9f28"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
-- [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration?from=related) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
-- [Create a Native Integration](https://vercel.com/docs/integrations/create-integration/marketplace-product?from=related) — Learn how to create a product for your Vercel native integration
-- [Create an Integration](https://vercel.com/docs/integrations/create-integration?from=related) — Learn how to create and manage your own integration for internal or public use with Vercel.
-- [Marketplace](https://vercel.com/docs/marketplace-storage?from=related) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
-- [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference?from=related) — Learn how to manage project access and added products for your integrations.
+- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fproduct-integration&source_site=vercel-docs&relationship=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
+- [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fproduct-integration&source_site=vercel-docs&relationship=related) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
+- [Create a Native Integration](https://vercel.com/docs/integrations/create-integration/marketplace-product?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fproduct-integration&source_site=vercel-docs&relationship=related) — Learn how to create a product for your Vercel native integration
+- [Create an Integration](https://vercel.com/docs/integrations/create-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fproduct-integration&source_site=vercel-docs&relationship=related) — Learn how to create and manage your own integration for internal or public use with Vercel.
+- [Storage on Vercel Marketplace](https://vercel.com/docs/marketplace-storage?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fproduct-integration&source_site=vercel-docs&relationship=related) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
+- [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fproduct-integration&source_site=vercel-docs&relationship=related) — Learn how to manage project access and added products for your integrations.
 
-Full cross-link map for this page: [/docs/integrations/install-an-integration/product-integration.graph.md](/docs/integrations/install-an-integration/product-integration.graph.md)
+Full cross-link map for this page: [/docs/integrations/install-an-integration/product-integration.graph.md](/docs/integrations/install-an-integration/product-integration.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fproduct-integration&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Add a product

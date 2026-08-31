@@ -3,7 +3,7 @@ title: Removing a Domain from a Project
 product: vercel
 url: /docs/domains/working-with-domains/remove-a-domain
 canonical_url: "https://vercel.com/docs/domains/working-with-domains/remove-a-domain"
-last_updated: 2026-02-27
+last_updated: 2026-08-11
 type: how-to
 prerequisites:
   - /docs/domains/working-with-domains
@@ -13,8 +13,8 @@ related:
 summary: Learn how to remove a domain from a Project and from your account completely with this guide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/remove-a-domain.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "6ae1ba62b7adae9eb7629695af25aab01ac81148fcea0aa33d011833259636c2"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "f72040c8f2243ac429a41f1abb3621b775d52be5be942f78247f5fb1b2559987"
 ---
 
 # Removing a Domain from a Project
@@ -27,14 +27,14 @@ When you add a domain to any project, it will be connected to your account until
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How do I remove a domain from my Vercel account?](https://vercel.com/kb/guide/how-do-i-remove-a-domain-from-my-vercel-account?from=related) — Learn how to completely remove a domain from your Vercel account?
-- [Remove a domain from a project](https://vercel.com/docs/rest-api/projects/remove-a-domain-from-a-project?from=related)
-- [Remove a domain by name](https://vercel.com/docs/rest-api/domains/remove-a-domain-by-name?from=related)
-- [Delete a Project](https://vercel.com/docs/rest-api/projects/delete-a-project?from=related)
-- [Add a domain to a project](https://vercel.com/docs/rest-api/projects/add-a-domain-to-a-project?from=related)
-- [Deploying & Redirecting Domains](https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting?from=related) — Learn how to deploy your domains and set up domain redirects with this guide.
+- [How do I remove a domain from my Vercel account?](https://vercel.com/kb/guide/how-do-i-remove-a-domain-from-my-vercel-account?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fremove-a-domain&source_site=vercel-docs&relationship=related) — Learn how to completely remove a domain from your Vercel account?
+- [Remove a domain from a project](https://vercel.com/docs/rest-api/projects/remove-a-domain-from-a-project?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fremove-a-domain&source_site=vercel-docs&relationship=related) — DELETE /v9/projects/{idOrName}/domains/{domain} — Remove a domain from a project by passing the domain name and by speci
+- [Remove a domain by name](https://vercel.com/docs/rest-api/domains/remove-a-domain-by-name?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fremove-a-domain&source_site=vercel-docs&relationship=related) — DELETE /v6/domains/{domain} — Delete a previously registered domain name from Vercel. Deleting a domain will automatical
+- [Delete a Project](https://vercel.com/docs/rest-api/projects/delete-a-project?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fremove-a-domain&source_site=vercel-docs&relationship=related) — DELETE /v9/projects/{idOrName} — Delete a specific project by passing either the project \\`id\\` or \\`name\\` in the URL.
+- [Add a domain to a project](https://vercel.com/docs/rest-api/projects/add-a-domain-to-a-project?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fremove-a-domain&source_site=vercel-docs&relationship=related) — POST /v10/projects/{idOrName}/domains — Add a domain to the project by passing its domain name and by specifying the pro
+- [Deploying & Redirecting Domains](https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fremove-a-domain&source_site=vercel-docs&relationship=related) — Learn how to deploy your domains and set up domain redirects with this guide.
 
-Full cross-link map for this page: [/docs/domains/working-with-domains/remove-a-domain.graph.md](/docs/domains/working-with-domains/remove-a-domain.graph.md)
+Full cross-link map for this page: [/docs/domains/working-with-domains/remove-a-domain.graph.md](/docs/domains/working-with-domains/remove-a-domain.graph.md?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fremove-a-domain&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 - ### Navigate to the Domains tab

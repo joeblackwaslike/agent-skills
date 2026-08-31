@@ -3,7 +3,7 @@ title: Builds
 product: vercel
 url: /docs/builds
 canonical_url: "https://vercel.com/docs/builds"
-last_updated: 2026-06-16
+last_updated: 2026-08-11
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Understand how the build step works when creating a Vercel Deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "b9542316f7caaee6ef1e1916a8cb7390e87c8f5af01cb103d5474276163c76d5"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "35f7decab90415272d15aa64d155f34f635ac6509a03c9fb0881e783b81a28ae"
 ---
 
 # Builds
@@ -30,16 +30,20 @@ Vercel automatically performs a **build** every time you deploy your code, wheth
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel?from=related) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
-- [How can I allowlist IP addresses for a deployment?](https://vercel.com/kb/guide/how-to-allowlist-deployment-ip-address?from=related) — Vercel deployments use dynamic outbound IPs by default. Learn how to allowlist IP addresses for a deployment with Static
-- [Why are my Vercel builds queued?](https://vercel.com/kb/guide/why-are-my-vercel-builds-queued?from=related) — Learn about why your Vercel builds may be getting queued and how to resolve this.
-- [Build System](https://vercel.com/docs/fundamentals/builds?from=related) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
-- [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
-- [vercel build](https://vercel.com/docs/cli/build?from=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
-- [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
-- [Deploy from CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Deploy steps are now up to 21% faster](https://vercel.com/changelog/deploy-steps-are-now-up-to-21-faster?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related)
+- [Deployment step now 15% faster](https://vercel.com/changelog/deployment-step-now-15-percent-faster?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related)
+- [Deployments are now up to 7 seconds faster](https://vercel.com/changelog/deployments-are-now-up-to-7-seconds-faster?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related)
+- [Deploys are now up to 33% faster for apps with many ISR pages](https://vercel.com/changelog/deploys-are-now-up-to-33-faster-for-apps-with-many-isr-pages?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related)
+- [Elastic build machines now available in beta](https://vercel.com/changelog/elastic-build-machines-are-available-in-beta?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related)
+- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
+- [How can I allowlist IP addresses for a deployment?](https://vercel.com/kb/guide/how-to-allowlist-deployment-ip-address?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related) — Vercel deployments use dynamic outbound IPs by default. Learn how to allowlist IP addresses for a deployment with Static
+- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related)
+- [Why are my Vercel builds queued?](https://vercel.com/kb/guide/why-are-my-vercel-builds-queued?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related) — Learn about why your Vercel builds may be getting queued and how to resolve this.
+- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related) — Learn how to create and manage deployments on Vercel.
+- [vercel build](https://vercel.com/docs/cli/build?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 
-Full cross-link map for this page: [/docs/builds.graph.md](/docs/builds.graph.md)
+Full cross-link map for this page: [/docs/builds.graph.md](/docs/builds.graph.md?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Build infrastructure

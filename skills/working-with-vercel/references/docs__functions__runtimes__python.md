@@ -3,7 +3,7 @@ title: Using the Python Runtime with Vercel Functions
 product: vercel
 url: /docs/functions/runtimes/python
 canonical_url: "https://vercel.com/docs/functions/runtimes/python"
-last_updated: 2026-07-22
+last_updated: 2026-08-12
 type: reference
 prerequisites:
   - /docs/functions/runtimes
@@ -17,8 +17,8 @@ related:
 summary: Learn how to use the Python runtime to run Python applications on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/python.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "701ea9ffa84ef639697f85726379c03081a31bfac1ab37b46bdad73e1a17eddf"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "63b61aab4bb9bb1e7d09beb67b419bbc8ff9ef76a2df0339f2af64bfc31c980c"
 ---
 
 # Using the Python Runtime with Vercel Functions
@@ -33,18 +33,20 @@ supported Python frameworks and runs your application as Vercel Functions.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Build with a FastAPI starter template](https://vercel.com/kb/guide/build-with-a-fastapi-starter-template?from=related) — Browse FastAPI starter templates for Vercel and deploy one in a few steps. Compare minimal, AI, agent, and full-stack Fa
-- [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors?from=related) — Learn the systematic steps to identify and resolve 404 issues.
-- [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel?from=related) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
-- [How to ship a Flask app on Vercel](https://vercel.com/kb/guide/ship-a-flask-app-on-vercel?from=related) — Deploy a Flask app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
-- [Deploy Python apps on Vercel using Docker ](https://vercel.com/kb/guide/vercel-docker-python-apps?from=related) — Deploy a Dockerized Python application that depends on native software, OCR engines, or small local models, plus a Next.
-- [Runtime](https://vercel.com/docs/functions/configuring-functions/runtime?from=related) — Learn how to configure the runtime for Vercel Functions.
-- [Celery](https://vercel.com/docs/frameworks/backend/celery?from=related) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
-- [Supported Frameworks](https://vercel.com/docs/frameworks?from=related) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
-- [Build Image](https://vercel.com/docs/builds/build-image?from=related) — Learn about the container image used for Vercel builds.
-- [Fluid Compute](https://vercel.com/docs/fluid-compute?from=related) — Learn about fluid compute, an execution model for Vercel Functions that provides a more flexible and efficient way to ru
+- [Python 3.13 and 3.14 are now available ](https://vercel.com/changelog/python-3-13-and-3-14-are-now-available?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fpython&source_site=vercel-docs&relationship=related)
+- [Python function bundles now include precompiled bytecode](https://vercel.com/changelog/python-function-bundles-now-include-precompiled-bytecode?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fpython&source_site=vercel-docs&relationship=related)
+- [Python package manager uv is now available for builds with zero configuration](https://vercel.com/changelog/python-package-manager-uv-is-now-available-for-builds-with-zero?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fpython&source_site=vercel-docs&relationship=related)
+- [Python support added to in-function concurrency beta](https://vercel.com/changelog/python-support-added-to-in-function-concurrency-beta?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fpython&source_site=vercel-docs&relationship=related)
+- [Python Vercel Functions now have streaming enabled by default](https://vercel.com/changelog/python-vercel-functions-now-have-streaming-enabled-by-default?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fpython&source_site=vercel-docs&relationship=related)
+- [Build with a FastAPI starter template](https://vercel.com/kb/guide/build-with-a-fastapi-starter-template?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fpython&source_site=vercel-docs&relationship=related) — Browse FastAPI starter templates for Vercel and deploy one in a few steps. Compare minimal, AI, agent, and full-stack Fa
+- [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fpython&source_site=vercel-docs&relationship=related) — Learn the systematic steps to identify and resolve 404 issues.
+- [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fpython&source_site=vercel-docs&relationship=related) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
+- [How to ship a Flask app on Vercel](https://vercel.com/kb/guide/ship-a-flask-app-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fpython&source_site=vercel-docs&relationship=related) — Deploy a Flask app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
+- [Deploy Python apps on Vercel using Docker ](https://vercel.com/kb/guide/vercel-docker-python-apps?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fpython&source_site=vercel-docs&relationship=related) — Deploy a Dockerized Python application that depends on native software, OCR engines, or small local models, plus a Next.
+- [Run background tasks with Celery on Vercel](https://vercel.com/docs/frameworks/backend/celery?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fpython&source_site=vercel-docs&relationship=related) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
+- [Frameworks on Vercel](https://vercel.com/docs/frameworks?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fpython&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
 
-Full cross-link map for this page: [/docs/functions/runtimes/python.graph.md](/docs/functions/runtimes/python.graph.md)
+Full cross-link map for this page: [/docs/functions/runtimes/python.graph.md](/docs/functions/runtimes/python.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fpython&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Deploy with a Python framework preset

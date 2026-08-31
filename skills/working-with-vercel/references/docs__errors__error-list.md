@@ -3,7 +3,7 @@ title: Error List
 product: vercel
 url: /docs/errors/error-list
 canonical_url: "https://vercel.com/docs/errors/error-list"
-last_updated: 2026-07-01
+last_updated: 2026-08-20
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: You may encounter a variety of errors when you interact with the Vercel platform. This section focuses on errors that can happen when you interact...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/error-list.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "5dda619a9c9ffb64a3a9e8a2d7ac71a7828c58582fba67027e615ed3d667f62c"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "8f7d0828b650f7aa18c4c9b100ea27d606ea743a23d2b4a20bffd4d3c9cac7af"
 ---
 
 # Error List

@@ -1,10 +1,10 @@
 ---
-title: Marketplace Vercel API
+title: Marketplace Vercel API Reference
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel"
-last_updated: 2026-08-24
-type: conceptual
+last_updated: 2026-08-31
+type: reference
 prerequisites:
   []
 related:
@@ -12,12 +12,12 @@ related:
   - /docs/integrations/create-integration/marketplace-api/reference/vercel/get-account-info
   - /docs/integrations/create-integration/marketplace-api/reference/vercel/get-member
   - /docs/integrations/create-integration/marketplace-api/reference/vercel/rotate-installation-credential
-  - /docs/integrations/create-integration/marketplace-api/reference/vercel/create-event
-summary: Learn about marketplace vercel api on Vercel.
+  - /docs/integrations/create-integration/marketplace-api/reference/vercel/revoke-installation-credential
+summary: Learn how to call Vercel API endpoints to interact with Vercel resources
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "cd71a6a6bba3bcf88ef778d5902c7452ca7ebb68a959b9a1c34998ef463f8c69"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "604e0227f0eb2135bc3c44503e6abc33ba178aac0ba0a3e35719c7ef7b4142fb"
 ---
 
 # Vercel API Reference
@@ -38,6 +38,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **GET** | [`/v1/installations/{integrationConfigurationId}/account`](/docs/integrations/create-integration/marketplace-api/reference/vercel/get-account-info) | Get Account Information |
 | **GET** | [`/v1/installations/{integrationConfigurationId}/member/{memberId}`](/docs/integrations/create-integration/marketplace-api/reference/vercel/get-member) | Get Member Information |
 | **POST** | [`/v1/installations/{integrationConfigurationId}/credentials/rotate`](/docs/integrations/create-integration/marketplace-api/reference/vercel/rotate-installation-credential) | Rotate Installation Credential |
+| **POST** | [`/v1/installations/{integrationConfigurationId}/credentials/revoke`](/docs/integrations/create-integration/marketplace-api/reference/vercel/revoke-installation-credential) | Revoke Installation Credential |
 | **POST** | [`/v1/installations/{integrationConfigurationId}/events`](/docs/integrations/create-integration/marketplace-api/reference/vercel/create-event) | Create Event |
 | **GET** | [`/v1/installations/{integrationConfigurationId}/resources`](/docs/integrations/create-integration/marketplace-api/reference/vercel/get-integration-resources) | Get Integration Resources |
 | **GET** | [`/v1/installations/{integrationConfigurationId}/resources/{resourceId}`](/docs/integrations/create-integration/marketplace-api/reference/vercel/get-integration-resource) | Get Integration Resource |

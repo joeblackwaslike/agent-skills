@@ -3,7 +3,7 @@ title: Multi-tenant Reference
 product: vercel
 url: /docs/platforms/multi-tenant-platforms/reference
 canonical_url: "https://vercel.com/docs/platforms/multi-tenant-platforms/reference"
-last_updated: 2026-07-28
+last_updated: 2026-08-20
 type: reference
 prerequisites:
   - /docs/platforms/multi-tenant-platforms
@@ -17,8 +17,8 @@ related:
 summary: Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/reference.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "04e319c4e77c1b3498512f9472668180e8dbf33f0cd47a7814cbed18de56532c"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "e1c3e7c2ad96a4554e17176d79f925d8383470101fbb5f26e0b30ea6a8b8d194"
 ---
 
 # Multi-tenant Reference
@@ -31,15 +31,15 @@ sha256: "04e319c4e77c1b3498512f9472668180e8dbf33f0cd47a7814cbed18de56532c"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Build a multi-tenant app with Next.js and Vercel](https://vercel.com/kb/guide/nextjs-multi-tenant-application?from=related) — Create a Next.js application with multi-tenancy and custom domain support on Vercel.
-- [How do I add a custom domain to my Vercel project?](https://vercel.com/kb/guide/how-do-i-add-a-custom-domain-to-my-vercel-project?from=related) — Learn how to add a custom domain to your Vercel project.
-- [Configuring Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains?from=related) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
-- [Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart?from=related) — Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
-- [Limits](https://vercel.com/docs/platforms/multi-tenant-platforms/limits?from=related) — Understand the limits and features available for Vercel for Platforms.
-- [Reference](https://vercel.com/docs/platforms/multi-project-platforms/reference?from=related) — API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
-- [Concepts](https://vercel.com/docs/platforms/multi-tenant-platforms/concepts?from=related) — Understand tenants, domains, routing, and architecture for building multi-tenant applications on Vercel for Platforms.
+- [Build a multi-tenant app with Next.js and Vercel](https://vercel.com/kb/guide/nextjs-multi-tenant-application?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Freference&source_site=vercel-docs&relationship=related) — Create a Next.js application with multi-tenancy and custom domain support on Vercel.
+- [How do I add a custom domain to my Vercel project?](https://vercel.com/kb/guide/how-do-i-add-a-custom-domain-to-my-vercel-project?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Freference&source_site=vercel-docs&relationship=related) — Learn how to add a custom domain to your Vercel project.
+- [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Freference&source_site=vercel-docs&relationship=related) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
+- [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Freference&source_site=vercel-docs&relationship=related) — Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
+- [Multi-tenant Limits](https://vercel.com/docs/platforms/multi-tenant-platforms/limits?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Freference&source_site=vercel-docs&relationship=related) — Understand the limits and features available for Vercel for Platforms.
+- [Multi-Project Platforms Reference](https://vercel.com/docs/platforms/multi-project-platforms/reference?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Freference&source_site=vercel-docs&relationship=related) — API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
+- [Working with domains](https://vercel.com/docs/domains/working-with-domains?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Freference&source_site=vercel-docs&relationship=related) — Learn how domains work and the options Vercel provides for managing them.
 
-Full cross-link map for this page: [/docs/platforms/multi-tenant-platforms/reference.graph.md](/docs/platforms/multi-tenant-platforms/reference.graph.md)
+Full cross-link map for this page: [/docs/platforms/multi-tenant-platforms/reference.graph.md](/docs/platforms/multi-tenant-platforms/reference.graph.md?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Freference&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Start with our Custom [Blocks](/docs/platforms/platform-elements/blocks/custom-domain) and [Actions](/docs/platforms/platform-elements/actions/add-custom-domain) that speed up your usage of the Vercel API.

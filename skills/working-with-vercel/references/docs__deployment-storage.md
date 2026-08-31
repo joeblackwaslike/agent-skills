@@ -3,18 +3,18 @@ title: Deployment Storage
 product: vercel
 url: /docs/deployment-storage
 canonical_url: "https://vercel.com/docs/deployment-storage"
-last_updated: 2018-10-20
+last_updated: 2026-08-21
 type: conceptual
 prerequisites:
   []
 related:
   - /docs/deployment-retention
   - /docs/deployment-storage/optimize
-summary: Learn about deployment storage on Vercel.
+summary: Learn what Deployment Storage includes, how Vercel measures it, and how to control your usage.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-storage.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "be08d84e1d88f275a4b0e32970815eb9cb6f759ed3275c78eb235552fafd4978"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "9b9ae9ac65c18004e0126b9699b083c99770dfc848e1bcb249b95b5fe81ad775"
 ---
 
 # Deployment Storage
@@ -27,14 +27,15 @@ Deployment Storage is cloud storage for the build output and Vercel Function bun
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How do I delete an individual deployment?](https://vercel.com/kb/guide/how-do-i-delete-an-individual-deployment?from=related) — Information on deleting an individual deployment.
-- [Overview](https://vercel.com/docs/storage?from=related) — Store large files and global configuration with Vercel's storage products.
-- [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
-- [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments?from=related) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
-- [Builds](https://vercel.com/docs/builds?from=related) — Understand how the build step works when creating a Vercel Deployment.
-- [Marketplace](https://vercel.com/docs/marketplace-storage?from=related) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
+- [Deployment Storage keeps your deployments rollback-ready](https://vercel.com/changelog/deployment-storage-keeps-your-deployments-rollback-ready?from=related&source_path=%2Fdocs%2Fdeployment-storage&source_site=vercel-docs&relationship=related)
+- [How do I delete an individual deployment?](https://vercel.com/kb/guide/how-do-i-delete-an-individual-deployment?from=related&source_path=%2Fdocs%2Fdeployment-storage&source_site=vercel-docs&relationship=related) — Information on deleting an individual deployment.
+- [Vercel Storage overview](https://vercel.com/docs/storage?from=related&source_path=%2Fdocs%2Fdeployment-storage&source_site=vercel-docs&relationship=related) — Store large files and global configuration with Vercel's storage products.
+- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fdeployment-storage&source_site=vercel-docs&relationship=related) — Learn how to create and manage deployments on Vercel.
+- [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments?from=related&source_path=%2Fdocs%2Fdeployment-storage&source_site=vercel-docs&relationship=related) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
+- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fdeployment-storage&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Builds](https://vercel.com/docs/builds?from=related&source_path=%2Fdocs%2Fdeployment-storage&source_site=vercel-docs&relationship=related) — Understand how the build step works when creating a Vercel Deployment.
 
-Full cross-link map for this page: [/docs/deployment-storage.graph.md](/docs/deployment-storage.graph.md)
+Full cross-link map for this page: [/docs/deployment-storage.graph.md](/docs/deployment-storage.graph.md?from=related&source_path=%2Fdocs%2Fdeployment-storage&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 You use retained deployment output to:

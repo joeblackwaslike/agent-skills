@@ -3,7 +3,7 @@ title: vercel cache
 product: vercel
 url: /docs/cli/cache
 canonical_url: "https://vercel.com/docs/cli/cache"
-last_updated: 2026-03-17
+last_updated: 2026-08-11
 type: reference
 prerequisites:
   - /docs/cli
@@ -14,8 +14,8 @@ related:
 summary: Learn how to manage cache for your project using the vercel cache CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/cache.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "3febe376b1426e597212402048b89a7b1456cdbafc43ad2fdec994bc1e407b42"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "20b78fae3afee8e51862fc9e0c8176b108a3908bca4f2f8e19aa8e19e7286a57"
 ---
 
 # vercel cache
@@ -28,14 +28,18 @@ The `vercel cache` command is used to manage the cache for your project, such as
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins?from=related) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
-- [Debug Cache Issues](https://vercel.com/docs/caching/cdn-cache/debug-cache-issues?from=related) — Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
-- [Cache Status](https://vercel.com/docs/caching/cache-status?from=related) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
-- [Data Cache](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
-- [vercel domains](https://vercel.com/docs/cli/domains?from=related) — Learn how to buy, sell, transfer, and manage your domains using the vercel domains CLI command.
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [Add cache tags from Function responses, regardless of framework](https://vercel.com/changelog/add-cache-tags-from-function-responses-regardless-of-framework?from=related&source_path=%2Fdocs%2Fcli%2Fcache&source_site=vercel-docs&relationship=related)
+- [Invalidate the CDN cache by tag](https://vercel.com/changelog/invalidate-the-cdn-cache-by-tag?from=related&source_path=%2Fdocs%2Fcli%2Fcache&source_site=vercel-docs&relationship=related)
+- [Tag-based cache invalidation now available for all responses](https://vercel.com/changelog/tag-based-cache-invalidation-now-available-for-all-responses?from=related&source_path=%2Fdocs%2Fcli%2Fcache&source_site=vercel-docs&relationship=related)
+- [You can now invalidate the CDN cache by providing a source image](https://vercel.com/changelog/you-can-now-invalidate-the-cdn-cache-by-providing-a-source-image?from=related&source_path=%2Fdocs%2Fcli%2Fcache&source_site=vercel-docs&relationship=related)
+- [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins?from=related&source_path=%2Fdocs%2Fcli%2Fcache&source_site=vercel-docs&relationship=related) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
+- [Diagnosing and fixing cache issues](https://vercel.com/docs/caching/cdn-cache/debug-cache-issues?from=related&source_path=%2Fdocs%2Fcli%2Fcache&source_site=vercel-docs&relationship=related) — Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
+- [Invalidate by tag](https://vercel.com/docs/rest-api/edge-cache/invalidate-by-tag?from=related&source_path=%2Fdocs%2Fcli%2Fcache&source_site=vercel-docs&relationship=related) — POST /v1/edge-cache/invalidate-by-tags — Marks a cache tag as stale, causing cache entries associated with that tag to b
+- [Cache Status and Reasons](https://vercel.com/docs/caching/cache-status?from=related&source_path=%2Fdocs%2Fcli%2Fcache&source_site=vercel-docs&relationship=related) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
+- [Data Cache for Next.js](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related&source_path=%2Fdocs%2Fcli%2Fcache&source_site=vercel-docs&relationship=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
+- [Dangerously delete by tag](https://vercel.com/docs/rest-api/edge-cache/dangerously-delete-by-tag?from=related&source_path=%2Fdocs%2Fcli%2Fcache&source_site=vercel-docs&relationship=related) — POST /v1/edge-cache/dangerously-delete-by-tags — Marks a cache tag as deleted, causing cache entries associated with tha
 
-Full cross-link map for this page: [/docs/cli/cache.graph.md](/docs/cli/cache.graph.md)
+Full cross-link map for this page: [/docs/cli/cache.graph.md](/docs/cli/cache.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fcache&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Learn more about [purging Vercel cache](/docs/caching/cdn-cache/purge).

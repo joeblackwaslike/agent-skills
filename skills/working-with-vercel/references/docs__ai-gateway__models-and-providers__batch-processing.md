@@ -3,8 +3,8 @@ title: Batch Processing
 product: vercel
 url: /docs/ai-gateway/models-and-providers/batch-processing
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/batch-processing"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-08-22
+type: reference
 prerequisites:
   - /docs/ai-gateway/models-and-providers
   - /docs/ai-gateway
@@ -14,11 +14,11 @@ related:
   - /docs/ai-gateway/observability-and-spend
   - /docs/ai-gateway/authentication-and-byok/byok
   - /docs/ai-gateway/security-and-compliance/zdr
-summary: Learn about batch processing on Vercel.
+summary: Process large volumes of text generation requests asynchronously through AI Gateway at 50% of standard token prices, with results available within 24...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/batch-processing.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "c7500161317d0efb343fe4b5ae4fa0d45028408436c4ed90a4ec96011b10d821"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "cf1c58f7c604facc92f4f369e5aab7fd65545a063d22b72f0b4ea8f32bf1d91c"
 ---
 
 # Batch Processing

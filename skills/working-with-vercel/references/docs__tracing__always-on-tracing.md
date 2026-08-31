@@ -3,8 +3,8 @@ title: Always-on Tracing
 product: vercel
 url: /docs/tracing/always-on-tracing
 canonical_url: "https://vercel.com/docs/tracing/always-on-tracing"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-08-24
+type: how-to
 prerequisites:
   - /docs/tracing
 related:
@@ -13,11 +13,11 @@ related:
   - /docs/tracing/instrumentation
   - /docs/tracing
   - /docs/cli/traces
-summary: Learn about always-on tracing on Vercel.
+summary: Continuously collect traces from your production and preview traffic using sampling rules, so you can debug real requests without reproducing them.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/tracing/always-on-tracing.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "09b49ccc897cbd569cc8c1ff93def6a4fae91d23f09c7bfb9792b27098bbc382"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "ca5e83e48c14e2939d5d3cb43b93f936f28bc743ae05ae89551858f112ed354e"
 ---
 
 # Always-on Tracing
@@ -30,13 +30,16 @@ With always-on tracing, Vercel continuously collects traces from your production
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Overview](https://vercel.com/docs/observability?from=related) — Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application perfor
-- [Observability Plus](https://vercel.com/docs/observability/observability-plus?from=related) — Learn about using Observability Plus and its limits.
-- [Runtime](https://vercel.com/docs/logs/runtime?from=related) — Learn how to search, inspect, and share your runtime logs with the Logs tab.
-- [Manage & Optimize](https://vercel.com/docs/manage-and-optimize-observability?from=related) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
-- [Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains?from=related) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
+- [Always-on tracing for production and preview traffic](https://vercel.com/changelog/always-on-tracing-for-production-and-preview-traffic?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=related)
+- [Track a request's full lifecycle with session tracing](https://vercel.com/changelog/session-tracing-now-available?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=related)
+- [Trace any Vercel request from the CLI](https://vercel.com/changelog/trace-any-vercel-request-from-the-cli?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=related)
+- [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=related) — Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application perfor
+- [Observability Plus](https://vercel.com/docs/observability/observability-plus?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=related) — Learn about using Observability Plus and its limits.
+- [Runtime Logs](https://vercel.com/docs/logs/runtime?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=related) — Learn how to search, inspect, and share your runtime logs with the Logs tab.
+- [Get a project trace by request ID](https://vercel.com/docs/rest-api/projects/get-a-project-trace-by-request-id?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=related) — GET /v1/projects/traces — Returns the OTEL trace for a given Vercel CLI request.
+- [Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=related) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
 
-Full cross-link map for this page: [/docs/tracing/always-on-tracing.graph.md](/docs/tracing/always-on-tracing.graph.md)
+Full cross-link map for this page: [/docs/tracing/always-on-tracing.graph.md](/docs/tracing/always-on-tracing.graph.md?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 > **🔒 Permissions Required**: Always-on tracing
@@ -90,6 +93,10 @@ Once always-on tracing is collecting data, view your traces in the dashboard:
 1. Select your team and project, then open [**Logs**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Flogs\&title=Go+to+Logs) in the sidebar.
 2. Use the tracing icon in the filter bar to filter to traces.
 3. Find a request and select **Trace** to open its spans.
+
+The trace timeline shows the spans and their durations:
+
+![Image](https://vercel.com/front/docs/observability/tracing-span-example-light.png?lightbox)
 
 For the full walkthrough, including the timeline, tree, and waterfall layouts, see [Viewing traces in the dashboard](/docs/tracing#viewing-traces-in-the-dashboard).
 

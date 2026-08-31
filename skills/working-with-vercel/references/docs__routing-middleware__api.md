@@ -3,7 +3,7 @@ title: Routing Middleware API
 product: vercel
 url: /docs/routing-middleware/api
 canonical_url: "https://vercel.com/docs/routing-middleware/api"
-last_updated: 2026-07-15
+last_updated: 2026-08-20
 type: reference
 prerequisites:
   - /docs/routing-middleware
@@ -15,8 +15,8 @@ related:
 summary: Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed and personalization to your...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing-middleware/api.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "ec19f226387b63a5ce42510581b36fba72701038925cefa18f8ed0b43a481c1b"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "7be4d844a9ed4ef4d98ec6322a86959272a4898c79aa90613c72570d38a6a3a4"
 ---
 
 # Routing Middleware API
@@ -29,20 +29,20 @@ sha256: "ec19f226387b63a5ce42510581b36fba72701038925cefa18f8ed0b43a481c1b"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Adding a response header](https://vercel.com/kb/guide/add-response-header?from=related) — Learn how to add a response header in your Middleware.
-- [Filtering query parameters](https://vercel.com/kb/guide/filter-query-parameters?from=related) — Learn how to filter query parameters in your Middleware.
-- [Modifying request headers](https://vercel.com/kb/guide/modify-request-headers?from=related) — Learn how to modify request headers in your Middleware.
-- [Rendering content based on device](https://vercel.com/kb/guide/rendering-content-based-on-device?from=related) — Learn how to render different content based on the user agent in your Middleware.
-- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
-- [Version 15](https://nextjs.org/docs/app/guides/upgrading/version-15?from=related) — Upgrade your Next.js Application from Version 14 to 15.
-- [route.js](https://nextjs.org/docs/app/api-reference/file-conventions/route?from=related) — API reference for the route.js special file.
-- [Getting Started](https://vercel.com/docs/routing-middleware/getting-started?from=related) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
-- [Node.js](https://vercel.com/docs/functions/runtimes/node-js?from=related) — Learn how to use the Node.js runtime to create functions and deploy Node.js servers on Vercel.
-- [CDN Cache](https://vercel.com/docs/caching/cdn-cache?from=related) — Learn how Vercel's CDN cache stores your content across a global network to reduce latency and origin load.
-- [Request Headers](https://vercel.com/docs/headers/request-headers?from=related) — Learn about the request headers sent to each Vercel deployment and how to use them to process requests before sending a
-- [vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
+- [Adding a response header](https://vercel.com/kb/guide/add-response-header?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — Learn how to add a response header in your Middleware.
+- [Filtering query parameters](https://vercel.com/kb/guide/filter-query-parameters?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — Learn how to filter query parameters in your Middleware.
+- [Modifying request headers](https://vercel.com/kb/guide/modify-request-headers?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — Learn how to modify request headers in your Middleware.
+- [Rendering content based on device](https://vercel.com/kb/guide/rendering-content-based-on-device?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — Learn how to render different content based on the user agent in your Middleware.
+- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
+- [How to upgrade to version 15](https://nextjs.org/docs/app/guides/upgrading/version-15?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — Upgrade your Next.js Application from Version 14 to 15.
+- [route.js](https://nextjs.org/docs/app/api-reference/file-conventions/route?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — API reference for the route.js special file.
+- [Getting Started with Routing Middleware](https://vercel.com/docs/routing-middleware/getting-started?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
+- [Using the Node.js Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/node-js?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — Learn how to use the Node.js runtime to create functions and deploy Node.js servers on Vercel.
+- [Vercel CDN Cache](https://vercel.com/docs/caching/cdn-cache?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN cache stores your content across a global network to reduce latency and origin load.
+- [Request headers](https://vercel.com/docs/headers/request-headers?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — Learn about the request headers sent to each Vercel deployment and how to use them to process requests before sending a
+- [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 
-Full cross-link map for this page: [/docs/routing-middleware/api.graph.md](/docs/routing-middleware/api.graph.md)
+Full cross-link map for this page: [/docs/routing-middleware/api.graph.md](/docs/routing-middleware/api.graph.md?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 The Routing Middleware file should be named  and placed at the root of your project, at the same level as your `package.json` file. This is where Vercel will look for the Routing Middleware when processing requests.

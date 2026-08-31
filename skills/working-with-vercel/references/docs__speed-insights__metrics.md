@@ -3,7 +3,7 @@ title: Speed Insights Metrics
 product: vercel
 url: /docs/speed-insights/metrics
 canonical_url: "https://vercel.com/docs/speed-insights/metrics"
-last_updated: 2026-02-18
+last_updated: 2026-08-25
 type: conceptual
 prerequisites:
   - /docs/speed-insights
@@ -13,8 +13,8 @@ related:
 summary: Learn what each performance metric on Speed Insights means and how the scores are calculated.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/metrics.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "e2fc106266b25668eb1e1b78c62b7381230b9534f1387c466b2b3248018c3f36"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "a773666b4fec6e0da8054facf2b523512c89fec2d742c33448259acdba5447b6"
 ---
 
 # Speed Insights Metrics
@@ -27,19 +27,20 @@ sha256: "e2fc106266b25668eb1e1b78c62b7381230b9534f1387c466b2b3248018c3f36"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Improve Cumulative Layout Shift \\(CLS\\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel?from=related) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
-- [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime?from=related) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
-- [How to improve Core Web Vitals](https://vercel.com/kb/guide/how-to-improve-core-web-vitals?from=related) — Improve Core Web Vitals \\(INP, LCP, CLS\\) with metric-specific fixes, field-data measurement, and Next.js/Vercel perform
-- [Why site performance matters](https://vercel.com/kb/guide/why-site-performance-matters?from=related) — How site speed, Core Web Vitals, and SEO combine to drive user retention, conversion rates, and revenue growth.
-- [First Input Delay \\(FID\\) vs. Interaction to Next Paint \\(INP\\)](https://vercel.com/kb/guide/first-input-delay-vs-interaction-to-next-paint?from=related) — Learn about the differences between FID and INP and how to optimize your website's INP score.
-- [Analytics](https://nextjs.org/docs/app/guides/analytics?from=related) — Measure and track page performance using Next.js Speed Insights
-- [Using with CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli?from=related) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
-- [Manage and Optimize Usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
-- [Checks Reference](https://vercel.com/docs/checks/creating-checks?from=related) — Learn how to create your own Checks with Vercel Integrations. You can build your own Integration in order to register an
-- [Astro](https://vercel.com/docs/frameworks/frontend/astro?from=related) — Learn how to use Vercel's features with Astro
-- [Create React App](https://vercel.com/docs/frameworks/frontend/create-react-app?from=related) — Learn how to use Vercel's features with Create React App
+- [Improve Cumulative Layout Shift \\(CLS\\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmetrics&source_site=vercel-docs&relationship=related) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
+- [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmetrics&source_site=vercel-docs&relationship=related) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
+- [Latency numbers every frontend developer should know](https://vercel.com/blog/latency-numbers-every-web-developer-should-know?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmetrics&source_site=vercel-docs&relationship=related)
+- [How Core Web Vitals affect SEO](https://vercel.com/blog/how-core-web-vitals-affect-seo?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmetrics&source_site=vercel-docs&relationship=related)
+- [How to improve Core Web Vitals](https://vercel.com/kb/guide/how-to-improve-core-web-vitals?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmetrics&source_site=vercel-docs&relationship=related) — Improve Core Web Vitals \\(INP, LCP, CLS\\) with metric-specific fixes, field-data measurement, and Next.js/Vercel perform
+- [How Core Web Vitals Will Impact Google Rankings in 2021](https://vercel.com/blog/core-web-vitals?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmetrics&source_site=vercel-docs&relationship=related)
+- [Why site performance matters](https://vercel.com/kb/guide/why-site-performance-matters?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmetrics&source_site=vercel-docs&relationship=related) — How site speed, Core Web Vitals, and SEO combine to drive user retention, conversion rates, and revenue growth.
+- [Improved Speed Insights experience](https://vercel.com/changelog/improved-speed-insights-experience?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmetrics&source_site=vercel-docs&relationship=related)
+- [How we made the Vercel Dashboard twice as fast](https://vercel.com/blog/how-we-made-the-vercel-dashboard-twice-as-fast?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmetrics&source_site=vercel-docs&relationship=related)
+- [Improving INP with React 18 and Suspense](https://vercel.com/blog/improving-interaction-to-next-paint-with-react-18-and-suspense?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmetrics&source_site=vercel-docs&relationship=related)
+- [First Input Delay \\(FID\\) vs. Interaction to Next Paint \\(INP\\)](https://vercel.com/kb/guide/first-input-delay-vs-interaction-to-next-paint?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmetrics&source_site=vercel-docs&relationship=related) — Learn about the differences between FID and INP and how to optimize your website's INP score.
+- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmetrics&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
 
-Full cross-link map for this page: [/docs/speed-insights/metrics.graph.md](/docs/speed-insights/metrics.graph.md)
+Full cross-link map for this page: [/docs/speed-insights/metrics.graph.md](/docs/speed-insights/metrics.graph.md?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmetrics&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ### Real user monitoring

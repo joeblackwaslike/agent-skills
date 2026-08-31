@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/assemblyai.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "b1ad3aabcbdbcc4706e7c1df9b258961495d98bef1d59fd0e77739e17c22e28b"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "5ad8b229959944f0a8e3ccd010e711ffadd67f9838da917ac9680d06fb9c0f95"
 ---
 
 # AssemblyAI Provider
@@ -422,6 +422,7 @@ AssemblyAI's documentation for per-language availability.
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
 - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
+- [Z.AI](/providers/ai-sdk-providers/zai)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)
 - [Fireworks](/providers/ai-sdk-providers/fireworks)

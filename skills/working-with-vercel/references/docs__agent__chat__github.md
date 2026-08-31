@@ -3,7 +3,7 @@ title: GitHub Operations
 product: vercel
 url: /docs/agent/chat/github
 canonical_url: "https://vercel.com/docs/agent/chat/github"
-last_updated: 2018-10-20
+last_updated: 2026-08-19
 type: reference
 prerequisites:
   - /docs/agent/chat
@@ -14,8 +14,8 @@ related:
 summary: Understand how Vercel Agent reads linked GitHub repositories and creates pull requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/chat/github.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "6d25c23a47cb8fbfd3e4c810d7d354a4b9f18d5acec010aceea1a8523125275f"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "d080c1736011973ee98d88f2a36dbb6052963e3c3f16568f1727961a370e66ba"
 ---
 
 # GitHub Operations

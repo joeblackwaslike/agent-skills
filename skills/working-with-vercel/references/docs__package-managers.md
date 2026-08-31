@@ -3,7 +3,7 @@ title: Package Managers
 product: vercel
 url: /docs/package-managers
 canonical_url: "https://vercel.com/docs/package-managers"
-last_updated: 2026-07-01
+last_updated: 2026-08-11
 type: reference
 prerequisites:
   []
@@ -15,8 +15,8 @@ related:
 summary: Discover the package managers supported by Vercel for dependency management. Learn how Vercel detects and uses npm, Yarn, pnpm, and Bun for optimal...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/package-managers.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "3e4053245d2dac6aeb059496cb7faa121bcb1f4824ff3a06e986fee7c287b782"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "ee39d39f8309c72001c4e5b03d4f0d02a74d79603073d914ff873a815d621715"
 ---
 
 # Package Managers
@@ -29,16 +29,20 @@ Vercel will automatically detect the package manager used in your project and in
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Dependencies from package.json are missing after install](https://vercel.com/kb/guide/dependencies-from-package-json-missing-after-install?from=related) — Understand why dependencies may not being installed during a build and how to fix.
-- [How do I use the latest npm version for my Vercel Deployment?](https://vercel.com/kb/guide/how-do-i-use-the-latest-npm-version-for-my-vercel-deployment?from=related) — Learn how to use the latest npm version for Vercel deployments.
-- [How do I use private dependencies with Vercel?](https://vercel.com/kb/guide/using-private-dependencies-with-vercel?from=related) — Information on how to use private dependencies with a Vercel deployment.
-- [Build Features](https://vercel.com/docs/builds/build-features?from=related) — Learn how to customize your deployments using Vercel's build features.
-- [Supported Node.js versions](https://vercel.com/docs/functions/runtimes/node-js/node-js-versions?from=related) — Learn about the supported Node.js versions on Vercel.
-- [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
-- [Project Configuration](https://vercel.com/docs/project-configuration?from=related) — Learn how to configure your Vercel projects using vercel.json, vercel.ts, or the dashboard to control builds, routing, f
+- [vlt is now available in builds via zero configuration](https://vercel.com/changelog/vlt-is-now-available-in-builds-via-zero-configuration?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related)
+- [Dependencies from package.json are missing after install](https://vercel.com/kb/guide/dependencies-from-package-json-missing-after-install?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related) — Understand why dependencies may not being installed during a build and how to fix.
+- [How do I use the latest npm version for my Vercel Deployment?](https://vercel.com/kb/guide/how-do-i-use-the-latest-npm-version-for-my-vercel-deployment?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related) — Learn how to use the latest npm version for Vercel deployments.
+- [Projects using pnpm can now be deployed with zero configuration](https://vercel.com/changelog/projects-using-pnpm-can-now-be-deployed-with-zero-configuration?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related)
+- [Customizing the Install Command while creating Projects](https://vercel.com/changelog/customizing-the-install-command-while-creating-projects?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related)
+- [Automatic pnpm v10 support](https://vercel.com/changelog/automatic-pnpm-v10-support?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related)
+- [How do I use private dependencies with Vercel?](https://vercel.com/kb/guide/using-private-dependencies-with-vercel?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related) — Information on how to use private dependencies with a Vercel deployment.
+- [Automatic pnpm v8 support](https://vercel.com/changelog/automatic-pnpm-v8-support?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related)
+- [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related) — Learn how to customize your deployments using Vercel's build features.
+- [Supported Node.js versions](https://vercel.com/docs/functions/runtimes/node-js/node-js-versions?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related) — Learn about the supported Node.js versions on Vercel.
+- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related) — Learn how to create and manage deployments on Vercel.
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 
-Full cross-link map for this page: [/docs/package-managers.graph.md](/docs/package-managers.graph.md)
+Full cross-link map for this page: [/docs/package-managers.graph.md](/docs/package-managers.graph.md?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 If you are using [Corepack](/docs/builds/configure-a-build#corepack), Vercel will use the package manager specified in the `package.json` file's `packageManager` field instead.

@@ -3,7 +3,7 @@ title: vercel domains
 product: vercel
 url: /docs/cli/domains
 canonical_url: "https://vercel.com/docs/cli/domains"
-last_updated: 2026-07-15
+last_updated: 2026-08-21
 type: reference
 prerequisites:
   - /docs/cli
@@ -12,8 +12,8 @@ related:
 summary: Learn how to buy, sell, transfer, and manage your domains using the vercel domains CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/domains.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "4093982dd9719a0eccf57d33eb94eeb81a7b4e7f4ca8b9d60ec83f92da87750a"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "cc945955d8f2b98d6fad1ae62e729ac7c6f0e7851d7907eff478d7a62bb54b1c"
 ---
 
 # vercel domains
@@ -26,13 +26,15 @@ The `vercel domains` command manages domains under the current scope. With it, y
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [vercel dns](https://vercel.com/docs/cli/dns?from=related) — Learn how to manage your DNS records for your domains using the vercel dns CLI command.
-- [Working with Domains](https://vercel.com/docs/domains/working-with-domains?from=related) — Learn how domains work and the options Vercel provides for managing them.
-- [Set Up Custom Domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related) — Add and configure a custom domain for your Vercel project using the CLI.
-- [Domains](https://vercel.com/docs/domains?from=related) — Learn the fundamentals of how domains, DNS, and nameservers work on Vercel.
-- [Viewing & Searching Domains](https://vercel.com/docs/domains/working-with-domains/view-and-search-domains?from=related) — Learn how to view and search all registered domains that are assigned to Vercel Projects through the Vercel dashboard.
+- [Vercel CLI expands commands for DNS, domains, and projects](https://vercel.com/changelog/vercel-cli-expands-commands-for-dns-domains-and-projects?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=related)
+- [Vercel CLI now supports verifying DNS configuration](https://vercel.com/changelog/vercel-cli-now-supports-verifying-dns-configuration?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=related)
+- [vercel dns](https://vercel.com/docs/cli/dns?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=related) — Learn how to manage your DNS records for your domains using the vercel dns CLI command.
+- [Working with domains](https://vercel.com/docs/domains/working-with-domains?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=related) — Learn how domains work and the options Vercel provides for managing them.
+- [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=related) — Add and configure a custom domain for your Vercel project using the CLI.
+- [Domains Overview](https://vercel.com/docs/domains?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=related) — Learn the fundamentals of how domains, DNS, and nameservers work on Vercel.
+- [vercel buy](https://vercel.com/docs/cli/buy?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=related) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
 
-Full cross-link map for this page: [/docs/cli/domains.graph.md](/docs/cli/domains.graph.md)
+Full cross-link map for this page: [/docs/cli/domains.graph.md](/docs/cli/domains.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 > **💡 Note:** You can manage domains with further options and greater control under a Vercel

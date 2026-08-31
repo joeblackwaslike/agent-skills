@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/black-forest-labs.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "36b9ddcc7850b848ac424bed5ed3fc9150848cb67bdf1d89820ecac21ffb9f84"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "f7656f72782e4bff3ac52dd978deb3ad8209e2ce744e39f9d9d3e0335188d5e4"
 ---
 
 # Black Forest Labs Provider
@@ -521,6 +521,7 @@ video object may contain the following properties:
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
 - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
+- [Z.AI](/providers/ai-sdk-providers/zai)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)
 - [Fireworks](/providers/ai-sdk-providers/fireworks)

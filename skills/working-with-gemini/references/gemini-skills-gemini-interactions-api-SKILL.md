@@ -2,8 +2,8 @@
 name: gemini-interactions-api
 description: Use this skill when writing code that calls the Gemini API for text generation, multi-turn chat, multimodal understanding, image generation, video generation, streaming responses, background research tasks, function calling, structured output, or migrating from the old generateContent API. This skill covers the Interactions API, the recommended way to use Gemini models and agents in Python and TypeScript.
 source: "https://raw.githubusercontent.com/google-gemini/gemini-skills/main/skills/gemini-interactions-api/SKILL.md"
-fetched_at: "2026-08-17T04:44:34.010Z"
-sha256: "c87556a0c5a283c8636321739c7f89102d4101aa4a266c5699cf58100913b4b8"
+fetched_at: "2026-08-31T10:40:50.696Z"
+sha256: "7df216aa5c36d7e024255d56cad97f787713b3ad2177d679e8d16f91f4d77812"
 ---
 
 # Gemini Interactions API Skill
@@ -19,13 +19,16 @@ sha256: "c87556a0c5a283c8636321739c7f89102d4101aa4a266c5699cf58100913b4b8"
 - `gemini-3.5-flash-lite`: 1M tokens, fastest, lowest-cost 3.5 model for high-throughput execution
 - `gemini-3.1-pro-preview`: 1M tokens, complex reasoning, coding, research
 - `gemini-3.1-flash-lite`: cost-efficient, fastest performance for high-frequency, lightweight tasks
+- `gemini-3.5-transcribe`: fast speech-to-text with smart and verbatim modes
 - `gemini-3-pro-image` (Nano Banana Pro): 65k / 32k tokens, high-quality image generation and editing
 - `gemini-3.1-flash-image` (Nano Banana 2): 65k / 32k tokens, fast, efficient image generation and editing
 - `gemini-3.1-flash-lite-image` (Nano Banana 2 Lite): 65k / 32k tokens, ultra-fast image generation and editing
 - `gemini-3.1-flash-tts-preview`: expressive text-to-speech with Director's Chair prompting
-- `gemini-omni-flash-preview`: video generation, image-referenced video generation, first-frame-to-video, and video editing
+- `gemini-omni-1.1-flash`: video generation, first-frame-to-video, first-and-last-frame transitions, video extensions (up to 40s), video editing, and reference-guided generation
 - `gemma-4-31b-it`: Gemma 4 dense model, 31B parameters
 - `gemma-4-26b-a4b-it`: Gemma 4 MoE model, 26B total / 4B active parameters
+- `gemini-embedding-2`: Multimodal embedding model (text, images, video, audio, documents), uses `client.models.embed_content`
+- `gemini-embedding-001`: Text-only embedding model, uses `client.models.embed_content`
 
 > [!WARNING]
 > Models like `gemini-2.5-*`, `gemini-2.0-*`, `gemini-1.5-*` are **legacy and deprecated**. Never use them.
@@ -347,11 +350,14 @@ For streaming with tools, thinking, agents, and image generation see the full [S
 - [Thought Signatures](https://ai.google.dev/gemini-api/docs/interactions/thought-signatures.md.txt)
 - [Image Generation](https://ai.google.dev/gemini-api/docs/interactions/image-generation.md.txt)
 - [Image Understanding](https://ai.google.dev/gemini-api/docs/interactions/image-understanding.md.txt)
+- [Video Generation & Editing (Omni Flash)](https://ai.google.dev/gemini-api/docs/omni.md.txt)
 - [Speech Generation](https://ai.google.dev/gemini-api/docs/interactions/speech-generation.md.txt)
 - [Music Generation](https://ai.google.dev/gemini-api/docs/interactions/music-generation.md.txt)
+- [Embeddings](https://ai.google.dev/gemini-api/docs/embeddings.md.txt)
 
 **Multimodal Understanding:**
 - [Audio](https://ai.google.dev/gemini-api/docs/interactions/audio.md.txt)
+- [Audio Transcription](https://ai.google.dev/gemini-api/docs/transcribe.md.txt)
 - [Video Understanding](https://ai.google.dev/gemini-api/docs/interactions/video-understanding.md.txt)
 - [Document Processing](https://ai.google.dev/gemini-api/docs/interactions/document-processing.md.txt)
 

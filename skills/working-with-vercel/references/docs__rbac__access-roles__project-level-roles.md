@@ -13,8 +13,8 @@ related:
 summary: Learn about the project level roles and their permissions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac/access-roles/project-level-roles.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "a58c30b7850908ab35b3496bcaac07733693667962e0994b35f5fb7ef6941cbd"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "6daf0c0a0dd6aaab0960590806c30cdb8e28ac5ecda3f2503e17b1c3804e8e6b"
 ---
 
 # Project Level Roles
@@ -27,14 +27,16 @@ sha256: "a58c30b7850908ab35b3496bcaac07733693667962e0994b35f5fb7ef6941cbd"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team?from=related) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
-- [Team Level Roles](https://vercel.com/docs/rbac/access-roles/team-level-roles?from=related) — Learn about the different team level roles and the permissions they provide.
-- [Extended Permissions](https://vercel.com/docs/rbac/access-roles/extended-permissions?from=related) — Learn about extended permissions in Vercel's RBAC system. Understand how to combine roles and permissions for precise ac
-- [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members?from=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
-- [Access Groups](https://vercel.com/docs/rbac/access-groups?from=related) — Learn how to configure access groups for team members on a Vercel account.
-- [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference?from=related) — Learn how to manage project access and added products for your integrations.
+- [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles%2Fproject-level-roles&source_site=vercel-docs&relationship=related) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
+- [Team Level Roles](https://vercel.com/docs/rbac/access-roles/team-level-roles?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles%2Fproject-level-roles&source_site=vercel-docs&relationship=related) — Learn about the different team level roles and the permissions they provide.
+- [New project access controls for Enterprise customers](https://vercel.com/changelog/new-project-access-controls-for-enterprise-customers?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles%2Fproject-level-roles&source_site=vercel-docs&relationship=related)
+- [Expanded Role-Based Access Control (RBAC) for Enterprise teams](https://vercel.com/changelog/expanded-role-based-access-control-rbac-for-enterprise-teams?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles%2Fproject-level-roles&source_site=vercel-docs&relationship=related)
+- [Extended permissions](https://vercel.com/docs/rbac/access-roles/extended-permissions?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles%2Fproject-level-roles&source_site=vercel-docs&relationship=related) — Learn about extended permissions in Vercel's RBAC system. Understand how to combine roles and permissions for precise ac
+- [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles%2Fproject-level-roles&source_site=vercel-docs&relationship=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
+- [Access Groups](https://vercel.com/docs/rbac/access-groups?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles%2Fproject-level-roles&source_site=vercel-docs&relationship=related) — Learn how to configure access groups for team members on a Vercel account.
+- [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles%2Fproject-level-roles&source_site=vercel-docs&relationship=related) — Learn how to manage project access and added products for your integrations.
 
-Full cross-link map for this page: [/docs/rbac/access-roles/project-level-roles.graph.md](/docs/rbac/access-roles/project-level-roles.graph.md)
+Full cross-link map for this page: [/docs/rbac/access-roles/project-level-roles.graph.md](/docs/rbac/access-roles/project-level-roles.graph.md?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles%2Fproject-level-roles&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Project level roles are assigned to a team member on a project level. This means that the role is only valid for the project it is assigned to. The role is not valid for other projects in the team.

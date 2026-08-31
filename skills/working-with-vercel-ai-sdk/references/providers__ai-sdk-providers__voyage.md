@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/voyage.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "03731bc6fbf3257ce256428bc94e1e061a2fc7185543b7a8a2243dfc21f87aa7"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "c9b3e469c1f041f0d197ad84daa304846276f1fcb35117456e3ce025d1f187e5"
 ---
 
 # Voyage AI Provider
@@ -248,6 +248,7 @@ The following provider options are available:
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
 - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
+- [Z.AI](/providers/ai-sdk-providers/zai)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)
 - [Fireworks](/providers/ai-sdk-providers/fireworks)

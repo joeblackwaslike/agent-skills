@@ -3,7 +3,7 @@ title: Calculating usage of resources
 product: vercel
 url: /docs/pricing/how-does-vercel-calculate-usage-of-resources
 canonical_url: "https://vercel.com/docs/pricing/how-does-vercel-calculate-usage-of-resources"
-last_updated: 2026-06-16
+last_updated: 2026-08-11
 type: conceptual
 prerequisites:
   - /docs/pricing
@@ -16,8 +16,8 @@ related:
 summary: Understand how Vercel measures and calculates your resource usage based on a typical user journey.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/how-does-vercel-calculate-usage-of-resources.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "efe9d6c92f60d55026e60437f2826cbbbffe627149f0f1aaac4ae5259192ada1"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "35b8d7dbcbb30c3b7a6bb5db443a65051e55809c8705e4008eb68c8186d7a4c9"
 ---
 
 # Calculating usage of resources
@@ -30,15 +30,15 @@ It's important to understand how usage and accrual happen on Vercel, in order to
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs?from=related) — Reduce ISR costs by analyzing Incremental Static Regeneration \\(ISR\\) behavior to find pages and tags that revalidate to
-- [How to Effectively Load Test Your Vercel Application](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application?from=related) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
-- [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage?from=related) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
-- [Managing Usage & Costs](https://vercel.com/docs/image-optimization/managing-image-optimization-costs?from=related) — Learn how to measure and manage Image Optimization usage with this guide to avoid any unexpected costs.
-- [Request Lifecycle](https://vercel.com/docs/fundamentals/infrastructure?from=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
-- [Legacy Usage & Pricing](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related) — Learn about legacy usage and pricing for Vercel Functions.
-- [Plans](https://vercel.com/docs/plans?from=related) — Learn about the different plans available on Vercel.
+- [Life of a Vercel request: Navigating the Edge Network](https://vercel.com/blog/life-of-a-vercel-request-navigating-the-edge-network?from=related&source_path=%2Fdocs%2Fpricing%2Fhow-does-vercel-calculate-usage-of-resources&source_site=vercel-docs&relationship=related)
+- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure?from=related&source_path=%2Fdocs%2Fpricing%2Fhow-does-vercel-calculate-usage-of-resources&source_site=vercel-docs&relationship=related)
+- [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage?from=related&source_path=%2Fdocs%2Fpricing%2Fhow-does-vercel-calculate-usage-of-resources&source_site=vercel-docs&relationship=related) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
+- [Managing Usage & Costs](https://vercel.com/docs/image-optimization/managing-image-optimization-costs?from=related&source_path=%2Fdocs%2Fpricing%2Fhow-does-vercel-calculate-usage-of-resources&source_site=vercel-docs&relationship=related) — Learn how to measure and manage Image Optimization usage with this guide to avoid any unexpected costs.
+- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure?from=related&source_path=%2Fdocs%2Fpricing%2Fhow-does-vercel-calculate-usage-of-resources&source_site=vercel-docs&relationship=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
+- [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related&source_path=%2Fdocs%2Fpricing%2Fhow-does-vercel-calculate-usage-of-resources&source_site=vercel-docs&relationship=related) — Learn about legacy usage and pricing for Vercel Functions.
+- [Account Plans on Vercel](https://vercel.com/docs/plans?from=related&source_path=%2Fdocs%2Fpricing%2Fhow-does-vercel-calculate-usage-of-resources&source_site=vercel-docs&relationship=related) — Learn about the different plans available on Vercel.
 
-Full cross-link map for this page: [/docs/pricing/how-does-vercel-calculate-usage-of-resources.graph.md](/docs/pricing/how-does-vercel-calculate-usage-of-resources.graph.md)
+Full cross-link map for this page: [/docs/pricing/how-does-vercel-calculate-usage-of-resources.graph.md](/docs/pricing/how-does-vercel-calculate-usage-of-resources.graph.md?from=related&source_path=%2Fdocs%2Fpricing%2Fhow-does-vercel-calculate-usage-of-resources&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 You'll learn how resources are used at each stage of the journey, from entering the site, to browsing products, interacting with dynamic content, and engaging with A/B testing for personalized content.

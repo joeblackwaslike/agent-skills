@@ -3,7 +3,7 @@ title: Flags
 product: vercel
 url: /docs/flags
 canonical_url: "https://vercel.com/docs/flags"
-last_updated: 2026-07-15
+last_updated: 2026-08-11
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: "Control feature visibility, run experiments, and ship with confidence using Vercel's feature flags platform."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "71da4bf3d2b67031ab88df8a4377c36b238c54583ae7c263b8825f623a7bcef2"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "6b2796d380b776635a62f3167db613c295dc9dbed1ef07e88218a987f59d80f0"
 ---
 
 # Flags
@@ -27,15 +27,20 @@ Vercel provides a complete feature flags platform. Use Vercel as your feature fl
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
-- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related)
-- [List flags](https://vercel.com/docs/rest-api/feature-flags/list-flags?from=related)
-- [Web Analytics](https://vercel.com/docs/analytics?from=related) — With Web Analytics, you can get detailed insights into your website's visitors with new metrics like top pages, top refe
-- [Filtering](https://vercel.com/docs/analytics/filtering?from=related) — Learn how filters allow you to explore insights about your website's visitors.
-- [Glossary](https://vercel.com/docs/glossary?from=related) — Learn about the terms and concepts used in Vercel's products and documentation.
-- [Native Integration Flows](https://vercel.com/docs/integrations/create-integration/marketplace-flows?from=related) — Learn how information flows between the integration user, Vercel, and the integration provider for Vercel native integra
+- [Vercel Flags no longer requires SDK Keys for Vercel deployments](https://vercel.com/changelog/authenticate-vercel-flags-with-openid-connect-by-default?from=related&source_path=%2Fdocs%2Fflags&source_site=vercel-docs&relationship=related)
+- [Manage Vercel Flags segments with Vercel CLI](https://vercel.com/changelog/manage-vercel-flags-segments-with-vercel-cli?from=related&source_path=%2Fdocs%2Fflags&source_site=vercel-docs&relationship=related)
+- [Manage Vercel Flags targeting rules from the CLI](https://vercel.com/changelog/manage-vercel-flags-targeting-rules-from-the-cli?from=related&source_path=%2Fdocs%2Fflags&source_site=vercel-docs&relationship=related)
+- [Automate progressive rollouts with Vercel Flags](https://vercel.com/changelog/progressive-rollouts-in-vercel-flags?from=related&source_path=%2Fdocs%2Fflags&source_site=vercel-docs&relationship=related)
+- [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related&source_path=%2Fdocs%2Fflags&source_site=vercel-docs&relationship=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
+- [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags?from=related&source_path=%2Fdocs%2Fflags&source_site=vercel-docs&relationship=related)
+- [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates?from=related&source_path=%2Fdocs%2Fflags&source_site=vercel-docs&relationship=related)
+- [Vercel Flags is now generally available](https://vercel.com/changelog/vercel-flags-ga?from=related&source_path=%2Fdocs%2Fflags&source_site=vercel-docs&relationship=related)
+- [Vercel Web Analytics](https://vercel.com/docs/analytics?from=related&source_path=%2Fdocs%2Fflags&source_site=vercel-docs&relationship=related) — With Web Analytics, you can get detailed insights into your website's visitors with new metrics like top pages, top refe
+- [Filtering Analytics](https://vercel.com/docs/analytics/filtering?from=related&source_path=%2Fdocs%2Fflags&source_site=vercel-docs&relationship=related) — Learn how filters allow you to explore insights about your website's visitors.
+- [Glossary](https://vercel.com/docs/glossary?from=related&source_path=%2Fdocs%2Fflags&source_site=vercel-docs&relationship=related) — Learn about the terms and concepts used in Vercel's products and documentation.
+- [Native Integration Flows](https://vercel.com/docs/integrations/create-integration/marketplace-flows?from=related&source_path=%2Fdocs%2Fflags&source_site=vercel-docs&relationship=related) — Learn how information flows between the integration user, Vercel, and the integration provider for Vercel native integra
 
-Full cross-link map for this page: [/docs/flags.graph.md](/docs/flags.graph.md)
+Full cross-link map for this page: [/docs/flags.graph.md](/docs/flags.graph.md?from=related&source_path=%2Fdocs%2Fflags&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ![Image](`/docs-assets/static/docs/flags/flags-tab-light.png`)

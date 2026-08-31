@@ -3,7 +3,7 @@ title: Spend Management
 product: vercel
 url: /docs/spend-management
 canonical_url: "https://vercel.com/docs/spend-management"
-last_updated: 2026-07-15
+last_updated: 2026-08-11
 type: how-to
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how to get notified about your account spend and configure a webhook.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/spend-management.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "29d8fa53389cc8415c99203a5f0a0f20884a2ad193fc98fdcae3ec3f055a4404"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "040b34047ea194357543698e956d0037b63f09301f1373b6bc6ebaf82dd5a964"
 ---
 
 # Spend Management
@@ -30,18 +30,20 @@ sha256: "29d8fa53389cc8415c99203a5f0a0f20884a2ad193fc98fdcae3ec3f055a4404"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Pause your project](https://vercel.com/kb/guide/pause-your-project?from=related) — Use a webhook to pause your project based on spend management.
-- [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
-- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
-- [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
-- [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank?from=related) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, security defaults, AI infrastructure, GPU comp
-- [Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend?from=related) — Monitor AI Gateway requests and manage spend: observability, custom reporting, usage and billing APIs, and spending budg
-- [Billing FAQ](https://vercel.com/docs/plans/pro-plan/billing?from=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
-- [Plans](https://vercel.com/docs/plans?from=related) — Learn about the different plans available on Vercel.
-- [Managing projects](https://vercel.com/docs/projects/managing-projects?from=related) — Learn how to manage your projects through the Vercel Dashboard.
-- [Manage & Optimize](https://vercel.com/docs/manage-and-optimize-observability?from=related) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
+- [Pause your project](https://vercel.com/kb/guide/pause-your-project?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related) — Use a webhook to pause your project based on spend management.
+- [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
+- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
+- [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
+- [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, security defaults, AI infrastructure, GPU comp
+- [Introducing Spend Management](https://vercel.com/blog/introducing-spend-management-realtime-usage-alerts-sms-notifications?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related)
+- [Spend Management now available for Pro users](https://vercel.com/changelog/spend-management-now-available-for-pro-users?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related)
+- [Spend Management now pauses production deployments by default](https://vercel.com/changelog/spend-management-now-pauses-production-deployments-by-default?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related)
+- [Improved hard caps for Spend Management](https://vercel.com/changelog/improved-hard-caps-for-spend-management?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related)
+- [Spend Management now enabled by default on Pro](https://vercel.com/changelog/spend-management-now-enabled-by-default-on-pro?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related)
+- [Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related) — Monitor AI Gateway requests and manage spend: observability, custom reporting, usage and billing APIs, and spending budg
+- [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 
-Full cross-link map for this page: [/docs/spend-management.graph.md](/docs/spend-management.graph.md)
+Full cross-link map for this page: [/docs/spend-management.graph.md](/docs/spend-management.graph.md?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Spend management is a way for you to notify or to automatically take action on your account when your team hits a [set spend amount](#what-does-spend-management-include). The actions you can take are:

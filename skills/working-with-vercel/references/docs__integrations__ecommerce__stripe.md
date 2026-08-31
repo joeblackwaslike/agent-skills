@@ -13,8 +13,8 @@ related:
 summary: Connect your Stripe account to Vercel and accept payments in your applications.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/ecommerce/stripe.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "a27443b95523fdbf73496075c75302fe4381bc7a77d5c144a5e3777e7871d930"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "0ab9c8cf007499744b442640dae1c81032479d0e66129f5244f46102c56a7ed7"
 ---
 
 # Stripe Integration
@@ -27,18 +27,20 @@ Connect your [Stripe](https://docs.stripe.com/) account to Vercel to accept paym
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to deploy a Next.js online store with Stripe](https://vercel.com/kb/guide/how-to-deploy-a-next-js-online-store-with-stripe?from=related) — Learn how to build and deploy a Next.js e-commerce store with Stripe payments on Vercel. This step-by-step guide covers
-- [Getting started with Next.js, TypeScript, and Stripe Checkout](https://vercel.com/kb/guide/getting-started-with-nextjs-typescript-stripe?from=related) — Add payments functionality to your Next.js applications with Stripe and deploy to Vercel.
-- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
-- [Create and Deploy a Crystallize E-commerce Site with Vercel](https://vercel.com/kb/guide/deploying-crystallize-with-vercel?from=related) — How to launch an e-commerce site using Next.js and Crystallize on Vercel in minutes.
-- [Build commission-free iOS checkouts with Vercel and Paddle](https://vercel.com/kb/guide/build-commission-free-ios-checkouts-with-vercel-and-paddle?from=related) — A new ruling allows iOS apps to use external checkouts. Learn how to deploy a secure, high-performance external checkout
-- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
-- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related) — Learn how you can add a product to your Vercel project through a native integration.
-- [Marketplace Vercel API](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel?from=related) — Learn about marketplace vercel api on Vercel.
-- [Marketplace](https://vercel.com/docs/marketplace-storage?from=related) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
-- [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [How to deploy a Next.js online store with Stripe](https://vercel.com/kb/guide/how-to-deploy-a-next-js-online-store-with-stripe?from=related&source_path=%2Fdocs%2Fintegrations%2Fecommerce%2Fstripe&source_site=vercel-docs&relationship=related) — Learn how to build and deploy a Next.js e-commerce store with Stripe payments on Vercel. This step-by-step guide covers
+- [From idea to secure checkout in minutes with Stripe](https://vercel.com/blog/from-idea-to-secure-checkout-in-minutes-with-stripe?from=related&source_path=%2Fdocs%2Fintegrations%2Fecommerce%2Fstripe&source_site=vercel-docs&relationship=related)
+- [Stripe is now generally available on the Marketplace and v0](https://vercel.com/changelog/stripe-is-now-generally-available-on-the-marketplace-and-v0?from=related&source_path=%2Fdocs%2Fintegrations%2Fecommerce%2Fstripe&source_site=vercel-docs&relationship=related)
+- [Stripe is now available in beta on the Vercel Marketplace](https://vercel.com/changelog/stripe-is-now-available-in-beta-on-the-vercel-marketplace?from=related&source_path=%2Fdocs%2Fintegrations%2Fecommerce%2Fstripe&source_site=vercel-docs&relationship=related)
+- [Getting started with Next.js, TypeScript, and Stripe Checkout](https://vercel.com/kb/guide/getting-started-with-nextjs-typescript-stripe?from=related&source_path=%2Fdocs%2Fintegrations%2Fecommerce%2Fstripe&source_site=vercel-docs&relationship=related) — Add payments functionality to your Next.js applications with Stripe and deploy to Vercel.
+- [Vercel is now available in Stripe Projects](https://vercel.com/changelog/vercel-is-now-available-in-stripe-projects?from=related&source_path=%2Fdocs%2Fintegrations%2Fecommerce%2Fstripe&source_site=vercel-docs&relationship=related)
+- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related&source_path=%2Fdocs%2Fintegrations%2Fecommerce%2Fstripe&source_site=vercel-docs&relationship=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
+- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fecommerce%2Fstripe&source_site=vercel-docs&relationship=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
+- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fecommerce%2Fstripe&source_site=vercel-docs&relationship=related) — Learn how you can add a product to your Vercel project through a native integration.
+- [Storage on Vercel Marketplace](https://vercel.com/docs/marketplace-storage?from=related&source_path=%2Fdocs%2Fintegrations%2Fecommerce%2Fstripe&source_site=vercel-docs&relationship=related) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
+- [Marketplace Vercel API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fecommerce%2Fstripe&source_site=vercel-docs&relationship=related) — Learn how to call Vercel API endpoints to interact with Vercel resources
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fecommerce%2Fstripe&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 
-Full cross-link map for this page: [/docs/integrations/ecommerce/stripe.graph.md](/docs/integrations/ecommerce/stripe.graph.md)
+Full cross-link map for this page: [/docs/integrations/ecommerce/stripe.graph.md](/docs/integrations/ecommerce/stripe.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fecommerce%2Fstripe&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## How it works

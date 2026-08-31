@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-workflow/workflow-agent.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "6f01bf3d24175a2a875f6f2d5330f238165efbead7ff1f6391f9f99366e9c882"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "ea9f8cc64e50e3380aa46e099168d7944f037b2bcad4ec42efe36bc69e589d5a"
 ---
 
 # `WorkflowAgent`
@@ -973,6 +973,7 @@ const result = await agent.stream({
 
 - [WorkflowAgent](/docs/reference/ai-sdk-workflow/workflow-agent)
 - [WorkflowChatTransport](/docs/reference/ai-sdk-workflow/workflow-chat-transport)
+- [generateVideo](/docs/reference/ai-sdk-workflow/generate-video)
 
 
 [Full Sitemap](/sitemap.md)

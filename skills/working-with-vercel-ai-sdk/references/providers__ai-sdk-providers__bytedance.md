@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/bytedance.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "c73f52abe7be9086087299138d3b7f8f1ff4b41e870fed5243c8e1d67890f9aa"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "435eecd5a00996f1552a5f495c30f73cc445ac9ff369175ab7f161c14f524772"
 ---
 
 # ByteDance Provider
@@ -512,6 +512,7 @@ All models output MP4 video at 24 fps.
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
 - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
+- [Z.AI](/providers/ai-sdk-providers/zai)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)
 - [Fireworks](/providers/ai-sdk-providers/fireworks)

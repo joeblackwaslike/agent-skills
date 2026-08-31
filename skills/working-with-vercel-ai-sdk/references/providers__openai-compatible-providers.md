@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/openai-compatible-providers.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "9705421a0d3b98c916bba70a641c91e466912eab2308660220ef98bb8a88ad08"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "d636537438aad78f984d388dd8a9d119f3cd98c854f4814b2618578315699d14"
 ---
 
 # OpenAI Compatible Providers
@@ -77,6 +77,12 @@ You can use the following optional settings to customize the provider instance:
 
   Set to true if the provider supports structured outputs. Only relevant for `provider()`, `provider.chatModel()`, and `provider.languageModel()`.
 
+- **supportedUrls** _() =&gt; Record&lt;string, RegExp[]&gt;_
+
+  Defines URLs that chat models can access directly, grouped by media type.
+  Matching URLs are passed to the provider instead of being downloaded by the
+  AI SDK.
+
 - **transformRequestBody** _(args: Record&lt;string, any&gt;) =&gt; Record&lt;string, any&gt;_
 
   Optional function to transform the request body before sending it to the API.
@@ -133,6 +139,78 @@ const { text } = await generateText({
   prompt: 'Write a vegetarian lasagna recipe for 4 people.',
 });
 ```
+
+### Video Inputs
+
+OpenAI-compatible providers that accept the non-standard `video_url` content
+part can receive video file parts. Inline bytes and base64-encoded data are sent
+as data URLs:
+
+```ts
+import { createOpenAICompatible } from '@ai-sdk/openai-compatible';
+import { generateText } from 'ai';
+import fs from 'node:fs';
+
+const provider = createOpenAICompatible({
+  name: 'providerName',
+  apiKey: process.env.PROVIDER_API_KEY,
+  baseURL: 'https://api.provider.com/v1',
+});
+
+const { text } = await generateText({
+  model: provider('video-capable-model'),
+  messages: [
+    {
+      role: 'user',
+      content: [
+        { type: 'text', text: 'Describe the main action in this video.' },
+        {
+          type: 'file',
+          mediaType: 'video/mp4',
+          data: fs.readFileSync('./video.mp4'),
+        },
+      ],
+    },
+  ],
+});
+```
+
+To pass a hosted video URL through without downloading it first, configure
+`supportedUrls` for the provider:
+
+```ts
+const provider = createOpenAICompatible({
+  name: 'providerName',
+  apiKey: process.env.PROVIDER_API_KEY,
+  baseURL: 'https://api.provider.com/v1',
+  supportedUrls: () => ({
+    'video/*': [/^https:\/\/cdn\.example\.com\//],
+  }),
+});
+
+const { text } = await generateText({
+  model: provider('video-capable-model'),
+  messages: [
+    {
+      role: 'user',
+      content: [
+        { type: 'text', text: 'Summarize this video.' },
+        {
+          type: 'file',
+          mediaType: 'video/mp4',
+          data: new URL('https://cdn.example.com/video.mp4'),
+        },
+      ],
+    },
+  ],
+});
+```
+
+`video_url` is an OpenAI-compatible provider extension, not an official OpenAI
+Chat Completions content type. Video support, accepted formats, size and
+duration limits, and support for public or data URLs depend on the provider and
+model. Prefer hosted URLs when supported to avoid embedding large videos in
+request bodies.
 
 ### Including model ids for auto-completion
 
@@ -640,6 +718,7 @@ This allows you to access provider-specific information while maintaining a cons
   - [QuiverAI](/providers/ai-sdk-providers/quiverai)
   - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
   - [Mistral AI](/providers/ai-sdk-providers/mistral)
+  - [Z.AI](/providers/ai-sdk-providers/zai)
   - [Together.ai](/providers/ai-sdk-providers/togetherai)
   - [Cohere](/providers/ai-sdk-providers/cohere)
   - [Fireworks](/providers/ai-sdk-providers/fireworks)
@@ -666,6 +745,8 @@ This allows you to access provider-specific information while maintaining a cons
   - [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
   - [Grok Build](/providers/ai-sdk-harnesses/grok-build)
   - [Cline](/providers/ai-sdk-harnesses/cline)
+  - [Cursor](/providers/ai-sdk-harnesses/cursor)
+  - [fx](/providers/ai-sdk-harnesses/fx)
 - [Observability Integrations](/providers/observability)
   - [Arize AX](/providers/observability/arize-ax)
   - [Axiom](/providers/observability/axiom)

@@ -3,7 +3,7 @@ title: xmcp on Vercel
 product: vercel
 url: /docs/frameworks/backend/xmcp
 canonical_url: "https://vercel.com/docs/frameworks/backend/xmcp"
-last_updated: 2025-11-19
+last_updated: 2026-08-10
 type: how-to
 prerequisites:
   - /docs/frameworks/backend
@@ -17,8 +17,8 @@ related:
 summary: Build MCP-compatible backends with xmcp and deploy to Vercel. Learn the project structure, tool format, middleware, and how to run locally and in...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/xmcp.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "82e375f2a371d1155abc4bee904905f5ba4951b6626d11832079a5afec55410e"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "8e262bd160d750975ea40eff917256f8ad662587d3548b9f3f9dfd4ea14b663a"
 ---
 
 # xmcp on Vercel
@@ -31,15 +31,17 @@ sha256: "82e375f2a371d1155abc4bee904905f5ba4951b6626d11832079a5afec55410e"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to create a contentful asset on Vercel](https://vercel.com/kb/guide/how-to-create-a-contentful-asset-on-vercel?from=related) — This is my wonderful
-- [Build an MCP Server with Weather tools using Express and Vercel](https://vercel.com/kb/guide/mcp-server-with-weather-tool-express?from=related) — Make your Express weather API accessible to AI assistants through the Model Context Protocol.
-- [Deploy MCP servers](https://vercel.com/docs/mcp/deploy-mcp-servers-to-vercel?from=related) — Learn how to deploy Model Context Protocol \\(MCP\\) servers on Vercel with OAuth authentication and efficient scaling.
-- [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
-- [vercel mcp](https://vercel.com/docs/cli/mcp?from=related) — Set up Model Context Protocol \\(MCP\\) usage with a Vercel project using the vercel mcp CLI command.
-- [Express](https://vercel.com/docs/frameworks/backend/express?from=related) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
-- [Sitecore](https://vercel.com/docs/integrations/cms/sitecore?from=related) — Integrate Vercel with Sitecore XM Cloud to deploy your content.
+- [Deploy xmcp servers with zero-configuration](https://vercel.com/changelog/deploy-xmcp-servers-with-zero-configuration?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fxmcp&source_site=vercel-docs&relationship=related)
+- [How to create a contentful asset on Vercel](https://vercel.com/kb/guide/how-to-create-a-contentful-asset-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fxmcp&source_site=vercel-docs&relationship=related) — This is my wonderful
+- [MCP server support on Vercel](https://vercel.com/changelog/mcp-server-support-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fxmcp&source_site=vercel-docs&relationship=related)
+- [Build an MCP Server with Weather tools using Express and Vercel](https://vercel.com/kb/guide/mcp-server-with-weather-tool-express?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fxmcp&source_site=vercel-docs&relationship=related) — Make your Express weather API accessible to AI assistants through the Model Context Protocol.
+- [Deploy MCP servers to Vercel](https://vercel.com/docs/mcp/deploy-mcp-servers-to-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fxmcp&source_site=vercel-docs&relationship=related) — Learn how to deploy Model Context Protocol \\(MCP\\) servers on Vercel with OAuth authentication and efficient scaling.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fxmcp&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [vercel mcp](https://vercel.com/docs/cli/mcp?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fxmcp&source_site=vercel-docs&relationship=related) — Set up Model Context Protocol \\(MCP\\) usage with a Vercel project using the vercel mcp CLI command.
+- [Express on Vercel](https://vercel.com/docs/frameworks/backend/express?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fxmcp&source_site=vercel-docs&relationship=related) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
+- [Vercel and Sitecore XM Cloud Integration](https://vercel.com/docs/integrations/cms/sitecore?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fxmcp&source_site=vercel-docs&relationship=related) — Integrate Vercel with Sitecore XM Cloud to deploy your content.
 
-Full cross-link map for this page: [/docs/frameworks/backend/xmcp.graph.md](/docs/frameworks/backend/xmcp.graph.md)
+Full cross-link map for this page: [/docs/frameworks/backend/xmcp.graph.md](/docs/frameworks/backend/xmcp.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fxmcp&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Get started with xmcp on Vercel

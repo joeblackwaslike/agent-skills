@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/pi.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "b2c64239195d2d1de733e5e2ac6ed211ea2494c10160863cfe5f2500852548e8"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "05330fbabc79cabd1825905b09ef69f9a048884b38adfdef8f50184ff1163a02"
 ---
 
 # Pi Harness
@@ -82,8 +82,8 @@ const harness = createPi({
 
 Settings:
 
-- `auth`: authentication mode: `auto`, `openai`, `anthropic`, `custom`, or
-  `ai-gateway`.
+- `auth`: authentication mode (`auto`, `openai`, `anthropic`, `custom`, or
+  `ai-gateway`) or an isolated authentication environment.
 - `extensionFactories`: trusted inline Pi extension factories that run in the
   host Node.js process.
 - `mcpServers`: MCP server definitions keyed by server name.
@@ -133,6 +133,21 @@ The `auth` setting selects which credentials Pi reads from the host environment:
 ```ts
 const harness = createPi({ auth: 'ai-gateway' });
 ```
+
+Pass an authentication environment to use programmatically resolved
+credentials without reading `process.env`:
+
+```ts
+const harness = createPi({
+  auth: {
+    MISTRAL_API_KEY: await resolveMistralToken(),
+    MISTRAL_BASE_URL: 'https://api.mistral.ai',
+  },
+});
+```
+
+The supplied record replaces the host environment for authentication
+discovery. Pi parses provider API keys and base URLs from that record.
 
 With `custom`, standard providers use environment variables such as
 `OPENAI_API_KEY`, `OPENAI_BASE_URL`, `ANTHROPIC_API_KEY`, and
@@ -191,6 +206,8 @@ causes the turn to throw `HarnessCapabilityUnsupportedError`.
 - [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
 - [Grok Build](/providers/ai-sdk-harnesses/grok-build)
 - [Cline](/providers/ai-sdk-harnesses/cline)
+- [Cursor](/providers/ai-sdk-harnesses/cursor)
+- [fx](/providers/ai-sdk-harnesses/fx)
 
 
 [Full Sitemap](/sitemap.md)

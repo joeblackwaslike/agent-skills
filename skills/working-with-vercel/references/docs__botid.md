@@ -16,8 +16,8 @@ related:
 summary: Protect your applications from automated attacks with intelligent bot detection and verification, powered by Kasada.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/botid.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "5e32fc54cd815d93035a394ecfb9cfbdf6a192e76b085ac7a6fdfe59b82e10f5"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "94bf70bcba2940cac0de3f153f2be590a81682d5b03459a77a30c1d33b88b992"
 ---
 
 # BotID
@@ -30,20 +30,20 @@ sha256: "5e32fc54cd815d93035a394ecfb9cfbdf6a192e76b085ac7a6fdfe59b82e10f5"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to protect your AI endpoints with Vercel BotID](https://vercel.com/kb/guide/protect-ai-endpoints-with-vercel-botid?from=related) — Gate every request to your AI endpoints with Vercel BotID and checkBotId\\(\\) so inference runs only for verified callers
-- [Deploying and testing BotID](https://vercel.com/kb/guide/deploying-and-testing-botid?from=related) — This guide gives an overview on Vercel BotID and how to deploy and test it in production
-- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel?from=related) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
-- [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app?from=related) — Learn the key AI concepts and tools for building and scaling AI apps.
-- [How to Effectively Load Test Your Vercel Application](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application?from=related) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
-- [Agent](https://docs.vercel.shop/docs/anatomy/agent?from=related) — The shopping assistant - AI-powered product discovery, cart management, and generative UI.
-- [Proxy](https://docs.vercel.shop/docs/anatomy/proxy?from=related) — How the root proxy composes Shopify-owned routes, request context, and application routing.
-- [Shop Configuration](https://docs.vercel.shop/docs/reference/shop-config?from=related) — Configure storefront identity, analytics, and cross-cutting feature availability.
-- [Bot Management](https://vercel.com/docs/bot-management?from=related) — Learn how to manage bot traffic to your site.
-- [Attack Mode](https://vercel.com/docs/vercel-firewall/attack-mode?from=related) — Learn how to use Attack Mode to help control who has access to your site when it's under attack.
-- [Automated & Agent Access](https://vercel.com/docs/deployment-protection/automated-agent-access?from=related) — Grant AI agents, CI/CD pipelines, MCP servers, and testing tools access to Vercel deployments that have Deployment Prote
-- [Production Checklist](https://vercel.com/docs/production-checklist?from=related) — Ensure your application is ready for launch with this comprehensive production checklist by the Vercel engineering team.
+- [How to protect your AI endpoints with Vercel BotID](https://vercel.com/kb/guide/protect-ai-endpoints-with-vercel-botid?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related) — Gate every request to your AI endpoints with Vercel BotID and checkBotId\\(\\) so inference runs only for verified callers
+- [Deploying and testing BotID](https://vercel.com/kb/guide/deploying-and-testing-botid?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related) — This guide gives an overview on Vercel BotID and how to deploy and test it in production
+- [Improved fake hardware detection with Vercel BotID](https://vercel.com/changelog/botid-deep-analysis-model-improved-for-fake-hardware-detection?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related)
+- [Vercel BotID now  available for all frameworks](https://vercel.com/changelog/botid-now-available-for-all-frameworks?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related)
+- [Vercel BotID is now generally available](https://vercel.com/changelog/vercel-botid-is-now-generally-available?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related)
+- [Vercel BotID now leverages Vercel's verified bot directory](https://vercel.com/changelog/vercel-botid-now-leverages-vercels-verified-bot-directory?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related)
+- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
+- [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related) — Learn the key AI concepts and tools for building and scaling AI apps.
+- [How to Effectively Load Test Your Vercel Application](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
+- [Proxy](https://docs.vercel.shop/docs/anatomy/proxy?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related) — How the storefront assigns Shopify-owned routes while leaving application routes available to Next.js.
+- [Shop Configuration](https://docs.vercel.shop/docs/reference/shop-config?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related) — Configure storefront identity, analytics, and cross-cutting feature availability.
+- [Billions of requests: Black Friday-Cyber Monday 2025](https://vercel.com/blog/bfcm-2025?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related)
 
-Full cross-link map for this page: [/docs/botid.graph.md](/docs/botid.graph.md)
+Full cross-link map for this page: [/docs/botid.graph.md](/docs/botid.graph.md?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 [Vercel BotID](/botid) is an invisible CAPTCHA that protects against sophisticated bots without showing visible challenges or requiring user action. It's a client-side challenge that uses machine learning to distinguish between humans and bots. It adds a protection layer to high-value routes, such as checkouts, signups, and APIs, that are common targets for bots imitating real users.

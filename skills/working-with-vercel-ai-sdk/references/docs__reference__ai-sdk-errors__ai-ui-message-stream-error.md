@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-ui-message-stream-error.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "a48993cace4c1ea89cc1f537d28fd9aa77e34bc11296ac6d0f5d8711059b3253"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "da06585a1c3f0d5c4a18e14e89900a5106c4d014c8eae0129c310db69fe04320"
 ---
 
 # AI_UIMessageStreamError
@@ -98,6 +98,7 @@ if (UIMessageStreamError.isInstance(error)) {
 - [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
 - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
+- [AI_StreamProviderError](/docs/reference/ai-sdk-errors/ai-stream-provider-error)
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
 - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
 - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)

@@ -3,7 +3,7 @@ title: Vercel Storage overview
 product: vercel
 url: /docs/storage
 canonical_url: "https://vercel.com/docs/storage"
-last_updated: 2026-07-29
+last_updated: 2026-08-11
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: "Store large files and global configuration with Vercel's storage products."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/storage.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "79e48cbbea11d4405df6d80afe7abd3a20caff1ff98a338203df1a8e78599b55"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "0cbf0683c2a956380d51d7ed05bac463cdc4713161be7fcea6d73cbeee18edd9"
 ---
 
 # Vercel Storage overview
@@ -30,18 +30,20 @@ Vercel offers a suite of managed, serverless storage products that integrate wit
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel?from=related) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
-- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
-- [Build with Vercel Blob on Nuxt](https://vercel.com/kb/guide/vercel-blob-nuxt?from=related) — Set up Vercel Blob in a Nuxt application with NuxtHub, upload and serve files, and deliver optimized images with Nuxt Im
-- [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs?from=related) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
-- [Migrate a Next.js app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-a-next-js-app-from-webflow-cloud-to-vercel?from=related) — Move your Next.js app from Webflow Cloud to Vercel: remove the OpenNext Cloudflare adapter, drop the base path, map stor
-- [Manage Vercel Blob Storage](https://vercel.com/docs/vercel-blob/manage-blob-storage?from=related) — Create blob stores, upload files, list contents, and manage storage using the CLI.
-- [Public Storage](https://vercel.com/docs/vercel-blob/public-storage?from=related) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
-- [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
-- [Create a Blob store](https://vercel.com/docs/rest-api/storage/create-a-blob-store?from=related)
-- [Overview](https://vercel.com/docs/cdn?from=related) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
+- [Improved performance for Vercel Postgres from Edge Functions](https://vercel.com/changelog/improved-performance-for-vercel-postgres-from-edge-functions?from=related&source_path=%2Fdocs%2Fstorage&source_site=vercel-docs&relationship=related)
+- [Improvements and fixes](https://vercel.com/changelog/improvements-and-fixes?from=related&source_path=%2Fdocs%2Fstorage&source_site=vercel-docs&relationship=related)
+- [Metrics for outgoing requests](https://vercel.com/changelog/metrics-for-outgoing-requests?from=related&source_path=%2Fdocs%2Fstorage&source_site=vercel-docs&relationship=related)
+- [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel?from=related&source_path=%2Fdocs%2Fstorage&source_site=vercel-docs&relationship=related) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
+- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related&source_path=%2Fdocs%2Fstorage&source_site=vercel-docs&relationship=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
+- [How to build scalable AI applications](https://vercel.com/blog/how-to-build-scalable-ai-applications?from=related&source_path=%2Fdocs%2Fstorage&source_site=vercel-docs&relationship=related)
+- [Introducing storage on Vercel](https://vercel.com/blog/vercel-storage?from=related&source_path=%2Fdocs%2Fstorage&source_site=vercel-docs&relationship=related)
+- [Introducing the Vercel Marketplace](https://vercel.com/blog/introducing-the-vercel-marketplace?from=related&source_path=%2Fdocs%2Fstorage&source_site=vercel-docs&relationship=related)
+- [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs?from=related&source_path=%2Fdocs%2Fstorage&source_site=vercel-docs&relationship=related) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
+- [Public Storage](https://vercel.com/docs/vercel-blob/public-storage?from=related&source_path=%2Fdocs%2Fstorage&source_site=vercel-docs&relationship=related) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
+- [Create a Blob store](https://vercel.com/docs/rest-api/storage/create-a-blob-store?from=related&source_path=%2Fdocs%2Fstorage&source_site=vercel-docs&relationship=related) — POST /storage/stores/blob — Create a Blob store
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fstorage&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 
-Full cross-link map for this page: [/docs/storage.graph.md](/docs/storage.graph.md)
+Full cross-link map for this page: [/docs/storage.graph.md](/docs/storage.graph.md?from=related&source_path=%2Fdocs%2Fstorage&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 - [**Vercel Blob**](/docs/vercel-blob): Large file storage

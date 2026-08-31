@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/gateways.md"
-fetched_at: "2026-08-24T04:44:18.863Z"
-sha256: "ed073a424c553aaa67ab8d4df24f47c92bcf73d3924e5b50264b2035028a249c"
+fetched_at: "2026-08-31T10:37:20.620Z"
+sha256: "283234918cf222b4f80607d9d695bba2a42e879de5e85de950d41cc45724d940"
 ---
 
 > ## Documentation Index
@@ -67,7 +67,10 @@ The exception is setting only `ANTHROPIC_BASE_URL`, with no gateway credential. 
 A gateway routes model API requests. A few things you might expect it to handle are configured elsewhere:
 
 * **Which model answers**: pick the model with the `/model` command or [model environment variables](/docs/en/model-config#setting-your-model). The gateway decides where requests go, not which model the developer selects. Claude apps gateway can bound the choice with a per-group `availableModels` allowlist, but the developer still picks within it.
-* **Other network traffic**: Claude Code itself sends version checks and downloads directly to Anthropic, separate from the gateway path. Whether the optional client telemetry stream is also on depends on your provider; the [telemetry defaults table](/docs/en/data-usage#telemetry-services) covers each case. On a signed-in Claude apps gateway session, the gateway credential disables the Anthropic-bound analytics, and the [telemetry destination](/docs/en/claude-apps-gateway#whats-enforced-on-developers) depends on how the session signed in. Your network still needs egress to the [required domains](/docs/en/network-config), or set [`CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC`](/docs/en/env-vars) to turn off the optional streams.
+* **Other network traffic**: Claude Code itself sends version checks and downloads directly to Anthropic, separate from the gateway path. Your network still needs egress to the [required domains](/docs/en/network-config), or set [`CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC`](/docs/en/env-vars) to turn off the optional streams.
+* **Client telemetry**: Claude Code disables its Anthropic-bound client analytics when a session signs in to a Claude apps gateway. To keep pre-sign-in startup analytics off as well, deliver [`DISABLE_TELEMETRY` through managed settings](/docs/en/managed-settings#turn-telemetry-off-for-your-organization).
+* **Client telemetry on other gateways**: whether Claude Code sends the optional client telemetry stream depends on your provider, and the [telemetry defaults table](/docs/en/data-usage#default-behaviors-by-api-provider) covers each case.
+* **Telemetry destinations**: where Claude Code sends a gateway session's telemetry depends on how the session signed in, and [What's enforced on developers](/docs/en/claude-apps-gateway#whats-enforced-on-developers) says where each kind of session's exports go.
 * **Corporate HTTP proxies**: an `HTTPS_PROXY` sits between Claude Code and every server it talks to, including the gateway. If your network requires one, [configure the proxy](/docs/en/network-config) in addition to the gateway. For a Claude apps gateway you host, [sign-in checks that the proxy host is also on a private network](/docs/en/claude-apps-gateway#prerequisites); if it isn't, add the gateway host to `NO_PROXY` so the CLI connects to it directly.
 
 ## Next steps

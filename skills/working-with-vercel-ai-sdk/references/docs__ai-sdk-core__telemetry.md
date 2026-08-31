@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/telemetry.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "42e1300f89d2da0b24f0bf1cda2d9ac62ea4d5318962a59c902cf9ef8209bb63"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "e60cbb0a9f859f792297b06b424c74e87345de40e24a7625ce7f66ae5ca3e147"
 ---
 
 # Telemetry
@@ -492,10 +492,9 @@ For `embed` and `embedMany`, the integration records spans with `CLIENT` kind:
   - `gen_ai.provider.name`: the provider
   - `gen_ai.request.model`: the requested model ID
 
-  Attributes set on finish:
-  - `gen_ai.usage.input_tokens`: the number of tokens used
-
-- **`embeddings {modelId}`** (inner span, `embedMany` only): one span per provider batch call, nested under the root span.
+- **`embeddings {modelId}`** (inner span): one span per provider request,
+  nested under the root span. `embed` creates one inner span. `embedMany`
+  creates one inner span per provider batch call.
 
   Initial attributes:
   - `gen_ai.operation.name`: `"embeddings"`
@@ -504,6 +503,9 @@ For `embed` and `embedMany`, the integration records spans with `CLIENT` kind:
 
   Attributes set on finish:
   - `gen_ai.usage.input_tokens`: the number of tokens used
+
+Usage is recorded only on inner provider-request spans. For `embedMany`, sum
+the usage from the inner spans to get the total usage for the operation.
 
 #### rerank
 

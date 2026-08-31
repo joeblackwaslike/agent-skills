@@ -3,7 +3,7 @@ title: Upgrade an Integration
 product: vercel
 url: /docs/integrations/create-integration/upgrade-integration
 canonical_url: "https://vercel.com/docs/integrations/create-integration/upgrade-integration"
-last_updated: 2026-07-15
+last_updated: 2026-08-11
 type: conceptual
 prerequisites:
   - /docs/integrations/create-integration
@@ -16,8 +16,8 @@ related:
 summary: Lean more about when you may need to upgrade your Integration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/upgrade-integration.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "d6ae03e0c6407f5b7fa965bcd5aa2a15b12eaa3a1efd3d0d7e0e62f859fc01e5"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "e88b139a67e4bc0f052457d7d36499abaf7286e0623906b3327aa3c65ce47844"
 ---
 
 # Upgrade an Integration
@@ -30,13 +30,15 @@ You should upgrade your integration if you are using any of the following scenar
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Building Integrations with Vercel REST API](https://vercel.com/docs/integrations/create-integration/vercel-api-integrations?from=related) — Learn how to use Vercel REST API to build your integrations and work with redirect URLs.
-- [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist?from=related) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
-- [Update Installation](https://vercel.com/docs/rest-api/marketplace/update-installation?from=related)
-- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
-- [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference?from=related) — Learn how to manage project access and added products for your integrations.
+- [Integration Webhooks are now easier to configure](https://vercel.com/changelog/integration-webhooks-are-now-easier-to-configure?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fupgrade-integration&source_site=vercel-docs&relationship=related)
+- [Integrations can now be managed more efficiently](https://vercel.com/changelog/integrations-can-now-be-managed-more-efficiently?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fupgrade-integration&source_site=vercel-docs&relationship=related)
+- [Building Integrations with Vercel REST API](https://vercel.com/docs/integrations/create-integration/vercel-api-integrations?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fupgrade-integration&source_site=vercel-docs&relationship=related) — Learn how to use Vercel REST API to build your integrations and work with redirect URLs.
+- [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fupgrade-integration&source_site=vercel-docs&relationship=related) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
+- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fupgrade-integration&source_site=vercel-docs&relationship=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
+- [Update Installation](https://vercel.com/docs/rest-api/marketplace/update-installation?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fupgrade-integration&source_site=vercel-docs&relationship=related) — PATCH /v1/installations/{integrationConfigurationId} — This endpoint updates an integration installation.
+- [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fupgrade-integration&source_site=vercel-docs&relationship=related) — Learn how to manage project access and added products for your integrations.
 
-Full cross-link map for this page: [/docs/integrations/create-integration/upgrade-integration.graph.md](/docs/integrations/create-integration/upgrade-integration.graph.md)
+Full cross-link map for this page: [/docs/integrations/create-integration/upgrade-integration.graph.md](/docs/integrations/create-integration/upgrade-integration.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fupgrade-integration&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Upgrading your Integration

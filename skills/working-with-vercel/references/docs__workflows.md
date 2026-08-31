@@ -3,7 +3,7 @@ title: Vercel Workflows
 product: workflows
 url: /docs/workflows
 canonical_url: "https://vercel.com/docs/workflows"
-last_updated: 2026-07-15
+last_updated: 2026-08-27
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Vercel Workflows is a fully managed platform for building durable, reliable, and observable applications and AI agents with the Workflow SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/workflows.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "5baef563085b3fe48ea90a595e77376324ae06d5e2845178d57107c37950afa7"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "ca5d82310e7aeacb0efbe48264d05cf87a0a84e561d92842e8910cbc475e4cca"
 ---
 
 # Vercel Workflows
@@ -31,20 +31,20 @@ and AI agents in JavaScript, TypeScript, and [Python](/docs/workflows/python).
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Python](https://workflow-sdk.dev/docs/getting-started/python?from=related) — Set up the Workflow Python SDK in your Python application.
-- [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide?from=related) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
-- [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel?from=related) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
-- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
-- [Building an AI chat app with RAG and source citations on Vercel](https://vercel.com/kb/guide/building-ai-chat-app-with-rag-and-citations-on-vercel?from=related) — A production stack for AI chat with retrieval, reranking, source citations, and background ingestion on Vercel using Nex
-- [Building human-in-the-loop agents for community moderation with durable workflows](https://vercel.com/kb/guide/building-human-in-the-loop-agents-for-community-moderation-with-durable-workflows?from=related) — Learn how to build AI agents that escalate decisions to humans in Slack, pause and resume runs reliably, and stream prog
-- [Workflow SDK vs Cloudflare Workflows](https://workflow-sdk.dev/docs/comparisons/workflow-sdk-vs-cloudflare-workflows?from=related) — Cloudflare Workflows is a durable engine on Workers and Durable Objects. It and the Workflow SDK both replay, but differ
-- [Observability](https://workflow-sdk.dev/docs/observability?from=related) — Inspect and debug workflow runs using the CLI and web UI.
-- [CLI Workflows](https://vercel.com/docs/agent-resources/workflows?from=related) — End-to-end workflows that show how to compose Vercel CLI commands into complete debugging, deployment, and recovery sess
-- [eve](https://vercel.com/docs/eve?from=related) — Learn how to deploy and run durable backend AI agents built with the open-source eve framework on Vercel.
-- [Concepts](https://vercel.com/docs/eve/concepts?from=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
-- [Glossary](https://vercel.com/docs/glossary?from=related) — Learn about the terms and concepts used in Vercel's products and documentation.
+- [Python](https://workflow-sdk.dev/docs/getting-started/python?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=related) — Set up the Workflow Python SDK in your Python application.
+- [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=related)
+- [AI Gateway now supports asynchronous video generation](https://vercel.com/changelog/ai-gateway-now-supports-asynchronous-video-generation?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=related)
+- [Configure where run state lives in Vercel Workflows](https://vercel.com/changelog/configure-where-run-state-lives-in-vercel-workflows?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=related)
+- [Expanded search for workflow runs in Vercel Observability](https://vercel.com/changelog/expanded-search-for-workflow-runs-in-vercel-observability?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=related)
+- [Measure time between steps in Vercel Workflows](https://vercel.com/changelog/measure-time-between-steps-in-vercel-workflows?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=related)
+- [Redesigned trace viewer for Vercel Workflows](https://vercel.com/changelog/redesigned-trace-viewer-for-vercel-workflows?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=related)
+- [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=related) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
+- [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=related) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
+- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
+- [Building an AI chat app with RAG and source citations on Vercel](https://vercel.com/kb/guide/building-ai-chat-app-with-rag-and-citations-on-vercel?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=related) — A production stack for AI chat with retrieval, reranking, source citations, and background ingestion on Vercel using Nex
+- [Building human-in-the-loop agents for community moderation with durable workflows](https://vercel.com/kb/guide/building-human-in-the-loop-agents-for-community-moderation-with-durable-workflows?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=related) — Learn how to build AI agents that escalate decisions to humans in Slack, pause and resume runs reliably, and stream prog
 
-Full cross-link map for this page: [/docs/workflows.graph.md](/docs/workflows.graph.md)
+Full cross-link map for this page: [/docs/workflows.graph.md](/docs/workflows.graph.md?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 It builds on the open-source [Workflow SDK](https://workflow-sdk.dev) for
@@ -159,13 +159,15 @@ To inspect your runs, go to your [Vercel dashboard](https://vercel.com/d?to=%2F%
 
 **Pricing and Limits**: Billing, included usage, and service limits. [Learn more →](/docs/workflows/pricing)
 
+**Concepts**: Learn how workflows, steps, sleeps, and hooks work together. [Learn more →](/docs/workflows/concepts)
+
 **Slack bot guide**: Stateful Slack bots with Vercel Workflows Guide [Learn more →](/kb/guide/stateful-slack-bots-with-vercel-workflow)
 
 **Agent guide**: Build a Claude Managed Agent Guide [Learn more →](/kb/guide/claude-managed-agent-vercel)
 
-**Workflow SDK**: Full SDK documentation, guides, and API reference. [Learn more →](https://workflow-sdk.dev)
+**Workflow SDK documentation**: Explore the Workflow SDK API and core primitives. [Learn more →](https://workflow-sdk.dev)
 
-**Concepts**: Learn how workflows, steps, sleeps, and hooks work together. [Learn more →](/docs/workflows/concepts)
+**Workflow SDK guides**: Follow tutorials for common workflow patterns. [Learn more →](/kb/workflow-sdk)
 
 **Python**: Build workflows in Python with the Vercel SDK. [Learn more →](/docs/workflows/python)
 

@@ -3,7 +3,7 @@ title: Glossary
 product: vercel
 url: /docs/glossary
 canonical_url: "https://vercel.com/docs/glossary"
-last_updated: 2026-07-29
+last_updated: 2026-08-21
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: "Learn about the terms and concepts used in Vercel's products and documentation."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/glossary.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "1fb234e64eb4844012df0d4f9a173ad36577ed7edc65c13f257ec9fe6c6657c9"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "41892590931bff558dd0766aca8f7756f772b0459c22873e4888f2f4ea7c6ef1"
 ---
 
 # Glossary
@@ -30,20 +30,20 @@ A full glossary of terms used in Vercel's products and documentation.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Introduction](https://turborepo.dev/docs?from=related) — Learn what Turborepo is, how it solves monorepo scaling problems, and how to navigate the documentation.
-- [Structuring a repository](https://turborepo.dev/docs/crafting-your-repository/structuring-a-repository?from=related) — Set up a multi-package workspace with the directory structure, package.json files, and lockfile that Turborepo expects.
-- [Add to an existing repository](https://turborepo.dev/docs/getting-started/add-to-existing-repository?from=related) — Incrementally adopt Turborepo in an existing single-package or multi-package repository.
-- [Single-package workspaces](https://turborepo.dev/docs/guides/single-package-workspaces?from=related) — Use Turborepo's caching and task parallelization in a standalone application without a monorepo.
-- [Recursive `turbo` invocations](https://turborepo.dev/docs/messages/recursive-turbo-invocations?from=related) — How to fix infinite loops caused by package.json scripts that recursively invoke `turbo`.
-- [Vercel vs Webflow Cloud](https://vercel.com/kb/guide/vercel-vs-webflow-cloud?from=related) — Compare Vercel and Webflow Cloud for deploying Next.js and Astro apps, including runtime, framework support, storage, pr
-- [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
-- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
-- [Insights](https://vercel.com/docs/observability/insights?from=related) — List of available data sources that you can view and monitor with Observability on Vercel.
-- [Runtimes](https://vercel.com/docs/functions/runtimes?from=related) — Runtimes transform your source code into Functions, which are served by our CDN. Learn about the official runtimes suppo
-- [Security & Compliance Measures](https://vercel.com/docs/security/compliance?from=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
-- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
+- [Introduction](https://turborepo.dev/docs?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — Learn what Turborepo is, how it solves monorepo scaling problems, and how to navigate the documentation.
+- [Structuring a repository](https://turborepo.dev/docs/crafting-your-repository/structuring-a-repository?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — Set up a multi-package workspace with the directory structure, package.json files, and lockfile that Turborepo expects.
+- [Add to an existing repository](https://turborepo.dev/docs/getting-started/add-to-existing-repository?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — Incrementally adopt Turborepo in an existing single-package or multi-package repository.
+- [Single-package workspaces](https://turborepo.dev/docs/guides/single-package-workspaces?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — Use Turborepo's caching and task parallelization in a standalone application without a monorepo.
+- [Recursive `turbo` invocations](https://turborepo.dev/docs/messages/recursive-turbo-invocations?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — How to fix infinite loops caused by package.json scripts that recursively invoke `turbo`.
+- [s1ngularity: supply chain attack in Nx packages](https://vercel.com/changelog/s1ngularity-supply-chain-attack-in-nx-packages?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related)
+- [Simpler Pricing](https://vercel.com/blog/simpler-pricing?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related)
+- [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
+- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related)
+- [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
+- [Vercel vs Webflow Cloud](https://vercel.com/kb/guide/vercel-vs-webflow-cloud?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — Compare Vercel and Webflow Cloud for deploying Next.js and Astro apps, including runtime, framework support, storage, pr
+- [June 2020](https://vercel.com/blog/changelog-june-2020?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related)
 
-Full cross-link map for this page: [/docs/glossary.graph.md](/docs/glossary.graph.md)
+Full cross-link map for this page: [/docs/glossary.graph.md](/docs/glossary.graph.md?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## A

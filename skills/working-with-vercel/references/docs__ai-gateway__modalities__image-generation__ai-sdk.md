@@ -3,7 +3,7 @@ title: Image Generation with AI SDK
 product: vercel
 url: /docs/ai-gateway/modalities/image-generation/ai-sdk
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/image-generation/ai-sdk"
-last_updated: 2026-07-28
+last_updated: 2026-08-24
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/modalities/image-generation
@@ -13,8 +13,8 @@ related:
 summary: Generate and edit images using AI models through Vercel AI Gateway with the AI SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/image-generation/ai-sdk.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "5fcd334d86c4483b061e92515abf5b4df2e8b7b7d51e3df56db101cd154c2381"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "5bc416611002725951d1f88ddad42826e008320dc02042ec336d263573a31d6b"
 ---
 
 # Image Generation with AI SDK
@@ -28,18 +28,18 @@ page](/ai-gateway/models?type=image), including multimodal LLMs and image-only m
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation?from=related) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
-- [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation?from=related)
-- [Image](https://vercel.com/docs/ai-gateway/getting-started/image?from=related) — Generate images from text prompts using AI Gateway.
-- [DeepInfra](https://ai-sdk.dev/providers/ai-sdk-providers/deepinfra?from=related)
-- [Google Gemini Image Generation](https://ai-sdk.dev/cookbook/guides/google-gemini-image-generation?from=related)
-- [Azure OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/azure?from=related)
-- [Using Chat Completions API](https://vercel.com/docs/ai-gateway/modalities/image-generation/openai?from=related) — Generate and edit images using AI models through Vercel AI Gateway with the Chat Completions API.
-- [Image Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation?from=related) — Generate images using AI models that support multimodal output through the Chat Completions API.
-- [AI SDK](https://vercel.com/docs/ai-sdk?from=related) — TypeScript toolkit for building AI-powered applications with React, Next.js, Vue, Svelte and Node.js
-- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
+- [Image-only models available in Vercel AI Gateway](https://vercel.com/changelog/image-only-models-available-in-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fai-sdk&source_site=vercel-docs&relationship=related)
+- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fai-sdk&source_site=vercel-docs&relationship=related) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
+- [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fai-sdk&source_site=vercel-docs&relationship=related)
+- [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fai-sdk&source_site=vercel-docs&relationship=related)
+- [Image Generation with Chat Completions API](https://vercel.com/docs/ai-gateway/modalities/image-generation/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fai-sdk&source_site=vercel-docs&relationship=related) — Generate and edit images using AI models through Vercel AI Gateway with the Chat Completions API.
+- [Image Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/image?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fai-sdk&source_site=vercel-docs&relationship=related) — Generate images from text prompts using AI Gateway.
+- [DeepInfra](https://ai-sdk.dev/providers/ai-sdk-providers/deepinfra?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fai-sdk&source_site=vercel-docs&relationship=related)
+- [Image Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fai-sdk&source_site=vercel-docs&relationship=related) — Generate images using AI models that support multimodal output through the Chat Completions API.
+- [Text Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/text?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fai-sdk&source_site=vercel-docs&relationship=related) — Generate and stream text responses using AI Gateway.
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fai-sdk&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
-Full cross-link map for this page: [/docs/ai-gateway/modalities/image-generation/ai-sdk.graph.md](/docs/ai-gateway/modalities/image-generation/ai-sdk.graph.md)
+Full cross-link map for this page: [/docs/ai-gateway/modalities/image-generation/ai-sdk.graph.md](/docs/ai-gateway/modalities/image-generation/ai-sdk.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fai-sdk&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Multimodal LLMs
@@ -225,7 +225,7 @@ import { openai } from '@ai-sdk/openai';
 
 async function main() {
   const result = await generateText({
-    model: 'openai/gpt-5.1-instant',
+    model: 'openai/gpt-5.6-sol',
     prompt: `Generate an image of a black shiba inu dog eating a cake in a green grass field`,
     tools: {
       image_generation: openai.tools.imageGeneration({
@@ -261,7 +261,7 @@ import { openai } from '@ai-sdk/openai';
 
 async function main() {
   const result = streamText({
-    model: 'openai/gpt-5.1-instant',
+    model: 'openai/gpt-5.6-sol',
     prompt: `Generate an image of a corgi puppy playing with colorful balloons in a sunny garden`,
     tools: {
       image_generation: openai.tools.imageGeneration({
@@ -376,31 +376,6 @@ const result = await generateImage({
 console.log(`Generated ${result.images.length} image(s)`);
 ```
 
-### Google Vertex Imagen
-
-Google's Imagen models provide high-quality image generation with fine-grained control over output parameters. Multiple Imagen models are available, including but not limited to:
-
-- `google/imagen-4.0-ultra-generate-001`
-- `google/imagen-4.0-generate-001`
-
-```typescript filename="generate-imagen.ts"
-import { generateImage } from 'ai';
-import 'dotenv/config';
-
-async function main() {
-  const result = await generateImage({
-    model: 'google/imagen-4.0-ultra-generate-001',
-    prompt: `A majestic Bengal tiger drinking water from a crystal-clear mountain stream at golden hour`,
-    n: 2,
-    aspectRatio: '16:9',
-  });
-
-  console.log(`Generated ${result.images.length} image(s)`);
-}
-
-main().catch(console.error);
-```
-
 ### Black Forest Labs
 
 Black Forest Labs' Flux models offer advanced image generation with support for various aspect ratios and capabilities. Multiple Flux models are available, including but not limited to:
@@ -436,13 +411,13 @@ SpaceXAI's Grok Imagine models generate high-quality images from text prompts wi
 > **💡 Note:** SpaceXAI image models do not support the `size` parameter. Use `aspectRatio`
 > instead.
 
-```typescript filename="generate-xai.ts"
+```typescript filename="generate-spacexai.ts"
 import { generateImage } from 'ai';
 import 'dotenv/config';
 
 async function main() {
   const result = await generateImage({
-    model: 'xai/grok-imagine-image',
+    model: 'spacexai/grok-imagine-image',
     prompt: `A serene Japanese garden with a koi pond, stone lanterns, and cherry blossoms in full bloom`,
     aspectRatio: '16:9',
   });

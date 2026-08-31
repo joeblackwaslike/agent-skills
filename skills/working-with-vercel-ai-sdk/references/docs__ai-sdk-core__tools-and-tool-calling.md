@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/tools-and-tool-calling.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "7ea8c05d9bf5b995b871e582117d775d691ce66eef1b09f4e27207a1eb12762f"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "e7c82ebc3faa3a05bb3ee03e297dbed107fd1256460ece73493768f849fe3b38"
 ---
 
 # Tool Calling
@@ -189,14 +189,15 @@ string or as an object with a `type` field:
 - `'denied'`: record an automatic denial by emitting approval request/response parts in the output, then surface a denied tool output
 - `'user-approval'`: emit an approval request and wait for an explicit response
 
-For automatic approvals and denials, you can also return an object to include a
-reason:
+Object statuses can also include a reason. For automatic approvals and denials,
+the reason is emitted on the approval response. For manual approval, the reason
+is emitted on the approval request so it can be shown to the approver:
 
 ```ts
 toolApproval: {
   runCommand: {
-    type: 'denied',
-    reason: 'blocked by policy',
+    type: 'user-approval',
+    reason: 'filesystem changes require operator review',
   },
 }
 ```
@@ -286,6 +287,7 @@ for (const part of result.content) {
   if (part.type === 'tool-approval-request' && !part.isAutomatic) {
     console.log(part.approvalId); // Unique ID for this approval request
     console.log(part.toolCall); // Contains toolName, input, etc.
+    console.log(part.reason); // Why this tool call requires approval
   }
 }
 ```

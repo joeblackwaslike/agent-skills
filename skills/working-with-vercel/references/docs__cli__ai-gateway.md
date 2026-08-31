@@ -3,7 +3,7 @@ title: vercel ai-gateway
 product: vercel
 url: /docs/cli/ai-gateway
 canonical_url: "https://vercel.com/docs/cli/ai-gateway"
-last_updated: 2026-07-28
+last_updated: 2026-08-26
 type: reference
 prerequisites:
   - /docs/cli
@@ -13,11 +13,11 @@ related:
   - /docs/ai-gateway/models-and-providers/routing-rules
   - /docs/ai-gateway/models-and-providers
   - /docs/ai-gateway/coding-agents
-summary: "Manage AI Gateway resources from the Vercel CLI: API keys, routing rules, models, and coding agent setup."
+summary: "Manage AI Gateway resources from the Vercel CLI: API keys, budgets, routing rules, models, leaderboards, and coding agent setup."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/ai-gateway.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "533e72d7c4414d34139274bb75aa7ddb9ad89209c59d67607976e3034a65b480"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "460e6d99e2cebc808a47386007f4389da403212ed4dd043095551ef6eed0ba36"
 ---
 
 # vercel ai-gateway
@@ -30,18 +30,19 @@ The `vercel ai-gateway` command manages [AI Gateway](/docs/ai-gateway) resources
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How I use OpenCode with Vercel AI Gateway to build features fast](https://vercel.com/kb/guide/how-i-use-opencode-with-vercel-ai-gateway-to-build-features-fast?from=related) — How to route different AI models to different coding tasks automatically, cutting token costs by ~70% without losing qua
-- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
-- [Manage your Sanity project from Slack with eve](https://vercel.com/kb/guide/eve-sanity-copilot?from=related) — A Slack-based Sanity copilot built on eve. It queries and edits content with GROQ, shapes schemas, manages releases, and
-- [Build an agent with Vercel and Flue](https://vercel.com/kb/guide/build-an-agent-with-vercel-and-flue?from=related) — Build and deploy an agent with Flue, Vercel Sandbox, and AI Gateway
-- [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent?from=related) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
-- [Migrate to AI Gateway](https://vercel.com/docs/ai-gateway/getting-started/migrate-to-ai-gateway?from=related) — Move your app's model calls to Vercel AI Gateway with a single coding-agent prompt, whatever provider or SDK you use tod
-- [Conductor](https://vercel.com/docs/ai-gateway/coding-agents/conductor?from=related) — Use Conductor with the AI Gateway.
-- [Grok Build](https://vercel.com/docs/ai-gateway/coding-agents/grok-build?from=related) — Use Grok Build with the AI Gateway.
-- [Superset](https://vercel.com/docs/ai-gateway/coding-agents/superset?from=related) — Use Superset with the AI Gateway.
-- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
+- [Kimi K3 and Kimi K3 Fast with ZDR and US-based providers now on AI Gateway](https://vercel.com/changelog/kimi-k3-and-kimi-k3-fast-on-ai-gateway?from=related&source_path=%2Fdocs%2Fcli%2Fai-gateway&source_site=vercel-docs&relationship=related)
+- [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fcli%2Fai-gateway&source_site=vercel-docs&relationship=related)
+- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway?from=related&source_path=%2Fdocs%2Fcli%2Fai-gateway&source_site=vercel-docs&relationship=related) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
+- [How I use OpenCode with Vercel AI Gateway to build features fast](https://vercel.com/kb/guide/how-i-use-opencode-with-vercel-ai-gateway-to-build-features-fast?from=related&source_path=%2Fdocs%2Fcli%2Fai-gateway&source_site=vercel-docs&relationship=related) — How to route different AI models to different coding tasks automatically, cutting token costs by ~70% without losing qua
+- [Manage your Sanity project from Slack with eve](https://vercel.com/kb/guide/eve-sanity-copilot?from=related&source_path=%2Fdocs%2Fcli%2Fai-gateway&source_site=vercel-docs&relationship=related) — A Slack-based Sanity copilot built on eve. It queries and edits content with GROQ, shapes schemas, manages releases, and
+- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related&source_path=%2Fdocs%2Fcli%2Fai-gateway&source_site=vercel-docs&relationship=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
+- [Conductor](https://vercel.com/docs/ai-gateway/coding-agents/conductor?from=related&source_path=%2Fdocs%2Fcli%2Fai-gateway&source_site=vercel-docs&relationship=related) — Use Conductor with the AI Gateway.
+- [Grok Build](https://vercel.com/docs/ai-gateway/coding-agents/grok-build?from=related&source_path=%2Fdocs%2Fcli%2Fai-gateway&source_site=vercel-docs&relationship=related) — Use Grok Build with the AI Gateway.
+- [Superset](https://vercel.com/docs/ai-gateway/coding-agents/superset?from=related&source_path=%2Fdocs%2Fcli%2Fai-gateway&source_site=vercel-docs&relationship=related) — Use Superset with the AI Gateway.
+- [Xcode](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fcli%2Fai-gateway&source_site=vercel-docs&relationship=related) — Use Xcode's coding assistant with the AI Gateway.
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fcli%2Fai-gateway&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
-Full cross-link map for this page: [/docs/cli/ai-gateway.graph.md](/docs/cli/ai-gateway.graph.md)
+Full cross-link map for this page: [/docs/cli/ai-gateway.graph.md](/docs/cli/ai-gateway.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fai-gateway&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 > **💡 Note:** Connecting a coding agent? [`vercel ai-gateway coding-agents setup`](#setup)
@@ -93,7 +94,6 @@ vercel ai-gateway api-keys create --name my-key --budget 500 --refresh-period mo
 | `--name <NAME>` | String | Human-readable name for the API key |
 | `--budget <AMOUNT>` | Number | Quota budget amount in dollars (minimum 1) |
 | `--refresh-period <PERIOD>` | String | Quota refresh cadence: `daily`, `weekly`, `monthly`, or `none` (default `none`) |
-| `--include-byok` | Boolean | Count bring-your-own-key (BYOK) usage toward the quota (default `false`) |
 | `--alert-thresholds <LIST>` | String | Comma-separated spend percentages to alert at, a subset of `50`, `75`, and `100`, for example `75,100` |
 | `--expiration <PERIOD>` | String | Expiry for the key: `7d`, `30d`, `60d`, `90d`, `1y`, or `none` (default `none`) |
 | `--zdr-exempt` | Boolean | Exempt the key from the team's [zero data retention](/docs/ai-gateway/security-and-compliance/zdr) (ZDR) only model restriction. Team owners only |
@@ -153,7 +153,7 @@ vercel ai-gateway api-keys remove key_123 --yes
 
 ### budgets
 
-Manage AI Gateway budgets, which are metered spend limits that apply to a scope rather than to a single key.
+Manage AI Gateway budgets, which are metered spend limits scoped to your team, a project, an API key, or a team member.
 
 ```bash filename="terminal"
 vercel ai-gateway budgets [subcommand]
@@ -161,7 +161,14 @@ vercel ai-gateway budgets [subcommand]
 
 #### set
 
-Create or update the budget for a scope. The `team` scope takes no name; the `project` scope takes a project name or ID.
+Create or update the budget for a scope. Each scope except `team` takes an identifier after the scope name.
+
+| Scope | Identifier |
+| --- | --- |
+| `team` | None |
+| `project` | Project name or ID |
+| `api-key` | Key name or ID. A name shared by several keys errors and asks for the ID, which `api-keys list` shows |
+| `user` | Member email, username, or user ID |
 
 ```bash filename="terminal"
 vercel ai-gateway budgets set team --limit 500 --refresh-period monthly
@@ -175,18 +182,29 @@ vercel ai-gateway budgets set project my-project --limit 200
 
 *Cap one project at $200.*
 
+```bash filename="terminal"
+vercel ai-gateway budgets set api-key my-key --limit 50 --refresh-period weekly
+```
+
+*Cap one API key at $50 per week.*
+
+```bash filename="terminal"
+vercel ai-gateway budgets set user teammate@example.com --limit 100 --refresh-period monthly
+```
+
+*Cap one team member at $100 per month across every key attributed to them.*
+
 ##### Options
 
 | Option | Type | Description |
 | --- | --- | --- |
 | `--limit <AMOUNT>` | Number | Budget limit in dollars (minimum 1) |
 | `--refresh-period <PERIOD>` | String | Budget refresh cadence: `daily`, `weekly`, `monthly`, or `none` (default `monthly`) |
-| `--include-byok` | Boolean | Count BYOK usage toward the budget (default `false`) |
 | `--format <FORMAT>` | String | Set to `json` for the machine-readable payload |
 
 #### list
 
-List the budgets for the current team, with each budget's scope, limit, current spend, and refresh cadence. Alias: `ls`.
+List the budgets for the current team, with each budget's scope, limit, current spend, and refresh cadence. User-scoped budgets are listed by member handle. Alias: `ls`.
 
 ```bash filename="terminal"
 vercel ai-gateway budgets ls
@@ -200,10 +218,24 @@ vercel ai-gateway budgets ls
 
 #### remove
 
-Remove the budget for a scope. Aliases: `rm`, `delete`.
+Remove the budget for a scope, using the same scope names and identifiers as [`set`](#set). Aliases: `rm`, `delete`.
+
+Removing a budget lifts that scope's own cap. A project, key, or member still covered by a [default](#defaults) falls back to that default rather than becoming unlimited.
+
+```bash filename="terminal"
+vercel ai-gateway budgets remove team
+```
 
 ```bash filename="terminal"
 vercel ai-gateway budgets remove project my-project --yes
+```
+
+```bash filename="terminal"
+vercel ai-gateway budgets remove api-key my-key
+```
+
+```bash filename="terminal"
+vercel ai-gateway budgets remove user teammate@example.com
 ```
 
 ##### Options
@@ -215,7 +247,7 @@ vercel ai-gateway budgets remove project my-project --yes
 
 #### defaults
 
-Manage budget defaults. A default applies to every resource of that scope that has no budget of its own, so new projects and new API keys inherit a spend limit instead of starting unlimited.
+Manage budget defaults. A default applies to every resource of that scope that has no budget of its own, so new projects, new API keys, and new team members inherit a spend limit instead of starting unlimited.
 
 ```bash filename="terminal"
 vercel ai-gateway budgets defaults [subcommand]
@@ -224,8 +256,8 @@ vercel ai-gateway budgets defaults [subcommand]
 | Subcommand | Description |
 | --- | --- |
 | `list` (alias `ls`) | List the team's budget defaults |
-| `set <SCOPE>` | Create or update the default for `project` or `api-key` |
-| `remove <SCOPE>` (aliases `rm`, `delete`) | Remove the default for `project` or `api-key` |
+| `set <SCOPE>` | Create or update the default for `project`, `api-key`, or `user` |
+| `remove <SCOPE>` (aliases `rm`, `delete`) | Remove the default for `project`, `api-key`, or `user` |
 
 ```bash filename="terminal"
 vercel ai-gateway budgets defaults set project --limit 200 --refresh-period monthly
@@ -238,6 +270,12 @@ vercel ai-gateway budgets defaults set api-key --limit 50
 ```
 
 *Give every API key without its own quota a $50 limit.*
+
+```bash filename="terminal"
+vercel ai-gateway budgets defaults set user --limit 50 --refresh-period monthly
+```
+
+*Give every team member without their own budget a $50 monthly limit.*
 
 ##### Options
 
@@ -353,6 +391,7 @@ When a selected agent isn't found at its default location, the command also offe
 | [Cursor](/docs/ai-gateway/coding-agents/cursor) | `cursor` |
 | [Hermes](/docs/ai-gateway/coding-agents/hermes) | `hermes` |
 | [Kilo Code](/docs/ai-gateway/coding-agents/kilo-code) | `kilo` |
+| [omp](/docs/ai-gateway/coding-agents/omp) | `omp` |
 | [OpenClaw](/docs/ai-gateway/coding-agents/openclaw) | `openclaw` |
 | [OpenCode](/docs/ai-gateway/coding-agents/opencode) | `opencode` |
 | [Pi](/docs/ai-gateway/coding-agents/pi) | `pi` |
@@ -481,7 +520,6 @@ Re-running the command against an already-configured setup is a no-op: it asks w
 | `--name <NAME>` | String | Name for a newly created API key |
 | `--budget <AMOUNT>` | Number | Spend limit for a new key, in US dollars (minimum 1) |
 | `--refresh-period <PERIOD>` | String | Quota reset cadence for a new key: `daily`, `weekly`, `monthly`, or `none` |
-| `--include-byok` | Boolean | Count bring-your-own-key (BYOK) usage toward the quota |
 | `--expiration <PERIOD>` | String | Expiry for a new key: `7d`, `30d`, `60d`, `90d`, `1y`, or `none` (default `none`) |
 | `--reconfigure` | Boolean | Run setup again even when everything is already configured, to rotate the key or switch teams |
 | `--agent-config <AGENT=PATH>` | String | Override an agent's config file path, for example `claude-code=/path/settings.json`. Repeatable |

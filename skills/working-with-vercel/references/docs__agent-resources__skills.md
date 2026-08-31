@@ -12,8 +12,8 @@ related:
 summary: Install skills to enhance AI coding agents with specialized capabilities for React, Next.js, deployment, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/skills.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "1941053750b002d16c6d333f4ae8d14a46d20496e03a87bac140108899e73add"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "457b26d28cc420968eaf8ecb1572b9fc8f9d4b4734b4e5ab4242e714b9a99054"
 ---
 
 # Agent Skills
@@ -26,17 +26,19 @@ An agent skill is a packaged capability that extends an AI agent with a specific
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Agent Skills: Creating, Installing, and Sharing Reusable Agent Context](https://vercel.com/kb/guide/agent-skills-creating-installing-and-sharing-reusable-agent-context?from=related) — This guide will cover what skills are, how to create custom skills for yourself and your team, and how to publish them t
-- [Skills](https://eve.dev/docs/skills?from=related) — Author load-on-demand procedures the model pulls into context with load_skill.
-- [Extending with Agents](https://docs.vercel.shop/docs/getting-started/extending-with-agents?from=related) — Use coding agents like Claude Code, Cursor, and Codex to personalize and extend your storefront.
-- [Extending with Skills](https://docs.vercel.shop/docs/skills?from=related) — Agent-ready skills for extending your Shopify storefront.
-- [Add Skills to Your Agent](https://ai-sdk.dev/cookbook/guides/agent-skills?from=related)
-- [AI Coding Agents](https://nextjs.org/docs/app/guides/ai-agents?from=related) — Learn how to configure your Next.js project so AI coding agents use up-to-date documentation instead of outdated trainin
-- [Add skills to your AI SDK agents](https://vercel.com/kb/guide/ai-sdk-skill-uploads?from=related) — Use uploadSkill and provider references in the AI SDK to bundle a SKILL.md and supporting files, then attach the skill t
-- [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
-- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
+- [Agent Skills: Creating, Installing, and Sharing Reusable Agent Context](https://vercel.com/kb/guide/agent-skills-creating-installing-and-sharing-reusable-agent-context?from=related&source_path=%2Fdocs%2Fagent-resources%2Fskills&source_site=vercel-docs&relationship=related) — This guide will cover what skills are, how to create custom skills for yourself and your team, and how to publish them t
+- [Agent skills explained: An FAQ](https://vercel.com/blog/agent-skills-explained-an-faq?from=related&source_path=%2Fdocs%2Fagent-resources%2Fskills&source_site=vercel-docs&relationship=related)
+- [Introducing skills, the open agent skills ecosystem](https://vercel.com/changelog/introducing-skills-the-open-agent-skills-ecosystem?from=related&source_path=%2Fdocs%2Fagent-resources%2Fskills&source_site=vercel-docs&relationship=related)
+- [Skills](https://eve.dev/docs/skills?from=related&source_path=%2Fdocs%2Fagent-resources%2Fskills&source_site=vercel-docs&relationship=related) — Author load-on-demand procedures the model pulls into context with load_skill.
+- [Skills v1.1.1: Interactive discovery, open source release, and agent support](https://vercel.com/changelog/skills-v1-1-1-interactive-discovery-open-source-release-and-agent-support?from=related&source_path=%2Fdocs%2Fagent-resources%2Fskills&source_site=vercel-docs&relationship=related)
+- [Skills Night: 69,000+ ways agents are getting smarter](https://vercel.com/blog/skills-night-69000-ways-agents-are-getting-smarter?from=related&source_path=%2Fdocs%2Fagent-resources%2Fskills&source_site=vercel-docs&relationship=related)
+- [Building Slack agents can be easy](https://vercel.com/blog/building-slack-agents-can-be-easy?from=related&source_path=%2Fdocs%2Fagent-resources%2Fskills&source_site=vercel-docs&relationship=related)
+- [Slack Agent Skill simplifies building Slack agents with coding assistants](https://vercel.com/changelog/slack-agent-skill-simplifies-building-slack-agents-with-coding-assistants?from=related&source_path=%2Fdocs%2Fagent-resources%2Fskills&source_site=vercel-docs&relationship=related)
+- [Add Skills to Your Agent](https://ai-sdk.dev/cookbook/guides/agent-skills?from=related&source_path=%2Fdocs%2Fagent-resources%2Fskills&source_site=vercel-docs&relationship=related)
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fagent-resources%2Fskills&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fskills&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
-Full cross-link map for this page: [/docs/agent-resources/skills.graph.md](/docs/agent-resources/skills.graph.md)
+Full cross-link map for this page: [/docs/agent-resources/skills.graph.md](/docs/agent-resources/skills.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fskills&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Below you'll find the official directory of Vercel published skills. Each skill is verified, documented, and ready to integrate, so you can quickly add powerful new capabilities to your agents and ship faster with confidence.

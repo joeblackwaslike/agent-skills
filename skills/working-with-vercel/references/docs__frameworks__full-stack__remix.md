@@ -3,7 +3,7 @@ title: Remix on Vercel
 product: vercel
 url: /docs/frameworks/full-stack/remix
 canonical_url: "https://vercel.com/docs/frameworks/full-stack/remix"
-last_updated: 2026-07-15
+last_updated: 2026-08-26
 type: conceptual
 prerequisites:
   - /docs/frameworks/full-stack
@@ -14,11 +14,11 @@ related:
   - /docs/cdn-cache
   - /docs/analytics
   - /docs/frameworks
-summary: "Learn how to use Vercel's features with Remix."
+summary: Deploy Remix applications to Vercel and configure the Vercel Vite preset, SSR, streaming, caching, and analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/remix.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "8a13310072ac74b84c1a372b56f0ec09ca3641586f89e1d308315261e5bea5cd"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "5878a516925fcce5d893be8ca8a86bda17d8b0aaa6e275e070f38f5df057f1ec"
 ---
 
 # Remix on Vercel
@@ -63,15 +63,17 @@ import { vercelPreset } from '@vercel/remix/vite';
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to Deploy a Remix Site with Vercel](https://vercel.com/kb/guide/deploying-remix-with-vercel?from=related) — Create your Remix app and deploy it with Vercel.
-- [React Router](https://vercel.com/docs/frameworks/frontend/react-router?from=related) — Learn how to use Vercel's features with React Router as a framework.
-- [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel?from=related) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
-- [All Frameworks](https://vercel.com/docs/frameworks/more-frameworks?from=related) — Learn about the frameworks that can be deployed to Vercel.
-- [Frontends](https://vercel.com/docs/frameworks/frontend?from=related) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
-- [Create React App](https://vercel.com/docs/frameworks/frontend/create-react-app?from=related) — Learn how to use Vercel's features with Create React App
-- [Next.js](https://vercel.com/docs/frameworks/full-stack/nextjs?from=related) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
+- [Remix without limits (historical)](https://vercel.com/blog/vercel-remix-integration-with-edge-functions-support?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fremix&source_site=vercel-docs&relationship=related)
+- [Support for Remix with Vite](https://vercel.com/changelog/support-for-remix-with-vite?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fremix&source_site=vercel-docs&relationship=related)
+- [How to Deploy a Remix Site with Vercel](https://vercel.com/kb/guide/deploying-remix-with-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fremix&source_site=vercel-docs&relationship=related) — Create your Remix app and deploy it with Vercel.
+- [Support for Remix v2](https://vercel.com/changelog/support-for-remix-v2?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fremix&source_site=vercel-docs&relationship=related)
+- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fremix&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
+- [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fremix&source_site=vercel-docs&relationship=related) — Learn about the frameworks that can be deployed to Vercel.
+- [Frontends on Vercel](https://vercel.com/docs/frameworks/frontend?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fremix&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
+- [Create React App on Vercel](https://vercel.com/docs/frameworks/frontend/create-react-app?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fremix&source_site=vercel-docs&relationship=related) — Deploy Create React App projects to Vercel and add Preview Deployments, Web Analytics, Speed Insights, and Observability
+- [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fremix&source_site=vercel-docs&relationship=related) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
 
-Full cross-link map for this page: [/docs/frameworks/full-stack/remix.graph.md](/docs/frameworks/full-stack/remix.graph.md)
+Full cross-link map for this page: [/docs/frameworks/full-stack/remix.graph.md](/docs/frameworks/full-stack/remix.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fremix&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 installGlobals();

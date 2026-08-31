@@ -16,8 +16,8 @@ related:
 summary: Learn about the Global Configs limits and pricing based on account plans.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-limits.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "5707ddeace9cde1df2d0657279147653a0f47120aae9f2a4bb5a4b04cadbf023"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "010552f8b225aca52022e515ddd35bf8489e23cc22ebc73872945a85d7f6e1d0"
 ---
 
 # Global Config Limits and pricing
@@ -30,14 +30,16 @@ A [Global Config](/docs/global-config) is a global data store that [enables expe
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy?from=related) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
-- [Migration Guide](https://vercel.com/docs/global-config/migration-guide?from=related) — Learn what changed when Edge Config was renamed to Global Config, and how to migrate your connection strings, SDK, and e
-- [Getting Started](https://vercel.com/docs/global-config/get-started?from=related) — Learn how to create a Global Config store and read from it in your project.
-- [vercel global-config](https://vercel.com/docs/cli/global-config?from=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
-- [DevCycle](https://vercel.com/docs/global-config/global-config-integrations/devcycle-global-config?from=related) — Learn how to use Global Config with Vercel's DevCycle integration.
-- [Statsig](https://vercel.com/docs/global-config/global-config-integrations/statsig-global-config?from=related) — Learn how to use Global Config with Vercel's Statsig integration.
+- [Global Config](https://flags-sdk.dev/docs/providers/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-limits&source_site=vercel-docs&relationship=related)
+- [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-limits&source_site=vercel-docs&relationship=related) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
+- [Edge Config is now Global Config](https://vercel.com/changelog/edge-config-is-now-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-limits&source_site=vercel-docs&relationship=related)
+- [Migrating from Edge Config to Global Config](https://vercel.com/docs/global-config/migration-guide?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-limits&source_site=vercel-docs&relationship=related) — Learn what changed when Edge Config was renamed to Global Config, and how to migrate your connection strings, SDK, and e
+- [Getting started with Global Config](https://vercel.com/docs/global-config/get-started?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-limits&source_site=vercel-docs&relationship=related) — Learn how to create a Global Config store and read from it in your project.
+- [vercel global-config](https://vercel.com/docs/cli/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-limits&source_site=vercel-docs&relationship=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
+- [Incremental Migration to Vercel](https://vercel.com/docs/incremental-migration?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-limits&source_site=vercel-docs&relationship=related) — Learn how to migrate your app or website to Vercel with minimal risk and high impact.
+- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-limits&source_site=vercel-docs&relationship=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
 
-Full cross-link map for this page: [/docs/global-config/global-config-limits.graph.md](/docs/global-config/global-config-limits.graph.md)
+Full cross-link map for this page: [/docs/global-config/global-config-limits.graph.md](/docs/global-config/global-config-limits.graph.md?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-limits&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Keep the number of stores to a minimum. Fewer large stores improve your overall latency.

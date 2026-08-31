@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/mvdan/sh/master/README.md"
-fetched_at: "2026-08-24T04:43:26.402Z"
-sha256: "4e99f73487fd2220088bcd82debfd8472c169298ba470263b1479d25b7018c0f"
+fetched_at: "2026-08-31T10:36:36.019Z"
+sha256: "30d1286d914dd4c0bd938e3d85c0ec0cc7dd988a37572d3e08c84a035eb2042b"
 ---
 
 # sh
@@ -35,7 +35,7 @@ For more information, see [its manpage](cmd/shfmt/shfmt.1.scd), which can be
 viewed directly as Markdown or rendered with [scdoc].
 
 Packages are available on [Alpine], [Arch], [Debian], [Docker], [Fedora], [FreeBSD],
-[Homebrew], [MacPorts], [NixOS], [OpenSUSE], [Scoop], [Snapcraft], [Void] and [webi].
+[Homebrew], [MacPorts], [NixOS], [OpenSUSE], [PyPI], [Scoop], [Snapcraft], [Void] and [webi].
 
 ### Sponsoring
 
@@ -179,6 +179,7 @@ Other noteworthy integrations include:
 [pre-commit-shfmt]: https://github.com/scop/pre-commit-shfmt
 [prettier-plugin-sh]: https://github.com/un-ts/prettier/tree/master/packages/sh
 [prettier]: https://prettier.io
+[PyPI]: https://pypi.org/project/shfmt-py/
 [scdoc]: https://sr.ht/~sircmpwn/scdoc/
 [scoop]: https://github.com/ScoopInstaller/Main/blob/HEAD/bucket/shfmt.json
 [sh-checker]: https://github.com/luizm/action-sh-checker

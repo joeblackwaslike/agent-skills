@@ -3,7 +3,7 @@ title: update-resource
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/update-resource
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/update-resource"
-last_updated: 2026-08-24
+last_updated: 2026-08-31
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn about update-resource on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/update-resource.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "d8498f16656b4777c3de343acca1a8211529f4ffa2b9e0e980824a85040fe29a"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "96fdd23bef0ae460640ae02bfe67de723be745d78c2eea96f3db7ebec6ee6a9c"
 ---
 
 # Update Resource
@@ -62,6 +62,15 @@ User Auth OIDC token claims schema:
     "account_id": {
       "type": "string"
     },
+    "parent_account_id": {
+      "type": "string",
+      "description": "For platform org-child installations (integration opt-in): the opaque account id of the parent (root) team. Identical to the `account_id` claim on the parent team’s own installation tokens."
+    },
+    "parent_installation_id": {
+      "type": "string",
+      "nullable": true,
+      "description": "For platform org-child installations (integration opt-in): the parent team’s installation of this integration, or null when the parent has none."
+    },
     "sub": {
       "type": "string",
       "description": "Denotes the User who is making the change (matches `/^account:[0-9a-fA-F]+:user:[0-9a-fA-F]+$/`)"
@@ -83,7 +92,11 @@ User Auth OIDC token claims schema:
     },
     "user_email": {
       "type": "string",
-      "description": "The user's verified email address. This is included for all Marketplace integrations by default."
+      "description": "The user's email address. This is included for all Marketplace integrations by default."
+    },
+    "user_email_verified": {
+      "type": "boolean",
+      "description": "Whether the user's email address has been verified."
     },
     "user_name": {
       "type": "string",

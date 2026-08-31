@@ -3,7 +3,7 @@ title: Rolling Releases
 product: vercel
 url: /docs/rolling-releases
 canonical_url: "https://vercel.com/docs/rolling-releases"
-last_updated: 2026-06-30
+last_updated: 2026-08-11
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how to use Rolling Releases for more cautious deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rolling-releases.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "f14fbf874258129359276dec73317f7caa166fa2bfd98f509ddd5c2aa63af44f"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "25e44d77e4a9c1ee251c1398c6ab255b33dc2919ecafa505cf17ad70e3df1282"
 ---
 
 # Rolling Releases
@@ -30,18 +30,20 @@ sha256: "f14fbf874258129359276dec73317f7caa166fa2bfd98f509ddd5c2aa63af44f"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Implementing Blue-Green Deployments on Vercel](https://vercel.com/kb/guide/blue_green_deployments_on_vercel?from=related) — This guide outlines how to implement blue-green deployments on Vercel, leveraging GitHub Actions for seamless and contro
-- [Connection Pooling with Vercel Functions](https://vercel.com/kb/guide/connection-pooling-with-functions?from=related) — Learn best practices for connecting to relational databases with Vercel Functions and Fluid compute
-- [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related) — Learn how to debug how Vercel decides where to route your request
-- [How to gradually roll out new versions of your backend](https://vercel.com/kb/guide/how-to-gradually-roll-out-new-versions-of-your-backend?from=related) — Incrementally release updates to your backend to minimize impact of mistakes.
-- [Implementing Canary Deployments on Vercel](https://vercel.com/kb/guide/implementing_canary_deployments_on_vercel?from=related) — This guide explains how to set up canary deployments on Vercel, enabling developers to gradually roll out new versions t
-- [Complete the rolling release for the project](https://vercel.com/docs/rest-api/rolling-release/complete-the-rolling-release-for-the-project?from=related)
-- [Rollback Production](https://vercel.com/docs/deployments/rollback-production-deployment?from=related) — Recover from a bad production deployment by rolling back, investigating the root cause, and redeploying a fix.
-- [Audit Logs](https://vercel.com/docs/audit-log?from=related) — Learn how to track and analyze your team members' activities.
-- [Deployment Checks](https://vercel.com/docs/deployment-checks?from=related) — Set conditions that must be met before proceeding to the next phase of the deployment lifecycle.
-- [Backends](https://vercel.com/docs/frameworks/backend?from=related) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
+- [Rolling Releases are now generally available](https://vercel.com/changelog/rolling-releases-are-now-generally-available?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=related)
+- [Implementing Blue-Green Deployments on Vercel](https://vercel.com/kb/guide/blue_green_deployments_on_vercel?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=related) — This guide outlines how to implement blue-green deployments on Vercel, leveraging GitHub Actions for seamless and contro
+- [Connection Pooling with Vercel Functions](https://vercel.com/kb/guide/connection-pooling-with-functions?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=related) — Learn best practices for connecting to relational databases with Vercel Functions and Fluid compute
+- [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=related) — Learn how to debug how Vercel decides where to route your request
+- [How to gradually roll out new versions of your backend](https://vercel.com/kb/guide/how-to-gradually-roll-out-new-versions-of-your-backend?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=related) — Incrementally release updates to your backend to minimize impact of mistakes.
+- [Implementing Canary Deployments on Vercel](https://vercel.com/kb/guide/implementing_canary_deployments_on_vercel?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=related) — This guide explains how to set up canary deployments on Vercel, enabling developers to gradually roll out new versions t
+- [Releasing safe and cost-efficient blue-green deployments](https://vercel.com/blog/releasing-safe-and-cost-efficient-blue-green-deployments?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=related)
+- [Scale to one: How Fluid solves cold starts](https://vercel.com/blog/scale-to-one-how-fluid-solves-cold-starts?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=related)
+- [The real serverless compute to database connection problem, solved](https://vercel.com/blog/the-real-serverless-compute-to-database-connection-problem-solved?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=related)
+- [Complete the rolling release for the project](https://vercel.com/docs/rest-api/rolling-release/complete-the-rolling-release-for-the-project?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=related) — POST /v1/projects/{idOrName}/rolling-release/complete — Force-complete a Rolling Release. The canary deployment will beg
+- [Rolling back a production deployment](https://vercel.com/docs/deployments/rollback-production-deployment?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=related) — Recover from a bad production deployment by rolling back, investigating the root cause, and redeploying a fix.
+- [Audit Logs](https://vercel.com/docs/audit-log?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=related) — Learn how to track and analyze your team members' activities.
 
-Full cross-link map for this page: [/docs/rolling-releases.graph.md](/docs/rolling-releases.graph.md)
+Full cross-link map for this page: [/docs/rolling-releases.graph.md](/docs/rolling-releases.graph.md?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Rolling Releases allow you to roll out new deployments to a small fraction of your users before promoting them to everyone.

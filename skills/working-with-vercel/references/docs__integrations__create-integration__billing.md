@@ -17,8 +17,8 @@ related:
 summary: Learn how billing works for native integrations, including invoice lifecycle, pricing models, and refunds.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/billing.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "f46f95415f6e5e9cce6082d1cac736da4c6c2cddb90a18972a25de2c34679d10"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "4ed3b037808f7cfb37ed00a1259a197770246db97aff21fcd3f4a43d38308bc1"
 ---
 
 # Manage Billing and Refunds for Integrations
@@ -31,13 +31,13 @@ When a Vercel user installs your native integration, you manage billing through 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Billing & Invoices](https://vercel.com/docs/pricing/understanding-my-invoice?from=related) — Learn how Vercel invoices are structured for Pro and Enterprise plans, including plan charges, credits, and usage-based
-- [Submit Invoice](https://vercel.com/docs/rest-api/marketplace/submit-invoice?from=related)
-- [Billing FAQ](https://vercel.com/docs/plans/enterprise/billing?from=related) — This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
-- [Billing FAQ](https://vercel.com/docs/plans/pro-plan/billing?from=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
-- [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration?from=related) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
+- [Billing & Invoices](https://vercel.com/docs/pricing/understanding-my-invoice?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fbilling&source_site=vercel-docs&relationship=related) — Learn how Vercel invoices are structured for Pro and Enterprise plans, including plan charges, credits, and usage-based
+- [Billing FAQ for Enterprise Plan](https://vercel.com/docs/plans/enterprise/billing?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fbilling&source_site=vercel-docs&relationship=related) — This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
+- [Submit Invoice](https://vercel.com/docs/rest-api/marketplace/submit-invoice?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fbilling&source_site=vercel-docs&relationship=related) — POST /v1/installations/{integrationConfigurationId}/billing/invoices — This endpoint allows the partner to submit an inv
+- [Get Invoice](https://vercel.com/docs/rest-api/marketplace/get-invoice?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fbilling&source_site=vercel-docs&relationship=related) — GET /v1/installations/{integrationConfigurationId}/billing/invoices/{invoiceId} — Get Invoice details and status for a g
+- [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fbilling&source_site=vercel-docs&relationship=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 
-Full cross-link map for this page: [/docs/integrations/create-integration/billing.graph.md](/docs/integrations/create-integration/billing.graph.md)
+Full cross-link map for this page: [/docs/integrations/create-integration/billing.graph.md](/docs/integrations/create-integration/billing.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fbilling&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Billing API endpoints

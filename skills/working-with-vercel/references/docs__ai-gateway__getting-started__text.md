@@ -3,7 +3,7 @@ title: Text Generation Quickstart
 product: vercel
 url: /docs/ai-gateway/getting-started/text
 canonical_url: "https://vercel.com/docs/ai-gateway/getting-started/text"
-last_updated: 2026-07-28
+last_updated: 2026-08-20
 type: tutorial
 prerequisites:
   - /docs/ai-gateway/getting-started
@@ -17,8 +17,8 @@ related:
 summary: Generate and stream text responses using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/text.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "c039202f548c62c2ec7072a044c61eb717aced9eec52ba913ed13cbf150aeda9"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "d0fbb459d6e82bd345953234f9b5c738da9c04b41b8d868842cf763c1d991af3"
 ---
 
 # Text Generation Quickstart
@@ -31,14 +31,14 @@ This quickstart walks you through making your first text generation request with
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [OpenAI Responses API](https://ai-sdk.dev/cookbook/guides/openai-responses?from=related)
-- [Text Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/text-generation?from=related) — Generate text responses with the OpenAI Responses API through AI Gateway.
-- [Text Generation](https://vercel.com/docs/ai-gateway/modalities/text-generation?from=related) — Generate and stream text from hundreds of models through AI Gateway, with tool calling and structured output.
-- [Text Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/text-generation?from=related) — Generate text responses using the OpenResponses API.
-- [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
-- [Speech](https://vercel.com/docs/ai-gateway/getting-started/speech?from=related) — Generate speech from text and transcribe audio back to text with AI Gateway.
+- [OpenAI Responses API](https://ai-sdk.dev/cookbook/guides/openai-responses?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Ftext&source_site=vercel-docs&relationship=related)
+- [Text Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/text-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Ftext&source_site=vercel-docs&relationship=related) — Generate text responses with the OpenAI Responses API through AI Gateway.
+- [Text Generation](https://vercel.com/docs/ai-gateway/modalities/text-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Ftext&source_site=vercel-docs&relationship=related) — Generate and stream text from hundreds of models through AI Gateway, with tool calling and structured output.
+- [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Ftext&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
+- [Text Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/text-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Ftext&source_site=vercel-docs&relationship=related) — Generate text responses using the OpenResponses API.
+- [Speech to Text and Text to Speech Quickstart](https://vercel.com/docs/ai-gateway/getting-started/speech?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Ftext&source_site=vercel-docs&relationship=related) — Generate speech from text and transcribe audio back to text with AI Gateway.
 
-Full cross-link map for this page: [/docs/ai-gateway/getting-started/text.graph.md](/docs/ai-gateway/getting-started/text.graph.md)
+Full cross-link map for this page: [/docs/ai-gateway/getting-started/text.graph.md](/docs/ai-gateway/getting-started/text.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Ftext&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 - ### Set up your project
@@ -53,19 +53,19 @@ Full cross-link map for this page: [/docs/ai-gateway/getting-started/text.graph.
   Install the AI SDK and development dependencies:
   #### npm
   ```bash filename="Terminal"
-  npm install ai dotenv @types/node tsx typescript
+  npm install ai@latest dotenv @types/node tsx typescript
   ```
   #### yarn
   ```bash filename="Terminal"
-  yarn add ai dotenv @types/node tsx typescript
+  yarn add ai@latest dotenv @types/node tsx typescript
   ```
   #### pnpm
   ```bash filename="Terminal"
-  pnpm add ai dotenv @types/node tsx typescript
+  pnpm add ai@latest dotenv @types/node tsx typescript
   ```
   #### bun
   ```bash filename="Terminal"
-  bun add ai dotenv @types/node tsx typescript
+  bun add ai@latest dotenv @types/node tsx typescript
   ```
 
 - ### Set up your API key
@@ -114,6 +114,8 @@ Full cross-link map for this page: [/docs/ai-gateway/getting-started/text.graph.
   - Try other APIs: [OpenAI Chat Completions](/docs/ai-gateway/sdks-and-apis/openai-chat-completions), [OpenAI Responses](/docs/ai-gateway/sdks-and-apis/responses), [Anthropic Messages](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api), or [OpenResponses](/docs/ai-gateway/sdks-and-apis/openresponses)
 
 ## Compatible APIs
+
+The model slug is independent of the API you call. These examples run `anthropic/claude-opus-5` through OpenAI-shaped, Anthropic-shaped, and OpenResponses requests, so you can change models without rewriting your client.
 
 ### OpenAI Chat Completions API
 

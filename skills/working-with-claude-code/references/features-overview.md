@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/features-overview.md"
-fetched_at: "2026-08-24T04:44:18.863Z"
-sha256: "ad88831830057e06f4c3ea5c39e47818abb0efc2df9469e34bee06caa472a62c"
+fetched_at: "2026-08-31T10:37:20.620Z"
+sha256: "f02145dc806e3f2160c243a75f32c04243a2a1ef85237a2e6fe6a9ed4fc4e6a8"
 ---
 
 > ## Documentation Index
@@ -280,7 +280,7 @@ Each feature loads at different points in your session. The tabs below explain w
 
     **What loads:** Fresh, isolated context containing:
 
-    * The agent's own system prompt, not the full Claude Code system prompt
+    * The agent's own system prompt, not the Claude Code system prompt
     * Full content of skills listed in the agent's `skills:` field
     * CLAUDE.md and git status, except the built-in Explore and Plan agents [omit both](/docs/en/sub-agents#what-loads-at-startup)
     * Whatever context the lead agent passes in the prompt

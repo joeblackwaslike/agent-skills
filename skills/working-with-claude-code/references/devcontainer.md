@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/devcontainer.md"
-fetched_at: "2026-08-24T04:44:18.863Z"
-sha256: "9a3dfa1544959a000e6a934263851a377fa98a53ab0295cb56f25bc3aa5069ca"
+fetched_at: "2026-08-31T10:37:20.620Z"
+sha256: "6ab6c842a9f979f21eef0da2f8547b33e2f0fef2944cfe0bedbbca1454a050e7"
 ---
 
 > ## Documentation Index
@@ -148,7 +148,7 @@ To make [MCP servers](/docs/en/mcp) available inside the container, define them 
 
 You can limit the container's outbound traffic to only the domains Claude Code needs. See [Network access requirements](/docs/en/network-config#network-access-requirements) for the inference and authentication domains, and [Telemetry services](/docs/en/data-usage#telemetry-services) for the optional telemetry and error reporting connections and how to disable them.
 
-The reference container includes an [`init-firewall.sh`](https://github.com/anthropics/claude-code/blob/main/.devcontainer/init-firewall.sh) script that blocks all outbound traffic except the domains Claude Code and your development tools need. Running a firewall inside a container requires extra permissions, so the reference adds the `NET_ADMIN` and `NET_RAW` capabilities through `runArgs`. The firewall script and these capabilities are not required for Claude Code itself: you can leave them out and rely on your own network controls instead.
+The reference container includes an [`init-firewall.sh`](https://github.com/anthropics/claude-code/blob/main/.devcontainer/init-firewall.sh) script that limits outbound traffic to the destinations the script allows. Running a firewall inside a container requires extra permissions, so the reference adds the `NET_ADMIN` and `NET_RAW` capabilities through `runArgs`. The firewall script and these capabilities are not required for Claude Code itself: you can leave them out and rely on your own network controls instead.
 
 ## Run without permission prompts
 
@@ -188,7 +188,7 @@ The reference configuration consists of three files. None of them are required w
 | ---------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
 | [`devcontainer.json`](https://github.com/anthropics/claude-code/blob/main/.devcontainer/devcontainer.json) | Volume mounts, `runArgs` capabilities, VS Code extensions, and `containerEnv` |
 | [`Dockerfile`](https://github.com/anthropics/claude-code/blob/main/.devcontainer/Dockerfile)               | Base image, development tools, and the Claude Code install                    |
-| [`init-firewall.sh`](https://github.com/anthropics/claude-code/blob/main/.devcontainer/init-firewall.sh)   | Blocks all outbound network traffic except the allowed domains                |
+| [`init-firewall.sh`](https://github.com/anthropics/claude-code/blob/main/.devcontainer/init-firewall.sh)   | Limits outbound network traffic to the destinations the script allows         |
 
 ## Next steps
 

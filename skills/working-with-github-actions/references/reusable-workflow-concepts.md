@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/concepts/workflows-and-actions/reusing-workflow-configurations.md"
-fetched_at: "2026-08-10T05:30:56.796Z"
-sha256: "665d90c50d86a73bea1c42f0e829ca1436180a7fc6e0feb6e9906366561b6a8a"
+fetched_at: "2026-08-31T10:42:32.997Z"
+sha256: "16dfcb9fc95445cb7bcef5f3dadf6f59be7c93d78fe62706b5530737d1553f88"
 ---
 
 ## Reusable workflows
@@ -41,7 +41,7 @@ Let's compare some aspects of each solution:
 * **Workflow jobs** - Composite actions contain a series of steps that are run as a single step within the caller workflow. Unlike reusable workflows, they cannot contain jobs.
 * **Logging** - When a composite action runs, the log will show just the step in the caller workflow that ran the composite action, not the individual steps within the composite action. With reusable workflows, every job and step is logged separately.
 * **Specifying runners** - Reusable workflows contain one or more jobs. As with all workflow jobs, the jobs in a reusable workflow specify the type of machine on which the job will run. Therefore, if the steps must be run on a type of machine that might be different from the machine chosen for the calling workflow job, then you should use a reusable workflow, not a composite action.
-* **Passing output to steps** - A composite action is run as a step within a workflow job, and you can have multiple steps before or after the step that runs the composite action. Reusable workflows are called directly within a job, and not from within a job step. You can't add steps to a job after calling a reusable workflow, so you can't use `GITHUB_ENV` to pass values to subsequent job steps in the caller workflow.
+* **Passing output to steps** - A composite action is run as a step within a workflow job, and you can have multiple steps before or after the step that runs the composite action. Reusable workflows are called directly within a job, and not from within a job step. You can't add steps to a job after calling a reusable workflow, but reusable workflows now support outputs that can be referenced in subsequent jobs in the caller workflow.
 
 ### Key differences between reusable workflows and composite actions
 

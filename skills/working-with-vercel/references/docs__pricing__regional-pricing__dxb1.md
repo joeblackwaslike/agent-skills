@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the Dubai, UAE (dxb1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/dxb1.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "d2e99e34b2446d21ef8f241ee3fd190e1e326e4d96331bee955c108661a77dee"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "04920085c6e80ef6cddf47448c232a0ed98019561282018da0a274d657404602"
 ---
 
 # Dubai, UAE (dxb1) pricing
@@ -31,13 +31,14 @@ The table below shows Managed Infrastructure products with pricing specific to t
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Dublin, Ireland \\(dub1\\)](https://vercel.com/docs/pricing/regional-pricing/dub1?from=related) — Vercel pricing for the Dublin, Ireland \\(dub1\\) region.
-- [Stockholm, Sweden \\(arn1\\)](https://vercel.com/docs/pricing/regional-pricing/arn1?from=related) — Vercel pricing for the Stockholm, Sweden \\(arn1\\) region.
-- [Sydney, Australia \\(syd1\\)](https://vercel.com/docs/pricing/regional-pricing/syd1?from=related) — Vercel pricing for the Sydney, Australia \\(syd1\\) region.
-- [Washington D.C., USA \\(iad1\\)](https://vercel.com/docs/pricing/regional-pricing/iad1?from=related) — Vercel pricing for the Washington D.C., USA \\(iad1\\) region.
-- [Mumbai, India \\(bom1\\)](https://vercel.com/docs/pricing/regional-pricing/bom1?from=related) — Vercel pricing for the Mumbai, India \\(bom1\\) region.
+- [Introducing the Dubai Vercel region (dxb1)](https://vercel.com/changelog/introducing-the-dubai-vercel-region-dxb1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fdxb1&source_site=vercel-docs&relationship=related)
+- [Dublin, Ireland \\(dub1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/dub1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fdxb1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Dublin, Ireland \\(dub1\\) region.
+- [Stockholm, Sweden \\(arn1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/arn1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fdxb1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Stockholm, Sweden \\(arn1\\) region.
+- [Sydney, Australia \\(syd1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/syd1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fdxb1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Sydney, Australia \\(syd1\\) region.
+- [Washington D.C., USA \\(iad1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/iad1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fdxb1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Washington D.C., USA \\(iad1\\) region.
+- [Mumbai, India \\(bom1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/bom1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fdxb1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Mumbai, India \\(bom1\\) region.
 
-Full cross-link map for this page: [/docs/pricing/regional-pricing/dxb1.graph.md](/docs/pricing/regional-pricing/dxb1.graph.md)
+Full cross-link map for this page: [/docs/pricing/regional-pricing/dxb1.graph.md](/docs/pricing/regional-pricing/dxb1.graph.md?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fdxb1&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 The **Included** column shows the amount of usage covered in your [billing cycle](/docs/pricing/understanding-my-invoice#understanding-your-invoice). If you use more than this amount, the **Additional** column lists the rates for any extra usage.

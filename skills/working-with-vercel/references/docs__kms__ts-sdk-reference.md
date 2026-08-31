@@ -3,7 +3,7 @@ title: Vercel KMS SDK Reference
 product: vercel
 url: /docs/kms/ts-sdk-reference
 canonical_url: "https://vercel.com/docs/kms/ts-sdk-reference"
-last_updated: 2018-10-20
+last_updated: 2026-08-18
 type: reference
 prerequisites:
   - /docs/kms
@@ -14,8 +14,8 @@ related:
 summary: API reference for @vercel/kms, including signToken, signMessage, region resolution, and signing the KMS API directly without the SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms/ts-sdk-reference.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "5455c686d832569922c3b2f047e6887f36f652655c01436cec04cd85b3b73832"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "322f299258701274e50850850faad117d35789e8d0d0ed7adb2ee036ab798919"
 ---
 
 # Vercel KMS SDK Reference
@@ -28,13 +28,14 @@ The `@vercel/kms` package wraps the KMS signing API and fetches the function's [
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token?from=related)
-- [Sign a message](https://vercel.com/docs/rest-api/kms/sign-a-message?from=related)
-- [Create a signing key](https://vercel.com/docs/rest-api/kms/create-a-signing-key?from=related)
-- [Concepts](https://vercel.com/docs/kms/concepts?from=related) — Understand how Vercel KMS rotates signing keys and how it authorizes signing, management, and verification.
-- [Create an issuer](https://vercel.com/docs/rest-api/kms/create-an-issuer?from=related)
+- [Sign JWTs from your Functions without managing private keys](https://vercel.com/changelog/sign-jwts-from-your-functions-without-managing-private-keys?from=related&source_path=%2Fdocs%2Fkms%2Fts-sdk-reference&source_site=vercel-docs&relationship=related)
+- [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token?from=related&source_path=%2Fdocs%2Fkms%2Fts-sdk-reference&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
+- [Sign a message](https://vercel.com/docs/rest-api/kms/sign-a-message?from=related&source_path=%2Fdocs%2Fkms%2Fts-sdk-reference&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/sign/message — Sign a raw message with a KMS issuer's active signing key. Authenticate t
+- [Create a signing key](https://vercel.com/docs/rest-api/kms/create-a-signing-key?from=related&source_path=%2Fdocs%2Fkms%2Fts-sdk-reference&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/keys — Create a new signing key for a KMS issuer. Depending on the activation mode, the
+- [Vercel KMS Concepts](https://vercel.com/docs/kms/concepts?from=related&source_path=%2Fdocs%2Fkms%2Fts-sdk-reference&source_site=vercel-docs&relationship=related) — Understand how Vercel KMS rotates signing keys and how it authorizes signing, management, and verification.
+- [Activate a signing key](https://vercel.com/docs/rest-api/kms/activate-a-signing-key?from=related&source_path=%2Fdocs%2Fkms%2Fts-sdk-reference&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/keys/{keyId}/activate — Activate a pending signing key so the issuer starts signing with
 
-Full cross-link map for this page: [/docs/kms/ts-sdk-reference.graph.md](/docs/kms/ts-sdk-reference.graph.md)
+Full cross-link map for this page: [/docs/kms/ts-sdk-reference.graph.md](/docs/kms/ts-sdk-reference.graph.md?from=related&source_path=%2Fdocs%2Fkms%2Fts-sdk-reference&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 > **⚠️ Warning:** `signToken` and `signMessage` resolve the function's OIDC token at call time,

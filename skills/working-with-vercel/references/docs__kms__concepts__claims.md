@@ -3,7 +3,7 @@ title: Vercel KMS Claims
 product: vercel
 url: /docs/kms/concepts/claims
 canonical_url: "https://vercel.com/docs/kms/concepts/claims"
-last_updated: 2018-10-20
+last_updated: 2026-08-18
 type: conceptual
 prerequisites:
   - /docs/kms/concepts
@@ -15,8 +15,8 @@ related:
 summary: How a KMS grant sets KMS-owned token claims the caller cannot override, and how an issuer claims schema validates every token it signs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms/concepts/claims.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "bf89fb68abe19276021e9765744be9120030009c240c16a2b31555fcb945d898"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "e8ca1d6ad3c572b448619385b35cb9c38e800071216490617926c2a439008c29"
 ---
 
 # Vercel KMS Claims
@@ -29,13 +29,14 @@ KMS lets you control the claims in every token an issuer signs. A grant's claim 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Authentication](https://vercel.com/docs/kms/concepts/authentication?from=related) — How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel ac
-- [Quickstart](https://vercel.com/docs/kms/quickstart?from=related) — Create a KMS issuer, sign a JWT from a Vercel Function with @vercel/kms, and verify it against the published JWKS.
-- [OIDC Reference](https://vercel.com/docs/oidc/reference?from=related) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
-- [Create an issuer policy](https://vercel.com/docs/rest-api/kms/create-an-issuer-policy?from=related)
-- [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token?from=related)
+- [Sign JWTs from your Functions without managing private keys](https://vercel.com/changelog/sign-jwts-from-your-functions-without-managing-private-keys?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fclaims&source_site=vercel-docs&relationship=related)
+- [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fclaims&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
+- [Vercel KMS Authentication](https://vercel.com/docs/kms/concepts/authentication?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fclaims&source_site=vercel-docs&relationship=related) — How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel ac
+- [Vercel KMS Quickstart](https://vercel.com/docs/kms/quickstart?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fclaims&source_site=vercel-docs&relationship=related) — Create a KMS issuer, sign a JWT from a Vercel Function with @vercel/kms, and verify it against the published JWKS.
+- [OIDC Federation Reference](https://vercel.com/docs/oidc/reference?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fclaims&source_site=vercel-docs&relationship=related) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
+- [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fclaims&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
 
-Full cross-link map for this page: [/docs/kms/concepts/claims.graph.md](/docs/kms/concepts/claims.graph.md)
+Full cross-link map for this page: [/docs/kms/concepts/claims.graph.md](/docs/kms/concepts/claims.graph.md?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fclaims&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Claim policies

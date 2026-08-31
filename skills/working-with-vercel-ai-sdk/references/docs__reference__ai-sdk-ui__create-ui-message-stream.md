@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/create-ui-message-stream.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "8ffa8542f7c4ec4082e88f244d7255062c2d59c0e82ad5b008bd66cd245fe7bd"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "c39a3790af060fba9b5cb841081e3537feb4a82b6640b260971bc0e1a12a0f63"
 ---
 
 # `createUIMessageStream`
@@ -48,15 +48,32 @@ const stream = createUIMessageStream({
       prompt: 'Write a haiku about AI',
     });
 
-    writer.merge(toUIMessageStream({ stream: result.stream }));
+    writer.merge(
+      toUIMessageStream({
+        stream: result.stream,
+        onEnd: ({ outcome }) => {
+          // The composer decides that the model stream outcome is also the
+          // aggregate stream outcome.
+          writer.setOutcome(outcome);
+        },
+      }),
+    );
   },
   onError: error => `Custom error: ${error.message}`,
   originalMessages: existingMessages,
-  onEnd: ({ messages, isContinuation, responseMessage }) => {
+  onEnd: ({ messages, isContinuation, outcome, responseMessage }) => {
     console.log('Stream ended with messages:', messages);
+    console.log('Stream outcome:', outcome.status);
   },
 });
 ```
+
+`setOutcome` records the composer's policy without writing a chunk or closing
+the stream. The first outcome declared through `setOutcome` is retained, but a
+fatal execution, merge, error-handling, or downstream processing failure makes
+the final `onEnd` outcome `failed`. Individual `error` chunks do not change the
+outcome by themselves. When merging multiple child streams, aggregate their
+outcomes and call `setOutcome` once.
 
 ## API Signature
 
@@ -66,12 +83,12 @@ const stream = createUIMessageStream({
   content={[
     {
       name: 'execute',
-      type: '(options: { writer: UIMessageStreamWriter }) => Promise<void> | void',
+      type: '(options: { writer: UIMessageStreamWriterWithOutcome }) => Promise<void> | void',
       description:
         'A function that receives a writer instance and can use it to write UI message chunks to the stream.',
       properties: [
         {
-          type: 'UIMessageStreamWriter',
+          type: 'UIMessageStreamWriterWithOutcome',
           parameters: [
             {
               name: 'write',
@@ -83,6 +100,12 @@ const stream = createUIMessageStream({
               type: '(stream: ReadableStream<UIMessageChunk>) => void',
               description:
                 'Merges the contents of another UI message stream into this stream.',
+            },
+            {
+              name: 'setOutcome',
+              type: '(outcome: UIMessageStreamOutcome) => void',
+              description:
+                "Declares the operation-level outcome of the composed stream. The first outcome declared through this method is retained, while fatal execution, merge, error-handling, or downstream processing failures override declarations. Supported statuses are 'completed', 'failed', 'aborted', and 'unknown'. Declaring an outcome does not write a chunk or close the stream.",
             },
             {
               name: 'onError',
@@ -108,7 +131,7 @@ const stream = createUIMessageStream({
     },
     {
       name: 'onEnd',
-      type: '(options: { messages: UIMessage[]; isContinuation: boolean; isAborted: boolean; responseMessage: UIMessage; finishReason?: FinishReason }) => PromiseLike<void> | void',
+      type: '(options: { messages: UIMessage[]; isContinuation: boolean; isAborted: boolean; outcome: UIMessageStreamOutcome; responseMessage: UIMessage; finishReason?: FinishReason }) => PromiseLike<void> | void',
       description: 'A callback function that is called when the stream ends.',
       properties: [
         {
@@ -131,6 +154,12 @@ const stream = createUIMessageStream({
               description: 'Indicates whether the stream was aborted.',
             },
             {
+              name: 'outcome',
+              type: "UIMessageStreamOutcome = { status: 'completed' } | { status: 'failed'; error?: unknown } | { status: 'aborted' } | { status: 'unknown' }",
+              description:
+                'The operation-level outcome of the stream. It reflects the stream owner declaration unless a fatal stream-processing failure occurs, and is separate from model finish reasons and individual error chunks.',
+            },
+            {
               name: 'responseMessage',
               type: 'UIMessage',
               description:
@@ -148,7 +177,7 @@ const stream = createUIMessageStream({
     },
     {
       name: 'onFinish',
-      type: '(options: { messages: UIMessage[]; isContinuation: boolean; isAborted: boolean; responseMessage: UIMessage; finishReason?: FinishReason }) => PromiseLike<void> | void',
+      type: '(options: { messages: UIMessage[]; isContinuation: boolean; isAborted: boolean; outcome: UIMessageStreamOutcome; responseMessage: UIMessage; finishReason?: FinishReason }) => PromiseLike<void> | void',
       description: 'Deprecated alias for `onEnd`.',
     },
     {

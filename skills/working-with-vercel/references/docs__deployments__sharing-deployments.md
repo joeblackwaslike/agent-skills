@@ -3,7 +3,7 @@ title: Sharing a Preview Deployment
 product: vercel
 url: /docs/deployments/sharing-deployments
 canonical_url: "https://vercel.com/docs/deployments/sharing-deployments"
-last_updated: 2026-06-26
+last_updated: 2026-08-11
 type: how-to
 prerequisites:
   - /docs/deployments
@@ -16,8 +16,8 @@ related:
 summary: Learn how to share a preview deployment with your team and external collaborators.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/sharing-deployments.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "5e736fa542d5cc519f2425b83890c430f4e5e2302e396915389d53162b4eaf88"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "be52f96e21fcf620f03c666ed936ef9f7660c297951ec46db325a1e5f7b57b60"
 ---
 
 # Sharing a Preview Deployment
@@ -30,14 +30,16 @@ sha256: "5e736fa542d5cc519f2425b83890c430f4e5e2302e396915389d53162b4eaf88"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related) — Protect who can see your deployments.
-- [Bypass Deployment Protection](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection?from=related) — Learn how to bypass Deployment Protection for specific domains, or for all deployments in a project.
-- [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments?from=related) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
-- [Managing Comments](https://vercel.com/docs/comments/managing-comments?from=related) — Learn how to manage Comments on your Preview Deployments from Team members and invited collaborators.
-- [Preview Deployment Suffix](https://vercel.com/docs/deployments/preview-deployment-suffix?from=related) — When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that parti
-- [Using Comments](https://vercel.com/docs/comments/using-comments?from=related) — This guide will help you get started with using Comments with your Vercel Preview Deployments.
+- [Additional options for sharing deployments externally](https://vercel.com/changelog/additional-options-for-sharing-deployments-externally?from=related&source_path=%2Fdocs%2Fdeployments%2Fsharing-deployments&source_site=vercel-docs&relationship=related)
+- [Invite collaborators to view and comment on your deployments](https://vercel.com/changelog/invite-collaborators-to-view-and-comment-on-your-deployments?from=related&source_path=%2Fdocs%2Fdeployments%2Fsharing-deployments&source_site=vercel-docs&relationship=related)
+- [Protected Preview Deployments available on all plans](https://vercel.com/changelog/protected-preview-deployments-available-on-all-plans?from=related&source_path=%2Fdocs%2Fdeployments%2Fsharing-deployments&source_site=vercel-docs&relationship=related)
+- [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related&source_path=%2Fdocs%2Fdeployments%2Fsharing-deployments&source_site=vercel-docs&relationship=related) — Protect who can see your deployments.
+- [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments?from=related&source_path=%2Fdocs%2Fdeployments%2Fsharing-deployments&source_site=vercel-docs&relationship=related)
+- [Protecting Deployments](https://vercel.com/blog/security-controls-protected-preview-deployments-passwords?from=related&source_path=%2Fdocs%2Fdeployments%2Fsharing-deployments&source_site=vercel-docs&relationship=related)
+- [Managing Comments on Preview Deployments](https://vercel.com/docs/comments/managing-comments?from=related&source_path=%2Fdocs%2Fdeployments%2Fsharing-deployments&source_site=vercel-docs&relationship=related) — Learn how to manage Comments on your Preview Deployments from Team members and invited collaborators.
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fdeployments%2Fsharing-deployments&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
-Full cross-link map for this page: [/docs/deployments/sharing-deployments.graph.md](/docs/deployments/sharing-deployments.graph.md)
+Full cross-link map for this page: [/docs/deployments/sharing-deployments.graph.md](/docs/deployments/sharing-deployments.graph.md?from=related&source_path=%2Fdocs%2Fdeployments%2Fsharing-deployments&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 By default, members of your [Vercel team](/docs/accounts#creating-a-team) that have [access to your project](/docs/rbac/access-roles/project-level-roles) will also have access to your deployment. This allows them to comment, see who else is viewing the preview, and use the toolbar. Users who don't have access to the project will not have access to your deployment.

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/convert-to-model-messages.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "fa9f39017e7d96d0512ec269b77be8e00e95d1ac8179bc913c6eb2bc0c26ec4e"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "b30df82f949f07d884f989a71c6242a521ef160dfe3920e0e8f055a884bad993"
 ---
 
 # `convertToModelMessages()`
@@ -75,8 +75,8 @@ A Promise that resolves to an array of [`ModelMessage`](/docs/reference/ai-sdk-c
 
 `convertToModelMessages` preserves tool approval state from UI messages when converting them back into `ModelMessage`s for a follow-up `generateText` or `streamText` call.
 
-- Tool parts in `approval-requested` state become `tool-approval-request` content parts.
-- Tool parts in `approval-responded` state become `tool-approval-response` content parts, including `reason` when present.
+- Tool parts with approval metadata produce `tool-approval-request` content parts. `approval.requestReason` is forwarded as the request `reason` when present.
+- Tool parts in `approval-responded` state also become `tool-approval-response` content parts. The separate response `reason` is forwarded when present.
 - Automatic approval metadata is preserved by forwarding `approval.isAutomatic` to the `tool-approval-request` part.
 - Denied tool approvals also produce a synthetic `tool-result` with `output: { type: 'execution-denied', reason?: string }`, so the model receives a complete tool lifecycle and can respond to the denial in the next step.
 

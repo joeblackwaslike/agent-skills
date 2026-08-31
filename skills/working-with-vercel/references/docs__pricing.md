@@ -3,7 +3,7 @@ title: Pricing on Vercel
 product: vercel
 url: /docs/pricing
 canonical_url: "https://vercel.com/docs/pricing"
-last_updated: 2026-07-29
+last_updated: 2026-08-11
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: "Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "13561e680ed87ed921414ff85203454e0b68530b5d2d67394c1fdb35fb52ae0a"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "9538bae5fda0028b30e57fa1f03b8992aa0a639674be74006cef516b087090aa"
 ---
 
 # Pricing on Vercel
@@ -30,13 +30,15 @@ Vercel's pricing model includes billable metrics and pricing models across Manag
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Plans](https://vercel.com/docs/plans?from=related) — Learn about the different plans available on Vercel.
-- [Billing FAQ](https://vercel.com/docs/plans/pro-plan/billing?from=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
-- [Build Queues](https://vercel.com/docs/builds/build-queues?from=related) — Understand how concurrency and same branch build queues manage multiple simultaneous deployments.
-- [Preview Deployment Suffix](https://vercel.com/docs/deployments/preview-deployment-suffix?from=related) — When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that parti
-- [Glossary](https://vercel.com/docs/glossary?from=related) — Learn about the terms and concepts used in Vercel's products and documentation.
+- [Preview URLs optimized for multi-tenant platforms](https://vercel.com/changelog/preview-urls-optimized-for-multi-tenant-platforms?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related)
+- [Simpler Pricing](https://vercel.com/blog/simpler-pricing?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related)
+- [Account Plans on Vercel](https://vercel.com/docs/plans?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about the different plans available on Vercel.
+- [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
+- [Build Queues](https://vercel.com/docs/builds/build-queues?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related) — Understand how concurrency and same branch build queues manage multiple simultaneous deployments.
+- [Preview Deployment Suffix](https://vercel.com/docs/deployments/preview-deployment-suffix?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related) — When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that parti
+- [Glossary](https://vercel.com/docs/glossary?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about the terms and concepts used in Vercel's products and documentation.
 
-Full cross-link map for this page: [/docs/pricing.graph.md](/docs/pricing.graph.md)
+Full cross-link map for this page: [/docs/pricing.graph.md](/docs/pricing.graph.md?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 For a full breakdown of Vercel's pricing by plan, see the [pricing page](/pricing).
@@ -179,7 +181,7 @@ The below table lists the billable DX Platform resources for the Pro plan. Most 
 
 | Resource | Price | Included (Pro) |
 |----------|-------|----------------|
-| [Team seats](/docs/plans/pro-plan#team-seats) | $20 / month per additional paid seat | N/A |
+| [Team seats](/docs/plans/pro-plan#team-seats) | $20 / month per additional paid seat | 1 paid seat |
 | [Preview Deployment Suffix](/docs/deployments/generated-urls#preview-deployment-suffix) | $100 / month | N/A |
 | [SAML Single Sign-On](/docs/saml) | $300 / month | N/A |
 | [HIPAA BAA](/docs/security/compliance#hipaa) | $350 / month | N/A |

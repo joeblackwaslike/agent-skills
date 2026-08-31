@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/agents/policy-tool-approvals.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "dc02d4f140d99200b994c01d01b9e9bb348af3977e6fb4437971d9e873d21554"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "c3ff78112c90a924685cd4216ffc2b2c11ec10b4b660a5cb5adcc690bb14c259"
 ---
 
 # Policy-Based Tool Approvals
@@ -90,7 +90,7 @@ const result = await generateText({
 
 ## Writing the Rego policy
 
-The policy emits a decision object. `reason` is optional and is surfaced back to the model (for `deny`) or to the human approver (for `requires-approval`).
+The policy emits a decision object. `reason` is optional and is surfaced back to the model (for `deny`) or to the human approver (for `requires-approval`). A manual approval request exposes it as `reason` in core results and as `approval.requestReason` in UI messages.
 
 ```rego
 package agent.call

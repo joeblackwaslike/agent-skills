@@ -15,8 +15,8 @@ related:
 summary: See how uptime and status track AI Gateway provider health and end-to-end request success.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/uptime.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "53589516118d45feb561a3eaff5ca2c8022e70a8eea3519b6adfcdd1620ba9d1"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "ea08f3ddfcba90164f88254ae8a89b17fec2832852e94502a7ddfd18d843d895"
 ---
 
 # Uptime and Status
@@ -29,13 +29,16 @@ When a provider has an outage, AI Gateway falls back to a healthy provider so yo
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Metrics](https://vercel.com/docs/ai-gateway/models-and-providers/metrics?from=related) — Understand how AI Gateway measures throughput and latency per provider.
-- [REST API](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api?from=related) — Use the AI Gateway API directly without client libraries using curl and fetch.
-- [Provider Options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options?from=related) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway
-- [Leaderboards](https://vercel.com/docs/ai-gateway/leaderboards?from=related) — See which AI models, labs, apps, and providers are most used on AI Gateway, share a chart as an image, and download the
-- [Pricing](https://vercel.com/docs/ai-gateway/pricing?from=related) — Learn about pricing for AI Gateway.
+- [AI Gateway production index](https://vercel.com/blog/ai-gateway-production-index?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=related)
+- [Live model performance metrics accessible via AI Gateway](https://vercel.com/changelog/live-model-performance-metrics-accessible-via-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=related)
+- [Access and share AI Gateway leaderboard data](https://vercel.com/changelog/open-data-and-shareable-charts-for-ai-gateway-leaderboards?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=related)
+- [Metrics](https://vercel.com/docs/ai-gateway/models-and-providers/metrics?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=related) — Understand how AI Gateway measures throughput and latency per provider.
+- [Direct REST API Usage](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=related) — Use the AI Gateway API directly without client libraries using curl and fetch.
+- [Provider Options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=related) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway
+- [Provider Timeouts](https://vercel.com/docs/ai-gateway/models-and-providers/provider-timeouts?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=related) — Configure per-provider timeouts for fast failover when a provider is slow to respond.
+- [Bring Your Own Key \\(BYOK\\)](https://vercel.com/docs/ai-gateway/authentication-and-byok/byok?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=related) — Learn how to configure your own provider keys with the AI Gateway.
 
-Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/uptime.graph.md](/docs/ai-gateway/models-and-providers/uptime.graph.md)
+Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/uptime.graph.md](/docs/ai-gateway/models-and-providers/uptime.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Both views share the same time-range toggle in the top-right corner. Each window uses a different bucket size:

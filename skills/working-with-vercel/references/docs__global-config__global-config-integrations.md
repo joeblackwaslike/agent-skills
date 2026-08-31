@@ -16,8 +16,8 @@ related:
 summary: Learn how to use Global Config with popular A/B testing and feature flag service integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-integrations.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "82225645d289232a837baf83b046bdf61cd24f860bd094ad1c28d7b32d1a5a8f"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "298cbaa37911b1aed5c5560284643022c35ab52209499b57a5a912a4b57789e3"
 ---
 
 # Using Global Config with an integration
@@ -30,14 +30,14 @@ sha256: "82225645d289232a837baf83b046bdf61cd24f860bd094ad1c28d7b32d1a5a8f"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Global Config](https://flags-sdk.dev/docs/providers/global-config?from=related)
-- [Using Global Config](https://vercel.com/docs/global-config/using-global-config?from=related) — Learn how to use Global Configs in your projects.
-- [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config?from=related)
-- [Get the data of a user-provided Global Config](https://vercel.com/docs/rest-api/marketplace/get-the-data-of-a-user-provided-global-config?from=related)
-- [Get Global Configs](https://vercel.com/docs/rest-api/global-config/get-global-configs?from=related)
-- [Push data into a user-provided Global Config](https://vercel.com/docs/rest-api/marketplace/push-data-into-a-user-provided-global-config?from=related)
+- [Global Config](https://flags-sdk.dev/docs/providers/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations&source_site=vercel-docs&relationship=related)
+- [Using Global Config](https://vercel.com/docs/global-config/using-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations&source_site=vercel-docs&relationship=related) — Learn how to use Global Configs in your projects.
+- [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations&source_site=vercel-docs&relationship=related) — POST /v1/global-config — Creates a Global Config.
+- [Get Global Configs](https://vercel.com/docs/rest-api/global-config/get-global-configs?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations&source_site=vercel-docs&relationship=related) — GET /v1/global-config — Returns all Global Configs.
+- [Get the data of a user-provided Global Config](https://vercel.com/docs/rest-api/marketplace/get-the-data-of-a-user-provided-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations&source_site=vercel-docs&relationship=related) — HEAD /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config — When the user
+- [Push data into a user-provided Global Config](https://vercel.com/docs/rest-api/marketplace/push-data-into-a-user-provided-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations&source_site=vercel-docs&relationship=related) — PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config — When the user
 
-Full cross-link map for this page: [/docs/global-config/global-config-integrations.graph.md](/docs/global-config/global-config-integrations.graph.md)
+Full cross-link map for this page: [/docs/global-config/global-config-integrations.graph.md](/docs/global-config/global-config-integrations.graph.md?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Vercel has partnered with A/B testing and feature flag services such as LaunchDarkly and Statsig to make it easier to integrate Global Config into your workflow. These integrations sync feature flag definitions into Global Config, allowing you to evaluate flags in the region closest to the user without making network calls to your preferred service provider.

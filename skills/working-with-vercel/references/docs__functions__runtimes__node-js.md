@@ -3,7 +3,7 @@ title: Using the Node.js Runtime with Vercel Functions
 product: vercel
 url: /docs/functions/runtimes/node-js
 canonical_url: "https://vercel.com/docs/functions/runtimes/node-js"
-last_updated: 2026-06-25
+last_updated: 2026-08-11
 type: reference
 prerequisites:
   - /docs/functions/runtimes
@@ -17,8 +17,8 @@ related:
 summary: Learn how to use the Node.js runtime to create functions and deploy Node.js servers on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/node-js.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "62d76c521ee38d2894f7bf755176cf392a7c65e111bef14c0ad1baaa765a4eaa"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "40fba16c59c95a6d6361e18f0961b5ba45887452e057606809c8f8b8e2a84ce3"
 ---
 
 # Using the Node.js Runtime with Vercel Functions
@@ -31,18 +31,20 @@ Use the Node.js runtime to deploy Node.js HTTP servers or Vercel Functions writt
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel?from=related) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
-- [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors?from=related) — Learn the systematic steps to identify and resolve 404 issues.
-- [Can I use SMTP with Vercel?](https://vercel.com/kb/guide/serverless-functions-and-smtp?from=related) — Vercel Functions can open SMTP connections on the Node.js runtime. Learn which ports are open, why you must await the se
-- [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute?from=related) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
-- [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out?from=related) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
-- [Runtime](https://vercel.com/docs/functions/configuring-functions/runtime?from=related) — Learn how to configure the runtime for Vercel Functions.
-- [React Router](https://vercel.com/docs/frameworks/frontend/react-router?from=related) — Learn how to use Vercel's features with React Router as a framework.
-- [Express](https://vercel.com/docs/frameworks/backend/express?from=related) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
-- [Build Image](https://vercel.com/docs/builds/build-image?from=related) — Learn about the container image used for Vercel builds.
-- [Managing Builds](https://vercel.com/docs/builds/managing-builds?from=related) — Vercel allows you to increase the speed of your builds when needed in specific situations and workflows.
+- [Bytecode caching for Serverless Functions by default](https://vercel.com/changelog/bytecode-caching-for-serverless-functions-by-default?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related)
+- [Deploy Node servers with zero configuration](https://vercel.com/changelog/deploy-node-servers-with-zero-configuration?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related)
+- [In-function concurrency now in public beta](https://vercel.com/changelog/in-function-concurrency-now-in-public-beta?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related)
+- [Node.js 24 LTS is now generally available for builds and functions](https://vercel.com/changelog/node-js-24-lts-is-now-generally-available-for-builds-and-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related)
+- [Node.js Vercel Functions now support per-path request cancellation ](https://vercel.com/changelog/node-js-vercel-functions-now-support-per-path-request-cancellation?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related)
+- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
+- [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related) — Learn the systematic steps to identify and resolve 404 issues.
+- [Can I use SMTP with Vercel?](https://vercel.com/kb/guide/serverless-functions-and-smtp?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related) — Vercel Functions can open SMTP connections on the Node.js runtime. Learn which ports are open, why you must await the se
+- [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
+- [Function streaming to be framework-agnostic on Vercel](https://vercel.com/blog/vercel-functions-streaming-to-be-framework-agnostic?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related)
+- [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
+- [Express on Vercel](https://vercel.com/docs/frameworks/backend/express?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
 
-Full cross-link map for this page: [/docs/functions/runtimes/node-js.graph.md](/docs/functions/runtimes/node-js.graph.md)
+Full cross-link map for this page: [/docs/functions/runtimes/node-js.graph.md](/docs/functions/runtimes/node-js.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 [Node.js](/docs/functions/runtimes/node-js)-powered functions are suited to computationally intense or large functions and provide benefits like:

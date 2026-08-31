@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/codex.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "bbbf13efab4d418beccbb58d0250377933bca4d9146e1c8deb4bbe4dfb8bd352"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "61480bdfe5d98b32680a37a605d6880c4a6d5f121ce45d90ff6a2483ad1ecb48"
 ---
 
 # Codex Harness
@@ -89,7 +89,16 @@ const harness = createCodex({
 
 Settings:
 
-- `auth`: authentication mode: `auto`, `direct`, or `ai-gateway`.
+- `auth`: authentication mode (`auto`, `direct`, or `ai-gateway`) or an
+  isolated authentication environment.
+- `credentialForwarding`: optional synchronous or asynchronous callback that
+  customizes each credential immediately before the harness adapter forwards it
+  into a sandbox process. It receives the credential value that would otherwise
+  be forwarded (either the real credential or a masked value) and the
+  environment variable name used to expose it. This callback only controls the
+  value forwarded into the sandbox process. It does not restrict which
+  credentials the harness adapter can discover, read, or otherwise access in
+  the host process.
 - `codexConfig`: additional native Codex configuration. Values pass through as
   provided, so use the snake_case keys from Codex's `config.toml` reference.
   The adapter's managed values take precedence over conflicting entries.
@@ -142,6 +151,18 @@ Select a specific authentication mode when you do not want automatic detection:
 const directHarness = createCodex({ auth: 'direct' });
 const gatewayHarness = createCodex({ auth: 'ai-gateway' });
 ```
+
+Pass an authentication environment to use programmatically resolved
+credentials without reading `process.env`:
+
+```ts
+const harness = createCodex({
+  auth: { OPENAI_API_KEY: await resolveOpenAIToken() },
+});
+```
+
+The supplied record replaces the host environment for authentication
+discovery. Only recognized authentication variables are forwarded.
 
 For OpenAI-compatible endpoints, select `direct` and set `OPENAI_BASE_URL`.
 
@@ -197,6 +218,8 @@ Codex built-ins such as `bash` or `webSearch` will throw.
 - [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
 - [Grok Build](/providers/ai-sdk-harnesses/grok-build)
 - [Cline](/providers/ai-sdk-harnesses/cline)
+- [Cursor](/providers/ai-sdk-harnesses/cursor)
+- [fx](/providers/ai-sdk-harnesses/fx)
 
 
 [Full Sitemap](/sitemap.md)

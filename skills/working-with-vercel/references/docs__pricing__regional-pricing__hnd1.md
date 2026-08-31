@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the Tokyo, Japan (hnd1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/hnd1.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "d31f943ae99e91a94c9528f980d849b3305df3a9f717a3bf1c7f28448cae68e2"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "73ece723f22cbf6d12448b28e2e6d113fec800c11e4f29d374646668b460f43b"
 ---
 
 # Tokyo, Japan (hnd1) pricing
@@ -31,13 +31,13 @@ The table below shows Managed Infrastructure products with pricing specific to t
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Osaka, Japan \\(kix1\\)](https://vercel.com/docs/pricing/regional-pricing/kix1?from=related) — Vercel pricing for the Osaka, Japan \\(kix1\\) region.
-- [London, UK \\(lhr1\\)](https://vercel.com/docs/pricing/regional-pricing/lhr1?from=related) — Vercel pricing for the London, UK \\(lhr1\\) region.
-- [Hong Kong \\(hkg1\\)](https://vercel.com/docs/pricing/regional-pricing/hkg1?from=related) — Vercel pricing for the Hong Kong \\(hkg1\\) region.
-- [Paris, France \\(cdg1\\)](https://vercel.com/docs/pricing/regional-pricing/cdg1?from=related) — Vercel pricing for the Paris, France \\(cdg1\\) region.
-- [San Francisco, USA \\(sfo1\\)](https://vercel.com/docs/pricing/regional-pricing/sfo1?from=related) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
+- [Osaka, Japan \\(kix1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/kix1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fhnd1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Osaka, Japan \\(kix1\\) region.
+- [London, UK \\(lhr1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/lhr1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fhnd1&source_site=vercel-docs&relationship=related) — Vercel pricing for the London, UK \\(lhr1\\) region.
+- [Hong Kong \\(hkg1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/hkg1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fhnd1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Hong Kong \\(hkg1\\) region.
+- [Paris, France \\(cdg1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cdg1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fhnd1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Paris, France \\(cdg1\\) region.
+- [San Francisco, USA \\(sfo1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sfo1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fhnd1&source_site=vercel-docs&relationship=related) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
 
-Full cross-link map for this page: [/docs/pricing/regional-pricing/hnd1.graph.md](/docs/pricing/regional-pricing/hnd1.graph.md)
+Full cross-link map for this page: [/docs/pricing/regional-pricing/hnd1.graph.md](/docs/pricing/regional-pricing/hnd1.graph.md?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fhnd1&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 The **Included** column shows the amount of usage covered in your [billing cycle](/docs/pricing/understanding-my-invoice#understanding-your-invoice). If you use more than this amount, the **Additional** column lists the rates for any extra usage.

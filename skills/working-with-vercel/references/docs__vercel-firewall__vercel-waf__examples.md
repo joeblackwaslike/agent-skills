@@ -3,7 +3,7 @@ title: WAF Examples
 product: vercel
 url: /docs/vercel-firewall/vercel-waf/examples
 canonical_url: "https://vercel.com/docs/vercel-firewall/vercel-waf/examples"
-last_updated: 2026-06-16
+last_updated: 2026-08-11
 type: how-to
 prerequisites:
   - /docs/vercel-firewall/vercel-waf
@@ -16,8 +16,8 @@ related:
 summary: Learn how to use Vercel WAF to protect your site in specific situations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/examples.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "c1e6aa6af1aa94c98d65c78604b240c407b0d147f558fdad8482b8cf4e9de345"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "e0bc78160e58d893006009acea66b940cec289cd6c29e825d7c88f342bcc834c"
 ---
 
 # WAF Examples
@@ -26,13 +26,15 @@ sha256: "c1e6aa6af1aa94c98d65c78604b240c407b0d147f558fdad8482b8cf4e9de345"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Firewall API](https://vercel.com/docs/vercel-firewall/firewall-api?from=related) — Learn how to interact with the security endpoints of the Vercel REST API programmatically.
-- [Rate Limiting](https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting?from=related) — Learn how to configure custom rate limiting rules with the Vercel Web Application Firewall \\(WAF\\).
-- [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability?from=related) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
-- [System Bypass Rules](https://vercel.com/docs/vercel-firewall/vercel-waf/system-bypass-rules?from=related) — Learn how to configure IP-based system bypass rules with the Vercel Web Application Firewall \\(WAF\\).
-- [Usage & Pricing](https://vercel.com/docs/vercel-firewall/vercel-waf/usage-and-pricing?from=related) — Learn how the Vercel WAF can affect your usage and how specific features are priced.
+- [Redirecting Domains](https://vercel.com/blog/redirecting-domains?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fexamples&source_site=vercel-docs&relationship=related)
+- [Create Vercel Firewall rules with natural language](https://vercel.com/changelog/create-vercel-waf-custom-rules-using-natural-language?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fexamples&source_site=vercel-docs&relationship=related)
+- [Using the REST API with the Firewall](https://vercel.com/docs/vercel-firewall/firewall-api?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fexamples&source_site=vercel-docs&relationship=related) — Learn how to interact with the security endpoints of the Vercel REST API programmatically.
+- [WAF Rate Limiting](https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fexamples&source_site=vercel-docs&relationship=related) — Learn how to configure custom rate limiting rules with the Vercel Web Application Firewall \\(WAF\\).
+- [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fexamples&source_site=vercel-docs&relationship=related) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
+- [WAF System Bypass Rules](https://vercel.com/docs/vercel-firewall/vercel-waf/system-bypass-rules?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fexamples&source_site=vercel-docs&relationship=related) — Learn how to configure IP-based system bypass rules with the Vercel Web Application Firewall \\(WAF\\).
+- [Bot Management](https://vercel.com/docs/bot-management?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fexamples&source_site=vercel-docs&relationship=related) — Learn how to manage bot traffic to your site.
 
-Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf/examples.graph.md](/docs/vercel-firewall/vercel-waf/examples.graph.md)
+Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf/examples.graph.md](/docs/vercel-firewall/vercel-waf/examples.graph.md?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fexamples&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 | Example                                                                                                        | Category                                                         | Template                                  |

@@ -3,7 +3,7 @@ title: Deployment Checks
 product: vercel
 url: /docs/deployment-checks
 canonical_url: "https://vercel.com/docs/deployment-checks"
-last_updated: 2026-07-02
+last_updated: 2026-08-11
 type: reference
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Set conditions that must be met before proceeding to the next phase of the deployment lifecycle.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-checks.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "67023c59c6df9220ede7bbf1586c961f4e8f7d42986046fd222640c4808c3298"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "f4aa48d6130fb9261014ce2631c004a5502cabebcbc23749893698e2c59d0349"
 ---
 
 # Deployment Checks
@@ -28,16 +28,20 @@ Deployment Checks are conditions that must be met before promoting a production 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel?from=related) — Learn how to deploy based on tags/releases on Vercel.
-- [How can I use GitHub Actions with Vercel?](https://vercel.com/kb/guide/how-can-i-use-github-actions-with-vercel?from=related) — GitHub Actions with Vercel works best when you skip duplicate builds. Learn the 4-command CLI pattern, --prebuilt flag,
-- [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel?from=related) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
-- [Checks](https://vercel.com/docs/checks?from=related) — Vercel automatically keeps an eye on various aspects of your web application using the Checks API. Learn how to use Chec
-- [Checks Reference](https://vercel.com/docs/checks/creating-checks?from=related) — Learn how to create your own Checks with Vercel Integrations. You can build your own Integration in order to register an
-- [Git Integrations](https://vercel.com/docs/git?from=related) — Vercel allows for automatic deployments on every branch push and merges onto the production branch of your GitHub, GitLa
-- [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
-- [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration?from=related) — Learn how to configure Git for your project through vercel.json or vercel.ts.
+- [Block Vercel deployment promotions with GitHub Actions](https://vercel.com/changelog/block-vercel-deployment-promotions-with-github-actions?from=related&source_path=%2Fdocs%2Fdeployment-checks&source_site=vercel-docs&relationship=related)
+- [Native Deployment Checks are now available](https://vercel.com/changelog/native-deployment-checks?from=related&source_path=%2Fdocs%2Fdeployment-checks&source_site=vercel-docs&relationship=related)
+- [Vercel Microfrontends checks for missing configuration](https://vercel.com/changelog/vercel-microfrontends-checks-for-missing-configuration?from=related&source_path=%2Fdocs%2Fdeployment-checks&source_site=vercel-docs&relationship=related)
+- [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues?from=related&source_path=%2Fdocs%2Fdeployment-checks&source_site=vercel-docs&relationship=related)
+- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel?from=related&source_path=%2Fdocs%2Fdeployment-checks&source_site=vercel-docs&relationship=related) — Learn how to deploy based on tags/releases on Vercel.
+- [How can I use GitHub Actions with Vercel?](https://vercel.com/kb/guide/how-can-i-use-github-actions-with-vercel?from=related&source_path=%2Fdocs%2Fdeployment-checks&source_site=vercel-docs&relationship=related) — GitHub Actions with Vercel works best when you skip duplicate builds. Learn the 4-command CLI pattern, --prebuilt flag,
+- [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel?from=related&source_path=%2Fdocs%2Fdeployment-checks&source_site=vercel-docs&relationship=related) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
+- [Working with Checks](https://vercel.com/docs/checks?from=related&source_path=%2Fdocs%2Fdeployment-checks&source_site=vercel-docs&relationship=related) — Vercel automatically keeps an eye on various aspects of your web application using the Checks API. Learn how to use Chec
+- [Deploying Git Repositories with Vercel](https://vercel.com/docs/git?from=related&source_path=%2Fdocs%2Fdeployment-checks&source_site=vercel-docs&relationship=related) — Vercel automatically deploys supported Git repositories on every branch push and when changes merge into the production
+- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fdeployment-checks&source_site=vercel-docs&relationship=related) — Learn how to create and manage deployments on Vercel.
+- [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab?from=related&source_path=%2Fdocs%2Fdeployment-checks&source_site=vercel-docs&relationship=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
+- [Glossary](https://vercel.com/docs/glossary?from=related&source_path=%2Fdocs%2Fdeployment-checks&source_site=vercel-docs&relationship=related) — Learn about the terms and concepts used in Vercel's products and documentation.
 
-Full cross-link map for this page: [/docs/deployment-checks.graph.md](/docs/deployment-checks.graph.md)
+Full cross-link map for this page: [/docs/deployment-checks.graph.md](/docs/deployment-checks.graph.md?from=related&source_path=%2Fdocs%2Fdeployment-checks&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 When you add Deployment Checks to a project, Vercel will hold each production deployment until all required checks pass before assigning it to your custom production domains.

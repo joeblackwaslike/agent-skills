@@ -3,7 +3,7 @@ title: Session tracing
 product: vercel
 url: /docs/tracing/session-tracing
 canonical_url: "https://vercel.com/docs/tracing/session-tracing"
-last_updated: 2026-07-06
+last_updated: 2026-08-25
 type: how-to
 prerequisites:
   - /docs/tracing
@@ -16,8 +16,8 @@ related:
 summary: Learn how to trace your sessions to understand performance and infrastructure details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/tracing/session-tracing.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "61ae1bceed9781a06f89cfa52f89e57e0c814cef9ebe4c1d519dc8ac59c6b43d"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "32a29c914c01ee2cfb39eda70f299ed5ee4e6dfb9c4d9241e1424907f3e7ea5c"
 ---
 
 # Session tracing
@@ -30,14 +30,18 @@ With session tracing, you can use the Vercel toolbar to trace **your** own brows
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
-- [Traces](https://vercel.com/docs/drains/reference/traces?from=related) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
-- [Instrumentation](https://vercel.com/docs/tracing/instrumentation?from=related) — Learn how to instrument your application to understand performance and infrastructure details.
-- [Create a trace session token for a deployment](https://vercel.com/docs/rest-api/projects/create-a-trace-session-token-for-a-deployment?from=related)
-- [Using with CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
-- [Query](https://vercel.com/docs/query?from=related) — Query and visualize your Vercel usage, traffic, and more in observability.
+- [Always-on tracing for production and preview traffic](https://vercel.com/changelog/always-on-tracing-for-production-and-preview-traffic?from=related&source_path=%2Fdocs%2Ftracing%2Fsession-tracing&source_site=vercel-docs&relationship=related)
+- [Trace any Vercel request from the CLI](https://vercel.com/changelog/trace-any-vercel-request-from-the-cli?from=related&source_path=%2Fdocs%2Ftracing%2Fsession-tracing&source_site=vercel-docs&relationship=related)
+- [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related&source_path=%2Fdocs%2Ftracing%2Fsession-tracing&source_site=vercel-docs&relationship=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
+- [Track a request's full lifecycle with session tracing](https://vercel.com/changelog/session-tracing-now-available?from=related&source_path=%2Fdocs%2Ftracing%2Fsession-tracing&source_site=vercel-docs&relationship=related)
+- [Trace and debug eve agent sessions with Vercel Observability](https://vercel.com/changelog/eve-agent-observability?from=related&source_path=%2Fdocs%2Ftracing%2Fsession-tracing&source_site=vercel-docs&relationship=related)
+- [Trace Drains Reference](https://vercel.com/docs/drains/reference/traces?from=related&source_path=%2Fdocs%2Ftracing%2Fsession-tracing&source_site=vercel-docs&relationship=related) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
+- [Create a trace session token for a deployment](https://vercel.com/docs/rest-api/projects/create-a-trace-session-token-for-a-deployment?from=related&source_path=%2Fdocs%2Ftracing%2Fsession-tracing&source_site=vercel-docs&relationship=related) — POST /v1/projects/traces/session — Mints a short-lived HS256 JWT scoped to a deployment hostname. The Vercel CLI present
+- [Instrumentation](https://vercel.com/docs/tracing/instrumentation?from=related&source_path=%2Fdocs%2Ftracing%2Fsession-tracing&source_site=vercel-docs&relationship=related) — Learn how to instrument your application to understand performance and infrastructure details.
+- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Ftracing%2Fsession-tracing&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
+- [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Ftracing%2Fsession-tracing&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
 
-Full cross-link map for this page: [/docs/tracing/session-tracing.graph.md](/docs/tracing/session-tracing.graph.md)
+Full cross-link map for this page: [/docs/tracing/session-tracing.graph.md](/docs/tracing/session-tracing.graph.md?from=related&source_path=%2Fdocs%2Ftracing%2Fsession-tracing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Session tracing complements [always-on tracing](/docs/tracing/always-on-tracing), which continuously collects sampled traces from your production and preview traffic. Use session tracing when you want to trace only your own requests, without turning on collection for everyone.
@@ -97,6 +101,8 @@ See the [`vercel curl`](/docs/cli/curl) and [`vercel traces`](/docs/cli/traces) 
 You can filter traces using [all the same filters available](/docs/logs/runtime#log-filters) in the **Logs** section in the sidebar of the dashboard. To view traces for requests to your browser, press the user icon next to the Traces icon.
 
 ![Image](https://vercel.com/front/docs/observability/previous-session-traces-light.png?lightbox)
+
+Once a trace is open, you can [switch between Timeline, Tree, and Waterfall views](/docs/tracing#switching-between-trace-views) to explore the same spans in different layouts.
 
 ## Usage and pricing
 

@@ -3,7 +3,7 @@ title: Image-to-Video Generation
 product: vercel
 url: /docs/ai-gateway/modalities/video-generation/image-to-video
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/video-generation/image-to-video"
-last_updated: 2026-07-24
+last_updated: 2026-08-24
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/modalities/video-generation
@@ -16,8 +16,8 @@ related:
 summary: Animate static images into videos using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/image-to-video.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "3a00b1f6b06ea27aea1255a1b02456edcca67b037c5ccb835e42238820e9d0a0"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "30450cf0692219e9b06adb17be473cfd4b165bb3e78fd6368685e4695b50d500"
 ---
 
 # Image-to-Video Generation
@@ -30,19 +30,20 @@ Animate a static image into a video. The image you provide becomes the video con
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Kling AI](https://ai-sdk.dev/providers/ai-sdk-providers/klingai?from=related)
-- [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation?from=related)
-- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation?from=related) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
-- [ByteDance](https://ai-sdk.dev/providers/ai-sdk-providers/bytedance?from=related)
-- [Alibaba](https://ai-sdk.dev/providers/ai-sdk-providers/alibaba?from=related)
-- [Black Forest Labs](https://ai-sdk.dev/providers/ai-sdk-providers/black-forest-labs?from=related)
-- [Text-to-Video](https://vercel.com/docs/ai-gateway/modalities/video-generation/text-to-video?from=related) — Generate videos from text prompts using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI G
-- [Motion Control](https://vercel.com/docs/ai-gateway/modalities/video-generation/motion-control?from=related) — Transfer motion from a reference video to a character image using KlingAI through AI Gateway.
-- [Video / Async Video](https://vercel.com/docs/ai-gateway/getting-started/video?from=related) — Generate videos from text prompts, images, or video input using AI Gateway, either over a single request or as a backgro
-- [Image](https://vercel.com/docs/ai-gateway/getting-started/image?from=related) — Generate images from text prompts using AI Gateway.
-- [Video Editing](https://vercel.com/docs/ai-gateway/modalities/video-generation/video-editing?from=related) — Edit existing videos using text prompts with Grok Imagine Video through AI Gateway.
+- [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related)
+- [Kling AI](https://ai-sdk.dev/providers/ai-sdk-providers/klingai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related)
+- [Kling video models on AI Gateway](https://vercel.com/changelog/kling-video-models-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related)
+- [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related)
+- [Wan models on AI Gateway](https://vercel.com/changelog/wan-models-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related)
+- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
+- [Veo video models on AI Gateway](https://vercel.com/changelog/veo-video-models-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related)
+- [ByteDance](https://ai-sdk.dev/providers/ai-sdk-providers/bytedance?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related)
+- [Alibaba](https://ai-sdk.dev/providers/ai-sdk-providers/alibaba?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related)
+- [Grok Imagine Video on AI Gateway](https://vercel.com/changelog/grok-imagine-video-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related)
+- [Text-to-Video Generation](https://vercel.com/docs/ai-gateway/modalities/video-generation/text-to-video?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related) — Generate videos from text prompts using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI G
+- [Motion Control Video Generation](https://vercel.com/docs/ai-gateway/modalities/video-generation/motion-control?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related) — Transfer motion from a reference video to a character image using KlingAI through AI Gateway.
 
-Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation/image-to-video.graph.md](/docs/ai-gateway/modalities/video-generation/image-to-video.graph.md)
+Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation/image-to-video.graph.md](/docs/ai-gateway/modalities/video-generation/image-to-video.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Every model here also runs as a background job instead of one long-lived request. See [asynchronous generation](#asynchronous-generation) below.
@@ -186,7 +187,7 @@ import { experimental_generateVideo as generateVideo } from 'ai';
 import fs from 'node:fs';
 
 const result = await generateVideo({
-  model: 'klingai/kling-v2.6-i2v',
+  model: 'klingai/kling-v3.0-i2v',
   prompt: {
     image: 'https://example.com/cat.png',
     text: 'The cat slowly turns its head and blinks',
@@ -214,7 +215,7 @@ const firstFrame = fs.readFileSync('start.png');
 const lastFrame = fs.readFileSync('end.png');
 
 const result = await generateVideo({
-  model: 'klingai/kling-v2.6-i2v',
+  model: 'klingai/kling-v3.0-i2v',
   prompt: 'Smooth transition between the two scenes',
   frameImages: [
     { image: firstFrame, frameType: 'first_frame' },
@@ -248,7 +249,7 @@ import { experimental_generateVideo as generateVideo } from 'ai';
 import fs from 'node:fs';
 
 const result = await generateVideo({
-  model: 'klingai/kling-v2.6-i2v',
+  model: 'klingai/kling-v3.0-i2v',
   prompt: {
     image: 'https://example.com/person.png',
     text: 'The person<<<voice_1>>> says: "Hello, welcome to my channel"',
@@ -302,7 +303,7 @@ import { experimental_generateVideo as generateVideo } from 'ai';
 import fs from 'node:fs';
 
 const result = await generateVideo({
-  model: 'klingai/kling-v2.6-i2v',
+  model: 'klingai/kling-v3.0-i2v',
   prompt: {
     image: 'https://example.com/landscape.png',
     text: 'A serene mountain landscape',
@@ -352,7 +353,7 @@ import { experimental_generateVideo as generateVideo } from 'ai';
 import fs from 'node:fs';
 
 const result = await generateVideo({
-  model: 'klingai/kling-v2.6-i2v',
+  model: 'klingai/kling-v3.0-i2v',
   prompt: {
     image: 'https://example.com/scene.png',
     text: 'A ball bouncing across the scene',
@@ -487,7 +488,7 @@ If you omit `frameImages`, you can still pass the first frame through `prompt.im
 
 Grok Imagine Video (by SpaceXAI) can animate images into videos. The output defaults to the input image's aspect ratio. If you specify `aspectRatio`, it will override this and stretch the image to the desired ratio.
 
-[Browse the latest Grok video models](/ai-gateway/models?capabilities=video-generation\&providers=xai) on the AI Gateway Models page.
+[Browse the latest Grok video models](/ai-gateway/models?capabilities=video-generation\&providers=spacexai) on the AI Gateway Models page.
 
 > **💡 Note:** Grok Imagine Video does not support first-last-frame interpolation. A
 > `last_frame` entry in `frameImages` is ignored with a warning. To continue
@@ -496,16 +497,16 @@ Grok Imagine Video (by SpaceXAI) can animate images into videos. The output defa
 
 ### Grok parameters
 
-| Parameter                            | Type                          | Required | Description                                                                                   |
-| ------------------------------------ | ----------------------------- | -------- | --------------------------------------------------------------------------------------------- |
-| `prompt`                             | `string` or `{ image, text }` | Yes      | Text description of the motion or animation                                                   |
-| `frameImages`                        | `Array<{ image, frameType }>` | No       | Pass a `first_frame` entry to animate from an image. Takes priority over `prompt.image`       |
-| `prompt.image`                       | `string`                      | No       | URL of the image to animate. Used when `frameImages` is omitted                               |
-| `duration`                           | `number`                      | No       | Video length in seconds (1-15)                                                                |
-| `aspectRatio`                        | `string`                      | No       | Override the input image's aspect ratio (stretches the image)                                 |
-| `providerOptions.xai.resolution`     | `'480p'` | `'720p'`          | No       | Video resolution. Defaults to 480p                                                            |
-| `providerOptions.xai.pollIntervalMs` | `number`                      | No       | How often to check task status. Defaults to `5000`                                            |
-| `providerOptions.xai.pollTimeoutMs`  | `number`                      | No       | Maximum wait time. Defaults to `600000` (10 minutes)                                          |
+| Parameter                                 | Type                          | Required | Description                                                                             |
+| ----------------------------------------- | ----------------------------- | -------- | --------------------------------------------------------------------------------------- |
+| `prompt`                                  | `string` or `{ image, text }` | Yes      | Text description of the motion or animation                                             |
+| `frameImages`                             | `Array<{ image, frameType }>` | No       | Pass a `first_frame` entry to animate from an image. Takes priority over `prompt.image` |
+| `prompt.image`                            | `string`                      | No       | URL of the image to animate. Used when `frameImages` is omitted                         |
+| `duration`                                | `number`                      | No       | Video length in seconds (1-15)                                                          |
+| `aspectRatio`                             | `string`                      | No       | Override the input image's aspect ratio (stretches the image)                           |
+| `providerOptions.spacexai.resolution`     | `'480p'` | `'720p'`          | No       | Video resolution. Defaults to 480p                                                      |
+| `providerOptions.spacexai.pollIntervalMs` | `number`                      | No       | How often to check task status. Defaults to `5000`                                      |
+| `providerOptions.spacexai.pollTimeoutMs`  | `number`                      | No       | Maximum wait time. Defaults to `600000` (10 minutes)                                    |
 
 ### Grok example
 
@@ -514,14 +515,14 @@ import { experimental_generateVideo as generateVideo } from 'ai';
 import fs from 'node:fs';
 
 const result = await generateVideo({
-  model: 'xai/grok-imagine-video',
+  model: 'spacexai/grok-imagine-video',
   prompt: 'The cat slowly turns its head and blinks',
   frameImages: [
     { image: 'https://example.com/cat.png', frameType: 'first_frame' },
   ],
   duration: 5,
   providerOptions: {
-    xai: {
+    spacexai: {
       pollTimeoutMs: 600000,
     },
   },
@@ -544,18 +545,19 @@ ByteDance's Seedance models animate images into videos with support for first-an
 
 | Parameter                                   | Type                    | Required | Description                                                                                                                            |
 | ------------------------------------------- | ----------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| `prompt.image`                              | `string`                | Yes      | URL of the image to animate (first frame)                                                                                              |
+| `prompt.image`                              | `string`                | No       | URL of the image to animate. You can pass the first frame through `frameImages` instead                                               |
 | `prompt.text`                               | `string`                | No       | Description of the motion or animation                                                                                                 |
 | `aspectRatio`                               | `string`                | No       | Aspect ratio (`'16:9'`, `'4:3'`, `'1:1'`, `'3:4'`, `'9:16'`, `'21:9'`, `'adaptive'`). `'adaptive'` uses the input image's aspect ratio |
-| `resolution`                                | `string`                | No       | Resolution (`'854x480'`, `'1280x720'`, `'1920x1080'`). Lite I2V supports up to 720p                                                    |
-| `duration`                                  | `number`                | No       | Video length in seconds. v1.5: 4-12s. v1.0: 2-12s                                                                                      |
+| `resolution`                                | `string`                | No       | Resolution (`'854x480'`, `'1280x720'`, `'1920x1080'`). Seedance 2.5 supports up to 1080p. Lite I2V supports up to 720p                  |
+| `duration`                                  | `number`                | No       | Video length in seconds. Seedance 2.5: 4 to 30 seconds. v1.5: 4 to 12 seconds. v1.0: 2 to 12 seconds                                   |
 | `providerOptions.bytedance.lastFrameImage`  | `string`                | No       | URL of the last frame image. Enables first+last frame mode. See [first and last frame](#seedance-first-and-last-frame)                 |
-| `providerOptions.bytedance.referenceImages` | `string[]`              | No       | 1-4 reference image URLs. Lite I2V only. See [multi-reference images](#seedance-multi-reference-images)                                |
-| `generateAudio`                             | `boolean`               | No       | Generate synchronized audio. Seedance v1.5 Pro and Seedance 2.0 series only                                                                                    |
-| `providerOptions.bytedance.watermark`       | `boolean`               | No       | Add a watermark to the video                                                                                                           |
-| `providerOptions.bytedance.cameraFixed`     | `boolean`               | No       | Fix the camera position during generation                                                                                              |
-| `providerOptions.bytedance.returnLastFrame` | `boolean`               | No       | Return the last frame of the generated video. Useful for chaining consecutive videos                                                   |
-| `providerOptions.bytedance.serviceTier`     | `'default'` | `'flex'` | No       | `'default'` for online inference. `'flex'` for offline at 50% cost, higher latency                                                     |
+| `inputReferences`                           | `Array<{ data: string; mediaType: string }>` | No       | Reference images and videos. Seedance 2.5 accepts up to 30 images and 10 videos across the request. See [multi-reference images](#seedance-multi-reference-images) |
+| `providerOptions.bytedance.referenceImages` | `string[]`              | No       | Legacy alternative to `inputReferences` for image URLs. Lite I2V supports one to four images                                          |
+| `generateAudio`                             | `boolean`               | No       | Generate synchronized audio. Seedance v1.5 Pro and the Seedance 2.x series only                                                                                    |
+| `providerOptions.bytedance.watermark`       | `boolean`               | No       | Add a watermark to the video. v1.x only                                                                                                |
+| `providerOptions.bytedance.cameraFixed`     | `boolean`               | No       | Fix the camera position during generation. v1.x only                                                                                   |
+| `providerOptions.bytedance.returnLastFrame` | `boolean`               | No       | Return the last frame of the generated video. v1.x only                                                                                |
+| `providerOptions.bytedance.serviceTier`     | `'default'` | `'flex'` | No       | `'default'` for online inference. `'flex'` for offline at 50% cost and higher latency. v1.x only                                       |
 | `providerOptions.bytedance.pollIntervalMs`  | `number`                | No       | How often to check task status. Defaults to `3000`                                                                                     |
 | `providerOptions.bytedance.pollTimeoutMs`   | `number`                | No       | Maximum wait time. Defaults to `300000` (5 minutes)                                                                                    |
 
@@ -566,7 +568,7 @@ import { experimental_generateVideo as generateVideo } from 'ai';
 import fs from 'node:fs';
 
 const result = await generateVideo({
-  model: 'bytedance/seedance-v1.5-pro',
+  model: 'bytedance/seedance-2.5',
   prompt: {
     image: 'https://example.com/cat.png',
     text: 'The cat slowly turns its head and blinks',
@@ -591,7 +593,7 @@ import { experimental_generateVideo as generateVideo } from 'ai';
 import fs from 'node:fs';
 
 const result = await generateVideo({
-  model: 'bytedance/seedance-v1.5-pro',
+  model: 'bytedance/seedance-2.5',
   prompt: 'Create a 360-degree orbiting camera shot based on this photo',
   frameImages: [
     {
@@ -604,7 +606,6 @@ const result = await generateVideo({
   generateAudio: true,
   providerOptions: {
     bytedance: {
-      watermark: false,
       pollTimeoutMs: 600000,
     },
   },
@@ -617,34 +618,33 @@ If you omit `frameImages`, you can still set the first frame via `prompt.image` 
 
 ### Seedance multi-reference images
 
-Provide 1-4 reference images that the model uses to faithfully reproduce object shapes, colors, and textures. Use `[Image 1]`, `[Image 2]`, etc. in your prompt to reference each image. Requires the `seedance-v1.0-lite-i2v` model.
+Provide reference images that Seedance 2.5 uses to reproduce object shapes, colors, and textures. Seedance 2.5 accepts up to 30 image inputs across the request. Use `[Image 1]`, `[Image 2]`, and so on in your prompt to reference each image.
 
-You can pass these through the provider-agnostic `inputReferences` field, or the legacy `providerOptions.bytedance.referenceImages` key shown below. Either way, refer to each image with `[Image 1]`, `[Image 2]`, and so on in your prompt. When using `inputReferences` with URLs, tag each entry with an explicit media type (for example, `{ data: url, mediaType: 'image/png' }`). Seedance treats untyped URL references as images and emits a warning.
+Pass references through the provider-agnostic `inputReferences` field, as shown below. The legacy `providerOptions.bytedance.referenceImages` key also works when you omit `inputReferences`. Either way, refer to each image with `[Image 1]`, `[Image 2]`, and so on in your prompt. When using `inputReferences` with URLs, tag each entry with an explicit media type (for example, `{ data: url, mediaType: 'image/png' }`). Seedance treats untyped URL references as images and emits a warning.
 
-For reference-to-video generation with Seedance 2.0, including video references, see [Seedance reference-to-video](/docs/ai-gateway/modalities/video-generation/reference-to-video#bytedance-seedance).
+For reference-to-video generation with Seedance 2.5, including video references, see [Seedance reference-to-video](/docs/ai-gateway/modalities/video-generation/reference-to-video#bytedance-seedance).
 
-| Parameter                                   | Type       | Required | Description                       |
-| ------------------------------------------- | ---------- | -------- | --------------------------------- |
-| `providerOptions.bytedance.referenceImages` | `string[]` | Yes      | Array of 1-4 reference image URLs |
+| Parameter         | Type                    | Required | Description                                                                 |
+| ----------------- | ----------------------- | -------- | --------------------------------------------------------------------------- |
+| `inputReferences` | `Array<{ data: string; mediaType: string }>` | Yes      | Reference images and videos. Tag each URL with an explicit `mediaType`      |
 
 ```typescript filename="seedance-multi-reference.ts"
 import { experimental_generateVideo as generateVideo } from 'ai';
 import fs from 'node:fs';
 
 const result = await generateVideo({
-  model: 'bytedance/seedance-v1.0-lite-i2v',
+  model: 'bytedance/seedance-2.5',
   prompt:
     'A boy wearing glasses and a blue T-shirt from [Image 1] and a corgi dog from [Image 2], sitting on the lawn from [Image 3], in 3D cartoon style',
   aspectRatio: '16:9',
   duration: 5,
+  inputReferences: [
+    { data: 'https://example.com/boy.png', mediaType: 'image/png' },
+    { data: 'https://example.com/corgi.png', mediaType: 'image/png' },
+    { data: 'https://example.com/lawn.png', mediaType: 'image/png' },
+  ],
   providerOptions: {
     bytedance: {
-      referenceImages: [
-        'https://example.com/boy.png',
-        'https://example.com/corgi.png',
-        'https://example.com/lawn.png',
-      ],
-      watermark: false,
       pollTimeoutMs: 600000,
     },
   },

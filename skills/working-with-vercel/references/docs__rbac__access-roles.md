@@ -3,7 +3,7 @@ title: Access Roles
 product: vercel
 url: /docs/rbac/access-roles
 canonical_url: "https://vercel.com/docs/rbac/access-roles"
-last_updated: 2026-08-04
+last_updated: 2026-08-24
 type: reference
 prerequisites:
   - /docs/rbac
@@ -16,8 +16,8 @@ related:
 summary: Learn about the different roles available for team members on a Vercel account.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac/access-roles.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "6e26fb5958362ee7ec242bc5f03bc1a0e7243f50b829d2ad82805af089e0132c"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "933e1f534199ae4a9fa8dc1e7e550368cf348a6d287ab5e8d7e40383a8d67e7e"
 ---
 
 # Access Roles
@@ -30,20 +30,20 @@ Vercel distinguishes between different roles to help manage team members' access
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Account](https://v0.app/docs/account?from=related) — Manage your account and billing information.
-- [Design Systems 2.0](https://v0.app/docs/design-systems-2?from=related) — Teach v0 to build with your team's components, tokens, and design system conventions.
-- [Teams](https://v0.app/docs/teams?from=related) — Collaborate with your team on projects with shared resources.
-- [Vercel Integration](https://v0.app/docs/vercel-integration?from=related) — How v0 and Vercel work in tandem.
-- [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team?from=related) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
-- [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall?from=related) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
-- [How do I view and update my domain's ICANN registrant information on Vercel? ](https://vercel.com/kb/guide/update-icann-domain-information-for-vercel-domain?from=related) — Learn how to view and update the registrant information for a domain registered with Vercel.
-- [The Complete Guide to Vercel Passport](https://vercel.com/kb/guide/vercel-passport?from=related) — Vercel Passport protects deployments behind your own identity provider, such as Okta or Auth0. Learn how Passport works,
-- [Enterprise](https://v0.app/docs/enterprise?from=related) — Learn how to manage v0 seats, access, and more in your Vercel Enterprise account.
-- [Access Groups](https://vercel.com/docs/rbac/access-groups?from=related) — Learn how to configure access groups for team members on a Vercel account.
-- [Directory Sync](https://vercel.com/docs/directory-sync?from=related) — Learn how to configure Directory Sync for your Vercel Team.
-- [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference?from=related) — Learn how to manage project access and added products for your integrations.
+- [Account](https://v0.app/docs/account?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=related) — Manage your account and billing information.
+- [Design Systems 2.0](https://v0.app/docs/design-systems-2?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=related) — Teach v0 to build with your team's components, tokens, and design system conventions.
+- [Teams](https://v0.app/docs/teams?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=related) — Collaborate with your team on projects with shared resources.
+- [Vercel Integration](https://v0.app/docs/vercel-integration?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=related) — How v0 and Vercel work in tandem.
+- [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=related) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
+- [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=related) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
+- [How do I view and update my domain's ICANN registrant information on Vercel? ](https://vercel.com/kb/guide/update-icann-domain-information-for-vercel-domain?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=related) — Learn how to view and update the registrant information for a domain registered with Vercel.
+- [The Complete Guide to Vercel Passport](https://vercel.com/kb/guide/vercel-passport?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=related) — Vercel Passport protects deployments behind your own identity provider, such as Okta or Auth0. Learn how Passport works,
+- [New project access controls for Enterprise customers](https://vercel.com/changelog/new-project-access-controls-for-enterprise-customers?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=related)
+- [Developer role now available for Pro teams](https://vercel.com/changelog/developer-role-now-available-for-pro-teams?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=related)
+- [Access Groups](https://vercel.com/docs/rbac/access-groups?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=related) — Learn how to configure access groups for team members on a Vercel account.
+- [Directory Sync](https://vercel.com/docs/directory-sync?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=related) — Learn how to configure Directory Sync for your Vercel Team.
 
-Full cross-link map for this page: [/docs/rbac/access-roles.graph.md](/docs/rbac/access-roles.graph.md)
+Full cross-link map for this page: [/docs/rbac/access-roles.graph.md](/docs/rbac/access-roles.graph.md?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 The two groups are further divided into specific roles, each with its own set of permissions and responsibilities. These roles are designed to provide a balance between autonomy and security, ensuring that team members have the access they need to perform their tasks while maintaining the integrity of the team and its resources.
@@ -87,7 +87,7 @@ See the [Team Level Roles Reference](/docs/rbac/access-roles/team-level-roles) f
 
 | About                      | Details                                                                                                                                                                                                                                                                                                                                  |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description**            | The owner role is the highest level of authority within a team, possessing comprehensive access and control over all team and [project settings](/docs/projects#project-settings).                                                                                                                                              |
+| **Description**            | The owner role is the highest level of authority within a team, possessing comprehensive access and control over all team and [project settings](/docs/projects#project-settings).                                                                                                                              |
 | **Key Responsibilities**   | - Oversee and manage all team resources and projects  - Modify team settings, including [billing](#billing-role) and [member](#member-role) roles  - Grant or revoke access to team projects and determine project-specific roles for members  - Access and modify all projects, including their settings and deployments |
 | **Access and Permissions** | Owners have unrestricted access to all team functionalities, can modify all settings, and change other members' roles.  Team owners inherently act as [project administrators](#project-administrators) for every project within the team, ensuring that they can manage individual projects' settings and deployments.             |
 
@@ -189,7 +189,7 @@ See the [Team Level Roles Reference](/docs/rbac/access-roles/team-level-roles) f
 > **🔒 Permissions Required**: The security role
 
 | About                      | Details                                                                                                                                                               |
-| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description**            | Inspect and manage Vercel security features.                                                                                                                          |
 | **Key Responsibilities**   | - Manage Firewall  - Rate Limiting  - Deployment Protection                                                                                                 |
 | **Access and Permissions** | The security role is designed to provide focused access to security features and settings.  This role also has read-only access to all projects within the team. |
@@ -294,7 +294,7 @@ Project level roles provide fine-grained control and access to specific projects
 | Role                                                 | Description                                                                                                                                                                                                                                                                                        |
 | ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [**Project Administrator**](#project-administrators) | Team owners and members inherently act as project administrators for every project. Project administrators can create production deployments, manage all [project settings](/docs/projects#project-settings), and manage production [environment variables](/docs/environment-variables). |
-| [**Project Developer**](#project-developer)          | Can deploy to the project and manage its environment settings. Team developers inherently act as project developers.                                                                                                                                                                               |
+| [**Project Developer**](#project-developer)          | Can create production deployments and manage the project's environment settings. Team developers inherently act as project developers.                                                                                                                                                             |
 | [**Project Viewer**](#project-viewer)                | Has read-only access to a specific project. Both team billing and viewer members automatically act as project viewers for every project.                                                                                                                                                           |
 
 See the [Project Level Roles Reference](/docs/rbac/access-roles/project-level-roles) for a complete list of roles and their permissions.
@@ -320,8 +320,8 @@ See the [Project Level Roles Reference](/docs/rbac/access-roles/project-level-ro
 | About                      | Details                                                                                                                                                                                                                                                                       |
 | -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description**            | Project developers play a key role in working on projects, mirroring the functions of [team developers](#developer-role), but with a narrowed project focus.                                                                                                                  |
-| **Key Responsibilities**   | - Initiate [deployments](/docs/deployments)  - Manage [environment variables](/docs/environment-variables) for development and [preview environments](/docs/deployments/environments#preview-environment-pre-production)  - Handle project [domains](/docs/domains) |
-| **Access and Permissions** | Project developers have limited scope, with access restricted to only the projects they're assigned to.                                                                                                                                                                       |
+| **Key Responsibilities**   | - Create [deployments](/docs/deployments), including production deployments by committing to the project's production branch  - Manage [environment variables](/docs/environment-variables) for development and [preview environments](/docs/deployments/environments#preview-environment-pre-production)  - Handle project [domains](/docs/domains) |
+| **Access and Permissions** | Project developers have limited scope, with access restricted to only the projects they're assigned to. Like [team developers](#developer-role), they can create production deployments by merging to the project's production branch, but they cannot manage production [environment variables](/docs/environment-variables). |
 
 To assign the project developer role to a team member, refer to our [Assigning project roles](/docs/rbac/managing-team-members#assigning-project-roles) documentation.
 
@@ -332,7 +332,7 @@ See the [Project Level Roles Reference](/docs/rbac/access-roles/project-level-ro
 > **🔒 Permissions Required**: The project viewer role
 
 | About                      | Details                                                                                                                                                                                                                                                                    |
-| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description**            | Adopting an observational role within the project scope, they ensure transparency and understanding across projects.                                                                                                                                                       |
 | **Key Responsibilities**   | - View and inspect all [deployments](/docs/deployments)  - Review [project settings](/docs/projects#project-settings)  - Examine [environment variables](/docs/environment-variables) across all environments and view project [domains](/docs/domains) |
 | **Access and Permissions** | They have a broad view but can't actively make changes.                                                                                                                                                                                                                    |

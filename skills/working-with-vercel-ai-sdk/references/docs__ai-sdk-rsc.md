@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-rsc.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "77a513d34055f6902e9008e7d51866a9fd2e4db35bfdb70cf58784d2db1d2061"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "745c1f3c7f31aa24fbd8ff2bf29da34a19c7865cf85c60f1b7cc8438e546e399"
 ---
 
 # AI SDK RSC
@@ -260,6 +260,7 @@ sha256: "77a513d34055f6902e9008e7d51866a9fd2e4db35bfdb70cf58784d2db1d2061"
   - [AI SDK Workflow](/docs/reference/ai-sdk-workflow)
     - [WorkflowAgent](/docs/reference/ai-sdk-workflow/workflow-agent)
     - [WorkflowChatTransport](/docs/reference/ai-sdk-workflow/workflow-chat-transport)
+    - [generateVideo](/docs/reference/ai-sdk-workflow/generate-video)
   - [AI SDK Errors](/docs/reference/ai-sdk-errors)
     - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
     - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
@@ -289,6 +290,7 @@ sha256: "77a513d34055f6902e9008e7d51866a9fd2e4db35bfdb70cf58784d2db1d2061"
     - [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
     - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
     - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
+    - [AI_StreamProviderError](/docs/reference/ai-sdk-errors/ai-stream-provider-error)
     - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
     - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
     - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)

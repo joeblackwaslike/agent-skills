@@ -3,7 +3,7 @@ title: Fluid compute
 product: vercel
 url: /docs/fluid-compute
 canonical_url: "https://vercel.com/docs/fluid-compute"
-last_updated: 2026-07-01
+last_updated: 2026-08-24
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn about fluid compute, an execution model for Vercel Functions that provides a more flexible and efficient way to run your functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/fluid-compute.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "f46e8ddadba20f6ffeb6a5468fadba5c3a59e82d2665cec262e11711e2f763c6"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "3ba8e98b1b3b983c4fd9445600bde72e52c9734ed7fa6afbdde80a79b1d6f4d4"
 ---
 
 # Fluid compute
@@ -30,19 +30,20 @@ Fluid compute offers a blend of serverless flexibility and server-like capabilit
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Getting Timeouts When Deploying on Vercel](https://ai-sdk.dev/docs/troubleshooting/timeout-on-vercel?from=related)
-- [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
-- [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide?from=related) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
-- [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel?from=related) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
-- [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud?from=related) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
-- [Build with an Express starter template](https://vercel.com/kb/guide/build-with-a-express-starter-template?from=related) — Deploy an Express app to Vercel from a template. Browse Express starters from Vercel and the community, then run them lo
-- [Managing Builds](https://vercel.com/docs/builds/managing-builds?from=related) — Vercel allows you to increase the speed of your builds when needed in specific situations and workflows.
-- [Concepts](https://vercel.com/docs/eve/concepts?from=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
-- [Backends](https://vercel.com/docs/frameworks/backend?from=related) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
-- [Elysia](https://vercel.com/docs/frameworks/backend/elysia?from=related) — Build fast TypeScript backends with Elysia and deploy to Vercel. Learn the project structure, plugins, middleware, and h
-- [Express](https://vercel.com/docs/frameworks/backend/express?from=related) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
+- [Getting Timeouts When Deploying on Vercel](https://ai-sdk.dev/docs/troubleshooting/timeout-on-vercel?from=related&source_path=%2Fdocs%2Ffluid-compute&source_site=vercel-docs&relationship=related)
+- [Advanced Remix integration with streaming SSR and multi-runtime support](https://vercel.com/changelog/advanced-remix-integration-with-streaming-ssr-and-multi-runtime-support?from=related&source_path=%2Fdocs%2Ffluid-compute&source_site=vercel-docs&relationship=related)
+- [Bun runtime now supports large functions and extended max duration](https://vercel.com/changelog/bun-runtime-now-supports-large-functions-and-extended-max-duration?from=related&source_path=%2Fdocs%2Ffluid-compute&source_site=vercel-docs&relationship=related)
+- [Bun runtime for Vercel Functions now accepts Bun.serve as an entrypoint](https://vercel.com/changelog/bun-serve-entrypoint-for-vercel-functions?from=related&source_path=%2Fdocs%2Ffluid-compute&source_site=vercel-docs&relationship=related)
+- [Deploy Hono backends with zero configuration](https://vercel.com/changelog/deploy-hono-backends-with-zero-configuration?from=related&source_path=%2Fdocs%2Ffluid-compute&source_site=vercel-docs&relationship=related)
+- [Deployment-level configuration for Fluid compute](https://vercel.com/changelog/deployment-level-configuration-for-fluid-compute?from=related&source_path=%2Fdocs%2Ffluid-compute&source_site=vercel-docs&relationship=related)
+- [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related&source_path=%2Fdocs%2Ffluid-compute&source_site=vercel-docs&relationship=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
+- [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide?from=related&source_path=%2Fdocs%2Ffluid-compute&source_site=vercel-docs&relationship=related) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
+- [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel?from=related&source_path=%2Fdocs%2Ffluid-compute&source_site=vercel-docs&relationship=related) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
+- [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud?from=related&source_path=%2Fdocs%2Ffluid-compute&source_site=vercel-docs&relationship=related) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
+- [Build with an Express starter template](https://vercel.com/kb/guide/build-with-a-express-starter-template?from=related&source_path=%2Fdocs%2Ffluid-compute&source_site=vercel-docs&relationship=related) — Deploy an Express app to Vercel from a template. Browse Express starters from Vercel and the community, then run them lo
+- [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution?from=related&source_path=%2Fdocs%2Ffluid-compute&source_site=vercel-docs&relationship=related)
 
-Full cross-link map for this page: [/docs/fluid-compute.graph.md](/docs/fluid-compute.graph.md)
+Full cross-link map for this page: [/docs/fluid-compute.graph.md](/docs/fluid-compute.graph.md?from=related&source_path=%2Fdocs%2Ffluid-compute&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 - [**Zero configuration out of the box**](/docs/fluid-compute#default-settings-by-plan): Fluid compute comes with preset defaults that automatically optimize your functions for both performance and cost efficiency.
@@ -141,9 +142,9 @@ Fluid Compute includes default settings that vary by plan:
 | [**Multi-region functions**](/docs/functions/runtimes#location)                              |                       | Up to 3                              | All                                  |
 
 > **💡 Note:** The 800 second maximum is generally available for Pro and Enterprise teams.
-> The 30 minute extended maximum is in beta for supported Node.js and Python
-> runtime versions. To set values above 800 seconds, configure `maxDuration` on
-> each Function rather than as a project default. Secure Compute does not
+> The 30 minute extended maximum is in beta for supported Node.js, Bun, and
+> Python runtime versions. To set values above 800 seconds, configure
+> `maxDuration` on each Function rather than as a project default. Secure Compute does not
 > support durations above 800 seconds during the beta. See [configuring maximum
 > duration](/docs/functions/configuring-functions/duration#extended-max-duration-beta)
 > for the supported runtimes and examples.

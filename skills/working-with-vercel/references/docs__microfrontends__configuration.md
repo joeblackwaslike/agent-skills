@@ -1,5 +1,5 @@
 ---
-title: Configuration
+title: Microfrontends Configuration
 product: vercel
 url: /docs/microfrontends/configuration
 canonical_url: "https://vercel.com/docs/microfrontends/configuration"
@@ -11,11 +11,11 @@ related:
   - /docs/microfrontends/quickstart
   - /docs/builds/configure-a-build
   - /docs/environment-variables/managing-environment-variables
-summary: Learn about configuration on Vercel.
+summary: Configure your microfrontends.json.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/configuration.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "84a30ea93086822684c19afe1756ec2dfce75940ec1eb301a14c7a7328764911"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "5627d90d047b8d01a1d6554674a1ebe7f6698a7bd42ab63948dd612a7a894c63"
 ---
 
 # Microfrontends Configuration
@@ -28,14 +28,14 @@ The `microfrontends.json` file is used to configure your microfrontends. If this
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Microfrontends](https://turborepo.dev/docs/guides/microfrontends?from=related) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
-- [Project Configuration](https://vercel.com/docs/project-configuration?from=related) — Learn how to configure your Vercel projects using vercel.json, vercel.ts, or the dashboard to control builds, routing, f
-- [Local Development](https://vercel.com/docs/microfrontends/local-development?from=related) — Learn about local development on Vercel.
-- [vercel microfrontends](https://vercel.com/docs/cli/microfrontends?from=related) — Manage microfrontends groups from the CLI. Learn how to create groups, inspect group metadata, add and remove projects,
-- [Managing Microfrontends](https://vercel.com/docs/microfrontends/managing-microfrontends?from=related) — Learn about managing microfrontends on Vercel.
-- [Routing](https://vercel.com/docs/microfrontends/routing?from=related) — Learn about routing on Vercel.
+- [Microfrontends](https://turborepo.dev/docs/guides/microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fconfiguration&source_site=vercel-docs&relationship=related) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
+- [Microfrontends local development](https://vercel.com/docs/microfrontends/local-development?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fconfiguration&source_site=vercel-docs&relationship=related) — Learn how to run and test your microfrontends locally.
+- [vercel microfrontends](https://vercel.com/docs/cli/microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fconfiguration&source_site=vercel-docs&relationship=related) — Manage microfrontends groups from the CLI. Learn how to create groups, inspect group metadata, add and remove projects,
+- [Managing microfrontends](https://vercel.com/docs/microfrontends/managing-microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fconfiguration&source_site=vercel-docs&relationship=related) — Learn how to manage your microfrontends on Vercel.
+- [Testing & troubleshooting microfrontends](https://vercel.com/docs/microfrontends/troubleshooting?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fconfiguration&source_site=vercel-docs&relationship=related) — Learn about testing, common issues, and how to troubleshoot microfrontends on Vercel.
+- [Microfrontends Routing](https://vercel.com/docs/microfrontends/routing?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fconfiguration&source_site=vercel-docs&relationship=related) — Configure which microfrontend handles each path and understand how Vercel selects deployments.
 
-Full cross-link map for this page: [/docs/microfrontends/configuration.graph.md](/docs/microfrontends/configuration.graph.md)
+Full cross-link map for this page: [/docs/microfrontends/configuration.graph.md](/docs/microfrontends/configuration.graph.md?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fconfiguration&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Schema

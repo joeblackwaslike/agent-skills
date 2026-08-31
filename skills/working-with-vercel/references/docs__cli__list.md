@@ -3,7 +3,7 @@ title: vercel list
 product: vercel
 url: /docs/cli/list
 canonical_url: "https://vercel.com/docs/cli/list"
-last_updated: 2026-05-28
+last_updated: 2026-08-11
 type: reference
 prerequisites:
   - /docs/cli
@@ -13,8 +13,8 @@ related:
 summary: Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/list.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "d6cccc11001cca3cf7e0272bd8671663017d9f825514a42bf4f40d59f2dee09c"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "901a4df18c39c6e4382992b75e9b2ce1d0195f88186761e95196588a6c8cf6b2"
 ---
 
 # vercel list
@@ -27,13 +27,13 @@ The `vercel list` command, which can be shortened to `vercel ls`, provides a lis
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
-- [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
-- [vercel api](https://vercel.com/docs/cli/api?from=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [Deploying from CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
-- [vercel activity](https://vercel.com/docs/cli/activity?from=related) — View activity events for your Vercel project or team, filtered by type, date range, and project.
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Flist&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fcli%2Flist&source_site=vercel-docs&relationship=related) — Learn how to create and manage deployments on Vercel.
+- [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Flist&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related&source_path=%2Fdocs%2Fcli%2Flist&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
+- [vercel activity](https://vercel.com/docs/cli/activity?from=related&source_path=%2Fdocs%2Fcli%2Flist&source_site=vercel-docs&relationship=related) — View activity events for your Vercel project or team, filtered by type, date range, and project.
 
-Full cross-link map for this page: [/docs/cli/list.graph.md](/docs/cli/list.graph.md)
+Full cross-link map for this page: [/docs/cli/list.graph.md](/docs/cli/list.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Flist&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Usage

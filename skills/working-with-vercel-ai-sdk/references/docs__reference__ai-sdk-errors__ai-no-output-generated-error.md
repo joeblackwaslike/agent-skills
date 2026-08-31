@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-output-generated-error.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "e7ff83a70b00bfc2d6355e7d03b67ae7e5934fab79ccb14dfa938325b07fba64"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "af7d0cca9196b4a3adc0af4e2004f40021c615cf49f33b9afb2352acff67b82f"
 ---
 
 # AI_NoOutputGeneratedError
@@ -61,6 +61,7 @@ if (NoOutputGeneratedError.isInstance(error)) {
 - [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
 - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
+- [AI_StreamProviderError](/docs/reference/ai-sdk-errors/ai-stream-provider-error)
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
 - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
 - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)

@@ -3,7 +3,7 @@ title: Deployment integration actions
 product: vercel
 url: /docs/integrations/create-integration/deployment-integration-action
 canonical_url: "https://vercel.com/docs/integrations/create-integration/deployment-integration-action"
-last_updated: 2025-07-18
+last_updated: 2026-08-11
 type: how-to
 prerequisites:
   - /docs/integrations/create-integration
@@ -17,8 +17,8 @@ related:
 summary: These actions allow integration providers to set up automated tasks with Vercel deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/deployment-integration-action.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "43ad511d150bafda107307b0931759928bc35a010757309009467e38fa40dbbe"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "ce9849f9fda3ffbffc1919d1d1ec46268b2bd5339a10e1ff3828575367e51f42"
 ---
 
 # Deployment integration actions
@@ -31,14 +31,15 @@ With deployment integration actions, integration providers can enable [integrati
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel?from=related) — Learn how to deploy based on tags/releases on Vercel.
-- [Actions](https://vercel.com/docs/platforms/platform-elements/actions?from=related) — Server actions you can install to run common platform tasks against the Vercel API.
-- [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
-- [Webhooks API Reference](https://vercel.com/docs/webhooks/webhooks-api?from=related) — Vercel Integrations allow you to subscribe to certain trigger-based events through webhooks. Learn about the supported w
-- [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments?from=related) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
-- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related) — Learn how you can add a product to your Vercel project through a native integration.
+- [Deployment integration actions for Marketplace integrations](https://vercel.com/changelog/deployment-integration-actions-for-marketplace-integrations?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fdeployment-integration-action&source_site=vercel-docs&relationship=related)
+- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fdeployment-integration-action&source_site=vercel-docs&relationship=related) — Learn how to deploy based on tags/releases on Vercel.
+- [Actions](https://vercel.com/docs/platforms/platform-elements/actions?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fdeployment-integration-action&source_site=vercel-docs&relationship=related) — Server actions you can install to run common platform tasks against the Vercel API.
+- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fdeployment-integration-action&source_site=vercel-docs&relationship=related) — Learn how to create and manage deployments on Vercel.
+- [Webhooks API Reference](https://vercel.com/docs/webhooks/webhooks-api?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fdeployment-integration-action&source_site=vercel-docs&relationship=related) — Vercel Integrations allow you to subscribe to certain trigger-based events through webhooks. Learn about the supported w
+- [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fdeployment-integration-action&source_site=vercel-docs&relationship=related) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
+- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fdeployment-integration-action&source_site=vercel-docs&relationship=related) — Learn how you can add a product to your Vercel project through a native integration.
 
-Full cross-link map for this page: [/docs/integrations/create-integration/deployment-integration-action.graph.md](/docs/integrations/create-integration/deployment-integration-action.graph.md)
+Full cross-link map for this page: [/docs/integrations/create-integration/deployment-integration-action.graph.md](/docs/integrations/create-integration/deployment-integration-action.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fdeployment-integration-action&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 For example, you can use deployment integration actions with the checks API to [create integrations](/docs/checks#build-your-checks-integration) that provide testing functionality to deployments.

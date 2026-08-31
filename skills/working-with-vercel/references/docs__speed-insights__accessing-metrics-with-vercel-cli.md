@@ -14,8 +14,8 @@ related:
 summary: Use the Vercel CLI to query Speed Insights metrics from your terminal.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "c3db2087ba9cc6f45780e729c2aa69f896d7ff5f01d30d554bb409be3914da1d"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "7d9a3b5e618dd084d45d58a5980cb9188ca11bafa56755f8dc1a16978d66b686"
 ---
 
 # Accessing Metrics with Vercel CLI
@@ -28,14 +28,15 @@ Use `vercel metrics` to query Speed Insights data from your terminal. You can re
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Using with CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
-- [Improve Cumulative Layout Shift \\(CLS\\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel?from=related) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
-- [Using Speed Insights](https://vercel.com/docs/speed-insights/using-speed-insights?from=related) — Learn how to use Speed Insights to analyze your application's performance data.
-- [Getting Started](https://vercel.com/docs/speed-insights/quickstart?from=related) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
-- [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage?from=related) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
-- [Manage and Optimize Usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Query Speed Insights from the Vercel CLI](https://vercel.com/changelog/query-speed-insights-from-the-vercel-cli?from=related&source_path=%2Fdocs%2Fspeed-insights%2Faccessing-metrics-with-vercel-cli&source_site=vercel-docs&relationship=related)
+- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fspeed-insights%2Faccessing-metrics-with-vercel-cli&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
+- [How Core Web Vitals affect SEO](https://vercel.com/blog/how-core-web-vitals-affect-seo?from=related&source_path=%2Fdocs%2Fspeed-insights%2Faccessing-metrics-with-vercel-cli&source_site=vercel-docs&relationship=related)
+- [Using Speed Insights](https://vercel.com/docs/speed-insights/using-speed-insights?from=related&source_path=%2Fdocs%2Fspeed-insights%2Faccessing-metrics-with-vercel-cli&source_site=vercel-docs&relationship=related) — Learn how to use Speed Insights to analyze your application's performance data.
+- [Getting started with Speed Insights](https://vercel.com/docs/speed-insights/quickstart?from=related&source_path=%2Fdocs%2Fspeed-insights%2Faccessing-metrics-with-vercel-cli&source_site=vercel-docs&relationship=related) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
+- [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage?from=related&source_path=%2Fdocs%2Fspeed-insights%2Faccessing-metrics-with-vercel-cli&source_site=vercel-docs&relationship=related) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
+- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fspeed-insights%2Faccessing-metrics-with-vercel-cli&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 
-Full cross-link map for this page: [/docs/speed-insights/accessing-metrics-with-vercel-cli.graph.md](/docs/speed-insights/accessing-metrics-with-vercel-cli.graph.md)
+Full cross-link map for this page: [/docs/speed-insights/accessing-metrics-with-vercel-cli.graph.md](/docs/speed-insights/accessing-metrics-with-vercel-cli.graph.md?from=related&source_path=%2Fdocs%2Fspeed-insights%2Faccessing-metrics-with-vercel-cli&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Speed Insights metrics are available through `vercel metrics` without [Observability Plus](/docs/observability/observability-plus).

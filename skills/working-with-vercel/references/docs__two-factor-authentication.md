@@ -3,7 +3,7 @@ title: Two-factor Authentication
 product: vercel
 url: /docs/two-factor-authentication
 canonical_url: "https://vercel.com/docs/two-factor-authentication"
-last_updated: 2026-06-16
+last_updated: 2026-08-11
 type: how-to
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn how to configure two-factor authentication for your Vercel account.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/two-factor-authentication.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "bba799beb90540e93fdd9801fde8c745e61d202662ddf8fbeb68a545d5046d96"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "1dc8128cc9bcdcee186d76d4744cf09a046c2b400a594049d765867ac51edc81"
 ---
 
 # Two-factor Authentication
@@ -29,14 +29,16 @@ methods available for 2FA on Vercel:
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Why am I unable to login or signup to the Vercel platform?](https://vercel.com/kb/guide/why-can-i-not-signup?from=related) — Information on what to do if you are experiencing issues logging in or signing up to the Vercel platform.
-- [Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel?from=related) — Learn how to Sign in with Vercel
-- [Manage from Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related) — Learn how to manage Sign in with Vercel from the Dashboard
-- [Access Control](https://vercel.com/docs/security/access-control?from=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
-- [SAML SSO](https://vercel.com/docs/saml?from=related) — Learn how to configure SAML SSO for your organization on Vercel.
-- [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication?from=related) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
+- [Two-Factor Authentication (2FA) is now available](https://vercel.com/changelog/2fa-is-now-available?from=related&source_path=%2Fdocs%2Ftwo-factor-authentication&source_site=vercel-docs&relationship=related)
+- [Two-factor authentication (2FA) team enforcement](https://vercel.com/changelog/2fa-team-enforcement?from=related&source_path=%2Fdocs%2Ftwo-factor-authentication&source_site=vercel-docs&relationship=related)
+- [Why am I unable to login or signup to the Vercel platform?](https://vercel.com/kb/guide/why-can-i-not-signup?from=related&source_path=%2Fdocs%2Ftwo-factor-authentication&source_site=vercel-docs&relationship=related) — Information on what to do if you are experiencing issues logging in or signing up to the Vercel platform.
+- [Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel?from=related&source_path=%2Fdocs%2Ftwo-factor-authentication&source_site=vercel-docs&relationship=related) — Learn how to Sign in with Vercel
+- [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related&source_path=%2Fdocs%2Ftwo-factor-authentication&source_site=vercel-docs&relationship=related) — Learn how to manage Sign in with Vercel from the Dashboard
+- [SAML Single Sign-On](https://vercel.com/docs/saml?from=related&source_path=%2Fdocs%2Ftwo-factor-authentication&source_site=vercel-docs&relationship=related) — Learn how to configure SAML SSO for your organization on Vercel.
+- [Access Control](https://vercel.com/docs/security/access-control?from=related&source_path=%2Fdocs%2Ftwo-factor-authentication&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+- [Authentication](https://vercel.com/docs/rest-api/authentication?from=related&source_path=%2Fdocs%2Ftwo-factor-authentication&source_site=vercel-docs&relationship=related) — Endpoints in the authentication group of the Vercel REST API Reference.
 
-Full cross-link map for this page: [/docs/two-factor-authentication.graph.md](/docs/two-factor-authentication.graph.md)
+Full cross-link map for this page: [/docs/two-factor-authentication.graph.md](/docs/two-factor-authentication.graph.md?from=related&source_path=%2Fdocs%2Ftwo-factor-authentication&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 - **Authenticator App**: Use an authenticator app like Google Authenticator to generate a time-based one-time password (TOTP).

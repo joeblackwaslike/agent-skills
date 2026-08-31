@@ -3,7 +3,7 @@ title: vercel blob
 product: vercel
 url: /docs/cli/blob
 canonical_url: "https://vercel.com/docs/cli/blob"
-last_updated: 2026-07-15
+last_updated: 2026-08-13
 type: reference
 prerequisites:
   - /docs/cli
@@ -16,8 +16,8 @@ related:
 summary: Learn how to interact with Vercel Blob storage using the vercel blob CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/blob.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "770b71dd1fe426b82697c46df26fc8edd9354ed5af316d293d8582da8f0ddf86"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "a5ebf8ca3d43fe86c7c3dd007510f9883bbdc49fad9852cbb08cbf30da19354b"
 ---
 
 # vercel blob
@@ -30,14 +30,16 @@ The `vercel blob` command is used to interact with [Vercel Blob](/docs/vercel-bl
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
-- [Manage Vercel Blob Storage](https://vercel.com/docs/vercel-blob/manage-blob-storage?from=related) — Create blob stores, upload files, list contents, and manage storage using the CLI.
-- [Examples](https://vercel.com/docs/vercel-blob/examples?from=related) — Examples on how to use Vercel Blob in your applications
-- [Overview](https://vercel.com/docs/storage?from=related) — Store large files and global configuration with Vercel's storage products.
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
-- [Create a Blob store](https://vercel.com/docs/rest-api/storage/create-a-blob-store?from=related)
+- [Vercel Blob CLI is now available](https://vercel.com/changelog/vercel-blob-cli-is-now-available?from=related&source_path=%2Fdocs%2Fcli%2Fblob&source_site=vercel-docs&relationship=related)
+- [Vercel Blob now available in all Vercel Regions](https://vercel.com/changelog/vercel-blob-now-available-in-all-vercel-regions?from=related&source_path=%2Fdocs%2Fcli%2Fblob&source_site=vercel-docs&relationship=related)
+- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related&source_path=%2Fdocs%2Fcli%2Fblob&source_site=vercel-docs&relationship=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
+- [Managing Vercel Blob storage from the CLI](https://vercel.com/docs/vercel-blob/manage-blob-storage?from=related&source_path=%2Fdocs%2Fcli%2Fblob&source_site=vercel-docs&relationship=related) — Create blob stores, upload files, list contents, and manage storage using the CLI.
+- [Vercel Blob examples](https://vercel.com/docs/vercel-blob/examples?from=related&source_path=%2Fdocs%2Fcli%2Fblob&source_site=vercel-docs&relationship=related) — Examples on how to use Vercel Blob in your applications
+- [Create a Blob store](https://vercel.com/docs/rest-api/storage/create-a-blob-store?from=related&source_path=%2Fdocs%2Fcli%2Fblob&source_site=vercel-docs&relationship=related) — POST /storage/stores/blob — Create a Blob store
+- [Vercel Storage overview](https://vercel.com/docs/storage?from=related&source_path=%2Fdocs%2Fcli%2Fblob&source_site=vercel-docs&relationship=related) — Store large files and global configuration with Vercel's storage products.
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fblob&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 
-Full cross-link map for this page: [/docs/cli/blob.graph.md](/docs/cli/blob.graph.md)
+Full cross-link map for this page: [/docs/cli/blob.graph.md](/docs/cli/blob.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fblob&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 For more information about Vercel Blob, see the [Vercel Blob documentation](/docs/vercel-blob) and [Vercel Blob SDK reference](/docs/vercel-blob/using-blob-sdk).

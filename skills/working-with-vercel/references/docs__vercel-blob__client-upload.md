@@ -3,18 +3,19 @@ title: Client Uploads with Vercel Blob
 product: vercel
 url: /docs/vercel-blob/client-upload
 canonical_url: "https://vercel.com/docs/vercel-blob/client-upload"
-last_updated: 2026-07-30
+last_updated: 2026-08-26
 type: tutorial
 prerequisites:
   - /docs/vercel-blob
 related:
+  - /docs/vercel-blob/vercel-signed-urls
   - /docs/vercel-blob/using-blob-sdk
   - /docs/environment-variables/system-environment-variables
 summary: Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/client-upload.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "737dd2c9b2c24060783e6e032b7d0b10790ad8caa2cd6cfa8fe8148378a1f73d"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "51cf7dd6fac29827222600cf8a11265c522e3ec16c40353c27bbdb5b7135b00e"
 ---
 
 # Client Uploads with Vercel Blob
@@ -27,18 +28,18 @@ sha256: "737dd2c9b2c24060783e6e032b7d0b10790ad8caa2cd6cfa8fe8148378a1f73d"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Videos](https://nextjs.org/docs/app/guides/videos?from=related) — Recommendations and best practices for optimizing videos in your Next.js application.
-- [How to process user-uploaded files with Vercel Sandbox and Vercel Blob](https://vercel.com/kb/guide/user-uploaded-files-vercel-sandbox-and-blob?from=related) — Learn how to upload files to Vercel Blob, process them safely with FFmpeg in an isolated Vercel Sandbox, and store the r
-- [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs?from=related) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
-- [Build Imgur-style image hosting with Nuxt and Vercel Blob](https://vercel.com/kb/guide/vercel-blob-nuxt-imgur-clone?from=related) — Learn how to build an Imgur-style paste-to-share image host using Nuxt and Vercel Blob, with direct-to-storage client up
-- [Vercel Blob vs Netlify Blobs](https://vercel.com/kb/guide/vercel-blob-vs-netlify-blobs?from=related) — Compare Vercel Blob and Netlify Blobs on storage model, public URLs, delivery, limits, and pricing to choose the right o
-- [How do I bypass the 4.5MB body size limit of Vercel Serverless Functions?](https://vercel.com/kb/guide/how-to-bypass-vercel-body-size-limit-serverless-functions?from=related) — Learn how to deal with the body size limit of Serverless Functions on Vercel.
-- [Private Storage](https://vercel.com/docs/vercel-blob/private-storage?from=related) — Learn how to use private Vercel Blob storage to serve files with authentication
-- [Get Started with BotID](https://vercel.com/docs/botid/get-started?from=related) — Step-by-step guide to setting up BotID protection in your Vercel project
-- [Start a blob upload](https://vercel.com/docs/rest-api/vcr/start-a-blob-upload?from=related)
-- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
+- [How to use and optimize videos](https://nextjs.org/docs/app/guides/videos?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=related) — Recommendations and best practices for optimizing videos in your Next.js application.
+- [How to process user-uploaded files with Vercel Sandbox and Vercel Blob](https://vercel.com/kb/guide/user-uploaded-files-vercel-sandbox-and-blob?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=related) — Learn how to upload files to Vercel Blob, process them safely with FFmpeg in an isolated Vercel Sandbox, and store the r
+- [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=related) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
+- [Build Imgur-style image hosting with Nuxt and Vercel Blob](https://vercel.com/kb/guide/vercel-blob-nuxt-imgur-clone?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=related) — Learn how to build an Imgur-style paste-to-share image host using Nuxt and Vercel Blob, with direct-to-storage client up
+- [Vercel Blob vs Netlify Blobs](https://vercel.com/kb/guide/vercel-blob-vs-netlify-blobs?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=related) — Compare Vercel Blob and Netlify Blobs on storage model, public URLs, delivery, limits, and pricing to choose the right o
+- [How do I bypass the 4.5MB body size limit of Vercel Serverless Functions?](https://vercel.com/kb/guide/how-to-bypass-vercel-body-size-limit-serverless-functions?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=related) — Learn how to deal with the body size limit of Serverless Functions on Vercel.
+- [Private Storage](https://vercel.com/docs/vercel-blob/private-storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=related) — Learn how to use private Vercel Blob storage to serve files with authentication
+- [Get Started with BotID](https://vercel.com/docs/botid/get-started?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=related) — Step-by-step guide to setting up BotID protection in your Vercel project
+- [Using Global Config with Split](https://vercel.com/docs/global-config/global-config-integrations/split-global-config?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=related) — Learn how to use Global Config with Vercel's Split integration.
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
-Full cross-link map for this page: [/docs/vercel-blob/client-upload.graph.md](/docs/vercel-blob/client-upload.graph.md)
+Full cross-link map for this page: [/docs/vercel-blob/client-upload.graph.md](/docs/vercel-blob/client-upload.graph.md?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 In this guide, you'll learn how to do the following:
@@ -88,7 +89,7 @@ Vercel Blob works with any frontend framework. First, install the package:
   - `BLOB_STORE_ID` — identifies your Blob store
   - `VERCEL_OIDC_TOKEN` — a short-lived token automatically rotated by Vercel; used with `BLOB_STORE_ID` for server-side access
   A long-lived static token is also added as a fallback and is required for generating client upload tokens:
-  - `BLOB_READ_WRITE_TOKEN` — a long-lived static read-write token; required by `handleUpload` and `handleUploadPresigned` to generate client tokens for browser uploads, and for code that runs outside Vercel
+  - `BLOB_READ_WRITE_TOKEN` — a long-lived static read-write token; required by `handleUpload` to generate client tokens for browser uploads, and for code that runs outside Vercel. Not needed by [`handleUploadPresigned`](/docs/vercel-blob/vercel-signed-urls#handleuploadpresigned), which works with OIDC and verifies callbacks with `BLOB_WEBHOOK_PUBLIC_KEY`
   To use these Environment Variables locally, we recommend pulling them with the Vercel CLI:
   ```bash
   vercel env pull

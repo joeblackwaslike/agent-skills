@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/google-vertex-ai.md"
-fetched_at: "2026-08-24T04:44:18.863Z"
-sha256: "ff5ae43089c7261ebbf0487a17020a57d6374902002e64276f24b47c3c0f5d53"
+fetched_at: "2026-08-31T10:37:20.620Z"
+sha256: "d8a8c30e6919d6159446387f6f0512eb035c8f59fa0d299daec56fdaa37657ed"
 ---
 
 > ## Documentation Index
@@ -201,7 +201,9 @@ If a region value isn't shaped like a region or location name, Claude Code treat
 * `VERTEX_REGION_CLAUDE_*`: Claude Code falls back to `CLOUD_ML_REGION`.
 * `CLOUD_ML_REGION`: Claude Code falls back to `us-east5`.
 
-[Prompt caching](/docs/en/prompt-caching) is enabled automatically. To disable it, set `DISABLE_PROMPT_CACHING=1`. To request a 1-hour cache TTL instead of the 5-minute default, set `ENABLE_PROMPT_CACHING_1H=1`; cache writes with a 1-hour TTL are billed at a higher rate. For heightened rate limits, contact Google Cloud support. When using Google Cloud's Agent Platform, the `/logout` command is unavailable since authentication is handled through Google Cloud credentials.
+[Prompt caching](/docs/en/prompt-caching) is enabled automatically. To disable it, set `DISABLE_PROMPT_CACHING=1`. To request a 1-hour cache TTL instead of the 5-minute default, set `ENABLE_PROMPT_CACHING_1H=1`; cache writes with a 1-hour TTL are billed at a higher rate. To set different TTLs for your main conversation and for the requests Claude Code makes outside it, [choose the TTL yourself](/docs/en/prompt-caching#choose-the-ttl-yourself).
+
+To raise your rate limits, contact Google Cloud support. When using Google Cloud's Agent Platform, the `/logout` command is unavailable since authentication is handled through Google Cloud credentials.
 
 Claude Code decides between [MCP tool search](/docs/en/mcp#scale-with-mcp-tool-search) and upfront loading by model generation:
 

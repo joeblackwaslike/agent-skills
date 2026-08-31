@@ -1,8 +1,8 @@
 ---
 title: "Available templates index"
 source: "https://containers.dev/templates"
-fetched_at: "2026-08-24T04:42:55.961Z"
-sha256: "9b46b8d3ada9d30f0b268936564d3da75dae20b0dc3f77608c0606cc991b03a3"
+fetched_at: "2026-08-31T10:36:13.334Z"
+sha256: "8581e33f2066810accd05c9f5a894b8872b00cf303b68aaca4c50a22e1195dca"
 ---
 
 # Available templates index
@@ -138,8 +138,8 @@ Templates
 | Python 3 & PostgreSQL | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/postgres:3.0.0` | `3.0.0` |
 | Powershell | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/powershell:1.2.2` | `1.2.2` |
 | Python 3 | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/python:6.0.0` | `6.0.0` |
-| Ruby | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/ruby:6.0.1` | `6.0.1` |
-| Ruby on Rails & Postgres | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/ruby-rails-postgres:6.0.1` | `6.0.1` |
+| Ruby | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/ruby:6.0.2` | `6.0.2` |
+| Ruby on Rails & Postgres | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/ruby-rails-postgres:6.0.2` | `6.0.2` |
 | Rust | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/rust:5.0.0` | `5.0.0` |
 | Rust & PostgreSQL | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/rust-postgres:5.0.0` | `5.0.0` |
 | Node.js & TypeScript | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/typescript-node:6.0.0` | `6.0.0` |
@@ -253,10 +253,10 @@ Templates
 | SAP BTP CAP Dev Stack | Navin Krishnan | `ghcr.io/navinkrishnan/devcontainer-templates-btp/btp-cap-dev-stack:1.0.2` | `1.0.2` |
 | EdgeActions Development Container | Azure EdgeActions Developer Experiences Team | `ghcr.io/Azure/edgeactions-devcontainers/edgeactions:0.0.5` | `0.0.5` |
 | Nevermore Roblox | EstebenR (Papabos) | `ghcr.io/estebenr/devcontainers/nevermore:1.1.0` | `1.1.0` |
-| C++ | Philips Software | `ghcr.io/philips-software/amp-devcontainer/cpp:8.0.1` | `8.0.1` |
-| Embedded C++ | Philips Software | `ghcr.io/philips-software/amp-devcontainer/embedded-cpp:8.0.1` | `8.0.1` |
-| Embedded Rust | Philips Software | `ghcr.io/philips-software/amp-devcontainer/embedded-rust:8.0.1` | `8.0.1` |
-| Rust | Philips Software | `ghcr.io/philips-software/amp-devcontainer/rust:8.0.1` | `8.0.1` |
+| C++ | Philips Software | `ghcr.io/philips-software/amp-devcontainer/cpp:8.1.0` | `8.1.0` |
+| Embedded C++ | Philips Software | `ghcr.io/philips-software/amp-devcontainer/embedded-cpp:8.1.0` | `8.1.0` |
+| Embedded Rust | Philips Software | `ghcr.io/philips-software/amp-devcontainer/embedded-rust:8.1.0` | `8.1.0` |
+| Rust | Philips Software | `ghcr.io/philips-software/amp-devcontainer/rust:8.1.0` | `8.1.0` |
 | Pretalx | Tjark | `ghcr.io/tjarbo/pretalx-devcontainer/pretalx:0.0.1` | `0.0.1` |
 | Pretalx Plugin | Tjark | `ghcr.io/tjarbo/pretalx-devcontainer/pretalx-plugin:0.0.1` | `0.0.1` |
 | Python | Metin Senturk | `ghcr.io/metinsenturk/devcontainer-templates/python:1.0.6` | `1.0.6` |
@@ -279,7 +279,7 @@ Templates
 | Terraform | nozaq | `ghcr.io/bare-devcontainer/templates/terraform:1.2.8` | `1.2.8` |
 | Python (uv) | nozaq | `ghcr.io/bare-devcontainer/templates/uv:1.0.8` | `1.0.8` |
 | Zig | nozaq | `ghcr.io/bare-devcontainer/templates/zig:1.2.8` | `1.2.8` |
-| mise-devcontainer-ubuntu | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/ubuntu:2026.8.23-7.9.36` | `2026.8.23-7.9.36` |
+| mise-devcontainer-ubuntu | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/ubuntu:2026.8.30-19.19.13` | `2026.8.30-19.19.13` |
 
 
             

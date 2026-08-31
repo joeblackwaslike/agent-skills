@@ -3,7 +3,7 @@ title: Build Output API
 product: vercel
 url: /docs/build-output-api
 canonical_url: "https://vercel.com/docs/build-output-api"
-last_updated: 2026-07-27
+last_updated: 2026-08-11
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: The Build Output API is a file-system-based specification for a directory structure that can produce a Vercel deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "6324f23201b7a07ec949ac404c3a5389f08caf961b0195b2da8fa45967021170"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "c4695d23c79565cd793c9ea3cf884f68ece96f41ea91a3ba683e585ee65f2afe"
 ---
 
 # Build Output API
@@ -30,13 +30,16 @@ The Build Output API is a file-system-based specification for a directory struct
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Build System](https://vercel.com/docs/fundamentals/builds?from=related) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
-- [Supported Frameworks](https://vercel.com/docs/frameworks?from=related) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
-- [vercel build](https://vercel.com/docs/cli/build?from=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
-- [Configuring a Build](https://vercel.com/docs/builds/configure-a-build?from=related) — Vercel automatically configures the build settings for many front-end frameworks, but you can also customize the build a
-- [Builds](https://vercel.com/docs/builds?from=related) — Understand how the build step works when creating a Vercel Deployment.
+- [How we made global routing faster with Bloom filters](https://vercel.com/blog/how-we-made-global-routing-faster-with-bloom-filters?from=related&source_path=%2Fdocs%2Fbuild-output-api&source_site=vercel-docs&relationship=related)
+- [Announcing the Build Output API](https://vercel.com/blog/build-output-api?from=related&source_path=%2Fdocs%2Fbuild-output-api&source_site=vercel-docs&relationship=related)
+- [New build and deploy capabilities in Vercel CLI](https://vercel.com/changelog/new-build-and-deploy-capabilities-in-vercel-cli?from=related&source_path=%2Fdocs%2Fbuild-output-api&source_site=vercel-docs&relationship=related)
+- [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds?from=related&source_path=%2Fdocs%2Fbuild-output-api&source_site=vercel-docs&relationship=related) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
+- [Frameworks on Vercel](https://vercel.com/docs/frameworks?from=related&source_path=%2Fdocs%2Fbuild-output-api&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
+- [vercel build](https://vercel.com/docs/cli/build?from=related&source_path=%2Fdocs%2Fbuild-output-api&source_site=vercel-docs&relationship=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
+- [Configuring a Build](https://vercel.com/docs/builds/configure-a-build?from=related&source_path=%2Fdocs%2Fbuild-output-api&source_site=vercel-docs&relationship=related) — Vercel automatically configures the build settings for many front-end frameworks, but you can also customize the build a
+- [Vercel fundamental concepts](https://vercel.com/docs/fundamentals?from=related&source_path=%2Fdocs%2Fbuild-output-api&source_site=vercel-docs&relationship=related) — Learn about the core concepts of Vercel
 
-Full cross-link map for this page: [/docs/build-output-api.graph.md](/docs/build-output-api.graph.md)
+Full cross-link map for this page: [/docs/build-output-api.graph.md](/docs/build-output-api.graph.md?from=related&source_path=%2Fdocs%2Fbuild-output-api&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Framework authors can take advantage of [framework-defined infrastructure](/blog/framework-defined-infrastructure) by implementing this directory structure as the output of their build command. This allows the framework to define and use all of the Vercel platform features.

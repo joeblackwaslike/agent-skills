@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/glossary.md"
-fetched_at: "2026-08-24T04:44:18.863Z"
-sha256: "8fc70bde63878b28e2ec198e653b0a50c57dd637c8aed382c519d7eac9e9f315"
+fetched_at: "2026-08-31T10:37:20.620Z"
+sha256: "2c4238cf030559377af7c2e612f37bceb8bce2b6a32d302e81286173cf8137ca"
 ---
 
 > ## Documentation Index
@@ -200,7 +200,7 @@ Learn more: [Run Claude Code programmatically](/docs/en/headless)
 
 ### Output style
 
-A configuration that modifies Claude's system prompt to change response behavior, tone, or format. Unlike [CLAUDE.md](#claude-md), which Claude Code delivers as a user message after the system prompt, an output style changes the system prompt itself. Custom styles leave out Claude Code's built-in software engineering instructions unless you set `keep-coding-instructions` to `true`, and the built-in Default, Proactive, Concise, Explanatory, and Learning styles keep them.
+A configuration that modifies Claude's system prompt to change response behavior, tone, or format. Unlike [CLAUDE.md](#claude-md), which Claude Code delivers as a user message after the system prompt, an output style changes the system prompt itself.
 
 Learn more: [Output styles](/docs/en/output-styles)
 
@@ -288,7 +288,7 @@ Learn more: [Extend Claude with skills](/docs/en/skills)
 
 ### Subagent
 
-A specialized AI assistant that runs in its own context window with a custom system prompt, specific tool access, and independent permissions. It works on a delegated task and returns a summary to the main conversation. Use subagents to keep large explorations out of your primary context or to run parallel research. Different from [agent teams](#agent-teams), where each agent is a full independent session you can talk to directly.
+A specialized AI assistant that runs in its own context window with a custom system prompt, specific tool access, and independent permissions. It works on a delegated task and returns a summary to the main conversation. Use subagents to keep large explorations out of your primary context or to run parallel research. A subagent stays inside the session that spawned it. To pass findings between separate sessions you run yourself, use [cross-session messaging](/docs/en/cross-session-messaging).
 
 Built-in subagents include Explore, Plan, and general-purpose.
 

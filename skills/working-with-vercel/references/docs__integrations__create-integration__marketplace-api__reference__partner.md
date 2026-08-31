@@ -1,10 +1,10 @@
 ---
-title: Marketplace Partner API
+title: Marketplace Partner API Reference
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner"
-last_updated: 2026-08-24
-type: conceptual
+last_updated: 2026-08-31
+type: reference
 prerequisites:
   []
 related:
@@ -13,11 +13,11 @@ related:
   - /docs/integrations/create-integration/marketplace-api/reference/partner/update-installation
   - /docs/integrations/create-integration/marketplace-api/reference/partner/delete-installation
   - /docs/integrations/create-integration/marketplace-api/reference/partner/provision-resource
-summary: Learn about marketplace partner api on Vercel.
+summary: Learn how to implement Partner API endpoints for your Vercel integration
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "6680bd94137762d0ca19bf3fe2bb56516fba30108c191e18e920eb1ac980ccc1"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "9651480e420a60e467328dccf544edcc116b7b65140333d8f926a041234c763f"
 ---
 
 # Partner API Reference
@@ -56,6 +56,15 @@ User Auth OIDC token claims schema:
     "account_id": {
       "type": "string"
     },
+    "parent_account_id": {
+      "type": "string",
+      "description": "For platform org-child installations (integration opt-in): the opaque account id of the parent (root) team. Identical to the `account_id` claim on the parent team’s own installation tokens."
+    },
+    "parent_installation_id": {
+      "type": "string",
+      "nullable": true,
+      "description": "For platform org-child installations (integration opt-in): the parent team’s installation of this integration, or null when the parent has none."
+    },
     "sub": {
       "type": "string",
       "description": "Denotes the User who is making the change (matches `/^account:[0-9a-fA-F]+:user:[0-9a-fA-F]+$/`)"
@@ -77,7 +86,11 @@ User Auth OIDC token claims schema:
     },
     "user_email": {
       "type": "string",
-      "description": "The user's verified email address. This is included for all Marketplace integrations by default."
+      "description": "The user's email address. This is included for all Marketplace integrations by default."
+    },
+    "user_email_verified": {
+      "type": "boolean",
+      "description": "Whether the user's email address has been verified."
     },
     "user_name": {
       "type": "string",
@@ -140,6 +153,15 @@ System Auth OIDC token claims schema:
     },
     "account_id": {
       "type": "string"
+    },
+    "parent_account_id": {
+      "type": "string",
+      "description": "For platform org-child installations (integration opt-in): the opaque account id of the parent (root) team. Identical to the `account_id` claim on the parent team’s own installation tokens."
+    },
+    "parent_installation_id": {
+      "type": "string",
+      "nullable": true,
+      "description": "For platform org-child installations (integration opt-in): the parent team’s installation of this integration, or null when the parent has none."
     }
   },
   "required": [

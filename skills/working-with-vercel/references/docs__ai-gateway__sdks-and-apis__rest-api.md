@@ -3,7 +3,7 @@ title: REST API Reference
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/rest-api
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/rest-api"
-last_updated: 2026-07-28
+last_updated: 2026-08-27
 type: reference
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis
@@ -17,8 +17,8 @@ related:
 summary: "Reference for AI Gateway REST endpoints: models, usage, generations, and reporting."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/rest-api.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "cc3dfd4e8fd0a4c9a4afe212b0d45aac4a1bd410c11cc9a80073e6f67e692dcf"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "68e741780e22b47fb2abce586210942dc4c8a296c35d73cd5abf18dde81cf315"
 ---
 
 # REST API Reference
@@ -31,16 +31,16 @@ For sending inference requests, the [AI SDK](/docs/ai-gateway/sdks-and-apis/ai-s
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Black Forest Labs](https://ai-sdk.dev/providers/ai-sdk-providers/black-forest-labs?from=related)
-- [List Usage Events](https://v0.app/docs/api/v2/reference/usage/list-usage-events?from=related) — Lists individual credit usage events. Each event includes the credits charged and, when available, associated token coun
-- [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation?from=related)
-- [Usage & Billing](https://vercel.com/docs/ai-gateway/observability-and-spend/usage?from=related) — Monitor your AI Gateway credit balance, usage, and generation details.
-- [Models & Providers](https://vercel.com/docs/ai-gateway/models-and-providers?from=related) — Work with models and providers in AI Gateway: provider routing and fallbacks, filtering, timeouts, caching, service tier
-- [Service Tiers](https://vercel.com/docs/ai-gateway/models-and-providers/service-tiers?from=related) — Control processing priority and cost for OpenAI, Google AI Studio, and Google Vertex AI models using service tiers throu
-- [Counts page views](https://vercel.com/docs/rest-api/web-analytics/counts-page-views?from=related)
-- [Filtering, Ordering & Sorting](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering?from=related) — Control which providers handle your requests, in what order, and how they are ranked using order, only, and sort options
+- [AI Gateway production index](https://vercel.com/blog/ai-gateway-production-index?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=related)
+- [DeepSeek enters the fight for token volume, Anthropic continues to dominate spend](https://vercel.com/blog/ai-gateway-production-index-june-2026?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=related)
+- [Amazon Bedrock](https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=related)
+- [AI Gateway Usage & Billing](https://vercel.com/docs/ai-gateway/observability-and-spend/usage?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=related) — Monitor your AI Gateway credit balance, usage, and generation details.
+- [Aggregates page views](https://vercel.com/docs/rest-api/web-analytics/aggregates-page-views?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=related) — GET /v1/query/web-analytics/visits/aggregate — Counts pageviews on a project, within the requested date range. Results a
+- [Counts page views](https://vercel.com/docs/rest-api/web-analytics/counts-page-views?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=related) — GET /v1/query/web-analytics/visits/count — Counts the number of page views on a project \\(production only\\), since Web A
+- [Aggregates custom events](https://vercel.com/docs/rest-api/web-analytics/aggregates-custom-events?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=related) — GET /v1/query/web-analytics/events/aggregate — Counts custom events on a project, within the requested date range. Resul
+- [Get virtual model config](https://vercel.com/docs/rest-api/api-ai-gateway/get-virtual-model-config?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=related) — GET /v1/ai-gateway/virtual-model-configs — Get a virtual model config
 
-Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/rest-api.graph.md](/docs/ai-gateway/sdks-and-apis/rest-api.graph.md)
+Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/rest-api.graph.md](/docs/ai-gateway/sdks-and-apis/rest-api.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 AI Gateway exposes a REST API for looking up usage and generations, querying spend reports, and discovering models. This page is the canonical reference for those endpoints. The [AI SDK AI Gateway provider](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway#dynamic-model-discovery) also exposes TypeScript APIs for the same data, which you can use as an alternative to calling the REST endpoints directly.
@@ -408,6 +408,9 @@ print(generation)
   "data": {
     "id": "gen_01ARZ3NDEKTSV4RRFFQ69G5FAV",
     "total_cost": 0.00123,
+    "market_cost": 0.0011,
+    "surcharge_cost": 0.00013,
+    "gateway_cost": 0.00123,
     "upstream_inference_cost": 0,
     "usage": 0.00123,
     "created_at": "2026-05-22T00:00:00.000Z",
@@ -433,9 +436,12 @@ print(generation)
 #### Response fields
 
 - `id`: The generation ID
-- `total_cost`: Total cost in USD for this generation, including any surcharges (for example, Zero Data Retention or Custom Reporting writes)
-- `upstream_inference_cost`: Market price the provider would have charged for the inference. Non-zero only for BYOK generations, where `total_cost` does not include this amount; `0` otherwise.
-- `usage`: Same as `total_cost`. Kept for compatibility with the OpenRouter schema this endpoint mirrors.
+- `total_cost`: Total cost in USD for this generation debited from your gateway balance, including any surcharges (for example, Zero Data Retention or Custom Reporting writes). Does not include cost of BYOK requests.
+- `market_cost`: Cost of this generation at market list inference rates. Omitted when not recorded for the generation.
+- `surcharge_cost`: Total surcharges applied to this generation (for example, Zero Data Retention or Custom Reporting writes)
+- `gateway_cost`: Total amount debited from your AI Gateway balance for this generation. Same as `total_cost`.
+- `upstream_inference_cost`: Market list pirce cost for BYOK that the provider would have charged for the inference. Non-zero only for BYOK generations. `0` otherwise.
+- `usage`: Same as `total_cost`.
 - `created_at`: ISO 8601 timestamp when the generation was created
 - `model`: Model identifier used for this generation
 - `is_byok`: Whether this generation used Bring Your Own Key (BYOK) credentials

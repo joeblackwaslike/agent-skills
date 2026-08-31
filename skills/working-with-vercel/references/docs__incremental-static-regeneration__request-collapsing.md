@@ -3,7 +3,7 @@ title: Request Collapsing
 product: vercel
 url: /docs/incremental-static-regeneration/request-collapsing
 canonical_url: "https://vercel.com/docs/incremental-static-regeneration/request-collapsing"
-last_updated: 2026-03-05
+last_updated: 2026-08-11
 type: conceptual
 prerequisites:
   - /docs/incremental-static-regeneration
@@ -16,8 +16,8 @@ related:
 summary: "Learn how Vercel's CDN shields your origin during traffic surges for uncached routes."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/incremental-static-regeneration/request-collapsing.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "76875f89dac2232530891868720b5a5b5f15d727cf9e7560f73fd798eb905e7d"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "06e9619c3b8bd1513e08474c8ee7b03854be203fb00c6687dacb729c8554e0cb"
 ---
 
 # Request Collapsing
@@ -30,15 +30,19 @@ Vercel uses **request collapsing** to protect uncached routes during high traffi
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs?from=related) — Reduce ISR costs by analyzing Incremental Static Regeneration \\(ISR\\) behavior to find pages and tags that revalidate to
-- [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn?from=related) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
-- [Caching](https://vercel.com/docs/caching?from=related) — Learn how Vercel caches content across multiple layers to deliver fast responses and reduce load on your backend.
-- [How Vercel CDN works](https://vercel.com/docs/how-vercel-cdn-works?from=related) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
-- [Overview](https://vercel.com/docs/cdn?from=related) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
-- [Compression](https://vercel.com/docs/how-vercel-cdn-works/compression?from=related) — Vercel helps reduce data transfer and improve performance by supporting both Gzip and Brotli compression
-- [Request Lifecycle](https://vercel.com/docs/fundamentals/infrastructure?from=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
+- [Preventing the stampede: Request collapsing in the Vercel CDN ](https://vercel.com/blog/cdn-request-collapsing?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Frequest-collapsing&source_site=vercel-docs&relationship=related)
+- [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Frequest-collapsing&source_site=vercel-docs&relationship=related) — Reduce ISR costs by analyzing Incremental Static Regeneration \\(ISR\\) behavior to find pages and tags that revalidate to
+- [Request collapsing for ISR cache misses](https://vercel.com/changelog/request-collapsing-for-isr-cache-misses?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Frequest-collapsing&source_site=vercel-docs&relationship=related)
+- [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Frequest-collapsing&source_site=vercel-docs&relationship=related) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
+- [Life of a Vercel request: Navigating the Edge Network](https://vercel.com/blog/life-of-a-vercel-request-navigating-the-edge-network?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Frequest-collapsing&source_site=vercel-docs&relationship=related)
+- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Frequest-collapsing&source_site=vercel-docs&relationship=related)
+- [Caching](https://vercel.com/docs/caching?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Frequest-collapsing&source_site=vercel-docs&relationship=related) — Learn how Vercel caches content across multiple layers to deliver fast responses and reduce load on your backend.
+- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Frequest-collapsing&source_site=vercel-docs&relationship=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
+- [Cache Status and Reasons](https://vercel.com/docs/caching/cache-status?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Frequest-collapsing&source_site=vercel-docs&relationship=related) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
+- [Vercel fundamental concepts](https://vercel.com/docs/fundamentals?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Frequest-collapsing&source_site=vercel-docs&relationship=related) — Learn about the core concepts of Vercel
+- [Partial Prerendering \\(PPR\\)](https://vercel.com/docs/partial-prerendering?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Frequest-collapsing&source_site=vercel-docs&relationship=related) — Partial Prerendering serves a cached static shell instantly, then renders and streams the dynamic parts of a page per re
 
-Full cross-link map for this page: [/docs/incremental-static-regeneration/request-collapsing.graph.md](/docs/incremental-static-regeneration/request-collapsing.graph.md)
+Full cross-link map for this page: [/docs/incremental-static-regeneration/request-collapsing.graph.md](/docs/incremental-static-regeneration/request-collapsing.graph.md?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Frequest-collapsing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## How request collapsing works

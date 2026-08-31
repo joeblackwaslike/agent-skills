@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/openai.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "5233695501fb401056dc108df3704602479821991a3eaa5256ad0ffee49d5e2f"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "202842bd4aa169ec2c2f19165525ba63838f2e5d6c31849d33c21b676252bbbf"
 ---
 
 # OpenAI Provider
@@ -1957,40 +1957,60 @@ The metadata includes the following fields:
 ### Text Batches
 
 <Note type="warning">
-  Text batch APIs are experimental and may change in future releases.
+  Text batch support is experimental and the API may change in patch releases.
 </Note>
 
-The OpenAI provider supports the [Batch API](https://developers.openai.com/api/docs/guides/batch) for text generation.
+The OpenAI provider supports asynchronous text generation through the
+[Batch API](https://developers.openai.com/api/docs/guides/batch). Use the
+experimental text batch APIs to start a batch, poll its status, and stream its
+results:
 
 ```ts
 import { openai } from '@ai-sdk/openai';
 import {
-  experimental_startTextBatch as startTextBatch,
   experimental_getBatchResults as getBatchResults,
   experimental_getBatchStatus as getBatchStatus,
+  experimental_startTextBatch as startTextBatch,
 } from 'ai';
+import { setTimeout } from 'node:timers/promises';
 
 const model = openai('gpt-4.1-nano');
 
 const batch = await startTextBatch({
   model,
   requests: [
-    { id: 'france', prompt: 'What is the capital of France?' },
-    { id: 'germany', prompt: 'What is the capital of Germany?' },
+    { id: 'capital-france', prompt: 'What is the capital of France?' },
+    { id: 'capital-germany', prompt: 'What is the capital of Germany?' },
   ],
 });
 
-// Persist `batch` and check its status later, or poll for status updates.
-const { status } = await getBatchStatus({ model, batch });
+let status = batch.status;
+while (status === 'pending') {
+  await setTimeout(60_000);
+  ({ status } = await getBatchStatus({ model, batch }));
+}
 
-if (status !== 'pending') {
-  for await (const result of getBatchResults({ model, batch })) {
-    console.log(result);
+for await (const item of getBatchResults({ model, batch })) {
+  if (item.status === 'succeeded') {
+    console.log(item.id, item.text);
+  } else {
+    console.error(item.id, item.error);
   }
 }
 ```
 
-Starting a batch returns a serializable reference that can be persisted and used to retrieve the batch results later, or poll for status updates.
+`startTextBatch` returns a serializable batch reference. Persist this reference
+to check the batch status or retrieve its results from another process. Results
+can arrive in a different order from the input requests, so match each result by
+its `id`.
+
+#### Webhooks
+
+<Note>
+  The OpenAI Batch API does not support per-batch webhooks. When you provide a
+  `webhookUrl`, the provider returns an unsupported warning and starts the batch
+  without a webhook.
+</Note>
 
 ### Chat Models
 
@@ -3177,6 +3197,7 @@ const result = await generateSpeech({
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
 - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
+- [Z.AI](/providers/ai-sdk-providers/zai)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)
 - [Fireworks](/providers/ai-sdk-providers/fireworks)

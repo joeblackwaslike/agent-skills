@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/how-tos/secure-your-work/security-harden-deployments/oidc-in-cloud-providers.md"
-fetched_at: "2026-07-20T06:51:31.659Z"
-sha256: "1ef970ac405b705c93f76f55df33b6e850cbf98c61826583af43ac7d796ab895"
+fetched_at: "2026-08-31T10:42:32.997Z"
+sha256: "a917fc302282a855fd52e592817b18f293f7cb6cd5852aea513e4d1de82be93c"
 ---
 
 {% data reusables.actions.enterprise-github-hosted-runners %}
@@ -69,9 +69,8 @@ jobs:
       id: idtoken
       with:
         script: |
-          const coredemo = require('@actions/core')
-          let id_token = await coredemo.getIDToken()
-          coredemo.setOutput('id_token', id_token)
+          let id_token = await core.getIDToken()
+          core.setOutput('id_token', id_token)
 ```
 
 ### Requesting the JWT using environment variables

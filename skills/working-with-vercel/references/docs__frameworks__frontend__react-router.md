@@ -3,7 +3,7 @@ title: React Router on Vercel
 product: vercel
 url: /docs/frameworks/frontend/react-router
 canonical_url: "https://vercel.com/docs/frameworks/frontend/react-router"
-last_updated: 2026-07-15
+last_updated: 2026-08-26
 type: conceptual
 prerequisites:
   - /docs/frameworks/frontend
@@ -14,11 +14,11 @@ related:
   - /docs/functions/streaming-functions
   - /docs/functions/streaming
   - /docs/cdn
-summary: "Learn how to use Vercel's features with React Router as a framework."
+summary: Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/frontend/react-router.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "c988718236c648b31680128f5dbe6441f99c7ba98fda1cafbb33b51017e56a70"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "58b366848bfdab9add83019cf0317cd9232b03aacf29dc3a05d4ee0ca185c326"
 ---
 
 # React Router on Vercel
@@ -58,15 +58,16 @@ import type { Config } from '@react-router/dev/config';
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to deploy a Shopify App to Vercel](https://vercel.com/kb/guide/deploy-shopify-app-to-vercel?from=related) — Deploy the official Shopify CLI React Router app template to Vercel with the @vercel/react-router preset and Postgres se
-- [Version 15](https://nextjs.org/docs/app/guides/upgrading/version-15?from=related) — Upgrade your Next.js Application from Version 14 to 15.
-- [Remix](https://vercel.com/docs/frameworks/full-stack/remix?from=related) — Learn how to use Vercel's features with Remix.
-- [Create React App](https://vercel.com/docs/frameworks/frontend/create-react-app?from=related) — Learn how to use Vercel's features with Create React App
-- [All Frameworks](https://vercel.com/docs/frameworks/more-frameworks?from=related) — Learn about the frameworks that can be deployed to Vercel.
-- [Full-stack](https://vercel.com/docs/frameworks/full-stack?from=related) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
-- [Vite](https://vercel.com/docs/frameworks/frontend/vite?from=related) — Learn how to use Vercel's features with Vite.
+- [How to deploy a Shopify App to Vercel](https://vercel.com/kb/guide/deploy-shopify-app-to-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Freact-router&source_site=vercel-docs&relationship=related) — Deploy the official Shopify CLI React Router app template to Vercel with the @vercel/react-router preset and Postgres se
+- [Support for React Router v7](https://vercel.com/changelog/support-for-react-router-v7?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Freact-router&source_site=vercel-docs&relationship=related)
+- [Deploying React with Vercel](https://vercel.com/kb/guide/deploying-react-with-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Freact-router&source_site=vercel-docs&relationship=related) — Deploy React with Vercel to replace your build pipeline and shared staging. See how framework detection, previews, and F
+- [Remix on Vercel](https://vercel.com/docs/frameworks/full-stack/remix?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Freact-router&source_site=vercel-docs&relationship=related) — Deploy Remix applications to Vercel and configure the Vercel Vite preset, SSR, streaming, caching, and analytics.
+- [Create React App on Vercel](https://vercel.com/docs/frameworks/frontend/create-react-app?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Freact-router&source_site=vercel-docs&relationship=related) — Deploy Create React App projects to Vercel and add Preview Deployments, Web Analytics, Speed Insights, and Observability
+- [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Freact-router&source_site=vercel-docs&relationship=related) — Learn about the frameworks that can be deployed to Vercel.
+- [Full-stack frameworks on Vercel](https://vercel.com/docs/frameworks/full-stack?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Freact-router&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
+- [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Freact-router&source_site=vercel-docs&relationship=related) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
 
-Full cross-link map for this page: [/docs/frameworks/frontend/react-router.graph.md](/docs/frameworks/frontend/react-router.graph.md)
+Full cross-link map for this page: [/docs/frameworks/frontend/react-router.graph.md](/docs/frameworks/frontend/react-router.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Freact-router&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 export default {

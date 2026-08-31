@@ -3,7 +3,7 @@ title: Image Generation with Chat Completions API
 product: vercel
 url: /docs/ai-gateway/modalities/image-generation/openai
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/image-generation/openai"
-last_updated: 2026-07-28
+last_updated: 2026-08-24
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/modalities/image-generation
@@ -13,8 +13,8 @@ related:
 summary: Generate and edit images using AI models through Vercel AI Gateway with the Chat Completions API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/image-generation/openai.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "2b2fb66989eb77f8523ef67318ea56e3eb341fcb995cb9cb5c55b2041aaba32d"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "e337452d1c754806815827294d6df16f2d97088531b5a5d2b9c79a8add9468e0"
 ---
 
 # Image Generation with Chat Completions API
@@ -28,19 +28,16 @@ page](/ai-gateway/models?type=image), including multimodal LLMs and image-only m
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Using AI SDK](https://vercel.com/docs/ai-gateway/modalities/image-generation/ai-sdk?from=related) — Generate and edit images using AI models through Vercel AI Gateway with the AI SDK.
-- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation?from=related) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
-- [DeepInfra](https://ai-sdk.dev/providers/ai-sdk-providers/deepinfra?from=related)
-- [Image Generation](https://ai-sdk.dev/docs/ai-sdk-core/image-generation?from=related)
-- [generateImage](https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-image?from=related)
-- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related)
-- [Azure OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/azure?from=related)
-- [Image Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation?from=related) — Generate images using AI models that support multimodal output through the Chat Completions API.
-- [Image](https://vercel.com/docs/ai-gateway/getting-started/image?from=related) — Generate images from text prompts using AI Gateway.
-- [Images](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/images?from=related) — Send images and PDF documents for analysis using the OpenAI Responses API through AI Gateway.
-- [Text](https://vercel.com/docs/ai-gateway/getting-started/text?from=related) — Generate and stream text responses using AI Gateway.
+- [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fopenai&source_site=vercel-docs&relationship=related)
+- [Image Generation with AI SDK](https://vercel.com/docs/ai-gateway/modalities/image-generation/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fopenai&source_site=vercel-docs&relationship=related) — Generate and edit images using AI models through Vercel AI Gateway with the AI SDK.
+- [Image-only models available in Vercel AI Gateway](https://vercel.com/changelog/image-only-models-available-in-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fopenai&source_site=vercel-docs&relationship=related)
+- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fopenai&source_site=vercel-docs&relationship=related) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
+- [Image Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fopenai&source_site=vercel-docs&relationship=related) — Generate images using AI models that support multimodal output through the Chat Completions API.
+- [Image Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/image?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fopenai&source_site=vercel-docs&relationship=related) — Generate images from text prompts using AI Gateway.
+- [Text Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/text?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fopenai&source_site=vercel-docs&relationship=related) — Generate and stream text responses using AI Gateway.
+- [File Attachments](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/images?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fopenai&source_site=vercel-docs&relationship=related) — Send images and PDF documents for analysis using the OpenAI Responses API through AI Gateway.
 
-Full cross-link map for this page: [/docs/ai-gateway/modalities/image-generation/openai.graph.md](/docs/ai-gateway/modalities/image-generation/openai.graph.md)
+Full cross-link map for this page: [/docs/ai-gateway/modalities/image-generation/openai.graph.md](/docs/ai-gateway/modalities/image-generation/openai.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fopenai&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Multimodal LLMs
@@ -149,154 +146,6 @@ result = client.images.generate(
 )
 
 print(f'Generated {len(result.data)} image(s)')
-```
-
-### Google Vertex Imagen
-
-Google's Imagen models provide high-quality image generation with fine-grained control. Multiple models are available including `google/imagen-4.0-ultra-generate-001` and `google/imagen-4.0-generate-001`.
-
-View available [Imagen provider options](https://ai-sdk.dev/providers/ai-sdk-providers/google-vertex#image-models) for configuration details.
-
-#### TypeScript (Basic)
-
-```typescript filename="generate-imagen-simple.ts"
-import OpenAI from 'openai';
-import 'dotenv/config';
-
-async function main() {
-  const openai = new OpenAI({
-    apiKey: process.env.AI_GATEWAY_API_KEY,
-    baseURL: 'https://ai-gateway.vercel.sh/v1',
-  });
-
-  const result = await openai.images.generate({
-    model: 'google/imagen-4.0-ultra-generate-001',
-    prompt: `A snow leopard prowling through a rocky mountain landscape during a light snowfall`,
-    n: 2,
-  });
-
-  // Process the generated images
-  for (const image of result.data) {
-    if (image.b64_json) {
-      console.log(
-        'Generated image (base64):',
-        image.b64_json.substring(0, 50) + '...',
-      );
-    }
-  }
-}
-
-main().catch(console.error);
-```
-
-#### TypeScript (With Options)
-
-```typescript filename="generate-imagen-options.ts"
-import OpenAI from 'openai';
-import 'dotenv/config';
-
-async function main() {
-  const openai = new OpenAI({
-    apiKey: process.env.AI_GATEWAY_API_KEY,
-    baseURL: 'https://ai-gateway.vercel.sh/v1',
-  });
-
-  const result = await openai.images.generate({
-    model: 'google/imagen-4.0-ultra-generate-001',
-    prompt: `A cascading waterfall in a lush rainforest with mist rising and exotic birds flying`,
-    n: 2,
-    // @ts-expect-error - Provider options are not in OpenAI types
-    providerOptions: {
-      googleVertex: {
-        aspectRatio: '1:1',
-        safetyFilterLevel: 'block_some',
-      },
-    },
-  });
-
-  // Process the generated images
-  for (const image of result.data) {
-    if (image.b64_json) {
-      console.log(
-        'Generated image (base64):',
-        image.b64_json.substring(0, 50) + '...',
-      );
-    }
-  }
-}
-
-main().catch(console.error);
-```
-
-#### Python
-
-```python filename="generate-imagen.py"
-import base64
-import json
-import os
-from datetime import datetime
-
-from dotenv import load_dotenv
-from openai import OpenAI
-
-load_dotenv()
-
-def main():
-    api_key = os.getenv("AI_GATEWAY_API_KEY") or os.getenv("VERCEL_OIDC_TOKEN")
-    base_url = (
-        os.getenv("AI_GATEWAY_BASE_OPENAI_COMPAT_URL")
-        or "https://ai-gateway.vercel.sh/v1"
-    )
-
-    client = OpenAI(
-        api_key=api_key,
-        base_url=base_url,
-    )
-
-    result = client.images.generate(
-        model="google/imagen-4.0-ultra-generate-001",
-        prompt=(
-            "A red fox walking through a snowy forest clearing "
-            "with pine trees in the background"
-        ),
-        n=2,
-        response_format="b64_json",
-        extra_body={
-            "providerOptions": {
-                "googleVertex": {
-                    "aspectRatio": "1:1",
-                    "safetyFilterLevel": "block_some",
-                }
-            }
-        },
-    )
-
-    if not result or not result.data or len(result.data) == 0:
-        raise Exception("No image data received from OpenAI-compatible endpoint")
-
-    print(f"Generated {len(result.data)} image(s)")
-
-    for i, image in enumerate(result.data):
-        if hasattr(image, "b64_json") and image.b64_json:
-            # Decode base64 to get image size
-            image_bytes = base64.b64decode(image.b64_json)
-            print(f"Image {i+1}:")
-            print(f"  Size: {len(image_bytes)} bytes")
-            print(f"  Base64 preview: {image.b64_json[:50]}...")
-
-            # Save image to file with timestamp
-            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            output_file = f"output/output_image_{timestamp}_{i+1}.png"
-            print(f"  Saving image to {output_file}")
-            with open(output_file, "wb") as f:
-                f.write(image_bytes)
-
-    if hasattr(result, "provider_metadata"):
-        print("\nProvider metadata:")
-        print(json.dumps(result.provider_metadata, indent=2))
-
-if __name__ == "__main__":
-    main()
 ```
 
 ### Black Forest Labs
@@ -458,7 +307,7 @@ SpaceXAI's Grok Imagine models generate high-quality images from text prompts wi
 
 #### TypeScript
 
-```typescript filename="generate-xai.ts"
+```typescript filename="generate-spacexai.ts"
 import OpenAI from 'openai';
 import 'dotenv/config';
 
@@ -469,7 +318,7 @@ async function main() {
   });
 
   const result = await openai.images.generate({
-    model: 'xai/grok-imagine-image',
+    model: 'spacexai/grok-imagine-image',
     prompt: `A serene Japanese garden with a koi pond, stone lanterns, and cherry blossoms in full bloom`,
   });
 
@@ -489,7 +338,7 @@ main().catch(console.error);
 
 #### Python
 
-```python filename="generate-xai.py"
+```python filename="generate-spacexai.py"
 import base64
 import os
 from datetime import datetime
@@ -512,7 +361,7 @@ def main():
     )
 
     result = client.images.generate(
-        model="xai/grok-imagine-image",
+        model="spacexai/grok-imagine-image",
         prompt=(
             "A serene Japanese garden with a koi pond, "
             "stone lanterns, and cherry blossoms in full bloom"
@@ -547,7 +396,7 @@ if __name__ == "__main__":
 
 Image-only models can also edit an existing image. Send one or more source images and a prompt describing the change to the OpenAI-compatible `/v1/images/edits` endpoint, using `openai.images.edit` from the OpenAI SDK.
 
-Support varies by model. Models that accept image inputs include `openai/gpt-image-2`, `bfl/flux-kontext-pro`, `bfl/flux-pro-1.0-fill`, `google/imagen-4.0-generate-001`, and `xai/grok-imagine-image`. Edited images are returned as base64 strings in `data`, the same as image generation.
+Support varies by model. Models that accept image inputs include `openai/gpt-image-2`, `bfl/flux-kontext-pro`, `bfl/flux-pro-1.0-fill`, `google/gemini-3.1-flash-image`, and `spacexai/grok-imagine-image`. Edited images are returned as base64 strings in `data`, the same as image generation.
 
 ### Edit a single image
 

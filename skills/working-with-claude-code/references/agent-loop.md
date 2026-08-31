@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/agent-loop.md"
-fetched_at: "2026-08-24T04:44:18.863Z"
-sha256: "6709f9077d36a01a828fa2095ea6f229f1c82095fc5c3f02ba3bebaa53563891"
+fetched_at: "2026-08-31T10:37:20.620Z"
+sha256: "8f2cb730b137adf68ac5b9070faf39a60ef9664d1cc394dcace03a0fccafb3c0"
 ---
 
 > ## Documentation Index
@@ -196,7 +196,7 @@ When either limit is hit, the SDK returns a `ResultMessage` with a corresponding
 
 The budget cap covers [subagents](/docs/en/agent-sdk/subagents): their spend counts toward the total. Once spend reaches the cap, spawning another subagent fails with `Budget limit reached`, and Claude Code stops any background subagents still running. The cap-enforcement behaviors require Claude Code v2.1.217 or later.
 
-With [streaming input](/docs/en/agent-sdk/streaming-vs-single-mode), a message you send while a turn is still running stays queued when that turn ends at the max-turns limit, and it starts its own turn with its own max-turns limit.
+With [streaming input](/docs/en/agent-sdk/streaming-vs-single-mode), a message that is still queued when a turn ends at the max-turns limit stays queued. Claude Code doesn't add it to that turn's last model call. It starts a new turn for the message, and the max-turns count starts over for that turn.
 
 ### Effort level
 

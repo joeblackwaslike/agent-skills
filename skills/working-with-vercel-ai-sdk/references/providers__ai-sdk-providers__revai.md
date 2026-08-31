@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/revai.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "48eb02cccb79a5f424f1a1bccbf3da835488278d328f93a186d75229f04dd057"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "bd95e817972eea15ab9f0a0fc3bca878296c1afe8889f4732bbb1c06a861a1db"
 ---
 
 # Rev.ai Provider
@@ -236,6 +236,7 @@ The following provider options are available:
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
 - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
+- [Z.AI](/providers/ai-sdk-providers/zai)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)
 - [Fireworks](/providers/ai-sdk-providers/fireworks)

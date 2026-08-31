@@ -14,8 +14,8 @@ related:
 summary: Learn how to configure Directory Sync for your Vercel Team.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/directory-sync.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "c4e71f2e5fbc3094418434addd480c611ce96fb37a17c438927387307ac6cfb6"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "2b8f4c17190b746854c2b78e267cc2cd1a8bbbf272e9e38b39a845778fdecf6f"
 ---
 
 # Directory Sync
@@ -28,14 +28,15 @@ sha256: "c4e71f2e5fbc3094418434addd480c611ce96fb37a17c438927387307ac6cfb6"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Enterprise](https://v0.app/docs/enterprise?from=related) — Learn how to manage v0 seats, access, and more in your Vercel Enterprise account.
-- [Access Groups](https://vercel.com/docs/rbac/access-groups?from=related) — Learn how to configure access groups for team members on a Vercel account.
-- [Update Team Directory Sync Role Mappings](https://vercel.com/docs/rest-api/teams/update-team-directory-sync-role-mappings?from=related)
-- [Team Level Roles](https://vercel.com/docs/rbac/access-roles/team-level-roles?from=related) — Learn about the different team level roles and the permissions they provide.
-- [RBAC](https://vercel.com/docs/rbac?from=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
-- [Account Management](https://vercel.com/docs/accounts?from=related) — Learn how to manage your Vercel account and team members.
+- [Enterprise](https://v0.app/docs/enterprise?from=related&source_path=%2Fdocs%2Fdirectory-sync&source_site=vercel-docs&relationship=related) — Learn how to manage v0 seats, access, and more in your Vercel Enterprise account.
+- [SAML Single Sign-On and Directory Sync now fully available](https://vercel.com/changelog/saml-single-sign-on-and-directory-sync-now-fully-available?from=related&source_path=%2Fdocs%2Fdirectory-sync&source_site=vercel-docs&relationship=related)
+- [Access Groups](https://vercel.com/docs/rbac/access-groups?from=related&source_path=%2Fdocs%2Fdirectory-sync&source_site=vercel-docs&relationship=related) — Learn how to configure access groups for team members on a Vercel account.
+- [Update Team Directory Sync Role Mappings](https://vercel.com/docs/rest-api/teams/update-team-directory-sync-role-mappings?from=related&source_path=%2Fdocs%2Fdirectory-sync&source_site=vercel-docs&relationship=related) — POST /v1/teams/{teamId}/dsync-roles — Update the Directory Sync role mappings for a Team. This endpoint allows updating
+- [Team Level Roles](https://vercel.com/docs/rbac/access-roles/team-level-roles?from=related&source_path=%2Fdocs%2Fdirectory-sync&source_site=vercel-docs&relationship=related) — Learn about the different team level roles and the permissions they provide.
+- [Role-based access control \\(RBAC\\)](https://vercel.com/docs/rbac?from=related&source_path=%2Fdocs%2Fdirectory-sync&source_site=vercel-docs&relationship=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
+- [Account Management](https://vercel.com/docs/accounts?from=related&source_path=%2Fdocs%2Fdirectory-sync&source_site=vercel-docs&relationship=related) — Learn how to manage your Vercel account and team members.
 
-Full cross-link map for this page: [/docs/directory-sync.graph.md](/docs/directory-sync.graph.md)
+Full cross-link map for this page: [/docs/directory-sync.graph.md](/docs/directory-sync.graph.md?from=related&source_path=%2Fdocs%2Fdirectory-sync&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Directory Sync helps teams manage their organization membership from a third-party identity provider like Google Directory or Okta. Directory Sync is only available for **Enterprise Teams** and can only be configured by [**Team Owners**](/docs/rbac/access-roles#owner-role).

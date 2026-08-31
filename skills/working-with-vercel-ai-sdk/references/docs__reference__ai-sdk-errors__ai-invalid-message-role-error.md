@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-invalid-message-role-error.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "2d2c40db1889e1b16a7983b6992612c131a65dbf88ac1e36695466734c737639"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "cfd27c410b7bf7e8196221560e75a37de683e093e3a057678d7d87dec818bc35"
 ---
 
 # AI_InvalidMessageRoleError
@@ -56,6 +56,7 @@ if (InvalidMessageRoleError.isInstance(error)) {
 - [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
 - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
+- [AI_StreamProviderError](/docs/reference/ai-sdk-errors/ai-stream-provider-error)
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
 - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
 - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)

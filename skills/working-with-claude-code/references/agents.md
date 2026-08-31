@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agents.md"
-fetched_at: "2026-08-24T04:44:18.863Z"
-sha256: "2d470eb82b5bc217bbd423db193677c49690ad0b4c4f73a0a9e97530caef6ca0"
+fetched_at: "2026-08-31T10:37:20.620Z"
+sha256: "9c04817ac2da54facb24635398c28bafe77c222dc6f23946284fbdf98cf09f74"
 ---
 
 > ## Documentation Index
@@ -48,7 +48,7 @@ The right approach depends on who coordinates the work, whether the workers need
   * You hand off independent tasks and check back later: [agent view](/docs/en/agent-view)
   * Claude plans, assigns, and supervises a group of workers: [agent teams](/docs/en/agent-teams), experimental and disabled by default
   * A script holds the plan instead of Claude's turn-by-turn judgment: [dynamic workflows](/docs/en/workflows). See [how workflows compare to subagents and skills](/docs/en/workflows#when-to-use-a-workflow)
-* **Do the workers need to talk to each other?** Subagents report results back to the conversation that spawned them, and agent view sessions report only to you, though separate sessions can pass messages with [cross-session messaging](/docs/en/cross-session-messaging). Teammates in an agent team message each other directly and, when they [have the Task tools](/docs/en/tools-reference#task-tool-availability), share a task list.
+* **Do the workers need to talk to each other?** Claude can pass findings with [cross-session messaging](/docs/en/cross-session-messaging) between sessions you run yourself, including the sessions you dispatch from agent view. Subagents report results back to the conversation that spawned them, and agent view sessions report results only to you. Teammates in an agent team message each other directly and, when they [have the Task tools](/docs/en/tools-reference#task-tool-availability), share a task list.
 * **Do the tasks touch the same files?** Isolate the work with [worktrees](/docs/en/worktrees). Subagents and sessions you run yourself can each use a separate worktree. Agent teams don't isolate teammates in worktrees, so [partition the work](/docs/en/agent-teams#avoid-file-conflicts) so each teammate owns a different set of files.
 
 ## Check on running work

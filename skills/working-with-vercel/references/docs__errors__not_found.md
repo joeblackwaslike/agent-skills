@@ -3,7 +3,7 @@ title: NOT_FOUND
 product: vercel
 url: /docs/errors/NOT_FOUND
 canonical_url: "https://vercel.com/docs/errors/NOT_FOUND"
-last_updated: 2026-02-26
+last_updated: 2026-08-10
 type: reference
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: The requested resource was not found. This is a deployment error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/not_found.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "7f87fc87194e8cadfc72389ad3b0e3e2c7621448a4026604bd5830fd89593d04"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "26f2ff76223df50a19e29d04d67f5b99ae03a1e1505d51bf64afef289d85c92f"
 ---
 
 # NOT_FOUND

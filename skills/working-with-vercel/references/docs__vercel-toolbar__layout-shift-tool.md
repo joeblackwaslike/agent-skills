@@ -16,8 +16,8 @@ related:
 summary: The layout shift tool gives you insight into any elements that may cause layout shifts on the page.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar/layout-shift-tool.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "af9bf0ecd841faf26c29dfc2f7f55af59fdc791267c7cfc79aac0b8fa14bfe7c"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "3fa8de976738837ef7782c587d4510abde1d5c35e89e8e1756d24c6b443ad824"
 ---
 
 # Layout Shift Tool
@@ -30,15 +30,17 @@ sha256: "af9bf0ecd841faf26c29dfc2f7f55af59fdc791267c7cfc79aac0b8fa14bfe7c"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to improve Core Web Vitals](https://vercel.com/kb/guide/how-to-improve-core-web-vitals?from=related) — Improve Core Web Vitals \\(INP, LCP, CLS\\) with metric-specific fixes, field-data measurement, and Next.js/Vercel perform
-- [Improve Cumulative Layout Shift \\(CLS\\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel?from=related) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
-- [Interaction Timing Tool](https://vercel.com/docs/vercel-toolbar/interaction-timing-tool?from=related) — The interaction timing tool allows you to inspect in detail each interaction's latency and get notified for interactions
-- [Accessibility Audit Tool](https://vercel.com/docs/vercel-toolbar/accessibility-audit-tool?from=related) — Learn how to use the Accessibility Audit Tool to automatically check the Web Content Accessibility Guidelines 2.0 level
-- [Managing Toolbar](https://vercel.com/docs/vercel-toolbar/managing-toolbar?from=related) — Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
-- [Speed Insights](https://vercel.com/docs/speed-insights?from=related) — This page lists out and explains all the performance metrics provided by Vercel's Speed Insights feature.
-- [Edit Mode](https://vercel.com/docs/edit-mode?from=related) — Discover how Vercel's Edit Mode enhances content management for headless CMSs, enabling real-time editing, and seamless
+- [How to improve Core Web Vitals](https://vercel.com/kb/guide/how-to-improve-core-web-vitals?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=related) — Improve Core Web Vitals \\(INP, LCP, CLS\\) with metric-specific fixes, field-data measurement, and Next.js/Vercel perform
+- [Automatically detect and replay layout shifts from the Vercel Toolbar](https://vercel.com/changelog/automatically-detect-and-replay-layout-shifts?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=related)
+- [Improve Cumulative Layout Shift \\(CLS\\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=related) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
+- [Introducing new developer tools in the Vercel Toolbar](https://vercel.com/blog/introducing-new-developer-tools-in-the-vercel-toolbar?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=related)
+- [Improvements to Vercel Toolbar: Shrinking when inactive, removal of avatars, and more](https://vercel.com/changelog/improvements-to-vercel-toolbar?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=related)
+- [Interaction Timing Tool](https://vercel.com/docs/vercel-toolbar/interaction-timing-tool?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=related) — The interaction timing tool allows you to inspect in detail each interaction's latency and get notified for interactions
+- [Accessibility Audit Tool](https://vercel.com/docs/vercel-toolbar/accessibility-audit-tool?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=related) — Learn how to use the Accessibility Audit Tool to automatically check the Web Content Accessibility Guidelines 2.0 level
+- [Edit Mode](https://vercel.com/docs/edit-mode?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=related) — Discover how Vercel's Edit Mode enhances content management for headless CMSs, enabling real-time editing, and seamless
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
-Full cross-link map for this page: [/docs/vercel-toolbar/layout-shift-tool.graph.md](/docs/vercel-toolbar/layout-shift-tool.graph.md)
+Full cross-link map for this page: [/docs/vercel-toolbar/layout-shift-tool.graph.md](/docs/vercel-toolbar/layout-shift-tool.graph.md?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 The layout shift tool gives you insight into any elements that may cause layout shifts on the page. The cause for a layout shift could be many things:

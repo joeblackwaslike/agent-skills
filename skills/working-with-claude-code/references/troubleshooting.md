@@ -1,6 +1,6 @@
 ---
 source: "https://code.claude.com/docs/en/troubleshooting.md"
-fetched_at: "2026-08-24T04:44:18.863Z"
+fetched_at: "2026-08-31T10:37:20.620Z"
 sha256: "f1426c4b36894db28ef285f7dc2c7654d7d33c1f89e77f93caeb5f13a41b681b"
 ---
 

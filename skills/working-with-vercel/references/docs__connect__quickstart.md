@@ -3,7 +3,7 @@ title: Quickstart
 product: vercel
 url: /docs/connect/quickstart
 canonical_url: "https://vercel.com/docs/connect/quickstart"
-last_updated: 2026-07-28
+last_updated: 2026-08-27
 type: tutorial
 prerequisites:
   - /docs/connect
@@ -16,8 +16,8 @@ related:
 summary: Create your first connector in Vercel Connect, install the SDK, and request a runtime provider token from your code.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/quickstart.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "7b03d71a2c3a7f4d41d8641cbb3bfd1e43b5f29bca7c72a18078bfac5bd6122b"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "5dbb8883901299a4ce7945746da0d63a36ad18b754a2d40376e261b859f18fbf"
 ---
 
 # Quickstart
@@ -30,19 +30,20 @@ sha256: "7b03d71a2c3a7f4d41d8641cbb3bfd1e43b5f29bca7c72a18078bfac5bd6122b"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Build your own Slackbot with Vercel Connect](https://vercel.com/kb/guide/build-a-slack-bot-with-vercel-connect?from=related) — Learn how to build your very own Slackbot with Chat SDK and AI SDK. Vercel Connect supplies runtime Slack tokens and for
-- [Build a GitHub agent with Vercel Connect](https://vercel.com/kb/guide/github-agent-vercel-connect?from=related) — Build a GitHub agent that helps your team work through issues and PRs. Chat SDK handles the interactivity and AI SDK run
-- [Build a Linear agent with Vercel Connect](https://vercel.com/kb/guide/linear-agent-vercel-connect?from=related) — Build a native Linear Agent that helps your team manage issues. Mention it on any issue and it responds in real time, po
-- [Build an integrations hub with Nuxt and Vercel Connect](https://vercel.com/kb/guide/nuxt-and-vercel-connect?from=related) — Build an Integrations Hub with Nuxt and Vercel Connect. Connect GitHub and Linear over OAuth and mint short-lived tokens
-- [How to build a Slack bot that manages files in Vercel Blob](https://vercel.com/kb/guide/slack-bot-vercel-blob?from=related) — Build a Slack bot using Chat SDK, AI SDK, and Files SDK that can list, read, upload, and delete files in Vercel Blob thr
-- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related) — Authenticate Slack, Discord, GitHub, Linear, Notion, and Telegram adapters with Vercel Connect — short-lived runtime tok
-- [Connectors](https://vercel.com/docs/connect/concepts/connectors?from=related) — A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are
-- [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
-- [Installations](https://vercel.com/docs/connect/concepts/installations?from=related) — Installations let one connector serve many tenants. One Slack connector, for example, can serve many Slack workspaces, e
-- [Project links](https://vercel.com/docs/connect/concepts/project-links?from=related) — A project link binds a connector to a Vercel project, scoped to one or more environments. The link is what authorizes a
-- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
+- [Vercel Connect now supports Custom Environments](https://vercel.com/changelog/vercel-connect-now-supports-custom-environments?from=related&source_path=%2Fdocs%2Fconnect%2Fquickstart&source_site=vercel-docs&relationship=related)
+- [Vercel Connect adds 100+ preset connectors](https://vercel.com/changelog/vercel-connect-preset-connectors?from=related&source_path=%2Fdocs%2Fconnect%2Fquickstart&source_site=vercel-docs&relationship=related)
+- [Build your own Slackbot with Vercel Connect](https://vercel.com/kb/guide/build-a-slack-bot-with-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to build your very own Slackbot with Chat SDK and AI SDK. Vercel Connect supplies runtime Slack tokens and for
+- [Build a GitHub agent with Vercel Connect](https://vercel.com/kb/guide/github-agent-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fquickstart&source_site=vercel-docs&relationship=related) — Build a GitHub agent that helps your team work through issues and PRs. Chat SDK handles the interactivity and AI SDK run
+- [Build a Linear agent with Vercel Connect](https://vercel.com/kb/guide/linear-agent-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fquickstart&source_site=vercel-docs&relationship=related) — Build a native Linear Agent that helps your team manage issues. Mention it on any issue and it responds in real time, po
+- [Build an integrations hub with Nuxt and Vercel Connect](https://vercel.com/kb/guide/nuxt-and-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fquickstart&source_site=vercel-docs&relationship=related) — Build an Integrations Hub with Nuxt and Vercel Connect. Connect GitHub and Linear over OAuth and mint short-lived tokens
+- [How to build a Slack bot that manages files in Vercel Blob](https://vercel.com/kb/guide/slack-bot-vercel-blob?from=related&source_path=%2Fdocs%2Fconnect%2Fquickstart&source_site=vercel-docs&relationship=related) — Build a Slack bot using Chat SDK, AI SDK, and Files SDK that can list, read, upload, and delete files in Vercel Blob thr
+- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fconnect%2Fquickstart&source_site=vercel-docs&relationship=related)
+- [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents?from=related&source_path=%2Fdocs%2Fconnect%2Fquickstart&source_site=vercel-docs&relationship=related)
+- [Auth.js](https://vercel.com/docs/connect/frameworks/authjs?from=related&source_path=%2Fdocs%2Fconnect%2Fquickstart&source_site=vercel-docs&relationship=related) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
+- [Connectors](https://vercel.com/docs/connect/concepts/connectors?from=related&source_path=%2Fdocs%2Fconnect%2Fquickstart&source_site=vercel-docs&relationship=related) — A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fconnect%2Fquickstart&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
-Full cross-link map for this page: [/docs/connect/quickstart.graph.md](/docs/connect/quickstart.graph.md)
+Full cross-link map for this page: [/docs/connect/quickstart.graph.md](/docs/connect/quickstart.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fquickstart&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 This guide shows you how to create your first connector in Vercel Connect and request a runtime provider token from your code.
@@ -193,7 +194,8 @@ This guide shows you how to create your first connector in Vercel Connect and re
 - [Concepts](/docs/connect/concepts): Understand connectors, installations, tokens, project links, triggers, and authentication.
 - [SDK Reference](/docs/connect/ts-sdk-reference): Full `getToken` and `getTokenResponse` parameter reference.
 - [CLI Reference](/docs/cli/connect): The full `vercel connect` command surface.
-- [Pricing and Limits](/docs/connect/pricing): Token-request pricing and beta limits.
+- [Pricing](/docs/connect/pricing): Token-request pricing.
+- [Limits](/docs/connect/limits): Platform limits and rate limits.
 
 
 ---

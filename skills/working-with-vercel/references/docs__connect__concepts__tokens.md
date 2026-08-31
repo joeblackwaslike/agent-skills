@@ -3,7 +3,7 @@ title: Tokens
 product: vercel
 url: /docs/connect/concepts/tokens
 canonical_url: "https://vercel.com/docs/connect/concepts/tokens"
-last_updated: 2026-06-09
+last_updated: 2026-08-20
 type: conceptual
 prerequisites:
   - /docs/connect/concepts
@@ -16,8 +16,8 @@ related:
 summary: Short-lived provider credentials issued by Vercel Connect. Each token request specifies a subject, optional installation, scopes, and...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/tokens.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "f5d15d64ed337970a5fd541679982bdd6c699c3dbd4abf292dcb751c7f741f39"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "3631246cfea74286fd5243c53e16de09d7212c24ef22eef2df6143ca96bcb5e3"
 ---
 
 # Tokens
@@ -30,15 +30,18 @@ A token is a short-lived credential that Vercel Connect issues against a provide
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Give your agents secure access to third-party APIs](https://vercel.com/kb/guide/vercel-connect?from=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Discord, Notion, Figma, Snowflake, and Salesforce f
-- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related) — Authenticate Slack, Discord, GitHub, Linear, Notion, and Telegram adapters with Vercel Connect — short-lived runtime tok
-- [Authentication](https://vercel.com/docs/connect/concepts/authentication?from=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
-- [Get a Connect token](https://vercel.com/docs/rest-api/connect/get-a-connect-token?from=related)
-- [Quickstart](https://vercel.com/docs/connect/quickstart?from=related) — Create your first connector in Vercel Connect, install the SDK, and request a runtime provider token from your code.
-- [Import Connect tokens](https://vercel.com/docs/rest-api/connect/import-connect-tokens?from=related)
-- [Tokens](https://vercel.com/docs/sign-in-with-vercel/tokens?from=related) — Learn how to Sign in with Vercel
+- [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftokens&source_site=vercel-docs&relationship=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
+- [Vercel Connect adds 100+ preset connectors](https://vercel.com/changelog/vercel-connect-preset-connectors?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftokens&source_site=vercel-docs&relationship=related)
+- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftokens&source_site=vercel-docs&relationship=related) — Authenticate Slack, Discord, GitHub, Linear, Notion, and Telegram adapters with Vercel Connect — short-lived runtime tok
+- [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftokens&source_site=vercel-docs&relationship=related)
+- [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftokens&source_site=vercel-docs&relationship=related)
+- [Authentication](https://vercel.com/docs/connect/concepts/authentication?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftokens&source_site=vercel-docs&relationship=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
+- [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftokens&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
+- [Tokens](https://vercel.com/docs/sign-in-with-vercel/tokens?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftokens&source_site=vercel-docs&relationship=related) — Learn how to Sign in with Vercel
+- [Chat SDK](https://vercel.com/docs/connect/frameworks/chat-sdk?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftokens&source_site=vercel-docs&relationship=related) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, GitHub, Linear, Notion,
+- [Observability](https://vercel.com/docs/connect/observability?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftokens&source_site=vercel-docs&relationship=related) — Monitor token requests, authorizations, revocations, and trigger deliveries for your connectors.
 
-Full cross-link map for this page: [/docs/connect/concepts/tokens.graph.md](/docs/connect/concepts/tokens.graph.md)
+Full cross-link map for this page: [/docs/connect/concepts/tokens.graph.md](/docs/connect/concepts/tokens.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftokens&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Anatomy of a token request

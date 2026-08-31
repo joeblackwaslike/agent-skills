@@ -12,8 +12,8 @@ related:
 summary: Learn how to perform a binary search on your deployments to help surface issues using the vercel bisect CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/bisect.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "ce6fa4e1e6011cbda273fc69ea13971e490b06469dda5e9c3d2143705b614cab"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "48d509e312c677d879fe49ad75a6b5432ed296acff5f439d67a4ce3e0d96e016"
 ---
 
 # vercel bisect
@@ -26,13 +26,14 @@ The `vercel bisect` command can be used to perform a [binary search](https://wik
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [vercel list](https://vercel.com/docs/cli/list?from=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
-- [Rollback Production](https://vercel.com/docs/deployments/rollback-production-deployment?from=related) — Recover from a bad production deployment by rolling back, investigating the root cause, and redeploying a fix.
-- [vercel inspect](https://vercel.com/docs/cli/inspect?from=related) — Learn how to retrieve information about your Vercel deployments using the vercel inspect CLI command.
-- [Deploying from CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
+- [Vercel CLI v24 is now available](https://vercel.com/changelog/vercel-cli-v24?from=related&source_path=%2Fdocs%2Fcli%2Fbisect&source_site=vercel-docs&relationship=related)
+- [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fbisect&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fbisect&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [Rolling back a production deployment](https://vercel.com/docs/deployments/rollback-production-deployment?from=related&source_path=%2Fdocs%2Fcli%2Fbisect&source_site=vercel-docs&relationship=related) — Recover from a bad production deployment by rolling back, investigating the root cause, and redeploying a fix.
+- [vercel inspect](https://vercel.com/docs/cli/inspect?from=related&source_path=%2Fdocs%2Fcli%2Fbisect&source_site=vercel-docs&relationship=related) — Learn how to retrieve information about your Vercel deployments using the vercel inspect CLI command.
+- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related&source_path=%2Fdocs%2Fcli%2Fbisect&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 
-Full cross-link map for this page: [/docs/cli/bisect.graph.md](/docs/cli/bisect.graph.md)
+Full cross-link map for this page: [/docs/cli/bisect.graph.md](/docs/cli/bisect.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fbisect&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 This is similar to [git bisect](https://git-scm.com/docs/git-bisect "What is a git bisect?") but faster because you don't need to wait to rebuild each commit, as long as there is a corresponding Deployment. The command works by specifing both a *bad* Deployment and a *good* Deployment. Then, `vercel bisect` will retrieve all the deployments in between, and step by them one by one. At each step, you will perform your check and specify whether or not the issue you are investigating is present in the Deployment for that step.

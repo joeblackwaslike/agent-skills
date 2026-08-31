@@ -3,7 +3,7 @@ title: Speech to Text and Text to Speech Quickstart
 product: vercel
 url: /docs/ai-gateway/getting-started/speech
 canonical_url: "https://vercel.com/docs/ai-gateway/getting-started/speech"
-last_updated: 2026-06-20
+last_updated: 2026-08-20
 type: tutorial
 prerequisites:
   - /docs/ai-gateway/getting-started
@@ -16,8 +16,8 @@ related:
 summary: Generate speech from text and transcribe audio back to text with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/speech.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "709204e1d8372f7683c74fe7d4d44434782671eafb53867a4d2579d9713e0659"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "c3b3dcbb5b5dbab7dcd13591282549508444bb71042c836fae97809625696e4e"
 ---
 
 # Speech to Text and Text to Speech Quickstart
@@ -30,18 +30,23 @@ Text to speech and speech to text are two halves of the same workflow: one turns
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Text](https://vercel.com/docs/ai-gateway/getting-started/text?from=related) — Generate and stream text responses using AI Gateway.
-- [Get started with GPT-5](https://ai-sdk.dev/cookbook/guides/gpt-5?from=related)
-- [Text Generation](https://vercel.com/docs/ai-gateway/modalities/text-generation?from=related) — Generate and stream text from hundreds of models through AI Gateway, with tool calling and structured output.
-- [Realtime](https://vercel.com/docs/ai-gateway/modalities/realtime?from=related) — Build low-latency, speech-to-speech voice agents with the AI SDK through Vercel AI Gateway.
-- [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
-- [AI SDK](https://vercel.com/docs/ai-sdk?from=related) — TypeScript toolkit for building AI-powered applications with React, Next.js, Vue, Svelte and Node.js
+- [Fish Audio models now available on Vercel AI Gateway for free](https://vercel.com/changelog/fish-audio-models-now-available-on-ai-gateway-for-free?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related)
+- [Gemini 3.5 Transcribe now available on AI Gateway](https://vercel.com/changelog/gemini-3-5-transcribe-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related)
+- [xAI Grok audio models now available on Vercel AI Gateway](https://vercel.com/changelog/xai-grok-audio-models-now-available-on-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related)
+- [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related)
+- [Realtime voice, speech, and transcription now supported on AI Gateway](https://vercel.com/changelog/realtime-voice-speech-and-transcription-now-supported-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related)
+- [Get started with GPT-5](https://ai-sdk.dev/cookbook/guides/gpt-5?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related)
+- [Text Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/text?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related) — Generate and stream text responses using AI Gateway.
+- [Realtime](https://vercel.com/docs/ai-gateway/modalities/realtime?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related) — Build low-latency, speech-to-speech voice agents with the AI SDK through Vercel AI Gateway.
+- [AI SDK](https://vercel.com/docs/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related) — TypeScript toolkit for building AI-powered applications with React, Next.js, Vue, Svelte and Node.js
+- [Text Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/text-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related) — Generate text responses with the OpenAI Responses API through AI Gateway.
+- [Image Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/image?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related) — Generate images from text prompts using AI Gateway.
 
-Full cross-link map for this page: [/docs/ai-gateway/getting-started/speech.graph.md](/docs/ai-gateway/getting-started/speech.graph.md)
+Full cross-link map for this page: [/docs/ai-gateway/getting-started/speech.graph.md](/docs/ai-gateway/getting-started/speech.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 > **💡 Note:** Speech and transcription support ships in the stable AI SDK releases. Install
-> them with `pnpm add ai @ai-sdk/gateway`.
+> them with `pnpm add ai@latest @ai-sdk/gateway@latest`.
 
 - ### Set up your project
   Create a new directory and initialize a Node.js project:
@@ -55,19 +60,19 @@ Full cross-link map for this page: [/docs/ai-gateway/getting-started/speech.grap
   Install the AI SDK, the AI Gateway provider, and development dependencies:
   #### npm
   ```bash filename="Terminal"
-  npm install ai @ai-sdk/gateway dotenv @types/node tsx typescript
+  npm install ai@latest @ai-sdk/gateway@latest dotenv @types/node tsx typescript
   ```
   #### yarn
   ```bash filename="Terminal"
-  yarn add ai @ai-sdk/gateway dotenv @types/node tsx typescript
+  yarn add ai@latest @ai-sdk/gateway@latest dotenv @types/node tsx typescript
   ```
   #### pnpm
   ```bash filename="Terminal"
-  pnpm add ai @ai-sdk/gateway dotenv @types/node tsx typescript
+  pnpm add ai@latest @ai-sdk/gateway@latest dotenv @types/node tsx typescript
   ```
   #### bun
   ```bash filename="Terminal"
-  bun add ai @ai-sdk/gateway dotenv @types/node tsx typescript
+  bun add ai@latest @ai-sdk/gateway@latest dotenv @types/node tsx typescript
   ```
 
 - ### Set up your API key

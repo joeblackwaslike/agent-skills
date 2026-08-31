@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/adapters.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "1ddcb3cbc1ea9cc3fac421b903a497f85af8e834840e64c90df53be920c718e9"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "55faf9996e25d64b42af3988f581a4fffd8b41df318ca2928ed600a5cde1d02f"
 ---
 
 # Adapters
@@ -45,6 +45,7 @@ The following adapters are currently available:
   - [QuiverAI](/providers/ai-sdk-providers/quiverai)
   - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
   - [Mistral AI](/providers/ai-sdk-providers/mistral)
+  - [Z.AI](/providers/ai-sdk-providers/zai)
   - [Together.ai](/providers/ai-sdk-providers/togetherai)
   - [Cohere](/providers/ai-sdk-providers/cohere)
   - [Fireworks](/providers/ai-sdk-providers/fireworks)
@@ -71,6 +72,8 @@ The following adapters are currently available:
   - [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
   - [Grok Build](/providers/ai-sdk-harnesses/grok-build)
   - [Cline](/providers/ai-sdk-harnesses/cline)
+  - [Cursor](/providers/ai-sdk-harnesses/cursor)
+  - [fx](/providers/ai-sdk-harnesses/fx)
 - [Observability Integrations](/providers/observability)
   - [Arize AX](/providers/observability/arize-ax)
   - [Axiom](/providers/observability/axiom)

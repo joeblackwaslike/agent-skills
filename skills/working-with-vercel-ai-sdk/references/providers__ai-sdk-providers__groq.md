@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/groq.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "19f8e0d43720cbdd2db7f740e51d5a0dd29b2529f2aed4b78e4c517743a645c3"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "6c3c15f99c42d5d271904e2080fac316da8d93708a0e1dbe5143d83a2156e040"
 ---
 
 # Groq Provider
@@ -77,7 +77,7 @@ import { groq, type GroqLanguageModelChatOptions } from '@ai-sdk/groq';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: groq('qwen/qwen3-32b'),
+  model: groq('qwen/qwen3.6-27b'),
   providerOptions: {
     groq: {
       reasoningFormat: 'parsed',
@@ -102,7 +102,7 @@ The following optional provider options are available for Groq language models:
 - **reasoningEffort** _'low' | 'medium' | 'high' | 'none' | 'default'_
 
   Controls the level of effort the model will put into reasoning.
-  - `qwen/qwen3-32b`
+  - `qwen/qwen3.6-27b`
     - Supported values:
       - `none`: Disable reasoning. The model will not use any reasoning tokens.
       - `default`: Enable reasoning.
@@ -112,7 +112,7 @@ The following optional provider options are available for Groq language models:
       - `medium`: Use a medium level of reasoning effort.
       - `high`: Use a high level of reasoning effort.
 
-  Defaults to `default` for `qwen/qwen3-32b.`
+  Defaults to `default` for `qwen/qwen3.6-27b`.
 
 - **structuredOutputs** _boolean_
 
@@ -295,7 +295,7 @@ const { text } = await generateText({
 | `meta-llama/llama-prompt-guard-2-22m`           | <Cross />   | <Check />         | <Cross />  | <Cross />      |
 | `meta-llama/llama-prompt-guard-2-86m`           | <Cross />   | <Check />         | <Cross />  | <Cross />      |
 | `moonshotai/kimi-k2-instruct-0905`              | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `qwen/qwen3-32b`                                | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `qwen/qwen3.6-27b`                              | <Cross />   | <Check />         | <Check />  | <Check />      |
 | `llama-guard-3-8b`                              | <Cross />   | <Check />         | <Check />  | <Check />      |
 | `llama3-70b-8192`                               | <Cross />   | <Check />         | <Check />  | <Check />      |
 | `llama3-8b-8192`                                | <Cross />   | <Check />         | <Check />  | <Check />      |
@@ -500,6 +500,7 @@ The following provider options are available:
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
 - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
+- [Z.AI](/providers/ai-sdk-providers/zai)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)
 - [Fireworks](/providers/ai-sdk-providers/fireworks)

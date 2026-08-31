@@ -13,8 +13,8 @@ related:
 summary: Rerank documents by relevance to a search query for improved retrieval-augmented generation (RAG) pipelines through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/reranking.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "8617a50eed09be9cc4948d8770db055ed6ca85f5cd33497e3ffb3cc511afe73c"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "904c5c473cff417635d4c14f2c340545176c3b945a082aa04a9ab95db3ed885f"
 ---
 
 # Reranking
@@ -27,20 +27,20 @@ Rerank documents by relevance to a search query. Reranking is useful for improvi
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Building an AI chat app with RAG and source citations on Vercel](https://vercel.com/kb/guide/building-ai-chat-app-with-rag-and-citations-on-vercel?from=related) — A production stack for AI chat with retrieval, reranking, source citations, and background ingestion on Vercel using Nex
-- [Production architecture for a RAG chatbot on Vercel](https://vercel.com/kb/guide/rag-chatbot-production-architecture-on-vercel?from=related) — Architect a production RAG chatbot on Vercel Functions with Fluid compute, AI Gateway, and a region-pinned vector store.
-- [Reranking](https://ai-sdk.dev/docs/ai-sdk-core/reranking?from=related)
-- [rerank](https://ai-sdk.dev/docs/reference/ai-sdk-core/rerank?from=related)
-- [Cohere Rerank API](https://vercel.com/docs/ai-gateway/sdks-and-apis/cohere-rerank?from=related) — Use the Cohere-compatible Rerank API with AI Gateway to reorder documents by relevance with the Cohere SDK or plain HTTP
-- [Cohere](https://ai-sdk.dev/providers/ai-sdk-providers/cohere?from=related)
-- [Voyage AI](https://ai-sdk.dev/providers/ai-sdk-providers/voyage?from=related)
-- [Together.ai](https://ai-sdk.dev/providers/ai-sdk-providers/togetherai?from=related)
-- [Routing Rules](https://vercel.com/docs/ai-gateway/models-and-providers/routing-rules?from=related) — Define team-wide rules that rewrite requests from one model to another or deny specific models in AI Gateway.
-- [Embeddings](https://vercel.com/docs/ai-gateway/modalities/embeddings?from=related) — Generate vector embeddings for semantic search, similarity matching, and retrieval-augmented generation \\(RAG\\) through
-- [Filtering, Ordering & Sorting](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering?from=related) — Control which providers handle your requests, in what order, and how they are ranked using order, only, and sort options
-- [Advanced](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced?from=related) — Advanced Anthropic API features including web search, provider timeouts, and automatic caching.
+- [Building an AI chat app with RAG and source citations on Vercel](https://vercel.com/kb/guide/building-ai-chat-app-with-rag-and-citations-on-vercel?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Freranking&source_site=vercel-docs&relationship=related) — A production stack for AI chat with retrieval, reranking, source citations, and background ingestion on Vercel using Nex
+- [Production architecture for a RAG chatbot on Vercel](https://vercel.com/kb/guide/rag-chatbot-production-architecture-on-vercel?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Freranking&source_site=vercel-docs&relationship=related) — Architect a production RAG chatbot on Vercel Functions with Fluid compute, AI Gateway, and a region-pinned vector store.
+- [Reranking](https://ai-sdk.dev/docs/ai-sdk-core/reranking?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Freranking&source_site=vercel-docs&relationship=related)
+- [rerank](https://ai-sdk.dev/docs/reference/ai-sdk-core/rerank?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Freranking&source_site=vercel-docs&relationship=related)
+- [Cohere Rerank API](https://vercel.com/docs/ai-gateway/sdks-and-apis/cohere-rerank?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Freranking&source_site=vercel-docs&relationship=related) — Use the Cohere-compatible Rerank API with AI Gateway to reorder documents by relevance with the Cohere SDK or plain HTTP
+- [Cohere](https://ai-sdk.dev/providers/ai-sdk-providers/cohere?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Freranking&source_site=vercel-docs&relationship=related)
+- [Voyage AI](https://ai-sdk.dev/providers/ai-sdk-providers/voyage?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Freranking&source_site=vercel-docs&relationship=related)
+- [Together.ai](https://ai-sdk.dev/providers/ai-sdk-providers/togetherai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Freranking&source_site=vercel-docs&relationship=related)
+- [ Routing rules now available on AI Gateway](https://vercel.com/changelog/ai-gateway-routing-rules?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Freranking&source_site=vercel-docs&relationship=related)
+- [DeepSeek V3.2 models now available in Vercel AI Gateway](https://vercel.com/changelog/deepseek-v3-2-now-in-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Freranking&source_site=vercel-docs&relationship=related)
+- [Routing Rules](https://vercel.com/docs/ai-gateway/models-and-providers/routing-rules?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Freranking&source_site=vercel-docs&relationship=related) — Define team-wide rules that rewrite requests from one model to another or deny specific models in AI Gateway.
+- [Embeddings](https://vercel.com/docs/ai-gateway/modalities/embeddings?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Freranking&source_site=vercel-docs&relationship=related) — Generate vector embeddings for semantic search, similarity matching, and retrieval-augmented generation \\(RAG\\) through
 
-Full cross-link map for this page: [/docs/ai-gateway/modalities/reranking.graph.md](/docs/ai-gateway/modalities/reranking.graph.md)
+Full cross-link map for this page: [/docs/ai-gateway/modalities/reranking.graph.md](/docs/ai-gateway/modalities/reranking.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Freranking&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 To see which models AI Gateway supports for reranking, use the **Reranking** filter at the [AI Gateway Models page](/ai-gateway/models?capabilities=reranking).

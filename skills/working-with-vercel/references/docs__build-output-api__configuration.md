@@ -16,8 +16,8 @@ related:
 summary: Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/configuration.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "e6b9a02a4672c2ab809640eb69bc4999949079886c9b9af8a5ef0699814b1ffe"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "25bd302e89af7bb1e940e7db3385b3e2f6120ea09a16953920ab424310715998"
 ---
 
 # Build Output Configuration
@@ -30,17 +30,15 @@ Schema (as TypeScript):
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Image](https://nextjs.org/docs/pages/api-reference/components/image?from=related) — Optimize Images in your Next.js Application using the built-in `next/image` Component.
-- [Image (Legacy)](https://nextjs.org/docs/pages/api-reference/components/image-legacy?from=related) — Backwards compatible Image Optimization with the Legacy Image component.
-- [Image Component](https://nextjs.org/docs/app/api-reference/components/image?from=related) — Optimize Images in your Next.js Application using the built-in `next/image` Component.
-- [opengraph-image and twitter-image](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image?from=related) — API Reference for the Open Graph Image and Twitter Image file conventions.
-- [Features](https://vercel.com/docs/build-output-api/features?from=related) — Learn how to implement common Vercel platform features through the Build Output API.
-- [vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
-- [OG Image Generation](https://vercel.com/docs/og-image-generation?from=related) — Learn how to optimize social media image generation through the Open Graph Protocol and @vercel/og library.
-- [vercel blob](https://vercel.com/docs/cli/blob?from=related) — Learn how to interact with Vercel Blob storage using the vercel blob CLI command.
-- [Routing](https://vercel.com/docs/routing?from=related) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
+- [Next.js 16.3 support on Vercel](https://vercel.com/blog/vercel-supports-next-js-16-3?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related)
+- [Image](https://nextjs.org/docs/pages/api-reference/components/image?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Optimize Images in your Next.js Application using the built-in `next/image` Component.
+- [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
+- [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
+- [Add a routing rule](https://vercel.com/docs/rest-api/project-routes/add-a-routing-rule?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — POST /v1/projects/{projectId}/routes — Add a single routing rule to a project at a specified position. Defaults to the e
+- [Get a repository image](https://vercel.com/docs/rest-api/vcr/get-a-repository-image?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — GET /v1/vcr/repository/{idOrName}/images/{imageIdOrDigest} — Fetch an individual image from a repository, including its
+- [Getting started with Image Optimization](https://vercel.com/docs/image-optimization/quickstart?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Learn how you can leverage Vercel Image Optimization in your projects.
 
-Full cross-link map for this page: [/docs/build-output-api/configuration.graph.md](/docs/build-output-api/configuration.graph.md)
+Full cross-link map for this page: [/docs/build-output-api/configuration.graph.md](/docs/build-output-api/configuration.graph.md?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ```ts

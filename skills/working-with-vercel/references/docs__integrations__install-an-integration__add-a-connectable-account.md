@@ -13,8 +13,8 @@ related:
 summary: Learn how to connect Vercel to your third-party account.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/install-an-integration/add-a-connectable-account.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "22a56a25c4f37270c584890113007a10a5c838558c012d1584ddf8b74a6a4643"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "3f7377d4c126713e815c4b95e27b55b122edfe7fb93dd1d3ba8d407b009e68d9"
 ---
 
 # Add a Connectable Account
@@ -27,14 +27,14 @@ sha256: "22a56a25c4f37270c584890113007a10a5c838558c012d1584ddf8b74a6a4643"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Connect](https://v0.app/docs/vercel-connect?from=related) — Connect your v0 apps and agents to third-party services – no API keys required.
-- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related) — Learn how you can add a product to your Vercel project through a native integration.
-- [Connectors](https://vercel.com/docs/connect/concepts/connectors?from=related) — A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are
-- [Concepts](https://vercel.com/docs/connect/concepts?from=related) — Understand the core building blocks of Vercel Connect: connectors, installations, tokens, project links, triggers, and a
-- [Marketplace Vercel API](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel?from=related) — Learn about marketplace vercel api on Vercel.
-- [Manage from Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related) — Learn how to manage Sign in with Vercel from the Dashboard
+- [Vercel Connect](https://v0.app/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fadd-a-connectable-account&source_site=vercel-docs&relationship=related) — Connect your v0 apps and agents to third-party services – no API keys required.
+- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fadd-a-connectable-account&source_site=vercel-docs&relationship=related) — Learn how you can add a product to your Vercel project through a native integration.
+- [Connectors](https://vercel.com/docs/connect/concepts/connectors?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fadd-a-connectable-account&source_site=vercel-docs&relationship=related) — A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are
+- [Vercel Connect Concepts](https://vercel.com/docs/connect/concepts?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fadd-a-connectable-account&source_site=vercel-docs&relationship=related) — Understand the core building blocks of Vercel Connect: connectors, installations, tokens, project links, triggers, and a
+- [Get Account Information](https://vercel.com/docs/rest-api/marketplace/get-account-information?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fadd-a-connectable-account&source_site=vercel-docs&relationship=related) — GET /v1/installations/{integrationConfigurationId}/account — Fetches the best account or user’s contact info
+- [Marketplace Vercel API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fadd-a-connectable-account&source_site=vercel-docs&relationship=related) — Learn how to call Vercel API endpoints to interact with Vercel resources
 
-Full cross-link map for this page: [/docs/integrations/install-an-integration/add-a-connectable-account.graph.md](/docs/integrations/install-an-integration/add-a-connectable-account.graph.md)
+Full cross-link map for this page: [/docs/integrations/install-an-integration/add-a-connectable-account.graph.md](/docs/integrations/install-an-integration/add-a-connectable-account.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fadd-a-connectable-account&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 1. From the [Vercel dashboard](/dashboard), open [**Integrations**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fintegrations\&title=Go+to+Integrations) in the sidebar and then the **Browse Marketplace** button. You can also go directly to the [Integrations Marketplace](https://vercel.com/integrations).

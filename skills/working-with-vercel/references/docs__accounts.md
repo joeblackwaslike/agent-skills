@@ -3,7 +3,7 @@ title: Account Management
 product: vercel
 url: /docs/accounts
 canonical_url: "https://vercel.com/docs/accounts"
-last_updated: 2026-06-16
+last_updated: 2026-08-11
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your Vercel account and team members.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/accounts.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "a0375ccf015e9364c088900fea7df4b3a2146e0bf23621e614184cebd0b55153"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "12ad56ed75fdbe3bb1c362a6a13ab1879a1c3ed5d6bad134d1cb737c6a14fd40"
 ---
 
 # Account Management
@@ -30,18 +30,20 @@ When you first sign up for Vercel, you'll create an account. This account is use
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Constructing CI](https://turborepo.dev/docs/crafting-your-repository/constructing-ci?from=related) — Set up CI pipelines with Remote Caching, task filtering, Docker support, and affected package detection for maximum spee
-- [Firewall Terraform Configuration](https://vercel.com/kb/guide/firewall-terraform-configuration?from=related) — Learn how to create scalable firewall configurations with Terraform
-- [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team?from=related) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
-- [Teams](https://v0.app/docs/teams?from=related) — Collaborate with your team on projects with shared resources.
-- [Account](https://v0.app/docs/account?from=related) — Manage your account and billing information.
-- [Troubleshoot project collaboration](https://vercel.com/docs/deployments/troubleshoot-project-collaboration?from=related) — Learn about common reasons for deployment issues related to team member requirements and how to resolve them.
-- [Hobby team transition](https://vercel.com/docs/security/enterprise-managed-users-account-update?from=related) — Explains the account update screen EMU members see at SSO sign-in and how to complete it.
-- [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Manage from Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related) — Learn how to manage Sign in with Vercel from the Dashboard
-- [Billing FAQ](https://vercel.com/docs/plans/pro-plan/billing?from=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
+- [Constructing CI](https://turborepo.dev/docs/crafting-your-repository/constructing-ci?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — Set up CI pipelines with Remote Caching, task filtering, Docker support, and affected package detection for maximum spee
+- [Auto-add Git committers to your team](https://vercel.com/changelog/auto-add-git-committers-to-your-team?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related)
+- [Introducing new token formats and secret scanning](https://vercel.com/changelog/new-token-formats-and-secret-scanning?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related)
+- [Tag-based cache invalidation now available for all responses](https://vercel.com/changelog/tag-based-cache-invalidation-now-available-for-all-responses?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related)
+- [Firewall Terraform Configuration](https://vercel.com/kb/guide/firewall-terraform-configuration?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — Learn how to create scalable firewall configurations with Terraform
+- [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
+- [Teams](https://v0.app/docs/teams?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — Collaborate with your team on projects with shared resources.
+- [Account](https://v0.app/docs/account?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — Manage your account and billing information.
+- [September 2020](https://vercel.com/blog/changelog-september-2020?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related)
+- [Troubleshoot project collaboration](https://vercel.com/docs/deployments/troubleshoot-project-collaboration?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — Learn about common reasons for deployment issues related to team member requirements and how to resolve them.
+- [Transition your Hobby team after EMU enrollment](https://vercel.com/docs/security/enterprise-managed-users-account-update?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — Explains the account update screen EMU members see at SSO sign-in and how to complete it.
+- [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 
-Full cross-link map for this page: [/docs/accounts.graph.md](/docs/accounts.graph.md)
+Full cross-link map for this page: [/docs/accounts.graph.md](/docs/accounts.graph.md?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 - [Hobby](/docs/plans/hobby)

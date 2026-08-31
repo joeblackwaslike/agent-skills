@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/deepagents.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "3a332afae705a5a0ab35e322ab19d74a35ba1a50b94d4c81c0ffebbfe21a9f84"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "e85380cb233c9990bcf7ba0746ab752e7f75079db44578d31ceefda22318d5f5"
 ---
 
 # Deep Agents Harness
@@ -87,7 +87,16 @@ const harness = createDeepAgents({
 
 Settings:
 
-- `auth`: authentication mode: `auto`, `anthropic`, or `ai-gateway`.
+- `auth`: authentication mode (`auto`, `anthropic`, or `ai-gateway`) or an
+  isolated authentication environment.
+- `credentialForwarding`: optional synchronous or asynchronous callback that
+  customizes each credential immediately before the harness adapter forwards it
+  into a sandbox process. It receives the credential value that would otherwise
+  be forwarded (either the real credential or a masked value) and the
+  environment variable name used to expose it. This callback only controls the
+  value forwarded into the sandbox process. It does not restrict which
+  credentials the harness adapter can discover, read, or otherwise access in
+  the host process.
 - `mcpServers`: MCP server definitions keyed by server name.
 - `model`: model id passed to the Deep Agents (LangChain) runtime. Through AI
   Gateway, use the `creator/model` slug (e.g. `anthropic/claude-sonnet-4-6`,
@@ -143,6 +152,18 @@ const harness = createDeepAgents({
   auth: 'ai-gateway',
 });
 ```
+
+Pass an authentication environment to use programmatically resolved
+credentials without reading `process.env`:
+
+```ts
+const harness = createDeepAgents({
+  auth: { ANTHROPIC_API_KEY: await resolveAnthropicToken() },
+});
+```
+
+The supplied record replaces the host environment for authentication
+discovery. Only recognized authentication variables are forwarded.
 
 ## Sandbox
 
@@ -205,6 +226,8 @@ The adapter exposes these Deep Agents built-ins through `agent.tools`:
 - [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
 - [Grok Build](/providers/ai-sdk-harnesses/grok-build)
 - [Cline](/providers/ai-sdk-harnesses/cline)
+- [Cursor](/providers/ai-sdk-harnesses/cursor)
+- [fx](/providers/ai-sdk-harnesses/fx)
 
 
 [Full Sitemap](/sitemap.md)

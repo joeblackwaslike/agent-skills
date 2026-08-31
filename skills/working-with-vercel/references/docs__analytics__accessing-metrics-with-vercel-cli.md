@@ -13,8 +13,8 @@ related:
 summary: Use the Vercel CLI to query Web Analytics metrics from your terminal.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "aa00288cfbee17612e3632f4baf9a59a970352192e5305be35f13880699ef12b"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "94431cc40ea11587737a363dcd573498a199b5b8270ff32f51c371c0fd69c871"
 ---
 
 # Accessing Metrics with Vercel CLI
@@ -27,13 +27,15 @@ Use `vercel metrics` to query Web Analytics data from your terminal. You can rep
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Using with CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli?from=related) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
-- [Web Analytics API](https://vercel.com/docs/analytics/web-analytics-api?from=related) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
-- [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics?from=related) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
-- [Query](https://vercel.com/docs/query?from=related) — Query and visualize your Vercel usage, traffic, and more in observability.
-- [Custom Metrics](https://vercel.com/docs/observability/custom-metrics?from=related) — Learn about custom metrics on Vercel.
+- [Query Web Analytics from the Vercel CLI](https://vercel.com/changelog/query-web-analytics-from-the-vercel-cli?from=related&source_path=%2Fdocs%2Fanalytics%2Faccessing-metrics-with-vercel-cli&source_site=vercel-docs&relationship=related)
+- [Query observability metrics using the Vercel CLI](https://vercel.com/changelog/vercel-metrics-in-cli?from=related&source_path=%2Fdocs%2Fanalytics%2Faccessing-metrics-with-vercel-cli&source_site=vercel-docs&relationship=related)
+- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fanalytics%2Faccessing-metrics-with-vercel-cli&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
+- [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api?from=related&source_path=%2Fdocs%2Fanalytics%2Faccessing-metrics-with-vercel-cli&source_site=vercel-docs&relationship=related) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
+- [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Faccessing-metrics-with-vercel-cli&source_site=vercel-docs&relationship=related) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
+- [Query](https://vercel.com/docs/query?from=related&source_path=%2Fdocs%2Fanalytics%2Faccessing-metrics-with-vercel-cli&source_site=vercel-docs&relationship=related) — Query and visualize your Vercel usage, traffic, and more in observability.
+- [Emit Custom Metrics from Vercel Functions](https://vercel.com/docs/observability/custom-metrics?from=related&source_path=%2Fdocs%2Fanalytics%2Faccessing-metrics-with-vercel-cli&source_site=vercel-docs&relationship=related) — Learn how to emit application-specific metrics from Vercel Functions and analyze them in Observability.
 
-Full cross-link map for this page: [/docs/analytics/accessing-metrics-with-vercel-cli.graph.md](/docs/analytics/accessing-metrics-with-vercel-cli.graph.md)
+Full cross-link map for this page: [/docs/analytics/accessing-metrics-with-vercel-cli.graph.md](/docs/analytics/accessing-metrics-with-vercel-cli.graph.md?from=related&source_path=%2Fdocs%2Fanalytics%2Faccessing-metrics-with-vercel-cli&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Web Analytics metrics are available through `vercel metrics` without [Observability Plus](/docs/observability/observability-plus).

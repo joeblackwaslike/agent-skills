@@ -1,10 +1,17 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides/r1.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "5facf65a36d4f5f383de2f155cf70021fc98894b4a44ade788a860364a39a8a9"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "da22402671a1c7b86b52d5ebda230941537d06c89dd528c9bc4758c5500aa5eb"
 ---
 
 # Get started with DeepSeek R1
+
+<Note>
+  DeepSeek retired the `deepseek-reasoner` API alias on July 24, 2026. Direct
+  DeepSeek API examples in this historical guide are preserved for reference and
+  no longer run against the current service. For current DeepSeek reasoning
+  workloads, use `deepseek-v4-pro`.
+</Note>
 
 With the [release of DeepSeek R1](https://api-docs.deepseek.com/news/news250528), there has never been a better time to start building AI applications, particularly those that require complex reasoning capabilities.
 

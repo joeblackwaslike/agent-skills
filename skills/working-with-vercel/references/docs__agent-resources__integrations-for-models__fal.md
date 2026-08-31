@@ -13,8 +13,8 @@ related:
 summary: Learn how to add the fal native integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/fal.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "7d30e8e9e2cb1c35835547861a6986c72837109969624693e0a9778b8a279c6c"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "0503f56cfc12bc5ccdd5a6a90d79244d78fb99aaa912e19a3d407f312bc9419f"
 ---
 
 # Vercel fal Integration
@@ -30,13 +30,13 @@ no cold starts and a pay-for-what-you-use pricing model.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Deep Infra](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra?from=related) — Learn how to add the Deep Infra native integration with Vercel.
-- [xAI](https://vercel.com/docs/agent-resources/integrations-for-models/xai?from=related) — Learn how to add the xAI native integration with Vercel.
-- [OpenAI](https://vercel.com/docs/agent-resources/integrations-for-models/openai?from=related) — Integrate your Vercel project with OpenAI's powerful suite of models.
-- [ElevenLabs](https://vercel.com/docs/agent-resources/integrations-for-models/elevenlabs?from=related) — Learn how to add the ElevenLabs connectable account integration with Vercel.
-- [Together AI](https://vercel.com/docs/agent-resources/integrations-for-models/togetherai?from=related) — Learn how to add Together AI connectable account integration with Vercel.
+- [Vercel Deep Infra Integration](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Ffal&source_site=vercel-docs&relationship=related) — Learn how to add the Deep Infra native integration with Vercel.
+- [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Ffal&source_site=vercel-docs&relationship=related) — Learn how to add the xAI native integration with Vercel.
+- [Vercel & OpenAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/openai?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Ffal&source_site=vercel-docs&relationship=related) — Integrate your Vercel project with OpenAI's powerful suite of models.
+- [Vercel ElevenLabs Integration](https://vercel.com/docs/agent-resources/integrations-for-models/elevenlabs?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Ffal&source_site=vercel-docs&relationship=related) — Learn how to add the ElevenLabs connectable account integration with Vercel.
+- [Vercel Together AI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/togetherai?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Ffal&source_site=vercel-docs&relationship=related) — Learn how to add Together AI connectable account integration with Vercel.
 
-Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/fal.graph.md](/docs/agent-resources/integrations-for-models/fal.graph.md)
+Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/fal.graph.md](/docs/agent-resources/integrations-for-models/fal.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Ffal&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Use cases

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/stream-protocol.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "52774257280a88f32cf34aea62cb74adaa0240bbf3a21138819de0c7ff753609"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "4ff40c187d79fbb906e3a8404ddacf260c00e2aec42fd796cddd398d0e64eed0"
 ---
 
 # Stream Protocols
@@ -368,11 +368,11 @@ Format: Server-Sent Event with JSON object
 Example:
 
 ```
-data: {"type":"tool-approval-request","toolCallId":"call_fJdQDqnXeGxTmr4E3YPSR7Ar","approvalId":"approval_123","isAutomatic":true}
+data: {"type":"tool-approval-request","toolCallId":"call_fJdQDqnXeGxTmr4E3YPSR7Ar","approvalId":"approval_123","reason":"Requires operator review"}
 
 ```
 
-When `isAutomatic` is omitted, the request expects an explicit approval response from the client.
+When `isAutomatic` is omitted, the request expects an explicit approval response from the client. `reason` is optional and explains why the tool call requires approval.
 
 ### Tool Approval Response Part
 

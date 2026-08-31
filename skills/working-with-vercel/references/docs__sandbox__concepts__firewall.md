@@ -3,7 +3,7 @@ title: Sandbox firewall
 product: vercel
 url: /docs/sandbox/concepts/firewall
 canonical_url: "https://vercel.com/docs/sandbox/concepts/firewall"
-last_updated: 2026-08-04
+last_updated: 2026-08-25
 type: conceptual
 prerequisites:
   - /docs/sandbox/concepts
@@ -11,12 +11,14 @@ prerequisites:
 related:
   - /docs/glossary
   - /docs/sandbox/concepts/persistent-sandboxes
+  - /docs/functions
+  - /docs/functions/functions-api-reference
   - /docs/sandbox/concepts
 summary: Define network policies on sandboxes, preventing data exfiltration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/firewall.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "11ffdd613415739d45ea002c1c509d3213dde8e0fde261ea88949394cfc42110"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "adb3ac261a5631c8715c477089500d9b3cc601bbcb1e0a065dfd361692b25df0"
 ---
 
 # Sandbox firewall
@@ -29,18 +31,20 @@ Network firewall allows users to restrict egress traffic from their sandbox. It 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Security Model](https://eve.dev/docs/concepts/security-model?from=related) — eve's trust boundaries, where secrets live, how credentials reach hosts, and what fails closed by default.
-- [How to run a multi-step research agent on Vercel](https://vercel.com/kb/guide/how-to-run-a-multi-step-research-agent-on-vercel?from=related) — An end-to-end architecture for production research agents on Vercel using Sandbox, Workflows, and AI Gateway with isolat
-- [Sandbox](https://eve.dev/docs/sandbox?from=related) — The agent's isolated bash environment, including built-in file tools, a seeded /workspace, backends, lifecycle, and netw
-- [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox?from=related) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
-- [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
-- [Runtimes](https://vercel.com/docs/sandbox/concepts/runtimes?from=related) — Detailed specifications for the Vercel Sandbox environment.
-- [Update network policy](https://vercel.com/docs/rest-api/sandboxes/update-network-policy?from=related)
-- [Firewall](https://vercel.com/docs/vercel-firewall?from=related) — Learn how Vercel Firewall helps protect your applications and websites from malicious attacks and unauthorized access.
-- [Get a named sandbox](https://vercel.com/docs/rest-api/sandboxes/get-a-named-sandbox?from=related)
-- [Delete a sandbox](https://vercel.com/docs/rest-api/sandboxes/delete-a-sandbox?from=related)
+- [A sandbox without a network boundary is only half a sandbox](https://vercel.com/blog/a-sandbox-without-a-network-boundary-is-only-half-a-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Ffirewall&source_site=vercel-docs&relationship=related)
+- [Security Model](https://eve.dev/docs/concepts/security-model?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Ffirewall&source_site=vercel-docs&relationship=related) — eve's trust boundaries, where secrets live, how credentials reach hosts, and what fails closed by default.
+- [Full Sandbox egress firewall now available on Hobby plan](https://vercel.com/changelog/full-sandbox-egress-firewall-now-available-on-hobby-plan?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Ffirewall&source_site=vercel-docs&relationship=related)
+- [How to run a multi-step research agent on Vercel](https://vercel.com/kb/guide/how-to-run-a-multi-step-research-agent-on-vercel?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Ffirewall&source_site=vercel-docs&relationship=related) — An end-to-end architecture for production research agents on Vercel using Sandbox, Workflows, and AI Gateway with isolat
+- [How v0 authenticates to Snowflake without exposing the user's OAuth token](https://vercel.com/blog/how-v0-authenticates-to-snowflake-without-exposing-the-users-oauth-token?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Ffirewall&source_site=vercel-docs&relationship=related)
+- [Advanced egress firewall filtering for Vercel Sandbox](https://vercel.com/changelog/advanced-egress-firewall-filtering-for-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Ffirewall&source_site=vercel-docs&relationship=related)
+- [Vercel Sandbox firewall now supports request proxying and filtering](https://vercel.com/changelog/vercel-sandbox-firewall-now-supports-request-proxying-and-filtering?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Ffirewall&source_site=vercel-docs&relationship=related)
+- [Safely inject credentials in HTTP headers with Vercel Sandbox](https://vercel.com/changelog/safely-inject-credentials-in-http-headers-with-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Ffirewall&source_site=vercel-docs&relationship=related)
+- [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Ffirewall&source_site=vercel-docs&relationship=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
+- [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Ffirewall&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
+- [Update network policy](https://vercel.com/docs/rest-api/sandboxes/update-network-policy?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Ffirewall&source_site=vercel-docs&relationship=related) — POST /v2/sandboxes/sessions/{sessionId}/network-policy — Replaces the network access policy of a running session. Use th
+- [Get a named sandbox](https://vercel.com/docs/rest-api/sandboxes/get-a-named-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Ffirewall&source_site=vercel-docs&relationship=related) — GET /v2/sandboxes/{name} — Retrieves a named sandbox by name, including its current sandbox and routes. If the sandbox i
 
-Full cross-link map for this page: [/docs/sandbox/concepts/firewall.graph.md](/docs/sandbox/concepts/firewall.graph.md)
+Full cross-link map for this page: [/docs/sandbox/concepts/firewall.graph.md](/docs/sandbox/concepts/firewall.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Ffirewall&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## When to use network firewall
@@ -158,6 +162,26 @@ The `forwardURL` receives the original request as-is, with the addition of the f
   - `sandbox_name`: The sandbox's name, when using [persistent sandboxes](/docs/sandbox/concepts/persistent-sandboxes).
 
 We recommend using the `defineSandboxProxy` helper from `@vercel/sandbox/proxy` to setup a proxy with automatic OIDC validation and extracted metadata.
+
+Implement the proxy server yourself, or use the TypeScript-only `defineSandboxProxy` helper inside a [Vercel Function](/docs/functions) or a [fetch Web Standard](/docs/functions/functions-api-reference#fetch-web-standard) compatible server:
+
+```ts
+import { defineSandboxProxy } from '@vercel/sandbox/proxy';
+
+const proxy = defineSandboxProxy(async (request, { teamId, projectId, sandboxId, sandboxName }) => {
+  // Perform additional validation, logging, or transformation here.
+  return await fetch(request);
+})
+
+// Per-method Web Handler in Next.js or Vercel Function:
+export const GET = proxy;
+export const POST = proxy;
+
+// fetch Web Handler in Vercel Function, handles all methods:
+export default {
+  fetch: proxy
+}
+```
 
 ## Matchers
 

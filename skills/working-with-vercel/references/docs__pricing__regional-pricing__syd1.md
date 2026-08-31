@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the Sydney, Australia (syd1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/syd1.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "8da8fe189d89c68b0f8442ca237fee9ca7d992ffc32233c7ee47556f083245e8"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "45b11311442396edb4601f91cdda20811e01716c2ede5bd35f80c1484cc26023"
 ---
 
 # Sydney, Australia (syd1) pricing
@@ -31,13 +31,13 @@ The table below shows Managed Infrastructure products with pricing specific to t
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [San Francisco, USA \\(sfo1\\)](https://vercel.com/docs/pricing/regional-pricing/sfo1?from=related) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
-- [Dublin, Ireland \\(dub1\\)](https://vercel.com/docs/pricing/regional-pricing/dub1?from=related) — Vercel pricing for the Dublin, Ireland \\(dub1\\) region.
-- [Singapore \\(sin1\\)](https://vercel.com/docs/pricing/regional-pricing/sin1?from=related) — Vercel pricing for the Singapore \\(sin1\\) region.
-- [Dubai, UAE \\(dxb1\\)](https://vercel.com/docs/pricing/regional-pricing/dxb1?from=related) — Vercel pricing for the Dubai, UAE \\(dxb1\\) region.
-- [Cape Town, South Africa \\(cpt1\\)](https://vercel.com/docs/pricing/regional-pricing/cpt1?from=related) — Vercel pricing for the Cape Town, South Africa \\(cpt1\\) region.
+- [San Francisco, USA \\(sfo1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sfo1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fsyd1&source_site=vercel-docs&relationship=related) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
+- [Dublin, Ireland \\(dub1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/dub1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fsyd1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Dublin, Ireland \\(dub1\\) region.
+- [Singapore \\(sin1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sin1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fsyd1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Singapore \\(sin1\\) region.
+- [Dubai, UAE \\(dxb1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/dxb1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fsyd1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Dubai, UAE \\(dxb1\\) region.
+- [Cape Town, South Africa \\(cpt1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cpt1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fsyd1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Cape Town, South Africa \\(cpt1\\) region.
 
-Full cross-link map for this page: [/docs/pricing/regional-pricing/syd1.graph.md](/docs/pricing/regional-pricing/syd1.graph.md)
+Full cross-link map for this page: [/docs/pricing/regional-pricing/syd1.graph.md](/docs/pricing/regional-pricing/syd1.graph.md?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fsyd1&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 The **Included** column shows the amount of usage covered in your [billing cycle](/docs/pricing/understanding-my-invoice#understanding-your-invoice). If you use more than this amount, the **Additional** column lists the rates for any extra usage.

@@ -1,7 +1,7 @@
 ---
-source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/prompts/templates/goals/continuation.md"
-fetched_at: "2026-06-15T05:54:26.964Z"
-sha256: "bcb77b27cac86d4973c34b075a1b32ed4c16e825771a16b7a86117b00c05e817"
+source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/ext/goal/templates/goals/continuation.md"
+fetched_at: "2026-08-31T10:39:06.401Z"
+sha256: "b9127a5d96c30b625ed6267b59e2fe22f312f4db34cfa8e041ddc1fb2740bdcb"
 ---
 
 Continue working toward the active thread goal.
@@ -24,6 +24,11 @@ Budget:
 
 Work from evidence:
 Use the current worktree and external state as authoritative. Previous conversation context can help locate relevant work, but inspect the current state before relying on it. Improve, replace, or remove existing work as needed to satisfy the actual objective.
+
+No-progress check:
+- Classify the previous goal turn as progress, a verified wait, or no progress. Progress changes authoritative state, completes work, or yields evidence that changes the next action; status restatements and unexecuted plans are no progress.
+- A verified wait polls a specific process, session, job, or tool handle confirmed live now. Conversation, intent, prior output, or a lock or state file alone is insufficient. Treat work as stopped only when authoritative state says it is terminal or its handle is missing. An observation timeout or transient polling failure is not terminal: re-poll the same handle or inspect other authoritative state; never restart solely because observation expired.
+- Revalidate a no-progress turn and take the next available safe action. If none exists because the same genuine blocker remains, report it and leave the goal active until the blocked audit threshold is met. Treat equivalent blockers as the same condition across turns even when their wording or stated next step changes.
 
 Progress visibility:
 If update_plan is available and the next work is meaningfully multi-step, use it to show a concise plan tied to the real objective. Keep the plan current as steps complete or the next best action changes. Skip planning overhead for trivial one-step progress, and do not treat a plan update as a substitute for doing the work.

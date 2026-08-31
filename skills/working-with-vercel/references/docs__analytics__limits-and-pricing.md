@@ -3,21 +3,21 @@ title: Pricing for Web Analytics
 product: vercel
 url: /docs/analytics/limits-and-pricing
 canonical_url: "https://vercel.com/docs/analytics/limits-and-pricing"
-last_updated: 2026-06-26
+last_updated: 2026-08-25
 type: reference
 prerequisites:
   - /docs/analytics
 related:
   - /docs/plans/hobby
   - /docs/manage-and-optimize-observability
-  - /docs/speed-insights/metrics
-  - /docs/manage-cdn-usage
   - /docs/notifications
+  - /docs/accounts
+  - /docs/plans/pro-plan
 summary: Learn about pricing for Vercel Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/limits-and-pricing.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "2709699bf0b9da9dc1b463953f1221e60dd76f8a144647cfb2933e92f215b808"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "e54c8c9cf4eddedfc716ff67a915238e840ec085f00989cc8f6bc45b02b7bb18"
 ---
 
 # Pricing for Web Analytics
@@ -30,14 +30,19 @@ sha256: "2709699bf0b9da9dc1b463953f1221e60dd76f8a144647cfb2933e92f215b808"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent?from=related) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
-- [Limits and Pricing](https://vercel.com/docs/speed-insights/limits-and-pricing?from=related) — Learn about our limits and pricing when using Vercel Speed Insights. Different limitations are applied depending on your
-- [Observability Plus](https://vercel.com/docs/observability/observability-plus?from=related) — Learn about using Observability Plus and its limits.
-- [Manage and Optimize Usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
-- [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics?from=related) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
-- [Overview](https://vercel.com/docs/observability?from=related) — Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application perfor
+- [Split Web Analytics data by any dimension](https://vercel.com/changelog/split-web-analytics-data-by-any-dimension?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related)
+- [Up to 80% pricing reduction for Web Analytics](https://vercel.com/changelog/up-to-80-pricing-reduction-for-web-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related)
+- [UTM parameter support in Web Analytics](https://vercel.com/changelog/utm-parameter-support-in-web-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related)
+- [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
+- [Web Analytics is now generally available](https://vercel.com/changelog/web-analytics-is-now-generally-available?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related)
+- [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related)
+- [Observability Plus](https://vercel.com/docs/observability/observability-plus?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn about using Observability Plus and its limits.
+- [Limits and Pricing for Speed Insights](https://vercel.com/docs/speed-insights/limits-and-pricing?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn about our limits and pricing when using Vercel Speed Insights. Different limitations are applied depending on your
+- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application perfor
+- [Account Plans on Vercel](https://vercel.com/docs/plans?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn about the different plans available on Vercel.
 
-Full cross-link map for this page: [/docs/analytics/limits-and-pricing.graph.md](/docs/analytics/limits-and-pricing.graph.md)
+Full cross-link map for this page: [/docs/analytics/limits-and-pricing.graph.md](/docs/analytics/limits-and-pricing.graph.md?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Vercel prices Web Analytics by the number of [collected events](#what-is-an-event-in-vercel-web-analytics) across all projects in your team.
@@ -71,12 +76,6 @@ To view information on managing each resource, select the resource link in the *
 To jump straight to guidance on optimization, select the corresponding resource link in the **Optimize** column.
 
 See the [manage and optimize Observability usage](/docs/manage-and-optimize-observability) section for more information on how to optimize your usage.
-
-> **💡 Note:** Speed Insights and Web Analytics require scripts to do collection of [data
-> points](/docs/speed-insights/metrics#understanding-data-points). These scripts
-> are loaded on the client-side and therefore may incur additional usage and
-> costs for [Data Transfer](/docs/manage-cdn-usage#fast-data-transfer) and [Edge
-> Requests](/docs/manage-cdn-usage#edge-requests).
 
 ## Billing information
 

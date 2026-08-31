@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/chatbot-tool-usage.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "7c953bf196b7b013127457b9aa06ad61c5a11f36c79a0cacc845bdec5a33b748"
+fetched_at: "2026-08-31T10:43:45.904Z"
+sha256: "878876879dae7fe9b8308102f7d8f8716dcca134e5278af1811ba4bc24d8b80b"
 ---
 
 # Chatbot Tool Usage
@@ -472,6 +472,9 @@ export default function Chat() {
                   return (
                     <div key={part.toolCallId}>
                       <p>Get weather for {part.input.city}?</p>
+                      {part.approval.requestReason && (
+                        <p>{part.approval.requestReason}</p>
+                      )}
                       <button
                         onClick={() =>
                           addToolApprovalResponse({
@@ -537,6 +540,9 @@ decisions already arrive in the UI stream as `approval-requested` and
 `approval-responded` states, and denied executions continue to `output-denied`.
 If you return a `reason` from an automatic approval or denial, it is available
 as `part.approval.reason`.
+For manual approval requests, the reason for requiring approval is available as
+`part.approval.requestReason`. It remains separate from an optional response
+reason supplied to `addToolApprovalResponse`.
 
 ### Securing Approvals for Sensitive Tools
 

@@ -2,8 +2,8 @@
 name: gemini-api-dev
 description: Use this skill when building applications with Gemini API hosted models, including Gemini and Gemma 4, working with multimodal content (text, images, audio, video), implementing function calling, using structured outputs, or needing current model specifications. Covers SDK usage (google-genai for Python, @google/genai for JavaScript/TypeScript, com.google.genai:google-genai for Java, google.golang.org/genai for Go), model selection, and API capabilities.
 source: "https://raw.githubusercontent.com/google-gemini/gemini-skills/main/skills/gemini-api-dev/SKILL.md"
-fetched_at: "2026-08-17T04:44:34.010Z"
-sha256: "7ca5eddab0d20e80fb8b12869ee42db0b8da502381538eb880503e78cedfc651"
+fetched_at: "2026-08-31T10:40:50.696Z"
+sha256: "819affeec8c159b822055c1bb495c3f85bba3ab18464980e6c6903eceb0a762f"
 ---
 
 # Gemini API Development Skill
@@ -18,13 +18,17 @@ sha256: "7ca5eddab0d20e80fb8b12869ee42db0b8da502381538eb880503e78cedfc651"
 - `gemini-3.7-flash`: 1M tokens, fast, balanced performance for agentic and multimodal tasks
 - `gemini-3.5-flash-lite`: 1M tokens, fastest, lowest-cost 3.5 model for high-throughput execution
 - `gemini-3.1-pro-preview`: 1M tokens, complex reasoning, coding, research
+- `gemini-3.5-transcribe`: fast speech-to-text with smart and verbatim modes
 - `gemini-3-pro-image-preview` (Nano Banana Pro): 65k / 32k tokens, image generation and editing
 - `gemini-3.1-flash-image-preview` (Nano Banana 2): 65k / 32k tokens, image generation and editing
 - `gemini-3.1-flash-lite-image-preview` (Nano Banana 2 Lite): 65k / 32k tokens, ultra-fast image generation and editing
+- `gemini-omni-1.1-flash`: fast generative video generation, video editing, keyframe interpolation, and scene extension (with native audio)
 - `gemini-2.5-pro`: 1M tokens, complex reasoning, coding, research
 - `gemini-2.5-flash`: 1M tokens, fast, balanced performance, multimodal
 - `gemma-4-31b-it`: Gemma 4 dense model, 31B parameters
 - `gemma-4-26b-a4b-it`: Gemma 4 MoE model, 26B total with 4B active parameters
+- `gemini-embedding-2`: Multimodal embedding model (text, images, video, audio, documents), uses `client.models.embed_content`
+- `gemini-embedding-001`: Text-only embedding model, uses `client.models.embed_content`
 
 > [!WARNING]
 > Models like `gemini-2.0-*`, `gemini-1.5-*` are **legacy and deprecated**. Never use them.
@@ -155,8 +159,10 @@ Key pages:
 - [Text generation](https://ai.google.dev/gemini-api/docs/text-generation.md.txt)
 - [Function calling](https://ai.google.dev/gemini-api/docs/function-calling.md.txt)
 - [Structured outputs](https://ai.google.dev/gemini-api/docs/structured-output.md.txt)
+- [Audio Transcription](https://ai.google.dev/gemini-api/docs/generate-content/transcribe.md.txt)
 - [Image generation](https://ai.google.dev/gemini-api/docs/image-generation.md.txt)
 - [Image understanding](https://ai.google.dev/gemini-api/docs/image-understanding.md.txt)
+- [Video generation & editing (Omni Flash)](https://ai.google.dev/gemini-api/docs/omni.md.txt)
 - [Embeddings](https://ai.google.dev/gemini-api/docs/embeddings.md.txt)
 - [SDK migration guide](https://ai.google.dev/gemini-api/docs/migrate.md.txt)
 

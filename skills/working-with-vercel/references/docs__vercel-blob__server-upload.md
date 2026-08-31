@@ -3,7 +3,7 @@ title: Server Uploads with Vercel Blob
 product: vercel
 url: /docs/vercel-blob/server-upload
 canonical_url: "https://vercel.com/docs/vercel-blob/server-upload"
-last_updated: 2026-07-30
+last_updated: 2026-08-11
 type: tutorial
 prerequisites:
   - /docs/vercel-blob
@@ -14,8 +14,8 @@ related:
 summary: Learn how to upload files to Vercel Blob using Server Actions and Route Handlers
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/server-upload.md"
-fetched_at: "2026-08-24T04:53:18.281Z"
-sha256: "fe8219529687c3944fff15bd99ea7c18d4b68502857e892f6f8c7398c4834db3"
+fetched_at: "2026-08-31T10:45:09.572Z"
+sha256: "398b7df2b40d6e50f20129925e29bf85ce15d8d77a0c8ebce087d910f22df109"
 ---
 
 # Server Uploads with Vercel Blob
@@ -28,19 +28,20 @@ sha256: "fe8219529687c3944fff15bd99ea7c18d4b68502857e892f6f8c7398c4834db3"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Videos](https://nextjs.org/docs/app/guides/videos?from=related) — Recommendations and best practices for optimizing videos in your Next.js application.
-- [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs?from=related) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
-- [Vercel Blob vs Netlify Blobs](https://vercel.com/kb/guide/vercel-blob-vs-netlify-blobs?from=related) — Compare Vercel Blob and Netlify Blobs on storage model, public URLs, delivery, limits, and pricing to choose the right o
-- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
-- [Build with Vercel Blob on Nuxt](https://vercel.com/kb/guide/vercel-blob-nuxt?from=related) — Set up Vercel Blob in a Nuxt application with NuxtHub, upload and serve files, and deliver optimized images with Nuxt Im
-- [How can I use AWS S3 with Vercel?](https://vercel.com/kb/guide/how-can-i-use-aws-s3-with-vercel?from=related) — Example how to use AWS S3 library on Vercel
-- [Public Storage](https://vercel.com/docs/vercel-blob/public-storage?from=related) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
-- [Start a blob upload](https://vercel.com/docs/rest-api/vcr/start-a-blob-upload?from=related)
-- [Complete a blob upload](https://vercel.com/docs/rest-api/vcr/complete-a-blob-upload?from=related)
-- [Upload a blob chunk](https://vercel.com/docs/rest-api/vcr/upload-a-blob-chunk?from=related)
-- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
+- [How to use and optimize videos](https://nextjs.org/docs/app/guides/videos?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fserver-upload&source_site=vercel-docs&relationship=related) — Recommendations and best practices for optimizing videos in your Next.js application.
+- [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fserver-upload&source_site=vercel-docs&relationship=related) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
+- [Vercel Blob vs Netlify Blobs](https://vercel.com/kb/guide/vercel-blob-vs-netlify-blobs?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fserver-upload&source_site=vercel-docs&relationship=related) — Compare Vercel Blob and Netlify Blobs on storage model, public URLs, delivery, limits, and pricing to choose the right o
+- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fserver-upload&source_site=vercel-docs&relationship=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
+- [Build with Vercel Blob on Nuxt](https://vercel.com/kb/guide/vercel-blob-nuxt?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fserver-upload&source_site=vercel-docs&relationship=related) — Set up Vercel Blob in a Nuxt application with NuxtHub, upload and serve files, and deliver optimized images with Nuxt Im
+- [How can I use AWS S3 with Vercel?](https://vercel.com/kb/guide/how-can-i-use-aws-s3-with-vercel?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fserver-upload&source_site=vercel-docs&relationship=related) — Example how to use AWS S3 library on Vercel
+- [Introducing Vercel Blob](https://vercel.com/changelog/vercel-blob?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fserver-upload&source_site=vercel-docs&relationship=related)
+- [View, upload, and delete Blob files in the dashboard](https://vercel.com/changelog/view-upload-and-delete-blob-files-in-the-dashboard?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fserver-upload&source_site=vercel-docs&relationship=related)
+- [Public Storage](https://vercel.com/docs/vercel-blob/public-storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fserver-upload&source_site=vercel-docs&relationship=related) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
+- [Start a blob upload](https://vercel.com/docs/rest-api/vcr/start-a-blob-upload?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fserver-upload&source_site=vercel-docs&relationship=related) — POST /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/ — POST /v2/:teamSlug/:projectSlug/:repositoryName/blob
+- [Complete a blob upload](https://vercel.com/docs/rest-api/vcr/complete-a-blob-upload?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fserver-upload&source_site=vercel-docs&relationship=related) — PUT /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid} — PUT /v2/:teamSlug/:projectSlug/:repositoryName/
+- [Upload a blob chunk](https://vercel.com/docs/rest-api/vcr/upload-a-blob-chunk?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fserver-upload&source_site=vercel-docs&relationship=related) — PATCH /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid} — PATCH /v2/:teamSlug/:projectSlug/:repositoryN
 
-Full cross-link map for this page: [/docs/vercel-blob/server-upload.graph.md](/docs/vercel-blob/server-upload.graph.md)
+Full cross-link map for this page: [/docs/vercel-blob/server-upload.graph.md](/docs/vercel-blob/server-upload.graph.md?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fserver-upload&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 In this guide, you'll learn how to do the following:
