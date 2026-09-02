@@ -1,6 +1,6 @@
 ---
 name: mcp-server
-description: Pieces MCP server — endpoints, setup for 19 AI tools, all 39 tools with parameters, workflow patterns, ngrok remote access, stdio bridge
+description: Pieces MCP server — endpoints, setup for 19 AI tools, ~65 tools with parameters, workflow patterns, ngrok remote access, stdio bridge
 ---
 
 # Pieces MCP Server
@@ -438,3 +438,116 @@ ask_pieces_ltm(
 ```
 
 <!-- END:auto-updated:tools -->
+
+---
+
+## Additional Tools
+
+> These tools appear in the live Pieces MCP server but are not yet reflected in the upstream
+> pro_tips documentation. The auto-updated block above is regenerated from upstream; this
+> section is manually maintained. For parameters not listed here, see the Pieces OS API docs
+> or inspect the tool schema via your AI tool's MCP introspection.
+
+### Lightweight Memory (2 tools)
+
+**`ask_memory`** — Lighter-weight memory query alternative to `ask_pieces_ltm`. Lower latency;
+use for quick "what did I do?" queries when the full LTM synthesis is unnecessary.
+- Parameters: see Pieces OS docs
+
+**`search_memory`** — Lightweight memory search, returns raw matches rather than a synthesized
+answer.
+- Parameters: see Pieces OS docs
+
+---
+
+### Single-Object Snapshots (15 tools)
+
+Fetch one object by UUID. Complement to the `*_batch_snapshot` tools (which take 1–100 UUIDs).
+Use when you have exactly one identifier and want the cleanest result.
+
+| Tool | Fetches |
+|------|---------|
+| `workstream_summary_snapshot` | Single workstream summary by UUID |
+| `workstream_event_snapshot` | Single captured activity event |
+| `hint_snapshot` | Single AI-generated hint/suggestion |
+| `tag_snapshot` | Single user-created tag |
+| `annotation_snapshot` | Single note, summary, or comment |
+| `website_snapshot` | Single saved URL with content |
+| `connector_snapshot` | Single connector config (GCal, etc.) |
+| `anchor_snapshot` | Single code bookmark |
+| `anchor_point_snapshot` | Single file-location within a bookmark |
+| `range_snapshot` | Single temporal range |
+| `person_snapshot` | Single contact/collaborator record |
+| `wpe_source_snapshot` | Single workflow pattern engine source |
+| `wpe_source_window_snapshot` | Single WPE window title context |
+| `conversation_snapshot` | Single Copilot conversation |
+| `conversation_message_snapshot` | Single Copilot chat message |
+
+All take a single UUID identifier parameter. See Pieces OS docs for exact schema.
+
+---
+
+### Browser Context (2 tools)
+
+**`browser_activity`** — Retrieve browser activity history captured by the Pieces browser
+extension (tabs visited, pages viewed, time).
+- Parameters: see Pieces OS docs
+
+**`browser_lookup`** — Look up stored context for a specific URL.
+- Parameters: see Pieces OS docs
+
+---
+
+### Filesystem (3 tools)
+
+**`filesystem_read_chunk`** — Read a portion of a local file by path.
+- Parameters: see Pieces OS docs
+
+**`filesystem_search_paths`** — Search for file paths matching a pattern in the local
+filesystem index Pieces maintains.
+- Parameters: see Pieces OS docs
+
+**`filesystem_search_text`** — Full-text search across indexed local file contents.
+- Parameters: see Pieces OS docs
+
+---
+
+### User Profile (1 tool)
+
+**`get_user_persona`** — Retrieve the authenticated user's Pieces profile and persona data.
+- Parameters: see Pieces OS docs
+- Returns: profile information including name, usage patterns
+
+---
+
+### Time Computation (1 tool)
+
+**`time_compute`** — Compute or manipulate timestamps (distinct from `extract_temporal_range`
+which converts natural language to UTC ranges). Use for arithmetic on known timestamps.
+- Parameters: see Pieces OS docs
+
+---
+
+### Google Calendar (6 tools)
+
+Requires a GCal connector configured in Pieces OS. Use `list_gcal_connectors` to discover
+available connectors, then `get_gcal_event`/`get_gcal_events` to read, and the mutating
+tools to write.
+
+**`list_gcal_connectors`** — List available Google Calendar connector accounts.
+- Parameters: see Pieces OS docs
+
+**`get_gcal_events`** — Retrieve a list of calendar events (supports date range filtering).
+- Parameters: see Pieces OS docs
+
+**`get_gcal_event`** — Retrieve a single calendar event by ID.
+- Parameters: see Pieces OS docs
+
+**`create_gcal_event`** — Create a new calendar event.
+- Parameters: see Pieces OS docs
+
+**`patch_gcal_event`** — Update fields on an existing calendar event.
+- Parameters: see Pieces OS docs
+
+**`delete_gcal_event`** — Delete a calendar event by ID.
+- Parameters: see Pieces OS docs

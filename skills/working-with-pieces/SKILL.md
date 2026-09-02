@@ -9,8 +9,11 @@ description: Use when working with the Pieces for Developers ecosystem: Pieces O
   or understanding the Pieces OS internals (processes, databases, config). Also
   invoke when the user mentions "Pieces", "Pieces Copilot", "pieces-os", or wants
   AI tools to remember past workflow context across sessions.
+  Also invoke for: "what was I working on", "what did I do yesterday/last week",
+  "what code did I write for X", "what did I have open about Y" — these are
+  workstream-activity queries that Pieces LTM is built for.
 metadata:
-  last_updated: "2026-08-12"
+  last_updated: "2026-09-02"
 ---
 
 # Working with Pieces for Developers
@@ -28,7 +31,7 @@ PORT=$(cat ~/Library/com.pieces.os/production/Config/.port.txt)
 claude mcp add --transport http pieces http://localhost:${PORT}/model_context_protocol/2025-03-26/mcp
 ```
 
-Verify: ask Claude "What MCP tools do you have from Pieces?" — you should see 39 tools listed.
+Verify: ask Claude "What MCP tools do you have from Pieces?" — you should see ~65 tools listed.
 
 ## Routing Table
 
@@ -37,7 +40,11 @@ Verify: ask Claude "What MCP tools do you have from Pieces?" — you should see 
 | Install Pieces OS, manage service, health check | `references/pieces-os.md` |
 | Explore processes, databases, config files, ML dylibs | `references/pieces-os-internals.md` |
 | Set up MCP for Claude Code, Cursor, Copilot, etc. | `references/mcp-server.md` |
-| All 39 MCP tools with parameters and examples | `references/mcp-server.md` |
+| All ~65 MCP tools with parameters and examples | `references/mcp-server.md` |
+| Google Calendar integration (create/get/patch/delete events) | `references/mcp-server.md` |
+| Filesystem access (read chunks, search paths and text) | `references/mcp-server.md` |
+| Browser activity history and URL context lookup | `references/mcp-server.md` |
+| User persona and profile data | `references/mcp-server.md` |
 | Enable LTM, query past work, pro_tips prompts | `references/long-term-memory.md` |
 | Retention limits, pinning memories indefinitely | `references/long-term-memory.md` |
 | Pieces CLI commands | `references/cli.md` |
@@ -52,7 +59,7 @@ Verify: ask Claude "What MCP tools do you have from Pieces?" — you should see 
 
 - **`pieces-os.md`** — Installation (macOS/Windows/Linux), three running processes, launchd services, port discovery, service management, system requirements
 - **`pieces-os-internals.md`** — Deep dive: process binaries, all storage paths, SQLite database schema (19 tables), config files, runtime state, ML/AI dylibs, log locations
-- **`mcp-server.md`** — MCP endpoint, setup commands for 19 AI tools, all 39 tools with parameters, two-step workflow pattern, 10 real-world workflows, ngrok remote access, stdio bridge
+- **`mcp-server.md`** — MCP endpoint, setup commands for 19 AI tools, ~65 tools with parameters (LTM/memory, full-text search, vector search, single/batch snapshots, GCal, filesystem, browser, persona, temporal), two-step workflow pattern, 10 real-world workflows, ngrok remote access, stdio bridge
 - **`long-term-memory.md`** — What LTM captures, enabling/disabling, retention limits, `create_pieces_memory` for indefinite pinning, the 5 keys to great queries, 15 tested prompts, modality filters
 - **`cli.md`** — Install via brew/pip, key commands, MCP quick setup
 - **`ide-plugins.md`** — VS Code and JetBrains: installation, keyboard shortcuts, event triggers, full asset metadata schema, sensitive info detection
