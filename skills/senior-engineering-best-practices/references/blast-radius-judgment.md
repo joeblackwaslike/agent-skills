@@ -50,6 +50,26 @@ generalizes that same reversibility/blast-radius classification beyond git and f
 equally to infrastructure changes, data migrations, dependency removals, and any other action
 where "can I take this back, and who else does it touch" determines how much caution it deserves.
 
+## A permission-layer block is not itself a blast-radius signal
+
+A guard or safety-net tool blocking a command's literal syntax (e.g. blocking `--force` on
+principle) is a different thing from an assessed risk — it fires on the shape of the command, not
+on what's actually at stake. When a block fires, don't let the block's own wording stand in for
+the classification above; run the same two-axis check on the underlying action before deciding
+how much caution it deserves.
+
+Concretely: a worktree cleanup got blocked because it used `--force`; checking what was actually
+at risk (`git status --short` inside the worktree) showed a single untracked, uncommitted,
+regeneratable dependency lockfile — trivial on both axes. The right move was to remove the
+reason the block fired (delete the file) and retry the safe form of the command, not to escalate
+because the guard's message sounded alarming. The general classification above was already
+sufficient to reach that conclusion — the failure mode this section exists to close is reacting
+to the block itself instead of running the classification.
+
+See `autonomous-agent-operations`'s "Mid-run fork" section for the same instinct applied to
+solo/unattended runs, where the same kind of block could otherwise be mistaken for one of that
+skill's hard-stop cases.
+
 ## Applying this to infrastructure/architecture planning
 
 When designing a system with broad blast radius (a new service other teams will depend on, a
