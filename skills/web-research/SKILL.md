@@ -79,7 +79,7 @@ Apply in order. Stop at the first step that returns sufficient content.
      -d '{"url":"<target-url>","waitForTimeout":3000}' | head -c 200000
    ```
 
-   Response is rendered HTML — parse the same way as any `webFetch` result.
+   `waitForTimeout` shown here (3000 ms) is the default for standard server-rendered pages. Increase to 5000–10000 ms for JS-heavy, lazy-loaded, or infinite-scroll content — see timeout tuning table in `references/browserless.md`. Response is rendered HTML — parse the same way as any `webFetch` result.
 
 4. **`superpowers-chrome`** — lower token cost than headless browser:
    `mcp__plugin_superpowers-chrome_chrome__use_browser`

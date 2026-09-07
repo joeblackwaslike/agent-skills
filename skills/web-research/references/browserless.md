@@ -9,7 +9,25 @@ agent/bot user agents (403, 429, CAPTCHA, empty body on a server-rendered page).
 source ~/creds.zsh   # exports $BROWSERLESS_URL and $BROWSERLESS_TOKEN
 ```
 
-Both vars must be set before any `curl` call.
+Both `BROWSERLESS_URL` and `BROWSERLESS_TOKEN` must be set before any `curl` call.
+
+**Credential setup:** Create `~/creds.zsh` with:
+```bash
+export BROWSERLESS_URL="<self-hosted-instance-url>"
+export BROWSERLESS_TOKEN="<auth-token>"
+```
+
+**Verify credentials before use:**
+```bash
+source ~/creds.zsh
+echo "URL: $BROWSERLESS_URL | Token: ${BROWSERLESS_TOKEN:0:10}..."
+```
+
+**Diagnosing HTTP errors:**
+- **401 Unauthorized**: `BROWSERLESS_TOKEN` is missing, empty, or expired. Re-check `~/creds.zsh` was sourced and token is correct.
+- **403 Forbidden**: Token is valid but does not have permission for this endpoint (unlikely; contact operator).
+- **404 Not Found**: `BROWSERLESS_URL` is incorrect or instance is not running.
+- **5xx errors**: Browserless instance is down or overloaded. Retry after a short delay.
 
 ## Page Content Endpoint
 
@@ -34,7 +52,9 @@ curl -sS -X POST "$BROWSERLESS_URL/content" \
 
 ## Known-Blocking Domains
 
-Skip `webFetch` entirely for these hostnames — go straight to Browserless (step 3):
+Skip `webFetch` entirely for these hostnames — go straight to Browserless (step 3).
+
+**Hostname matching:** Extract the hostname from the URL (e.g., `urllib.parse.urlparse(url).netloc`), then check for an exact string match against this list. The list includes both bare domains and www-prefixed variants; do not strip www or perform suffix matching.
 
 - `reddit.com`, `old.reddit.com`, `www.reddit.com`
 - `ebay.com`, `www.ebay.com`
