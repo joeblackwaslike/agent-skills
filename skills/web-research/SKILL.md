@@ -4,7 +4,7 @@ description: Expert web research router. Automatically selects the best search a
 license: MIT
 compatibility: Requires MCP servers for optimal routing (Exa, Context7, Ref, Tavily, Perplexity). Falls back gracefully to built-in webSearch and webFetch when specialized tools are unavailable.
 metadata:
-  last_updated: "2026-05-26"
+  last_updated: "2026-09-07"
 ---
 
 ## Web Research Routing Rules
