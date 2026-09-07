@@ -16,13 +16,15 @@ related:
 summary: Learn about the frameworks that can be deployed to Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/more-frameworks.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "e43522baa8f409184f47fe47490240fbbb543b9b18c3447cb00326b9c8eb0b27"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "8146995e4594db636d976816fd122238ef2bd258a43b89dc9ddc9cf9b16da042"
 ---
 
 # Supported Frameworks on Vercel
 
 ## Frameworks infrastructure support matrix
+
+The following table shows which features are supported by each framework on Vercel. The framework list is not exhaustive, but a representation of the most popular frameworks deployed on Vercel.
 
 
 <!-- docsgraph:related -->
@@ -38,15 +40,13 @@ sha256: "e43522baa8f409184f47fe47490240fbbb543b9b18c3447cb00326b9c8eb0b27"
 - [Announcing the Build Output API](https://vercel.com/blog/build-output-api?from=related&source_path=%2Fdocs%2Fframeworks%2Fmore-frameworks&source_site=vercel-docs&relationship=related)
 - [Frontends on Vercel](https://vercel.com/docs/frameworks/frontend?from=related&source_path=%2Fdocs%2Fframeworks%2Fmore-frameworks&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
 - [New features for SvelteKit: Optimize your application with ease](https://vercel.com/blog/feature-complete-sveltekit?from=related&source_path=%2Fdocs%2Fframeworks%2Fmore-frameworks&source_site=vercel-docs&relationship=related)
-- [Run multiple frameworks in one project with Vercel Services](https://vercel.com/changelog/run-multiple-frameworks-in-one-project-with-vercel-services?from=related&source_path=%2Fdocs%2Fframeworks%2Fmore-frameworks&source_site=vercel-docs&relationship=related)
 - [Full-stack frameworks on Vercel](https://vercel.com/docs/frameworks/full-stack?from=related&source_path=%2Fdocs%2Fframeworks%2Fmore-frameworks&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
 - [Vite on Vercel](https://vercel.com/docs/frameworks/frontend/vite?from=related&source_path=%2Fdocs%2Fframeworks%2Fmore-frameworks&source_site=vercel-docs&relationship=related) — Deploy Vite projects to Vercel and configure environment variables, Vercel Functions, server-side rendering, and SPA rew
+- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fframeworks%2Fmore-frameworks&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fframeworks%2Fmore-frameworks&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/frameworks/more-frameworks.graph.md](/docs/frameworks/more-frameworks.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Fmore-frameworks&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-The following table shows which features are supported by each framework on Vercel. The framework list is not exhaustive, but a representation of the most popular frameworks deployed on Vercel.
 
 We're committed to having support for all Vercel features across frameworks, and continue to work with framework authors on adding support. *This table is continually updated over time*.
 

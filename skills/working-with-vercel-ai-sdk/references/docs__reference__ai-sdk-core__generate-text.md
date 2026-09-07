@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-text.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "21b8932d71dc3331c53ef20ac399ad69110e8fd51b23de76a2ed7ac891b99853"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "e4144a4e4506140edcacda65b805b3cb0741fcccee4216c8a7f2442af13e2800"
 ---
 
 # `generateText()`
@@ -996,6 +996,20 @@ To see `generateText` in action, check out [these examples](#examples).
                       type: 'Schema<ELEMENT>',
                       description:
                         'The schema of the array elements to generate.',
+                    },
+                    {
+                      name: 'minItems',
+                      type: 'number',
+                      isOptional: true,
+                      description:
+                        'Optional minimum number of array elements. Must be a non-negative integer.',
+                    },
+                    {
+                      name: 'maxItems',
+                      type: 'number',
+                      isOptional: true,
+                      description:
+                        'Optional maximum number of array elements. Must be a non-negative integer and greater than or equal to minItems.',
                     },
                     {
                       name: 'name',

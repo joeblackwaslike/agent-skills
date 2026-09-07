@@ -15,13 +15,15 @@ related:
 summary: Learn how to tag your page views and custom events with feature flags
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/observability/web-analytics.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "d86f3458d8c3a5174a8955a1a92aba6637665ea40b386ad457ccd8816d47604f"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "e5f905daeda1b77a86727f040e242afff1bb4cd4d51f0c1a5b096b203de1cda9"
 ---
 
 # Integrate flags with Vercel Web Analytics
 
 > **🔒 Permissions Required**: Web Analytics integration
+
+![Image](`/docs-assets/static/docs/workflow-collaboration/feature-flags/flags-in-web-analytics-light.png`)
 
 
 <!-- docsgraph:related -->
@@ -42,8 +44,6 @@ sha256: "d86f3458d8c3a5174a8955a1a92aba6637665ea40b386ad457ccd8816d47604f"
 
 Full cross-link map for this page: [/docs/flags/observability/web-analytics.graph.md](/docs/flags/observability/web-analytics.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fobservability%2Fweb-analytics&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-![Image](`/docs-assets/static/docs/workflow-collaboration/feature-flags/flags-in-web-analytics-light.png`)
 
 ## Client-side tracking
 

@@ -17,8 +17,8 @@ related:
 summary: Prebuilt UI components for common platform flows like claiming deployments and managing domains.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/blocks.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "c68a907b46a23d9c748e3badeaab07ce514727345f03eb06ff3d72e925186d65"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "d5b588d910e5a010bd6636b57c1c63c128db49d6bdc41f184b8d4a307b39d88e"
 ---
 
 # Blocks
@@ -36,7 +36,7 @@ Blocks are ready-to-use UI components for platform flows. Install a block and co
 - [Add Custom Domain](https://vercel.com/docs/platforms/platform-elements/actions/add-custom-domain?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks&source_site=vercel-docs&relationship=related) — Server action for programmatically adding custom domains to Vercel projects.
 - [Actions](https://vercel.com/docs/platforms/platform-elements/actions?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks&source_site=vercel-docs&relationship=related) — Server actions you can install to run common platform tasks against the Vercel API.
 - [Multi-Tenant Platforms](https://vercel.com/docs/platforms/multi-tenant-platforms?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks&source_site=vercel-docs&relationship=related) — Serve multiple customers from a single codebase and deployment, routing each tenant by subdomain or custom domain.
-- [Examples](https://vercel.com/docs/platforms/examples?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks&source_site=vercel-docs&relationship=related) — Clone working multi-tenant and multi-project starters to begin your platform build.
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/platforms/platform-elements/blocks.graph.md](/docs/platforms/platform-elements/blocks.graph.md?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

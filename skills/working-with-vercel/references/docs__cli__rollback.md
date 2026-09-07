@@ -10,11 +10,12 @@ prerequisites:
 related:
   - /docs/instant-rollback
   - /docs/cli/promote
+  - /docs/cli/global-options
 summary: Learn how to roll back your production deployments to previous deployments using the vercel rollback CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/rollback.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "7ab74cd101c5a512c4f7e38909552523e7100e7b925140683b98ab0b4821ee7a"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "880e67eedcb9caf5c15e22e2eaf560ca8082e5b0cdda70fc83045c2745791f52"
 ---
 
 # vercel rollback
@@ -30,9 +31,9 @@ The `vercel rollback` command is used to [roll back production deployments](/doc
 - [Instant Rollback public beta now available in the CLI](https://vercel.com/changelog/instant-rollback-public-beta-cli?from=related&source_path=%2Fdocs%2Fcli%2Frollback&source_site=vercel-docs&relationship=related)
 - [Rolling back a production deployment](https://vercel.com/docs/deployments/rollback-production-deployment?from=related&source_path=%2Fdocs%2Fcli%2Frollback&source_site=vercel-docs&relationship=related) — Recover from a bad production deployment by rolling back, investigating the root cause, and redeploying a fix.
 - [vercel rolling-release](https://vercel.com/docs/cli/rolling-release?from=related&source_path=%2Fdocs%2Fcli%2Frollback&source_site=vercel-docs&relationship=related) — Learn how to manage your project's rolling releases using the vercel rolling-release CLI command.
-- [Performing a rolling release deployment](https://vercel.com/docs/rolling-releases/rolling-release-deployment?from=related&source_path=%2Fdocs%2Fcli%2Frollback&source_site=vercel-docs&relationship=related) — Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.
-- [Point production traffic to a previous production deployment by ID](https://vercel.com/docs/rest-api/projects/point-production-traffic-to-a-previous-production-deployment-by-id?from=related&source_path=%2Fdocs%2Fcli%2Frollback&source_site=vercel-docs&relationship=related) — POST /v1/projects/{projectId}/rollback/{deploymentId} — Allows users to rollback to a deployment.
 - [vercel redeploy](https://vercel.com/docs/cli/redeploy?from=related&source_path=%2Fdocs%2Fcli%2Frollback&source_site=vercel-docs&relationship=related) — Learn how to redeploy your project using the vercel redeploy CLI command.
+- [vercel remove](https://vercel.com/docs/cli/remove?from=related&source_path=%2Fdocs%2Fcli%2Frollback&source_site=vercel-docs&relationship=related) — Learn how to remove a deployment using the vercel remove CLI command.
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Frollback&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 
 Full cross-link map for this page: [/docs/cli/rollback.graph.md](/docs/cli/rollback.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Frollback&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -104,6 +105,24 @@ vercel promote [deployment-id or url]
 ```
 
 This promotes the specified deployment to production and re-enables auto-assignment of production domains. For more details, see [Undo a rollback](/docs/instant-rollback#undo-a-rollback).
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel rollback` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 
 ---

@@ -15,8 +15,8 @@ related:
 summary: Learn how to authenticate with Vercel Sandbox using OIDC tokens or access tokens.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/authentication.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "e3d1dfa95e0482fef3a9d7afe1677af5913e61a846c4b95abab033f7cc051fce"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "8cbf61d5ed7d8e206c2ee772b9d93dea9c88c09869b692fc8136f95c66981b0b"
 ---
 
 # Sandbox Authentication
@@ -34,11 +34,12 @@ The Sandbox SDK supports two authentication methods: Vercel OIDC tokens (recomme
 - [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
 - [Using private GitHub repositories with Vercel Sandbox](https://vercel.com/kb/guide/sandbox-private-github-repositories?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Learn how to use Vercel Sandbox with private GitHub repositories using fine-grained tokens, classic tokens, or GitHub Ap
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
+- [How to reconnect to a running Sandbox](https://vercel.com/kb/guide/how-to-reconnect-to-a-running-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Learn how to use \\`Sandbox.get\\(\\)\\` to reconnect to an existing sandbox from a different process or after a script rest
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 - [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
+- [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 - [OIDC](https://vercel.com/docs/ai-gateway/authentication-and-byok/oidc?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Authenticate AI Gateway requests with Vercel OIDC tokens, with no API key to manage.
 - [OpenID Connect \\(OIDC\\) Federation](https://vercel.com/docs/oidc?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Secure the access to your backend using OIDC Federation to enable auto-generated, short-lived, and non-persistent creden
-- [Authentication](https://vercel.com/docs/rest-api/authentication?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Endpoints in the authentication group of the Vercel REST API Reference.
 
 Full cross-link map for this page: [/docs/sandbox/concepts/authentication.graph.md](/docs/sandbox/concepts/authentication.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -77,6 +78,52 @@ VERCEL_TOKEN=your_access_token
 ```
 
 Then pass them to `Sandbox.create()`:
+
+**TypeScript**
+
+```ts
+import { Sandbox } from '@vercel/sandbox';
+
+const sandbox = await Sandbox.create({
+  teamId: process.env.VERCEL_TEAM_ID!,
+  projectId: process.env.VERCEL_PROJECT_ID!,
+  token: process.env.VERCEL_TOKEN!,
+});
+```
+
+**Python**
+
+```python
+import asyncio
+import os
+
+from vercel import sandbox
+from vercel.api import session
+from vercel.sandbox import SandboxCredentials, SandboxServiceOptions
+
+
+async def resolve_credentials() -> SandboxCredentials:
+    return SandboxCredentials(
+        token=os.environ["CI_VERCEL_TOKEN"],
+        project_id=os.environ["CI_VERCEL_PROJECT_ID"],
+        team_id=os.environ["CI_VERCEL_TEAM_ID"],
+    )
+
+
+async def main() -> None:
+    sandbox_options = SandboxServiceOptions(
+        credentials_factory=resolve_credentials,
+    )
+
+    async with session(service_options=[sandbox_options]):
+        async with sandbox.create_sandbox() as box:
+            print(box.name)
+
+
+asyncio.run(main())
+```
+
+> **💡 Note:** For async operations, import `AsyncSandbox` instead of `Sandbox` and use `await` with all methods.
 
 ## Which method to use
 

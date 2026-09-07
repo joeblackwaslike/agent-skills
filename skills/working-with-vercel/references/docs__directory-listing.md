@@ -12,8 +12,8 @@ related:
 summary: The Directory Listing is served when a particular path is a directory and does not contain an index file. Learn how to toggle and disable it in this...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/directory-listing.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "7f2cf2207bc13571a06f48401e1016d7513f9c5d474df18f94f77765878e8891"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "f6abfeb61549f0c8baa9ae3dea4e86e0234a8b5b8c0651e1660e55df292dca9d"
 ---
 
 # Using the Directory Listing
@@ -29,7 +29,7 @@ You can enable or disable Directory Listing from **Advanced** in your project si
 When enabled, the Directory Listing will be displayed. When disabled, a "Not Found" error will be displayed with status code `404`.
 
 > **💡 Note:** If Directory Listing isn't working, navigate to your deployment in the
-> dashboard and open  in the sidebar to view the contents of
+> dashboard and open **Source** in the sidebar to view the contents of
 > your project. Ensure the expected directory and files are listed.
 
 ### Disabling Directory Listing on a specific directory

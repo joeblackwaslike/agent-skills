@@ -16,8 +16,8 @@ related:
 summary: Learn how to configure your Vercel projects using vercel.json, vercel.toml, vercel.ts, or the dashboard to control builds, routing, functions, and...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "cf0063c9e02ff7c7546f995d900e09c776679fc061e8004a275f9c2c1c47abbb"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "a5257bd394dbeafafd4ba553bd391d0a5b18942287186e3e154f37299921fe66"
 ---
 
 # Project Configuration
@@ -40,8 +40,8 @@ Vercel automatically detects your framework and sets sensible defaults for build
 - [Does Vercel support Ruby on Rails applications?](https://vercel.com/kb/guide/does-vercel-support-ruby-on-rails-applications?from=related&source_path=%2Fdocs%2Fproject-configuration&source_site=vercel-docs&relationship=related) — Learn how you can use Ruby on Rails with your frontend on Vercel.
 - [How can I increase the limit of redirects or use dynamic redirects on Vercel?](https://vercel.com/kb/guide/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel?from=related&source_path=%2Fdocs%2Fproject-configuration&source_site=vercel-docs&relationship=related) — Instructions on how to use Serverless Functions to handle redirects on Vercel.
 - [How can I reduce my Vercel Functions usage on Vercel?](https://vercel.com/kb/guide/how-can-i-reduce-my-serverless-execution-usage-on-vercel?from=related&source_path=%2Fdocs%2Fproject-configuration&source_site=vercel-docs&relationship=related) — Reduce Vercel Functions usage and cost under Fluid compute pricing with caching, rendering strategies, and function conf
-- [Vercel CLI Global Options](https://vercel.com/docs/cli/global-options?from=related&source_path=%2Fdocs%2Fproject-configuration&source_site=vercel-docs&relationship=related) — Global options are commonly available to use with multiple Vercel CLI commands. Learn about Vercel CLI's global options
 - [Managing Global Configs with the Dashboard](https://vercel.com/docs/global-config/global-config-dashboard?from=related&source_path=%2Fdocs%2Fproject-configuration&source_site=vercel-docs&relationship=related) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
+- [Vercel CLI Global Options](https://vercel.com/docs/cli/global-options?from=related&source_path=%2Fdocs%2Fproject-configuration&source_site=vercel-docs&relationship=related) — Global options are commonly available to use with multiple Vercel CLI commands. Learn about Vercel CLI's global options
 
 Full cross-link map for this page: [/docs/project-configuration.graph.md](/docs/project-configuration.graph.md?from=related&source_path=%2Fdocs%2Fproject-configuration&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

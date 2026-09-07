@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/agents/policy-tool-approvals.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "c3ff78112c90a924685cd4216ffc2b2c11ec10b4b660a5cb5adcc690bb14c259"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "f302998c95876bf39dc0f27935f470ef939016c189717dae13a99f7131fc7f78"
 ---
 
 # Policy-Based Tool Approvals
@@ -157,9 +157,10 @@ Run with `opa test policy.rego policy_test.rego`.
 ### Errors fail closed
 
 - If the backend errors (server unreachable, WASM fault, misbuilt bundle), `opaPolicy` returns `denied` with the error message as the reason.
+- If the backend returns a present but unrecognized decision, such as an unknown `decision` value or a non-boolean legacy `allow` value, `opaPolicy` returns `denied`.
 - The error never rejects out of the callback and never aborts the run.
 - A backend outage blocks the affected call rather than silently allowing it.
-- This is distinct from a rule that returns no match, which normalizes to `not-applicable` (allow). Use a `default ... deny` rule if you want unmatched calls denied too.
+- This is distinct from a rule that returns no match: `null` or `undefined` normalizes to `not-applicable` (allow). Use a `default ... deny` rule if you want unmatched calls denied too.
 
 ## Loading the policy
 

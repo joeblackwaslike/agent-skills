@@ -3,7 +3,7 @@ title: Vercel Connect
 product: vercel
 url: /docs/connect
 canonical_url: "https://vercel.com/docs/connect"
-last_updated: 2026-08-27
+last_updated: 2026-08-28
 type: conceptual
 prerequisites:
   []
@@ -16,13 +16,15 @@ related:
 summary: Give your agents and services secure, short-lived access to third-party APIs like Slack, GitHub, Microsoft, and Snowflake, without storing provider...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "1875637082a95d589b02964f574d0c9ac8b7b74391e7144d02380928058055d0"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "639e39ef2ba00b183f726dcddec86c1ee17de02864206e22bf757a6b1a45ac74"
 ---
 
 # Vercel Connect
 
 > **🔒 Permissions Required**: Vercel Connect
+
+With [Vercel Connect](/connect), your deployed apps can talk to other services. First, you set up a connection **once** to Slack, GitHub, Microsoft, Snowflake, Salesforce, or any OAuth or API-key service at the team level. Then, any project you allow can use this connection. Your code asks Connect for access at the moment it needs it, so no provider API key ever lives in your environment variables.
 
 
 <!-- docsgraph:related -->
@@ -45,8 +47,6 @@ sha256: "1875637082a95d589b02964f574d0c9ac8b7b74391e7144d02380928058055d0"
 
 Full cross-link map for this page: [/docs/connect.graph.md](/docs/connect.graph.md?from=related&source_path=%2Fdocs%2Fconnect&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-With [Vercel Connect](/connect), your deployed apps can talk to other services. First, you set up a connection **once** to Slack, GitHub, Microsoft, Snowflake, Salesforce, or any OAuth or API-key service at the team level. Then, any project you allow can use this connection. Your code asks Connect for access at the moment it needs it, so no provider API key ever lives in your environment variables.
 
 To create your first connector and request a token, follow the [Quickstart](/docs/connect/quickstart). For the conceptual model, see the [Concepts](/docs/connect/concepts) overview, starting with [Connectors](/docs/connect/concepts/connectors), [Tokens](/docs/connect/concepts/tokens), and [Authentication](/docs/connect/concepts/authentication).
 
@@ -71,6 +71,17 @@ Read the [guide to using Vercel Connect in your project](/kb/guide/vercel-connec
 ## How authentication works
 
 When your code calls `getToken()`, Vercel Connect authenticates in two directions: your code authenticates to Vercel Connect with a Vercel OIDC token or a Vercel access token, and Vercel Connect exchanges the authorized credential with the provider.
+
+```mermaid
+sequenceDiagram
+    participant A as Your code
+    participant C as Vercel Connect
+    participant P as Provider
+    A->>C: getToken() with a Vercel OIDC token or Vercel access token
+    C->>P: Exchange the authorized credential
+    P-->>C: Provider access token
+    C-->>A: Short-lived, scoped token
+```
 
 ### From your code to Vercel Connect
 

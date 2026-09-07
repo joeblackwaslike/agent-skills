@@ -16,8 +16,8 @@ related:
 summary: Runtimes transform your source code into Functions, which are served by our CDN. Learn about the official runtimes supported by Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "03017ab9d0f5b9b76992e0c6e8975ce7fb2f05613dbf12dd5a57d7781db6ba57"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "e4540fd1ab2fd806b76dde3f246403addf3c641ec231d2a0c2ae19ced8da1c52"
 ---
 
 # Runtimes
@@ -35,7 +35,7 @@ Vercel supports multiple runtimes for your functions. Each runtime has its own s
 - [How can I reduce my Vercel Functions usage on Vercel?](https://vercel.com/kb/guide/how-can-i-reduce-my-serverless-execution-usage-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes&source_site=vercel-docs&relationship=related) — Reduce Vercel Functions usage and cost under Fluid compute pricing with caching, rendering strategies, and function conf
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
-- [Vercel vs Render](https://vercel.com/kb/guide/vercel-vs-render?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Render: compute models, AI infrastructure, Docker support, background workers, and when to
+- [Vercel vs Render](https://vercel.com/kb/guide/vercel-vs-render?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Render: compute models, AI infrastructure, Docker and container image support, background
 - [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes&source_site=vercel-docs&relationship=related)
 - [Billions of dollars, billions of requests: Black Friday-Cyber Monday 2024](https://vercel.com/blog/black-friday-cyber-monday-2024-recap?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes&source_site=vercel-docs&relationship=related)
 - [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes&source_site=vercel-docs&relationship=related) — Learn how to build and scale performant APIs on Vercel.
@@ -58,7 +58,7 @@ Vercel Functions support the following official runtimes:
 | [Bun](/docs/functions/runtimes/bun)         | The Bun runtime takes an entrypoint of a Bun function, builds its dependencies (if any) and bundles them into a Vercel Function.                            |
 | [Python](/docs/functions/runtimes/python)   | The Python runtime runs ASGI and WSGI applications, such as FastAPI, Flask, and Django, as Vercel Functions.                                         |
 | [Rust](/docs/functions/runtimes/rust)       | The Rust runtime takes an entrypoint of a Rust function using the `vercel_runtime` crate and compiles it into a Vercel Function.                            |
-|                            | The Go runtime takes in a Go program that defines a singular HTTP handler and outputs it as a Vercel Function.                                              |
+| [Go](/docs/functions/runtimes/go)                           | The Go runtime takes in a Go program that defines a singular HTTP handler and outputs it as a Vercel Function.                                              |
 | [Ruby](/docs/functions/runtimes/ruby)       | The Ruby runtime takes in a Ruby program that defines a singular HTTP handler and outputs it as a Vercel Function.                                          |
 | [Wasm](/docs/functions/runtimes/wasm)       | The Wasm runtime takes in a pre-compiled WebAssembly program and outputs it as a Vercel Function.                                                           |
 | [Edge](/docs/functions/runtimes/edge)       | The Edge runtime is built on top of the V8 engine, allowing it to run in isolated execution environments that don't require a container or virtual machine. |

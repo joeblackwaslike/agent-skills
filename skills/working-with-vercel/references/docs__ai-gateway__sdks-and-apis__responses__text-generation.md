@@ -13,8 +13,8 @@ related:
 summary: Generate text responses with the OpenAI Responses API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/text-generation.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "8a6a23ea7c717fd470ea410ac2d515728398b8a91c917b523907585729b0223b"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "5b47343d18a07962d76d23f09aef9b19b9b48f1f6b05390857dc2f74bcb7714a"
 ---
 
 # Text Generation
@@ -28,16 +28,16 @@ Set your SDK's base URL to AI Gateway and use your API key for authentication:
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Text Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/text-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Ftext-generation&source_site=vercel-docs&relationship=related) — Generate text responses using the OpenResponses API.
-- [Text Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/text?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Ftext-generation&source_site=vercel-docs&relationship=related) — Generate and stream text responses using AI Gateway.
 - [AI Gateway supports OpenAI's Responses API](https://vercel.com/changelog/ai-gateway-supports-openais-responses-api?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Ftext-generation&source_site=vercel-docs&relationship=related)
+- [Text Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/text?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Ftext-generation&source_site=vercel-docs&relationship=related) — Generate and stream text responses using AI Gateway.
 - [Text Generation](https://vercel.com/docs/ai-gateway/modalities/text-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Ftext-generation&source_site=vercel-docs&relationship=related) — Generate and stream text from hundreds of models through AI Gateway, with tool calling and structured output.
 - [Text to Speech](https://vercel.com/docs/ai-gateway/modalities/text-to-speech?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Ftext-generation&source_site=vercel-docs&relationship=related) — Generate spoken audio from text with speech models through Vercel AI Gateway.
-- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Ftext-generation&source_site=vercel-docs&relationship=related) — Get started with AI Gateway by generating text, images, video, speech, or transcriptions, or by building realtime voice
+- [OpenResponses API](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Ftext-generation&source_site=vercel-docs&relationship=related) — Use the OpenResponses API specification with AI Gateway for a unified, provider-agnostic interface.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/responses/text-generation.graph.md](/docs/ai-gateway/sdks-and-apis/responses/text-generation.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Ftext-generation&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-#### \['cURL'
+#### cURL
 
 ```bash filename="basic.sh"
 curl -X POST "https://ai-gateway.vercel.sh/v1/responses" \
@@ -49,7 +49,7 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/responses" \
   }'
 ```
 
-#### 'TypeScript'
+#### TypeScript
 
 ```typescript filename="basic.ts"
 import OpenAI from 'openai';
@@ -67,7 +67,7 @@ const response = await client.responses.create({
 console.log(response.output_text);
 ```
 
-#### 'Python']
+#### Python
 
 ```python filename="basic.py"
 import os

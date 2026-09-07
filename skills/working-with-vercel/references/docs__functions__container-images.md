@@ -16,13 +16,15 @@ related:
 summary: Deploy OCI container images with a Dockerfile or Containerfile on Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/container-images.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "67f196713eba8e8bb71f8a9b9b2d571cf2a1100c3fdeac4e59ac25253cab7686"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "956fece596e4d9ee892f4cf61387c0347ee92ce85ca4960e6ec450dd72a78cad"
 ---
 
 # Container Images
 
 > **🔒 Permissions Required**: Container Images
+
+Vercel Functions can run Open Container Initiative (OCI) compatible container images stored in [Vercel Container Registry (VCR)](/docs/container-registry). Functions scale up and down automatically based on demand, and use [Active CPU](/docs/functions/usage-and-pricing) pricing. You are only billed for CPU when your code is actively running, not while waiting for I/O or sleeping.
 
 
 <!-- docsgraph:related -->
@@ -44,15 +46,13 @@ sha256: "67f196713eba8e8bb71f8a9b9b2d571cf2a1100c3fdeac4e59ac25253cab7686"
 Full cross-link map for this page: [/docs/functions/container-images.graph.md](/docs/functions/container-images.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fcontainer-images&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-Vercel Functions can run Open Container Initiative (OCI) compatible container images stored in [Vercel Container Registry (VCR)](/docs/container-registry). Functions scale up and down automatically based on demand, and use [Active CPU](/docs/functions/usage-and-pricing) pricing. You are only billed for CPU when your code is actively running, not while waiting for I/O or sleeping.
-
 ## Usage
 
 ### Dockerfile
 
 Get started by creating a `Dockerfile.vercel` (or `Containerfile.vercel`) file placed at the root of your project. Vercel automatically detects these files and adds a rewrite rule to route all traffic to the container image:
 
-#### \['Node.js and srvx dynamic server'
+#### Node.js and srvx dynamic server
 
 ```docker filename="Dockerfile.vercel"
 FROM node:26-alpine
@@ -73,7 +73,7 @@ export default {
 }
 ```
 
-#### 'Nginx static server']
+#### Nginx static server
 
 ```docker filename="Dockerfile.vercel"
 FROM nginx:alpine

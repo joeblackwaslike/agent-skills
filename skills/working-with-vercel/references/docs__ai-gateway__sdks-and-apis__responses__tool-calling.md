@@ -13,8 +13,8 @@ related:
 summary: Define tools the model can call with the OpenAI Responses API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/tool-calling.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "bf8f0941673d751e3d9fd1fa46e71738f16617a4d9d8590911cc62c8ce089ac7"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "24a3a638fb73897be95fe659c1a54bd55419ab84ef71796535639627e3796153"
 ---
 
 # Tool Calling
@@ -28,19 +28,19 @@ Define tools with JSON Schema parameters. The model can call them, and you can f
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Tool Calling](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/tool-calling?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Ftool-calling&source_site=vercel-docs&relationship=related) — Define tools the model can call using the OpenResponses API.
-- [Tool Calls](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/tool-calling?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Ftool-calling&source_site=vercel-docs&relationship=related) — Use function calling with the Anthropic Messages API to allow models to call tools and functions.
 - [Tool Calls](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/tool-calling?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Ftool-calling&source_site=vercel-docs&relationship=related) — Use function calling with the Chat Completions API to enable models to call tools and functions through AI Gateway.
+- [Tool Calls](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/tool-calling?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Ftool-calling&source_site=vercel-docs&relationship=related) — Use function calling with the Anthropic Messages API to allow models to call tools and functions.
 - [Call Tools](https://ai-sdk.dev/cookbook/node/call-tools?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Ftool-calling&source_site=vercel-docs&relationship=related)
 - [Tools](https://ai-sdk.dev/docs/foundations/tools?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Ftool-calling&source_site=vercel-docs&relationship=related)
-- [OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Ftool-calling&source_site=vercel-docs&relationship=related)
 - [What is an LLM Tool?](https://vercel.com/kb/guide/what-is-an-llm-tool?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Ftool-calling&source_site=vercel-docs&relationship=related) — Learn what tools are, how tool calling works, and how you can use them to build agents.
-- [Direct REST API Usage](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Ftool-calling&source_site=vercel-docs&relationship=related) — Use the AI Gateway API directly without client libraries using curl and fetch.
+- [OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Ftool-calling&source_site=vercel-docs&relationship=related)
+- [Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Ftool-calling&source_site=vercel-docs&relationship=related) — Use the AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
 - [Structured Outputs](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/structured-outputs?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Ftool-calling&source_site=vercel-docs&relationship=related) — Constrain OpenResponses API output to a JSON schema so every response parses.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/responses/tool-calling.graph.md](/docs/ai-gateway/sdks-and-apis/responses/tool-calling.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Ftool-calling&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-#### \['cURL'
+#### cURL
 
 ```bash filename="tool-calls.sh"
 curl -X POST "https://ai-gateway.vercel.sh/v1/responses" \
@@ -72,7 +72,7 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/responses" \
   }'
 ```
 
-#### 'TypeScript'
+#### TypeScript
 
 ```typescript filename="tools.ts"
 import OpenAI from 'openai';
@@ -111,7 +111,7 @@ for (const item of response.output) {
 }
 ```
 
-#### 'Python']
+#### Python
 
 ```python filename="tools.py"
 import os
@@ -151,7 +151,7 @@ for item in response.output:
 
 To continue the conversation with tool results, include the function call and its output in the next request's `input` array:
 
-#### \['cURL'
+#### cURL
 
 ```bash filename="tool-followup.sh"
 curl -X POST "https://ai-gateway.vercel.sh/v1/responses" \
@@ -190,7 +190,7 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/responses" \
   }'
 ```
 
-#### 'TypeScript'
+#### TypeScript
 
 ```typescript
 const functionCall = response.output.find(
@@ -222,7 +222,7 @@ const followup = await client.responses.create({
 console.log(followup.output_text);
 ```
 
-#### 'Python']
+#### Python
 
 ```python
 import json

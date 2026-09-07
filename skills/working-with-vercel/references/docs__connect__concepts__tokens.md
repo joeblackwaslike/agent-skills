@@ -16,8 +16,8 @@ related:
 summary: Short-lived provider credentials issued by Vercel Connect. Each token request specifies a subject, optional installation, scopes, and...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/tokens.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "3631246cfea74286fd5243c53e16de09d7212c24ef22eef2df6143ca96bcb5e3"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "5c7d236240cabfafb09ce90d70b6a11b9bf0abbddb7f02a15bebac1f72cb2287"
 ---
 
 # Tokens
@@ -37,8 +37,8 @@ A token is a short-lived credential that Vercel Connect issues against a provide
 - [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftokens&source_site=vercel-docs&relationship=related)
 - [Authentication](https://vercel.com/docs/connect/concepts/authentication?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftokens&source_site=vercel-docs&relationship=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftokens&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
-- [Tokens](https://vercel.com/docs/sign-in-with-vercel/tokens?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftokens&source_site=vercel-docs&relationship=related) — Learn how to Sign in with Vercel
 - [Chat SDK](https://vercel.com/docs/connect/frameworks/chat-sdk?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftokens&source_site=vercel-docs&relationship=related) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, GitHub, Linear, Notion,
+- [Tokens](https://vercel.com/docs/sign-in-with-vercel/tokens?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftokens&source_site=vercel-docs&relationship=related) — Learn how to Sign in with Vercel
 - [Observability](https://vercel.com/docs/connect/observability?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftokens&source_site=vercel-docs&relationship=related) — Monitor token requests, authorizations, revocations, and trigger deliveries for your connectors.
 
 Full cross-link map for this page: [/docs/connect/concepts/tokens.graph.md](/docs/connect/concepts/tokens.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftokens&source_site=vercel-docs&relationship=graph)

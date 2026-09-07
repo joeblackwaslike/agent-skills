@@ -16,13 +16,15 @@ related:
 summary: Create your first connector in Vercel Connect, install the SDK, and request a runtime provider token from your code.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/quickstart.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "5dbb8883901299a4ce7945746da0d63a36ad18b754a2d40376e261b859f18fbf"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "662bfd06ac5d8311d460ba6d48d8326276e5be23194ffd29e1ce6b6e3c36d0fb"
 ---
 
 # Quickstart
 
 > **🔒 Permissions Required**: Vercel Connect
+
+This guide shows you how to create your first connector in Vercel Connect and request a runtime provider token from your code.
 
 
 <!-- docsgraph:related -->
@@ -45,8 +47,6 @@ sha256: "5dbb8883901299a4ce7945746da0d63a36ad18b754a2d40376e261b859f18fbf"
 
 Full cross-link map for this page: [/docs/connect/quickstart.graph.md](/docs/connect/quickstart.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fquickstart&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-This guide shows you how to create your first connector in Vercel Connect and request a runtime provider token from your code.
 
 ## Prerequisites
 

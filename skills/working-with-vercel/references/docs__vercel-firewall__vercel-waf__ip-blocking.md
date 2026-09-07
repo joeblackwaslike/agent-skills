@@ -14,8 +14,8 @@ related:
 summary: Learn how to customize the Vercel WAF to restrict access to certain IP addresses.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/ip-blocking.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "fb8017459069f1801eaa920bbf2b84acfc4a74a95a281b1c4d5f747dc84b00c9"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "2172e7f63be594065a936405061edbefeb3ca7ba94c826db063d07bd71edd0bc"
 ---
 
 # WAF IP Blocking
@@ -36,10 +36,10 @@ You can create custom rules to block a specific IP address or multiple IP addres
 - [Deny traffic from a set of IP addresses](https://vercel.com/kb/guide/deny-traffic-from-a-set-of-ip-addresses?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fip-blocking&source_site=vercel-docs&relationship=related) — Learn how to block specific IP addresses with the Vercel WAF API.
 - [Blocking traffic from a specific IP address.](https://vercel.com/kb/guide/traffic-spikes?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fip-blocking&source_site=vercel-docs&relationship=related) — Learn how to block traffic from a specific IP address.
 - [Custom firewall rules for IP blocking](https://vercel.com/changelog/custom-firewall-rules-for-ip-blocking?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fip-blocking&source_site=vercel-docs&relationship=related)
-- [Block, rate limit, and challenge traffic with the Vercel Firewall](https://vercel.com/changelog/block-rate-limit-and-challenge-traffic-with-the-vercel-firewall?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fip-blocking&source_site=vercel-docs&relationship=related)
 - [Using the REST API with the Firewall](https://vercel.com/docs/vercel-firewall/firewall-api?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fip-blocking&source_site=vercel-docs&relationship=related) — Learn how to interact with the security endpoints of the Vercel REST API programmatically.
 - [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fip-blocking&source_site=vercel-docs&relationship=related) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 - [vercel firewall](https://vercel.com/docs/cli/firewall?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fip-blocking&source_site=vercel-docs&relationship=related) — Learn how to manage your project's custom firewall rules, IP blocks, system bypass rules, attack challenge mode, and sys
+- [Restrict deployment access by IP address](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/trusted-ips?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fip-blocking&source_site=vercel-docs&relationship=related) — Trusted IPs let you restrict access to your deployments to a list of allowed IP addresses.
 
 Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf/ip-blocking.graph.md](/docs/vercel-firewall/vercel-waf/ip-blocking.graph.md?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fip-blocking&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -3,7 +3,7 @@ title: Spend Management
 product: vercel
 url: /docs/spend-management
 canonical_url: "https://vercel.com/docs/spend-management"
-last_updated: 2026-08-11
+last_updated: 2026-08-31
 type: how-to
 prerequisites:
   []
@@ -16,13 +16,15 @@ related:
 summary: Learn how to get notified about your account spend and configure a webhook.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/spend-management.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "040b34047ea194357543698e956d0037b63f09301f1373b6bc6ebaf82dd5a964"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "6ee0033707b1bf43782a76706508e44b5e982b7e214529ff5bd7b507ca74a85d"
 ---
 
 # Spend Management
 
 > **🔒 Permissions Required**: Spend Management
+
+Spend management is a way for you to notify or to automatically take action on your account when your team hits a [set spend amount](#what-does-spend-management-include). The actions you can take are:
 
 
 <!-- docsgraph:related -->
@@ -34,7 +36,7 @@ sha256: "040b34047ea194357543698e956d0037b63f09301f1373b6bc6ebaf82dd5a964"
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
-- [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, security defaults, AI infrastructure, GPU comp
+- [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, container image functions, security defaults,
 - [Introducing Spend Management](https://vercel.com/blog/introducing-spend-management-realtime-usage-alerts-sms-notifications?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related)
 - [Spend Management now available for Pro users](https://vercel.com/changelog/spend-management-now-available-for-pro-users?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related)
 - [Spend Management now pauses production deployments by default](https://vercel.com/changelog/spend-management-now-pauses-production-deployments-by-default?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related)
@@ -45,8 +47,6 @@ sha256: "040b34047ea194357543698e956d0037b63f09301f1373b6bc6ebaf82dd5a964"
 
 Full cross-link map for this page: [/docs/spend-management.graph.md](/docs/spend-management.graph.md?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Spend management is a way for you to notify or to automatically take action on your account when your team hits a [set spend amount](#what-does-spend-management-include). The actions you can take are:
 
 - [Receive a notification](/docs/spend-management#managing-alert-threshold-notifications)
 - [Trigger a webhook](/docs/spend-management#configuring-a-webhook)
@@ -95,7 +95,7 @@ When you set a spend amount, Vercel automatically enables web and email notifica
 5. Select the  icon and select the thresholds for which you would like to receive web and email notification, as described in [Notifications](/docs/notifications)
 6. Repeat the previous step for the Web, Email, and SMS notification sections
 
-   > **💡 Note:** Following these steps only configures  notifications. Team members
+   > **💡 Note:** Following these steps only configures **your** notifications. Team members
    > with the Owner or Billing role can configure their own preferences
 
 ### SMS notifications
@@ -134,10 +134,7 @@ Projects won't automatically unpause if you increase the spend amount, you must 
 
 You can configure a webhook URL to trigger events such as serving a static version of your site, [pausing a project](/docs/projects#pausing-a-project), or sending a Slack notification.
 
-Vercel will send a [HTTPS POST request](#webhook-payload) to the URL that you provide when the following events happen:
-
-- [When a spend amount reaches 100%](#spend-amount)
-- [At the end of your billing cycle](#end-of-billing-cycle)
+Vercel will send a [HTTPS POST request](#webhook-payload) to the URL that you provide [when a spend amount reaches a threshold](#spend-amount).
 
 To configure a webhook for spend management:
 
@@ -155,10 +152,10 @@ Sent when the team hits 50%, 75%, and 100% of their spend amount. For budgets cr
 
 | Parameters         | Type                              | Description                                                                                                                                                                                   |
 | ------------------ | --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `budgetAmount`     |     | The [spend amount](/docs/spend-management#managing-your-spend-amount) that you have set                                                                                                       |
-| `currentSpend`     |     | The [total cost](/docs/spend-management#managing-your-spend-amount) that your team [has accrued](/docs/spend-management#what-does-spend-management-include) during the current billing cycle. |
-| `teamId`           |  | Your Vercel Team ID                                                                                                                                                                           |
-| `thresholdPercent` |     | The percentage of the total budget amount for the threshold that triggered this alert                                                                                                         |
+| `budgetAmount`     | int    | The [spend amount](/docs/spend-management#managing-your-spend-amount) that you have set                                                                                                       |
+| `currentSpend`     | int    | The [total cost](/docs/spend-management#managing-your-spend-amount) that your team [has accrued](/docs/spend-management#what-does-spend-management-include) during the current billing cycle. |
+| `teamId`           | string | Your Vercel Team ID                                                                                                                                                                           |
+| `thresholdPercent` | int    | The percentage of the total budget amount for the threshold that triggered this alert                                                                                                         |
 
 ```json filename="webhook-payload.json"
 {
@@ -166,22 +163,6 @@ Sent when the team hits 50%, 75%, and 100% of their spend amount. For budgets cr
   "currentSpend": 500,
   "teamId": "team_jkT8yZ3oE1u6xLo8h6dxfNc3",
   "thresholdPercent": 100
-}
-```
-
-### End of billing cycle
-
-Sent when the billing cycle ends. You can use this event to resume paused projects.
-
-| Parameters | Type                              | Description         |
-| ---------- | --------------------------------- | ------------------- |
-| `teamId`   |  | Your Vercel Team ID |
-| `type`     |  | The type of event   |
-
-```json filename="webhook-payload.json"
-{
-  "teamId": "team_jkT8yZ3oE1u6xLo8h6dxfNc3",
-  "type": "endOfBillingCycle"
 }
 ```
 

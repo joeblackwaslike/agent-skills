@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/authentication.md"
-fetched_at: "2026-08-31T10:37:20.620Z"
-sha256: "4d9b27ab1577205a1e1aabaa0c9960a09acfc021f32f8d27b825facb579f2284"
+fetched_at: "2026-09-07T08:59:03.477Z"
+sha256: "3f6e642c34855e58d8d88ed766a8fc1878aabed1a9ed76b1cda4cf27efe74ce4"
 ---
 
 > ## Documentation Index
@@ -197,7 +197,7 @@ When the login you created with `/login` is within three days of expiring, Claud
 
 Run `/login` to renew. The warning is informational and never blocks a request: authentication keeps working until the login actually expires. The login lifetime itself is unchanged; the advance warning is what v2.1.203 adds.
 
-Once the stored login expires and can't be refreshed, each request fails with [`Login expired · Please run /login`](/docs/en/errors#login-expired) until you sign in again. Before v2.1.206, an expired login surfaced as a model error instead.
+Once the stored login expires and can't be refreshed, each model request fails with [`Login expired · Please run /login`](/docs/en/errors#login-expired) until you sign in again. Before v2.1.206, Claude Code reported an expired login on model requests as a model error instead.
 
 You can check for this state before a request fails: [`/status`](/docs/en/commands) shows a `Login` row reading `Expired — log in again`, plus the organization and email it has saved for the expired login. The row appears only when the saved claude.ai or Claude Console login is the active credential. The row requires Claude Code v2.1.210 or later.
 

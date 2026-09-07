@@ -13,8 +13,8 @@ related:
 summary: Control how much a model thinks before answering with the OpenAI Responses API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/reasoning.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "a58ea9c843da29443a6f7053702a774af20a2ca1646fe5e69991dbef581f5599"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "46fbc331713c4595887153982267683a1b08d4cd5e2530a4597c61ca8bcc007c"
 ---
 
 # Reasoning
@@ -37,7 +37,7 @@ For models that support reasoning, set the `reasoning` parameter to control how 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/responses/reasoning.graph.md](/docs/ai-gateway/sdks-and-apis/responses/reasoning.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Freasoning&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-#### \['cURL'
+#### cURL
 
 ```bash filename="reasoning.sh"
 curl -X POST "https://ai-gateway.vercel.sh/v1/responses" \
@@ -53,7 +53,7 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/responses" \
   }'
 ```
 
-#### 'TypeScript'
+#### TypeScript
 
 ```typescript filename="reasoning.ts"
 import OpenAI from 'openai';
@@ -75,7 +75,7 @@ const response = await client.responses.create({
 console.log(response.output_text);
 ```
 
-#### 'Python']
+#### Python
 
 ```python filename="reasoning.py"
 import os

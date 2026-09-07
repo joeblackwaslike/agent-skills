@@ -16,8 +16,8 @@ related:
 summary: Learn how to use vercel.json to configure and override the default behavior of Vercel from within your project. 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/vercel-json.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "dfa26c5ecbce4558991b08c4aa4e9eff1d9898ec47b530a01437084acd8573b5"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "c3a36d732c1ae2a33eaa11d32fdae4fed28bde0e26b53507abe52c77685e1426"
 ---
 
 # Static Configuration with vercel.json
@@ -34,13 +34,13 @@ The `vercel.json` file lets you configure, and override the default behavior of 
 - [Are Vercel Preview Deployments indexed by search engines?](https://vercel.com/kb/guide/are-vercel-preview-deployment-indexed-by-search-engines?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Vercel Preview Deployments aren't indexed by default. Learn how the noindex header works, how to confirm it, and the cus
 - [Build Claude Managed Agents with Vercel Services](https://vercel.com/kb/guide/claude-managed-agents-vercel-services?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Deploy Claude Managed Agents with Vercel Services to run a streaming research analyst in a browser chat, using Anthropic
 - [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
-- [Deploy PHP on Vercel with Docker](https://vercel.com/kb/guide/deploy-php-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Build a PHP application with FrankenPHP and Docker, then deploy it to Vercel Functions with managed configuration, stora
 - [Deploy Rust on Vercel with Docker](https://vercel.com/kb/guide/deploy-rust-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Build a Rust application with Axum and Docker, then deploy it to Vercel Functions. Learn how to configure environment va
+- [Deploy ASP.NET Core on Vercel with Docker](https://vercel.com/kb/guide/dot-net-asp-net-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Build a .NET application with Docker and deploy it to Vercel Functions. Learn how to configure environment variables, in
 - [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
+- [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
 - [Build Output Configuration](https://vercel.com/docs/build-output-api/configuration?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
 - [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
-- [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
-- [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
+- [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
 
 Full cross-link map for this page: [/docs/project-configuration/vercel-json.graph.md](/docs/project-configuration/vercel-json.graph.md?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -416,7 +416,27 @@ This example configures custom response headers for static files, [Vercel functi
 
 ### Header `has` or `missing` object definition
 
+| Property | Type                                | Description                                                                                                                                                                                                                                                                                                                                                                      |
+| -------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `type`   | `String`                            | Must be either `header`, `cookie`, `host`, or `query`. The `type` property only applies to **request** headers sent by clients, not response headers sent by your functions or backends.                                                                                                                                                                                         |
+| `key`    | `String`                            | The key from the selected type to match against. For example, if the `type` is `header` and the `key` is `X-Custom-Header`, we will match against the `X-Custom-Header` header key.                                                                                                                                                                                              |
+| `value`  | `String` or `Object` or `undefined` | The value to check for, if `undefined` any value will match. A regex like string can be used to capture a specific part of the value. For example, if the value `first-(?<paramName>.*)` is used for `first-second` then `second` will be usable in the destination with `:paramName`. If an object is provided, it will match when all conditions are met for its fields below. |
+
 If `value` is an object, it has one or more of the following fields:
+
+| Condition | Type                       | Description                          |
+| --------- | -------------------------- | ------------------------------------ |
+| `eq`      | `String` (optional)        | Check for equality                   |
+| `neq`     | `String` (optional)        | Check for inequality                 |
+| `inc`     | `Array<String>` (optional) | Check for inclusion in the array     |
+| `ninc`    | `Array<String>` (optional) | Check for non-inclusion in the array |
+| `pre`     | `String` (optional)        | Check for prefix                     |
+| `suf`     | `String` (optional)        | Check for suffix                     |
+| `re`      | `String` (optional)        | Check for a regex match              |
+| `gt`      | `Number` (optional)        | Check for greater than               |
+| `gte`     | `Number` (optional)        | Check for greater than or equal to   |
+| `lt`      | `Number` (optional)        | Check for less than                  |
+| `lte`     | `Number` (optional)        | Check for less than or equal to      |
 
 This example demonstrates using the expressive `value` object to append the header `x-authorized: true` if the `X-Custom-Header` request header's value is prefixed by `valid` and ends with `value`.
 
@@ -632,6 +652,8 @@ Set duration, memory, and other per-function options with the [`functions`](#fun
 
 ### Redirects examples
 
+> **💡 Note:** Some redirects and rewrites configurations can accidentally become gateways for semantic attacks. Learn how to check and protect your configurations with the [Enhancing Security for Redirects and Rewrites guide](/kb/guide/enhancing-security-for-redirects-and-rewrites).
+
 This example redirects requests to the path `/me` from your site's root to the `profile.html` file relative to your site's root with a [307 Temporary Redirect](https://developer.mozilla.org/docs/Web/HTTP/Status/307):
 
 ```json filename="vercel.json"
@@ -759,7 +781,27 @@ This example redirects requests to any path from your site's root that does not 
 
 ### Redirect `has` or `missing` object definition
 
+| Property | Type                                | Description                                                                                                                                                                                                                                                                                                                                                                      |
+| -------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `type`   | `String`                            | Must be either `header`, `cookie`, `host`, or `query`. The `type` property only applies to **request** headers sent by clients, not response headers sent by your functions or backends.                                                                                                                                                                                         |
+| `key`    | `String`                            | The key from the selected type to match against. For example, if the `type` is `header` and the `key` is `X-Custom-Header`, we will match against the `X-Custom-Header` header key.                                                                                                                                                                                              |
+| `value`  | `String` or `Object` or `undefined` | The value to check for, if `undefined` any value will match. A regex like string can be used to capture a specific part of the value. For example, if the value `first-(?<paramName>.*)` is used for `first-second` then `second` will be usable in the destination with `:paramName`. If an object is provided, it will match when all conditions are met for its fields below. |
+
 If `value` is an object, it has one or more of the following fields:
+
+| Condition | Type                       | Description                          |
+| --------- | -------------------------- | ------------------------------------ |
+| `eq`      | `String` (optional)        | Check for equality                   |
+| `neq`     | `String` (optional)        | Check for inequality                 |
+| `inc`     | `Array<String>` (optional) | Check for inclusion in the array     |
+| `ninc`    | `Array<String>` (optional) | Check for non-inclusion in the array |
+| `pre`     | `String` (optional)        | Check for prefix                     |
+| `suf`     | `String` (optional)        | Check for suffix                     |
+| `re`      | `String` (optional)        | Check for a regex match              |
+| `gt`      | `Number` (optional)        | Check for greater than               |
+| `gte`     | `Number` (optional)        | Check for greater than or equal to   |
+| `lt`      | `Number` (optional)        | Check for less than                  |
+| `lte`     | `Number` (optional)        | Check for less than or equal to      |
 
 This example uses the expressive `value` object to define a route that redirects users with a redirect status of 308 to `/end` only if the `X-Custom-Header` header's value is prefixed by `valid` and ends with `value`.
 
@@ -914,6 +956,8 @@ your project's `vercel.json`, do not include the file extension in the source
 or destination path. For example, `/about-our-company.html` would be
 `/about-our-company`
 
+> **💡 Note:** Some redirects and rewrites configurations can accidentally become gateways for semantic attacks. Learn how to check and protect your configurations with the [Enhancing Security for Redirects and Rewrites guide](/kb/guide/enhancing-security-for-redirects-and-rewrites).
+
 ### Rewrites examples
 
 - This example rewrites requests to the path `/about` from your site's root to the `/about-our-company.html` file relative to your site's root:
@@ -1014,7 +1058,27 @@ or destination path. For example, `/about-our-company.html` would be
 
 ### Rewrite `has` or `missing` object definition
 
+| Property | Type                                | Description                                                                                                                                                                                                                                                                                                                                                                      |
+| -------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `type`   | `String`                            | Must be either `header`, `cookie`, `host`, or `query`. The `type` property only applies to **request** headers sent by clients, not response headers sent by your functions or backends.                                                                                                                                                                                         |
+| `key`    | `String`                            | The key from the selected type to match against. For example, if the `type` is `header` and the `key` is `X-Custom-Header`, we will match against the `X-Custom-Header` header key.                                                                                                                                                                                              |
+| `value`  | `String` or `Object` or `undefined` | The value to check for, if `undefined` any value will match. A regex like string can be used to capture a specific part of the value. For example, if the value `first-(?<paramName>.*)` is used for `first-second` then `second` will be usable in the destination with `:paramName`. If an object is provided, it will match when all conditions are met for its fields below. |
+
 If `value` is an object, it has one or more of the following fields:
+
+| Condition | Type                       | Description                          |
+| --------- | -------------------------- | ------------------------------------ |
+| `eq`      | `String` (optional)        | Check for equality                   |
+| `neq`     | `String` (optional)        | Check for inequality                 |
+| `inc`     | `Array<String>` (optional) | Check for inclusion in the array     |
+| `ninc`    | `Array<String>` (optional) | Check for non-inclusion in the array |
+| `pre`     | `String` (optional)        | Check for prefix                     |
+| `suf`     | `String` (optional)        | Check for suffix                     |
+| `re`      | `String` (optional)        | Check for a regex match              |
+| `gt`      | `Number` (optional)        | Check for greater than               |
+| `gte`     | `Number` (optional)        | Check for greater than or equal to   |
+| `lt`      | `Number` (optional)        | Check for less than                  |
+| `lte`     | `Number` (optional)        | Check for less than or equal to      |
 
 This example demonstrates using the expressive `value` object to define a route that rewrites users to `/end` only if the `X-Custom-Header` header's value is prefixed by `valid` and ends with `value`.
 
@@ -1063,7 +1127,7 @@ For common use cases, use those higher-level properties instead. See [Routes vs 
 | ------------ | ------------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `src`        | `source`      | `String`   | A PCRE-compatible regular expression that matches each incoming pathname (excluding querystring).                                                                                                                                                                                                          |
 | `methods`    |               | `String[]` | A set of HTTP method types. If you omit this property, the route matches any HTTP method.                                                                                                                                                                                                                  |
-| `dest`       | `destination` | `String`   | A destination pathname or full URL, including querystring, with the ability to embed capture groups as $1, $2…When used with the route's `env` property, you can also reference environment variables using `$VAR`or`${VAR}` syntax.                                                             |
+| `dest`       | `destination` | `String`   | A destination pathname or full URL, including querystring, with the ability to embed capture groups as $1, $2…<br /><br />When used with the route's `env` property, you can also reference environment variables using `$VAR`or`${VAR}` syntax.                                                             |
 | `headers`    |               | `Object`   | A set of headers to apply for responses.                                                                                                                                                                                                                                                                   |
 | `status`     | `statusCode`  | `Number`   | A status code to respond with. Can be used in tandem with `Location:` header to implement redirects.                                                                                                                                                                                                       |
 | `continue`   |               | `Boolean`  | If `true`, routing will continue even when the `src` is matched.                                                                                                                                                                                                                                           |
@@ -1087,7 +1151,27 @@ The following route properties are deprecated:
 
 ### Conditional matching with `has` and `missing`
 
+| Property | Type                                | Description                                                                                                                                                                                                                                                                                                                                                                      |
+| -------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `type`   | `String`                            | Must be either `header`, `cookie`, `host`, or `query`. The `type` property only applies to **request** headers sent by clients, not response headers sent by your functions or backends.                                                                                                                                                                                         |
+| `key`    | `String`                            | The key from the selected type to match against. For example, if the `type` is `header` and the `key` is `X-Custom-Header`, we will match against the `X-Custom-Header` header key.                                                                                                                                                                                              |
+| `value`  | `String` or `Object` or `undefined` | The value to check for, if `undefined` any value will match. A regex like string can be used to capture a specific part of the value. For example, if the value `first-(?<paramName>.*)` is used for `first-second` then `second` will be usable in the destination with `:paramName`. If an object is provided, it will match when all conditions are met for its fields below. |
+
 If `value` is an object, it has one or more of the following fields:
+
+| Condition | Type                       | Description                          |
+| --------- | -------------------------- | ------------------------------------ |
+| `eq`      | `String` (optional)        | Check for equality                   |
+| `neq`     | `String` (optional)        | Check for inequality                 |
+| `inc`     | `Array<String>` (optional) | Check for inclusion in the array     |
+| `ninc`    | `Array<String>` (optional) | Check for non-inclusion in the array |
+| `pre`     | `String` (optional)        | Check for prefix                     |
+| `suf`     | `String` (optional)        | Check for suffix                     |
+| `re`      | `String` (optional)        | Check for a regex match              |
+| `gt`      | `Number` (optional)        | Check for greater than               |
+| `gte`     | `Number` (optional)        | Check for greater than or equal to   |
+| `lt`      | `Number` (optional)        | Check for less than                  |
+| `lte`     | `Number` (optional)        | Check for less than or equal to      |
 
 This example uses the `value` object to define a route that only rewrites to `/end` if the `X-Custom-Header` header's value starts with `valid` and ends with `value`:
 
@@ -1143,9 +1227,9 @@ This example configures custom routes that map to static files and [Vercel funct
 | Property | Type                                  | Description                                                                                                                                                                                                                                                                                                |
 | -------- | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `type`   | `String`                              | Must be `request.query`, `request.headers`, `response.headers`, or `request.path`. This specifies the scope of what your transforms will apply to.                                                                                                                                                         |
-| `op`     | `String`                              | These specify the possible operations:- `append` appends `args` to the value of the key, and will set if missing- `set` sets the key and value if missing- `delete` deletes the key entirely if `args` is not provided; otherwise, it will delete the value of `args` from the matching keyThe `request.path` transform only supports `set`. |
-| `target` | `Object`                              | An object with key `key`, which is either a `String` or an `Object`. If it is a string, the transform uses it as the header or query key. If it is an object, it may contain one or more of the properties [seen below.](#transform-target-object-definition)Not used for `request.path` transforms, which operate on the request path as a whole rather than a named key. |
-| `args`   | `String` or `String[]` or `undefined` | If `args` is a string or string array, it will be used as the value for the target according to the `op` property.The `request.path` transform requires `args` to be a single `String`; an array is rejected.When `env` is also set, `$VAR` and `${VAR}` references in `args` are replaced with environment variable values at request time.                                                |
+| `op`     | `String`                              | These specify the possible operations:<br />- `append` appends `args` to the value of the key, and will set if missing<br />- `set` sets the key and value if missing<br />- `delete` deletes the key entirely if `args` is not provided; otherwise, it will delete the value of `args` from the matching key<br /><br />The `request.path` transform only supports `set`. |
+| `target` | `Object`                              | An object with key `key`, which is either a `String` or an `Object`. If it is a string, the transform uses it as the header or query key. If it is an object, it may contain one or more of the properties [seen below.](#transform-target-object-definition)<br /><br />Not used for `request.path` transforms, which operate on the request path as a whole rather than a named key. |
+| `args`   | `String` or `String[]` or `undefined` | If `args` is a string or string array, it will be used as the value for the target according to the `op` property.<br /><br />The `request.path` transform requires `args` to be a single `String`; an array is rejected.<br /><br />When `env` is also set, `$VAR` and `${VAR}` references in `args` are replaced with environment variable values at request time.                                                |
 | `env`    | `String[]` or `undefined`             | A whitelist of [environment variable](/docs/environment-variables) names whose values replace `$VAR` or `${VAR}` references in `args` at request time. Only variables listed here are available for expansion. A maximum of 64 entries. See [using environment variables in transforms](#in-transforms).   |
 
 #### Transform target object definition

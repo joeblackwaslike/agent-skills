@@ -16,13 +16,15 @@ related:
 summary: Learn how to manage Sign in with Vercel from the Dashboard
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "a0f8b8fe9ae5e7e34d7e0cf002d21ace9b73baae39ecb896ba1fcc3f6b47f980"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "ca3602586ea3cc6edf8e3b489e82ecae24d2473d1b4e897d02d2d36af7115a6b"
 ---
 
 # Manage Sign in with Vercel from the Dashboard
 
 ## Create an App
+
+To manage any third-party apps, or create a new one yourself, you need to create an App. An App acts as an intermediary that requests and manages access to resources on behalf of the user. It communicates with the [Vercel Authorization Server](/docs/sign-in-with-vercel/authorization-server-api) to get tokens which act as credentials for accessing protected resources through the [Vercel REST API](/docs/rest-api).
 
 
 <!-- docsgraph:related -->
@@ -40,8 +42,6 @@ sha256: "a0f8b8fe9ae5e7e34d7e0cf002d21ace9b73baae39ecb896ba1fcc3f6b47f980"
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel/manage-from-dashboard.graph.md](/docs/sign-in-with-vercel/manage-from-dashboard.graph.md?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fmanage-from-dashboard&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-To manage any third-party apps, or create a new one yourself, you need to create an App. An App acts as an intermediary that requests and manages access to resources on behalf of the user. It communicates with the [Vercel Authorization Server](/docs/sign-in-with-vercel/authorization-server-api) to get tokens which act as credentials for accessing protected resources through the [Vercel REST API](/docs/rest-api).
 
 To create an App, follow these steps:
 

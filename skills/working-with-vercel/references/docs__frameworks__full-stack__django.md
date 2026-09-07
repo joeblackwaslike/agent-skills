@@ -17,8 +17,8 @@ related:
 summary: Deploy a Django app on Vercel. Learn how the Python runtime, WSGI, ASGI, static assets, and Vercel Functions work together.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/django.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "fc8e21c88be622728a8468f520f2384549b2a1b21b9c2b3826463db8397522b3"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "31dc8a11d12b355adfdb22b6a389b319fe1fb07327e580aa30d618b0297cb5e4"
 ---
 
 # Deploy a Django app on Vercel
@@ -39,11 +39,11 @@ project settings.
 - [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fdjango&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
 - [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fdjango&source_site=vercel-docs&relationship=related) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
 - [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fdjango&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
-- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fdjango&source_site=vercel-docs&relationship=related) — Learn how to create and manage deployments on Vercel.
 - [Run background tasks with Celery on Vercel](https://vercel.com/docs/frameworks/backend/celery?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fdjango&source_site=vercel-docs&relationship=related) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fdjango&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 - [Express on Vercel](https://vercel.com/docs/frameworks/backend/express?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fdjango&source_site=vercel-docs&relationship=related) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
 - [Backends on Vercel](https://vercel.com/docs/frameworks/backend?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fdjango&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fdjango&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/frameworks/full-stack/django.graph.md](/docs/frameworks/full-stack/django.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fdjango&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

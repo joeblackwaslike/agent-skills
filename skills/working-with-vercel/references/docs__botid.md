@@ -16,13 +16,15 @@ related:
 summary: Protect your applications from automated attacks with intelligent bot detection and verification, powered by Kasada.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/botid.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "94bf70bcba2940cac0de3f153f2be590a81682d5b03459a77a30c1d33b88b992"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "294a0c70e1e310850e010e5f5d7054bd87ad7e6d73c5aca13ec7edc568a74ea6"
 ---
 
 # BotID
 
 > **🔒 Permissions Required**: BotID
+
+[Vercel BotID](/botid) is an invisible CAPTCHA that protects against sophisticated bots without showing visible challenges or requiring user action. It's a client-side challenge that uses machine learning to distinguish between humans and bots. It adds a protection layer to high-value routes, such as checkouts, signups, and APIs, that are common targets for bots imitating real users.
 
 
 <!-- docsgraph:related -->
@@ -45,8 +47,6 @@ sha256: "94bf70bcba2940cac0de3f153f2be590a81682d5b03459a77a30c1d33b88b992"
 
 Full cross-link map for this page: [/docs/botid.graph.md](/docs/botid.graph.md?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-[Vercel BotID](/botid) is an invisible CAPTCHA that protects against sophisticated bots without showing visible challenges or requiring user action. It's a client-side challenge that uses machine learning to distinguish between humans and bots. It adds a protection layer to high-value routes, such as checkouts, signups, and APIs, that are common targets for bots imitating real users.
 
 Sophisticated bots are designed to closely mimic real user behavior. They can run JavaScript, solve CAPTCHAs, and navigate interfaces in ways that closely resemble humans. Tools like **Playwright** and **Puppeteer** automate these sessions, simulating actions from page load to form submission. These bots aim to blend in with normal traffic, making detection difficult and mitigation costly.
 

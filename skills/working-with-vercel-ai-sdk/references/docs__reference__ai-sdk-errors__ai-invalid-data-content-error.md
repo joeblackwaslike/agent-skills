@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-invalid-data-content-error.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "94e1e2b41799df29b697bd92d6223d19b9d1c708a1c9f077b8439c71485e816c"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "6e46eb49153e58c7086b41a46c78194625ada3ff6ebc03bc9e11bc94e1fd375f"
 ---
 
 # AI_InvalidDataContentError
@@ -61,6 +61,7 @@ if (InvalidDataContentError.isInstance(error)) {
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
 - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
 - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)
+- [ToolChoiceViolationError](/docs/reference/ai-sdk-errors/ai-tool-choice-violation-error)
 - [AI_TypeValidationError](/docs/reference/ai-sdk-errors/ai-type-validation-error)
 - [AI_UIMessageStreamError](/docs/reference/ai-sdk-errors/ai-ui-message-stream-error)
 - [AI_UnsupportedFunctionalityError](/docs/reference/ai-sdk-errors/ai-unsupported-functionality-error)

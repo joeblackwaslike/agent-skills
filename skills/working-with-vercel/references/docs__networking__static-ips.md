@@ -16,13 +16,15 @@ related:
 summary: Access IP-restricted backend services through shared static egress IPs for Pro and Enterprise teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/static-ips.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "9c6525a9c9370ae1bdfd28c5a40b850acb2c881fbe1203b83ed22d74045f8260"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "202efbcbc3461d22ae1185b0f20306d03c6fe30cb02a61b24af98399df74fced"
 ---
 
 # Static IPs
 
 > **🔒 Permissions Required**: Static IPs
+
+With Static IPs (shared pool), you can access backend services that require IP allowlisting through static egress IPs. It's designed for Pro and Enterprise teams who need static IP functionality without the dedicated network or security features of [Secure Compute](/docs/networking/secure-compute).
 
 
 <!-- docsgraph:related -->
@@ -38,15 +40,13 @@ sha256: "9c6525a9c9370ae1bdfd28c5a40b850acb2c881fbe1203b83ed22d74045f8260"
 - [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
 - [Static IPs are now available for more secure connectivity](https://vercel.com/changelog/static-ips-are-now-available-for-more-secure-connectivity?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related)
 - [Route build traffic through Static IPs](https://vercel.com/changelog/route-build-traffic-through-static-ips?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related)
-- [Simpler Pricing](https://vercel.com/blog/simpler-pricing?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related)
 - [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
 - [Restrict deployment access by IP address](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/trusted-ips?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related) — Trusted IPs let you restrict access to your deployments to a list of allowed IP addresses.
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Vercel CDN overview](https://vercel.com/docs/cdn?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
 
 Full cross-link map for this page: [/docs/networking/static-ips.graph.md](/docs/networking/static-ips.graph.md?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-With Static IPs (shared pool), you can access backend services that require IP allowlisting through static egress IPs. It's designed for Pro and Enterprise teams who need static IP functionality without the dedicated network or security features of [Secure Compute](/docs/networking/secure-compute).
 
 > **💡 Note:** If you need dedicated infrastructure, VPC peering, or complete network isolation, consider [Secure Compute](/docs/networking/secure-compute).
 

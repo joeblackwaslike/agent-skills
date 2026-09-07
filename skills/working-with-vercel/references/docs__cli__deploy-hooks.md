@@ -9,11 +9,12 @@ prerequisites:
   - /docs/cli
 related:
   - /docs/deploy-hooks
+  - /docs/cli/global-options
 summary: "Manage Deploy Hooks for Git-triggered builds from the Vercel CLI: list, create, and remove deploy hook URLs that trigger new deployments when called."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/deploy-hooks.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "dec149aa0a5532eca1c280f3617090d26ce465efdb38a591f18e1edbbd5e98ae"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "c17894fece6821fb98ec53142f80d126f957895bdf759b3d91ed49ec3a60ccaf"
 ---
 
 # vercel deploy-hooks
@@ -26,13 +27,11 @@ The `vercel deploy-hooks` command (alias `vercel deploy-hook`) manages [Deploy H
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to use Deploy Hooks with Vercel and a Headless CMS](https://vercel.com/kb/guide/set-up-and-use-deploy-hooks-with-vercel-and-headless-cms?from=related&source_path=%2Fdocs%2Fcli%2Fdeploy-hooks&source_site=vercel-docs&relationship=related) — Create your own Deploy Hooks to trigger automatic deployments on Vercel when using a Headless CMS.
-- [Introducing Deploy Hooks](https://vercel.com/blog/introducing-deploy-hooks?from=related&source_path=%2Fdocs%2Fcli%2Fdeploy-hooks&source_site=vercel-docs&relationship=related)
 - [vercel webhooks](https://vercel.com/docs/cli/webhooks?from=related&source_path=%2Fdocs%2Fcli%2Fdeploy-hooks&source_site=vercel-docs&relationship=related) — Learn how to manage webhooks for your Vercel account using the vercel webhooks CLI command.
-- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fcli%2Fdeploy-hooks&source_site=vercel-docs&relationship=related) — Learn how to create and manage deployments on Vercel.
 - [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fdeploy-hooks&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
-- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related&source_path=%2Fdocs%2Fcli%2Fdeploy-hooks&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fdeploy-hooks&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel redeploy](https://vercel.com/docs/cli/redeploy?from=related&source_path=%2Fdocs%2Fcli%2Fdeploy-hooks&source_site=vercel-docs&relationship=related) — Learn how to redeploy your project using the vercel redeploy CLI command.
+- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related&source_path=%2Fdocs%2Fcli%2Fdeploy-hooks&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 
 Full cross-link map for this page: [/docs/cli/deploy-hooks.graph.md](/docs/cli/deploy-hooks.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fdeploy-hooks&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -144,6 +143,24 @@ vercel deploy-hooks rm hook_abc123 --yes
 ## Related
 
 - [Deploy Hooks overview](/docs/deploy-hooks)
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel deploy-hooks` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 
 ---

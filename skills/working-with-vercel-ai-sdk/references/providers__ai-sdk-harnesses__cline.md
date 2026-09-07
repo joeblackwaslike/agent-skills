@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/cline.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "36450023d33b33f69068a632ecac98a7e1ff573903a0d245d77becdaa1d438ab"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "3a46932e9cc2332134e26bf3438c01c4c6d48a896aed4af29a8c8564310a9bc9"
 ---
 
 # Cline Harness
@@ -41,6 +41,7 @@ import { createVercelSandbox } from '@ai-sdk/sandbox-vercel';
 
 const agent = new HarnessAgent({
   harness: cline,
+  model: 'anthropic/claude-opus-5',
   sandbox: createVercelSandbox({
     runtime: 'node24',
   }),
@@ -80,7 +81,6 @@ Use `createCline()` to configure the runtime:
 ```ts
 const harness = createCline({
   auth: 'direct',
-  modelId: 'anthropic/claude-opus-5',
 });
 ```
 
@@ -92,8 +92,6 @@ Settings:
 - `providerId`: Cline LLM provider id (e.g. `anthropic`, `openai`, `gemini`).
   When omitted, direct authentication uses the Cline backend. Explicit custom
   providers apply only to direct authentication.
-- `modelId`: model id for the configured provider. When omitted, the Cline SDK
-  selects the provider's default model.
 - `apiKey`: provider API key. When omitted, the Cline gateway falls back to
   the configured provider's environment variable.
 - `baseUrl`: custom provider endpoint.

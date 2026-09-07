@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-translation-generated-error.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "540e14f6bf4533cfcc7b9c21c84439679e2be8011a40655ecf6a9149308bda30"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "afbf9ac3dbde4ec77afabaa53b651fb5a9962afaca99feeab3995517c8d31109"
 ---
 
 # AI_NoTranslationGeneratedError
@@ -61,6 +61,7 @@ if (NoTranslationGeneratedError.isInstance(error)) {
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
 - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
 - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)
+- [ToolChoiceViolationError](/docs/reference/ai-sdk-errors/ai-tool-choice-violation-error)
 - [AI_TypeValidationError](/docs/reference/ai-sdk-errors/ai-type-validation-error)
 - [AI_UIMessageStreamError](/docs/reference/ai-sdk-errors/ai-ui-message-stream-error)
 - [AI_UnsupportedFunctionalityError](/docs/reference/ai-sdk-errors/ai-unsupported-functionality-error)

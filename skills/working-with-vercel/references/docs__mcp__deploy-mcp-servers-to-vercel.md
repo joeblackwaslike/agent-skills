@@ -3,7 +3,7 @@ title: Deploy MCP servers to Vercel
 product: vercel
 url: /docs/mcp/deploy-mcp-servers-to-vercel
 canonical_url: "https://vercel.com/docs/mcp/deploy-mcp-servers-to-vercel"
-last_updated: 2026-03-19
+last_updated: 2026-08-31
 type: how-to
 prerequisites:
   - /docs/mcp
@@ -16,8 +16,8 @@ related:
 summary: Learn how to deploy Model Context Protocol (MCP) servers on Vercel with OAuth authentication and efficient scaling.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/mcp/deploy-mcp-servers-to-vercel.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "dadc94cf4dda1005b059a03dbaed3f25069d17dc7296e2423084487ef3d0d121"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "49b80b7d521c26d4a084d8feaee55cfe30a1e15352932dda6c3cd33eb473600e"
 ---
 
 # Deploy MCP servers to Vercel
@@ -35,13 +35,13 @@ Deploy your Model Context Protocol (MCP) servers on Vercel to [take advantage of
 - [Build an MCP Server with Weather tools using Express and Vercel](https://vercel.com/kb/guide/mcp-server-with-weather-tool-express?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related) — Make your Express weather API accessible to AI assistants through the Model Context Protocol.
 - [How to create a contentful asset on Vercel](https://vercel.com/kb/guide/how-to-create-a-contentful-asset-on-vercel?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related) — This is my wonderful
 - [Building efficient MCP servers](https://vercel.com/blog/building-efficient-mcp-servers?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related)
-- [Using xmcp with Next.js](https://vercel.com/kb/guide/using-xmcp-with-nextjs?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related) — Add an MCP server to an existing Next.js app with xmcp. Create typed tools, add authentication, and deploy to Vercel as
 - [How to build an MCP server with Nuxt](https://vercel.com/kb/guide/how-to-build-an-mcp-server-with-nuxt?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related) — Add an MCP server to your Nuxt app with the Nuxt MCP Toolkit. Create tools, resources, and prompt templates that AI assi
 - [Model Context Protocol (MCP) explained: An FAQ](https://vercel.com/blog/model-context-protocol-mcp-explained?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related)
+- [Using xmcp with Next.js](https://vercel.com/kb/guide/using-xmcp-with-nextjs?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related) — Add an MCP server to an existing Next.js app with xmcp. Create typed tools, add authentication, and deploy to Vercel as
 - [Vercel MCP now in Public Beta](https://vercel.com/changelog/vercels-mcp?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related)
 - [MCP Server](https://v0.app/docs/api/v1/adapters/mcp-server?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related) — The v0 MCP (Model Context Protocol) server allows you to integrate v0's capabilities directly into your IDE, providing s
-- [xmcp on Vercel](https://vercel.com/docs/frameworks/backend/xmcp?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related) — Build MCP-compatible backends with xmcp and deploy to Vercel. Learn the project structure, tool format, middleware, and
 - [AI SDK and MCP](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/mcp/deploy-mcp-servers-to-vercel.graph.md](/docs/mcp/deploy-mcp-servers-to-vercel.graph.md?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -233,7 +233,6 @@ Learn how to deploy MCP servers on Vercel, connect to them using the AI SDK, and
 
 - [Deploy an MCP server with Next.js on Vercel](https://vercel.com/templates/ai/model-context-protocol-mcp-with-next-js)
 - [Deploy an MCP server with Vercel Functions](https://vercel.com/templates/other/model-context-protocol-mcp-with-vercel-functions)
-- [Deploy an xmcp server](https://vercel.com/templates/backend/xmcp-boilerplate)
 - [Learn about MCP server support on Vercel](https://vercel.com/changelog/mcp-server-support-on-vercel)
 - [Use the AI SDK to initialize an MCP client on your MCP host to connect to an MCP server](https://ai-sdk.dev/docs/ai-sdk-core/tools-and-tool-calling#initializing-an-mcp-client)
 - [Use the AI SDK to call tools that an MCP server provides](https://ai-sdk.dev/docs/ai-sdk-core/tools-and-tool-calling#using-mcp-tools)

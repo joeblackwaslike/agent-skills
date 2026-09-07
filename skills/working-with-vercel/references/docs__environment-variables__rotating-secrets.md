@@ -16,13 +16,15 @@ related:
 summary: Safely rotate API keys, tokens, and other secrets in your Vercel environment variables.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/rotating-secrets.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "78410064e417c59ee2d6b1334bf4141e5dcc5682a5e35cbdb0c073e16b68245f"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "4fa3bb427683391f962126ce2b881e3ca8447cf2437506c8a0846b12e9cf53b2"
 ---
 
 # Rotating environment variables
 
 > **💡 Note:** Find guides for rotating secrets for our Marketplace providers in [Vercel's Knowledge Base](https://vercel.com/kb/integrations).
+
+When you need to rotate API keys, tokens, or other credentials stored in your [environment variables](/docs/environment-variables), you'll need to update both your third-party service and your Vercel projects. This ensures your applications continue to work without downtime.
 
 
 <!-- docsgraph:related -->
@@ -30,8 +32,7 @@ sha256: "78410064e417c59ee2d6b1334bf4141e5dcc5682a5e35cbdb0c073e16b68245f"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [React2Shell Security Bulletin](https://vercel.com/blog/resources-for-protecting-against-react2shell?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Frotating-secrets&source_site=vercel-docs&relationship=related)
-- [How to rotate the secrets of your Supabase integration](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-supabase-integration?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Frotating-secrets&source_site=vercel-docs&relationship=related) — Rotate Supabase API keys, JWT secrets, and database passwords.
+- [Rotating Secrets for Vercel Marketplace Integrations](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-supabase-integration?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Frotating-secrets&source_site=vercel-docs&relationship=related) — Rotate the Supabase service role key, JWT secret, and database password from your Vercel integration, then apply the new
 - [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Frotating-secrets&source_site=vercel-docs&relationship=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
 - [How to rotate the secrets of your Hypertune integration](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-hypertune-integration?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Frotating-secrets&source_site=vercel-docs&relationship=related) — Rotate Hypertune API keys with zero-downtime.
 - [How to rotate the secrets of your Redis integration](https://vercel.com/kb/guide/how-to-reset-the-secret-for-your-redis-integration?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Frotating-secrets&source_site=vercel-docs&relationship=related) — This will guide you how to update the password for a Redis databse.
@@ -45,8 +46,6 @@ sha256: "78410064e417c59ee2d6b1334bf4141e5dcc5682a5e35cbdb0c073e16b68245f"
 
 Full cross-link map for this page: [/docs/environment-variables/rotating-secrets.graph.md](/docs/environment-variables/rotating-secrets.graph.md?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Frotating-secrets&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-When you need to rotate API keys, tokens, or other credentials stored in your [environment variables](/docs/environment-variables), you'll need to update both your third-party service and your Vercel projects. This ensures your applications continue to work without downtime.
 
 Secret rotation is a security best practice that limits the exposure window if a credential is compromised. You might rotate secrets when:
 

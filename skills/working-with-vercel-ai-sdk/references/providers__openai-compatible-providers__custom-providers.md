@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/openai-compatible-providers/custom-providers.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "70d91f7cb13624bb081aa8cb88df62581a5cc0b2af2a7e0ca03506f52ed77e49"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "a0cdbf2f141f23fd735e9e12607c3c0cf8a0472d82d81475d5c99348e89219d8"
 ---
 
 # Writing a Custom Provider
@@ -276,6 +276,7 @@ You can see the latest available exports in the AI SDK [GitHub repository](https
 - [Clarifai](/providers/openai-compatible-providers/clarifai)
 - [Heroku](/providers/openai-compatible-providers/heroku)
 - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)
+- [Synthorai](/providers/openai-compatible-providers/synthorai)
 
 
 [Full Sitemap](/sitemap.md)

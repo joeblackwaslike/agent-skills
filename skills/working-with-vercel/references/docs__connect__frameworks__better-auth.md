@@ -3,7 +3,7 @@ title: Better Auth
 product: vercel
 url: /docs/connect/frameworks/better-auth
 canonical_url: "https://vercel.com/docs/connect/frameworks/better-auth"
-last_updated: 2018-10-20
+last_updated: 2026-08-28
 type: tutorial
 prerequisites:
   - /docs/connect/frameworks
@@ -17,13 +17,18 @@ related:
 summary: Use Vercel Connect as a generic OAuth provider for Better Auth in a Next.js application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/frameworks/better-auth.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "c736751ea876a8803bdc92eb2e5c7ada302a3de40746849a0d575625b9b3eb29"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "375dcf21ad49533552e14db0d42930ff89456f658e16a6a70e6e85bd949c32de"
 ---
 
 # Better Auth
 
 > **🔒 Permissions Required**: Vercel Connect
+
+The `@vercel/connect/betterauth` adapter lets your application sign users in
+through a Vercel Connect connector. It configures Better Auth's
+[`genericOAuth`](https://www.better-auth.com/docs/plugins/generic-oauth)
+plugin to use the Vercel Connect OAuth gateway.
 
 
 <!-- docsgraph:related -->
@@ -43,11 +48,6 @@ sha256: "c736751ea876a8803bdc92eb2e5c7ada302a3de40746849a0d575625b9b3eb29"
 
 Full cross-link map for this page: [/docs/connect/frameworks/better-auth.graph.md](/docs/connect/frameworks/better-auth.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fbetter-auth&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-The `@vercel/connect/betterauth` adapter lets your application sign users in
-through a Vercel Connect connector. It configures Better Auth's
-[`genericOAuth`](https://www.better-auth.com/docs/plugins/generic-oauth)
-plugin to use the Vercel Connect OAuth gateway.
 
 This tutorial uses a Next.js App Router application. After you finish, a user
 can select a sign-in button, authorize the connector, and return with a Better

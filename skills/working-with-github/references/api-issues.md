@@ -1,7 +1,7 @@
 ---
 source: "https://docs.github.com/en/rest/issues/issues"
-fetched_at: "2026-08-03T07:31:37.157Z"
-sha256: "d5b1ac1e29b834c3ee00e470264b6e394cce5ad7d42f98ea65bdfd69f6019da6"
+fetched_at: "2026-09-07T09:04:02.451Z"
+sha256: "70cca632c76a7002cab7a9a21d1041e85e73a7b9f7506101acb716ac6c62a17c"
 ---
 
 # REST API endpoints for issues
@@ -672,6 +672,9 @@ application/vnd.github.full+json: Returns raw, text, and HTML representations. R
 
 - **`type`** (string or null)
   The name of the issue type to associate with this issue. NOTE: Only users with push access can set the type for new issues. The type is silently dropped otherwise.
+
+- **`parent_issue_id`** (integer)
+  The id of the parent issue to add this issue to as a sub-issue. NOTE: Only users with triage access to both the parent issue's repository and this repository can set the parent issue.
 
 ### HTTP response status codes
 

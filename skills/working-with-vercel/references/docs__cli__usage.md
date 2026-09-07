@@ -9,11 +9,12 @@ prerequisites:
   - /docs/cli
 related:
   - /docs/rbac/access-roles
+  - /docs/cli/global-options
 summary: Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/usage.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "3d87d29b6d171e7394b370d8cf9681e5c3ae3baa3e386bdb33df6888a2ba8fee"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "a3d931013c3b5fb33588a4daccd77aed851d5c12943cd0bab1756f4ec625f272"
 ---
 
 # vercel usage
@@ -27,12 +28,11 @@ The `vercel usage` command displays billing usage for the current billing period
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Access billing usage and cost data via API](https://vercel.com/changelog/access-billing-usage-cost-data-api?from=related&source_path=%2Fdocs%2Fcli%2Fusage&source_site=vercel-docs&relationship=related)
-- [Get Usage Summary](https://v0.app/docs/api/v2/reference/usage/get-usage-summary?from=related&source_path=%2Fdocs%2Fcli%2Fusage&source_site=vercel-docs&relationship=related) — Returns credit usage for the active billing scope. Team owners and billing members receive team-wide usage by default; o
 - [vercel metrics](https://vercel.com/docs/cli/metrics?from=related&source_path=%2Fdocs%2Fcli%2Fusage&source_site=vercel-docs&relationship=related) — List and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
-- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fcli%2Fusage&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fusage&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fusage&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel help](https://vercel.com/docs/cli/help?from=related&source_path=%2Fdocs%2Fcli%2Fusage&source_site=vercel-docs&relationship=related) — Learn how to use the vercel help CLI command to get information about all available Vercel CLI commands.
 - [vercel buy](https://vercel.com/docs/cli/buy?from=related&source_path=%2Fdocs%2Fcli%2Fusage&source_site=vercel-docs&relationship=related) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
+- [vercel contract](https://vercel.com/docs/cli/contract?from=related&source_path=%2Fdocs%2Fcli%2Fusage&source_site=vercel-docs&relationship=related) — Learn how to view contract commitment information for your Vercel account using the vercel contract CLI command.
 
 Full cross-link map for this page: [/docs/cli/usage.graph.md](/docs/cli/usage.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fusage&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -137,6 +137,24 @@ The JSON output includes:
 - `chargeCount`: The number of individual charges processed
 
 When using `--breakdown`, the JSON output includes a `breakdown` array containing usage data for each period, plus a `grandTotal` object with aggregated totals.
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel usage` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 
 ---

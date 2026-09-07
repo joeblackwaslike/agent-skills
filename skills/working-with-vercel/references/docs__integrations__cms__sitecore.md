@@ -3,7 +3,7 @@ title: Vercel and Sitecore XM Cloud Integration
 product: vercel
 url: /docs/integrations/cms/sitecore
 canonical_url: "https://vercel.com/docs/integrations/cms/sitecore"
-last_updated: 2026-08-11
+last_updated: 2026-08-28
 type: tutorial
 prerequisites:
   - /docs/integrations/cms
@@ -13,8 +13,8 @@ related:
 summary: Integrate Vercel with Sitecore XM Cloud to deploy your content.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/cms/sitecore.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "b88aa04629b95e1e68eb156dcec595261fb61cab2791366b6cf3d38162464f88"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "56856a6a0c8ad7fbd2f625419f105e3dd0b11c67650c81b08172ebfded8477a9"
 ---
 
 # Vercel and Sitecore XM Cloud Integration
@@ -31,7 +31,7 @@ sha256: "b88aa04629b95e1e68eb156dcec595261fb61cab2791366b6cf3d38162464f88"
 - [Deploy a headless Shopify storefront with Vercel](https://vercel.com/kb/guide/deploy-headless-shopify-storefront-with-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fsitecore&source_site=vercel-docs&relationship=related) — Deploy a headless Shopify storefront using the Next.js Commerce template on Vercel
 - [How to Deploy a Vue.js Site with Vercel](https://vercel.com/kb/guide/deploying-vuejs-to-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fsitecore&source_site=vercel-docs&relationship=related) — Create your Vue.js app and deploy it with Vercel.
 - [How to Optimize Next.js + Sitecore JSS](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-jss?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fsitecore&source_site=vercel-docs&relationship=related) — This guide covers performance and usage considerations when building and deploying your Next.js and Sitecore JSS applica
-- [Integrating Next.js and Contentful for your Headless CMS](https://vercel.com/kb/guide/integrating-next-js-and-contentful-for-your-headless-cms?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fsitecore&source_site=vercel-docs&relationship=related) — Next.js with Contentful gives you the power to quickly build scalable dynamic static websites with improved search engin
+- [Deploy a headless BigCommerce storefront with Vercel](https://vercel.com/kb/guide/deploy-headless-bigcommerce-storefront-with-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fsitecore&source_site=vercel-docs&relationship=related) — Deploy a headless BigCommerce storefront using Catalyst and Next.js on Vercel
 - [Vercel and Contentful Integration](https://vercel.com/docs/integrations/cms/contentful?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fsitecore&source_site=vercel-docs&relationship=related) — Integrate Vercel with Contentful to deploy your content.
 - [Multi-Project Platforms Quickstart](https://vercel.com/docs/platforms/multi-project-platforms/quickstart?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fsitecore&source_site=vercel-docs&relationship=related) — Programmatically host code for user-generated or AI-generated applications on Vercel.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fsitecore&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.

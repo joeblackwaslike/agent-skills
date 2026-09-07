@@ -16,13 +16,15 @@ related:
 summary: This reference covers the dimensions and operators used to create a query.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query/reference.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "1404cc9411b145d732639b3e4b087d8084eb4d21ab4147a404e143856b7c6493"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "13c7adf4280b9e7658a83070187df79d0032b3787faca038c198b387808a14fe"
 ---
 
 # Query Reference
 
 ## Metric
+
+The metric selects what query data is displayed. You can choose one field at a time, and the same metric can be applied to different event types. For instance, **Function Wall Time** can be selected for edge, serverless, or middleware functions, aggregating each field in various ways.
 
 
 <!-- docsgraph:related -->
@@ -32,14 +34,12 @@ sha256: "1404cc9411b145d732639b3e4b087d8084eb4d21ab4147a404e143856b7c6493"
 
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api?from=related&source_path=%2Fdocs%2Fquery%2Freference&source_site=vercel-docs&relationship=related) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 - [Custom Reporting](https://vercel.com/docs/ai-gateway/observability-and-spend/custom-reporting?from=related&source_path=%2Fdocs%2Fquery%2Freference&source_site=vercel-docs&relationship=related) — Query AI Gateway usage data grouped by model, user, tag, provider, or credential type using the Custom Reporting API.
-- [vercel metrics](https://vercel.com/docs/cli/metrics?from=related&source_path=%2Fdocs%2Fquery%2Freference&source_site=vercel-docs&relationship=related) — List and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
 - [Aggregates page views](https://vercel.com/docs/rest-api/web-analytics/aggregates-page-views?from=related&source_path=%2Fdocs%2Fquery%2Freference&source_site=vercel-docs&relationship=related) — GET /v1/query/web-analytics/visits/aggregate — Counts pageviews on a project, within the requested date range. Results a
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fquery%2Freference&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
+- [vercel metrics](https://vercel.com/docs/cli/metrics?from=related&source_path=%2Fdocs%2Fquery%2Freference&source_site=vercel-docs&relationship=related) — List and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
 
 Full cross-link map for this page: [/docs/query/reference.graph.md](/docs/query/reference.graph.md?from=related&source_path=%2Fdocs%2Fquery%2Freference&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-The metric selects what query data is displayed. You can choose one field at a time, and the same metric can be applied to different event types. For instance, **Function Wall Time** can be selected for edge, serverless, or middleware functions, aggregating each field in various ways.
 
 | **Field Name**                    | **Description**                                                                                                           | **Aggregations**                                       |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |

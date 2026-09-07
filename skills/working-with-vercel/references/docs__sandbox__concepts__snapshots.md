@@ -17,8 +17,8 @@ related:
 summary: Save and restore sandbox state with snapshots for faster startups and environment sharing.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/snapshots.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "4882c6670870dca582afe2facd2e55c71b29624bed8061597b0ef787e0b6b3cc"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "d32535871beee3d4210c423f9b5be1a7649641837daebbd0091d3def062f7d0c"
 ---
 
 # Snapshots
@@ -32,6 +32,7 @@ Snapshots capture the state of a running sandbox, including the filesystem and i
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=related) — Learn how to save sandbox state with snapshots and skip installation on future runs.
+- [Vercel Sandbox now calculates snapshot storage costs daily](https://vercel.com/changelog/vercel-sandbox-now-calculates-snapshot-storage-costs-daily?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=related)
 - [Vercel Sandbox now supports Devin Outposts](https://vercel.com/changelog/vercel-sandbox-now-supports-devin-outposts?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=related)
 - [How to install system packages in Vercel Sandbox](https://vercel.com/kb/guide/how-to-install-system-packages-in-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=related) — Learn how to install additional system packages in Vercel Sandbox with apt-get on the default Ubuntu-based managed image
 - [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
@@ -40,9 +41,8 @@ Snapshots capture the state of a running sandbox, including the filesystem and i
 - [Vercel Sandbox snapshots now allow custom retention periods](https://vercel.com/changelog/vercel-sandbox-snapshots-now-allow-custom-retention-periods?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=related)
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 - [Create a snapshot](https://vercel.com/docs/rest-api/sandboxes/create-a-snapshot?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=related) — POST /v2/sandboxes/sessions/{sessionId}/snapshot — Creates a point-in-time snapshot of a running session's filesystem. S
-- [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
-- [Get a snapshot](https://vercel.com/docs/rest-api/sandboxes/get-a-snapshot?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=related) — GET /v2/sandboxes/snapshots/{snapshotId} — Retrieves detailed information about a specific snapshot, including its creat
 - [List snapshots](https://vercel.com/docs/rest-api/sandboxes/list-snapshots?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=related) — GET /v2/sandboxes/snapshots — Retrieves a paginated list of snapshots for a specific project.
+- [Transferring a project](https://vercel.com/docs/projects/transferring-projects?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=related) — Learn how to transfer a project between Vercel teams.
 
 Full cross-link map for this page: [/docs/sandbox/concepts/snapshots.graph.md](/docs/sandbox/concepts/snapshots.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -101,9 +101,96 @@ Call `snapshot()` on a running sandbox:
 
 > **💡 Note:** Once you create a snapshot, the sandbox shuts down automatically and becomes unreachable. You don't need to stop it afterwards.
 
+**CLI**
+
+```bash
+# Create a snapshot of a running sandbox (by name)
+sandbox snapshot my-sandbox --stop
+
+# Create a snapshot that expires 14 days after its last use
+sandbox snapshot my-sandbox --stop --expiration 14d
+
+# Create a snapshot that never expires
+sandbox snapshot my-sandbox --stop --expiration 0
+```
+
+The `--stop` flag confirms that the sandbox will be stopped when snapshotting. By default, snapshots expire 30 days after their last use. Use `--expiration` (e.g. `--expiration 14d`) to set a custom expiration time, or `--expiration 0` to never expire the snapshot.
+
+**TypeScript**
+
+```ts
+import { Sandbox } from '@vercel/sandbox';
+import ms from 'ms';
+
+const sandbox = await Sandbox.create();
+
+// Install dependencies, configure environment, etc.
+await sandbox.runCommand('npm', ['install']);
+
+// Snapshot and get the ID
+const snapshot = await sandbox.snapshot({ expiration: ms('14d') });
+console.log(snapshot.snapshotId);
+```
+
+**Python**
+
+```python filename="main.py"
+import asyncio
+from datetime import timedelta
+
+from vercel import sandbox
+
+
+async def main() -> None:
+    box = await sandbox.create_sandbox()
+
+    # Install dependencies, configure environment, etc.
+    await box.run_process("uv", ["sync"], check=True)
+
+    # Snapshot and get the ID.
+    snapshot = await box.snapshot(expiration=timedelta(days=14))
+    print(snapshot.id)
+
+
+asyncio.run(main())
+```
+
 ## Create a sandbox from a snapshot
 
 Pass the snapshot ID when creating a new sandbox:
+
+**CLI**
+
+```bash
+sandbox create --snapshot snap_abc123
+```
+
+**TypeScript**
+
+```ts
+const sandbox = await Sandbox.create({
+  source: { type: 'snapshot', snapshotId: 'snap_abc123' },
+});
+```
+
+**Python**
+
+```python filename="main.py"
+import asyncio
+
+from vercel import sandbox
+from vercel.sandbox import SnapshotSource
+
+
+async def main() -> None:
+    box = await sandbox.create_sandbox(
+        source=SnapshotSource(snapshot_id="snap_abc123")
+    )
+    print(box.current_snapshot_id)
+
+
+asyncio.run(main())
+```
 
 ## Snapshots and regions
 
@@ -117,13 +204,119 @@ Read the regions where a snapshot is available with the `snapshot.regions` acces
 
 View all snapshots for your project:
 
+**CLI**
+
+```bash
+# List snapshots for the current project
+sandbox snapshots list
+
+# List snapshots for a specific project
+sandbox snapshots list --project my-app
+```
+
+**TypeScript**
+
+```ts
+import { Snapshot } from '@vercel/sandbox';
+
+// Auto-paginates through every page
+const result = await Snapshot.list();
+for await (const snapshot of result) {
+  console.log(snapshot.id, snapshot.status);
+}
+
+// Or filter by sandbox name
+const forSandbox = await Snapshot.list({ name: 'my-sandbox' });
+```
+
+**Python**
+
+```python filename="main.py"
+import asyncio
+
+from vercel import sandbox
+
+
+async def main() -> None:
+    async for snapshot in sandbox.query_snapshots(page_size=10):
+        print(snapshot.id, snapshot.status)
+
+
+asyncio.run(main())
+```
+
 ## Retrieve an existing snapshot
 
 Look up a snapshot by ID:
 
+**CLI**
+
+The CLI doesn't support retrieving a single snapshot by ID. Use `sandbox snapshots list` to view all snapshots for your project:
+
+```bash
+sandbox snapshots list
+```
+
+**TypeScript**
+
+```ts
+import { Snapshot } from '@vercel/sandbox';
+
+const snapshot = await Snapshot.get({ snapshotId: 'snap_abc123' });
+console.log(snapshot.status); // "created" | "deleted" | "failed"
+```
+
+**Python**
+
+```python filename="main.py"
+import asyncio
+
+from vercel import sandbox
+
+
+async def main() -> None:
+    snapshot = await sandbox.get_snapshot(snapshot_id="snap_abc123")
+    print(snapshot.status)
+
+
+asyncio.run(main())
+```
+
 ## Delete a snapshot
 
 Remove snapshots you no longer need:
+
+**CLI**
+
+```bash
+# Delete a single snapshot
+sandbox snapshots delete snap_abc123
+
+# Delete multiple snapshots
+sandbox snapshots delete snap_abc123 snap_def456
+```
+
+**TypeScript**
+
+```ts
+await snapshot.delete();
+```
+
+**Python**
+
+```python filename="main.py"
+import asyncio
+
+from vercel import sandbox
+
+
+async def main() -> None:
+    snapshot = await sandbox.get_snapshot(snapshot_id="snap_abc123")
+    await snapshot.delete()
+
+
+asyncio.run(main())
+```
 
 ## Snapshot retention
 

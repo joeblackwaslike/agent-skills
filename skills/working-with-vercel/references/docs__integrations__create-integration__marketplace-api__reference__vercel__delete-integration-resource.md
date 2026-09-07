@@ -3,7 +3,7 @@ title: delete-integration-resource
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/delete-integration-resource
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/delete-integration-resource"
-last_updated: 2026-08-31
+last_updated: 2026-09-07
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about delete-integration-resource on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/delete-integration-resource.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "5d3ac3b7c5281d189267faf3d160fe7a80a3525109acf0385bafb79eefd7a875"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "4778778ba06a5119caa583275e38eb59bc17222233f185c43c1b69cf8b923865"
 ---
 
 # Delete Integration Resource

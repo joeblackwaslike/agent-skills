@@ -16,8 +16,8 @@ related:
 summary: Learn how to trace your application to understand performance and infrastructure details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/tracing.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "b685b78811652c419e4b51262d72181f769882a72889c08742f4d4a28f88b5b8"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "644a56b72015d9a00f07881bddfc6faa17ed38b13a0173d7150f9e4f793f6be4"
 ---
 
 # Tracing
@@ -35,13 +35,13 @@ In observability, tracing is the process of collecting and analyzing how a reque
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related&source_path=%2Fdocs%2Ftracing&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Ftracing&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related&source_path=%2Fdocs%2Ftracing&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
-- [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank?from=related&source_path=%2Fdocs%2Ftracing&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, security defaults, AI infrastructure, GPU comp
+- [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank?from=related&source_path=%2Fdocs%2Ftracing&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, container image functions, security defaults,
 - [Always-on tracing for production and preview traffic](https://vercel.com/changelog/always-on-tracing-for-production-and-preview-traffic?from=related&source_path=%2Fdocs%2Ftracing&source_site=vercel-docs&relationship=related)
 - [How to set up instrumentation with OpenTelemetry](https://nextjs.org/docs/app/guides/open-telemetry?from=related&source_path=%2Fdocs%2Ftracing&source_site=vercel-docs&relationship=related) — Learn how to instrument your Next.js app with OpenTelemetry.
 - [Track a request's full lifecycle with session tracing](https://vercel.com/changelog/session-tracing-now-available?from=related&source_path=%2Fdocs%2Ftracing&source_site=vercel-docs&relationship=related)
 - [Export traces, web analytics events, and speed insights datapoints to any destination](https://vercel.com/changelog/export-more-data-with-vercel-drains?from=related&source_path=%2Fdocs%2Ftracing&source_site=vercel-docs&relationship=related)
 - [Observability](https://eve.dev/docs/guides/instrumentation?from=related&source_path=%2Fdocs%2Ftracing&source_site=vercel-docs&relationship=related) — Trace an agent with OpenTelemetry in instrumentation.ts, read the workflow run tags eve emits, and debug discovery with
-- [Trace any Vercel request from the CLI](https://vercel.com/changelog/trace-any-vercel-request-from-the-cli?from=related&source_path=%2Fdocs%2Ftracing&source_site=vercel-docs&relationship=related)
+- [Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains?from=related&source_path=%2Fdocs%2Ftracing&source_site=vercel-docs&relationship=related) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
 
 Full cross-link map for this page: [/docs/tracing.graph.md](/docs/tracing.graph.md?from=related&source_path=%2Fdocs%2Ftracing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

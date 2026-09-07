@@ -12,8 +12,8 @@ related:
 summary: "Manage your personal Vercel authentication tokens from the CLI: list, create, and remove access tokens for use with the Vercel API and Vercel CLI."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/tokens.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "f0143e60bf9554f1b0b2117064320b40f1b2bb426b4d6911de455888236328cc"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "5004173573f0ff929831297893db623a6bd63f89dae4d6d2025ddad5244efd28"
 ---
 
 # vercel tokens
@@ -26,11 +26,11 @@ The `vercel tokens` command manages your personal authentication tokens. Tokens 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Access tokens](https://vercel.com/docs/accounts/access-tokens?from=related&source_path=%2Fdocs%2Fcli%2Ftokens&source_site=vercel-docs&relationship=related) — Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate A
-- [List Auth Tokens](https://vercel.com/docs/rest-api/authentication/list-auth-tokens?from=related&source_path=%2Fdocs%2Fcli%2Ftokens&source_site=vercel-docs&relationship=related) — GET /v6/user/tokens — Retrieve a list of the current User's authentication tokens.
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Ftokens&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [Tokens](https://vercel.com/docs/connect/concepts/tokens?from=related&source_path=%2Fdocs%2Fcli%2Ftokens&source_site=vercel-docs&relationship=related) — Short-lived provider credentials issued by Vercel Connect. Each token request specifies a subject, optional installation
-- [Create an Auth Token](https://vercel.com/docs/rest-api/authentication/create-an-auth-token?from=related&source_path=%2Fdocs%2Fcli%2Ftokens&source_site=vercel-docs&relationship=related) — POST /v3/user/tokens — Creates and returns a new authentication token for the currently authenticated User. The \\`bearer
+- [vercel connect](https://vercel.com/docs/cli/connect?from=related&source_path=%2Fdocs%2Fcli%2Ftokens&source_site=vercel-docs&relationship=related) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
+- [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Ftokens&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [Access tokens](https://vercel.com/docs/accounts/access-tokens?from=related&source_path=%2Fdocs%2Fcli%2Ftokens&source_site=vercel-docs&relationship=related) — Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate A
+- [vercel global-config](https://vercel.com/docs/cli/global-config?from=related&source_path=%2Fdocs%2Fcli%2Ftokens&source_site=vercel-docs&relationship=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
 
 Full cross-link map for this page: [/docs/cli/tokens.graph.md](/docs/cli/tokens.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Ftokens&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -163,6 +163,24 @@ vercel tokens rm tok_abc123
 - [Account tokens](/account/tokens) (Vercel Dashboard)
 - [`--token` global option](/docs/cli/global-options#token)
 - [Using Vercel CLI for custom workflows](/kb/guide/using-vercel-cli-for-custom-workflows)
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel tokens` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 
 ---

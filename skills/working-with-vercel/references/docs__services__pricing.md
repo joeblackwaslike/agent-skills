@@ -3,21 +3,21 @@ title: Services Pricing and Limits
 product: vercel
 url: /docs/services/pricing
 canonical_url: "https://vercel.com/docs/services/pricing"
-last_updated: 2026-06-30
+last_updated: 2026-08-31
 type: reference
 prerequisites:
   - /docs/services
 related:
+  - /docs/pricing/taxes
   - /docs/functions/usage-and-pricing
   - /docs/fluid-compute
   - /docs/services/bindings
   - /docs/pricing/regional-pricing
-  - /docs/pricing
 summary: "Understand how billing works for Vercel Services, what's charged, and which limits apply."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services/pricing.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "0d6068391ecc360e8bca1bf654035630128977d8f0f3df9a9b50bffed2953d35"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "6164169d870a3e4b42d115222a31273bbc9d442abd59989c8d2ca513f5f89d68"
 ---
 
 # Services Pricing and Limits
@@ -35,11 +35,13 @@ Vercel bills Services across the compute each service runs on, the requests serv
 - [Portland, USA \\(pdx1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/pdx1?from=related&source_path=%2Fdocs%2Fservices%2Fpricing&source_site=vercel-docs&relationship=related) — Vercel pricing for the Portland, USA \\(pdx1\\) region.
 - [Dublin, Ireland \\(dub1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/dub1?from=related&source_path=%2Fdocs%2Fservices%2Fpricing&source_site=vercel-docs&relationship=related) — Vercel pricing for the Dublin, Ireland \\(dub1\\) region.
 - [Cleveland, USA \\(cle1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cle1?from=related&source_path=%2Fdocs%2Fservices%2Fpricing&source_site=vercel-docs&relationship=related) — Vercel pricing for the Cleveland, USA \\(cle1\\) region.
-- [Pricing and Limits](https://vercel.com/docs/queues/pricing?from=related&source_path=%2Fdocs%2Fservices%2Fpricing&source_site=vercel-docs&relationship=related) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
 - [San Francisco, USA \\(sfo1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sfo1?from=related&source_path=%2Fdocs%2Fservices%2Fpricing&source_site=vercel-docs&relationship=related) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
+- [Sydney, Australia \\(syd1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/syd1?from=related&source_path=%2Fdocs%2Fservices%2Fpricing&source_site=vercel-docs&relationship=related) — Vercel pricing for the Sydney, Australia \\(syd1\\) region.
 
 Full cross-link map for this page: [/docs/services/pricing.graph.md](/docs/services/pricing.graph.md?from=related&source_path=%2Fdocs%2Fservices%2Fpricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
+
+> **💡 Note:** All prices shown are in USD and exclude value-added tax (VAT), goods and services tax (GST), and other applicable taxes. Taxes are calculated based on your billing address and added to your invoice where required by law. [Learn more about taxes](/docs/pricing/taxes).
 
 ## Compute
 

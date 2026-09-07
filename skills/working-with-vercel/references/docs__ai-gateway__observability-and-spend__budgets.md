@@ -3,7 +3,7 @@ title: Budgets
 product: vercel
 url: /docs/ai-gateway/observability-and-spend/budgets
 canonical_url: "https://vercel.com/docs/ai-gateway/observability-and-spend/budgets"
-last_updated: 2026-08-11
+last_updated: 2026-08-28
 type: how-to
 prerequisites:
   - /docs/ai-gateway/observability-and-spend
@@ -17,8 +17,8 @@ related:
 summary: Cap AI Gateway spend for your team, a project, an individual API key, or a team member with budgets, refresh periods, spend alerts, and defaults.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/budgets.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "c5e142c7575bef2a99b476d8e23e3899338496079b3aad73d7bf8ce0152a741f"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "283050e047e10064a916b171f33e39384b9c897cef6d5bf050328086c3ba791d"
 ---
 
 # Budgets
@@ -32,16 +32,16 @@ A budget caps AI Gateway spend at one of four scopes:
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [AI Gateway now supports team and project spend budgets](https://vercel.com/changelog/ai-gateway-spend-budgets-and-alerts?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fbudgets&source_site=vercel-docs&relationship=related)
+- [Set per-user budgets on AI Gateway](https://vercel.com/changelog/set-per-user-budgets-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fbudgets&source_site=vercel-docs&relationship=related)
 - [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fbudgets&source_site=vercel-docs&relationship=related)
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fbudgets&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [Budgets for API keys on AI Gateway](https://vercel.com/changelog/budgets-for-api-keys-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fbudgets&source_site=vercel-docs&relationship=related)
 - [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fbudgets&source_site=vercel-docs&relationship=related) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
-- [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fbudgets&source_site=vercel-docs&relationship=related) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
 - [Spend Management](https://vercel.com/docs/spend-management?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fbudgets&source_site=vercel-docs&relationship=related) — Learn how to get notified about your account spend and configure a webhook.
 - [Custom Reporting](https://vercel.com/docs/ai-gateway/observability-and-spend/custom-reporting?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fbudgets&source_site=vercel-docs&relationship=related) — Query AI Gateway usage data grouped by model, user, tag, provider, or credential type using the Custom Reporting API.
 - [Limits](https://vercel.com/docs/limits?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fbudgets&source_site=vercel-docs&relationship=related) — Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
-- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fbudgets&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Hermes](https://vercel.com/docs/ai-gateway/coding-agents/hermes?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fbudgets&source_site=vercel-docs&relationship=related) — Use the Hermes agent with the AI Gateway.
+- [omp](https://vercel.com/docs/ai-gateway/coding-agents/omp?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fbudgets&source_site=vercel-docs&relationship=related) — Use the omp coding agent with the AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend/budgets.graph.md](/docs/ai-gateway/observability-and-spend/budgets.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fbudgets&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -16,8 +16,8 @@ related:
 summary: "Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless content, commerce, and more."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "4c68fe077a15c9b51bacc4b4eb260815ecfa9be31fcdc17a7316a04f74e3fe5d"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "06ebbb8a787128680b3711c3331f7b60e6e7b65d56310bf9929a7f1580b69b96"
 ---
 
 # Vercel Integrations
@@ -35,13 +35,13 @@ Integrations allow you to extend the capabilities of Vercel by connecting with t
 - [Integration Webhooks are now easier to configure](https://vercel.com/changelog/integration-webhooks-are-now-easier-to-configure?from=related&source_path=%2Fdocs%2Fintegrations&source_site=vercel-docs&relationship=related)
 - [Integrations can now be managed more efficiently](https://vercel.com/changelog/integrations-can-now-be-managed-more-efficiently?from=related&source_path=%2Fdocs%2Fintegrations&source_site=vercel-docs&relationship=related)
 - [Improvements and fixes](https://vercel.com/changelog/may-2022-papercuts?from=related&source_path=%2Fdocs%2Fintegrations&source_site=vercel-docs&relationship=related)
+- [Rotating Secrets for Vercel Marketplace Integrations](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-supabase-integration?from=related&source_path=%2Fdocs%2Fintegrations&source_site=vercel-docs&relationship=related) — Rotate the Supabase service role key, JWT secret, and database password from your Vercel integration, then apply the new
 - [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect?from=related&source_path=%2Fdocs%2Fintegrations&source_site=vercel-docs&relationship=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
 - [Expanding observability on Vercel](https://vercel.com/blog/expanding-observability-on-vercel?from=related&source_path=%2Fdocs%2Fintegrations&source_site=vercel-docs&relationship=related)
 - [Supercharge your Vercel Projects with Integrations](https://vercel.com/blog/integrations-marketplace?from=related&source_path=%2Fdocs%2Fintegrations&source_site=vercel-docs&relationship=related)
 - [Log Drains](https://vercel.com/blog/log-drains?from=related&source_path=%2Fdocs%2Fintegrations&source_site=vercel-docs&relationship=related)
 - [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related&source_path=%2Fdocs%2Fintegrations&source_site=vercel-docs&relationship=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
 - [Storage on Vercel Marketplace](https://vercel.com/docs/marketplace-storage?from=related&source_path=%2Fdocs%2Fintegrations&source_site=vercel-docs&relationship=related) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
-- [Vercel Deep Infra Integration](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra?from=related&source_path=%2Fdocs%2Fintegrations&source_site=vercel-docs&relationship=related) — Learn how to add the Deep Infra native integration with Vercel.
 
 Full cross-link map for this page: [/docs/integrations.graph.md](/docs/integrations.graph.md?from=related&source_path=%2Fdocs%2Fintegrations&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -61,12 +61,12 @@ To extend and automate your workflow, the [Vercel Marketplace](https://vercel.co
 
 ## Native integrations
 
-Native integrations allow a two-way connection between Vercel and third-parties Vercel has partnered with. These native integrations provide the option to subscribe to  through the Vercel dashboard.
+Native integrations allow a two-way connection between Vercel and third-parties Vercel has partnered with. These native integrations provide the option to subscribe to products through the Vercel dashboard.
 
 Native integrations provide the following benefits:
 
 - You **don't** have to create an account on the integration provider's site.
-- For each available , you can choose the billing plan suitable for your needs through the Vercel dashboard.
+- For each available product, you can choose the billing plan suitable for your needs through the Vercel dashboard.
 - The billing is managed through your Vercel account.
 
 ### Get started with native integrations

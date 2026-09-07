@@ -3,7 +3,7 @@ title: OpenAI Responses API
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/responses
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses"
-last_updated: 2026-07-28
+last_updated: 2026-09-04
 type: reference
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis
@@ -17,8 +17,8 @@ related:
 summary: Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "4516b2e9c1e6e974478e6747586bcb9ec1a305c78fbb647c5bf96594249fa707"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "384e964de01186575d59676527e027df0fb27f84891c4d5f4eff409eef4f1c1d"
 ---
 
 # OpenAI Responses API
@@ -34,9 +34,9 @@ The [OpenAI Responses API](https://developers.openai.com/api/reference/responses
 - [AI Gateway supports OpenAI's Responses API](https://vercel.com/changelog/ai-gateway-supports-openais-responses-api?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses&source_site=vercel-docs&relationship=related)
 - [Service tiers now available on AI Gateway](https://vercel.com/changelog/service-tiers-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses&source_site=vercel-docs&relationship=related)
 - [Zero Data Retention on AI Gateway](https://vercel.com/blog/zdr-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses&source_site=vercel-docs&relationship=related)
+- [OpenAI Responses API](https://ai-sdk.dev/cookbook/guides/openai-responses?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses&source_site=vercel-docs&relationship=related)
 - [OpenResponses API now supported on Vercel AI Gateway](https://vercel.com/changelog/openresponses-api-now-supported-on-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses&source_site=vercel-docs&relationship=related)
 - [OpenResponses API](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses&source_site=vercel-docs&relationship=related) — Use the OpenResponses API specification with AI Gateway for a unified, provider-agnostic interface.
-- [OpenAI Responses API](https://ai-sdk.dev/cookbook/guides/openai-responses?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses&source_site=vercel-docs&relationship=related)
 - [Text Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/text?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses&source_site=vercel-docs&relationship=related) — Generate and stream text responses using AI Gateway.
 - [Text Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/text-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses&source_site=vercel-docs&relationship=related) — Generate text responses using the OpenResponses API.
 - [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
@@ -72,6 +72,7 @@ Set your SDK's base URL to AI Gateway and use your API key for authentication. S
 - [Structured outputs](/docs/ai-gateway/sdks-and-apis/responses/structured-outputs) - Constrain the response to a JSON schema
 - [Reasoning](/docs/ai-gateway/sdks-and-apis/responses/reasoning) - Control how much a model thinks before answering
 - [Images](/docs/ai-gateway/sdks-and-apis/responses/images) - Send images for analysis
+- [Compaction](/docs/ai-gateway/sdks-and-apis/responses/compaction) - Compress a long conversation into a single item you carry forward
 
 ## Streaming
 
@@ -92,6 +93,10 @@ Constrain the response to a JSON schema with `text.format`. See [Structured outp
 ## Reasoning
 
 Set `reasoning.effort` to control how much the model thinks before answering. See [Reasoning](/docs/ai-gateway/sdks-and-apis/responses/reasoning).
+
+## Compaction
+
+`POST /v1/responses/compact` compresses a long conversation into a single `compaction` item for OpenAI models. Coding agents such as Codex call it automatically. See [Compaction](/docs/ai-gateway/sdks-and-apis/responses/compaction).
 
 ## Parameters
 

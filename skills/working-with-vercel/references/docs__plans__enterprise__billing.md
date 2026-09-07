@@ -17,8 +17,8 @@ related:
 summary: This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/enterprise/billing.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "6654bc5326711aa437944173f17c7da8f62102ee79a9972db4ac0c76b56246b5"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "59bc20cc04a142befe3e9f1cb880d3e48e3dc79fa40e7e418668d800ef773429"
 ---
 
 # Billing FAQ for Enterprise Plan
@@ -108,7 +108,7 @@ Yes. Learn more about [Roles and Permissions](/docs/rbac).
 
 ### How do I update my billing information?
 
-- ### Go to the  page
+- ### Go to the **Settings** page
   - Navigate to the [Dashboard](https://vercel.com/d?to=%2Fdashboard\&title=Open+Dashboard)
   - Select your team from the team switcher on the top left as explained [here](/docs/accounts#creating-a-team)
   - Open **Settings** in the sidebar

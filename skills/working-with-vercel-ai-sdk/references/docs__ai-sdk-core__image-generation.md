@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/image-generation.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "3c0032648c27a33b8db01bfde232483bb47265b82e8eba291a63e9ed8b81c291"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "172625a37290cdfb3134564c47aca1b2eaf4325a67e471325f1d9551ccdc999f"
 ---
 
 # Image Generation
@@ -181,19 +181,19 @@ const { image, warnings } = await generateImage({
 });
 ```
 
-### Additional provider-specific meta data
+### Provider metadata
 
-Some providers expose additional meta data for the result overall or per image.
+Some providers expose metadata for an individual image. It is available directly on the generated image:
 
 ```tsx
 const prompt = 'Santa Claus driving a Cadillac';
 
-const { image, providerMetadata } = await generateImage({
+const { image } = await generateImage({
   model: openai.image('dall-e-3'),
   prompt,
 });
 
-const revisedPrompt = providerMetadata.openai.images[0]?.revisedPrompt;
+const revisedPrompt = image.providerMetadata?.openai?.revisedPrompt;
 
 console.log({
   prompt,
@@ -201,7 +201,24 @@ console.log({
 });
 ```
 
-The outer key of the returned `providerMetadata` is the provider name. The inner values are the metadata. An `images` key is always present in the metadata and is an array with the same length as the top level `images` key.
+The outer key of `image.providerMetadata` is the provider name. The inner value is the metadata for that image.
+
+### Underlying calls
+
+When a request is split into multiple provider calls, `calls` preserves the images, provider metadata, response metadata, warnings, and usage for each call. `images` and `usage` remain convenient flattened and aggregate views, respectively.
+
+```ts
+const { calls } = await generateImage({
+  model,
+  prompt: 'Santa Claus driving a Cadillac',
+  n: 4,
+  maxImagesPerCall: 1,
+});
+
+for (const call of calls) {
+  console.log(call.providerMetadata, call.usage);
+}
+```
 
 ### Error Handling
 
@@ -214,6 +231,7 @@ This error occurs when the AI provider fails to generate an image. It can arise 
 
 The error preserves the following information to help you log the issue:
 
+- `calls`: Results from the underlying image model calls, including generated images, provider metadata, response metadata, warnings, and usage.
 - `responses`: Metadata about the image model responses, including timestamp, model, and headers.
 - `cause`: The cause of the error. You can use this for more detailed error handling
 
@@ -227,6 +245,12 @@ try {
     console.log('NoImageGeneratedError');
     console.log('Cause:', error.cause);
     console.log('Responses:', error.responses);
+
+    for (const call of error.calls ?? []) {
+      console.log('Provider metadata:', call.providerMetadata);
+      console.log('Warnings:', call.warnings);
+      console.log('Usage:', call.usage);
+    }
   }
 }
 ```

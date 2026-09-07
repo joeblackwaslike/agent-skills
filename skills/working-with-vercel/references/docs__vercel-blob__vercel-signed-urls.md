@@ -13,13 +13,15 @@ related:
 summary: Grant time-limited access to Vercel Blob URLs with signed tokens, and authorize browser-to-blob presigned uploads.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/vercel-signed-urls.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "d0a2acecc44eb5c6bda5c30712ee196e63626c852caa60689c2ee17f7e70680f"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "cdad5de42df4ba7c39d25c3d8c65c3e96a9d0bcb93c1a7a534791129554b4de0"
 ---
 
 # Vercel Signed URLs
 
 > **🔒 Permissions Required**: Vercel Blob
+
+Vercel Signed URLs grant time-limited access to a Blob URL without exposing a read-write token. Issue a short-lived signed token on your server, then sign individual blob URLs from the browser or any client. The CDN verifies the signature and rejects requests that fall outside the token's scope.
 
 
 <!-- docsgraph:related -->
@@ -40,8 +42,6 @@ sha256: "d0a2acecc44eb5c6bda5c30712ee196e63626c852caa60689c2ee17f7e70680f"
 
 Full cross-link map for this page: [/docs/vercel-blob/vercel-signed-urls.graph.md](/docs/vercel-blob/vercel-signed-urls.graph.md?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fvercel-signed-urls&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Vercel Signed URLs grant time-limited access to a Blob URL without exposing a read-write token. Issue a short-lived signed token on your server, then sign individual blob URLs from the browser or any client. The CDN verifies the signature and rejects requests that fall outside the token's scope.
 
 Use Signed URLs when you want to:
 

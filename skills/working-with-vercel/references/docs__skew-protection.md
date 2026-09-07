@@ -3,7 +3,7 @@ title: Skew Protection
 product: vercel
 url: /docs/skew-protection
 canonical_url: "https://vercel.com/docs/skew-protection"
-last_updated: 2026-08-11
+last_updated: 2026-08-28
 type: conceptual
 prerequisites:
   []
@@ -16,13 +16,15 @@ related:
 summary: "Learn how Vercel's Skew Protection ensures that the client and server stay in sync for any particular deployment."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/skew-protection.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "8faad9349c28839c466e83327e4deb62f58c2c547a37c3384630b7106b9404cc"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "f9a4768f8669a56670ae9d2724e7fa931591379f3188d914cbc51e96e97319ba"
 ---
 
 # Skew Protection
 
 > **🔒 Permissions Required**: Skew Protection
+
+[Version skew](https://www.industrialempathy.com/posts/version-skew/) occurs when different versions of your application run on client and server, causing application errors and other unexpected behavior. For example, imagine your newest deployment modifies the data structure by adding a required field to a user's profile. Older clients wouldn't expect this new field, leading to errors when they submit it.
 
 
 <!-- docsgraph:related -->
@@ -34,19 +36,17 @@ sha256: "8faad9349c28839c466e83327e4deb62f58c2c547a37c3384630b7106b9404cc"
 - [Optimized CDN caching and deploying of immutable static assets](https://vercel.com/changelog/optimized-cdn-caching-and-deploying-of-immutable-static-assets?from=related&source_path=%2Fdocs%2Fskew-protection&source_site=vercel-docs&relationship=related)
 - [Skew Protection max age now supports the full deployment lifetime](https://vercel.com/changelog/skew-protection-max-age-now-supports-the-full-deployment-lifetime?from=related&source_path=%2Fdocs%2Fskew-protection&source_site=vercel-docs&relationship=related)
 - [Skew Protection now supports prebuilt deployments](https://vercel.com/changelog/skew-protection-now-supports-prebuilt-deployments?from=related&source_path=%2Fdocs%2Fskew-protection&source_site=vercel-docs&relationship=related)
+- [How to add per-request CSP nonces to CDN-cached HTML on Vercel](https://vercel.com/kb/guide/csp-nonces-with-cdn-cache?from=related&source_path=%2Fdocs%2Fskew-protection&source_site=vercel-docs&relationship=related) — Use Routing Middleware and a self-fetch to add a fresh CSP nonce to cached HTML without rendering the page again on ever
 - [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related&source_path=%2Fdocs%2Fskew-protection&source_site=vercel-docs&relationship=related) — Learn how to debug how Vercel decides where to route your request
+- [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel?from=related&source_path=%2Fdocs%2Fskew-protection&source_site=vercel-docs&relationship=related) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related&source_path=%2Fdocs%2Fskew-protection&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related&source_path=%2Fdocs%2Fskew-protection&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
-- [Vercel vs Render](https://vercel.com/kb/guide/vercel-vs-render?from=related&source_path=%2Fdocs%2Fskew-protection&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Render: compute models, AI infrastructure, Docker support, background workers, and when to
 - [Life of a Vercel request: Application-aware routing](https://vercel.com/blog/life-of-a-request-application-aware-routing?from=related&source_path=%2Fdocs%2Fskew-protection&source_site=vercel-docs&relationship=related)
 - [Next.js 16.3 support on Vercel](https://vercel.com/blog/vercel-supports-next-js-16-3?from=related&source_path=%2Fdocs%2Fskew-protection&source_site=vercel-docs&relationship=related)
 - [Skew Protection is now generally available](https://vercel.com/changelog/skew-protection-is-now-generally-available?from=related&source_path=%2Fdocs%2Fskew-protection&source_site=vercel-docs&relationship=related)
-- [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related&source_path=%2Fdocs%2Fskew-protection&source_site=vercel-docs&relationship=related) — Protect who can see your deployments.
 
 Full cross-link map for this page: [/docs/skew-protection.graph.md](/docs/skew-protection.graph.md?from=related&source_path=%2Fdocs%2Fskew-protection&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-[Version skew](https://www.industrialempathy.com/posts/version-skew/) occurs when different versions of your application run on client and server, causing application errors and other unexpected behavior. For example, imagine your newest deployment modifies the data structure by adding a required field to a user's profile. Older clients wouldn't expect this new field, leading to errors when they submit it.
 
 Vercel's Skew Protection resolves this problem at the platform and framework layer by using [version locking](https://www.industrialempathy.com/posts/version-skew/#version-locking), which ensures client and server use the exact same version. In our example, outdated clients continue to communicate with servers that understand the old data structure, while updated clients use the most recent deployment.
 
@@ -217,11 +217,30 @@ and then appending the value of `VERCEL_DEPLOYMENT_ID` to each request using **o
 
 > **💡 Note:** If you're building outside of Vercel using `vercel build` and then deploying with `vercel
 >   deploy --prebuilt`, Skew Protection requires a custom deployment ID so the
-> build-time ID matches the one Vercel assigns at deploy time.For more information on prebuilt workflows, see [When not to use --prebuilt](/docs/cli/deploy#when-not-to-use---prebuilt).
+> build-time ID matches the one Vercel assigns at deploy time.Skew Protection is not available for prebuilt deployments at this time. For more information on prebuilt workflows, see [When not to use --prebuilt](/docs/cli/deploy#when-not-to-use---prebuilt).
 
 If you are using Next.js 14.1.4 or newer and building on Vercel, there is no additional configuration needed to [enable Skew Protection](#enable-skew-protection).
 
 Older versions of Next.js require additional [`next.config.js`](https://nextjs.org/docs/app/api-reference/config/next-config-js) configuration.
+
+**View config for 13.4.7 to 14.1.3**
+
+<br />
+
+```typescript filename="next.config.js"
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  experimental: {
+    useDeploymentId: true,
+    // Optionally, use with Server Actions
+    useDeploymentIdServerActions: true,
+  },
+};
+
+module.exports = nextConfig;
+```
+
+The `useDeploymentId` configuration enables Skew Protection for all framework-managed static file requests from your Next.js app such as for JavaScript and CSS files. You can also opt-into Skew Protection for [Next.js Server Actions](https://nextjs.org/docs/app/getting-started/mutating-data) with `useDeploymentIdServerActions`.
 
 ### Skew Protection with SvelteKit
 

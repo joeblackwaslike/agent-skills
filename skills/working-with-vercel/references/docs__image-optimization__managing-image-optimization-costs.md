@@ -12,13 +12,21 @@ related:
 summary: Learn how to measure and manage Image Optimization usage with this guide to avoid any unexpected costs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/image-optimization/managing-image-optimization-costs.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "d9afbb22e7a37886b2fb05935aaaa84637f3d47800090c8f196c21056bede1ee"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "faaa259bf739ef5896a0b713d638b7802312721f2a2bf1062093dfc7c9a79580"
 ---
 
 # Managing Usage & Costs
 
 ## Measuring usage
+
+> **💡 Note:** This document describes usage for the default pricing option.
+> Enterprise teams created before February 18th, 2025 have the choice to
+> [opt-in](https://vercel.com/d?to=%2F%5Bteam%5D%2F~%2Fsettings%2Fbilling%23image-optimization-new-price\&title=Go+to+Billing+Settings)
+> to this pricing plan or stay on the [legacy source images-based pricing plan](/docs/image-optimization/legacy-pricing)
+> until the contract expires.
+
+Your Image Optimization usage over time is displayed under the **Image Optimization** section of the [Usage](https://vercel.com/d?to=%2F%5Bteam%5D%2F~%2Fusage%23image-optimization-image-transformations\&title=Go%20to%20Usage) section in the sidebar on your dashboard.
 
 
 <!-- docsgraph:related -->
@@ -28,8 +36,8 @@ sha256: "d9afbb22e7a37886b2fb05935aaaa84637f3d47800090c8f196c21056bede1ee"
 
 - [Protecting your app (and wallet) against malicious traffic](https://vercel.com/blog/protecting-your-app-and-wallet-against-malicious-traffic?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fmanaging-image-optimization-costs&source_site=vercel-docs&relationship=related)
 - [Faster transformations and reduced pricing for Image Optimization](https://vercel.com/changelog/faster-transformations-and-reduced-pricing-for-image-optimization?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fmanaging-image-optimization-costs&source_site=vercel-docs&relationship=related)
-- [Changes to Vercel Image Optimization](https://vercel.com/changelog/changes-to-vercel-image-optimizations?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fmanaging-image-optimization-costs&source_site=vercel-docs&relationship=related)
 - [Limits and Pricing for Image Optimization](https://vercel.com/docs/image-optimization/limits-and-pricing?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fmanaging-image-optimization-costs&source_site=vercel-docs&relationship=related) — This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can i
+- [Changes to Vercel Image Optimization](https://vercel.com/changelog/changes-to-vercel-image-optimizations?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fmanaging-image-optimization-costs&source_site=vercel-docs&relationship=related)
 - [New Observability dashboard for Image Optimization](https://vercel.com/changelog/new-observability-dashboard-for-image-optimization?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fmanaging-image-optimization-costs&source_site=vercel-docs&relationship=related)
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fmanaging-image-optimization-costs&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fmanaging-image-optimization-costs&source_site=vercel-docs&relationship=related) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
@@ -38,14 +46,6 @@ sha256: "d9afbb22e7a37886b2fb05935aaaa84637f3d47800090c8f196c21056bede1ee"
 
 Full cross-link map for this page: [/docs/image-optimization/managing-image-optimization-costs.graph.md](/docs/image-optimization/managing-image-optimization-costs.graph.md?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fmanaging-image-optimization-costs&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-> **💡 Note:** This document describes usage for the default pricing option.
-> Enterprise teams created before February 18th, 2025 have the choice to
-> [opt-in](https://vercel.com/d?to=%2F%5Bteam%5D%2F~%2Fsettings%2Fbilling%23image-optimization-new-price\&title=Go+to+Billing+Settings)
-> to this pricing plan or stay on the [legacy source images-based pricing plan](/docs/image-optimization/legacy-pricing)
-> until the contract expires.
-
-Your Image Optimization usage over time is displayed under the **Image Optimization** section of the [Usage](https://vercel.com/d?to=%2F%5Bteam%5D%2F~%2Fusage%23image-optimization-image-transformations\&title=Go%20to%20Usage) section in the sidebar on your dashboard.
 
 You can also view detailed information in the **Image Optimization** section of the [Observability](https://vercel.com/d?to=%2F%5Bteam%5D%2F~%2Fobservability%2Fimage-optimization\&title=Go%20to%20Observability) section in the sidebar on your dashboard.
 

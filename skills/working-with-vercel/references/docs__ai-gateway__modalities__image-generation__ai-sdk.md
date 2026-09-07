@@ -3,7 +3,7 @@ title: Image Generation with AI SDK
 product: vercel
 url: /docs/ai-gateway/modalities/image-generation/ai-sdk
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/image-generation/ai-sdk"
-last_updated: 2026-08-24
+last_updated: 2026-08-27
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/modalities/image-generation
@@ -13,8 +13,8 @@ related:
 summary: Generate and edit images using AI models through Vercel AI Gateway with the AI SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/image-generation/ai-sdk.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "5bc416611002725951d1f88ddad42826e008320dc02042ec336d263573a31d6b"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "7a5176bbeaaee4d878720830430e5409e240c6adda67070efd30344f8e9383c6"
 ---
 
 # Image Generation with AI SDK
@@ -31,12 +31,12 @@ page](/ai-gateway/models?type=image), including multimodal LLMs and image-only m
 - [Image-only models available in Vercel AI Gateway](https://vercel.com/changelog/image-only-models-available-in-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fai-sdk&source_site=vercel-docs&relationship=related)
 - [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fai-sdk&source_site=vercel-docs&relationship=related) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
 - [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fai-sdk&source_site=vercel-docs&relationship=related)
-- [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fai-sdk&source_site=vercel-docs&relationship=related)
 - [Image Generation with Chat Completions API](https://vercel.com/docs/ai-gateway/modalities/image-generation/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fai-sdk&source_site=vercel-docs&relationship=related) — Generate and edit images using AI models through Vercel AI Gateway with the Chat Completions API.
+- [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fai-sdk&source_site=vercel-docs&relationship=related)
+- [AI SDK 4.1](https://vercel.com/blog/ai-sdk-4-1?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fai-sdk&source_site=vercel-docs&relationship=related)
 - [Image Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/image?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fai-sdk&source_site=vercel-docs&relationship=related) — Generate images from text prompts using AI Gateway.
 - [DeepInfra](https://ai-sdk.dev/providers/ai-sdk-providers/deepinfra?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fai-sdk&source_site=vercel-docs&relationship=related)
 - [Image Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fai-sdk&source_site=vercel-docs&relationship=related) — Generate images using AI models that support multimodal output through the Chat Completions API.
-- [Text Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/text?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fai-sdk&source_site=vercel-docs&relationship=related) — Generate and stream text responses using AI Gateway.
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fai-sdk&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/image-generation/ai-sdk.graph.md](/docs/ai-gateway/modalities/image-generation/ai-sdk.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fai-sdk&source_site=vercel-docs&relationship=graph)

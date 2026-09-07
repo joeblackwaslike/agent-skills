@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/bytedance.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "435eecd5a00996f1552a5f495c30f73cc445ac9ff369175ab7f161c14f524772"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "686838e2320978ad24423837f851a8947d70e01a7c187a230ae2a4c3c33b1883"
 ---
 
 # ByteDance Provider
@@ -444,6 +444,9 @@ type them with `ByteDanceVideoModelOptions`.
 ByteDance video generation is task-based: the provider creates a task and the AI
 SDK polls it until it completes. Configure polling with the top-level `poll`
 option of [`generateVideo()`](/docs/reference/ai-sdk-core/generate-video):
+
+The configured ByteDance API origin is trusted for the first status request,
+while every redirect to another origin is validated before it is followed.
 
 ```ts
 const { video } = await generateVideo({

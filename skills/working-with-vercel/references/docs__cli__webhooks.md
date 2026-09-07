@@ -11,16 +11,19 @@ related:
   - /docs/webhooks
   - /docs/headers/request-headers
   - /docs/webhooks/webhooks-api
+  - /docs/cli/global-options
 summary: Learn how to manage webhooks for your Vercel account using the vercel webhooks CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/webhooks.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "5f09e03a1b3223a9f567520e0117f085c0b5b4fddd983a3f0d416fb69083c027"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "d0fe21d34e236e0727718efe8c322fdd4c48973713b8f767e6f9fa40ba94022a"
 ---
 
 # vercel webhooks
 
 > **💡 Note:** The `vercel webhooks` command is currently in beta. Features and behavior may change.
+
+The `vercel webhooks` command is used to manage [webhooks](/docs/webhooks) for your Vercel account, providing functionality to list, inspect, create, and remove webhooks. Webhooks allow you to receive HTTP POST requests when events occur in your Vercel account.
 
 
 <!-- docsgraph:related -->
@@ -29,15 +32,13 @@ sha256: "5f09e03a1b3223a9f567520e0117f085c0b5b4fddd983a3f0d416fb69083c027"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [vercel deploy-hooks](https://vercel.com/docs/cli/deploy-hooks?from=related&source_path=%2Fdocs%2Fcli%2Fwebhooks&source_site=vercel-docs&relationship=related) — Manage Deploy Hooks for Git-triggered builds from the Vercel CLI: list, create, and remove deploy hook URLs that trigger
-- [Get a list of webhooks](https://vercel.com/docs/rest-api/webhooks/get-a-list-of-webhooks?from=related&source_path=%2Fdocs%2Fcli%2Fwebhooks&source_site=vercel-docs&relationship=related) — GET /v1/webhooks — Get a list of webhooks
-- [Creates a webhook](https://vercel.com/docs/rest-api/webhooks/creates-a-webhook?from=related&source_path=%2Fdocs%2Fcli%2Fwebhooks&source_site=vercel-docs&relationship=related) — POST /v1/webhooks — Creates a webhook
-- [Get a webhook](https://vercel.com/docs/rest-api/webhooks/get-a-webhook?from=related&source_path=%2Fdocs%2Fcli%2Fwebhooks&source_site=vercel-docs&relationship=related) — GET /v1/webhooks/{id} — Get a webhook
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fwebhooks&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [Get a list of webhooks](https://vercel.com/docs/rest-api/webhooks/get-a-list-of-webhooks?from=related&source_path=%2Fdocs%2Fcli%2Fwebhooks&source_site=vercel-docs&relationship=related) — GET /v1/webhooks — Get a list of webhooks
+- [Get a webhook](https://vercel.com/docs/rest-api/webhooks/get-a-webhook?from=related&source_path=%2Fdocs%2Fcli%2Fwebhooks&source_site=vercel-docs&relationship=related) — GET /v1/webhooks/{id} — Get a webhook
+- [vercel crons](https://vercel.com/docs/cli/crons?from=related&source_path=%2Fdocs%2Fcli%2Fwebhooks&source_site=vercel-docs&relationship=related) — Manage Cron Jobs from the Vercel CLI: add cron entries to your vercel.json, list them, and trigger them on demand.
 
 Full cross-link map for this page: [/docs/cli/webhooks.graph.md](/docs/cli/webhooks.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fwebhooks&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-The `vercel webhooks` command is used to manage [webhooks](/docs/webhooks) for your Vercel account, providing functionality to list, inspect, create, and remove webhooks. Webhooks allow you to receive HTTP POST requests when events occur in your Vercel account.
 
 For more information about webhooks and their supported events, see the [Webhooks documentation](/docs/webhooks).
 
@@ -228,6 +229,24 @@ vercel webhooks rm <id> --yes
 ```
 
 *Using the \`vercel webhooks rm\` command with the \`--yes\` option.*
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel webhooks` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 ## Related
 

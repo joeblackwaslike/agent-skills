@@ -14,8 +14,8 @@ related:
 summary: "Use Xcode's coding assistant with the AI Gateway."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "ca81291a4cec9d655756a30350a737076c160613b3f6890cacf3b69242f2ba04"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "8faba1af20ab68d370cdfef7dd6f8c900ee0baaa0b29136bfc2fa6798476d553"
 ---
 
 # Xcode
@@ -29,12 +29,11 @@ sha256: "ca81291a4cec9d655756a30350a737076c160613b3f6890cacf3b69242f2ba04"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fxcode&source_site=vercel-docs&relationship=related)
-- [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fxcode&source_site=vercel-docs&relationship=related)
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fxcode&source_site=vercel-docs&relationship=related) — Create an AI Gateway API key, make your first request with TypeScript, Python, or cURL, and verify how the request was r
+- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fxcode&source_site=vercel-docs&relationship=related) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
 - [Kilo Code](https://vercel.com/docs/ai-gateway/coding-agents/kilo-code?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fxcode&source_site=vercel-docs&relationship=related) — Use the Kilo Code CLI with the AI Gateway as an OpenAI-compatible provider.
-- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fxcode&source_site=vercel-docs&relationship=related) — Use OpenCode with the AI Gateway.
+- [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fxcode&source_site=vercel-docs&relationship=related) — Learn how to add the xAI native integration with Vercel.
 - [Coding Agents](https://vercel.com/docs/ai-gateway/coding-agents?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fxcode&source_site=vercel-docs&relationship=related) — Configure popular AI coding agents to use the AI Gateway for unified model access and spend monitoring.
-- [OpenClaw](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fxcode&source_site=vercel-docs&relationship=related) — Use OpenClaw with the AI Gateway as a model provider.
-- [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fxcode&source_site=vercel-docs&relationship=related) — Learn how to add a new AI model to your Vercel projects
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integrations/xcode.graph.md](/docs/ai-gateway/ecosystem/framework-integrations/xcode.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fxcode&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

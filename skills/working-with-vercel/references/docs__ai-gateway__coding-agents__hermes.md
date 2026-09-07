@@ -17,8 +17,8 @@ related:
 summary: Use the Hermes agent with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/hermes.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "586ba9d7b9090e21356d58b51c37de6724a35bc3bd09e863da7d126454031a5a"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "20b92fbf32a49e6b282cf0b65b74f5caa45861162e2c2651ce624bf8035bb7f1"
 ---
 
 # Hermes
@@ -33,12 +33,12 @@ sha256: "586ba9d7b9090e21356d58b51c37de6724a35bc3bd09e863da7d126454031a5a"
 
 - [Vercel AI Gateway and Vercel Sandbox now available on Hermes Agent](https://vercel.com/changelog/vercel-ai-gateway-and-vercel-sandbox-now-available-on-hermes-agent?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fhermes&source_site=vercel-docs&relationship=related)
 - [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fhermes&source_site=vercel-docs&relationship=related)
+- [GPT 6 Astra now available on Vercel AI Gateway](https://vercel.com/changelog/gpt-6-astra-now-available-on-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fhermes&source_site=vercel-docs&relationship=related)
 - [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fhermes&source_site=vercel-docs&relationship=related) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
-- [How I use OpenCode with Vercel AI Gateway to build features fast](https://vercel.com/kb/guide/how-i-use-opencode-with-vercel-ai-gateway-to-build-features-fast?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fhermes&source_site=vercel-docs&relationship=related) — How to route different AI models to different coding tasks automatically, cutting token costs by ~70% without losing qua
 - [Hermes](https://vercel.com/docs/sandbox/ecosystem/hermes?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fhermes&source_site=vercel-docs&relationship=related) — Run Hermes Agent terminal commands in isolated Vercel Sandbox microVMs, with models served through Vercel AI Gateway.
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fhermes&source_site=vercel-docs&relationship=related) — Create an AI Gateway API key, make your first request with TypeScript, Python, or cURL, and verify how the request was r
 - [Xcode](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fhermes&source_site=vercel-docs&relationship=related) — Use Xcode's coding assistant with the AI Gateway.
-- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fhermes&source_site=vercel-docs&relationship=related) — Use OpenCode with the AI Gateway.
-- [Pi](https://vercel.com/docs/ai-gateway/coding-agents/pi?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fhermes&source_site=vercel-docs&relationship=related) — Use the Pi coding agent with the AI Gateway.
+- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fhermes&source_site=vercel-docs&relationship=related) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fhermes&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/hermes.graph.md](/docs/ai-gateway/coding-agents/hermes.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fhermes&source_site=vercel-docs&relationship=graph)

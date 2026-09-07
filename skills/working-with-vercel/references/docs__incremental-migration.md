@@ -16,8 +16,8 @@ related:
 summary: Learn how to migrate your app or website to Vercel with minimal risk and high impact.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/incremental-migration.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "921200f87bb7b7364f802aaec5fed83f3a615bad59d3798c0857faa2f1c4c2d6"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "12b9aaf97e7935549b72be5981c4061209babdb5f57a8fe25ebb3b4bd10a0220"
 ---
 
 # Incremental Migration to Vercel
@@ -36,9 +36,9 @@ When migrating to Vercel you should use an incremental migration strategy. This 
 - [Why all application migrations should be incremental ](https://vercel.com/blog/incremental-migrations?from=related&source_path=%2Fdocs%2Fincremental-migration&source_site=vercel-docs&relationship=related)
 - [Migrate a Next.js app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-a-next-js-app-from-webflow-cloud-to-vercel?from=related&source_path=%2Fdocs%2Fincremental-migration&source_site=vercel-docs&relationship=related) — Move your Next.js app from Webflow Cloud to Vercel: remove the OpenNext Cloudflare adapter, drop the base path, map stor
 - [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify?from=related&source_path=%2Fdocs%2Fincremental-migration&source_site=vercel-docs&relationship=related) — Migrate your website's configuration from Netlify to Vercel
-- [Redirecting Domains](https://vercel.com/blog/redirecting-domains?from=related&source_path=%2Fdocs%2Fincremental-migration&source_site=vercel-docs&relationship=related)
 - [Life of a Vercel request: Application-aware routing](https://vercel.com/blog/life-of-a-request-application-aware-routing?from=related&source_path=%2Fdocs%2Fincremental-migration&source_site=vercel-docs&relationship=related)
 - [How Vercel adopted microfrontends](https://vercel.com/blog/how-vercel-adopted-microfrontends?from=related&source_path=%2Fdocs%2Fincremental-migration&source_site=vercel-docs&relationship=related)
+- [Headless Salesforce: An incremental migration from monolith to composable](https://vercel.com/blog/salesforce-incremental-migration?from=related&source_path=%2Fdocs%2Fincremental-migration&source_site=vercel-docs&relationship=related)
 - [Redirects](https://vercel.com/docs/routing/redirects?from=related&source_path=%2Fdocs%2Fincremental-migration&source_site=vercel-docs&relationship=related) — Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL.
 - [Integrating Vercel and Kubernetes](https://vercel.com/docs/integrations/external-platforms/kubernetes?from=related&source_path=%2Fdocs%2Fincremental-migration&source_site=vercel-docs&relationship=related) — Deploy your frontend on Vercel alongside your existing Kubernetes infrastructure.
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fincremental-migration&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.

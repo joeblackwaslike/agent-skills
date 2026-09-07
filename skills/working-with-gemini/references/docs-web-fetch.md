@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/tools/web-fetch.md"
-fetched_at: "2026-06-15T05:55:14.234Z"
-sha256: "2624a4b0e0aafcc837c48b9169ef4c2ec481906d26bf13f1ea007f827fc48cad"
+fetched_at: "2026-09-07T09:02:18.333Z"
+sha256: "1881535b18fc9786f5e3afd74c066161296fc9b1086dfcef4e6087891cf17b9e"
 ---
 
 # Web fetch tool (`web_fetch`)
@@ -22,13 +22,17 @@ specific operations like summarization or extraction.
 
 ## Technical behavior
 
+- **Network access:** Destination URLs and resolved IP addresses are validated
+  to restrict access to private, reserved, loopback, and internal networks
+  (e.g., RFC 1918 addresses and internal domains). Transport connections are
+  pinned to the resolved destination IP address.
 - **Confirmation:** Triggers a confirmation dialog showing the converted URLs.
 - **Plan Mode:** In [Plan Mode](../cli/plan-mode.md), `web_fetch` is available
-  but always requires explicit user confirmation (`ask_user`) due to security
-  implications of accessing external or private network addresses.
+  but always requires explicit user confirmation (`ask_user`).
 - **Processing:** Uses the Gemini API's `urlContext` for retrieval.
 - **Fallback:** If API access fails, the tool attempts to fetch raw content
-  directly from your local machine.
+  directly from your local machine (with destination IP validation and
+  connection pinning applied).
 - **Formatting:** Returns a synthesized response with source attribution.
 
 ## Use cases

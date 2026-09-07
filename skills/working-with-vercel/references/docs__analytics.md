@@ -16,13 +16,18 @@ related:
 summary: "With Web Analytics, you can get detailed insights into your website's visitors with new metrics like top pages, top referrers, and demographics."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "25bcaa1900460b9e268abe6bf96aef53706e51d43a610a84f4da2ac8dcc82b6b"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "5d5a24f14adb3e6c2cbecb4d3a6704748687a0d6b26799295a9aa842c6adcb07"
 ---
 
 # Vercel Web Analytics
 
 > **🔒 Permissions Required**: Web Analytics
+
+- To set up Web Analytics for your project, see the [Quickstart](/docs/analytics/quickstart).
+- To monitor your site's performance, use [Speed Insights](/docs/speed-insights).
+
+![Image](https://vercel.com/front/docs/analytics/visitor-chart-light.png)
 
 
 <!-- docsgraph:related -->
@@ -30,7 +35,7 @@ sha256: "25bcaa1900460b9e268abe6bf96aef53706e51d43a610a84f4da2ac8dcc82b6b"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Deployments](https://v0.app/docs/deployments?from=related&source_path=%2Fdocs%2Fanalytics&source_site=vercel-docs&relationship=related) — Deploy your v0 chats to Vercel with one click and manage production deployments.
+- [Deployments](https://v0.app/docs/deployments?from=related&source_path=%2Fdocs%2Fanalytics&source_site=vercel-docs&relationship=related) — Preview and publish v0 projects on Vercel, then manage domains, visibility, and production updates.
 - [Device type support and improved breakdowns in Web Analytics](https://vercel.com/changelog/device-type-support-and-improved-breakdowns-in-web-analytics?from=related&source_path=%2Fdocs%2Fanalytics&source_site=vercel-docs&relationship=related)
 - [Export traces, web analytics events, and speed insights datapoints to any destination](https://vercel.com/changelog/export-more-data-with-vercel-drains?from=related&source_path=%2Fdocs%2Fanalytics&source_site=vercel-docs&relationship=related)
 - [Filter by custom date ranges in Web Analytics](https://vercel.com/changelog/filter-by-custom-date-ranges-in-web-analytics?from=related&source_path=%2Fdocs%2Fanalytics&source_site=vercel-docs&relationship=related)
@@ -45,11 +50,6 @@ sha256: "25bcaa1900460b9e268abe6bf96aef53706e51d43a610a84f4da2ac8dcc82b6b"
 
 Full cross-link map for this page: [/docs/analytics.graph.md](/docs/analytics.graph.md?from=related&source_path=%2Fdocs%2Fanalytics&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-- To set up Web Analytics for your project, see the [Quickstart](/docs/analytics/quickstart).
-- To monitor your site's performance, use [Speed Insights](/docs/speed-insights).
-
-![Image](https://vercel.com/front/docs/analytics/visitor-chart-light.png)
 
 Web Analytics provides comprehensive insights into your website's visitors, allowing you to track the top visited pages, referrers for a specific page, and demographics like location, operating systems, and browser information. Vercel's Web Analytics offers:
 

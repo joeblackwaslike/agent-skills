@@ -16,13 +16,15 @@ related:
 summary: Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data, and inspect schemas from the...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/marketplace-storage.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "cea01c103db5d17aa94cdbd15bb6852dc045a338b905136196fcf9cc55118fc0"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "8e42d6952f7d037d09e0cb53e198e2572f678dc45fbd1e4886bf6ef025de4f1c"
 ---
 
 # Storage on Vercel Marketplace
 
 > **🔒 Permissions Required**: Marketplace Storage Integrations
+
+The [Vercel Marketplace](https://vercel.com/marketplace?category=storage) provides integrations with different storage providers to provision databases and data stores directly from your Vercel dashboard.
 
 
 <!-- docsgraph:related -->
@@ -39,14 +41,12 @@ sha256: "cea01c103db5d17aa94cdbd15bb6852dc045a338b905136196fcf9cc55118fc0"
 - [Introducing storage on Vercel](https://vercel.com/blog/vercel-storage?from=related&source_path=%2Fdocs%2Fmarketplace-storage&source_site=vercel-docs&relationship=related)
 - [Integrated billing for Supabase, Redis, and EdgeDB](https://vercel.com/changelog/integrated-billing-for-supabase-redis-and-edgedb?from=related&source_path=%2Fdocs%2Fmarketplace-storage&source_site=vercel-docs&relationship=related)
 - [Supercharge your Vercel Projects with Integrations](https://vercel.com/blog/integrations-marketplace?from=related&source_path=%2Fdocs%2Fmarketplace-storage&source_site=vercel-docs&relationship=related)
-- [Vercel Storage overview](https://vercel.com/docs/storage?from=related&source_path=%2Fdocs%2Fmarketplace-storage&source_site=vercel-docs&relationship=related) — Store large files and global configuration with Vercel's storage products.
+- [Vercel Storage overview](https://vercel.com/docs/storage?from=related&source_path=%2Fdocs%2Fmarketplace-storage&source_site=vercel-docs&relationship=related) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
 - [Databases](https://v0.app/docs/databases?from=related&source_path=%2Fdocs%2Fmarketplace-storage&source_site=vercel-docs&relationship=related) — Build full-stack applications with v0's database integrations.
 - [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration?from=related&source_path=%2Fdocs%2Fmarketplace-storage&source_site=vercel-docs&relationship=related) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
 
 Full cross-link map for this page: [/docs/marketplace-storage.graph.md](/docs/marketplace-storage.graph.md?from=related&source_path=%2Fdocs%2Fmarketplace-storage&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-The [Vercel Marketplace](https://vercel.com/marketplace?category=storage) provides integrations with different storage providers to provision databases and data stores directly from your Vercel dashboard.
 
 - For Postgres, you can use providers like Neon, Supabase, or AWS Aurora Postgres.
 - For KV (key-value stores), you can use Upstash Redis.

@@ -9,11 +9,13 @@ prerequisites:
   - /docs/domains
 related:
   - /docs/domains/managing-nameservers
+  - /docs/domains/managing-dns-records
+  - /docs/domains/working-with-dns
 summary: Learn how to integrate your service with Vercel DNS using the Domain Connect protocol to automatically configure DNS records for your users.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/domain-connect.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "cd87d0c0da966c824be3fb0dbd23424c99af507d9a3fab5bb98a32e9ea687f49"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "1c95370353ba3f4078e418ceab7f5ba879606b015ff253c0113a77f2b39d6339"
 ---
 
 # Domain Connect
@@ -29,12 +31,11 @@ sha256: "cd87d0c0da966c824be3fb0dbd23424c99af507d9a3fab5bb98a32e9ea687f49"
 - [Vercel now supports Domain Connect as a DNS Provider](https://vercel.com/changelog/vercel-now-supports-domain-connect-as-a-dns-provider?from=related&source_path=%2Fdocs%2Fdomains%2Fdomain-connect&source_site=vercel-docs&relationship=related)
 - [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records?from=related&source_path=%2Fdocs%2Fdomains%2Fdomain-connect&source_site=vercel-docs&relationship=related) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
 - [Automated DNS configuration with Domain Connect](https://vercel.com/changelog/automated-dns-configuration-with-domain-connect?from=related&source_path=%2Fdocs%2Fdomains%2Fdomain-connect&source_site=vercel-docs&relationship=related)
-- [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related&source_path=%2Fdocs%2Fdomains%2Fdomain-connect&source_site=vercel-docs&relationship=related) — Point your apex domain to Vercel with an A record \\(76.76.21.21 or your domain card's value\\), pair it with a www CNAME,
-- [Troubleshooting domains](https://vercel.com/docs/domains/troubleshooting?from=related&source_path=%2Fdocs%2Fdomains%2Fdomain-connect&source_site=vercel-docs&relationship=related) — Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
-- [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records?from=related&source_path=%2Fdocs%2Fdomains%2Fdomain-connect&source_site=vercel-docs&relationship=related) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
-- [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains?from=related&source_path=%2Fdocs%2Fdomains%2Fdomain-connect&source_site=vercel-docs&relationship=related) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
-- [For Service Providers](https://vercel.com/docs/connect/providers?from=related&source_path=%2Fdocs%2Fdomains%2Fdomain-connect&source_site=vercel-docs&relationship=related) — What your service needs to declare so Vercel Connect can discover, register, and authorize against it using standard OAu
 - [Working with domains](https://vercel.com/docs/domains/working-with-domains?from=related&source_path=%2Fdocs%2Fdomains%2Fdomain-connect&source_site=vercel-docs&relationship=related) — Learn how domains work and the options Vercel provides for managing them.
+- [Troubleshooting domains](https://vercel.com/docs/domains/troubleshooting?from=related&source_path=%2Fdocs%2Fdomains%2Fdomain-connect&source_site=vercel-docs&relationship=related) — Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
+- [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fdomain-connect&source_site=vercel-docs&relationship=related) — Add and configure a custom domain for your Vercel project using the CLI.
+- [For Service Providers](https://vercel.com/docs/connect/providers?from=related&source_path=%2Fdocs%2Fdomains%2Fdomain-connect&source_site=vercel-docs&relationship=related) — What your service needs to declare so Vercel Connect can discover, register, and authorize against it using standard OAu
+- [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains?from=related&source_path=%2Fdocs%2Fdomains%2Fdomain-connect&source_site=vercel-docs&relationship=related) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
 
 Full cross-link map for this page: [/docs/domains/domain-connect.graph.md](/docs/domains/domain-connect.graph.md?from=related&source_path=%2Fdocs%2Fdomains%2Fdomain-connect&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -324,6 +325,22 @@ curl https://vercel.com/api/domain-connect/v2/domainTemplates/providers/{provide
 ```
 
 ## Related
+
+**Managing DNS records** [→](/docs/domains/managing-dns-records)
+
+Learn how to add, verify, and remove DNS records for your domains on Vercel.
+
+**Working with DNS** [→](/docs/domains/working-with-dns)
+
+Understand how DNS works and how to configure your domain.
+
+**Managing nameservers** [→](/docs/domains/managing-nameservers)
+
+Learn how to update your domain's nameservers to Vercel.
+
+**Domain Connect specification** [→](https://github.com/Domain-Connect/spec)
+
+Read the full Domain Connect protocol specification on GitHub.
 
 
 ---

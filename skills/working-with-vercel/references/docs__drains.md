@@ -3,7 +3,7 @@ title: Working with Drains
 product: vercel
 url: /docs/drains
 canonical_url: "https://vercel.com/docs/drains"
-last_updated: 2026-08-25
+last_updated: 2026-09-01
 type: reference
 prerequisites:
   []
@@ -16,13 +16,15 @@ related:
 summary: Drains collect logs, traces, speed insights, and analytics from your applications. Forward observability data to custom endpoints or popular services.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "670395b973b6d97c7c0b2e1cb277142f0bfcb5f6e18b41c9065aa5bd794f0564"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "98061be3a0bc63e72379d415816944981f31370611c8226b41e74ba432dc7205"
 ---
 
 # Working with Drains
 
 > **🔒 Permissions Required**: Drains
+
+Drains let you forward observability data from your applications to external services for debugging, performance optimization, analysis, and alerting, so that you can:
 
 
 <!-- docsgraph:related -->
@@ -46,8 +48,6 @@ sha256: "670395b973b6d97c7c0b2e1cb277142f0bfcb5f6e18b41c9065aa5bd794f0564"
 Full cross-link map for this page: [/docs/drains.graph.md](/docs/drains.graph.md?from=related&source_path=%2Fdocs%2Fdrains&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-Drains let you forward observability data from your applications to external services for debugging, performance optimization, analysis, and alerting, so that you can:
-
 - Store observability data persistently in your preferred external services
 - Process large volumes of telemetry data using your own tools
 - Set up alerts based on application behavior patterns
@@ -69,7 +69,7 @@ Drains support the following data types:
 
 - **Logs**: Runtime, build, and static logs from your deployments (supports custom endpoints and native integrations)
 - **Traces**: Distributed tracing data in OpenTelemetry format (supports custom endpoints and native integrations)
-- **Speed Insights**: Performance metrics and web vitals (custom endpoints only)
+- **Speed Insights**: Performance metrics and web vitals (custom endpoints only). Requires [Speed Insights Plus](/docs/speed-insights/limits-and-pricing)
 - **Web Analytics**: Page views and custom events (custom endpoints only)
 - **Connect**: Runtime events in the form of token requests, authorizations, revocations, and trigger deliveries from [Vercel Connect](/docs/connect) connectors (custom endpoints only)
 - **Audit Logs**: Team activity events

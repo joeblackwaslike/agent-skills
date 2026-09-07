@@ -16,8 +16,8 @@ related:
 summary: Track Vercel Flags evaluations and see which variant each evaluation returns.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/evaluation-metrics.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "0765eca229058fb89f46f3f9d1940f8375f5dcac4728b8df23e5b618e8b10064"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "dfe24ec9b234510524cdd29c8f85aaba8b1a5a8b866da2c65236db8472e26952"
 ---
 
 # Flag Evaluation Metrics
@@ -37,6 +37,7 @@ Evaluation metrics show how often a feature flag is evaluated and which variants
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fevaluation-metrics&source_site=vercel-docs&relationship=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [Observability](https://vercel.com/docs/flags/observability?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fevaluation-metrics&source_site=vercel-docs&relationship=related) — Track feature flag evaluations and analyze their impact with Web Analytics.
 - [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fevaluation-metrics&source_site=vercel-docs&relationship=related) — API reference for the Flags SDK for Next.js and SvelteKit.
+- [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fevaluation-metrics&source_site=vercel-docs&relationship=related) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fevaluation-metrics&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/evaluation-metrics.graph.md](/docs/flags/vercel-flags/evaluation-metrics.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fevaluation-metrics&source_site=vercel-docs&relationship=graph)

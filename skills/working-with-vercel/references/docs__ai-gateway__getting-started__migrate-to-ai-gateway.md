@@ -17,8 +17,8 @@ related:
 summary: "Move your app's model calls to Vercel AI Gateway with a single coding-agent prompt, whatever provider or SDK you use today."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/migrate-to-ai-gateway.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "8ab1f20298e795b28623db2c137b7a93f5ce62837b72f1dca6391df8d51c4cb9"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "7332eeb31d2cd5789cc0f59301c3fc193a09bd3f34d5d56f696f75360313898d"
 ---
 
 # Migrate to AI Gateway using your agent
@@ -38,13 +38,18 @@ AI Gateway puts one endpoint and one API key in front of hundreds of models, and
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fmigrate-to-ai-gateway&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [How I use OpenCode with Vercel AI Gateway to build features fast](https://vercel.com/kb/guide/how-i-use-opencode-with-vercel-ai-gateway-to-build-features-fast?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fmigrate-to-ai-gateway&source_site=vercel-docs&relationship=related) — How to route different AI models to different coding tasks automatically, cutting token costs by ~70% without losing qua
 - [Xcode](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fmigrate-to-ai-gateway&source_site=vercel-docs&relationship=related) — Use Xcode's coding assistant with the AI Gateway.
-- [Claude Code and Claude Agent SDK](https://vercel.com/docs/ai-gateway/coding-agents/claude-code?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fmigrate-to-ai-gateway&source_site=vercel-docs&relationship=related) — Use Claude Code and the Claude Agent SDK with AI Gateway.
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fmigrate-to-ai-gateway&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/ai-gateway/getting-started/migrate-to-ai-gateway.graph.md](/docs/ai-gateway/getting-started/migrate-to-ai-gateway.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fmigrate-to-ai-gateway&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Rather than make those edits by hand, you hand the job to your coding agent. It reads the whole project, finds every place you call a model, including the background jobs and summary generators that are easy to forget, and reroutes each one through AI Gateway without changing what your app does. Your framework, streaming, tool schemas, and response shapes all stay put.
+
+**Agent prompt**
+
+```text
+MIGRATION_PROMPT
+```
 
 ## What it migrates
 
@@ -80,6 +85,11 @@ If your app calls video or realtime models from Python, the agent reports it rat
 
 - ### Paste the prompt and review the plan
   Drop the prompt into your agent. It runs read-only first: it takes inventory of your model calls and lays out a migration plan before touching anything. Approve the plan, then follow the diff as it works. The agent keeps your framework in place and edits only the model-call boundary. It stops to ask when a call site has no supported path for its language, and it leaves embeddings on their current provider unless you tell it otherwise.
+
+  **Agent prompt**
+  ```text
+  MIGRATION_PROMPT
+  ```
 
 - ### Verify the migration
   When the agent finishes, confirm your app behaves exactly as before, both in the code and in your Vercel dashboard.

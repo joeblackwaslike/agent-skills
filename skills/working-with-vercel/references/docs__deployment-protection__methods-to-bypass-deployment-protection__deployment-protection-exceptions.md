@@ -3,7 +3,7 @@ title: Deployment Protection Exceptions
 product: vercel
 url: /docs/deployment-protection/methods-to-bypass-deployment-protection/deployment-protection-exceptions
 canonical_url: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/deployment-protection-exceptions"
-last_updated: 2026-08-21
+last_updated: 2026-08-28
 type: how-to
 prerequisites:
   - /docs/deployment-protection/methods-to-bypass-deployment-protection
@@ -16,13 +16,15 @@ related:
 summary: Disable Deployment Protection for a list of preview domains.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/deployment-protection-exceptions.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "fbdee98913fdd9dd7e38a9c8c4e2f8310cf4c857be4d2f4aec8c56e77b1f9147"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "f108258f6e8492710c76b9d01ddc521e2e497c9cf7efc821f3945399c9b02bb4"
 ---
 
 # Deployment Protection Exceptions
 
 > **🔒 Permissions Required**: Deployment Protection Exceptions
+
+Deployment Protection Exceptions let you disable Deployment Protection (including [Vercel Authentication](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication), [Password Protection](/docs/deployment-protection/methods-to-protect-deployments/password-protection), and [Trusted IPs](/docs/deployment-protection/methods-to-protect-deployments/trusted-ips)) for a list of preview domains.
 
 
 <!-- docsgraph:related -->
@@ -31,20 +33,16 @@ sha256: "fbdee98913fdd9dd7e38a9c8c4e2f8310cf4c857be4d2f4aec8c56e77b1f9147"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Slack](https://eve.dev/docs/channels/slack?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Fdeployment-protection-exceptions&source_site=vercel-docs&relationship=related) — Reach your agent from Slack app mentions, DMs, slash commands, and interactive callbacks.
-- [React2Shell Security Bulletin](https://vercel.com/blog/resources-for-protecting-against-react2shell?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Fdeployment-protection-exceptions&source_site=vercel-docs&relationship=related)
 - [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Fdeployment-protection-exceptions&source_site=vercel-docs&relationship=related) — Protect who can see your deployments.
 - [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Fdeployment-protection-exceptions&source_site=vercel-docs&relationship=related)
-- [Protecting Deployments](https://vercel.com/blog/security-controls-protected-preview-deployments-passwords?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Fdeployment-protection-exceptions&source_site=vercel-docs&relationship=related)
 - [Methods to Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Fdeployment-protection-exceptions&source_site=vercel-docs&relationship=related) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
+- [OPTIONS Allowlist](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/options-allowlist?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Fdeployment-protection-exceptions&source_site=vercel-docs&relationship=related) — Learn how to disable Deployment Protection for CORS preflight requests for a list of paths.
+- [Automated & Agent Access](https://vercel.com/docs/deployment-protection/automated-agent-access?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Fdeployment-protection-exceptions&source_site=vercel-docs&relationship=related) — Grant AI agents, CI/CD pipelines, MCP servers, and testing tools access to Vercel deployments that have Deployment Prote
 - [Access Control](https://vercel.com/docs/security/access-control?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Fdeployment-protection-exceptions&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Preview Deployment Suffix](https://vercel.com/docs/deployments/preview-deployment-suffix?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Fdeployment-protection-exceptions&source_site=vercel-docs&relationship=related) — When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that parti
-- [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Fdeployment-protection-exceptions&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Fdeployment-protection-exceptions&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/deployment-protection/methods-to-bypass-deployment-protection/deployment-protection-exceptions.graph.md](/docs/deployment-protection/methods-to-bypass-deployment-protection/deployment-protection-exceptions.graph.md?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Fdeployment-protection-exceptions&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Deployment Protection Exceptions let you disable Deployment Protection (including [Vercel Authentication](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication), [Password Protection](/docs/deployment-protection/methods-to-protect-deployments/password-protection), and [Trusted IPs](/docs/deployment-protection/methods-to-protect-deployments/trusted-ips)) for a list of preview domains.
 
 When you add a domain to Deployment Protection Exceptions, it becomes publicly accessible and is no longer covered by Deployment Protection features. When you remove a domain from Deployment Protection Exceptions, the domain becomes protected again with the project's Deployment Protection settings.
 

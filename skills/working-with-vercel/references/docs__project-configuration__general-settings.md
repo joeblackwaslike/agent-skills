@@ -16,13 +16,15 @@ related:
 summary: Configure basic settings for your Vercel project, including the project name, build and development settings, root directory, Node.js version,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/general-settings.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "7235fecfbebfe0e6cb35b1c92ee3241c023d36c91e61b216590762f618419587"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "014377865f278cc2965b4b509f72bf96d8a89c6b760d461bae1bcf5ed3825cf2"
 ---
 
 # General settings
 
 ## Project name
+
+Project names can be up to 100 characters long and must be lowercase. They can include letters, digits, and the following characters: `.`, `\_`, `-`. However, they cannot contain the sequence `---`.
 
 
 <!-- docsgraph:related -->
@@ -40,8 +42,6 @@ sha256: "7235fecfbebfe0e6cb35b1c92ee3241c023d36c91e61b216590762f618419587"
 
 Full cross-link map for this page: [/docs/project-configuration/general-settings.graph.md](/docs/project-configuration/general-settings.graph.md?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgeneral-settings&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Project names can be up to 100 characters long and must be lowercase. They can include letters, digits, and the following characters: `.`, `\_`, `-`. However, they cannot contain the sequence `---`.
 
 ## Project avatar
 

@@ -3,7 +3,7 @@ title: Two-factor Authentication
 product: vercel
 url: /docs/two-factor-authentication
 canonical_url: "https://vercel.com/docs/two-factor-authentication"
-last_updated: 2026-08-11
+last_updated: 2026-08-28
 type: how-to
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn how to configure two-factor authentication for your Vercel account.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/two-factor-authentication.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "1dc8128cc9bcdcee186d76d4744cf09a046c2b400a594049d765867ac51edc81"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "5ad1e28f9fce2a34f35fc8970bb289f83b2c18404f5e127c981a2370c4a2ebbb"
 ---
 
 # Two-factor Authentication

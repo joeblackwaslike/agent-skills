@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/minimax.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "b0803e3b438651cde829f6b79414ae247db4d90d9670dcb2c43d9fc6feb78cb6"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "cfb8337713a78ff604014ea1ab181025748999f870374f3d7416c3bab28e7aed"
 ---
 
 # MiniMax Provider
@@ -138,9 +138,10 @@ The following optional provider options are available for MiniMax language model
 
 ## Video Models
 
-You can generate videos with the MiniMax-H3 model using the
-[`experimental_generateVideo`](/docs/reference/ai-sdk-core/generate-video)
-function:
+You can generate videos with the MiniMax-H3 and MiniMax-H3-Max models using
+the [`experimental_generateVideo`](/docs/reference/ai-sdk-core/generate-video)
+function. MiniMax-H3-Max is the faster variant: it renders at lower resolutions
+and serves every mode except reference-to-video.
 
 ```ts
 import { minimax, type MiniMaxVideoModelOptions } from '@ai-sdk/minimax';
@@ -153,18 +154,36 @@ const { video } = await generateVideo({
   duration: 5,
   providerOptions: {
     minimax: {
+      resolution: '768P',
       pollTimeoutMs: 600000, // 10 minutes
     } satisfies MiniMaxVideoModelOptions,
   },
 });
 ```
 
-MiniMax-H3 generates one video per call. Generation is asynchronous — the model
+Both models generate one video per call. Generation is asynchronous — the model
 creates a task and polls until it completes, then returns the resulting MP4 URL.
+Status polls trust the configured MiniMax API origin for the first request and
+validate every redirect to another origin before following it.
 
-`duration` accepts a whole number of seconds from 5 to 15, and defaults to 5. A
-fractional value is rounded and an out-of-range value is clamped, each with a
-warning. The only supported output resolution is `2K`.
+`duration` accepts a whole number of seconds and defaults to 5. MiniMax-H3
+supports 4 to 15 seconds; MiniMax-H3-Max supports 5 to 15 seconds. A fractional
+value is rounded and an out-of-range value is clamped, each with a warning.
+MiniMax-H3 supports `768P` and `2K` output, while MiniMax-H3-Max supports `480P`
+and `768P`.
+
+The API takes a named tier rather than a frame size, so a top-level `resolution`
+is matched against a fixed table of one frame size per tier per aspect ratio:
+
+| Tier   | Accepted `resolution` values                                                 |
+| ------ | ---------------------------------------------------------------------------- |
+| `480P` | `480x480`, `1120x480`, `854x480`, `640x480`, `480x854`, `480x640`            |
+| `768P` | `768x768`, `1792x768`, `1366x768`, `1024x768`, `768x1366`, `768x1024`        |
+| `2K`   | `2048x2048`, `2560x1080`, `2560x1440`, `2048x1536`, `1440x2560`, `1536x2048` |
+
+Anything outside the table, or a tier the selected model does not support, warns
+and falls back to the model default. `providerOptions.minimax.resolution` names
+the tier exactly and wins over the top-level value, which is reported as ignored.
 
 For **text-to-video**, `aspectRatio` defaults to `16:9` when omitted. The MiniMax
 API requires a concrete ratio for text-only requests and does not accept
@@ -186,9 +205,10 @@ The generation mode is inferred from the inputs you pass:
   `frameType: 'first_frame'`) to animate a starting image.
 - **First-to-last keyframes** — pass `frameImages` with both a `first_frame` and
   a `last_frame` to control the transition.
-- **Reference-to-video** — pass `inputReferences` (images and/or videos, routed
-  by media type) to keep a subject/style or follow motion. Frame images and
-  references are mutually exclusive.
+- **Reference-to-video (MiniMax-H3 only)** — pass `inputReferences` (images
+  and/or videos, routed by media type) to keep a subject/style or follow motion.
+  Frame images and references are mutually exclusive. MiniMax-H3-Max does not
+  support reference-to-video inputs.
 
 When a frame image is supplied, the aspect ratio follows the image and any
 explicit `aspectRatio` is ignored.
@@ -197,9 +217,10 @@ explicit `aspectRatio` is ignored.
 
 The following optional provider options are available for MiniMax video models:
 
-- **resolution** _string_
+- **resolution** _'480P' | '768P' | '2K'_
 
-  Output resolution. MiniMax-H3 currently only supports `'2K'` (the default).
+  Output resolution. MiniMax-H3 supports `'768P'` and `'2K'` (the default).
+  MiniMax-H3-Max supports `'480P'` and `'768P'` (the default).
 
 - **ratio** _'adaptive' | '21:9' | '16:9' | '4:3' | '1:1' | '3:4' | '9:16'_
 
@@ -207,8 +228,9 @@ The following optional provider options are available for MiniMax video models:
 
 - **referenceAudioUrls** _string[]_
 
-  Reference audio URLs (or `mm_file://` handles) for reference-to-video
-  generation. Must be paired with at least one reference image or video. Up to 3.
+  Reference audio URLs (or `mm_file://` handles) for MiniMax-H3
+  reference-to-video generation. Must be paired with at least one reference
+  image or video. Up to 3. MiniMax-H3-Max does not support reference audio.
 
 - **aigcWatermark** _boolean_
 

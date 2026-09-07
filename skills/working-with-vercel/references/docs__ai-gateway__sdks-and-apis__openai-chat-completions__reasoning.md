@@ -16,8 +16,8 @@ related:
 summary: Control how much a model thinks before answering with the OpenAI Chat Completions API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "ce3cb50fa826a055775e8cb27550703757a40fdb3fcaeb74c601b3b3e4ad65de"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "b1aa0c978c509b58e336e7e7f79a9e42d445017e57546e74ace41f1805b64a49"
 ---
 
 # Reasoning
@@ -34,9 +34,10 @@ Reasoning models work through a problem before answering. Configure that with th
 - [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Freasoning&source_site=vercel-docs&relationship=related) — Control how much a reasoning model thinks before answering with the OpenResponses API.
 - [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Freasoning&source_site=vercel-docs&relationship=related)
 - [OpenAI Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Freasoning&source_site=vercel-docs&relationship=related) — Configure reasoning and thinking for OpenAI models with the AI SDK and AI Gateway.
+- [Anthropic](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Freasoning&source_site=vercel-docs&relationship=related)
 - [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Freasoning&source_site=vercel-docs&relationship=related) — Control how much a model thinks before answering with the OpenAI Responses API.
-- [Amazon Bedrock Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Freasoning&source_site=vercel-docs&relationship=related) — Configure reasoning for models hosted on Amazon Bedrock with the AI SDK and AI Gateway.
 - [Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Freasoning&source_site=vercel-docs&relationship=related) — Use the AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
+- [Streaming](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/streaming?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Freasoning&source_site=vercel-docs&relationship=related) — Stream OpenAI Chat Completions responses token by token as they are generated.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning.graph.md](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Freasoning&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

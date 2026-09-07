@@ -16,8 +16,8 @@ related:
 summary: Create reusable user segments for targeting feature flags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/segments.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "f2e2ac76375db7d8aae1b013d64384badb9118ff00e80c617f3b0123bde1b326"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "d73387d60ae8fab2be0969f40b50d6769e3d0f6d6ca2b4f53df672ff18c816ca"
 ---
 
 # Segments
@@ -36,9 +36,9 @@ Segments are reusable groups of users for targeting feature flags. Instead of re
 - [Manage Vercel Flags segments with Vercel CLI](https://vercel.com/changelog/manage-vercel-flags-segments-with-vercel-cli?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fsegments&source_site=vercel-docs&relationship=related)
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fsegments&source_site=vercel-docs&relationship=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [Create a segment](https://vercel.com/docs/rest-api/feature-flags/create-a-segment?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fsegments&source_site=vercel-docs&relationship=related) — PUT /v1/projects/{projectIdOrName}/feature-flags/segments — Create a new feature flag segment.
+- [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fsegments&source_site=vercel-docs&relationship=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
 - [List segments](https://vercel.com/docs/rest-api/feature-flags/list-segments?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fsegments&source_site=vercel-docs&relationship=related) — GET /v1/projects/{projectIdOrName}/feature-flags/segments — List all feature flag segments for a project.
 - [Get a segment](https://vercel.com/docs/rest-api/feature-flags/get-a-segment?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fsegments&source_site=vercel-docs&relationship=related) — GET /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug} — Retrieve a feature flag segment by ID or s
-- [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fsegments&source_site=vercel-docs&relationship=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
 - [Delete a segment](https://vercel.com/docs/rest-api/feature-flags/delete-a-segment?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fsegments&source_site=vercel-docs&relationship=related) — DELETE /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug} — Delete a feature flag segment.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/dashboard/segments.graph.md](/docs/flags/vercel-flags/dashboard/segments.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fsegments&source_site=vercel-docs&relationship=graph)

@@ -13,8 +13,8 @@ related:
 summary: Request the faster serving path for supported models through AI Gateway using the `speed` option or the fast model slug, with automatic fallback to...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/fast-mode.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "9a3fc79ef15eea3507a3bf6a79e181f3ba5639af1edc905cf3f2ffe13cd0e615"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "68ea7991734f3d3383d60a796b6d24043c0449dad51a5806598ed927884c84b5"
 ---
 
 # Fast Mode
@@ -33,9 +33,7 @@ Some models expose a faster serving path that trades a higher per-token cost for
 - [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Ffast-mode&source_site=vercel-docs&relationship=related)
 - [Service tiers now available on AI Gateway](https://vercel.com/changelog/service-tiers-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Ffast-mode&source_site=vercel-docs&relationship=related)
 - [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Ffast-mode&source_site=vercel-docs&relationship=related) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
-- [GLM 5.2 Fast via Wafer now available on AI Gateway](https://vercel.com/changelog/glm-5-2-fast-via-wafer-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Ffast-mode&source_site=vercel-docs&relationship=related)
 - [Provider Filtering, Ordering & Sorting](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Ffast-mode&source_site=vercel-docs&relationship=related) — Control which providers handle your requests, in what order, and how they are ranked using order, only, and sort options
-- [Model Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/model-fallbacks?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Ffast-mode&source_site=vercel-docs&relationship=related) — Configure model-level failover to try backup models when the primary model is unavailable
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Ffast-mode&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/fast-mode.graph.md](/docs/ai-gateway/models-and-providers/fast-mode.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Ffast-mode&source_site=vercel-docs&relationship=graph)

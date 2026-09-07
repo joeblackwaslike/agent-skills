@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-such-tool-error.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "2be3d200051688a62886b635f6cb0637c937d04acfb285199af61441c4494d8a"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "e90c6d369af99b0d30f4d8697184319f8e8df1edc7e3b655c5e86ae6657eaa97"
 ---
 
 # AI_NoSuchToolError
@@ -61,6 +61,7 @@ if (NoSuchToolError.isInstance(error)) {
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
 - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
 - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)
+- [ToolChoiceViolationError](/docs/reference/ai-sdk-errors/ai-tool-choice-violation-error)
 - [AI_TypeValidationError](/docs/reference/ai-sdk-errors/ai-type-validation-error)
 - [AI_UIMessageStreamError](/docs/reference/ai-sdk-errors/ai-ui-message-stream-error)
 - [AI_UnsupportedFunctionalityError](/docs/reference/ai-sdk-errors/ai-unsupported-functionality-error)

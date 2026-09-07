@@ -16,8 +16,8 @@ related:
 summary: Set retention periods, review remaining usage, and reduce deployment output size.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-storage/optimize.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "43fecd2415a816f03415138ae876d7fa1478e0574e85b0cb74b8304debf718b7"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "87054b0a5f270f402a0c83cef9ff4eeb79808af00061cb310ff7ff4d9e0c1454"
 ---
 
 # Optimize Deployment Storage
@@ -39,8 +39,8 @@ Start with deployment retention. It controls how long Vercel keeps deployment ou
 - [Troubleshooting Build Error: "Serverless Function has exceeded the unzipped maximum size of 250 MB"](https://vercel.com/kb/guide/troubleshooting-function-250mb-limit?from=related&source_path=%2Fdocs%2Fdeployment-storage%2Foptimize&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot builds failing due to exceeding the maximum function size limit on Vercel.
 - [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build?from=related&source_path=%2Fdocs%2Fdeployment-storage%2Foptimize&source_site=vercel-docs&relationship=related) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments?from=related&source_path=%2Fdocs%2Fdeployment-storage%2Foptimize&source_site=vercel-docs&relationship=related) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
-- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fdeployment-storage%2Foptimize&source_site=vercel-docs&relationship=related) — Learn how to create and manage deployments on Vercel.
-- [Builds](https://vercel.com/docs/builds?from=related&source_path=%2Fdocs%2Fdeployment-storage%2Foptimize&source_site=vercel-docs&relationship=related) — Understand how the build step works when creating a Vercel Deployment.
+- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fdeployment-storage%2Foptimize&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
+- [Vercel Storage overview](https://vercel.com/docs/storage?from=related&source_path=%2Fdocs%2Fdeployment-storage%2Foptimize&source_site=vercel-docs&relationship=related) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fdeployment-storage%2Foptimize&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/deployment-storage/optimize.graph.md](/docs/deployment-storage/optimize.graph.md?from=related&source_path=%2Fdocs%2Fdeployment-storage%2Foptimize&source_site=vercel-docs&relationship=graph)

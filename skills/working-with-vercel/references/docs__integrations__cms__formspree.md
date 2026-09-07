@@ -13,8 +13,8 @@ related:
 summary: Learn how to integrate Formspree with Vercel. Follow our tutorial to set up Formspree and manage form submissions on your static website without...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/cms/formspree.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "52004223d57328b3c62bdbb2e41ffcd112ce9ae8352b579aa3800aa59ea33dfa"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "3d3fd3d1a532c8dc4242a427a8a0ff44ae642764ebecf09bb98296a0a94fd16d"
 ---
 
 # Vercel Formspree Integration
@@ -32,7 +32,7 @@ Formspree is a form backend platform that handles form submissions on static web
 - [Vercel ButterCMS Integration](https://vercel.com/docs/integrations/cms/butter-cms?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fformspree&source_site=vercel-docs&relationship=related) — Learn how to integrate ButterCMS with Vercel. Follow our tutorial to set up the ButterCMS template on Vercel and manage
 - [Vercel Makeswift Integration](https://vercel.com/docs/integrations/cms/makeswift?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fformspree&source_site=vercel-docs&relationship=related) — Learn how to integrate Makeswift with Vercel. Makeswift is a no-code website builder designed for creating and managing
 - [Vercel DatoCMS Integration](https://vercel.com/docs/integrations/cms/dato-cms?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fformspree&source_site=vercel-docs&relationship=related) — Learn how to integrate DatoCMS with Vercel. Follow our step-by-step tutorial to set up and manage your digital content s
-- [Vercel Sanity Integration](https://vercel.com/docs/integrations/cms/sanity?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fformspree&source_site=vercel-docs&relationship=related) — Learn how to integrate Sanity with Vercel. Follow our tutorial to deploy the Sanity template or install the integration
+- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fformspree&source_site=vercel-docs&relationship=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
 
 Full cross-link map for this page: [/docs/integrations/cms/formspree.graph.md](/docs/integrations/cms/formspree.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fformspree&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -42,7 +42,7 @@ Full cross-link map for this page: [/docs/integrations/cms/formspree.graph.md](/
 To get started with Formspree on Vercel, follow the steps below to install the integration:
 
 - ### Install the Vercel CLI
-  To pull in environment variables from  to your Vercel project, you need to install the [Vercel CLI](/docs/cli). Run the following command in your terminal:
+  To pull in environment variables from Formspree to your Vercel project, you need to install the [Vercel CLI](/docs/cli). Run the following command in your terminal:
   <CodeBlock>
     <Code tab="pnpm">
       ```bash
@@ -67,10 +67,10 @@ To get started with Formspree on Vercel, follow the steps below to install the i
   </CodeBlock>
 
 - ### Install your CMS integration
-  Navigate to the  and follow the steps to install the integration.
+  Navigate to the [ integration](`/integrations/${props.cms.toLowerCase\(\).split\(/[.\s]+/\).join\('-'\)}`) and follow the steps to install the integration.
 
 - ### Pull in environment variables
-  Once you've installed the  integration, you can pull in environment variables from  to your Vercel project. In your terminal, run:
+  Once you've installed the Formspree integration, you can pull in environment variables from Formspree to your Vercel project. In your terminal, run:
   ```bash
   vercel env pull
   ```

@@ -15,8 +15,8 @@ related:
 summary: Use the Cohere-compatible Rerank API with AI Gateway to reorder documents by relevance with the Cohere SDK or plain HTTP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/cohere-rerank.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "ebac58aae2ae50167b27144a608a14760cfa24667eb2d722cd7f0d8c30707be3"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "30540c8fe140636e0247ee5e9e6fa53f9ee6f4d0100801c5bdae3e4cfea1b0e5"
 ---
 
 # Cohere Rerank API
@@ -36,7 +36,6 @@ AI Gateway provides Cohere-compatible Rerank API endpoints, so you can use the [
 - [Together.ai](https://ai-sdk.dev/providers/ai-sdk-providers/togetherai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fcohere-rerank&source_site=vercel-docs&relationship=related)
 - [Models & Providers](https://vercel.com/docs/ai-gateway/models-and-providers?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fcohere-rerank&source_site=vercel-docs&relationship=related) — Work with models and providers in AI Gateway: provider routing and fallbacks, filtering, timeouts, caching, service tier
 - [Provider Filtering, Ordering & Sorting](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fcohere-rerank&source_site=vercel-docs&relationship=related) — Control which providers handle your requests, in what order, and how they are ranked using order, only, and sort options
-- [Get virtual model config](https://vercel.com/docs/rest-api/api-ai-gateway/get-virtual-model-config?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fcohere-rerank&source_site=vercel-docs&relationship=related) — GET /v1/ai-gateway/virtual-model-configs — Get a virtual model config
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fcohere-rerank&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/cohere-rerank.graph.md](/docs/ai-gateway/sdks-and-apis/cohere-rerank.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fcohere-rerank&source_site=vercel-docs&relationship=graph)

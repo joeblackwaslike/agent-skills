@@ -13,8 +13,8 @@ related:
 summary: Build an AI app builder on Vercel with sandboxes, AI Gateway, deployments, and project transfers.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/examples/platform-template.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "e0f4088231368eeb6f7c2f4e109fd852dd4309857d1a8fb336f373e963ff30bd"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "8e6645b79e06d7e0324872007cf4651dd2e898dcda59452d0225c1a0663b0b99"
 ---
 
 # Platform Template
@@ -30,8 +30,8 @@ The Platform Template serves as a comprehensive reference for constructing an AI
 - [Build with a Nitro starter template](https://vercel.com/kb/guide/build-with-a-nitro-starter-template?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples%2Fplatform-template&source_site=vercel-docs&relationship=related) — Deploy a Nitro app to Vercel from a starter template. Compare the Nitro Starter, route rules, cached HTTP handler, plugi
 - [Introducing the Vercel Platforms Starter Kit](https://vercel.com/blog/platforms-starter-kit?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples%2Fplatform-template&source_site=vercel-docs&relationship=related)
 - [How to ship a NestJS app on Vercel](https://vercel.com/kb/guide/ship-a-nestjs-app-on-vercel?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples%2Fplatform-template&source_site=vercel-docs&relationship=related) — Deploy a NestJS app to Vercel with zero configuration. Learn how to ship from a template, the Nest CLI, or Git, and conf
-- [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples%2Fplatform-template&source_site=vercel-docs&relationship=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
 - [Run and track deploys from Slack](https://vercel.com/kb/guide/run-and-track-deploys-from-slack?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples%2Fplatform-template&source_site=vercel-docs&relationship=related) — Build a Slack deploy bot with Chat SDK and Vercel Workflows. Dispatch GitHub Actions from a slash command, gate producti
+- [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples%2Fplatform-template&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
 - [OSS AI Vibe Coding Platform](https://vercel.com/docs/platforms/examples/oss-coding-agent?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples%2Fplatform-template&source_site=vercel-docs&relationship=related) — Build and deploy your own AI-powered coding platform with Vercel Sandboxes.
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples%2Fplatform-template&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples%2Fplatform-template&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.

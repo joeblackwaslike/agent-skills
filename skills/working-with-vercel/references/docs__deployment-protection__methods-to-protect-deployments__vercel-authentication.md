@@ -3,7 +3,7 @@ title: Restrict access to deployments with Vercel Authentication
 product: vercel
 url: /docs/deployment-protection/methods-to-protect-deployments/vercel-authentication
 canonical_url: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication"
-last_updated: 2026-08-21
+last_updated: 2026-08-28
 type: how-to
 prerequisites:
   - /docs/deployment-protection/methods-to-protect-deployments
@@ -17,13 +17,15 @@ related:
 summary: Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "5e59c965dfe43ea96d0f3b5ae92e9c20f38dd5c6c9aa261946c0f3b750364b38"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "c299aa2eb056b0723ef3ad1096df215716478c8863749c8f0e249c9a754b05b3"
 ---
 
 # Restrict access to deployments with Vercel Authentication
 
 > **🔒 Permissions Required**: Vercel Authentication
+
+Vercel Authentication lets you restrict access to your public and non-public deployments. It is the **recommended** approach to protecting your deployments, and available on all plans. When enabled, it allows only users with deployment access to view and comment on your site.
 
 
 <!-- docsgraph:related -->
@@ -40,14 +42,12 @@ sha256: "5e59c965dfe43ea96d0f3b5ae92e9c20f38dd5c6c9aa261946c0f3b750364b38"
 - [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fvercel-authentication&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
 - [\<script type="text/llms.txt"\>](https://vercel.com/blog/a-proposal-for-inline-llm-instructions-in-html?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fvercel-authentication&source_site=vercel-docs&relationship=related)
 - [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fvercel-authentication&source_site=vercel-docs&relationship=related)
-- [Protecting Deployments](https://vercel.com/blog/security-controls-protected-preview-deployments-passwords?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fvercel-authentication&source_site=vercel-docs&relationship=related)
 - [Access Control](https://vercel.com/docs/security/access-control?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fvercel-authentication&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fvercel-authentication&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
+- [Automated & Agent Access](https://vercel.com/docs/deployment-protection/automated-agent-access?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fvercel-authentication&source_site=vercel-docs&relationship=related) — Grant AI agents, CI/CD pipelines, MCP servers, and testing tools access to Vercel deployments that have Deployment Prote
 
 Full cross-link map for this page: [/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication.graph.md](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication.graph.md?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fvercel-authentication&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Vercel Authentication lets you restrict access to your public and non-public deployments. It is the **recommended** approach to protecting your deployments, and available on all plans. When enabled, it allows only users with deployment access to view and comment on your site.
 
 Users attempting to access the deployment will encounter a Vercel login redirect. If already logged into Vercel, Vercel will authenticate them automatically.
 

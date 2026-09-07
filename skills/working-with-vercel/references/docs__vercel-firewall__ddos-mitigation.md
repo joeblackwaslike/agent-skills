@@ -16,13 +16,15 @@ related:
 summary: Learn how the Vercel Firewall mitigates against DoS and DDoS attacks
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/ddos-mitigation.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "34491be7eebef82ed465863c0d3ecd55f2edbc2bb871c224662dd0978513dec5"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "73bb80ba8b5efaab2dcadd1c4539d5ae564880212c9770ea36d99a63f1792676"
 ---
 
 # DDoS Mitigation
 
 > **🔒 Permissions Required**: DDoS Mitigation
+
+Vercel provides automatic DDoS mitigation for all deployments, regardless of your plan. We block incoming traffic if we identify abnormal or suspicious levels of incoming requests.
 
 
 <!-- docsgraph:related -->
@@ -45,8 +47,6 @@ sha256: "34491be7eebef82ed465863c0d3ecd55f2edbc2bb871c224662dd0978513dec5"
 
 Full cross-link map for this page: [/docs/vercel-firewall/ddos-mitigation.graph.md](/docs/vercel-firewall/ddos-mitigation.graph.md?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fddos-mitigation&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Vercel provides automatic DDoS mitigation for all deployments, regardless of your plan. We block incoming traffic if we identify abnormal or suspicious levels of incoming requests.
 
 > **💡 Note:** Vercel does not charge customers for traffic that gets blocked with DDoS
 > mitigation.

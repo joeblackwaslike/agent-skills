@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/tools-and-tool-calling.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "e7c82ebc3faa3a05bb3ee03e297dbed107fd1256460ece73493768f849fe3b38"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "e175af3169f7a288fa77fa534181553ca8f20c6b854f0eb142dffc603c2e30ea"
 ---
 
 # Tool Calling
@@ -1134,11 +1134,12 @@ async function generateSomething(prompt: string): Promise<{
 
 ## Handling Errors
 
-The AI SDK has three tool-call related errors:
+The AI SDK has four tool-call related errors:
 
 - [`NoSuchToolError`](/docs/reference/ai-sdk-errors/ai-no-such-tool-error): the model tries to call a tool that is not defined in the tools object
 - [`InvalidToolInputError`](/docs/reference/ai-sdk-errors/ai-invalid-tool-input-error): the model calls a tool with inputs that do not match the tool's input schema
 - [`ToolCallRepairError`](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error): an error that occurred during tool call repair
+- [`ToolChoiceViolationError`](/docs/reference/ai-sdk-errors/ai-tool-choice-violation-error): the `generateText` response does not satisfy a required or specifically selected tool choice
 
 When tool execution fails (errors thrown by your tool's `execute` function), the AI SDK adds them as `tool-error` content parts to enable automated LLM roundtrips in multi-step scenarios.
 

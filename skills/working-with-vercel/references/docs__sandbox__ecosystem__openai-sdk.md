@@ -17,8 +17,8 @@ related:
 summary: Use OpenAI function calling with AI Gateway to execute model-generated code in an isolated Vercel Sandbox.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/ecosystem/openai-sdk.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "c00124525e7be4fb149552fc0ade0e1fb99b1f11013f1e43ab85d9fb9cc07e68"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "a5bb24964a4225512ff18eff898632abbe98c8c71320ef68848c71a88d5183f8"
 ---
 
 # OpenAI SDK
@@ -42,6 +42,7 @@ credentials covers both the model and the sandbox.
 - [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fopenai-sdk&source_site=vercel-docs&relationship=related) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fopenai-sdk&source_site=vercel-docs&relationship=related) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
 - [Anthropic SDK](https://vercel.com/docs/sandbox/ecosystem/anthropic-sdk?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fopenai-sdk&source_site=vercel-docs&relationship=related) — Use Anthropic tool use with AI Gateway to execute model-generated code in an isolated Vercel Sandbox.
+- [Run untrusted code with Vercel Sandbox](https://vercel.com/changelog/run-untrusted-code-with-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fopenai-sdk&source_site=vercel-docs&relationship=related)
 - [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fopenai-sdk&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
 - [OSS AI Vibe Coding Platform](https://vercel.com/docs/platforms/examples/oss-coding-agent?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fopenai-sdk&source_site=vercel-docs&relationship=related) — Build and deploy your own AI-powered coding platform with Vercel Sandboxes.
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fopenai-sdk&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.

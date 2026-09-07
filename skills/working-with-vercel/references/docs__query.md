@@ -15,13 +15,15 @@ related:
 summary: Query and visualize your Vercel usage, traffic, and more in observability.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "523bdd87507ac1d1352122b951a6d0e32fc255cad0512c671d7b4c5300d8b7b3"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "fce9d0db76b720a40c101cc0824988a128a6b0bbc6ce05f4ebc1920e4a11963c"
 ---
 
 # Query
 
 > **🔒 Permissions Required**: Query
+
+You can use Query to get deeper visibility into your application when debugging issues, monitoring usage, or optimizing for speed and reliability. Query lets you explore traffic, errors, latency and similar metrics in order to:
 
 
 <!-- docsgraph:related -->
@@ -35,16 +37,15 @@ sha256: "523bdd87507ac1d1352122b951a6d0e32fc255cad0512c671d7b4c5300d8b7b3"
 - [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
 - [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
 - [Query data on external API requests in Vercel Observability](https://vercel.com/changelog/query-data-on-external-api-requests-in-vercel-observability?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related)
-- [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related) — Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application perfor
+- [Query and visualize workflow data in Vercel Observability](https://vercel.com/changelog/query-and-visualize-workflow-data-in-vercel-observability?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related)
+- [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 - [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
-- [vercel metrics](https://vercel.com/docs/cli/metrics?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related) — List and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
+- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
 
 Full cross-link map for this page: [/docs/query.graph.md](/docs/query.graph.md?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-You can use Query to get deeper visibility into your application when debugging issues, monitoring usage, or optimizing for speed and reliability. Query lets you explore traffic, errors, latency and similar metrics in order to:
 
 - Investigate errors, slow routes, and high-latency functions
 - Analyze traffic patterns and request volumes by path, region, or device

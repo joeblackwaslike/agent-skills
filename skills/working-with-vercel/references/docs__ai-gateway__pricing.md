@@ -3,21 +3,21 @@ title: AI Gateway Pricing
 product: vercel
 url: /docs/ai-gateway/pricing
 canonical_url: "https://vercel.com/docs/ai-gateway/pricing"
-last_updated: 2026-08-23
+last_updated: 2026-09-02
 type: reference
 prerequisites:
   - /docs/ai-gateway
 related:
+  - /docs/ai-gateway/rate-limits
   - /docs/ai-gateway/observability-and-spend/budgets
   - /docs/plans/enterprise
   - /docs/ai-gateway/pricing/discounts
   - /docs/ai-gateway/authentication-and-byok/byok
-  - /docs/ai-gateway/observability-and-spend/custom-reporting
 summary: Learn about pricing for AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/pricing.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "a42489eefc3969110fce3bf0fead2706e4cec0f583ded8c9163f3195c54dfd0c"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "8dbc8277b75caee5a3316f180c8ff4ff6929c853d987f2ce439b02fc244c876a"
 ---
 
 # AI Gateway Pricing
@@ -35,12 +35,11 @@ sha256: "a42489eefc3969110fce3bf0fead2706e4cec0f583ded8c9163f3195c54dfd0c"
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=related)
 - [Introducing the AI Gateway](https://vercel.com/blog/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=related)
-- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=related) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including pricing and markup, SDK and API compatibility, model availabilit
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Vercel Agent Pricing](https://vercel.com/docs/agent/pricing?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=related) — Understand Vercel Agent pricing and how to track costs
-- [Ecosystem](https://vercel.com/docs/ai-gateway/ecosystem?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=related) — Explore community framework integrations and ecosystem features for the AI Gateway.
-- [Pricing and Limits](https://vercel.com/docs/eve/pricing?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=related) — Understand how eve usage maps to Vercel resources and inherited platform limits.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
+- [Provider Filtering, Ordering & Sorting](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=related) — Control which providers handle your requests, in what order, and how they are ranked using order, only, and sort options
+- [Compaction](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/compaction?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=related) — Compress long conversations into a single compaction item with the OpenAI Responses API through AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/pricing.graph.md](/docs/ai-gateway/pricing.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -51,7 +50,7 @@ Every Vercel team account gets access to both a free tier and a paid tier for AI
 
 The free tier includes a subset of models, not the full catalog. To see which models you can use with free credits, [browse the Free Tier models](/ai-gateway/models?freeTier=true). To use any other model, purchase AI Gateway Credits.
 
-Free tier requests are also rate limited per model, with lower limits than the paid tier. If you exceed a limit, AI Gateway returns a `429` error and you can retry after a short wait. Purchasing AI Gateway Credits moves your team to the paid tier, which raises your rate limits.
+Free tier requests are also rate limited per model, with lower limits than the paid tier. If you exceed a limit, AI Gateway returns a `429` error and you can retry after a short wait. Purchasing AI Gateway Credits moves your team to the paid tier, which raises your rate limits. See [Rate Limits](/docs/ai-gateway/rate-limits) for the `429` response shape and retry guidance.
 
 Your free credits start when you make your first AI Gateway request. To run larger workloads, you can purchase AI Gateway Credits at any time with no obligation to renew. Once you purchase credits, your account transitions to the paid tier and the monthly free credit no longer applies.
 
@@ -121,6 +120,18 @@ The [provider allowlist](/docs/ai-gateway/security-and-compliance/provider-allow
 ## Trace Drains
 
 [Trace Drains](/docs/ai-gateway/observability-and-spend/trace-drains) forward an OpenTelemetry trace of every AI Gateway request to your own observability tool. They're available on Pro and Enterprise plans and bill on two meters, the number of trace events delivered to your drains and the volume of trace data transferred.
+
+Resource
+
+Price
+
+AI Gateway Traces
+
+$0.05 per 1,000 traces
+
+Trace egress
+
+$0.50 per 1 GB
 
 Vercel bills these two meters through Drains usage on your plan, not against your AI Gateway Credits balance. Track them on the [Usage dashboard](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fusage\&title=Usage) under **Drains → AI Gateway Traces**.
 

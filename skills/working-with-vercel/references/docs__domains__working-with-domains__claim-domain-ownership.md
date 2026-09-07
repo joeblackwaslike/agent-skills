@@ -13,8 +13,8 @@ related:
 summary: Learn how to claim ownership of a domain that is registered with another Vercel account by verifying DNS ownership.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/claim-domain-ownership.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "9ecf14f0092904a6fced75bb272bdb0f0b4be766de4a7b64b568d1d4758b094e"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "ee6565308ea8970bafe006722ccf6a828336a81c12a40231d93bb1ec2fc0970e"
 ---
 
 # Claiming Domain Ownership
@@ -35,8 +35,8 @@ If a domain is registered with another Vercel account and you need to take owner
 - [Claim Domain Ownership](https://vercel.com/docs/rest-api/domains/claim-domain-ownership?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fclaim-domain-ownership&source_site=vercel-docs&relationship=related) — POST /v9/domains/{domain}/claim — Claim ownership of a domain for the authenticated team by verifying a TXT record. The
 - [Get Domain Verification Record](https://vercel.com/docs/rest-api/domains/get-domain-verification-record?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fclaim-domain-ownership&source_site=vercel-docs&relationship=related) — GET /v9/domains/{domain}/verification — Get the TXT verification record needed to claim ownership of a domain for the au
 - [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fclaim-domain-ownership&source_site=vercel-docs&relationship=related) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
-- [Troubleshooting domains](https://vercel.com/docs/domains/troubleshooting?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fclaim-domain-ownership&source_site=vercel-docs&relationship=related) — Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
 - [Working with DNS](https://vercel.com/docs/domains/working-with-dns?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fclaim-domain-ownership&source_site=vercel-docs&relationship=related) — Learn how DNS works in order to properly configure your domain.
+- [Troubleshooting domains](https://vercel.com/docs/domains/troubleshooting?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fclaim-domain-ownership&source_site=vercel-docs&relationship=related) — Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
 
 Full cross-link map for this page: [/docs/domains/working-with-domains/claim-domain-ownership.graph.md](/docs/domains/working-with-domains/claim-domain-ownership.graph.md?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fclaim-domain-ownership&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

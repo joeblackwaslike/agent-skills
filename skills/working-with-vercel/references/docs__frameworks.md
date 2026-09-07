@@ -16,8 +16,8 @@ related:
 summary: Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter what tool you use.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "6dd5f49c910722ebcd37c1840eb4867e338d31182c575a5cd736eca8e42b3925"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "d1f99507ee21d86783d8ecc54d4f7d39cf78e597bc9b9006cecab92fa8f6f418"
 ---
 
 # Frameworks on Vercel
@@ -34,14 +34,14 @@ Vercel has first-class support for [a wide range of the most popular frameworks]
 - [Skew Protection is now generally available](https://vercel.com/changelog/skew-protection-is-now-generally-available?from=related&source_path=%2Fdocs%2Fframeworks&source_site=vercel-docs&relationship=related)
 - [Building an AI chat app with RAG and source citations on Vercel](https://vercel.com/kb/guide/building-ai-chat-app-with-rag-and-citations-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks&source_site=vercel-docs&relationship=related) — A production stack for AI chat with retrieval, reranking, source citations, and background ingestion on Vercel using Nex
 - [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fframeworks&source_site=vercel-docs&relationship=related) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
-- [Deploy PHP on Vercel with Docker](https://vercel.com/kb/guide/deploy-php-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fframeworks&source_site=vercel-docs&relationship=related) — Build a PHP application with FrankenPHP and Docker, then deploy it to Vercel Functions with managed configuration, stora
 - [Deploy Rust on Vercel with Docker](https://vercel.com/kb/guide/deploy-rust-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fframeworks&source_site=vercel-docs&relationship=related) — Build a Rust application with Axum and Docker, then deploy it to Vercel Functions. Learn how to configure environment va
+- [Deploy ASP.NET Core on Vercel with Docker](https://vercel.com/kb/guide/dot-net-asp-net-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fframeworks&source_site=vercel-docs&relationship=related) — Build a .NET application with Docker and deploy it to Vercel Functions. Learn how to configure environment variables, in
 - [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare?from=related&source_path=%2Fdocs%2Fframeworks&source_site=vercel-docs&relationship=related) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
 - [Expanding the experimentation ecosystem with Edge Config and LaunchDarkly](https://vercel.com/blog/edge-config-and-launch-darkly?from=related&source_path=%2Fdocs%2Fframeworks&source_site=vercel-docs&relationship=related)
 - [Framework-defined infrastructure](https://vercel.com/blog/framework-defined-infrastructure?from=related&source_path=%2Fdocs%2Fframeworks&source_site=vercel-docs&relationship=related)
 - [Protecting your app (and wallet) against malicious traffic](https://vercel.com/blog/protecting-your-app-and-wallet-against-malicious-traffic?from=related&source_path=%2Fdocs%2Fframeworks&source_site=vercel-docs&relationship=related)
-- [Redirecting Domains](https://vercel.com/blog/redirecting-domains?from=related&source_path=%2Fdocs%2Fframeworks&source_site=vercel-docs&relationship=related)
 - [The developer experience of the Frontend Cloud](https://vercel.com/blog/the-developer-experience-of-the-frontend-cloud?from=related&source_path=%2Fdocs%2Fframeworks&source_site=vercel-docs&relationship=related)
+- [The foundations of the Frontend Cloud](https://vercel.com/blog/the-foundations-of-the-frontend-cloud?from=related&source_path=%2Fdocs%2Fframeworks&source_site=vercel-docs&relationship=related)
 
 Full cross-link map for this page: [/docs/frameworks.graph.md](/docs/frameworks.graph.md?from=related&source_path=%2Fdocs%2Fframeworks&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

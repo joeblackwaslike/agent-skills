@@ -3,7 +3,7 @@ title: Metrics
 product: vercel
 url: /docs/ai-gateway/models-and-providers/metrics
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/metrics"
-last_updated: 2026-07-28
+last_updated: 2026-08-28
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/models-and-providers
@@ -15,8 +15,8 @@ related:
 summary: Understand how AI Gateway measures throughput and latency per provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/metrics.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "2748191ecadffc2c168d05bdfdc396c9076bb3d7712599da6d3b01a9b6211391"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "88fcf3e319cb22db6e427c72fb4d04270b8e8a16ca096c4b5547d9b32c2d9d63"
 ---
 
 # Metrics
@@ -32,10 +32,10 @@ AI Gateway tracks **throughput** and **latency** for each model and provider, me
 - [Live model performance metrics accessible via AI Gateway](https://vercel.com/changelog/live-model-performance-metrics-accessible-via-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmetrics&source_site=vercel-docs&relationship=related)
 - [AI Gateway production index](https://vercel.com/blog/ai-gateway-production-index?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmetrics&source_site=vercel-docs&relationship=related)
 - [Access and share AI Gateway leaderboard data](https://vercel.com/changelog/open-data-and-shareable-charts-for-ai-gateway-leaderboards?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmetrics&source_site=vercel-docs&relationship=related)
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmetrics&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including pricing and markup, SDK and API compatibility, model availabilit
 - [Observability](https://vercel.com/docs/ai-gateway/observability-and-spend/observability?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmetrics&source_site=vercel-docs&relationship=related) — Learn how to monitor and debug your AI Gateway requests.
 - [Leaderboards](https://vercel.com/docs/ai-gateway/leaderboards?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmetrics&source_site=vercel-docs&relationship=related) — See which AI models, labs, apps, and providers are most used on AI Gateway, share a chart as an image, and download the
 - [Legacy Metrics](https://vercel.com/docs/pricing/legacy?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmetrics&source_site=vercel-docs&relationship=related) — Learn about legacy usage metrics, including Bandwidth, Requests, Vercel Function Invocations, and Vercel Function Execut
-- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmetrics&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmetrics&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/metrics.graph.md](/docs/ai-gateway/models-and-providers/metrics.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmetrics&source_site=vercel-docs&relationship=graph)

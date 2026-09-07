@@ -16,8 +16,8 @@ related:
 summary: Learn how to interact with Vercel Blob storage using the vercel blob CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/blob.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "a5ebf8ca3d43fe86c7c3dd007510f9883bbdc49fad9852cbb08cbf30da19354b"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "38589a80892b4e9ccaecc152ccc3074853fd122df8f6b9c35d0e2fcae5209dfe"
 ---
 
 # vercel blob
@@ -32,12 +32,11 @@ The `vercel blob` command is used to interact with [Vercel Blob](/docs/vercel-bl
 
 - [Vercel Blob CLI is now available](https://vercel.com/changelog/vercel-blob-cli-is-now-available?from=related&source_path=%2Fdocs%2Fcli%2Fblob&source_site=vercel-docs&relationship=related)
 - [Vercel Blob now available in all Vercel Regions](https://vercel.com/changelog/vercel-blob-now-available-in-all-vercel-regions?from=related&source_path=%2Fdocs%2Fcli%2Fblob&source_site=vercel-docs&relationship=related)
-- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related&source_path=%2Fdocs%2Fcli%2Fblob&source_site=vercel-docs&relationship=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
-- [Managing Vercel Blob storage from the CLI](https://vercel.com/docs/vercel-blob/manage-blob-storage?from=related&source_path=%2Fdocs%2Fcli%2Fblob&source_site=vercel-docs&relationship=related) — Create blob stores, upload files, list contents, and manage storage using the CLI.
-- [Vercel Blob examples](https://vercel.com/docs/vercel-blob/examples?from=related&source_path=%2Fdocs%2Fcli%2Fblob&source_site=vercel-docs&relationship=related) — Examples on how to use Vercel Blob in your applications
-- [Create a Blob store](https://vercel.com/docs/rest-api/storage/create-a-blob-store?from=related&source_path=%2Fdocs%2Fcli%2Fblob&source_site=vercel-docs&relationship=related) — POST /storage/stores/blob — Create a Blob store
-- [Vercel Storage overview](https://vercel.com/docs/storage?from=related&source_path=%2Fdocs%2Fcli%2Fblob&source_site=vercel-docs&relationship=related) — Store large files and global configuration with Vercel's storage products.
+- [vercel global-config](https://vercel.com/docs/cli/global-config?from=related&source_path=%2Fdocs%2Fcli%2Fblob&source_site=vercel-docs&relationship=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
 - [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fblob&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [Managing Vercel Blob storage from the CLI](https://vercel.com/docs/vercel-blob/manage-blob-storage?from=related&source_path=%2Fdocs%2Fcli%2Fblob&source_site=vercel-docs&relationship=related) — Create blob stores, upload files, list contents, and manage storage using the CLI.
+- [vercel cache](https://vercel.com/docs/cli/cache?from=related&source_path=%2Fdocs%2Fcli%2Fblob&source_site=vercel-docs&relationship=related) — Learn how to manage cache for your project using the vercel cache CLI command.
+- [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fblob&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 
 Full cross-link map for this page: [/docs/cli/blob.graph.md](/docs/cli/blob.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fblob&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -425,6 +424,24 @@ vercel blob get image.jpg --if-none-match "etag-value"
 
 *Using the \`vercel blob get\` command with the
 \`--if-none-match\` option.*
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel blob` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 
 ---

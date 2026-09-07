@@ -12,13 +12,19 @@ related:
 summary: Ensures that the exported Next.js page component and its transitive dependencies are not asynchronous, as that blocks the rendering of the page.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_no_async_page.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "918e845df9c8889eaab134a3a27400216dedffff3ab7be9a7452f7b438c8b025"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "568304bce45752c67b5a603c75d222cb5e8baa52c7f2e1047afac45be1d0bbc8"
 ---
 
 # NEXTJS_NO_ASYNC_PAGE
 
 > **🔒 Permissions Required**: Conformance
+
+> **💡 Note:** This rule is in preview, please give us your feedback!
+
+<br />
+
+> **💡 Note:** This rule is available from version 1.1.0.
 
 This rule examines all Next.js app router page files and their transitive dependencies to ensure
 none are asynchronous or return new Promise instances. Even if the page component itself is not

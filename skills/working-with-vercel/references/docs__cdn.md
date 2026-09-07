@@ -16,8 +16,8 @@ related:
 summary: "Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deployment."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cdn.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "b44333026c2cd166dd2dfcd40997e4fa18db7b1caa4fdeb1a318421fb17460fc"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "d39433e3204590e07ceeaedc0a7e05900cd3f7189211ffbe67ee0df052cbe282"
 ---
 
 # Vercel CDN overview
@@ -69,6 +69,8 @@ You can use Vercel's CDN across a range of architectures:
 ### Get started with templates
 
 Deploy a CDN-ready template to see routing, caching, and revalidation in action:
+
+[View all CDN templates](https://vercel.com/templates/cdn)
 
 ## How Vercel CDN works
 

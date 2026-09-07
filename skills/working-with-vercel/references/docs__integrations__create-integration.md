@@ -16,8 +16,8 @@ related:
 summary: Learn how to create and manage your own integration for internal or public use with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "afa18ab234fa0a474d702bc049b4f3b43fc91192dbac1aaabb782c6f22bef53a"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "b13d4ac79f994d284665d31bd340327635001c86500025c5da264230a431d4e3"
 ---
 
 # Create an Integration
@@ -122,7 +122,7 @@ The **Create Product** form must be completed in full for at least one product b
 
 ### Native integrations
 
-To create a  for your [native integration](/docs/integrations#native-integrations), follow the steps in [Create a product for a native integration](/docs/integrations/create-integration/marketplace-product).
+To create a product for your [native integration](/docs/integrations#native-integrations), follow the steps in [Create a product for a native integration](/docs/integrations/create-integration/marketplace-product).
 
 ### Connectable account integrations
 

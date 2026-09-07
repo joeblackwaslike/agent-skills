@@ -3,7 +3,7 @@ title: delete-v1-installations-resources-experimentation-items
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/delete-v1-installations-resources-experimentation-items
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/delete-v1-installations-resources-experimentation-items"
-last_updated: 2026-08-31
+last_updated: 2026-09-07
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about delete-v1-installations-resources-experimentation-items on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/delete-v1-installations-resources-experimentation-items.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "4d84906ca93450d883eb136c8830f766045fffa668b68ee03a71c20865c70f99"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "e1d023093e6650a785e09974dcb712ea995a55c53a5ce54582a8dd62563a07ac"
 ---
 
 # Delete an existing experimentation item

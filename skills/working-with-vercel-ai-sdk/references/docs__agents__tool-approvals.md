@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/agents/tool-approvals.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "6810f73ccec2420421662af63066765b0cd9922b1d65fdb0ccbb74fb03e9362b"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "f12bf28ab056fac68f598d0552742b938b6bf4d24974b58777e0573b55172f92"
 ---
 
 # Tool Approvals
@@ -285,14 +285,17 @@ If your tools perform sensitive operations (modifying data, spending money, call
 
 ### Signing approvals with `experimental_toolApprovalSecret`
 
-When you provide a secret, the server HMAC-signs each approval request at issuance and verifies the signature when the approval is replayed. A forged or tampered approval is rejected before the tool executes.
+When you provide a secret, the server HMAC-signs each approval request at issuance and verifies the signature when the approval is replayed. A forged or tampered approval is rejected before the tool executes. Configure the secret on `ToolLoopAgent` (or pass it directly to `generateText` or `streamText`).
 
-```ts highlight="5"
-const result = await streamText({
+```ts highlight="6"
+const agent = new ToolLoopAgent({
   model: __MODEL__,
   tools: { deleteFile, runQuery },
   toolApproval: { deleteFile: 'user-approval', runQuery: 'user-approval' },
   experimental_toolApprovalSecret: process.env.TOOL_APPROVAL_SECRET,
+});
+
+const result = await agent.generate({
   messages,
 });
 ```
@@ -309,7 +312,7 @@ The signature binds the approval to the exact tool name, tool call ID, and input
    ```
    TOOL_APPROVAL_SECRET=your-generated-secret-here
    ```
-3. Pass it to `generateText` or `streamText` via `experimental_toolApprovalSecret`.
+3. Pass it to `ToolLoopAgent`, `generateText`, or `streamText` via `experimental_toolApprovalSecret`.
 
 Every serverless instance that might handle a request needs the same secret, since one instance signs the approval and a different instance may verify it on the next turn.
 
@@ -320,9 +323,12 @@ Every serverless instance that might handle a request needs the same secret, sin
 - The secret is never sent to the client or included in the stream
 
 <Note>
-  `experimental_toolApprovalSecret` is not yet supported on `WorkflowAgent`. For
-  durable workflows, the workflow runtime provides its own persistence layer
-  that can be used to verify approvals.
+  `WorkflowAgent` also supports `experimental_toolApprovalSecret`. It signs in
+  a workflow step before writing the durable approval request. Pass an
+  environment variable reference, such as
+  `{ environmentVariable: 'TOOL_APPROVAL_SECRET' }`, so the raw secret is read
+  only inside signing and verification steps. Only the signature is persisted
+  and sent to the client.
 </Note>
 
 ## Related APIs

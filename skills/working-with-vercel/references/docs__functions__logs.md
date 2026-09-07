@@ -16,8 +16,8 @@ related:
 summary: Use runtime logs to debug and monitor your Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/logs.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "1e4f7fdf27ca0f108956b294ad7fb6f8fe6dacd9d3f45bb475672828e90bf6c3"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "abdfcc79950777385e247c06fcac0b5cb13fc40d2db29ba0ce22903431fa858a"
 ---
 
 # Vercel Function Logs
@@ -36,9 +36,9 @@ Vercel Functions allow you to debug and monitor your functions using runtime log
 - [Troubleshooting Inconsistent Logs in Vercel Functions](https://vercel.com/kb/guide/troubleshooting-inconsistent-logs-in-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot and resolve logs that appear mixed in Vercel Functions. This guide explains why logs from diff
 - [Evolving Vercel Functions](https://vercel.com/blog/evolving-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Flogs&source_site=vercel-docs&relationship=related)
 - [Enhanced Logs to search, inspect, and share runtime logs](https://vercel.com/changelog/enhanced-logs-ui-to-search-inspect-and-share-application-logs?from=related&source_path=%2Fdocs%2Ffunctions%2Flogs&source_site=vercel-docs&relationship=related)
+- [Runtime logs now show event sequences for Vercel requests](https://vercel.com/changelog/runtime-logs-now-show-event-sequences-for-vercel-requests?from=related&source_path=%2Fdocs%2Ffunctions%2Flogs&source_site=vercel-docs&relationship=related)
 - [Get logs for a deployment](https://vercel.com/docs/rest-api/logs/get-logs-for-a-deployment?from=related&source_path=%2Fdocs%2Ffunctions%2Flogs&source_site=vercel-docs&relationship=related) — GET /v1/projects/{projectId}/deployments/{deploymentId}/runtime-logs — Returns a stream of logs for a given deployment.
 - [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Ffunctions%2Flogs&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
-- [Logs](https://vercel.com/docs/ai-gateway/observability-and-spend/logs?from=related&source_path=%2Fdocs%2Ffunctions%2Flogs&source_site=vercel-docs&relationship=related) — Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the resu
 - [Container Images](https://vercel.com/docs/functions/container-images?from=related&source_path=%2Fdocs%2Ffunctions%2Flogs&source_site=vercel-docs&relationship=related) — Deploy OCI container images with a Dockerfile or Containerfile on Vercel Functions.
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Ffunctions%2Flogs&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
@@ -78,7 +78,7 @@ In the case of ISR, multiple logs are the result of:
 
 ### Next.js logs
 
-In Next.js projects, logged functions include API Routes (those defined in  or ).
+In Next.js projects, logged functions include API Routes (those defined in `pages/api/**/*.ts` or `app/**/route.ts`).
 
 Pages that use SSR, such as those that call `getServerSideProps` or export [`revalidate`](https://nextjs.org/docs/app/guides/incremental-static-regeneration), will also be available both in the filter dropdown and the real time logs.
 

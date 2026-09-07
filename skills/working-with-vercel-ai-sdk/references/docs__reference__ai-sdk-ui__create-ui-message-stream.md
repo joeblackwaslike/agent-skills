@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/create-ui-message-stream.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "c39a3790af060fba9b5cb841081e3537feb4a82b6640b260971bc0e1a12a0f63"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "964a1bbace49efc4454ec957071ac653ffcbf8e7003cbae4501da5f036ffbeb8"
 ---
 
 # `createUIMessageStream`
@@ -21,6 +21,9 @@ const existingMessages: UIMessage[] = [
 
 const stream = createUIMessageStream({
   async execute({ writer }) {
+    // The outer stream owns the assistant message lifecycle.
+    writer.write({ type: 'start' });
+
     // Start a text message
     // Note: The id must be consistent across text-start, text-delta, and text-end steps
     // This allows the system to correctly identify they belong to the same text block
@@ -51,6 +54,7 @@ const stream = createUIMessageStream({
     writer.merge(
       toUIMessageStream({
         stream: result.stream,
+        sendStart: false,
         onEnd: ({ outcome }) => {
           // The composer decides that the model stream outcome is also the
           // aggregate stream outcome.

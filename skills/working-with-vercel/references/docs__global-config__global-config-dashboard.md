@@ -16,8 +16,8 @@ related:
 summary: Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby team, team, and project...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-dashboard.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "0d67f3de9d7667c050b87677f788ab3685e971b79049deb4e9b5896928e5ad4c"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "745839c8c795e1aa7533475db44f361949ca7ea9b890d2639ad762d3f9a9c473"
 ---
 
 # Managing Global Configs with the Dashboard
@@ -32,10 +32,10 @@ You can create, view and update your [Global Configs](/docs/global-config), and 
 
 - [Global Config](https://flags-sdk.dev/docs/providers/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-dashboard&source_site=vercel-docs&relationship=related)
 - [Getting started with Global Config](https://vercel.com/docs/global-config/get-started?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-dashboard&source_site=vercel-docs&relationship=related) — Learn how to create a Global Config store and read from it in your project.
+- [@vercel/global-config](https://vercel.com/docs/global-config/global-config-sdk?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-dashboard&source_site=vercel-docs&relationship=related) — The Global Config client SDK is the most ergonomic way to read data from Global Configs. Learn how to set up the SDK so
 - [vercel global-config](https://vercel.com/docs/cli/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-dashboard&source_site=vercel-docs&relationship=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
-- [Managing Global Configs with Vercel REST API](https://vercel.com/docs/global-config/vercel-api?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-dashboard&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel REST API to create and update Global Configs. You can also read data stored in Global Config
+- [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-dashboard&source_site=vercel-docs&relationship=related) — POST /v1/global-config — Creates a Global Config.
 - [Using Global Config with LaunchDarkly](https://vercel.com/docs/global-config/global-config-integrations/launchdarkly-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-dashboard&source_site=vercel-docs&relationship=related) — Learn how to use Global Config with Vercel's LaunchDarkly integration.
-- [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-dashboard&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 
 Full cross-link map for this page: [/docs/global-config/global-config-dashboard.graph.md](/docs/global-config/global-config-dashboard.graph.md?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-dashboard&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -187,6 +187,10 @@ To delete a token, click the vertical ellipsis  icon on the right of the token's
 If you no longer have the connection string for a token that was already created, open the connected project's **Settings > Environment Variables** and copy the `GLOBAL_CONFIG` variable. You can also run [`vercel env pull`](/docs/cli/env) in a linked project to sync it locally. If neither is available, delete the token and create a new one.
 
 ## Up Next
+
+**Managing with the Vercel REST API** [→](/docs/global-config/vercel-api)
+
+Using the Vercel REST API, you can create and update Global Configs
 
 
 ---

@@ -3,7 +3,7 @@ title: verify-resource-transfer
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/verify-resource-transfer
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/verify-resource-transfer"
-last_updated: 2026-08-31
+last_updated: 2026-09-07
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about verify-resource-transfer on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/verify-resource-transfer.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "282a763549b51b5163ad820e3346bb9961da510d0025bb38e3e2eb479ac21d9f"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "8e682de0ba285c95de10d9a2541a3ed0d59e67a03443fb0e7301a1153d325261"
 ---
 
 # Validate Resources Transfer Request

@@ -3,7 +3,7 @@ title: Restricting Git Connections to a single Vercel team
 product: vercel
 url: /docs/protected-git-scopes
 canonical_url: "https://vercel.com/docs/protected-git-scopes"
-last_updated: 2026-06-16
+last_updated: 2026-08-28
 type: conceptual
 prerequisites:
   []
@@ -12,13 +12,15 @@ related:
 summary: Information to stop developers from deploying their repositories to a personal Vercel account by using Protected Git Scopes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/protected-git-scopes.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "eb789d8144aecaf9e1345279929469b2805a6f5bc9c8e996b6a6b0ce5b556e71"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "6219827f8b400b7cb66a146101aa747d1cb204db9349772fae059f4ee76b3b7c"
 ---
 
 # Restricting Git Connections to a single Vercel team
 
 > **🔒 Permissions Required**: Protected Git Scopes
+
+Teams often need control over who can deploy their repositories to which teams or accounts. For example, a user on your team may accidentally try to deploy your project on their personal Vercel Account. To control this, you can add a Protected Git Scope.
 
 
 <!-- docsgraph:related -->
@@ -36,8 +38,6 @@ sha256: "eb789d8144aecaf9e1345279929469b2805a6f5bc9c8e996b6a6b0ce5b556e71"
 
 Full cross-link map for this page: [/docs/protected-git-scopes.graph.md](/docs/protected-git-scopes.graph.md?from=related&source_path=%2Fdocs%2Fprotected-git-scopes&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Teams often need control over who can deploy their repositories to which teams or accounts. For example, a user on your team may accidentally try to deploy your project on their personal Vercel Account. To control this, you can add a Protected Git Scope.
 
 Protected Git Scopes restrict Vercel account and team access to Organization-level Git repositories. This ensures that only authorized Vercel teams can deploy your repositories.
 

@@ -16,8 +16,8 @@ related:
 summary: Environments are for developing locally, testing changes in a pre-production environment, and serving end-users in production.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/environments.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "632941d0f97ced9140ddb04bc0e63ce908d93f89cbe07182600706ad893fdfa6"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "8c14ef60e409a409edc230bcfc6710328710ec4a555aad1105675ee071dc25dd"
 ---
 
 # Environments
@@ -39,9 +39,9 @@ Vercel provides three default environments—**Local**, **Preview**, and **Produ
 - [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation?from=related&source_path=%2Fdocs%2Fdeployments%2Fenvironments&source_site=vercel-docs&relationship=related) — A practical checklist for keeping your storefront fast and your checkout path healthy through Black Friday and Cyber Mon
 - [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related&source_path=%2Fdocs%2Fdeployments%2Fenvironments&source_site=vercel-docs&relationship=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
 - [How to use a non-default branch for production deployments on Vercel](https://vercel.com/kb/guide/can-i-use-a-non-default-branch-for-production?from=related&source_path=%2Fdocs%2Fdeployments%2Fenvironments&source_site=vercel-docs&relationship=related) — Learn how to set a non-default branch for production on Vercel. Open the Production environment, change branch tracking,
-- [Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel?from=related&source_path=%2Fdocs%2Fdeployments%2Fenvironments&source_site=vercel-docs&relationship=related) — Learn how to deploy a TanStack Start app to Vercel using the Nitro Vite plugin. Covers framework setup, Git and CLI depl
+- [How to Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel?from=related&source_path=%2Fdocs%2Fdeployments%2Fenvironments&source_site=vercel-docs&relationship=related) — Deploy a TanStack Start app to Vercel with the Nitro Vite plugin. Covers Git and CLI deployment, Fluid compute defaults,
 - [Life of a Vercel request: Application-aware routing](https://vercel.com/blog/life-of-a-request-application-aware-routing?from=related&source_path=%2Fdocs%2Fdeployments%2Fenvironments&source_site=vercel-docs&relationship=related)
-- [Redirecting Domains](https://vercel.com/blog/redirecting-domains?from=related&source_path=%2Fdocs%2Fdeployments%2Fenvironments&source_site=vercel-docs&relationship=related)
+- [The developer experience of the Frontend Cloud](https://vercel.com/blog/the-developer-experience-of-the-frontend-cloud?from=related&source_path=%2Fdocs%2Fdeployments%2Fenvironments&source_site=vercel-docs&relationship=related)
 
 Full cross-link map for this page: [/docs/deployments/environments.graph.md](/docs/deployments/environments.graph.md?from=related&source_path=%2Fdocs%2Fdeployments%2Fenvironments&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -146,7 +146,7 @@ Team owners and project admins can create, update, or remove custom environments
 
 ### Creating a custom environment
 
-#### \['Dashboard'
+#### Dashboard
 
 1. Go to your project's [**Environments**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fenvironments\&title=Go+to+Environments+settings) settings in the Vercel Dashboard
 2. Click **Create Environment**
@@ -155,7 +155,7 @@ Team owners and project admins can create, update, or remove custom environments
    - **Attach a Domain** to give a persistent URL to your environment
    - **Import variables** from another environment to seed this environment with existing environment variables
 
-#### 'cURL'
+#### cURL
 
 To create an Authorization Bearer token, see the [access token](/docs/rest-api#creating-an-access-token) section of the API documentation.
 
@@ -170,7 +170,7 @@ curl --request POST \
   }'
 ```
 
-#### 'SDK']
+#### SDK
 
 To create an Authorization Bearer token, see the [access token](/docs/rest-api#creating-an-access-token) section of the API documentation.
 

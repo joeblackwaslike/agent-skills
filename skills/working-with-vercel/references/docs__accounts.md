@@ -3,7 +3,7 @@ title: Account Management
 product: vercel
 url: /docs/accounts
 canonical_url: "https://vercel.com/docs/accounts"
-last_updated: 2026-08-11
+last_updated: 2026-08-28
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your Vercel account and team members.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/accounts.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "12ad56ed75fdbe3bb1c362a6a13ab1879a1c3ed5d6bad134d1cb737c6a14fd40"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "d8c3b91deb48cca6cf998b976e43f7b3c0016a979c2bd449b7ee77e45a6b979c"
 ---
 
 # Account Management
@@ -122,7 +122,7 @@ Teams on Vercel let you collaborate with other members on projects and access ad
 
 ### Creating a team
 
-#### \['Dashboard'
+#### Dashboard
 
 1. Click on the team switcher at the top left of the nav bar
 2. Choose to create a new team
@@ -131,7 +131,7 @@ Teams on Vercel let you collaborate with other members on projects and access ad
 
 ![Image](https://vercel.com/docs-assets/static/docs/concepts/teams/new-team-light.png)
 
-#### 'cURL'
+#### cURL
 
 To create an Authorization Bearer token, see the [access token](/docs/rest-api#creating-an-access-token) section of the API documentation.
 
@@ -146,7 +146,7 @@ curl --request POST \
 }'
 ```
 
-#### 'SDK']
+#### SDK
 
 To create an Authorization Bearer token, see the [access token](/docs/rest-api#creating-an-access-token) section of the API documentation.
 

@@ -12,8 +12,8 @@ related:
 summary: Vercel helps reduce data transfer and improve performance by supporting both Gzip and Brotli compression
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/how-vercel-cdn-works/compression.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "a6dcc347a3285afef0ed448af7cbee502c3a7f460eb21204ee661f336f0875e8"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "9db10efd3cfcb2c22481168314d558da6d6d2b1b66d07ad168a9cf9c3188fad6"
 ---
 
 # Vercel CDN Compression
@@ -26,7 +26,6 @@ Vercel helps reduce data transfer and improve performance by supporting both Gzi
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Simpler Pricing](https://vercel.com/blog/simpler-pricing?from=related&source_path=%2Fdocs%2Fhow-vercel-cdn-works%2Fcompression&source_site=vercel-docs&relationship=related)
 - [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Fhow-vercel-cdn-works%2Fcompression&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
 - [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn?from=related&source_path=%2Fdocs%2Fhow-vercel-cdn-works%2Fcompression&source_site=vercel-docs&relationship=related) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
 - [What are the best practices for hosting videos on Vercel?](https://vercel.com/kb/guide/best-practices-for-hosting-videos-on-vercel-nextjs-mp4-gif?from=related&source_path=%2Fdocs%2Fhow-vercel-cdn-works%2Fcompression&source_site=vercel-docs&relationship=related) — Learn the ideal solutions for using video files like .mp4 and .gif on Vercel to prevent excess bandwidth consumption.

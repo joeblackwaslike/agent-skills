@@ -16,8 +16,8 @@ related:
 summary: Learn how Conformance improves collaboration, productivity, and software quality at scale.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "d5494ae48f27d0f503dea10f34c28d887c4ced9e6d2807c93228b227a5d02c1b"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "744a423b96542d85ca823beaa37e173b17cb5e2a0bf6dd64fb67c02f166ae376"
 ---
 
 # Conformance Rules
@@ -27,7 +27,7 @@ sha256: "d5494ae48f27d0f503dea10f34c28d887c4ced9e6d2807c93228b227a5d02c1b"
 This page lists all the built-in rules that Conformance will check for by
 default in your application.
 
-#### \['Next.js'
+#### Next.js
 
 These Conformance rules catch common issues that can happen in Next.js
 applications.
@@ -62,7 +62,7 @@ applications.
 | [NO\_FETCH\_FROM\_MIDDLEWARE](/docs/conformance/rules/NO_FETCH_FROM_MIDDLEWARE)                                   | Requires that any `fetch` call that is depended on transitively by Next.js middleware be reviewed and approved before use for performance reasons.                                 |
 | [REACT\_NO\_STATIC\_IMPORTS\_IN\_EVENT\_HANDLERS](/docs/conformance/rules/REACT_NO_STATIC_IMPORTS_IN_EVENT_HANDLERS) | Prevent static imports that are referenced only in React event handlers from being eagerly loaded in React components.                                                             |
 
-#### 'Performance'
+#### Performance
 
 These Conformance rules catch issues that negatively affect the performance
 of your website.
@@ -92,7 +92,7 @@ of your website.
 | [REACT\_NO\_STATIC\_IMPORTS\_IN\_EVENT\_HANDLERS](/docs/conformance/rules/REACT_NO_STATIC_IMPORTS_IN_EVENT_HANDLERS)       | Prevent static imports that are referenced only in React event handlers from being eagerly loaded in React components.                                                             |
 | [REACT\_STABLE\_CONTEXT\_PROVIDER\_VALUE](/docs/conformance/rules/REACT_STABLE_CONTEXT_PROVIDER_VALUE)                   | Prevent non-stable values from being used in React Context providers that could cause unnecessary re-renders.                                                                      |
 
-#### 'Security'
+#### Security
 
 These Conformance rules catch issues that could become security vulnerabilities
 in your application.
@@ -113,7 +113,7 @@ in your application.
 | [REQUIRE\_CARET\_DEPENDENCIES](/docs/conformance/rules/REQUIRE_CARET_DEPENDENCIES)               | Prevent the use of dependencies without a caret ("^") as a prefix.                                                                       |
 | [SET\_COOKIE\_VALIDATION](/docs/conformance/rules/SET_COOKIE_VALIDATION)                         | Prevents usage of cookies that do not conform to the allowed cookie policy.                                                              |
 
-#### 'Code Health']
+#### Code Health
 
 These Conformance rules catch issues that can negatively affect your codebase
 or code health.

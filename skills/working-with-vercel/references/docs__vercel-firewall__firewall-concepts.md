@@ -16,13 +16,15 @@ related:
 summary: Understand the fundamentals behind the Vercel Firewall.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/firewall-concepts.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "29963a3c1402b17f6b8985dc694235178e0abb9fd8abda7993c4bd853945b488"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "cf47238b28e61c8c5a5b44e27db39cf5cef30f8966d2bff19f3fca373a12cd78"
 ---
 
 # Firewall concepts
 
 ## How Vercel secures requests
+
+To safeguard your application against malicious activity, Vercel's platform-wide firewall is the first line of defense, inspecting requests as they arrive at Vercel's CDN. Once a request passes this layer, [deployment protection](/docs/deployment-protection) checks whether it can continue based on access rules set at the level of your project.
 
 
 <!-- docsgraph:related -->
@@ -45,8 +47,6 @@ sha256: "29963a3c1402b17f6b8985dc694235178e0abb9fd8abda7993c4bd853945b488"
 
 Full cross-link map for this page: [/docs/vercel-firewall/firewall-concepts.graph.md](/docs/vercel-firewall/firewall-concepts.graph.md?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-concepts&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-To safeguard your application against malicious activity, Vercel's platform-wide firewall is the first line of defense, inspecting requests as they arrive at Vercel's CDN. Once a request passes this layer, [deployment protection](/docs/deployment-protection) checks whether it can continue based on access rules set at the level of your project.
 
 If allowed to go through, the request is subject to the rules that you configured with the [Web Application Firewall (WAF)](/docs/vercel-firewall/vercel-waf) at the level of your project. If the request is not blocked by the WAF rules, your deployment can process and serve it.
 

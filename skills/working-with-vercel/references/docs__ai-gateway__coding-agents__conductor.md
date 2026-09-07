@@ -14,8 +14,8 @@ related:
 summary: Use Conductor with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/conductor.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "390c3d2b46d14d2548a2ab30f729b3daf9d6cd976cd6e5ffe88910eebb270f1a"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "0b28a14ee522882d60be3a6a1a4a47c47fbe7fbf1b9d83f249e2fa0205db86bb"
 ---
 
 # Conductor
@@ -30,8 +30,8 @@ AI Gateway provides [Anthropic-compatible API endpoints](/docs/ai-gateway/sdks-a
 
 - [AI Gateway support for Claude Code](https://vercel.com/changelog/ai-gateway-support-for-claude-code?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fconductor&source_site=vercel-docs&relationship=related)
 - [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fconductor&source_site=vercel-docs&relationship=related)
-- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fconductor&source_site=vercel-docs&relationship=related) — Use OpenCode with the AI Gateway.
-- [Claude Code and Claude Agent SDK](https://vercel.com/docs/ai-gateway/coding-agents/claude-code?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fconductor&source_site=vercel-docs&relationship=related) — Use Claude Code and the Claude Agent SDK with AI Gateway.
+- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fconductor&source_site=vercel-docs&relationship=related) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
+- [Claude Code and Claude Agent SDK](https://vercel.com/docs/ai-gateway/coding-agents/claude-code?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fconductor&source_site=vercel-docs&relationship=related) — Connect Claude Code to AI Gateway with one CLI command, or configure it manually.
 - [Cline](https://vercel.com/docs/ai-gateway/coding-agents/cline?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fconductor&source_site=vercel-docs&relationship=related) — Use Cline with the AI Gateway.
 - [Superset](https://vercel.com/docs/ai-gateway/coding-agents/superset?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fconductor&source_site=vercel-docs&relationship=related) — Use Superset with the AI Gateway.
 - [Xcode](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fconductor&source_site=vercel-docs&relationship=related) — Use Xcode's coding assistant with the AI Gateway.

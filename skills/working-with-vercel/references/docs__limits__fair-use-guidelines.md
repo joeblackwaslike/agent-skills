@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel applies fair use guidelines across plans and usage-based resources.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/limits/fair-use-guidelines.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "0f47019cfd8e0be7140c272e432d94a973ac692e0f56e3b2db0790ec4079f10f"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "4daa97016e5ed586af0f355661960347754f783a3c07eb726857285a8bab22fc"
 ---
 
 # Fair Use Guidelines
@@ -35,7 +35,6 @@ Vercel usage is subject to these fair use guidelines across plans and usage-base
 - [How can I reduce my Vercel Functions usage on Vercel?](https://vercel.com/kb/guide/how-can-i-reduce-my-serverless-execution-usage-on-vercel?from=related&source_path=%2Fdocs%2Flimits%2Ffair-use-guidelines&source_site=vercel-docs&relationship=related) — Reduce Vercel Functions usage and cost under Fluid compute pricing with caching, rendering strategies, and function conf
 - [Penetration testing on Vercel](https://vercel.com/kb/guide/penetration-testing-on-vercel?from=related&source_path=%2Fdocs%2Flimits%2Ffair-use-guidelines&source_site=vercel-docs&relationship=related) — Learn how to perform pentesting on Vercel.
 - [Why has my account or deployment been paused?](https://vercel.com/kb/guide/why-is-my-account-deployment-blocked?from=related&source_path=%2Fdocs%2Flimits%2Ffair-use-guidelines&source_site=vercel-docs&relationship=related) — Learn why a Vercel account or deployment gets paused, from budget and usage limits to policy violations, and how to resu
-- [Simpler Pricing](https://vercel.com/blog/simpler-pricing?from=related&source_path=%2Fdocs%2Flimits%2Ffair-use-guidelines&source_site=vercel-docs&relationship=related)
 - [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Flimits%2Ffair-use-guidelines&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Flimits%2Ffair-use-guidelines&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Account Plans on Vercel](https://vercel.com/docs/plans?from=related&source_path=%2Fdocs%2Flimits%2Ffair-use-guidelines&source_site=vercel-docs&relationship=related) — Learn about the different plans available on Vercel.
@@ -103,7 +102,7 @@ Commercial usage is defined as any [Deployment](/docs/deployments) that is used 
 - Affiliate linking is the primary purpose of the site
 - The inclusion of advertisements, including but not limited to online advertising platforms like Google AdSense
 
-> **💡 Note:** Asking for Donations  fall under commercial usage.
+> **💡 Note:** Asking for Donations **does not** fall under commercial usage.
 
 If you are unsure whether or not your site would be defined as commercial usage, please [contact the Vercel Support team](/help#issues).
 

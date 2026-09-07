@@ -13,13 +13,15 @@ related:
 summary: Learn about the project level roles and their permissions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac/access-roles/project-level-roles.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "6daf0c0a0dd6aaab0960590806c30cdb8e28ac5ecda3f2503e17b1c3804e8e6b"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "1dda353ac794ed30b36a39aee3c4eb97c946653731ea170c61fe05a454146620"
 ---
 
 # Project Level Roles
 
 > **🔒 Permissions Required**: Project level roles
+
+Project level roles are assigned to a team member on a project level. This means that the role is only valid for the project it is assigned to. The role is not valid for other projects in the team.
 
 
 <!-- docsgraph:related -->
@@ -38,8 +40,6 @@ sha256: "6daf0c0a0dd6aaab0960590806c30cdb8e28ac5ecda3f2503e17b1c3804e8e6b"
 
 Full cross-link map for this page: [/docs/rbac/access-roles/project-level-roles.graph.md](/docs/rbac/access-roles/project-level-roles.graph.md?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles%2Fproject-level-roles&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Project level roles are assigned to a team member on a project level. This means that the role is only valid for the project it is assigned to. The role is not valid for other projects in the team.
 
 ## Equivalency roles
 

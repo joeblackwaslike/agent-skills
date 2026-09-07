@@ -15,8 +15,8 @@ related:
 summary: Learn how to run and test your microfrontends locally.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/local-development.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "b66d999b15854349f1c19650782ec4e5704406b5ed16dd4b7af190125902a564"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "cdeaaf2410d74073901a6c38eaa1673ebd5c682d5b55e1f5e8cb051ad1491112"
 ---
 
 # Microfrontends local development
@@ -33,10 +33,10 @@ To provide a seamless local development experience, `@vercel/microfrontends` pro
 - [Vercel](https://turborepo.dev/docs/guides/ci-vendors/vercel?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Flocal-development&source_site=vercel-docs&relationship=related) — Deploy your Turborepo on Vercel with zero-config Remote Caching.
 - [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Flocal-development&source_site=vercel-docs&relationship=related) — Learn how to serve multiple Vercel projects from a single domain.
 - [Managing microfrontends](https://vercel.com/docs/microfrontends/managing-microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Flocal-development&source_site=vercel-docs&relationship=related) — Learn how to manage your microfrontends on Vercel.
+- [Microfrontends Configuration](https://vercel.com/docs/microfrontends/configuration?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Flocal-development&source_site=vercel-docs&relationship=related) — Configure your microfrontends.json.
 - [Microfrontends Routing](https://vercel.com/docs/microfrontends/routing?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Flocal-development&source_site=vercel-docs&relationship=related) — Configure which microfrontend handles each path and understand how Vercel selects deployments.
 - [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Flocal-development&source_site=vercel-docs&relationship=related) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
 - [Managing with the Vercel Toolbar](https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Flocal-development&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel Toolbar to make it easier to manage microfrontends.
-- [Monorepos FAQ](https://vercel.com/docs/monorepos/monorepo-faq?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Flocal-development&source_site=vercel-docs&relationship=related) — Learn the answer to common questions about deploying monorepos on Vercel.
 
 Full cross-link map for this page: [/docs/microfrontends/local-development.graph.md](/docs/microfrontends/local-development.graph.md?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Flocal-development&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

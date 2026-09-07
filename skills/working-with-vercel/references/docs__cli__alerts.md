@@ -10,11 +10,12 @@ prerequisites:
 related:
   - /docs/alerts
   - /docs/agent/investigation
+  - /docs/cli/global-options
 summary: List recent alerts for a linked project, a specific project, or an entire team with the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/alerts.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "d628fa7e235111d253d1c09656f41280c8b84e9079d1020c137965dacddaac4d"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "122afdd4207687b11f3134993df0ba76926b316a680ec7a1ed0bbb15e2b59872"
 ---
 
 # vercel alerts
@@ -28,12 +29,11 @@ The `vercel alerts` command lists recent [alerts](/docs/alerts) for the linked p
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Pull anomaly alert details using the Vercel CLI](https://vercel.com/changelog/pull-anomaly-alert-details-using-the-vercel-cli?from=related&source_path=%2Fdocs%2Fcli%2Falerts&source_site=vercel-docs&relationship=related)
-- [Monitor uptime for AI-native apps with Vercel Alerts](https://vercel.com/kb/guide/monitor-uptime-for-ai-native-apps-with-vercel-alerts?from=related&source_path=%2Fdocs%2Fcli%2Falerts&source_site=vercel-docs&relationship=related) — Learn how to use Vercel Anomaly Alerts as an early-warning system for AI-powered apps, helping you catch 5xx spikes and
-- [Configure alerts](https://vercel.com/docs/alerts/configure-alerts?from=related&source_path=%2Fdocs%2Fcli%2Falerts&source_site=vercel-docs&relationship=related) — Configure alert rules and notification destinations for Vercel Observability alerts.
 - [vercel traces](https://vercel.com/docs/cli/traces?from=related&source_path=%2Fdocs%2Fcli%2Falerts&source_site=vercel-docs&relationship=related) — Inspect a request trace in the terminal, open it in the Vercel Dashboard, or manage the trace sampling rules for a proje
-- [vercel routes](https://vercel.com/docs/cli/routes?from=related&source_path=%2Fdocs%2Fcli%2Falerts&source_site=vercel-docs&relationship=related) — Learn how to manage project-level routing rules using the vercel routes CLI command.
-- [vercel project](https://vercel.com/docs/cli/project?from=related&source_path=%2Fdocs%2Fcli%2Falerts&source_site=vercel-docs&relationship=related) — Perform the following commands from the terminal for your Vercel Projects: list, add, inspect, update settings, rename,
+- [vercel metrics](https://vercel.com/docs/cli/metrics?from=related&source_path=%2Fdocs%2Fcli%2Falerts&source_site=vercel-docs&relationship=related) — List and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
+- [vercel activity](https://vercel.com/docs/cli/activity?from=related&source_path=%2Fdocs%2Fcli%2Falerts&source_site=vercel-docs&relationship=related) — View activity events for your Vercel project or team, filtered by type, date range, and project.
 - [vercel security](https://vercel.com/docs/cli/security?from=related&source_path=%2Fdocs%2Fcli%2Falerts&source_site=vercel-docs&relationship=related) — Inspect the security posture of your Vercel team from the terminal: run every security check, list findings, and scope t
+- [vercel logs](https://vercel.com/docs/cli/logs?from=related&source_path=%2Fdocs%2Fcli%2Falerts&source_site=vercel-docs&relationship=related) — View and filter request logs for your Vercel project, or stream live runtime logs from a deployment.
 
 Full cross-link map for this page: [/docs/cli/alerts.graph.md](/docs/cli/alerts.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Falerts&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -533,6 +533,24 @@ vercel alerts rules update ar_abc123 --body ./rename-rule.json --format json
 
 - To learn how to configure and receive alerts, see [Alerts](/docs/alerts).
 - If you want to automatically investigate alerts with AI, see [Agent Investigation](/docs/agent/investigation).
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel alerts` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 
 ---

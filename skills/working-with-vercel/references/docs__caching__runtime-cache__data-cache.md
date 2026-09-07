@@ -13,17 +13,19 @@ related:
   - /docs/caching/runtime-cache
   - /docs/caching/cdn-cache
   - /docs/deployments/environments
-  - /docs/incremental-static-regeneration
+  - /docs/rbac/access-roles
 summary: Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/runtime-cache/data-cache.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "e593dc8e53dd5862bdb129e3a4d460e821e815e59e273d4c4a2c3d22b1a7b2c9"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "3673dd2350f350f3ef68522da6fbd3e8c1d6b8c2a8354ae5b6495f7d58c5cdc2"
 ---
 
 # Data Cache for Next.js
 
 > **🔒 Permissions Required**: Data Cache
+
+Data cache is a specialized, granular cache introduced with Next.js 13 for storing [segment-level data](https://nextjs.org/docs/app/getting-started/fetching-data) while using [Next.js App Router](/docs/frameworks/full-stack/nextjs). When using [Next.js caching APIs](https://nextjs.org/docs/app/getting-started/caching) such as `fetch` or `unstable_cache`, Vercel automatically scaffolds globally distributed infrastructure for you with no additional configuration.
 
 
 <!-- docsgraph:related -->
@@ -37,17 +39,14 @@ sha256: "e593dc8e53dd5862bdb129e3a4d460e821e815e59e273d4c4a2c3d22b1a7b2c9"
 - [Migrating to Cache Components](https://nextjs.org/docs/app/guides/migrating-to-cache-components?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=related) — Learn how to migrate from route segment configs to Cache Components in Next.js.
 - [Revalidating](https://nextjs.org/docs/app/getting-started/revalidating?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=related) — Learn how to revalidate cached data using time-based and on-demand strategies.
 - [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=related) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
-- [How to implement Incremental Static Regeneration (ISR)](https://nextjs.org/docs/app/guides/incremental-static-regeneration?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=related) — Learn how to create or update static pages at runtime with Incremental Static Regeneration.
-- [@vercel/functions API Reference \\(Node.js\\)](https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=related) — Learn about available APIs when working with Vercel Functions.
 - [Cache Status and Reasons](https://vercel.com/docs/caching/cache-status?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=related) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
+- [@vercel/functions API Reference \\(Node.js\\)](https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=related) — Learn about available APIs when working with Vercel Functions.
 - [Purging Vercel CDN Cache](https://vercel.com/docs/caching/cdn-cache/purge?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=related) — Learn how to invalidate and delete cached content on Vercel's CDN, including cache keys and manual purging options.
+- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 - [Storage on Vercel Marketplace](https://vercel.com/docs/marketplace-storage?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=related) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/caching/runtime-cache/data-cache.graph.md](/docs/caching/runtime-cache/data-cache.graph.md?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Data cache is a specialized, granular cache introduced with Next.js 13 for storing [segment-level data](https://nextjs.org/docs/app/getting-started/fetching-data) while using [Next.js App Router](/docs/frameworks/full-stack/nextjs). When using [Next.js caching APIs](https://nextjs.org/docs/app/getting-started/caching) such as `fetch` or `unstable_cache`, Vercel automatically scaffolds globally distributed infrastructure for you with no additional configuration.
 
 - Find out [how Data cache works](#how-data-cache-works)
 - [When to use it](#when-to-use-data-cache)
@@ -228,6 +227,8 @@ Vercel persists cached data across deployments, unless you explicitly invalidate
 When the system triggers a revalidation, Vercel marks the corresponding path or cache tag as stale in every region. The next request to that path or tag, regardless of the region, initiates revalidation and updates the cache globally. Vercel purges and updates the regional cache in all regions within 300ms.
 
 ## Manually purging data cache
+
+> **💡 Note:** You need to have the [member](/docs/rbac/access-roles#member-role) role to perform this task.
 
 CDN cache and Data cache are different cache layers. CDN cache stores full HTTP responses, while Data cache stores Next.js data fetch results.
 

@@ -16,8 +16,8 @@ related:
 summary: Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no matter what tooling you use.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/frontend.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "2dca44bc9f4b6a827ef1dc0451f031b75c34cabf663468ed032c303089e07343"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "17718eb7213582fe83e717e220ad607d097655dbff15ffa35a5f456dc6964ca4"
 ---
 
 # Frontends on Vercel
@@ -35,9 +35,9 @@ The following frontend frameworks are supported with zero-configuration.
 - [Announcing the Build Output API](https://vercel.com/blog/build-output-api?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend&source_site=vercel-docs&relationship=related)
 - [New features for SvelteKit: Optimize your application with ease](https://vercel.com/blog/feature-complete-sveltekit?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend&source_site=vercel-docs&relationship=related)
 - [Run multiple frameworks in one project with Vercel Services](https://vercel.com/changelog/run-multiple-frameworks-in-one-project-with-vercel-services?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend&source_site=vercel-docs&relationship=related)
-- [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, security defaults, AI infrastructure, GPU comp
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
+- [Life of a Vercel request: What happens when a user presses enter](https://vercel.com/blog/life-of-a-vercel-request-what-happens-when-a-user-presses-enter?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend&source_site=vercel-docs&relationship=related)
 - [Remix on Vercel](https://vercel.com/docs/frameworks/full-stack/remix?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend&source_site=vercel-docs&relationship=related) — Deploy Remix applications to Vercel and configure the Vercel Vite preset, SSR, streaming, caching, and analytics.
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 - [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
 
 Full cross-link map for this page: [/docs/frameworks/frontend.graph.md](/docs/frameworks/frontend.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend&source_site=vercel-docs&relationship=graph)
@@ -129,6 +129,8 @@ Full cross-link map for this page: [/docs/frameworks/frontend.graph.md](/docs/fr
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/vue) | [View Demo](https://vue-template.vercel.app)
 - **VuePress**: Vue-powered Static Site Generator
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/vuepress) | [View Demo](https://vuepress-starter-template.vercel.app)
+- **xmcp**: The MCP framework for building AI-powered tools
+  - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/xmcp) | [View Demo](https://xmcp-template.vercel.app/)
 - **Zola**: Everything you need to make a static site engine in one binary.
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/zola) | [View Demo](https://zola-template.vercel.app)
 

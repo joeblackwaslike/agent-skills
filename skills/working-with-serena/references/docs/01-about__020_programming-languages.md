@@ -1,7 +1,7 @@
 ---
 source: "https://oraios.github.io/serena/_sources/01-about/020_programming-languages.md"
-fetched_at: "2026-08-10T05:31:54.245Z"
-sha256: "ea93f95d780bf7e12c3f11105e2a0fa276c2879d1287815b3c10f5460e67a023"
+fetched_at: "2026-09-07T09:04:28.360Z"
+sha256: "cd4e1f350bee79b698f4e6f25f030a24d60015964fe521ada609a6e1371031d6"
 ---
 
 # Language Support
@@ -104,7 +104,10 @@ Some languages require additional installations or setup steps, as noted.
 * **Java**  
 * **JavaScript**  
   (supported via the TypeScript language server, i.e. use language `typescript` for both JavaScript and TypeScript)
-* **Julia**
+* **Julia**  
+  (by default, uses LanguageServer.jl (language `julia`); the
+  [Fatou](https://github.com/jolars/fatou) alternative (language `julia_fatou`) is installed
+  automatically and requires `uv`/`uvx` in PATH)
 * **Kotlin**  
   (uses the pre-alpha [official kotlin LS](https://github.com/Kotlin/kotlin-lsp), some issues may appear)
 * **LaTeX**  

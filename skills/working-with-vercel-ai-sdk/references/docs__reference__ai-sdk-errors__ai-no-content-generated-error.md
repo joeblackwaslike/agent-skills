@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-content-generated-error.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "11c29482f8a6aa0cd787e290d888894444909b05b67baa84ca9caf9895674f59"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "4331a15dc1a3337066e6b440510779c145bbaf677d5995d659692528f5517083"
 ---
 
 # AI_NoContentGeneratedError
@@ -59,6 +59,7 @@ if (NoContentGeneratedError.isInstance(error)) {
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
 - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
 - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)
+- [ToolChoiceViolationError](/docs/reference/ai-sdk-errors/ai-tool-choice-violation-error)
 - [AI_TypeValidationError](/docs/reference/ai-sdk-errors/ai-type-validation-error)
 - [AI_UIMessageStreamError](/docs/reference/ai-sdk-errors/ai-ui-message-stream-error)
 - [AI_UnsupportedFunctionalityError](/docs/reference/ai-sdk-errors/ai-unsupported-functionality-error)

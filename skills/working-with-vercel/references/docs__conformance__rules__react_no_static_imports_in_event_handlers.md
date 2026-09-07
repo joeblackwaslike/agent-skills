@@ -8,17 +8,20 @@ type: conceptual
 prerequisites:
   []
 related:
+  - /docs/conformance/changelog
   - /docs/conformance/customize
 summary: Prevent static imports that are referenced only in React event handlers from being eagerly loaded in React components.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/react_no_static_imports_in_event_handlers.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "c2cebe2ca1e61064b04391b4200bf328c917007ef10d7e69f818a35fee839840"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "7ec1d49c7a0aaa6a5ac86e228c29c6248b3e617e57764ba4980ba8970a0eddde"
 ---
 
 # REACT_NO_STATIC_IMPORTS_IN_EVENT_HANDLERS
 
 > **🔒 Permissions Required**: Conformance
+
+> **💡 Note:** This rule has been deprecated as of version [1.8.0](/docs/conformance/changelog#1.8.0) and will be removed in 2.0.0.
 
 React event handlers are async, and as such, this means we can defer loading the
 associated code until we interact with the UI, triggering that event handler. Specifically, this

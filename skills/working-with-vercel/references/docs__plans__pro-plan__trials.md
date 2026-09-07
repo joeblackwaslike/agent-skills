@@ -17,8 +17,8 @@ related:
 summary: "Learn all about Vercel's Pro Plan free trial, including features, usage limits, and options post-trial. Learn how to manage your team's projects with..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/pro-plan/trials.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "3f7eda576d98992ae22e4f40dc5f2bfe64bdc8ff3fe413a218f4196760fc5fde"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "b9f182c4a125f5cd4da53b6642d87e36a4329b59eec7588d1af2b1b3213108b1"
 ---
 
 # Understanding Vercel
@@ -78,10 +78,10 @@ The following Pro features are **not available** on the trial:
 
 - [Observability Plus](/docs/observability/observability-plus) (available on Paid Pro only)
 
-- [Log drains](/docs/drains)
-- [Account webhooks](/docs/webhooks#account-webhooks)
-- [Free first-year domain with Pro](/docs/plans/pro-plan#free-first-year-domain-with-pro)
-- [Sandbox failover regions](/docs/sandbox/concepts/regions#failover-regions)
+* [Log drains](/docs/drains)
+* [Account webhooks](/docs/webhooks#account-webhooks)
+* [Free first-year domain with Pro](/docs/plans/pro-plan#free-first-year-domain-with-pro)
+* [Sandbox failover regions](/docs/sandbox/concepts/regions#failover-regions)
 
 The free first-year domain offer is excluded from the Pro trial and becomes available once your team is on a paid Pro plan.
 
@@ -111,7 +111,7 @@ Billing begins immediately after your trial ends if you have added a payment met
 Without a payment method, your account reverts to a Hobby plan when the trial ends. Alternatively, you can use the **Downgrade** button located in the **Pro Plan** section of your [team's Billing page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fbilling\&title=Go+to+Billing) to immediately end your trial and return to a Hobby plan. All team members will be removed from your team, and all Hobby limits will apply to your team.
 
 > **💡 Note:** Charges apply only if you have a payment method. If a trial finishes and you
-> haven't set payment method, you will  get charged.
+> haven't set payment method, you will **not** get charged.
 
 You can upgrade to a Pro plan anytime later by visiting **Settings > Billing** and adding a payment method.
 

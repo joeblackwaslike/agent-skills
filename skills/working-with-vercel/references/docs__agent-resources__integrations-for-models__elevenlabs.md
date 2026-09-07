@@ -9,12 +9,14 @@ prerequisites:
   - /docs/agent-resources/integrations-for-models
   - /docs/agent-resources
 related:
-  []
+  - /docs/projects/overview
+  - /docs/cli
+  - /docs/cli/env
 summary: Learn how to add the ElevenLabs connectable account integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/elevenlabs.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "bec8ed58d36e068e91b333ce590996e3b484ddfc8c7a6beb4e23e2d71d7dfec5"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "7b2109eea9b9f67a5e78b807c5f8c4d0ff28ddcdd44e36c9db073af4fa5804ac"
 ---
 
 # Vercel ElevenLabs Integration
@@ -50,6 +52,60 @@ You can use the Vercel and ElevenLabs integration to power a variety of AI appli
 ### Available models
 
 ElevenLabs offers models that specialize in advanced voice synthesis and audio processing, delivering natural-sounding speech and audio enhancements suitable for various interactive media applications.
+
+## Getting started
+
+The Vercel  integration can be accessed through the **AI** tab on your [Vercel dashboard](/dashboard).
+
+### Prerequisites
+
+To follow this guide, you'll need the following:
+
+- An existing [Vercel project](/docs/projects/overview#creating-a-project)
+- The latest version of [Vercel CLI](/docs/cli#installing-vercel-cli)
+  <CodeBlock>
+    <Code tab="pnpm">
+      ```bash
+      pnpm i vercel
+      ```
+    </Code>
+    <Code tab="yarn">
+      ```bash
+      yarn i vercel
+      ```
+    </Code>
+    <Code tab="npm">
+      ```bash
+      npm i vercel
+      ```
+    </Code>
+    <Code tab="bun">
+      ```bash
+      bun i vercel
+      ```
+    </Code>
+  </CodeBlock>
+
+### Add the provider to your project
+
+#### Using the dashboard
+
+1. Navigate to the **AI** tab in your [Vercel dashboard](/dashboard)
+2. Select  from the list of providers, and press **Add**
+3. Review the provider information, and press **Add Provider**
+4. You can now select which projects the provider will have access to. You can choose from **All Projects** or **Specific Projects**
+   - If you select **Specific Projects**, you'll be prompted to select the projects you want to connect to the provider. The list will display projects associated with your scoped team
+   - Multiple projects can be selected during this step
+5. Select the **Connect to Project** button
+6. You'll be redirected to the provider's website to complete the connection process
+7. Once the connection is complete, you'll be redirected back to the Vercel dashboard, and the provider integration dashboard page. From here you can manage your provider settings, view usage, and more
+8. Pull the environment variables into your project using [Vercel CLI](/docs/cli/env). Link the project first if you haven't already; `vercel env pull` requires a linked project (or `VERCEL_ORG_ID` and `VERCEL_PROJECT_ID` to be set).
+   ```bash filename="terminal"
+   vercel link
+   vercel env pull
+   ```
+9. Install the providers package
+10. Connect your project using the code below:
 
 ## More resources
 

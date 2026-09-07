@@ -16,8 +16,8 @@ related:
 summary: Create chat completions using the Chat Completions API with support for streaming, image attachments, and PDF documents.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/chat-completions.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "2e73052042455ae1987af667b76a54ea0063c4d5134220aa0f545a8a680aefff"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "aa9b216f0f4bc139fed77be91bc5a49ab4e46107cdbe8be29e70900f48788025"
 ---
 
 # Chat Completions
@@ -32,6 +32,7 @@ Create chat completions using various AI models available through the AI Gateway
 
 - [Create Chat](https://v0.app/docs/api/v2/reference/chats/create-chat?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fchat-completions&source_site=vercel-docs&relationship=related) — Creates a new chat from a prompt. The request blocks until the model response is complete and returns the chat.
 - [useCompletion](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-completion?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fchat-completions&source_site=vercel-docs&relationship=related)
+- [Completion](https://ai-sdk.dev/docs/ai-sdk-ui/completion?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fchat-completions&source_site=vercel-docs&relationship=related)
 - [Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fchat-completions&source_site=vercel-docs&relationship=related) — Use the AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
 - [Image Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fchat-completions&source_site=vercel-docs&relationship=related) — Generate images using AI models that support multimodal output through the Chat Completions API.
 - [Direct REST API Usage](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fchat-completions&source_site=vercel-docs&relationship=related) — Use the AI Gateway API directly without client libraries using curl and fetch.

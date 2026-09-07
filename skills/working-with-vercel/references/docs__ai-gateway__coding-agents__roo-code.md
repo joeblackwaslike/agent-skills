@@ -13,8 +13,8 @@ related:
 summary: Use Roo Code with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/roo-code.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "b369391d6fd8e0ef8bf530db9b43ea5f6845ede830d99d77fe41bea00ca3a18b"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "36e5dcce86cc85f2e97bcc4ba31991531ddaa28fada3b551703f22ba6f31e67d"
 ---
 
 # Roo Code
@@ -28,7 +28,7 @@ sha256: "b369391d6fd8e0ef8bf530db9b43ea5f6845ede830d99d77fe41bea00ca3a18b"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Froo-code&source_site=vercel-docs&relationship=related)
-- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Froo-code&source_site=vercel-docs&relationship=related) — Use OpenCode with the AI Gateway.
+- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Froo-code&source_site=vercel-docs&relationship=related) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
 - [Kilo Code](https://vercel.com/docs/ai-gateway/coding-agents/kilo-code?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Froo-code&source_site=vercel-docs&relationship=related) — Use the Kilo Code CLI with the AI Gateway as an OpenAI-compatible provider.
 - [Xcode](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Froo-code&source_site=vercel-docs&relationship=related) — Use Xcode's coding assistant with the AI Gateway.
 - [Blackbox AI](https://vercel.com/docs/ai-gateway/coding-agents/blackbox?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Froo-code&source_site=vercel-docs&relationship=related) — Use the Blackbox AI CLI with the AI Gateway.

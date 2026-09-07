@@ -16,8 +16,8 @@ related:
 summary: Learn about the container image used for Vercel builds.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/build-image.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "b385c7fd5f9a8303f65edf376ebe202d0f82ef16da01a12c2039c1c41144f110"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "4888ee720d05485d4537e23d50070ba0a62e139727b09ba73616b8ebc81b6283"
 ---
 
 # Build image overview
@@ -51,9 +51,9 @@ Full cross-link map for this page: [/docs/builds/build-image.graph.md](/docs/bui
 | [Node.js](/docs/functions/runtimes/node-js)                       | `24.x` `22.x` `20.x`                                    |
 | [Python](/docs/functions/runtimes/python)                         | `3.14`, `3.13`, `3.12`                                  |
 | [Ruby](/docs/functions/runtimes/ruby)                             | `3.3.x`                                                 |
-|                                                  |  |
-| [Edge](/docs/functions/runtimes/edge)                     |  |
-| [Community Runtimes](/docs/functions/runtimes#community-runtimes) |  |
+| [Go](/docs/functions/runtimes/go)                                                 | (Supported) |
+| [Edge](/docs/functions/runtimes/edge)                     | (Supported) |
+| [Community Runtimes](/docs/functions/runtimes#community-runtimes) | (Supported) |
 
 The build image uses [Amazon Linux 2023](https://aws.amazon.com/linux/amazon-linux-2023/) as its base image.
 

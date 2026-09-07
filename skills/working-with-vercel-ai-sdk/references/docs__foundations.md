@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/foundations.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "dbc0b9b860c00c1073db44d40d1ceda8e59dba31ee7ff3137e70feb60f6bfa5d"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "f885ef1b1fa75c7a1ef49c8d02e3e76f69934c238e3a296edbf3cec586dc9824"
 ---
 
 # Foundations
@@ -281,6 +281,7 @@ sha256: "dbc0b9b860c00c1073db44d40d1ceda8e59dba31ee7ff3137e70feb60f6bfa5d"
     - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
     - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
     - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)
+    - [ToolChoiceViolationError](/docs/reference/ai-sdk-errors/ai-tool-choice-violation-error)
     - [AI_TypeValidationError](/docs/reference/ai-sdk-errors/ai-type-validation-error)
     - [AI_UIMessageStreamError](/docs/reference/ai-sdk-errors/ai-ui-message-stream-error)
     - [AI_UnsupportedFunctionalityError](/docs/reference/ai-sdk-errors/ai-unsupported-functionality-error)

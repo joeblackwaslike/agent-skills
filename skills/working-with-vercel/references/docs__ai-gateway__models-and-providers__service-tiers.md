@@ -13,8 +13,8 @@ related:
 summary: Control processing priority and cost for OpenAI, Google AI Studio, Google Vertex AI, and SpaceXAI models using service tiers through AI Gateway,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/service-tiers.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "a537dcad8fa80e52a2361cae3b7a222a78323169a71a3d591feb4e18ff402e14"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "ea52082a4d5d46fa5af185d8afbe7a91101ecca5c6cdbaeba2efcbfc2fc2c55e"
 ---
 
 # Service Tiers
@@ -30,13 +30,11 @@ OpenAI, Google AI Studio, Google Vertex AI, and SpaceXAI offer different process
 - [Service tiers now available on AI Gateway](https://vercel.com/changelog/service-tiers-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=related)
 - [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=related)
 - [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=related) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
-- [Amazon Bedrock](https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=related)
-- [AI Gateway production index](https://vercel.com/blog/ai-gateway-production-index?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=related)
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including pricing and markup, SDK and API compatibility, model availabilit
 - [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=related) — Learn about pricing for AI Gateway.
+- [Provider Options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=related) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway
 - [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
 - [Provider Filtering, Ordering & Sorting](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=related) — Control which providers handle your requests, in what order, and how they are ranked using order, only, and sort options
-- [Stripe Billing](https://vercel.com/docs/ai-gateway/ecosystem/stripe-billing?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=related) — Add usage-based billing to your AI application with Stripe and AI Gateway.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/service-tiers.graph.md](/docs/ai-gateway/models-and-providers/service-tiers.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

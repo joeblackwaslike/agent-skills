@@ -16,8 +16,8 @@ related:
 summary: "Vercel's Draft Mode enables you to view your unpublished headless CMS content on your site before publishing it."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/draft-mode.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "8faf8443dd40e421befd6cf4f3ea62a4c64c7c8b6e60b1761d86218a80cd54b4"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "39ca80277dfd7d01c37cb5f4d3789ca4b77e25f51d4bfde6e768fc2ab5e4c3f6"
 ---
 
 # Draft Mode
@@ -33,7 +33,7 @@ Draft Mode lets you view your unpublished headless CMS content on your website r
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related&source_path=%2Fdocs%2Fdraft-mode&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Fdraft-mode&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related&source_path=%2Fdocs%2Fdraft-mode&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
-- [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank?from=related&source_path=%2Fdocs%2Fdraft-mode&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, security defaults, AI infrastructure, GPU comp
+- [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank?from=related&source_path=%2Fdocs%2Fdraft-mode&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, container image functions, security defaults,
 - [Vercel vs Railway](https://vercel.com/kb/guide/vercel-vs-railway?from=related&source_path=%2Fdocs%2Fdraft-mode&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Railway: serverless vs always-on containers, container images via Dockerfile.vercel, frame
 - [draftMode](https://nextjs.org/docs/app/api-reference/functions/draft-mode?from=related&source_path=%2Fdocs%2Fdraft-mode&source_site=vercel-docs&relationship=related) — API Reference for the draftMode function.
 - [How to preview content with Preview Mode in Next.js](https://nextjs.org/docs/pages/guides/preview-mode?from=related&source_path=%2Fdocs%2Fdraft-mode&source_site=vercel-docs&relationship=related) — Next.js has the preview mode for statically generated pages. You can learn how it works here.
@@ -41,7 +41,7 @@ Draft Mode lets you view your unpublished headless CMS content on your website r
 - [New features for SvelteKit: Optimize your application with ease](https://vercel.com/blog/feature-complete-sveltekit?from=related&source_path=%2Fdocs%2Fdraft-mode&source_site=vercel-docs&relationship=related)
 - [Partial prerendering: Building towards a new default rendering model for web applications](https://vercel.com/blog/partial-prerendering-with-next-js-creating-a-new-default-rendering-model?from=related&source_path=%2Fdocs%2Fdraft-mode&source_site=vercel-docs&relationship=related)
 - [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache?from=related&source_path=%2Fdocs%2Fdraft-mode&source_site=vercel-docs&relationship=related)
-- [Draft Flags](https://vercel.com/docs/flags/vercel-flags/dashboard/drafts?from=related&source_path=%2Fdocs%2Fdraft-mode&source_site=vercel-docs&relationship=related) — Learn how draft flags work and how to promote them to Vercel Flags.
+- [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Fdraft-mode&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
 
 Full cross-link map for this page: [/docs/draft-mode.graph.md](/docs/draft-mode.graph.md?from=related&source_path=%2Fdocs%2Fdraft-mode&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -212,6 +212,10 @@ export const config = {
 2. Send a `__prerender_bypass` cookie with the same value as `bypassToken` in your config.
 
 To render the draft content, SvelteKit will check for `__prerender_bypass`. If its value matches the value of `bypassToken`, it will render content fetched at request time rather than prebuilt content.
+
+> **💡 Note:** We recommend using a cryptographically secure random number generator at build
+> time as your `bypassToken` value. If a malicious actor guesses your
+> `bypassToken`, they can view your pages in Draft Mode.
 
 Once implemented, team members can access Draft Mode from the Vercel Toolbar by selecting the eye icon . Once selected, the toolbar will turn purple to indicate that Draft Mode is enabled.
 

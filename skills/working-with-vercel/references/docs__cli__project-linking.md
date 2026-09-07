@@ -14,8 +14,8 @@ related:
 summary: Learn how to link existing Vercel Projects with Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/project-linking.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "db10c3ab19feeac0971e03ac0e15183d6fdb74ef572d4b4d4cb8778225417eed"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "a93b647c41c9dd013186f0ca83516d413738a7cd51699d609ae242bc0fcaa461"
 ---
 
 # Linking Projects with Vercel CLI
@@ -34,9 +34,9 @@ want to [deploy](/docs/cli/deploy) your directory to. You can choose to either [
 - [Faster, predictable project linking in the Vercel CLI](https://vercel.com/changelog/faster-predictable-project-linking-in-the-vercel-cli?from=related&source_path=%2Fdocs%2Fcli%2Fproject-linking&source_site=vercel-docs&relationship=related)
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fcli%2Fproject-linking&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related&source_path=%2Fdocs%2Fcli%2Fproject-linking&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
-- [vercel open](https://vercel.com/docs/cli/open?from=related&source_path=%2Fdocs%2Fcli%2Fproject-linking&source_site=vercel-docs&relationship=related) — Learn how to open your current project in the Vercel Dashboard using the vercel open CLI command.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fcli%2Fproject-linking&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
-- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fcli%2Fproject-linking&source_site=vercel-docs&relationship=related) — Learn how to create and manage deployments on Vercel.
+- [vercel open](https://vercel.com/docs/cli/open?from=related&source_path=%2Fdocs%2Fcli%2Fproject-linking&source_site=vercel-docs&relationship=related) — Learn how to open your current project in the Vercel Dashboard using the vercel open CLI command.
+- [vercel build](https://vercel.com/docs/cli/build?from=related&source_path=%2Fdocs%2Fcli%2Fproject-linking&source_site=vercel-docs&relationship=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
 
 Full cross-link map for this page: [/docs/cli/project-linking.graph.md](/docs/cli/project-linking.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fproject-linking&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

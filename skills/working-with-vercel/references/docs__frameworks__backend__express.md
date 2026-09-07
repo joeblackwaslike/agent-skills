@@ -17,8 +17,8 @@ related:
 summary: Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/express.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "284fb2d420f3dd71b35b89a344546eff33c25e6d589967f06857829f806c3619"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "3cdddf71388608c45eb39e518595e509862e4b6c86eae4665f1d872729ab7290"
 ---
 
 # Express on Vercel
@@ -35,10 +35,11 @@ Express is a fast, unopinionated, minimalist web framework for Node.js. You can 
 - [Experimental build mode for Hono and Express projects](https://vercel.com/changelog/experimental-build-mode-hono-express?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fexpress&source_site=vercel-docs&relationship=related)
 - [Zero-configuration Express backends](https://vercel.com/changelog/zero-configuration-express-backends?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fexpress&source_site=vercel-docs&relationship=related)
 - [How to Build a Weather API with Express and Vercel](https://vercel.com/kb/guide/weather-api-with-express?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fexpress&source_site=vercel-docs&relationship=related) — Provide real-time weather data to apps and websites with a single Express route.
+- [Build a Weather API on Vercel: Express, FastAPI, and Nitro](https://vercel.com/kb/guide/weather-api-with-fastapi?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fexpress&source_site=vercel-docs&relationship=related) — Build a weather API on Vercel with FastAPI, Express, or Nitro. Compare the three runtimes, add caching and Observability
 - [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fexpress&source_site=vercel-docs&relationship=related) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
 - [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fexpress&source_site=vercel-docs&relationship=related) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
-- [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fexpress&source_site=vercel-docs&relationship=related) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
 - [Fastify on Vercel](https://vercel.com/docs/frameworks/backend/fastify?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fexpress&source_site=vercel-docs&relationship=related) — Deploy Fastify applications to Vercel with zero configuration.
+- [Deploy a FastAPI app on Vercel](https://vercel.com/docs/frameworks/backend/fastapi?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fexpress&source_site=vercel-docs&relationship=related) — Deploy a FastAPI app on Vercel. Learn how the Python runtime, ASGI, static assets, and Vercel Functions work together.
 - [NestJS on Vercel](https://vercel.com/docs/frameworks/backend/nestjs?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fexpress&source_site=vercel-docs&relationship=related) — Deploy NestJS applications to Vercel with zero configuration.
 - [Elysia on Vercel](https://vercel.com/docs/frameworks/backend/elysia?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fexpress&source_site=vercel-docs&relationship=related) — Build fast TypeScript backends with Elysia and deploy to Vercel. Learn the project structure, plugins, middleware, and h
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fexpress&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.

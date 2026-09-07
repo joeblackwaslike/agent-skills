@@ -9,15 +9,15 @@ prerequisites:
   - /docs/flags/vercel-flags
   - /docs/flags
 related:
-  - /docs/flags/vercel-flags/dashboard/sdk-keys
   - /docs/flags/vercel-flags/sdks/flags-sdk
   - /docs/flags/vercel-flags/sdks/openfeature
   - /docs/flags/vercel-flags/sdks/core
+  - /docs/flags/vercel-flags/dashboard/sdk-keys
 summary: Learn how to integrate Vercel Flags into your application using the Flags SDK, OpenFeature, or the core library.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/sdks.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "2593386fce0e894069708e216f6d9cec62d92f2934650a90bc092e95a1e7b0e7"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "c64fa964cd98169d52ce8640fbc62113ab3a3409706d08528958fe8aa199066d"
 ---
 
 # SDKs
@@ -44,6 +44,18 @@ Full cross-link map for this page: [/docs/flags/vercel-flags/sdks.graph.md](/doc
 <!-- /docsgraph:related -->
 
 ## Integration options
+
+**Flags SDK** [→](/docs/flags/vercel-flags/sdks/flags-sdk)
+
+The recommended approach for Next.js and SvelteKit applications. Framework-native with full TypeScript support and automatic Flags Explorer integration.
+
+**OpenFeature** [→](/docs/flags/vercel-flags/sdks/openfeature)
+
+Use the vendor-neutral OpenFeature standard with Vercel Flags as the provider. Ideal if you want portability across flag providers.
+
+**Core Library** [→](/docs/flags/vercel-flags/sdks/core)
+
+Direct access to the evaluation engine for custom setups, non-framework environments, or when you need full control.
 
 ## Comparison
 

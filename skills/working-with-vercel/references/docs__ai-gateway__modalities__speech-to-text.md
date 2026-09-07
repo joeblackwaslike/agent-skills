@@ -3,7 +3,7 @@ title: Speech to Text
 product: vercel
 url: /docs/ai-gateway/modalities/speech-to-text
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/speech-to-text"
-last_updated: 2026-08-26
+last_updated: 2026-08-27
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/modalities
@@ -14,8 +14,8 @@ related:
 summary: Transcribe audio files into text with transcription models through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/speech-to-text.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "58ce51eafb33e7c2985a11723b9161ce0dbcb5e3ce2df4b15e3d6c6bfdcaa917"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "8e71c1e99895ef42f959b2c358726f30b3d1564a1b672dd205562b9f0ead578d"
 ---
 
 # Speech to Text
@@ -38,6 +38,7 @@ Transcribe recorded audio into text with transcription models such as `openai/wh
 - [xAI Grok audio models now available on Vercel AI Gateway](https://vercel.com/changelog/xai-grok-audio-models-now-available-on-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fspeech-to-text&source_site=vercel-docs&relationship=related)
 - [Speech to Text and Text to Speech Quickstart](https://vercel.com/docs/ai-gateway/getting-started/speech?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fspeech-to-text&source_site=vercel-docs&relationship=related) — Generate speech from text and transcribe audio back to text with AI Gateway.
 - [Text Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/text?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fspeech-to-text&source_site=vercel-docs&relationship=related) — Generate and stream text responses using AI Gateway.
+- [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fspeech-to-text&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fspeech-to-text&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/speech-to-text.graph.md](/docs/ai-gateway/modalities/speech-to-text.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fspeech-to-text&source_site=vercel-docs&relationship=graph)

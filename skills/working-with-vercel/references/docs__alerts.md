@@ -16,13 +16,15 @@ related:
 summary: "Get notified when something's wrong with your Vercel projects. Set up alerts through Slack, webhooks, or email so you can fix issues quickly."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/alerts.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "303575e99eddc91efd30b33de9154abdd17cfbaf5a0f55fb5a307a9de9593a5d"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "56993b105c7050d039c705fbb4839485f826034d362f6ac327c8ca20e6980548"
 ---
 
 # Alerts
 
 > **🔒 Permissions Required**: Alerts
+
+Alerts let you know when something's wrong with your Vercel projects, like a spike in failed function invocations or unusual usage patterns. You can get these alerts by email, through Slack, or set up a webhook so you can respond to issues.
 
 
 <!-- docsgraph:related -->
@@ -45,8 +47,6 @@ sha256: "303575e99eddc91efd30b33de9154abdd17cfbaf5a0f55fb5a307a9de9593a5d"
 
 Full cross-link map for this page: [/docs/alerts.graph.md](/docs/alerts.graph.md?from=related&source_path=%2Fdocs%2Falerts&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Alerts let you know when something's wrong with your Vercel projects, like a spike in failed function invocations or unusual usage patterns. You can get these alerts by email, through Slack, or set up a webhook so you can respond to issues.
 
 By default, you'll be notified about:
 

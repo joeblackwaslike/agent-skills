@@ -15,8 +15,8 @@ related:
 summary: Give each AI agent an isolated Linux user in a Vercel Sandbox with the @vercel/sandbox createUser, createGroup, and asUser methods, then share files...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/multi-agent.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "d79b13f1c71dd38d856958837c95e08e36bc0c2d1bf1f3bd2d51476e3aef1813"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "b58cddcbdf8b1d451a3fd3fb20422e9d1b386b2a3cb890f57f4d547943c11062"
 ---
 
 # Run isolated AI agents in one sandbox
@@ -36,6 +36,7 @@ Run several AI agents in one sandbox, each as its own Linux user with a private 
 - [How to run Herdr coding agents in isolated Vercel Sandboxes](https://vercel.com/kb/guide/run-herdr-coding-agents-isolated-vercel-sandboxes?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fmulti-agent&source_site=vercel-docs&relationship=related) — Install the vercel.sandbox plugin for Herdr, approve an upload manifest, run each AI coding agent in its own isolated Ve
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fmulti-agent&source_site=vercel-docs&relationship=related) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fmulti-agent&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
+- [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fmulti-agent&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
 - [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fmulti-agent&source_site=vercel-docs&relationship=related) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fmulti-agent&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 

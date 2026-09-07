@@ -3,7 +3,7 @@ title: Integrations for Comments
 product: vercel
 url: /docs/comments/integrations
 canonical_url: "https://vercel.com/docs/comments/integrations"
-last_updated: 2026-08-19
+last_updated: 2026-08-28
 type: how-to
 prerequisites:
   - /docs/comments
@@ -16,13 +16,15 @@ related:
 summary: Learn how Comments integrates with Git providers like GitHub, GitLab, and BitBucket, as well as the Vercel app for Slack.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/comments/integrations.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "7fda7f873e4c99331a4a034a0473ba05dc46560c57c52333dd7d695537893f9f"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "d85f9f4b336cba34706eb69448007adfb2fb42f2ba1a8d59fedd61375efd1ab9"
 ---
 
 # Integrations for Comments
 
 ## Git provider integration
+
+Comments are available for projects using **any** Git provider. Github, BitBucket and GitLab [are supported automatically](/docs/git#supported-git-providers) with the same level of integration.
 
 
 <!-- docsgraph:related -->
@@ -44,8 +46,6 @@ sha256: "7fda7f873e4c99331a4a034a0473ba05dc46560c57c52333dd7d695537893f9f"
 
 Full cross-link map for this page: [/docs/comments/integrations.graph.md](/docs/comments/integrations.graph.md?from=related&source_path=%2Fdocs%2Fcomments%2Fintegrations&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Comments are available for projects using **any** Git provider. Github, BitBucket and GitLab [are supported automatically](/docs/git#supported-git-providers) with the same level of integration.
 
 Pull requests (PRs) with deployments enabled receive [generated PR messages from Vercel bot](/docs/git/vercel-for-github). These PR messages contain the deployment URL.
 

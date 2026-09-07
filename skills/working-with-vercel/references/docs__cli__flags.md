@@ -11,11 +11,12 @@ related:
   - /docs/flags/vercel-flags
   - /docs/flags/vercel-flags/dashboard
   - /docs/flags/vercel-flags/dashboard/segments
+  - /docs/cli/global-options
 summary: Learn how to manage feature flags for your Vercel project using the vercel flags CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/flags.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "1093128453da79cc567189503a95e31dee038bc6440cff9942ae463c72578ef7"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "4e0a8427d04823126eaa50cfb2e96527859764914de4224cdacca9d3e1884339"
 ---
 
 # vercel flags
@@ -36,9 +37,9 @@ The `vercel flags` command manages [Vercel Flags](/docs/flags/vercel-flags) for 
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=related)
 - [Rolling out a new feature](https://vercel.com/docs/flags/vercel-flags/cli/roll-out-feature?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=related) — Create a feature flag, wire it into your application with the Flags SDK, and start a staged rollout using the Vercel CLI
 - [vercel rolling-release](https://vercel.com/docs/cli/rolling-release?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=related) — Learn how to manage your project's rolling releases using the vercel rolling-release CLI command.
-- [vercel project](https://vercel.com/docs/cli/project?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=related) — Perform the following commands from the terminal for your Vercel Projects: list, add, inspect, update settings, rename,
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [Running an A/B test](https://vercel.com/docs/flags/vercel-flags/cli/run-ab-test?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=related) — Set up an A/B test with a feature flag, track results through Web Analytics, and clean up afterward using the Vercel CLI
+- [vercel routes](https://vercel.com/docs/cli/routes?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=related) — Learn how to manage project-level routing rules using the vercel routes CLI command.
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 
 Full cross-link map for this page: [/docs/cli/flags.graph.md](/docs/cli/flags.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -1254,6 +1255,24 @@ vercel flags override --decrypt <token>
 ```
 
 *Inspect an existing override token by decrypting it back to its JSON payload.*
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel flags` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 
 ---

@@ -14,8 +14,8 @@ related:
 summary: Configure thinking for Google Gemini and Gemma models with the AI SDK and AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/google.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "272f74c927b2ba1dd8e42a1e68e1d13b0e0fd7feb5c601cefa002c7e6b675f79"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "57012a7ec67b2374a1062ad40c3110193b427059c3aab0754694149d444218e6"
 ---
 
 # Google and Vertex Reasoning
@@ -33,7 +33,6 @@ Gemini 2.5 and later models use an internal "thinking process" that improves the
 - [Google](https://ai-sdk.dev/providers/ai-sdk-providers/google?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fgoogle&source_site=vercel-docs&relationship=related)
 - [Gemini CLI](https://ai-sdk.dev/providers/community-providers/gemini-cli?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fgoogle&source_site=vercel-docs&relationship=related)
 - [Get started with Gemini 3](https://ai-sdk.dev/cookbook/guides/gemini?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fgoogle&source_site=vercel-docs&relationship=related)
-- [Gemini 3.1 Pro is live on AI Gateway](https://vercel.com/changelog/gemini-3-1-pro-is-live-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fgoogle&source_site=vercel-docs&relationship=related)
 - [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fgoogle&source_site=vercel-docs&relationship=related) — Control how much a model thinks before answering with the OpenAI Chat Completions API.
 - [Extended Thinking](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fgoogle&source_site=vercel-docs&relationship=related) — Configure how much Claude thinks before answering, using the Anthropic Messages API thinking parameter.
 - [OpenAI Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fgoogle&source_site=vercel-docs&relationship=related) — Configure reasoning and thinking for OpenAI models with the AI SDK and AI Gateway.

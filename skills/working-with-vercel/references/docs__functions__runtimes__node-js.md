@@ -17,8 +17,8 @@ related:
 summary: Learn how to use the Node.js runtime to create functions and deploy Node.js servers on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/node-js.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "40fba16c59c95a6d6361e18f0961b5ba45887452e057606809c8f8b8e2a84ce3"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "398300f216dfdc7991589f9adfbba4d20bc3f858d194b5e743100761de1b8a90"
 ---
 
 # Using the Node.js Runtime with Vercel Functions
@@ -42,7 +42,7 @@ Use the Node.js runtime to deploy Node.js HTTP servers or Vercel Functions writt
 - [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
 - [Function streaming to be framework-agnostic on Vercel](https://vercel.com/blog/vercel-functions-streaming-to-be-framework-agnostic?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related)
 - [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
-- [Express on Vercel](https://vercel.com/docs/frameworks/backend/express?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
+- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 
 Full cross-link map for this page: [/docs/functions/runtimes/node-js.graph.md](/docs/functions/runtimes/node-js.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -17,13 +17,15 @@ related:
 summary: Learn how to use the Bun runtime with Vercel Functions to create fast, efficient functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/bun.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "a51dc9309ae7c0c5fbd54e983c1b854c753c9ebafc5060052ee8b352d6ee3a76"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "908c7cbf54ccfd3bd3d414f51942894b75fb8cd92737cb544d4c4a0093739575"
 ---
 
 # Using the Bun Runtime with Vercel Functions
 
 > **🔒 Permissions Required**: The Bun runtime
+
+Bun is a fast, all-in-one JavaScript runtime that serves as an alternative to Node.js.
 
 
 <!-- docsgraph:related -->
@@ -41,13 +43,11 @@ sha256: "a51dc9309ae7c0c5fbd54e983c1b854c753c9ebafc5060052ee8b352d6ee3a76"
 - [How to ship an Elysia app on Vercel](https://vercel.com/kb/guide/ship-a-elysia-app-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=related) — Deploy a Elysia app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and co
 - [How to ship a Nitro app on Vercel](https://vercel.com/kb/guide/ship-a-nitro-app-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=related) — Deploy a Nitro app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
 - [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=related) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
-- [Frameworks on Vercel](https://vercel.com/docs/frameworks?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
 - [Elysia on Vercel](https://vercel.com/docs/frameworks/backend/elysia?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=related) — Build fast TypeScript backends with Elysia and deploy to Vercel. Learn the project structure, plugins, middleware, and h
+- [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 
 Full cross-link map for this page: [/docs/functions/runtimes/bun.graph.md](/docs/functions/runtimes/bun.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Bun is a fast, all-in-one JavaScript runtime that serves as an alternative to Node.js.
 
 Bun provides Node.js API compatibility and is generally faster than Node.js for CPU-bound tasks. It includes a bundler, test runner, and package manager.
 
@@ -153,7 +153,7 @@ When using Next.js, and [ISR](/docs/incremental-static-regeneration), you must c
 
 ### Routing Middleware
 
-The Bun runtime works with [Routing Middleware](/docs/routing-middleware) the same way as the Node.js runtime once you set the `bunVersion` in your `vercel.json` file. Note that you'll also have to set the runtime config to `nodejs` in your  file.
+The Bun runtime works with [Routing Middleware](/docs/routing-middleware) the same way as the Node.js runtime once you set the `bunVersion` in your `vercel.json` file. Note that you'll also have to set the runtime config to `nodejs` in your `middleware.ts` file.
 
 ## Feature support
 

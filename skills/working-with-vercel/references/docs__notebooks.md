@@ -12,13 +12,15 @@ related:
 summary: Learn more about Notebooks and how they allow you to organize and save your queries.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/notebooks.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "487b22b16836aa6081a7cf223092dce7b665a5e7802edb99fb74f5b11c9fd62b"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "1b9d4851899bb0122c3c0384ae436c53a14853caf3d1910314b186042afb57ae"
 ---
 
 # Notebooks
 
 > **🔒 Permissions Required**: Notebooks
+
+**Notebooks** allow you to collect and manage multiple queries related to your application's metrics and performance data.
 
 
 <!-- docsgraph:related -->
@@ -31,15 +33,13 @@ sha256: "487b22b16836aa6081a7cf223092dce7b665a5e7802edb99fb74f5b11c9fd62b"
 - [Query and visualize workflow data in Vercel Observability](https://vercel.com/changelog/query-and-visualize-workflow-data-in-vercel-observability?from=related&source_path=%2Fdocs%2Fnotebooks&source_site=vercel-docs&relationship=related)
 - [Query](https://vercel.com/docs/query?from=related&source_path=%2Fdocs%2Fnotebooks&source_site=vercel-docs&relationship=related) — Query and visualize your Vercel usage, traffic, and more in observability.
 - [New custom visualization in Vercel Observability](https://vercel.com/changelog/new-custom-visualization-in-vercel-observability?from=related&source_path=%2Fdocs%2Fnotebooks&source_site=vercel-docs&relationship=related)
-- [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fnotebooks&source_site=vercel-docs&relationship=related) — Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application perfor
+- [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fnotebooks&source_site=vercel-docs&relationship=related) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [Monitoring Quickstart](https://vercel.com/docs/query/monitoring/quickstart?from=related&source_path=%2Fdocs%2Fnotebooks&source_site=vercel-docs&relationship=related) — In this quickstart guide, you'll discover how to create and execute a query to visualize the most popular posts on your
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fnotebooks&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fnotebooks&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
 
 Full cross-link map for this page: [/docs/notebooks.graph.md](/docs/notebooks.graph.md?from=related&source_path=%2Fdocs%2Fnotebooks&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-**Notebooks** allow you to collect and manage multiple queries related to your application's metrics and performance data.
 
 Within a single notebook, you can store multiple queries that examine different aspects of your system - each with its own specific filters, time ranges, and data aggregations.
 You can build comprehensive dashboards or analysis workflows by grouping related queries together.

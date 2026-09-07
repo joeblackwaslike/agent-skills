@@ -17,8 +17,8 @@ related:
 summary: Give a LangChain agent a tool that executes model-generated code in an isolated Vercel Sandbox, with models served by AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/ecosystem/langchain.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "33f1d33d08932c59adb8449f0466d23d52c8e85233eb7273470962a2403d737c"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "684b007a85e41d4322755457462dc70e0903d7f5eb7fbfba06be64c4a39df2b2"
 ---
 
 # LangChain
@@ -41,6 +41,7 @@ through [AI Gateway](/docs/ai-gateway).
 - [Building an AI chatbot with Next.js, Langchain, and OpenAI](https://vercel.com/kb/guide/nextjs-langchain-vercel-ai?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Flangchain&source_site=vercel-docs&relationship=related) — Dive into the world of LangChain.js and Next.js with our detailed guide. Learn how to set up a chatbot, structure output
 - [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Flangchain&source_site=vercel-docs&relationship=related)
 - [LangChain](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/langchain?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Flangchain&source_site=vercel-docs&relationship=related) — Learn how to integrate Vercel AI Gateway with LangChain to access multiple AI models through a unified interface
+- [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Flangchain&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Flangchain&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/sandbox/ecosystem/langchain.graph.md](/docs/sandbox/ecosystem/langchain.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Flangchain&source_site=vercel-docs&relationship=graph)

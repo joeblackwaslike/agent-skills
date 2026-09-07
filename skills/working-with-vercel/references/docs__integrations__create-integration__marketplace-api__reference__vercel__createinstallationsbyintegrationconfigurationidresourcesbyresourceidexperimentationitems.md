@@ -3,7 +3,7 @@ title: createinstallationsbyintegrationconfigurationidresourcesbyresourceidexper
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/createinstallationsbyintegrationconfigurationidresourcesbyresourceidexperimentationitems
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/createinstallationsbyintegrationconfigurationidresourcesbyresourceidexperimentationitems"
-last_updated: 2026-08-31
+last_updated: 2026-09-07
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about createinstallationsbyintegrationconfigurationidresourcesbyresourceidexperimentationitems on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/createinstallationsbyintegrationconfigurationidresourcesbyresourceidexperimentationitems.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "ae5f2bf256a43fb97a204127e9dc496b63564ef3762c942b8412f5c88fbfcc61"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "d5e72dead9a371a831ab136806a13325471fed3b56fa3eea1cf55a6a65d7fb51"
 ---
 
 # Create one or multiple experimentation items

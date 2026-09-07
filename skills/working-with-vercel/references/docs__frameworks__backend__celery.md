@@ -17,13 +17,17 @@ related:
 summary: Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without a long-lived worker process.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/celery.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "a6b2149a3f77979d7a40375b3a3e0b4a59196f0c552b1dd5ff2c1d421ded9b21"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "76c29983c8ebc9b46a88952b3bcf9dc717ea4f653346bd5ebf779e1de41a36ab"
 ---
 
 # Run background tasks with Celery on Vercel
 
 > **🔒 Permissions Required**: Vercel Queues
+
+Deploy Celery on Vercel with the Python runtime, Vercel Queues, and Vercel
+Functions. Vercel builds each Celery worker as a private, queue-triggered
+Vercel Function, so you don't need to run a long-lived worker process.
 
 
 <!-- docsgraph:related -->
@@ -37,15 +41,11 @@ sha256: "a6b2149a3f77979d7a40375b3a3e0b4a59196f0c552b1dd5ff2c1d421ded9b21"
 - [How to run background jobs in Next.js](https://vercel.com/kb/guide/how-to-run-background-jobs-in-nextjs-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fcelery&source_site=vercel-docs&relationship=related) — Learn the durable way to run background jobs in Next.js on Vercel with the Workflow SDK, and when to reach for Queues or
 - [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fcelery&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
 - [Deploy Dramatiq workers on Vercel](https://vercel.com/docs/frameworks/backend/dramatiq?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fcelery&source_site=vercel-docs&relationship=related) — Deploy Dramatiq workers on Vercel. Learn how Dramatiq actors use Vercel Queues and Vercel Functions to process backgroun
-- [Queues concepts](https://vercel.com/docs/queues/concepts?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fcelery&source_site=vercel-docs&relationship=related) — Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fcelery&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fcelery&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/frameworks/backend/celery.graph.md](/docs/frameworks/backend/celery.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fcelery&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Deploy Celery on Vercel with the Python runtime, Vercel Queues, and Vercel
-Functions. Vercel builds each Celery worker as a private, queue-triggered
-Vercel Function, so you don't need to run a long-lived worker process.
 
 ## Create or import your app
 

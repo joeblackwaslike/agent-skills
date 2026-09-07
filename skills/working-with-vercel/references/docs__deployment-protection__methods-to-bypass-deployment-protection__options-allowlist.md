@@ -3,7 +3,7 @@ title: OPTIONS Allowlist
 product: vercel
 url: /docs/deployment-protection/methods-to-bypass-deployment-protection/options-allowlist
 canonical_url: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/options-allowlist"
-last_updated: 2026-08-11
+last_updated: 2026-08-28
 type: how-to
 prerequisites:
   - /docs/deployment-protection/methods-to-bypass-deployment-protection
@@ -15,13 +15,15 @@ related:
 summary: Learn how to disable Deployment Protection for CORS preflight requests for a list of paths.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/options-allowlist.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "3f77979f695e772ec236bb1a305847c94456e4d14066de8aa6fda75a1191be4d"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "9b26934ca190e67eafe714017334e617aeaf0232b05fa83b6775d32a76f5f5f1"
 ---
 
 # OPTIONS Allowlist
 
 > **🔒 Permissions Required**: OPTIONS Allowlist
+
+You can use OPTIONS Allowlist to disable Deployment Protection (including [Vercel Authentication](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication), [Password Protection](/docs/deployment-protection/methods-to-protect-deployments/password-protection), and [Trusted IPs](/docs/deployment-protection/methods-to-protect-deployments/trusted-ips)) on any incoming CORS preflight `OPTIONS` request for a list of paths.
 
 
 <!-- docsgraph:related -->
@@ -41,8 +43,6 @@ sha256: "3f77979f695e772ec236bb1a305847c94456e4d14066de8aa6fda75a1191be4d"
 
 Full cross-link map for this page: [/docs/deployment-protection/methods-to-bypass-deployment-protection/options-allowlist.graph.md](/docs/deployment-protection/methods-to-bypass-deployment-protection/options-allowlist.graph.md?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Foptions-allowlist&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-You can use OPTIONS Allowlist to disable Deployment Protection (including [Vercel Authentication](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication), [Password Protection](/docs/deployment-protection/methods-to-protect-deployments/password-protection), and [Trusted IPs](/docs/deployment-protection/methods-to-protect-deployments/trusted-ips)) on any incoming CORS preflight `OPTIONS` request for a list of paths.
 
 When you add a path to OPTIONS Allowlist, any incoming request with the method `OPTIONS` that **starts with** the path will no longer be covered by Deployment Protection. When you remove a path from OPTIONS Allowlist, the path becomes protected again with the project's Deployment Protection settings.
 

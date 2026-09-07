@@ -3,7 +3,7 @@ title: Password Protection
 product: vercel
 url: /docs/deployment-protection/methods-to-protect-deployments/password-protection
 canonical_url: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/password-protection"
-last_updated: 2026-08-21
+last_updated: 2026-08-28
 type: how-to
 prerequisites:
   - /docs/deployment-protection/methods-to-protect-deployments
@@ -17,13 +17,15 @@ related:
 summary: Require visitors to enter a password before they can view your deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/password-protection.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "16c6c9d017623a02d8e1208a708b1d4193da15a753a1afe904f59a4fdc3a121d"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "5669cdb9bcd93a59c1c43db3b2b0723cc776a57b192d5788827d9cf47868b9f0"
 ---
 
 # Password Protection
 
 > **🔒 Permissions Required**: Password Protection
+
+Password Protection requires visitors to enter a pre-defined password before they can access your deployment. You can set the desired password from your project settings when enabling the feature, and update it any time.
 
 
 <!-- docsgraph:related -->
@@ -34,20 +36,18 @@ sha256: "16c6c9d017623a02d8e1208a708b1d4193da15a753a1afe904f59a4fdc3a121d"
 - [How do I add password protection to my Vercel deployment?](https://vercel.com/kb/guide/how-do-i-add-password-protection-to-my-vercel-deployment?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fpassword-protection&source_site=vercel-docs&relationship=related) — Enable Password Protection on a Vercel deployment, configure automation and CORS bypasses, and verify the gate before yo
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fpassword-protection&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fpassword-protection&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
-- [Vercel vs Render](https://vercel.com/kb/guide/vercel-vs-render?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fpassword-protection&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Render: compute models, AI infrastructure, Docker support, background workers, and when to
+- [Vercel vs Render](https://vercel.com/kb/guide/vercel-vs-render?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fpassword-protection&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Render: compute models, AI infrastructure, Docker and container image support, background
 - [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fpassword-protection&source_site=vercel-docs&relationship=related) — Protect who can see your deployments.
-- [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fpassword-protection&source_site=vercel-docs&relationship=related)
 - [Protecting Deployments](https://vercel.com/blog/security-controls-protected-preview-deployments-passwords?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fpassword-protection&source_site=vercel-docs&relationship=related)
 - [Deployment Protection is now enabled by default for new projects](https://vercel.com/changelog/deployment-protection-is-now-enabled-by-default-for-new-projects?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fpassword-protection&source_site=vercel-docs&relationship=related)
 - [Access Control](https://vercel.com/docs/security/access-control?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fpassword-protection&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Restrict access to deployments with Passport](https://vercel.com/docs/passport?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fpassword-protection&source_site=vercel-docs&relationship=related) — Learn how to protect deployments with Passport, read visitor identity, and verify Passport tokens in server-side code.
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fpassword-protection&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 - [Tracking custom events](https://vercel.com/docs/analytics/custom-events?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fpassword-protection&source_site=vercel-docs&relationship=related) — Learn how to send custom analytics events from your application.
+- [Audit Logs](https://vercel.com/docs/audit-log?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fpassword-protection&source_site=vercel-docs&relationship=related) — Learn how to track and analyze your team members' activities.
 
 Full cross-link map for this page: [/docs/deployment-protection/methods-to-protect-deployments/password-protection.graph.md](/docs/deployment-protection/methods-to-protect-deployments/password-protection.graph.md?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fpassword-protection&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Password Protection requires visitors to enter a pre-defined password before they can access your deployment. You can set the desired password from your project settings when enabling the feature, and update it any time.
 
 ![Image](`/docs-assets/static/docs/concepts/projects/password-protection-screen.png`)
 

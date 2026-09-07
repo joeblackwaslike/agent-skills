@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-stream-provider-error.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "da8efa3d25f2eddaaa5b536fded1245be3581393beeb8215744ba4fb39158b30"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "7a8294ddeedf0a95eea0c7ad27fb9e1b370c74e1cda37f7eaef4c48eed055a61"
 ---
 
 # AI_StreamProviderError
@@ -87,6 +87,7 @@ preserved unchanged.
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
 - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
 - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)
+- [ToolChoiceViolationError](/docs/reference/ai-sdk-errors/ai-tool-choice-violation-error)
 - [AI_TypeValidationError](/docs/reference/ai-sdk-errors/ai-type-validation-error)
 - [AI_UIMessageStreamError](/docs/reference/ai-sdk-errors/ai-ui-message-stream-error)
 - [AI_UnsupportedFunctionalityError](/docs/reference/ai-sdk-errors/ai-unsupported-functionality-error)

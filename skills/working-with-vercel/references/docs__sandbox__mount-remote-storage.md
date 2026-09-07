@@ -16,8 +16,8 @@ related:
 summary: Mount an external object store such as Amazon S3 into a Vercel Sandbox with a FUSE driver, so code reads and writes remote files through the local...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/mount-remote-storage.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "e537ad0ff23c2a8065e00519a58df193e392feeacff383a2a8a20c1da011c7ea"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "62db36158b38a04f7ad3adde266656ab5d6ec4fa9598f588526ba45dadb6eba3"
 ---
 
 # Mount remote storage
@@ -36,7 +36,6 @@ Mount an external object store such as Amazon S3 into a sandbox and work with re
 - [Run Docker containers inside Vercel Sandbox](https://vercel.com/changelog/run-docker-containers-inside-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fmount-remote-storage&source_site=vercel-docs&relationship=related)
 - [How to install system packages in Vercel Sandbox](https://vercel.com/kb/guide/how-to-install-system-packages-in-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fmount-remote-storage&source_site=vercel-docs&relationship=related) — Learn how to install additional system packages in Vercel Sandbox with apt-get on the default Ubuntu-based managed image
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fmount-remote-storage&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
-- [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fmount-remote-storage&source_site=vercel-docs&relationship=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 - [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fmount-remote-storage&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fmount-remote-storage&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
@@ -56,6 +55,129 @@ Outbound access from the mount still follows the sandbox [firewall network polic
 ## Mount an Amazon S3 bucket
 
 This example uses Mountpoint for Amazon S3, the official FUSE driver for S3. Download and install the `mount-s3` package, create a mount directory, then mount the bucket:
+
+**TypeScript**
+
+```ts filename="index.ts"
+import { Sandbox } from '@vercel/sandbox';
+
+const sandbox = await Sandbox.create();
+
+try {
+  // Refresh the package index. The sandbox starts without one.
+  await sandbox.runCommand({
+    sudo: true,
+    cmd: 'apt-get',
+    args: ['update'],
+  });
+
+  // apt-get cannot install from a URL, so download the package first.
+  await sandbox.runCommand({
+    cmd: 'curl',
+    args: [
+      '-sL',
+      '-o',
+      '/tmp/mount-s3.deb',
+      'https://s3.amazonaws.com/mountpoint-s3-release/latest/x86_64/mount-s3.deb',
+    ],
+  });
+
+  // Install Mountpoint for Amazon S3. It pulls in its own FUSE dependency.
+  await sandbox.runCommand({
+    sudo: true,
+    cmd: 'apt-get',
+    args: ['install', '-y', '/tmp/mount-s3.deb'],
+  });
+
+  const MOUNT_DIR = '/mnt/s3';
+
+  await sandbox.runCommand({
+    sudo: true,
+    cmd: 'mkdir',
+    args: ['-p', MOUNT_DIR],
+  });
+
+  // Mount the bucket. Pass AWS credentials only to the mount-s3 command.
+  await sandbox.runCommand({
+    sudo: true,
+    cmd: 'mount-s3',
+    args: [process.env.S3_BUCKET_NAME, MOUNT_DIR, '--allow-other'],
+    env: {
+      AWS_ACCESS_KEY_ID: process.env.AWS_ACCESS_KEY_ID,
+      AWS_SECRET_ACCESS_KEY: process.env.AWS_SECRET_ACCESS_KEY,
+      AWS_SESSION_TOKEN: process.env.AWS_SESSION_TOKEN,
+      AWS_REGION: process.env.AWS_REGION,
+    },
+  });
+
+  // List the files in your bucket to confirm the mount.
+  await sandbox.runCommand({
+    cmd: 'ls',
+    args: ['-la', MOUNT_DIR],
+    stdout: process.stdout,
+  });
+} finally {
+  await sandbox.stop();
+}
+```
+
+**Python**
+
+```python filename="main.py"
+import asyncio
+import os
+
+from vercel import sandbox
+
+async def main() -> None:
+    async with sandbox.create_sandbox() as box:
+        # Refresh the package index. The sandbox starts without one.
+        await box.run_process("apt-get", ["update"], sudo=True, check=True)
+
+        # apt-get cannot install from a URL, so download the package first.
+        await box.run_process(
+            "curl",
+            [
+                "-sL",
+                "-o",
+                "/tmp/mount-s3.deb",
+                "https://s3.amazonaws.com/mountpoint-s3-release/latest/x86_64/mount-s3.deb",
+            ],
+            check=True,
+        )
+
+        # Install Mountpoint for Amazon S3. It pulls in its own FUSE dependency.
+        await box.run_process(
+            "apt-get",
+            ["install", "-y", "/tmp/mount-s3.deb"],
+            sudo=True,
+            check=True,
+        )
+
+        mount_dir = "/mnt/s3"
+        await box.run_process("mkdir", ["-p", mount_dir], sudo=True, check=True)
+
+        await box.run_process(
+            "mount-s3",
+            [os.environ["S3_BUCKET_NAME"], mount_dir, "--allow-other"],
+            sudo=True,
+            env={
+                "AWS_ACCESS_KEY_ID": os.environ["AWS_ACCESS_KEY_ID"],
+                "AWS_SECRET_ACCESS_KEY": os.environ["AWS_SECRET_ACCESS_KEY"],
+                "AWS_SESSION_TOKEN": os.environ["AWS_SESSION_TOKEN"],
+                "AWS_REGION": os.environ["AWS_REGION"],
+            },
+            check=True,
+        )
+
+        result = await box.run_process(
+            "ls", ["-la", mount_dir], capture_output=True, check=True
+        )
+        print(result.stdout)
+
+
+asyncio.run(main())
+```
 
 After the mount succeeds, `ls -la /mnt/s3` prints the objects in your bucket. Any command in the sandbox can now read from and write to `/mnt/s3`.
 

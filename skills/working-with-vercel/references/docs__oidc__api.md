@@ -12,13 +12,17 @@ related:
 summary: "Learn how to configure your own API to trust Vercel's OpenID Connect (OIDC) Identity Provider (IdP)"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/api.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "e8e71c29012528821248f8e2ee3fe36a5303b2d500167540e614af0fd8f0dc7c"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "1bccc53dabab8523397f9def0db68b41fde9a5bed93fef359697de4f6cc7ff03"
 ---
 
 # Connect to your own API
 
 > **🔒 Permissions Required**: Secure backend access with OIDC federation
+
+## Validate the tokens
+
+To configure your own API to accept Vercel's OIDC tokens, you need to validate the tokens using Vercel's JSON Web Keys (JWTs), available at `https://oidc.vercel.com/[TEAM_SLUG]/.well-known/jwks` with the **team** issuer mode, and `https://oidc.vercel.com/.well-known/jwks` for the **global** issuer mode.
 
 
 <!-- docsgraph:related -->
@@ -35,10 +39,6 @@ sha256: "e8e71c29012528821248f8e2ee3fe36a5303b2d500167540e614af0fd8f0dc7c"
 
 Full cross-link map for this page: [/docs/oidc/api.graph.md](/docs/oidc/api.graph.md?from=related&source_path=%2Fdocs%2Foidc%2Fapi&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-## Validate the tokens
-
-To configure your own API to accept Vercel's OIDC tokens, you need to validate the tokens using Vercel's JSON Web Keys (JWTs), available at `https://oidc.vercel.com/[TEAM_SLUG]/.well-known/jwks` with the **team** issuer mode, and `https://oidc.vercel.com/.well-known/jwks` for the **global** issuer mode.
 
 ### Use the `jose.jwtVerify` function
 

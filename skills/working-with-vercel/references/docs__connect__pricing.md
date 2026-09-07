@@ -16,8 +16,8 @@ related:
 summary: How Vercel Connect is billed for token requests and triggers across plans and how to stop being billed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/pricing.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "62d2dc36aa81af20fcadbc77a8d40ef9133142846b21dd202d5a2a68f61b2250"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "5794961e6c3812b2a82436caa78223089b6f82f1f74aad1ca551d106b8f4d650"
 ---
 
 # Vercel Connect Pricing
@@ -35,8 +35,8 @@ Vercel Connect is billed by token requests and triggers.
 - [Pricing](https://v0.app/docs/pricing?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related) — Understand the v0 plans, pricing, and usage limits.
 - [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
 - [Optimizing Vercel Connect Usage](https://vercel.com/docs/connect/optimizing-usage?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related) — Reduce billed token requests and triggers by using the SDK cache effectively, tuning refresh behavior, and pruning trigg
-- [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Vercel Agent Pricing](https://vercel.com/docs/agent/pricing?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related) — Understand Vercel Agent pricing and how to track costs
+- [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Account Plans on Vercel](https://vercel.com/docs/plans?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about the different plans available on Vercel.
 - [Vercel KMS Pricing and Limits](https://vercel.com/docs/kms/pricing?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related) — How Vercel KMS is billed per signing operation, the platform limits that apply, and how to stop being billed.
 

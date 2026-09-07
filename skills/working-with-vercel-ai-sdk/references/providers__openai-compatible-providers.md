@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/openai-compatible-providers.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "d636537438aad78f984d388dd8a9d119f3cd98c854f4814b2618578315699d14"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "15e87ee7a2ffc4ff217dfb4053725b52886a53a3136b46adbea76fb06821c573"
 ---
 
 # OpenAI Compatible Providers
@@ -17,6 +17,7 @@ We provide detailed documentation for the following OpenAI compatible providers:
 - [Heroku](/providers/openai-compatible-providers/heroku)
 - [Clarifai](/providers/openai-compatible-providers/clarifai)
 - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)
+- [Synthorai](/providers/openai-compatible-providers/synthorai)
 
 The general setup and provider instance creation is the same for all of these providers.
 
@@ -776,6 +777,7 @@ This allows you to access provider-specific information while maintaining a cons
   - [Clarifai](/providers/openai-compatible-providers/clarifai)
   - [Heroku](/providers/openai-compatible-providers/heroku)
   - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)
+  - [Synthorai](/providers/openai-compatible-providers/synthorai)
 - [Community Providers](/providers/community-providers)
   - [Writing a Custom Provider](/providers/community-providers/custom-providers)
   - [A2A](/providers/community-providers/a2a)

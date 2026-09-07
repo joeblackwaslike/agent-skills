@@ -3,7 +3,7 @@ title: Managing Usage & Costs
 product: vercel
 url: /docs/speed-insights/managing-usage
 canonical_url: "https://vercel.com/docs/speed-insights/managing-usage"
-last_updated: 2026-08-25
+last_updated: 2026-09-01
 type: reference
 prerequisites:
   - /docs/speed-insights
@@ -15,13 +15,15 @@ related:
 summary: Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/managing-usage.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "c24add719f677eaaae2d836336679d7c2c4a7e18104076cd85ccdd5f6b33e9be"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "99379f35200a4ac8b6a6a6faa7f2edf1e8e964abf903a2d1f73128fd79f936b3"
 ---
 
 # Managing Usage & Costs
 
 > **🔒 Permissions Required**: Speed Insights
+
+Use the [`@vercel/speed-insights`](https://www.npmjs.com/package/@vercel/speed-insights) package to measure and reduce your Speed Insights usage.
 
 
 <!-- docsgraph:related -->
@@ -29,22 +31,20 @@ sha256: "c24add719f677eaaae2d836336679d7c2c4a7e18104076cd85ccdd5f6b33e9be"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmanaging-usage&source_site=vercel-docs&relationship=related) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
-- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmanaging-usage&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Using Speed Insights](https://vercel.com/docs/speed-insights/using-speed-insights?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmanaging-usage&source_site=vercel-docs&relationship=related) — Learn how to use Speed Insights to analyze your application's performance data.
-- [Vercel Speed Insights Privacy & Compliance](https://vercel.com/docs/speed-insights/privacy-policy?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmanaging-usage&source_site=vercel-docs&relationship=related) — Learn how Vercel follows the latest privacy and data compliance standards with its Speed Insights feature.
+- [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmanaging-usage&source_site=vercel-docs&relationship=related) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
 - [Getting started with Speed Insights](https://vercel.com/docs/speed-insights/quickstart?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmanaging-usage&source_site=vercel-docs&relationship=related) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
+- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmanaging-usage&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Vercel Speed Insights Privacy & Compliance](https://vercel.com/docs/speed-insights/privacy-policy?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmanaging-usage&source_site=vercel-docs&relationship=related) — Learn how Vercel follows the latest privacy and data compliance standards with its Speed Insights feature.
 
 Full cross-link map for this page: [/docs/speed-insights/managing-usage.graph.md](/docs/speed-insights/managing-usage.graph.md?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmanaging-usage&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Use the [`@vercel/speed-insights`](https://www.npmjs.com/package/@vercel/speed-insights) package to measure and reduce your Speed Insights usage.
 
 ## Understanding usage
 
 The **Speed Insights** section of [Usage](https://vercel.com/d?to=%2F%5Bteam%5D%2F~%2Fusage%23speed-insights\&title=Go%20to%20Usage) in your dashboard sidebar shows your Speed Insights usage over time.
 
-Vercel bills Speed Insights usage in events. To learn more about the underlying data points and how Vercel calculates them, see [Understanding data points](/docs/speed-insights/metrics#understanding-data-points).
+Vercel bills Speed Insights usage in events only on projects that are on Speed Insights Plus. To learn more about the underlying data points and how Vercel calculates them, see [Understanding data points](/docs/speed-insights/metrics#understanding-data-points).
 
 ## Reducing usage
 
@@ -61,6 +61,66 @@ Then configure one or both of the following options:
 The [`sampleRate`](/docs/speed-insights/package#samplerate) option determines the percentage of events sent to Vercel. By default, all events are sent. Lowering this value reduces the number of events collected, which can lower costs while still providing statistically meaningful performance data.
 
 For example, setting `sampleRate` to `0.5` sends performance metrics for 50% of page views:
+
+**Next.js (App Router)**
+
+```tsx
+import { SpeedInsights } from '@vercel/speed-insights/next';
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body>
+        {children}
+        <SpeedInsights sampleRate={0.5} />
+      </body>
+    </html>
+  );
+}
+```
+
+**Next.js (Pages Router)**
+
+```tsx
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import type { AppProps } from 'next/app';
+
+export default function App({ Component, pageProps }: AppProps) {
+  return (
+    <>
+      <Component {...pageProps} />
+      <SpeedInsights sampleRate={0.5} />
+    </>
+  );
+}
+```
+
+**React**
+
+```tsx
+import { SpeedInsights } from '@vercel/speed-insights/react';
+
+function App() {
+  return (
+    <>
+      <YourApp />
+      <SpeedInsights sampleRate={0.5} />
+    </>
+  );
+}
+```
+
+**Other frameworks**
+
+```tsx
+import { injectSpeedInsights } from '@vercel/speed-insights';
+
+injectSpeedInsights({ sampleRate: 0.5 });
+```
 
 > **💡 Note:** Lower sample rates reduce costs but may decrease data accuracy for low-traffic pages.
 

@@ -16,8 +16,8 @@ related:
 summary: Control how much a reasoning model thinks before answering with the OpenResponses API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/reasoning.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "20b9314b1876852efa7177650b6d7bdc0b3cf9da514bd83d39bf8ffcf1b13d09"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "0a1dca285b0d1aa292ec10fe9f331dccae933863811a99a0944854579f2646e0"
 ---
 
 # Reasoning
@@ -31,17 +31,16 @@ Reasoning models work through a problem before answering. With the [OpenResponse
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Freasoning&source_site=vercel-docs&relationship=related) — Control how much a model thinks before answering with the OpenAI Responses API.
+- [OpenAI Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Freasoning&source_site=vercel-docs&relationship=related) — Configure reasoning and thinking for OpenAI models with the AI SDK and AI Gateway.
 - [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Freasoning&source_site=vercel-docs&relationship=related) — Control how much a model thinks before answering with the OpenAI Chat Completions API.
 - [Reasoning](https://ai-sdk.dev/docs/ai-sdk-core/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Freasoning&source_site=vercel-docs&relationship=related)
-- [OpenAI Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Freasoning&source_site=vercel-docs&relationship=related) — Configure reasoning and thinking for OpenAI models with the AI SDK and AI Gateway.
-- [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Freasoning&source_site=vercel-docs&relationship=related)
 - [Extended Thinking](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Freasoning&source_site=vercel-docs&relationship=related) — Configure how much Claude thinks before answering, using the Anthropic Messages API thinking parameter.
-- [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Freasoning&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
+- [Amazon Bedrock Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Freasoning&source_site=vercel-docs&relationship=related) — Configure reasoning for models hosted on Amazon Bedrock with the AI SDK and AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openresponses/reasoning.graph.md](/docs/ai-gateway/sdks-and-apis/openresponses/reasoning.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Freasoning&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-#### \['cURL'
+#### cURL
 
 ```bash filename="reasoning.sh"
 curl -X POST "https://ai-gateway.vercel.sh/v1/responses" \
@@ -62,7 +61,7 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/responses" \
   }'
 ```
 
-#### 'TypeScript'
+#### TypeScript
 
 ```typescript filename="reasoning.ts" {17-19}
 const apiKey = process.env.AI_GATEWAY_API_KEY;
@@ -92,7 +91,7 @@ const result = await response.json();
 console.log(result.usage.output_tokens_details.reasoning_tokens);
 ```
 
-#### 'Python']
+#### Python
 
 ```python filename="reasoning.py" {19-21}
 import os

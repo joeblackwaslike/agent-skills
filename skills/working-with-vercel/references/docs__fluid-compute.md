@@ -16,8 +16,8 @@ related:
 summary: Learn about fluid compute, an execution model for Vercel Functions that provides a more flexible and efficient way to run your functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/fluid-compute.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "3ba8e98b1b3b983c4fd9445600bde72e52c9734ed7fa6afbdde80a79b1d6f4d4"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "6161b24dccdeb6a28923466f8bafb4c03e29706362e2d6d25b5ee6ac72be0840"
 ---
 
 # Fluid compute
@@ -137,7 +137,7 @@ Fluid Compute includes default settings that vary by plan:
 | -------------------------------------------------------------------------------------------- | ----------------------------------- | ------------------------------------ | ------------------------------------ |
 | [**CPU configuration**](/docs/functions/configuring-functions/memory#memory-/-cpu-type)      | Standard                            | Standard / Performance               | Standard / Performance               |
 | [**Default / Max duration**](/docs/functions/limitations#max-duration)                       | 300s (5 minutes) / 300s (5 minutes) | 300s (5 minutes) / 800s | 300s (5 minutes) / 800s |
-| [**Extended max duration**](/docs/functions/configuring-functions/duration#extended-max-duration-beta) | -                                   | 1800s (30 minutes)  | 1800s (30 minutes)  |
+| [**Extended max duration**](/docs/functions/configuring-functions/duration#extended-max-duration-beta) | -                                   | 1800s (30 minutes) Beta | 1800s (30 minutes) Beta |
 | [**Multi-region failover**](/docs/functions/configuring-functions/region#automatic-failover) |                       |                        |                    |
 | [**Multi-region functions**](/docs/functions/runtimes#location)                              |                       | Up to 3                              | All                                  |
 

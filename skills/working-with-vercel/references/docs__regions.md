@@ -14,8 +14,8 @@ related:
 summary: "View the list of regions supported by Vercel's CDN and learn about our global infrastructure."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/regions.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "c450db824854b585edc3ce7a28e7f87d5018ae94e42821e67067aa6e0d23ec89"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "858e2a4e60e00748a781057e22460fd885c7357a4c294f76a09070ec1cd27bb6"
 ---
 
 # Global network and regions
@@ -37,9 +37,9 @@ sha256: "c450db824854b585edc3ce7a28e7f87d5018ae94e42821e67067aa6e0d23ec89"
 - [Update regarding Vercel service disruption on October 20, 2025](https://vercel.com/blog/update-regarding-vercel-service-disruption-on-october-20-2025?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related)
 - [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related)
 - [Effortless high availability for dynamic frontends](https://vercel.com/blog/effortless-high-availability-for-dynamic-frontends?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related)
-- [Vercel CDN overview](https://vercel.com/docs/cdn?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
-- [Security & Compliance Measures](https://vercel.com/docs/security/compliance?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
-- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
+- [Improved resiliency for Vercel Functions with inter-region failover support](https://vercel.com/changelog/improved-resiliency-for-vercel-functions-with-failover-support?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related)
+- [Regional execution for ultra-low latency rendering at the edge](https://vercel.com/blog/regional-execution-for-ultra-low-latency-rendering-at-the-edge?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related)
+- [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related)
 
 Full cross-link map for this page: [/docs/regions.graph.md](/docs/regions.graph.md?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -142,12 +142,11 @@ Vercel's CDN is designed with high availability and fault tolerance in mind:
 | P12 | hnd1 |
 | P13 | kix1 |
 | P14 | icn1 |
-| P15 | dxb1 |
-| P16 | bom1 |
-| P17 | syd1 |
-| P18 | hkg1 |
-| P19 | sin1 |
-| P20 | cpt1 |
+| P15 | bom1 |
+| P16 | syd1 |
+| P17 | hkg1 |
+| P18 | sin1 |
+| P19 | cpt1 |
 
 
 - For Enterprise customers, Vercel functions can automatically failover to a different region if the region they are running in becomes unavailable. Learn more about [Vercel Function failover](/docs/functions/configuring-functions/region#automatic-failover).

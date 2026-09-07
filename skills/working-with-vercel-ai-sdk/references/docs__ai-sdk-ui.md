@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "457e9ccd9d1664ac6c5aa90cb35de73d988983380afd56e42d62c6437e2de3f5"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "5172647490054475aa4e6efc20757b95aafc39d8d3702a1c06ad9a0e66f24cb4"
 ---
 
 # AI SDK UI
@@ -302,6 +302,7 @@ sha256: "457e9ccd9d1664ac6c5aa90cb35de73d988983380afd56e42d62c6437e2de3f5"
     - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
     - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
     - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)
+    - [ToolChoiceViolationError](/docs/reference/ai-sdk-errors/ai-tool-choice-violation-error)
     - [AI_TypeValidationError](/docs/reference/ai-sdk-errors/ai-type-validation-error)
     - [AI_UIMessageStreamError](/docs/reference/ai-sdk-errors/ai-ui-message-stream-error)
     - [AI_UnsupportedFunctionalityError](/docs/reference/ai-sdk-errors/ai-unsupported-functionality-error)

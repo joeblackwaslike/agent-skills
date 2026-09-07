@@ -14,8 +14,8 @@ related:
 summary: Learn how to set up Incremental Static Regeneration (ISR) with time-based and on-demand revalidation.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/incremental-static-regeneration/quickstart.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "be508876610b4249ca10f4414d62574f16c997aca24a98e3a86111a0b407cc8d"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "22ea31df3d7456a033450650ad4ea81f23dae18bcdf7ac164e19803419b68747"
 ---
 
 # Getting started with ISR
@@ -33,11 +33,11 @@ This guide helps you set up Incremental Static Regeneration (ISR) with your Verc
 - [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
 - [Updating large-scale site navigation with minimal revalidation](https://vercel.com/kb/guide/update-mega-nav-min-reval?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related) — When working with a large number of pages that share a common multi-level navigation, making a navigation update require
 - [How to implement Incremental Static Regeneration (ISR)](https://nextjs.org/docs/app/guides/incremental-static-regeneration?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to create or update static pages at runtime with Incremental Static Regeneration.
-- [ISR on Vercel is now faster and more cost-efficient](https://vercel.com/blog/isr-on-vercel-is-now-faster-and-more-cost-efficient?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related)
-- [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related)
+- [How to implement Incremental Static Regeneration (ISR)](https://nextjs.org/docs/pages/guides/incremental-static-regeneration?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to create or update static pages at runtime with Incremental Static Regeneration.
 - [How to move from time-based to on-demand revalidation](https://vercel.com/kb/guide/how-to-move-to-on-demand-revalidation?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related) — Replace fixed revalidation timers with scoped updates triggered by changes to content, product data, or other applicatio
-- [Incremental Static Regeneration (ISR) is now faster and more cost-efficient](https://vercel.com/changelog/incremental-static-regeneration-is-now-faster-and-cheaper?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related)
+- [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related)
 - [Partial Prerendering \\(PPR\\)](https://vercel.com/docs/partial-prerendering?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related) — Partial Prerendering serves a cached static shell instantly, then renders and streams the dynamic parts of a page per re
+- [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
 - [Vercel CDN overview](https://vercel.com/docs/cdn?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
 - [Vercel Function Logs](https://vercel.com/docs/functions/logs?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related) — Use runtime logs to debug and monitor your Vercel Functions.
 
@@ -53,6 +53,12 @@ You also control when pages are first cached:
 - **Generate on first request**: Skip the build step and let the first visitor trigger generation at runtime. This keeps builds fast but means the first request for each page is slower (a cache miss).
 
 A common pattern is to pre-render popular pages at build time and let the rest generate on demand.
+
+**Agent prompt**
+
+```text
+Help me set up Incremental Static Regeneration (ISR) in this project. First, make sure the Vercel CLI is installed (`npm i -g vercel`). If I'm using Claude Code or Cursor, install the Vercel Plugin (`npx plugins add vercel/vercel-plugin`). For other agents, install Vercel Skills (`npx skills add vercel-labs/agent-skills`). Then: 1. Add time-based revalidation to a page using the revalidate option. 2. Show me how to trigger on-demand revalidation with revalidatePath or revalidateTag. 3. Deploy with `vercel --prod` to test ISR behavior.
+```
 
 ## Prerequisites
 
@@ -86,7 +92,7 @@ To deploy a SvelteKit route with ISR, export a config object with an `isr` prope
 
 > For \["nuxt"]:
 
-To enable ISR in a Nuxt route, add a `routeRules` option to your , as shown in the example below:
+To enable ISR in a Nuxt route, add a `routeRules` option to your `nuxt.config.ts`, as shown in the example below:
 
 ```ts filename="apps/example/page.tsx" framework=nextjs-app
 export const revalidate = 10; // seconds
@@ -164,19 +170,145 @@ The following example renders a list of blog posts from a demo API, revalidating
 
 > For \['sveltekit']:
 
-First, create a  file that exports your `config` object with `isr` configured and fetches your data:
+First, create a `+page.server.ts` file that exports your `config` object with `isr` configured and fetches your data:
+
+```ts filename="routes/blog-posts/+page.server.ts" framework=sveltekit
+export const config = {
+  isr: {
+    expiration: 10,
+  },
+};
+
+export interface Post {
+  title: string;
+  id: number;
+}
+
+/** @type {import('./$types').PageServerLoad} */
+export async function load({ params }) {
+  const res = await fetch('https://api.vercel.app/blog');
+  return {
+    posts: (await res.json()) as Post[],
+  };
+}
+```
+
+```js filename="routes/blog-posts/+page.server.js" framework=sveltekit
+export const config = {
+	isr: {
+		expiration: 10,
+	}
+};
+
+export interface Post {
+	title: string;
+	id: number;
+}
+
+/** @type {import('./$types').PageServerLoad} */
+export async function load({ params }) {
+	const res = await fetch('https://api.vercel.app/blog');
+	return {
+		posts: (await res.json()) as Post[]
+	};
+}
+```
 
 > For \['sveltekit']:
 
-Then, create a  file that renders the list of blog posts:
+Then, create a `+page.svelte.ts` file that renders the list of blog posts:
+
+```tsx filename="routes/blog-posts/+page.svelte" framework=sveltekit
+<script>
+  /** @type {import('./$types').PageData} */
+  export let data;
+</script>
+
+
+<ul>
+	{#each data.posts as post}
+  <li>{post.title}</li>
+	{/each}
+</ul>
+```
+
+```jsx filename="routes/blog-posts/+page.svelte" framework=sveltekit
+<script>
+  export let data;
+</script>
+
+
+<ul>
+	{#each data.posts as post}
+  <li>{post.title}</li>
+	{/each}
+</ul>
+```
 
 > For \['nuxt']:
 
-After enabling ISR in your  file [as described above](#time-based-revalidation), create an API route that fetches your data:
+After enabling ISR in your `nuxt.config.ts` file [as described above](#time-based-revalidation), create an API route that fetches your data:
+
+```ts filename="server/api/blog-posts.ts" framework=nuxt
+interface Post {
+  title: string;
+  id: number;
+}
+
+export default defineEventHandler(async (event) => {
+  const res = await fetch('https://api.vercel.app/blog');
+
+  const posts = (await res.json()) as Post[];
+
+  return {
+    posts,
+  };
+});
+```
+
+```js filename="server/api/blog-posts.js" framework=nuxt
+export default defineEventHandler(async (event) => {
+  const res = await fetch('https://api.vercel.app/blog');
+
+  const posts = await res.json();
+
+  return {
+    posts,
+  };
+});
+```
 
 > For \['nuxt']:
 
 Then, fetch the data and render it in a `.vue` file:
+
+```tsx filename="pages/blog-posts/index.vue" framework=nuxt
+<template>
+  <ul>
+    <li :key="post.id" v-for="post in data.posts">
+      {{ post.title }}
+    </li>
+  </ul>
+</template>
+
+<script setup>
+  const { data } = await useFetch("/api/blog-posts");
+</script>
+```
+
+```jsx filename="pages/blog-posts/index.vue" framework=nuxt
+<template>
+  <ul>
+    <li :key="post.id" v-for="post in data.posts">
+      {{ post.title }}
+    </li>
+  </ul>
+</template>
+
+<script setup>
+  const { data } = await useFetch("/api/blog-posts");
+</script>
+```
 
 ```ts v0="build" filename="pages/blog-posts/index.tsx" framework=nextjs
 export async function getStaticProps() {
@@ -286,7 +418,29 @@ To trigger revalidation with SvelteKit:
 1. Set an `BYPASS_TOKEN` Environment Variable with a secret value
 2. Assign your Environment Variable to the `bypassToken` config option for your route:
 
-3) Send a `GET` or `HEAD` API request to your route with the following header:
+```ts filename="routes/example-route/+page.server.ts" framework=sveltekit
+import { BYPASS_TOKEN } from '$env/static/private';
+
+export const config = {
+  isr: {
+    expiration: 10,
+    bypassToken: BYPASS_TOKEN,
+  },
+};
+```
+
+```js filename="routes/example-route/+page.server.js" framework=sveltekit
+import { BYPASS_TOKEN } from '$env/static/private';
+
+export const config = {
+  isr: {
+    expiration: 10,
+    bypassToken: BYPASS_TOKEN,
+  },
+};
+```
+
+3. Send a `GET` or `HEAD` API request to your route with the following header:
 
 ```bash
 x-prerender-revalidate: bypass_token_here
@@ -299,7 +453,51 @@ To trigger revalidation with Nuxt:
 1. Set an `BYPASS_TOKEN` Environment Variable with a secret value
 2. Assign your Environment Variable to the `bypassToken` config option in `nitro.config` file:
 
-3) Assign your Environment Variable to the `bypassToken` config option in `nuxt.config` file:
+```ts filename="nitro.config.ts" framework=nuxt
+export default defineNitroConfig({
+  vercel: {
+    config: {
+      bypassToken: process.env.BYPASS_TOKEN,
+    },
+  },
+});
+```
+
+```js filename="nitro.config.js" framework=nuxt
+export default defineNitroConfig({
+  vercel: {
+    config: {
+      bypassToken: process.env.BYPASS_TOKEN,
+    },
+  },
+});
+```
+
+3. Assign your Environment Variable to the `bypassToken` config option in `nuxt.config` file:
+
+```ts filename="nuxt.config.ts" framework=nuxt
+export default defineNuxtConfig({
+  nitro: {
+    vercel: {
+      config: {
+        bypassToken: process.env.VERCEL_BYPASS_TOKEN,
+      },
+    },
+  },
+});
+```
+
+```js filename="nuxt.config.js" framework=nuxt
+export default defineNuxtConfig({
+  nitro: {
+    vercel: {
+      config: {
+        bypassToken: process.env.VERCEL_BYPASS_TOKEN,
+      },
+    },
+  },
+});
+```
 
 4. Send a `GET` or `HEAD` API request to your route with the following header:
 
@@ -402,6 +600,11 @@ export async function GET(request) {
 ```
 
 > For \["nextjs"]:
+
+> **💡 Note:** You do not need to specify `revalidate` inside `getStaticProps` to use
+> on-demand revalidation. If `revalidate` is omitted, Next.js will use the
+> default value of `false` (no revalidation) and only revalidate the page
+> on-demand when `response.revalidate` is called.
 
 > For \["nextjs", "nextjs-app", "sveltekit"]:
 

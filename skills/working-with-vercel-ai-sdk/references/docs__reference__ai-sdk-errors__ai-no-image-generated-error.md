@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-image-generated-error.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "c7325571846404aca18e45b168837ab2bdd7dd4d5f2e82286496ae17aedd3feb"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "2c9ff2cec737343719d360c666516905c6a384d0300f4ab3056b15a5f5a5d3b6"
 ---
 
 # AI_NoImageGeneratedError
@@ -15,6 +15,7 @@ It can arise due to the following reasons:
 ## Properties
 
 - `message`: The error message (optional, defaults to `'No image generated.'`).
+- `calls`: Results from the underlying image model calls, including generated images, provider metadata, response metadata, warnings, and usage (optional).
 - `responses`: Metadata about the image model responses, including timestamp, model, and headers (optional).
 - `cause`: The cause of the error. You can use this for more detailed error handling (optional).
 
@@ -32,6 +33,12 @@ try {
     console.log('NoImageGeneratedError');
     console.log('Cause:', error.cause);
     console.log('Responses:', error.responses);
+
+    for (const call of error.calls ?? []) {
+      console.log('Provider metadata:', call.providerMetadata);
+      console.log('Warnings:', call.warnings);
+      console.log('Usage:', call.usage);
+    }
   }
 }
 ```
@@ -71,6 +78,7 @@ try {
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
 - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
 - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)
+- [ToolChoiceViolationError](/docs/reference/ai-sdk-errors/ai-tool-choice-violation-error)
 - [AI_TypeValidationError](/docs/reference/ai-sdk-errors/ai-type-validation-error)
 - [AI_UIMessageStreamError](/docs/reference/ai-sdk-errors/ai-ui-message-stream-error)
 - [AI_UnsupportedFunctionalityError](/docs/reference/ai-sdk-errors/ai-unsupported-functionality-error)

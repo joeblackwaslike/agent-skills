@@ -16,13 +16,19 @@ related:
 summary: Learn how to use private Vercel Blob storage to serve files with authentication
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/private-storage.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "49f765332430b3e536ff5db414fbdae49a898595e10b45d7bc2b224d1e83f96e"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "782c8fce3110d544e214b7229a24094bc497bc41d353edf8c12070c32c26521b"
 ---
 
 # Private Storage
 
 > **🔒 Permissions Required**: Vercel Blob
+
+> **💡 Note:** Private storage requires a private Blob store and is available starting with:* `@vercel/blob` [TypeScript SDK](/docs/vercel-blob/using-blob-sdk) >= 2.3
+> * `vercel` [Python SDK](https://github.com/vercel/vercel-py) >= 0.5.0
+> * `vc` [Vercel CLI](/docs/cli) >= 50.20.0
+
+Private Blob stores require authentication for all read and write operations, ensuring files are only accessible to authenticated requests. Use private storage for sensitive documents, user content, and applications with custom authentication.
 
 
 <!-- docsgraph:related -->
@@ -42,12 +48,6 @@ sha256: "49f765332430b3e536ff5db414fbdae49a898595e10b45d7bc2b224d1e83f96e"
 
 Full cross-link map for this page: [/docs/vercel-blob/private-storage.graph.md](/docs/vercel-blob/private-storage.graph.md?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fprivate-storage&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-> **💡 Note:** Private storage requires a private Blob store and is available starting with:* `@vercel/blob` [TypeScript SDK](/docs/vercel-blob/using-blob-sdk) >= 2.3
-> * `vercel` [Python SDK](https://github.com/vercel/vercel-py) >= 0.5.0
-> * `vc` [Vercel CLI](/docs/cli) >= 50.20.0
-
-Private Blob stores require authentication for all read and write operations, ensuring files are only accessible to authenticated requests. Use private storage for sensitive documents, user content, and applications with custom authentication.
 
 See [differences with public storage](/docs/vercel-blob#private-and-public-storage).
 

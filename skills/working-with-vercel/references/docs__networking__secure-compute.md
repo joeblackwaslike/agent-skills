@@ -16,13 +16,15 @@ related:
 summary: Secure Compute provides dedicated private networks with VPC peering for Enterprise teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/secure-compute.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "38b1fc1e6386d9bff90d6e6ad5acd66d644b8d747261e71ae1bed9ca75713f79"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "38f43730b83e2d0488183acc248dd2a77259130bd7911971e89da52bcf270fc2"
 ---
 
 # Secure Compute
 
 > **🔒 Permissions Required**: Secure Compute
+
+Secure Compute creates private connections between your [Vercel Functions](/docs/functions) and your backend infrastructure like databases, APIs, or any private services you're running.
 
 
 <!-- docsgraph:related -->
@@ -36,17 +38,15 @@ sha256: "38b1fc1e6386d9bff90d6e6ad5acd66d644b8d747261e71ae1bed9ca75713f79"
 - [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
 - [Running Docker on Vercel vs Render](https://vercel.com/kb/guide/docker-on-vercel-vs-render?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related) — Compare how Vercel and Render run Docker workloads, including deployment model, scaling, image sources, state, and netwo
 - [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
-- [Simpler Pricing](https://vercel.com/blog/simpler-pricing?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related)
 - [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
 - [Secure Compute is now self-serve](https://vercel.com/changelog/secure-compute-is-now-self-serve?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related)
 - [VPC Peering now available as self-service for Vercel’s Secure Compute](https://vercel.com/changelog/vpc-peering-now-available-as-self-service-for-vercel-secure-compute?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related)
 - [Improved infrastructure security with Vercel Secure Compute](https://vercel.com/changelog/improve-infrastructure-security-with-vercel-secure-compute?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related)
 - [Security & Compliance Measures](https://vercel.com/docs/security/compliance?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+- [Vercel Enterprise Plan](https://vercel.com/docs/plans/enterprise?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related) — Learn about the Enterprise plan for Vercel, including features, pricing, and more.
 
 Full cross-link map for this page: [/docs/networking/secure-compute.graph.md](/docs/networking/secure-compute.graph.md?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Secure Compute creates private connections between your [Vercel Functions](/docs/functions) and your backend infrastructure like databases, APIs, or any private services you're running.
 
 By default, Vercel deployments can come from [any IP address](/kb/guide/how-to-allowlist-deployment-ip-address). Secure Compute gives you dedicated static IPs, so you can tighten your backend's access controls to only allow traffic from your specific Vercel infrastructure.
 
@@ -107,7 +107,7 @@ Vercel applies Secure Compute to [Vercel Functions](/docs/functions) using the f
 
 - [Node.js](/docs/functions/runtimes/node-js)
 - [Ruby](/docs/functions/runtimes/ruby)
--
+- [Go](/docs/functions/runtimes/go)
 - [Python](/docs/functions/runtimes/python)
 
 The [Edge Runtime](/docs/functions/runtimes/edge) **is not supported** meaning features like [Routing Middleware](/docs/routing-middleware) and Vercel Functions using the [`edge` runtime](/docs/functions/runtimes/edge) will **not** use the provided dedicated IP addresses.

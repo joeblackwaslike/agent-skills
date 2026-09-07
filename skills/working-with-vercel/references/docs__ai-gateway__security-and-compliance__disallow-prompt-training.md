@@ -3,7 +3,7 @@ title: Disallow Prompt Training
 product: vercel
 url: /docs/ai-gateway/security-and-compliance/disallow-prompt-training
 canonical_url: "https://vercel.com/docs/ai-gateway/security-and-compliance/disallow-prompt-training"
-last_updated: 2026-08-11
+last_updated: 2026-09-02
 type: integration
 prerequisites:
   - /docs/ai-gateway/security-and-compliance
@@ -14,8 +14,8 @@ related:
 summary: Learn how to prevent AI providers from using your prompts and responses for model training through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/disallow-prompt-training.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "dfaffc58682f48838e2b14b98b8c9163b43f3f2e552c75d11c9428bbbd614fec"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "b3aff831ffe59b7d42fc7e888b20bb89cdd4d2a6fc44f4965d70535a9ed9509e"
 ---
 
 # Disallow Prompt Training
@@ -28,14 +28,15 @@ No training on prompt data is available to all AI Gateway users at no extra char
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Team-wide Zero Data Retention and prompt training controls now on AI Gateway](https://vercel.com/changelog/zero-data-retention-no-prompt-training-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=related)
 - [Zero Data Retention on AI Gateway](https://vercel.com/blog/zdr-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=related)
+- [Team-wide Zero Data Retention and prompt training controls now on AI Gateway](https://vercel.com/changelog/zero-data-retention-no-prompt-training-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=related)
 - [Team-wide provider allowlist on AI Gateway](https://vercel.com/changelog/team-wide-provider-allowlist-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=related)
-- [Provider Allowlist](https://vercel.com/docs/ai-gateway/security-and-compliance/provider-allowlist?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=related) — Restrict which AI providers your team can route through AI Gateway. Available on Pro and Enterprise.
+- [Updates to Terms of Service](https://vercel.com/changelog/updates-to-terms-of-service-march-2026?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=related)
 - [Provider Options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=related) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway
-- [Model Allowlist](https://vercel.com/docs/ai-gateway/security-and-compliance/model-allowlist?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=related) — Restrict which AI models your team can use through AI Gateway. Available on Pro and Enterprise.
-- [Provider Options](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API.
-- [Provider Filtering, Ordering & Sorting](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=related) — Control which providers handle your requests, in what order, and how they are ranked using order, only, and sort options
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including pricing and markup, SDK and API compatibility, model availabilit
+- [Provider Allowlist](https://vercel.com/docs/ai-gateway/security-and-compliance/provider-allowlist?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=related) — Restrict which AI providers your team can route through AI Gateway. Available on Pro and Enterprise.
+- [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/ai-gateway/security-and-compliance/disallow-prompt-training.graph.md](/docs/ai-gateway/security-and-compliance/disallow-prompt-training.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -377,6 +378,228 @@ For example, if you enable both disallow prompt training and ZDR on a request, t
 ## Disallow prompt training providers
 
 The following providers currently support no training on prompt data on AI Gateway. Please review each provider's policy and terms carefully. A provider's default policy may not match with the status that AI Gateway has in place due to negotiated agreements. We are constantly coordinating and revising agreements to be able to enforce stricter training policies for customers. The full terms of service are available for each provider on the model pages.
+
+Provider
+
+No prompt training
+
+Policy
+
+Alibaba Cloud
+
+✓
+
+Product terms
+
+Anthropic
+
+✓
+
+Commercial terms
+
+Azure
+
+✓
+
+Data privacy
+
+Baseten
+
+✓
+
+Security
+
+Bedrock
+
+✓
+
+Service terms
+
+ByteDance
+
+✓
+
+Service terms
+
+Cerebras
+
+✓
+
+Policies
+
+Chutes
+
+✓
+
+Terms
+
+Claude Platform on AWS
+
+✓
+
+Data policy
+
+Cohere
+
+✓
+
+Privacy policy
+
+DeepInfra
+
+✓
+
+Terms
+
+DigitalOcean
+
+✓
+
+—
+
+Fireworks
+
+✓
+
+Privacy policy
+
+Google
+
+✓
+
+API terms
+
+Google Vertex AI
+
+✓
+
+Zero data retention
+
+Groq
+
+✓
+
+Security
+
+Inception
+
+✓
+
+Enterprise
+
+Inceptron
+
+✓
+
+Data policy
+
+Interfaze
+
+✓
+
+Privacy policy
+
+Mistral
+
+✓
+
+Commercial terms
+
+Modal
+
+✓
+
+Terms of service
+
+Moonshot AI
+
+✓
+
+Custom policy
+
+Morph
+
+✓
+
+Terms of service
+
+Nebius
+
+✓
+
+Terms of service
+
+Novita AI
+
+✓
+
+Privacy policy
+
+OpenAI
+
+✓
+
+API data policy
+
+Parallel AI
+
+✓
+
+Customer terms
+
+Parasail
+
+✓
+
+Privacy policy
+
+Particle.AI
+
+✓
+
+Data policy
+
+Perplexity
+
+✓
+
+Data collection
+
+Prodia
+
+✓
+
+Privacy policy
+
+Sakana AI
+
+✓
+
+Privacy policy
+
+Together AI
+
+✓
+
+Terms of service
+
+Voyage AI by MongoDB
+
+✓
+
+Terms of service
+
+Wafer
+
+✓
+
+Data processing addendum
+
+xAI
+
+✓
+
+Terms of service
 
 
 ---

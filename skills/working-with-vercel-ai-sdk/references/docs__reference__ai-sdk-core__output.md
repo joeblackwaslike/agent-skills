@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/output.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "cb52f9334edf5434aa00192357ba2c3491771ee2d38d9e4efe478736aadef6c9"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "665cd5412f3cec2122878d3e426c25ca55d818a27d8be38373dca59dbd392c85"
 ---
 
 # `Output`
@@ -136,6 +136,8 @@ const { output } = await generateText({
       temperature: z.number(),
       condition: z.string(),
     }),
+    minItems: 2,
+    maxItems: 2,
   }),
   prompt: 'List the weather for San Francisco and Paris.',
 });
@@ -151,6 +153,20 @@ const { output } = await generateText({
       type: 'FlexibleSchema<ELEMENT>',
       description:
         'The schema that defines the structure of each array element. Supports Zod schemas, Valibot schemas, or JSON schemas.',
+    },
+    {
+      name: 'minItems',
+      type: 'number',
+      isOptional: true,
+      description:
+        'The minimum number of elements to generate. Must be a non-negative integer.',
+    },
+    {
+      name: 'maxItems',
+      type: 'number',
+      isOptional: true,
+      description:
+        'The maximum number of elements to generate. Must be a non-negative integer and greater than or equal to minItems.',
     },
     {
       name: 'name',
@@ -174,7 +190,14 @@ const { output } = await generateText({
 An `Output<Array<ELEMENT>, Array<ELEMENT>>` specification where:
 
 - Complete output is an array with all elements validated
+- Complete output is validated against `minItems` and `maxItems`
 - Partial output contains only fully validated elements (incomplete elements are excluded)
+
+Set `minItems` and `maxItems` to the same value to require an exact number of
+elements. The bounds are included in the provider-facing schema when the
+provider supports them. The AI SDK also validates the completed output, so
+providers that ignore these schema keywords cannot return an out-of-bounds
+result.
 
 #### Streaming with `elementStream`
 
@@ -203,7 +226,10 @@ for await (const hero of elementStream) {
 
 <Note>
   Each element emitted by `elementStream` is complete and validated against your
-  element schema, ensuring type safety for each item as it is generated.
+  element schema, ensuring type safety for each item as it is generated. If the
+  model generates more than `maxItems`, `elementStream` errors before emitting
+  the first excess element. Provider generation is not aborted automatically,
+  and the final `output` promise also rejects.
 </Note>
 
 ---

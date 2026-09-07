@@ -13,8 +13,8 @@ related:
 summary: Enable AI models to search the web and retrieve source-grounded data using built-in tools through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/web-search.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "d4744fc9407c1fdc383cf3e98ac4d808457a345a1d080cc7ddaa3aef0bff2f48"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "9284311f9525f34ca888d947bce912a457380480fd0949c1a290944f08729be7"
 ---
 
 # Web Search
@@ -32,9 +32,9 @@ AI Gateway provides built-in search tools that let AI models access current web 
 - [Groq](https://ai-sdk.dev/providers/ai-sdk-providers/groq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
 - [xAI Grok](https://ai-sdk.dev/providers/ai-sdk-providers/xai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
 - [OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
+- [Azure OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/azure?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
 - [Use Perplexity Web Search with Vercel AI Gateway](https://vercel.com/blog/use-perplexity-web-search-with-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
 - [Parallel's Web Search and tools are live on Vercel](https://vercel.com/changelog/parallel-web-search-is-now-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
-- [Google](https://ai-sdk.dev/providers/ai-sdk-providers/google?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
 - [Access Perplexity Web Search on Vercel AI Gateway with any model](https://vercel.com/changelog/access-perplexity-web-search-on-vercel-ai-gateway-with-any-model?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 

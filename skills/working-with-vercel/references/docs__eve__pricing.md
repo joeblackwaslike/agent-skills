@@ -16,8 +16,8 @@ related:
 summary: Understand how eve usage maps to Vercel resources and inherited platform limits.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/eve/pricing.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "4bdd36c1cceeb524c51f9ff195454a3055aaf5899764ecc94e6aa07d7d8c9ab2"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "d17630b5d2f47721200e5e8bb0862c09a09d18b7677e11e14ce59a1f24206a1d"
 ---
 
 # Pricing and Limits
@@ -38,7 +38,7 @@ Sandbox for isolated command execution, and AI Gateway or model providers for mo
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Pricing and Limits](https://vercel.com/docs/queues/pricing?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=related) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
 - [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about legacy usage and pricing for Vercel Functions.
-- [Services Pricing and Limits](https://vercel.com/docs/services/pricing?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=related) — Understand how billing works for Vercel Services, what's charged, and which limits apply.
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including pricing and markup, SDK and API compatibility, model availabilit
 
 Full cross-link map for this page: [/docs/eve/pricing.graph.md](/docs/eve/pricing.graph.md?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

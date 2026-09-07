@@ -16,8 +16,8 @@ related:
 summary: Learn how to integrate Vercel with CMS platforms, including Contentful, Sanity, and Sitecore XM Cloud.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/cms.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "cd965d5ab0fcd08b656c645957e546a350898dbd43a44e1534be14b87e9b85e9"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "4be20e27b9d78b056c3b9e2d00983490f5728ce688cba2b10f9e9b3ae8d6d12d"
 ---
 
 # Vercel CMS Integrations
@@ -55,7 +55,7 @@ The most common way to setup a CMS with Vercel is by installing an integration t
 Once a CMS has been installed, and a project linked you can pull in environment variables from the CMS to your Vercel project using the [Vercel CLI](/docs/cli/env).
 
 - ### Install the Vercel CLI
-  To pull in environment variables from  to your Vercel project, you need to install the [Vercel CLI](/docs/cli). Run the following command in your terminal:
+  To pull in environment variables from your CMS to your Vercel project, you need to install the [Vercel CLI](/docs/cli). Run the following command in your terminal:
   <CodeBlock>
     <Code tab="pnpm">
       ```bash
@@ -80,10 +80,10 @@ Once a CMS has been installed, and a project linked you can pull in environment 
   </CodeBlock>
 
 - ### Install your CMS integration
-  Navigate to the  and follow the steps to install the integration.
+  Navigate to the CMS integration you want to install into your project, and follow the steps to install the integration.
 
 - ### Pull in environment variables
-  Once you've installed the  integration, you can pull in environment variables from  to your Vercel project. In your terminal, run:
+  Once you've installed the CMS integration, you can pull in environment variables from the CMS to your Vercel project. In your terminal, run:
   ```bash
   vercel env pull
   ```

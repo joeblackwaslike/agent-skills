@@ -17,8 +17,8 @@ related:
 summary: "Reference for AI Gateway REST endpoints: models, usage, generations, and reporting."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/rest-api.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "68e741780e22b47fb2abce586210942dc4c8a296c35d73cd5abf18dde81cf315"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "376a7f4d6210f716598f77d236e40d56b2e2ff10957182acecbe71d2caf1838a"
 ---
 
 # REST API Reference
@@ -33,12 +33,11 @@ For sending inference requests, the [AI SDK](/docs/ai-gateway/sdks-and-apis/ai-s
 
 - [AI Gateway production index](https://vercel.com/blog/ai-gateway-production-index?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=related)
 - [DeepSeek enters the fight for token volume, Anthropic continues to dominate spend](https://vercel.com/blog/ai-gateway-production-index-june-2026?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=related)
-- [Amazon Bedrock](https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=related)
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including pricing and markup, SDK and API compatibility, model availabilit
 - [AI Gateway Usage & Billing](https://vercel.com/docs/ai-gateway/observability-and-spend/usage?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=related) — Monitor your AI Gateway credit balance, usage, and generation details.
 - [Aggregates page views](https://vercel.com/docs/rest-api/web-analytics/aggregates-page-views?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=related) — GET /v1/query/web-analytics/visits/aggregate — Counts pageviews on a project, within the requested date range. Results a
 - [Counts page views](https://vercel.com/docs/rest-api/web-analytics/counts-page-views?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=related) — GET /v1/query/web-analytics/visits/count — Counts the number of page views on a project \\(production only\\), since Web A
 - [Aggregates custom events](https://vercel.com/docs/rest-api/web-analytics/aggregates-custom-events?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=related) — GET /v1/query/web-analytics/events/aggregate — Counts custom events on a project, within the requested date range. Resul
-- [Get virtual model config](https://vercel.com/docs/rest-api/api-ai-gateway/get-virtual-model-config?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=related) — GET /v1/ai-gateway/virtual-model-configs — Get a virtual model config
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/rest-api.graph.md](/docs/ai-gateway/sdks-and-apis/rest-api.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

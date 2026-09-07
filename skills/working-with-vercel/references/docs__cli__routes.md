@@ -8,12 +8,12 @@ type: reference
 prerequisites:
   - /docs/cli
 related:
-  []
+  - /docs/cli/global-options
 summary: Learn how to manage project-level routing rules using the vercel routes CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/routes.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "68661482ffb03e1201346e823463979859d38fc3c549f09713f0a1207a89ff77"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "0fbee489bf0f131fdb81144db37cd54b0d1612a022a81a6038ccee1040f449d6"
 ---
 
 # vercel routes
@@ -30,11 +30,11 @@ The `vercel routes` command lets you manage routing rules for a project. These r
 - [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins?from=related&source_path=%2Fdocs%2Fcli%2Froutes&source_site=vercel-docs&relationship=related) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
 - [Can I use Vercel as a reverse proxy?](https://vercel.com/kb/guide/vercel-reverse-proxy-rewrites-external?from=related&source_path=%2Fdocs%2Fcli%2Froutes&source_site=vercel-docs&relationship=related) — Learn how to use rewrites to proxy requests from Vercel to other deployments.
 - [Inside the Vercel intern experience](https://vercel.com/blog/inside-the-vercel-intern-experience?from=related&source_path=%2Fdocs%2Fcli%2Froutes&source_site=vercel-docs&relationship=related)
-- [Project-Level Routing Rules](https://vercel.com/docs/routing/project-routing-rules?from=related&source_path=%2Fdocs%2Fcli%2Froutes&source_site=vercel-docs&relationship=related) — Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code
-- [Edit a routing rule](https://vercel.com/docs/rest-api/project-routes/edit-a-routing-rule?from=related&source_path=%2Fdocs%2Fcli%2Froutes&source_site=vercel-docs&relationship=related) — PATCH /v1/projects/{projectId}/routes/{routeId} — Replace a routing rule identified by its ID, or restore it from the cu
-- [Promote, restore, or discard a routing rule version](https://vercel.com/docs/rest-api/project-routes/promote-restore-or-discard-a-routing-rule-version?from=related&source_path=%2Fdocs%2Fcli%2Froutes&source_site=vercel-docs&relationship=related) — POST /v1/projects/{projectId}/routes/versions — Promote staged routing rules to production, restore a previous productio
-- [Add a routing rule](https://vercel.com/docs/rest-api/project-routes/add-a-routing-rule?from=related&source_path=%2Fdocs%2Fcli%2Froutes&source_site=vercel-docs&relationship=related) — POST /v1/projects/{projectId}/routes — Add a single routing rule to a project at a specified position. Defaults to the e
 - [vercel redirects](https://vercel.com/docs/cli/redirects?from=related&source_path=%2Fdocs%2Fcli%2Froutes&source_site=vercel-docs&relationship=related) — Learn how to manage project-level redirects using the vercel redirects CLI command.
+- [vercel rolling-release](https://vercel.com/docs/cli/rolling-release?from=related&source_path=%2Fdocs%2Fcli%2Froutes&source_site=vercel-docs&relationship=related) — Learn how to manage your project's rolling releases using the vercel rolling-release CLI command.
+- [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Froutes&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [Project-Level Routing Rules](https://vercel.com/docs/routing/project-routing-rules?from=related&source_path=%2Fdocs%2Fcli%2Froutes&source_site=vercel-docs&relationship=related) — Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Froutes&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 
 Full cross-link map for this page: [/docs/cli/routes.graph.md](/docs/cli/routes.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Froutes&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -463,6 +463,24 @@ vercel routes discard-staging
 # Discard without confirmation
 vercel routes discard-staging --yes
 ```
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel routes` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 
 ---

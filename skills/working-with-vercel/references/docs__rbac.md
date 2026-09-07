@@ -14,13 +14,15 @@ related:
 summary: Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control (RBAC).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "21b6fbc917a01244f2d8173f6787f46acfbcf17e909d7b6b5204db9712a12c11"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "e06a474756452c4993195e560cd16a6b115f38bf8a6748356ed28cca85da4d74"
 ---
 
 # Role-based access control (RBAC)
 
 > **🔒 Permissions Required**: Team roles
+
+Teams consist of members, and each member of a team can get assigned a role. These roles define what you can and cannot do within a team on Vercel.
 
 
 <!-- docsgraph:related -->
@@ -38,8 +40,6 @@ sha256: "21b6fbc917a01244f2d8173f6787f46acfbcf17e909d7b6b5204db9712a12c11"
 
 Full cross-link map for this page: [/docs/rbac.graph.md](/docs/rbac.graph.md?from=related&source_path=%2Fdocs%2Frbac&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Teams consist of members, and each member of a team can get assigned a role. These roles define what you can and cannot do within a team on Vercel.
 
 As your project scales and you add more team members, you can assign them roles to ensure that they have the right permissions to work on your projects.
 

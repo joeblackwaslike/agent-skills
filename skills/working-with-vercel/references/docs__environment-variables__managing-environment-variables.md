@@ -13,8 +13,8 @@ related:
 summary: Learn how to create and manage environment variables for Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/managing-environment-variables.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "6d898eeef3bd22530be9ba7079f1964e247acbf5eaa580f2f61ecb3e8f38f2d9"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "e905826b681117901073a94d290ab600a945c98deea4fc4375d3aabdcf5c0015"
 ---
 
 # Managing environment variables
@@ -37,7 +37,7 @@ Environment variables are key-value pairs configured outside your source code so
 - [Shared environment variables](https://vercel.com/docs/environment-variables/shared-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanaging-environment-variables&source_site=vercel-docs&relationship=related) — Learn how to use Shared environment variables, which are environment variables that you define at the Team level and can
 - [Sensitive environment variables](https://vercel.com/docs/environment-variables/sensitive-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanaging-environment-variables&source_site=vercel-docs&relationship=related) — Environment variables that cannot be decrypted once created.
 - [Edit an environment variable](https://vercel.com/docs/rest-api/projects/edit-an-environment-variable?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanaging-environment-variables&source_site=vercel-docs&relationship=related) — PATCH /v9/projects/{idOrName}/env/{id} — Edit a specific environment variable for a given project by passing the environ
-- [vercel env](https://vercel.com/docs/cli/env?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanaging-environment-variables&source_site=vercel-docs&relationship=related) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
+- [Create one or more environment variables](https://vercel.com/docs/rest-api/projects/create-one-or-more-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanaging-environment-variables&source_site=vercel-docs&relationship=related) — POST /v10/projects/{idOrName}/env — Create one or more environment variables for a project by passing its \\`key\\`, \\`val
 
 Full cross-link map for this page: [/docs/environment-variables/managing-environment-variables.graph.md](/docs/environment-variables/managing-environment-variables.graph.md?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanaging-environment-variables&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -55,25 +55,25 @@ To declare an Environment Variable for your deployment:
 
 3. Enter the desired **Name** for your Environment Variable. For example, if you are using Node.js and you create an Environment Variable named `API_URL`, it will be available under `process.env.API_URL` in your code.
 
-   #### \['Node.js'
+   #### Node.js
 
    ```js
    process.env.API_URL;
    ```
 
-   #### 'Go'
+   #### Go
 
    ```go
    os.Getenv("API_URL")
    ```
 
-   #### 'Python'
+   #### Python
 
    ```py
    os.environ.get('API_URL')
    ```
 
-   #### 'Ruby']
+   #### Ruby
 
    ```ruby
    ENV['API_URL']

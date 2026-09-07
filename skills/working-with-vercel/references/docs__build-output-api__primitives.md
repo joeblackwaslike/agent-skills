@@ -16,8 +16,8 @@ related:
 summary: Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/primitives.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "c025d17b95d47a84ad471edbe54fe1dc0e46358efd1ae6ddc4c1f3cc6e833ab8"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "4ea9e8cb55337e3c41dd5d808922e37408336790ed3bebbfeb9138fab70eb903"
 ---
 
 # Vercel Primitives
@@ -34,13 +34,11 @@ These primitives are the "building blocks" that make up a Vercel Deployment.
 - [Optimized CDN caching and deploying of immutable static assets](https://vercel.com/changelog/optimized-cdn-caching-and-deploying-of-immutable-static-assets?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fprimitives&source_site=vercel-docs&relationship=related)
 - [Next.js 16.3 support on Vercel](https://vercel.com/blog/vercel-supports-next-js-16-3?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fprimitives&source_site=vercel-docs&relationship=related)
 - [Build your own web framework](https://vercel.com/blog/build-your-own-web-framework?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fprimitives&source_site=vercel-docs&relationship=related)
-- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fprimitives&source_site=vercel-docs&relationship=related)
-- [How can I use files in Vercel Functions?](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fprimitives&source_site=vercel-docs&relationship=related) — Learn how to import files inside Serverless Functions on Vercel.
-- [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fprimitives&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
-- [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fprimitives&source_site=vercel-docs&relationship=related) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
-- [Static Configuration with vercel.json](https://vercel.com/docs/project-configuration/vercel-json?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fprimitives&source_site=vercel-docs&relationship=related) — Learn how to use vercel.json to configure and override the default behavior of Vercel from within your project.
 - [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fprimitives&source_site=vercel-docs&relationship=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fprimitives&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
+- [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fprimitives&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
+- [Edge Runtime](https://vercel.com/docs/functions/runtimes/edge?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fprimitives&source_site=vercel-docs&relationship=related) — Learn about the Edge runtime, an environment in which Vercel Functions can run.
+- [Static Configuration with vercel.json](https://vercel.com/docs/project-configuration/vercel-json?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fprimitives&source_site=vercel-docs&relationship=related) — Learn how to use vercel.json to configure and override the default behavior of Vercel from within your project.
+- [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fprimitives&source_site=vercel-docs&relationship=related) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
 
 Full cross-link map for this page: [/docs/build-output-api/primitives.graph.md](/docs/build-output-api/primitives.graph.md?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fprimitives&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -48,6 +46,14 @@ Full cross-link map for this page: [/docs/build-output-api/primitives.graph.md](
 Files outside of these directories are ignored and will not be served to visitors.
 
 ## Static files
+
+**Static Files Directory**: `.vercel/output/static`
+
+<br />
+
+[`vercel/examples/build-output-api/static-files`](https://github.com/vercel/examples/tree/main/build-output-api/static-files)
+
+<br />
 
 Static files that are *publicly accessible* from the Deployment URL should be placed in the `.vercel/output/static` directory.
 
@@ -65,7 +71,22 @@ However, certain properties of static files (such as the `Content-Type` response
 
 The following example shows static files placed into the `.vercel/output/static` directory:
 
+<br />
+
+<br />
+
+- `.vercel/`
+  - `output/`
+    - `static/`
+      - `images/`
+        - `avatar.png`
+      - `favicon.png`
+      - `client-side-bundle.js`
+      - `robots.txt`
+
 ### Immutable static files
+
+**Immutable Static Files Directory**: `.vercel/output/static/_vercel/immutable/`
 
 Regular static files are scoped to a particular deployment (see also [Skew Protection](/docs/skew-protection)), but with immutable static files, you can have files that are shared across deployments by omitting the `?dpl` query parameter from the URL, which improves cross-deployment request caching.
 For example a request like `/_vercel/immutable/chunks/031du1f_9y2qz.js` will continue to be routed to the same file even if the latest deployment does not contain that file anymore (and would thus have resulted in a 404 because of Skew Protection).
@@ -75,6 +96,10 @@ These files must be content-addressed by their filepath and newer deployments mu
 One difference between regular static files and immutable static files is that immutable static files are always served with the routing config of the latest deployment, even if the file is being requested from a previous deployment.
 
 The `VERCEL_HASH_SALT` ([system environment variable](/docs/environment-variables/system-environment-variables)) should be factored into the hashes to provide a way to rotate the file names.
+
+<br />
+
+**Immutable Static Files Manifest**: `.vercel/output/immutable.json`
 
 In addition to the files in `.vercel/output/static`, you have to emit a manifest `.vercel/output/immutable.json` that contains a mapping of all immutable static files and their full content hashes (because the filename might only contain a truncated hash):
 
@@ -94,6 +119,14 @@ Note that it's entirely valid to just specify the filename as the full content h
 
 ## Functions
 
+**Functions Directory**: `.vercel/output/functions`
+
+<br />
+
+[`vercel/examples/build-output-api/serverless-functions`](https://github.com/vercel/examples/tree/main/build-output-api/serverless-functions)
+
+<br />
+
 A [Vercel Function](/docs/functions) is represented on the file system as
 a directory with a `.func` suffix on the name, contained within the `.vercel/output/functions` directory.
 
@@ -112,6 +145,10 @@ The `.func` suffix on the directory name is *not included* as part of the URL pa
 For example, a directory located at `.vercel/output/functions/api/posts.func` will be accessible at the URL path `/api/posts` of the Deployment.
 
 ### Serverless function configuration
+
+**Functions Config File**: `.vercel/output/functions/<name>.func/.vc-config.json`
+
+<br />
 
 The `.vc-config.json` configuration file contains information related to how the Vercel Function will be created by Vercel.
 
@@ -180,7 +217,29 @@ This is what the `.vc-config.json` configuration file could look like in a real 
 
 The following example shows a directory structure where the Vercel Function will be accessible at the `/serverless` URL path of the Deployment:
 
+- `.vercel/`
+  - `output/`
+    - `functions/`
+      - `serverless.func/`
+        - `node_modules/`
+          - `.../`
+        - `.vc-config.json`
+        - `serve.js`
+        - `data.sqlite`
+
+<br />
+
+<br />
+
 ## Functions with Edge Runtime
+
+**Functions with Edge Runtime Directory**: `.vercel/output/functions`
+
+<br />
+
+[`vercel/examples/build-output-api/edge-functions`](https://github.com/vercel/examples/tree/main/build-output-api/edge-functions)
+
+<br />
 
 A [Function with Edge Runtime](/docs/functions) is represented on the file system as
 a directory with a `.func` suffix on the name, contained within the `.vercel/output/functions` directory.
@@ -203,6 +262,10 @@ Functions with Edge Runtime will bundle an `entrypoint` and all supported source
 - `.wasm`
 
 ### Function with Edge Runtime configuration
+
+**Function with Edge Runtime Config File**: `.vercel/output/functions/<name>.func/.vc-config.json`
+
+<br />
 
 The `.vc-config.json` configuration file contains information related to how the Function with Edge Runtime will be created by Vercel.
 
@@ -238,7 +301,22 @@ This is what the `.vc-config.json` configuration file could look like in a real 
 
 The following example shows a directory structure where the Function with Edge Runtime will be accessible at the `/edge` URL path of the Deployment:
 
+- `.vercel/`
+  - `output/`
+    - `functions/`
+      - `edge.func/`
+        - `.vc-config.json`
+        - `index.js`
+
 ## Prerender Functions
+
+**Prerender Functions Directory**: `.vercel/output/functions`
+
+<br />
+
+[`vercel/examples/build-output-api/prerender-functions`](https://github.com/vercel/examples/tree/main/build-output-api/prerender-functions)
+
+<br />
 
 A Prerender asset is a Vercel Function that will be cached by the Vercel CDN
 in the same way as a static file. This concept is also known as [Incremental Static Regeneration](/docs/incremental-static-regeneration).
@@ -249,6 +327,10 @@ with an additional configuration file that describes the cache invalidation rule
 An optional "fallback" static file can also be specified, which will be served when there is no cached version available.
 
 ### Prerender configuration file
+
+**Prerender Config File**: `.vercel/output/functions/<name>.prerender-config.json`
+
+<br />
 
 The `<name>.prerender-config.json` configuration file contains information related to how the Prerender Function will be created by Vercel.
 
@@ -280,6 +362,10 @@ type PrerenderFunctionConfig = {
 
 #### Fallback static file
 
+**Prerender Fallback Static File**: `.vercel/output/functions/<name>.prerender-fallback.<ext>`
+
+<br />
+
 A Prerender asset may also include a static "fallback" version that is generated at build-time.
 The fallback file will be served by Vercel while there is not yet a cached version that was generated during runtime.
 
@@ -303,6 +389,15 @@ This is what an `example.prerender-config.json` file could look like in a real s
 ### Directory structure for Prerender Functions
 
 The following example shows a directory structure where the Prerender will be accessible at the `/blog` URL path of the Deployment:
+
+- `.vercel/`
+  - `output/`
+    - `functions/`
+      - `blog.func/`
+        - `.vc-config.json`
+        - `index.js`
+      - `blog.prerender-config.json`
+      - `blog.prerender-fallback.html`
 
 
 ---

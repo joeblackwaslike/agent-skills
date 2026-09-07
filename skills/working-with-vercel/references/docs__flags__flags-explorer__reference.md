@@ -15,13 +15,15 @@ related:
 summary: In-depth reference for configuring the Flags Explorer
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/flags-explorer/reference.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "3e4bf8542b8251644fd65fbc5f54db61f677e848af2dd339a1b21db3337ec903"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "5b081c711f1c0dcf8f6f6e6d06eceec617dc7143820aa0f7475c8609762cf810"
 ---
 
 # Reference
 
 > **🔒 Permissions Required**: Flags Explorer
+
+The Flags Explorer has five main concepts: the [Discovery Endpoint](/docs/flags/flags-explorer/reference#discovery-endpoint), the [FLAGS\_SECRET environment variable](/docs/flags/flags-explorer/reference#flags_secret-environment-variable), the [override cookie](/docs/flags/flags-explorer/reference#override-cookie), [flag definitions](/docs/flags/flags-explorer/reference#definitions), and [flag values](/docs/flags/flags-explorer/reference#values).
 
 
 <!-- docsgraph:related -->
@@ -40,8 +42,6 @@ sha256: "3e4bf8542b8251644fd65fbc5f54db61f677e848af2dd339a1b21db3337ec903"
 
 Full cross-link map for this page: [/docs/flags/flags-explorer/reference.graph.md](/docs/flags/flags-explorer/reference.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Freference&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-The Flags Explorer has five main concepts: the [Discovery Endpoint](/docs/flags/flags-explorer/reference#discovery-endpoint), the [FLAGS\_SECRET environment variable](/docs/flags/flags-explorer/reference#flags_secret-environment-variable), the [override cookie](/docs/flags/flags-explorer/reference#override-cookie), [flag definitions](/docs/flags/flags-explorer/reference#definitions), and [flag values](/docs/flags/flags-explorer/reference#values).
 
 ## Definitions
 

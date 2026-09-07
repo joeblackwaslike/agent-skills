@@ -3,7 +3,7 @@ title: Vercel Enterprise Plan
 product: vercel
 url: /docs/plans/enterprise
 canonical_url: "https://vercel.com/docs/plans/enterprise"
-last_updated: 2026-08-27
+last_updated: 2026-09-01
 type: reference
 prerequisites:
   - /docs/plans
@@ -16,8 +16,8 @@ related:
 summary: Learn about the Enterprise plan for Vercel, including features, pricing, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/enterprise.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "c6296aaae9dc96644ad8dde5f3ac6308159c51e633543da0d6337b0e4d2b4e6f"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "238e3c402ca09b3a620e349c1b184dbe838e124ac47fb3d3dffd3f7c775bed55"
 ---
 
 # Vercel Enterprise Plan
@@ -35,10 +35,10 @@ Vercel offers an Enterprise plan for organizations and enterprises that need hig
 - [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent?from=related&source_path=%2Fdocs%2Fplans%2Fenterprise&source_site=vercel-docs&relationship=related) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
 - [Using Vercel Agent to review pull requests](https://vercel.com/kb/guide/vercel-agent-code-review?from=related&source_path=%2Fdocs%2Fplans%2Fenterprise&source_site=vercel-docs&relationship=related) — Set up Vercel Agent Code Review to automatically review pull requests, apply validated fixes, request reviews with @verc
 - [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related&source_path=%2Fdocs%2Fplans%2Fenterprise&source_site=vercel-docs&relationship=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
-- [Simpler Pricing](https://vercel.com/blog/simpler-pricing?from=related&source_path=%2Fdocs%2Fplans%2Fenterprise&source_site=vercel-docs&relationship=related)
 - [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Fplans%2Fenterprise&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
 - [Enterprise](https://v0.app/docs/enterprise?from=related&source_path=%2Fdocs%2Fplans%2Fenterprise&source_site=vercel-docs&relationship=related) — Learn how to manage v0 seats, access, and more in your Vercel Enterprise account.
 - [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions?from=related&source_path=%2Fdocs%2Fplans%2Fenterprise&source_site=vercel-docs&relationship=related)
+- [Vercel Pro Plan](https://vercel.com/docs/plans/pro-plan?from=related&source_path=%2Fdocs%2Fplans%2Fenterprise&source_site=vercel-docs&relationship=related) — Learn about the Vercel Pro plan with credit-based billing, free viewer seats, and self-serve enterprise features for pro
 - [Security & Compliance Measures](https://vercel.com/docs/security/compliance?from=related&source_path=%2Fdocs%2Fplans%2Fenterprise&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fplans%2Fenterprise&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Multi-tenant Limits](https://vercel.com/docs/platforms/multi-tenant-platforms/limits?from=related&source_path=%2Fdocs%2Fplans%2Fenterprise&source_site=vercel-docs&relationship=related) — Understand the limits and features available for Vercel for Platforms.
@@ -91,9 +91,7 @@ Gain actionable insights with enhanced observability & logging.
 
 - Enhanced [Observability and Logging](/docs/observability)
 - [Audit Logs](/docs/audit-log)
-
-* Increased retention with [Speed Insights](/docs/speed-insights/limits-and-pricing)
-
+- Increased retention with [Speed Insights Plus](/docs/speed-insights/limits-and-pricing)
 - [Custom Events](/docs/analytics/custom-events) tracking and more filters, such as UTM Parameters
 - 3 days of [Runtime Logs](/docs/logs/runtime)
 - Increased retention in [Observability](/docs/observability)

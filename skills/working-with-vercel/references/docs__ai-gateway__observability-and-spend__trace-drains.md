@@ -17,8 +17,8 @@ related:
 summary: Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain billing.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "97fe17de0f8ded93c6f9f33b8826374c2be09083ad0fb2af704f9924ee8ee03f"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "88ce0fa2f203f4084707793ba110e7235aebd3ab0a6e26ee7031cfb195a3629d"
 ---
 
 # Trace Drains
@@ -83,6 +83,18 @@ The **Native Integrations** section of the drain creation flow always shows the 
 ## Usage and pricing
 
 AI Gateway Traces bills on two meters: the number of trace events delivered to your drains, and the volume of trace data transferred (egress). Vercel bills the two meters separately.
+
+Resource
+
+Price
+
+AI Gateway Traces
+
+$0.05 per 1,000 traces
+
+Trace egress
+
+$0.50 per 1 GB
 
 Pro plans don't include an allowance for either meter. Charges begin with the first delivered trace and first byte of trace egress.
 

@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/starship/starship/main/docs/config/README.md"
-fetched_at: "2026-08-24T04:59:20.149Z"
-sha256: "a1e22525e2b4f99e8498aecca458654f45fd07377cd5f2d0056ddfadcfd6062d"
+fetched_at: "2026-09-07T09:10:44.999Z"
+sha256: "8aa34d953160e8d587ab6d2848f31030f116bc1eeb706c4793df567e52ce86ca"
 ---
 
 # Configuration
@@ -1922,6 +1922,7 @@ The `git_branch` module shows the active branch of the repo in your current dire
 | `truncation_symbol`  | `'…'`                                             | The symbol used to indicate a branch name was truncated. You can use `''` for no symbol. |
 | `only_attached`      | `false`                                           | Only show the branch name when not in a detached `HEAD` state.                           |
 | `ignore_branches`    | `[]`                                              | A list of names to avoid displaying. Useful for 'master' or 'main'.                      |
+| `ignore_remotes`     | `[]`                                              | A list of remotes to avoid displaying. Useful for 'origin' or fetch-only remotes.        |
 | `ignore_bare_repo`   | `false`                                           | Do not show when in a bare repo.                                                         |
 | `disabled`           | `false`                                           | Disables the `git_branch` module.                                                        |
 
@@ -1947,6 +1948,7 @@ symbol = '🌱 '
 truncation_length = 4
 truncation_symbol = ''
 ignore_branches = ['master', 'main']
+ignore_remotes = ['origin', 'upstream']
 ```
 
 ## Git Commit
@@ -2612,6 +2614,51 @@ It looks at `@ | @-` to find bookmarks and will prioritize displaying those of `
 [jj_bookmark]
 ignore_names = ["main", "master"]
 diverged_symbol = "⇕"
+```
+
+## JJ Change
+
+The `jj_change` module shows the current [Jujutsu](https://docs.jj-vcs.dev/) change and optionally the underlying commit when the current directory is in a Jujutsu repository.
+
+### Options
+
+| Option                | Default      | Description                                                               |
+| --------------------- | ------------ | ------------------------------------------------------------------------- |
+| `format`              | `"$change "` | Format string for the module                                              |
+| `prefix_style`        | `bold green` | Value of the `$prefix_style` variable in the format string                |
+| `suffix_style`        | `dimmed`     | Value of the `$suffix_style` variable in the format string                |
+| `change_offset_style` | `bold`       | Value of the `$change_offset_style` variable in the format string         |
+| `change_hash_length`* | `7`          | The length of the displayed change hash, when combining prefix and suffix |
+| `commit_hash_length`* | `7`          | The length of the displayed commit hash, when combining prefix and suffix |
+| `disabled`            | `false`      | Disable the module                                                        |
+
+*: The length of `$<id>_prefix` will be `max(<id>_prefix.len(), <id>_hash_length)`, to ensure the shortest unique
+prefix is always correctly displayed
+
+### Variables
+
+| Variable              | Example | Description                                                                                                                               |
+| --------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| change                |         | The full styled change at once: `[$change_prefix]($prefix_style)[$change_suffix]($suffix_style)([/$change_offset]($change_offset_style))` |
+| change_prefix         | `vpo`   | Current change hash shortest unique prefix                                                                                                |
+| change_suffix         | `vrqx`  | Current change hash, truncated to `change_hash_length` and after removing `change_prefix`                                                 |
+| change_offset         | `2`     | Offset of the current change, if it is divergent                                                                                          |
+| commit                |         | The full styled commit at once: `[$commit_prefix]($prefix_style)[$commit_suffix]($suffix_style)`                                          |
+| commit_prefix         | `303`   | Current commit hash shortest unique prefix                                                                                                |
+| commit_suffix         | `63e4`  | Current commit hash, truncated to `commit_hash_length` and after removing `commit_prefix`                                                 |
+| prefix_style\*        |         | Mirrors the value of option `prefix_style`                                                                                                |
+| suffix_style\*        |         | Mirrors the value of option `suffix_style`                                                                                                |
+| change_offset_style\* |         | Mirrors the value of option `change_offset_style`                                                                                         |
+
+*: This variable can only be used as a part of a style string
+
+### Example
+
+```toml
+# ~/.config/starship.toml
+
+[jj_change]
+format = "($change:$commit) "
 ```
 
 ## Jobs

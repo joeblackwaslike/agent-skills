@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/ui-message.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "d3f1d5a0f21d883b17d024801fa201cd78221b8dc7c00667a3487397cedfb28e"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "7105add78a97738f4a4845c17811abfaddcb102c1554a20ec0dfc482e6c13cd8"
 ---
 
 # `UIMessage`
@@ -152,6 +152,36 @@ type ToolUIPart<TOOLS extends UITools = UITools> = ValueOf<{
         errorText?: never;
       }
     | {
+        state: 'approval-requested';
+        input: TOOLS[NAME]['input'];
+        output?: never;
+        errorText?: never;
+        approval: {
+          id: string;
+          approved?: never;
+          descriptor?: unknown;
+          requestReason?: string;
+          reason?: never;
+          isAutomatic?: boolean;
+          signature?: string;
+        };
+      }
+    | {
+        state: 'approval-responded';
+        input: TOOLS[NAME]['input'];
+        output?: never;
+        errorText?: never;
+        approval: {
+          id: string;
+          approved: boolean;
+          descriptor?: unknown;
+          requestReason?: string;
+          reason?: string;
+          isAutomatic?: boolean;
+          signature?: string;
+        };
+      }
+    | {
         state: 'output-available';
         input: TOOLS[NAME]['input'];
         output: TOOLS[NAME]['output'];
@@ -168,6 +198,11 @@ type ToolUIPart<TOOLS extends UITools = UITools> = ValueOf<{
   );
 }>;
 ```
+
+`approval.descriptor` contains optional opaque metadata supplied as
+`approvalDescriptor` on the approval request stream chunk. It is preserved when
+the tool part transitions from `approval-requested` to `approval-responded` and
+in later approval-bearing output states.
 
 ### `CustomContentUIPart`
 

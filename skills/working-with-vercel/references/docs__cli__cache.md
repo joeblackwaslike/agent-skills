@@ -3,7 +3,7 @@ title: vercel cache
 product: vercel
 url: /docs/cli/cache
 canonical_url: "https://vercel.com/docs/cli/cache"
-last_updated: 2026-08-11
+last_updated: 2026-09-03
 type: reference
 prerequisites:
   - /docs/cli
@@ -11,11 +11,12 @@ related:
   - /docs/caching/cdn-cache
   - /docs/caching/runtime-cache
   - /docs/caching/cdn-cache/purge
+  - /docs/cli/global-options
 summary: Learn how to manage cache for your project using the vercel cache CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/cache.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "20b78fae3afee8e51862fc9e0c8176b108a3908bca4f2f8e19aa8e19e7286a57"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "084320faea19d966e6b4369802ba8547b9f2e0e190a9e542f0ad5d74f1db1bb3"
 ---
 
 # vercel cache
@@ -32,12 +33,11 @@ The `vercel cache` command is used to manage the cache for your project, such as
 - [Invalidate the CDN cache by tag](https://vercel.com/changelog/invalidate-the-cdn-cache-by-tag?from=related&source_path=%2Fdocs%2Fcli%2Fcache&source_site=vercel-docs&relationship=related)
 - [Tag-based cache invalidation now available for all responses](https://vercel.com/changelog/tag-based-cache-invalidation-now-available-for-all-responses?from=related&source_path=%2Fdocs%2Fcli%2Fcache&source_site=vercel-docs&relationship=related)
 - [You can now invalidate the CDN cache by providing a source image](https://vercel.com/changelog/you-can-now-invalidate-the-cdn-cache-by-providing-a-source-image?from=related&source_path=%2Fdocs%2Fcli%2Fcache&source_site=vercel-docs&relationship=related)
-- [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins?from=related&source_path=%2Fdocs%2Fcli%2Fcache&source_site=vercel-docs&relationship=related) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
+- [vercel blob](https://vercel.com/docs/cli/blob?from=related&source_path=%2Fdocs%2Fcli%2Fcache&source_site=vercel-docs&relationship=related) — Learn how to interact with Vercel Blob storage using the vercel blob CLI command.
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fcache&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [Diagnosing and fixing cache issues](https://vercel.com/docs/caching/cdn-cache/debug-cache-issues?from=related&source_path=%2Fdocs%2Fcli%2Fcache&source_site=vercel-docs&relationship=related) — Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
-- [Invalidate by tag](https://vercel.com/docs/rest-api/edge-cache/invalidate-by-tag?from=related&source_path=%2Fdocs%2Fcli%2Fcache&source_site=vercel-docs&relationship=related) — POST /v1/edge-cache/invalidate-by-tags — Marks a cache tag as stale, causing cache entries associated with that tag to b
-- [Cache Status and Reasons](https://vercel.com/docs/caching/cache-status?from=related&source_path=%2Fdocs%2Fcli%2Fcache&source_site=vercel-docs&relationship=related) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
-- [Data Cache for Next.js](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related&source_path=%2Fdocs%2Fcli%2Fcache&source_site=vercel-docs&relationship=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
-- [Dangerously delete by tag](https://vercel.com/docs/rest-api/edge-cache/dangerously-delete-by-tag?from=related&source_path=%2Fdocs%2Fcli%2Fcache&source_site=vercel-docs&relationship=related) — POST /v1/edge-cache/dangerously-delete-by-tags — Marks a cache tag as deleted, causing cache entries associated with tha
+- [vercel domains](https://vercel.com/docs/cli/domains?from=related&source_path=%2Fdocs%2Fcli%2Fcache&source_site=vercel-docs&relationship=related) — Learn how to buy, sell, transfer, and manage your domains using the vercel domains CLI command.
+- [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fcache&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 
 Full cross-link map for this page: [/docs/cli/cache.graph.md](/docs/cli/cache.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fcache&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -129,7 +129,9 @@ vercel cache invalidate --tag blog-posts,user-profiles,homepage
 
 ### srcimg
 
-The `--srcimg` option specifies a source image path to invalidate or delete from the cache. This invalidates or deletes all cached transformations of the source image. This option works with both `invalidate` and `dangerously-delete` subcommands.
+The `--srcimg` option specifies a source image to invalidate or delete from the cache. This invalidates or deletes all cached transformations of the source image. This option works with both `invalidate` and `dangerously-delete` subcommands.
+
+The value must exactly match how your app references the source image — a relative path or a full URL — including any query parameters. Unlike user-defined cache tags, source image tags may contain commas and have a maximum length of 1013 bytes of UTF-8.
 
 You can't use both `--tag` and `--srcimg` options together. Choose one based on whether you're invalidating cached content by tag or by source image.
 
@@ -159,6 +161,24 @@ vercel cache purge --yes
 
 *Using the \`vercel cache purge\` command with the
 \`--yes\` option.*
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel cache` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 
 ---

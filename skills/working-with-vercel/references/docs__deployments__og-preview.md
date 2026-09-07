@@ -13,8 +13,8 @@ related:
 summary: Learn how to inspect and validate your Open Graph metadata through the Open Graph deployment tab.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/og-preview.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "f0b397549bb901857d6bd452ed898d9413a18c5143626065158e9f30847c9c34"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "0746956b8bdcba553cf3ff97d32248876ad2569f2fdcccdac61c63c7cbeac389"
 ---
 
 # Inspecting your Open Graph metadata
@@ -27,6 +27,7 @@ You can use the **Open Graph** section in the sidebar on every deployment on Ver
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [OG Image Generation: The Complete Customization Guide](https://vercel.com/kb/guide/using-custom-font?from=related&source_path=%2Fdocs%2Fdeployments%2Fog-preview&source_site=vercel-docs&relationship=related) — Learn how to use custom fonts in your Vercel OG image, plus emoji, external images, non-Latin text, dynamic titles, and
 - [Inspect and validate Open Graph metadata for enhanced link sharing](https://vercel.com/changelog/open-graph-link-sharing-inspector?from=related&source_path=%2Fdocs%2Fdeployments%2Fog-preview&source_site=vercel-docs&relationship=related)
 - [Inspect Open Graph data with the Vercel Toolbar](https://vercel.com/changelog/inspect-open-graph-data-with-the-vercel-toolbar?from=related&source_path=%2Fdocs%2Fdeployments%2Fog-preview&source_site=vercel-docs&relationship=related)
 - [Displaying headlines in social previews with Vercel OG](https://vercel.com/kb/guide/displaying-article-headlines-in-social-previews?from=related&source_path=%2Fdocs%2Fdeployments%2Fog-preview&source_site=vercel-docs&relationship=related) — Twitter/X is planning to remove headlines from social previews. To get around this limitation, Vercel OG offers a way to
@@ -35,7 +36,7 @@ You can use the **Open Graph** section in the sidebar on every deployment on Ver
 - [List deployments](https://vercel.com/docs/rest-api/deployments/list-deployments?from=related&source_path=%2Fdocs%2Fdeployments%2Fog-preview&source_site=vercel-docs&relationship=related) — GET /v7/deployments — List deployments under the authenticated user or team. If a deployment hasn't finished uploading \\
 - [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart?from=related&source_path=%2Fdocs%2Fdeployments%2Fog-preview&source_site=vercel-docs&relationship=related) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
 - [Microfrontends Routing](https://vercel.com/docs/microfrontends/routing?from=related&source_path=%2Fdocs%2Fdeployments%2Fog-preview&source_site=vercel-docs&relationship=related) — Configure which microfrontend handles each path and understand how Vercel selects deployments.
-- [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fdeployments%2Fog-preview&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
+- [Get microfrontends config for a deployment](https://vercel.com/docs/rest-api/microfrontends/get-microfrontends-config-for-a-deployment?from=related&source_path=%2Fdocs%2Fdeployments%2Fog-preview&source_site=vercel-docs&relationship=related) — GET /v1/microfrontends/{deploymentId}/config — Get the microfrontends config for a deployment.
 
 Full cross-link map for this page: [/docs/deployments/og-preview.graph.md](/docs/deployments/og-preview.graph.md?from=related&source_path=%2Fdocs%2Fdeployments%2Fog-preview&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

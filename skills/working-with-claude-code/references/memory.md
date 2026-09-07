@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/memory.md"
-fetched_at: "2026-08-31T10:37:20.620Z"
-sha256: "3651ab935d3ba8a0cc3eb9e3343ad52928375410271f697bae6b7d3ca1db1323"
+fetched_at: "2026-09-07T08:59:03.477Z"
+sha256: "20fc80cfc8a59ed983f36887690e609bda37db74692ff8fff5ea57b0ddb8e69d"
 ---
 
 > ## Documentation Index
@@ -400,7 +400,7 @@ The directory contains a `MEMORY.md` index and one topic file per memory:
 
 Auto memory is machine-local. All worktrees and subdirectories within the same git repository share one auto memory directory. Files are not shared across machines or cloud environments.
 
-Claude Code deletes old session transcripts after the [`cleanupPeriodDays`](/docs/en/settings-reference#cleanupperioddays) retention period, but excludes the files in the memory directory from that [retention sweep](/docs/en/claude-directory#cleaned-up-automatically). `MEMORY.md` and topic files stay until you or Claude edits or deletes them.
+Claude Code deletes old session transcripts after the [`cleanupPeriodDays`](/docs/en/settings-reference#cleanupperioddays) retention period, but excludes the memory files in the memory directory from that [retention sweep](/docs/en/claude-directory#cleaned-up-automatically). `MEMORY.md` and topic files stay until you or Claude edits or deletes them.
 
 ### How it works
 

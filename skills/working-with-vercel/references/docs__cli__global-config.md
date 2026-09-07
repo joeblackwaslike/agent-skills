@@ -16,8 +16,8 @@ related:
 summary: "Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, and backups."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/global-config.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "8ef743eabddf0cdbcbf942e26051370f24e71692870d6ed3a045dca756f2f61a"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "6c415504d2c00ab8d2e3a3fcb9d3414f04dc9a8378c37b97425f3a8b0fd535b9"
 ---
 
 # vercel global-config
@@ -30,11 +30,11 @@ The `vercel global-config` command manages [Global Config](/docs/global-config) 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [vercel blob](https://vercel.com/docs/cli/blob?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-config&source_site=vercel-docs&relationship=related) — Learn how to interact with Vercel Blob storage using the vercel blob CLI command.
 - [Using Global Config](https://vercel.com/docs/global-config/using-global-config?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-config&source_site=vercel-docs&relationship=related) — Learn how to use Global Configs in your projects.
-- [Get Global Config items](https://vercel.com/docs/rest-api/global-config/get-global-config-items?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-config&source_site=vercel-docs&relationship=related) — GET /v1/global-config/{edgeConfigId}/items — Returns all items of a Global Config.
 - [Managing Global Configs with Vercel REST API](https://vercel.com/docs/global-config/vercel-api?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-config&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel REST API to create and update Global Configs. You can also read data stored in Global Config
-- [Get a Global Config item](https://vercel.com/docs/rest-api/global-config/get-a-global-config-item?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-config&source_site=vercel-docs&relationship=related) — GET /v1/global-config/{edgeConfigId}/item/{edgeConfigItemKey} — Returns a specific Global Config Item.
-- [Get a Global Config](https://vercel.com/docs/rest-api/global-config/get-a-global-config?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-config&source_site=vercel-docs&relationship=related) — GET /v1/global-config/{edgeConfigId} — Returns a Global Config.
+- [vercel env](https://vercel.com/docs/cli/env?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-config&source_site=vercel-docs&relationship=related) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
+- [Get Global Config items](https://vercel.com/docs/rest-api/global-config/get-global-config-items?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-config&source_site=vercel-docs&relationship=related) — GET /v1/global-config/{edgeConfigId}/items — Returns all items of a Global Config.
 
 Full cross-link map for this page: [/docs/cli/global-config.graph.md](/docs/cli/global-config.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-config&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -300,6 +300,24 @@ Use `vercel global-config get <id-or-slug>` to look up the Global Config ID, the
 
 - [Global Config overview](/docs/global-config)
 - [Global Config REST API reference](/docs/rest-api/global-config)
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel global-config` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 
 ---

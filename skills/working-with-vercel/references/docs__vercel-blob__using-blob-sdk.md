@@ -16,13 +16,17 @@ related:
 summary: Learn how to use the Vercel Blob SDK to access your blob store from your apps.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/using-blob-sdk.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "0740ed0020751ed3a26cbc834d19b3b945b7e13a2247da2e461ea421b8f7934c"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "1e04536206684e5db318e4debd0022de9b0ca88c5c08d7c6d567836910308d4e"
 ---
 
 # @vercel/blob
 
 > **🔒 Permissions Required**: Vercel Blob
+
+## Getting started
+
+To start using [Vercel Blob](/storage/blob) SDK, follow the steps below:
 
 
 <!-- docsgraph:related -->
@@ -37,20 +41,49 @@ sha256: "0740ed0020751ed3a26cbc834d19b3b945b7e13a2247da2e461ea421b8f7934c"
 - [Migrate an Astro app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-an-astro-app-from-webflow-cloud-to-vercel?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusing-blob-sdk&source_site=vercel-docs&relationship=related) — Move your Astro app from Webflow Cloud to Vercel: swap the @astrojs/cloudflare adapter for @astrojs/vercel, drop the bas
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusing-blob-sdk&source_site=vercel-docs&relationship=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
 - [Public Storage](https://vercel.com/docs/vercel-blob/public-storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusing-blob-sdk&source_site=vercel-docs&relationship=related) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
+- [Complete a blob upload](https://vercel.com/docs/rest-api/vcr/complete-a-blob-upload?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusing-blob-sdk&source_site=vercel-docs&relationship=related) — PUT /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid} — PUT /v2/:teamSlug/:projectSlug/:repositoryName/
+- [Create a Blob store](https://vercel.com/docs/rest-api/storage/create-a-blob-store?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusing-blob-sdk&source_site=vercel-docs&relationship=related) — POST /storage/stores/blob — Create a Blob store
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusing-blob-sdk&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/vercel-blob/using-blob-sdk.graph.md](/docs/vercel-blob/using-blob-sdk.graph.md?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusing-blob-sdk&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-## Getting started
-
-To start using [Vercel Blob](/storage/blob) SDK, follow the steps below:
 
 > **💡 Note:** You can also interact with Vercel Blob using the [Vercel CLI](/docs/cli/blob)
 > for command-line operations. For example, you might want to quickly upload
 > assets during local development without writing additional code.
 
 Vercel Blob works with any frontend framework. begin by installing the package:
+
+**TypeScript**
+
+<CodeBlock>
+  <Code tab="pnpm">
+    ```bash
+    pnpm i @vercel/blob
+    ```
+  </Code>
+  <Code tab="yarn">
+    ```bash
+    yarn i @vercel/blob
+    ```
+  </Code>
+  <Code tab="npm">
+    ```bash
+    npm i @vercel/blob
+    ```
+  </Code>
+  <Code tab="bun">
+    ```bash
+    bun i @vercel/blob
+    ```
+  </Code>
+</CodeBlock>
+
+**Python**
+
+```bash
+pip install vercel
+```
 
 - ### Create a Blob store
   1. Go to your project's [**Storage** tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fstores\&title=Go+to+Storage)
@@ -179,9 +212,154 @@ In the examples below, we use [Fluid compute](/docs/fluid-compute) for optimal p
 
 This example creates a Function that accepts a file from a `multipart/form-data` form and uploads it to the Blob store. The function returns a unique URL for the blob.
 
+**TypeScript**
+
+```ts filename="app/upload/route.ts" framework=nextjs-app
+import { put } from '@vercel/blob';
+
+export async function PUT(request: Request) {
+  const form = await request.formData();
+  const file = form.get('file') as File;
+  const blob = await put(file.name, file, {
+    access: 'private' /* or 'public' */,
+    addRandomSuffix: true,
+  });
+
+  return Response.json(blob);
+}
+```
+
+```js filename="app/upload/route.js" framework=nextjs-app
+import { put } from '@vercel/blob';
+
+export async function PUT(request) {
+  const form = await request.formData();
+  const file = form.get('file');
+  const blob = await put(file.name, file, {
+    access: 'private' /* or 'public' */,
+    addRandomSuffix: true,
+  });
+
+  return Response.json(blob);
+}
+```
+
+```ts filename="app/upload/route.ts" framework=nextjs
+import { put } from '@vercel/blob';
+
+export async function PUT(request: Request) {
+  const form = await request.formData();
+  const file = form.get('file') as File;
+  const blob = await put(file.name, file, {
+    access: 'private' /* or 'public' */,
+    addRandomSuffix: true,
+  });
+
+  return Response.json(blob);
+}
+```
+
+```js filename="app/upload/route.js" framework=nextjs
+import { put } from '@vercel/blob';
+
+export async function PUT(request) {
+  const form = await request.formData();
+  const file = form.get('file');
+  const blob = await put(file.name, file, {
+    access: 'private' /* or 'public' */,
+    addRandomSuffix: true,
+  });
+
+  return Response.json(blob);
+}
+```
+
+```ts filename="api/upload.ts" framework=other
+import { put } from '@vercel/blob';
+
+export async function PUT(request: Request) {
+  const form = await request.formData();
+  const file = form.get('file') as File;
+  const blob = await put(file.name, file, {
+    access: 'private' /* or 'public' */,
+    addRandomSuffix: true,
+  });
+
+  return Response.json(blob);
+}
+```
+
+```js filename="api/upload.js" framework=other
+import { put } from '@vercel/blob';
+
+export async function PUT(request) {
+  const form = await request.formData();
+  const file = form.get('file');
+  const blob = await put(file.name, file, {
+    access: 'private' /* or 'public' */,
+    addRandomSuffix: true,
+  });
+
+  return Response.json(blob);
+}
+```
+
+**Python**
+
+```python
+import asyncio
+import os
+import tempfile
+from dotenv import load_dotenv
+from vercel.blob import UploadProgressEvent, BlobClient, AsyncBlobClient
+
+load_dotenv(".env.local")
+load_dotenv()
+
+def on_progress(e: UploadProgressEvent) -> None:
+    print(f"progress: {e.loaded}/{e.total} bytes ({e.percentage}%)")
+
+async def handler(form: dict) -> dict:
+    client = AsyncBlobClient()
+
+    file: bytes = form["file"]  # your uploaded bytes
+    uploaded = await client.put(
+        f"profiles/{form['filename']}",
+        file,
+        access="private",  # or "public",
+        add_random_suffix=True,
+        on_upload_progress=on_progress,
+    )
+    return dict(uploaded)
+```
+
 ### `put()`
 
 The `put` method uploads a blob object to the Blob store.
+
+**TypeScript**
+
+```js
+put(pathname, body, options);
+```
+
+**Python**
+
+```python
+put(
+    pathname: str,
+    body: bytes | AsyncIterator[bytes],
+    *,
+    access: Literal['private', 'public'],
+    content_type: str | None = None,
+    add_random_suffix: bool = False,
+    overwrite: bool = False,
+    cache_control_max_age: int | None = None,
+    token: str | None = None,
+    multipart: bool | None = None,
+    on_upload_progress: Callable[[UploadProgressEvent], None] | None = None
+)
+```
 
 It accepts the following parameters:
 
@@ -207,6 +385,37 @@ It accepts the following parameters:
 #### Example code with folder output
 
 To upload your file to an existing [folder](#folders) inside your blob storage, pass the folder name in the `pathname` as shown below:
+
+**TypeScript**
+
+```ts filename="app/upload/route.ts"
+const imageFile = formData.get('image') as File;
+const blob = await put(`existingBlobFolder/${imageFile.name}`, imageFile, {
+  access: 'private' /* or 'public' */,
+  addRandomSuffix: true,
+});
+```
+
+**Python**
+
+```python
+import os
+from dotenv import load_dotenv
+from vercel.blob import AsyncBlobClient
+
+load_dotenv('.env.local')
+load_dotenv()
+
+client = AsyncBlobClient()
+
+image_bytes = b"..."
+blob = await client.put(
+    f"existingBlobFolder/image.png",
+    image_bytes,
+    access="private",  # or "public",
+    add_random_suffix=True,
+)
+```
 
 #### Example responses
 
@@ -360,6 +569,24 @@ Retrieve blob content as a stream. For private blobs, this is how you deliver fi
 
 ### `get()`
 
+**TypeScript**
+
+```js
+get(urlOrPathname, options);
+```
+
+**Python**
+
+```python
+get(
+    url_or_path: str,
+    *,
+    access: Literal['private', 'public'],
+    token: str | None = None,
+    if_none_match: str | None = None,
+) -> GetBlobResult | None
+```
+
 It accepts the following parameters:
 
 - `urlOrPathname`: (Required) A string specifying the URL or pathname of the blob object to retrieve
@@ -378,11 +605,134 @@ It accepts the following parameters:
 
 `get()` returns `null` (`None` in Python) if the blob is not found, or an object with the following properties:
 
+**TypeScript**
+
+```ts
+{
+  statusCode: number; // 200 or 304
+  stream: ReadableStream<Uint8Array> | null; // null on 304
+  headers: Headers;
+  blob: {
+    url: string;
+    downloadUrl: string;
+    pathname: string;
+    contentType: string | null; // null on 304
+    contentDisposition: string;
+    cacheControl: string;
+    etag: string;
+    size: number | null; // null on 304
+    uploadedAt: Date;
+  };
+}
+```
+
+**Python**
+
+```python
+# GetBlobResult:
+result.status_code          # int (200 or 304)
+result.stream               # AsyncIterator[bytes] | None (None on 304)
+result.headers              # dict
+result.blob.url             # str
+result.blob.download_url    # str
+result.blob.pathname        # str
+result.blob.content_type    # str | None (None on 304)
+result.blob.content_disposition  # str
+result.blob.cache_control   # str
+result.blob.etag            # str
+result.blob.size            # int | None (None on 304)
+result.blob.uploaded_at     # datetime
+```
+
 #### Example
+
+**TypeScript**
+
+```ts filename="app/api/documents/[...pathname]/route.ts"
+import { type NextRequest, NextResponse } from 'next/server';
+import { get } from '@vercel/blob';
+
+export async function GET(
+  request: NextRequest,
+  { params }: { params: Promise<{ pathname: string[] }> },
+) {
+  // Your auth goes here: await authRequest(request)
+
+  const { pathname } = await params;
+  const result = await get(pathname.join('/'), { access: 'private' });
+
+  if (result?.statusCode !== 200) {
+    return new NextResponse('Not found', { status: 404 });
+  }
+
+  return new NextResponse(result.stream, {
+    headers: {
+      'Content-Type': result.blob.contentType,
+    },
+  });
+}
+```
+
+**Python**
+
+```python
+from vercel.blob import AsyncBlobClient
+
+client = AsyncBlobClient()
+
+result = await client.get("documents/report.pdf", access="private")
+
+if result is None or result.status_code != 200:
+    print("Not found")
+else:
+    # result.stream is an async iterator of bytes
+    async for chunk in result.stream:
+        # process each chunk
+        pass
+```
 
 #### Example response
 
 `get()` returns `null` (`None` in Python) if the blob is not found, or an object with the following properties:
+
+**TypeScript**
+
+```ts
+{
+  statusCode: number; // 200 or 304
+  stream: ReadableStream<Uint8Array> | null; // null on 304
+  headers: Headers;
+  blob: {
+    url: string;
+    downloadUrl: string;
+    pathname: string;
+    contentType: string | null; // null on 304
+    contentDisposition: string;
+    cacheControl: string;
+    etag: string;
+    size: number | null; // null on 304
+    uploadedAt: Date;
+  };
+}
+```
+
+**Python**
+
+```python
+# GetBlobResult:
+result.status_code          # int (200 or 304)
+result.stream               # AsyncIterator[bytes] | None (None on 304)
+result.headers              # dict
+result.blob.url             # str
+result.blob.download_url    # str
+result.blob.pathname        # str
+result.blob.content_type    # str | None (None on 304)
+result.blob.content_disposition  # str
+result.blob.cache_control   # str
+result.blob.etag            # str
+result.blob.size            # int | None (None on 304)
+result.blob.uploaded_at     # datetime
+```
 
 ## Deleting blobs
 
@@ -465,6 +815,20 @@ export async function DELETE(request) {
 The `del` method deletes one or multiple blob objects from the Blob store.
 
 Since blobs are cached, it may take up to one minute for them to be fully removed from the Vercel CDN cache.
+
+**TypeScript**
+
+```ts
+del(urlOrPathname, options);
+
+del([urlOrPathname], options); // You can pass an array to delete multiple blob objects
+```
+
+**Python**
+
+```python
+delete(url_or_path: str | Iterable[str], *, token: str | None = None) -> None
+```
 
 It accepts the following parameters:
 
@@ -561,6 +925,18 @@ export async function GET(request) {
 
 The `head` method returns a blob object's metadata.
 
+**TypeScript**
+
+```js
+head(urlOrPathname, options);
+```
+
+**Python**
+
+```python
+head(url_or_path: str, *, token: str | None = None) -> HeadBlobResult
+```
+
 It accepts the following parameters:
 
 - `urlOrPathname`: (Required) A string specifying the URL or pathname of the blob object to read.
@@ -577,6 +953,36 @@ It accepts the following parameters:
 
 - a `JSON` object with the requested blob object's metadata
 - throws a `BlobNotFoundError` if the blob object was not found
+
+**TypeScript**
+
+```ts
+{
+  size: number;
+  uploadedAt: Date;
+  pathname: string;
+  contentType: string;
+  contentDisposition: string;
+  url: string;
+  downloadUrl: string;
+  cacheControl: string;
+  etag: string;
+}
+```
+
+**Python**
+
+```python
+result.size                 # int
+result.uploaded_at          # datetime
+result.pathname             # str
+result.content_type         # str
+result.content_disposition  # str
+result.url                  # str
+result.download_url         # str
+result.cache_control        # str
+result.etag                 # str
+```
 
 ## List blobs
 
@@ -640,6 +1046,25 @@ export async function GET(request) {
 
 The `list` method returns a list of blob objects in a Blob store.
 
+**TypeScript**
+
+```js
+list(options);
+```
+
+**Python**
+
+```python
+list_objects(
+    *,
+    limit: int | None = None,
+    prefix: str | None = None,
+    cursor: str | None = None,
+    mode: str | None = None,
+    token: str | None = None,
+) -> ListBlobResult
+```
+
 It accepts the following parameters:
 
 - `options`: (Optional) A `JSON` object with the following optional parameters:
@@ -657,9 +1082,78 @@ It accepts the following parameters:
 
 `list()` returns a `JSON` object in the following format:
 
+**TypeScript**
+
+```ts
+{
+  blobs: {
+    size: number;
+    uploadedAt: Date;
+    pathname: string;
+    url: string;
+    downloadUrl: string;
+    etag: string;
+  }[];
+  cursor?: string;
+  hasMore: boolean;
+  folders?: string[];
+}
+```
+
+**Python**
+
+```python
+# ListBlobResult:
+result.blobs          # list[ListBlobItem]
+result.cursor         # str | None
+result.has_more       # bool
+result.folders        # list[str] | None
+
+# ListBlobItem:
+item.size # int
+item.uploaded_at # datetime
+item.pathname # str
+item.url # str
+item.download_url # str
+item.etag # str
+```
+
 ### Pagination
 
 For a long list of blob objects (the default list `limit` is 1000), you can use the `cursor` and `hasMore` parameters to paginate through the results as shown in the example below:
+
+**TypeScript**
+
+```js
+let hasMore = true;
+let cursor;
+
+while (hasMore) {
+  const listResult = await list({
+    cursor,
+  });
+
+  hasMore = listResult.hasMore;
+  cursor = listResult.cursor;
+}
+```
+
+**Python**
+
+```python
+from vercel.blob import list_objects
+
+has_more = True
+cursor = None
+
+while has_more:
+    page = list_objects(cursor=cursor, limit=1000)
+    for b in page.blobs:
+        # process each blob
+        pass
+    has_more = page.has_more
+    cursor = page.cursor
+```
 
 ### Folders
 
@@ -671,6 +1165,28 @@ These entries will be included in the response as `folders`. Blobs that are not 
 
 By using the `folded` mode, you can efficiently retrieve folders and subsequently list the blobs inside them by using the returned `folders` as a `prefix` for further requests.
 Omitting the `prefix` parameter entirely, will return all folders in the root of your store. Be aware that the blobs pathnames and the folder names will always be fully quantified and never relative to the prefix you passed.
+
+**TypeScript**
+
+```js
+const {
+  folders: [firstFolder],
+  blobs: rootBlobs,
+} = await list({ mode: 'folded' });
+
+const { folders, blobs } = await list({ mode: 'folded', prefix: firstFolder });
+```
+
+**Python**
+
+```python
+from vercel.blob import list_objects
+
+root = list_objects(mode="folded")
+first_folder = root.folders[0]
+sub = list_objects(mode="folded", prefix=first_folder)
+
+```
 
 ## Copy a blob
 
@@ -774,6 +1290,28 @@ The `contentType` and `cacheControlMaxAge` will not be copied from the source bl
 
 Contrary to `put()`, `addRandomSuffix` is false by default. This means no automatic random id suffix is added to your blob url, unless you pass `addRandomSuffix: true`.
 
+**TypeScript**
+
+```js
+copy(fromUrlOrPathname, toPathname, options);
+```
+
+**Python**
+
+```python
+copy(
+    src_path: str,
+    dst_path: str,
+    *,
+    access: Literal['private', 'public'],
+    content_type: str | None = None,
+    add_random_suffix: bool = False,
+    overwrite: bool = False,
+    cache_control_max_age: int | None = None,
+    token: str | None = None,
+) -> PutBlobResult
+```
+
 It accepts the following parameters:
 
 - `fromUrlOrPathname`: (Required) A blob URL or pathname identifying an already existing blob
@@ -794,6 +1332,30 @@ It accepts the following parameters:
 | `abortSignal`        | No       | An [AbortSignal](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal) to cancel the operation                                                                                                                                                                                                       |
 
 `copy()` returns a `JSON` object with the following data for the copied blob object:
+
+**TypeScript**
+
+```ts
+{
+  pathname: string;
+  contentType: string;
+  contentDisposition: string;
+  url: string;
+  downloadUrl: string;
+  etag: string;
+}
+```
+
+**Python**
+
+```python
+result.pathname             # str
+result.content_type         # str
+result.content_disposition  # str
+result.url                  # str
+result.download_url         # str
+result.etag                 # str
+```
 
 An example blob is:
 
@@ -890,11 +1452,57 @@ This process consists of three phases: creating a multipart upload, uploading th
 
 This method has everything baked in and is easiest to use. It's part of the `put` and `upload` API's. Under the hood it will start the upload, split your file into multiple parts with the same size, upload them in parallel and complete the upload.
 
+**TypeScript**
+
+```js
+const blob = await put('large-movie.mp4', file, {
+  access: 'private' /* or 'public' */,
+  multipart: true,
+});
+```
+
+**Python**
+
+```python
+from vercel.blob import BlobClient
+
+client = BlobClient()
+
+with open("large-movie.mp4", "rb") as f:
+    file_data = f.read()
+
+blob = client.put(
+    "videos/large-movie.mp4",
+    file_data,
+    access="private",  # or "public",
+    content_type="video/mp4",
+)
+```
+
 ### Manual
 
 This method gives you full control over the multipart upload process. It consists of three phases:
 
 **Phase 1: Create a multipart upload**
+
+**TypeScript**
+
+```js
+const multipartUpload = await createMultipartUpload(pathname, options);
+```
+
+**Python**
+
+```python
+from vercel.blob import create_multipart_upload
+
+multipart_upload = create_multipart_upload(
+    "videos/intro.mp4",
+    access="private",  # or "public",
+    content_type="video/mp4",
+    add_random_suffix=True,
+)
+```
 
 `createMultipartUpload` accepts the following parameters:
 
@@ -928,6 +1536,28 @@ This method gives you full control over the multipart upload process. It consist
 > minimum of 5MB, except the last one which can be smaller, and all parts should
 > be of equal size.
 
+**TypeScript**
+
+```js
+const part = await uploadPart(pathname, chunkBody, options);
+```
+
+**Python**
+
+```python
+from vercel.blob import upload_part
+
+chunk1 = file_data[0:5*1024*1024] # minimum 5MB each, except last part
+part = upload_part(
+    "videos/intro.mp4",
+    chunk1,
+    access="private",  # or "public",
+    upload_id=multipart_upload.upload_id,
+    key=multipart_upload.key,
+    part_number=1,
+)
+```
+
 `uploadPart` accepts the following parameters:
 
 - `pathname`: (Required) Same value as the `pathname` parameter passed to `createMultipartUpload`
@@ -955,6 +1585,26 @@ This method gives you full control over the multipart upload process. It consist
 ```
 
 **Phase 3: Complete the multipart upload**
+
+**TypeScript**
+
+```js
+const blob = await completeMultipartUpload(pathname, parts, options);
+```
+
+**Python**
+
+```python
+from vercel.blob import complete_multipart_upload
+
+blob = complete_multipart_upload(
+    "videos/intro.mp4",
+    [part1, part2, part3],
+    access="private",  # or "public",
+    upload_id=multipart_upload.upload_id,
+    key=multipart_upload.key,
+)
+```
 
 `completeMultipartUpload` accepts the following parameters:
 
@@ -995,6 +1645,25 @@ This results in a simpler API, but still requires you to handle memory usage and
 
 **Phase 1: Create the multipart uploader**
 
+**TypeScript**
+
+```js
+const uploader = await createMultipartUploader(pathname, options);
+```
+
+**Python**
+
+```python
+from vercel.blob import AsyncBlobClient
+
+client = AsyncBlobClient()
+uploader = await client.create_multipart_uploader(
+    "examples/large-file.bin",
+    content_type="application/octet-stream",
+    add_random_suffix=True,
+)
+```
+
 `createMultipartUploader` accepts the following parameters:
 
 - `pathname`: (Required) A string specifying the path inside the blob store. This will be the base value of the return URL and includes the filename and extension.
@@ -1013,12 +1682,52 @@ This results in a simpler API, but still requires you to handle memory usage and
 
 `createMultipartUploader()` returns an `Uploader` object with the following attributes and methods:
 
+**TypeScript**
+
+```ts
+{
+  key: string;
+  uploadId: string;
+  uploadPart: (partNumber: number, body: BodyInit) => Promise<Part>;
+  complete: (parts: Part[]) => Promise<PutBlobResult>;
+}
+```
+
+**Python**
+
+```python
+uploader.upload_id                              # string
+uploader.key                                    # string
+uploader.upload_part(part_number, chunk_body)   # method
+uploader.complete(parts)                        # method
+```
+
 **Phase 2: Upload all the parts**
 
 > **💡 Note:** In the multipart uploader process, it's necessary for you to manage both
 > memory usage and concurrent upload requests. Additionally, each part must be a
 > minimum of 5MB, except the last one which can be smaller, and all parts should
 > be of equal size.
+
+**TypeScript**
+
+```js
+const part1 = await uploader.uploadPart(1, chunkBody1);
+const part2 = await uploader.uploadPart(2, chunkBody2);
+const part3 = await uploader.uploadPart(3, chunkBody3);
+```
+
+**Python**
+
+```python
+import asyncio
+tasks = [
+    uploader.upload_part(1, chunk_body_1),
+    uploader.upload_part(2, chunk_body_2),
+    uploader.upload_part(3, chunk_body_3),
+]
+parts = await asyncio.gather(*tasks)
+```
 
 `uploader.uploadPart` accepts the following parameters:
 
@@ -1027,13 +1736,65 @@ This results in a simpler API, but still requires you to handle memory usage and
 
 `uploader.uploadPart()` returns an object with the following data for the uploaded part:
 
+**TypeScript**
+
+```ts
+{
+  etag: string;
+  partNumber: number;
+}
+```
+
+**Python**
+
+```python
+part.etag         # string
+part.part_number  # int
+```
+
 **Phase 3: Complete the multipart upload**
+
+**TypeScript**
+
+```js
+const blob = await uploader.complete([part1, part2, part3]);
+```
+
+**Python**
+
+```python
+blob = await uploader.complete([part_1, part_2, part_3])
+```
 
 `uploader.complete` accepts the following parameters:
 
 - `parts`: (Required) An array containing all the uploaded parts
 
 `uploader.complete()` returns an object with the following data for the created blob object:
+
+**TypeScript**
+
+```ts
+{
+  pathname: string;
+  contentType: string;
+  contentDisposition: string;
+  url: string;
+  downloadUrl: string;
+  etag: string;
+}
+```
+
+**Python**
+
+```python
+result.pathname             # string
+result.content_type         # string
+result.content_disposition  # string
+result.url                  # string
+result.download_url         # string
+result.etag                 # string
+```
 
 ## Signed URLs
 
@@ -1270,6 +2031,48 @@ When you make a request to the SDK using any of the above methods, they will ret
 - Unforeseen or unknown errors
 
 To catch these errors, wrap your requests with a `try/catch` statement as shown below:
+
+**TypeScript**
+
+```js
+import { put, BlobAccessError } from '@vercel/blob';
+
+try {
+  await put(...);
+} catch (error) {
+  if (error instanceof BlobAccessError) {
+    // handle a recognized error
+  } else {
+    // throw the error again if it's unknown
+  throw error;
+  }
+}
+
+```
+
+**Python**
+
+```python
+from vercel.blob import BlobClient
+from vercel.blob.errors import BlobError, BlobNotFoundError
+
+try:
+    client = BlobClient()
+    client.put(
+        "examples/file.txt", b"hello",
+        access="private",  # or "public"
+    )
+except BlobNotFoundError:
+    # handle a recognized error
+    ...
+except BlobError as e:
+    # handle other blob errors
+    ...
+except Exception as e:
+    # handle unknown errors
+    ...
+
+```
 
 
 ---

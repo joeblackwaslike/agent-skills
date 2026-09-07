@@ -16,13 +16,15 @@ related:
 summary: Learn about cron jobs, how they work, and how to use them on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cron-jobs.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "56b11be7a88358eeae10d7711a387276d8dc2df8d6e40d1e8bf743f98701557d"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "b5a247d2949d58b0e59e516dac0e68a1120a625d00064f098eb7bbf91cf80b98"
 ---
 
 # Cron Jobs
 
 > **🔒 Permissions Required**: Cron Jobs
+
+Cron jobs are time-based scheduling tools used to automate repetitive tasks. By using a specific syntax called a [cron expression](#cron-expressions), you can define the frequency and timing of each task. This helps improve efficiency and ensures that important processes are performed consistently.
 
 
 <!-- docsgraph:related -->
@@ -45,8 +47,6 @@ sha256: "56b11be7a88358eeae10d7711a387276d8dc2df8d6e40d1e8bf743f98701557d"
 
 Full cross-link map for this page: [/docs/cron-jobs.graph.md](/docs/cron-jobs.graph.md?from=related&source_path=%2Fdocs%2Fcron-jobs&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Cron jobs are time-based scheduling tools used to automate repetitive tasks. By using a specific syntax called a [cron expression](#cron-expressions), you can define the frequency and timing of each task. This helps improve efficiency and ensures that important processes are performed consistently.
 
 Some common use cases of cron jobs are:
 

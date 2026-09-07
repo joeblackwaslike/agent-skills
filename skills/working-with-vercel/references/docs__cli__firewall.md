@@ -16,8 +16,8 @@ related:
 summary: "Learn how to manage your project's custom firewall rules, IP blocks, system bypass rules, attack challenge mode, and system mitigations using the..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/firewall.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "30e179290b832f286b4e48d15a5884d21192dffa908d17792d929aaa5afce123"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "bce4c09f3fcf474d3963757598ebdeb1838318c21e6d7dcf49775c25938ad5bb"
 ---
 
 # vercel firewall
@@ -31,12 +31,13 @@ The `vercel firewall` command is used to configure the [Vercel Firewall](/docs/v
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Manage Vercel Firewall in the CLI](https://vercel.com/changelog/manage-vercel-firewall-in-the-cli?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related)
+- [Protect Sensitive Routes with Vercel WAF: Challenge and Deny Rule Recipes](https://vercel.com/kb/guide/suspicious-traffic-in-specific-countries?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — Use Vercel WAF custom rules to block or challenge unwanted traffic by country, ASN, IP address, user agent, path, or coo
 - [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
 - [Vercel WAF](https://vercel.com/docs/vercel-firewall/vercel-waf?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — Learn how to secure your website with the Vercel Web Application Firewall \\(WAF\\)
 - [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
-- [vercel routes](https://vercel.com/docs/cli/routes?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — Learn how to manage project-level routing rules using the vercel routes CLI command.
 - [vercel project](https://vercel.com/docs/cli/project?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — Perform the following commands from the terminal for your Vercel Projects: list, add, inspect, update settings, rename,
 - [Create System Bypass Rule](https://vercel.com/docs/rest-api/security/create-system-bypass-rule?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — POST /v1/security/firewall/bypass — Create new system bypass rules
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/cli/firewall.graph.md](/docs/cli/firewall.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -720,6 +721,24 @@ Each condition specifies a `type`, an `op` (operator), and usually a `value`.
 | `redirect` | Redirect to a URL | `--redirect-url`, `--redirect-permanent` |
 
 The `--duration` option makes the action persistent for the matched client. For example, a `deny` with `--duration 30m` blocks the client for 30 minutes after the first match, rather than evaluating the rule on every request.
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel firewall` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 ## Related
 

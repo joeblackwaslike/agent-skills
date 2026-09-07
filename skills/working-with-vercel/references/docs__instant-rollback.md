@@ -16,8 +16,8 @@ related:
 summary: Learn how to perform an Instant Rollback on your production deployments and quickly roll back to a previously deployed production deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/instant-rollback.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "8f1886944a534ee9699c99922cccffb71a3e9a0ea84c3a958f27ea68227a9480"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "f4fce4c8e0294ee80814acb644c39242702a7cb16f73084732b1cbea24a512e9"
 ---
 
 # Performing an Instant Rollback on a Deployment
@@ -93,7 +93,9 @@ To initiate an Instant Rollback from the Vercel dashboard:
 
   ![Image](`/docs-assets/static/docs/concepts/deployments/rollback-on-production-tile.png`)
 
-> **💡 Note:**&#x20;
+> **💡 Note:** You cannot run parallel roll backs on the same projectOnly one deployment can be rolled back at a time for every project.
+> However, a rolled back deployment stays disabled in your deployment list
+> and can be accessed and re-reverted whenever you want
 
 ### Accessing Instant Rollback from Deployments tab
 

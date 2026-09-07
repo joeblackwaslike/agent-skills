@@ -16,13 +16,15 @@ related:
 summary: Learn how to make HTTP requests to your Vercel deployments with automatic deployment protection bypass using the vercel curl CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/curl.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "371f557e183d85499a7bf045347dd7fa03dd93e818ab0552815a05eca4e12721"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "67be8f19a342a598789fe2d5b0547eb32a8c2ae32bd9cb30f2d89570b94f5c1f"
 ---
 
 # vercel curl
 
 > **💡 Note:** The `vercel curl` command is currently in beta. Features and behavior may change.
+
+The `vercel curl` command works like `curl`, but automatically handles deployment protection bypass tokens for you. When your project has [Deployment Protection](/docs/deployment-protection) enabled, this command lets you test protected deployments without manually managing bypass secrets.
 
 
 <!-- docsgraph:related -->
@@ -34,14 +36,12 @@ sha256: "371f557e183d85499a7bf045347dd7fa03dd93e818ab0552815a05eca4e12721"
 - [Use native curl syntax with Vercel CLI](https://vercel.com/changelog/use-native-curl-syntax-with-vercel-cli?from=related&source_path=%2Fdocs%2Fcli%2Fcurl&source_site=vercel-docs&relationship=related)
 - [vercel httpstat](https://vercel.com/docs/cli/httpstat?from=related&source_path=%2Fdocs%2Fcli%2Fcurl&source_site=vercel-docs&relationship=related) — Learn how to visualize HTTP request timing statistics for your Vercel deployments using the vercel httpstat CLI command.
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fcurl&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fcli%2Fcurl&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
-- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related&source_path=%2Fdocs%2Fcli%2Fcurl&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fcurl&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel rolling-release](https://vercel.com/docs/cli/rolling-release?from=related&source_path=%2Fdocs%2Fcli%2Fcurl&source_site=vercel-docs&relationship=related) — Learn how to manage your project's rolling releases using the vercel rolling-release CLI command.
+- [vercel deploy-hooks](https://vercel.com/docs/cli/deploy-hooks?from=related&source_path=%2Fdocs%2Fcli%2Fcurl&source_site=vercel-docs&relationship=related) — Manage Deploy Hooks for Git-triggered builds from the Vercel CLI: list, create, and remove deploy hook URLs that trigger
 
 Full cross-link map for this page: [/docs/cli/curl.graph.md](/docs/cli/curl.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fcurl&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-The `vercel curl` command works like `curl`, but automatically handles deployment protection bypass tokens for you. When your project has [Deployment Protection](/docs/deployment-protection) enabled, this command lets you test protected deployments without manually managing bypass secrets.
 
 The command runs the system `curl` command with the same arguments you provide, but adds an [`x-vercel-protection-bypass`](/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation#using-protection-bypass-for-automation) header with a valid token. This makes it simple to test API endpoints, check responses, or debug issues on protected deployments.
 
@@ -242,6 +242,24 @@ When using `--deployment`, verify that:
 - The deployment ID or URL is correct
 - The deployment belongs to your linked project
 - The deployment hasn't been deleted
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel curl` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 ## Related
 

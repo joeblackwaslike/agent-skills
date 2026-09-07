@@ -14,8 +14,8 @@ related:
 summary: Use the omp coding agent with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/omp.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "e75f76af7e51503604d2ee5464ba342176c940824fea3e9c77e263682e5cd6e6"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "33e2aa0d74b8a3a1bcef6d54ee9629bef8c0c27934934cf46252cf1e3b59a439"
 ---
 
 # omp
@@ -30,9 +30,9 @@ sha256: "e75f76af7e51503604d2ee5464ba342176c940824fea3e9c77e263682e5cd6e6"
 
 - [How I use OpenCode with Vercel AI Gateway to build features fast](https://vercel.com/kb/guide/how-i-use-opencode-with-vercel-ai-gateway-to-build-features-fast?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fomp&source_site=vercel-docs&relationship=related) — How to route different AI models to different coding tasks automatically, cutting token costs by ~70% without losing qua
 - [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fomp&source_site=vercel-docs&relationship=related)
-- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fomp&source_site=vercel-docs&relationship=related) — Use OpenCode with the AI Gateway.
-- [Pi](https://vercel.com/docs/ai-gateway/coding-agents/pi?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fomp&source_site=vercel-docs&relationship=related) — Use the Pi coding agent with the AI Gateway.
+- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fomp&source_site=vercel-docs&relationship=related) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
 - [OpenClaw](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fomp&source_site=vercel-docs&relationship=related) — Use OpenClaw with the AI Gateway as a model provider.
+- [Pi](https://vercel.com/docs/ai-gateway/coding-agents/pi?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fomp&source_site=vercel-docs&relationship=related) — Connect Pi to AI Gateway with one CLI command, or configure it manually.
 - [Kilo Code](https://vercel.com/docs/ai-gateway/coding-agents/kilo-code?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fomp&source_site=vercel-docs&relationship=related) — Use the Kilo Code CLI with the AI Gateway as an OpenAI-compatible provider.
 - [Xcode](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fomp&source_site=vercel-docs&relationship=related) — Use Xcode's coding assistant with the AI Gateway.
 

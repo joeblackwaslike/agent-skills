@@ -8,12 +8,12 @@ type: reference
 prerequisites:
   - /docs/cli
 related:
-  []
+  - /docs/cli/global-options
 summary: Set up Model Context Protocol (MCP) usage with a Vercel project using the vercel mcp CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/mcp.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "08b7b81ef2ce7edf97f4c614120081fde03d6594c15cc8e5d003534afe7e23dd"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "a39aea7aaf87a8f3782c12f098741550cb7d03e433caa99f1b2a3aac8a773e0e"
 ---
 
 # vercel mcp
@@ -27,17 +27,11 @@ The `vercel mcp` command helps you set up MCP clients (Claude Code, Claude.ai an
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing Vercel MCP: Connect Vercel to your AI tools](https://vercel.com/blog/introducing-vercel-mcp-connect-vercel-to-your-ai-tools?from=related&source_path=%2Fdocs%2Fcli%2Fmcp&source_site=vercel-docs&relationship=related)
-- [MCP server support on Vercel](https://vercel.com/changelog/mcp-server-support-on-vercel?from=related&source_path=%2Fdocs%2Fcli%2Fmcp&source_site=vercel-docs&relationship=related)
-- [Vercel MCP now in Public Beta](https://vercel.com/changelog/vercels-mcp?from=related&source_path=%2Fdocs%2Fcli%2Fmcp&source_site=vercel-docs&relationship=related)
-- [How to build an MCP server with Nuxt](https://vercel.com/kb/guide/how-to-build-an-mcp-server-with-nuxt?from=related&source_path=%2Fdocs%2Fcli%2Fmcp&source_site=vercel-docs&relationship=related) — Add an MCP server to your Nuxt app with the Nuxt MCP Toolkit. Create tools, resources, and prompt templates that AI assi
-- [Vercel MCP can now deploy code](https://vercel.com/changelog/vercel-mcp-can-now-deploy-code?from=related&source_path=%2Fdocs%2Fcli%2Fmcp&source_site=vercel-docs&relationship=related)
-- [Build an MCP Server with Weather tools using Express and Vercel](https://vercel.com/kb/guide/mcp-server-with-weather-tool-express?from=related&source_path=%2Fdocs%2Fcli%2Fmcp&source_site=vercel-docs&relationship=related) — Make your Express weather API accessible to AI assistants through the Model Context Protocol.
-- [How to create a contentful asset on Vercel](https://vercel.com/kb/guide/how-to-create-a-contentful-asset-on-vercel?from=related&source_path=%2Fdocs%2Fcli%2Fmcp&source_site=vercel-docs&relationship=related) — This is my wonderful
-- [Using xmcp with Next.js](https://vercel.com/kb/guide/using-xmcp-with-nextjs?from=related&source_path=%2Fdocs%2Fcli%2Fmcp&source_site=vercel-docs&relationship=related) — Add an MCP server to an existing Next.js app with xmcp. Create typed tools, add authentication, and deploy to Vercel as
-- [Vercel MCP now supports the 2026-07-28 MCP specification](https://vercel.com/changelog/vercel-mcp-now-supports-the-2026-07-28-mcp-specification?from=related&source_path=%2Fdocs%2Fcli%2Fmcp&source_site=vercel-docs&relationship=related)
 - [Model Context Protocol](https://vercel.com/docs/mcp?from=related&source_path=%2Fdocs%2Fcli%2Fmcp&source_site=vercel-docs&relationship=related) — Learn more about MCP and how you can use it on Vercel.
+- [Use Vercel](https://vercel.com/docs/agent-resources/vercel-mcp?from=related&source_path=%2Fdocs%2Fcli%2Fmcp&source_site=vercel-docs&relationship=related) — Vercel MCP has tools available for searching docs, managing teams, projects, and deployments, and querying Web Analytics
 - [Deploy MCP servers to Vercel](https://vercel.com/docs/mcp/deploy-mcp-servers-to-vercel?from=related&source_path=%2Fdocs%2Fcli%2Fmcp&source_site=vercel-docs&relationship=related) — Learn how to deploy Model Context Protocol \\(MCP\\) servers on Vercel with OAuth authentication and efficient scaling.
-- [xmcp on Vercel](https://vercel.com/docs/frameworks/backend/xmcp?from=related&source_path=%2Fdocs%2Fcli%2Fmcp&source_site=vercel-docs&relationship=related) — Build MCP-compatible backends with xmcp and deploy to Vercel. Learn the project structure, tool format, middleware, and
+- [vercel microfrontends](https://vercel.com/docs/cli/microfrontends?from=related&source_path=%2Fdocs%2Fcli%2Fmcp&source_site=vercel-docs&relationship=related) — Manage microfrontends groups from the CLI. Learn how to create groups, inspect group metadata, add and remove projects,
+- [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fmcp&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 
 Full cross-link map for this page: [/docs/cli/mcp.graph.md](/docs/cli/mcp.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fmcp&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -117,6 +111,24 @@ vercel mcp --project
 ```
 
 *Use the \`--project\` flag to configure MCP access scoped to your linked project.*
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel mcp` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 
 ---

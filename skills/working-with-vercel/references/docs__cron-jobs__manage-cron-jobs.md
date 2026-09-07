@@ -16,13 +16,17 @@ related:
 summary: Learn how to manage Cron Jobs effectively in Vercel. Explore cron job duration, error handling, deployments, concurrency control, local execution,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cron-jobs/manage-cron-jobs.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "48708015eabc06a5b933d0fc7f1fe00bb459b4475ddc1ea4ac80794f34df567c"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "ad97453fe03a4a3f1cfb321554cb877eacab2ec303e4261cbe4693f7c7d276a2"
 ---
 
 # Managing Cron Jobs
 
 > **🔒 Permissions Required**: Cron Jobs
+
+## Viewing cron jobs
+
+To view your active cron jobs:
 
 
 <!-- docsgraph:related -->
@@ -41,14 +45,10 @@ sha256: "48708015eabc06a5b933d0fc7f1fe00bb459b4475ddc1ea4ac80794f34df567c"
 - [Cron jobs now support 100 per project on every plan](https://vercel.com/changelog/cron-jobs-now-support-100-per-project-on-every-plan?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fmanage-cron-jobs&source_site=vercel-docs&relationship=related)
 - [vercel crons](https://vercel.com/docs/cli/crons?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fmanage-cron-jobs&source_site=vercel-docs&relationship=related) — Manage Cron Jobs from the Vercel CLI: add cron entries to your vercel.json, list them, and trigger them on demand.
 - [Limits](https://vercel.com/docs/limits?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fmanage-cron-jobs&source_site=vercel-docs&relationship=related) — Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
-- [Run background tasks with Celery on Vercel](https://vercel.com/docs/frameworks/backend/celery?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fmanage-cron-jobs&source_site=vercel-docs&relationship=related) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fmanage-cron-jobs&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/cron-jobs/manage-cron-jobs.graph.md](/docs/cron-jobs/manage-cron-jobs.graph.md?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fmanage-cron-jobs&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-## Viewing cron jobs
-
-To view your active cron jobs:
 
 1. Select your project from the Vercel dashboard
 2. Open **Settings** in the sidebar and select [**Cron Jobs**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fcron-jobs\&title=Go+to+Cron+Jobs+settings)

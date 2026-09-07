@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-message-conversion-error.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "e196936e72d2d505c3e11cc4190cb49b89c865990cc9b7e32d8302c0d833e8ed"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "dfd3b22f999fd9ae955a9d9a391308797f8dd3d8cce98ad1984bb2f9d7bae4a9"
 ---
 
 # AI_MessageConversionError
@@ -60,6 +60,7 @@ if (MessageConversionError.isInstance(error)) {
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
 - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
 - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)
+- [ToolChoiceViolationError](/docs/reference/ai-sdk-errors/ai-tool-choice-violation-error)
 - [AI_TypeValidationError](/docs/reference/ai-sdk-errors/ai-type-validation-error)
 - [AI_UIMessageStreamError](/docs/reference/ai-sdk-errors/ai-ui-message-stream-error)
 - [AI_UnsupportedFunctionalityError](/docs/reference/ai-sdk-errors/ai-unsupported-functionality-error)

@@ -3,7 +3,7 @@ title: Runtime Cache
 product: vercel
 url: /docs/caching/runtime-cache
 canonical_url: "https://vercel.com/docs/caching/runtime-cache"
-last_updated: 2026-08-21
+last_updated: 2026-08-28
 type: conceptual
 prerequisites:
   - /docs/caching
@@ -16,13 +16,15 @@ related:
 summary: Vercel Runtime Cache is a specialized cache that stores responses from data fetches in Vercel functions
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/runtime-cache.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "7f0b14a887da12ab8f2a06c5e90368129c92895e19787a4abb0214092fafd332"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "a961ec1e3e8aaf91cc28a88f2ad181722c2a48f792d23c2e4cf12676d4dc319f"
 ---
 
 # Runtime Cache
 
 > **🔒 Permissions Required**: Runtime Cache
+
+Runtime cache is a regional, ephemeral cache you can use for storing and retrieving data across Vercel Functions, Routing middleware, and build execution within a Vercel region. It lets you cache data close to where your code runs, reduce duplicate work, and control invalidation with TTLs and tags.
 
 
 <!-- docsgraph:related -->
@@ -31,22 +33,20 @@ sha256: "7f0b14a887da12ab8f2a06c5e90368129c92895e19787a4abb0214092fafd332"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Run background tasks with Celery on Vercel](https://vercel.com/changelog/run-background-tasks-with-celery-on-vercel?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related)
+- [Caching audits: Five antipatterns that quietly cost performance and money](https://vercel.com/kb/guide/caching-antipatterns?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related) — Five caching antipatterns from hundreds of Vercel technical audits: write amplification, deploy-wiped caches, spinner sh
+- [How to add per-request CSP nonces to CDN-cached HTML on Vercel](https://vercel.com/kb/guide/csp-nonces-with-cdn-cache?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related) — Use Routing Middleware and a self-fetch to add a fresh CSP nonce to cached HTML without rendering the page again on ever
 - [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
+- [Build a Weather API on Vercel: Express, FastAPI, and Nitro](https://vercel.com/kb/guide/weather-api-with-fastapi?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related) — Build a weather API on Vercel with FastAPI, Express, or Nitro. Compare the three runtimes, add caching and Observability
 - [Migrating to Cache Components](https://nextjs.org/docs/app/guides/migrating-to-cache-components?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related) — Learn how to migrate from route segment configs to Cache Components in Next.js.
 - [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related)
 - [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
-- [use cache](https://nextjs.org/docs/app/api-reference/directives/use-cache?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related) — Learn how to use the "use cache" directive to cache data in your Next.js application.
 - [cacheHandlers](https://nextjs.org/docs/app/api-reference/config/next-config-js/cacheHandlers?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related) — Configure custom cache handlers for use cache directives in Next.js.
 - [Introducing the Runtime Cache API](https://vercel.com/changelog/introducing-the-runtime-cache-api?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related)
-- [Revalidating](https://nextjs.org/docs/app/getting-started/revalidating?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related) — Learn how to revalidate cached data using time-based and on-demand strategies.
 - [Purging Vercel CDN Cache](https://vercel.com/docs/caching/cdn-cache/purge?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related) — Learn how to invalidate and delete cached content on Vercel's CDN, including cache keys and manual purging options.
 - [Cache Status and Reasons](https://vercel.com/docs/caching/cache-status?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
-- [vercel cache](https://vercel.com/docs/cli/cache?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related) — Learn how to manage cache for your project using the vercel cache CLI command.
 
 Full cross-link map for this page: [/docs/caching/runtime-cache.graph.md](/docs/caching/runtime-cache.graph.md?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Runtime cache is a regional, ephemeral cache you can use for storing and retrieving data across Vercel Functions, Routing middleware, and build execution within a Vercel region. It lets you cache data close to where your code runs, reduce duplicate work, and control invalidation with TTLs and tags.
 
 > **💡 Note:** Runtime cache may not share the same cache between build time and runtime depending on whether the region where the build executed matches the runtime region.
 

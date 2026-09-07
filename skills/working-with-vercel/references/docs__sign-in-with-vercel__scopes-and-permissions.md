@@ -12,8 +12,8 @@ related:
 summary: Learn how to manage scopes and permissions for Sign in with Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "20ca268358b5594b2869eb6356fcb899bca45e0939b8338a19f72db3cbba860b"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "dc9beddfbb2f89017d1cd101d9fab231b13494e00fce8842bc4a4bef010042e8"
 ---
 
 # Scopes and Permissions
@@ -27,7 +27,6 @@ Scopes define what data is included in the [ID Token](/docs/sign-in-with-vercel/
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Sign in with Vercel now generally available](https://vercel.com/changelog/sign-in-with-vercel?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fscopes-and-permissions&source_site=vercel-docs&relationship=related)
-- [Storefront API Permissions](https://docs.vercel.shop/docs/reference/storefront-api-permissions?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fscopes-and-permissions&source_site=vercel-docs&relationship=related) — Shopify Storefront API scopes required by Vercel Shop and its optional skills.
 - [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fscopes-and-permissions&source_site=vercel-docs&relationship=related) — Learn how to manage Sign in with Vercel from the Dashboard
 - [Access tokens](https://vercel.com/docs/accounts/access-tokens?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fscopes-and-permissions&source_site=vercel-docs&relationship=related) — Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate A
 - [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fscopes-and-permissions&source_site=vercel-docs&relationship=related) — Learn how to manage project access and added products for your integrations.

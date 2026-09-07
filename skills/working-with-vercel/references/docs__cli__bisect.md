@@ -8,12 +8,12 @@ type: reference
 prerequisites:
   - /docs/cli
 related:
-  []
+  - /docs/cli/global-options
 summary: Learn how to perform a binary search on your deployments to help surface issues using the vercel bisect CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/bisect.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "48d509e312c677d879fe49ad75a6b5432ed296acff5f439d67a4ce3e0d96e016"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "b463fc57e99064bc2bba7936b9b1987ace22c39b0674a62448edaf42731290f9"
 ---
 
 # vercel bisect
@@ -26,12 +26,11 @@ The `vercel bisect` command can be used to perform a [binary search](https://wik
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel CLI v24 is now available](https://vercel.com/changelog/vercel-cli-v24?from=related&source_path=%2Fdocs%2Fcli%2Fbisect&source_site=vercel-docs&relationship=related)
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fbisect&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fbisect&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
-- [Rolling back a production deployment](https://vercel.com/docs/deployments/rollback-production-deployment?from=related&source_path=%2Fdocs%2Fcli%2Fbisect&source_site=vercel-docs&relationship=related) — Recover from a bad production deployment by rolling back, investigating the root cause, and redeploying a fix.
 - [vercel inspect](https://vercel.com/docs/cli/inspect?from=related&source_path=%2Fdocs%2Fcli%2Fbisect&source_site=vercel-docs&relationship=related) — Learn how to retrieve information about your Vercel deployments using the vercel inspect CLI command.
-- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related&source_path=%2Fdocs%2Fcli%2Fbisect&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
+- [vercel curl](https://vercel.com/docs/cli/curl?from=related&source_path=%2Fdocs%2Fcli%2Fbisect&source_site=vercel-docs&relationship=related) — Learn how to make HTTP requests to your Vercel deployments with automatic deployment protection bypass using the vercel
+- [vercel remove](https://vercel.com/docs/cli/remove?from=related&source_path=%2Fdocs%2Fcli%2Fbisect&source_site=vercel-docs&relationship=related) — Learn how to remove a deployment using the vercel remove CLI command.
 
 Full cross-link map for this page: [/docs/cli/bisect.graph.md](/docs/cli/bisect.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fbisect&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -112,6 +111,24 @@ vercel bisect --run ./test.sh
 
 *Using the \`vercel bisect\` command with the
 \`--run\` option.*
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel bisect` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 ## Related guides
 

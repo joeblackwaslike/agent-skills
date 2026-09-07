@@ -8,12 +8,12 @@ type: reference
 prerequisites:
   - /docs/cli
 related:
-  []
+  - /docs/cli/global-options
 summary: Learn how to retrieve information about your Vercel deployments using the vercel inspect CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/inspect.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "039198bab983b8f9140dc010f9baeec091f234e9a26fce631d827bff3891cec9"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "b5bfc40873a1c4bf1109e0a711cc95b07134dc64c0f18e2017c4112824d26e85"
 ---
 
 # vercel inspect
@@ -31,7 +31,7 @@ The `vercel inspect` command is used to retrieve information about a deployment 
 - [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Finspect&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel logs](https://vercel.com/docs/cli/logs?from=related&source_path=%2Fdocs%2Fcli%2Finspect&source_site=vercel-docs&relationship=related) — View and filter request logs for your Vercel project, or stream live runtime logs from a deployment.
 - [vercel httpstat](https://vercel.com/docs/cli/httpstat?from=related&source_path=%2Fdocs%2Fcli%2Finspect&source_site=vercel-docs&relationship=related) — Learn how to visualize HTTP request timing statistics for your Vercel deployments using the vercel httpstat CLI command.
-- [vercel redeploy](https://vercel.com/docs/cli/redeploy?from=related&source_path=%2Fdocs%2Fcli%2Finspect&source_site=vercel-docs&relationship=related) — Learn how to redeploy your project using the vercel redeploy CLI command.
+- [vercel bisect](https://vercel.com/docs/cli/bisect?from=related&source_path=%2Fdocs%2Fcli%2Finspect&source_site=vercel-docs&relationship=related) — Learn how to perform a binary search on your deployments to help surface issues using the vercel bisect CLI command.
 
 Full cross-link map for this page: [/docs/cli/inspect.graph.md](/docs/cli/inspect.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Finspect&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -97,6 +97,24 @@ vercel inspect https://example-app-6vd6bhoqt.vercel.app --logs --wait
 *Using the \`vercel inspect\` command with the
 \`--logs\` and \`--wait\` options,
 to view all build logs until the deployement is ready.*
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel inspect` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 
 ---

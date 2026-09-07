@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/agents/loop-control.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "91c2c43b15fcccb9aed2fca6caaa9c4d39e5fb635307369928ecc98d8d4a9407"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "282f88751056a23245f3932ab2c2aa20171fb30cfd8fc086afbf8e36779e39b9"
 ---
 
 # Loop Control
@@ -17,7 +17,9 @@ The AI SDK provides built-in loop control through two parameters: `stopWhen` for
 
 ## Stop Conditions
 
-The `stopWhen` parameter controls when to stop execution when there are tool results in the last step. By default, agents stop after 20 steps using `isStepCount(20)`. This default is a safety measure to prevent runaway loops that could result in excessive API calls and costs.
+The `stopWhen` parameter controls when to stop execution when there are tool results in the last step. By default, `ToolLoopAgent` stops after 20 steps using `isStepCount(20)`. This default is a safety measure to prevent runaway loops that could result in excessive API calls and costs.
+
+`WorkflowAgent` does not apply a default step limit. It continues until the model stops calling tools or another natural termination condition is met. Configure an explicit condition such as `isStepCount(20)` when you need to bound its model calls. See [WorkflowAgent Loop Control](/docs/agents/workflow-agent#loop-control) for details.
 
 When you provide `stopWhen`, the agent continues executing after tool calls until a stopping condition is met. When the condition is an array, execution stops when any of the conditions are met.
 
@@ -40,7 +42,7 @@ const agent = new ToolLoopAgent({
   tools: {
     // your tools
   },
-  stopWhen: isStepCount(50), // Increasing the default of 20 to 50.
+  stopWhen: isStepCount(50), // Increase ToolLoopAgent's default from 20 to 50.
 });
 
 const result = await agent.generate({
@@ -50,7 +52,7 @@ const result = await agent.generate({
 
 ### Run Until Finished
 
-If you want the agent to run until the model naturally stops making tool calls, use `isLoopFinished()`. This removes the default step limit:
+If you want a `ToolLoopAgent` to run until the model naturally stops making tool calls, use `isLoopFinished()`. This removes its default step limit:
 
 ```ts
 import { ToolLoopAgent, isLoopFinished } from 'ai';

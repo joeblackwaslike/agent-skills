@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-invalid-tool-input-error.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "7666c9b1979a89487c4087497f9ecde7441364d7bcae784c225821ffa7ab6446"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "51f337a966f07c72a758e1ab43ba0afbc12a9f7d0434397e719719db4bb4b46e"
 ---
 
 # AI_InvalidToolInputError
@@ -62,6 +62,7 @@ if (InvalidToolInputError.isInstance(error)) {
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
 - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
 - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)
+- [ToolChoiceViolationError](/docs/reference/ai-sdk-errors/ai-tool-choice-violation-error)
 - [AI_TypeValidationError](/docs/reference/ai-sdk-errors/ai-type-validation-error)
 - [AI_UIMessageStreamError](/docs/reference/ai-sdk-errors/ai-ui-message-stream-error)
 - [AI_UnsupportedFunctionalityError](/docs/reference/ai-sdk-errors/ai-unsupported-functionality-error)

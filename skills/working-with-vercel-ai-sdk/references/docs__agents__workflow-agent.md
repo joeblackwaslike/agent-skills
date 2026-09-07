@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/agents/workflow-agent.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "1eff525f42f01c5b90320d9ec99c1e353752a644a69f61b5a2b918b1296a2ff9"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "e846ebf296a797e44b01e34646372f5a07b92d26b7ccd60266ff5daa121fad9e"
 ---
 
 # WorkflowAgent
@@ -355,7 +355,60 @@ const agent = new WorkflowAgent({
 
 Because the workflow is durable, the approval request survives process restarts — the user can approve hours later and the agent will resume.
 
+### Signed Tool Approvals
+
+Client-supplied message history can be modified before it is replayed to the
+workflow. For tools that perform sensitive operations, configure
+`experimental_toolApprovalSecret` to authenticate approval requests:
+
+```ts highlight="4"
+const agent = new WorkflowAgent({
+  model: 'anthropic/claude-sonnet-4-6',
+  experimental_toolApprovalSecret: {
+    environmentVariable: 'TOOL_APPROVAL_SECRET',
+  },
+  tools: {
+    bookFlight: tool({
+      description: 'Book a flight',
+      inputSchema: z.object({ flightId: z.string() }),
+      needsApproval: true,
+      execute: bookFlightStep,
+    }),
+  },
+});
+```
+
+The agent HMAC-signs the approval ID, tool call ID, tool name, and validated
+input. When approved message history is replayed, a missing or invalid
+signature prevents the tool from executing. The signature is preserved through
+the durable model-call stream, `createModelCallToUIChunkTransform()`,
+`addToolApprovalResponse()`, and `convertToModelMessages()`.
+
+Use a high-entropy secret of at least 32 bytes and make the same secret
+available to every worker that can issue or resume an approval. Keep old keys
+available while approvals signed with them are pending; changing the secret
+invalidates those pending approvals.
+
+`WorkflowAgent` passes only the environment variable name into signing and
+verification steps. Each step reads the secret from its local environment, and
+the raw value is never included in step arguments, durable stream parts,
+callbacks, or telemetry events. Configure the environment variable on every
+worker, and do not put the secret value in `runtimeContext` or `toolsContext`.
+
+You can also provide `experimental_toolApprovalSecret` to `agent.stream()`.
+The stream-level value overrides the constructor default.
+
 ## Loop Control
+
+Unlike `ToolLoopAgent`, `WorkflowAgent` does not apply a default step limit.
+When `stopWhen` is omitted, it continues until the model stops calling tools or
+another natural termination condition is met.
+
+<Note>
+  A model that repeatedly calls tools can make an unlimited number of model
+  calls. Configure an explicit stop condition when you need to bound execution
+  time and cost.
+</Note>
 
 Control how many steps the agent can take:
 
@@ -368,7 +421,8 @@ const result = await agent.stream({
 });
 ```
 
-If you want the agent to keep running until it has finished calling tools, you can also use `isLoopFinished()`:
+Omitting `stopWhen` already lets `WorkflowAgent` continue until it has finished
+calling tools. You can make that intent explicit with `isLoopFinished()`:
 
 ```ts
 import { isLoopFinished } from 'ai';
@@ -379,9 +433,10 @@ const result = await agent.stream({
 });
 ```
 
-`isLoopFinished()` lets the agent run until all tool calls have completed, but you should still pair it with `maxSteps` to avoid runaway loops. See https://ai-sdk.dev/v7/docs/reference/ai-sdk-core/loop-finished#isloopfinished.
-
-By default, the agent loops until the model stops calling tools (no maximum).
+`isLoopFinished()` is equivalent to omitting `stopWhen` for `WorkflowAgent`.
+Use it with caution because a model that keeps calling tools can run
+indefinitely and incur significant costs. See
+[`isLoopFinished()`](/docs/reference/ai-sdk-core/loop-finished).
 
 ## Structured Output
 
@@ -545,11 +600,11 @@ Agents provide lifecycle callbacks for logging, observability, and custom teleme
 const agent = new WorkflowAgent({
   model: 'anthropic/claude-sonnet-4-6',
 
-  experimental_onStart({ modelId, messages }) {
-    console.log('Agent started');
+  onStart({ messages }) {
+    console.log(`Agent started with ${messages.length} messages`);
   },
 
-  experimental_onStepStart({ stepNumber }) {
+  onStepStart({ stepNumber }) {
     console.log(`Step ${stepNumber} starting`);
   },
 
@@ -557,8 +612,11 @@ const agent = new WorkflowAgent({
     console.log(`Calling tool: ${toolCall.toolName}`);
   },
 
-  onToolExecutionEnd({ toolCall, toolOutput }) {
-    console.log(`Tool finished: ${toolCall.toolName}`);
+  onToolExecutionEnd({ toolCall, success, durationMs }) {
+    console.log(`Tool finished: ${toolCall.toolName}`, {
+      success,
+      durationMs,
+    });
   },
 
   onStepEnd({ usage, finishReason }) {
@@ -570,6 +628,32 @@ const agent = new WorkflowAgent({
   },
 });
 ```
+
+For concrete tool sets, `WorkflowAgentToolExecutionStartEvent` and
+`WorkflowAgentToolExecutionEndEvent` preserve the relationship between each
+tool name and its input, context, and output types. TypeScript narrows the
+nested `toolCall` directly, but use `Extract` or a user-defined type guard when
+you need to narrow the correlated `toolContext` or `output` fields by tool name.
+
+Tool input callbacks (`onInputStart`, `onInputDelta`, and
+`onInputAvailable`) are also preserved by `WorkflowAgent`. The model call runs
+inside a durable step, while callback functions remain in the workflow
+context because arbitrary functions cannot cross the step boundary. As a
+result, `WorkflowAgent` records the callback events during the model step and
+replays them in order immediately after that step completes, before tool
+execution and step lifecycle callbacks. They do not run concurrently with
+model generation and cannot provide in-flight cancellation or backpressure.
+Each callback receives its tool's `toolsContext` entry after
+`contextSchema` validation.
+
+For highly fragmented tool inputs, `onInputDelta` replay data is part of the
+durable model-step result. Only configure `onInputDelta` when each generated
+delta is needed; omit it to avoid retaining delta replay data.
+
+The deprecated `experimental_onStart` and `experimental_onStepStart` names
+remain available for backwards compatibility. When both the stable and
+experimental name are provided in the same constructor or `stream()` call, the
+stable callback is used.
 
 ## Type Inference
 
@@ -722,7 +806,7 @@ For persistence, store `UIMessage[]` as your source of truth and call [`convertT
 
 ### Everything else
 
-Other options carry over with the same names: `prepareStep`, `onStepEnd`, `onEnd`, `onError`, `toolChoice`, `activeTools`, `timeout`, `repairToolCall`, `experimental_sandbox`, and the usual generation settings (`temperature`, `maxOutputTokens`, `topP`, …). `WorkflowAgent` additionally adds `prepareCall` (runs once before the loop) and the `experimental_onStart` / `experimental_onStepStart` / `onToolExecutionStart` / `onToolExecutionEnd` lifecycle callbacks documented above.
+Other options carry over with the same names: `prepareStep`, `onStart`, `onStepStart`, `onStepEnd`, `onEnd`, `onError`, `toolChoice`, `activeTools`, `timeout`, `repairToolCall`, `experimental_sandbox`, and the usual generation settings (`temperature`, `maxOutputTokens`, `topP`, …). `WorkflowAgent` additionally adds `prepareCall` (runs once before the loop) and the `onToolExecutionStart` / `onToolExecutionEnd` lifecycle callbacks documented above. The deprecated `experimental_onStart` and `experimental_onStepStart` aliases remain available for backwards compatibility.
 
 ## Next Steps
 

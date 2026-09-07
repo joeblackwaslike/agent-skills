@@ -4,8 +4,8 @@ description: "Use for Codex models/pricing, scheduled tasks, skills, settings, s
 metadata:
   short-description: "Codex models/pricing, scheduled tasks, skills, settings, setup, troubleshooting, and self-knowledge; OpenAI APIs and ChatGPT Work. 'You'/'this app' means Codex only."
 source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/skills/src/assets/samples/openai-docs/SKILL.md"
-fetched_at: "2026-08-03T07:28:09.271Z"
-sha256: "7cb8fa1b2a0c635b5c61ffe1da7b8594a7ea0fce5b71e8d523e2025d88b2a05e"
+fetched_at: "2026-09-07T09:00:35.564Z"
+sha256: "aa6829e21df2223167c85d2e49b6337a7345c84c1033f1ec10182c7882b36d45"
 ---
 
 # OpenAI Docs
@@ -36,6 +36,6 @@ Read at most one primary reference. Do not open every route, bundled model guide
 
 - Search, open, fetch, and cite only `developers.openai.com`, `platform.openai.com`, and `learn.chatgpt.com`. Cite the page that supports the claim. State uncertainty when official sources do not establish pricing, availability, account access, limits, or behavior.
 - Preserve an explicitly requested model for selection, migration, and prompting. Resolve an unspecified latest or current migration target only after searching and fetching current official guidance.
-- Use `references/latest-model.md` only as a disclosed fallback after current official model guidance does not answer the question. Read `references/upgrading-to-gpt-5p6-sol.md` only for an actual, requested GPT-5.6-family migration; read `references/prompting-guide.md` only for requested prompting work.
+- Use `references/latest-model.md` only as a disclosed fallback after current official model guidance does not answer the question. Read `references/upgrading-to-gpt-6-astra.md` only for an actual, requested GPT-6 migration; read `references/prompting-guide.md` only for requested prompting work.
 - Before building, running, editing, debugging, or testing an API-backed app or tool, use `openai-platform-api-key` first when available. Documentation, conceptual examples, model selection, and read-only guidance do not require an API key.
 - Say "OpenAI Docs" or "official OpenAI documentation" in user-facing answers. Keep exact official citations and examples concise.

@@ -3,7 +3,7 @@ title: Two-factor enforcement
 product: vercel
 url: /docs/two-factor-enforcement
 canonical_url: "https://vercel.com/docs/two-factor-enforcement"
-last_updated: 2026-06-16
+last_updated: 2026-08-28
 type: reference
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn how to enforce two-factor authentication (2FA) for your Vercel team members to enhance security.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/two-factor-enforcement.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "867857cb9921b60a4dd915d6712c60693106f56d6f5f2c404fd0be630db67128"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "1d0c4bcac734330dfbdac6fb3c5c5b7aa99a2252b7f1efb2f503300b2db3c60f"
 ---
 
 # Two-factor enforcement

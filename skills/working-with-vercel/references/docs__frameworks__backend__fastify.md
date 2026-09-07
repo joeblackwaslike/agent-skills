@@ -17,8 +17,8 @@ related:
 summary: Deploy Fastify applications to Vercel with zero configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/fastify.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "b97190fefa0435bd36ad5ed945332fb12faf373bb516204ea7ce004e2a3f28cb"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "c7e523606327637916fa70fd1e5610d64bf88fdf6553cde15f71654054ffeb3d"
 ---
 
 # Fastify on Vercel
@@ -39,6 +39,7 @@ Fastify is a web framework highly focused on providing the best developer experi
 - [Deploy a FastAPI app on Vercel](https://vercel.com/docs/frameworks/backend/fastapi?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastify&source_site=vercel-docs&relationship=related) — Deploy a FastAPI app on Vercel. Learn how the Python runtime, ASGI, static assets, and Vercel Functions work together.
 - [Express on Vercel](https://vercel.com/docs/frameworks/backend/express?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastify&source_site=vercel-docs&relationship=related) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
 - [NestJS on Vercel](https://vercel.com/docs/frameworks/backend/nestjs?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastify&source_site=vercel-docs&relationship=related) — Deploy NestJS applications to Vercel with zero configuration.
+- [Nitro on Vercel](https://vercel.com/docs/frameworks/backend/nitro?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastify&source_site=vercel-docs&relationship=related) — Deploy Nitro applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurat
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastify&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/frameworks/backend/fastify.graph.md](/docs/frameworks/backend/fastify.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastify&source_site=vercel-docs&relationship=graph)

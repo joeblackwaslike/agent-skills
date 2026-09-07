@@ -16,13 +16,15 @@ related:
 summary: Transform and optimize images to improve page load performance.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/image-optimization.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "3fcbf1cecb4230851c7726b6c6445d9b856eb570b5a6f6a8096aecac7398ef87"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "0462e17eb861254021fbfdd7722714595539a4ea12e248c4bf66cbe2b64d1efa"
 ---
 
 # Image Optimization with Vercel
 
 > **🔒 Permissions Required**: Image Optimization
+
+Vercel supports dynamically transforming unoptimized images to reduce the file size while maintaining high quality. These optimized images are cached on the [Vercel CDN](/docs/cdn), meaning they're available close to users whenever they're requested.
 
 
 <!-- docsgraph:related -->
@@ -40,13 +42,11 @@ sha256: "3fcbf1cecb4230851c7726b6c6445d9b856eb570b5a6f6a8096aecac7398ef87"
 - [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel?from=related&source_path=%2Fdocs%2Fimage-optimization&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
 - [Life of a Vercel request: Navigating the Edge Network](https://vercel.com/blog/life-of-a-vercel-request-navigating-the-edge-network?from=related&source_path=%2Fdocs%2Fimage-optimization&source_site=vercel-docs&relationship=related)
 - [The foundations of the Frontend Cloud](https://vercel.com/blog/the-foundations-of-the-frontend-cloud?from=related&source_path=%2Fdocs%2Fimage-optimization&source_site=vercel-docs&relationship=related)
-- [Changes to Vercel Image Optimization](https://vercel.com/changelog/changes-to-vercel-image-optimizations?from=related&source_path=%2Fdocs%2Fimage-optimization&source_site=vercel-docs&relationship=related)
 - [Faster transformations and reduced pricing for Image Optimization](https://vercel.com/changelog/faster-transformations-and-reduced-pricing-for-image-optimization?from=related&source_path=%2Fdocs%2Fimage-optimization&source_site=vercel-docs&relationship=related)
+- [Open Graph \\(OG\\) Image Generation](https://vercel.com/docs/og-image-generation?from=related&source_path=%2Fdocs%2Fimage-optimization&source_site=vercel-docs&relationship=related) — Learn how to optimize social media image generation through the Open Graph Protocol and @vercel/og library.
 
 Full cross-link map for this page: [/docs/image-optimization.graph.md](/docs/image-optimization.graph.md?from=related&source_path=%2Fdocs%2Fimage-optimization&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Vercel supports dynamically transforming unoptimized images to reduce the file size while maintaining high quality. These optimized images are cached on the [Vercel CDN](/docs/cdn), meaning they're available close to users whenever they're requested.
 
 ## Get started
 

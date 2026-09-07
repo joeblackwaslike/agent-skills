@@ -3,7 +3,7 @@ title: Deploying Turborepo to Vercel
 product: turborepo
 url: /docs/monorepos/turborepo
 canonical_url: "https://vercel.com/docs/monorepos/turborepo"
-last_updated: 2026-08-11
+last_updated: 2026-08-28
 type: reference
 prerequisites:
   - /docs/monorepos
@@ -16,8 +16,8 @@ related:
 summary: Learn about Turborepo, a build system for monorepos that allows you to have faster incremental builds, content-aware hashing, and Remote Caching.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/turborepo.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "e17de8ea7df265ba69346bbf495e8729765947544e2e67285f89912105183c92"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "fe7f24016218ed3e5b0a906d059d1525bff7a4c278d50732a80a44c6cdbbb916"
 ---
 
 # Deploying Turborepo to Vercel

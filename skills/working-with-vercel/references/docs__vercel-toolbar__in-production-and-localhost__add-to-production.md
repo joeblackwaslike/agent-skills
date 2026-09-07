@@ -17,8 +17,8 @@ related:
 summary: Learn how to add the Vercel Toolbar to your production environment and how your team members can use tooling to access the toolbar.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-production.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "21a1e8a691d139c766fbdd131effc822875d39610f5fc99156f757cc5859940f"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "a75f5af12da26f21495e9b229bfb8509b20214f0df790f6cc25ddac2a4ec865a"
 ---
 
 # Add the Vercel Toolbar to your production environment
@@ -35,9 +35,10 @@ As a [team owner](/docs/rbac/access-roles#owner-role) or [member](/docs/rbac/acc
 - [@vercel/toolbar available to use collaboration features in production](https://vercel.com/changelog/vercel-toolbar-now-available-to-use-collaboration-features-in-production?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost%2Fadd-to-production&source_site=vercel-docs&relationship=related)
 - [Introducing new developer tools in the Vercel Toolbar](https://vercel.com/blog/introducing-new-developer-tools-in-the-vercel-toolbar?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost%2Fadd-to-production&source_site=vercel-docs&relationship=related)
 - [Easier toolbar setup for SvelteKit and other Vite-based frameworks](https://vercel.com/changelog/easier-toolbar-setup-for-sveltekit-and-other-vite-based-frameworks?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost%2Fadd-to-production&source_site=vercel-docs&relationship=related)
+- [The Vercel Toolbar is now more compact and dynamic](https://vercel.com/changelog/the-vercel-toolbar-is-now-more-compact-and-dynamic?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost%2Fadd-to-production&source_site=vercel-docs&relationship=related)
 - [Managing with the Vercel Toolbar](https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost%2Fadd-to-production&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel Toolbar to make it easier to manage microfrontends.
 - [Enabling and Disabling Comments](https://vercel.com/docs/comments/how-comments-work?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost%2Fadd-to-production&source_site=vercel-docs&relationship=related) — Learn when and where Comments are available, and how to enable and disable Comments at the account, project, and session
-- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost%2Fadd-to-production&source_site=vercel-docs&relationship=related) — Learn how to create and manage deployments on Vercel.
+- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost%2Fadd-to-production&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost%2Fadd-to-production&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 - [Using Comments with Preview Deployments](https://vercel.com/docs/comments/using-comments?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost%2Fadd-to-production&source_site=vercel-docs&relationship=related) — This guide will help you get started with using Comments with your Vercel Preview Deployments.
 
@@ -284,6 +285,13 @@ For team members that do not use the browser extension or if you have more compl
   </script>
   ```
   > For \['other']:
+  > **💡 Note:** If you get errors such as `document is not defined`,
+  > you're likely trying to render the toolbar on the server. The toolbar must be
+  > rendered in the client. See the docs for your framework to learn how to render
+  > components in the client.
+  <br />
+  > **💡 Note:** If you're using a framework that uses Vite, you can loosely follow the
+  > SvelteKit setup steps.
 
 - ### Managing notifications and integrations for Comments on production
   Unlike comments on preview deployments, alerts for new comments won't be sent to a specific user by default. Vercel recommends [linking your project to Slack with the integration](/docs/comments/integrations#use-the-vercel-app-for-slack), or directly mentioning someone when starting a new comment thread in production to ensure new comments are seen.

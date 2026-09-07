@@ -16,8 +16,8 @@ related:
 summary: Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "088f4f63b5456e6ada681a6ec14d15094894633eb4263dca76c0f8b1ff8dcf62"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "843b7664d6413d3cf4cd423a287db1229ed48b1c78576b51aba5f5b248275fda"
 ---
 
 # AI SDK for Python
@@ -33,12 +33,12 @@ It uses AI Gateway to route requests by default.
 
 - [How to build AI Agents with Vercel and the AI SDK](https://vercel.com/kb/guide/how-to-build-ai-agents-with-vercel-and-the-ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk-python&source_site=vercel-docs&relationship=related) — Learn how to build, deploy, and scale AI agents on Vercel using the AI SDK. This guide covers calling LLMs, defining too
 - [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk-python&source_site=vercel-docs&relationship=related) — Learn the key AI concepts and tools for building and scaling AI apps.
-- [Python](https://workflow-sdk.dev/docs/getting-started/python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk-python&source_site=vercel-docs&relationship=related) — Set up the Workflow Python SDK in your Python application.
-- [AI SDK](https://vercel.com/docs/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk-python&source_site=vercel-docs&relationship=related) — TypeScript toolkit for building AI-powered applications with React, Next.js, Vue, Svelte and Node.js
+- [How to build an AI agent for Slack with Chat SDK and AI SDK](https://vercel.com/kb/guide/how-to-build-an-ai-agent-for-slack-with-chat-sdk-and-ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk-python&source_site=vercel-docs&relationship=related) — Build a Slack AI agent using Chat SDK, AI SDK's ToolLoopAgent, and Vercel AI Gateway. Covers project setup, tool definit
+- [AI SDK](https://vercel.com/docs/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk-python&source_site=vercel-docs&relationship=related) — Build TypeScript agents and AI applications with a unified API for models, tools, structured output, and streaming.
 - [Pydantic AI](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/pydantic-ai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk-python&source_site=vercel-docs&relationship=related) — Learn how to integrate Vercel AI Gateway with Pydantic AI to access multiple AI models through a unified interface
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk-python&source_site=vercel-docs&relationship=related) — Create an AI Gateway API key, make your first request with TypeScript, Python, or cURL, and verify how the request was r
 - [Vercel & OpenAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk-python&source_site=vercel-docs&relationship=related) — Integrate your Vercel project with OpenAI's powerful suite of models.
 - [Build with AI on Vercel](https://vercel.com/docs/agent-resources/integrations-for-models?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk-python&source_site=vercel-docs&relationship=related) — Integrate powerful AI services and models seamlessly into your Vercel projects.
-- [Xcode](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk-python&source_site=vercel-docs&relationship=related) — Use Xcode's coding assistant with the AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/ai-sdk-python.graph.md](/docs/ai-gateway/sdks-and-apis/ai-sdk-python.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk-python&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

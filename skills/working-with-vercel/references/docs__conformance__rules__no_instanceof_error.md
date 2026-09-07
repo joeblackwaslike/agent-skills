@@ -12,13 +12,15 @@ related:
 summary: Disallows using `error instanceof Error` comparisons due to risk of false negatives.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/no_instanceof_error.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "efd6d6c6700a62fced23bae4934e87ddba2e81c817d6427eb709b73ed7555f19"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "1e8d4b2ba8aad8b3412e9a6e3687e8d15c6ef5813986e0e5c353845e460f1a2c"
 ---
 
 # NO_INSTANCEOF_ERROR
 
 > **🔒 Permissions Required**: Conformance
+
+> **💡 Note:** This rule is available from version 1.5.0.
 
 A common pattern for checking if an object is an error is to use
 `error instanceof Error`.

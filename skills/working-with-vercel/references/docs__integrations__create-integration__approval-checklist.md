@@ -13,12 +13,12 @@ related:
   - /docs/integrations/create-integration/marketplace-api
   - /docs/integrations/create-integration/marketplace-api/reference/partner/upsert-installation
   - /docs/integrations/create-integration/marketplace-api/reference/vercel/get-account-info
-  - /docs/deploy-button/source
+  - /docs/integrations/create-integration/submit-integration
 summary: Review this checklist before submitting your native or connectable account integration for approval on the Vercel Marketplace.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/approval-checklist.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "0294624bbd7b61eea70420a3b5a8f1c386ab4518faeb59abbde84f2e04ae11dc"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "5f148a60fa4e19952085f239b63423f7f33c22a1013fc6372e3ec651f5999aab"
 ---
 
 # Integration Approval Checklist
@@ -32,8 +32,8 @@ Before submitting your integration for review, work through the checklist that m
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fapproval-checklist&source_site=vercel-docs&relationship=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
-- [Requirements for listing an Integration](https://vercel.com/docs/integrations/create-integration/submit-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fapproval-checklist&source_site=vercel-docs&relationship=related) — Learn about all the requirements and guidelines needed when creating your Integration.
 - [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fapproval-checklist&source_site=vercel-docs&relationship=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
+- [Upgrade an Integration](https://vercel.com/docs/integrations/create-integration/upgrade-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fapproval-checklist&source_site=vercel-docs&relationship=related) — Lean more about when you may need to upgrade your Integration.
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fapproval-checklist&source_site=vercel-docs&relationship=related) — Learn how you can add a product to your Vercel project through a native integration.
 - [Marketplace Partner API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fapproval-checklist&source_site=vercel-docs&relationship=related) — Learn how to implement Partner API endpoints for your Vercel integration
 - [Marketplace Vercel API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fapproval-checklist&source_site=vercel-docs&relationship=related) — Learn how to call Vercel API endpoints to interact with Vercel resources
@@ -58,12 +58,12 @@ Use this checklist if you're building a [native integration](/docs/integrations/
 
 ### Product listing
 
-- Validate your product's listing details: name, description, and . Confirm the logo is properly centered and looks good in both light and dark mode.
+- Validate your product's listing details: name, description, and [logo](/docs/integrations/create-integration/submit-integration#logo). Confirm the logo is properly centered and looks good in both light and dark mode.
 - Confirm pricing details and plans (free and paid tiers) are accurate. Your [billing plans endpoint](/docs/integrations/create-integration/marketplace-api#billing) returns the correct plans for each product.
 - Include documentation links (setup guides, FAQs) in your listing. Set the **Documentation URL** in the integration console.
 - Verify category placement in the Marketplace (for example, AI, Observability, Database) matches your product.
 - Confirm feature parity with your direct offering, including any features tailored for the Marketplace.
-- Ensure your  are high quality (1920x1080px, 16:9 ratio) and readable in both light and dark mode. Verify the first image is suitable for the auto-generated Open Graph image.
+- Ensure your [gallery images](/docs/integrations/create-integration/submit-integration#feature-media) are high quality (1920x1080px, 16:9 ratio) and readable in both light and dark mode. Verify the first image is suitable for the auto-generated Open Graph image.
 - If your integration supports both native and connectable account flows, ensure the connectable account flow works. Otherwise, remove the **Redirect URL** from the integration console.
 - Add a Marketplace [template](/docs/deploy-button/source#store-product-integration) as a deploy option in the product flow. This is required.
 
@@ -124,9 +124,9 @@ Use this checklist if you're building a [connectable account integration](/docs/
 
 Navigate to `/integrations/:slug` to view the listing for your integration.
 
-- Is the  properly centered and cropped? Does it look good in both light and dark mode?
+- Is the [logo](/docs/integrations/create-integration/submit-integration#logo) properly centered and cropped? Does it look good in both light and dark mode?
 
-* Is the first image high-quality and suitable for the auto-generated  image?
+* Is the first image high-quality and suitable for the auto-generated [Open Graph (OG)](/docs/og-image-generation) image?
 * Check that none of the images are blurry or display sensitive information. All images should look polished and professional.
 
 **Examples:**
@@ -138,8 +138,8 @@ Navigate to `/integrations/:slug` to view the listing for your integration.
 
 - Does the description section use markdown where appropriate (for example, `[link](#)`)?
 - If there's an Instructions section, is the content additional and helpful? Avoid a step-by-step installation guide.
-- Do the instructions clearly list all  that get set and what they're used for?
-  Use the  when creating environment variables.
+- Do the instructions clearly list all [environment variables](/docs/integrations/create-integration/submit-integration#additional-information) that get set and what they're used for?
+  Use the [comment property](/docs/rest-api/endpoints#projects/create-one-or-more-environment-variables/body-parameters) when creating environment variables.
 - Does additional documentation exist? If so, is the documentation URL set?
 
 ### Installation flow
@@ -158,9 +158,9 @@ From clicking the install button, a wizard pops up to guide the user through set
 
 ### Deploy button flow
 
-Using  allows users to install an integration together with an example repository on GitHub.
+Using [Deploy Buttons](/docs/deploy-button) allows users to install an integration together with an example repository on GitHub.
 
-- Does the integration handle the case where it's already installed on the ?
+- Does the integration handle the case where it's already installed on the [selected scope](/docs/integrations/create-integration/submit-integration#deploy-button-installation-flow)?
   The integration shouldn't treat the passed `configurationId` as a new installation if it was previously installed.
 
 ### Post-installation

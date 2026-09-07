@@ -3,7 +3,7 @@ title: vercel ai-gateway
 product: vercel
 url: /docs/cli/ai-gateway
 canonical_url: "https://vercel.com/docs/cli/ai-gateway"
-last_updated: 2026-08-26
+last_updated: 2026-08-28
 type: reference
 prerequisites:
   - /docs/cli
@@ -16,8 +16,8 @@ related:
 summary: "Manage AI Gateway resources from the Vercel CLI: API keys, budgets, routing rules, models, leaderboards, and coding agent setup."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/ai-gateway.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "460e6d99e2cebc808a47386007f4389da403212ed4dd043095551ef6eed0ba36"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "2e473a1011beba38067e44374576c64d1c1f02dcb9ff3f4b9877290e5ddcb156"
 ---
 
 # vercel ai-gateway
@@ -763,6 +763,24 @@ vercel ai-gateway coding-agents setup --agent codex --base-url https://preview.a
 - [AI Gateway routing rules](/docs/ai-gateway/models-and-providers/routing-rules)
 - [AI Gateway authentication](/docs/ai-gateway/authentication-and-byok)
 - [AI Gateway API keys](/docs/ai-gateway/authentication-and-byok/api-keys)
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel ai-gateway` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 
 ---

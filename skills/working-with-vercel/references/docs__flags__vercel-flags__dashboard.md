@@ -17,8 +17,8 @@ related:
 summary: Learn how to manage your feature flags using the Vercel Dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "a305ad63290d39a383387c4ec27568f864f95006fc41d9fd0d2301a6a2b991bd"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "2f6fe850d0aa812efad1d71ca2da55c070905ec0a0515dae68f0f34185f3e7ea"
 ---
 
 # Managing flags in the dashboard
@@ -49,6 +49,8 @@ Full cross-link map for this page: [/docs/flags/vercel-flags/dashboard.graph.md]
 ## Access your flags
 
 You can access the flags dashboard by navigating to your project and selecting the **Flags** section in the sidebar:
+
+[Go to Flags tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fflags\&title=Go+to+feature+flags\&personalTo=)
 
 The **Overview** shows all your flags at a glance. You can filter and search to see each flag's status, type, and whether it's currently in use. Flags from Marketplace providers display their provider's icon, while Vercel Flags show a status light. Click on **Vercel Flags** » **Flags** on the left to see Vercel Flags only.
 

@@ -10,18 +10,21 @@ prerequisites:
 related:
   - /docs/connect
   - /docs/connect/concepts/connectors
+  - /docs/cli/global-options
   - /docs/connect/quickstart
 summary: Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/connect.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "de672d93d0ba7e116ce0258b8da38b8b334fe792f3073e100ea13a8233c726c4"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "35f8eeccf30fa8f362920325c8ff2ccab741395d8b0fddd927c2818cf95f6df8"
 ---
 
 # vercel connect
 
 > **💡 Note:** The `vercel connect` command is currently in beta. Features and behavior may
 > change.
+
+The `vercel connect` command manages [Vercel Connect](/docs/connect) connectors. Use it to create connectors, attach them to projects, request runtime tokens, and remove them.
 
 
 <!-- docsgraph:related -->
@@ -37,15 +40,13 @@ sha256: "de672d93d0ba7e116ce0258b8da38b8b334fe792f3073e100ea13a8233c726c4"
 - [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent?from=related&source_path=%2Fdocs%2Fcli%2Fconnect&source_site=vercel-docs&relationship=related) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
 - [Build an incident response sre agent with eve](https://vercel.com/kb/guide/eve-incident-sre-agent?from=related&source_path=%2Fdocs%2Fcli%2Fconnect&source_site=vercel-docs&relationship=related) — sre is an incident response agent for Slack. It investigates production issues using a hypothesis-driven approach and re
 - [Manage your Sanity project from Slack with eve](https://vercel.com/kb/guide/eve-sanity-copilot?from=related&source_path=%2Fdocs%2Fcli%2Fconnect&source_site=vercel-docs&relationship=related) — A Slack-based Sanity copilot built on eve. It queries and edits content with GROQ, shapes schemas, manages releases, and
-- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fcli%2Fconnect&source_site=vercel-docs&relationship=related)
-- [SDK Reference](https://vercel.com/docs/connect/ts-sdk-reference?from=related&source_path=%2Fdocs%2Fcli%2Fconnect&source_site=vercel-docs&relationship=related) — API reference for @vercel/connect, the TypeScript SDK for requesting runtime tokens from Vercel Connect.
-- [vercel project](https://vercel.com/docs/cli/project?from=related&source_path=%2Fdocs%2Fcli%2Fconnect&source_site=vercel-docs&relationship=related) — Perform the following commands from the terminal for your Vercel Projects: list, add, inspect, update settings, rename,
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fconnect&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [List connectors for a project](https://vercel.com/docs/rest-api/connect/list-connectors-for-a-project?from=related&source_path=%2Fdocs%2Fcli%2Fconnect&source_site=vercel-docs&relationship=related) — GET /v2/connect/projects/{projectId}/connectors — List the connectors connected to a project and the environments where
+- [vercel alerts](https://vercel.com/docs/cli/alerts?from=related&source_path=%2Fdocs%2Fcli%2Fconnect&source_site=vercel-docs&relationship=related) — List recent alerts for a linked project, a specific project, or an entire team with the Vercel CLI.
+- [vercel global-config](https://vercel.com/docs/cli/global-config?from=related&source_path=%2Fdocs%2Fcli%2Fconnect&source_site=vercel-docs&relationship=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
 
 Full cross-link map for this page: [/docs/cli/connect.graph.md](/docs/cli/connect.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fconnect&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-The `vercel connect` command manages [Vercel Connect](/docs/connect) connectors. Use it to create connectors, attach them to projects, request runtime tokens, and remove them.
 
 It supports the following subcommands:
 
@@ -429,6 +430,24 @@ vercel connect open scl_abc123
 vercel connect open slack/my-bot
 vercel connect open scl_abc123 --format=json
 ```
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel connect` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 ## Related
 

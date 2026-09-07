@@ -8,12 +8,12 @@ type: reference
 prerequisites:
   - /docs/cli
 related:
-  []
+  - /docs/cli/global-options
 summary: Learn how to manage your DNS records for your domains using the vercel dns CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/dns.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "251833deba013e67dbfda35ce4b790eead65dc24492d6f09f0682b419ef17aaa"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "b5629d5c3d83fd5c1316e8651172066171a9f3b108e33779a41ecbc8e41a2d5d"
 ---
 
 # vercel dns
@@ -30,9 +30,9 @@ The `vercel dns` command manages DNS records for domains: list, inspect, add, up
 - [Vercel CLI expands commands for DNS, domains, and projects](https://vercel.com/changelog/vercel-cli-expands-commands-for-dns-domains-and-projects?from=related&source_path=%2Fdocs%2Fcli%2Fdns&source_site=vercel-docs&relationship=related)
 - [vercel domains](https://vercel.com/docs/cli/domains?from=related&source_path=%2Fdocs%2Fcli%2Fdns&source_site=vercel-docs&relationship=related) — Learn how to buy, sell, transfer, and manage your domains using the vercel domains CLI command.
 - [Working with DNS](https://vercel.com/docs/domains/working-with-dns?from=related&source_path=%2Fdocs%2Fcli%2Fdns&source_site=vercel-docs&relationship=related) — Learn how DNS works in order to properly configure your domain.
+- [vercel certs](https://vercel.com/docs/cli/certs?from=related&source_path=%2Fdocs%2Fcli%2Fdns&source_site=vercel-docs&relationship=related) — Learn how to manage certificates for your domains using the vercel certs CLI command.
 - [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records?from=related&source_path=%2Fdocs%2Fcli%2Fdns&source_site=vercel-docs&relationship=related) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
 - [Update an existing DNS record](https://vercel.com/docs/rest-api/dns/update-an-existing-dns-record?from=related&source_path=%2Fdocs%2Fcli%2Fdns&source_site=vercel-docs&relationship=related) — PATCH /v1/domains/records/{recordId} — Updates an existing DNS record for a domain name.
-- [List existing DNS records](https://vercel.com/docs/rest-api/dns/list-existing-dns-records?from=related&source_path=%2Fdocs%2Fcli%2Fdns&source_site=vercel-docs&relationship=related) — GET /v5/domains/{domain}/records — Retrieves a list of DNS records created for a domain name. By default it returns 20 r
 
 Full cross-link map for this page: [/docs/cli/dns.graph.md](/docs/cli/dns.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fdns&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -232,6 +232,24 @@ vercel dns inspect rec_1a2b3c4d5e6f --format json
 
 *Using the \`vercel dns inspect\` command with the
 \`--format\` option.*
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel dns` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 
 ---

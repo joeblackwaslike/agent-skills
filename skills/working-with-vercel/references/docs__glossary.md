@@ -16,8 +16,8 @@ related:
 summary: "Learn about the terms and concepts used in Vercel's products and documentation."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/glossary.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "41892590931bff558dd0766aca8f7756f772b0459c22873e4888f2f4ea7c6ef1"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "9e8927ba0ee8260f79263b2eb3fafe83cedc3a493cac07b58da09f81debc1995"
 ---
 
 # Glossary
@@ -36,12 +36,12 @@ A full glossary of terms used in Vercel's products and documentation.
 - [Single-package workspaces](https://turborepo.dev/docs/guides/single-package-workspaces?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — Use Turborepo's caching and task parallelization in a standalone application without a monorepo.
 - [Recursive `turbo` invocations](https://turborepo.dev/docs/messages/recursive-turbo-invocations?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — How to fix infinite loops caused by package.json scripts that recursively invoke `turbo`.
 - [s1ngularity: supply chain attack in Nx packages](https://vercel.com/changelog/s1ngularity-supply-chain-attack-in-nx-packages?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related)
-- [Simpler Pricing](https://vercel.com/blog/simpler-pricing?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related)
 - [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
 - [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related)
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
 - [Vercel vs Webflow Cloud](https://vercel.com/kb/guide/vercel-vs-webflow-cloud?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — Compare Vercel and Webflow Cloud for deploying Next.js and Astro apps, including runtime, framework support, storage, pr
 - [June 2020](https://vercel.com/blog/changelog-june-2020?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related)
+- [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
 
 Full cross-link map for this page: [/docs/glossary.graph.md](/docs/glossary.graph.md?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

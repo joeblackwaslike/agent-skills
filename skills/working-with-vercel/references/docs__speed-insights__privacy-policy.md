@@ -14,13 +14,15 @@ related:
 summary: Learn how Vercel follows the latest privacy and data compliance standards with its Speed Insights feature.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/privacy-policy.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "6a3cb89b7a08e84d4ce441eae5ad6532fc82e29670a9fdbbfce20b6165c178cc"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "776a1c864870789b70bd3796eafd339046bdc9f66d54eca02aa622f309dc0c85"
 ---
 
 # Vercel Speed Insights Privacy & Compliance
 
 > **🔒 Permissions Required**: Speed Insights
+
+To ensure that the Speed Insights feature can be used despite many different regulatory limitations around the world, we've designed it in such a way that it provides you with information without being tied to, or associated with, any individual visitor or IP address.
 
 
 <!-- docsgraph:related -->
@@ -40,8 +42,6 @@ sha256: "6a3cb89b7a08e84d4ce441eae5ad6532fc82e29670a9fdbbfce20b6165c178cc"
 
 Full cross-link map for this page: [/docs/speed-insights/privacy-policy.graph.md](/docs/speed-insights/privacy-policy.graph.md?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fprivacy-policy&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-To ensure that the Speed Insights feature can be used despite many different regulatory limitations around the world, we've designed it in such a way that it provides you with information without being tied to, or associated with, any individual visitor or IP address.
 
 ## Data collected
 

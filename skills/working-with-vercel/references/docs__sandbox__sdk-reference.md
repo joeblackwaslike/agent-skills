@@ -3,7 +3,7 @@ title: JS SDK Reference
 product: vercel
 url: /docs/sandbox/sdk-reference
 canonical_url: "https://vercel.com/docs/sandbox/sdk-reference"
-last_updated: 2026-08-21
+last_updated: 2026-09-04
 type: reference
 prerequisites:
   - /docs/sandbox
@@ -16,8 +16,8 @@ related:
 summary: A comprehensive reference for the Vercel Sandbox JavaScript SDK, which lets you run code in a secure, isolated environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/sdk-reference.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "a12a7e3e6e3e804c8784a2eac1f4cef491402591179a845b0dfd2a27479be02e"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "ae052ae55cff94713d2e874df740a9a75f248bf57ccf33450f0eb390848cbe17"
 ---
 
 # JS SDK Reference
@@ -366,9 +366,9 @@ Sandboxes are persistent by default: when the sandbox stops, the filesystem is a
 | Parameter            | Type                         | Required | Details                                                                                                                                                                                                             |
 | -------------------- | ---------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `name`               | `string`                     | No       | Unique sandbox name within the project. A random name is generated if omitted. Cannot be changed after creation.                                                                                                    |
-| `source`             | `git`                        | No       | Clone a Git repository.  `url`: string  `username`: string  `password`: string  `depth`?: number  `revision`?: string                                                                 |
-| `source`             | `tarball`                    | No       | Mount a tarball.  `url`: string                                                                                                                                                                               |
-| `source`             | `snapshot`                   | No       | Create from a snapshot.  `snapshotId`: string                                                                                                                                                                 |
+| `source`             | `git`                        | No       | Clone a Git repository. <br /> `url`: string <br /> `username`: string <br /> `password`: string <br /> `depth`?: number <br /> `revision`?: string                                                                 |
+| `source`             | `tarball`                    | No       | Mount a tarball. <br /> `url`: string                                                                                                                                                                               |
+| `source`             | `snapshot`                   | No       | Create from a snapshot. <br /> `snapshotId`: string                                                                                                                                                                 |
 | `resources.vcpus`    | `number`                     | No       | Number of vCPUs (2048 MB RAM per vCPU). Defaults to 2.                                                                                                                                                              |
 | `runtime`            | `string`                     | No       | Deprecated: use [`image`](#image) for image-based sandboxes. Runtime image such as `"node26"`, `"node24"`, `"node22"`, or `"python3.13"`.                                                                           |
 | `image`              | `string`                     | No       | VCR image reference, either a [Vercel Managed Image](/docs/sandbox/concepts/images#vercel-managed-images) or [custom image](/docs/sandbox/concepts/images#custom-images). Defaults to `"vercel/sandbox/universal"`. |
@@ -1492,6 +1492,48 @@ When such rules are defined, encryption is intercepted to allow request alterati
 
 Each rule can define a set of [matchers](/docs/sandbox/concepts/firewall#matchers) on the path, method, query parameters, and headers. When defined, only requests matching the specified dimensions will be transformed or forwarded. Learn more about transformation rules and forwarding rules in the [firewall documentation](/docs/sandbox/concepts/firewall).
 
+```ts
+// Allow traffic only to the provided websites.
+{
+  "allow": ["ai-gateway.vercel.sh", "google.com"]
+}
+
+// Allow traffic to all websites and add transformations to specific ones.
+{
+  "allow": {
+    "ai-gateway.vercel.sh": [{
+      "transform": [{
+        "headers": {
+          "x-api-key": "secret-key"
+        }
+      }]
+    }],
+    "*.github.com": [{
+      "match": {
+        "method": {
+          "exact": "POST"
+        }
+      },
+      "forwardURL": "https://my-proxy.vercel.app/github"
+    }],
+    "*.openai.com": [{
+      "match": {
+        "path": {
+          "startsWith": "/v1/chat/completions"
+        }
+      },
+      "transform": [{
+        "headers": {
+          "x-api-key": "other-secret-key"
+        }
+      }]
+    }],
+    // Optionally allow traffic to all other domains.
+    "*": []
+  }
+}
+```
+
 #### `subnets.allow`
 
 `subnets.allow` allows the user to provide a list of address ranges to allow traffic to.
@@ -1838,12 +1880,12 @@ Use `Drive.getOrCreate()` to retrieve an existing drive by name or create it if 
 
 **Returns:** `Promise<Drive>`.
 
-| Parameter | Type          | Required | Details                                                                                          |
-| --------- | ------------- | -------- | ------------------------------------------------------------------------------------------------ |
-| `name`    | `string`      | Yes      | Drive name. Must be unique within the project.                                                    |
-| `region`  | `string`      | No       | [Region](/docs/sandbox/concepts/regions#regions-and-drives) where the drive is created and stores its data. Defaults to `iad1`. |
-| `maxSize` | `number`      | No       | Drive size limit in bytes. Defaults to 100 GiB when omitted, and can be configured up to 1 TiB. |
-| `signal`  | `AbortSignal` | No       | Cancel the request if necessary.                                                                 |
+| Parameter | Type          | Required | Details                                                                                                                                                    |
+| --------- | ------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `name`    | `string`      | Yes      | Drive name. Must be unique within the project.                                                                                                             |
+| `region`  | `string`      | No       | [Region](/docs/sandbox/concepts/regions#regions-and-drives) where the drive is created and stores its data. Defaults to `iad1`.                            |
+| `maxSize` | `number`      | No       | Maximum drive size in bytes. Defaults to 1 TiB when omitted. The maximum quota is 16 TiB. [Contact Vercel Support](/help) to request a quota above 16 TiB. |
+| `signal`  | `AbortSignal` | No       | Cancel the request if necessary.                                                                                                                           |
 
 A drive's region can't change after creation. Calling `Drive.getOrCreate()` with a `region` or `maxSize` that doesn't match the existing drive fails with a `conflict` error.
 
@@ -1922,8 +1964,10 @@ To learn more on each method, see [Authentication](/docs/sandbox/concepts/authen
 - **Timeouts:** The default timeout is 5 minutes. You can extend it programmatically up to 45 minutes on the Hobby plan and up to 24 hours on Pro and Enterprise plans.
 - **Sudo:** `sudo` commands run as `vercel-sandbox` with the root home directory set to `/root`.
 
-> **💡 Note:** The filesystem is ephemeral. You must export artifacts to durable storage if
-> you need to keep them after the sandbox stops.
+> **💡 Note:** Sandboxes are persistent by default. The filesystem is automatically
+> snapshotted when a session stops and restored on the next resume. For one-off
+> workloads, pass `persistent: false` to opt out. See
+> [Persistence](/docs/sandbox/concepts/persistent-sandboxes).
 
 
 ---

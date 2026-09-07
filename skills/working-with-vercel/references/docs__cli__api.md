@@ -8,19 +8,21 @@ type: reference
 prerequisites:
   - /docs/cli
 related:
+  - /docs/cli/global-options
   - /docs/rest-api
   - /docs/cli/curl
-  - /docs/cli/global-options
 summary: Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/api.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "1a86a9763f4cab8cc567ade5f2aa53ba700dfd810ecb99f93db821edd62fca51"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "463b05ddd17b9457146ea86cb7ed068fd662a6cbd02a2df92d3cbdd92612dbc6"
 ---
 
 # vercel api
 
 > **💡 Note:** The `vercel api` command is currently in beta. Features and behavior may change.
+
+The `vercel api` command lets you make authenticated HTTP requests to the Vercel API directly from your terminal. It handles authentication automatically using your CLI session, supports interactive endpoint discovery, and provides features like automatic pagination and request body construction.
 
 
 <!-- docsgraph:related -->
@@ -28,17 +30,14 @@ sha256: "1a86a9763f4cab8cc567ade5f2aa53ba700dfd810ecb99f93db821edd62fca51"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Introducing the vercel api CLI command](https://vercel.com/changelog/introducing-the-vercel-api-cli-command?from=related&source_path=%2Fdocs%2Fcli%2Fapi&source_site=vercel-docs&relationship=related)
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fapi&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel connect](https://vercel.com/docs/cli/connect?from=related&source_path=%2Fdocs%2Fcli%2Fapi&source_site=vercel-docs&relationship=related) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
 - [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fapi&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
-- [Make Your First Vercel API Request](https://vercel.com/docs/rest-api/getting-started?from=related&source_path=%2Fdocs%2Fcli%2Fapi&source_site=vercel-docs&relationship=related) — Create a scoped Vercel access token, make a read-only REST API request, and call the same operation with the Vercel SDK.
 - [vercel webhooks](https://vercel.com/docs/cli/webhooks?from=related&source_path=%2Fdocs%2Fcli%2Fapi&source_site=vercel-docs&relationship=related) — Learn how to manage webhooks for your Vercel account using the vercel webhooks CLI command.
-- [vercel crons](https://vercel.com/docs/cli/crons?from=related&source_path=%2Fdocs%2Fcli%2Fapi&source_site=vercel-docs&relationship=related) — Manage Cron Jobs from the Vercel CLI: add cron entries to your vercel.json, list them, and trigger them on demand.
+- [vercel tokens](https://vercel.com/docs/cli/tokens?from=related&source_path=%2Fdocs%2Fcli%2Fapi&source_site=vercel-docs&relationship=related) — Manage your personal Vercel authentication tokens from the CLI: list, create, and remove access tokens for use with the
 
 Full cross-link map for this page: [/docs/cli/api.graph.md](/docs/cli/api.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fapi&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-The `vercel api` command lets you make authenticated HTTP requests to the Vercel API directly from your terminal. It handles authentication automatically using your CLI session, supports interactive endpoint discovery, and provides features like automatic pagination and request body construction.
 
 This command is useful for scripting, debugging, and exploring the Vercel API without needing to manage tokens or construct requests manually.
 
@@ -308,6 +307,24 @@ vercel api ls --format json
 ```
 
 *Listing endpoints in JSON format for scripting.*
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel api` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 ## Related
 

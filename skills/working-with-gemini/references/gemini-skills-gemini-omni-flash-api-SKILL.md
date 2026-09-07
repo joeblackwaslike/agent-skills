@@ -2,8 +2,8 @@
 name: gemini-omni-flash-api
 description: Use this skill for generative video editing, text-to-video, image-referenced video generation, first-frame-to-video, first-and-last-frame transitions, and video extensions using Gemini Omni 1.1 Flash (gemini-omni-1.1-flash) via the official google-genai SDK. Includes workflows for pre-processing/optimizing high-resolution or long source videos with ffmpeg, stripping audio for full sound regeneration, and handling turn-by-turn video editing and parallel execution.
 source: "https://raw.githubusercontent.com/google-gemini/gemini-skills/main/skills/gemini-omni-flash-api/SKILL.md"
-fetched_at: "2026-08-31T10:40:50.696Z"
-sha256: "99d56255c081aaddebd54700f6fc2d7317357981a3045bdd06fbb3e9922e0725"
+fetched_at: "2026-09-07T09:02:18.333Z"
+sha256: "5ec057f58398c846e41210c6416341fc6a8052763c1b9feef55f3652defdd220"
 ---
 
 # Gemini Omni Flash Skill
@@ -35,8 +35,8 @@ This skill uses the Gemini Omni 1.1 Flash model (`gemini-omni-1.1-flash`) to per
 ## Reference Documentation
 
 * **Interactions API**: All operations and state management for the Gemini Omni 1.1 Flash model (`gemini-omni-1.1-flash`) are handled via the [Interactions API](https://ai.google.dev/gemini-api/docs/interactions-overview).
-* **Files API**: Input media files (such as reference images and videos) must be uploaded via the [Files API](https://ai.google.dev/gemini-api/docs/interactions/files) first before being referenced in generations. The uploaded file URI and MIME type are then included in the `interactions.create` input parts array.
-* **[Interactions API Skill Reference](https://github.com/google-gemini/gemini-skills/blob/main/skills/gemini-interactions-api/SKILL.md)**: Platform-wide guidelines, current model specifications, and SDK usage rules for the Interactions API.
+* **Files API**: Input media files (such as reference images and videos) must be uploaded via the [Files API](https://ai.google.dev/gemini-api/docs/files) first before being referenced in generations. The uploaded file URI and MIME type are then included in the `interactions.create` input parts array.
+* **[Gemini API Skill Reference](https://github.com/google-gemini/gemini-skills/blob/main/skills/gemini-api-dev/SKILL.md)**: Platform-wide guidelines, current model specifications, and SDK usage rules for the Gemini API.
 
 ## Dependencies and Prerequisites
 

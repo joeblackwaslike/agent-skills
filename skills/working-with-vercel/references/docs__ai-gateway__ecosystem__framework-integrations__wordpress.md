@@ -14,8 +14,8 @@ related:
 summary: Learn how to integrate Vercel AI Gateway with WordPress to let your plugins access multiple AI models
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/wordpress.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "46d47c1f81a1f2fb6a110ce2513b4a03f4512e612387be290184cda834be43e6"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "d4ce5d2a32c85f4b926f60885c05134a6ce0ba382f4e52e78e7b5332a26a6c0f"
 ---
 
 # WordPress
@@ -34,9 +34,9 @@ built on top of the WordPress AI Client will then benefit from these capabilitie
 
 - [Vercel AI Gateway plugin for WordPress](https://vercel.com/changelog/vercel-ai-gateway-plugin-for-wordpress?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fwordpress&source_site=vercel-docs&relationship=related)
 - [Using Headless WordPress with Next.js and Vercel](https://vercel.com/kb/guide/wordpress-with-vercel?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fwordpress&source_site=vercel-docs&relationship=related) — Learn how to use Headless WordPress with your Next.js application and deploy it to Vercel.
+- [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fwordpress&source_site=vercel-docs&relationship=related) — Learn how to add the xAI native integration with Vercel.
 - [Image Generation](https://vercel.com/docs/ai-gateway/modalities/image-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fwordpress&source_site=vercel-docs&relationship=related) — Generate and edit images using AI models through Vercel AI Gateway with support for multiple providers and modalities.
 - [Build with AI on Vercel](https://vercel.com/docs/agent-resources/integrations-for-models?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fwordpress&source_site=vercel-docs&relationship=related) — Integrate powerful AI services and models seamlessly into your Vercel projects.
-- [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fwordpress&source_site=vercel-docs&relationship=related) — Learn how to add a new AI model to your Vercel projects
 - [Xcode](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fwordpress&source_site=vercel-docs&relationship=related) — Use Xcode's coding assistant with the AI Gateway.
 - [Adding a Provider](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-provider?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fwordpress&source_site=vercel-docs&relationship=related) — Learn how to add a new AI provider to your Vercel projects.
 

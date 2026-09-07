@@ -12,13 +12,15 @@ related:
 summary: Fine-grained control over BotID detection levels and backend domain configuration
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/botid/advanced-configuration.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "60589aa8339a695472fd68e0f8bb1b46dcb815b1dd13557d102aefde61575c43"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "927f34b60bd4273d9abfda8e567430a83a1d18882b05dac971178fc1ec66f028"
 ---
 
 # Advanced BotID Configuration
 
 ## Route-by-Route configuration
+
+When you need fine-grained control over BotID's detection levels, you can specify `advancedOptions` to choose between basic and deep analysis modes on a per-route basis. **This configuration takes precedence over the project-level BotID settings in your Vercel dashboard.**
 
 
 <!-- docsgraph:related -->
@@ -33,12 +35,11 @@ sha256: "60589aa8339a695472fd68e0f8bb1b46dcb815b1dd13557d102aefde61575c43"
 - [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related&source_path=%2Fdocs%2Fbotid%2Fadvanced-configuration&source_site=vercel-docs&relationship=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
 - [Vercel BotID is now generally available](https://vercel.com/changelog/vercel-botid-is-now-generally-available?from=related&source_path=%2Fdocs%2Fbotid%2Fadvanced-configuration&source_site=vercel-docs&relationship=related)
 - [Vercel BotID now  available for all frameworks](https://vercel.com/changelog/botid-now-available-for-all-frameworks?from=related&source_path=%2Fdocs%2Fbotid%2Fadvanced-configuration&source_site=vercel-docs&relationship=related)
+- [Attack Mode](https://vercel.com/docs/vercel-firewall/attack-mode?from=related&source_path=%2Fdocs%2Fbotid%2Fadvanced-configuration&source_site=vercel-docs&relationship=related) — Learn how to use Attack Mode to help control who has access to your site when it's under attack.
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fbotid%2Fadvanced-configuration&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/botid/advanced-configuration.graph.md](/docs/botid/advanced-configuration.graph.md?from=related&source_path=%2Fdocs%2Fbotid%2Fadvanced-configuration&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-When you need fine-grained control over BotID's detection levels, you can specify `advancedOptions` to choose between basic and deep analysis modes on a per-route basis. **This configuration takes precedence over the project-level BotID settings in your Vercel dashboard.**
 
 > **💡 Note:** **Important**: The `checkLevel` in both client and server configurations must
 > be identical for each protected route. A mismatch between client and server

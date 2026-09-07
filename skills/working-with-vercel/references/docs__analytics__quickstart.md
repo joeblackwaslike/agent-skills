@@ -16,8 +16,8 @@ related:
 summary: "Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you get started with using..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/quickstart.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "41b4a10d612dd5070bcb386af82ca4403a9e3fb9384fb60928e78d71375c1c38"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "f6e6cbe6a3b1b943bfc21713c2f1e7d2223489a133c87837200813d306794fee"
 ---
 
 # Getting started with Vercel Web Analytics
@@ -35,18 +35,23 @@ This guide will help you get started with using Vercel Web Analytics on your pro
 - [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related)
 - [Nuxt Analytics on Vercel](https://vercel.com/blog/nuxt-analytics-on-vercel?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related)
 - [How we made the Vercel Dashboard twice as fast](https://vercel.com/blog/how-we-made-the-vercel-dashboard-twice-as-fast?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related)
-- [Analytics](https://docs.vercel.shop/docs/skills/enable-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related) — Add Vercel Analytics, Vercel Speed Insights, and Google Tag Manager to the storefront.
 - [Vercel Analytics for Gatsby](https://vercel.com/blog/gatsby-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related)
+- [Getting started with Speed Insights](https://vercel.com/docs/speed-insights/quickstart?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
 - [Create React App on Vercel](https://vercel.com/docs/frameworks/frontend/create-react-app?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related) — Deploy Create React App projects to Vercel and add Preview Deployments, Web Analytics, Speed Insights, and Observability
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
-- [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related) — Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application perfor
-- [Getting started with Image Optimization](https://vercel.com/docs/image-optimization/quickstart?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how you can leverage Vercel Image Optimization in your projects.
-- [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
+- [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to get started with microfrontends on Vercel.
 
 Full cross-link map for this page: [/docs/analytics/quickstart.graph.md](/docs/analytics/quickstart.graph.md?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 **Select your framework to view instructions on using the Vercel Web Analytics in your project**.
+
+**Agent prompt**
+
+```text
+Help me add Vercel Web Analytics to this project. First, make sure the Vercel CLI is installed (`npm i -g vercel`). If I'm using Claude Code or Cursor, install the Vercel Plugin (`npx plugins add vercel/vercel-plugin`). For other agents, install Vercel Skills (`npx skills add vercel-labs/agent-skills`). Then: 1. Install @vercel/analytics. 2. Add the Analytics component to my root layout. 3. Deploy with `vercel --prod` and verify analytics data appears in the Vercel dashboard.
+```
 
 ## Prerequisites
 
@@ -86,6 +91,8 @@ Full cross-link map for this page: [/docs/analytics/quickstart.graph.md](/docs/a
   On the Vercel dashboard, navigate to **Analytics** in the sidebar and select a project.
   Or select the button below to go there.
 
+  [Go to Web Analytics](<getDeepLink({&#xA;    to: '/[team]/[project]/analytics',&#xA;    title: 'Open Web Analytics',&#xA;  })>)
+
   Then click the **Enable** button in the header.
   > **💡 Note:** Enabling Web Analytics will add new routes (scoped at `/_vercel/insights/*` and `/<unique-path>/*`)
   > after your next deployment.
@@ -93,7 +100,31 @@ Full cross-link map for this page: [/docs/analytics/quickstart.graph.md](/docs/a
 - ### Add `@vercel/analytics` to your project
   > For \['nextjs', 'nextjs-app', 'sveltekit', 'remix',  'create-react-app', 'nuxt', 'vue', 'other', 'astro']:
   Using the package manager of your choice, add the `@vercel/analytics` package to your project:
+  <CodeBlock>
+    <Code tab="pnpm">
+      ```bash
+      pnpm i @vercel/analytics
+      ```
+    </Code>
+    <Code tab="yarn">
+      ```bash
+      yarn i @vercel/analytics
+      ```
+    </Code>
+    <Code tab="npm">
+      ```bash
+      npm i @vercel/analytics
+      ```
+    </Code>
+    <Code tab="bun">
+      ```bash
+      bun i @vercel/analytics
+      ```
+    </Code>
+  </CodeBlock>
   > For \['html']:
+  > **💡 Note:** When using the HTML implementation, there is no need to install the
+  > `@vercel/analytics` package.
 
 - > For \[
   > &#x20;   'nextjs',
@@ -367,6 +398,8 @@ Full cross-link map for this page: [/docs/analytics/quickstart.graph.md](/docs/a
   <script defer src="/<unique-path>/script.js"></script>
   ```
   > For \['html']:
+  > **💡 Note:** When using the HTML implementation, there is no need to install the
+  > `@vercel/analytics` package. However, there is no route support.
   > For \['other']:
   Import the `inject` function from the package, which will add the tracking script to your app. **This should only be called once in your app, and must run in the client**.
 
@@ -385,7 +418,7 @@ Full cross-link map for this page: [/docs/analytics/quickstart.graph.md](/docs/a
   ```
   > For \['create-react-app']:
   The `Analytics` component is a wrapper around the tracking script, offering more seamless integration with React.
-
+  > **💡 Note:** When using the plain React implementation, there is no route support.
   Add the following code to the main app file:
   ```tsx {1, 7} filename="App.tsx" framework=create-react-app
   import { Analytics } from '@vercel/analytics/react';
@@ -413,7 +446,7 @@ Full cross-link map for this page: [/docs/analytics/quickstart.graph.md](/docs/a
   ```
   > For \['vue']:
   The `Analytics` component is a wrapper around the tracking script, offering more seamless integration with Vue.
-
+  > **💡 Note:** Route support is automatically enabled if you're using `vue-router`.
   Add the following code to your main component:
   ```tsx {2,6} filename="src/App.vue" framework=vue
   <script setup lang="ts">

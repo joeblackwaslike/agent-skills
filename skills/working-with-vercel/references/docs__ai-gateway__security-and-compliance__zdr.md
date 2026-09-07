@@ -15,8 +15,8 @@ related:
 summary: Learn about zero data retention policies and how to enforce ZDR on a per-request basis with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/zdr.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "05c4bf2f675f983c3442b409ab00828dbd43617e70456edb236356f4760a372a"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "0d35bf8138454d53428e0a4ce10964d88e321c3b52644c59be2b7212c875969c"
 ---
 
 # Zero Data Retention
@@ -29,16 +29,16 @@ Zero data retention (ZDR) is available for Pro and Enterprise users on AI Gatewa
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Zero Data Retention on AI Gateway](https://vercel.com/blog/zdr-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related)
 - [ Routing rules now available on AI Gateway](https://vercel.com/changelog/ai-gateway-routing-rules?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related)
 - [Inkling Small from Thinking Machines is now available on AI Gateway](https://vercel.com/changelog/inkling-small-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related)
 - [Kimi K3 and Kimi K3 Fast with ZDR and US-based providers now on AI Gateway](https://vercel.com/changelog/kimi-k3-and-kimi-k3-fast-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related)
 - [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related)
 - [WebSocket support for OpenAI Responses API live on AI Gateway](https://vercel.com/changelog/websocket-support-for-openai-responses-api-live-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related)
+- [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
-- [Provider Allowlist](https://vercel.com/docs/ai-gateway/security-and-compliance/provider-allowlist?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related) — Restrict which AI providers your team can route through AI Gateway. Available on Pro and Enterprise.
-- [Provider Options](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API.
+- [Advanced Features](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related) — Advanced Anthropic API features including web search, provider timeouts, and automatic caching.
 - [Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
+- [Compaction](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/compaction?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related) — Compress long conversations into a single compaction item with the OpenAI Responses API through AI Gateway.
 - [Responses API over WebSocket](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/websockets?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related) — Keep a persistent connection open across turns with the OpenAI Responses API over WebSocket through AI Gateway.
 - [vercel ai-gateway](https://vercel.com/docs/cli/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related) — Manage AI Gateway resources from the Vercel CLI: API keys, budgets, routing rules, models, leaderboards, and coding agen
 
@@ -475,6 +475,188 @@ When you use [prompt caching](/docs/ai-gateway/models-and-providers/automatic-ca
 The following providers currently offer ZDR on AI Gateway. Please review each provider's ZDR policy and terms carefully. A provider's default policy may not match with the status that AI Gateway has in place due to negotiated agreements. We are constantly coordinating and revising agreements to be able to enforce stricter retention policies for customers. The full terms of service are available for each provider on the [model pages](/ai-gateway/models).
 
 All ZDR-compliant providers also disallow prompt training, since ZDR is a superset of [disallowing prompt training](/docs/ai-gateway/security-and-compliance/disallow-prompt-training). In some cases, certain models or functionalities may be excluded from a provider's ZDR policy. AI Gateway will not fail these requests if zero data retention is enabled, so review the provider's policy in the table below to understand the nuances of specific tools and how they affect data retention.
+
+Provider
+
+No prompt training
+
+ZDR
+
+Policy
+
+Alibaba Cloud
+
+✓
+
+✓
+
+Custom policy
+
+Anthropic
+
+\*
+
+✓
+
+✓
+
+ZDR policy
+
+Azure
+
+✓
+
+✓
+
+Data privacy
+
+Baseten
+
+✓
+
+✓
+
+Security
+
+Bedrock
+
+\*
+
+✓
+
+✓
+
+Data protection
+
+Cerebras
+
+✓
+
+✓
+
+Privacy policy
+
+Claude Platform on AWS
+
+✓
+
+✓
+
+ZDR policy
+
+DeepInfra
+
+✓
+
+✓
+
+Data handling
+
+DigitalOcean
+
+✓
+
+✓
+
+ZDR policy
+
+Fireworks
+
+✓
+
+✓
+
+Data handling
+
+Google Vertex AI
+
+\*
+
+✓
+
+✓
+
+ZDR policy
+
+Groq
+
+✓
+
+✓
+
+ZDR policy
+
+Mistral
+
+✓
+
+✓
+
+Terms of service
+
+Modal
+
+✓
+
+✓
+
+ZDR policy
+
+Moonshot AI
+
+✓
+
+✓
+
+Custom policy
+
+Morph
+
+✓
+
+✓
+
+ZDR policy
+
+Nebius
+
+✓
+
+✓
+
+Legal quick guide
+
+Parasail
+
+✓
+
+✓
+
+Terms of service
+
+Particle.AI
+
+✓
+
+✓
+
+ZDR policy
+
+Together AI
+
+✓
+
+✓
+
+Terms of service
+
+Wafer
+
+✓
+
+✓
+
+ZDR policy
 
 \* `anthropic/claude-fable-5` does not support ZDR on any provider, including Anthropic, Google Vertex, and Amazon Bedrock. Anthropic has determined this is required because some misuse patterns only become visible across cumulative requests. Prompts and completions are retained for 30 days and are not used to train Claude.
 

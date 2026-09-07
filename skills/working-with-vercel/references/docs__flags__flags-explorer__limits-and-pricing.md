@@ -13,13 +13,17 @@ related:
 summary: Compare monthly Flags Explorer override limits and the price of unlimited overrides across Vercel plans.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/flags-explorer/limits-and-pricing.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "789009299dc11c5648cc8337cca19726ea8e93ba48b311fc6096af1b6a615185"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "f1e18b2a022d12da9056cbcde12c2b2502eac76dacc529d9d22a6e6532bcf1f2"
 ---
 
 # Pricing for Flags Explorer
 
 > **🔒 Permissions Required**: Flags Explorer
+
+## Pricing
+
+The following table outlines the price for each resource according to the plan you are on:
 
 
 <!-- docsgraph:related -->
@@ -30,16 +34,12 @@ sha256: "789009299dc11c5648cc8337cca19726ea8e93ba48b311fc6096af1b6a615185"
 - [Flags Explorer is now generally available](https://vercel.com/changelog/flags-explorer-is-now-generally-available?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Flimits-and-pricing&source_site=vercel-docs&relationship=related)
 - [Limits and Pricing for Vercel Flags](https://vercel.com/docs/flags/vercel-flags/limits-and-pricing?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Review Vercel Flags request pricing and limits for flags, segments, configuration size, and connected projects.
 - [Setting up Flags Explorer](https://vercel.com/docs/flags/vercel-flags/cli/set-up-flags-explorer?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Add the Flags Explorer to the Vercel Toolbar so you can override flag values on preview deployments without affecting ot
-- [Limits and Pricing for Speed Insights](https://vercel.com/docs/speed-insights/limits-and-pricing?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn about our limits and pricing when using Vercel Speed Insights. Different limitations are applied depending on your
 - [Vercel Flags](https://vercel.com/docs/flags/vercel-flags?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Use Vercel as your feature flag provider to create and manage flags, define targeting rules, and run experiments directl
-- [Limits and Pricing for Monitoring](https://vercel.com/docs/query/monitoring/limits-and-pricing?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn about our limits and pricing when using Monitoring. Different limitations are applied depending on your plan.
+- [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
+- [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 
 Full cross-link map for this page: [/docs/flags/flags-explorer/limits-and-pricing.graph.md](/docs/flags/flags-explorer/limits-and-pricing.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Flimits-and-pricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-## Pricing
-
-The following table outlines the price for each resource according to the plan you are on:
 
 | Resource | Pro Price |
 | --- | --- |

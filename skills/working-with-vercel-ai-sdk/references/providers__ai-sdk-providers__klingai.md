@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/klingai.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "146021c87645d489d516cd46b20c731abe4668d7a9e4a150f9a31c1a9ee6d630"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "8b2b1ec0ff580cce536defda4ac5744ca6dc598af73cff0157a5c5c223135e67"
 ---
 
 # Kling AI Provider
@@ -335,7 +335,9 @@ The following provider options are available via `providerOptions.klingai`. Opti
 <Note>
   Video generation is an asynchronous process that can take several minutes.
   Consider setting `pollTimeoutMs` to at least 10 minutes (600000ms) for
-  reliable operation.
+  reliable operation. Status polls trust the configured Kling AI API origin for
+  the first request and validate every redirect to another origin before
+  following it.
 </Note>
 
 ### Video Model Capabilities

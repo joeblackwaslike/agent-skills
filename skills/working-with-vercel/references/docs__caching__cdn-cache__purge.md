@@ -3,7 +3,7 @@ title: Purging Vercel CDN Cache
 product: vercel
 url: /docs/caching/cdn-cache/purge
 canonical_url: "https://vercel.com/docs/caching/cdn-cache/purge"
-last_updated: 2026-08-11
+last_updated: 2026-09-03
 type: reference
 prerequisites:
   - /docs/caching/cdn-cache
@@ -17,13 +17,15 @@ related:
 summary: "Learn how to invalidate and delete cached content on Vercel's CDN, including cache keys and manual purging options."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/cdn-cache/purge.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "bb2496a793048d7d3f6b377d14e4b6dfe2864812b51e6e572d7f2a203bff8ef2"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "de2764624a1d79531041696fe8fe684cfddb0d171bddf7753cfb41abe9920aa4"
 ---
 
 # Purging Vercel CDN Cache
 
 > **🔒 Permissions Required**: Cache purging
+
+Learn how to [invalidate and delete](#programmatically-purging-vercel-cache) cached content on Vercel's CDN, including cache keys and manual purging options.
 
 
 <!-- docsgraph:related -->
@@ -32,22 +34,20 @@ sha256: "bb2496a793048d7d3f6b377d14e4b6dfe2864812b51e6e572d7f2a203bff8ef2"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel CDN now respects Cache-Control headers from external origins by default](https://vercel.com/changelog/vercels-cdn-now-respects-cache-control-headers-from-external-origins-by-default?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=related)
+- [How to add per-request CSP nonces to CDN-cached HTML on Vercel](https://vercel.com/kb/guide/csp-nonces-with-cdn-cache?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=related) — Use Routing Middleware and a self-fetch to add a fresh CSP nonce to cached HTML without rendering the page again on ever
 - [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=related) — Reduce ISR costs by analyzing Incremental Static Regeneration \\(ISR\\) behavior to find pages and tags that revalidate to
 - [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=related) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
 - [Invalidate the CDN cache by tag](https://vercel.com/changelog/invalidate-the-cdn-cache-by-tag?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=related)
 - [Tag-based cache invalidation now available for all responses](https://vercel.com/changelog/tag-based-cache-invalidation-now-available-for-all-responses?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=related)
 - [Manually purge the CDN cache](https://vercel.com/changelog/manually-purge-the-cdn-cache?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=related)
-- [You can now invalidate the CDN cache by providing a source image](https://vercel.com/changelog/you-can-now-invalidate-the-cdn-cache-by-providing-a-source-image?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=related)
-- [Diagnosing and fixing cache issues](https://vercel.com/docs/caching/cdn-cache/debug-cache-issues?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=related) — Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
 - [Data Cache for Next.js](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
+- [Diagnosing and fixing cache issues](https://vercel.com/docs/caching/cdn-cache/debug-cache-issues?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=related) — Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
 - [Runtime Cache](https://vercel.com/docs/caching/runtime-cache?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=related) — Vercel Runtime Cache is a specialized cache that stores responses from data fetches in Vercel functions
 - [Cache Status and Reasons](https://vercel.com/docs/caching/cache-status?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=related) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
-- [Vercel CDN overview](https://vercel.com/docs/cdn?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=related) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
+- [Dangerously delete by tag](https://vercel.com/docs/rest-api/edge-cache/dangerously-delete-by-tag?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=related) — POST /v1/edge-cache/dangerously-delete-by-tags — Marks a cache tag as deleted, causing cache entries associated with tha
 
 Full cross-link map for this page: [/docs/caching/cdn-cache/purge.graph.md](/docs/caching/cdn-cache/purge.graph.md?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Learn how to [invalidate and delete](#programmatically-purging-vercel-cache) cached content on Vercel's CDN, including cache keys and manual purging options.
 
 ## Cache keys
 
@@ -133,6 +133,14 @@ When you purge a tag using `@vercel/functions` at runtime, the function's curren
 
 When using [rewrites](/docs/routing/rewrites) from a parent [project](/docs/projects) to a child project and both are on the same [team](/docs/accounts), cached responses on the parent project will also include the corresponding tags from the child project.
 
+### System cache tags
+
+Vercel's CDN automatically adds system cache tags to certain cached responses so you can easily purge by tag at your convenience.
+
+For example, a cached response from [Image Optimization](/docs/image-optimization) automatically adds the source image as a cache tag to each transformed image. These may contain commas, unlike user-defined cache tags.
+
+This allows you to purge by a single source image without purging the entire project.
+
 ## Programmatically purging CDN Cache
 
 You can purge Vercel CDN cache in any of the following ways:
@@ -167,11 +175,14 @@ Vercel does not bill the purge event itself, but purging can temporarily increas
 
 ## Limits
 
-|                             | Maximum |
-| --------------------------- | ------- |
-| Characters per tag          | 256     |
-| Tags per cached response    | 128     |
-| Tags per bulk REST API call | 16      |
+|                                   | Maximum |
+| --------------------------------- | ------- |
+| UTF-8 bytes per tag               | 256     |
+| Tags per cached response          | 128     |
+| Tags per bulk REST API call       | 16      |
+| UTF-8 bytes per source image tag  | 1013    |
+
+Tags containing multibyte characters are encoded and measured in UTF-8 bytes. A tag of only ASCII characters can be 256 characters long, but characters that require escaping, such as quotes and backslashes, additionally count at their escaped length.
 
 
 ---

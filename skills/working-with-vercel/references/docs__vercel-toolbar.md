@@ -16,13 +16,15 @@ related:
 summary: Learn how to use the Vercel Toolbar to leave feedback, navigate through important dashboard pages, share deployments, use Draft Mode for previewing...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "471fa55b2e7a5fe685ef032172aa988b40a5bbbf6af6b0f8947f48ee5cf19100"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "83d474d00e930144f96ada1d7a1f1861e791ac52251c6d4bb33d57ec4de1553c"
 ---
 
 # Vercel Toolbar
 
 > **🔒 Permissions Required**: Vercel Toolbar
+
+The Vercel Toolbar is a tool that assists in the iteration and development process. Through the toolbar, you can:
 
 
 <!-- docsgraph:related -->
@@ -37,7 +39,7 @@ sha256: "471fa55b2e7a5fe685ef032172aa988b40a5bbbf6af6b0f8947f48ee5cf19100"
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related&source_path=%2Fdocs%2Fvercel-toolbar&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Fvercel-toolbar&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related&source_path=%2Fdocs%2Fvercel-toolbar&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
-- [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank?from=related&source_path=%2Fdocs%2Fvercel-toolbar&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, security defaults, AI infrastructure, GPU comp
+- [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank?from=related&source_path=%2Fdocs%2Fvercel-toolbar&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, container image functions, security defaults,
 - [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates?from=related&source_path=%2Fdocs%2Fvercel-toolbar&source_site=vercel-docs&relationship=related)
 - [@vercel/toolbar available to use collaboration features in production](https://vercel.com/changelog/vercel-toolbar-now-available-to-use-collaboration-features-in-production?from=related&source_path=%2Fdocs%2Fvercel-toolbar&source_site=vercel-docs&relationship=related)
 - [Improvements to Vercel Toolbar: Shrinking when inactive, removal of avatars, and more](https://vercel.com/changelog/improvements-to-vercel-toolbar?from=related&source_path=%2Fdocs%2Fvercel-toolbar&source_site=vercel-docs&relationship=related)
@@ -45,8 +47,6 @@ sha256: "471fa55b2e7a5fe685ef032172aa988b40a5bbbf6af6b0f8947f48ee5cf19100"
 
 Full cross-link map for this page: [/docs/vercel-toolbar.graph.md](/docs/vercel-toolbar.graph.md?from=related&source_path=%2Fdocs%2Fvercel-toolbar&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-The Vercel Toolbar is a tool that assists in the iteration and development process. Through the toolbar, you can:
 
 - Leave feedback on deployments with [Comments](/docs/comments)
 - Navigate [through dashboard pages](/docs/vercel-toolbar#using-the-toolbar-menu), and [share deployments](/docs/vercel-toolbar#sharing-deployments)
@@ -97,7 +97,7 @@ Alternatively, you can also access the Toolbar Menu through the Vercel Toolbar b
 
 ## Setting Custom Keyboard Shortcuts
 
-You can set your own keyboard shortcuts to quickly access specific tools. Additionally, you can change the default keyboard shortcuts for the Toolbar Menu  and for showing/hiding the toolbar  by following these steps:
+You can set your own keyboard shortcuts to quickly access specific tools. Additionally, you can change the default keyboard shortcuts for the Toolbar Menu  and for showing/hiding the toolbar `.` by following these steps:
 
 1. Select Preferences in the Toolbar Menu
 2. Select Configure next to Keyboard Shortcuts

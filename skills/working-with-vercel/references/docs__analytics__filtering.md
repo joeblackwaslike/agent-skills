@@ -15,8 +15,8 @@ related:
 summary: "Learn how filters allow you to explore insights about your website's visitors."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/filtering.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "12416a4b3c8c25366c09a9075b3c46a41163373beb6f7fc1ceddcf8ca17c51d0"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "37bf1ad5a7a18b914633d942f91a5335ba3be15946e4753002837e60863b8489"
 ---
 
 # Filtering Analytics
@@ -40,7 +40,7 @@ to use it to answer specific questions.
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=related) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [Privacy and Compliance](https://vercel.com/docs/analytics/privacy-policy?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=related) — Learn how Vercel supports privacy and data compliance standards with Vercel Web Analytics.
-- [Speed Insights Overview](https://vercel.com/docs/speed-insights?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=related) — This page lists out and explains all the performance metrics provided by Vercel's Speed Insights feature.
+- [Using Speed Insights](https://vercel.com/docs/speed-insights/using-speed-insights?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=related) — Learn how to use Speed Insights to analyze your application's performance data.
 - [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
 
 Full cross-link map for this page: [/docs/analytics/filtering.graph.md](/docs/analytics/filtering.graph.md?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=graph)

@@ -16,8 +16,8 @@ related:
 summary: Learn how to set up Conformance for your codebase.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/getting-started.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "528d45313535d530e2de0790cd4c1eae8c386a360a4cfc0102832021b5ef9e4f"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "8636d91c9364500cc389b3e2dfc5e5fee94fa8f2f2ec6085df646aa8f5a54a60"
 ---
 
 # Getting Started with Conformance
@@ -30,6 +30,12 @@ To [set up Conformance](#setting-up-conformance-in-your-repository) in your repo
 - [Install and initialize](/docs/conformance/getting-started#setting-up-conformance-in-your-repository) Conformance in your repository
 
 If you've already set up Code Owners, you may have already completed some of these steps.
+
+**Agent prompt**
+
+```text
+Help me set up Conformance for this project. First, make sure the Vercel CLI is installed (`npm i -g vercel`). If I'm using Claude Code or Cursor, install the Vercel Plugin (`npx plugins add vercel/vercel-plugin`). For other agents, install Vercel Skills (`npx skills add vercel-labs/agent-skills`). Then: 1. Run `vercel link` to connect the project. 2. Enable conformance by adding the conformance configuration to the project. Set up rules to enforce code quality and best practices across the codebase.
+```
 
 ## Prerequisites
 
@@ -82,7 +88,7 @@ This section guides you through setting up Conformance for your repository.
       ```
     </Code>
   </CodeBlock>
-  > **💡 Note:** `yarn dlx` only works with Yarn version 2 or newer, for Yarn v1 use&#x20;
+  > **💡 Note:** `yarn dlx` only works with Yarn version 2 or newer, for Yarn v1 use <br />
   > `yarn -DW add @vercel-private/conformance && yarn vercel-conformance init`
   After running, check the installation success by executing:
   <CodeBlock>

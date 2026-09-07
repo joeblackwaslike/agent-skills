@@ -3,7 +3,7 @@ title: Native integration concepts
 product: vercel
 url: /docs/integrations/create-integration/native-integration
 canonical_url: "https://vercel.com/docs/integrations/create-integration/native-integration"
-last_updated: 2026-08-11
+last_updated: 2026-08-28
 type: conceptual
 prerequisites:
   - /docs/integrations/create-integration
@@ -17,8 +17,8 @@ related:
 summary: "As an integration provider, understanding how your service interacts with Vercel's platform will help you create and optimize your integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/native-integration.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "be622f9cb6187c111d71d5b3649d4293d46d6a5371dedee5fe55440784c83f2e"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "02ad128a3815f7d0e54622e5093c5e99aba545c88eac82bcc4093ddc8ea6e8f7"
 ---
 
 # Native integration concepts
@@ -32,8 +32,9 @@ Native integrations allow a two-way connection between Vercel and third-party pr
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fnative-integration&source_site=vercel-docs&relationship=related) — Learn how you can add a product to your Vercel project through a native integration.
-- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fnative-integration&source_site=vercel-docs&relationship=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
+- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fnative-integration&source_site=vercel-docs&relationship=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
 - [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fnative-integration&source_site=vercel-docs&relationship=related) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
+- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fnative-integration&source_site=vercel-docs&relationship=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
 - [Marketplace Partner API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fnative-integration&source_site=vercel-docs&relationship=related) — Learn how to implement Partner API endpoints for your Vercel integration
 - [Marketplace Vercel API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fnative-integration&source_site=vercel-docs&relationship=related) — Learn how to call Vercel API endpoints to interact with Vercel resources
 
@@ -113,6 +114,38 @@ Integration users can add and manage resources in various ways. For example:
 ## Relationships
 
 The diagram below illustrates the relationships between team installations, products, and resources:
+
+```mermaid
+flowchart TB
+    TI[ACME's Team Installation]
+    subgraph products["Products"]
+        direction LR
+        P1[Redis Database]
+        P2[24/7 Support]
+    end
+    subgraph resources["Resources"]
+        direction LR
+        R1[Redis Database 1]
+        R2[Redis Database 2]
+        R3[24/7 Support 1]
+    end
+    subgraph projects["Projects"]
+        direction LR
+        PR1[Multi Database Project]
+        PR2[Project with Support]
+    end
+    TI --> P1
+    TI --> P2
+    P1 --> R1
+    P1 --> R2
+    P2 --> R3
+    R1 --> PR1
+    R2 --> PR1
+    R2 --> PR2
+    R3 --> PR2
+    classDef wrapper stroke-dasharray: 5 5
+    class products,resources,projects wrapper
+```
 
 - One installation can host multiple products and resources.
 - One product can have multiple resource instances.

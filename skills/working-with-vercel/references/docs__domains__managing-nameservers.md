@@ -3,7 +3,7 @@ title: Managing Nameservers
 product: vercel
 url: /docs/domains/managing-nameservers
 canonical_url: "https://vercel.com/docs/domains/managing-nameservers"
-last_updated: 2026-02-27
+last_updated: 2026-08-28
 type: how-to
 prerequisites:
   - /docs/domains
@@ -12,8 +12,8 @@ related:
 summary: Learn how to add custom nameservers and restore original nameservers for your domains on Vercel with this guide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/managing-nameservers.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "f4b6e915cf7fab2c3e10aeadd43edfb4f82863f8cd38d43874c44f7bed615658"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "d32a00732b2fdc30c516651d949893fa1b9e36df402bcfd0544924007e8c5421"
 ---
 
 # Managing Nameservers

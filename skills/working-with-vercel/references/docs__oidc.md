@@ -16,13 +16,15 @@ related:
 summary: Secure the access to your backend using OIDC Federation to enable auto-generated, short-lived, and non-persistent credentials.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "eaeded35ca0286bd51d71eacc2919dbb0fb1b3e257c230dfcbad74e7818d4218"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "fb3aeea4ab6603f94483bc67580eb468dbe1a5dc973b801d973fbbf4d1120438"
 ---
 
 # OpenID Connect (OIDC) Federation
 
 > **🔒 Permissions Required**: Secure backend access with OIDC federation
+
+When you create long-lived, persistent credentials in your backend to allow access from your web applications, you increase the security risk of these credentials being leaked and hacked. You can mitigate this risk with OpenID Connect (OIDC) federation which issues short-lived, non-persistent tokens that are signed by Vercel's OIDC Identity Provider (IdP).
 
 
 <!-- docsgraph:related -->
@@ -45,8 +47,6 @@ sha256: "eaeded35ca0286bd51d71eacc2919dbb0fb1b3e257c230dfcbad74e7818d4218"
 
 Full cross-link map for this page: [/docs/oidc.graph.md](/docs/oidc.graph.md?from=related&source_path=%2Fdocs%2Foidc&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-When you create long-lived, persistent credentials in your backend to allow access from your web applications, you increase the security risk of these credentials being leaked and hacked. You can mitigate this risk with OpenID Connect (OIDC) federation which issues short-lived, non-persistent tokens that are signed by Vercel's OIDC Identity Provider (IdP).
 
 Cloud providers such as Amazon Web Services, Google Cloud Platform, and Microsoft Azure can trust these tokens and exchange them for short-lived credentials. This way, you can avoid storing long-lived credentials as Vercel environment variables.
 
@@ -111,6 +111,14 @@ This writes the `VERCEL_OIDC_TOKEN` environment variable and other environment v
 to `development` to the `.env.local` file of your project folder. See the [CLI docs](/docs/cli/env) for more information.
 
 ## Related
+
+**Helper libraries** [→](/docs/oidc/reference#helper-libraries)
+
+Review libraries to help you connect to your backend with OIDC.
+
+**OIDC token anatomy** [→](/docs/oidc/reference#oidc-token-anatomy)
+
+Understand the structure of an OIDC token.
 
 
 ---

@@ -13,8 +13,8 @@ related:
 summary: Stream tokens as they are generated with the OpenAI Responses API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/streaming.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "d8888e2a181e991aac29422c5147c8045f5b1ac2350cbba19fcbda44a6d9ce83"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "74b426099d78c6f6b57edad962666e998c307afaea6402a336d237fea5e929e9"
 ---
 
 # Streaming
@@ -33,14 +33,13 @@ Set `stream: true` to receive tokens as they're generated. The SDK returns an as
 - [Streaming](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/streaming?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fstreaming&source_site=vercel-docs&relationship=related) — Stream Anthropic Messages API responses token by token as they are generated.
 - [An Introduction to Streaming on the Web](https://vercel.com/blog/an-introduction-to-streaming-on-the-web?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fstreaming&source_site=vercel-docs&relationship=related)
 - [Streaming](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/streaming?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fstreaming&source_site=vercel-docs&relationship=related) — Stream OpenAI Chat Completions responses token by token as they are generated.
-- [Processing Data Chunks](https://vercel.com/kb/guide/processing-data-chunks?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fstreaming&source_site=vercel-docs&relationship=related) — Learn how to create an API endpoint that processes data chunks.
 - [Streaming](https://vercel.com/docs/functions/streaming-functions?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fstreaming&source_site=vercel-docs&relationship=related) — Learn how to stream responses from Vercel Functions.
-- [Text Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/text-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fstreaming&source_site=vercel-docs&relationship=related) — Generate text responses with the OpenAI Responses API through AI Gateway.
+- [OpenResponses API](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fstreaming&source_site=vercel-docs&relationship=related) — Use the OpenResponses API specification with AI Gateway for a unified, provider-agnostic interface.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/responses/streaming.graph.md](/docs/ai-gateway/sdks-and-apis/responses/streaming.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fstreaming&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-#### \['cURL'
+#### cURL
 
 ```bash filename="stream.sh"
 curl -X POST "https://ai-gateway.vercel.sh/v1/responses" \
@@ -53,7 +52,7 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/responses" \
   }'
 ```
 
-#### 'TypeScript'
+#### TypeScript
 
 ```typescript filename="stream.ts"
 import OpenAI from 'openai';
@@ -76,7 +75,7 @@ for await (const event of stream) {
 }
 ```
 
-#### 'Python']
+#### Python
 
 ```python filename="stream.py"
 import os

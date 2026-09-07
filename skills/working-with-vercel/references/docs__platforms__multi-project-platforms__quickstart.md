@@ -3,7 +3,7 @@ title: Multi-Project Platforms Quickstart
 product: vercel
 url: /docs/platforms/multi-project-platforms/quickstart
 canonical_url: "https://vercel.com/docs/platforms/multi-project-platforms/quickstart"
-last_updated: 2026-08-25
+last_updated: 2026-09-03
 type: tutorial
 prerequisites:
   - /docs/platforms/multi-project-platforms
@@ -17,8 +17,8 @@ related:
 summary: Programmatically host code for user-generated or AI-generated applications on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-project-platforms/quickstart.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "af4ec5b564bc917384df0542ae510ca65afe62cd3590b992871320ae999fdc14"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "ad2861dd9d2ecc4e630ea88b16c96b178b0da87e3574bb75c9f572a55913fb6a"
 ---
 
 # Multi-Project Platforms Quickstart
@@ -36,8 +36,8 @@ Let's explore integrating user generated sites with Vercel, providing a system f
 - [Multi-Project Platforms Concepts](https://vercel.com/docs/platforms/multi-project-platforms/concepts?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-project-platforms%2Fquickstart&source_site=vercel-docs&relationship=related) — Understand projects, deployments, domains, and architecture for multi-project platforms on Vercel.
 - [Multi-Project Platforms Reference](https://vercel.com/docs/platforms/multi-project-platforms/reference?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-project-platforms%2Fquickstart&source_site=vercel-docs&relationship=related) — API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
 - [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-project-platforms%2Fquickstart&source_site=vercel-docs&relationship=related) — Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
-- [Multi-Tenant Platforms](https://vercel.com/docs/platforms/multi-tenant-platforms?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-project-platforms%2Fquickstart&source_site=vercel-docs&relationship=related) — Serve multiple customers from a single codebase and deployment, routing each tenant by subdomain or custom domain.
 - [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-project-platforms%2Fquickstart&source_site=vercel-docs&relationship=related) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
+- [Multi-Tenant Platforms](https://vercel.com/docs/platforms/multi-tenant-platforms?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-project-platforms%2Fquickstart&source_site=vercel-docs&relationship=related) — Serve multiple customers from a single codebase and deployment, routing each tenant by subdomain or custom domain.
 
 Full cross-link map for this page: [/docs/platforms/multi-project-platforms/quickstart.graph.md](/docs/platforms/multi-project-platforms/quickstart.graph.md?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-project-platforms%2Fquickstart&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -85,6 +85,10 @@ async function createProject() {
   - `target`: preview or production. Both are the same underlying infrastructure but this is a semantic identifier you can add
 
 Leverage our pre-configured [file deploy action](/docs/platforms/platform-elements/actions/deploy-files):
+
+```bash
+npx @vercel/platforms@latest add deploy-files
+```
 
 ```jsx filename="deploy-files.ts"
 import { deployFiles } from "@/actions/deploy-files"

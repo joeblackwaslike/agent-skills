@@ -13,8 +13,8 @@ related:
 summary: Generate text responses using the OpenResponses API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/text-generation.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "4ebe1c36530e6882a98afb3132028b093d207176e23b5b8b9ed7730c52da9fd6"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "f9f184241296524c8e38397d11448c9e81b2399f4efc5e24a050a5734be458b5"
 ---
 
 # Text Generation
@@ -30,13 +30,14 @@ Use the [OpenResponses API](/docs/ai-gateway/sdks-and-apis/openresponses) to gen
 - [Text Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/text-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Ftext-generation&source_site=vercel-docs&relationship=related) — Generate text responses with the OpenAI Responses API through AI Gateway.
 - [Text Generation](https://vercel.com/docs/ai-gateway/modalities/text-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Ftext-generation&source_site=vercel-docs&relationship=related) — Generate and stream text from hundreds of models through AI Gateway, with tool calling and structured output.
 - [Text Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/text?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Ftext-generation&source_site=vercel-docs&relationship=related) — Generate and stream text responses using AI Gateway.
+- [OpenResponses API now supported on Vercel AI Gateway](https://vercel.com/changelog/openresponses-api-now-supported-on-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Ftext-generation&source_site=vercel-docs&relationship=related)
 - [OpenAI Responses API](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Ftext-generation&source_site=vercel-docs&relationship=related) — Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported
-- [File Attachments](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/images?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Ftext-generation&source_site=vercel-docs&relationship=related) — Send images and PDF documents for analysis using the OpenResponses API.
+- [Text to Speech](https://vercel.com/docs/ai-gateway/modalities/text-to-speech?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Ftext-generation&source_site=vercel-docs&relationship=related) — Generate spoken audio from text with speech models through Vercel AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openresponses/text-generation.graph.md](/docs/ai-gateway/sdks-and-apis/openresponses/text-generation.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Ftext-generation&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-#### \['cURL'
+#### cURL
 
 ```bash filename="text-generation.sh"
 curl -X POST "https://ai-gateway.vercel.sh/v1/responses" \
@@ -54,7 +55,7 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/responses" \
   }'
 ```
 
-#### 'TypeScript'
+#### TypeScript
 
 ```typescript filename="generate.ts"
 const apiKey = process.env.AI_GATEWAY_API_KEY;
@@ -80,7 +81,7 @@ const response = await fetch('https://ai-gateway.vercel.sh/v1/responses', {
 const result = await response.json();
 ```
 
-#### 'Python']
+#### Python
 
 ```python filename="generate.py"
 import os

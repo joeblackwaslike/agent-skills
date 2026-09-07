@@ -16,8 +16,8 @@ related:
 summary: "Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your application."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "73973c764a0f632e9e5c26989608e9b0cc66e076a638dce5d3f15817ddc57202"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "e3382877d3d941c2b43bcf1fbc41eefd7a9e56543286f28a925b393b54868e9a"
 ---
 
 # Routing
@@ -32,14 +32,14 @@ Vercel's CDN evaluates routing rules on every request before checking any cache 
 
 - [Python projects now support routing rules](https://vercel.com/changelog/python-projects-now-support-routing-rules?from=related&source_path=%2Fdocs%2Frouting&source_site=vercel-docs&relationship=related)
 - [Vercel's CDN now supports updating routing rules without a new deployment](https://vercel.com/changelog/vercels-cdn-now-supports-updating-routing-rules-without-a-new-deployment?from=related&source_path=%2Fdocs%2Frouting&source_site=vercel-docs&relationship=related)
-- [Redirecting Domains](https://vercel.com/blog/redirecting-domains?from=related&source_path=%2Fdocs%2Frouting&source_site=vercel-docs&relationship=related)
 - [Can I use Vercel as a reverse proxy?](https://vercel.com/kb/guide/vercel-reverse-proxy-rewrites-external?from=related&source_path=%2Fdocs%2Frouting&source_site=vercel-docs&relationship=related) — Learn how to use rewrites to proxy requests from Vercel to other deployments.
 - [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn?from=related&source_path=%2Fdocs%2Frouting&source_site=vercel-docs&relationship=related) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
+- [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related&source_path=%2Fdocs%2Frouting&source_site=vercel-docs&relationship=related) — Learn how to debug how Vercel decides where to route your request
 - [Services routing](https://vercel.com/docs/services/routing?from=related&source_path=%2Fdocs%2Frouting&source_site=vercel-docs&relationship=related) — Learn how Vercel routes public requests to services and how each service handles its own routes.
-- [Routing Middleware](https://vercel.com/docs/routing-middleware?from=related&source_path=%2Fdocs%2Frouting&source_site=vercel-docs&relationship=related) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
-- [vercel routes](https://vercel.com/docs/cli/routes?from=related&source_path=%2Fdocs%2Frouting&source_site=vercel-docs&relationship=related) — Learn how to manage project-level routing rules using the vercel routes CLI command.
-- [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Frouting&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
+- [Getting Started with Routing Middleware](https://vercel.com/docs/routing-middleware/getting-started?from=related&source_path=%2Fdocs%2Frouting&source_site=vercel-docs&relationship=related) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
 - [Get project routing rules](https://vercel.com/docs/rest-api/project-routes/get-project-routing-rules?from=related&source_path=%2Fdocs%2Frouting&source_site=vercel-docs&relationship=related) — GET /v1/projects/{projectId}/routes — Get the routing rules for a project. Supports searching by name/ID/pattern, filter
+- [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Frouting&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
+- [Add a routing rule](https://vercel.com/docs/rest-api/project-routes/add-a-routing-rule?from=related&source_path=%2Fdocs%2Frouting&source_site=vercel-docs&relationship=related) — POST /v1/projects/{projectId}/routes — Add a single routing rule to a project at a specified position. Defaults to the e
 
 Full cross-link map for this page: [/docs/routing.graph.md](/docs/routing.graph.md?from=related&source_path=%2Fdocs%2Frouting&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

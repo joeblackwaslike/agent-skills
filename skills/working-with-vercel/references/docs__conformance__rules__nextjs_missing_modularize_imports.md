@@ -8,17 +8,20 @@ type: conceptual
 prerequisites:
   []
 related:
+  - /docs/conformance/changelog
   - /docs/conformance/customize
 summary: modularizeImports can improve dev compilation speed for packages that use barrel files.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_missing_modularize_imports.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "4788877c43d0ef219cd171675de76a9f2199dd689e327fea88bbb4c41b7a047e"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "a3a166a2f2742d0ac9e1d5ffdcff0a451e929f13604abb76598b8dd5f3b80039"
 ---
 
 # NEXTJS_MISSING_MODULARIZE_IMPORTS
 
 > **🔒 Permissions Required**: Conformance
+
+> **💡 Note:** This rule has been deprecated as of version [1.10.0](/docs/conformance/changelog#1.10.0) and will be removed in 1.10.0.
 
 `modularizeImports` is a feature of Next 13 that can reduce dev compilation times
 when importing packages that are exported as barrel files. Barrel files are

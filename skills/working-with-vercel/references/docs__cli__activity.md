@@ -9,11 +9,12 @@ prerequisites:
   - /docs/cli
 related:
   - /docs/activity-log
+  - /docs/cli/global-options
 summary: View activity events for your Vercel project or team, filtered by type, date range, and project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/activity.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "cb8879d3b417e4a38da096a4709825206fabd55e161e8ea5f8d30d8d19d1d40c"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "43ad0d2eb0b269417b3f26ae8ffcb8aa829ed1e227039bcbccb501845e1e0a5b"
 ---
 
 # vercel activity
@@ -28,9 +29,9 @@ The `vercel activity` command displays [activity events](/docs/activity-log) for
 
 - [vercel logs](https://vercel.com/docs/cli/logs?from=related&source_path=%2Fdocs%2Fcli%2Factivity&source_site=vercel-docs&relationship=related) — View and filter request logs for your Vercel project, or stream live runtime logs from a deployment.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Factivity&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel alerts](https://vercel.com/docs/cli/alerts?from=related&source_path=%2Fdocs%2Fcli%2Factivity&source_site=vercel-docs&relationship=related) — List recent alerts for a linked project, a specific project, or an entire team with the Vercel CLI.
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Factivity&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel metrics](https://vercel.com/docs/cli/metrics?from=related&source_path=%2Fdocs%2Fcli%2Factivity&source_site=vercel-docs&relationship=related) — List and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
-- [vercel teams](https://vercel.com/docs/cli/teams?from=related&source_path=%2Fdocs%2Fcli%2Factivity&source_site=vercel-docs&relationship=related) — Learn how to list, add, switch, invite, and manage your teams with the vercel teams CLI command.
 
 Full cross-link map for this page: [/docs/cli/activity.graph.md](/docs/cli/activity.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Factivity&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -181,6 +182,24 @@ vercel activity --limit 10
 # Use the --next value from the output to get the next page
 vercel activity --limit 10 --next 1706140800000
 ```
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel activity` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 
 ---

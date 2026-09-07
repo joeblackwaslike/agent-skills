@@ -12,8 +12,8 @@ related:
 summary: Monitor queue throughput, message age, retries, and consumer performance to optimize your queue-based workflows.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/observability.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "108eefb7bd34101345582551833bf9ab23f6eed4bffa30d348a46ae7843caae3"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "740191f666d453493abf5a9dc271fb66b0be1c8abd0475f606ac015813f45e08"
 ---
 
 # Queues Observability
@@ -30,7 +30,7 @@ The **Queues** observability tab provides visibility into your queue operations,
 - [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fqueues%2Fobservability&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
 - [Queues concepts](https://vercel.com/docs/queues/concepts?from=related&source_path=%2Fdocs%2Fqueues%2Fobservability&source_site=vercel-docs&relationship=related) — Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
 - [Pricing and Limits](https://vercel.com/docs/queues/pricing?from=related&source_path=%2Fdocs%2Fqueues%2Fobservability&source_site=vercel-docs&relationship=related) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
-- [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fqueues%2Fobservability&source_site=vercel-docs&relationship=related) — Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application perfor
+- [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fqueues%2Fobservability&source_site=vercel-docs&relationship=related) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [API Reference](https://vercel.com/docs/queues/api?from=related&source_path=%2Fdocs%2Fqueues%2Fobservability&source_site=vercel-docs&relationship=related) — HTTP API reference for Vercel Queues. Publish, consume, acknowledge, and manage messages.
 
 Full cross-link map for this page: [/docs/queues/observability.graph.md](/docs/queues/observability.graph.md?from=related&source_path=%2Fdocs%2Fqueues%2Fobservability&source_site=vercel-docs&relationship=graph)

@@ -3,7 +3,7 @@ title: Sharing a Preview Deployment
 product: vercel
 url: /docs/deployments/sharing-deployments
 canonical_url: "https://vercel.com/docs/deployments/sharing-deployments"
-last_updated: 2026-08-11
+last_updated: 2026-08-28
 type: how-to
 prerequisites:
   - /docs/deployments
@@ -16,13 +16,15 @@ related:
 summary: Learn how to share a preview deployment with your team and external collaborators.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/sharing-deployments.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "be52f96e21fcf620f03c666ed936ef9f7660c297951ec46db325a1e5f7b57b60"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "0d06665a0d7ef51052564667299a435643587f4588406014931e0b1097bde73f"
 ---
 
 # Sharing a Preview Deployment
 
 ## Sharing with members of your team
+
+By default, members of your [Vercel team](/docs/accounts#creating-a-team) that have [access to your project](/docs/rbac/access-roles/project-level-roles) will also have access to your deployment. This allows them to comment, see who else is viewing the preview, and use the toolbar. Users who don't have access to the project will not have access to your deployment.
 
 
 <!-- docsgraph:related -->
@@ -41,8 +43,6 @@ sha256: "be52f96e21fcf620f03c666ed936ef9f7660c297951ec46db325a1e5f7b57b60"
 
 Full cross-link map for this page: [/docs/deployments/sharing-deployments.graph.md](/docs/deployments/sharing-deployments.graph.md?from=related&source_path=%2Fdocs%2Fdeployments%2Fsharing-deployments&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-By default, members of your [Vercel team](/docs/accounts#creating-a-team) that have [access to your project](/docs/rbac/access-roles/project-level-roles) will also have access to your deployment. This allows them to comment, see who else is viewing the preview, and use the toolbar. Users who don't have access to the project will not have access to your deployment.
 
 To share a preview deployment with a member of your team you can do any of the following:
 

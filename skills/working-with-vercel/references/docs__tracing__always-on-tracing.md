@@ -16,8 +16,8 @@ related:
 summary: Continuously collect traces from your production and preview traffic using sampling rules, so you can debug real requests without reproducing them.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/tracing/always-on-tracing.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "ca5e83e48c14e2939d5d3cb43b93f936f28bc743ae05ae89551858f112ed354e"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "52ebf6f4413adca6acbab17bb7bbd903dde25301060ce01cebb857e3b2b13880"
 ---
 
 # Always-on Tracing
@@ -32,12 +32,11 @@ With always-on tracing, Vercel continuously collects traces from your production
 
 - [Always-on tracing for production and preview traffic](https://vercel.com/changelog/always-on-tracing-for-production-and-preview-traffic?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=related)
 - [Track a request's full lifecycle with session tracing](https://vercel.com/changelog/session-tracing-now-available?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=related)
-- [Trace any Vercel request from the CLI](https://vercel.com/changelog/trace-any-vercel-request-from-the-cli?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=related)
-- [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=related) — Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application perfor
+- [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=related) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [Observability Plus](https://vercel.com/docs/observability/observability-plus?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=related) — Learn about using Observability Plus and its limits.
 - [Runtime Logs](https://vercel.com/docs/logs/runtime?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=related) — Learn how to search, inspect, and share your runtime logs with the Logs tab.
-- [Get a project trace by request ID](https://vercel.com/docs/rest-api/projects/get-a-project-trace-by-request-id?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=related) — GET /v1/projects/traces — Returns the OTEL trace for a given Vercel CLI request.
-- [Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=related) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
+- [Understanding Vercel](https://vercel.com/docs/plans/pro-plan/trials?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=related) — Learn all about Vercel's Pro Plan free trial, including features, usage limits, and options post-trial. Learn how to man
+- [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=related) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
 
 Full cross-link map for this page: [/docs/tracing/always-on-tracing.graph.md](/docs/tracing/always-on-tracing.graph.md?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -105,6 +104,28 @@ You can also inspect a single trace from the terminal with [`vercel traces get <
 ## Usage and pricing
 
 During Beta, always-on tracing usage is measured in span units for spans indexed after sampling.
+
+Plan
+
+Beta pricing
+
+Hobby
+
+1 million span units included per month
+
+Pro
+
+$0.50
+
+per 1 million span units
+
+Enterprise
+
+Starting at
+
+$0.50
+
+per 1 million span units
 
 An indexed span up to 2 KB counts as one span unit. Larger spans count in additional 2 KB increments. For example, a 3 KB span counts as two span units, and a 5 KB span counts as three.
 

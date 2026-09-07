@@ -16,8 +16,8 @@ related:
 summary: The Global Config client SDK is the most ergonomic way to read data from Global Configs. Learn how to set up the SDK so you can start reading Global...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-sdk.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "849e4397fa211982c52f5754c72b586b750dac985e4fcd6bd024de19ea9144f6"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "c0a1965838b169d573dd2d2167b3abddb921acdd81d43add760bd439a0be5e50"
 ---
 
 # @vercel/global-config
@@ -550,6 +550,10 @@ All helper methods throw errors when:
 - A network error occurs
 
 ## Up Next
+
+**Manage with the Dashboard** [→](/docs/global-config/global-config-dashboard)
+
+Manage your Global Configs at different levels in your Vercel Dashboard
 
 
 ---

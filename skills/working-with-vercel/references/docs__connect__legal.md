@@ -12,8 +12,8 @@ related:
 summary: Product terms governing your use of Vercel Connect, including Customer Managed Connectors, Vercel Managed Connectors, and Vercel Assisted Setup.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/legal.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "df4e313c14c1a4a091f6d5714f62113b5be6874e0ea5848a50aa12628600212c"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "bb88c058b89664a6fbbe6076b3014a3d81d6139e3397a30da993e60f5a1713ca"
 ---
 
 # Vercel Connect product terms
@@ -32,8 +32,8 @@ These product terms apply to your use of Vercel Connect.
 - [Vercel Connect Concepts](https://vercel.com/docs/connect/concepts?from=related&source_path=%2Fdocs%2Fconnect%2Flegal&source_site=vercel-docs&relationship=related) — Understand the core building blocks of Vercel Connect: connectors, installations, tokens, project links, triggers, and a
 - [Connectors](https://vercel.com/docs/connect/concepts/connectors?from=related&source_path=%2Fdocs%2Fconnect%2Flegal&source_site=vercel-docs&relationship=related) — A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are
 - [For Service Providers](https://vercel.com/docs/connect/providers?from=related&source_path=%2Fdocs%2Fconnect%2Flegal&source_site=vercel-docs&relationship=related) — What your service needs to declare so Vercel Connect can discover, register, and authorize against it using standard OAu
+- [Delete a connector](https://vercel.com/docs/rest-api/connect/delete-a-connector?from=related&source_path=%2Fdocs%2Fconnect%2Flegal&source_site=vercel-docs&relationship=related) — DELETE /v1/connect/connectors/{connector} — Delete a connector, its project connections, and its installation records.
 - [Vercel Integrations](https://vercel.com/docs/integrations?from=related&source_path=%2Fdocs%2Fconnect%2Flegal&source_site=vercel-docs&relationship=related) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte
-- [Frameworks and Adapters](https://vercel.com/docs/connect/frameworks?from=related&source_path=%2Fdocs%2Fconnect%2Flegal&source_site=vercel-docs&relationship=related) — Use Vercel Connect with AI SDK, MCP clients, eve, Chat SDK, Better Auth, and Auth.js.
 
 Full cross-link map for this page: [/docs/connect/legal.graph.md](/docs/connect/legal.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Flegal&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

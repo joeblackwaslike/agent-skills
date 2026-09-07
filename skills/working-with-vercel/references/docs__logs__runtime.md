@@ -3,7 +3,7 @@ title: Runtime Logs
 product: vercel
 url: /docs/logs/runtime
 canonical_url: "https://vercel.com/docs/logs/runtime"
-last_updated: 2026-08-11
+last_updated: 2026-08-28
 type: reference
 prerequisites:
   - /docs/logs
@@ -16,13 +16,15 @@ related:
 summary: Learn how to search, inspect, and share your runtime logs with the Logs tab.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/logs/runtime.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "3c8a12f94a9cce57f65ebc4a900027fad5615e2420a330cc1fe7932858894caf"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "1ccda0b981e68f95b6f64133d7fe86ce122d07802f445abb019261d4c15aa38e"
 ---
 
 # Runtime Logs
 
 > **🔒 Permissions Required**: Runtime Logs
+
+The **Logs** section in the sidebar allows you to view, search, inspect, and [share](#log-sharing) your runtime logs without any third-party integration. You can also filter and group your [runtime logs](#what-are-runtime-logs) based on the relevant fields.
 
 
 <!-- docsgraph:related -->
@@ -39,14 +41,12 @@ sha256: "3c8a12f94a9cce57f65ebc4a900027fad5615e2420a330cc1fe7932858894caf"
 - [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related&source_path=%2Fdocs%2Flogs%2Fruntime&source_site=vercel-docs&relationship=related) — Learn how to debug how Vercel decides where to route your request
 - [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel?from=related&source_path=%2Fdocs%2Flogs%2Fruntime&source_site=vercel-docs&relationship=related) — Migrate containers from AWS to Vercel: deploy with Dockerfile.vercel, keep RDS, S3, and SQS in AWS over OIDC, and cut ov
 - [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute?from=related&source_path=%2Fdocs%2Flogs%2Fruntime&source_site=vercel-docs&relationship=related) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
+- [Build a Weather API on Vercel: Express, FastAPI, and Nitro](https://vercel.com/kb/guide/weather-api-with-fastapi?from=related&source_path=%2Fdocs%2Flogs%2Fruntime&source_site=vercel-docs&relationship=related) — Build a weather API on Vercel with FastAPI, Express, or Nitro. Compare the three runtimes, add caching and Observability
 - [Logs](https://vercel.com/docs/ai-gateway/observability-and-spend/logs?from=related&source_path=%2Fdocs%2Flogs%2Fruntime&source_site=vercel-docs&relationship=related) — Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the resu
-- [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Flogs%2Fruntime&source_site=vercel-docs&relationship=related) — Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application perfor
-- [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Flogs%2Fruntime&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
+- [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Flogs%2Fruntime&source_site=vercel-docs&relationship=related) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 
 Full cross-link map for this page: [/docs/logs/runtime.graph.md](/docs/logs/runtime.graph.md?from=related&source_path=%2Fdocs%2Flogs%2Fruntime&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-The **Logs** section in the sidebar allows you to view, search, inspect, and [share](#log-sharing) your runtime logs without any third-party integration. You can also filter and group your [runtime logs](#what-are-runtime-logs) based on the relevant fields.
 
 > **💡 Note:** You can only view runtime logs from the Logs tab. [Build
 > logs](/docs/deployments/logs) can be accessed from the production deployment
@@ -199,7 +199,7 @@ You can use the main search field to filter logs by their messages. In the curre
 | **traceId**                      | The trace identifier for distributed tracing                       |
 | **invocationId**                 | The unique identifier for a specific function invocation           |
 
-> **💡 Note:** This  feature is limited to the
+> **💡 Note:** This **free text search** feature is limited to the
 > `message` and `requestPath`
 > field. Other fields can be filtered using the left sidebar or the filters in
 > the search bar.

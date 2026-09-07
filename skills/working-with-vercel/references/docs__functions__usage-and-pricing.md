@@ -12,8 +12,8 @@ related:
 summary: Learn about usage and pricing for fluid compute on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/usage-and-pricing.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "2b3d5879bff7b33258e3c7be1745fbf35fe152af3d4ffbfe4896d89992f8ee71"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "166e254006eae63db03833c72b9e1c837cb51d4417bb55dfc60555b33133606c"
 ---
 
 # Fluid compute pricing
@@ -94,7 +94,6 @@ The following table shows the regional pricing for fluid compute resources on Ve
 | --- | --- | --- |
 | Cape Town, South Africa (cpt1) | $0.200 | $0.0166 |
 | Cleveland, USA (cle1) | $0.128 | $0.0106 |
-| Dubai, UAE (dxb1) | $0.185 | $0.0153 |
 | Dublin, Ireland (dub1) | $0.168 | $0.0139 |
 | Frankfurt, Germany (fra1) | $0.184 | $0.0152 |
 | Hong Kong (hkg1) | $0.176 | $0.0146 |

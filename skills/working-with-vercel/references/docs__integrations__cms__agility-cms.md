@@ -13,8 +13,8 @@ related:
 summary: Learn how to integrate Agility CMS with Vercel. Follow our tutorial to deploy the Agility CMS template or install the integration for flexible and...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/cms/agility-cms.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "7a99c1d1e2bea277e85d4e8217f7c1c6941899224a6986bb53b1e51674a04be0"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "8dc1b2ee00d37d5d2843069b3ba3237bf22e3d3440e907403133a19220560cf9"
 ---
 
 # Vercel Agility CMS Integration
@@ -45,7 +45,7 @@ To get started with the Agility CMS on Vercel deploy the template below:
 Or, follow the steps below to install the integration:
 
 - ### Install the Vercel CLI
-  To pull in environment variables from  to your Vercel project, you need to install the [Vercel CLI](/docs/cli). Run the following command in your terminal:
+  To pull in environment variables from Agility CMS to your Vercel project, you need to install the [Vercel CLI](/docs/cli). Run the following command in your terminal:
   <CodeBlock>
     <Code tab="pnpm">
       ```bash
@@ -70,10 +70,10 @@ Or, follow the steps below to install the integration:
   </CodeBlock>
 
 - ### Install your CMS integration
-  Navigate to the  and follow the steps to install the integration.
+  Navigate to the [ integration](`/integrations/${props.cms.toLowerCase\(\).split\(/[.\s]+/\).join\('-'\)}`) and follow the steps to install the integration.
 
 - ### Pull in environment variables
-  Once you've installed the  integration, you can pull in environment variables from  to your Vercel project. In your terminal, run:
+  Once you've installed the Agility CMS integration, you can pull in environment variables from Agility CMS to your Vercel project. In your terminal, run:
   ```bash
   vercel env pull
   ```

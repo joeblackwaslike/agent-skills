@@ -16,8 +16,8 @@ related:
 summary: Learn about the different plans available on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "7b6b332b92867ea7e55c2324c61264bfff0682622e2e81487f31684e25e71c3c"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "7fba2624761e40ef9d2b39cbf54022705ce24d22cf06afe5cc29fc98a05ab577"
 ---
 
 # Account Plans on Vercel
@@ -32,14 +32,15 @@ Vercel offers multiple account plans: Hobby, Pro, and Enterprise.
 
 - [Vercel Passport is now generally available](https://vercel.com/changelog/vercel-passport-generally-available?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=related)
 - [Vercel Sandbox maximum duration extended to 5 hours](https://vercel.com/changelog/vercel-sandbox-maximum-duration-extended-to-5-hours?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=related)
+- [Run Cursor Cloud Agents on Vercel Sandbox](https://vercel.com/kb/guide/cursor-vercel-sandbox?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=related) — Learn how to run Cursor Cloud Agents on Vercel Sandbox with BYOM worker pools, durable workflows, isolated microVMs, and
 - [The Complete Guide to Vercel Services](https://vercel.com/kb/guide/vercel-services?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=related) — Vercel Services let you deploy multiple frontends and backends in one project on a shared domain. Learn how to define se
 - [A more flexible Pro plan for modern teams](https://vercel.com/blog/new-pro-pricing-plan?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=related)
 - [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=related)
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
-- [Pricing for Web Analytics](https://vercel.com/docs/analytics/limits-and-pricing?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=related) — Learn about pricing for Vercel Web Analytics.
-- [Limits and Pricing for Speed Insights](https://vercel.com/docs/speed-insights/limits-and-pricing?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=related) — Learn about our limits and pricing when using Vercel Speed Insights. Different limitations are applied depending on your
 - [Account Management](https://vercel.com/docs/accounts?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=related) — Learn how to manage your Vercel account and team members.
+- [Pricing for Web Analytics](https://vercel.com/docs/analytics/limits-and-pricing?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=related) — Learn about pricing for Vercel Web Analytics.
+- [Usage & Pricing for Cron Jobs](https://vercel.com/docs/cron-jobs/usage-and-pricing?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=related) — Learn about cron jobs usage and pricing details.
 
 Full cross-link map for this page: [/docs/plans.graph.md](/docs/plans.graph.md?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

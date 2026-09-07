@@ -3,7 +3,7 @@ title: Uptime and Status
 product: vercel
 url: /docs/ai-gateway/models-and-providers/uptime
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/uptime"
-last_updated: 2026-07-28
+last_updated: 2026-08-28
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/models-and-providers
@@ -15,8 +15,8 @@ related:
 summary: See how uptime and status track AI Gateway provider health and end-to-end request success.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/uptime.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "ea08f3ddfcba90164f88254ae8a89b17fec2832852e94502a7ddfd18d843d895"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "ba6e0893e70b7942902783c76d0e2755b7901c832066536cd92dfd89d992db8b"
 ---
 
 # Uptime and Status
@@ -33,8 +33,8 @@ When a provider has an outage, AI Gateway falls back to a healthy provider so yo
 - [Live model performance metrics accessible via AI Gateway](https://vercel.com/changelog/live-model-performance-metrics-accessible-via-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=related)
 - [Access and share AI Gateway leaderboard data](https://vercel.com/changelog/open-data-and-shareable-charts-for-ai-gateway-leaderboards?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=related)
 - [Metrics](https://vercel.com/docs/ai-gateway/models-and-providers/metrics?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=related) — Understand how AI Gateway measures throughput and latency per provider.
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including pricing and markup, SDK and API compatibility, model availabilit
 - [Direct REST API Usage](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=related) — Use the AI Gateway API directly without client libraries using curl and fetch.
-- [Provider Options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=related) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway
 - [Provider Timeouts](https://vercel.com/docs/ai-gateway/models-and-providers/provider-timeouts?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=related) — Configure per-provider timeouts for fast failover when a provider is slow to respond.
 - [Bring Your Own Key \\(BYOK\\)](https://vercel.com/docs/ai-gateway/authentication-and-byok/byok?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=related) — Learn how to configure your own provider keys with the AI Gateway.
 

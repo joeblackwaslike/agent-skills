@@ -3,7 +3,7 @@ title: Using Comments with Preview Deployments
 product: vercel
 url: /docs/comments/using-comments
 canonical_url: "https://vercel.com/docs/comments/using-comments"
-last_updated: 2026-05-15
+last_updated: 2026-08-28
 type: how-to
 prerequisites:
   - /docs/comments
@@ -13,13 +13,15 @@ related:
 summary: This guide will help you get started with using Comments with your Vercel Preview Deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/comments/using-comments.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "9454adb379338736af6b9e40c894fca527aba6c74e614b3fb3f6aad52c332837"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "fc2b189f54bc336497953857ef90152791b9f6983e680810c29754081133eda1"
 ---
 
 # Using Comments with Preview Deployments
 
 ## Add comments
+
+You must be logged in to create a comment. You can press `c` to enable the comment placement cursor.
 
 
 <!-- docsgraph:related -->
@@ -36,14 +38,12 @@ sha256: "9454adb379338736af6b9e40c894fca527aba6c74e614b3fb3f6aad52c332837"
 - [Comments on Preview Deployments are now generally available](https://vercel.com/changelog/comments-on-preview-deployments-are-now-generally-available?from=related&source_path=%2Fdocs%2Fcomments%2Fusing-comments&source_site=vercel-docs&relationship=related)
 - [Emoji reactions now available in Preview Deployment comments ](https://vercel.com/changelog/emoji-reactions-now-available-in-preview-deployment-comments?from=related&source_path=%2Fdocs%2Fcomments%2Fusing-comments&source_site=vercel-docs&relationship=related)
 - [Manage Vercel Toolbar comments from the CLI](https://vercel.com/changelog/manage-vercel-toolbar-comments-from-the-cli?from=related&source_path=%2Fdocs%2Fcomments%2Fusing-comments&source_site=vercel-docs&relationship=related)
-- [vercel comments](https://vercel.com/docs/cli/comments?from=related&source_path=%2Fdocs%2Fcomments%2Fusing-comments&source_site=vercel-docs&relationship=related) — Review and manage Vercel Toolbar comment threads from the terminal with the vercel comments CLI command.
 - [Vercel Toolbar](https://vercel.com/docs/vercel-toolbar?from=related&source_path=%2Fdocs%2Fcomments%2Fusing-comments&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel Toolbar to leave feedback, navigate through important dashboard pages, share deployments, us
-- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fcomments%2Fusing-comments&source_site=vercel-docs&relationship=related) — Learn how to create and manage deployments on Vercel.
+- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fcomments%2Fusing-comments&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fcomments%2Fusing-comments&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/comments/using-comments.graph.md](/docs/comments/using-comments.graph.md?from=related&source_path=%2Fdocs%2Fcomments%2Fusing-comments&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-You must be logged in to create a comment. You can press `c` to enable the comment placement cursor.
 
 Alternatively, select the **Comment** option in the toolbar menu. You can then select a location to place your comment with your cursor.
 

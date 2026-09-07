@@ -17,8 +17,8 @@ related:
 summary: A project link binds a connector to a Vercel project, scoped to one or more environments. The link is what authorizes a runtime token request.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/project-links.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "8465aa207bf440fa668aa36321a1196c54a3e2a6ab3394f1dbcc0713cd4da395"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "917a6cf554bde0b45df788cf36188cb41383877f9f4d27502120a454b602d8b8"
 ---
 
 # Project links
@@ -32,12 +32,11 @@ A **project link** connects a team-owned connector to one Vercel project on the 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel Connect now supports Custom Environments](https://vercel.com/changelog/vercel-connect-now-supports-custom-environments?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fproject-links&source_site=vercel-docs&relationship=related)
-- [Vercel Connect](https://v0.app/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fproject-links&source_site=vercel-docs&relationship=related) — Connect your v0 apps and agents to third-party services – no API keys required.
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fproject-links&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 - [Linking Projects with Vercel CLI](https://vercel.com/docs/cli/project-linking?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fproject-links&source_site=vercel-docs&relationship=related) — Learn how to link existing Vercel Projects with Vercel CLI.
 - [Connectors](https://vercel.com/docs/connect/concepts/connectors?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fproject-links&source_site=vercel-docs&relationship=related) — A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are
-- [vercel link](https://vercel.com/docs/cli/link?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fproject-links&source_site=vercel-docs&relationship=related) — Learn how to link a local directory to a Vercel Project using the vercel link CLI command.
-- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fproject-links&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Quickstart](https://vercel.com/docs/connect/quickstart?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fproject-links&source_site=vercel-docs&relationship=related) — Create your first connector in Vercel Connect, install the SDK, and request a runtime provider token from your code.
+- [List connectors for a project](https://vercel.com/docs/rest-api/connect/list-connectors-for-a-project?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fproject-links&source_site=vercel-docs&relationship=related) — GET /v2/connect/projects/{projectId}/connectors — List the connectors connected to a project and the environments where
 
 Full cross-link map for this page: [/docs/connect/concepts/project-links.graph.md](/docs/connect/concepts/project-links.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fproject-links&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

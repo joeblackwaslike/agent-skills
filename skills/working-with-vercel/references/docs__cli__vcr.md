@@ -12,11 +12,12 @@ related:
   - /docs/container-registry/cli-reference
   - /docs/container-registry/public-and-shared-repositories
   - /docs/container-registry/limits-and-pricing
+  - /docs/cli/global-options
 summary: "Manage Vercel Container Registry from the Vercel CLI: build and push images, manage repositories, tags, and images, and control repository sharing..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/vcr.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "87a623d4fd144274c2fe657c0b0615d43d3d1a4a30ad46f54db09af5b1b25cf3"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "1eab343353b65a7baaeac86914ea951b128ed56ca5f1c09502bd6ce3325c2a08"
 ---
 
 # vercel vcr
@@ -31,14 +32,11 @@ The `vercel vcr` command is the entry point for managing [Vercel Container Regis
 
 - [Manage Vercel Container Registry with Vercel CLI](https://vercel.com/changelog/manage-vercel-container-registry-with-vercel-cli?from=related&source_path=%2Fdocs%2Fcli%2Fvcr&source_site=vercel-docs&relationship=related)
 - [How to use Vercel Container Registry](https://vercel.com/kb/guide/how-to-use-vercel-container-registry?from=related&source_path=%2Fdocs%2Fcli%2Fvcr&source_site=vercel-docs&relationship=related) — Push, store, and pull OCI container images with Vercel Container Registry, then deploy them to Vercel Functions and Verc
-- [Introducing VCR: Vercel Container Registry](https://vercel.com/changelog/introducing-vcr-vercel-container-registry?from=related&source_path=%2Fdocs%2Fcli%2Fvcr&source_site=vercel-docs&relationship=related)
-- [How to migrate from GHCR to Vercel Container Registry](https://vercel.com/kb/guide/migrate-ghcr-to-vcr?from=related&source_path=%2Fdocs%2Fcli%2Fvcr&source_site=vercel-docs&relationship=related) — Migrate container images from GitHub Container Registry \\(GHCR\\) to Vercel Container Registry \\(VCR\\), including authent
-- [Running Docker on Vercel](https://vercel.com/kb/guide/docker?from=related&source_path=%2Fdocs%2Fcli%2Fvcr&source_site=vercel-docs&relationship=related) — Learn how to run Docker on Vercel by deploying OCI container images as Vercel Functions, storing them in Vercel Containe
 - [Getting Started](https://vercel.com/docs/container-registry/getting-started?from=related&source_path=%2Fdocs%2Fcli%2Fvcr&source_site=vercel-docs&relationship=related) — Authenticate your container tool with Vercel Container Registry, then push and pull your first image with the Vercel CLI
 - [vercel crons](https://vercel.com/docs/cli/crons?from=related&source_path=%2Fdocs%2Fcli%2Fvcr&source_site=vercel-docs&relationship=related) — Manage Cron Jobs from the Vercel CLI: add cron entries to your vercel.json, list them, and trigger them on demand.
-- [Managing Vercel Blob storage from the CLI](https://vercel.com/docs/vercel-blob/manage-blob-storage?from=related&source_path=%2Fdocs%2Fcli%2Fvcr&source_site=vercel-docs&relationship=related) — Create blob stores, upload files, list contents, and manage storage using the CLI.
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fvcr&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fcli%2Fvcr&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
+- [vercel build](https://vercel.com/docs/cli/build?from=related&source_path=%2Fdocs%2Fcli%2Fvcr&source_site=vercel-docs&relationship=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
+- [vercel link](https://vercel.com/docs/cli/link?from=related&source_path=%2Fdocs%2Fcli%2Fvcr&source_site=vercel-docs&relationship=related) — Learn how to link a local directory to a Vercel Project using the vercel link CLI command.
 
 Full cross-link map for this page: [/docs/cli/vcr.graph.md](/docs/cli/vcr.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fvcr&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -88,6 +86,24 @@ For the full list of subcommands, options, and examples, see the [Container Regi
 - [Container Registry CLI Reference](/docs/container-registry/cli-reference)
 - [Vercel Container Registry overview](/docs/container-registry)
 - [Container Registry limits and pricing](/docs/container-registry/limits-and-pricing)
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel vcr` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 
 ---

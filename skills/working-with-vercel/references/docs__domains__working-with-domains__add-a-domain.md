@@ -3,7 +3,7 @@ title: Adding & Configuring a Custom Domain
 product: vercel
 url: /docs/domains/working-with-domains/add-a-domain
 canonical_url: "https://vercel.com/docs/domains/working-with-domains/add-a-domain"
-last_updated: 2026-08-11
+last_updated: 2026-08-28
 type: how-to
 prerequisites:
   - /docs/domains/working-with-domains
@@ -13,8 +13,8 @@ related:
 summary: Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/add-a-domain.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "c41e3cdab69b3e0526b578920953f955b35f5c6e4c98908eee4f88a1d796eefc"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "21e349bd9d7bfc0a2dd7680a9cc6f5789aa79f4d449a210d2854bee4b94c4a66"
 ---
 
 # Adding & Configuring a Custom Domain
@@ -32,7 +32,7 @@ Vercel provides all deployments with a `vercel.app` URL, which enables you to sh
 - [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fadd-a-domain&source_site=vercel-docs&relationship=related) — Point your apex domain to Vercel with an A record \\(76.76.21.21 or your domain card's value\\), pair it with a www CNAME,
 - [Accessing Vercel-hosted sites from mainland China](https://vercel.com/kb/guide/accessing-vercel-hosted-sites-from-mainland-china?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fadd-a-domain&source_site=vercel-docs&relationship=related) — Understand why Vercel-hosted sites may be slow or inaccessible in mainland China, and explore steps to improve performan
 - [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fadd-a-domain&source_site=vercel-docs&relationship=related) — Learn how to debug how Vercel decides where to route your request
-- [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fadd-a-domain&source_site=vercel-docs&relationship=related) — Migrate containers from AWS to Vercel: deploy with Dockerfile.vercel, keep RDS, S3, and SQS in AWS over OIDC, and cut ov
+- [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fadd-a-domain&source_site=vercel-docs&relationship=related) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fadd-a-domain&source_site=vercel-docs&relationship=related) — Add and configure a custom domain for your Vercel project using the CLI.
 - [Assigning a custom domain to an environment](https://vercel.com/docs/domains/working-with-domains/add-a-domain-to-environment?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fadd-a-domain&source_site=vercel-docs&relationship=related) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 - [Troubleshooting domains](https://vercel.com/docs/domains/troubleshooting?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fadd-a-domain&source_site=vercel-docs&relationship=related) — Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.

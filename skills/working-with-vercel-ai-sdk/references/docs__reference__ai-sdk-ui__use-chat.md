@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "6940c6e73377bf31883dee4327b46daa31bcb982c9d1f2105575f92593ad1452"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "eba6aee6876cf66bec5ae64965845aadd3bea3156e8a7b86de17e16cdd0e377a"
 ---
 
 # `useChat()`
@@ -409,7 +409,7 @@ Allows you to easily create a conversational user interface for your chatbot app
       name: 'sendMessage',
       type: '(message?: { text: string; files?: FileList | FileUIPart[]; metadata?; messageId?: string } | CreateUIMessage, options?: ChatRequestOptions) => Promise<void>',
       description:
-        'Function to send a new message to the chat. This will trigger an API call to generate the assistant response. If a messageId is provided, the message will be replaced (useful for editing). If no message is provided, resubmits the current messages (useful after adding tool outputs).',
+        'Function to send a new message to the chat. This will trigger an API call to generate the assistant response. If a messageId is provided, the message will be replaced (useful for editing). When replacing with a CreateUIMessage, provide its id to assign a new ID to the replacement. If no message is provided, resubmits the current messages (useful after adding tool outputs).',
       properties: [
         {
           type: 'ChatRequestOptions',

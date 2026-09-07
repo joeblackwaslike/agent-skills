@@ -3,7 +3,7 @@ title: Deploy Files
 product: vercel
 url: /docs/platforms/platform-elements/actions/deploy-files
 canonical_url: "https://vercel.com/docs/platforms/platform-elements/actions/deploy-files"
-last_updated: 2026-06-26
+last_updated: 2026-09-03
 type: reference
 prerequisites:
   - /docs/platforms/platform-elements/actions
@@ -15,13 +15,15 @@ related:
 summary: Server action for programmatically deploying files to Vercel on behalf of platform users.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/actions/deploy-files.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "a5e59f5a982f6adde1d3f54fbdb0c18c337a57d2e548c5c0af15d1d7559cb053"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "09e45f4e5e0c181a931bd2cbcde0bc68bd96131ce624f31835ef51b5c4d3ae89"
 ---
 
 # Deploy Files
 
 ## Overview
+
+The Deploy Files action is a server-side utility that allows platforms to programmatically deploy files to Vercel. This is the core functionality behind platforms like Mintlify and Hashnode that create Vercel deployments for their users without requiring direct Vercel account access.
 
 
 <!-- docsgraph:related -->
@@ -32,17 +34,25 @@ sha256: "a5e59f5a982f6adde1d3f54fbdb0c18c337a57d2e548c5c0af15d1d7559cb053"
 - [Upload Deployment Files](https://vercel.com/docs/rest-api/deployments/upload-deployment-files?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Factions%2Fdeploy-files&source_site=vercel-docs&relationship=related) — POST /v2/files — Before you create a deployment you need to upload the required files for that deployment. To do it, you
 - [List Deployment Files](https://vercel.com/docs/rest-api/deployments/list-deployment-files?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Factions%2Fdeploy-files&source_site=vercel-docs&relationship=related) — GET /v6/deployments/{id}/files — Allows to retrieve the file structure of the source code of a deployment by supplying t
 - [Get Deployment File Contents](https://vercel.com/docs/rest-api/deployments/get-deployment-file-contents?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Factions%2Fdeploy-files&source_site=vercel-docs&relationship=related) — GET /v8/deployments/{id}/files/{fileId} — Allows to retrieve the content of a file by supplying the file identifier and
-- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Factions%2Fdeploy-files&source_site=vercel-docs&relationship=related) — Learn how to create and manage deployments on Vercel.
+- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Factions%2Fdeploy-files&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Factions%2Fdeploy-files&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 
 Full cross-link map for this page: [/docs/platforms/platform-elements/actions/deploy-files.graph.md](/docs/platforms/platform-elements/actions/deploy-files.graph.md?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Factions%2Fdeploy-files&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-The Deploy Files action is a server-side utility that allows platforms to programmatically deploy files to Vercel. This is the core functionality behind platforms like Mintlify and Hashnode that create Vercel deployments for their users without requiring direct Vercel account access.
-
 ## Installation
 
-Install the `deploy-files` action into your project using the Platform Elements installer.
+Install the `deploy-files` action with the Vercel Platforms CLI:
+
+```bash
+npx @vercel/platforms@latest add deploy-files
+```
+
+You can also install it with the shadcn CLI:
+
+```bash
+npx shadcn@latest add https://registry.platforms.guide/deploy-files.json
+```
 
 ## Features
 

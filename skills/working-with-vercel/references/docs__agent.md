@@ -16,13 +16,15 @@ related:
 summary: Use Vercel Agent to investigate production issues, review code, and take approved actions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "6ca4a85eb5f202cdead79d3ba99650ef92d495b71dd14a6a99ea7f419aab31cb"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "345efa08f09e634cac226783045939f98a94278fe76382d263a856c993fc14d4"
 ---
 
 # Vercel Agent
 
 > **🔒 Permissions Required**: Vercel Agent
+
+Vercel Agent is an AI assistant built into Vercel. Use it to understand your projects, investigate production issues, review code, and take approved actions.
 
 
 <!-- docsgraph:related -->
@@ -39,14 +41,12 @@ sha256: "6ca4a85eb5f202cdead79d3ba99650ef92d495b71dd14a6a99ea7f419aab31cb"
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related&source_path=%2Fdocs%2Fagent&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Fagent&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related&source_path=%2Fdocs%2Fagent&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
-- [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank?from=related&source_path=%2Fdocs%2Fagent&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, security defaults, AI infrastructure, GPU comp
+- [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank?from=related&source_path=%2Fdocs%2Fagent&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, container image functions, security defaults,
 - [Introducing Vercel for Slack](https://vercel.com/blog/introducing-vercel-for-slack?from=related&source_path=%2Fdocs%2Fagent&source_site=vercel-docs&relationship=related)
 - [Build with AI agents on Vercel](https://vercel.com/docs/agent-resources/integrations-for-agents?from=related&source_path=%2Fdocs%2Fagent&source_site=vercel-docs&relationship=related) — Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
 
 Full cross-link map for this page: [/docs/agent.graph.md](/docs/agent.graph.md?from=related&source_path=%2Fdocs%2Fagent&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Vercel Agent is an AI assistant built into Vercel. Use it to understand your projects, investigate production issues, review code, and take approved actions.
 
 Vercel Agent uses context from your Vercel projects, deployments, logs, metrics, configuration, usage, and connected repositories. It can use secure sandboxes to reproduce issues, validate generated code, and run checks before suggested changes reach production.
 

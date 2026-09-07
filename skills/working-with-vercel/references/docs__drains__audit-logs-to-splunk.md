@@ -13,13 +13,15 @@ related:
 summary: Learn how to forward Vercel Audit Log Drain events to Splunk using the HTTP Event Collector (HEC).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/audit-logs-to-splunk.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "b79b515c55ddd90a0757f8e7e7fef63b5fb62a73b934718de971dd3ec6ed0ded"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "e9baf007fd8be9b411cc0011c6b38f333f281c2eba6e0cabfa64673542dc8d53"
 ---
 
 # Drain Audit Logs to Splunk
 
 > **🔒 Permissions Required**: Audit Log Drains
+
+Audit Log Drains can forward team activity events to [Splunk](https://www.splunk.com/) using the [HTTP Event Collector (HEC)](https://help.splunk.com/en/data-management/collect-http-event-data/use-hec-in-splunk-cloud-platform/set-up-and-use-http-event-collector-in-splunk-web). Use this setup to ingest audit logs into Splunk for security monitoring, compliance review, and search.
 
 
 <!-- docsgraph:related -->
@@ -39,8 +41,6 @@ sha256: "b79b515c55ddd90a0757f8e7e7fef63b5fb62a73b934718de971dd3ec6ed0ded"
 
 Full cross-link map for this page: [/docs/drains/audit-logs-to-splunk.graph.md](/docs/drains/audit-logs-to-splunk.graph.md?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-splunk&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Audit Log Drains can forward team activity events to [Splunk](https://www.splunk.com/) using the [HTTP Event Collector (HEC)](https://help.splunk.com/en/data-management/collect-http-event-data/use-hec-in-splunk-cloud-platform/set-up-and-use-http-event-collector-in-splunk-web). Use this setup to ingest audit logs into Splunk for security monitoring, compliance review, and search.
 
 The Splunk destination sends events over HTTPS to your HEC endpoint, authenticated with an HEC token. Vercel formats each event using the [Splunk HEC event envelope](#format) so Splunk indexes the event time and fields correctly. The destination works with both Splunk Cloud and self-hosted Splunk Enterprise collectors.
 

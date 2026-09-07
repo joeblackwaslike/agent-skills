@@ -1,7 +1,7 @@
 ---
 source: "https://oraios.github.io/serena/_sources/02-usage/030_clients.md"
-fetched_at: "2026-08-03T07:32:05.320Z"
-sha256: "62b271277e5ba7783695646da04cab1cc9618e63d066b35e31b731a280f8481e"
+fetched_at: "2026-09-07T09:04:28.360Z"
+sha256: "e982d7a64fe22c34f5d6452dd26441235cd2419de49583c85b8593952a38397e"
 ---
 
 # Connecting Your MCP Client
@@ -350,6 +350,17 @@ Then create `~/.codex/hooks.json` with the following content:
                 ]
             }
         ],
+        "PostToolUse": [
+            {
+                "matcher": "^mcp__serena__.*$",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "serena-hooks reset --client=codex"
+                    }
+                ]
+            }
+        ],
         "SessionStart": [
             {
                 "matcher": "startup|resume",
@@ -387,10 +398,15 @@ The hooks will:
   when a Codex session starts or resumes.
 - **`remind`**: Nudge the agent to use Serena's symbolic tools when it makes too many consecutive
   code-search or code-file-read calls without using Serena tools in between.
+- **`reset`**: Clear the reminder counters after a successful Serena symbolic tool call, so using
+  Serena's tools starts a fresh count instead of leaving the prior grep/read streak in place.
 - **`cleanup`**: Clean up hook session data when the session ends.
 
-The `PreToolUse` matcher is intentionally restricted to `Bash`. The Serena reminder hook for Codex
-tracks shell-based grep and code-file reads, so running it for every tool call is unnecessary.
+The `PreToolUse` matcher is intentionally restricted to `Bash`: the reminder hook tracks shell-based
+grep and code-file reads, so running it for every tool call is unnecessary. That matcher never sees
+`mcp__serena__*` tool names, though, so it cannot also perform the counter reset on Serena tool use
+the way it does for clients whose `PreToolUse` hook observes every tool call. The separate `reset`
+hook above, matched to `PostToolUse` on Serena's own tools, covers that case for Codex instead.
 
 ## Grok
 

@@ -14,13 +14,15 @@ related:
 summary: Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/client-upload.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "51cf7dd6fac29827222600cf8a11265c522e3ec16c40353c27bbdb5b7135b00e"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "6aaa04ade84e5b8013e8283f2cad6acb10a412e5cbdea1466f40ee592d8298a5"
 ---
 
 # Client Uploads with Vercel Blob
 
 > **🔒 Permissions Required**: Vercel Blob
+
+In this guide, you'll learn how to do the following:
 
 
 <!-- docsgraph:related -->
@@ -34,15 +36,14 @@ sha256: "51cf7dd6fac29827222600cf8a11265c522e3ec16c40353c27bbdb5b7135b00e"
 - [Build Imgur-style image hosting with Nuxt and Vercel Blob](https://vercel.com/kb/guide/vercel-blob-nuxt-imgur-clone?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=related) — Learn how to build an Imgur-style paste-to-share image host using Nuxt and Vercel Blob, with direct-to-storage client up
 - [Vercel Blob vs Netlify Blobs](https://vercel.com/kb/guide/vercel-blob-vs-netlify-blobs?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=related) — Compare Vercel Blob and Netlify Blobs on storage model, public URLs, delivery, limits, and pricing to choose the right o
 - [How do I bypass the 4.5MB body size limit of Vercel Serverless Functions?](https://vercel.com/kb/guide/how-to-bypass-vercel-body-size-limit-serverless-functions?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=related) — Learn how to deal with the body size limit of Serverless Functions on Vercel.
-- [Private Storage](https://vercel.com/docs/vercel-blob/private-storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=related) — Learn how to use private Vercel Blob storage to serve files with authentication
+- [OG Image Generation Examples](https://vercel.com/docs/og-image-generation/examples?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=related) — Learn how to use the @vercel/og library with examples.
 - [Get Started with BotID](https://vercel.com/docs/botid/get-started?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=related) — Step-by-step guide to setting up BotID protection in your Vercel project
+- [Private Storage](https://vercel.com/docs/vercel-blob/private-storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=related) — Learn how to use private Vercel Blob storage to serve files with authentication
 - [Using Global Config with Split](https://vercel.com/docs/global-config/global-config-integrations/split-global-config?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=related) — Learn how to use Global Config with Vercel's Split integration.
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/vercel-blob/client-upload.graph.md](/docs/vercel-blob/client-upload.graph.md?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-In this guide, you'll learn how to do the following:
 
 - Use the Vercel dashboard to create a Blob store connected to a project
 - Upload a file using the Blob SDK from a browser

@@ -12,13 +12,17 @@ related:
 summary: Learn about common issues and how to troubleshoot Vercel Speed Insights.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/troubleshooting.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "cea499472b94e5d1989c6319f56f42334247e508682f94fa1df90a0b19364c96"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "9ec9b82ca032179f93cc79148ff3f4ef2b879c6416aab074327f290292568241"
 ---
 
 # Troubleshooting Vercel Speed Insights
 
 > **🔒 Permissions Required**: Speed Insights
+
+## No data visible in Speed Insights dashboard
+
+If you are experiencing a situation where data is not visible in the Speed Insights dashboard, it could be due to a couple of reasons.
 
 
 <!-- docsgraph:related -->
@@ -30,16 +34,12 @@ sha256: "cea499472b94e5d1989c6319f56f42334247e508682f94fa1df90a0b19364c96"
 - [Investigate latency issues and slowness on Vercel](https://vercel.com/kb/guide/investigate-latency-issues-and-slowness?from=related&source_path=%2Fdocs%2Fspeed-insights%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Learn how to use Observability to investigate latency issues and slowness on Vercel.
 - [Vercel Speed Insights Privacy & Compliance](https://vercel.com/docs/speed-insights/privacy-policy?from=related&source_path=%2Fdocs%2Fspeed-insights%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Learn how Vercel follows the latest privacy and data compliance standards with its Speed Insights feature.
 - [Vercel Web Analytics Troubleshooting](https://vercel.com/docs/analytics/troubleshooting?from=related&source_path=%2Fdocs%2Fspeed-insights%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot common issues with Vercel Web Analytics.
-- [Getting started with Speed Insights](https://vercel.com/docs/speed-insights/quickstart?from=related&source_path=%2Fdocs%2Fspeed-insights%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
 - [Speed Insights Configuration with @vercel/speed-insights](https://vercel.com/docs/speed-insights/package?from=related&source_path=%2Fdocs%2Fspeed-insights%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Learn how to configure your application to capture and send web performance metrics to Vercel using the @vercel/speed-in
+- [Using Speed Insights](https://vercel.com/docs/speed-insights/using-speed-insights?from=related&source_path=%2Fdocs%2Fspeed-insights%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Learn how to use Speed Insights to analyze your application's performance data.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fspeed-insights%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
 
 Full cross-link map for this page: [/docs/speed-insights/troubleshooting.graph.md](/docs/speed-insights/troubleshooting.graph.md?from=related&source_path=%2Fdocs%2Fspeed-insights%2Ftroubleshooting&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-## No data visible in Speed Insights dashboard
-
-If you are experiencing a situation where data is not visible in the Speed Insights dashboard, it could be due to a couple of reasons.
 
 **How to fix**:
 

@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applications, and executing...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "1a550f41d5de48c860bc738fa3803c2a02c30c2617cf056293574221b184d4bf"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "bde642745ac920134d96ff3247e33fe9d45e39efaf6ef2b57b101222b4605739"
 ---
 
 # Understanding Sandboxes
@@ -98,15 +98,131 @@ Sandboxes are identified by a **name** that is unique within your project. If yo
 
 To create a sandbox, you can use the [CLI](/docs/sandbox/cli-reference), the [JS SDK](/docs/sandbox/sdk-reference), or the [Python SDK](/docs/sandbox/python-sdk-reference):
 
+**CLI**
+
+```bash
+# Create a sandbox with a random name
+sandbox create
+
+# Create with an explicit name
+sandbox create --name my-sandbox
+```
+
+**TypeScript**
+
+```ts
+import { Sandbox } from '@vercel/sandbox';
+
+// Create a new sandbox
+const sandbox = await Sandbox.create({ name: 'my-sandbox' });
+
+// Or create from a snapshot
+const sandboxFromSnapshot = await Sandbox.create({
+  source: { type: 'snapshot', snapshotId: 'snap_abc123' },
+});
+
+// Or retrieve an existing sandbox by name (resumes if stopped)
+const existing = await Sandbox.get({ name: 'my-sandbox' });
+```
+
+**Python**
+
+```python
+from vercel import sandbox
+from vercel.sandbox import SnapshotSource
+
+box = await sandbox.create_sandbox(name="my-sandbox")
+
+box_from_snapshot = await sandbox.create_sandbox(
+    source=SnapshotSource(snapshot_id="snap_abc123")
+)
+
+# Or retrieve an existing sandbox by name
+# The next operation resumes it if it is stopped
+existing = await sandbox.get_sandbox(name="my-sandbox")
+```
+
 ### Running commands
 
 Once created, you can run commands inside the sandbox. Commands can run in blocking mode (wait for completion) or detached mode (return immediately).
+
+**CLI**
+
+```bash
+# Run a command in an existing sandbox (by name)
+sandbox exec my-sandbox -- npm install
+
+# Run interactively
+sandbox exec --interactive --tty my-sandbox -- bash
+
+# Run with environment variables
+sandbox exec --env DEBUG=true my-sandbox -- npm test
+```
+
+**TypeScript**
+
+```ts
+// Blocking: waits for the command to finish
+const result = await sandbox.runCommand('npm', ['install']);
+console.log(result.exitCode);
+
+// Detached: returns immediately, useful for servers
+const cmd = await sandbox.runCommand({
+  cmd: 'npm',
+  args: ['run', 'dev'],
+  detached: true,
+});
+
+// Stream logs from a detached command
+for await (const log of cmd.logs()) {
+  console.log(log.data);
+}
+```
+
+**Python**
+
+```python
+# Wait for a process and capture its output.
+result = await box.run_process(
+    "npm",
+    ["install"],
+    capture_output=True,
+    check=True,
+)
+print(result.returncode)
+
+# Return immediately with a live process handle.
+process = await box.create_process("npm", ["run", "dev"])
+
+# Stream stdout from the process.
+assert process.stdout is not None
+async for line in process.stdout:
+    print(line, end="")
+```
 
 ### Stopping a sandbox
 
 Sandboxes automatically stop after a timeout. The default timeout is 5 minutes, and the [maximum](/docs/sandbox/pricing#runtime-limits) applies to each [session](/docs/sandbox/concepts/persistent-sandboxes#sandboxes-and-sessions), not to the sandbox itself. A sandbox spans as many sessions as you resume it for: an agent workspace resumed once a day for a week is one sandbox and seven sessions.
 
 Alternatively, you can stop them manually. `stop()` resolves once the VM is fully stopped, and returns the final session state. For persistent sandboxes, the resolved value also includes metadata for the snapshot captured during shutdown.
+
+**CLI**
+
+```bash
+sandbox stop my-sandbox
+```
+
+**TypeScript**
+
+```ts
+await sandbox.stop();
+```
+
+**Python**
+
+```python
+await box.stop()
+```
 
 You can also stop sandboxes from the Vercel Dashboard by navigating to **Observability > Sandboxes** and clicking **Stop Sandbox**.
 

@@ -3,7 +3,7 @@ title: Trusted Sources
 product: vercel
 url: /docs/deployment-protection/methods-to-bypass-deployment-protection/trusted-sources
 canonical_url: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/trusted-sources"
-last_updated: 2026-07-15
+last_updated: 2026-08-28
 type: how-to
 prerequisites:
   - /docs/deployment-protection/methods-to-bypass-deployment-protection
@@ -17,8 +17,8 @@ related:
 summary: Let other Vercel projects and external services reach your protected deployments by presenting a verified OIDC token.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/trusted-sources.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "210c8807ea0b41c52ca10c512a3738900eb2e3bdf3c8b9e88d29db882021f1cc"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "0255ae67d37b7ae971e40036a05b0410b49456fae3a8db880ee6e56de150d83c"
 ---
 
 # Trusted Sources
@@ -38,6 +38,18 @@ There are three kinds of caller you can authorize:
 ## How it works
 
 Each request from a trusted caller carries an OIDC token in the `x-vercel-trusted-oidc-idp-token` header. Vercel validates the token against its issuer, confirms the caller matches a rule on this project, and lets the request through Deployment Protection.
+
+```mermaid
+sequenceDiagram
+    participant C as Caller
+    participant V as Vercel
+    participant D as Protected deployment
+    C->>V: Request with x-vercel-trusted-oidc-idp-token
+    V->>V: Verify token against issuer JWKS
+    V->>V: Match issuer, claims, and target environment
+    V->>D: Forward request
+    D-->>C: Response
+```
 
 A request is allowed when all three checks pass:
 

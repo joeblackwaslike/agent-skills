@@ -12,13 +12,15 @@ related:
 summary: "Prevent the use of `\"postinstall\"` script in packages."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/no_postinstall_script.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "59d0318fd51e03a2aef19410707ab6deeecb531f000c8793ec12f166f6dee278"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "9dc30330c780b33e27f137c703c30e0be1ec540676f3c74bae433b545a0b2fd0"
 ---
 
 # NO_POSTINSTALL_SCRIPT
 
 > **🔒 Permissions Required**: Conformance
+
+> **💡 Note:** This rule is available from version 1.4.0.
 
 Modifying, adding, or updating any dependencies in your application triggers the execution of the `"postinstall"` script. Consequently, incorporating a `"postinstall"` script in your application's package.json leads to increased installation times for all users.
 

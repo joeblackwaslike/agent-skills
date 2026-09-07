@@ -3,21 +3,21 @@ title: Vercel Pro Plan
 product: vercel
 url: /docs/plans/pro-plan
 canonical_url: "https://vercel.com/docs/plans/pro-plan"
-last_updated: 2026-08-25
+last_updated: 2026-09-02
 type: reference
 prerequisites:
   - /docs/plans
 related:
+  - /docs/pricing/taxes
   - /docs/pricing
   - /docs/builds/managing-builds
   - /docs/plans/pro-plan/trials
   - /docs/domains/free-domain-with-pro
-  - /docs/manage-cdn-usage
 summary: Learn about the Vercel Pro plan with credit-based billing, free viewer seats, and self-serve enterprise features for professional teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/pro-plan.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "15f281eeb2eb2d3f5e7f787ec955c52ce7e15cf4dc621a7066db617f73999d88"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "39b713d203b9036e6dace8f957bc3620fb24bf2f52836de64b2f9484b398d334"
 ---
 
 # Vercel Pro Plan
@@ -30,21 +30,23 @@ The Vercel Pro plan is designed for professional developers, freelancers, and bu
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Free domain with Pro offer now includes .app and .dev](https://vercel.com/changelog/app-and-dev-domains-included-with-free-domain-for-pro?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related)
 - [Free domain for one year, now for all Pro teams](https://vercel.com/changelog/free-domain-for-one-year-now-for-all-pro-teams?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related)
 - [Free domain now included with new Pro subscriptions](https://vercel.com/changelog/free-domain-now-included-with-new-pro-subscriptions?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related)
 - [Vercel MCP now supports purchases](https://vercel.com/changelog/vercel-mcp-now-supports-purchases?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related)
 - [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
 - [Why has my account or deployment been paused?](https://vercel.com/kb/guide/why-is-my-account-deployment-blocked?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related) — Learn why a Vercel account or deployment gets paused, from budget and usage limits to policy violations, and how to resu
-- [Simpler Pricing](https://vercel.com/blog/simpler-pricing?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related)
 - [A more flexible Pro plan for modern teams](https://vercel.com/blog/new-pro-pricing-plan?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related)
 - [Included Pro usage is now credit-based](https://vercel.com/changelog/included-pro-usage-is-now-credit-based?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related)
 - [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related) — Learn about the Hobby plan and how it compares to the Pro plan.
 - [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related)
 - [Account Management](https://vercel.com/docs/accounts?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related) — Learn how to manage your Vercel account and team members.
-- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
+- [Vercel Enterprise Plan](https://vercel.com/docs/plans/enterprise?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related) — Learn about the Enterprise plan for Vercel, including features, pricing, and more.
 
 Full cross-link map for this page: [/docs/plans/pro-plan.graph.md](/docs/plans/pro-plan.graph.md?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
+
+> **💡 Note:** All prices shown are in USD and exclude value-added tax (VAT), goods and services tax (GST), and other applicable taxes. Taxes are calculated based on your billing address and added to your invoice where required by law. [Learn more about taxes](/docs/pricing/taxes).
 
 ## Pro plan features
 
@@ -52,13 +54,13 @@ Full cross-link map for this page: [/docs/plans/pro-plan.graph.md](/docs/plans/p
 - **[Free viewer seats](#viewer-team-seat)**: Unlimited read-only access to the Vercel dashboard so that project collaborators can view deployments, check analytics, and comment on previews
 - **[Elastic build machines](/docs/builds/managing-builds#elastic-build-machines)**: New teams use Elastic build machines by default. Elastic automatically selects a machine for each project based on its build workload
 - **[Paid add-ons](#paid-add-ons)**: Additional enterprise-grade features are available as add-ons
-- **[Free first-year domain with Pro](#free-first-year-domain-with-pro)**: One eligible TLD domain (`.online`, `.site`, `.space`, `.store`, `.tech`, or `.website`) per paid Pro team. Renews at the standard rate after year one
+- **[Free first-year domain with Pro](#free-first-year-domain-with-pro)**: One eligible TLD domain (`.app`, `.dev`, `.online`, `.site`, `.space`, `.store`, `.tech`, or `.website`) per paid Pro team. Renews at the standard rate after year one
 
 For a full breakdown of the features included in the Pro plan, see the [pricing page](https://vercel.com/pricing).
 
 ## Free first-year domain with Pro
 
-All paid Pro teams include one free first-year domain on an eligible TLD (`.online`, `.site`, `.space`, `.store`, `.tech`, or `.website`). New Pro subscriptions can claim the domain at checkout during the upgrade. Existing Pro teams claim from domain search in the dashboard at [vercel.com/domains](https://vercel.com/domains). After the first year, the domain renews at the standard rate.
+All paid Pro teams include one free first-year domain on an eligible TLD (`.app`, `.dev`, `.online`, `.site`, `.space`, `.store`, `.tech`, or `.website`). New Pro subscriptions can claim the domain at checkout during the upgrade. Existing Pro teams claim from domain search in the dashboard at [vercel.com/domains](https://vercel.com/domains). After the first year, the domain renews at the standard rate.
 
 The offer is limited to one domain per team and excludes:
 
@@ -126,7 +128,7 @@ Viewers cannot configure or deploy projects.
 
 ### Additional team seats
 
-- Seats with [Owner](/docs/rbac/access-roles#owner-role) or [Member](/docs/rbac/access-roles#member-role) roles: $/month each
+- Seats with [Owner](/docs/rbac/access-roles#owner-role) or [Member](/docs/rbac/access-roles#member-role) roles: $20/month each
   - These team seats have the ability to configure & deploy projects
 - [Viewer Pro](/docs/rbac/access-roles#pro-viewer-role) (read-only) seats: Free
 
@@ -134,18 +136,17 @@ Viewers cannot configure or deploy projects.
 
 The following features are available as add-ons:
 
-- **[SAML Single Sign-On](/docs/saml)**: $/month
-- **[HIPAA BAA](/docs/security/compliance#hipaa)**: Healthcare compliance agreements for $/month
+- **[SAML Single Sign-On](/docs/saml)**: $300/month
+- **[HIPAA BAA](/docs/security/compliance#hipaa)**: Healthcare compliance agreements for $350/month
 
-* **[Advanced Deployment Protection](/docs/deployment-protection#advanced-deployment-protection)**: $/month
+* **[Advanced Deployment Protection](/docs/deployment-protection#advanced-deployment-protection)**: $150/month
 
-- **[Flags Explorer](/docs/flags/flags-explorer)**: $/month
+- **[Flags Explorer](/docs/flags/flags-explorer)**: $250/month
 - **[Observability Plus](/docs/observability/observability-plus)**: $1.20 per 1 million events
-- **[Preview Deployment Suffix](/docs/deployments/preview-deployment-suffix)**: $/month
-- **[Static IPs](/docs/networking/static-ips)**: $/month per project, plus Private Data Transfer
-- **[Web Analytics Plus](/docs/analytics/limits-and-pricing#pro-with-web-analytics-plus)**: $/month
-
-* **[Speed Insights](/docs/speed-insights)**: $10/month per project
+- **[Preview Deployment Suffix](/docs/deployments/preview-deployment-suffix)**: $100/month
+- **[Static IPs](/docs/networking/static-ips)**: $100/month per project, plus Private Data Transfer
+- **[Web Analytics Plus](/docs/analytics/limits-and-pricing#pro-with-web-analytics-plus)**: $10/month
+- **[Speed Insights Plus](/docs/speed-insights/limits-and-pricing)**: $10/month per project, plus $0.65 per 10,000 events
 
 ## Downgrading to Hobby
 
@@ -161,6 +162,8 @@ To downgrade from a Pro to Hobby plan without losing access to the team's projec
 When you downgrade a Pro team, all active members except for the original owner are removed.
 
 Due to restrictions in the downgrade flow, Pro teams will need to [manually transfer any connected Stores](/docs/storage#transferring-your-store) and/or [Domains](/docs/domains/working-with-domains/transfer-your-domain#transferring-domains-between-projects) to a new destination before proceeding with downgrade.
+
+**Interested in the Enterprise plan?**
 
 
 ---

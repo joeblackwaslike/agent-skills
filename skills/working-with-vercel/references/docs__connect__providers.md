@@ -3,7 +3,7 @@ title: For Service Providers
 product: vercel
 url: /docs/connect/providers
 canonical_url: "https://vercel.com/docs/connect/providers"
-last_updated: 2018-10-20
+last_updated: 2026-08-28
 type: reference
 prerequisites:
   - /docs/connect
@@ -15,8 +15,8 @@ related:
 summary: What your service needs to declare so Vercel Connect can discover, register, and authorize against it using standard OAuth.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/providers.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "72983e753ae665cfeb635b616d84fcad57975db217af40086d95f29fc73ef0b5"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "a02a14d48b838862989218db4623259010230d7c7ff23fcea2fe9c4e6be6fa79"
 ---
 
 # For Service Providers
@@ -33,8 +33,8 @@ If you are a service owner, this page covers what your service needs to support 
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fconnect%2Fproviders&source_site=vercel-docs&relationship=related)
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents?from=related&source_path=%2Fdocs%2Fconnect%2Fproviders&source_site=vercel-docs&relationship=related)
 - [Vercel Connect](https://v0.app/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fproviders&source_site=vercel-docs&relationship=related) — Connect your v0 apps and agents to third-party services – no API keys required.
+- [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fproviders&source_site=vercel-docs&relationship=related)
 - [SDK Reference](https://vercel.com/docs/connect/ts-sdk-reference?from=related&source_path=%2Fdocs%2Fconnect%2Fproviders&source_site=vercel-docs&relationship=related) — API reference for @vercel/connect, the TypeScript SDK for requesting runtime tokens from Vercel Connect.
-- [Vercel Connect Concepts](https://vercel.com/docs/connect/concepts?from=related&source_path=%2Fdocs%2Fconnect%2Fproviders&source_site=vercel-docs&relationship=related) — Understand the core building blocks of Vercel Connect: connectors, installations, tokens, project links, triggers, and a
 - [Auth.js](https://vercel.com/docs/connect/frameworks/authjs?from=related&source_path=%2Fdocs%2Fconnect%2Fproviders&source_site=vercel-docs&relationship=related) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fconnect%2Fproviders&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 

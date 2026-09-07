@@ -14,8 +14,8 @@ related:
 summary: Monitor your AI Gateway credit balance, usage, and generation details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/usage.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "02fe5cd9b2ddb436f8dc99d62b06e3f41e9830f11796e98535a6599fafb923b7"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "a349527738839b42c792e9c0d55395a3ff57f5aae7e31c36735c4d6b29efc30b"
 ---
 
 # AI Gateway Usage & Billing
@@ -33,10 +33,10 @@ AI Gateway tracks credit balance, total spend, and a record of every generation 
 - [Custom reporting now available on AI Gateway](https://vercel.com/changelog/custom-reporting-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fusage&source_site=vercel-docs&relationship=related)
 - [Auto-recharge available in AI Gateway](https://vercel.com/changelog/auto-recharge-available-in-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fusage&source_site=vercel-docs&relationship=related)
 - [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fusage&source_site=vercel-docs&relationship=related) — Learn about pricing for AI Gateway.
-- [Observability](https://vercel.com/docs/ai-gateway/observability-and-spend/observability?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fusage&source_site=vercel-docs&relationship=related) — Learn how to monitor and debug your AI Gateway requests.
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fusage&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including pricing and markup, SDK and API compatibility, model availabilit
 - [Blackbox AI](https://vercel.com/docs/ai-gateway/coding-agents/blackbox?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fusage&source_site=vercel-docs&relationship=related) — Use the Blackbox AI CLI with the AI Gateway.
-- [Logs](https://vercel.com/docs/ai-gateway/observability-and-spend/logs?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fusage&source_site=vercel-docs&relationship=related) — Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the resu
 - [Stripe Billing](https://vercel.com/docs/ai-gateway/ecosystem/stripe-billing?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fusage&source_site=vercel-docs&relationship=related) — Add usage-based billing to your AI application with Stripe and AI Gateway.
+- [Ecosystem](https://vercel.com/docs/ai-gateway/ecosystem?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fusage&source_site=vercel-docs&relationship=related) — Explore community framework integrations and ecosystem features for the AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend/usage.graph.md](/docs/ai-gateway/observability-and-spend/usage.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fusage&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -3,7 +3,7 @@ title: Modalities
 product: vercel
 url: /docs/ai-gateway/modalities
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities"
-last_updated: 2026-08-26
+last_updated: 2026-08-27
 type: conceptual
 prerequisites:
   - /docs/ai-gateway
@@ -16,8 +16,8 @@ related:
 summary: "The inputs and outputs AI Gateway models work with: text, image, and video generation, speech to text, text to speech, realtime voice, embeddings,..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "b70c2cecd65d2f9295146ee8b6f3c0cba89d7117b1f6652e9122d0dd00756417"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "e1c4406f0c26acab460bee8bc83367f2e11cbafd2443d07feee23f7a189529bb"
 ---
 
 # Modalities
@@ -31,13 +31,11 @@ Modalities are the kinds of input and output models work with. Through AI Gatewa
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities&source_site=vercel-docs&relationship=related)
-- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities&source_site=vercel-docs&relationship=related) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
-- [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities&source_site=vercel-docs&relationship=related) — Learn the key AI concepts and tools for building and scaling AI apps.
 - [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
 - [SDKs & APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities&source_site=vercel-docs&relationship=related) — Use the AI Gateway with various SDKs and API specifications including OpenAI, Anthropic, and OpenResponses.
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities&source_site=vercel-docs&relationship=related) — Create an AI Gateway API key, make your first request with TypeScript, Python, or cURL, and verify how the request was r
 - [Image Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities&source_site=vercel-docs&relationship=related) — Generate images using AI models that support multimodal output through the Chat Completions API.
 - [Text Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/text?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities&source_site=vercel-docs&relationship=related) — Generate and stream text responses using AI Gateway.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities.graph.md](/docs/ai-gateway/modalities.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

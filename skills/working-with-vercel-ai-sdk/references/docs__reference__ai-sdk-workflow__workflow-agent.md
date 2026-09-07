@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-workflow/workflow-agent.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "ea9f8cc64e50e3380aa46e099168d7944f037b2bcad4ec42efe36bc69e589d5a"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "f4889377923d651200af1f59320aff1566f513a1e4f65db7245e39f0cb07ea0c"
 ---
 
 # `WorkflowAgent`
@@ -100,7 +100,7 @@ To see `WorkflowAgent` in action, check out [these examples](#examples).
       type: 'StopCondition | StopCondition[]',
       isOptional: true,
       description:
-        'Default stop condition for the agent loop. Per-stream values override this default. Use `isLoopFinished()` to let the agent run until all tool calls have completed, but beware of potential runaway loops. See https://ai-sdk.dev/v7/docs/reference/ai-sdk-core/loop-finished#isloopfinished.',
+        'Default stop condition for the agent loop. When omitted, WorkflowAgent has no maximum step count and continues until natural completion. Use `isStepCount()` to bound execution. Per-stream values override this default.',
     },
     {
       name: 'activeTools',
@@ -138,6 +138,13 @@ To see `WorkflowAgent` in action, check out [these examples](#examples).
         'Default sandbox session passed to tool descriptions and execution as `experimental_sandbox`, and exposed to `prepareStep`. Per-stream values override this default.',
     },
     {
+      name: 'experimental_toolApprovalSecret',
+      type: 'WorkflowToolApprovalSecret',
+      isOptional: true,
+      description:
+        'Workflow-safe reference to the environment variable containing the secret used to HMAC-sign tool approval requests and verify approved message history before tool execution. Only the environment variable name crosses workflow boundaries; the secret is read inside signing and verification steps. Per-stream values override this default.',
+    },
+    {
       name: 'prepareStep',
       type: 'PrepareStepCallback',
       isOptional: true,
@@ -173,11 +180,11 @@ To see `WorkflowAgent` in action, check out [these examples](#examples).
         'Telemetry configuration with options for enabling/disabling telemetry, setting a function ID, and recording inputs/outputs.',
     },
     {
-      name: 'experimental_onStart',
+      name: 'onStart',
       type: 'WorkflowAgentOnStartCallback',
       isOptional: true,
       description:
-        'Callback called when the agent starts streaming, before any LLM calls. Receives the model, messages, runtime context, and tools context. If also specified in `stream()`, both callbacks fire (constructor first). Experimental (can break in patch releases).',
+        'Callback called when the agent starts streaming, before any LLM calls. Receives the model, messages, runtime context, and tools context. If also specified in `stream()`, both callbacks fire (constructor first). Takes precedence over `experimental_onStart` when both are provided in the constructor.',
       properties: [
         {
           type: 'GenerateTextStartEvent',
@@ -207,11 +214,18 @@ To see `WorkflowAgent` in action, check out [these examples](#examples).
       ],
     },
     {
-      name: 'experimental_onStepStart',
+      name: 'experimental_onStart',
+      type: 'WorkflowAgentOnStartCallback',
+      isOptional: true,
+      description:
+        'Deprecated alias for `onStart`. Used only when `onStart` is not provided in the constructor.',
+    },
+    {
+      name: 'onStepStart',
       type: 'WorkflowAgentOnStepStartCallback',
       isOptional: true,
       description:
-        'Callback called before each step (LLM call) begins. Receives step number, model, messages, previous steps, runtime context, and tools context. If also specified in `stream()`, both callbacks fire (constructor first). Experimental (can break in patch releases).',
+        'Callback called before each step (LLM call) begins. Receives step number, model, messages, previous steps, runtime context, and tools context. If also specified in `stream()`, both callbacks fire (constructor first). Takes precedence over `experimental_onStepStart` when both are provided in the constructor.',
       properties: [
         {
           type: 'GenerateTextStepStartEvent',
@@ -247,25 +261,32 @@ To see `WorkflowAgent` in action, check out [these examples](#examples).
       ],
     },
     {
+      name: 'experimental_onStepStart',
+      type: 'WorkflowAgentOnStepStartCallback',
+      isOptional: true,
+      description:
+        'Deprecated alias for `onStepStart`. Used only when `onStepStart` is not provided in the constructor.',
+    },
+    {
       name: 'onToolExecutionStart',
-      type: 'WorkflowAgentonToolExecutionStartCallback',
+      type: 'WorkflowAgentOnToolExecutionStartCallback',
       isOptional: true,
       description:
         "Callback called right before a tool's execute function runs. If also specified in `stream()`, both callbacks fire (constructor first). Experimental (can break in patch releases).",
       properties: [
         {
-          type: 'ToolExecutionStartEvent',
+          type: 'WorkflowAgentToolExecutionStartEvent',
           parameters: [
-            {
-              name: 'callId',
-              type: 'string',
-              description:
-                'Unique identifier for this generation call, used to correlate events.',
-            },
             {
               name: 'toolCall',
               type: '{ type: "tool-call"; toolCallId: string; toolName: string; input: unknown }',
-              description: 'The tool call being executed.',
+              description:
+                'The tool call being executed. For concrete tool sets, the tool name and input are correlated.',
+            },
+            {
+              name: 'stepNumber',
+              type: 'number',
+              description: 'The current step number, starting at zero.',
             },
             {
               name: 'messages',
@@ -275,9 +296,9 @@ To see `WorkflowAgent` in action, check out [these examples](#examples).
             },
             {
               name: 'toolContext',
-              type: 'InferToolContext<TOOLS[toolName]>',
+              type: 'InferToolContext<TOOLS[NAME]> | undefined',
               description:
-                'Tool-specific context object for the tool call that is about to execute. Narrowed to the context type of the individual tool, not the entire tool set.',
+                'The validated context for the tool call. For concrete tool sets, each event union member pairs it with the corresponding tool name.',
             },
           ],
         },
@@ -285,24 +306,24 @@ To see `WorkflowAgent` in action, check out [these examples](#examples).
     },
     {
       name: 'onToolExecutionEnd',
-      type: 'WorkflowAgentonToolExecutionEndCallback',
+      type: 'WorkflowAgentOnToolExecutionEndCallback',
       isOptional: true,
       description:
-        "Callback called right after a tool's execute function completes or errors. The `toolOutput` field is a discriminated union: check `toolOutput.type` to determine whether the result is `'tool-result'` or `'tool-error'`. If also specified in `stream()`, both callbacks fire (constructor first). Experimental (can break in patch releases).",
+        "Callback called right after a tool's execute function completes or errors. Check `success` to determine whether `output` or `error` is available. If also specified in `stream()`, both callbacks fire (constructor first). Experimental (can break in patch releases).",
       properties: [
         {
-          type: 'ToolExecutionEndEvent',
+          type: 'WorkflowAgentToolExecutionEndEvent',
           parameters: [
-            {
-              name: 'callId',
-              type: 'string',
-              description:
-                'Unique identifier for this generation call, used to correlate events.',
-            },
             {
               name: 'toolCall',
               type: '{ type: "tool-call"; toolCallId: string; toolName: string; input: unknown }',
-              description: 'The tool call that was executed.',
+              description:
+                'The tool call that was executed. For concrete tool sets, the tool name and input are correlated.',
+            },
+            {
+              name: 'stepNumber',
+              type: 'number',
+              description: 'The current step number, starting at zero.',
             },
             {
               name: 'durationMs',
@@ -318,15 +339,29 @@ To see `WorkflowAgent` in action, check out [these examples](#examples).
             },
             {
               name: 'toolContext',
-              type: 'InferToolContext<TOOLS[toolName]>',
+              type: 'InferToolContext<TOOLS[NAME]> | undefined',
               description:
-                'Tool-specific context object for the tool call that just completed. Narrowed to the context type of the individual tool, not the entire tool set.',
+                'The validated context for the tool call. For concrete tool sets, each event union member pairs it with the corresponding tool name.',
             },
             {
-              name: 'toolOutput',
-              type: 'ToolOutput<TOOLS>',
+              name: 'success',
+              type: 'boolean',
               description:
-                "Discriminated union representing the tool execution result. When `type` is `'tool-result'`, the `output` field contains the tool's return value. When `type` is `'tool-error'`, the `error` field contains the error.",
+                'Whether the tool execution succeeded. Discriminates between the output and error event variants.',
+            },
+            {
+              name: 'output',
+              type: 'InferToolOutput<TOOLS[NAME]>',
+              isOptional: true,
+              description:
+                'The tool output. Available when `success` is `true` and correlated with the configured tool.',
+            },
+            {
+              name: 'error',
+              type: 'unknown',
+              isOptional: true,
+              description:
+                'The tool execution error. Available when `success` is `false`.',
             },
           ],
         },
@@ -489,7 +524,7 @@ const result = await agent.stream({
       name: 'stopWhen',
       type: 'StopCondition | StopCondition[]',
       isOptional: true,
-      description: 'Condition(s) for ending the agent loop. Use `isLoopFinished()` to let the agent run until all tool calls have completed, but beware of potential runaway loops. See https://ai-sdk.dev/v7/docs/reference/ai-sdk-core/loop-finished#isloopfinished.',
+      description: 'Condition(s) for ending the agent loop. When omitted and no constructor-level condition is configured, WorkflowAgent has no maximum step count and continues until natural completion. Use `isStepCount()` to bound execution.',
     },
 
     {
@@ -561,6 +596,13 @@ const result = await agent.stream({
         'Sandbox session passed to tool descriptions and execution as `experimental_sandbox`, and exposed to `prepareStep`. Overrides the constructor default.',
     },
     {
+      name: 'experimental_toolApprovalSecret',
+      type: 'WorkflowToolApprovalSecret',
+      isOptional: true,
+      description:
+        'Workflow-safe reference to the environment variable containing the secret used to HMAC-sign tool approval requests and verify approved message history before tool execution. Only the environment variable name crosses workflow boundaries; the secret is read inside signing and verification steps. Overrides the constructor default.',
+    },
+    {
       name: 'telemetry',
       type: 'TelemetryOptions',
       isOptional: true,
@@ -588,29 +630,43 @@ const result = await agent.stream({
         'Per-call prepareStep override. Receives the initial instructions and messages alongside the current step state.',
     },
     {
+      name: 'onStart',
+      type: 'WorkflowAgentOnStartCallback',
+      isOptional: true,
+      description:
+        'Per-call onStart callback. If also specified in the constructor, both fire (constructor first). Takes precedence over `experimental_onStart` when both are provided in this call.',
+    },
+    {
       name: 'experimental_onStart',
       type: 'WorkflowAgentOnStartCallback',
       isOptional: true,
       description:
-        'Per-call onStart callback. If also specified in the constructor, both fire (constructor first). Experimental.',
+        'Deprecated alias for the per-call `onStart` callback. Used only when `onStart` is not provided in this call.',
+    },
+    {
+      name: 'onStepStart',
+      type: 'WorkflowAgentOnStepStartCallback',
+      isOptional: true,
+      description:
+        'Per-call onStepStart callback. If also specified in the constructor, both fire (constructor first). Takes precedence over `experimental_onStepStart` when both are provided in this call.',
     },
     {
       name: 'experimental_onStepStart',
       type: 'WorkflowAgentOnStepStartCallback',
       isOptional: true,
       description:
-        'Per-call onStepStart callback. If also specified in the constructor, both fire (constructor first). Experimental.',
+        'Deprecated alias for the per-call `onStepStart` callback. Used only when `onStepStart` is not provided in this call.',
     },
     {
       name: 'onToolExecutionStart',
-      type: 'WorkflowAgentonToolExecutionStartCallback',
+      type: 'WorkflowAgentOnToolExecutionStartCallback',
       isOptional: true,
       description:
         'Per-call onToolExecutionStart callback. If also specified in the constructor, both fire (constructor first).',
     },
     {
       name: 'onToolExecutionEnd',
-      type: 'WorkflowAgentonToolExecutionEndCallback',
+      type: 'WorkflowAgentOnToolExecutionEndCallback',
       isOptional: true,
       description:
         'Per-call onToolExecutionEnd callback. If also specified in the constructor, both fire (constructor first).',
@@ -923,6 +979,9 @@ import { z } from 'zod';
 
 const agent = new WorkflowAgent({
   model: 'anthropic/claude-sonnet-4-6',
+  experimental_toolApprovalSecret: {
+    environmentVariable: 'TOOL_APPROVAL_SECRET',
+  },
   tools: {
     bookFlight: tool({
       description: 'Book a flight',
@@ -936,6 +995,14 @@ const agent = new WorkflowAgent({
   },
 });
 ```
+
+When `experimental_toolApprovalSecret` is configured, each approval request is
+signed over its approval ID, tool call ID, tool name, and validated input.
+Replayed approvals with a missing or invalid signature do not execute the tool.
+The signature is preserved in the durable stream and UI message history, while
+only the environment variable name crosses workflow boundaries. Signing and
+verification steps read the raw secret from their local environment and do not
+serialize it. A stream-level reference overrides the constructor value.
 
 ### Agent with Lifecycle Callbacks
 

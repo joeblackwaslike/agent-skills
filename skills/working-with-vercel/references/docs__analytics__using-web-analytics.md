@@ -3,7 +3,7 @@ title: Using Web Analytics
 product: vercel
 url: /docs/analytics/using-web-analytics
 canonical_url: "https://vercel.com/docs/analytics/using-web-analytics"
-last_updated: 2026-06-26
+last_updated: 2026-08-28
 type: how-to
 prerequisites:
   - /docs/analytics
@@ -15,8 +15,8 @@ related:
 summary: "Learn how to use Vercel's Web Analytics to understand how visitors are using your website."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/using-web-analytics.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "d90ffdf566eb39a910dffb2fddec743af8d8c406523d5c6eac5619659911f8b6"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "a66822d07f8362eebef56e0684a4e44d13add69a152e8df9d3988376ee1f73f1"
 ---
 
 # Using Web Analytics
@@ -26,6 +26,10 @@ sha256: "d90ffdf566eb39a910dffb2fddec743af8d8c406523d5c6eac5619659911f8b6"
 > business data. You can also [access Web Analytics metrics with Vercel
 > CLI](/docs/analytics/accessing-metrics-with-vercel-cli) to query production
 > metrics, filter events, and compare projects from your terminal.
+
+## Accessing Web Analytics
+
+To access Web Analytics:
 
 
 <!-- docsgraph:related -->
@@ -39,14 +43,10 @@ sha256: "d90ffdf566eb39a910dffb2fddec743af8d8c406523d5c6eac5619659911f8b6"
 - [Vercel Web Analytics Troubleshooting](https://vercel.com/docs/analytics/troubleshooting?from=related&source_path=%2Fdocs%2Fanalytics%2Fusing-web-analytics&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot common issues with Vercel Web Analytics.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fanalytics%2Fusing-web-analytics&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [Privacy and Compliance](https://vercel.com/docs/analytics/privacy-policy?from=related&source_path=%2Fdocs%2Fanalytics%2Fusing-web-analytics&source_site=vercel-docs&relationship=related) — Learn how Vercel supports privacy and data compliance standards with Vercel Web Analytics.
-- [Tools](https://vercel.com/docs/agent-resources/vercel-mcp/tools?from=related&source_path=%2Fdocs%2Fanalytics%2Fusing-web-analytics&source_site=vercel-docs&relationship=related) — Available tools in Vercel MCP for searching docs, managing teams, projects, deployments, Web Analytics, runtime logs and
+- [Using Speed Insights](https://vercel.com/docs/speed-insights/using-speed-insights?from=related&source_path=%2Fdocs%2Fanalytics%2Fusing-web-analytics&source_site=vercel-docs&relationship=related) — Learn how to use Speed Insights to analyze your application's performance data.
 
 Full cross-link map for this page: [/docs/analytics/using-web-analytics.graph.md](/docs/analytics/using-web-analytics.graph.md?from=related&source_path=%2Fdocs%2Fanalytics%2Fusing-web-analytics&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-## Accessing Web Analytics
-
-To access Web Analytics:
 
 1. Select a project from your [dashboard](/dashboard) and open [**Analytics**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fanalytics\&title=Go+to+Analytics) in the sidebar.
 2. Select the [timeframe](/docs/analytics/using-web-analytics#specifying-a-timeframe) and [environment](/docs/analytics/using-web-analytics#viewing-environment-specific-data) you want to view data for.

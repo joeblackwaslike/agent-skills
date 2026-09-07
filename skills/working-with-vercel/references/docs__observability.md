@@ -3,26 +3,28 @@ title: Observability
 product: vercel
 url: /docs/observability
 canonical_url: "https://vercel.com/docs/observability"
-last_updated: 2026-08-11
+last_updated: 2026-09-03
 type: conceptual
 prerequisites:
   []
 related:
-  - /docs/notebooks
   - /docs/observability/observability-plus
   - /docs/observability/insights
   - /docs/observability/debug-production-errors
+  - /docs/notebooks
   - /docs/query/monitoring
-summary: Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application performance.
+summary: Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/observability.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "ebf5ee389e81e1651c5800af0b35fc877c0ac59838d49de99533caad04c40e3c"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "88201f5282734db7e6304588a12122fd59cc466a9b33082dc7e41762ee31db3a"
 ---
 
 # Observability
 
-> **🔒 Permissions Required**: Observability
+## Debug applications with Vercel Observability
+
+Find production errors, capture request traces, and discover queryable metrics from the dashboard or Vercel CLI.
 
 
 <!-- docsgraph:related -->
@@ -46,20 +48,36 @@ sha256: "ebf5ee389e81e1651c5800af0b35fc877c0ac59838d49de99533caad04c40e3c"
 Full cross-link map for this page: [/docs/observability.graph.md](/docs/observability.graph.md?from=related&source_path=%2Fdocs%2Fobservability&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-Observability provides a way for you to monitor and analyze the performance and traffic of your projects on Vercel through a variety of [events](#tracked-events) and [insights](#available-insights), aligned with your app's architecture.
+#### Inspect 500 errors
 
-- Learn how to [use Observability](#using-observability) and the available [insight sections](/docs/observability#available-insights)
-- Learn how you can save and organize your Observability queries with [Notebooks](/docs/notebooks)
+```bash filename="terminal"
+vercel logs --environment production --status-code 500 --json
+```
+
+#### Capture a request trace
+
+```bash filename="terminal"
+vercel curl --trace --json /api/hello
+```
+
+#### List metrics
+
+```bash filename="terminal"
+# Most metrics require Observability Plus
+vercel metrics list
+```
+
+> **🔒 Permissions Required**: Observability
 
 ### Observability feature access
 
 You can use Observability on all plans to monitor your projects. [Observability Plus](/docs/observability/observability-plus) is available on Paid Pro and Enterprise teams, providing [additional features and metrics](/docs/observability/observability-plus#limitations), higher limits, and increased retention. Pro Trial does not include Observability Plus by default.
 
-[Try Observability](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fobservability\&title=Try+Observability) to get started.
-
 ![Image](`/docs-assets/static/docs/concepts/observability/O11y-Tab-Light.png`)
 
-## Using Observability
+## Debug errors and latency with Observability
+
+Use logs to find failing requests, traces to inspect one request path, and metrics to compare behavior over time. Use JSON output when a script or coding agent needs structured data.
 
 How you use Observability depends on the needs of your project, for example, perhaps builds are taking longer than expected, or your Vercel Functions seem to be increasing in cost. A brief overview of how you might use the tab would be:
 

@@ -14,8 +14,8 @@ related:
 summary: How Vercel KMS stages a pending signing key, schedules its activation, and retires the previous key so already-issued tokens keep verifying.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms/concepts/key-rotation.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "517f82a5600df4bb048d9a826162cee70ff53c1d54bf77999edfc9df78e9cc12"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "96a7d80e285f3b823a11638b6b7cae3255a458f553b2f1907bf441df37b081e4"
 ---
 
 # Vercel KMS Key Rotation
@@ -30,6 +30,7 @@ Rotation replaces an issuer's active signing key without changing the issuer ID 
 
 - [Sign JWTs from your Functions without managing private keys](https://vercel.com/changelog/sign-jwts-from-your-functions-without-managing-private-keys?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fkey-rotation&source_site=vercel-docs&relationship=related)
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fkey-rotation&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
+- [Rotating Secrets for Vercel Marketplace Integrations](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-supabase-integration?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fkey-rotation&source_site=vercel-docs&relationship=related) — Rotate the Supabase service role key, JWT secret, and database password from your Vercel integration, then apply the new
 - [How to rotate the secrets of your Hypertune integration](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-hypertune-integration?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fkey-rotation&source_site=vercel-docs&relationship=related) — Rotate Hypertune API keys with zero-downtime.
 - [Vercel KMS Quickstart](https://vercel.com/docs/kms/quickstart?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fkey-rotation&source_site=vercel-docs&relationship=related) — Create a KMS issuer, sign a JWT from a Vercel Function with @vercel/kms, and verify it against the published JWKS.
 - [Vercel KMS Pricing and Limits](https://vercel.com/docs/kms/pricing?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fkey-rotation&source_site=vercel-docs&relationship=related) — How Vercel KMS is billed per signing operation, the platform limits that apply, and how to stop being billed.

@@ -16,8 +16,8 @@ related:
 summary: Learn about the request headers sent to each Vercel deployment and how to use them to process requests before sending a response.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/headers/request-headers.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "8aea3ad4e2fb1134777003bf83fddb286bbd0d8a0f16ff3dcfc959afb09b36d8"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "bbc888e8aec71fc59344b4e1538b193d68c5b5be03e67b1fa3be23e4bab71534"
 ---
 
 # Request headers
@@ -35,11 +35,11 @@ The following headers are sent to each Vercel deployment and can be used to proc
 - [Requester's public IP postal code now available in Vercel Functions](https://vercel.com/changelog/requesters-public-ip-postal-code-now-available-in-vercel-functions?from=related&source_path=%2Fdocs%2Fheaders%2Frequest-headers&source_site=vercel-docs&relationship=related)
 - [IP Geolocation for Serverless Functions](https://vercel.com/changelog/ip-geolocation-for-serverless-functions?from=related&source_path=%2Fdocs%2Fheaders%2Frequest-headers&source_site=vercel-docs&relationship=related)
 - [route.js](https://nextjs.org/docs/app/api-reference/file-conventions/route?from=related&source_path=%2Fdocs%2Fheaders%2Frequest-headers&source_site=vercel-docs&relationship=related) — API reference for the route.js special file.
-- [Routing Middleware API](https://vercel.com/docs/routing-middleware/api?from=related&source_path=%2Fdocs%2Fheaders%2Frequest-headers&source_site=vercel-docs&relationship=related) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
 - [Vercel CDN Cache](https://vercel.com/docs/caching/cdn-cache?from=related&source_path=%2Fdocs%2Fheaders%2Frequest-headers&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN cache stores your content across a global network to reduce latency and origin load.
+- [Routing Middleware API](https://vercel.com/docs/routing-middleware/api?from=related&source_path=%2Fdocs%2Fheaders%2Frequest-headers&source_site=vercel-docs&relationship=related) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
 - [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related&source_path=%2Fdocs%2Fheaders%2Frequest-headers&source_site=vercel-docs&relationship=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 - [Response headers](https://vercel.com/docs/headers/response-headers?from=related&source_path=%2Fdocs%2Fheaders%2Frequest-headers&source_site=vercel-docs&relationship=related) — Learn about the response headers sent to each Vercel deployment and how to use them to process responses before sending
-- [Framework environment variables](https://vercel.com/docs/environment-variables/framework-environment-variables?from=related&source_path=%2Fdocs%2Fheaders%2Frequest-headers&source_site=vercel-docs&relationship=related) — Framework environment variables are automatically populated by the Vercel, based on your project's framework.
+- [OG Image Generation Examples](https://vercel.com/docs/og-image-generation/examples?from=related&source_path=%2Fdocs%2Fheaders%2Frequest-headers&source_site=vercel-docs&relationship=related) — Learn how to use the @vercel/og library with examples.
 
 Full cross-link map for this page: [/docs/headers/request-headers.graph.md](/docs/headers/request-headers.graph.md?from=related&source_path=%2Fdocs%2Fheaders%2Frequest-headers&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

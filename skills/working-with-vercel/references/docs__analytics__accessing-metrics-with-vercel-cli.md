@@ -13,8 +13,8 @@ related:
 summary: Use the Vercel CLI to query Web Analytics metrics from your terminal.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "94431cc40ea11587737a363dcd573498a199b5b8270ff32f51c371c0fd69c871"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "1bc61f3838e2eb2f52ec379533ee2820186d123ada49769e378f4b1ff4e5dd3f"
 ---
 
 # Accessing Metrics with Vercel CLI
@@ -33,7 +33,7 @@ Use `vercel metrics` to query Web Analytics data from your terminal. You can rep
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api?from=related&source_path=%2Fdocs%2Fanalytics%2Faccessing-metrics-with-vercel-cli&source_site=vercel-docs&relationship=related) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 - [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Faccessing-metrics-with-vercel-cli&source_site=vercel-docs&relationship=related) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
 - [Query](https://vercel.com/docs/query?from=related&source_path=%2Fdocs%2Fanalytics%2Faccessing-metrics-with-vercel-cli&source_site=vercel-docs&relationship=related) — Query and visualize your Vercel usage, traffic, and more in observability.
-- [Emit Custom Metrics from Vercel Functions](https://vercel.com/docs/observability/custom-metrics?from=related&source_path=%2Fdocs%2Fanalytics%2Faccessing-metrics-with-vercel-cli&source_site=vercel-docs&relationship=related) — Learn how to emit application-specific metrics from Vercel Functions and analyze them in Observability.
+- [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fanalytics%2Faccessing-metrics-with-vercel-cli&source_site=vercel-docs&relationship=related) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 
 Full cross-link map for this page: [/docs/analytics/accessing-metrics-with-vercel-cli.graph.md](/docs/analytics/accessing-metrics-with-vercel-cli.graph.md?from=related&source_path=%2Fdocs%2Fanalytics%2Faccessing-metrics-with-vercel-cli&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

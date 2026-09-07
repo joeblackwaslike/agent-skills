@@ -13,8 +13,8 @@ related:
 summary: Use OpenClaw (formerly Clawdbot) with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/chat-platforms/openclaw.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "d5a208f941b398f8ccbd787b04039be3b55b45cfbac6672f7e5857566c8bb376"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "3d82725913859f4cb77a1076fe65eb6c3bd563b6920b2cbee45df83f29ecf728"
 ---
 
 # OpenClaw (Clawdbot)
@@ -32,8 +32,8 @@ sha256: "d5a208f941b398f8ccbd787b04039be3b55b45cfbac6672f7e5857566c8bb376"
 - [Running OpenClaw in Vercel Sandbox](https://vercel.com/kb/guide/running-openclaw-in-vercel-sandbox?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms%2Fopenclaw&source_site=vercel-docs&relationship=related) — This guide walks you through setting up OpenClaw inside a Vercel Sandbox and configuring the WhatsApp channel.
 - [LibreChat](https://vercel.com/docs/ai-gateway/chat-platforms/librechat?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms%2Fopenclaw&source_site=vercel-docs&relationship=related) — Use LibreChat with the AI Gateway.
 - [Chatbox](https://vercel.com/docs/ai-gateway/chat-platforms/chatbox?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms%2Fopenclaw&source_site=vercel-docs&relationship=related) — Use Chatbox with the AI Gateway.
+- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms%2Fopenclaw&source_site=vercel-docs&relationship=related) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
 - [Blackbox AI](https://vercel.com/docs/ai-gateway/coding-agents/blackbox?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms%2Fopenclaw&source_site=vercel-docs&relationship=related) — Use the Blackbox AI CLI with the AI Gateway.
-- [Cline](https://vercel.com/docs/ai-gateway/coding-agents/cline?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms%2Fopenclaw&source_site=vercel-docs&relationship=related) — Use Cline with the AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/chat-platforms/openclaw.graph.md](/docs/ai-gateway/chat-platforms/openclaw.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms%2Fopenclaw&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

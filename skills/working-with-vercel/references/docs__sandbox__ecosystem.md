@@ -16,8 +16,8 @@ related:
 summary: Use Vercel Sandbox with the agent frameworks, model SDKs, and coding agents you already work with.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/ecosystem.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "b6acf4573f5b77b2517ef210b3e9af137a26105073bdc9ea0b1c4723ac6e3620"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "f4664a20e47f2a7b3e7b0f3ee45ed84fd72454486d7f7f5c613f81b9f0e0214a"
 ---
 
 # Ecosystem
@@ -38,11 +38,11 @@ instead of on your host.
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
 - [How to run Herdr coding agents in isolated Vercel Sandboxes](https://vercel.com/kb/guide/run-herdr-coding-agents-isolated-vercel-sandboxes?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related) — Install the vercel.sandbox plugin for Herdr, approve an upload manifest, run each AI coding agent in its own isolated Ve
 - [The Agent Stack](https://vercel.com/blog/agent-stack?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related)
+- [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
 - [Run isolated AI agents in one sandbox](https://vercel.com/docs/sandbox/concepts/multi-agent?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related) — Give each AI agent an isolated Linux user in a Vercel Sandbox with the @vercel/sandbox createUser, createGroup, and asUs
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
+- [eve](https://vercel.com/docs/eve?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related) — Build and deploy durable backend AI agents with eve, an open-source, filesystem-first framework.
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
-- [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
-- [eve](https://vercel.com/docs/eve?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related) — Learn how to deploy and run durable backend AI agents built with the open-source eve framework on Vercel.
 
 Full cross-link map for this page: [/docs/sandbox/ecosystem.graph.md](/docs/sandbox/ecosystem.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

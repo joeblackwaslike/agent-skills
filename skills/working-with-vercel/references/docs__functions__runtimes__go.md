@@ -16,13 +16,17 @@ related:
 summary: Learn how to use the Go runtime to run Go APIs on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/go.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "90ae19d38fc297c27934f03ce0eb8660dd83475d70933aa962d5df1b3103f3b9"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "8043557e2fed18a42c1ab1a9d218953a3ec14bc7d98763c6e671fd5965abc733"
 ---
 
 # Using the Go Runtime with Vercel Functions
 
 > **🔒 Permissions Required**: The Go runtime
+
+Use the Go runtime to deploy a Go HTTP server on Vercel. The Go Framework
+Preset works with standard `net/http` servers and frameworks such as `chi` or
+`gin`.
 
 
 <!-- docsgraph:related -->
@@ -35,15 +39,11 @@ sha256: "90ae19d38fc297c27934f03ce0eb8660dd83475d70933aa962d5df1b3103f3b9"
 - [Using the Rust Runtime with Vercel functions](https://vercel.com/docs/functions/runtimes/rust?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fgo&source_site=vercel-docs&relationship=related) — Build fast, memory-safe serverless functions with Rust on Vercel.
 - [Configuring the Runtime for Vercel Functions](https://vercel.com/docs/functions/configuring-functions/runtime?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fgo&source_site=vercel-docs&relationship=related) — Learn how to configure the runtime for Vercel Functions.
 - [Using the Python Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/python?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fgo&source_site=vercel-docs&relationship=related) — Learn how to use the Python runtime to run Python applications on Vercel.
-- [Using the Ruby Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/ruby?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fgo&source_site=vercel-docs&relationship=related) — Learn how to use the Ruby runtime to compile Ruby Vercel Functions on Vercel.
+- [Getting started with Vercel Functions](https://vercel.com/docs/functions/quickstart?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fgo&source_site=vercel-docs&relationship=related) — Build your first Vercel Function in a few steps.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fgo&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 
 Full cross-link map for this page: [/docs/functions/runtimes/go.graph.md](/docs/functions/runtimes/go.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fgo&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Use the Go runtime to deploy a Go HTTP server on Vercel. The Go Framework
-Preset works with standard `net/http` servers and frameworks such as `chi` or
-`gin`.
 
 ## Deploy a Go API
 

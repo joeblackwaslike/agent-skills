@@ -3,7 +3,7 @@ title: Vercel Sandbox pricing and quotas
 product: vercel
 url: /docs/sandbox/pricing
 canonical_url: "https://vercel.com/docs/sandbox/pricing"
-last_updated: 2026-08-21
+last_updated: 2026-09-02
 type: reference
 prerequisites:
   - /docs/sandbox
@@ -16,8 +16,8 @@ related:
 summary: "Understand how Vercel Sandbox billing works, what's included in each plan, and the quotas that apply."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/pricing.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "d2b327478188c399ae3d852d3d1874c6b45784fe39d17baf20739a441a28088b"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "5632dd1277a8b4e29acbd7e4f916d5fe961b92805efee7dcf2c93ec0666ccf4c"
 ---
 
 # Vercel Sandbox pricing and quotas
@@ -34,12 +34,12 @@ Vercel Sandbox usage is metered across several dimensions. This page explains ho
 - [Give every agent in Herdr its own Vercel Sandbox](https://vercel.com/changelog/give-every-agent-in-herdr-its-own-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related)
 - [More granular observability for Vercel Sandbox](https://vercel.com/changelog/more-granular-observability-for-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related)
 - [Vercel Sandbox can now run for up to 24 hours](https://vercel.com/changelog/vercel-sandbox-can-now-run-for-up-to-24-hours?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related)
-- [Vercel Sandbox now supports 10,000 concurrent sandboxes and 5,000 vCPUs per minute](https://vercel.com/changelog/vercel-sandbox-now-supports-10-000-concurrent-sandboxes-and-5-000-vcpus-per-minute?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related)
+- [Vercel Sandbox now calculates snapshot storage costs daily](https://vercel.com/changelog/vercel-sandbox-now-calculates-snapshot-storage-costs-daily?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related)
 - [How to run Devin Outposts sessions on Vercel](https://vercel.com/kb/guide/devin-outposts-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related) — Run Devin Outposts sessions in isolated Vercel Sandbox microVMs. One browser authorization to set up, then sessions star
 - [Run Python code securely with AI SDK and Vercel Sandbox](https://vercel.com/kb/guide/python-ai-sdk-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related) — Add an \\`executeCode\\` tool to your AI SDK agent with the \\`ai-sdk-tool-code-execution\\` package to run Python 3.13 insi
 - [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
-- [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
+- [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Pricing and Limits](https://vercel.com/docs/eve/pricing?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related) — Understand how eve usage maps to Vercel resources and inherited platform limits.
 - [Account Plans on Vercel](https://vercel.com/docs/plans?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about the different plans available on Vercel.
 
@@ -145,13 +145,13 @@ Sandbox creation costs are minimal at $0.60 per million creations ($0.0000006 pe
 
 ### Resource limits
 
-Each sandbox is automatically provisioned 32 GB of ephemeral NVMe storage. You can use [persistent sandboxes](/docs/sandbox/concepts/persistent-sandboxes) or manually create [snapshots](/docs/sandbox/concepts/snapshots) to persist data across sandboxes.
+Each sandbox created with Sandbox SDK 3.0.0 or above, or from a [custom image](/docs/sandbox/concepts/images#custom-images), is automatically provisioned 64 GB of ephemeral NVMe storage. Sandboxes created with [runtimes](/docs/sandbox/concepts/runtimes) (deprecated) receive 32 GB. You can use [persistent sandboxes](/docs/sandbox/concepts/persistent-sandboxes) or manually create [snapshots](/docs/sandbox/concepts/snapshots) to persist data across sandboxes.
 
 | Plan       | Maximum vCPUs | Maximum memory | Maximum open ports | Disk size |
 | ---------- | ------------- | -------------- | ------------------ | --------- |
-| Hobby      | 4             | 8GB            | 15                 | 32 GB     |
-| Pro        | 8             | 16GB           | 15                 | 32 GB     |
-| Enterprise | 32            | 64GB           | 15                 | 32 GB     |
+| Hobby      | 4             | 8GB            | 15                 | 64 GB     |
+| Pro        | 8             | 16GB           | 15                 | 64 GB     |
+| Enterprise | 32            | 64GB           | 15                 | 64 GB     |
 
 ### Runtime limits
 

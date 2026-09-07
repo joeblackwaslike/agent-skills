@@ -14,8 +14,8 @@ related:
 summary: Learn how to integrate DatoCMS with Vercel. Follow our step-by-step tutorial to set up and manage your digital content seamlessly using DatoCMS API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/cms/dato-cms.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "4637e164c1c5793ba0f7e5c79bd133a35d7ca8f86fa6fa35fa091ffb14211e25"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "940ea998e0836b98a54269eaa18eaec1b4acaafdb7b3159610b3e64782fbcbe1"
 ---
 
 # Vercel DatoCMS Integration
@@ -29,9 +29,9 @@ DatoCMS is a headless content management system designed for creating and managi
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Using a Headless CMS with Vercel](https://vercel.com/kb/guide/using-a-headless-cms-with-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fdato-cms&source_site=vercel-docs&relationship=related) — Learn best practices for using databases in a serverless environment with Vercel
-- [How to Deploy a Docusaurus Site with Vercel](https://vercel.com/kb/guide/deploying-docusaurus-with-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fdato-cms&source_site=vercel-docs&relationship=related) — Create a Docusaurus documentation site and deploy it live with Vercel.
 - [Visual Editing can now be used with DatoCMS](https://vercel.com/changelog/visual-editing-can-now-be-used-with-datocms?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fdato-cms&source_site=vercel-docs&relationship=related)
 - [Integrate Vercel and Contentstack for your Headless CMS](https://vercel.com/kb/guide/integrate-vercel-and-contentstack?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fdato-cms&source_site=vercel-docs&relationship=related) — Integrate Vercel with Contentstack, a headless CMS, to build and deploy dynamic, high-performance websites.
+- [How to Deploy a Docusaurus Site with Vercel](https://vercel.com/kb/guide/deploying-docusaurus-with-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fdato-cms&source_site=vercel-docs&relationship=related) — Create a Docusaurus documentation site and deploy it live with Vercel.
 - [Vercel ButterCMS Integration](https://vercel.com/docs/integrations/cms/butter-cms?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fdato-cms&source_site=vercel-docs&relationship=related) — Learn how to integrate ButterCMS with Vercel. Follow our tutorial to set up the ButterCMS template on Vercel and manage
 - [Vercel Agility CMS Integration](https://vercel.com/docs/integrations/cms/agility-cms?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fdato-cms&source_site=vercel-docs&relationship=related) — Learn how to integrate Agility CMS with Vercel. Follow our tutorial to deploy the Agility CMS template or install the in
 - [Vercel Sanity Integration](https://vercel.com/docs/integrations/cms/sanity?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fdato-cms&source_site=vercel-docs&relationship=related) — Learn how to integrate Sanity with Vercel. Follow our tutorial to deploy the Sanity template or install the integration
@@ -46,7 +46,7 @@ Full cross-link map for this page: [/docs/integrations/cms/dato-cms.graph.md](/d
 To get started with DatoCMS on Vercel, follow the steps below to install the integration:
 
 - ### Install the Vercel CLI
-  To pull in environment variables from  to your Vercel project, you need to install the [Vercel CLI](/docs/cli). Run the following command in your terminal:
+  To pull in environment variables from DatoCMS to your Vercel project, you need to install the [Vercel CLI](/docs/cli). Run the following command in your terminal:
   <CodeBlock>
     <Code tab="pnpm">
       ```bash
@@ -71,10 +71,10 @@ To get started with DatoCMS on Vercel, follow the steps below to install the int
   </CodeBlock>
 
 - ### Install your CMS integration
-  Navigate to the  and follow the steps to install the integration.
+  Navigate to the [ integration](`/integrations/${props.cms.toLowerCase\(\).split\(/[.\s]+/\).join\('-'\)}`) and follow the steps to install the integration.
 
 - ### Pull in environment variables
-  Once you've installed the  integration, you can pull in environment variables from  to your Vercel project. In your terminal, run:
+  Once you've installed the DatoCMS integration, you can pull in environment variables from DatoCMS to your Vercel project. In your terminal, run:
   ```bash
   vercel env pull
   ```

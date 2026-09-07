@@ -14,13 +14,15 @@ related:
 summary: Learn how to configure access groups for team members on a Vercel account.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac/access-groups.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "76de679a0bcaaf228e1169e771a1a41e6b4b9920e199c03ead7c3746caab0d72"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "08cd2fc6c3aa413f54dacd38cef4885821a0438131e630ebe5336b824d6f2d9d"
 ---
 
 # Access Groups
 
 > **🔒 Permissions Required**: Access Groups
+
+Access Groups provide a way to manage groups of Vercel users across projects on your team. They are a set of project role assignations, a combination of Vercel users and the projects they work on.
 
 
 <!-- docsgraph:related -->
@@ -38,8 +40,6 @@ sha256: "76de679a0bcaaf228e1169e771a1a41e6b4b9920e199c03ead7c3746caab0d72"
 
 Full cross-link map for this page: [/docs/rbac/access-groups.graph.md](/docs/rbac/access-groups.graph.md?from=related&source_path=%2Fdocs%2Frbac%2Faccess-groups&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Access Groups provide a way to manage groups of Vercel users across projects on your team. They are a set of project role assignations, a combination of Vercel users and the projects they work on.
 
 An Access Group consists of one or many projects in a team and assigns project roles to team members. Any team member included in an Access Group gets assigned the projects in that Access Group. They also get a default role.
 

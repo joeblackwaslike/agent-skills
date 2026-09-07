@@ -15,13 +15,17 @@ related:
 summary: Learn about legacy usage metrics, including Bandwidth, Requests, Vercel Function Invocations, and Vercel Function Execution.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/legacy.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "505e8a4fa85e2bffacaf0805544a2257bb39ae79af92244fd3495d49c7054994"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "14d8ab4ff3b182f5c15232ae6c288a314dd6009c0973d5f5ae2778a5b3a2565f"
 ---
 
 # Legacy Metrics
 
 ## Bandwidth
+
+Bandwidth is the amount of data your deployments have sent or received.
+This chart includes traffic for both [preview](/docs/deployments/environments#preview-environment-pre-production) and
+[production](/docs/deployments/environments#production-environment) deployments.
 
 
 <!-- docsgraph:related -->
@@ -39,10 +43,6 @@ sha256: "505e8a4fa85e2bffacaf0805544a2257bb39ae79af92244fd3495d49c7054994"
 
 Full cross-link map for this page: [/docs/pricing/legacy.graph.md](/docs/pricing/legacy.graph.md?from=related&source_path=%2Fdocs%2Fpricing%2Flegacy&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Bandwidth is the amount of data your deployments have sent or received.
-This chart includes traffic for both [preview](/docs/deployments/environments#preview-environment-pre-production) and
-[production](/docs/deployments/environments#production-environment) deployments.
 
 > **💡 Note:** You are not billed for bandwidth usage on [blocked or
 > paused](/kb/guide/why-is-my-account-deployment-blocked#pausing-process)

@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-skills/main/README.md"
-fetched_at: "2026-08-31T10:40:50.696Z"
-sha256: "d99c04c5c6a0eddbce4337a742292959a83f15cc4d083f15cb5cd7f6b4dfeb12"
+fetched_at: "2026-09-07T09:02:18.333Z"
+sha256: "435e1c052d2dc1a6060221ccb2cc0c21d135d343a1ec3d1b4b264daadd1a7004"
 ---
 
 # Gemini API skills
@@ -39,9 +39,8 @@ and 96% with Gemini 3.1 Pro. For more details, see our blog post:
 
 | Skill | Description |
 | :--- | :--- |
-| [`gemini-api-dev`](skills/gemini-api-dev) | Skill for developing Gemini-powered apps. Provides the best practices for building apps that use the Gemini API. |
+| [`gemini-api-dev`](skills/gemini-api-dev) | Skill for building apps with the [Gemini API](https://ai.google.dev/gemini-api/docs/interactions?ua=chat) (Interactions API). Covers text generation, multi-turn chat, streaming, function calling, structured output, image generation, Deep Research agents, deprecated model guardrails, and both Python and TypeScript SDKs. |
 | [`gemini-live-api-dev`](skills/gemini-live-api-dev) | Skill for building real-time, bidirectional streaming apps with the Gemini Live API. Covers WebSocket-based audio/video/text streaming, voice activity detection, native audio features, function calling, and session management. |
-| [`gemini-interactions-api`](skills/gemini-interactions-api) | Skill for building apps with the [Gemini Interactions API](https://ai.google.dev/gemini-api/docs/interactions?ua=chat). Covers text generation, multi-turn chat, streaming, function calling, structured output, image generation, Deep Research agents, deprecated model guardrails, and both Python and TypeScript SDKs. |
 | [`gemini-omni-flash-api`](skills/gemini-omni-flash-api) | Specialized generative AI video skill focused on Gemini Omni 1.1 Flash (`gemini-omni-1.1-flash`), video editing, image and video referenced generation, first and last frame transitions, and video extensions using the Interactions API. |
 
 ## Installation
@@ -54,8 +53,8 @@ You can install these skills across your preferred AI coding assistants and pack
 # Interactively browse and install skills.
 npx skills add google-gemini/gemini-skills --list
 
-# Install a specific skill (e.g., gemini-interactions-api).
-npx skills add google-gemini/gemini-skills --skill gemini-interactions-api
+# Install a specific skill (e.g., gemini-api-dev).
+npx skills add google-gemini/gemini-skills --skill gemini-api-dev
 ```
 
 ### Using [Context7 skills CLI](https://context7.com)
@@ -64,8 +63,8 @@ npx skills add google-gemini/gemini-skills --skill gemini-interactions-api
 # Interactively browse and install skills.
 npx ctx7 skills install /google-gemini/gemini-skills
 
-# Install a specific skill (e.g., gemini-interactions-api).
-npx ctx7 skills install /google-gemini/gemini-skills gemini-interactions-api
+# Install a specific skill (e.g., gemini-api-dev).
+npx ctx7 skills install /google-gemini/gemini-skills gemini-api-dev
 ```
 
 ### Antigravity

@@ -16,13 +16,17 @@ related:
 summary: Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar/managing-toolbar.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "1f985820c9bd657bdcc58b280c8850fc900d20c3132fd0e5e8442736b891d7c1"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "8fe0d236128516f307b11929f44397b694d0fea9a56545c986bc3b8caad97ee8"
 ---
 
 # Managing the visibility of the Vercel Toolbar
 
 > **🔒 Permissions Required**: Vercel Toolbar
+
+## Viewing the toolbar
+
+When the toolbar is enabled, you'll be able to view it on any preview or enabled environment. By default, the toolbar will appear as a circle with a menu icon. Clicking activates it, at which point you will see any comments on the page and notifications for issues detected by tools running in the background. When the toolbar has not been activated it will show a small Vercel icon over the menu icon.
 
 
 <!-- docsgraph:related -->
@@ -42,10 +46,6 @@ sha256: "1f985820c9bd657bdcc58b280c8850fc900d20c3132fd0e5e8442736b891d7c1"
 
 Full cross-link map for this page: [/docs/vercel-toolbar/managing-toolbar.graph.md](/docs/vercel-toolbar/managing-toolbar.graph.md?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fmanaging-toolbar&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-## Viewing the toolbar
-
-When the toolbar is enabled, you'll be able to view it on any preview or enabled environment. By default, the toolbar will appear as a circle with a menu icon. Clicking activates it, at which point you will see any comments on the page and notifications for issues detected by tools running in the background. When the toolbar has not been activated it will show a small Vercel icon over the menu icon.
 
 Once a tool is used, the toolbar will show a second icon next to the menu, so you can access your most recently used tool.
 
@@ -88,7 +88,7 @@ Alternatively, you can also hide the toolbar in any of the following ways:
 
 - Select the toolbar icon and drag it to the X that appears at the bottom of the screen.
 - Click the [browser extension](/docs/vercel-toolbar/browser-extension) icon if you have it pinned to your browser bar.
-- Use .
+- Use `.`.
 
 To show the toolbar when it is hidden you can use that same key command or click the browser extension.
 

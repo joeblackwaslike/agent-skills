@@ -16,8 +16,8 @@ related:
 summary: Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/concepts.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "3a18fcbc8b8d1d498f25aaac55fdbcc96a79668ffbe961058f22d7a456c229a3"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "055fc8f77d46a23dc032182d02949bcb06014dc41ec64d1e349700b4c072b55c"
 ---
 
 # Queues concepts
@@ -34,11 +34,11 @@ Vercel Queues is a durable event streaming system for asynchronous workloads. Yo
 - [Publish and subscribe to realtime data on Vercel](https://vercel.com/kb/guide/publish-and-subscribe-to-realtime-data-on-vercel?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related) — Learn how to publish and subscribe to realtime data on Vercel with WebSockets, SSE, Redis, and Queues, and when a manage
 - [Framework Integrations](https://workflow-sdk.dev/docs/how-it-works/framework-integrations?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related) — Build a custom framework integration using the Workflow SDK compiler and runtime.
 - [Vercel Queues now in public beta](https://vercel.com/changelog/vercel-queues-now-in-public-beta?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related)
-- [Vercel Queues is now in Limited Beta](https://vercel.com/changelog/vercel-queues-is-now-in-limited-beta?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related)
 - [Sending Emails from an application on Vercel](https://vercel.com/kb/guide/sending-emails-from-an-application-on-vercel?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related) — SMTP is the harder path inside Vercel Functions. Learn how to send emails over an HTTP API, which Next.js pattern fits y
+- [Vercel Queues is now in Limited Beta](https://vercel.com/changelog/vercel-queues-is-now-in-limited-beta?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related)
 - [Quickstart](https://vercel.com/docs/queues/quickstart?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related) — Set up Vercel Queues with the SDK.
 - [Queues Observability](https://vercel.com/docs/queues/observability?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related) — Monitor queue throughput, message age, retries, and consumer performance to optimize your queue-based workflows.
-- [Run background tasks with Celery on Vercel](https://vercel.com/docs/frameworks/backend/celery?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
+- [Deploy Dramatiq workers on Vercel](https://vercel.com/docs/frameworks/backend/dramatiq?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related) — Deploy Dramatiq workers on Vercel. Learn how Dramatiq actors use Vercel Queues and Vercel Functions to process backgroun
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/queues/concepts.graph.md](/docs/queues/concepts.graph.md?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=graph)
@@ -92,6 +92,14 @@ A topic is a durable, append-only log of messages. Producers publish messages to
 
 A consumer group is an independent subscriber to a topic. Each group tracks its own position in the log and processes messages at its own pace. Because groups are fully isolated, a slow or failing consumer in one group has no effect on any other.
 
+```mermaid
+flowchart LR
+    T["Topic<br/>(append-only log)"]
+    T --> CG1["Group A, position: 950"]
+    T --> CG2["Group B, position: 720"]
+    T --> CG3["Group C, position: 950"]
+```
+
 > **💡 Note:** In poll mode, you can add a new consumer group at any time. New groups start reading from the beginning of the topic, giving you access to all non-expired messages. This makes it straightforward to backfill data or add new processing pipelines without republishing. Push mode consumers are configured at deploy time and cannot be added dynamically. JavaScript and TypeScript projects define triggers in `vercel.json`. Python projects declare subscriber entrypoints in `pyproject.toml`.
 
 ### Scaling
@@ -101,6 +109,14 @@ Vercel manages partitioning and scaling for you. You don't need to pre-configure
 ## Durability
 
 When Vercel Queues accepts a message, it guarantees the message can be consumed. Every message is synchronously written to **three separate availability zones** before the publish call returns. This means your message is fully replicated before your producer receives confirmation. Even if an entire availability zone goes down, the message is safe.
+
+```mermaid
+flowchart LR
+    P["Producer"] -->|"Publish"| Q["Queues"]
+    Q -->|"Replicate to 3 AZs"| Q
+    Q -->|"Acknowledged"| P
+    Q -->|"Deliver"| C["Consumer"]
+```
 
 After replication, the publish acknowledgment and consumer notification happen simultaneously. This means a consumer may receive and begin processing a message before the producer's publish call returns, depending on network latency.
 
@@ -121,6 +137,15 @@ When a message is delivered to a consumer, it becomes temporarily invisible to o
 
 If your consumer processes the message and acknowledges it before the timeout expires, the message is removed. If the consumer crashes, times out, or fails to acknowledge, the visibility timeout expires and the message becomes available for redelivery.
 
+```mermaid
+flowchart TD
+    Q["Queues"] -->|"Deliver"| C["Consumer"]
+    C -->|"Acknowledge"| Q2["Message removed"]
+    Q3["Queues"] -->|"Deliver"| C2["Consumer crashes"]
+    C2 -.-|"Timeout expires"| Q4["Message visible again"]
+    Q4 -->|"Redeliver"| C3["Consumer (deliveryCount + 1)"]
+```
+
 This is how Vercel Queues handles failures without manual intervention. You don't need to build retry infrastructure or monitor for stuck messages. If a Vercel Function crashes mid-processing or hits its execution time limit, the message automatically returns to the queue and gets delivered to the next available consumer.
 
 The default visibility timeout is **60 seconds**. You can configure it per receive request from 0 to 3,600 seconds (60 minutes). Setting it to `0` peeks at the message without leasing it. If your consumer needs more time mid-processing, you can extend the lease using the [ExtendLease](/docs/queues/api#extendlease) API.
@@ -128,6 +153,17 @@ The default visibility timeout is **60 seconds**. You can configure it per recei
 ## Message lifecycle
 
 A message moves through several states from the time it's published to when it's processed or expires:
+
+```mermaid
+flowchart TD
+    S["SendMessage"] --> P["Pending"]
+    P -->|"delay expires"| V["Visible"]
+    V -->|"ReceiveMessages"| IF["In-Flight (leased)"]
+    IF -->|"Acknowledge"| Done["Processed (removed)"]
+    IF -->|"ExtendLease"| IF
+    IF -->|"Lease expires"| V
+    V -->|"TTL expires"| Expired["Expired (deleted)"]
+```
 
 1. **SendMessage** writes the message. If a delay is configured, the message enters a pending state.
 2. Once the delay expires (or immediately if no delay), the message becomes **visible** to consumers.
@@ -154,6 +190,19 @@ Vercel writes queue data to the region you select. During a regional outage, Ver
 ## Deployments and versioning
 
 On Vercel, topics are **partitioned by deployment ID** by default. In push mode, Vercel delivers messages back to the same deployment that published them.
+
+```mermaid
+flowchart TD
+    subgraph A["Deployment A (current)"]
+        direction LR
+        PA["Producer"] --> TA["orders topic"] --> CA["Consumer"]
+    end
+    subgraph B["Deployment B (previous)"]
+        direction LR
+        PB["Producer"] --> TB["orders topic"] --> CB["Consumer"]
+    end
+    A ~~~ B
+```
 
 This design means you don't have to worry about message compatibility across deployments. When you change a message schema or update your consumer logic, the new deployment produces and consumes its own messages. There's no risk of a new deployment consuming messages published by an older version with a different format.
 

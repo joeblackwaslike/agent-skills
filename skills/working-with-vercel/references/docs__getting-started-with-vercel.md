@@ -16,8 +16,8 @@ related:
 summary: Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/getting-started-with-vercel.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "3f841606d8324b4f09e291604283d746538d7a06368d585d08446a9b3f81353b"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "c89b79bb2c639c01e065d79e8430a37e9ad354b8afdb3b0a1ff5b1d556164974"
 ---
 
 # Getting started with Vercel
@@ -33,16 +33,22 @@ Deploy your app on Vercel in three steps: install the CLI, add agent support if 
 - [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn?from=related&source_path=%2Fdocs%2Fgetting-started-with-vercel&source_site=vercel-docs&relationship=related) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
 - [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related&source_path=%2Fdocs%2Fgetting-started-with-vercel&source_site=vercel-docs&relationship=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
 - [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related&source_path=%2Fdocs%2Fgetting-started-with-vercel&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
-- [Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel?from=related&source_path=%2Fdocs%2Fgetting-started-with-vercel&source_site=vercel-docs&relationship=related) — Learn how to deploy a TanStack Start app to Vercel using the Nitro Vite plugin. Covers framework setup, Git and CLI depl
+- [How to Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel?from=related&source_path=%2Fdocs%2Fgetting-started-with-vercel&source_site=vercel-docs&relationship=related) — Deploy a TanStack Start app to Vercel with the Nitro Vite plugin. Covers Git and CLI deployment, Fluid compute defaults,
 - [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related&source_path=%2Fdocs%2Fgetting-started-with-vercel&source_site=vercel-docs&relationship=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
-- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fgetting-started-with-vercel&source_site=vercel-docs&relationship=related) — Learn how to create and manage deployments on Vercel.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fgetting-started-with-vercel&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds?from=related&source_path=%2Fdocs%2Fgetting-started-with-vercel&source_site=vercel-docs&relationship=related) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fgetting-started-with-vercel&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fgetting-started-with-vercel&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [Working with domains](https://vercel.com/docs/domains/working-with-domains?from=related&source_path=%2Fdocs%2Fgetting-started-with-vercel&source_site=vercel-docs&relationship=related) — Learn how domains work and the options Vercel provides for managing them.
+- [Incremental Migration to Vercel](https://vercel.com/docs/incremental-migration?from=related&source_path=%2Fdocs%2Fgetting-started-with-vercel&source_site=vercel-docs&relationship=related) — Learn how to migrate your app or website to Vercel with minimal risk and high impact.
 
 Full cross-link map for this page: [/docs/getting-started-with-vercel.graph.md](/docs/getting-started-with-vercel.graph.md?from=related&source_path=%2Fdocs%2Fgetting-started-with-vercel&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
+
+**Agent prompt**
+
+```text
+Help me get set up with Vercel. Based on my project, do the following: 1. Install the Vercel CLI globally (npm i -g vercel), log in with `vercel login`, and deploy my project with `vercel`. 2. If I'm using Claude Code or Cursor, install the Vercel Plugin with `npx plugins add vercel/vercel-plugin`. If I'm using another AI coding agent (Cline, Windsurf, GitHub Copilot, etc.), install Vercel Skills instead with `npx skills add vercel-labs/agent-skills`. 3. After deploying, suggest relevant next steps based on my project, such as adding a custom domain, setting up environment variables, or configuring Vercel Functions.
+```
 
 ## Prerequisites
 

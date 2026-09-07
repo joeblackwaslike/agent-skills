@@ -3,7 +3,7 @@ title: Reference-to-Video Generation
 product: vercel
 url: /docs/ai-gateway/modalities/video-generation/reference-to-video
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/video-generation/reference-to-video"
-last_updated: 2026-08-24
+last_updated: 2026-08-27
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/modalities/video-generation
@@ -17,8 +17,8 @@ related:
 summary: Generate videos featuring characters from reference images or videos using Google Veo, KlingAI, Wan, Seedance, or Grok Imagine Video through AI...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/reference-to-video.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "fc603276bf2028c0fedf74a07f2efb348081b62259421bf5d5276cb1f1136dbb"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "7c16cc26b8fe3fb1bd0d8d879ab73bf40c6a17e7a8cbff6aa3c7efba771fa5f8"
 ---
 
 # Reference-to-Video Generation

@@ -16,8 +16,8 @@ related:
 summary: Configure popular AI coding agents to use the AI Gateway for unified model access and spend monitoring.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "9a5ee56a7cca03a1d833deca1910e12f176b802a2536e51a5b776d5f0c46196d"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "8f7d8ea70e774437a4689ca7ed8aea606d998c1893ff6d08a74c31c7c5072590"
 ---
 
 # Coding Agents
@@ -32,14 +32,14 @@ AI coding agents are transforming how developers write, debug, and refactor code
 
 - [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related)
 - [10x more capacity for Laguna S 2.1 on AI Gateway](https://vercel.com/changelog/10x-more-capacity-for-laguna-s-2-1-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related)
+- [Claude Fable 5.1 now available on AI Gateway](https://vercel.com/changelog/claude-fable-5-1-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related)
 - [DeepSeek V4 Flash now runs updated weights on AI Gateway](https://vercel.com/changelog/deepseek-v4-flash-now-runs-updated-weights-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related)
 - [DeepSeek V4 Flash Vision Experimental now available on AI Gateway](https://vercel.com/changelog/deepseek-v4-flash-with-vision-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related)
-- [DeepSeek V4 Pro now runs updated weights on AI Gateway](https://vercel.com/changelog/deepseek-v4-pro-now-runs-updated-weights-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related)
 - [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
 - [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
 - [Collaborating with Anthropic on Claude Sonnet 4.5 to power intelligent coding agents](https://vercel.com/blog/collaborating-with-anthropic-on-claude-sonnet-4-5?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related)
 - [Xcode](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related) — Use Xcode's coding assistant with the AI Gateway.
-- [Agent Resources](https://vercel.com/docs/agent-resources?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related) — Resources for building with AI on Vercel, including documentation access, MCP servers, and agent skills.
+- [Agent Resources](https://vercel.com/docs/agent-resources?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related) — Set up AI coding tools with Vercel documentation, reusable skills, and secure access to projects, deployments, and logs.
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents.graph.md](/docs/ai-gateway/coding-agents.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=graph)

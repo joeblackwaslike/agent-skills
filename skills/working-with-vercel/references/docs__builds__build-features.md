@@ -16,8 +16,8 @@ related:
 summary: "Learn how to customize your deployments using Vercel's build features."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/build-features.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "ca21be8a04eb63b037f00384ec2ae5d44a37446545adf21cc318aa9800753166"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "92f9f8487a53afe55322ad14231cd81518ddf7551ae742c47fbe8443d7246020"
 ---
 
 # Build Features for Customizing Deployments
@@ -33,8 +33,8 @@ Vercel provides the following features to customize your deployments:
 - [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-features&source_site=vercel-docs&relationship=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
 - [Deploying Bitbucket Projects with Vercel](https://vercel.com/docs/git/vercel-for-bitbucket?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-features&source_site=vercel-docs&relationship=related) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-features&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-features&source_site=vercel-docs&relationship=related) — Learn how to create and manage deployments on Vercel.
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-features&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-features&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
+- [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-features&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 
 Full cross-link map for this page: [/docs/builds/build-features.graph.md](/docs/builds/build-features.graph.md?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-features&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

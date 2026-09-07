@@ -13,13 +13,15 @@ related:
 summary: Learn how to use the Ruby runtime to compile Ruby Vercel Functions on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/ruby.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "8ee22b108363d2ef03e89cf444576e1d3c215bd12714396b2820116efa5c54cb"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "9c12463a875346fd2a3f29c7193072b41b610f854cfaa832d509b5d02093bff0"
 ---
 
 # Using the Ruby Runtime with Vercel Functions
 
 > **🔒 Permissions Required**: The Ruby runtime
+
+The Ruby runtime is used by Vercel to compile Ruby Vercel functions that define a singular HTTP handler from `.rb` files within an `/api` directory at your project's root.
 
 
 <!-- docsgraph:related -->
@@ -29,17 +31,14 @@ sha256: "8ee22b108363d2ef03e89cf444576e1d3c215bd12714396b2820116efa5c54cb"
 
 - [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fruby&source_site=vercel-docs&relationship=related) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
 - [Does Vercel support Ruby on Rails applications?](https://vercel.com/kb/guide/does-vercel-support-ruby-on-rails-applications?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fruby&source_site=vercel-docs&relationship=related) — Learn how you can use Ruby on Rails with your frontend on Vercel.
-- [Customizing Serverless Functions](https://vercel.com/blog/customizing-serverless-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fruby&source_site=vercel-docs&relationship=related)
 - [Configuring the Runtime for Vercel Functions](https://vercel.com/docs/functions/configuring-functions/runtime?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fruby&source_site=vercel-docs&relationship=related) — Learn how to configure the runtime for Vercel Functions.
 - [Using the Rust Runtime with Vercel functions](https://vercel.com/docs/functions/runtimes/rust?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fruby&source_site=vercel-docs&relationship=related) — Build fast, memory-safe serverless functions with Rust on Vercel.
 - [Using the Go Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/go?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fruby&source_site=vercel-docs&relationship=related) — Learn how to use the Go runtime to run Go APIs on Vercel.
+- [Using the Python Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/python?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fruby&source_site=vercel-docs&relationship=related) — Learn how to use the Python runtime to run Python applications on Vercel.
 - [Frameworks on Vercel](https://vercel.com/docs/frameworks?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fruby&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
-- [Build image overview](https://vercel.com/docs/builds/build-image?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fruby&source_site=vercel-docs&relationship=related) — Learn about the container image used for Vercel builds.
 
 Full cross-link map for this page: [/docs/functions/runtimes/ruby.graph.md](/docs/functions/runtimes/ruby.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fruby&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-The Ruby runtime is used by Vercel to compile Ruby Vercel functions that define a singular HTTP handler from `.rb` files within an `/api` directory at your project's root.
 
 Ruby files must have one of the following variables defined:
 

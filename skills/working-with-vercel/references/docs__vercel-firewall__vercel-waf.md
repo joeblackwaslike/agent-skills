@@ -16,13 +16,15 @@ related:
 summary: Learn how to secure your website with the Vercel Web Application Firewall (WAF)
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "8b2f4ff970d002cd732bf429c0b5cb7a51b486659d7f9f4dd18bf0fba8eee7c1"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "998b8f3c9e064e31de77919a96b28993ffc1bbb0848e07427159e1e3d9db9b1d"
 ---
 
 # Vercel WAF
 
 > **🔒 Permissions Required**: Vercel WAF
+
+The Vercel WAF, part of the [Firewall](/docs/vercel-firewall), provides security controls to [monitor](/docs/vercel-firewall/firewall-observability#traffic) and [control](/docs/vercel-firewall/firewall-observability#traffic) the internet traffic to your site through logging, blocking and challenging. When you apply a configuration change to the firewall, it takes effect globally within 300ms and can be instantly [rolled back](#instant-rollback) to prior configurations.
 
 
 <!-- docsgraph:related -->
@@ -45,8 +47,6 @@ sha256: "8b2f4ff970d002cd732bf429c0b5cb7a51b486659d7f9f4dd18bf0fba8eee7c1"
 
 Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf.graph.md](/docs/vercel-firewall/vercel-waf.graph.md?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-The Vercel WAF, part of the [Firewall](/docs/vercel-firewall), provides security controls to [monitor](/docs/vercel-firewall/firewall-observability#traffic) and [control](/docs/vercel-firewall/firewall-observability#traffic) the internet traffic to your site through logging, blocking and challenging. When you apply a configuration change to the firewall, it takes effect globally within 300ms and can be instantly [rolled back](#instant-rollback) to prior configurations.
 
 For billing details, review [Usage & Pricing for Vercel WAF](/docs/vercel-firewall/vercel-waf/usage-and-pricing).
 

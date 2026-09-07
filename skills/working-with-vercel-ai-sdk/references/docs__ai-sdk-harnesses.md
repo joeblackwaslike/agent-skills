@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "b0a3488961c928e8ce9d2715714ccd501dbb9028c81ded083171b232621c3feb"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "fb9ffa8ebd9e05c6e4af0cf4139b94bbb5be3b98b9f4abbec64c83bc2031123d"
 ---
 
 # AI SDK Harnesses
@@ -292,6 +292,7 @@ running established agent harnesses such as Claude Code, Codex, and Pi.
     - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
     - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
     - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)
+    - [ToolChoiceViolationError](/docs/reference/ai-sdk-errors/ai-tool-choice-violation-error)
     - [AI_TypeValidationError](/docs/reference/ai-sdk-errors/ai-type-validation-error)
     - [AI_UIMessageStreamError](/docs/reference/ai-sdk-errors/ai-ui-message-stream-error)
     - [AI_UnsupportedFunctionalityError](/docs/reference/ai-sdk-errors/ai-unsupported-functionality-error)

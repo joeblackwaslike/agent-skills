@@ -3,7 +3,7 @@ title: Frameworks and Adapters
 product: vercel
 url: /docs/connect/frameworks
 canonical_url: "https://vercel.com/docs/connect/frameworks"
-last_updated: 2018-10-20
+last_updated: 2026-08-28
 type: conceptual
 prerequisites:
   - /docs/connect
@@ -16,13 +16,17 @@ related:
 summary: Use Vercel Connect with AI SDK, MCP clients, eve, Chat SDK, Better Auth, and Auth.js.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/frameworks.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "197c8e1829c0b85b6ac90364eba31035cde8b723fd0aba0708cd78604ccf9889"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "782dc5657815bd948890e708e06362cd13ee1ab96abd375931e6398c5e60ffff"
 ---
 
 # Frameworks and Adapters
 
 > **🔒 Permissions Required**: Vercel Connect
+
+Vercel Connect integrations adapt connector tokens, consent, and webhook
+verification to the frameworks you already use. Choose an integration based on
+the task your application needs to perform.
 
 
 <!-- docsgraph:related -->
@@ -41,10 +45,6 @@ sha256: "197c8e1829c0b85b6ac90364eba31035cde8b723fd0aba0708cd78604ccf9889"
 
 Full cross-link map for this page: [/docs/connect/frameworks.graph.md](/docs/connect/frameworks.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Vercel Connect integrations adapt connector tokens, consent, and webhook
-verification to the frameworks you already use. Choose an integration based on
-the task your application needs to perform.
 
 ## Choose an integration
 

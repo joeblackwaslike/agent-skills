@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets.md"
-fetched_at: "2026-08-31T10:43:01.027Z"
-sha256: "e9409d8a35a72479301d9691a11a10fc8c76a2a8037cb039c4cd4e6252754848"
+fetched_at: "2026-09-07T09:04:02.451Z"
+sha256: "d1a2dc1978e2a6cbd9a6abf3d144c985ae33dee61db0599fbb915864c09945a3"
 ---
 
 You can create branch or tag rulesets to control how users can interact with selected branches and tags in a repository. You can also create push rulesets to block pushes to a private or internal repository and that repository's entire fork network.
@@ -261,7 +261,7 @@ If a ruleset workflow runs in "Evaluate" mode and passes, you can set the rulese
 
 If you open a pull request before you create the ruleset in "Evaluate" mode, you can still merge the pull request since the ruleset is not enforced.
 
-For more information about enforcement statuses, see [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/creating-rulesets-for-a-repository#about-using-enforcement-statuses).
+For more information about enforcement statuses, see [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/creating-rulesets-for-a-repository#using-ruleset-enforcement-statuses).
 
 ### Supported event triggers
 

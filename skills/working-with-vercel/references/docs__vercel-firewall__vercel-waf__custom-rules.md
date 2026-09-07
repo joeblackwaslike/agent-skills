@@ -3,7 +3,7 @@ title: WAF Custom Rules
 product: vercel
 url: /docs/vercel-firewall/vercel-waf/custom-rules
 canonical_url: "https://vercel.com/docs/vercel-firewall/vercel-waf/custom-rules"
-last_updated: 2026-07-17
+last_updated: 2026-08-28
 type: how-to
 prerequisites:
   - /docs/vercel-firewall/vercel-waf
@@ -17,8 +17,8 @@ related:
 summary: Learn how to add and manage custom rules to configure the Vercel Web Application Firewall (WAF).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/custom-rules.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "bf06be60389686f2b5a9c0e9403bf24120a52f609653eeb85606f2ba07e9fe23"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "8cbada0ad18ca6b1adca0a7a07037d3afb176d13d421a06ad675eef0b9d4e936"
 ---
 
 # WAF Custom Rules
@@ -31,6 +31,7 @@ You can [configure](#custom-rule-configuration) specific rules to log, deny, cha
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Protect Sensitive Routes with Vercel WAF: Challenge and Deny Rule Recipes](https://vercel.com/kb/guide/suspicious-traffic-in-specific-countries?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fcustom-rules&source_site=vercel-docs&relationship=related) — Use Vercel WAF custom rules to block or challenge unwanted traffic by country, ASN, IP address, user agent, path, or coo
 - [Create custom WAF rules directly from the Vercel Firewall tab](https://vercel.com/changelog/create-custom-waf-rules-directly-from-the-vercel-firewall-tab?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fcustom-rules&source_site=vercel-docs&relationship=related)
 - [Create Vercel Firewall rules with natural language](https://vercel.com/changelog/create-vercel-waf-custom-rules-using-natural-language?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fcustom-rules&source_site=vercel-docs&relationship=related)
 - [Manage Vercel Firewall in the CLI](https://vercel.com/changelog/manage-vercel-firewall-in-the-cli?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fcustom-rules&source_site=vercel-docs&relationship=related)
@@ -38,7 +39,6 @@ You can [configure](#custom-rule-configuration) specific rules to log, deny, cha
 - [New one-click AI bot managed ruleset](https://vercel.com/changelog/new-one-click-ai-bot-managed-ruleset?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fcustom-rules&source_site=vercel-docs&relationship=related)
 - [Avoiding duplicate-content SEO with vercel.app URLs and custom domains](https://vercel.com/kb/guide/avoiding-duplicate-content-with-vercel-app-urls?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fcustom-rules&source_site=vercel-docs&relationship=related) — Discover why search engines may treat your vercel.app URL and custom domain as separate pages, and how to consolidate ra
 - [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fcustom-rules&source_site=vercel-docs&relationship=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
-- [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fcustom-rules&source_site=vercel-docs&relationship=related) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
 - [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fcustom-rules&source_site=vercel-docs&relationship=related) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
 - [How to resolve IP blocking issues ](https://vercel.com/kb/guide/how-to-resolve-ip-blocking-issues?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fcustom-rules&source_site=vercel-docs&relationship=related) — Learn to troubleshoot IP blocking issues for both shared and personal networks.
 - [Rate Limiting SDK](https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting-sdk?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fcustom-rules&source_site=vercel-docs&relationship=related) — Learn how to configure a custom rule with rate limit in your code.

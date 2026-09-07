@@ -16,8 +16,8 @@ related:
 summary: Learn how to configure the runtime for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/runtime.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "ea4098c18583a37eb1d57cca6d6ef24bc4d1d80252b701afce3de3c8a2d7f6a3"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "b2146c5d6d2c6dcd513a20e3a4ea9a47339bc820d5f37f6a67ca7e4475c0a1bb"
 ---
 
 # Configuring the Runtime for Vercel Functions
@@ -30,7 +30,6 @@ The runtime of your function determines the environment in which your function w
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Customizing Serverless Functions](https://vercel.com/blog/customizing-serverless-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fruntime&source_site=vercel-docs&relationship=related)
 - [Using the Ruby Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/ruby?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fruntime&source_site=vercel-docs&relationship=related) — Learn how to use the Ruby runtime to compile Ruby Vercel Functions on Vercel.
 - [Using the Go Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/go?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fruntime&source_site=vercel-docs&relationship=related) — Learn how to use the Go runtime to run Go APIs on Vercel.
 - [Using the Node.js Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/node-js?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fruntime&source_site=vercel-docs&relationship=related) — Learn how to use the Node.js runtime to create functions and deploy Node.js servers on Vercel.
@@ -45,6 +44,9 @@ Full cross-link map for this page: [/docs/functions/configuring-functions/runtim
 By default, a function with no additional configuration will be deployed as a Vercel Function on the Node.js runtime.
 
 > For \['nextjs']:
+
+> **💡 Note:** To stream responses you must use Route Handlers in the App Router, even if the
+> rest of your app uses the Pages Router.
 
 ```ts v0="build" filename="app/api/hello/route.ts" framework=nextjs
 export function GET(request: Request) {

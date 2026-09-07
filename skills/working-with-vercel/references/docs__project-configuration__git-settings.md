@@ -15,8 +15,8 @@ related:
 summary: Use the project settings to manage the Git connection, enable Git LFS, and create deploy hooks.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/git-settings.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "700134d01c8c570d80c5c42589a1a17f11e588a2a2c00c155e25b3e4493e262c"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "f4a513fa65f552241215509b1fe596d7455f32d3f070d1781cdf4de11766e033"
 ---
 
 # Git settings
@@ -32,9 +32,8 @@ Once you have [connected a Git repository](/docs/git#deploying-a-git-repository)
 - [Deployments can now require cryptographically-verified commits](https://vercel.com/changelog/deployments-can-now-require-cryptographically-verified-commits?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgit-settings&source_site=vercel-docs&relationship=related)
 - [Edit Git settings for all projects in a repo](https://vercel.com/changelog/edit-git-settings-for-all-projects-in-a-repo?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgit-settings&source_site=vercel-docs&relationship=related)
 - [New Git Integration Settings](https://vercel.com/blog/new-git-integration-settings?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgit-settings&source_site=vercel-docs&relationship=related)
-- [How can I use GitLab Pipelines with Vercel?](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgit-settings&source_site=vercel-docs&relationship=related) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
-- [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgit-settings&source_site=vercel-docs&relationship=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
 - [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgit-settings&source_site=vercel-docs&relationship=related) — Learn how to configure Git for your project through vercel.json or vercel.ts.
+- [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgit-settings&source_site=vercel-docs&relationship=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
 - [vercel git](https://vercel.com/docs/cli/git?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgit-settings&source_site=vercel-docs&relationship=related) — Learn how to manage your Git provider connections using the vercel git CLI command.
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgit-settings&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 - [Troubleshoot project collaboration](https://vercel.com/docs/deployments/troubleshoot-project-collaboration?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgit-settings&source_site=vercel-docs&relationship=related) — Learn about common reasons for deployment issues related to team member requirements and how to resolve them.

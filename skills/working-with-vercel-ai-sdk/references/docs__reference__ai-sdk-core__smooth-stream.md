@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/smooth-stream.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "900f7e91419365f6c84094c3b385a89fad1a492a1cf55060d3157c7f740f96e4"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "7f914ea66b918b7800a57c9876a2f16c80e3ab3b67f7d7630370df5511faf7b5"
 ---
 
 # `smoothStream()`
@@ -39,14 +39,14 @@ const result = streamText({
       type: 'number | null',
       isOptional: true,
       description:
-        'The delay in milliseconds between outputting each chunk. Defaults to 10ms. Set to `null` to disable delays.',
+        'The delay in milliseconds between outputting each chunk. Defaults to 10ms. Set to `null` to disable delays. The delay is skipped while the document is hidden (e.g. browser background tabs), where timer throttling would otherwise stall the stream.',
     },
     {
       name: 'chunking',
       type: '"word" | "line" | RegExp | Intl.Segmenter | (buffer: string) => string | undefined | null',
       isOptional: true,
       description:
-        'Controls how text and reasoning content is chunked for streaming. Use "word" to stream word by word (default), "line" to stream line by line, an Intl.Segmenter for locale-aware word segmentation (recommended for CJK languages), or provide a custom callback or RegExp pattern for custom chunking.',
+        'Controls how text and reasoning content is chunked for streaming. Use "word" to stream word by word (default), "line" to stream line by line, an Intl.Segmenter for locale-aware word segmentation (recommended for CJK languages), or provide a custom callback or RegExp pattern that does not match the empty string for custom chunking.',
     },
   ]}
 />
@@ -103,7 +103,9 @@ const result = streamText({
 
 #### Regex based chunking
 
-To use regex based chunking, pass a `RegExp` to the `chunking` option.
+To use regex based chunking, pass a `RegExp` to the `chunking` option. Global
+and sticky expressions are supported. The expression must not match the empty
+string.
 
 ```ts
 // To split on underscores:

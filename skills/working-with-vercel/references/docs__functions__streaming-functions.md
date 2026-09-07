@@ -3,7 +3,7 @@ title: Streaming
 product: vercel
 url: /docs/functions/streaming-functions
 canonical_url: "https://vercel.com/docs/functions/streaming-functions"
-last_updated: 2026-08-11
+last_updated: 2026-09-01
 type: how-to
 prerequisites:
   - /docs/functions
@@ -16,8 +16,8 @@ related:
 summary: Learn how to stream responses from Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/streaming-functions.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "8d7402ae6e56f6fab540f008f90a1dff21ee0f3da3076494c0b564a2f9c0af75"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "64d7cff60c5faac115f4d94805c4831a45e6efea06d4e125d71433a198b384c8"
 ---
 
 # Streaming
@@ -46,7 +46,7 @@ AI providers can be slow when producing responses, but many make their responses
 Full cross-link map for this page: [/docs/functions/streaming-functions.graph.md](/docs/functions/streaming-functions.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fstreaming-functions&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-**Vercel recommends using [Vercel's AI SDK](https://sdk.vercel.ai/docs) to stream responses from LLMs and AI APIs**. It reduces the boilerplate necessary for streaming responses from AI providers and allows you to change AI providers with a few lines of code, rather than rewriting your entire application.
+**Vercel recommends using [Vercel's AI SDK](https://ai-sdk.dev/docs) to stream responses from LLMs and AI APIs**. It reduces the boilerplate necessary for streaming responses from AI providers and allows you to change AI providers with a few lines of code, rather than rewriting your entire application.
 
 ## Getting started
 
@@ -56,7 +56,7 @@ The following example shows how to send a message to one of OpenAI's models and 
 
 1. You should understand how to setup a Vercel Function. See the [Functions quickstart](/docs/functions/quickstart) for more information.
 2. You should be using Node.js 20 or later and the [latest version](/docs/cli#updating-vercel-cli) of the Vercel CLI.
-3. You should copy your OpenAI API key in the `.env.local` file with name `OPENAI_API_KEY`. See the [AI SDK docs](https://sdk.vercel.ai/docs/getting-started#configure-openai-api-key) for more information on how to do this.
+3. You should copy your OpenAI API key in the `.env.local` file with name `OPENAI_API_KEY`. See the [AI SDK docs](https://ai-sdk.dev/docs/getting-started#configure-openai-api-key) for more information on how to do this.
 4. Install the `ai` package:
    <CodeBlock>
      <Code tab="pnpm">
@@ -222,7 +222,7 @@ When your function is streaming, it will be able to take advantage of the extend
 ## More resources
 
 - [What is streaming?](/kb/guide/what-is-streaming)
-- [AI SDK](https://sdk.vercel.ai/docs/getting-started)
+- [AI SDK](https://ai-sdk.dev/docs/getting-started)
 - [Vercel Functions](/docs/functions)
 - [Fluid compute](/docs/fluid-compute)
 - [Streaming and SEO: Does streaming affect SEO?](/kb/guide/does-streaming-affect-seo)

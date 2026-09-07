@@ -15,13 +15,15 @@ related:
 summary: Learn about the different team level roles and the permissions they provide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac/access-roles/team-level-roles.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "0f6448651952abf979a8a80d076524d570a08e0a87697ecd74d24e3190b8b520"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "a2ab42a1dcf2331e58bcc414094194423fc8611808ba3213c4e55afd3276f1fd"
 ---
 
 # Team Level Roles
 
 > **🔒 Permissions Required**: Team level roles
+
+Team level roles are designed to provide a comprehensive level of control and access to the team as a whole. These roles are assigned to individuals and are applicable to all projects within the team. This allows for a centralized level of control and access, while still maintaining the security and integrity of the team as a whole.
 
 
 <!-- docsgraph:related -->
@@ -41,8 +43,6 @@ sha256: "0f6448651952abf979a8a80d076524d570a08e0a87697ecd74d24e3190b8b520"
 
 Full cross-link map for this page: [/docs/rbac/access-roles/team-level-roles.graph.md](/docs/rbac/access-roles/team-level-roles.graph.md?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles%2Fteam-level-roles&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Team level roles are designed to provide a comprehensive level of control and access to the team as a whole. These roles are assigned to individuals and are applicable to all projects within the team. This allows for a centralized level of control and access, while still maintaining the security and integrity of the team as a whole.
 
 > **💡 Note:** While the [Enterprise](/docs/plans/enterprise) plan supports all the below
 > roles, the [Pro](/docs/plans/pro-plan) plan does not support the

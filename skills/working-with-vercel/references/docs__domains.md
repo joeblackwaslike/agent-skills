@@ -16,8 +16,8 @@ related:
 summary: Learn the fundamentals of how domains, DNS, and nameservers work on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "cd807cf3013439983c4b4b17bed57ad216fb9cf510395728a9f8be1cad05b4ab"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "b445e58335a2a2b62ba6b6cdd25c23ccbeaa2d7841c8b29bc30f2855b76f2e66"
 ---
 
 # Domains Overview
@@ -35,11 +35,11 @@ A **domain** is a user-friendly way of referring to the address access a website
 - [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related&source_path=%2Fdocs%2Fdomains&source_site=vercel-docs&relationship=related) — Learn how to debug how Vercel decides where to route your request
 - [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel?from=related&source_path=%2Fdocs%2Fdomains&source_site=vercel-docs&relationship=related) — Migrate containers from AWS to Vercel: deploy with Dockerfile.vercel, keep RDS, S3, and SQS in AWS over OIDC, and cut ov
 - [Why am I no longer receiving email after adding my domain to Vercel?](https://vercel.com/kb/guide/why-has-email-stopped-working?from=related&source_path=%2Fdocs%2Fdomains&source_site=vercel-docs&relationship=related) — Fix email that stopped working after adding your domain to Vercel, with a concrete MX record table and the DNS preset cl
-- [vercel domains](https://vercel.com/docs/cli/domains?from=related&source_path=%2Fdocs%2Fdomains&source_site=vercel-docs&relationship=related) — Learn how to buy, sell, transfer, and manage your domains using the vercel domains CLI command.
+- [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains?from=related&source_path=%2Fdocs%2Fdomains&source_site=vercel-docs&relationship=related) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
 - [Get a Domain's configuration](https://vercel.com/docs/rest-api/domains/get-a-domain-s-configuration?from=related&source_path=%2Fdocs%2Fdomains&source_site=vercel-docs&relationship=related) — GET /v6/domains/{domain}/config — Get a Domain's configuration.
 - [List all the domains](https://vercel.com/docs/rest-api/domains/list-all-the-domains?from=related&source_path=%2Fdocs%2Fdomains&source_site=vercel-docs&relationship=related) — GET /v5/domains — Retrieves a list of domains registered for the authenticated user or team. By default it returns the l
-- [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference?from=related&source_path=%2Fdocs%2Fdomains&source_site=vercel-docs&relationship=related) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
 - [Tools](https://vercel.com/docs/agent-resources/vercel-mcp/tools?from=related&source_path=%2Fdocs%2Fdomains&source_site=vercel-docs&relationship=related) — Available tools in Vercel MCP for searching docs, managing teams, projects, deployments, Web Analytics, runtime logs and
+- [Audit Logs](https://vercel.com/docs/audit-log?from=related&source_path=%2Fdocs%2Fdomains&source_site=vercel-docs&relationship=related) — Learn how to track and analyze your team members' activities.
 
 Full cross-link map for this page: [/docs/domains.graph.md](/docs/domains.graph.md?from=related&source_path=%2Fdocs%2Fdomains&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/openai-compatible-providers/heroku.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "8ff801516765d643b4db7b34aacb606b0a5542ea41aaa89ecbd90f4b6ca4d166"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "9172c0d5daa2e7fe4eb92bf1f29a4dd54356c7ba021b269ca6a1ae2116a3654c"
 ---
 
 # Heroku Provider
@@ -118,6 +118,7 @@ Heroku language models also support structured data generation with [`Output`](/
 - [Clarifai](/providers/openai-compatible-providers/clarifai)
 - [Heroku](/providers/openai-compatible-providers/heroku)
 - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)
+- [Synthorai](/providers/openai-compatible-providers/synthorai)
 
 
 [Full Sitemap](/sitemap.md)

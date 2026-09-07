@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "211d447b760541ceae44fb807f533c5c8f3f7c39168322e024b917148fdcf50f"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "b302f87ac31612a865d1606888c6599dedcf6021ac0e9c165e964cb0a75400ac"
 ---
 
 # AI_TooManyEmbeddingValuesForCallError
@@ -62,6 +62,7 @@ if (TooManyEmbeddingValuesForCallError.isInstance(error)) {
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
 - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
 - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)
+- [ToolChoiceViolationError](/docs/reference/ai-sdk-errors/ai-tool-choice-violation-error)
 - [AI_TypeValidationError](/docs/reference/ai-sdk-errors/ai-type-validation-error)
 - [AI_UIMessageStreamError](/docs/reference/ai-sdk-errors/ai-ui-message-stream-error)
 - [AI_UnsupportedFunctionalityError](/docs/reference/ai-sdk-errors/ai-unsupported-functionality-error)

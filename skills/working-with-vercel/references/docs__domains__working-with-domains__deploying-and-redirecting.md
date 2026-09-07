@@ -17,13 +17,15 @@ related:
 summary: Learn how to deploy your domains and set up domain redirects with this guide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "79d1f546f3c6d7a1c21d3952e3b1585903b4919de4596b8311b87e3c5c5b235c"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "9ac3e06b32207d329df6ecee0584f24e29fc1729193cb0810b9d3409d3e8e45a"
 ---
 
 # Deploying & Redirecting Domains
 
 ## Deploying your Domain
+
+Once the domain has been added to your project and configured, it is **automatically applied to your latest production deployment**.
 
 
 <!-- docsgraph:related -->
@@ -32,7 +34,6 @@ sha256: "79d1f546f3c6d7a1c21d3952e3b1585903b4919de4596b8311b87e3c5c5b235c"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fdeploying-and-redirecting&source_site=vercel-docs&relationship=related) — Point your apex domain to Vercel with an A record \\(76.76.21.21 or your domain card's value\\), pair it with a www CNAME,
-- [Redirecting Domains](https://vercel.com/blog/redirecting-domains?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fdeploying-and-redirecting&source_site=vercel-docs&relationship=related)
 - [How do I add a custom domain to my Vercel project?](https://vercel.com/kb/guide/how-do-i-add-a-custom-domain-to-my-vercel-project?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fdeploying-and-redirecting&source_site=vercel-docs&relationship=related) — Learn how to add a custom domain to your Vercel project.
 - [Why do my Vercel deployments have multiple domains?](https://vercel.com/kb/guide/why-do-my-vercel-deployments-have-multiple-domains?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fdeploying-and-redirecting&source_site=vercel-docs&relationship=related) — Learn about why Vercel auto generates URLs for your deployments.
 - [Transferring Domains to Vercel](https://vercel.com/kb/guide/transferring-domains-to-vercel?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fdeploying-and-redirecting&source_site=vercel-docs&relationship=related) — How to transfer your domain to Vercel.
@@ -45,8 +46,6 @@ sha256: "79d1f546f3c6d7a1c21d3952e3b1585903b4919de4596b8311b87e3c5c5b235c"
 
 Full cross-link map for this page: [/docs/domains/working-with-domains/deploying-and-redirecting.graph.md](/docs/domains/working-with-domains/deploying-and-redirecting.graph.md?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fdeploying-and-redirecting&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Once the domain has been added to your project and configured, it is **automatically applied to your latest production deployment**.
 
 > **💡 Note:** The [first deployment](/docs/deployments/environments#first-deployment) of a
 > new project is always a production deployment. Vercel then assigns your custom

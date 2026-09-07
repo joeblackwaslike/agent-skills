@@ -13,8 +13,8 @@ related:
 summary: Learn how to emit application-specific metrics from Vercel Functions and analyze them in Observability.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/observability/custom-metrics.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "1fb4dc2bd4db86c266168617ec81d3284064b32facd4569f252f6d2084270850"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "90e8070160a9b331dc8f247ffa9ad728a06f383a29919274f84b8a8bc09482de"
 ---
 
 # Emit Custom Metrics from Vercel Functions
@@ -35,7 +35,7 @@ Custom metrics let you record application-specific numeric values from your Verc
 - [Legacy Metrics](https://vercel.com/docs/pricing/legacy?from=related&source_path=%2Fdocs%2Fobservability%2Fcustom-metrics&source_site=vercel-docs&relationship=related) — Learn about legacy usage metrics, including Bandwidth, Requests, Vercel Function Invocations, and Vercel Function Execut
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fobservability%2Fcustom-metrics&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fobservability%2Fcustom-metrics&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
-- [Vercel Functions](https://vercel.com/docs/functions?from=related&source_path=%2Fdocs%2Fobservability%2Fcustom-metrics&source_site=vercel-docs&relationship=related) — Run server-side code on Vercel without managing a server.
+- [Vercel Functions](https://vercel.com/docs/functions?from=related&source_path=%2Fdocs%2Fobservability%2Fcustom-metrics&source_site=vercel-docs&relationship=related) — Build API routes, webhooks, and agent request handlers with Vercel Functions, then test and debug them with Vercel CLI.
 
 Full cross-link map for this page: [/docs/observability/custom-metrics.graph.md](/docs/observability/custom-metrics.graph.md?from=related&source_path=%2Fdocs%2Fobservability%2Fcustom-metrics&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

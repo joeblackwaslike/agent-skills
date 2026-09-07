@@ -3,7 +3,7 @@ title: Managing Code Reviews
 product: vercel
 url: /docs/agent/pr-review/usage
 canonical_url: "https://vercel.com/docs/agent/pr-review/usage"
-last_updated: 2026-08-19
+last_updated: 2026-08-28
 type: integration
 prerequisites:
   - /docs/agent/pr-review
@@ -14,8 +14,8 @@ related:
 summary: Customize which repositories get reviewed and track your review metrics and spending.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/pr-review/usage.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "ac990b1feb7bc9910c2991578ef72f3a411bc3633bc43da03bd890f25d00257f"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "741f07217ad3173d29087749d6e4c7f9bca3c4d2b50f85400a7da05472b20448"
 ---
 
 # Managing Code Reviews
@@ -37,9 +37,9 @@ Once you've [set up Code Review](/docs/agent/pr-review#how-to-set-up-code-review
 - [Introducing Vercel for Slack](https://vercel.com/blog/introducing-vercel-for-slack?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related)
 - [Automatic build fix suggestions with Vercel Agent](https://vercel.com/changelog/automatic-build-fix-suggestions-with-vercel-agent?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related)
 - [Installation](https://vercel.com/docs/agent/installation?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related) — Let AI automatically install Web Analytics and Speed Insights in your app
-- [Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related) — Monitor AI Gateway requests and manage spend: observability, custom reporting, usage and billing APIs, and spending budg
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Investigation](https://vercel.com/docs/agent/investigation?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related) — Let AI investigate your error alerts to help you debug faster
+- [Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related) — Monitor AI Gateway requests and manage spend: observability, custom reporting, usage and billing APIs, and spending budg
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 
 Full cross-link map for this page: [/docs/agent/pr-review/usage.graph.md](/docs/agent/pr-review/usage.graph.md?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

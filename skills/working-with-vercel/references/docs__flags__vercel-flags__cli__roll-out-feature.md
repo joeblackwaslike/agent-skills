@@ -13,8 +13,8 @@ related:
 summary: Create a feature flag, wire it into your application with the Flags SDK, and start a staged rollout using the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/cli/roll-out-feature.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "0ad44f474b51246b95fdbdcd7c8f0597ea9644964032287ea681e87480bcbc7b"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "71624e10b6db683d4f43d8a9d3f6d5426a51448dacb531da176aea401075c87d"
 ---
 
 # Rolling out a new feature
@@ -31,11 +31,12 @@ This workflow creates a Boolean feature flag, adds the entity context needed for
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Froll-out-feature&source_site=vercel-docs&relationship=related)
 - [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Froll-out-feature&source_site=vercel-docs&relationship=related) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Froll-out-feature&source_site=vercel-docs&relationship=related)
+- [Introducing feature flag management from the Vercel Toolbar](https://vercel.com/blog/toolbar-feature-flags?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Froll-out-feature&source_site=vercel-docs&relationship=related)
 - [vercel flags](https://vercel.com/docs/cli/flags?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Froll-out-feature&source_site=vercel-docs&relationship=related) — Learn how to manage feature flags for your Vercel project using the vercel flags CLI command.
-- [Feature Flag Configuration](https://vercel.com/docs/flags/vercel-flags/dashboard/feature-flag?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Froll-out-feature&source_site=vercel-docs&relationship=related) — Learn how to configure individual feature flags in the Vercel Dashboard.
 - [Cleaning up after a full rollout](https://vercel.com/docs/flags/vercel-flags/cli/clean-up-after-rollout?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Froll-out-feature&source_site=vercel-docs&relationship=related) — Audit active flags, remove a fully rolled-out flag from your codebase, and archive it using the Vercel CLI.
 - [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Froll-out-feature&source_site=vercel-docs&relationship=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
 - [Running an A/B test](https://vercel.com/docs/flags/vercel-flags/cli/run-ab-test?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Froll-out-feature&source_site=vercel-docs&relationship=related) — Set up an A/B test with a feature flag, track results through Web Analytics, and clean up afterward using the Vercel CLI
+- [Draft Flags](https://vercel.com/docs/flags/vercel-flags/dashboard/drafts?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Froll-out-feature&source_site=vercel-docs&relationship=related) — Learn how draft flags work and how to promote them to Vercel Flags.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/cli/roll-out-feature.graph.md](/docs/flags/vercel-flags/cli/roll-out-feature.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Froll-out-feature&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

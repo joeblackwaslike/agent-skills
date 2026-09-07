@@ -13,8 +13,8 @@ related:
 summary: Stream responses token by token using the OpenResponses API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/streaming.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "1ab4410254cc36d27724069fcf171249f2b67d5da81783106bc8c8e4897e455f"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "f9666b2bd2a84867f1c63c6373a237018c2c4162f4835b623aac6637426d924b"
 ---
 
 # Streaming
@@ -31,8 +31,8 @@ The [OpenResponses API](/docs/ai-gateway/sdks-and-apis/openresponses) supports s
 - [Streaming responses from LLMs](https://vercel.com/kb/guide/streaming-from-llm?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Fstreaming&source_site=vercel-docs&relationship=related) — Learn how to use the AI SDK to stream LLM responses.
 - [Streaming in web applications](https://vercel.com/kb/guide/what-is-streaming?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Fstreaming&source_site=vercel-docs&relationship=related) — Learn how streaming works in web applications. Explore benefits, use cases, and implementation details with Vercel Funct
 - [An Introduction to Streaming on the Web](https://vercel.com/blog/an-introduction-to-streaming-on-the-web?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Fstreaming&source_site=vercel-docs&relationship=related)
-- [Processing Data Chunks](https://vercel.com/kb/guide/processing-data-chunks?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Fstreaming&source_site=vercel-docs&relationship=related) — Learn how to create an API endpoint that processes data chunks.
 - [Streaming](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/streaming?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Fstreaming&source_site=vercel-docs&relationship=related) — Stream Anthropic Messages API responses token by token as they are generated.
+- [Processing Data Chunks](https://vercel.com/kb/guide/processing-data-chunks?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Fstreaming&source_site=vercel-docs&relationship=related) — Learn how to create an API endpoint that processes data chunks.
 - [Streaming](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/streaming?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Fstreaming&source_site=vercel-docs&relationship=related) — Stream OpenAI Chat Completions responses token by token as they are generated.
 - [Streaming](https://vercel.com/docs/functions/streaming-functions?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Fstreaming&source_site=vercel-docs&relationship=related) — Learn how to stream responses from Vercel Functions.
 - [OpenAI Responses API](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Fstreaming&source_site=vercel-docs&relationship=related) — Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported
@@ -40,7 +40,7 @@ The [OpenResponses API](/docs/ai-gateway/sdks-and-apis/openresponses) supports s
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openresponses/streaming.graph.md](/docs/ai-gateway/sdks-and-apis/openresponses/streaming.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Fstreaming&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-#### \['cURL'
+#### cURL
 
 ```bash filename="stream.sh"
 curl -X POST "https://ai-gateway.vercel.sh/v1/responses" \
@@ -59,7 +59,7 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/responses" \
   }'
 ```
 
-#### 'TypeScript'
+#### TypeScript
 
 ```typescript filename="stream.ts"
 const apiKey = process.env.AI_GATEWAY_API_KEY;
@@ -111,7 +111,7 @@ while (true) {
 }
 ```
 
-#### 'Python']
+#### Python
 
 ```python filename="stream.py"
 import os

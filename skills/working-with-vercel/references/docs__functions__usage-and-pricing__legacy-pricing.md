@@ -17,17 +17,19 @@ related:
 summary: Learn about legacy usage and pricing for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "64057bcba66c802d98fd855bf57046fb023a31973c2071470e6c539a5f150aa5"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "925b5809992cf102f42520981a8b18e2fcae2401e3fb2ad7e932147c4c584c5b"
 ---
 
 # Legacy Usage & Pricing for Functions
 
 > **💡 Note:** **Legacy Billing Model**: This page describes the legacy billing model and
-> relates to functions which  use Fluid Compute. All new projects
+> relates to functions which **do not** use Fluid Compute. All new projects
 > use [Fluid Compute](/docs/fluid-compute) by default, which bills separately
 > for active CPU time and provisioned memory time for more cost-effective and
 > transparent pricing.
+
+Functions using the Node.js runtime are measured in [GB-hours](/docs/pricing/manage-and-optimize-usage#execution), which is the [memory allocated](/docs/functions/configuring-functions/memory) for each Function in GB, multiplied by the time in hours they were running. For example, a function [configured](/docs/functions/configuring-functions/memory) to use 3GB of memory that executes for 1 second, would be billed at 3 GB-s, requiring 1,200 executions to reach a full GB-Hr.
 
 
 <!-- docsgraph:related -->
@@ -46,15 +48,13 @@ sha256: "64057bcba66c802d98fd855bf57046fb023a31973c2071470e6c539a5f150aa5"
 Full cross-link map for this page: [/docs/functions/usage-and-pricing/legacy-pricing.graph.md](/docs/functions/usage-and-pricing/legacy-pricing.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fusage-and-pricing%2Flegacy-pricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-Functions using the Node.js runtime are measured in [GB-hours](/docs/pricing/manage-and-optimize-usage#execution), which is the [memory allocated](/docs/functions/configuring-functions/memory) for each Function in GB, multiplied by the time in hours they were running. For example, a function [configured](/docs/functions/configuring-functions/memory) to use 3GB of memory that executes for 1 second, would be billed at 3 GB-s, requiring 1,200 executions to reach a full GB-Hr.
-
 A function can use up to 50 ms of CPU time per execution unit. If a function uses more than 50 ms, it will be divided into multiple 50 ms units for billing purposes.
 
 See [viewing function usage](#viewing-function-usage) for more information on how to track your usage.
 
 ## Pricing
 
-> **💡 Note:** This information relates to functions which  use Fluid Compute.
+> **💡 Note:** This information relates to functions which **do not** use Fluid Compute.
 > Fluid Compute is the default for all new functions. To learn about pricing for
 > functions that use Fluid Compute, see
 > [Pricing](/docs/functions/usage-and-pricing).
@@ -114,8 +114,8 @@ You can see the usage for **functions using the Node.js runtime** on the **Funct
 
 | Metric               | Description                                                                                     | Priced                                                                                                                              | Optimize                                       |
 | -------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
-| Function Invocations | The number of times your Functions have been invoked                                            |  | [Learn More](#optimizing-function-invocations) |
-| Function Duration    | The time your Vercel Functions have spent responding to requests                                |      | [Learn More](#optimizing-function-duration)    |
+| Function Invocations | The number of times your Functions have been invoked                                            | \*\*Price:\*\* | [Learn More](#optimizing-function-invocations) |
+| Function Duration    | The time your Vercel Functions have spent responding to requests                                | \*\*Price:\*\*     | [Learn More](#optimizing-function-duration)    |
 | Throttling           | The number of instances where Functions did not execute due to concurrency limits being reached | No                                                                                                                                  | N/A                                            |
 
 ## Managing function invocations

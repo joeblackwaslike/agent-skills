@@ -17,8 +17,8 @@ related:
 summary: "Learn how to use Global Config with Vercel's LaunchDarkly integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-integrations/launchdarkly-global-config.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "7444e084233d95ca0365e52731d258bd69d04a0fb5043ba390c2df2e7365f9e1"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "9d1616c2079e53a19dbb157dda47a7d4ce839e15faf97b5b299f6ccbcece87d2"
 ---
 
 # Using Global Config with LaunchDarkly
@@ -37,8 +37,8 @@ This guide will help you get started with using Vercel's LaunchDarkly integratio
 - [Using Global Config with DevCycle](https://vercel.com/docs/global-config/global-config-integrations/devcycle-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Flaunchdarkly-global-config&source_site=vercel-docs&relationship=related) — Learn how to use Global Config with Vercel's DevCycle integration.
 - [Using Global Config with Statsig](https://vercel.com/docs/global-config/global-config-integrations/statsig-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Flaunchdarkly-global-config&source_site=vercel-docs&relationship=related) — Learn how to use Global Config with Vercel's Statsig integration.
 - [Using Global Config](https://vercel.com/docs/global-config/using-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Flaunchdarkly-global-config&source_site=vercel-docs&relationship=related) — Learn how to use Global Configs in your projects.
-- [Managing Global Configs with Vercel REST API](https://vercel.com/docs/global-config/vercel-api?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Flaunchdarkly-global-config&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel REST API to create and update Global Configs. You can also read data stored in Global Config
 - [Global Vercel CLI Configuration](https://vercel.com/docs/project-configuration/global-configuration?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Flaunchdarkly-global-config&source_site=vercel-docs&relationship=related) — Learn how to configure Vercel CLI under your system user.
+- [Managing Global Configs with Vercel REST API](https://vercel.com/docs/global-config/vercel-api?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Flaunchdarkly-global-config&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel REST API to create and update Global Configs. You can also read data stored in Global Config
 
 Full cross-link map for this page: [/docs/global-config/global-config-integrations/launchdarkly-global-config.graph.md](/docs/global-config/global-config-integrations/launchdarkly-global-config.graph.md?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Flaunchdarkly-global-config&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -175,7 +175,7 @@ Before using this integration, you should have:
      vercel env pull
      ```
 
-  3. Finally, create a  file at the root of your project. This file will configure a Middleware that redirects your site visitors from `/homepage` to `/new-homepage` based on a feature flag fetched from LaunchDarkly:
+  3. Finally, create a `middleware.ts` file at the root of your project. This file will configure a Middleware that redirects your site visitors from `/homepage` to `/new-homepage` based on a feature flag fetched from LaunchDarkly:
 
      ```ts filename="middleware.ts" framework=all
      import { init } from '@launchdarkly/vercel-server-sdk';

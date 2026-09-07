@@ -13,8 +13,8 @@ related:
 summary: Get JSON responses conforming to a JSON Schema from Anthropic models through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/structured-outputs.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "1bbc5c068db5f3152720db8ce45b529bc3726d776a39a0c53a22b2d5242cd62f"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "5ea29c9bfa2cf053888d98acdbe8237f02c6d415244a0a6b26370cb02b402fef"
 ---
 
 # Structured Outputs
@@ -34,6 +34,7 @@ Structured outputs let you constrain model responses to follow a specific JSON S
 - [Structured Outputs](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstructured-outputs&source_site=vercel-docs&relationship=related) — Generate structured JSON responses that conform to a specific schema using the Chat Completions API.
 - [Structured Outputs](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/structured-outputs?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstructured-outputs&source_site=vercel-docs&relationship=related) — Constrain a response to a JSON schema with the OpenAI Responses API.
 - [Stream Object](https://ai-sdk.dev/cookbook/next/stream-object?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstructured-outputs&source_site=vercel-docs&relationship=related)
+- [Anthropic](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstructured-outputs&source_site=vercel-docs&relationship=related)
 - [Generate Object](https://ai-sdk.dev/cookbook/node/generate-object?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstructured-outputs&source_site=vercel-docs&relationship=related)
 - [Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstructured-outputs&source_site=vercel-docs&relationship=related) — Use the AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
 - [Streaming](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/streaming?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstructured-outputs&source_site=vercel-docs&relationship=related) — Stream Anthropic Messages API responses token by token as they are generated.

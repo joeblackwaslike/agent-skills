@@ -17,8 +17,8 @@ related:
 summary: Configure existing Vercel projects that use file-based Python functions in an /api directory.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/python/api-directory.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "c5cf47c8cf705cf025b1a940983d2691319097d8c07e321317b974f25f3b1803"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "cdfd555fe5d0d9ba72e5d31199a65e08d9ee978cda4327b2bd139a88a0ea1a92"
 ---
 
 # Python Functions in the /api Directory
@@ -36,10 +36,11 @@ subclasses.
 
 - [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fpython%2Fapi-directory&source_site=vercel-docs&relationship=related) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
 - [How to ship a Flask app on Vercel](https://vercel.com/kb/guide/ship-a-flask-app-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fpython%2Fapi-directory&source_site=vercel-docs&relationship=related) — Deploy a Flask app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
+- [Build with a FastAPI starter template](https://vercel.com/kb/guide/build-with-a-fastapi-starter-template?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fpython%2Fapi-directory&source_site=vercel-docs&relationship=related) — Browse FastAPI starter templates for Vercel and deploy one in a few steps. Compare minimal, AI, agent, and full-stack Fa
 - [Configuring the Runtime for Vercel Functions](https://vercel.com/docs/functions/configuring-functions/runtime?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fpython%2Fapi-directory&source_site=vercel-docs&relationship=related) — Learn how to configure the runtime for Vercel Functions.
 - [vercel.functions API Reference \\(Python\\)](https://vercel.com/docs/functions/functions-api-reference/vercel-sdk-python?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fpython%2Fapi-directory&source_site=vercel-docs&relationship=related) — Learn about available APIs when working with Vercel Functions in Python.
-- [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fpython%2Fapi-directory&source_site=vercel-docs&relationship=related) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
 - [Getting started with Vercel Functions](https://vercel.com/docs/functions/quickstart?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fpython%2Fapi-directory&source_site=vercel-docs&relationship=related) — Build your first Vercel Function in a few steps.
+- [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fpython%2Fapi-directory&source_site=vercel-docs&relationship=related) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
 - [Frameworks on Vercel](https://vercel.com/docs/frameworks?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fpython%2Fapi-directory&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
 
 Full cross-link map for this page: [/docs/functions/runtimes/python/api-directory.graph.md](/docs/functions/runtimes/python/api-directory.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fpython%2Fapi-directory&source_site=vercel-docs&relationship=graph)

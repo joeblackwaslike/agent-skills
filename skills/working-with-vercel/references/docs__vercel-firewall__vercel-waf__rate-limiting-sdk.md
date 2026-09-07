@@ -15,8 +15,8 @@ related:
 summary: Learn how to configure a custom rule with rate limit in your code.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting-sdk.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "a09d536a2d2ff5c29822a38e2f92f30fa7d5acc06b243416cc26955f0d551168"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "f4b8413d1ecc38b6a21bfcb18e551ec2cafdec68456de37a9e9c1659c44423a9"
 ---
 
 # Rate Limiting SDK
@@ -39,7 +39,7 @@ You can configure a custom rule with rate limit in your code by using the [`@ver
 - [Create Vercel Firewall rules with natural language](https://vercel.com/changelog/create-vercel-waf-custom-rules-using-natural-language?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting-sdk&source_site=vercel-docs&relationship=related)
 - [Rate limiting now available on Hobby, with higher included usage on Pro](https://vercel.com/changelog/rate-limiting-now-available-on-hobby-with-higher-included-usage-on-pro?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting-sdk&source_site=vercel-docs&relationship=related)
 - [Block, rate limit, and challenge traffic with the Vercel Firewall](https://vercel.com/changelog/block-rate-limit-and-challenge-traffic-with-the-vercel-firewall?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting-sdk&source_site=vercel-docs&relationship=related)
-- [Using the REST API with the Firewall](https://vercel.com/docs/vercel-firewall/firewall-api?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting-sdk&source_site=vercel-docs&relationship=related) — Learn how to interact with the security endpoints of the Vercel REST API programmatically.
+- [AI Gateway Rate Limits](https://vercel.com/docs/ai-gateway/rate-limits?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting-sdk&source_site=vercel-docs&relationship=related) — Learn how AI Gateway rate limits work on the free and paid tiers, what the 429 response looks like, and how to retry a r
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting-sdk&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf/rate-limiting-sdk.graph.md](/docs/vercel-firewall/vercel-waf/rate-limiting-sdk.graph.md?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting-sdk&source_site=vercel-docs&relationship=graph)

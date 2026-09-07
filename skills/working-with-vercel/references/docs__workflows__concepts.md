@@ -12,8 +12,8 @@ related:
 summary: Learn how workflows, steps, sleeps, and hooks work together to build durable applications.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/workflows/concepts.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "59b7306249e32d41d60607f3a9ea84e507bf73ff815a8f888306d56a78de8e85"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "5bb1b9575e77a0343f5b3b58f5fda22f27925a6c77f4825f05724092284c781f"
 ---
 
 # Workflow Concepts
@@ -32,12 +32,11 @@ You write async/await code as usual, and the framework handles queues, retry log
 - [How to run background jobs in Next.js](https://vercel.com/kb/guide/how-to-run-background-jobs-in-nextjs-on-vercel?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=related) — Learn the durable way to run background jobs in Next.js on Vercel with the Workflow SDK, and when to reach for Queues or
 - [How to migrate from Cloudflare Workflows to Vercel Workflows](https://vercel.com/kb/guide/migrate-cloudflare-workflows-to-vercel-workflows?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=related) — Migrate from Cloudflare Workflows to Vercel Workflows by mapping WorkflowEntrypoint, step.do, and waitForEvent to workfl
 - [Workflows and Steps](https://workflow-sdk.dev/docs/foundations/workflows-and-steps?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=related) — Understand the two function types that make up a workflow.
-- [Building stateful Slack bots with Vercel Workflow](https://vercel.com/kb/guide/stateful-slack-bots-with-vercel-workflow?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=related) — Learn how to build Slack bots that maintain state and handle long-running processes without managing queues, databases,
+- [Python](https://workflow-sdk.dev/docs/getting-started/python?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=related) — Set up the Workflow Python SDK in your Python application.
 - [Hooks & Webhooks](https://workflow-sdk.dev/docs/foundations/hooks?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=related) — Pause workflows and resume them with external data or HTTP requests.
+- [Building a Slack agent with durable workflows](https://vercel.com/kb/guide/building-a-slack-agent-with-durable-workflows?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=related) — Build an AI-powered Slack bot that gathers team data, drafts a summary, and refines it through conversation.
 - [Versioning](https://workflow-sdk.dev/docs/foundations/versioning?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=related) — Keep in-flight runs stable by default, then choose explicit upgrade boundaries when you need them.
 - [workflow](https://workflow-sdk.dev/docs/api-reference/workflow?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=related) — Explore the core workflow package for steps, streaming, hooks, and error handling.
-- [Idempotency](https://workflow-sdk.dev/docs/foundations/idempotency?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=related) — Use step IDs for retry-safe external calls, and route duplicate workflow-start requests through deterministic hook token
-- [Workflows with Python](https://vercel.com/docs/workflows/python?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=related) — Build durable workflows and AI agents in Python with the Vercel SDK.
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/workflows/concepts.graph.md](/docs/workflows/concepts.graph.md?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=graph)

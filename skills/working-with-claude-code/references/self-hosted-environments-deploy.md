@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/self-hosted-environments-deploy.md"
-fetched_at: "2026-08-31T10:37:20.620Z"
-sha256: "e79472e914cc2e550db10536526c9cd713d71952f711ca4f177ea0dcf9fbdcf8"
+fetched_at: "2026-09-07T08:59:03.477Z"
+sha256: "cb42afcb2a5fca1a55043918f0f21ac42d637d8807a7baf537f36848914a19da"
 ---
 
 > ## Documentation Index
@@ -427,6 +427,8 @@ If tool traffic must stay inside your network, run the equivalent tools as local
 ### Some sessions don't count as idle
 
 A session holding a background task that never finishes doesn't count as idle, so `--release-idle-session-min` won't release that session's slot. A session that's waiting on an approval requested from inside a running tool call also doesn't count as idle. Always set `--kill-session-after-min` alongside it as a hard backstop so no session can hold a slot indefinitely.
+
+`--kill-session-after-min` is a backstop for runaway sessions. The runner terminates any session that reaches the limit, even one someone is still using, so set the flag well above your longest expected session, such as `--kill-session-after-min 480` for 8 hours. To free slots from conversations that go idle, use `--release-idle-session-min` instead.
 
 ### Additional limitations
 

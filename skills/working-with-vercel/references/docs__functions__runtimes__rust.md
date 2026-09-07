@@ -13,13 +13,15 @@ related:
 summary: Build fast, memory-safe serverless functions with Rust on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/rust.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "db63986be53b8608cbee664af5b5e0a965d200ce5b0437af2528c2af2c4da73a"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "05e46b1220792733ba4ed5d28b2f09e22bee8cc671816fb2a0626bac57fc797e"
 ---
 
 # Using the Rust Runtime with Vercel functions
 
 > **🔒 Permissions Required**: The Rust runtime
+
+Use Rust to build high-performance, memory-safe serverless functions. The Rust runtime runs on [Fluid compute](/docs/fluid-compute) for optimal performance and lower latency.
 
 
 <!-- docsgraph:related -->
@@ -38,8 +40,6 @@ sha256: "db63986be53b8608cbee664af5b5e0a965d200ce5b0437af2528c2af2c4da73a"
 
 Full cross-link map for this page: [/docs/functions/runtimes/rust.graph.md](/docs/functions/runtimes/rust.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Frust&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Use Rust to build high-performance, memory-safe serverless functions. The Rust runtime runs on [Fluid compute](/docs/fluid-compute) for optimal performance and lower latency.
 
 ## Getting Started
 

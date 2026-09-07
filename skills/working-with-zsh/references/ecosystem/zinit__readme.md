@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/zdharma-continuum/zinit/main/README.md"
-fetched_at: "2026-07-20T06:59:40.537Z"
-sha256: "97c0d6c4f8018b4755203c981deb7b0615d743715b3a140903dd6d312d2fc1bb"
+fetched_at: "2026-09-07T09:10:44.999Z"
+sha256: "55382c81f388b26f98685bfe52d842338e57cf204980118782182a8d892fb63e"
 ---
 
 <p align="center">
@@ -233,6 +233,9 @@ Zinit can be updated to `self-update` and plugins to `update`.
 ```zsh
 # Self update
 zinit self-update
+
+# Self update, without paging the changelog
+zinit self-update --no-pager
 
 # Plugin update
 zinit update
@@ -915,7 +918,7 @@ zinit [options] uncompile PLUGIN
 | Command                                                          | Description                                                                                                                                                                                                                                                                                                                           |
 | ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `module`                                                         | Manage binary Zsh module shipped with Zinit, see `zinit module help`.                                                                                                                                                                                                                                                                 |
-| `self-update`                                                    | Updates and compiles Zinit.                                                                                                                                                                                                                                                                                                           |
+| `self-update [-q] [-n]`                                          | Updates and compiles Zinit.<br> `-q` \| `--quiet` – turn off messages from the operation.<br> `-n` \| `--no-pager` – disable the use of the pager for the changelog.                                                                                                                                                                   |
 | `cd {plg-spec}`                                                  | Cd into plugin's directory. Also support snippets if fed with URL.                                                                                                                                                                                                                                                                    |
 | `edit {plg-spec}`                                                | Edit plugin's file with $EDITOR.                                                                                                                                                                                                                                                                                                      |
 | `changes {plg-spec}`                                             | View plugin's git log.                                                                                                                                                                                                                                                                                                                |
@@ -933,7 +936,7 @@ zinit [options] uncompile PLUGIN
 
 ## Updating Zinit and Plugins<a name="updating-zinit-and-plugins"></a>
 
-To update Zinit issue `zinit self-update` in the command line.
+To update Zinit issue `zinit self-update` in the command line. The changelog is shown in a pager – pass `-n`/`--no-pager` to print it to the terminal instead, or `-q`/`--quiet` to skip it.
 
 To update all plugins and snippets, issue `zinit update`. If you wish to update only a single plugin/snippet instead
 issue `zinit update NAME_OF_PLUGIN`. A list of commits will be shown:

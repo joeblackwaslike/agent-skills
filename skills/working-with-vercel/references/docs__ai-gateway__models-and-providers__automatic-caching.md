@@ -15,8 +15,8 @@ related:
 summary: Enable automatic prompt caching across providers with AI Gateway to reduce costs and latency.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/automatic-caching.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "c306f59299d6cd55e5d961e53c4823283203f1dcc70e6b037e28baf49cd4eb9c"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "e2c6562d2977048fda50c11012af815cffece642f073d5f96b87607289e5710f"
 ---
 
 # Automatic Caching
@@ -39,7 +39,7 @@ Some providers like Anthropic and MiniMax require explicit cache control markers
 - [Provider Options](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API.
 - [Caching](https://vercel.com/docs/caching?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related) — Learn how Vercel caches content across multiple layers to deliver fast responses and reduce load on your backend.
 - [Data Cache for Next.js](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
-- [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related) — Control how much a model thinks before answering with the OpenAI Chat Completions API.
+- [Zero Data Retention](https://vercel.com/docs/ai-gateway/security-and-compliance/zdr?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related) — Learn about zero data retention policies and how to enforce ZDR on a per-request basis with AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/automatic-caching.graph.md](/docs/ai-gateway/models-and-providers/automatic-caching.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -16,8 +16,8 @@ related:
 summary: Nx is an extensible build system with support for monorepos, integrations, and Remote Caching on Vercel. Learn how to deploy Nx to Vercel with this...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/nx.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "c984ca2784cc333445007cbc1b8c477cc0485731ad7c8f025027bc9a1745eb70"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "e363b663725346aa8d79a6cad70e91cbaba5eedc5b5379b515789d77c4ad3f40"
 ---
 
 # Deploying Nx to Vercel
@@ -40,7 +40,7 @@ Nx is an extensible build system with support for monorepos, integrations, and R
 - [Remote Caching](https://vercel.com/docs/monorepos/remote-caching?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — Vercel Remote Cache allows you to share build outputs and artifacts across distributed teams.
 - [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
 - [NestJS on Vercel](https://vercel.com/docs/frameworks/backend/nestjs?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — Deploy NestJS applications to Vercel with zero configuration.
-- [xmcp on Vercel](https://vercel.com/docs/frameworks/backend/xmcp?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — Build MCP-compatible backends with xmcp and deploy to Vercel. Learn the project structure, tool format, middleware, and
+- [Builds](https://vercel.com/docs/builds?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — Understand how the build step works when creating a Vercel Deployment.
 
 Full cross-link map for this page: [/docs/monorepos/nx.graph.md](/docs/monorepos/nx.graph.md?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

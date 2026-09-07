@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "823a84d5e48a55f3194ddb290e2800a9d5c4b5a528a22120a35f06683ad8e4d7"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "30e44798f87f487fc27932ee77ac11ef4aaa2a39337c21dcb28b4a1496951c1c"
 ---
 
 # AI SDK Providers
@@ -26,6 +26,7 @@ Not all providers support all AI SDK features. Here's a quick comparison of the 
 | [xAI Grok](/providers/ai-sdk-providers/xai)                | `grok-4`                                            | <Cross />   | <Check />         | <Check />  | <Check />      |
 | [xAI Grok](/providers/ai-sdk-providers/xai)                | `grok-3`                                            | <Cross />   | <Check />         | <Check />  | <Check />      |
 | [xAI Grok](/providers/ai-sdk-providers/xai)                | `grok-3-mini`                                       | <Cross />   | <Check />         | <Check />  | <Check />      |
+| [OpenAI](/providers/ai-sdk-providers/openai)               | `gpt-6-astra`                                       | <Check />   | <Check />         | <Check />  | <Check />      |
 | [OpenAI](/providers/ai-sdk-providers/openai)               | `gpt-5.6`                                           | <Check />   | <Check />         | <Check />  | <Check />      |
 | [OpenAI](/providers/ai-sdk-providers/openai)               | `gpt-5.6-luna`                                      | <Check />   | <Check />         | <Check />  | <Check />      |
 | [OpenAI](/providers/ai-sdk-providers/openai)               | `gpt-5.6-sol`                                       | <Check />   | <Check />         | <Check />  | <Check />      |
@@ -44,6 +45,7 @@ Not all providers support all AI SDK features. Here's a quick comparison of the 
 | [OpenAI](/providers/ai-sdk-providers/openai)               | `gpt-4o`                                            | <Check />   | <Check />         | <Check />  | <Check />      |
 | [OpenAI](/providers/ai-sdk-providers/openai)               | `gpt-4o-mini`                                       | <Check />   | <Check />         | <Check />  | <Check />      |
 | [Anthropic](/providers/ai-sdk-providers/anthropic)         | `claude-sonnet-5`                                   | <Check />   | <Check />         | <Check />  | <Check />      |
+| [Anthropic](/providers/ai-sdk-providers/anthropic)         | `claude-fable-5-1`                                  | <Check />   | <Check />         | <Check />  | <Check />      |
 | [Anthropic](/providers/ai-sdk-providers/anthropic)         | `claude-fable-5`                                    | <Check />   | <Check />         | <Check />  | <Check />      |
 | [Anthropic](/providers/ai-sdk-providers/anthropic)         | `claude-opus-4-8`                                   | <Check />   | <Check />         | <Check />  | <Check />      |
 | [Anthropic](/providers/ai-sdk-providers/anthropic)         | `claude-opus-4-7`                                   | <Check />   | <Check />         | <Check />  | <Check />      |
@@ -54,10 +56,12 @@ Not all providers support all AI SDK features. Here's a quick comparison of the 
 | [Anthropic](/providers/ai-sdk-providers/anthropic)         | `claude-haiku-4-5`                                  | <Check />   | <Check />         | <Check />  | <Check />      |
 | [Anthropic](/providers/ai-sdk-providers/anthropic)         | `claude-opus-4-1`                                   | <Check />   | <Check />         | <Check />  | <Check />      |
 | [Anthropic](/providers/ai-sdk-providers/anthropic)         | `claude-sonnet-4-0`                                 | <Check />   | <Check />         | <Check />  | <Check />      |
+| [Google](/providers/ai-sdk-providers/google)               | `gemini-3.8-flash`                                  | <Check />   | <Check />         | <Check />  | <Check />      |
 | [Google](/providers/ai-sdk-providers/google)               | `gemini-3.1-pro-preview`                            | <Check />   | <Check />         | <Check />  | <Check />      |
 | [Google](/providers/ai-sdk-providers/google)               | `gemini-3-pro-preview`                              | <Check />   | <Check />         | <Check />  | <Check />      |
 | [Google](/providers/ai-sdk-providers/google)               | `gemini-2.5-pro`                                    | <Check />   | <Check />         | <Check />  | <Check />      |
 | [Google](/providers/ai-sdk-providers/google)               | `gemini-2.5-flash`                                  | <Check />   | <Check />         | <Check />  | <Check />      |
+| [Google Vertex](/providers/ai-sdk-providers/google-vertex) | `gemini-3.8-flash`                                  | <Check />   | <Check />         | <Check />  | <Check />      |
 | [Google Vertex](/providers/ai-sdk-providers/google-vertex) | `gemini-3.1-pro-preview`                            | <Check />   | <Check />         | <Check />  | <Check />      |
 | [Google Vertex](/providers/ai-sdk-providers/google-vertex) | `gemini-3-pro-preview`                              | <Check />   | <Check />         | <Check />  | <Check />      |
 | [Google Vertex](/providers/ai-sdk-providers/google-vertex) | `gemini-2.5-pro`                                    | <Check />   | <Check />         | <Check />  | <Check />      |
@@ -200,6 +204,7 @@ Not all providers support all AI SDK features. Here's a quick comparison of the 
   - [Clarifai](/providers/openai-compatible-providers/clarifai)
   - [Heroku](/providers/openai-compatible-providers/heroku)
   - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)
+  - [Synthorai](/providers/openai-compatible-providers/synthorai)
 - [Community Providers](/providers/community-providers)
   - [Writing a Custom Provider](/providers/community-providers/custom-providers)
   - [A2A](/providers/community-providers/a2a)

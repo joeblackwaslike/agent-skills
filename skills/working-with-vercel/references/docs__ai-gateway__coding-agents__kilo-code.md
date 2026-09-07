@@ -14,8 +14,8 @@ related:
 summary: Use the Kilo Code CLI with the AI Gateway as an OpenAI-compatible provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/kilo-code.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "623d3835063bf4b07e58104c0e7814093d1afd13303bc28afb574c7b7ce97715"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "91d0d62e78b8766c8aa6085f8f186a8ddf6762a6e8f15dd8b0bf1ce1a9f25d84"
 ---
 
 # Kilo Code
@@ -29,11 +29,11 @@ sha256: "623d3835063bf4b07e58104c0e7814093d1afd13303bc28afb574c7b7ce97715"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fkilo-code&source_site=vercel-docs&relationship=related)
-- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fkilo-code&source_site=vercel-docs&relationship=related) — Use OpenCode with the AI Gateway.
+- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fkilo-code&source_site=vercel-docs&relationship=related) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
 - [Xcode](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fkilo-code&source_site=vercel-docs&relationship=related) — Use Xcode's coding assistant with the AI Gateway.
 - [Roo Code](https://vercel.com/docs/ai-gateway/coding-agents/roo-code?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fkilo-code&source_site=vercel-docs&relationship=related) — Use Roo Code with the AI Gateway.
 - [OpenClaw](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fkilo-code&source_site=vercel-docs&relationship=related) — Use OpenClaw with the AI Gateway as a model provider.
-- [Pi](https://vercel.com/docs/ai-gateway/coding-agents/pi?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fkilo-code&source_site=vercel-docs&relationship=related) — Use the Pi coding agent with the AI Gateway.
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fkilo-code&source_site=vercel-docs&relationship=related) — Create an AI Gateway API key, make your first request with TypeScript, Python, or cURL, and verify how the request was r
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/kilo-code.graph.md](/docs/ai-gateway/coding-agents/kilo-code.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fkilo-code&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

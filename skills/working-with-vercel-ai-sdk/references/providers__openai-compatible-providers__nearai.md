@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/openai-compatible-providers/nearai.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "114a01c1c57dbf8d17a8471e5f116bfaeaf8e83bbe2e03666a54ff5d68e5c211"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "027d0b1721002c21ac168ba46aacab19c870a59826d46bbe6c11fb0c50d98c10"
 ---
 
 # NEAR AI Cloud Provider
@@ -108,6 +108,7 @@ You can use any supported `modelId` from the NEAR AI Cloud model catalog. Model 
 - [Clarifai](/providers/openai-compatible-providers/clarifai)
 - [Heroku](/providers/openai-compatible-providers/heroku)
 - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)
+- [Synthorai](/providers/openai-compatible-providers/synthorai)
 
 
 [Full Sitemap](/sitemap.md)

@@ -13,8 +13,8 @@ related:
 summary: Step-by-step guide to setting up BotID protection in your Vercel project
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/botid/get-started.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "5ce188d7108eb9513932209ca22c28d936dd7eac3dc9386405c7be5c713196dd"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "016cfca0bdc8364a557bfd3370f7c7a0bf5bf292675b30f0cf9b92c3493300b9"
 ---
 
 # Get Started with BotID
@@ -33,12 +33,12 @@ This guide shows you how to add BotID protection to your Vercel project. BotID b
 - [How to protect your AI endpoints with Vercel BotID](https://vercel.com/kb/guide/protect-ai-endpoints-with-vercel-botid?from=related&source_path=%2Fdocs%2Fbotid%2Fget-started&source_site=vercel-docs&relationship=related) — Gate every request to your AI endpoints with Vercel BotID and checkBotId\\(\\) so inference runs only for verified callers
 - [Vercel BotID vs Cloudflare Turnstile](https://vercel.com/kb/guide/vercel-botid-vs-cloudflare-turnstile?from=related&source_path=%2Fdocs%2Fbotid%2Fget-started&source_site=vercel-docs&relationship=related) — Compare Vercel BotID and Cloudflare Turnstile for bot protection, including detection model, hosting requirements, check
 - [The AI Cloud: A unified platform for AI workloads](https://vercel.com/blog/the-ai-cloud-a-unified-platform-for-ai-workloads?from=related&source_path=%2Fdocs%2Fbotid%2Fget-started&source_site=vercel-docs&relationship=related)
-- [How to use Next.js as a backend for your frontend](https://nextjs.org/docs/app/guides/backend-for-frontend?from=related&source_path=%2Fdocs%2Fbotid%2Fget-started&source_site=vercel-docs&relationship=related) — Learn how to use Next.js as a backend framework
 - [Build a fullstack app with Next.js 16 and Prisma Postgres](https://vercel.com/kb/guide/nextjs-prisma-postgres?from=related&source_path=%2Fdocs%2Fbotid%2Fget-started&source_site=vercel-docs&relationship=related) — Create a fullstack blog with the Next.js App Router, Prisma, Sign in with Vercel, Prisma Postgres from the Vercel Market
-- [Vercel BotID now leverages Vercel's verified bot directory](https://vercel.com/changelog/vercel-botid-now-leverages-vercels-verified-bot-directory?from=related&source_path=%2Fdocs%2Fbotid%2Fget-started&source_site=vercel-docs&relationship=related)
 - [Redacting Sensitive Data from Web Analytics Events](https://vercel.com/docs/analytics/redacting-sensitive-data?from=related&source_path=%2Fdocs%2Fbotid%2Fget-started&source_site=vercel-docs&relationship=related) — Learn how to redact sensitive data from your Web Analytics events.
-- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fbotid%2Fget-started&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 - [Client Uploads with Vercel Blob](https://vercel.com/docs/vercel-blob/client-upload?from=related&source_path=%2Fdocs%2Fbotid%2Fget-started&source_site=vercel-docs&relationship=related) — Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
+- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fbotid%2Fget-started&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
+- [Add the Vercel Toolbar to your local environment](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-localhost?from=related&source_path=%2Fdocs%2Fbotid%2Fget-started&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel Toolbar in your local environment.
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fbotid%2Fget-started&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/botid/get-started.graph.md](/docs/botid/get-started.graph.md?from=related&source_path=%2Fdocs%2Fbotid%2Fget-started&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -110,6 +110,9 @@ Before setting up BotID, ensure you have **a JavaScript [project deployed](/docs
   ```
   > For \['other']:
   For other frameworks, add the following configuration values to your `vercel.json`:
+  > **💡 Note:** When using `vercel.json` configuration, these rewrites only apply in
+  > production. For local development behavior, see the [Local Development
+  > Behavior](/docs/botid/local-development-behavior) section.
   ```json filename="vercel.json" framework=other
   {
     "rewrites": [
@@ -143,6 +146,10 @@ Before setting up BotID, ensure you have **a JavaScript [project deployed](/docs
   - **Other frameworks**: Call `initBotId()` during application initialization
   > For \['nextjs-app']:
   **Next.js 15.3+ (Recommended)**
+  > **💡 Note:** We recommend using `initBotId()` in
+  > [`instrumentation-client.ts`](https://nextjs.org/docs/app/api-reference/file-conventions/instrumentation-client)
+  > for better performance in Next.js 15.3+. For earlier versions, use the React
+  > component approach.
   ```ts filename="instrumentation-client.ts" framework=nextjs-app
   import { initBotId } from 'botid/client/core';
 
@@ -637,6 +644,7 @@ Before setting up BotID, ensure you have **a JavaScript [project deployed](/docs
   - Click the **Firewall** tab
   - Click **Rules**
   - Enable **Vercel BotID Deep Analysis**
+  [Go to Firewall Rules](<getDeepLink({&#xA;    to: '/[team]/[project]/firewall/rules',&#xA;    title: 'Open Firewall Rules',&#xA;  })>)
 
 ## Complete examples
 

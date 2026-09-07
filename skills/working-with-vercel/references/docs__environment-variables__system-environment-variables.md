@@ -12,8 +12,8 @@ related:
 summary: System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the Git branch deployed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/system-environment-variables.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "627418c3dbe533539ac28bdc35dce47ee95d4a6cfc6ee324697a053cdd05f9b3"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "2ce3f912203be2ae78bc28a538b2632bcba7230255177099d835d56d2bd24964"
 ---
 
 # System environment variables
@@ -28,15 +28,15 @@ Vercel provides a set of environment variables that are automatically populated 
 
 - [Are Vercel Preview Deployments indexed by search engines?](https://vercel.com/kb/guide/are-vercel-preview-deployment-indexed-by-search-engines?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsystem-environment-variables&source_site=vercel-docs&relationship=related) — Vercel Preview Deployments aren't indexed by default. Learn how the noindex header works, how to confirm it, and the cus
 - [How to deploy a Shopify App to Vercel](https://vercel.com/kb/guide/deploy-shopify-app-to-vercel?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsystem-environment-variables&source_site=vercel-docs&relationship=related) — Deploy the official Shopify CLI React Router app template to Vercel with the @vercel/react-router preset and Postgres se
+- [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsystem-environment-variables&source_site=vercel-docs&relationship=related) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
+- [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsystem-environment-variables&source_site=vercel-docs&relationship=related) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
 - [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsystem-environment-variables&source_site=vercel-docs&relationship=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
-- [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsystem-environment-variables&source_site=vercel-docs&relationship=related) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
-- [Troubleshooting Cross-Origin Errors \\(net::ERR_BLOCKED_BY_ORB\\) with Deployment Protection](https://vercel.com/kb/guide/troubleshooting-cross-origin-errors-neterr-blocked-by-orb-with-deployment-protection?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsystem-environment-variables&source_site=vercel-docs&relationship=related) — Learn to resolve \\`net::ERR_BLOCKED_BY_ORB\\` errors on protected Vercel deployments. This guide explains how cross-origi
 - [May 2020](https://vercel.com/blog/changelog-may-2020?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsystem-environment-variables&source_site=vercel-docs&relationship=related)
 - [Framework environment variables](https://vercel.com/docs/environment-variables/framework-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsystem-environment-variables&source_site=vercel-docs&relationship=related) — Framework environment variables are automatically populated by the Vercel, based on your project's framework.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsystem-environment-variables&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 - [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsystem-environment-variables&source_site=vercel-docs&relationship=related) — Learn how to configure Git for your project through vercel.json or vercel.ts.
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsystem-environment-variables&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
-- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsystem-environment-variables&source_site=vercel-docs&relationship=related) — Learn how to create and manage deployments on Vercel.
+- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsystem-environment-variables&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 
 Full cross-link map for this page: [/docs/environment-variables/system-environment-variables.graph.md](/docs/environment-variables/system-environment-variables.graph.md?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsystem-environment-variables&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

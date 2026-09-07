@@ -14,8 +14,8 @@ related:
 summary: Publish and consume messages with the Vercel Queues Python SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/python-sdk.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "c10b4153d9284adc3a82694d79e3fc67ddd9871118b9e12e30261ad2b94c7dad"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "375a9a1d69924d5f621e7b6272e3606797d6da9ed95928f39835f73ccd6c6a91"
 ---
 
 # Vercel Queues: Python SDK Reference
@@ -30,10 +30,10 @@ The official Vercel Python SDK lets Python apps publish and consume Vercel Queue
 
 - [Vercel Python Queues SDK is now available in beta](https://vercel.com/changelog/vercel-python-queues-sdk-is-now-available-in-beta?from=related&source_path=%2Fdocs%2Fqueues%2Fpython-sdk&source_site=vercel-docs&relationship=related)
 - [Vercel Queues now in public beta](https://vercel.com/changelog/vercel-queues-now-in-public-beta?from=related&source_path=%2Fdocs%2Fqueues%2Fpython-sdk&source_site=vercel-docs&relationship=related)
-- [Queues concepts](https://vercel.com/docs/queues/concepts?from=related&source_path=%2Fdocs%2Fqueues%2Fpython-sdk&source_site=vercel-docs&relationship=related) — Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
 - [How to run background jobs in Next.js](https://vercel.com/kb/guide/how-to-run-background-jobs-in-nextjs-on-vercel?from=related&source_path=%2Fdocs%2Fqueues%2Fpython-sdk&source_site=vercel-docs&relationship=related) — Learn the durable way to run background jobs in Next.js on Vercel with the Workflow SDK, and when to reach for Queues or
 - [Vercel Queues is now in Limited Beta](https://vercel.com/changelog/vercel-queues-is-now-in-limited-beta?from=related&source_path=%2Fdocs%2Fqueues%2Fpython-sdk&source_site=vercel-docs&relationship=related)
 - [Publish and subscribe to realtime data on Vercel](https://vercel.com/kb/guide/publish-and-subscribe-to-realtime-data-on-vercel?from=related&source_path=%2Fdocs%2Fqueues%2Fpython-sdk&source_site=vercel-docs&relationship=related) — Learn how to publish and subscribe to realtime data on Vercel with WebSockets, SSE, Redis, and Queues, and when a manage
+- [Queues concepts](https://vercel.com/docs/queues/concepts?from=related&source_path=%2Fdocs%2Fqueues%2Fpython-sdk&source_site=vercel-docs&relationship=related) — Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
 - [Quickstart](https://vercel.com/docs/queues/quickstart?from=related&source_path=%2Fdocs%2Fqueues%2Fpython-sdk&source_site=vercel-docs&relationship=related) — Set up Vercel Queues with the SDK.
 - [Run background tasks with Celery on Vercel](https://vercel.com/docs/frameworks/backend/celery?from=related&source_path=%2Fdocs%2Fqueues%2Fpython-sdk&source_site=vercel-docs&relationship=related) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
 - [Queues Observability](https://vercel.com/docs/queues/observability?from=related&source_path=%2Fdocs%2Fqueues%2Fpython-sdk&source_site=vercel-docs&relationship=related) — Monitor queue throughput, message age, retries, and consumer performance to optimize your queue-based workflows.

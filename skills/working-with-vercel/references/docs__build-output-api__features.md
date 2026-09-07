@@ -16,8 +16,8 @@ related:
 summary: Learn how to implement common Vercel platform features through the Build Output API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/features.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "1fb9f598e556deadcbe6cbf1d393d5916ea792fe6f87f8af5d3002af1659ba02"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "73ab0a2533d6258f8246454a19d1c9c3610ba7dc0d65638282d26b73e8c1d162"
 ---
 
 # Features
@@ -32,11 +32,11 @@ helper functions.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Routing](https://vercel.com/docs/routing?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Ffeatures&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
 - [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Ffeatures&source_site=vercel-docs&relationship=related) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
-- [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Ffeatures&source_site=vercel-docs&relationship=related) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
+- [Routing](https://vercel.com/docs/routing?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Ffeatures&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
+- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Ffeatures&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 - [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Ffeatures&source_site=vercel-docs&relationship=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
-- [Frameworks on Vercel](https://vercel.com/docs/frameworks?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Ffeatures&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
+- [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Ffeatures&source_site=vercel-docs&relationship=related) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
 
 Full cross-link map for this page: [/docs/build-output-api/features.graph.md](/docs/build-output-api/features.graph.md?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Ffeatures&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -105,6 +105,10 @@ In a deployment with multiple services, a top-level route can delegate to a serv
 
 ## Routing Middleware
 
+[`vercel/examples/build-output-api/edge-middleware`](https://github.com/vercel/examples/tree/main/build-output-api/edge-middleware)
+
+<br />
+
 An Edge Runtime function can act as a "middleware" in the HTTP request lifecycle for
 a Deployment. Middleware is useful for implementing functionality that may be
 shared by many URL paths in a Project (e.g. authentication),
@@ -134,6 +138,10 @@ starts with `/api`, before continuing to the underlying resource:
 
 ## Draft Mode
 
+[`vercel/examples/build-output-api/preview-mode`](https://github.com/vercel/examples/tree/main/build-output-api/draft-mode)
+
+<br />
+
 When using [Prerender Functions](/docs/build-output-api/primitives#prerender-functions), you may want to implement "Draft Mode" which would allow you to bypass the caching aspect of prerender functions. For example, while writing draft blog posts before they are ready to be published.
 
 To implement this, the `bypassToken` of the `<name>.prerender-config.json` file should be set to a randomized string that you generate at build-time. This string should not be exposed to users / the client-side, except under authenticated circumstances.
@@ -141,6 +149,10 @@ To implement this, the `bypassToken` of the `<name>.prerender-config.json` file 
 To enable "Draft Mode", a cookie with the name `__prerender_bypass` needs to be set (i.e. by a Vercel Function) with the value of the `bypassToken`. When the Prerender Function endpoint is accessed while the cookie is set, then "Draft Mode" will be activated, bypassing any caching that Vercel would normally provide when not in draft mode.
 
 ## On-Demand Incremental Static Regeneration (ISR)
+
+[`vercel/examples/build-output-api/on-demand-isr`](https://github.com/vercel/examples/tree/main/build-output-api/on-demand-isr)
+
+<br />
 
 When using [Prerender Functions](/docs/build-output-api/primitives#prerender-functions), you may want to implement "On-Demand Incremental Static Regeneration (ISR)" which would allow you to invalidate the cache at any time.
 

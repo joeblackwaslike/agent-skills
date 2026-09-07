@@ -3,7 +3,7 @@ title: Enterprise Managed Users (EMU)
 product: vercel
 url: /docs/security/enterprise-managed-users
 canonical_url: "https://vercel.com/docs/security/enterprise-managed-users"
-last_updated: 2026-08-20
+last_updated: 2026-08-28
 type: how-to
 prerequisites:
   - /docs/security
@@ -15,8 +15,8 @@ related:
 summary: Enterprise Managed Users (EMU) lets your Vercel team manage the sign-in identity of every member. Members sign in through your SAML SSO provider...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/enterprise-managed-users.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "dd3a76eef8f19c8728b1a5680585f485721210a534e9bbafd0a493d822333bbc"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "0bf0cdd74e9669688b61cdd04bb556f558d98de5fb0d17aae20a37efe2d7aa4a"
 ---
 
 # Enterprise Managed Users (EMU)
@@ -33,12 +33,11 @@ Enterprise Managed Users (EMU) lets your team own and control each member's Verc
 - [Enterprise](https://v0.app/docs/enterprise?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users&source_site=vercel-docs&relationship=related) — Learn how to manage v0 seats, access, and more in your Vercel Enterprise account.
 - [Teams](https://v0.app/docs/teams?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users&source_site=vercel-docs&relationship=related) — Collaborate with your team on projects with shared resources.
 - [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users&source_site=vercel-docs&relationship=related) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
-- [Vercel for Enterprise Apps and Agents](https://vercel.com/blog/vercel-for-enterprise-apps-and-agents?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users&source_site=vercel-docs&relationship=related)
 - [Account Management](https://vercel.com/docs/accounts?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users&source_site=vercel-docs&relationship=related) — Learn how to manage your Vercel account and team members.
 - [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users&source_site=vercel-docs&relationship=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
 - [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users&source_site=vercel-docs&relationship=related) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
+- [Vercel Pro Plan](https://vercel.com/docs/plans/pro-plan?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users&source_site=vercel-docs&relationship=related) — Learn about the Vercel Pro plan with credit-based billing, free viewer seats, and self-serve enterprise features for pro
 - [Access Groups](https://vercel.com/docs/rbac/access-groups?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users&source_site=vercel-docs&relationship=related) — Learn how to configure access groups for team members on a Vercel account.
-- [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users&source_site=vercel-docs&relationship=related) — Learn about the Hobby plan and how it compares to the Pro plan.
 
 Full cross-link map for this page: [/docs/security/enterprise-managed-users.graph.md](/docs/security/enterprise-managed-users.graph.md?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

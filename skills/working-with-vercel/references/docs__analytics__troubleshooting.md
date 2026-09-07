@@ -12,13 +12,15 @@ related:
 summary: Learn how to troubleshoot common issues with Vercel Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/troubleshooting.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "d6f05b7c6ff4160da6d420416d227770a4cb334e9d1086b0cb6bca4e5f4e7d4c"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "d3fb8f13573baf4185dd3d7c14ce33676e3b91908dc47c0fe392a4fded0ad65c"
 ---
 
 # Vercel Web Analytics Troubleshooting
 
 ## No data visible in Web Analytics dashboard
+
+**Issue**: If you are experiencing a situation where data is not visible in the analytics dashboard or a 404 error occurs while loading `script.js`, it could be due to deploying the tracking code before enabling Web Analytics.
 
 
 <!-- docsgraph:related -->
@@ -38,8 +40,6 @@ sha256: "d6f05b7c6ff4160da6d420416d227770a4cb334e9d1086b0cb6bca4e5f4e7d4c"
 
 Full cross-link map for this page: [/docs/analytics/troubleshooting.graph.md](/docs/analytics/troubleshooting.graph.md?from=related&source_path=%2Fdocs%2Fanalytics%2Ftroubleshooting&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-**Issue**: If you are experiencing a situation where data is not visible in the analytics dashboard or a 404 error occurs while loading `script.js`, it could be due to deploying the tracking code before enabling Web Analytics.
 
 **How to fix**:
 

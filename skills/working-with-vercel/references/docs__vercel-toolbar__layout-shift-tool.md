@@ -16,13 +16,15 @@ related:
 summary: The layout shift tool gives you insight into any elements that may cause layout shifts on the page.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar/layout-shift-tool.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "3fa8de976738837ef7782c587d4510abde1d5c35e89e8e1756d24c6b443ad824"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "61913074d284a80da30b1995cd6eed9370da00b136654b827504055236b81fa1"
 ---
 
 # Layout Shift Tool
 
 > **🔒 Permissions Required**: Layout Shift Tool
+
+The layout shift tool gives you insight into any elements that may cause layout shifts on the page. The cause for a layout shift could be many things:
 
 
 <!-- docsgraph:related -->
@@ -35,15 +37,14 @@ sha256: "3fa8de976738837ef7782c587d4510abde1d5c35e89e8e1756d24c6b443ad824"
 - [Improve Cumulative Layout Shift \\(CLS\\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=related) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
 - [Introducing new developer tools in the Vercel Toolbar](https://vercel.com/blog/introducing-new-developer-tools-in-the-vercel-toolbar?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=related)
 - [Improvements to Vercel Toolbar: Shrinking when inactive, removal of avatars, and more](https://vercel.com/changelog/improvements-to-vercel-toolbar?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=related)
-- [Interaction Timing Tool](https://vercel.com/docs/vercel-toolbar/interaction-timing-tool?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=related) — The interaction timing tool allows you to inspect in detail each interaction's latency and get notified for interactions
 - [Accessibility Audit Tool](https://vercel.com/docs/vercel-toolbar/accessibility-audit-tool?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=related) — Learn how to use the Accessibility Audit Tool to automatically check the Web Content Accessibility Guidelines 2.0 level
+- [Interaction Timing Tool](https://vercel.com/docs/vercel-toolbar/interaction-timing-tool?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=related) — The interaction timing tool allows you to inspect in detail each interaction's latency and get notified for interactions
 - [Edit Mode](https://vercel.com/docs/edit-mode?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=related) — Discover how Vercel's Edit Mode enhances content management for headless CMSs, enabling real-time editing, and seamless
+- [Toolbar Browser Extensions](https://vercel.com/docs/vercel-toolbar/browser-extension?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=related) — The browser extensions enable you to use the toolbar in production environments, take screenshots and attach them to com
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/vercel-toolbar/layout-shift-tool.graph.md](/docs/vercel-toolbar/layout-shift-tool.graph.md?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-The layout shift tool gives you insight into any elements that may cause layout shifts on the page. The cause for a layout shift could be many things:
 
 - Elements that change in height or width
 - Custom font loading
@@ -72,7 +73,7 @@ You can replay a layout shift by either:
 
 You can also select more than one shift and play them at the same time. You may want to do this to see the combined effect of element shifts on the page.
 
-When you replay layout shifts, the Vercel Toolbar will become your stop button. Press this to stop replaying layout shifts. Alternatively, press the  key.
+When you replay layout shifts, the Vercel Toolbar will become your stop button. Press this to stop replaying layout shifts. Alternatively, press the `esc` key.
 
 You can also disable layout shift detection on a per element basis. You can do this by adding a `data-allow-shifts` attribute to an element. This will affect the element and its descendants.
 

@@ -16,8 +16,8 @@ related:
 summary: Learn more about environment variables on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "531bd9da8849fe922c84dd5303c2f8d21829ddb0e7c02b14f00e475540290b48"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "6582a5d8ba333f407b0de6a8fac42c3068ed8b1d9bfced738ae9b85e21320853"
 ---
 
 # Environment variables
@@ -32,7 +32,7 @@ Environment variables are key-value pairs configured outside your source code so
 
 - [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
 - [Using environment variables](https://turborepo.dev/docs/crafting-your-repository/using-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=related) — Account for environment variables in task hashing, configure environment modes, and handle .env files.
-- [Deployments](https://v0.app/docs/deployments?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=related) — Deploy your v0 chats to Vercel with one click and manage production deployments.
+- [Deployments](https://v0.app/docs/deployments?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=related) — Preview and publish v0 projects on Vercel, then manage domains, visibility, and production updates.
 - [Environment variables now use Config and Secret types](https://vercel.com/changelog/environment-variables-now-use-config-and-secret-types?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=related)
 - [Environments Variables per Git branch](https://vercel.com/changelog/environments-variables-per-git-branch?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=related)
 - [Improved environment variables UI](https://vercel.com/changelog/improved-environment-variables-ui?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=related)
@@ -109,6 +109,12 @@ Any branch-specific variables will override other preview environment variables 
 Environment variables for local development are defined in the `.env.local` file. This is a plain text file that contains `key=value` pairs of environment variables, that you can manually create in your project's root directory to define specific variables.
 
 You can use the `vercel env pull` command to automatically create and populate the `.env` file (which serves the same purpose as `.env.local`) with the environment variables from your Vercel project:
+
+```bash
+vercel env pull
+Downloading Development Environment Variables for Project my-lovely-project
+✅ Created .env file [510ms]
+```
 
 This command creates a `.env` file in your project's current directory with the environment variables from your Vercel project's **Development** environment.
 

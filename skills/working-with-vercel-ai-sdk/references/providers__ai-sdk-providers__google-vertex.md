@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/google-vertex.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "331953137af8b7a37dbbc701fcf3569b3cf5dc602bf6eda292a67a67014458bb"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "97f3768844ac8456fc57fcd2b88b2b0014a3c1555575414186867650bbd94c08"
 ---
 
 # Google Vertex Provider
@@ -239,10 +239,10 @@ const googleVertex = createGoogleVertex({
 ### Language Models
 
 You can create models that call the Vertex API using the provider instance.
-The first argument is the model id, e.g. `gemini-3.7-flash`.
+The first argument is the model id, e.g. `gemini-3.8-flash`.
 
 ```ts
-const model = googleVertex('gemini-3.7-flash');
+const model = googleVertex('gemini-3.8-flash');
 ```
 
 <Note>
@@ -517,7 +517,7 @@ import { googleVertex } from '@ai-sdk/google-vertex';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: googleVertex('gemini-3.7-flash'),
+  model: googleVertex('gemini-3.8-flash'),
   tools: {
     enterprise_web_search: googleVertex.tools.enterpriseWebSearch({}),
   },
@@ -535,7 +535,7 @@ import { type GoogleLanguageModelOptions } from '@ai-sdk/google';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: googleVertex('gemini-3.7-flash'),
+  model: googleVertex('gemini-3.8-flash'),
   tools: {
     google_maps: googleVertex.tools.googleMaps({}),
   },
@@ -908,6 +908,7 @@ The following Zod features are known to not work with Google Vertex:
 
 | Model                   | Image Input | Object Generation | Tool Usage | Tool Streaming |
 | ----------------------- | ----------- | ----------------- | ---------- | -------------- |
+| `gemini-3.8-flash`      | <Check />   | <Check />         | <Check />  | <Check />      |
 | `gemini-3.7-flash`      | <Check />   | <Check />         | <Check />  | <Check />      |
 | `gemini-3.6-flash`      | <Check />   | <Check />         | <Check />  | <Check />      |
 | `gemini-3.5-flash`      | <Check />   | <Check />         | <Check />  | <Check />      |
@@ -2154,6 +2155,12 @@ The following models are available through the MaaS provider. You can also pass 
 | `qwen/qwen3-next-80b-a3b-instruct-maas`        | Qwen     |
 | `qwen/qwen3-next-80b-a3b-thinking-maas`        | Qwen     |
 | `moonshotai/kimi-k2-thinking-maas`             | Moonshot |
+
+<Note>
+  Llama 4 MaaS models default to their 8,192-token output limit when
+  `maxOutputTokens` is not specified. An explicit `maxOutputTokens` value takes
+  precedence.
+</Note>
 
 <Note>
   Model availability depends on your Google Cloud project and region. Check the

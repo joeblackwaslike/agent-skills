@@ -14,13 +14,15 @@ related:
 summary: Learn how to import thousands of simple redirects from CSV, JSON, or JSONL files.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/redirects/bulk-redirects.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "b5d7b2f9fca72ffd16da5a9a69f9e11f50c0eb8da5a3dbc9d7198212f0eb00db"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "da9eaf46f6f3b371f14e277c70550a65aff446f046946f3e9a223742e8d5a537"
 ---
 
 # Bulk Redirects
 
 > **🔒 Permissions Required**: Bulk Redirects
+
+With bulk redirects, you can handle thousands of simple path-to-path or path-to-URL redirects efficiently. You can configure bulk redirects at deployment time through files in your repository, or at runtime through the dashboard, API, or CLI. They are framework agnostic and Vercel processes them before any other route specified in your deployment.
 
 
 <!-- docsgraph:related -->
@@ -29,21 +31,18 @@ sha256: "b5d7b2f9fca72ffd16da5a9a69f9e11f50c0eb8da5a3dbc9d7198212f0eb00db"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Bulk redirects are now generally available](https://vercel.com/changelog/bulk-redirects-are-now-generally-available?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fbulk-redirects&source_site=vercel-docs&relationship=related)
-- [Redirecting Domains](https://vercel.com/blog/redirecting-domains?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fbulk-redirects&source_site=vercel-docs&relationship=related)
 - [Bulk redirects UI, API, and CLI now generally available](https://vercel.com/changelog/bulk-redirects-ui-api-and-cli-now-generally-available?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fbulk-redirects&source_site=vercel-docs&relationship=related)
 - [Scaling redirects to infinity on Vercel](https://vercel.com/blog/scaling-redirects-to-infinity-on-vercel?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fbulk-redirects&source_site=vercel-docs&relationship=related)
 - [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fbulk-redirects&source_site=vercel-docs&relationship=related) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
 - [How can I increase the limit of redirects or use dynamic redirects on Vercel?](https://vercel.com/kb/guide/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fbulk-redirects&source_site=vercel-docs&relationship=related) — Instructions on how to use Serverless Functions to handle redirects on Vercel.
 - [Configuration Redirects](https://vercel.com/docs/routing/redirects/configuration-redirects?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fbulk-redirects&source_site=vercel-docs&relationship=related) — Learn how to define static redirects in your framework configuration or vercel.json with support for wildcards, pattern
 - [Managing redirects at scale](https://vercel.com/docs/routing/redirects/manage-redirects-at-scale?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fbulk-redirects&source_site=vercel-docs&relationship=related) — Add, bulk upload, version, and roll back project-level redirects using the CLI.
-- [vercel redirects](https://vercel.com/docs/cli/redirects?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fbulk-redirects&source_site=vercel-docs&relationship=related) — Learn how to manage project-level redirects using the vercel redirects CLI command.
 - [Delete project-level redirects.](https://vercel.com/docs/rest-api/bulk-redirects/delete-project-level-redirects?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fbulk-redirects&source_site=vercel-docs&relationship=related) — DELETE /v1/bulk-redirects — Deletes the provided redirects from the latest version of the projects' bulk redirects. Stag
 - [Edit a project-level redirect.](https://vercel.com/docs/rest-api/bulk-redirects/edit-a-project-level-redirect?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fbulk-redirects&source_site=vercel-docs&relationship=related) — PATCH /v1/bulk-redirects — Edits a single redirect identified by its source path. Stages a new change with the modified
+- [vercel redirects](https://vercel.com/docs/cli/redirects?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fbulk-redirects&source_site=vercel-docs&relationship=related) — Learn how to manage project-level redirects using the vercel redirects CLI command.
 
 Full cross-link map for this page: [/docs/routing/redirects/bulk-redirects.graph.md](/docs/routing/redirects/bulk-redirects.graph.md?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fbulk-redirects&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-With bulk redirects, you can handle thousands of simple path-to-path or path-to-URL redirects efficiently. You can configure bulk redirects at deployment time through files in your repository, or at runtime through the dashboard, API, or CLI. They are framework agnostic and Vercel processes them before any other route specified in your deployment.
 
 Use bulk redirects when you have thousands of redirects that do not require wildcard or header matching functionality.
 
@@ -66,8 +65,8 @@ Each redirect supports the following fields:
 
 | Field                 | Type      | Required | Default | Description                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | --------------------- | --------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `source`              | `string`  | Yes      | `N/A`   | An absolute path or fully qualified URL that matches each incoming request (excluding query string). Max 2048 characters.Example: `/old-marketing-page` or `https://old-domain.com/page`                                                                                                                                                                                                                                                |
-| `destination`         | `string`  | Yes      | `N/A`   | A location destination defined as an absolute pathname or external URL. Max 2048 characters.Example `/new-marketing-page`                                                                                                                                                                                                                                                                                                               |
+| `source`              | `string`  | Yes      | `N/A`   | An absolute path or fully qualified URL that matches each incoming request (excluding query string). Max 2048 characters.<br /><br />Example: `/old-marketing-page` or `https://old-domain.com/page`                                                                                                                                                                                                                                                |
+| `destination`         | `string`  | Yes      | `N/A`   | A location destination defined as an absolute pathname or external URL. Max 2048 characters.<br /><br />Example `/new-marketing-page`                                                                                                                                                                                                                                                                                                               |
 | `permanent`           | `boolean` | No       | `false  | Toggle between permanent ([308](https://developer.mozilla.org/docs/Web/HTTP/Status/308)) and temporary ([307](https://developer.mozilla.org/docs/Web/HTTP/Status/307)) redirect.                                                                                                                                                                                                                                                                  |
 | `statusCode`         |`integer`| No       |`307`  | Specify the exact status code. Can be [301](https://developer.mozilla.org/docs/Web/HTTP/Status/301), [302](https://developer.mozilla.org/docs/Web/HTTP/Status/302), [303](https://developer.mozilla.org/docs/Web/HTTP/Status/303), [307](https://developer.mozilla.org/docs/Web/HTTP/Status/307), or [308](https://developer.mozilla.org/docs/Web/HTTP/Status/308). Overrides permanent when set, otherwise defers to permanent value or default. |
 |`caseSensitive`      |`boolean`| No       |`false`| Toggle whether source path matching is case sensitive.                                                                                                                                                                                                                                                                                                                                                                                            |

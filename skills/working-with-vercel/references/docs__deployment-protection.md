@@ -3,7 +3,7 @@ title: Deployment Protection on Vercel
 product: vercel
 url: /docs/deployment-protection
 canonical_url: "https://vercel.com/docs/deployment-protection"
-last_updated: 2026-08-21
+last_updated: 2026-08-28
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: "Learn how to control access to your Vercel project's preview and production URLs with Deployment Protection. Configure protection methods and scope..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "6c54770b3c74b66ae0ea2a8d06fe0293e3499549afda50aa977abf7ec5fb7b24"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "3f8afa30ec0e5a470123dcc7ba57d3d704c224a914ab1c67540e1431ce81f0a9"
 ---
 
 # Deployment Protection on Vercel
@@ -31,7 +31,7 @@ Deployment Protection lets you control who can access your preview and productio
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related&source_path=%2Fdocs%2Fdeployment-protection&source_site=vercel-docs&relationship=related) — Protect who can see your deployments.
-- [Remote Agents](https://eve.dev/docs/guides/remote-agents?from=related&source_path=%2Fdocs%2Fdeployment-protection&source_site=vercel-docs&relationship=related) — Call another eve deployment as a subagent with defineRemoteAgent: same tool call as a local subagent, outbound auth, dur
+- [Remote Agents](https://eve.dev/docs/guides/remote-agents?from=related&source_path=%2Fdocs%2Fdeployment-protection&source_site=vercel-docs&relationship=related) — Call another eve deployment as a subagent with defineRemoteAgent: the same tool call as a local subagent, with outbound
 - [More Secure Deployment Protection](https://vercel.com/changelog/more-secure-deployment-protection?from=related&source_path=%2Fdocs%2Fdeployment-protection&source_site=vercel-docs&relationship=related)
 - [Protection bypass for automation now supports multiple secrets](https://vercel.com/changelog/protection-bypass-for-automation-multiple-secrets?from=related&source_path=%2Fdocs%2Fdeployment-protection&source_site=vercel-docs&relationship=related)
 - [Set team-wide defaults for Deployment Protection](https://vercel.com/changelog/set-team-wide-defaults-for-deployment-protection?from=related&source_path=%2Fdocs%2Fdeployment-protection&source_site=vercel-docs&relationship=related)
@@ -40,8 +40,8 @@ Deployment Protection lets you control who can access your preview and productio
 - [Are Vercel Preview Deployments indexed by search engines?](https://vercel.com/kb/guide/are-vercel-preview-deployment-indexed-by-search-engines?from=related&source_path=%2Fdocs%2Fdeployment-protection&source_site=vercel-docs&relationship=related) — Vercel Preview Deployments aren't indexed by default. Learn how the noindex header works, how to confirm it, and the cus
 - [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related&source_path=%2Fdocs%2Fdeployment-protection&source_site=vercel-docs&relationship=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
 - [How can I run end-to-end tests after my Vercel Preview Deployment?](https://vercel.com/kb/guide/how-can-i-run-end-to-end-tests-after-my-vercel-preview-deployment?from=related&source_path=%2Fdocs%2Fdeployment-protection&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel CLI in combination with your CI/CD provider to run end-to-end tests for every code change.
-- [React2Shell Security Bulletin](https://vercel.com/blog/resources-for-protecting-against-react2shell?from=related&source_path=%2Fdocs%2Fdeployment-protection&source_site=vercel-docs&relationship=related)
 - [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments?from=related&source_path=%2Fdocs%2Fdeployment-protection&source_site=vercel-docs&relationship=related)
+- [Deployment Protection is now enabled by default for new projects](https://vercel.com/changelog/deployment-protection-is-now-enabled-by-default-for-new-projects?from=related&source_path=%2Fdocs%2Fdeployment-protection&source_site=vercel-docs&relationship=related)
 
 Full cross-link map for this page: [/docs/deployment-protection.graph.md](/docs/deployment-protection.graph.md?from=related&source_path=%2Fdocs%2Fdeployment-protection&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

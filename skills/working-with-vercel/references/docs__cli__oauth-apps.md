@@ -8,12 +8,12 @@ type: reference
 prerequisites:
   - /docs/cli
 related:
-  []
+  - /docs/cli/global-options
 summary: "Register Vercel Apps (OAuth) and manage team installations from the CLI: register new apps, list and dismiss installation requests, install apps to a..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/oauth-apps.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "a0c9e2eba4b7740b77187f3587ef115d6e977e8907e0e102a41efd0657dea4ed"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "f68800c16e86f0ea97a6017c60ebffe28a4bb7563de73b9c0fd74ea4f6e33884"
 ---
 
 # vercel oauth-apps
@@ -29,8 +29,8 @@ The `vercel oauth-apps` command registers Vercel Apps (OAuth) and manages team i
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Foauth-apps&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel teams](https://vercel.com/docs/cli/teams?from=related&source_path=%2Fdocs%2Fcli%2Foauth-apps&source_site=vercel-docs&relationship=related) — Learn how to list, add, switch, invite, and manage your teams with the vercel teams CLI command.
 - [vercel tokens](https://vercel.com/docs/cli/tokens?from=related&source_path=%2Fdocs%2Fcli%2Foauth-apps&source_site=vercel-docs&relationship=related) — Manage your personal Vercel authentication tokens from the CLI: list, create, and remove access tokens for use with the
-- [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related&source_path=%2Fdocs%2Fcli%2Foauth-apps&source_site=vercel-docs&relationship=related) — Learn how to manage Sign in with Vercel from the Dashboard
-- [vercel webhooks](https://vercel.com/docs/cli/webhooks?from=related&source_path=%2Fdocs%2Fcli%2Foauth-apps&source_site=vercel-docs&relationship=related) — Learn how to manage webhooks for your Vercel account using the vercel webhooks CLI command.
+- [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Foauth-apps&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel buy](https://vercel.com/docs/cli/buy?from=related&source_path=%2Fdocs%2Fcli%2Foauth-apps&source_site=vercel-docs&relationship=related) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
 
 Full cross-link map for this page: [/docs/cli/oauth-apps.graph.md](/docs/cli/oauth-apps.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Foauth-apps&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -181,6 +181,24 @@ vercel oauth-apps remove inst_abc123 --yes
 ```
 
 *Remove an installation by its installation ID.*
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel oauth-apps` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 
 ---

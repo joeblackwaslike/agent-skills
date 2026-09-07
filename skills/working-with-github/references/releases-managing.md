@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/repositories/releasing-projects-on-github/managing-releases-in-a-repository.md"
-fetched_at: "2026-07-13T06:58:22.643Z"
-sha256: "0e57534b9558f70961d75b62500c04517dc18a8164bdbd1dfc8c8ae52cd1bf04"
+fetched_at: "2026-09-07T09:04:02.451Z"
+sha256: "6d19098f8b44e5dbe6d66b8913670f01f8a39b66289dcaaeedca30a1e831b0ad"
 ---
 
 ## About release management
@@ -66,7 +66,7 @@ If you @mention any {% data variables.product.github %} users in the notes, the 
 {% ifversion immutable-releases %}
 
 > [!NOTE]
-> If you have enabled immutable releases for your repository, you can only edit the title and release notes after a release is published. See [AUTOTITLE](/code-security/concepts/supply-chain-security/immutable-releases).
+> If you have enabled immutable releases for your repository, you cannot add, replace, or delete assets after a release is published, and you cannot move or delete its tag while the release exists. You can still edit the title and release notes, and change whether the release is a pre-release or the latest release. See [AUTOTITLE](/code-security/concepts/supply-chain-security/immutable-releases).
 
 {% endif %}
 

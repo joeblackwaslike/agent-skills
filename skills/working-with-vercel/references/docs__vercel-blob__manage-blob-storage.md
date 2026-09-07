@@ -14,8 +14,8 @@ related:
 summary: Create blob stores, upload files, list contents, and manage storage using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/manage-blob-storage.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "3cf1979e3840071af73ae206f8e6ed8537a7b0b0ba547e13d6bfa6acdf9732d3"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "2b950a16c11749d986178fdf9b66dbbc797fbafff7b9123da6dcdc33fef79216"
 ---
 
 # Managing Vercel Blob storage from the CLI
@@ -33,10 +33,10 @@ Use this guide to manage Vercel Blob storage from the CLI. You'll create a store
 - [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fmanage-blob-storage&source_site=vercel-docs&relationship=related) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
 - [Vercel Blob CLI is now available](https://vercel.com/changelog/vercel-blob-cli-is-now-available?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fmanage-blob-storage&source_site=vercel-docs&relationship=related)
 - [Delete a Blob store](https://vercel.com/docs/rest-api/storage/delete-a-blob-store?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fmanage-blob-storage&source_site=vercel-docs&relationship=related) — DELETE /storage/stores/blob/{id} — Delete a Blob store
-- [Vercel Storage overview](https://vercel.com/docs/storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fmanage-blob-storage&source_site=vercel-docs&relationship=related) — Store large files and global configuration with Vercel's storage products.
+- [Vercel Storage overview](https://vercel.com/docs/storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fmanage-blob-storage&source_site=vercel-docs&relationship=related) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
 - [Create a Blob store](https://vercel.com/docs/rest-api/storage/create-a-blob-store?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fmanage-blob-storage&source_site=vercel-docs&relationship=related) — POST /storage/stores/blob — Create a Blob store
-- [vercel vcr](https://vercel.com/docs/cli/vcr?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fmanage-blob-storage&source_site=vercel-docs&relationship=related) — Manage Vercel Container Registry from the Vercel CLI: build and push images, manage repositories, tags, and images, and
 - [Vercel Container Registry](https://vercel.com/docs/container-registry?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fmanage-blob-storage&source_site=vercel-docs&relationship=related) — Store and manage Docker container images on Vercel. Build and push images with the Vercel CLI, then run them on Vercel F
+- [Managing redirects at scale](https://vercel.com/docs/routing/redirects/manage-redirects-at-scale?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fmanage-blob-storage&source_site=vercel-docs&relationship=related) — Add, bulk upload, version, and roll back project-level redirects using the CLI.
 
 Full cross-link map for this page: [/docs/vercel-blob/manage-blob-storage.graph.md](/docs/vercel-blob/manage-blob-storage.graph.md?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fmanage-blob-storage&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

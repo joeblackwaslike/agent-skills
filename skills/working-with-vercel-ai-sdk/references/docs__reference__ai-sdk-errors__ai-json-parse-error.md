@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-json-parse-error.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "10fad86f536e8eb5b86362108d95e5e4df64d73d67881fc44e20e6d433dae09a"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "99245589540f80c314721c1839137576ca102764b831354debac3f7e4dda56a6"
 ---
 
 # AI_JSONParseError
@@ -60,6 +60,7 @@ if (JSONParseError.isInstance(error)) {
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
 - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
 - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)
+- [ToolChoiceViolationError](/docs/reference/ai-sdk-errors/ai-tool-choice-violation-error)
 - [AI_TypeValidationError](/docs/reference/ai-sdk-errors/ai-type-validation-error)
 - [AI_UIMessageStreamError](/docs/reference/ai-sdk-errors/ai-ui-message-stream-error)
 - [AI_UnsupportedFunctionalityError](/docs/reference/ai-sdk-errors/ai-unsupported-functionality-error)

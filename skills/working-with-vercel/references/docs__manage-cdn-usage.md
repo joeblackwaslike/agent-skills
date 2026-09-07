@@ -16,8 +16,8 @@ related:
 summary: Understand CDN pricing resources, monitor usage from your dashboard, and optimize Fast Data Transfer, Fast Origin Transfer, and CDN Requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/manage-cdn-usage.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "c069d5d0a3a59c43e63a9ac37355c9309c0d310ae1e941e439db8fb5fdfca4ca"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "3d444a946f34c974ad09f73c8f7120f7b71537fbe34fee34ba66fb64ba69223c"
 ---
 
 # CDN pricing and usage
@@ -40,7 +40,7 @@ CDN pricing covers three resources:
 - [How Vercel CDN works](https://vercel.com/docs/how-vercel-cdn-works?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
 - [Calculating usage of resources](https://vercel.com/docs/pricing/how-does-vercel-calculate-usage-of-resources?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=related) — Understand how Vercel measures and calculates your resource usage based on a typical user journey.
 - [Limits and Pricing for Image Optimization](https://vercel.com/docs/image-optimization/limits-and-pricing?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=related) — This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can i
-- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
+- [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=related) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
 
 Full cross-link map for this page: [/docs/manage-cdn-usage.graph.md](/docs/manage-cdn-usage.graph.md?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

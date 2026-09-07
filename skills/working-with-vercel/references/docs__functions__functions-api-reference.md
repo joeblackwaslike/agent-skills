@@ -16,13 +16,15 @@ related:
 summary: Learn about available APIs when working with Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/functions-api-reference.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "671628dad5848de17cc5e32d36f25728943e4460c06698b75afa83a3bb1f6c00"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "a994cb49f0ed4e711c8f41c675a7a4ffba4385254f7695c12347b23223f1a590"
 ---
 
 # Functions API Reference
 
 > For \["nextjs-app"]:
+
+Functions are defined similar to a [Route Handler](https://nextjs.org/docs/app/api-reference/file-conventions/route) in Next.js. When using Next.js App Router, you can define a function in a file under `app/api/my-route/route.ts` in your project. Vercel will deploy any file under `app/api/` as a function.
 
 
 <!-- docsgraph:related -->
@@ -40,20 +42,18 @@ sha256: "671628dad5848de17cc5e32d36f25728943e4460c06698b75afa83a3bb1f6c00"
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference&source_site=vercel-docs&relationship=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
 - [How can I use geolocation IP headers?](https://vercel.com/kb/guide/geo-ip-headers-geolocation-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference&source_site=vercel-docs&relationship=related) — Learn how to read geolocation headers on Vercel with Next.js or any frontend framework.
 - [Streaming](https://workflow-sdk.dev/docs/foundations/streaming?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference&source_site=vercel-docs&relationship=related) — Stream real-time data to clients without waiting for workflow completion.
-- [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference&source_site=vercel-docs&relationship=related) — Learn how to build and scale performant APIs on Vercel.
+- [Enhancing security of backend connectivity with OpenID Connect](https://vercel.com/blog/enhancing-security-of-backend-connectivity-with-openid-connect?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference&source_site=vercel-docs&relationship=related)
 - [Connect to Amazon Web Services \\(AWS\\)](https://vercel.com/docs/oidc/aws?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference&source_site=vercel-docs&relationship=related) — Learn how to configure your AWS account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
 
 Full cross-link map for this page: [/docs/functions/functions-api-reference.graph.md](/docs/functions/functions-api-reference.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Functions are defined similar to a [Route Handler](https://nextjs.org/docs/app/api-reference/file-conventions/route) in Next.js. When using Next.js App Router, you can define a function in a file under  in your project. Vercel will deploy any file under `app/api/` as a function.
 
 > For \["nextjs"]:
 
 While you can define a function with a traditional [Next.js API Route](https://nextjs.org/docs/pages/building-your-application/routing/api-routes), they do not support streaming responses. To stream responses in Next.js, you must use [Route Handlers in the App Router](https://nextjs.org/docs/app/api-reference/file-conventions/route "Route Handlers"), even if the rest of your app uses the Pages Router. This will not alter the behavior of your application.
 
 You can create an `app` directory at the same level as your `pages` directory.
-Then, define your function in .
+Then, define your function in `app/api/{example}/route.ts`.
 
 > For \["other"]:
 
@@ -69,6 +69,9 @@ Vercel Functions use a Web Handler, which consists of the `request` parameter th
 | `context` |  Deprecated, use [`@vercel/functions`](/docs/functions/functions-api-reference/vercel-functions-package#waituntil) instead | N/A                                                                            | [`{ waitUntil }`](/docs/functions/functions-api-reference/vercel-functions-package#waituntil) |
 
 > For \['nextjs']:
+
+> **💡 Note:** To stream responses you must use Route Handlers in the App Router, even if the
+> rest of your app uses the Pages Router.
 
 ```ts v0="build" filename="app/api/hello/route.ts" framework=nextjs
 export function GET(request: Request) {
@@ -111,6 +114,12 @@ export function GET(request) {
 The above shows how you can use a [Route Handlers in the App Router](https://nextjs.org/docs/app/api-reference/file-conventions/route "Route Handlers") in your Pages app and is advantageous because it allows you to use a common signature, web standards, and stream responses.
 
 > For \["other"]:
+
+> **💡 Note:** If you're not using a framework, you must either add
+> `"type": "module"` to your
+> `package.json` or change your JavaScript Functions'
+> file extensions from `.js` to
+> `.mjs`
 
 ### `fetch` Web Standard
 
@@ -244,6 +253,61 @@ async function abortPendingTask() {
 > For \["nextjs", "other"]:
 
 ## `config` object
+
+> **💡 Note:** When you are creating a function with Next.js Pages, you use a `config` object
+> to set certain configurations. However, if you're using functions with the App
+> Router as we recommend (i.e. it's located in
+> `app/api/[function-name]/route.ts` ), you must make configurations with a
+> Route Segment Config. An example of each is shown below.
+
+> For \["nextjs"]:
+
+```ts filename="pages/api/hello.ts" framework=all
+// config object
+
+export const config = {
+  runtime: 'nodejs',
+  maxDuration: 15,
+};
+```
+
+```js filename="pages/api/hello.js" framework=all
+// config object
+
+export const config = {
+  runtime: 'nodejs',
+  maxDuration: 15,
+};
+```
+
+```ts filename="app/api/example/route.ts" framework=all
+// segment options
+
+export const runtime = 'nodejs';
+export const maxDuration = 15;
+```
+
+```js filename="app/api/example/route.ts" framework=all
+// segment options
+
+export const maxDuration = 15;
+```
+
+> For \["other"]:
+
+```ts filename="api/config-object.ts" framework=all
+export const config = {
+  runtime: 'nodejs',
+  maxDuration: 15,
+};
+```
+
+```js filename="api/config-object.js" framework=all
+export const config = {
+  runtime: 'nodejs',
+  maxDuration: 15,
+};
+```
 
 ### `config` properties
 

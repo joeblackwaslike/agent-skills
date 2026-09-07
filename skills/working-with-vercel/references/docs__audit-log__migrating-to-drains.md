@@ -16,13 +16,15 @@ related:
 summary: Move your SIEM integration from Custom SIEM Log Streaming to Audit Log Drains, with wider event coverage and a new event schema.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/audit-log/migrating-to-drains.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "20809dac1c13166cae9f9c496c254a3221c952ca78b62eb2bd03058e017e713d"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "5ac96d5016d3cd5344c95c23bd493c1f6cd5d7bf2083e3c9984a3d10e4a92f03"
 ---
 
 # Migrating from Custom SIEM Log Streaming to Audit Log Drains
 
 > **🔒 Permissions Required**: Audit Log Drains
+
+Vercel is replacing Custom SIEM Log Streaming with [Audit Log Drains](/docs/drains/reference/audit-logs). Audit Log Drains forward the events from your [Activity Log](/docs/activity-log) including audit metadata, which covers more team activity than the legacy integration. If you stream audit logs to a Security Information and Event Management (SIEM) system today, migrate your integration to keep receiving events.
 
 
 <!-- docsgraph:related -->
@@ -41,8 +43,6 @@ sha256: "20809dac1c13166cae9f9c496c254a3221c952ca78b62eb2bd03058e017e713d"
 
 Full cross-link map for this page: [/docs/audit-log/migrating-to-drains.graph.md](/docs/audit-log/migrating-to-drains.graph.md?from=related&source_path=%2Fdocs%2Faudit-log%2Fmigrating-to-drains&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Vercel is replacing Custom SIEM Log Streaming with [Audit Log Drains](/docs/drains/reference/audit-logs). Audit Log Drains forward the events from your [Activity Log](/docs/activity-log) including audit metadata, which covers more team activity than the legacy integration. If you stream audit logs to a Security Information and Event Management (SIEM) system today, migrate your integration to keep receiving events.
 
 You can run Audit Log Drains and Custom SIEM Log Streaming at the same time. Keep the existing stream active while you set up and validate the drain, then remove it once your SIEM ingests the new events and schema correctly.
 

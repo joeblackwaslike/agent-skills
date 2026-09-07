@@ -3,7 +3,7 @@ title: Deploying Git Repositories with Vercel
 product: vercel
 url: /docs/git
 canonical_url: "https://vercel.com/docs/git"
-last_updated: 2026-08-14
+last_updated: 2026-08-28
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Vercel automatically deploys supported Git repositories on every branch push and when changes merge into the production branch.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "f84feffb8bcfc5118a737e54bab8044401693048b44e7ed6aeca4eca6215d865"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "0cd6534d04f9402c7a9349e96330ddc782e066bbdc9a399744d53e2dbfe1cddf"
 ---
 
 # Deploying Git Repositories with Vercel
@@ -38,10 +38,10 @@ Vercel allows for **automatic deployments on every branch push** and merges onto
 - [How to use a non-default branch for production deployments on Vercel](https://vercel.com/kb/guide/can-i-use-a-non-default-branch-for-production?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — Learn how to set a non-default branch for production on Vercel. Open the Production environment, change branch tracking,
 - [Can I use Vercel to deploy to a private cloud?](https://vercel.com/kb/guide/can-i-use-vercel-to-deploy-to-a-private-cloud?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — Learn about if it's possible to deploy to a private cloud with Vercel.
 - [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related)
-- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — Learn how to create and manage deployments on Vercel.
+- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — Learn how to configure Git for your project through vercel.json or vercel.ts.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Git settings](https://vercel.com/docs/project-configuration/git-settings?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — Use the project settings to manage the Git connection, enable Git LFS, and create deploy hooks.
 
 Full cross-link map for this page: [/docs/git.graph.md](/docs/git.graph.md?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

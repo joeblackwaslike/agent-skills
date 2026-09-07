@@ -15,8 +15,8 @@ related:
 summary: Publish and consume messages with the Vercel Queues SDK for JavaScript and TypeScript.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/sdk.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "f359e73a4a6f5fff5e0ebcfa4bcb037477dfbcb735819b55f05bba59db685e77"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "dff705fac6067509c5c563f6116518405fe3c4f44121ac4df96cd3123893b05a"
 ---
 
 # Vercel Queues: JS SDK Reference
@@ -36,8 +36,8 @@ The `@vercel/queue` SDK lets JavaScript and TypeScript apps publish and consume 
 - [Quickstart](https://vercel.com/docs/queues/quickstart?from=related&source_path=%2Fdocs%2Fqueues%2Fsdk&source_site=vercel-docs&relationship=related) — Set up Vercel Queues with the SDK.
 - [Queues concepts](https://vercel.com/docs/queues/concepts?from=related&source_path=%2Fdocs%2Fqueues%2Fsdk&source_site=vercel-docs&relationship=related) — Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
 - [Run background tasks with Celery on Vercel](https://vercel.com/docs/frameworks/backend/celery?from=related&source_path=%2Fdocs%2Fqueues%2Fsdk&source_site=vercel-docs&relationship=related) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
-- [Vercel Workflows](https://vercel.com/docs/workflows?from=related&source_path=%2Fdocs%2Fqueues%2Fsdk&source_site=vercel-docs&relationship=related) — Vercel Workflows is a fully managed platform for building durable, reliable, and observable applications and AI agents w
 - [Queues Observability](https://vercel.com/docs/queues/observability?from=related&source_path=%2Fdocs%2Fqueues%2Fsdk&source_site=vercel-docs&relationship=related) — Monitor queue throughput, message age, retries, and consumer performance to optimize your queue-based workflows.
+- [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fqueues%2Fsdk&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
 
 Full cross-link map for this page: [/docs/queues/sdk.graph.md](/docs/queues/sdk.graph.md?from=related&source_path=%2Fdocs%2Fqueues%2Fsdk&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

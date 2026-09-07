@@ -3,7 +3,7 @@ title: Restrict deployment access by IP address
 product: vercel
 url: /docs/deployment-protection/methods-to-protect-deployments/trusted-ips
 canonical_url: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/trusted-ips"
-last_updated: 2026-08-11
+last_updated: 2026-08-28
 type: how-to
 prerequisites:
   - /docs/deployment-protection/methods-to-protect-deployments
@@ -17,13 +17,15 @@ related:
 summary: Trusted IPs let you restrict access to your deployments to a list of allowed IP addresses.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/trusted-ips.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "9c2d68c9e7b2919f5ca093fd5c2019a039aff9712da01ed8f9ced50482ad6ae1"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "fe5ff4cac8091578bd969bc53d5e3e789f228a7070968cc9783134d3cf22d022"
 ---
 
 # Restrict deployment access by IP address
 
 > **🔒 Permissions Required**: Trusted IPs
+
+With Trusted IPs [enabled](/docs/deployment-protection/methods-to-protect-deployments/trusted-ips#manage-trusted-ips) at the level of your [project](/docs/project-configuration/project-settings), only visitors from an allowed IP address can access your deployment. The deployment URL will return `404` [No Deployment Found](/docs/errors#404:-deployment_not_found) for all other requests. Trusted IPs is configured by specifying a list of IPv4 addresses and IPv4 CIDR ranges.
 
 
 <!-- docsgraph:related -->
@@ -45,8 +47,6 @@ sha256: "9c2d68c9e7b2919f5ca093fd5c2019a039aff9712da01ed8f9ced50482ad6ae1"
 
 Full cross-link map for this page: [/docs/deployment-protection/methods-to-protect-deployments/trusted-ips.graph.md](/docs/deployment-protection/methods-to-protect-deployments/trusted-ips.graph.md?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Ftrusted-ips&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-With Trusted IPs [enabled](/docs/deployment-protection/methods-to-protect-deployments/trusted-ips#manage-trusted-ips) at the level of your [project](/docs/project-configuration/project-settings), only visitors from an allowed IP address can access your deployment. The deployment URL will return `404` [No Deployment Found](/docs/errors#404:-deployment_not_found) for all other requests. Trusted IPs is configured by specifying a list of IPv4 addresses and IPv4 CIDR ranges.
 
 Trusted IPs works well if you access Vercel deployments through a specific IP address. For example, you can limit preview deployment access to your VPN. You can also enable Trusted IPs in production to restrict incoming access to only requests through your external proxy.
 

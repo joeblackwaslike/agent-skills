@@ -12,8 +12,8 @@ related:
 summary: See which AI models, labs, apps, and providers are most used on AI Gateway, share a chart as an image, and download the underlying data.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/leaderboards.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "fb463e777caf03bdeeb0fcee2d2147d36b4139b6f8d90d33252348a7252c461a"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "6efe3e3af94525171c869e82a721f71a41671008b5b2bf07c60fef0011ebb831"
 ---
 
 # Leaderboards
@@ -33,7 +33,6 @@ The [AI Gateway leaderboards](/ai-gateway/leaderboards) show which models, labs,
 - [DeepSeek enters the fight for token volume, Anthropic continues to dominate spend](https://vercel.com/blog/ai-gateway-production-index-june-2026?from=related&source_path=%2Fdocs%2Fai-gateway%2Fleaderboards&source_site=vercel-docs&relationship=related)
 - [Logs](https://vercel.com/docs/ai-gateway/observability-and-spend/logs?from=related&source_path=%2Fdocs%2Fai-gateway%2Fleaderboards&source_site=vercel-docs&relationship=related) — Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the resu
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api?from=related&source_path=%2Fdocs%2Fai-gateway%2Fleaderboards&source_site=vercel-docs&relationship=related) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
-- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fai-gateway%2Fleaderboards&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [vercel ai-gateway](https://vercel.com/docs/cli/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fleaderboards&source_site=vercel-docs&relationship=related) — Manage AI Gateway resources from the Vercel CLI: API keys, budgets, routing rules, models, leaderboards, and coding agen
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fleaderboards&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 

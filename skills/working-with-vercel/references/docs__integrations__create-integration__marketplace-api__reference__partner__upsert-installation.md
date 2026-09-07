@@ -3,7 +3,7 @@ title: upsert-installation
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/upsert-installation
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/upsert-installation"
-last_updated: 2026-08-31
+last_updated: 2026-09-07
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn about upsert-installation on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/upsert-installation.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "940fb3fa3ab970964daac0ef70b88a5540969e89cf47e90b3897a074697f2e0f"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "040286fcb724da7220ecaadb603402b3c63ea868445f922ed16f85914f731213"
 ---
 
 # Upsert Installation

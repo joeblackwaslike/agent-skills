@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-api-call-error.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "5b91df3fd8a06a79b765fc6300be056748fac94f77c3545a1fdcb82e75802a6c"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "5e21a95b1b973ff387b5da15ca9a537a8b37278853444dba14c9572cfb2df962"
 ---
 
 # AI_APICallError
@@ -66,6 +66,7 @@ if (APICallError.isInstance(error)) {
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
 - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
 - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)
+- [ToolChoiceViolationError](/docs/reference/ai-sdk-errors/ai-tool-choice-violation-error)
 - [AI_TypeValidationError](/docs/reference/ai-sdk-errors/ai-type-validation-error)
 - [AI_UIMessageStreamError](/docs/reference/ai-sdk-errors/ai-ui-message-stream-error)
 - [AI_UnsupportedFunctionalityError](/docs/reference/ai-sdk-errors/ai-unsupported-functionality-error)

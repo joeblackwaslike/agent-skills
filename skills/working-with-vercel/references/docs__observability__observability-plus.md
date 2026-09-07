@@ -14,13 +14,15 @@ related:
 summary: Learn about using Observability Plus and its limits.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/observability/observability-plus.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "38bfff0a10252a03cfbefe0b31076f2f5ff13bc53bc1c8bc8d9b991e9c55ec80"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "7379ea45e82a8d90b2818d2ad43c164bd43f1b6110b146df99a46e0f57b410bc"
 ---
 
 # Observability Plus
 
 > **🔒 Permissions Required**: Observability Plus
+
+Every Vercel team has access to [Observability](/docs/observability). **Observability Plus** is available on Paid Pro and Enterprise teams and unlocks more granular data exploration, helping you pinpoint when and why issues occurred.
 
 
 <!-- docsgraph:related -->
@@ -44,8 +46,6 @@ sha256: "38bfff0a10252a03cfbefe0b31076f2f5ff13bc53bc1c8bc8d9b991e9c55ec80"
 Full cross-link map for this page: [/docs/observability/observability-plus.graph.md](/docs/observability/observability-plus.graph.md?from=related&source_path=%2Fdocs%2Fobservability%2Fobservability-plus&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-Every Vercel team has access to [Observability](/docs/observability). **Observability Plus** is available on Paid Pro and Enterprise teams and unlocks more granular data exploration, helping you pinpoint when and why issues occurred.
-
 For teams created or upgraded to Paid Pro on or after April 3, 2026, Observability Plus is enabled by default. Existing Paid Pro and Enterprise teams can [enable it separately](#enabling-observability-plus). Pro Trial plans require conversion to Paid Pro to access Observability Plus.
 
 To learn more about Observability Plus, see [Limitations](#limitations) or [pricing](#pricing).
@@ -61,8 +61,6 @@ To enable Observability Plus on an existing Paid Pro or Enterprise team:
 3. Review any charges, then confirm to enable.
 
 > **💡 Note:** If you don't see Observability Plus in the upgrade flow or in Billing, contact [Vercel Support](/help) or your Vercel account representative for assistance.
-
-
 
 #### Plan availability
 
@@ -135,16 +133,16 @@ Paid Pro and Enterprise teams can use **Observability Plus** for additional feat
 
 | Feature                               | Observability                                                                            | Observability Plus                                                                                                                  |
 | ------------------------------------- | ---------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| Data Retention                        | Hobby: 12 hours  Pro: 1 day  Enterprise: 3 days                                | 30 days                                                                                                                             |
+| Data Retention                        | Hobby: 12 hours <br /> Pro: 1 day <br /> Enterprise: 3 days                                | 30 days                                                                                                                             |
 | Query                                 | No access                                                                                | Author queries in the Vercel dashboard and save queries to notebooks                                                                |
 | Vercel Functions                      | No Latency (p75) data, no breakdown by path                                              | Latency data, sort by p75, breakdown by path and routes                                                                             |
 | External APIs                         | No ability to sort by error rate or p75 duration, only request totals for each hostname  | Sorting and filtering by requests, p75 duration, and duration. Latency, Requests, API Endpoint and function calls for each hostname |
 | Edge Requests                         | No breakdown by path                                                                     | Full request data                                                                                                                   |
 | Fast Data Transfer                    | No breakdown by path                                                                     | Full request data                                                                                                                   |
 | ISR (Incremental Static Regeneration) | No access to average duration or revalidation data. Limited function data for each route | Access to sorting and filtering by duration and revalidation. Full function data for each route                                     |
-| Build Diagnostics                     | Hobby: 12 hours  Pro: 1 day  Enterprise: 3 days                                | Full access                                                                                                                         |
+| Build Diagnostics                     | Hobby: 12 hours <br /> Pro: 1 day <br /> Enterprise: 3 days                                | Full access                                                                                                                         |
 | In-function Concurrency               | Full access when enabled                                                                 | Full access when enabled                                                                                                            |
-| Runtime logs                          | Hobby: 1 hour  Pro: 1 day  Enterprise: 3 days                                  | 30 days, max selection window of 14 consecutive days                                                                                |
+| Runtime logs                          | Hobby: 1 hour <br /> Pro: 1 day <br /> Enterprise: 3 days                                  | 30 days, max selection window of 14 consecutive days                                                                                |
 
 To access Observability Plus features, upgrade to a Paid [Pro plan](/docs/plans/pro-plan) or [enable Observability Plus](#enabling-observability-plus) on an existing Paid Pro or Enterprise team.
 

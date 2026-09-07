@@ -17,8 +17,8 @@ related:
 summary: Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot management.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/persistent-sandboxes.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "40a24782a81878a3cbd390e3196a74f1edc4276852c100a2a836978b9429fb15"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "b36a1941294e9d6d7782607eb0ac84e56d5ecaf2970cf985dcbc10d848615e5c"
 ---
 
 # Persistence
@@ -31,17 +31,17 @@ Persistent sandboxes automatically save their filesystem state when stopped and 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
 - [Vercel Sandbox can now run for up to 24 hours](https://vercel.com/changelog/vercel-sandbox-can-now-run-for-up-to-24-hours?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related)
 - [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
+- [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
 - [Sandbox persistence is now GA](https://vercel.com/changelog/sandbox-persistence-is-now-ga?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related)
-- [Automatic persistence now in beta on Vercel Sandbox](https://vercel.com/changelog/vercel-sandbox-persistent-sandboxes-beta?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related)
 - [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related) — Learn how to save sandbox state with snapshots and skip installation on future runs.
-- [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
-- [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
-- [Get a named sandbox](https://vercel.com/docs/rest-api/sandboxes/get-a-named-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related) — GET /v2/sandboxes/{name} — Retrieves a named sandbox by name, including its current sandbox and routes. If the sandbox i
-- [Glossary](https://vercel.com/docs/glossary?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related) — Learn about the terms and concepts used in Vercel's products and documentation.
+- [Automatic persistence now in beta on Vercel Sandbox](https://vercel.com/changelog/vercel-sandbox-persistent-sandboxes-beta?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related)
 - [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
+- [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
+- [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
+- [Glossary](https://vercel.com/docs/glossary?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related) — Learn about the terms and concepts used in Vercel's products and documentation.
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/sandbox/concepts/persistent-sandboxes.graph.md](/docs/sandbox/concepts/persistent-sandboxes.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -65,6 +65,27 @@ Persistence changes how a sandbox behaves when its current session stops. The ta
 ## Opt out of persistence
 
 To opt out, pass `persistent: false` at creation time, or update the sandbox later with `sandbox.update({ persistent: false })`. From the CLI, pass `--non-persistent` to `sandbox create`. Non-persistent sandboxes discard their filesystem when the session stops and don't accrue [Snapshot Storage](/docs/sandbox/pricing#snapshot-storage) costs.
+
+**TypeScript**
+
+```ts filename="index.ts"
+const sandbox = await Sandbox.create({ persistent: false });
+```
+
+**Python**
+
+```python filename="main.py"
+import asyncio
+
+from vercel import sandbox
+
+
+async def main() -> None:
+    await sandbox.create_sandbox(persistent=False)
+
+
+asyncio.run(main())
+```
 
 ## Key concepts
 
@@ -94,6 +115,45 @@ You can set a default expiration for the automatic snapshots, plus a retention p
 - **`snapshotExpiration`**: Default TTL for any snapshot of this sandbox, measured from the snapshot's last use. The timer resets each time the snapshot is used. Defaults to 30 days (`2,592,000,000` ms). Use `0` (or `"none"` in the CLI) to keep snapshots indefinitely.
 - **`keepLastSnapshots`**: Keep only the N (1–10) most recent snapshots, optionally with a different expiration and an option to delete evicted snapshots immediately.
 
+**TypeScript**
+
+```ts filename="index.ts"
+const sandbox = await Sandbox.create({
+  name: 'my-sandbox',
+  snapshotExpiration: 7 * 24 * 60 * 60 * 1000, // 7 days
+  keepLastSnapshots: {
+    count: 1, // Keep only the most recent snapshot
+    expiration: 30 * 24 * 60 * 60 * 1000, // 30 days for kept snapshots
+    deleteEvicted: true, // Delete evicted snapshots immediately
+  },
+});
+```
+
+**Python**
+
+```python filename="main.py"
+import asyncio
+from datetime import timedelta
+
+from vercel import sandbox
+from vercel.sandbox import SnapshotRetention
+
+
+async def main() -> None:
+    await sandbox.create_sandbox(
+        name="my-sandbox",
+        snapshot_expiration=timedelta(days=7),
+        snapshot_retention=SnapshotRetention(
+            count=1,
+            expiration=timedelta(days=30),
+            delete_evicted=True,
+        ),
+    )
+
+
+asyncio.run(main())
+```
+
 `keepLastSnapshots: { count: 1 }` is the recommended setting when you only care about the latest snapshot. It keeps snapshot storage flat.
 
 ### Sandbox retention
@@ -120,11 +180,85 @@ Two methods do **not** auto-resume:
 
 Call `Sandbox.create()` with a `name` to create a persistent sandbox. Persistence is on by default, so you only need to set `name`; the snippet below also sets a 7-day snapshot expiration:
 
+**TypeScript**
+
+```ts filename="index.ts"
+import { Sandbox } from '@vercel/sandbox';
+
+const sandbox = await Sandbox.create({
+  name: 'my-sandbox',
+  // `persistent: true` is the default. Pass `false` to opt out.
+  snapshotExpiration: 7 * 24 * 60 * 60 * 1000, // 7 days
+});
+
+await sandbox.runCommand('npm', ['install']);
+await sandbox.stop(); // Filesystem is snapshotted automatically
+```
+
+**Python**
+
+```python filename="main.py"
+import asyncio
+from datetime import timedelta
+
+from vercel import sandbox
+
+
+async def main() -> None:
+    box = await sandbox.create_sandbox(
+        name="my-sandbox",
+        snapshot_expiration=timedelta(days=7),
+    )
+    await box.run_process("uv", ["sync"], check=True)
+    await box.stop()
+
+
+asyncio.run(main())
+```
+
 ## Get or create (idempotent)
 
 `Sandbox.getOrCreate` is the recommended pattern for long-lived sandboxes. It resumes the sandbox if it exists, or creates it if it doesn't.
 
 Creation parameters (such as `keepLastSnapshots` or `snapshotExpiration`) apply only when `getOrCreate` creates the sandbox. If a sandbox with the same `name` already exists, `getOrCreate` returns it with its existing configuration and ignores the creation parameters you pass. To change the configuration of an existing sandbox, use [`sandbox.update`](#update-sandbox-configuration).
+
+**TypeScript**
+
+```ts filename="index.ts"
+const sandbox = await Sandbox.getOrCreate({
+  name: 'my-sandbox',
+  onCreate: async (sbx) => {
+    // Runs only the first time the sandbox is created
+    await sbx.runCommand('git', ['clone', repoUrl, '.']);
+    await sbx.runCommand('npm', ['install']);
+  },
+  onResume: async (sbx) => {
+    // Runs every time the session resumes
+    await sbx.runCommand({
+      cmd: 'npm',
+      args: ['run', 'dev'],
+      detached: true,
+    });
+  },
+});
+```
+
+**Python**
+
+```python filename="main.py"
+import asyncio
+
+from vercel import sandbox
+
+
+async def main() -> None:
+    box, created = await sandbox.get_or_create_sandbox(name="my-sandbox")
+    if created:
+        await box.run_process("uv", ["sync"], check=True)
+
+
+asyncio.run(main())
+```
 
 Behavior:
 
@@ -137,19 +271,158 @@ Behavior:
 
 Use `Sandbox.get({ name })` to retrieve a persistent sandbox by name. The handle is returned immediately; the SDK starts a new session on the next call that needs a running VM:
 
+**TypeScript**
+
+```ts filename="index.ts"
+// Retrieve the sandbox by name. The next SDK call resumes the session.
+const sandbox = await Sandbox.get({ name: 'my-sandbox' });
+
+// The filesystem is restored from the last session
+await sandbox.runCommand('npm', ['run', 'dev']);
+```
+
+**Python**
+
+```python filename="main.py"
+import asyncio
+
+from vercel import sandbox
+
+
+async def main() -> None:
+    box = await sandbox.get_sandbox(name="my-sandbox")
+    print(await box.fs.read_text("notes.txt"))
+
+
+asyncio.run(main())
+```
+
 Pass `resume: false` to skip auto-resume. The sandbox resumes on the next SDK call that requires a running VM.
 
 ## Update sandbox configuration
 
 `sandbox.update` replaces individual update helpers and accepts any of the mutable parameters at once. When `ports` is provided, it is treated as the **full** desired port list; any currently exposed port not present in the array is deregistered.
 
+**TypeScript**
+
+```ts filename="index.ts"
+await sandbox.update({
+  resources: { vcpus: 4 }, // Memory auto-scales to 2048 MB per vCPU
+  timeout: 30 * 60 * 1000, // 30 minutes
+  persistent: true,
+  snapshotExpiration: 14 * 24 * 60 * 60 * 1000, // 14 days
+  keepLastSnapshots: { count: 1 },
+  networkPolicy: 'deny-all',
+  ports: [3000, 8000],
+  tags: { env: 'production' },
+  currentSnapshotId: 'snap_xyz', // Roll back to a previous snapshot
+});
+```
+
+**Python**
+
+```python filename="main.py"
+import asyncio
+from datetime import timedelta
+
+from vercel import sandbox
+from vercel.sandbox import NetworkPolicy, SandboxResources, SnapshotRetention
+
+
+async def main() -> None:
+    box = await sandbox.get_sandbox(name="my-sandbox")
+    await box.update(
+        resources=SandboxResources(vcpus=4),
+        execution_time_limit=timedelta(minutes=30),
+        persistent=True,
+        snapshot_expiration=timedelta(days=14),
+        snapshot_retention=SnapshotRetention(count=1),
+        network_policy=NetworkPolicy.deny_all(),
+        ports=[3000, 8000],
+        tags={"env": "production"},
+        current_snapshot_id="snap_xyz",
+    )
+
+
+asyncio.run(main())
+```
+
 ## Delete a sandbox
 
 Deleting a sandbox permanently removes the sandbox and all of its sessions. Its [snapshots](/docs/sandbox/concepts/snapshots) survive the deletion, because several sandboxes can start from the same snapshot. They stay available until they expire or you delete them, and they keep incurring [storage charges](/docs/sandbox/pricing#snapshot-storage) in the meantime.
 
+**TypeScript**
+
+```ts filename="index.ts"
+await sandbox.delete();
+```
+
+**Python**
+
+```python filename="main.py"
+import asyncio
+
+from vercel import sandbox
+
+
+async def main() -> None:
+    box = await sandbox.get_sandbox(name="my-sandbox")
+    await box.destroy()
+
+
+asyncio.run(main())
+```
+
 ## List and search sandboxes
 
 `Sandbox.list` supports cursor-based pagination and returns an async-iterable that auto-paginates through every page.
+
+**TypeScript**
+
+```ts filename="index.ts"
+const result = await Sandbox.list({
+  namePrefix: 'user-a', // Filter by name prefix (requires sortBy: "name")
+  tags: { env: 'production' }, // Filter by tags
+  sortBy: 'createdAt', // "createdAt" (default), "name", or "statusUpdatedAt"
+  sortOrder: 'desc', // "asc" or "desc" (default)
+});
+
+// Per-item async iteration (auto-paginates)
+for await (const sandbox of result) {
+  console.log(sandbox.name);
+}
+
+// Or per-page
+for await (const page of result.pages()) {
+  console.log(page.sandboxes.length);
+}
+
+// Or collect everything
+const all = await result.toArray();
+```
+
+**Python**
+
+```python filename="main.py"
+import asyncio
+
+from vercel import sandbox
+from vercel.sandbox import SandboxQueryByName, TagFilter
+
+
+async def main() -> None:
+    query = SandboxQueryByName(
+        name_prefix="user-a",
+        sort_order="desc",
+        tag=TagFilter(key="env", value="production"),
+    )
+
+    async for box in sandbox.query_sandboxes(query=query):
+        print(box.name)
+
+
+asyncio.run(main())
+```
 
 ## CLI usage
 

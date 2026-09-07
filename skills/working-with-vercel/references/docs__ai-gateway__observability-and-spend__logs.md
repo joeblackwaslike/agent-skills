@@ -3,7 +3,7 @@ title: Logs
 product: vercel
 url: /docs/ai-gateway/observability-and-spend/logs
 canonical_url: "https://vercel.com/docs/ai-gateway/observability-and-spend/logs"
-last_updated: 2026-08-13
+last_updated: 2026-08-31
 type: how-to
 prerequisites:
   - /docs/ai-gateway/observability-and-spend
@@ -14,8 +14,8 @@ related:
 summary: Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the results as CSV or JSON.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/logs.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "9a37c328f1c21851cf7e27ce678d4b90c3cdd3faaf48da8ebca88c655a70248f"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "586d6f2f759b4e46527125ea64a89503158fa33f67b05982ac1b2afcbe0b4817"
 ---
 
 # Logs
@@ -31,13 +31,11 @@ The Logs page lists every request and asynchronous job your team sends through A
 - [AI Gateway logs now have a dedicated page](https://vercel.com/changelog/ai-gateway-logs?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related)
 - [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related)
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
-- [Access and share AI Gateway leaderboard data](https://vercel.com/changelog/open-data-and-shareable-charts-for-ai-gateway-leaderboards?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related)
-- [Usage & Activity](https://v0.app/docs/usage-dashboard?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — Track your credit consumption and activity, or review usage across your team.
 - [Runtime Logs](https://vercel.com/docs/logs/runtime?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to search, inspect, and share your runtime logs with the Logs tab.
+- [Logs](https://vercel.com/docs/logs?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — Use logs to find information on deployment builds, function executions, and more.
 - [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
-- [AI Gateway Usage & Billing](https://vercel.com/docs/ai-gateway/observability-and-spend/usage?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — Monitor your AI Gateway credit balance, usage, and generation details.
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including pricing and markup, SDK and API compatibility, model availabilit
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
-- [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application perfor
 
 Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend/logs.graph.md](/docs/ai-gateway/observability-and-spend/logs.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

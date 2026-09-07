@@ -13,13 +13,15 @@ related:
 summary: Use Agent Tools to query, debug, and manage your installed integrations through a chat interface with natural language.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/install-an-integration/agent-tools.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "d6d0a95da668a37327d53d3024bf017237e2850c260170026d3790c0d8185a03"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "d2f5ab348ba53924a8ae86f708d73796ed112a233710b25dc5d65ec235d2af2a"
 ---
 
 # Interact with Integrations using Agent Tools
 
 > **🔒 Permissions Required**: Agent Tools
+
+With Agent Tools, you can interact with your installed integrations through a chat interface in the Vercel Dashboard. Instead of navigating through settings and forms, ask questions and run commands in natural language.
 
 
 <!-- docsgraph:related -->
@@ -35,13 +37,11 @@ sha256: "d6d0a95da668a37327d53d3024bf017237e2850c260170026d3790c0d8185a03"
 - [Build with AI agents on Vercel](https://vercel.com/docs/agent-resources/integrations-for-agents?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fagent-tools&source_site=vercel-docs&relationship=related) — Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fagent-tools&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 - [Installation](https://vercel.com/docs/agent/installation?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fagent-tools&source_site=vercel-docs&relationship=related) — Let AI automatically install Web Analytics and Speed Insights in your app
-- [Storage on Vercel Marketplace](https://vercel.com/docs/marketplace-storage?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fagent-tools&source_site=vercel-docs&relationship=related) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
 - [Build with AI on Vercel](https://vercel.com/docs/agent-resources/integrations-for-models?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fagent-tools&source_site=vercel-docs&relationship=related) — Integrate powerful AI services and models seamlessly into your Vercel projects.
+- [Storage on Vercel Marketplace](https://vercel.com/docs/marketplace-storage?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fagent-tools&source_site=vercel-docs&relationship=related) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
 
 Full cross-link map for this page: [/docs/integrations/install-an-integration/agent-tools.graph.md](/docs/integrations/install-an-integration/agent-tools.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fagent-tools&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-With Agent Tools, you can interact with your installed integrations through a chat interface in the Vercel Dashboard. Instead of navigating through settings and forms, ask questions and run commands in natural language.
 
 When you install an integration from the Marketplace, any tools that the provider has enabled via MCP (Model Context Protocol) become available automatically. Vercel handles the authentication and configuration, so you can start querying your services immediately.
 

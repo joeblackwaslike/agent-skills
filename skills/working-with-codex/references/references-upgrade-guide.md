@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/skills/src/assets/samples/openai-docs/references/upgrade-guide.md"
-fetched_at: "2026-07-13T06:55:09.770Z"
-sha256: "ed1b75a89b8ec4d67787774ef6c4e8b98eace16c63348f42e969e6ffa67cb656"
+fetched_at: "2026-09-07T09:00:35.564Z"
+sha256: "ecac89155f910f064fd306e89c74585cabdb2142aba4f2acc0cead092ae1d1a5"
 ---
 
 # Model upgrade guidance
@@ -15,14 +15,14 @@ For latest, current, default, or unspecified-model upgrades:
 3. Treat the live guides as canonical.
 4. If remote retrieval fails, disclose that bundled fallback guidance is being used.
 
-For an explicit GPT-5.6 Sol or GPT-5.6-family migration:
+For an explicit GPT-6 Astra migration:
 
 1. Preserve the user's explicit target; do not run the latest-model resolver.
-2. Fetch the live GPT-5.6 model guidance:
+2. Fetch the live GPT-6 model guidance:
 
-   https://developers.openai.com/api/docs/guides/model-guidance?model=gpt-5.6
+   https://developers.openai.com/api/docs/guides/latest-model/gpt-6-astra.md
 
-3. Read `references/upgrading-to-gpt-5p6-sol.md` for skill-specific migration judgment.
+3. Read `references/upgrading-to-gpt-6-astra.md` for skill-specific migration judgment.
 4. Read `references/prompting-guide.md` only when prompt changes are needed.
 
-For another explicit model target, preserve that target and fetch its current official guidance. Do not reuse GPT-5.6-specific defaults, API shapes, or compatibility rules for a different model.
+For another explicit model target, preserve that target and fetch its current official guidance. Do not reuse GPT-6-specific defaults, API shapes, or compatibility rules for a different model.

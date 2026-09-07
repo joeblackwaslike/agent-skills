@@ -13,8 +13,8 @@ related:
 summary: Learn how to preview and download Vercel compliance documents from the dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/attestations-and-compliance-report.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "3ca089576aa5c1e07e4857c44624961f2591b9efe7a7cad948e82870dc7669f2"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "e5bf5af568b445a0eaad863c8685311835075f9dcd486cfce6136382c7a185c6"
 ---
 
 # Attestations and Compliance Report
@@ -27,8 +27,8 @@ Team members on Pro and Enterprise plans can preview and download Vercel's compl
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Compliance documents are now available in Team settings](https://vercel.com/changelog/compliance-documents-are-now-available-in-team-settings?from=related&source_path=%2Fdocs%2Fsecurity%2Fattestations-and-compliance-report&source_site=vercel-docs&relationship=related)
 - [Does Vercel have a SOC 2 Type 2 attestation?](https://vercel.com/kb/guide/is-vercel-soc-2-compliant?from=related&source_path=%2Fdocs%2Fsecurity%2Fattestations-and-compliance-report&source_site=vercel-docs&relationship=related) — Vercel holds a SOC 2 Type 2 attestation for Security, Confidentiality, and Availability. See what the report covers, how
+- [Compliance documents are now available in Team settings](https://vercel.com/changelog/compliance-documents-are-now-available-in-team-settings?from=related&source_path=%2Fdocs%2Fsecurity%2Fattestations-and-compliance-report&source_site=vercel-docs&relationship=related)
 - [Vercel Security Dashboard is now generally available](https://vercel.com/changelog/vercel-security-dashboard-is-now-generally-available?from=related&source_path=%2Fdocs%2Fsecurity%2Fattestations-and-compliance-report&source_site=vercel-docs&relationship=related)
 - [Security](https://v0.app/docs/security?from=related&source_path=%2Fdocs%2Fsecurity%2Fattestations-and-compliance-report&source_site=vercel-docs&relationship=related) — Learn about v0's security practices, threat modeling, and enterprise security features.
 - [Security Dashboard](https://vercel.com/docs/security/security-dashboard?from=related&source_path=%2Fdocs%2Fsecurity%2Fattestations-and-compliance-report&source_site=vercel-docs&relationship=related) — The Security Dashboard aggregates the security posture of every account and project on your team, flags misconfiguration

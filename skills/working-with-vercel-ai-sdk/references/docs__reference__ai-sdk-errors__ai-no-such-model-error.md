@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-such-model-error.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "f6e331d310a4002d7fa2d699a107b1f85829dc00b863f190bcc3825dbe041a30"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "db0d7a1e54273d657bb84a4135569772342b8097291cf3c0103ede157e7c2f91"
 ---
 
 # AI_NoSuchModelError
@@ -61,6 +61,7 @@ if (NoSuchModelError.isInstance(error)) {
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
 - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
 - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)
+- [ToolChoiceViolationError](/docs/reference/ai-sdk-errors/ai-tool-choice-violation-error)
 - [AI_TypeValidationError](/docs/reference/ai-sdk-errors/ai-type-validation-error)
 - [AI_UIMessageStreamError](/docs/reference/ai-sdk-errors/ai-ui-message-stream-error)
 - [AI_UnsupportedFunctionalityError](/docs/reference/ai-sdk-errors/ai-unsupported-functionality-error)

@@ -3,7 +3,7 @@ title: AI Gateway Discounts
 product: vercel
 url: /docs/ai-gateway/pricing/discounts
 canonical_url: "https://vercel.com/docs/ai-gateway/pricing/discounts"
-last_updated: 2026-08-23
+last_updated: 2026-09-02
 type: reference
 prerequisites:
   - /docs/ai-gateway/pricing
@@ -14,8 +14,8 @@ related:
 summary: "Discounts on AI Gateway token spend: models already priced below list for every team, plus custom volume discounts with zero-fee ACH payments."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/pricing/discounts.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "d23810e2295da7c2f7e8eddac9720533a436e73931e8f52a86637af060cc496d"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "d7d0db9f290131633ba188eec3c411df2bc5133cc35c0c4ec0345684c32a5fe8"
 ---
 
 # AI Gateway Discounts
@@ -32,11 +32,10 @@ Discounts on [AI Gateway](/docs/ai-gateway) token spend come in two forms: model
 - [AI Gateway is now available on AWS Marketplace](https://vercel.com/changelog/ai-gateway-is-now-available-on-aws-marketplace?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related)
 - [Introducing the AI Gateway](https://vercel.com/blog/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related)
 - [AI Gateway is now generally available](https://vercel.com/changelog/ai-gateway-is-now-generally-available?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related)
-- [AI Gateway is now in Beta](https://vercel.com/changelog/ai-gateway-is-now-in-beta?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related)
-- [DeepSeek V4 Flash is 90% off through Novita on AI Gateway](https://vercel.com/changelog/deepseek-v4-flash-is-90-off-through-novita?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related)
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including pricing and markup, SDK and API compatibility, model availabilit
+- [AI Gateway Usage & Billing](https://vercel.com/docs/ai-gateway/observability-and-spend/usage?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related) — Monitor your AI Gateway credit balance, usage, and generation details.
 - [Blackbox AI](https://vercel.com/docs/ai-gateway/coding-agents/blackbox?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related) — Use the Blackbox AI CLI with the AI Gateway.
 - [Model Allowlist](https://vercel.com/docs/ai-gateway/security-and-compliance/model-allowlist?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related) — Restrict which AI models your team can use through AI Gateway. Available on Pro and Enterprise.
-- [Xcode](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related) — Use Xcode's coding assistant with the AI Gateway.
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/ai-gateway/pricing/discounts.graph.md](/docs/ai-gateway/pricing/discounts.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=graph)
@@ -44,7 +43,7 @@ Full cross-link map for this page: [/docs/ai-gateway/pricing/discounts.graph.md]
 
 ## Discounted models
 
-AI Gateway frequently offers models that cost less through AI Gateway than the provider's list price. These discounts apply automatically to all users when using the respective model-slug. [Browse the discounted models](/ai-gateway/models?discount=true) to see which models are discounted today.
+AI Gateway frequently offers models that cost less through AI Gateway than the provider's list price. These discounts apply automatically to all users when using the respective model-slug. [Browse the current promos](/ai-gateway/models?promo=true) to see which models are discounted or free today.
 
 ## Volume discounts
 

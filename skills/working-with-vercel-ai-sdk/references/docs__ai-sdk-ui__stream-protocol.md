@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/stream-protocol.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "4ff40c187d79fbb906e3a8404ddacf260c00e2aec42fd796cddd398d0e64eed0"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "9fbf8d88112cea511f550b7c38945fc8dd7993739a0a64f34b04567bc9675893"
 ---
 
 # Stream Protocols
@@ -368,11 +368,15 @@ Format: Server-Sent Event with JSON object
 Example:
 
 ```
-data: {"type":"tool-approval-request","toolCallId":"call_fJdQDqnXeGxTmr4E3YPSR7Ar","approvalId":"approval_123","reason":"Requires operator review"}
+data: {"type":"tool-approval-request","toolCallId":"call_fJdQDqnXeGxTmr4E3YPSR7Ar","approvalId":"approval_123","approvalDescriptor":{"scope":"account:delete"},"reason":"Requires operator review"}
 
 ```
 
-When `isAutomatic` is omitted, the request expects an explicit approval response from the client. `reason` is optional and explains why the tool call requires approval.
+When `isAutomatic` is omitted, the request expects an explicit approval response
+from the client. `reason` is optional and explains why the tool call requires
+approval. `approvalDescriptor` is optional opaque metadata for the approval.
+When the stream is processed into UI messages, it is available as
+`part.approval.descriptor` and is retained through subsequent approval states.
 
 ### Tool Approval Response Part
 

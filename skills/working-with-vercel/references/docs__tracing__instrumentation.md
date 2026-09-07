@@ -14,8 +14,8 @@ related:
 summary: Learn how to instrument your application to understand performance and infrastructure details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/tracing/instrumentation.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "f0d417cbc68a4091026999760d0730ebccf928b149400917426d2af19c93e8cb"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "62bab0535898ce2e4f8dc5543d7d3b979191903f608f45cf722eb171e84ad8ac"
 ---
 
 # Instrumentation
@@ -36,10 +36,10 @@ Observability is crucial for understanding and optimizing the behavior and perfo
 - [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel?from=related&source_path=%2Fdocs%2Ftracing%2Finstrumentation&source_site=vercel-docs&relationship=related) — Migrate containers from AWS to Vercel: deploy with Dockerfile.vercel, keep RDS, S3, and SQS in AWS over OIDC, and cut ov
 - [Instrument and trace applications with the OpenTelemetry collector](https://vercel.com/changelog/instrument-and-trace-applications-with-the-opentelemetry-collector?from=related&source_path=%2Fdocs%2Ftracing%2Finstrumentation&source_site=vercel-docs&relationship=related)
 - [SigNoz](https://ai-sdk.dev/providers/observability/signoz?from=related&source_path=%2Fdocs%2Ftracing%2Finstrumentation&source_site=vercel-docs&relationship=related)
+- [Instrumentation Providers](https://eve.dev/docs/guides/instrumentation-providers?from=related&source_path=%2Fdocs%2Ftracing%2Finstrumentation&source_site=vercel-docs&relationship=related) — Configure the experimental instrumentation provider layout, control captured inputs and outputs, and redact OpenTelemetr
 - [Observability](https://eve.dev/docs/guides/instrumentation?from=related&source_path=%2Fdocs%2Ftracing%2Finstrumentation&source_site=vercel-docs&relationship=related) — Trace an agent with OpenTelemetry in instrumentation.ts, read the workflow run tags eve emits, and debug discovery with
 - [Native support for SvelteKit's new OpenTelemetry spans](https://vercel.com/changelog/native-support-for-sveltekits-new-opentelemetry-spans?from=related&source_path=%2Fdocs%2Ftracing%2Finstrumentation&source_site=vercel-docs&relationship=related)
 - [@vercel/otel 1.3.0](https://vercel.com/changelog/vercel-otel-1-3-0?from=related&source_path=%2Fdocs%2Ftracing%2Finstrumentation&source_site=vercel-docs&relationship=related)
-- [instrumentation.js](https://nextjs.org/docs/app/api-reference/file-conventions/instrumentation?from=related&source_path=%2Fdocs%2Ftracing%2Finstrumentation&source_site=vercel-docs&relationship=related) — API reference for the instrumentation.js file.
 
 Full cross-link map for this page: [/docs/tracing/instrumentation.graph.md](/docs/tracing/instrumentation.graph.md?from=related&source_path=%2Fdocs%2Ftracing%2Finstrumentation&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

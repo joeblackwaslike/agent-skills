@@ -3,21 +3,21 @@ title: Regional Pricing
 product: vercel
 url: /docs/pricing/regional-pricing
 canonical_url: "https://vercel.com/docs/pricing/regional-pricing"
-last_updated: 2026-02-27
+last_updated: 2026-08-31
 type: reference
 prerequisites:
   - /docs/pricing
 related:
+  - /docs/pricing/taxes
   - /docs/pricing/understanding-my-invoice
   - /docs/fluid-compute
   - /docs/functions/usage-and-pricing
   - /docs/sandbox
-  - /docs/sandbox/pricing
 summary: Vercel pricing for Managed Infrastructure resources in different regions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "dac42d34e5d6254a22dfe6909d832bff7e1e128cc755467251191283e48fb9a7"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "e5c40712efe09872588fce5b536f833046d1e2e8bb348bcd51db6c07846a28c6"
 ---
 
 # Regional Pricing
@@ -45,6 +45,8 @@ When using Managed Infrastructure resources on Vercel, some, but not all, are pr
 
 Full cross-link map for this page: [/docs/pricing/regional-pricing.graph.md](/docs/pricing/regional-pricing.graph.md?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
+
+> **💡 Note:** All prices shown are in USD and exclude value-added tax (VAT), goods and services tax (GST), and other applicable taxes. Taxes are calculated based on your billing address and added to your invoice where required by law. [Learn more about taxes](/docs/pricing/taxes).
 
 The **Included** column shows the amount of usage covered in your [billing cycle](/docs/pricing/understanding-my-invoice#understanding-your-invoice). If you use more than this amount, the **Additional** column lists the rates for any extra usage as a range.
 
@@ -91,7 +93,6 @@ For specific, region based pricing, see the following pages:
 
 - [Cape Town, South Africa (cpt1)](/docs/pricing/regional-pricing/cpt1)
 - [Cleveland, USA (cle1)](/docs/pricing/regional-pricing/cle1)
-- [Dubai, UAE (dxb1)](/docs/pricing/regional-pricing/dxb1)
 - [Dublin, Ireland (dub1)](/docs/pricing/regional-pricing/dub1)
 - [Frankfurt, Germany (fra1)](/docs/pricing/regional-pricing/fra1)
 - [Hong Kong (hkg1)](/docs/pricing/regional-pricing/hkg1)

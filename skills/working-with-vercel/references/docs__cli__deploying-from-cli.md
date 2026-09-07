@@ -16,13 +16,15 @@ related:
 summary: Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/deploying-from-cli.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "a0d959a3be5fcbe4e2403dbc18e1576c31a3daab676ff512545bf8f0e4822aea"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "85aeea54abdccc947e4fe4758aaadc281e555663d4354289eeb4c6d3ba7d556d"
 ---
 
 # Deploying Projects from Vercel CLI
 
 ## Deploying from source
+
+The `vercel` command is used to [deploy](/docs/cli/deploy) Vercel Projects and can be used from either the root of the Vercel Project directory or by providing a path.
 
 
 <!-- docsgraph:related -->
@@ -35,15 +37,13 @@ sha256: "a0d959a3be5fcbe4e2403dbc18e1576c31a3daab676ff512545bf8f0e4822aea"
 - [Enhanced Preview experience](https://vercel.com/blog/making-live-reviews-a-reality-enhanced-preview-experience?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=related)
 - [Zero Config Deployments](https://vercel.com/blog/zero-config?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=related)
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
-- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=related) — Learn how to create and manage deployments on Vercel.
-- [Linking Projects with Vercel CLI](https://vercel.com/docs/cli/project-linking?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=related) — Learn how to link existing Vercel Projects with Vercel CLI.
+- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [vercel redeploy](https://vercel.com/docs/cli/redeploy?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=related) — Learn how to redeploy your project using the vercel redeploy CLI command.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [vercel deploy-hooks](https://vercel.com/docs/cli/deploy-hooks?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=related) — Manage Deploy Hooks for Git-triggered builds from the Vercel CLI: list, create, and remove deploy hook URLs that trigger
 
 Full cross-link map for this page: [/docs/cli/deploying-from-cli.graph.md](/docs/cli/deploying-from-cli.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-The `vercel` command is used to [deploy](/docs/cli/deploy) Vercel Projects and can be used from either the root of the Vercel Project directory or by providing a path.
 
 ```bash filename="terminal"
 vercel

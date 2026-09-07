@@ -3,7 +3,7 @@ title: Accessing Build Logs
 product: vercel
 url: /docs/deployments/logs
 canonical_url: "https://vercel.com/docs/deployments/logs"
-last_updated: 2026-08-11
+last_updated: 2026-08-28
 type: how-to
 prerequisites:
   - /docs/deployments
@@ -16,8 +16,8 @@ related:
 summary: "Learn how to use Vercel's build logs to monitor the progress of building or running your deployment, and check for possible errors or build failures."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/logs.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "9f7b87dfe15ac452c650f349392782dd0542426b715a4c486e2167e7b7e0ad60"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "157e7d23a210405c4ef5362f617058517e8d625e768916c6008524bfe782fceb"
 ---
 
 # Accessing Build Logs
@@ -34,14 +34,14 @@ When you deploy your website to Vercel, the platform generates build logs that s
 - [Build logs now support interactive links](https://vercel.com/changelog/build-logs-now-support-interactive-links?from=related&source_path=%2Fdocs%2Fdeployments%2Flogs&source_site=vercel-docs&relationship=related)
 - [ChatGPT can now integrate with Vercel MCP](https://vercel.com/changelog/chatgpt-is-now-supported-on-vercel-mcp?from=related&source_path=%2Fdocs%2Fdeployments%2Flogs&source_site=vercel-docs&relationship=related)
 - [Devin, Raycast, Windsurf, and Goose now supported on Vercel MCP](https://vercel.com/changelog/devin-raycast-windsurf-and-goose-now-supported-on-vercel-mcp?from=related&source_path=%2Fdocs%2Fdeployments%2Flogs&source_site=vercel-docs&relationship=related)
+- [Does Vercel Support Yarn? \\(Versions 2, 3, and 4\\)](https://vercel.com/kb/guide/does-vercel-support-yarn-4?from=related&source_path=%2Fdocs%2Fdeployments%2Flogs&source_site=vercel-docs&relationship=related) — Vercel supports Yarn 1, 2, 3, and 4. Learn which version your build uses by default, and how to pin Yarn 4 with Corepack
+- [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands?from=related&source_path=%2Fdocs%2Fdeployments%2Flogs&source_site=vercel-docs&relationship=related) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
 - [How do I resolve a 'module not found' error?](https://vercel.com/kb/guide/how-do-i-resolve-a-module-not-found-error?from=related&source_path=%2Fdocs%2Fdeployments%2Flogs&source_site=vercel-docs&relationship=related) — Information on resolving a 'module not found' error.
 - [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors?from=related&source_path=%2Fdocs%2Fdeployments%2Flogs&source_site=vercel-docs&relationship=related) — Learn the systematic steps to identify and resolve 404 issues.
 - [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions?from=related&source_path=%2Fdocs%2Fdeployments%2Flogs&source_site=vercel-docs&relationship=related)
 - [Logs](https://vercel.com/docs/logs?from=related&source_path=%2Fdocs%2Fdeployments%2Flogs&source_site=vercel-docs&relationship=related) — Use logs to find information on deployment builds, function executions, and more.
 - [Get logs for a deployment](https://vercel.com/docs/rest-api/logs/get-logs-for-a-deployment?from=related&source_path=%2Fdocs%2Fdeployments%2Flogs&source_site=vercel-docs&relationship=related) — GET /v1/projects/{projectId}/deployments/{deploymentId}/runtime-logs — Returns a stream of logs for a given deployment.
-- [Builds](https://vercel.com/docs/builds?from=related&source_path=%2Fdocs%2Fdeployments%2Flogs&source_site=vercel-docs&relationship=related) — Understand how the build step works when creating a Vercel Deployment.
 - [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build?from=related&source_path=%2Fdocs%2Fdeployments%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
-- [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features?from=related&source_path=%2Fdocs%2Fdeployments%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to customize your deployments using Vercel's build features.
 
 Full cross-link map for this page: [/docs/deployments/logs.graph.md](/docs/deployments/logs.graph.md?from=related&source_path=%2Fdocs%2Fdeployments%2Flogs&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

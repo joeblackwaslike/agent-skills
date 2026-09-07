@@ -16,13 +16,15 @@ related:
 summary: Serve WebSocket connections in Vercel Functions for realtime features like chat, collaboration, and AI streaming.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/websockets.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "ffde71520c689affdc012d9ea3cf57bb550a3c9dc4eabe72e895919f4ddbecd1"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "6475501ae8c6ebcf21270ccd17c2ff5cf178043b11212bb501a51c3cb1988939"
 ---
 
 # WebSockets
 
 > **🔒 Permissions Required**: WebSockets
+
+Vercel Functions can serve WebSocket connections, keeping a bidirectional connection open between a client and your server-side code. Use WebSockets for realtime features such as interactive AI streaming, chat, and collaborative apps.
 
 
 <!-- docsgraph:related -->
@@ -43,8 +45,6 @@ sha256: "ffde71520c689affdc012d9ea3cf57bb550a3c9dc4eabe72e895919f4ddbecd1"
 
 Full cross-link map for this page: [/docs/functions/websockets.graph.md](/docs/functions/websockets.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fwebsockets&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Vercel Functions can serve WebSocket connections, keeping a bidirectional connection open between a client and your server-side code. Use WebSockets for realtime features such as interactive AI streaming, chat, and collaborative apps.
 
 A single WebSocket connection is pinned to one Vercel Function instance. Messages sent over that connection reach the same function instance for the lifetime of the connection, and Fluid compute allows a single function instance to handle multiple WebSocket connections.
 

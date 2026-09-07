@@ -10,20 +10,20 @@ prerequisites:
   - /docs/pricing
 related:
   - /docs/plans/pro-plan
+  - /docs/pricing/taxes
   - /docs/pricing/understanding-my-invoice
   - /docs/fluid-compute
   - /docs/functions/usage-and-pricing
-  - /docs/sandbox
 summary: Vercel pricing for the Montréal, Canada (yul1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/yul1.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "aa2f1cbeaf60f193fec31d6bb5f2e8c85bf9c6304886679aa017781ca1cc2da4"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "4c22fb6d39266eacc7f9f80d604a99a41a632168302fd55406abc4bfbf4b41bc"
 ---
 
 # Montréal, Canada (yul1) pricing
 
-The table below shows Managed Infrastructure products with pricing specific to the  region. This pricing is available only to [Pro plan](/docs/plans/pro-plan) users. Your team will be charged based on the usage of your projects for each resource in this region.
+The table below shows Managed Infrastructure products with pricing specific to the Montréal, Canada (yul1) region. This pricing is available only to [Pro plan](/docs/plans/pro-plan) users. Your team will be charged based on the usage of your projects for each resource in this region.
 
 
 <!-- docsgraph:related -->
@@ -34,12 +34,14 @@ The table below shows Managed Infrastructure products with pricing specific to t
 - [Introducing the Montréal, Canada region (yul1) ](https://vercel.com/changelog/introducing-the-montreal-canada-vercel-region-yul1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fyul1&source_site=vercel-docs&relationship=related)
 - [Paris, France \\(cdg1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cdg1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fyul1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Paris, France \\(cdg1\\) region.
 - [Portland, USA \\(pdx1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/pdx1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fyul1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Portland, USA \\(pdx1\\) region.
-- [Dublin, Ireland \\(dub1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/dub1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fyul1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Dublin, Ireland \\(dub1\\) region.
 - [San Francisco, USA \\(sfo1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sfo1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fyul1&source_site=vercel-docs&relationship=related) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
 - [Sydney, Australia \\(syd1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/syd1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fyul1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Sydney, Australia \\(syd1\\) region.
+- [Dublin, Ireland \\(dub1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/dub1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fyul1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Dublin, Ireland \\(dub1\\) region.
 
 Full cross-link map for this page: [/docs/pricing/regional-pricing/yul1.graph.md](/docs/pricing/regional-pricing/yul1.graph.md?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fyul1&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
+
+> **💡 Note:** All prices shown are in USD and exclude value-added tax (VAT), goods and services tax (GST), and other applicable taxes. Taxes are calculated based on your billing address and added to your invoice where required by law. [Learn more about taxes](/docs/pricing/taxes).
 
 The **Included** column shows the amount of usage covered in your [billing cycle](/docs/pricing/understanding-my-invoice#understanding-your-invoice). If you use more than this amount, the **Additional** column lists the rates for any extra usage.
 

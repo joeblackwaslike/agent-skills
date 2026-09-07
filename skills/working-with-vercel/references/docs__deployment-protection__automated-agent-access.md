@@ -16,8 +16,8 @@ related:
 summary: Grant AI agents, CI/CD pipelines, MCP servers, and testing tools access to Vercel deployments that have Deployment Protection enabled.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/automated-agent-access.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "6b82e4d313ab132245039f882744dd8c859506da9fac2f86cfc836ecba51fa1a"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "4116b2c39c7def86cec075f0736a53aa734ca3039a18ac92b35e018e9cf08a7b"
 ---
 
 # Automated & Agent Access
@@ -34,7 +34,6 @@ AI agents, CI/CD pipelines, MCP servers, and end-to-end testing tools can't comp
 - [How to test a Slack bot with your Vercel preview deployment](https://vercel.com/kb/guide/test-slack-bot-with-vercel-preview-deployment?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fautomated-agent-access&source_site=vercel-docs&relationship=related) — Learn how to build and test a Slack bot using Vercel preview deployments. This guide covers setting up your Slack app, c
 - [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fautomated-agent-access&source_site=vercel-docs&relationship=related) — Protect who can see your deployments.
 - [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fautomated-agent-access&source_site=vercel-docs&relationship=related)
-- [Protecting Deployments](https://vercel.com/blog/security-controls-protected-preview-deployments-passwords?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fautomated-agent-access&source_site=vercel-docs&relationship=related)
 - [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fautomated-agent-access&source_site=vercel-docs&relationship=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
 - [Methods to Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fautomated-agent-access&source_site=vercel-docs&relationship=related) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fautomated-agent-access&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.

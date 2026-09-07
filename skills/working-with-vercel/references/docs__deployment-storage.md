@@ -13,8 +13,8 @@ related:
 summary: Learn what Deployment Storage includes, how Vercel measures it, and how to control your usage.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-storage.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "9b9ae9ac65c18004e0126b9699b083c99770dfc848e1bcb249b95b5fe81ad775"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "b032fed851fe35cf98256aaceb8dfffd910f52b884dbc82a27e10a457e6562c4"
 ---
 
 # Deployment Storage
@@ -29,10 +29,10 @@ Deployment Storage is cloud storage for the build output and Vercel Function bun
 
 - [Deployment Storage keeps your deployments rollback-ready](https://vercel.com/changelog/deployment-storage-keeps-your-deployments-rollback-ready?from=related&source_path=%2Fdocs%2Fdeployment-storage&source_site=vercel-docs&relationship=related)
 - [How do I delete an individual deployment?](https://vercel.com/kb/guide/how-do-i-delete-an-individual-deployment?from=related&source_path=%2Fdocs%2Fdeployment-storage&source_site=vercel-docs&relationship=related) — Information on deleting an individual deployment.
-- [Vercel Storage overview](https://vercel.com/docs/storage?from=related&source_path=%2Fdocs%2Fdeployment-storage&source_site=vercel-docs&relationship=related) — Store large files and global configuration with Vercel's storage products.
-- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fdeployment-storage&source_site=vercel-docs&relationship=related) — Learn how to create and manage deployments on Vercel.
-- [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments?from=related&source_path=%2Fdocs%2Fdeployment-storage&source_site=vercel-docs&relationship=related) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
+- [Vercel Storage overview](https://vercel.com/docs/storage?from=related&source_path=%2Fdocs%2Fdeployment-storage&source_site=vercel-docs&relationship=related) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
+- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fdeployment-storage&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fdeployment-storage&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments?from=related&source_path=%2Fdocs%2Fdeployment-storage&source_site=vercel-docs&relationship=related) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
 - [Builds](https://vercel.com/docs/builds?from=related&source_path=%2Fdocs%2Fdeployment-storage&source_site=vercel-docs&relationship=related) — Understand how the build step works when creating a Vercel Deployment.
 
 Full cross-link map for this page: [/docs/deployment-storage.graph.md](/docs/deployment-storage.graph.md?from=related&source_path=%2Fdocs%2Fdeployment-storage&source_site=vercel-docs&relationship=graph)

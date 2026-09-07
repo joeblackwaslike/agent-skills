@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-invalid-prompt-error.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "a052499a425ccd505159d69703b7acc545679f7d48911aa4c84fa8db4ee6ca85"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "099e69adc934fce1d0c368ff832d2cceb0b0aacb56fab1ac1853dff6d7845cd3"
 ---
 
 # AI_InvalidPromptError
@@ -82,6 +82,7 @@ if (InvalidPromptError.isInstance(error)) {
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
 - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
 - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)
+- [ToolChoiceViolationError](/docs/reference/ai-sdk-errors/ai-tool-choice-violation-error)
 - [AI_TypeValidationError](/docs/reference/ai-sdk-errors/ai-type-validation-error)
 - [AI_UIMessageStreamError](/docs/reference/ai-sdk-errors/ai-ui-message-stream-error)
 - [AI_UnsupportedFunctionalityError](/docs/reference/ai-sdk-errors/ai-unsupported-functionality-error)

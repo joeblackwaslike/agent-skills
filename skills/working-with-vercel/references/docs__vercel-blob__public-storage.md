@@ -16,13 +16,15 @@ related:
 summary: Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/public-storage.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "03df84d655c371cd5c703d5492f68f89fe447936c4aae4bccc55e4a68797cec7"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "2d25cfa07172f283a6b85e04e396ac595701c408ef5ba4c2a3ec71f4c6482e45"
 ---
 
 # Public Storage
 
 > **🔒 Permissions Required**: Vercel Blob
+
+Public Blob stores make files accessible to anyone with the URL. Use public storage for images, videos, large media, and public assets where authentication isn't needed.
 
 
 <!-- docsgraph:related -->
@@ -38,12 +40,11 @@ sha256: "03df84d655c371cd5c703d5492f68f89fe447936c4aae4bccc55e4a68797cec7"
 - [Private storage for Vercel Blob, now available in public beta](https://vercel.com/changelog/private-storage-for-vercel-blob-now-available-in-public-beta?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fpublic-storage&source_site=vercel-docs&relationship=related)
 - [Vercel Blob is now generally available](https://vercel.com/changelog/vercel-blob-is-now-generally-available?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fpublic-storage&source_site=vercel-docs&relationship=related)
 - [Private Storage](https://vercel.com/docs/vercel-blob/private-storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fpublic-storage&source_site=vercel-docs&relationship=related) — Learn how to use private Vercel Blob storage to serve files with authentication
+- [Vercel Storage overview](https://vercel.com/docs/storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fpublic-storage&source_site=vercel-docs&relationship=related) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fpublic-storage&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/vercel-blob/public-storage.graph.md](/docs/vercel-blob/public-storage.graph.md?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fpublic-storage&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Public Blob stores make files accessible to anyone with the URL. Use public storage for images, videos, large media, and public assets where authentication isn't needed.
 
 See [differences with private storage](/docs/vercel-blob#private-and-public-storage).
 

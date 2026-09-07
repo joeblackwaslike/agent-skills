@@ -16,13 +16,15 @@ related:
 summary: Learn about testing, common issues, and how to troubleshoot microfrontends on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/troubleshooting.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "68a2c31befcc6aae682ddde6dd8a29ee108599b791bd2cd477b189bf92bb3db1"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "b64187cbfdebb5e1cee253bad5b6e9ec5f36f45344e9e66b7fab535d568553e3"
 ---
 
 # Testing & troubleshooting microfrontends
 
 ## Testing
+
+The `@vercel/microfrontends` package includes test utilities to help avoid common misconfigurations.
 
 
 <!-- docsgraph:related -->
@@ -38,12 +40,11 @@ sha256: "68a2c31befcc6aae682ddde6dd8a29ee108599b791bd2cd477b189bf92bb3db1"
 - [Incremental Migrations with Microfrontends](https://vercel.com/kb/guide/incremental-migrations-with-microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Learn how to migrate legacy applications using microfrontends
 - [Managing microfrontends](https://vercel.com/docs/microfrontends/managing-microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Learn how to manage your microfrontends on Vercel.
 - [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
+- [Getting Started with Routing Middleware](https://vercel.com/docs/routing-middleware/getting-started?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/microfrontends/troubleshooting.graph.md](/docs/microfrontends/troubleshooting.graph.md?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Ftroubleshooting&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-The `@vercel/microfrontends` package includes test utilities to help avoid common misconfigurations.
 
 ### `validateMiddlewareConfig`
 

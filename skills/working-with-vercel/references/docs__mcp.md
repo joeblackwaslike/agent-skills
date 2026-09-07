@@ -3,7 +3,7 @@ title: Model Context Protocol
 product: vercel
 url: /docs/mcp
 canonical_url: "https://vercel.com/docs/mcp"
-last_updated: 2026-08-27
+last_updated: 2026-08-28
 type: integration
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn more about MCP and how you can use it on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/mcp.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "e7edf5daa93c74dc4c84be3f5019e1a08b20acd0bb11304c759e075d5a483bbb"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "f6094db14c2231511be1d5caaae2ac29a45b0328c07f066632100eed9b4113c8"
 ---
 
 # Model Context Protocol

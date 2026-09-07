@@ -14,13 +14,15 @@ related:
 summary: Learn how to configure Directory Sync for your Vercel Team.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/directory-sync.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "2b8f4c17190b746854c2b78e267cc2cd1a8bbbf272e9e38b39a845778fdecf6f"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "71a5f8fa955e1c9170d62c705ceb408ffbbffefe26ac6e408fe9d26c0a0c33a5"
 ---
 
 # Directory Sync
 
 > **🔒 Permissions Required**: Directory Sync
+
+Directory Sync helps teams manage their organization membership from a third-party identity provider like Google Directory or Okta. Directory Sync is only available for **Enterprise Teams** and can only be configured by [**Team Owners**](/docs/rbac/access-roles#owner-role).
 
 
 <!-- docsgraph:related -->
@@ -38,8 +40,6 @@ sha256: "2b8f4c17190b746854c2b78e267cc2cd1a8bbbf272e9e38b39a845778fdecf6f"
 
 Full cross-link map for this page: [/docs/directory-sync.graph.md](/docs/directory-sync.graph.md?from=related&source_path=%2Fdocs%2Fdirectory-sync&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Directory Sync helps teams manage their organization membership from a third-party identity provider like Google Directory or Okta. Directory Sync is only available for **Enterprise Teams** and can only be configured by [**Team Owners**](/docs/rbac/access-roles#owner-role).
 
 When Directory Sync is configured, changes to your Directory Provider will automatically be synced with your [team members](/docs/rbac/managing-team-members). The previously existing permissions/roles will be overwritten by Directory Sync, including current user performing the sync.
 

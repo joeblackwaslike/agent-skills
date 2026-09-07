@@ -12,13 +12,16 @@ related:
 summary: Vercel MCP has tools available for searching docs, managing teams, projects, and deployments, and querying Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "283ef954c74a802612331cca33b9c64d26cf598d406e1dd7f614fb3998d86972"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "385ba697a962dc0fa8be1bfd87f1704bc2fe7245410746136e67a8a4edb2f973"
 ---
 
 # Use Vercel
 
 > **🔒 Permissions Required**: Vercel MCP
+
+Connect your AI tools to Vercel using the [Model Context Protocol (MCP)](https://modelcontextprotocol.io),
+an open standard that lets AI assistants interact with your Vercel projects.
 
 
 <!-- docsgraph:related -->
@@ -30,20 +33,17 @@ sha256: "283ef954c74a802612331cca33b9c64d26cf598d406e1dd7f614fb3998d86972"
 - [Vercel MCP can now deploy code](https://vercel.com/changelog/vercel-mcp-can-now-deploy-code?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=related)
 - [Vercel MCP now supports purchases](https://vercel.com/changelog/vercel-mcp-now-supports-purchases?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=related)
 - [Vercel MCP now supports the 2026-07-28 MCP specification](https://vercel.com/changelog/vercel-mcp-now-supports-the-2026-07-28-mcp-specification?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=related)
+- [Vercel MCP now in Public Beta](https://vercel.com/changelog/vercels-mcp?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=related)
 - [Improve Cumulative Layout Shift \\(CLS\\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=related) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
 - [Build a ChatGPT Connector \\(MCP server\\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=related) — Build a ChatGPT MCP server with mcp-handler and Fluid compute. Add search, fetch, and OAuth, deploy to Vercel, then vali
+- [Manage Vercel projects with a software factory](https://vercel.com/kb/guide/software-factory-vercel-mcp?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=related) — Add Vercel's hosted MCP to the eve software factory template so Foreman can read build logs, runtime errors, and deploym
 - [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=related)
-- [How to build an MCP server with Nuxt](https://vercel.com/kb/guide/how-to-build-an-mcp-server-with-nuxt?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=related) — Add an MCP server to your Nuxt app with the Nuxt MCP Toolkit. Create tools, resources, and prompt templates that AI assi
-- [Model Context Protocol (MCP) explained: An FAQ](https://vercel.com/blog/model-context-protocol-mcp-explained?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=related)
 - [AI Agents on Vercel](https://vercel.com/kb/guide/ai-agents?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=related) — This guide provides an overview of how to build and deploy AI agents on Vercel.
-- [Vercel MCP now in Public Beta](https://vercel.com/changelog/vercels-mcp?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=related)
-- [MCP Server](https://v0.app/docs/api/v1/adapters/mcp-server?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=related) — The v0 MCP (Model Context Protocol) server allows you to integrate v0's capabilities directly into your IDE, providing s
+- [Model Context Protocol (MCP) explained: An FAQ](https://vercel.com/blog/model-context-protocol-mcp-explained?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=related)
+- [How to build an MCP server with Nuxt](https://vercel.com/kb/guide/how-to-build-an-mcp-server-with-nuxt?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=related) — Add an MCP server to your Nuxt app with the Nuxt MCP Toolkit. Create tools, resources, and prompt templates that AI assi
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp.graph.md](/docs/agent-resources/vercel-mcp.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Connect your AI tools to Vercel using the [Model Context Protocol (MCP)](https://modelcontextprotocol.io),
-an open standard that lets AI assistants interact with your Vercel projects.
 
 ## Quick Setup
 
@@ -182,6 +182,8 @@ When adding the MCP server, Codex will detect OAuth support and open your browse
 
 ### Cursor
 
+[Add to Cursor](cursor://anysphere.cursor-deeplink/mcp/install?name=vercel\&config=eyJ1cmwiOiJodHRwczovL21jcC52ZXJjZWwuY29tIn0%3D)
+
 Click the button above to open Cursor and automatically add Vercel MCP. You can
 also add the snippet below to your project-specific or global `.cursor/mcp.json`
 file manually. For more details, see the [Cursor
@@ -203,9 +205,11 @@ Once the server is added, Cursor will attempt to connect and display a `Needs lo
 
 #### Installation
 
+[Add to VS Code](vscode:mcp/install?%7B%22name%22%3A%22Vercel%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.vercel.com%22%7D)
+
 Use the one-click installation by clicking the button above to add Vercel MCP, or follow the steps below to do it manually:
 
-1. Open the Command Palette ( on Windows/Linux or  on macOS)
+1. Open the Command Palette (`` `Ctrl+Shift+P` `` on Windows/Linux or `` `Cmd+Shift+P` `` on macOS)
 2. Run **MCP: Add Server**
 3. Select **HTTP**
 4. Enter the following details:
@@ -218,7 +222,7 @@ Use the one-click installation by clicking the button above to add Vercel MCP, o
 
 Now that you've added Vercel MCP, let's start the server and authorize:
 
-1. Open the Command Palette ( on Windows/Linux or  on macOS)
+1. Open the Command Palette (`` `Ctrl+Shift+P` `` on Windows/Linux or `` `Cmd+Shift+P` `` on macOS)
 2. Run **MCP: List Servers**
 3. Select **Vercel**
 4. Click **Start Server**
@@ -247,6 +251,8 @@ Now that you've added Vercel MCP, let's start the server and authorize:
 
 Use the one-click installation by clicking the button below to add Vercel MCP. For more details, see the [Goose
 documentation](https://goose-docs.ai/docs/mcp/vercel-mcp).
+
+[Add to Goose](goose://extension?url=https%3A%2F%2Fmcp.vercel.com\&type=streamable_http\&id=vercel\&name=Vercel\&description=Access%20deployments%2C%20manage%20projects%2C%20and%20more%20with%20Vercel%E2%80%99s%20official%20MCP%20server)
 
 ### Windsurf
 

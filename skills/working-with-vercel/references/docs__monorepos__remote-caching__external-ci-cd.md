@@ -13,8 +13,8 @@ related:
 summary: Authenticate the Turborepo CLI to Vercel Remote Cache from your CI/CD provider using OpenID Connect (OIDC) or a Personal Access Token (PAT).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/remote-caching/external-ci-cd.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "6ec550b13d483addbc02814d3a12dc87d02e651df4555b4ca11605192e1864fd"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "6420c3ca40144a1cc92c8db902e3ddd0a9465796cb22c57499df53d1232dc27b"
 ---
 
 # Use Remote Caching from External CI/CD
@@ -76,7 +76,7 @@ Follow the steps below to set it up.
   > censor your team name in log output.
 
 - ### Exchange the OIDC token in your job and set the environment variable
-  #### \['GitHub'
+  #### GitHub
   Add [`vercel/setup-turborepo-remote-cache-action`](https://github.com/vercel/setup-turborepo-remote-cache-action) before any step that runs `turbo`. The action needs the [`id-token: write` permission](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/about-security-hardening-with-openid-connect) so it can request a GitHub OIDC token, exchange it for a short-lived Turborepo access token, and set `TURBO_TOKEN` and `TURBO_TEAM` for later steps.
   ```yaml filename=".github/workflows/ci.yml" {8-10,18-21}
   # ...
@@ -106,7 +106,7 @@ Follow the steps below to set it up.
   > your GitHub OIDC token against each of them. If more than one policy matches,
   > then you will need to pass the ID of the OIDC policy you intend to use in the
   > `policy` input; otherwise, you will receive an error.
-  #### 'Other']
+  #### Other
   For any other provider, request an OIDC token from it with the audience your policy expects, then exchange that token for a short-lived Turborepo access token. Set the result as `TURBO_TOKEN` and your team slug as `TURBO_TEAM` before running `turbo`:
   ```bash filename="exchange-oidc-token.sh"
   # $OIDC_TOKEN: the OIDC token issued by your CI/CD provider

@@ -16,13 +16,16 @@ related:
 summary: Learn about pricing for Vercel Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/limits-and-pricing.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "e54c8c9cf4eddedfc716ff67a915238e840ec085f00989cc8f6bc45b02b7bb18"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "1abb6eca20762cabc87fabdc92c0749ab6ddb7bcec3c2413f35ff4a999ac6592"
 ---
 
 # Pricing for Web Analytics
 
 ## Pricing
+
+Vercel prices Web Analytics by the number of [collected events](#what-is-an-event-in-vercel-web-analytics) across all projects in your team.
+After you enable Vercel Web Analytics, your plan determines which features you can use.
 
 
 <!-- docsgraph:related -->
@@ -37,16 +40,13 @@ sha256: "e54c8c9cf4eddedfc716ff67a915238e840ec085f00989cc8f6bc45b02b7bb18"
 - [Web Analytics is now generally available](https://vercel.com/changelog/web-analytics-is-now-generally-available?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related)
 - [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related)
 - [Observability Plus](https://vercel.com/docs/observability/observability-plus?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn about using Observability Plus and its limits.
-- [Limits and Pricing for Speed Insights](https://vercel.com/docs/speed-insights/limits-and-pricing?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn about our limits and pricing when using Vercel Speed Insights. Different limitations are applied depending on your
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
-- [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application perfor
+- [Limits and Pricing for Speed Insights](https://vercel.com/docs/speed-insights/limits-and-pricing?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn about our limits and pricing when using Vercel Speed Insights. Different limitations are applied depending on your
+- [Limits and Pricing for Monitoring](https://vercel.com/docs/query/monitoring/limits-and-pricing?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn about our limits and pricing when using Monitoring. Different limitations are applied depending on your plan.
 - [Account Plans on Vercel](https://vercel.com/docs/plans?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn about the different plans available on Vercel.
 
 Full cross-link map for this page: [/docs/analytics/limits-and-pricing.graph.md](/docs/analytics/limits-and-pricing.graph.md?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Vercel prices Web Analytics by the number of [collected events](#what-is-an-event-in-vercel-web-analytics) across all projects in your team.
-After you enable Vercel Web Analytics, your plan determines which features you can use.
 
 |  | Hobby | Pro | Pro with Web Analytics Plus | Enterprise |
 | --- | --- | --- | --- | --- |

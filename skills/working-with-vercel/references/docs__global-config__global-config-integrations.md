@@ -16,13 +16,15 @@ related:
 summary: Learn how to use Global Config with popular A/B testing and feature flag service integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-integrations.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "298cbaa37911b1aed5c5560284643022c35ab52209499b57a5a912a4b57789e3"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "15344a597dbac0c9358d19d01bb7d19d3a11bf0776ceb96ac46002712fab8def"
 ---
 
 # Using Global Config with an integration
 
 > **🔒 Permissions Required**: Global Config integrations
+
+Vercel has partnered with A/B testing and feature flag services such as LaunchDarkly and Statsig to make it easier to integrate Global Config into your workflow. These integrations sync feature flag definitions into Global Config, allowing you to evaluate flags in the region closest to the user without making network calls to your preferred service provider.
 
 
 <!-- docsgraph:related -->
@@ -39,8 +41,6 @@ sha256: "298cbaa37911b1aed5c5560284643022c35ab52209499b57a5a912a4b57789e3"
 
 Full cross-link map for this page: [/docs/global-config/global-config-integrations.graph.md](/docs/global-config/global-config-integrations.graph.md?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Vercel has partnered with A/B testing and feature flag services such as LaunchDarkly and Statsig to make it easier to integrate Global Config into your workflow. These integrations sync feature flag definitions into Global Config, allowing you to evaluate flags in the region closest to the user without making network calls to your preferred service provider.
 
 To see these integrations in action, explore a template:
 

@@ -3,7 +3,7 @@ title: Managing Domain Renewals and Redemptions
 product: vercel
 url: /docs/domains/working-with-domains/renew-a-domain
 canonical_url: "https://vercel.com/docs/domains/working-with-domains/renew-a-domain"
-last_updated: 2026-06-26
+last_updated: 2026-08-28
 type: how-to
 prerequisites:
   - /docs/domains/working-with-domains
@@ -13,8 +13,8 @@ related:
 summary: Learn how to manage automatic and manual renewals for custom domains purchased through or registered with Vercel, and how to redeem expired domains...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/renew-a-domain.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "e264b23fda94659632252d68606413a18e033a7c67c5c7b91fd7854957c69f4e"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "e7aaf8e289c22698ce05e5a1879557481a35e022864e28eb0df019c08be6d6ab"
 ---
 
 # Managing Domain Renewals and Redemptions
@@ -27,6 +27,7 @@ Custom domains purchased through or registered with Vercel are [automatically re
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Free domain with Pro offer now includes .app and .dev](https://vercel.com/changelog/app-and-dev-domains-included-with-free-domain-for-pro?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=related)
 - [Free domain for one year, now for all Pro teams](https://vercel.com/changelog/free-domain-for-one-year-now-for-all-pro-teams?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=related)
 - [Free domain now included with new Pro subscriptions](https://vercel.com/changelog/free-domain-now-included-with-new-pro-subscriptions?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=related)
 - [Self-serve domain renewals and redemptions now available](https://vercel.com/changelog/self-serve-domain-renewals-and-redemptions-now-available?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=related)

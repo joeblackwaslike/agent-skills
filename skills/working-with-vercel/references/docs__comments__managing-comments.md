@@ -3,7 +3,7 @@ title: Managing Comments on Preview Deployments
 product: vercel
 url: /docs/comments/managing-comments
 canonical_url: "https://vercel.com/docs/comments/managing-comments"
-last_updated: 2026-02-26
+last_updated: 2026-08-28
 type: how-to
 prerequisites:
   - /docs/comments
@@ -12,13 +12,15 @@ related:
 summary: Learn how to manage Comments on your Preview Deployments from Team members and invited collaborators.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/comments/managing-comments.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "d3822c1c4e963c2e63a725e360e0db1e237313dfbb0892c119e4761530f7c0c1"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "6d61c70246354ff4a6c2e05d6d98bbe65a612fa5ccde1168afbd795068416cf8"
 ---
 
 # Managing Comments on Preview Deployments
 
 ## Resolve comments
+
+You can resolve comments by selecting the **☐ Resolve** checkbox that appears under each thread or comment. You can access this checkbox by selecting a comment wherever it appears on the page, or by selecting the thread associated with the comment in the **Inbox**.
 
 
 <!-- docsgraph:related -->
@@ -34,15 +36,13 @@ sha256: "d3822c1c4e963c2e63a725e360e0db1e237313dfbb0892c119e4761530f7c0c1"
 - [Commenting on Previews is now in Public Beta](https://vercel.com/changelog/commenting-on-previews-is-now-in-public-beta?from=related&source_path=%2Fdocs%2Fcomments%2Fmanaging-comments&source_site=vercel-docs&relationship=related)
 - [Manage Vercel Toolbar comments from the CLI](https://vercel.com/changelog/manage-vercel-toolbar-comments-from-the-cli?from=related&source_path=%2Fdocs%2Fcomments%2Fmanaging-comments&source_site=vercel-docs&relationship=related)
 - [Markdown support for comments on Preview Deployments ](https://vercel.com/changelog/markdown-support-for-comments-on-preview-deployments?from=related&source_path=%2Fdocs%2Fcomments%2Fmanaging-comments&source_site=vercel-docs&relationship=related)
+- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fcomments%2Fmanaging-comments&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [vercel comments](https://vercel.com/docs/cli/comments?from=related&source_path=%2Fdocs%2Fcomments%2Fmanaging-comments&source_site=vercel-docs&relationship=related) — Review and manage Vercel Toolbar comment threads from the terminal with the vercel comments CLI command.
-- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fcomments%2Fmanaging-comments&source_site=vercel-docs&relationship=related) — Learn how to create and manage deployments on Vercel.
 - [Vercel Toolbar](https://vercel.com/docs/vercel-toolbar?from=related&source_path=%2Fdocs%2Fcomments%2Fmanaging-comments&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel Toolbar to leave feedback, navigate through important dashboard pages, share deployments, us
 - [Notifications](https://vercel.com/docs/notifications?from=related&source_path=%2Fdocs%2Fcomments%2Fmanaging-comments&source_site=vercel-docs&relationship=related) — Learn how to use Notifications to view and manage important alerts about your deployments, domains, integrations, accoun
 
 Full cross-link map for this page: [/docs/comments/managing-comments.graph.md](/docs/comments/managing-comments.graph.md?from=related&source_path=%2Fdocs%2Fcomments%2Fmanaging-comments&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-You can resolve comments by selecting the **☐ Resolve** checkbox that appears under each thread or comment. You can access this checkbox by selecting a comment wherever it appears on the page, or by selecting the thread associated with the comment in the **Inbox**.
 
 Participants in a thread will receive a notification when that thread is resolved.
 

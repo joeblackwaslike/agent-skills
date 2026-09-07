@@ -3,18 +3,19 @@ title: Realtime Quickstart
 product: vercel
 url: /docs/ai-gateway/getting-started/realtime
 canonical_url: "https://vercel.com/docs/ai-gateway/getting-started/realtime"
-last_updated: 2026-08-24
+last_updated: 2026-09-02
 type: tutorial
 prerequisites:
   - /docs/ai-gateway/getting-started
   - /docs/ai-gateway
 related:
+  - /docs/ai-gateway/authentication-and-byok/oidc
   - /docs/ai-gateway/modalities/realtime
 summary: Build a low-latency, speech-to-speech voice agent with AI Gateway and the AI SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/realtime.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "b66cfd6f701e68d52420d32b19cec91581ca3ac0a3c6c105a18b62039b575dae"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "342de7af957cf36091cf8ee0c507b34f95eefde0f50062ae717773c474428b5b"
 ---
 
 # Realtime Quickstart
@@ -31,11 +32,11 @@ This quickstart gets you to a working realtime session two ways with the AI SDK:
 - [xAI Grok audio models now available on Vercel AI Gateway](https://vercel.com/changelog/xai-grok-audio-models-now-available-on-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Frealtime&source_site=vercel-docs&relationship=related)
 - [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Frealtime&source_site=vercel-docs&relationship=related)
 - [Realtime](https://ai-sdk.dev/docs/ai-sdk-core/realtime?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Frealtime&source_site=vercel-docs&relationship=related)
-- [AI SDK 7](https://vercel.com/blog/ai-sdk-7?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Frealtime&source_site=vercel-docs&relationship=related)
 - [How to build an on-demand voice agent with Vercel Sandbox](https://vercel.com/kb/guide/how-to-build-an-on-demand-voice-agent-with-vercel-sandbox?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Frealtime&source_site=vercel-docs&relationship=related) — Build a voice AI application that creates isolated LiveKit agent environments using Vercel Sandbox, enabling real-time c
-- [experimental_useRealtime](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-realtime?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Frealtime&source_site=vercel-docs&relationship=related)
+- [AI SDK 7](https://vercel.com/blog/ai-sdk-7?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Frealtime&source_site=vercel-docs&relationship=related)
 - [Get started with GPT-5](https://ai-sdk.dev/cookbook/guides/gpt-5?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Frealtime&source_site=vercel-docs&relationship=related)
 - [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Frealtime&source_site=vercel-docs&relationship=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
+- [experimental_useRealtime](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-realtime?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Frealtime&source_site=vercel-docs&relationship=related)
 - [Speech to Text and Text to Speech Quickstart](https://vercel.com/docs/ai-gateway/getting-started/speech?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Frealtime&source_site=vercel-docs&relationship=related) — Generate speech from text and transcribe audio back to text with AI Gateway.
 - [Text Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/text?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Frealtime&source_site=vercel-docs&relationship=related) — Generate and stream text responses using AI Gateway.
 - [Text to Speech](https://vercel.com/docs/ai-gateway/modalities/text-to-speech?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Frealtime&source_site=vercel-docs&relationship=related) — Generate spoken audio from text with speech models through Vercel AI Gateway.
@@ -48,9 +49,43 @@ Full cross-link map for this page: [/docs/ai-gateway/getting-started/realtime.gr
 
 The script below uses `spacexai/grok-voice-think-fast-2.0` and the browser agent uses `openai/gpt-realtime-2.1`. Both are realtime speech-to-speech models, so swap the model ID to switch between them. `spacexai/grok-voice-think-fast-2.0` supports speech-to-speech only, so it does not handle transcription or translation.
 
+## Prerequisites
+
+Before you begin, you need:
+
+- A Vercel account with a valid payment method to unlock free AI Gateway Credits
+- Node.js 22 or later
+- An AI Gateway API key or a Vercel OIDC token
+
+### Set up your API key
+
+Open the [Create API Key dialog](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fapi-keys%3FshowCreateKeyModal%3Dtrue\&title=AI+Gateway+API+Keys) in the Vercel dashboard, enter a name, and create the key.
+
+After you create your project in the next section, add a `.env.local` file to the project root and save your API key:
+
+```bash filename=".env.local"
+AI_GATEWAY_API_KEY=your_ai_gateway_api_key
+```
+
+> **💡 Note:** Instead of using an API key, you can use [OIDC
+> tokens](/docs/ai-gateway/authentication-and-byok/oidc) to authenticate your
+> requests.
+
 ## Run a script
 
 The fastest way to try realtime is a Node.js script, no framework and no browser. It uses the AI Gateway provider's realtime model as a codec: the model builds the WebSocket connection and translates between the normalized AI SDK events you send and the provider's wire format. The script sends a text prompt, prints the spoken reply's transcript as it streams, and saves the audio to a file.
+
+Install Vercel's focused AI Gateway skill before delegating this setup:
+
+```bash filename="Terminal"
+npx skills add vercel/vercel-plugin --skill ai-gateway
+```
+
+**Agent prompt**
+
+```text
+Use the AI Gateway skill to add a realtime speech-to-speech session to this project. Read AI_GATEWAY_API_KEY from the environment or .env.local, and stop and tell me to create a key if it is not set anywhere. Choose a current realtime model such as spacexai/grok-voice-think-fast-2.0 from the live AI Gateway model list, print the transcript and save the audio to a file, run the result, and run the project's type checker. Report the files changed and command output.
+```
 
 - ### Set up your project
   Create a new directory and initialize a Node.js project:
@@ -58,6 +93,7 @@ The fastest way to try realtime is a Node.js script, no framework and no browser
   mkdir ai-realtime-demo
   cd ai-realtime-demo
   pnpm init
+  pnpm pkg set type=module
   ```
 
 - ### Install dependencies
@@ -79,21 +115,15 @@ The fastest way to try realtime is a Node.js script, no framework and no browser
   bun add @ai-sdk/gateway@latest ws dotenv tsx typescript @types/ws @types/node
   ```
 
-- ### Set up your API key
-  Go to the [AI Gateway API Keys page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fapi-keys\&title=AI+Gateway+API+Keys) in your Vercel dashboard and click **Create key** to generate a new API key.
-
-  Create a `.env.local` file and save your API key:
-  ```bash filename=".env.local"
-  AI_GATEWAY_API_KEY=your_ai_gateway_api_key
-  ```
-
 - ### Create and run the script
   Create a `realtime.ts` file:
   ```typescript filename="realtime.ts"
   import { gateway } from '@ai-sdk/gateway';
   import WebSocket from 'ws';
   import { writeFileSync } from 'node:fs';
-  import 'dotenv/config';
+  import { config } from 'dotenv';
+
+  config({ path: '.env.local' });
 
   const modelId = 'spacexai/grok-voice-think-fast-2.0';
 

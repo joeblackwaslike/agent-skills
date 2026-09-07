@@ -15,13 +15,15 @@ related:
 summary: Learn about cron jobs usage and pricing details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cron-jobs/usage-and-pricing.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "ead05e6427ab08c2fa2a77b8ba5b71dd7ae37b26017b21353dc8142f044067a7"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "dfaa773aa8bf80a679cd34c103331e44e64dfd23dc7581d4af81f0c0579ab48a"
 ---
 
 # Usage & Pricing for Cron Jobs
 
 > **🔒 Permissions Required**: Cron Jobs
+
+Cron jobs invoke [Vercel Functions](/docs/functions). This means the same [usage](/docs/limits) and [pricing](/pricing) limits will apply.
 
 
 <!-- docsgraph:related -->
@@ -44,8 +46,6 @@ sha256: "ead05e6427ab08c2fa2a77b8ba5b71dd7ae37b26017b21353dc8142f044067a7"
 
 Full cross-link map for this page: [/docs/cron-jobs/usage-and-pricing.graph.md](/docs/cron-jobs/usage-and-pricing.graph.md?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fusage-and-pricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Cron jobs invoke [Vercel Functions](/docs/functions). This means the same [usage](/docs/limits) and [pricing](/pricing) limits will apply.
 
 |                | **Number of cron jobs per project** | **Minimum interval** | **Scheduling precision** |
 | -------------- | ----------------------------------- | -------------------- | ------------------------ |

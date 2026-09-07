@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/pi.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "05330fbabc79cabd1825905b09ef69f9a048884b38adfdef8f50184ff1163a02"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "4bdcd5cbfda68fee8bf2db2e64fd946e0bc098d920055c20566663e8aba8aba1"
 ---
 
 # Pi Harness
@@ -37,6 +37,7 @@ import { createVercelSandbox } from '@ai-sdk/sandbox-vercel';
 
 const agent = new HarnessAgent({
   harness: pi,
+  model: 'anthropic/claude-sonnet-4.6',
   sandbox: createVercelSandbox({
     runtime: 'node24',
   }),
@@ -75,7 +76,6 @@ Use `createPi()` to configure the runtime:
 
 ```ts
 const harness = createPi({
-  model: 'anthropic/claude-sonnet-4.6',
   thinkingLevel: 'medium',
 });
 ```
@@ -87,8 +87,8 @@ Settings:
 - `extensionFactories`: trusted inline Pi extension factories that run in the
   host Node.js process.
 - `mcpServers`: MCP server definitions keyed by server name.
-- `model`: Pi model id or model name.
-- `thinkingLevel`: Pi thinking budget level.
+- `thinkingLevel`: Pi thinking level (`off`, `minimal`, `low`, `medium`,
+  `high`, `xhigh`, or `max`).
 
 ## Inline Extensions
 

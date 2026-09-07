@@ -3,7 +3,7 @@ title: Working with Sandbox
 product: vercel
 url: /docs/sandbox/working-with-sandbox
 canonical_url: "https://vercel.com/docs/sandbox/working-with-sandbox"
-last_updated: 2026-08-25
+last_updated: 2026-09-02
 type: conceptual
 prerequisites:
   - /docs/sandbox
@@ -16,8 +16,8 @@ related:
 summary: Task-oriented examples for common Vercel Sandbox operations in TypeScript and Python.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/working-with-sandbox.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "9997e9c94cc78d2ee895b8a63402217d2bb44ff63f9ac666c6ed0e1cf31634aa"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "0b7063a30b6ffaa60419047923c2b3e32e02ecf87e95a11196c070754d11236d"
 ---
 
 # Working with Sandbox
@@ -30,16 +30,15 @@ Use Vercel Sandbox to run code, stream command output, manage files, capture sna
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Sandboxes are now generally available](https://vercel.com/changelog/vercel-sandboxes-ga?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related)
 - [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related)
-- [Sandbox](https://v0.app/docs/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related) — VM-backed chats run your project inside an isolated Vercel Sandbox that hosts your code, dev server, terminal, and agent
 - [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
+- [Vercel Sandboxes are now generally available](https://vercel.com/changelog/vercel-sandboxes-ga?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related)
 - [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
-- [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
+- [Running commands in a Vercel Sandbox](https://vercel.com/docs/sandbox/run-commands-in-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related) — Create isolated sandbox environments to run builds, tests, and commands safely.
 - [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
+- [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 - [Run isolated AI agents in one sandbox](https://vercel.com/docs/sandbox/concepts/multi-agent?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related) — Give each AI agent an isolated Linux user in a Vercel Sandbox with the @vercel/sandbox createUser, createGroup, and asUs
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/sandbox/working-with-sandbox.graph.md](/docs/sandbox/working-with-sandbox.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -49,6 +48,65 @@ Full cross-link map for this page: [/docs/sandbox/working-with-sandbox.graph.md]
 ## Create a sandbox and run code
 
 Create a sandbox, write a file into it, run the file, and inspect the command output.
+
+**TypeScript**
+
+```ts filename="index.ts"
+import { Sandbox } from '@vercel/sandbox';
+
+const sandbox = await Sandbox.create({
+  timeout: 60_000,
+});
+
+try {
+  await sandbox.writeFiles([
+    {
+      path: 'hello.js',
+      content: Buffer.from("console.log('Hello from Vercel Sandbox!')\n"),
+    },
+  ]);
+
+  const result = await sandbox.runCommand('node', ['hello.js']);
+
+  if (result.exitCode !== 0) {
+    throw new Error(await result.stderr());
+  }
+
+  console.log(await result.stdout());
+} finally {
+  await sandbox.stop();
+}
+```
+
+**Python**
+
+```python filename="main.py"
+import asyncio
+from datetime import timedelta
+
+from vercel import sandbox
+
+
+async def main() -> None:
+    async with sandbox.create_sandbox(
+        execution_time_limit=timedelta(minutes=1),
+    ) as box:
+        await box.fs.write_text(
+            "hello.py",
+            "print('Hello from Vercel Sandbox!')\n",
+        )
+
+        result = await box.run_process(
+            "python",
+            ["hello.py"],
+            capture_output=True,
+            check=True,
+        )
+        print(result.stdout)
+
+
+asyncio.run(main())
+```
 
 You can use any of the [Vercel Managed Image](/docs/sandbox/concepts/images#vercel-managed-images), or start from your own or a shared [custom image](/docs/sandbox/concepts/images#custom-images) hosted on Vercel Container Registry. See [Images](/docs/sandbox/concepts/images) for how to use it:
 
@@ -64,11 +122,118 @@ const sandbox = await Sandbox.create({
 
 Persistent sandboxes keep their filesystem across sessions. Create a sandbox, write a file, stop it, then resume by name and read the file back — no snapshot ID to track and no setup to repeat.
 
+**TypeScript**
+
+```ts filename="index.ts"
+import { Sandbox } from '@vercel/sandbox';
+
+// First run: create a named sandbox, write a file, stop it.
+const sandbox = await Sandbox.create({ name: 'my-sandbox' });
+await sandbox.writeFiles([
+  {
+    path: '/vercel/sandbox/notes.txt',
+    content: Buffer.from('Hello from the first session.\n'),
+  },
+]);
+await sandbox.stop();
+
+// Later, in a separate process: resume the same sandbox by name and
+// read the file back. The next SDK call auto-resumes the session.
+const resumed = await Sandbox.get({ name: 'my-sandbox' });
+const notes = await resumed.runCommand('cat', ['/vercel/sandbox/notes.txt']);
+console.log(await notes.stdout()); // Hello from the first session.
+```
+
+**Python**
+
+```python filename="main.py"
+from vercel import sandbox
+
+# First run: create a named sandbox, write a file, stop it.
+box = await sandbox.create_sandbox(
+    name="my-sandbox",
+    persistent=True,
+)
+await box.fs.write_text("notes.txt", "Hello from the first session.\n")
+await box.stop()
+
+# Later, in a separate process: retrieve the sandbox by name. Reading
+# the restored file automatically resumes the session.
+resumed = await sandbox.get_sandbox(name="my-sandbox")
+print(await resumed.fs.read_text("notes.txt"))
+```
+
 ## Execute long-running tasks
 
 By default, sandboxes timeout after 5 minutes. For longer tasks, set a custom timeout when creating the sandbox:
 
+**TypeScript**
+
+```ts filename="index.ts"
+import { Sandbox } from '@vercel/sandbox';
+
+const sandbox = await Sandbox.create({
+  timeout: 3 * 60 * 60 * 1000, // 3 hours
+});
+
+try {
+  console.log(sandbox.timeout);
+} finally {
+  await sandbox.stop();
+}
+```
+
+**Python**
+
+```python filename="main.py"
+import asyncio
+from datetime import timedelta
+
+from vercel import sandbox
+
+
+async def main() -> None:
+    async with sandbox.create_sandbox(
+        execution_time_limit=timedelta(hours=3),
+    ) as box:
+        print(box.execution_time_limit)
+
+
+asyncio.run(main())
+```
+
 To extend a running sandbox, call `extendTimeout` in TypeScript or `extend_timeout()` in Python:
+
+**TypeScript**
+
+```ts filename="index.ts"
+import { Sandbox } from '@vercel/sandbox';
+
+const sandbox = await Sandbox.create();
+
+try {
+  await sandbox.extendTimeout(2 * 60 * 60 * 1000); // Add 2 hours
+} finally {
+  await sandbox.stop();
+}
+```
+
+**Python**
+
+```python filename="main.py"
+import asyncio
+from datetime import timedelta
+
+from vercel import sandbox
+
+
+async def main() -> None:
+    async with sandbox.create_sandbox() as box:
+        await box.extend_execution_time_limit(timedelta(hours=2))
+
+
+asyncio.run(main())
+```
 
 See [Pricing and Limits](/docs/sandbox/pricing#runtime-limits) for maximum durations by plan.
 
@@ -76,9 +241,143 @@ See [Pricing and Limits](/docs/sandbox/pricing#runtime-limits) for maximum durat
 
 Use a detached command when you need to follow long-running output, keep a server alive, or wait for completion later.
 
+**TypeScript**
+
+```ts filename="index.ts"
+import { Sandbox } from '@vercel/sandbox';
+
+const sandbox = await Sandbox.create({ timeout: 120_000 });
+
+try {
+  const command = await sandbox.runCommand({
+    cmd: 'bash',
+    args: ['-lc', 'for i in 1 2 3; do echo $i; sleep 1; done'],
+    detached: true,
+  });
+
+  for await (const line of command.logs()) {
+    if (line.stream === 'stdout') {
+      process.stdout.write(line.data);
+    } else {
+      process.stderr.write(line.data);
+    }
+  }
+
+  const finished = await command.wait();
+  console.log(finished.exitCode);
+} finally {
+  await sandbox.stop();
+}
+```
+
+**Python**
+
+```python filename="main.py"
+import asyncio
+import sys
+from datetime import timedelta
+
+from vercel import sandbox
+
+
+async def main() -> None:
+    async with sandbox.create_sandbox(
+        execution_time_limit=timedelta(minutes=2),
+    ) as box:
+        process = await box.create_process(
+            "sh",
+            ["-lc", "for i in 1 2 3; do echo $i; sleep 1; done"],
+        )
+
+        assert process.stdout is not None
+        async for line in process.stdout:
+            sys.stdout.write(line)
+
+        print(await process.wait())
+
+
+asyncio.run(main())
+```
+
 ## Prepare files and download artifacts
 
 Use file APIs when your local application needs to send input files to the sandbox and retrieve a build output.
+
+**TypeScript**
+
+```ts filename="index.ts"
+import { Sandbox } from '@vercel/sandbox';
+
+const sandbox = await Sandbox.create();
+
+try {
+  await sandbox.mkDir('src');
+  await sandbox.writeFiles([
+    {
+      path: 'src/build-artifact.js',
+      content: Buffer.from(
+        "import { mkdir, writeFile } from 'node:fs/promises';\n\n" +
+          "await mkdir('dist', { recursive: true });\n" +
+          "await writeFile('dist/output.txt', 'hello from sandbox\\n');\n"
+      ),
+    },
+  ]);
+
+  const result = await sandbox.runCommand('node', ['src/build-artifact.js']);
+
+  if (result.exitCode !== 0) {
+    throw new Error(await result.stderr());
+  }
+
+  await sandbox.downloadFile(
+    { path: 'dist/output.txt' },
+    { path: './artifacts/dist/output.txt' },
+    { mkdirRecursive: true }
+  );
+} finally {
+  await sandbox.stop();
+}
+```
+
+**Python**
+
+```python filename="main.py"
+import asyncio
+
+import anyio
+
+from vercel import sandbox
+
+
+async def main() -> None:
+    async with sandbox.create_sandbox() as box:
+        await box.fs.write_text(
+            "src/build_artifact.py",
+            """\
+from pathlib import Path
+
+Path('dist').mkdir(exist_ok=True)
+Path('dist/output.txt').write_text('hello from sandbox\\n')
+""",
+        )
+        await box.run_process(
+            "python",
+            ["src/build_artifact.py"],
+            check=True,
+        )
+
+        local_path = anyio.Path("artifacts/dist/output.txt")
+        await local_path.parent.mkdir(parents=True, exist_ok=True)
+        async with (
+            box.fs.open("dist/output.txt", "rb") as source,
+            await anyio.open_file(local_path, "wb") as target,
+        ):
+            while chunk := await source.read(64 * 1024):
+                await target.write(chunk)
+
+
+asyncio.run(main())
+```
 
 ## Snapshot and restore a prepared environment
 
@@ -93,6 +392,70 @@ const child = await Sandbox.fork({
   sourceSandbox: 'my-base-sandbox',
   persistent: false,
 });
+```
+
+**TypeScript**
+
+```ts filename="index.ts"
+import { Sandbox } from '@vercel/sandbox';
+
+const MIN_SNAPSHOT_EXPIRATION_MS = 24 * 60 * 60 * 1000;
+
+let snapshotId = '';
+const sandbox = await Sandbox.create({ runtime: 'node24' });
+
+try {
+  await sandbox.writeFiles([
+    { path: 'config.json', content: Buffer.from('{"env": "prod"}') },
+  ]);
+
+  const snapshot = await sandbox.snapshot({
+    expiration: MIN_SNAPSHOT_EXPIRATION_MS,
+  });
+  snapshotId = snapshot.snapshotId;
+} catch (error) {
+  await sandbox.stop();
+  throw error;
+}
+
+const restored = await Sandbox.create({
+  source: { type: 'snapshot', snapshotId },
+  timeout: 120_000,
+});
+
+try {
+  const result = await restored.runCommand('cat', ['config.json']);
+  console.log(await result.stdout());
+} finally {
+  await restored.stop();
+}
+```
+
+**Python**
+
+```python filename="main.py"
+import asyncio
+from datetime import timedelta
+
+from vercel import sandbox
+from vercel.sandbox import SnapshotSource
+
+
+async def main() -> None:
+    async with sandbox.create_sandbox() as box:
+        await box.fs.write_text("config.json", '{"env": "prod"}')
+        snapshot = await box.snapshot(expiration=timedelta(days=1))
+
+    async with sandbox.create_sandbox(
+        source=SnapshotSource(snapshot_id=snapshot.id),
+        execution_time_limit=timedelta(minutes=2),
+    ) as restored:
+        print(await restored.fs.read_text("config.json"))
+
+    await snapshot.delete()
+
+
+asyncio.run(main())
 ```
 
 ## Debug with an interactive shell
@@ -135,6 +498,40 @@ There are three ways to stop a sandbox:
 3. Click **Stop Sandbox**.
 
 ### Programmatically
+
+**TypeScript**
+
+```ts filename="index.ts"
+import { Sandbox } from '@vercel/sandbox';
+
+const sandbox = await Sandbox.create();
+
+try {
+  // Run your workflow here.
+} finally {
+  await sandbox.stop();
+}
+```
+
+**Python**
+
+```python filename="main.py"
+import asyncio
+
+from vercel import sandbox
+
+
+async def main() -> None:
+    box = await sandbox.create_sandbox()
+    try:
+        # Run your workflow here.
+        pass
+    finally:
+        await box.stop()
+
+
+asyncio.run(main())
+```
 
 ### Automatic timeout
 
@@ -189,6 +586,8 @@ sandbox remove my-sandbox
 **Run OpenClaw in Vercel Sandbox**: Learn how to run OpenClaw in Vercel Sandbox for secure and isolated execution. [Learn more →](/kb/guide/running-openclaw-in-vercel-sandbox)
 
 **Run OpenCode securely with the Vercel Sandbox**: Learn how to run OpenCode securely with the Vercel Sandbox to build your own background coding agent [Learn more →](/kb/guide/running-opencode-securely-with-the-vercel-sandbox)
+
+**Run Cursor Cloud Agents in Vercel Sandbox**: Learn how to run Cursor Cloud Agents in Vercel Sandbox instead of Cursor's hosted machines. [Learn more →](/kb/guide/cursor-vercel-sandbox)
 
 
 ---

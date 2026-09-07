@@ -16,8 +16,8 @@ related:
 summary: Authenticate your container tool with Vercel Container Registry, then push and pull your first image with the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/container-registry/getting-started.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "9008cf43f9a8af61309a49f9b31ced5aacfa05eeeb9eecaf37a220f402bf8765"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "963a5f190457d8338e4dd20620ec9c94ef43278d0d6ee5a76a11bbb3a8e44f47"
 ---
 
 # Getting Started
@@ -38,10 +38,10 @@ Push your first image to Vercel Container Registry (VCR) with the Vercel CLI, th
 - [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fgetting-started&source_site=vercel-docs&relationship=related) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
 - [Deploy Rust on Vercel with Docker](https://vercel.com/kb/guide/deploy-rust-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fgetting-started&source_site=vercel-docs&relationship=related) — Build a Rust application with Axum and Docker, then deploy it to Vercel Functions. Learn how to configure environment va
 - [vercel vcr](https://vercel.com/docs/cli/vcr?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fgetting-started&source_site=vercel-docs&relationship=related) — Manage Vercel Container Registry from the Vercel CLI: build and push images, manage repositories, tags, and images, and
-- [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fgetting-started&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fgetting-started&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
-- [Build image overview](https://vercel.com/docs/builds/build-image?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fgetting-started&source_site=vercel-docs&relationship=related) — Learn about the container image used for Vercel builds.
+- [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fgetting-started&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
 - [JS SDK Reference](https://vercel.com/docs/sandbox/sdk-reference?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fgetting-started&source_site=vercel-docs&relationship=related) — A comprehensive reference for the Vercel Sandbox JavaScript SDK, which lets you run code in a secure, isolated environme
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fgetting-started&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/container-registry/getting-started.graph.md](/docs/container-registry/getting-started.graph.md?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fgetting-started&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

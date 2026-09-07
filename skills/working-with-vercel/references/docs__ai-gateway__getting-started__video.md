@@ -3,12 +3,13 @@ title: Video Generation Quickstart
 product: vercel
 url: /docs/ai-gateway/getting-started/video
 canonical_url: "https://vercel.com/docs/ai-gateway/getting-started/video"
-last_updated: 2026-08-22
+last_updated: 2026-09-02
 type: tutorial
 prerequisites:
   - /docs/ai-gateway/getting-started
   - /docs/ai-gateway
 related:
+  - /docs/ai-gateway/authentication-and-byok/oidc
   - /docs/ai-gateway/modalities/video-generation
   - /docs/ai-gateway/modalities/video-generation/image-to-video
   - /docs/ai-gateway/modalities/video-generation/motion-control
@@ -16,8 +17,8 @@ related:
 summary: Generate videos from text prompts, images, or video input using AI Gateway, either over a single request or as a background job.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/video.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "eaebc8efb2df97a7c05fc790726ef1a60ff888bacfb1896f5dee5687fb614f3a"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "57fda042a43b5c57c18bf8c3f3195daee28f6ed95c8e5b77d239ac64b79c0e9c"
 ---
 
 # Video Generation Quickstart
@@ -35,13 +36,13 @@ This quickstart walks you through generating your first video with AI Gateway. S
 - [Veo video models on AI Gateway](https://vercel.com/changelog/veo-video-models-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fvideo&source_site=vercel-docs&relationship=related)
 - [Wan models on AI Gateway](https://vercel.com/changelog/wan-models-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fvideo&source_site=vercel-docs&relationship=related)
 - [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fvideo&source_site=vercel-docs&relationship=related)
-- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fvideo&source_site=vercel-docs&relationship=related) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
 - [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fvideo&source_site=vercel-docs&relationship=related)
+- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fvideo&source_site=vercel-docs&relationship=related) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
+- [ByteDance](https://ai-sdk.dev/providers/ai-sdk-providers/bytedance?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fvideo&source_site=vercel-docs&relationship=related)
+- [Kling AI](https://ai-sdk.dev/providers/ai-sdk-providers/klingai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fvideo&source_site=vercel-docs&relationship=related)
 - [AI Gateway now supports asynchronous video generation](https://vercel.com/changelog/ai-gateway-now-supports-asynchronous-video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fvideo&source_site=vercel-docs&relationship=related)
 - [Reference-to-Video Generation](https://vercel.com/docs/ai-gateway/modalities/video-generation/reference-to-video?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fvideo&source_site=vercel-docs&relationship=related) — Generate videos featuring characters from reference images or videos using Google Veo, KlingAI, Wan, Seedance, or Grok I
-- [Video Editing](https://vercel.com/docs/ai-gateway/modalities/video-generation/video-editing?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fvideo&source_site=vercel-docs&relationship=related) — Edit existing videos using text prompts with Grok Imagine Video through AI Gateway.
-- [Image Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/image?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fvideo&source_site=vercel-docs&relationship=related) — Generate images from text prompts using AI Gateway.
-- [Video Extension](https://vercel.com/docs/ai-gateway/modalities/video-generation/video-extension?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fvideo&source_site=vercel-docs&relationship=related) — Extend existing videos from their last frame with Grok Imagine Video through AI Gateway.
+- [Text-to-Video Generation](https://vercel.com/docs/ai-gateway/modalities/video-generation/text-to-video?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fvideo&source_site=vercel-docs&relationship=related) — Generate videos from text prompts using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI G
 
 Full cross-link map for this page: [/docs/ai-gateway/getting-started/video.graph.md](/docs/ai-gateway/getting-started/video.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fvideo&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -50,13 +51,51 @@ Generations can take minutes. The quickstart below holds one request to AI Gatew
 
 > **💡 Note:** Video generation requires AI SDK 6 or later. Check your `ai` package version with `npm list ai`.
 
+## Prerequisites
+
+Before you begin, you need:
+
+- A Vercel account with a valid payment method to unlock free AI Gateway Credits
+- Node.js 22 or later
+- An AI Gateway API key or a Vercel OIDC token
+
+### Set up your API key
+
+Open the [Create API Key dialog](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fapi-keys%3FshowCreateKeyModal%3Dtrue\&title=AI+Gateway+API+Keys) in the Vercel dashboard, enter a name, and create the key.
+
+After you create your project in the next section, add a `.env.local` file to the project root and save your API key:
+
+```bash filename=".env.local"
+AI_GATEWAY_API_KEY=your_ai_gateway_api_key
+```
+
+> **💡 Note:** Instead of using an API key, you can use [OIDC
+> tokens](/docs/ai-gateway/authentication-and-byok/oidc) to authenticate your
+> requests.
+
+## Generate your first video
+
+Install Vercel's focused AI Gateway skill before delegating this setup:
+
+```bash filename="Terminal"
+npx skills add vercel/vercel-plugin --skill ai-gateway
+```
+
+**Agent prompt**
+
+```text
+Use the AI Gateway skill to add video generation to this project. Read AI_GATEWAY_API_KEY from the environment or .env.local, and stop and tell me to create a key if it is not set anywhere. Choose a current video model such as google/veo-3.1-fast-generate-001 from the live AI Gateway model list, save the generated video to a file, run the result, and run the project's type checker. Report the files changed and command output.
+```
+
 - ### Set up your project
   Create a new directory and initialize a Node.js project:
   ```bash filename="Terminal"
   mkdir ai-video-demo
   cd ai-video-demo
   pnpm init
+  pnpm pkg set type=module
   ```
+  Setting the project to ESM lets the examples below use top-level `await`.
 
 - ### Install dependencies
   Install the AI SDK and development dependencies:
@@ -82,24 +121,18 @@ Generations can take minutes. The quickstart below holds one request to AI Gatew
   ```
   The `@latest` forces an upgrade even if your package.json has an older version like `^5.0.0`.
 
-- ### Set up your API key
-  Go to the [AI Gateway API Keys page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fapi-keys\&title=AI+Gateway+API+Keys) in your Vercel dashboard and click **Create key** to generate a new API key.
-
-  Create a `.env.local` file and save your API key:
-  ```bash filename=".env.local"
-  AI_GATEWAY_API_KEY=your_ai_gateway_api_key
-  ```
-
 - ### Generate a video
   Create an `index.ts` file:
   ```typescript filename="index.ts"
   import { experimental_generateVideo as generateVideo } from 'ai';
   import fs from 'node:fs';
-  import 'dotenv/config';
+  import { config } from 'dotenv';
+
+  config({ path: '.env.local' });
 
   async function main() {
     const result = await generateVideo({
-      model: 'google/veo-3.1-generate-001',
+      model: 'google/veo-3.1-fast-generate-001',
       prompt: 'A serene mountain landscape at sunset with clouds drifting by',
       aspectRatio: '16:9',
       duration: 8,
@@ -121,11 +154,12 @@ Generations can take minutes. The quickstart below holds one request to AI Gatew
   > If you hit timeout issues, see [extending timeouts for Node.js](/docs/ai-gateway/modalities/video-generation#extending-timeouts-for-nodejs), or switch to [asynchronous video generation](#asynchronous-video-generation) so no single request stays open.
   The generated video will be saved as `output.mp4` in your project directory.
 
-- ### Next steps
-  - See [supported video generation models](/ai-gateway/models?capabilities=video-generation)
-  - Learn about [image-to-video generation](/docs/ai-gateway/modalities/video-generation/image-to-video) to animate images
-  - Explore [KlingAI motion control](/docs/ai-gateway/modalities/video-generation/motion-control) for character animation
-  - Run generations as background jobs with [asynchronous video generation](#asynchronous-video-generation)
+## Next steps
+
+- See [supported video generation models](/ai-gateway/models?capabilities=video-generation)
+- Learn about [image-to-video generation](/docs/ai-gateway/modalities/video-generation/image-to-video) to animate images
+- Explore [KlingAI motion control](/docs/ai-gateway/modalities/video-generation/motion-control) for character animation
+- Run generations as background jobs with [asynchronous video generation](#asynchronous-video-generation)
 
 ## Asynchronous video generation
 
@@ -142,7 +176,9 @@ Passing the `poll` option is what opts you into the asynchronous flow. The same 
 ```typescript filename="async-video.ts"
 import { experimental_generateVideo as generateVideo } from 'ai';
 import fs from 'node:fs';
-import 'dotenv/config';
+import { config } from 'dotenv';
+
+config({ path: '.env.local' });
 
 async function main() {
   const result = await generateVideo({
@@ -198,7 +234,9 @@ import {
   experimental_startVideo as startVideo,
 } from 'ai';
 import fs from 'node:fs';
-import 'dotenv/config';
+import { config } from 'dotenv';
+
+config({ path: '.env.local' });
 
 const model = 'google/veo-3.1-generate-001';
 
@@ -359,7 +397,9 @@ Transform a single image into a video by adding motion. The image becomes the vi
 ```typescript filename="image-to-video.ts"
 import { experimental_generateVideo as generateVideo } from 'ai';
 import fs from 'node:fs';
-import 'dotenv/config';
+import { config } from 'dotenv';
+
+config({ path: '.env.local' });
 
 const result = await generateVideo({
   model: 'alibaba/wan-v2.6-i2v',
@@ -380,7 +420,9 @@ Generate a video that transitions between a starting and ending image. The model
 ```typescript filename="first-last-frame.ts"
 import { experimental_generateVideo as generateVideo } from 'ai';
 import fs from 'node:fs';
-import 'dotenv/config';
+import { config } from 'dotenv';
+
+config({ path: '.env.local' });
 
 const firstFrame = fs.readFileSync('start.png');
 const lastFrame = fs.readFileSync('end.png');
@@ -409,7 +451,9 @@ Transfer motion from a reference video onto a character image. The character per
 ```typescript filename="motion-control.ts"
 import { experimental_generateVideo as generateVideo } from 'ai';
 import fs from 'node:fs';
-import 'dotenv/config';
+import { config } from 'dotenv';
+
+config({ path: '.env.local' });
 
 const result = await generateVideo({
   model: 'klingai/kling-v3.0-motion-control',
@@ -435,7 +479,9 @@ Generate a new video scene featuring characters or content from reference media.
 ```typescript filename="reference-to-video.ts"
 import { experimental_generateVideo as generateVideo } from 'ai';
 import fs from 'node:fs';
-import 'dotenv/config';
+import { config } from 'dotenv';
+
+config({ path: '.env.local' });
 
 const result = await generateVideo({
   model: 'alibaba/wan-v2.6-r2v',
@@ -487,7 +533,9 @@ pnpm add @vercel/blob
 import { experimental_generateVideo as generateVideo } from 'ai';
 import { put } from '@vercel/blob';
 import fs from 'node:fs';
-import 'dotenv/config';
+import { config } from 'dotenv';
+
+config({ path: '.env.local' });
 
 // Upload image to Vercel Blob
 const imageBuffer = fs.readFileSync('input.png');

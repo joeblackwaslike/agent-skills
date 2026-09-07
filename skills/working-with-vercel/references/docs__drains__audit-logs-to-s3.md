@@ -15,13 +15,15 @@ related:
 summary: Learn how to configure AWS IAM and Amazon S3 so Vercel can write Audit Log Drain events to your S3 bucket.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/audit-logs-to-s3.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "9a3ee06db2762d244ddf356f3e4e74c865a82ef93fd9821763daf868ba47b3e6"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "ecb6c96d3eafdbc1d55c338adc8a76befa1f3f4896ee8fc59a5f4d23f66b6dfa"
 ---
 
 # Drain Audit Logs to S3
 
 > **🔒 Permissions Required**: Audit Log Drains
+
+Audit Log Drains can write team activity events directly to your Amazon S3 bucket. Use this setup when you want audit logs stored in your AWS account for security archives, compliance retention, or downstream analysis.
 
 
 <!-- docsgraph:related -->
@@ -39,8 +41,6 @@ sha256: "9a3ee06db2762d244ddf356f3e4e74c865a82ef93fd9821763daf868ba47b3e6"
 
 Full cross-link map for this page: [/docs/drains/audit-logs-to-s3.graph.md](/docs/drains/audit-logs-to-s3.graph.md?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-s3&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Audit Log Drains can write team activity events directly to your Amazon S3 bucket. Use this setup when you want audit logs stored in your AWS account for security archives, compliance retention, or downstream analysis.
 
 Vercel writes to S3 by assuming an AWS Identity and Access Management (IAM) role in your AWS account with [AWS Security Token Service (AWS STS)](https://docs.aws.amazon.com/STS/latest/APIReference/welcome.html). You keep ownership of the bucket and grant Vercel write access only to the bucket path you configure.
 
@@ -110,7 +110,7 @@ The S3 bucket and IAM role must be in the same AWS account.
   Test deliveries write objects under `test/`. If the `endpoint` is `s3://<bucket-name>`, your IAM role must allow `s3:PutObject` on `arn:aws:s3:::<bucket-name>/*` so test and production objects can be written.
 
   If you set **Object ACL** in Vercel, add `s3:PutObjectAcl` to the same S3 statement. Amazon S3 requires `s3:PutObjectAcl` when a `PutObject` request includes an ACL header.
-  #### \['S3 or AWS managed key'
+  #### S3 or AWS managed key
   Use this option when the bucket uses SSE-S3, or SSE-KMS with the AWS managed `aws/s3` key.
 
   The following example allows writes to `s3://<bucket-name>/audit-logs`:
@@ -131,7 +131,7 @@ The S3 bucket and IAM role must be in the same AWS account.
     ]
   }
   ```
-  #### 'Customer managed KMS key']
+  #### Customer managed KMS key
   Use this option when the bucket uses SSE-KMS or DSSE-KMS with an AWS KMS key that you manage. This includes buckets whose default encryption uses a customer managed AWS KMS key.
 
   The identity-based IAM policy must allow `s3:PutObject` on the destination path and `kms:GenerateDataKey` for the customer managed key through S3 in the bucket region.

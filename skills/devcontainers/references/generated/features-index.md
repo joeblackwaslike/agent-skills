@@ -1,8 +1,8 @@
 ---
 title: "Available features index"
 source: "https://containers.dev/features"
-fetched_at: "2026-08-31T10:36:13.334Z"
-sha256: "26d581631b5fa9e0aa5c0eec5818f70c03ae4fbd06b66f8932930f4e8c632c57"
+fetched_at: "2026-09-07T08:58:15.643Z"
+sha256: "e86cc5c6960ca994a2c597ae2a0027c874c708e46f8b9245627664669daa7362"
 ---
 
 # Available features index
@@ -117,17 +117,17 @@ Features
 | Dotnet CLI | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/dotnet:2` | `2.5.0` |
 | Git (from source) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/git:1` | `1.3.8` |
 | Git Large File Support (LFS) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/git-lfs:1` | `1.2.5` |
-| GitHub CLI | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/github-cli:1` | `1.1.1` |
+| GitHub CLI | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/github-cli:1` | `1.1.2` |
 | Go | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/go:1` | `1.3.4` |
 | Hugo | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/hugo:1` | `1.1.3` |
-| Java (via SDKMAN!) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/java:1` | `1.8.2` |
+| Java (via SDKMAN!) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/java:1` | `1.8.3` |
 | Kubectl, Helm, and Minikube | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/kubectl-helm-minikube:1` | `1.3.1` |
 | Nix Package Manager | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/nix:1` | `1.3.1` |
 | Node.js (via nvm), yarn and pnpm. | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/node:2` | `2.1.0` |
 | NVIDIA CUDA | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/nvidia-cuda:3` | `3.0.0` |
 | Oryx | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/oryx:2` | `2.0.1` |
 | PHP | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/php:1` | `1.1.5` |
-| PowerShell | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/powershell:2` | `2.0.2` |
+| PowerShell | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/powershell:2` | `2.0.3` |
 | Python | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/python:1` | `1.8.0` |
 | Ruby (via ruby-build) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/ruby:2` | `2.0.0` |
 | Rust | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/rust:1` | `1.5.1` |
@@ -617,11 +617,11 @@ Features
 | uv | Valentin Heiligers | `ghcr.io/va-h/devcontainers-features/uv:1` | `1.1.4` |
 | AWS CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/aws-cli:1` | `1.6.27` |
 | Azure CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/azure-cli:1` | `1.0.21` |
-| Common Utilities | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/common-utils:1` | `1.4.128` |
+| Common Utilities | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/common-utils:1` | `1.4.131` |
 | Docker (Docker-in-Docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-in-docker:1` | `1.3.38` |
 | Docker (docker-outside-of-docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-outside-of-docker:1` | `1.3.38` |
-| Google Cloud CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/gcloud-cli:1` | `1.0.74` |
-| Go | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/go:1` | `1.7.38` |
+| Google Cloud CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/gcloud-cli:1` | `1.0.75` |
+| Go | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/go:1` | `1.7.39` |
 | Terraform, tflint, and TFGrunt | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/terraform:1` | `1.3.28` |
 | bpmnlint | Waqqas Jabbar | `ghcr.io/waqqas/feature/bpmnlint:1` | `1.0.1` |
 | dmnlint | Waqqas Jabbar | `ghcr.io/waqqas/feature/dmnlint:1` | `1.0.1` |
@@ -1344,24 +1344,26 @@ Features
 | Gemini CLI | siri404 | `ghcr.io/siri404/devcontainer-ai-features/gemini-cli:1` | `1.0.1` |
 | MCP Inspector | siri404 | `ghcr.io/siri404/devcontainer-ai-features/mcp-inspector:1` | `1.0.1` |
 | Vercel CLI | siri404 | `ghcr.io/siri404/devcontainer-ai-features/vercel-cli:1` | `1.0.1` |
-| Angular Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/angular-dev:1` | `1.0.6` |
-| Automatic File Headers | baxyz | `ghcr.io/helpers4/devcontainer/auto-header:1` | `1.0.8` |
-| Claude Code Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/claude-dev:1` | `1.0.6` |
+| Angular Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/angular-dev:1` | `1.1.0` |
+| Automatic File Headers | baxyz | `ghcr.io/helpers4/devcontainer/auto-header:1` | `1.1.0` |
+| Bitwarden Secrets Manager CLI | baxyz | `ghcr.io/helpers4/devcontainer/bitwarden-secrets-manager:1` | `1.0.0` |
+| Claude Code Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/claude-dev:1` | `1.1.0` |
+| Cline Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/cline-dev:1` | `1.0.0` |
 | GitHub Copilot Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/copilot-dev:1` | `1.0.3` |
 | Dotfiles Sync | baxyz | `ghcr.io/helpers4/devcontainer/dotfiles-sync:1` | `1.0.8` |
 | Essential Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/essential-dev:1` | `1.0.9` |
-| git-absorb | baxyz | `ghcr.io/helpers4/devcontainer/git-absorb:1` | `1.0.7` |
+| git absorb — Automatic Fixup Commits | baxyz | `ghcr.io/helpers4/devcontainer/git-absorb:1` | `1.1.0` |
 | GitHub Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/github-dev:1` | `1.0.5` |
 | helpers4 Common Library | baxyz | `ghcr.io/helpers4/devcontainer/helpers4-common:1` | `1.0.1` |
-| Mistral Vibe Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/mistral-dev:1` | `1.0.4` |
-| Nub — Fast TypeScript/Node Toolchain | baxyz | `ghcr.io/helpers4/devcontainer/nub:1` | `1.0.0` |
-| Automatic Package Installation | baxyz | `ghcr.io/helpers4/devcontainer/package-auto-install:1` | `1.0.9` |
-| Peon Ping — AI Agent Sound Notifications | baxyz | `ghcr.io/helpers4/devcontainer/peon-ping:1` | `1.0.6` |
-| Playwright Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/playwright-dev:1` | `1.0.1` |
-| pnpm Store (shared) | baxyz | `ghcr.io/helpers4/devcontainer/pnpm-store:1` | `1.0.7` |
-| Shell History Per Project | baxyz | `ghcr.io/helpers4/devcontainer/shell-history-per-project:1` | `1.0.7` |
+| Mistral Vibe Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/mistral-dev:1` | `1.1.0` |
+| Nub — Fast TypeScript/Node Toolchain | baxyz | `ghcr.io/helpers4/devcontainer/nub:1` | `1.1.0` |
+| Automatic Package Installation | baxyz | `ghcr.io/helpers4/devcontainer/package-auto-install:1` | `1.1.0` |
+| Peon Ping — AI Agent Sound Notifications | baxyz | `ghcr.io/helpers4/devcontainer/peon-ping:1` | `1.1.0` |
+| Playwright Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/playwright-dev:1` | `1.1.0` |
+| pnpm Store (shared) | baxyz | `ghcr.io/helpers4/devcontainer/pnpm-store:1` | `1.1.0` |
+| Shell History Per Project | baxyz | `ghcr.io/helpers4/devcontainer/shell-history-per-project:1` | `1.1.0` |
 | TypeScript Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/typescript-dev:1` | `1.0.7` |
-| Vite+ Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/vite-plus:1` | `1.0.7` |
+| Vite+ Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/vite-plus:1` | `1.1.0` |
 | PHP extensions installer | Yassine Doghri | `ghcr.io/yassinedoghri/devcontainers/php-extensions-installer:1` | `1.0.0` |
 | DragonFly | Atomys | `ghcr.io/42atomys/devcontainers-features/dragonfly:1` | `1.0.0` |
 | Meilisearch | Atomys | `ghcr.io/42atomys/devcontainers-features/meilisearch:1` | `1.0.0` |
@@ -1390,6 +1392,7 @@ Features
 | lazydocker | ProxayFox | `ghcr.io/proxayfox/devcontainer-features/lazydocker:1` | `1.1.0` |
 | Databricks CLI | KingBain | `ghcr.io/kingbain/devcontainer-features-databricks/databricks-cli:0` | `0.0.1` |
 | .config/ | devcontainer-config | `ghcr.io/devcontainer-config/features/dot-config:4` | `4.0.0` |
+| Features | devcontainer-config | `ghcr.io/devcontainer-config/features/features:0` | `0.1.0` |
 | Unset Git Credential Helper | devcontainer-config | `ghcr.io/devcontainer-config/features/unset-git-credential-helper:0` | `0.1.0` |
 | Initialize User | devcontainer-config | `ghcr.io/devcontainer-config/features/user-init:3` | `3.0.0` |
 | Android Debug Bridge (adb) and Fastboot | Evit15 | `ghcr.io/Evit15/devcontainer-features/adb-fastboot:1` | `1.0.1` |
@@ -1419,7 +1422,7 @@ Features
 | Oh My Pi | iyaki | `ghcr.io/iyaki/devcontainer-features/oh-my-pi:1` | `1.0.0` |
 | PHPantom LSP | iyaki | `ghcr.io/iyaki/devcontainer-features/phpantom:1` | `1.0.0` |
 | PHP Installer for Extensions (PIE) | iyaki | `ghcr.io/iyaki/devcontainer-features/pie:1` | `1.0.1` |
-| PHP Extensions via PIE | iyaki | `ghcr.io/iyaki/devcontainer-features/pie-extensions:1` | `1.0.0` |
+| PHP Extensions via PIE | iyaki | `ghcr.io/iyaki/devcontainer-features/pie-extensions:2` | `2.1.0` |
 | SpecRalph - Spec-Driven Ralph-Wiggum Agentic AI Loops Runner | iyaki | `ghcr.io/iyaki/devcontainer-features/ralph:1` | `1.0.2` |
 | Zensical (via pipx) | Riccardo Bravin | `ghcr.io/riccardobravin/devcontainer-features/zensical:0` | `0.1.0` |
 | Databricks CLI | mike-fi | `ghcr.io/mike-fi/devcontainer-features/databricks-cli:1` | `1.1.1` |
@@ -1451,6 +1454,7 @@ Features
 | Build Essential | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/build-essential:1` | `1.0.0` |
 | claude-code | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/claude-code:1` | `1.1.0` |
 | Cypress Dependencies | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/cypress-deps:1` | `1.0.1` |
+| Docker inside Docker | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/docker-in:1` | `1.0.0` |
 | Docker outside Docker | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/docker-out:1` | `1.1.0` |
 | .NET | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/dotnet:1` | `1.0.0` |
 | Eclipse Dependencies | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/eclipse-deps:1` | `1.1.0` |
@@ -1473,7 +1477,7 @@ Features
 | NVIDIA CUDA | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/nvidia-cuda:1` | `1.1.0` |
 | opencode | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/opencode:1` | `1.1.0` |
 | Playwright Dependencies | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/playwright-deps:2` | `2.0.0` |
-| Python | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/python:1` | `1.1.0` |
+| Python | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/python:1` | `1.2.0` |
 | Rust | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/rust:1` | `1.1.0` |
 | SonarScanner CLI | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/sonar-scanner-cli:1` | `1.1.0` |
 | System Packages | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/system-packages:1` | `1.0.0` |

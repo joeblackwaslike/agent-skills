@@ -12,13 +12,15 @@ related:
 summary: Requires using native `fetch` which Next.js provides, removing the need for third-party fetch libraries.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_use_native_fetch.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "5f098af285c9c5003928b01ee5d67e007b9e75dd2d979d7df1e2269a635dcbee"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "37dbabb53d24db7658e05231c00d101a8937e1b90f44a8f44a9287a28e32f4f0"
 ---
 
 # NEXTJS_USE_NATIVE_FETCH
 
 > **🔒 Permissions Required**: Conformance
+
+> **💡 Note:** This rule is available from version 1.1.0.
 
 Next.js extends the native [Web `fetch` API](https://nextjs.org/docs/app/api-reference/functions/fetch)
 with additional caching capabilities which means third-party fetch libraries are not needed.

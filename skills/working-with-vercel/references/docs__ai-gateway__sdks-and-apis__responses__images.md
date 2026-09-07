@@ -14,8 +14,8 @@ related:
 summary: Send images and PDF documents for analysis using the OpenAI Responses API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/images.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "95ab853b0bb95c50ebe62de2e55b113928ee5a827189e57d5a4ae5d7e90a9d1e"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "d4042bd5ab99792f7aef648bf8294200a4102a3c2ab400f6fb88fbaba0f642c9"
 ---
 
 # File Attachments
@@ -32,12 +32,12 @@ Vision-capable models accept images and PDFs alongside your prompt. Replace the 
 - [File Attachments](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/images?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fimages&source_site=vercel-docs&relationship=related) — Send images and PDF documents to a model using the OpenAI Chat Completions API.
 - [File Attachments](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/images?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fimages&source_site=vercel-docs&relationship=related) — Send images and PDF documents as part of your Anthropic API message requests.
 - [OpenResponses API](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fimages&source_site=vercel-docs&relationship=related) — Use the OpenResponses API specification with AI Gateway for a unified, provider-agnostic interface.
-- [Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fimages&source_site=vercel-docs&relationship=related) — Use the AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
+- [Image Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fimages&source_site=vercel-docs&relationship=related) — Generate images using AI models that support multimodal output through the Chat Completions API.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/responses/images.graph.md](/docs/ai-gateway/sdks-and-apis/responses/images.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fimages&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-#### \['cURL'
+#### cURL
 
 ```bash filename="image-input.sh"
 curl https://ai-gateway.vercel.sh/v1/responses \
@@ -61,7 +61,7 @@ curl https://ai-gateway.vercel.sh/v1/responses \
   }'
 ```
 
-#### 'TypeScript'
+#### TypeScript
 
 ```typescript filename="image-input.ts"
 import OpenAI from 'openai';
@@ -92,7 +92,7 @@ const response = await client.responses.create({
 console.log(response.output_text);
 ```
 
-#### 'Python']
+#### Python
 
 ```python filename="image_input.py"
 import os
@@ -162,7 +162,7 @@ A URL source must be reachable without authentication. If the host blocks the re
 
 Send a PDF with an `input_file` part. The model reads the document's text directly rather than working from a rasterized page:
 
-#### \['cURL'
+#### cURL
 
 ```bash filename="pdf-input.sh"
 PDF_B64=$(base64 -i report.pdf)
@@ -188,7 +188,7 @@ curl https://ai-gateway.vercel.sh/v1/responses \
   }'
 ```
 
-#### 'TypeScript'
+#### TypeScript
 
 ```typescript filename="pdf-input.ts"
 import fs from 'node:fs';
@@ -221,7 +221,7 @@ const response = await client.responses.create({
 console.log(response.output_text);
 ```
 
-#### 'Python']
+#### Python
 
 ```python filename="pdf_input.py"
 import base64

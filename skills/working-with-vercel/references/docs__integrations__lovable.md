@@ -16,13 +16,15 @@ related:
 summary: Deploy your Lovable project to Vercel using GitHub sync and zero-configuration TanStack Start detection.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/lovable.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "240b29679934a04629d0e6d14fb9292fc9c902aecf12667d9fe7b5662b9f01b7"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "dff2ab8eef6025752bad341a5b93711edc991dcd9a1c609f321b56b83503326b"
 ---
 
 # Deploy a Lovable app on Vercel
 
 ## Overview
+
+[Lovable](https://lovable.dev) is an AI-powered app builder. Lovable projects use [TanStack Start](/docs/frameworks/full-stack/tanstack-start) as their underlying framework, so they deploy to Vercel with zero configuration. Lovable uses [Nitro](https://v3.nitro.build/), the same universal server toolkit that powers TanStack Start on Vercel, so no manual build configuration is required.
 
 
 <!-- docsgraph:related -->
@@ -31,7 +33,7 @@ sha256: "240b29679934a04629d0e6d14fb9292fc9c902aecf12667d9fe7b5662b9f01b7"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [You can now deploy Lovable apps to Vercel](https://vercel.com/changelog/you-can-now-deploy-lovable-apps-to-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Flovable&source_site=vercel-docs&relationship=related)
-- [Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Flovable&source_site=vercel-docs&relationship=related) — Learn how to deploy a TanStack Start app to Vercel using the Nitro Vite plugin. Covers framework setup, Git and CLI depl
+- [How to Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Flovable&source_site=vercel-docs&relationship=related) — Deploy a TanStack Start app to Vercel with the Nitro Vite plugin. Covers Git and CLI deployment, Fluid compute defaults,
 - [How to Deploy a Vue.js Site with Vercel](https://vercel.com/kb/guide/deploying-vuejs-to-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Flovable&source_site=vercel-docs&relationship=related) — Create your Vue.js app and deploy it with Vercel.
 - [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Flovable&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
 - [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Flovable&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
@@ -42,8 +44,6 @@ sha256: "240b29679934a04629d0e6d14fb9292fc9c902aecf12667d9fe7b5662b9f01b7"
 
 Full cross-link map for this page: [/docs/integrations/lovable.graph.md](/docs/integrations/lovable.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Flovable&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-[Lovable](https://lovable.dev) is an AI-powered app builder. Lovable projects use [TanStack Start](/docs/frameworks/full-stack/tanstack-start) as their underlying framework, so they deploy to Vercel with zero configuration. Lovable uses [Nitro](https://v3.nitro.build/), the same universal server toolkit that powers TanStack Start on Vercel, so no manual build configuration is required.
 
 This guide walks through connecting a Lovable project to Vercel through GitHub, so that every change you make in Lovable triggers a new deployment.
 

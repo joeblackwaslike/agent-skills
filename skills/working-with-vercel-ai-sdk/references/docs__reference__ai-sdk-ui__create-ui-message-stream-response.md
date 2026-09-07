@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/create-ui-message-stream-response.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "762260d66d5258efea14fa3f3e09eed15269d5019c99e23a58d80dc9c6517ade"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "974f2a928f67fc8afbf37619c4b6862fa223f24c4d1639ccf2d6c03b7e53d05b"
 ---
 
 # `createUIMessageStreamResponse`
@@ -34,6 +34,9 @@ const response = createUIMessageStreamResponse({
   },
   stream: createUIMessageStream({
     execute({ writer }) {
+      // The outer stream owns the assistant message lifecycle.
+      writer.write({ type: 'start' });
+
       // Write custom data (type must be 'data-<name>')
       writer.write({
         type: 'data-message',
@@ -69,7 +72,9 @@ const response = createUIMessageStreamResponse({
         prompt: 'Say hello',
       });
 
-      writer.merge(toUIMessageStream({ stream: result.stream }));
+      writer.merge(
+        toUIMessageStream({ stream: result.stream, sendStart: false }),
+      );
     },
   }),
 });

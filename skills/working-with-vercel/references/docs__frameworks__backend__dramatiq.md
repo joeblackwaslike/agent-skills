@@ -17,13 +17,17 @@ related:
 summary: Deploy Dramatiq workers on Vercel. Learn how Dramatiq actors use Vercel Queues and Vercel Functions to process background tasks.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/dramatiq.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "72fee9011de06e0299d90b89a327a6c5ffcdb9b3e0a11fab85c49f7561e27a8e"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "3b7ba58079d193c80a815cb8d8ee81cd43ef94aa5f0a1f6178e36ad43a937634"
 ---
 
 # Deploy Dramatiq workers on Vercel
 
 > **🔒 Permissions Required**: Vercel Queues
+
+[Dramatiq](https://dramatiq.io/) is a distributed task processing library for
+Python. You declare functions as actors, send them messages, and workers run
+them in the background.
 
 
 <!-- docsgraph:related -->
@@ -34,18 +38,15 @@ sha256: "72fee9011de06e0299d90b89a327a6c5ffcdb9b3e0a11fab85c49f7561e27a8e"
 - [Run background tasks with Celery on Vercel](https://vercel.com/changelog/run-background-tasks-with-celery-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fdramatiq&source_site=vercel-docs&relationship=related)
 - [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fdramatiq&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
 - [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fdramatiq&source_site=vercel-docs&relationship=related) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
+- [Deploy Rust on Vercel with Docker](https://vercel.com/kb/guide/deploy-rust-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fdramatiq&source_site=vercel-docs&relationship=related) — Build a Rust application with Axum and Docker, then deploy it to Vercel Functions. Learn how to configure environment va
 - [Quickstart](https://vercel.com/docs/queues/quickstart?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fdramatiq&source_site=vercel-docs&relationship=related) — Set up Vercel Queues with the SDK.
 - [Deploy a Django app on Vercel](https://vercel.com/docs/frameworks/full-stack/django?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fdramatiq&source_site=vercel-docs&relationship=related) — Deploy a Django app on Vercel. Learn how the Python runtime, WSGI, ASGI, static assets, and Vercel Functions work togeth
-- [Vercel Queues: JS SDK Reference](https://vercel.com/docs/queues/sdk?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fdramatiq&source_site=vercel-docs&relationship=related) — Publish and consume messages with the Vercel Queues SDK for JavaScript and TypeScript.
-- [Vercel Workflows](https://vercel.com/docs/workflows?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fdramatiq&source_site=vercel-docs&relationship=related) — Vercel Workflows is a fully managed platform for building durable, reliable, and observable applications and AI agents w
+- [Vercel Workflows](https://vercel.com/docs/workflows?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fdramatiq&source_site=vercel-docs&relationship=related) — Build agents and applications that retry failed steps, wait for external events, and resume across crashes and deploymen
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fdramatiq&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fdramatiq&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/frameworks/backend/dramatiq.graph.md](/docs/frameworks/backend/dramatiq.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fdramatiq&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-[Dramatiq](https://dramatiq.io/) is a distributed task processing library for
-Python. You declare functions as actors, send them messages, and workers run
-them in the background.
 
 Deploy Dramatiq workers to Vercel with the [Python
 runtime](/docs/functions/runtimes/python), [Vercel Queues](/docs/queues), and

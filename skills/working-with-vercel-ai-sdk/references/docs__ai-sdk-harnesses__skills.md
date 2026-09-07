@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses/skills.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "f11e512dfe5384b22a78fa02e94978414eb2cc8e75be3fcb1e2f6ebe425f552d"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "09cc463b9724c194aba69ebabb6cfa29df7c847501e76fae9ca7c800a913c340"
 ---
 
 # Harness Skills
@@ -9,8 +9,8 @@ sha256: "f11e512dfe5384b22a78fa02e94978414eb2cc8e75be3fcb1e2f6ebe425f552d"
 [Skills](https://agentskills.io/) are reusable instruction bundles that can
 be useful for project conventions, workflow guidance, domain-specific procedures,
 or any other instructions that should be discoverable by the underlying harness
-runtime. You can make skills available to a `HarnessAgent` for the lifetime of a
-session.
+runtime. You can configure skills for a `HarnessAgent` or replace them between
+completed turns.
 
 ## Define Skills
 
@@ -58,6 +58,10 @@ Use skills for reusable instructions that should be available on demand, instead
 always being loaded into the agent's context like regular `instructions`.
 
 Use `instructions` for broad agent behavior and current-session priorities.
+
+Skills can be changed between completed turns using `callOptionsSchema` and
+`prepareCall`. See [Change Settings Between Turns](/docs/ai-sdk-harnesses/harness-agent#change-settings-between-turns)
+for details.
 
 ## Related
 

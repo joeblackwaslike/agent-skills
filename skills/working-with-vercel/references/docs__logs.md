@@ -16,13 +16,17 @@ related:
 summary: Use logs to find information on deployment builds, function executions, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/logs.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "3640d89e42bbf6a0d7dc3c61e122eefa45d66f42ebdf85187dc90a772bf1898d"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "042b4b269d490a422ac0a0f52eac5e01d0f324869233702e268ce418fb65dcad"
 ---
 
 # Logs
 
 ## Build logs
+
+> **🔒 Permissions Required**: Build Logs
+
+When you deploy your website to Vercel, the platform generates build logs that show the deployment progress. The build logs contain information about:
 
 
 <!-- docsgraph:related -->
@@ -34,16 +38,12 @@ sha256: "3640d89e42bbf6a0d7dc3c61e122eefa45d66f42ebdf85187dc90a772bf1898d"
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related&source_path=%2Fdocs%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
 - [Vercel Function Logs](https://vercel.com/docs/functions/logs?from=related&source_path=%2Fdocs%2Flogs&source_site=vercel-docs&relationship=related) — Use runtime logs to debug and monitor your Vercel Functions.
 - [Get logs for a deployment](https://vercel.com/docs/rest-api/logs/get-logs-for-a-deployment?from=related&source_path=%2Fdocs%2Flogs&source_site=vercel-docs&relationship=related) — GET /v1/projects/{projectId}/deployments/{deploymentId}/runtime-logs — Returns a stream of logs for a given deployment.
-- [vercel logs](https://vercel.com/docs/cli/logs?from=related&source_path=%2Fdocs%2Flogs&source_site=vercel-docs&relationship=related) — View and filter request logs for your Vercel project, or stream live runtime logs from a deployment.
 - [Drain Audit Logs to Datadog](https://vercel.com/docs/drains/audit-logs-to-datadog?from=related&source_path=%2Fdocs%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to forward Vercel Audit Log Drain events to Datadog using the Datadog Logs API.
+- [vercel logs](https://vercel.com/docs/cli/logs?from=related&source_path=%2Fdocs%2Flogs&source_site=vercel-docs&relationship=related) — View and filter request logs for your Vercel project, or stream live runtime logs from a deployment.
 - [Retrieves a list of all the Log Drains \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/retrieves-a-list-of-all-the-log-drains-deprecated?from=related&source_path=%2Fdocs%2Flogs&source_site=vercel-docs&relationship=related) — GET /v1/log-drains — Retrieves a list of all the Log Drains owned by the account. This endpoint must be called with an a
 
 Full cross-link map for this page: [/docs/logs.graph.md](/docs/logs.graph.md?from=related&source_path=%2Fdocs%2Flogs&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-> **🔒 Permissions Required**: Build Logs
-
-When you deploy your website to Vercel, the platform generates build logs that show the deployment progress. The build logs contain information about:
 
 - The version of the build tools
 - Warnings or errors encountered during the build process

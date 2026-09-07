@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/openai-compatible-providers/lmstudio.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "56bd00f4a24de4c409c3c32e79e5c117adfc27b1a667a71388c4173dfd9ba91e"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "54df2bb936f3ca18fc4e087f98d39727f5f2bc5c77fe115d5fcd769fbdb99082"
 ---
 
 # LM Studio Provider
@@ -135,6 +135,7 @@ const { embeddings } = await embedMany({
 - [Clarifai](/providers/openai-compatible-providers/clarifai)
 - [Heroku](/providers/openai-compatible-providers/heroku)
 - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)
+- [Synthorai](/providers/openai-compatible-providers/synthorai)
 
 
 [Full Sitemap](/sitemap.md)

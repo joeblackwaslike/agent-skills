@@ -12,13 +12,15 @@ related:
 summary: Requires that workspaces have a valid Node.js version file (`.node-version` or `.nvmrc`) file defined.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/require_node_version_file.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "4983e7f99f90c05868d9fe07120b5d2a41a6517d76f2128475f51d652c33cbf8"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "e828b9a6441f4ed696b3a293df2e927329499a3f6fb30880a99e4df0973ef78a"
 ---
 
 # REQUIRE_NODE_VERSION_FILE
 
 > **🔒 Permissions Required**: Conformance
+
+> **💡 Note:** This rule is available from version 1.2.0.
 
 Using a Node.js version file (`.node-version` or `.nvmrc`) ensures that all
 developers and tooling (e.g., CI systems) use the same version of Node.js. This

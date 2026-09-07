@@ -3,7 +3,7 @@ title: Vercel Sandbox
 product: vercel
 url: /docs/sandbox
 canonical_url: "https://vercel.com/docs/sandbox"
-last_updated: 2026-08-27
+last_updated: 2026-09-03
 type: conceptual
 prerequisites:
   []
@@ -13,16 +13,18 @@ related:
   - /docs/sandbox/cli-reference
   - /docs/sandbox/concepts/authentication
   - /docs/sandbox/concepts/images
-summary: Vercel Sandbox allows you to run arbitrary code in isolated, ephemeral Linux VMs.
+summary: Run untrusted or agent-generated code in isolated Linux microVMs with Vercel Sandbox.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "ffe689ccad90b7b8de75abff833f9d18d58ac18107e0188c1c22f5a742721c12"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "d4ce509aa45e492e5f326dc8f3a3dd8fac0d405cb48ad77beeacb4b2e1216848"
 ---
 
 # Vercel Sandbox
 
-[Vercel Sandbox](/sandbox) is a compute primitive designed to safely run untrusted or user-generated code on Vercel. It supports dynamic, real-time workloads for AI agents, code generation, and developer experimentation.
+## Run agent-generated code in isolation
+
+Run untrusted or agent-generated code in isolated Linux microVMs. Use Vercel Sandbox for agent workflows, debugging, and one-off commands.
 
 
 <!-- docsgraph:related -->
@@ -40,11 +42,15 @@ sha256: "ffe689ccad90b7b8de75abff833f9d18d58ac18107e0188c1c22f5a742721c12"
 - [Full Sandbox egress firewall now available on Hobby plan](https://vercel.com/changelog/full-sandbox-egress-firewall-now-available-on-hobby-plan?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related)
 - [Running Docker on Vercel](https://vercel.com/kb/guide/docker?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related) — Learn how to run Docker on Vercel by deploying OCI container images as Vercel Functions, storing them in Vercel Containe
 - [Manage your Sanity project from Slack with eve](https://vercel.com/kb/guide/eve-sanity-copilot?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related) — A Slack-based Sanity copilot built on eve. It queries and edits content with GROQ, shapes schemas, manages releases, and
-- [Build a software factory with eve](https://vercel.com/kb/guide/eve-software-factory?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related) — Foreman, a software factory built on eve. It turns GitHub and Linear work items into reviewed draft pull requests throug
 - [Ship social posts from Slack with eve and Typefully](https://vercel.com/kb/guide/eve-typefully-social-media-agent?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related) — A Slack-based social media agent built on eve. It drafts posts and threads for X, LinkedIn, Threads, Bluesky, and Mastod
+- [How to run a multi-step research agent on Vercel](https://vercel.com/kb/guide/how-to-run-a-multi-step-research-agent-on-vercel?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related) — An end-to-end architecture for production research agents on Vercel using Sandbox, Workflows, and AI Gateway with isolat
 
 Full cross-link map for this page: [/docs/sandbox.graph.md](/docs/sandbox.graph.md?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
+
+```bash filename="terminal"
+sandbox run echo "Hello Sandbox!"
+```
 
 Use sandboxes to:
 

@@ -3,7 +3,7 @@ title: Transferring a project
 product: vercel
 url: /docs/projects/transferring-projects
 canonical_url: "https://vercel.com/docs/projects/transferring-projects"
-last_updated: 2026-08-11
+last_updated: 2026-08-28
 type: how-to
 prerequisites:
   - /docs/projects
@@ -16,8 +16,8 @@ related:
 summary: Learn how to transfer a project between Vercel teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/projects/transferring-projects.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "aa397804bb6fc3a0faa4c90c746947796ffe974efdef1ebee1e23ce14b924240"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "7121f0fd6cf185db49c48107a90b9277a4261a096bb63c76597b405645f4137f"
 ---
 
 # Transferring a project
@@ -67,7 +67,7 @@ one before transferring your project to avoid any interruption in service.
 
 5. You'll see a list of any domains, aliases, and environment variables that will be transferred. You can also choose a new name for your project. By default, the existing name is re-used. You must provide a new name if the target Vercel team already has a project with the same name:
 
-> **💡 Note:** The original project  when initiating the transfer,
+> **💡 Note:** The original project **will be hidden** when initiating the transfer,
 > but you will not experience any downtime.
 
 ![Image](`/docs-assets/static/docs/concepts/projects/project-transfer-confirm-light.png`)

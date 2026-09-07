@@ -9,16 +9,16 @@ prerequisites:
   - /docs/frameworks/full-stack
   - /docs/frameworks
 related:
+  - /docs/cli
   - /docs/incremental-static-regeneration
   - /docs/cdn
   - /docs/functions
   - /docs/caching/cdn-cache
-  - /docs/functions/streaming-functions
 summary: Vercel is the native Next.js platform, designed to enhance the Next.js experience.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/nextjs.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "c7d39f48599b8dc728a5c85510c7b32d6a2fdba8a736189a5b31a3a3daa4021d"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "8fb249105d097cbaddc94b4ae63c8a558618b01a620111ba36a43e99157389fe"
 ---
 
 # Next.js on Vercel
@@ -38,11 +38,11 @@ sha256: "c7d39f48599b8dc728a5c85510c7b32d6a2fdba8a736189a5b31a3a3daa4021d"
 - [Next.js on Vercel vs Cloudflare](https://vercel.com/kb/guide/next-js-on-vercel-vs-cloudflare?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=related) — Compare running Next.js on Vercel Functions with Fluid compute against Cloudflare Workers with the OpenNext Cloudflare a
 - [Next.js on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/next-js-on-vercel-vs-webflow-cloud?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=related) — Compare running Next.js on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Ne
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
+- [opengraph-image and twitter-image](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=related) — API Reference for the Open Graph Image and Twitter Image file conventions.
 - [Introducing OG Image Generation: Fast, dynamic social card images at the Edge](https://vercel.com/blog/introducing-vercel-og-image-generation-fast-dynamic-social-card-images?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=related)
-- [Metadata and OG images](https://nextjs.org/docs/app/getting-started/metadata-and-og-images?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=related) — Learn how to add metadata to your pages and create dynamic OG images.
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
-- [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=related) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
-- [Remix on Vercel](https://vercel.com/docs/frameworks/full-stack/remix?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=related) — Deploy Remix applications to Vercel and configure the Vercel Vite preset, SSR, streaming, caching, and analytics.
+- [Data Cache for Next.js](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
+- [vercel dev](https://vercel.com/docs/cli/dev?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
 
 Full cross-link map for this page: [/docs/frameworks/full-stack/nextjs.graph.md](/docs/frameworks/full-stack/nextjs.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -50,6 +50,15 @@ Full cross-link map for this page: [/docs/frameworks/full-stack/nextjs.graph.md]
 While Next.js works when self-hosting, deploying to Vercel is zero-configuration and provides additional enhancements for **scalability, availability, and performance globally**.
 
 ## Getting started
+
+To get started with  on Vercel:
+
+- If you already have a project with , install [Vercel CLI](/docs/cli) and run the vercel command from your project's root directory
+- Clone one of our  example repos to your favorite git provider and deploy it on Vercel with the button below:
+
+\- Or, choose a template from Vercel's marketplace:
+
+Vercel deployments can \[integrate with your git provider]\(/docs/git) to \[generate preview URLs]\(/docs/deployments/environments#preview-environment-pre-production) for each pull request you make to your  project.
 
 ## Incremental Static Regeneration
 

@@ -16,8 +16,8 @@ related:
 summary: Diagnose and fix slow Vercel Functions using CLI tools, logs, and timing analysis.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/debug-slow-functions.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "2e1d57dc9a7f2758bbf8b52274485a5a109da295908fe6dd868d3b77345555ce"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "81f0871ff0eb290748c0a1077a7f72506940d032d8f401c61d41380bb02d20a7"
 ---
 
 # Debugging slow Vercel Functions
@@ -36,7 +36,7 @@ Use this guide to diagnose and fix slow Vercel Functions. You'll identify which 
 - [How to Effectively Load Test Your Vercel Application](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application?from=related&source_path=%2Fdocs%2Ffunctions%2Fdebug-slow-functions&source_site=vercel-docs&relationship=related) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
 - [How do I lower my Vercel Function execution time?](https://vercel.com/kb/guide/how-do-i-lower-my-serverless-function-execution-time?from=related&source_path=%2Fdocs%2Ffunctions%2Fdebug-slow-functions&source_site=vercel-docs&relationship=related) — Learn how to lower your Serverless Function execution time.
 - [Diagnosing and fixing cache issues](https://vercel.com/docs/caching/cdn-cache/debug-cache-issues?from=related&source_path=%2Fdocs%2Ffunctions%2Fdebug-slow-functions&source_site=vercel-docs&relationship=related) — Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
-- [Agent Resources](https://vercel.com/docs/agent-resources?from=related&source_path=%2Fdocs%2Ffunctions%2Fdebug-slow-functions&source_site=vercel-docs&relationship=related) — Resources for building with AI on Vercel, including documentation access, MCP servers, and agent skills.
+- [Agent Resources](https://vercel.com/docs/agent-resources?from=related&source_path=%2Fdocs%2Ffunctions%2Fdebug-slow-functions&source_site=vercel-docs&relationship=related) — Set up AI coding tools with Vercel documentation, reusable skills, and secure access to projects, deployments, and logs.
 - [CLI Workflows](https://vercel.com/docs/agent-resources/workflows?from=related&source_path=%2Fdocs%2Ffunctions%2Fdebug-slow-functions&source_site=vercel-docs&relationship=related) — End-to-end workflows that show how to compose Vercel CLI commands into complete debugging, deployment, and recovery sess
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fdebug-slow-functions&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 

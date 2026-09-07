@@ -3,7 +3,7 @@ title: Connectors
 product: vercel
 url: /docs/connect/concepts/connectors
 canonical_url: "https://vercel.com/docs/connect/concepts/connectors"
-last_updated: 2026-08-20
+last_updated: 2026-08-28
 type: conceptual
 prerequisites:
   - /docs/connect/concepts
@@ -17,8 +17,8 @@ related:
 summary: A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are available.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/connectors.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "2bff55d552ac4665072fc5e16d81a78732f3a5cefd44d8242e05909a5a7f4e50"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "d8422ce5c93a7df17dd79359764203cc073e5d686e78921d1306474c3d331964"
 ---
 
 # Connectors
@@ -37,12 +37,11 @@ A **connector** is the team-owned record that represents one third-party service
 - [Vercel Connect](https://v0.app/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fconnectors&source_site=vercel-docs&relationship=related) — Connect your v0 apps and agents to third-party services – no API keys required.
 - [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fconnectors&source_site=vercel-docs&relationship=related) — Authenticate Slack, Discord, GitHub, Linear, Notion, and Telegram adapters with Vercel Connect — short-lived runtime tok
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fconnectors&source_site=vercel-docs&relationship=related)
-- [Vercel Connect: Secure access to external services for your agents](https://vercel.com/changelog/vercel-connect-secure-access-to-external-services-for-your-agents?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fconnectors&source_site=vercel-docs&relationship=related)
-- [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fconnectors&source_site=vercel-docs&relationship=related)
+- [Get a connector project connection](https://vercel.com/docs/rest-api/connect/get-a-connector-project-connection?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fconnectors&source_site=vercel-docs&relationship=related) — GET /v1/connect/connectors/{connector}/projects/{projectId} — Get the configuration that connects a connector to a proje
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fconnectors&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
-- [SDK Reference](https://vercel.com/docs/connect/ts-sdk-reference?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fconnectors&source_site=vercel-docs&relationship=related) — API reference for @vercel/connect, the TypeScript SDK for requesting runtime tokens from Vercel Connect.
-- [Better Auth](https://vercel.com/docs/connect/frameworks/better-auth?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fconnectors&source_site=vercel-docs&relationship=related) — Use Vercel Connect as a generic OAuth provider for Better Auth in a Next.js application.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fconnectors&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
+- [List connectors for a project](https://vercel.com/docs/rest-api/connect/list-connectors-for-a-project?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fconnectors&source_site=vercel-docs&relationship=related) — GET /v2/connect/projects/{projectId}/connectors — List the connectors connected to a project and the environments where
+- [Delete a connector](https://vercel.com/docs/rest-api/connect/delete-a-connector?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fconnectors&source_site=vercel-docs&relationship=related) — DELETE /v1/connect/connectors/{connector} — Delete a connector, its project connections, and its installation records.
+- [List connectors](https://vercel.com/docs/rest-api/connect/list-connectors?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fconnectors&source_site=vercel-docs&relationship=related) — GET /v2/connect/connectors — List connectors that belong to a team.
 
 Full cross-link map for this page: [/docs/connect/concepts/connectors.graph.md](/docs/connect/concepts/connectors.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fconnectors&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

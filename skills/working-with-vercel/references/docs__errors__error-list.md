@@ -16,8 +16,8 @@ related:
 summary: You may encounter a variety of errors when you interact with the Vercel platform. This section focuses on errors that can happen when you interact...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/error-list.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "8f7d0828b650f7aa18c4c9b100ea27d606ea743a23d2b4a20bffd4d3c9cac7af"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "e58599a488e8bce7f8f80e5ffd5a5b2d8186432090c220afb635034f6f10481c"
 ---
 
 # Error List
@@ -166,10 +166,10 @@ For backward compatibility purposes, there are two naming conventions for config
 
 These conflicting configuration errors occur if:
 
-- Both `vercel.json` and `now.json` exist in your project.**Solution:** Delete the `now.json` file
-- Both `.vercel` and `.now` directories exist in your project.**Solution:** Delete the `.now` directory
-- Both `.vercelignore` and `.nowignore` files exist in your project.**Solution:** Delete the `.nowignore` file
-- Environment Variables that begin with `VERCEL_` have a conflicting Environment Variable that begins with `NOW_`.**Solution:** Only define the `VERCEL_` prefixed Environment Variable
+- Both `vercel.json` and `now.json` exist in your project.<br />**Solution:** Delete the `now.json` file
+- Both `.vercel` and `.now` directories exist in your project.<br />**Solution:** Delete the `.now` directory
+- Both `.vercelignore` and `.nowignore` files exist in your project.<br />**Solution:** Delete the `.nowignore` file
+- Environment Variables that begin with `VERCEL_` have a conflicting Environment Variable that begins with `NOW_`.<br />**Solution:** Only define the `VERCEL_` prefixed Environment Variable
 
 ## Conflicting functions and builds configuration
 
@@ -258,7 +258,17 @@ To fix, remove the `.vercel` directory and redeploy to link the project again by
 
 On macOS and Linux:
 
+```bash
+rm -rf .vercel
+vercel
+```
+
 On Windows:
+
+```bash
+rmdir /s /q .vercel
+vercel
+```
 
 ## Project name validation
 

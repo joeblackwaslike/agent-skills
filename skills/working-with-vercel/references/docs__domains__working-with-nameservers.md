@@ -11,17 +11,21 @@ related:
   - /docs/domains/managing-nameservers
   - /docs/domains/working-with-domains
   - /docs/domains/troubleshooting
+  - /docs/domains
+  - /docs/domains/working-with-dns
 summary: Learn about nameservers and the benefits Vercel nameservers provide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-nameservers.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "a1c5dbf9eb583f143c5c27adca4a38a8af890c190d1c4b01018fc225fe6ddb2f"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "8d2110c0e805e86b2a2b69a79c47e636f8b3bf1a3df7da61f363b2d36a360e76"
 ---
 
 # Working with nameservers
 
 > **💡 Note:** Before moving your domain to use Vercel's nameservers, you should ensure that
 > you own the domain listed on the [Domains](/domains) page of your account."
+
+Nameservers are the actual servers on the network that are responsible for resolving domain names to the IP addresses where your site is hosted. Most domain registrars, including Vercel, [provide their own nameservers](/docs/domains/managing-nameservers). For Vercel these are:
 
 
 <!-- docsgraph:related -->
@@ -33,17 +37,14 @@ sha256: "a1c5dbf9eb583f143c5c27adca4a38a8af890c190d1c4b01018fc225fe6ddb2f"
 - [How do I change my Nameservers on Vercel?](https://vercel.com/kb/guide/how-do-i-change-my-nameservers-on-vercel?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-nameservers&source_site=vercel-docs&relationship=related) — Learn about how to change Nameservers for domains registered with Vercel.
 - [Does using Vercel's Nameserver's lock you in?](https://vercel.com/kb/guide/does-using-vercel-s-nameserver-s-lock-you-in?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-nameservers&source_site=vercel-docs&relationship=related) — Learn about how using Vercel's Nameservers doesn't lock you to anything.
 - [Why is my Vercel domain not verified?](https://vercel.com/kb/guide/why-is-my-vercel-domain-unverified?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-nameservers&source_site=vercel-docs&relationship=related) — Information on why a Vercel domain may not be verified and how to verify it.
-- [Why must we use the Domain Nameservers method for Wildcard Domains on Vercel?](https://vercel.com/kb/guide/why-use-domain-nameservers-method-wildcard-domains?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-nameservers&source_site=vercel-docs&relationship=related) — Learn why the domain Nameservers method is needed to set up a wildcard domain as custom domain.
-- [Working with DNS](https://vercel.com/docs/domains/working-with-dns?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-nameservers&source_site=vercel-docs&relationship=related) — Learn how DNS works in order to properly configure your domain.
 - [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-nameservers&source_site=vercel-docs&relationship=related) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
 - [Update nameservers for a domain](https://vercel.com/docs/rest-api/domains-registrar/update-nameservers-for-a-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-nameservers&source_site=vercel-docs&relationship=related) — PATCH /v1/registrar/domains/{domain}/nameservers — Update the nameservers for a domain. Pass an empty array to use Verce
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-nameservers&source_site=vercel-docs&relationship=related) — Add and configure a custom domain for your Vercel project using the CLI.
-- [Working with SSL Certificates](https://vercel.com/docs/domains/working-with-ssl?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-nameservers&source_site=vercel-docs&relationship=related) — Learn how Vercel uses SSL certification to keep your site secure.
+- [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-nameservers&source_site=vercel-docs&relationship=related) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
+- [Deploying & Redirecting Domains](https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-nameservers&source_site=vercel-docs&relationship=related) — Learn how to deploy your domains and set up domain redirects with this guide.
 
 Full cross-link map for this page: [/docs/domains/working-with-nameservers.graph.md](/docs/domains/working-with-nameservers.graph.md?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-nameservers&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Nameservers are the actual servers on the network that are responsible for resolving domain names to the IP addresses where your site is hosted. Most domain registrars, including Vercel, [provide their own nameservers](/docs/domains/managing-nameservers). For Vercel these are:
 
 - `ns1.vercel-dns.com`
 - `ns2.vercel-dns.com`
@@ -65,6 +66,27 @@ For domains that are not registered with Vercel, you can change the nameservers 
 To learn more about common nameserver issues, see the [troubleshooting](/docs/domains/troubleshooting#common-nameserver-issues) doc.
 
 ## Related
+
+**Domains overview** [→](/docs/domains)
+
+Learn the concepts behind how domains work
+
+**Working with Domains** [→](/docs/domains/working-with-domains)
+
+Learn how domains work and the options Vercel provides for managing them.
+
+**Working with DNS** [→](/docs/domains/working-with-dns)
+
+Learn how DNS works in order to properly configure your domain.
+
+**Working with SSL** [→](/docs/domains/working-with-ssl)
+
+Learn how Vercel uses SSL certificates to keep your site secure.
+
+**Troubleshooting Domains** [→](/docs/domains/troubleshooting)
+
+Learn about common reasons for domain misconfigurations and how to
+troubleshoot your domain on Vercel.
 
 
 ---

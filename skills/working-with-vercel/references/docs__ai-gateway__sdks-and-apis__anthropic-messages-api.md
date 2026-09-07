@@ -17,8 +17,8 @@ related:
 summary: Use the Anthropic Messages API with AI Gateway for seamless integration with Anthropic SDK tools.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "830a743d0e7e3c7d55146e0635039115f9f5d0a33ca68d04797423c5ace894b5"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "659533d9fe641e54c43b246e218a6f539a15ac6e4019e2d6c04deca72928a540"
 ---
 
 # Anthropic Messages API
@@ -37,8 +37,7 @@ AI Gateway provides Anthropic Messages API endpoints, so you can use the Anthrop
 - [Build Claude Managed Agents with Chat SDK](https://vercel.com/kb/guide/claude-managed-agents-chat-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api&source_site=vercel-docs&relationship=related) — Ship a Slack research bot built on Claude Managed Agents and Chat SDK. One persistent session per thread, streamed brief
 - [Build Claude Managed Agents with Vercel Services](https://vercel.com/kb/guide/claude-managed-agents-vercel-services?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api&source_site=vercel-docs&relationship=related) — Deploy Claude Managed Agents with Vercel Services to run a streaming research analyst in a browser chat, using Anthropic
 - [Claude Platform on AWS](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic-aws?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api&source_site=vercel-docs&relationship=related)
-- [AI Gateway support for Claude Code](https://vercel.com/changelog/ai-gateway-support-for-claude-code?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api&source_site=vercel-docs&relationship=related)
-- [Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api&source_site=vercel-docs&relationship=related) — Use the AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api&source_site=vercel-docs&relationship=related) — Create an AI Gateway API key, make your first request with TypeScript, Python, or cURL, and verify how the request was r
 - [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
 - [Conductor](https://vercel.com/docs/ai-gateway/coding-agents/conductor?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api&source_site=vercel-docs&relationship=related) — Use Conductor with the AI Gateway.
 - [Text Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/text?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api&source_site=vercel-docs&relationship=related) — Generate and stream text responses using AI Gateway.

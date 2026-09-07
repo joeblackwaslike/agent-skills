@@ -3,7 +3,7 @@ title: eve
 product: vercel
 url: /docs/connect/frameworks/eve
 canonical_url: "https://vercel.com/docs/connect/frameworks/eve"
-last_updated: 2018-10-20
+last_updated: 2026-08-28
 type: how-to
 prerequisites:
   - /docs/connect/frameworks
@@ -17,13 +17,18 @@ related:
 summary: Use Vercel Connect to configure eve channel credentials, authorize MCP client connections, and authenticate inbound Connect OAuth requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/frameworks/eve.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "3c6947a6698c85d6232b9023a88d0a1efb7f518cd154c7a6f3798d06778ae56f"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "13ca54ad1c307de0c9ef2cc8cf6aa565eecb9042118c739c59f7b265c99b1b77"
 ---
 
 # eve
 
 > **🔒 Permissions Required**: Vercel Connect
+
+The `@vercel/connect/eve` entrypoint adapts Vercel Connect credentials to
+eve's connection and channel APIs. It uses your deployment's
+[Vercel OIDC token](/docs/connect/concepts/authentication) to request provider
+tokens, so your app doesn't store provider refresh tokens.
 
 
 <!-- docsgraph:related -->
@@ -31,25 +36,20 @@ sha256: "3c6947a6698c85d6232b9023a88d0a1efb7f518cd154c7a6f3798d06778ae56f"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Connections](https://eve.dev/docs/connections?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related) — Expose external MCP and OpenAPI servers to the model, with connection tokens the model never sees.
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related)
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related)
 - [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related) — Authenticate Slack, Discord, GitHub, Linear, Notion, and Telegram adapters with Vercel Connect — short-lived runtime tok
 - [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related)
 - [Build an integrations hub with Nuxt and Vercel Connect](https://vercel.com/kb/guide/nuxt-and-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related) — Build an Integrations Hub with Nuxt and Vercel Connect. Connect GitHub and Linear over OAuth and mint short-lived tokens
+- [How to build a GitHub agent with eve and GitHub Tools](https://vercel.com/kb/guide/github-agent-eve?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related) — Build a GitHub agent with eve, GitHub Tools, and Vercel Connect. Register AI-callable GitHub tools, gate writes behind d
 - [Chat SDK](https://vercel.com/docs/connect/frameworks/chat-sdk?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, GitHub, Linear, Notion,
 - [AI SDK and MCP](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
 - [Auth.js](https://vercel.com/docs/connect/frameworks/authjs?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
-- [eve](https://vercel.com/docs/eve?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related) — Learn how to deploy and run durable backend AI agents built with the open-source eve framework on Vercel.
+- [eve](https://vercel.com/docs/eve?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related) — Build and deploy durable backend AI agents with eve, an open-source, filesystem-first framework.
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/connect/frameworks/eve.graph.md](/docs/connect/frameworks/eve.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-The `@vercel/connect/eve` entrypoint adapts Vercel Connect credentials to
-eve's connection and channel APIs. It uses your deployment's
-[Vercel OIDC token](/docs/connect/concepts/authentication) to request provider
-tokens, so your app doesn't store provider refresh tokens.
 
 ## Understand the integration points
 

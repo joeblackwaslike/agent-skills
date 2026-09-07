@@ -16,13 +16,15 @@ related:
 summary: Use a deployment policy to control which Git sources and deployment mechanisms can deploy to your team and projects, per environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/deployment-policy.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "14edf0325541f4cf43c5d98d46d0452a6b0a326354cd5bb0b90756c65e1d7997"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "fda63badb054f1052a8fc2d16cb4c3ed2bb4ef084f63e342bc3cf21c0418eabe"
 ---
 
 # Deployment Policies
 
 > **🔒 Permissions Required**: Deployment Policies
+
+Deployment Policies are a set of rules that control which Git sources and deployment mechanisms can create deployments for your team and projects. You can define default rules for a team, and override these as neccesary per project. For example, you can require that production only accepts deployments from a specific repository while preview stays open to any source.
 
 
 <!-- docsgraph:related -->
@@ -30,8 +32,9 @@ sha256: "14edf0325541f4cf43c5d98d46d0452a6b0a326354cd5bb0b90756c65e1d7997"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Deployments](https://v0.app/docs/deployments?from=related&source_path=%2Fdocs%2Fdeployments%2Fdeployment-policy&source_site=vercel-docs&relationship=related) — Deploy your v0 chats to Vercel with one click and manage production deployments.
+- [Deployments](https://v0.app/docs/deployments?from=related&source_path=%2Fdocs%2Fdeployments%2Fdeployment-policy&source_site=vercel-docs&relationship=related) — Preview and publish v0 projects on Vercel, then manage domains, visibility, and production updates.
 - [Configure which sources can create deployments with Deployment Policies](https://vercel.com/changelog/configure-which-sources-can-create-deployments-with-deployment-policies?from=related&source_path=%2Fdocs%2Fdeployments%2Fdeployment-policy&source_site=vercel-docs&relationship=related)
+- [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel?from=related&source_path=%2Fdocs%2Fdeployments%2Fdeployment-policy&source_site=vercel-docs&relationship=related) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
 - [Deployment Retention](https://vercel.com/docs/deployment-retention?from=related&source_path=%2Fdocs%2Fdeployments%2Fdeployment-policy&source_site=vercel-docs&relationship=related) — Learn how Deployment Retention policies affect a deployment's lifecycle
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fdeployments%2Fdeployment-policy&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 - [Deploying Git Repositories with Vercel](https://vercel.com/docs/git?from=related&source_path=%2Fdocs%2Fdeployments%2Fdeployment-policy&source_site=vercel-docs&relationship=related) — Vercel automatically deploys supported Git repositories on every branch push and when changes merge into the production
@@ -40,8 +43,6 @@ sha256: "14edf0325541f4cf43c5d98d46d0452a6b0a326354cd5bb0b90756c65e1d7997"
 
 Full cross-link map for this page: [/docs/deployments/deployment-policy.graph.md](/docs/deployments/deployment-policy.graph.md?from=related&source_path=%2Fdocs%2Fdeployments%2Fdeployment-policy&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Deployment Policies are a set of rules that control which Git sources and deployment mechanisms can create deployments for your team and projects. You can define default rules for a team, and override these as neccesary per project. For example, you can require that production only accepts deployments from a specific repository while preview stays open to any source.
 
 A policy has two independent rules that can be configured:
 

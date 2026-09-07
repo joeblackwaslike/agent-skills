@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/deep-links.md"
-fetched_at: "2026-08-31T10:37:20.620Z"
-sha256: "d20562bb5b5d199e84e3dbf6adad50addd8baa8a4ae13d2bb17fc348e8bc51a5"
+fetched_at: "2026-09-07T08:59:03.477Z"
+sha256: "e1d6a53e3e9acdb2b0b485adb3502d395a4e43be53ab0f62099e5815f67a00f8"
 ---
 
 > ## Documentation Index
@@ -59,7 +59,7 @@ Add parameters to control where the session starts and what the prompt box conta
 | Parameter | Description                                                                                                                                                                                                                                 |
 | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `q`       | Text to pre-fill in the prompt box. [URL-encode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent) the value. Use `%0A` for line breaks in multi-line prompts. Maximum 5,000 characters. |
-| `cwd`     | Absolute path to use as the working directory. Network and UNC paths are rejected, and so are paths that contain invisible or bidirectional control characters.                                                                             |
+| `cwd`     | Absolute path to use as the working directory. Network and UNC paths are rejected, and so are paths that contain `..` segments or invisible or bidirectional control characters.                                                            |
 | `repo`    | A GitHub `owner/name` slug. Claude Code resolves it to a local clone it has seen before and starts there. If you have no matching clone, the session opens in your home directory instead.                                                  |
 
 `cwd` and `repo` are [two ways to set the working directory](#choose-between-cwd-and-repo). If you pass both, `cwd` takes precedence and `repo` is ignored, even if the `cwd` path does not exist.

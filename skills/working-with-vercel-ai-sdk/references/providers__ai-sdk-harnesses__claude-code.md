@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/claude-code.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "21782466fd7867387bf8883d0cb1138a1203159e3dff8475116239a47449c778"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "859ceba3294392f858c4752213b648ba263ec40a547bb4456fc2564d9cd284df"
 ---
 
 # Claude Code Harness
@@ -40,6 +40,7 @@ import { createVercelSandbox } from '@ai-sdk/sandbox-vercel';
 
 const agent = new HarnessAgent({
   harness: claudeCode,
+  model: 'claude-sonnet-4-6',
   sandbox: createVercelSandbox({
     runtime: 'node24',
     ports: [4000],
@@ -79,7 +80,6 @@ Use `createClaudeCode()` to configure the runtime:
 
 ```ts
 const harness = createClaudeCode({
-  model: 'claude-sonnet-4-6',
   maxTurns: 10,
   env: {
     DEPLOYMENT_ENV: 'staging',
@@ -104,7 +104,6 @@ Settings:
   credentials the harness adapter can discover, read, or otherwise access in
   the host process.
 - `mcpServers`: MCP server definitions keyed by server name.
-- `model`: Anthropic model id passed to the underlying Claude Code runtime.
 - `maxTurns`: maximum internal turns before yielding.
 - `env`: environment variables for the Claude Code process. Values are merged
   over the sandbox bridge process environment and take precedence.

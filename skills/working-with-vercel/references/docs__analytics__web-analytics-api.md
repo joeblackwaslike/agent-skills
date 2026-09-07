@@ -16,8 +16,8 @@ related:
 summary: Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/web-analytics-api.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "a8860c35066310ccb505f59ef6fb84e976194d9175465f07ce805e7304984026"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "af6b0c1b823f279b12ac786045f7a1a48b316a9f52450c20418c45773e3f5ad9"
 ---
 
 # Query Web Analytics with the API
@@ -36,7 +36,7 @@ Use the Web Analytics API to query page views, visitors, and custom events from 
 - [Tools](https://vercel.com/docs/agent-resources/vercel-mcp/tools?from=related&source_path=%2Fdocs%2Fanalytics%2Fweb-analytics-api&source_site=vercel-docs&relationship=related) — Available tools in Vercel MCP for searching docs, managing teams, projects, deployments, Web Analytics, runtime logs and
 - [Query](https://vercel.com/docs/query?from=related&source_path=%2Fdocs%2Fanalytics%2Fweb-analytics-api&source_site=vercel-docs&relationship=related) — Query and visualize your Vercel usage, traffic, and more in observability.
 - [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Fweb-analytics-api&source_site=vercel-docs&relationship=related) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
-- [vercel metrics](https://vercel.com/docs/cli/metrics?from=related&source_path=%2Fdocs%2Fanalytics%2Fweb-analytics-api&source_site=vercel-docs&relationship=related) — List and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
+- [Filtering Analytics](https://vercel.com/docs/analytics/filtering?from=related&source_path=%2Fdocs%2Fanalytics%2Fweb-analytics-api&source_site=vercel-docs&relationship=related) — Learn how filters allow you to explore insights about your website's visitors.
 
 Full cross-link map for this page: [/docs/analytics/web-analytics-api.graph.md](/docs/analytics/web-analytics-api.graph.md?from=related&source_path=%2Fdocs%2Fanalytics%2Fweb-analytics-api&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

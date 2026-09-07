@@ -17,8 +17,8 @@ related:
 summary: Generate and stream text from hundreds of models through AI Gateway, with tool calling and structured output.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/text-generation.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "30c4d081bae893b77fb9f9b5ef89047c3bd95dfc1acb18acdabd4eb860d7188e"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "6a9f0edaeccc867c2a5dd82351e2d9814127db870868e1749a9a70d9db9234f0"
 ---
 
 # Text Generation
@@ -35,8 +35,8 @@ Text generation is the default modality in AI Gateway. You send a prompt and a m
 - [Text Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/text-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-generation&source_site=vercel-docs&relationship=related) — Generate text responses with the OpenAI Responses API through AI Gateway.
 - [Text Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/text-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-generation&source_site=vercel-docs&relationship=related) — Generate text responses using the OpenResponses API.
 - [Text to Speech](https://vercel.com/docs/ai-gateway/modalities/text-to-speech?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-generation&source_site=vercel-docs&relationship=related) — Generate spoken audio from text with speech models through Vercel AI Gateway.
-- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-generation&source_site=vercel-docs&relationship=related) — Get started with AI Gateway by generating text, images, video, speech, or transcriptions, or by building realtime voice
 - [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-generation&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
+- [Image Generation](https://vercel.com/docs/ai-gateway/modalities/image-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-generation&source_site=vercel-docs&relationship=related) — Generate and edit images using AI models through Vercel AI Gateway with support for multiple providers and modalities.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/text-generation.graph.md](/docs/ai-gateway/modalities/text-generation.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-generation&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

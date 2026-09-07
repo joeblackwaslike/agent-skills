@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/advanced.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "9624f79e0888169eb78c6d90516c45aca7a4440f30811c4451cae9db66e7ee17"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "6f3f6209d5f0d9d9602b5ed221fbf9a8a70faef7bbc9c88d5141a9327a78fba2"
 ---
 
 # Advanced
@@ -242,6 +242,7 @@ After these concepts, you should have a better understanding of the paradigms be
     - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
     - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
     - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)
+    - [ToolChoiceViolationError](/docs/reference/ai-sdk-errors/ai-tool-choice-violation-error)
     - [AI_TypeValidationError](/docs/reference/ai-sdk-errors/ai-type-validation-error)
     - [AI_UIMessageStreamError](/docs/reference/ai-sdk-errors/ai-ui-message-stream-error)
     - [AI_UnsupportedFunctionalityError](/docs/reference/ai-sdk-errors/ai-unsupported-functionality-error)

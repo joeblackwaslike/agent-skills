@@ -12,13 +12,15 @@ related:
 summary: Requires that all exported functions have JSDoc comments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/require_docs_on_exported_functions.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "d7cf2d1da9ba27e0ea843406710423ed252d81548c3e6daf11ad9eea135057b9"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "2c8294841b3c2e29cef541704aaac944171fe495d0409d981ea6ffd5248e3e29"
 ---
 
 # REQUIRE_DOCS_ON_EXPORTED_FUNCTIONS
 
 > **🔒 Permissions Required**: Conformance
+
+> **💡 Note:** This rule is available from version 1.8.0.
 
 Adding JSDoc to exported functions helps engineers to quickly understand the
 purpose and application of those functions when reviewing or using them.

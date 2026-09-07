@@ -2,7 +2,7 @@
 
 Latest release versions for commonly used GitHub Actions.
 Auto-updated by `scripts/update_docs.js` — do not edit manually.
-Last updated: 2026-08-31
+Last updated: 2026-09-07
 
 ## GitHub Official
 
@@ -25,7 +25,7 @@ Last updated: 2026-08-31
 
 | Action | Latest tag | Pin usage |
 |--------|-----------|-----------|
-| `pnpm/action-setup` | `v6.0.10` | `uses: pnpm/action-setup@v6.0.10` |
+| `pnpm/action-setup` | `v6.1.0` | `uses: pnpm/action-setup@v6.1.0` |
 
 ## Docker
 
@@ -35,13 +35,13 @@ Last updated: 2026-08-31
 | `docker/build-push-action` | `v7.3.0` | `uses: docker/build-push-action@v7.3.0` |
 | `docker/metadata-action` | `v6.2.0` | `uses: docker/metadata-action@v6.2.0` |
 | `docker/setup-buildx-action` | `v4.3.0` | `uses: docker/setup-buildx-action@v4.3.0` |
-| `docker/setup-qemu-action` | `v4.2.0` | `uses: docker/setup-qemu-action@v4.2.0` |
+| `docker/setup-qemu-action` | `v4.3.0` | `uses: docker/setup-qemu-action@v4.3.0` |
 
 ## Cloud Deployments
 
 | Action | Latest tag | Pin usage |
 |--------|-----------|-----------|
-| `aws-actions/configure-aws-credentials` | `v6.2.3` | `uses: aws-actions/configure-aws-credentials@v6.2.3` |
+| `aws-actions/configure-aws-credentials` | `v6.2.4` | `uses: aws-actions/configure-aws-credentials@v6.2.4` |
 | `aws-actions/amazon-ecr-login` | `v2.1.7` | `uses: aws-actions/amazon-ecr-login@v2.1.7` |
 | `google-github-actions/auth` | `v3` | `uses: google-github-actions/auth@v3` |
 | `google-github-actions/setup-gcloud` | `v3.0.1` | `uses: google-github-actions/setup-gcloud@v3.0.1` |

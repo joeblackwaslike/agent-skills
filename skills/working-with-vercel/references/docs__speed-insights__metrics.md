@@ -3,23 +3,30 @@ title: Speed Insights Metrics
 product: vercel
 url: /docs/speed-insights/metrics
 canonical_url: "https://vercel.com/docs/speed-insights/metrics"
-last_updated: 2026-08-25
+last_updated: 2026-09-01
 type: conceptual
 prerequisites:
   - /docs/speed-insights
 related:
+  - /docs/speed-insights/limits-and-pricing
   - /docs/speed-insights/migrating-from-legacy
   - /docs/speed-insights/using-speed-insights
 summary: Learn what each performance metric on Speed Insights means and how the scores are calculated.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/metrics.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "a773666b4fec6e0da8054facf2b523512c89fec2d742c33448259acdba5447b6"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "3fa66d9b7ff6d3786181486019bcef1ff722c91aa502438c77bcbb4a89293ddd"
 ---
 
 # Speed Insights Metrics
 
+> **💡 Note:** [Speed Insights Plus](/docs/speed-insights/limits-and-pricing) is required to see detailed breakdowns for all Core Web Vitals.
+
 ## Real Experience Score (RES)
+
+### Real user monitoring
+
+While many performance measurement tools, like [Lighthouse](https://web.dev/measure/), estimate user experience based on lab simulations, Vercel's Real Experience Score (RES) uses real data points collected from your users' devices.
 
 
 <!-- docsgraph:related -->
@@ -42,10 +49,6 @@ sha256: "a773666b4fec6e0da8054facf2b523512c89fec2d742c33448259acdba5447b6"
 
 Full cross-link map for this page: [/docs/speed-insights/metrics.graph.md](/docs/speed-insights/metrics.graph.md?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmetrics&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-### Real user monitoring
-
-While many performance measurement tools, like [Lighthouse](https://web.dev/measure/), estimate user experience based on lab simulations, Vercel's Real Experience Score (RES) uses real data points collected from your users' devices.
 
 As a result, RES shows how real users experience your application. This real-time data helps you understand your application's performance and track changes as they happen.
 
@@ -178,6 +181,8 @@ Performance metrics, including the [Real Experience Score](#real-user-monitoring
 - **90 to 100 (green)**: Good
 
 Aim for 'Good' scores (90 to 100) for both Real and Virtual Experience Scores. Keep in mind that reaching a score of 100 is extremely challenging due to diminishing returns. For example, improving from 99 to 100 is much harder than moving from 90 to 94, as the effort needed increases dramatically at higher scores.
+
+> **💡 Note:** Poor entries require [Speed Insights Plus](/docs/speed-insights/limits-and-pricing).
 
 ### Implications of scores for the end-user experience
 

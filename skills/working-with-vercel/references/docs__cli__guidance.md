@@ -8,12 +8,12 @@ type: reference
 prerequisites:
   - /docs/cli
 related:
-  []
+  - /docs/cli/global-options
 summary: Enable or disable guidance messages in the Vercel CLI using the vercel guidance command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/guidance.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "c619259b868a82349e7ef15bee6e0c526e68ca850151e1978cc6048e46fed4ed"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "e936145b5353e47655171bf7d03312ad80bce9b0eaf2b6ae5697f9caf77edfce"
 ---
 
 # vercel guidance
@@ -26,11 +26,11 @@ The `vercel guidance` command allows you to enable or disable guidance messages.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [vercel help](https://vercel.com/docs/cli/help?from=related&source_path=%2Fdocs%2Fcli%2Fguidance&source_site=vercel-docs&relationship=related) — Learn how to use the vercel help CLI command to get information about all available Vercel CLI commands.
 - [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fguidance&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [vercel help](https://vercel.com/docs/cli/help?from=related&source_path=%2Fdocs%2Fcli%2Fguidance&source_site=vercel-docs&relationship=related) — Learn how to use the vercel help CLI command to get information about all available Vercel CLI commands.
 - [vercel dev](https://vercel.com/docs/cli/dev?from=related&source_path=%2Fdocs%2Fcli%2Fguidance&source_site=vercel-docs&relationship=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fguidance&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [Vercel CLI Global Options](https://vercel.com/docs/cli/global-options?from=related&source_path=%2Fdocs%2Fcli%2Fguidance&source_site=vercel-docs&relationship=related) — Global options are commonly available to use with multiple Vercel CLI commands. Learn about Vercel CLI's global options
+- [vercel upgrade](https://vercel.com/docs/cli/upgrade?from=related&source_path=%2Fdocs%2Fcli%2Fguidance&source_site=vercel-docs&relationship=related) — Upgrade the Vercel CLI to the latest version and manage automatic updates with the vercel upgrade CLI command.
 
 Full cross-link map for this page: [/docs/cli/guidance.graph.md](/docs/cli/guidance.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fguidance&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -97,6 +97,24 @@ vercel guidance status
 ```
 
 *Shows whether guidance messages are enabled or disabled.*
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel guidance` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 
 ---

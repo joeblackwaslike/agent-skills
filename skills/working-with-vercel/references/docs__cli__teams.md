@@ -10,11 +10,12 @@ prerequisites:
 related:
   - /docs/accounts
   - /docs/rbac/managing-team-members
+  - /docs/cli/global-options
 summary: Learn how to list, add, switch, invite, and manage your teams with the vercel teams CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/teams.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "c9a989b648d6c6c87090ee8d175447250782b75a10fe9d68e9ca9df7476a1fc2"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "19e62f1cad5df455f74c17493672bc34ae5e8bc6a84a4f220e81e51f7cb93bb4"
 ---
 
 # vercel teams
@@ -27,11 +28,11 @@ The `vercel teams` command manages [Teams](/docs/accounts#creating-a-team): list
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [List team members](https://vercel.com/docs/rest-api/teams/list-team-members?from=related&source_path=%2Fdocs%2Fcli%2Fteams&source_site=vercel-docs&relationship=related) — GET /v3/teams/{teamId}/members — Get a paginated list of team members for the provided team.
-- [List all teams](https://vercel.com/docs/rest-api/teams/list-all-teams?from=related&source_path=%2Fdocs%2Fcli%2Fteams&source_site=vercel-docs&relationship=related) — GET /v2/teams — Get a paginated list of all the Teams the authenticated User is a member of.
 - [vercel switch](https://vercel.com/docs/cli/switch?from=related&source_path=%2Fdocs%2Fcli%2Fteams&source_site=vercel-docs&relationship=related) — Learn how to switch between different team scopes using the vercel switch CLI command.
-- [Join a team](https://vercel.com/docs/rest-api/teams/join-a-team?from=related&source_path=%2Fdocs%2Fcli%2Fteams&source_site=vercel-docs&relationship=related) — POST /v1/teams/{teamId}/members/teams/join — Join a team with a provided invite code or team ID.
-- [Invite a user](https://vercel.com/docs/rest-api/teams/invite-a-user?from=related&source_path=%2Fdocs%2Fcli%2Fteams&source_site=vercel-docs&relationship=related) — POST /v2/teams/{teamId}/members — Invite a user to join the team specified in the URL. The authenticated user needs to b
+- [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fteams&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fteams&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel buy](https://vercel.com/docs/cli/buy?from=related&source_path=%2Fdocs%2Fcli%2Fteams&source_site=vercel-docs&relationship=related) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
+- [vercel oauth-apps](https://vercel.com/docs/cli/oauth-apps?from=related&source_path=%2Fdocs%2Fcli%2Fteams&source_site=vercel-docs&relationship=related) — Register Vercel Apps \\(OAuth\\) and manage team installations from the CLI: register new apps, list and dismiss installat
 
 Full cross-link map for this page: [/docs/cli/teams.graph.md](/docs/cli/teams.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fteams&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -242,6 +243,24 @@ vercel teams members --format json
 # Paginate results
 vercel teams members --next 1584722256178
 ```
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel teams` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 
 ---

@@ -13,8 +13,8 @@ related:
 summary: "Global options are commonly available to use with multiple Vercel CLI commands. Learn about Vercel CLI's global options here."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/global-options.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "707a0d154dbf68c4c97d0117a17e2bba4384a4623f6cd96afab33027d682461f"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "05a94bc7a4dfa181e6288fe07820e605bf0f58ffc42a0c0df5f92952e2f815b8"
 ---
 
 # Vercel CLI Global Options
@@ -31,7 +31,7 @@ Global options are commonly available to use with multiple Vercel CLI commands.
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-options&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel env](https://vercel.com/docs/cli/env?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-options&source_site=vercel-docs&relationship=related) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-options&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [Linking Projects with Vercel CLI](https://vercel.com/docs/cli/project-linking?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-options&source_site=vercel-docs&relationship=related) — Learn how to link existing Vercel Projects with Vercel CLI.
+- [vercel global-config](https://vercel.com/docs/cli/global-config?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-options&source_site=vercel-docs&relationship=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
 
 Full cross-link map for this page: [/docs/cli/global-options.graph.md](/docs/cli/global-options.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-options&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

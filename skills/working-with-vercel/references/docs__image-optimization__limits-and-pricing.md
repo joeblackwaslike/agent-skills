@@ -16,13 +16,21 @@ related:
 summary: This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can incur.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/image-optimization/limits-and-pricing.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "03ab35d8d5ac954349680b6ac817476a4cdedbc318325cda187ad891ec7a23eb"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "a9187af8348702a32349d6c2c7ce5bac1ac7b31ee39319f26376a43c9d48e1b5"
 ---
 
 # Limits and Pricing for Image Optimization
 
 ## Pricing
+
+> **💡 Note:** This is the default pricing option. For Enterprise teams created
+> before February 18th, 2025, you will be given the choice to
+> [opt-in](https://vercel.com/d?to=%2F%5Bteam%5D%2F~%2Fsettings%2Fbilling%23image-optimization-new-price\&title=Go+to+Billing+Settings)
+> to this pricing plan or stay on the [legacy source
+> images-based](/docs/image-optimization/legacy-pricing) pricing plan until the contract expires.
+
+Image optimization pricing is dependent on your plan and on specific parameters outlined in the table below. For detailed pricing information for each region, review [Regional Pricing](/docs/pricing/regional-pricing#specific-region-pricing).
 
 
 <!-- docsgraph:related -->
@@ -35,21 +43,13 @@ sha256: "03ab35d8d5ac954349680b6ac817476a4cdedbc318325cda187ad891ec7a23eb"
 - [Increased Hobby usage limits for Image Optimization](https://vercel.com/changelog/increased-hobby-usage-limits-for-image-optimization?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flimits-and-pricing&source_site=vercel-docs&relationship=related)
 - [Legacy Pricing for Image Optimization](https://vercel.com/docs/image-optimization/legacy-pricing?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — This page outlines information on the pricing and limits for the source images-based legacy option.
 - [Changes to Vercel Image Optimization](https://vercel.com/changelog/changes-to-vercel-image-optimizations?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flimits-and-pricing&source_site=vercel-docs&relationship=related)
-- [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Vercel Blob Pricing](https://vercel.com/docs/vercel-blob/usage-and-pricing?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn about the pricing for Vercel Blob.
-- [Limits and Pricing for Speed Insights](https://vercel.com/docs/speed-insights/limits-and-pricing?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn about our limits and pricing when using Vercel Speed Insights. Different limitations are applied depending on your
+- [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Container Registry limits and pricing](https://vercel.com/docs/container-registry/limits-and-pricing?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Storage pricing, size limits, plan limits, and compatibility limits for Vercel Container Registry.
 
 Full cross-link map for this page: [/docs/image-optimization/limits-and-pricing.graph.md](/docs/image-optimization/limits-and-pricing.graph.md?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flimits-and-pricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-> **💡 Note:** This is the default pricing option. For Enterprise teams created
-> before February 18th, 2025, you will be given the choice to
-> [opt-in](https://vercel.com/d?to=%2F%5Bteam%5D%2F~%2Fsettings%2Fbilling%23image-optimization-new-price\&title=Go+to+Billing+Settings)
-> to this pricing plan or stay on the [legacy source
-> images-based](/docs/image-optimization/legacy-pricing) pricing plan until the contract expires.
-
-Image optimization pricing is dependent on your plan and on specific parameters outlined in the table below. For detailed pricing information for each region, review [Regional Pricing](/docs/pricing/regional-pricing#specific-region-pricing).
 
 | Image Usage | Hobby Included | On-demand Rates |
 | --- | --- | --- |

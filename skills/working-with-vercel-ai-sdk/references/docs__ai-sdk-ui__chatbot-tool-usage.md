@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/chatbot-tool-usage.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "878876879dae7fe9b8308102f7d8f8716dcca134e5278af1811ba4bc24d8b80b"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "0c32ef9c7b9e655473f871f6095060455725f6e36895243d243f9769ef73d9d6"
 ---
 
 # Chatbot Tool Usage
@@ -543,6 +543,13 @@ as `part.approval.reason`.
 For manual approval requests, the reason for requiring approval is available as
 `part.approval.requestReason`. It remains separate from an optional response
 reason supplied to `addToolApprovalResponse`.
+
+Approval request chunks can also include an `approvalDescriptor` with opaque
+application-specific metadata. UI message processing exposes it as
+`part.approval.descriptor` in the `approval-requested` state and preserves it in
+subsequent approval-bearing states, including `approval-responded`. This lets
+clients render or persist server-computed approval metadata without using it to
+determine whether the tool was approved.
 
 ### Securing Approvals for Sensitive Tools
 

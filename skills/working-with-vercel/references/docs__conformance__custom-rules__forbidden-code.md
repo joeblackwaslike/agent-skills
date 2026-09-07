@@ -12,8 +12,8 @@ related:
 summary: Learn how to set custom rules to disallow code and code patterns through string and regular expression matches.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/custom-rules/forbidden-code.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "de4e42c62c48ed2c1302fcbff7805593cdb2cd6d239057285062867da1e4f750"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "92ec9d9a871a8e8734ab067b57e59695eb7291899a8045a9173688aa59484211"
 ---
 
 # forbidden-code
@@ -113,7 +113,7 @@ following configuration.
 
 | Property | Type                  | Description                                                                                                                                                                                                     |
 | -------- | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `paths`  | `string[]` (optional) | An optional array of exact paths or glob expressions\*. |
+| `paths`  | `string[]` (optional) | An optional array of exact paths or glob expressions\*.<br /><br />*\*Note that paths containing square brackets need to be escaped, i.e. `[folder-name]\page.tsx` would become `\[folder-name\]\page.tsx`.* |
 
 The example below enables the `NO_DISALLOWED_USAGE` custom rule for all files in the
 `src/` directory, excluding files in `src/legacy/`. In this example, the custom

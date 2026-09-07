@@ -17,8 +17,8 @@ related:
 summary: Available tools in Vercel MCP for searching docs, managing teams, projects, deployments, Web Analytics, runtime logs and errors, Agent Runs, design...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "ca1415821a99a07ef093427734e8680fcfd8da63bd9174d892a1012503e2f776"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "07cc698be1f16acd6eb8bd1d1a8f1d461ca7bc644ea66f20b06daaa113f4da95"
 ---
 
 # Tools
@@ -36,8 +36,8 @@ The Vercel MCP server provides [MCP tools](https://modelcontextprotocol.io/speci
 - [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools&source_site=vercel-docs&relationship=related) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools&source_site=vercel-docs&relationship=related) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
-- [vercel metrics](https://vercel.com/docs/cli/metrics?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools&source_site=vercel-docs&relationship=related) — List and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
 - [Audit Logs](https://vercel.com/docs/audit-log?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools&source_site=vercel-docs&relationship=related) — Learn how to track and analyze your team members' activities.
+- [Monitoring Reference](https://vercel.com/docs/query/monitoring/monitoring-reference?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools&source_site=vercel-docs&relationship=related) — This reference covers the clauses, fields, and variables used to create a Monitoring query.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools.graph.md](/docs/agent-resources/vercel-mcp/tools.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

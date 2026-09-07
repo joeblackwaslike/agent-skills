@@ -17,8 +17,8 @@ related:
 summary: Learn how to set the maximum duration of a Vercel Function.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/duration.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "649a64a4672ff97629fda6bdad2d00c8656c87fb34c0592e425fb6e3a23cd2a6"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "b656b882de979f45529ad0b53196168777cb258b13a8e335a78aa3804d2628f2"
 ---
 
 # Configuring Maximum Duration for Vercel Functions
@@ -295,7 +295,7 @@ For Python framework apps (FastAPI, Flask, or Django), the whole app builds into
 > information, see [Glob
 > pattern](/docs/project-configuration/vercel-json#functions).
 
-## Extended max duration&#x20;
+## Extended max duration Beta
 
 Pro and Enterprise teams can set individual Vercel Functions using supported Node.js, Bun, and Python runtime versions to run for up to 30 minutes.
 
@@ -410,8 +410,8 @@ Vercel Functions have the following defaults and maximum limits for the duration
 |            | Default          | Maximum | Extended maximum |
 | ---------- | ---------------- | ------- | ---------------- |
 | Hobby      | 300s (5 minutes) | 300s (5 minutes) | - |
-| Pro        | 300s (5 minutes) | 800s | 1800s (30 minutes)  |
-| Enterprise | 300s (5 minutes) | 800s | 1800s (30 minutes)  |
+| Pro        | 300s (5 minutes) | 800s | 1800s (30 minutes) Beta |
+| Enterprise | 300s (5 minutes) | 800s | 1800s (30 minutes) Beta |
 
 The 800 second maximum is generally available for Pro and Enterprise teams. For beta requirements and examples, see [extended max duration](#extended-max-duration-beta).
 

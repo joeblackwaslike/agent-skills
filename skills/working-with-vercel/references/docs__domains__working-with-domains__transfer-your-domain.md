@@ -3,7 +3,7 @@ title: Transferring Domains to Another Team or Project
 product: vercel
 url: /docs/domains/working-with-domains/transfer-your-domain
 canonical_url: "https://vercel.com/docs/domains/working-with-domains/transfer-your-domain"
-last_updated: 2026-06-04
+last_updated: 2026-08-28
 type: how-to
 prerequisites:
   - /docs/domains/working-with-domains
@@ -16,13 +16,21 @@ related:
 summary: Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how to transfer domains with this...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/transfer-your-domain.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "eb67985f32898424ecaa18f3a39abac826dcc542b53924e4cd45cf15efc2fc2c"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "fbd7feaaecd97754a73a756580681d2fabf04dafd30a7717cc9d466fe5128246"
 ---
 
 # Transferring Domains to Another Team or Project
 
 ## Transfer a domain to another Vercel user or Team
+
+- ### Select the Domains tab
+  You can move domains to another team using the [**Domains** section in your team dashboard sidebar](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fdomains\&title=Go+to+team%27s+domains+page).
+
+- ### Select the domain
+  Once on the **Domains** tab, select the context menu next to the domain you wish to move, and click **Move**. You can also use checkbox next to each domain to select more than one domain
+
+  ![Image](https://vercel.com/front/docs/domains/move-light.png)
 
 
 <!-- docsgraph:related -->
@@ -43,14 +51,6 @@ sha256: "eb67985f32898424ecaa18f3a39abac826dcc542b53924e4cd45cf15efc2fc2c"
 
 Full cross-link map for this page: [/docs/domains/working-with-domains/transfer-your-domain.graph.md](/docs/domains/working-with-domains/transfer-your-domain.graph.md?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Ftransfer-your-domain&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-- ### Select the Domains tab
-  You can move domains to another team using the [**Domains** section in your team dashboard sidebar](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fdomains\&title=Go+to+team%27s+domains+page).
-
-- ### Select the domain
-  Once on the **Domains** tab, select the context menu next to the domain you wish to move, and click **Move**. You can also use checkbox next to each domain to select more than one domain
-
-  ![Image](https://vercel.com/front/docs/domains/move-light.png)
 
 - ### Select the team
   After selecting the domain(s) and clicking **Move**, you will be asked to confirm which profile or team you wish to move them to.
@@ -77,11 +77,11 @@ You can use the Dashboard to remove a domain from a project and then re-add it t
 
   You can verify that your domain has been registered with Vercel for at least 60 days by visiting the team's [Domains Dashboard](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fdomains\&title=Go+to+team%27s+domains+page). If the registrar is Vercel and the age greater than 60 days, it is eligible to transfer.
 
-- ### Select the  tab
-  For domains that are registered with Vercel, you can retrieve an authorization code for transferring out to another registrar from  in the Dashboard sidebar.
+- ### Select the **Domains** tab
+  For domains that are registered with Vercel, you can retrieve an authorization code for transferring out to another registrar from **Domains** in the Dashboard sidebar.
 
 - ### Select the "Transfer out" option
-  Once on the  tab, click on the triple-dot menu button for the relevant domain. A menu-item button to transfer the domain out will be presented if the domain is registered with Vercel.
+  Once on the **Domains** tab, click on the triple-dot menu button for the relevant domain. A menu-item button to transfer the domain out will be presented if the domain is registered with Vercel.
 
   ![Image](https://vercel.com/front/docs/domains/transfer-light.png)
   > **💡 Note:** If under a Team scope, only [Team Owners](/docs/rbac/access-roles#owner-role)
@@ -98,7 +98,9 @@ You can use the Dashboard to remove a domain from a project and then re-add it t
 
 By transferring your domain into Vercel, you allow Vercel to manage the DNS records for the domain and can use it with any Projects listed under the account the domain is owned by.
 
-> **💡 Note:**&#x20;
+> **💡 Note:** Domain transfers made within 45 days of an auto-renewal may not extend your domain's expiration by one year.
+> For more details, see [ICANN's advisory on transfers within the auto-renew grace period](https://www.icann.org/en/announcements/details/registrar-advisory-concerning-registration-transfers-within-the-auto-renew-grace-period-6-6-2002-en).If your domain is currently registered with **Name.com**, the transfer is
+> free and does not extend the registration period.
 
 - ### Verifying Transfer Eligibility
   Due to [ICANN rules](https://www.icann.org/resources/pages/text-2012-02-25-en#:~:text=Please%20note%20that%20you%20may,60%20days%20after%20a%20transfer), a domain must be registered with a registrar for 60 days before it can be transferred to another. You will need to confirm this with your registrar before attempting the transfer to Vercel.

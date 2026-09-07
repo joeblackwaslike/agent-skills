@@ -3,7 +3,7 @@ title: Taxes
 product: vercel
 url: /docs/pricing/taxes
 canonical_url: "https://vercel.com/docs/pricing/taxes"
-last_updated: 2026-07-15
+last_updated: 2026-08-31
 type: reference
 prerequisites:
   - /docs/pricing
@@ -12,13 +12,15 @@ related:
 summary: This page covers frequently asked questions around taxes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/taxes.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "e65e88a1e227758cb96c2950f415beecac2fd8cf2d8f7337d24670bb63cdb7e8"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "7fe511e5651f71bc92a4222a16b0936dbdaed05b713a5f74118d0d6afcad5405"
 ---
 
 # Taxes
 
-### Do you charge sales tax, value-added tax (VAT) or equivalent on your services?
+### What currency are Vercel prices shown in, and do they include taxes?
+
+All prices shown are in USD and exclude value-added tax (VAT), goods and services tax (GST), and other applicable taxes. Taxes are calculated based on your billing address and added to your invoice where required by law.
 
 
 <!-- docsgraph:related -->
@@ -26,17 +28,19 @@ sha256: "e65e88a1e227758cb96c2950f415beecac2fd8cf2d8f7337d24670bb63cdb7e8"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Fpricing%2Ftaxes&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
 - [Advanced Invoice Settings](https://vercel.com/blog/advanced-invoice-settings?from=related&source_path=%2Fdocs%2Fpricing%2Ftaxes&source_site=vercel-docs&relationship=related)
 - [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing?from=related&source_path=%2Fdocs%2Fpricing%2Ftaxes&source_site=vercel-docs&relationship=related)
-- [Updates to Legal Terms](https://vercel.com/changelog/updates-to-legal-terms-june-2026?from=related&source_path=%2Fdocs%2Fpricing%2Ftaxes&source_site=vercel-docs&relationship=related)
+- [Services Pricing and Limits](https://vercel.com/docs/services/pricing?from=related&source_path=%2Fdocs%2Fpricing%2Ftaxes&source_site=vercel-docs&relationship=related) — Understand how billing works for Vercel Services, what's charged, and which limits apply.
 - [Manage Billing and Refunds for Integrations](https://vercel.com/docs/integrations/create-integration/billing?from=related&source_path=%2Fdocs%2Fpricing%2Ftaxes&source_site=vercel-docs&relationship=related) — Learn how billing works for native integrations, including invoice lifecycle, pricing models, and refunds.
 - [Billing FAQ for Enterprise Plan](https://vercel.com/docs/plans/enterprise/billing?from=related&source_path=%2Fdocs%2Fpricing%2Ftaxes&source_site=vercel-docs&relationship=related) — This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
-- [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing?from=related&source_path=%2Fdocs%2Fpricing%2Ftaxes&source_site=vercel-docs&relationship=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 - [Billing & Invoices](https://vercel.com/docs/pricing/understanding-my-invoice?from=related&source_path=%2Fdocs%2Fpricing%2Ftaxes&source_site=vercel-docs&relationship=related) — Learn how Vercel invoices are structured for Pro and Enterprise plans, including plan charges, credits, and usage-based
-- [Services Pricing and Limits](https://vercel.com/docs/services/pricing?from=related&source_path=%2Fdocs%2Fpricing%2Ftaxes&source_site=vercel-docs&relationship=related) — Understand how billing works for Vercel Services, what's charged, and which limits apply.
+- [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing?from=related&source_path=%2Fdocs%2Fpricing%2Ftaxes&source_site=vercel-docs&relationship=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 
 Full cross-link map for this page: [/docs/pricing/taxes.graph.md](/docs/pricing/taxes.graph.md?from=related&source_path=%2Fdocs%2Fpricing%2Ftaxes&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
+
+### Do you charge sales tax, value-added tax (VAT) or equivalent on your services?
 
 Yes. We are rolling out collection of VAT, GST, or equivalent for international customers starting on April 1, 2026 for all Vercel products and services where required by law. We already collect sales tax for US-based customers. The exact amount depends on your billing address and applicable tax regulations.
 

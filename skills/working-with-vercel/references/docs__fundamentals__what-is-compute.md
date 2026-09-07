@@ -16,8 +16,8 @@ related:
 summary: Learn how compute works on Vercel with Fluid compute, and how it compares to traditional server and serverless models.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/fundamentals/what-is-compute.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "4c147adb1e578c25e1d0d89ef5ecce27961e9c977dccbf7bdfc94a46de82dd67"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "2cbe589c2fa70266fe9756f23a16a87a2424f484a9014c5408bf3545b9570b95"
 ---
 
 # What is Compute?
@@ -39,9 +39,9 @@ Compute is the work a server performs to respond to a request, such as rendering
 - [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related) — Learn how to build and scale performant APIs on Vercel.
 - [How AI Gateway runs on Fluid compute](https://vercel.com/blog/how-ai-gateway-runs-on-fluid-compute?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related)
 - [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
-- [Vercel Functions can now run on Fluid compute](https://vercel.com/changelog/vercel-functions-can-now-run-on-fluid-compute?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related)
 - [Backends on Vercel](https://vercel.com/docs/frameworks/backend?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
 - [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
+- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 
 Full cross-link map for this page: [/docs/fundamentals/what-is-compute.graph.md](/docs/fundamentals/what-is-compute.graph.md?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

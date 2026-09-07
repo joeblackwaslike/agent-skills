@@ -15,8 +15,8 @@ related:
 summary: Deploy TanStack Start applications to Vercel with Nitro and configure Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/tanstack-start.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "ced6d1a129da2c19b4e371ca874c8b70a7dcb1114eb5a146fac84fe5e54d5745"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "fb801c5a1c33b7bad149466e4d94fd24590ad93f40e0652a0f46ffa16a661d83"
 ---
 
 # TanStack Start on Vercel
@@ -29,7 +29,7 @@ TanStack Start is a fullstack framework powered by TanStack Router for React and
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Ftanstack-start&source_site=vercel-docs&relationship=related) — Learn how to deploy a TanStack Start app to Vercel using the Nitro Vite plugin. Covers framework setup, Git and CLI depl
+- [How to Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Ftanstack-start&source_site=vercel-docs&relationship=related) — Deploy a TanStack Start app to Vercel with the Nitro Vite plugin. Covers Git and CLI deployment, Fluid compute defaults,
 - [Support for TanStack Start](https://vercel.com/changelog/support-for-tanstack-start?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Ftanstack-start&source_site=vercel-docs&relationship=related)
 - [Workflow SDK now supports TanStack Start](https://vercel.com/changelog/workflow-sdk-now-supports-tanstack-start?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Ftanstack-start&source_site=vercel-docs&relationship=related)
 - [You can now deploy Lovable apps to Vercel](https://vercel.com/changelog/you-can-now-deploy-lovable-apps-to-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Ftanstack-start&source_site=vercel-docs&relationship=related)

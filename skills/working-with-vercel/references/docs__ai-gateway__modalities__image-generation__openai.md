@@ -3,7 +3,7 @@ title: Image Generation with Chat Completions API
 product: vercel
 url: /docs/ai-gateway/modalities/image-generation/openai
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/image-generation/openai"
-last_updated: 2026-08-24
+last_updated: 2026-08-27
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/modalities/image-generation
@@ -13,8 +13,8 @@ related:
 summary: Generate and edit images using AI models through Vercel AI Gateway with the Chat Completions API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/image-generation/openai.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "e337452d1c754806815827294d6df16f2d97088531b5a5d2b9c79a8add9468e0"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "c96cb9a0f05d0fa4553c0134a3a20354f26251150dd42724722d244f6368fe68"
 ---
 
 # Image Generation with Chat Completions API
@@ -34,8 +34,8 @@ page](/ai-gateway/models?type=image), including multimodal LLMs and image-only m
 - [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fopenai&source_site=vercel-docs&relationship=related) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
 - [Image Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fopenai&source_site=vercel-docs&relationship=related) — Generate images using AI models that support multimodal output through the Chat Completions API.
 - [Image Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/image?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fopenai&source_site=vercel-docs&relationship=related) — Generate images from text prompts using AI Gateway.
-- [Text Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/text?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fopenai&source_site=vercel-docs&relationship=related) — Generate and stream text responses using AI Gateway.
 - [File Attachments](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/images?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fopenai&source_site=vercel-docs&relationship=related) — Send images and PDF documents for analysis using the OpenAI Responses API through AI Gateway.
+- [Text Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/text?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fopenai&source_site=vercel-docs&relationship=related) — Generate and stream text responses using AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/image-generation/openai.graph.md](/docs/ai-gateway/modalities/image-generation/openai.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fopenai&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

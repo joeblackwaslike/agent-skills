@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "a75f6eafa9abb2552c9a8c26cfe8abbb421c4a51caa745d18915d6784661e005"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "70df11691871a2d0cd6566260cda85252f8d8be8dcf412b8449cf0f2de2ddcb9"
 ---
 
 # AI SDK Errors
@@ -36,6 +36,7 @@ sha256: "a75f6eafa9abb2552c9a8c26cfe8abbb421c4a51caa745d18915d6784661e005"
 - [AI_StreamProviderError](/docs/reference/ai-sdk-errors/ai-stream-provider-error)
 - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
 - [AI_ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)
+- [AI_ToolChoiceViolationError](/docs/reference/ai-sdk-errors/ai-tool-choice-violation-error)
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
 - [AI_TypeValidationError](/docs/reference/ai-sdk-errors/ai-type-validation-error)
 - [AI_UIMessageStreamError](/docs/reference/ai-sdk-errors/ai-ui-message-stream-error)
@@ -164,6 +165,7 @@ sha256: "a75f6eafa9abb2552c9a8c26cfe8abbb421c4a51caa745d18915d6784661e005"
   - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
   - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
   - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)
+  - [ToolChoiceViolationError](/docs/reference/ai-sdk-errors/ai-tool-choice-violation-error)
   - [AI_TypeValidationError](/docs/reference/ai-sdk-errors/ai-type-validation-error)
   - [AI_UIMessageStreamError](/docs/reference/ai-sdk-errors/ai-ui-message-stream-error)
   - [AI_UnsupportedFunctionalityError](/docs/reference/ai-sdk-errors/ai-unsupported-functionality-error)

@@ -16,13 +16,15 @@ related:
 summary: "Learn how to use Attack Mode to help control who has access to your site when it's under attack."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/attack-mode.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "c6168a7ae81e8f02f5af482e0dbb64f8913f7ba9ca232ededbf737c3e1b8c338"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "88858786a6664ab9b7729d7aae27bfe4addcc7b04a66300499cd2af8271cc6e0"
 ---
 
 # Attack Mode
 
 > **🔒 Permissions Required**: Attack Mode
+
+Attack Mode is a security feature that protects your site during DDoS attacks. When enabled, visitors must complete a [security challenge](/docs/vercel-firewall/firewall-concepts#challenge) before accessing your site, while known bots (like search engines and webhook providers) are automatically allowed through.
 
 
 <!-- docsgraph:related -->
@@ -45,8 +47,6 @@ sha256: "c6168a7ae81e8f02f5af482e0dbb64f8913f7ba9ca232ededbf737c3e1b8c338"
 
 Full cross-link map for this page: [/docs/vercel-firewall/attack-mode.graph.md](/docs/vercel-firewall/attack-mode.graph.md?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fattack-mode&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Attack Mode is a security feature that protects your site during DDoS attacks. When enabled, visitors must complete a [security challenge](/docs/vercel-firewall/firewall-concepts#challenge) before accessing your site, while known bots (like search engines and webhook providers) are automatically allowed through.
 
 The Vercel Firewall automatically [mitigates against DDoS attacks](/docs/vercel-firewall/ddos-mitigation), but Attack Mode provides an extra layer of protection for highly targeted attacks.
 

@@ -3,7 +3,7 @@ title: Connect to Amazon Web Services (AWS)
 product: vercel
 url: /docs/oidc/aws
 canonical_url: "https://vercel.com/docs/oidc/aws"
-last_updated: 2026-07-15
+last_updated: 2026-08-28
 type: how-to
 prerequisites:
   - /docs/oidc
@@ -13,13 +13,15 @@ related:
 summary: "Learn how to configure your AWS account to trust Vercel's OpenID Connect (OIDC) Identity Provider (IdP)."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/aws.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "0d28eb30cba9d509ef56bb983418be329a2496463d7d68537f2b8959ba09ed1a"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "921c02a8d9606962da14a7f2d5ff47c4ffe17c0e21c92e7125dd93dd64ba2914"
 ---
 
 # Connect to Amazon Web Services (AWS)
 
 > **🔒 Permissions Required**: Secure backend access with OIDC federation
+
+To understand how AWS supports OIDC, and for a detailed user guide on creating an OIDC identity provider with AWS, consult the [AWS OIDC documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc.html).
 
 
 <!-- docsgraph:related -->
@@ -40,8 +42,6 @@ sha256: "0d28eb30cba9d509ef56bb983418be329a2496463d7d68537f2b8959ba09ed1a"
 
 Full cross-link map for this page: [/docs/oidc/aws.graph.md](/docs/oidc/aws.graph.md?from=related&source_path=%2Fdocs%2Foidc%2Faws&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-To understand how AWS supports OIDC, and for a detailed user guide on creating an OIDC identity provider with AWS, consult the [AWS OIDC documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc.html).
 
 ## Configure your AWS account
 

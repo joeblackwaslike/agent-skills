@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/openai-compatible-providers/clarifai.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "e51f9842a75209239cc3aa5705d98282ea16b5a8c444ba0b7a6dd6ea9c08ab9f"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "501a7290923a48499bc860aff49f723f5e6cc09afbf8350a252635ffe35125c3"
 ---
 
 # Clarifai Provider
@@ -112,6 +112,7 @@ For full list of available models, you can refer to the [Clarifai Model Gallery]
 - [Clarifai](/providers/openai-compatible-providers/clarifai)
 - [Heroku](/providers/openai-compatible-providers/heroku)
 - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)
+- [Synthorai](/providers/openai-compatible-providers/synthorai)
 
 
 [Full Sitemap](/sitemap.md)

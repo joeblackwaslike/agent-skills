@@ -3,7 +3,7 @@ title: Session tracing
 product: vercel
 url: /docs/tracing/session-tracing
 canonical_url: "https://vercel.com/docs/tracing/session-tracing"
-last_updated: 2026-08-25
+last_updated: 2026-08-28
 type: how-to
 prerequisites:
   - /docs/tracing
@@ -16,8 +16,8 @@ related:
 summary: Learn how to trace your sessions to understand performance and infrastructure details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/tracing/session-tracing.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "32a29c914c01ee2cfb39eda70f299ed5ee4e6dfb9c4d9241e1424907f3e7ea5c"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "cf88fc48a8600d177834f4c0a98b4e66c4e64d1d5cb3fe5266df7e7f4a5b485e"
 ---
 
 # Session tracing

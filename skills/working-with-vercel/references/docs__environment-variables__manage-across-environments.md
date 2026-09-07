@@ -16,8 +16,8 @@ related:
 summary: Add, sync, and verify environment variables across development, preview, production, and custom environments using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/manage-across-environments.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "b075fb4f643702aa22fb5d0c2be3356a65b552c767aef53061be589398cc0809"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "924e5c90cc88aefc63114bcb50462a330a7358152ce9cea28797ccfc8d736ddf"
 ---
 
 # Managing environment variables across environments
@@ -34,11 +34,13 @@ Use this guide to manage environment variables across multiple environments. You
 - [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
 - [Environment Variables UI](https://vercel.com/blog/environment-variables-ui?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related)
 - [How do I set up a staging environment on Vercel?](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Information on how to set up a staging environment on Vercel.
+- [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
+- [Environment Variables](https://v0.app/docs/api/v2/guides/environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Add environment variables to a v0 chat
 - [Managing environment variables](https://vercel.com/docs/environment-variables/managing-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Learn how to create and manage environment variables for Vercel.
 - [Environments](https://vercel.com/docs/deployments/environments?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Environments are for developing locally, testing changes in a pre-production environment, and serving end-users in produ
 - [Sensitive environment variables](https://vercel.com/docs/environment-variables/sensitive-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Environment variables that cannot be decrypted once created.
 - [Shared environment variables](https://vercel.com/docs/environment-variables/shared-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Learn how to use Shared environment variables, which are environment variables that you define at the Team level and can
-- [Edit an environment variable](https://vercel.com/docs/rest-api/projects/edit-an-environment-variable?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — PATCH /v9/projects/{idOrName}/env/{id} — Edit a specific environment variable for a given project by passing the environ
+- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 
 Full cross-link map for this page: [/docs/environment-variables/manage-across-environments.graph.md](/docs/environment-variables/manage-across-environments.graph.md?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

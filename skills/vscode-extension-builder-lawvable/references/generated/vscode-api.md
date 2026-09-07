@@ -1,8 +1,8 @@
 ---
 title: "VS Code API"
 source: "https://code.visualstudio.com/api/references/vscode-api"
-fetched_at: "2026-08-24T04:43:15.398Z"
-sha256: "2e8e6a4b18bb0893e8309f472c34f457ff83d78d13c9705e087698f4f32b8743"
+fetched_at: "2026-09-07T08:58:30.097Z"
+sha256: "f56dae860e6bfcbe3576462f5cd459b5e3cb9bcab7aa5bfbd0618b8ba415a8d1"
 ---
 
 # VS Code API
@@ -11001,6 +11001,9 @@ align/separate an inlay hint.
 position: [Position](https://code.visualstudio.com/api/references/vscode-api#Position)
 
 The position of this hint.
+
+If multiple hints have the same position, they will be shown in the order
+they appear in the results.
 
 textEdits?: [TextEdit](https://code.visualstudio.com/api/references/vscode-api#TextEdit)[]
 

@@ -16,8 +16,8 @@ related:
 summary: Categorize sandboxes by environment, team, or any other criteria using key-value tags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/tags.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "c8cf303fdb2a235c0710436db1765a5de42224a4121133aac64ac57591e97647"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "c13aeb0e101fbcf4dcdbf47f501b6994e349be7369dac8d52127de8c494f003f"
 ---
 
 # Tags
@@ -33,9 +33,9 @@ Tags let you categorize sandboxes by environment, team, or any other criteria. E
 - [Custom tags available in beta on Vercel Sandbox](https://vercel.com/changelog/custom-tags-available-in-beta-on-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Ftags&source_site=vercel-docs&relationship=related)
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Ftags&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 - [Working with Sandbox](https://vercel.com/docs/sandbox/working-with-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Ftags&source_site=vercel-docs&relationship=related) — Task-oriented examples for common Vercel Sandbox operations in TypeScript and Python.
-- [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Ftags&source_site=vercel-docs&relationship=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 - [Running commands in a Vercel Sandbox](https://vercel.com/docs/sandbox/run-commands-in-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Ftags&source_site=vercel-docs&relationship=related) — Create isolated sandbox environments to run builds, tests, and commands safely.
-- [List sandboxes](https://vercel.com/docs/rest-api/sandboxes/list-sandboxes?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Ftags&source_site=vercel-docs&relationship=related) — GET /v2/sandboxes — Retrieves a paginated list of named sandboxes belonging to a specific project. Results can be sorted
+- [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Ftags&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
+- [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Ftags&source_site=vercel-docs&relationship=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 
 Full cross-link map for this page: [/docs/sandbox/concepts/tags.graph.md](/docs/sandbox/concepts/tags.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Ftags&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -48,13 +48,99 @@ Set, update, and filter on tags from the JS SDK using `Sandbox.create()`, `sandb
 
 Pass the `tags` field when creating a sandbox. You can assign up to five key-value tags:
 
+**TypeScript**
+
+```ts filename="index.ts" highlight={5}
+import { Sandbox } from '@vercel/sandbox';
+
+const sandbox = await Sandbox.create({
+  name: 'my-sandbox',
+  tags: { env: 'staging' },
+});
+```
+
+**Python**
+
+```python filename="main.py"
+import asyncio
+
+from vercel import sandbox
+
+
+async def main() -> None:
+    await sandbox.create_sandbox(
+        name="my-sandbox",
+        tags={"env": "staging"},
+    )
+
+
+asyncio.run(main())
+```
+
 ### Update tags
 
 Use `sandbox.update()` to change a sandbox's tags at any time. The provided object replaces the existing tag set, so pass every tag you want to keep:
 
+**TypeScript**
+
+```ts filename="index.ts"
+await sandbox.update({
+  tags: { env: 'production', team: 'infra' },
+});
+```
+
+**Python**
+
+```python filename="main.py"
+import asyncio
+
+from vercel import sandbox
+
+
+async def main() -> None:
+    box = await sandbox.get_sandbox(name="my-sandbox")
+    await box.update(tags={"env": "production", "team": "infra"})
+
+
+asyncio.run(main())
+```
+
 ### Filter sandboxes by tag
 
 Pass a `tags` object to `Sandbox.list()` to filter results. You can filter by one tag at a time:
+
+**TypeScript**
+
+```ts filename="index.ts"
+const productionSandboxes = await Sandbox.list({
+  tags: { env: 'production' },
+});
+
+for await (const sandbox of productionSandboxes) {
+  console.log(sandbox.name);
+}
+```
+
+**Python**
+
+```python filename="main.py"
+import asyncio
+
+from vercel import sandbox
+from vercel.sandbox import SandboxQueryByCreatedAt, TagFilter
+
+
+async def main() -> None:
+    query = SandboxQueryByCreatedAt(
+        tag=TagFilter(key="env", value="production")
+    )
+
+    async for box in sandbox.query_sandboxes(query=query):
+        print(box.name)
+
+
+asyncio.run(main())
+```
 
 ## CLI usage
 

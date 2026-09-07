@@ -16,8 +16,8 @@ related:
 summary: Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibility, Git Fork Protection, and...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/security-settings.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "7af8292ff3e2a77e33932474164ca48e93a4e7f05669eba9a18c3191cb4b3726"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "762a7d570d737df44414b76221f6d7544a935ad39ff7ca48315b329d3bb89318"
 ---
 
 # Security settings
@@ -54,7 +54,7 @@ By default, the following paths mentioned below can only be accessed by you and 
 
 > **💡 Note:** Disabling **Build Logs and Source Protection** will make your source code and
 > logs publicly accessible. **Do not** edit this setting if you don't want them
-> to be publicly accessible.&#x20;
+> to be publicly accessible. <br /><br />
 
 None of your existing deployments will be affected when you toggle this
 setting. If you’d like to make the source code or logs private on your

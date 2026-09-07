@@ -16,8 +16,8 @@ related:
 summary: Learn how to configure the runtime, region, maximum duration, and memory for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "9a99fb64e2e8e742f8b82ed6aeed27a7614457ca5592dfff2325aa17658f6128"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "fde1786f6d1976635e2e26da8202e15cb33786aa5d79869323aa382678445490"
 ---
 
 # Configuring Functions
@@ -30,8 +30,8 @@ You can configure Vercel functions in many ways, including the runtime, region, 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Customizing Serverless Functions](https://vercel.com/blog/customizing-serverless-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions&source_site=vercel-docs&relationship=related)
 - [How can I reduce my Vercel Functions usage on Vercel?](https://vercel.com/kb/guide/how-can-i-reduce-my-serverless-execution-usage-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions&source_site=vercel-docs&relationship=related) — Reduce Vercel Functions usage and cost under Fluid compute pricing with caching, rendering strategies, and function conf
+- [Customizing Serverless Functions](https://vercel.com/blog/customizing-serverless-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions&source_site=vercel-docs&relationship=related)
 - [Getting started with Vercel Functions](https://vercel.com/docs/functions/quickstart?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions&source_site=vercel-docs&relationship=related) — Build your first Vercel Function in a few steps.
 - [vercel.functions API Reference \\(Python\\)](https://vercel.com/docs/functions/functions-api-reference/vercel-sdk-python?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions&source_site=vercel-docs&relationship=related) — Learn about available APIs when working with Vercel Functions in Python.
 - [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions&source_site=vercel-docs&relationship=related) — Learn about legacy usage and pricing for Vercel Functions.

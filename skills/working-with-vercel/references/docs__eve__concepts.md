@@ -3,7 +3,7 @@ title: Concepts
 product: vercel
 url: /docs/eve/concepts
 canonical_url: "https://vercel.com/docs/eve/concepts"
-last_updated: 2026-08-26
+last_updated: 2026-08-28
 type: conceptual
 prerequisites:
   - /docs/eve
@@ -16,8 +16,8 @@ related:
 summary: Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/eve/concepts.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "c215dbe296a3afbec66e70b8c0f249d4c31d83ff2a8a111afaf6864e90189652"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "f0d954b7dcb716b1dcffba640d87dfc82322c6fb4f0fc3b1d0571c0d14a64f4e"
 ---
 
 # Concepts
@@ -33,13 +33,13 @@ the runtime as a deployable app.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Get started with eve: durable AI agents in TypeScript](https://eve.dev/docs/getting-started?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — Create an eve project, configure a model, understand its filesystem layout, and run your first agent.
+- [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
 - [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
 - [Security Model](https://eve.dev/docs/concepts/security-model?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — eve's trust boundaries, where secrets live, how credentials reach hosts, and what fails closed by default.
 - [Introducing eve, an open-source agent framework](https://vercel.com/changelog/introducing-eve-an-open-source-agent-framework?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related)
-- [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
+- [Terminal UI](https://eve.dev/docs/guides/dev-tui?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — Use eve locally or connect to a deployed agent from an interactive terminal UI.
 - [Deployment](https://eve.dev/docs/guides/deployment/overview?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — Choose a deployment strategy and prepare an eve agent for production.
 - [The Agent Stack](https://vercel.com/blog/agent-stack?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related)
-- [Next.js](https://eve.dev/docs/guides/frontend/nextjs?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — Run an eve agent and a Next.js app as one project with withEve.
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/eve/concepts.graph.md](/docs/eve/concepts.graph.md?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=graph)

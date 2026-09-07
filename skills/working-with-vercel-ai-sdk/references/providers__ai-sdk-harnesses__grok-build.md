@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/grok-build.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "1de22dd2a9bd286751424d79e1f27f0140ddd507fdbaa608cacedc4890a0e3e5"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "824d4d7323d17c8289bbce5e8aae3cb29a1b7d57e124cba47137f17a2b2d407e"
 ---
 
 # Grok Build Harness
@@ -41,6 +41,7 @@ import { createVercelSandbox } from '@ai-sdk/sandbox-vercel';
 
 const agent = new HarnessAgent({
   harness: grokBuild,
+  model: 'grok-build-0.1',
   sandbox: createVercelSandbox({
     runtime: 'node24',
     ports: [4000],
@@ -81,7 +82,7 @@ Use `createGrokBuild()` to configure the runtime:
 ```ts
 const harness = createGrokBuild({
   auth: 'ai-gateway',
-  model: 'grok-code-fast-1',
+  reasoningEffort: 'high',
   port: 4001,
   startupTimeoutMs: 180_000,
 });
@@ -101,8 +102,9 @@ Settings:
   value forwarded into the sandbox process. It does not restrict which
   credentials the harness adapter can discover, read, or otherwise access in
   the host process.
-- `model`: Grok model id selected through ACP. When omitted, Grok Build chooses
-  its own default model.
+- `reasoningEffort`: reasoning effort for reasoning-capable models. Supported
+  values are `none`, `minimal`, `low`, `medium`, `high`, `xhigh`, and `max`.
+  When omitted, Grok Build uses its configured default.
 - `mcpServers`: MCP server definitions keyed by server name.
 - `port`: ACP bridge port override.
 - `startupTimeoutMs`: maximum time to wait for the ACP bridge to start.
@@ -177,7 +179,7 @@ const sandbox = createVercelSandbox({
 ```
 
 The first session requires network egress so the ACP harness can install
-`@xai-official/grok@0.2.111` inside the sandbox.
+`@xai-official/grok@1.0.5` inside the sandbox.
 
 ## Built-in Tools
 
@@ -209,6 +211,10 @@ safe built-in operations internally without sending a permission request.
   error.
 - A changed host-tool catalog requires Grok Build to refresh its ACP MCP tool
   list. If the implementation retains stale tools, the turn fails explicitly.
+- Custom `headers` are not natively supported and only applied via
+  sandbox-external request transformations. When a sandbox without that
+  capability is provided, custom `headers` therefore cannot be passed and are
+  ignored.
 
 ## Related
 

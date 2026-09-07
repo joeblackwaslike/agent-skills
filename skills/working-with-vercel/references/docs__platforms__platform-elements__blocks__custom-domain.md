@@ -3,7 +3,7 @@ title: Custom Domain
 product: vercel
 url: /docs/platforms/platform-elements/blocks/custom-domain
 canonical_url: "https://vercel.com/docs/platforms/platform-elements/blocks/custom-domain"
-last_updated: 2026-06-26
+last_updated: 2026-09-03
 type: reference
 prerequisites:
   - /docs/platforms/platform-elements/blocks
@@ -15,13 +15,15 @@ related:
 summary: A complete domain management interface with DNS verification and real-time status tracking.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/blocks/custom-domain.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "9ddf0349e8be557c84bd1a4bc9ecdfc739cbf7c6037f211c89e52efe2ae2456c"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "9a91a4599166ef8826bc5907e796ed968e85478af80f00db83e39ba3931cd640"
 ---
 
 # Custom Domain
 
 ## Overview
+
+The Custom Domain block provides a comprehensive solution for platforms that need to offer custom domain functionality to their users. It handles the entire domain configuration flow including DNS verification, real-time status updates, and clear configuration instructions. This is essential for platforms like Mintlify and Hashnode that allow users to serve content from their own domains.
 
 
 <!-- docsgraph:related -->
@@ -40,11 +42,19 @@ sha256: "9ddf0349e8be557c84bd1a4bc9ecdfc739cbf7c6037f211c89e52efe2ae2456c"
 Full cross-link map for this page: [/docs/platforms/platform-elements/blocks/custom-domain.graph.md](/docs/platforms/platform-elements/blocks/custom-domain.graph.md?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fcustom-domain&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-The Custom Domain block provides a comprehensive solution for platforms that need to offer custom domain functionality to their users. It handles the entire domain configuration flow including DNS verification, real-time status updates, and clear configuration instructions. This is essential for platforms like Mintlify and Hashnode that allow users to serve content from their own domains.
-
 ## Installation
 
-Install the `custom-domain` block into your project using the Platform Elements installer.
+Install the `custom-domain` block with the Vercel Platforms CLI:
+
+```bash
+npx @vercel/platforms@latest add custom-domain
+```
+
+You can also install it with the shadcn CLI:
+
+```bash
+npx shadcn@latest add https://registry.platforms.guide/custom-domain.json
+```
 
 ## Features
 

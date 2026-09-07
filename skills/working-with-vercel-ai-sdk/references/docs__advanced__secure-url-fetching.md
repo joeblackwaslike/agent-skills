@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/advanced/secure-url-fetching.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "81a139958c3b35a7faffdb888d510e266a0f3c27dd66c4f1bb6ef9ee4f879745"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "db6072fa2d7e30d9f0f41101073249b26926a5c4eb307f9473c782348a59946e"
 ---
 
 # Secure URL Fetching
@@ -17,6 +17,11 @@ a cloud-metadata endpoint (`http://169.254.169.254/…`), a private host
 To prevent that, the SDK validates every response-supplied URL before fetching
 it. This happens automatically inside the provider packages — you don't need to
 configure anything.
+
+For authenticated task-status polling, providers can construct the first URL
+from the configured API endpoint. The SDK trusts that configured origin for the
+initial request, but manually follows and validates every redirect away from it.
+MiniMax, Kling AI, and ByteDance video polling use this protected path.
 
 ## What the SDK protects against
 
@@ -46,7 +51,8 @@ A blocked URL surfaces as a `DownloadError`.
 URLs that are same-origin with the provider endpoint **you configured** (e.g. a
 custom `baseURL` pointing at a self-hosted or `localhost` deployment) are
 exempt from these checks — they target exactly the host you told the SDK to
-talk to. Any redirect off that origin is still validated.
+talk to. This also applies to task-status polling. Any redirect off that origin
+is still validated before the redirected request is sent.
 
 ## DNS validation across runtimes
 

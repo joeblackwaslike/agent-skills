@@ -13,8 +13,8 @@ related:
 summary: Use the Blackbox AI CLI with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/blackbox.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "62886635638c8bb5cae108977efdd3405ed52f8688c529f9d0ea3a8e24f9fbf5"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "69dde4d54c5ed0e89ae577b09c2a765b2e9fd543d06b9edc9423f3491bd50cc7"
 ---
 
 # Blackbox AI
@@ -28,7 +28,7 @@ You can use the [Blackbox AI](https://blackbox.ai) CLI for AI-powered code gener
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Chatbox](https://vercel.com/docs/ai-gateway/chat-platforms/chatbox?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fblackbox&source_site=vercel-docs&relationship=related) — Use Chatbox with the AI Gateway.
-- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fblackbox&source_site=vercel-docs&relationship=related) — Use OpenCode with the AI Gateway.
+- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fblackbox&source_site=vercel-docs&relationship=related) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
 - [OpenClaw \\(Clawdbot\\)](https://vercel.com/docs/ai-gateway/chat-platforms/openclaw?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fblackbox&source_site=vercel-docs&relationship=related) — Use OpenClaw \\(formerly Clawdbot\\) with AI Gateway.
 - [Xcode](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fblackbox&source_site=vercel-docs&relationship=related) — Use Xcode's coding assistant with the AI Gateway.
 - [OpenClaw](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fblackbox&source_site=vercel-docs&relationship=related) — Use OpenClaw with the AI Gateway as a model provider.

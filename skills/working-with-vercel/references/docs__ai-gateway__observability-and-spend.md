@@ -16,8 +16,8 @@ related:
 summary: "Monitor AI Gateway requests and manage spend: observability, custom reporting, usage and billing APIs, and spending budgets."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "43cbd940be52ab07e049c4af830c0f999de5009498e28ada28eb33bbf4712593"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "ba9f79a4becd06a817b94e1d42044c75419c996863be68984a297c6b23a9b966"
 ---
 
 # Observability and Spend
@@ -33,12 +33,11 @@ AI Gateway logs every request and gives you the tools to understand and control 
 - [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend&source_site=vercel-docs&relationship=related) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
 - [AI Gateway now supports team and project spend budgets](https://vercel.com/changelog/ai-gateway-spend-budgets-and-alerts?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend&source_site=vercel-docs&relationship=related)
 - [Unified reporting for all AI Gateway usage](https://vercel.com/blog/unified-reporting-for-your-ai-spend?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend&source_site=vercel-docs&relationship=related)
-- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend&source_site=vercel-docs&relationship=related) — Learn about pricing for AI Gateway.
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including pricing and markup, SDK and API compatibility, model availabilit
 - [Spend Management](https://vercel.com/docs/spend-management?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend&source_site=vercel-docs&relationship=related) — Learn how to get notified about your account spend and configure a webhook.
-- [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend&source_site=vercel-docs&relationship=related) — Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application perfor
 - [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
-- [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend&source_site=vercel-docs&relationship=related) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
+- [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend&source_site=vercel-docs&relationship=related) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 
 Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend.graph.md](/docs/ai-gateway/observability-and-spend.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

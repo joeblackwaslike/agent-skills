@@ -17,8 +17,8 @@ related:
 summary: Choose the regions where Vercel Sandbox runs your sandboxes, set a project default, and configure failover regions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/regions.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "cfe164a51d1bd5123368df5b62eb8e76ef0db39872af5b893a9bda9f0f87258f"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "acd7d1c1e1005e1ee88352e60f7a7363285c0979fa5b6c6fd3b567c792c559de"
 ---
 
 # Sandbox Regions
@@ -38,7 +38,7 @@ Sandboxes run in a region that you choose when you create them. Pick the region 
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fregions&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 - [Running commands in a Vercel Sandbox](https://vercel.com/docs/sandbox/run-commands-in-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fregions&source_site=vercel-docs&relationship=related) — Create isolated sandbox environments to run builds, tests, and commands safely.
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fregions&source_site=vercel-docs&relationship=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
-- [Get a named sandbox](https://vercel.com/docs/rest-api/sandboxes/get-a-named-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fregions&source_site=vercel-docs&relationship=related) — GET /v2/sandboxes/{name} — Retrieves a named sandbox by name, including its current sandbox and routes. If the sandbox i
+- [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fregions&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
 
 Full cross-link map for this page: [/docs/sandbox/concepts/regions.graph.md](/docs/sandbox/concepts/regions.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fregions&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -67,6 +67,27 @@ When you create a sandbox, Vercel resolves the region in this order:
 ## Set the region for a sandbox
 
 Pass the region when you create the sandbox:
+
+**CLI**
+
+```bash filename="terminal"
+sandbox create --name my-sandbox --region sfo1
+```
+
+The `--region` option is also available on `sandbox run` and `sandbox fork`.
+
+**TypeScript**
+
+```ts filename="index.ts"
+import { Sandbox } from '@vercel/sandbox';
+
+const sandbox = await Sandbox.create({
+  name: 'my-sandbox',
+  region: 'sfo1',
+});
+
+console.log(sandbox.region); // "sfo1"
+```
 
 Read the region of an existing sandbox with the `sandbox.region` accessor in the SDK, or from the `REGION` column of `sandbox list` in the CLI.
 
@@ -106,6 +127,24 @@ Teams on the Hobby plan or a [Pro trial](/docs/plans/pro-plan/trials) can set th
 
 Pass failover regions when creating a sandbox, or set them as a project default in the same **Sandbox Regions** settings section:
 
+**CLI**
+
+```bash filename="terminal"
+sandbox create --name my-sandbox --region iad1 --failover-regions cle1,sfo1
+```
+
+**TypeScript**
+
+```ts filename="index.ts"
+import { Sandbox } from '@vercel/sandbox';
+
+const sandbox = await Sandbox.create({
+  name: 'my-sandbox',
+  region: 'iad1',
+  failoverRegions: ['cle1', 'sfo1'],
+});
+```
+
 Failover regions must not include the sandbox's main region. Failover regions are also not supported for sandboxes that mount [drives](#regions-and-drives).
 
 To change the failover regions of an existing sandbox, pass `failoverRegions` to `sandbox.update()` in the SDK (use `[]` to remove them) or run `sandbox config failover-regions <name> <region,...|none>` in the CLI.
@@ -127,6 +166,25 @@ Read the regions where a snapshot is available with the `snapshot.regions` acces
 ## Regions and drives
 
 A [drive](/docs/sandbox/concepts/drives) is stored in a single region. Choose the region when you create the drive, with the `--region` option in the CLI or the `region` parameter in `Drive.getOrCreate()`. Drives are created in `iad1` when you don't specify a region:
+
+**CLI**
+
+```bash filename="terminal"
+sandbox drives get-or-create workspace-cache --region sfo1
+```
+
+**TypeScript**
+
+```ts filename="index.ts"
+import { Drive } from '@vercel/sandbox';
+
+const drive = await Drive.getOrCreate({
+  name: 'workspace-cache',
+  region: 'sfo1',
+});
+
+console.log(drive.region); // "sfo1"
+```
 
 A drive's region can't change after creation, and drives can't be moved between regions. Requesting an existing drive with a different region fails with a `conflict` error.
 

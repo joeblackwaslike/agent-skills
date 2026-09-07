@@ -15,8 +15,8 @@ related:
 summary: Configure your Vercel project with a TOML file using the same properties as vercel.json.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/vercel-toml.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "1dc65468467e70e2d1cb0d5e750d8f727b5b05fd45915af06c864b646f55d4a4"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "991f75ab4ec51393ef5694352369b9765657a613ab7053da398b5630bf15163b"
 ---
 
 # Static Configuration with vercel.toml
@@ -30,13 +30,13 @@ The `vercel.toml` file lets you configure your Vercel project with [TOML](https:
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing vercel.ts: Programmatic project configuration](https://vercel.com/changelog/vercel-ts?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-toml&source_site=vercel-docs&relationship=related)
-- [Integrating Terraform with Vercel](https://vercel.com/kb/guide/integrating-terraform-with-vercel?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-toml&source_site=vercel-docs&relationship=related) — Understand the benefits of Terraform and how to set up the Integration with Vercel.
 - [Vercel](https://turborepo.dev/docs/guides/ci-vendors/vercel?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-toml&source_site=vercel-docs&relationship=related) — Deploy your Turborepo on Vercel with zero-config Remote Caching.
+- [Integrating Terraform with Vercel](https://vercel.com/kb/guide/integrating-terraform-with-vercel?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-toml&source_site=vercel-docs&relationship=related) — Understand the benefits of Terraform and how to set up the Integration with Vercel.
 - [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-toml&source_site=vercel-docs&relationship=related) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
-- [Global Vercel CLI Configuration](https://vercel.com/docs/project-configuration/global-configuration?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-toml&source_site=vercel-docs&relationship=related) — Learn how to configure Vercel CLI under your system user.
 - [Service configuration reference](https://vercel.com/docs/services/config-reference?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-toml&source_site=vercel-docs&relationship=related) — Options available for service configuration.
-- [Microfrontends Configuration](https://vercel.com/docs/microfrontends/configuration?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-toml&source_site=vercel-docs&relationship=related) — Configure your microfrontends.json.
+- [Global Vercel CLI Configuration](https://vercel.com/docs/project-configuration/global-configuration?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-toml&source_site=vercel-docs&relationship=related) — Learn how to configure Vercel CLI under your system user.
 - [General settings](https://vercel.com/docs/project-configuration/general-settings?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-toml&source_site=vercel-docs&relationship=related) — Configure basic settings for your Vercel project, including the project name, build and development settings, root direc
+- [Serving Static Files](https://vercel.com/docs/platforms/multi-tenant-platforms/serving-static-files?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-toml&source_site=vercel-docs&relationship=related) — Serve tenant-specific static files like robots.txt, sitemap.xml, and llms.txt dynamically using route handlers.
 
 Full cross-link map for this page: [/docs/project-configuration/vercel-toml.graph.md](/docs/project-configuration/vercel-toml.graph.md?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-toml&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -49,7 +49,7 @@ Create `vercel.toml` in your project root and commit it with your code. Use only
 
 Set top-level properties using TOML key-value pairs. This example configures the build command, output directory, and clean URLs:
 
-#### \['vercel.toml'
+#### vercel.toml
 
 ```toml filename="vercel.toml"
 "$schema" = "https://openapi.vercel.sh/vercel.json"
@@ -58,7 +58,7 @@ outputDirectory = "dist"
 cleanUrls = true
 ```
 
-#### 'vercel.json']
+#### vercel.json
 
 ```json filename="vercel.json"
 {
@@ -71,7 +71,7 @@ cleanUrls = true
 
 TOML is a good fit for configuring [Services](/docs/services), which let you deploy multiple applications within one Vercel project. This example deploys a frontend and backend service, routing `/api` requests to the backend and all other requests to the frontend:
 
-#### \['vercel.toml'
+#### vercel.toml
 
 ```toml filename="vercel.toml"
 "$schema" = "https://openapi.vercel.sh/vercel.json"
@@ -94,7 +94,7 @@ source = "/(.*)"
 destination = { service = "frontend" }
 ```
 
-#### 'vercel.json']
+#### vercel.json
 
 ```json filename="vercel.json"
 {

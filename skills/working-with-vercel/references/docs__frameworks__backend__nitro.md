@@ -17,8 +17,8 @@ related:
 summary: Deploy Nitro applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/nitro.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "d9a82d1d31a5cfd1fd94edcb33597f2d2d2e3075e50bce84d9f3842dddc44c9a"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "bf4d18403750f8c04b519b102f0caa2a367428edd692a00195a7af8201d47e3d"
 ---
 
 # Nitro on Vercel
@@ -31,12 +31,12 @@ Nitro is a full-stack framework with TypeScript-first support. It includes files
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Build a Weather API on Vercel: Express, FastAPI, and Nitro](https://vercel.com/kb/guide/weather-api-with-fastapi?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fnitro&source_site=vercel-docs&relationship=related) — Build a weather API on Vercel with FastAPI, Express, or Nitro. Compare the three runtimes, add caching and Observability
 - [What is the Nitro Vite plugin?](https://vercel.com/kb/guide/nitro-vite-plugin?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fnitro&source_site=vercel-docs&relationship=related) — The Nitro Vite plugin \\(nitro/vite\\) adds SSR, API routes, and deploy-anywhere server builds to any Vite app. Learn what
-- [Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fnitro&source_site=vercel-docs&relationship=related) — Learn how to deploy a TanStack Start app to Vercel using the Nitro Vite plugin. Covers framework setup, Git and CLI depl
+- [How to Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fnitro&source_site=vercel-docs&relationship=related) — Deploy a TanStack Start app to Vercel with the Nitro Vite plugin. Covers Git and CLI deployment, Fluid compute defaults,
 - [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fnitro&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
 - [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fnitro&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
 - [Zero-configuration support for Nitro](https://vercel.com/changelog/zero-configuration-support-for-nitro?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fnitro&source_site=vercel-docs&relationship=related)
-- [How to ship a NestJS app on Vercel](https://vercel.com/kb/guide/ship-a-nestjs-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fnitro&source_site=vercel-docs&relationship=related) — Deploy a NestJS app to Vercel with zero configuration. Learn how to ship from a template, the Nest CLI, or Git, and conf
 - [Improved support for Nuxt on Vercel](https://vercel.com/blog/nuxt-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fnitro&source_site=vercel-docs&relationship=related)
 - [TanStack Start on Vercel](https://vercel.com/docs/frameworks/full-stack/tanstack-start?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fnitro&source_site=vercel-docs&relationship=related) — Deploy TanStack Start applications to Vercel with Nitro and configure Vercel Functions.
 - [NestJS on Vercel](https://vercel.com/docs/frameworks/backend/nestjs?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fnitro&source_site=vercel-docs&relationship=related) — Deploy NestJS applications to Vercel with zero configuration.

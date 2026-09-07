@@ -16,8 +16,8 @@ related:
 summary: Monitor token requests, authorizations, revocations, and trigger deliveries for your connectors.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/observability.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "1419d2068695b31c5cf263c640e2c0b0af1e6222d2164528acd2555db4bd0b8a"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "e7b173aa3d60784586ec6be728d141ced66e277ea62261b2c98dea01a32a909f"
 ---
 
 # Observability
@@ -37,7 +37,7 @@ Every connector has an **Observability** tab that shows runtime events for token
 - [Authentication](https://vercel.com/docs/connect/concepts/authentication?from=related&source_path=%2Fdocs%2Fconnect%2Fobservability&source_site=vercel-docs&relationship=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
 - [SDK Reference](https://vercel.com/docs/connect/ts-sdk-reference?from=related&source_path=%2Fdocs%2Fconnect%2Fobservability&source_site=vercel-docs&relationship=related) — API reference for @vercel/connect, the TypeScript SDK for requesting runtime tokens from Vercel Connect.
 - [Tokens](https://vercel.com/docs/connect/concepts/tokens?from=related&source_path=%2Fdocs%2Fconnect%2Fobservability&source_site=vercel-docs&relationship=related) — Short-lived provider credentials issued by Vercel Connect. Each token request specifies a subject, optional installation
-- [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fconnect%2Fobservability&source_site=vercel-docs&relationship=related) — Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application perfor
+- [List connectors](https://vercel.com/docs/rest-api/connect/list-connectors?from=related&source_path=%2Fdocs%2Fconnect%2Fobservability&source_site=vercel-docs&relationship=related) — GET /v2/connect/connectors — List connectors that belong to a team.
 
 Full cross-link map for this page: [/docs/connect/observability.graph.md](/docs/connect/observability.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fobservability&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

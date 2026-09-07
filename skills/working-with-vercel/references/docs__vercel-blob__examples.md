@@ -13,13 +13,17 @@ related:
 summary: Examples on how to use Vercel Blob in your applications
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/examples.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "351cc55e19b4c729eff025f3fc1f4f07464382dccaa4f711a55c9146d168c0c4"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "11fdfd660092425243a915b05d1555a6f0c2f368d3f78c80d0227dbc82d3f4c1"
 ---
 
 # Vercel Blob examples
 
 > **🔒 Permissions Required**: Vercel Blob
+
+## Range requests
+
+Vercel Blob supports [range requests](https://developer.mozilla.org/docs/Web/HTTP/Range_requests) for partial downloads. This means you can download only a portion of a blob, here are examples:
 
 
 <!-- docsgraph:related -->
@@ -35,15 +39,11 @@ sha256: "351cc55e19b4c729eff025f3fc1f4f07464382dccaa4f711a55c9146d168c0c4"
 - [Public Storage](https://vercel.com/docs/vercel-blob/public-storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fexamples&source_site=vercel-docs&relationship=related) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
 - [Cancel a blob upload](https://vercel.com/docs/rest-api/vcr/cancel-a-blob-upload?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fexamples&source_site=vercel-docs&relationship=related) — DELETE /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid} — DELETE /v2/:teamSlug/:projectSlug/:repositor
 - [Delete a blob](https://vercel.com/docs/rest-api/vcr/delete-a-blob?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fexamples&source_site=vercel-docs&relationship=related) — DELETE /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/{digest} — DELETE /v2/:teamSlug/:projectSlug/:repositoryName/
+- [Vercel Storage overview](https://vercel.com/docs/storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fexamples&source_site=vercel-docs&relationship=related) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
 - [Delete a Blob store](https://vercel.com/docs/rest-api/storage/delete-a-blob-store?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fexamples&source_site=vercel-docs&relationship=related) — DELETE /storage/stores/blob/{id} — Delete a Blob store
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fexamples&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/vercel-blob/examples.graph.md](/docs/vercel-blob/examples.graph.md?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fexamples&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-## Range requests
-
-Vercel Blob supports [range requests](https://developer.mozilla.org/docs/Web/HTTP/Range_requests) for partial downloads. This means you can download only a portion of a blob, here are examples:
 
 ```bash filename="Terminal"
 # First 4 bytes

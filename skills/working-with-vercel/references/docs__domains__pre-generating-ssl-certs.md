@@ -3,7 +3,7 @@ title: Pre-Generate SSL Certificates
 product: vercel
 url: /docs/domains/pre-generating-ssl-certs
 canonical_url: "https://vercel.com/docs/domains/pre-generating-ssl-certs"
-last_updated: 2026-04-07
+last_updated: 2026-08-28
 type: how-to
 prerequisites:
   - /docs/domains
@@ -14,8 +14,8 @@ related:
 summary: test
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/pre-generating-ssl-certs.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "cac1bd8b5f077c9e60676ee0c720e09b9d2a9aa60b1baeb9a0341cbdd31f60df"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "55d91b53a0cb882556245baadeee5858f89cc77b4828c4d2896959eb629fa7f3"
 ---
 
 # Pre-Generate SSL Certificates
@@ -23,6 +23,11 @@ sha256: "cac1bd8b5f077c9e60676ee0c720e09b9d2a9aa60b1baeb9a0341cbdd31f60df"
 > **💡 Note:** This page is part the domains transfer experience. See [this
 > page](/docs/domains/working-with-domains/transfer-your-domain#transfer-a-domain-to-vercel)
 > for the full set of steps to transfer a domain to Vercel.
+
+This article guides you through all the steps necessary to set up SSL certificates for a domain
+being migrated to Vercel without downtime. Your domain should be serving content from 3rd party
+servers that are unrelated to Vercel, and you need to be prepared to make the necessary
+DNS changes.
 
 
 <!-- docsgraph:related -->
@@ -39,15 +44,10 @@ sha256: "cac1bd8b5f077c9e60676ee0c720e09b9d2a9aa60b1baeb9a0341cbdd31f60df"
 - [Uploading Custom SSL Certificates](https://vercel.com/docs/domains/custom-ssl-certificate?from=related&source_path=%2Fdocs%2Fdomains%2Fpre-generating-ssl-certs&source_site=vercel-docs&relationship=related) — By default, Vercel provides all domains with a custom SSL certificates. However, Enterprise teams can upload their own c
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fpre-generating-ssl-certs&source_site=vercel-docs&relationship=related) — Add and configure a custom domain for your Vercel project using the CLI.
 - [Troubleshooting domains](https://vercel.com/docs/domains/troubleshooting?from=related&source_path=%2Fdocs%2Fdomains%2Fpre-generating-ssl-certs&source_site=vercel-docs&relationship=related) — Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
-- [Working with domains](https://vercel.com/docs/domains/working-with-domains?from=related&source_path=%2Fdocs%2Fdomains%2Fpre-generating-ssl-certs&source_site=vercel-docs&relationship=related) — Learn how domains work and the options Vercel provides for managing them.
+- [Encryption and TLS](https://vercel.com/docs/cdn-security/encryption?from=related&source_path=%2Fdocs%2Fdomains%2Fpre-generating-ssl-certs&source_site=vercel-docs&relationship=related) — Learn how Vercel encrypts data in transit and at rest.
 
 Full cross-link map for this page: [/docs/domains/pre-generating-ssl-certs.graph.md](/docs/domains/pre-generating-ssl-certs.graph.md?from=related&source_path=%2Fdocs%2Fdomains%2Fpre-generating-ssl-certs&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-This article guides you through all the steps necessary to set up SSL certificates for a domain
-being migrated to Vercel without downtime. Your domain should be serving content from 3rd party
-servers that are unrelated to Vercel, and you need to be prepared to make the necessary
-DNS changes.
 
 You can do this using either the Vercel Domains dashboard, or the [Vercel CLI](/docs/cli/certs).
 

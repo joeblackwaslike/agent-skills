@@ -11,12 +11,13 @@ related:
   - /docs/cli
   - /docs/cli/project-linking
   - /docs/cli/link
+  - /docs/cli/global-options
   - /docs/cli/project
 summary: Learn how to open your current project in the Vercel Dashboard using the vercel open CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/open.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "eb9d6a79a088708d70df9583e6360fd683c8a22668822a0b95dde048e42e2cb5"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "595918758ef8f6a5ffc4e3c9009065d738979b0957a42d571b1ae888d99af640"
 ---
 
 # vercel open
@@ -31,10 +32,10 @@ The `vercel open` command opens your current project in the Vercel Dashboard. It
 
 - [Open your Vercel dashboard from the Vercel CLI](https://vercel.com/changelog/open-your-vercel-dashboard-from-the-vercel-cli?from=related&source_path=%2Fdocs%2Fcli%2Fopen&source_site=vercel-docs&relationship=related)
 - [vercel login](https://vercel.com/docs/cli/login?from=related&source_path=%2Fdocs%2Fcli%2Fopen&source_site=vercel-docs&relationship=related) — Learn how to login into your Vercel account using the vercel login CLI command.
-- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fcli%2Fopen&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [vercel dev](https://vercel.com/docs/cli/dev?from=related&source_path=%2Fdocs%2Fcli%2Fopen&source_site=vercel-docs&relationship=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
-- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related&source_path=%2Fdocs%2Fcli%2Fopen&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fcli%2Fopen&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fopen&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel connect](https://vercel.com/docs/cli/connect?from=related&source_path=%2Fdocs%2Fcli%2Fopen&source_site=vercel-docs&relationship=related) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
+- [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fopen&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 
 Full cross-link map for this page: [/docs/cli/open.graph.md](/docs/cli/open.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fopen&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -94,6 +95,24 @@ vercel open
 *Linking your project before opening it in the dashboard.*
 
 Make sure you're in the correct directory where your project files are located.
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel open` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 ## Related
 

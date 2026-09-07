@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/codex.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "61480bdfe5d98b32680a37a605d6880c4a6d5f121ce45d90ff6a2483ad1ecb48"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "9f8528133f8c3fd8935a8c6563fc3ec97dc18dc4a819ff0ff4f0b48c9c745c92"
 ---
 
 # Codex Harness
@@ -39,6 +39,7 @@ import { createVercelSandbox } from '@ai-sdk/sandbox-vercel';
 
 const agent = new HarnessAgent({
   harness: codex,
+  model: 'gpt-5.6-luna',
   sandbox: createVercelSandbox({
     runtime: 'node24',
     ports: [4000],
@@ -78,7 +79,6 @@ Use `createCodex()` to configure the runtime:
 
 ```ts
 const harness = createCodex({
-  model: 'gpt-5.5',
   reasoningEffort: 'high',
   webSearch: true,
   codexConfig: {
@@ -103,8 +103,7 @@ Settings:
   provided, so use the snake_case keys from Codex's `config.toml` reference.
   The adapter's managed values take precedence over conflicting entries.
 - `mcpServers`: MCP server definitions keyed by server name.
-- `model`: OpenAI model id. If omitted, the adapter uses its pinned default.
-- `reasoningEffort`: `low`, `medium`, or `high`.
+- `reasoningEffort`: `low`, `medium`, `high`, `xhigh`, or `max`.
 - `webSearch`: allow live web search.
 - `port`: bridge port override.
 - `startupTimeoutMs`: maximum time to wait for the bridge to start.

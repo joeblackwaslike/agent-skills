@@ -9,12 +9,14 @@ prerequisites:
   - /docs/cli
 related:
   - /docs/integrations
+  - /docs/integrations/create-integration/submit-integration
   - /docs/cli/project
+  - /docs/cli/global-options
 summary: Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover available products using the...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/integration.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "54fc808db2f28595993ed1b8c24f19955ce3d3b6d25b8b4a8adb490b0c2337c2"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "e435c2472ac4eaa708a189b0004e848a91058305401626bca4c9c7680b900cbe"
 ---
 
 # vercel integration
@@ -34,9 +36,9 @@ The `vercel integration` command manages [marketplace integrations](/docs/integr
 - [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
 - [vercel install](https://vercel.com/docs/cli/install?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=related) — Learn how to install marketplace native integrations and provision resources with the vercel install CLI command.
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=related) — Learn how you can add a product to your Vercel project through a native integration.
-- [Requirements for listing an Integration](https://vercel.com/docs/integrations/create-integration/submit-integration?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=related) — Learn about all the requirements and guidelines needed when creating your Integration.
-- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
-- [Update Installation](https://vercel.com/docs/rest-api/marketplace/update-installation?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=related) — PATCH /v1/installations/{integrationConfigurationId} — This endpoint updates an integration installation.
+- [vercel connect](https://vercel.com/docs/cli/connect?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=related) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
+- [Marketplace Vercel API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=related) — Learn how to call Vercel API endpoints to interact with Vercel resources
+- [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=related) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
 
 Full cross-link map for this page: [/docs/cli/integration.graph.md](/docs/cli/integration.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -55,6 +57,8 @@ It supports the following subcommands:
 - [`update`](#vercel-integration-update): Update a marketplace integration installation
 - [`remove`](#vercel-integration-remove): Uninstall an integration
 - [`resource`](#vercel-integration-resource): Manage individual resources (connect, disconnect, remove, create-threshold, claim)
+
+For the `<integration-name>` in commands below, use the integration's [URL slug](/docs/integrations/create-integration/submit-integration#url-slug). You can find the slug in the Marketplace URL. For example, for `https://vercel.com/marketplace/neon`, the slug is `neon`. You can also browse available integrations with the [`integration discover`](/docs/cli/integration#vercel-integration-discover) command.
 
 ## vercel integration add
 
@@ -791,6 +795,24 @@ vercel integration resource claim my-stripe-sandbox --no-wait
 # Output the URL as JSON
 vercel integration resource claim my-stripe-sandbox --no-wait --format=json
 ```
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel integration` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 
 ---

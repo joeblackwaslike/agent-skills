@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "9084ea5a1b4ea2240017f8d50922cbf7c75dcdc12c5a4d23ef6e8ebf7bcf8b3a"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "666c662e0a81f5f2867380934dbce1c9f83bc5bc111aba17f0e3855958a43098"
 ---
 
 # Community Providers
@@ -101,6 +101,7 @@ Here are the community providers that implement the Language Model Specification
   - [Clarifai](/providers/openai-compatible-providers/clarifai)
   - [Heroku](/providers/openai-compatible-providers/heroku)
   - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)
+  - [Synthorai](/providers/openai-compatible-providers/synthorai)
 - [Community Providers](/providers/community-providers)
   - [Writing a Custom Provider](/providers/community-providers/custom-providers)
   - [A2A](/providers/community-providers/a2a)

@@ -16,13 +16,17 @@ related:
 summary: Vercel Blob is a scalable, cost-effective object storage service with private and public access modes for files up to 5 TB.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "61a3e0688da8a3951f43184c50c6d2de9e7a15464049f0cbcb9070ee082fc398"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "7ea7c09c6997fc2bd61b9cd5bad56f28d8c3b3e8dc0a9e5eb67e1f1d4963b634"
 ---
 
 # Vercel Blob
 
 > **🔒 Permissions Required**: Vercel Blob
+
+## Use cases
+
+[Vercel Blob](/storage/blob) is an object storage service for uploading files at build time or at runtime (for example, when users submit files). Common use cases include:
 
 
 <!-- docsgraph:related -->
@@ -45,10 +49,6 @@ sha256: "61a3e0688da8a3951f43184c50c6d2de9e7a15464049f0cbcb9070ee082fc398"
 
 Full cross-link map for this page: [/docs/vercel-blob.graph.md](/docs/vercel-blob.graph.md?from=related&source_path=%2Fdocs%2Fvercel-blob&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-## Use cases
-
-[Vercel Blob](/storage/blob) is an object storage service for uploading files at build time or at runtime (for example, when users submit files). Common use cases include:
 
 - Files for display and download such as avatars, screenshots, cover images, and videos
 - Large files such as video and audio to take advantage of the global network

@@ -16,13 +16,15 @@ related:
 summary: Comments allow teams and invited participants to give direct feedback on preview deployments. Learn more about Comments in this overview.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/comments.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "119a193c9e61db114f6afdf214e6b8db108c486bdf4c96f1cbeaae758645ac73"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "c035a7293c593d55f7001965d000419be84c294e61bd3ffd8f828f03c111e6c2"
 ---
 
 # Comments Overview
 
 > **🔒 Permissions Required**: Comments
+
+Comments allow teams [and invited participants](/docs/comments/how-comments-work#sharing) to give direct feedback on [preview deployments](/docs/deployments/environments#preview-environment-pre-production) or other environments through the Vercel Toolbar. Comments can be added to any part of the UI, opening discussion threads that [can be linked to Slack threads](/docs/comments/integrations#use-the-vercel-app-for-slack). This feature is **enabled by default** on *all* preview deployments, for all account plans, free of charge. The only requirement is that all users must have a Vercel account.
 
 
 <!-- docsgraph:related -->
@@ -45,8 +47,6 @@ sha256: "119a193c9e61db114f6afdf214e6b8db108c486bdf4c96f1cbeaae758645ac73"
 
 Full cross-link map for this page: [/docs/comments.graph.md](/docs/comments.graph.md?from=related&source_path=%2Fdocs%2Fcomments&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Comments allow teams [and invited participants](/docs/comments/how-comments-work#sharing) to give direct feedback on [preview deployments](/docs/deployments/environments#preview-environment-pre-production) or other environments through the Vercel Toolbar. Comments can be added to any part of the UI, opening discussion threads that [can be linked to Slack threads](/docs/comments/integrations#use-the-vercel-app-for-slack). This feature is **enabled by default** on *all* preview deployments, for all account plans, free of charge. The only requirement is that all users must have a Vercel account.
 
 ![Image](`/front/docs/comments/comment-light.png`)
 

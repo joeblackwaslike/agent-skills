@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-output-generated-error.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "af7d0cca9196b4a3adc0af4e2004f40021c615cf49f33b9afb2352acff67b82f"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "b9a5313fa7d18fbb45d440c9ff7daaf2eabc85a6b6da7f52ab9400126cb205fc"
 ---
 
 # AI_NoOutputGeneratedError
@@ -65,6 +65,7 @@ if (NoOutputGeneratedError.isInstance(error)) {
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
 - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
 - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)
+- [ToolChoiceViolationError](/docs/reference/ai-sdk-errors/ai-tool-choice-violation-error)
 - [AI_TypeValidationError](/docs/reference/ai-sdk-errors/ai-type-validation-error)
 - [AI_UIMessageStreamError](/docs/reference/ai-sdk-errors/ai-ui-message-stream-error)
 - [AI_UnsupportedFunctionalityError](/docs/reference/ai-sdk-errors/ai-unsupported-functionality-error)

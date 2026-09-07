@@ -12,13 +12,15 @@ related:
 summary: Information about verified bots and their handling in BotID
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/botid/verified-bots.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "bdae4de11336e9c413d3684e3f7d42efa1c95e4ba6b6e9a3daa39542dcc0d83d"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "b9152020471dbab243d06760682fa41a279a034a17470bb2306c6cb6c711bad7"
 ---
 
 # Handling Verified Bots
 
 > **💡 Note:** Handling verified bots is available in botid@1.5.0 and above.
+
+BotID allows you to identify and handle [verified bots](/docs/bot-management#verified-bots) differently from regular bots. This feature enables you to permit certain trusted bots (like AI assistants) to access your application while blocking others.
 
 
 <!-- docsgraph:related -->
@@ -39,8 +41,6 @@ sha256: "bdae4de11336e9c413d3684e3f7d42efa1c95e4ba6b6e9a3daa39542dcc0d83d"
 
 Full cross-link map for this page: [/docs/botid/verified-bots.graph.md](/docs/botid/verified-bots.graph.md?from=related&source_path=%2Fdocs%2Fbotid%2Fverified-bots&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-BotID allows you to identify and handle [verified bots](/docs/bot-management#verified-bots) differently from regular bots. This feature enables you to permit certain trusted bots (like AI assistants) to access your application while blocking others.
 
 Vercel maintains a directory of known and verified bots across the web at [bots.fyi](https://bots.fyi)
 

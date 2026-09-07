@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/deepagents.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "e85380cb233c9990bcf7ba0746ab752e7f75079db44578d31ceefda22318d5f5"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "552f960be2add97cb4cb258e7f59dcfe62e03112f65bb71f3c55d8ebf7f87f0d"
 ---
 
 # Deep Agents Harness
@@ -42,6 +42,7 @@ import { createVercelSandbox } from '@ai-sdk/sandbox-vercel';
 
 const agent = new HarnessAgent({
   harness: deepAgents,
+  model: 'anthropic/claude-sonnet-4-6',
   sandbox: createVercelSandbox({
     runtime: 'node24',
     ports: [4000],
@@ -80,9 +81,7 @@ Vercel Sandbox, and one of the variables listed under
 Use `createDeepAgents()` to configure the runtime:
 
 ```ts
-const harness = createDeepAgents({
-  model: 'claude-sonnet-4',
-});
+const harness = createDeepAgents({ recursionLimit: 100 });
 ```
 
 Settings:
@@ -98,9 +97,6 @@ Settings:
   credentials the harness adapter can discover, read, or otherwise access in
   the host process.
 - `mcpServers`: MCP server definitions keyed by server name.
-- `model`: model id passed to the Deep Agents (LangChain) runtime. Through AI
-  Gateway, use the `creator/model` slug (e.g. `anthropic/claude-sonnet-4-6`,
-  `google/gemini-2.5-flash`, `openai/gpt-4.1-mini`).
 - `port`: bridge port override.
 - `recursionLimit`: maximum LangGraph super-steps per turn. When omitted, the
   Deep Agents default applies.
@@ -147,9 +143,11 @@ Supported environment variables:
 To run a non-Anthropic model, select `ai-gateway`:
 
 ```ts
-const harness = createDeepAgents({
+const harness = createDeepAgents({ auth: 'ai-gateway' });
+const agent = new HarnessAgent({
+  harness,
   model: 'google/gemini-2.5-flash',
-  auth: 'ai-gateway',
+  sandbox,
 });
 ```
 

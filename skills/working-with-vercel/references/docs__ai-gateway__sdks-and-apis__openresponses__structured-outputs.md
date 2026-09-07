@@ -16,8 +16,8 @@ related:
 summary: Constrain OpenResponses API output to a JSON schema so every response parses.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/structured-outputs.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "14175c624eb5681c51d42a08a5c104374e6b8a4b174fa009b0f285565fe8de22"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "17e8223d2d1282914cb61c29b7c8d6f206b091ecfaae3ee6f59ba43fbf12cc87"
 ---
 
 # Structured Outputs
@@ -42,7 +42,7 @@ The [OpenResponses API](/docs/ai-gateway/sdks-and-apis/openresponses) can constr
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openresponses/structured-outputs.graph.md](/docs/ai-gateway/sdks-and-apis/openresponses/structured-outputs.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Fstructured-outputs&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-#### \['cURL'
+#### cURL
 
 ```bash filename="structured-outputs.sh"
 curl -X POST "https://ai-gateway.vercel.sh/v1/responses" \
@@ -86,7 +86,7 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/responses" \
   }'
 ```
 
-#### 'TypeScript'
+#### TypeScript
 
 ```typescript filename="structured.ts"
 const apiKey = process.env.AI_GATEWAY_API_KEY;
@@ -131,7 +131,7 @@ console.log(JSON.parse(message.content[0].text));
 // { name: 'John', age: 30, city: 'NYC' }
 ```
 
-#### 'Python']
+#### Python
 
 ```python filename="structured.py"
 import json

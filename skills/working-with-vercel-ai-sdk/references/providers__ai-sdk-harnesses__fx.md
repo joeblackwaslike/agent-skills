@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/fx.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "7c98a66978fee07330ee054e9369d73f006547a05a0c2e5326b18a3d73f419ab"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "1019bd46b432160581947c2dbf885e74dc37468afce2a3682fb0927f23cbf5cb"
 ---
 
 # fx Harness
@@ -41,6 +41,7 @@ import { createVercelSandbox } from '@ai-sdk/sandbox-vercel';
 
 const agent = new HarnessAgent({
   harness: fx,
+  model: 'openai/gpt-5.6-luna',
   sandbox: createVercelSandbox({
     runtime: 'node24',
     ports: [4000],
@@ -77,7 +78,6 @@ Use `createFx()` to configure the runtime:
 ```ts
 const harness = createFx({
   auth: 'ai-gateway',
-  model: 'openai/gpt-5.4',
   port: 4001,
   startupTimeoutMs: 180_000,
 });
@@ -98,8 +98,6 @@ Settings:
   value forwarded into the sandbox process. It does not restrict which
   credentials the harness adapter can discover, read, or otherwise access in
   the host process.
-- `model`: AI Gateway model id selected through ACP. When omitted, fx chooses
-  its own default model.
 - `mcpServers`: MCP server definitions keyed by server name. fx ACP sessions
   use only the servers supplied by the ACP client.
 - `port`: ACP bridge port override.
@@ -194,6 +192,10 @@ or apply its own permission policy without sending an ACP permission request.
   supported, but filtering fx built-ins throws an unsupported-capability error.
 - fx ACP does not expose a structured-output metadata mapping, so schema-backed
   structured output is unsupported.
+- Custom `headers` are not natively supported and only applied via
+  sandbox-external request transformations. When a sandbox without that
+  capability is provided, custom `headers` therefore cannot be passed and are
+  ignored.
 
 ## Related
 

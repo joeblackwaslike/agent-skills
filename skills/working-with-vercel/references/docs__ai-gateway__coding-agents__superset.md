@@ -14,8 +14,8 @@ related:
 summary: Use Superset with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/superset.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "8c7a46311c6e49d590f9c3eea663623949efe2b8f4a8e81bd94b01b32c32394e"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "a1e85422800d770effbf428af05c5cd3094e62638e275d4d732d1ce2990bc516"
 ---
 
 # Superset
@@ -29,12 +29,11 @@ sha256: "8c7a46311c6e49d590f9c3eea663623949efe2b8f4a8e81bd94b01b32c32394e"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fsuperset&source_site=vercel-docs&relationship=related)
-- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fsuperset&source_site=vercel-docs&relationship=related) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
+- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fsuperset&source_site=vercel-docs&relationship=related) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
 - [Xcode](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fsuperset&source_site=vercel-docs&relationship=related) — Use Xcode's coding assistant with the AI Gateway.
-- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fsuperset&source_site=vercel-docs&relationship=related) — Use OpenCode with the AI Gateway.
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fsuperset&source_site=vercel-docs&relationship=related) — Create an AI Gateway API key, make your first request with TypeScript, Python, or cURL, and verify how the request was r
 - [LibreChat](https://vercel.com/docs/ai-gateway/chat-platforms/librechat?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fsuperset&source_site=vercel-docs&relationship=related) — Use LibreChat with the AI Gateway.
-- [Claude Code and Claude Agent SDK](https://vercel.com/docs/ai-gateway/coding-agents/claude-code?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fsuperset&source_site=vercel-docs&relationship=related) — Use Claude Code and the Claude Agent SDK with AI Gateway.
-- [Conductor](https://vercel.com/docs/ai-gateway/coding-agents/conductor?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fsuperset&source_site=vercel-docs&relationship=related) — Use Conductor with the AI Gateway.
+- [Claude Code and Claude Agent SDK](https://vercel.com/docs/ai-gateway/coding-agents/claude-code?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fsuperset&source_site=vercel-docs&relationship=related) — Connect Claude Code to AI Gateway with one CLI command, or configure it manually.
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/superset.graph.md](/docs/ai-gateway/coding-agents/superset.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fsuperset&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

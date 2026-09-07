@@ -14,8 +14,8 @@ related:
 summary: Learn how to integrate Sanity with Vercel. Follow our tutorial to deploy the Sanity template or install the integration for real-time collaboration...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/cms/sanity.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "ea4319a0eca6d7074d2216f93ea26a9dfd83165b615fd1b267b0d95a44031d57"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "08613a0455b4a3465f6a697439cae98a1cdbbfb4a9821fbb34429c68f78acab8"
 ---
 
 # Vercel Sanity Integration
@@ -48,7 +48,7 @@ To get started with the Sanity on Vercel deploy the template below:
 Or, follow the steps below to install the integration:
 
 - ### Install the Vercel CLI
-  To pull in environment variables from  to your Vercel project, you need to install the [Vercel CLI](/docs/cli). Run the following command in your terminal:
+  To pull in environment variables from Sanity to your Vercel project, you need to install the [Vercel CLI](/docs/cli). Run the following command in your terminal:
   <CodeBlock>
     <Code tab="pnpm">
       ```bash
@@ -73,10 +73,10 @@ Or, follow the steps below to install the integration:
   </CodeBlock>
 
 - ### Install your CMS integration
-  Navigate to the  and follow the steps to install the integration.
+  Navigate to the [ integration](`/integrations/${props.cms.toLowerCase\(\).split\(/[.\s]+/\).join\('-'\)}`) and follow the steps to install the integration.
 
 - ### Pull in environment variables
-  Once you've installed the  integration, you can pull in environment variables from  to your Vercel project. In your terminal, run:
+  Once you've installed the Sanity integration, you can pull in environment variables from Sanity to your Vercel project. In your terminal, run:
   ```bash
   vercel env pull
   ```

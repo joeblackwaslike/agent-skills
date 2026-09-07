@@ -16,13 +16,15 @@ related:
 summary: "View and override your application's feature flags from the Vercel Toolbar"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/flags-explorer.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "e57fdca1991707db9cde4568be770de87b3264f1b1b9a34a10b99893ddc51076"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "ad8d99a4458c3216a415e3c1b3746f58ba5c7d1f2653dc3d0c65afa8ff22efad"
 ---
 
 # Flags Explorer
 
 > **🔒 Permissions Required**: Flags Explorer
+
+The Flags Explorer is a feature of the [Vercel Toolbar](/docs/vercel-toolbar) that allows you to view and override your application's feature flags without leaving your browser tab. You can also share and recommend overrides to team members. Follow the [Quickstart](/docs/flags/flags-explorer/getting-started) to make the Flags Explorer aware of your application's feature flags.
 
 
 <!-- docsgraph:related -->
@@ -45,8 +47,6 @@ sha256: "e57fdca1991707db9cde4568be770de87b3264f1b1b9a34a10b99893ddc51076"
 
 Full cross-link map for this page: [/docs/flags/flags-explorer.graph.md](/docs/flags/flags-explorer.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-The Flags Explorer is a feature of the [Vercel Toolbar](/docs/vercel-toolbar) that allows you to view and override your application's feature flags without leaving your browser tab. You can also share and recommend overrides to team members. Follow the [Quickstart](/docs/flags/flags-explorer/getting-started) to make the Flags Explorer aware of your application's feature flags.
 
 Quickly override feature flags for your current session without signing into your feature flag provider, and without affecting team members or automated tests using the Flags Explorer.
 

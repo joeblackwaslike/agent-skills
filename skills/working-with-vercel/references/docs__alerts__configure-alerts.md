@@ -3,7 +3,7 @@ title: Configure alerts
 product: vercel
 url: /docs/alerts/configure-alerts
 canonical_url: "https://vercel.com/docs/alerts/configure-alerts"
-last_updated: 2026-08-14
+last_updated: 2026-09-02
 type: how-to
 prerequisites:
   - /docs/alerts
@@ -13,13 +13,15 @@ related:
 summary: Configure alert rules and notification destinations for Vercel Observability alerts.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/alerts/configure-alerts.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "ca62d550d6718fd70bc4a16160faae3568b8a5374ff7130c566c8bd60b7ce3a1"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "2870c8e0141e4faade15fd89e2c07298c56c1c37d52eb8095e5eb60b2495fdf7"
 ---
 
 # Configure alerts
 
 > **🔒 Permissions Required**: Alerts
+
+Use alert rules to notify your team when Vercel detects error or usage anomalies.
 
 
 <!-- docsgraph:related -->
@@ -30,16 +32,14 @@ sha256: "ca62d550d6718fd70bc4a16160faae3568b8a5374ff7130c566c8bd60b7ce3a1"
 - [Monitor uptime for AI-native apps with Vercel Alerts](https://vercel.com/kb/guide/monitor-uptime-for-ai-native-apps-with-vercel-alerts?from=related&source_path=%2Fdocs%2Falerts%2Fconfigure-alerts&source_site=vercel-docs&relationship=related) — Learn how to use Vercel Anomaly Alerts as an early-warning system for AI-powered apps, helping you catch 5xx spikes and
 - [Anomaly alert configuration now available](https://vercel.com/changelog/anomaly-alert-configuration-now-available?from=related&source_path=%2Fdocs%2Falerts%2Fconfigure-alerts&source_site=vercel-docs&relationship=related)
 - [Detect memory and OOM failures in Vercel Functions](https://vercel.com/kb/guide/detect-memory-and-oom-failures-in-serverless-functions?from=related&source_path=%2Fdocs%2Falerts%2Fconfigure-alerts&source_site=vercel-docs&relationship=related) — Fix out-of-memory \\(OOM\\) errors and memory limit exceeded crashes in Vercel serverless functions. Debug 5xx errors, mon
-- [vercel alerts](https://vercel.com/docs/cli/alerts?from=related&source_path=%2Fdocs%2Falerts%2Fconfigure-alerts&source_site=vercel-docs&relationship=related) — List recent alerts for a linked project, a specific project, or an entire team with the Vercel CLI.
 - [Notifications](https://vercel.com/docs/notifications?from=related&source_path=%2Fdocs%2Falerts%2Fconfigure-alerts&source_site=vercel-docs&relationship=related) — Learn how to use Notifications to view and manage important alerts about your deployments, domains, integrations, accoun
+- [vercel alerts](https://vercel.com/docs/cli/alerts?from=related&source_path=%2Fdocs%2Falerts%2Fconfigure-alerts&source_site=vercel-docs&relationship=related) — List recent alerts for a linked project, a specific project, or an entire team with the Vercel CLI.
 - [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability?from=related&source_path=%2Fdocs%2Falerts%2Fconfigure-alerts&source_site=vercel-docs&relationship=related) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 - [Setting Up Webhooks](https://vercel.com/docs/webhooks?from=related&source_path=%2Fdocs%2Falerts%2Fconfigure-alerts&source_site=vercel-docs&relationship=related) — Learn how to set up webhooks and use them with Vercel Integrations.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Falerts%2Fconfigure-alerts&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 
 Full cross-link map for this page: [/docs/alerts/configure-alerts.graph.md](/docs/alerts/configure-alerts.graph.md?from=related&source_path=%2Fdocs%2Falerts%2Fconfigure-alerts&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Use alert rules to notify your team when Vercel detects error or usage anomalies.
 
 ## Configure built-in alert rules
 
@@ -56,11 +56,16 @@ Built-in alert rules use Vercel-defined detections for Error anomaly and Usage a
 5. Click **Next**.
 6. In **Configure alert rule**, enter a rule name. This name appears in the **Alert Rules** table and notifications.
 7. Choose the project scope for the rule. You can apply the rule to all projects, specific projects, or all projects except selected projects.
-8. Select one or more severity levels that should trigger notifications: **High**, **Medium**, or **Low**. Vercel calculates error anomaly severity automatically. **High** and **Medium** are selected by default; select **Low** to receive low-severity notifications.
 
-9) Click **Create Alert Rule**.
-10) In **Configure notifications**, choose the notification destinations for the rule.
-11) Click **Done**.
+8) Select one or more severity levels that should trigger notifications.
+
+9. Click **Create Alert Rule**.
+10. In **Configure notifications**, choose the notification destinations for the rule.
+11. Click **Done**.
+
+### Severity levels
+
+Vercel calculates alert severity automatically from multiple signals, for example z-score and error-rate impact.
 
 ### Configure 4xx error detections
 

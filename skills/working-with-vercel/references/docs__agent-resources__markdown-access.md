@@ -3,7 +3,7 @@ title: Markdown and Agent Discovery
 product: vercel
 url: /docs/agent-resources/markdown-access
 canonical_url: "https://vercel.com/docs/agent-resources/markdown-access"
-last_updated: 2026-08-14
+last_updated: 2026-09-03
 type: conceptual
 prerequisites:
   - /docs/agent-resources
@@ -14,8 +14,8 @@ related:
 summary: Learn how Vercel serves documentation to AI agents as Markdown and helps them discover related pages through content negotiation, discovery indexes,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/markdown-access.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "3c879a72ca4e23c2c51f96994f03d69d4989fb6be98839b1144139069b33c8dc"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "80617d5b5f07ce9db88f8a442ab763b4d500627f84de5382627d09ec45aed1da"
 ---
 
 # Markdown and Agent Discovery
@@ -35,9 +35,9 @@ Vercel documentation is available as HTML for humans and structured Markdown for
 - [Docs pages support Markdown responses](https://vercel.com/changelog/docs-pages-support-markdown-responses?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related)
 - [Docs Contribution Guide](https://nextjs.org/docs/community/contribution-guide?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related) — Learn how to contribute to Next.js Documentation
 - [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
-- [Introducing the Vercel plugin for coding agents](https://vercel.com/changelog/introducing-vercel-plugin-for-coding-agents?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related)
 - [Text Prompting](https://v0.app/docs/text-prompting?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related) — Use text prompting to create initial UIs and ask technical questions with natural language.
 - [Open Vercel documentation pages in AI providers](https://vercel.com/changelog/open-vercel-documentation-pages-in-ai-providers?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related)
+- [Introducing the Vercel plugin for coding agents](https://vercel.com/changelog/introducing-vercel-plugin-for-coding-agents?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related)
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 - [vercel agent](https://vercel.com/docs/cli/agent?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related) — Generate an AGENTS.md file with Vercel deployment best practices using the vercel agent CLI command.
 
@@ -46,9 +46,9 @@ Full cross-link map for this page: [/docs/agent-resources/markdown-access.graph.
 
 ## How agents receive Markdown
 
-A canonical docs URL such as `https://vercel.com/docs/functions` returns HTML to an ordinary browser request. The same URL returns `text/markdown` when Vercel detects an AI agent or the request includes the `Accept: text/markdown` header.
+A canonical docs URL such as `https://vercel.com/docs/functions` returns HTML to an ordinary browser request. The same URL returns `text/markdown` when the request prefers Markdown, or when Vercel detects an AI agent without a format preference.
 
-Recognized AI agents receive Markdown even if they send an HTML `Accept` header. This lets you give an agent a canonical docs URL without changing the URL first.
+Vercel honors explicit format preferences. A recognized AI agent receives HTML when it requests `text/html`. When the agent does not distinguish between HTML and Markdown, Vercel returns Markdown.
 
 To request Markdown from the canonical URL, send the `Accept` header:
 
@@ -120,7 +120,7 @@ Agents can use these files to navigate or load the broader documentation set:
 
 Open the page-actions menu on a docs page to access its Markdown:
 
-- **View as Markdown** requests the canonical URL with `Accept: text/markdown`, creates a browser-local plain-text Blob, and opens the Blob URL in a new tab. The Blob URL is temporary and only works in your browser session. Share the page's `.md` URL instead.
+- **View as Markdown** opens the page's durable `.md` URL in a new tab so you can view or share its Markdown representation.
 - **Copy page** copies the page as Markdown to your clipboard so you can paste it into an AI assistant.
 
 ## Feeding documentation to AI assistants

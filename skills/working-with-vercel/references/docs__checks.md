@@ -16,8 +16,8 @@ related:
 summary: Vercel automatically keeps an eye on various aspects of your web application using the Checks API. Learn how to use Checks in your Vercel workflow...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/checks.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "b5a381018edb5523bcba419bba20ed8860980e33dc4bbebbad26050742c3bc7b"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "98c260c12860cacbe6d382949c9f4230325bf25a50359581edec257d7565fd89"
 ---
 
 # Working with Checks
@@ -36,8 +36,8 @@ Checks are tests and assertions created and run after every successful deploymen
 - [Deployment Checks](https://vercel.com/docs/deployment-checks?from=related&source_path=%2Fdocs%2Fchecks&source_site=vercel-docs&relationship=related) — Set conditions that must be met before proceeding to the next phase of the deployment lifecycle.
 - [Create a check](https://vercel.com/docs/rest-api/checks-v2/create-a-check?from=related&source_path=%2Fdocs%2Fchecks&source_site=vercel-docs&relationship=related) — POST /v2/projects/{projectIdOrName}/checks — Creates a new check for a project.
 - [Get a check](https://vercel.com/docs/rest-api/checks-v2/get-a-check?from=related&source_path=%2Fdocs%2Fchecks&source_site=vercel-docs&relationship=related) — GET /v2/projects/{projectIdOrName}/checks/{checkId} — Return a detailed response for a single check.
-- [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist?from=related&source_path=%2Fdocs%2Fchecks&source_site=vercel-docs&relationship=related) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
 - [List all checks for a project](https://vercel.com/docs/rest-api/checks-v2/list-all-checks-for-a-project?from=related&source_path=%2Fdocs%2Fchecks&source_site=vercel-docs&relationship=related) — GET /v2/projects/{projectIdOrName}/checks — List all checks for a project, optionally filtered by target.
+- [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist?from=related&source_path=%2Fdocs%2Fchecks&source_site=vercel-docs&relationship=related) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
 
 Full cross-link map for this page: [/docs/checks.graph.md](/docs/checks.graph.md?from=related&source_path=%2Fdocs%2Fchecks&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -15,8 +15,8 @@ related:
 summary: Configure AI chat platforms to use the AI Gateway for unified model access and spend monitoring.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/chat-platforms.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "a9ef3c080401df8cda1b2b5e999dbaa6fadd3d367d99462abcf6ef81f747c349"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "32d501066bfa109c49b690b4828943109ae9f0cb2ca74ae9655928688c9997d1"
 ---
 
 # Chat Platforms
@@ -33,8 +33,8 @@ AI chat platforms provide conversational interfaces for interacting with AI mode
 - [OpenClaw](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms&source_site=vercel-docs&relationship=related) — Use OpenClaw with the AI Gateway as a model provider.
 - [SDKs & APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms&source_site=vercel-docs&relationship=related) — Use the AI Gateway with various SDKs and API specifications including OpenAI, Anthropic, and OpenResponses.
 - [Coding Agents](https://vercel.com/docs/ai-gateway/coding-agents?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms&source_site=vercel-docs&relationship=related) — Configure popular AI coding agents to use the AI Gateway for unified model access and spend monitoring.
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms&source_site=vercel-docs&relationship=related) — Create an AI Gateway API key, make your first request with TypeScript, Python, or cURL, and verify how the request was r
 - [Xcode](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms&source_site=vercel-docs&relationship=related) — Use Xcode's coding assistant with the AI Gateway.
-- [Ecosystem](https://vercel.com/docs/ai-gateway/ecosystem?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms&source_site=vercel-docs&relationship=related) — Explore community framework integrations and ecosystem features for the AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/chat-platforms.graph.md](/docs/ai-gateway/chat-platforms.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

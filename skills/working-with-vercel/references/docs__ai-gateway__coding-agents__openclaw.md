@@ -14,8 +14,8 @@ related:
 summary: Use OpenClaw with the AI Gateway as a model provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/openclaw.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "0a04827cbe5c3e30846f7b2a8d6d5a1cf6d7a35c6925c9828a7ba2997f813921"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "a98efbcb09d0a607d513b9193170e90e911e2e240f1b0ca8bd1a2db5c0c73b42"
 ---
 
 # OpenClaw
@@ -31,8 +31,8 @@ sha256: "0a04827cbe5c3e30846f7b2a8d6d5a1cf6d7a35c6925c9828a7ba2997f813921"
 - [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenclaw&source_site=vercel-docs&relationship=related)
 - [OpenClaw \\(Clawdbot\\)](https://vercel.com/docs/ai-gateway/chat-platforms/openclaw?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenclaw&source_site=vercel-docs&relationship=related) — Use OpenClaw \\(formerly Clawdbot\\) with AI Gateway.
 - [Use AI Gateway with Clawdbot](https://vercel.com/changelog/use-ai-gateway-with-clawdbot?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenclaw&source_site=vercel-docs&relationship=related)
+- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenclaw&source_site=vercel-docs&relationship=related) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
 - [Chat Platforms](https://vercel.com/docs/ai-gateway/chat-platforms?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenclaw&source_site=vercel-docs&relationship=related) — Configure AI chat platforms to use the AI Gateway for unified model access and spend monitoring.
-- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenclaw&source_site=vercel-docs&relationship=related) — Use OpenCode with the AI Gateway.
 - [Cline](https://vercel.com/docs/ai-gateway/coding-agents/cline?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenclaw&source_site=vercel-docs&relationship=related) — Use Cline with the AI Gateway.
 - [Xcode](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenclaw&source_site=vercel-docs&relationship=related) — Use Xcode's coding assistant with the AI Gateway.
 

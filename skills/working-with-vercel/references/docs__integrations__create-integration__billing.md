@@ -3,7 +3,7 @@ title: Manage Billing and Refunds for Integrations
 product: vercel
 url: /docs/integrations/create-integration/billing
 canonical_url: "https://vercel.com/docs/integrations/create-integration/billing"
-last_updated: 2026-05-12
+last_updated: 2026-08-28
 type: reference
 prerequisites:
   - /docs/integrations/create-integration
@@ -17,8 +17,8 @@ related:
 summary: Learn how billing works for native integrations, including invoice lifecycle, pricing models, and refunds.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/billing.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "4ed3b037808f7cfb37ed00a1259a197770246db97aff21fcd3f4a43d38308bc1"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "1426637b734afc27206ccd5192ad8ea6676966c97d92ff4cac3d7f2f5e61d782"
 ---
 
 # Manage Billing and Refunds for Integrations
@@ -83,6 +83,30 @@ Vercel users can configure a different payment method for each integration insta
 ## Invoice lifecycle
 
 Invoices move through several states as they're processed:
+
+```mermaid
+flowchart TD
+    pending["pending"]
+    scheduled["scheduled"]
+    invoiced["invoiced"]
+    paid["paid"]
+    notpaid["notpaid"]
+    overdue["overdue"]
+    refund_requested["refund_requested"]
+    refunded["refunded"]
+    pending -->|"Queued for<br>processing"| scheduled
+    scheduled -->|"Processing<br>complete"| invoiced
+    invoiced -->|"Payment<br>successful"| paid
+    invoiced -->|"Payment<br>failed"| notpaid
+    invoiced -->|"Payment<br>period<br>elapsed"| overdue
+    paid -->|"Refund<br>initiated"| refund_requested
+    notpaid -->|"Payment<br>successful"| paid
+    notpaid -->|"Payment<br>period<br>elapsed"| overdue
+    notpaid -->|"Refund<br>initiated"| refund_requested
+    overdue -->|"Payment<br>successful"| paid
+    overdue -->|"Refund<br>initiated"| refund_requested
+    refund_requested -->|"Refund<br>complete"| refunded
+```
 
 ### Invoice states
 

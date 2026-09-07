@@ -16,8 +16,8 @@ related:
 summary: Vercel Drop lets you deploy a file or folder by dragging it into your browser, with no Git or CLI required.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drop.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "5fcec142cca635d9bae5bd4a3ad152265639b42f935d8ae5fab66ade9b1ee903"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "7d9fd35a154c8871bc4c94275e8c530ea1c11ea82b6ceb762bd0301f8c3d6173"
 ---
 
 # Deploying with Vercel Drop
@@ -36,11 +36,11 @@ Vercel Drop lets you deploy a file, folder, or `.zip` by dragging it into your b
 - [Deploy a Claude Design project to Vercel](https://vercel.com/kb/guide/claude-design?from=related&source_path=%2Fdocs%2Fdrop&source_site=vercel-docs&relationship=related) — Publish a Claude Design project to Vercel for a live production URL with the Vercel connector, or by exporting a .zip to
 - [Deploy a Google Stitch design with Vercel Drop](https://vercel.com/kb/guide/google-stitch-vercel-drop?from=related&source_path=%2Fdocs%2Fdrop&source_site=vercel-docs&relationship=related) — Download the HTML from your Google Stitch screens and deploy them to production with Vercel Drop, with no Git or CLI req
 - [Vercel Drop vs Cloudflare Direct Upload](https://vercel.com/kb/guide/vercel-drop-vs-cloudflare-direct-upload?from=related&source_path=%2Fdocs%2Fdrop&source_site=vercel-docs&relationship=related) — Compare Vercel Drop and Cloudflare Direct Upload: framework builds, browser vs CLI workflows, file limits, Git integrati
-- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fdrop&source_site=vercel-docs&relationship=related) — Learn how to create and manage deployments on Vercel.
-- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related&source_path=%2Fdocs%2Fdrop&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
+- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fdrop&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fdrop&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fdrop&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fdrop&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [Deploy a Lovable app on Vercel](https://vercel.com/docs/integrations/lovable?from=related&source_path=%2Fdocs%2Fdrop&source_site=vercel-docs&relationship=related) — Deploy your Lovable project to Vercel using GitHub sync and zero-configuration TanStack Start detection.
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fdrop&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/drop.graph.md](/docs/drop.graph.md?from=related&source_path=%2Fdocs%2Fdrop&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

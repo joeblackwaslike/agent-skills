@@ -17,8 +17,8 @@ related:
 summary: Learn how to use the Python runtime to run Python applications on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/python.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "63b61aab4bb9bb1e7d09beb67b419bbc8ff9ef76a2df0339f2af64bfc31c980c"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "35994c2493dc645e4036d8ec5da5f44f15f39a1e1b8e1c829aa4a834e345d484"
 ---
 
 # Using the Python Runtime with Vercel Functions
@@ -176,11 +176,11 @@ Make sure your `pyproject.toml` or `requirements.txt` only lists packages
 necessary at runtime. Explicitly exclude files you don't need to keep bundles
 small and avoid hitting size limits.
 
-> **💡 Note:** The standard Python bundle size limit is  uncompressed.
->
-> support Python bundles up to  on Fluid compute when enabled (public beta).
+> **💡 Note:** The standard Python bundle size limit is **500 MB** uncompressed.
+> [Large Functions](/docs/functions/limitations#large-functions-beta)
+> support Python bundles up to **5 GB** on Fluid compute when enabled (public beta).
 > See the
->
+> [bundle size limits](/docs/functions/limitations#bundle-size-limits)
 > for details.
 
 To exclude unnecessary files (tests, static assets, test data), configure

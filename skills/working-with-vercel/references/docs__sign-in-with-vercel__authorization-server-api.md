@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Authorization Server API
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/authorization-server-api.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "68188276f9be0ba3e5395a7bfdb8e7448dc568185529e38fdeb6bbb2ddfc1827"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "2643f0554f6cbcbb50d579a052b6646e417e4c27278589a3391c6aaf35eaa3fc"
 ---
 
 # Authorization Server API
@@ -144,7 +144,7 @@ The Token Endpoint is used to exchange the `code` returned from the Authorizatio
 
 | Parameter       | Required     | Description                                                                                                                                                                                                                                                                                                      |
 | --------------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `grant_type`    | **Yes**      | Either `authorization_code` or `refresh_token`.- If the user signs in from the application then `authorization_code` should be used.- If the user is already signed in but the [Access Token](/docs/sign-in-with-vercel/tokens#access-token) has expired, then `refresh_token` should be used.         |
+| `grant_type`    | **Yes**      | Either `authorization_code` or `refresh_token`.<br />- If the user signs in from the application then `authorization_code` should be used.<br />- If the user is already signed in but the [Access Token](/docs/sign-in-with-vercel/tokens#access-token) has expired, then `refresh_token` should be used.         |
 | `client_id`     | **Yes**      | The ID of the App located in the [**Manage**](/docs/sign-in-with-vercel/manage-from-dashboard) page.                                                                                                                                                                                                             |
 | `client_secret`         | **Optional** | The client secret generated in the [**Manage**](/docs/sign-in-with-vercel/manage-from-dashboard) page. Omit this parameter if client authentication is set to `none`, or if you authenticate with a [JWT assertion](#authenticate-with-a-jwt-assertion) using `client_assertion` and `client_assertion_type`. |
 | `client_assertion`      | No           | Required when authenticating with a JWT assertion instead of `client_secret`. A signed JWT that proves the client's identity.                                                                                                                                                                                    |

@@ -3,7 +3,7 @@ title: Chat SDK
 product: vercel
 url: /docs/connect/frameworks/chat-sdk
 canonical_url: "https://vercel.com/docs/connect/frameworks/chat-sdk"
-last_updated: 2018-10-20
+last_updated: 2026-08-28
 type: how-to
 prerequisites:
   - /docs/connect/frameworks
@@ -17,13 +17,17 @@ related:
 summary: Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, GitHub, Linear, Notion, and Telegram.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/frameworks/chat-sdk.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "e69e9899c415eea7b2c58a71bfc516c7c6352a1fa68f7b800fbba6992b30ccdf"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "6f15078ac6db2a188e032e3340438398b9ccadd1842d0a9caf153a41aed289a1"
 ---
 
 # Chat SDK
 
 > **🔒 Permissions Required**: Vercel Connect
+
+The `@vercel/connect/chat` entry point connects Vercel Connect credentials to
+the [Chat SDK](https://chat-sdk.dev/docs/vercel-connect) adapter for each
+supported platform.
 
 
 <!-- docsgraph:related -->
@@ -43,10 +47,6 @@ sha256: "e69e9899c415eea7b2c58a71bfc516c7c6352a1fa68f7b800fbba6992b30ccdf"
 
 Full cross-link map for this page: [/docs/connect/frameworks/chat-sdk.graph.md](/docs/connect/frameworks/chat-sdk.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fchat-sdk&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-The `@vercel/connect/chat` entry point connects Vercel Connect credentials to
-the [Chat SDK](https://chat-sdk.dev/docs/vercel-connect) adapter for each
-supported platform.
 
 ## Understand the two request paths
 

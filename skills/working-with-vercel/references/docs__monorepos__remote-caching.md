@@ -16,13 +16,15 @@ related:
 summary: Vercel Remote Cache allows you to share build outputs and artifacts across distributed teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/remote-caching.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "2b7613e46b3b8f6e78b99c70adee9d4136d5313fa4cdbf7b9e78e83150e74062"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "0980caca50ae6e0ce9ab84addc5f666a906a61b5cc55a3cc0c7ee8616b3f725d"
 ---
 
 # Remote Caching
 
 > **🔒 Permissions Required**: Remote Cache
+
+Remote Caching saves you time by ensuring you never repeat the same task twice, by automatically sharing a cache across your entire Vercel team.
 
 
 <!-- docsgraph:related -->
@@ -45,8 +47,6 @@ sha256: "2b7613e46b3b8f6e78b99c70adee9d4136d5313fa4cdbf7b9e78e83150e74062"
 
 Full cross-link map for this page: [/docs/monorepos/remote-caching.graph.md](/docs/monorepos/remote-caching.graph.md?from=related&source_path=%2Fdocs%2Fmonorepos%2Fremote-caching&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Remote Caching saves you time by ensuring you never repeat the same task twice, by automatically sharing a cache across your entire Vercel team.
 
 When a team is working on the same PR, Remote Caching identifies the necessary artifacts (such as build and log outputs) and recycles them across machines in [external CI/CD](#use-remote-caching-from-external-ci/cd) and [during the Vercel Build process](#use-remote-caching-during-vercel-build).
 

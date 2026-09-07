@@ -15,8 +15,8 @@ related:
 summary: Learn how Vercel routes public requests to services and how each service handles its own routes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services/routing.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "f8e336da43f134c49dc470796013094c2c2a961f740ad32d80d51cd167ddf06b"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "24762243fb6d641a982d69cae1e6b90778c63cb57d27a330f2a8bbd24e9e0710"
 ---
 
 # Services routing
@@ -38,11 +38,12 @@ owner. For how services are defined and built, see [Services](/docs/services).
 - [The Complete Guide to Vercel Services](https://vercel.com/kb/guide/vercel-services?from=related&source_path=%2Fdocs%2Fservices%2Frouting&source_site=vercel-docs&relationship=related) — Vercel Services let you deploy multiple frontends and backends in one project on a shared domain. Learn how to define se
 - [Vercel Services: Run full stack on Vercel](https://vercel.com/blog/vercel-services-run-full-stack-on-vercel?from=related&source_path=%2Fdocs%2Fservices%2Frouting&source_site=vercel-docs&relationship=related)
 - [Can I use Vercel as a reverse proxy?](https://vercel.com/kb/guide/vercel-reverse-proxy-rewrites-external?from=related&source_path=%2Fdocs%2Fservices%2Frouting&source_site=vercel-docs&relationship=related) — Learn how to use rewrites to proxy requests from Vercel to other deployments.
-- [Services](https://vercel.com/docs/build-output-api/services?from=related&source_path=%2Fdocs%2Fservices%2Frouting&source_site=vercel-docs&relationship=related) — Learn how a deployment with multiple services is structured in the Build Output API.
+- [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related&source_path=%2Fdocs%2Fservices%2Frouting&source_site=vercel-docs&relationship=related) — Learn how to debug how Vercel decides where to route your request
 - [Service configuration reference](https://vercel.com/docs/services/config-reference?from=related&source_path=%2Fdocs%2Fservices%2Frouting&source_site=vercel-docs&relationship=related) — Options available for service configuration.
 - [Project-Level Routing Rules](https://vercel.com/docs/routing/project-routing-rules?from=related&source_path=%2Fdocs%2Fservices%2Frouting&source_site=vercel-docs&relationship=related) — Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code
 - [Rewrites on Vercel](https://vercel.com/docs/routing/rewrites?from=related&source_path=%2Fdocs%2Fservices%2Frouting&source_site=vercel-docs&relationship=related) — Learn how to use rewrites to send users to different URLs without modifying the visible URL.
 - [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Fservices%2Frouting&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
+- [Routing Rules](https://vercel.com/docs/ai-gateway/models-and-providers/routing-rules?from=related&source_path=%2Fdocs%2Fservices%2Frouting&source_site=vercel-docs&relationship=related) — Define team-wide rules that rewrite requests from one model to another or deny specific models in AI Gateway.
 
 Full cross-link map for this page: [/docs/services/routing.graph.md](/docs/services/routing.graph.md?from=related&source_path=%2Fdocs%2Fservices%2Frouting&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

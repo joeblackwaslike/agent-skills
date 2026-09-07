@@ -3,7 +3,7 @@ title: Managing DNS Records
 product: vercel
 url: /docs/domains/managing-dns-records
 canonical_url: "https://vercel.com/docs/domains/managing-dns-records"
-last_updated: 2026-08-11
+last_updated: 2026-08-28
 type: how-to
 prerequisites:
   - /docs/domains
@@ -12,8 +12,8 @@ related:
 summary: Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/managing-dns-records.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "64b90d25a414790acb65e5ccf29c3b2765132ddeb616d659c33b2a7c2a7c4c50"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "75fdc81fcfbe55542d7a5837080f6724c0836cfdc22b8d8d2234e3fec1f51850"
 ---
 
 # Managing DNS Records
@@ -33,10 +33,10 @@ Once you've added a domain and it's using Vercel's nameservers, you can view its
 - [DNS Records UI](https://vercel.com/blog/dns-records-ui?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-dns-records&source_site=vercel-docs&relationship=related)
 - [How can I do a "Zero Downtime" DNS migration to Vercel?](https://vercel.com/kb/guide/zero-downtime-migration-for-dns?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-dns-records&source_site=vercel-docs&relationship=related) — Information about how to migrate your DNS records to Vercel without downtime.
 - [Working with DNS](https://vercel.com/docs/domains/working-with-dns?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-dns-records&source_site=vercel-docs&relationship=related) — Learn how DNS works in order to properly configure your domain.
-- [Troubleshooting domains](https://vercel.com/docs/domains/troubleshooting?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-dns-records&source_site=vercel-docs&relationship=related) — Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-dns-records&source_site=vercel-docs&relationship=related) — Add and configure a custom domain for your Vercel project using the CLI.
-- [Working with domains](https://vercel.com/docs/domains/working-with-domains?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-dns-records&source_site=vercel-docs&relationship=related) — Learn how domains work and the options Vercel provides for managing them.
+- [Troubleshooting domains](https://vercel.com/docs/domains/troubleshooting?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-dns-records&source_site=vercel-docs&relationship=related) — Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
 - [Working with nameservers](https://vercel.com/docs/domains/working-with-nameservers?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-dns-records&source_site=vercel-docs&relationship=related) — Learn about nameservers and the benefits Vercel nameservers provide.
+- [Working with domains](https://vercel.com/docs/domains/working-with-domains?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-dns-records&source_site=vercel-docs&relationship=related) — Learn how domains work and the options Vercel provides for managing them.
 
 Full cross-link map for this page: [/docs/domains/managing-dns-records.graph.md](/docs/domains/managing-dns-records.graph.md?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-dns-records&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

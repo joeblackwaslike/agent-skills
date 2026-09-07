@@ -13,13 +13,23 @@ related:
 summary: Learn how to connect Vercel to your third-party account.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/install-an-integration/add-a-connectable-account.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "3f7377d4c126713e815c4b95e27b55b122edfe7fb93dd1d3ba8d407b009e68d9"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "b688e43c2d4302a2a997e6cdad1316ecac24d1a025a75cee6ae98b0ed0688fa1"
 ---
 
 # Add a Connectable Account
 
 ## Add a connectable account
+
+1. From the [Vercel dashboard](/dashboard), open [**Integrations**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fintegrations\&title=Go+to+Integrations) in the sidebar and then the **Browse Marketplace** button. You can also go directly to the [Integrations Marketplace](https://vercel.com/integrations).
+2. Under the **Connectable Accounts** section, select an integration that you would like to install. The integration page provides information about the integration, the permissions required, and how to use it with Vercel.
+3. From the integration's detail page, select **Connect Account**.
+4. From the dialog that appears, select which projects the integration will have access to. Select **Install**.
+5. Follow the prompts to sign-in to your third-party account and authorize the connection to Vercel. Depending on the integration, you may need to provide additional information to complete the connection.
+
+## Manage connectable accounts
+
+Once installed, you can manage the following aspect of the integration:
 
 
 <!-- docsgraph:related -->
@@ -36,16 +46,6 @@ sha256: "3f7377d4c126713e815c4b95e27b55b122edfe7fb93dd1d3ba8d407b009e68d9"
 
 Full cross-link map for this page: [/docs/integrations/install-an-integration/add-a-connectable-account.graph.md](/docs/integrations/install-an-integration/add-a-connectable-account.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fadd-a-connectable-account&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-1. From the [Vercel dashboard](/dashboard), open [**Integrations**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fintegrations\&title=Go+to+Integrations) in the sidebar and then the **Browse Marketplace** button. You can also go directly to the [Integrations Marketplace](https://vercel.com/integrations).
-2. Under the **Connectable Accounts** section, select an integration that you would like to install. The integration page provides information about the integration, the permissions required, and how to use it with Vercel.
-3. From the integration's detail page, select **Connect Account**.
-4. From the dialog that appears, select which projects the integration will have access to. Select **Install**.
-5. Follow the prompts to sign-in to your third-party account and authorize the connection to Vercel. Depending on the integration, you may need to provide additional information to complete the connection.
-
-## Manage connectable accounts
-
-Once installed, you can manage the following aspect of the integration:
 
 - [View all the permissions](/docs/integrations/install-an-integration/manage-integrations-reference)
 - [Manage access to your projects](/docs/integrations/install-an-integration/manage-integrations-reference#manage-project-access)

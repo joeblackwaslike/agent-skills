@@ -3,7 +3,7 @@ title: Setting Up Webhooks
 product: vercel
 url: /docs/webhooks
 canonical_url: "https://vercel.com/docs/webhooks"
-last_updated: 2026-08-11
+last_updated: 2026-08-28
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how to set up webhooks and use them with Vercel Integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/webhooks.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "3b4633c6845f7d049b0491700a87c57b9ffea53dd918efa7245fc6827cce1501"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "7cb53c1dc5a13970cc2358ccbd34424ccf57c19749b026afdaed1f9db2283333"
 ---
 
 # Setting Up Webhooks
@@ -37,8 +37,8 @@ A webhook is a trigger-based HTTP endpoint configured to receive HTTP POST reque
 - [Create Webhook](https://v0.app/docs/api/v2/reference/webhooks/create-webhook?from=related&source_path=%2Fdocs%2Fwebhooks&source_site=vercel-docs&relationship=related) — Creates a new webhook that listens for specific events. Supports optional association with a chat.
 - [Creates a webhook](https://vercel.com/docs/rest-api/webhooks/creates-a-webhook?from=related&source_path=%2Fdocs%2Fwebhooks&source_site=vercel-docs&relationship=related) — POST /v1/webhooks — Creates a webhook
 - [Get a webhook](https://vercel.com/docs/rest-api/webhooks/get-a-webhook?from=related&source_path=%2Fdocs%2Fwebhooks&source_site=vercel-docs&relationship=related) — GET /v1/webhooks/{id} — Get a webhook
-- [Get a list of webhooks](https://vercel.com/docs/rest-api/webhooks/get-a-list-of-webhooks?from=related&source_path=%2Fdocs%2Fwebhooks&source_site=vercel-docs&relationship=related) — GET /v1/webhooks — Get a list of webhooks
 - [vercel webhooks](https://vercel.com/docs/cli/webhooks?from=related&source_path=%2Fdocs%2Fwebhooks&source_site=vercel-docs&relationship=related) — Learn how to manage webhooks for your Vercel account using the vercel webhooks CLI command.
+- [Get a list of webhooks](https://vercel.com/docs/rest-api/webhooks/get-a-list-of-webhooks?from=related&source_path=%2Fdocs%2Fwebhooks&source_site=vercel-docs&relationship=related) — GET /v1/webhooks — Get a list of webhooks
 - [Creating & Triggering Deploy Hooks](https://vercel.com/docs/deploy-hooks?from=related&source_path=%2Fdocs%2Fwebhooks&source_site=vercel-docs&relationship=related) — Learn how to create and trigger deploy hooks to integrate Vercel deployments with other systems.
 
 Full cross-link map for this page: [/docs/webhooks.graph.md](/docs/webhooks.graph.md?from=related&source_path=%2Fdocs%2Fwebhooks&source_site=vercel-docs&relationship=graph)

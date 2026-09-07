@@ -3,7 +3,7 @@ title: Configuring a Build
 product: vercel
 url: /docs/builds/configure-a-build
 canonical_url: "https://vercel.com/docs/builds/configure-a-build"
-last_updated: 2026-08-11
+last_updated: 2026-08-28
 type: reference
 prerequisites:
   - /docs/builds
@@ -16,8 +16,8 @@ related:
 summary: Vercel automatically configures the build settings for many front-end frameworks, but you can also customize the build according to your requirements.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/configure-a-build.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "6bac511c25f7a44b1f529c6a6a3254f19f374b65d2467a671dfee4059c1a8ce7"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "e49e3126b07a68f84878edc1de7457439a12030f9788ed69211ab33ce90fc6e1"
 ---
 
 # Configuring a Build
@@ -34,9 +34,9 @@ When you make a [deployment](/docs/deployments), Vercel **builds** your project.
 - [Yarn 2+ dependency caching now supported](https://vercel.com/changelog/yarn-2-dependency-caching-now-supported?from=related&source_path=%2Fdocs%2Fbuilds%2Fconfigure-a-build&source_site=vercel-docs&relationship=related)
 - [Does Vercel support Yarn 2?](https://vercel.com/kb/guide/does-vercel-support-yarn-2?from=related&source_path=%2Fdocs%2Fbuilds%2Fconfigure-a-build&source_site=vercel-docs&relationship=related) — Information on Vercel's support for Yarn 2.
 - [Does Vercel support Yarn 3?](https://vercel.com/kb/guide/does-vercel-support-yarn-3?from=related&source_path=%2Fdocs%2Fbuilds%2Fconfigure-a-build&source_site=vercel-docs&relationship=related) — Information on Vercel's support for Yarn 3.
-- [Does Vercel support Yarn 4?](https://vercel.com/kb/guide/does-vercel-support-yarn-4?from=related&source_path=%2Fdocs%2Fbuilds%2Fconfigure-a-build&source_site=vercel-docs&relationship=related) — Information on Vercel's support for Yarn 4.
+- [Does Vercel Support Yarn? \\(Versions 2, 3, and 4\\)](https://vercel.com/kb/guide/does-vercel-support-yarn-4?from=related&source_path=%2Fdocs%2Fbuilds%2Fconfigure-a-build&source_site=vercel-docs&relationship=related) — Vercel supports Yarn 1, 2, 3, and 4. Learn which version your build uses by default, and how to pin Yarn 4 with Corepack
+- [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands?from=related&source_path=%2Fdocs%2Fbuilds%2Fconfigure-a-build&source_site=vercel-docs&relationship=related) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
 - [How to pin a specific Bun version for Vercel builds?](https://vercel.com/kb/guide/how-to-pin-a-specific-bun-version-for-vercel-builds?from=related&source_path=%2Fdocs%2Fbuilds%2Fconfigure-a-build&source_site=vercel-docs&relationship=related) — Learn how to use a specific Bun version for Vercel builds.
-- [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare?from=related&source_path=%2Fdocs%2Fbuilds%2Fconfigure-a-build&source_site=vercel-docs&relationship=related) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
 - [Announcing the Build Output API](https://vercel.com/blog/build-output-api?from=related&source_path=%2Fdocs%2Fbuilds%2Fconfigure-a-build&source_site=vercel-docs&relationship=related)
 - [Advanced Project Settings](https://vercel.com/blog/advanced-project-settings?from=related&source_path=%2Fdocs%2Fbuilds%2Fconfigure-a-build&source_site=vercel-docs&relationship=related)
 - [Frameworks on Vercel](https://vercel.com/docs/frameworks?from=related&source_path=%2Fdocs%2Fbuilds%2Fconfigure-a-build&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
@@ -218,7 +218,7 @@ If you'd like to override the Build Command for **all deployments** in your Proj
 
 If you would like to override the Build Command for a **specific deployment**, add [`buildCommand`](/docs/project-configuration/vercel-json#buildcommand) to your `vercel.json` configuration.
 
-> **💡 Note:** If you update the  setting, it will be applied on your next
+> **💡 Note:** If you update the **Override** setting, it will be applied on your next
 > deployment.
 
 ### Output Directory
@@ -227,7 +227,7 @@ After building a project, most frameworks output the resulting build in a direct
 
 If Vercel detects a framework, the output directory will automatically be configured.
 
-> **💡 Note:** If you update the  setting, it will be applied on your next
+> **💡 Note:** If you update the **Override** setting, it will be applied on your next
 > deployment.
 
 For projects that [do not require building](#skip-build-step), you might want to serve the files in the root directory. In this case, do the following:

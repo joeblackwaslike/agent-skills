@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/accessibility.md"
-fetched_at: "2026-08-24T04:44:18.863Z"
-sha256: "264f9685a3c6ead0b48241015b5a4103addf62413c07055a9dddeac9587720f2"
+fetched_at: "2026-09-07T08:59:03.477Z"
+sha256: "62728ac7ccaa16f72f2c53bc2dcd418ac3b56331bab27bd0c067b906b6da1cd9"
 ---
 
 > ## Documentation Index
@@ -88,7 +88,7 @@ As you type at the end of the input line, or press `Backspace` there, Claude Cod
 
 When you delete a word or a line with one of the [text editing shortcuts](/docs/en/interactive-mode#text-editing), Claude Code announces the deleted text:
 
-* Deleting a word with `Ctrl+W`, `Option+Delete` on macOS, or `Ctrl+Backspace` on Windows
+* Deleting words with `Ctrl+W` or `Alt+D`, or with `Option+Delete` on macOS or `Ctrl+Backspace` on Windows
 * Deleting to the start of the line with `Ctrl+U` or `Cmd+Backspace`
 * Deleting to the end of the line with `Ctrl+K`
 

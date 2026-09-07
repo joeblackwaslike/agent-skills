@@ -16,13 +16,15 @@ related:
 summary: Learn how to protect deployments with Passport, read visitor identity, and verify Passport tokens in server-side code.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "b1d88c24396b5e135ba40c11b4f7866889bfafd2b17b662ef83c29b215560bba"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "99be848e75157fcbd5d90b41abf42cd8f3398d0319871ccabf14796227503961"
 ---
 
 # Restrict access to deployments with Passport
 
 > **🔒 Permissions Required**: Passport
+
+Passport lets you protect deployments with your own identity provider. Visitors authenticate with your identity provider before they can view a protected deployment.
 
 
 <!-- docsgraph:related -->
@@ -34,7 +36,6 @@ sha256: "b1d88c24396b5e135ba40c11b4f7866889bfafd2b17b662ef83c29b215560bba"
 - [Vercel Passport is now generally available](https://vercel.com/changelog/vercel-passport-generally-available?from=related&source_path=%2Fdocs%2Fpassport&source_site=vercel-docs&relationship=related)
 - [Vercel Passport is now in Public Beta](https://vercel.com/changelog/vercel-passport-is-now-in-public-beta?from=related&source_path=%2Fdocs%2Fpassport&source_site=vercel-docs&relationship=related)
 - [How to identify and authorize visitors with the Vercel Passport token in Next.js](https://vercel.com/kb/guide/vercel-passport-nextjs?from=related&source_path=%2Fdocs%2Fpassport&source_site=vercel-docs&relationship=related) — Read the Vercel Passport token server-side in a Next.js app to identify visitors with the external_sub claim and authori
-- [Simpler Pricing](https://vercel.com/blog/simpler-pricing?from=related&source_path=%2Fdocs%2Fpassport&source_site=vercel-docs&relationship=related)
 - [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Fpassport&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
 - [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related&source_path=%2Fdocs%2Fpassport&source_site=vercel-docs&relationship=related) — Protect who can see your deployments.
 - [Access Control](https://vercel.com/docs/security/access-control?from=related&source_path=%2Fdocs%2Fpassport&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
@@ -44,8 +45,6 @@ sha256: "b1d88c24396b5e135ba40c11b4f7866889bfafd2b17b662ef83c29b215560bba"
 
 Full cross-link map for this page: [/docs/passport.graph.md](/docs/passport.graph.md?from=related&source_path=%2Fdocs%2Fpassport&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Passport lets you protect deployments with your own identity provider. Visitors authenticate with your identity provider before they can view a protected deployment.
 
 Use Passport when you want visitors to sign in with an external identity provider, such as Microsoft Entra ID, Okta, or another OpenID Connect compatible provider. Vercel Connect stores the OAuth application configuration that talks to your identity provider.
 

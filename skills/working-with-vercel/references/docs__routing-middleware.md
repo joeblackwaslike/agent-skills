@@ -16,13 +16,15 @@ related:
 summary: Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed and personalization to your...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing-middleware.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "1ebc6ebce02d9607df62f35c637e42eb6610e14ca4486711cf9e01d1182fd938"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "e76107b8e1804a9cb01845da59168bfd0ce6555bd9a5600fb71c0de15e27ab66"
 ---
 
 # Routing Middleware
 
 > **🔒 Permissions Required**: Routing Middleware
+
+Routing Middleware **executes code *before* a request is processed on a site**, and are built on top of [fluid compute](/docs/fluid-compute). Based on the request, you can modify the response.
 
 
 <!-- docsgraph:related -->
@@ -46,13 +48,19 @@ sha256: "1ebc6ebce02d9607df62f35c637e42eb6610e14ca4486711cf9e01d1182fd938"
 Full cross-link map for this page: [/docs/routing-middleware.graph.md](/docs/routing-middleware.graph.md?from=related&source_path=%2Fdocs%2Frouting-middleware&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-Routing Middleware **executes code *before* a request is processed on a site**, and are built on top of [fluid compute](/docs/fluid-compute). Based on the request, you can modify the response.
-
 Because it runs globally before the cache, Routing Middleware is an effective way of providing personalization to statically generated content. Depending on the incoming request, you can execute custom logic, rewrite, redirect, add headers and more, before returning a response.
 
-Routing Middleware configured with the `proxy` property runs on the [Node.js](/docs/functions/runtimes/node-js) runtime. With the  file convention, the default is [Edge](/docs/functions/runtimes/edge). See [runtime options](#runtime-options) for information on how to change the runtime of your Routing Middleware.
+Routing Middleware configured with the `proxy` property runs on the [Node.js](/docs/functions/runtimes/node-js) runtime. With the `middleware.ts` file convention, the default is [Edge](/docs/functions/runtimes/edge). See [runtime options](#runtime-options) for information on how to change the runtime of your Routing Middleware.
 
 > For \['nextjs', 'nextjs-app']:
+
+> **💡 Note:** **Next.js 16 users:** Next.js 16 renamed the middleware file from
+> `middleware.ts` to `proxy.ts` and changed the function export from
+> `middleware` to `proxy`. When using Next.js 16 or later, use `proxy.ts`
+> instead of `middleware.ts`. The proxy function runs on Node.js only (Edge
+> runtime is not supported). See the [Next.js proxy
+> documentation](https://nextjs.org/docs/app/api-reference/file-conventions/proxy)
+> for details.
 
 ## Creating a Routing Middleware
 
@@ -113,7 +121,7 @@ The entrypoint can live in a subdirectory, such as `src/proxy.ts`. Add [`proxy.m
 
 ### Using the file convention
 
-You can also create a  file at your project's root directory and skip `vercel.json`:
+You can also create a `middleware.ts` file at your project's root directory and skip `vercel.json`:
 
 ```ts filename="middleware.ts" framework=all
 export default function middleware(request: Request) {
@@ -136,6 +144,11 @@ export const config = {
 ```
 
 > For \['nextjs', 'nextjs-app']:
+
+> **💡 Note:** The `middleware.ts` file should be at the same
+> level as your `app` or `pages` directory (even if you're using a `src`
+> directory). See the [Quickstart](/docs/routing-middleware/getting-started)
+> guide for more information.
 
 ## Logging
 
@@ -160,9 +173,14 @@ The following limits apply to requests processed by Routing Middleware:
 
 Routing Middleware is available on the [Node.js](/docs/functions/runtimes/node-js), [Bun](/docs/functions/runtimes/bun), and [Edge](/docs/functions/runtimes/edge) runtimes. An entrypoint set through the [`proxy`](/docs/project-configuration/vercel-json#proxy) property runs on Node.js.
 
-With the  file convention, the default runtime is Edge. You can change the runtime to Node.js by exporting a [`config`](/docs/routing-middleware/api#config-object) object with a `runtime` property in your  file.
+With the `middleware.ts` file convention, the default runtime is Edge. You can change the runtime to Node.js by exporting a [`config`](/docs/routing-middleware/api#config-object) object with a `runtime` property in your `middleware.ts` file.
 
 > For \['nextjs', 'nextjs-app']:
+
+> **💡 Note:** Next.js 16 and later run the proxy on Node.js only. The Edge runtime is not
+> available for Next.js proxy files. See the [Next.js proxy
+> documentation](https://nextjs.org/docs/app/api-reference/file-conventions/proxy)
+> for details.
 
 To use the Bun runtime, set [`bunVersion`](/docs/project-configuration/vercel-json#bunversion) in your `vercel.json` file and your runtime config to `nodejs`.
 

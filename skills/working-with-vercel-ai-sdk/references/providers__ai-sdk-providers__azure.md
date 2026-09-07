@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/azure.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "f83ee019b968c653ba83b5256d89b0bdb72c6fc3755491881b136cb146300604"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "222e9d2dd10ebb859aa842773583ac9ec7550aa7c138173b08fcdd6c87f78e4c"
 ---
 
 # Azure OpenAI Provider
@@ -29,6 +29,15 @@ import { createAzure } from '@ai-sdk/azure';
 
 const azure = createAzure({
   resourceName: 'your-resource-name', // Azure resource name
+  apiKey: 'your-api-key',
+});
+```
+
+You can also use a complete [Microsoft Foundry OpenAI v1 base URL](https://learn.microsoft.com/en-us/azure/foundry/openai/api-version-lifecycle#model-support):
+
+```ts
+const azure = createAzure({
+  baseURL: 'https://your-resource.services.ai.azure.com/openai/v1',
   apiKey: 'your-api-key',
 });
 ```
@@ -77,6 +86,8 @@ You can use the following optional settings to customize the OpenAI provider ins
 
   Sets a custom [api version](https://learn.microsoft.com/en-us/azure/ai-services/openai/api-version-deprecation).
   Defaults to `v1`.
+  This setting is applied when the provider constructs the v1 path or uses
+  deployment-based URLs. Complete v1 base URLs are used as-is.
 
 - **baseURL** _string_
 
@@ -85,7 +96,18 @@ You can use the following optional settings to customize the OpenAI provider ins
   Either this or `resourceName` can be used.
   When a baseURL is provided, the resourceName is ignored.
 
-  With an Azure OpenAI baseURL, the resolved URL is `{baseURL}/v1{path}`.
+  For Azure-hosted URLs ending in `.openai.azure.com`,
+  `.services.ai.azure.com`, or `.cognitiveservices.azure.com`, you can pass
+  either an unversioned OpenAI prefix such as `https://your-resource.services.ai.azure.com/openai`
+  or a complete v1 base URL such as `https://your-resource.services.ai.azure.com/openai/v1`.
+  The provider appends `/v1` and the configured `api-version` to unversioned
+  resource URLs. Complete v1 URLs are used as-is.
+
+  Complete Microsoft Foundry project v1 URLs, such as
+  `https://your-resource.services.ai.azure.com/api/projects/your-project/openai/v1`,
+  are also used as-is. If `/v1` is omitted from a Foundry project URL, the
+  provider appends it without adding an `api-version` query parameter.
+
   With a non-Azure custom gateway baseURL, the resolved URL is `{baseURL}{path}`;
   the SDK does not append `/v1` or an `api-version` query parameter in this mode.
 

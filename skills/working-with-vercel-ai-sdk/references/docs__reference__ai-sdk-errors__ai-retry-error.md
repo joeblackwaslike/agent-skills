@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-retry-error.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "254f6887eebdf85a29e0fac7e480cc5eeb39f82cb09bd4938fe5bf1bc8a0b6be"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "a8e86758c4d0341b1ddd2aef370c90887d5c0546a2f4695125d6468ddf4a93b8"
 ---
 
 # AI_RetryError
@@ -62,6 +62,7 @@ if (RetryError.isInstance(error)) {
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
 - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
 - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)
+- [ToolChoiceViolationError](/docs/reference/ai-sdk-errors/ai-tool-choice-violation-error)
 - [AI_TypeValidationError](/docs/reference/ai-sdk-errors/ai-type-validation-error)
 - [AI_UIMessageStreamError](/docs/reference/ai-sdk-errors/ai-ui-message-stream-error)
 - [AI_UnsupportedFunctionalityError](/docs/reference/ai-sdk-errors/ai-unsupported-functionality-error)

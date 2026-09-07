@@ -15,8 +15,8 @@ related:
 summary: Advanced Anthropic API features including web search, provider timeouts, and automatic caching.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "eecb7a20e46f0be615833038127c8486a6cf994c6bba536ac56e8397b0468e3e"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "5fa1f0ef83f0f1731643e2c043a6eb79397a921239febd459a6d0b1cf4ae8130"
 ---
 
 # Advanced Features
@@ -33,7 +33,7 @@ Give Claude access to the web, bound how long a provider may take, and cache pro
 - [Provider Options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fadvanced&source_site=vercel-docs&relationship=related) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway
 - [Direct REST API Usage](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fadvanced&source_site=vercel-docs&relationship=related) — Use the AI Gateway API directly without client libraries using curl and fetch.
 - [Models & Providers](https://vercel.com/docs/ai-gateway/models-and-providers?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fadvanced&source_site=vercel-docs&relationship=related) — Work with models and providers in AI Gateway: provider routing and fallbacks, filtering, timeouts, caching, service tier
-- [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fadvanced&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fadvanced&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including pricing and markup, SDK and API compatibility, model availabilit
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced.graph.md](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fadvanced&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

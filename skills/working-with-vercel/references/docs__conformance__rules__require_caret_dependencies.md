@@ -12,13 +12,15 @@ related:
 summary: "Prevent the use of dependencies without a caret (\"^\") as a prefix."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/require_caret_dependencies.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "b34817a1359179e2a66101369250586a627f3cb4f0c7e344e3f4ef44ba3db835"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "2e6518ca9ebcf2e736aab54e358372cc34f20a25a3e72640718931fad019c38d"
 ---
 
 # REQUIRE_CARET_DEPENDENCIES
 
 > **🔒 Permissions Required**: Conformance
+
+> **💡 Note:** This rule is available from version 1.4.0.
 
 Using a caret ("^") as a prefix in the version of your dependencies is recommended. [Caret Ranges](https://github.com/npm/node-semver?tab=readme-ov-file#caret-ranges-123-025-004) allows patch and minor updates for versions 1.0.0 and above, patch updates for versions 0.X >=0.1.0, and no updates for versions 0.0.X. This rule is applicable to `"dependencies"` and `"devDependencies"`, and it helps maintain the security and health of your codebase.
 

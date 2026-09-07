@@ -15,8 +15,8 @@ related:
 summary: Generate and edit images using AI models through Vercel AI Gateway with support for multiple providers and modalities.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/image-generation.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "33d6295071b59baef5df47a8d8e69fbac23de82965eab5eac8c7ddf9a379330b"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "2548eb6efcbaea92506542bd9bb707e549a6897182532d6ca83a9d01b432abc5"
 ---
 
 # Image Generation
@@ -32,9 +32,9 @@ The Vercel [AI Gateway](/docs/ai-gateway) supports image generation and editing 
 - [Image-only models available in Vercel AI Gateway](https://vercel.com/changelog/image-only-models-available-in-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation&source_site=vercel-docs&relationship=related)
 - [Image Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/image?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation&source_site=vercel-docs&relationship=related) — Generate images from text prompts using AI Gateway.
 - [Image Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation&source_site=vercel-docs&relationship=related) — Generate images using AI models that support multimodal output through the Chat Completions API.
-- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation&source_site=vercel-docs&relationship=related) — Get started with AI Gateway by generating text, images, video, speech, or transcriptions, or by building realtime voice
 - [Text Generation](https://vercel.com/docs/ai-gateway/modalities/text-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation&source_site=vercel-docs&relationship=related) — Generate and stream text from hundreds of models through AI Gateway, with tool calling and structured output.
 - [Embeddings](https://vercel.com/docs/ai-gateway/modalities/embeddings?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation&source_site=vercel-docs&relationship=related) — Generate vector embeddings for semantic search, similarity matching, and retrieval-augmented generation \\(RAG\\) through
+- [Vercel & OpenAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation&source_site=vercel-docs&relationship=related) — Integrate your Vercel project with OpenAI's powerful suite of models.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/image-generation.graph.md](/docs/ai-gateway/modalities/image-generation.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

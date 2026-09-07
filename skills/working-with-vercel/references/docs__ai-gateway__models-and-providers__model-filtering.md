@@ -11,11 +11,12 @@ prerequisites:
 related:
   - /docs/ai-gateway/models-and-providers/provider-filtering-and-ordering
   - /docs/ai-gateway/authentication-and-byok
+  - /docs/ai-gateway/models-and-providers/automatic-caching
 summary: Restrict AI Gateway routing to models that have specific capabilities using the has option.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/model-filtering.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "b55981411dc9705f63e26611bbc18f9e2f0c80fb9e00126abc2477bbf78e3438"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "ab9b71262338e095419c421cbb68a4be3d847a1da5d02b3b151f15ad86b395b1"
 ---
 
 # Model Filtering
@@ -77,7 +78,7 @@ In this example:
 
 > **💡 Note:** `has: ['implicit-caching']` ensures you only route to models that cache
 > automatically. To instead let AI Gateway add cache markers for providers that
-> require explicit caching, see .
+> require explicit caching, see [Automatic Caching](/docs/ai-gateway/models-and-providers/automatic-caching).
 
 ## Combining with provider filtering
 

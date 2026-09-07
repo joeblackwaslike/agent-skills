@@ -3,7 +3,7 @@ title: Getting started with Speed Insights
 product: vercel
 url: /docs/speed-insights/quickstart
 canonical_url: "https://vercel.com/docs/speed-insights/quickstart"
-last_updated: 2026-08-25
+last_updated: 2026-09-01
 type: tutorial
 prerequisites:
   - /docs/speed-insights
@@ -12,17 +12,17 @@ related:
   - /docs/frameworks/frontend/astro
   - /docs/cdn
   - /docs/git
-  - /docs/speed-insights/using-speed-insights
+  - /docs/speed-insights/limits-and-pricing
 summary: "Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help you get started with using..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/quickstart.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "800c1b65b95cf49565d416631c5c7a833eba9cc1ef8a1351c9b97e80ff60ae2d"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "390a243676b356f8d22a664cace5b6058def9dc8efd3be118ab33a6a66189293"
 ---
 
 # Getting started with Speed Insights
 
-This guide will help you get started with using Vercel Speed Insights on your project, showing you how to enable it, add the package to your project, deploy your app to Vercel, and view your data in the dashboard.
+This guide will help you get started with using Vercel Speed Insights on your project, add the package to your project, deploy your app to Vercel, and view your data in the dashboard.
 
 
 <!-- docsgraph:related -->
@@ -38,8 +38,8 @@ This guide will help you get started with using Vercel Speed Insights on your pr
 - [How we made the Vercel Dashboard twice as fast](https://vercel.com/blog/how-we-made-the-vercel-dashboard-twice-as-fast?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fquickstart&source_site=vercel-docs&relationship=related)
 - [How Core Web Vitals affect SEO](https://vercel.com/blog/how-core-web-vitals-affect-seo?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fquickstart&source_site=vercel-docs&relationship=related)
 - [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fquickstart&source_site=vercel-docs&relationship=related) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
-- [Create React App on Vercel](https://vercel.com/docs/frameworks/frontend/create-react-app?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fquickstart&source_site=vercel-docs&relationship=related) — Deploy Create React App projects to Vercel and add Preview Deployments, Web Analytics, Speed Insights, and Observability
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fquickstart&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
+- [Create React App on Vercel](https://vercel.com/docs/frameworks/frontend/create-react-app?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fquickstart&source_site=vercel-docs&relationship=related) — Deploy Create React App projects to Vercel and add Preview Deployments, Web Analytics, Speed Insights, and Observability
 - [Getting started with Image Optimization](https://vercel.com/docs/image-optimization/quickstart?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how you can leverage Vercel Image Optimization in your projects.
 - [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fquickstart&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
 
@@ -49,6 +49,12 @@ Full cross-link map for this page: [/docs/speed-insights/quickstart.graph.md](/d
 > **🔒 Permissions Required**: Speed Insights
 
 To view instructions on using the Vercel Speed Insights in your project for your framework, use the **Choose a framework** dropdown on the right (at the bottom in mobile view).
+
+**Agent prompt**
+
+```text
+Help me add Vercel Speed Insights to this project. First, make sure the Vercel CLI is installed (`npm i -g vercel`). If I'm using Claude Code or Cursor, install the Vercel Plugin (`npx plugins add vercel/vercel-plugin`). For other agents, install Vercel Skills (`npx skills add vercel-labs/agent-skills`). Then: 1. Install @vercel/speed-insights. 2. Add the SpeedInsights component to my root layout. 3. Deploy with `vercel --prod` and verify Core Web Vitals data appears in the Vercel dashboard.
+```
 
 ## Prerequisites
 
@@ -84,18 +90,34 @@ To view instructions on using the Vercel Speed Insights in your project for your
 
 ## Set up your project
 
-- ### Enable Speed Insights in Vercel
-  On the Vercel dashboard, navigate to **Speed Insights** in the sidebar and select a project.
-  Or select the button below to go there.
-
-  Then click the **Enable** button in the dialog.
-  > **💡 Note:** Enabling Speed Insights will add new routes (scoped
-  > at `/_vercel/speed-insights/*` and `/<unique-path>/*`) after your next deployment.
-
 - ### Add `@vercel/speed-insights` to your project
   > For \['nextjs', 'nextjs-app', 'sveltekit', 'remix',  'create-react-app', 'nuxt', 'vue', 'other', 'astro']:
   Using the package manager of your choice, add the `@vercel/speed-insights` package to your project:
+  <CodeBlock>
+    <Code tab="pnpm">
+      ```bash
+      pnpm i @vercel/speed-insights
+      ```
+    </Code>
+    <Code tab="yarn">
+      ```bash
+      yarn i @vercel/speed-insights
+      ```
+    </Code>
+    <Code tab="npm">
+      ```bash
+      npm i @vercel/speed-insights
+      ```
+    </Code>
+    <Code tab="bun">
+      ```bash
+      bun i @vercel/speed-insights
+      ```
+    </Code>
+  </CodeBlock>
   > For \['html']:
+  > **💡 Note:** When using the HTML implementation, there is no need to install the
+  > `@vercel/speed-insights` package.
 
 - > For \[
   > &#x20;   'nextjs',
@@ -116,10 +138,165 @@ To view instructions on using the Vercel Speed Insights in your project for your
   The `SpeedInsights` component is a wrapper around the tracking script, offering more seamless integration with Next.js.
 
   The instructions differ based on which version of Next.js you're deploying.
+
+  Add the following component to your main app file:
+  ```ts {2, 8} filename="pages/_app.tsx" framework=nextjs
+  import type { AppProps } from 'next/app';
+  import { SpeedInsights } from '@vercel/speed-insights/next';
+
+  function MyApp({ Component, pageProps }: AppProps) {
+    return (
+      <>
+        <Component {...pageProps} />
+        <SpeedInsights />
+      </>
+    );
+  }
+
+  export default MyApp;
+  ```
+  ```js {1, 7} filename="pages/_app.jsx" framework=nextjs
+  import { SpeedInsights } from '@vercel/speed-insights/next';
+
+  function MyApp({ Component, pageProps }) {
+    return (
+      <>
+        <Component {...pageProps} />
+        <SpeedInsights />
+      </>
+    );
+  }
+
+  export default MyApp;
+  ```
+  For versions of Next.js older than 13.5, import the `<SpeedInsights>` component from `@vercel/speed-insights/react`. Then pass it the pathname of the route, as shown below:
+  ```tsx {1, 7} filename="pages/example-component.tsx" framework=nextjs
+  import { SpeedInsights } from '@vercel/speed-insights/react';
+  import { useRouter } from 'next/router';
+
+  export default function Layout() {
+    const router = useRouter();
+
+    return <SpeedInsights route={router.pathname} />;
+  }
+  ```
+  ```jsx {1, 7} filename="pages/example-component.jsx" framework=nextjs
+  import { SpeedInsights } from '@vercel/speed-insights/react';
+  import { useRouter } from 'next/router';
+
+  export default function Layout() {
+    const router = useRouter();
+
+    return <SpeedInsights route={router.pathname} />;
+  }
+  ```
   > For \['nextjs-app']:
   The `SpeedInsights` component is a wrapper around the tracking script, offering more seamless integration with Next.js.
 
   Add the following component to the root layout:
+
+  Add the following component to your main app file:
+  ```tsx {1, 15} filename="app/layout.tsx" framework=nextjs-app
+  import { SpeedInsights } from '@vercel/speed-insights/next';
+
+  export default function RootLayout({
+    children,
+  }: {
+    children: React.ReactNode;
+  }) {
+    return (
+      <html lang="en">
+        <head>
+          <title>Next.js</title>
+        </head>
+        <body>
+          {children}
+          <SpeedInsights />
+        </body>
+      </html>
+    );
+  }
+  ```
+  ```jsx {1, 15} filename="app/layout.jsx" framework=nextjs-app
+  import { SpeedInsights } from '@vercel/speed-insights/next';
+
+  export default function RootLayout({ children }) {
+    return (
+      <html lang="en">
+        <head>
+          <title>Next.js</title>
+        </head>
+        <body>
+          {children}
+          <SpeedInsights />
+        </body>
+      </html>
+    );
+  }
+  ```
+  For versions of Next.js older than 13.5, import the `<SpeedInsights>` component from `@vercel/speed-insights/react`.
+
+  Create a dedicated component to avoid opting out from SSR on the layout and pass the pathname of the route to the `SpeedInsights` component:
+  ```tsx filename="app/insights.tsx" framework=nextjs-app
+  'use client';
+
+  import { SpeedInsights } from '@vercel/speed-insights/react';
+  import { usePathname } from 'next/navigation';
+
+  export function Insights() {
+    const pathname = usePathname();
+
+    return <SpeedInsights route={pathname} />;
+  }
+  ```
+  ```jsx filename="app/insights.jsx" framework=nextjs-app
+  'use client';
+
+  import { SpeedInsights } from '@vercel/speed-insights/react';
+  import { usePathname } from 'next/navigation';
+
+  export function Insights() {
+    const pathname = usePathname();
+
+    return <SpeedInsights route={pathname} />;
+  }
+  ```
+  Then, import the `Insights` component in your layout:
+  ```tsx {1} filename="app/layout.tsx" framework=nextjs-app
+  import type { ReactNode } from 'react';
+  import { Insights } from './insights';
+
+  export default function RootLayout({ children }: { children: ReactNode }) {
+    return (
+      <html lang="en">
+        <head>
+          <title>Next.js</title>
+        </head>
+        <body>
+          {children}
+          <Insights />
+        </body>
+      </html>
+    );
+  }
+  ```
+  ```jsx {1} filename="app/layout.jsx" framework=nextjs-app
+  import { Insights } from './insights';
+
+  export default function RootLayout({ children }) {
+    return (
+      <html lang="en">
+        <head>
+          <title>Next.js</title>
+        </head>
+        <body>
+          {children}
+          <Insights />
+        </body>
+      </html>
+    );
+  }
+  ```
   > For \['create-react-app']:
   The `SpeedInsights` component is a wrapper around the tracking script, offering more seamless integration with React.
 
@@ -328,6 +505,8 @@ To view instructions on using the Vercel Speed Insights in your project for your
   Alternatively, you can [connect your project's git repository](/docs/git#deploying-a-git-repository), which will enable Vercel to deploy your latest pushes and merges to main.
 
   Once your app is deployed, it's ready to begin tracking performance metrics.
+  > **💡 Note:** Your deployments automatically include routes to collect Speed Insights events (scoped at
+  > `/_vercel/speed-insights/*` and `/<unique-path>/*`).
   > **💡 Note:** If everything is set up correctly, you should be able to find the
   > `/<unique-path>/script.js` script inside the head tag of your page.
 
@@ -335,6 +514,8 @@ To view instructions on using the Vercel Speed Insights in your project for your
   Once your app is deployed, and users have visited your site, you can view the data in the dashboard.
 
   To do so, go to your [dashboard](/dashboard), select your project, and click [**Speed Insights**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fspeed-insights\&title=Go+to+Speed+Insights) in the sidebar.
+
+  Upgrade to [Speed Insights Plus](/docs/speed-insights/limits-and-pricing) to unlock all Core Web Vitals, breakdowns, and [Drains](/docs/drains).
 
   After a few days of visitors, you'll be able to start exploring your metrics. For more information on how to use Speed Insights, see [Using Speed Insights](/docs/speed-insights/using-speed-insights).
 

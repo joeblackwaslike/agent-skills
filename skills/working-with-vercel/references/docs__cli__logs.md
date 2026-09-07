@@ -8,12 +8,12 @@ type: reference
 prerequisites:
   - /docs/cli
 related:
-  []
+  - /docs/cli/global-options
 summary: View and filter request logs for your Vercel project, or stream live runtime logs from a deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/logs.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "a4f7cec9bd6bfeff0e9ede5f306d4ffcd838cdd083b402e7ac93d874fc108e7d"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "565e77b8e3263ec8cc84b79eff76ba6933e35a404fb289f2812d1c920a15e72d"
 ---
 
 # vercel logs
@@ -28,11 +28,11 @@ The `vercel logs` command displays request logs for your project or streams live
 
 - [Improvements to command line logs](https://vercel.com/changelog/improvements-to-command-line-logs?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related)
 - [vercel logs CLI command now optimized for agents with historical log querying](https://vercel.com/changelog/vercel-logs-cli-command-now-optimized-for-agents-with-historical-log?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related)
-- [vercel activity](https://vercel.com/docs/cli/activity?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related) — View activity events for your Vercel project or team, filtered by type, date range, and project.
-- [Get logs for a deployment](https://vercel.com/docs/rest-api/logs/get-logs-for-a-deployment?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related) — GET /v1/projects/{projectId}/deployments/{deploymentId}/runtime-logs — Returns a stream of logs for a given deployment.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [Runtime Logs](https://vercel.com/docs/logs/runtime?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to search, inspect, and share your runtime logs with the Logs tab.
+- [vercel activity](https://vercel.com/docs/cli/activity?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related) — View activity events for your Vercel project or team, filtered by type, date range, and project.
+- [vercel traces](https://vercel.com/docs/cli/traces?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related) — Inspect a request trace in the terminal, open it in the Vercel Dashboard, or manage the trace sampling rules for a proje
 - [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [vercel inspect](https://vercel.com/docs/cli/inspect?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to retrieve information about your Vercel deployments using the vercel inspect CLI command.
 
 Full cross-link map for this page: [/docs/cli/logs.graph.md](/docs/cli/logs.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -219,6 +219,24 @@ Display logs with full message details:
 ```bash filename="terminal"
 vercel logs --expand --limit 20
 ```
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel logs` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 
 ---

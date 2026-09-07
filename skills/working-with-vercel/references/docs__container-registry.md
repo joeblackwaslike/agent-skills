@@ -12,12 +12,12 @@ related:
   - /docs/sandbox/concepts/images
   - /docs/cli
   - /docs/container-registry/public-and-shared-repositories
-  - /docs/container-registry/cli-reference
+  - /docs/container-registry/github-actions
 summary: Store and manage Docker container images on Vercel. Build and push images with the Vercel CLI, then run them on Vercel Functions or in Vercel Sandbox.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/container-registry.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "0b8a1c3363d29c9a2ab8383ad71097f38d3f42a33d91311058e4b765b3f5674b"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "eb6c9e7e953446457b69d01a233f7207fa5ba35abd3bcc86d4ce9c2441403c6c"
 ---
 
 # Vercel Container Registry
@@ -145,6 +145,8 @@ You can also run `vercel vcr add my-repository`.
 ## Use your container tool directly
 
 If you'd rather not use `vercel vcr build` and `vercel vcr push`, authenticate and push with your container tool yourself. You still need the team slug and project name for the image reference, and the account you authenticate with still needs access to that project.
+
+To push from a GitHub Actions workflow, use the prebuilt Vercel login action instead. It authenticates with OIDC, so there are no long-lived tokens to manage. See [Push Images from GitHub Actions](/docs/container-registry/github-actions).
 
 ### Authenticate with a Vercel token
 

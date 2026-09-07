@@ -3,7 +3,7 @@ title: Incremental Static Regeneration (ISR)
 product: vercel
 url: /docs/incremental-static-regeneration
 canonical_url: "https://vercel.com/docs/incremental-static-regeneration"
-last_updated: 2026-08-11
+last_updated: 2026-08-28
 type: conceptual
 prerequisites:
   []
@@ -16,13 +16,15 @@ related:
 summary: ISR serves cached static pages while regenerating content in the background. Vercel\
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/incremental-static-regeneration.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "997453ffa3a6f338de2de0fda1ab0f2fa067a30e764098173442a2450732b9f5"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "305bdeacf152a1a9c3a7ae676ec04386629367c16eedce69dc74615537da8fe8"
 ---
 
 # Incremental Static Regeneration (ISR)
 
 > **🔒 Permissions Required**: Incremental Static Regeneration
+
+Incremental Static Regeneration (ISR) is a caching strategy that combines the speed of static content with the flexibility of server-side rendering. It follows the stale-while-revalidate pattern: visitors get a fast cached response, and Vercel regenerates the page in the background based on a time interval or an API call you trigger.
 
 
 <!-- docsgraph:related -->
@@ -39,14 +41,12 @@ sha256: "997453ffa3a6f338de2de0fda1ab0f2fa067a30e764098173442a2450732b9f5"
 - [Request collapsing for ISR cache misses](https://vercel.com/changelog/request-collapsing-for-isr-cache-misses?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration&source_site=vercel-docs&relationship=related)
 - [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration&source_site=vercel-docs&relationship=related) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
 - [Build with a Nitro starter template](https://vercel.com/kb/guide/build-with-a-nitro-starter-template?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration&source_site=vercel-docs&relationship=related) — Deploy a Nitro app to Vercel from a starter template. Compare the Nitro Starter, route rules, cached HTTP handler, plugi
+- [Caching audits: Five antipatterns that quietly cost performance and money](https://vercel.com/kb/guide/caching-antipatterns?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration&source_site=vercel-docs&relationship=related) — Five caching antipatterns from hundreds of Vercel technical audits: write amplification, deploy-wiped caches, spinner sh
 - [Deploy a headless Shopify storefront with Vercel](https://vercel.com/kb/guide/deploy-headless-shopify-storefront-with-vercel?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration&source_site=vercel-docs&relationship=related) — Deploy a headless Shopify storefront using the Next.js Commerce template on Vercel
-- [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration&source_site=vercel-docs&relationship=related) — Learn how to build and scale performant APIs on Vercel.
 - [Preventing the stampede: Request collapsing in the Vercel CDN ](https://vercel.com/blog/cdn-request-collapsing?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration&source_site=vercel-docs&relationship=related)
 
 Full cross-link map for this page: [/docs/incremental-static-regeneration.graph.md](/docs/incremental-static-regeneration.graph.md?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Incremental Static Regeneration (ISR) is a caching strategy that combines the speed of static content with the flexibility of server-side rendering. It follows the stale-while-revalidate pattern: visitors get a fast cached response, and Vercel regenerates the page in the background based on a time interval or an API call you trigger.
 
 Vercel's CDN provides fully managed caching and routing when you implement ISR with frameworks like Next.js, SvelteKit, Nuxt, and Astro.
 
@@ -94,19 +94,55 @@ To cache data inside your functions separately from the page response, see [Runt
 
 ISR follows a lifecycle from build through serving and revalidation. The diagram below shows the complete flow. Each section that follows focuses on one stage.
 
+```mermaid
+flowchart LR
+    A["Build"] -->|"Deploy"| B["CDN"]
+    C["Request"] --> B
+    B -->|"Hit"| D["Serve"]
+    B -->|"Miss"| E["Origin"]
+    D & E -.-> F["Revalidate"] --> G{"OK?"}
+    G -->|"Yes"| H["Update"]
+    G -->|"No"| I["Stale"]
+```
+
 ### At build time
+
+```mermaid
+flowchart LR
+    A["Deploy"] --> B["Analyze routes"] --> C["Distribute metadata"] --> D["CDN regions ready"]
+```
 
 Your framework code defines which routes are static, cacheable, or dynamic. When you deploy, Vercel analyzes this and distributes route metadata to every CDN region. Before any request arrives, each region already knows which paths are cacheable. Because Vercel knows cacheability ahead of time, it can selectively pre-render content and collapse concurrent requests to the same path.
 
 ### At request time (cache hit)
 
+```mermaid
+flowchart LR
+    A["Request at CDN"] --> B{"Cached?"} -->|"Yes"| C["Serve from CDN"]
+```
+
 A request arrives at the nearest CDN region. Vercel checks local caches in that region. If the content is cached and its tags are still valid, Vercel serves the response immediately from the CDN. Your function doesn't run.
 
 ### At request time (cache miss)
 
+```mermaid
+flowchart LR
+    A["Request at CDN"] --> B{"Cached?"} -->|"No"| C["Forward to origin"]
+    C --> D{"ISR cache?"}
+    D -->|"Hit"| E["Serve from cache"]
+    D -->|"Miss"| F["Invoke function"]
+```
+
 If the CDN doesn't have a valid cached response, Vercel forwards the request to your Function region. If multiple requests hit the same uncached path at once, Vercel collapses them into a single invocation. Vercel then checks the durable ISR cache. If the cache has the content, Vercel serves it from the origin and replicates it back to the CDN. If not, Vercel invokes your function, which can read from the data cache and your backend. Vercel stores the response in the ISR cache and serves it to the user.
 
 ### At revalidation time
+
+```mermaid
+flowchart LR
+    A["Trigger"] --> B["Function re-runs
+in background"] --> C["Update ISR cache"] --> D["Purge all
+CDN regions"]
+```
 
 Two triggers can update cached content:
 
@@ -116,6 +152,11 @@ Two triggers can update cached content:
 Both execute in the background: visitors continue to get the cached version while Vercel generates the new content. Once the new version is ready, Vercel updates all representations of the path together. It purges HTML and data payloads atomically and propagates new content to all CDN regions through a global push pipeline.
 
 ### On failure
+
+```mermaid
+flowchart LR
+    A["Revalidation fails"] --> B["Serve stale content"] --> C["Retry in 30s"]
+```
 
 If revalidation fails, Vercel keeps serving the existing cached content. Vercel considers a revalidation failed when it encounters:
 

@@ -10,11 +10,12 @@ prerequisites:
 related:
   - /docs/drains/reference/audit-logs
   - /docs/cli/domains
+  - /docs/cli/global-options
 summary: Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/buy.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "5021bac70a1e347035407442e12ff88fbf3623a91dc342a2e5b7b34e985cd306"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "66e229ea51dc2744a2b9756e0dba1b01f2c5d8e6330cbf5e007c1cab51390a67"
 ---
 
 # vercel buy
@@ -28,11 +29,11 @@ The `vercel buy` command allows you to purchase Vercel products for your team di
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Inside the Vercel intern experience](https://vercel.com/blog/inside-the-vercel-intern-experience?from=related&source_path=%2Fdocs%2Fcli%2Fbuy&source_site=vercel-docs&relationship=related)
-- [Purchase credits](https://vercel.com/docs/rest-api/billing/purchase-credits?from=related&source_path=%2Fdocs%2Fcli%2Fbuy&source_site=vercel-docs&relationship=related) — POST /v1/billing/buy — Purchases credits for a Vercel team using the default payment method on file. The purchase is cha
-- [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fbuy&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel usage](https://vercel.com/docs/cli/usage?from=related&source_path=%2Fdocs%2Fcli%2Fbuy&source_site=vercel-docs&relationship=related) — Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
-- [Vercel CLI Global Options](https://vercel.com/docs/cli/global-options?from=related&source_path=%2Fdocs%2Fcli%2Fbuy&source_site=vercel-docs&relationship=related) — Global options are commonly available to use with multiple Vercel CLI commands. Learn about Vercel CLI's global options
+- [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fbuy&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel teams](https://vercel.com/docs/cli/teams?from=related&source_path=%2Fdocs%2Fcli%2Fbuy&source_site=vercel-docs&relationship=related) — Learn how to list, add, switch, invite, and manage your teams with the vercel teams CLI command.
 - [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fbuy&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fbuy&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 
 Full cross-link map for this page: [/docs/cli/buy.graph.md](/docs/cli/buy.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fbuy&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -167,6 +168,24 @@ vercel buy credits gateway 250 --json
 
 *Using the \`vercel buy credits\` command with the
 \`--json\` option for structured output.*
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel buy` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 
 ---

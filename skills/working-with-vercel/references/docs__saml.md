@@ -3,7 +3,7 @@ title: SAML Single Sign-On
 product: vercel
 url: /docs/saml
 canonical_url: "https://vercel.com/docs/saml"
-last_updated: 2026-08-18
+last_updated: 2026-08-28
 type: reference
 prerequisites:
   []
@@ -15,13 +15,15 @@ related:
 summary: Learn how to configure SAML SSO for your organization on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/saml.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "4971be19fe40ee444ad561ad10e82c23c285e11d9a3b0b2a3660f496fe18d285"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "38b0478774066caf3936d687167e4ac64511a5ae136a780690153f6361bfb36f"
 ---
 
 # SAML Single Sign-On
 
 > **🔒 Permissions Required**: SAML
+
+To manage the [members](/docs/rbac/managing-team-members) of your team through a third-party identity provider like [Okta](https://www.okta.com/) or [Auth0](https://auth0.com/), you can set up the Security Assertion Markup Language (SAML) [feature](#configuring-saml-sso) from your team's settings.
 
 
 <!-- docsgraph:related -->
@@ -37,13 +39,11 @@ sha256: "4971be19fe40ee444ad561ad10e82c23c285e11d9a3b0b2a3660f496fe18d285"
 - [Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel?from=related&source_path=%2Fdocs%2Fsaml&source_site=vercel-docs&relationship=related) — Learn how to Sign in with Vercel
 - [Access Control](https://vercel.com/docs/security/access-control?from=related&source_path=%2Fdocs%2Fsaml&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [OpenID Connect \\(OIDC\\) Federation](https://vercel.com/docs/oidc?from=related&source_path=%2Fdocs%2Fsaml&source_site=vercel-docs&relationship=related) — Secure the access to your backend using OIDC Federation to enable auto-generated, short-lived, and non-persistent creden
-- [Two-factor enforcement](https://vercel.com/docs/two-factor-enforcement?from=related&source_path=%2Fdocs%2Fsaml&source_site=vercel-docs&relationship=related) — Learn how to enforce two-factor authentication \\(2FA\\) for your Vercel team members to enhance security.
 - [Account Management](https://vercel.com/docs/accounts?from=related&source_path=%2Fdocs%2Fsaml&source_site=vercel-docs&relationship=related) — Learn how to manage your Vercel account and team members.
+- [Two-factor enforcement](https://vercel.com/docs/two-factor-enforcement?from=related&source_path=%2Fdocs%2Fsaml&source_site=vercel-docs&relationship=related) — Learn how to enforce two-factor authentication \\(2FA\\) for your Vercel team members to enhance security.
 
 Full cross-link map for this page: [/docs/saml.graph.md](/docs/saml.graph.md?from=related&source_path=%2Fdocs%2Fsaml&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-To manage the [members](/docs/rbac/managing-team-members) of your team through a third-party identity provider like [Okta](https://www.okta.com/) or [Auth0](https://auth0.com/), you can set up the Security Assertion Markup Language (SAML) [feature](#configuring-saml-sso) from your team's settings.
 
 Once enabled, all team members will be able to log in or access [Preview](/docs/deployments/environments#preview-environment-pre-production) and Production Deployments using your [selected identity provider](/docs/saml#saml-providers). Any new users signing up with SAML will automatically be added to your team.
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-tui.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "d8e33bb023d168f5a53b4de673887e9739656ee48f439fba7a0f35143a2f7b81"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "ee91c8533dfcad563ea3b71e509987a0fdd3a4430666a274b552481ee2ad2ffa"
 ---
 
 # AI SDK TUI
@@ -143,6 +143,7 @@ from free-form terminal input.
   - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
   - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
   - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)
+  - [ToolChoiceViolationError](/docs/reference/ai-sdk-errors/ai-tool-choice-violation-error)
   - [AI_TypeValidationError](/docs/reference/ai-sdk-errors/ai-type-validation-error)
   - [AI_UIMessageStreamError](/docs/reference/ai-sdk-errors/ai-ui-message-stream-error)
   - [AI_UnsupportedFunctionalityError](/docs/reference/ai-sdk-errors/ai-unsupported-functionality-error)

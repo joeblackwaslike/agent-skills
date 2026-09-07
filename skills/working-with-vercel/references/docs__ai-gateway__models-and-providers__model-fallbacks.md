@@ -14,8 +14,8 @@ related:
 summary: Configure model-level failover to try backup models when the primary model is unavailable
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/model-fallbacks.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "6e503dbb9a02e5a60f4e0bbc49b24ddca68b0b55622516a73b7cbbea973ea47d"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "7ffc5d955431a45f957b3ace2ec7f86962d8fcf4760f59981a53680726a67d72"
 ---
 
 # Model Fallbacks
@@ -29,6 +29,7 @@ You can configure model failover to specify backups that are tried in order if t
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [ Routing rules now available on AI Gateway](https://vercel.com/changelog/ai-gateway-routing-rules?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related)
+- [Claude Fable 5.1 now available on AI Gateway](https://vercel.com/changelog/claude-fable-5-1-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related)
 - [Claude Fable 5 access restored on AI Gateway](https://vercel.com/changelog/claude-fable-5-access-restored-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related)
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
 - [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
@@ -39,7 +40,6 @@ You can configure model failover to specify backups that are tried in order if t
 - [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related)
 - [Provider Options](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API.
 - [Advanced Configuration](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related) — Configure provider options, model fallbacks, BYOK credentials, and prompt caching.
-- [Provider Timeouts](https://vercel.com/docs/ai-gateway/models-and-providers/provider-timeouts?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related) — Configure per-provider timeouts for fast failover when a provider is slow to respond.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/model-fallbacks.graph.md](/docs/ai-gateway/models-and-providers/model-fallbacks.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

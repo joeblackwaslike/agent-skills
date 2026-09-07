@@ -13,8 +13,8 @@ related:
 summary: Prebuilt server actions and UI blocks you can install to speed up common platform tasks.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "0cec462f500956e25c2cb6451d02a9a53daaeceb74a2ca53d414b8ed812a91dc"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "64860e134329d78eea5413d1cb726f7665564c09ba297b8654f26eb6642e28dc"
 ---
 
 # Platform Elements
@@ -29,9 +29,9 @@ Platform Elements are prebuilt building blocks for platforms. Actions are server
 
 - [Introducing Platform Elements](https://vercel.com/changelog/introducing-platform-elements?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements&source_site=vercel-docs&relationship=related)
 - [Introducing Vercel for Platforms](https://vercel.com/changelog/introducing-vercel-for-platforms?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements&source_site=vercel-docs&relationship=related)
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 - [Products](https://vercel.com/docs/products?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements&source_site=vercel-docs&relationship=related) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
 - [Platform Template](https://vercel.com/docs/platforms/examples/platform-template?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements&source_site=vercel-docs&relationship=related) — Build an AI app builder on Vercel with sandboxes, AI Gateway, deployments, and project transfers.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 - [Vercel fundamental concepts](https://vercel.com/docs/fundamentals?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements&source_site=vercel-docs&relationship=related) — Learn about the core concepts of Vercel
 - [Examples](https://vercel.com/docs/platforms/examples?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements&source_site=vercel-docs&relationship=related) — Clone working multi-tenant and multi-project starters to begin your platform build.
 

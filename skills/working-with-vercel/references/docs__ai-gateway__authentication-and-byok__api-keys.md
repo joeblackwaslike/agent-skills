@@ -3,7 +3,7 @@ title: API Keys
 product: vercel
 url: /docs/ai-gateway/authentication-and-byok/api-keys
 canonical_url: "https://vercel.com/docs/ai-gateway/authentication-and-byok/api-keys"
-last_updated: 2026-08-11
+last_updated: 2026-08-28
 type: how-to
 prerequisites:
   - /docs/ai-gateway/authentication-and-byok
@@ -17,8 +17,8 @@ related:
 summary: "Create, view, and delete AI Gateway API keys, and set each key's budget and spend attribution, from the dashboard, CLI, or API."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok/api-keys.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "e2d24e6cc68de8f248fedc480b40d38bcefadef29956a0199c86edd334c784c6"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "8224c581c57cef808e2d7bb71845f2e7df907dd9e1f8ad4ae154eabefca943ac"
 ---
 
 # API Keys

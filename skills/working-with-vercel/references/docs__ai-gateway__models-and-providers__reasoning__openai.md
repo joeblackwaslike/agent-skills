@@ -14,8 +14,8 @@ related:
 summary: Configure reasoning and thinking for OpenAI models with the AI SDK and AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/openai.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "e04a9d23ab4540df3d5f8e9b9f8565761c04981f442930b45bd22ba56e575c65"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "2f222a9c492ccadbf6f8a944cd364cd1141de52ee424a39413a8c4be730582a7"
 ---
 
 # OpenAI Reasoning
@@ -32,9 +32,10 @@ OpenAI reasoning models can think through problems before responding. You can co
 - [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fopenai&source_site=vercel-docs&relationship=related) — Control how much a reasoning model thinks before answering with the OpenResponses API.
 - [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fopenai&source_site=vercel-docs&relationship=related) — Control how much a model thinks before answering with the OpenAI Chat Completions API.
 - [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fopenai&source_site=vercel-docs&relationship=related)
+- [Cerebras](https://ai-sdk.dev/providers/ai-sdk-providers/cerebras?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fopenai&source_site=vercel-docs&relationship=related)
 - [Amazon Bedrock Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fopenai&source_site=vercel-docs&relationship=related) — Configure reasoning for models hosted on Amazon Bedrock with the AI SDK and AI Gateway.
-- [Google and Vertex Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/google?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fopenai&source_site=vercel-docs&relationship=related) — Configure thinking for Google Gemini and Gemma models with the AI SDK and AI Gateway.
 - [Extended Thinking](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fopenai&source_site=vercel-docs&relationship=related) — Configure how much Claude thinks before answering, using the Anthropic Messages API thinking parameter.
+- [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fopenai&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/reasoning/openai.graph.md](/docs/ai-gateway/models-and-providers/reasoning/openai.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fopenai&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

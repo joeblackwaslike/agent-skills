@@ -13,8 +13,8 @@ related:
 summary: Track feature flag evaluations and analyze their impact with Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/observability.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "6e52d9466780c488bff285d374b59c7ec41ff24b5c7b516de09edb0f16c8d908"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "3f96d8ab9581ab9607c6d37b0c15a9647a0bde57fa059b16ebbbc58866471154"
 ---
 
 # Observability
@@ -27,14 +27,15 @@ Feature flags play a crucial role in the software development lifecycle, enablin
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags?from=related&source_path=%2Fdocs%2Fflags%2Fobservability&source_site=vercel-docs&relationship=related)
 - [Observe your feature flags with the Vercel DX platform](https://vercel.com/changelog/observe-your-feature-flags-with-the-vercel-dx-platform?from=related&source_path=%2Fdocs%2Fflags%2Fobservability&source_site=vercel-docs&relationship=related)
+- [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags?from=related&source_path=%2Fdocs%2Fflags%2Fobservability&source_site=vercel-docs&relationship=related)
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related&source_path=%2Fdocs%2Fflags%2Fobservability&source_site=vercel-docs&relationship=related)
+- [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates?from=related&source_path=%2Fdocs%2Fflags%2Fobservability&source_site=vercel-docs&relationship=related)
 - [Vercel Flags](https://vercel.com/docs/flags/vercel-flags?from=related&source_path=%2Fdocs%2Fflags%2Fobservability&source_site=vercel-docs&relationship=related) — Use Vercel as your feature flag provider to create and manage flags, define targeting rules, and run experiments directl
 - [Managing flags in the dashboard](https://vercel.com/docs/flags/vercel-flags/dashboard?from=related&source_path=%2Fdocs%2Fflags%2Fobservability&source_site=vercel-docs&relationship=related) — Learn how to manage your feature flags using the Vercel Dashboard.
-- [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related&source_path=%2Fdocs%2Fflags%2Fobservability&source_site=vercel-docs&relationship=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
-- [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fflags%2Fobservability&source_site=vercel-docs&relationship=related) — Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application perfor
-- [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started?from=related&source_path=%2Fdocs%2Fflags%2Fobservability&source_site=vercel-docs&relationship=related) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
+- [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fflags%2Fobservability&source_site=vercel-docs&relationship=related) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
+- [Marketplace](https://vercel.com/docs/flags/marketplace?from=related&source_path=%2Fdocs%2Fflags%2Fobservability&source_site=vercel-docs&relationship=related) — Connect your preferred feature flag provider through the Vercel Marketplace for a unified flags experience.
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fflags%2Fobservability&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/flags/observability.graph.md](/docs/flags/observability.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fobservability&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -49,6 +50,10 @@ Tracking which flags are evaluated and when gives you insights into:
 - Issues related to specific flag configurations
 
 ## Observability options
+
+**Web Analytics** [→](/docs/flags/observability/web-analytics)
+
+Break down page views and custom events by feature flags in Web Analytics. Understand how flags affect user behavior and conversion rates.
 
 ## How it works
 

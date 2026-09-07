@@ -3,7 +3,7 @@ title: AI Gateway
 product: vercel
 url: /docs/ai-gateway
 canonical_url: "https://vercel.com/docs/ai-gateway"
-last_updated: 2026-08-27
+last_updated: 2026-09-03
 type: integration
 prerequisites:
   []
@@ -13,16 +13,18 @@ related:
   - /docs/ai-gateway/sdks-and-apis/responses
   - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api
   - /docs/ai-gateway/ecosystem/framework-integrations
-summary: AI Gateway provides a unified API to access hundreds of AI models through a single endpoint, with text, image, and video generation, embeddings, and...
+summary: Build AI agents and applications with hundreds of models through one API, with routing, fallbacks, budgets, and usage monitoring.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "7f8bfa5307d6f859a0a7c3e7e4846962753f5d128a9a6de206e5d2d50fa202b1"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "4bb392788a3732f21dadd4309bc1e9317e90cde824fde0692e7df544d176a1b7"
 ---
 
 # AI Gateway
 
-> **🔒 Permissions Required**: AI Gateway
+## Build AI agents with hundreds of models
+
+Build agents and AI applications through one API. AI Gateway routes requests, manages fallbacks and budgets, monitors usage, and connects supported coding agents.
 
 
 <!-- docsgraph:related -->
@@ -46,9 +48,62 @@ sha256: "7f8bfa5307d6f859a0a7c3e7e4846962753f5d128a9a6de206e5d2d50fa202b1"
 Full cross-link map for this page: [/docs/ai-gateway.graph.md](/docs/ai-gateway.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
+#### Connect a coding agent
+
+```bash filename="terminal"
+vercel ai-gateway coding-agents setup
+```
+
+#### Build an agent
+
+```typescript filename="agent.ts"
+import { ToolLoopAgent, tool } from 'ai';
+import { z } from 'zod';
+
+const agent = new ToolLoopAgent({
+  model: 'anthropic/claude-sonnet-5',
+  tools: {
+    getWeather: tool({
+      description: 'Get the current weather for a location',
+      inputSchema: z.object({ location: z.string() }),
+      execute: async ({ location }) => ({
+        location,
+        temperature: 72,
+        condition: 'sunny',
+      }),
+    }),
+  },
+});
+
+const { text } = await agent.generate({
+  prompt: "What's the weather in Tokyo?",
+});
+
+console.log(text);
+```
+
+#### Call a model
+
+```bash filename="terminal"
+curl https://ai-gateway.vercel.sh/v1/chat/completions \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "openai/gpt-5.6-sol",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Invent a new holiday and describe its traditions."
+      }
+    ]
+  }'
+```
+
+> **🔒 Permissions Required**: AI Gateway
+
 AI Gateway works with the [AI SDK](/docs/ai-gateway/getting-started), [OpenAI Chat Completions](/docs/ai-gateway/sdks-and-apis/openai-chat-completions), [OpenAI Responses](/docs/ai-gateway/sdks-and-apis/responses), [Anthropic Messages](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api), or your [preferred framework](/docs/ai-gateway/ecosystem/framework-integrations).
 
-## What AI Gateway provides
+## Build reliable AI apps and agents
 
 - **One key, hundreds of models.** Access models from multiple providers with a single API key
 - **Unified API.** Switch between providers and models with minimal code changes

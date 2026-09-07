@@ -10,20 +10,20 @@ prerequisites:
   - /docs/pricing
 related:
   - /docs/plans/pro-plan
+  - /docs/pricing/taxes
   - /docs/pricing/understanding-my-invoice
   - /docs/fluid-compute
   - /docs/functions/usage-and-pricing
-  - /docs/sandbox
 summary: Vercel pricing for the Osaka, Japan (kix1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/kix1.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "b8646826455f87c5c33417693988da208359875c26ff32c6d0f768eaa08ac2c5"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "c8f2d32af94398eae414d1f41d10a5e51103a6cfe96fb45659a3d9fb46eb7f41"
 ---
 
 # Osaka, Japan (kix1) pricing
 
-The table below shows Managed Infrastructure products with pricing specific to the  region. This pricing is available only to [Pro plan](/docs/plans/pro-plan) users. Your team will be charged based on the usage of your projects for each resource in this region.
+The table below shows Managed Infrastructure products with pricing specific to the Osaka, Japan (kix1) region. This pricing is available only to [Pro plan](/docs/plans/pro-plan) users. Your team will be charged based on the usage of your projects for each resource in this region.
 
 
 <!-- docsgraph:related -->
@@ -35,10 +35,12 @@ The table below shows Managed Infrastructure products with pricing specific to t
 - [Seoul, South Korea \\(icn1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/icn1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fkix1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Seoul, South Korea \\(icn1\\) region.
 - [Portland, USA \\(pdx1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/pdx1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fkix1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Portland, USA \\(pdx1\\) region.
 - [Stockholm, Sweden \\(arn1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/arn1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fkix1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Stockholm, Sweden \\(arn1\\) region.
-- [San Francisco, USA \\(sfo1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sfo1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fkix1&source_site=vercel-docs&relationship=related) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
+- [Sydney, Australia \\(syd1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/syd1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fkix1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Sydney, Australia \\(syd1\\) region.
 
 Full cross-link map for this page: [/docs/pricing/regional-pricing/kix1.graph.md](/docs/pricing/regional-pricing/kix1.graph.md?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fkix1&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
+
+> **💡 Note:** All prices shown are in USD and exclude value-added tax (VAT), goods and services tax (GST), and other applicable taxes. Taxes are calculated based on your billing address and added to your invoice where required by law. [Learn more about taxes](/docs/pricing/taxes).
 
 The **Included** column shows the amount of usage covered in your [billing cycle](/docs/pricing/understanding-my-invoice#understanding-your-invoice). If you use more than this amount, the **Additional** column lists the rates for any extra usage.
 

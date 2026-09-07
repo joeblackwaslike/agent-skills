@@ -16,8 +16,8 @@ related:
 summary: Understand how Vercel Workflows billing works and the limits that apply to runs, streams, and platform resources.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/workflows/pricing.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "b11200dcc82c9524a51d0e7344f67968aa97060922e084ba5ff75d8580d5bbfc"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "e83f06fb0ddee1a6642727e1f1636614df17c115a03a9f44cb3737099cbe41a0"
 ---
 
 # Workflow Pricing and Limits
@@ -37,11 +37,11 @@ Vercel bills Workflows usage across three resources:
 - [Workflow SDK vs Cloudflare Workflows](https://workflow-sdk.dev/docs/comparisons/workflow-sdk-vs-cloudflare-workflows?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Cloudflare Workflows is a durable engine on Workers and Durable Objects. It and the Workflow SDK both replay, but differ
 - [Workflow SDK vs Inngest](https://workflow-sdk.dev/docs/comparisons/workflow-sdk-vs-inngest?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Inngest is an event-driven durable-functions platform that invokes your code over HTTP and memoizes step results. The Wo
 - [Vercel vs Webflow Cloud](https://vercel.com/kb/guide/vercel-vs-webflow-cloud?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Compare Vercel and Webflow Cloud for deploying Next.js and Astro apps, including runtime, framework support, storage, pr
+- [How to run background jobs in Next.js](https://vercel.com/kb/guide/how-to-run-background-jobs-in-nextjs-on-vercel?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Learn the durable way to run background jobs in Next.js on Vercel with the Workflow SDK, and when to reach for Queues or
 - [Limits](https://vercel.com/docs/limits?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
 - [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about legacy usage and pricing for Vercel Functions.
 - [Pricing and Limits](https://vercel.com/docs/eve/pricing?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Understand how eve usage maps to Vercel resources and inherited platform limits.
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Vercel Blob Pricing](https://vercel.com/docs/vercel-blob/usage-and-pricing?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about the pricing for Vercel Blob.
 
 Full cross-link map for this page: [/docs/workflows/pricing.graph.md](/docs/workflows/pricing.graph.md?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -90,13 +90,13 @@ The following limits apply to all Workflow runs.
 | Limit                                   | Value                                                      | Details                                                                                                                                                                                                              |
 | --------------------------------------- | ---------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Run creations per second                          | 1,000 |                                                                                                                                                         |
-| Events per run                          | 25,000 limit                                               |                                                                                                                                                         |
-| Steps per run                           | 10,000                                                     |                                                                                                                                                         |
-| Event creations per run per second      | 200                                                        |                                                                                                                                                          |
-| Hook creations per second               | 200                                                        |                                                                                                                                                          |
-| Max payload size                        | 50 MB                                                      |                                                  |
-| Maximum total entity storage per run    | 2 GB                                                       |                                                                                      |
-| Max workflow replay duration            | 240s                                                       |  |
+| Events per run                          | 25,000 limit                                               | (Reach out if you need a higher limit.)                                                                                                                                                        |
+| Steps per run                           | 10,000                                                     | (Reach out if you need a higher limit.)                                                                                                                                                        |
+| Event creations per run per second      | 200                                                        | (Throttled and re-tried when exceeded)                                                                                                                                                         |
+| Hook creations per second               | 200                                                        | (Throttled and re-tried when exceeded)                                                                                                                                                         |
+| Max payload size                        | 50 MB                                                      | (Maximum size of any run/step/hook input/output. Streams passed into a run or step do not count towards this limit and have their own limits.)                                                 |
+| Maximum total entity storage per run    | 2 GB                                                       | (The total amount of data stored in managed persistence for run state and events, excluding stream data.)                                                                                     |
+| Max workflow replay duration            | 240s                                                       | (If a workflow orchestration attempt takes longer than 240 seconds, due to memory pressure, a large amount of events, or complex code within your workflow functions, the run may be aborted.) |
 | Maximum run duration                    | No limit                                                   |                                                                                                                                                                                                                      |
 | Maximum `sleep` duration                | No limit                                                   |                                                                                                                                                                                                                      |
 | Max runtime of individual step          | see [Vercel Functions limits](/docs/functions/limitations) |                                                                                                                                                                                                                      |
@@ -104,8 +104,8 @@ The following limits apply to all Workflow runs.
 | Max stream chunk size                   | 10 MB                                                      |                                                                                                                                                                                                                      |
 | Max stream chunks per second per stream | 1,000                                                      |                                                                                                                                                                                                                      |
 | Hook token size                         | 255 bytes                                                  |                                                                                                                                                                                                                      |
-| Workflow name                           | 255 bytes                                                  |                                                                                                                              |
-| Step name                               | 255 bytes                                                  |                                                                                                                                  |
+| Workflow name                           | 255 bytes                                                  | (Workflow names are derived from the file path and function name.)                                                                                                                             |
+| Step name                               | 255 bytes                                                  | (Step names are derived from the file path and function name.)                                                                                                                                 |
 
 > **💡 Note:** Runs that exceed 2,000 events or 1 GB of total entity storage have slower replay times. To maintain high performance, we recommend [creating child workflows](https://workflow-sdk.dev/docs/foundations/starting-workflows) to break long-running workflows into smaller pieces.
 
@@ -118,7 +118,7 @@ The following limits apply to all Workflow runs.
 | Schedules/cron            | No limit                                                            |                                                                                                                                               |
 | Projects                  | Unlimited                                                           |                                                                                                                                               |
 | Real-time connections     | No limit                                                            |                                                                                                                                               |
-| Observability retention   | See [Observability](/docs/observability)                            |  |
+| Observability retention   | See [Observability](/docs/observability)                            | (Plan-based retention applies. See the Storage Retention section for retention of managed persistence and stream data.) |
 | Compute resources         | See [Vercel Functions limits](/docs/functions/limitations)          |                                                                                                                                               |
 | Maximum total bundle size | 250MB, see [Vercel Functions limits](/docs/functions/limitations)   |                                                                                                                                               |
 

@@ -16,8 +16,8 @@ related:
 summary: Stream Anthropic Messages API responses token by token as they are generated.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/streaming.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "8d5ad7e710b95d2cc03f9029bf5fd0f1f1f2d99a0eb1c4360ef02fbb8e65416c"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "7ee6357b2ddc8d7ddd87c29358c0d7163dacb727c167d545034ec0d127bae187"
 ---
 
 # Streaming
@@ -41,7 +41,7 @@ Set `stream: true` on a [Messages](/docs/ai-gateway/sdks-and-apis/anthropic-mess
 - [Stream Protocols](https://ai-sdk.dev/docs/ai-sdk-ui/stream-protocol?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstreaming&source_site=vercel-docs&relationship=related)
 - [Create Chat (Streaming)](https://v0.app/docs/api/v2/reference/chats/create-chat-streaming?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstreaming&source_site=vercel-docs&relationship=related) — Creates a new chat with a user message and returns a Server-Sent Events stream. Events include initial chat state, title
 - [Streaming](https://vercel.com/docs/functions/streaming-functions?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstreaming&source_site=vercel-docs&relationship=related) — Learn how to stream responses from Vercel Functions.
-- [Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstreaming&source_site=vercel-docs&relationship=related) — Use the AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
+- [Text Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/text?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstreaming&source_site=vercel-docs&relationship=related) — Generate and stream text responses using AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/streaming.graph.md](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/streaming.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstreaming&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

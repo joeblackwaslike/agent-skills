@@ -16,13 +16,18 @@ related:
 summary: Learn the answer to common questions about deploying monorepos on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/monorepo-faq.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "c678d2c09df462580e40fa1a7c08ae015efcf365d8708dcf7c28b42d377f34d4"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "bdc34112aa6f3a026866495f40cc70e69841ebbbd349f603de2ee8797b551e2d"
 ---
 
 # Monorepos FAQ
 
 ## How can I speed up builds?
+
+Whether or not your deployments are queued depends on the amount of
+Concurrent Builds you have available. Hobby plans are limited to 1
+Concurrent Build, while Pro or Enterprise plans can customize the amount
+on the "Billing" page in the team settings.
 
 
 <!-- docsgraph:related -->
@@ -30,7 +35,9 @@ sha256: "c678d2c09df462580e40fa1a7c08ae015efcf365d8708dcf7c28b42d377f34d4"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Does Vercel Support Yarn? \\(Versions 2, 3, and 4\\)](https://vercel.com/kb/guide/does-vercel-support-yarn-4?from=related&source_path=%2Fdocs%2Fmonorepos%2Fmonorepo-faq&source_site=vercel-docs&relationship=related) — Vercel supports Yarn 1, 2, 3, and 4. Learn which version your build uses by default, and how to pin Yarn 4 with Corepack
 - [Vercel](https://turborepo.dev/docs/guides/ci-vendors/vercel?from=related&source_path=%2Fdocs%2Fmonorepos%2Fmonorepo-faq&source_site=vercel-docs&relationship=related) — Deploy your Turborepo on Vercel with zero-config Remote Caching.
+- [Monorepos](https://vercel.com/blog/monorepos-are-changing-how-teams-build-software?from=related&source_path=%2Fdocs%2Fmonorepos%2Fmonorepo-faq&source_site=vercel-docs&relationship=related)
 - [Deploying a Monorepo Using Yarn Workspaces to Vercel](https://vercel.com/kb/guide/deploying-yarn-monorepos-to-vercel?from=related&source_path=%2Fdocs%2Fmonorepos%2Fmonorepo-faq&source_site=vercel-docs&relationship=related) — In this guide, you will deploy a monorepo that includes two frontend applications and one shared library with Yarn works
 - [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain?from=related&source_path=%2Fdocs%2Fmonorepos%2Fmonorepo-faq&source_site=vercel-docs&relationship=related) — Learn how to serve multiple Vercel projects from a single domain.
 - [Deploying Nx to Vercel](https://vercel.com/docs/monorepos/nx?from=related&source_path=%2Fdocs%2Fmonorepos%2Fmonorepo-faq&source_site=vercel-docs&relationship=related) — Nx is an extensible build system with support for monorepos, integrations, and Remote Caching on Vercel. Learn how to de
@@ -41,11 +48,6 @@ sha256: "c678d2c09df462580e40fa1a7c08ae015efcf365d8708dcf7c28b42d377f34d4"
 
 Full cross-link map for this page: [/docs/monorepos/monorepo-faq.graph.md](/docs/monorepos/monorepo-faq.graph.md?from=related&source_path=%2Fdocs%2Fmonorepos%2Fmonorepo-faq&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Whether or not your deployments are queued depends on the amount of
-Concurrent Builds you have available. Hobby plans are limited to 1
-Concurrent Build, while Pro or Enterprise plans can customize the amount
-on the "Billing" page in the team settings.
 
 Learn more about [Concurrent Builds](/docs/builds/managing-builds).
 

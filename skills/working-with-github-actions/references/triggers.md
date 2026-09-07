@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/reference/workflows-and-actions/events-that-trigger-workflows.md"
-fetched_at: "2026-08-31T10:42:32.997Z"
-sha256: "fc133cf7c2da7796476acbbaa037c0463cadb5ed96da7b0f252c3750437b575d"
+fetched_at: "2026-09-07T09:03:37.447Z"
+sha256: "8d4d849c8e4546cbb340e31b81ac823fad702ba328187544edcd9e52115bced9"
 ---
 
 ## About events that trigger workflows
@@ -1059,7 +1059,7 @@ on: workflow_call
 > [!NOTE]
 > {% data reusables.actions.branch-requirement %}
 
-To enable a workflow to be triggered manually, you need to configure the `workflow_dispatch` event. You can manually trigger a workflow run using the {% data variables.product.github %} API, {% data variables.product.prodname_cli %}, or the {% data variables.product.github %} UI. For more information, see [AUTOTITLE](/actions/how-tos/manage-workflow-runs/manually-run-a-workflow).
+To enable a workflow to be triggered manually, you need to configure the `workflow_dispatch` event. On the {% data variables.product.github %} UI, the "Run workflow" button will be present if the workflow file exists on the default branch. Once a workflow has run at least once, you can dispatch it against any branch or tag via the {% data variables.product.github %} API or {% data variables.product.prodname_cli %}. For more information, see [AUTOTITLE](/actions/how-tos/manage-workflow-runs/manually-run-a-workflow).
 
 ```yaml
 on: workflow_dispatch

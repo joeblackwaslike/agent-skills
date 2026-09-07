@@ -3,22 +3,24 @@ title: AI SDK
 product: ai-sdk
 url: /docs/ai-sdk
 canonical_url: "https://vercel.com/docs/ai-sdk"
-last_updated: 2026-08-27
+last_updated: 2026-09-03
 type: integration
 prerequisites:
   []
 related:
   - /docs/connect/frameworks/ai-sdk-and-mcp
-summary: TypeScript toolkit for building AI-powered applications with React, Next.js, Vue, Svelte and Node.js
+summary: Build TypeScript agents and AI applications with a unified API for models, tools, structured output, and streaming.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-sdk.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "4056299ea3989ef701add39c523f856999ef8ee68c9dc07a5d4005adb00aa99d"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "a5d35fe7fb3fbbaaee0970cb866f4704b8af851eeb81853ecc9d557082242dc0"
 ---
 
 # AI SDK
 
-## What the AI SDK provides
+## Build AI agents
+
+Build TypeScript agents and AI applications with one API for models, tools, structured output, and streaming across Next.js, Vue, Svelte, Node.js, and other frameworks.
 
 
 <!-- docsgraph:related -->
@@ -29,18 +31,78 @@ sha256: "4056299ea3989ef701add39c523f856999ef8ee68c9dc07a5d4005adb00aa99d"
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
 - [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related)
 - [Zero Data Retention on AI Gateway](https://vercel.com/blog/zdr-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related)
+- [Tools](https://ai-sdk.dev/docs/foundations/tools?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related)
 - [AI SDK by Vercel](https://ai-sdk.dev/docs/introduction?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related)
-- [Vercel AI SDK vs TanStack AI](https://vercel.com/kb/guide/vercel-ai-sdk-vs-tanstack-ai?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related) — Compare the Vercel AI SDK and TanStack AI for building AI-powered TypeScript applications. Learn how they differ in agen
 - [Vercel AI SDK 3.1: ModelFusion joins the team](https://vercel.com/blog/vercel-ai-sdk-3-1-modelfusion-joins-the-team?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related)
 - [Get started with GPT-5](https://ai-sdk.dev/cookbook/guides/gpt-5?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related)
-- [Tools](https://ai-sdk.dev/docs/foundations/tools?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related)
-- [Get started with Llama 3.1](https://ai-sdk.dev/cookbook/guides/llama-3_1?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related)
+- [@v0-sdk/ai-tools](https://v0.app/docs/api/v1/packages/ai-tools?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related) — AI SDK tools for the v0 API
 - [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related) — Learn the key AI concepts and tools for building and scaling AI apps.
 - [AI SDK for Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
-- [Vercel & OpenAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/openai?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related) — Integrate your Vercel project with OpenAI's powerful suite of models.
+- [Glossary](https://vercel.com/docs/glossary?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related) — Learn about the terms and concepts used in Vercel's products and documentation.
+- [Products](https://vercel.com/docs/products?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
 
 Full cross-link map for this page: [/docs/ai-sdk.graph.md](/docs/ai-sdk.graph.md?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
+
+#### Build an agent
+
+```typescript filename="agent.ts"
+import { ToolLoopAgent, tool } from 'ai';
+import { z } from 'zod';
+
+const agent = new ToolLoopAgent({
+  model: 'anthropic/claude-sonnet-5',
+  tools: {
+    getWeather: tool({
+      description: 'Get the current weather for a location',
+      inputSchema: z.object({ location: z.string() }),
+      execute: async ({ location }) => ({
+        location,
+        temperature: 72,
+        condition: 'sunny',
+      }),
+    }),
+  },
+});
+
+const { text } = await agent.generate({
+  prompt: "What's the weather in Tokyo?",
+});
+
+console.log(text);
+```
+
+#### Generate text
+
+```typescript filename="index.ts"
+import { generateText } from 'ai';
+
+const { text } = await generateText({
+  model: 'openai/gpt-5.6-sol',
+  prompt: 'Explain quantum entanglement in one paragraph.',
+});
+
+console.log(text);
+```
+
+#### Generate structured data
+
+```typescript filename="classify.ts"
+import { generateObject } from 'ai';
+import { z } from 'zod';
+
+const { object } = await generateObject({
+  model: 'openai/gpt-5.6-sol',
+  schema: z.object({
+    sentiment: z.enum(['positive', 'neutral', 'negative']),
+  }),
+  prompt: 'Classify the sentiment: I love this product.',
+});
+
+console.log(object);
+```
+
+## Add models, tools, and streaming
 
 - **Unified provider API.** Switch between models by changing two lines of code
 - **Structured outputs.** Generate type-safe JSON with `generateObject` and `streamObject`
@@ -58,18 +120,18 @@ The following example shows how to generate text with the AI SDK using OpenAI's 
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: 'openai/gpt-5.2',
+  model: 'openai/gpt-5.6-sol',
   prompt: 'Explain the concept of quantum entanglement.',
 });
 ```
 
-The unified interface means that you can easily switch between providers by changing just two lines of code. For example, to use Anthropic's Claude Opus 4.5:
+The unified interface lets you switch providers by changing the model string. For example, to use Anthropic's Claude Opus 5:
 
 ```typescript {2,5}
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: 'anthropic/claude-opus-4.5',
+  model: 'anthropic/claude-opus-5',
   prompt: 'How many people will live in the world in 2040?',
 });
 ```
@@ -85,7 +147,7 @@ import { generateObject } from 'ai';
 import { z } from 'zod';
 
 const { object } = await generateObject({
-  model: 'openai/gpt-5.2',
+  model: 'openai/gpt-5.6-sol',
   schema: z.object({
     recipe: z.object({
       name: z.string(),
@@ -97,15 +159,16 @@ const { object } = await generateObject({
 });
 ```
 
-## Using tools with the AI SDK
+## Give agents tools
 
 The AI SDK supports tool calling out of the box, allowing it to interact with external systems and perform discrete tasks. The following example shows how to use tool calling with the AI SDK:
 
 ```ts
 import { generateText, tool } from 'ai';
+import { z } from 'zod';
 
 const { text } = await generateText({
-  model: 'openai/gpt-5.2',
+  model: 'openai/gpt-5.6-sol',
   prompt: 'What is the weather like today in San Francisco?',
   tools: {
     getWeather: tool({

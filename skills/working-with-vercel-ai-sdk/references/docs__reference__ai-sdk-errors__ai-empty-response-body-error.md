@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-empty-response-body-error.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "e9244fc6db961c2691b15511bed68dc1920fafbdc6166478c42ac8ff56a9b066"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "1d5d2d282e3da62a9ffc571fcd35cbef9d315d7512a04497cf837e5e6b2ac694"
 ---
 
 # AI_EmptyResponseBodyError
@@ -59,6 +59,7 @@ if (EmptyResponseBodyError.isInstance(error)) {
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
 - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
 - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)
+- [ToolChoiceViolationError](/docs/reference/ai-sdk-errors/ai-tool-choice-violation-error)
 - [AI_TypeValidationError](/docs/reference/ai-sdk-errors/ai-type-validation-error)
 - [AI_UIMessageStreamError](/docs/reference/ai-sdk-errors/ai-ui-message-stream-error)
 - [AI_UnsupportedFunctionalityError](/docs/reference/ai-sdk-errors/ai-unsupported-functionality-error)

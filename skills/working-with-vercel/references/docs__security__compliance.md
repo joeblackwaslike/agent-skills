@@ -16,8 +16,8 @@ related:
 summary: Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS mitigation and SOC 2 compliance.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/compliance.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "beedfb5c35782d7dc112d25ad63ba4454ed9a27d662df4e333eb51ba03b02048"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "2397cb04532181e1baf5adc7cb033ad4a0cdbc6a097a3593f6a02d8647edc8e0"
 ---
 
 # Security & Compliance Measures
@@ -40,7 +40,7 @@ This page covers the protection and compliance measures Vercel takes to ensure t
 - [How to build and maintain HIPAA-compliant applications on Vercel](https://vercel.com/kb/guide/hipaa-compliance-guide-vercel?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related) — Deploy HIPAA-compliant healthcare apps on Vercel with built-in security, BAAs, and scalable serverless infrastructure.
 - [Does Vercel have a SOC 2 Type 2 attestation?](https://vercel.com/kb/guide/is-vercel-soc-2-compliant?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related) — Vercel holds a SOC 2 Type 2 attestation for Security, Confidentiality, and Availability. See what the report covers, how
 - [Ensuring safe and effective infrastructure testing](https://vercel.com/kb/guide/ensuring-safe-and-effective-infrastructure-testing?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related) — We conduct regular penetration testing through certified third-party assessors to secure the Vercel platform. This guide
-- [Simpler Pricing](https://vercel.com/blog/simpler-pricing?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related)
+- [The Frontend Cloud: Powering resiliency for global web applications](https://vercel.com/blog/the-resiliency-of-the-frontend-cloud?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related)
 - [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
 
 Full cross-link map for this page: [/docs/security/compliance.graph.md](/docs/security/compliance.graph.md?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=graph)

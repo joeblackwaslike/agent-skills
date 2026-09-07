@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/transcription.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "a43ac2eca07ba32cc66a8f943ed1da7e603e5140c56bc7548951753fb0ca72d7"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "ee215ea8ee96e56be88a517063cbab39d94d015ab4fddb0b8bdee7897502e7f9"
 ---
 
 # Transcription
@@ -294,41 +294,42 @@ try {
 
 ## Transcription Models
 
-| Provider                                                                            | Model                    |
-| ----------------------------------------------------------------------------------- | ------------------------ |
-| [OpenAI](/providers/ai-sdk-providers/openai#transcription-models)                   | `whisper-1`              |
-| [OpenAI](/providers/ai-sdk-providers/openai#transcription-models)                   | `gpt-4o-transcribe`      |
-| [OpenAI](/providers/ai-sdk-providers/openai#transcription-models)                   | `gpt-4o-mini-transcribe` |
-| [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#transcription-models)           | `scribe_v1`              |
-| [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#transcription-models)           | `scribe_v1_experimental` |
-| [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#transcription-models)           | `scribe_v2`              |
-| [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#streaming-transcription-models) | `scribe_v2_realtime`     |
-| [Groq](/providers/ai-sdk-providers/groq#transcription-models)                       | `whisper-large-v3-turbo` |
-| [Groq](/providers/ai-sdk-providers/groq#transcription-models)                       | `whisper-large-v3`       |
-| [Mistral](/providers/ai-sdk-providers/mistral#transcription-models)                 | `voxtral-mini-latest`    |
-| [Azure OpenAI](/providers/ai-sdk-providers/azure#transcription-models)              | `whisper-1`              |
-| [Azure OpenAI](/providers/ai-sdk-providers/azure#transcription-models)              | `gpt-4o-transcribe`      |
-| [Azure OpenAI](/providers/ai-sdk-providers/azure#transcription-models)              | `gpt-4o-mini-transcribe` |
-| [Rev.ai](/providers/ai-sdk-providers/revai#transcription-models)                    | `machine`                |
-| [Rev.ai](/providers/ai-sdk-providers/revai#transcription-models)                    | `low_cost`               |
-| [Rev.ai](/providers/ai-sdk-providers/revai#transcription-models)                    | `fusion`                 |
-| [Deepgram](/providers/ai-sdk-providers/deepgram#transcription-models)               | `base` (+ variants)      |
-| [Deepgram](/providers/ai-sdk-providers/deepgram#transcription-models)               | `enhanced` (+ variants)  |
-| [Deepgram](/providers/ai-sdk-providers/deepgram#transcription-models)               | `nova` (+ variants)      |
-| [Deepgram](/providers/ai-sdk-providers/deepgram#transcription-models)               | `nova-2` (+ variants)    |
-| [Deepgram](/providers/ai-sdk-providers/deepgram#transcription-models)               | `nova-3` (+ variants)    |
-| [Gladia](/providers/ai-sdk-providers/gladia#transcription-models)                   | `default`                |
-| [AssemblyAI](/providers/ai-sdk-providers/assemblyai#transcription-models)           | `universal-3-5-pro`      |
-| [AssemblyAI](/providers/ai-sdk-providers/assemblyai#transcription-models)           | `universal-3-pro`        |
-| [Fal](/providers/ai-sdk-providers/fal#transcription-models)                         | `whisper`                |
-| [Fal](/providers/ai-sdk-providers/fal#transcription-models)                         | `wizper`                 |
-| [Google Vertex](/providers/ai-sdk-providers/google-vertex#transcription-models)     | `chirp_2`                |
-| [Google Vertex](/providers/ai-sdk-providers/google-vertex#transcription-models)     | `chirp_3`                |
-| [Google Vertex](/providers/ai-sdk-providers/google-vertex#transcription-models)     | `telephony`              |
-| [xAI](/providers/ai-sdk-providers/xai#transcription-models)                         | `default`                |
-| [Cartesia](/providers/ai-sdk-providers/cartesia#transcription-models)               | `ink-whisper`            |
-| [Cartesia](/providers/ai-sdk-providers/cartesia#streaming-transcription-models)     | `ink-2`                  |
-| [Fish Audio](/providers/ai-sdk-providers/fish-audio#transcription-models)           | `transcribe-1`           |
+| Provider                                                                            | Model                       |
+| ----------------------------------------------------------------------------------- | --------------------------- |
+| [OpenAI](/providers/ai-sdk-providers/openai#transcription-models)                   | `whisper-1`                 |
+| [OpenAI](/providers/ai-sdk-providers/openai#transcription-models)                   | `gpt-4o-transcribe`         |
+| [OpenAI](/providers/ai-sdk-providers/openai#transcription-models)                   | `gpt-4o-mini-transcribe`    |
+| [OpenAI](/providers/ai-sdk-providers/openai#transcription-models)                   | `gpt-4o-transcribe-diarize` |
+| [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#transcription-models)           | `scribe_v1`                 |
+| [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#transcription-models)           | `scribe_v1_experimental`    |
+| [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#transcription-models)           | `scribe_v2`                 |
+| [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#streaming-transcription-models) | `scribe_v2_realtime`        |
+| [Groq](/providers/ai-sdk-providers/groq#transcription-models)                       | `whisper-large-v3-turbo`    |
+| [Groq](/providers/ai-sdk-providers/groq#transcription-models)                       | `whisper-large-v3`          |
+| [Mistral](/providers/ai-sdk-providers/mistral#transcription-models)                 | `voxtral-mini-latest`       |
+| [Azure OpenAI](/providers/ai-sdk-providers/azure#transcription-models)              | `whisper-1`                 |
+| [Azure OpenAI](/providers/ai-sdk-providers/azure#transcription-models)              | `gpt-4o-transcribe`         |
+| [Azure OpenAI](/providers/ai-sdk-providers/azure#transcription-models)              | `gpt-4o-mini-transcribe`    |
+| [Rev.ai](/providers/ai-sdk-providers/revai#transcription-models)                    | `machine`                   |
+| [Rev.ai](/providers/ai-sdk-providers/revai#transcription-models)                    | `low_cost`                  |
+| [Rev.ai](/providers/ai-sdk-providers/revai#transcription-models)                    | `fusion`                    |
+| [Deepgram](/providers/ai-sdk-providers/deepgram#transcription-models)               | `base` (+ variants)         |
+| [Deepgram](/providers/ai-sdk-providers/deepgram#transcription-models)               | `enhanced` (+ variants)     |
+| [Deepgram](/providers/ai-sdk-providers/deepgram#transcription-models)               | `nova` (+ variants)         |
+| [Deepgram](/providers/ai-sdk-providers/deepgram#transcription-models)               | `nova-2` (+ variants)       |
+| [Deepgram](/providers/ai-sdk-providers/deepgram#transcription-models)               | `nova-3` (+ variants)       |
+| [Gladia](/providers/ai-sdk-providers/gladia#transcription-models)                   | `default`                   |
+| [AssemblyAI](/providers/ai-sdk-providers/assemblyai#transcription-models)           | `universal-3-5-pro`         |
+| [AssemblyAI](/providers/ai-sdk-providers/assemblyai#transcription-models)           | `universal-3-pro`           |
+| [Fal](/providers/ai-sdk-providers/fal#transcription-models)                         | `whisper`                   |
+| [Fal](/providers/ai-sdk-providers/fal#transcription-models)                         | `wizper`                    |
+| [Google Vertex](/providers/ai-sdk-providers/google-vertex#transcription-models)     | `chirp_2`                   |
+| [Google Vertex](/providers/ai-sdk-providers/google-vertex#transcription-models)     | `chirp_3`                   |
+| [Google Vertex](/providers/ai-sdk-providers/google-vertex#transcription-models)     | `telephony`                 |
+| [xAI](/providers/ai-sdk-providers/xai#transcription-models)                         | `default`                   |
+| [Cartesia](/providers/ai-sdk-providers/cartesia#transcription-models)               | `ink-whisper`               |
+| [Cartesia](/providers/ai-sdk-providers/cartesia#streaming-transcription-models)     | `ink-2`                     |
+| [Fish Audio](/providers/ai-sdk-providers/fish-audio#transcription-models)           | `transcribe-1`              |
 
 Above are a small subset of the transcription models supported by the AI SDK providers. For more, see the respective provider documentation.
 

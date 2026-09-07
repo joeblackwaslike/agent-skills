@@ -13,8 +13,8 @@ related:
 summary: Use Chatbox with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/chat-platforms/chatbox.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "a3dfbe0060c6020d2013893631d28a666f22e59cf9631d285333ff993a2dd3c4"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "a5781b7d2fa4f2b6eab1ea5f629cc50b5fd5cb767c5c87fd8d4c43a731c9f48f"
 ---
 
 # Chatbox
@@ -31,7 +31,7 @@ sha256: "a3dfbe0060c6020d2013893631d28a666f22e59cf9631d285333ff993a2dd3c4"
 - [Blackbox AI](https://vercel.com/docs/ai-gateway/coding-agents/blackbox?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms%2Fchatbox&source_site=vercel-docs&relationship=related) — Use the Blackbox AI CLI with the AI Gateway.
 - [OpenClaw \\(Clawdbot\\)](https://vercel.com/docs/ai-gateway/chat-platforms/openclaw?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms%2Fchatbox&source_site=vercel-docs&relationship=related) — Use OpenClaw \\(formerly Clawdbot\\) with AI Gateway.
 - [Xcode](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms%2Fchatbox&source_site=vercel-docs&relationship=related) — Use Xcode's coding assistant with the AI Gateway.
-- [Open WebUI](https://vercel.com/docs/ai-gateway/chat-platforms/open-webui?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms%2Fchatbox&source_site=vercel-docs&relationship=related) — Use Open WebUI with the AI Gateway.
+- [OpenClaw](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms%2Fchatbox&source_site=vercel-docs&relationship=related) — Use OpenClaw with the AI Gateway as a model provider.
 
 Full cross-link map for this page: [/docs/ai-gateway/chat-platforms/chatbox.graph.md](/docs/ai-gateway/chat-platforms/chatbox.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fchat-platforms%2Fchatbox&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

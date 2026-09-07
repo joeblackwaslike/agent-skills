@@ -3,7 +3,7 @@ title: Methods to Protect Deployments
 product: vercel
 url: /docs/deployment-protection/methods-to-protect-deployments
 canonical_url: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments"
-last_updated: 2026-08-21
+last_updated: 2026-08-28
 type: conceptual
 prerequisites:
   - /docs/deployment-protection
@@ -16,8 +16,8 @@ related:
 summary: "Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Trusted IPs."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "bbbe20c71d9a4fb00df84b9ed8c4473bc13238432638c67c055c1a3913ff484a"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "8bb213a5985472b0f673fdcbe5468419f2fd771adc0cb0b00a94da44c0652587"
 ---
 
 # Methods to Protect Deployments
@@ -34,8 +34,8 @@ Vercel offers several methods for protecting your deployments. Depending on your
 - [Agents can now access protected deployments via Vercel’s MCP server](https://vercel.com/changelog/give-agents-access-to-protected-deployments-via-vercels-mcp-server?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments&source_site=vercel-docs&relationship=related)
 - [The Complete Guide to Vercel Passport](https://vercel.com/kb/guide/vercel-passport?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments&source_site=vercel-docs&relationship=related) — Vercel Passport protects deployments behind your own identity provider, such as Okta or Auth0. Learn how Passport works,
 - [How to identify and authorize visitors with the Vercel Passport token in Next.js](https://vercel.com/kb/guide/vercel-passport-nextjs?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments&source_site=vercel-docs&relationship=related) — Read the Vercel Passport token server-side in a Next.js app to identify visitors with the external_sub claim and authori
+- [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments&source_site=vercel-docs&relationship=related)
 - [Access Control](https://vercel.com/docs/security/access-control?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
-- [Deployment Protection Exceptions](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/deployment-protection-exceptions?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments&source_site=vercel-docs&relationship=related) — Disable Deployment Protection for a list of preview domains.
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 - [Automated & Agent Access](https://vercel.com/docs/deployment-protection/automated-agent-access?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments&source_site=vercel-docs&relationship=related) — Grant AI agents, CI/CD pipelines, MCP servers, and testing tools access to Vercel deployments that have Deployment Prote
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.

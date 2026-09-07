@@ -3,7 +3,7 @@ title: Provider Filtering, Ordering & Sorting
 product: vercel
 url: /docs/ai-gateway/models-and-providers/provider-filtering-and-ordering
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering"
-last_updated: 2026-07-28
+last_updated: 2026-08-27
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/models-and-providers
@@ -12,11 +12,12 @@ related:
   - /docs/ai-gateway/models-and-providers/model-filtering
   - /docs/ai-gateway/models-and-providers/provider-options
   - /docs/ai-gateway/sdks-and-apis/rest-api
+  - /docs/ai-gateway/pricing
 summary: Control which providers handle your requests, in what order, and how they are ranked using order, only, and sort options.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "0fe9c32e6795bd14c581c78d7f9ed7d71b6380f8ad209011a00520cce3d05884"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "51d6adfa293d25f3067477429fe86011daef10de3e0f5dd130e7bf6e86298db9"
 ---
 
 # Provider Filtering, Ordering & Sorting
@@ -160,7 +161,7 @@ The bottom section of the page lists the available providers for that model. The
 }
 ```
 
-The `gateway.cost` value is the inference cost for this request, returned as a decimal string. It does not include other charges that may apply (for example, Custom Reporting writes or Zero Data Retention surcharges). The `gateway.marketCost` represents the market rate cost for the inference. The `gateway.generationId` is a unique identifier for this generation that can be used with the [Generation Lookup API](/docs/ai-gateway/sdks-and-apis/rest-api#look-up-a-generation). For more on pricing see .
+The `gateway.cost` value is the inference cost for this request, returned as a decimal string. It does not include other charges that may apply (for example, Custom Reporting writes or Zero Data Retention surcharges). The `gateway.marketCost` represents the market rate cost for the inference. The `gateway.generationId` is a unique identifier for this generation that can be used with the [Generation Lookup API](/docs/ai-gateway/sdks-and-apis/rest-api#look-up-a-generation). For more on pricing see [Pricing](/docs/ai-gateway/pricing).
 
 In cases where your request encounters issues with one or more providers or if your BYOK credentials fail, you'll find error detail in the `providerAttempts` array within each entry of `modelAttempts`:
 

@@ -3,7 +3,7 @@ title: provision-purchase
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/provision-purchase
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/provision-purchase"
-last_updated: 2026-08-31
+last_updated: 2026-09-07
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn about provision-purchase on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/provision-purchase.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "cbdd6c60eed64a4aba1b1a960b124dd112478edc803cd79c24cda5eb28dc37fb"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "412c8aee0d0b59c46ec8b95647b298c55dc1f515b1fcd10da753b5535852ada7"
 ---
 
 # Provision Purchase

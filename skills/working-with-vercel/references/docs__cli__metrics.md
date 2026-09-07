@@ -9,11 +9,12 @@ prerequisites:
   - /docs/cli
 related:
   - /docs/observability/observability-plus
+  - /docs/cli/global-options
 summary: List and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/metrics.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "9e6536c8d53fa6ee880873bc3f29f08c823cb78a45b535a087eede8edd37d62f"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "2e222f2bfbb87a1ad93cb8695503cc6d766d8ba79015b8da11423da219f0f2f4"
 ---
 
 # vercel metrics
@@ -30,9 +31,9 @@ The `vercel metrics` command, also available as `vc metrics`, lets you list and 
 - [Improve Cumulative Layout Shift \\(CLS\\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel?from=related&source_path=%2Fdocs%2Fcli%2Fmetrics&source_site=vercel-docs&relationship=related) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fcli%2Fmetrics&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fcli%2Fmetrics&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
+- [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fmetrics&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel alerts](https://vercel.com/docs/cli/alerts?from=related&source_path=%2Fdocs%2Fcli%2Fmetrics&source_site=vercel-docs&relationship=related) — List recent alerts for a linked project, a specific project, or an entire team with the Vercel CLI.
 - [vercel usage](https://vercel.com/docs/cli/usage?from=related&source_path=%2Fdocs%2Fcli%2Fmetrics&source_site=vercel-docs&relationship=related) — Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
-- [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fmetrics&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel activity](https://vercel.com/docs/cli/activity?from=related&source_path=%2Fdocs%2Fcli%2Fmetrics&source_site=vercel-docs&relationship=related) — View activity events for your Vercel project or team, filtered by type, date range, and project.
 
 Full cross-link map for this page: [/docs/cli/metrics.graph.md](/docs/cli/metrics.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fmetrics&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -281,6 +282,24 @@ Align daily buckets to a calendar timezone:
 ```bash filename="terminal"
 vercel metrics <metric-id> --since 2026-05-28 --until 2026-05-29 --granularity 1d --bucket-timezone Europe/Paris --project project-name --prod
 ```
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel metrics` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 
 ---

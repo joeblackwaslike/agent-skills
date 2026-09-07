@@ -13,8 +13,8 @@ related:
 summary: Build and deploy your own AI-powered coding platform with Vercel Sandboxes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/examples/oss-coding-agent.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "506e80608fafbe23ff40fce9da887b337142b66f559d908f527535a9a3bc741f"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "a2a82da57739cbe7567a777dad76994ae80c509edc00ae8a2db1ebdb3083ae56"
 ---
 
 # OSS AI Vibe Coding Platform
@@ -36,6 +36,7 @@ The AI Vibe Coding Platform represents a new paradigm in development environment
 - [What you need to know about vibe coding](https://vercel.com/blog/what-you-need-to-know-about-vibe-coding?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples%2Foss-coding-agent&source_site=vercel-docs&relationship=related)
 - [Introducing the Vercel AI SDK](https://vercel.com/blog/introducing-the-vercel-ai-sdk?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples%2Foss-coding-agent&source_site=vercel-docs&relationship=related)
 - [Platform Template](https://vercel.com/docs/platforms/examples/platform-template?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples%2Foss-coding-agent&source_site=vercel-docs&relationship=related) — Build an AI app builder on Vercel with sandboxes, AI Gateway, deployments, and project transfers.
+- [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples%2Foss-coding-agent&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples%2Foss-coding-agent&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/platforms/examples/oss-coding-agent.graph.md](/docs/platforms/examples/oss-coding-agent.graph.md?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples%2Foss-coding-agent&source_site=vercel-docs&relationship=graph)

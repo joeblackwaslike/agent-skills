@@ -3,7 +3,7 @@ title: Working with domains
 product: vercel
 url: /docs/domains/working-with-domains
 canonical_url: "https://vercel.com/docs/domains/working-with-domains"
-last_updated: 2026-08-11
+last_updated: 2026-09-02
 type: conceptual
 prerequisites:
   - /docs/domains
@@ -12,12 +12,12 @@ related:
   - /docs/domains/working-with-domains/renew-a-domain
   - /docs/plans/pro-plan/trials
   - /docs/plans/pro-plan
-  - /docs/domains/working-with-domains/add-a-domain
+  - /docs/rbac/access-roles
 summary: Learn how domains work and the options Vercel provides for managing them.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "e79f8b0f706e4d8927ca834629ca3074cb155abf140e1d79e56160b5f5e8823d"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "7c23323bb49df603c25befb4273a061742a925c50976f57e31bab85e2725922d"
 ---
 
 # Working with domains
@@ -35,11 +35,11 @@ You can [buy a domain through Vercel](#buying-a-domain-through-vercel) by going 
 - [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains&source_site=vercel-docs&relationship=related) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
 - [Why must we use the Domain Nameservers method for Wildcard Domains on Vercel?](https://vercel.com/kb/guide/why-use-domain-nameservers-method-wildcard-domains?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains&source_site=vercel-docs&relationship=related) — Learn why the domain Nameservers method is needed to set up a wildcard domain as custom domain.
 - [How do I add a custom domain to my Vercel project?](https://vercel.com/kb/guide/how-do-i-add-a-custom-domain-to-my-vercel-project?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains&source_site=vercel-docs&relationship=related) — Learn how to add a custom domain to your Vercel project.
+- [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains&source_site=vercel-docs&relationship=related) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains&source_site=vercel-docs&relationship=related) — Add and configure a custom domain for your Vercel project using the CLI.
-- [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains&source_site=vercel-docs&relationship=related) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
 - [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains&source_site=vercel-docs&relationship=related) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
+- [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains&source_site=vercel-docs&relationship=related) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
 - [Free Domain with Pro](https://vercel.com/docs/domains/free-domain-with-pro?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains&source_site=vercel-docs&relationship=related) — Every paid Pro team gets one free first-year custom domain on an eligible TLD. Claim yours at checkout or from domain se
-- [Deploying GitHub Projects with Vercel](https://vercel.com/docs/git/vercel-for-github?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains&source_site=vercel-docs&relationship=related) — Vercel for GitHub automatically deploys your GitHub projects with Vercel, providing Preview Deployment URLs, and automat
 
 Full cross-link map for this page: [/docs/domains/working-with-domains.graph.md](/docs/domains/working-with-domains.graph.md?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -55,13 +55,17 @@ More often than not, you will want to assign a domain to a project that reflects
 When you buy a domain through Vercel, we configure and set the nameservers, which means you do not need to set any DNS records or make any configurations. It just works. In addition, if you choose to make configurations, such as setting up email, it's all maintained from the [**Domains** section in your team dashboard sidebar](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fdomains\&title=Go+to+team%27s+domains+page). Finally, all renewals, including domain and SSL certificate renewals are automatically handled by Vercel. To review renewal dates or renew a domain manually, see [Managing domain renewals](/docs/domains/working-with-domains/renew-a-domain).
 
 > **💡 Note:** Paid Pro teams include one free first-year domain on an eligible TLD
-> (`.online`, `.site`, `.space`, `.store`, `.tech`, or `.website`). The offer
-> covers one domain per team and excludes teams on a
+> (`.app`, `.dev`, `.online`, `.site`, `.space`, `.store`, `.tech`, or
+> `.website`). The offer covers one domain per team and excludes teams on a
 > [Pro trial](/docs/plans/pro-plan/trials). After the first year, the domain
 > renews at the standard rate. See
 > [eligibility details](/docs/plans/pro-plan#free-first-year-domain-with-pro).
 
-> **💡 Note:** For the ICANN registrant information:
+> **💡 Note:** For the ICANN registrant information:If you enter the same email address you use for your Vercel user account
+> (or an email your [team owner](/docs/rbac/access-roles#owner-role) uses),
+> the information will be confirmed automatically.If you enter another email address, please follow the instructions you
+> receive in an email to confirm your registrant information.If you don't confirm your registrant information, your domain could be suspended (clientHold).
+> You can resend the verification email or update the registrant address from your [Domains dashboard](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fdomains\&title=Domains+dashboard) if needed.
 
 ### Buying a domain through a third-party
 
@@ -79,7 +83,7 @@ When you are using domains with Vercel, there are two areas of the dashboard tha
 
 - **Project assignment**: This is accessed by selecting the project that you wish to assign the domain to and navigating to **Settings > Domains**. From here you can add an apex domain or subdomain to the Project. When a user visits your domain, they will see the most recent production deployment of your site, unless you [assign the domain to a Git branch](/docs/domains/working-with-domains/assign-domain-to-a-git-branch) or [add redirection](/docs/domains/working-with-domains/deploying-and-redirecting).
 
-> **💡 Note:** When you add a domain to Vercel for the first time, it will appear as an  in your team's  tab. If you add that domain (for example, `yourdomain.com`, or `docs.yourdomain.com`) to a project on a different Vercel team, that domain will require a [TXT verification step](/docs/domains/working-with-domains/claim-domain-ownership) and will only show up at the project level. The  will still appear in the original account's  tab.
+> **💡 Note:** When you add a domain to Vercel for the first time, it will appear as an **apex domain** in your team's **Domains** tab. If you add that domain (for example, `yourdomain.com`, or `docs.yourdomain.com`) to a project on a different Vercel team, that domain will require a [TXT verification step](/docs/domains/working-with-domains/claim-domain-ownership) and will only show up at the project level. The **apex domain** will still appear in the original account's **Domains** tab.
 
 ## Subdomains, wildcard domains, and apex domains
 

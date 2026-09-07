@@ -8,12 +8,12 @@ type: reference
 prerequisites:
   - /docs/cli
 related:
-  []
+  - /docs/cli/global-options
 summary: Learn how to promote an existing deployment using the vercel promote CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/promote.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "c62e9f0633a168cf19e4dd027337a43a0676cf20978f70fd98fceda51af7865f"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "f474d5e08fba3a998141be8349ebfe2f905e4a2b1e0ea0e300093dbd9b08e3e8"
 ---
 
 # vercel promote
@@ -26,12 +26,11 @@ The `vercel promote` command is used to promote an existing deployment to be the
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Stage and manually promote deployments to production](https://vercel.com/changelog/stage-and-manually-promote-deployments-to-production?from=related&source_path=%2Fdocs%2Fcli%2Fpromote&source_site=vercel-docs&relationship=related)
 - [Promoting a preview deployment to production](https://vercel.com/docs/deployments/promote-preview-to-production?from=related&source_path=%2Fdocs%2Fcli%2Fpromote&source_site=vercel-docs&relationship=related) — Test a preview deployment and promote it to production using the CLI.
 - [Promoting Deployments](https://vercel.com/docs/deployments/promoting-a-deployment?from=related&source_path=%2Fdocs%2Fcli%2Fpromote&source_site=vercel-docs&relationship=related) — Learn how to promote deployments to production on Vercel.
-- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related&source_path=%2Fdocs%2Fcli%2Fpromote&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
-- [vercel rollback](https://vercel.com/docs/cli/rollback?from=related&source_path=%2Fdocs%2Fcli%2Fpromote&source_site=vercel-docs&relationship=related) — Learn how to roll back your production deployments to previous deployments using the vercel rollback CLI command.
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fpromote&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel redeploy](https://vercel.com/docs/cli/redeploy?from=related&source_path=%2Fdocs%2Fcli%2Fpromote&source_site=vercel-docs&relationship=related) — Learn how to redeploy your project using the vercel redeploy CLI command.
+- [vercel redirects](https://vercel.com/docs/cli/redirects?from=related&source_path=%2Fdocs%2Fcli%2Fpromote&source_site=vercel-docs&relationship=related) — Learn how to manage project-level redirects using the vercel redirects CLI command.
 
 Full cross-link map for this page: [/docs/cli/promote.graph.md](/docs/cli/promote.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fpromote&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -92,6 +91,24 @@ vercel promote https://example-app-6vd6bhoqt.vercel.app --timeout=5m
 
 *Using the \`vercel promote\` command with the
 \`--timeout\` option.*
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel promote` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 
 ---

@@ -3,7 +3,7 @@ title: Preview Deployment Suffix
 product: vercel
 url: /docs/deployments/preview-deployment-suffix
 canonical_url: "https://vercel.com/docs/deployments/preview-deployment-suffix"
-last_updated: 2026-08-11
+last_updated: 2026-08-28
 type: conceptual
 prerequisites:
   - /docs/deployments
@@ -14,13 +14,15 @@ related:
 summary: When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that particular deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/preview-deployment-suffix.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "d30fe8b59c295277d166ac9c99c5d077a089498156f8da182426fb8663237721"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "b8d4bf97e3620fed78e14cc9f20d7e50e2b8eb296cda572b40bd251ad925a982"
 ---
 
 # Preview Deployment Suffix
 
 > **🔒 Permissions Required**: Preview Deployment Suffix
+
+Preview Deployment Suffixes allow you to customize the URL of a [preview deployment](/docs/deployments/environments#preview-environment-pre-production) by replacing the default `vercel.app` suffix with a [custom domain](/docs/domains/working-with-domains/add-a-domain) of your choice.
 
 
 <!-- docsgraph:related -->
@@ -41,8 +43,6 @@ sha256: "d30fe8b59c295277d166ac9c99c5d077a089498156f8da182426fb8663237721"
 
 Full cross-link map for this page: [/docs/deployments/preview-deployment-suffix.graph.md](/docs/deployments/preview-deployment-suffix.graph.md?from=related&source_path=%2Fdocs%2Fdeployments%2Fpreview-deployment-suffix&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Preview Deployment Suffixes allow you to customize the URL of a [preview deployment](/docs/deployments/environments#preview-environment-pre-production) by replacing the default `vercel.app` suffix with a [custom domain](/docs/domains/working-with-domains/add-a-domain) of your choice.
 
 The entered custom domain must be:
 

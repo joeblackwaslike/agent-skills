@@ -3,7 +3,7 @@ title: Firewall Observability
 product: vercel
 url: /docs/vercel-firewall/firewall-observability
 canonical_url: "https://vercel.com/docs/vercel-firewall/firewall-observability"
-last_updated: 2026-08-11
+last_updated: 2026-08-28
 type: how-to
 prerequisites:
   - /docs/vercel-firewall
@@ -16,8 +16,8 @@ related:
 summary: Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/firewall-observability.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "16b266a4240999a3e8490133682c1bca9f6adeb4fcf8ddbce27589741afa567a"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "40c87360039b3cd309c47a16125c61a586537f3193234b6b4d21ab7f15afc9d2"
 ---
 
 # Firewall Observability
@@ -38,10 +38,10 @@ The project **Firewall** page of your Vercel dashboard provides a consolidated v
 - [Vercel security roundup: improved bot defenses, DoS mitigations, and insights](https://vercel.com/blog/vercel-security-roundup-improved-bot-defenses-dos-mitigations-and-insights?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related)
 - [Improved analytics experience now available on the Vercel Firewall](https://vercel.com/changelog/improved-analytics-experience-now-available-on-the-vercel-firewall?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related)
 - [Improved traffic visibility on Firewall overview page](https://vercel.com/changelog/improved-traffic-visibility-on-firewall-overview-page?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related)
+- [Protect Sensitive Routes with Vercel WAF: Challenge and Deny Rule Recipes](https://vercel.com/kb/guide/suspicious-traffic-in-specific-countries?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related) — Use Vercel WAF custom rules to block or challenge unwanted traffic by country, ASN, IP address, user agent, path, or coo
 - [Protecting your app (and wallet) against malicious traffic](https://vercel.com/blog/protecting-your-app-and-wallet-against-malicious-traffic?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related)
-- [Vercel security roundup: Faster defenses and better visibility for your apps](https://vercel.com/blog/vercel-security-roundup-faster-defenses-and-better-visibility-for-your-apps?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related)
-- [Vercel WAF](https://vercel.com/docs/vercel-firewall/vercel-waf?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related) — Learn how to secure your website with the Vercel Web Application Firewall \\(WAF\\)
 - [Vercel security overview](https://vercel.com/docs/security?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related) — Vercel provides built-in and customizable features to ensure that your site is secure.
+- [Attack Mode](https://vercel.com/docs/vercel-firewall/attack-mode?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related) — Learn how to use Attack Mode to help control who has access to your site when it's under attack.
 
 Full cross-link map for this page: [/docs/vercel-firewall/firewall-observability.graph.md](/docs/vercel-firewall/firewall-observability.graph.md?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

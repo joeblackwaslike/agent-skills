@@ -15,13 +15,15 @@ related:
 summary: Learn how to configure custom error pages for 5xx server errors on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/custom-error-pages.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "4ac3a30a03aa9d9a77cad0458a5320d3d8211f6322cdfcb1226e62b54a3ba21b"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "24cbe6d77b7b1d8816fc29974bc2246d748ba0c7c2c6c4bf319b184189d03286"
 ---
 
 # Custom error pages
 
 > **🔒 Permissions Required**: Custom error pages
+
+Custom error pages let you replace Vercel's platform error pages with your own branded experience. These include errors like [function invocation timeouts](/docs/errors/function_invocation_timeout) or [when your functions are throttled](/docs/errors/function_throttled).
 
 
 <!-- docsgraph:related -->
@@ -34,18 +36,15 @@ sha256: "4ac3a30a03aa9d9a77cad0458a5320d3d8211f6322cdfcb1226e62b54a3ba21b"
 - [Custom Errors](https://nextjs.org/docs/pages/building-your-application/routing/custom-error?from=related&source_path=%2Fdocs%2Fcustom-error-pages&source_site=vercel-docs&relationship=related) — Override and extend the built-in Error page to handle custom errors.
 - [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors?from=related&source_path=%2Fdocs%2Fcustom-error-pages&source_site=vercel-docs&relationship=related) — Learn the systematic steps to identify and resolve 404 issues.
 - [Avoiding duplicate-content SEO with vercel.app URLs and custom domains](https://vercel.com/kb/guide/avoiding-duplicate-content-with-vercel-app-urls?from=related&source_path=%2Fdocs%2Fcustom-error-pages&source_site=vercel-docs&relationship=related) — Discover why search engines may treat your vercel.app URL and custom domain as separate pages, and how to consolidate ra
-- [Redirecting Domains](https://vercel.com/blog/redirecting-domains?from=related&source_path=%2Fdocs%2Fcustom-error-pages&source_site=vercel-docs&relationship=related)
 - [What can I do when I run into build output limits with Next.js on Vercel?](https://vercel.com/kb/guide/what-can-i-do-when-i-run-into-build-output-limits-with-next-js-on-vercel?from=related&source_path=%2Fdocs%2Fcustom-error-pages&source_site=vercel-docs&relationship=related) — Learn how to work with build output limits for Next.js on Vercel.
 - [Configuration Redirects](https://vercel.com/docs/routing/redirects/configuration-redirects?from=related&source_path=%2Fdocs%2Fcustom-error-pages&source_site=vercel-docs&relationship=related) — Learn how to define static redirects in your framework configuration or vercel.json with support for wildcards, pattern
-- [Redirects](https://vercel.com/docs/routing/redirects?from=related&source_path=%2Fdocs%2Fcustom-error-pages&source_site=vercel-docs&relationship=related) — Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL.
 - [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Fcustom-error-pages&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
+- [Redirects](https://vercel.com/docs/routing/redirects?from=related&source_path=%2Fdocs%2Fcustom-error-pages&source_site=vercel-docs&relationship=related) — Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL.
 - [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features?from=related&source_path=%2Fdocs%2Fcustom-error-pages&source_site=vercel-docs&relationship=related) — Learn how to customize your deployments using Vercel's build features.
-- [Vercel for Platforms](https://vercel.com/docs/platforms?from=related&source_path=%2Fdocs%2Fcustom-error-pages&source_site=vercel-docs&relationship=related) — Build platforms that serve multiple customers from a single codebase, with custom domains, wildcard subdomains, and auto
+- [Troubleshooting Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel/troubleshooting?from=related&source_path=%2Fdocs%2Fcustom-error-pages&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot common errors with Sign in with Vercel
 
 Full cross-link map for this page: [/docs/custom-error-pages.graph.md](/docs/custom-error-pages.graph.md?from=related&source_path=%2Fdocs%2Fcustom-error-pages&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Custom error pages let you replace Vercel's platform error pages with your own branded experience. These include errors like [function invocation timeouts](/docs/errors/function_invocation_timeout) or [when your functions are throttled](/docs/errors/function_throttled).
 
 Custom error pages help you:
 

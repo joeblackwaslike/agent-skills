@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/adapters.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "55faf9996e25d64b42af3988f581a4fffd8b41df318ca2928ed600a5cde1d02f"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "7252488e57cf3cef4bb8bb90e8bb1d79947b6570403e065e62e66ea4c92fc05e"
 ---
 
 # Adapters
@@ -103,6 +103,7 @@ The following adapters are currently available:
   - [Clarifai](/providers/openai-compatible-providers/clarifai)
   - [Heroku](/providers/openai-compatible-providers/heroku)
   - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)
+  - [Synthorai](/providers/openai-compatible-providers/synthorai)
 - [Community Providers](/providers/community-providers)
   - [Writing a Custom Provider](/providers/community-providers/custom-providers)
   - [A2A](/providers/community-providers/a2a)

@@ -8,12 +8,12 @@ type: reference
 prerequisites:
   - /docs/cli
 related:
-  []
+  - /docs/cli/global-options
 summary: Learn how to manage project-level redirects using the vercel redirects CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/redirects.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "4424ab6610dcbc29b911aafef63c9352ec9319e293295b74c36c33684b79dc44"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "b059ed735aa84211ac2d4963a8691d7798f89fa11555b4ef4a3001a7a9dbc2fc"
 ---
 
 # vercel redirects
@@ -27,12 +27,11 @@ The `vercel redirects` command lets you manage redirects for a project. Redirect
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects?from=related&source_path=%2Fdocs%2Fcli%2Fredirects&source_site=vercel-docs&relationship=related) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
-- [Redirecting Domains](https://vercel.com/blog/redirecting-domains?from=related&source_path=%2Fdocs%2Fcli%2Fredirects&source_site=vercel-docs&relationship=related)
 - [Managing redirects at scale](https://vercel.com/docs/routing/redirects/manage-redirects-at-scale?from=related&source_path=%2Fdocs%2Fcli%2Fredirects&source_site=vercel-docs&relationship=related) — Add, bulk upload, version, and roll back project-level redirects using the CLI.
 - [Getting Started](https://vercel.com/docs/routing/redirects/bulk-redirects/getting-started?from=related&source_path=%2Fdocs%2Fcli%2Fredirects&source_site=vercel-docs&relationship=related) — Learn how to import thousands of simple redirects from CSV, JSON, or JSONL files.
-- [Bulk Redirects](https://vercel.com/docs/routing/redirects/bulk-redirects?from=related&source_path=%2Fdocs%2Fcli%2Fredirects&source_site=vercel-docs&relationship=related) — Learn how to import thousands of simple redirects from CSV, JSON, or JSONL files.
 - [vercel routes](https://vercel.com/docs/cli/routes?from=related&source_path=%2Fdocs%2Fcli%2Fredirects&source_site=vercel-docs&relationship=related) — Learn how to manage project-level routing rules using the vercel routes CLI command.
-- [Edit a project-level redirect.](https://vercel.com/docs/rest-api/bulk-redirects/edit-a-project-level-redirect?from=related&source_path=%2Fdocs%2Fcli%2Fredirects&source_site=vercel-docs&relationship=related) — PATCH /v1/bulk-redirects — Edits a single redirect identified by its source path. Stages a new change with the modified
+- [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fredirects&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [Configuration Redirects](https://vercel.com/docs/routing/redirects/configuration-redirects?from=related&source_path=%2Fdocs%2Fcli%2Fredirects&source_site=vercel-docs&relationship=related) — Learn how to define static redirects in your framework configuration or vercel.json with support for wildcards, pattern
 
 Full cross-link map for this page: [/docs/cli/redirects.graph.md](/docs/cli/redirects.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fredirects&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -251,6 +250,24 @@ vercel redirects restore version-id [options]
 # Restore a redirects version
 vercel redirects restore <version-id>
 ```
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel redirects` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 
 ---

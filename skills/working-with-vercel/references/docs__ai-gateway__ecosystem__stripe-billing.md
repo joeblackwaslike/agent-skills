@@ -13,8 +13,8 @@ related:
 summary: Add usage-based billing to your AI application with Stripe and AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/stripe-billing.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "da12cf79b0f47ca1338e41a1248c4d387873f1a15c4d5396b8ef6668ef8cad06"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "86becb2a149aad39e0b1660fdee56951855553c91791f1c0511ca5847460f843"
 ---
 
 # Stripe Billing
@@ -27,14 +27,12 @@ You can bill your customers for AI usage by connecting AI Gateway to [Stripe's m
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Introducing the AI Gateway](https://vercel.com/blog/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fstripe-billing&source_site=vercel-docs&relationship=related)
 - [From idea to secure checkout in minutes with Stripe](https://vercel.com/blog/from-idea-to-secure-checkout-in-minutes-with-stripe?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fstripe-billing&source_site=vercel-docs&relationship=related)
-- [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fstripe-billing&source_site=vercel-docs&relationship=related)
 - [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fstripe-billing&source_site=vercel-docs&relationship=related) — Learn about pricing for AI Gateway.
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fstripe-billing&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including pricing and markup, SDK and API compatibility, model availabilit
 - [AI Gateway Usage & Billing](https://vercel.com/docs/ai-gateway/observability-and-spend/usage?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fstripe-billing&source_site=vercel-docs&relationship=related) — Monitor your AI Gateway credit balance, usage, and generation details.
 - [Service Tiers](https://vercel.com/docs/ai-gateway/models-and-providers/service-tiers?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fstripe-billing&source_site=vercel-docs&relationship=related) — Control processing priority and cost for OpenAI, Google AI Studio, Google Vertex AI, and SpaceXAI models using service t
-- [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fstripe-billing&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
-- [Manage Billing and Refunds for Integrations](https://vercel.com/docs/integrations/create-integration/billing?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fstripe-billing&source_site=vercel-docs&relationship=related) — Learn how billing works for native integrations, including invoice lifecycle, pricing models, and refunds.
+- [Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fstripe-billing&source_site=vercel-docs&relationship=related) — Monitor AI Gateway requests and manage spend: observability, custom reporting, usage and billing APIs, and spending budg
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem/stripe-billing.graph.md](/docs/ai-gateway/ecosystem/stripe-billing.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fstripe-billing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -73,7 +71,7 @@ Both headers must be present for meter events to fire. If either is missing, the
 
 ## Examples
 
-#### \[&#xA;    'AI SDK'
+#### AI SDK
 
 You can pass Stripe headers at the gateway level (applies to all requests) or per-request.
 
@@ -123,7 +121,7 @@ const result = streamText({
 });
 ```
 
-#### 'TypeScript (OpenAI Chat Completions)'
+#### TypeScript (OpenAI Chat Completions)
 
 ```typescript filename="openai.ts"
 import OpenAI from 'openai';
@@ -145,7 +143,7 @@ const completion = await openai.chat.completions.create({
 console.log(completion.choices[0].message.content);
 ```
 
-#### 'TypeScript (Anthropic Messages API)'
+#### TypeScript (Anthropic Messages API)
 
 ```typescript filename="anthropic.ts"
 import Anthropic from '@anthropic-ai/sdk';
@@ -168,7 +166,7 @@ const message = await anthropic.messages.create({
 console.log(message.content);
 ```
 
-#### 'Python (OpenAI Chat Completions)'
+#### Python (OpenAI Chat Completions)
 
 ```python filename="openai_billing.py"
 import os
@@ -191,7 +189,7 @@ completion = client.chat.completions.create(
 print(completion.choices[0].message.content)
 ```
 
-#### 'Python (Anthropic Messages API)'
+#### Python (Anthropic Messages API)
 
 ```python filename="anthropic_billing.py"
 import os

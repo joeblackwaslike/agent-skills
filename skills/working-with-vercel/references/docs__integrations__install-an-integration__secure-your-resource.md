@@ -14,8 +14,8 @@ related:
 summary: Learn how to secure native integration resources by choosing where they can connect and using Production-only mode to protect credentials.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/install-an-integration/secure-your-resource.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "096a5e587f77233c26426448c9f7c78124945cfda2a7f0e322c388a8c75e5b89"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "07215fbd430d635d8cb32ae140b12ccadfbfc64b55183a33c8b841e774ac14c1"
 ---
 
 # Secure Your Resource
@@ -29,6 +29,7 @@ Secure a native integration resource by controlling where projects can connect t
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Secure Marketplace credentials with Production-only access](https://vercel.com/changelog/secure-marketplace-credentials-with-production-only-access?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fsecure-your-resource&source_site=vercel-docs&relationship=related)
+- [Rotating Secrets for Vercel Marketplace Integrations](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-supabase-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fsecure-your-resource&source_site=vercel-docs&relationship=related) — Rotate the Supabase service role key, JWT secret, and database password from your Vercel integration, then apply the new
 - [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fsecure-your-resource&source_site=vercel-docs&relationship=related) — Protect who can see your deployments.
 - [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fsecure-your-resource&source_site=vercel-docs&relationship=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fsecure-your-resource&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit

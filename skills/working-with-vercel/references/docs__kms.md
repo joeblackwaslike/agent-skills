@@ -16,13 +16,15 @@ related:
 summary: Sign JWTs and messages with Vercel-managed signing keys. Learn about issuers, keys, and policies, and how to sign from Vercel Functions with...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "6b069c8d94ea2c35ed81f14dd7629c310d0b5e2ca467033ce474be5058e125ee"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "da68a5e1d83245aa3446e7125704adea774a5fdc432e2c7229dc2c2a0278f06a"
 ---
 
 # Key Management Service (KMS)
 
 > **🔒 Permissions Required**: Key Management Service
+
+Vercel Key Management Service (KMS) gives you managed signing keys that live on Vercel. You sign JWTs and messages by calling the KMS signing API from your Vercel Functions, and Vercel publishes the matching public keys so any relying party can verify the result. Your private keys never leave Vercel, so you avoid storing signing material in environment variables.
 
 
 <!-- docsgraph:related -->
@@ -39,8 +41,6 @@ sha256: "6b069c8d94ea2c35ed81f14dd7629c310d0b5e2ca467033ce474be5058e125ee"
 
 Full cross-link map for this page: [/docs/kms.graph.md](/docs/kms.graph.md?from=related&source_path=%2Fdocs%2Fkms&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Vercel Key Management Service (KMS) gives you managed signing keys that live on Vercel. You sign JWTs and messages by calling the KMS signing API from your Vercel Functions, and Vercel publishes the matching public keys so any relying party can verify the result. Your private keys never leave Vercel, so you avoid storing signing material in environment variables.
 
 To sign your first token, follow the [Quickstart](/docs/kms/quickstart). For the conceptual model, see [Key rotation](/docs/kms/concepts/key-rotation) and [Authentication](/docs/kms/concepts/authentication).
 

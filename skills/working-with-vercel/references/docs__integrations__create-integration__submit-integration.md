@@ -3,7 +3,7 @@ title: Requirements for listing an Integration
 product: vercel
 url: /docs/integrations/create-integration/submit-integration
 canonical_url: "https://vercel.com/docs/integrations/create-integration/submit-integration"
-last_updated: 2026-08-24
+last_updated: 2026-08-28
 type: reference
 prerequisites:
   - /docs/integrations/create-integration
@@ -17,8 +17,8 @@ related:
 summary: Learn about all the requirements and guidelines needed when creating your Integration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/submit-integration.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "b5de7a517c0961af2b7d0011a8c32e66e59267f1c2629037f8d65b4c31b63589"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "3f053f60a7e74e2c63cdcb320de33a98fff2faba8e1f30c2d1006a4c29c7aeb2"
 ---
 
 # Requirements for listing an Integration
@@ -34,9 +34,9 @@ Defining the content specs helps you create the main cover page of your integrat
 - [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fsubmit-integration&source_site=vercel-docs&relationship=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
 - [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fsubmit-integration&source_site=vercel-docs&relationship=related) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
 - [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fsubmit-integration&source_site=vercel-docs&relationship=related) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
+- [Upgrade an Integration](https://vercel.com/docs/integrations/create-integration/upgrade-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fsubmit-integration&source_site=vercel-docs&relationship=related) — Lean more about when you may need to upgrade your Integration.
 - [Marketplace Partner API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fsubmit-integration&source_site=vercel-docs&relationship=related) — Learn how to implement Partner API endpoints for your Vercel integration
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fsubmit-integration&source_site=vercel-docs&relationship=related) — Learn how you can add a product to your Vercel project through a native integration.
-- [Upgrade an Integration](https://vercel.com/docs/integrations/create-integration/upgrade-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fsubmit-integration&source_site=vercel-docs&relationship=related) — Lean more about when you may need to upgrade your Integration.
 
 Full cross-link map for this page: [/docs/integrations/create-integration/submit-integration.graph.md](/docs/integrations/create-integration/submit-integration.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fsubmit-integration&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -283,7 +283,7 @@ If you leave the **Configuration URL** field empty, the **Configure** button wil
 
 ## Base URL
 
-- **Required: If it's a&#x20;**
+- **Required: If it's a product**
 
 The URL that points to the provider's integration server that implements the [Marketplace Provider API](/docs/integrations/create-integration/marketplace-api). To interact with the provider's application, Vercel makes a request to the base URL appended with the path for the specific endpoint.
 
@@ -291,7 +291,7 @@ For example, if the base url is `https://foo.bar.com/vercel-integration-server`,
 
 ## Redirect Login URL
 
-- **Required: If it's a&#x20;**
+- **Required: If it's a product**
 
 The URL where Vercel redirect users of the integration in the following situations:
 
@@ -313,7 +313,7 @@ Setting this field enables the **Import Existing** option for connected installa
 ## Installation-level Billing Plans
 
 - **Required**: No (It's a toggle which is disabled by default)
-- Applies to a&#x20;
+- Applies to a installation
 
 When enabled, it allows the integration user to select a billing plan for their installation. The default installation-level billing plan is chosen by the partner. When disabled, the installation does not have a configurable billing plan.
 

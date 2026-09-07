@@ -16,13 +16,15 @@ related:
 summary: Learn how to use Notifications to view and manage important alerts about your deployments, domains, integrations, account, and usage.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/notifications.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "a8809e01b31ca913e26e04ec712a8f0a5799a4e1a19e75eea424155c35d0ca09"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "eff188327b522d88490803326a428af310a58ab823454df8cf7165cf29a55414"
 ---
 
 # Notifications
 
 > **🔒 Permissions Required**: Notifications
+
+Vercel sends configurable notifications to you through the [dashboard](https://vercel.com/d?to=%2Fdashboard\&title=Open+Dashboard) and email. These notifications enable you to view and manage important alerts about your [deployments](/docs/deployments), [domains](/docs/domains), [integrations](/docs/integrations), [account](/docs/accounts), and [usage](/docs/pricing/manage-and-optimize-usage).
 
 
 <!-- docsgraph:related -->
@@ -34,6 +36,7 @@ sha256: "a8809e01b31ca913e26e04ec712a8f0a5799a4e1a19e75eea424155c35d0ca09"
 - [Get notified on build failures and more with new notification controls](https://vercel.com/changelog/new-notification-controls-available-in-public-beta?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related)
 - [Building a powerful notification system for Vercel with Knock](https://vercel.com/blog/building-a-powerful-notification-system-for-vercel-with-knock-app?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related)
 - [How do I disable Git Notifications from Deployments?](https://vercel.com/kb/guide/how-do-i-disable-git-notifications-from-deployments?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related) — If your project is connected via a Git account to your deployment, you will receive email notifications whenever the dep
+- [September 2020](https://vercel.com/blog/changelog-september-2020?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related)
 - [Configure alerts](https://vercel.com/docs/alerts/configure-alerts?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related) — Configure alert rules and notification destinations for Vercel Observability alerts.
 - [Audit Logs](https://vercel.com/docs/audit-log?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related) — Learn how to track and analyze your team members' activities.
 - [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
@@ -42,8 +45,6 @@ sha256: "a8809e01b31ca913e26e04ec712a8f0a5799a4e1a19e75eea424155c35d0ca09"
 
 Full cross-link map for this page: [/docs/notifications.graph.md](/docs/notifications.graph.md?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Vercel sends configurable notifications to you through the [dashboard](https://vercel.com/d?to=%2Fdashboard\&title=Open+Dashboard) and email. These notifications enable you to view and manage important alerts about your [deployments](/docs/deployments), [domains](/docs/domains), [integrations](/docs/integrations), [account](/docs/accounts), and [usage](/docs/pricing/manage-and-optimize-usage).
 
 ## Receiving notifications
 

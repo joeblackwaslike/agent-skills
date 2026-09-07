@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-speech-generated-error.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "a22e282cdadfeac392571c24864c9d7487ba749411c9de63a83a02c753d8fb6e"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "df30c8d53dbbe21a3efceea8bd44276f0e33be27e4e67095c69b5340f89d4ac3"
 ---
 
 # AI_NoSpeechGeneratedError
@@ -59,6 +59,7 @@ if (NoSpeechGeneratedError.isInstance(error)) {
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
 - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
 - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)
+- [ToolChoiceViolationError](/docs/reference/ai-sdk-errors/ai-tool-choice-violation-error)
 - [AI_TypeValidationError](/docs/reference/ai-sdk-errors/ai-type-validation-error)
 - [AI_UIMessageStreamError](/docs/reference/ai-sdk-errors/ai-ui-message-stream-error)
 - [AI_UnsupportedFunctionalityError](/docs/reference/ai-sdk-errors/ai-unsupported-functionality-error)

@@ -17,8 +17,8 @@ related:
 summary: Learn how to add a new AI provider to your Vercel projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-provider.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "b707e43ff1bf93ebd956c43cea46a00b3fd0038348443c529f6875ae23f946d0"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "17d816ffba59d97047f1da289a8071163fba6456656f024aa4684b3bec16e1fe"
 ---
 
 # Adding a Provider
@@ -32,13 +32,13 @@ When you Open **AI** in the sidebar, you'll see a list of installed AI integrati
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Groq, fal, and DeepInfra join the Vercel Marketplace ](https://vercel.com/changelog/groq-fal-and-deepinfra-join-the-vercel-marketplace?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fadding-a-provider&source_site=vercel-docs&relationship=related)
-- [Introducing AI Integrations on Vercel](https://vercel.com/blog/ai-integrations?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fadding-a-provider&source_site=vercel-docs&relationship=related)
 - [AI models](https://v0.app/docs/ai-models?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fadding-a-provider&source_site=vercel-docs&relationship=related) — Add AI functionality to your v0 projects by integrating AI models and platforms.
+- [Introducing AI Integrations on Vercel](https://vercel.com/blog/ai-integrations?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fadding-a-provider&source_site=vercel-docs&relationship=related)
 - [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fadding-a-provider&source_site=vercel-docs&relationship=related) — Learn how to add a new AI model to your Vercel projects
 - [Build with AI agents on Vercel](https://vercel.com/docs/agent-resources/integrations-for-agents?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fadding-a-provider&source_site=vercel-docs&relationship=related) — Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
 - [Vercel Integrations](https://vercel.com/docs/integrations?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fadding-a-provider&source_site=vercel-docs&relationship=related) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte
-- [Vercel & OpenAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/openai?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fadding-a-provider&source_site=vercel-docs&relationship=related) — Integrate your Vercel project with OpenAI's powerful suite of models.
-- [AI Gateway](https://vercel.com/docs/ai-gateway?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fadding-a-provider&source_site=vercel-docs&relationship=related) — AI Gateway provides a unified API to access hundreds of AI models through a single endpoint, with text, image, and video
+- [Vercel Together AI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/togetherai?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fadding-a-provider&source_site=vercel-docs&relationship=related) — Learn how to add Together AI connectable account integration with Vercel.
+- [Vercel ElevenLabs Integration](https://vercel.com/docs/agent-resources/integrations-for-models/elevenlabs?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fadding-a-provider&source_site=vercel-docs&relationship=related) — Learn how to add the ElevenLabs connectable account integration with Vercel.
 
 Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/adding-a-provider.graph.md](/docs/agent-resources/integrations-for-models/adding-a-provider.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fadding-a-provider&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -82,13 +82,13 @@ Once you add a provider, the **AI** section in the sidebar will display a list o
 
 ## Featured AI integrations
 
-**xAI**: An AI service with an efficient text model and a wide context image understanding model. [Learn more →](/docs/agent-resources/integrations-for-models/xai)
+**xAI** (Marketplace native integration): An AI service with an efficient text model and a wide context image understanding model. [Learn more →](/docs/agent-resources/integrations-for-models/xai)
 
-**Groq**: A high-performance AI inference service with an ultra-fast Language Processing Unit (LPU) architecture. [Learn more →](/docs/agent-resources/integrations-for-models/groq)
+**Groq** (Marketplace native integration): A high-performance AI inference service with an ultra-fast Language Processing Unit (LPU) architecture. [Learn more →](/docs/agent-resources/integrations-for-models/groq)
 
-**fal**: A serverless AI inferencing platform for creative processes. [Learn more →](/docs/agent-resources/integrations-for-models/fal)
+**fal** (Marketplace native integration): A serverless AI inferencing platform for creative processes. [Learn more →](/docs/agent-resources/integrations-for-models/fal)
 
-**DeepInfra**: A platform with access to a vast library of open-source models. [Learn more →](/docs/agent-resources/integrations-for-models/deepinfra)
+**DeepInfra** (Marketplace native integration): A platform with access to a vast library of open-source models. [Learn more →](/docs/agent-resources/integrations-for-models/deepinfra)
 
 
 ---

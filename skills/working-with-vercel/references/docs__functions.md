@@ -3,26 +3,28 @@ title: Vercel Functions
 product: vercel
 url: /docs/functions
 canonical_url: "https://vercel.com/docs/functions"
-last_updated: 2026-07-15
+last_updated: 2026-09-03
 type: conceptual
 prerequisites:
   []
 related:
   - /docs/frameworks
   - /docs/cdn
+  - /docs/workflows
+  - /docs/eve
   - /docs/functions/functions-api-reference
-  - /docs/functions/functions-api-reference?framework=nextjs
-  - /docs/functions/quickstart
-summary: Run server-side code on Vercel without managing a server.
+summary: Build API routes, webhooks, and agent request handlers with Vercel Functions, then test and debug them with Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "e8440deb84f4d51c3d7e1850b023472274e1823531d2bfb83309f22a41283661"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "c11003f8398187f0fb0686ef767e0c0be853b7f17b33db705167f17ff41ef053"
 ---
 
 # Vercel Functions
 
-When you deploy your application, Vercel automatically sets up the tools and optimizations for your chosen [framework](/docs/frameworks). It ensures low latency by routing traffic through Vercel's [CDN](/docs/cdn), and placing your functions in a specific region when you need more control over [data locality](/docs/functions#functions-and-your-data-source).
+## Run server-side code with Vercel Functions
+
+Build API routes, webhooks, and agent request handlers that scale with traffic. Test locally and trace deployed requests with Vercel CLI.
 
 
 <!-- docsgraph:related -->
@@ -46,9 +48,57 @@ When you deploy your application, Vercel automatically sets up the tools and opt
 Full cross-link map for this page: [/docs/functions.graph.md](/docs/functions.graph.md?from=related&source_path=%2Fdocs%2Ffunctions&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
+#### Handle a request
+
+```typescript filename="api/hello.ts"
+export default {
+  fetch(request: Request) {
+    return new Response('Hello from Vercel!');
+  },
+};
+```
+
+#### Stream a response
+
+```typescript filename="app/api/chat/route.ts"
+import { streamText } from 'ai';
+
+export async function POST(request: Request) {
+  const { prompt } = await request.json();
+  const result = streamText({
+    model: 'openai/gpt-5.6-sol',
+    prompt,
+  });
+
+  return result.toTextStreamResponse();
+}
+```
+
+#### Run after a response
+
+```typescript filename="api/hello.ts"
+import { waitUntil } from '@vercel/functions';
+
+async function getProducts() {
+  const response = await fetch('https://api.vercel.app/products');
+  return response.json();
+}
+
+export default {
+  fetch() {
+    waitUntil(getProducts().then((json) => console.log({ json })));
+    return new Response('Accepted', { status: 202 });
+  },
+};
+```
+
+When you deploy your application, Vercel automatically sets up the tools and optimizations for your chosen [framework](/docs/frameworks). It ensures low latency by routing traffic through Vercel's [CDN](/docs/cdn), and placing your functions in a specific region when you need more control over [data locality](/docs/functions#functions-and-your-data-source).
+
 ![Image](https://vercel.com/front/docs/vercel-functions/first_image_light.png)
 
-## What Vercel Functions provide
+## Build APIs and agent request handlers
+
+Vercel Functions run request-driven API routes, webhooks, streamed model responses, and agent turns. Use [Vercel Workflows](/docs/workflows) or [eve](/docs/eve) when an agent must preserve progress across pauses or deployments.
 
 - **Zero server management.** Deploy code that scales automatically with traffic
 - **Fluid compute.** Reduced cold starts, lower latency, and lower costs via optimized concurrency
@@ -116,6 +166,9 @@ export function GET(request) {
 ```
 
 > For \['nextjs']:
+
+> **💡 Note:** To stream responses you must use Route Handlers in the App Router, even if the
+> rest of your app uses the Pages Router.
 
 When using Next.js Pages, we recommend using [Route Handlers in the App Router](https://nextjs.org/docs/app/api-reference/file-conventions/route "Route Handlers"). This enables you to use the [Vercel Functions Web Signature](/docs/functions/functions-api-reference#function-signature), which allows you to use a common signature, a common standard for creating APIs, and stream responses. See the [Functions API Reference](/docs/functions/functions-api-reference?framework=nextjs#config-object) for information on other available options for creating a function with Next.js Pages.
 

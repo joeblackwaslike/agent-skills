@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-invalid-argument-error.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "03727a72d56992bf0f58925d2a8fac957442182dfd95c1550830dce4404d07f5"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "b649b99084d5ec5bc314c8315f672ac71cc09fa006b6105ef07c6ad1aae19ac4"
 ---
 
 # AI_InvalidArgumentError
@@ -61,6 +61,7 @@ if (InvalidArgumentError.isInstance(error)) {
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
 - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
 - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)
+- [ToolChoiceViolationError](/docs/reference/ai-sdk-errors/ai-tool-choice-violation-error)
 - [AI_TypeValidationError](/docs/reference/ai-sdk-errors/ai-type-validation-error)
 - [AI_UIMessageStreamError](/docs/reference/ai-sdk-errors/ai-ui-message-stream-error)
 - [AI_UnsupportedFunctionalityError](/docs/reference/ai-sdk-errors/ai-unsupported-functionality-error)

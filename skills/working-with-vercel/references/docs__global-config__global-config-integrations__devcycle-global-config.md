@@ -17,8 +17,8 @@ related:
 summary: "Learn how to use Global Config with Vercel's DevCycle integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-integrations/devcycle-global-config.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "1a26df674cd72cb4dd59b291fffadff1d7e2fed930b6e114195a5ee2cb5eff32"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "85497760822b62122f635efae8d561be216d87b5979a6927d5ab3b56c904d937"
 ---
 
 # Using Global Config with DevCycle
@@ -35,8 +35,8 @@ This guide will help you get started with using Vercel's DevCycle integration wi
 - [Using Global Config with LaunchDarkly](https://vercel.com/docs/global-config/global-config-integrations/launchdarkly-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fdevcycle-global-config&source_site=vercel-docs&relationship=related) — Learn how to use Global Config with Vercel's LaunchDarkly integration.
 - [Using Global Config with Statsig](https://vercel.com/docs/global-config/global-config-integrations/statsig-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fdevcycle-global-config&source_site=vercel-docs&relationship=related) — Learn how to use Global Config with Vercel's Statsig integration.
 - [Using Global Config](https://vercel.com/docs/global-config/using-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fdevcycle-global-config&source_site=vercel-docs&relationship=related) — Learn how to use Global Configs in your projects.
-- [Managing Global Configs with Vercel REST API](https://vercel.com/docs/global-config/vercel-api?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fdevcycle-global-config&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel REST API to create and update Global Configs. You can also read data stored in Global Config
 - [Migrating from Edge Config to Global Config](https://vercel.com/docs/global-config/migration-guide?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fdevcycle-global-config&source_site=vercel-docs&relationship=related) — Learn what changed when Edge Config was renamed to Global Config, and how to migrate your connection strings, SDK, and e
+- [Managing Global Configs with Vercel REST API](https://vercel.com/docs/global-config/vercel-api?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fdevcycle-global-config&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel REST API to create and update Global Configs. You can also read data stored in Global Config
 
 Full cross-link map for this page: [/docs/global-config/global-config-integrations/devcycle-global-config.graph.md](/docs/global-config/global-config-integrations/devcycle-global-config.graph.md?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fdevcycle-global-config&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

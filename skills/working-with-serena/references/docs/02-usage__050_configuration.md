@@ -1,7 +1,7 @@
 ---
 source: "https://oraios.github.io/serena/_sources/02-usage/050_configuration.md"
-fetched_at: "2026-08-17T04:47:57.671Z"
-sha256: "2845b201699873ccf5a3f7b63578c958348d1f5bc2c24b946dc93287f27e9a13"
+fetched_at: "2026-09-07T09:04:28.360Z"
+sha256: "460b4211aea54a013859c3458e4b47b6f60229814cba21b5d616ca85f84d9c9f"
 ---
 
 # Configuration
@@ -1170,7 +1170,18 @@ Supported settings:
 |---|---|---|
 | `ls_path` | managed install | Override the Solidity language server executable path. |
 | `solidity_language_server_version` | `0.8.4` | Override the npm package version Serena installs when `ls_path` is not set. |
+| `solidity_state_dir` | `<ls_resources_dir>/solidity-state` on macOS | Writable state root for the managed Solidity language server on macOS. Serena uses a child-process-only home-directory override so Hardhat does not write to `~/Library`; `HOME` in the Serena process is unchanged. |
 | `npm_registry` | `null` | Override the npm registry Serena uses for the managed install. |
+
+On macOS, if the default Solid-LSP resources directory is not writable, configure an alternative path:
+
+```yaml
+ls_specific_settings:
+  solidity:
+    solidity_state_dir: /path/to/writable/solidity-state
+```
+
+This setting is ignored on Linux and Windows, where the existing launch environment is unchanged.
 
 #### SystemVerilog
 

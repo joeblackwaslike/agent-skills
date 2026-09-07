@@ -3,7 +3,7 @@ title: Observability
 product: vercel
 url: /docs/ai-gateway/observability-and-spend/observability
 canonical_url: "https://vercel.com/docs/ai-gateway/observability-and-spend/observability"
-last_updated: 2026-07-30
+last_updated: 2026-08-28
 type: reference
 prerequisites:
   - /docs/ai-gateway/observability-and-spend
@@ -14,8 +14,8 @@ related:
 summary: Learn how to monitor and debug your AI Gateway requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/observability.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "3d03fb539510e6f448da736658440300f3955cca09577295eaf4b446e5124456"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "190a17ce938cd93765d31d62927f38357ac4cce397d42e9f138a48933f33d396"
 ---
 
 # Observability
@@ -34,8 +34,8 @@ The AI Gateway logs spend, model usage, and observability metrics related to you
 - [AI Gateway logs now have a dedicated page](https://vercel.com/changelog/ai-gateway-logs?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fobservability&source_site=vercel-docs&relationship=related)
 - [Observability added to AI Gateway alpha](https://vercel.com/changelog/observability-added-to-ai-gateway-alpha?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fobservability&source_site=vercel-docs&relationship=related)
 - [AI Gateway now supports team and project spend budgets](https://vercel.com/changelog/ai-gateway-spend-budgets-and-alerts?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fobservability&source_site=vercel-docs&relationship=related)
-- [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fobservability&source_site=vercel-docs&relationship=related) — Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application perfor
 - [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fobservability&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
+- [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fobservability&source_site=vercel-docs&relationship=related) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fobservability&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fobservability&source_site=vercel-docs&relationship=related) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
 - [Spend Management](https://vercel.com/docs/spend-management?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fobservability&source_site=vercel-docs&relationship=related) — Learn how to get notified about your account spend and configure a webhook.

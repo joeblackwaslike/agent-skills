@@ -13,8 +13,8 @@ related:
 summary: Attribute your requests so Vercel can identify and feature your app on AI Gateway pages
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/app-attribution.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "4c049196ee09c428b54502a858faecb9ee51ae698958656c87ceba9cec31d524"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "c5681abe3f771972f2cf3e75c9c151b0bc2fb50c87811076db925336108f3805"
 ---
 
 # App Attribution
@@ -29,12 +29,11 @@ driving awareness.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Choosing a Provider](https://ai-sdk.dev/docs/getting-started/choosing-a-provider?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fapp-attribution&source_site=vercel-docs&relationship=related)
 - [Provider Options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fapp-attribution&source_site=vercel-docs&relationship=related) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fapp-attribution&source_site=vercel-docs&relationship=related) — Create an AI Gateway API key, make your first request with TypeScript, Python, or cURL, and verify how the request was r
 - [Models & Providers](https://vercel.com/docs/ai-gateway/models-and-providers?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fapp-attribution&source_site=vercel-docs&relationship=related) — Work with models and providers in AI Gateway: provider routing and fallbacks, filtering, timeouts, caching, service tier
 - [Direct REST API Usage](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fapp-attribution&source_site=vercel-docs&relationship=related) — Use the AI Gateway API directly without client libraries using curl and fetch.
 - [Xcode](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fapp-attribution&source_site=vercel-docs&relationship=related) — Use Xcode's coding assistant with the AI Gateway.
-- [Provider Options](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fapp-attribution&source_site=vercel-docs&relationship=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API.
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem/app-attribution.graph.md](/docs/ai-gateway/ecosystem/app-attribution.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fapp-attribution&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -53,7 +52,7 @@ You can set these headers directly in your server-side requests to AI Gateway.
 
 ## Examples
 
-#### \[&#xA;    'TypeScript (AI SDK)'
+#### TypeScript (AI SDK)
 
 ```typescript filename="ai-sdk.ts"
 import { streamText } from 'ai';
@@ -72,7 +71,7 @@ for await (const part of result.textStream) {
 }
 ```
 
-#### 'TypeScript (OpenAI)'
+#### TypeScript (OpenAI)
 
 ```typescript filename="openai.ts"
 import OpenAI from 'openai';
@@ -103,7 +102,7 @@ const response = await openai.chat.completions.create(
 console.log(response.choices[0].message.content);
 ```
 
-#### 'Python (OpenAI)'
+#### Python (OpenAI)
 
 ```python filename="openai.py"
 import os

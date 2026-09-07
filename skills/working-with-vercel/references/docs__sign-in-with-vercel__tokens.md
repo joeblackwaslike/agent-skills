@@ -13,8 +13,8 @@ related:
 summary: Learn how to Sign in with Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/tokens.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "1bf558302c82837bd1d091398cba6af6e3fb87e545d3072a4be9b416449c271b"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "3c664387fba8661cf06c4ddd14e13d539382ce5481cb7e6226b46ecf105a437b"
 ---
 
 # Tokens
@@ -33,8 +33,8 @@ There are three tokens your application will work with when using Sign in with V
 - [OIDC Federation Reference](https://vercel.com/docs/oidc/reference?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Ftokens&source_site=vercel-docs&relationship=related) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
 - [List Auth Tokens](https://vercel.com/docs/rest-api/authentication/list-auth-tokens?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Ftokens&source_site=vercel-docs&relationship=related) — GET /v6/user/tokens — Retrieve a list of the current User's authentication tokens.
 - [Tokens](https://vercel.com/docs/connect/concepts/tokens?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Ftokens&source_site=vercel-docs&relationship=related) — Short-lived provider credentials issued by Vercel Connect. Each token request specifies a subject, optional installation
-- [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Ftokens&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
 - [Access tokens](https://vercel.com/docs/accounts/access-tokens?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Ftokens&source_site=vercel-docs&relationship=related) — Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate A
+- [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Ftokens&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel/tokens.graph.md](/docs/sign-in-with-vercel/tokens.graph.md?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Ftokens&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

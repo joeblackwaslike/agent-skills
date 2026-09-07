@@ -14,8 +14,8 @@ related:
 summary: Clone working multi-tenant and multi-project starters to begin your platform build.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/examples.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "6e6883bcc77402cac317dc3c9023ff00ba578c309ee7220b183f4bc8dba22af9"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "048679625decbf17db742500a80355522653e369c075cff878c230f0d7208962"
 ---
 
 # Examples
@@ -30,7 +30,6 @@ Start from a working example instead of a blank project. Each template covers a 
 
 - [Build a multi-tenant app with Next.js and Vercel](https://vercel.com/kb/guide/nextjs-multi-tenant-application?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples&source_site=vercel-docs&relationship=related) — Create a Next.js application with multi-tenancy and custom domain support on Vercel.
 - [Introducing the Vercel Platforms Starter Kit](https://vercel.com/blog/platforms-starter-kit?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples&source_site=vercel-docs&relationship=related)
-- [Build with an Express starter template](https://vercel.com/kb/guide/build-with-a-express-starter-template?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples&source_site=vercel-docs&relationship=related) — Deploy an Express app to Vercel from a template. Browse Express starters from Vercel and the community, then run them lo
 - [Multi-Tenant Platforms](https://vercel.com/docs/platforms/multi-tenant-platforms?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples&source_site=vercel-docs&relationship=related) — Serve multiple customers from a single codebase and deployment, routing each tenant by subdomain or custom domain.
 - [Multi-Project Platforms Concepts](https://vercel.com/docs/platforms/multi-project-platforms/concepts?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples&source_site=vercel-docs&relationship=related) — Understand projects, deployments, domains, and architecture for multi-project platforms on Vercel.
 - [Multi-Project Platforms](https://vercel.com/docs/platforms/multi-project-platforms?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples&source_site=vercel-docs&relationship=related) — Give each customer its own Vercel project and deployment, created and managed programmatically with the Vercel SDK.

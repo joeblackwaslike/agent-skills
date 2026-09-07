@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/file-uploads.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "9b6806c2db9361073035e859c1afc1c75fa4d4586affbeddb9781548fb0e004e"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "c897ebef574f5b20b85d385fad3a6e8a4aaa789c46d6db1033f01cc332d92b4b"
 ---
 
 # File Uploads
@@ -94,6 +94,31 @@ const { providerReference } = await uploadFile({
   },
 });
 ```
+
+## Streaming Uploads
+
+Providers that support streaming uploads (e.g. OpenAI, xAI) accept a tagged
+`{ type: 'stream', stream }` shape, sending the bytes without buffering the
+full file in memory. Providers without streaming support reject stream data
+with an `UnsupportedFunctionalityError`.
+
+```ts
+const { providerReference } = await uploadFile({
+  api: openai.files(),
+  data: { type: 'stream', stream: fileStream },
+  mediaType: 'application/jsonl',
+  filename: 'batch.jsonl',
+});
+```
+
+The provider consumes the stream: any failed upload — including validation
+failures before a request is made — cancels it, and it must not be reused. Stream data cannot be sniffed, so `mediaType` defaults to
+`application/octet-stream` when omitted, and multipart-based providers default
+the filename to `"blob"`.
+
+Uploads can be cancelled with `abortSignal` and carry request-specific
+`headers`. Results include `byteSize`, `createdAt`, and `expiresAt` (the
+provider-applied retention expiry) when the provider reports them.
 
 ## Provider References
 

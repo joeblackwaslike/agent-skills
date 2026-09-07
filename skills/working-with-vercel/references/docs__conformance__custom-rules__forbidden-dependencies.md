@@ -12,8 +12,8 @@ related:
 summary: Learn how to set custom rules to disallow one or more files from depending on one or more predefined module
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/custom-rules/forbidden-dependencies.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "387bd81edff6bb885d56be9dd0fa6f5be6887ee38bfb8ef4b91101b80003ebc1"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "209fffd9776d52767a6372c6fb3a99bfa6657665318ded285f9c3f075cbb8838"
 ---
 
 # forbidden-dependencies
@@ -72,8 +72,8 @@ the required properties below:
 | `errorLink`           | `string` (optional)                                                       | An optional link to show alongside the error message.                                                                                                                                                                                                                                                                               |
 | `description`         | `string` (optional)                                                       | The rule description, which is shown in the Vercel Compass dashboard and included in allowlist files.                                                                                                                                                                                                                               |
 | `severity`            | `"major" \| "minor"` (optional)                                           | The rule severity added to the allowlists and used to calculate a project's conformance score.                                                                                                                                                                                                                                      |
-| `moduleNames`         | `string[]`                                                                | An array of exact module names or glob expressions\*.                                                                                                                       |
-| `paths`               | `string[]` (optional)                                                     | An optional array of exact paths or glob expressions, which restricts the paths that this custom rule applies to. This acts as the overridable default value for `paths`\*. |
+| `moduleNames`         | `string[]`                                                                | An array of exact module names or glob expressions\*.<br /><br />*\*Note that paths containing square brackets need to be escaped, i.e. `[folder-name]\page.tsx` would become `\[folder-name\]\page.tsx`.*                                                                                                                       |
+| `paths`               | `string[]` (optional)                                                     | An optional array of exact paths or glob expressions, which restricts the paths that this custom rule applies to. This acts as the overridable default value for `paths`\*.<br /><br />*\*Note that paths containing square brackets need to be escaped, i.e. `[folder-name]\page.tsx` would become `\[folder-name\]\page.tsx`.* |
 | `traverseNodeModules` | `boolean` (optional)                                                      | When `true`, this rule will also traverse `node_modules` for transient dependencies.                                                                                                                                                                                                                                                |
 
 > **💡 Note:** When using `traverseNodeModules`, module names currently need to be prefixed
@@ -109,7 +109,7 @@ following configuration.
 
 | Property | Type                  | Description                                                                                                                                                                                                                                                                 |
 | -------- | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `paths`  | `string[]` (optional) | An optional array of exact paths or glob expressions, which restricts the paths that this custom rule applies to\*. |
+| `paths`  | `string[]` (optional) | An optional array of exact paths or glob expressions, which restricts the paths that this custom rule applies to\*.<br /><br />*\*Note that paths containing square brackets need to be escaped, i.e. `[folder-name]\page.tsx` would become `\[folder-name\]\page.tsx`.* |
 
 The example below enables the `NO_SUPER_SECRET_IN_CLIENT` custom rule for all
 files in the `src/` directory, excluding test files. In this example, the

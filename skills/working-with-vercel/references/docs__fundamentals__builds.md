@@ -3,7 +3,7 @@ title: How Vercel builds your application
 product: vercel
 url: /docs/fundamentals/builds
 canonical_url: "https://vercel.com/docs/fundamentals/builds"
-last_updated: 2026-08-11
+last_updated: 2026-09-03
 type: conceptual
 prerequisites:
   - /docs/fundamentals
@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel transforms your source code into optimized assets ready to serve globally.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/fundamentals/builds.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "749008ca14917e9c4ff6a61e2081b10e4d43595b50a18d71c2bb0287b3d320e1"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "b8ee5f1fbaefcb02804234322e44e805a540ddaa870a34d5780695a9419df5f0"
 ---
 
 # How Vercel builds your application
@@ -33,10 +33,10 @@ When you push code to Vercel, your source files need to be transformed into some
 - [Announcing the Build Output API](https://vercel.com/blog/build-output-api?from=related&source_path=%2Fdocs%2Ffundamentals%2Fbuilds&source_site=vercel-docs&relationship=related)
 - [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure?from=related&source_path=%2Fdocs%2Ffundamentals%2Fbuilds&source_site=vercel-docs&relationship=related)
 - [How to Deploy a Vue.js Site with Vercel](https://vercel.com/kb/guide/deploying-vuejs-to-vercel?from=related&source_path=%2Fdocs%2Ffundamentals%2Fbuilds&source_site=vercel-docs&relationship=related) — Create your Vue.js app and deploy it with Vercel.
-- [vercel build](https://vercel.com/docs/cli/build?from=related&source_path=%2Fdocs%2Ffundamentals%2Fbuilds&source_site=vercel-docs&relationship=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Ffundamentals%2Fbuilds&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Ffundamentals%2Fbuilds&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
-- [How Vercel CDN works](https://vercel.com/docs/how-vercel-cdn-works?from=related&source_path=%2Fdocs%2Ffundamentals%2Fbuilds&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
+- [vercel build](https://vercel.com/docs/cli/build?from=related&source_path=%2Fdocs%2Ffundamentals%2Fbuilds&source_site=vercel-docs&relationship=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
+- [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Ffundamentals%2Fbuilds&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
 - [Vite on Vercel](https://vercel.com/docs/frameworks/frontend/vite?from=related&source_path=%2Fdocs%2Ffundamentals%2Fbuilds&source_site=vercel-docs&relationship=related) — Deploy Vite projects to Vercel and configure environment variables, Vercel Functions, server-side rendering, and SPA rew
 
 Full cross-link map for this page: [/docs/fundamentals/builds.graph.md](/docs/fundamentals/builds.graph.md?from=related&source_path=%2Fdocs%2Ffundamentals%2Fbuilds&source_site=vercel-docs&relationship=graph)
@@ -83,7 +83,7 @@ What occurs during this phase depends entirely on your framework. For a Next.js 
 
 During the build, your framework has access to [environment variables](/docs/environment-variables) you've configured in your project settings. This allows the build to include API keys, feature flags, or other configuration that differs between environments. Preview deployments can use different variables than production, enabling you to test against staging backends before going live.
 
-The build runs until completion or until it hits the [timeout limit](/docs/builds#limits-and-resources). If you want your build to run faster, you may need to optimize your build process or upgrade to a [build machine with more resources](/docs/builds/managing-builds#larger-build-machines).
+The build runs until completion or until it hits the [timeout limit](/docs/builds#limits-and-resources). If you want your build to run faster, you may need to optimize your build process or upgrade to a [build machine with more resources](/docs/builds/managing-builds#build-machine-types).
 
 ## Producing output
 

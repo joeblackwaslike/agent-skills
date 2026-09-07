@@ -16,8 +16,8 @@ related:
 summary: Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no matter what tooling you use.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "18f97e63558801c13ff3032bea4944b4aa15fcdd5b8f0df3e7a5a090e21be646"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "9e0b9870ee8194a9029f56b6f1c24a368685a81c66cbae219094f7898fb6bfb8"
 ---
 
 # Backends on Vercel
@@ -34,11 +34,10 @@ Backends deployed to Vercel receive the benefits of Vercel's infrastructure, inc
 - [How to gradually roll out new versions of your backend](https://vercel.com/kb/guide/how-to-gradually-roll-out-new-versions-of-your-backend?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend&source_site=vercel-docs&relationship=related) — Incrementally release updates to your backend to minimize impact of mistakes.
 - [Build an MCP Server with Weather tools using Express and Vercel](https://vercel.com/kb/guide/mcp-server-with-weather-tool-express?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend&source_site=vercel-docs&relationship=related) — Make your Express weather API accessible to AI assistants through the Model Context Protocol.
 - [How to ship an H3 app on Vercel](https://vercel.com/kb/guide/ship-a-h3-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend&source_site=vercel-docs&relationship=related) — Deploy an H3 app to Vercel with zero configuration. Learn to configure streaming, middleware, cron jobs, the Bun runtime
-- [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend&source_site=vercel-docs&relationship=related) — Learn how to build and scale performant APIs on Vercel.
+- [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend&source_site=vercel-docs&relationship=related) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
 - [Vercel Services: Run full stack on Vercel](https://vercel.com/blog/vercel-services-run-full-stack-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend&source_site=vercel-docs&relationship=related)
 - [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend&source_site=vercel-docs&relationship=related)
 - [Building secure and performant web applications on Vercel](https://vercel.com/blog/building-secure-and-performant-web-applications-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend&source_site=vercel-docs&relationship=related)
-- [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend&source_site=vercel-docs&relationship=related)
 - [Zero-config backends on Vercel AI Cloud](https://vercel.com/blog/zero-config-backends-on-vercel-ai-cloud?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend&source_site=vercel-docs&relationship=related)
 - [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend&source_site=vercel-docs&relationship=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
@@ -77,8 +76,6 @@ Deploy the following backends to Vercel with zero-configuration.
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/nestjs)
 - **Nitro**: Nitro is a next generation server toolkit.
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/nitro) | [View Demo](https://nitro-template.vercel.app)
-- **xmcp**: The MCP framework for building AI-powered tools
-  - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/xmcp) | [View Demo](https://xmcp-template.vercel.app/)
 
 
 To process background tasks with Python, you can deploy [Celery](/docs/frameworks/backend/celery) or [Dramatiq](/docs/frameworks/backend/dramatiq) workers as queue-triggered Vercel Functions.

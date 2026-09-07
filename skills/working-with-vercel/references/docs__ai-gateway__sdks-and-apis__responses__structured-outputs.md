@@ -13,8 +13,8 @@ related:
 summary: Constrain a response to a JSON schema with the OpenAI Responses API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/structured-outputs.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "1b62974f4c1de5e5cccf8571f1341a20d424997c37cb48d520c6d1a3bc91929f"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "9b3f69a569400fb85ab150e1a495e6f96bfb51fac6fce1190527ac1fd7ce629d"
 ---
 
 # Structured Outputs
@@ -33,12 +33,12 @@ Use `text.format` to constrain the model's output to a JSON schema:
 - [Generating Structured Data](https://ai-sdk.dev/docs/ai-sdk-core/generating-structured-data?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fstructured-outputs&source_site=vercel-docs&relationship=related)
 - [Output](https://ai-sdk.dev/docs/reference/ai-sdk-core/output?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fstructured-outputs&source_site=vercel-docs&relationship=related)
 - [Text Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/text-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fstructured-outputs&source_site=vercel-docs&relationship=related) — Generate text responses using the OpenResponses API.
-- [Tool Calling](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/tool-calling?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fstructured-outputs&source_site=vercel-docs&relationship=related) — Define tools the model can call with the OpenAI Responses API.
+- [Text Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/text-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fstructured-outputs&source_site=vercel-docs&relationship=related) — Generate text responses with the OpenAI Responses API through AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/responses/structured-outputs.graph.md](/docs/ai-gateway/sdks-and-apis/responses/structured-outputs.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fstructured-outputs&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-#### \['cURL'
+#### cURL
 
 ```bash filename="structured-output.sh"
 curl -X POST "https://ai-gateway.vercel.sh/v1/responses" \
@@ -85,7 +85,7 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/responses" \
   }'
 ```
 
-#### 'TypeScript'
+#### TypeScript
 
 ```typescript filename="structured.ts"
 import OpenAI from 'openai';
@@ -130,7 +130,7 @@ const data = JSON.parse(response.output_text);
 console.log(data.colors);
 ```
 
-#### 'Python']
+#### Python
 
 ```python filename="structured.py"
 import os

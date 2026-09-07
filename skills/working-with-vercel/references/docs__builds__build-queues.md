@@ -13,8 +13,8 @@ related:
 summary: Understand how concurrency and same branch build queues manage multiple simultaneous deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/build-queues.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "7a0ba581963306e5d9375450c9070df8307a175c7027c3252554867f4492ee1f"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "f69d34c137011b0864da1172817239575c7205d821ffc86b681af58b6fd9fe18"
 ---
 
 # Build Queues
@@ -34,9 +34,9 @@ Build queueing is when a build must wait for resources to become available befor
 - [Commits to the same branch now build with no queues](https://vercel.com/changelog/build-commits-to-the-same-branch-without-waiting?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-queues&source_site=vercel-docs&relationship=related)
 - [Enterprise teams can now ship faster without build queues](https://vercel.com/changelog/enterprise-teams-can-now-ship-faster-without-build-queues?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-queues&source_site=vercel-docs&relationship=related)
 - [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-queues&source_site=vercel-docs&relationship=related)
-- [Vercel Queues](https://vercel.com/docs/queues?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-queues&source_site=vercel-docs&relationship=related) — Durable event streaming for serverless. Publish messages to topics and process them reliably with managed consumer group
+- [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-queues&source_site=vercel-docs&relationship=related) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
+- [Vercel Queues](https://vercel.com/docs/queues?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-queues&source_site=vercel-docs&relationship=related) — Publish agent events and background work to durable topics with independent consumers, automatic retries, and at-least-o
 - [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-queues&source_site=vercel-docs&relationship=related) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
-- [Queues concepts](https://vercel.com/docs/queues/concepts?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-queues&source_site=vercel-docs&relationship=related) — Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-queues&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/builds/build-queues.graph.md](/docs/builds/build-queues.graph.md?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-queues&source_site=vercel-docs&relationship=graph)

@@ -14,8 +14,8 @@ related:
 summary: Inspect a request trace in the terminal, open it in the Vercel Dashboard, or manage the trace sampling rules for a project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/traces.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "d125cb73b7bd784055dda695061acede9ad34d29768699bbce3010e2892a1fa8"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "c7a2bead47c665313796ccd160f7e84b09574723a54e1431f0ddb6e3fbabc25a"
 ---
 
 # vercel traces
@@ -28,11 +28,11 @@ The `vercel traces` command helps you inspect request traces for a linked projec
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [vercel alerts](https://vercel.com/docs/cli/alerts?from=related&source_path=%2Fdocs%2Fcli%2Ftraces&source_site=vercel-docs&relationship=related) — List recent alerts for a linked project, a specific project, or an entire team with the Vercel CLI.
 - [vercel logs](https://vercel.com/docs/cli/logs?from=related&source_path=%2Fdocs%2Fcli%2Ftraces&source_site=vercel-docs&relationship=related) — View and filter request logs for your Vercel project, or stream live runtime logs from a deployment.
+- [vercel alerts](https://vercel.com/docs/cli/alerts?from=related&source_path=%2Fdocs%2Fcli%2Ftraces&source_site=vercel-docs&relationship=related) — List recent alerts for a linked project, a specific project, or an entire team with the Vercel CLI.
 - [vercel metrics](https://vercel.com/docs/cli/metrics?from=related&source_path=%2Fdocs%2Fcli%2Ftraces&source_site=vercel-docs&relationship=related) — List and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
-- [vercel project](https://vercel.com/docs/cli/project?from=related&source_path=%2Fdocs%2Fcli%2Ftraces&source_site=vercel-docs&relationship=related) — Perform the following commands from the terminal for your Vercel Projects: list, add, inspect, update settings, rename,
 - [vercel routes](https://vercel.com/docs/cli/routes?from=related&source_path=%2Fdocs%2Fcli%2Ftraces&source_site=vercel-docs&relationship=related) — Learn how to manage project-level routing rules using the vercel routes CLI command.
+- [vercel activity](https://vercel.com/docs/cli/activity?from=related&source_path=%2Fdocs%2Fcli%2Ftraces&source_site=vercel-docs&relationship=related) — View activity events for your Vercel project or team, filtered by type, date range, and project.
 
 Full cross-link map for this page: [/docs/cli/traces.graph.md](/docs/cli/traces.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Ftraces&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -282,6 +282,24 @@ vercel traces config set production 25 /api
 ```
 
 With [`--non-interactive`](/docs/cli/global-options#non-interactive), the subcommands print JSON whether or not you pass `--json`, and the object carries the project, a status, a message, and the commands to run next.
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel traces` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 
 ---

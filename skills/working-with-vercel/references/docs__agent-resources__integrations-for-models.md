@@ -16,8 +16,8 @@ related:
 summary: Integrate powerful AI services and models seamlessly into your Vercel projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "04c2d2ccb74337d3dc6b414f573c8b8baf4aaf0e893889237c5f0cc28ca75b2c"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "439a34f9b0679f24243628865973ceb81a372048b25958a024158fd1bb6c779c"
 ---
 
 # Build with AI on Vercel
@@ -31,13 +31,12 @@ AI services and models help enhance and automate the building and deployment of 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing AI Integrations on Vercel](https://vercel.com/blog/ai-integrations?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models&source_site=vercel-docs&relationship=related)
-- [AI models](https://v0.app/docs/ai-models?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models&source_site=vercel-docs&relationship=related) — Add AI functionality to your v0 projects by integrating AI models and platforms.
 - [AI agents and services on the Vercel Marketplace](https://vercel.com/blog/ai-agents-and-services-on-the-vercel-marketplace?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models&source_site=vercel-docs&relationship=related)
+- [AI models](https://v0.app/docs/ai-models?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models&source_site=vercel-docs&relationship=related) — Add AI functionality to your v0 projects by integrating AI models and platforms.
 - [xAI and Vercel partner to bring zero-friction AI to developers](https://vercel.com/blog/xai-and-vercel-partner-to-bring-zero-friction-ai-to-developers?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models&source_site=vercel-docs&relationship=related)
 - [AI Integrations and playground in the Vercel Dashboard](https://vercel.com/changelog/ai-integration-and-playground-in-the-vercel-dashboard?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models&source_site=vercel-docs&relationship=related)
-- [Deploying AI-driven apps on Vercel](https://vercel.com/blog/deploying-ai-applications?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models&source_site=vercel-docs&relationship=related)
+- [Groq, fal, and DeepInfra join the Vercel Marketplace ](https://vercel.com/changelog/groq-fal-and-deepinfra-join-the-vercel-marketplace?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models&source_site=vercel-docs&relationship=related)
 - [Introducing AI agents & services on the Vercel Marketplace](https://vercel.com/changelog/introducing-ai-agents-and-services-on-the-vercel-marketplace?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models&source_site=vercel-docs&relationship=related)
-- [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models&source_site=vercel-docs&relationship=related) — Learn the key AI concepts and tools for building and scaling AI apps.
 - [Vercel Integrations](https://vercel.com/docs/integrations?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models&source_site=vercel-docs&relationship=related) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte
 - [Products](https://vercel.com/docs/products?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models&source_site=vercel-docs&relationship=related) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
@@ -67,25 +66,25 @@ See the [adding a provider](/docs/agent-resources/integrations-for-models/adding
 
 ## Featured AI integrations
 
-**xAI**: An AI service with an efficient text model and a wide context image understanding model. [Learn more →](/docs/agent-resources/integrations-for-models/xai)
+**xAI** (Marketplace native integration): An AI service with an efficient text model and a wide context image understanding model. [Learn more →](/docs/agent-resources/integrations-for-models/xai)
 
-**Groq**: A high-performance AI inference service with an ultra-fast Language Processing Unit (LPU) architecture. [Learn more →](/docs/agent-resources/integrations-for-models/groq)
+**Groq** (Marketplace native integration): A high-performance AI inference service with an ultra-fast Language Processing Unit (LPU) architecture. [Learn more →](/docs/agent-resources/integrations-for-models/groq)
 
-**fal**: A serverless AI inferencing platform for creative processes. [Learn more →](/docs/agent-resources/integrations-for-models/fal)
+**fal** (Marketplace native integration): A serverless AI inferencing platform for creative processes. [Learn more →](/docs/agent-resources/integrations-for-models/fal)
 
-**DeepInfra**: A platform with access to a vast library of open-source models. [Learn more →](/docs/agent-resources/integrations-for-models/deepinfra)
+**DeepInfra** (Marketplace native integration): A platform with access to a vast library of open-source models. [Learn more →](/docs/agent-resources/integrations-for-models/deepinfra)
 
-**Perplexity**: Learn how to integrate Perplexity with Vercel. [Learn more →](/docs/agent-resources/integrations-for-models/perplexity)
+**Perplexity** (Marketplace connectable account): Learn how to integrate Perplexity with Vercel. [Learn more →](/docs/agent-resources/integrations-for-models/perplexity)
 
-**Replicate**: Learn how to integrate Replicate with Vercel. [Learn more →](/docs/agent-resources/integrations-for-models/replicate)
+**Replicate** (Marketplace connectable account): Learn how to integrate Replicate with Vercel. [Learn more →](/docs/agent-resources/integrations-for-models/replicate)
 
-**ElevenLabs**: Learn how to integrate ElevenLabs with Vercel. [Learn more →](/docs/agent-resources/integrations-for-models/elevenlabs)
+**ElevenLabs** (Marketplace connectable account): Learn how to integrate ElevenLabs with Vercel. [Learn more →](/docs/agent-resources/integrations-for-models/elevenlabs)
 
-**LMNT**: Learn how to integrate LMNT with Vercel. [Learn more →](/docs/agent-resources/integrations-for-models/lmnt)
+**LMNT** (Marketplace connectable account): Learn how to integrate LMNT with Vercel. [Learn more →](/docs/agent-resources/integrations-for-models/lmnt)
 
-**Together AI**: Learn how to integrate Together AI with Vercel. [Learn more →](/docs/agent-resources/integrations-for-models/togetherai)
+**Together AI** (Marketplace connectable account): Learn how to integrate Together AI with Vercel. [Learn more →](/docs/agent-resources/integrations-for-models/togetherai)
 
-**OpenAI**: Connect powerful AI models like GPT-4 [Learn more →](/docs/agent-resources/integrations-for-models/openai)
+**OpenAI** (Guide): Connect powerful AI models like GPT-4 [Learn more →](/docs/agent-resources/integrations-for-models/openai)
 
 ## More resources
 

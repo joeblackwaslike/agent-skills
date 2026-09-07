@@ -3,7 +3,7 @@ title: WAF Rate Limiting
 product: vercel
 url: /docs/vercel-firewall/vercel-waf/rate-limiting
 canonical_url: "https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting"
-last_updated: 2026-06-16
+last_updated: 2026-08-28
 type: how-to
 prerequisites:
   - /docs/vercel-firewall/vercel-waf
@@ -13,13 +13,15 @@ related:
 summary: Learn how to configure custom rate limiting rules with the Vercel Web Application Firewall (WAF).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "c1fe9ab02fa901364cbd6fbf04c8c21b09eb40eea51ca3d597b53438c980ad76"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "f86af2a0c4d59882431a56081f34e91a0e41f325b198340d46047d0a08f9fe84"
 ---
 
 # WAF Rate Limiting
 
 > **🔒 Permissions Required**: WAF Rate Limiting
+
+Rate limiting allows you to control the number of times that a request from the same source can hit your application within a specific timeframe. This could happen due to multiple reasons, such as malicious activity or a software bug.
 
 
 <!-- docsgraph:related -->
@@ -42,8 +44,6 @@ sha256: "c1fe9ab02fa901364cbd6fbf04c8c21b09eb40eea51ca3d597b53438c980ad76"
 
 Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf/rate-limiting.graph.md](/docs/vercel-firewall/vercel-waf/rate-limiting.graph.md?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Rate limiting allows you to control the number of times that a request from the same source can hit your application within a specific timeframe. This could happen due to multiple reasons, such as malicious activity or a software bug.
 
 The use of rate limiting rules helps ensure that only intended traffic reaches your resources such as API endpoints or external services, giving you better control over usage costs.
 

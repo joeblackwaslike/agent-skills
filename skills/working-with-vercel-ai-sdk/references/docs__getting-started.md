@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/getting-started.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "b234badbd79ba5c9753bb0bd143c436c7f94e6371253ae8572e1dc83179509df"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "e2ecedc16dd10957c096dc954930f3da6504d999621670291fae16b45f12b059"
 ---
 
 # Getting Started
@@ -276,6 +276,7 @@ You can also use [AI SDK Core](/docs/ai-sdk-core/overview) and [AI SDK UI](/docs
     - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
     - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
     - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)
+    - [ToolChoiceViolationError](/docs/reference/ai-sdk-errors/ai-tool-choice-violation-error)
     - [AI_TypeValidationError](/docs/reference/ai-sdk-errors/ai-type-validation-error)
     - [AI_UIMessageStreamError](/docs/reference/ai-sdk-errors/ai-ui-message-stream-error)
     - [AI_UnsupportedFunctionalityError](/docs/reference/ai-sdk-errors/ai-unsupported-functionality-error)

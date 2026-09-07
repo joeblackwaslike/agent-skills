@@ -3,8 +3,8 @@ title: Agent Resources
 product: vercel
 url: /docs/agent-resources
 canonical_url: "https://vercel.com/docs/agent-resources"
-last_updated: 2026-08-27
-type: integration
+last_updated: 2026-09-03
+type: conceptual
 prerequisites:
   []
 related:
@@ -13,16 +13,18 @@ related:
   - /docs/graph.json
   - /docs/agent-resources/vercel-mcp
   - /docs/ai-gateway/coding-agents
-summary: Resources for building with AI on Vercel, including documentation access, MCP servers, and agent skills.
+summary: Set up AI coding tools with Vercel documentation, reusable skills, and secure access to projects, deployments, and logs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "167197a2326647ee3bb841eca7f6a5f566f6b15357d9664190f3c583ba44e419"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "027c64a376ff091bfc30d1b86c2eb814ee58645a731dca0438b24cbd036f8bdc"
 ---
 
 # Agent Resources
 
-Vercel provides resources to help you build AI-powered applications and work more effectively with AI coding assistants. Access documentation in machine-readable formats, connect AI tools directly to Vercel, and install agent skills for specialized capabilities. You can also [install AI agents and services from the Vercel Marketplace](/docs/agent-resources/integrations-for-agents) to automate workflows in your projects.
+## Set up your coding agent for Vercel
+
+Give AI coding tools Vercel documentation, reusable skills, and secure access to projects, deployments, and logs.
 
 
 <!-- docsgraph:related -->
@@ -32,16 +34,36 @@ Vercel provides resources to help you build AI-powered applications and work mor
 
 - [Make your documentation readable by AI agents](https://vercel.com/kb/guide/make-your-documentation-readable-by-ai-agents?from=related&source_path=%2Fdocs%2Fagent-resources&source_site=vercel-docs&relationship=related) — Serve markdown to AI agents using content negotiation, .md endpoints, agent auto-detection, llms.txt,   sitemap.md, and
 - [How to build AI Agents with Vercel and the AI SDK](https://vercel.com/kb/guide/how-to-build-ai-agents-with-vercel-and-the-ai-sdk?from=related&source_path=%2Fdocs%2Fagent-resources&source_site=vercel-docs&relationship=related) — Learn how to build, deploy, and scale AI agents on Vercel using the AI SDK. This guide covers calling LLMs, defining too
-- [Agent Readability: A Specification for AI-Optimized Websites](https://vercel.com/kb/guide/agent-readability-spec?from=related&source_path=%2Fdocs%2Fagent-resources&source_site=vercel-docs&relationship=related) — When an agent visits your site, it needs to quickly find, read, and understand your pages. Sites that are easy for agent
-- [How to set up your Next.js project for AI coding agents](https://nextjs.org/docs/app/guides/ai-agents?from=related&source_path=%2Fdocs%2Fagent-resources&source_site=vercel-docs&relationship=related) — Learn how to configure your Next.js project so AI coding agents use up-to-date documentation instead of outdated trainin
 - [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent?from=related&source_path=%2Fdocs%2Fagent-resources&source_site=vercel-docs&relationship=related) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
 - [Agent Skills: Creating, Installing, and Sharing Reusable Agent Context](https://vercel.com/kb/guide/agent-skills-creating-installing-and-sharing-reusable-agent-context?from=related&source_path=%2Fdocs%2Fagent-resources&source_site=vercel-docs&relationship=related) — This guide will cover what skills are, how to create custom skills for yourself and your team, and how to publish them t
-- [Agentic features](https://v0.app/docs/agentic-features?from=related&source_path=%2Fdocs%2Fagent-resources&source_site=vercel-docs&relationship=related) — v0's intelligent agent capabilities for web search, browser use, terminal commands, error fixing, and external tool inte
+- [Agent Readability: A Specification for AI-Optimized Websites](https://vercel.com/kb/guide/agent-readability-spec?from=related&source_path=%2Fdocs%2Fagent-resources&source_site=vercel-docs&relationship=related) — When an agent visits your site, it needs to quickly find, read, and understand your pages. Sites that are easy for agent
+- [How to set up your Next.js project for AI coding agents](https://nextjs.org/docs/app/guides/ai-agents?from=related&source_path=%2Fdocs%2Fagent-resources&source_site=vercel-docs&relationship=related) — Learn how to configure your Next.js project so AI coding agents use up-to-date documentation instead of outdated trainin
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fagent-resources&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fagent-resources&source_site=vercel-docs&relationship=related) — Create an AI Gateway API key, make your first request with TypeScript, Python, or cURL, and verify how the request was r
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fagent-resources&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/agent-resources.graph.md](/docs/agent-resources.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
+
+#### Install the plugin
+
+```bash filename="terminal"
+npx plugins add vercel/vercel-plugin
+```
+
+#### Install agent skills
+
+```bash filename="terminal"
+npx skills add vercel-labs/agent-skills
+```
+
+#### Connect Vercel MCP
+
+```bash filename="terminal"
+npx -y add-mcp https://mcp.vercel.com -g
+```
+
+You can also [install AI agents and services from the Vercel Marketplace](/docs/agent-resources/integrations-for-agents) to automate workflows in your projects.
 
 ## llms-full.txt
 
@@ -105,7 +127,7 @@ See [Coding Agents](/docs/ai-gateway/coding-agents) for setup guides and configu
 
 Install skills with a single command:
 
-```bash
+```bash filename="terminal"
 npx skills add <owner/repo>
 ```
 

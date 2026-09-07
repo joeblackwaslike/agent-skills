@@ -14,8 +14,8 @@ related:
 summary: Use Cursor with the AI Gateway through its OpenAI base URL override.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/cursor.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "6b8eda1ab44e3928deef46535d3fb7cdb56f67e2275f256558a0ccf48d11e006"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "ed0c64c56ad92961c295f6977447b4d66a4eeae51d98941f550b74a32adba14c"
 ---
 
 # Cursor
@@ -28,15 +28,14 @@ sha256: "6b8eda1ab44e3928deef46535d3fb7cdb56f67e2275f256558a0ccf48d11e006"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Cursor](https://ai-sdk.dev/providers/ai-sdk-harnesses/cursor?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcursor&source_site=vercel-docs&relationship=related)
 - [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcursor&source_site=vercel-docs&relationship=related)
+- [Cursor](https://ai-sdk.dev/providers/ai-sdk-harnesses/cursor?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcursor&source_site=vercel-docs&relationship=related)
 - [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcursor&source_site=vercel-docs&relationship=related) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
-- [Cursor is now available in the AI SDK harness layer](https://vercel.com/changelog/cursor-ai-sdk-harness-adapter?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcursor&source_site=vercel-docs&relationship=related)
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcursor&source_site=vercel-docs&relationship=related) — Create an AI Gateway API key, make your first request with TypeScript, Python, or cURL, and verify how the request was r
 - [OpenClaw](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcursor&source_site=vercel-docs&relationship=related) — Use OpenClaw with the AI Gateway as a model provider.
 - [Xcode](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcursor&source_site=vercel-docs&relationship=related) — Use Xcode's coding assistant with the AI Gateway.
-- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcursor&source_site=vercel-docs&relationship=related) — Use OpenCode with the AI Gateway.
+- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcursor&source_site=vercel-docs&relationship=related) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
 - [LibreChat](https://vercel.com/docs/ai-gateway/chat-platforms/librechat?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcursor&source_site=vercel-docs&relationship=related) — Use LibreChat with the AI Gateway.
-- [Hermes](https://vercel.com/docs/ai-gateway/coding-agents/hermes?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcursor&source_site=vercel-docs&relationship=related) — Use the Hermes agent with the AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/cursor.graph.md](/docs/ai-gateway/coding-agents/cursor.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcursor&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/reference/tools.md"
-fetched_at: "2026-06-15T05:55:14.234Z"
-sha256: "84f3d310f53dcaa2e4e7a437aac67f5a3db5370e5c064380568844fe69e385b6"
+fetched_at: "2026-09-07T09:02:18.333Z"
+sha256: "24f63ba1a361baca3e3141cf059751b8b6218d06c0145516db41967bcbac0b31"
 ---
 
 # Tools reference
@@ -154,10 +154,10 @@ each tool.
 
 ### Web
 
-| Tool                                          | Kind     | Description                                                                                                                                                                                                                                                                     |
-| :-------------------------------------------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [`google_web_search`](../tools/web-search.md) | `Search` | Performs a Google Search to find up-to-date information.                                                                                                                                                                                                                        |
-| [`web_fetch`](../tools/web-fetch.md)          | `Fetch`  | Retrieves and processes content from specific URLs. **Warning:** This tool can access local and private network addresses (for example, localhost), which may pose a security risk if used with untrusted prompts. In Plan Mode, this tool requires explicit user confirmation. |
+| Tool                                          | Kind     | Description                                                                                                                                                                              |
+| :-------------------------------------------- | :------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`google_web_search`](../tools/web-search.md) | `Search` | Performs a Google Search to find up-to-date information.                                                                                                                                 |
+| [`web_fetch`](../tools/web-fetch.md)          | `Fetch`  | Retrieves and processes content from specific URLs. Outbound requests are validated against private and reserved IP ranges. In Plan Mode, this tool requires explicit user confirmation. |
 
 ### Tool argument keys
 

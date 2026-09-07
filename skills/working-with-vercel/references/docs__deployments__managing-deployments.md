@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at any time and even delete a...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/managing-deployments.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "33e0923feaf736ad17cdf2283a7c4ff33830781a6a361a837dd37404ff4c0c21"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "2b3cfa0259dbcea8e7956013b1cccfb46b58c950f7b6222aadb2f4e3fd497568"
 ---
 
 # Managing Deployments
@@ -65,7 +65,7 @@ You can filter your deployments based on branch, status, and deployment environm
 
 ## Delete a deployment
 
-#### \['Dashboard'
+#### Dashboard
 
 If you no longer need a specific deployment of your app, you can delete it from your project with the following steps:
 
@@ -75,7 +75,7 @@ If you no longer need a specific deployment of your app, you can delete it from 
 4. Click the ... button.
 5. From the context menu, select **Delete**.
 
-#### 'cURL'
+#### cURL
 
 To create an Authorization Bearer token, see the [access token](/docs/rest-api#creating-an-access-token) section of the API documentation.
 
@@ -85,7 +85,7 @@ curl --request DELETE \
   --header "Authorization: Bearer $VERCEL_TOKEN"
 ```
 
-#### 'SDK']
+#### SDK
 
 To create an Authorization Bearer token, see the [access token](/docs/rest-api#creating-an-access-token) section of the API documentation.
 

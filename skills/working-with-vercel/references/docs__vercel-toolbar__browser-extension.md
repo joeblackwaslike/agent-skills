@@ -12,13 +12,15 @@ related:
 summary: The browser extensions enable you to use the toolbar in production environments, take screenshots and attach them to comments, and set personal...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar/browser-extension.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "4da870209cc6851bd572fe15a477257050292dbdf2df724669a55b9ab258a93e"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "f17bc735da30da49ca8d495f95846aafa17f988348822de29dc579c4dcc91921"
 ---
 
 # Toolbar Browser Extensions
 
 > **🔒 Permissions Required**: The browser extensions
+
+The browser extension is supported in Chrome, Firefox, Opera, Microsoft Edge, in addition to other Chromium-based browsers that support extensions and enhances the toolbar in the following ways:
 
 
 <!-- docsgraph:related -->
@@ -38,8 +40,6 @@ sha256: "4da870209cc6851bd572fe15a477257050292dbdf2df724669a55b9ab258a93e"
 
 Full cross-link map for this page: [/docs/vercel-toolbar/browser-extension.graph.md](/docs/vercel-toolbar/browser-extension.graph.md?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fbrowser-extension&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-The browser extension is supported in Chrome, Firefox, Opera, Microsoft Edge, in addition to other Chromium-based browsers that support extensions and enhances the toolbar in the following ways:
 
 - Enables the toolbar to detect when you are logged in to Vercel.
 - Operates faster and with fewer network requests.

@@ -16,8 +16,8 @@ related:
 summary: Learn how to take ownership of deployments on Vercel with the Claim Deployments feature.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/claim-deployments.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "46085cc2cfb284a141e429726c7c0c180b176ad905c05a269865cce09f354c4d"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "07a1eb9d9668dec4a917cd41158641cbb64e33708825bafffbeb4de111aac697"
 ---
 
 # Claim Deployments
@@ -37,7 +37,7 @@ The Claim Deployments feature enables users to take control of deployments by tr
 - [Claim Deployment](https://vercel.com/docs/platforms/platform-elements/blocks/claim-deployment?from=related&source_path=%2Fdocs%2Fdeployments%2Fclaim-deployments&source_site=vercel-docs&relationship=related) — A component for users to claim ownership of Vercel deployments created on their behalf.
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments?from=related&source_path=%2Fdocs%2Fdeployments%2Fclaim-deployments&source_site=vercel-docs&relationship=related) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
 - [Claiming Domain Ownership](https://vercel.com/docs/domains/working-with-domains/claim-domain-ownership?from=related&source_path=%2Fdocs%2Fdeployments%2Fclaim-deployments&source_site=vercel-docs&relationship=related) — Learn how to claim ownership of a domain that is registered with another Vercel account by verifying DNS ownership.
-- [Point production traffic to a given deployment](https://vercel.com/docs/rest-api/projects/point-production-traffic-to-a-given-deployment?from=related&source_path=%2Fdocs%2Fdeployments%2Fclaim-deployments&source_site=vercel-docs&relationship=related) — POST /v10/projects/{projectId}/promote/{deploymentId} — Allows users to promote a deployment to production. Note: This d
+- [Deploy Files](https://vercel.com/docs/platforms/platform-elements/actions/deploy-files?from=related&source_path=%2Fdocs%2Fdeployments%2Fclaim-deployments&source_site=vercel-docs&relationship=related) — Server action for programmatically deploying files to Vercel on behalf of platform users.
 - [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain?from=related&source_path=%2Fdocs%2Fdeployments%2Fclaim-deployments&source_site=vercel-docs&relationship=related) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
 
 Full cross-link map for this page: [/docs/deployments/claim-deployments.graph.md](/docs/deployments/claim-deployments.graph.md?from=related&source_path=%2Fdocs%2Fdeployments%2Fclaim-deployments&source_site=vercel-docs&relationship=graph)

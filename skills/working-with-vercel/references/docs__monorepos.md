@@ -16,8 +16,8 @@ related:
 summary: Vercel provides support for monorepos. Learn how to deploy a monorepo here.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "61411da9edd1a5619c4654066f6675fb88a459e6c6e717fc39286ab65c153911"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "8d3293642c1adc8d63716ed053bfa6344f107d8308eba99e5b96f932bb6e2149"
 ---
 
 # Using Monorepos
@@ -35,11 +35,11 @@ Monorepos allow you to manage multiple projects in a single directory. They are 
 - [New monorepo projects now skip builds with unchanged code by default](https://vercel.com/changelog/new-monorepo-projects-now-skip-builds-with-unchanged-code-by-default?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=related)
 - [Skip unaffected builds for projects in Bun monorepos](https://vercel.com/changelog/skip-unaffected-builds-for-projects-in-bun-monorepos?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=related)
 - [Sync projects with @vercel/related-projects](https://vercel.com/changelog/sync-projects-with-vercel-related-projects?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=related)
+- [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=related) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
 - [How can I use files in Vercel Functions?](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=related) — Learn how to import files inside Serverless Functions on Vercel.
+- [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=related) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
 - [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=related) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
 - [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=related) — Learn the systematic steps to identify and resolve 404 issues.
-- [Incremental Migrations with Microfrontends](https://vercel.com/kb/guide/incremental-migrations-with-microfrontends?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=related) — Learn how to migrate legacy applications using microfrontends
-- [Choosing how to structure your application on Vercel](https://vercel.com/kb/guide/structure-your-application?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=related) — Compare three ways to structure an application on Vercel \\(a single framework, one project with Services, or separate pr
 - [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=related)
 - [How to scale a large codebase](https://vercel.com/blog/how-to-scale-a-large-codebase?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=related)
 
@@ -136,6 +136,22 @@ If you have created a script to ignore the build step, you can skip the [the scr
 ## Filtered installs
 
 You can speed up dependency installs by only installing the dependencies for the project being deployed and its workspace dependencies. Set a custom [Install Command](/docs/builds/configure-a-build#install-command) in the project's `vercel.json` or [update your project's Build and Deployment settings](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fbuild-and-deployment%23framework-settings\&title=Build+and+Deployment+settings):
+
+{
+&#x20; "installCommand": "pnpm install --filter web..."
+}
+
+{
+&#x20; "installCommand": "yarn workspaces focus web"
+}
+
+{
+&#x20; "installCommand": "npm install --workspace=web"
+}
+
+{
+&#x20; "installCommand": "bun install --filter web"
+}
 
 ## How to link projects together in a monorepo
 

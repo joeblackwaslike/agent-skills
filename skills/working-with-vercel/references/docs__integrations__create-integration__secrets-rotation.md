@@ -14,8 +14,8 @@ related:
 summary: Learn how to implement secrets rotation in your integration to allow users to rotate credentials securely.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/secrets-rotation.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "0b4ca954797b4890673133a82c6488b781498741ba3fed06a0efc55e05f8b93e"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "2fca3d7ddac69c8b93988d712929c8276a28029e0678aa2f00b2488349a6fafd"
 ---
 
 # Implementing secrets rotation
@@ -28,7 +28,7 @@ When your integration provisions resources with credentials (like API keys, data
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to rotate the secrets of your Supabase integration](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-supabase-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fsecrets-rotation&source_site=vercel-docs&relationship=related) — Rotate Supabase API keys, JWT secrets, and database passwords.
+- [Rotating Secrets for Vercel Marketplace Integrations](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-supabase-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fsecrets-rotation&source_site=vercel-docs&relationship=related) — Rotate the Supabase service role key, JWT secret, and database password from your Vercel integration, then apply the new
 - [How to rotate the secrets of your Hypertune integration](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-hypertune-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fsecrets-rotation&source_site=vercel-docs&relationship=related) — Rotate Hypertune API keys with zero-downtime.
 - [How to rotate the secrets of your Clerk integration](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-clerk-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fsecrets-rotation&source_site=vercel-docs&relationship=related) — Rotate Clerk API keys
 - [How to rotate the secrets of your Upstash integration](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-upstash-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fsecrets-rotation&source_site=vercel-docs&relationship=related) — Rotate Upstash API keys, JWT secrets, and database passwords.

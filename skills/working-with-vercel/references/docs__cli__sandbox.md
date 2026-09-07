@@ -11,11 +11,12 @@ related:
   - /docs/sandbox
   - /docs/sandbox/cli-reference
   - /docs/sandbox/quickstart
+  - /docs/cli/global-options
 summary: "Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from your terminal."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/sandbox.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "a58c07243ebbf2b1269ea9c39f798cf5a52dc89584ca62e1ed9692372ed9aeaa"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "78da5fa9ffae4b6cde677182c09a860fffcb82d52ebc5ee11233c852603e89d5"
 ---
 
 # vercel sandbox
@@ -31,13 +32,13 @@ The `vercel sandbox` command is the entry point for managing [Vercel Sandbox](/d
 - [Use and manage Vercel Sandbox directly from the Vercel CLI](https://vercel.com/changelog/use-vercel-sandbox-directly-within-vercel-cli?from=related&source_path=%2Fdocs%2Fcli%2Fsandbox&source_site=vercel-docs&relationship=related)
 - [Vercel Sandbox CLI is now available](https://vercel.com/changelog/vercel-sandbox-cli-is-now-available?from=related&source_path=%2Fdocs%2Fcli%2Fsandbox&source_site=vercel-docs&relationship=related)
 - [SSH into running Vercel Sandboxes with the CLI](https://vercel.com/changelog/ssh-into-running-sandboxes-with-the-sandbox-cli?from=related&source_path=%2Fdocs%2Fcli%2Fsandbox&source_site=vercel-docs&relationship=related)
-- [Connect to and manage Sandboxes from the dashboard](https://vercel.com/changelog/connect-to-and-manage-sandboxes-from-the-dashboard?from=related&source_path=%2Fdocs%2Fcli%2Fsandbox&source_site=vercel-docs&relationship=related)
 - [The Vercel Sandbox CLI is now more agent-friendly](https://vercel.com/changelog/the-vercel-sandbox-cli-is-now-more-agent-friendly?from=related&source_path=%2Fdocs%2Fcli%2Fsandbox&source_site=vercel-docs&relationship=related)
+- [Vercel Sandboxes are now generally available](https://vercel.com/changelog/vercel-sandboxes-ga?from=related&source_path=%2Fdocs%2Fcli%2Fsandbox&source_site=vercel-docs&relationship=related)
 - [Running commands in a Vercel Sandbox](https://vercel.com/docs/sandbox/run-commands-in-sandbox?from=related&source_path=%2Fdocs%2Fcli%2Fsandbox&source_site=vercel-docs&relationship=related) — Create isolated sandbox environments to run builds, tests, and commands safely.
-- [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes?from=related&source_path=%2Fdocs%2Fcli%2Fsandbox&source_site=vercel-docs&relationship=related) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fcli%2Fsandbox&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
-- [Snapshots](https://vercel.com/docs/sandbox/concepts/snapshots?from=related&source_path=%2Fdocs%2Fcli%2Fsandbox&source_site=vercel-docs&relationship=related) — Save and restore sandbox state with snapshots for faster startups and environment sharing.
+- [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes?from=related&source_path=%2Fdocs%2Fcli%2Fsandbox&source_site=vercel-docs&relationship=related) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem
 - [Delete a sandbox](https://vercel.com/docs/rest-api/sandboxes/delete-a-sandbox?from=related&source_path=%2Fdocs%2Fcli%2Fsandbox&source_site=vercel-docs&relationship=related) — DELETE /v2/sandboxes/{name} — Deletes a sandbox by name. If sandboxes are currently running, they will be stopped first.
+- [Get a named sandbox](https://vercel.com/docs/rest-api/sandboxes/get-a-named-sandbox?from=related&source_path=%2Fdocs%2Fcli%2Fsandbox&source_site=vercel-docs&relationship=related) — GET /v2/sandboxes/{name} — Retrieves a named sandbox by name, including its current sandbox and routes. If the sandbox i
 
 Full cross-link map for this page: [/docs/cli/sandbox.graph.md](/docs/cli/sandbox.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fsandbox&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -77,6 +78,24 @@ For the full list of subcommands, flags, and examples, see the [Sandbox CLI Refe
 - [Sandbox CLI Reference](/docs/sandbox/cli-reference)
 - [Vercel Sandbox overview](/docs/sandbox)
 - [Sandbox quickstart](/docs/sandbox/quickstart)
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel sandbox` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 
 ---

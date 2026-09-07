@@ -3,7 +3,7 @@ title: Accessing Deployments through Generated URLs
 product: vercel
 url: /docs/deployments/generated-urls
 canonical_url: "https://vercel.com/docs/deployments/generated-urls"
-last_updated: 2026-08-11
+last_updated: 2026-08-28
 type: conceptual
 prerequisites:
   - /docs/deployments
@@ -16,8 +16,8 @@ related:
 summary: When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that particular deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/generated-urls.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "1e391b29007aed7426261812fe246d9825b7ab6ceaa02f25d6ca63114749022e"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "abfc2f6275273170340aa006b1d5a32d22e1d33d2631e341fcdc5d46f308e0ce"
 ---
 
 # Accessing Deployments through Generated URLs
@@ -41,7 +41,7 @@ When you create a new [deployment](/docs/deployments) in either a preview or pro
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related&source_path=%2Fdocs%2Fdeployments%2Fgenerated-urls&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features?from=related&source_path=%2Fdocs%2Fdeployments%2Fgenerated-urls&source_site=vercel-docs&relationship=related) — Learn how to customize your deployments using Vercel's build features.
 - [Deploying Git Repositories with Vercel](https://vercel.com/docs/git?from=related&source_path=%2Fdocs%2Fdeployments%2Fgenerated-urls&source_site=vercel-docs&relationship=related) — Vercel automatically deploys supported Git repositories on every branch push and when changes merge into the production
-- [Audit Logs](https://vercel.com/docs/audit-log?from=related&source_path=%2Fdocs%2Fdeployments%2Fgenerated-urls&source_site=vercel-docs&relationship=related) — Learn how to track and analyze your team members' activities.
+- [Methods to Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments?from=related&source_path=%2Fdocs%2Fdeployments%2Fgenerated-urls&source_site=vercel-docs&relationship=related) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
 
 Full cross-link map for this page: [/docs/deployments/generated-urls.graph.md](/docs/deployments/generated-urls.graph.md?from=related&source_path=%2Fdocs%2Fdeployments%2Fgenerated-urls&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

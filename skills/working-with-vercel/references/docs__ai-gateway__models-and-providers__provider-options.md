@@ -17,8 +17,8 @@ related:
 summary: Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-options.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "b28966a6a4fe36ebde2027a31c45a4cd1c849b9109c6732adc2fa809f0a96795"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "b34d14412efb6eabd97d6e988e302737ef7b603ae9e3c6102923723da6708ef0"
 ---
 
 # Provider Options
@@ -35,12 +35,12 @@ AI Gateway can route your AI model requests across multiple AI providers. Each p
 - [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
 - [Zero Data Retention on AI Gateway](https://vercel.com/blog/zdr-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=related)
 - [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=related)
-- [Choosing a Provider](https://ai-sdk.dev/docs/getting-started/choosing-a-provider?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=related)
+- [Providers and Models](https://ai-sdk.dev/docs/foundations/providers-and-models?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=related)
 - [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=related)
 - [Model fallbacks now available in Vercel AI Gateway](https://vercel.com/changelog/model-fallbacks-now-available-in-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=related)
-- [Provider & Model Management](https://ai-sdk.dev/docs/ai-sdk-core/provider-management?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=related)
 - [Provider Options](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API.
 - [Advanced Configuration](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=related) — Configure provider options, model fallbacks, BYOK credentials, and prompt caching.
+- [Disallow Prompt Training](https://vercel.com/docs/ai-gateway/security-and-compliance/disallow-prompt-training?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=related) — Learn how to prevent AI providers from using your prompts and responses for model training through AI Gateway.
 - [Advanced Features](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=related) — Advanced Anthropic API features including web search, provider timeouts, and automatic caching.
 - [Hermes](https://vercel.com/docs/ai-gateway/coding-agents/hermes?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=related) — Use the Hermes agent with the AI Gateway.
 
@@ -218,6 +218,378 @@ You can view the available models for a provider
 in the [**Model List**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fmodels\&title=Go+to+Model+List) section under
 the [**AI Gateway**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) section in your Vercel dashboard sidebar
 or in the public [models page](/ai-gateway/models).
+
+Slug
+
+Name
+
+Website
+
+alibaba
+
+Alibaba Cloud
+
+alibabacloud.com
+
+anthropic
+
+Anthropic
+
+anthropic.com
+
+arcee-ai
+
+Arcee AI
+
+arcee.ai
+
+azure
+
+Azure
+
+ai.azure.com
+
+baseten
+
+Baseten
+
+baseten.co
+
+bedrock
+
+Bedrock
+
+aws.amazon.com
+
+bfl
+
+Black Forest Labs
+
+bfl.ai
+
+blackbox
+
+Blackbox AI
+
+blackbox.ai
+
+bytedance
+
+ByteDance
+
+byteplus.com
+
+cerebras
+
+Cerebras
+
+cerebras.ai
+
+claudeaws
+
+Claude Platform on AWS
+
+aws.amazon.com
+
+cohere
+
+Cohere
+
+cohere.com
+
+crusoe
+
+Crusoe
+
+crusoe.ai
+
+deepinfra
+
+DeepInfra
+
+deepinfra.com
+
+deepseek
+
+DeepSeek
+
+deepseek.com
+
+digitalocean
+
+DigitalOcean
+
+digitalocean.com
+
+exa
+
+Exa
+
+exa.ai
+
+fireworks
+
+Fireworks
+
+fireworks.ai
+
+fish-audio
+
+Fish Audio
+
+fish.audio
+
+friendli
+
+FriendliAI
+
+friendli.ai
+
+gmicloud
+
+GMICloud
+
+gmicloud.ai
+
+google
+
+Google
+
+ai.google.dev
+
+groq
+
+Groq
+
+groq.com
+
+inception
+
+Inception
+
+inceptionlabs.ai
+
+inceptron
+
+Inceptron
+
+inceptron.io
+
+interfaze
+
+Interfaze
+
+interfaze.ai
+
+klingai
+
+Kling AI
+
+klingai.com
+
+meta
+
+Meta
+
+meta.ai
+
+minimax
+
+MiniMax
+
+minimax.io
+
+mistral
+
+Mistral
+
+mistral.ai
+
+modal
+
+Modal
+
+modal.com
+
+moonshotai
+
+Moonshot AI
+
+moonshot.ai
+
+morph
+
+Morph
+
+morphllm.com
+
+nebius
+
+Nebius
+
+nebius.com
+
+novita
+
+Novita AI
+
+novita.ai
+
+openai
+
+OpenAI
+
+openai.com
+
+parallel
+
+Parallel AI
+
+parallel.ai
+
+parasail
+
+Parasail
+
+parasail.io
+
+particle
+
+Particle.AI
+
+particle.ai
+
+perplexity
+
+Perplexity
+
+perplexity.ai
+
+poolside
+
+Poolside
+
+poolside.ai
+
+prodia
+
+Prodia
+
+prodia.com
+
+quiverai
+
+QuiverAI
+
+quiver.ai
+
+recraft
+
+Recraft
+
+recraft.ai
+
+relace
+
+Relace
+
+relace.ai
+
+runinfra
+
+RunInfra
+
+runinfra.ai
+
+runware
+
+Runware
+
+runware.ai
+
+sakana
+
+Sakana AI
+
+sakana.ai
+
+sambanova
+
+SambaNova
+
+sambanova.ai
+
+stepfun
+
+StepFun
+
+platform.stepfun.com
+
+streamlake
+
+StreamLake
+
+streamlake.ai
+
+tako
+
+Tako
+
+tako.com
+
+tencent
+
+Tencent Cloud
+
+tencentcloud.com
+
+thinkingmachines
+
+Thinking Machines
+
+thinkingmachines.ai
+
+togetherai
+
+Together AI
+
+together.ai
+
+vertex
+
+Google Vertex AI
+
+cloud.google.com
+
+voyage
+
+Voyage AI by MongoDB
+
+voyageai.com
+
+wafer
+
+Wafer
+
+wafer.ai
+
+xai
+
+xAI
+
+x.ai
+
+xiaomi
+
+Xiaomi
+
+mimo.xiaomi.com
+
+zai
+
+Z.AI
+
+z.ai
 
 > **💡 Note:** Provider availability may vary by model. Some models may only be available
 > through specific providers or may have different capabilities depending on the

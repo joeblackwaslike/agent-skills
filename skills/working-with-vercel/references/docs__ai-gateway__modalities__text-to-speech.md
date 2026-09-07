@@ -14,8 +14,8 @@ related:
 summary: Generate spoken audio from text with speech models through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/text-to-speech.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "c9354e18cc25b06f6c98f9fd460efd2a5057c9a2e6e917727c831acf9f75f326"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "4f7a532771b066a22ef5739ec1523eefb7efb8a2de8eb8b9e64ed8506b9fbf2a"
 ---
 
 # Text to Speech
@@ -32,11 +32,12 @@ Generate spoken audio from text with speech models such as `openai/tts-1` and `o
 - [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-to-speech&source_site=vercel-docs&relationship=related)
 - [xAI Grok audio models now available on Vercel AI Gateway](https://vercel.com/changelog/xai-grok-audio-models-now-available-on-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-to-speech&source_site=vercel-docs&relationship=related)
 - [generateSpeech](https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-speech?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-to-speech&source_site=vercel-docs&relationship=related)
+- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-to-speech&source_site=vercel-docs&relationship=related) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
 - [Speech to Text and Text to Speech Quickstart](https://vercel.com/docs/ai-gateway/getting-started/speech?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-to-speech&source_site=vercel-docs&relationship=related) — Generate speech from text and transcribe audio back to text with AI Gateway.
-- [Text Generation](https://vercel.com/docs/ai-gateway/modalities/text-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-to-speech&source_site=vercel-docs&relationship=related) — Generate and stream text from hundreds of models through AI Gateway, with tool calling and structured output.
 - [Text Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/text-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-to-speech&source_site=vercel-docs&relationship=related) — Generate text responses with the OpenAI Responses API through AI Gateway.
 - [Text Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/text?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-to-speech&source_site=vercel-docs&relationship=related) — Generate and stream text responses using AI Gateway.
 - [Text Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/text-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-to-speech&source_site=vercel-docs&relationship=related) — Generate text responses using the OpenResponses API.
+- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-to-speech&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/text-to-speech.graph.md](/docs/ai-gateway/modalities/text-to-speech.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-to-speech&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

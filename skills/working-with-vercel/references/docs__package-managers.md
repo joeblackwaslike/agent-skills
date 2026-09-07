@@ -15,8 +15,8 @@ related:
 summary: Discover the package managers supported by Vercel for dependency management. Learn how Vercel detects and uses npm, Yarn, pnpm, and Bun for optimal...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/package-managers.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "ee39d39f8309c72001c4e5b03d4f0d02a74d79603073d914ff873a815d621715"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "53239b8faac7fe4b72631220f6de9d070a7d13a1e9913160754a0938269d95c6"
 ---
 
 # Package Managers
@@ -31,16 +31,16 @@ Vercel will automatically detect the package manager used in your project and in
 
 - [vlt is now available in builds via zero configuration](https://vercel.com/changelog/vlt-is-now-available-in-builds-via-zero-configuration?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related)
 - [Dependencies from package.json are missing after install](https://vercel.com/kb/guide/dependencies-from-package-json-missing-after-install?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related) — Understand why dependencies may not being installed during a build and how to fix.
+- [Does Vercel Support Yarn? \\(Versions 2, 3, and 4\\)](https://vercel.com/kb/guide/does-vercel-support-yarn-4?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related) — Vercel supports Yarn 1, 2, 3, and 4. Learn which version your build uses by default, and how to pin Yarn 4 with Corepack
 - [How do I use the latest npm version for my Vercel Deployment?](https://vercel.com/kb/guide/how-do-i-use-the-latest-npm-version-for-my-vercel-deployment?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related) — Learn how to use the latest npm version for Vercel deployments.
 - [Projects using pnpm can now be deployed with zero configuration](https://vercel.com/changelog/projects-using-pnpm-can-now-be-deployed-with-zero-configuration?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related)
 - [Customizing the Install Command while creating Projects](https://vercel.com/changelog/customizing-the-install-command-while-creating-projects?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related)
-- [Automatic pnpm v10 support](https://vercel.com/changelog/automatic-pnpm-v10-support?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related)
 - [How do I use private dependencies with Vercel?](https://vercel.com/kb/guide/using-private-dependencies-with-vercel?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related) — Information on how to use private dependencies with a Vercel deployment.
+- [Automatic pnpm v10 support](https://vercel.com/changelog/automatic-pnpm-v10-support?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related)
+- [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
 - [Automatic pnpm v8 support](https://vercel.com/changelog/automatic-pnpm-v8-support?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related)
 - [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related) — Learn how to customize your deployments using Vercel's build features.
 - [Supported Node.js versions](https://vercel.com/docs/functions/runtimes/node-js/node-js-versions?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related) — Learn about the supported Node.js versions on Vercel.
-- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related) — Learn how to create and manage deployments on Vercel.
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 
 Full cross-link map for this page: [/docs/package-managers.graph.md](/docs/package-managers.graph.md?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -57,7 +57,7 @@ The following table lists the package managers supported by Vercel, with their i
 | npm                                                                                                                               | [`package-lock.json`](https://docs.npmjs.com/cli/v10/configuring-npm/package-lock-json)                                       | [`npm install`](https://docs.npmjs.com/cli/v8/commands/npm-install)     | 8, 9, 10           |
 | pnpm                                                                                                                              | [`pnpm-lock.yaml`](https://pnpm.io/git)                                                                                       | [`pnpm install`](https://pnpm.io/cli/install)                           | 6, 7, 8, 9, 10     |
 | Bun 1                                                                                                                             | [`bun.lockb`](https://bun.sh/docs/install/lockfile) or [`bun.lock`](https://bun.sh/docs/install/lockfile#text-based-lockfile) | [`bun install`](https://bun.sh/docs/cli/install)                        | 1                  |
-| Vlt  | `vlt-lock.json`                                                                                                               | [`vlt install`](https://docs.vlt.sh/)                                   | 0.x                |
+| Vlt Beta | `vlt-lock.json`                                                                                                               | [`vlt install`](https://docs.vlt.sh/)                                   | 0.x                |
 
 While Vercel automatically selects the package manager based on the lock file present in your project, the specific version of that package manager is determined by the version information in the lock file or associated configuration files.
 

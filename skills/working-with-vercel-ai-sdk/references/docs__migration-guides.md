@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/migration-guides.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "7e08b52eb203b45cd72fd27ae2e1f18bb079cef5d6d300a81f0126d1352255c6"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "408fe3fa30bf1f7a158a69a96acd9f0c22e6cf6adeb0b5866ed47c2e3fdebc82"
 ---
 
 # Migration Guides
@@ -254,6 +254,7 @@ sha256: "7e08b52eb203b45cd72fd27ae2e1f18bb079cef5d6d300a81f0126d1352255c6"
     - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
     - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
     - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)
+    - [ToolChoiceViolationError](/docs/reference/ai-sdk-errors/ai-tool-choice-violation-error)
     - [AI_TypeValidationError](/docs/reference/ai-sdk-errors/ai-type-validation-error)
     - [AI_UIMessageStreamError](/docs/reference/ai-sdk-errors/ai-ui-message-stream-error)
     - [AI_UnsupportedFunctionalityError](/docs/reference/ai-sdk-errors/ai-unsupported-functionality-error)

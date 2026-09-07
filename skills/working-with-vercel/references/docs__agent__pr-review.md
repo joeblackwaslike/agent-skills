@@ -3,7 +3,7 @@ title: Code Review
 product: vercel
 url: /docs/agent/pr-review
 canonical_url: "https://vercel.com/docs/agent/pr-review"
-last_updated: 2026-08-19
+last_updated: 2026-08-28
 type: how-to
 prerequisites:
   - /docs/agent
@@ -16,13 +16,15 @@ related:
 summary: Get automatic AI-powered code reviews on your pull requests
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/pr-review.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "84e2158e378db780934d63186548fb94a6c3bd808b3aef3ae2db451267bd5bc9"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "5442b814e1b742825ba5fa237911439ee19a0c2cc2e5b75c1543ef9ec86a9df7"
 ---
 
 # Code Review
 
 > **🔒 Permissions Required**: Vercel Agent Code Review
+
+Code Review is part of [Vercel Agent](/docs/agent). It provides Sandbox-validated suggestions on your pull requests as one capability within the broader Vercel Agent.
 
 
 <!-- docsgraph:related -->
@@ -45,8 +47,6 @@ sha256: "84e2158e378db780934d63186548fb94a6c3bd808b3aef3ae2db451267bd5bc9"
 
 Full cross-link map for this page: [/docs/agent/pr-review.graph.md](/docs/agent/pr-review.graph.md?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Code Review is part of [Vercel Agent](/docs/agent). It provides Sandbox-validated suggestions on your pull requests as one capability within the broader Vercel Agent.
 
 It generates patches and runs them in [secure sandboxes](/docs/sandbox) with your real builds, tests, and linters to validate fixes before suggesting them. Only validated suggestions that pass these checks appear in your PR, allowing you to apply specific code changes with one click.
 

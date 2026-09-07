@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/generating-structured-data.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "95afa13789e7c91561122c6b69b8fa88f8ab49a5c372c4c9d61682d415270403"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "2fbe0b6560dd59c8d105d0ec8b7920960be04633437cb6c6333dda1cd58cc881"
 ---
 
 # Generating Structured Data
@@ -178,7 +178,9 @@ const { output } = await generateText({
 
 ### `Output.array()`
 
-Use `Output.array({ element })` to specify that you expect an array of typed objects from the model, where each element should conform to a schema (defined in the `element` property).
+Use `Output.array({ element, minItems, maxItems })` to specify that you expect
+an array of typed objects from the model. Each element must conform to the
+`element` schema, and the optional bounds constrain the number of elements.
 
 ```ts
 import { generateText, Output } from 'ai';
@@ -192,6 +194,8 @@ const { output } = await generateText({
       temperature: z.number(),
       condition: z.string(),
     }),
+    minItems: 2,
+    maxItems: 2,
   }),
   prompt: 'List the weather for San Francisco and Paris.',
 });
@@ -201,6 +205,11 @@ const { output } = await generateText({
 //   { location: 'Paris', temperature: 65, condition: 'Cloudy' },
 // ]
 ```
+
+`minItems` and `maxItems` must be non-negative integers, and `minItems` cannot
+be greater than `maxItems`. Use the same value for both options to require an
+exact length. The bounds are sent to providers as part of the structured output
+schema when supported, and the AI SDK independently validates the final output.
 
 When streaming arrays with `streamText`, you can use `elementStream` to receive each completed element as it is generated:
 
@@ -228,7 +237,10 @@ for await (const hero of elementStream) {
 <Note>
   Each element emitted by `elementStream` is complete and validated against your
   element schema. This differs from `partialOutputStream`, which streams the
-  entire partial array including incomplete elements.
+  entire partial array including incomplete elements. If the model generates
+  more than `maxItems`, `elementStream` errors before emitting the first excess
+  element. This does not automatically abort provider generation, and the final
+  `output` promise rejects.
 </Note>
 
 ### `Output.choice()`
@@ -379,7 +391,7 @@ const { output } = await generateText({
 This works with all output types that support structured generation:
 
 - `Output.object({ name, description, schema })`
-- `Output.array({ name, description, element })`
+- `Output.array({ name, description, element, minItems, maxItems })`
 - `Output.choice({ name, description, options })`
 - `Output.json({ name, description })`
 

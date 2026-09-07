@@ -3,7 +3,7 @@ title: Auth.js
 product: vercel
 url: /docs/connect/frameworks/authjs
 canonical_url: "https://vercel.com/docs/connect/frameworks/authjs"
-last_updated: 2018-10-20
+last_updated: 2026-08-28
 type: tutorial
 prerequisites:
   - /docs/connect/frameworks
@@ -17,13 +17,18 @@ related:
 summary: Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/frameworks/authjs.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "0afceb542bfda57dd58e51b4b7a963c89611b32caf08898bdfe6c04796c65b35"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "d0007efedace2eb66a878957e7134baaecd466f6b05196580b0df88ecbcdaeab"
 ---
 
 # Auth.js
 
 > **🔒 Permissions Required**: Vercel Connect
+
+[Auth.js](https://authjs.dev/) can use Vercel Connect as an OAuth provider for
+signing users into your Next.js application. The `@vercel/connect/authjs`
+entrypoint creates the provider configuration, handles Vercel authentication,
+and maps the Connect user profile into an Auth.js user.
 
 
 <!-- docsgraph:related -->
@@ -35,7 +40,6 @@ sha256: "0afceb542bfda57dd58e51b4b7a963c89611b32caf08898bdfe6c04796c65b35"
 - [Build an integrations hub with Nuxt and Vercel Connect](https://vercel.com/kb/guide/nuxt-and-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fauthjs&source_site=vercel-docs&relationship=related) — Build an Integrations Hub with Nuxt and Vercel Connect. Connect GitHub and Linear over OAuth and mint short-lived tokens
 - [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fauthjs&source_site=vercel-docs&relationship=related) — Authenticate Slack, Discord, GitHub, Linear, Notion, and Telegram adapters with Vercel Connect — short-lived runtime tok
 - [How to identify and authorize visitors with the Vercel Passport token in Next.js](https://vercel.com/kb/guide/vercel-passport-nextjs?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fauthjs&source_site=vercel-docs&relationship=related) — Read the Vercel Passport token server-side in a Next.js app to identify visitors with the external_sub claim and authori
-- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fauthjs&source_site=vercel-docs&relationship=related)
 - [Better Auth](https://vercel.com/docs/connect/frameworks/better-auth?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fauthjs&source_site=vercel-docs&relationship=related) — Use Vercel Connect as a generic OAuth provider for Better Auth in a Next.js application.
 - [AI SDK and MCP](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fauthjs&source_site=vercel-docs&relationship=related) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
 - [Chat SDK](https://vercel.com/docs/connect/frameworks/chat-sdk?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fauthjs&source_site=vercel-docs&relationship=related) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, GitHub, Linear, Notion,
@@ -43,11 +47,6 @@ sha256: "0afceb542bfda57dd58e51b4b7a963c89611b32caf08898bdfe6c04796c65b35"
 
 Full cross-link map for this page: [/docs/connect/frameworks/authjs.graph.md](/docs/connect/frameworks/authjs.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fauthjs&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-[Auth.js](https://authjs.dev/) can use Vercel Connect as an OAuth provider for
-signing users into your Next.js application. The `@vercel/connect/authjs`
-entrypoint creates the provider configuration, handles Vercel authentication,
-and maps the Connect user profile into an Auth.js user.
 
 This tutorial uses TypeScript and the Next.js App Router.
 

@@ -17,8 +17,8 @@ related:
 summary: "Learn how to use Global Config with Vercel's Split integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-integrations/split-global-config.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "e677806d28536218321135ca734c317ddf1d0dda680308c5e6c6f0776dda5ce5"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "68e6b84dd5c0d22d718b994956bad00e7822779482f920fb540bfe9d1818e47b"
 ---
 
 # Using Global Config with Split
@@ -33,12 +33,11 @@ This guide will help you get started with using Vercel's Split integration with 
 
 - [How to use Next.js as a backend for your frontend](https://nextjs.org/docs/app/guides/backend-for-frontend?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — Learn how to use Next.js as a backend framework
 - [route.js](https://nextjs.org/docs/app/api-reference/file-conventions/route?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — API reference for the route.js special file.
-- [Build a Claude Managed Agent with Vercel Sandbox](https://vercel.com/kb/guide/run-claude-managed-agent-tools-with-vercel-sandbox?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — Build a Claude Managed Agent with Vercel Sandbox: each session runs in a fresh microVM with credential brokering and a w
 - [Client Uploads with Vercel Blob](https://vercel.com/docs/vercel-blob/client-upload?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
-- [Advanced Web Analytics Config with @vercel/analytics](https://vercel.com/docs/analytics/package?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — With the @vercel/analytics npm package, you are able to configure your application to send analytics data to Vercel.
 - [Routing Middleware API](https://vercel.com/docs/routing-middleware/api?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
-- [Vercel CDN Cache](https://vercel.com/docs/caching/cdn-cache?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN cache stores your content across a global network to reduce latency and origin load.
-- [Using Global Config with DevCycle](https://vercel.com/docs/global-config/global-config-integrations/devcycle-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — Learn how to use Global Config with Vercel's DevCycle integration.
+- [Advanced Web Analytics Config with @vercel/analytics](https://vercel.com/docs/analytics/package?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — With the @vercel/analytics npm package, you are able to configure your application to send analytics data to Vercel.
+- [Redacting Sensitive Data from Web Analytics Events](https://vercel.com/docs/analytics/redacting-sensitive-data?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — Learn how to redact sensitive data from your Web Analytics events.
+- [OG Image Generation Examples](https://vercel.com/docs/og-image-generation/examples?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — Learn how to use the @vercel/og library with examples.
 
 Full cross-link map for this page: [/docs/global-config/global-config-integrations/split-global-config.graph.md](/docs/global-config/global-config-integrations/split-global-config.graph.md?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -138,8 +137,8 @@ Before using this integration, you should have:
   4. Select an existing Global Config or create a new one
   5. Copy the Global Config item key provided on this page. You'll need it to add it to your Environment Variables
   > **💡 Note:** You can also find your Global Config Split item key in [your dashboard on
-  > Vercel](/dashboard/integrations). In the  section in the sidebar,
-  > select , then select  on the
+  > Vercel](/dashboard/integrations). In the **Integrations** section in the sidebar,
+  > select **Manage**, then select **Configure** on the
   > integration page. You should see the item key on the page that opens.
 
 - ### Create your feature flags

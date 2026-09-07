@@ -13,13 +13,19 @@ related:
 summary: The experimentalServices configuration model for deploying multiple backends and frontends in a single Vercel project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services/experimental.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "6161d64a03ae5a3c98b92d0254ffe68bc1c6172db73d0b89d0c347afa3e2ffad"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "1c3dc3cae4330dd2628cfa2764fec877dc1544a3fc7590d41d7060654d8bc362"
 ---
 
 # Experimental Services
 
 > **🔒 Permissions Required**: Services
+
+> **💡 Note:** This page documents the earlier `experimentalServices` configuration model. New
+> projects should use the [`services`](/docs/services) model. The
+> `experimentalServices` model remains available while you migrate.
+
+Services let you deploy multiple backends and frontends within a single Vercel project. For example, a Next.js frontend and a FastAPI backend in the same repository deploy together with shared routing, environment variables, and a unique domain, replacing the need to split monorepos into separate Vercel projects.
 
 
 <!-- docsgraph:related -->
@@ -37,17 +43,10 @@ sha256: "6161d64a03ae5a3c98b92d0254ffe68bc1c6172db73d0b89d0c347afa3e2ffad"
 - [Service configuration reference](https://vercel.com/docs/services/config-reference?from=related&source_path=%2Fdocs%2Fservices%2Fexperimental&source_site=vercel-docs&relationship=related) — Options available for service configuration.
 - [Express on Vercel](https://vercel.com/docs/frameworks/backend/express?from=related&source_path=%2Fdocs%2Fservices%2Fexperimental&source_site=vercel-docs&relationship=related) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
 - [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart?from=related&source_path=%2Fdocs%2Fservices%2Fexperimental&source_site=vercel-docs&relationship=related) — Learn how to get started with microfrontends on Vercel.
-- [Managing microfrontends](https://vercel.com/docs/microfrontends/managing-microfrontends?from=related&source_path=%2Fdocs%2Fservices%2Fexperimental&source_site=vercel-docs&relationship=related) — Learn how to manage your microfrontends on Vercel.
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fservices%2Fexperimental&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/services/experimental.graph.md](/docs/services/experimental.graph.md?from=related&source_path=%2Fdocs%2Fservices%2Fexperimental&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-> **💡 Note:** This page documents the earlier `experimentalServices` configuration model. New
-> projects should use the [`services`](/docs/services) model. The
-> `experimentalServices` model remains available while you migrate.
-
-Services let you deploy multiple backends and frontends within a single Vercel project. For example, a Next.js frontend and a FastAPI backend in the same repository deploy together with shared routing, environment variables, and a unique domain, replacing the need to split monorepos into separate Vercel projects.
 
 ## How experimental services work
 

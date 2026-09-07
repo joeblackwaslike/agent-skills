@@ -16,8 +16,8 @@ related:
 summary: Vercel for GitHub automatically deploys your GitHub projects with Vercel, providing Preview Deployment URLs, and automatic Custom Domain updates.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git/vercel-for-github.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "d3d93e14117776e2d09cfd0fa0611de290dfca66f5c14917a7e3e689b6c26459"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "0d335d986d9bd7fc661712dcd3c6dba3dbd9d3e6c37dd52e0094511b4c234e62"
 ---
 
 # Deploying GitHub Projects with Vercel
@@ -104,6 +104,8 @@ To configure the Vercel for GitHub integration, see [the configuration reference
 ### System environment variables
 
 You may want to use different workflows and APIs based on Git information. To support this, the following [System Environment Variables](/docs/environment-variables/system-environment-variables) are exposed to your Deployments:
+
+<br />
 
 ### `VERCEL`
 

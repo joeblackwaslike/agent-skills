@@ -17,8 +17,8 @@ related:
 summary: Configure provider options, model fallbacks, BYOK credentials, and prompt caching.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "01cb5f8d33fd42813aa735422106cae4188dea330597c7fd438d743460b01386"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "451cedddb520f9eaeb664b2cf556a8b417e7a6c47af966d4c6f860bb16757d8c"
 ---
 
 # Advanced Configuration
@@ -34,6 +34,7 @@ Control which providers serve your request, what happens when one fails, and how
 - [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fadvanced&source_site=vercel-docs&relationship=related)
 - [Provider & Model Management](https://ai-sdk.dev/docs/ai-sdk-core/provider-management?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fadvanced&source_site=vercel-docs&relationship=related)
 - [Choosing a Provider](https://ai-sdk.dev/docs/getting-started/choosing-a-provider?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fadvanced&source_site=vercel-docs&relationship=related)
+- [Amazon Bedrock](https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fadvanced&source_site=vercel-docs&relationship=related)
 - [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fadvanced&source_site=vercel-docs&relationship=related)
 - [Customize timeouts for faster automatic failover on Vercel AI Gateway](https://vercel.com/changelog/provider-level-custom-timeouts-for-faster-fail-over-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fadvanced&source_site=vercel-docs&relationship=related)
 - [Provider Options](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fadvanced&source_site=vercel-docs&relationship=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API.

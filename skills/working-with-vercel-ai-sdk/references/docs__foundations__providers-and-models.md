@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/foundations/providers-and-models.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "77f461d8955f3a20f9d343cc345fb478e76c9c12edfd1866d8ad8044811227d3"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "990ae7ee7ed5ae2781b960d52d6b1a564b75f944b8c8d40a4f2e234e6aa828d7"
 ---
 
 # Providers and Models
@@ -123,6 +123,7 @@ Here are the capabilities of popular models:
 | [xAI Grok](/providers/ai-sdk-providers/xai)        | `grok-4`                                    | <Cross />   | <Check />         | <Check />  | <Check />      |
 | [xAI Grok](/providers/ai-sdk-providers/xai)        | `grok-3`                                    | <Cross />   | <Check />         | <Check />  | <Check />      |
 | [xAI Grok](/providers/ai-sdk-providers/xai)        | `grok-3-mini`                               | <Cross />   | <Check />         | <Check />  | <Check />      |
+| [OpenAI](/providers/ai-sdk-providers/openai)       | `gpt-6-astra`                               | <Check />   | <Check />         | <Check />  | <Check />      |
 | [OpenAI](/providers/ai-sdk-providers/openai)       | `gpt-5.6`                                   | <Check />   | <Check />         | <Check />  | <Check />      |
 | [OpenAI](/providers/ai-sdk-providers/openai)       | `gpt-5.6-luna`                              | <Check />   | <Check />         | <Check />  | <Check />      |
 | [OpenAI](/providers/ai-sdk-providers/openai)       | `gpt-5.6-sol`                               | <Check />   | <Check />         | <Check />  | <Check />      |
@@ -146,6 +147,7 @@ Here are the capabilities of popular models:
 | [OpenAI](/providers/ai-sdk-providers/openai)       | `gpt-5-codex`                               | <Check />   | <Check />         | <Check />  | <Check />      |
 | [OpenAI](/providers/ai-sdk-providers/openai)       | `gpt-5-chat-latest`                         | <Check />   | <Check />         | <Check />  | <Check />      |
 | [Anthropic](/providers/ai-sdk-providers/anthropic) | `claude-sonnet-5`                           | <Check />   | <Check />         | <Check />  | <Check />      |
+| [Anthropic](/providers/ai-sdk-providers/anthropic) | `claude-fable-5-1`                          | <Check />   | <Check />         | <Check />  | <Check />      |
 | [Anthropic](/providers/ai-sdk-providers/anthropic) | `claude-fable-5`                            | <Check />   | <Check />         | <Check />  | <Check />      |
 | [Anthropic](/providers/ai-sdk-providers/anthropic) | `claude-opus-4-8`                           | <Check />   | <Check />         | <Check />  | <Check />      |
 | [Anthropic](/providers/ai-sdk-providers/anthropic) | `claude-opus-4-7`                           | <Check />   | <Check />         | <Check />  | <Check />      |
@@ -155,6 +157,11 @@ Here are the capabilities of popular models:
 | [Anthropic](/providers/ai-sdk-providers/anthropic) | `claude-opus-4-1`                           | <Check />   | <Check />         | <Check />  | <Check />      |
 | [Anthropic](/providers/ai-sdk-providers/anthropic) | `claude-opus-4-0`                           | <Check />   | <Check />         | <Check />  | <Check />      |
 | [Anthropic](/providers/ai-sdk-providers/anthropic) | `claude-sonnet-4-0`                         | <Check />   | <Check />         | <Check />  | <Check />      |
+| [Google](/providers/ai-sdk-providers/google)       | `gemini-3.8-flash`                          | <Check />   | <Check />         | <Check />  | <Check />      |
+| [Google](/providers/ai-sdk-providers/google)       | `gemini-3.1-pro-preview`                    | <Check />   | <Check />         | <Check />  | <Check />      |
+| [Google](/providers/ai-sdk-providers/google)       | `gemini-3-pro-preview`                      | <Check />   | <Check />         | <Check />  | <Check />      |
+| [Google](/providers/ai-sdk-providers/google)       | `gemini-2.5-pro`                            | <Check />   | <Check />         | <Check />  | <Check />      |
+| [Google](/providers/ai-sdk-providers/google)       | `gemini-2.5-flash`                          | <Check />   | <Check />         | <Check />  | <Check />      |
 | [Mistral](/providers/ai-sdk-providers/mistral)     | `pixtral-large-latest`                      | <Check />   | <Check />         | <Check />  | <Check />      |
 | [Mistral](/providers/ai-sdk-providers/mistral)     | `mistral-large-latest`                      | <Cross />   | <Check />         | <Check />  | <Check />      |
 | [Mistral](/providers/ai-sdk-providers/mistral)     | `mistral-medium-latest`                     | <Cross />   | <Check />         | <Check />  | <Check />      |

@@ -13,13 +13,15 @@ related:
 summary: Learn how to forward Vercel Audit Log Drain events to Datadog using the Datadog Logs API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/audit-logs-to-datadog.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "3ce9ffdf2548ff9bc2a310b03c4af601146b77be773904fc97dce8cd7079a6e4"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "122e58b93ca2ebff17e4c1ceb9e710925c643699244fc1e9c8420f4439f1fd88"
 ---
 
 # Drain Audit Logs to Datadog
 
 > **🔒 Permissions Required**: Audit Log Drains
+
+Audit Log Drains can forward team activity events to [Datadog](https://www.datadoghq.com/) using the [Datadog Logs API](https://docs.datadoghq.com/api/latest/logs/). Use this setup to ingest audit logs into Datadog for security monitoring, compliance review, and alerting.
 
 
 <!-- docsgraph:related -->
@@ -39,8 +41,6 @@ sha256: "3ce9ffdf2548ff9bc2a310b03c4af601146b77be773904fc97dce8cd7079a6e4"
 
 Full cross-link map for this page: [/docs/drains/audit-logs-to-datadog.graph.md](/docs/drains/audit-logs-to-datadog.graph.md?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-datadog&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Audit Log Drains can forward team activity events to [Datadog](https://www.datadoghq.com/) using the [Datadog Logs API](https://docs.datadoghq.com/api/latest/logs/). Use this setup to ingest audit logs into Datadog for security monitoring, compliance review, and alerting.
 
 The Datadog destination sends events over HTTPS to the log intake endpoint for your [Datadog site](https://docs.datadoghq.com/getting_started/site/), authenticated with a Datadog API key.
 

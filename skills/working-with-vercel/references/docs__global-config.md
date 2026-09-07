@@ -16,13 +16,15 @@ related:
 summary: A Global Config is a global data store that enables experimentation with feature flags, A/B testing, critical redirects, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "e2915d5367a3742a3fc55824660b0d0cfad55e376e1e6e9703c55a8a233c6baf"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "d09a5dfc093f55bc97cda7506e5765312ac7fedcafe65437fe284065d150d111"
 ---
 
 # Vercel Global Config
 
 > **🔒 Permissions Required**: Global Config
+
+A [Global Config](/docs/global-config) is a global data store that [enables experimentation with feature flags, A/B testing, critical redirects, and IP blocking](#use-cases). It enables you to read data in the region closest to the user without querying an external database or hitting upstream servers.
 
 
 <!-- docsgraph:related -->
@@ -41,12 +43,10 @@ sha256: "e2915d5367a3742a3fc55824660b0d0cfad55e376e1e6e9703c55a8a233c6baf"
 - [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel?from=related&source_path=%2Fdocs%2Fglobal-config&source_site=vercel-docs&relationship=related) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
 - [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy?from=related&source_path=%2Fdocs%2Fglobal-config&source_site=vercel-docs&relationship=related) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
 - [How to build and maintain HIPAA-compliant applications on Vercel](https://vercel.com/kb/guide/hipaa-compliance-guide-vercel?from=related&source_path=%2Fdocs%2Fglobal-config&source_site=vercel-docs&relationship=related) — Deploy HIPAA-compliant healthcare apps on Vercel with built-in security, BAAs, and scalable serverless infrastructure.
-- [Redirecting Domains](https://vercel.com/blog/redirecting-domains?from=related&source_path=%2Fdocs%2Fglobal-config&source_site=vercel-docs&relationship=related)
+- [Introducing Edge Config: Globally distributed, instant configuration](https://vercel.com/blog/edge-config-public-beta?from=related&source_path=%2Fdocs%2Fglobal-config&source_site=vercel-docs&relationship=related)
 
 Full cross-link map for this page: [/docs/global-config.graph.md](/docs/global-config.graph.md?from=related&source_path=%2Fdocs%2Fglobal-config&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-A [Global Config](/docs/global-config) is a global data store that [enables experimentation with feature flags, A/B testing, critical redirects, and IP blocking](#use-cases). It enables you to read data in the region closest to the user without querying an external database or hitting upstream servers.
 
 > **💡 Note:** Global Config was previously called **Edge Config**. The store itself is
 > unchanged, and existing projects require no action. See [Migrating from Edge
@@ -65,13 +65,13 @@ You can use a Global Config in [Middleware](/docs/routing-middleware) and [Verce
 
 Global Configs are great for data that is accessed frequently and updated infrequently. Here are some examples of storage data suitable for Global Config:
 
-- : When you need to redirect a URL urgently,
+- **Critical redirects**: When you need to redirect a URL urgently,
   Global Configs offer a fast solution that doesn't require you to redeploy your
   website. With Middleware, you can read from your Global Config to redirect users
   visiting incorrect URLs. For an example, see the [Maintenance Page
   template](https://vercel.com/templates/next.js/maintenance-page).
 
-* : Store a set of
+* **Malicious IP and User Agent blocking**: Store a set of
   malicious IPs in your Global Config, then block them upon detection without
   invoking upstream servers
 
@@ -99,10 +99,10 @@ There are alternative solutions to Global Config for handling A/B testing, featu
 
 | **Global Config vs alternatives** | **Read latency**                                                                                                           | **Write latency**                                                                                                           | **Redeployment required**                                                                                                       | **Added risk of downtime**                                                                                                                    |
 | ------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Global Config**                 | **Ultra-low**  | **Varies**  | **No**                             | **No**             |
-| Remote JSON files               | Varies                                | Varies                                                                                                                      | No       | Yes  |
-| Embedded JSON files             | Lowest                                                                                                                     | Highest               | Yes         | No                                                                                                                                            |
-| Environment Variables           | Lowest                                                                                                                     | Highest                           | Yes  | No                                                                                                                                            |
+| **Global Config**                 | **Ultra-low** (Reads from your Global Configs will complete within 15ms at P99, or often less than 1ms) | **Varies** (Global Config is optimized for frequent, high-speed reads and infrequent, variable writes.) | **No** (Global Config updates propagate globally with no redeployment required.)                            | **No** (Global Config is hosted by Vercel, and has nearly identical uptime characteristics to your deployment)            |
+| Remote JSON files               | Varies (Potentially hundreds of milliseconds slower tha Global Config.)                               | Varies                                                                                                                      | No (Latency for propagation of changes varies based on host, but no redeployment would be required.)      | Yes (Relying on an external provider means your data has different uptime characteristics from your Vercel deployment.) |
+| Embedded JSON files             | Lowest                                                                                                                     | Highest (Changes to this data can't propagate globally without merging and redeploying.)              | Yes (Embedded files are part of your build, so redeployments are required to incorporate changes.)        | No                                                                                                                                            |
+| Environment Variables           | Lowest                                                                                                                     | Highest (Changes to this data can't propagate globally without redeploying.)                          | Yes (Environment Variables are part of your build, so redeployments are required to incorporate changes.) | No                                                                                                                                            |
 
 ## Limits
 

@@ -16,13 +16,13 @@ related:
 summary: Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/configuration.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "25bd302e89af7bb1e940e7db3385b3e2f6120ea09a16953920ab424310715998"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "f71700b045a0f7a05dbfa7af4c3adaa1eddae8de5fe2d5c24662c447f483d4cd"
 ---
 
 # Build Output Configuration
 
-Schema (as TypeScript):
+**Build Output Configuration File**: `.vercel/output/config.json`
 
 
 <!-- docsgraph:related -->
@@ -32,14 +32,21 @@ Schema (as TypeScript):
 
 - [Next.js 16.3 support on Vercel](https://vercel.com/blog/vercel-supports-next-js-16-3?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related)
 - [Image](https://nextjs.org/docs/pages/api-reference/components/image?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Optimize Images in your Next.js Application using the built-in `next/image` Component.
+- [Image Component](https://nextjs.org/docs/app/api-reference/components/image?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Optimize Images in your Next.js Application using the built-in `next/image` Component.
+- [Image (Legacy)](https://nextjs.org/docs/pages/api-reference/components/image-legacy?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Backwards compatible Image Optimization with the Legacy Image component.
+- [opengraph-image and twitter-image](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — API Reference for the Open Graph Image and Twitter Image file conventions.
 - [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 - [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
-- [Add a routing rule](https://vercel.com/docs/rest-api/project-routes/add-a-routing-rule?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — POST /v1/projects/{projectId}/routes — Add a single routing rule to a project at a specified position. Defaults to the e
-- [Get a repository image](https://vercel.com/docs/rest-api/vcr/get-a-repository-image?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — GET /v1/vcr/repository/{idOrName}/images/{imageIdOrDigest} — Fetch an individual image from a repository, including its
-- [Getting started with Image Optimization](https://vercel.com/docs/image-optimization/quickstart?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Learn how you can leverage Vercel Image Optimization in your projects.
+- [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
+- [Open Graph \\(OG\\) Image Generation](https://vercel.com/docs/og-image-generation?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Learn how to optimize social media image generation through the Open Graph Protocol and @vercel/og library.
+- [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
 
 Full cross-link map for this page: [/docs/build-output-api/configuration.graph.md](/docs/build-output-api/configuration.graph.md?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
+
+<br />
+
+Schema (as TypeScript):
 
 ```ts
 type Config = {
@@ -64,6 +71,8 @@ Config Types:
 - [CronsConfig](#crons)
 - [Service](#services)
 
+<br />
+
 The `config.json` file contains configuration information and metadata for a Deployment.
 The individual properties are described in greater detail in the sub-sections below.
 
@@ -72,6 +81,10 @@ At a minimum, a `config.json` file with a `"version"` property is *required*.
 ## `config.json` supported properties
 
 ### version
+
+**Build Output Configuration File**: `.vercel/output/config.json`
+
+<br />
 
 The `version` property indicates which version of the Build Output API has been implemented.
 The version described in this document is version `3`.
@@ -83,6 +96,14 @@ The version described in this document is version `3`.
 ```
 
 ### routes
+
+**Build Output Configuration File**: `.vercel/output/config.json`
+
+<br />
+
+[`vercel/examples/build-output-api/routes`](https://github.com/vercel/examples/tree/main/build-output-api/routes)
+
+<br />
 
 The `routes` property describes the routing rules that will be applied to the Deployment. It uses the same syntax as the [`routes` property of the `vercel.json` file](/docs/project-configuration/vercel-json#routes).
 
@@ -279,6 +300,14 @@ The following example shows a routing rule that will cause the `/redirect` path 
 
 ### images
 
+**Build Output Configuration File**: `.vercel/output/config.json`
+
+<br />
+
+[`vercel/examples/build-output-api/image-optimization`](https://github.com/vercel/examples/tree/main/build-output-api/image-optimization)
+
+<br />
+
 The `images` property defines the behavior of Vercel's native [Image Optimization API](/docs/image-optimization), which allows on-demand optimization of images at runtime.
 
 ```ts
@@ -363,6 +392,14 @@ The API accepts the following query string parameters:
 
 ### wildcard
 
+**Build Output Configuration File**: `.vercel/output/config.json`
+
+<br />
+
+[`vercel/examples/build-output-api/wildcard`](https://github.com/vercel/examples/tree/main/build-output-api/wildcard)
+
+<br />
+
 The `wildcard` property relates to Vercel's Internationalization feature. The way
 it works is the domain names listed in this array are mapped to the `$wildcard`
 routing variable, which can be referenced by the [`routes` configuration](#routes).
@@ -415,6 +452,14 @@ domain name will be served the localized version of the blog post HTML file:
 
 ### overrides
 
+**Build Output Configuration File**: `.vercel/output/config.json`
+
+<br />
+
+[`vercel/examples/build-output-api/overrides`](https://github.com/vercel/examples/tree/main/build-output-api/overrides)
+
+<br />
+
 The `overrides` property allows for overriding the output of one or more [static files](/docs/build-output-api/primitives#static-files) contained
 within the `.vercel/output/static` directory.
 
@@ -454,6 +499,10 @@ without the `.html` file extension:
 
 ### cache
 
+**Build Output Configuration File**: `.vercel/output/config.json`
+
+<br />
+
 The `cache` property is an array of file paths and/or glob patterns that should be re-populated
 within the build sandbox upon subsequent Deployments.
 
@@ -476,6 +525,10 @@ type Cache = string[];
 
 ### framework
 
+**Build Output Configuration File**: `.vercel/output/config.json`
+
+<br />
+
 The optional `framework` property is an object describing the framework of the built outputs.
 
 This value is used for display purposes only.
@@ -495,6 +548,10 @@ type Framework = {
 ```
 
 ### crons
+
+**Build Output Configuration File**: `.vercel/output/config.json`
+
+<br />
 
 The optional `crons` property is an object describing the [cron jobs](/docs/cron-jobs) for the production deployment of a project.
 
@@ -517,6 +574,10 @@ type CronsConfig = Cron[];
 ```
 
 ### services
+
+**Build Output Configuration File**: `.vercel/output/config.json`
+
+<br />
 
 The optional `services` property is an array of the service build targets in the deployment. When it is present, Vercel reads each service's build output from `.vercel/output/services/<name>`. For the directory structure and routing behavior, see the [Services](/docs/build-output-api/services) reference.
 

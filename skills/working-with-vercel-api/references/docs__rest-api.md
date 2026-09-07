@@ -3,7 +3,7 @@ title: Vercel REST API Reference
 product: vercel
 url: /docs/rest-api
 canonical_url: "https://vercel.com/docs/rest-api"
-last_updated: 2026-08-31
+last_updated: 2026-09-07
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Interact programmatically with your Vercel account using the SDK or direct HTTP requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rest-api.md"
-fetched_at: "2026-08-31T10:45:05.170Z"
-sha256: "8bb8ad6f8bb5006d7f4b58d0a4e46b7f7f884180b7b0dc779ec2c2e0bfd5a250"
+fetched_at: "2026-09-07T09:06:17.588Z"
+sha256: "08f2a1c2cfe5e216faed2501cd76f3891567f13c87794cbcd8da87bcefa75a2c"
 ---
 
 # Vercel REST API Reference
@@ -49,6 +49,9 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **PATCH** | [`/v1/ai-gateway/virtual-model-configs`](/docs/rest-api/api-ai-gateway/update-virtual-model-config.md) | Update virtual model config |
 | **DELETE** | [`/v1/ai-gateway/virtual-model-configs`](/docs/rest-api/api-ai-gateway/delete-virtual-model-config.md) | Delete virtual model config |
 | **GET** | [`/v1/ai-gateway/virtual-model-configs/list`](/docs/rest-api/api-ai-gateway/list-virtual-model-configs.md) | List virtual model configs |
+| **GET** | [`/v1/ai-gateway/virtual-model-configs/{vmcSlug}`](/docs/rest-api/api-ai-gateway/get-virtual-model-config-1.md) | Get virtual model config |
+| **PATCH** | [`/v1/ai-gateway/virtual-model-configs/{vmcSlug}`](/docs/rest-api/api-ai-gateway/update-virtual-model-config-1.md) | Update virtual model config |
+| **DELETE** | [`/v1/ai-gateway/virtual-model-configs/{vmcSlug}`](/docs/rest-api/api-ai-gateway/delete-virtual-model-config-1.md) | Delete virtual model config |
 
 ## ai-gateway
 
@@ -115,13 +118,28 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **GET** | [`/v1/connect/networks/{networkId}`](/docs/rest-api/networking/read-a-secure-compute-network.md) | Read a Secure Compute network |
 | **PATCH** | [`/v1/connect/networks/{networkId}`](/docs/rest-api/networking/update-a-secure-compute-network.md) | Update a Secure Compute network |
 | **DELETE** | [`/v1/connect/networks/{networkId}`](/docs/rest-api/networking/delete-a-secure-compute-network.md) | Delete a Secure Compute network |
+| **GET** | [`/v1/networking/privatelink/endpoints`](/docs/rest-api/networking/list-privatelink-endpoints.md) | List PrivateLink endpoints |
+| **POST** | [`/v1/networking/privatelink/endpoints`](/docs/rest-api/networking/create-a-privatelink-endpoint.md) | Create a PrivateLink endpoint |
+| **GET** | [`/v1/networking/privatelink/endpoints/{endpointId}`](/docs/rest-api/networking/read-a-privatelink-endpoint.md) | Read a PrivateLink endpoint |
+| **PATCH** | [`/v1/networking/privatelink/endpoints/{endpointId}`](/docs/rest-api/networking/update-a-privatelink-endpoint.md) | Update a PrivateLink endpoint |
+| **DELETE** | [`/v1/networking/privatelink/endpoints/{endpointId}`](/docs/rest-api/networking/delete-a-privatelink-endpoint.md) | Delete a PrivateLink endpoint |
 | **PATCH** | [`/v1/projects/{idOrName}/shared-connect-links`](/docs/rest-api/networking/configures-static-ips-for-a-project.md) | Configures Static IPs for a project |
 
 ## connect
 
 | Method | Endpoint | Description |
 |---|---|---|
+| **GET** | [`/v2/connect/connectors`](/docs/rest-api/connect/list-connectors.md) | List connectors |
+| **GET** | [`/v1/connect/connectors/{connector}`](/docs/rest-api/connect/get-a-connector.md) | Get a connector |
+| **DELETE** | [`/v1/connect/connectors/{connector}`](/docs/rest-api/connect/delete-a-connector.md) | Delete a connector |
 | **POST** | [`/v1/connect/connectors`](/docs/rest-api/connect/create-a-connector.md) | Create a connector |
+| **PATCH** | [`/v2/connect/connectors/{connector}`](/docs/rest-api/connect/update-a-connector.md) | Update a connector |
+| **PATCH** | [`/v1/connect/connectors/{connector}/trigger-destinations`](/docs/rest-api/connect/update-connector-trigger-destinations.md) | Update connector trigger destinations |
+| **GET** | [`/v2/connect/connectors/{connector}/projects`](/docs/rest-api/connect/list-projects-for-a-connector.md) | List projects for a connector |
+| **GET** | [`/v1/connect/connectors/{connector}/projects/{projectId}`](/docs/rest-api/connect/get-a-connector-project-connection.md) | Get a connector project connection |
+| **POST** | [`/v1/connect/connectors/{connector}/projects/{projectId}`](/docs/rest-api/connect/create-or-update-a-connector-project-connection.md) | Create or update a connector project connection |
+| **DELETE** | [`/v1/connect/connectors/{connector}/projects/{projectId}`](/docs/rest-api/connect/disconnect-a-connector-from-a-project.md) | Disconnect a connector from a project |
+| **GET** | [`/v2/connect/projects/{projectId}/connectors`](/docs/rest-api/connect/list-connectors-for-a-project.md) | List connectors for a project |
 | **POST** | [`/v1/connect/token/{connector}`](/docs/rest-api/connect/get-a-connect-token.md) | Get a Connect token |
 | **POST** | [`/v1/connect/authorize/{connector}`](/docs/rest-api/connect/create-a-connect-authorization-request.md) | Create a Connect authorization request |
 

@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your microfrontends on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/managing-microfrontends.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "c08c4b801ffc4677a665fc2917dfc2208e4fd9941b4b0644bba73e55c3c92c48"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "061cd7313f9b79b74c6ac6e97227f1d0dc82936f8eb3aaecbe47342ba783499a"
 ---
 
 # Managing microfrontends
@@ -39,7 +39,6 @@ With a project's **Microfrontends** settings of the Vercel dashboard, you can:
 - [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends&source_site=vercel-docs&relationship=related) — Learn how to get started with microfrontends on Vercel.
 - [Testing & troubleshooting microfrontends](https://vercel.com/docs/microfrontends/troubleshooting?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends&source_site=vercel-docs&relationship=related) — Learn about testing, common issues, and how to troubleshoot microfrontends on Vercel.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Monorepos FAQ](https://vercel.com/docs/monorepos/monorepo-faq?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends&source_site=vercel-docs&relationship=related) — Learn the answer to common questions about deploying monorepos on Vercel.
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/microfrontends/managing-microfrontends.graph.md](/docs/microfrontends/managing-microfrontends.graph.md?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends&source_site=vercel-docs&relationship=graph)
@@ -202,9 +201,90 @@ Navigations between different top level microfrontends will introduce a hard nav
 
 To get started, add the `PrefetchCrossZoneLinks` element to your `layout.tsx` or `layout.jsx` file in all your microfrontend applications:
 
+```tsx filename="app/layout.tsx" framework=nextjs-app
+import {
+  PrefetchCrossZoneLinks,
+  PrefetchCrossZoneLinksProvider,
+} from '@vercel/microfrontends/next/client';
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body>
+        <PrefetchCrossZoneLinksProvider>
+          {children}
+        </PrefetchCrossZoneLinksProvider>
+        <PrefetchCrossZoneLinks />
+      </body>
+    </html>
+  );
+}
+```
+
+```jsx filename="app/layout.jsx" framework=nextjs-app
+import {
+  PrefetchCrossZoneLinks,
+  PrefetchCrossZoneLinksProvider,
+} from '@vercel/microfrontends/next/client';
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body>
+        <PrefetchCrossZoneLinksProvider>
+          {children}
+        </PrefetchCrossZoneLinksProvider>
+        <PrefetchCrossZoneLinks />
+      </body>
+    </html>
+  );
+}
+```
+
 > For \['nextjs']:
 
 To get started, add the `PrefetchCrossZoneLinks` element to your `_app.tsx` or `_app.jsx` file:
+
+```ts filename="pages/_app.tsx" framework=nextjs
+import {
+  PrefetchCrossZoneLinks,
+  PrefetchCrossZoneLinksProvider,
+} from '@vercel/microfrontends/next/client';
+import type { AppProps } from 'next/app';
+
+export default function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <>
+      <PrefetchCrossZoneLinksProvider>
+        <Component {...pageProps} />
+      </PrefetchCrossZoneLinksProvider>
+      <PrefetchCrossZoneLinks />
+    </>
+  );
+}
+```
+
+```js filename="pages/_app.jsx" framework=nextjs
+import {
+  PrefetchCrossZoneLinks,
+  PrefetchCrossZoneLinksProvider,
+} from '@vercel/microfrontends/next/client';
+
+export default function MyApp({ Component, pageProps }) {
+  return (
+    <>
+      <PrefetchCrossZoneLinksProvider>
+        <Component {...pageProps} />
+      </PrefetchCrossZoneLinksProvider>
+      <PrefetchCrossZoneLinks />
+    </>
+  );
+}
+```
 
 Then in all microfrontends, use the `Link` component from `@vercel/microfrontends/next/client` anywhere you would use a normal link to automatically use the prefetching and prerendering optimizations.
 

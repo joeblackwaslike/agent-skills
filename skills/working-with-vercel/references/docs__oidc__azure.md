@@ -13,13 +13,15 @@ related:
 summary: "Learn how to configure your Microsoft Azure account to trust Vercel's OpenID Connect (OIDC) Identity Provider (IdP)."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/azure.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "597df98515b2fa52b82eccb50562587c5a88ceec38d8d702e45a9109c091aef0"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "3b2778b8b7ba1eeeeb5a673b977ba8e184da4827f834df772acb7d41e6eb9bef"
 ---
 
 # Connect to Microsoft Azure
 
 > **🔒 Permissions Required**: Secure backend access with OIDC federation
+
+To understand how Azure supports OIDC through Workload Identity Federation, consult the [Azure documentation](https://learn.microsoft.com/en-us/entra/workload-id/workload-identity-federation).
 
 
 <!-- docsgraph:related -->
@@ -39,8 +41,6 @@ sha256: "597df98515b2fa52b82eccb50562587c5a88ceec38d8d702e45a9109c091aef0"
 
 Full cross-link map for this page: [/docs/oidc/azure.graph.md](/docs/oidc/azure.graph.md?from=related&source_path=%2Fdocs%2Foidc%2Fazure&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-To understand how Azure supports OIDC through Workload Identity Federation, consult the [Azure documentation](https://learn.microsoft.com/en-us/entra/workload-id/workload-identity-federation).
 
 ## Configure your Azure account
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/cursor.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "1f82c7f0c952a0c0a563f75ac6038ad30f749c19ec6e4e4d564163110136a165"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "892cfb24691c11632b21a3df4acfc1749274bca74fc75e5649705d44e40c4a31"
 ---
 
 # Cursor Harness
@@ -44,6 +44,7 @@ import { createVercelSandbox } from '@ai-sdk/sandbox-vercel';
 
 const agent = new HarnessAgent({
   harness: cursor,
+  model: 'gpt-5.6-luna',
   sandbox: createVercelSandbox({
     runtime: 'node24',
     ports: [4000],
@@ -73,7 +74,6 @@ Use `createCursor()` to configure the runtime:
 ```ts
 const harness = createCursor({
   auth: 'ai-gateway',
-  model: 'cursor-model-id',
   port: 4001,
   startupTimeoutMs: 180_000,
 });
@@ -94,8 +94,6 @@ Settings:
   value forwarded into the sandbox process. It does not restrict which
   credentials the harness adapter can discover, read, or otherwise access in
   the host process.
-- `model`: Cursor model id selected through ACP. When omitted, Cursor chooses
-  its own default model.
 - `mcpServers`: MCP server definitions keyed by server name.
 - `port`: ACP bridge port override.
 - `startupTimeoutMs`: maximum time to wait for the ACP bridge to start.
@@ -182,6 +180,10 @@ MCP payload and correlates the call with the host-side tool execution.
   error.
 - Cursor ACP does not expose a structured-output metadata mapping, so schema-backed
   structured output is unsupported.
+- Custom `headers` are not natively supported and only applied via
+  sandbox-external request transformations. When a sandbox without that
+  capability is provided, custom `headers` therefore cannot be passed and are
+  ignored.
 
 ## Related
 

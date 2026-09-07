@@ -1,8 +1,8 @@
 ---
 title: "Contribution Points"
 source: "https://code.visualstudio.com/api/references/contribution-points"
-fetched_at: "2026-08-31T10:36:32.244Z"
-sha256: "a0a33e216c0b930e908b57e7bdd20cb22c60425d826792db8767a7320493d6c0"
+fetched_at: "2026-09-07T08:58:30.097Z"
+sha256: "74d850cecafe5afcd5d8c0fb6658694de953e946c2672463adaea49b1b817731"
 ---
 
 # Contribution Points
@@ -2105,4 +2105,4 @@ Available completion events include:
 Once a step has been checked off, it will remain checked off until the user explicitly unchecks the step or resets their progress (via the **Getting Started: Reset Progress** command).
 
  
- 8/26/2026
+ 9/2/2026

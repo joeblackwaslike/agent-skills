@@ -9,11 +9,12 @@ prerequisites:
   - /docs/cli
 related:
   - /docs/frameworks
+  - /docs/cli/global-options
 summary: Learn how to initialize Vercel supported framework examples locally using the vercel init CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/init.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "8a5a2b444429f5d1835be739506c60af739ea225e5feac697665e056c3d7c99f"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "e02a7c61f5f6315cc5134661f36ef7d5b17d1240ae81a1c9d66632ea0ac82c0f"
 ---
 
 # vercel init
@@ -88,6 +89,24 @@ vercel init gatsby my-project-directory --force
 
 *Using the \`vercel init\` command with the
 \`--force\` option.*
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel init` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 
 ---

@@ -8,12 +8,12 @@ type: reference
 prerequisites:
   - /docs/cli
 related:
-  []
+  - /docs/cli/global-options
 summary: Generate an AGENTS.md file with Vercel deployment best practices using the vercel agent CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/agent.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "e7d785bd8b7c065a45de7ab95b77123630aed1e7c1daa5f5861f6378c8ff8830"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "18ac80a0c1e19cd26729094a69f4a5f6205d6b1abf1816765d27cacef2f7a498"
 ---
 
 # vercel agent
@@ -27,15 +27,11 @@ The `vercel agent` command writes a section related to Vercel deployment best pr
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related&source_path=%2Fdocs%2Fcli%2Fagent&source_site=vercel-docs&relationship=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
-- [Vercel Agent code reviews now follow your code guidelines](https://vercel.com/changelog/vercel-agent-code-reviews-now-follow-your-code-guidelines?from=related&source_path=%2Fdocs%2Fcli%2Fagent&source_site=vercel-docs&relationship=related)
-- [Make your documentation readable by AI agents](https://vercel.com/kb/guide/make-your-documentation-readable-by-ai-agents?from=related&source_path=%2Fdocs%2Fcli%2Fagent&source_site=vercel-docs&relationship=related) — Serve markdown to AI agents using content negotiation, .md endpoints, agent auto-detection, llms.txt,   sitemap.md, and
-- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related&source_path=%2Fdocs%2Fcli%2Fagent&source_site=vercel-docs&relationship=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
-- [Introducing the Vercel plugin for coding agents](https://vercel.com/changelog/introducing-vercel-plugin-for-coding-agents?from=related&source_path=%2Fdocs%2Fcli%2Fagent&source_site=vercel-docs&relationship=related)
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fcli%2Fagent&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 - [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fagent&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
-- [Agent Resources](https://vercel.com/docs/agent-resources?from=related&source_path=%2Fdocs%2Fcli%2Fagent&source_site=vercel-docs&relationship=related) — Resources for building with AI on Vercel, including documentation access, MCP servers, and agent skills.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fcli%2Fagent&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 - [vercel build](https://vercel.com/docs/cli/build?from=related&source_path=%2Fdocs%2Fcli%2Fagent&source_site=vercel-docs&relationship=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
-- [Markdown and Agent Discovery](https://vercel.com/docs/agent-resources/markdown-access?from=related&source_path=%2Fdocs%2Fcli%2Fagent&source_site=vercel-docs&relationship=related) — Learn how Vercel serves documentation to AI agents as Markdown and helps them discover related pages through content neg
+- [Agent Resources](https://vercel.com/docs/agent-resources?from=related&source_path=%2Fdocs%2Fcli%2Fagent&source_site=vercel-docs&relationship=related) — Set up AI coding tools with Vercel documentation, reusable skills, and secure access to projects, deployments, and logs.
+- [vercel skills](https://vercel.com/docs/cli/skills?from=related&source_path=%2Fdocs%2Fcli%2Fagent&source_site=vercel-docs&relationship=related) — Discover agent skills relevant to your project using the vercel skills CLI command.
 
 Full cross-link map for this page: [/docs/cli/agent.graph.md](/docs/cli/agent.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fagent&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -91,6 +87,24 @@ vercel agent init --yes
 ```
 
 *Skip the confirmation prompt that asks before writing to the target file.*
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel agent` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 
 ---

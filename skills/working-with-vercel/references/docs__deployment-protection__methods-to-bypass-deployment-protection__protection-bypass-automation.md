@@ -3,7 +3,7 @@ title: Protection Bypass for Automation
 product: vercel
 url: /docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation
 canonical_url: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation"
-last_updated: 2026-08-11
+last_updated: 2026-08-28
 type: how-to
 prerequisites:
   - /docs/deployment-protection/methods-to-bypass-deployment-protection
@@ -17,13 +17,15 @@ related:
 summary: Learn how to bypass Vercel Deployment Protection for automated tooling (e.g. E2E testing).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "bb8132583752fba7acbb9ab82bfd7a8d4017b8a609fd5c9782269a6002b21028"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "bad118fd122107560cafc0d9e572b6e7049d8419878ec51977acd7e22c44dadc"
 ---
 
 # Protection Bypass for Automation
 
 > **🔒 Permissions Required**: Protection Bypass for Automation
+
+Protection Bypass for Automation enables you to run automated tests, CI/CD pipelines, and monitoring tools against your protected deployments without triggering authentication challenges or security blocks.
 
 
 <!-- docsgraph:related -->
@@ -46,8 +48,6 @@ sha256: "bb8132583752fba7acbb9ab82bfd7a8d4017b8a609fd5c9782269a6002b21028"
 
 Full cross-link map for this page: [/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation.graph.md](/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation.graph.md?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Fprotection-bypass-automation&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Protection Bypass for Automation enables you to run automated tests, CI/CD pipelines, and monitoring tools against your protected deployments without triggering authentication challenges or security blocks.
 
 ## How it works
 
@@ -92,6 +92,10 @@ To use Protection Bypass for Automation, you can authenticate using either an HT
 
 Using a header is the recommended approach for most automation tools:
 
+```bash
+x-vercel-protection-bypass: your-generated-secret
+```
+
 ### Method 2: Query parameter
 
 For tools that cannot set custom headers (such as webhook URL verification for third-party services like Slack, Stripe, or other integrations), append the bypass secret as a query parameter to your URL:
@@ -116,9 +120,17 @@ To bypass authorization on follow-up requests (e.g. for **in-browser testing**) 
 
 This will set the authorization bypass as a cookie using a redirect with a `Set-Cookie` header.
 
+```bash
+x-vercel-set-bypass-cookie: true (optional)
+```
+
 If you are accessing the deployment through a non-direct way (e.g. in an `iframe`) then you may need to further configure `x-vercel-set-bypass-cookie` by setting the value to `samesitenone`.
 
 This will set `SameSite` to `None` on the `Set-Cookie` header, by default `SameSite` is set to `Lax`.
+
+```bash
+x-vercel-set-bypass-cookie: samesitenone (optional)
+```
 
 ### Examples
 

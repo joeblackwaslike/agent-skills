@@ -16,8 +16,8 @@ related:
 summary: Set up and deploy a Vercel project using the CLI, from linking to production.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/projects/deploy-from-cli.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "b29a8c6c45a27c16a840d69949fd66da882d8b8af807f93db4eb13d49cfc9e0c"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "8e12dec32006cd6841b6c7805941fe1b79b10561b24fbf7c849d9399d5738bb9"
 ---
 
 # Deploying a project from the CLI
@@ -30,14 +30,15 @@ Use this guide to set up and deploy a Vercel project entirely from the CLI. You'
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Deployments](https://v0.app/docs/deployments?from=related&source_path=%2Fdocs%2Fprojects%2Fdeploy-from-cli&source_site=vercel-docs&relationship=related) — Preview and publish v0 projects on Vercel, then manage domains, visibility, and production updates.
 - [How can I use CircleCI with Vercel?](https://vercel.com/kb/guide/how-can-i-use-circleci-with-vercel?from=related&source_path=%2Fdocs%2Fprojects%2Fdeploy-from-cli&source_site=vercel-docs&relationship=related) — Learn how to use CircleCI to deploy to Vercel with custom CI/CD.
 - [How to Deploy a Vue.js Site with Vercel](https://vercel.com/kb/guide/deploying-vuejs-to-vercel?from=related&source_path=%2Fdocs%2Fprojects%2Fdeploy-from-cli&source_site=vercel-docs&relationship=related) — Create your Vue.js app and deploy it with Vercel.
 - [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel?from=related&source_path=%2Fdocs%2Fprojects%2Fdeploy-from-cli&source_site=vercel-docs&relationship=related) — Learn how to deploy based on tags/releases on Vercel.
+- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fprojects%2Fdeploy-from-cli&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related&source_path=%2Fdocs%2Fprojects%2Fdeploy-from-cli&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
-- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fprojects%2Fdeploy-from-cli&source_site=vercel-docs&relationship=related) — Learn how to create and manage deployments on Vercel.
-- [Linking Projects with Vercel CLI](https://vercel.com/docs/cli/project-linking?from=related&source_path=%2Fdocs%2Fprojects%2Fdeploy-from-cli&source_site=vercel-docs&relationship=related) — Learn how to link existing Vercel Projects with Vercel CLI.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fprojects%2Fdeploy-from-cli&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
-- [Promoting a preview deployment to production](https://vercel.com/docs/deployments/promote-preview-to-production?from=related&source_path=%2Fdocs%2Fprojects%2Fdeploy-from-cli&source_site=vercel-docs&relationship=related) — Test a preview deployment and promote it to production using the CLI.
+- [Deploying Git Repositories with Vercel](https://vercel.com/docs/git?from=related&source_path=%2Fdocs%2Fprojects%2Fdeploy-from-cli&source_site=vercel-docs&relationship=related) — Vercel automatically deploys supported Git repositories on every branch push and when changes merge into the production
+- [Managing environment variables across environments](https://vercel.com/docs/environment-variables/manage-across-environments?from=related&source_path=%2Fdocs%2Fprojects%2Fdeploy-from-cli&source_site=vercel-docs&relationship=related) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
 
 Full cross-link map for this page: [/docs/projects/deploy-from-cli.graph.md](/docs/projects/deploy-from-cli.graph.md?from=related&source_path=%2Fdocs%2Fprojects%2Fdeploy-from-cli&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

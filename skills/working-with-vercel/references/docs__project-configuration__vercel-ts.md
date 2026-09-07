@@ -16,8 +16,8 @@ related:
 summary: Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/vercel-ts.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "93177dacb274b026ea210e8f120050678bb40e6a371b3a6b10d53e15eca6dbc6"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "eea35fb224e5c7212ebf8eb55b9685fca0bc86cc95627ad5274fa3c2c9dec549"
 ---
 
 # Programmatic Configuration with vercel.ts
@@ -31,15 +31,16 @@ The `vercel.ts` file lets you configure and override the default behavior of Ver
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing vercel.ts: Programmatic project configuration](https://vercel.com/changelog/vercel-ts?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related)
+- [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
 - [How can I increase the limit of redirects or use dynamic redirects on Vercel?](https://vercel.com/kb/guide/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Instructions on how to use Serverless Functions to handle redirects on Vercel.
 - [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
 - [headers](https://nextjs.org/docs/pages/api-reference/config/next-config-js/headers?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Add custom HTTP headers to your Next.js app.
 - [headers](https://nextjs.org/docs/app/api-reference/config/next-config-js/headers?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Add custom HTTP headers to your Next.js app.
-- [Using the Node.js Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/node-js?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Learn how to use the Node.js runtime to create functions and deploy Node.js servers on Vercel.
+- [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
 - [Build Output Configuration](https://vercel.com/docs/build-output-api/configuration?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
 - [@vercel/functions API Reference \\(Node.js\\)](https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Learn about available APIs when working with Vercel Functions.
-- [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
 - [Cache-Control headers](https://vercel.com/docs/caching/cache-control-headers?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Learn about the cache-control headers sent to each Vercel deployment and how to use them to control the caching behavior
+- [Frontends on Vercel](https://vercel.com/docs/frameworks/frontend?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
 
 Full cross-link map for this page: [/docs/project-configuration/vercel-ts.graph.md](/docs/project-configuration/vercel-ts.graph.md?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -534,7 +535,27 @@ This example configures custom response headers for static files, [Vercel functi
 
 ### Header `has` or `missing` object definition
 
+| Property | Type                                | Description                                                                                                                                                                                                                                                                                                                                                                      |
+| -------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `type`   | `String`                            | Must be either `header`, `cookie`, `host`, or `query`. The `type` property only applies to **request** headers sent by clients, not response headers sent by your functions or backends.                                                                                                                                                                                         |
+| `key`    | `String`                            | The key from the selected type to match against. For example, if the `type` is `header` and the `key` is `X-Custom-Header`, we will match against the `X-Custom-Header` header key.                                                                                                                                                                                              |
+| `value`  | `String` or `Object` or `undefined` | The value to check for, if `undefined` any value will match. A regex like string can be used to capture a specific part of the value. For example, if the value `first-(?<paramName>.*)` is used for `first-second` then `second` will be usable in the destination with `:paramName`. If an object is provided, it will match when all conditions are met for its fields below. |
+
 If `value` is an object, it has one or more of the following fields:
+
+| Condition | Type                       | Description                          |
+| --------- | -------------------------- | ------------------------------------ |
+| `eq`      | `String` (optional)        | Check for equality                   |
+| `neq`     | `String` (optional)        | Check for inequality                 |
+| `inc`     | `Array<String>` (optional) | Check for inclusion in the array     |
+| `ninc`    | `Array<String>` (optional) | Check for non-inclusion in the array |
+| `pre`     | `String` (optional)        | Check for prefix                     |
+| `suf`     | `String` (optional)        | Check for suffix                     |
+| `re`      | `String` (optional)        | Check for a regex match              |
+| `gt`      | `Number` (optional)        | Check for greater than               |
+| `gte`     | `Number` (optional)        | Check for greater than or equal to   |
+| `lt`      | `Number` (optional)        | Check for less than                  |
+| `lte`     | `Number` (optional)        | Check for less than or equal to      |
 
 This example demonstrates using the expressive `value` object to append the header `x-authorized: true` if the `X-Custom-Header` request header's value is prefixed by `valid` and ends with `value`.
 
@@ -683,6 +704,8 @@ export const config: VercelConfig = {
 
 ### Redirects examples
 
+> **💡 Note:** Some redirects and rewrites configurations can accidentally become gateways for semantic attacks. Learn how to check and protect your configurations with the [Enhancing Security for Redirects and Rewrites guide](/kb/guide/enhancing-security-for-redirects-and-rewrites).
+
 This example redirects requests to the path `/me` from your site's root to the `profile.html` file relative to your site's root with a [307 Temporary Redirect](https://developer.mozilla.org/docs/Web/HTTP/Status/307):
 
 ```typescript filename="vercel.ts"
@@ -804,7 +827,27 @@ export const config: VercelConfig = {
 
 ### Redirect `has` or `missing` object definition
 
+| Property | Type                                | Description                                                                                                                                                                                                                                                                                                                                                                      |
+| -------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `type`   | `String`                            | Must be either `header`, `cookie`, `host`, or `query`. The `type` property only applies to **request** headers sent by clients, not response headers sent by your functions or backends.                                                                                                                                                                                         |
+| `key`    | `String`                            | The key from the selected type to match against. For example, if the `type` is `header` and the `key` is `X-Custom-Header`, we will match against the `X-Custom-Header` header key.                                                                                                                                                                                              |
+| `value`  | `String` or `Object` or `undefined` | The value to check for, if `undefined` any value will match. A regex like string can be used to capture a specific part of the value. For example, if the value `first-(?<paramName>.*)` is used for `first-second` then `second` will be usable in the destination with `:paramName`. If an object is provided, it will match when all conditions are met for its fields below. |
+
 If `value` is an object, it has one or more of the following fields:
+
+| Condition | Type                       | Description                          |
+| --------- | -------------------------- | ------------------------------------ |
+| `eq`      | `String` (optional)        | Check for equality                   |
+| `neq`     | `String` (optional)        | Check for inequality                 |
+| `inc`     | `Array<String>` (optional) | Check for inclusion in the array     |
+| `ninc`    | `Array<String>` (optional) | Check for non-inclusion in the array |
+| `pre`     | `String` (optional)        | Check for prefix                     |
+| `suf`     | `String` (optional)        | Check for suffix                     |
+| `re`      | `String` (optional)        | Check for a regex match              |
+| `gt`      | `Number` (optional)        | Check for greater than               |
+| `gte`     | `Number` (optional)        | Check for greater than or equal to   |
+| `lt`      | `Number` (optional)        | Check for less than                  |
+| `lte`     | `Number` (optional)        | Check for less than or equal to      |
 
 This example uses the expressive `value` object to define a route that redirects users with a redirect status of 308 to `/end` only if the `X-Custom-Header` header's value is prefixed by `valid` and ends with `value`.
 
@@ -965,6 +1008,8 @@ your project's `vercel.ts`, do not include the file extension in the source
 or destination path. For example, `/about-our-company.html` would be
 `/about-our-company`
 
+> **💡 Note:** Some redirects and rewrites configurations can accidentally become gateways for semantic attacks. Learn how to check and protect your configurations with the [Enhancing Security for Redirects and Rewrites guide](/kb/guide/enhancing-security-for-redirects-and-rewrites).
+
 ### Rewrites examples
 
 - This example rewrites requests to the path `/about` from your site's root to the `/about-our-company.html` file relative to your site's root:
@@ -1060,7 +1105,27 @@ or destination path. For example, `/about-our-company.html` would be
 
 ### Rewrite `has` or `missing` object definition
 
+| Property | Type                                | Description                                                                                                                                                                                                                                                                                                                                                                      |
+| -------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `type`   | `String`                            | Must be either `header`, `cookie`, `host`, or `query`. The `type` property only applies to **request** headers sent by clients, not response headers sent by your functions or backends.                                                                                                                                                                                         |
+| `key`    | `String`                            | The key from the selected type to match against. For example, if the `type` is `header` and the `key` is `X-Custom-Header`, we will match against the `X-Custom-Header` header key.                                                                                                                                                                                              |
+| `value`  | `String` or `Object` or `undefined` | The value to check for, if `undefined` any value will match. A regex like string can be used to capture a specific part of the value. For example, if the value `first-(?<paramName>.*)` is used for `first-second` then `second` will be usable in the destination with `:paramName`. If an object is provided, it will match when all conditions are met for its fields below. |
+
 If `value` is an object, it has one or more of the following fields:
+
+| Condition | Type                       | Description                          |
+| --------- | -------------------------- | ------------------------------------ |
+| `eq`      | `String` (optional)        | Check for equality                   |
+| `neq`     | `String` (optional)        | Check for inequality                 |
+| `inc`     | `Array<String>` (optional) | Check for inclusion in the array     |
+| `ninc`    | `Array<String>` (optional) | Check for non-inclusion in the array |
+| `pre`     | `String` (optional)        | Check for prefix                     |
+| `suf`     | `String` (optional)        | Check for suffix                     |
+| `re`      | `String` (optional)        | Check for a regex match              |
+| `gt`      | `Number` (optional)        | Check for greater than               |
+| `gte`     | `Number` (optional)        | Check for greater than or equal to   |
+| `lt`      | `Number` (optional)        | Check for less than                  |
+| `lte`     | `Number` (optional)        | Check for less than or equal to      |
 
 This example demonstrates using the expressive `value` object to define a route that rewrites users to `/end` only if the `X-Custom-Header` header's value is prefixed by `valid` and ends with `value`.
 

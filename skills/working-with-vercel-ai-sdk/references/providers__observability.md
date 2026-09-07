@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "6bc156f58ea63843a5305510fdf94dc87a619244f54cd01f9d73f7e724d22c87"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "6c66c949d595c0a76f9169b4fa5a05d028d4734b129bc6e7a049d1668e4f28a2"
 ---
 
 # Observability Integrations
@@ -126,6 +126,7 @@ There are also providers that provide monitoring and tracing for the AI SDK thro
   - [Clarifai](/providers/openai-compatible-providers/clarifai)
   - [Heroku](/providers/openai-compatible-providers/heroku)
   - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)
+  - [Synthorai](/providers/openai-compatible-providers/synthorai)
 - [Community Providers](/providers/community-providers)
   - [Writing a Custom Provider](/providers/community-providers/custom-providers)
   - [A2A](/providers/community-providers/a2a)

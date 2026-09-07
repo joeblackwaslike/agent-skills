@@ -17,8 +17,8 @@ related:
 summary: Deploy Hono applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/hono.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "69dd57f753c4b45f865a066416806ad24d981ba3f24123eadb5727033097adbc"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "66d46b55cde49d13221a94d2776f9f6dc2409df8b3dea08cb3b740d934dda53d"
 ---
 
 # Hono on Vercel
@@ -41,8 +41,8 @@ Hono is a fast and lightweight web application framework built on Web Standards.
 - [Express on Vercel](https://vercel.com/docs/frameworks/backend/express?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fhono&source_site=vercel-docs&relationship=related) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
 - [Koa on Vercel](https://vercel.com/docs/frameworks/backend/koa?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fhono&source_site=vercel-docs&relationship=related) — Deploy Koa applications to Vercel with zero configuration.
 - [Fastify on Vercel](https://vercel.com/docs/frameworks/backend/fastify?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fhono&source_site=vercel-docs&relationship=related) — Deploy Fastify applications to Vercel with zero configuration.
+- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fhono&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 - [Nitro on Vercel](https://vercel.com/docs/frameworks/backend/nitro?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fhono&source_site=vercel-docs&relationship=related) — Deploy Nitro applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurat
-- [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fhono&source_site=vercel-docs&relationship=related) — Learn about the frameworks that can be deployed to Vercel.
 
 Full cross-link map for this page: [/docs/frameworks/backend/hono.graph.md](/docs/frameworks/backend/hono.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fhono&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

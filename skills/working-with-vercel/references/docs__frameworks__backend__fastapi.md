@@ -17,8 +17,8 @@ related:
 summary: Deploy a FastAPI app on Vercel. Learn how the Python runtime, ASGI, static assets, and Vercel Functions work together.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/fastapi.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "f1dc888698a56a8b9862e7e427dd6850d4dc2d15842ace0040835c5f2667b918"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "23ff95fdaab6f7a354f345b1728947ea33e8809e9601c2b5fd9abc8dc672fe10"
 ---
 
 # Deploy a FastAPI app on Vercel
@@ -38,7 +38,7 @@ your repository.
 - [Vercel now supports Build Commands for FastAPI and Flask](https://vercel.com/changelog/vercel-now-supports-build-commands-for-fastapi-and-flask?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastapi&source_site=vercel-docs&relationship=related)
 - [Zero-configuration FastAPI backends](https://vercel.com/changelog/zero-config-fastapi-backends?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastapi&source_site=vercel-docs&relationship=related)
 - [Build Figma-style multiplayer cursors with WebSockets on Vercel](https://vercel.com/kb/guide/real-time-board-nextjs-fastapi?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastapi&source_site=vercel-docs&relationship=related) — Learn how to build Figma-style multiplayer cursors with Next.js and FastAPI, kept consistent across multiple Vercel Func
-- [How to Build a Weather API with FastAPI and Vercel](https://vercel.com/kb/guide/weather-api-with-fastapi?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastapi&source_site=vercel-docs&relationship=related) — Provide real-time weather data to apps and websites with a single FastAPI route.
+- [Build a Weather API on Vercel: Express, FastAPI, and Nitro](https://vercel.com/kb/guide/weather-api-with-fastapi?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastapi&source_site=vercel-docs&relationship=related) — Build a weather API on Vercel with FastAPI, Express, or Nitro. Compare the three runtimes, add caching and Observability
 - [How to ship a Flask app on Vercel](https://vercel.com/kb/guide/ship-a-flask-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastapi&source_site=vercel-docs&relationship=related) — Deploy a Flask app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
 - [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastapi&source_site=vercel-docs&relationship=related) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
 - [Deploy a Flask app on Vercel](https://vercel.com/docs/frameworks/backend/flask?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastapi&source_site=vercel-docs&relationship=related) — Deploy a Flask app on Vercel. Learn how the Python runtime, WSGI, static assets, and Vercel Functions work together.
@@ -171,7 +171,7 @@ When using [`app.frontend()`](https://fastapi.tiangolo.com/tutorial/frontend/) o
 [`app.mount()`](https://fastapi.tiangolo.com/advanced/sub-applications/) with [`StaticFiles`](https://fastapi.tiangolo.com/tutorial/static-files/),
 files are promoted to the CDN at build time:
 
-#### \['app.frontend'
+#### app.frontend
 
 ```py filename="app.py"
 from fastapi import FastAPI
@@ -185,7 +185,7 @@ def hello():
 app.frontend("/", directory="dist")
 ```
 
-#### 'app.mount']
+#### app.mount
 
 ```py filename="app.py"
 from fastapi import FastAPI

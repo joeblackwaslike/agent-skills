@@ -3,7 +3,7 @@ title: Make Your First Vercel API Request
 product: vercel
 url: /docs/rest-api/getting-started
 canonical_url: "https://vercel.com/docs/rest-api/getting-started"
-last_updated: 2018-10-20
+last_updated: 2026-08-28
 type: tutorial
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Create a scoped Vercel access token, make a read-only REST API request, and call the same operation with the Vercel SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rest-api/getting-started.md"
-fetched_at: "2026-08-31T10:45:05.170Z"
-sha256: "f0cd4efb7b4b1e4081611b05547d8cb1eb21a87643c06a73d30168b3598b2f63"
+fetched_at: "2026-09-07T09:06:17.588Z"
+sha256: "a78e3bdff80c4e52092ed649f47f99f8bd2a4e36ec9dbd8c5f66f7f1f8b03bf4"
 ---
 
 # Make Your First Vercel API Request
@@ -31,9 +31,9 @@ Use a Vercel access token to call the Vercel REST API with `curl`, then make the
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [List projects of an access group](https://vercel.com/docs/rest-api/access-groups/list-projects-of-an-access-group?from=related&source_path=%2Fdocs%2Frest-api%2Fgetting-started&source_site=vercel-docs&relationship=related) — GET /v1/access-groups/{idOrName}/projects — List projects of an access group
-- [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Frest-api%2Fgetting-started&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [Create an access group project](https://vercel.com/docs/rest-api/access-groups/create-an-access-group-project?from=related&source_path=%2Fdocs%2Frest-api%2Fgetting-started&source_site=vercel-docs&relationship=related) — POST /v1/access-groups/{accessGroupIdOrName}/projects — Allows creation of an access group project
 - [List project members](https://vercel.com/docs/rest-api/projectmembers/list-project-members?from=related&source_path=%2Fdocs%2Frest-api%2Fgetting-started&source_site=vercel-docs&relationship=related) — GET /v1/projects/{idOrName}/members — Lists all members of a project.
+- [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Frest-api%2Fgetting-started&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [Get a project domain](https://vercel.com/docs/rest-api/projects/get-a-project-domain?from=related&source_path=%2Fdocs%2Frest-api%2Fgetting-started&source_site=vercel-docs&relationship=related) — GET /v9/projects/{idOrName}/domains/{domain} — Get project domain by project id/name and domain name.
 
 Full cross-link map for this page: [/docs/rest-api/getting-started.graph.md](/docs/rest-api/getting-started.graph.md?from=related&source_path=%2Fdocs%2Frest-api%2Fgetting-started&source_site=vercel-docs&relationship=graph)

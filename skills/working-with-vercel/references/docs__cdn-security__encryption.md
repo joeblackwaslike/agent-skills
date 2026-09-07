@@ -12,8 +12,8 @@ related:
 summary: Learn how Vercel encrypts data in transit and at rest.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cdn-security/encryption.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "e9ba5843e8ca04efa92b65142dc85fee942dc604a0cb4827f40faea3d96b13be"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "dcbd918d40502a143eb9097e3c1b6db9bb1b1619e542d401a819abea2c66f2c9"
 ---
 
 # Encryption and TLS
@@ -29,7 +29,6 @@ Every **deployment** on Vercel is served over an HTTPS connection. Vercel automa
 - [Deprecating the DHE cipher suite for TLS connections](https://vercel.com/changelog/deprecating-the-dhe-cipher-suite-for-tls-connections?from=related&source_path=%2Fdocs%2Fcdn-security%2Fencryption&source_site=vercel-docs&relationship=related)
 - [Encrypted Client Hello (ECH) is now supported on Vercel CDN](https://vercel.com/changelog/encrypted-client-hello-now-supported-on-vercel-cdn?from=related&source_path=%2Fdocs%2Fcdn-security%2Fencryption&source_site=vercel-docs&relationship=related)
 - [Automatic SSL with Vercel and Let's Encrypt](https://vercel.com/blog/automatic-ssl-with-vercel-lets-encrypt?from=related&source_path=%2Fdocs%2Fcdn-security%2Fencryption&source_site=vercel-docs&relationship=related)
-- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure?from=related&source_path=%2Fdocs%2Fcdn-security%2Fencryption&source_site=vercel-docs&relationship=related)
 - [Working with SSL Certificates](https://vercel.com/docs/domains/working-with-ssl?from=related&source_path=%2Fdocs%2Fcdn-security%2Fencryption&source_site=vercel-docs&relationship=related) — Learn how Vercel uses SSL certification to keep your site secure.
 - [Security](https://vercel.com/docs/vercel-blob/security?from=related&source_path=%2Fdocs%2Fcdn-security%2Fencryption&source_site=vercel-docs&relationship=related) — Learn how your Vercel Blob store is secured
 - [Vercel security overview](https://vercel.com/docs/security?from=related&source_path=%2Fdocs%2Fcdn-security%2Fencryption&source_site=vercel-docs&relationship=related) — Vercel provides built-in and customizable features to ensure that your site is secure.

@@ -16,8 +16,8 @@ related:
 summary: Learn how to use rewrites to send users to different URLs without modifying the visible URL.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/rewrites.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "9b9dda1f534c4c8dc3185a6449284f5dda4bb25a69a66831914d4d2400e2d77f"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "7b1d8de496399f6de4db6d59ddad62366de0d855668a2e4a5512a65e90033aba"
 ---
 
 # Rewrites on Vercel
@@ -35,13 +35,13 @@ A rewrite routes a request to a different destination without changing the URL i
 - [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins?from=related&source_path=%2Fdocs%2Frouting%2Frewrites&source_site=vercel-docs&relationship=related) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
 - [Can I use Vercel as a reverse proxy?](https://vercel.com/kb/guide/vercel-reverse-proxy-rewrites-external?from=related&source_path=%2Fdocs%2Frouting%2Frewrites&source_site=vercel-docs&relationship=related) — Learn how to use rewrites to proxy requests from Vercel to other deployments.
 - [rewrites](https://nextjs.org/docs/pages/api-reference/config/next-config-js/rewrites?from=related&source_path=%2Fdocs%2Frouting%2Frewrites&source_site=vercel-docs&relationship=related) — Add rewrites to your Next.js app.
-- [Redirecting Domains](https://vercel.com/blog/redirecting-domains?from=related&source_path=%2Fdocs%2Frouting%2Frewrites&source_site=vercel-docs&relationship=related)
 - [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn?from=related&source_path=%2Fdocs%2Frouting%2Frewrites&source_site=vercel-docs&relationship=related) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
 - [How can I increase the limit of redirects or use dynamic redirects on Vercel?](https://vercel.com/kb/guide/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel?from=related&source_path=%2Fdocs%2Frouting%2Frewrites&source_site=vercel-docs&relationship=related) — Instructions on how to use Serverless Functions to handle redirects on Vercel.
 - [Redirects and rewrites now available in Observability](https://vercel.com/changelog/redirects-and-rewrites-now-available-in-observability?from=related&source_path=%2Fdocs%2Frouting%2Frewrites&source_site=vercel-docs&relationship=related)
 - [Life of a Vercel request: Application-aware routing](https://vercel.com/blog/life-of-a-request-application-aware-routing?from=related&source_path=%2Fdocs%2Frouting%2Frewrites&source_site=vercel-docs&relationship=related)
 - [Redirects](https://vercel.com/docs/routing/redirects?from=related&source_path=%2Fdocs%2Frouting%2Frewrites&source_site=vercel-docs&relationship=related) — Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL.
 - [Configuration Redirects](https://vercel.com/docs/routing/redirects/configuration-redirects?from=related&source_path=%2Fdocs%2Frouting%2Frewrites&source_site=vercel-docs&relationship=related) — Learn how to define static redirects in your framework configuration or vercel.json with support for wildcards, pattern
+- [Incremental Migration to Vercel](https://vercel.com/docs/incremental-migration?from=related&source_path=%2Fdocs%2Frouting%2Frewrites&source_site=vercel-docs&relationship=related) — Learn how to migrate your app or website to Vercel with minimal risk and high impact.
 
 Full cross-link map for this page: [/docs/routing/rewrites.graph.md](/docs/routing/rewrites.graph.md?from=related&source_path=%2Fdocs%2Frouting%2Frewrites&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -334,6 +334,8 @@ You can capture and forward parts of a path using wildcards:
   ]
 }
 ```
+
+> **💡 Note:** Some redirects and rewrites configurations can accidentally become gateways for semantic attacks. Learn how to check and protect your configurations with the [Enhancing Security for Redirects and Rewrites guide](/kb/guide/enhancing-security-for-redirects-and-rewrites).
 
 A request to `/docs/getting-started/install` will be forwarded to `/help/getting-started/install`.
 

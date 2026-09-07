@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/acp.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "745062270c68b39d495fcf6d85d3240edeeac9478c5da42e090103a5939ce40f"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "80e3b5c587032135b95e9fb7bea3ddf47cfe32daa894f42211261e49a6669cc3"
 ---
 
 # Agent Client Protocol Harness
@@ -88,6 +88,11 @@ try {
 - `builtinTools`: optional native tool definitions for static typing and exact
   name matching.
 - `mcpServers`: MCP server definitions keyed by server name.
+- `hostToolMcpTransport`: transport used for the harness-owned MCP server that
+  exposes host tools to the ACP implementation. It defaults to `'stdio'`. Set
+  this to `'http'` for implementations that only accept HTTP or SSE MCP servers
+  from the client, which requires the implementation to advertise
+  `agentCapabilities.mcpCapabilities.http`.
 - `authentication`: advertised ACP authentication method, metadata, and client
   capabilities.
 - `auth`: downstream provider authentication mode:
@@ -101,19 +106,28 @@ try {
   - An authentication environment: auto-detect from the supplied record
     instead of the host process environment.
 - `providerAuthentication`: declarative runtime-specific Gateway environment.
-- `modelId`: a known implementation model identifier for Harness metadata.
+- `modelMapping`: required static mapping from the `model` supplied to
+  `HarnessAgent` to the ACP operation used by the implementation. Use
+  `session-config-option` with its configuration option ID as `path`, or
+  `session-model` with the `session/set_model` request property as `path`.
 - `skillsDirectory`: native skills directory relative to the implementation's
   effective `$HOME`. It defaults to `.agents/skills`; override it for runtimes
   that use a different location.
 - `instructionMapping`: optional mapping from `HarnessAgent` instructions to
   an implementation's native system or developer prompt. Use `session-meta`
-  for a path below the ACP session request's `_meta` field, or
-  `launch-env-json` for a path within a JSON launch environment variable. When
-  omitted, instructions are prepended to the first user prompt.
+  for a path below the ACP session request's `_meta` field, `launch-env-json`
+  for a path within a JSON launch environment variable, or `filesystem` with a
+  relative `path` to write instructions to a file under the implementation's
+  effective `$HOME`. When omitted, instructions are prepended to the first user
+  prompt.
 - `outputSchemaMapping`: optional implementation-specific mapping from a
   structured output JSON Schema to a path below the ACP `session/prompt`
   request's `_meta` field. ACP does not standardize structured output, so omit
   this unless the selected implementation documents that private extension.
+- `askUserQuestions`: optional translation between an implementation-specific
+  ACP client request for questions and the Harness `askUserQuestions` tool.
+  Configure it only when the ACP implementation exposes a native request that
+  waits for the client's response.
 - `permissionModeMapping`: mappings from all three Harness permission modes to
   advertised ACP session modes or configuration options. Set an entry to
   `null` when the ACP implementation does not support that mode. When omitted,
@@ -146,6 +160,10 @@ const harness = createACP({
     packageName: '@example/acp-agent',
   },
   executable: 'example-acp',
+  modelMapping: {
+    type: 'session-config-option',
+    path: 'model',
+  },
   outputSchemaMapping: {
     type: 'session-prompt-meta',
     path: ['outputSchema'],
@@ -350,6 +368,10 @@ export const claudeCodeACPHarness = createACP({
     packageVersion: '0.61.0',
   },
   executable: 'claude-agent-acp',
+  modelMapping: {
+    type: 'session-config-option',
+    path: 'model',
+  },
   skillsDirectory: '.claude/skills',
   credentialEnv: ['ANTHROPIC_API_KEY', 'ANTHROPIC_AUTH_TOKEN'],
   credentialBrokering: ({ env, sandboxEnv }) => {
@@ -434,6 +456,10 @@ export const codexACPHarness = createACP({
     packageVersion: '1.1.4',
   },
   executable: 'codex-acp',
+  modelMapping: {
+    type: 'session-config-option',
+    path: 'model',
+  },
   forwardEnv: ['CODEX_CONFIG'],
   credentialEnv: ['CODEX_API_KEY', 'OPENAI_API_KEY'],
   credentialBrokering: ({ env, sandboxEnv }) => {
@@ -536,6 +562,13 @@ export const cursorACPHarness = createACP({
   },
   executable: 'agent',
   args: ['--disable-auto-update', 'acp'],
+  modelMapping: {
+    type: 'session-config-option',
+    path: 'model',
+  },
+  clientCapabilities: {
+    _meta: { parameterizedModelPicker: true },
+  },
   credentialEnv: ['CURSOR_API_KEY'],
   credentialBrokering: ({ env, sandboxEnv }) => {
     if (!env.CURSOR_API_KEY || !sandboxEnv?.CURSOR_API_KEY) return [];
@@ -596,6 +629,10 @@ export const grokBuildACPHarness = createACP({
   },
   executable: 'grok',
   args: ['agent', 'stdio'],
+  modelMapping: {
+    type: 'session-model',
+    path: 'modelId',
+  },
   credentialEnv: ['XAI_API_KEY'],
   credentialBrokering: ({ env, sandboxEnv }) => {
     if (!env.XAI_API_KEY || !sandboxEnv?.XAI_API_KEY) return [];
@@ -612,8 +649,8 @@ export const grokBuildACPHarness = createACP({
     ];
   },
   instructionMapping: {
-    type: 'session-meta',
-    path: ['rules'],
+    type: 'filesystem',
+    path: '.grok/AGENTS.md',
   },
   providerAuthentication: {
     gateway: {

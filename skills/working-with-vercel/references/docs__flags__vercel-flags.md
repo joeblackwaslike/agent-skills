@@ -16,13 +16,15 @@ related:
 summary: Use Vercel as your feature flag provider to create and manage flags, define targeting rules, and run experiments directly from the dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "8536c1d28737eb9e62071c2689be7677039591ae98b7f8293d261bfe3154df1e"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "dc98c958ea4dd1fdf3d7205f7bfe789ea2046ce1939bcb11f63313eb008eead5"
 ---
 
 # Vercel Flags
 
 > **🔒 Permissions Required**: Vercel Flags
+
+Vercel Flags is a feature flag provider built into the Vercel platform. Create flags, define targeting rules, run progressive rollouts, and run A/B tests, all from the Vercel Dashboard without adding another service to your stack.
 
 
 <!-- docsgraph:related -->
@@ -30,8 +32,9 @@ sha256: "8536c1d28737eb9e62071c2689be7677039591ae98b7f8293d261bfe3154df1e"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags&source_site=vercel-docs&relationship=related)
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags&source_site=vercel-docs&relationship=related)
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags&source_site=vercel-docs&relationship=related)
+- [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags&source_site=vercel-docs&relationship=related) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
 - [Flags SDK now evaluates flags 10x faster](https://vercel.com/changelog/flags-sdk-now-evaluates-flags-10x-faster?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags&source_site=vercel-docs&relationship=related)
 - [Inspect feature flag history with Vercel CLI](https://vercel.com/changelog/inspect-feature-flag-history-with-vercel-cli?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags&source_site=vercel-docs&relationship=related)
 - [Vercel Flags is now generally available](https://vercel.com/changelog/vercel-flags-ga?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags&source_site=vercel-docs&relationship=related)
@@ -43,8 +46,6 @@ sha256: "8536c1d28737eb9e62071c2689be7677039591ae98b7f8293d261bfe3154df1e"
 
 Full cross-link map for this page: [/docs/flags/vercel-flags.graph.md](/docs/flags/vercel-flags.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Vercel Flags is a feature flag provider built into the Vercel platform. Create flags, define targeting rules, run progressive rollouts, and run A/B tests, all from the Vercel Dashboard without adding another service to your stack.
 
 Flag configurations use active global replication. Changes propagate worldwide in milliseconds, giving you low-latency evaluations and the confidence to ship, test, and roll back at any time.
 
@@ -106,6 +107,26 @@ The SDK can fetch your flag definitions once at build time and bundle them into 
 Learn more about [embedded definitions](/docs/flags/vercel-flags/sdks/core#embedded-definitions).
 
 ## Get started
+
+**Quickstart** [→](/docs/flags/vercel-flags/quickstart)
+
+Create your first feature flag and evaluate it in your application.
+
+**Dashboard** [→](/docs/flags/vercel-flags/dashboard)
+
+Create, configure, and manage flags in the Vercel Dashboard.
+
+**SDKs** [→](/docs/flags/vercel-flags/sdks)
+
+Explore the available SDKs for consuming flags in your application.
+
+**Evaluation Metrics** [→](/docs/flags/vercel-flags/evaluation-metrics)
+
+See how often your flags are evaluated and which variant each evaluation returns.
+
+**Limits and Pricing** [→](/docs/flags/vercel-flags/limits-and-pricing)
+
+Understand the limits and pricing model of Vercel Flags.
 
 
 ---

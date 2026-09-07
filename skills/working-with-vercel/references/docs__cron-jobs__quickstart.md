@@ -16,8 +16,8 @@ related:
 summary: Learn how to schedule cron jobs to run at specific times or intervals.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cron-jobs/quickstart.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "597a9b16a6462a3823adbc65901073513a074e760d75149d7f91ab0f50edce51"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "7edf7f090a7988938edac56eaf3579dcc72b0112bb03a8b53eb6f9a1ef32d4e5"
 ---
 
 # Getting started with cron jobs
@@ -45,6 +45,12 @@ This guide will help you get started with using cron jobs on Vercel. Cron jobs a
 Full cross-link map for this page: [/docs/cron-jobs/quickstart.graph.md](/docs/cron-jobs/quickstart.graph.md?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fquickstart&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
+**Agent prompt**
+
+```text
+Help me set up a Cron Job in this project. First, make sure the Vercel CLI is installed (`npm i -g vercel`). If I'm using Claude Code or Cursor, install the Vercel Plugin (`npx plugins add vercel/vercel-plugin`). For other agents, install Vercel Skills (`npx skills add vercel-labs/agent-skills`). Then: 1. Create a Vercel Function at app/api/cron/route.ts that runs a scheduled task. 2. Add a cron schedule to vercel.json that triggers this function on a recurring schedule. 3. Run `vercel env pull` to sync environment variables locally. 4. Deploy with `vercel --prod` and use `vercel inspect` to verify the cron job is configured.
+```
+
 ## Prerequisites
 
 - [A Vercel account](/signup)
@@ -53,6 +59,8 @@ Full cross-link map for this page: [/docs/cron-jobs/quickstart.graph.md](/docs/c
 - ### Create a function
   This function contains the code that will be executed by the cron job. This example uses a simple function that returns the user's region.
   > For \['nextjs']:
+  > **💡 Note:** To stream responses you must use Route Handlers in the App Router, even if the
+  > rest of your app uses the Pages Router.
   ```ts v0="build" filename="app/api/hello/route.ts" framework=nextjs
   export function GET(request: Request) {
     return new Response('Hello from Vercel!');

@@ -16,13 +16,17 @@ related:
 summary: Learn about the pricing for Vercel Blob.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/usage-and-pricing.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "7d0d0feae274f19a88025932556e8000d83d3e3313f96f2277b0902f38d071fe"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "5b4b9653570bfba9e3c938c84e6cdaaf3abc20608f6d473eb884f658a92050bb"
 ---
 
 # Vercel Blob Pricing
 
 > **🔒 Permissions Required**: Vercel Blob
+
+## Usage
+
+Vercel Blob usage is measured based on the following:
 
 
 <!-- docsgraph:related -->
@@ -38,16 +42,12 @@ sha256: "7d0d0feae274f19a88025932556e8000d83d3e3313f96f2277b0902f38d071fe"
 - [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Limits and Pricing for Image Optimization](https://vercel.com/docs/image-optimization/limits-and-pricing?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can i
-- [Vercel Storage overview](https://vercel.com/docs/storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Store large files and global configuration with Vercel's storage products.
+- [Vercel Storage overview](https://vercel.com/docs/storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
 - [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
-- [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Learn about legacy usage and pricing for Vercel Functions.
+- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 
 Full cross-link map for this page: [/docs/vercel-blob/usage-and-pricing.graph.md](/docs/vercel-blob/usage-and-pricing.graph.md?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusage-and-pricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-## Usage
-
-Vercel Blob usage is measured based on the following:
 
 - **Storage Size**: Monthly average of your blob store size (GB-month)
 - **Simple Operations**: Counts when a blob is accessed by its URL and it's a cache MISS or when using the [`head()`](/docs/vercel-blob/using-blob-sdk#head) method
@@ -69,6 +69,8 @@ See the [usage details](#usage-details) and [pricing example](#pricing-example) 
 | [Blob Advanced Operations](/docs/vercel-blob/usage-and-pricing#pricing) | Regional |
 | [Blob Data Transfer](/docs/vercel-blob/usage-and-pricing#pricing) | Regional |
 
+
+<br />
 
 > **💡 Note:** [Edge Requests](/docs/manage-cdn-usage#edge-requests) and [Fast Origin
 > Transfer](/docs/manage-cdn-usage#fast-origin-transfer) for blobs are billed

@@ -12,13 +12,15 @@ related:
 summary: Requires that next/script is used for all scripts.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_use_next_script.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "deb04e2672111a1e0302a17dfc93fad3787f2a28fddbd18307c780c8a4d830ac"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "7ac6fd9db95a9045fe7cc6d54b51a39a45b399e55685e6f6fcfb0fd424b940ea"
 ---
 
 # NEXTJS_USE_NEXT_SCRIPT
 
 > **🔒 Permissions Required**: Conformance
+
+> **💡 Note:** This rule is available from version 1.1.0.
 
 [`next/script`](https://nextjs.org/docs/pages/api-reference/components/script)
 automatically optimizes scripts for improved performance through customizable

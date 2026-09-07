@@ -17,13 +17,15 @@ related:
 summary: "Learn how to set up the Flags Explorer so you can see and override your application's feature flags"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/flags-explorer/getting-started.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "0a3422f2cb94c42e0ee9b2187bb6d20633ed5eb6dc209378ff4fdd7a90242b9d"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "d3411bfee5878ecb838da148b9b78aee129f2b1a05c80d94beb81db7c6077131"
 ---
 
 # Getting started with Flags Explorer
 
 > **🔒 Permissions Required**: Flags Explorer
+
+This guide walks you through connecting your application to the Flags Explorer, so you can use it to view and override your application's feature flags. This works with any framework, any feature flag provider and even custom setups.
 
 
 <!-- docsgraph:related -->
@@ -32,8 +34,8 @@ sha256: "0a3422f2cb94c42e0ee9b2187bb6d20633ed5eb6dc209378ff4fdd7a90242b9d"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Fgetting-started&source_site=vercel-docs&relationship=related) — Using the Flags SDK in SvelteKit
-- [Quickstart](https://flags-sdk.dev/docs/frameworks/next?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Fgetting-started&source_site=vercel-docs&relationship=related) — Learn how to start using the Flags SDK in your Next.js project.
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Fgetting-started&source_site=vercel-docs&relationship=related)
+- [Quickstart](https://flags-sdk.dev/docs/frameworks/next?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Fgetting-started&source_site=vercel-docs&relationship=related) — Learn how to start using the Flags SDK in your Next.js project.
 - [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Fgetting-started&source_site=vercel-docs&relationship=related)
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Fgetting-started&source_site=vercel-docs&relationship=related)
 - [Flags as code in Next.js](https://vercel.com/blog/flags-as-code-in-next-js?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Fgetting-started&source_site=vercel-docs&relationship=related)
@@ -45,7 +47,11 @@ sha256: "0a3422f2cb94c42e0ee9b2187bb6d20633ed5eb6dc209378ff4fdd7a90242b9d"
 Full cross-link map for this page: [/docs/flags/flags-explorer/getting-started.graph.md](/docs/flags/flags-explorer/getting-started.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Fgetting-started&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-This guide walks you through connecting your application to the Flags Explorer, so you can use it to view and override your application's feature flags. This works with any framework, any feature flag provider and even custom setups.
+**Agent prompt**
+
+```text
+Help me set up Flags Explorer for this project. First, make sure the Vercel CLI is installed (`npm i -g vercel`). If I'm using Claude Code or Cursor, install the Vercel Plugin (`npx plugins add vercel/vercel-plugin`). For other agents, install Vercel Skills (`npx skills add vercel-labs/agent-skills`). Then: 1. Run `vercel link` and `vercel env pull` to sync flag configuration. 2. Configure the Flags SDK to report flag evaluations to Flags Explorer. Use `vercel flags` to verify flags are connected.
+```
 
 ## Prerequisites
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/streaming-data.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "c28d07938d8168bb3797b944906699307b2739ee461c0ff8a819cf54ce7f7e44"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "e0ccfac883f133e3f2b05c6ccfa54b5f09916ddc31c887f7caed00758f74c6e2"
 ---
 
 # Streaming Custom Data
@@ -64,14 +64,17 @@ export async function POST(req: Request) {
 
   const stream = createUIMessageStream<MyUIMessage>({
     execute: ({ writer }) => {
-      // 1. Send initial status (transient - won't be added to message history)
+      // 1. Start the assistant message before writing any message parts.
+      writer.write({ type: 'start' });
+
+      // 2. Send initial status (transient - won't be added to message history)
       writer.write({
         type: 'data-notification',
         data: { message: 'Processing your request...', level: 'info' },
         transient: true, // This part won't be added to message history
       });
 
-      // 2. Send sources (useful for RAG use cases)
+      // 3. Send sources (useful for RAG use cases)
       writer.write({
         type: 'source',
         value: {
@@ -83,7 +86,7 @@ export async function POST(req: Request) {
         },
       });
 
-      // 3. Send data parts with loading state
+      // 4. Send data parts with loading state
       writer.write({
         type: 'data-weather',
         id: 'weather-1',
@@ -94,7 +97,7 @@ export async function POST(req: Request) {
         model: __MODEL__,
         messages: await convertToModelMessages(messages),
         onEnd() {
-          // 4. Update the same data part (reconciliation)
+          // 5. Update the same data part (reconciliation)
           writer.write({
             type: 'data-weather',
             id: 'weather-1', // Same ID = update existing part
@@ -105,7 +108,7 @@ export async function POST(req: Request) {
             },
           });
 
-          // 5. Send completion notification (transient)
+          // 6. Send completion notification (transient)
           writer.write({
             type: 'data-notification',
             data: { message: 'Request completed', level: 'info' },
@@ -114,7 +117,9 @@ export async function POST(req: Request) {
         },
       });
 
-      writer.merge(toUIMessageStream({ stream: result.stream }));
+      writer.merge(
+        toUIMessageStream({ stream: result.stream, sendStart: false }),
+      );
     },
   });
 

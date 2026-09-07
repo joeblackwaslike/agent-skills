@@ -3,7 +3,7 @@ title: Sandbox CLI Reference
 product: vercel
 url: /docs/sandbox/cli-reference
 canonical_url: "https://vercel.com/docs/sandbox/cli-reference"
-last_updated: 2026-08-25
+last_updated: 2026-09-04
 type: reference
 prerequisites:
   - /docs/sandbox
@@ -16,8 +16,8 @@ related:
 summary: Based on the Docker CLI, you can use the Sandbox CLI to manage your Vercel Sandbox from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/cli-reference.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "bd92e990b82d179c6bca0797feeb963d7de89e2bb8680b82149968de7e336025"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "4b7a7563332eec9489009468f5af170616c88e27d0b63cd7135fc3edc5f2aeda"
 ---
 
 # Sandbox CLI Reference
@@ -419,7 +419,7 @@ sandbox config network-policy my-sandbox --allowed-domain vercel.com --allowed-d
 
 ## `sandbox copy`
 
-Copy files between your local filesystem and a remote sandbox.
+Copy a file between your local filesystem and a remote sandbox. The command transfers one file per invocation, and the destination is the full target path, not a directory.
 
 ```bash filename="terminal"
 sandbox copy [OPTIONS] <SOURCE> <DESTINATION>
@@ -433,9 +433,6 @@ sandbox copy ./local-file.txt my-sandbox:/app/remote-file.txt
 
 # Copy file from sandbox to local
 sandbox copy my-sandbox:/app/output.log ./output.log
-
-# Copy directory from sandbox to local
-sandbox copy my-sandbox:/app/dist/ ./build/
 ```
 
 ### Sandbox copy options
@@ -1064,7 +1061,7 @@ sandbox drives get-or-create [OPTIONS] <name>
 ### Sandbox drives get-or-create example
 
 ```bash filename="terminal"
-# Create or retrieve a drive with the default 100 GiB maximum size
+# Create or retrieve a drive with the default size of 1 TiB
 sandbox drives get-or-create cache
 
 # Create or retrieve a drive with a maximum size of 10 GiB
@@ -1078,7 +1075,7 @@ sandbox drives get-or-create cache --region sfo1
 
 | Option                | Alias    | Description                                                                                                                                                      |
 | --------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `--max-size <bytes>`  | -        | Maximum drive size in bytes, defaults to 100 GiB.                                                                                    |
+| `--max-size <bytes>`  | -        | Maximum drive size in bytes. Defaults to 1 TiB when omitted. The maximum quota is 16 TiB. [Contact Vercel Support](/help) to request a quota above 16 TiB.       |
 | `--region <region>`   | -        | [Region](/docs/sandbox/concepts/regions#regions-and-drives) where the drive is created, defaults to `iad1`. A drive's region can't change after creation.        |
 | `--token <token>`     | -        | Your [Vercel authentication token](/kb/guide/how-do-i-use-a-vercel-api-access-token). If you don't provide it, we'll use a stored token or prompt you to log in. |
 | `--project <project>` | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) you want to use with this command.                                             |
@@ -1228,7 +1225,7 @@ Test local code in the sandbox:
 
 ```bash
 # Copy your code to the sandbox
-sandbox copy ./my-app.js my-sandbox:/home/sandbox/
+sandbox copy ./my-app.js my-sandbox:/home/sandbox/my-app.js
 
 # Run it
 sandbox exec my-sandbox -- node /home/sandbox/my-app.js

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "6c549f459c16cfcd712417d4ce88c1b0dc59a614f1cb53e0f7fd9615135d51c0"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "f801c96cb4baa66317f6d4cf691ad27be1a63f1a66c4b57f8d4957225ef622d2"
 ---
 
 # AI SDK Harnesses
@@ -72,6 +72,7 @@ import { createVercelSandbox } from '@ai-sdk/sandbox-vercel';
 
 const agent = new HarnessAgent({
   harness: codex,
+  model: 'gpt-5.6-luna',
   sandbox: createVercelSandbox({
     runtime: 'node24',
     ports: [4000],
@@ -170,6 +171,7 @@ tools, UI, and terminal usage.
   - [Clarifai](/providers/openai-compatible-providers/clarifai)
   - [Heroku](/providers/openai-compatible-providers/heroku)
   - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)
+  - [Synthorai](/providers/openai-compatible-providers/synthorai)
 - [Community Providers](/providers/community-providers)
   - [Writing a Custom Provider](/providers/community-providers/custom-providers)
   - [A2A](/providers/community-providers/a2a)

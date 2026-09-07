@@ -15,8 +15,8 @@ related:
 summary: Learn how to set the memory / CPU of a Vercel Function.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/memory.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "d74d4f59f8f17791c12716bc4a2eade2726e258ba0ad899b8c10dcb686cb5327"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "8fa865c4f25be15f3c9fdfc7fd40d6a6cce8a40248f0570f14a9d68cc964c60b"
 ---
 
 # Configuring Memory and CPU for Vercel Functions
@@ -81,7 +81,7 @@ With [fluid compute enabled](/docs/fluid-compute) on Pro and Enterprise plans, t
 
 | Type                                                                              | Memory / CPU   | Use                                                                                                 |
 | --------------------------------------------------------------------------------- | -------------- | --------------------------------------------------------------------------------------------------- |
-| Standard  | 2 GB / 1 vCPU  | Predictable performance for production workloads. Default for [fluid compute](/docs/fluid-compute). |
+| Standard Default | 2 GB / 1 vCPU  | Predictable performance for production workloads. Default for [fluid compute](/docs/fluid-compute). |
 | Performance                                                                       | 4 GB / 2 vCPUs | Increased performance for latency-sensitive applications and SSR workloads.                         |
 
 Users on the Hobby plan can only use the default memory size of 2 GB (1 vCPU). **Hobby users cannot configure this size**. If you are on the Hobby plan, and have enabled fluid compute, the memory size will be managed by Vercel with a minimum of 1 vCPU.

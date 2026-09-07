@@ -16,8 +16,8 @@ related:
 summary: Incoming webhooks from third-party services, verified by Vercel Connect and forwarded to your projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/triggers.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "cddd6350c9a7c93f2a513b6c5746a9240ba01d803adb6cee7591c108e1823fbc"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "7d616844b272552850251625277ac8586b445bb7c3db69ef36ad13134ac2c256"
 ---
 
 # Triggers
@@ -33,7 +33,6 @@ A **trigger** is an incoming webhook from a third-party service that Vercel Conn
 - [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftriggers&source_site=vercel-docs&relationship=related) — Authenticate Slack, Discord, GitHub, Linear, Notion, and Telegram adapters with Vercel Connect — short-lived runtime tok
 - [Chat SDK now supports Vercel Connect](https://vercel.com/changelog/chat-sdk-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftriggers&source_site=vercel-docs&relationship=related)
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftriggers&source_site=vercel-docs&relationship=related)
-- [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftriggers&source_site=vercel-docs&relationship=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftriggers&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 - [Observability](https://vercel.com/docs/connect/observability?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftriggers&source_site=vercel-docs&relationship=related) — Monitor token requests, authorizations, revocations, and trigger deliveries for your connectors.
 - [Connectors](https://vercel.com/docs/connect/concepts/connectors?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftriggers&source_site=vercel-docs&relationship=related) — A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are

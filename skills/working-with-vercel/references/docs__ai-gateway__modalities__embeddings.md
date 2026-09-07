@@ -13,8 +13,8 @@ related:
 summary: Generate vector embeddings for semantic search, similarity matching, and retrieval-augmented generation (RAG) through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/embeddings.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "1bf2b0a5bcb8cc85b8635de2d461ae9b0b20ae2b90083307fb8a3cce188429b0"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "c0dd6ba1703aa0569fd303f097c9e7c543fe671273c492d1e8ee1da924cdf99d"
 ---
 
 # Embeddings
@@ -31,9 +31,9 @@ Generate vector embeddings for semantic search, similarity matching, and retriev
 - [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fembeddings&source_site=vercel-docs&relationship=related)
 - [Image Generation](https://vercel.com/docs/ai-gateway/modalities/image-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fembeddings&source_site=vercel-docs&relationship=related) — Generate and edit images using AI models through Vercel AI Gateway with support for multiple providers and modalities.
 - [Models & Providers](https://vercel.com/docs/ai-gateway/models-and-providers?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fembeddings&source_site=vercel-docs&relationship=related) — Work with models and providers in AI Gateway: provider routing and fallbacks, filtering, timeouts, caching, service tier
-- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fembeddings&source_site=vercel-docs&relationship=related) — Get started with AI Gateway by generating text, images, video, speech, or transcriptions, or by building realtime voice
 - [Vercel & OpenAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fembeddings&source_site=vercel-docs&relationship=related) — Integrate your Vercel project with OpenAI's powerful suite of models.
 - [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fembeddings&source_site=vercel-docs&relationship=related) — Learn how to add a new AI model to your Vercel projects
+- [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fembeddings&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/embeddings.graph.md](/docs/ai-gateway/modalities/embeddings.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fembeddings&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

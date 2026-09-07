@@ -16,8 +16,8 @@ related:
 summary: Set up Vercel Queues with the SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/quickstart.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "c1a1bc261e1a53c54eff5d9463ca7ed99530af1db5c95d1e9a96e5dbee869422"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "0e9da511a55f396cab81f4e8fb7a951ff16ae7782fa1e3c8c240a99f217eb23c"
 ---
 
 # Quickstart
@@ -32,17 +32,24 @@ This guide shows how to send your first queue message and process it with the Ve
 
 - [Vercel Python Queues SDK is now available in beta](https://vercel.com/changelog/vercel-python-queues-sdk-is-now-available-in-beta?from=related&source_path=%2Fdocs%2Fqueues%2Fquickstart&source_site=vercel-docs&relationship=related)
 - [How to run background jobs in Next.js](https://vercel.com/kb/guide/how-to-run-background-jobs-in-nextjs-on-vercel?from=related&source_path=%2Fdocs%2Fqueues%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn the durable way to run background jobs in Next.js on Vercel with the Workflow SDK, and when to reach for Queues or
-- [Vercel Queues now in public beta](https://vercel.com/changelog/vercel-queues-now-in-public-beta?from=related&source_path=%2Fdocs%2Fqueues%2Fquickstart&source_site=vercel-docs&relationship=related)
 - [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel?from=related&source_path=%2Fdocs%2Fqueues%2Fquickstart&source_site=vercel-docs&relationship=related) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
-- [Vercel Queues is now in Limited Beta](https://vercel.com/changelog/vercel-queues-is-now-in-limited-beta?from=related&source_path=%2Fdocs%2Fqueues%2Fquickstart&source_site=vercel-docs&relationship=related)
 - [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel?from=related&source_path=%2Fdocs%2Fqueues%2Fquickstart&source_site=vercel-docs&relationship=related) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
-- [Queues concepts](https://vercel.com/docs/queues/concepts?from=related&source_path=%2Fdocs%2Fqueues%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
+- [Vercel Queues now in public beta](https://vercel.com/changelog/vercel-queues-now-in-public-beta?from=related&source_path=%2Fdocs%2Fqueues%2Fquickstart&source_site=vercel-docs&relationship=related)
+- [Vercel Queues is now in Limited Beta](https://vercel.com/changelog/vercel-queues-is-now-in-limited-beta?from=related&source_path=%2Fdocs%2Fqueues%2Fquickstart&source_site=vercel-docs&relationship=related)
 - [Run background tasks with Celery on Vercel](https://vercel.com/docs/frameworks/backend/celery?from=related&source_path=%2Fdocs%2Fqueues%2Fquickstart&source_site=vercel-docs&relationship=related) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
+- [Queues concepts](https://vercel.com/docs/queues/concepts?from=related&source_path=%2Fdocs%2Fqueues%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fqueues%2Fquickstart&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fqueues%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fqueues%2Fquickstart&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/queues/quickstart.graph.md](/docs/queues/quickstart.graph.md?from=related&source_path=%2Fdocs%2Fqueues%2Fquickstart&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
+
+**Agent prompt**
+
+```text
+Help me set up Vercel Queues in this project. First, make sure the Vercel CLI is installed (`npm i -g vercel`). If I'm using Claude Code or Cursor, install the Vercel Plugin (`npx plugins add vercel/vercel-plugin`). For other agents, install Vercel Skills (`npx skills add vercel-labs/agent-skills`). Detect whether this is a JavaScript/TypeScript or Python project. Then: 1. Install @vercel/queue for JavaScript/TypeScript or vercel-queue for Python. 2. Run `vercel link` and `vercel env pull` to get OIDC credentials. 3. Create a producer that sends messages to an 'orders' topic using send. 4. For JavaScript/TypeScript, create a consumer route using handleCallback and configure its queue trigger in vercel.json. For Python, create a function decorated with @subscribe and declare its dotted Python module path, such as queues.orders, as the entrypoint in [[tool.vercel.subscribers]] in pyproject.toml. 5. Test locally with `vercel dev`.
+```
 
 In this quickstart:
 

@@ -3,7 +3,7 @@ title: Safety Identifiers
 product: vercel
 url: /docs/ai-gateway/security-and-compliance/safety-identifiers
 canonical_url: "https://vercel.com/docs/ai-gateway/security-and-compliance/safety-identifiers"
-last_updated: 2018-10-20
+last_updated: 2026-08-28
 type: how-to
 prerequisites:
   - /docs/ai-gateway/security-and-compliance
@@ -13,8 +13,8 @@ related:
 summary: Learn how to send a unique safety identifier per end user through AI Gateway so provider-side abuse action isolates individual users instead of your...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/safety-identifiers.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "5771d02c55a31f602d4a7eafef3ef83e03e0001f98a85724a3ae45e6bcdd1e6a"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "519820cf94bfd79aa54685ad6b55b4d4159e3617a6565afa1f0dad609db23fab"
 ---
 
 # Safety Identifiers

@@ -3,7 +3,7 @@ title: Cache Status and Reasons
 product: vercel
 url: /docs/caching/cache-status
 canonical_url: "https://vercel.com/docs/caching/cache-status"
-last_updated: 2026-08-11
+last_updated: 2026-08-28
 type: reference
 prerequisites:
   - /docs/caching
@@ -16,8 +16,8 @@ related:
 summary: Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass, or serve stale from the...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/cache-status.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "588c36096171153eed5331e0556c956b81bf08f1b7c79cf0e2d5e0a90d0cb838"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "4707ebfc67ff1cbf1da8529fe5e4c23211ffb8356d2344c1a0892a09d38a118a"
 ---
 
 # Cache Status and Reasons
@@ -36,7 +36,6 @@ Vercel records how each cacheable request resolves as a cache **status**, and wh
 - [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-status&source_site=vercel-docs&relationship=related)
 - [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-status&source_site=vercel-docs&relationship=related) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
 - [Data Cache for Next.js](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-status&source_site=vercel-docs&relationship=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
-- [vercel cache](https://vercel.com/docs/cli/cache?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-status&source_site=vercel-docs&relationship=related) — Learn how to manage cache for your project using the vercel cache CLI command.
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-status&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/caching/cache-status.graph.md](/docs/caching/cache-status.graph.md?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-status&source_site=vercel-docs&relationship=graph)

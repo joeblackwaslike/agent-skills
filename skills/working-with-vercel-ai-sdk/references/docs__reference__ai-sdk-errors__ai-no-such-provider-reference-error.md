@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "f3791e8b50be334817ce517e0a2661cbba09ece8de07eccd154a8542fe17e910"
+fetched_at: "2026-09-07T09:04:32.364Z"
+sha256: "fd00fd7beb8d453b015a5c055912567803fcf04fa5abb0f9d762915ad2654bd0"
 ---
 
 # AI_NoSuchProviderReferenceError
@@ -62,6 +62,7 @@ if (NoSuchProviderReferenceError.isInstance(error)) {
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
 - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
 - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)
+- [ToolChoiceViolationError](/docs/reference/ai-sdk-errors/ai-tool-choice-violation-error)
 - [AI_TypeValidationError](/docs/reference/ai-sdk-errors/ai-type-validation-error)
 - [AI_UIMessageStreamError](/docs/reference/ai-sdk-errors/ai-ui-message-stream-error)
 - [AI_UnsupportedFunctionalityError](/docs/reference/ai-sdk-errors/ai-unsupported-functionality-error)

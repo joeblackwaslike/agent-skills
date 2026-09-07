@@ -3,7 +3,7 @@ title: Deploy Popover
 product: vercel
 url: /docs/platforms/platform-elements/blocks/deploy-popover
 canonical_url: "https://vercel.com/docs/platforms/platform-elements/blocks/deploy-popover"
-last_updated: 2026-06-26
+last_updated: 2026-09-03
 type: reference
 prerequisites:
   - /docs/platforms/platform-elements/blocks
@@ -14,13 +14,15 @@ related:
 summary: A popover interface for deploying files to Vercel with real-time status tracking.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/blocks/deploy-popover.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "e9954510653ea5845690c297e0141a95b681b250a46aba1168e98bb058881178"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "6bf97aee6b429b568f0af482b6b4f1cd1ae5dbb7e14ff78af9dd74495c140b1a"
 ---
 
 # Deploy Popover
 
 ## Overview
+
+The Deploy Popover component provides a user-friendly popover interface for deploying files to Vercel. It includes real-time deployment status tracking, error handling, and the ability to inspect or visit deployments once they're ready.
 
 
 <!-- docsgraph:related -->
@@ -28,22 +30,31 @@ sha256: "e9954510653ea5845690c297e0141a95b681b250a46aba1168e98bb058881178"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Deployments](https://v0.app/docs/deployments?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fdeploy-popover&source_site=vercel-docs&relationship=related) — Deploy your v0 chats to Vercel with one click and manage production deployments.
 - [Introducing Platform Elements](https://vercel.com/changelog/introducing-platform-elements?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fdeploy-popover&source_site=vercel-docs&relationship=related)
-- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fdeploy-popover&source_site=vercel-docs&relationship=related) — Learn how to create and manage deployments on Vercel.
+- [Deployments](https://v0.app/docs/deployments?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fdeploy-popover&source_site=vercel-docs&relationship=related) — Preview and publish v0 projects on Vercel, then manage domains, visibility, and production updates.
+- [Run and track deploys from Slack](https://vercel.com/kb/guide/run-and-track-deploys-from-slack?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fdeploy-popover&source_site=vercel-docs&relationship=related) — Build a Slack deploy bot with Chat SDK and Vercel Workflows. Dispatch GitHub Actions from a slash command, gate producti
+- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fdeploy-popover&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Deploying with Vercel Drop](https://vercel.com/docs/drop?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fdeploy-popover&source_site=vercel-docs&relationship=related) — Vercel Drop lets you deploy a file or folder by dragging it into your browser, with no Git or CLI required.
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fdeploy-popover&source_site=vercel-docs&relationship=related) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
-- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fdeploy-popover&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [Upload Deployment Files](https://vercel.com/docs/rest-api/deployments/upload-deployment-files?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fdeploy-popover&source_site=vercel-docs&relationship=related) — POST /v2/files — Before you create a deployment you need to upload the required files for that deployment. To do it, you
+- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fdeploy-popover&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
 
 Full cross-link map for this page: [/docs/platforms/platform-elements/blocks/deploy-popover.graph.md](/docs/platforms/platform-elements/blocks/deploy-popover.graph.md?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fdeploy-popover&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-The Deploy Popover component provides a user-friendly popover interface for deploying files to Vercel. It includes real-time deployment status tracking, error handling, and the ability to inspect or visit deployments once they're ready.
-
 ## Installation
 
-Install the `deploy-popover` block into your project using the Platform Elements installer.
+Install the `deploy-popover` block with the Vercel Platforms CLI:
+
+```bash
+npx @vercel/platforms@latest add deploy-popover
+```
+
+You can also install it with the shadcn CLI:
+
+```bash
+npx shadcn@latest add https://registry.platforms.guide/deploy-popover.json
+```
 
 ## Features
 

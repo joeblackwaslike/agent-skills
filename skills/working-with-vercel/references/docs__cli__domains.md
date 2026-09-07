@@ -8,12 +8,12 @@ type: reference
 prerequisites:
   - /docs/cli
 related:
-  []
+  - /docs/cli/global-options
 summary: Learn how to buy, sell, transfer, and manage your domains using the vercel domains CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/domains.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "cc945955d8f2b98d6fad1ae62e729ac7c6f0e7851d7907eff478d7a62bb54b1c"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "2fa50db1179b2d3540dd188e3873ff6bd86b3da8b71e4e55307eb46199098d07"
 ---
 
 # vercel domains
@@ -26,13 +26,12 @@ The `vercel domains` command manages domains under the current scope. With it, y
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel CLI expands commands for DNS, domains, and projects](https://vercel.com/changelog/vercel-cli-expands-commands-for-dns-domains-and-projects?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=related)
 - [Vercel CLI now supports verifying DNS configuration](https://vercel.com/changelog/vercel-cli-now-supports-verifying-dns-configuration?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=related)
 - [vercel dns](https://vercel.com/docs/cli/dns?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=related) — Learn how to manage your DNS records for your domains using the vercel dns CLI command.
-- [Working with domains](https://vercel.com/docs/domains/working-with-domains?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=related) — Learn how domains work and the options Vercel provides for managing them.
-- [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=related) — Add and configure a custom domain for your Vercel project using the CLI.
-- [Domains Overview](https://vercel.com/docs/domains?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=related) — Learn the fundamentals of how domains, DNS, and nameservers work on Vercel.
 - [vercel buy](https://vercel.com/docs/cli/buy?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=related) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 
 Full cross-link map for this page: [/docs/cli/domains.graph.md](/docs/cli/domains.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -295,6 +294,24 @@ vercel domains verify my-domain.com --strict
 
 *Using the \`vercel domains verify\` command with the
 \`--strict\` option.*
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel domains` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 
 ---

@@ -3,7 +3,7 @@ title: Video Generation
 product: vercel
 url: /docs/ai-gateway/modalities/video-generation
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/video-generation"
-last_updated: 2026-08-22
+last_updated: 2026-08-27
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/modalities
@@ -17,13 +17,15 @@ related:
 summary: Generate videos from text prompts, images, or video input using AI models through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "9aa122d721ddc96d0ef573e042e89c5781cc9e074175263130497d19c2a68982"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "1b4f7bd55bea4d6fe1348490468e5b7d1651383a05769920379f0d206f1c8582"
 ---
 
 # Video Generation
 
 > **💡 Note:** Video generation requires **AI SDK 6 or later** and uses the `experimental_generateVideo` function. This API is experimental and subject to change in future releases.
+
+AI Gateway supports video generation, letting you create videos from text prompts, images, or video input. You can control resolution, duration, aspect ratio, and audio through a unified API across multiple providers.
 
 
 <!-- docsgraph:related -->
@@ -39,13 +41,11 @@ sha256: "9aa122d721ddc96d0ef573e042e89c5781cc9e074175263130497d19c2a68982"
 - [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation&source_site=vercel-docs&relationship=related)
 - [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation&source_site=vercel-docs&relationship=related)
 - [Build a Claude Managed Agent with Vercel Sandbox](https://vercel.com/kb/guide/run-claude-managed-agent-tools-with-vercel-sandbox?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation&source_site=vercel-docs&relationship=related) — Build a Claude Managed Agent with Vercel Sandbox: each session runs in a fresh microVM with credential brokering and a w
-- [Build a web research agent with Workflow SDK](https://vercel.com/kb/guide/durable-web-research-agent-with-workflow-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation&source_site=vercel-docs&relationship=related) — Build a web research agent that searches the web and returns a cited report. Powered by AI SDK and Workflow SDK, it jour
+- [ByteDance](https://ai-sdk.dev/providers/ai-sdk-providers/bytedance?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation&source_site=vercel-docs&relationship=related)
 - [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation.graph.md](/docs/ai-gateway/modalities/video-generation.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-AI Gateway supports video generation, letting you create videos from text prompts, images, or video input. You can control resolution, duration, aspect ratio, and audio through a unified API across multiple providers.
 
 To see all supported video models, use the **Video** filter at the [AI Gateway Models page](/ai-gateway/models?capabilities=video-generation).
 

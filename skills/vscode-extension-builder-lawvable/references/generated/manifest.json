@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-31T10:36:35.976Z",
+  "generated_at": "2026-09-07T08:58:36.074Z",
   "source": "Official Visual Studio Code developer documentation",
   "docs": [
     {
@@ -7,126 +7,126 @@
       "title": "Extension Anatomy",
       "url": "https://code.visualstudio.com/api/get-started/extension-anatomy",
       "file": "extension-anatomy.md",
-      "fetched_at": "2026-08-31T10:36:32.244Z",
-      "sha256": "e43b63e2e0b82d6f9bfd6716fc713b883232d67911aa76b7742595d8ed8776d4",
-      "bytes": 8074
+      "fetched_at": "2026-09-07T08:58:30.097Z",
+      "sha256": "47f16efbdef357ba47c6d2bd16d18b0d0478f4ae457cb6b3f5142cead46e7d74",
+      "bytes": 8073
     },
     {
       "slug": "activation-events",
       "title": "Activation Events",
       "url": "https://code.visualstudio.com/api/references/activation-events",
       "file": "activation-events.md",
-      "fetched_at": "2026-08-31T10:36:32.244Z",
-      "sha256": "14ccf459effa073b90c031385e2ab8fcd64d3d8b0103f9543d1302177f2b2647",
-      "bytes": 15123
+      "fetched_at": "2026-09-07T08:58:30.097Z",
+      "sha256": "ed7931b209be40f57db72866e2f59181aa607cd560a2b2d2bdab33b6a1566039",
+      "bytes": 15122
     },
     {
       "slug": "extension-capabilities",
       "title": "Extension Capabilities",
       "url": "https://code.visualstudio.com/api/extension-capabilities/overview",
       "file": "extension-capabilities.md",
-      "fetched_at": "2026-08-31T10:36:32.244Z",
-      "sha256": "9b2f69668869ec7889236fdaecb3cf736f9872546a8b0be284a7cb2ad84f67ea",
-      "bytes": 8332
+      "fetched_at": "2026-09-07T08:58:30.097Z",
+      "sha256": "6e0101af626ef85b77b2a0189ec15e4dbe200e68e144c84c3a17263e33f01bda",
+      "bytes": 8331
     },
     {
       "slug": "extension-host",
       "title": "Extension Host",
       "url": "https://code.visualstudio.com/api/advanced-topics/extension-host",
       "file": "extension-host.md",
-      "fetched_at": "2026-08-31T10:36:32.244Z",
-      "sha256": "188a25d4919972345c7740645efbb3e93d54aaaef75655384575756469983ecd",
-      "bytes": 5868
+      "fetched_at": "2026-09-07T08:58:30.097Z",
+      "sha256": "7cf413a4965c9956c95f935d1fbc78b6c80d93cb0d179404f9d310a6d5bc7c6d",
+      "bytes": 5867
     },
     {
       "slug": "testing-extensions",
       "title": "Testing Extensions",
       "url": "https://code.visualstudio.com/api/working-with-extensions/testing-extension",
       "file": "testing-extensions.md",
-      "fetched_at": "2026-08-31T10:36:32.244Z",
-      "sha256": "479fdd979bcf1db08c4aa3e8836fa19af3d0135791bb2ee8218c45be8a431333",
-      "bytes": 17032
+      "fetched_at": "2026-09-07T08:58:30.097Z",
+      "sha256": "9a996d41529984db417a5d39adcb42e1ec7a782e0d19c625cf47223ac4c3903d",
+      "bytes": 17031
     },
     {
       "slug": "bundling-extensions",
       "title": "Bundling Extensions",
       "url": "https://code.visualstudio.com/api/working-with-extensions/bundling-extension",
       "file": "bundling-extensions.md",
-      "fetched_at": "2026-08-31T10:36:32.244Z",
-      "sha256": "d4e3c8dad3afc1dd1133e52497cda0ea858e6a07ccd1a4dd5da6b6812ff5e489",
-      "bytes": 17879
+      "fetched_at": "2026-09-07T08:58:30.097Z",
+      "sha256": "388a58188ee72391b3546f00f2ff43261e8f5997f3ba8e37fccf0f6678bba1be",
+      "bytes": 17878
     },
     {
       "slug": "publishing-extensions",
       "title": "Publishing Extensions",
       "url": "https://code.visualstudio.com/api/working-with-extensions/publishing-extension",
       "file": "publishing-extensions.md",
-      "fetched_at": "2026-08-31T10:36:32.244Z",
-      "sha256": "2d1c768eb61db3b9e4589510447052511ba4f3ba96a9ee8bae187b7b5019b966",
-      "bytes": 34916
+      "fetched_at": "2026-09-07T08:58:30.097Z",
+      "sha256": "c063eb7d520b83743444753395b918889f49eb41cae43bc129d3f7dfc1decaa4",
+      "bytes": 34915
     },
     {
       "slug": "webviews",
       "title": "Webviews",
       "url": "https://code.visualstudio.com/api/extension-guides/webview",
       "file": "webviews.md",
-      "fetched_at": "2026-08-31T10:36:32.244Z",
-      "sha256": "0354f9c318431c07d37d65ccecf7b77199082c213030fc922ac3e1e26edda823",
-      "bytes": 46347
+      "fetched_at": "2026-09-07T08:58:30.097Z",
+      "sha256": "1738a473c486e12c084d715c93369a7e04a8463fc2557264ef29d68484fa53bf",
+      "bytes": 46346
     },
     {
       "slug": "webview-ux",
       "title": "Webview UX Guidelines",
       "url": "https://code.visualstudio.com/api/ux-guidelines/webviews",
       "file": "webview-ux.md",
-      "fetched_at": "2026-08-31T10:36:32.244Z",
-      "sha256": "2919ab47b3fd58557fcc11c7e271bb1ef390faf6130bc88255ab8b3a2701ebee",
-      "bytes": 2721
+      "fetched_at": "2026-09-07T08:58:30.097Z",
+      "sha256": "a2e9e799341364eb811548bac3bfe987615d4e382f31feb88858cb069406c93b",
+      "bytes": 2720
     },
     {
       "slug": "web-extensions",
       "title": "Web Extensions",
       "url": "https://code.visualstudio.com/api/extension-guides/web-extensions",
       "file": "web-extensions.md",
-      "fetched_at": "2026-08-31T10:36:32.244Z",
-      "sha256": "501b72991704c19e9b1e4453e86f1fef736c58f6ac8dfa8b882ae49bab6bba50",
-      "bytes": 38981
+      "fetched_at": "2026-09-07T08:58:30.097Z",
+      "sha256": "6ea8fd7019108b41a985e7e0e5fb3f1c4f63cc8d86d1f2dfdee69eaafef10a57",
+      "bytes": 38980
     },
     {
       "slug": "language-model-api",
       "title": "Language Model API",
       "url": "https://code.visualstudio.com/api/extension-guides/language-model",
       "file": "language-model-api.md",
-      "fetched_at": "2026-08-31T10:36:32.244Z",
-      "sha256": "b3b35ceac753bdc881f28c397cd2de9b8b2a226d72e016ca19973d6f29615ed2",
-      "bytes": 16000
+      "fetched_at": "2026-09-07T08:58:30.097Z",
+      "sha256": "ad3e23c010e2e6993a3501e1892d00f496b5c7f6e52ad11a3649eda9c4f58505",
+      "bytes": 15999
     },
     {
       "slug": "language-model-tool-api",
       "title": "Language Model Tool API",
       "url": "https://code.visualstudio.com/api/extension-guides/tools",
       "file": "language-model-tool-api.md",
-      "fetched_at": "2026-08-31T10:36:32.244Z",
-      "sha256": "3c8ae1f691700f32c1768d52acd7611330654d91bab45a3d5c06e68cf9ea7181",
-      "bytes": 16208
+      "fetched_at": "2026-09-07T08:58:30.097Z",
+      "sha256": "1c6ddb23179cedc449910d631f028449eef30581291af110a7eb19ca9e608e11",
+      "bytes": 16207
     },
     {
       "slug": "contribution-points",
       "title": "Contribution Points",
       "url": "https://code.visualstudio.com/api/references/contribution-points",
       "file": "contribution-points.md",
-      "fetched_at": "2026-08-31T10:36:32.244Z",
-      "sha256": "a0a33e216c0b930e908b57e7bdd20cb22c60425d826792db8767a7320493d6c0",
-      "bytes": 75586
+      "fetched_at": "2026-09-07T08:58:30.097Z",
+      "sha256": "74d850cecafe5afcd5d8c0fb6658694de953e946c2672463adaea49b1b817731",
+      "bytes": 75585
     },
     {
       "slug": "vscode-api",
       "title": "VS Code API",
       "url": "https://code.visualstudio.com/api/references/vscode-api",
       "file": "vscode-api.md",
-      "fetched_at": "2026-08-24T04:43:15.398Z",
-      "sha256": "2e8e6a4b18bb0893e8309f472c34f457ff83d78d13c9705e087698f4f32b8743",
-      "bytes": 1054186
+      "fetched_at": "2026-09-07T08:58:30.097Z",
+      "sha256": "f56dae860e6bfcbe3576462f5cd459b5e3cb9bcab7aa5bfbd0618b8ba415a8d1",
+      "bytes": 1054289
     }
   ]
 }

@@ -3,7 +3,7 @@ title: Connect to Google Cloud Platform (GCP)
 product: vercel
 url: /docs/oidc/gcp
 canonical_url: "https://vercel.com/docs/oidc/gcp"
-last_updated: 2026-06-23
+last_updated: 2026-09-01
 type: how-to
 prerequisites:
   - /docs/oidc
@@ -13,13 +13,15 @@ related:
 summary: "Learn how to configure your GCP project to trust Vercel's OpenID Connect (OIDC) Identity Provider (IdP)."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/gcp.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "21f7586ad2ebca1ce54b09148f360ad0ed5604ea87ba54a1ec1a55befc9eb334"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "03919a2ed84249c956d7000d1f85126e46c921ef601ba35f755279bd85fed5aa"
 ---
 
 # Connect to Google Cloud Platform (GCP)
 
 > **🔒 Permissions Required**: Secure backend access with OIDC federation
+
+To understand how GCP supports OIDC through Workload Identity Federation, consult the [GCP documentation](https://cloud.google.com/iam/docs/workload-identity-federation).
 
 
 <!-- docsgraph:related -->
@@ -29,7 +31,6 @@ sha256: "21f7586ad2ebca1ce54b09148f360ad0ed5604ea87ba54a1ec1a55befc9eb334"
 
 - [Connect to Microsoft Azure](https://vercel.com/docs/oidc/azure?from=related&source_path=%2Fdocs%2Foidc%2Fgcp&source_site=vercel-docs&relationship=related) — Learn how to configure your Microsoft Azure account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Foidc%2Fgcp&source_site=vercel-docs&relationship=related)
-- [Google Vertex AI](https://ai-sdk.dev/providers/ai-sdk-providers/google-vertex?from=related&source_path=%2Fdocs%2Foidc%2Fgcp&source_site=vercel-docs&relationship=related)
 - [OIDC](https://vercel.com/docs/ai-gateway/authentication-and-byok/oidc?from=related&source_path=%2Fdocs%2Foidc%2Fgcp&source_site=vercel-docs&relationship=related) — Authenticate AI Gateway requests with Vercel OIDC tokens, with no API key to manage.
 - [Connect to Amazon Web Services \\(AWS\\)](https://vercel.com/docs/oidc/aws?from=related&source_path=%2Fdocs%2Foidc%2Fgcp&source_site=vercel-docs&relationship=related) — Learn how to configure your AWS account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
 - [Connect to your own API](https://vercel.com/docs/oidc/api?from=related&source_path=%2Fdocs%2Foidc%2Fgcp&source_site=vercel-docs&relationship=related) — Learn how to configure your own API to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\)
@@ -37,8 +38,6 @@ sha256: "21f7586ad2ebca1ce54b09148f360ad0ed5604ea87ba54a1ec1a55befc9eb334"
 
 Full cross-link map for this page: [/docs/oidc/gcp.graph.md](/docs/oidc/gcp.graph.md?from=related&source_path=%2Fdocs%2Foidc%2Fgcp&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-To understand how GCP supports OIDC through Workload Identity Federation, consult the [GCP documentation](https://cloud.google.com/iam/docs/workload-identity-federation).
 
 ## Configure your GCP project
 
@@ -167,7 +166,7 @@ In the API route for this function, use the following code to perform the follow
 
 - Use `google-auth-library` to create an External Account Client
 - Use it to authenticate with Google Cloud Services
-- Use Vertex AI with [Google Vertex Provider](https://sdk.vercel.ai/providers/ai-sdk-providers/google-vertex) to generate text from a prompt
+- Use Vertex AI with [Google Vertex Provider](https://ai-sdk.dev/providers/ai-sdk-providers/google-vertex) to generate text from a prompt
 
 ```ts filename="/api/gcp-vertex-ai/route.ts"
 import { getVercelOidcToken } from '@vercel/oidc';

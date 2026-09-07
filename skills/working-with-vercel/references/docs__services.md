@@ -16,13 +16,16 @@ related:
 summary: Deploy multiple backends and frontends within a single Vercel project using services.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "24c7364981b42ecee300e21da3e52b5eca5b79eac683a80695981ddcd8e8d3cc"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "ca1b294ddc6d653b0e73f2f6bf921064376f84848f12a27ad3c924ed3cc7656e"
 ---
 
 # Services
 
 > **🔒 Permissions Required**: Services
+
+Services let you deploy multiple backends and frontends within a single Vercel project. For example, a Next.js frontend and a FastAPI backend in the same repository deploy together with shared routing, environment variables, and a unique domain,
+replacing the need to split monorepos into separate Vercel projects.
 
 
 <!-- docsgraph:related -->
@@ -38,16 +41,13 @@ sha256: "24c7364981b42ecee300e21da3e52b5eca5b79eac683a80695981ddcd8e8d3cc"
 - [Deploy Go apps on Vercel using Docker](https://vercel.com/kb/guide/deploy-go-using-docker-vercel?from=related&source_path=%2Fdocs%2Fservices&source_site=vercel-docs&relationship=related) — Deploy an existing Dockerized Go app to Vercel using Memos as a real-world example, with Neon Postgres for durable data.
 - [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fservices&source_site=vercel-docs&relationship=related) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
 - [Deploy PHP on Vercel with Docker](https://vercel.com/kb/guide/deploy-php-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fservices&source_site=vercel-docs&relationship=related) — Build a PHP application with FrankenPHP and Docker, then deploy it to Vercel Functions with managed configuration, stora
+- [Secure internal communication between services (beta)](https://vercel.com/changelog/secure-internal-communication-between-services?from=related&source_path=%2Fdocs%2Fservices&source_site=vercel-docs&relationship=related)
 - [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Fservices&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
 - [Glossary](https://vercel.com/docs/glossary?from=related&source_path=%2Fdocs%2Fservices&source_site=vercel-docs&relationship=related) — Learn about the terms and concepts used in Vercel's products and documentation.
 - [Static Configuration with vercel.json](https://vercel.com/docs/project-configuration/vercel-json?from=related&source_path=%2Fdocs%2Fservices&source_site=vercel-docs&relationship=related) — Learn how to use vercel.json to configure and override the default behavior of Vercel from within your project.
-- [Static Configuration with vercel.toml](https://vercel.com/docs/project-configuration/vercel-toml?from=related&source_path=%2Fdocs%2Fservices&source_site=vercel-docs&relationship=related) — Configure your Vercel project with a TOML file using the same properties as vercel.json.
 
 Full cross-link map for this page: [/docs/services.graph.md](/docs/services.graph.md?from=related&source_path=%2Fdocs%2Fservices&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Services let you deploy multiple backends and frontends within a single Vercel project. For example, a Next.js frontend and a FastAPI backend in the same repository deploy together with shared routing, environment variables, and a unique domain,
-replacing the need to split monorepos into separate Vercel projects.
 
 > **💡 Note:** Looking for the earlier `experimentalServices` configuration? See
 > [Experimental Services](/docs/services/experimental). The `services` model

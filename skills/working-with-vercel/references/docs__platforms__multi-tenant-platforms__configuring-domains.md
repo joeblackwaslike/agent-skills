@@ -14,13 +14,15 @@ related:
 summary: Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "4908759eab96cffadc4372c35773395f153e3bb3a3d02c495ffdc4cd69c6666a"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "c10be2c973522e7efd97caddc034d64d16eaf4014ee8f7c4789ad1c4f5253f32"
 ---
 
 # Configuring Custom Domains
 
 ## Using wildcard domains
+
+If you plan on offering subdomains like `*.acme.com`, add a wildcard domain to your Vercel project. This requires using [Vercel's nameservers](/docs/domains/working-with-nameservers) so that Vercel can manage the DNS challenges necessary for generating wildcard SSL certificates.
 
 
 <!-- docsgraph:related -->
@@ -40,8 +42,6 @@ sha256: "4908759eab96cffadc4372c35773395f153e3bb3a3d02c495ffdc4cd69c6666a"
 
 Full cross-link map for this page: [/docs/platforms/multi-tenant-platforms/configuring-domains.graph.md](/docs/platforms/multi-tenant-platforms/configuring-domains.graph.md?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-If you plan on offering subdomains like `*.acme.com`, add a wildcard domain to your Vercel project. This requires using [Vercel's nameservers](/docs/domains/working-with-nameservers) so that Vercel can manage the DNS challenges necessary for generating wildcard SSL certificates.
 
 1. Point your domain to Vercel's nameservers (`ns1.vercel-dns.com` and `ns2.vercel-dns.com`).
 2. In your Vercel project settings, add the apex domain (e.g., `acme.com`).

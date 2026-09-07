@@ -1,8 +1,8 @@
 ---
 title: "Testing Extensions"
 source: "https://code.visualstudio.com/api/working-with-extensions/testing-extension"
-fetched_at: "2026-08-31T10:36:32.244Z"
-sha256: "479fdd979bcf1db08c4aa3e8836fa19af3d0135791bb2ee8218c45be8a431333"
+fetched_at: "2026-09-07T08:58:30.097Z"
+sha256: "9a996d41529984db417a5d39adcb42e1ec7a782e0d19c625cf47223ac4c3903d"
 ---
 
 # Testing Extensions
@@ -461,4 +461,4 @@ For more information on how to declare trust requirements in your extension mani
 - [Workspace Trust Extension Guide](https://code.visualstudio.com/api/extension-guides/workspace-trust) - Learn how to declare and handle workspace trust in your extension.
 
  
- 8/26/2026
+ 9/2/2026

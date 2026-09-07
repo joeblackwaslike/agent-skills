@@ -13,13 +13,15 @@ related:
 summary: Resolve tenants and route requests by subdomain, custom domain, or path using Next.js Proxy on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/middleware-and-routing.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "124182119978e4d060cdde5d3cdc652848d671704c20ff1dda6f4d6342a5e4ca"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "ee8c06e48b02d65f7616019fb4f0e0fdca771ba6a664e1862c80257ce78845ae"
 ---
 
 # Proxy and Routing
 
 ## Resolve tenants with Proxy
+
+Tenant headers must come from the proxy, never from the client. Any caller can attach an `x-tenant-id` header to a request, and if the proxy forwards that value untouched, your app trusts it and serves data for whichever tenant the caller picked. The examples below delete or overwrite inbound `x-tenant-*` headers before forwarding each request, including on paths that skip tenant resolution, so a client-supplied `x-tenant-id` never reaches your app.
 
 
 <!-- docsgraph:related -->
@@ -36,8 +38,6 @@ sha256: "124182119978e4d060cdde5d3cdc652848d671704c20ff1dda6f4d6342a5e4ca"
 
 Full cross-link map for this page: [/docs/platforms/multi-tenant-platforms/middleware-and-routing.graph.md](/docs/platforms/multi-tenant-platforms/middleware-and-routing.graph.md?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fmiddleware-and-routing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Tenant headers must come from the proxy, never from the client. Any caller can attach an `x-tenant-id` header to a request, and if the proxy forwards that value untouched, your app trusts it and serves data for whichever tenant the caller picked. The examples below delete or overwrite inbound `x-tenant-*` headers before forwarding each request, including on paths that skip tenant resolution, so a client-supplied `x-tenant-id` never reaches your app.
 
 > **💡 Note:** Next.js renamed the `middleware` file convention to `proxy` in Next.js 16. Run
 > `npx @next/codemod@canary middleware-to-proxy` to migrate. The examples below

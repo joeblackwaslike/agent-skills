@@ -3,27 +3,28 @@ title: Vercel Workflows
 product: workflows
 url: /docs/workflows
 canonical_url: "https://vercel.com/docs/workflows"
-last_updated: 2026-08-27
+last_updated: 2026-09-03
 type: conceptual
 prerequisites:
   []
 related:
-  - /docs/workflows/python
   - /docs/queues
   - /docs/workflows/concepts
   - /docs/workflows/pricing
   - /docs/regions
-summary: Vercel Workflows is a fully managed platform for building durable, reliable, and observable applications and AI agents with the Workflow SDK.
+  - /docs/functions/configuring-functions/region
+summary: Build agents and applications that retry failed steps, wait for external events, and resume across crashes and deployments with Vercel Workflows.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/workflows.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "ca5d82310e7aeacb0efbe48264d05cf87a0a84e561d92842e8910cbc475e4cca"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "dfc6b510e2de7cfcfcc5d44e0aa08ea54e5783ecca82829af2b72a064b0092d5"
 ---
 
 # Vercel Workflows
 
-Vercel Workflows is a fully managed platform for building durable applications
-and AI agents in JavaScript, TypeScript, and [Python](/docs/workflows/python).
+## Build agents and applications that pause and resume
+
+Vercel Workflows runs multi-step logic as durable code that can retry failed steps, wait for external events, and resume across crashes and deployments.
 
 
 <!-- docsgraph:related -->
@@ -31,7 +32,6 @@ and AI agents in JavaScript, TypeScript, and [Python](/docs/workflows/python).
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Python](https://workflow-sdk.dev/docs/getting-started/python?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=related) — Set up the Workflow Python SDK in your Python application.
 - [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=related)
 - [AI Gateway now supports asynchronous video generation](https://vercel.com/changelog/ai-gateway-now-supports-asynchronous-video-generation?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=related)
 - [Configure where run state lives in Vercel Workflows](https://vercel.com/changelog/configure-where-run-state-lives-in-vercel-workflows?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=related)
@@ -43,27 +43,10 @@ and AI agents in JavaScript, TypeScript, and [Python](/docs/workflows/python).
 - [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
 - [Building an AI chat app with RAG and source citations on Vercel](https://vercel.com/kb/guide/building-ai-chat-app-with-rag-and-citations-on-vercel?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=related) — A production stack for AI chat with retrieval, reranking, source citations, and background ingestion on Vercel using Nex
 - [Building human-in-the-loop agents for community moderation with durable workflows](https://vercel.com/kb/guide/building-human-in-the-loop-agents-for-community-moderation-with-durable-workflows?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=related) — Learn how to build AI agents that escalate decisions to humans in Slack, pause and resume runs reliably, and stream prog
+- [Built-in durability: Introducing Workflow Development Kit](https://vercel.com/blog/introducing-workflow?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=related)
 
 Full cross-link map for this page: [/docs/workflows.graph.md](/docs/workflows.graph.md?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-It builds on the open-source [Workflow SDK](https://workflow-sdk.dev) for
-JavaScript and TypeScript, and on workflow support in the
-[`vercel` Python SDK](/docs/workflows/python) to let your code pause, resume,
-and maintain state.
-
-With Workflows, Vercel manages the infrastructure so you can focus on writing business logic. **Vercel Functions** execute your workflow and step code. **[Vercel Queues](/docs/queues)** enqueue and execute those routes with reliability. **Managed persistence** stores all state and event logs in an optimized database.
-
-Your workflows are:
-
-- **Resumable**: Pause for minutes or months, then resume from the exact point.
-- **Durable**: Survive deployments and crashes with deterministic replays.
-- **Observable**: Use built-in logs, metrics, and tracing and view them in your [Vercel dashboard](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability%2Fworkflows\&title=Vercel+Workflows).
-- Write async JavaScript, TypeScript, or Python with familiar language primitives. No YAML or state machines.
-
-![Image](https://vercel.com/docs-assets/static/docs/workflow/workflow-diagram-light.avif)
-
-Use a workflow when your logic needs to pause, resume, or span minutes to months:
 
 ```typescript filename="app/workflows/ai-content-workflow.ts" {2}
 export async function aiContentWorkflow(topic: string) {
@@ -76,6 +59,22 @@ export async function aiContentWorkflow(topic: string) {
   return { draft, summary };
 }
 ```
+
+Vercel Workflows builds on the open-source [Workflow SDK](https://workflow-sdk.dev) for
+JavaScript and TypeScript, and on workflow support in the
+[`vercel` Python SDK](https://workflow-sdk.dev/docs/getting-started/python) to let your code pause, resume,
+and maintain state.
+
+With Workflows, Vercel manages the infrastructure so you can focus on writing business logic. **Vercel Functions** execute your workflow and step code. **[Vercel Queues](/docs/queues)** enqueue and execute those routes with reliability. **Managed persistence** stores all state and event logs in an optimized database.
+
+Your workflows are:
+
+- **Resumable**: Pause for minutes or months, then resume from the exact point.
+- **Durable**: Survive deployments and crashes with deterministic replays.
+- **Observable**: Use built-in logs, metrics, and tracing and view them in your [Vercel dashboard](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability%2Fworkflows\&title=Vercel+Workflows).
+- Write async JavaScript, TypeScript, or Python with familiar language primitives. No YAML or state machines.
+
+![Image](https://vercel.com/docs-assets/static/docs/workflow/workflow-diagram-light.avif)
 
 ## Getting started
 
@@ -155,6 +154,15 @@ You can track runs in real time, trace failures, and analyze performance without
 To inspect your runs, go to your [Vercel dashboard](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability%2Fworkflows\&title=Vercel+Workflows)
 , select your project and navigate to **Observability**, then **Workflows**.
 
+## Roles and permissions
+
+Workflow run data can include recorded inputs, outputs, errors, and state.
+
+Team owners can read decrypted Workflow run data. To grant a non-owner access to
+decrypted Workflow run data without granting owner-level access, assign the
+**Workflow Run Data Viewer** extended permission. For compatible roles and
+assignment details, see [Extended Permissions](/docs/rbac/access-roles/extended-permissions).
+
 ## Resources
 
 **Pricing and Limits**: Billing, included usage, and service limits. [Learn more →](/docs/workflows/pricing)
@@ -163,13 +171,13 @@ To inspect your runs, go to your [Vercel dashboard](https://vercel.com/d?to=%2F%
 
 **Slack bot guide**: Stateful Slack bots with Vercel Workflows Guide [Learn more →](/kb/guide/stateful-slack-bots-with-vercel-workflow)
 
-**Agent guide**: Build a Claude Managed Agent Guide [Learn more →](/kb/guide/claude-managed-agent-vercel)
+**Durable agent guide**: Build an agent with persisted state, retried tool calls, resumable streams, and human approval. [Learn more →](https://workflow-sdk.dev/docs/ai)
 
 **Workflow SDK documentation**: Explore the Workflow SDK API and core primitives. [Learn more →](https://workflow-sdk.dev)
 
 **Workflow SDK guides**: Follow tutorials for common workflow patterns. [Learn more →](/kb/workflow-sdk)
 
-**Python**: Build workflows in Python with the Vercel SDK. [Learn more →](/docs/workflows/python)
+**Python**: Build workflows in Python with the Vercel SDK. [Learn more →](https://workflow-sdk.dev/docs/getting-started/python)
 
 **Vercel Queues**: The durable event streaming system that powers Workflow. [Learn more →](/docs/queues)
 

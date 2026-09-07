@@ -12,13 +12,15 @@ related:
 summary: Learn how to integrate an iframe into your application to support PCI DSS compliance.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/pci-dss.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "92411229610168e00387c7fc559d6ff123aed58722333ea624c5f46e23561954"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "7507f83ff033329d2c4afce28ea430e421fe9c4fdcb5c06246fd89730d119d47"
 ---
 
 # PCI DSS iframe Integration
 
 ## Benefits of using an `iframe`
+
+When you use an [\`iframe\`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe "<span>What is an `iframe`?</span>") to process payments, you create a secure conduit between your end users and your payment provider.
 
 
 <!-- docsgraph:related -->
@@ -38,8 +40,6 @@ sha256: "92411229610168e00387c7fc559d6ff123aed58722333ea624c5f46e23561954"
 
 Full cross-link map for this page: [/docs/security/pci-dss.graph.md](/docs/security/pci-dss.graph.md?from=related&source_path=%2Fdocs%2Fsecurity%2Fpci-dss&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-When you use an [\`iframe\`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe "<span>What is an `iframe`?</span>") to process payments, you create a secure conduit between your end users and your payment provider.
 
 In accordance with Vercel's [shared responsibility model](/docs/security/shared-responsibility), this approach facilitates:
 

@@ -12,8 +12,8 @@ related:
 summary: Learn how to set custom rules to disallow one or more files from importing one or more predefined modules
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/custom-rules/forbidden-imports.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "f522c5dc92fe7b2edc54a229625d00dfd39d202c58adaadb8b6377450171d2f8"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "55389e647a01b7fa1db32350b4dbed3b93c3da36db9293587b748150b62bef49"
 ---
 
 # forbidden-imports
@@ -53,9 +53,9 @@ required properties:
 | `errorLink`                | `string` (optional)                                                       | An optional link to show alongside the error message.                                                                                                                                                                                                                                                                                                                 |
 | `description`              | `string` (optional)                                                       | The rule description, which is shown in the Vercel Compass dashboard and included in allowlist files.                                                                                                                                                                                                                                                                 |
 | `severity`                 | `"major" \| "minor"` (optional)                                           | The rule severity added to the allowlists and used to calculate a project's conformance score.                                                                                                                                                                                                                                                                        |
-| `moduleNames`              | `string[]`                                                                | An array of exact module names or glob expressions\*.                                                                                                                                                         |
+| `moduleNames`              | `string[]`                                                                | An array of exact module names or glob expressions\*.<br /><br />*\*Note that paths containing square brackets need to be escaped, i.e. `[folder-name]\page.tsx` would become `\[folder-name\]\page.tsx`.*                                                                                                                                                         |
 | `importNames`              | `string[]` (optional)                                                     | An array of exact module names of import names.                                                                                                                                                                                                                                                                                                                       |
-| `paths`                    | `string[]` (optional)                                                     | **Added in Conformance `1.4.0`.** An optional array of exact paths or glob expressions, which restricts the paths that this custom rule applies to. This acts as the overridable default value for `paths`\*. |
+| `paths`                    | `string[]` (optional)                                                     | **Added in Conformance `1.4.0`.** An optional array of exact paths or glob expressions, which restricts the paths that this custom rule applies to. This acts as the overridable default value for `paths`\*.<br /><br />*\*Note that paths containing square brackets need to be escaped, i.e. `[folder-name]\page.tsx` would become `\[folder-name\]\page.tsx`.* |
 | `disallowDefaultImports`   | `boolean` (optional)                                                      | Flags default imports (i.e. `import foo from 'foo';`) as errors.                                                                                                                                                                                                                                                                                                      |
 | `disallowNamespaceImports` | `boolean` (optional)                                                      | Flags namespace imports (i.e. `import * as foo from 'foo';`) as errors.                                                                                                                                                                                                                                                                                               |
 
@@ -104,7 +104,7 @@ following configuration.
 
 | Property | Type                  | Description                                                                                                                                                                                                                                                                 |
 | -------- | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `paths`  | `string[]` (optional) | An optional array of exact paths or glob expressions, which restricts the paths that this custom rule applies to\*. |
+| `paths`  | `string[]` (optional) | An optional array of exact paths or glob expressions, which restricts the paths that this custom rule applies to\*.<br /><br />*\*Note that paths containing square brackets need to be escaped, i.e. `[folder-name]\page.tsx` would become `\[folder-name\]\page.tsx`.* |
 
 The example below enables the `NO_TEAM_IMPORTS` custom rule for all files in the
 `src/` directory, excluding files in `src/legacy/`. In this example, the custom

@@ -16,8 +16,8 @@ related:
 summary: Learn how to interact with the security endpoints of the Vercel REST API programmatically.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/firewall-api.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "a688d63a70a2ca1e532e5a3d76b729677a4b0e3ce9bec94e3a86d1485096143f"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "aca556ecf2e5d79c4f6ab3350100e3459698daead8ec2dc19ff73d4f0c3e79cd"
 ---
 
 # Using the REST API with the Firewall
@@ -31,6 +31,7 @@ The security section of the [Vercel REST API](/docs/rest-api) allows you to prog
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [REST API for the Vercel Firewall](https://vercel.com/changelog/rest-api-for-the-vercel-firewall?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-api&source_site=vercel-docs&relationship=related)
+- [Protect Sensitive Routes with Vercel WAF: Challenge and Deny Rule Recipes](https://vercel.com/kb/guide/suspicious-traffic-in-specific-countries?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-api&source_site=vercel-docs&relationship=related) — Use Vercel WAF custom rules to block or challenge unwanted traffic by country, ASN, IP address, user agent, path, or coo
 - [WAF Examples](https://vercel.com/docs/vercel-firewall/vercel-waf/examples?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-api&source_site=vercel-docs&relationship=related) — Learn how to use Vercel WAF to protect your site in specific situations.
 - [Vercel WAF](https://vercel.com/docs/vercel-firewall/vercel-waf?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-api&source_site=vercel-docs&relationship=related) — Learn how to secure your website with the Vercel Web Application Firewall \\(WAF\\)
 - [Read Firewall Actions by Project](https://vercel.com/docs/rest-api/security/read-firewall-actions-by-project?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-api&source_site=vercel-docs&relationship=related) — GET /v1/security/firewall/events — Retrieve firewall actions for a project Rule names are resolved against the project's

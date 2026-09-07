@@ -16,31 +16,13 @@ related:
 summary: This page outlines information on the pricing and limits for the source images-based legacy option.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/image-optimization/legacy-pricing.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "bc29b41be1d3e642252d78521656a6479f8be5541fbb89d103ba538e80eb6193"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "a1e14d836f510f499444b7a844198e5862ece345e28e8ce0165dca0de7075458"
 ---
 
 # Legacy Pricing for Image Optimization
 
 ## Pricing
-
-
-<!-- docsgraph:related -->
-## Related pages
-
-> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
-
-- [Changes to Vercel Image Optimization](https://vercel.com/changelog/changes-to-vercel-image-optimizations?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flegacy-pricing&source_site=vercel-docs&relationship=related)
-- [Limits and Pricing for Image Optimization](https://vercel.com/docs/image-optimization/limits-and-pricing?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flegacy-pricing&source_site=vercel-docs&relationship=related) — This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can i
-- [Faster transformations and reduced pricing for Image Optimization](https://vercel.com/changelog/faster-transformations-and-reduced-pricing-for-image-optimization?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flegacy-pricing&source_site=vercel-docs&relationship=related)
-- [Increased Hobby usage limits for Image Optimization](https://vercel.com/changelog/increased-hobby-usage-limits-for-image-optimization?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flegacy-pricing&source_site=vercel-docs&relationship=related)
-- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flegacy-pricing&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
-- [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flegacy-pricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Vercel Blob Pricing](https://vercel.com/docs/vercel-blob/usage-and-pricing?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flegacy-pricing&source_site=vercel-docs&relationship=related) — Learn about the pricing for Vercel Blob.
-- [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flegacy-pricing&source_site=vercel-docs&relationship=related) — Learn about legacy usage and pricing for Vercel Functions.
-
-Full cross-link map for this page: [/docs/image-optimization/legacy-pricing.graph.md](/docs/image-optimization/legacy-pricing.graph.md?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flegacy-pricing&source_site=vercel-docs&relationship=graph)
-<!-- /docsgraph:related -->
 
 > **💡 Note:** This legacy pricing option is only available to Enterprise teams
 > created before February 18th, 2025, who are given the choice to
@@ -50,6 +32,24 @@ Full cross-link map for this page: [/docs/image-optimization/legacy-pricing.grap
 > source images-based pricing plan until the contract expires.
 
 Image Optimization pricing is dependent on your plan and how many unique [source images](#source-images) you have across your projects during your billing period.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Limits and Pricing for Image Optimization](https://vercel.com/docs/image-optimization/limits-and-pricing?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flegacy-pricing&source_site=vercel-docs&relationship=related) — This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can i
+- [Changes to Vercel Image Optimization](https://vercel.com/changelog/changes-to-vercel-image-optimizations?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flegacy-pricing&source_site=vercel-docs&relationship=related)
+- [Faster transformations and reduced pricing for Image Optimization](https://vercel.com/changelog/faster-transformations-and-reduced-pricing-for-image-optimization?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flegacy-pricing&source_site=vercel-docs&relationship=related)
+- [Increased Hobby usage limits for Image Optimization](https://vercel.com/changelog/increased-hobby-usage-limits-for-image-optimization?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flegacy-pricing&source_site=vercel-docs&relationship=related)
+- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flegacy-pricing&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flegacy-pricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Vercel Blob Pricing](https://vercel.com/docs/vercel-blob/usage-and-pricing?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flegacy-pricing&source_site=vercel-docs&relationship=related) — Learn about the pricing for Vercel Blob.
+- [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flegacy-pricing&source_site=vercel-docs&relationship=related) — Learn about legacy usage and pricing for Vercel Functions.
+
+Full cross-link map for this page: [/docs/image-optimization/legacy-pricing.graph.md](/docs/image-optimization/legacy-pricing.graph.md?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flegacy-pricing&source_site=vercel-docs&relationship=graph)
+<!-- /docsgraph:related -->
 
 | Resource | Pro Price |
 | --- | --- |

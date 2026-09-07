@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel REST API to create and update Global Configs. You can also read data stored in Global Configs with the Vercel REST API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/vercel-api.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "4b4911599872b5e81f9104b03a091488136a03cc78082bf49dcdaca1500e3286"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "bc51de56ad0469efa1f84e72f3fdeb9af791d15755bfd74daf3355b51a04173d"
 ---
 
 # Managing Global Configs with Vercel REST API
@@ -33,9 +33,9 @@ We recommend you use the Vercel REST API only for creating and updating a [Globa
 - [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy?from=related&source_path=%2Fdocs%2Fglobal-config%2Fvercel-api&source_site=vercel-docs&relationship=related) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
 - [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fvercel-api&source_site=vercel-docs&relationship=related) — POST /v1/global-config — Creates a Global Config.
 - [Get Global Configs](https://vercel.com/docs/rest-api/global-config/get-global-configs?from=related&source_path=%2Fdocs%2Fglobal-config%2Fvercel-api&source_site=vercel-docs&relationship=related) — GET /v1/global-config — Returns all Global Configs.
+- [Managing Global Configs with the Dashboard](https://vercel.com/docs/global-config/global-config-dashboard?from=related&source_path=%2Fdocs%2Fglobal-config%2Fvercel-api&source_site=vercel-docs&relationship=related) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
 - [Get Global Config items](https://vercel.com/docs/rest-api/global-config/get-global-config-items?from=related&source_path=%2Fdocs%2Fglobal-config%2Fvercel-api&source_site=vercel-docs&relationship=related) — GET /v1/global-config/{edgeConfigId}/items — Returns all items of a Global Config.
 - [Get a Global Config](https://vercel.com/docs/rest-api/global-config/get-a-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fvercel-api&source_site=vercel-docs&relationship=related) — GET /v1/global-config/{edgeConfigId} — Returns a Global Config.
-- [Managing Global Configs with the Dashboard](https://vercel.com/docs/global-config/global-config-dashboard?from=related&source_path=%2Fdocs%2Fglobal-config%2Fvercel-api&source_site=vercel-docs&relationship=related) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
 
 Full cross-link map for this page: [/docs/global-config/vercel-api.graph.md](/docs/global-config/vercel-api.graph.md?from=related&source_path=%2Fdocs%2Fglobal-config%2Fvercel-api&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -61,7 +61,7 @@ The request body should be a JSON object containing a `"slug"` with the name you
 
 See the example below:
 
-#### \['cURL'
+#### cURL
 
 ```bash filename="cURL"
 curl  -X 'POST' 'https://api.vercel.com/v1/global-config' \
@@ -70,7 +70,7 @@ curl  -X 'POST' 'https://api.vercel.com/v1/global-config' \
       -d $'{ "slug": "your_global_config_name_here" }'
 ```
 
-#### 'fetch']
+#### fetch
 
 ```javascript filename="fetch"
 try {
@@ -115,7 +115,7 @@ The above example will create a Global Config scoped to your Hobby team. To scop
 - Add the `?teamId` query parameter to your `POST` request. Set its value to [the Team's ID](/docs/accounts#find-your-team-id), which you can find under the **Settings** section in the sidebar in the Team's **Dashboard** on Vercel.
 
 > **💡 Note:** The `"ownerId"` key's value will be your
-> &#x20;if you created
+> [Vercel Team's ID](/docs/accounts#find-your-team-id) if you created
 > the Global Config using the `?teamId` query parameter.
 
 ## Update your Global Config items
@@ -159,7 +159,7 @@ The following example demonstrates a request body that creates an `"example_key_
 
 The following is an API call that sends the above request body to your Global Config:
 
-#### \['cURL'
+#### cURL
 
 ```bash filename="cURL"
 curl -X 'PATCH' 'https://api.vercel.com/v1/global-config/your_global_config_id_here/items' \
@@ -168,7 +168,7 @@ curl -X 'PATCH' 'https://api.vercel.com/v1/global-config/your_global_config_id_h
      -d $'{ "items": [ { "operation": "create", "key": "example_key_1", "value": "example_value_1" }, { "operation": "update", "key": "example_key_2", "value": "new_value" } ] }'
 ```
 
-#### 'fetch']
+#### fetch
 
 ```javascript filename="fetch"
 try {
@@ -235,14 +235,14 @@ Your URL should look like this:
 
 The following is an example of a request that fetches a Global Config's items with the Vercel REST API:
 
-#### \['cURL'
+#### cURL
 
 ```bash filename="request"
 curl "https://api.vercel.com/v1/global-config/your_global_config_id_here/items?teamId=your_team_id_here" \
      -H 'Authorization: Bearer your_vercel_api_token_here'
 ```
 
-#### 'fetch']
+#### fetch
 
 ```javascript filename="fetch"
 try {
@@ -268,14 +268,14 @@ You can read your Global Config's metadata (but not its key-value pair contents)
 
 The following is an example `GET` request that fetches metadata about a Global Config associated with a Vercel Team.
 
-#### \['cURL'
+#### cURL
 
 ```bash filename="request"
 curl "https://api.vercel.com/v1/global-config/your_global_config_id_here?teamId=your_team_id_here" \
      -H 'Authorization: Bearer your_vercel_api_token_here'
 ```
 
-#### 'fetch']
+#### fetch
 
 ```javascript filename="fetch"
 try {
@@ -314,14 +314,14 @@ If the Global Config exists, the response will be the same JSON object you recei
 
 You can list all of your Global Configs in a specific Hobby team or team with a `GET` request to the `global-config` API endpoint. For example:
 
-#### \['cURL'
+#### cURL
 
 ```bash filename="request"
 curl "https://api.vercel.com/v1/global-config?teamId=your_team_id_here" \
      -H 'Authorization: Bearer your_vercel_api_token_here'
 ```
 
-#### 'fetch']
+#### fetch
 
 ```javascript filename="fetch"
 try {
@@ -380,13 +380,13 @@ The Global Config endpoint used in the connection string is distinct from a Verc
 
 To read all of your Global Config's items, send a `GET` request to the appropriate Global Config endpoint by adding your Global Config's ID and Global Config read access token in the appropriate places in the below URL:
 
-#### \['cURL'
+#### cURL
 
 ```bash filename="cURL"
 curl 'https://global-config.vercel.com/your_global_config_id_here/items?token=your_global_config_read_access_token_here'
 ```
 
-#### 'fetch']
+#### fetch
 
 ```javascript filename="fetch"
 try {
@@ -402,14 +402,14 @@ try {
 
 You can also send your Global Config read access token in an Authorization header rather than as a query param.
 
-#### \['cURL'
+#### cURL
 
 ```bash filename="request"
 curl "https://global-config.vercel.com/your_global_config_id_here/items" \
      -H 'Authorization: Bearer your_global_config_read_access_token_here'
 ```
 
-#### 'fetch']
+#### fetch
 
 ```javascript filename="fetch"
 try {
@@ -443,13 +443,13 @@ The response will be a JSON object containing all key-value pairs in the Global 
 
 To request a single item, you can use the `/item` path instead of `/items`, then add the key of the item you want as the final path as shown below:
 
-#### \['cURL'
+#### cURL
 
 ```bash filename="request"
 curl "https://global-config.vercel.com/your_global_config_id_here/item/example_key_1?token=your_global_config_read_access_token_here" \
 ```
 
-#### 'fetch']
+#### fetch
 
 ```javascript filename="fetch"
 try {
@@ -465,14 +465,14 @@ try {
 
 You can also send your Global Config read access token in an Authorization header rather than as a query param.
 
-#### \['cURL'
+#### cURL
 
 ```bash filename="request"
 curl -X 'https://global-config.vercel.com/your_global_config_id_here/item/example_key_1' \
      -H 'Authorization: Bearer your_global_config_read_access_token_here'
 ```
 
-#### 'fetch']
+#### fetch
 
 ```javascript filename="fetch"
 try {
@@ -504,13 +504,13 @@ When you create a Global Config, a hash string called a digest is generated and 
 
 To fetch a Global Config's digest, send a `GET` request to your Global Config endpoint, as shown below:
 
-#### \['cURL'
+#### cURL
 
 ```bash filename="request"
 curl "https://global-config.vercel.com/your_global_config_id_here/digest?teamId=your_team_id_here&token=your_global_config_read_access_token_here"
 ```
 
-#### 'fetch']
+#### fetch
 
 ```javascript filename="fetch"
 try {
@@ -526,14 +526,14 @@ try {
 
 You can also send the Global Config read access token in the `Authorization` header of your request using the `Bearer token` format:
 
-#### \['cURL'
+#### cURL
 
 ```bash filename="request"
 curl  -X 'GET' 'https://global-config.vercel.com/your_global_config_id_here/digest?teamId=your_team_id_here' \
       -H 'Authorization: Bearer your_global_config_read_access_token_here
 ```
 
-#### 'fetch']
+#### fetch
 
 ```javascript filename="fetch"
 try {
@@ -554,6 +554,10 @@ try {
 ```
 
 ## Up Next
+
+**Limits** [→](/docs/global-config/global-config-limits)
+
+Data size and request limits based on account plans
 
 
 ---

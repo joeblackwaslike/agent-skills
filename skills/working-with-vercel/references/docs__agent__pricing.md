@@ -3,7 +3,7 @@ title: Vercel Agent Pricing
 product: vercel
 url: /docs/agent/pricing
 canonical_url: "https://vercel.com/docs/agent/pricing"
-last_updated: 2026-08-19
+last_updated: 2026-08-28
 type: reference
 prerequisites:
   - /docs/agent
@@ -16,8 +16,8 @@ related:
 summary: Understand Vercel Agent pricing and how to track costs
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/pricing.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "d941c9fcb2d0ffd4caf25108546fde65c5b286eb8b15ad561ac9361d3dd2be73"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "b83d85b591da159537ce9da3bad261f37b0c551238842d4933546dccfb709c2b"
 ---
 
 # Vercel Agent Pricing

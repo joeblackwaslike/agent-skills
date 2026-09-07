@@ -13,8 +13,8 @@ related:
 summary: Audit active flags, remove a fully rolled-out flag from your codebase, and archive it using the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/cli/clean-up-after-rollout.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "4e70a4d6ded9cf113d0097208c00a9dfc889e74a29faca726ddbcb6d5641648c"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "faa49374bd4cba167b57b41082cebb27f3ed4869b5af65e858265608934146a7"
 ---
 
 # Cleaning up after a full rollout
@@ -31,8 +31,8 @@ Once a feature is stable and the flag has been enabled in all environments for a
 - [Automate progressive rollouts with Vercel Flags](https://vercel.com/changelog/progressive-rollouts-in-vercel-flags?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Fclean-up-after-rollout&source_site=vercel-docs&relationship=related)
 - [Rolling out a new feature](https://vercel.com/docs/flags/vercel-flags/cli/roll-out-feature?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Fclean-up-after-rollout&source_site=vercel-docs&relationship=related) — Create a feature flag, wire it into your application with the Flags SDK, and start a staged rollout using the Vercel CLI
 - [Managing flags in the dashboard](https://vercel.com/docs/flags/vercel-flags/dashboard?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Fclean-up-after-rollout&source_site=vercel-docs&relationship=related) — Learn how to manage your feature flags using the Vercel Dashboard.
-- [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Fclean-up-after-rollout&source_site=vercel-docs&relationship=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
 - [Running an A/B test](https://vercel.com/docs/flags/vercel-flags/cli/run-ab-test?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Fclean-up-after-rollout&source_site=vercel-docs&relationship=related) — Set up an A/B test with a feature flag, track results through Web Analytics, and clean up afterward using the Vercel CLI
+- [Feature Flag Configuration](https://vercel.com/docs/flags/vercel-flags/dashboard/feature-flag?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Fclean-up-after-rollout&source_site=vercel-docs&relationship=related) — Learn how to configure individual feature flags in the Vercel Dashboard.
 - [Draft Flags](https://vercel.com/docs/flags/vercel-flags/dashboard/drafts?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Fclean-up-after-rollout&source_site=vercel-docs&relationship=related) — Learn how draft flags work and how to promote them to Vercel Flags.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/cli/clean-up-after-rollout.graph.md](/docs/flags/vercel-flags/cli/clean-up-after-rollout.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Fclean-up-after-rollout&source_site=vercel-docs&relationship=graph)

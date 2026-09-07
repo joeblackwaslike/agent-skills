@@ -3,7 +3,7 @@ title: Vercel SDK Reference
 product: vercel
 url: /docs/rest-api/sdk
 canonical_url: "https://vercel.com/docs/rest-api/sdk"
-last_updated: 2026-08-31
+last_updated: 2026-09-07
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Interact programmatically with your Vercel account using the SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rest-api/sdk.md"
-fetched_at: "2026-08-31T10:45:05.170Z"
-sha256: "87714a84ceb738a5980bd884677802a41b4f918cd0871689bb3e1c1540b8d025"
+fetched_at: "2026-09-07T09:06:17.588Z"
+sha256: "3af4c2cb1b26e92ab38dc063eef6322915fdf4a5cf0ca76c488e5559da5aa04d"
 ---
 
 # Vercel SDK Reference
@@ -115,13 +115,28 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 | **GET** | [`/v1/connect/networks/{networkId}`](/docs/rest-api/sdk/networking/read-a-secure-compute-network.md) | Read a Secure Compute network |
 | **PATCH** | [`/v1/connect/networks/{networkId}`](/docs/rest-api/sdk/networking/update-a-secure-compute-network.md) | Update a Secure Compute network |
 | **DELETE** | [`/v1/connect/networks/{networkId}`](/docs/rest-api/sdk/networking/delete-a-secure-compute-network.md) | Delete a Secure Compute network |
+| **GET** | [`/v1/networking/privatelink/endpoints`](/docs/rest-api/sdk/networking/list-privatelink-endpoints.md) | List PrivateLink endpoints |
+| **POST** | [`/v1/networking/privatelink/endpoints`](/docs/rest-api/sdk/networking/create-a-privatelink-endpoint.md) | Create a PrivateLink endpoint |
+| **GET** | [`/v1/networking/privatelink/endpoints/{endpointId}`](/docs/rest-api/sdk/networking/read-a-privatelink-endpoint.md) | Read a PrivateLink endpoint |
+| **PATCH** | [`/v1/networking/privatelink/endpoints/{endpointId}`](/docs/rest-api/sdk/networking/update-a-privatelink-endpoint.md) | Update a PrivateLink endpoint |
+| **DELETE** | [`/v1/networking/privatelink/endpoints/{endpointId}`](/docs/rest-api/sdk/networking/delete-a-privatelink-endpoint.md) | Delete a PrivateLink endpoint |
 | **PATCH** | [`/v1/projects/{idOrName}/shared-connect-links`](/docs/rest-api/sdk/networking/configures-static-ips-for-a-project.md) | Configures Static IPs for a project |
 
 ## connect
 
 | Method | Endpoint | Description |
 |---|---|---|
+| **GET** | [`/v2/connect/connectors`](/docs/rest-api/sdk/connect/list-connectors.md) | List connectors |
+| **GET** | [`/v1/connect/connectors/{connector}`](/docs/rest-api/sdk/connect/get-a-connector.md) | Get a connector |
+| **DELETE** | [`/v1/connect/connectors/{connector}`](/docs/rest-api/sdk/connect/delete-a-connector.md) | Delete a connector |
 | **POST** | [`/v1/connect/connectors`](/docs/rest-api/sdk/connect/create-a-connector.md) | Create a connector |
+| **PATCH** | [`/v2/connect/connectors/{connector}`](/docs/rest-api/sdk/connect/update-a-connector.md) | Update a connector |
+| **PATCH** | [`/v1/connect/connectors/{connector}/trigger-destinations`](/docs/rest-api/sdk/connect/update-connector-trigger-destinations.md) | Update connector trigger destinations |
+| **GET** | [`/v2/connect/connectors/{connector}/projects`](/docs/rest-api/sdk/connect/list-projects-for-a-connector.md) | List projects for a connector |
+| **GET** | [`/v1/connect/connectors/{connector}/projects/{projectId}`](/docs/rest-api/sdk/connect/get-a-connector-project-connection.md) | Get a connector project connection |
+| **POST** | [`/v1/connect/connectors/{connector}/projects/{projectId}`](/docs/rest-api/sdk/connect/create-or-update-a-connector-project-connection.md) | Create or update a connector project connection |
+| **DELETE** | [`/v1/connect/connectors/{connector}/projects/{projectId}`](/docs/rest-api/sdk/connect/disconnect-a-connector-from-a-project.md) | Disconnect a connector from a project |
+| **GET** | [`/v2/connect/projects/{projectId}/connectors`](/docs/rest-api/sdk/connect/list-connectors-for-a-project.md) | List connectors for a project |
 | **POST** | [`/v1/connect/token/{connector}`](/docs/rest-api/sdk/connect/get-a-connect-token.md) | Get a Connect token |
 | **POST** | [`/v1/connect/authorize/{connector}`](/docs/rest-api/sdk/connect/create-a-connect-authorization-request.md) | Create a Connect authorization request |
 

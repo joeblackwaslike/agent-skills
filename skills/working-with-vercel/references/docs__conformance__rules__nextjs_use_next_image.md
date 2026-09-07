@@ -12,13 +12,15 @@ related:
 summary: Requires that next/image is used for all images.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_use_next_image.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "caa4e7e18943888009fe3a1b17de90cd1d69e69261dbbecb3212230b16d09149"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "86529f9a9522c2000955c813c9b950d4462ca385cfaed4a01433953c0a5bf6ce"
 ---
 
 # NEXTJS_USE_NEXT_IMAGE
 
 > **🔒 Permissions Required**: Conformance
+
+> **💡 Note:** This rule is available from version 1.1.0.
 
 The Next.js Image component ([`next/image`](https://nextjs.org/docs/pages/api-reference/components/image))
 extends the HTML `<img>` element with features for automatic image optimization.

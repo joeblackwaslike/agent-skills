@@ -15,8 +15,8 @@ related:
 summary: Learn how a deployment with multiple services is structured in the Build Output API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/services.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "7337879f10608e69c6bedbf93b4c757c685d42682b2bec7db804889b759fc7d1"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "7409ed9417d236688291d6f5c3cd54a0648bb545a9dd7da739503b0db962f646"
 ---
 
 # Services
@@ -45,6 +45,10 @@ Full cross-link map for this page: [/docs/build-output-api/services.graph.md](/d
 
 ## Declaring services
 
+**Build Output Configuration File**: `.vercel/output/config.json`
+
+<br />
+
 List the deployment's service build targets in the top-level `config.json` through a [`services`](/docs/build-output-api/configuration#services) array. Each entry names a service and its root:
 
 ```json
@@ -61,9 +65,32 @@ Vercel builds each service and emits its output under `.vercel/output/services/<
 
 ## Directory structure
 
+**Services Directory**: `.vercel/output/services`
+
+<br />
+
 Each service is emitted at `.vercel/output/services/<name>`, where `<name>` is the service name. A service sub-tree is a complete, standard Build Output API tree with its own [`config.json`](/docs/build-output-api/configuration), `functions` directory, and static assets. The same primitives and configuration that apply to a single-tree deployment apply inside each service sub-tree.
 
 The `web` and `api` services above produce the following output:
+
+- `.vercel/`
+  - `output/`
+    - `config.json`
+    - `services/`
+      - `web/`
+        - `config.json`
+        - `functions/`
+          - `index.func/`
+            - `.vc-config.json`
+        - `static/`
+          - `favicon.ico`
+      - `api/`
+        - `config.json`
+        - `functions/`
+          - `index.func/`
+            - `.vc-config.json`
+
+<br />
 
 Services do not nest. A service's own `config.json` describes only that service and does not contain a `services` field.
 

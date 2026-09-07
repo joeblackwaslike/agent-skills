@@ -3,21 +3,21 @@ title: Pricing on Vercel
 product: vercel
 url: /docs/pricing
 canonical_url: "https://vercel.com/docs/pricing"
-last_updated: 2026-08-11
+last_updated: 2026-09-03
 type: reference
 prerequisites:
   []
 related:
+  - /docs/pricing/taxes
   - /docs/pricing/how-does-vercel-calculate-usage-of-resources
   - /docs/functions/usage-and-pricing
   - /docs/image-optimization/limits-and-pricing
   - /docs/global-config/global-config-limits
-  - /docs/analytics/limits-and-pricing
 summary: "Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "9538bae5fda0028b30e57fa1f03b8992aa0a639674be74006cef516b087090aa"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "75b7b64e65174141ec66a4452140e80bc6a239522848fa5b930d3b23bc69f318"
 ---
 
 # Pricing on Vercel
@@ -30,10 +30,10 @@ Vercel's pricing model includes billable metrics and pricing models across Manag
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Basic build machines are now available on Pro and Enterprise](https://vercel.com/changelog/basic-build-machines?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related)
 - [Preview URLs optimized for multi-tenant platforms](https://vercel.com/changelog/preview-urls-optimized-for-multi-tenant-platforms?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related)
-- [Simpler Pricing](https://vercel.com/blog/simpler-pricing?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related)
-- [Account Plans on Vercel](https://vercel.com/docs/plans?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about the different plans available on Vercel.
 - [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
+- [Account Plans on Vercel](https://vercel.com/docs/plans?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about the different plans available on Vercel.
 - [Build Queues](https://vercel.com/docs/builds/build-queues?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related) — Understand how concurrency and same branch build queues manage multiple simultaneous deployments.
 - [Preview Deployment Suffix](https://vercel.com/docs/deployments/preview-deployment-suffix?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related) — When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that parti
 - [Glossary](https://vercel.com/docs/glossary?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about the terms and concepts used in Vercel's products and documentation.
@@ -42,6 +42,8 @@ Full cross-link map for this page: [/docs/pricing.graph.md](/docs/pricing.graph.
 <!-- /docsgraph:related -->
 
 For a full breakdown of Vercel's pricing by plan, see the [pricing page](/pricing).
+
+> **💡 Note:** All prices shown are in USD and exclude value-added tax (VAT), goods and services tax (GST), and other applicable taxes. Taxes are calculated based on your billing address and added to your invoice where required by law. [Learn more about taxes](/docs/pricing/taxes).
 
 To learn how resources are triggered through a real-world app scenario, see the [calculating resource usage](/docs/pricing/how-does-vercel-calculate-usage-of-resources) guide.
 
@@ -153,7 +155,9 @@ Monitoring is now part of [Observability Plus](/docs/observability/observability
 
 #### [Builds](/docs/builds/managing-builds)
 
-Build usage is priced at $0.0035 per CPU Minute. The duration of the build is rounded up to the nearest minute and then multiplied by the number of CPUs on the machine type. For example, if a build took 2 minutes and 34 seconds and used the Enhanced machine type, it will be priced at $0.084 (3 minutes x 8 CPUs x $0.0035).
+Basic build machines are included with Hobby. For paid teams, Basic is priced at $0.007 per build minute, based on 2 vCPUs at $0.0035 per CPU minute.
+
+Other build usage is priced at $0.0035 per CPU Minute. The duration of the build is rounded up to the nearest minute and then multiplied by the number of CPUs on the machine type. For example, if a build took 2 minutes and 34 seconds and used the Enhanced machine type, it will be priced at $0.084 (3 minutes x 8 CPUs x $0.0035).
 
 Builds on Standard build machines are only billed when on-demand concurrency is enabled or Elastic build machines are selected.
 
@@ -190,7 +194,7 @@ The below table lists the billable DX Platform resources for the Pro plan. Most 
 | [Observability Plus](/docs/observability/observability-plus) | $1.20 per 1,000,000 Events | N/A |
 | [Static IPs](/docs/networking/static-ips) | $100 / month per project, plus Private Data Transfer | N/A |
 | [Web Analytics Plus](/docs/analytics/limits-and-pricing#pro-with-web-analytics-plus) | $10 / month | N/A |
-| [Speed Insights](/docs/speed-insights) | $10 / month per project | N/A |
+| [Speed Insights Plus](/docs/speed-insights/limits-and-pricing) | $10 / month per project | N/A |
 
 
 ## More resources

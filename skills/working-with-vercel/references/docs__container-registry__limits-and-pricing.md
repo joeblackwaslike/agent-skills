@@ -12,13 +12,17 @@ related:
 summary: Storage pricing, size limits, plan limits, and compatibility limits for Vercel Container Registry.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/container-registry/limits-and-pricing.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "eb45c744032a6b767d8f1f6d2124835ba65e34974bf94134b78927b8d4a75d1c"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "413e1e037bcb62faa83d6b7ae83d3afce1fe1be6b28f067ebd6f4ca660c53918"
 ---
 
 # Container Registry limits and pricing
 
 ## Pricing
+
+| Resource          | Price          |
+| ----------------- | -------------- |
+| VCR image storage | $0.10 per GB   |
 
 
 <!-- docsgraph:related -->
@@ -30,18 +34,15 @@ sha256: "eb45c744032a6b767d8f1f6d2124835ba65e34974bf94134b78927b8d4a75d1c"
 - [How to migrate from GHCR to Vercel Container Registry](https://vercel.com/kb/guide/migrate-ghcr-to-vcr?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Migrate container images from GitHub Container Registry \\(GHCR\\) to Vercel Container Registry \\(VCR\\), including authent
 - [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
 - [Introducing VCR: Vercel Container Registry](https://vercel.com/changelog/introducing-vcr-vercel-container-registry?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Flimits-and-pricing&source_site=vercel-docs&relationship=related)
+- [Manage Vercel Container Registry with Vercel CLI](https://vercel.com/changelog/manage-vercel-container-registry-with-vercel-cli?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Flimits-and-pricing&source_site=vercel-docs&relationship=related)
 - [Container Images](https://vercel.com/docs/functions/container-images?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Deploy OCI container images with a Dockerfile or Containerfile on Vercel Functions.
-- [vercel vcr](https://vercel.com/docs/cli/vcr?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Manage Vercel Container Registry from the Vercel CLI: build and push images, manage repositories, tags, and images, and
 - [Limits and Pricing for Vercel Flags](https://vercel.com/docs/flags/vercel-flags/limits-and-pricing?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Review Vercel Flags request pricing and limits for flags, segments, configuration size, and connected projects.
-- [Services Pricing and Limits](https://vercel.com/docs/services/pricing?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Understand how billing works for Vercel Services, what's charged, and which limits apply.
+- [vercel vcr](https://vercel.com/docs/cli/vcr?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Manage Vercel Container Registry from the Vercel CLI: build and push images, manage repositories, tags, and images, and
 - [Limits and Pricing for Image Optimization](https://vercel.com/docs/image-optimization/limits-and-pricing?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can i
+- [Services Pricing and Limits](https://vercel.com/docs/services/pricing?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Understand how billing works for Vercel Services, what's charged, and which limits apply.
 
 Full cross-link map for this page: [/docs/container-registry/limits-and-pricing.graph.md](/docs/container-registry/limits-and-pricing.graph.md?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Flimits-and-pricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-| Resource          | Price          |
-| ----------------- | -------------- |
-| VCR image storage | $0.10 per GB   |
 
 ## Limits
 

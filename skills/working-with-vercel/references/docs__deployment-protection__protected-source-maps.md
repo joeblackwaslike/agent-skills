@@ -16,13 +16,15 @@ related:
 summary: Protected Source Maps gates requests for browser source maps behind Vercel Authentication, so only authorized users can view your production source...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/protected-source-maps.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "17b850df608efd1709f2ec2c1de62d48535125d3e093489a55f8d74df59bcc20"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "9209b13fb6ea385d43cf80d347f9ee12314f004d3ac11eda7cb103d034fbc40d"
 ---
 
 # Restrict access to production source maps
 
 > **🔒 Permissions Required**: Protected Source Maps
+
+Protected Source Maps gates requests for browser source maps behind [Vercel Authentication](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication). When enabled, your deployment serves `.map` files only to users who can already access the deployment, and returns `404 Not Found` to everyone else.
 
 
 <!-- docsgraph:related -->
@@ -41,8 +43,6 @@ sha256: "17b850df608efd1709f2ec2c1de62d48535125d3e093489a55f8d74df59bcc20"
 
 Full cross-link map for this page: [/docs/deployment-protection/protected-source-maps.graph.md](/docs/deployment-protection/protected-source-maps.graph.md?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fprotected-source-maps&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Protected Source Maps gates requests for browser source maps behind [Vercel Authentication](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication). When enabled, your deployment serves `.map` files only to users who can already access the deployment, and returns `404 Not Found` to everyone else.
 
 This lets you ship source maps to production so your team and error trackers can read meaningful stack traces, without exposing your source code to the public.
 

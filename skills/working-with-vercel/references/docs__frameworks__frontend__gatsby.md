@@ -8,16 +8,16 @@ type: conceptual
 prerequisites:
   []
 related:
+  - /docs/cli
   - /docs/functions
   - /docs/cdn-cache
   - /docs/routing-middleware
   - /docs/routing-middleware/api
-  - /docs/speed-insights
 summary: "Learn how to use Vercel's features with Gatsby."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/frontend/gatsby.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "0d0b8550da13627349dcb38ad1865c38e3415213a69f9f6a2b6106c63bc7e0e8"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "6900e63fe8ef5f88c10be3aa6f70ec205a3bceec7896f8afe1f53ae9f3215916"
 ---
 
 # Gatsby on Vercel
@@ -27,6 +27,15 @@ Gatsby is an open-source static-site generator. It enables developers to build f
 Gatsby also has a large ecosystem of plugins and tools that improve the development experience. Vercel supports many Gatsby features, including [Server-Side Rendering](#server-side-rendering), [Deferred Static Generation](#deferred-static-generation), [API Routes](#api-routes), and more.
 
 ## Get started with Gatsby on Vercel
+
+To get started with Gatsby on Vercel:
+
+- If you already have a project with Gatsby, install [Vercel CLI](/docs/cli) and run the vercel command from your project's root directory
+- Clone one of our Gatsby example repos to your favorite git provider and deploy it on Vercel with the button below:
+
+\- Or, choose a template from Vercel's marketplace:
+
+Vercel deployments can \[integrate with your git provider]\(/docs/git) to \[generate preview URLs]\(/docs/deployments/environments#preview-environment-pre-production) for each pull request you make to your Gatsby project.
 
 ## Using the Gatsby Vercel Plugin
 

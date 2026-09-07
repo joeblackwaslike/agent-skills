@@ -3,7 +3,7 @@ title: Webhooks API Reference
 product: vercel
 url: /docs/webhooks/webhooks-api
 canonical_url: "https://vercel.com/docs/webhooks/webhooks-api"
-last_updated: 2026-08-11
+last_updated: 2026-09-03
 type: reference
 prerequisites:
   - /docs/webhooks
@@ -16,8 +16,8 @@ related:
 summary: Vercel Integrations allow you to subscribe to certain trigger-based events through webhooks. Learn about the supported webhook events and how to use...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/webhooks/webhooks-api.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "811c079095ba0b2d972017cf99c9a0ccb8850f0036499c34a43f0d5812b3f49b"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "73f15ac7f5418c8f2836d5722919541cb5e065b939f7508dbde4f3eed6c7d301"
 ---
 
 # Webhooks API Reference
@@ -669,6 +669,9 @@ Occurs whenever an alert is triggered.
 | **payload.projectSlug**              | [String](/docs/rest-api#types) | The project slug.                                              |
 | **payload.teamSlug**                 | [String](/docs/rest-api#types) | The team slug.                                                 |
 | **payload.groupId**                  | [String](/docs/rest-api#types) | Optional group identifier for related alerts.                  |
+| **payload.severity**                 | [String](/docs/rest-api#types) | The alert severity. Possible values are `low`, `medium`, `high`, and `critical`. Vercel calculates severity automatically, and only a completed Vercel Agent investigation sets `critical`. |
+| **payload.level**                    | [String](/docs/rest-api#types) | The legacy alert level derived from `severity`. Possible values are `warning`, `error`, and `critical`. Both `high` and `critical` severities map to `critical`, so use `severity` to distinguish them. |
+| **payload.initialSeverity**          | [String](/docs/rest-api#types) | The severity calculated when the alert first triggered, before any Vercel Agent investigation. Possible values are `low`, `medium`, and `high`. Optional.                                   |
 | **payload.alerts\[].startedAt**       | [String](/docs/rest-api#types) | ISO 8601 timestamp when this specific alert started.           |
 | **payload.alerts\[].title**           | [String](/docs/rest-api#types) | Human-readable title for the alert.                            |
 | **payload.alerts\[].unit**            | [String](/docs/rest-api#types) | Unit of measurement (e.g., `requests`).                        |
@@ -1141,6 +1144,8 @@ Occurs whenever a project has been created.
 > **💡 Note:** This event is sent only when the Integration has access to all projects in a
 > Vercel scope.
 
+<br />
+
 | Key                      | [Type](/docs/rest-api#types) | Description            |
 | ------------------------ | ------------------------------------------------------------------------------- | ---------------------- |
 | **payload.project.id**   | [ID](/docs/rest-api#types)           | The ID of the project. |
@@ -1154,6 +1159,8 @@ Occurs whenever a Project has been removed.
 
 > **💡 Note:** This event is sent only when the Integration has access to all Projects in a
 > Vercel scope.
+
+<br />
 
 | Key                      | [Type](/docs/rest-api#types) | Description            |
 | ------------------------ | ------------------------------------------------------------------------------- | ---------------------- |

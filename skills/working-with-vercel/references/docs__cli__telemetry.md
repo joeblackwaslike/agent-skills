@@ -8,12 +8,12 @@ type: reference
 prerequisites:
   - /docs/cli
 related:
-  []
+  - /docs/cli/global-options
 summary: Learn how to manage telemetry collection.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/telemetry.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "46eed6688160a7e4686b7d3e8f4f5627977cf4e27b8cb6a6940a98c6ed5d0e6d"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "1b5a47c8fd6121dff0abee1bf854be56d07c0680e25071e0600ee680366274ef"
 ---
 
 # vercel telemetry
@@ -28,12 +28,12 @@ The `vercel telemetry` command allows you to enable or disable telemetry collect
 
 - [Telemetry](https://vercel.com/docs/cli/about-telemetry?from=related&source_path=%2Fdocs%2Fcli%2Ftelemetry&source_site=vercel-docs&relationship=related) — Vercel CLI collects telemetry data about general usage.
 - [Telemetry](https://turborepo.dev/docs/telemetry?from=related&source_path=%2Fdocs%2Fcli%2Ftelemetry&source_site=vercel-docs&relationship=related) — Understand what anonymous telemetry data Turborepo collects and how to opt out.
+- [CLI Telemetry](https://eve.dev/docs/reference/telemetry?from=related&source_path=%2Fdocs%2Fcli%2Ftelemetry&source_site=vercel-docs&relationship=related) — Learn what eve CLI telemetry collects and how to control it.
 - [telemetry](https://turborepo.dev/docs/reference/telemetry?from=related&source_path=%2Fdocs%2Fcli%2Ftelemetry&source_site=vercel-docs&relationship=related) — Reference for the `turbo telemetry` command that manages anonymous usage data collection.
-- [Query observability metrics using the Vercel CLI](https://vercel.com/changelog/vercel-metrics-in-cli?from=related&source_path=%2Fdocs%2Fcli%2Ftelemetry&source_site=vercel-docs&relationship=related)
-- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fcli%2Ftelemetry&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [vercel metrics](https://vercel.com/docs/cli/metrics?from=related&source_path=%2Fdocs%2Fcli%2Ftelemetry&source_site=vercel-docs&relationship=related) — List and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
-- [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Ftelemetry&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel inspect](https://vercel.com/docs/cli/inspect?from=related&source_path=%2Fdocs%2Fcli%2Ftelemetry&source_site=vercel-docs&relationship=related) — Learn how to retrieve information about your Vercel deployments using the vercel inspect CLI command.
+- [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Ftelemetry&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel usage](https://vercel.com/docs/cli/usage?from=related&source_path=%2Fdocs%2Fcli%2Ftelemetry&source_site=vercel-docs&relationship=related) — Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
 
 Full cross-link map for this page: [/docs/cli/telemetry.graph.md](/docs/cli/telemetry.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Ftelemetry&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -60,6 +60,24 @@ vercel telemetry disable
 
 *Using the \`vercel telemetry disable\` command to disable
 telemetry collection.*
+
+## Global Options
+
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel telemetry` command:
+
+- [`--cwd`](/docs/cli/global-options#current-working-directory)
+- [`--debug`](/docs/cli/global-options#debug)
+- [`--global-config`](/docs/cli/global-options#global-config)
+- [`--help`](/docs/cli/global-options#help)
+- [`--local-config`](/docs/cli/global-options#local-config)
+- [`--no-color`](/docs/cli/global-options#no-color)
+- [`--non-interactive`](/docs/cli/global-options#non-interactive)
+- [`--scope`](/docs/cli/global-options#scope)
+- [`--team`](/docs/cli/global-options#team)
+- [`--token`](/docs/cli/global-options#token)
+- [`--version`](/docs/cli/global-options#version)
+
+For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
 ## Why is telemetry collected?
 

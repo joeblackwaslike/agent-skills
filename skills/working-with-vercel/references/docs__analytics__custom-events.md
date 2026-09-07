@@ -16,13 +16,16 @@ related:
 summary: Learn how to send custom analytics events from your application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/custom-events.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "c92f31efec2b7e2216146090b5975f00a07eaa4984244a577a6a1e2ec52ffbc3"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "9dd8c4274078a855321611d9e57f2d533bb837c00496afd537a3fc93bb9574a5"
 ---
 
 # Tracking custom events
 
 > **🔒 Permissions Required**: Custom Events
+
+Vercel Web Analytics allows you to track custom events in your application using the `track()` function.
+This is useful for tracking user interactions, such as button clicks, form submissions, or purchases.
 
 
 <!-- docsgraph:related -->
@@ -38,13 +41,10 @@ sha256: "c92f31efec2b7e2216146090b5975f00a07eaa4984244a577a6a1e2ec52ffbc3"
 - [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Fcustom-events&source_site=vercel-docs&relationship=related) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api?from=related&source_path=%2Fdocs%2Fanalytics%2Fcustom-events&source_site=vercel-docs&relationship=related) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 - [Privacy and Compliance](https://vercel.com/docs/analytics/privacy-policy?from=related&source_path=%2Fdocs%2Fanalytics%2Fcustom-events&source_site=vercel-docs&relationship=related) — Learn how Vercel supports privacy and data compliance standards with Vercel Web Analytics.
-- [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fanalytics%2Fcustom-events&source_site=vercel-docs&relationship=related) — Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application perfor
+- [Getting started with Speed Insights](https://vercel.com/docs/speed-insights/quickstart?from=related&source_path=%2Fdocs%2Fanalytics%2Fcustom-events&source_site=vercel-docs&relationship=related) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
 
 Full cross-link map for this page: [/docs/analytics/custom-events.graph.md](/docs/analytics/custom-events.graph.md?from=related&source_path=%2Fdocs%2Fanalytics%2Fcustom-events&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-Vercel Web Analytics allows you to track custom events in your application using the `track()` function.
-This is useful for tracking user interactions, such as button clicks, form submissions, or purchases.
 
 > **💡 Note:** Make sure you have `@vercel/analytics` version 1.1.0 or later
 > [installed](/docs/analytics/quickstart#add-@vercel/analytics-to-your-project).

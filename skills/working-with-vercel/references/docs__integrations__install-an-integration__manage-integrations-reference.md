@@ -16,13 +16,15 @@ related:
 summary: Learn how to manage project access and added products for your integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "a8da8495ae77f0122948c51ee979632e8b58d9161568378f3d5c1208d5ccc60c"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "cb7fbda2439cb1ed1e57da6ac84403bda72dc2872611a6e5b2fa695dabfb00b9"
 ---
 
 # Permissions and Access
 
 ## View an integration's permissions
+
+To view an integration's permissions:
 
 
 <!-- docsgraph:related -->
@@ -38,8 +40,6 @@ sha256: "a8da8495ae77f0122948c51ee979632e8b58d9161568378f3d5c1208d5ccc60c"
 
 Full cross-link map for this page: [/docs/integrations/install-an-integration/manage-integrations-reference.graph.md](/docs/integrations/install-an-integration/manage-integrations-reference.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fmanage-integrations-reference&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-To view an integration's permissions:
 
 1. From your Vercel [dashboard](/dashboard), open [**Integrations**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fintegrations\&title=Go+to+Integrations) in the sidebar.
 2. Next to the integration, select the **Manage** button.

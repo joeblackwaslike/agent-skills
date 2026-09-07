@@ -12,13 +12,15 @@ related:
 summary: Learn how to communicate securely with the Vercel support team
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/support-center.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "e50feb7bf6ec89623998545004a03c12c8e6913b8a6355e8716495383bb8606d"
+fetched_at: "2026-09-07T09:06:21.866Z"
+sha256: "1a1824f0a9333aec761026ae3eacb684c36d8a986655363f57d0ef97e9326f0b"
 ---
 
 # Support Center
 
 > **🔒 Permissions Required**: meta.title
+
+The Vercel Support Center provides a secure and streamlined way for you to submit support cases. The Support Center allows you to create and view all cases, their statuses, and any messages from the Vercel Support team. All cases are securely stored to safeguard your data.
 
 
 <!-- docsgraph:related -->
@@ -35,13 +37,11 @@ sha256: "e50feb7bf6ec89623998545004a03c12c8e6913b8a6355e8716495383bb8606d"
 - [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=related) — Learn how to manage Sign in with Vercel from the Dashboard
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
-- [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 - [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
+- [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 
 Full cross-link map for this page: [/docs/support-center.graph.md](/docs/support-center.graph.md?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
-
-The Vercel Support Center provides a secure and streamlined way for you to submit support cases. The Support Center allows you to create and view all cases, their statuses, and any messages from the Vercel Support team. All cases are securely stored to safeguard your data.
 
 ## Submit a ticket
 
