@@ -37,10 +37,28 @@ Use progressive disclosure:
 | User/project memory | Searchable memory store |
 | External system state | Tool call |
 | Deterministic transformation | Script |
+| Durable rule needing to survive every turn | System prompt / always-on instructions, re-injected each turn — never a one-time note |
 
 Avoid always loading large policy, memory, or reference dumps. Instead, teach the agent when to retrieve them.
 
+## Adherence Mechanisms
+
+Durable behavioral rules must live where they reload every turn (system prompt/always-on instructions), not in a note or memory the agent has to spontaneously recall. "Injected every turn" is what makes a rule standing rather than advisory.
+
+### The Therapist Pattern (Controlled Self-Modification)
+
+- A separate, dedicated subagent is the only writer to mutable identity/rule files; the primary agent cannot self-modify its own standing rules directly.
+- Rationale: externalizing the reflection/edit process improves change quality and blocks impulsive single-session rewrites.
+- Refinement: require a proposed change to persist across multiple sessions/days before it solidifies.
+- General principle: enforce safety properties structurally — who has write access to what — not through prompted judgment alone.
+
+## Self-Scheduling
+
+Persistent-memory persona agents benefit from an internal scheduler that can wake the agent and re-inject a prompt it set for a future time, enabling autonomous follow-up without a human trigger.
+
 ## Tool Design
+
+Design tool primitives for the agent as the primary user — e.g. send/read/wait-for-reply — not a human-facing CLI/API adapted 1:1. See mcp-development.md Tool Surface Area.
 
 Agents need tools that return useful observations, not just success.
 
@@ -82,6 +100,14 @@ Ask for approval before:
 
 Do not ask for approval merely because the next step is routine and already implied by the user's request.
 
+## Credential Handling
+
+Ground rule (Lethal Trifecta): an agent that simultaneously has (a) private-data access, (b) external communication ability, and (c) exposure to untrusted content cannot be structurally guaranteed safe. Architect to keep those three from co-occurring in one agent.
+
+- Orchestrator/persona agents: no direct external-communication ability — only ephemeral, purpose-spun subagents talk externally.
+- Subagents that communicate externally never see real secrets: a vault holds real credentials; subagents get placeholder tokens; a network-layer proxy swaps the placeholder for the real credential in-flight.
+- Where the swap trick doesn't work (e.g. a literal password needed at fill-time): generate a random temporary password, have the subagent fill it, then a separate arbiter swaps in the real credential afterward.
+
 ## Memory
 
 Use memory for:
@@ -98,6 +124,15 @@ Memory should be:
 - Cited or identified when used.
 - Kept out of always-on context unless it is routing-critical.
 - Verified when likely stale and cheap to check.
+
+### Memory Strategy by Agent Lifetime
+
+| Agent type | Strategy |
+| --- | --- |
+| Task-scoped/ephemeral (e.g. coding agent) | Aggressive compaction is fine |
+| Persistent, multi-conversation persona agent | Same strategy is "desperately wrong" — needs conversation-aware retention |
+
+A single compaction strategy does not transfer between agent types.
 
 ## Evaluation
 
@@ -121,6 +156,18 @@ Good eval artifacts:
 - Filesystem diff.
 - Deterministic assertions.
 - Semantic reviewer output.
+
+### Running an Eval Program
+
+- Pre-register hypotheses before each run — prevents post-hoc rationalization of results.
+- Periodically have a human manually audit automated eval numbers — measurement bugs are commonly caught only this way.
+- A win on one harness/model doesn't generalize until re-verified on another.
+- Verify claimed token/cost savings by actually reading output, not just the token count.
+- Don't cap reasoning/thinking-token budgets as a cost lever — it can raise turn count and total output instead of lowering it.
+- Stop iterating once a local optimum is confirmed rather than continuing to spend on marginal gains.
+- Nonstationary behavior: base rates can swing widely within hours for unrelated reasons — use contemporaneous, paired comparisons only. Full methodology: skill-development.md Behavioral Eval Design.
+- Evaluator/judge subagents: disable all tools; give an explicit "you are a classifier, not a coding agent" system prompt.
+- Reliability check for probabilistic judges: run each scenario 5x, require 5/5 pass. Iterate the judge's rules when a run surfaces a rationalization loophole — tighten to an absolute exception list, re-test.
 
 ## Runtime Guardrails
 
@@ -153,6 +200,8 @@ Hook design rules:
 - Tool descriptions repeat full schemas.
 - Memory is treated as current fact without verification.
 - Subagents inherit huge irrelevant history.
+- Agent skips repo-specific conventions (CONTRIBUTING, PR template) under speed pressure unless a process step forces the check.
+- Tool/observation contract with a broken failure signal (errors not flagged as errors) — produces a silent infinite-failure loop with no natural circuit breaker. See mcp-development.md.
 
 ## Completion Criteria
 
@@ -163,4 +212,3 @@ Agent architecture work is not complete until:
 - Approval boundaries are explicit.
 - Completion evidence is defined.
 - At least one realistic eval or manual transcript validates the behavior.
-

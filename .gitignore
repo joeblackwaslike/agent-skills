@@ -3,6 +3,7 @@ _reference/
 .DS_Store
 node_modules/
 .worktrees/
+.clawhip/
 
 # Beads / Dolt files (added by bd init)
 .dolt/

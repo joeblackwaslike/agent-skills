@@ -59,6 +59,17 @@ branch instead of overwriting the shared one, a soft-delete instead of a hard on
 take it and note the deviation; where none exists, stop and wait, don't proceed on
 the theory that a ticket will make it reviewable after the fact.
 
+**A permission-layer guard firing is not, by itself, one of the hard-to-reverse cases above.** A
+guard blocks a command's literal syntax (e.g. `--force`), not an assessed risk — don't let its
+wording stand in for the reversibility/blast-radius check this fork logic depends on (see
+`senior-engineering-best-practices`'s `references/blast-radius-judgment.md` for that
+classification in full). Re-run it on the underlying action before treating the block as a fork
+at all: a worktree cleanup blocked over `--force`, where `git status --short` showed a single
+untracked, regeneratable dependency lockfile, isn't a hard-to-reverse action or a
+bounded-judgment-call needing a ticket — it's a decide-and-continue case. Resolve the actual thing
+the guard is protecting (delete the regeneratable file) and retry the safe form of the command;
+that's neither escalation nor a ticket-worthy fork, just execution.
+
 **Filing the ticket is not optional, and it is not the same as mentioning the decision in
 a final report.** A decision noted only in the end-of-run summary is invisible to
 anything that queries open tickets in the meantime, and doesn't get the structured

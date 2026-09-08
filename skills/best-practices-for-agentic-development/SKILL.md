@@ -2,7 +2,7 @@
 name: best-practices-for-agentic-development
 description: Use when designing, building, reviewing, testing, or improving agents, agentic workflows, agent skills, MCP servers, tool interfaces, subagent systems, or agent-development methodology
 metadata:
-  last_updated: "2026-05-14"
+  last_updated: "2026-08-18"
 ---
 
 # Best Practices for Agentic Development
@@ -36,6 +36,7 @@ Apply these across all agentic-development work:
 6. **Capture rationalizations.** Convert observed excuses into red flags and counters.
 7. **Verify before claiming.** Completion claims need fresh evidence.
 8. **Design for harness reality.** Detect available tools, sandbox limits, worktree state, subagents, hooks, and native capabilities before acting.
+9. **Match guidance form to the failure shape.** Prohibition, positive recipe, structural required field, or condition. Prohibition is not a universal fix. See skill-development.md.
 
 ## Enforcement Surface Decision
 
@@ -48,6 +49,7 @@ Apply these across all agentic-development work:
 | Agent-visible external capability | MCP tool |
 | Large API or data processing without context bloat | MCP-exec-style fetch/filter/summarize workflow |
 | Confidence that behavior holds | Eval harness with transcripts and assertions |
+| Durable behavioral rule that must survive across turns | Re-inject into system prompt every turn (mutable rules file), not a one-time note or memory — see general-agent-development.md |
 
 ## Red Flags
 
@@ -60,6 +62,7 @@ Stop and re-evaluate when you think:
 - "The tool schema can be verbose because context is large."
 - "The subagent can just read the whole conversation."
 - "The happy path worked once."
+- "A prohibition list will fix this."
 
 These are signs you need routing, gates, sharper context, or evals.
 
