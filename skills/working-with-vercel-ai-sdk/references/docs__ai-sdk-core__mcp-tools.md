@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/mcp-tools.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "7e62160b67a659ecfc2639f7f19bd7a411cd2b11ee5ee36c9a3073626084d4a0"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "e3bc4d56c326b66c9ce5bb23dd8da643e9e6fcb614617949f23c0352d62943ea"
 ---
 
 # Model Context Protocol (MCP)
@@ -705,6 +705,7 @@ You can see MCP in action in the following examples:
 - [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
 - [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
+- [Batch](/docs/ai-sdk-core/batch)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)

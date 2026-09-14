@@ -1,9 +1,9 @@
 ---
-title: Trace Drains
+title: AI Gateway Trace Drains
 product: vercel
 url: /docs/ai-gateway/observability-and-spend/trace-drains
 canonical_url: "https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains"
-last_updated: 2026-07-30
+last_updated: 2026-09-08
 type: reference
 prerequisites:
   - /docs/ai-gateway/observability-and-spend
@@ -17,11 +17,11 @@ related:
 summary: Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain billing.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "88ce0fa2f203f4084707793ba110e7235aebd3ab0a6e26ee7031cfb195a3629d"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "e91776e7a8c370d98b0f3e5802e20448a81ab913722adf28c2261cff619c87b5"
 ---
 
-# Trace Drains
+# AI Gateway Trace Drains
 
 AI Gateway produces an [OpenTelemetry](https://opentelemetry.io/docs/concepts/signals/traces/) trace for every request it handles. A trace drain forwards those traces to any OTLP/HTTP-compatible endpoint, such as your own collector or a native integration from the Marketplace, so you can inspect latency, token usage, and provider failover in the observability tool you already use.
 
@@ -62,7 +62,7 @@ For the underlying drain configuration and OTLP formats, see the [Drains documen
     -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
     -H "Content-Type: application/json" \
     -d '{
-      "model": "openai/gpt-5.5",
+      "model": "openai/gpt-6-astra",
       "input": "Write a one-sentence bedtime story."
     }'
   ```

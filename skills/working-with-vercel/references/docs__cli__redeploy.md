@@ -14,8 +14,8 @@ related:
 summary: Learn how to redeploy your project using the vercel redeploy CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/redeploy.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "158bbbf4a8ea6fa14a2126bc5130951ca184783099797b5f39760f892a39cca7"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "bf3b4a289b9d35dc7a6c7d60e16c2163c5e56d88eb3c702295a0f5ff22a91e1e"
 ---
 
 # vercel redeploy
@@ -29,8 +29,8 @@ The `vercel redeploy` command is used to rebuild and [redeploy an existing deplo
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fredeploy&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
-- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related&source_path=%2Fdocs%2Fcli%2Fredeploy&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [vercel remove](https://vercel.com/docs/cli/remove?from=related&source_path=%2Fdocs%2Fcli%2Fredeploy&source_site=vercel-docs&relationship=related) — Learn how to remove a deployment using the vercel remove CLI command.
+- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related&source_path=%2Fdocs%2Fcli%2Fredeploy&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fredeploy&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel deploy-hooks](https://vercel.com/docs/cli/deploy-hooks?from=related&source_path=%2Fdocs%2Fcli%2Fredeploy&source_site=vercel-docs&relationship=related) — Manage Deploy Hooks for Git-triggered builds from the Vercel CLI: list, create, and remove deploy hook URLs that trigger
 

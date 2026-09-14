@@ -13,8 +13,8 @@ related:
 summary: Learn how to integrate Makeswift with Vercel. Makeswift is a no-code website builder designed for creating and managing React websites. Follow our...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/cms/makeswift.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "cec3c3732e439aa9643928b8ed7df6d54049273215b364c8abc1af1d430a8159"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "08d8333b4f90684f32cab66bece07faa050e498c2222e96987bcfd4ea9a31464"
 ---
 
 # Vercel Makeswift Integration
@@ -34,7 +34,7 @@ Makeswift is a no-code website builder designed for creating and managing React 
 - [Vercel ButterCMS Integration](https://vercel.com/docs/integrations/cms/butter-cms?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fmakeswift&source_site=vercel-docs&relationship=related) — Learn how to integrate ButterCMS with Vercel. Follow our tutorial to set up the ButterCMS template on Vercel and manage
 - [Vercel DatoCMS Integration](https://vercel.com/docs/integrations/cms/dato-cms?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fmakeswift&source_site=vercel-docs&relationship=related) — Learn how to integrate DatoCMS with Vercel. Follow our step-by-step tutorial to set up and manage your digital content s
 - [Vercel Formspree Integration](https://vercel.com/docs/integrations/cms/formspree?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fmakeswift&source_site=vercel-docs&relationship=related) — Learn how to integrate Formspree with Vercel. Follow our tutorial to set up Formspree and manage form submissions on you
-- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fmakeswift&source_site=vercel-docs&relationship=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
+- [Vercel Sanity Integration](https://vercel.com/docs/integrations/cms/sanity?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fmakeswift&source_site=vercel-docs&relationship=related) — Learn how to integrate Sanity with Vercel. Follow our tutorial to deploy the Sanity template or install the integration
 
 Full cross-link map for this page: [/docs/integrations/cms/makeswift.graph.md](/docs/integrations/cms/makeswift.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fmakeswift&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

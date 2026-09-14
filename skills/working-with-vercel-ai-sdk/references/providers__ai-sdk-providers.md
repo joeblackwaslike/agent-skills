@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "30e44798f87f487fc27932ee77ac11ef4aaa2a39337c21dcb28b4a1496951c1c"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "672e463293b0098d4b259cf9d8b5fce6c7518b693ab42ba706a532c3a90ed39b"
 ---
 
 # AI SDK Providers
@@ -136,7 +136,6 @@ Not all providers support all AI SDK features. Here's a quick comparison of the 
   - [Deepgram](/providers/ai-sdk-providers/deepgram)
   - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
   - [Gladia](/providers/ai-sdk-providers/gladia)
-  - [LMNT](/providers/ai-sdk-providers/lmnt)
   - [Google](/providers/ai-sdk-providers/google)
   - [Hume](/providers/ai-sdk-providers/hume)
   - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
@@ -175,6 +174,7 @@ Not all providers support all AI SDK features. Here's a quick comparison of the 
   - [Cline](/providers/ai-sdk-harnesses/cline)
   - [Cursor](/providers/ai-sdk-harnesses/cursor)
   - [fx](/providers/ai-sdk-harnesses/fx)
+  - [GitHub Copilot](/providers/ai-sdk-harnesses/github-copilot)
 - [Observability Integrations](/providers/observability)
   - [Arize AX](/providers/observability/arize-ax)
   - [Axiom](/providers/observability/axiom)
@@ -204,7 +204,6 @@ Not all providers support all AI SDK features. Here's a quick comparison of the 
   - [Clarifai](/providers/openai-compatible-providers/clarifai)
   - [Heroku](/providers/openai-compatible-providers/heroku)
   - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)
-  - [Synthorai](/providers/openai-compatible-providers/synthorai)
 - [Community Providers](/providers/community-providers)
   - [Writing a Custom Provider](/providers/community-providers/custom-providers)
   - [A2A](/providers/community-providers/a2a)
@@ -263,6 +262,7 @@ Not all providers support all AI SDK features. Here's a quick comparison of the 
   - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
   - [QVAC](/providers/community-providers/qvac)
   - [Interfaze](/providers/community-providers/interfaze)
+  - [Telnyx](/providers/community-providers/telnyx)
   - [Flowise](/providers/community-providers/flowise)
 - [Adapters](/providers/adapters)
   - [LangChain](/providers/adapters/langchain)

@@ -16,8 +16,8 @@ related:
 summary: Learn about the different plans available on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "7fba2624761e40ef9d2b39cbf54022705ce24d22cf06afe5cc29fc98a05ab577"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "c707eb5c741a6b439fe8896e8b442bff50fae6118734bf18b44a65dff6ae7c22"
 ---
 
 # Account Plans on Vercel
@@ -38,8 +38,8 @@ Vercel offers multiple account plans: Hobby, Pro, and Enterprise.
 - [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=related)
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
-- [Account Management](https://vercel.com/docs/accounts?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=related) — Learn how to manage your Vercel account and team members.
 - [Pricing for Web Analytics](https://vercel.com/docs/analytics/limits-and-pricing?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=related) — Learn about pricing for Vercel Web Analytics.
+- [Account Management](https://vercel.com/docs/accounts?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=related) — Learn how to manage your Vercel account and team members.
 - [Usage & Pricing for Cron Jobs](https://vercel.com/docs/cron-jobs/usage-and-pricing?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=related) — Learn about cron jobs usage and pricing details.
 
 Full cross-link map for this page: [/docs/plans.graph.md](/docs/plans.graph.md?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=graph)

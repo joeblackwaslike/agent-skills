@@ -16,8 +16,8 @@ related:
 summary: Vercel Blob is a scalable, cost-effective object storage service with private and public access modes for files up to 5 TB.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "7ea7c09c6997fc2bd61b9cd5bad56f28d8c3b3e8dc0a9e5eb67e1f1d4963b634"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "4b5bad30d2e5c6e48821c6b73dd1dbf6fb1a0ef135535c07057d0063852d787b"
 ---
 
 # Vercel Blob
@@ -37,10 +37,10 @@ sha256: "7ea7c09c6997fc2bd61b9cd5bad56f28d8c3b3e8dc0a9e5eb67e1f1d4963b634"
 - [How to use and optimize videos](https://nextjs.org/docs/app/guides/videos?from=related&source_path=%2Fdocs%2Fvercel-blob&source_site=vercel-docs&relationship=related) — Recommendations and best practices for optimizing videos in your Next.js application.
 - [Databases](https://v0.app/docs/databases?from=related&source_path=%2Fdocs%2Fvercel-blob&source_site=vercel-docs&relationship=related) — Build full-stack applications with v0's database integrations.
 - [Create private blob stores with a single click in v0](https://vercel.com/changelog/create-private-blob-stores-with-a-single-click-in-v0?from=related&source_path=%2Fdocs%2Fvercel-blob&source_site=vercel-docs&relationship=related)
+- [Persistent memory for eve agents](https://vercel.com/changelog/persistent-memory-for-eve-agents?from=related&source_path=%2Fdocs%2Fvercel-blob&source_site=vercel-docs&relationship=related)
 - [Signed URLs are now available for Vercel Blob](https://vercel.com/changelog/signed-urls-are-now-available-for-vercel-blob?from=related&source_path=%2Fdocs%2Fvercel-blob&source_site=vercel-docs&relationship=related)
 - [Vercel Blob CLI is now available](https://vercel.com/changelog/vercel-blob-cli-is-now-available?from=related&source_path=%2Fdocs%2Fvercel-blob&source_site=vercel-docs&relationship=related)
 - [Vercel Blob is now generally available](https://vercel.com/changelog/vercel-blob-is-now-generally-available?from=related&source_path=%2Fdocs%2Fvercel-blob&source_site=vercel-docs&relationship=related)
-- [Vercel Blob now supports consistent reads on private storage](https://vercel.com/changelog/vercel-blob-now-supports-consistent-reads-on-private-storage?from=related&source_path=%2Fdocs%2Fvercel-blob&source_site=vercel-docs&relationship=related)
 - [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide?from=related&source_path=%2Fdocs%2Fvercel-blob&source_site=vercel-docs&relationship=related) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel?from=related&source_path=%2Fdocs%2Fvercel-blob&source_site=vercel-docs&relationship=related) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
 - [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud?from=related&source_path=%2Fdocs%2Fvercel-blob&source_site=vercel-docs&relationship=related) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr

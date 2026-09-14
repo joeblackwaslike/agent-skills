@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/smooth-stream.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "7f914ea66b918b7800a57c9876a2f16c80e3ab3b67f7d7630370df5511faf7b5"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "fcf769d983e7155a104419170a97c56fa6764dc661c43d456c226483cec3465f"
 ---
 
 # `smoothStream()`
@@ -168,10 +168,15 @@ Returns a `TransformStream` that:
 - [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
 - [createAgentUIStreamResponse](/docs/reference/ai-sdk-core/create-agent-ui-stream-response)
 - [pipeAgentUIStreamToResponse](/docs/reference/ai-sdk-core/pipe-agent-ui-stream-to-response)
+- [experimental_startBatch](/docs/reference/ai-sdk-core/start-batch)
 - [tool](/docs/reference/ai-sdk-core/tool)
+- [experimental_getBatchStatus](/docs/reference/ai-sdk-core/get-batch-status)
 - [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
+- [experimental_getBatchResults](/docs/reference/ai-sdk-core/get-batch-results)
+- [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
 - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
 - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
 - [jsonSchema](/docs/reference/ai-sdk-core/json-schema)

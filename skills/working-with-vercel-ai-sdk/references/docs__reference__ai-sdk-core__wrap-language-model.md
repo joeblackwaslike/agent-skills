@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/wrap-language-model.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "876b6d94eae69e8239808efc724d47658d5ed6733034a82bce8968393e573c18"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "ab13747a0ec3b721948268693b5596a4d879ae8392193855468cf1362544459c"
 ---
 
 # `wrapLanguageModel()`
@@ -80,10 +80,15 @@ A new `LanguageModelV4` instance with middleware applied.
 - [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
 - [createAgentUIStreamResponse](/docs/reference/ai-sdk-core/create-agent-ui-stream-response)
 - [pipeAgentUIStreamToResponse](/docs/reference/ai-sdk-core/pipe-agent-ui-stream-to-response)
+- [experimental_startBatch](/docs/reference/ai-sdk-core/start-batch)
 - [tool](/docs/reference/ai-sdk-core/tool)
+- [experimental_getBatchStatus](/docs/reference/ai-sdk-core/get-batch-status)
 - [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
+- [experimental_getBatchResults](/docs/reference/ai-sdk-core/get-batch-results)
+- [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
 - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
 - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
 - [jsonSchema](/docs/reference/ai-sdk-core/json-schema)

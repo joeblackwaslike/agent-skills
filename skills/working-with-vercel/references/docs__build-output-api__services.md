@@ -15,8 +15,8 @@ related:
 summary: Learn how a deployment with multiple services is structured in the Build Output API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/services.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "7409ed9417d236688291d6f5c3cd54a0648bb545a9dd7da739503b0db962f646"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "44bcc900aa18487bb89aaf420208d79212b45bbc6013f13c12490e202f636da9"
 ---
 
 # Services
@@ -36,9 +36,8 @@ A deployment can contain multiple services. In the Build Output API, each servic
 - [Full-stack previews on Vercel](https://vercel.com/kb/guide/full-stack-preview-deployments-on-vercel?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fservices&source_site=vercel-docs&relationship=related) — Learn how to use full-stack previews for your Vercel projects. Deploy Next.js, FastAPI, and a containerized Go service t
 - [Service configuration reference](https://vercel.com/docs/services/config-reference?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fservices&source_site=vercel-docs&relationship=related) — Options available for service configuration.
 - [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fservices&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
-- [Products](https://vercel.com/docs/products?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fservices&source_site=vercel-docs&relationship=related) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
 - [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fservices&source_site=vercel-docs&relationship=related) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fservices&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
+- [Products](https://vercel.com/docs/products?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fservices&source_site=vercel-docs&relationship=related) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
 
 Full cross-link map for this page: [/docs/build-output-api/services.graph.md](/docs/build-output-api/services.graph.md?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fservices&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

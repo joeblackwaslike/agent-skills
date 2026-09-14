@@ -16,8 +16,8 @@ related:
 summary: Vercel Drop lets you deploy a file or folder by dragging it into your browser, with no Git or CLI required.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drop.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "7d9fd35a154c8871bc4c94275e8c530ea1c11ea82b6ceb762bd0301f8c3d6173"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "90bacfa620335923b0b5364fb226beed5a0ea5d651faa512ba23f9d7426d62a0"
 ---
 
 # Deploying with Vercel Drop
@@ -39,8 +39,8 @@ Vercel Drop lets you deploy a file, folder, or `.zip` by dragging it into your b
 - [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fdrop&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fdrop&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fdrop&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Deploy a Flask app on Vercel](https://vercel.com/docs/frameworks/backend/flask?from=related&source_path=%2Fdocs%2Fdrop&source_site=vercel-docs&relationship=related) — Deploy a Flask app on Vercel. Learn how the Python runtime, WSGI, static assets, and Vercel Functions work together.
 - [Deploy a Lovable app on Vercel](https://vercel.com/docs/integrations/lovable?from=related&source_path=%2Fdocs%2Fdrop&source_site=vercel-docs&relationship=related) — Deploy your Lovable project to Vercel using GitHub sync and zero-configuration TanStack Start detection.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fdrop&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/drop.graph.md](/docs/drop.graph.md?from=related&source_path=%2Fdocs%2Fdrop&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

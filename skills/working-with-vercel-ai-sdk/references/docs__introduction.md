@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/introduction.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "ed7e28b50df313d7d48fd35a8f446c141a19442c50643e17571f0361f1019199"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "c4a44de74ddd5dd85de65af396df091d659d66119a7cafd84d47200a251ee6f2"
 ---
 
 # AI SDK
@@ -140,6 +140,7 @@ Based on the above documentation, answer the following:
   - [File Uploads](/docs/ai-sdk-core/file-uploads)
   - [Language Model Middleware](/docs/ai-sdk-core/middleware)
   - [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
+  - [Batch](/docs/ai-sdk-core/batch)
   - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
   - [Error Handling](/docs/ai-sdk-core/error-handling)
   - [Testing](/docs/ai-sdk-core/testing)
@@ -214,10 +215,15 @@ Based on the above documentation, answer the following:
     - [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
     - [createAgentUIStreamResponse](/docs/reference/ai-sdk-core/create-agent-ui-stream-response)
     - [pipeAgentUIStreamToResponse](/docs/reference/ai-sdk-core/pipe-agent-ui-stream-to-response)
+    - [experimental_startBatch](/docs/reference/ai-sdk-core/start-batch)
     - [tool](/docs/reference/ai-sdk-core/tool)
+    - [experimental_getBatchStatus](/docs/reference/ai-sdk-core/get-batch-status)
     - [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
+    - [experimental_getBatchResults](/docs/reference/ai-sdk-core/get-batch-results)
+    - [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
     - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
     - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+    - [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
     - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
     - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
     - [jsonSchema](/docs/reference/ai-sdk-core/json-schema)

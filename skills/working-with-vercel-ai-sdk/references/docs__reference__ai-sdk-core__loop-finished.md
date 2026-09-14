@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/loop-finished.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "4ac6428fe59ccd6ec84b480d3b535307f69019d6a4fb1c75f5754e43ae7ded1c"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "d693d40518f3610e1c133f03b0cb3682a08d320ff2fcf034febc8b28d8e5a198"
 ---
 
 # `isLoopFinished()`
@@ -104,10 +104,15 @@ In practice, this does not make much sense in this context, since you could just
 - [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
 - [createAgentUIStreamResponse](/docs/reference/ai-sdk-core/create-agent-ui-stream-response)
 - [pipeAgentUIStreamToResponse](/docs/reference/ai-sdk-core/pipe-agent-ui-stream-to-response)
+- [experimental_startBatch](/docs/reference/ai-sdk-core/start-batch)
 - [tool](/docs/reference/ai-sdk-core/tool)
+- [experimental_getBatchStatus](/docs/reference/ai-sdk-core/get-batch-status)
 - [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
+- [experimental_getBatchResults](/docs/reference/ai-sdk-core/get-batch-results)
+- [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
 - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
 - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
 - [jsonSchema](/docs/reference/ai-sdk-core/json-schema)

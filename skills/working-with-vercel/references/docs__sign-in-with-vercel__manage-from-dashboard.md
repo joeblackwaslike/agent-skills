@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage Sign in with Vercel from the Dashboard
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "ca3602586ea3cc6edf8e3b489e82ecae24d2473d1b4e897d02d2d36af7115a6b"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "f56454cccd9048f0e7545e2662d6979c27a59e2427c6df23a6c2f4887a0ee79a"
 ---
 
 # Manage Sign in with Vercel from the Dashboard
@@ -37,8 +37,8 @@ To manage any third-party apps, or create a new one yourself, you need to create
 - [Troubleshooting Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel/troubleshooting?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fmanage-from-dashboard&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot common errors with Sign in with Vercel
 - [Vercel KMS Authentication](https://vercel.com/docs/kms/concepts/authentication?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fmanage-from-dashboard&source_site=vercel-docs&relationship=related) — How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel ac
 - [Account Management](https://vercel.com/docs/accounts?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fmanage-from-dashboard&source_site=vercel-docs&relationship=related) — Learn how to manage your Vercel account and team members.
+- [Access tokens](https://vercel.com/docs/accounts/access-tokens?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fmanage-from-dashboard&source_site=vercel-docs&relationship=related) — Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate A
 - [SAML Single Sign-On](https://vercel.com/docs/saml?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fmanage-from-dashboard&source_site=vercel-docs&relationship=related) — Learn how to configure SAML SSO for your organization on Vercel.
-- [Auth.js](https://vercel.com/docs/connect/frameworks/authjs?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fmanage-from-dashboard&source_site=vercel-docs&relationship=related) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel/manage-from-dashboard.graph.md](/docs/sign-in-with-vercel/manage-from-dashboard.graph.md?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fmanage-from-dashboard&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

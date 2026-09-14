@@ -12,8 +12,8 @@ related:
 summary: How BotID behaves in local development environments and testing options
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/botid/local-development-behavior.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "f3b2f656c9f5bb4cf31c686a8eaf97c1fb315737e6e3dfd1c7e422b2d566765e"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "661891e4b658505b91894dea42ba07acbe03a9c42f938eeb793b568f6084ce6f"
 ---
 
 # Local Development Behavior
@@ -35,7 +35,6 @@ During local development, BotID behaves differently than in production to facili
 - [Vercel BotID is now generally available](https://vercel.com/changelog/vercel-botid-is-now-generally-available?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=related)
 - [vercel dev](https://vercel.com/docs/cli/dev?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
 - [Add the Vercel Toolbar to local and production environments](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel Toolbar in production and local environments.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/botid/local-development-behavior.graph.md](/docs/botid/local-development-behavior.graph.md?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

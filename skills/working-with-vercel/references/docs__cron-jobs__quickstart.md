@@ -16,8 +16,8 @@ related:
 summary: Learn how to schedule cron jobs to run at specific times or intervals.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cron-jobs/quickstart.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "7edf7f090a7988938edac56eaf3579dcc72b0112bb03a8b53eb6f9a1ef32d4e5"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "9cf9c2c09309c31ea12fd5a3a1321216fdb2a8684de8d1c2cbc7597ca0051126"
 ---
 
 # Getting started with cron jobs
@@ -30,12 +30,12 @@ This guide will help you get started with using cron jobs on Vercel. Cron jobs a
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to Setup Cron Jobs on Vercel](https://vercel.com/kb/guide/how-to-setup-cron-jobs-on-vercel?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to setup and use cron jobs on Vercel
 - [How to run background jobs in Next.js](https://vercel.com/kb/guide/how-to-run-background-jobs-in-nextjs-on-vercel?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn the durable way to run background jobs in Next.js on Vercel with the Workflow SDK, and when to reach for Queues or
 - [Troubleshooting Vercel Cron Jobs](https://vercel.com/kb/guide/troubleshooting-vercel-cron-jobs?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot cron jobs that aren't being run or logged when using Vercel Cron Jobs.
 - [Introducing Vercel Cron Jobs](https://vercel.com/blog/cron-jobs?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fquickstart&source_site=vercel-docs&relationship=related)
 - [Vercel Cron Jobs are now generally available](https://vercel.com/changelog/vercel-cron-jobs-are-now-generally-available?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fquickstart&source_site=vercel-docs&relationship=related)
 - [Run scheduled jobs with Vercel Cron Jobs and Vercel Functions](https://vercel.com/changelog/run-scheduled-jobs-with-vercel-cron-jobs-and-vercel-functions?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fquickstart&source_site=vercel-docs&relationship=related)
+- [How to ship a NestJS app on Vercel](https://vercel.com/kb/guide/ship-a-nestjs-app-on-vercel?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fquickstart&source_site=vercel-docs&relationship=related) — Deploy a NestJS app to Vercel with zero configuration. Learn how to ship from a template, the Nest CLI, or Git, and conf
 - [vercel crons](https://vercel.com/docs/cli/crons?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fquickstart&source_site=vercel-docs&relationship=related) — Manage Cron Jobs from the Vercel CLI: add cron entries to your vercel.json, list them, and trigger them on demand.
 - [Getting started with Vercel Functions](https://vercel.com/docs/functions/quickstart?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fquickstart&source_site=vercel-docs&relationship=related) — Build your first Vercel Function in a few steps.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fquickstart&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.

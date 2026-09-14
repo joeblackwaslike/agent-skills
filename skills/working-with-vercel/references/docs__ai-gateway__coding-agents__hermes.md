@@ -1,10 +1,10 @@
 ---
-title: Hermes
+title: Hermes with AI Gateway
 product: vercel
 url: /docs/ai-gateway/coding-agents/hermes
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/hermes"
-last_updated: 2026-08-12
-type: conceptual
+last_updated: 2026-09-08
+type: how-to
 prerequisites:
   - /docs/ai-gateway/coding-agents
   - /docs/ai-gateway
@@ -14,14 +14,14 @@ related:
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions
   - /docs/ai-gateway/models-and-providers/provider-options
   - /docs/ai-gateway/observability-and-spend/budgets
-summary: Use the Hermes agent with the AI Gateway.
+summary: Connect Hermes to AI Gateway with the Vercel CLI or manual provider configuration. Set your API key, discover models, and monitor usage.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/hermes.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "20b92fbf32a49e6b282cf0b65b74f5caa45861162e2c2651ce624bf8035bb7f1"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "9528d8d976c83b3b3209da1901d1024b73b4931a327ba6897de9c4803c464c54"
 ---
 
-# Hermes
+# Hermes with AI Gateway
 
 [Hermes](https://github.com/NousResearch/hermes-agent) is Nous Research's terminal-based coding agent. It ships an AI Gateway provider, so you can reach every model in the gateway catalog from Hermes with one API key and track spend in one place.
 
@@ -31,26 +31,29 @@ sha256: "20b92fbf32a49e6b282cf0b65b74f5caa45861162e2c2651ce624bf8035bb7f1"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel AI Gateway and Vercel Sandbox now available on Hermes Agent](https://vercel.com/changelog/vercel-ai-gateway-and-vercel-sandbox-now-available-on-hermes-agent?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fhermes&source_site=vercel-docs&relationship=related)
-- [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fhermes&source_site=vercel-docs&relationship=related)
 - [GPT 6 Astra now available on Vercel AI Gateway](https://vercel.com/changelog/gpt-6-astra-now-available-on-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fhermes&source_site=vercel-docs&relationship=related)
-- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fhermes&source_site=vercel-docs&relationship=related) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
+- [Vercel AI Gateway and Vercel Sandbox now available on Hermes Agent](https://vercel.com/changelog/vercel-ai-gateway-and-vercel-sandbox-now-available-on-hermes-agent?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fhermes&source_site=vercel-docs&relationship=related)
 - [Hermes](https://vercel.com/docs/sandbox/ecosystem/hermes?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fhermes&source_site=vercel-docs&relationship=related) — Run Hermes Agent terminal commands in isolated Vercel Sandbox microVMs, with models served through Vercel AI Gateway.
-- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fhermes&source_site=vercel-docs&relationship=related) — Create an AI Gateway API key, make your first request with TypeScript, Python, or cURL, and verify how the request was r
-- [Xcode](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fhermes&source_site=vercel-docs&relationship=related) — Use Xcode's coding assistant with the AI Gateway.
-- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fhermes&source_site=vercel-docs&relationship=related) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fhermes&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
+- [gptme with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/gptme?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fhermes&source_site=vercel-docs&relationship=related) — Connect gptme to AI Gateway with the Vercel CLI or a TOML provider configuration.
+- [GitHub Copilot CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/copilot?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fhermes&source_site=vercel-docs&relationship=related) — Connect GitHub Copilot CLI to AI Gateway with the Vercel CLI or environment variables for the provider URL, API key, and
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fhermes&source_site=vercel-docs&relationship=related) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/hermes.graph.md](/docs/ai-gateway/coding-agents/hermes.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fhermes&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-> **💡 Note:** The Vercel CLI can do this for you. [`vercel ai-gateway coding-agents setup   --agent hermes`](/docs/cli/ai-gateway#setup) provisions a key, adds a
-> `vercel-ai-gateway` provider to `~/.hermes/config.yaml` with model discovery
-> turned on, and exports `AI_GATEWAY_API_KEY` from a managed block in your
-> shell startup file. Switch models in-session with `/model
->   custom:vercel-ai-gateway:<model-id>`.
+## Set up with the Vercel CLI
+
+Run the [Vercel CLI setup command](/docs/cli/ai-gateway#setup) for Hermes:
+
+```bash filename="terminal"
+npx vercel ai-gateway setup --agent hermes
+```
+
+The command provisions a key, adds a `vercel-ai-gateway` provider to `~/.hermes/config.yaml` with model discovery turned on, and exports `AI_GATEWAY_API_KEY` from a managed block in your shell startup file. Switch models in-session with `/model custom:vercel-ai-gateway:<model-id>`.
 
 ## Configuring Hermes
+
+If you can't use the Vercel CLI, configure Hermes manually:
 
 - ### Create an API key
   Go to the [**AI Gateway**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) section in the Vercel dashboard sidebar and click **API keys** to create a new API key.
@@ -72,17 +75,19 @@ Full cross-link map for this page: [/docs/ai-gateway/coding-agents/hermes.graph.
 - ### Start Hermes
   You can also skip the picker and name the provider and model directly:
   ```bash filename="Terminal"
-  hermes --provider ai-gateway -m openai/gpt-5.6-sol
+  hermes --provider ai-gateway -m openai/gpt-6-astra
   ```
   The provider ID is `ai-gateway`. Hermes also accepts `vercel` and `vercel-ai-gateway` as aliases. Model IDs use the gateway's `creator/model-name` format.
 
-- ### (Optional) Set a fallback provider
-  Hermes supports `ai-gateway` in fallback chains. Add it to `fallback_model` in `~/.hermes/config.yaml`, or run `hermes fallback` to configure it interactively. When a fallback activates, Hermes swaps the model and provider mid-session without losing your conversation.
+### Set a fallback provider
 
-- ### (Optional) Monitor usage and spend
-  View your usage, spend, and request activity in the [**AI Gateway**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) section in the Vercel dashboard sidebar. See the [observability documentation](/docs/ai-gateway/observability-and-spend/observability) for more details.
+Hermes supports `ai-gateway` in fallback chains. Add it to `fallback_model` in `~/.hermes/config.yaml`, or run `hermes fallback` to configure it interactively. When a fallback activates, Hermes swaps the model and provider mid-session without losing your conversation.
 
-  Hermes identifies itself to the gateway, so its requests are attributable in your analytics.
+### Monitor usage and spend
+
+View your usage, spend, and request activity in the [**AI Gateway**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) section in the Vercel dashboard sidebar. See the [observability documentation](/docs/ai-gateway/observability-and-spend/observability) for more details.
+
+Hermes identifies itself to the gateway, so its requests are attributable in your analytics.
 
 ## Environment variables
 

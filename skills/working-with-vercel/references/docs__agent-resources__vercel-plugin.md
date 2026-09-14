@@ -12,8 +12,8 @@ related:
 summary: Install the Vercel plugin to give supported AI coding tools Vercel context, skills, specialist agents, slash commands, and lightweight session-start...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-plugin.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "659b556cada1da22b88709a55eb8a83388f955b92510a7bceb7bfe4bf0c29dc8"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "afbd32cedc76a5a545749c3bc21c15f7029b388d74f170af59149f044f910c9a"
 ---
 
 # Vercel Plugin for AI Coding Agents
@@ -33,11 +33,11 @@ The Vercel plugin gives [supported AI coding tools](#supported-tools) Vercel-spe
 - [How to build a browser agent that works behind a login](https://vercel.com/kb/guide/build-a-browser-agent?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-plugin&source_site=vercel-docs&relationship=related) — Build a browser agent with eve, Vercel Connect, and KERNEL managed auth that signs a user in through a human-in-the-loop
 - [Build your own Slackbot with Vercel Connect](https://vercel.com/kb/guide/build-a-slack-bot-with-vercel-connect?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-plugin&source_site=vercel-docs&relationship=related) — Learn how to build your very own Slackbot with Chat SDK and AI SDK. Vercel Connect supplies runtime Slack tokens and for
 - [Build a daily digest bot with Chat SDK and Workflow SDK](https://vercel.com/kb/guide/daily-digest-bot-with-chat-sdk-and-workflow-sdk?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-plugin&source_site=vercel-docs&relationship=related) — Build a daily digest bot that posts a daily digest of GitHub stats to Slack. Learn how to use Vercel Connect to set up S
+- [Run recurring security reviews with deepsec on Vercel](https://vercel.com/kb/guide/deepsec-reviews-on-vercel?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-plugin&source_site=vercel-docs&relationship=related) — Learn how to run periodic security scans on your code with deepsec. Set up deepsec to review GitHub repositories and del
 - [Build a web research agent with Workflow SDK](https://vercel.com/kb/guide/durable-web-research-agent-with-workflow-sdk?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-plugin&source_site=vercel-docs&relationship=related) — Build a web research agent that searches the web and returns a cited report. Powered by AI SDK and Workflow SDK, it jour
-- [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-plugin&source_site=vercel-docs&relationship=related) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
 - [Introducing the Vercel plugin for coding agents](https://vercel.com/changelog/introducing-vercel-plugin-for-coding-agents?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-plugin&source_site=vercel-docs&relationship=related)
+- [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-plugin&source_site=vercel-docs&relationship=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-plugin&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
-- [Agent Skills](https://vercel.com/docs/agent-resources/skills?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-plugin&source_site=vercel-docs&relationship=related) — Install skills to enhance AI coding agents with specialized capabilities for React, Next.js, deployment, and more.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-plugin.graph.md](/docs/agent-resources/vercel-plugin.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-plugin&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

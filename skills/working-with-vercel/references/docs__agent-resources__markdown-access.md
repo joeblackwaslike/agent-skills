@@ -14,8 +14,8 @@ related:
 summary: Learn how Vercel serves documentation to AI agents as Markdown and helps them discover related pages through content negotiation, discovery indexes,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/markdown-access.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "80617d5b5f07ce9db88f8a442ab763b4d500627f84de5382627d09ec45aed1da"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "87fbb41f3fed37bfe5db87dce0800123b33717494739aa9899ac82ef2beff723"
 ---
 
 # Markdown and Agent Discovery
@@ -28,13 +28,13 @@ Vercel documentation is available as HTML for humans and structured Markdown for
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Make your documentation readable by AI agents](https://vercel.com/kb/guide/make-your-documentation-readable-by-ai-agents?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related) — Serve markdown to AI agents using content negotiation, .md endpoints, agent auto-detection, llms.txt,   sitemap.md, and
 - [How to serve documentation for agents](https://vercel.com/kb/guide/how-to-serve-documentation-for-agents?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related) — Learn how to serve markdown to agents and HTML for humans from the same URL
 - [Making agent-friendly pages with content negotiation](https://vercel.com/blog/making-agent-friendly-pages-with-content-negotiation?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related)
-- [Agent Readability: A Specification for AI-Optimized Websites](https://vercel.com/kb/guide/agent-readability-spec?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related) — When an agent visits your site, it needs to quickly find, read, and understand your pages. Sites that are easy for agent
 - [Docs pages support Markdown responses](https://vercel.com/changelog/docs-pages-support-markdown-responses?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related)
 - [Docs Contribution Guide](https://nextjs.org/docs/community/contribution-guide?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related) — Learn how to contribute to Next.js Documentation
+- [How to set up your Next.js project for AI coding agents](https://nextjs.org/docs/app/guides/ai-agents?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related) — Learn how to configure your Next.js project so AI coding agents use up-to-date documentation instead of outdated trainin
 - [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
+- [AEO & GEO](https://docs.vercel.shop/docs/anatomy/aeo-geo?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related) — How the storefront makes itself legible to AI answer engines and generative search, with built-in content negotiation, s
 - [Text Prompting](https://v0.app/docs/text-prompting?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related) — Use text prompting to create initial UIs and ask technical questions with natural language.
 - [Open Vercel documentation pages in AI providers](https://vercel.com/changelog/open-vercel-documentation-pages-in-ai-providers?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related)
 - [Introducing the Vercel plugin for coding agents](https://vercel.com/changelog/introducing-vercel-plugin-for-coding-agents?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related)

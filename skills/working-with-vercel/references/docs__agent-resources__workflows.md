@@ -16,8 +16,8 @@ related:
 summary: End-to-end workflows that show how to compose Vercel CLI commands into complete debugging, deployment, and recovery sessions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/workflows.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "5a657adaed80a207d7bd7191e3b6f222bf67c9f27c7fe921d85b51033431a788"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "97e6ec4ce74d99da4e351356b4a1bf25c008bc90c10d20cfc60e766bbd618aff"
 ---
 
 # CLI Workflows
@@ -32,14 +32,14 @@ These workflows show how to compose multiple Vercel CLI commands into complete w
 
 - [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel?from=related&source_path=%2Fdocs%2Fagent-resources%2Fworkflows&source_site=vercel-docs&relationship=related) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
 - [How can I use the Vercel CLI for custom workflows?](https://vercel.com/kb/guide/using-vercel-cli-for-custom-workflows?from=related&source_path=%2Fdocs%2Fagent-resources%2Fworkflows&source_site=vercel-docs&relationship=related) — You can use the Vercel CLI to deploy any application, including custom git providers and restricted source code.
-- [Python](https://workflow-sdk.dev/docs/getting-started/python?from=related&source_path=%2Fdocs%2Fagent-resources%2Fworkflows&source_site=vercel-docs&relationship=related) — Set up the Workflow Python SDK in your Python application.
 - [Observability](https://workflow-sdk.dev/docs/observability?from=related&source_path=%2Fdocs%2Fagent-resources%2Fworkflows&source_site=vercel-docs&relationship=related) — Inspect and debug workflow runs using the CLI and web UI.
-- [Building stateful Slack bots with Vercel Workflow](https://vercel.com/kb/guide/stateful-slack-bots-with-vercel-workflow?from=related&source_path=%2Fdocs%2Fagent-resources%2Fworkflows&source_site=vercel-docs&relationship=related) — Learn how to build Slack bots that maintain state and handle long-running processes without managing queues, databases,
-- [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution?from=related&source_path=%2Fdocs%2Fagent-resources%2Fworkflows&source_site=vercel-docs&relationship=related)
+- [Python](https://workflow-sdk.dev/docs/getting-started/python?from=related&source_path=%2Fdocs%2Fagent-resources%2Fworkflows&source_site=vercel-docs&relationship=related) — Set up the Workflow Python SDK in your Python application.
 - [Building Durable AI Agents](https://workflow-sdk.dev/docs/ai?from=related&source_path=%2Fdocs%2Fagent-resources%2Fworkflows&source_site=vercel-docs&relationship=related) — Convert a basic AI chat app into a durable, resumable agent using Workflow SDK.
+- [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution?from=related&source_path=%2Fdocs%2Fagent-resources%2Fworkflows&source_site=vercel-docs&relationship=related)
 - [How to run background jobs in Next.js](https://vercel.com/kb/guide/how-to-run-background-jobs-in-nextjs-on-vercel?from=related&source_path=%2Fdocs%2Fagent-resources%2Fworkflows&source_site=vercel-docs&relationship=related) — Learn the durable way to run background jobs in Next.js on Vercel with the Workflow SDK, and when to reach for Queues or
 - [Testing](https://workflow-sdk.dev/docs/testing?from=related&source_path=%2Fdocs%2Fagent-resources%2Fworkflows&source_site=vercel-docs&relationship=related) — Unit test individual steps and integration test entire workflows using Vitest.
 - [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related&source_path=%2Fdocs%2Fagent-resources%2Fworkflows&source_site=vercel-docs&relationship=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
+- [Vercel Workflows](https://vercel.com/docs/workflows?from=related&source_path=%2Fdocs%2Fagent-resources%2Fworkflows&source_site=vercel-docs&relationship=related) — Build agents and applications that retry failed steps, wait for external events, and resume across crashes and deploymen
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fagent-resources%2Fworkflows&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 - [Workflow Concepts](https://vercel.com/docs/workflows/concepts?from=related&source_path=%2Fdocs%2Fagent-resources%2Fworkflows&source_site=vercel-docs&relationship=related) — Learn how workflows, steps, sleeps, and hooks work together to build durable applications.
 

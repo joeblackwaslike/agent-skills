@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/env.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "abb4f816c0f299983060eb8e478d600c4ae88e140479207feaf6e437ea867326"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "211603cc2e4e16fd72cef29c65f0c53eb891f5eb41f9c2405b4935acacc70826"
 ---
 
 # vercel env
@@ -33,8 +33,8 @@ The `vercel env` command is used to manage [Environment Variables](/docs/environ
 - [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related&source_path=%2Fdocs%2Fcli%2Fenv&source_site=vercel-docs&relationship=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
 - [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare?from=related&source_path=%2Fdocs%2Fcli%2Fenv&source_site=vercel-docs&relationship=related) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
 - [How do I use private dependencies with Vercel?](https://vercel.com/kb/guide/using-private-dependencies-with-vercel?from=related&source_path=%2Fdocs%2Fcli%2Fenv&source_site=vercel-docs&relationship=related) — Information on how to use private dependencies with a Vercel deployment.
-- [Managing environment variables across environments](https://vercel.com/docs/environment-variables/manage-across-environments?from=related&source_path=%2Fdocs%2Fcli%2Fenv&source_site=vercel-docs&relationship=related) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
 - [vercel pull](https://vercel.com/docs/cli/pull?from=related&source_path=%2Fdocs%2Fcli%2Fenv&source_site=vercel-docs&relationship=related) — Learn how to update your local project with remote environment variables using the vercel pull CLI command.
+- [Managing environment variables across environments](https://vercel.com/docs/environment-variables/manage-across-environments?from=related&source_path=%2Fdocs%2Fcli%2Fenv&source_site=vercel-docs&relationship=related) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
 - [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fenv&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fenv&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel dev](https://vercel.com/docs/cli/dev?from=related&source_path=%2Fdocs%2Fcli%2Fenv&source_site=vercel-docs&relationship=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the

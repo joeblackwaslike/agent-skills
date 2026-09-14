@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/soniox.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "d84988f68dc18a331849f5507aa88d0555a92bc502d1a9282258ac3bdff65b9f"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "c28979f812d4e81f67abe403f0a2b13e12074035044e27c6b16184d327f7c3a0"
 ---
 
 # Soniox Provider
@@ -203,6 +203,7 @@ For more details, see the [Soniox context documentation](https://soniox.com/docs
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
 - [Interfaze](/providers/community-providers/interfaze)
+- [Telnyx](/providers/community-providers/telnyx)
 - [Flowise](/providers/community-providers/flowise)
 
 

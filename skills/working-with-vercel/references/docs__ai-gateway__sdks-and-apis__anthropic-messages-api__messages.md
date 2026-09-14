@@ -1,23 +1,23 @@
 ---
-title: Messages
+title: Anthropic Messages Requests with AI Gateway
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages"
-last_updated: 2026-07-28
-type: conceptual
+last_updated: 2026-09-08
+type: reference
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api
   - /docs/ai-gateway/sdks-and-apis
 related:
   - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/streaming
-summary: Create messages using the Anthropic Messages API format with support for streaming.
+summary: Create messages using the Anthropic Messages API format with support for streaming through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "e13e20907a6bd0d431ef17db8a1a1e5a19ddbb8371c35549a1dfd7fe9987056f"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "7780ee12841aa3687708743a0ca425ef84d73fe8d4b76f2852cc0b700bd736f9"
 ---
 
-# Messages
+# Anthropic Messages Requests with AI Gateway
 
 Create messages using the Anthropic Messages API format.
 
@@ -27,13 +27,11 @@ Create messages using the Anthropic Messages API format.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Streaming responses from LLMs](https://vercel.com/kb/guide/streaming-from-llm?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fmessages&source_site=vercel-docs&relationship=related) — Learn how to use the AI SDK to stream LLM responses.
-- [Messages](https://eve.dev/docs/guides/client/messages?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fmessages&source_site=vercel-docs&relationship=related) — Send text, full turn payloads, client context, attachments, and HITL responses with eve/client.
-- [Streaming](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/streaming?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fmessages&source_site=vercel-docs&relationship=related) — Stream tokens as they are generated with the OpenAI Responses API.
-- [Streaming](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/streaming?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fmessages&source_site=vercel-docs&relationship=related) — Stream responses token by token using the OpenResponses API.
-- [File Attachments](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/images?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fmessages&source_site=vercel-docs&relationship=related) — Send images and PDF documents as part of your Anthropic API message requests.
-- [Sign a message](https://vercel.com/docs/rest-api/kms/sign-a-message?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fmessages&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/sign/message — Sign a raw message with a KMS issuer's active signing key. Authenticate t
-- [Chat Completions](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/chat-completions?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fmessages&source_site=vercel-docs&relationship=related) — Create chat completions using the Chat Completions API with support for streaming, image attachments, and PDF documents.
+- [Anthropic Messages Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/images?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fmessages&source_site=vercel-docs&relationship=related) — Send images and PDF documents as part of your Anthropic API message requests through AI Gateway.
+- [Anthropic Messages Tool Calling with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/tool-calling?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fmessages&source_site=vercel-docs&relationship=related) — Use function calling with the Anthropic Messages API to allow models to call tools and functions through AI Gateway.
+- [OpenAI Responses Streaming with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/streaming?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fmessages&source_site=vercel-docs&relationship=related) — Stream tokens as they are generated with the OpenAI Responses API through AI Gateway.
+- [Anthropic Messages Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fmessages&source_site=vercel-docs&relationship=related) — Advanced Anthropic API features including web search, provider timeouts, and automatic caching through AI Gateway.
+- [OpenResponses Streaming with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/streaming?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fmessages&source_site=vercel-docs&relationship=related) — Stream responses token by token using the OpenResponses API through AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages.graph.md](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fmessages&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -49,25 +47,6 @@ POST /v1/messages
 Create a non-streaming message.
 
 Example request
-
-#### cURL
-
-```bash filename="generate.sh"
-curl -X POST "https://ai-gateway.vercel.sh/v1/messages" \
-  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "anthropic/claude-opus-5",
-    "max_tokens": 150,
-    "messages": [
-      {
-        "role": "user",
-        "content": "Write a one-sentence bedtime story about a unicorn."
-      }
-    ],
-    "temperature": 0.7
-  }'
-```
 
 #### TypeScript
 
@@ -93,7 +72,9 @@ const message = await anthropic.messages.create({
   temperature: 0.7,
 });
 
-console.log('Response:', message.content[0].text);
+for (const block of message.content) {
+  if (block.type === 'text') console.log('Response:', block.text);
+}
 console.log('Usage:', message.usage);
 ```
 
@@ -122,8 +103,29 @@ message = client.messages.create(
     temperature=0.7,
 )
 
-print('Response:', message.content[0].text)
+for block in message.content:
+    if block.type == "text":
+        print('Response:', block.text)
 print('Usage:', message.usage)
+```
+
+#### cURL
+
+```bash filename="generate.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/messages" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "anthropic/claude-opus-5",
+    "max_tokens": 150,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Write a one-sentence bedtime story about a unicorn."
+      }
+    ],
+    "temperature": 0.7
+  }'
 ```
 
 Response format

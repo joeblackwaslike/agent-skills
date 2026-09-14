@@ -1,9 +1,9 @@
 ---
-title: Anthropic Reasoning
+title: AI Gateway Anthropic Reasoning
 product: vercel
 url: /docs/ai-gateway/models-and-providers/reasoning/anthropic
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/anthropic"
-last_updated: 2026-07-28
+last_updated: 2026-09-07
 type: reference
 prerequisites:
   - /docs/ai-gateway/models-and-providers/reasoning
@@ -13,11 +13,11 @@ related:
 summary: Configure adaptive and extended thinking for Anthropic Claude models with the AI SDK and AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/anthropic.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "0708901d1f966e09c7013dbf2855b2929a109f67be1daa9ae3c59e7261318302"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "a3f8f1cfeed7316b66e3025b1d25fcbd86a6c29340c4d9dd97f4fda05cce3d96"
 ---
 
-# Anthropic Reasoning
+# AI Gateway Anthropic Reasoning
 
 Anthropic Claude models support thinking, which lets the model reason through complex problems before producing a final answer. Claude 4.6 introduced adaptive thinking, where Claude dynamically decides when and how much to think based on an effort level. On Claude Opus 4.7 and later and the Claude 5 models (Claude Opus 5, Claude Sonnet 5, Claude Fable 5), adaptive thinking is the only way to turn thinking on. The legacy fixed-budget API is no longer accepted on those models.
 
@@ -27,72 +27,40 @@ Anthropic Claude models support thinking, which lets the model reason through co
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Anthropic](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=related)
-- [Extended Thinking](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=related) — Configure how much Claude thinks before answering, using the Anthropic Messages API thinking parameter.
+- [Anthropic Messages Extended Thinking with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=related) — Configure how much Claude thinks before answering, using the Anthropic Messages API thinking parameter through AI Gatewa
 - [Reasoning](https://ai-sdk.dev/docs/ai-sdk-core/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=related)
 - [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=related)
 - [Use Claude Opus 4.6 on AI Gateway](https://vercel.com/changelog/claude-opus-4.6-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=related)
 - [Get started with Claude 4](https://ai-sdk.dev/cookbook/guides/claude-4?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=related)
 - [Get started with Claude 3.7 Sonnet](https://ai-sdk.dev/cookbook/guides/sonnet-3-7?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=related)
-- [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=related) — Control how much a model thinks before answering with the OpenAI Chat Completions API.
-- [Amazon Bedrock Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=related) — Configure reasoning for models hosted on Amazon Bedrock with the AI SDK and AI Gateway.
-- [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=related) — Control how much a reasoning model thinks before answering with the OpenResponses API.
-- [Anthropic Messages API](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=related) — Use the Anthropic Messages API with AI Gateway for seamless integration with Anthropic SDK tools.
+- [Claude Opus 4.7 on AI Gateway](https://vercel.com/changelog/opus-4.7-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=related)
+- [AI Gateway Amazon Bedrock Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=related) — Configure reasoning for models hosted on Amazon Bedrock with the AI SDK and AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/reasoning/anthropic.graph.md](/docs/ai-gateway/models-and-providers/reasoning/anthropic.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Two thinking modes
 
+See the [AI SDK Anthropic provider reference](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic) for supported reasoning options and response metadata.
+
 - **Adaptive thinking**: Set `thinking: { type: 'adaptive' }`. Claude dynamically decides when and how much to think based on the `effort` parameter. Available on Claude 4.6 and later. The only way to turn thinking on for Claude Opus 4.7 and later and the Claude 5 models.
 - **Extended thinking with a token budget**: Set `thinking: { type: 'enabled', budgetTokens: N }` for a fixed token budget. Available on Claude 4.6 and earlier. Deprecated on Claude 4.6. **Removed on Claude Opus 4.7 and later and the Claude 5 models**: requests with `type: 'enabled'` return a 400 error. Migrate to adaptive thinking.
 
 ### What happens when you leave `thinking` unset
 
-The default flips at Claude 5, not at Claude Opus 4.7:
-
-| Models                                                        | Thinking when `thinking` is unset |
-| ------------------------------------------------------------- | --------------------------------- |
-| Claude Opus 5, Claude Sonnet 5, Claude Fable 5                | Runs adaptive thinking            |
-| Claude Opus 4.8, Claude Opus 4.7, Claude 4.6 and earlier      | No thinking                       |
-
-If you're migrating off `budgetTokens`, set `thinking: { type: 'adaptive' }` explicitly on Claude Opus 4.7 and 4.8. Dropping the parameter turns thinking off on those models rather than falling back to adaptive.
+Set `thinking: { type: 'adaptive' }` explicitly when you want adaptive thinking. Omitting `thinking` delegates to the model's default; it doesn't mean the same thing as enabling or disabling thinking. Check the [Anthropic adaptive thinking documentation](https://platform.claude.com/docs/en/build-with-claude/adaptive-thinking) for defaults when migrating between models.
 
 To turn thinking off, set `thinking: { type: 'disabled' }`. Two exceptions: Claude Fable 5 can't turn thinking off at all, and Claude Opus 5 accepts `disabled` only at an `effort` of `high` or lower. Pairing it with `xhigh` or `max` returns a 400.
 
 ## Supported models
 
-To see the current list of Anthropic reasoning models, use the **Reasoning** filter on the [AI Gateway models page](https://vercel.com/ai-gateway/models?capabilities=reasoning\&providers=anthropic). Which thinking mode a model accepts follows its series:
-
-| Model series                                          | Adaptive thinking | Extended thinking (token budget) |
-| ----------------------------------------------------- | ----------------- | -------------------------------- |
-| Claude 5 (`opus-5`, `fable-5`, `sonnet-5`)            | ✓ (default)       | — (returns 400)                  |
-| Claude Opus 4.7, Claude Opus 4.8                      | ✓                 | — (returns 400)                  |
-| Claude 4.6 (`opus-4.6`, `sonnet-4.6`)                 | ✓                 | ✓ (deprecated)                   |
-| Claude 4.5 (`opus-4.5`, `sonnet-4.5`), Claude Haiku 4.5 | —                 | ✓                                |
-| Claude 4 / 4.1 (`opus-4`, `opus-4.1`, `sonnet-4`)     | —                 | ✓                                |
+Use [`GET /v1/models`](/docs/ai-gateway/models-and-providers/reasoning#discover-model-reasoning-support) to find Anthropic models and their `reasoning_options`. Use `effort.values` for named levels and a `budget_tokens` entry for explicit budgets. See [Two thinking modes](#two-thinking-modes) for the native adaptive and legacy request shapes.
 
 ### Effort levels (adaptive thinking)
 
-When you enable adaptive thinking, set the `effort` parameter to control depth. The supported levels and default follow the model series:
+When you enable adaptive thinking, set `providerOptions.anthropic.effort` in the AI SDK or `output_config.effort` in the Messages API. Choose a value from the model's [catalog entry](/docs/ai-gateway/models-and-providers/reasoning#discover-model-reasoning-support) that your client accepts. Don't assume a newer Claude model shares an older model's effort levels or default.
 
-| Model series                        | Effort levels                           | Default |
-| ----------------------------------- | --------------------------------------- | ------- |
-| Claude 5, Claude Opus 4.8, Claude Opus 4.7 | `low`, `medium`, `high`, `xhigh`, `max` | `high`  |
-| Claude Opus 4.6                     | `low`, `medium`, `high`, `max`          | `high`  |
-| Claude Sonnet 4.6                   | `low`, `medium`, `high`                 | `high`  |
-
-| Level    | Description                                                                   |
-| -------- | ----------------------------------------------------------------------------- |
-| `max`    | Absolute maximum capability. Not supported on Claude Sonnet 4.6.              |
-| `xhigh`  | Above `high` but below `max`. Not supported on Claude 4.6 models.             |
-| `high`   | High capability (default). Complex reasoning, difficult coding, agentic tasks |
-| `medium` | Balanced speed, cost, and performance.                                        |
-| `low`    | Most efficient. Best for simpler tasks and latency-sensitive workloads.       |
-
-> **💡 Note:** Requests using an unsupported effort level for a model return an error. For
-> example, `max` on Claude Sonnet 4.6 and `xhigh` on Claude Opus 4.6 both
-> return 400.
+Use the [shared effort option](/docs/ai-gateway/models-and-providers/reasoning#reasoning-levels) for portable configuration. AI SDK 7's shorthand stops at `xhigh`; native Anthropic `max` requires a provider-specific option or an HTTP format that accepts it.
 
 For more details, see the [Anthropic extended thinking docs](https://platform.claude.com/docs/en/build-with-claude/extended-thinking), [adaptive thinking docs](https://platform.claude.com/docs/en/build-with-claude/adaptive-thinking), and [effort parameter docs](https://platform.claude.com/docs/en/build-with-claude/effort).
 
@@ -314,7 +282,7 @@ curl https://ai-gateway.vercel.sh/v1/messages \
 | Parameter | Type   | Description                                                                  |
 | --------- | ------ | ---------------------------------------------------------------------------- |
 | `type`    | string | Set to `'adaptive'`                                                          |
-| `effort`  | string | One of `'low'`, `'medium'`, `'high'`, `'xhigh'`, or `'max'` (see the effort levels table for which levels each model accepts) |
+| `effort`  | string | A model-supported value from `reasoning_options` in the [catalog](/docs/ai-gateway/models-and-providers/reasoning#discover-model-reasoning-support); set it as `providerOptions.anthropic.effort` |
 | `display` | string | `'summarized'` to include reasoning text in the response, `'omitted'` (default on Claude Opus 4.7 and later) for empty thinking blocks. See [Thinking display](#thinking-display-claude-opus-47-and-later). |
 
 ### Extended thinking (Claude 4.6 and earlier)

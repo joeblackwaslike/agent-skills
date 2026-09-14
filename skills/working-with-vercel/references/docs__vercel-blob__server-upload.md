@@ -14,8 +14,8 @@ related:
 summary: Learn how to upload files to Vercel Blob using Server Actions and Route Handlers
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/server-upload.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "946f846f815ea8f097af2417725ab082addeb13fbc5b590e317ff31bcee45cc4"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "e3893d74b5287cddccda094a4430a9c22a4beccfe2a80c18657bda390d90d8bd"
 ---
 
 # Server Uploads with Vercel Blob
@@ -39,7 +39,6 @@ In this guide, you'll learn how to do the following:
 - [Introducing Vercel Blob](https://vercel.com/changelog/vercel-blob?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fserver-upload&source_site=vercel-docs&relationship=related)
 - [Public Storage](https://vercel.com/docs/vercel-blob/public-storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fserver-upload&source_site=vercel-docs&relationship=related) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
 - [Vercel Storage overview](https://vercel.com/docs/storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fserver-upload&source_site=vercel-docs&relationship=related) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fserver-upload&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/vercel-blob/server-upload.graph.md](/docs/vercel-blob/server-upload.graph.md?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fserver-upload&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

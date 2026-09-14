@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/middleware.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "328e60ed7c67804949b6153ab649a099a8df0a13ada002a8b882e1ee0bc92ace"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "0c7d02f5911608c856b077eeb817b189c11c4c83b9b923aa07223fde1a647158"
 ---
 
 # Language Model Middleware
@@ -546,6 +546,7 @@ console.log(text);
 - [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
 - [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
+- [Batch](/docs/ai-sdk-core/batch)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)

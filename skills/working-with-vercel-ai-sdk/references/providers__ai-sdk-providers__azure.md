@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/azure.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "222e9d2dd10ebb859aa842773583ac9ec7550aa7c138173b08fcdd6c87f78e4c"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "a434d666d04cde878e4ae193b6624b57db75d2a5bf71915c06b6d075067ab390"
 ---
 
 # Azure OpenAI Provider
@@ -1201,7 +1201,6 @@ Azure OpenAI supports TTS models through deployments. The capabilities depend on
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
-- [LMNT](/providers/ai-sdk-providers/lmnt)
 - [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)

@@ -16,8 +16,8 @@ related:
 summary: The layout shift tool gives you insight into any elements that may cause layout shifts on the page.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar/layout-shift-tool.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "61913074d284a80da30b1995cd6eed9370da00b136654b827504055236b81fa1"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "931a8381b368e31dc9e509c4c702f442e5e1dd06dc4ce8eb96f44371c6dc559f"
 ---
 
 # Layout Shift Tool
@@ -41,7 +41,6 @@ The layout shift tool gives you insight into any elements that may cause layout 
 - [Interaction Timing Tool](https://vercel.com/docs/vercel-toolbar/interaction-timing-tool?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=related) — The interaction timing tool allows you to inspect in detail each interaction's latency and get notified for interactions
 - [Edit Mode](https://vercel.com/docs/edit-mode?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=related) — Discover how Vercel's Edit Mode enhances content management for headless CMSs, enabling real-time editing, and seamless
 - [Toolbar Browser Extensions](https://vercel.com/docs/vercel-toolbar/browser-extension?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=related) — The browser extensions enable you to use the toolbar in production environments, take screenshots and attach them to com
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/vercel-toolbar/layout-shift-tool.graph.md](/docs/vercel-toolbar/layout-shift-tool.graph.md?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-speech.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "b208285f411b775ce0168860aa0171f32b1813bd9601b3b21bc58fcda052d7b9"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "e71351c0099a6bd9dc16231509604dcfc9812fcc40b8a1f8498fdf82433684d1"
 ---
 
 # `generateSpeech()`
@@ -237,10 +237,15 @@ const { audio } = await generateSpeech({
 - [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
 - [createAgentUIStreamResponse](/docs/reference/ai-sdk-core/create-agent-ui-stream-response)
 - [pipeAgentUIStreamToResponse](/docs/reference/ai-sdk-core/pipe-agent-ui-stream-to-response)
+- [experimental_startBatch](/docs/reference/ai-sdk-core/start-batch)
 - [tool](/docs/reference/ai-sdk-core/tool)
+- [experimental_getBatchStatus](/docs/reference/ai-sdk-core/get-batch-status)
 - [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
+- [experimental_getBatchResults](/docs/reference/ai-sdk-core/get-batch-results)
+- [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
 - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
 - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
 - [jsonSchema](/docs/reference/ai-sdk-core/json-schema)

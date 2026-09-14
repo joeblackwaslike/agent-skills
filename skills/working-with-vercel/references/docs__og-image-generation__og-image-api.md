@@ -12,8 +12,8 @@ related:
 summary: This reference provides information on how the @vercel/og package works on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/og-image-generation/og-image-api.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "444c3001e5d6c5773897ff15c3f44d07e82052a8bab22ac55c1a086de5009e77"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "245d19f463321e87ec086334b4884d6b2900e53196634e9d61c2d1fbc49f5e47"
 ---
 
 # @vercel/og Reference
@@ -35,7 +35,6 @@ The package exposes an `ImageResponse` constructor, with the following parameter
 - [opengraph-image and twitter-image](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fog-image-api&source_site=vercel-docs&relationship=related) — API Reference for the Open Graph Image and Twitter Image file conventions.
 - [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fog-image-api&source_site=vercel-docs&relationship=related) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
 - [Image Optimization with Vercel](https://vercel.com/docs/image-optimization?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fog-image-api&source_site=vercel-docs&relationship=related) — Transform and optimize images to improve page load performance.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fog-image-api&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/og-image-generation/og-image-api.graph.md](/docs/og-image-generation/og-image-api.graph.md?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fog-image-api&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -16,8 +16,8 @@ related:
 summary: Configure basic settings for your Vercel project, including the project name, build and development settings, root directory, Node.js version,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/general-settings.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "014377865f278cc2965b4b509f72bf96d8a89c6b760d461bae1bcf5ed3825cf2"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "9aac00f80f58d3adaaed60cb4dce8b452502331d4c66721b395d0e47ec7ffdd4"
 ---
 
 # General settings
@@ -34,6 +34,7 @@ Project names can be up to 100 characters long and must be lowercase. They can i
 
 - [Firewall Terraform Configuration](https://vercel.com/kb/guide/firewall-terraform-configuration?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgeneral-settings&source_site=vercel-docs&relationship=related) — Learn how to create scalable firewall configurations with Terraform
 - [How do I change the name of my Vercel Project?](https://vercel.com/kb/guide/how-do-i-change-the-name-of-my-vercel-project?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgeneral-settings&source_site=vercel-docs&relationship=related) — Change your Vercel project name in the dashboard, CLI, or REST API, then update the environment variables, callbacks, an
+- [Using TanStack AI with Vercel Sandbox](https://vercel.com/kb/guide/tanstack-ai-vercel-sandbox?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgeneral-settings&source_site=vercel-docs&relationship=related) — Run coding agents in isolated Vercel Sandbox microVMs with the @tanstack/ai-sandbox-vercel provider, with durable resume
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgeneral-settings&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgeneral-settings&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 - [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgeneral-settings&source_site=vercel-docs&relationship=related) — Learn how to customize your deployments using Vercel's build features.

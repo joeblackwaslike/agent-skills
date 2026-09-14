@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/groq.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "6c3c15f99c42d5d271904e2080fac316da8d93708a0e1dbe5143d83a2156e040"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "c992763b839d9331eb3a396582c764d044e9be33a03f30e5555c00ed9368909d"
 ---
 
 # Groq Provider
@@ -490,7 +490,6 @@ The following provider options are available:
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
-- [LMNT](/providers/ai-sdk-providers/lmnt)
 - [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)

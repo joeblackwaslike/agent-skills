@@ -17,8 +17,8 @@ related:
 summary: Deploy Nitro applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/nitro.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "bf4d18403750f8c04b519b102f0caa2a367428edd692a00195a7af8201d47e3d"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "fe1297591bbe76d55c39cff747a43641ea66c3e83addc16335b5258d016e53b2"
 ---
 
 # Nitro on Vercel
@@ -42,7 +42,6 @@ Nitro is a full-stack framework with TypeScript-first support. It includes files
 - [NestJS on Vercel](https://vercel.com/docs/frameworks/backend/nestjs?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fnitro&source_site=vercel-docs&relationship=related) — Deploy NestJS applications to Vercel with zero configuration.
 - [Vite + Nitro on Vercel](https://vercel.com/docs/frameworks/full-stack/vite-with-nitro?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fnitro&source_site=vercel-docs&relationship=related) — Add a backend to any Vite app with Nitro and deploy to Vercel with zero configuration.
 - [Create React App on Vercel](https://vercel.com/docs/frameworks/frontend/create-react-app?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fnitro&source_site=vercel-docs&relationship=related) — Deploy Create React App projects to Vercel and add Preview Deployments, Web Analytics, Speed Insights, and Observability
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fnitro&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/frameworks/backend/nitro.graph.md](/docs/frameworks/backend/nitro.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fnitro&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

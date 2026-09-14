@@ -1,10 +1,10 @@
 ---
-title: OpenAI Codex
+title: OpenAI Codex with AI Gateway
 product: vercel
 url: /docs/ai-gateway/coding-agents/openai-codex
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/openai-codex"
-last_updated: 2026-09-03
-type: conceptual
+last_updated: 2026-09-08
+type: how-to
 prerequisites:
   - /docs/ai-gateway/coding-agents
   - /docs/ai-gateway
@@ -16,11 +16,11 @@ related:
 summary: Connect OpenAI Codex to AI Gateway with one CLI command, or configure it manually.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/openai-codex.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "59b3777e887d59d94502fcd94de06f79cc58cbafc6b5c0490962223076edfe3d"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "e16aa0197b0854eeeba42370e2a45585f3195bb34c4dd7043d99722be721dacc"
 ---
 
-# OpenAI Codex
+# OpenAI Codex with AI Gateway
 
 [OpenAI Codex](https://github.com/openai/codex) is OpenAI's agentic coding tool. You can configure it to use Vercel AI Gateway, enabling you to:
 
@@ -30,18 +30,14 @@ sha256: "59b3777e887d59d94502fcd94de06f79cc58cbafc6b5c0490962223076edfe3d"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [GPT 6 Astra now available on Vercel AI Gateway](https://vercel.com/changelog/gpt-6-astra-now-available-on-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related)
 - [GPT 5.2 Codex now available on Vercel AI Gateway](https://vercel.com/changelog/gpt-5-2-codex-now-available-on-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related)
-- [Codex CLI](https://ai-sdk.dev/providers/community-providers/codex-cli?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related)
 - [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related)
 - [GPT 5.1 Codex Max now available on Vercel AI Gateway](https://vercel.com/changelog/gpt-5-1-codex-max-now-available-on-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related)
-- [Codex](https://ai-sdk.dev/providers/ai-sdk-harnesses/codex?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related)
-- [GPT 5.1 Codex models now available in Vercel AI Gateway](https://vercel.com/changelog/gpt-5-1-codex-models-now-available-in-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related)
-- [Codex CLI (App Server)](https://ai-sdk.dev/providers/community-providers/codex-app-server?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related)
-- [GPT 5.3 Codex is now on AI Gateway](https://vercel.com/changelog/gpt-5-3-codex-is-now-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related)
-- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
-- [Xcode](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related) — Use Xcode's coding assistant with the AI Gateway.
-- [Compaction](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/compaction?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related) — Compress long conversations into a single compaction item with the OpenAI Responses API through AI Gateway.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
+- [Codex CLI](https://ai-sdk.dev/providers/community-providers/codex-cli?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related)
+- [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
+- [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
+- [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related) — Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/openai-codex.graph.md](/docs/ai-gateway/coding-agents/openai-codex.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -51,18 +47,12 @@ Full cross-link map for this page: [/docs/ai-gateway/coding-agents/openai-codex.
 - View detailed traces in Vercel Observability under AI
 - Use any model available through the gateway
 
-## Quick setup
+## Set up with the Vercel CLI
 
-Make sure the Vercel CLI is installed:
-
-```bash filename="terminal"
-npm i -g vercel
-```
-
-Then run the setup command for Codex:
+Run the [Vercel CLI setup command](/docs/cli/ai-gateway#setup) for Codex:
 
 ```bash filename="terminal"
-vercel ai-gateway coding-agents setup --agent codex
+npx vercel ai-gateway setup --agent codex
 ```
 
 The command configures everything Codex needs to route through the gateway:
@@ -72,12 +62,12 @@ The command configures everything Codex needs to route through the gateway:
 - Exports `AI_GATEWAY_API_KEY` from a managed block in your shell startup file, backed by the macOS Keychain when available so the key stays out of plaintext config
 - Copies your existing Codex Desktop sessions across (see [session migration](/docs/cli/ai-gateway#desktop-session-migration))
 
-Every file the command changes is backed up alongside as a `.bak` file. Pass `--dry-run` to preview the changes without writing them. For the full command reference, see [`vercel ai-gateway coding-agents setup`](/docs/cli/ai-gateway#setup).
+Every file the command changes is backed up alongside as a `.bak` file. Pass `--dry-run` to preview the changes without writing them. For the full command reference, see [`vercel ai-gateway setup`](/docs/cli/ai-gateway#setup).
 
 To configure every installed supported agent at once, run the command without `--agent`. It detects and configures each supported agent it finds:
 
 ```bash filename="terminal"
-vercel ai-gateway coding-agents setup
+vercel ai-gateway setup
 ```
 
 To verify the setup, run Codex:
@@ -109,7 +99,7 @@ Only needed on machines where you can't use the Vercel CLI. When you use the CLI
   Open `~/.codex/config.toml` and add the following:
   ```toml filename="~/.codex/config.toml"
   model_provider = "vercel"
-  model = "openai/gpt-5.6-sol"
+  model = "openai/gpt-6-astra"
 
   [model_providers.vercel]
   name = "Vercel AI Gateway"
@@ -122,7 +112,7 @@ Only needed on machines where you can't use the Vercel CLI. When you use the CLI
   - References your `AI_GATEWAY_API_KEY` environment variable
   - Sets the `vercel` provider as the default for all sessions
   - Uses the Responses API, which is the only wire protocol current Codex versions support
-  - Specifies `openai/gpt-5.6-sol` as the default model
+  - Specifies `openai/gpt-6-astra` as the default model
 
 - ### Run Codex
   Start Codex:
@@ -147,7 +137,7 @@ wire_api = "responses"
 supports_websockets = true
 ```
 
-> **💡 Note:** WebSocket streaming is available for OpenAI models such as `openai/gpt-5.6-sol`.
+> **💡 Note:** WebSocket streaming is available for OpenAI models such as `openai/gpt-6-astra`.
 > Other models return a `Model <name> is not available over WebSocket` error,
 > so remove `supports_websockets = true` when switching to a non-OpenAI model.
 
@@ -203,10 +193,10 @@ codex --profile pro
 
 ## Keeping your Codex Desktop sessions
 
-Codex records each session against the provider that served it, so switching to the gateway hides the sessions you created before the switch. To bring them across, re-run the quick setup command:
+Codex records each session against the provider that served it, so switching to the gateway hides the sessions you created before the switch. To bring them across, re-run the Vercel CLI setup command:
 
 ```bash filename="terminal"
-vercel ai-gateway coding-agents setup --agent codex
+vercel ai-gateway setup --agent codex
 ```
 
 The command copies each rollout file under `sessions` and `archived_sessions` to a new deterministic session ID with `model_provider` set to `vercel`. Originals are never moved, edited, or deleted, and re-running never duplicates a session it already copied. Pass `--no-session-migration` to skip the step, and decompress any `.jsonl.zst` sessions first, since compressed rollouts can't be rewritten. See [session migration](/docs/cli/ai-gateway#desktop-session-migration) for details.

@@ -16,8 +16,8 @@ related:
 summary: Build and deploy durable backend AI agents with eve, an open-source, filesystem-first framework.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/eve.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "2999e029ef49353fe45c5668bf3221c0f48c1b868aef04853c016aee23c3cd7b"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "1a1a113d189ff8bc7e3e97daad55683c6707fc2fbad47be8f63aedde9ea3a274"
 ---
 
 # eve
@@ -43,7 +43,7 @@ Build durable backend AI agents with eve, an open-source, filesystem-first frame
 - [How to add tools to your eve agent](https://vercel.com/kb/guide/how-to-add-eve-tools?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Add tools to an eve agent by creating a TypeScript file under agent/tools/ with defineTool, and gate sensitive ones on h
 - [Build your first Slack agent with eve](https://vercel.com/kb/guide/eve-slack-agent-starter?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Deploy the eve Slack agent template: a starter Slack bot built on the eve framework with an example tool and skill.
 - [Terminal UI](https://eve.dev/docs/guides/dev-tui?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Use eve locally or connect to a deployed agent from an interactive terminal UI.
-- [Ship It](https://eve.dev/docs/tutorial/ship-it?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Part 9 of the Build an Agent tutorial. Put a web dashboard on the agent with useEveAgent, replace placeholderAuth, and d
+- [Ship It](https://eve.dev/docs/tutorial/ship-it?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Part 8 of the Build an Agent tutorial. Put a web dashboard on the agent with useEveAgent, replace placeholderAuth, and d
 
 Full cross-link map for this page: [/docs/eve.graph.md](/docs/eve.graph.md?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

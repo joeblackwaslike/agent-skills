@@ -2,13 +2,15 @@
 title: "DoltHub/DoltLab API"
 description: Programmatic access to databases hosted on DoltHub.
 source: "https://www.dolthub.com/docs/products/dolthub/api.md"
-fetched_at: "2026-07-13T06:56:02.638Z"
-sha256: "d1d53c20e9a93a1796a103965f476020afa948f3c3ff25cb4e2d844ee916764e"
+fetched_at: "2026-09-14T09:39:37.291Z"
+sha256: "30db96dff179e6335fd16b62ce5a3040a060380fa234bfadebc095d003f582a5"
 ---
 
 # DoltHub/DoltLab API
 
 DoltHub and DoltLab expose HTTP APIs for programmatic access to your hosted databases.
+
+For terminal workflows, [the DoltHub CLI (`dh`)](/products/dolthub/cli) provides commands for SQL, imports, and pull requests, as well as [direct v2 API requests](/products/dolthub/cli/commands#dh-api).
 
 ## REST API
 

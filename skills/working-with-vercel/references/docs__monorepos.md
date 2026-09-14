@@ -16,8 +16,8 @@ related:
 summary: Vercel provides support for monorepos. Learn how to deploy a monorepo here.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "8d3293642c1adc8d63716ed053bfa6344f107d8308eba99e5b96f932bb6e2149"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "6f865d8bb6897d2d56f30a363be391c08c6ad7504b60671b3861e78256fb168d"
 ---
 
 # Using Monorepos
@@ -137,17 +137,25 @@ If you have created a script to ignore the build step, you can skip the [the scr
 
 You can speed up dependency installs by only installing the dependencies for the project being deployed and its workspace dependencies. Set a custom [Install Command](/docs/builds/configure-a-build#install-command) in the project's `vercel.json` or [update your project's Build and Deployment settings](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fbuild-and-deployment%23framework-settings\&title=Build+and+Deployment+settings):
 
+**apps/web/vercel.json**
+
 {
 &#x20; "installCommand": "pnpm install --filter web..."
 }
+
+**apps/web/vercel.json**
 
 {
 &#x20; "installCommand": "yarn workspaces focus web"
 }
 
+**apps/web/vercel.json**
+
 {
 &#x20; "installCommand": "npm install --workspace=web"
 }
+
+**apps/web/vercel.json**
 
 {
 &#x20; "installCommand": "bun install --filter web"
@@ -199,15 +207,20 @@ changes that span both projects.
   > for environment variables, add the `VERCEL_RELATED_PROJECTS` variable to
   > `turbo.json`.
   To access this information, you can use the [`@vercel/related-projects`](https://github.com/vercel/vercel/tree/main/packages/related-projects) npm package:
+
+  **Terminal**
   ```bash filename="Terminal" package-manager="npm"
   npm i @vercel/related-projects
   ```
+  **Terminal**
   ```bash filename="Terminal" package-manager="bun"
   bun add @vercel/related-projects
   ```
+  **Terminal**
   ```bash filename="Terminal" package-manager="yarn"
   yarn add @vercel/related-projects
   ```
+  **Terminal**
   ```bash filename="Terminal" package-manager="pnpm"
   pnpm add @vercel/related-projects
   ```

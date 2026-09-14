@@ -1,27 +1,26 @@
 ---
-title: Custom Reporting
+title: AI Gateway Custom Reporting API
 product: vercel
 url: /docs/ai-gateway/observability-and-spend/custom-reporting
 canonical_url: "https://vercel.com/docs/ai-gateway/observability-and-spend/custom-reporting"
-last_updated: 2026-08-10
+last_updated: 2026-09-08
 type: reference
 prerequisites:
   - /docs/ai-gateway/observability-and-spend
   - /docs/ai-gateway
 related:
-  - /docs/ai-gateway/sdks-and-apis/openai-chat-completions
-  - /docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced
-  - /docs/ai-gateway/sdks-and-apis/responses
-  - /docs/ai-gateway/sdks-and-apis/openresponses
-  - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api
+  - /docs/ai-gateway/sdks-and-apis
+  - /docs/ai-gateway/models-and-providers/provider-options
+  - /docs/ai-gateway/authentication-and-byok/api-keys
+  - /docs/ai-gateway/observability-and-spend/usage
 summary: Query AI Gateway usage data grouped by model, user, tag, provider, or credential type using the Custom Reporting API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/custom-reporting.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "12ea6886c226bb4079500f615772620191488d83da9111f1c02481c17fab4548"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "4fb8ff60a021f9fd5d7858f596b20cbdad05050219a14a571237309c2b7be548"
 ---
 
-# Custom Reporting
+# AI Gateway Custom Reporting API
 
 The Custom Reporting API gives you detailed visibility into your AI Gateway usage. You can break down costs and token consumption by model, user, tag, provider, or credential type to understand exactly where your AI spend is going.
 
@@ -33,15 +32,14 @@ The Custom Reporting API gives you detailed visibility into your AI Gateway usag
 
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=related) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
-- [Unified reporting for all AI Gateway usage](https://vercel.com/blog/unified-reporting-for-your-ai-spend?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=related)
 - [Custom reporting now available on AI Gateway](https://vercel.com/changelog/custom-reporting-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=related)
+- [Unified reporting for all AI Gateway usage](https://vercel.com/blog/unified-reporting-for-your-ai-spend?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=related)
 - [Get Usage Report](https://v0.app/docs/api/v1/reference/reports/get-usage?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=related) — Retrieves detailed usage events for the authenticated user or team, including costs, event types, models used, and metad
-- [AI Gateway production index](https://vercel.com/blog/ai-gateway-production-index?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=related)
-- [Query Reference](https://vercel.com/docs/query/reference?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=related) — This reference covers the dimensions and operators used to create a query.
-- [Aggregates page views](https://vercel.com/docs/rest-api/web-analytics/aggregates-page-views?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=related) — GET /v1/query/web-analytics/visits/aggregate — Counts pageviews on a project, within the requested date range. Results a
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=related) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
-- [Aggregates custom events](https://vercel.com/docs/rest-api/web-analytics/aggregates-custom-events?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=related) — GET /v1/query/web-analytics/events/aggregate — Counts custom events on a project, within the requested date range. Resul
 - [Monitoring Reference](https://vercel.com/docs/query/monitoring/monitoring-reference?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=related) — This reference covers the clauses, fields, and variables used to create a Monitoring query.
+- [Aggregates page views](https://vercel.com/docs/rest-api/web-analytics/aggregates-page-views?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=related) — GET /v1/query/web-analytics/visits/aggregate — Counts pageviews on a project, within the requested date range. Results a
+- [Aggregates custom events](https://vercel.com/docs/rest-api/web-analytics/aggregates-custom-events?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=related) — GET /v1/query/web-analytics/events/aggregate — Counts custom events on a project, within the requested date range. Resul
+- [AI Gateway Request Logs](https://vercel.com/docs/ai-gateway/observability-and-spend/logs?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=related) — Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the resu
 
 Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend/custom-reporting.graph.md](/docs/ai-gateway/observability-and-spend/custom-reporting.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -54,7 +52,8 @@ Use it to:
 - **Compare providers**: Understand cost and usage differences between providers serving the same models
 - **Audit BYOK vs system credentials**: Break down usage by credential type to see the impact of bring-your-own-key requests
 
-> **💡 Note:** Custom Reporting is in beta. The API is currently scoped to your entire account, so the API key you use will return usage data for everything on the account.
+> **💡 Note:** The API is currently scoped to your entire account, so the API key you use
+> will return usage data for everything on the account.
 
 ## Pricing
 
@@ -63,43 +62,71 @@ Use it to:
 | Write       | $0.075 / 1,000 tag/user ID writes            |
 | Query       | $5 / 1,000 queries to the reporting endpoint |
 
-> **💡 Note:** Each unique tag or user ID within a single request scope counts as one
-> write.
+> **💡 Note:** Each unique tag or user ID within a single request scope counts as one write.
 
 ## Applying user and tag info to requests
 
-To use reporting, attach a `user` and/or `tags` to your AI Gateway requests. You can do this through the AI SDK, Chat Completions API, Responses API, OpenResponses API, or Anthropic Messages API.
+To use reporting, attach a `user` and/or `tags` to your AI Gateway requests. You can do this through the AI SDK, Chat Completions API, Responses API, OpenResponses API, or Anthropic Messages API. For Chat Completions, the standard `user` field supplies the reporting user when `providerOptions.gateway.user` is not set.
 
-### AI SDK
+These examples use AI SDK 7 and the AI SDK for Python beta. Set `AI_GATEWAY_API_KEY` before running them. See [API format differences](/docs/ai-gateway/sdks-and-apis#api-format-differences) for setup, request fields, and response handling.
 
-The AI SDK supports user and tag submission through the gateway provider. See the [AI SDK docs on usage tracking with user and tags](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway#usage-tracking-with-user-and-tags) for details.
+#### AI SDK
 
-```typescript
+#### TypeScript
+
+See the [AI SDK usage-tracking reference](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway#usage-tracking-with-user-and-tags) for SDK configuration and usage.
+
+```typescript filename="custom-reporting.ts"
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: 'anthropic/claude-opus-5',
+  model: 'anthropic/claude-sonnet-5',
   prompt: 'Tell me about San Francisco.',
   providerOptions: {
     gateway: {
       user: 'user-123',
-      tags: ['a', 'b'],
+      tags: ['feature:chat', 'env:development'],
     },
   },
 });
+
+console.log(text);
 ```
 
-### Chat Completions API
+#### Python (beta)
 
-You have two options when using the [Chat Completions API](/docs/ai-gateway/sdks-and-apis/openai-chat-completions):
+```python filename="custom-reporting_ai.py"
+import asyncio
+import ai
 
-1. **User only**: Pass `user` in the standard [chat completions `user` field](https://platform.openai.com/docs/api-reference/chat/create#chat_create-user)
-2. **User and tags**: Pass `user` and/or `tags` through [provider options](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced#provider-options)
+async def main():
+    model = ai.get_model("anthropic/claude-sonnet-5")
+    messages = [ai.user_message("Tell me about San Francisco.")]
+    params = ai.InferenceRequestParams(
+        extra_body={"providerOptions": {"gateway": {"user": "user-123", "tags": ["feature:chat", "env:development"]}}}
+    )
+    async with ai.stream(model, messages, params=params) as stream:
+        async for event in stream:
+            if isinstance(event, ai.events.TextDelta):
+                print(event.chunk, end="", flush=True)
+    print()
+
+asyncio.run(main())
+```
+
+#### Chat Completions
 
 #### TypeScript
 
-```typescript
-const completion = await openai.chat.completions.create({
+```typescript filename="custom-reporting-chat.ts"
+import OpenAI from 'openai';
+
+const client = new OpenAI({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh/v1',
+});
+
+const response = await client.chat.completions.create({
   model: 'anthropic/claude-sonnet-5',
   messages: [
     {
@@ -107,328 +134,477 @@ const completion = await openai.chat.completions.create({
       content: 'Tell me about San Francisco.',
     },
   ],
-  providerOptions: {
-    gateway: {
-      user: 'user-123',
-      tags: ['a', 'b'],
+  // AI Gateway extension fields are not included in the upstream SDK types.
+  ...{
+    providerOptions: {
+      gateway: {
+        user: 'user-123',
+        tags: ['feature:chat', 'env:development'],
+      },
     },
   },
 });
+
+console.log(response.choices[0]?.message.content);
 ```
 
 #### Python
 
-```python
-completion = client.chat.completions.create(
-    model='anthropic/claude-sonnet-5',
-    messages=[
-        {
-            'role': 'user',
-            'content': 'Tell me about San Francisco.',
-        },
-    ],
-    extra_body={
-        'providerOptions': {
-            'gateway': {
-                'user': 'user-123',
-                'tags': ['a', 'b'],
-            },
-        },
-    },
+```python filename="custom-reporting_chat.py"
+import os
+from openai import OpenAI
+
+client = OpenAI(
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
+    base_url="https://ai-gateway.vercel.sh/v1",
 )
+
+response = client.chat.completions.create(
+    model="anthropic/claude-sonnet-5",
+    messages=[{"role": "user", "content": "Tell me about San Francisco."}],
+    extra_body={"providerOptions": {"gateway": {"user": "user-123", "tags": ["feature:chat", "env:development"]}}},
+)
+
+print(response.choices[0].message.content)
 ```
 
-### Responses API
+#### cURL
 
-Pass `user` and/or `tags` through `providerOptions` on the [Responses API](/docs/ai-gateway/sdks-and-apis/responses) or [OpenResponses API](/docs/ai-gateway/sdks-and-apis/openresponses):
+```bash filename="custom-reporting-chat.sh"
+curl --fail-with-body https://ai-gateway.vercel.sh/v1/chat/completions \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "model": "anthropic/claude-sonnet-5",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Tell me about San Francisco."
+    }
+  ],
+  "providerOptions": {
+    "gateway": {
+      "user": "user-123",
+      "tags": [
+        "feature:chat",
+        "env:development"
+      ]
+    }
+  }
+}'
+```
+
+#### Messages API
 
 #### TypeScript
 
-```typescript
-const response = await openai.responses.create({
+```typescript filename="custom-reporting-messages.ts"
+import Anthropic from '@anthropic-ai/sdk';
+
+const client = new Anthropic({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh',
+});
+
+const response = await client.messages.create({
   model: 'anthropic/claude-sonnet-5',
-  input: [
+  messages: [
     {
-      type: 'message',
       role: 'user',
       content: 'Tell me about San Francisco.',
     },
   ],
-  providerOptions: {
-    gateway: {
-      user: 'user-123',
-      tags: ['a', 'b'],
-    },
-  },
-});
-```
-
-#### Python
-
-```python
-response = client.responses.create(
-    model='anthropic/claude-sonnet-5',
-    input=[
-        {
-            'type': 'message',
-            'role': 'user',
-            'content': 'Tell me about San Francisco.',
-        },
-    ],
-    extra_body={
-        'providerOptions': {
-            'gateway': {
-                'user': 'user-123',
-                'tags': ['a', 'b'],
-            },
-        },
-    },
-)
-```
-
-### Anthropic Messages API
-
-Pass `user` and/or `tags` through [provider options](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api) on the Anthropic Messages API:
-
-#### TypeScript
-
-```typescript
-const message = await anthropic.messages.create({
-  model: 'anthropic/claude-sonnet-5',
   max_tokens: 1024,
-  messages: [
-    {
-      role: 'user',
-      content: 'Tell me about San Francisco.',
-    },
-  ],
-  providerOptions: {
-    gateway: {
-      user: 'user-123',
-      tags: ['a', 'b'],
+  ...{
+    providerOptions: {
+      gateway: {
+        user: 'user-123',
+        tags: ['feature:chat', 'env:development'],
+      },
     },
   },
 });
+
+for (const block of response.content) {
+  if (block.type === 'text') console.log(block.text);
+}
 ```
 
 #### Python
 
-```python
-message = client.messages.create(
-    model='anthropic/claude-sonnet-5',
-    max_tokens=1024,
-    messages=[
-        {
-            'role': 'user',
-            'content': 'Tell me about San Francisco.',
-        },
-    ],
-    extra_body={
-        'providerOptions': {
-            'gateway': {
-                'user': 'user-123',
-                'tags': ['a', 'b'],
-            },
-        },
-    },
+```python filename="custom-reporting_messages.py"
+import os
+from anthropic import Anthropic
+
+client = Anthropic(
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
+    base_url="https://ai-gateway.vercel.sh",
 )
+
+response = client.messages.create(
+    model="anthropic/claude-sonnet-5",
+    messages=[{"role": "user", "content": "Tell me about San Francisco."}],
+    max_tokens=1024,
+    extra_body={"providerOptions": {"gateway": {"user": "user-123", "tags": ["feature:chat", "env:development"]}}},
+)
+
+for block in response.content:
+    if block.type == "text":
+        print(block.text)
+```
+
+#### cURL
+
+```bash filename="custom-reporting-messages.sh"
+curl --fail-with-body https://ai-gateway.vercel.sh/v1/messages \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -H "anthropic-version: 2023-06-01" \
+  -d '{
+  "model": "anthropic/claude-sonnet-5",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Tell me about San Francisco."
+    }
+  ],
+  "max_tokens": 1024,
+  "providerOptions": {
+    "gateway": {
+      "user": "user-123",
+      "tags": [
+        "feature:chat",
+        "env:development"
+      ]
+    }
+  }
+}'
+```
+
+#### Responses / OpenResponses
+
+#### TypeScript
+
+```typescript filename="custom-reporting-responses.ts"
+import OpenAI from 'openai';
+
+const client = new OpenAI({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh/v1',
+});
+
+const response = await client.responses.create({
+  model: 'anthropic/claude-sonnet-5',
+  input: 'Tell me about San Francisco.',
+  ...{
+    providerOptions: {
+      gateway: {
+        user: 'user-123',
+        tags: ['feature:chat', 'env:development'],
+      },
+    },
+  },
+});
+
+console.log(response.output_text);
+```
+
+#### Python
+
+```python filename="custom-reporting_responses.py"
+import os
+from openai import OpenAI
+
+client = OpenAI(
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
+    base_url="https://ai-gateway.vercel.sh/v1",
+)
+
+response = client.responses.create(
+    model="anthropic/claude-sonnet-5",
+    input="Tell me about San Francisco.",
+    extra_body={"providerOptions": {"gateway": {"user": "user-123", "tags": ["feature:chat", "env:development"]}}},
+)
+
+print(response.output_text)
+```
+
+#### cURL
+
+```bash filename="custom-reporting-responses.sh"
+curl --fail-with-body https://ai-gateway.vercel.sh/v1/responses \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "model": "anthropic/claude-sonnet-5",
+  "input": "Tell me about San Francisco.",
+  "providerOptions": {
+    "gateway": {
+      "user": "user-123",
+      "tags": [
+        "feature:chat",
+        "env:development"
+      ]
+    }
+  }
+}'
 ```
 
 ### Using HTTP headers
 
 You can also send reporting metadata as HTTP headers instead of (or in addition to) `providerOptions.gateway`. This is useful when a platform or proxy layer stamps context onto traffic without modifying application code:
 
-| Header              | Type   | Behavior when the request body also sets the same field                |
-| ------------------- | ------ | ---------------------------------------------------------------------- |
+| Header              | Type   | Behavior when the request body also sets the same field                               |
+| ------------------- | ------ | ------------------------------------------------------------------------------------- |
 | `ai-reporting-tags` | string | Comma-separated list. **Merged** with `providerOptions.gateway.tags` (deduped union). |
-| `ai-reporting-user` | string | Single value. **Overwrites** `providerOptions.gateway.user` when present. |
+| `ai-reporting-user` | string | Single value. **Overwrites** `providerOptions.gateway.user` when present.             |
 
 Validation limits match the body schema: up to 10 tags total after merging header and body values (deduped), with each tag between 1 and 64 characters; `user` up to 256 characters. An invalid header returns HTTP `400`.
 
 Both headers work across AI Gateway endpoints that accept `providerOptions.gateway`, including the formats shown below. The `defaultHeaders` / `default_headers` pattern on the SDK client is the same regardless of which endpoint you call. Swap in `responses.create`, `messages.create`, embeddings, image generation, or other supported calls as needed.
 
-#### Chat Completions (OpenAI SDK)
+#### Request examples
+
+#### AI SDK
 
 #### TypeScript
 
-```typescript
-import OpenAI from 'openai';
+```typescript filename="reporting-headers.ts"
+import { generateText } from 'ai';
 
-const openai = new OpenAI({
-  apiKey: process.env.AI_GATEWAY_API_KEY,
-  baseURL: 'https://ai-gateway.vercel.sh/v1',
-  defaultHeaders: {
-    'ai-reporting-tags': 'team:billing,feature:chat,env:prod',
+const { text } = await generateText({
+  model: 'anthropic/claude-sonnet-5',
+  prompt: 'Explain quantum computing in two sentences.',
+  headers: {
+    'ai-reporting-tags': 'team:billing,feature:chat,env:development',
     'ai-reporting-user': 'user-12345',
   },
 });
 
-const completion = await openai.chat.completions.create({
-  model: 'anthropic/claude-sonnet-5',
-  messages: [{ role: 'user', content: 'Tell me about San Francisco.' }],
-});
+console.log(text);
 ```
 
-#### Python
+#### Python (beta)
 
-```python
-import os
-from openai import OpenAI
+```python filename="reporting-headers_ai.py"
+import asyncio
+import ai
 
-client = OpenAI(
-    api_key=os.environ['AI_GATEWAY_API_KEY'],
-    base_url='https://ai-gateway.vercel.sh/v1',
-    default_headers={
-        'ai-reporting-tags': 'team:billing,feature:chat,env:prod',
-        'ai-reporting-user': 'user-12345',
-    },
-)
+async def main():
+    model = ai.get_model("anthropic/claude-sonnet-5")
+    messages = [ai.user_message("Explain quantum computing in two sentences.")]
+    params = ai.InferenceRequestParams(
+        extra_headers={"ai-reporting-tags": "team:billing,feature:chat,env:development", "ai-reporting-user": "user-12345"}
+    )
+    async with ai.stream(model, messages, params=params) as stream:
+        async for event in stream:
+            if isinstance(event, ai.events.TextDelta):
+                print(event.chunk, end="", flush=True)
+    print()
 
-completion = client.chat.completions.create(
-    model='anthropic/claude-sonnet-5',
-    messages=[{'role': 'user', 'content': 'Tell me about San Francisco.'}],
-)
+asyncio.run(main())
 ```
 
-#### Responses (OpenAI SDK)
+#### Chat Completions
 
 #### TypeScript
 
-```typescript
+```typescript filename="reporting-headers-chat.ts"
 import OpenAI from 'openai';
 
-const openai = new OpenAI({
+const client = new OpenAI({
   apiKey: process.env.AI_GATEWAY_API_KEY,
   baseURL: 'https://ai-gateway.vercel.sh/v1',
   defaultHeaders: {
-    'ai-reporting-tags': 'team:billing,feature:chat,env:prod',
+    'ai-reporting-tags': 'team:billing,feature:chat,env:development',
     'ai-reporting-user': 'user-12345',
   },
 });
 
-const response = await openai.responses.create({
+const response = await client.chat.completions.create({
   model: 'anthropic/claude-sonnet-5',
-  input: 'Tell me about San Francisco.',
+  messages: [
+    {
+      role: 'user',
+      content: 'Explain quantum computing in two sentences.',
+    },
+  ],
 });
+
+console.log(response.choices[0]?.message.content);
 ```
 
 #### Python
 
-```python
+```python filename="reporting-headers_chat.py"
 import os
 from openai import OpenAI
 
 client = OpenAI(
-    api_key=os.environ['AI_GATEWAY_API_KEY'],
-    base_url='https://ai-gateway.vercel.sh/v1',
-    default_headers={
-        'ai-reporting-tags': 'team:billing,feature:chat,env:prod',
-        'ai-reporting-user': 'user-12345',
-    },
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
+    base_url="https://ai-gateway.vercel.sh/v1",
+    default_headers={"ai-reporting-tags": "team:billing,feature:chat,env:development", "ai-reporting-user": "user-12345"},
 )
 
-response = client.responses.create(
-    model='anthropic/claude-sonnet-5',
-    input='Tell me about San Francisco.',
+response = client.chat.completions.create(
+    model="anthropic/claude-sonnet-5",
+    messages=[{"role": "user", "content": "Explain quantum computing in two sentences."}],
 )
+
+print(response.choices[0].message.content)
 ```
 
-#### Anthropic SDK (Messages)
+#### cURL
+
+```bash filename="reporting-headers-chat.sh"
+curl --fail-with-body https://ai-gateway.vercel.sh/v1/chat/completions \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -H "ai-reporting-tags: team:billing,feature:chat,env:development" \
+  -H "ai-reporting-user: user-12345" \
+  -d '{
+  "model": "anthropic/claude-sonnet-5",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Explain quantum computing in two sentences."
+    }
+  ]
+}'
+```
+
+#### Messages API
 
 #### TypeScript
 
-```typescript
+```typescript filename="reporting-headers-messages.ts"
 import Anthropic from '@anthropic-ai/sdk';
 
-const anthropic = new Anthropic({
+const client = new Anthropic({
   apiKey: process.env.AI_GATEWAY_API_KEY,
   baseURL: 'https://ai-gateway.vercel.sh',
   defaultHeaders: {
-    'ai-reporting-tags': 'team:billing,feature:chat,env:prod',
+    'ai-reporting-tags': 'team:billing,feature:chat,env:development',
     'ai-reporting-user': 'user-12345',
   },
 });
 
-const message = await anthropic.messages.create({
+const response = await client.messages.create({
   model: 'anthropic/claude-sonnet-5',
+  messages: [
+    {
+      role: 'user',
+      content: 'Explain quantum computing in two sentences.',
+    },
+  ],
   max_tokens: 1024,
-  messages: [{ role: 'user', content: 'Tell me about San Francisco.' }],
 });
+
+for (const block of response.content) {
+  if (block.type === 'text') console.log(block.text);
+}
 ```
 
 #### Python
 
-```python
+```python filename="reporting-headers_messages.py"
 import os
 from anthropic import Anthropic
 
 client = Anthropic(
-    api_key=os.environ['AI_GATEWAY_API_KEY'],
-    base_url='https://ai-gateway.vercel.sh',
-    default_headers={
-        'ai-reporting-tags': 'team:billing,feature:chat,env:prod',
-        'ai-reporting-user': 'user-12345',
-    },
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
+    base_url="https://ai-gateway.vercel.sh",
+    default_headers={"ai-reporting-tags": "team:billing,feature:chat,env:development", "ai-reporting-user": "user-12345"},
 )
 
-message = client.messages.create(
-    model='anthropic/claude-sonnet-5',
+response = client.messages.create(
+    model="anthropic/claude-sonnet-5",
+    messages=[{"role": "user", "content": "Explain quantum computing in two sentences."}],
     max_tokens=1024,
-    messages=[{'role': 'user', 'content': 'Tell me about San Francisco.'}],
 )
+
+for block in response.content:
+    if block.type == "text":
+        print(block.text)
 ```
 
-#### Direct HTTP (OpenResponses and raw requests)
+#### cURL
+
+```bash filename="reporting-headers-messages.sh"
+curl --fail-with-body https://ai-gateway.vercel.sh/v1/messages \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -H "anthropic-version: 2023-06-01" \
+  -H "ai-reporting-tags: team:billing,feature:chat,env:development" \
+  -H "ai-reporting-user: user-12345" \
+  -d '{
+  "model": "anthropic/claude-sonnet-5",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Explain quantum computing in two sentences."
+    }
+  ],
+  "max_tokens": 1024
+}'
+```
+
+#### Responses / OpenResponses
 
 #### TypeScript
 
-```typescript
-const response = await fetch('https://ai-gateway.vercel.sh/v1/responses', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-    Authorization: `Bearer ${process.env.AI_GATEWAY_API_KEY}`,
-    'ai-reporting-tags': 'team:billing,feature:chat,env:prod',
+```typescript filename="reporting-headers-responses.ts"
+import OpenAI from 'openai';
+
+const client = new OpenAI({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh/v1',
+  defaultHeaders: {
+    'ai-reporting-tags': 'team:billing,feature:chat,env:development',
     'ai-reporting-user': 'user-12345',
   },
-  body: JSON.stringify({
-    model: 'anthropic/claude-sonnet-5',
-    input: [
-      {
-        type: 'message',
-        role: 'user',
-        content: 'Tell me about San Francisco.',
-      },
-    ],
-  }),
 });
+
+const response = await client.responses.create({
+  model: 'anthropic/claude-sonnet-5',
+  input: 'Explain quantum computing in two sentences.',
+});
+
+console.log(response.output_text);
 ```
 
 #### Python
 
-```python
+```python filename="reporting-headers_responses.py"
 import os
-import requests
+from openai import OpenAI
 
-response = requests.post(
-    'https://ai-gateway.vercel.sh/v1/responses',
-    headers={
-        'Content-Type': 'application/json',
-        'Authorization': f"Bearer {os.environ['AI_GATEWAY_API_KEY']}",
-        'ai-reporting-tags': 'team:billing,feature:chat,env:prod',
-        'ai-reporting-user': 'user-12345',
-    },
-    json={
-        'model': 'anthropic/claude-sonnet-5',
-        'input': [
-            {
-                'type': 'message',
-                'role': 'user',
-                'content': 'Tell me about San Francisco.',
-            },
-        ],
-    },
+client = OpenAI(
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
+    base_url="https://ai-gateway.vercel.sh/v1",
+    default_headers={"ai-reporting-tags": "team:billing,feature:chat,env:development", "ai-reporting-user": "user-12345"},
 )
+
+response = client.responses.create(
+    model="anthropic/claude-sonnet-5",
+    input="Explain quantum computing in two sentences.",
+)
+
+print(response.output_text)
+```
+
+#### cURL
+
+```bash filename="reporting-headers-responses.sh"
+curl --fail-with-body https://ai-gateway.vercel.sh/v1/responses \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -H "ai-reporting-tags: team:billing,feature:chat,env:development" \
+  -H "ai-reporting-user: user-12345" \
+  -d '{
+  "model": "anthropic/claude-sonnet-5",
+  "input": "Explain quantum computing in two sentences."
+}'
 ```
 
 ## Custom Reporting API reference
@@ -462,10 +638,10 @@ Dates are inclusive (both `start_date` and `end_date` are included) and in UTC.
 
 #### Grouping
 
-| Parameter   | Type   | Options                                                                                                                                                                                                                  | Description                                                                                              |
-| ----------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------- |
-| `group_by`  | string | `day` (default), `user`, `model`, `tag`, [`provider`](/docs/ai-gateway/models-and-providers/provider-options#available-providers), `credential_type`, `zero_data_retention`, `api_key_name`                            | How to aggregate the results. Each row represents one bucket of this dimension.                          |
-| `date_part` | string | `day` (default), `hour`                                                                                                                                                                                                  | Time granularity. Only applies when `group_by=day`. Use `hour` for per-hour rows, `day` for per-day rows. |
+| Parameter   | Type   | Options                                                                                                                                                                                     | Description                                                                                               |
+| ----------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `group_by`  | string | `day` (default), `user`, `model`, `tag`, [`provider`](/docs/ai-gateway/models-and-providers/provider-options#available-providers), `credential_type`, `zero_data_retention`, `api_key_name` | How to aggregate the results. Each row represents one bucket of this dimension.                           |
+| `date_part` | string | `day` (default), `hour`                                                                                                                                                                     | Time granularity. Only applies when `group_by=day`. Use `hour` for per-hour rows, `day` for per-day rows. |
 
 #### Filtering
 
@@ -473,9 +649,9 @@ Filters are applied before aggregation. Combine them with any `group_by` value.
 
 | Parameter             | Type    | Description                                                                                                                      | Example                          |
 | --------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
-| `api_key_id`          | string  | Filter by a stable API key ID. Use `self` for the AI Gateway API key that authenticated the report request.                    | `abc123` or `self`               |
+| `api_key_id`          | string  | Filter by a stable API key ID. Use `self` for the AI Gateway API key that authenticated the report request.                      | `abc123` or `self`               |
 | `user_id`             | string  | Filter by a specific user ID                                                                                                     | `user_123`                       |
-| `model`               | string  | Filter by a specific [model](/ai-gateway/models) in `creator/model-name` format                                | `anthropic/claude-sonnet-5`      |
+| `model`               | string  | Filter by a specific [model](/ai-gateway/models) in `creator/model-name` format                                                  | `anthropic/claude-sonnet-5`      |
 | `provider`            | string  | Filter by [provider](/docs/ai-gateway/models-and-providers/provider-options#available-providers)                                 | `openai`                         |
 | `credential_type`     | string  | Filter by credential type                                                                                                        | `byok` or `system`               |
 | `zero_data_retention` | boolean | Filter to Zero Data Retention (ZDR)-requested vs non-ZDR requests                                                                | `true` or `false`                |
@@ -584,7 +760,7 @@ import { gateway, streamText } from 'ai';
 // 1. Make requests with tags
 const result = streamText({
   model: 'anthropic/claude-opus-5',
-  prompt: 'Summarize this quarter's results',
+  prompt: "Summarize this quarter's results",
   providerOptions: {
     gateway: {
       tags: ['team:finance', 'feature:summaries'],
@@ -611,7 +787,7 @@ See the [AI SDK docs on spend reports](https://ai-sdk.dev/providers/ai-sdk-provi
 
 ## Generation lookup
 
-Use the AI SDK's `getGenerationInfo()` method to look up a specific generation by its ID, including cost, token usage, latency, and provider details. Generation IDs are available in `providerMetadata.gateway.generationId` on both `generateText` and `streamText` responses.
+Use the AI SDK's `getGenerationInfo()` method to look up a specific generation by its ID, including cost, token usage, latency, and provider details. For the dedicated workflow and REST API links, see [Generation Lookup](/docs/ai-gateway/observability-and-spend/usage). Generation IDs are available in `providerMetadata.gateway.generationId` on both `generateText` and `streamText` responses.
 
 When streaming, the generation ID is injected on the first content chunk, so you can capture it early without waiting for completion. This is useful when a network interruption cuts off the final response. AI Gateway records the final status server-side, so you can use the generation ID to look up the results later.
 
@@ -626,6 +802,7 @@ const result = await generateText({
 });
 
 const generationId = result.providerMetadata?.gateway?.generationId;
+if (typeof generationId !== 'string') throw new Error('Missing generation ID');
 const generation = await gateway.getGenerationInfo({ id: generationId });
 
 console.log(`Model: ${generation.model}`);
@@ -647,9 +824,13 @@ const result = streamText({
 
 let generationId: string | undefined;
 
-for await (const part of result.fullStream) {
-  if (!generationId && part.providerMetadata?.gateway?.generationId) {
-    generationId = part.providerMetadata.gateway.generationId as string;
+for await (const part of result.stream) {
+  if (
+    !generationId &&
+    'providerMetadata' in part &&
+    typeof part.providerMetadata?.gateway?.generationId === 'string'
+  ) {
+    generationId = part.providerMetadata.gateway.generationId;
   }
 }
 

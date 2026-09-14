@@ -13,8 +13,8 @@ related:
 summary: Understand tenants, domains, routing, and architecture for building multi-tenant applications on Vercel for Platforms.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/concepts.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "68bf16572d32a5939c26f1e6c37e217d0783ea38296771bdc1b84faff5b72491"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "8f41bfc68769eeb8ef2f82aa659e248b8538242fcc9b2da75831c9e16f2af5bc"
 ---
 
 # Multi-Tenant Platform Concepts
@@ -32,6 +32,7 @@ A tenant represents a customer, workspace, or organization within your multi-ten
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Build a multi-tenant app with Next.js and Vercel](https://vercel.com/kb/guide/nextjs-multi-tenant-application?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconcepts&source_site=vercel-docs&relationship=related) — Create a Next.js application with multi-tenancy and custom domain support on Vercel.
+- [Introducing the Vercel Platforms Starter Kit](https://vercel.com/blog/platforms-starter-kit?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconcepts&source_site=vercel-docs&relationship=related)
 - [Multi-Tenant Template](https://vercel.com/docs/platforms/examples/multi-tenant-template?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconcepts&source_site=vercel-docs&relationship=related) — Build SaaS applications that serve multiple domains from a single Next.js codebase.
 - [Proxy and Routing](https://vercel.com/docs/platforms/multi-tenant-platforms/middleware-and-routing?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconcepts&source_site=vercel-docs&relationship=related) — Resolve tenants and route requests by subdomain, custom domain, or path using Next.js Proxy on Vercel.
 - [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconcepts&source_site=vercel-docs&relationship=related) — Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.

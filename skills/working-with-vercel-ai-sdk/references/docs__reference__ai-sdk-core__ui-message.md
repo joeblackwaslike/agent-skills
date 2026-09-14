@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/ui-message.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "7105add78a97738f4a4845c17811abfaddcb102c1554a20ec0dfc482e6c13cd8"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "3bbb4d39cc23e5ad72aefaee5d048556002fc6fb3bdb0b1e49c69ef6d09e9016"
 ---
 
 # `UIMessage`
@@ -204,6 +204,34 @@ type ToolUIPart<TOOLS extends UITools = UITools> = ValueOf<{
 the tool part transitions from `approval-requested` to `approval-responded` and
 in later approval-bearing output states.
 
+### `ToolOutputErrorUIPart`
+
+A static or dynamic tool part whose execution failed. Use the
+`isToolOutputErrorUIPart` type guard when rendering messages so your code does
+not need to check the tool state discriminator directly.
+
+```tsx
+import { isToolOutputErrorUIPart, type UIMessage } from 'ai';
+
+function ToolError({ part }: { part: UIMessage['parts'][number] }) {
+  if (!isToolOutputErrorUIPart(part)) {
+    return null;
+  }
+
+  return <div role="alert">{part.errorText}</div>;
+}
+```
+
+The generic `ToolOutputErrorUIPart<TOOLS>` type preserves the input types of
+static tools and also includes dynamic tool errors:
+
+```typescript
+type ToolOutputErrorUIPart<TOOLS extends UITools = UITools> = Extract<
+  ToolUIPart<TOOLS> | DynamicToolUIPart,
+  { state: 'output-error' }
+>;
+```
+
 ### `CustomContentUIPart`
 
 A provider-specific custom content part of a message.
@@ -324,10 +352,15 @@ type StepStartUIPart = {
 - [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
 - [createAgentUIStreamResponse](/docs/reference/ai-sdk-core/create-agent-ui-stream-response)
 - [pipeAgentUIStreamToResponse](/docs/reference/ai-sdk-core/pipe-agent-ui-stream-to-response)
+- [experimental_startBatch](/docs/reference/ai-sdk-core/start-batch)
 - [tool](/docs/reference/ai-sdk-core/tool)
+- [experimental_getBatchStatus](/docs/reference/ai-sdk-core/get-batch-status)
 - [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
+- [experimental_getBatchResults](/docs/reference/ai-sdk-core/get-batch-results)
+- [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
 - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
 - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
 - [jsonSchema](/docs/reference/ai-sdk-core/json-schema)

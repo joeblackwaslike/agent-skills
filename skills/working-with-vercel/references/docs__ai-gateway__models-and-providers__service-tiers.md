@@ -1,23 +1,24 @@
 ---
-title: Service Tiers
+title: AI Gateway Service Tiers
 product: vercel
 url: /docs/ai-gateway/models-and-providers/service-tiers
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/service-tiers"
-last_updated: 2026-08-24
+last_updated: 2026-09-08
 type: reference
 prerequisites:
   - /docs/ai-gateway/models-and-providers
   - /docs/ai-gateway
 related:
-  []
+  - /docs/ai-gateway/sdks-and-apis
+  - /docs/ai-gateway/observability-and-spend/logs
 summary: Control processing priority and cost for OpenAI, Google AI Studio, Google Vertex AI, and SpaceXAI models using service tiers through AI Gateway,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/service-tiers.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "ea52082a4d5d46fa5af185d8afbe7a91101ecca5c6cdbaeba2efcbfc2fc2c55e"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "42ca09abd6e402a4728f556fa3beb734d6f14bc8b4263011f93a0aa1766d114e"
 ---
 
-# Service Tiers
+# AI Gateway Service Tiers
 
 OpenAI, Google AI Studio, Google Vertex AI, and SpaceXAI offer different processing tiers that trade off latency, availability, and cost. You can request a service tier through AI Gateway and AI Gateway adjusts pricing based on the tier the provider actually served.
 
@@ -28,18 +29,19 @@ OpenAI, Google AI Studio, Google Vertex AI, and SpaceXAI offer different process
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Service tiers now available on AI Gateway](https://vercel.com/changelog/service-tiers-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=related)
-- [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=related)
-- [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=related) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
-- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including pricing and markup, SDK and API compatibility, model availabilit
-- [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=related) — Learn about pricing for AI Gateway.
-- [Provider Options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=related) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway
-- [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
-- [Provider Filtering, Ordering & Sorting](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=related) — Control which providers handle your requests, in what order, and how they are ranked using order, only, and sort options
+- [AI Gateway Provider Filtering, Ordering, and Sorting](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=related) — Control AI Gateway provider routing with order, only, and sort. Set preferences, restrict providers, and rank them by co
+- [Call AI Gateway Chat Completions with REST](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=related) — Use AI Gateway API directly without client libraries using curl and fetch.
+- [AI Gateway Text Generation](https://vercel.com/docs/ai-gateway/modalities/text-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=related) — Generate and stream text from hundreds of models through AI Gateway, with tool calling and structured output.
+- [AI Gateway Provider Routing and Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=related) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway.
+- [AI Gateway App Attribution](https://vercel.com/docs/ai-gateway/ecosystem/app-attribution?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=related) — Attribute your requests so Vercel can identify and feature your app on AI Gateway pages.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/service-tiers.graph.md](/docs/ai-gateway/models-and-providers/service-tiers.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-> **💡 Note:** Service tiers are supported for OpenAI, Google AI Studio, Google Vertex AI, and SpaceXAI models. Setting a service tier on a model that doesn't support it has no effect. Tier availability varies by model and provider, so check the provider's pricing page for which models offer which tiers.
+> **💡 Note:** Service tiers are supported for OpenAI, Google AI Studio, Google Vertex AI,
+> and SpaceXAI models. Setting a service tier on a model that doesn't support it
+> has no effect. Tier availability varies by model and provider, so check the
+> provider's pricing page for which models offer which tiers.
 
 ## Supported values
 
@@ -51,31 +53,35 @@ Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/servic
 
 If you don't specify a service tier, requests use the standard tier.
 
-SpaceXAI supports `priority` only. Setting `flex` on a SpaceXAI model has no effect, and the request runs on the default tier.
+SpaceXAI supports `priority` as an alternative to the standard tier. Setting the unified `gateway.serviceTier` to `flex` on a SpaceXAI model has no effect. The per-provider `spacexai.serviceTier` and `xai.serviceTier` options accept `default` or `priority`. SpaceXAI service tiers require AI SDK 6 or later when using the AI SDK.
 
 ## Best-effort routing
 
-Service tier is a best-effort routing hint, not a hard guarantee. If the provider serving a request doesn't support service tiers, the tier is ignored and the request runs on the default tier. If a provider supports the tier but doesn't grant it (for example, when priority capacity is full), the request is downgraded to the default tier. In both cases the request still succeeds and is billed at the default rate.
+Service tier is a best-effort routing hint, not a hard guarantee. If the provider serving a request doesn't support service tiers, the tier is ignored and the request runs on the default tier. A provider can serve a request at the default tier when it doesn't grant the requested tier. Check the applied tier in the response or request logs. Service-tier settings don't prevent provider errors or guarantee that a request succeeds.
 
-The only request that fails over a service tier is one that passes an invalid value to the native `gateway.serviceTier` option, which accepts `flex` or `priority`.
+The `gateway.serviceTier` option accepts `flex`, `priority`, or `fast`. AI Gateway treats `fast` as an alias for `priority` and rejects other values. Per-provider options have their own accepted values and validation.
 
 ## Setting the service tier
 
 You can set the service tier in two ways:
 
-- `gateway.serviceTier` (AI SDK v6 and v7): a unified option that AI Gateway translates to the right per-provider field. Use this when you want one configuration that works across OpenAI, Google AI Studio, Google Vertex AI, and SpaceXAI.
-- Per-provider options: set the tier directly on the provider namespace. Use these for direct REST API calls, for AI SDK v5, or when you need provider-specific behavior.
+- `providerOptions.gateway.serviceTier`: A unified option that AI Gateway translates to the matching per-provider field. The examples below use it with AI SDK 7, the Python beta, Chat Completions, Messages, and Responses / OpenResponses.
+- Per-provider options: Set the tier directly on the provider namespace when you need provider-specific behavior.
 
 ### Using `gateway.serviceTier`
 
 The example below applies to any provider that serves the model and supports the requested tier. If the gateway falls back to another provider for the same model, you still receive the requested tier when that provider supports it.
 
-#### AI SDK v6 and v7
+These examples use AI SDK 7 and the AI SDK for Python beta. Set `AI_GATEWAY_API_KEY` before running them. See [API format differences](/docs/ai-gateway/sdks-and-apis#api-format-differences) for setup, request fields, and response handling.
 
-```typescript filename="app/api/chat/route.ts"
+#### AI SDK
+
+#### TypeScript
+
+```typescript filename="service-tiers.ts"
 import { generateText } from 'ai';
 
-const { text, usage, providerMetadata } = await generateText({
+const { text } = await generateText({
   model: 'google/gemini-3.5-flash-lite',
   prompt: 'Explain quantum computing in two sentences.',
   providerOptions: {
@@ -86,13 +92,34 @@ const { text, usage, providerMetadata } = await generateText({
 });
 
 console.log(text);
-console.log('Applied tier:', providerMetadata?.gateway?.serviceTier);
-console.log('Usage:', usage);
+```
+
+#### Python (beta)
+
+```python filename="service-tiers_ai.py"
+import asyncio
+import ai
+
+async def main():
+    model = ai.get_model("google/gemini-3.5-flash-lite")
+    messages = [ai.user_message("Explain quantum computing in two sentences.")]
+    params = ai.InferenceRequestParams(
+        extra_body={"providerOptions": {"gateway": {"serviceTier": "priority"}}}
+    )
+    async with ai.stream(model, messages, params=params) as stream:
+        async for event in stream:
+            if isinstance(event, ai.events.TextDelta):
+                print(event.chunk, end="", flush=True)
+    print()
+
+asyncio.run(main())
 ```
 
 #### Chat Completions
 
-```typescript filename="service-tier.ts"
+#### TypeScript
+
+```typescript filename="service-tiers-chat.ts"
 import OpenAI from 'openai';
 
 const client = new OpenAI({
@@ -100,55 +127,74 @@ const client = new OpenAI({
   baseURL: 'https://ai-gateway.vercel.sh/v1',
 });
 
-// You can also pass `providerOptions: { gateway: { serviceTier: 'priority' } }`
-// in the body instead of the top-level `service_tier` if you prefer.
 const response = await client.chat.completions.create({
-  model: 'openai/gpt-5.6-sol',
+  model: 'google/gemini-3.5-flash-lite',
   messages: [
     {
       role: 'user',
       content: 'Explain quantum computing in two sentences.',
     },
   ],
-  service_tier: 'priority',
+  // AI Gateway extension fields are not included in the upstream SDK types.
+  ...{
+    providerOptions: {
+      gateway: {
+        serviceTier: 'priority',
+      },
+    },
+  },
 });
 
-const gatewayMetadata = (response.choices[0].message as any).provider_metadata
-  ?.gateway;
-
-console.log(response.choices[0].message.content);
-console.log('Applied tier:', gatewayMetadata?.serviceTier);
-console.log('Usage:', response.usage);
+console.log(response.choices[0]?.message.content);
 ```
 
-#### OpenAI Responses
+#### Python
 
-```typescript filename="service-tier.ts"
-import OpenAI from 'openai';
+```python filename="service-tiers_chat.py"
+import os
+from openai import OpenAI
 
-const client = new OpenAI({
-  apiKey: process.env.AI_GATEWAY_API_KEY,
-  baseURL: 'https://ai-gateway.vercel.sh/v1',
-});
+client = OpenAI(
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
+    base_url="https://ai-gateway.vercel.sh/v1",
+)
 
-// You can also pass `providerOptions: { gateway: { serviceTier: 'priority' } }`
-// in the body instead of the top-level `service_tier` if you prefer.
-const response = await client.responses.create({
-  model: 'openai/gpt-5.6-sol',
-  input: 'Explain quantum computing in two sentences.',
-  service_tier: 'priority',
-});
+response = client.chat.completions.create(
+    model="google/gemini-3.5-flash-lite",
+    messages=[{"role": "user", "content": "Explain quantum computing in two sentences."}],
+    extra_body={"providerOptions": {"gateway": {"serviceTier": "priority"}}},
+)
 
-const gatewayMetadata = (response as any).provider_metadata?.gateway;
-
-console.log(response.output_text);
-console.log('Applied tier:', gatewayMetadata?.serviceTier);
-console.log('Usage:', response.usage);
+print(response.choices[0].message.content)
 ```
 
-#### Anthropic Messages
+#### cURL
 
-```typescript filename="service-tier.ts"
+```bash filename="service-tiers-chat.sh"
+curl --fail-with-body https://ai-gateway.vercel.sh/v1/chat/completions \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "model": "google/gemini-3.5-flash-lite",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Explain quantum computing in two sentences."
+    }
+  ],
+  "providerOptions": {
+    "gateway": {
+      "serviceTier": "priority"
+    }
+  }
+}'
+```
+
+#### Messages API
+
+#### TypeScript
+
+```typescript filename="service-tiers-messages.ts"
 import Anthropic from '@anthropic-ai/sdk';
 
 const client = new Anthropic({
@@ -156,27 +202,138 @@ const client = new Anthropic({
   baseURL: 'https://ai-gateway.vercel.sh',
 });
 
-const message = await client.messages.create({
+const response = await client.messages.create({
   model: 'google/gemini-3.5-flash-lite',
-  max_tokens: 1024,
   messages: [
     {
       role: 'user',
       content: 'Explain quantum computing in two sentences.',
     },
   ],
-  providerOptions: {
-    gateway: {
-      serviceTier: 'priority',
+  max_tokens: 1024,
+  ...{
+    providerOptions: {
+      gateway: {
+        serviceTier: 'priority',
+      },
     },
   },
 });
 
-const gatewayMetadata = (message as any).provider_metadata?.gateway;
+for (const block of response.content) {
+  if (block.type === 'text') console.log(block.text);
+}
+```
 
-console.log(message.content[0].text);
-console.log('Applied tier:', gatewayMetadata?.serviceTier);
-console.log('Usage:', message.usage);
+#### Python
+
+```python filename="service-tiers_messages.py"
+import os
+from anthropic import Anthropic
+
+client = Anthropic(
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
+    base_url="https://ai-gateway.vercel.sh",
+)
+
+response = client.messages.create(
+    model="google/gemini-3.5-flash-lite",
+    messages=[{"role": "user", "content": "Explain quantum computing in two sentences."}],
+    max_tokens=1024,
+    extra_body={"providerOptions": {"gateway": {"serviceTier": "priority"}}},
+)
+
+for block in response.content:
+    if block.type == "text":
+        print(block.text)
+```
+
+#### cURL
+
+```bash filename="service-tiers-messages.sh"
+curl --fail-with-body https://ai-gateway.vercel.sh/v1/messages \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -H "anthropic-version: 2023-06-01" \
+  -d '{
+  "model": "google/gemini-3.5-flash-lite",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Explain quantum computing in two sentences."
+    }
+  ],
+  "max_tokens": 1024,
+  "providerOptions": {
+    "gateway": {
+      "serviceTier": "priority"
+    }
+  }
+}'
+```
+
+#### Responses / OpenResponses
+
+#### TypeScript
+
+```typescript filename="service-tiers-responses.ts"
+import OpenAI from 'openai';
+
+const client = new OpenAI({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh/v1',
+});
+
+const response = await client.responses.create({
+  model: 'google/gemini-3.5-flash-lite',
+  input: 'Explain quantum computing in two sentences.',
+  ...{
+    providerOptions: {
+      gateway: {
+        serviceTier: 'priority',
+      },
+    },
+  },
+});
+
+console.log(response.output_text);
+```
+
+#### Python
+
+```python filename="service-tiers_responses.py"
+import os
+from openai import OpenAI
+
+client = OpenAI(
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
+    base_url="https://ai-gateway.vercel.sh/v1",
+)
+
+response = client.responses.create(
+    model="google/gemini-3.5-flash-lite",
+    input="Explain quantum computing in two sentences.",
+    extra_body={"providerOptions": {"gateway": {"serviceTier": "priority"}}},
+)
+
+print(response.output_text)
+```
+
+#### cURL
+
+```bash filename="service-tiers-responses.sh"
+curl --fail-with-body https://ai-gateway.vercel.sh/v1/responses \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "model": "google/gemini-3.5-flash-lite",
+  "input": "Explain quantum computing in two sentences.",
+  "providerOptions": {
+    "gateway": {
+      "serviceTier": "priority"
+    }
+  }
+}'
 ```
 
 ### Using per-provider options
@@ -186,7 +343,11 @@ You can also set the tier directly on the provider namespace. The supported keys
 - OpenAI: `openai.serviceTier` (or `service_tier` for the raw Chat Completions and OpenAI Responses APIs)
 - Google AI Studio: `google.serviceTier`
 - Google Vertex AI: `vertex.sharedRequestType`
-- SpaceXAI: `spacexai.serviceTier`
+- SpaceXAI: `spacexai.serviceTier` or `xai.serviceTier`
+
+For SpaceXAI requests, AI Gateway merges `providerOptions.spacexai` into `providerOptions.xai`. If both set the same option, the `xai` value takes precedence. The unified `gateway.serviceTier` overrides either per-provider tier. Use `spacexai` for model and routing slugs; the AI SDK package and import remain [`@ai-sdk/xai` and `xai`](https://ai-sdk.dev/providers/ai-sdk-providers/xai).
+
+The AI SDK returns SpaceXAI provider-specific metadata under `providerMetadata.xai` for either request namespace. Read `providerMetadata.xai.serviceTier` for the reported tier, including `default`.
 
 #### OpenAI
 
@@ -194,7 +355,7 @@ You can also set the tier directly on the provider namespace. The supported keys
 import { generateText } from 'ai';
 
 const { text, usage, providerMetadata } = await generateText({
-  model: 'openai/gpt-5.6-sol',
+  model: 'openai/gpt-6-astra',
   prompt: 'Explain quantum computing in two sentences.',
   providerOptions: {
     openai: {
@@ -273,13 +434,13 @@ const { text, usage, providerMetadata } = await generateText({
 });
 
 console.log(text);
-console.log('Applied tier:', providerMetadata?.gateway?.serviceTier);
+console.log('Applied tier:', providerMetadata?.xai?.serviceTier);
 console.log('Usage:', usage);
 ```
 
 ## Reading the applied service tier
 
-The tier the provider actually served appears on the response as `providerMetadata.gateway.serviceTier`. AI Gateway only sets this field when the request was served at `flex` or `priority`. If the provider downgraded to standard, the field is omitted, so a missing value is an honest signal that you weren't billed at the requested tier.
+The AI SDK exposes the applied tier as `providerMetadata.gateway.serviceTier`. Chat Completions, Messages, and OpenResponses responses expose AI Gateway metadata under `provider_metadata.gateway.serviceTier`; OpenAI-compatible responses can also include `service_tier`. The Python beta may omit routing metadata, so inspect [request logs](/docs/ai-gateway/observability-and-spend/logs) when it is unavailable. AI Gateway only sets this field when the request was served at `flex` or `priority`. If the provider reports the standard tier, AI Gateway omits this field. If your client omits provider metadata, use request logs to confirm the applied tier.
 
 ```typescript
 const { providerMetadata } = await generateText({
@@ -303,13 +464,15 @@ AI Gateway bills the request at the tier the provider actually served, not the t
 
 Service tiers work the same way with streaming. Read `providerMetadata.gateway.serviceTier` from the awaited result once the stream completes.
 
-#### AI SDK v6 and v7
+#### AI SDK
 
-```typescript filename="app/api/chat/route.ts"
+#### TypeScript
+
+```typescript filename="service-tier-stream.ts"
 import { streamText } from 'ai';
 
 const result = streamText({
-  model: 'openai/gpt-5.6-sol',
+  model: 'google/gemini-3.5-flash-lite',
   prompt: 'Explain quantum computing in two sentences.',
   providerOptions: {
     gateway: {
@@ -318,20 +481,37 @@ const result = streamText({
   },
 });
 
-for await (const textPart of result.textStream) {
-  process.stdout.write(textPart);
+for await (const chunk of result.textStream) {
+  process.stdout.write(chunk);
 }
+```
 
-const { usage, providerMetadata } = await result;
-console.log('Applied tier:', providerMetadata?.gateway?.serviceTier);
-console.log('Usage:', usage);
+#### Python (beta)
+
+```python filename="service-tier-stream_ai.py"
+import asyncio
+import ai
+
+async def main():
+    model = ai.get_model("google/gemini-3.5-flash-lite")
+    messages = [ai.user_message("Explain quantum computing in two sentences.")]
+    params = ai.InferenceRequestParams(
+        extra_body={"providerOptions": {"gateway": {"serviceTier": "priority"}}}
+    )
+    async with ai.stream(model, messages, params=params) as stream:
+        async for event in stream:
+            if isinstance(event, ai.events.TextDelta):
+                print(event.chunk, end="", flush=True)
+    print()
+
+asyncio.run(main())
 ```
 
 #### Chat Completions
 
 #### TypeScript
 
-```typescript filename="service-tier-streaming.ts"
+```typescript filename="service-tier-stream-chat.ts"
 import OpenAI from 'openai';
 
 const client = new OpenAI({
@@ -339,128 +519,80 @@ const client = new OpenAI({
   baseURL: 'https://ai-gateway.vercel.sh/v1',
 });
 
-const stream = await client.chat.completions.create({
-  model: 'openai/gpt-5.6-sol',
+const response = await client.chat.completions.create({
+  model: 'google/gemini-3.5-flash-lite',
   messages: [
     {
       role: 'user',
       content: 'Explain quantum computing in two sentences.',
     },
   ],
+  ...{
+    providerOptions: {
+      gateway: {
+        serviceTier: 'priority',
+      },
+    },
+  },
   stream: true,
-  service_tier: 'priority',
 });
 
-let gatewayMetadata: any;
-for await (const chunk of stream) {
-  const delta = chunk.choices[0]?.delta;
-  if (delta?.content) process.stdout.write(delta.content);
-  const metadata = (delta as any)?.provider_metadata;
-  if (metadata?.gateway) gatewayMetadata = metadata.gateway;
+for await (const event of response) {
+  process.stdout.write(event.choices[0]?.delta.content ?? '');
 }
-
-console.log('\nApplied tier:', gatewayMetadata?.serviceTier);
 ```
 
 #### Python
 
-```python filename="service-tier-streaming.py"
+```python filename="service-tier-stream_chat.py"
 import os
 from openai import OpenAI
 
 client = OpenAI(
-    api_key=os.getenv('AI_GATEWAY_API_KEY'),
-    base_url='https://ai-gateway.vercel.sh/v1'
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
+    base_url="https://ai-gateway.vercel.sh/v1",
 )
 
-stream = client.chat.completions.create(
-    model='openai/gpt-5.6-sol',
-    messages=[
-        {
-            'role': 'user',
-            'content': 'Explain quantum computing in two sentences.'
-        }
-    ],
+response = client.chat.completions.create(
+    model="google/gemini-3.5-flash-lite",
+    messages=[{"role": "user", "content": "Explain quantum computing in two sentences."}],
+    extra_body={"providerOptions": {"gateway": {"serviceTier": "priority"}}},
     stream=True,
-    service_tier='priority'
 )
 
-gateway_metadata = None
-for chunk in stream:
-    delta = chunk.choices[0].delta
-    if delta.content:
-        print(delta.content, end='', flush=True)
-    if hasattr(delta, 'provider_metadata') and delta.provider_metadata:
-        gateway_metadata = delta.provider_metadata.get('gateway')
-
-print('\nApplied tier:', (gateway_metadata or {}).get('serviceTier'))
+for event in response:
+    if event.choices:
+        print(event.choices[0].delta.content or "", end="", flush=True)
 ```
 
-#### OpenAI Responses
+#### cURL
+
+```bash filename="service-tier-stream-chat.sh"
+curl --fail-with-body --no-buffer https://ai-gateway.vercel.sh/v1/chat/completions \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "model": "google/gemini-3.5-flash-lite",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Explain quantum computing in two sentences."
+    }
+  ],
+  "providerOptions": {
+    "gateway": {
+      "serviceTier": "priority"
+    }
+  },
+  "stream": true
+}'
+```
+
+#### Messages API
 
 #### TypeScript
 
-```typescript filename="service-tier-streaming.ts"
-import OpenAI from 'openai';
-
-const client = new OpenAI({
-  apiKey: process.env.AI_GATEWAY_API_KEY,
-  baseURL: 'https://ai-gateway.vercel.sh/v1',
-});
-
-const stream = await client.responses.create({
-  model: 'openai/gpt-5.6-sol',
-  input: 'Explain quantum computing in two sentences.',
-  stream: true,
-  service_tier: 'priority',
-});
-
-let gatewayMetadata: any;
-for await (const event of stream) {
-  if (event.type === 'response.output_text.delta') {
-    process.stdout.write(event.delta);
-  } else if (event.type === 'response.completed') {
-    gatewayMetadata = (event.response as any).provider_metadata?.gateway;
-  }
-}
-
-console.log('\nApplied tier:', gatewayMetadata?.serviceTier);
-```
-
-#### Python
-
-```python filename="service-tier-streaming.py"
-import os
-from openai import OpenAI
-
-client = OpenAI(
-    api_key=os.getenv('AI_GATEWAY_API_KEY'),
-    base_url='https://ai-gateway.vercel.sh/v1'
-)
-
-stream = client.responses.create(
-    model='openai/gpt-5.6-sol',
-    input='Explain quantum computing in two sentences.',
-    stream=True,
-    service_tier='priority'
-)
-
-gateway_metadata = None
-for event in stream:
-    if event.type == 'response.output_text.delta':
-        print(event.delta, end='', flush=True)
-    elif event.type == 'response.completed':
-        if hasattr(event.response, 'provider_metadata') and event.response.provider_metadata:
-            gateway_metadata = event.response.provider_metadata.get('gateway')
-
-print('\nApplied tier:', (gateway_metadata or {}).get('serviceTier'))
-```
-
-#### Anthropic Messages
-
-#### TypeScript
-
-```typescript filename="service-tier-streaming.ts"
+```typescript filename="service-tier-stream-messages.ts"
 import Anthropic from '@anthropic-ai/sdk';
 
 const client = new Anthropic({
@@ -468,74 +600,155 @@ const client = new Anthropic({
   baseURL: 'https://ai-gateway.vercel.sh',
 });
 
-const stream = await client.messages.create({
-  model: 'openai/gpt-5.6-sol',
-  max_tokens: 1024,
+const response = await client.messages.create({
+  model: 'google/gemini-3.5-flash-lite',
   messages: [
     {
       role: 'user',
       content: 'Explain quantum computing in two sentences.',
     },
   ],
-  stream: true,
-  providerOptions: {
-    openai: {
-      serviceTier: 'priority',
+  max_tokens: 1024,
+  ...{
+    providerOptions: {
+      gateway: {
+        serviceTier: 'priority',
+      },
     },
   },
+  stream: true,
 });
 
-let gatewayMetadata: any;
-for await (const event of stream) {
-  if (event.type === 'content_block_delta') {
-    if (event.delta.type === 'text_delta') {
-      process.stdout.write(event.delta.text);
-    }
-  } else if (event.type === 'message_delta') {
-    const metadata = (event as any).provider_metadata;
-    if (metadata?.gateway) gatewayMetadata = metadata.gateway;
+for await (const event of response) {
+  if (
+    event.type === 'content_block_delta' &&
+    event.delta.type === 'text_delta'
+  ) {
+    process.stdout.write(event.delta.text);
   }
 }
-
-console.log('\nApplied tier:', gatewayMetadata?.serviceTier);
 ```
 
 #### Python
 
-```python filename="service-tier-streaming.py"
+```python filename="service-tier-stream_messages.py"
 import os
-import anthropic
+from anthropic import Anthropic
 
-client = anthropic.Anthropic(
-    api_key=os.getenv('AI_GATEWAY_API_KEY'),
-    base_url='https://ai-gateway.vercel.sh'
+client = Anthropic(
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
+    base_url="https://ai-gateway.vercel.sh",
 )
 
-with client.messages.stream(
-    model='openai/gpt-5.6-sol',
+response = client.messages.create(
+    model="google/gemini-3.5-flash-lite",
+    messages=[{"role": "user", "content": "Explain quantum computing in two sentences."}],
     max_tokens=1024,
-    messages=[
-        {
-            'role': 'user',
-            'content': 'Explain quantum computing in two sentences.'
-        }
-    ],
-    extra_body={
-        'providerOptions': {
-            'openai': {
-                'serviceTier': 'priority'
-            }
-        }
-    }
-) as stream:
-    for text in stream.text_stream:
-        print(text, end='', flush=True)
-    final_message = stream.get_final_message()
+    extra_body={"providerOptions": {"gateway": {"serviceTier": "priority"}}},
+    stream=True,
+)
 
-gateway_metadata = None
-if hasattr(final_message, 'provider_metadata') and final_message.provider_metadata:
-    gateway_metadata = final_message.provider_metadata.get('gateway')
-print('\nApplied tier:', (gateway_metadata or {}).get('serviceTier'))
+for event in response:
+    if event.type == "content_block_delta" and event.delta.type == "text_delta":
+        print(event.delta.text, end="", flush=True)
+```
+
+#### cURL
+
+```bash filename="service-tier-stream-messages.sh"
+curl --fail-with-body --no-buffer https://ai-gateway.vercel.sh/v1/messages \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -H "anthropic-version: 2023-06-01" \
+  -d '{
+  "model": "google/gemini-3.5-flash-lite",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Explain quantum computing in two sentences."
+    }
+  ],
+  "max_tokens": 1024,
+  "providerOptions": {
+    "gateway": {
+      "serviceTier": "priority"
+    }
+  },
+  "stream": true
+}'
+```
+
+#### Responses / OpenResponses
+
+#### TypeScript
+
+```typescript filename="service-tier-stream-responses.ts"
+import OpenAI from 'openai';
+
+const client = new OpenAI({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh/v1',
+});
+
+const response = await client.responses.create({
+  model: 'google/gemini-3.5-flash-lite',
+  input: 'Explain quantum computing in two sentences.',
+  ...{
+    providerOptions: {
+      gateway: {
+        serviceTier: 'priority',
+      },
+    },
+  },
+  stream: true,
+});
+
+for await (const event of response) {
+  if (event.type === 'response.output_text.delta') {
+    process.stdout.write(event.delta);
+  }
+}
+```
+
+#### Python
+
+```python filename="service-tier-stream_responses.py"
+import os
+from openai import OpenAI
+
+client = OpenAI(
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
+    base_url="https://ai-gateway.vercel.sh/v1",
+)
+
+response = client.responses.create(
+    model="google/gemini-3.5-flash-lite",
+    input="Explain quantum computing in two sentences.",
+    extra_body={"providerOptions": {"gateway": {"serviceTier": "priority"}}},
+    stream=True,
+)
+
+for event in response:
+    if event.type == "response.output_text.delta":
+        print(event.delta, end="", flush=True)
+```
+
+#### cURL
+
+```bash filename="service-tier-stream-responses.sh"
+curl --fail-with-body --no-buffer https://ai-gateway.vercel.sh/v1/responses \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "model": "google/gemini-3.5-flash-lite",
+  "input": "Explain quantum computing in two sentences.",
+  "providerOptions": {
+    "gateway": {
+      "serviceTier": "priority"
+    }
+  },
+  "stream": true
+}'
 ```
 
 ## Pricing

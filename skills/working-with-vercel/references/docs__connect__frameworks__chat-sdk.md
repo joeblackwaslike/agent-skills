@@ -17,8 +17,8 @@ related:
 summary: Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, GitHub, Linear, Notion, and Telegram.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/frameworks/chat-sdk.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "6f15078ac6db2a188e032e3340438398b9ccadd1842d0a9caf153a41aed289a1"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "af8899a208b6f47f34d76bd5200d583458789826b6707763c1a85e310cba1990"
 ---
 
 # Chat SDK
@@ -43,7 +43,6 @@ supported platform.
 - [CLI](https://chat-sdk.dev/docs/create-chat-sdk?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fchat-sdk&source_site=vercel-docs&relationship=related) — Scaffold a Chat SDK bot app with a single command.
 - [Vercel Connect: Secure access to external services for your agents](https://vercel.com/changelog/vercel-connect-secure-access-to-external-services-for-your-agents?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fchat-sdk&source_site=vercel-docs&relationship=related)
 - [How to build an AI agent for Slack with Chat SDK and AI SDK](https://vercel.com/kb/guide/how-to-build-an-ai-agent-for-slack-with-chat-sdk-and-ai-sdk?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fchat-sdk&source_site=vercel-docs&relationship=related) — Build a Slack AI agent using Chat SDK, AI SDK's ToolLoopAgent, and Vercel AI Gateway. Covers project setup, tool definit
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fchat-sdk&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/connect/frameworks/chat-sdk.graph.md](/docs/connect/frameworks/chat-sdk.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fchat-sdk&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

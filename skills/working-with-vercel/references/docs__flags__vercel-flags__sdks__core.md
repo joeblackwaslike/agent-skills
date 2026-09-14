@@ -17,8 +17,8 @@ related:
 summary: Use the Vercel Flags core evaluation library directly for custom setups.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/sdks/core.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "c96e9362928ff534abcdbe8f3693d7664c00fad32d8e1a624a5f1fb260675999"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "d7efa99fb35f23f5889fa72128e999d98676257568b4cee8c464cfff6af5e862"
 ---
 
 # Using the Core Library
@@ -39,7 +39,6 @@ The `@vercel/flags-core` library provides direct access to the Vercel Flags eval
 - [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fcore&source_site=vercel-docs&relationship=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
 - [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fcore&source_site=vercel-docs&relationship=related) — API reference for the Flags SDK for Next.js and SvelteKit.
 - [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fcore&source_site=vercel-docs&relationship=related) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fcore&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/sdks/core.graph.md](/docs/flags/vercel-flags/sdks/core.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fcore&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

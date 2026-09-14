@@ -17,8 +17,8 @@ related:
 summary: "As an integration provider, understanding how your service interacts with Vercel's platform will help you create and optimize your integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/native-integration.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "02ad128a3815f7d0e54622e5093c5e99aba545c88eac82bcc4093ddc8ea6e8f7"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "12e8bd9e21d050bb485816379738836304002e9eef6573b230fc4226c31ba306"
 ---
 
 # Native integration concepts
@@ -34,8 +34,8 @@ Native integrations allow a two-way connection between Vercel and third-party pr
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fnative-integration&source_site=vercel-docs&relationship=related) — Learn how you can add a product to your Vercel project through a native integration.
 - [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fnative-integration&source_site=vercel-docs&relationship=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
 - [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fnative-integration&source_site=vercel-docs&relationship=related) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
-- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fnative-integration&source_site=vercel-docs&relationship=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
 - [Marketplace Partner API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fnative-integration&source_site=vercel-docs&relationship=related) — Learn how to implement Partner API endpoints for your Vercel integration
+- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fnative-integration&source_site=vercel-docs&relationship=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
 - [Marketplace Vercel API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fnative-integration&source_site=vercel-docs&relationship=related) — Learn how to call Vercel API endpoints to interact with Vercel resources
 
 Full cross-link map for this page: [/docs/integrations/create-integration/native-integration.graph.md](/docs/integrations/create-integration/native-integration.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fnative-integration&source_site=vercel-docs&relationship=graph)

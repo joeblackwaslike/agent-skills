@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/file-uploads.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "c897ebef574f5b20b85d385fad3a6e8a4aaa789c46d6db1033f01cc332d92b4b"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "3604064b20fbbe8cc1220e089390d2feb320e5f56b93fc53246e959f7361338d"
 ---
 
 # File Uploads
@@ -205,6 +205,7 @@ if they encounter a provider reference in a message.
 - [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
 - [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
+- [Batch](/docs/ai-sdk-core/batch)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)

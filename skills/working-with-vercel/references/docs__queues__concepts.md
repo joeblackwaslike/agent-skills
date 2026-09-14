@@ -16,8 +16,8 @@ related:
 summary: Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/concepts.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "055fc8f77d46a23dc032182d02949bcb06014dc41ec64d1e349700b4c072b55c"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "b006cd1b952d6c242e84c1f1da407959d9a336e13f11fc864563812da69891e6"
 ---
 
 # Queues concepts
@@ -34,12 +34,9 @@ Vercel Queues is a durable event streaming system for asynchronous workloads. Yo
 - [Publish and subscribe to realtime data on Vercel](https://vercel.com/kb/guide/publish-and-subscribe-to-realtime-data-on-vercel?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related) — Learn how to publish and subscribe to realtime data on Vercel with WebSockets, SSE, Redis, and Queues, and when a manage
 - [Framework Integrations](https://workflow-sdk.dev/docs/how-it-works/framework-integrations?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related) — Build a custom framework integration using the Workflow SDK compiler and runtime.
 - [Vercel Queues now in public beta](https://vercel.com/changelog/vercel-queues-now-in-public-beta?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related)
-- [Sending Emails from an application on Vercel](https://vercel.com/kb/guide/sending-emails-from-an-application-on-vercel?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related) — SMTP is the harder path inside Vercel Functions. Learn how to send emails over an HTTP API, which Next.js pattern fits y
 - [Vercel Queues is now in Limited Beta](https://vercel.com/changelog/vercel-queues-is-now-in-limited-beta?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related)
+- [How to send emails from an application on Vercel](https://vercel.com/kb/guide/sending-emails-from-an-application-on-vercel?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related) — Send email from Vercel Functions over an HTTP API instead of SMTP. Match the right Next.js pattern to your trigger and f
 - [Quickstart](https://vercel.com/docs/queues/quickstart?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related) — Set up Vercel Queues with the SDK.
-- [Queues Observability](https://vercel.com/docs/queues/observability?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related) — Monitor queue throughput, message age, retries, and consumer performance to optimize your queue-based workflows.
-- [Deploy Dramatiq workers on Vercel](https://vercel.com/docs/frameworks/backend/dramatiq?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related) — Deploy Dramatiq workers on Vercel. Learn how Dramatiq actors use Vercel Queues and Vercel Functions to process backgroun
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/queues/concepts.graph.md](/docs/queues/concepts.graph.md?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -210,6 +207,19 @@ This is useful during rollouts: both the current and previous deployments can ha
 
 > **💡 Note:** In [poll mode](/docs/queues/poll-mode), you can reference the deployment ID as an opaque version identifier to partition your consumers manually, or omit it entirely and handle versioning at the application level.
 
+### Stopping deliveries to a deployment
+
+Because messages stay pinned to the deployment that published them, promoting or rolling back to a different deployment does not stop deliveries to the old one. Its consumer functions keep being invoked, and keep being retried, until every message it published is acknowledged or expires. A deployment that was in production for a few minutes can therefore stay busy for up to the message retention period (24 hours by default) if its messages keep failing.
+
+To stop a deployment's consumers from running, **delete the deployment**. Vercel stops invoking its functions immediately. Pending messages stay in the queue until they expire, but no compute is used for them.
+
+Two settings bound how much compute resources a failing deployment can consume:
+
+- **Cap retries.** Set [`maxDeliveries`](#consumer-function-security) on the trigger so a message that keeps failing is dropped after a bounded number of deliveries.
+- **Acknowledge bad messages.** As an alternative to the above, you can return `{ acknowledge: true }` from the SDK's [retry callback](/docs/queues/sdk#custom-retry-behavior) based on any checks you want to perform, which will stop the message from being redelivered.
+
+To see which deployments are consuming compute, open the Observability **Query** tab with [function duration grouped by deployment](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability%2Fquery%3Fmetric%3DserverlessFunctionInvocation.functionDurationGbhr%26aggregation%3Dsum%26by%3DdeploymentId\&title=Function+duration+by+deployment). A deployment that is no longer current but still accounts for a large share of GB-hours is a deployment with failing consumers.
+
 ## Delivery
 
 By default, Vercel delivers messages to your [Vercel Functions](/docs/functions) using **push mode**. When a message is published to a topic, Vercel invokes your consumer function automatically with [fluid compute](/docs/fluid-compute). You define a consumer function, and Vercel calls it for each message (or batch of messages) as they become available.
@@ -237,7 +247,8 @@ Queue consumer functions on Vercel are not accessible from the outside world. Ja
           "type": "queue/v2beta",
           "topic": "orders",
           "retryAfterSeconds": 60,
-          "initialDelaySeconds": 0
+          "initialDelaySeconds": 0,
+          "maxDeliveries": 20
         }
       ]
     }
@@ -255,6 +266,7 @@ The `vercel.json` queue trigger supports these options for JavaScript and TypeSc
 | `topic`               | `string` | -            | Topic name to consume. Supports wildcards (e.g., `order-*`) |
 | `retryAfterSeconds`   | `number` | 60 seconds   | Time before a failed message is retried                     |
 | `initialDelaySeconds` | `number` | Zero seconds | Delay before the consumer starts processing after deploy    |
+| `maxDeliveries`       | `number` | Unlimited    | Deliveries after which a message is no longer retried. See [Retries](#retries) |
 
 Multiple route files with the same topic create separate consumer groups, each receiving a copy of every message.
 
@@ -300,7 +312,11 @@ This is useful when your consumer calls a rate-limited downstream service, or wh
 
 ## Retries
 
-Vercel Queues retries failed messages automatically until they expire. For the first 32 delivery attempts, Vercel respects your configured retry delay. After 32 attempts, the system begins forcing exponential backoff to maintain system health and prevent runaway deliveries.
+Vercel Queues retries failed messages automatically until they expire or reach the trigger's `maxDeliveries`. A delivery counts as failed when the consumer does not acknowledge the message before its lease runs out, whichever way that happens: the handler threw, the function crashed or timed out, or the function could not be reached.
+
+### Cost of failed deliveries
+
+Every delivery to a push consumer is a function invocation. If a delivery fails by timing out, it is billed for the function's full `maxDuration` at its configured memory. To prevent runaway costs for misconfigured deployments, set up a [retry depth alert](/docs/queues/observability#alerting-on-retries), and stop it as described in [Stopping deliveries to a deployment](#stopping-deliveries-to-a-deployment).
 
 ### Dead-letter queue (DLQ)
 

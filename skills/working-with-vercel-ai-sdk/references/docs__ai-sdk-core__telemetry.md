@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/telemetry.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "e60cbb0a9f859f792297b06b424c74e87345de40e24a7625ce7f66ae5ca3e147"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "1da847ce05dfe69bb17efc68747831d46602e9629e232f6dce380c8a4363aa55"
 ---
 
 # Telemetry
@@ -127,7 +127,7 @@ const result = await generateText({
 });
 ```
 
-In this example, telemetry integrations receive `runtimeContext` as `{ requestId: 'req_abc' }`. Properties set to `false` or omitted are excluded. If `telemetry.includeRuntimeContext` is omitted, no runtime context properties are included. `telemetry.includeRuntimeContext` is supported by `generateText`, `streamText`, and `ToolLoopAgent`.
+In this example, telemetry integrations receive `runtimeContext` as `{ requestId: 'req_abc' }`. Properties set to `false` or omitted are excluded. If `telemetry.includeRuntimeContext` is omitted, no runtime context properties are included. `telemetry.includeRuntimeContext` is supported by `generateText`, `streamText`, `ToolLoopAgent`, `embed`, `embedMany`, and `rerank`.
 
 <Note>
   `telemetry.includeRuntimeContext` only filters telemetry integrations,
@@ -583,14 +583,37 @@ The callback runs when each span is created and receives:
 - `spanType`: the type of span being created (`operation`, `step`, `languageModel`, `tool`, `embedding`, or `reranking`).
 - `operationId`: the AI SDK operation ID for the current call, such as `ai.generateText` or `ai.streamText`.
 - `callId`: the unique ID for the current AI SDK call.
-- `runtimeContext`: the telemetry-filtered runtime context for text generation spans, including updates from `prepareStep`.
+- `runtimeContext`: the telemetry-filtered runtime context for text generation, embedding, and reranking spans. Text generation spans also reflect updates from `prepareStep`.
 
 Custom attributes are merged with AI SDK attributes on the span. AI SDK-owned
 attributes take precedence when a custom attribute uses the same key.
 
-`sensitiveRuntimeContext` is applied before telemetry integrations receive
-`runtimeContext`, so custom span enrichment does not receive top-level runtime
-context properties marked as sensitive.
+`telemetry.includeRuntimeContext` is applied before telemetry integrations receive
+`runtimeContext`, so custom span enrichment only receives top-level runtime context
+properties explicitly set to `true`. If the option is omitted, no runtime context
+properties are included.
+
+Embedding and reranking operations can share the same runtime context with text
+generation to attribute their spans to the same application request:
+
+```ts
+await embed({
+  model: 'openai/text-embedding-3-small',
+  value: 'sunny day at the beach',
+  runtimeContext: {
+    requestId: 'req_abc',
+    userId: 'user_123',
+  },
+  telemetry: {
+    includeRuntimeContext: { requestId: true },
+  },
+});
+```
+
+A globally registered `OpenTelemetry({ enrichSpan })` integration receives
+`{ requestId: 'req_abc' }` for the operation span and its embedding model span.
+The same applies to every chunk in `embedMany` and to the operation and model
+spans in `rerank`. The `onStart` and `onEnd` callbacks receive the full context.
 
 ### Supplemental AI SDK attributes on OpenTelemetry spans
 
@@ -857,6 +880,7 @@ Tool call spans (`ai.toolCall`) contain the following attributes:
 - [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
 - [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
+- [Batch](/docs/ai-sdk-core/batch)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)

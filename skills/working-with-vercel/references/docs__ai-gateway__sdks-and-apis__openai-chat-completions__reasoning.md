@@ -1,10 +1,10 @@
 ---
-title: Reasoning
+title: OpenAI Chat Completions Reasoning with AI Gateway
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning"
-last_updated: 2026-08-16
-type: conceptual
+last_updated: 2026-09-08
+type: reference
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions
   - /docs/ai-gateway/sdks-and-apis
@@ -12,15 +12,16 @@ related:
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions/chat-completions
   - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning
   - /docs/ai-gateway/models-and-providers/reasoning
+  - /docs/ai-gateway/models-and-providers/reasoning/anthropic
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced
-summary: Control how much a model thinks before answering with the OpenAI Chat Completions API.
+summary: Control how much a model thinks before answering with the OpenAI Chat Completions API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "b1aa0c978c509b58e336e7e7f79a9e42d445017e57546e74ace41f1805b64a49"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "09f31f2e9aeced5bc13b6bdd374ea3d393ff32e151e4dd9fd0aad08a50678dc5"
 ---
 
-# Reasoning
+# OpenAI Chat Completions Reasoning with AI Gateway
 
 Reasoning models work through a problem before answering. Configure that with the `reasoning` object on a [chat completion](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/chat-completions) request, which controls how many reasoning tokens the model generates and whether they come back in the response.
 
@@ -31,43 +32,22 @@ Reasoning models work through a problem before answering. Configure that with th
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Reasoning](https://ai-sdk.dev/docs/ai-sdk-core/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Freasoning&source_site=vercel-docs&relationship=related)
-- [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Freasoning&source_site=vercel-docs&relationship=related) — Control how much a reasoning model thinks before answering with the OpenResponses API.
+- [OpenResponses Reasoning with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Freasoning&source_site=vercel-docs&relationship=related) — Control how much a reasoning model thinks before answering with the OpenResponses API through AI Gateway.
 - [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Freasoning&source_site=vercel-docs&relationship=related)
-- [OpenAI Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Freasoning&source_site=vercel-docs&relationship=related) — Configure reasoning and thinking for OpenAI models with the AI SDK and AI Gateway.
-- [Anthropic](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Freasoning&source_site=vercel-docs&relationship=related)
-- [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Freasoning&source_site=vercel-docs&relationship=related) — Control how much a model thinks before answering with the OpenAI Responses API.
-- [Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Freasoning&source_site=vercel-docs&relationship=related) — Use the AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
-- [Streaming](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/streaming?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Freasoning&source_site=vercel-docs&relationship=related) — Stream OpenAI Chat Completions responses token by token as they are generated.
+- [AI Gateway OpenAI Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Freasoning&source_site=vercel-docs&relationship=related) — Configure reasoning and thinking for OpenAI models with the AI SDK and AI Gateway.
+- [OpenAI Responses Reasoning with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Freasoning&source_site=vercel-docs&relationship=related) — Control how much a model thinks before answering with the OpenAI Responses API through AI Gateway.
+- [AI Gateway Amazon Bedrock Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Freasoning&source_site=vercel-docs&relationship=related) — Configure reasoning for models hosted on Amazon Bedrock with the AI SDK and AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning.graph.md](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Freasoning&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Anthropic calls the same capability extended thinking: see [Extended thinking](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning) for the Anthropic-shaped equivalent, or [Reasoning](/docs/ai-gateway/models-and-providers/reasoning) for the cross-provider reference.
 
-The `reasoning` object works with any reasoning model, not just OpenAI models. AI Gateway maps it to the target provider's native reasoning configuration.
+The `reasoning` object works across supported reasoning models, including models from other providers. AI Gateway maps it to the target provider's native reasoning configuration.
+
+Use [catalog discovery](/docs/ai-gateway/models-and-providers/reasoning#discover-model-reasoning-support) to find reasoning models and their supported controls. For effort-based models, the standard `reasoning_effort` field is an alias for `reasoning.effort`. If both are present, the nested value takes precedence. See the [cross-format quick start](/docs/ai-gateway/models-and-providers/reasoning#quick-start) for TypeScript, Python, and cURL examples.
 
 Example request
-
-#### cURL
-
-```bash filename="reasoning.sh"
-curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
-  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "openai/gpt-5.6-sol",
-    "messages": [
-      {
-        "role": "user",
-        "content": "What is the meaning of life? Think before answering."
-      }
-    ],
-    "stream": false,
-    "reasoning": {
-      "effort": "medium"
-    }
-  }'
-```
 
 #### TypeScript
 
@@ -81,9 +61,8 @@ const openai = new OpenAI({
   baseURL: 'https://ai-gateway.vercel.sh/v1',
 });
 
-// @ts-expect-error - reasoning parameter not yet in OpenAI types
 const completion = await openai.chat.completions.create({
-  model: 'openai/gpt-5.6-sol',
+  model: 'openai/gpt-6-astra',
   messages: [
     {
       role: 'user',
@@ -91,13 +70,19 @@ const completion = await openai.chat.completions.create({
     },
   ],
   stream: false,
-  reasoning: {
-    effort: 'medium',
+  // AI Gateway extension fields are not included in the upstream SDK types.
+  ...{
+    reasoning: {
+      effort: 'medium',
+    },
   },
 });
 
-// @ts-expect-error - reasoning is not yet in the OpenAI response types
-console.log('Reasoning:', completion.choices[0].message.reasoning);
+const message = completion.choices[0].message;
+console.log(
+  'Reasoning:',
+  'reasoning' in message ? message.reasoning : undefined,
+);
 console.log('Answer:', completion.choices[0].message.content);
 console.log(
   'Reasoning tokens:',
@@ -119,7 +104,7 @@ client = OpenAI(
 )
 
 completion = client.chat.completions.create(
-    model='openai/gpt-5.6-sol',
+    model='openai/gpt-6-astra',
     messages=[
         {
             'role': 'user',
@@ -139,42 +124,47 @@ print('Answer:', completion.choices[0].message.content)
 print('Reasoning tokens:', completion.usage.completion_tokens_details.reasoning_tokens)
 ```
 
+#### cURL
+
+```bash filename="reasoning.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "openai/gpt-6-astra",
+    "messages": [
+      {
+        "role": "user",
+        "content": "What is the meaning of life? Think before answering."
+      }
+    ],
+    "stream": false,
+    "reasoning": {
+      "effort": "medium"
+    }
+  }'
+```
+
 ## Reasoning parameters
 
-The `reasoning` object supports the following parameters:
+The `reasoning` object supports these parameters:
 
-- **`enabled`** (boolean, optional): Enable reasoning output. When `true`, the model will provide its reasoning process.
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `enabled` | boolean | Request reasoning on or off. Some models require reasoning and can't disable it. This doesn't guarantee visible reasoning text. |
+| `effort` | string | The request schema accepts `none`, `minimal`, `low`, `medium`, `high`, `xhigh`, or `max`. Choose a value supported by the model's [catalog entry](/docs/ai-gateway/models-and-providers/reasoning#discover-model-reasoning-support). Can't be combined with `max_tokens`. |
+| `max_tokens` | number | Request a thinking-token budget. Can't be combined with `effort`. Check the model's `budget_tokens` control and bounds. |
+| `exclude` | boolean | When `true`, omit reasoning content from the response. It doesn't turn off internal reasoning. |
 
-- **`max_tokens`** (number, optional): Maximum number of tokens to allocate for reasoning. This helps control costs and response times. Cannot be used with `effort`.
+The `reasoning` object is a Gateway extension to the OpenAI Chat Completions API. Python clients send it through `extra_body`; TypeScript clients can spread the extension into the request, as shown above. Use the standard `reasoning_effort` field when you only need effort.
 
-- **`effort`** (string, optional): Control reasoning effort level. Accepts:
-
-  - `'none'` - Disables reasoning
-  - `'minimal'` - ~10% of max\_tokens
-  - `'low'` - ~20% of max\_tokens
-  - `'medium'` - ~50% of max\_tokens
-  - `'high'` - ~80% of max\_tokens
-  - `'xhigh'` - ~95% of max\_tokens
-
-  Cannot be used with `max_tokens`.
-
-- **`exclude`** (boolean, optional): When `true`, excludes reasoning content from the response but still generates it internally. Useful for reducing response payload size.
-
-> **💡 Note:** **Mutually exclusive parameters:** You cannot specify both `effort` and
-> `max_tokens` in the same request. Choose one based on your use case.
+Effort is relative; it isn't a universal percentage of output tokens. AI Gateway translates it according to the model and serving provider. `max` can map to `xhigh` on cross-provider routes; native Anthropic adaptive thinking can retain `max`. See [reasoning mappings](/docs/ai-gateway/models-and-providers/reasoning#how-reasoning-is-mapped).
 
 ## Anthropic models on this surface
 
-The `reasoning` object maps onto Anthropic's `thinking` parameter, and how it maps depends on the model generation:
+AI Gateway translates shared effort to adaptive thinking on supported Claude models. On Claude Opus 4.7 and later, reasoning text can be omitted even when thinking runs. Missing reasoning text doesn't establish that the model ignored effort. Check usage when available, or request `thinking.display: 'summarized'` through [provider options](/docs/ai-gateway/models-and-providers/reasoning/anthropic#thinking-display-claude-opus-47-and-later).
 
-| Anthropic model              | `reasoning.effort`         | `reasoning.max_tokens`    |
-| ---------------------------- | -------------------------- | ------------------------- |
-| Claude Sonnet 4.6 and earlier | Works                      | Works                     |
-| Claude Opus 4.7 and later, Claude 5 | Returns no reasoning tokens | Rejected with a 400 error |
-
-Claude Opus 4.7 introduced adaptive thinking, where the model decides its own thinking budget and `effort` is set through Anthropic's separate `output_config` field. The Chat Completions `reasoning` object does not currently reach that field, so neither parameter turns thinking on for those models.
-
-To use extended thinking with Claude Opus 4.7 or later, call the [Anthropic Messages API](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning) surface instead, which exposes `thinking` and `output_config` directly.
+Legacy `reasoning.max_tokens` requests use fixed-budget thinking, which newer adaptive-only Claude models reject. Use shared effort for those models. See [Anthropic thinking modes](/docs/ai-gateway/models-and-providers/reasoning/anthropic#two-thinking-modes).
 
 ### Token budgets on earlier Anthropic models
 
@@ -188,27 +178,33 @@ const openai = new OpenAI({
   baseURL: 'https://ai-gateway.vercel.sh/v1',
 });
 
-// @ts-expect-error - reasoning parameter not yet in OpenAI types
 const completion = await openai.chat.completions.create({
   model: 'anthropic/claude-sonnet-5',
-  messages: [{ role: 'user', content: 'What is the meaning of life?' }],
-  reasoning: {
-    max_tokens: 2000,
-    enabled: true,
+  messages: [
+    {
+      role: 'user',
+      content: 'What is the meaning of life?',
+    },
+  ],
+  ...{
+    reasoning: {
+      max_tokens: 2000,
+      enabled: true,
+    },
   },
 });
 ```
 
 ## Response format with reasoning
 
-When reasoning is enabled, the response includes reasoning content:
+When the provider returns reasoning content, AI Gateway includes it in the response:
 
 ```json
 {
   "id": "chatcmpl-123",
   "object": "chat.completion",
   "created": 1677652288,
-  "model": "openai/gpt-5.6-sol",
+  "model": "openai/gpt-6-astra",
   "choices": [
     {
       "index": 0,
@@ -235,27 +231,6 @@ When reasoning is enabled, the response includes reasoning content:
 
 Reasoning content is streamed incrementally in the `delta.reasoning` field:
 
-#### cURL
-
-```bash filename="reasoning-streaming.sh"
-curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
-  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "openai/gpt-5.6-sol",
-    "messages": [
-      {
-        "role": "user",
-        "content": "What is the meaning of life? Think before answering."
-      }
-    ],
-    "stream": true,
-    "reasoning": {
-      "effort": "medium"
-    }
-  }'
-```
-
 #### TypeScript
 
 ```typescript filename="reasoning-streaming.ts"
@@ -266,9 +241,8 @@ const openai = new OpenAI({
   baseURL: 'https://ai-gateway.vercel.sh/v1',
 });
 
-// @ts-expect-error - reasoning parameter not yet in OpenAI types
 const stream = await openai.chat.completions.create({
-  model: 'openai/gpt-5.6-sol',
+  model: 'openai/gpt-6-astra',
   messages: [
     {
       role: 'user',
@@ -276,8 +250,10 @@ const stream = await openai.chat.completions.create({
     },
   ],
   stream: true,
-  reasoning: {
-    effort: 'medium',
+  ...{
+    reasoning: {
+      effort: 'medium',
+    },
   },
 });
 
@@ -288,7 +264,7 @@ let section: 'reasoning' | 'content' | null = null;
 for await (const chunk of stream) {
   const delta = chunk.choices[0]?.delta;
 
-  if (delta?.reasoning) {
+  if (delta && 'reasoning' in delta && typeof delta.reasoning === 'string') {
     if (section !== 'reasoning') {
       process.stdout.write('\n[Reasoning] ');
       section = 'reasoning';
@@ -318,7 +294,7 @@ client = OpenAI(
 )
 
 stream = client.chat.completions.create(
-    model='openai/gpt-5.6-sol',
+    model='openai/gpt-6-astra',
     messages=[
         {
             'role': 'user',
@@ -352,6 +328,27 @@ for chunk in stream:
                 print('\n[Answer] ', end='', flush=True)
                 section = 'content'
             print(delta.content, end='', flush=True)
+```
+
+#### cURL
+
+```bash filename="reasoning-streaming.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "openai/gpt-6-astra",
+    "messages": [
+      {
+        "role": "user",
+        "content": "What is the meaning of life? Think before answering."
+      }
+    ],
+    "stream": true,
+    "reasoning": {
+      "effort": "medium"
+    }
+  }'
 ```
 
 ## Preserving reasoning details across providers
@@ -428,7 +425,7 @@ For OpenAI models (returns both summary and encrypted):
   "id": "chatcmpl-456",
   "object": "chat.completion",
   "created": 1677652288,
-  "model": "openai/gpt-5.6-sol",
+  "model": "openai/gpt-6-astra",
   "choices": [
     {
       "index": 0,
@@ -505,7 +502,7 @@ For OpenAI models (summary chunks during reasoning, then encrypted at end):
   "id": "chatcmpl-456",
   "object": "chat.completion.chunk",
   "created": 1677652288,
-  "model": "openai/gpt-5.6-sol",
+  "model": "openai/gpt-6-astra",
   "choices": [
     {
       "index": 0,
@@ -531,7 +528,7 @@ For OpenAI models (summary chunks during reasoning, then encrypted at end):
 The AI Gateway automatically maps reasoning parameters to each provider's native format:
 
 - **OpenAI**: Maps `effort` to `reasoningEffort` and controls summary detail
-- **Anthropic**: Maps `max_tokens` to thinking budget tokens
+- **Anthropic**: Maps effort to adaptive thinking on supported models, or `max_tokens` to legacy thinking budgets
 - **Google**: Maps to `thinkingConfig` with budget and visibility settings
 - **Groq**: Maps `exclude` to control reasoning format (hidden/parsed)
 - **SpaceXAI**: Maps `effort` to reasoning effort levels
@@ -543,7 +540,7 @@ The AI Gateway automatically maps reasoning parameters to each provider's native
 
 ## Next steps
 
-- [Reasoning](/docs/ai-gateway/models-and-providers/reasoning) - Per-provider effort levels and model support
+- [Reasoning](/docs/ai-gateway/models-and-providers/reasoning) - Model discovery and API-format mappings
 - [Advanced](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced) - Provider options and prompt caching
 
 

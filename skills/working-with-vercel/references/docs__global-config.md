@@ -16,8 +16,8 @@ related:
 summary: A Global Config is a global data store that enables experimentation with feature flags, A/B testing, critical redirects, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "d09a5dfc093f55bc97cda7506e5765312ac7fedcafe65437fe284065d150d111"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "b12919820b01658fc5cf49f967367996029dd0e8d2aa44295f2eef3796ec5e37"
 ---
 
 # Vercel Global Config
@@ -43,7 +43,7 @@ A [Global Config](/docs/global-config) is a global data store that [enables expe
 - [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel?from=related&source_path=%2Fdocs%2Fglobal-config&source_site=vercel-docs&relationship=related) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
 - [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy?from=related&source_path=%2Fdocs%2Fglobal-config&source_site=vercel-docs&relationship=related) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
 - [How to build and maintain HIPAA-compliant applications on Vercel](https://vercel.com/kb/guide/hipaa-compliance-guide-vercel?from=related&source_path=%2Fdocs%2Fglobal-config&source_site=vercel-docs&relationship=related) — Deploy HIPAA-compliant healthcare apps on Vercel with built-in security, BAAs, and scalable serverless infrastructure.
-- [Introducing Edge Config: Globally distributed, instant configuration](https://vercel.com/blog/edge-config-public-beta?from=related&source_path=%2Fdocs%2Fglobal-config&source_site=vercel-docs&relationship=related)
+- [Audit Logs](https://vercel.com/docs/audit-log?from=related&source_path=%2Fdocs%2Fglobal-config&source_site=vercel-docs&relationship=related) — Learn how to track and analyze your team members' activities.
 
 Full cross-link map for this page: [/docs/global-config.graph.md](/docs/global-config.graph.md?from=related&source_path=%2Fdocs%2Fglobal-config&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

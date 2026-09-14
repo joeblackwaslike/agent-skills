@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/foundations/providers-and-models.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "990ae7ee7ed5ae2781b960d52d6b1a564b75f944b8c8d40a4f2e234e6aa828d7"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "34321f45db99c096af78e6702178ebe3cd60b14598d85e08a8a2ce27144398f0"
 ---
 
 # Providers and Models
@@ -45,7 +45,6 @@ The AI SDK comes with a wide range of providers that you can use to interact wit
 - [Groq Provider](/providers/ai-sdk-providers/groq) (`@ai-sdk/groq`)
 - [Perplexity Provider](/providers/ai-sdk-providers/perplexity) (`@ai-sdk/perplexity`)
 - [ElevenLabs Provider](/providers/ai-sdk-providers/elevenlabs) (`@ai-sdk/elevenlabs`)
-- [LMNT Provider](/providers/ai-sdk-providers/lmnt) (`@ai-sdk/lmnt`)
 - [Hume Provider](/providers/ai-sdk-providers/hume) (`@ai-sdk/hume`)
 - [Rev.ai Provider](/providers/ai-sdk-providers/revai) (`@ai-sdk/revai`)
 - [Deepgram Provider](/providers/ai-sdk-providers/deepgram) (`@ai-sdk/deepgram`)
@@ -99,6 +98,7 @@ The open-source community has created the following providers:
 - [Crusoe Provider](/providers/community-providers/crusoe) (`crusoe-ai-provider`)
 - [Neon AI Gateway Provider](/providers/community-providers/neon-ai-gateway) (`@neon/ai-sdk-provider`)
 - [Interfaze Provider](/providers/community-providers/interfaze) (`@interfaze-ai/ai-sdk`)
+- [Telnyx Provider](/providers/community-providers/telnyx) (`@telnyx/ai-sdk-provider`)
 
 ## Self-Hosted Models
 

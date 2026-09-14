@@ -1,9 +1,9 @@
 ---
-title: API Keys
+title: AI Gateway API Keys
 product: vercel
 url: /docs/ai-gateway/authentication-and-byok/api-keys
 canonical_url: "https://vercel.com/docs/ai-gateway/authentication-and-byok/api-keys"
-last_updated: 2026-08-28
+last_updated: 2026-09-08
 type: how-to
 prerequisites:
   - /docs/ai-gateway/authentication-and-byok
@@ -17,13 +17,13 @@ related:
 summary: "Create, view, and delete AI Gateway API keys, and set each key's budget and spend attribution, from the dashboard, CLI, or API."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok/api-keys.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "8224c581c57cef808e2d7bb71845f2e7df907dd9e1f8ad4ae154eabefca943ac"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "5e7151e36464eed755d72113d5b47cbacc10d43648996cea5055dd5acfb474be"
 ---
 
-# API Keys
+# AI Gateway API Keys
 
-API keys authenticate your requests to the AI Gateway. This page covers how to:
+Use API keys to authenticate AI Gateway requests. You can:
 
 
 <!-- docsgraph:related -->
@@ -34,14 +34,12 @@ API keys authenticate your requests to the AI Gateway. This page covers how to:
 - [Budgets for API keys on AI Gateway](https://vercel.com/changelog/budgets-for-api-keys-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fapi-keys&source_site=vercel-docs&relationship=related)
 - [Claude Sonnet 5 now available on Vercel AI Gateway](https://vercel.com/changelog/claude-sonnet-5-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fapi-keys&source_site=vercel-docs&relationship=related)
 - [DeepSeek models now available via Azure on AI Gateway](https://vercel.com/changelog/deepseek-models-now-available-via-azure-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fapi-keys&source_site=vercel-docs&relationship=related)
+- [DeepSeek V4.1 Flash now available on AI Gateway](https://vercel.com/changelog/deepseek-v4-1-flash-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fapi-keys&source_site=vercel-docs&relationship=related)
 - [Gemini 3.6 Flash and Gemini 3.5 Flash-Lite are now available on AI Gateway](https://vercel.com/changelog/gemini-3-6-flash-3-5-flash-lite-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fapi-keys&source_site=vercel-docs&relationship=related)
-- [Gemini 3.7 Flash now available on AI Gateway for 50% off](https://vercel.com/changelog/gemini-3-7-flash-now-available-on-ai-gateway-for-50-off?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fapi-keys&source_site=vercel-docs&relationship=related)
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fapi-keys&source_site=vercel-docs&relationship=related) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
-- [Bring Your Own Key \\(BYOK\\)](https://vercel.com/docs/ai-gateway/authentication-and-byok/byok?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fapi-keys&source_site=vercel-docs&relationship=related) — Learn how to configure your own provider keys with the AI Gateway.
-- [Create an SDK key](https://vercel.com/docs/rest-api/feature-flags/create-an-sdk-key?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fapi-keys&source_site=vercel-docs&relationship=related) — PUT /v1/projects/{projectIdOrName}/feature-flags/sdk-keys — Creates an SDK key.
-- [Revoke a signing key](https://vercel.com/docs/rest-api/kms/revoke-a-signing-key?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fapi-keys&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/keys/{keyId}/revoke — Immediately revoke a signing key that is already scheduled for rev
-- [Delete an SDK key](https://vercel.com/docs/rest-api/feature-flags/delete-an-sdk-key?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fapi-keys&source_site=vercel-docs&relationship=related) — DELETE /v1/projects/{projectIdOrName}/feature-flags/sdk-keys/{hashKey} — Deletes an SDK key.
-- [Create a signing key](https://vercel.com/docs/rest-api/kms/create-a-signing-key?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fapi-keys&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/keys — Create a new signing key for a KMS issuer. Depending on the activation mode, the
+- [Continue CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/continue?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fapi-keys&source_site=vercel-docs&relationship=related) — Connect Continue CLI to AI Gateway with the Vercel CLI or a YAML model configuration that reads your API key from the en
+- [AI Gateway Custom Reporting API](https://vercel.com/docs/ai-gateway/observability-and-spend/custom-reporting?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fapi-keys&source_site=vercel-docs&relationship=related) — Query AI Gateway usage data grouped by model, user, tag, provider, or credential type using the Custom Reporting API.
+- [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fapi-keys&source_site=vercel-docs&relationship=related) — Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere
 
 Full cross-link map for this page: [/docs/ai-gateway/authentication-and-byok/api-keys.graph.md](/docs/ai-gateway/authentication-and-byok/api-keys.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fapi-keys&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

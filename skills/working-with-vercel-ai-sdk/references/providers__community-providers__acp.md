@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/acp.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "188c1309e67d6dfe92923a8a977ae133bc38df1065e6222af5061c2ae2f39aee"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "968dce58ed8494060cc6b519550cb0b97be9f4d85a78b7625ffdaa6afff4244a"
 ---
 
 # ACP (Agent Client Protocol)
@@ -304,6 +304,7 @@ const provider = createACPProvider({
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
 - [Interfaze](/providers/community-providers/interfaze)
+- [Telnyx](/providers/community-providers/telnyx)
 - [Flowise](/providers/community-providers/flowise)
 
 

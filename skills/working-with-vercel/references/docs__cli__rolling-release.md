@@ -13,8 +13,8 @@ related:
 summary: "Learn how to manage your project's rolling releases using the vercel rolling-release CLI command."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/rolling-release.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "f02c4eee14fbb81e2d339c97cc2fff88452b4e9b03944c13428b1ece995d53d9"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "4b4d20082d97cf3e720cc15986bc2ea4e546997147cc7b46c3f4671f319da857"
 ---
 
 # vercel rolling-release
@@ -31,7 +31,7 @@ Use the `vercel rolling-release` command (also available as `vercel rr`) to mana
 - [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Frolling-release&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel rollback](https://vercel.com/docs/cli/rollback?from=related&source_path=%2Fdocs%2Fcli%2Frolling-release&source_site=vercel-docs&relationship=related) — Learn how to roll back your production deployments to previous deployments using the vercel rollback CLI command.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Frolling-release&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel routes](https://vercel.com/docs/cli/routes?from=related&source_path=%2Fdocs%2Fcli%2Frolling-release&source_site=vercel-docs&relationship=related) — Learn how to manage project-level routing rules using the vercel routes CLI command.
+- [Update the rolling release settings for the project](https://vercel.com/docs/rest-api/rolling-release/update-the-rolling-release-settings-for-the-project?from=related&source_path=%2Fdocs%2Fcli%2Frolling-release&source_site=vercel-docs&relationship=related) — PATCH /v1/projects/{idOrName}/rolling-release/config — Update \\(or disable\\) Rolling Releases for a project. When disabl
 
 Full cross-link map for this page: [/docs/cli/rolling-release.graph.md](/docs/cli/rolling-release.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Frolling-release&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

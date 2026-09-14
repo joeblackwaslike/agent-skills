@@ -1389,6 +1389,21 @@ paths:
           required: true
           schema:
             type: string
+        - name: updatedBy
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: actingIp
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: actingUserAgent
+          in: query
+          required: false
+          schema:
+            type: string
         - description: The Team identifier to perform the request on behalf of.
           in: query
           name: teamId
@@ -1585,6 +1600,21 @@ paths:
         - name: vmcSlug
           in: path
           required: true
+          schema:
+            type: string
+        - name: updatedBy
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: actingIp
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: actingUserAgent
+          in: query
+          required: false
           schema:
             type: string
         - description: The Team identifier to perform the request on behalf of.
@@ -11396,6 +11426,7 @@ paths:
                                   - elastic-algorithm
                                   - plan-default
                                   - project-setting
+                                  - team-entitlement
                                   - team-setting
                                 description: The setting which selected the build machine when the deployment was created. Frozen here so later project or team changes do not rewrite its history.
                               cores:
@@ -16862,6 +16893,7 @@ paths:
                                   - elastic-algorithm
                                   - plan-default
                                   - project-setting
+                                  - team-entitlement
                                   - team-setting
                                 description: The setting which selected the build machine when the deployment was created. Frozen here so later project or team changes do not rewrite its history.
                               cores:
@@ -21473,20 +21505,26 @@ paths:
                         - owner
                         - slug
                       type: object
-                    - properties:
+                    - description: Deploys from the Cursor Origin repository linked to the target project. The repository ID must match the linked repository; Vercel resolves the owner and repository name from the project link.
+                      properties:
                         owner:
+                          description: The Origin workspace slug. Optional because Vercel resolves it from the linked project.
                           type: string
                           example: bitbucket_user
                         ref:
+                          description: The branch or Git reference to deploy.
                           type: string
                           example: main
                         repo:
+                          description: The Origin repository name. Optional because Vercel resolves it from the linked project.
                           type: string
                           example: next.js
                         repoId:
+                          description: The stable Origin repository ID. Read it from the `link.repoId` field returned by the project API.
                           type: string
                           example: 123456789
                         sha:
+                          description: The commit SHA to deploy. When omitted, Vercel resolves the latest commit on `ref`.
                           type: string
                           example: a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0
                         type:
@@ -21502,7 +21540,7 @@ paths:
                   additionalProperties:
                     maxLength: 65536
                     type: string
-                  description: An object containing the deployment's metadata. Multiple key-value pairs can be attached to a deployment
+                  description: An object containing the deployment's metadata. Multiple key-value pairs can be attached to a deployment. For deployments created with a Cursor Origin `gitSource`, Vercel automatically adds `cursorOriginDeployment`, `cursorOriginCommitSha`, `cursorOriginCommitRef`, `cursorOriginCommitMessage`, `cursorOriginCommitAuthorName`, `cursorOriginCommitAuthorEmail` when available, `cursorOriginOwner`, `cursorOriginRepo`, `cursorOriginRepoId`, and `cursorOriginPrId` for pull request deployments.
                   example:
                     foo: bar
                   maxProperties: 100
@@ -21762,6 +21800,7 @@ paths:
                               - elastic-algorithm
                               - plan-default
                               - project-setting
+                              - team-entitlement
                               - team-setting
                             description: The setting which selected the build machine when the deployment was created. Frozen here so later project or team changes do not rewrite its history.
                           cores:
@@ -37807,6 +37846,13 @@ paths:
                   data:
                     items:
                       properties:
+                        securityIssues:
+                          items:
+                            type: string
+                            enum:
+                              - flags-secret-needs-split
+                              - readable-secret
+                          type: array
                         created:
                           type: string
                           format: date-time
@@ -37907,6 +37953,12 @@ paths:
                         lastEditedByDisplayName:
                           type: string
                           description: The last editor full name or username.
+                      required:
+                        - created
+                        - decrypted
+                        - id
+                        - key
+                        - securityIssues
                       type: object
                     type: array
                   pagination:
@@ -45202,14 +45254,14 @@ paths:
                           description: Any settings provided for the resource to support its product's protocols
                         notification:
                           properties:
+                            title:
+                              type: string
                             level:
                               type: string
                               enum:
                                 - error
                                 - info
                                 - warn
-                            title:
-                              type: string
                             message:
                               type: string
                             href:
@@ -45338,14 +45390,14 @@ paths:
                     description: Any settings provided for the resource to support its product's protocols
                   notification:
                     properties:
+                      title:
+                        type: string
                       level:
                         type: string
                         enum:
                           - error
                           - info
                           - warn
-                      title:
-                        type: string
                       message:
                         type: string
                       href:
@@ -45475,8 +45527,6 @@ paths:
         "410":
           description: ""
         "422":
-          description: ""
-        "429":
           description: ""
       parameters:
         - name: integrationConfigurationId
@@ -47323,6 +47373,27 @@ paths:
                         type: string
                         description: The unique identifier of the configuration
                         example: icfg_3bwCLgxL8qt5kjRLcv2Dit7F
+                      slug:
+                        type: string
+                        description: The slug of the integration the configuration is created for.
+                        example: slack
+                      createdAt:
+                        type: number
+                        description: A timestamp that tells you when the configuration was created
+                        example: 1558531915505
+                      updatedAt:
+                        type: number
+                        description: A timestamp that tells you when the configuration was updated.
+                        example: 1558531915505
+                      ownerId:
+                        type: string
+                        description: The user or team ID that owns the configuration
+                        example: kr1PsOIzqEL5Xg6M4VZcZosf
+                      deletedAt:
+                        nullable: true
+                        type: number
+                        description: A timestamp that tells you when the configuration was deleted.
+                        example: 1558531915505
                       integrationId:
                         type: string
                         description: The unique identifier of the app the configuration was created for
@@ -47331,28 +47402,11 @@ paths:
                         type: string
                         description: The ID of the user that created the configuration.
                         example: kr1PsOIzqEL5Xg6M4VZcZosf
-                      createdAt:
-                        type: number
-                        description: A timestamp that tells you when the configuration was created
-                        example: 1558531915505
-                      deletedAt:
-                        nullable: true
-                        type: number
-                        description: A timestamp that tells you when the configuration was deleted.
-                        example: 1558531915505
-                      slug:
-                        type: string
-                        description: The slug of the integration the configuration is created for.
-                        example: slack
                       teamId:
                         nullable: true
                         type: string
                         description: When the configuration was created for a team, this will show the ID of the team.
                         example: team_nLlpyC6RE1qxydlFKbrxDlud
-                      updatedAt:
-                        type: number
-                        description: A timestamp that tells you when the configuration was updated.
-                        example: 1558531915505
                       scopes:
                         items:
                           type: string
@@ -47361,10 +47415,6 @@ paths:
                         example:
                           - read:project
                           - read-write:log-drain
-                      ownerId:
-                        type: string
-                        description: The user or team ID that owns the configuration
-                        example: kr1PsOIzqEL5Xg6M4VZcZosf
                       canConfigureOpenTelemetry:
                         type: boolean
                         enum:
@@ -48003,8 +48053,6 @@ paths:
                                           - input
                                       description:
                                         type: string
-                                      default:
-                                        type: string
                                       enum:
                                         items:
                                           type: string
@@ -48014,6 +48062,8 @@ paths:
                                       minLength:
                                         type: number
                                       pattern:
+                                        type: string
+                                      default:
                                         type: string
                                       ui:label:
                                         type: string
@@ -48107,11 +48157,11 @@ paths:
                                         type: number
                                       description:
                                         type: string
-                                      default:
-                                        type: number
                                       exclusiveMaximum:
                                         type: number
                                       exclusiveMinimum:
+                                        type: number
+                                      default:
                                         type: number
                                       ui:label:
                                         type: string
@@ -48298,11 +48348,11 @@ paths:
                                             type: number
                                           description:
                                             type: string
-                                          default:
-                                            type: number
                                           exclusiveMaximum:
                                             type: number
                                           exclusiveMinimum:
+                                            type: number
+                                          default:
                                             type: number
                                         required:
                                           - type
@@ -48317,14 +48367,14 @@ paths:
                                         type: array
                                       description:
                                         type: string
-                                      default:
-                                        items:
-                                          type: number
-                                        type: array
                                       maxItems:
                                         type: number
                                       minItems:
                                         type: number
+                                      default:
+                                        items:
+                                          type: number
+                                        type: array
                                       ui:label:
                                         type: string
                                       ui:read-only:
@@ -48459,8 +48509,6 @@ paths:
                                         type: array
                                       description:
                                         type: string
-                                      default:
-                                        type: string
                                       enum:
                                         items:
                                           type: string
@@ -48470,6 +48518,8 @@ paths:
                                       minLength:
                                         type: number
                                       pattern:
+                                        type: string
+                                      default:
                                         type: string
                                       ui:label:
                                         type: string
@@ -48606,8 +48656,6 @@ paths:
                                         type: array
                                       description:
                                         type: string
-                                      default:
-                                        type: string
                                       enum:
                                         items:
                                           type: string
@@ -48617,6 +48665,8 @@ paths:
                                       minLength:
                                         type: number
                                       pattern:
+                                        type: string
+                                      default:
                                         type: string
                                       ui:label:
                                         type: string
@@ -48709,8 +48759,6 @@ paths:
                                               - string
                                           description:
                                             type: string
-                                          default:
-                                            type: string
                                           enum:
                                             items:
                                               type: string
@@ -48720,6 +48768,8 @@ paths:
                                           minLength:
                                             type: number
                                           pattern:
+                                            type: string
+                                          default:
                                             type: string
                                         required:
                                           - type
@@ -48776,14 +48826,14 @@ paths:
                                         type: array
                                       description:
                                         type: string
-                                      default:
-                                        items:
-                                          type: string
-                                        type: array
                                       maxItems:
                                         type: number
                                       minItems:
                                         type: number
+                                      default:
+                                        items:
+                                          type: string
+                                        type: array
                                       example:
                                         items:
                                           type: string
@@ -48966,8 +49016,6 @@ paths:
                                         type: array
                                       description:
                                         type: string
-                                      default:
-                                        type: string
                                       enum:
                                         items:
                                           type: string
@@ -48977,6 +49025,8 @@ paths:
                                       minLength:
                                         type: number
                                       pattern:
+                                        type: string
+                                      default:
                                         type: string
                                       ui:label:
                                         type: string
@@ -49069,8 +49119,6 @@ paths:
                                               - string
                                           description:
                                             type: string
-                                          default:
-                                            type: string
                                           enum:
                                             items:
                                               type: string
@@ -49080,6 +49128,8 @@ paths:
                                           minLength:
                                             type: number
                                           pattern:
+                                            type: string
+                                          default:
                                             type: string
                                         required:
                                           - type
@@ -49178,14 +49228,14 @@ paths:
                                         type: array
                                       description:
                                         type: string
-                                      default:
-                                        items:
-                                          type: string
-                                        type: array
                                       maxItems:
                                         type: number
                                       minItems:
                                         type: number
+                                      default:
+                                        items:
+                                          type: string
+                                        type: array
                                       example:
                                         items:
                                           type: string
@@ -49368,8 +49418,6 @@ paths:
                                         type: array
                                       description:
                                         type: string
-                                      default:
-                                        type: string
                                       enum:
                                         items:
                                           type: string
@@ -49379,6 +49427,8 @@ paths:
                                       minLength:
                                         type: number
                                       pattern:
+                                        type: string
+                                      default:
                                         type: string
                                       ui:label:
                                         type: string
@@ -49469,8 +49519,6 @@ paths:
                                           - domain
                                       description:
                                         type: string
-                                      default:
-                                        type: string
                                       enum:
                                         items:
                                           type: string
@@ -49480,6 +49528,8 @@ paths:
                                       minLength:
                                         type: number
                                       pattern:
+                                        type: string
+                                      default:
                                         type: string
                                       ui:label:
                                         type: string
@@ -54889,6 +54939,8 @@ paths:
                                   type: string
                                 repo:
                                   type: string
+                                repoId:
+                                  type: string
                                 type:
                                   type: string
                                   enum:
@@ -54932,6 +54984,60 @@ paths:
                                 - org
                                 - productionBranch
                                 - repo
+                                - repoId
+                                - type
+                              type: object
+                            - properties:
+                                org:
+                                  type: string
+                                repo:
+                                  type: string
+                                repoId:
+                                  type: string
+                                type:
+                                  type: string
+                                  enum:
+                                    - v0
+                                createdAt:
+                                  type: number
+                                deployHooks:
+                                  items:
+                                    properties:
+                                      createdAt:
+                                        type: number
+                                      id:
+                                        type: string
+                                      name:
+                                        type: string
+                                      ref:
+                                        type: string
+                                      url:
+                                        type: string
+                                    required:
+                                      - id
+                                      - name
+                                      - ref
+                                      - url
+                                    type: object
+                                  type: array
+                                gitCredentialId:
+                                  type: string
+                                updatedAt:
+                                  type: number
+                                sourceless:
+                                  type: boolean
+                                  enum:
+                                    - false
+                                    - true
+                                productionBranch:
+                                  type: string
+                              required:
+                                - deployHooks
+                                - gitCredentialId
+                                - org
+                                - productionBranch
+                                - repo
+                                - repoId
                                 - type
                               type: object
                             - properties:
@@ -56352,6 +56458,10 @@ paths:
                               items:
                                 $ref: '#/components/schemas/ACLAction'
                               type: array
+                            automation:
+                              items:
+                                $ref: '#/components/schemas/ACLAction'
+                              type: array
                             billingAddress:
                               items:
                                 $ref: '#/components/schemas/ACLAction'
@@ -57133,6 +57243,12 @@ paths:
                         trustedSources:
                           nullable: true
                           properties:
+                            enableVercelCiSameRepository:
+                              type: boolean
+                              enum:
+                                - false
+                                - true
+                              description: Allow same-team Vercel CI access to preview deployments built from the CI run's repository, using the deployment source rather than the current project repository link. Defaults to enabled when not stored; omitted or null Trusted Sources updates preserve the stored value.
                             projects:
                               additionalProperties:
                                 properties:
@@ -57754,6 +57870,7 @@ paths:
                           enum:
                             - advanced
                             - critical
+                            - priority
                         usageStatus:
                           properties:
                             kind:
@@ -64350,6 +64467,8 @@ paths:
                                   type: string
                                 repo:
                                   type: string
+                                repoId:
+                                  type: string
                                 type:
                                   type: string
                                   enum:
@@ -64393,6 +64512,60 @@ paths:
                                 - org
                                 - productionBranch
                                 - repo
+                                - repoId
+                                - type
+                              type: object
+                            - properties:
+                                org:
+                                  type: string
+                                repo:
+                                  type: string
+                                repoId:
+                                  type: string
+                                type:
+                                  type: string
+                                  enum:
+                                    - v0
+                                createdAt:
+                                  type: number
+                                deployHooks:
+                                  items:
+                                    properties:
+                                      createdAt:
+                                        type: number
+                                      id:
+                                        type: string
+                                      name:
+                                        type: string
+                                      ref:
+                                        type: string
+                                      url:
+                                        type: string
+                                    required:
+                                      - id
+                                      - name
+                                      - ref
+                                      - url
+                                    type: object
+                                  type: array
+                                gitCredentialId:
+                                  type: string
+                                updatedAt:
+                                  type: number
+                                sourceless:
+                                  type: boolean
+                                  enum:
+                                    - false
+                                    - true
+                                productionBranch:
+                                  type: string
+                              required:
+                                - deployHooks
+                                - gitCredentialId
+                                - org
+                                - productionBranch
+                                - repo
+                                - repoId
                                 - type
                               type: object
                             - properties:
@@ -65012,6 +65185,12 @@ paths:
                         trustedSources:
                           nullable: true
                           properties:
+                            enableVercelCiSameRepository:
+                              type: boolean
+                              enum:
+                                - false
+                                - true
+                              description: Allow same-team Vercel CI access to preview deployments built from the CI run's repository, using the deployment source rather than the current project repository link. Defaults to enabled when not stored; omitted or null Trusted Sources updates preserve the stored value.
                             projects:
                               additionalProperties:
                                 properties:
@@ -65300,6 +65479,7 @@ paths:
                                     enum:
                                       - advanced
                                       - critical
+                                      - priority
                                   has:
                                     items:
                                       properties:
@@ -65745,6 +65925,7 @@ paths:
                           enum:
                             - advanced
                             - critical
+                            - priority
                         abuse:
                           properties:
                             scanner:
@@ -67611,6 +67792,8 @@ paths:
                                       type: string
                                     repo:
                                       type: string
+                                    repoId:
+                                      type: string
                                     type:
                                       type: string
                                       enum:
@@ -67654,6 +67837,60 @@ paths:
                                     - org
                                     - productionBranch
                                     - repo
+                                    - repoId
+                                    - type
+                                  type: object
+                                - properties:
+                                    org:
+                                      type: string
+                                    repo:
+                                      type: string
+                                    repoId:
+                                      type: string
+                                    type:
+                                      type: string
+                                      enum:
+                                        - v0
+                                    createdAt:
+                                      type: number
+                                    deployHooks:
+                                      items:
+                                        properties:
+                                          createdAt:
+                                            type: number
+                                          id:
+                                            type: string
+                                          name:
+                                            type: string
+                                          ref:
+                                            type: string
+                                          url:
+                                            type: string
+                                        required:
+                                          - id
+                                          - name
+                                          - ref
+                                          - url
+                                        type: object
+                                      type: array
+                                    gitCredentialId:
+                                      type: string
+                                    updatedAt:
+                                      type: number
+                                    sourceless:
+                                      type: boolean
+                                      enum:
+                                        - false
+                                        - true
+                                    productionBranch:
+                                      type: string
+                                  required:
+                                    - deployHooks
+                                    - gitCredentialId
+                                    - org
+                                    - productionBranch
+                                    - repo
+                                    - repoId
                                     - type
                                   type: object
                                 - properties:
@@ -68273,6 +68510,12 @@ paths:
                             trustedSources:
                               nullable: true
                               properties:
+                                enableVercelCiSameRepository:
+                                  type: boolean
+                                  enum:
+                                    - false
+                                    - true
+                                  description: Allow same-team Vercel CI access to preview deployments built from the CI run's repository, using the deployment source rather than the current project repository link. Defaults to enabled when not stored; omitted or null Trusted Sources updates preserve the stored value.
                                 projects:
                                   additionalProperties:
                                     properties:
@@ -68561,6 +68804,7 @@ paths:
                                         enum:
                                           - advanced
                                           - critical
+                                          - priority
                                       has:
                                         items:
                                           properties:
@@ -69006,6 +69250,7 @@ paths:
                               enum:
                                 - advanced
                                 - critical
+                                - priority
                             abuse:
                               properties:
                                 scanner:
@@ -71328,6 +71573,8 @@ paths:
                                       type: string
                                     repo:
                                       type: string
+                                    repoId:
+                                      type: string
                                     type:
                                       type: string
                                       enum:
@@ -71371,6 +71618,60 @@ paths:
                                     - org
                                     - productionBranch
                                     - repo
+                                    - repoId
+                                    - type
+                                  type: object
+                                - properties:
+                                    org:
+                                      type: string
+                                    repo:
+                                      type: string
+                                    repoId:
+                                      type: string
+                                    type:
+                                      type: string
+                                      enum:
+                                        - v0
+                                    createdAt:
+                                      type: number
+                                    deployHooks:
+                                      items:
+                                        properties:
+                                          createdAt:
+                                            type: number
+                                          id:
+                                            type: string
+                                          name:
+                                            type: string
+                                          ref:
+                                            type: string
+                                          url:
+                                            type: string
+                                        required:
+                                          - id
+                                          - name
+                                          - ref
+                                          - url
+                                        type: object
+                                      type: array
+                                    gitCredentialId:
+                                      type: string
+                                    updatedAt:
+                                      type: number
+                                    sourceless:
+                                      type: boolean
+                                      enum:
+                                        - false
+                                        - true
+                                    productionBranch:
+                                      type: string
+                                  required:
+                                    - deployHooks
+                                    - gitCredentialId
+                                    - org
+                                    - productionBranch
+                                    - repo
+                                    - repoId
                                     - type
                                   type: object
                                 - properties:
@@ -72456,6 +72757,10 @@ paths:
                                     $ref: '#/components/schemas/ACLAction'
                                   type: array
                                 auditLog:
+                                  items:
+                                    $ref: '#/components/schemas/ACLAction'
+                                  type: array
+                                automation:
                                   items:
                                     $ref: '#/components/schemas/ACLAction'
                                   type: array
@@ -73572,6 +73877,12 @@ paths:
                             trustedSources:
                               nullable: true
                               properties:
+                                enableVercelCiSameRepository:
+                                  type: boolean
+                                  enum:
+                                    - false
+                                    - true
+                                  description: Allow same-team Vercel CI access to preview deployments built from the CI run's repository, using the deployment source rather than the current project repository link. Defaults to enabled when not stored; omitted or null Trusted Sources updates preserve the stored value.
                                 projects:
                                   additionalProperties:
                                     properties:
@@ -74184,6 +74495,7 @@ paths:
                               enum:
                                 - advanced
                                 - critical
+                                - priority
                             usageStatus:
                               properties:
                                 kind:
@@ -76981,6 +77293,8 @@ paths:
                             type: string
                           repo:
                             type: string
+                          repoId:
+                            type: string
                           type:
                             type: string
                             enum:
@@ -77024,6 +77338,60 @@ paths:
                           - org
                           - productionBranch
                           - repo
+                          - repoId
+                          - type
+                        type: object
+                      - properties:
+                          org:
+                            type: string
+                          repo:
+                            type: string
+                          repoId:
+                            type: string
+                          type:
+                            type: string
+                            enum:
+                              - v0
+                          createdAt:
+                            type: number
+                          deployHooks:
+                            items:
+                              properties:
+                                createdAt:
+                                  type: number
+                                id:
+                                  type: string
+                                name:
+                                  type: string
+                                ref:
+                                  type: string
+                                url:
+                                  type: string
+                              required:
+                                - id
+                                - name
+                                - ref
+                                - url
+                              type: object
+                            type: array
+                          gitCredentialId:
+                            type: string
+                          updatedAt:
+                            type: number
+                          sourceless:
+                            type: boolean
+                            enum:
+                              - false
+                              - true
+                          productionBranch:
+                            type: string
+                        required:
+                          - deployHooks
+                          - gitCredentialId
+                          - org
+                          - productionBranch
+                          - repo
+                          - repoId
                           - type
                         type: object
                       - properties:
@@ -78109,6 +78477,10 @@ paths:
                           $ref: '#/components/schemas/ACLAction'
                         type: array
                       auditLog:
+                        items:
+                          $ref: '#/components/schemas/ACLAction'
+                        type: array
+                      automation:
                         items:
                           $ref: '#/components/schemas/ACLAction'
                         type: array
@@ -79225,6 +79597,12 @@ paths:
                   trustedSources:
                     nullable: true
                     properties:
+                      enableVercelCiSameRepository:
+                        type: boolean
+                        enum:
+                          - false
+                          - true
+                        description: Allow same-team Vercel CI access to preview deployments built from the CI run's repository, using the deployment source rather than the current project repository link. Defaults to enabled when not stored; omitted or null Trusted Sources updates preserve the stored value.
                       projects:
                         additionalProperties:
                           properties:
@@ -79837,6 +80215,7 @@ paths:
                     enum:
                       - advanced
                       - critical
+                      - priority
                   usageStatus:
                     properties:
                       kind:
@@ -82856,6 +83235,8 @@ paths:
                             type: string
                           repo:
                             type: string
+                          repoId:
+                            type: string
                           type:
                             type: string
                             enum:
@@ -82899,6 +83280,60 @@ paths:
                           - org
                           - productionBranch
                           - repo
+                          - repoId
+                          - type
+                        type: object
+                      - properties:
+                          org:
+                            type: string
+                          repo:
+                            type: string
+                          repoId:
+                            type: string
+                          type:
+                            type: string
+                            enum:
+                              - v0
+                          createdAt:
+                            type: number
+                          deployHooks:
+                            items:
+                              properties:
+                                createdAt:
+                                  type: number
+                                id:
+                                  type: string
+                                name:
+                                  type: string
+                                ref:
+                                  type: string
+                                url:
+                                  type: string
+                              required:
+                                - id
+                                - name
+                                - ref
+                                - url
+                              type: object
+                            type: array
+                          gitCredentialId:
+                            type: string
+                          updatedAt:
+                            type: number
+                          sourceless:
+                            type: boolean
+                            enum:
+                              - false
+                              - true
+                          productionBranch:
+                            type: string
+                        required:
+                          - deployHooks
+                          - gitCredentialId
+                          - org
+                          - productionBranch
+                          - repo
+                          - repoId
                           - type
                         type: object
                       - properties:
@@ -83984,6 +84419,10 @@ paths:
                           $ref: '#/components/schemas/ACLAction'
                         type: array
                       auditLog:
+                        items:
+                          $ref: '#/components/schemas/ACLAction'
+                        type: array
+                      automation:
                         items:
                           $ref: '#/components/schemas/ACLAction'
                         type: array
@@ -85100,6 +85539,12 @@ paths:
                   trustedSources:
                     nullable: true
                     properties:
+                      enableVercelCiSameRepository:
+                        type: boolean
+                        enum:
+                          - false
+                          - true
+                        description: Allow same-team Vercel CI access to preview deployments built from the CI run's repository, using the deployment source rather than the current project repository link. Defaults to enabled when not stored; omitted or null Trusted Sources updates preserve the stored value.
                       projects:
                         additionalProperties:
                           properties:
@@ -85712,6 +86157,7 @@ paths:
                     enum:
                       - advanced
                       - critical
+                      - priority
                   usageStatus:
                     properties:
                       kind:
@@ -88191,6 +88637,8 @@ paths:
                             type: string
                           repo:
                             type: string
+                          repoId:
+                            type: string
                           type:
                             type: string
                             enum:
@@ -88234,6 +88682,60 @@ paths:
                           - org
                           - productionBranch
                           - repo
+                          - repoId
+                          - type
+                        type: object
+                      - properties:
+                          org:
+                            type: string
+                          repo:
+                            type: string
+                          repoId:
+                            type: string
+                          type:
+                            type: string
+                            enum:
+                              - v0
+                          createdAt:
+                            type: number
+                          deployHooks:
+                            items:
+                              properties:
+                                createdAt:
+                                  type: number
+                                id:
+                                  type: string
+                                name:
+                                  type: string
+                                ref:
+                                  type: string
+                                url:
+                                  type: string
+                              required:
+                                - id
+                                - name
+                                - ref
+                                - url
+                              type: object
+                            type: array
+                          gitCredentialId:
+                            type: string
+                          updatedAt:
+                            type: number
+                          sourceless:
+                            type: boolean
+                            enum:
+                              - false
+                              - true
+                          productionBranch:
+                            type: string
+                        required:
+                          - deployHooks
+                          - gitCredentialId
+                          - org
+                          - productionBranch
+                          - repo
+                          - repoId
                           - type
                         type: object
                       - properties:
@@ -89319,6 +89821,10 @@ paths:
                           $ref: '#/components/schemas/ACLAction'
                         type: array
                       auditLog:
+                        items:
+                          $ref: '#/components/schemas/ACLAction'
+                        type: array
+                      automation:
                         items:
                           $ref: '#/components/schemas/ACLAction'
                         type: array
@@ -90435,6 +90941,12 @@ paths:
                   trustedSources:
                     nullable: true
                     properties:
+                      enableVercelCiSameRepository:
+                        type: boolean
+                        enum:
+                          - false
+                          - true
+                        description: Allow same-team Vercel CI access to preview deployments built from the CI run's repository, using the deployment source rather than the current project repository link. Defaults to enabled when not stored; omitted or null Trusted Sources updates preserve the stored value.
                       projects:
                         additionalProperties:
                           properties:
@@ -91047,6 +91559,7 @@ paths:
                     enum:
                       - advanced
                       - critical
+                      - priority
                   usageStatus:
                     properties:
                       kind:
@@ -92196,6 +92709,9 @@ paths:
                   additionalProperties: false
                   description: Deployment Protection Trusted Sources
                   properties:
+                    enableVercelCiSameRepository:
+                      type: boolean
+                      description: Allow same-team Vercel CI access to preview deployments built from the same repository as the CI run. The deployment source repository, not the current project repository link, is authoritative. Defaults to enabled when not stored. Omitting this field preserves its stored value, including when trustedSources is cleared. Set true explicitly to re-enable.
                     projects:
                       type: object
                       maxProperties: 100
@@ -94477,6 +94993,8 @@ paths:
                             type: string
                           repo:
                             type: string
+                          repoId:
+                            type: string
                           type:
                             type: string
                             enum:
@@ -94520,6 +95038,60 @@ paths:
                           - org
                           - productionBranch
                           - repo
+                          - repoId
+                          - type
+                        type: object
+                      - properties:
+                          org:
+                            type: string
+                          repo:
+                            type: string
+                          repoId:
+                            type: string
+                          type:
+                            type: string
+                            enum:
+                              - v0
+                          createdAt:
+                            type: number
+                          deployHooks:
+                            items:
+                              properties:
+                                createdAt:
+                                  type: number
+                                id:
+                                  type: string
+                                name:
+                                  type: string
+                                ref:
+                                  type: string
+                                url:
+                                  type: string
+                              required:
+                                - id
+                                - name
+                                - ref
+                                - url
+                              type: object
+                            type: array
+                          gitCredentialId:
+                            type: string
+                          updatedAt:
+                            type: number
+                          sourceless:
+                            type: boolean
+                            enum:
+                              - false
+                              - true
+                          productionBranch:
+                            type: string
+                        required:
+                          - deployHooks
+                          - gitCredentialId
+                          - org
+                          - productionBranch
+                          - repo
+                          - repoId
                           - type
                         type: object
                       - properties:
@@ -95605,6 +96177,10 @@ paths:
                           $ref: '#/components/schemas/ACLAction'
                         type: array
                       auditLog:
+                        items:
+                          $ref: '#/components/schemas/ACLAction'
+                        type: array
+                      automation:
                         items:
                           $ref: '#/components/schemas/ACLAction'
                         type: array
@@ -96721,6 +97297,12 @@ paths:
                   trustedSources:
                     nullable: true
                     properties:
+                      enableVercelCiSameRepository:
+                        type: boolean
+                        enum:
+                          - false
+                          - true
+                        description: Allow same-team Vercel CI access to preview deployments built from the CI run's repository, using the deployment source rather than the current project repository link. Defaults to enabled when not stored; omitted or null Trusted Sources updates preserve the stored value.
                       projects:
                         additionalProperties:
                           properties:
@@ -97333,6 +97915,7 @@ paths:
                     enum:
                       - advanced
                       - critical
+                      - priority
                   usageStatus:
                     properties:
                       kind:
@@ -100069,6 +100652,42 @@ paths:
               schema:
                 oneOf:
                   - properties:
+                      securityIssues:
+                        items:
+                          type: string
+                          enum:
+                            - flags-secret-needs-split
+                            - readable-secret
+                        type: array
+                      type:
+                        type: string
+                        enum:
+                          - encrypted
+                          - plain
+                          - secret
+                          - sensitive
+                          - system
+                      value:
+                        type: string
+                      edgeConfigId:
+                        nullable: true
+                        type: string
+                      edgeConfigTokenId:
+                        nullable: true
+                        type: string
+                      createdAt:
+                        type: number
+                      updatedAt:
+                        type: number
+                      system:
+                        type: boolean
+                        enum:
+                          - false
+                          - true
+                      id:
+                        type: string
+                      key:
+                        type: string
                       target:
                         oneOf:
                           - items:
@@ -100087,14 +100706,14 @@ paths:
                               - preview
                               - preview
                               - production
-                      type:
+                      gitBranch:
                         type: string
-                        enum:
-                          - encrypted
-                          - plain
-                          - secret
-                          - sensitive
-                          - system
+                      createdBy:
+                        nullable: true
+                        type: string
+                      updatedBy:
+                        nullable: true
+                        type: string
                       sunsetSecretId:
                         type: string
                         description: This is used to identify variables that have been migrated from type secret to sensitive.
@@ -100106,28 +100725,8 @@ paths:
                         enum:
                           - false
                           - true
-                      value:
-                        type: string
-                      vsmValue:
-                        type: string
-                      id:
-                        type: string
-                      key:
-                        type: string
                       configurationId:
                         nullable: true
-                        type: string
-                      createdAt:
-                        type: number
-                      updatedAt:
-                        type: number
-                      createdBy:
-                        nullable: true
-                        type: string
-                      updatedBy:
-                        nullable: true
-                        type: string
-                      gitBranch:
                         type: string
                       visibility:
                         type: string
@@ -100135,12 +100734,6 @@ paths:
                           - config
                           - secret
                         description: User-facing config/secret model. When set, authoritative for new code paths when the env-var-config-secret-ui flag is enabled. Legacy rows omit this field; legacy rows omit it and callers fall back to existing `type` behavior.
-                      edgeConfigId:
-                        nullable: true
-                        type: string
-                      edgeConfigTokenId:
-                        nullable: true
-                        type: string
                       contentHint:
                         nullable: true
                         oneOf:
@@ -100361,13 +100954,9 @@ paths:
                         items:
                           type: string
                         type: array
-                      system:
-                        type: boolean
-                        enum:
-                          - false
-                          - true
                     required:
                       - key
+                      - securityIssues
                       - type
                       - value
                     type: object
@@ -100375,6 +100964,42 @@ paths:
                       envs:
                         items:
                           properties:
+                            securityIssues:
+                              items:
+                                type: string
+                                enum:
+                                  - flags-secret-needs-split
+                                  - readable-secret
+                              type: array
+                            type:
+                              type: string
+                              enum:
+                                - encrypted
+                                - plain
+                                - secret
+                                - sensitive
+                                - system
+                            value:
+                              type: string
+                            edgeConfigId:
+                              nullable: true
+                              type: string
+                            edgeConfigTokenId:
+                              nullable: true
+                              type: string
+                            createdAt:
+                              type: number
+                            updatedAt:
+                              type: number
+                            system:
+                              type: boolean
+                              enum:
+                                - false
+                                - true
+                            id:
+                              type: string
+                            key:
+                              type: string
                             target:
                               oneOf:
                                 - items:
@@ -100393,14 +101018,14 @@ paths:
                                     - preview
                                     - preview
                                     - production
-                            type:
+                            gitBranch:
                               type: string
-                              enum:
-                                - encrypted
-                                - plain
-                                - secret
-                                - sensitive
-                                - system
+                            createdBy:
+                              nullable: true
+                              type: string
+                            updatedBy:
+                              nullable: true
+                              type: string
                             sunsetSecretId:
                               type: string
                               description: This is used to identify variables that have been migrated from type secret to sensitive.
@@ -100412,28 +101037,8 @@ paths:
                               enum:
                                 - false
                                 - true
-                            value:
-                              type: string
-                            vsmValue:
-                              type: string
-                            id:
-                              type: string
-                            key:
-                              type: string
                             configurationId:
                               nullable: true
-                              type: string
-                            createdAt:
-                              type: number
-                            updatedAt:
-                              type: number
-                            createdBy:
-                              nullable: true
-                              type: string
-                            updatedBy:
-                              nullable: true
-                              type: string
-                            gitBranch:
                               type: string
                             visibility:
                               type: string
@@ -100441,12 +101046,6 @@ paths:
                                 - config
                                 - secret
                               description: User-facing config/secret model. When set, authoritative for new code paths when the env-var-config-secret-ui flag is enabled. Legacy rows omit this field; legacy rows omit it and callers fall back to existing `type` behavior.
-                            edgeConfigId:
-                              nullable: true
-                              type: string
-                            edgeConfigTokenId:
-                              nullable: true
-                              type: string
                             contentHint:
                               nullable: true
                               oneOf:
@@ -100667,13 +101266,9 @@ paths:
                               items:
                                 type: string
                               type: array
-                            system:
-                              type: boolean
-                              enum:
-                                - false
-                                - true
                           required:
                             - key
+                            - securityIssues
                             - type
                             - value
                           type: object
@@ -100688,6 +101283,42 @@ paths:
                       envs:
                         items:
                           properties:
+                            securityIssues:
+                              items:
+                                type: string
+                                enum:
+                                  - flags-secret-needs-split
+                                  - readable-secret
+                              type: array
+                            type:
+                              type: string
+                              enum:
+                                - encrypted
+                                - plain
+                                - secret
+                                - sensitive
+                                - system
+                            value:
+                              type: string
+                            edgeConfigId:
+                              nullable: true
+                              type: string
+                            edgeConfigTokenId:
+                              nullable: true
+                              type: string
+                            createdAt:
+                              type: number
+                            updatedAt:
+                              type: number
+                            system:
+                              type: boolean
+                              enum:
+                                - false
+                                - true
+                            id:
+                              type: string
+                            key:
+                              type: string
                             target:
                               oneOf:
                                 - items:
@@ -100706,14 +101337,14 @@ paths:
                                     - preview
                                     - preview
                                     - production
-                            type:
+                            gitBranch:
                               type: string
-                              enum:
-                                - encrypted
-                                - plain
-                                - secret
-                                - sensitive
-                                - system
+                            createdBy:
+                              nullable: true
+                              type: string
+                            updatedBy:
+                              nullable: true
+                              type: string
                             sunsetSecretId:
                               type: string
                               description: This is used to identify variables that have been migrated from type secret to sensitive.
@@ -100725,28 +101356,8 @@ paths:
                               enum:
                                 - false
                                 - true
-                            value:
-                              type: string
-                            vsmValue:
-                              type: string
-                            id:
-                              type: string
-                            key:
-                              type: string
                             configurationId:
                               nullable: true
-                              type: string
-                            createdAt:
-                              type: number
-                            updatedAt:
-                              type: number
-                            createdBy:
-                              nullable: true
-                              type: string
-                            updatedBy:
-                              nullable: true
-                              type: string
-                            gitBranch:
                               type: string
                             visibility:
                               type: string
@@ -100754,12 +101365,6 @@ paths:
                                 - config
                                 - secret
                               description: User-facing config/secret model. When set, authoritative for new code paths when the env-var-config-secret-ui flag is enabled. Legacy rows omit this field; legacy rows omit it and callers fall back to existing `type` behavior.
-                            edgeConfigId:
-                              nullable: true
-                              type: string
-                            edgeConfigTokenId:
-                              nullable: true
-                              type: string
                             contentHint:
                               nullable: true
                               oneOf:
@@ -100980,13 +101585,9 @@ paths:
                               items:
                                 type: string
                               type: array
-                            system:
-                              type: boolean
-                              enum:
-                                - false
-                                - true
                           required:
                             - key
+                            - securityIssues
                             - type
                             - value
                           type: object
@@ -108598,6 +109199,8 @@ paths:
                             type: string
                           repo:
                             type: string
+                          repoId:
+                            type: string
                           type:
                             type: string
                             enum:
@@ -108641,6 +109244,60 @@ paths:
                           - org
                           - productionBranch
                           - repo
+                          - repoId
+                          - type
+                        type: object
+                      - properties:
+                          org:
+                            type: string
+                          repo:
+                            type: string
+                          repoId:
+                            type: string
+                          type:
+                            type: string
+                            enum:
+                              - v0
+                          createdAt:
+                            type: number
+                          deployHooks:
+                            items:
+                              properties:
+                                createdAt:
+                                  type: number
+                                id:
+                                  type: string
+                                name:
+                                  type: string
+                                ref:
+                                  type: string
+                                url:
+                                  type: string
+                              required:
+                                - id
+                                - name
+                                - ref
+                                - url
+                              type: object
+                            type: array
+                          gitCredentialId:
+                            type: string
+                          updatedAt:
+                            type: number
+                          sourceless:
+                            type: boolean
+                            enum:
+                              - false
+                              - true
+                          productionBranch:
+                            type: string
+                        required:
+                          - deployHooks
+                          - gitCredentialId
+                          - org
+                          - productionBranch
+                          - repo
+                          - repoId
                           - type
                         type: object
                       - properties:
@@ -109726,6 +110383,10 @@ paths:
                           $ref: '#/components/schemas/ACLAction'
                         type: array
                       auditLog:
+                        items:
+                          $ref: '#/components/schemas/ACLAction'
+                        type: array
+                      automation:
                         items:
                           $ref: '#/components/schemas/ACLAction'
                         type: array
@@ -110842,6 +111503,12 @@ paths:
                   trustedSources:
                     nullable: true
                     properties:
+                      enableVercelCiSameRepository:
+                        type: boolean
+                        enum:
+                          - false
+                          - true
+                        description: Allow same-team Vercel CI access to preview deployments built from the CI run's repository, using the deployment source rather than the current project repository link. Defaults to enabled when not stored; omitted or null Trusted Sources updates preserve the stored value.
                       projects:
                         additionalProperties:
                           properties:
@@ -111454,6 +112121,7 @@ paths:
                     enum:
                       - advanced
                       - critical
+                      - priority
                   usageStatus:
                     properties:
                       kind:
@@ -112963,11 +113631,11 @@ paths:
                         pattern: ^[a-zA-Z0-9_-]+$
                       mode:
                         type: string
-                        enum:
-                          - read-only
-                          - read-write
-                        description: Mount the drive read-only or read-write.
+                        description: Mount the drive as read-write, or as a read-only snapshot. One writer is permitted at a time.
                         default: read-write
+                        enum:
+                          - snapshot
+                          - read-write
                 region:
                   type: string
                   enum:
@@ -113042,6 +113710,10 @@ paths:
                   example:
                     - sfo1
                     - cle1
+                networkId:
+                  type: string
+                  maxLength: 255
+                  description: The Connect network id for the target Secure Compute private network.
                 name:
                   example: my-sandbox
                   type: string
@@ -113290,7 +113962,7 @@ paths:
                   example: prj_abc123
                 maxSizeBytes:
                   type: integer
-                  description: Maximum drive size in bytes. Defaults to 1 TiB when omitted. The maximum quota is 16 TiB. Request a quota above 16 TiB at https://vercel.com/help.
+                  description: Maximum drive size in bytes. Defaults to 1 TiB when omitted (1 GiB for Hobby). The maximum quota is 16 TiB. Request a quota above 16 TiB at https://vercel.com/help.
                 region:
                   type: string
                   description: Region where the drive is stored. Defaults to iad1.
@@ -114394,11 +115066,17 @@ paths:
                         pattern: ^[a-zA-Z0-9_-]+$
                       mode:
                         type: string
-                        enum:
-                          - read-only
-                          - read-write
-                        description: Mount the drive read-only or read-write.
+                        description: Mount the drive as read-write, or as a read-only snapshot. One writer is permitted at a time.
                         default: read-write
+                        enum:
+                          - snapshot
+                          - read-write
+                networkId:
+                  description: The Connect network id for the target Secure Compute private network. Set to null to remove the sandbox from Secure Compute.
+                  oneOf:
+                    - type: string
+                    - type: string
+                      maxLength: 255
                 env:
                   type: object
                   additionalProperties:
@@ -116219,11 +116897,11 @@ paths:
                         pattern: ^[a-zA-Z0-9_-]+$
                       mode:
                         type: string
-                        enum:
-                          - read-only
-                          - read-write
-                        description: Mount the drive read-only or read-write.
+                        description: Mount the drive as read-write, or as a read-only snapshot. One writer is permitted at a time.
                         default: read-write
+                        enum:
+                          - snapshot
+                          - read-write
                 region:
                   type: string
                   enum:
@@ -116298,6 +116976,10 @@ paths:
                   example:
                     - sfo1
                     - cle1
+                networkId:
+                  type: string
+                  maxLength: 255
+                  description: The Connect network id for the target Secure Compute private network.
                 name:
                   example: my-sandbox-fork
                   type: string
@@ -116826,11 +117508,11 @@ paths:
                         pattern: ^[a-zA-Z0-9_-]+$
                       mode:
                         type: string
-                        enum:
-                          - read-only
-                          - read-write
-                        description: Mount the drive read-only or read-write.
+                        description: Mount the drive as read-write, or as a read-only snapshot. One writer is permitted at a time.
                         default: read-write
+                        enum:
+                          - snapshot
+                          - read-write
                 region:
                   type: string
                   enum:
@@ -116905,6 +117587,10 @@ paths:
                   example:
                     - sfo1
                     - cle1
+                networkId:
+                  type: string
+                  maxLength: 255
+                  description: The Connect network id for the target Secure Compute private network.
                 name:
                   example: my-sandbox
                   type: string
@@ -117467,11 +118153,11 @@ paths:
                         pattern: ^[a-zA-Z0-9_-]+$
                       mode:
                         type: string
-                        enum:
-                          - read-only
-                          - read-write
-                        description: Mount the drive read-only or read-write.
+                        description: Mount the drive as read-write, or as a read-only snapshot. One writer is permitted at a time.
                         default: read-write
+                        enum:
+                          - snapshot
+                          - read-write
                 region:
                   type: string
                   enum:
@@ -117546,6 +118232,10 @@ paths:
                   example:
                     - sfo1
                     - cle1
+                networkId:
+                  type: string
+                  maxLength: 255
+                  description: The Connect network id for the target Secure Compute private network.
                 name:
                   example: my-sandbox-fork
                   type: string
@@ -118076,11 +118766,11 @@ paths:
                         pattern: ^[a-zA-Z0-9_-]+$
                       mode:
                         type: string
-                        enum:
-                          - read-only
-                          - read-write
-                        description: Mount the drive read-only or read-write.
+                        description: Mount the drive as read-write, or as a read-only snapshot. One writer is permitted at a time.
                         default: read-write
+                        enum:
+                          - snapshot
+                          - read-write
                 region:
                   type: string
                   enum:
@@ -118155,6 +118845,10 @@ paths:
                   example:
                     - sfo1
                     - cle1
+                networkId:
+                  type: string
+                  maxLength: 255
+                  description: The Connect network id for the target Secure Compute private network.
                 name:
                   example: my-sandbox
                   type: string
@@ -128144,10 +128838,6 @@ paths:
                                       environments:
                                         items:
                                           type: string
-                                          enum:
-                                            - development
-                                            - preview
-                                            - production
                                         type: array
                                     required:
                                       - environments
@@ -128388,10 +129078,6 @@ paths:
                                       environments:
                                         items:
                                           type: string
-                                          enum:
-                                            - development
-                                            - preview
-                                            - production
                                         type: array
                                     required:
                                       - environments
@@ -128755,10 +129441,6 @@ paths:
                                       environments:
                                         items:
                                           type: string
-                                          enum:
-                                            - development
-                                            - preview
-                                            - production
                                         type: array
                                     required:
                                       - environments
@@ -131273,8 +131955,6 @@ paths:
         "409":
           description: ""
         "410":
-          description: ""
-        "429":
           description: ""
         "500":
           description: ""
@@ -134070,6 +134750,7 @@ paths:
               properties:
                 projectId:
                   type: string
+                  description: Project ID. Missing or empty values return HTTP 400.
                 name:
                   type: string
                   pattern: ^[a-z0-9]+(?:(?:\\.|_|__|-+)[a-z0-9]+)*$
@@ -134103,10 +134784,12 @@ paths:
           description: ""
       parameters:
         - name: projectId
+          description: Project ID. Missing or empty values return HTTP 400.
           in: query
           required: true
           schema:
             type: string
+            description: Project ID. Missing or empty values return HTTP 400.
         - name: limit
           in: query
           required: false
@@ -134167,10 +134850,12 @@ paths:
           description: ""
       parameters:
         - name: projectId
+          description: Project ID. Missing or empty values return HTTP 400.
           in: query
           required: true
           schema:
             type: string
+            description: Project ID. Missing or empty values return HTTP 400.
         - name: idOrName
           in: path
           required: true
@@ -134216,10 +134901,12 @@ paths:
           description: ""
       parameters:
         - name: projectId
+          description: Project ID. Missing or empty values return HTTP 400.
           in: query
           required: true
           schema:
             type: string
+            description: Project ID. Missing or empty values return HTTP 400.
         - name: idOrName
           in: path
           required: true
@@ -134266,10 +134953,12 @@ paths:
           description: ""
       parameters:
         - name: projectId
+          description: Project ID. Missing or empty values return HTTP 400.
           in: query
           required: true
           schema:
             type: string
+            description: Project ID. Missing or empty values return HTTP 400.
         - name: idOrName
           in: path
           required: true
@@ -134343,10 +135032,12 @@ paths:
           description: ""
       parameters:
         - name: projectId
+          description: Project ID. Missing or empty values return HTTP 400.
           in: query
           required: true
           schema:
             type: string
+            description: Project ID. Missing or empty values return HTTP 400.
         - name: idOrName
           in: path
           required: true
@@ -134413,10 +135104,12 @@ paths:
           description: ""
       parameters:
         - name: projectId
+          description: Project ID. Missing or empty values return HTTP 400.
           in: query
           required: true
           schema:
             type: string
+            description: Project ID. Missing or empty values return HTTP 400.
         - name: idOrName
           in: path
           required: true
@@ -134481,10 +135174,12 @@ paths:
           description: ""
       parameters:
         - name: projectId
+          description: Project ID. Missing or empty values return HTTP 400.
           in: query
           required: true
           schema:
             type: string
+            description: Project ID. Missing or empty values return HTTP 400.
         - name: idOrName
           in: path
           required: true
@@ -134546,10 +135241,12 @@ paths:
           description: ""
       parameters:
         - name: projectId
+          description: Project ID. Missing or empty values return HTTP 400.
           in: query
           required: true
           schema:
             type: string
+            description: Project ID. Missing or empty values return HTTP 400.
         - name: idOrName
           in: path
           required: true
@@ -134647,10 +135344,12 @@ paths:
           description: ""
       parameters:
         - name: projectId
+          description: Project ID. Missing or empty values return HTTP 400.
           in: query
           required: true
           schema:
             type: string
+            description: Project ID. Missing or empty values return HTTP 400.
         - name: idOrName
           in: path
           required: true
@@ -134736,10 +135435,12 @@ paths:
           description: ""
       parameters:
         - name: projectId
+          description: Project ID. Missing or empty values return HTTP 400.
           in: query
           required: true
           schema:
             type: string
+            description: Project ID. Missing or empty values return HTTP 400.
         - name: idOrName
           in: path
           required: true
@@ -134797,10 +135498,12 @@ paths:
           description: ""
       parameters:
         - name: projectId
+          description: Project ID. Missing or empty values return HTTP 400.
           in: query
           required: true
           schema:
             type: string
+            description: Project ID. Missing or empty values return HTTP 400.
         - name: idOrName
           in: path
           required: true
@@ -134855,10 +135558,12 @@ paths:
           description: ""
       parameters:
         - name: projectId
+          description: Project ID. Missing or empty values return HTTP 400.
           in: query
           required: true
           schema:
             type: string
+            description: Project ID. Missing or empty values return HTTP 400.
         - name: idOrName
           in: path
           required: true
@@ -136195,6 +136900,8 @@ paths:
                               type: string
                             isPrivateModel:
                               type: string
+                            isStreaming:
+                              type: string
                             isRequestZdr:
                               type: string
                             hipaaRequested:
@@ -136644,6 +137351,8 @@ paths:
                               type: string
                             isPrivateModel:
                               type: string
+                            isStreaming:
+                              type: string
                             isRequestZdr:
                               type: string
                             hipaaRequested:
@@ -136899,6 +137608,7 @@ paths:
                             - isPrefetchRequest
                             - isPrivateModel
                             - isRequestZdr
+                            - isStreaming
                             - isrAction
                             - isrCacheRegion
                             - keyId
@@ -137533,6 +138243,8 @@ paths:
                               type: string
                             isPrivateModel:
                               type: string
+                            isStreaming:
+                              type: string
                             isRequestZdr:
                               type: string
                             hipaaRequested:
@@ -137982,6 +138694,8 @@ paths:
                               type: string
                             isPrivateModel:
                               type: string
+                            isStreaming:
+                              type: string
                             isRequestZdr:
                               type: string
                             hipaaRequested:
@@ -138237,6 +138951,7 @@ paths:
                             - isPrefetchRequest
                             - isPrivateModel
                             - isRequestZdr
+                            - isStreaming
                             - isrAction
                             - isrCacheRegion
                             - keyId
@@ -138846,6 +139561,8 @@ paths:
                             type: string
                           isPrivateModel:
                             type: string
+                          isStreaming:
+                            type: string
                           isRequestZdr:
                             type: string
                           hipaaRequested:
@@ -139101,6 +139818,7 @@ paths:
                           - isPrefetchRequest
                           - isPrivateModel
                           - isRequestZdr
+                          - isStreaming
                           - isrAction
                           - isrCacheRegion
                           - keyId
@@ -139653,6 +140371,8 @@ paths:
                             type: string
                           isPrivateModel:
                             type: string
+                          isStreaming:
+                            type: string
                           isRequestZdr:
                             type: string
                           hipaaRequested:
@@ -139908,6 +140628,7 @@ paths:
                           - isPrefetchRequest
                           - isPrivateModel
                           - isRequestZdr
+                          - isStreaming
                           - isrAction
                           - isrCacheRegion
                           - keyId
@@ -144611,6 +145332,7 @@ components:
           type: string
           enum:
             - api-key
+            - aws-alpha
             - custom
             - discord
             - github
@@ -144691,6 +145413,12 @@ components:
                 - false
                 - true
               description: Whether callers can narrow app-token grants per request.
+            supportsResources:
+              type: boolean
+              enum:
+                - false
+                - true
+              description: Whether callers can request resource-specific app tokens.
             requiresReinstallation:
               type: boolean
               enum:
@@ -144729,6 +145457,12 @@ components:
                 - false
                 - true
               description: Whether callers can narrow user-token grants per request.
+            supportsResources:
+              type: boolean
+              enum:
+                - false
+                - true
+              description: Whether callers can request resource-specific user tokens.
             scopes:
               items:
                 type: string
@@ -144955,6 +145689,7 @@ components:
           type: string
           enum:
             - api-key
+            - aws-alpha
             - custom
             - discord
             - github
@@ -145035,6 +145770,12 @@ components:
                 - false
                 - true
               description: Whether callers can narrow app-token grants per request.
+            supportsResources:
+              type: boolean
+              enum:
+                - false
+                - true
+              description: Whether callers can request resource-specific app tokens.
             requiresReinstallation:
               type: boolean
               enum:
@@ -145073,6 +145814,12 @@ components:
                 - false
                 - true
               description: Whether callers can narrow user-token grants per request.
+            supportsResources:
+              type: boolean
+              enum:
+                - false
+                - true
+              description: Whether callers can request resource-specific user tokens.
             scopes:
               items:
                 type: string
@@ -145506,6 +146253,10 @@ components:
                 type: string
                 format: uri
               description: The HTTPS resources the API key authenticates against.
+            instructions:
+              type: string
+              maxLength: 4000
+              description: Markdown instructions shown to each user on the authorization screen, explaining how to obtain the key they should paste.
           additionalProperties: false
           title: type:api-key
         - type: object
@@ -146532,6 +147283,12 @@ components:
                   - id
                 additionalProperties: false
               description: Existing API key values to update.
+            instructions:
+              anyOf:
+                - type: string
+                  maxLength: 4000
+                - type: string
+              description: Markdown instructions shown to each user on the authorization screen, explaining how to obtain the key they should paste.
           additionalProperties: false
           title: type:api-key
         - type: object
@@ -148148,6 +148905,7 @@ components:
             - ai-gateway-byok-credential-created
             - ai-gateway-byok-credential-deleted
             - ai-gateway-byok-credential-updated
+            - ai-gateway-byok-model-mappings-updated
             - ai-gateway-credits-purchased
             - ai-gateway-guardrails-updated
             - ai-gateway-hipaa-compliance-toggled
@@ -148174,6 +148932,7 @@ components:
             - ai-gateway-transcripts-retention-updated
             - ai-gateway-virtual-model-config-archived
             - ai-gateway-virtual-model-config-created
+            - ai-gateway-virtual-model-config-deleted
             - ai-gateway-virtual-model-config-restored
             - ai-gateway-virtual-model-config-updated
             - ai-gateway-zero-data-retention-toggled
@@ -148366,6 +149125,7 @@ components:
             - flags-segment
             - flags-settings
             - flags-transferred
+            - flat-rate-cdn-auto-upgrade-consent
             - git-integration-repo-push
             - git_account_integration_link_added
             - global-config-backup-restored
@@ -148450,6 +149210,7 @@ components:
             - organization-team-add
             - organization-team-create
             - organization-team-delete
+            - organization-team-sso-update
             - owner-blocked
             - owner-soft-blocked
             - owner-soft-unblocked
@@ -148529,6 +149290,12 @@ components:
             - project-git-commit-comments-toggled
             - project-git-commit-status-toggled
             - project-git-create-deployments-toggled
+            - project-git-credential-bound-created
+            - project-git-credential-bound-deleted
+            - project-git-credential-bound-updated
+            - project-git-credential-grant-created
+            - project-git-credential-grant-deleted
+            - project-git-credential-grant-updated
             - project-git-fork-protection-updated
             - project-git-lfs-toggled
             - project-git-pr-comments-toggled
@@ -149097,6 +149864,19 @@ components:
               type: object
               description: The payload of the event, if requested.
             - properties:
+                projectId:
+                  type: string
+                projectName:
+                  type: string
+                policyId:
+                  type: string
+              required:
+                - policyId
+                - projectId
+                - projectName
+              type: object
+              description: The payload of the event, if requested.
+            - properties:
                 provider:
                   type: string
                   enum:
@@ -149555,6 +150335,39 @@ components:
                   type: object
               required:
                 - credential
+              type: object
+              description: The payload of the event, if requested.
+            - properties:
+                credential:
+                  properties:
+                    id:
+                      type: string
+                    name:
+                      type: string
+                    providerSlug:
+                      type: string
+                  required:
+                    - id
+                    - name
+                    - providerSlug
+                  type: object
+                added:
+                  items:
+                    type: string
+                  type: array
+                removed:
+                  items:
+                    type: string
+                  type: array
+                changed:
+                  items:
+                    type: string
+                  type: array
+              required:
+                - added
+                - changed
+                - credential
+                - removed
               type: object
               description: The payload of the event, if requested.
             - properties:
@@ -150187,6 +151000,7 @@ components:
                       - read-write:ai-gateway-rules
                       - read-write:ai-gateway-virtual-model-configs
                       - read-write:alerts
+                      - read-write:automations
                       - read-write:billing
                       - read-write:blob
                       - read-write:connect
@@ -150217,7 +151031,9 @@ components:
                       - read:ai-gateway-rules
                       - read:ai-gateway-virtual-model-configs
                       - read:alerts
+                      - read:automations
                       - read:billing
+                      - read:connect
                       - read:deployment
                       - read:domain
                       - read:event
@@ -150237,6 +151053,7 @@ components:
                       - read:user
                       - read:vcr
                       - read:web-analytics
+                      - read:webhooks
                       - use:ai-gateway
                   type: array
               required:
@@ -150280,6 +151097,7 @@ components:
                       - read-write:ai-gateway-rules
                       - read-write:ai-gateway-virtual-model-configs
                       - read-write:alerts
+                      - read-write:automations
                       - read-write:billing
                       - read-write:blob
                       - read-write:connect
@@ -150310,7 +151128,9 @@ components:
                       - read:ai-gateway-rules
                       - read:ai-gateway-virtual-model-configs
                       - read:alerts
+                      - read:automations
                       - read:billing
+                      - read:connect
                       - read:deployment
                       - read:domain
                       - read:event
@@ -150330,6 +151150,7 @@ components:
                       - read:user
                       - read:vcr
                       - read:web-analytics
+                      - read:webhooks
                       - use:ai-gateway
                   type: array
               required:
@@ -150388,6 +151209,7 @@ components:
                           - read-write:ai-gateway-rules
                           - read-write:ai-gateway-virtual-model-configs
                           - read-write:alerts
+                          - read-write:automations
                           - read-write:billing
                           - read-write:blob
                           - read-write:connect
@@ -150418,7 +151240,9 @@ components:
                           - read:ai-gateway-rules
                           - read:ai-gateway-virtual-model-configs
                           - read:alerts
+                          - read:automations
                           - read:billing
+                          - read:connect
                           - read:deployment
                           - read:domain
                           - read:event
@@ -150437,6 +151261,7 @@ components:
                           - read:team
                           - read:vcr
                           - read:web-analytics
+                          - read:webhooks
                           - use:ai-gateway
                       type: array
                   type: object
@@ -150484,6 +151309,7 @@ components:
                           - read-write:ai-gateway-rules
                           - read-write:ai-gateway-virtual-model-configs
                           - read-write:alerts
+                          - read-write:automations
                           - read-write:billing
                           - read-write:blob
                           - read-write:connect
@@ -150514,7 +151340,9 @@ components:
                           - read:ai-gateway-rules
                           - read:ai-gateway-virtual-model-configs
                           - read:alerts
+                          - read:automations
                           - read:billing
+                          - read:connect
                           - read:deployment
                           - read:domain
                           - read:event
@@ -150533,6 +151361,7 @@ components:
                           - read:team
                           - read:vcr
                           - read:web-analytics
+                          - read:webhooks
                           - use:ai-gateway
                       type: array
                   type: object
@@ -150587,6 +151416,7 @@ components:
                       - read-write:ai-gateway-rules
                       - read-write:ai-gateway-virtual-model-configs
                       - read-write:alerts
+                      - read-write:automations
                       - read-write:billing
                       - read-write:blob
                       - read-write:connect
@@ -150617,7 +151447,9 @@ components:
                       - read:ai-gateway-rules
                       - read:ai-gateway-virtual-model-configs
                       - read:alerts
+                      - read:automations
                       - read:billing
+                      - read:connect
                       - read:deployment
                       - read:domain
                       - read:event
@@ -150636,6 +151468,7 @@ components:
                       - read:team
                       - read:vcr
                       - read:web-analytics
+                      - read:webhooks
                       - use:ai-gateway
                   type: array
               required:
@@ -154773,6 +155606,17 @@ components:
               type: object
               description: The payload of the event, if requested.
             - properties:
+                source:
+                  type: string
+                  enum:
+                    - create
+                    - enable
+                    - upgrade
+              required:
+                - source
+              type: object
+              description: The payload of the event, if requested.
+            - properties:
                 provider:
                   type: string
                   enum:
@@ -155217,9 +156061,17 @@ components:
                               - observability-edge-requests
                               - observability-error-rate
                               - observability-function-invocations
+                              - shortcut
                               - speed-insights-cls
                               - speed-insights-lcp
                               - speed-insights-res
+                          config:
+                            properties:
+                              url:
+                                type: string
+                            required:
+                              - url
+                            type: object
                         required:
                           - projectId
                           - widget
@@ -155487,7 +156339,6 @@ components:
                             - ENTERPRISE_UNPAID_INVOICE
                             - EXPOSURE_CAP_EXCEEDED
                             - FAIR_USE_LIMITS_EXCEEDED
-                            - HOBBY_ALLOCATION_PAUSED
                             - SUBSCRIPTION_CANCELED
                             - SUBSCRIPTION_EXPIRED
                             - UNPAID_INVOICE
@@ -155533,80 +156384,9 @@ components:
                             - wafOwaspRequests
                             - wafRateLimitRequest
                             - webAnalyticsEvent
-                        hobbyAllocationPause:
-                          properties:
-                            pausedUntil:
-                              type: number
-                              description: Unix ms timestamp at which the pause is eligible to end. This is the single source of truth for when the pause ends. Never re-derive it by re-checking usage — usage keeps moving while a team is paused, and the pause duration is a fixed experiment parameter.
-                            pausedAt:
-                              type: number
-                              description: Unix ms timestamp of when the pause was applied.
-                            triggers:
-                              items:
-                                properties:
-                                  allocation:
-                                    type: string
-                                    enum:
-                                      - analyticsUsage
-                                      - artifacts
-                                      - bandwidth
-                                      - blobDataTransfer
-                                      - blobTotalAdvancedRequests
-                                      - blobTotalAvgSizeInBytes
-                                      - blobTotalGetResponseObjectSizeInBytes
-                                      - blobTotalSimpleRequests
-                                      - connectDataTransfer
-                                      - dataCacheRead
-                                      - dataCacheWrite
-                                      - edgeConfigRead
-                                      - edgeConfigWrite
-                                      - edgeFunctionExecutionUnits
-                                      - edgeMiddlewareInvocations
-                                      - edgeRequest
-                                      - edgeRequestAdditionalCpuDuration
-                                      - elasticConcurrencyBuildSlots
-                                      - fastDataTransfer
-                                      - fastOriginTransfer
-                                      - fluidCpuDuration
-                                      - fluidDuration
-                                      - functionDuration
-                                      - functionInvocation
-                                      - imageOptimizationCacheRead
-                                      - imageOptimizationCacheWrite
-                                      - imageOptimizationTransformation
-                                      - logDrainsVolume
-                                      - monitoringMetric
-                                      - observabilityEvent
-                                      - onDemandConcurrencyMinutes
-                                      - runtimeCacheRead
-                                      - runtimeCacheWrite
-                                      - serverlessFunctionExecution
-                                      - sourceImages
-                                      - wafOwaspExcessBytes
-                                      - wafOwaspRequests
-                                      - wafRateLimitRequest
-                                      - webAnalyticsEvent
-                                    description: Metered allocation whose included amount was fully consumed.
-                                  usage:
-                                    type: number
-                                    description: Usage recorded for that allocation when the pause was applied.
-                                required:
-                                  - allocation
-                                  - usage
-                                type: object
-                                description: Allocations that were at or over 100% when the pause was applied.
-                              type: array
-                              description: Allocations that were at or over 100% when the pause was applied.
-                            cohort:
-                              type: string
-                              description: Experiment cohort the owner was assigned to when the pause fired. Free-form so cohort naming stays owned by the assignment path.
-                          required:
-                            - cohort
-                            - pausedAt
-                            - pausedUntil
-                            - triggers
-                          type: object
-                          description: Present only when `reason` is `HOBBY_ALLOCATION_PAUSED`. Makes the pause self-describing for support without a separate lookup.
+                        unpauseAt:
+                          type: number
+                          description: Since September 2026. Set only by `billing-usage-alerts` for usage plans with a `blockDurationMs`; its presence marks a pause that expires on its own.
                       required:
                         - blockedAt
                         - reason
@@ -157379,7 +158159,7 @@ components:
                   type: string
                 configurationId:
                   type: string
-                error:
+                errorCode:
                   type: string
                 requestKind:
                   type: string
@@ -157392,9 +158172,16 @@ components:
                     - true
                 commands:
                   items:
-                    type: string
+                    properties:
+                      command:
+                        type: string
+                      errorCode:
+                        type: string
+                    required:
+                      - command
+                    type: object
                   type: array
-                failedIndex:
+                errorIndex:
                   type: number
               required:
                 - commands
@@ -157418,7 +158205,7 @@ components:
                   type: string
                 configurationId:
                   type: string
-                error:
+                errorCode:
                   type: string
                 requestKind:
                   type: string
@@ -157448,7 +158235,7 @@ components:
                   type: string
                 configurationId:
                   type: string
-                error:
+                errorCode:
                   type: string
                 requestKind:
                   type: string
@@ -157479,7 +158266,7 @@ components:
                   type: string
                 configurationId:
                   type: string
-                error:
+                errorCode:
                   type: string
                 requestKind:
                   type: string
@@ -158324,6 +159111,31 @@ components:
                 - billingPlan
                 - organizationId
                 - teamId
+              type: object
+              description: The payload of the event, if requested.
+            - properties:
+                organizationId:
+                  type: string
+                teamId:
+                  type: string
+                teamName:
+                  type: string
+                previousMode:
+                  type: string
+                  enum:
+                    - organization
+                    - team
+                mode:
+                  type: string
+                  enum:
+                    - organization
+                    - team
+              required:
+                - mode
+                - organizationId
+                - previousMode
+                - teamId
+                - teamName
               type: object
               description: The payload of the event, if requested.
             - properties:
@@ -159511,6 +160323,7 @@ components:
                     - observability-function-invocations
                     - online
                     - res
+                    - shortcut
                     - speed-insights-cls
                     - speed-insights-lcp
                     - speed-insights-res
@@ -160021,6 +160834,7 @@ components:
                         - github-custom-host
                         - github-limited
                         - gitlab
+                        - v0
                         - vercel
                     gitRepoId:
                       type: string
@@ -160042,6 +160856,7 @@ components:
                         - github-custom-host
                         - github-limited
                         - gitlab
+                        - v0
                         - vercel
                     gitRepoId:
                       type: string
@@ -160072,6 +160887,7 @@ components:
                     - github-custom-host
                     - github-limited
                     - gitlab
+                    - v0
                     - vercel
                 gitRepoId:
                   type: string
@@ -161317,6 +162133,11 @@ components:
                   type: string
                 projectName:
                   type: string
+                enableVercelCiSameRepository:
+                  type: boolean
+                  enum:
+                    - false
+                    - true
                 addedProjects:
                   items:
                     properties:
@@ -162678,6 +163499,7 @@ components:
                     - long-build-duration
                     - oom-failure
                     - plan-change
+                    - project-transfer
                     - short-build-duration
                     - sustained-high-cpu
               type: object
@@ -165141,6 +165963,7 @@ components:
             - ai-gateway-byok-credential-created
             - ai-gateway-byok-credential-deleted
             - ai-gateway-byok-credential-updated
+            - ai-gateway-byok-model-mappings-updated
             - ai-gateway-credits-purchased
             - ai-gateway-guardrails-updated
             - ai-gateway-hipaa-compliance-toggled
@@ -165167,6 +165990,7 @@ components:
             - ai-gateway-transcripts-retention-updated
             - ai-gateway-virtual-model-config-archived
             - ai-gateway-virtual-model-config-created
+            - ai-gateway-virtual-model-config-deleted
             - ai-gateway-virtual-model-config-restored
             - ai-gateway-virtual-model-config-updated
             - ai-gateway-zero-data-retention-toggled
@@ -165359,6 +166183,7 @@ components:
             - flags-segment
             - flags-settings
             - flags-transferred
+            - flat-rate-cdn-auto-upgrade-consent
             - git-integration-repo-push
             - git_account_integration_link_added
             - global-config-backup-restored
@@ -165443,6 +166268,7 @@ components:
             - organization-team-add
             - organization-team-create
             - organization-team-delete
+            - organization-team-sso-update
             - owner-blocked
             - owner-soft-blocked
             - owner-soft-unblocked
@@ -165522,6 +166348,12 @@ components:
             - project-git-commit-comments-toggled
             - project-git-commit-status-toggled
             - project-git-create-deployments-toggled
+            - project-git-credential-bound-created
+            - project-git-credential-bound-deleted
+            - project-git-credential-bound-updated
+            - project-git-credential-grant-created
+            - project-git-credential-grant-deleted
+            - project-git-credential-grant-updated
             - project-git-fork-protection-updated
             - project-git-lfs-toggled
             - project-git-pr-comments-toggled
@@ -165855,6 +166687,7 @@ components:
               - ai-gateway-byok-credential-created
               - ai-gateway-byok-credential-deleted
               - ai-gateway-byok-credential-updated
+              - ai-gateway-byok-model-mappings-updated
               - ai-gateway-credits-purchased
               - ai-gateway-guardrails-updated
               - ai-gateway-hipaa-compliance-toggled
@@ -165881,6 +166714,7 @@ components:
               - ai-gateway-transcripts-retention-updated
               - ai-gateway-virtual-model-config-archived
               - ai-gateway-virtual-model-config-created
+              - ai-gateway-virtual-model-config-deleted
               - ai-gateway-virtual-model-config-restored
               - ai-gateway-virtual-model-config-updated
               - ai-gateway-zero-data-retention-toggled
@@ -166073,6 +166907,7 @@ components:
               - flags-segment
               - flags-settings
               - flags-transferred
+              - flat-rate-cdn-auto-upgrade-consent
               - git-integration-repo-push
               - git_account_integration_link_added
               - global-config-backup-restored
@@ -166157,6 +166992,7 @@ components:
               - organization-team-add
               - organization-team-create
               - organization-team-delete
+              - organization-team-sso-update
               - owner-blocked
               - owner-soft-blocked
               - owner-soft-unblocked
@@ -166236,6 +167072,12 @@ components:
               - project-git-commit-comments-toggled
               - project-git-commit-status-toggled
               - project-git-create-deployments-toggled
+              - project-git-credential-bound-created
+              - project-git-credential-bound-deleted
+              - project-git-credential-bound-updated
+              - project-git-credential-grant-created
+              - project-git-credential-grant-deleted
+              - project-git-credential-grant-updated
               - project-git-fork-protection-updated
               - project-git-lfs-toggled
               - project-git-pr-comments-toggled
@@ -167672,6 +168514,9 @@ components:
             - mode
           type: object
           description: Network policy configuration.
+        networkId:
+          type: string
+          description: The Connect network id for the target Secure Compute private network.
         totalEgressBytes:
           type: number
           description: Cumulative egress bytes across all sandbox runs.
@@ -167710,6 +168555,7 @@ components:
                 enum:
                   - read-only
                   - read-write
+                  - snapshot
             required:
               - drive
             type: object
@@ -169495,7 +170341,6 @@ components:
                 - ENTERPRISE_UNPAID_INVOICE
                 - EXPOSURE_CAP_EXCEEDED
                 - FAIR_USE_LIMITS_EXCEEDED
-                - HOBBY_ALLOCATION_PAUSED
                 - SUBSCRIPTION_CANCELED
                 - SUBSCRIPTION_EXPIRED
                 - UNPAID_INVOICE
@@ -169541,80 +170386,9 @@ components:
                 - wafOwaspRequests
                 - wafRateLimitRequest
                 - webAnalyticsEvent
-            hobbyAllocationPause:
-              properties:
-                pausedUntil:
-                  type: number
-                  description: Unix ms timestamp at which the pause is eligible to end. This is the single source of truth for when the pause ends. Never re-derive it by re-checking usage — usage keeps moving while a team is paused, and the pause duration is a fixed experiment parameter.
-                pausedAt:
-                  type: number
-                  description: Unix ms timestamp of when the pause was applied.
-                triggers:
-                  items:
-                    properties:
-                      allocation:
-                        type: string
-                        enum:
-                          - analyticsUsage
-                          - artifacts
-                          - bandwidth
-                          - blobDataTransfer
-                          - blobTotalAdvancedRequests
-                          - blobTotalAvgSizeInBytes
-                          - blobTotalGetResponseObjectSizeInBytes
-                          - blobTotalSimpleRequests
-                          - connectDataTransfer
-                          - dataCacheRead
-                          - dataCacheWrite
-                          - edgeConfigRead
-                          - edgeConfigWrite
-                          - edgeFunctionExecutionUnits
-                          - edgeMiddlewareInvocations
-                          - edgeRequest
-                          - edgeRequestAdditionalCpuDuration
-                          - elasticConcurrencyBuildSlots
-                          - fastDataTransfer
-                          - fastOriginTransfer
-                          - fluidCpuDuration
-                          - fluidDuration
-                          - functionDuration
-                          - functionInvocation
-                          - imageOptimizationCacheRead
-                          - imageOptimizationCacheWrite
-                          - imageOptimizationTransformation
-                          - logDrainsVolume
-                          - monitoringMetric
-                          - observabilityEvent
-                          - onDemandConcurrencyMinutes
-                          - runtimeCacheRead
-                          - runtimeCacheWrite
-                          - serverlessFunctionExecution
-                          - sourceImages
-                          - wafOwaspExcessBytes
-                          - wafOwaspRequests
-                          - wafRateLimitRequest
-                          - webAnalyticsEvent
-                        description: Metered allocation whose included amount was fully consumed.
-                      usage:
-                        type: number
-                        description: Usage recorded for that allocation when the pause was applied.
-                    required:
-                      - allocation
-                      - usage
-                    type: object
-                    description: Allocations that were at or over 100% when the pause was applied.
-                  type: array
-                  description: Allocations that were at or over 100% when the pause was applied.
-                cohort:
-                  type: string
-                  description: Experiment cohort the owner was assigned to when the pause fired. Free-form so cohort naming stays owned by the assignment path.
-              required:
-                - cohort
-                - pausedAt
-                - pausedUntil
-                - triggers
-              type: object
-              description: Present only when `reason` is `HOBBY_ALLOCATION_PAUSED`. Makes the pause self-describing for support without a separate lookup.
+            unpauseAt:
+              type: number
+              description: Since September 2026. Set only by `billing-usage-alerts` for usage plans with a `blockDurationMs`; its presence marks a pause that expires on its own.
           required:
             - blockedAt
             - reason

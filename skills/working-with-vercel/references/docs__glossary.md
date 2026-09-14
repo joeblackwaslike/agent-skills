@@ -16,8 +16,8 @@ related:
 summary: "Learn about the terms and concepts used in Vercel's products and documentation."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/glossary.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "9e8927ba0ee8260f79263b2eb3fafe83cedc3a493cac07b58da09f81debc1995"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "d50e4d212dae994f6c716f99e180c7ef298ab7a161c08bec1382e7504736c2e6"
 ---
 
 # Glossary
@@ -41,7 +41,7 @@ A full glossary of terms used in Vercel's products and documentation.
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
 - [Vercel vs Webflow Cloud](https://vercel.com/kb/guide/vercel-vs-webflow-cloud?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — Compare Vercel and Webflow Cloud for deploying Next.js and Astro apps, including runtime, framework support, storage, pr
 - [June 2020](https://vercel.com/blog/changelog-june-2020?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related)
-- [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
+- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
 
 Full cross-link map for this page: [/docs/glossary.graph.md](/docs/glossary.graph.md?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/llamagate.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "1815668fc07e84000d0ad6fe541234029c408431b7bc9fb5d0ff06eaff33a929"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "5393648c7b002057ce0c306a5ab7288993047077a4b0a247303a4adfe8756900"
 ---
 
 # LlamaGate
@@ -249,6 +249,7 @@ console.log(text);
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
 - [Interfaze](/providers/community-providers/interfaze)
+- [Telnyx](/providers/community-providers/telnyx)
 - [Flowise](/providers/community-providers/flowise)
 
 

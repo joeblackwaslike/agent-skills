@@ -16,8 +16,8 @@ related:
 summary: Learn how to trace your application to understand performance and infrastructure details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/tracing.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "644a56b72015d9a00f07881bddfc6faa17ed38b13a0173d7150f9e4f793f6be4"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "c8083bf93114b5079ffb91f347d34b6ae78a37060942abf6ff2ee37da71bc02f"
 ---
 
 # Tracing
@@ -40,8 +40,8 @@ In observability, tracing is the process of collecting and analyzing how a reque
 - [How to set up instrumentation with OpenTelemetry](https://nextjs.org/docs/app/guides/open-telemetry?from=related&source_path=%2Fdocs%2Ftracing&source_site=vercel-docs&relationship=related) — Learn how to instrument your Next.js app with OpenTelemetry.
 - [Track a request's full lifecycle with session tracing](https://vercel.com/changelog/session-tracing-now-available?from=related&source_path=%2Fdocs%2Ftracing&source_site=vercel-docs&relationship=related)
 - [Export traces, web analytics events, and speed insights datapoints to any destination](https://vercel.com/changelog/export-more-data-with-vercel-drains?from=related&source_path=%2Fdocs%2Ftracing&source_site=vercel-docs&relationship=related)
-- [Observability](https://eve.dev/docs/guides/instrumentation?from=related&source_path=%2Fdocs%2Ftracing&source_site=vercel-docs&relationship=related) — Trace an agent with OpenTelemetry in instrumentation.ts, read the workflow run tags eve emits, and debug discovery with
-- [Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains?from=related&source_path=%2Fdocs%2Ftracing&source_site=vercel-docs&relationship=related) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
+- [Trace any Vercel request from the CLI](https://vercel.com/changelog/trace-any-vercel-request-from-the-cli?from=related&source_path=%2Fdocs%2Ftracing&source_site=vercel-docs&relationship=related)
+- [AI Gateway Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains?from=related&source_path=%2Fdocs%2Ftracing&source_site=vercel-docs&relationship=related) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
 
 Full cross-link map for this page: [/docs/tracing.graph.md](/docs/tracing.graph.md?from=related&source_path=%2Fdocs%2Ftracing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

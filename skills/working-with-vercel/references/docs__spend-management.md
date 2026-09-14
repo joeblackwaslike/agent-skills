@@ -16,8 +16,8 @@ related:
 summary: Learn how to get notified about your account spend and configure a webhook.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/spend-management.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "6ee0033707b1bf43782a76706508e44b5e982b7e214529ff5bd7b507ca74a85d"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "62fd8c74a357ad04af8709a5b237c00b65c1e32d1b66896cdd8158582adc9f05"
 ---
 
 # Spend Management
@@ -42,8 +42,8 @@ Spend management is a way for you to notify or to automatically take action on y
 - [Spend Management now pauses production deployments by default](https://vercel.com/changelog/spend-management-now-pauses-production-deployments-by-default?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related)
 - [Improved hard caps for Spend Management](https://vercel.com/changelog/improved-hard-caps-for-spend-management?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related)
 - [Spend Management now enabled by default on Pro](https://vercel.com/changelog/spend-management-now-enabled-by-default-on-pro?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related)
-- [Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related) — Monitor AI Gateway requests and manage spend: observability, custom reporting, usage and billing APIs, and spending budg
 - [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
+- [Account Plans on Vercel](https://vercel.com/docs/plans?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related) — Learn about the different plans available on Vercel.
 
 Full cross-link map for this page: [/docs/spend-management.graph.md](/docs/spend-management.graph.md?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -62,7 +62,7 @@ Setting the amount halfway through a billing cycle considers your current spend.
 
 ## What does Spend Management include?
 
-The spend amount that you set covers [metered resources](/docs/limits#additional-resources) that go beyond your Pro plan [credits and usage allocation](/docs/plans/pro-plan#credit-and-usage-allocation) for all projects on your team.
+The spend amount that you set covers [metered resources](/docs/limits#additional-resources) that go beyond your Pro plan [monthly credit](/docs/plans/pro-plan#monthly-credit) for all projects on your team.
 
 It **does not** include seats, integrations (such as Marketplace), or separate [add-ons](/docs/pricing#pro-plan-add-ons), which Vercel charges on a monthly basis.
 

@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/plugin-hints.md"
-fetched_at: "2026-08-24T04:44:18.863Z"
-sha256: "cba6d1e4cb50ace8a02ed15cddc3f37f8098eadc01cae61a0f732b526b5b1232"
+fetched_at: "2026-09-14T09:37:17.168Z"
+sha256: "e4eec32c94725f49b9194827b8bf8276d54273f6262f231fd4a32cdc26bd5f66"
 ---
 
 > ## Documentation Index
@@ -38,7 +38,7 @@ Hint prompts only fire for plugins listed in the official Anthropic marketplace.
 Gate emission on an environment variable so the marker is unlikely to appear when a human runs your CLI directly, then write the tag to stderr on its own line. Choose which variable to check:
 
 * `CLAUDECODE`: set on every Claude Code version, so it reaches the most sessions. It is also set in tmux sessions and stdio MCP server subprocesses that Claude Code starts. IDE extensions also set it in their integrated terminals, where a human may be running your CLI directly.
-* `CLAUDE_CODE_CHILD_SESSION`: set only in subprocesses Claude Code itself spawns, such as tool calls, hook commands, and [status line](/docs/en/statusline) commands, so the tag does not normally reach a human terminal. A long-lived process that was started inside a session, such as a tmux server, captures the variable, so shells later launched from that process still show the raw tag. Requires Claude Code v2.1.172 or later, so sessions on older versions miss the hint.
+* `CLAUDE_CODE_CHILD_SESSION`: set only in subprocesses Claude Code itself spawns, such as tool calls, hook commands, and [status line](/docs/en/statusline) commands, so the tag does not normally reach a human terminal. A long-lived process that was started inside a session, such as a tmux server, captures the variable, so shells later launched from that process still show the raw tag.
 
 The following examples gate on `CLAUDECODE` for maximum reach and emit a hint for a plugin named `example-cli` in the official marketplace:
 

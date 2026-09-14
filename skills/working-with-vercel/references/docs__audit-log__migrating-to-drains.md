@@ -16,8 +16,8 @@ related:
 summary: Move your SIEM integration from Custom SIEM Log Streaming to Audit Log Drains, with wider event coverage and a new event schema.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/audit-log/migrating-to-drains.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "5ac96d5016d3cd5344c95c23bd493c1f6cd5d7bf2083e3c9984a3d10e4a92f03"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "b0157a3babb93d9a73477db8a2a099aac6570190b44edcdef646ee4529220bce"
 ---
 
 # Migrating from Custom SIEM Log Streaming to Audit Log Drains
@@ -39,7 +39,7 @@ Vercel is replacing Custom SIEM Log Streaming with [Audit Log Drains](/docs/drai
 - [Creates a new Integration Log Drain \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/creates-a-new-integration-log-drain-deprecated?from=related&source_path=%2Fdocs%2Faudit-log%2Fmigrating-to-drains&source_site=vercel-docs&relationship=related) — POST /v2/integrations/log-drains — Creates an Integration log drain. This endpoint must be called with an OAuth2 client
 - [Trace Drains Reference](https://vercel.com/docs/drains/reference/traces?from=related&source_path=%2Fdocs%2Faudit-log%2Fmigrating-to-drains&source_site=vercel-docs&relationship=related) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
 - [Creates a Configurable Log Drain \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/creates-a-configurable-log-drain-deprecated?from=related&source_path=%2Fdocs%2Faudit-log%2Fmigrating-to-drains&source_site=vercel-docs&relationship=related) — POST /v1/log-drains — Creates a configurable log drain. This endpoint must be called with a team AccessToken \\(integrati
-- [Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains?from=related&source_path=%2Fdocs%2Faudit-log%2Fmigrating-to-drains&source_site=vercel-docs&relationship=related) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
+- [Retrieves a Configurable Log Drain \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/retrieves-a-configurable-log-drain-deprecated?from=related&source_path=%2Fdocs%2Faudit-log%2Fmigrating-to-drains&source_site=vercel-docs&relationship=related) — GET /v1/log-drains/{id} — Retrieves a Configurable Log Drain. This endpoint must be called with a team AccessToken \\(int
 
 Full cross-link map for this page: [/docs/audit-log/migrating-to-drains.graph.md](/docs/audit-log/migrating-to-drains.graph.md?from=related&source_path=%2Fdocs%2Faudit-log%2Fmigrating-to-drains&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

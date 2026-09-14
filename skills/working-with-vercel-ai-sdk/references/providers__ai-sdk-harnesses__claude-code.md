@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/claude-code.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "859ceba3294392f858c4752213b648ba263ec40a547bb4456fc2564d9cd284df"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "5b08ebd76164458633d03c6707cc1a6a1ee0919f4c6a7067496b9881d2ad249b"
 ---
 
 # Claude Code Harness
@@ -148,6 +148,10 @@ Supported environment variables:
 - `ANTHROPIC_AUTH_TOKEN`
 - `ANTHROPIC_BASE_URL`
 
+If no applicable credential environment variable is set, the adapter attempts
+to resolve a native subscription from the host system unless AI Gateway
+authentication is selected.
+
 Select a specific authentication mode when you do not want automatic detection:
 
 ```ts
@@ -216,6 +220,7 @@ Claude Code supports built-in tool approval requests when `permissionMode` is
 - [Cline](/providers/ai-sdk-harnesses/cline)
 - [Cursor](/providers/ai-sdk-harnesses/cursor)
 - [fx](/providers/ai-sdk-harnesses/fx)
+- [GitHub Copilot](/providers/ai-sdk-harnesses/github-copilot)
 
 
 [Full Sitemap](/sitemap.md)

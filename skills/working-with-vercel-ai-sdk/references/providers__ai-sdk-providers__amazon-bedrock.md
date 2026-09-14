@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "55195f05426b9f72c462ae319e77b4a1b7cea78a1dc037b613ddb5bd79c4b79d"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "0f59324b36d1692ed97d374d704a78ab8db345929d965086629d6cd88bb3ad19"
 ---
 
 # Amazon Bedrock Provider
@@ -176,6 +176,10 @@ You can use the following optional settings to customize the Amazon Bedrock prov
 
   Optional. Base URL for the Bedrock API calls.
   Useful for custom endpoints or proxy configurations.
+  When omitted, the provider also supports the service-specific
+  `AWS_ENDPOINT_URL_BEDROCK_RUNTIME` and
+  `AWS_ENDPOINT_URL_BEDROCK_AGENT_RUNTIME` environment variables, which take
+  precedence over the global `AWS_ENDPOINT_URL` environment variable.
 
 - **headers** _Record&lt;string, string&gt;_
 
@@ -1527,6 +1531,9 @@ You can use the following optional settings to customize the Bedrock Anthropic p
 
   Base URL for the Bedrock API calls.
   Useful for custom endpoints or proxy configurations.
+  When omitted, the provider also supports the service-specific
+  `AWS_ENDPOINT_URL_BEDROCK_RUNTIME` environment variable, which takes
+  precedence over the global `AWS_ENDPOINT_URL` environment variable.
 
 - **headers** _Resolvable&lt;Record&lt;string, string | undefined&gt;&gt;_
 
@@ -1964,7 +1971,6 @@ Static IAM user keys do not require `sessionToken`.
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
-- [LMNT](/providers/ai-sdk-providers/lmnt)
 - [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)

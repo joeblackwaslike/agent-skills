@@ -1,9 +1,9 @@
 ---
-title: Uptime and Status
+title: AI Gateway Uptime and Provider Status
 product: vercel
 url: /docs/ai-gateway/models-and-providers/uptime
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/uptime"
-last_updated: 2026-08-28
+last_updated: 2026-09-07
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/models-and-providers
@@ -15,11 +15,11 @@ related:
 summary: See how uptime and status track AI Gateway provider health and end-to-end request success.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/uptime.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "ba6e0893e70b7942902783c76d0e2755b7901c832066536cd92dfd89d992db8b"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "bff9c19214df1f720b91ffa984ebe263da40c5fd59575177327fbfea23101347"
 ---
 
-# Uptime and Status
+# AI Gateway Uptime and Provider Status
 
 When a provider has an outage, AI Gateway falls back to a healthy provider so your requests still go through. The model detail page surfaces this in two views, **Uptime** and **Status**, both calculated from live AI Gateway traffic.
 
@@ -29,14 +29,12 @@ When a provider has an outage, AI Gateway falls back to a healthy provider so yo
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [AI Gateway production index](https://vercel.com/blog/ai-gateway-production-index?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=related)
 - [Live model performance metrics accessible via AI Gateway](https://vercel.com/changelog/live-model-performance-metrics-accessible-via-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=related)
+- [AI Gateway production index](https://vercel.com/blog/ai-gateway-production-index?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=related)
 - [Access and share AI Gateway leaderboard data](https://vercel.com/changelog/open-data-and-shareable-charts-for-ai-gateway-leaderboards?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=related)
-- [Metrics](https://vercel.com/docs/ai-gateway/models-and-providers/metrics?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=related) — Understand how AI Gateway measures throughput and latency per provider.
-- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including pricing and markup, SDK and API compatibility, model availabilit
-- [Direct REST API Usage](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=related) — Use the AI Gateway API directly without client libraries using curl and fetch.
-- [Provider Timeouts](https://vercel.com/docs/ai-gateway/models-and-providers/provider-timeouts?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=related) — Configure per-provider timeouts for fast failover when a provider is slow to respond.
-- [Bring Your Own Key \\(BYOK\\)](https://vercel.com/docs/ai-gateway/authentication-and-byok/byok?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=related) — Learn how to configure your own provider keys with the AI Gateway.
+- [AI Gateway Provider Latency and Throughput Metrics](https://vercel.com/docs/ai-gateway/models-and-providers/metrics?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=related) — Understand how AI Gateway measures throughput and latency per provider.
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
+- [AI Gateway Provider Timeouts](https://vercel.com/docs/ai-gateway/models-and-providers/provider-timeouts?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=related) — Configure AI Gateway timeouts for BYOK providers. Fail over to the next provider when a request takes too long to start
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/uptime.graph.md](/docs/ai-gateway/models-and-providers/uptime.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -64,7 +62,7 @@ You can open the uptime view from:
 - The [AI Gateway model catalog](/ai-gateway/models). Select a model, then choose **Uptime**.
 - The [**AI Gateway** tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) in your project. Go to **Models**, select a model, then choose **Uptime**.
 
-You can also link directly at `vercel.com/ai-gateway/models/<model-id>/uptime`, replacing `<model-id>` with the model you want to inspect. For example, see [uptime for Claude Opus 4.7](/ai-gateway/models/claude-opus-4.7/uptime).
+You can also link directly at `vercel.com/ai-gateway/models/<model-id>#uptime`, replacing `<model-id>` with the model you want to inspect. For example, see [uptime for Claude Opus 4.7](/ai-gateway/models/claude-opus-4.7#uptime).
 
 ### Accessing uptime via the API
 
@@ -134,7 +132,7 @@ You can open the status view from:
 - The [AI Gateway model catalog](/ai-gateway/models). Select a model, then choose **Status**.
 - The [**AI Gateway** tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) in your project. Go to **Models**, select a model, then choose **Status**.
 
-You can also link directly at `vercel.com/ai-gateway/models/<model-id>/status`, replacing `<model-id>` with the model you want to inspect. For example, see [status for Claude Opus 4.7](/ai-gateway/models/claude-opus-4.7/status).
+You can also link directly at `vercel.com/ai-gateway/models/<model-id>#status`, replacing `<model-id>` with the model you want to inspect. For example, see [status for Claude Opus 4.7](/ai-gateway/models/claude-opus-4.7#status).
 
 ## Sharing a snapshot
 

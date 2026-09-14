@@ -1,24 +1,25 @@
 ---
-title: Disallow Prompt Training
+title: AI Gateway Disallow Prompt Training
 product: vercel
 url: /docs/ai-gateway/security-and-compliance/disallow-prompt-training
 canonical_url: "https://vercel.com/docs/ai-gateway/security-and-compliance/disallow-prompt-training"
-last_updated: 2026-09-02
-type: integration
+last_updated: 2026-09-08
+type: how-to
 prerequisites:
   - /docs/ai-gateway/security-and-compliance
   - /docs/ai-gateway
 related:
   - /docs/ai-gateway/security-and-compliance/zdr
   - /docs/ai-gateway/authentication-and-byok/byok
+  - /docs/ai-gateway/sdks-and-apis
 summary: Learn how to prevent AI providers from using your prompts and responses for model training through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/disallow-prompt-training.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "b3aff831ffe59b7d42fc7e888b20bb89cdd4d2a6fc44f4965d70535a9ed9509e"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "1814697cf41d4302f0eb073e7a4b9b93cbe23c8f195a3bd4cae2a70737e14d03"
 ---
 
-# Disallow Prompt Training
+# AI Gateway Disallow Prompt Training
 
 No training on prompt data is available to all AI Gateway users at no extra charge. This feature ensures your prompts are not used by AI providers to train their models. Set `disallowPromptTraining: true` in `providerOptions` to ensure requests are only routed to providers that do not use your data for training.
 
@@ -31,12 +32,10 @@ No training on prompt data is available to all AI Gateway users at no extra char
 - [Zero Data Retention on AI Gateway](https://vercel.com/blog/zdr-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=related)
 - [Team-wide Zero Data Retention and prompt training controls now on AI Gateway](https://vercel.com/changelog/zero-data-retention-no-prompt-training-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=related)
 - [Team-wide provider allowlist on AI Gateway](https://vercel.com/changelog/team-wide-provider-allowlist-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=related)
-- [Updates to Terms of Service](https://vercel.com/changelog/updates-to-terms-of-service-march-2026?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=related)
-- [Provider Options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=related) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway
-- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including pricing and markup, SDK and API compatibility, model availabilit
-- [Provider Allowlist](https://vercel.com/docs/ai-gateway/security-and-compliance/provider-allowlist?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=related) — Restrict which AI providers your team can route through AI Gateway. Available on Pro and Enterprise.
-- [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
+- [AI Gateway Provider Routing and Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=related) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway.
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
+- [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=related) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
+- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/security-and-compliance/disallow-prompt-training.graph.md](/docs/ai-gateway/security-and-compliance/disallow-prompt-training.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -73,8 +72,7 @@ If no compliant providers are available for the requested model, the request fai
 
 ```json
 {
-  "error": "No providers available that disallow prompt training for model: example/model-name. \
-            Providers considered: provider-a, provider-b",
+  "error": "No providers available that disallow prompt training for model: example/model-name. Providers considered: provider-a, provider-b",
   "type": "no_providers_available",
   "statusCode": 400
 }
@@ -84,289 +82,260 @@ This filter also applies to any fallback providers.
 
 This enforcement does not apply to [BYOK](/docs/ai-gateway/authentication-and-byok/byok) requests since those use your own API key, configuration, and agreement with the provider. If AI Gateway falls back to AI Gateway system credentials, it honors the disallow prompt training filter on the failover request.
 
-### Using AI SDK
+These examples use AI SDK 7 and the AI SDK for Python beta. Set `AI_GATEWAY_API_KEY` before running them. See [API format differences](/docs/ai-gateway/sdks-and-apis#api-format-differences) for setup, request fields, and response handling.
 
-Set `disallowPromptTraining` to `true` in `providerOptions`:
-
-#### streamText
-
-```typescript filename="disallow-prompt-training.ts" {8-12}
-import type { GatewayProviderOptions } from '@ai-sdk/gateway';
-import { streamText } from 'ai';
-
-export async function POST(request: Request) {
-  const result = streamText({
-    model: 'zai/glm-4.7',
-    prompt: 'Analyze this proprietary business strategy.',
-    providerOptions: {
-      gateway: {
-        disallowPromptTraining: true,
-      } satisfies GatewayProviderOptions,
-    },
-  });
-
-  return result.toUIMessageStreamResponse();
-}
-```
-
-#### generateText
-
-```typescript filename="disallow-prompt-training.ts" {8-12}
-import type { GatewayProviderOptions } from '@ai-sdk/gateway';
-import { generateText } from 'ai';
-
-export async function POST(request: Request) {
-  const { text } = await generateText({
-    model: 'zai/glm-4.7',
-    prompt: 'Analyze this proprietary business strategy.',
-    providerOptions: {
-      gateway: {
-        disallowPromptTraining: true,
-      } satisfies GatewayProviderOptions,
-    },
-  });
-
-  return Response.json({ text });
-}
-```
-
-### Using the Chat Completions API
-
-Set `disallowPromptTraining` to `true` in `providerOptions`:
+#### AI SDK
 
 #### TypeScript
 
-```typescript filename="disallow-prompt-training.ts" {18-22}
-import OpenAI from 'openai';
+See the [AI SDK prompt-training-filter reference](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway#disallow-prompt-training-example) for SDK configuration and usage.
 
-const apiKey = process.env.AI_GATEWAY_API_KEY || process.env.VERCEL_OIDC_TOKEN;
+```typescript filename="disallow-training.ts" {8}
+import { generateText } from 'ai';
 
-const openai = new OpenAI({
-  apiKey,
-  baseURL: 'https://ai-gateway.vercel.sh/v1',
-});
-
-const completion = await openai.chat.completions.create({
-  model: 'zai/glm-4.7',
-  messages: [
-    {
-      role: 'user',
-      content: 'Analyze this proprietary business strategy.',
-    },
-  ],
+const { text } = await generateText({
+  model: 'anthropic/claude-sonnet-5',
+  prompt: 'Explain quantum computing in two sentences.',
   providerOptions: {
     gateway: {
       disallowPromptTraining: true,
     },
   },
 });
+
+console.log(text);
 ```
 
-#### Python
+#### Python (beta)
 
-```python filename="disallow-prompt-training.py" {17-21}
-import os
-from openai import OpenAI
+```python filename="disallow-training_ai.py" {8}
+import asyncio
+import ai
 
-client = OpenAI(
-    api_key=os.getenv("AI_GATEWAY_API_KEY"),
-    base_url="https://ai-gateway.vercel.sh/v1",
-)
+async def main():
+    model = ai.get_model("anthropic/claude-sonnet-5")
+    messages = [ai.user_message("Explain quantum computing in two sentences.")]
+    params = ai.InferenceRequestParams(
+        extra_body={"providerOptions": {"gateway": {"disallowPromptTraining": True}}}
+    )
+    async with ai.stream(model, messages, params=params) as stream:
+        async for event in stream:
+            if isinstance(event, ai.events.TextDelta):
+                print(event.chunk, end="", flush=True)
+    print()
 
-completion = client.chat.completions.create(
-    model="zai/glm-4.7",
-    messages=[
-        {
-            "role": "user",
-            "content": "Analyze this proprietary business strategy.",
-        }
-    ],
-    extra_body={
-        "providerOptions": {
-            "gateway": {"disallowPromptTraining": True}
-        }
-    },
-)
+asyncio.run(main())
 ```
 
-### Using the Responses API
-
-Set `disallowPromptTraining` to `true` in `providerOptions`:
+#### Chat Completions
 
 #### TypeScript
 
-```typescript filename="disallow-prompt-training.ts" {18-22}
-const apiKey = process.env.AI_GATEWAY_API_KEY || process.env.VERCEL_OIDC_TOKEN;
+```typescript filename="disallow-training-chat.ts" {20}
+import OpenAI from 'openai';
 
-const response = await fetch('https://ai-gateway.vercel.sh/v1/responses', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-    Authorization: `Bearer ${apiKey}`,
-  },
-  body: JSON.stringify({
-    model: 'zai/glm-4.7',
-    input: [
-      {
-        type: 'message',
-        role: 'user',
-        content: 'Analyze this proprietary business strategy.',
-      },
-    ],
-    providerOptions: {
-      gateway: {
-        disallowPromptTraining: true,
-      },
-    },
-  }),
-});
-```
-
-#### Python
-
-```python filename="disallow-prompt-training.py" {17-21}
-import os
-from openai import OpenAI
-
-client = OpenAI(
-    api_key=os.getenv("AI_GATEWAY_API_KEY"),
-    base_url="https://ai-gateway.vercel.sh/v1",
-)
-
-response = client.responses.create(
-    model="zai/glm-4.7",
-    input=[
-        {
-            "role": "user",
-            "content": "Analyze this proprietary business strategy.",
-        }
-    ],
-    extra_body={
-        "providerOptions": {
-            "gateway": {"disallowPromptTraining": True}
-        }
-    },
-)
-```
-
-### Using the Anthropic Messages API
-
-Set `disallowPromptTraining` to `true` in `providerOptions`:
-
-#### TypeScript
-
-```typescript filename="disallow-prompt-training.ts" {19-23}
-import Anthropic from '@anthropic-ai/sdk';
-
-const apiKey = process.env.AI_GATEWAY_API_KEY || process.env.VERCEL_OIDC_TOKEN;
-
-const anthropic = new Anthropic({
-  apiKey,
-  baseURL: 'https://ai-gateway.vercel.sh',
+const client = new OpenAI({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh/v1',
 });
 
-const message = await anthropic.messages.create({
+const response = await client.chat.completions.create({
   model: 'anthropic/claude-sonnet-5',
   messages: [
     {
       role: 'user',
-      content: 'Analyze this proprietary business strategy.',
+      content: 'Explain quantum computing in two sentences.',
     },
   ],
-  // @ts-expect-error -- providerOptions is not in the Anthropic SDK types
-  providerOptions: {
-    gateway: {
-      disallowPromptTraining: true,
-    },
-  },
-});
-```
-
-#### Python
-
-```python filename="disallow-prompt-training.py" {17-21}
-import os
-import anthropic
-
-client = anthropic.Anthropic(
-    api_key=os.getenv("AI_GATEWAY_API_KEY"),
-    base_url="https://ai-gateway.vercel.sh",
-)
-
-message = client.messages.create(
-    model="anthropic/claude-sonnet-5",
-    messages=[
-        {
-            "role": "user",
-            "content": "Analyze this proprietary business strategy.",
-        }
-    ],
-    extra_body={
-        "providerOptions": {
-            "gateway": {"disallowPromptTraining": True}
-        }
-    },
-)
-```
-
-### Using the OpenResponses API
-
-Set `disallowPromptTraining` to `true` in `providerOptions`:
-
-#### TypeScript
-
-```typescript filename="disallow-prompt-training.ts" {18-22}
-const apiKey = process.env.AI_GATEWAY_API_KEY || process.env.VERCEL_OIDC_TOKEN;
-
-const response = await fetch('https://ai-gateway.vercel.sh/v1/responses', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-    Authorization: `Bearer ${apiKey}`,
-  },
-  body: JSON.stringify({
-    model: 'zai/glm-4.7',
-    input: [
-      {
-        type: 'message',
-        role: 'user',
-        content: 'Analyze this proprietary business strategy.',
-      },
-    ],
+  // AI Gateway extension fields are not included in the upstream SDK types.
+  ...{
     providerOptions: {
       gateway: {
         disallowPromptTraining: true,
       },
     },
-  }),
+  },
 });
+
+console.log(response.choices[0]?.message.content);
 ```
 
 #### Python
 
-```python filename="disallow-prompt-training.py" {17-21}
+```python filename="disallow-training_chat.py" {12}
 import os
 from openai import OpenAI
 
 client = OpenAI(
-    api_key=os.getenv("AI_GATEWAY_API_KEY"),
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
+    base_url="https://ai-gateway.vercel.sh/v1",
+)
+
+response = client.chat.completions.create(
+    model="anthropic/claude-sonnet-5",
+    messages=[{"role": "user", "content": "Explain quantum computing in two sentences."}],
+    extra_body={"providerOptions": {"gateway": {"disallowPromptTraining": True}}},
+)
+
+print(response.choices[0].message.content)
+```
+
+#### cURL
+
+```bash filename="disallow-training-chat.sh" {11}
+curl --fail-with-body https://ai-gateway.vercel.sh/v1/chat/completions -H "Authorization: Bearer $AI_GATEWAY_API_KEY" -H "Content-Type: application/json" -d '{
+  "model": "anthropic/claude-sonnet-5",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Explain quantum computing in two sentences."
+    }
+  ],
+  "providerOptions": {
+    "gateway": {
+      "disallowPromptTraining": true
+    }
+  }
+}'
+```
+
+#### Messages API
+
+#### TypeScript
+
+```typescript filename="disallow-training-messages.ts" {20}
+import Anthropic from '@anthropic-ai/sdk';
+
+const client = new Anthropic({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh',
+});
+
+const response = await client.messages.create({
+  model: 'anthropic/claude-sonnet-5',
+  messages: [
+    {
+      role: 'user',
+      content: 'Explain quantum computing in two sentences.',
+    },
+  ],
+  max_tokens: 1024,
+  ...{
+    providerOptions: {
+      gateway: {
+        disallowPromptTraining: true,
+      },
+    },
+  },
+});
+
+for (const block of response.content) {
+  if (block.type === 'text') console.log(block.text);
+}
+```
+
+#### Python
+
+```python filename="disallow-training_messages.py" {13}
+import os
+from anthropic import Anthropic
+
+client = Anthropic(
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
+    base_url="https://ai-gateway.vercel.sh",
+)
+
+response = client.messages.create(
+    model="anthropic/claude-sonnet-5",
+    messages=[{"role": "user", "content": "Explain quantum computing in two sentences."}],
+    max_tokens=1024,
+    extra_body={"providerOptions": {"gateway": {"disallowPromptTraining": True}}},
+)
+
+for block in response.content:
+    if block.type == "text":
+        print(block.text)
+```
+
+#### cURL
+
+```bash filename="disallow-training-messages.sh" {12}
+curl --fail-with-body https://ai-gateway.vercel.sh/v1/messages -H "Authorization: Bearer $AI_GATEWAY_API_KEY" -H "Content-Type: application/json" -H "anthropic-version: 2023-06-01" -d '{
+  "model": "anthropic/claude-sonnet-5",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Explain quantum computing in two sentences."
+    }
+  ],
+  "max_tokens": 1024,
+  "providerOptions": {
+    "gateway": {
+      "disallowPromptTraining": true
+    }
+  }
+}'
+```
+
+#### Responses / OpenResponses
+
+#### TypeScript
+
+```typescript filename="disallow-training-responses.ts" {14}
+import OpenAI from 'openai';
+
+const client = new OpenAI({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh/v1',
+});
+
+const response = await client.responses.create({
+  model: 'anthropic/claude-sonnet-5',
+  input: 'Explain quantum computing in two sentences.',
+  ...{
+    providerOptions: {
+      gateway: {
+        disallowPromptTraining: true,
+      },
+    },
+  },
+});
+
+console.log(response.output_text);
+```
+
+#### Python
+
+```python filename="disallow-training_responses.py" {12}
+import os
+from openai import OpenAI
+
+client = OpenAI(
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
     base_url="https://ai-gateway.vercel.sh/v1",
 )
 
 response = client.responses.create(
-    model="zai/glm-4.7",
-    input=[
-        {
-            "role": "user",
-            "content": "Analyze this proprietary business strategy.",
-        }
-    ],
-    extra_body={
-        "providerOptions": {
-            "gateway": {"disallowPromptTraining": True}
-        }
-    },
+    model="anthropic/claude-sonnet-5",
+    input="Explain quantum computing in two sentences.",
+    extra_body={"providerOptions": {"gateway": {"disallowPromptTraining": True}}},
 )
+
+print(response.output_text)
+```
+
+#### cURL
+
+```bash filename="disallow-training-responses.sh" {6}
+curl --fail-with-body https://ai-gateway.vercel.sh/v1/responses -H "Authorization: Bearer $AI_GATEWAY_API_KEY" -H "Content-Type: application/json" -d '{
+  "model": "anthropic/claude-sonnet-5",
+  "input": "Explain quantum computing in two sentences.",
+  "providerOptions": {
+    "gateway": {
+      "disallowPromptTraining": true
+    }
+  }
+}'
 ```
 
 ## Combining filters

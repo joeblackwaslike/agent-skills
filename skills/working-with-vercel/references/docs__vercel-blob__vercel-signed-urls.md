@@ -13,8 +13,8 @@ related:
 summary: Grant time-limited access to Vercel Blob URLs with signed tokens, and authorize browser-to-blob presigned uploads.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/vercel-signed-urls.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "cdad5de42df4ba7c39d25c3d8c65c3e96a9d0bcb93c1a7a534791129554b4de0"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "e0ea83d9df09d0fe7a956f1b2a8e9270bfa75b734755a714292424c3ed9e39e5"
 ---
 
 # Vercel Signed URLs
@@ -33,12 +33,11 @@ Vercel Signed URLs grant time-limited access to a Blob URL without exposing a re
 - [Vercel CLI now supports signing blob URLs](https://vercel.com/changelog/vercel-cli-now-supports-signing-blob-urls?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fvercel-signed-urls&source_site=vercel-docs&relationship=related)
 - [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fvercel-signed-urls&source_site=vercel-docs&relationship=related) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
 - [Build Imgur-style image hosting with Nuxt and Vercel Blob](https://vercel.com/kb/guide/vercel-blob-nuxt-imgur-clone?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fvercel-signed-urls&source_site=vercel-docs&relationship=related) — Learn how to build an Imgur-style paste-to-share image host using Nuxt and Vercel Blob, with direct-to-storage client up
-- [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fvercel-signed-urls&source_site=vercel-docs&relationship=related) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
 - [How can I use AWS S3 with Vercel?](https://vercel.com/kb/guide/how-can-i-use-aws-s3-with-vercel?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fvercel-signed-urls&source_site=vercel-docs&relationship=related) — Example how to use AWS S3 library on Vercel
-- [How do I bypass the 4.5MB body size limit of Vercel Serverless Functions?](https://vercel.com/kb/guide/how-to-bypass-vercel-body-size-limit-serverless-functions?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fvercel-signed-urls&source_site=vercel-docs&relationship=related) — Learn how to deal with the body size limit of Serverless Functions on Vercel.
+- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fvercel-signed-urls&source_site=vercel-docs&relationship=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
+- [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fvercel-signed-urls&source_site=vercel-docs&relationship=related) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
 - [Vercel Private Blob is now generally available](https://vercel.com/changelog/vercel-private-blob-is-now-generally-available?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fvercel-signed-urls&source_site=vercel-docs&relationship=related)
 - [Private Storage](https://vercel.com/docs/vercel-blob/private-storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fvercel-signed-urls&source_site=vercel-docs&relationship=related) — Learn how to use private Vercel Blob storage to serve files with authentication
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fvercel-signed-urls&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/vercel-blob/vercel-signed-urls.graph.md](/docs/vercel-blob/vercel-signed-urls.graph.md?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fvercel-signed-urls&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

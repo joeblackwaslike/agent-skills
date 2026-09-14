@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/cloudflare-workers-ai.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "b81a65675e73f13d7f5c9fe4f1832220b4ca9d2dae76769cab57ad665ac57d6f"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "169d70adf21c4f4e18afdb5bd65e3b2014201fb7c5c8602d4df67fd77b829764"
 ---
 
 # Cloudflare Workers AI
@@ -204,6 +204,7 @@ export default {
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
 - [Interfaze](/providers/community-providers/interfaze)
+- [Telnyx](/providers/community-providers/telnyx)
 - [Flowise](/providers/community-providers/flowise)
 
 

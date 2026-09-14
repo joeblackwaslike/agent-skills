@@ -16,8 +16,8 @@ related:
 summary: This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can incur.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/image-optimization/limits-and-pricing.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "a9187af8348702a32349d6c2c7ce5bac1ac7b31ee39319f26376a43c9d48e1b5"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "101c4e91a4503f0d2a9a6fc0e3e3e5d50eea5411dd0046445b7e79166606d05e"
 ---
 
 # Limits and Pricing for Image Optimization
@@ -44,8 +44,8 @@ Image optimization pricing is dependent on your plan and on specific parameters 
 - [Legacy Pricing for Image Optimization](https://vercel.com/docs/image-optimization/legacy-pricing?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — This page outlines information on the pricing and limits for the source images-based legacy option.
 - [Changes to Vercel Image Optimization](https://vercel.com/changelog/changes-to-vercel-image-optimizations?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flimits-and-pricing&source_site=vercel-docs&relationship=related)
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
-- [Vercel Blob Pricing](https://vercel.com/docs/vercel-blob/usage-and-pricing?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn about the pricing for Vercel Blob.
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Vercel Blob Pricing](https://vercel.com/docs/vercel-blob/usage-and-pricing?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn about the pricing for Vercel Blob.
 - [Container Registry limits and pricing](https://vercel.com/docs/container-registry/limits-and-pricing?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Storage pricing, size limits, plan limits, and compatibility limits for Vercel Container Registry.
 
 Full cross-link map for this page: [/docs/image-optimization/limits-and-pricing.graph.md](/docs/image-optimization/limits-and-pricing.graph.md?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flimits-and-pricing&source_site=vercel-docs&relationship=graph)

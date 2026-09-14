@@ -16,8 +16,8 @@ related:
 summary: Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/products.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "398646c384263a5e4d309006a1c10976ff69dabe4c74fd105862493834074899"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "6adebf86f7b6fa5130b022253b4dbf99c62609051a39a383170ba31459a47ffc"
 ---
 
 # Products
@@ -26,7 +26,7 @@ Browse every Vercel product. Build with AI, deploy and scale your apps, and oper
 
 ## Build with AI
 
-- [AI Gateway](/docs/ai-gateway): One endpoint, all models
+- [AI Gateway](/docs/ai-gateway): Access hundreds of models for text, image, and video generation, realtime voice, speech to text, text to speech, embeddings, and reranking through one API. Use provider routing and automatic fallbacks, built-in observability and cost tracking, spending controls, coding agent support, and no markup on token prices.
 - [AI SDK](/docs/ai-sdk): AI toolkit
 - [Sandbox](/docs/sandbox): Run AI code safely
 - [Container Registry](/docs/container-registry): Store OCI images

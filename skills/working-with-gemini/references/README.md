@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-skills/main/README.md"
-fetched_at: "2026-09-07T09:02:18.333Z"
-sha256: "435e1c052d2dc1a6060221ccb2cc0c21d135d343a1ec3d1b4b264daadd1a7004"
+fetched_at: "2026-09-14T09:40:16.185Z"
+sha256: "cd3d546a5b2a47f8adddef7db365d552b13e0604ee498d485d3066000abe4484"
 ---
 
 # Gemini API skills
@@ -104,7 +104,7 @@ Install directly from the Cursor plugin directory or via the editor command:
 codex plugin marketplace add https://github.com/google-gemini/gemini-skills
 
 # Install the plugin
-codex plugin install gemini-skills
+codex plugin add gemini-skills@gemini-skills
 ```
 
 ## More info

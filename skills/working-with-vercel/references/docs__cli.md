@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel command-line interface (CLI) to manage and configure your Vercel Projects from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "b4fc0d1c597699181d66560b6706c6f8c769d2ef74d5b66a3290e57dcc0b65b1"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "9512bef51c3fad8c7e45dd0f292643f6f7175c57d4d7f3f979e1942cd6d1f1c7"
 ---
 
 # Vercel CLI Overview
@@ -654,11 +654,11 @@ vercel mcp --project
 List and query metrics from your terminal, and inspect the schema to discover available dimensions and aggregations.
 
 ```bash
-vercel metrics list
+vercel metrics schema
 vercel metrics schema <metric-or-prefix>
-vercel metrics database.duration_ms --filter "plan:pro"
+vercel metrics database.duration_ms --filter 'plan:pro'
 vercel metrics <metric-id> --since 7d --granularity 1d --project project-name --prod
-vercel metrics <metric-id> --all --group-by project_id --since 24h --prod
+vercel metrics <metric-id> --all --group-by projectId --since 24h --prod
 ```
 
 [Learn more about the metrics command](/docs/cli/metrics)

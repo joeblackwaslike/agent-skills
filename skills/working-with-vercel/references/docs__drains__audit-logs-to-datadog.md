@@ -13,8 +13,8 @@ related:
 summary: Learn how to forward Vercel Audit Log Drain events to Datadog using the Datadog Logs API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/audit-logs-to-datadog.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "122e58b93ca2ebff17e4c1ceb9e710925c643699244fc1e9c8420f4439f1fd88"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "d91a5a1d4e6bcaeab0672a42722d39edbe4a2a13ab68c18440bf91567a9e28d8"
 ---
 
 # Drain Audit Logs to Datadog
@@ -37,7 +37,6 @@ Audit Log Drains can forward team activity events to [Datadog](https://www.datad
 - [Drain Audit Logs to Splunk](https://vercel.com/docs/drains/audit-logs-to-splunk?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-datadog&source_site=vercel-docs&relationship=related) — Learn how to forward Vercel Audit Log Drain events to Splunk using the HTTP Event Collector \\(HEC\\).
 - [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-datadog&source_site=vercel-docs&relationship=related) — Learn about Web Analytics Drains - data formats and custom events configuration.
 - [Trace Drains Reference](https://vercel.com/docs/drains/reference/traces?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-datadog&source_site=vercel-docs&relationship=related) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-datadog&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/drains/audit-logs-to-datadog.graph.md](/docs/drains/audit-logs-to-datadog.graph.md?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-datadog&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

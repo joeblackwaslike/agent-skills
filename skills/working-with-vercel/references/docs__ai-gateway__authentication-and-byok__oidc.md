@@ -1,23 +1,23 @@
 ---
-title: OIDC
+title: AI Gateway OIDC Authentication
 product: vercel
 url: /docs/ai-gateway/authentication-and-byok/oidc
 canonical_url: "https://vercel.com/docs/ai-gateway/authentication-and-byok/oidc"
-last_updated: 2026-08-24
+last_updated: 2026-09-08
 type: how-to
 prerequisites:
   - /docs/ai-gateway/authentication-and-byok
   - /docs/ai-gateway
 related:
   - /docs/oidc
-summary: Authenticate AI Gateway requests with Vercel OIDC tokens, with no API key to manage.
+summary: Authenticate AI Gateway requests from Vercel deployments with OIDC tokens. Configure the AI SDK or send bearer tokens directly to the API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok/oidc.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "2c8123fd1ff4b0251f46268c827d94354aed4ee5e12d0c5cbab98c2b7b070207"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "fc4c6739105729697b77e9de8218b3f222bdf4b5418707eb174edad2c520e993"
 ---
 
-# OIDC
+# AI Gateway OIDC Authentication
 
 The [Vercel OIDC token](/docs/oidc) is a way to authenticate your requests to the AI Gateway without needing to manage an API key. Vercel automatically generates the OIDC token that it associates with your Vercel project.
 
@@ -27,13 +27,13 @@ The [Vercel OIDC token](/docs/oidc) is a way to authenticate your requests to th
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Enhancing security of backend connectivity with OpenID Connect](https://vercel.com/blog/enhancing-security-of-backend-connectivity-with-openid-connect?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Foidc&source_site=vercel-docs&relationship=related)
-- [OpenID Connect (OIDC) Federation now generally available](https://vercel.com/changelog/openid-connect-federation-now-generally-available?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Foidc&source_site=vercel-docs&relationship=related)
+- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Foidc&source_site=vercel-docs&relationship=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
+- [Run recurring security reviews with deepsec on Vercel](https://vercel.com/kb/guide/deepsec-reviews-on-vercel?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Foidc&source_site=vercel-docs&relationship=related) — Learn how to run periodic security scans on your code with deepsec. Set up deepsec to review GitHub repositories and del
+- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Foidc&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Foidc&source_site=vercel-docs&relationship=related) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
+- [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Foidc&source_site=vercel-docs&relationship=related) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
 - [Connect to your own API](https://vercel.com/docs/oidc/api?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Foidc&source_site=vercel-docs&relationship=related) — Learn how to configure your own API to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\)
-- [Sandbox Authentication](https://vercel.com/docs/sandbox/concepts/authentication?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Foidc&source_site=vercel-docs&relationship=related) — Learn how to authenticate with Vercel Sandbox using OIDC tokens or access tokens.
-- [Vercel KMS Authentication](https://vercel.com/docs/kms/concepts/authentication?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Foidc&source_site=vercel-docs&relationship=related) — How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel ac
-- [Connect to Microsoft Azure](https://vercel.com/docs/oidc/azure?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Foidc&source_site=vercel-docs&relationship=related) — Learn how to configure your Microsoft Azure account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
-- [Generate a project OIDC token](https://vercel.com/docs/rest-api/projects/generate-a-project-oidc-token?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Foidc&source_site=vercel-docs&relationship=related) — POST /v1/projects/{idOrName}/token — Generates an OIDC token for the project and returns it.
+- [Vercel & OpenAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Foidc&source_site=vercel-docs&relationship=related) — Integrate your Vercel project with OpenAI's powerful suite of models.
 
 Full cross-link map for this page: [/docs/ai-gateway/authentication-and-byok/oidc.graph.md](/docs/ai-gateway/authentication-and-byok/oidc.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Foidc&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -58,16 +58,186 @@ Full cross-link map for this page: [/docs/ai-gateway/authentication-and-byok/oid
 
 - #### Use OIDC authentication in your code
   With OIDC authentication, you can directly use the gateway provider without needing to obtain an API key or set it in an environment variable:
-  ```typescript filename="app/api/chat/route.ts" {5}
+
+  The AI SDK resolves OIDC automatically when `AI_GATEWAY_API_KEY` isn't set. For the Python beta, install the Vercel integration with `uv add "ai[vercel]"`. The HTTP client examples below read `VERCEL_OIDC_TOKEN` from the environment. For long-running Node.js processes on Vercel, use [`getVercelOidcToken()`](/docs/oidc) from `@vercel/oidc` at request time to obtain the current token.
+  #### AI SDK
+  #### TypeScript
+  See the [AI SDK OIDC reference](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway#oidc-authentication-vercel-deployments) for SDK configuration and usage.
+  ```typescript filename="oidc.ts" {4}
   import { generateText } from 'ai';
 
-  export async function GET() {
-    const result = await generateText({
-      model: 'spacexai/grok-4.5',
-      prompt: 'Why is the sky blue?',
-    });
-    return Response.json(result);
+  const { text } = await generateText({
+    model: "anthropic/claude-sonnet-5",
+    prompt: "Why is the sky blue?",
+  });
+
+  console.log(text);
+  ```
+  #### Python (beta)
+  ```python filename="oidc_ai.py" {5}
+  import asyncio
+  import ai
+
+  async def main():
+      model = ai.get_model("anthropic/claude-sonnet-5")
+      messages = [ai.user_message("Why is the sky blue?")]
+      async with ai.stream(model, messages) as stream:
+          async for event in stream:
+              if isinstance(event, ai.events.TextDelta):
+                  print(event.chunk, end="", flush=True)
+      print()
+
+  asyncio.run(main())
+  ```
+  #### Chat Completions
+  #### TypeScript
+  ```typescript filename="oidc-chat.ts" {4}
+  import OpenAI from 'openai';
+
+  const client = new OpenAI({
+    apiKey: process.env.VERCEL_OIDC_TOKEN,
+    baseURL: 'https://ai-gateway.vercel.sh/v1',
+  });
+
+  const response = await client.chat.completions.create({
+    model: "anthropic/claude-sonnet-5",
+    messages: [{ "role": "user", "content": "Why is the sky blue?" }],
+  });
+
+  console.log(response.choices[0]?.message.content);
+  ```
+  #### Python
+  ```python filename="oidc_chat.py" {5}
+  import os
+  from openai import OpenAI
+
+  client = OpenAI(
+      api_key=os.environ["VERCEL_OIDC_TOKEN"],
+      base_url="https://ai-gateway.vercel.sh/v1",
+  )
+
+  response = client.chat.completions.create(
+      model="anthropic/claude-sonnet-5",
+      messages=[{"role": "user", "content": "Why is the sky blue?"}],
+  )
+
+  print(response.choices[0].message.content)
+  ```
+  #### cURL
+  ```bash filename="oidc-chat.sh" {2}
+  curl --fail-with-body https://ai-gateway.vercel.sh/v1/chat/completions \
+    -H "Authorization: Bearer $VERCEL_OIDC_TOKEN" \
+    -H "Content-Type: application/json" \
+    -d '{
+    "model": "anthropic/claude-sonnet-5",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Why is the sky blue?"
+      }
+    ]
+  }'
+  ```
+  #### Messages API
+  #### TypeScript
+  ```typescript filename="oidc-messages.ts" {4}
+  import Anthropic from '@anthropic-ai/sdk';
+
+  const client = new Anthropic({
+    apiKey: process.env.VERCEL_OIDC_TOKEN,
+    baseURL: 'https://ai-gateway.vercel.sh',
+  });
+
+  const response = await client.messages.create({
+    model: "anthropic/claude-sonnet-5",
+    messages: [{ "role": "user", "content": "Why is the sky blue?" }],
+    max_tokens: 1024,
+  });
+
+  for (const block of response.content) {
+    if (block.type === 'text') console.log(block.text);
   }
+  ```
+  #### Python
+  ```python filename="oidc_messages.py" {5}
+  import os
+  from anthropic import Anthropic
+
+  client = Anthropic(
+      api_key=os.environ["VERCEL_OIDC_TOKEN"],
+      base_url="https://ai-gateway.vercel.sh",
+  )
+
+  response = client.messages.create(
+      model="anthropic/claude-sonnet-5",
+      messages=[{"role": "user", "content": "Why is the sky blue?"}],
+      max_tokens=1024,
+  )
+
+  for block in response.content:
+      if block.type == "text":
+          print(block.text)
+  ```
+  #### cURL
+  ```bash filename="oidc-messages.sh" {2}
+  curl --fail-with-body https://ai-gateway.vercel.sh/v1/messages \
+    -H "Authorization: Bearer $VERCEL_OIDC_TOKEN" \
+    -H "Content-Type: application/json" \
+    -H "anthropic-version: 2023-06-01" \
+    -d '{
+    "model": "anthropic/claude-sonnet-5",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Why is the sky blue?"
+      }
+    ],
+    "max_tokens": 1024
+  }'
+  ```
+  #### Responses / OpenResponses
+  #### TypeScript
+  ```typescript filename="oidc-responses.ts" {4}
+  import OpenAI from 'openai';
+
+  const client = new OpenAI({
+    apiKey: process.env.VERCEL_OIDC_TOKEN,
+    baseURL: 'https://ai-gateway.vercel.sh/v1',
+  });
+
+  const response = await client.responses.create({
+    model: "anthropic/claude-sonnet-5",
+    input: "Why is the sky blue?",
+  });
+
+  console.log(response.output_text);
+  ```
+  #### Python
+  ```python filename="oidc_responses.py" {5}
+  import os
+  from openai import OpenAI
+
+  client = OpenAI(
+      api_key=os.environ["VERCEL_OIDC_TOKEN"],
+      base_url="https://ai-gateway.vercel.sh/v1",
+  )
+
+  response = client.responses.create(
+      model="anthropic/claude-sonnet-5",
+      input="Why is the sky blue?",
+  )
+
+  print(response.output_text)
+  ```
+  #### cURL
+  ```bash filename="oidc-responses.sh" {2}
+  curl --fail-with-body https://ai-gateway.vercel.sh/v1/responses \
+    -H "Authorization: Bearer $VERCEL_OIDC_TOKEN" \
+    -H "Content-Type: application/json" \
+    -d '{
+    "model": "anthropic/claude-sonnet-5",
+    "input": "Why is the sky blue?"
+  }'
   ```
 
 

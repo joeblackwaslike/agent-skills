@@ -12,8 +12,8 @@ related:
 summary: How to properly handle form submissions with BotID protection
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/botid/form-submissions.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "a3a2a6db90fb90e2070d948405b77d6d22087facaafdcc7fe3acaf0c394c5114"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "cdb2a0309da55b6cc254e813edad54c073620aeabb47badc72ddf3a3c1bcc208"
 ---
 
 # Form Submissions
@@ -35,7 +35,6 @@ BotID does **not** support traditional HTML forms that use the `action` and `met
 - [Deploying and testing BotID](https://vercel.com/kb/guide/deploying-and-testing-botid?from=related&source_path=%2Fdocs%2Fbotid%2Fform-submissions&source_site=vercel-docs&relationship=related) — This guide gives an overview on Vercel BotID and how to deploy and test it in production
 - [Form Component](https://nextjs.org/docs/app/api-reference/components/form?from=related&source_path=%2Fdocs%2Fbotid%2Fform-submissions&source_site=vercel-docs&relationship=related) — Learn how to use the `\<Form\>` component to handle form submissions and search params updates with client-side navigation
 - [Vercel BotID now  available for all frameworks](https://vercel.com/changelog/botid-now-available-for-all-frameworks?from=related&source_path=%2Fdocs%2Fbotid%2Fform-submissions&source_site=vercel-docs&relationship=related)
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fbotid%2Fform-submissions&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/botid/form-submissions.graph.md](/docs/botid/form-submissions.graph.md?from=related&source_path=%2Fdocs%2Fbotid%2Fform-submissions&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

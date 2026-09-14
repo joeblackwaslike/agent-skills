@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/luma.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "5fdd4748536ab2eb5c186c418b44bd807ab9f933eb4e59c2d8a340b610dc6f48"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "88bb4145e2445417073182de164a99fe50b75904d55a1d1b688b1a08c8294cfd"
 ---
 
 # Luma Provider
@@ -271,7 +271,6 @@ Learn more at https://docs.lumalabs.ai/docs/image-generation#character-reference
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
-- [LMNT](/providers/ai-sdk-providers/lmnt)
 - [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)

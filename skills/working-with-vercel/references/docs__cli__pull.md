@@ -15,8 +15,8 @@ related:
 summary: Learn how to update your local project with remote environment variables using the vercel pull CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/pull.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "f7a908316119593c35c2a80fb5e170b5d2d32319a974a5a03de0cee7bf669162"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "264cfca4dac0341dca036b07622ca7e194bbb73f86d2b66d89fe80a61b0549e1"
 ---
 
 # vercel pull
@@ -33,8 +33,8 @@ The `vercel pull` command is used to store [Environment Variables](/docs/environ
 - [vercel env](https://vercel.com/docs/cli/env?from=related&source_path=%2Fdocs%2Fcli%2Fpull&source_site=vercel-docs&relationship=related) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
 - [vercel build](https://vercel.com/docs/cli/build?from=related&source_path=%2Fdocs%2Fcli%2Fpull&source_site=vercel-docs&relationship=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fpull&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [Managing environment variables across environments](https://vercel.com/docs/environment-variables/manage-across-environments?from=related&source_path=%2Fdocs%2Fcli%2Fpull&source_site=vercel-docs&relationship=related) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
 - [vercel dev](https://vercel.com/docs/cli/dev?from=related&source_path=%2Fdocs%2Fcli%2Fpull&source_site=vercel-docs&relationship=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fpull&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 
 Full cross-link map for this page: [/docs/cli/pull.graph.md](/docs/cli/pull.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fpull&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

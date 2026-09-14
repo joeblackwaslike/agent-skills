@@ -1,9 +1,9 @@
 ---
-title: Model Allowlist
+title: AI Gateway Model Allowlist
 product: vercel
 url: /docs/ai-gateway/security-and-compliance/model-allowlist
 canonical_url: "https://vercel.com/docs/ai-gateway/security-and-compliance/model-allowlist"
-last_updated: 2026-07-08
+last_updated: 2026-09-07
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/security-and-compliance
@@ -14,11 +14,11 @@ related:
 summary: Restrict which AI models your team can use through AI Gateway. Available on Pro and Enterprise.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/model-allowlist.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "ceb462c9ce9e0e5e2b4c0321574908ca61c78fded7c76cac66397e95e33fe877"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "129ec0f95913b74ce0c3a1600c5f03a5125c4f13ef91f20e4b50a6d02acf3ffe"
 ---
 
-# Model Allowlist
+# AI Gateway Model Allowlist
 
 The model allowlist lets team owners restrict which models can be used through AI Gateway. A request returns a `403` when the requested model is not on the allowlist. The feature is opt-in and available on Pro and Enterprise plans.
 
@@ -29,11 +29,12 @@ The model allowlist lets team owners restrict which models can be used through A
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Team-wide provider allowlist on AI Gateway](https://vercel.com/changelog/team-wide-provider-allowlist-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fmodel-allowlist&source_site=vercel-docs&relationship=related)
-- [Models & Providers](https://vercel.com/docs/ai-gateway/models-and-providers?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fmodel-allowlist&source_site=vercel-docs&relationship=related) — Work with models and providers in AI Gateway: provider routing and fallbacks, filtering, timeouts, caching, service tier
-- [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fmodel-allowlist&source_site=vercel-docs&relationship=related) — Learn about pricing for AI Gateway.
-- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fmodel-allowlist&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including pricing and markup, SDK and API compatibility, model availabilit
-- [Model Filtering](https://vercel.com/docs/ai-gateway/models-and-providers/model-filtering?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fmodel-allowlist&source_site=vercel-docs&relationship=related) — Restrict AI Gateway routing to models that have specific capabilities using the has option.
-- [Routing Rules](https://vercel.com/docs/ai-gateway/models-and-providers/routing-rules?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fmodel-allowlist&source_site=vercel-docs&relationship=related) — Define team-wide rules that rewrite requests from one model to another or deny specific models in AI Gateway.
+- [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fmodel-allowlist&source_site=vercel-docs&relationship=related)
+- [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fmodel-allowlist&source_site=vercel-docs&relationship=related) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fmodel-allowlist&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
+- [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fmodel-allowlist&source_site=vercel-docs&relationship=related) — Understand AI Gateway token pricing, free and paid credits, BYOK costs, add-on charges, and payment fees. Manage credit
+- [AI Gateway Routing Rules](https://vercel.com/docs/ai-gateway/models-and-providers/routing-rules?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fmodel-allowlist&source_site=vercel-docs&relationship=related) — Define team-wide rules that rewrite requests from one model to another or deny specific models in AI Gateway.
+- [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fmodel-allowlist&source_site=vercel-docs&relationship=related) — Learn how to add a new AI model to your Vercel projects
 
 Full cross-link map for this page: [/docs/ai-gateway/security-and-compliance/model-allowlist.graph.md](/docs/ai-gateway/security-and-compliance/model-allowlist.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fmodel-allowlist&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

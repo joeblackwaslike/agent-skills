@@ -13,8 +13,8 @@ related:
 summary: Set the Python version for your Vercel project with pyproject.toml, .python-version, or Pipfile.lock.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/python/python-version.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "0e925536435e471705bfc1d58e0fd08b2e3abdcbf3a5932528630ffe5d27c1fe"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "1107c5f511d29f41a2a133a32fbb45d73d043799775a4a9199a8919d68e765d9"
 ---
 
 # Set the Python version for your Vercel project
@@ -37,7 +37,6 @@ the default Python version.
 - [Configuring the Runtime for Vercel Functions](https://vercel.com/docs/functions/configuring-functions/runtime?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fpython%2Fpython-version&source_site=vercel-docs&relationship=related) — Learn how to configure the runtime for Vercel Functions.
 - [General settings](https://vercel.com/docs/project-configuration/general-settings?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fpython%2Fpython-version&source_site=vercel-docs&relationship=related) — Configure basic settings for your Vercel project, including the project name, build and development settings, root direc
 - [Package Managers](https://vercel.com/docs/package-managers?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fpython%2Fpython-version&source_site=vercel-docs&relationship=related) — Discover the package managers supported by Vercel for dependency management. Learn how Vercel detects and uses npm, Yarn
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fpython%2Fpython-version&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/functions/runtimes/python/python-version.graph.md](/docs/functions/runtimes/python/python-version.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fpython%2Fpython-version&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

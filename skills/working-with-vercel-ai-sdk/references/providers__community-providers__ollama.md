@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/ollama.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "dd0a98d4485ac317b9f336a5720acec3caca1f89a53a03e170ff5209e6d8f990"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "2dc56309b9c2ed50faac0731a7bf10d020cc9f526ea997bb226c492fffd4eb5c"
 ---
 
 # Ollama Provider
@@ -186,6 +186,7 @@ console.log(
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
 - [Interfaze](/providers/community-providers/interfaze)
+- [Telnyx](/providers/community-providers/telnyx)
 - [Flowise](/providers/community-providers/flowise)
 
 

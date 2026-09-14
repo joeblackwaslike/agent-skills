@@ -17,8 +17,8 @@ related:
 summary: Require visitors to enter a password before they can view your deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/password-protection.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "5669cdb9bcd93a59c1c43db3b2b0723cc776a57b192d5788827d9cf47868b9f0"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "64b25fc37a95cc224974fcde7ff6c2564749e089ac68e872665762fcdb00fa1f"
 ---
 
 # Password Protection
@@ -33,6 +33,7 @@ Password Protection requires visitors to enter a pre-defined password before the
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Password Protection is now available per project on Pro](https://vercel.com/changelog/password-protection-now-costs-20-per-project-per-month-on-pro?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fpassword-protection&source_site=vercel-docs&relationship=related)
 - [How do I add password protection to my Vercel deployment?](https://vercel.com/kb/guide/how-do-i-add-password-protection-to-my-vercel-deployment?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fpassword-protection&source_site=vercel-docs&relationship=related) — Enable Password Protection on a Vercel deployment, configure automation and CORS bypasses, and verify the gate before yo
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fpassword-protection&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fpassword-protection&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
@@ -44,7 +45,6 @@ Password Protection requires visitors to enter a pre-defined password before the
 - [Restrict access to deployments with Passport](https://vercel.com/docs/passport?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fpassword-protection&source_site=vercel-docs&relationship=related) — Learn how to protect deployments with Passport, read visitor identity, and verify Passport tokens in server-side code.
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fpassword-protection&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 - [Tracking custom events](https://vercel.com/docs/analytics/custom-events?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fpassword-protection&source_site=vercel-docs&relationship=related) — Learn how to send custom analytics events from your application.
-- [Audit Logs](https://vercel.com/docs/audit-log?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fpassword-protection&source_site=vercel-docs&relationship=related) — Learn how to track and analyze your team members' activities.
 
 Full cross-link map for this page: [/docs/deployment-protection/methods-to-protect-deployments/password-protection.graph.md](/docs/deployment-protection/methods-to-protect-deployments/password-protection.graph.md?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fpassword-protection&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

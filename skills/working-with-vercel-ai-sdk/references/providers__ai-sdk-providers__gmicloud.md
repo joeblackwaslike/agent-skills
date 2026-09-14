@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/gmicloud.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "9c62bd73ddea29d003ed7d9bc5058e723e3536425cfb50ebf8e5350f52e50ff0"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "e5d67e3a2e04a7c443fd3f380dfad0a1e715bac72ae8a6872441457324b2bd04"
 ---
 
 # GMI Cloud Provider
@@ -91,7 +91,6 @@ GMI Cloud's edge reports a generic banner in `error.message` on rejections and n
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
-- [LMNT](/providers/ai-sdk-providers/lmnt)
 - [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)

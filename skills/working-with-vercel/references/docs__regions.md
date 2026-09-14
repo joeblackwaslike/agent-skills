@@ -14,8 +14,8 @@ related:
 summary: "View the list of regions supported by Vercel's CDN and learn about our global infrastructure."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/regions.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "858e2a4e60e00748a781057e22460fd885c7357a4c294f76a09070ec1cd27bb6"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "0e66665f5c86510b0705df7395b8e1cb0da695323b996ed223ea17ac2cf5e6cd"
 ---
 
 # Global network and regions
@@ -31,6 +31,7 @@ sha256: "858e2a4e60e00748a781057e22460fd885c7357a4c294f76a09070ec1cd27bb6"
 - [Custom OIDC Token Audiences](https://vercel.com/changelog/custom-oidc-token-audiences?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related)
 - [Expanded search for workflow runs in Vercel Observability](https://vercel.com/changelog/expanded-search-for-workflow-runs-in-vercel-observability?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related)
 - [Introducing the Montréal, Canada region (yul1) ](https://vercel.com/changelog/introducing-the-montreal-canada-vercel-region-yul1?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related)
+- [Vercel Sandbox is now available in all regions](https://vercel.com/changelog/vercel-sandbox-is-now-available-in-all-regions?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related)
 - [How can I use geolocation IP headers?](https://vercel.com/kb/guide/geo-ip-headers-geolocation-vercel-functions?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related) — Learn how to read geolocation headers on Vercel with Next.js or any frontend framework.
 - [How can I use AWS SDK Environment Variables on Vercel?](https://vercel.com/kb/guide/how-can-i-use-aws-sdk-environment-variables-on-vercel?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related) — How to use AWS SDK Environment Variables on Vercel
 - [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
@@ -39,7 +40,6 @@ sha256: "858e2a4e60e00748a781057e22460fd885c7357a4c294f76a09070ec1cd27bb6"
 - [Effortless high availability for dynamic frontends](https://vercel.com/blog/effortless-high-availability-for-dynamic-frontends?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related)
 - [Improved resiliency for Vercel Functions with inter-region failover support](https://vercel.com/changelog/improved-resiliency-for-vercel-functions-with-failover-support?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related)
 - [Regional execution for ultra-low latency rendering at the edge](https://vercel.com/blog/regional-execution-for-ultra-low-latency-rendering-at-the-edge?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related)
-- [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related)
 
 Full cross-link map for this page: [/docs/regions.graph.md](/docs/regions.graph.md?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

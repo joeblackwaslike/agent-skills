@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/openrouter.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "39fce4c1ac346d5d40738b0156a74ced4ed0bfad137e1a61166fe708b63603b9"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "d36371a5efa9198f32230e3b21d8a18a67e4c49de5148f7111e9d6084a2ac604"
 ---
 
 # OpenRouter
@@ -179,6 +179,7 @@ For more information about these features and advanced configuration options, vi
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
 - [Interfaze](/providers/community-providers/interfaze)
+- [Telnyx](/providers/community-providers/telnyx)
 - [Flowise](/providers/community-providers/flowise)
 
 

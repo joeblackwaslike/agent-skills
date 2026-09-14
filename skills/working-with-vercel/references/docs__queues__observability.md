@@ -9,11 +9,14 @@ prerequisites:
   - /docs/queues
 related:
   - /docs/queues/sdk
+  - /docs/queues/concepts
+  - /docs/observability/observability-plus
+  - /docs/alerts/configure-alerts
 summary: Monitor queue throughput, message age, retries, and consumer performance to optimize your queue-based workflows.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/observability.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "740191f666d453493abf5a9dc271fb66b0be1c8abd0475f606ac015813f45e08"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "df5b0a3f3c78338f754011fcdb41cdd858103daff4d71e9ce5ee33ce33e79d70"
 ---
 
 # Queues Observability
@@ -28,10 +31,10 @@ The **Queues** observability tab provides visibility into your queue operations,
 
 - [Vercel Queues now in public beta](https://vercel.com/changelog/vercel-queues-now-in-public-beta?from=related&source_path=%2Fdocs%2Fqueues%2Fobservability&source_site=vercel-docs&relationship=related)
 - [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fqueues%2Fobservability&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
-- [Queues concepts](https://vercel.com/docs/queues/concepts?from=related&source_path=%2Fdocs%2Fqueues%2Fobservability&source_site=vercel-docs&relationship=related) — Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
-- [Pricing and Limits](https://vercel.com/docs/queues/pricing?from=related&source_path=%2Fdocs%2Fqueues%2Fobservability&source_site=vercel-docs&relationship=related) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
 - [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fqueues%2Fobservability&source_site=vercel-docs&relationship=related) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
-- [API Reference](https://vercel.com/docs/queues/api?from=related&source_path=%2Fdocs%2Fqueues%2Fobservability&source_site=vercel-docs&relationship=related) — HTTP API reference for Vercel Queues. Publish, consume, acknowledge, and manage messages.
+- [Pricing and Limits](https://vercel.com/docs/queues/pricing?from=related&source_path=%2Fdocs%2Fqueues%2Fobservability&source_site=vercel-docs&relationship=related) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
+- [Build Queues](https://vercel.com/docs/builds/build-queues?from=related&source_path=%2Fdocs%2Fqueues%2Fobservability&source_site=vercel-docs&relationship=related) — Understand how concurrency and same branch build queues manage multiple simultaneous deployments.
+- [Quickstart](https://vercel.com/docs/queues/quickstart?from=related&source_path=%2Fdocs%2Fqueues%2Fobservability&source_site=vercel-docs&relationship=related) — Set up Vercel Queues with the SDK.
 
 Full cross-link map for this page: [/docs/queues/observability.graph.md](/docs/queues/observability.graph.md?from=related&source_path=%2Fdocs%2Fqueues%2Fobservability&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -105,6 +108,14 @@ The queue redelivers a message when a consumer receives it but never deletes it.
 A Retry Depth that climbs over time points to a poison message: one payload your consumer cannot process, taking one more receive on every cycle. Fix the handler, or return `{ acknowledge: true }` from the [retry callback](/docs/queues/sdk#custom-retry-behavior) so the message stops recirculating.
 
 Both metrics are also available under **Queue Actions** on the Observability **Query** tab, where you can group them by queue name, consumer group, or event type.
+
+## Alerting on retries
+
+A rising Retry Depth is the earliest sign that a consumer is failing every delivery. Because [messages stay pinned to the deployment that published them](/docs/queues/concepts#stopping-deliveries-to-a-deployment), a rolled-back deployment can keep failing and retrying for the full message retention period without showing up in production traffic.
+
+For projects with [Observability Plus](/docs/observability/observability-plus) enabled, teams can create a [custom alert rule](/docs/alerts/configure-alerts#configure-custom-rules) on Retry Depth. The **Queue Retry Depth** preset in the alert wizard sets this up: it triggers when the maximum Retry Depth in the project exceeds 5 within a 5-minute window, which a message reaches within minutes under the default retry delay when its consumer fails every time.
+
+When the alert fires, open the queue's **Consumers** table to find the consumer group, then check [function duration grouped by deployment](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability%2Fquery%3Fmetric%3DserverlessFunctionInvocation.functionDurationGbhr%26aggregation%3Dsum%26by%3DdeploymentId\&title=Function+duration+by+deployment) on the **Query** tab to see which deployment the retries are running on and what they cost. See [Cost of failed deliveries](/docs/queues/concepts#cost-of-failed-deliveries) for what to do next.
 
 
 ---

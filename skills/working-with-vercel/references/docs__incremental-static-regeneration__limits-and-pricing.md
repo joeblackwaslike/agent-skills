@@ -16,8 +16,8 @@ related:
 summary: Learn about ISR costs, usage metrics, and strategies to optimize your ISR reads and writes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/incremental-static-regeneration/limits-and-pricing.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "8be48f5c8926ddb3442ce19d47cb345b4f2735fe7a12c4d4004bfc3c4f4517ab"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "6c70b75729ee10803c7c071ee097da784f30abe8ce8654c26fd9541aa2f39e3e"
 ---
 
 # ISR Usage and Pricing
@@ -31,6 +31,7 @@ This page covers ISR costs, usage metrics, and optimization strategies. To decid
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to reduce ISR Writes by shrinking cached output](https://vercel.com/kb/guide/how-to-reduce-isr-writes?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Reduce ISR Write units by finding large changed routes and removing unnecessary data from their cached output.
+- [How to revalidate Sitecore pages on publish with Next.js](https://vercel.com/kb/guide/update-sitecore-content-manually?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn how to use a Sitecore Experience Edge webhook and Next.js revalidatePath to refresh cached Sitecore Content SDK pa
 - [Preventing the stampede: Request collapsing in the Vercel CDN ](https://vercel.com/blog/cdn-request-collapsing?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Flimits-and-pricing&source_site=vercel-docs&relationship=related)
 - [ISR on Vercel is now faster and more cost-efficient](https://vercel.com/blog/isr-on-vercel-is-now-faster-and-more-cost-efficient?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Flimits-and-pricing&source_site=vercel-docs&relationship=related)
 - [ISR: A flexible way to cache dynamic content](https://vercel.com/blog/isr-a-flexible-way-to-cache-dynamic-content?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Flimits-and-pricing&source_site=vercel-docs&relationship=related)

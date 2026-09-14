@@ -16,8 +16,8 @@ related:
 summary: Vercel Integrations allow you to subscribe to certain trigger-based events through webhooks. Learn about the supported webhook events and how to use...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/webhooks/webhooks-api.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "73f15ac7f5418c8f2836d5722919541cb5e065b939f7508dbde4f3eed6c7d301"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "b7914d04c530320c0cac553d6cd09572adffdc242af6cf57d55fa50db38609f4"
 ---
 
 # Webhooks API Reference
@@ -1230,6 +1230,8 @@ The recommended method to check is to use the [`x-vercel-signature`](/docs/heade
 
 For example, you can validate a webhook request as follows:
 
+**pages/api/webhook-validator-example.ts**
+
 ```ts filename="pages/api/webhook-validator-example.ts" framework="nextjs"
 import type { NextApiRequest, NextApiResponse } from 'next';
 import crypto from 'crypto';
@@ -1275,6 +1277,8 @@ export const config = {
   },
 };
 ```
+
+**pages/api/webhook-validator-example.js**
 
 ```js filename="pages/api/webhook-validator-example.js" framework="nextjs"
 import type { NextApiRequest, NextApiResponse } from 'next';
@@ -1322,6 +1326,8 @@ export const config = {
 };
 ```
 
+**api/webhook-validator-example.ts**
+
 ```ts filename="api/webhook-validator-example.ts" framework="other"
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import crypto from 'crypto';
@@ -1367,6 +1373,8 @@ export const config = {
   },
 };
 ```
+
+**api/webhook-validator-example.js**
 
 ```js filename="api/webhook-validator-example.js" framework="other"
 import type { VercelRequest, VercelResponse } from '@vercel/node';
@@ -1414,6 +1422,8 @@ export const config = {
 };
 ```
 
+**app/api/webhook-validator-example/route.ts**
+
 ```ts filename="app/api/webhook-validator-example/route.ts" framework="nextjs-app"
 import crypto from 'crypto';
 
@@ -1451,6 +1461,8 @@ function sha1(data: Buffer, secret: string): string {
   return crypto.createHmac('sha1', secret).update(data).digest('hex');
 }
 ```
+
+**app/api/webhook-validator-example/route.js**
 
 ```js filename="app/api/webhook-validator-example/route.js" framework="nextjs-app"
 import crypto from 'crypto';

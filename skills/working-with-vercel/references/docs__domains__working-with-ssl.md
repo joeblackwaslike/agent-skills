@@ -10,14 +10,14 @@ prerequisites:
 related:
   - /docs/domains/custom-SSL-certificate
   - /docs/domains/troubleshooting
+  - /docs/notifications
   - /docs/domains
   - /docs/domains/working-with-domains
-  - /docs/domains/working-with-dns
 summary: Learn how Vercel uses SSL certification to keep your site secure.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-ssl.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "1b08f59dc87d82edab9d9638d6d226eead4cf91ad58317c825935384da2ac8f2"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "c7cb8e7df7972713e42ed9f4197673fb96e0426a4a64da450c2e7f75454336bb"
 ---
 
 # Working with SSL Certificates
@@ -33,11 +33,12 @@ An SSL certificate enables encrypted communication between user's browser and yo
 - [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-ssl&source_site=vercel-docs&relationship=related) — Point your apex domain to Vercel with an A record \\(76.76.21.21 or your domain card's value\\), pair it with a www CNAME,
 - [Build a multi-tenant app with Next.js and Vercel](https://vercel.com/kb/guide/nextjs-multi-tenant-application?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-ssl&source_site=vercel-docs&relationship=related) — Create a Next.js application with multi-tenancy and custom domain support on Vercel.
 - [Why is my domain not automatically generating an SSL/TLS certificate?](https://vercel.com/kb/guide/domain-not-generating-ssl-certificate?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-ssl&source_site=vercel-docs&relationship=related) — Information on why a domain may not be automatically generating an SSL/TLS certificate.
+- [Automatic SSL with Vercel and Let's Encrypt](https://vercel.com/blog/automatic-ssl-with-vercel-lets-encrypt?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-ssl&source_site=vercel-docs&relationship=related)
 - [Uploading Custom SSL Certificates](https://vercel.com/docs/domains/custom-ssl-certificate?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-ssl&source_site=vercel-docs&relationship=related) — By default, Vercel provides all domains with a custom SSL certificates. However, Enterprise teams can upload their own c
 - [Pre-Generate SSL Certificates](https://vercel.com/docs/domains/pre-generating-ssl-certs?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-ssl&source_site=vercel-docs&relationship=related) — test
 - [Encryption and TLS](https://vercel.com/docs/cdn-security/encryption?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-ssl&source_site=vercel-docs&relationship=related) — Learn how Vercel encrypts data in transit and at rest.
-- [vercel certs](https://vercel.com/docs/cli/certs?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-ssl&source_site=vercel-docs&relationship=related) — Learn how to manage certificates for your domains using the vercel certs CLI command.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-ssl&source_site=vercel-docs&relationship=related) — Add and configure a custom domain for your Vercel project using the CLI.
+- [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-ssl&source_site=vercel-docs&relationship=related) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 
 Full cross-link map for this page: [/docs/domains/working-with-ssl.graph.md](/docs/domains/working-with-ssl.graph.md?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-ssl&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -55,11 +56,24 @@ Issuing a certificate happens in the following way:
 4. LetsEncrypt then check to see if the file is there and if they can see the file, they send us the certificate
 5. Vercel then adds the certificate to our infrastructure and it then starts working on HTTPS
 
-For information about when SSL certificate renewals happen, see [When is the SSL Certificate on my Vercel Domain renewed?](/kb/guide/renewal-of-ssl-certificates-with-a-vercel-domain)
-
 The [/.well-known](# "The /.well-known directory") path is reserved and cannot be redirected or rewritten. Only
 Enterprise teams can configure custom SSL. [Contact sales](/contact/sales) to
 learn more.
+
+## Automatic certificate renewal
+
+Vercel automatically attempts to renew the SSL certificates it issues for your custom domains 14 to 30 days before they expire. The exact renewal day varies, so a certificate that has not renewed at the 30-day mark does not necessarily indicate a problem.
+
+Keep the domain correctly configured so Vercel can complete certificate validation during renewal. From the project's **Settings**, open **Domains** and check the domain's configuration status. Certificate renewal is separate from renewing the domain's registration.
+
+Vercel cannot automatically renew certificates that you upload yourself. See [custom SSL certificates](/docs/domains/custom-SSL-certificate) for their renewal behavior.
+
+### If certificate renewal fails
+
+1. Open the project's **Domains** settings and resolve any configuration errors using the DNS values shown for the domain.
+2. Check [common SSL certificate issues](/docs/domains/troubleshooting#common-ssl-certificate-issues), including CAA records that do not authorize Let's Encrypt and DNS or proxy configurations that prevent certificate validation.
+3. Review the **Configuration - Certificate renewal failed** notification. Vercel notifies team owners of failed renewals; you can manage delivery in [notification settings](/docs/notifications#managing-notifications).
+4. If the domain is correctly configured and renewal still fails, [contact Vercel support](/help) with the domain name and the error you see.
 
 ## Troubleshooting
 

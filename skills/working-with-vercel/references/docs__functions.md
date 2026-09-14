@@ -16,8 +16,8 @@ related:
 summary: Build API routes, webhooks, and agent request handlers with Vercel Functions, then test and debug them with Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "c11003f8398187f0fb0686ef767e0c0be853b7f17b33db705167f17ff41ef053"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "962d071b742d969d93a0ac57588a9f83c055211c064087ffe9b861527d9d5199"
 ---
 
 # Vercel Functions
@@ -111,6 +111,8 @@ Vercel Functions run request-driven API routes, webhooks, streamed model respons
 
 Copy the code below to create your first function:
 
+**api/hello.ts**
+
 ```ts filename="api/hello.ts" framework=all
 export default {
   fetch(request: Request) {
@@ -118,6 +120,8 @@ export default {
   },
 };
 ```
+
+**api/hello.js**
 
 ```js filename="api/hello.js" framework=all
 export default {
@@ -129,11 +133,15 @@ export default {
 
 While using `fetch` is the recommended way to create a Vercel Function, you can still use HTTP methods like `GET` and `POST`.
 
+**app/api/hello/route.ts**
+
 ```ts v0="build" filename="app/api/hello/route.ts" framework=nextjs-app
 export function GET(request: Request) {
   return new Response('Hello from Vercel!');
 }
 ```
+
+**app/api/hello/route.js**
 
 ```js v0="build" filename="app/api/hello/route.js" framework=nextjs-app
 export function GET(request) {
@@ -141,11 +149,15 @@ export function GET(request) {
 }
 ```
 
+**pages/api/hello.ts**
+
 ```ts v0="build" filename="pages/api/hello.ts" framework=nextjs
 export function GET(request: Request) {
   return new Response('Hello from Vercel!');
 }
 ```
+
+**pages/api/hello.js**
 
 ```js v0="build" filename="pages/api/hello.js" framework=nextjs
 export function GET(request) {
@@ -153,11 +165,15 @@ export function GET(request) {
 }
 ```
 
+**api/hello.ts**
+
 ```ts filename="api/hello.ts" framework=other
 export function GET(request: Request) {
   return new Response('Hello from Vercel!');
 }
 ```
+
+**api/hello.js**
 
 ```js filename="api/hello.js" framework=other
 export function GET(request) {

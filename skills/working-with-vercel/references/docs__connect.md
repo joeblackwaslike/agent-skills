@@ -16,8 +16,8 @@ related:
 summary: Give your agents and services secure, short-lived access to third-party APIs like Slack, GitHub, Microsoft, and Snowflake, without storing provider...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "639e39ef2ba00b183f726dcddec86c1ee17de02864206e22bf757a6b1a45ac74"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "536d761c9e5b22f6f5478548c2946801bc8fd0412186ccf7e3d22bd1ddfd8fe7"
 ---
 
 # Vercel Connect
@@ -39,9 +39,9 @@ With [Vercel Connect](/connect), your deployed apps can talk to other services. 
 - [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect&source_site=vercel-docs&relationship=related) — Authenticate Slack, Discord, GitHub, Linear, Notion, and Telegram adapters with Vercel Connect — short-lived runtime tok
 - [Vercel Connect](https://v0.app/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect&source_site=vercel-docs&relationship=related) — Connect your v0 apps and agents to third-party services – no API keys required.
 - [Connections](https://eve.dev/docs/connections?from=related&source_path=%2Fdocs%2Fconnect&source_site=vercel-docs&relationship=related) — Expose external MCP and OpenAPI servers to the model, with connection tokens the model never sees.
+- [Control who can manage connectors in Vercel Connect](https://vercel.com/changelog/control-who-can-manage-connectors-in-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect&source_site=vercel-docs&relationship=related)
 - [Vercel Connect adds observability support](https://vercel.com/changelog/vercel-connect-adds-observability-support?from=related&source_path=%2Fdocs%2Fconnect&source_site=vercel-docs&relationship=related)
 - [Vercel Connect now supports Custom Environments](https://vercel.com/changelog/vercel-connect-now-supports-custom-environments?from=related&source_path=%2Fdocs%2Fconnect&source_site=vercel-docs&relationship=related)
-- [Vercel Connect now supports Linq](https://vercel.com/changelog/vercel-connect-now-supports-linq?from=related&source_path=%2Fdocs%2Fconnect&source_site=vercel-docs&relationship=related)
 - [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related&source_path=%2Fdocs%2Fconnect&source_site=vercel-docs&relationship=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
 - [Build a daily digest bot with Chat SDK and Workflow SDK](https://vercel.com/kb/guide/daily-digest-bot-with-chat-sdk-and-workflow-sdk?from=related&source_path=%2Fdocs%2Fconnect&source_site=vercel-docs&relationship=related) — Build a daily digest bot that posts a daily digest of GitHub stats to Slack. Learn how to use Vercel Connect to set up S
 

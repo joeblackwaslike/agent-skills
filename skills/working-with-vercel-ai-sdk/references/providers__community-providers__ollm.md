@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/ollm.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "0fcae7ff59d114b3fdd5978c9c16497cf7bb79d30144456f156facf0a3dbde99"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "0e0bfde5b3a5884985c9b33e3a16515e62bfeaa526afc44521cbeed1f63fd5d4"
 ---
 
 # OLLM
@@ -200,6 +200,7 @@ For more information about these features and advanced configuration options, vi
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
 - [Interfaze](/providers/community-providers/interfaze)
+- [Telnyx](/providers/community-providers/telnyx)
 - [Flowise](/providers/community-providers/flowise)
 
 

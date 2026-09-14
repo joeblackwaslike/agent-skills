@@ -12,8 +12,8 @@ related:
 summary: Information about verified bots and their handling in BotID
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/botid/verified-bots.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "b9152020471dbab243d06760682fa41a279a034a17470bb2306c6cb6c711bad7"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "0fd2d57fd5d6c69e888e48ce2eae55f88770d3bb2e3cf8d0320376cb352ea7e4"
 ---
 
 # Handling Verified Bots
@@ -37,7 +37,6 @@ BotID allows you to identify and handle [verified bots](/docs/bot-management#ver
 - [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related&source_path=%2Fdocs%2Fbotid%2Fverified-bots&source_site=vercel-docs&relationship=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
 - [View & query bot verification data in Vercel Observability](https://vercel.com/changelog/view-and-query-bot-verification-data-in-vercel-observability?from=related&source_path=%2Fdocs%2Fbotid%2Fverified-bots&source_site=vercel-docs&relationship=related)
 - [Vercel BotID now  available for all frameworks](https://vercel.com/changelog/botid-now-available-for-all-frameworks?from=related&source_path=%2Fdocs%2Fbotid%2Fverified-bots&source_site=vercel-docs&relationship=related)
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fbotid%2Fverified-bots&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/botid/verified-bots.graph.md](/docs/botid/verified-bots.graph.md?from=related&source_path=%2Fdocs%2Fbotid%2Fverified-bots&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

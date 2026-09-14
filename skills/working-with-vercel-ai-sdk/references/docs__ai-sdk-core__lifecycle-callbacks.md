@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/lifecycle-callbacks.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "670383a3db60c4de2c3802c1e5e9c784eb01d0af7efcb62ff081432c1347c128"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "b25f0a270f10a7163673a5720debef047133d164a8f6b55507f071ed3b283866"
 ---
 
 # Lifecycle Callbacks
@@ -1178,6 +1178,7 @@ For `embed`, `value` is a single string. For `embedMany`, `value` is an array of
 - [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
 - [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
+- [Batch](/docs/ai-sdk-core/batch)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)

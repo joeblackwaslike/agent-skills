@@ -16,8 +16,8 @@ related:
 summary: Vercel automatically configures the build settings for many front-end frameworks, but you can also customize the build according to your requirements.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/configure-a-build.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "e49e3126b07a68f84878edc1de7457439a12030f9788ed69211ab33ce90fc6e1"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "f22bd9fe5bbe050bcac5e730ff40fea7ac712d58111da677142c54ce2748e6f2"
 ---
 
 # Configuring a Build
@@ -101,6 +101,8 @@ Inside the Framework Preset settings, use the drop-down menu to select the frame
   - [Deploy](https://vercel.com/new/clone?demo-title=eve+Chat+Template&demo-description=A+persisted+Next.js+chat+template+for+eve%2C+built+with+shadcn%2Fui%2C+Tailwind+CSS%2C+Streamdown%2C+Better+Auth%2C+Drizzle%2C+and+Neon.&demo-url=https%3A%2F%2Feve-chat-template.labs.vercel.dev%2F&demo-image=%2F%2Fimages.ctfassets.net%2Fe5382hct74si%2FYXYTquqpBmvVFbASdIvrC%2F04d5a87ebe706ed31adc65193f3b4cdd%2Feve-chat__1_.png&project-name=eve+Chat+Template&repository-name=eve-chat-template&repository-url=https%3A%2F%2Fgithub.com%2Fvercel-labs%2Feve-chat-template&from=templates&skippable-integrations=1) | [View Demo](https://eve-chat-template.labs.vercel.dev/)
 - **Express**: Fast, unopinionated, minimalist web framework for Node.js
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/express) | [View Demo](https://express-vercel-example-demo.vercel.app/)
+- **Factory (Eve)**: A software factory built with Eve.
+  - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/factory-eve)
 - **FastAPI**: FastAPI framework, high performance, easy to learn, fast to code, ready for production
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/fastapi) | [View Demo](https://vercel-fastapi-gamma-smoky.vercel.app/)
 - **FastHTML**: The fastest way to create an HTML app

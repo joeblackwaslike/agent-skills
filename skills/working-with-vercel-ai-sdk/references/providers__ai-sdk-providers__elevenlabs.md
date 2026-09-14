@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/elevenlabs.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "9222a62964a525a5618fc8f955b70cc2830576165d5f491ab6cd9a9cfa2fb8fd"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "d177c7052417b04f64c1c175e6608e19d174b84ca40f679b62bc75f8d2ed6657"
 ---
 
 # ElevenLabs Provider
@@ -337,7 +337,6 @@ streaming transcription.
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
-- [LMNT](/providers/ai-sdk-providers/lmnt)
 - [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)

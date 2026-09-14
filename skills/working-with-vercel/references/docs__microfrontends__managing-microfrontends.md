@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your microfrontends on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/managing-microfrontends.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "061cd7313f9b79b74c6ac6e97227f1d0dc82936f8eb3aaecbe47342ba783499a"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "c8b925a291fb83e0af4589fc30519e8cd0cab7932993036ada583cea25c0d471"
 ---
 
 # Managing microfrontends
@@ -39,7 +39,6 @@ With a project's **Microfrontends** settings of the Vercel dashboard, you can:
 - [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends&source_site=vercel-docs&relationship=related) — Learn how to get started with microfrontends on Vercel.
 - [Testing & troubleshooting microfrontends](https://vercel.com/docs/microfrontends/troubleshooting?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends&source_site=vercel-docs&relationship=related) — Learn about testing, common issues, and how to troubleshoot microfrontends on Vercel.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/microfrontends/managing-microfrontends.graph.md](/docs/microfrontends/managing-microfrontends.graph.md?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -201,6 +200,8 @@ Navigations between different top level microfrontends will introduce a hard nav
 
 To get started, add the `PrefetchCrossZoneLinks` element to your `layout.tsx` or `layout.jsx` file in all your microfrontend applications:
 
+**app/layout.tsx**
+
 ```tsx filename="app/layout.tsx" framework=nextjs-app
 import {
   PrefetchCrossZoneLinks,
@@ -224,6 +225,8 @@ export default function RootLayout({
   );
 }
 ```
+
+**app/layout.jsx**
 
 ```jsx filename="app/layout.jsx" framework=nextjs-app
 import {
@@ -249,6 +252,8 @@ export default function RootLayout({ children }) {
 
 To get started, add the `PrefetchCrossZoneLinks` element to your `_app.tsx` or `_app.jsx` file:
 
+**pages/\_app.tsx**
+
 ```ts filename="pages/_app.tsx" framework=nextjs
 import {
   PrefetchCrossZoneLinks,
@@ -267,6 +272,8 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 ```
+
+**pages/\_app.jsx**
 
 ```js filename="pages/_app.jsx" framework=nextjs
 import {

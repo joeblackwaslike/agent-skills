@@ -16,8 +16,8 @@ related:
 summary: "Manage AI Gateway resources from the Vercel CLI: API keys, budgets, routing rules, models, leaderboards, and coding agent setup."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/ai-gateway.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "2e473a1011beba38067e44374576c64d1c1f02dcb9ff3f4b9877290e5ddcb156"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "c2e9572d7dcfd90e8c674069e1c3bd83db23917c420e642d344ee69139a42e55"
 ---
 
 # vercel ai-gateway
@@ -34,21 +34,15 @@ The `vercel ai-gateway` command manages [AI Gateway](/docs/ai-gateway) resources
 - [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fcli%2Fai-gateway&source_site=vercel-docs&relationship=related)
 - [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway?from=related&source_path=%2Fdocs%2Fcli%2Fai-gateway&source_site=vercel-docs&relationship=related) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
 - [How I use OpenCode with Vercel AI Gateway to build features fast](https://vercel.com/kb/guide/how-i-use-opencode-with-vercel-ai-gateway-to-build-features-fast?from=related&source_path=%2Fdocs%2Fcli%2Fai-gateway&source_site=vercel-docs&relationship=related) — How to route different AI models to different coding tasks automatically, cutting token costs by ~70% without losing qua
-- [Manage your Sanity project from Slack with eve](https://vercel.com/kb/guide/eve-sanity-copilot?from=related&source_path=%2Fdocs%2Fcli%2Fai-gateway&source_site=vercel-docs&relationship=related) — A Slack-based Sanity copilot built on eve. It queries and edits content with GROQ, shapes schemas, manages releases, and
-- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related&source_path=%2Fdocs%2Fcli%2Fai-gateway&source_site=vercel-docs&relationship=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
-- [Conductor](https://vercel.com/docs/ai-gateway/coding-agents/conductor?from=related&source_path=%2Fdocs%2Fcli%2Fai-gateway&source_site=vercel-docs&relationship=related) — Use Conductor with the AI Gateway.
-- [Grok Build](https://vercel.com/docs/ai-gateway/coding-agents/grok-build?from=related&source_path=%2Fdocs%2Fcli%2Fai-gateway&source_site=vercel-docs&relationship=related) — Use Grok Build with the AI Gateway.
-- [Superset](https://vercel.com/docs/ai-gateway/coding-agents/superset?from=related&source_path=%2Fdocs%2Fcli%2Fai-gateway&source_site=vercel-docs&relationship=related) — Use Superset with the AI Gateway.
-- [Xcode](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fcli%2Fai-gateway&source_site=vercel-docs&relationship=related) — Use Xcode's coding assistant with the AI Gateway.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fcli%2Fai-gateway&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
+- [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis?from=related&source_path=%2Fdocs%2Fcli%2Fai-gateway&source_site=vercel-docs&relationship=related) — Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fcli%2Fai-gateway&source_site=vercel-docs&relationship=related) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 
 Full cross-link map for this page: [/docs/cli/ai-gateway.graph.md](/docs/cli/ai-gateway.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fai-gateway&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-> **💡 Note:** Connecting a coding agent? [`vercel ai-gateway coding-agents setup`](#setup)
-> is the recommended way to do it. For per-agent behavior, model pickers, and
-> manual configuration, see the [coding agents
-> guide](/docs/ai-gateway/coding-agents).
+> **💡 Note:** Connecting a coding agent? [`vercel ai-gateway setup`](#setup) is the
+> recommended way to do it. For per-agent behavior, model pickers, and manual
+> configuration, see the [coding agents guide](/docs/ai-gateway/coding-agents).
 
 ## Usage
 
@@ -59,7 +53,7 @@ vercel ai-gateway [subcommand]
 *Using the \`vercel ai-gateway\` command to manage AI Gateway resources for the
 current team.*
 
-Most subcommands accept `--format json` (`-F json`) to print a machine-readable payload instead of a table. The `rules`, `models`, and `budgets set`, `list`, and `remove` subcommands also accept `--json`, which does the same thing. [`coding-agents setup`](#setup) uses [`--non-interactive`](#non-interactive-output) instead.
+Most subcommands accept `--format json` (`-F json`) to print a machine-readable payload instead of a table. The `rules`, `models`, and `budgets set`, `list`, `inspect`, and `remove` subcommands also accept `--json`, which does the same thing. [`setup`](#setup) uses [`--non-interactive`](#non-interactive-output) instead.
 
 ## Commands
 
@@ -82,7 +76,7 @@ vercel ai-gateway api-keys create
 *Create an API key interactively, using the default settings.*
 
 ```bash filename="terminal"
-vercel ai-gateway api-keys create --name my-key --budget 500 --refresh-period monthly
+vercel ai-gateway api-keys create --name my-key --limit 500 --refresh-period monthly
 ```
 
 *Create an API key with a human-readable name and a monthly $500 quota.*
@@ -92,11 +86,14 @@ vercel ai-gateway api-keys create --name my-key --budget 500 --refresh-period mo
 | Option | Type | Description |
 | --- | --- | --- |
 | `--name <NAME>` | String | Human-readable name for the API key |
-| `--budget <AMOUNT>` | Number | Quota budget amount in dollars (minimum 1) |
+| `--limit <AMOUNT>` | Number | Quota budget limit in dollars (minimum 1) |
 | `--refresh-period <PERIOD>` | String | Quota refresh cadence: `daily`, `weekly`, `monthly`, or `none` (default `none`) |
 | `--alert-thresholds <LIST>` | String | Comma-separated spend percentages to alert at, a subset of `50`, `75`, and `100`, for example `75,100` |
 | `--expiration <PERIOD>` | String | Expiry for the key: `7d`, `30d`, `60d`, `90d`, `1y`, or `none` (default `none`) |
 | `--zdr-exempt` | Boolean | Exempt the key from the team's [zero data retention](/docs/ai-gateway/security-and-compliance/zdr) (ZDR) only model restriction. Team owners only |
+
+> **💡 Note:** `--limit` is available in Vercel CLI v59.13.0 and later. On older versions,
+> use `--budget`, which is deprecated but names the same quota limit.
 
 > **⚠️ Warning:** A ZDR-exempt key can reach models that don't offer zero data retention, which
 > is why only team owners can create one. Pair it with `--expiration` so the
@@ -161,7 +158,7 @@ vercel ai-gateway budgets [subcommand]
 
 #### set
 
-Create or update the budget for a scope. Each scope except `team` takes an identifier after the scope name.
+Create or update the budget for a scope, or the scope's default budget with `--default`. Each scope except `team` takes an identifier after the scope name; a default takes none.
 
 | Scope | Identifier |
 | --- | --- |
@@ -194,31 +191,75 @@ vercel ai-gateway budgets set user teammate@example.com --limit 100 --refresh-pe
 
 *Cap one team member at $100 per month across every key attributed to them.*
 
+```bash filename="terminal"
+vercel ai-gateway budgets set user --default --limit 50 --refresh-period monthly
+```
+
+*Give every team member without their own budget a $50 monthly limit.*
+
 ##### Options
 
 | Option | Type | Description |
 | --- | --- | --- |
 | `--limit <AMOUNT>` | Number | Budget limit in dollars (minimum 1) |
 | `--refresh-period <PERIOD>` | String | Budget refresh cadence: `daily`, `weekly`, `monthly`, or `none` (default `monthly`) |
+| `--default` | Boolean | Target the scope's default budget, applied to resources of that scope without their own budget |
 | `--format <FORMAT>` | String | Set to `json` for the machine-readable payload |
 
 #### list
 
-List the budgets for the current team, with each budget's scope, limit, current spend, and refresh cadence. User-scoped budgets are listed by member handle. Alias: `ls`.
+List the budgets for the current team, with each budget's scope, limit, current spend, and refresh cadence. User-scoped budgets are listed by member handle. Alias: `ls`. Filter to one scope with `--scope-type`, or list the team's default budget policy with `--defaults`.
 
 ```bash filename="terminal"
 vercel ai-gateway budgets ls
 ```
 
+```bash filename="terminal"
+vercel ai-gateway budgets ls --scope-type user
+```
+
+*List only the user-scoped budgets.*
+
+```bash filename="terminal"
+vercel ai-gateway budgets ls --defaults
+```
+
+*List the team's budget defaults.*
+
 ##### Options
 
 | Option | Type | Description |
 | --- | --- | --- |
+| `--scope-type <SCOPE>` | String | Only list budgets for one scope: `team`, `project`, `user`, or `api-key` |
+| `--defaults` | Boolean | List the team's default budgets instead of individual budgets |
+| `--format <FORMAT>` | String | Set to `json` for the machine-readable payload |
+
+#### inspect
+
+Show one budget for a scope, or a scope's default budget with `--default`, using the same scope names and identifiers as [`set`](#set).
+
+```bash filename="terminal"
+vercel ai-gateway budgets inspect user teammate@example.com
+```
+
+*Show one team member's budget and current spend.*
+
+```bash filename="terminal"
+vercel ai-gateway budgets inspect project my-project --format json
+```
+
+*Print a project budget's machine-readable payload.*
+
+##### Options
+
+| Option | Type | Description |
+| --- | --- | --- |
+| `--default` | Boolean | Show the scope's default budget |
 | `--format <FORMAT>` | String | Set to `json` for the machine-readable payload |
 
 #### remove
 
-Remove the budget for a scope, using the same scope names and identifiers as [`set`](#set). Aliases: `rm`, `delete`.
+Remove the budget for a scope, using the same scope names and identifiers as [`set`](#set), or a scope's default budget with `--default`. Aliases: `rm`, `delete`.
 
 Removing a budget lifts that scope's own cap. A project, key, or member still covered by a [default](#defaults) falls back to that default rather than becoming unlimited.
 
@@ -238,53 +279,59 @@ vercel ai-gateway budgets remove api-key my-key
 vercel ai-gateway budgets remove user teammate@example.com
 ```
 
+```bash filename="terminal"
+vercel ai-gateway budgets remove user --default
+```
+
+*Remove the per-member default budget.*
+
 ##### Options
 
 | Option | Type | Description |
 | --- | --- | --- |
 | `--yes`, `-y` | Boolean | Skip the confirmation prompt |
+| `--default` | Boolean | Remove the scope's default budget |
 | `--format <FORMAT>` | String | Set to `json` for the machine-readable payload |
 
 #### defaults
 
 Manage budget defaults. A default applies to every resource of that scope that has no budget of its own, so new projects, new API keys, and new team members inherit a spend limit instead of starting unlimited.
 
-```bash filename="terminal"
-vercel ai-gateway budgets defaults [subcommand]
-```
-
-| Subcommand | Description |
-| --- | --- |
-| `list` (alias `ls`) | List the team's budget defaults |
-| `set <SCOPE>` | Create or update the default for `project`, `api-key`, or `user` |
-| `remove <SCOPE>` (aliases `rm`, `delete`) | Remove the default for `project`, `api-key`, or `user` |
+Set or remove a default with the `--default` flag on [`set`](#set) and [`remove`](#remove), show one with [`inspect`](#inspect), and list the policy with [`list --defaults`](#list):
 
 ```bash filename="terminal"
-vercel ai-gateway budgets defaults set project --limit 200 --refresh-period monthly
+vercel ai-gateway budgets set project --default --limit 200 --refresh-period monthly
 ```
 
 *Give every project without its own budget a $200 monthly limit.*
 
 ```bash filename="terminal"
-vercel ai-gateway budgets defaults set api-key --limit 50
+vercel ai-gateway budgets set api-key --default --limit 50
 ```
 
 *Give every API key without its own quota a $50 limit.*
 
 ```bash filename="terminal"
-vercel ai-gateway budgets defaults set user --limit 50 --refresh-period monthly
+vercel ai-gateway budgets set user --default --limit 50 --refresh-period monthly
 ```
 
 *Give every team member without their own budget a $50 monthly limit.*
 
-##### Options
+```bash filename="terminal"
+vercel ai-gateway budgets ls --defaults
+```
 
-| Option | Type | Description |
-| --- | --- | --- |
-| `--limit <AMOUNT>` | Number | Default budget limit in dollars (minimum 1). Applies to `set` |
-| `--refresh-period <PERIOD>` | String | Refresh cadence: `daily`, `weekly`, `monthly`, or `none` (default `monthly`). Applies to `set` |
-| `--yes`, `-y` | Boolean | Skip the confirmation prompt. Applies to `remove` |
-| `--format <FORMAT>` | String | Set to `json` for the machine-readable payload |
+*List the team's budget defaults.*
+
+```bash filename="terminal"
+vercel ai-gateway budgets remove user --default
+```
+
+*Remove the per-member default budget.*
+
+> **💡 Note:** The `--default` flag is available in Vercel CLI v59.13.0 and later. The
+> nested `budgets defaults` command group it replaces still works but prints a
+> deprecation warning; use the flag forms instead.
 
 ### rules
 
@@ -348,22 +395,31 @@ Remove a rule by its ID. Aliases: `rm`, `delete`. Pass `--yes` to skip the confi
 vercel ai-gateway rules remove rule_123 --yes
 ```
 
-### coding-agents
+### setup
 
 Connect local coding agents to [AI Gateway](/docs/ai-gateway).
 
+Run the setup command with `npx`:
+
 ```bash filename="terminal"
-vercel ai-gateway coding-agents [subcommand]
+npx vercel ai-gateway setup
 ```
 
-#### setup
+`npx` runs Vercel CLI without installing it globally. To keep `vercel` available as a global command, install or update the CLI before running setup:
+
+```bash filename="terminal"
+npm i -g vercel@latest
+vercel ai-gateway setup
+```
+
+`vercel ai-gateway setup` is the canonical command. The older spelling, `vercel ai-gateway coding-agents setup`, still works as an alias, and managed shell blocks written under the old name are still recognized as configured.
 
 Configure [supported coding agents](#supported-coding-agents) to route requests through AI Gateway. The command provisions or reuses an AI Gateway API key and writes each agent's config file so requests use the gateway with your key.
 
-This is the recommended way to connect an agent: it picks the right [compatibility URL](#gateway-urls-the-command-writes) per agent, keeps your key out of plaintext config on macOS, and preserves your existing desktop sessions. The [coding agents guide](/docs/ai-gateway/coding-agents) covers the same agents from the other direction, with per-agent features and manual configuration for the tools this command doesn't handle.
+This is the recommended way to connect an agent because it picks the right [compatibility URL](#gateway-urls-the-command-writes) per agent, keeps your key out of plaintext config on macOS, and preserves your existing desktop sessions. The [coding agents guide](/docs/ai-gateway/coding-agents) covers the same agents from the other direction, with per-agent features and manual configuration for the tools this command doesn't handle.
 
 ```bash filename="terminal"
-vercel ai-gateway coding-agents setup --yes
+vercel ai-gateway setup --yes
 ```
 
 *Connect the coding agents detected on this machine without any prompts.*
@@ -373,38 +429,58 @@ Run the command without flags to step through each prompt in order:
 1. **Agents** to configure. The agents detected on your machine (their config directory exists) are pre-selected.
 2. **Consent** for any agent with a pre-flight warning, described in [Warnings and consent](#warnings-and-consent). Declining skips that agent and continues with the others.
 3. **Session migration**, when you have Claude Desktop or Codex Desktop sessions that would otherwise disappear from the switched provider. See [Desktop session migration](#desktop-session-migration).
-4. **API key name** for a new key. The prompt suggests `[<user>'s <device>] Coding Agents`.
-5. **Team** that owns the key.
-6. **Spend limit** (quota) for the key.
-7. **Expiration** for the key.
-8. **Keychain storage** on macOS: whether to store the key in your Keychain (default yes).
+4. **API key source**: create a new key or paste an existing one. The prompt defaults to *create*, and to *use an existing key* when your agent configs already point at the gateway.
+5. **API key name** for a new key. The prompt suggests `[<user>'s <device>] Coding Agents`.
+6. **Team** that owns the key.
+7. **Spend limit** (quota) for the key.
+8. **Expiration** for the key.
+9. **Keychain storage** on macOS: whether to store the key in your Keychain (default yes).
 
 When a selected agent isn't found at its default location, the command also offers to set a custom config path. It then prints a summary and the planned changes as a per-file diff with the key masked, and asks you to confirm. Declining writes nothing and never creates a key.
 
-##### Supported coding agents
+#### Supported coding agents
 
 | Agent | `--agent` value |
 | --- | --- |
+| [Aider](/docs/ai-gateway/coding-agents/aider) | `aider` |
 | [Claude Code](/docs/ai-gateway/coding-agents/claude-code) | `claude-code` |
 | [Cline](/docs/ai-gateway/coding-agents/cline) | `cline` |
 | [Codex](/docs/ai-gateway/coding-agents/openai-codex) | `codex` |
+| [Continue CLI](/docs/ai-gateway/coding-agents/continue) | `continue` |
+| [GitHub Copilot CLI](/docs/ai-gateway/coding-agents/copilot) | `copilot` |
+| [Crush](/docs/ai-gateway/coding-agents/crush) | `crush` |
 | [Cursor](/docs/ai-gateway/coding-agents/cursor) | `cursor` |
+| [Deep Agents CLI](/docs/ai-gateway/coding-agents/deepagents) | `deepagents` |
+| [DeepSeek Harness](/docs/ai-gateway/coding-agents/deepseek) | `deepseek` |
+| [Factory Droid](/docs/ai-gateway/coding-agents/droid) | `droid` |
+| [ForgeCode](/docs/ai-gateway/coding-agents/forge) | `forge` |
+| [fx](/docs/ai-gateway/coding-agents/fx) | `fx` |
+| [Goose](/docs/ai-gateway/coding-agents/goose) | `goose` |
+| [gptme](/docs/ai-gateway/coding-agents/gptme) | `gptme` |
+| [Grok Build](/docs/ai-gateway/coding-agents/grok-build) | `grok` |
 | [Hermes](/docs/ai-gateway/coding-agents/hermes) | `hermes` |
+| [Junie CLI](/docs/ai-gateway/coding-agents/junie) | `junie` |
 | [Kilo Code](/docs/ai-gateway/coding-agents/kilo-code) | `kilo` |
+| [Kimi CLI](/docs/ai-gateway/coding-agents/kimi) | `kimi` |
 | [omp](/docs/ai-gateway/coding-agents/omp) | `omp` |
 | [OpenClaw](/docs/ai-gateway/coding-agents/openclaw) | `openclaw` |
 | [OpenCode](/docs/ai-gateway/coding-agents/opencode) | `opencode` |
+| [OpenHands](/docs/ai-gateway/coding-agents/openhands) | `openhands` |
 | [Pi](/docs/ai-gateway/coding-agents/pi) | `pi` |
+| [Qwen Code](/docs/ai-gateway/coding-agents/qwen) | `qwen` |
+| [Mistral Vibe](/docs/ai-gateway/coding-agents/vibe) | `vibe` |
+| [ZCode](/docs/ai-gateway/coding-agents/zcode) | `zcode` |
+| [Zed](/docs/ai-gateway/coding-agents/zed) | `zed` |
 
-The command treats every agent the same way: detection pre-selects the ones already installed on your machine, `--all` covers every agent in the table, and the interactive checklist lists them in this order. To connect a subset, name each one with `--agent`:
+The command treats every agent the same way. Detection pre-selects the ones already installed on your machine, `--all` covers every agent in the table, and the interactive checklist lists them in this order. To connect a subset, name each one with `--agent`:
 
 ```bash filename="terminal"
-vercel ai-gateway coding-agents setup --agent cursor --agent kilo
+vercel ai-gateway setup --agent cursor --agent kilo
 ```
 
 *Connect specific agents by naming each one with \`--agent\`.*
 
-##### Gateway URLs the command writes
+#### Gateway URLs the command writes
 
 AI Gateway serves several compatibility surfaces, and each agent gets the one its client speaks. The command picks these for you, which is the main reason to prefer it over hand-editing a config file:
 
@@ -413,12 +489,15 @@ AI Gateway serves several compatibility surfaces, and each agent gets the one it
 | Claude Code | `https://ai-gateway.vercel.sh/claude-code` | Anthropic-compatible surface with a Claude Code shaped model catalog, so gateway models appear in the `/model` picker. The Anthropic SDK appends `/v1/messages` itself, so the URL has no `/v1` |
 | Codex | `https://ai-gateway.vercel.sh/codex/v1` | OpenAI-compatible surface that also serves `/codex/v1/models` in the `ModelsResponse` shape Codex decodes at startup. Every other path falls through to the standard `/v1` handlers |
 | Cursor | `https://ai-gateway.vercel.sh/cursor/v1` | OpenAI-compatible surface that normalizes the non-spec bodies Cursor's base URL override sends to `/chat/completions`, which the standard schema rejects. Every other path falls through to the standard `/v1` handlers |
-| Hermes, Kilo Code, OpenClaw | `https://ai-gateway.vercel.sh/coding-agent/v1` | The [coding agent surface](#the-coding-agent-surface), for agents with no dedicated endpoint of their own |
-| Cline, OpenCode, Pi | None | These agents ship a first-party AI Gateway provider and already know the URL, so only the credential is written |
+| Aider, Continue CLI, Copilot CLI, Deep Agents CLI, Factory Droid, gptme, Grok Build, Hermes, Kimi CLI, Kilo Code, OpenClaw, OpenHands, Qwen Code, Mistral Vibe, ZCode, Zed | `https://ai-gateway.vercel.sh/coding-agent/v1` | The [coding agent surface](#the-coding-agent-surface), for agents with no dedicated endpoint of their own |
+| ForgeCode, Goose, Junie CLI | `https://ai-gateway.vercel.sh/coding-agent/v1/chat/completions` | These configs require the full Chat Completions endpoint rather than a base URL. ForgeCode also uses `https://ai-gateway.vercel.sh/coding-agent/v1/models` for model discovery |
+| Cline, Crush, OpenCode, Pi | None | These agents ship a first-party AI Gateway provider and already know the URL, so only the credential is written |
+| DeepSeek Harness | None | The pi-based harness keeps its provider URL and reads the key from `AI_GATEWAY_API_KEY` |
+| fx, omp | None | These agents talk to the gateway natively and read the key from `AI_GATEWAY_API_KEY` |
 
-Pass `--base-url <URL>` to write a different base URL, for example a preview deployment of the gateway. The value is written verbatim to the agents that carry a URL, and it has no effect on agents that use a first-party provider.
+Pass `--base-url <URL>` to write a different base URL, for example a preview deployment of the gateway. Most agents write the value verbatim. ForgeCode, Goose, and Junie CLI append `/chat/completions`, and ForgeCode also appends `/models` for model discovery. The option has no effect on agents that use a first-party provider.
 
-##### The coding agent surface
+#### The coding agent surface
 
 Every agent without a dedicated endpoint should point at the shared coding agent surface:
 
@@ -426,11 +505,11 @@ Every agent without a dedicated endpoint should point at the shared coding agent
 https://ai-gateway.vercel.sh/coding-agent/v1
 ```
 
-It passes straight through to the standard `/v1` handlers, so auth, routing, billing, CORS, and errors behave exactly as they do on the bare `/v1` surface, and unknown paths return the same JSON 404. Use it anyway: it marks the traffic as coming from a coding agent, and it gives behavior that turns out to be common to every harness somewhere to live later, without you having to edit your config again.
+It passes straight through to the standard `/v1` handlers, so auth, routing, billing, CORS, and errors behave exactly as they do on the bare `/v1` surface, and unknown paths return the same JSON 404. Use it anyway because it marks the traffic as coming from a coding agent. It also gives behavior shared across harnesses somewhere to live later, without requiring another config edit.
 
 For a client that speaks the Anthropic protocol and appends `/v1/messages` itself, drop the `/v1` and use `https://ai-gateway.vercel.sh/coding-agent`.
 
-##### What it configures
+#### What it configures
 
 | Agent | Files | What's written |
 | --- | --- | --- |
@@ -443,22 +522,56 @@ For a client that speaks the Anthropic protocol and appends `/v1/messages` itsel
 | Hermes | `~/.hermes/config.yaml` | A `vercel-ai-gateway` provider (`key_env=AI_GATEWAY_API_KEY`, `discover_models: true`) plus the default model below; the shell file exports the key |
 | Kilo Code | `~/.config/kilo/kilo.json` (honors `$XDG_CONFIG_HOME`) | An `openai-compatible` provider whose `apiKey` is the `{env:AI_GATEWAY_API_KEY}` reference Kilo resolves at runtime; the shell file exports the key |
 | OpenClaw | `~/.openclaw/openclaw.json` | A `vercel-ai-gateway` provider whose `apiKey` is an `${AI_GATEWAY_API_KEY}` reference, a starter model list, and the default model below; the shell file exports the key |
+| Aider | `~/.aider.conf.yml` plus a sibling `.aider.model.metadata.json` | The gateway base URL and an `openai/`-prefixed default model, plus model metadata and settings generated from the gateway catalog so the prefixed IDs resolve with real context windows and diff edits; the shell file exports `AIDER_OPENAI_API_KEY` |
+| Continue CLI | `~/.continue/config.yaml` | A gateway provider with a shortlist of the most-used models (see [Model selection](#model-selection)), the key referenced through Continue's secrets syntax, and the onboarding marker so an interactive `cn` doesn't rewrite the config |
+| GitHub Copilot CLI | None | Configured entirely through the shell: `COPILOT_PROVIDER_BASE_URL` points at the gateway, `COPILOT_PROVIDER_API_KEY` carries the key, and `COPILOT_MODEL` selects the default gateway model |
+| Crush | `~/.config/crush/crush.json` | A `providers.vercel` entry with an `$AI_GATEWAY_API_KEY` reference Crush resolves itself, and the large/small model roles pinned to gateway models |
+| Deep Agents CLI | `~/.deepagents/config.toml` | A `vercel-ai-gateway` provider with `api_key_env` naming `AI_GATEWAY_API_KEY`, a `/model` switcher shortlist, and per-model profile tables carrying display names and token limits |
+| DeepSeek Harness | `$DSH_HOME/settings.yaml` (default `~/.dsh`) | An `llm-pi-ai` section naming `AI_GATEWAY_API_KEY` as the key env var, plus a model shortlist that leads with the newest DeepSeek models |
+| Factory Droid | `~/.factory/settings.json` | BYOK `customModels` entries referencing `AI_GATEWAY_API_KEY` through Droid's env-reference syntax |
+| ForgeCode | `~/.forge/.forge.toml` plus a sibling `.credentials.json` (mode `0600`) | A gateway `[[providers]]` entry and `[session]` defaults; the key goes in `.credentials.json` (the only key source Forge 2.13+ reads), with `api_key_vars` kept for older releases |
+| fx | `~/.fx/settings.json`; shell startup file | `credential_source` pinned to the exported `AI_GATEWAY_API_KEY`, ahead of a stored `fx login` session |
+| Goose | `~/.config/goose/custom_providers/` plus `config.yaml` | A declarative provider JSON that shadows Goose's built-in `vercel_ai_gateway` definition and resolves the key from `AI_GATEWAY_API_KEY`, and the default provider and model in `config.yaml` |
+| gptme | `~/.config/gptme/config.toml` | A `vercel-ai-gateway` entry in the `[[providers]]` array with `api_key_env` naming `AI_GATEWAY_API_KEY`, and `[models].default` pointed at the gateway default model |
+| Grok Build | `~/.grok/config.toml` (honors `$GROK_HOME`) | `endpoints.models_base_url` pointed at the gateway and a default model entry whose `env_key` references `AI_GATEWAY_API_KEY` |
+| Junie CLI | `$JUNIE_HOME/models/` (default `~/.junie`) | A stable `vercel-ai-gateway` profile pinned to the top model, plus one profile per shortlisted gateway model, each with an env reference to `AI_GATEWAY_API_KEY` |
+| Kimi CLI | `$KIMI_SHARE_DIR/config.toml` (default `~/.kimi`, mode `0600`) | A gateway provider and a `[models]` shortlist; Kimi requires a literal `api_key`, so the key lands in this file |
+| omp | None | omp reads `AI_GATEWAY_API_KEY` natively and fills `/model` from the gateway catalog, so only the shell export is written — never omp's SQLite store |
+| OpenHands | `~/.openhands/agent_settings.json` | A minimal `llm` block pointing at the gateway with an `openai/`-prefixed model ID; an existing condenser LLM is repointed the same way, and the pinned model's per-token cost fields come from the gateway catalog |
+| Qwen Code | `~/.qwen/settings.json` | `modelProviders.openai` entries, each with an `envKey` reference to `AI_GATEWAY_API_KEY` so the key never lands in the file |
+| Mistral Vibe | `$VIBE_HOME/config.toml` (default `~/.vibe`) | The gateway provider and an unaliased `[[models]]` shortlist, with `api_key_env_var` keeping the key in the shell environment and `active_model` pinned to the leading Mistral model |
+| ZCode | `~/.zcode/v2/config.json` (mode `0600`) | A gateway provider entry with the base URL and a model shortlist. ZCode has no env-var lookup for custom providers, so the key is stored in this file |
+| Zed | Zed's JSONC `settings.json` (honors `$ZED_HOME` and `$APPDATA`); shell startup file | Zed's first-party `vercel_ai_gateway` provider (comment-preserving merge) pointed at the coding-agent endpoint, the Agent Panel default model, and a `VERCEL_AI_GATEWAY_API_KEY` shell export |
 
 The command edits existing files in place, preserving their formatting, and saves a `.bak` copy first. Disable backups with `--no-backup`. If it can't parse a file, it skips that file instead of overwriting it.
 
-Shell exports live in a marked, removable block in your shell's startup file: `~/.zshrc` for zsh (honors `$ZDOTDIR`), `~/.bash_profile` on macOS or `~/.bashrc` elsewhere for bash, `config.fish` for fish, or `~/.profile` otherwise. Pass `--shell-rc <path>` to target a different file, or `--agent-config <agent>=<path>` to override an agent's config location. On Windows there's no shell startup file to manage: the command tells you which environment variable to set, and prints a newly created key once so you don't lose it.
+Shell exports live in a marked, removable block in your shell's startup file: `~/.zshrc` for zsh (honors `$ZDOTDIR`), `~/.bash_profile` on macOS or `~/.bashrc` elsewhere for bash, `config.fish` for fish, or `~/.profile` otherwise. Pass `--shell-rc <path>` to target a different file, or `--agent-config <agent>=<path>` to override an agent's config location. On Windows, there's no shell startup file to manage. The command tells you which environment variable to set and prints a newly created key once so you don't lose it.
 
-##### Model selection
+#### Model selection
 
-For Claude Code, Codex, OpenCode, Pi, Kilo Code, and Cursor, the command pins no model, so you keep choosing your own inside the agent. Cline, Hermes, and OpenClaw can't start without one, so they get `anthropic/claude-fable-5` as a starting point. Change it at any time:
+Model lists come from the AI Gateway leaderboard instead of a hardcoded snapshot. The command ranks text models by spend and writes the top 10 into each agent's picker. A harness with a preferred model family, such as DeepSeek Harness, Kimi CLI, Qwen Code, or Mistral Vibe, leads its shortlist with the newest models from that family and follows with the leaderboard's most-used.
+
+For Claude Code, Codex, OpenCode, Pi, Kilo Code, Cursor, fx, and omp, the command pins no model, so you keep choosing your own inside the agent. The other agents can't start without one, so they get the top-ranked model as a starting point, falling back to `anthropic/claude-fable-5` when the leaderboard lookup fails. Change it at any time:
 
 | Agent | How to switch models |
 | --- | --- |
 | Cline | In-session, or `cline auth -p vercel-ai-gateway -m <gateway-model-id>` |
 | Hermes | `/model custom:vercel-ai-gateway:<gateway-model-id>` |
 | OpenClaw | Add the model to the provider's `models` array in `openclaw.json`, then select it |
+| Aider | `/model openai/<gateway-model-id>`, or edit `~/.aider.conf.yml` |
+| Continue CLI | Pick from the provider's models in-session, or edit `~/.continue/config.yaml` |
+| GitHub Copilot CLI | Set `COPILOT_MODEL`, or pass `--model` |
+| Crush | In-session with `ctrl+p` |
+| Deep Agents CLI | `/model` switcher |
+| ForgeCode | In-session with `:config-model` (the picker fills from the gateway catalog) |
+| Goose | Set `GOOSE_MODEL` in `config.yaml`, or run `goose configure` |
+| gptme | `-m vercel-ai-gateway/<gateway-model-id>` |
+| Junie CLI | Run `junie --model custom:vercel-ai-gateway`, or pick the model with `/model` |
+| OpenHands | Edit the `llm` block in `agent_settings.json` |
+| ZCode | Pick the model in-session |
+| Zed | Agent Panel model picker (the full catalog loads from `/models` once the key is visible) |
 
-##### Desktop session migration
+#### Desktop session migration
 
 Switching providers hides the sessions that were recorded under the old one. When the command finds those sessions, it offers to copy them into the gateway provider so your history stays visible. Originals are never moved, edited, or deleted.
 
@@ -467,33 +580,34 @@ Switching providers hides the sessions that were recorded under the old one. Whe
 | Claude Code | Claude Desktop session records, copied into the gateway (`Claude-3p`) identity with each `model` rewritten to its gateway ID. The gateway identity only exists after Claude Desktop's first gateway launch, so re-run setup once you've switched providers in **Developer** -> **Configure Third-Party Inference** |
 | Codex | Codex Desktop rollout files under `sessions` and `archived_sessions`, copied with a deterministic new session ID and `model_provider` set to `vercel` |
 
-Copies are atomic, use mode `0600`, and never clobber an existing destination. Re-running is safe: a session that was already copied is skipped. If a copy fails, the command leaves your agent configuration untouched and exits `1` so you can retry.
+Copies are atomic, use mode `0600`, and never clobber an existing destination. Re-running is safe because the command skips sessions that were already copied. If a copy fails, the command leaves your agent configuration untouched and exits `1` so you can retry.
 
-Interactively, you get one prompt and can decline. With `--yes` or in non-interactive mode, eligible sessions are copied. Pass `--no-session-migration` to skip the whole step. Compressed Codex sessions (`.jsonl.zst`) can't be rewritten: decompress them first, or pass `--no-session-migration`.
+Interactively, you get one prompt and can decline. With `--yes` or in non-interactive mode, eligible sessions are copied. Pass `--no-session-migration` to skip the whole step. Compressed Codex sessions (`.jsonl.zst`) can't be rewritten. Decompress them first, or pass `--no-session-migration`.
 
-##### Warnings and consent
+#### Warnings and consent
 
 Connecting can break an agent's existing setup. Before asking any key questions, the command checks each selected agent for known conflicts and asks for explicit consent, so you can bail before a key is created. Detection only checks whether an app is installed; the command never reads your data.
 
 Interactively, each warned agent gets its own confirmation, defaulting to no. Declining leaves that agent's files untouched, and the run continues with the other agents.
 
-With `--yes` or in non-interactive mode, naming an agent with `--agent` (or passing `--all`) counts as consent: the run proceeds and prints the warnings. The command skips a warned agent that was only selected by detection, with reason `requires_consent` and a hint to pass `--agent <id>`. If that skips every agent, the command exits `1` with reason `requires_consent` and a ready-to-run command that replays the invocation with the consent flags added. `--dry-run` never asks for consent; it prints the warnings and shows what a real run would do.
+With `--yes` or in non-interactive mode, naming an agent with `--agent` (or passing `--all`) counts as consent, so the run proceeds and prints the warnings. The command skips a warned agent that was only selected by detection, with reason `requires_consent` and a hint to pass `--agent <id>`. If that skips every agent, the command exits `1` with reason `requires_consent` and a ready-to-run command that replays the invocation with the consent flags added. `--dry-run` never asks for consent; it prints the warnings and shows what a real run would do.
 
-> **💡 Note:** No agent currently ships a warning. Codex used to warn that connecting broke
-> the Codex desktop app; that warning is gone now that setup migrates desktop
-> sessions instead.
+> **💡 Note:** ZCode warns you to quit the desktop app before running setup because it
+> rewrites its config file on exit and silently discards edits made while it
+> runs. Codex used to warn that connecting broke the Codex desktop app. That
+> warning is gone now that setup migrates desktop sessions instead.
 
-##### Key storage
+#### Key storage
 
-On macOS, the command stores the API key in your login Keychain by default instead of writing it into plaintext config. It saves the key as a generic password with the service name "Vercel AI Gateway", and agents read it through shell exports that call `security find-generic-password` when a terminal starts. Pi is the exception: it always keeps the key in its own auth file.
+On macOS, the command stores the API key in your login Keychain by default instead of writing it into plaintext config. It saves the key as a generic password with the service name "Vercel AI Gateway", and agents read it through shell exports that call `security find-generic-password` when a terminal starts. Some agents are the exception because they can't read the Keychain: Pi, Cline, ForgeCode, Kimi CLI, OpenHands, and ZCode always keep the key in their own config files.
 
 Pass `--no-keychain`, or run on a non-macOS host, to write the key directly into each agent's config file, or into the shell startup file, instead. If the Keychain write fails during setup, the command falls back to this mode automatically.
 
 The command uses a single Keychain item, so connecting a different team replaces the stored key. Human-readable output masks the key as `vck_••••1234`.
 
-##### Applying the changes
+#### Applying the changes
 
-By default the command writes the files itself. On a Keychain setup, the confirmation prompt offers a third option: instead of writing, it generates a prompt describing the exact edits and copies it to your clipboard, so you can hand the work to a coding agent you already have open. Because the key lives in the Keychain, that prompt carries no secret.
+By default the command writes the files itself. On a Keychain setup, the confirmation prompt offers a third option. Instead of writing, it generates a prompt describing the exact edits and copies it to your clipboard, so you can hand the work to a coding agent you already have open. Because the key lives in the Keychain, that prompt carries no secret.
 
 Pass `--apply` to choose without prompting:
 
@@ -502,15 +616,15 @@ Pass `--apply` to choose without prompting:
 | `--apply edit` | Write the files. This is the default |
 | `--apply prompt` | Emit the agent prompt on stdout instead of writing. Requires the macOS Keychain, so the prompt never contains a plaintext key |
 
-##### Re-running and key rotation
+#### Re-running and key rotation
 
-Re-running the command against an already-configured setup is a no-op: it asks whether to reconfigure interactively (default no), and otherwise exits `0`, reporting reason `already_configured` in non-interactive output. No new key is minted.
+Re-running the command against an already-configured setup doesn't mint a second key or orphan the working one. When your agent configs already point at the gateway, the command reuses the key it finds. Interactively, the key prompt defaults to *Use an existing key* so you can paste a different one; without prompts, the stored key (Keychain entry or managed shell export) is recovered and used. This also refreshes stale model lists, since the shortlists come from the leaderboard. When nothing needs to change, the command asks whether to reconfigure interactively (default no) and otherwise exits `0`, reporting reason `already_configured` in non-interactive output. No new key is minted.
 
-- Pass `--reconfigure` to run the full setup again, for example to rotate the key or switch teams.
+- Pass `--reconfigure` to run setup again when agents are already configured, for example to rotate the key or switch teams.
 - Run `setup --key <new-key>` on a Keychain setup to swap in a rotated or expired key. The command refreshes the Keychain entry in place without touching config files.
 - When everything is already configured but sessions are still waiting to be copied, the run does the migration alone and leaves your key and config as they are.
 
-##### Options
+#### Options
 
 | Option | Type | Description |
 | --- | --- | --- |
@@ -521,10 +635,10 @@ Re-running the command against an already-configured setup is a no-op: it asks w
 | `--budget <AMOUNT>` | Number | Spend limit for a new key, in US dollars (minimum 1) |
 | `--refresh-period <PERIOD>` | String | Quota reset cadence for a new key: `daily`, `weekly`, `monthly`, or `none` |
 | `--expiration <PERIOD>` | String | Expiry for a new key: `7d`, `30d`, `60d`, `90d`, `1y`, or `none` (default `none`) |
-| `--reconfigure` | Boolean | Run setup again even when everything is already configured, to rotate the key or switch teams |
+| `--reconfigure` | Boolean | Run setup again when agents are already configured, for example to rotate the key or switch teams |
 | `--agent-config <AGENT=PATH>` | String | Override an agent's config file path, for example `claude-code=/path/settings.json`. Repeatable |
 | `--shell-rc <PATH>` | String | Shell startup file that receives the managed export block |
-| `--base-url <URL>` | String | Override the AI Gateway base URL written into agent configs, for example a preview deployment. Written verbatim |
+| `--base-url <URL>` | String | Override the AI Gateway base URL written into agent configs, for example a preview deployment. ForgeCode, Goose, and Junie CLI append `/chat/completions` |
 | `--apply <MODE>` | String | How to apply the changes: `edit` (default) or `prompt` |
 | `--dry-run` | Boolean | Show what would change without writing files or creating a key |
 | `--no-backup` | Boolean | Do not write `.bak` backups of changed files |
@@ -533,14 +647,14 @@ Re-running the command against an already-configured setup is a no-op: it asks w
 | `--yes`, `-y` | Boolean | Run without prompts |
 | `--scope <SLUG>`, `--team <SLUG>` | String | Team that owns a newly created key. Global options, also available as `-S` and `-T` |
 
-##### Defaults with `--yes`
+#### Defaults with `--yes`
 
-The `--yes` option skips every prompt, which makes the command fully non-interactive. Combined with the defaults below, `vercel ai-gateway coding-agents setup --yes` is the shortest complete run:
+The `--yes` option skips every prompt, which makes the command fully non-interactive. Combined with the defaults below, `vercel ai-gateway setup --yes` is the shortest complete run:
 
 | Prompt | Default |
 | --- | --- |
 | Agents | The agents detected on your machine. If none are detected, the command errors and asks you to pass `--agent` or `--all`. The command skips agents with warnings unless you name them |
-| API key | Creates a new key unless you pass `--key` |
+| API key | Creates a new key unless you pass `--key`, or the configs already point at the gateway and the stored key can be recovered |
 | Key name | Omitted, so the server assigns a name. Interactively, the prompt suggests `[<user>'s <device>] Coding Agents` |
 | Team or scope | Uses `--scope` or `--team`, or your currently selected team. Without one, the command errors with `missing_scope`. Not needed with `--key` |
 | Spend limit | Unlimited, unless you pass `--budget` |
@@ -551,7 +665,7 @@ The `--yes` option skips every prompt, which makes the command fully non-interac
 | Apply mode | `edit`, so the files are written. Pass `--apply prompt` for the prompt instead |
 | Backups | Enabled. The command writes `.bak` files unless you pass `--no-backup` |
 
-##### Non-interactive output
+#### Non-interactive output
 
 Pass `--non-interactive` to emit a single JSON object instead of human-readable output. The CLI also switches to this mode on its own when it detects it's running inside a coding agent and stdin isn't a TTY. Agent selection follows the same detected-agents default as `--yes`.
 
@@ -572,9 +686,9 @@ The payload includes `status`, a `reason`, a `message`, the list of `configured`
 
 If at least one agent config can be written, the run exits `0` and lists the rest under `skipped`. When nothing can be written, the command exits `1` and doesn't create a key.
 
-##### Notes
+#### Notes
 
-- Open a new terminal after connecting so the shell exports load. Codex always reads `AI_GATEWAY_API_KEY` from your environment; in Keychain mode, every agent except Pi and Cline reads its key from the shell.
+- Open a new terminal after connecting so the shell exports load. Codex always reads `AI_GATEWAY_API_KEY` from your environment; in Keychain mode, every agent except Pi, Cline, ForgeCode, Kimi CLI, OpenHands, and ZCode reads its key from the shell.
 - Restart Claude Code so it picks up the new settings, and restart the OpenClaw gateway process so it loads the new provider.
 - The command exits `0` on success or a no-op, `1` on an operational failure or invalid input, and `2` when it shows help (`--help`).
 
@@ -675,7 +789,7 @@ vercel ai-gateway leaderboard models --format csv --out models.csv
 ### Create an API key with a monthly budget
 
 ```bash filename="terminal"
-vercel ai-gateway api-keys create --name my-key --budget 500 --refresh-period monthly --alert-thresholds 75,100
+vercel ai-gateway api-keys create --name my-key --limit 500 --refresh-period monthly --alert-thresholds 75,100
 ```
 
 *Create an API key named \`my-key\` with a $500 monthly quota that alerts at 75%
@@ -684,7 +798,7 @@ and 100% of the limit.*
 ### Give every new project a spend limit
 
 ```bash filename="terminal"
-vercel ai-gateway budgets defaults set project --limit 200 --refresh-period monthly
+vercel ai-gateway budgets set project --default --limit 200 --refresh-period monthly
 ```
 
 *Apply a $200 monthly budget to any project that has no budget of its own.*
@@ -692,7 +806,7 @@ vercel ai-gateway budgets defaults set project --limit 200 --refresh-period mont
 ### Connect detected coding agents
 
 ```bash filename="terminal"
-vercel ai-gateway coding-agents setup --yes
+vercel ai-gateway setup --yes
 ```
 
 *Connect the detected agents with a new, unlimited, non-expiring key.*
@@ -700,7 +814,7 @@ vercel ai-gateway coding-agents setup --yes
 ### Connect specific agents with a budgeted key
 
 ```bash filename="terminal"
-vercel ai-gateway coding-agents setup \
+vercel ai-gateway setup \
   --agent claude-code --agent codex \
   --name "My Coding Key" \
   --scope my-team \
@@ -715,7 +829,7 @@ days.*
 ### Connect every supported agent
 
 ```bash filename="terminal"
-vercel ai-gateway coding-agents setup --all --yes
+vercel ai-gateway setup --all --yes
 ```
 
 *Configure every supported agent, including the ones not installed on this
@@ -724,7 +838,7 @@ machine yet.*
 ### Hand the edits to a coding agent instead of writing them
 
 ```bash filename="terminal"
-vercel ai-gateway coding-agents setup --apply prompt --yes
+vercel ai-gateway setup --apply prompt --yes
 ```
 
 *Create the key, store it in the macOS Keychain, and emit a prompt that
@@ -733,7 +847,7 @@ describes the edits.*
 ### Reuse an existing key and preview changes
 
 ```bash filename="terminal"
-vercel ai-gateway coding-agents setup --key vck_... --dry-run
+vercel ai-gateway setup --key vck_... --dry-run
 ```
 
 *Reuse an existing key and preview the changes without writing any files.*
@@ -741,7 +855,7 @@ vercel ai-gateway coding-agents setup --key vck_... --dry-run
 ### Reconfigure an already-connected machine
 
 ```bash filename="terminal"
-vercel ai-gateway coding-agents setup --reconfigure --yes
+vercel ai-gateway setup --reconfigure --yes
 ```
 
 *Run setup again on an already-configured machine, for example to rotate the
@@ -750,7 +864,7 @@ key or switch teams.*
 ### Point an agent at a different gateway base URL
 
 ```bash filename="terminal"
-vercel ai-gateway coding-agents setup --agent codex --base-url https://preview.ai-gateway.vercel.sh/coding-agent/v1
+vercel ai-gateway setup --agent codex --base-url https://preview.ai-gateway.vercel.sh/coding-agent/v1
 ```
 
 *Write a preview deployment's URL instead of the default surface.*

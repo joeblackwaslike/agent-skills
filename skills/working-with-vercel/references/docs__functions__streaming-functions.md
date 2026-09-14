@@ -16,8 +16,8 @@ related:
 summary: Learn how to stream responses from Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/streaming-functions.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "64d7cff60c5faac115f4d94805c4831a45e6efea06d4e125d71433a198b384c8"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "8c5da822bc523442625b4b0b808c0798904a704a0e9898caead05f62f2ed6ce1"
 ---
 
 # Streaming
@@ -81,6 +81,8 @@ The following example shows how to send a message to one of OpenAI's models and 
      </Code>
    </CodeBlock>
 
+**app/api/streaming-example/route.ts**
+
 ```ts v0="build" filename="app/api/streaming-example/route.ts" framework=nextjs-app
 import { streamText } from 'ai';
 
@@ -101,6 +103,8 @@ export async function GET() {
 }
 ```
 
+**app/api/streaming-example/route.js**
+
 ```js v0="build" filename="app/api/streaming-example/route.js" framework=nextjs-app
 import { streamText } from 'ai';
 
@@ -120,6 +124,8 @@ export async function GET() {
   });
 }
 ```
+
+**app/api/streaming-example/route.ts**
 
 ```ts v0="build" filename="app/api/streaming-example/route.ts" framework=nextjs
 // Streaming Functions must be defined in an
@@ -144,6 +150,8 @@ export async function GET() {
 }
 ```
 
+**app/api/streaming-example/route.js**
+
 ```js v0="build" filename="app/api/streaming-example/route.js" framework=nextjs
 // Streaming Functions must be defined in an
 // app directory, even if the rest of your app
@@ -167,6 +175,8 @@ export async function GET() {
 }
 ```
 
+**api/chat-example.ts**
+
 ```ts filename="api/chat-example.ts" framework=other
 import { streamText } from 'ai';
 
@@ -186,6 +196,8 @@ export async function GET() {
   });
 }
 ```
+
+**api/chat-example.js**
 
 ```js filename="api/chat-example.js" framework=other
 import { streamText } from 'ai';

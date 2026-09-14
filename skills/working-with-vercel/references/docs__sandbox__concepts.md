@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applications, and executing...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "bde642745ac920134d96ff3247e33fe9d45e39efaf6ef2b57b101222b4605739"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "f734f24e91b9ac4719c58089285ce05e190acc0833de773af1a52216cab4767c"
 ---
 
 # Understanding Sandboxes
@@ -37,7 +37,6 @@ Vercel Sandboxes provide on-demand, isolated compute environments for running un
 - [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts&source_site=vercel-docs&relationship=related)
 - [Running commands in a Vercel Sandbox](https://vercel.com/docs/sandbox/run-commands-in-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts&source_site=vercel-docs&relationship=related) — Create isolated sandbox environments to run builds, tests, and commands safely.
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts&source_site=vercel-docs&relationship=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/sandbox/concepts.graph.md](/docs/sandbox/concepts.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

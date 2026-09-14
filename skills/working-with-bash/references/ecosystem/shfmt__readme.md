@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/mvdan/sh/master/README.md"
-fetched_at: "2026-08-31T10:36:36.019Z"
-sha256: "30d1286d914dd4c0bd938e3d85c0ec0cc7dd988a37572d3e08c84a035eb2042b"
+fetched_at: "2026-09-14T09:36:44.236Z"
+sha256: "ff0d2e0f85a96df3b05606a0d0d9bf2530fcfb91f94a0230725f9462db40cc1d"
 ---
 
 # sh
@@ -13,14 +13,18 @@ Supports [POSIX Shell], [Bash], [Zsh], and [mksh]. Requires Go 1.26 or later.
 
 ### Quick start
 
-To parse shell scripts, inspect them, and print them out,
+To parse shell scripts into a syntax tree, inspect them,
+and format them like `shfmt` does,
 see the [syntax package](https://pkg.go.dev/mvdan.cc/sh/v3/syntax).
 
-For high-level operations like performing shell expansions on strings,
-see the [shell package](https://pkg.go.dev/mvdan.cc/sh/v3/shell).
+For one-call helpers with shell semantics,
+see the [shell package](https://pkg.go.dev/mvdan.cc/sh/v3/shell):
+split a command line into arguments and quote them back like `shlex`,
+expand `$VAR` and `~` in strings, and glob with `**` or match `case`-style patterns.
 
-To interpret or run shell scripts,
-see the [interp package](https://pkg.go.dev/mvdan.cc/sh/v3/interp).
+To run shell scripts without a system shell, including on Windows,
+see the [interp package](https://pkg.go.dev/mvdan.cc/sh/v3/interp);
+its handlers allow sandboxing what scripts can execute and access.
 
 ### shfmt
 

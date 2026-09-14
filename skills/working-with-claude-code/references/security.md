@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/security.md"
-fetched_at: "2026-09-07T08:59:03.477Z"
-sha256: "1a79ec70c2c3f73fa21bba5d5e6908e717d8ef9de04c50dbaf89dff855571100"
+fetched_at: "2026-09-14T09:37:17.168Z"
+sha256: "b1e29041159b512f992ed30ec0b081fb01ab465fc47166190002df9ca13f8638"
 ---
 
 > ## Documentation Index
@@ -52,7 +52,7 @@ Prompt injection is a technique where an attacker attempts to override or manipu
 * **Permission system**: In Manual mode, sensitive operations require explicit approval
 * **Context-aware analysis**: Detects potentially harmful instructions by analyzing the full request
 * **Input sanitization**: Prevents command injection by processing user inputs
-* **Network command approval**: Commands that fetch content from the web such as `curl` and `wget` are not auto-approved by default. In Manual mode they prompt like any other non-read-only Bash command, so you can still approve once or add an explicit allow rule like `Bash(curl *)`. To block them entirely, add them to [`permissions.deny`](/docs/en/permissions#tool-specific-permission-rules)
+* **Network command approval**: Commands that fetch content from the web such as `curl` and `wget` are not auto-approved by default. In Manual mode they prompt like any other non-read-only Bash command, so you can still approve once or add an explicit allow rule like `Bash(curl *)`. To stop Claude from running them, add them to [`permissions.deny`](/docs/en/permissions#tool-specific-permission-rules). A deny rule matches the command [as written](/docs/en/permissions#bash-rule-limits); for network enforcement that doesn't depend on the command text, see [sandbox network isolation](/docs/en/sandboxing#network-isolation)
 
 ### Privacy safeguards
 

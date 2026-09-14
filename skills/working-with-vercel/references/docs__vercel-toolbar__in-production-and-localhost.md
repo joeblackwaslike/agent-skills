@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel Toolbar in production and local environments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar/in-production-and-localhost.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "477c75efa047b55a9b4cf8ac06149cb153d54313b8dbd5add13996a3423716f3"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "42b6634749ba0798a12a9b96b46c6f4df5751238ba7b758e30d9738ecf6df572"
 ---
 
 # Add the Vercel Toolbar to local and production environments
@@ -38,7 +38,7 @@ The Vercel Toolbar is available by default on all [preview environments](/docs/d
 - [Managing the visibility of the Vercel Toolbar](https://vercel.com/docs/vercel-toolbar/managing-toolbar?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost&source_site=vercel-docs&relationship=related) — Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
 - [Enabling and Disabling Comments](https://vercel.com/docs/comments/how-comments-work?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost&source_site=vercel-docs&relationship=related) — Learn when and where Comments are available, and how to enable and disable Comments at the account, project, and session
 - [Toolbar Browser Extensions](https://vercel.com/docs/vercel-toolbar/browser-extension?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost&source_site=vercel-docs&relationship=related) — The browser extensions enable you to use the toolbar in production environments, take screenshots and attach them to com
-- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Flags Explorer](https://vercel.com/docs/flags/flags-explorer?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost&source_site=vercel-docs&relationship=related) — View and override your application's feature flags from the Vercel Toolbar
 
 Full cross-link map for this page: [/docs/vercel-toolbar/in-production-and-localhost.graph.md](/docs/vercel-toolbar/in-production-and-localhost.graph.md?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost&source_site=vercel-docs&relationship=graph)

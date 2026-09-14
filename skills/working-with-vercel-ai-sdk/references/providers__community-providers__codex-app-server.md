@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/codex-app-server.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "910ee27e38ded0638e800e9ff4fc3c95f2cccbb67f903ec428f67a25ab6ea6dd"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "dd1062774752f85678a38e9431ee4c7f789532fb295b6833ff6212ba4ae190f6"
 ---
 
 # Codex CLI (App Server) Provider
@@ -257,6 +257,7 @@ For more details, see the [provider documentation](https://github.com/pablof7z/a
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
 - [Interfaze](/providers/community-providers/interfaze)
+- [Telnyx](/providers/community-providers/telnyx)
 - [Flowise](/providers/community-providers/flowise)
 
 

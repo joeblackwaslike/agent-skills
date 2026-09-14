@@ -17,8 +17,8 @@ related:
 summary: "Learn how to set up the Flags Explorer so you can see and override your application's feature flags"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/flags-explorer/getting-started.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "d3411bfee5878ecb838da148b9b78aee129f2b1a05c80d94beb81db7c6077131"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "08c5a4139edc6ae330152cdc960a43d3d5825b443de34698731814d37f0e14d8"
 ---
 
 # Getting started with Flags Explorer
@@ -38,11 +38,10 @@ This guide walks you through connecting your application to the Flags Explorer, 
 - [Quickstart](https://flags-sdk.dev/docs/frameworks/next?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Fgetting-started&source_site=vercel-docs&relationship=related) — Learn how to start using the Flags SDK in your Next.js project.
 - [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Fgetting-started&source_site=vercel-docs&relationship=related)
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Fgetting-started&source_site=vercel-docs&relationship=related)
-- [Flags as code in Next.js](https://vercel.com/blog/flags-as-code-in-next-js?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Fgetting-started&source_site=vercel-docs&relationship=related)
+- [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Fgetting-started&source_site=vercel-docs&relationship=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
 - [Setting up Flags Explorer](https://vercel.com/docs/flags/vercel-flags/cli/set-up-flags-explorer?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Fgetting-started&source_site=vercel-docs&relationship=related) — Add the Flags Explorer to the Vercel Toolbar so you can override flag values on preview deployments without affecting ot
 - [Marketplace](https://vercel.com/docs/flags/marketplace?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Fgetting-started&source_site=vercel-docs&relationship=related) — Connect your preferred feature flag provider through the Vercel Marketplace for a unified flags experience.
 - [Draft Flags](https://vercel.com/docs/flags/vercel-flags/dashboard/drafts?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Fgetting-started&source_site=vercel-docs&relationship=related) — Learn how draft flags work and how to promote them to Vercel Flags.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Fgetting-started&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/flags/flags-explorer/getting-started.graph.md](/docs/flags/flags-explorer/getting-started.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Fgetting-started&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

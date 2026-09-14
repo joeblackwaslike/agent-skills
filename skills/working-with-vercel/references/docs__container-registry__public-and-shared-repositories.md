@@ -3,7 +3,7 @@ title: Public and Shared Repositories
 product: vercel
 url: /docs/container-registry/public-and-shared-repositories
 canonical_url: "https://vercel.com/docs/container-registry/public-and-shared-repositories"
-last_updated: 2026-08-13
+last_updated: 2026-09-04
 type: how-to
 prerequisites:
   - /docs/container-registry
@@ -13,8 +13,8 @@ related:
 summary: Share a Vercel Container Registry repository with specific Vercel teams or make it public for any Vercel team to access.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/container-registry/public-and-shared-repositories.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "fa32cec74e35960508d1e23d3589d5d10f8ed013750dd6ee1aa30e7cff2d1c9b"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "321c636f0fce0ccc56b28612991743ebc00e2ef88d9c10e4ac0df6f479ae2c76"
 ---
 
 # Public and Shared Repositories
@@ -34,7 +34,6 @@ Vercel Container Registry (VCR) repositories are private by default. Share a rep
 - [vercel vcr](https://vercel.com/docs/cli/vcr?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fpublic-and-shared-repositories&source_site=vercel-docs&relationship=related) — Manage Vercel Container Registry from the Vercel CLI: build and push images, manage repositories, tags, and images, and
 - [List repositories](https://vercel.com/docs/rest-api/vcr/list-repositories?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fpublic-and-shared-repositories&source_site=vercel-docs&relationship=related) — GET /v1/vcr/repository — List container registry repositories for a project.
 - [Container Registry limits and pricing](https://vercel.com/docs/container-registry/limits-and-pricing?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fpublic-and-shared-repositories&source_site=vercel-docs&relationship=related) — Storage pricing, size limits, plan limits, and compatibility limits for Vercel Container Registry.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fpublic-and-shared-repositories&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/container-registry/public-and-shared-repositories.graph.md](/docs/container-registry/public-and-shared-repositories.graph.md?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fpublic-and-shared-repositories&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

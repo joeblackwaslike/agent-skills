@@ -12,11 +12,12 @@ related:
   - /docs/domains/working-with-nameservers
   - /docs/domains/custom-ssl-certificate
   - /docs/rest-api
+  - /docs/deployments/generated-urls
 summary: Understand the limits and features available for Vercel for Platforms.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/limits.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "6615d8d816109e47a15054a04027bc1e0369866ca060f12da06eb4451185c163"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "6b5c8a16e857476ff12211e376f2dc2f92738bfe1a73cd87b348571107bd4594"
 ---
 
 # Multi-tenant Limits
@@ -97,7 +98,7 @@ After configuring domains or nameservers, DNS typically takes 24-48 hours to pro
 
 ## Subdomain length limits
 
-Each DNS label has a [63-character limit](/kb/guide/why-is-my-vercel-deployment-url-being-shortened#rfc-1035). For preview URLs with long branch names and tenant subdomains, keep branch names concise to avoid resolution issues.
+Each DNS label has a [63-character limit](/docs/deployments/generated-urls#truncation). For preview URLs with long branch names and tenant subdomains, keep branch names concise to avoid resolution issues.
 
 
 ---

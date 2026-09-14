@@ -15,8 +15,8 @@ related:
 summary: Deploy TanStack Start applications to Vercel with Nitro and configure Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/tanstack-start.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "fb801c5a1c33b7bad149466e4d94fd24590ad93f40e0652a0f46ffa16a661d83"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "c82702c88fb5e531fab1614348085b8cd977c757d7cb7dbff3f1be392c72d42e"
 ---
 
 # TanStack Start on Vercel
@@ -39,7 +39,6 @@ TanStack Start is a fullstack framework powered by TanStack Router for React and
 - [What is the Nitro Vite plugin?](https://vercel.com/kb/guide/nitro-vite-plugin?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Ftanstack-start&source_site=vercel-docs&relationship=related) — The Nitro Vite plugin \\(nitro/vite\\) adds SSR, API routes, and deploy-anywhere server builds to any Vite app. Learn what
 - [Nitro on Vercel](https://vercel.com/docs/frameworks/backend/nitro?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Ftanstack-start&source_site=vercel-docs&relationship=related) — Deploy Nitro applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurat
 - [NestJS on Vercel](https://vercel.com/docs/frameworks/backend/nestjs?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Ftanstack-start&source_site=vercel-docs&relationship=related) — Deploy NestJS applications to Vercel with zero configuration.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Ftanstack-start&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/frameworks/full-stack/tanstack-start.graph.md](/docs/frameworks/full-stack/tanstack-start.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Ftanstack-start&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

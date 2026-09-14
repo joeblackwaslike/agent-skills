@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/image-generation.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "172625a37290cdfb3134564c47aca1b2eaf4325a67e471325f1d9551ccdc999f"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "27de566d64bed78621da9c28a87dc4fceccb189c31891c5fe8b7a3a51a685669"
 ---
 
 # Image Generation
@@ -223,6 +223,8 @@ for (const call of calls) {
 ### Error Handling
 
 When `generateImage` cannot generate a valid image, it throws a [`AI_NoImageGeneratedError`](/docs/reference/ai-sdk-errors/ai-no-image-generated-error).
+Unclassified empty image responses are retried according to `maxRetries` before this error is thrown.
+Providers can classify terminal empty responses, such as moderation blocks, with `isRetryable: false`; these responses are not retried.
 
 This error occurs when the AI provider fails to generate an image. It can arise due to the following reasons:
 
@@ -313,6 +315,8 @@ for (const file of result.files) {
 | Provider                                                                        | Model                                                        | Support sizes (`width x height`) or aspect ratios (`width : height`)                                                                                                |
 | ------------------------------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [xAI Grok](/providers/ai-sdk-providers/xai#image-models)                        | `grok-imagine-image`                                         | `1:1`, `16:9`, `9:16`, `4:3`, `3:4`, `3:2`, `2:3`, `2:1`, `1:2`, `19.5:9`, `9:19.5`, `20:9`, `9:20`, `auto`                                                         |
+| [OpenAI](/providers/ai-sdk-providers/openai#image-models)                       | `gpt-image-2.5-flare`                                        | 1024x1024, 1536x1024, 1024x1536, custom                                                                                                                             |
+| [OpenAI](/providers/ai-sdk-providers/openai#image-models)                       | `gpt-image-2.5-sunburst`                                     | 1024x1024, 1536x1024, 1024x1536, custom                                                                                                                             |
 | [OpenAI](/providers/ai-sdk-providers/openai#image-models)                       | `gpt-image-2`                                                | 1024x1024, 1536x1024, 1024x1536                                                                                                                                     |
 | [OpenAI](/providers/ai-sdk-providers/openai#image-models)                       | `dall-e-3`                                                   | 1024x1024, 1792x1024, 1024x1792                                                                                                                                     |
 | [OpenAI](/providers/ai-sdk-providers/openai#image-models)                       | `dall-e-2`                                                   | 256x256, 512x512, 1024x1024                                                                                                                                         |
@@ -392,6 +396,7 @@ Above are a small subset of the image models supported by the AI SDK providers. 
 - [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
 - [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
+- [Batch](/docs/ai-sdk-core/batch)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)

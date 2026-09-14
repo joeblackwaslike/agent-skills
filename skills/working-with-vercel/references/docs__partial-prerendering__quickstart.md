@@ -12,8 +12,8 @@ related:
 summary: "Set up Partial Prerendering (PPR) in a Next.js App Router project: enable Cache Components, cache a static shell, and stream dynamic content per..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/partial-prerendering/quickstart.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "afe855c07be73f9eba86356e93b87f3525fa8b3ba0a7f00c9a75aa993c272eb3"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "376adeed61716882accde5c8503e94f24b4906202cd45c2b21ec3ae9a15ea4ce"
 ---
 
 # Getting started with Partial Prerendering
@@ -36,7 +36,6 @@ This guide walks through setting up [Partial Prerendering (PPR)](/docs/partial-p
 - [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache?from=related&source_path=%2Fdocs%2Fpartial-prerendering%2Fquickstart&source_site=vercel-docs&relationship=related)
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fpartial-prerendering%2Fquickstart&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 - [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Fpartial-prerendering%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fpartial-prerendering%2Fquickstart&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/partial-prerendering/quickstart.graph.md](/docs/partial-prerendering/quickstart.graph.md?from=related&source_path=%2Fdocs%2Fpartial-prerendering%2Fquickstart&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

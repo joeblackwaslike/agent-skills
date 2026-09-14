@@ -16,8 +16,8 @@ related:
 summary: Learn how to run your first code in a Vercel Sandbox.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/quickstart.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "379f5da96b06ec0a517973aeed4a5131a0d030fd3270c0bf5badae90c8c6fd13"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "834177bb975a6edfc814d63996ca17f4c58f9450a397dc93d6715d3afab1c438"
 ---
 
 # Quickstart
@@ -34,12 +34,11 @@ This guide shows you how to run your first code in a Vercel Sandbox.
 - [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available?from=related&source_path=%2Fdocs%2Fsandbox%2Fquickstart&source_site=vercel-docs&relationship=related)
 - [Safely running AI generated code in your Next.js application](https://vercel.com/kb/guide/running-ai-generated-code-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fquickstart&source_site=vercel-docs&relationship=related) — How to execute untrusted, AI‑generated code from a Next.js app using Vercel Sandbox, an isolated, ephemeral environment.
 - [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
+- [Using TanStack AI with Vercel Sandbox](https://vercel.com/kb/guide/tanstack-ai-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fquickstart&source_site=vercel-docs&relationship=related) — Run coding agents in isolated Vercel Sandbox microVMs with the @tanstack/ai-sandbox-vercel provider, with durable resume
 - [Using private GitHub repositories with Vercel Sandbox](https://vercel.com/kb/guide/sandbox-private-github-repositories?from=related&source_path=%2Fdocs%2Fsandbox%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to use Vercel Sandbox with private GitHub repositories using fine-grained tokens, classic tokens, or GitHub Ap
-- [Vercel Sandboxes are now generally available](https://vercel.com/changelog/vercel-sandboxes-ga?from=related&source_path=%2Fdocs%2Fsandbox%2Fquickstart&source_site=vercel-docs&relationship=related)
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fquickstart&source_site=vercel-docs&relationship=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 - [OpenAI SDK](https://vercel.com/docs/sandbox/ecosystem/openai-sdk?from=related&source_path=%2Fdocs%2Fsandbox%2Fquickstart&source_site=vercel-docs&relationship=related) — Use OpenAI function calling with AI Gateway to execute model-generated code in an isolated Vercel Sandbox.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fquickstart&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/sandbox/quickstart.graph.md](/docs/sandbox/quickstart.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fquickstart&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -47,8 +46,14 @@ Full cross-link map for this page: [/docs/sandbox/quickstart.graph.md](/docs/san
 **Agent prompt**
 
 ```text
-Help me set up Vercel Sandbox in this project. First, make sure the Vercel CLI is installed (`npm i -g vercel`). If I'm using Claude Code or Cursor, install the Vercel Plugin (`npx plugins add vercel/vercel-plugin`). For other agents, install Vercel Skills (`npx skills add vercel-labs/agent-skills`). Then: 1. Install the @vercel/sandbox SDK. 2. Run `vercel link` and `vercel env pull` to get credentials. 3. Create a script that spins up a sandbox, runs code inside it, and captures the output. 4. Run it to verify the sandbox works.
+Help me set up Vercel Sandbox in this project. First, make sure the Vercel CLI is installed (`npm i -g vercel`). Then: 1. Install the @vercel/sandbox SDK. 2. Run `vercel link` and `vercel env pull` to get credentials. 3. Create a script that spins up a sandbox, runs code inside it, and captures the output. 4. Run it to verify the sandbox works.
 ```
+
+> Install the [Vercel plugin](/docs/agent-resources/vercel-plugin?from=docs-callout\&source_path=%2Fdocs%2Fsandbox%2Fquickstart) to create and run a Vercel Sandbox with your coding agent.
+>
+> ```bash
+> npx plugins add vercel/vercel-plugin
+> ```
 
 ## Prerequisites
 

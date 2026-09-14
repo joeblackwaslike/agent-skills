@@ -12,8 +12,8 @@ related:
 summary: The browser extensions enable you to use the toolbar in production environments, take screenshots and attach them to comments, and set personal...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar/browser-extension.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "f17bc735da30da49ca8d495f95846aafa17f988348822de29dc579c4dcc91921"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "a715a80c5947eb423ea335954e95243a5aaeb5389d99e2f36aa5a29eb14ef905"
 ---
 
 # Toolbar Browser Extensions
@@ -36,7 +36,6 @@ The browser extension is supported in Chrome, Firefox, Opera, Microsoft Edge, in
 - [Introducing new developer tools in the Vercel Toolbar](https://vercel.com/blog/introducing-new-developer-tools-in-the-vercel-toolbar?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fbrowser-extension&source_site=vercel-docs&relationship=related)
 - [Accessibility Audit Tool](https://vercel.com/docs/vercel-toolbar/accessibility-audit-tool?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fbrowser-extension&source_site=vercel-docs&relationship=related) — Learn how to use the Accessibility Audit Tool to automatically check the Web Content Accessibility Guidelines 2.0 level
 - [Comments Overview](https://vercel.com/docs/comments?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fbrowser-extension&source_site=vercel-docs&relationship=related) — Comments allow teams and invited participants to give direct feedback on preview deployments. Learn more about Comments
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fbrowser-extension&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/vercel-toolbar/browser-extension.graph.md](/docs/vercel-toolbar/browser-extension.graph.md?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fbrowser-extension&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

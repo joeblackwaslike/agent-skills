@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/google.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "c8000c4fc5f9b1747e59ad8d67417811c83a94ec291fcabb36a53c7d9b9d1aaa"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "eda1ca4af96ff610c1d3433e2c51cf279bf9128560b4aea67b8fccc169e557cc"
 ---
 
 # Google Provider
@@ -1066,66 +1066,46 @@ The following Zod features are known to not work with Google:
   available provider model ID as a string if needed.
 </Note>
 
-### Text Batches
+### Batch
 
 <Note type="warning">
-  Text batch support is experimental and the API may change in patch releases.
+  Batch support is experimental and the API may change in patch releases.
 </Note>
 
-The Google provider supports asynchronous text generation through the
-[Gemini Batch API](https://ai.google.dev/gemini-api/docs/batch-api). Use the
-experimental text batch APIs to start a batch, poll its status, and stream its
-results:
+The Google provider supports asynchronous text generation through the [Gemini
+Batch API](https://ai.google.dev/gemini-api/docs/batch-api). Pass the Google
+provider to the AI SDK's [Batch](/docs/ai-sdk-core/batch)
+API for the complete workflow, including polling, persistence, and result handling.
 
-```ts
-import { google } from '@ai-sdk/google';
-import {
-  experimental_getBatchResults as getBatchResults,
-  experimental_getBatchStatus as getBatchStatus,
-  experimental_startTextBatch as startTextBatch,
-} from 'ai';
-import { setTimeout } from 'node:timers/promises';
-
-const model = google('gemini-3.6-flash');
-
-const batch = await startTextBatch({
-  model,
-  requests: [
-    { id: 'capital-france', prompt: 'What is the capital of France?' },
-    { id: 'capital-germany', prompt: 'What is the capital of Germany?' },
-  ],
-});
-
-let status = batch.status;
-while (status === 'pending') {
-  await setTimeout(60_000);
-  ({ status } = await getBatchStatus({ model, batch }));
-}
-
-for await (const item of getBatchResults({ model, batch })) {
-  if (item.status === 'succeeded') {
-    console.log(item.id, item.text);
-  } else {
-    console.error(item.id, item.error);
-  }
-}
-```
-
-`startTextBatch` returns a serializable batch reference. Persist this reference
-to check the batch status or retrieve its results from another process. Results
-can arrive in a different order from the input requests, so match each result by
-its `id`.
+Each request specifies its `type` and `model`. Google requires every text
+request in a batch to use the same model and throws before submission when the
+models differ.
 
 #### Webhooks
 
 You can pass a `webhookUrl` to receive a notification when the batch reaches a terminal state:
 
 ```ts
-const batch = await startTextBatch({
-  model,
+import { google } from '@ai-sdk/google';
+import { experimental_startBatch as startBatch } from 'ai';
+
+const model = 'gemini-3.6-flash';
+
+const batch = await startBatch({
+  provider: google,
   requests: [
-    { id: 'capital-france', prompt: 'What is the capital of France?' },
-    { id: 'capital-germany', prompt: 'What is the capital of Germany?' },
+    {
+      id: 'capital-france',
+      type: 'text',
+      model,
+      prompt: 'What is the capital of France?',
+    },
+    {
+      id: 'capital-germany',
+      type: 'text',
+      model,
+      prompt: 'What is the capital of Germany?',
+    },
   ],
   webhookUrl: 'https://example.com/api/google-batch-webhook',
 });
@@ -2301,7 +2281,6 @@ const result = await generateSpeech({
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
-- [LMNT](/providers/ai-sdk-providers/lmnt)
 - [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)

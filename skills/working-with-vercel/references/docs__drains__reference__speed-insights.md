@@ -14,8 +14,8 @@ related:
 summary: Learn about Speed Insights Drains - data formats and performance metrics configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/reference/speed-insights.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "e666fa90ec7191ee4476eedbdb49315df3b6a2e0ac23d1070e85325397e2ba6d"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "ab28d1e205d00efa9dea0c9c39bf17705b9e55cad52e4feff30a53311d4d9ded"
 ---
 
 # Speed Insights Drains Reference
@@ -34,7 +34,7 @@ Speed Insights Drains send performance metrics and web vitals from your applicat
 - [Trace Drains Reference](https://vercel.com/docs/drains/reference/traces?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Fspeed-insights&source_site=vercel-docs&relationship=related) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
 - [Audit Log Drains Reference](https://vercel.com/docs/drains/reference/audit-logs?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Fspeed-insights&source_site=vercel-docs&relationship=related) — Learn about Audit Log Drains - data formats, fields, and team activity events.
 - [Speed Insights Overview](https://vercel.com/docs/speed-insights?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Fspeed-insights&source_site=vercel-docs&relationship=related) — This page lists out and explains all the performance metrics provided by Vercel's Speed Insights feature.
-- [Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Fspeed-insights&source_site=vercel-docs&relationship=related) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
+- [Find a Drain by id](https://vercel.com/docs/rest-api/drains/find-a-drain-by-id?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Fspeed-insights&source_site=vercel-docs&relationship=related) — GET /v1/drains/{id} — Get the information for a specific Drain by passing the drain id in the URL.
 
 Full cross-link map for this page: [/docs/drains/reference/speed-insights.graph.md](/docs/drains/reference/speed-insights.graph.md?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Fspeed-insights&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

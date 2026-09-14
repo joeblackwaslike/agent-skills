@@ -16,8 +16,8 @@ related:
 summary: Learn about Log Drains - data formats, sources, environments, and security configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/reference/logs.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "4b074f99cc550310470b91c451e35226be4d0174931a34ebd969ae22c80eabb0"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "068df35ae3ba43d559dc7ab335c809ce8523d541e6c5d601b42e13b694815311"
 ---
 
 # Log Drains Reference
@@ -32,13 +32,13 @@ Log Drains forward logs from your deployments to external endpoints for storage 
 
 - [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
 - [Log drains now support log source selection](https://vercel.com/changelog/log-drains-now-support-log-source-selection?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Flogs&source_site=vercel-docs&relationship=related)
-- [How do I store logs on Vercel?](https://vercel.com/kb/guide/how-do-i-store-logs-on-vercel?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to store logs on Vercel.
 - [Log Drains](https://vercel.com/blog/log-drains?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Flogs&source_site=vercel-docs&relationship=related)
+- [How do I store logs on Vercel?](https://vercel.com/kb/guide/how-do-i-store-logs-on-vercel?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to store logs on Vercel.
 - [Audit Log Drains Reference](https://vercel.com/docs/drains/reference/audit-logs?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Flogs&source_site=vercel-docs&relationship=related) — Learn about Audit Log Drains - data formats, fields, and team activity events.
 - [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Flogs&source_site=vercel-docs&relationship=related) — Learn about Web Analytics Drains - data formats and custom events configuration.
 - [Trace Drains Reference](https://vercel.com/docs/drains/reference/traces?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Flogs&source_site=vercel-docs&relationship=related) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
-- [Creates a Configurable Log Drain \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/creates-a-configurable-log-drain-deprecated?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Flogs&source_site=vercel-docs&relationship=related) — POST /v1/log-drains — Creates a configurable log drain. This endpoint must be called with a team AccessToken \\(integrati
-- [Drain Audit Logs to S3](https://vercel.com/docs/drains/audit-logs-to-s3?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to configure AWS IAM and Amazon S3 so Vercel can write Audit Log Drain events to your S3 bucket.
+- [Drain Audit Logs to Datadog](https://vercel.com/docs/drains/audit-logs-to-datadog?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to forward Vercel Audit Log Drain events to Datadog using the Datadog Logs API.
+- [Speed Insights Drains Reference](https://vercel.com/docs/drains/reference/speed-insights?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Flogs&source_site=vercel-docs&relationship=related) — Learn about Speed Insights Drains - data formats and performance metrics configuration.
 
 Full cross-link map for this page: [/docs/drains/reference/logs.graph.md](/docs/drains/reference/logs.graph.md?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Flogs&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -70,6 +70,7 @@ The following table describes the possible fields that are sent via Log Drains:
 | `statusCode`             | number | No       | HTTP status code of the request                                        | 200 (`-1` means no response returned and the lambda crashed)                                                                                                           |
 | `requestId`              | string | No       | Identifier of the request                                              | `643af4e3-975a-4cc7-9e7a-1eda11539d90`                                                                                                                                 |
 | `environment`            | enum   | No       | Deployment environment                                                 | `production` or `preview`                                                                                                                                              |
+| `customEnvironment`      | string | No       | Slug of the Custom Environment associated with the deployment         | `staging`                                                                                                                                                              |
 | `branch`                 | string | No       | Git branch name                                                        | `main`                                                                                                                                                                 |
 | `ja3Digest`              | string | No       | JA3 fingerprint digest                                                 | `769c83e5b...`                                                                                                                                                         |
 | `ja4Digest`              | string | No       | JA4 fingerprint digest                                                 | `t13d1516h2...`                                                                                                                                                        |

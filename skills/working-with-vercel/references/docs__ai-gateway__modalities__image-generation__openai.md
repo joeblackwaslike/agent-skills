@@ -1,10 +1,10 @@
 ---
-title: Image Generation with Chat Completions API
+title: AI Gateway Image Generation via Chat Completions
 product: vercel
 url: /docs/ai-gateway/modalities/image-generation/openai
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/image-generation/openai"
-last_updated: 2026-08-27
-type: conceptual
+last_updated: 2026-09-08
+type: how-to
 prerequisites:
   - /docs/ai-gateway/modalities/image-generation
   - /docs/ai-gateway/modalities
@@ -13,11 +13,11 @@ related:
 summary: Generate and edit images using AI models through Vercel AI Gateway with the Chat Completions API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/image-generation/openai.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "c96cb9a0f05d0fa4553c0134a3a20354f26251150dd42724722d244f6368fe68"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "460788a85b2f9615e607733479d2e3b5abaa13b23f99621895418682c66b63a2"
 ---
 
-# Image Generation with Chat Completions API
+# AI Gateway Image Generation via Chat Completions
 
 AI Gateway supports image generation using the Chat Completions API for the models listed under the **Image Gen** filter at the [AI Gateway Models
 page](/ai-gateway/models?type=image), including multimodal LLMs and image-only models.
@@ -29,13 +29,11 @@ page](/ai-gateway/models?type=image), including multimodal LLMs and image-only m
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fopenai&source_site=vercel-docs&relationship=related)
-- [Image Generation with AI SDK](https://vercel.com/docs/ai-gateway/modalities/image-generation/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fopenai&source_site=vercel-docs&relationship=related) — Generate and edit images using AI models through Vercel AI Gateway with the AI SDK.
+- [AI Gateway Image Generation with AI SDK](https://vercel.com/docs/ai-gateway/modalities/image-generation/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fopenai&source_site=vercel-docs&relationship=related) — Generate and edit images using AI models through Vercel AI Gateway with the AI SDK.
 - [Image-only models available in Vercel AI Gateway](https://vercel.com/changelog/image-only-models-available-in-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fopenai&source_site=vercel-docs&relationship=related)
 - [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fopenai&source_site=vercel-docs&relationship=related) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
-- [Image Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fopenai&source_site=vercel-docs&relationship=related) — Generate images using AI models that support multimodal output through the Chat Completions API.
-- [Image Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/image?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fopenai&source_site=vercel-docs&relationship=related) — Generate images from text prompts using AI Gateway.
-- [File Attachments](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/images?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fopenai&source_site=vercel-docs&relationship=related) — Send images and PDF documents for analysis using the OpenAI Responses API through AI Gateway.
-- [Text Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/text?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fopenai&source_site=vercel-docs&relationship=related) — Generate and stream text responses using AI Gateway.
+- [AI Gateway Chat Completions Image Generation Reference](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fopenai&source_site=vercel-docs&relationship=related) — Generate images using AI models that support multimodal output through the Chat Completions API through AI Gateway.
+- [OpenAI Responses Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/images?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fopenai&source_site=vercel-docs&relationship=related) — Send images and PDF documents for analysis using the OpenAI Responses API through AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/image-generation/openai.graph.md](/docs/ai-gateway/modalities/image-generation/openai.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fopenai&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -115,6 +113,8 @@ Image-only models use the OpenAI-compatible `/v1/images/generations` endpoint, n
 
 OpenAI's `openai/gpt-image-2` is an image-only model. Call it directly with `openai.images.generate`.
 
+#### TypeScript
+
 ```typescript filename="generate-gpt-image-2.ts"
 import OpenAI from 'openai';
 
@@ -128,8 +128,10 @@ const result = await openai.images.generate({
   prompt: 'A Devon Rex peering into a koi pond in the style of ukiyo-e',
 });
 
-console.log(`Generated ${result.data.length} image(s)`);
+console.log(`Generated ${(result.data?.length ?? 0)} image(s)`);
 ```
+
+#### Python
 
 ```python filename="generate-gpt-image-2.py"
 import os
@@ -148,6 +150,18 @@ result = client.images.generate(
 print(f'Generated {len(result.data)} image(s)')
 ```
 
+#### cURL
+
+```bash filename="generate-image.sh"
+curl --fail-with-body https://ai-gateway.vercel.sh/v1/images/generations \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "openai/gpt-image-2",
+    "prompt": "A Devon Rex peering into a koi pond in the style of ukiyo-e"
+  }'
+```
+
 ### Black Forest Labs
 
 Black Forest Labs' Flux models offer advanced image generation with various capabilities. Multiple models are available including but not limited to:
@@ -161,7 +175,9 @@ Black Forest Labs' Flux models offer advanced image generation with various capa
 
 View available [Black Forest Labs provider options](https://ai-sdk.dev/providers/ai-sdk-providers/black-forest-labs#provider-options) for configuration details.
 
-#### TypeScript (Basic)
+#### TypeScript
+
+#### Basic
 
 ```typescript filename="generate-bfl-simple.ts"
 import OpenAI from 'openai';
@@ -179,7 +195,7 @@ async function main() {
   });
 
   // Process the generated images
-  for (const image of result.data) {
+  for (const image of result.data ?? []) {
     if (image.b64_json) {
       console.log(
         'Generated image (base64):',
@@ -192,7 +208,7 @@ async function main() {
 main().catch(console.error);
 ```
 
-#### TypeScript (With Options)
+#### With options
 
 ```typescript filename="generate-bfl-options.ts"
 import OpenAI from 'openai';
@@ -207,17 +223,21 @@ async function main() {
   const result = await openai.images.generate({
     model: 'bfl/flux-2-pro',
     prompt: `Draw a gorgeous image of a river made of white owl feathers snaking through a serene winter landscape`,
-    // @ts-expect-error - Provider options are not in OpenAI types
-    providerOptions: {
-      blackForestLabs: {
-        outputFormat: 'jpeg',
-        safetyTolerance: 2,
+
+    // AI Gateway extension fields are not included in the upstream SDK types.
+
+    ...{
+      providerOptions: {
+        blackForestLabs: {
+          outputFormat: 'jpeg',
+          safetyTolerance: 2,
+        },
       },
     },
   });
 
   // Process the generated images
-  for (const image of result.data) {
+  for (const image of result.data ?? []) {
     if (image.b64_json) {
       console.log(
         'Generated image (base64):',
@@ -301,6 +321,20 @@ if __name__ == "__main__":
     main()
 ```
 
+#### cURL
+
+```bash filename="generate-image.sh"
+curl --fail-with-body https://ai-gateway.vercel.sh/v1/images/generations \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "model": "bfl/flux-2-pro",
+  "prompt": "A mystical aurora borealis over a frozen lake.",
+  "n": 1,
+  "response_format": "b64_json"
+}'
+```
+
 ### SpaceXAI Grok Imagine
 
 SpaceXAI's Grok Imagine models generate high-quality images from text prompts with support for various aspect ratios. Browse the current lineup in the [model list](/ai-gateway/models).
@@ -323,7 +357,7 @@ async function main() {
   });
 
   // Process the generated images
-  for (const image of result.data) {
+  for (const image of result.data ?? []) {
     if (image.b64_json) {
       console.log(
         'Generated image (base64):',
@@ -392,6 +426,20 @@ if __name__ == "__main__":
     main()
 ```
 
+#### cURL
+
+```bash filename="generate-image.sh"
+curl --fail-with-body https://ai-gateway.vercel.sh/v1/images/generations \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "model": "spacexai/grok-imagine-image",
+  "prompt": "A futuristic city at sunset.",
+  "n": 1,
+  "response_format": "b64_json"
+}'
+```
+
 ## Editing images
 
 Image-only models can also edit an existing image. Send one or more source images and a prompt describing the change to the OpenAI-compatible `/v1/images/edits` endpoint, using `openai.images.edit` from the OpenAI SDK.
@@ -399,6 +447,8 @@ Image-only models can also edit an existing image. Send one or more source image
 Support varies by model. Models that accept image inputs include `openai/gpt-image-2`, `bfl/flux-kontext-pro`, `bfl/flux-pro-1.0-fill`, `google/gemini-3.1-flash-image`, and `spacexai/grok-imagine-image`. Edited images are returned as base64 strings in `data`, the same as image generation.
 
 ### Edit a single image
+
+#### TypeScript
 
 ```typescript filename="edit-image.ts"
 import { createReadStream } from 'node:fs';
@@ -415,8 +465,10 @@ const result = await openai.images.edit({
   prompt: 'Add a watercolor effect to this image',
 });
 
-console.log(`Edited ${result.data.length} image(s)`);
+console.log(`Edited ${(result.data?.length ?? 0)} image(s)`);
 ```
+
+#### Python
 
 ```python filename="edit-image.py"
 import os
@@ -436,11 +488,31 @@ result = client.images.edit(
 print(f'Edited {len(result.data)} image(s)')
 ```
 
+#### cURL
+
+```bash filename="edit-image.sh"
+curl --fail-with-body https://ai-gateway.vercel.sh/v1/images/edits \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -F "model=openai/gpt-image-2" \
+  -F "prompt=Add a watercolor effect to this image" \
+  -F "image=@source.png"
+```
+
 ### Combine multiple images
 
 Pass up to 16 source images to compose them into a single result:
 
+#### TypeScript
+
 ```typescript filename="combine-images.ts"
+import { createReadStream } from 'node:fs';
+import OpenAI from 'openai';
+
+const openai = new OpenAI({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh/v1',
+});
+
 const result = await openai.images.edit({
   model: 'openai/gpt-image-2',
   image: [
@@ -450,9 +522,17 @@ const result = await openai.images.edit({
   ],
   prompt: 'Create a lovely gift basket with these three items in it',
 });
+console.log(result.data);
 ```
 
+#### Python
+
 ```python filename="combine-images.py"
+import os
+from openai import OpenAI
+
+client = OpenAI(api_key=os.environ["AI_GATEWAY_API_KEY"], base_url="https://ai-gateway.vercel.sh/v1")
+
 result = client.images.edit(
     model='openai/gpt-image-2',
     image=[
@@ -462,28 +542,71 @@ result = client.images.edit(
     ],
     prompt='Create a lovely gift basket with these three items in it',
 )
+print(result.data)
+```
+
+#### cURL
+
+```bash filename="edit-image.sh"
+curl --fail-with-body https://ai-gateway.vercel.sh/v1/images/edits \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -F "model=openai/gpt-image-2" \
+  -F "prompt=Create a lovely gift basket with these three items in it" \
+  -F "image[]=@body-lotion.png" \
+  -F "image[]=@bath-bomb.png" \
+  -F "image[]=@soap.png"
 ```
 
 ### Replace part of an image with a mask
 
 Pass a `mask` to restrict the edit to a specific region. The mask must be the same size as the source image, and its transparent areas mark the region to replace:
 
+#### TypeScript
+
 ```typescript filename="edit-image-mask.ts"
+import { createReadStream } from 'node:fs';
+import OpenAI from 'openai';
+
+const openai = new OpenAI({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh/v1',
+});
+
 const result = await openai.images.edit({
   model: 'openai/gpt-image-2',
   image: createReadStream('living-room.png'),
   mask: createReadStream('mask.png'),
   prompt: 'Place a potted fern in the empty corner',
 });
+console.log(result.data);
 ```
 
+#### Python
+
 ```python filename="edit-image-mask.py"
+import os
+from openai import OpenAI
+
+client = OpenAI(api_key=os.environ["AI_GATEWAY_API_KEY"], base_url="https://ai-gateway.vercel.sh/v1")
+
 result = client.images.edit(
     model='openai/gpt-image-2',
     image=open('living-room.png', 'rb'),
     mask=open('mask.png', 'rb'),
     prompt='Place a potted fern in the empty corner',
 )
+print(result.data)
+```
+
+#### cURL
+
+```bash filename="edit-image.sh"
+curl --fail-with-body https://ai-gateway.vercel.sh/v1/images/edits \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -F "model=openai/gpt-image-2" \
+  -F "prompt=Place a potted fern in the empty corner" \
+  -F "image=@living-room.png" \
+  -F "mask=@mask.png"
 ```
 
 > **💡 Note:** Not every model supports masks. Models without mask support return a warning

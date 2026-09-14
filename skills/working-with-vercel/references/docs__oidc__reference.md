@@ -12,8 +12,8 @@ related:
 summary: Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/reference.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "83178f86b1721ea748a08ea097229e4952f1acd83742093c077390d3107a68ea"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "8261ff7a6230726e8cca9779db642438956c2e025e906bc8406630f8576ad64e"
 ---
 
 # OIDC Federation Reference
@@ -34,11 +34,11 @@ They are available from the [@vercel/oidc](https://www.npmjs.com/package/@vercel
 - [Trusted Sources for Deployment Protection](https://vercel.com/changelog/trusted-sources-for-deployment-protection?from=related&source_path=%2Fdocs%2Foidc%2Freference&source_site=vercel-docs&relationship=related)
 - [Enhancing security of backend connectivity with OpenID Connect](https://vercel.com/blog/enhancing-security-of-backend-connectivity-with-openid-connect?from=related&source_path=%2Fdocs%2Foidc%2Freference&source_site=vercel-docs&relationship=related)
 - [OpenID Connect (OIDC) Federation now generally available](https://vercel.com/changelog/openid-connect-federation-now-generally-available?from=related&source_path=%2Fdocs%2Foidc%2Freference&source_site=vercel-docs&relationship=related)
-- [OIDC](https://vercel.com/docs/ai-gateway/authentication-and-byok/oidc?from=related&source_path=%2Fdocs%2Foidc%2Freference&source_site=vercel-docs&relationship=related) — Authenticate AI Gateway requests with Vercel OIDC tokens, with no API key to manage.
 - [Tokens](https://vercel.com/docs/sign-in-with-vercel/tokens?from=related&source_path=%2Fdocs%2Foidc%2Freference&source_site=vercel-docs&relationship=related) — Learn how to Sign in with Vercel
 - [Passport token claims](https://vercel.com/docs/passport/token-claims?from=related&source_path=%2Fdocs%2Foidc%2Freference&source_site=vercel-docs&relationship=related) — Review the standard, deployment, and visitor identity claims in a Passport token.
 - [Vercel KMS Authentication](https://vercel.com/docs/kms/concepts/authentication?from=related&source_path=%2Fdocs%2Foidc%2Freference&source_site=vercel-docs&relationship=related) — How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel ac
 - [SDK Reference](https://vercel.com/docs/connect/ts-sdk-reference?from=related&source_path=%2Fdocs%2Foidc%2Freference&source_site=vercel-docs&relationship=related) — API reference for @vercel/connect, the TypeScript SDK for requesting runtime tokens from Vercel Connect.
+- [Create an issuer](https://vercel.com/docs/rest-api/kms/create-an-issuer?from=related&source_path=%2Fdocs%2Foidc%2Freference&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers — Create a new KMS issuer for the authenticated team. An issuer owns the asymmetric signing keys th
 
 Full cross-link map for this page: [/docs/oidc/reference.graph.md](/docs/oidc/reference.graph.md?from=related&source_path=%2Fdocs%2Foidc%2Freference&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

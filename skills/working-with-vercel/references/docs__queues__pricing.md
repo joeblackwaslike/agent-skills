@@ -14,8 +14,8 @@ related:
 summary: "Understand how Vercel Queues billing works, what's included, and which service limits apply."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/pricing.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "ec349f419c5a0086f8ec9a3c8d8672e20d42ef77d7fd1c6cedd53e88fcde78a1"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "84f423a2ae040fabb1a63ec2c98e72ddf8006fc29b96934819ce877874c5ea53"
 ---
 
 # Pricing and Limits
@@ -31,8 +31,8 @@ Vercel Queues is billed per API operation. Every API call counts as one operatio
 - [Services Pricing and Limits](https://vercel.com/docs/services/pricing?from=related&source_path=%2Fdocs%2Fqueues%2Fpricing&source_site=vercel-docs&relationship=related) — Understand how billing works for Vercel Services, what's charged, and which limits apply.
 - [Queues concepts](https://vercel.com/docs/queues/concepts?from=related&source_path=%2Fdocs%2Fqueues%2Fpricing&source_site=vercel-docs&relationship=related) — Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
 - [Limits and Pricing for Monitoring](https://vercel.com/docs/query/monitoring/limits-and-pricing?from=related&source_path=%2Fdocs%2Fqueues%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about our limits and pricing when using Monitoring. Different limitations are applied depending on your plan.
+- [Vercel KMS Pricing and Limits](https://vercel.com/docs/kms/pricing?from=related&source_path=%2Fdocs%2Fqueues%2Fpricing&source_site=vercel-docs&relationship=related) — How Vercel KMS is billed per signing operation, the platform limits that apply, and how to stop being billed.
 - [API Reference](https://vercel.com/docs/queues/api?from=related&source_path=%2Fdocs%2Fqueues%2Fpricing&source_site=vercel-docs&relationship=related) — HTTP API reference for Vercel Queues. Publish, consume, acknowledge, and manage messages.
-- [Pricing and Limits](https://vercel.com/docs/eve/pricing?from=related&source_path=%2Fdocs%2Fqueues%2Fpricing&source_site=vercel-docs&relationship=related) — Understand how eve usage maps to Vercel resources and inherited platform limits.
 
 Full cross-link map for this page: [/docs/queues/pricing.graph.md](/docs/queues/pricing.graph.md?from=related&source_path=%2Fdocs%2Fqueues%2Fpricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

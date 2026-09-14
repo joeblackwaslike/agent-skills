@@ -15,8 +15,8 @@ related:
 summary: Learn how to set the memory / CPU of a Vercel Function.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/memory.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "8fa865c4f25be15f3c9fdfc7fd40d6a6cce8a40248f0570f14a9d68cc964c60b"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "13070d56b94c73e67bc0cfd2daffbca235af18bbe17f6bc08067389a390e8eb4"
 ---
 
 # Configuring Memory and CPU for Vercel Functions
@@ -34,7 +34,7 @@ The memory configuration of a function determines how much memory and CPU a func
 - [In-function concurrency now in public beta](https://vercel.com/changelog/in-function-concurrency-now-in-public-beta?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fmemory&source_site=vercel-docs&relationship=related)
 - [Manage your Vercel Functions CPU and memory in the dashboard](https://vercel.com/changelog/manage-your-vercel-functions-cpu-and-memory-in-the-dashboard?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fmemory&source_site=vercel-docs&relationship=related)
 - [Detect memory and OOM failures in Vercel Functions](https://vercel.com/kb/guide/detect-memory-and-oom-failures-in-serverless-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fmemory&source_site=vercel-docs&relationship=related) — Fix out-of-memory \\(OOM\\) errors and memory limit exceeded crashes in Vercel serverless functions. Debug 5xx errors, mon
-- [How can I reduce my Vercel Functions usage on Vercel?](https://vercel.com/kb/guide/how-can-i-reduce-my-serverless-execution-usage-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fmemory&source_site=vercel-docs&relationship=related) — Reduce Vercel Functions usage and cost under Fluid compute pricing with caching, rendering strategies, and function conf
+- [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fmemory&source_site=vercel-docs&relationship=related) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
 - [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fmemory&source_site=vercel-docs&relationship=related) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
 - [Higher defaults and limits for Vercel Functions running Fluid compute](https://vercel.com/changelog/higher-defaults-and-limits-for-vercel-functions-running-fluid-compute?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fmemory&source_site=vercel-docs&relationship=related)
 - [Troubleshooting Build Error: "Serverless Function has exceeded the unzipped maximum size of 250 MB"](https://vercel.com/kb/guide/troubleshooting-function-250mb-limit?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fmemory&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot builds failing due to exceeding the maximum function size limit on Vercel.

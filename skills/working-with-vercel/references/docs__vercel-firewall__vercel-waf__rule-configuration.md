@@ -13,8 +13,8 @@ related:
 summary: List of configurable options with the Vercel WAF
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/rule-configuration.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "99f6e7bcf518af661f093fff5f6e77c89e9239e6ec206f5621d4b2c5fbccac18"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "fb7781b31fa3fe0e0afaed656f6750c53d0ce15ea84cba46d5061442f7cbd075"
 ---
 
 # Rule Configuration Reference
@@ -33,9 +33,9 @@ For each custom rule that you create, you can configure one or more conditions w
 - [Deny non-browser traffic or blocklisted ASNs](https://vercel.com/kb/guide/deny-non-browser-traffic-or-blocklisted-asns?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frule-configuration&source_site=vercel-docs&relationship=related) — Learn how to block traffic from known threats with the Vercel WAF API.
 - [WAF Custom Rules](https://vercel.com/docs/vercel-firewall/vercel-waf/custom-rules?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frule-configuration&source_site=vercel-docs&relationship=related) — Learn how to add and manage custom rules to configure the Vercel Web Application Firewall \\(WAF\\).
 - [WAF Managed Rulesets](https://vercel.com/docs/vercel-firewall/vercel-waf/managed-rulesets?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frule-configuration&source_site=vercel-docs&relationship=related) — Learn how to use WAF Managed Rulesets with the Vercel Web Application Firewall \\(WAF\\)
-- [vercel firewall](https://vercel.com/docs/cli/firewall?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frule-configuration&source_site=vercel-docs&relationship=related) — Learn how to manage your project's custom firewall rules, IP blocks, system bypass rules, attack challenge mode, and sys
-- [Routing Rules](https://vercel.com/docs/ai-gateway/models-and-providers/routing-rules?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frule-configuration&source_site=vercel-docs&relationship=related) — Define team-wide rules that rewrite requests from one model to another or deny specific models in AI Gateway.
 - [Project-Level Routing Rules](https://vercel.com/docs/routing/project-routing-rules?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frule-configuration&source_site=vercel-docs&relationship=related) — Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code
+- [AI Gateway Routing Rules](https://vercel.com/docs/ai-gateway/models-and-providers/routing-rules?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frule-configuration&source_site=vercel-docs&relationship=related) — Define team-wide rules that rewrite requests from one model to another or deny specific models in AI Gateway.
+- [List rules](https://vercel.com/docs/rest-api/ai-gateway/list-rules?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frule-configuration&source_site=vercel-docs&relationship=related) — GET /v1/ai-gateway/rules — List the authenticated team's routing rules
 
 Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf/rule-configuration.graph.md](/docs/vercel-firewall/vercel-waf/rule-configuration.graph.md?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frule-configuration&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

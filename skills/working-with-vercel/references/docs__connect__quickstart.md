@@ -16,8 +16,8 @@ related:
 summary: Create your first connector in Vercel Connect, install the SDK, and request a runtime provider token from your code.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/quickstart.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "662bfd06ac5d8311d460ba6d48d8326276e5be23194ffd29e1ce6b6e3c36d0fb"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "9281f15fdabc70efb9e03f6bd09b074ffddfa4b85bedef89d64d4dc51cedd225"
 ---
 
 # Quickstart
@@ -43,7 +43,6 @@ This guide shows you how to create your first connector in Vercel Connect and re
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents?from=related&source_path=%2Fdocs%2Fconnect%2Fquickstart&source_site=vercel-docs&relationship=related)
 - [Auth.js](https://vercel.com/docs/connect/frameworks/authjs?from=related&source_path=%2Fdocs%2Fconnect%2Fquickstart&source_site=vercel-docs&relationship=related) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
 - [Connectors](https://vercel.com/docs/connect/concepts/connectors?from=related&source_path=%2Fdocs%2Fconnect%2Fquickstart&source_site=vercel-docs&relationship=related) — A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fconnect%2Fquickstart&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/connect/quickstart.graph.md](/docs/connect/quickstart.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fquickstart&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

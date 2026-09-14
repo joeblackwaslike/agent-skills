@@ -11,11 +11,12 @@ prerequisites:
 related:
   - /docs/domains/working-with-nameservers
   - /docs/rest-api/sdk
+  - /docs/deployments/generated-urls
 summary: Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "c10be2c973522e7efd97caddc034d64d16eaf4014ee8f7c4789ad1c4f5253f32"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "383be040ad078de7273b2b22a273725607c0093081d8016399ccc2ea756bcdcb"
 ---
 
 # Configuring Custom Domains
@@ -31,14 +32,13 @@ If you plan on offering subdomains like `*.acme.com`, add a wildcard domain to y
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Build a multi-tenant app with Next.js and Vercel](https://vercel.com/kb/guide/nextjs-multi-tenant-application?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Create a Next.js application with multi-tenancy and custom domain support on Vercel.
-- [How do I add a custom domain to my Vercel project?](https://vercel.com/kb/guide/how-do-i-add-a-custom-domain-to-my-vercel-project?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Learn how to add a custom domain to your Vercel project.
 - [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Point your apex domain to Vercel with an A record \\(76.76.21.21 or your domain card's value\\), pair it with a www CNAME,
 - [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
 - [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
 - [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
-- [Troubleshooting domains](https://vercel.com/docs/domains/troubleshooting?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
-- [Working with domains](https://vercel.com/docs/domains/working-with-domains?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Learn how domains work and the options Vercel provides for managing them.
 - [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
+- [Working with domains](https://vercel.com/docs/domains/working-with-domains?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Learn how domains work and the options Vercel provides for managing them.
+- [Troubleshooting domains](https://vercel.com/docs/domains/troubleshooting?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
 
 Full cross-link map for this page: [/docs/platforms/multi-tenant-platforms/configuring-domains.graph.md](/docs/platforms/multi-tenant-platforms/configuring-domains.graph.md?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -229,7 +229,7 @@ If you try to add `.acme.com` without pointing to `ns1.vercel-dns.com` and `ns2.
 
 ### Exceeding subdomain length for preview URLs
 
-Each DNS label has a [63-character limit](/kb/guide/why-is-my-vercel-deployment-url-being-shortened#rfc-1035). If you have a very long branch name plus a tenant subdomain, the fully generated preview URL might fail to resolve. Keep branch names concise.
+Each DNS label has a [63-character limit](/docs/deployments/generated-urls#truncation). If you have a very long branch name plus a tenant subdomain, the fully generated preview URL might fail to resolve. Keep branch names concise.
 
 ### Duplicate content SEO issues
 

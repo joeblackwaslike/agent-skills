@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/fish-audio.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "93fa850554e8d68eecef121b6c50987b964ec2d8e1060d6e28354c4d065d1409"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "bacd349de5ca5e3f9ea1efae94a581aca4e556053d364f0ac347b97e67e37ee3"
 ---
 
 # Fish Audio Provider
@@ -365,7 +365,6 @@ console.log(result.providerMetadata?.fishAudio?.language); // 'English'
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
-- [LMNT](/providers/ai-sdk-providers/lmnt)
 - [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)

@@ -1,8 +1,8 @@
 ---
 title: "Available features index"
 source: "https://containers.dev/features"
-fetched_at: "2026-09-07T08:58:15.643Z"
-sha256: "e86cc5c6960ca994a2c597ae2a0027c874c708e46f8b9245627664669daa7362"
+fetched_at: "2026-09-14T09:36:17.711Z"
+sha256: "146155f0b00710d9b4aad5fd37ca019912b1c6ec8cc0d45acae652489d18c54b"
 ---
 
 # Available features index
@@ -616,11 +616,11 @@ Features
 | difftastic | Valentin Heiligers | `ghcr.io/va-h/devcontainers-features/difftastic:1` | `1.1.0` |
 | uv | Valentin Heiligers | `ghcr.io/va-h/devcontainers-features/uv:1` | `1.1.4` |
 | AWS CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/aws-cli:1` | `1.6.27` |
-| Azure CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/azure-cli:1` | `1.0.21` |
-| Common Utilities | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/common-utils:1` | `1.4.131` |
-| Docker (Docker-in-Docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-in-docker:1` | `1.3.38` |
-| Docker (docker-outside-of-docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-outside-of-docker:1` | `1.3.38` |
-| Google Cloud CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/gcloud-cli:1` | `1.0.75` |
+| Azure CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/azure-cli:1` | `1.0.22` |
+| Common Utilities | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/common-utils:1` | `1.4.132` |
+| Docker (Docker-in-Docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-in-docker:1` | `1.3.39` |
+| Docker (docker-outside-of-docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-outside-of-docker:1` | `1.3.39` |
+| Google Cloud CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/gcloud-cli:1` | `1.0.76` |
 | Go | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/go:1` | `1.7.39` |
 | Terraform, tflint, and TFGrunt | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/terraform:1` | `1.3.28` |
 | bpmnlint | Waqqas Jabbar | `ghcr.io/waqqas/feature/bpmnlint:1` | `1.0.1` |
@@ -1344,26 +1344,27 @@ Features
 | Gemini CLI | siri404 | `ghcr.io/siri404/devcontainer-ai-features/gemini-cli:1` | `1.0.1` |
 | MCP Inspector | siri404 | `ghcr.io/siri404/devcontainer-ai-features/mcp-inspector:1` | `1.0.1` |
 | Vercel CLI | siri404 | `ghcr.io/siri404/devcontainer-ai-features/vercel-cli:1` | `1.0.1` |
-| Angular Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/angular-dev:1` | `1.1.0` |
-| Automatic File Headers | baxyz | `ghcr.io/helpers4/devcontainer/auto-header:1` | `1.1.0` |
-| Bitwarden Secrets Manager CLI | baxyz | `ghcr.io/helpers4/devcontainer/bitwarden-secrets-manager:1` | `1.0.0` |
-| Claude Code Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/claude-dev:1` | `1.1.0` |
-| Cline Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/cline-dev:1` | `1.0.0` |
-| GitHub Copilot Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/copilot-dev:1` | `1.0.3` |
-| Dotfiles Sync | baxyz | `ghcr.io/helpers4/devcontainer/dotfiles-sync:1` | `1.0.8` |
-| Essential Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/essential-dev:1` | `1.0.9` |
-| git absorb — Automatic Fixup Commits | baxyz | `ghcr.io/helpers4/devcontainer/git-absorb:1` | `1.1.0` |
-| GitHub Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/github-dev:1` | `1.0.5` |
-| helpers4 Common Library | baxyz | `ghcr.io/helpers4/devcontainer/helpers4-common:1` | `1.0.1` |
-| Mistral Vibe Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/mistral-dev:1` | `1.1.0` |
-| Nub — Fast TypeScript/Node Toolchain | baxyz | `ghcr.io/helpers4/devcontainer/nub:1` | `1.1.0` |
-| Automatic Package Installation | baxyz | `ghcr.io/helpers4/devcontainer/package-auto-install:1` | `1.1.0` |
-| Peon Ping — AI Agent Sound Notifications | baxyz | `ghcr.io/helpers4/devcontainer/peon-ping:1` | `1.1.0` |
-| Playwright Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/playwright-dev:1` | `1.1.0` |
-| pnpm Store (shared) | baxyz | `ghcr.io/helpers4/devcontainer/pnpm-store:1` | `1.1.0` |
-| Shell History Per Project | baxyz | `ghcr.io/helpers4/devcontainer/shell-history-per-project:1` | `1.1.0` |
-| TypeScript Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/typescript-dev:1` | `1.0.7` |
-| Vite+ Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/vite-plus:1` | `1.1.0` |
+| Angular Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/angular-dev:1` | `1.2.3` |
+| Automatic File Headers | baxyz | `ghcr.io/helpers4/devcontainer/auto-header:1` | `1.2.3` |
+| Bitwarden Secrets Manager CLI | baxyz | `ghcr.io/helpers4/devcontainer/bitwarden-secrets-manager:1` | `1.2.4` |
+| Claude Code Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/claude-dev:1` | `1.3.1` |
+| Cline Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/cline-dev:1` | `1.0.1` |
+| GitHub Copilot Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/copilot-dev:1` | `1.0.4` |
+| Dotfiles Sync | baxyz | `ghcr.io/helpers4/devcontainer/dotfiles-sync:1` | `1.2.3` |
+| Essential Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/essential-dev:1` | `1.2.4` |
+| git absorb — Automatic Fixup Commits | baxyz | `ghcr.io/helpers4/devcontainer/git-absorb:1` | `1.2.3` |
+| GitHub Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/github-dev:1` | `1.0.7` |
+| helpers4 Common Library | baxyz | `ghcr.io/helpers4/devcontainer/helpers4-common:1` | `1.2.2` |
+| Mistral Vibe Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/mistral-dev:1` | `1.3.1` |
+| Nub — Fast TypeScript/Node Toolchain | baxyz | `ghcr.io/helpers4/devcontainer/nub:1` | `1.2.3` |
+| Org Workspace | baxyz | `ghcr.io/helpers4/devcontainer/org-workspace:1` | `1.0.0` |
+| Automatic Package Installation | baxyz | `ghcr.io/helpers4/devcontainer/package-auto-install:1` | `1.2.3` |
+| Peon Ping — AI Agent Sound Notifications | baxyz | `ghcr.io/helpers4/devcontainer/peon-ping:1` | `1.3.1` |
+| Playwright Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/playwright-dev:1` | `1.3.1` |
+| pnpm Store (shared) | baxyz | `ghcr.io/helpers4/devcontainer/pnpm-store:1` | `1.3.1` |
+| Shell History Per Project | baxyz | `ghcr.io/helpers4/devcontainer/shell-history-per-project:1` | `1.2.3` |
+| TypeScript Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/typescript-dev:1` | `1.0.8` |
+| Vite+ Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/vite-plus:1` | `1.2.3` |
 | PHP extensions installer | Yassine Doghri | `ghcr.io/yassinedoghri/devcontainers/php-extensions-installer:1` | `1.0.0` |
 | DragonFly | Atomys | `ghcr.io/42atomys/devcontainers-features/dragonfly:1` | `1.0.0` |
 | Meilisearch | Atomys | `ghcr.io/42atomys/devcontainers-features/meilisearch:1` | `1.0.0` |

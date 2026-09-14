@@ -16,8 +16,8 @@ related:
 summary: Learn how to take ownership of deployments on Vercel with the Claim Deployments feature.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/claim-deployments.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "07a1eb9d9668dec4a917cd41158641cbb64e33708825bafffbeb4de111aac697"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "6f9bcba6c72040110df3651b1d89de20fe248ddcb844a0ca89ad6ddaf6695da3"
 ---
 
 # Claim Deployments
@@ -32,13 +32,12 @@ The Claim Deployments feature enables users to take control of deployments by tr
 
 - [Claim Deployments now available for fast and secure deployment transfers](https://vercel.com/changelog/claim-deployments?from=related&source_path=%2Fdocs%2Fdeployments%2Fclaim-deployments&source_site=vercel-docs&relationship=related)
 - [Claimed deployments now include third-party resources](https://vercel.com/changelog/claimed-deployments-now-include-third-party-resources?from=related&source_path=%2Fdocs%2Fdeployments%2Fclaim-deployments&source_site=vercel-docs&relationship=related)
-- [AI Agents on Vercel](https://vercel.com/kb/guide/ai-agents?from=related&source_path=%2Fdocs%2Fdeployments%2Fclaim-deployments&source_site=vercel-docs&relationship=related) — This guide provides an overview of how to build and deploy AI agents on Vercel.
 - [Domain Linked to Another Account](https://vercel.com/kb/guide/domain-linked-to-another-account?from=related&source_path=%2Fdocs%2Fdeployments%2Fclaim-deployments&source_site=vercel-docs&relationship=related) — This guide explains how to claim a domain already linked to another Vercel account and add it to your team using the dom
 - [Claim Deployment](https://vercel.com/docs/platforms/platform-elements/blocks/claim-deployment?from=related&source_path=%2Fdocs%2Fdeployments%2Fclaim-deployments&source_site=vercel-docs&relationship=related) — A component for users to claim ownership of Vercel deployments created on their behalf.
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments?from=related&source_path=%2Fdocs%2Fdeployments%2Fclaim-deployments&source_site=vercel-docs&relationship=related) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
-- [Claiming Domain Ownership](https://vercel.com/docs/domains/working-with-domains/claim-domain-ownership?from=related&source_path=%2Fdocs%2Fdeployments%2Fclaim-deployments&source_site=vercel-docs&relationship=related) — Learn how to claim ownership of a domain that is registered with another Vercel account by verifying DNS ownership.
-- [Deploy Files](https://vercel.com/docs/platforms/platform-elements/actions/deploy-files?from=related&source_path=%2Fdocs%2Fdeployments%2Fclaim-deployments&source_site=vercel-docs&relationship=related) — Server action for programmatically deploying files to Vercel on behalf of platform users.
 - [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain?from=related&source_path=%2Fdocs%2Fdeployments%2Fclaim-deployments&source_site=vercel-docs&relationship=related) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
+- [Claiming Domain Ownership](https://vercel.com/docs/domains/working-with-domains/claim-domain-ownership?from=related&source_path=%2Fdocs%2Fdeployments%2Fclaim-deployments&source_site=vercel-docs&relationship=related) — Learn how to claim ownership of a domain that is registered with another Vercel account by verifying DNS ownership.
+- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fdeployments%2Fclaim-deployments&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
 
 Full cross-link map for this page: [/docs/deployments/claim-deployments.graph.md](/docs/deployments/claim-deployments.graph.md?from=related&source_path=%2Fdocs%2Fdeployments%2Fclaim-deployments&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

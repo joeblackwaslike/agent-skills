@@ -17,8 +17,8 @@ related:
 summary: Run Hermes Agent terminal commands in isolated Vercel Sandbox microVMs, with models served through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/ecosystem/hermes.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "9597b76cf1936ca10ef6c27cf417eb3653e7c7b926f3d850dc58fcdc9f032a65"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "18fca0a30d58a02ce40d423b0d5fc420b828c3bcc78ebd737a4e8437a858d603"
 ---
 
 # Hermes
@@ -36,13 +36,11 @@ instead of on your machine.
 
 - [Vercel AI Gateway and Vercel Sandbox now available on Hermes Agent](https://vercel.com/changelog/vercel-ai-gateway-and-vercel-sandbox-now-available-on-hermes-agent?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fhermes&source_site=vercel-docs&relationship=related)
 - [How to run Herdr coding agents in isolated Vercel Sandboxes](https://vercel.com/kb/guide/run-herdr-coding-agents-isolated-vercel-sandboxes?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fhermes&source_site=vercel-docs&relationship=related) — Install the vercel.sandbox plugin for Herdr, approve an upload manifest, run each AI coding agent in its own isolated Ve
+- [Run Terminal-Bench and any Harbor benchmark on Vercel Sandbox](https://vercel.com/kb/guide/run-terminal-bench-harbor-benchmarks-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fhermes&source_site=vercel-docs&relationship=related) — Run Terminal-Bench, SWE-bench, and any Harbor benchmark on Vercel Sandbox. Each trial executes in an isolated Firecracke
 - [Give every agent in Herdr its own Vercel Sandbox](https://vercel.com/changelog/give-every-agent-in-herdr-its-own-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fhermes&source_site=vercel-docs&relationship=related)
+- [Using TanStack AI with Vercel Sandbox](https://vercel.com/kb/guide/tanstack-ai-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fhermes&source_site=vercel-docs&relationship=related) — Run coding agents in isolated Vercel Sandbox microVMs with the @tanstack/ai-sandbox-vercel provider, with durable resume
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fhermes&source_site=vercel-docs&relationship=related) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
-- [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fhermes&source_site=vercel-docs&relationship=related)
-- [Herdr](https://vercel.com/docs/sandbox/ecosystem/herdr?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fhermes&source_site=vercel-docs&relationship=related) — Run terminal-based coding agents in persistent Vercel Sandbox microVMs from Herdr. Review and apply their changes locall
 - [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fhermes&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
-- [Anthropic SDK](https://vercel.com/docs/sandbox/ecosystem/anthropic-sdk?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fhermes&source_site=vercel-docs&relationship=related) — Use Anthropic tool use with AI Gateway to execute model-generated code in an isolated Vercel Sandbox.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fhermes&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/sandbox/ecosystem/hermes.graph.md](/docs/sandbox/ecosystem/hermes.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fhermes&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/claude-code.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "a8eed60cef8fa4f7eb5f24c2d34273024f04d20b12ab147f702175f7288ec846"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "8d1cc0ef38499091f2a19d0597a71e12308031df3ec8a88a754ac3cfc17c4594"
 ---
 
 # Claude Code Provider
@@ -195,6 +195,7 @@ For more details, see the [provider documentation](https://github.com/ben-vargas
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
 - [Interfaze](/providers/community-providers/interfaze)
+- [Telnyx](/providers/community-providers/telnyx)
 - [Flowise](/providers/community-providers/flowise)
 
 

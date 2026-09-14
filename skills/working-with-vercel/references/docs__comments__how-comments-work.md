@@ -15,8 +15,8 @@ related:
 summary: Learn when and where Comments are available, and how to enable and disable Comments at the account, project, and session or interface levels.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/comments/how-comments-work.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "006be4802069c79ee2cbb73649d199d94c17bdb0d27eba8dcdca9604268ff4e4"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "32115a761fbbf0695a958eef75a88d6d75509d91ebc0cd66bd413a750554233b"
 ---
 
 # Enabling and Disabling Comments
@@ -33,12 +33,11 @@ Comments are enabled by default for all preview deployments on all new projects.
 - [Introducing Commenting on Preview Deployments](https://vercel.com/blog/introducing-commenting-on-preview-deployments?from=related&source_path=%2Fdocs%2Fcomments%2Fhow-comments-work&source_site=vercel-docs&relationship=related)
 - [Using Vercel comments to improve the Next.js 13 documentation](https://vercel.com/blog/using-vercel-comments-to-improve-the-next-js-13-documentation?from=related&source_path=%2Fdocs%2Fcomments%2Fhow-comments-work&source_site=vercel-docs&relationship=related)
 - [@vercel/toolbar available to use collaboration features in production](https://vercel.com/changelog/vercel-toolbar-now-available-to-use-collaboration-features-in-production?from=related&source_path=%2Fdocs%2Fcomments%2Fhow-comments-work&source_site=vercel-docs&relationship=related)
-- [How do I prevent the Vercel for GitHub integration comments?](https://vercel.com/kb/guide/how-to-prevent-vercel-github-comments?from=related&source_path=%2Fdocs%2Fcomments%2Fhow-comments-work&source_site=vercel-docs&relationship=related) — Information on how to prevent the Vercel for GitHub integration from adding comments.
 - [Enhanced Preview experience](https://vercel.com/blog/making-live-reviews-a-reality-enhanced-preview-experience?from=related&source_path=%2Fdocs%2Fcomments%2Fhow-comments-work&source_site=vercel-docs&relationship=related)
+- [Managing Comments on Preview Deployments](https://vercel.com/docs/comments/managing-comments?from=related&source_path=%2Fdocs%2Fcomments%2Fhow-comments-work&source_site=vercel-docs&relationship=related) — Learn how to manage Comments on your Preview Deployments from Team members and invited collaborators.
 - [Vercel Toolbar](https://vercel.com/docs/vercel-toolbar?from=related&source_path=%2Fdocs%2Fcomments%2Fhow-comments-work&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel Toolbar to leave feedback, navigate through important dashboard pages, share deployments, us
 - [Create React App on Vercel](https://vercel.com/docs/frameworks/frontend/create-react-app?from=related&source_path=%2Fdocs%2Fcomments%2Fhow-comments-work&source_site=vercel-docs&relationship=related) — Deploy Create React App projects to Vercel and add Preview Deployments, Web Analytics, Speed Insights, and Observability
 - [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit?from=related&source_path=%2Fdocs%2Fcomments%2Fhow-comments-work&source_site=vercel-docs&relationship=related) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fcomments%2Fhow-comments-work&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/comments/how-comments-work.graph.md](/docs/comments/how-comments-work.graph.md?from=related&source_path=%2Fdocs%2Fcomments%2Fhow-comments-work&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

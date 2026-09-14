@@ -16,8 +16,8 @@ related:
 summary: A comprehensive reference for the Vercel Sandbox JavaScript SDK, which lets you run code in a secure, isolated environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/sdk-reference.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "ae052ae55cff94713d2e874df740a9a75f248bf57ccf33450f0eb390848cbe17"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "447bff9d36fc9c702f123b02c5a6caf16116fb42202238d66e6df3c0194f186c"
 ---
 
 # JS SDK Reference
@@ -32,16 +32,16 @@ Use the Vercel Sandbox JavaScript SDK to create isolated Linux microVMs on deman
 
 - [Port 8080 is now available in Vercel Sandboxes](https://vercel.com/changelog/port-8080-is-now-available-in-vercel-sandboxes?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related)
 - [Vercel Sandbox supports forking](https://vercel.com/changelog/vercel-sandbox-supports-forking?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related)
+- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
 - [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
 - [How to process user-uploaded files with Vercel Sandbox and Vercel Blob](https://vercel.com/kb/guide/user-uploaded-files-vercel-sandbox-and-blob?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — Learn how to upload files to Vercel Blob, process them safely with FFmpeg in an isolated Vercel Sandbox, and store the r
+- [Build a v0-style app builder with OpenAI Agents API and Vercel Sandbox](https://vercel.com/kb/guide/v0-clone-openai-agents-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — Build a chat-to-app workspace with live Next.js previews, follow-up edits, and saved projects using the OpenAI Agents AP
 - [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
-- [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
-- [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — Learn how to save sandbox state with snapshots and skip installation on future runs.
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 - [Stop a session](https://vercel.com/docs/rest-api/sandboxes/stop-a-session?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — POST /v2/sandboxes/sessions/{sessionId}/stop — Stops a running session and releases its allocated resources. All running
 - [Get a named sandbox](https://vercel.com/docs/rest-api/sandboxes/get-a-named-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — GET /v2/sandboxes/{name} — Retrieves a named sandbox by name, including its current sandbox and routes. If the sandbox i
-- [Update a sandbox](https://vercel.com/docs/rest-api/sandboxes/update-a-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — PATCH /v2/sandboxes/{name} — Updates the configuration of a sandbox. Only the provided fields will be modified; omitted
 - [Fork a named sandbox](https://vercel.com/docs/rest-api/sandboxes/fork-a-named-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — POST /v2/sandboxes/{name}/fork — Forks a named sandbox, creating a new named sandbox from the source's configuration. Re
+- [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
 
 Full cross-link map for this page: [/docs/sandbox/sdk-reference.graph.md](/docs/sandbox/sdk-reference.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -378,7 +378,7 @@ Sandboxes are persistent by default: when the sandbox stops, the filesystem is a
 | `failoverRegions`    | `string[]`                   | No       | Additional [regions](/docs/sandbox/concepts/regions#failover-regions) the sandbox can fall back to when the main region is unavailable. Must not include the main `region`. Not supported together with `mounts`. Available on Pro and Enterprise plans, excluding [Pro trials](/docs/plans/pro-plan/trials).            |
 | `networkPolicy`      | `NetworkPolicy`              | No       | Firewall rules for sandbox egress traffic. Defaults to `"allow-all"`.                                                                                                                                               |
 | `env`                | `Record<string, string>`     | No       | Default environment variables for commands run in this sandbox. Per-command `runCommand({ env })` values override these defaults.                                                                                   |
-| `mounts`             | `SandboxMounts`              | No       | Drives to attach to the sandbox, keyed by absolute mount path. Drives can be mounted as `"read-write"` (default) or `"read-only"`.                                                                                  |
+| `mounts`             | `SandboxMounts`              | No       | Drives to attach to the sandbox, keyed by absolute mount path. Pass a `Drive` for read-write access or `drive.snapshot()` for a point-in-time, read-only snapshot.                                                  |
 | `tags`               | `Record<string, string>`     | No       | Up to five key-value [tags](/docs/sandbox/concepts/tags).                                                                                                                                                           |
 | `persistent`         | `boolean`                    | No       | Auto-snapshot the filesystem on stop and restore on resume. Defaults to `true`.                                                                                                                                     |
 | `snapshotExpiration` | `number`                     | No       | Default snapshot TTL in milliseconds. Defaults to 30 days (`2,592,000,000` ms). Use `0` for no expiration.                                                                                                          |
@@ -661,7 +661,7 @@ console.log(result.networkTransfer); // { ingress, egress }
 
 #### `sandbox.update()`
 
-`sandbox.update()` updates any mutable parameter on the sandbox. When `ports` is provided, it is treated as the **full** desired port list: any currently exposed port not present in the array is deregistered. `networkPolicy` is applied to the current session as well as future sessions.
+`sandbox.update()` updates any mutable parameter on the sandbox. When `ports` is provided, it replaces the full current port list. When `mounts` is provided, it replaces all mounts and applies to the next session. `networkPolicy` is applied to the current session and future sessions.
 
 ```ts
 await sandbox.update({
@@ -674,7 +674,9 @@ await sandbox.update({
   snapshotExpiration: 14 * 24 * 60 * 60 * 1000,
   keepLastSnapshots: { count: 1 },
   currentSnapshotId: 'snap_xyz', // Roll back to a previous snapshot
-  failoverRegions: ['cle1'], // Replaces the list; pass [] to remove them
+  mounts: {
+    '/data': { drive: 'workspace-cache', mode: 'read-write' },
+  }, // Replaces the mounts; pass {} to remove them
 });
 ```
 
@@ -690,6 +692,7 @@ await sandbox.update({
 | `keepLastSnapshots`  | `object \| null`           | No       | Retention policy that keeps only the N most recent snapshots. Pass `null` to clear. See [`keepLastSnapshots`](#keeplastsnapshots) for field details. |
 | `currentSnapshotId`  | `string`                   | No       | Point the sandbox at a different snapshot. New sessions resume from it.                                |
 | `failoverRegions`    | `string[]`                 | No       | Replace the [failover regions](/docs/sandbox/concepts/regions#failover-regions). Must not include the sandbox's main region. Not supported for sandboxes with mounts. Pass `[]` to remove them. Applies to the next session; the running session keeps the region it started in. Available on Pro and Enterprise plans, excluding [Pro trials](/docs/plans/pro-plan/trials). |
+| `mounts`             | `SandboxMounts`            | No       | Replace the drives mounted in the next session. Pass a `Drive` for read-write access or `drive.snapshot()` for a point-in-time, read-only snapshot. Pass `{}` to remove all mounts. |
 | `opts.signal`        | `AbortSignal`              | No       | Cancel the operation.                                                                                  |
 
 **Returns:** `Promise<void>`.
@@ -1716,7 +1719,7 @@ await snapshot.delete();
 
 A `Drive` represents persistent storage that can be mounted into a sandbox. To learn more, see [Drives](/docs/sandbox/concepts/drives).
 
-Create drives with [`Drive.getOrCreate()`](/docs/sandbox/sdk-reference#drive.getorcreate), list them with [`Drive.list()`](/docs/sandbox/sdk-reference#drive.list), and delete them with [`drive.delete()`](/docs/sandbox/sdk-reference#drive.delete). Mount them into sandboxes by using the [`mounts` property in `Sandbox.create()`](/docs/sandbox/sdk-reference#sandbox.create).
+Create drives with [`Drive.getOrCreate()`](/docs/sandbox/sdk-reference#drive.getorcreate), list them with [`Drive.list()`](/docs/sandbox/sdk-reference#drive.list), and delete them with [`drive.delete()`](/docs/sandbox/sdk-reference#drive.delete). Mount a drive with read-write access, or use [`drive.snapshot()`](/docs/sandbox/sdk-reference#drive.snapshot) to mount a read-only snapshot.
 
 Once you are added to the [private beta](https://vercel.com/changelog/drives-for-vercel-sandbox-in-private-beta), install the beta version of the `@vercel/sandbox` SDK:
 
@@ -1744,6 +1747,16 @@ Once you are added to the [private beta](https://vercel.com/changelog/drives-for
 </CodeBlock>
 
 ### Drive class accessors
+
+#### `driveId`
+
+The `driveId` accessor returns the drive's unique ID.
+
+**Returns:** `string`.
+
+```ts filename="index.ts"
+console.log(drive.driveId);
+```
 
 #### `name`
 
@@ -1831,15 +1844,13 @@ console.log(drive.updatedAt);
 
 Use `Drive.list()` to enumerate drives for a project. Filter by name prefix when you need to find drives for a specific workspace or user.
 
-**Returns:** `Promise<{ drives: Drive[]; pagination: Pagination; }>` with async pagination helpers.
+**Returns:** `Promise<Paginated<{ drives: Drive[]; pagination: Pagination; }>>`.
 
 | Parameter    | Type                                             | Required | Details                                      |
 | ------------ | ------------------------------------------------ | -------- | -------------------------------------------- |
 | `projectId`  | `string`                                         | No       | Project whose drives you want to list.       |
 | `limit`      | `number`                                         | No       | Maximum number of drives to return.          |
-| `cursor`     | `string \| number`                               | No       | Pagination cursor from a previous response.  |
-| `since`      | `number \| string`                               | No       | Lower pagination bound for returned drives.  |
-| `until`      | `number \| string`                               | No       | Upper pagination bound for returned drives.  |
+| `cursor`     | `string`                                         | No       | Pagination cursor returned by the previous page. |
 | `sortBy`     | `"createdAt" \| "updatedAt" \| "name"`           | No       | Field to sort drives by.                     |
 | `sortOrder`  | `"asc" \| "desc"`                                | No       | Sort direction.                              |
 | `namePrefix` | `string`                                         | No       | Filter drives by name prefix.                |
@@ -1900,6 +1911,24 @@ const drive = await Drive.getOrCreate({
 ```
 
 ### Drive class instance methods
+
+#### `drive.snapshot()`
+
+Call `drive.snapshot()` to return a read-only snapshot mount configuration. You can use the configuration to mount the drive on multiple sandboxes at the same time.
+
+**Returns:** `{ drive: string; mode: "snapshot" }`.
+
+```ts filename="index.ts"
+import { Drive, Sandbox } from '@vercel/sandbox';
+
+const drive = await Drive.getOrCreate({ name: 'workspace-cache' });
+
+await Sandbox.create({
+  mounts: {
+    '/data': drive.snapshot(),
+  },
+});
+```
 
 #### `drive.delete()`
 

@@ -1,23 +1,24 @@
 ---
-title: Web Search
+title: AI Gateway Web Search
 product: vercel
 url: /docs/ai-gateway/models-and-providers/web-search
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/web-search"
-last_updated: 2026-08-26
-type: conceptual
+last_updated: 2026-09-08
+type: reference
 prerequisites:
   - /docs/ai-gateway/models-and-providers
   - /docs/ai-gateway
 related:
+  - /docs/ai-gateway/sdks-and-apis/responses/tool-calling
   - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced
 summary: Enable AI models to search the web and retrieve source-grounded data using built-in tools through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/web-search.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "9284311f9525f34ca888d947bce912a457380480fd0949c1a290944f08729be7"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "88e8a20b37cccf81ef34e8ed660d429039e89db976de989620fed74d52955e99"
 ---
 
-# Web Search
+# AI Gateway Web Search
 
 AI Gateway provides built-in search tools that let AI models access current web information and source-grounded data. Use them when you need information that may not be in the model's training data.
 
@@ -28,15 +29,15 @@ AI Gateway provides built-in search tools that let AI models access current web 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Exa web search free through August 31 on AI Gateway and eve](https://vercel.com/changelog/exa-web-search-free-through-august-31-on-ai-gateway-and-eve?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
+- [Tako Search is free on AI Gateway through September 30](https://vercel.com/changelog/tako-search-is-free-on-ai-gateway-through-september-30th?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
 - [Web Search Agent](https://ai-sdk.dev/cookbook/node/web-search-agent?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
-- [Groq](https://ai-sdk.dev/providers/ai-sdk-providers/groq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
-- [xAI Grok](https://ai-sdk.dev/providers/ai-sdk-providers/xai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
-- [OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
-- [Azure OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/azure?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
 - [Use Perplexity Web Search with Vercel AI Gateway](https://vercel.com/blog/use-perplexity-web-search-with-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
-- [Parallel's Web Search and tools are live on Vercel](https://vercel.com/changelog/parallel-web-search-is-now-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
+- [Google](https://ai-sdk.dev/providers/ai-sdk-providers/google?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
+- [xAI Grok](https://ai-sdk.dev/providers/ai-sdk-providers/xai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
+- [Groq](https://ai-sdk.dev/providers/ai-sdk-providers/groq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
 - [Access Perplexity Web Search on Vercel AI Gateway with any model](https://vercel.com/changelog/access-perplexity-web-search-on-vercel-ai-gateway-with-any-model?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
+- [OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
+- [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related) — Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/web-search.graph.md](/docs/ai-gateway/models-and-providers/web-search.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -45,6 +46,279 @@ AI Gateway supports two types of web search:
 
 - **Search for all providers**: Use [Perplexity Search](#using-perplexity-search), [Exa Search](#using-exa-search), [Tako Search](#using-tako-search), or [Parallel Search](#using-parallel-search) with any model regardless of provider. This gives you consistent web search behavior across different models.
 - **Provider-specific search**: Use native web search tools from [Anthropic](#anthropic-web-search), [OpenAI](#openai-web-search), [Google](#google-web-search), or [SpaceXAI](#spacexai-web-search). These tools are optimized for their respective providers and may offer [additional features](#provider-specific-search).
+
+## Search across API formats
+
+Search tool definitions differ by API and provider. The TypeScript AI SDK example uses AI Gateway's Perplexity tool. The Python beta example uses Anthropic's native web search tool. Chat Completions uses its server-tool format. Messages uses Anthropic's native web search tool. Responses uses OpenAI's native web search with an OpenAI model. Don't copy a tool definition between these formats. The Python beta example supports Anthropic's native web search. Gateway's Perplexity search helper is not supported in this beta agent loop.
+
+For provider-specific search, follow the [Anthropic](#anthropic-web-search), [OpenAI](#openai-web-search), and [Google](#google-web-search) sections. Use the [Responses tool reference](/docs/ai-gateway/sdks-and-apis/responses/tool-calling) for function tools. Native search tool availability depends on the selected provider and model.
+
+#### AI SDK
+
+#### TypeScript
+
+See the [AI SDK provider-executed tools reference](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway#provider-executed-tools) for SDK configuration and usage.
+
+```typescript filename="search.ts"
+import { generateText, gateway, isStepCount } from 'ai';
+
+const { text } = await generateText({
+  tools: { search: gateway.tools.perplexitySearch({ maxResults: 1 }) },
+  stopWhen: isStepCount(3),
+  model: "anthropic/claude-sonnet-5",
+  prompt: "Search the web for Vercel AI Gateway and summarize it in one sentence.",
+});
+
+console.log(text);
+```
+
+#### Python (beta)
+
+```python filename="search_ai.py"
+import asyncio
+import ai
+from ai.providers.anthropic import tools as anthropic_tools
+
+async def main():
+    model = ai.get_model("anthropic/claude-sonnet-5")
+    messages = [ai.user_message("Search the web for Vercel AI Gateway and summarize it in one sentence.")]
+    agent = ai.Agent(tools=[anthropic_tools.web_search(max_uses=1)])
+    async with agent.run(model, messages) as stream:
+        async for event in stream:
+            if isinstance(event, ai.events.TextDelta):
+                print(event.chunk, end="", flush=True)
+    print()
+
+asyncio.run(main())
+```
+
+#### Chat Completions
+
+#### TypeScript
+
+```typescript filename="search-chat.ts"
+const response = await fetch(
+  'https://ai-gateway.vercel.sh/v1/chat/completions',
+  {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${process.env.AI_GATEWAY_API_KEY}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      model: 'anthropic/claude-sonnet-5',
+      messages: [
+        {
+          role: 'user',
+          content:
+            'Search the web for Vercel AI Gateway and summarize it in one sentence.',
+        },
+      ],
+      tools: [
+        {
+          type: 'vercel:perplexity_search',
+          config: {
+            query: 'Vercel AI Gateway',
+            max_results: 1,
+          },
+        },
+      ],
+    }),
+  },
+);
+if (!response.ok) throw new Error(await response.text());
+console.log(await response.json());
+```
+
+#### Python
+
+```python filename="search_chat.py"
+import os
+from openai import OpenAI
+
+client = OpenAI(
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
+    base_url="https://ai-gateway.vercel.sh/v1",
+)
+
+response = client.chat.completions.create(
+    tools=[{"type": "vercel:perplexity_search", "config": {"query": "Vercel AI Gateway", "max_results": 1}}],
+    model="anthropic/claude-sonnet-5",
+    messages=[{"role": "user", "content": "Search the web for Vercel AI Gateway and summarize it in one sentence."}],
+)
+
+print(response.choices[0].message.content)
+```
+
+#### cURL
+
+```bash filename="search-chat.sh"
+curl --fail-with-body https://ai-gateway.vercel.sh/v1/chat/completions \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "model": "anthropic/claude-sonnet-5",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Search the web for Vercel AI Gateway and summarize it in one sentence."
+    }
+  ],
+  "tools": [
+    {
+      "type": "vercel:perplexity_search",
+      "config": {
+        "query": "Vercel AI Gateway",
+        "max_results": 1
+      }
+    }
+  ]
+}'
+```
+
+#### Messages API
+
+#### TypeScript
+
+```typescript filename="search-messages.ts"
+import Anthropic from '@anthropic-ai/sdk';
+
+const client = new Anthropic({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh',
+});
+
+const response = await client.messages.create({
+  tools: [
+    {
+      type: 'web_search_20250305',
+      name: 'web_search',
+      max_uses: 1,
+    },
+  ],
+  model: 'anthropic/claude-sonnet-5',
+  messages: [
+    {
+      role: 'user',
+      content:
+        'Search the web for Vercel AI Gateway and summarize it in one sentence.',
+    },
+  ],
+  max_tokens: 1024,
+});
+
+for (const block of response.content) {
+  if (block.type === 'text') console.log(block.text);
+}
+```
+
+#### Python
+
+```python filename="search_messages.py"
+import os
+from anthropic import Anthropic
+
+client = Anthropic(
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
+    base_url="https://ai-gateway.vercel.sh",
+)
+
+response = client.messages.create(
+    tools=[{"type": "web_search_20250305", "name": "web_search", "max_uses": 1}],
+    model="anthropic/claude-sonnet-5",
+    messages=[{"role": "user", "content": "Search the web for Vercel AI Gateway and summarize it in one sentence."}],
+    max_tokens=1024,
+)
+
+for block in response.content:
+    if block.type == "text":
+        print(block.text)
+```
+
+#### cURL
+
+```bash filename="search-messages.sh"
+curl --fail-with-body https://ai-gateway.vercel.sh/v1/messages \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -H "anthropic-version: 2023-06-01" \
+  -d '{
+  "model": "anthropic/claude-sonnet-5",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Search the web for Vercel AI Gateway and summarize it in one sentence."
+    }
+  ],
+  "max_tokens": 1024,
+  "tools": [
+    {
+      "type": "web_search_20250305",
+      "name": "web_search",
+      "max_uses": 1
+    }
+  ]
+}'
+```
+
+#### Responses / OpenResponses
+
+#### TypeScript
+
+```typescript filename="search-responses.ts"
+import OpenAI from 'openai';
+
+const client = new OpenAI({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh/v1',
+});
+
+const response = await client.responses.create({
+  tools: [{ "type": "web_search", "search_context_size": "low" }],
+  model: "openai/gpt-5.4-mini",
+  input: "Search the web for Vercel AI Gateway and summarize it in one sentence.",
+});
+
+console.log(response.output_text);
+```
+
+#### Python
+
+```python filename="search_responses.py"
+import os
+from openai import OpenAI
+
+client = OpenAI(
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
+    base_url="https://ai-gateway.vercel.sh/v1",
+)
+
+response = client.responses.create(
+    tools=[{"type": "web_search", "search_context_size": "low"}],
+    model="openai/gpt-5.4-mini",
+    input="Search the web for Vercel AI Gateway and summarize it in one sentence.",
+)
+
+print(response.output_text)
+```
+
+#### cURL
+
+```bash filename="search-responses.sh"
+curl --fail-with-body https://ai-gateway.vercel.sh/v1/responses \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "model": "openai/gpt-5.4-mini",
+  "input": "Search the web for Vercel AI Gateway and summarize it in one sentence.",
+  "tools": [
+    {
+      "type": "web_search",
+      "search_context_size": "low"
+    }
+  ]
+}'
+```
 
 ## Using Perplexity Search
 
@@ -65,14 +339,14 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const result = streamText({
-    model: 'openai/gpt-5.6-sol', // Works with any model, not just Perplexity
+    model: 'openai/gpt-6-astra', // Works with any model, not just Perplexity
     prompt,
     tools: {
       perplexity_search: gateway.tools.perplexitySearch(),
     },
   });
 
-  for await (const part of result.fullStream) {
+  for await (const part of result.stream) {
     if (part.type === 'text-delta') {
       process.stdout.write(part.text);
     } else if (part.type === 'tool-call') {
@@ -95,7 +369,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const { text } = await generateText({
-    model: 'openai/gpt-5.6-sol', // Works with any model, not just Perplexity
+    model: 'openai/gpt-6-astra', // Works with any model, not just Perplexity
     prompt,
     tools: {
       perplexity_search: gateway.tools.perplexitySearch(),
@@ -127,7 +401,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const result = streamText({
-    model: 'openai/gpt-5.6-sol',
+    model: 'openai/gpt-6-astra',
     prompt,
     tools: {
       perplexity_search: gateway.tools.perplexitySearch({
@@ -155,7 +429,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const { text } = await generateText({
-    model: 'openai/gpt-5.6-sol',
+    model: 'openai/gpt-6-astra',
     prompt,
     tools: {
       perplexity_search: gateway.tools.perplexitySearch({
@@ -193,14 +467,14 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const result = streamText({
-    model: 'openai/gpt-5.6-sol', // Works with any model
+    model: 'openai/gpt-6-astra', // Works with any model
     prompt,
     tools: {
       exa_search: gateway.tools.exaSearch(),
     },
   });
 
-  for await (const part of result.fullStream) {
+  for await (const part of result.stream) {
     if (part.type === 'text-delta') {
       process.stdout.write(part.text);
     } else if (part.type === 'tool-call') {
@@ -223,7 +497,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const { text } = await generateText({
-    model: 'openai/gpt-5.6-sol', // Works with any model
+    model: 'openai/gpt-6-astra', // Works with any model
     prompt,
     tools: {
       exa_search: gateway.tools.exaSearch(),
@@ -264,7 +538,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const result = streamText({
-    model: 'openai/gpt-5.6-sol',
+    model: 'openai/gpt-6-astra',
     prompt,
     tools: {
       exa_search: gateway.tools.exaSearch({
@@ -293,7 +567,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const { text } = await generateText({
-    model: 'openai/gpt-5.6-sol',
+    model: 'openai/gpt-6-astra',
     prompt,
     tools: {
       exa_search: gateway.tools.exaSearch({
@@ -337,7 +611,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const { text } = await generateText({
-    model: 'openai/gpt-5.6-sol',
+    model: 'openai/gpt-6-astra',
     prompt,
     tools: {
       tako_search: gateway.tools.takoSearch({
@@ -431,7 +705,7 @@ curl https://ai-gateway.vercel.sh/v1/chat/completions \
   -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "openai/gpt-5.6-sol",
+    "model": "openai/gpt-6-astra",
     "messages": [
       {
         "role": "user",
@@ -492,7 +766,7 @@ export async function POST(request: Request) {
     },
   });
 
-  for await (const part of result.fullStream) {
+  for await (const part of result.stream) {
     if (part.type === 'text-delta') {
       process.stdout.write(part.text);
     } else if (part.type === 'tool-call') {
@@ -748,7 +1022,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const result = streamText({
-    model: 'openai/gpt-5.6-sol',
+    model: 'openai/gpt-6-astra',
     prompt,
     tools: {
       web_search: openai.tools.webSearch({}),
@@ -769,7 +1043,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const { text } = await generateText({
-    model: 'openai/gpt-5.6-sol',
+    model: 'openai/gpt-6-astra',
     prompt,
     tools: {
       web_search: openai.tools.webSearch({}),

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/moonshotai.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "8eee5b8d4dac837ef87cc153f8d4328ff82113db4e8b284dc24406e37da95970"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "384b3b9034929b13b314cc594f425c17aaffee89ef11d068ad21450e0eaee474"
 ---
 
 # Moonshot AI Provider
@@ -610,7 +610,6 @@ but new applications should use Kimi K3, Kimi K2.7 Code, or Kimi K2.6.
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
-- [LMNT](/providers/ai-sdk-providers/lmnt)
 - [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)

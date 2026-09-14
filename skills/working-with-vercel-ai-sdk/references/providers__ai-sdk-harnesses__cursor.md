@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/cursor.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "892cfb24691c11632b21a3df4acfc1749274bca74fc75e5649705d44e40c4a31"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "fa4dac040078ebe17aaa82968711d468de00ad355909d3501b8d36d5c6e01f01"
 ---
 
 # Cursor Harness
@@ -114,6 +114,10 @@ Cursor has two independent authentication layers:
 2. Cursor's account settings determine how Cursor authenticates to the model
    provider. The harness cannot read or change this setting.
 
+If no applicable credential environment variable is set, the adapter attempts
+to resolve a native subscription from the host system unless AI Gateway
+authentication is selected.
+
 For direct routing, configure the model provider in Cursor. For AI Gateway,
 configure Cursor's OpenAI API key with an AI Gateway API key and set
 **Override OpenAI Base URL** to
@@ -178,6 +182,9 @@ MCP payload and correlates the call with the host-side tool execution.
 - ACP v1 has no portable built-in tool filtering API. Filtering host tools is
   supported, but filtering Cursor built-ins throws an unsupported-capability
   error.
+- Cursor does not currently support built-in tool approval requests. Use
+  `permissionMode: 'allow-all'` with this adapter. Host-executed AI SDK tool
+  approvals still work.
 - Cursor ACP does not expose a structured-output metadata mapping, so schema-backed
   structured output is unsupported.
 - Custom `headers` are not natively supported and only applied via
@@ -205,6 +212,7 @@ MCP payload and correlates the call with the host-side tool execution.
 - [Cline](/providers/ai-sdk-harnesses/cline)
 - [Cursor](/providers/ai-sdk-harnesses/cursor)
 - [fx](/providers/ai-sdk-harnesses/fx)
+- [GitHub Copilot](/providers/ai-sdk-harnesses/github-copilot)
 
 
 [Full Sitemap](/sitemap.md)

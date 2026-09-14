@@ -16,8 +16,8 @@ related:
 summary: Learn how Comments integrates with Git providers like GitHub, GitLab, and BitBucket, as well as the Vercel app for Slack.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/comments/integrations.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "d85f9f4b336cba34706eb69448007adfb2fb42f2ba1a8d59fedd61375efd1ab9"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "0d1e60b035b76f433b61cf3f8af8eb4f1b2b8ec47a30d9437449b78e2e060950"
 ---
 
 # Integrations for Comments
@@ -41,7 +41,6 @@ Comments are available for projects using **any** Git provider. Github, BitBucke
 - [July 2020](https://vercel.com/blog/changelog-july-2020?from=related&source_path=%2Fdocs%2Fcomments%2Fintegrations&source_site=vercel-docs&relationship=related)
 - [Using Comments with Preview Deployments](https://vercel.com/docs/comments/using-comments?from=related&source_path=%2Fdocs%2Fcomments%2Fintegrations&source_site=vercel-docs&relationship=related) — This guide will help you get started with using Comments with your Vercel Preview Deployments.
 - [vercel comments](https://vercel.com/docs/cli/comments?from=related&source_path=%2Fdocs%2Fcomments%2Fintegrations&source_site=vercel-docs&relationship=related) — Review and manage Vercel Toolbar comment threads from the terminal with the vercel comments CLI command.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fcomments%2Fintegrations&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 - [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability?from=related&source_path=%2Fdocs%2Fcomments%2Fintegrations&source_site=vercel-docs&relationship=related) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 
 Full cross-link map for this page: [/docs/comments/integrations.graph.md](/docs/comments/integrations.graph.md?from=related&source_path=%2Fdocs%2Fcomments%2Fintegrations&source_site=vercel-docs&relationship=graph)

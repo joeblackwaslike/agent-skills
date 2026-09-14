@@ -17,8 +17,8 @@ related:
 summary: Trusted IPs let you restrict access to your deployments to a list of allowed IP addresses.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/trusted-ips.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "fe5ff4cac8091578bd969bc53d5e3e789f228a7070968cc9783134d3cf22d022"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "5b4177c557771abc15c8715e98f7c8e0d73cebe96a17245105dbadce492c36fa"
 ---
 
 # Restrict deployment access by IP address
@@ -43,7 +43,6 @@ With Trusted IPs [enabled](/docs/deployment-protection/methods-to-protect-deploy
 - [OPTIONS Allowlist](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/options-allowlist?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Ftrusted-ips&source_site=vercel-docs&relationship=related) — Learn how to disable Deployment Protection for CORS preflight requests for a list of paths.
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Ftrusted-ips&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 - [Vercel Enterprise Plan](https://vercel.com/docs/plans/enterprise?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Ftrusted-ips&source_site=vercel-docs&relationship=related) — Learn about the Enterprise plan for Vercel, including features, pricing, and more.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Ftrusted-ips&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/deployment-protection/methods-to-protect-deployments/trusted-ips.graph.md](/docs/deployment-protection/methods-to-protect-deployments/trusted-ips.graph.md?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Ftrusted-ips&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

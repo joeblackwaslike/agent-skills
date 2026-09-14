@@ -16,8 +16,8 @@ related:
 summary: Set up and deploy a Vercel project using the CLI, from linking to production.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/projects/deploy-from-cli.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "8e12dec32006cd6841b6c7805941fe1b79b10561b24fbf7c849d9399d5738bb9"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "408616a405b71833c8212cf9ba3b2c7be1764cd7d6a2f345478e1930c6545450"
 ---
 
 # Deploying a project from the CLI
@@ -32,12 +32,12 @@ Use this guide to set up and deploy a Vercel project entirely from the CLI. You'
 
 - [Deployments](https://v0.app/docs/deployments?from=related&source_path=%2Fdocs%2Fprojects%2Fdeploy-from-cli&source_site=vercel-docs&relationship=related) — Preview and publish v0 projects on Vercel, then manage domains, visibility, and production updates.
 - [How can I use CircleCI with Vercel?](https://vercel.com/kb/guide/how-can-i-use-circleci-with-vercel?from=related&source_path=%2Fdocs%2Fprojects%2Fdeploy-from-cli&source_site=vercel-docs&relationship=related) — Learn how to use CircleCI to deploy to Vercel with custom CI/CD.
-- [How to Deploy a Vue.js Site with Vercel](https://vercel.com/kb/guide/deploying-vuejs-to-vercel?from=related&source_path=%2Fdocs%2Fprojects%2Fdeploy-from-cli&source_site=vercel-docs&relationship=related) — Create your Vue.js app and deploy it with Vercel.
 - [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel?from=related&source_path=%2Fdocs%2Fprojects%2Fdeploy-from-cli&source_site=vercel-docs&relationship=related) — Learn how to deploy based on tags/releases on Vercel.
+- [How can I use the Vercel CLI for custom workflows?](https://vercel.com/kb/guide/using-vercel-cli-for-custom-workflows?from=related&source_path=%2Fdocs%2Fprojects%2Fdeploy-from-cli&source_site=vercel-docs&relationship=related) — You can use the Vercel CLI to deploy any application, including custom git providers and restricted source code.
 - [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fprojects%2Fdeploy-from-cli&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related&source_path=%2Fdocs%2Fprojects%2Fdeploy-from-cli&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fprojects%2Fdeploy-from-cli&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
-- [Deploying Git Repositories with Vercel](https://vercel.com/docs/git?from=related&source_path=%2Fdocs%2Fprojects%2Fdeploy-from-cli&source_site=vercel-docs&relationship=related) — Vercel automatically deploys supported Git repositories on every branch push and when changes merge into the production
+- [Performing a rolling release deployment](https://vercel.com/docs/rolling-releases/rolling-release-deployment?from=related&source_path=%2Fdocs%2Fprojects%2Fdeploy-from-cli&source_site=vercel-docs&relationship=related) — Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.
 - [Managing environment variables across environments](https://vercel.com/docs/environment-variables/manage-across-environments?from=related&source_path=%2Fdocs%2Fprojects%2Fdeploy-from-cli&source_site=vercel-docs&relationship=related) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
 
 Full cross-link map for this page: [/docs/projects/deploy-from-cli.graph.md](/docs/projects/deploy-from-cli.graph.md?from=related&source_path=%2Fdocs%2Fprojects%2Fdeploy-from-cli&source_site=vercel-docs&relationship=graph)
@@ -75,6 +75,12 @@ vercel domains inspect example.com
 vercel curl / --deployment <production-url>
 vercel logs --environment production --level error --since 5m
 ```
+
+> Install the [Vercel plugin](/docs/agent-resources/vercel-plugin?from=docs-callout\&source_path=%2Fdocs%2Fprojects%2Fdeploy-from-cli) to run this deployment workflow with your coding agent.
+>
+> ```bash
+> npx plugins add vercel/vercel-plugin
+> ```
 
 ## 1. Link your project
 

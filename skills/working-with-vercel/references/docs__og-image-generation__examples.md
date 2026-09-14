@@ -12,8 +12,8 @@ related:
 summary: Learn how to use the @vercel/og library with examples.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/og-image-generation/examples.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "90ebff4d7265b5a23f406db824db41316633765b7c937382d942f76eeb980791"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "78dd5c28bfc14296db139c28b63fda3c79c70640f75e84c3815b25c7eb603900"
 ---
 
 # OG Image Generation Examples
@@ -40,7 +40,6 @@ Create an api route with `route.tsx` in `/app/api/og/` and paste the following c
 - [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fexamples&source_site=vercel-docs&relationship=related) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
 - [Client Uploads with Vercel Blob](https://vercel.com/docs/vercel-blob/client-upload?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fexamples&source_site=vercel-docs&relationship=related) — Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
 - [Redacting Sensitive Data from Web Analytics Events](https://vercel.com/docs/analytics/redacting-sensitive-data?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fexamples&source_site=vercel-docs&relationship=related) — Learn how to redact sensitive data from your Web Analytics events.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fexamples&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/og-image-generation/examples.graph.md](/docs/og-image-generation/examples.graph.md?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fexamples&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

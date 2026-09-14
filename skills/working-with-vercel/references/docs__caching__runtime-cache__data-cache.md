@@ -17,8 +17,8 @@ related:
 summary: Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/runtime-cache/data-cache.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "3673dd2350f350f3ef68522da6fbd3e8c1d6b8c2a8354ae5b6495f7d58c5cdc2"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "b4d32b516061b5685fc633ff705603a351255106a6131c5c72b476ad33fd39e6"
 ---
 
 # Data Cache for Next.js
@@ -36,8 +36,8 @@ Data cache is a specialized, granular cache introduced with Next.js 13 for stori
 - [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=related)
 - [How can I share my Vercel cache across deployments?](https://vercel.com/kb/guide/share-vercel-cache-across-deployments-nextjs?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=related) — Learn how to reuse cached responses across deployments with the Next.js App Router and the Vercel Data Cache.
 - [Introducing the Vercel Data Cache: Optimized caching for React Server Components](https://vercel.com/changelog/introducing-vercel-data-cache?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=related)
-- [Migrating to Cache Components](https://nextjs.org/docs/app/guides/migrating-to-cache-components?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=related) — Learn how to migrate from route segment configs to Cache Components in Next.js.
 - [Revalidating](https://nextjs.org/docs/app/getting-started/revalidating?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=related) — Learn how to revalidate cached data using time-based and on-demand strategies.
+- [Migrating to Cache Components](https://nextjs.org/docs/app/guides/migrating-to-cache-components?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=related) — Learn how to migrate from route segment configs to Cache Components in Next.js.
 - [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=related) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
 - [Cache Status and Reasons](https://vercel.com/docs/caching/cache-status?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=related) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
 - [@vercel/functions API Reference \\(Node.js\\)](https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=related) — Learn about available APIs when working with Vercel Functions.

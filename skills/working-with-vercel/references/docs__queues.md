@@ -16,8 +16,8 @@ related:
 summary: Publish agent events and background work to durable topics with independent consumers, automatic retries, and at-least-once delivery.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "53cb35389c1fedab01a0664c4afd0fdf32d610556d62db3d84b772cdb1a492a8"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "8c5885b4b907d96db66fd095a86feea5ac606d31d68e22445c8d96610479e1b3"
 ---
 
 # Vercel Queues
@@ -33,6 +33,7 @@ Send messages for agent events and background work to durable topics, then proce
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel Queues now in public beta](https://vercel.com/changelog/vercel-queues-now-in-public-beta?from=related&source_path=%2Fdocs%2Fqueues&source_site=vercel-docs&relationship=related)
+- [Build with OpenAI Agents API on Vercel](https://vercel.com/changelog/build-with-openai-agents-api-on-vercel?from=related&source_path=%2Fdocs%2Fqueues&source_site=vercel-docs&relationship=related)
 - [Vercel Queues now supports 7-day message TTL](https://vercel.com/changelog/queues-now-supports-7-day-ttl?from=related&source_path=%2Fdocs%2Fqueues&source_site=vercel-docs&relationship=related)
 - [Run background tasks with Celery on Vercel](https://vercel.com/changelog/run-background-tasks-with-celery-on-vercel?from=related&source_path=%2Fdocs%2Fqueues&source_site=vercel-docs&relationship=related)
 - [Vercel Functions can now run up to 30 minutes](https://vercel.com/changelog/vercel-functions-can-now-run-up-to-30-minutes?from=related&source_path=%2Fdocs%2Fqueues&source_site=vercel-docs&relationship=related)
@@ -43,7 +44,6 @@ Send messages for agent events and background work to durable topics, then proce
 - [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel?from=related&source_path=%2Fdocs%2Fqueues&source_site=vercel-docs&relationship=related) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
 - [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution?from=related&source_path=%2Fdocs%2Fqueues&source_site=vercel-docs&relationship=related)
 - [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure?from=related&source_path=%2Fdocs%2Fqueues&source_site=vercel-docs&relationship=related)
-- [The best workflow engine is a programming language](https://vercel.com/blog/the-best-workflow-engine-is-a-programming-language?from=related&source_path=%2Fdocs%2Fqueues&source_site=vercel-docs&relationship=related)
 
 Full cross-link map for this page: [/docs/queues.graph.md](/docs/queues.graph.md?from=related&source_path=%2Fdocs%2Fqueues&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

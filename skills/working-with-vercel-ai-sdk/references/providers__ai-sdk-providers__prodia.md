@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/prodia.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "8b011b4b0e8c0b232f044b261d6c090db93b83dbdff6d713e2fcbdb0f0456136"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "feb388977fb729cf9c0102be885494ef9b4269e4899e73ad28f088f3b753e723"
 ---
 
 # Prodia Provider
@@ -202,7 +202,6 @@ console.log('Elapsed:', metadata?.elapsed);
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
-- [LMNT](/providers/ai-sdk-providers/lmnt)
 - [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)

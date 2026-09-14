@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/jina-ai.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "d7f1295b9bed3c4defe260ae6331707dfe61bc6a114c9de4fd414e7f485217bf"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "969562c0edd22927a5e25f12375e9f1b8f16dac012679c997eaadc9de9eeb4d3"
 ---
 
 # Jina AI Provider
@@ -245,6 +245,7 @@ Pass Jina embedding options via `providerOptions.jina`. The following options ar
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
 - [Interfaze](/providers/community-providers/interfaze)
+- [Telnyx](/providers/community-providers/telnyx)
 - [Flowise](/providers/community-providers/flowise)
 
 

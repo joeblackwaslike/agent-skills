@@ -3,7 +3,7 @@ title: put-v1-installations-resources-experimentation-global-config
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/put-v1-installations-resources-experimentation-global-config
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/put-v1-installations-resources-experimentation-global-config"
-last_updated: 2026-09-07
+last_updated: 2026-09-14
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about put-v1-installations-resources-experimentation-global-config on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/put-v1-installations-resources-experimentation-global-config.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "b649aeb8fc3201a5c56bb338b7a828d646abe16f8c01cafaaa709455ad3c9255"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "653b429850a84cb9d4651f8226291916ec9a5f62c6c41bf80c93d7ee01864f0f"
 ---
 
 # Push data into a user-provided Global Config

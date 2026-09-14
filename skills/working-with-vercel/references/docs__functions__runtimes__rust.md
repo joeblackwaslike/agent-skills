@@ -13,8 +13,8 @@ related:
 summary: Build fast, memory-safe serverless functions with Rust on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/rust.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "05e46b1220792733ba4ed5d28b2f09e22bee8cc671816fb2a0626bac57fc797e"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "fb05d1251056b20faa6365c8b339075ac780e5b0c203e91e333f4e6ac86de6e6"
 ---
 
 # Using the Rust Runtime with Vercel functions
@@ -36,7 +36,6 @@ Use Rust to build high-performance, memory-safe serverless functions. The Rust r
 - [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Frust&source_site=vercel-docs&relationship=related) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
 - [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Frust&source_site=vercel-docs&relationship=related) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
 - [Fastify on Vercel](https://vercel.com/docs/frameworks/backend/fastify?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Frust&source_site=vercel-docs&relationship=related) — Deploy Fastify applications to Vercel with zero configuration.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Frust&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/functions/runtimes/rust.graph.md](/docs/functions/runtimes/rust.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Frust&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

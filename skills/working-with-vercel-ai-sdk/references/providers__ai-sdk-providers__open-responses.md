@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/open-responses.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "f0c64d09e53aa0abcbf1cdb757aed2350974880e4790bf6a2ecb1a4f97e59396"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "0d9af31d2b3bd6374aba58f76cc530e48e338f02ea200ec4d9bbf277763d69a1"
 ---
 
 # Open Responses Provider
@@ -388,7 +388,6 @@ with extensions throws a `SerializationError`.
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
-- [LMNT](/providers/ai-sdk-providers/lmnt)
 - [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)

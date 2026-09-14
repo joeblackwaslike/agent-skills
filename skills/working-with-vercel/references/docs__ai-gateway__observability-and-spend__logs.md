@@ -1,9 +1,9 @@
 ---
-title: Logs
+title: AI Gateway Request Logs
 product: vercel
 url: /docs/ai-gateway/observability-and-spend/logs
 canonical_url: "https://vercel.com/docs/ai-gateway/observability-and-spend/logs"
-last_updated: 2026-08-31
+last_updated: 2026-09-07
 type: how-to
 prerequisites:
   - /docs/ai-gateway/observability-and-spend
@@ -11,14 +11,17 @@ prerequisites:
 related:
   - /docs/ai-gateway/observability-and-spend/observability
   - /docs/ai-gateway/observability-and-spend/custom-reporting
+  - /docs/ai-gateway/sdks-and-apis/rest-api
+  - /docs/ai-gateway/observability-and-spend/usage
+  - /docs/ai-gateway/observability-and-spend/trace-drains
 summary: Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the results as CSV or JSON.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/logs.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "586d6f2f759b4e46527125ea64a89503158fa33f67b05982ac1b2afcbe0b4817"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "d69ad2faa626e788b1b767df9ebddc310cd7ff630afa522e0f10fc49d7558014"
 ---
 
-# Logs
+# AI Gateway Request Logs
 
 The Logs page lists every request and asynchronous job your team sends through AI Gateway, newest first. Use it to find one operation by ID, narrow the list by model or outcome, watch traffic as it arrives, and inspect routing, usage, and cost.
 
@@ -30,17 +33,24 @@ The Logs page lists every request and asynchronous job your team sends through A
 
 - [AI Gateway logs now have a dedicated page](https://vercel.com/changelog/ai-gateway-logs?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related)
 - [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related)
+- [Access and share AI Gateway leaderboard data](https://vercel.com/changelog/open-data-and-shareable-charts-for-ai-gateway-leaderboards?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related)
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
 - [Runtime Logs](https://vercel.com/docs/logs/runtime?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to search, inspect, and share your runtime logs with the Logs tab.
-- [Logs](https://vercel.com/docs/logs?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — Use logs to find information on deployment builds, function executions, and more.
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
 - [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
-- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including pricing and markup, SDK and API compatibility, model availabilit
-- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Amp with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/amp?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — Connect Amp to AI Gateway through Amp's Model Routing settings. Add an AI Gateway API key, choose models for Amp's modes
+- [AI Gateway Video Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/video-input?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — Analyze video clips with AI Gateway using AI SDK 7, Python, Chat Completions, and Responses / OpenResponses.
 
 Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend/logs.graph.md](/docs/ai-gateway/observability-and-spend/logs.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 For aggregate charts and spend totals, see [Observability](/docs/ai-gateway/observability-and-spend/observability). For usage grouped by model, user, or tag, see [Custom Reporting](/docs/ai-gateway/observability-and-spend/custom-reporting).
+
+## Programmatic access
+
+The public REST API does not expose the Logs page's list and filter query. To look up one completed generation by ID, use [`GET /v1/generation`](/docs/ai-gateway/sdks-and-apis/rest-api#look-up-a-generation) or the AI SDK's [`getGenerationInfo()` workflow](/docs/ai-gateway/observability-and-spend/usage#look-up-a-generation-with-the-ai-sdk). Generation lookup returns provider, latency, token usage, cost, and finish reason.
+
+To send routing attempts and error fields for every request to an observability backend, configure [AI Gateway Trace Drains](/docs/ai-gateway/observability-and-spend/trace-drains). Use the [dashboard export](#export-logs) for an ad hoc CSV or JSON file of the request rows currently loaded under your filters.
 
 ## Open the logs
 

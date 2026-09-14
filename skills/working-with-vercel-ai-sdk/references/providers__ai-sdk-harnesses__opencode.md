@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/opencode.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "d642826674bae1e2109a47e8ac6fc615cbd88d6d8b1dae27914624efe75ae1b8"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "eed6a9758b92749c8a6ca499ace5096b10b7bec5c9c19d963080b61b519b31d4"
 ---
 
 # OpenCode Harness
@@ -154,6 +154,10 @@ Supported environment variables:
 - `OPENAI_ORGANIZATION`
 - `OPENAI_PROJECT`
 
+If no applicable credential environment variable is set, the adapter attempts
+to resolve a native subscription from the host system unless AI Gateway
+authentication is selected.
+
 Select a specific authentication mode when you do not want automatic detection:
 
 ```ts
@@ -230,6 +234,7 @@ OpenCode supports built-in tool approval requests when `permissionMode` is
 - [Cline](/providers/ai-sdk-harnesses/cline)
 - [Cursor](/providers/ai-sdk-harnesses/cursor)
 - [fx](/providers/ai-sdk-harnesses/fx)
+- [GitHub Copilot](/providers/ai-sdk-harnesses/github-copilot)
 
 
 [Full Sitemap](/sitemap.md)

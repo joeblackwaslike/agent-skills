@@ -16,8 +16,8 @@ related:
 summary: Learn about cron jobs, how they work, and how to use them on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cron-jobs.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "b5a247d2949d58b0e59e516dac0e68a1120a625d00064f098eb7bbf91cf80b98"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "39c9e3265e2719176532ce829d153ab4e46608b9a73b589920b4cb16d24ca36b"
 ---
 
 # Cron Jobs
@@ -32,7 +32,6 @@ Cron jobs are time-based scheduling tools used to automate repetitive tasks. By 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to Setup Cron Jobs on Vercel](https://vercel.com/kb/guide/how-to-setup-cron-jobs-on-vercel?from=related&source_path=%2Fdocs%2Fcron-jobs&source_site=vercel-docs&relationship=related) — Learn how to setup and use cron jobs on Vercel
 - [Introducing Vercel Cron Jobs](https://vercel.com/blog/cron-jobs?from=related&source_path=%2Fdocs%2Fcron-jobs&source_site=vercel-docs&relationship=related)
 - [Attack Challenge Mode now allows verified bots and Vercel cron jobs](https://vercel.com/changelog/attack-challenge-mode-now-allows-verified-bots-and-vercel-cron-jobs?from=related&source_path=%2Fdocs%2Fcron-jobs&source_site=vercel-docs&relationship=related)
 - [Cron jobs now support 100 per project on every plan](https://vercel.com/changelog/cron-jobs-now-support-100-per-project-on-every-plan?from=related&source_path=%2Fdocs%2Fcron-jobs&source_site=vercel-docs&relationship=related)
@@ -40,6 +39,7 @@ Cron jobs are time-based scheduling tools used to automate repetitive tasks. By 
 - [Run cron jobs from deployment summary](https://vercel.com/changelog/run-cron-jobs-from-deployment-summary?from=related&source_path=%2Fdocs%2Fcron-jobs&source_site=vercel-docs&relationship=related)
 - [Run scheduled jobs with Vercel Cron Jobs and Vercel Functions](https://vercel.com/changelog/run-scheduled-jobs-with-vercel-cron-jobs-and-vercel-functions?from=related&source_path=%2Fdocs%2Fcron-jobs&source_site=vercel-docs&relationship=related)
 - [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud?from=related&source_path=%2Fdocs%2Fcron-jobs&source_site=vercel-docs&relationship=related) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
+- [Run recurring security reviews with deepsec on Vercel](https://vercel.com/kb/guide/deepsec-reviews-on-vercel?from=related&source_path=%2Fdocs%2Fcron-jobs&source_site=vercel-docs&relationship=related) — Learn how to run periodic security scans on your code with deepsec. Set up deepsec to review GitHub repositories and del
 - [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fcron-jobs&source_site=vercel-docs&relationship=related) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
 - [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel?from=related&source_path=%2Fdocs%2Fcron-jobs&source_site=vercel-docs&relationship=related) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
 - [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall?from=related&source_path=%2Fdocs%2Fcron-jobs&source_site=vercel-docs&relationship=related) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C

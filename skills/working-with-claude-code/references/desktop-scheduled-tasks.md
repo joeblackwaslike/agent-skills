@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/desktop-scheduled-tasks.md"
-fetched_at: "2026-08-31T10:37:20.620Z"
-sha256: "569fa744e39dd53195446d2abc24dae6be1d702c3c70bf87bd058912ce66caf9"
+fetched_at: "2026-09-14T09:37:17.168Z"
+sha256: "1bc1f38acdba7def39ee3da2d8a8fb0e468c5c322b0c30734e6f7fede367ab90"
 ---
 
 > ## Documentation Index
@@ -20,17 +20,17 @@ The Desktop app's **Routines** page lets you create both local scheduled tasks a
 
 Claude Code offers three ways to schedule recurring or one-off work:
 
-|                            | [Cloud](/docs/en/routines)               | [Desktop](/docs/en/desktop-scheduled-tasks) | [`/loop`](/docs/en/scheduled-tasks)      |
-| :------------------------- | :---------------------------------- | :------------------------------------- | :---------------------------------- |
-| Runs on                    | Cloud, Anthropic-managed by default | Your machine                           | Your machine                        |
-| Requires machine on        | No                                  | Yes                                    | Yes                                 |
-| Requires open session      | No                                  | No                                     | Yes                                 |
-| Persistent across restarts | Yes                                 | Yes                                    | Restored on `--resume` if unexpired |
-| Access to local files      | No (fresh clone)                    | Yes                                    | Yes                                 |
-| MCP servers                | Connectors configured per task      | [Config files](/docs/en/mcp) and connectors | Inherits from session               |
-| Permission prompts         | No (runs autonomously)              | Configurable per task                  | Inherits from session               |
-| Customizable schedule      | Via `/schedule` in the CLI          | Yes                                    | Yes                                 |
-| Minimum interval           | 1 hour                              | 1 minute                               | 1 minute                            |
+|                            | [Cloud](/docs/en/routines)               | [Desktop](/docs/en/desktop-scheduled-tasks) | [`/loop`](/docs/en/scheduled-tasks)                                             |
+| :------------------------- | :---------------------------------- | :------------------------------------- | :------------------------------------------------------------------------- |
+| Runs on                    | Cloud, Anthropic-managed by default | Your machine                           | Your machine                                                               |
+| Requires machine on        | No                                  | Yes                                    | Yes                                                                        |
+| Requires open session      | No                                  | No                                     | Yes                                                                        |
+| Persistent across restarts | Yes                                 | Yes                                    | Restored on `--resume`, with [exceptions](/docs/en/scheduled-tasks#limitations) |
+| Access to local files      | No (fresh clone)                    | Yes                                    | Yes                                                                        |
+| MCP servers                | Connectors configured per task      | [Config files](/docs/en/mcp) and connectors | Inherits from session                                                      |
+| Permission prompts         | No (runs autonomously)              | Configurable per task                  | Inherits from session                                                      |
+| Customizable schedule      | Via `/schedule` in the CLI          | Yes                                    | Yes                                                                        |
+| Minimum interval           | 1 hour                              | 1 minute                               | 1 minute                                                                   |
 
 <Tip>
   Use **cloud tasks** for work that should run reliably without your machine. Use **Desktop tasks** when you need access to local files and tools. Use **`/loop`** for quick polling during a session.

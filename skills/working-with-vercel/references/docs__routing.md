@@ -16,8 +16,8 @@ related:
 summary: "Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your application."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "e3382877d3d941c2b43bcf1fbc41eefd7a9e56543286f28a925b393b54868e9a"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "ce134a122f8e578df5696777fe8ae4b3727179886169b708f7dcd6359eb34b19"
 ---
 
 # Routing
@@ -34,7 +34,6 @@ Vercel's CDN evaluates routing rules on every request before checking any cache 
 - [Vercel's CDN now supports updating routing rules without a new deployment](https://vercel.com/changelog/vercels-cdn-now-supports-updating-routing-rules-without-a-new-deployment?from=related&source_path=%2Fdocs%2Frouting&source_site=vercel-docs&relationship=related)
 - [Can I use Vercel as a reverse proxy?](https://vercel.com/kb/guide/vercel-reverse-proxy-rewrites-external?from=related&source_path=%2Fdocs%2Frouting&source_site=vercel-docs&relationship=related) — Learn how to use rewrites to proxy requests from Vercel to other deployments.
 - [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn?from=related&source_path=%2Fdocs%2Frouting&source_site=vercel-docs&relationship=related) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
-- [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related&source_path=%2Fdocs%2Frouting&source_site=vercel-docs&relationship=related) — Learn how to debug how Vercel decides where to route your request
 - [Services routing](https://vercel.com/docs/services/routing?from=related&source_path=%2Fdocs%2Frouting&source_site=vercel-docs&relationship=related) — Learn how Vercel routes public requests to services and how each service handles its own routes.
 - [Getting Started with Routing Middleware](https://vercel.com/docs/routing-middleware/getting-started?from=related&source_path=%2Fdocs%2Frouting&source_site=vercel-docs&relationship=related) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
 - [Get project routing rules](https://vercel.com/docs/rest-api/project-routes/get-project-routing-rules?from=related&source_path=%2Fdocs%2Frouting&source_site=vercel-docs&relationship=related) — GET /v1/projects/{projectId}/routes — Get the routing rules for a project. Supports searching by name/ID/pattern, filter

@@ -17,8 +17,8 @@ related:
 summary: Learn about the Edge runtime, an environment in which Vercel Functions can run.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/edge.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "bd822c0aa89d2a335525c8cdbb6e75c80730f57c7b3b85fc8a35712ee1e620bb"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "8d4824a30abebff75602f39e97e9c3acd95b4e739e12eed0eea3d8ecf575df25"
 ---
 
 # Edge Runtime
@@ -43,7 +43,7 @@ To convert your Vercel Function to use the Edge runtime, add the following code 
 - [New execution duration limit for Edge Functions](https://vercel.com/changelog/new-execution-duration-limit-for-edge-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related)
 - [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
 - [How can I make my library compatible with the Vercel Edge Runtime?](https://vercel.com/kb/guide/library-sdk-compatible-with-vercel-edge-runtime-and-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related) — Learn how to make your library or SDK compatible with the Edge Runtime for existing Edge Runtime code and Routing Middle
-- [Sending Emails from an application on Vercel](https://vercel.com/kb/guide/sending-emails-from-an-application-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related) — SMTP is the harder path inside Vercel Functions. Learn how to send emails over an HTTP API, which Next.js pattern fits y
+- [How to send emails from an application on Vercel](https://vercel.com/kb/guide/sending-emails-from-an-application-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related) — Send email from Vercel Functions over an HTTP API instead of SMTP. Match the right Next.js pattern to your trigger and f
 - [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
 - [Edge Runtime](https://nextjs.org/docs/pages/api-reference/edge?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related) — API Reference for the Edge Runtime.
 - [Edge Runtime](https://nextjs.org/docs/app/api-reference/edge?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related) — API Reference for the Edge Runtime.

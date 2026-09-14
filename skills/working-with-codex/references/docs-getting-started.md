@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/openai/codex/main/sdk/python/docs/getting-started.md"
-fetched_at: "2026-09-07T09:00:35.564Z"
-sha256: "9c0fc427ee73c1e5a20d99bd82bf88e9fb20a5df9d98078b03eabda8f890c3a8"
+fetched_at: "2026-09-14T09:38:11.275Z"
+sha256: "a636514fb73fb1e526624d5fcc28d68e119533af97cf31a4fb0d62d995d8368c"
 ---
 
 # Getting Started
@@ -23,7 +23,7 @@ Requirements:
 - An existing Codex account session, or one of the login flows below
 
 The SDK installs its matching `openai-codex-cli-bin` runtime dependency
-automatically. SDK release versions track the corresponding Codex CLI release.
+automatically. Stable SDK releases track the corresponding stable Codex CLI release.
 
 ## 2. Authenticate When Needed
 
@@ -75,6 +75,11 @@ with Codex() as codex:
 
 Use `Thread.turn(...)` when you need a `TurnHandle` for streaming, steering,
 or interrupting an active turn.
+
+For **untrusted content** from another agent, tool, or application, pass an
+[`ExternalMessage`](api-reference.md#externalmessage). It retains tool-level
+authority and does not establish user authorization or approval. Plain strings
+and `TextInput` represent user input.
 
 ## 4. Choose Sandbox Access
 

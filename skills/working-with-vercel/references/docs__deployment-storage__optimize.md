@@ -16,8 +16,8 @@ related:
 summary: Set retention periods, review remaining usage, and reduce deployment output size.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-storage/optimize.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "87054b0a5f270f402a0c83cef9ff4eeb79808af00061cb310ff7ff4d9e0c1454"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "409e8f227c7e284cebcf30b2aa8b87def74802fd091cfd938d36062bfaed4326"
 ---
 
 # Optimize Deployment Storage
@@ -41,7 +41,6 @@ Start with deployment retention. It controls how long Vercel keeps deployment ou
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments?from=related&source_path=%2Fdocs%2Fdeployment-storage%2Foptimize&source_site=vercel-docs&relationship=related) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
 - [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fdeployment-storage%2Foptimize&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Vercel Storage overview](https://vercel.com/docs/storage?from=related&source_path=%2Fdocs%2Fdeployment-storage%2Foptimize&source_site=vercel-docs&relationship=related) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fdeployment-storage%2Foptimize&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/deployment-storage/optimize.graph.md](/docs/deployment-storage/optimize.graph.md?from=related&source_path=%2Fdocs%2Fdeployment-storage%2Foptimize&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

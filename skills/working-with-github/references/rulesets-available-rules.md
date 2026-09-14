@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets.md"
-fetched_at: "2026-09-07T09:04:02.451Z"
-sha256: "d1a2dc1978e2a6cbd9a6abf3d144c985ae33dee61db0599fbb915864c09945a3"
+fetched_at: "2026-09-14T09:42:34.465Z"
+sha256: "6f4f960c35093d73d2ddfaabcbaef3bf0a03ae2bf18efac8e81c989d78e15572"
 ---
 
 You can create branch or tag rulesets to control how users can interact with selected branches and tags in a repository. You can also create push rulesets to block pushes to a private or internal repository and that repository's entire fork network.
@@ -86,9 +86,7 @@ With both methods, we use the `verified_signature?` to confirm if a commit has a
 
 {% endif %}
 
-You can always push local commits to the branch if the commits are signed and verified. {% ifversion fpt or ghec %}You can also merge signed and verified commits into the branch using a pull request. However, you cannot squash and merge a pull request into the branch on {% data variables.product.github %} unless you are the author of the pull request.{% else %} However, you cannot merge pull requests into the branch on {% data variables.product.github %}.{% endif %} You can {% ifversion fpt or ghec %}squash and {% endif %}merge pull requests locally. For more information, see [AUTOTITLE](/pull-requests/how-tos/review-pull-requests/checking-out-pull-requests-locally).
-
-{% ifversion fpt or ghec %} For more information about merge methods, see [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/about-merge-methods-on-github).{% endif %}
+{% data reusables.repositories.required-signed-commits %}
 
 ## Require a pull request before merging
 
@@ -202,6 +200,24 @@ Enabling force pushes will not override any other rules. For example, if a branc
 {% ifversion ghes %}You cannot enable force pushes for a branch if a site administrator has blocked force pushes to all branches in your repository. For more information, see [AUTOTITLE](/admin/enforcing-policies/enforcing-policies-for-your-enterprise/enforcing-repository-management-policies-in-your-enterprise).
 
 If a site administrator has blocked force pushes to the default branch only, you can still enable force pushes for any other branch or tag.{% endif %}
+
+{% ifversion secret-scanning-merge-protection %}
+
+## Require {% data variables.product.prodname_secret_scanning %} alerts are resolved
+
+> [!NOTE]
+> {% data reusables.secret-scanning.merge-protection-public-preview %}
+
+If your repositories use {% data variables.product.prodname_secret_scanning %}, you can prevent a pull request from merging when either of these conditions applies:
+
+* A {% data variables.product.prodname_secret_scanning %} scan has not completed for the head commit of the pull request.
+* A commit in the pull request introduced an open {% data variables.product.prodname_secret_scanning %} alert that matches a secret type selected in the ruleset.
+
+You can configure the rule for provider, custom, and generic patterns. AI-detected secrets are not supported.
+
+For more information, see [AUTOTITLE](/code-security/how-tos/secure-your-secrets/prevent-future-leaks/block-merges-with-secrets).
+
+{% endif %}
 
 ## Require {% data variables.product.prodname_code_scanning %} results
 

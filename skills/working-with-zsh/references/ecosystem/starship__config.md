@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/starship/starship/main/docs/config/README.md"
-fetched_at: "2026-09-07T09:10:44.999Z"
-sha256: "8aa34d953160e8d587ab6d2848f31030f116bc1eeb706c4793df567e52ce86ca"
+fetched_at: "2026-09-14T09:50:30.563Z"
+sha256: "637a4e3f1480f6a48a3bbb4b8c4bda558541ecf77e09336a1228b8fd12b03371"
 ---
 
 # Configuration
@@ -1309,7 +1309,7 @@ The `direnv` module shows the status of the current rc file if one is present. T
 | ------------------- | -------------------------------------- | ------------------------------------------------------- |
 | `format`            | `'[$symbol$loaded/$allowed]($style) '` | The format for the module.                              |
 | `symbol`            | `'direnv '`                            | The symbol used before displaying the direnv context.   |
-| `style`             | `'bold orange'`                        | The style for the module.                               |
+| `style`             | `'bold bright-yellow'`                 | The style for the module.                               |
 | `disabled`          | `true`                                 | Disables the `direnv` module.                           |
 | `detect_extensions` | `[]`                                   | Which extensions should trigger this module.            |
 | `detect_files`      | `['.envrc']`                           | Which filenames should trigger this module.             |
@@ -1718,8 +1718,8 @@ The `fortran` module shows the current compiler version of Fortran.
 
 | Option              | Default                                                                                                                     | Description                                                               |
 | ------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| `symbol`            | `' '`                                                                                                                      | The symbol used before displaying the version of Fortran.                 |
-| `format`            | `'via [$symbol($version )]($style)'`                                                                                        | The format for the module.                                                |
+| `symbol`            | `'🅵  '`                                                                                                                     | The symbol used before displaying the version of Fortran.                 |
+| `format`            | `'via [$symbol($version(-$name) )]($style)'`                                                                                | The format for the module.                                                |
 | `version_format`    | `'${raw}'`                                                                                                                  | The version format. Available vars are `raw`, `major`, `minor`, & `patch` |
 | `style`             | `'bold purple'`                                                                                                             | The style for the module.                                                 |
 | `detect_extensions` | `['f', 'F', 'for', 'FOR', 'ftn', 'FTN', 'f77', 'F77', 'f90', 'F90', 'f95', 'F95','f03', 'F03', 'f08', 'F08', 'f18', 'F18']` | Which extensions should trigger this module.                              |
@@ -2659,6 +2659,41 @@ prefix is always correctly displayed
 
 [jj_change]
 format = "($change:$commit) "
+```
+
+## JJ Metrics
+
+The `jj_metrics` module shows the number of added and deleted lines in the current [Jujutsu](https://docs.jj-vcs.dev/) repository.
+
+### Options
+
+| Option               | Default                                                      | Description                           |
+| -------------------- | ------------------------------------------------------------ | ------------------------------------- |
+| `added_style`        | `'bold green'`                                               | The style for the added count.        |
+| `deleted_style`      | `'bold red'`                                                 | The style for the deleted count.      |
+| `only_nonzero_diffs` | `true`                                                       | Render status only for changed items. |
+| `format`             | `'([+$added]($added_style) )([-$deleted]($deleted_style) )'` | The format for the module.            |
+| `disabled`           | `false`                                                      | Disables the `jj_metrics` module.     |
+
+### Variables
+
+| Variable        | Example | Description                                 |
+| --------------- | ------- | ------------------------------------------- |
+| added           | `1`     | The current number of added lines           |
+| deleted         | `2`     | The current number of deleted lines         |
+| added_style\*   |         | Mirrors the value of option `added_style`   |
+| deleted_style\* |         | Mirrors the value of option `deleted_style` |
+
+*: This variable can only be used as a part of a style string
+
+### Example
+
+```toml
+# ~/.config/starship.toml
+
+[jj_metrics]
+added_style = 'bold blue'
+format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
 ```
 
 ## Jobs

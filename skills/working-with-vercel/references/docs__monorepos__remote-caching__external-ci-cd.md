@@ -13,8 +13,8 @@ related:
 summary: Authenticate the Turborepo CLI to Vercel Remote Cache from your CI/CD provider using OpenID Connect (OIDC) or a Personal Access Token (PAT).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/remote-caching/external-ci-cd.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "6420c3ca40144a1cc92c8db902e3ddd0a9465796cb22c57499df53d1232dc27b"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "1e60a84e49dd9f39c0964d995615516aa86d6c803eea3276b80d337ba699a040"
 ---
 
 # Use Remote Caching from External CI/CD
@@ -34,7 +34,6 @@ You can use [Vercel Remote Cache](/docs/monorepos/remote-caching) with Turborepo
 - [Travis CI](https://turborepo.dev/docs/guides/ci-vendors/travis-ci?from=related&source_path=%2Fdocs%2Fmonorepos%2Fremote-caching%2Fexternal-ci-cd&source_site=vercel-docs&relationship=related) — Configure Travis CI to run Turborepo tasks with Remote Caching.
 - [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching?from=related&source_path=%2Fdocs%2Fmonorepos%2Fremote-caching%2Fexternal-ci-cd&source_site=vercel-docs&relationship=related) — Share a single Turborepo cache across your team and CI to avoid duplicated work.
 - [Visualize time saved using Turborepo with Remote Caching](https://vercel.com/changelog/visualize-time-saved-using-turborepo-with-remote-caching?from=related&source_path=%2Fdocs%2Fmonorepos%2Fremote-caching%2Fexternal-ci-cd&source_site=vercel-docs&relationship=related)
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fmonorepos%2Fremote-caching%2Fexternal-ci-cd&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/monorepos/remote-caching/external-ci-cd.graph.md](/docs/monorepos/remote-caching/external-ci-cd.graph.md?from=related&source_path=%2Fdocs%2Fmonorepos%2Fremote-caching%2Fexternal-ci-cd&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

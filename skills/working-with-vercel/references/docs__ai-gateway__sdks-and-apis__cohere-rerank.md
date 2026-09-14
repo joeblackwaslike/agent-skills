@@ -1,10 +1,10 @@
 ---
-title: Cohere Rerank API
+title: Cohere Rerank API with AI Gateway
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/cohere-rerank
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/cohere-rerank"
-last_updated: 2026-07-28
-type: conceptual
+last_updated: 2026-09-08
+type: reference
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis
   - /docs/ai-gateway
@@ -15,11 +15,11 @@ related:
 summary: Use the Cohere-compatible Rerank API with AI Gateway to reorder documents by relevance with the Cohere SDK or plain HTTP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/cohere-rerank.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "30540c8fe140636e0247ee5e9e6fa53f9ee6f4d0100801c5bdae3e4cfea1b0e5"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "ca6258632f46f9b91b65ad3fdb0047af594bfb1c8705ed34852cc666b4e7cf40"
 ---
 
-# Cohere Rerank API
+# Cohere Rerank API with AI Gateway
 
 AI Gateway provides Cohere-compatible Rerank API endpoints, so you can use the [Cohere SDK](https://docs.cohere.com/reference/about) or plain HTTP requests to rerank documents through a unified gateway with only a URL change.
 
@@ -34,9 +34,7 @@ AI Gateway provides Cohere-compatible Rerank API endpoints, so you can use the [
 - [Cohere](https://ai-sdk.dev/providers/ai-sdk-providers/cohere?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fcohere-rerank&source_site=vercel-docs&relationship=related)
 - [Voyage AI](https://ai-sdk.dev/providers/ai-sdk-providers/voyage?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fcohere-rerank&source_site=vercel-docs&relationship=related)
 - [Together.ai](https://ai-sdk.dev/providers/ai-sdk-providers/togetherai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fcohere-rerank&source_site=vercel-docs&relationship=related)
-- [Models & Providers](https://vercel.com/docs/ai-gateway/models-and-providers?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fcohere-rerank&source_site=vercel-docs&relationship=related) — Work with models and providers in AI Gateway: provider routing and fallbacks, filtering, timeouts, caching, service tier
-- [Provider Filtering, Ordering & Sorting](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fcohere-rerank&source_site=vercel-docs&relationship=related) — Control which providers handle your requests, in what order, and how they are ranked using order, only, and sort options
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fcohere-rerank&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
+- [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fcohere-rerank&source_site=vercel-docs&relationship=related) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/cohere-rerank.graph.md](/docs/ai-gateway/sdks-and-apis/cohere-rerank.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fcohere-rerank&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -113,24 +111,6 @@ The response contains a ranked list of results, ordered by relevance:
 
 ## Example request
 
-#### cURL
-
-```bash filename="rerank.sh"
-curl https://ai-gateway.vercel.sh/v2/rerank \
-  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "cohere/rerank-v3.5",
-    "query": "What is the capital of the United States?",
-    "documents": [
-      "Carson City is the capital city of the American state of Nevada.",
-      "Washington, D.C. is the capital of the United States.",
-      "Capital punishment has existed in the United States since before it was a country."
-    ],
-    "top_n": 2
-  }'
-```
-
 #### TypeScript
 
 ```typescript filename="rerank.ts"
@@ -178,6 +158,24 @@ response = co.rerank(
 )
 
 print(response.results)
+```
+
+#### cURL
+
+```bash filename="rerank.sh"
+curl https://ai-gateway.vercel.sh/v2/rerank \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "cohere/rerank-v3.5",
+    "query": "What is the capital of the United States?",
+    "documents": [
+      "Carson City is the capital city of the American state of Nevada.",
+      "Washington, D.C. is the capital of the United States.",
+      "Capital punishment has existed in the United States since before it was a country."
+    ],
+    "top_n": 2
+  }'
 ```
 
 ## Object documents and `return_documents`

@@ -12,8 +12,8 @@ related:
 summary: Learn how to manage telemetry collection.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/telemetry.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "1b5a47c8fd6121dff0abee1bf854be56d07c0680e25071e0600ee680366274ef"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "97f78f50b2472ac3633371dfa2eec8ba151a8e8e2dfe509fa4af51a1ecef0361"
 ---
 
 # vercel telemetry
@@ -30,7 +30,7 @@ The `vercel telemetry` command allows you to enable or disable telemetry collect
 - [Telemetry](https://turborepo.dev/docs/telemetry?from=related&source_path=%2Fdocs%2Fcli%2Ftelemetry&source_site=vercel-docs&relationship=related) — Understand what anonymous telemetry data Turborepo collects and how to opt out.
 - [CLI Telemetry](https://eve.dev/docs/reference/telemetry?from=related&source_path=%2Fdocs%2Fcli%2Ftelemetry&source_site=vercel-docs&relationship=related) — Learn what eve CLI telemetry collects and how to control it.
 - [telemetry](https://turborepo.dev/docs/reference/telemetry?from=related&source_path=%2Fdocs%2Fcli%2Ftelemetry&source_site=vercel-docs&relationship=related) — Reference for the `turbo telemetry` command that manages anonymous usage data collection.
-- [vercel metrics](https://vercel.com/docs/cli/metrics?from=related&source_path=%2Fdocs%2Fcli%2Ftelemetry&source_site=vercel-docs&relationship=related) — List and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
+- [vercel metrics](https://vercel.com/docs/cli/metrics?from=related&source_path=%2Fdocs%2Fcli%2Ftelemetry&source_site=vercel-docs&relationship=related) — Discover and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
 - [vercel inspect](https://vercel.com/docs/cli/inspect?from=related&source_path=%2Fdocs%2Fcli%2Ftelemetry&source_site=vercel-docs&relationship=related) — Learn how to retrieve information about your Vercel deployments using the vercel inspect CLI command.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Ftelemetry&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel usage](https://vercel.com/docs/cli/usage?from=related&source_path=%2Fdocs%2Fcli%2Ftelemetry&source_site=vercel-docs&relationship=related) — Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.

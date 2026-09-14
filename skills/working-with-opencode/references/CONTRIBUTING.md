@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/CONTRIBUTING.md"
-fetched_at: "2026-08-10T05:31:39.739Z"
-sha256: "9d59e93a2c9cb77f59b9d5f4848421693633d6c181288c59228492e667d2470a"
+fetched_at: "2026-09-14T09:42:54.887Z"
+sha256: "f1eb0e8049da24335d029a9470921d9b2c447930a72336fad296f263b74a6d8f"
 ---
 
 # Contributing to OpenCode
@@ -163,7 +163,7 @@ Caveats:
 - If `spawn` does not work for you, you can debug the server separately:
   - Debug server: `bun run --inspect=ws://localhost:6499/ --cwd packages/opencode ./src/index.ts serve --port 4096`,
     then attach TUI with `opencode attach http://localhost:4096`
-  - Debug TUI: `bun run --inspect=ws://localhost:6499/ --cwd packages/opencode --conditions=browser ./src/index.ts`
+  - Debug TUI: `bun run --inspect=ws://localhost:6499/ --cwd packages/opencode ./src/index.ts`
 
 Other tips and tricks:
 

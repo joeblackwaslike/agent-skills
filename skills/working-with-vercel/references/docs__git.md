@@ -16,8 +16,8 @@ related:
 summary: Vercel automatically deploys supported Git repositories on every branch push and when changes merge into the production branch.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "0cd6534d04f9402c7a9349e96330ddc782e066bbdc9a399744d53e2dbfe1cddf"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "dceaecb03bec79d05769c5049d80633f02d8bc7034445e3b1c0b3e4b3974fea0"
 ---
 
 # Deploying Git Repositories with Vercel
@@ -39,8 +39,8 @@ Vercel allows for **automatic deployments on every branch push** and merges onto
 - [Can I use Vercel to deploy to a private cloud?](https://vercel.com/kb/guide/can-i-use-vercel-to-deploy-to-a-private-cloud?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — Learn about if it's possible to deploy to a private cloud with Vercel.
 - [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related)
 - [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
-- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — Learn how to configure Git for your project through vercel.json or vercel.ts.
+- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 
 Full cross-link map for this page: [/docs/git.graph.md](/docs/git.graph.md?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=graph)
@@ -56,6 +56,29 @@ When working with Git, have a branch that works as your production branch, often
 Vercel will create a production deployment.
 
 You can choose to use a different branch as the [production branch](#production-branch).
+
+## Managing deployment notifications
+
+Choose where to change notification settings based on the source of the message:
+
+| Notification | Where to manage it |
+| --- | --- |
+| Email from GitHub, GitLab, or Bitbucket | Your Git provider's notification preferences. See [Git provider emails](#git-provider-emails). |
+| Vercel bot comments on GitHub pull requests or commits | Your project's **Git** settings. See [Silence GitHub comments](/docs/git/vercel-for-github#silence-github-comments). |
+| GitHub deployment activity on a pull request | The **deployment\_status Events** control in your project's **Git** settings. See [Silence deployment notifications on pull requests](/docs/git/vercel-for-github#silence-deployment-notifications-on-pull-requests). |
+| Notifications sent by Vercel | Your [Vercel notification preferences](/docs/notifications#managing-notifications). |
+
+### Git provider emails
+
+Your Git provider controls email delivery for repository activity and CI workflows. Adjust the preferences for the repository or event type generating the email:
+
+- **GitHub**: Configure email delivery for [watched repositories and conversations](https://docs.github.com/en/subscriptions-and-notifications/get-started/configuring-notifications). If you deploy through GitHub Actions, review [workflow-run notifications](https://docs.github.com/en/actions/concepts/workflows-and-actions/notifications-for-workflow-runs) separately.
+- **GitLab**: Configure [notification levels](https://docs.gitlab.com/user/profile/notifications/) globally, per group, or per project. Use a custom level to choose the events you receive, including pipeline events when you use GitLab CI/CD.
+- **Bitbucket**: Manage [email notifications and watched activity](https://support.atlassian.com/bitbucket-cloud/docs/manage-email-notifications-for-watched-objects/) in your personal Bitbucket settings.
+
+Changing your provider's email preferences affects your notifications. Changing Vercel's bot-comment or deployment-event settings affects the project's Git integration for everyone.
+
+Before disabling GitHub `deployment_status` events, check whether any GitHub Actions workflows depend on them. Follow the [migration instructions](/docs/git/vercel-for-github#migrating-from-deployment_status) to use `repository_dispatch` where appropriate.
 
 ## Supported Git Providers
 

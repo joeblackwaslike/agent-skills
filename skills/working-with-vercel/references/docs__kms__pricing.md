@@ -13,8 +13,8 @@ related:
 summary: How Vercel KMS is billed per signing operation, the platform limits that apply, and how to stop being billed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms/pricing.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "12167812c09cf7e973fa0a3c0031f18b4201309067a76b5291b36e4e2b0025fe"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "470d0530374f12030ed3129059e138329e0a9c74a33b06d458b66937f024d814"
 ---
 
 # Vercel KMS Pricing and Limits
@@ -42,7 +42,7 @@ Full cross-link map for this page: [/docs/kms/pricing.graph.md](/docs/kms/pricin
 Signing operations are grouped into two algorithm tiers:
 
 - **Standard** algorithms: `RS256` and `PS256`.
-- **Advanced** algorithms: every other supported algorithm, including `RS384`, `RS512`, `PS384`, `PS512`, the `ES*` family, and `EdDSA`.
+- **Advanced** algorithms: every other supported algorithm, including `RS384`, `RS512`, `PS384`, `PS512`, and the `ES*` family.
 
 | Operation                                          | Price                       |
 | -------------------------------------------------- | --------------------------- |
@@ -54,7 +54,7 @@ The Hobby plan includes 5,000 signing operations per month at no charge. Pro and
 ## Limits
 
 - An issuer can have at most one pending key at a time during [rotation](/docs/kms/concepts/key-rotation).
-- KMS supports `RS256`, `RS384`, `RS512`, the `PS*` and `ES*` families, and `EdDSA`, and defaults to `RS512`.
+- KMS supports `RS256`, `RS384`, `RS512`, the `PS*` and `ES*` families, and defaults to `RS512`.
 - KMS does not support symmetric (`HS*`) keys.
 
 ## How to stop being billed

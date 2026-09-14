@@ -14,8 +14,8 @@ related:
 summary: Learn how to list, add, switch, invite, and manage your teams with the vercel teams CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/teams.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "19e62f1cad5df455f74c17493672bc34ae5e8bc6a84a4f220e81e51f7cb93bb4"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "d31627912978ce4ecaaeafb2d541a0fc90558d1b7877523f397b135f33a56551"
 ---
 
 # vercel teams
@@ -31,8 +31,8 @@ The `vercel teams` command manages [Teams](/docs/accounts#creating-a-team): list
 - [vercel switch](https://vercel.com/docs/cli/switch?from=related&source_path=%2Fdocs%2Fcli%2Fteams&source_site=vercel-docs&relationship=related) — Learn how to switch between different team scopes using the vercel switch CLI command.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fteams&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fteams&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel alerts](https://vercel.com/docs/cli/alerts?from=related&source_path=%2Fdocs%2Fcli%2Fteams&source_site=vercel-docs&relationship=related) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
 - [vercel buy](https://vercel.com/docs/cli/buy?from=related&source_path=%2Fdocs%2Fcli%2Fteams&source_site=vercel-docs&relationship=related) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
-- [vercel oauth-apps](https://vercel.com/docs/cli/oauth-apps?from=related&source_path=%2Fdocs%2Fcli%2Fteams&source_site=vercel-docs&relationship=related) — Register Vercel Apps \\(OAuth\\) and manage team installations from the CLI: register new apps, list and dismiss installat
 
 Full cross-link map for this page: [/docs/cli/teams.graph.md](/docs/cli/teams.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fteams&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

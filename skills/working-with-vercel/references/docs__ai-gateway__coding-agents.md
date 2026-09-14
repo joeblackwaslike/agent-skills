@@ -1,28 +1,28 @@
 ---
-title: Coding Agents
+title: Coding Agents and Chat Platforms with AI Gateway
 product: vercel
 url: /docs/ai-gateway/coding-agents
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents"
-last_updated: 2026-08-26
+last_updated: 2026-09-08
 type: conceptual
 prerequisites:
   - /docs/ai-gateway
 related:
   - /docs/cli/ai-gateway
+  - /docs/ai-gateway/leaderboards
+  - /docs/ai-gateway/coding-agents/aider
   - /docs/ai-gateway/coding-agents/claude-code
   - /docs/ai-gateway/coding-agents/cline
-  - /docs/ai-gateway/coding-agents/openai-codex
-  - /docs/ai-gateway/coding-agents/cursor
-summary: Configure popular AI coding agents to use the AI Gateway for unified model access and spend monitoring.
+summary: Connect coding agents and chat platforms to AI Gateway. Configure Claude Code, Codex, Chatbox, Open WebUI, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "8f7d8ea70e774437a4689ca7ed8aea606d998c1893ff6d08a74c31c7c5072590"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "fa36113a930b4871b4c9645ec639e6d865e5c220a36faf46ef2c5ddb7e14a275"
 ---
 
-# Coding Agents
+# Coding Agents and Chat Platforms with AI Gateway
 
-AI coding agents are transforming how developers write, debug, and refactor code. Route these agents through AI Gateway to get a single dashboard for spend tracking, access to any model, and automatic fallbacks, all while using the familiar interfaces of your favorite tools.
+Route coding agents and chat platforms through AI Gateway to share model access, track spend, and configure provider fallbacks in one place.
 
 
 <!-- docsgraph:related -->
@@ -33,42 +33,65 @@ AI coding agents are transforming how developers write, debug, and refactor code
 - [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related)
 - [10x more capacity for Laguna S 2.1 on AI Gateway](https://vercel.com/changelog/10x-more-capacity-for-laguna-s-2-1-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related)
 - [Claude Fable 5.1 now available on AI Gateway](https://vercel.com/changelog/claude-fable-5-1-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related)
+- [DeepSeek V4.1 Flash now available on AI Gateway](https://vercel.com/changelog/deepseek-v4-1-flash-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related)
 - [DeepSeek V4 Flash now runs updated weights on AI Gateway](https://vercel.com/changelog/deepseek-v4-flash-now-runs-updated-weights-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related)
-- [DeepSeek V4 Flash Vision Experimental now available on AI Gateway](https://vercel.com/changelog/deepseek-v4-flash-with-vision-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related)
 - [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
-- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
-- [Collaborating with Anthropic on Claude Sonnet 4.5 to power intelligent coding agents](https://vercel.com/blog/collaborating-with-anthropic-on-claude-sonnet-4-5?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related)
-- [Xcode](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related) — Use Xcode's coding assistant with the AI Gateway.
+- [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related) — Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere
 - [Agent Resources](https://vercel.com/docs/agent-resources?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related) — Set up AI coding tools with Vercel documentation, reusable skills, and secure access to projects, deployments, and logs.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents.graph.md](/docs/ai-gateway/coding-agents.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Set up with the Vercel CLI
 
-The [Vercel CLI](/docs/cli/ai-gateway#setup) is the recommended way to connect a coding agent. One command provisions an API key, writes each agent's configuration, and points every agent at the right gateway endpoint:
+The [Vercel CLI](/docs/cli/ai-gateway#setup) is the recommended way to connect a coding agent. One command provisions or reuses an API key, writes each agent's configuration, and points every agent at the right gateway endpoint:
 
 ```bash filename="terminal"
-vercel ai-gateway coding-agents setup
+npx vercel ai-gateway setup
 ```
 
-The command detects the agents installed on your machine, shows you a diff of every planned change before it writes anything, and stores your key in the macOS Keychain instead of in plaintext config. It also copies your existing Claude Desktop and Codex Desktop sessions so your history survives the provider switch.
+`npx` runs Vercel CLI without installing it globally. To keep `vercel` available as a global command, install or update the CLI before running setup:
 
-Read the [full documentation for the command](/docs/cli/ai-gateway#coding-agents).
+```bash filename="terminal"
+npm i -g vercel@latest
+vercel ai-gateway setup
+```
+
+The command detects the agents installed on your machine, shows you a diff of every planned change before it writes anything, and stores your key in the macOS Keychain instead of in plaintext config. It reuses an existing key when your configs already point at the gateway, and accepts a pasted key so you don't have to mint a new one. Model lists written into agent configs come from the [AI Gateway leaderboards](/docs/ai-gateway/leaderboards), so the defaults track what's actually being used. It also copies your existing Claude Desktop and Codex Desktop sessions so your history survives the provider switch.
+
+Read the [full documentation for the command](/docs/cli/ai-gateway#setup).
 
 | Agent | `--agent` value |
 | --- | --- |
+| [Aider](/docs/ai-gateway/coding-agents/aider) | `aider` |
 | [Claude Code](/docs/ai-gateway/coding-agents/claude-code) | `claude-code` |
 | [Cline](/docs/ai-gateway/coding-agents/cline) | `cline` |
-| [OpenAI Codex](/docs/ai-gateway/coding-agents/openai-codex) | `codex` |
+| [Codex](/docs/ai-gateway/coding-agents/openai-codex) | `codex` |
+| [Continue CLI](/docs/ai-gateway/coding-agents/continue) | `continue` |
+| [GitHub Copilot CLI](/docs/ai-gateway/coding-agents/copilot) | `copilot` |
+| [Crush](/docs/ai-gateway/coding-agents/crush) | `crush` |
 | [Cursor](/docs/ai-gateway/coding-agents/cursor) | `cursor` |
+| [Deep Agents CLI](/docs/ai-gateway/coding-agents/deepagents) | `deepagents` |
+| [DeepSeek Harness](/docs/ai-gateway/coding-agents/deepseek) | `deepseek` |
+| [Factory Droid](/docs/ai-gateway/coding-agents/droid) | `droid` |
+| [ForgeCode](/docs/ai-gateway/coding-agents/forge) | `forge` |
+| [fx](/docs/ai-gateway/coding-agents/fx) | `fx` |
+| [Goose](/docs/ai-gateway/coding-agents/goose) | `goose` |
+| [gptme](/docs/ai-gateway/coding-agents/gptme) | `gptme` |
+| [Grok Build](/docs/ai-gateway/coding-agents/grok-build) | `grok` |
 | [Hermes](/docs/ai-gateway/coding-agents/hermes) | `hermes` |
+| [Junie CLI](/docs/ai-gateway/coding-agents/junie) | `junie` |
 | [Kilo Code](/docs/ai-gateway/coding-agents/kilo-code) | `kilo` |
+| [Kimi CLI](/docs/ai-gateway/coding-agents/kimi) | `kimi` |
 | [omp](/docs/ai-gateway/coding-agents/omp) | `omp` |
 | [OpenClaw](/docs/ai-gateway/coding-agents/openclaw) | `openclaw` |
 | [OpenCode](/docs/ai-gateway/coding-agents/opencode) | `opencode` |
+| [OpenHands](/docs/ai-gateway/coding-agents/openhands) | `openhands` |
 | [Pi](/docs/ai-gateway/coding-agents/pi) | `pi` |
+| [Qwen Code](/docs/ai-gateway/coding-agents/qwen) | `qwen` |
+| [Mistral Vibe](/docs/ai-gateway/coding-agents/vibe) | `vibe` |
+| [ZCode](/docs/ai-gateway/coding-agents/zcode) | `zcode` |
+| [Zed](/docs/ai-gateway/coding-agents/zed) | `zed` |
 
 Detection pre-selects the agents already installed on your machine, and `--all` covers every agent in the table. To connect a subset, name each one with `--agent <value>`.
 
@@ -76,7 +99,7 @@ Detection pre-selects the agents already installed on your machine, and `--all` 
 > the CLI doesn't cover can only be set up that way. For the full command
 > reference, including flags, key storage, session migration, and
 > non-interactive output, see [`vercel
->   ai-gateway`](/docs/cli/ai-gateway#coding-agents).
+>   ai-gateway`](/docs/cli/ai-gateway#setup).
 
 ## Which base URL to use
 
@@ -86,7 +109,7 @@ Configuring an agent by hand means telling it where the gateway is. Unless the a
 https://ai-gateway.vercel.sh/coding-agent/v1
 ```
 
-That URL passes straight through to the standard `/v1` handlers, so auth, routing, billing, and errors are identical to the gateway's bare `/v1` surface. Prefer it anyway: it marks the traffic as coming from a coding agent, and behavior that turns out to be shared across harnesses can land there without you editing your config again. For a client that speaks the Anthropic protocol and appends `/v1/messages` itself, drop the `/v1` and use `https://ai-gateway.vercel.sh/coding-agent`.
+That URL passes straight through to the standard `/v1` handlers, so auth, routing, billing, and errors are identical to the gateway's bare `/v1` surface. Prefer it anyway because it marks the traffic as coming from a coding agent. Behavior shared across harnesses can also land there without requiring another config edit. For a client that speaks the Anthropic protocol and appends `/v1/messages` itself, drop the `/v1` and use `https://ai-gateway.vercel.sh/coding-agent`.
 
 Three agents have a dedicated endpoint, because each needs something the generic surface doesn't do:
 
@@ -108,7 +131,9 @@ See each agent's page for what its endpoint adds. Agents with a first-party AI G
 | **Reliability**    | Single point of failure              | Automatic provider fallbacks    |
 | **Observability**  | Limited or no visibility             | Full request traces and metrics |
 
-## Supported agents
+## Featured agents
+
+These featured integrations provide a starting point. The setup table above lists every agent supported by the Vercel CLI, and the sidebar lists all integration guides alphabetically.
 
 ### Claude Code
 
@@ -152,9 +177,17 @@ Codex reads the gateway catalog from `/codex/v1/models` at startup, so `/model` 
 
 For full configuration options, including the dedicated Codex compatibility endpoint and profiles, see [Configure OpenAI Codex](/docs/ai-gateway/coding-agents/openai-codex).
 
+### Command Code
+
+[Command Code](https://commandcode.ai/) supports manual setup with your own AI Gateway API key and a custom base URL. Add AI Gateway as a provider in `~/.commandcode/providers.json`, using `https://ai-gateway.vercel.sh/coding-agent/v1` as the `baseURL`.
+
+Run `/model` to select one of your configured models under **Vercel AI Gateway**.
+
+See the [Command Code documentation](/docs/ai-gateway/coding-agents/command-code) for the provider configuration and API key setup.
+
 ### OpenCode
 
-[OpenCode](https://opencode.ai/) is an open-source, terminal-based AI coding assistant with native support. The CLI connects it for you with `--agent opencode`. You can also connect directly from within the tool:
+[OpenCode](https://opencode.ai/) is an open-source, terminal-based AI coding agent with native support. The CLI connects it for you with `--agent opencode`. You can also connect directly from within the tool:
 
 ```bash
 opencode
@@ -165,26 +198,6 @@ opencode
 OpenCode automatically discovers available models and lets you switch between them on the fly.
 
 See the [OpenCode documentation](/docs/ai-gateway/coding-agents/opencode) for more features.
-
-### Pi
-
-[Pi](https://github.com/earendil-works/pi) is an open-source terminal coding agent with a first-class `vercel-ai-gateway` provider, so it already knows the gateway's URL and model catalog. The CLI connects it for you with `--agent pi`, writing only the credential:
-
-```bash filename="terminal"
-vercel ai-gateway coding-agents setup --agent pi
-```
-
-See the [Pi documentation](/docs/ai-gateway/coding-agents/pi) for manual setup and model selection.
-
-### Cursor
-
-[Cursor](https://cursor.com) is an AI-first code editor. It keeps API-key settings in its own account-synced store, so `--agent cursor` provisions the key and walks you through the last few clicks in **Settings** -> **Models**. Set **Override OpenAI Base URL** to Cursor's own compatibility endpoint:
-
-```bash
-https://ai-gateway.vercel.sh/cursor/v1
-```
-
-See the [Cursor documentation](/docs/ai-gateway/coding-agents/cursor) for the full walkthrough and Cursor's BYOK limitations.
 
 ### Blackbox AI
 
@@ -210,115 +223,57 @@ Cline tracks detailed metrics including reasoning tokens, cache performance, and
 
 See the [Cline documentation](/docs/ai-gateway/coding-agents/cline) for troubleshooting tips.
 
-### Roo Code
+### Amp
 
-[Roo Code](https://roocode.com) is a [VS Code extension](https://marketplace.visualstudio.com/items?itemName=RooVeterinaryInc.roo-cline) that brings AI assistance directly into your editor. Configure it through the settings panel:
+[Amp](https://ampcode.com) connects to AI Gateway through Amp's Model Routing settings. The integration is currently early access for Amp Megawatt and Gigawatt members and requires manual configuration.
 
-1. Click the gear icon in the Roo Code panel
-2. Select **Vercel AI Gateway** as your provider
-3. Enter your API key
-4. Choose from hundreds of available models
+See [Configure Amp with AI Gateway](/docs/ai-gateway/coding-agents/amp) for eligibility, setup, and model selection.
 
-Roo Code includes prompt caching support for Claude and GPT models to reduce costs.
+### Aider
 
-See the [Roo Code documentation](/docs/ai-gateway/coding-agents/roo-code) for setup details.
+[Aider](https://aider.chat) is an open-source terminal pair-programming agent. The Vercel CLI configures its AI Gateway base URL, default model, model metadata, and API key environment variable.
 
-### Conductor
+See [Configure Aider with AI Gateway](/docs/ai-gateway/coding-agents/aider) for manual setup, model metadata, and model selection.
 
-[Conductor](https://conductor.build) is a Mac app that lets you run multiple Claude Code agents in parallel, each with an isolated copy of your codebase. Configure it through the settings panel:
+### Cursor
 
-1. Go to **Settings** -> **Env**
-2. Add the environment variables under **Claude Code**
-3. Set `ANTHROPIC_BASE_URL` to `https://ai-gateway.vercel.sh/coding-agent`
+[Cursor](https://cursor.com) is an AI-first code editor. The Vercel CLI provisions an API key and prints the values you need to finish configuration in Cursor's account-synced settings.
 
-Conductor lets you review and merge changes from multiple agents in one place.
+See [Configure Cursor with AI Gateway](/docs/ai-gateway/coding-agents/cursor) for the full setup and Cursor's BYOK limitations.
 
-See the [Conductor documentation](/docs/ai-gateway/coding-agents/conductor) for setup details.
+### GitHub Copilot CLI
 
-### Crush
+[GitHub Copilot CLI](https://docs.github.com/en/copilot/github-copilot-in-the-cli) is GitHub's terminal coding agent. Its BYOK mode uses environment variables, so the Vercel CLI can connect it without a config file or GitHub sign-in.
 
-[Crush](https://github.com/charmbracelet/crush) is a terminal-based AI coding assistant by Charmbracelet with LSP integration and MCP support. Configure it interactively:
+See [Configure GitHub Copilot CLI with AI Gateway](/docs/ai-gateway/coding-agents/copilot) for automatic and manual setup.
 
-```bash
-crush
-# Select "Vercel AI Gateway", choose a model, and enter your API Key
-```
+## Evaluate agents with Harbor
 
-See the [Crush documentation](/docs/ai-gateway/coding-agents/crush) for installation options.
+[Harbor](/docs/ai-gateway/coding-agents/harbor) runs benchmarks such as Terminal-Bench with your choice of coding-agent harness. It supports built-in adapters, including Claude Code, Codex, fx, OpenCode, and Pi, as well as custom agents. Connect a harness to AI Gateway through its adapter's provider or compatible API settings. Configure Harbor with `harbor run`; Harbor does not have a `vercel ai-gateway setup --agent` value.
 
-### Grok Build
+See the [Harbor guide](/docs/ai-gateway/coding-agents/harbor) for Codex, Claude Code, OpenCode, Pi, and fx examples, connection settings for more harnesses, and separate verifier credentials.
 
-[Grok Build](https://docs.x.ai/build/overview) is SpaceXAI's terminal-based coding agent. Point it at AI Gateway with two environment variables:
+## Chat platforms
 
-```bash
-export GROK_MODELS_BASE_URL="https://ai-gateway.vercel.sh/coding-agent/v1"
-export GROK_CODE_XAI_API_KEY="your-ai-gateway-api-key"
-```
+Chatbox and Open WebUI require manual configuration. OpenClaw works with `vercel ai-gateway setup --agent openclaw`:
 
-The in-CLI model picker is then populated from the gateway's full catalog.
-
-See the [Grok Build documentation](/docs/ai-gateway/coding-agents/grok-build) for full setup.
-
-### Hermes
-
-[Hermes](https://github.com/NousResearch/hermes-agent) is Nous Research's terminal-based coding agent. The CLI connects it for you with `--agent hermes`. To configure it by hand, set your key and name the provider:
-
-```bash
-export AI_GATEWAY_API_KEY="your-ai-gateway-api-key"
-hermes --provider ai-gateway -m openai/gpt-5.6-sol
-```
-
-Run `hermes model` instead to pick from the gateway's live catalog with pricing.
-
-See the [Hermes documentation](/docs/ai-gateway/coding-agents/hermes) for fallback providers and configuration.
-
-### Kilo Code
-
-[Kilo Code](https://kilo.ai) is a terminal coding agent that reads a global config at `~/.config/kilo/kilo.json`. The CLI connects it for you with `--agent kilo`, adding the gateway as an OpenAI-compatible provider and keeping your key in the environment.
-
-Kilo Code fetches the model list from the gateway automatically, so you pick a model with `/models` in a session.
-
-See the [Kilo Code documentation](/docs/ai-gateway/coding-agents/kilo-code) for manual setup.
-
-### omp
-
-[omp](https://omp.sh) (oh-my-pi) is an open-source terminal coding agent forked from Pi, inheriting its first-class `vercel-ai-gateway` provider. The CLI connects it with `--agent omp`, adding only an `AI_GATEWAY_API_KEY` export to your shell profile. omp reads the key from the environment and fills its `/model` picker from the gateway catalog.
-
-See the [omp documentation](/docs/ai-gateway/coding-agents/omp) for manual setup and model selection.
-
-### OpenClaw
-
-[OpenClaw](https://github.com/openclaw/openclaw) is an open-source agent gateway that routes work to multiple providers. The CLI connects it for you with `--agent openclaw`, adding a `vercel-ai-gateway` provider and a starter model list to `~/.openclaw/openclaw.json`.
-
-See the [OpenClaw documentation](/docs/ai-gateway/coding-agents/openclaw) for manual setup and how to add more models.
-
-### Superset
-
-[Superset](https://superset.sh) is a terminal-first AI coding agent that works with CLI agents like Claude Code, Codex, and Cursor Agents. Configure it with environment variables:
-
-```bash
-export ANTHROPIC_BASE_URL="https://ai-gateway.vercel.sh/coding-agent"
-export ANTHROPIC_AUTH_TOKEN="your-ai-gateway-api-key"
-export ANTHROPIC_API_KEY=""
-```
-
-Superset also includes a Chat UI with built-in provider configuration.
-
-See the [Superset documentation](/docs/ai-gateway/coding-agents/superset) for Chat UI setup.
+- [Chatbox](/docs/ai-gateway/coding-agents/chatbox), a cross-platform desktop chat interface
+- [Open WebUI](/docs/ai-gateway/coding-agents/open-webui), a self-hosted web interface
+- [OpenClaw](/docs/ai-gateway/coding-agents/openclaw), which connects coding agents and messaging platforms
 
 ## Getting started
 
-1. **Run the CLI**: `vercel ai-gateway coding-agents setup` creates a key and configures every agent it supports. Skip to step 4 when it finishes
-2. **Get an API key**: to configure an agent by hand, create a key in the [AI Gateway page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=AI+Gateway)
-3. **Configure the connection**: point the agent at `https://ai-gateway.vercel.sh/coding-agent/v1`, or at the [endpoint its own page names](#which-base-url-to-use)
-4. **Start coding**: use the agent as normal, and all requests route through the gateway
+1. **Run the CLI**: `vercel ai-gateway setup` creates a key and configures every agent it supports. Skip to step 4 when it finishes
+2. **Get an API key**: to configure a tool by hand, create a key in the [AI Gateway page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=AI+Gateway)
+3. **Configure the connection**: point the tool at the endpoint named on its setup page
+4. **Start using the tool**: requests now route through AI Gateway
 
 ## Monitoring usage
 
-Once your coding agents are connected, view usage in the [Observability section in the sidebar](https://vercel.com/dashboard/observability):
+Once your tools are connected, view usage in the [Observability section in the sidebar](https://vercel.com/dashboard/observability):
 
-- **Spend by agent**: See how much each tool costs
-- **Model usage**: Track which models your agents use most
+- **Spend by tool**: See how much each tool costs
+- **Model usage**: Track which models your tools use most
 - **Request traces**: Debug issues with full request/response logs
 
 ## Next steps
@@ -331,6 +286,7 @@ Once your coding agents are connected, view usage in the [Observability section 
 - [Configure Cursor](/docs/ai-gateway/coding-agents/cursor) with a custom OpenAI base URL
 - [Set up Blackbox AI](/docs/ai-gateway/coding-agents/blackbox) CLI for code generation
 - [Configure Cline](/docs/ai-gateway/coding-agents/cline) for autonomous coding assistance
+- [Configure Command Code](/docs/ai-gateway/coding-agents/command-code) with your own API key and a custom base URL
 - [Install Roo Code](/docs/ai-gateway/coding-agents/roo-code) as a VS Code extension
 - [Configure Conductor](/docs/ai-gateway/coding-agents/conductor) for parallel agents
 - [Configure Crush](/docs/ai-gateway/coding-agents/crush) for LSP-enhanced coding
@@ -340,6 +296,23 @@ Once your coding agents are connected, view usage in the [Observability section 
 - [Configure omp](/docs/ai-gateway/coding-agents/omp) for its inherited first-class gateway provider
 - [Configure OpenClaw](/docs/ai-gateway/coding-agents/openclaw) for multi-provider routing
 - [Configure Superset](/docs/ai-gateway/coding-agents/superset) for terminal-first AI coding
+- [Configure Aider](/docs/ai-gateway/coding-agents/aider) for AI pair programming in git
+- [Configure Continue CLI](/docs/ai-gateway/coding-agents/continue) for `cn` and IDE extensions
+- [Configure GitHub Copilot CLI](/docs/ai-gateway/coding-agents/copilot) for BYOK mode
+- [Configure Deep Agents CLI](/docs/ai-gateway/coding-agents/deepagents) for LangChain's terminal agent
+- [Configure DeepSeek Harness](/docs/ai-gateway/coding-agents/deepseek) for DeepSeek's terminal agent
+- [Configure Factory Droid](/docs/ai-gateway/coding-agents/droid) with BYOK custom models
+- [Configure ForgeCode](/docs/ai-gateway/coding-agents/forge) with a custom provider
+- [Configure fx](/docs/ai-gateway/coding-agents/fx) for its native gateway support
+- [Configure Goose](/docs/ai-gateway/coding-agents/goose) with a custom provider
+- [Configure gptme](/docs/ai-gateway/coding-agents/gptme) with a custom provider
+- [Configure Junie CLI](/docs/ai-gateway/coding-agents/junie) with model profiles
+- [Configure Kimi CLI](/docs/ai-gateway/coding-agents/kimi) with a `[models]` shortlist
+- [Configure OpenHands](/docs/ai-gateway/coding-agents/openhands) for app and headless runs
+- [Configure Qwen Code](/docs/ai-gateway/coding-agents/qwen) with model providers
+- [Configure Mistral Vibe](/docs/ai-gateway/coding-agents/vibe) with a custom provider
+- [Configure ZCode](/docs/ai-gateway/coding-agents/zcode) with a custom provider
+- [Configure Zed](/docs/ai-gateway/coding-agents/zed) with its first-party gateway provider
 
 
 ---

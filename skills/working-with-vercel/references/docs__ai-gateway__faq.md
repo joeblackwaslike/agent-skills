@@ -3,26 +3,26 @@ title: AI Gateway FAQ
 product: vercel
 url: /docs/ai-gateway/faq
 canonical_url: "https://vercel.com/docs/ai-gateway/faq"
-last_updated: 2026-09-02
+last_updated: 2026-09-07
 type: conceptual
 prerequisites:
   - /docs/ai-gateway
 related:
-  - /docs/ai-gateway/authentication-and-byok/byok
   - /docs/ai-gateway/pricing
-  - /docs/ai-gateway/pricing/discounts
   - /docs/ai-gateway/observability-and-spend/budgets
-  - /docs/ai-gateway/observability-and-spend/logs
-summary: Answers to common questions about AI Gateway, including pricing and markup, SDK and API compatibility, model availability, uptime, data handling,...
+  - /docs/ai-gateway/security-and-compliance/model-allowlist
+  - /docs/ai-gateway/security-and-compliance/provider-allowlist
+  - /docs/ai-gateway/rate-limits
+summary: Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, model availability, uptime,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/faq.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "68d053044f1e1b96b51207beea3d2252f78af7ce096de2acdfd910b666e75959"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "0963dd1a07fbe3238cb6da9b3912bf772ba747c622acb95acf9f0827b09e4d3b"
 ---
 
 # AI Gateway FAQ
 
-Answers to common questions about AI Gateway, including pricing, compatibility, model availability, and data handling.
+Answers to common questions about AI Gateway, including request errors, pricing, compatibility, model availability, and data handling.
 
 
 <!-- docsgraph:related -->
@@ -33,13 +33,27 @@ Answers to common questions about AI Gateway, including pricing, compatibility, 
 - [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available?from=related&source_path=%2Fdocs%2Fai-gateway%2Ffaq&source_site=vercel-docs&relationship=related)
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Ffaq&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [Introducing the AI Gateway](https://vercel.com/blog/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Ffaq&source_site=vercel-docs&relationship=related)
-- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Ffaq&source_site=vercel-docs&relationship=related) — Create an AI Gateway API key, make your first request with TypeScript, Python, or cURL, and verify how the request was r
-- [Models & Providers](https://vercel.com/docs/ai-gateway/models-and-providers?from=related&source_path=%2Fdocs%2Fai-gateway%2Ffaq&source_site=vercel-docs&relationship=related) — Work with models and providers in AI Gateway: provider routing and fallbacks, filtering, timeouts, caching, service tier
-- [SDKs & APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis?from=related&source_path=%2Fdocs%2Fai-gateway%2Ffaq&source_site=vercel-docs&relationship=related) — Use the AI Gateway with various SDKs and API specifications including OpenAI, Anthropic, and OpenResponses.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Ffaq&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Ffaq&source_site=vercel-docs&relationship=related) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
+- [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers?from=related&source_path=%2Fdocs%2Fai-gateway%2Ffaq&source_site=vercel-docs&relationship=related) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
+- [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend?from=related&source_path=%2Fdocs%2Fai-gateway%2Ffaq&source_site=vercel-docs&relationship=related) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
+- [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis?from=related&source_path=%2Fdocs%2Fai-gateway%2Ffaq&source_site=vercel-docs&relationship=related) — Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere
 
 Full cross-link map for this page: [/docs/ai-gateway/faq.graph.md](/docs/ai-gateway/faq.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Ffaq&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
+
+## Why did my AI Gateway request fail?
+
+Match the response status, type, and message to its cause. A `403` has several possible causes, so check the error message before choosing a resolution.
+
+| Response or symptom                                   | Cause                                                                                                                                                                       | Resolution                                                                                                                                        |
+| ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `401`                                                 | The API key or OIDC token is missing, invalid, or revoked                                                                                                                   | Export a current AI Gateway key and retry                                                                                                         |
+| `402` whose `type` is not `quota_for_entity_exceeded` | The team does not have a positive credit balance                                                                                                                            | [Add AI Gateway Credits](/docs/ai-gateway/pricing#top-up-your-ai-gateway-credits)                                                                 |
+| `402` with `quota_for_entity_exceeded`                | A team, project, API key, or user budget has reached its limit                                                                                                              | Wait for the budget to refresh or [raise its limit](/docs/ai-gateway/observability-and-spend/budgets)                                             |
+| `403` with `customer_verification_required`           | The team must add a valid payment method before using free credits                                                                                                          | Add a payment method from the link in the error response                                                                                          |
+| `403` whose message names the free tier               | The model is not in the free-tier subset and requires purchased credits                                                                                                     | Choose a [free-tier model](/ai-gateway/models?freeTier=true) or [add AI Gateway Credits](/docs/ai-gateway/pricing#top-up-your-ai-gateway-credits) |
+| `403` whose message names team restrictions           | A [model](/docs/ai-gateway/security-and-compliance/model-allowlist) or [provider](/docs/ai-gateway/security-and-compliance/provider-allowlist) allowlist blocks the request | Choose an allowed model, or ask a team owner to update the allowlist                                                                              |
+| `429`                                                 | An AI Gateway or upstream provider [rate limit](/docs/ai-gateway/rate-limits) was exceeded                                                                                  | Retry after a short wait. The paid tier removes AI Gateway's rate limits                                                                          |
 
 ## Does AI Gateway mark up token prices?
 
@@ -55,7 +69,7 @@ The AI Gateway Overview charts usage and spend by model, and [Logs](/docs/ai-gat
 
 ## Does AI Gateway only work with the AI SDK?
 
-No. The [AI SDK](/docs/ai-gateway/sdks-and-apis/ai-sdk) is one path among several. You can keep an existing OpenAI or Anthropic SDK and change its base URL, call the [OpenResponses](/docs/ai-gateway/sdks-and-apis/openresponses) HTTP API, send requests to the [REST endpoints](/docs/ai-gateway/sdks-and-apis/rest-api) directly, use the [AI SDK for Python](/docs/ai-gateway/sdks-and-apis/ai-sdk-python), or go through a [framework integration](/docs/ai-gateway/ecosystem/framework-integrations) such as LangChain, LiteLLM, or Pydantic AI. [Coding agents](/docs/ai-gateway/coding-agents) and [chat platforms](/docs/ai-gateway/chat-platforms) connect the same way.
+No. The [AI SDK](/docs/ai-gateway/sdks-and-apis/ai-sdk) is one path among several. You can keep an existing OpenAI or Anthropic SDK and change its base URL, call the [OpenResponses](/docs/ai-gateway/sdks-and-apis/openresponses) HTTP API, send requests to the [REST endpoints](/docs/ai-gateway/sdks-and-apis/rest-api) directly, use the [AI SDK for Python](/docs/ai-gateway/sdks-and-apis/ai-sdk-python), or go through a [framework integration](/docs/ai-gateway/ecosystem/framework-integrations) such as LangChain, LiteLLM, or Pydantic AI. You can also route [coding agents and chat platforms](/docs/ai-gateway/coding-agents) through AI Gateway.
 
 ## Does AI Gateway get new models?
 
@@ -101,7 +115,7 @@ AI Gateway retries a failed request across the model's other eligible providers,
 
 ## What uptime does AI Gateway have?
 
-Uptime is measured from live traffic and published per model and provider, not promised as a single fleet-wide number. Each model page has **Uptime** and **Status** views, also reachable at `vercel.com/ai-gateway/models/<model-id>/uptime`, and the endpoints API exposes rolling `uptime_last_15m`, `uptime_last_1h`, and `uptime_last_1d` windows per provider.
+Uptime is measured from live traffic and published per model and provider, not promised as a single fleet-wide number. Each model page has **Uptime** and **Status** sections, also reachable at `vercel.com/ai-gateway/models/<model-id>#uptime`, and the endpoints API exposes rolling `uptime_last_15m`, `uptime_last_1h`, and `uptime_last_1d` windows per provider.
 
 AI Gateway reports two different numbers. Provider uptime is the success rate of each provider's attempts. AI Gateway uptime counts only the final attempt of each request, so a request recovered by fallback counts as successful, and AI Gateway uptime can be higher than any single provider's. BYOK requests and `4xx` responses are excluded from both.
 

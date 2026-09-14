@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/deepgram.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "f0f17ec7c63f350815419b05515a81c00b706a1c568964781be04dafdb1ace02"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "3be359cf36635b7be828b1d83a33d3b992969e1b961dea7f1e256fe7d883ca64"
 ---
 
 # Deepgram Provider
@@ -327,7 +327,6 @@ The following provider options are available:
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
-- [LMNT](/providers/ai-sdk-providers/lmnt)
 - [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)

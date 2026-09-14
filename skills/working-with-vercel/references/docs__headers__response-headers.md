@@ -16,8 +16,8 @@ related:
 summary: Learn about the response headers sent to each Vercel deployment and how to use them to process responses before sending a response.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/headers/response-headers.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "c7732beb8789103e223404b685d32471a9cf561c99356fb3b8b0d893d0803ce3"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "a31d133e98e79e3a1f36bae837807850eff5f3097c300bfbcfe195df1abaa89b"
 ---
 
 # Response headers
@@ -35,8 +35,8 @@ The following headers are included in Vercel deployment responses and indicate c
 - [Set cache control headers for functions](https://vercel.com/kb/guide/set-cache-control-headers?from=related&source_path=%2Fdocs%2Fheaders%2Fresponse-headers&source_site=vercel-docs&relationship=related) — Learn how to set headers to cache your function's responses.
 - [How to Configure the Cache-Control Response Header in Vercel Projects](https://vercel.com/kb/guide/how-to-configure-the-cache-control-response-header-in-vercel-projects?from=related&source_path=%2Fdocs%2Fheaders%2Fresponse-headers&source_site=vercel-docs&relationship=related) — After reviewing this guide, you will be able to set a cache-control header of any value to be returned when a specific p
 - [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure?from=related&source_path=%2Fdocs%2Fheaders%2Fresponse-headers&source_site=vercel-docs&relationship=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
-- [Vercel CDN overview](https://vercel.com/docs/cdn?from=related&source_path=%2Fdocs%2Fheaders%2Fresponse-headers&source_site=vercel-docs&relationship=related) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
 - [Caching](https://vercel.com/docs/caching?from=related&source_path=%2Fdocs%2Fheaders%2Fresponse-headers&source_site=vercel-docs&relationship=related) — Learn how Vercel caches content across multiple layers to deliver fast responses and reduce load on your backend.
+- [How Vercel CDN works](https://vercel.com/docs/how-vercel-cdn-works?from=related&source_path=%2Fdocs%2Fheaders%2Fresponse-headers&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
 - [Encryption and TLS](https://vercel.com/docs/cdn-security/encryption?from=related&source_path=%2Fdocs%2Fheaders%2Fresponse-headers&source_site=vercel-docs&relationship=related) — Learn how Vercel encrypts data in transit and at rest.
 - [CDN security](https://vercel.com/docs/cdn-security?from=related&source_path=%2Fdocs%2Fheaders%2Fresponse-headers&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
 

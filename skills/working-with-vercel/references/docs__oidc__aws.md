@@ -13,8 +13,8 @@ related:
 summary: "Learn how to configure your AWS account to trust Vercel's OpenID Connect (OIDC) Identity Provider (IdP)."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/aws.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "921c02a8d9606962da14a7f2d5ff47c4ffe17c0e21c92e7125dd93dd64ba2914"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "756f5f50905e0133ab470c8c2d9da7e087c2fcd32c13766a04e5088fba66fe5b"
 ---
 
 # Connect to Amazon Web Services (AWS)
@@ -35,8 +35,8 @@ To understand how AWS supports OIDC, and for a detailed user guide on creating a
 - [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel?from=related&source_path=%2Fdocs%2Foidc%2Faws&source_site=vercel-docs&relationship=related) — Migrate containers from AWS to Vercel: deploy with Dockerfile.vercel, keep RDS, S3, and SQS in AWS over OIDC, and cut ov
 - [Enhancing security of backend connectivity with OpenID Connect](https://vercel.com/blog/enhancing-security-of-backend-connectivity-with-openid-connect?from=related&source_path=%2Fdocs%2Foidc%2Faws&source_site=vercel-docs&relationship=related)
 - [Connect to Microsoft Azure](https://vercel.com/docs/oidc/azure?from=related&source_path=%2Fdocs%2Foidc%2Faws&source_site=vercel-docs&relationship=related) — Learn how to configure your Microsoft Azure account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
-- [OIDC](https://vercel.com/docs/ai-gateway/authentication-and-byok/oidc?from=related&source_path=%2Fdocs%2Foidc%2Faws&source_site=vercel-docs&relationship=related) — Authenticate AI Gateway requests with Vercel OIDC tokens, with no API key to manage.
 - [Functions API Reference](https://vercel.com/docs/functions/functions-api-reference?from=related&source_path=%2Fdocs%2Foidc%2Faws&source_site=vercel-docs&relationship=related) — Learn about available APIs when working with Vercel Functions.
+- [AI Gateway OIDC Authentication](https://vercel.com/docs/ai-gateway/authentication-and-byok/oidc?from=related&source_path=%2Fdocs%2Foidc%2Faws&source_site=vercel-docs&relationship=related) — Authenticate AI Gateway requests from Vercel deployments with OIDC tokens. Configure the AI SDK or send bearer tokens di
 - [OIDC Federation Reference](https://vercel.com/docs/oidc/reference?from=related&source_path=%2Fdocs%2Foidc%2Faws&source_site=vercel-docs&relationship=related) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
 - [Reserved environment variables](https://vercel.com/docs/environment-variables/reserved-environment-variables?from=related&source_path=%2Fdocs%2Foidc%2Faws&source_site=vercel-docs&relationship=related) — Reserved environment variables are reserved by Vercel Vercel Function runtimes.
 

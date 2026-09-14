@@ -15,8 +15,8 @@ related:
 summary: Learn how to disable Deployment Protection for CORS preflight requests for a list of paths.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/options-allowlist.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "9b26934ca190e67eafe714017334e617aeaf0232b05fa83b6775d32a76f5f5f1"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "9d4b5b87ec03ad07d7d9cfe48140ac8e7bad6d295bc235c987e111cabb68fbbb"
 ---
 
 # OPTIONS Allowlist
@@ -39,7 +39,6 @@ You can use OPTIONS Allowlist to disable Deployment Protection (including [Verce
 - [Deployment Protection Exceptions](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/deployment-protection-exceptions?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Foptions-allowlist&source_site=vercel-docs&relationship=related) — Disable Deployment Protection for a list of preview domains.
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Foptions-allowlist&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 - [Access Control](https://vercel.com/docs/security/access-control?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Foptions-allowlist&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Foptions-allowlist&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/deployment-protection/methods-to-bypass-deployment-protection/options-allowlist.graph.md](/docs/deployment-protection/methods-to-bypass-deployment-protection/options-allowlist.graph.md?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Foptions-allowlist&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

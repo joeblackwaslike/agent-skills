@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/requesty.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "628e8f61aab57d637f04f6d6ce68b17403a8c4b0f70615a86eee58dfccc9ec69"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "e6d29ade712b328e6ae558acdb2d219a0986d4667768bbbbcfe9cda47188726e"
 ---
 
 # Requesty
@@ -323,6 +323,7 @@ Requesty offers several enterprise-grade features:
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
 - [Interfaze](/providers/community-providers/interfaze)
+- [Telnyx](/providers/community-providers/telnyx)
 - [Flowise](/providers/community-providers/flowise)
 
 

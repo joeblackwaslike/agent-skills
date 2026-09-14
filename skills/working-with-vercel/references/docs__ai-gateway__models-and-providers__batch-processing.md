@@ -1,9 +1,9 @@
 ---
-title: Batch Processing
+title: AI Gateway Batch Processing
 product: vercel
 url: /docs/ai-gateway/models-and-providers/batch-processing
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/batch-processing"
-last_updated: 2026-08-22
+last_updated: 2026-09-07
 type: reference
 prerequisites:
   - /docs/ai-gateway/models-and-providers
@@ -17,11 +17,11 @@ related:
 summary: Process large volumes of text generation requests asynchronously through AI Gateway at 50% of standard token prices, with results available within 24...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/batch-processing.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "cf1c58f7c604facc92f4f369e5aab7fd65545a063d22b72f0b4ea8f32bf1d91c"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "ec7d31889ba59ed7f47d31664228c9a06513873e3372ce0ebba5e440f1467387"
 ---
 
-# Batch Processing
+# AI Gateway Batch Processing
 
 Batch processing lets you submit many text generation requests as a single asynchronous job. Instead of waiting for each response, you start a batch, poll its status, and stream the results when the job finishes. AI Gateway bills batches at 50% of the model's standard token prices, and batches reach a terminal state within 24 hours.
 
@@ -73,12 +73,12 @@ const batch = await startTextBatch({
   requests: [
     {
       id: 'review-1042',
-      system: 'Classify the sentiment as positive, negative, or neutral.',
+      instructions: 'Classify the sentiment as positive, negative, or neutral.',
       prompt: 'The checkout flow was fast and painless.',
     },
     {
       id: 'review-1043',
-      system: 'Classify the sentiment as positive, negative, or neutral.',
+      instructions: 'Classify the sentiment as positive, negative, or neutral.',
       prompt: 'The app crashed twice before I could pay.',
     },
   ],

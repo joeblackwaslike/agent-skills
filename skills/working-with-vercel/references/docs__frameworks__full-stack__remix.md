@@ -17,8 +17,8 @@ related:
 summary: Deploy Remix applications to Vercel and configure the Vercel Vite preset, SSR, streaming, caching, and analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/remix.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "4133aa01cb70366cf2f8a27c2928cdff3a7382e727ab88d558254813dff8b3c0"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "a59a814ad5d376a5e0be38ead55192255dd5b25d2e4390df4684aadef8b1eab1"
 ---
 
 # Remix on Vercel
@@ -32,9 +32,9 @@ Remix is a fullstack, [server-rendered](#server-side-rendering-ssr) React framew
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Remix without limits (historical)](https://vercel.com/blog/vercel-remix-integration-with-edge-functions-support?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fremix&source_site=vercel-docs&relationship=related)
-- [How to Deploy a Remix Site with Vercel](https://vercel.com/kb/guide/deploying-remix-with-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fremix&source_site=vercel-docs&relationship=related) — Create your Remix app and deploy it with Vercel.
 - [Support for Remix with Vite](https://vercel.com/changelog/support-for-remix-with-vite?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fremix&source_site=vercel-docs&relationship=related)
 - [Support for Remix v2](https://vercel.com/changelog/support-for-remix-v2?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fremix&source_site=vercel-docs&relationship=related)
+- [Remix projects can now be deployed with zero configuration](https://vercel.com/changelog/remix-projects-can-now-be-deployed-with-zero-configuration?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fremix&source_site=vercel-docs&relationship=related)
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fremix&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 - [Create React App on Vercel](https://vercel.com/docs/frameworks/frontend/create-react-app?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fremix&source_site=vercel-docs&relationship=related) — Deploy Create React App projects to Vercel and add Preview Deployments, Web Analytics, Speed Insights, and Observability
 - [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fremix&source_site=vercel-docs&relationship=related) — Learn about the frameworks that can be deployed to Vercel.
@@ -52,14 +52,14 @@ With Vercel, you can deploy server-rendered Remix and Remix V2 applications to V
 
 ## Getting started
 
-To get started with  on Vercel:
+To get started with Remix on Vercel:
 
-- If you already have a project with , install [Vercel CLI](/docs/cli) and run the vercel command from your project's root directory
-- Clone one of our  example repos to your favorite git provider and deploy it on Vercel with the button below:
+- If you already have a project with Remix, install [Vercel CLI](/docs/cli) and run the vercel command from your project's root directory
+- Clone one of our Remix example repos to your favorite git provider and deploy it on Vercel with the button below:
 
 \- Or, choose a template from Vercel's marketplace:
 
-Vercel deployments can \[integrate with your git provider]\(/docs/git) to \[generate preview URLs]\(/docs/deployments/environments#preview-environment-pre-production) for each pull request you make to your  project.
+Vercel deployments can \[integrate with your git provider]\(/docs/git) to \[generate preview URLs]\(/docs/deployments/environments#preview-environment-pre-production) for each pull request you make to your Remix project.
 
 ## `@vercel/remix`
 

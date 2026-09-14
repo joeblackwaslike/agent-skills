@@ -15,8 +15,8 @@ related:
 summary: In-depth reference for configuring the Flags Explorer
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/flags-explorer/reference.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "5b081c711f1c0dcf8f6f6e6d06eceec617dc7143820aa0f7475c8609762cf810"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "264eb70e467655a4ec062bf1731a6acf6bfc024d1236735594dda1af58173a58"
 ---
 
 # Reference
@@ -38,7 +38,6 @@ The Flags Explorer has five main concepts: the [Discovery Endpoint](/docs/flags/
 - [Statsig](https://flags-sdk.dev/docs/providers/statsig?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Freference&source_site=vercel-docs&relationship=related)
 - [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Freference&source_site=vercel-docs&relationship=related) — API reference for the Flags SDK for Next.js and SvelteKit.
 - [Create a flag](https://vercel.com/docs/rest-api/feature-flags/create-a-flag?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Freference&source_site=vercel-docs&relationship=related) — PUT /v1/projects/{projectIdOrName}/feature-flags/flags — Create a new feature flag for a project. The flag must have a u
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Freference&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/flags/flags-explorer/reference.graph.md](/docs/flags/flags-explorer/reference.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Freference&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

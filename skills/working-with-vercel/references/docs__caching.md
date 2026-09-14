@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel caches content across multiple layers to deliver fast responses and reduce load on your backend.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "f7de31c1cd83ad8fb1994f9ed8e8698adf824051f623746105a374e3bb03a8ff"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "0cfb06cf2481e1d5b4e3bcc53d70f4072d4995462aa012a8f980adf82aa36235"
 ---
 
 # Caching
@@ -32,14 +32,13 @@ Vercel caches content at multiple layers between the visitor and your backend. T
 
 - [Caching audits: Five antipatterns that quietly cost performance and money](https://vercel.com/kb/guide/caching-antipatterns?from=related&source_path=%2Fdocs%2Fcaching&source_site=vercel-docs&relationship=related) — Five caching antipatterns from hundreds of Vercel technical audits: write amplification, deploy-wiped caches, spinner sh
 - [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute?from=related&source_path=%2Fdocs%2Fcaching&source_site=vercel-docs&relationship=related) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
+- [Troubleshoot and optimize Function Invocations on Vercel](https://vercel.com/kb/guide/optimize-function-invocations?from=related&source_path=%2Fdocs%2Fcaching&source_site=vercel-docs&relationship=related) — Diagnose which routes drive Function Invocations and learn to optimize them. Separate necessary dynamic traffic from div
 - [Can I use Vercel as a reverse proxy?](https://vercel.com/kb/guide/vercel-reverse-proxy-rewrites-external?from=related&source_path=%2Fdocs%2Fcaching&source_site=vercel-docs&relationship=related) — Learn how to use rewrites to proxy requests from Vercel to other deployments.
 - [Set cache control headers for functions](https://vercel.com/kb/guide/set-cache-control-headers?from=related&source_path=%2Fdocs%2Fcaching&source_site=vercel-docs&relationship=related) — Learn how to set headers to cache your function's responses.
-- [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins?from=related&source_path=%2Fdocs%2Fcaching&source_site=vercel-docs&relationship=related) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
-- [Preventing the stampede: Request collapsing in the Vercel CDN ](https://vercel.com/blog/cdn-request-collapsing?from=related&source_path=%2Fdocs%2Fcaching&source_site=vercel-docs&relationship=related)
+- [How Vercel CDN works](https://vercel.com/docs/how-vercel-cdn-works?from=related&source_path=%2Fdocs%2Fcaching&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
 - [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure?from=related&source_path=%2Fdocs%2Fcaching&source_site=vercel-docs&relationship=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 - [vercel.functions API Reference \\(Python\\)](https://vercel.com/docs/functions/functions-api-reference/vercel-sdk-python?from=related&source_path=%2Fdocs%2Fcaching&source_site=vercel-docs&relationship=related) — Learn about available APIs when working with Vercel Functions in Python.
 - [Glossary](https://vercel.com/docs/glossary?from=related&source_path=%2Fdocs%2Fcaching&source_site=vercel-docs&relationship=related) — Learn about the terms and concepts used in Vercel's products and documentation.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fcaching&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/caching.graph.md](/docs/caching.graph.md?from=related&source_path=%2Fdocs%2Fcaching&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

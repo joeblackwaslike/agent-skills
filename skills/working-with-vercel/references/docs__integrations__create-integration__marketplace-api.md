@@ -13,12 +13,12 @@ related:
   - /docs/integrations/create-integration/marketplace-api/reference/vercel
   - /docs/integrations/create-integration/marketplace-flows
   - /docs/integrations/create-integration/marketplace-api/reference/partner/upsert-installation
-  - /docs/integrations/create-integration/submit-integration
+  - /docs/integrations/create-integration/marketplace-api/reference/vercel/exchange-sso-token
 summary: Learn how to authenticate and use the Integrations REST API to build your integration server.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "6fd0989273ecea5a13c7c00150072fe2c6e23cd96e3952989d1c8a996b6d3274"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "7744ee624166d3018e77fddfbcd3ecbf9101209cf8c10e7edb7d1f6c7c3c4e92"
 ---
 
 # Using the Integrations REST API
@@ -31,12 +31,11 @@ Learn how to authenticate and use the Integrations REST API to build your native
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-api&source_site=vercel-docs&relationship=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
 - [vercel integration](https://vercel.com/docs/cli/integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-api&source_site=vercel-docs&relationship=related) — Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover avai
-- [Update Resource Secrets](https://vercel.com/docs/rest-api/marketplace/update-resource-secrets?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-api&source_site=vercel-docs&relationship=related) — PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId}/secrets — This endpoint updates the secrets of
-- [Update Installation](https://vercel.com/docs/rest-api/marketplace/update-installation?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-api&source_site=vercel-docs&relationship=related) — PATCH /v1/installations/{integrationConfigurationId} — This endpoint updates an integration installation.
-- [System environment variables](https://vercel.com/docs/environment-variables/system-environment-variables?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-api&source_site=vercel-docs&relationship=related) — System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the
-- [Audit Logs](https://vercel.com/docs/audit-log?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-api&source_site=vercel-docs&relationship=related) — Learn how to track and analyze your team members' activities.
+- [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-api&source_site=vercel-docs&relationship=related) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
+- [SAML Single Sign-On](https://vercel.com/docs/saml?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-api&source_site=vercel-docs&relationship=related) — Learn how to configure SAML SSO for your organization on Vercel.
+- [SSO Token Exchange](https://vercel.com/docs/rest-api/authentication/sso-token-exchange?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-api&source_site=vercel-docs&relationship=related) — POST /v1/integrations/sso/token — During the autorization process, Vercel sends the user to the provider \\\[redirectLogin
+- [Authentication](https://vercel.com/docs/connect/concepts/authentication?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-api&source_site=vercel-docs&relationship=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
 
 Full cross-link map for this page: [/docs/integrations/create-integration/marketplace-api.graph.md](/docs/integrations/create-integration/marketplace-api.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-api&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -95,6 +94,28 @@ Review the [user authentication](/docs/integrations/create-integration/marketpla
 When your integration calls Vercel's API, you authenticate using an access token. You receive this token during the installation process when you call the [Upsert Installation API](/docs/integrations/create-integration/marketplace-api/reference/partner/upsert-installation). The response includes a `credentials` object with an `access_token` that you use as a bearer token for subsequent API calls.
 
 You can also use OAuth2 to obtain access tokens for user-specific operations.
+
+### Email verification
+
+Vercel generally ensures that email addresses included in Marketplace tokens and member information are verified. You usually don't need an additional email verification flow.
+
+#### How Vercel verifies emails
+
+Vercel verifies user email addresses through one of the following methods:
+
+- **Direct verification by Vercel**: When users sign up or sign in with an email, Vercel sends a verification email. Users must click the verification link before they can use the platform.
+- **Trusted social identity providers**: When users authenticate through social login with a trusted identity provider for the email domain, Vercel accepts the email as verified. For example, Vercel trusts Google for `gmail.com` addresses and Apple for `icloud.com` addresses.
+- **Enterprise Managed Users (EMU)**: When an Enterprise team verifies a domain and a user authenticates through the team's SAML identity provider with an email on that domain, Vercel accepts the email as verified. Directory Sync can provision and manage the user, but verification comes from the verified domain and SAML-authenticated identity.
+
+#### Check the latest verification status
+
+Marketplace tokens also include either a `user_email_verified` or `email_verified` claim with Vercel's most up-to-date verification status. If your integration needs to adjust its behavior based on this status, check the applicable claim instead of assuming that the email remains verified.
+
+This guidance applies to:
+
+- User authentication JWT tokens received when [Vercel calls your API](/docs/integrations/create-integration/marketplace-api/reference/partner#user-authentication)
+- Tokens received through the [SSO Token Exchange](/docs/integrations/create-integration/marketplace-api/reference/vercel/exchange-sso-token) endpoint
+- Member information returned from the [Get Member](/docs/integrations/create-integration/marketplace-api/reference/vercel/get-member) endpoint
 
 ### Authentication with SSO
 

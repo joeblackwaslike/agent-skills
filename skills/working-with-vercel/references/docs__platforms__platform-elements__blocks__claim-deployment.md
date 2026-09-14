@@ -14,8 +14,8 @@ related:
 summary: A component for users to claim ownership of Vercel deployments created on their behalf.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/blocks/claim-deployment.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "d8a08141876db194eccda709f3c8e934f5d0c16be60ba3c19b778032adc3b48c"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "fb8be35775c26b116e129074838c0934850c3a4a88a9c3661d6454dce52f9642"
 ---
 
 # Claim Deployment
@@ -33,7 +33,6 @@ The Claim Deployment block provides a polished interface for platforms that depl
 - [Claim Deployments now available for fast and secure deployment transfers](https://vercel.com/changelog/claim-deployments?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fclaim-deployment&source_site=vercel-docs&relationship=related)
 - [Introducing Platform Elements](https://vercel.com/changelog/introducing-platform-elements?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fclaim-deployment&source_site=vercel-docs&relationship=related)
 - [Claimed deployments now include third-party resources](https://vercel.com/changelog/claimed-deployments-now-include-third-party-resources?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fclaim-deployment&source_site=vercel-docs&relationship=related)
-- [AI Agents on Vercel](https://vercel.com/kb/guide/ai-agents?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fclaim-deployment&source_site=vercel-docs&relationship=related) — This guide provides an overview of how to build and deploy AI agents on Vercel.
 - [Claim Deployments](https://vercel.com/docs/deployments/claim-deployments?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fclaim-deployment&source_site=vercel-docs&relationship=related) — Learn how to take ownership of deployments on Vercel with the Claim Deployments feature.
 - [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fclaim-deployment&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Platform Template](https://vercel.com/docs/platforms/examples/platform-template?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fclaim-deployment&source_site=vercel-docs&relationship=related) — Build an AI app builder on Vercel with sandboxes, AI Gateway, deployments, and project transfers.

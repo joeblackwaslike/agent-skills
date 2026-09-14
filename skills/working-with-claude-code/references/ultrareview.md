@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/ultrareview.md"
-fetched_at: "2026-09-07T08:59:03.477Z"
-sha256: "947e07ee176cdaed62fd3bb97c9edd47b59f62c26a7aa35eabbe838e77e6df5d"
+fetched_at: "2026-09-14T09:37:17.168Z"
+sha256: "57bb68ba2d4d0e9e3e3f4e0bf3965f870d4bad62770702da97074c9155de0e2a"
 ---
 
 > ## Documentation Index
@@ -159,7 +159,7 @@ Progress messages and the live session URL go to stderr so stdout stays parseabl
 | Flag                  | Description                                                                                                                                                                                                                                                                        |
 | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `--json`              | Print the raw `bugs.json` payload instead of the formatted findings                                                                                                                                                                                                                |
-| `--timeout <minutes>` | Maximum minutes to wait for the review to finish. Defaults to 30                                                                                                                                                                                                                   |
+| `--timeout <minutes>` | Maximum minutes to wait for the review to finish. Defaults to 45                                                                                                                                                                                                                   |
 | `--post`              | [Post the finished findings](#post-findings-to-the-pull-request) to the pull request as one plain comment from your GitHub account. Works on `github.com` pull request targets; on other targets, Claude Code ignores the flag and says so. Requires Claude Code v2.1.227 or later |
 | `--no-post`           | Don't post the findings. This is the default, and if you pass both flags, Claude Code doesn't post. Requires Claude Code v2.1.227 or later                                                                                                                                         |
 

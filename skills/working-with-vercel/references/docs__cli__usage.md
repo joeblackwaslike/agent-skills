@@ -13,8 +13,8 @@ related:
 summary: Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/usage.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "a3d931013c3b5fb33588a4daccd77aed851d5c12943cd0bab1756f4ec625f272"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "a0de0b706b7869faffbc73c834073e274367192d73e9db18d097868a7bb45843"
 ---
 
 # vercel usage
@@ -28,7 +28,7 @@ The `vercel usage` command displays billing usage for the current billing period
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Access billing usage and cost data via API](https://vercel.com/changelog/access-billing-usage-cost-data-api?from=related&source_path=%2Fdocs%2Fcli%2Fusage&source_site=vercel-docs&relationship=related)
-- [vercel metrics](https://vercel.com/docs/cli/metrics?from=related&source_path=%2Fdocs%2Fcli%2Fusage&source_site=vercel-docs&relationship=related) — List and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
+- [vercel metrics](https://vercel.com/docs/cli/metrics?from=related&source_path=%2Fdocs%2Fcli%2Fusage&source_site=vercel-docs&relationship=related) — Discover and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fusage&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fusage&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel buy](https://vercel.com/docs/cli/buy?from=related&source_path=%2Fdocs%2Fcli%2Fusage&source_site=vercel-docs&relationship=related) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.

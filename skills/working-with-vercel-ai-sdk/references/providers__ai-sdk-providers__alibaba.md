@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/alibaba.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "311445c9abf4660fe091663c5feff7e1ddfb80c6d3dae22468e569ec4d220514"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "04d09f03ce50cf4a3fe3ee46d02c634820e03b08fda1cafb55920ad8c1613444"
 ---
 
 # Alibaba Provider
@@ -597,7 +597,6 @@ a string if needed.
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
-- [LMNT](/providers/ai-sdk-providers/lmnt)
 - [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)

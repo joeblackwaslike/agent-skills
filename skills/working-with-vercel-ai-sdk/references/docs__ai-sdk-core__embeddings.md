@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/embeddings.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "e0f461b090d5963183e15333e25eb13e240943e0f8053a9e20ff6a5fa065992a"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "9dab24ad541a3d341a070e0d9b24b368367962d64bdbbca8ad8c9579f70ea151"
 ---
 
 # Embeddings
@@ -264,6 +264,7 @@ Several providers offer embedding models:
 - [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
 - [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
+- [Batch](/docs/ai-sdk-core/batch)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)

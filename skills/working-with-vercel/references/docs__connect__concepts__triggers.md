@@ -16,8 +16,8 @@ related:
 summary: Incoming webhooks from third-party services, verified by Vercel Connect and forwarded to your projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/triggers.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "7d616844b272552850251625277ac8586b445bb7c3db69ef36ad13134ac2c256"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "705d72bf69a311050eaf2198aad52ef93c6ee1439e1288f493141d2d5e720875"
 ---
 
 # Triggers
@@ -32,6 +32,7 @@ A **trigger** is an incoming webhook from a third-party service that Vercel Conn
 
 - [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftriggers&source_site=vercel-docs&relationship=related) — Authenticate Slack, Discord, GitHub, Linear, Notion, and Telegram adapters with Vercel Connect — short-lived runtime tok
 - [Chat SDK now supports Vercel Connect](https://vercel.com/changelog/chat-sdk-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftriggers&source_site=vercel-docs&relationship=related)
+- [How to set up a staging environment on Vercel](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftriggers&source_site=vercel-docs&relationship=related) — Set up a staging environment on Vercel with custom environments, staged production deployments, or a branch-based previe
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftriggers&source_site=vercel-docs&relationship=related)
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftriggers&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 - [Observability](https://vercel.com/docs/connect/observability?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftriggers&source_site=vercel-docs&relationship=related) — Monitor token requests, authorizations, revocations, and trigger deliveries for your connectors.

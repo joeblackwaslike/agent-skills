@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/realtime.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "506cf3bb2fb3336ec11c58287db925f1481175d216cf88c1c6046b53f5cab4fd"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "614f742616486baed9f5efc10c81ebe96c7bbd51d20dc7901be0c99c2c741ed3"
 ---
 
 # Realtime
@@ -301,6 +301,7 @@ for Gateway-specific token and provider option details.
 - [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
 - [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
+- [Batch](/docs/ai-sdk-core/batch)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)

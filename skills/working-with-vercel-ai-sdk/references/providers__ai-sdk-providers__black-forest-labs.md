@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/black-forest-labs.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "f7656f72782e4bff3ac52dd978deb3ad8209e2ce744e39f9d9d3e0335188d5e4"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "ef650fba74de8fce1a4266949dc6c3a74cfc0d63339bd88ba91961ba5f31e088"
 ---
 
 # Black Forest Labs Provider
@@ -511,7 +511,6 @@ video object may contain the following properties:
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
-- [LMNT](/providers/ai-sdk-providers/lmnt)
 - [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)

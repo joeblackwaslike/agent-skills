@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/chatbot-tool-usage.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "0c32ef9c7b9e655473f871f6095060455725f6e36895243d243f9769ef73d9d6"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "5b8e04c931a183951ea98c9e48a139ffbef80c9bfcd99e3160e06611c52eee2d"
 ---
 
 # Chatbot Tool Usage
@@ -330,7 +330,7 @@ export default function Chat() {
 
 ### Error handling
 
-Sometimes an error may occur during client-side tool execution. Use the `addToolOutput` method with a `state` of `output-error` and `errorText` value instead of `output` record the error.
+Sometimes an error may occur during client-side tool execution. Use the `addToolOutput` method with a `state` of `output-error` and `errorText` value instead of `output` to record the error.
 
 ```tsx filename='app/page.tsx' highlight="19,36-41"
 'use client';
@@ -378,6 +378,21 @@ export default function Chat() {
       }
     },
   });
+}
+```
+
+When rendering messages, use `isToolOutputErrorUIPart` to identify failed
+static and dynamic tool parts without checking the tool state directly:
+
+```tsx
+import { isToolOutputErrorUIPart, type UIMessage } from 'ai';
+
+function ToolError({ part }: { part: UIMessage['parts'][number] }) {
+  if (!isToolOutputErrorUIPart(part)) {
+    return null;
+  }
+
+  return <div role="alert">{part.errorText}</div>;
 }
 ```
 

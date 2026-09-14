@@ -3,7 +3,7 @@ title: Container Registry limits and pricing
 product: vercel
 url: /docs/container-registry/limits-and-pricing
 canonical_url: "https://vercel.com/docs/container-registry/limits-and-pricing"
-last_updated: 2026-08-07
+last_updated: 2026-09-04
 type: reference
 prerequisites:
   - /docs/container-registry
@@ -12,8 +12,8 @@ related:
 summary: Storage pricing, size limits, plan limits, and compatibility limits for Vercel Container Registry.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/container-registry/limits-and-pricing.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "413e1e037bcb62faa83d6b7ae83d3afce1fe1be6b28f067ebd6f4ca660c53918"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "a35493dab955a8e1d9c17548bb529de798c065d6bea94a8b6bbf39f8a48dc2f9"
 ---
 
 # Container Registry limits and pricing

@@ -1,9 +1,9 @@
 ---
-title: Provider Allowlist
+title: AI Gateway Provider Allowlist
 product: vercel
 url: /docs/ai-gateway/security-and-compliance/provider-allowlist
 canonical_url: "https://vercel.com/docs/ai-gateway/security-and-compliance/provider-allowlist"
-last_updated: 2026-06-29
+last_updated: 2026-09-07
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/security-and-compliance
@@ -14,11 +14,11 @@ related:
 summary: Restrict which AI providers your team can route through AI Gateway. Available on Pro and Enterprise.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/provider-allowlist.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "2c02ed47c9ae8dd793711cddc1f7f0328134c58b83b89b5ed195371ef770d749"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "54402fc214ff227f27fa25806cf6e0b74fa5961a9ea1081be04a48cdd0a5c99f"
 ---
 
-# Provider Allowlist
+# AI Gateway Provider Allowlist
 
 The provider allowlist lets team owners restrict which AI providers can serve requests through AI Gateway. A request only returns a `403` when no allowed provider can serve it. The feature is opt-in and available on Pro and Enterprise plans.
 
@@ -28,14 +28,13 @@ The provider allowlist lets team owners restrict which AI providers can serve re
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Team-wide provider allowlist on AI Gateway](https://vercel.com/changelog/team-wide-provider-allowlist-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fprovider-allowlist&source_site=vercel-docs&relationship=related)
 - [ Routing rules now available on AI Gateway](https://vercel.com/changelog/ai-gateway-routing-rules?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fprovider-allowlist&source_site=vercel-docs&relationship=related)
 - [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fprovider-allowlist&source_site=vercel-docs&relationship=related)
-- [Team-wide provider allowlist on AI Gateway](https://vercel.com/changelog/team-wide-provider-allowlist-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fprovider-allowlist&source_site=vercel-docs&relationship=related)
-- [Model Allowlist](https://vercel.com/docs/ai-gateway/security-and-compliance/model-allowlist?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fprovider-allowlist&source_site=vercel-docs&relationship=related) — Restrict which AI models your team can use through AI Gateway. Available on Pro and Enterprise.
-- [Provider Filtering, Ordering & Sorting](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fprovider-allowlist&source_site=vercel-docs&relationship=related) — Control which providers handle your requests, in what order, and how they are ranked using order, only, and sort options
-- [Provider Options](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fprovider-allowlist&source_site=vercel-docs&relationship=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API.
-- [Routing Rules](https://vercel.com/docs/ai-gateway/models-and-providers/routing-rules?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fprovider-allowlist&source_site=vercel-docs&relationship=related) — Define team-wide rules that rewrite requests from one model to another or deny specific models in AI Gateway.
-- [Models & Providers](https://vercel.com/docs/ai-gateway/models-and-providers?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fprovider-allowlist&source_site=vercel-docs&relationship=related) — Work with models and providers in AI Gateway: provider routing and fallbacks, filtering, timeouts, caching, service tier
+- [AI Gateway Model Allowlist](https://vercel.com/docs/ai-gateway/security-and-compliance/model-allowlist?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fprovider-allowlist&source_site=vercel-docs&relationship=related) — Restrict which AI models your team can use through AI Gateway. Available on Pro and Enterprise.
+- [AI Gateway Routing Rules](https://vercel.com/docs/ai-gateway/models-and-providers/routing-rules?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fprovider-allowlist&source_site=vercel-docs&relationship=related) — Define team-wide rules that rewrite requests from one model to another or deny specific models in AI Gateway.
+- [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fprovider-allowlist&source_site=vercel-docs&relationship=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
+- [Adding a Provider](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-provider?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fprovider-allowlist&source_site=vercel-docs&relationship=related) — Learn how to add a new AI provider to your Vercel projects.
 
 Full cross-link map for this page: [/docs/ai-gateway/security-and-compliance/provider-allowlist.graph.md](/docs/ai-gateway/security-and-compliance/provider-allowlist.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fprovider-allowlist&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

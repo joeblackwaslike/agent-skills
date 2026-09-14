@@ -17,8 +17,8 @@ related:
 summary: Learn about available APIs when working with Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "7b9b23c5db796604f526f7de09692361e199e2103aec09c1553cac0f2f87fc43"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "7749a19c182b5c9cc37764d676aa302b2f753317c6b54a01b5591731b70f2aa5"
 ---
 
 # @vercel/functions API Reference (Node.js)
@@ -62,7 +62,7 @@ sha256: "7b9b23c5db796604f526f7de09692361e199e2103aec09c1553cac0f2f87fc43"
 - [Tag-based cache invalidation now available for all responses](https://vercel.com/changelog/tag-based-cache-invalidation-now-available-for-all-responses?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related)
 - [You can now invalidate the CDN cache by providing a source image](https://vercel.com/changelog/you-can-now-invalidate-the-cdn-cache-by-providing-a-source-image?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related)
 - [Efficiently manage database connection pools with Fluid compute](https://vercel.com/kb/guide/efficiently-manage-database-connection-pools-with-fluid-compute?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related) — How to create high-performance database connection pools without leaking connections
-- [Can I use SMTP with Vercel?](https://vercel.com/kb/guide/serverless-functions-and-smtp?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related) — Vercel Functions can open SMTP connections on the Node.js runtime. Learn which ports are open, why you must await the se
+- [How to send emails from an application on Vercel](https://vercel.com/kb/guide/sending-emails-from-an-application-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related) — Send email from Vercel Functions over an HTTP API instead of SMTP. Match the right Next.js pattern to your trigger and f
 - [Troubleshooting Inconsistent Logs in Vercel Functions](https://vercel.com/kb/guide/troubleshooting-inconsistent-logs-in-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot and resolve logs that appear mixed in Vercel Functions. This guide explains why logs from diff
 - [The real serverless compute to database connection problem, solved](https://vercel.com/blog/the-real-serverless-compute-to-database-connection-problem-solved?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related)
 - [Streaming](https://workflow-sdk.dev/docs/foundations/streaming?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related) — Stream real-time data to clients without waiting for workflow completion.

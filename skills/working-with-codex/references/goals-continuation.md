@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/ext/goal/templates/goals/continuation.md"
-fetched_at: "2026-08-31T10:39:06.401Z"
-sha256: "b9127a5d96c30b625ed6267b59e2fe22f312f4db34cfa8e041ddc1fb2740bdcb"
+fetched_at: "2026-09-14T09:38:11.275Z"
+sha256: "764b9c26b36013a21b687d74597e303be9bbf13776c359ec1fb185dbc0e7eac7"
 ---
 
 Continue working toward the active thread goal.
@@ -59,4 +59,4 @@ Blocked audit:
 - Once the blocked threshold is satisfied, do not keep reporting that you are still blocked while leaving the goal active; call update_goal with status "blocked".
 - Never use status "blocked" merely because the work is hard, slow, uncertain, incomplete, or would benefit from clarification.
 
-Do not call update_goal unless the goal is complete or the strict blocked audit above is satisfied. Do not mark a goal complete merely because the budget is nearly exhausted or because you are stopping work.
+Call update_goal only after the completion or blocked audit passes, or when the user explicitly requests pausing this goal. For a requested pause, use status "paused", report the returned status, and stop goal work; never pause on your own initiative. Do not mark a goal complete merely because the budget is nearly exhausted or because you are stopping work.

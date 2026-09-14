@@ -16,8 +16,8 @@ related:
 summary: Learn how to get started with microfrontends on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/quickstart.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "2b2779afa45580463b920c459b1ee0d5cd93b64a2ce36682eff22633c84d90c0"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "030a3e6cc8694e3316d139d584b4d8c3be9867ebc889bc31e37c9e2bcf5cdbaf"
 ---
 
 # Getting started with microfrontends
@@ -35,10 +35,9 @@ This quickstart guide will help you set up microfrontends on Vercel. Microfronte
 - [Incremental Migrations with Microfrontends](https://vercel.com/kb/guide/incremental-migrations-with-microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to migrate legacy applications using microfrontends
 - [Microfrontends](https://turborepo.dev/docs/guides/microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fquickstart&source_site=vercel-docs&relationship=related) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
 - [How Vercel adopted microfrontends](https://vercel.com/blog/how-vercel-adopted-microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fquickstart&source_site=vercel-docs&relationship=related)
-- [Microfrontends now generally available](https://vercel.com/changelog/microfrontends-now-generally-available?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fquickstart&source_site=vercel-docs&relationship=related)
+- [How to Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fquickstart&source_site=vercel-docs&relationship=related) — Deploy a TanStack Start app to Vercel with the Nitro Vite plugin. Covers Git and CLI deployment, Fluid compute defaults,
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fquickstart&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 - [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fquickstart&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/microfrontends/quickstart.graph.md](/docs/microfrontends/quickstart.graph.md?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fquickstart&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -158,6 +157,7 @@ Before diving into implementation, it's helpful to understand these core concept
   support. This applies to any application with routed pages in `pages/`,
   including mixed App Router and Pages Router applications.
   > For \['nextjs-app', 'nextjs']:
+  **next.config.ts**
   ```ts filename="next.config.ts" framework=nextjs-app
   import type { NextConfig } from 'next';
   import { withMicrofrontends } from '@vercel/microfrontends/next/config';
@@ -168,6 +168,7 @@ Before diving into implementation, it's helpful to understand these core concept
 
   export default withMicrofrontends(nextConfig);
   ```
+  **next.config.js**
   ```js filename="next.config.js" framework=nextjs-app
   import { withMicrofrontends } from '@vercel/microfrontends/next/config';
 
@@ -180,6 +181,7 @@ Before diving into implementation, it's helpful to understand these core concept
 
   export default withMicrofrontends(nextConfig);
   ```
+  **next.config.ts**
   ```ts filename="next.config.ts" framework=nextjs
   import { withMicrofrontends } from '@vercel/microfrontends/next/config';
   import type { NextConfig } from 'next';
@@ -190,6 +192,7 @@ Before diving into implementation, it's helpful to understand these core concept
     supportPagesRouter: true,
   });
   ```
+  **next.config.js**
   ```js filename="next.config.js" framework=nextjs
   import { withMicrofrontends } from '@vercel/microfrontends/next/config';
 
@@ -218,6 +221,7 @@ Before diving into implementation, it's helpful to understand these core concept
   > For \['sveltekit']:
   To handle static assets for [SvelteKit](/docs/frameworks/full-stack/sveltekit), add the `withMicrofrontends` wrapper around your SvelteKit configuration:
   > For \['sveltekit']:
+  **sveltekit.config.js**
   ```ts filename="sveltekit.config.js" framework=sveltekit
   import { withMicrofrontends } from '@vercel/microfrontends/experimental/sveltekit';
 
@@ -226,6 +230,7 @@ Before diving into implementation, it's helpful to understand these core concept
     // ...
   });
   ```
+  **sveltekit.config.js**
   ```js filename="sveltekit.config.js" framework=sveltekit
   import { withMicrofrontends } from '@vercel/microfrontends/experimental/sveltekit';
 
@@ -235,6 +240,8 @@ Before diving into implementation, it's helpful to understand these core concept
   });
   ```
   Then, add the microfrontends plugin to your Vite configuration:
+
+  **vite.config.ts**
   ```ts filename="vite.config.ts" framework=sveltekit
   import { microfrontends } from '@vercel/microfrontends/experimental/vite';
 
@@ -242,6 +249,7 @@ Before diving into implementation, it's helpful to understand these core concept
     plugins: [microfrontends()],
   });
   ```
+  **vite.config.js**
   ```js filename="vite.config.js" framework=sveltekit
   import { microfrontends } from '@vercel/microfrontends/experimental/vite';
 
@@ -255,6 +263,7 @@ Before diving into implementation, it's helpful to understand these core concept
   To handle static assets for [Vite](/docs/frameworks/frontend/vite), add the following
   plugin to your Vite configuration:
   > For \['vite']:
+  **vite.config.ts**
   ```ts filename="vite.config.ts" framework=vite
   import { microfrontends } from '@vercel/microfrontends/experimental/vite';
 
@@ -262,6 +271,7 @@ Before diving into implementation, it's helpful to understand these core concept
     plugins: [microfrontends()],
   });
   ```
+  **vite.config.js**
   ```js filename="vite.config.js" framework=vite
   import { microfrontends } from '@vercel/microfrontends/experimental/vite';
 
@@ -270,6 +280,8 @@ Before diving into implementation, it's helpful to understand these core concept
   });
   ```
   The Vite plugin by default will prefix static assets with a unique path prefix. Using a [base path](https://vite.dev/guide/build#public-base-path) is discouraged, but if you are using one, you can pass that to the `microfrontends` plugin:
+
+  **vite.config.ts**
   ```ts filename="vite.config.ts" framework=vite
   import { microfrontends } from '@vercel/microfrontends/experimental/vite';
 
@@ -277,6 +289,7 @@ Before diving into implementation, it's helpful to understand these core concept
     plugins: [microfrontends({ basePath: '/my-base-path' })],
   });
   ```
+  **vite.config.js**
   ```js filename="vite.config.js" framework=vite
   import { microfrontends } from '@vercel/microfrontends/experimental/vite';
 

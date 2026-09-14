@@ -17,8 +17,8 @@ related:
 summary: Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/quickstart.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "a0c8fa9b7218d6a1b3a689774a619cdfc52390e07319a1427d069b36d8f04860"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "b5d7fdb7d8c49bbed70769619247dfe2d71ec24da9fdbb19b515bc94262e9a9d"
 ---
 
 # Getting Started with Vercel Flags
@@ -37,7 +37,6 @@ This guide walks you through creating a feature flag in the Vercel Dashboard and
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fquickstart&source_site=vercel-docs&relationship=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [Quickstart](https://flags-sdk.dev/docs/frameworks/next?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to start using the Flags SDK in your Next.js project.
 - [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fquickstart&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/quickstart.graph.md](/docs/flags/vercel-flags/quickstart.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fquickstart&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

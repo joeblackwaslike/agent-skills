@@ -12,8 +12,8 @@ related:
 summary: Forward a Passport visitor identity to another backend that you operate.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport/forward-identity.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "d967af64ebb6acfa531788ea873788b846700449cd502018bfb351caae964bfb"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "e39df9f523882f91a1cc0c86477b44b77e2a8e7fade9f8608d0b34322d93b0db"
 ---
 
 # Forward Passport identity to another backend
@@ -34,7 +34,6 @@ A Passport-protected Vercel app can call another backend with the Passport token
 - [Set up Passport with an identity provider](https://vercel.com/docs/passport/set-up-identity-provider?from=related&source_path=%2Fdocs%2Fpassport%2Fforward-identity&source_site=vercel-docs&relationship=related) — Configure Passport with Okta, Microsoft Entra ID, or another OpenID Connect provider.
 - [Configure additional identity scopes](https://vercel.com/docs/passport/additional-identity-scopes?from=related&source_path=%2Fdocs%2Fpassport%2Fforward-identity&source_site=vercel-docs&relationship=related) — Request group membership and other provider-specific identity claims when using Passport.
 - [Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel?from=related&source_path=%2Fdocs%2Fpassport%2Fforward-identity&source_site=vercel-docs&relationship=related) — Learn how to Sign in with Vercel
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fpassport%2Fforward-identity&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/passport/forward-identity.graph.md](/docs/passport/forward-identity.graph.md?from=related&source_path=%2Fdocs%2Fpassport%2Fforward-identity&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

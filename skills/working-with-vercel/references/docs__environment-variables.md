@@ -16,8 +16,8 @@ related:
 summary: Learn more about environment variables on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "6582a5d8ba333f407b0de6a8fac42c3068ed8b1d9bfced738ae9b85e21320853"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "0554c8f6183899e911978b058304579e1430203db53f063413316bb1dd889c1d"
 ---
 
 # Environment variables
@@ -30,7 +30,6 @@ Environment variables are key-value pairs configured outside your source code so
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
 - [Using environment variables](https://turborepo.dev/docs/crafting-your-repository/using-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=related) — Account for environment variables in task hashing, configure environment modes, and handle .env files.
 - [Deployments](https://v0.app/docs/deployments?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=related) — Preview and publish v0 projects on Vercel, then manage domains, visibility, and production updates.
 - [Environment variables now use Config and Secret types](https://vercel.com/changelog/environment-variables-now-use-config-and-secret-types?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=related)
@@ -39,9 +38,10 @@ Environment variables are key-value pairs configured outside your source code so
 - [New deployments of vulnerable Next.js applications are now blocked by default](https://vercel.com/changelog/new-deployments-of-vulnerable-next-js-applications-are-now-blocked-by?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=related)
 - [New deployments with vulnerable versions of the third-party package next-mdx-remote are now blocked by default](https://vercel.com/changelog/new-deployments-with-vulnerable-versions-of-next-mdx-remote-are-now-blocked-by-default?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=related)
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
+- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
 - [Deploy a Bolt.new app with Vercel Drop](https://vercel.com/kb/guide/bolt-vercel-drop?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=related) — Export your Bolt.new project as a .zip and deploy it to Vercel with Vercel Drop. Vercel detects the framework and builds
-- [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=related) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
 - [Build a daily digest bot with Chat SDK and Workflow SDK](https://vercel.com/kb/guide/daily-digest-bot-with-chat-sdk-and-workflow-sdk?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=related) — Build a daily digest bot that posts a daily digest of GitHub stats to Slack. Learn how to use Vercel Connect to set up S
+- [Deploy a headless Shopify storefront with Vercel](https://vercel.com/kb/guide/deploy-headless-shopify-storefront-with-vercel?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=related) — Deploy a headless Shopify storefront using the Next.js Commerce template on Vercel
 
 Full cross-link map for this page: [/docs/environment-variables.graph.md](/docs/environment-variables.graph.md?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

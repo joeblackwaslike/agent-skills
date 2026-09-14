@@ -17,8 +17,8 @@ related:
 summary: Use Anthropic tool use with AI Gateway to execute model-generated code in an isolated Vercel Sandbox.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/ecosystem/anthropic-sdk.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "47f9e43ce2963faa17ff233d14f75222e33d4f48acb1faff04b13ff0559dd015"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "be99be13984814e3bdaa43b21d6d1873fcab9856b1fbf852a7d7fb26d2700b70"
 ---
 
 # Anthropic SDK
@@ -43,8 +43,6 @@ credentials covers both the model and the sandbox.
 - [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fanthropic-sdk&source_site=vercel-docs&relationship=related) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
 - [OpenAI SDK](https://vercel.com/docs/sandbox/ecosystem/openai-sdk?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fanthropic-sdk&source_site=vercel-docs&relationship=related) — Use OpenAI function calling with AI Gateway to execute model-generated code in an isolated Vercel Sandbox.
 - [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fanthropic-sdk&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
-- [OSS AI Vibe Coding Platform](https://vercel.com/docs/platforms/examples/oss-coding-agent?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fanthropic-sdk&source_site=vercel-docs&relationship=related) — Build and deploy your own AI-powered coding platform with Vercel Sandboxes.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fanthropic-sdk&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/sandbox/ecosystem/anthropic-sdk.graph.md](/docs/sandbox/ecosystem/anthropic-sdk.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fanthropic-sdk&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

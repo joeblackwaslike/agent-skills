@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel Blob SDK to access your blob store from your apps.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/using-blob-sdk.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "1e04536206684e5db318e4debd0022de9b0ca88c5c08d7c6d567836910308d4e"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "40d593e9d220f4931776dabee4070ec15723ef8ae1541355a44446b7355d269b"
 ---
 
 # @vercel/blob
@@ -43,7 +43,6 @@ To start using [Vercel Blob](/storage/blob) SDK, follow the steps below:
 - [Public Storage](https://vercel.com/docs/vercel-blob/public-storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusing-blob-sdk&source_site=vercel-docs&relationship=related) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
 - [Complete a blob upload](https://vercel.com/docs/rest-api/vcr/complete-a-blob-upload?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusing-blob-sdk&source_site=vercel-docs&relationship=related) — PUT /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid} — PUT /v2/:teamSlug/:projectSlug/:repositoryName/
 - [Create a Blob store](https://vercel.com/docs/rest-api/storage/create-a-blob-store?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusing-blob-sdk&source_site=vercel-docs&relationship=related) — POST /storage/stores/blob — Create a Blob store
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusing-blob-sdk&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/vercel-blob/using-blob-sdk.graph.md](/docs/vercel-blob/using-blob-sdk.graph.md?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusing-blob-sdk&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

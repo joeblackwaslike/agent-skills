@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/statusline.md"
-fetched_at: "2026-09-07T08:59:03.477Z"
-sha256: "20379f8f1b7922c3088faadb0755214837883abd5ad33aba473190f65769e640"
+fetched_at: "2026-09-14T09:37:17.168Z"
+sha256: "9c73fe24cc425ebe5d86f916cc35fc88ab08b8c9f65409ed1a5eb1c57aa357bd"
 ---
 
 > ## Documentation Index
@@ -182,7 +182,7 @@ Claude Code sends the following JSON fields to your script via stdin:
 | `workspace.project_dir`                                                          | Directory where Claude Code was launched, which may differ from `cwd` if the working directory changes during a session                                                                                                                                                                                                                                                                                                                                                |
 | `workspace.added_dirs`                                                           | Additional directories added via `/add-dir` or `--add-dir`. Empty array if none have been added                                                                                                                                                                                                                                                                                                                                                                        |
 | `workspace.git_worktree`                                                         | Git worktree name when the current directory is inside a linked worktree created with `git worktree add`. Absent in the main working tree. Populated for any git worktree, unlike `worktree.*`, which is present only while the session is in a [worktree session](/docs/en/worktrees)                                                                                                                                                                                      |
-| `workspace.repo.host`, `workspace.repo.owner`, `workspace.repo.name`             | Repository identity parsed from the `origin` remote, for example `"github.com"`, `"anthropics"`, `"claude-code"`. Absent outside a git repository or when no `origin` remote is configured                                                                                                                                                                                                                                                                             |
+| `workspace.repo.host`, `workspace.repo.owner`, `workspace.repo.name`             | Repository identity parsed from the `origin` remote, for example, `"github.com"`, `"anthropics"`, `"claude-code"`. Absent outside a git repository or when no `origin` remote is configured. For a gitlab.com project nested in subgroups, `owner` is the full namespace path with slashes, such as `"group/subgroup"`. Before v2.1.260, `workspace.repo` was absent for these projects                                                                                |
 | `cost.total_cost_usd`                                                            | Estimated session cost in USD, computed client-side at list price unless a [`modelPricing`](/docs/en/settings-reference#modelpricing) table is in effect. May differ from your actual bill. Resets to \$0 when `/clear` starts a new session. Before v2.1.211, the total carried over after `/clear`                                                                                                                                                                        |
 | `cost.total_duration_ms`                                                         | Total wall-clock time since the session started, in milliseconds                                                                                                                                                                                                                                                                                                                                                                                                       |
 | `cost.total_api_duration_ms`                                                     | Total time spent waiting for API responses in milliseconds                                                                                                                                                                                                                                                                                                                                                                                                             |
@@ -824,7 +824,7 @@ Each script gets the git remote URL, converts SSH format to HTTPS, and wraps the
           const repoName = path.basename(remote);
           // OSC 8 escape sequences
           const link = `\x1b]8;;${remote}\x07${repoName}\x1b]8;;\x07`;
-          console.log(`[${model}] 🔗 ${link}`);
+          console.log(`[${model}] ���� ${link}`);
       } catch {
           console.log(`[${model}]`);
       }

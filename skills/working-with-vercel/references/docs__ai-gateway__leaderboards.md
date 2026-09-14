@@ -1,9 +1,9 @@
 ---
-title: Leaderboards
+title: AI Gateway Leaderboards
 product: vercel
 url: /docs/ai-gateway/leaderboards
 canonical_url: "https://vercel.com/docs/ai-gateway/leaderboards"
-last_updated: 2026-08-24
+last_updated: 2026-09-08
 type: conceptual
 prerequisites:
   - /docs/ai-gateway
@@ -12,11 +12,11 @@ related:
 summary: See which AI models, labs, apps, and providers are most used on AI Gateway, share a chart as an image, and download the underlying data.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/leaderboards.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "6efe3e3af94525171c869e82a721f71a41671008b5b2bf07c60fef0011ebb831"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "bb36f1c71d68682074158daf6f5a1a4bd054c960f1e54f12c147c6456db1fef1"
 ---
 
-# Leaderboards
+# AI Gateway Leaderboards
 
 The [AI Gateway leaderboards](/ai-gateway/leaderboards) show which models, labs, apps, and providers developers use most on AI Gateway. Use them to see what's gaining traction, compare options before you build, and track how usage shifts over time.
 
@@ -31,10 +31,10 @@ The [AI Gateway leaderboards](/ai-gateway/leaderboards) show which models, labs,
 - [Open-weight models surge to 29% of volume, price per token flattens](https://vercel.com/blog/ai-gateway-production-index-july-2026?from=related&source_path=%2Fdocs%2Fai-gateway%2Fleaderboards&source_site=vercel-docs&relationship=related)
 - [Live model performance metrics accessible via AI Gateway](https://vercel.com/changelog/live-model-performance-metrics-accessible-via-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fleaderboards&source_site=vercel-docs&relationship=related)
 - [DeepSeek enters the fight for token volume, Anthropic continues to dominate spend](https://vercel.com/blog/ai-gateway-production-index-june-2026?from=related&source_path=%2Fdocs%2Fai-gateway%2Fleaderboards&source_site=vercel-docs&relationship=related)
-- [Logs](https://vercel.com/docs/ai-gateway/observability-and-spend/logs?from=related&source_path=%2Fdocs%2Fai-gateway%2Fleaderboards&source_site=vercel-docs&relationship=related) — Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the resu
-- [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api?from=related&source_path=%2Fdocs%2Fai-gateway%2Fleaderboards&source_site=vercel-docs&relationship=related) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
+- [DeepSeek overtakes Google on volume, cost per token falls 13.6%](https://vercel.com/blog/deepseek-overtakes-google-on-volume-cost-per-token-falls?from=related&source_path=%2Fdocs%2Fai-gateway%2Fleaderboards&source_site=vercel-docs&relationship=related)
+- [AI Gateway Request Logs](https://vercel.com/docs/ai-gateway/observability-and-spend/logs?from=related&source_path=%2Fdocs%2Fai-gateway%2Fleaderboards&source_site=vercel-docs&relationship=related) — Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the resu
+- [Coding Agents and Chat Platforms with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents?from=related&source_path=%2Fdocs%2Fai-gateway%2Fleaderboards&source_site=vercel-docs&relationship=related) — Connect coding agents and chat platforms to AI Gateway. Configure Claude Code, Codex, Chatbox, Open WebUI, and more.
 - [vercel ai-gateway](https://vercel.com/docs/cli/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fleaderboards&source_site=vercel-docs&relationship=related) — Manage AI Gateway resources from the Vercel CLI: API keys, budgets, routing rules, models, leaderboards, and coding agen
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fleaderboards&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/ai-gateway/leaderboards.graph.md](/docs/ai-gateway/leaderboards.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fleaderboards&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -114,7 +114,7 @@ curl "https://vercel.com/api/ai/leaderboard-export?dataset=providers"
 
 Without `from`, the export covers a rolling two-month window. Pass `from` (and
 optionally `to`) to request a fixed range instead. The earliest queryable date
-is **2025-10-01** — the point from which the daily rollups are complete. An
+is **2025-10-01**, the point from which the daily rollups are complete. An
 earlier `from`, a `to` without a `from`, an inverted range, or a range on
 `dataset=apps`/`providers` (which are ranked all-time lists with no day
 dimension) returns `400`. Ranged responses echo the resolved `from`, `to`, and

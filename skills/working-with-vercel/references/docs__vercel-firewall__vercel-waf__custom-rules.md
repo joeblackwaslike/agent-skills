@@ -17,8 +17,8 @@ related:
 summary: Learn how to add and manage custom rules to configure the Vercel Web Application Firewall (WAF).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/custom-rules.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "8cbada0ad18ca6b1adca0a7a07037d3afb176d13d421a06ad675eef0b9d4e936"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "c219dcb21554b050e41d58fc9f2acd472865ac98303a6a458e2ddbb6ecc7a83e"
 ---
 
 # WAF Custom Rules
@@ -42,7 +42,7 @@ You can [configure](#custom-rule-configuration) specific rules to log, deny, cha
 - [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fcustom-rules&source_site=vercel-docs&relationship=related) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
 - [How to resolve IP blocking issues ](https://vercel.com/kb/guide/how-to-resolve-ip-blocking-issues?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fcustom-rules&source_site=vercel-docs&relationship=related) — Learn to troubleshoot IP blocking issues for both shared and personal networks.
 - [Rate Limiting SDK](https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting-sdk?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fcustom-rules&source_site=vercel-docs&relationship=related) — Learn how to configure a custom rule with rate limit in your code.
-- [vercel firewall](https://vercel.com/docs/cli/firewall?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fcustom-rules&source_site=vercel-docs&relationship=related) — Learn how to manage your project's custom firewall rules, IP blocks, system bypass rules, attack challenge mode, and sys
+- [Bot Management](https://vercel.com/docs/bot-management?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fcustom-rules&source_site=vercel-docs&relationship=related) — Learn how to manage bot traffic to your site.
 
 Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf/custom-rules.graph.md](/docs/vercel-firewall/vercel-waf/custom-rules.graph.md?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fcustom-rules&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

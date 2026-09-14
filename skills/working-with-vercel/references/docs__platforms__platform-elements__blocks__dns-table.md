@@ -15,8 +15,8 @@ related:
 summary: A DNS record display component with one-click copying for guiding users through domain configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/blocks/dns-table.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "b52bcd66bb3b967d0f848e8eb6a59ca2db75506999af8fe2916dbb35109ef5e9"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "1b7978c3e354a1a88e37bd597f2af8e5b846045927919dfe87710b0ad87f9d2b"
 ---
 
 # DNS Table
@@ -33,9 +33,9 @@ The DNS Table block provides a clean, user-friendly interface for displaying DNS
 
 - [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fdns-table&source_site=vercel-docs&relationship=related) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
 - [Working with DNS](https://vercel.com/docs/domains/working-with-dns?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fdns-table&source_site=vercel-docs&relationship=related) — Learn how DNS works in order to properly configure your domain.
-- [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fdns-table&source_site=vercel-docs&relationship=related) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
 - [Create a DNS record](https://vercel.com/docs/rest-api/dns/create-a-dns-record?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fdns-table&source_site=vercel-docs&relationship=related) — POST /v2/domains/{domain}/records — Creates a DNS record for a domain.
 - [List existing DNS records](https://vercel.com/docs/rest-api/dns/list-existing-dns-records?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fdns-table&source_site=vercel-docs&relationship=related) — GET /v5/domains/{domain}/records — Retrieves a list of DNS records created for a domain name. By default it returns 20 r
+- [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fdns-table&source_site=vercel-docs&relationship=related) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
 - [vercel dns](https://vercel.com/docs/cli/dns?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fdns-table&source_site=vercel-docs&relationship=related) — Learn how to manage your DNS records for your domains using the vercel dns CLI command.
 
 Full cross-link map for this page: [/docs/platforms/platform-elements/blocks/dns-table.graph.md](/docs/platforms/platform-elements/blocks/dns-table.graph.md?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fdns-table&source_site=vercel-docs&relationship=graph)

@@ -16,8 +16,8 @@ related:
 summary: Run untrusted or agent-generated code in isolated Linux microVMs with Vercel Sandbox.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "d4ce509aa45e492e5f326dc8f3a3dd8fac0d405cb48ad77beeacb4b2e1216848"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "87301143b8159bd20ab588705965740c4708eb479023b4ca671449c5cb26b7b3"
 ---
 
 # Vercel Sandbox
@@ -35,15 +35,15 @@ Run untrusted or agent-generated code in isolated Linux microVMs. Use Vercel San
 - [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related)
 - [Security Model](https://eve.dev/docs/concepts/security-model?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related) — eve's trust boundaries, where secrets live, how credentials reach hosts, and what fails closed by default.
 - [Sandbox](https://eve.dev/docs/sandbox?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related) — The agent's isolated bash environment, including built-in file tools, a seeded /workspace, backends, lifecycle, and netw
+- [Build with OpenAI Agents API on Vercel](https://vercel.com/changelog/build-with-openai-agents-api-on-vercel?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related)
 - [Connect to and manage Sandboxes from the dashboard](https://vercel.com/changelog/connect-to-and-manage-sandboxes-from-the-dashboard?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related)
 - [Custom tags available in beta on Vercel Sandbox](https://vercel.com/changelog/custom-tags-available-in-beta-on-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related)
 - [Data downloaded by Vercel Sandbox is now free](https://vercel.com/changelog/data-downloaded-by-vercel-sandbox-is-now-free?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related)
 - [Drives for Vercel Sandbox in Private Beta](https://vercel.com/changelog/drives-for-vercel-sandbox-in-private-beta?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related)
-- [Full Sandbox egress firewall now available on Hobby plan](https://vercel.com/changelog/full-sandbox-egress-firewall-now-available-on-hobby-plan?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related)
+- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
 - [Running Docker on Vercel](https://vercel.com/kb/guide/docker?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related) — Learn how to run Docker on Vercel by deploying OCI container images as Vercel Functions, storing them in Vercel Containe
 - [Manage your Sanity project from Slack with eve](https://vercel.com/kb/guide/eve-sanity-copilot?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related) — A Slack-based Sanity copilot built on eve. It queries and edits content with GROQ, shapes schemas, manages releases, and
 - [Ship social posts from Slack with eve and Typefully](https://vercel.com/kb/guide/eve-typefully-social-media-agent?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related) — A Slack-based social media agent built on eve. It drafts posts and threads for X, LinkedIn, Threads, Bluesky, and Mastod
-- [How to run a multi-step research agent on Vercel](https://vercel.com/kb/guide/how-to-run-a-multi-step-research-agent-on-vercel?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related) — An end-to-end architecture for production research agents on Vercel using Sandbox, Workflows, and AI Gateway with isolat
 
 Full cross-link map for this page: [/docs/sandbox.graph.md](/docs/sandbox.graph.md?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

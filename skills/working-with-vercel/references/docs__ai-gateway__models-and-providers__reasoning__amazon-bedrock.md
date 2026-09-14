@@ -1,23 +1,24 @@
 ---
-title: Amazon Bedrock Reasoning
+title: AI Gateway Amazon Bedrock Reasoning
 product: vercel
 url: /docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock"
-last_updated: 2026-07-28
+last_updated: 2026-09-08
 type: reference
 prerequisites:
   - /docs/ai-gateway/models-and-providers/reasoning
   - /docs/ai-gateway/models-and-providers
 related:
   - /docs/ai-gateway/models-and-providers/reasoning
+  - /docs/ai-gateway/sdks-and-apis/rest-api
 summary: Configure reasoning for models hosted on Amazon Bedrock with the AI SDK and AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "5db948f76c7919a1f0e13ae473864d088f9e70c0538206d13e7d1a971a812a13"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "ad90f14a8215f6ff2c5ecb405b0d3ce116aafd241f11692c71ba65bc8e90d27d"
 ---
 
-# Amazon Bedrock Reasoning
+# AI Gateway Amazon Bedrock Reasoning
 
 Amazon Bedrock exposes Anthropic Claude reasoning through model-creator-specific provider options. Configuration depends on the model:
 
@@ -27,14 +28,12 @@ Amazon Bedrock exposes Anthropic Claude reasoning through model-creator-specific
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Amazon Bedrock](https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Famazon-bedrock&source_site=vercel-docs&relationship=related)
 - [Reasoning](https://ai-sdk.dev/docs/ai-sdk-core/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Famazon-bedrock&source_site=vercel-docs&relationship=related)
-- [Anthropic](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Famazon-bedrock&source_site=vercel-docs&relationship=related)
-- [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Famazon-bedrock&source_site=vercel-docs&relationship=related) — Control how much a model thinks before answering with the OpenAI Responses API.
-- [OpenAI Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Famazon-bedrock&source_site=vercel-docs&relationship=related) — Configure reasoning and thinking for OpenAI models with the AI SDK and AI Gateway.
-- [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Famazon-bedrock&source_site=vercel-docs&relationship=related) — Control how much a model thinks before answering with the OpenAI Chat Completions API.
-- [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Famazon-bedrock&source_site=vercel-docs&relationship=related) — Control how much a reasoning model thinks before answering with the OpenResponses API.
-- [Extended Thinking](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Famazon-bedrock&source_site=vercel-docs&relationship=related) — Configure how much Claude thinks before answering, using the Anthropic Messages API thinking parameter.
+- [AI Gateway OpenAI Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Famazon-bedrock&source_site=vercel-docs&relationship=related) — Configure reasoning and thinking for OpenAI models with the AI SDK and AI Gateway.
+- [OpenAI Responses Reasoning with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Famazon-bedrock&source_site=vercel-docs&relationship=related) — Control how much a model thinks before answering with the OpenAI Responses API through AI Gateway.
+- [OpenAI Chat Completions Reasoning with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Famazon-bedrock&source_site=vercel-docs&relationship=related) — Control how much a model thinks before answering with the OpenAI Chat Completions API through AI Gateway.
+- [OpenResponses Reasoning with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Famazon-bedrock&source_site=vercel-docs&relationship=related) — Control how much a reasoning model thinks before answering with the OpenResponses API through AI Gateway.
+- [Anthropic Messages Extended Thinking with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Famazon-bedrock&source_site=vercel-docs&relationship=related) — Configure how much Claude thinks before answering, using the Anthropic Messages API thinking parameter through AI Gatewa
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock.graph.md](/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Famazon-bedrock&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -44,13 +43,11 @@ Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/reason
 
 ## Supported models
 
-To see the current list of reasoning models served through Bedrock, use the **Reasoning** filter on the [AI Gateway models page](https://vercel.com/ai-gateway/models?capabilities=reasoning\&providers=bedrock). Which reasoning mode a model accepts follows its series:
+See the [AI SDK Amazon Bedrock provider reference](https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock) for supported reasoning options and response metadata.
 
-| Model series                                          | Adaptive reasoning | Manual reasoning (token budget) |
-| ----------------------------------------------------- | ------------------ | ------------------------------- |
-| Claude Opus 4.7 and later                             | ✓                  | — (returns 400)                 |
-| Claude 4.6 (`opus-4.6`, `sonnet-4.6`)                 | ✓                  | ✓ (deprecated)                  |
-| Claude 4.5 and earlier (`sonnet-4.5`, etc.)           | —                  | ✓                               |
+Use [`GET /v1/models`](/docs/ai-gateway/models-and-providers/reasoning#discover-model-reasoning-support) to discover a model's reasoning controls. Then use [model endpoints](/docs/ai-gateway/sdks-and-apis/rest-api#get-model-endpoints) or the [Bedrock model filter](/ai-gateway/models?capabilities=reasoning\&providers=bedrock) to check which models Bedrock serves. The model catalog's creator slug remains unchanged when you route through Bedrock.
+
+Keep the adaptive and legacy request shapes above separate. Catalog metadata describes model controls; the serving provider can impose additional restrictions.
 
 ## Getting started
 
@@ -126,7 +123,6 @@ const openai = new OpenAI({
   baseURL: 'https://ai-gateway.vercel.sh/v1',
 });
 
-// @ts-expect-error - reasoning and providerOptions parameters not yet in OpenAI types
 const completion = await openai.chat.completions.create({
   model: 'anthropic/claude-opus-5',
   messages: [
@@ -135,17 +131,26 @@ const completion = await openai.chat.completions.create({
       content: 'How many "r"s are in the word "strawberry"?',
     },
   ],
-  reasoning: {
-    effort: 'high',
+  // AI Gateway extension fields are not included in the upstream SDK types.
+  ...{
+    reasoning: {
+      effort: 'high',
+    },
   },
-  providerOptions: {
-    gateway: {
-      order: ['bedrock'],
+  ...{
+    providerOptions: {
+      gateway: {
+        order: ['bedrock'],
+      },
     },
   },
 });
 
-console.log('Reasoning:', completion.choices[0].message.reasoning);
+const message = completion.choices[0].message;
+console.log(
+  'Reasoning:',
+  'reasoning' in message ? message.reasoning : undefined,
+);
 console.log('Answer:', completion.choices[0].message.content);
 ```
 
@@ -216,7 +221,7 @@ curl https://ai-gateway.vercel.sh/v1/chat/completions \
 | Parameter            | Type   | Description                                             |
 | -------------------- | ------ | ------------------------------------------------------- |
 | `type`               | string | Set to `'adaptive'`                                     |
-| `maxReasoningEffort` | string | Effort level: `'low'`, `'medium'`, `'high'`, `'xhigh'` (Claude Opus 4.7 and later only), or `'max'` (Claude Opus only) |
+| `maxReasoningEffort` | string | A level supported by the model's [catalog entry](/docs/ai-gateway/models-and-providers/reasoning#discover-model-reasoning-support) and the [Bedrock provider options](https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock) |
 
 ### Manual reasoning (Claude 4.6 and earlier)
 

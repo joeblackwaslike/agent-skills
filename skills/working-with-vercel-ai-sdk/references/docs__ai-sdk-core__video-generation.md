@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/video-generation.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "47f062b4865a65322bb7403a5c428896f57ba0b9402a9dcb613d05961b167009"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "72cb72f4cae3ae111248a1b5f3d548717d5cf37871f4f9832cdd69aee48cb27f"
 ---
 
 # Video Generation
@@ -512,6 +512,7 @@ Above are a small subset of the video models supported by the AI SDK providers. 
 - [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
 - [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
+- [Batch](/docs/ai-sdk-core/batch)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)

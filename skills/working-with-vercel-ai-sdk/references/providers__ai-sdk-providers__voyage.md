@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/voyage.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "c9b3e469c1f041f0d197ad84daa304846276f1fcb35117456e3ce025d1f187e5"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "06c39e5f0a15876b727c701b28cb905e50fc0747eee233f9cfd8d1e70571811a"
 ---
 
 # Voyage AI Provider
@@ -238,7 +238,6 @@ The following provider options are available:
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
-- [LMNT](/providers/ai-sdk-providers/lmnt)
 - [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)

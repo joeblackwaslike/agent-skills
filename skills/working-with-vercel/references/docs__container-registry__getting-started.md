@@ -16,8 +16,8 @@ related:
 summary: Authenticate your container tool with Vercel Container Registry, then push and pull your first image with the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/container-registry/getting-started.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "963a5f190457d8338e4dd20620ec9c94ef43278d0d6ee5a76a11bbb3a8e44f47"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "c7258bc54e905905f2465db98ab977507d0356a62aec2f47368d85b97227e67b"
 ---
 
 # Getting Started
@@ -41,7 +41,6 @@ Push your first image to Vercel Container Registry (VCR) with the Vercel CLI, th
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fgetting-started&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 - [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fgetting-started&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
 - [JS SDK Reference](https://vercel.com/docs/sandbox/sdk-reference?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fgetting-started&source_site=vercel-docs&relationship=related) — A comprehensive reference for the Vercel Sandbox JavaScript SDK, which lets you run code in a secure, isolated environme
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fgetting-started&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/container-registry/getting-started.graph.md](/docs/container-registry/getting-started.graph.md?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fgetting-started&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

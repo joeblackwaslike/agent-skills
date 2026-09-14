@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/openai-compatible-providers/nim.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "c5cfe7d782081fc414d54f7f6798fdfa26c44350fc741aae8ca7884fc144895c"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "30f3ca6e3070019b42842b0023b543f7aa177c3d4dc09b910d7bd67d2d8a8b37"
 ---
 
 # NVIDIA NIM Provider
@@ -119,7 +119,6 @@ NIM language models also support structured data generation with [`Output`](/doc
 - [Clarifai](/providers/openai-compatible-providers/clarifai)
 - [Heroku](/providers/openai-compatible-providers/heroku)
 - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)
-- [Synthorai](/providers/openai-compatible-providers/synthorai)
 
 
 [Full Sitemap](/sitemap.md)

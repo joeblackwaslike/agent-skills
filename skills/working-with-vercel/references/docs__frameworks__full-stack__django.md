@@ -17,8 +17,8 @@ related:
 summary: Deploy a Django app on Vercel. Learn how the Python runtime, WSGI, ASGI, static assets, and Vercel Functions work together.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/django.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "31dc8a11d12b355adfdb22b6a389b319fe1fb07327e580aa30d618b0297cb5e4"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "41e82c9bbbc677fa62df34fbc3298a1c75cdd01eda0056e0ac629ab3e53effcc"
 ---
 
 # Deploy a Django app on Vercel
@@ -43,7 +43,6 @@ project settings.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fdjango&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 - [Express on Vercel](https://vercel.com/docs/frameworks/backend/express?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fdjango&source_site=vercel-docs&relationship=related) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
 - [Backends on Vercel](https://vercel.com/docs/frameworks/backend?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fdjango&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fdjango&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/frameworks/full-stack/django.graph.md](/docs/frameworks/full-stack/django.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fdjango&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

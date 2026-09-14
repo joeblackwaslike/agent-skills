@@ -3,7 +3,7 @@ title: Vercel SDK Reference
 product: vercel
 url: /docs/rest-api/sdk
 canonical_url: "https://vercel.com/docs/rest-api/sdk"
-last_updated: 2026-09-07
+last_updated: 2026-09-14
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Interact programmatically with your Vercel account using the SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rest-api/sdk.md"
-fetched_at: "2026-09-07T09:06:17.588Z"
-sha256: "3af4c2cb1b26e92ab38dc063eef6322915fdf4a5cf0ca76c488e5559da5aa04d"
+fetched_at: "2026-09-14T09:44:59.314Z"
+sha256: "a1288c20f86a56bed44504c8a71f24977da8c7f51bfb8f94308441a816a13137"
 ---
 
 # Vercel SDK Reference
@@ -49,6 +49,9 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 | **PATCH** | [`/v1/ai-gateway/virtual-model-configs`](/docs/rest-api/sdk/api-ai-gateway/update-virtual-model-config.md) | Update virtual model config |
 | **DELETE** | [`/v1/ai-gateway/virtual-model-configs`](/docs/rest-api/sdk/api-ai-gateway/delete-virtual-model-config.md) | Delete virtual model config |
 | **GET** | [`/v1/ai-gateway/virtual-model-configs/list`](/docs/rest-api/sdk/api-ai-gateway/list-virtual-model-configs.md) | List virtual model configs |
+| **GET** | [`/v1/ai-gateway/virtual-model-configs/{vmcSlug}`](/docs/rest-api/sdk/api-ai-gateway/get-virtual-model-config-1.md) | Get virtual model config |
+| **PATCH** | [`/v1/ai-gateway/virtual-model-configs/{vmcSlug}`](/docs/rest-api/sdk/api-ai-gateway/update-virtual-model-config-1.md) | Update virtual model config |
+| **DELETE** | [`/v1/ai-gateway/virtual-model-configs/{vmcSlug}`](/docs/rest-api/sdk/api-ai-gateway/delete-virtual-model-config-1.md) | Delete virtual model config |
 
 ## ai-gateway
 

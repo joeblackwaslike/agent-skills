@@ -15,8 +15,8 @@ related:
 summary: "Start sandboxes from Vercel's Managed Images, or custom OCI images stored in Vercel Container Registry to ship your own system packages, tooling, and..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/images.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "46ffbd2884a8f6cc24e2e37850a11c2b01cf657eb12497d7de6ee38889b8fc66"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "7994ffc1780faa471c9442ed67da3c08b74e6af43506558de5c9e1ddf2e74b3a"
 ---
 
 # Images
@@ -31,13 +31,12 @@ Custom images give you full control over the sandbox environment. Define the Lin
 
 - [Share Vercel Container Registry repositories across teams](https://vercel.com/changelog/share-vercel-container-registry-repositories-across-teams?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fimages&source_site=vercel-docs&relationship=related)
 - [Vercel Container Registry repositories can now be made public](https://vercel.com/changelog/vercel-container-registry-repositories-can-now-be-made-public?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fimages&source_site=vercel-docs&relationship=related)
+- [Vercel Sandbox now provides 64 GB of storage](https://vercel.com/changelog/vercel-sandbox-64-gb-storage?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fimages&source_site=vercel-docs&relationship=related)
 - [Vercel Sandbox now support Custom Images](https://vercel.com/changelog/vercel-sandbox-now-support-custom-images?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fimages&source_site=vercel-docs&relationship=related)
 - [Running Docker on Vercel](https://vercel.com/kb/guide/docker?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fimages&source_site=vercel-docs&relationship=related) — Learn how to run Docker on Vercel by deploying OCI container images as Vercel Functions, storing them in Vercel Containe
 - [How to install system packages in Vercel Sandbox](https://vercel.com/kb/guide/how-to-install-system-packages-in-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fimages&source_site=vercel-docs&relationship=related) — Learn how to install additional system packages in Vercel Sandbox with apt-get on the default Ubuntu-based managed image
-- [How to use Vercel Container Registry](https://vercel.com/kb/guide/how-to-use-vercel-container-registry?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fimages&source_site=vercel-docs&relationship=related) — Push, store, and pull OCI container images with Vercel Container Registry, then deploy them to Vercel Functions and Verc
 - [Vercel Sandbox now runs on Vercel Managed Images](https://vercel.com/changelog/vercel-sandbox-managed-images?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fimages&source_site=vercel-docs&relationship=related)
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fimages&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fimages&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/sandbox/concepts/images.graph.md](/docs/sandbox/concepts/images.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fimages&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

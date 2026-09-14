@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/security-guidance.md"
-fetched_at: "2026-08-31T10:37:20.620Z"
-sha256: "5805edbe465de5277faa6e5972eaaf486ff9fc65695ad06d5e649f6f71105a00"
+fetched_at: "2026-09-14T09:37:17.168Z"
+sha256: "543522ea006fa9a4232e09991374d1a3080c7dc3b5f01dd3a33d7f15a4ce042f"
 ---
 
 > ## Documentation Index
@@ -45,11 +45,7 @@ If the install fails, match the message Claude Code reports:
 * `Marketplace "claude-plugins-official" not found`: add the marketplace with `/plugin marketplace add anthropics/claude-plugins-official`, then retry the install.
 * The plugin is [not found in the marketplace](/docs/en/discover-plugins#install-plugins): check the plugin name.
 
-Check the install summary. If it reports `Run /reload-plugins to activate.`, apply the pending change without a restart:
-
-```text theme={null}
-/reload-plugins
-```
+Check the install summary. If it reports `Run /reload-plugins to activate.`, see [Apply plugin changes without restarting](/docs/en/discover-plugins#apply-plugin-changes-without-restarting) to activate the plugin in your current session.
 
 ### Enable in cloud sessions and shared repositories
 

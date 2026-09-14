@@ -16,8 +16,8 @@ related:
 summary: The Build Output API is a file-system-based specification for a directory structure that can produce a Vercel deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "e0324fbb885b1118a9250f01012223f6e31e79815c35205a9e3e6b5d2df23710"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "0d9de051ab3d614165da6ab869e95169a970e7a79da61535219bc85251120ed3"
 ---
 
 # Build Output API
@@ -31,6 +31,7 @@ The Build Output API is a file-system-based specification for a directory struct
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel?from=related&source_path=%2Fdocs%2Fbuild-output-api&source_site=vercel-docs&relationship=related) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
+- [How we cut CDN metadata lookup latency by 91%](https://vercel.com/blog/how-we-cut-cdn-metadata-lookup-latency-by-91-percent?from=related&source_path=%2Fdocs%2Fbuild-output-api&source_site=vercel-docs&relationship=related)
 - [How we made global routing faster with Bloom filters](https://vercel.com/blog/how-we-made-global-routing-faster-with-bloom-filters?from=related&source_path=%2Fdocs%2Fbuild-output-api&source_site=vercel-docs&relationship=related)
 - [Announcing the Build Output API](https://vercel.com/blog/build-output-api?from=related&source_path=%2Fdocs%2Fbuild-output-api&source_site=vercel-docs&relationship=related)
 - [New build and deploy capabilities in Vercel CLI](https://vercel.com/changelog/new-build-and-deploy-capabilities-in-vercel-cli?from=related&source_path=%2Fdocs%2Fbuild-output-api&source_site=vercel-docs&relationship=related)

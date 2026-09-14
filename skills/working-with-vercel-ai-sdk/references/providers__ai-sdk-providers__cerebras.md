@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/cerebras.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "e061cb10f24a1cdefb02d484de5d0db5e070400f3af80576c7bfecb2818368ff"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "d6bf7180f0a691d924a837f2b95856c85bf2b27713ea94ca020906b87643ed01"
 ---
 
 # Cerebras Provider
@@ -211,7 +211,6 @@ const result = await generateText({
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
-- [LMNT](/providers/ai-sdk-providers/lmnt)
 - [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)

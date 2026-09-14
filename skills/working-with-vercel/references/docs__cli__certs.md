@@ -13,8 +13,8 @@ related:
 summary: Learn how to manage certificates for your domains using the vercel certs CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/certs.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "84fd4180e9620e4e821e6e380674466ba9c03df16c5e7d651387a2885ec49c56"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "647efd82891dad84dbad309a18549e6d19123bd8b4e9923c8ed11b386b41456f"
 ---
 
 # vercel certs
@@ -30,8 +30,8 @@ The `vercel certs` command is used to manage certificates for domains, providing
 - [vercel domains](https://vercel.com/docs/cli/domains?from=related&source_path=%2Fdocs%2Fcli%2Fcerts&source_site=vercel-docs&relationship=related) — Learn how to buy, sell, transfer, and manage your domains using the vercel domains CLI command.
 - [vercel dns](https://vercel.com/docs/cli/dns?from=related&source_path=%2Fdocs%2Fcli%2Fcerts&source_site=vercel-docs&relationship=related) — Learn how to manage your DNS records for your domains using the vercel dns CLI command.
 - [Get certs](https://vercel.com/docs/rest-api/certs/get-certs?from=related&source_path=%2Fdocs%2Fcli%2Fcerts&source_site=vercel-docs&relationship=related) — GET /v8/certs — Get certs
-- [Working with SSL Certificates](https://vercel.com/docs/domains/working-with-ssl?from=related&source_path=%2Fdocs%2Fcli%2Fcerts&source_site=vercel-docs&relationship=related) — Learn how Vercel uses SSL certification to keep your site secure.
 - [Issue a new cert](https://vercel.com/docs/rest-api/certs/issue-a-new-cert?from=related&source_path=%2Fdocs%2Fcli%2Fcerts&source_site=vercel-docs&relationship=related) — POST /v8/certs — Issue a new cert
+- [Working with SSL Certificates](https://vercel.com/docs/domains/working-with-ssl?from=related&source_path=%2Fdocs%2Fcli%2Fcerts&source_site=vercel-docs&relationship=related) — Learn how Vercel uses SSL certification to keep your site secure.
 
 Full cross-link map for this page: [/docs/cli/certs.graph.md](/docs/cli/certs.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fcerts&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

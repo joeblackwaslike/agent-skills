@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/browser-ai.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "072fe062b05448e2e720156a07e76849683cb3ef7903078862401578718dcc34"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "0c2dec1d4596a3ab108a7d145d5ef76af3f48b7e7086deb9e85f478839cf4d9a"
 ---
 
 # Browser AI model providers
@@ -194,6 +194,7 @@ For more examples and API reference, check out the [documentation](https://www.b
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
 - [Interfaze](/providers/community-providers/interfaze)
+- [Telnyx](/providers/community-providers/telnyx)
 - [Flowise](/providers/community-providers/flowise)
 
 

@@ -1,28 +1,28 @@
 ---
-title: Image Generation Quickstart
+title: AI Gateway Image Generation Quickstart
 product: vercel
 url: /docs/ai-gateway/getting-started/image
 canonical_url: "https://vercel.com/docs/ai-gateway/getting-started/image"
-last_updated: 2026-09-02
+last_updated: 2026-09-08
 type: tutorial
 prerequisites:
   - /docs/ai-gateway/getting-started
   - /docs/ai-gateway
 related:
-  - /docs/ai-gateway/authentication-and-byok/oidc
+  - /docs/ai-gateway/pricing
+  - /docs/ai-gateway/modalities/image-generation
   - /docs/ai-gateway/modalities/image-generation/ai-sdk
   - /docs/ai-gateway/modalities/image-generation/openai
-  - /docs/ai-gateway/modalities/image-generation
-summary: Generate images from text prompts using AI Gateway.
+summary: Generate an image from a text prompt using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/image.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "78f8eadff4f72a4b478403737ed9c881b2a5629a2cc2bda2e102ae61461e19be"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "e55a81ac192c82563f79a083219e2698b673fa153e62be8688ab9ca20a6c20a4"
 ---
 
-# Image Generation Quickstart
+# AI Gateway Image Generation Quickstart
 
-This quickstart walks you through generating your first image with AI Gateway.
+Generate an image through AI Gateway and save it to a file.
 
 
 <!-- docsgraph:related -->
@@ -30,253 +30,69 @@ This quickstart walks you through generating your first image with AI Gateway.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Image-only models available in Vercel AI Gateway](https://vercel.com/changelog/image-only-models-available-in-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fimage&source_site=vercel-docs&relationship=related)
 - [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fimage&source_site=vercel-docs&relationship=related) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
-- [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fimage&source_site=vercel-docs&relationship=related)
-- [Google Gemini Image Generation](https://ai-sdk.dev/cookbook/guides/google-gemini-image-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fimage&source_site=vercel-docs&relationship=related)
-- [Image Generation](https://ai-sdk.dev/docs/ai-sdk-core/image-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fimage&source_site=vercel-docs&relationship=related)
-- [Image Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fimage&source_site=vercel-docs&relationship=related) — Generate images using AI models that support multimodal output through the Chat Completions API.
-- [Text Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/text?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fimage&source_site=vercel-docs&relationship=related) — Generate and stream text responses using AI Gateway.
-- [File Attachments](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/images?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fimage&source_site=vercel-docs&relationship=related) — Send images and PDF documents for analysis using the OpenAI Responses API through AI Gateway.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fimage&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
+- [Video Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/video?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fimage&source_site=vercel-docs&relationship=related) — Generate a video from a text prompt using AI Gateway.
+- [AI Gateway Text Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/text?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fimage&source_site=vercel-docs&relationship=related) — Generate and stream text responses using AI Gateway.
+- [AI Gateway Speech Quickstart: Transcription and TTS](https://vercel.com/docs/ai-gateway/getting-started/speech?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fimage&source_site=vercel-docs&relationship=related) — Generate speech and transcribe it using AI Gateway.
+- [AI Gateway Chat Completions Image Generation Reference](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fimage&source_site=vercel-docs&relationship=related) — Generate images using AI models that support multimodal output through the Chat Completions API through AI Gateway.
+- [OpenAI Responses Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/images?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fimage&source_site=vercel-docs&relationship=related) — Send images and PDF documents for analysis using the OpenAI Responses API through AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/getting-started/image.graph.md](/docs/ai-gateway/getting-started/image.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fimage&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-## Prerequisites
-
-Before you begin, you need:
-
-- A Vercel account with a valid payment method to unlock free AI Gateway Credits
-- Node.js 22 or later
-- An AI Gateway API key or a Vercel OIDC token
-
-### Set up your API key
-
-Open the [Create API Key dialog](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fapi-keys%3FshowCreateKeyModal%3Dtrue\&title=AI+Gateway+API+Keys) in the Vercel dashboard, enter a name, and create the key.
-
-After you create your project in the next section, add a `.env.local` file to the project root and save your API key:
-
-```bash filename=".env.local"
-AI_GATEWAY_API_KEY=your_ai_gateway_api_key
-```
-
-> **💡 Note:** Instead of using an API key, you can use [OIDC
-> tokens](/docs/ai-gateway/authentication-and-byok/oidc) to authenticate your
-> requests.
-
 ## Generate your first image
 
-Install Vercel's focused AI Gateway skill before delegating this setup:
+### Use a coding agent
 
-```bash filename="Terminal"
-npx skills add vercel/vercel-plugin --skill ai-gateway
-```
+Paste this prompt into a coding agent with terminal access:
 
 **Agent prompt**
 
 ```text
-Use the AI Gateway skill to add image generation to this project. Read AI_GATEWAY_API_KEY from the environment or .env.local, and stop and tell me to create a key if it is not set anywhere. Choose a current image model such as openai/gpt-image-2 from the live AI Gateway model list, save the generated image to a file, run the result, and run the project's type checker. Report the files changed and command output.
+Add image generation through AI Gateway in the current environment. Use the AI Gateway skill for this task. If it is unavailable, run npx skills add vercel/vercel-plugin --skill ai-gateway, then find and read its SKILL.md before continuing. Reuse the environment's language, framework, package manager, and AI client when possible, choose an AI Gateway SDK or API that supports image generation, and add only required dependencies. Read AI_GATEWAY_API_KEY from the environment. If it is missing, run npx vercel@latest whoami and pause for login if needed. Determine the team, then run npx vercel@latest --scope <team-slug> ai-gateway api-keys create --name <descriptive-name>. Capture stdout directly into AI_GATEWAY_API_KEY for the request or existing ignored secret storage, and never expose the value. Use openai/gpt-image-2, save the first image to a file, run the result, and report the output.
 ```
 
-- ### Set up your project
-  Create a new directory and initialize a Node.js project:
-  ```bash filename="Terminal"
-  mkdir ai-image-demo
-  cd ai-image-demo
-  pnpm init
-  pnpm pkg set type=module
-  ```
-  Setting the project to ESM lets the examples below use top-level `await`.
+### Run the Node.js example
 
-- ### Install dependencies
-  Install the AI SDK and development dependencies:
-  #### npm
-  ```bash filename="Terminal"
-  npm install ai@latest dotenv @types/node tsx typescript
-  ```
-  #### yarn
-  ```bash filename="Terminal"
-  yarn add ai@latest dotenv @types/node tsx typescript
-  ```
-  #### pnpm
-  ```bash filename="Terminal"
-  pnpm add ai@latest dotenv @types/node tsx typescript
-  ```
-  #### bun
-  ```bash filename="Terminal"
-  bun add ai@latest dotenv @types/node tsx typescript
-  ```
+Use [Node.js 22.18 or later](https://nodejs.org/) and a team with available [AI Gateway Credits](/docs/ai-gateway/pricing). Export `AI_GATEWAY_API_KEY` in your current shell. If you need a key, open the [Create API Key dialog](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fapi-keys%3FshowCreateKeyModal%3Dtrue\&title=AI+Gateway+API+Keys).
 
-- ### Generate an image
-  Create an `index.ts` file. This example uses GPT Image 2 (`openai/gpt-image-2`), OpenAI's image-only model for high-fidelity generation:
-  ```typescript filename="index.ts"
-  import { generateImage } from 'ai';
-  import fs from 'node:fs';
-  import { config } from 'dotenv';
+```bash filename="Terminal"
+export AI_GATEWAY_API_KEY="your_ai_gateway_api_key"
+```
 
-  config({ path: '.env.local' });
+Install the AI SDK:
 
-  async function main() {
-    const result = await generateImage({
-      model: 'openai/gpt-image-2',
-      prompt: 'A serene mountain landscape at sunset with a calm lake reflection',
-      size: '1536x1024',
-    });
+```bash filename="Terminal"
+pnpm add ai@latest
+```
 
-    // Image-only models return images in result.images as base64
-    const buffer = Buffer.from(result.images[0].base64, 'base64');
-    fs.writeFileSync('output.png', buffer);
-    console.log('Image saved to output.png');
-  }
+Create `index.mts`:
 
-  main().catch(console.error);
-  ```
-  Run your script:
-  ```bash filename="Terminal"
-  pnpm tsx index.ts
-  ```
-  The generated image will be saved in your project directory.
+```typescript filename="index.mts"
+import { generateImage } from 'ai';
+import { writeFile } from 'node:fs/promises';
+
+const { images } = await generateImage({
+  model: 'openai/gpt-image-2',
+  prompt: 'A turquoise hummingbird resting on a dew-covered branch at sunrise.',
+});
+
+await writeFile('output.png', images[0].uint8Array);
+console.log('Saved output.png');
+```
+
+Run the script:
+
+```bash filename="Terminal"
+node index.mts
+```
 
 ## Next steps
 
-- See [supported image generation models](/ai-gateway/models?type=image)
-- Learn about [multimodal LLMs](/docs/ai-gateway/modalities/image-generation/ai-sdk#multimodal-llms) that can generate images alongside text
-- Explore [image editing capabilities](/docs/ai-gateway/modalities/image-generation/openai#editing-images) with OpenAI models
+- Browse [image generation models](/ai-gateway/models?type=image) and learn when to use image-only or multimodal models in the [image generation guide](/docs/ai-gateway/modalities/image-generation)
 
-## Alternative models
-
-### Nano Banana Pro (`google/gemini-3-pro-image`)
-
-Google's multimodal model, which generates images alongside text. Multimodal models use `generateText` and return images in `result.files`:
-
-```typescript filename="nano-banana-pro.ts"
-import { generateText } from 'ai';
-import fs from 'node:fs';
-import { config } from 'dotenv';
-
-config({ path: '.env.local' });
-
-const result = await generateText({
-  model: 'google/gemini-3-pro-image',
-  prompt: 'A serene mountain landscape at sunset with a calm lake reflection',
-});
-
-// Nano Banana models return images in result.files with uint8Array
-const imageFiles = result.files.filter((f) =>
-  f.mediaType?.startsWith('image/'),
-);
-
-if (imageFiles.length > 0) {
-  const extension = imageFiles[0].mediaType?.split('/')[1] || 'png';
-  fs.writeFileSync(`output.${extension}`, imageFiles[0].uint8Array);
-}
-```
-
-### Nano Banana 2 (`google/gemini-3.1-flash-image`)
-
-The second-generation Gemini 3.1 Flash image variant. Uses the same `generateText` function and saves images the same way as Nano Banana Pro:
-
-```typescript filename="nano-banana-2.ts"
-import { generateText } from 'ai';
-import fs from 'node:fs';
-import { config } from 'dotenv';
-
-config({ path: '.env.local' });
-
-const result = await generateText({
-  model: 'google/gemini-3.1-flash-image',
-  prompt: 'Create an illustration of a hummingbird at sunrise',
-});
-
-// Nano Banana models return images in result.files with uint8Array
-const imageFiles = result.files.filter((f) =>
-  f.mediaType?.startsWith('image/'),
-);
-
-if (imageFiles.length > 0) {
-  fs.writeFileSync('output.png', imageFiles[0].uint8Array);
-}
-```
-
-### Nano Banana (`google/gemini-2.5-flash-image`)
-
-The original Nano Banana model — Gemini 2.5's flash image variant. Still available for workloads on the older generation:
-
-```typescript filename="nano-banana.ts"
-import { generateText } from 'ai';
-import fs from 'node:fs';
-import { config } from 'dotenv';
-
-config({ path: '.env.local' });
-
-const result = await generateText({
-  model: 'google/gemini-2.5-flash-image',
-  prompt: 'Create an illustration of a hummingbird at sunrise',
-});
-
-const imageFiles = result.files.filter((f) =>
-  f.mediaType?.startsWith('image/'),
-);
-
-if (imageFiles.length > 0) {
-  fs.writeFileSync('output.png', imageFiles[0].uint8Array);
-}
-```
-
-### Flux 2 Flex (`bfl/flux-2-flex`)
-
-Fast, high-quality image generation from Black Forest Labs. Image-only models use `generateImage` and return images in `result.images` with base64 encoding:
-
-```typescript filename="flux-example.ts"
-import { generateImage } from 'ai';
-import fs from 'node:fs';
-import { config } from 'dotenv';
-
-config({ path: '.env.local' });
-
-const result = await generateImage({
-  model: 'bfl/flux-2-flex',
-  prompt: 'A vibrant coral reef with tropical fish',
-  aspectRatio: '4:3',
-});
-
-// Image-only models return images in result.images with base64
-const image = result.images[0];
-const buffer = Buffer.from(image.base64, 'base64');
-fs.writeFileSync('output.png', buffer);
-```
-
-### Recraft V4.1 (`recraft/recraft-v4.1`)
-
-Professional-grade image generation. Same pattern as Flux:
-
-```typescript filename="recraft-example.ts"
-import { generateImage } from 'ai';
-import fs from 'node:fs';
-import { config } from 'dotenv';
-
-config({ path: '.env.local' });
-
-const result = await generateImage({
-  model: 'recraft/recraft-v4.1',
-  prompt: 'A minimalist logo design for a tech startup',
-});
-
-const buffer = Buffer.from(result.images[0].base64, 'base64');
-fs.writeFileSync('output.png', buffer);
-```
-
-## Saving images
-
-How you save images depends on the model type:
-
-| Model type                                | Function                     | Image location  | Format          |
-| ----------------------------------------- | ---------------------------- | --------------- | --------------- |
-| Nano Banana models                        | `generateText`               | `result.files`  | `uint8Array`    |
-| Image-only models (Flux, Recraft, GPT Image) | `generateImage` | `result.images` | `base64` string |
-
-For more details, see the [Image Generation Capabilities docs](/docs/ai-gateway/modalities/image-generation).
+* Learn how the AI SDK [returns generated images](/docs/ai-gateway/modalities/image-generation/ai-sdk)
+* Edit images with [OpenAI image models](/docs/ai-gateway/modalities/image-generation/openai#editing-images)
 
 
 ---

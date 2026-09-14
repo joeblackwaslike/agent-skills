@@ -16,8 +16,8 @@ related:
 summary: Use Vercel Connect with AI SDK, MCP clients, eve, Chat SDK, Better Auth, and Auth.js.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/frameworks.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "782dc5657815bd948890e708e06362cd13ee1ab96abd375931e6398c5e60ffff"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "b2867be97dc5759766ca8352841082d5e32321c46555cd5532fd8f10a1cd7e8f"
 ---
 
 # Frameworks and Adapters
@@ -38,10 +38,9 @@ the task your application needs to perform.
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks&source_site=vercel-docs&relationship=related)
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks&source_site=vercel-docs&relationship=related)
 - [Vercel Connect](https://v0.app/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks&source_site=vercel-docs&relationship=related) — Connect your v0 apps and agents to third-party services – no API keys required.
-- [Framework Integrations](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks&source_site=vercel-docs&relationship=related) — Explore available community framework integrations with Vercel AI Gateway
 - [Authentication](https://vercel.com/docs/connect/concepts/authentication?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks&source_site=vercel-docs&relationship=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
+- [AI Gateway Framework Integrations](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks&source_site=vercel-docs&relationship=related) — Connect LangChain, LiteLLM, LlamaIndex, Mastra, Pydantic AI, and other frameworks to Vercel AI Gateway with the AI SDK o
 - [Connectors](https://vercel.com/docs/connect/concepts/connectors?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks&source_site=vercel-docs&relationship=related) — A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/connect/frameworks.graph.md](/docs/connect/frameworks.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

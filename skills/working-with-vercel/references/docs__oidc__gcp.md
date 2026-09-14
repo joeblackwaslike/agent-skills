@@ -13,8 +13,8 @@ related:
 summary: "Learn how to configure your GCP project to trust Vercel's OpenID Connect (OIDC) Identity Provider (IdP)."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/gcp.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "03919a2ed84249c956d7000d1f85126e46c921ef601ba35f755279bd85fed5aa"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "eb71de9e3a2d9e39ce49b1f180f2ec5a34bea16e343ce3f048a0198c1258729e"
 ---
 
 # Connect to Google Cloud Platform (GCP)
@@ -31,10 +31,10 @@ To understand how GCP supports OIDC through Workload Identity Federation, consul
 
 - [Connect to Microsoft Azure](https://vercel.com/docs/oidc/azure?from=related&source_path=%2Fdocs%2Foidc%2Fgcp&source_site=vercel-docs&relationship=related) — Learn how to configure your Microsoft Azure account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Foidc%2Fgcp&source_site=vercel-docs&relationship=related)
-- [OIDC](https://vercel.com/docs/ai-gateway/authentication-and-byok/oidc?from=related&source_path=%2Fdocs%2Foidc%2Fgcp&source_site=vercel-docs&relationship=related) — Authenticate AI Gateway requests with Vercel OIDC tokens, with no API key to manage.
 - [Connect to Amazon Web Services \\(AWS\\)](https://vercel.com/docs/oidc/aws?from=related&source_path=%2Fdocs%2Foidc%2Fgcp&source_site=vercel-docs&relationship=related) — Learn how to configure your AWS account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
 - [Connect to your own API](https://vercel.com/docs/oidc/api?from=related&source_path=%2Fdocs%2Foidc%2Fgcp&source_site=vercel-docs&relationship=related) — Learn how to configure your own API to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\)
-- [Functions API Reference](https://vercel.com/docs/functions/functions-api-reference?from=related&source_path=%2Fdocs%2Foidc%2Fgcp&source_site=vercel-docs&relationship=related) — Learn about available APIs when working with Vercel Functions.
+- [AI Gateway OIDC Authentication](https://vercel.com/docs/ai-gateway/authentication-and-byok/oidc?from=related&source_path=%2Fdocs%2Foidc%2Fgcp&source_site=vercel-docs&relationship=related) — Authenticate AI Gateway requests from Vercel deployments with OIDC tokens. Configure the AI SDK or send bearer tokens di
+- [AI Gateway Authentication and BYOK](https://vercel.com/docs/ai-gateway/authentication-and-byok?from=related&source_path=%2Fdocs%2Foidc%2Fgcp&source_site=vercel-docs&relationship=related) — Authenticate AI Gateway requests with API keys or OIDC tokens, and configure bring your own key \\(BYOK\\) credentials for
 
 Full cross-link map for this page: [/docs/oidc/gcp.graph.md](/docs/oidc/gcp.graph.md?from=related&source_path=%2Fdocs%2Foidc%2Fgcp&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

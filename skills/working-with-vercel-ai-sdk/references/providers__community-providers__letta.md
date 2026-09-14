@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/letta.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "c99f52507f96cdc84fd4a5e0254da8d45e6ee3b914b0b8f06f6cf0ffdabaca33"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "63b2315a5d8cd586ac65836697a0316077053c617b24cce1f908b549d05b9cd3"
 ---
 
 # Letta Provider
@@ -249,6 +249,7 @@ For more information on the Letta API, please refer to the [Letta API documentat
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
 - [Interfaze](/providers/community-providers/interfaze)
+- [Telnyx](/providers/community-providers/telnyx)
 - [Flowise](/providers/community-providers/flowise)
 
 

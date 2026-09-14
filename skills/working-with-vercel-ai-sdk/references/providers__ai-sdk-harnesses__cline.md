@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/cline.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "3a46932e9cc2332134e26bf3438c01c4c6d48a896aed4af29a8c8564310a9bc9"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "4c33c7b98184437c573b6632211b544860f3e90173ab237131a02971e850a2f1"
 ---
 
 # Cline Harness
@@ -123,6 +123,10 @@ environment:
 - `ai-gateway`: use `AI_GATEWAY_API_KEY` or `VERCEL_OIDC_TOKEN` and the
   optional `AI_GATEWAY_BASE_URL`.
 
+If no applicable credential environment variable is set, the adapter attempts
+to resolve a native subscription from the host system unless AI Gateway
+authentication is selected.
+
 ```ts
 const harness = createCline({ auth: 'ai-gateway' });
 ```
@@ -220,6 +224,7 @@ runtime and throws `HarnessCapabilityUnsupportedError`.
 - [Cline](/providers/ai-sdk-harnesses/cline)
 - [Cursor](/providers/ai-sdk-harnesses/cursor)
 - [fx](/providers/ai-sdk-harnesses/fx)
+- [GitHub Copilot](/providers/ai-sdk-harnesses/github-copilot)
 
 
 [Full Sitemap](/sitemap.md)

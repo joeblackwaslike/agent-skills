@@ -1,10 +1,10 @@
 ---
-title: Advanced Configuration
+title: OpenAI Chat Completions Configuration with AI Gateway
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced"
-last_updated: 2026-07-28
-type: conceptual
+last_updated: 2026-09-08
+type: reference
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions
   - /docs/ai-gateway/sdks-and-apis
@@ -14,14 +14,14 @@ related:
   - /docs/ai-gateway/models-and-providers/provider-filtering-and-ordering
   - /docs/ai-gateway/models-and-providers/provider-timeouts
   - /docs/ai-gateway/authentication-and-byok/byok
-summary: Configure provider options, model fallbacks, BYOK credentials, and prompt caching.
+summary: Configure provider options, model fallbacks, BYOK credentials, and prompt caching through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "451cedddb520f9eaeb664b2cf556a8b417e7a6c47af966d4c6f860bb16757d8c"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "f59193110832cab682fff2f38df02adfc82896bb7ece693b55a1a714a8071115"
 ---
 
-# Advanced Configuration
+# OpenAI Chat Completions Configuration with AI Gateway
 
 Control which providers serve your request, what happens when one fails, and how much of your prompt is cached between calls. For controlling how much a model thinks before answering, see [Reasoning](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning).
 
@@ -33,15 +33,10 @@ Control which providers serve your request, what happens when one fails, and how
 
 - [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fadvanced&source_site=vercel-docs&relationship=related)
 - [Provider & Model Management](https://ai-sdk.dev/docs/ai-sdk-core/provider-management?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fadvanced&source_site=vercel-docs&relationship=related)
-- [Choosing a Provider](https://ai-sdk.dev/docs/getting-started/choosing-a-provider?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fadvanced&source_site=vercel-docs&relationship=related)
-- [Amazon Bedrock](https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fadvanced&source_site=vercel-docs&relationship=related)
-- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fadvanced&source_site=vercel-docs&relationship=related)
-- [Customize timeouts for faster automatic failover on Vercel AI Gateway](https://vercel.com/changelog/provider-level-custom-timeouts-for-faster-fail-over-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fadvanced&source_site=vercel-docs&relationship=related)
-- [Provider Options](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fadvanced&source_site=vercel-docs&relationship=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API.
-- [Bring Your Own Key \\(BYOK\\)](https://vercel.com/docs/ai-gateway/authentication-and-byok/byok?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fadvanced&source_site=vercel-docs&relationship=related) — Learn how to configure your own provider keys with the AI Gateway.
-- [Model Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/model-fallbacks?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fadvanced&source_site=vercel-docs&relationship=related) — Configure model-level failover to try backup models when the primary model is unavailable
-- [Advanced Features](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fadvanced&source_site=vercel-docs&relationship=related) — Advanced Anthropic API features including web search, provider timeouts, and automatic caching.
-- [Custom Reporting](https://vercel.com/docs/ai-gateway/observability-and-spend/custom-reporting?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fadvanced&source_site=vercel-docs&relationship=related) — Query AI Gateway usage data grouped by model, user, tag, provider, or credential type using the Custom Reporting API.
+- [Bring Your Own Key \\(BYOK\\) to AI Gateway](https://vercel.com/docs/ai-gateway/authentication-and-byok/byok?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fadvanced&source_site=vercel-docs&relationship=related) — Learn how to configure your own provider keys with AI Gateway.
+- [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fadvanced&source_site=vercel-docs&relationship=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
+- [AI Gateway Model Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/model-fallbacks?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fadvanced&source_site=vercel-docs&relationship=related) — Configure AI Gateway model fallbacks to try backup models when the primary model is unavailable. Set fallback order and
+- [Call AI Gateway Chat Completions with REST](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fadvanced&source_site=vercel-docs&relationship=related) — Use AI Gateway API directly without client libraries using curl and fetch.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced.graph.md](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fadvanced&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -51,32 +46,6 @@ Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openai-chat-c
 The AI Gateway can route your requests across multiple AI providers for better reliability and performance. You can control which providers are used and in what order through the `providerOptions` parameter.
 
 Example request
-
-#### cURL
-
-```bash filename="provider-options.sh"
-curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
-  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "anthropic/claude-opus-5",
-    "messages": [
-      {
-        "role": "user",
-        "content": "Tell me the history of the San Francisco Mission-style burrito in two paragraphs."
-      }
-    ],
-    "stream": false,
-    "providerOptions": {
-      "gateway": {
-        "order": [
-          "vertex",
-          "anthropic"
-        ]
-      }
-    }
-  }'
-```
 
 #### TypeScript
 
@@ -90,7 +59,6 @@ const openai = new OpenAI({
   baseURL: 'https://ai-gateway.vercel.sh/v1',
 });
 
-// @ts-expect-error
 const completion = await openai.chat.completions.create({
   model: 'anthropic/claude-opus-5',
   messages: [
@@ -102,9 +70,12 @@ const completion = await openai.chat.completions.create({
   ],
   stream: false,
   // Provider options for gateway routing preferences
-  providerOptions: {
-    gateway: {
-      order: ['vertex', 'anthropic'], // Try Vertex AI first, then Anthropic
+  // AI Gateway extension fields are not included in the upstream SDK types.
+  ...{
+    providerOptions: {
+      gateway: {
+        order: ['vertex', 'anthropic'], // Try Vertex AI first, then Anthropic
+      },
     },
   },
 });
@@ -149,6 +120,32 @@ print('Assistant:', completion.choices[0].message.content)
 print('Tokens used:', completion.usage)
 ```
 
+#### cURL
+
+```bash filename="provider-options.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "anthropic/claude-opus-5",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Tell me the history of the San Francisco Mission-style burrito in two paragraphs."
+      }
+    ],
+    "stream": false,
+    "providerOptions": {
+      "gateway": {
+        "order": [
+          "vertex",
+          "anthropic"
+        ]
+      }
+    }
+  }'
+```
+
 > **💡 Note:** **Provider routing:** In this example, the gateway will first attempt to use
 > Vertex AI to serve the Claude model. If Vertex AI is unavailable or fails, it
 > will fall back to Anthropic. Other providers are still available but will only
@@ -161,28 +158,6 @@ You can specify fallback models that will be tried in order if the primary model
 ### Option 1: Direct `models` field
 
 The simplest way is to use the `models` field directly at the top level of your request:
-
-#### cURL
-
-```bash filename="model-fallbacks.sh"
-curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
-  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "openai/gpt-5.6-sol",
-    "models": [
-      "anthropic/claude-opus-5",
-      "google/gemini-3.6-flash"
-    ],
-    "messages": [
-      {
-        "role": "user",
-        "content": "Write a haiku about TypeScript."
-      }
-    ],
-    "stream": false
-  }'
-```
 
 #### TypeScript
 
@@ -197,9 +172,11 @@ const openai = new OpenAI({
 });
 
 const completion = await openai.chat.completions.create({
-  model: 'openai/gpt-5.6-sol', // Primary model
+  model: 'openai/gpt-6-astra', // Primary model
   // @ts-ignore - models is a gateway extension
-  models: ['anthropic/claude-opus-5', 'google/gemini-3.6-flash'], // Fallback models
+  ...{
+    models: ['anthropic/claude-opus-5', 'google/gemini-3.6-flash'],
+  }, // Fallback models
   messages: [
     {
       role: 'user',
@@ -229,7 +206,7 @@ client = OpenAI(
 )
 
 completion = client.chat.completions.create(
-    model='openai/gpt-5.6-sol',  # Primary model
+    model='openai/gpt-6-astra',  # Primary model
     messages=[
         {
             'role': 'user',
@@ -249,35 +226,31 @@ print('Assistant:', completion.choices[0].message.content)
 print('Model used:', completion.model)
 ```
 
-### Option 2: Via provider options
-
-Alternatively, you can specify model fallbacks through the `providerOptions.gateway.models` field:
-
 #### cURL
 
-```bash filename="model-fallbacks-provider-options.sh"
+```bash filename="model-fallbacks.sh"
 curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
   -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "openai/gpt-5.6-sol",
+    "model": "openai/gpt-6-astra",
+    "models": [
+      "anthropic/claude-opus-5",
+      "google/gemini-3.6-flash"
+    ],
     "messages": [
       {
         "role": "user",
         "content": "Write a haiku about TypeScript."
       }
     ],
-    "stream": false,
-    "providerOptions": {
-      "gateway": {
-        "models": [
-          "anthropic/claude-opus-5",
-          "google/gemini-3.6-flash"
-        ]
-      }
-    }
+    "stream": false
   }'
 ```
+
+### Option 2: Via provider options
+
+Alternatively, you can specify model fallbacks through the `providerOptions.gateway.models` field:
 
 #### TypeScript
 
@@ -291,9 +264,8 @@ const openai = new OpenAI({
   baseURL: 'https://ai-gateway.vercel.sh/v1',
 });
 
-// @ts-expect-error
 const completion = await openai.chat.completions.create({
-  model: 'openai/gpt-5.6-sol', // Primary model
+  model: 'openai/gpt-6-astra', // Primary model
   messages: [
     {
       role: 'user',
@@ -302,9 +274,11 @@ const completion = await openai.chat.completions.create({
   ],
   stream: false,
   // Model fallbacks via provider options
-  providerOptions: {
-    gateway: {
-      models: ['anthropic/claude-opus-5', 'google/gemini-3.6-flash'], // Fallback models
+  ...{
+    providerOptions: {
+      gateway: {
+        models: ['anthropic/claude-opus-5', 'google/gemini-3.6-flash'], // Fallback models
+      },
     },
   },
 });
@@ -327,7 +301,7 @@ client = OpenAI(
 )
 
 completion = client.chat.completions.create(
-    model='openai/gpt-5.6-sol',  # Primary model
+    model='openai/gpt-6-astra',  # Primary model
     messages=[
         {
             'role': 'user',
@@ -349,13 +323,39 @@ print('Assistant:', completion.choices[0].message.content)
 print('Model used:', completion.model)
 ```
 
+#### cURL
+
+```bash filename="model-fallbacks-provider-options.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "openai/gpt-6-astra",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Write a haiku about TypeScript."
+      }
+    ],
+    "stream": false,
+    "providerOptions": {
+      "gateway": {
+        "models": [
+          "anthropic/claude-opus-5",
+          "google/gemini-3.6-flash"
+        ]
+      }
+    }
+  }'
+```
+
 > **💡 Note:** **Which approach to use:** Both methods achieve the same result. Use the
 > direct `models` field (Option 1) for simplicity, or use `providerOptions`
 > (Option 2) if you're already using provider options for other configurations.
 
 Both configurations will:
 
-1. Try the primary model (`openai/gpt-5.6-sol`) first
+1. Try the primary model (`openai/gpt-6-astra`) first
 2. If it fails, try `anthropic/claude-opus-5`
 3. If that also fails, try `google/gemini-3.6-flash`
 4. Return the result from the first model that succeeds
@@ -363,32 +363,6 @@ Both configurations will:
 ## Streaming with provider options
 
 Provider options work with streaming requests as well:
-
-#### cURL
-
-```bash filename="streaming-provider-options.sh"
-curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
-  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "anthropic/claude-opus-5",
-    "messages": [
-      {
-        "role": "user",
-        "content": "Tell me the history of the San Francisco Mission-style burrito in two paragraphs."
-      }
-    ],
-    "stream": true,
-    "providerOptions": {
-      "gateway": {
-        "order": [
-          "vertex",
-          "anthropic"
-        ]
-      }
-    }
-  }'
-```
 
 #### TypeScript
 
@@ -402,7 +376,6 @@ const openai = new OpenAI({
   baseURL: 'https://ai-gateway.vercel.sh/v1',
 });
 
-// @ts-expect-error
 const stream = await openai.chat.completions.create({
   model: 'anthropic/claude-opus-5',
   messages: [
@@ -413,9 +386,11 @@ const stream = await openai.chat.completions.create({
     },
   ],
   stream: true,
-  providerOptions: {
-    gateway: {
-      order: ['vertex', 'anthropic'],
+  ...{
+    providerOptions: {
+      gateway: {
+        order: ['vertex', 'anthropic'],
+      },
     },
   },
 });
@@ -465,6 +440,32 @@ for chunk in stream:
         print(content, end='', flush=True)
 ```
 
+#### cURL
+
+```bash filename="streaming-provider-options.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "anthropic/claude-opus-5",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Tell me the history of the San Francisco Mission-style burrito in two paragraphs."
+      }
+    ],
+    "stream": true,
+    "providerOptions": {
+      "gateway": {
+        "order": [
+          "vertex",
+          "anthropic"
+        ]
+      }
+    }
+  }'
+```
+
 For more details about available providers and advanced provider configuration, see the [Provider Options documentation](/docs/ai-gateway/models-and-providers/provider-options).
 
 ## Provider sorting
@@ -479,29 +480,6 @@ Use the `sort` option to rank providers by cost, latency, or throughput. The gat
 
 You can pass `sort` through `providerOptions.gateway`:
 
-#### cURL
-
-```bash filename="sort-provider-options.sh"
-curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
-  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "anthropic/claude-sonnet-5",
-    "messages": [
-      {
-        "role": "user",
-        "content": "What is 2 + 2? Answer in one sentence."
-      }
-    ],
-    "stream": false,
-    "providerOptions": {
-      "gateway": {
-        "sort": "tps"
-      }
-    }
-  }'
-```
-
 #### TypeScript
 
 ```typescript filename="sort-provider-options.ts"
@@ -514,7 +492,6 @@ const openai = new OpenAI({
   baseURL: 'https://ai-gateway.vercel.sh/v1',
 });
 
-// @ts-expect-error - providerOptions is a gateway extension
 const completion = await openai.chat.completions.create({
   model: 'anthropic/claude-sonnet-5',
   messages: [
@@ -524,9 +501,11 @@ const completion = await openai.chat.completions.create({
     },
   ],
   stream: false,
-  providerOptions: {
-    gateway: {
-      sort: 'tps', // Use the highest throughput provider first
+  ...{
+    providerOptions: {
+      gateway: {
+        sort: 'tps', // Use the highest throughput provider first
+      },
     },
   },
 });
@@ -568,11 +547,9 @@ completion = client.chat.completions.create(
 print('Assistant:', completion.choices[0].message.content)
 ```
 
-Or use the `provider` shorthand directly in the request body:
-
 #### cURL
 
-```bash filename="sort-provider-shorthand.sh"
+```bash filename="sort-provider-options.sh"
 curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
   -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
   -H "Content-Type: application/json" \
@@ -585,11 +562,15 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
       }
     ],
     "stream": false,
-    "provider": {
-      "sort": "tps"
+    "providerOptions": {
+      "gateway": {
+        "sort": "tps"
+      }
     }
   }'
 ```
+
+Or use the `provider` shorthand directly in the request body:
 
 #### TypeScript
 
@@ -603,7 +584,6 @@ const openai = new OpenAI({
   baseURL: 'https://ai-gateway.vercel.sh/v1',
 });
 
-// @ts-expect-error - provider is a gateway extension
 const completion = await openai.chat.completions.create({
   model: 'anthropic/claude-sonnet-5',
   messages: [
@@ -613,8 +593,10 @@ const completion = await openai.chat.completions.create({
     },
   ],
   stream: false,
-  provider: {
-    sort: 'tps', // Use the highest throughput provider first
+  ...{
+    provider: {
+      sort: 'tps',
+    },
   },
 });
 
@@ -653,6 +635,27 @@ completion = client.chat.completions.create(
 print('Assistant:', completion.choices[0].message.content)
 ```
 
+#### cURL
+
+```bash filename="sort-provider-shorthand.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "anthropic/claude-sonnet-5",
+    "messages": [
+      {
+        "role": "user",
+        "content": "What is 2 + 2? Answer in one sentence."
+      }
+    ],
+    "stream": false,
+    "provider": {
+      "sort": "tps"
+    }
+  }'
+```
+
 > **💡 Note:** The `provider` shorthand is equivalent to setting the same fields in `providerOptions.gateway`. If both are provided for the same option, they must resolve to the same value or the request will fail. For the full details on sorting behavior, metrics, and health interactions, see [Provider Filtering, Ordering & Sorting](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering#provider-sorting).
 
 ## Provider timeouts
@@ -677,27 +680,6 @@ You can pass your own provider credentials on a per-request basis using the `byo
 
 Example request
 
-#### cURL
-
-```bash filename="byok.sh"
-curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
-  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "anthropic/claude-opus-5",
-    "messages": [
-      { "role": "user", "content": "Hello, world!" }
-    ],
-    "providerOptions": {
-      "gateway": {
-        "byok": {
-          "anthropic": [{ "apiKey": "'"$ANTHROPIC_API_KEY"'" }]
-        }
-      }
-    }
-  }'
-```
-
 #### TypeScript
 
 ```typescript filename="byok.ts"
@@ -710,7 +692,6 @@ const openai = new OpenAI({
   baseURL: 'https://ai-gateway.vercel.sh/v1',
 });
 
-// @ts-expect-error - byok is a gateway extension
 const completion = await openai.chat.completions.create({
   model: 'anthropic/claude-opus-5',
   messages: [
@@ -719,10 +700,16 @@ const completion = await openai.chat.completions.create({
       content: 'Hello, world!',
     },
   ],
-  providerOptions: {
-    gateway: {
-      byok: {
-        anthropic: [{ apiKey: process.env.ANTHROPIC_API_KEY }],
+  ...{
+    providerOptions: {
+      gateway: {
+        byok: {
+          anthropic: [
+            {
+              apiKey: process.env.ANTHROPIC_API_KEY,
+            },
+          ],
+        },
       },
     },
   },
@@ -764,6 +751,27 @@ completion = client.chat.completions.create(
 )
 
 print(completion.choices[0].message.content)
+```
+
+#### cURL
+
+```bash filename="byok.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "anthropic/claude-opus-5",
+    "messages": [
+      { "role": "user", "content": "Hello, world!" }
+    ],
+    "providerOptions": {
+      "gateway": {
+        "byok": {
+          "anthropic": [{ "apiKey": "'"$ANTHROPIC_API_KEY"'" }]
+        }
+      }
+    }
+  }'
 ```
 
 The `byok` option is a record where keys are provider slugs and values are arrays of credential objects. Each provider can have multiple credentials that are tried in order.
@@ -813,26 +821,6 @@ Use `caching: 'auto'` in `providerOptions` to let AI Gateway automatically add c
 
 For fine-grained control, you can manually mark content with `cache_control`:
 
-#### cURL
-
-```bash filename="manual-caching.sh"
-curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
-  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "anthropic/claude-opus-5",
-    "messages": [
-      {
-        "role": "user",
-        "content": "Analyze this document and summarize the key points.",
-        "cache_control": {
-          "type": "ephemeral"
-        }
-      }
-    ]
-  }'
-```
-
 #### TypeScript
 
 ```typescript filename="prompt-caching.ts"
@@ -851,8 +839,10 @@ const response = await openai.chat.completions.create({
     {
       role: 'user',
       content: 'Analyze this document and summarize the key points.',
-      cache_control: {
-        type: 'ephemeral',
+      ...{
+        cache_control: {
+          type: 'ephemeral',
+        },
       },
     },
   ],
@@ -888,6 +878,26 @@ response = client.chat.completions.create(
 )
 
 print(response.choices[0].message.content)
+```
+
+#### cURL
+
+```bash filename="manual-caching.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "anthropic/claude-opus-5",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Analyze this document and summarize the key points.",
+        "cache_control": {
+          "type": "ephemeral"
+        }
+      }
+    ]
+  }'
 ```
 
 > **💡 Note:** **Cache control types:** The `ephemeral` cache type stores content for the

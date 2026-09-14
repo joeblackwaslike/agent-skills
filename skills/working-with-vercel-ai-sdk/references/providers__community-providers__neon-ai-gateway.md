@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/neon-ai-gateway.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "5468b7d0552bc250bd9214590972be5a14556c8219ecd4a2b595ea2d07488e21"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "4f2545abd6a4c2cd192ea0427bdb4b04e0047db2cff11e01ad7ae6d26b22cbea"
 ---
 
 # Neon AI Gateway
@@ -212,6 +212,7 @@ Model requests follow the same branch isolation as the database. The [AI Gateway
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
 - [Interfaze](/providers/community-providers/interfaze)
+- [Telnyx](/providers/community-providers/telnyx)
 - [Flowise](/providers/community-providers/flowise)
 
 

@@ -1,10 +1,10 @@
 ---
-title: Reference-to-Video Generation
+title: AI Gateway Reference-to-Video Generation
 product: vercel
 url: /docs/ai-gateway/modalities/video-generation/reference-to-video
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/video-generation/reference-to-video"
-last_updated: 2026-08-27
-type: conceptual
+last_updated: 2026-09-08
+type: how-to
 prerequisites:
   - /docs/ai-gateway/modalities/video-generation
   - /docs/ai-gateway/modalities
@@ -17,11 +17,11 @@ related:
 summary: Generate videos featuring characters from reference images or videos using Google Veo, KlingAI, Wan, Seedance, or Grok Imagine Video through AI...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/reference-to-video.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "7c16cc26b8fe3fb1bd0d8d879ab73bf40c6a17e7a8cbff6aa3c7efba771fa5f8"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "aa5895e6ad76230bf8b8a7e89ac5f160f3caf0865c94248bf39ff2554f2c69eb"
 ---
 
-# Reference-to-Video Generation
+# AI Gateway Reference-to-Video Generation
 
 Generate a completely new video scene featuring characters from reference media.
 
@@ -40,9 +40,7 @@ Generate a completely new video scene featuring characters from reference media.
 - [Alibaba](https://ai-sdk.dev/providers/ai-sdk-providers/alibaba?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Freference-to-video&source_site=vercel-docs&relationship=related)
 - [Seedance 2.5 now available on Vercel AI Gateway](https://vercel.com/changelog/seedance-2-5-now-available-on-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Freference-to-video&source_site=vercel-docs&relationship=related)
 - [Kling video models on AI Gateway](https://vercel.com/changelog/kling-video-models-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Freference-to-video&source_site=vercel-docs&relationship=related)
-- [Text-to-Video Generation](https://vercel.com/docs/ai-gateway/modalities/video-generation/text-to-video?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Freference-to-video&source_site=vercel-docs&relationship=related) — Generate videos from text prompts using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI G
-- [Motion Control Video Generation](https://vercel.com/docs/ai-gateway/modalities/video-generation/motion-control?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Freference-to-video&source_site=vercel-docs&relationship=related) — Transfer motion from a reference video to a character image using KlingAI through AI Gateway.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Freference-to-video&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
+- [Video Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/video?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Freference-to-video&source_site=vercel-docs&relationship=related) — Generate a video from a text prompt using AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation/reference-to-video.graph.md](/docs/ai-gateway/modalities/video-generation/reference-to-video.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Freference-to-video&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

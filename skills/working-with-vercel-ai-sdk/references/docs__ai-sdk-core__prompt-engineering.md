@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/prompt-engineering.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "b129cebf73c66810021b886f7548d041fdea43cae4ea1a7c61cf68b6ce550634"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "12bafba738a62fb6acdb6ee11770f9bf8fd3363f86ae0e2c6abff261e5796e26"
 ---
 
 # Prompt Engineering
@@ -186,6 +186,7 @@ console.log(result.finalStep.request.body);
 - [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
 - [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
+- [Batch](/docs/ai-sdk-core/batch)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)

@@ -14,8 +14,8 @@ related:
 summary: Learn how Vercel follows the latest privacy and data compliance standards with its Speed Insights feature.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/privacy-policy.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "776a1c864870789b70bd3796eafd339046bdc9f66d54eca02aa622f309dc0c85"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "96c62c44fa07f6908ba49ee3c1c9b447313c6b409760e14441d3eb688f33a65b"
 ---
 
 # Vercel Speed Insights Privacy & Compliance
@@ -38,7 +38,6 @@ To ensure that the Speed Insights feature can be used despite many different reg
 - [Troubleshooting Vercel Speed Insights](https://vercel.com/docs/speed-insights/troubleshooting?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fprivacy-policy&source_site=vercel-docs&relationship=related) — Learn about common issues and how to troubleshoot Vercel Speed Insights.
 - [Vercel Web Analytics](https://vercel.com/docs/analytics?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fprivacy-policy&source_site=vercel-docs&relationship=related) — With Web Analytics, you can get detailed insights into your website's visitors with new metrics like top pages, top refe
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fprivacy-policy&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fprivacy-policy&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/speed-insights/privacy-policy.graph.md](/docs/speed-insights/privacy-policy.graph.md?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fprivacy-policy&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

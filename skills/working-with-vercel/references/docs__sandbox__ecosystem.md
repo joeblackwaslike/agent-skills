@@ -16,8 +16,8 @@ related:
 summary: Use Vercel Sandbox with the agent frameworks, model SDKs, and coding agents you already work with.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/ecosystem.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "f4664a20e47f2a7b3e7b0f3ee45ed84fd72454486d7f7f5c613f81b9f0e0214a"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "d9d9e7f91a25b27898534627ffe2973083e33e18c198b9d3550fae0fac90b17e"
 ---
 
 # Ecosystem
@@ -35,14 +35,14 @@ instead of on your host.
 
 - [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
 - [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related)
-- [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
+- [Using TanStack AI with Vercel Sandbox](https://vercel.com/kb/guide/tanstack-ai-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related) — Run coding agents in isolated Vercel Sandbox microVMs with the @tanstack/ai-sandbox-vercel provider, with durable resume
 - [How to run Herdr coding agents in isolated Vercel Sandboxes](https://vercel.com/kb/guide/run-herdr-coding-agents-isolated-vercel-sandboxes?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related) — Install the vercel.sandbox plugin for Herdr, approve an upload manifest, run each AI coding agent in its own isolated Ve
-- [The Agent Stack](https://vercel.com/blog/agent-stack?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related)
+- [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
 - [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
 - [Run isolated AI agents in one sandbox](https://vercel.com/docs/sandbox/concepts/multi-agent?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related) — Give each AI agent an isolated Linux user in a Vercel Sandbox with the @vercel/sandbox createUser, createGroup, and asUs
+- [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 - [eve](https://vercel.com/docs/eve?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related) — Build and deploy durable backend AI agents with eve, an open-source, filesystem-first framework.
-- [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 
 Full cross-link map for this page: [/docs/sandbox/ecosystem.graph.md](/docs/sandbox/ecosystem.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -70,6 +70,12 @@ while Vercel credentials authenticate the sandbox.
 | [Devin](/docs/sandbox/ecosystem/devin) | Coding agent  | Devin Outposts sessions in Sandbox microVMs |
 | [Herdr](/docs/sandbox/ecosystem/herdr) | Agent manager | Terminal coding agents in persistent Sandboxes |
 | [Hermes](/docs/sandbox/ecosystem/hermes) | Coding agent | Hermes terminal commands in Sandbox microVMs |
+
+## Eval harnesses
+
+| Integration                              | Type         | Use case                                        |
+| ---------------------------------------- | ------------ | ------------------------------------------------ |
+| [Harbor](/docs/sandbox/ecosystem/harbor) | Eval harness | Terminal-Bench and benchmark trials in Sandbox microVMs |
 
 
 ---

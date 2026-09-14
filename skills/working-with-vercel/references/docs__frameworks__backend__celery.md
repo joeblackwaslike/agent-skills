@@ -17,8 +17,8 @@ related:
 summary: Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without a long-lived worker process.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/celery.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "76c29983c8ebc9b46a88952b3bcf9dc717ea4f653346bd5ebf779e1de41a36ab"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "8b37c0f37454a37b989045369b60292a7e192aa87fe62f09ca1b7f3ee07420aa"
 ---
 
 # Run background tasks with Celery on Vercel
@@ -42,7 +42,6 @@ Vercel Function, so you don't need to run a long-lived worker process.
 - [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fcelery&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
 - [Deploy Dramatiq workers on Vercel](https://vercel.com/docs/frameworks/backend/dramatiq?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fcelery&source_site=vercel-docs&relationship=related) — Deploy Dramatiq workers on Vercel. Learn how Dramatiq actors use Vercel Queues and Vercel Functions to process backgroun
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fcelery&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fcelery&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/frameworks/backend/celery.graph.md](/docs/frameworks/backend/celery.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fcelery&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "fdadd5d0368caaec51509248039c7e3e1ac0be7dd2dce5959affa764013a907d"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "06fd30d60eaff70dc8c386ae753ebc1b46b5c8d983de5eef532fdb7a336947ac"
 ---
 
 # AI SDK Core
@@ -52,6 +52,31 @@ AI SDK Core contains the following main functions:
       description:
         'Generate videos based on a given prompt using a video model.',
       href: '/docs/reference/ai-sdk-core/generate-video',
+    },
+    {
+      title: 'experimental_startBatch()',
+      description: 'Start an asynchronous text-generation batch.',
+      href: '/docs/reference/ai-sdk-core/start-batch',
+    },
+    {
+      title: 'experimental_getBatchStatus()',
+      description: 'Retrieve the status of an asynchronous batch.',
+      href: '/docs/reference/ai-sdk-core/get-batch-status',
+    },
+    {
+      title: 'experimental_getBatchResults()',
+      description: 'Retrieve terminal results from an asynchronous batch.',
+      href: '/docs/reference/ai-sdk-core/get-batch-results',
+    },
+    {
+      title: 'experimental_cancelBatch()',
+      description: 'Request cancellation of an asynchronous batch.',
+      href: '/docs/reference/ai-sdk-core/cancel-batch',
+    },
+    {
+      title: 'experimental_listBatches()',
+      description: 'List asynchronous batches and their latest statuses.',
+      href: '/docs/reference/ai-sdk-core/list-batches',
     },
     {
       title: 'transcribe()',
@@ -246,10 +271,15 @@ It also contains the following helper functions:
   - [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
   - [createAgentUIStreamResponse](/docs/reference/ai-sdk-core/create-agent-ui-stream-response)
   - [pipeAgentUIStreamToResponse](/docs/reference/ai-sdk-core/pipe-agent-ui-stream-to-response)
+  - [experimental_startBatch](/docs/reference/ai-sdk-core/start-batch)
   - [tool](/docs/reference/ai-sdk-core/tool)
+  - [experimental_getBatchStatus](/docs/reference/ai-sdk-core/get-batch-status)
   - [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
+  - [experimental_getBatchResults](/docs/reference/ai-sdk-core/get-batch-results)
+  - [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
   - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
   - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+  - [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
   - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
   - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
   - [jsonSchema](/docs/reference/ai-sdk-core/json-schema)

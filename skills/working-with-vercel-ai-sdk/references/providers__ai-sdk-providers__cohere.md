@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/cohere.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "ce6c3176a7f19702d91e3c7053b4bbd39e227c8ad73686d0b1206df7db35c030"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "3106a609bc1006d7933f89518efd3b26ca0ab389b99488e54df87611f7134485"
 ---
 
 # Cohere Provider
@@ -366,7 +366,6 @@ The following provider options are available:
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
-- [LMNT](/providers/ai-sdk-providers/lmnt)
 - [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)

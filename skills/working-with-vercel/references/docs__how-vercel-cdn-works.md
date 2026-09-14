@@ -16,8 +16,8 @@ related:
 summary: "Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low latency."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/how-vercel-cdn-works.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "b93c9e04b6abfa2083514ef0e6d34e0f3460bb12a81f806c0db2c9efa5542bc5"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "f9882e2cb740704209b391fa85af51a4c4132044748bca64b490643d472ab911"
 ---
 
 # How Vercel CDN works
@@ -30,6 +30,7 @@ Every request to a Vercel deployment flows through a globally distributed CDN be
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to choose a Salesforce Commerce Cloud storefront: PWA Kit, Storefront Next, or Next.js](https://vercel.com/kb/guide/salesforce-pwa-kit-vs-storefront-next-vs-nextjs?from=related&source_path=%2Fdocs%2Fhow-vercel-cdn-works&source_site=vercel-docs&relationship=related) — Compare PWA Kit, Storefront Next, and a Next.js storefront on Vercel for Salesforce Commerce Cloud. Learn how caching, p
 - [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn?from=related&source_path=%2Fdocs%2Fhow-vercel-cdn-works&source_site=vercel-docs&relationship=related) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
 - [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure?from=related&source_path=%2Fdocs%2Fhow-vercel-cdn-works&source_site=vercel-docs&relationship=related)
 - [How we run Vercel's CDN in front of Discourse](https://vercel.com/blog/how-we-run-vercels-cdn-in-front-of-discourse?from=related&source_path=%2Fdocs%2Fhow-vercel-cdn-works&source_site=vercel-docs&relationship=related)

@@ -14,8 +14,8 @@ related:
 summary: Set conditions that must be met before proceeding to the next phase of the deployment lifecycle.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-checks.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "2c7e307240865fbefe55b174e7f1533d07545a30e25305ea0c79e08344b40363"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "fa549599ab9d71ed0b7529df5e781962c0c49b2a4b030e3ae2985e27028aada4"
 ---
 
 # Deployment Checks
@@ -36,8 +36,8 @@ Deployment Checks are conditions that must be met before promoting a production 
 - [How can I use GitHub Actions with Vercel?](https://vercel.com/kb/guide/how-can-i-use-github-actions-with-vercel?from=related&source_path=%2Fdocs%2Fdeployment-checks&source_site=vercel-docs&relationship=related) — GitHub Actions with Vercel works best when you skip duplicate builds. Learn the 4-command CLI pattern, --prebuilt flag,
 - [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel?from=related&source_path=%2Fdocs%2Fdeployment-checks&source_site=vercel-docs&relationship=related) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
 - [Working with Checks](https://vercel.com/docs/checks?from=related&source_path=%2Fdocs%2Fdeployment-checks&source_site=vercel-docs&relationship=related) — Vercel automatically keeps an eye on various aspects of your web application using the Checks API. Learn how to use Chec
-- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fdeployment-checks&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Deploying Git Repositories with Vercel](https://vercel.com/docs/git?from=related&source_path=%2Fdocs%2Fdeployment-checks&source_site=vercel-docs&relationship=related) — Vercel automatically deploys supported Git repositories on every branch push and when changes merge into the production
+- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fdeployment-checks&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab?from=related&source_path=%2Fdocs%2Fdeployment-checks&source_site=vercel-docs&relationship=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
 - [Glossary](https://vercel.com/docs/glossary?from=related&source_path=%2Fdocs%2Fdeployment-checks&source_site=vercel-docs&relationship=related) — Learn about the terms and concepts used in Vercel's products and documentation.
 

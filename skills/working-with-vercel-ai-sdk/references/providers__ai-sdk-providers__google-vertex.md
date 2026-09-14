@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/google-vertex.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "97f3768844ac8456fc57fcd2b88b2b0014a3c1555575414186867650bbd94c08"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "2220b8df5a562b1d46bf54b06f114f183f7243b536b14954967dd70d49a16297"
 ---
 
 # Google Vertex Provider
@@ -135,6 +135,13 @@ You can use the following optional settings to customize the provider instance:
 
   Optional. Base URL for the Google Vertex API calls e.g. to use proxy servers. By default, it is constructed using the location and project:
   `https://${location}-aiplatform.googleapis.com/v1/projects/${project}/locations/${location}/publishers/google`
+
+- **toolResultDownloads** _object_
+
+  Settings for downloading remote files in tool results before sending them to Vertex as inline data.
+  - **maxBytes** _number_
+
+    Maximum size in bytes for each downloaded file. Defaults to 7 MiB.
 
 <a id="google-vertex-edge-runtime"></a>
 #### Edge Runtime
@@ -2188,7 +2195,6 @@ The following models are available through the MaaS provider. You can also pass 
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
-- [LMNT](/providers/ai-sdk-providers/lmnt)
 - [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)

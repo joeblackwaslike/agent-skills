@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/codex.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "9f8528133f8c3fd8935a8c6563fc3ec97dc18dc4a819ff0ff4f0b48c9c745c92"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "7d0b687d91995f0d664b4924a53d52a5e338269e645cbef3949865eb5ee848c0"
 ---
 
 # Codex Harness
@@ -144,6 +144,10 @@ Supported environment variables:
 - `OPENAI_ORGANIZATION`
 - `OPENAI_PROJECT`
 
+If no applicable credential environment variable is set, the adapter attempts
+to resolve a native subscription from the host system unless AI Gateway
+authentication is selected.
+
 Select a specific authentication mode when you do not want automatic detection:
 
 ```ts
@@ -219,6 +223,7 @@ Codex built-ins such as `bash` or `webSearch` will throw.
 - [Cline](/providers/ai-sdk-harnesses/cline)
 - [Cursor](/providers/ai-sdk-harnesses/cursor)
 - [fx](/providers/ai-sdk-harnesses/fx)
+- [GitHub Copilot](/providers/ai-sdk-harnesses/github-copilot)
 
 
 [Full Sitemap](/sitemap.md)

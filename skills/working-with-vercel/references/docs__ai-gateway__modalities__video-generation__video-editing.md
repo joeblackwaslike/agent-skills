@@ -1,10 +1,10 @@
 ---
-title: Video Editing
+title: AI Gateway Video Editing
 product: vercel
 url: /docs/ai-gateway/modalities/video-generation/video-editing
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/video-generation/video-editing"
-last_updated: 2026-08-24
-type: conceptual
+last_updated: 2026-09-08
+type: how-to
 prerequisites:
   - /docs/ai-gateway/modalities/video-generation
   - /docs/ai-gateway/modalities
@@ -13,11 +13,11 @@ related:
 summary: Edit existing videos using text prompts with Grok Imagine Video through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/video-editing.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "558c3786f22062d2b6c86e5d904d2cae0654879b30ab11b54bf4f9838baf4451"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "ae4e0347ba985e39a6bfa698f81b77fc8c1654c13236d31ba02aa7b842633f58"
 ---
 
-# Video Editing
+# AI Gateway Video Editing
 
 Edit existing videos using text prompts. Describe the changes you want and the model modifies the video accordingly.
 
@@ -32,13 +32,9 @@ Edit existing videos using text prompts. Describe the changes you want and the m
 - [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fvideo-editing&source_site=vercel-docs&relationship=related) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
 - [AI Gateway now supports asynchronous video generation](https://vercel.com/changelog/ai-gateway-now-supports-asynchronous-video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fvideo-editing&source_site=vercel-docs&relationship=related)
 - [Grok Imagine Video 1.5 on AI Gateway](https://vercel.com/changelog/grok-imagine-video-1-5-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fvideo-editing&source_site=vercel-docs&relationship=related)
-- [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fvideo-editing&source_site=vercel-docs&relationship=related)
-- [Video Extension](https://vercel.com/docs/ai-gateway/modalities/video-generation/video-extension?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fvideo-editing&source_site=vercel-docs&relationship=related) — Extend existing videos from their last frame with Grok Imagine Video through AI Gateway.
+- [AI Gateway Video Extension](https://vercel.com/docs/ai-gateway/modalities/video-generation/video-extension?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fvideo-editing&source_site=vercel-docs&relationship=related) — Extend existing videos from their last frame with Grok Imagine Video through AI Gateway.
 - [Veo video models on AI Gateway](https://vercel.com/changelog/veo-video-models-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fvideo-editing&source_site=vercel-docs&relationship=related)
-- [Kling video models on AI Gateway](https://vercel.com/changelog/kling-video-models-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fvideo-editing&source_site=vercel-docs&relationship=related)
-- [Motion Control Video Generation](https://vercel.com/docs/ai-gateway/modalities/video-generation/motion-control?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fvideo-editing&source_site=vercel-docs&relationship=related) — Transfer motion from a reference video to a character image using KlingAI through AI Gateway.
-- [Text-to-Video Generation](https://vercel.com/docs/ai-gateway/modalities/video-generation/text-to-video?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fvideo-editing&source_site=vercel-docs&relationship=related) — Generate videos from text prompts using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI G
-- [Reference-to-Video Generation](https://vercel.com/docs/ai-gateway/modalities/video-generation/reference-to-video?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fvideo-editing&source_site=vercel-docs&relationship=related) — Generate videos featuring characters from reference images or videos using Google Veo, KlingAI, Wan, Seedance, or Grok I
+- [Video Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/video?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fvideo-editing&source_site=vercel-docs&relationship=related) — Generate a video from a text prompt using AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation/video-editing.graph.md](/docs/ai-gateway/modalities/video-generation/video-editing.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fvideo-editing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

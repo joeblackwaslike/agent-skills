@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/spark.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "273fa371beee249c4e899a239c65728f9e4523ccf0e9da00e262c012bff0c998"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "2dbecc3d225160f4beb8c5d6ea27dc63d7d1eb2a0adff2494eeedb7e3c794ad4"
 ---
 
 # Spark Provider
@@ -108,6 +108,7 @@ Please check out the **[Spark provider documentation](https://github.com/klren03
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
 - [Interfaze](/providers/community-providers/interfaze)
+- [Telnyx](/providers/community-providers/telnyx)
 - [Flowise](/providers/community-providers/flowise)
 
 

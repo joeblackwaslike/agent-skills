@@ -16,8 +16,8 @@ related:
 summary: Diagnose and fix slow Vercel Functions using CLI tools, logs, and timing analysis.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/debug-slow-functions.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "81f0871ff0eb290748c0a1077a7f72506940d032d8f401c61d41380bb02d20a7"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "c68eb9e741325b5e649381453908187fe2a6c97525a223064a69872bff2425a3"
 ---
 
 # Debugging slow Vercel Functions
@@ -32,13 +32,12 @@ Use this guide to diagnose and fix slow Vercel Functions. You'll identify which 
 
 - [How can I improve function cold start performance on Vercel?](https://vercel.com/kb/guide/improve-function-cold-start-performance-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fdebug-slow-functions&source_site=vercel-docs&relationship=related) — Learn how to confirm whether cold starts cause function latency on Vercel, and how Fluid compute reduces how often they
 - [Investigate latency issues and slowness on Vercel](https://vercel.com/kb/guide/investigate-latency-issues-and-slowness?from=related&source_path=%2Fdocs%2Ffunctions%2Fdebug-slow-functions&source_site=vercel-docs&relationship=related) — Learn how to use Observability to investigate latency issues and slowness on Vercel.
+- [Troubleshoot and optimize Function Invocations on Vercel](https://vercel.com/kb/guide/optimize-function-invocations?from=related&source_path=%2Fdocs%2Ffunctions%2Fdebug-slow-functions&source_site=vercel-docs&relationship=related) — Diagnose which routes drive Function Invocations and learn to optimize them. Separate necessary dynamic traffic from div
 - [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out?from=related&source_path=%2Fdocs%2Ffunctions%2Fdebug-slow-functions&source_site=vercel-docs&relationship=related) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
 - [How to Effectively Load Test Your Vercel Application](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application?from=related&source_path=%2Fdocs%2Ffunctions%2Fdebug-slow-functions&source_site=vercel-docs&relationship=related) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
-- [How do I lower my Vercel Function execution time?](https://vercel.com/kb/guide/how-do-i-lower-my-serverless-function-execution-time?from=related&source_path=%2Fdocs%2Ffunctions%2Fdebug-slow-functions&source_site=vercel-docs&relationship=related) — Learn how to lower your Serverless Function execution time.
 - [Diagnosing and fixing cache issues](https://vercel.com/docs/caching/cdn-cache/debug-cache-issues?from=related&source_path=%2Fdocs%2Ffunctions%2Fdebug-slow-functions&source_site=vercel-docs&relationship=related) — Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
 - [Agent Resources](https://vercel.com/docs/agent-resources?from=related&source_path=%2Fdocs%2Ffunctions%2Fdebug-slow-functions&source_site=vercel-docs&relationship=related) — Set up AI coding tools with Vercel documentation, reusable skills, and secure access to projects, deployments, and logs.
 - [CLI Workflows](https://vercel.com/docs/agent-resources/workflows?from=related&source_path=%2Fdocs%2Ffunctions%2Fdebug-slow-functions&source_site=vercel-docs&relationship=related) — End-to-end workflows that show how to compose Vercel CLI commands into complete debugging, deployment, and recovery sess
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fdebug-slow-functions&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/functions/debug-slow-functions.graph.md](/docs/functions/debug-slow-functions.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fdebug-slow-functions&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

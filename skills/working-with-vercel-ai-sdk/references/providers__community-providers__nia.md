@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/nia.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "e9af49f11bfae25ed0ee306b7ca31581f82e29af6bc79f2bfcca3a7c9311389e"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "57de9e7b68c505b07fc400f1340df8fb41f1100d71a893854b5e221cdb3d7c8e"
 ---
 
 # Nia
@@ -209,6 +209,7 @@ for await (const event of session.events) {
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
 - [Interfaze](/providers/community-providers/interfaze)
+- [Telnyx](/providers/community-providers/telnyx)
 - [Flowise](/providers/community-providers/flowise)
 
 

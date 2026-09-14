@@ -14,8 +14,8 @@ related:
 summary: Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/build.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "0d9302edfa660ecb8125e73c6ff7e2ab3f25780b30c5745b1c0ecf60c409497a"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "511b044b4cf7c1d16f5079af40f4c7037d83a2d29336cca530cdeda6859118a3"
 ---
 
 # vercel build
@@ -35,8 +35,8 @@ Build artifacts are placed into the `.vercel/output` directory according to the
 - [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fbuild&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel dev](https://vercel.com/docs/cli/dev?from=related&source_path=%2Fdocs%2Fcli%2Fbuild&source_site=vercel-docs&relationship=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related&source_path=%2Fdocs%2Fcli%2Fbuild&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
-- [vercel link](https://vercel.com/docs/cli/link?from=related&source_path=%2Fdocs%2Fcli%2Fbuild&source_site=vercel-docs&relationship=related) — Learn how to link a local directory to a Vercel Project using the vercel link CLI command.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fbuild&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel link](https://vercel.com/docs/cli/link?from=related&source_path=%2Fdocs%2Fcli%2Fbuild&source_site=vercel-docs&relationship=related) — Learn how to link a local directory to a Vercel Project using the vercel link CLI command.
 
 Full cross-link map for this page: [/docs/cli/build.graph.md](/docs/cli/build.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fbuild&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -104,6 +104,17 @@ vercel build --output ./custom-output
 
 *Using the \`vercel build\` command with the
 \`--output\` option to specify a custom output directory.*
+
+### Standalone
+
+The `--standalone` option creates a standalone build with all dependencies inlined into function output folders, so build artifacts are fully contained within the `.vercel` folder.
+
+```bash filename="terminal"
+vercel build --standalone
+```
+
+*Using the \`vercel build\` command with the
+\`--standalone\` option.*
 
 ## Global Options
 

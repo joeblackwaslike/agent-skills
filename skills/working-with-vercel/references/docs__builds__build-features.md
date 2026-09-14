@@ -16,8 +16,8 @@ related:
 summary: "Learn how to customize your deployments using Vercel's build features."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/build-features.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "92f9f8487a53afe55322ad14231cd81518ddf7551ae742c47fbe8443d7246020"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "d2ee2f30ab2480bb7546a86f855cbb597a7aae0eb85530ab012a86c6b71fcf86"
 ---
 
 # Build Features for Customizing Deployments
@@ -88,6 +88,8 @@ CVS
 process.*
 
 The `.vercel/output` directory is **not** ignored when [`vercel deploy --prebuilt`](/docs/cli/deploying-from-cli#deploying-from-local-build-prebuilt) is used to deploy a prebuilt Vercel Project, according to the [Build Output API](/docs/build-output-api) specification.
+
+During a prebuilt deploy, Vercel excludes a required function file from the upload if it also matches a rule in your `.vercelignore` (or `.nowignore`).
 
 > **💡 Note:** You do not need to add any of the above files and folders to your
 > `.vercelignore` file because it is done automatically

@@ -1,8 +1,8 @@
 ---
 title: "Available templates index"
 source: "https://containers.dev/templates"
-fetched_at: "2026-09-07T08:58:15.643Z"
-sha256: "0ccd9475de53bf33aa772aaefc6da867cfc9bf523e7ffcd088ddda529ff7bc18"
+fetched_at: "2026-09-14T09:36:17.711Z"
+sha256: "db6d048d692fe9a1f6101333096a296c58fb841f1b64df5659b803ae2d8dda44"
 ---
 
 # Available templates index
@@ -253,10 +253,10 @@ Templates
 | SAP BTP CAP Dev Stack | Navin Krishnan | `ghcr.io/navinkrishnan/devcontainer-templates-btp/btp-cap-dev-stack:1.0.2` | `1.0.2` |
 | EdgeActions Development Container | Azure EdgeActions Developer Experiences Team | `ghcr.io/Azure/edgeactions-devcontainers/edgeactions:0.0.5` | `0.0.5` |
 | Nevermore Roblox | EstebenR (Papabos) | `ghcr.io/estebenr/devcontainers/nevermore:1.1.0` | `1.1.0` |
-| C++ | Philips Software | `ghcr.io/philips-software/amp-devcontainer/cpp:8.1.1` | `8.1.1` |
-| Embedded C++ | Philips Software | `ghcr.io/philips-software/amp-devcontainer/embedded-cpp:8.1.1` | `8.1.1` |
-| Embedded Rust | Philips Software | `ghcr.io/philips-software/amp-devcontainer/embedded-rust:8.1.1` | `8.1.1` |
-| Rust | Philips Software | `ghcr.io/philips-software/amp-devcontainer/rust:8.1.1` | `8.1.1` |
+| C++ | Philips Software | `ghcr.io/philips-software/amp-devcontainer/cpp:8.2.0` | `8.2.0` |
+| Embedded C++ | Philips Software | `ghcr.io/philips-software/amp-devcontainer/embedded-cpp:8.2.0` | `8.2.0` |
+| Embedded Rust | Philips Software | `ghcr.io/philips-software/amp-devcontainer/embedded-rust:8.2.0` | `8.2.0` |
+| Rust | Philips Software | `ghcr.io/philips-software/amp-devcontainer/rust:8.2.0` | `8.2.0` |
 | Pretalx | Tjark | `ghcr.io/tjarbo/pretalx-devcontainer/pretalx:0.0.1` | `0.0.1` |
 | Pretalx Plugin | Tjark | `ghcr.io/tjarbo/pretalx-devcontainer/pretalx-plugin:0.0.1` | `0.0.1` |
 | Python | Metin Senturk | `ghcr.io/metinsenturk/devcontainer-templates/python:1.0.6` | `1.0.6` |
@@ -268,23 +268,24 @@ Templates
 | Gazebo | althack | `ghcr.io/althack/devcontainers/gz:0.4.0` | `0.4.0` |
 | Magento Open Source | Doug Hatcher | `ghcr.io/doughatcher/devcontainer-templates/magento:0.3.0` | `0.3.0` |
 | Ansible Development Tools (AI-enhanced ansible-dev-tools) | leogallego | `ghcr.io/leogallego/ansible-claude-code-devcontainer/claude-code-ansible:1.6.2` | `1.6.2` |
-| Bun | nozaq | `ghcr.io/bare-devcontainer/templates/bun:1.0.7` | `1.0.7` |
-| Debian | nozaq | `ghcr.io/bare-devcontainer/templates/debian:1.2.7` | `1.2.7` |
-| Deno | nozaq | `ghcr.io/bare-devcontainer/templates/deno:1.0.3` | `1.0.3` |
-| Go | nozaq | `ghcr.io/bare-devcontainer/templates/golang:1.3.0` | `1.3.0` |
-| mise | nozaq | `ghcr.io/bare-devcontainer/templates/mise:1.3.3` | `1.3.3` |
-| Node.js | nozaq | `ghcr.io/bare-devcontainer/templates/node:1.1.2` | `1.1.2` |
-| OpenTofu | nozaq | `ghcr.io/bare-devcontainer/templates/opentofu:1.0.1` | `1.0.1` |
-| Node.js (pnpm) | nozaq | `ghcr.io/bare-devcontainer/templates/pnpm:1.0.0` | `1.0.0` |
-| Rust | nozaq | `ghcr.io/bare-devcontainer/templates/rustup:1.4.3` | `1.4.3` |
-| Terraform | nozaq | `ghcr.io/bare-devcontainer/templates/terraform:1.2.8` | `1.2.8` |
-| Python (uv) | nozaq | `ghcr.io/bare-devcontainer/templates/uv:1.0.8` | `1.0.8` |
-| Zig | nozaq | `ghcr.io/bare-devcontainer/templates/zig:1.3.0` | `1.3.0` |
-| mise-devcontainer-alpine | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/alpine:2026.9.5-23.26.49` | `2026.9.5-23.26.49` |
-| mise-devcontainer-archlinux | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/archlinux:2026.9.5-23.26.49` | `2026.9.5-23.26.49` |
-| mise-devcontainer-debian | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/debian:2026.9.5-23.26.49` | `2026.9.5-23.26.49` |
-| mise-devcontainer-fedora | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/fedora:2026.9.5-23.26.49` | `2026.9.5-23.26.49` |
-| mise-devcontainer-ubuntu | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/ubuntu:2026.9.5-23.26.49` | `2026.9.5-23.26.49` |
+| Bun | nozaq | `ghcr.io/bare-devcontainer/templates/bun:1.1.0` | `1.1.0` |
+| Debian | nozaq | `ghcr.io/bare-devcontainer/templates/debian:1.3.0` | `1.3.0` |
+| Deno | nozaq | `ghcr.io/bare-devcontainer/templates/deno:1.1.0` | `1.1.0` |
+| Go | nozaq | `ghcr.io/bare-devcontainer/templates/golang:1.4.0` | `1.4.0` |
+| mise | nozaq | `ghcr.io/bare-devcontainer/templates/mise:1.4.0` | `1.4.0` |
+| Node.js | nozaq | `ghcr.io/bare-devcontainer/templates/node:1.2.0` | `1.2.0` |
+| OpenTofu | nozaq | `ghcr.io/bare-devcontainer/templates/opentofu:1.1.0` | `1.1.0` |
+| Node.js (pnpm) | nozaq | `ghcr.io/bare-devcontainer/templates/pnpm:1.1.0` | `1.1.0` |
+| Rust | nozaq | `ghcr.io/bare-devcontainer/templates/rustup:1.5.0` | `1.5.0` |
+| Java (Temurin) | nozaq | `ghcr.io/bare-devcontainer/templates/temurin:1.1.0` | `1.1.0` |
+| Terraform | nozaq | `ghcr.io/bare-devcontainer/templates/terraform:1.3.0` | `1.3.0` |
+| Python (uv) | nozaq | `ghcr.io/bare-devcontainer/templates/uv:1.1.0` | `1.1.0` |
+| Zig | nozaq | `ghcr.io/bare-devcontainer/templates/zig:1.4.0` | `1.4.0` |
+| mise-devcontainer-alpine | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/alpine:2026.9.14-3.46.19` | `2026.9.14-3.46.19` |
+| mise-devcontainer-archlinux | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/archlinux:2026.9.14-3.46.19` | `2026.9.14-3.46.19` |
+| mise-devcontainer-debian | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/debian:2026.9.14-3.46.19` | `2026.9.14-3.46.19` |
+| mise-devcontainer-fedora | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/fedora:2026.9.14-3.46.19` | `2026.9.14-3.46.19` |
+| mise-devcontainer-ubuntu | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/ubuntu:2026.9.14-3.46.19` | `2026.9.14-3.46.19` |
 
 
             

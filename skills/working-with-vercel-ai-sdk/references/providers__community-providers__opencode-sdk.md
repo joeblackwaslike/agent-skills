@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/opencode-sdk.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "31d06a5b09a1d29277858bc3ed956ed4609b5122eefdda459be708347453bd56"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "e94f82b1d135f75ce2d5f4b44f621768eeb46d334403238a77c8f92b30e80877"
 ---
 
 # OpenCode Provider
@@ -216,6 +216,7 @@ For more details, see the [provider documentation](https://github.com/ben-vargas
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
 - [Interfaze](/providers/community-providers/interfaze)
+- [Telnyx](/providers/community-providers/telnyx)
 - [Flowise](/providers/community-providers/flowise)
 
 

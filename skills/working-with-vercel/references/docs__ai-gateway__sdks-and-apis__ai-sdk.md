@@ -1,27 +1,27 @@
 ---
-title: AI SDK
+title: AI SDK with AI Gateway
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/ai-sdk
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk"
-last_updated: 2026-08-27
-type: integration
+last_updated: 2026-09-08
+type: how-to
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis
   - /docs/ai-gateway
 related:
   - /docs/ai-gateway/models-and-providers/reasoning
+  - /docs/ai-gateway/inputs-and-tools
+  - /docs/ai-gateway/sdks-and-apis/ai-sdk-python
   - /docs/ai-gateway/authentication-and-byok/oidc
   - /docs/ai-gateway/authentication-and-byok
-  - /docs/ai-gateway/models-and-providers/provider-options
-  - /docs/ai-gateway/sdks-and-apis/openai-chat-completions
 summary: Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "3c133fc16e37d14770f69fcf80e63abbf1524fb9d09539e96f18d77c268ee00d"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "9753c523abaad00b0f0ed33df9e17468fc1bf74a9f7e4de191099944cb6e4ac1"
 ---
 
-# AI SDK
+# AI SDK with AI Gateway
 
 The [AI SDK](https://ai-sdk.dev/) is the recommended way to build AI-powered TypeScript applications with AI Gateway. Pass a model string like `'anthropic/claude-sonnet-5'` directly to AI SDK functions and requests route through AI Gateway automatically.
 
@@ -33,20 +33,17 @@ The [AI SDK](https://ai-sdk.dev/) is the recommended way to build AI-powered Typ
 
 - [AI SDK 4.2](https://vercel.com/blog/ai-sdk-4-2?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk&source_site=vercel-docs&relationship=related)
 - [Get started with GPT-5](https://ai-sdk.dev/cookbook/guides/gpt-5?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk&source_site=vercel-docs&relationship=related)
-- [Get started with OpenAI o1](https://ai-sdk.dev/cookbook/guides/o1?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk&source_site=vercel-docs&relationship=related)
+- [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk&source_site=vercel-docs&relationship=related) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
 - [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk&source_site=vercel-docs&relationship=related) — Learn the key AI concepts and tools for building and scaling AI apps.
-- [Vercel AI SDK vs TanStack AI](https://vercel.com/kb/guide/vercel-ai-sdk-vs-tanstack-ai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk&source_site=vercel-docs&relationship=related) — Compare the Vercel AI SDK and TanStack AI for building AI-powered TypeScript applications. Learn how they differ in agen
-- [Vercel AI SDK 3.1: ModelFusion joins the team](https://vercel.com/blog/vercel-ai-sdk-3-1-modelfusion-joins-the-team?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk&source_site=vercel-docs&relationship=related)
-- [Get started with OpenAI o3-mini](https://ai-sdk.dev/cookbook/guides/o3?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk&source_site=vercel-docs&relationship=related)
-- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk&source_site=vercel-docs&relationship=related) — Create an AI Gateway API key, make your first request with TypeScript, Python, or cURL, and verify how the request was r
-- [Text Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/text?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk&source_site=vercel-docs&relationship=related) — Generate and stream text responses using AI Gateway.
-- [AI SDK for Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk&source_site=vercel-docs&relationship=related) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
+- [AI SDK](https://vercel.com/docs/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk&source_site=vercel-docs&relationship=related) — Build TypeScript agents and AI applications with a unified API for models, tools, structured output, and streaming.
+- [Python with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk&source_site=vercel-docs&relationship=related) — Use AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/ai-sdk.graph.md](/docs/ai-gateway/sdks-and-apis/ai-sdk.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Installation
+
+See the [AI SDK getting-started guide](https://ai-sdk.dev/docs/getting-started) for runtime and package setup.
 
 Install the `ai` package:
 
@@ -76,6 +73,8 @@ bun add ai@latest
 
 ## Quick start
 
+See the [`generateText` reference](https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-text) for options and return values.
+
 Generate text by passing a plain string model ID. AI Gateway resolves the provider and routes the request automatically.
 
 ```typescript filename="index.ts"
@@ -91,13 +90,15 @@ console.log(text);
 
 ## Streaming
 
+See the [`streamText` reference](https://ai-sdk.dev/docs/reference/ai-sdk-core/stream-text) for stream events and response helpers.
+
 Stream responses token-by-token for real-time output:
 
 ```typescript filename="stream.ts"
 import { streamText } from 'ai';
 
 const result = streamText({
-  model: 'openai/gpt-5.6-sol',
+  model: 'openai/gpt-6-astra',
   prompt: 'Write a short story about a robot discovering music.',
 });
 
@@ -108,36 +109,40 @@ for await (const textPart of result.textStream) {
 
 ## Structured outputs
 
-Generate type-safe structured data with `generateObject` and a [Zod](https://zod.dev/) schema:
+See the [AI SDK structured-output guide](https://ai-sdk.dev/docs/ai-sdk-core/generating-structured-data) for schemas, output types, and validation.
+
+Generate type-safe structured data with `generateText` and `Output.object` and a [Zod](https://zod.dev/) schema:
 
 ```typescript filename="structured.ts"
-import { generateObject } from 'ai';
+import { generateText, Output } from 'ai';
 import { z } from 'zod';
 
-const { object } = await generateObject({
+const { output } = await generateText({
   model: 'anthropic/claude-sonnet-5',
-  schema: z.object({
+  output: Output.object({ schema: z.object({
     name: z.string(),
     age: z.number(),
     city: z.string(),
-  }),
+  }) }),
   prompt: 'Extract: John is 30 years old and lives in NYC.',
 });
 
-console.log(object); // { name: 'John', age: 30, city: 'NYC' }
+console.log(output); // { name: 'John', age: 30, city: 'NYC' }
 ```
 
 ## Tool calling
 
+See the [AI SDK tool-calling guide](https://ai-sdk.dev/docs/ai-sdk-core/tools-and-tool-calling) for execution, tool results, and multi-step calls.
+
 Define tools that models can invoke to interact with external systems. Describe each tool's input with `inputSchema`:
 
 ```typescript filename="tools.ts"
-import { generateText, stepCountIs, tool } from 'ai';
+import { generateText, isStepCount, tool } from 'ai';
 import { z } from 'zod';
 
 const { text } = await generateText({
   model: 'anthropic/claude-sonnet-5',
-  stopWhen: stepCountIs(5),
+  stopWhen: isStepCount(5),
   tools: {
     getWeather: tool({
       description: 'Get the current weather for a location',
@@ -157,9 +162,11 @@ const { text } = await generateText({
 console.log(text);
 ```
 
-`stopWhen` is what lets the model answer in words. Without it the request stops as soon as the tool runs, finishing with `finishReason: 'tool-calls'` and an empty `text` — the tool result is in `toolResults`, but nothing has turned it into a sentence yet.
+`stopWhen` is what lets the model answer in words. Without it the request stops as soon as the tool runs, finishing with `finishReason: 'tool-calls'` and an empty `text`. The `toolResults` field contains the tool result, but the model has not generated a text response from it.
 
 ## Reasoning
+
+See the [AI SDK reasoning guide](https://ai-sdk.dev/docs/ai-sdk-core/reasoning) for reading reasoning output and configuring supported models.
 
 Reasoning models think before answering. On AI SDK 7, set the top-level `reasoning` option and the SDK translates it to each provider's native API, so the same code works across Anthropic, OpenAI, and Google:
 
@@ -201,7 +208,11 @@ console.log(result.text);
 
 For per-provider configuration and the full effort-level reference, see [Reasoning](/docs/ai-gateway/models-and-providers/reasoning).
 
+See [Inputs & Tools](/docs/ai-gateway/inputs-and-tools) for complete vision, PDF, audio, and video examples across API formats.
+
 ## Images and file input
+
+See the [AI SDK file-part guide](https://ai-sdk.dev/docs/foundations/prompts#file-parts) for bytes, data URLs, remote URLs, and media types.
 
 Swap a message's plain string `content` for an array of parts. A `file` part carries the bytes and a `mediaType` telling the model how to read them, so the same shape covers images and documents:
 
@@ -232,11 +243,11 @@ console.log(text);
 `data` takes a `Buffer`, a `Uint8Array`, a base64 string, or a `URL`. Point `mediaType` at the document type to send a PDF instead:
 
 ```typescript
-{
+({
   type: 'file',
   data: fs.readFileSync('./report.pdf'),
   mediaType: 'application/pdf',
-}
+});
 ```
 
 > **💡 Note:** Older examples use a `{ type: 'image', image }` part. That part still works
@@ -248,18 +259,23 @@ Whether a given model accepts images or PDFs is a per-model question. Check the 
 
 ## Version compatibility
 
-AI Gateway supports AI SDK 7 and 6. Text generation, streaming, structured outputs, and tool calling work the same on both, with the same syntax.
+The examples on this page use AI SDK 7, except tabs explicitly labeled AI SDK 6. AI Gateway supports both versions, but some client APIs differ:
 
-Where they differ:
+| Feature | AI SDK 6 | AI SDK 7 |
+| --- | --- | --- |
+| System instructions | `system` | `instructions` |
+| Tool-loop stop condition | `stepCountIs` | `isStepCount` |
+| Completion callbacks | `onFinish`, `onStepFinish` | `onEnd`, `onStepEnd` |
+| Telemetry | `experimental_telemetry` | `telemetry` |
+| Top-level `reasoning` | Not supported | Supported |
+| Full event stream | `result.fullStream` | `result.stream` |
+| Image generation | `generateImage` or its experimental alias | `generateImage` |
 
-| Feature                      | 6                   | 7                                              |
-| ---------------------------- | ------------------- | ---------------------------------------------- |
-| Top-level `reasoning` option | Ignored, no error   | Supported                                      |
-| Full event stream            | `result.fullStream` | `result.stream` (`fullStream` still works, deprecated) |
-
-> **💡 Note:** Check your installed version with `npm list ai` and upgrade with `npm install ai@latest`. See the [AI SDK 7 migration guide](https://ai-sdk.dev/docs/migration-guides/migration-guide-7-0) for upgrade details.
+AI SDK 7 requires Node.js 22 or later and ESM. Check your installed version with `pnpm list ai`. See the [AI SDK 7 migration guide](https://ai-sdk.dev/docs/migration-guides/migration-guide-7-0) before upgrading. The [AI SDK for Python beta](/docs/ai-gateway/sdks-and-apis/ai-sdk-python) uses a separate package and API.
 
 ## Authentication
+
+See the [AI SDK AI Gateway provider reference](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway#authentication) for API keys, OIDC, and custom provider instances.
 
 The AI SDK uses the `AI_GATEWAY_API_KEY` environment variable by default. Set it in your `.env.local` file:
 
@@ -273,7 +289,7 @@ See [Authentication](/docs/ai-gateway/authentication-and-byok) for more details.
 
 ## Next steps
 
-- Explore the full [AI SDK documentation](https://ai-sdk.dev/getting-started) for advanced patterns
+- Explore the full [AI SDK documentation](https://ai-sdk.dev/docs/getting-started) for advanced patterns
 - Browse [AI SDK guides](/kb/ai-sdk) for step-by-step examples and implementation patterns
 - Learn about [model routing and fallbacks](/docs/ai-gateway/models-and-providers/provider-options)
 - Try other APIs: [OpenAI Chat Completions](/docs/ai-gateway/sdks-and-apis/openai-chat-completions), [OpenAI Responses](/docs/ai-gateway/sdks-and-apis/responses), [Anthropic Messages](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api), or [OpenResponses](/docs/ai-gateway/sdks-and-apis/openresponses)

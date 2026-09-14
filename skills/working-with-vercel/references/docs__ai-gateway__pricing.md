@@ -3,7 +3,7 @@ title: AI Gateway Pricing
 product: vercel
 url: /docs/ai-gateway/pricing
 canonical_url: "https://vercel.com/docs/ai-gateway/pricing"
-last_updated: 2026-09-02
+last_updated: 2026-09-07
 type: reference
 prerequisites:
   - /docs/ai-gateway
@@ -13,11 +13,11 @@ related:
   - /docs/plans/enterprise
   - /docs/ai-gateway/pricing/discounts
   - /docs/ai-gateway/authentication-and-byok/byok
-summary: Learn about pricing for AI Gateway.
+summary: Understand AI Gateway token pricing, free and paid credits, BYOK costs, add-on charges, and payment fees. Manage credit top-ups and spending budgets.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/pricing.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "8dbc8277b75caee5a3316f180c8ff4ff6929c853d987f2ce439b02fc244c876a"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "0f30298fd6b09ac03a71c5068acf3225594556f72a9b46b7836819aea9225b5a"
 ---
 
 # AI Gateway Pricing
@@ -35,11 +35,11 @@ sha256: "8dbc8277b75caee5a3316f180c8ff4ff6929c853d987f2ce439b02fc244c876a"
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=related)
 - [Introducing the AI Gateway](https://vercel.com/blog/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=related)
-- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including pricing and markup, SDK and API compatibility, model availabilit
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Vercel Agent Pricing](https://vercel.com/docs/agent/pricing?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=related) — Understand Vercel Agent pricing and how to track costs
-- [Provider Filtering, Ordering & Sorting](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=related) — Control which providers handle your requests, in what order, and how they are ranked using order, only, and sort options
-- [Compaction](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/compaction?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=related) — Compress long conversations into a single compaction item with the OpenAI Responses API through AI Gateway.
+- [AI Gateway Ecosystem and Integrations](https://vercel.com/docs/ai-gateway/ecosystem?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=related) — Connect frameworks, coding tools, and billing integrations to AI Gateway. Configure app attribution and explore integrat
+- [Video Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/video?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=related) — Generate a video from a text prompt using AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/pricing.graph.md](/docs/ai-gateway/pricing.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

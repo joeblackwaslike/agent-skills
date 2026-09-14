@@ -16,8 +16,8 @@ related:
 summary: Understand how Vercel Workflows billing works and the limits that apply to runs, streams, and platform resources.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/workflows/pricing.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "e83f06fb0ddee1a6642727e1f1636614df17c115a03a9f44cb3737099cbe41a0"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "d53dcc668bd62119c38adcff1b1642869a84f8b0bd2b69584a10cd8afcca821a"
 ---
 
 # Workflow Pricing and Limits
@@ -37,10 +37,10 @@ Vercel bills Workflows usage across three resources:
 - [Workflow SDK vs Cloudflare Workflows](https://workflow-sdk.dev/docs/comparisons/workflow-sdk-vs-cloudflare-workflows?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Cloudflare Workflows is a durable engine on Workers and Durable Objects. It and the Workflow SDK both replay, but differ
 - [Workflow SDK vs Inngest](https://workflow-sdk.dev/docs/comparisons/workflow-sdk-vs-inngest?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Inngest is an event-driven durable-functions platform that invokes your code over HTTP and memoizes step results. The Wo
 - [Vercel vs Webflow Cloud](https://vercel.com/kb/guide/vercel-vs-webflow-cloud?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Compare Vercel and Webflow Cloud for deploying Next.js and Astro apps, including runtime, framework support, storage, pr
-- [How to run background jobs in Next.js](https://vercel.com/kb/guide/how-to-run-background-jobs-in-nextjs-on-vercel?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Learn the durable way to run background jobs in Next.js on Vercel with the Workflow SDK, and when to reach for Queues or
 - [Limits](https://vercel.com/docs/limits?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
 - [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about legacy usage and pricing for Vercel Functions.
 - [Pricing and Limits](https://vercel.com/docs/eve/pricing?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Understand how eve usage maps to Vercel resources and inherited platform limits.
+- [Workflow Concepts](https://vercel.com/docs/workflows/concepts?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Learn how workflows, steps, sleeps, and hooks work together to build durable applications.
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 
 Full cross-link map for this page: [/docs/workflows/pricing.graph.md](/docs/workflows/pricing.graph.md?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=graph)

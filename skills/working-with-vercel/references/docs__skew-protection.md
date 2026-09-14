@@ -16,8 +16,8 @@ related:
 summary: "Learn how Vercel's Skew Protection ensures that the client and server stay in sync for any particular deployment."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/skew-protection.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "f9a4768f8669a56670ae9d2724e7fa931591379f3188d914cbc51e96e97319ba"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "b0af692284dc8d57d72f20cd38000b6a4daa35cd409b523b2ab805bafaa527ba"
 ---
 
 # Skew Protection
@@ -37,10 +37,10 @@ sha256: "f9a4768f8669a56670ae9d2724e7fa931591379f3188d914cbc51e96e97319ba"
 - [Skew Protection max age now supports the full deployment lifetime](https://vercel.com/changelog/skew-protection-max-age-now-supports-the-full-deployment-lifetime?from=related&source_path=%2Fdocs%2Fskew-protection&source_site=vercel-docs&relationship=related)
 - [Skew Protection now supports prebuilt deployments](https://vercel.com/changelog/skew-protection-now-supports-prebuilt-deployments?from=related&source_path=%2Fdocs%2Fskew-protection&source_site=vercel-docs&relationship=related)
 - [How to add per-request CSP nonces to CDN-cached HTML on Vercel](https://vercel.com/kb/guide/csp-nonces-with-cdn-cache?from=related&source_path=%2Fdocs%2Fskew-protection&source_site=vercel-docs&relationship=related) — Use Routing Middleware and a self-fetch to add a fresh CSP nonce to cached HTML without rendering the page again on ever
-- [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related&source_path=%2Fdocs%2Fskew-protection&source_site=vercel-docs&relationship=related) — Learn how to debug how Vercel decides where to route your request
 - [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel?from=related&source_path=%2Fdocs%2Fskew-protection&source_site=vercel-docs&relationship=related) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related&source_path=%2Fdocs%2Fskew-protection&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related&source_path=%2Fdocs%2Fskew-protection&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
+- [Vercel vs Render](https://vercel.com/kb/guide/vercel-vs-render?from=related&source_path=%2Fdocs%2Fskew-protection&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Render: compute models, AI infrastructure, Docker and container image support, background
 - [Life of a Vercel request: Application-aware routing](https://vercel.com/blog/life-of-a-request-application-aware-routing?from=related&source_path=%2Fdocs%2Fskew-protection&source_site=vercel-docs&relationship=related)
 - [Next.js 16.3 support on Vercel](https://vercel.com/blog/vercel-supports-next-js-16-3?from=related&source_path=%2Fdocs%2Fskew-protection&source_site=vercel-docs&relationship=related)
 - [Skew Protection is now generally available](https://vercel.com/changelog/skew-protection-is-now-generally-available?from=related&source_path=%2Fdocs%2Fskew-protection&source_site=vercel-docs&relationship=related)

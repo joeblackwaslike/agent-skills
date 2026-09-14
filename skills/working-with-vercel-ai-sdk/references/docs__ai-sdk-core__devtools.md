@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/devtools.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "29943035561b5e97e6358592fb1b3eae79ab419caef247577bb323755eec83ca"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "f4dc0f5020c20d0cf9d67d8ff559b278b0ab8c82d1e29bb1c616ce3dcf6a2b51"
 ---
 
 # DevTools
@@ -226,6 +226,7 @@ DevTools stores all AI interactions locally in plain text files, including:
 - [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
 - [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
+- [Batch](/docs/ai-sdk-core/batch)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)

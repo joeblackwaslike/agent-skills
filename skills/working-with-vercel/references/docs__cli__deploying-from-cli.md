@@ -11,13 +11,13 @@ related:
   - /docs/cli/deploy
   - /docs/deployments/environments
   - /docs/cli/promote
+  - /docs/cli/pull
   - /docs/build-output-api
-  - /docs/cli/build
 summary: Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/deploying-from-cli.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "85aeea54abdccc947e4fe4758aaadc281e555663d4354289eeb4c6d3ba7d556d"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "e4dcbb16fac8f164203d3f89d82be01121b7634a80a254059c03060fa879311a"
 ---
 
 # Deploying Projects from Vercel CLI
@@ -33,13 +33,13 @@ The `vercel` command is used to [deploy](/docs/cli/deploy) Vercel Projects and c
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Claim Deployments now available for fast and secure deployment transfers](https://vercel.com/changelog/claim-deployments?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=related)
-- [How do I set up a staging environment on Vercel?](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=related) — Information on how to set up a staging environment on Vercel.
+- [How to set up a staging environment on Vercel](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=related) — Set up a staging environment on Vercel with custom environments, staged production deployments, or a branch-based previe
 - [Enhanced Preview experience](https://vercel.com/blog/making-live-reviews-a-reality-enhanced-preview-experience?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=related)
 - [Zero Config Deployments](https://vercel.com/blog/zero-config?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=related)
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
-- [vercel redeploy](https://vercel.com/docs/cli/redeploy?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=related) — Learn how to redeploy your project using the vercel redeploy CLI command.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [vercel redeploy](https://vercel.com/docs/cli/redeploy?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=related) — Learn how to redeploy your project using the vercel redeploy CLI command.
 - [vercel deploy-hooks](https://vercel.com/docs/cli/deploy-hooks?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=related) — Manage Deploy Hooks for Git-triggered builds from the Vercel CLI: list, create, and remove deploy hook URLs that trigger
 
 Full cross-link map for this page: [/docs/cli/deploying-from-cli.graph.md](/docs/cli/deploying-from-cli.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=graph)
@@ -101,16 +101,16 @@ vercel promote [deployment-id or url]
 
 ## Deploying from local build (prebuilt)
 
-You can build Vercel projects locally to inspect the build outputs before they are [deployed](/docs/cli/deploy). This is a great option for producing builds for Vercel that do not share your source code with the platform.
+To deploy a locally built Next.js app or another Vercel project, run `vercel build` followed by `vercel deploy --prebuilt`. You can build on your computer or in your own CI environment, inspect the output, and upload the build artifacts to Vercel without a remote build of your source code.
 
-It's also useful for debugging build outputs.
+First, run [`vercel pull`](/docs/cli/pull) to download the project's settings and environment variables, then build:
 
 ```bash filename="terminal"
+vercel pull --environment=preview
 vercel build
 ```
 
-*Using the \`vercel\` command to deploy and write stdout
-to a text file.*
+*Download preview settings and build the project locally.*
 
 This produces `.vercel/output` in the [Build Output API](/docs/build-output-api) format. You can review the output, then [deploy](/docs/cli/deploy) with:
 

@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/packages/app/AGENTS.md"
-fetched_at: "2026-08-10T05:31:39.739Z"
-sha256: "762a0f7e2519337038baa3d664b3fcef33388377acc208ea3e2fc7552458ceb3"
+fetched_at: "2026-09-14T09:42:54.887Z"
+sha256: "06f2d2d4fddd981356f438e02dc0f41270981ef3638eba3b5667a6347c6ac5d6"
 ---
 
 ## Priorities
@@ -17,7 +17,7 @@ sha256: "762a0f7e2519337038baa3d664b3fcef33388377acc208ea3e2fc7552458ceb3"
 
 - `opencode dev web` proxies `https://app.opencode.ai`, so local UI/CSS changes will not show there.
 - For local UI changes, run the backend and app dev servers separately.
-- Backend (from `packages/opencode`): `bun run --conditions=browser ./src/index.ts serve --port 4096`
+- Backend (from `packages/opencode`): `bun run ./src/index.ts serve --port 4096`
 - App (from `packages/app`): `bun dev -- --port 4444`
 - Open `http://localhost:4444` to verify UI changes (it targets the backend at `http://localhost:4096`).
 

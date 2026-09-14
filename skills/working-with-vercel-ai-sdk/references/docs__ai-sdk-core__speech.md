@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/speech.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "e2d5c6087fb2524a2282fa1ce6bd3fd57103b3677fd43d73d54f82970c057528"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "94d6ab95d1a45fa37ee0dae83f2170ef0ec90d44108131b50052987d83fe658b"
 ---
 
 # Speech
@@ -17,21 +17,6 @@ const audio = await generateSpeech({
   model: openai.speech('tts-1'),
   text: 'Hello, world!',
   voice: 'alloy',
-});
-```
-
-### Language Setting
-
-You can specify the language for speech generation (provider support varies):
-
-```ts
-import { generateSpeech } from 'ai';
-import { lmnt } from '@ai-sdk/lmnt';
-
-const audio = await generateSpeech({
-  model: lmnt.speech('aurora'),
-  text: 'Hola, mundo!',
-  language: 'es', // Spanish
 });
 ```
 
@@ -159,8 +144,6 @@ try {
 | [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#speech-models)       | `eleven_flash_v2`                   |
 | [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#speech-models)       | `eleven_turbo_v2_5`                 |
 | [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#speech-models)       | `eleven_turbo_v2`                   |
-| [LMNT](/providers/ai-sdk-providers/lmnt#speech-models)                   | `aurora`                            |
-| [LMNT](/providers/ai-sdk-providers/lmnt#speech-models)                   | `blizzard`                          |
 | [Hume](/providers/ai-sdk-providers/hume#speech-models)                   | `default`                           |
 | [Google](/providers/ai-sdk-providers/google#speech-models)               | `gemini-2.5-flash-preview-tts`      |
 | [Google](/providers/ai-sdk-providers/google#speech-models)               | `gemini-2.5-pro-preview-tts`        |
@@ -205,6 +188,7 @@ Above are a small subset of the speech models supported by the AI SDK providers.
 - [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
 - [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
+- [Batch](/docs/ai-sdk-core/batch)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)

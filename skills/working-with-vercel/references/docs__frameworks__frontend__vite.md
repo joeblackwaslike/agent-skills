@@ -17,8 +17,8 @@ related:
 summary: Deploy Vite projects to Vercel and configure environment variables, Vercel Functions, server-side rendering, and SPA rewrites.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/frontend/vite.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "100009a394cc2b09c78b9a7872f50bd67d10f2cbbd278aca6f168ae7829d73dc"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "ae45387e407fe42c34fd15847b0f22138ba5419a065b9a4ee945fe7690401a80"
 ---
 
 # Vite on Vercel
@@ -35,8 +35,7 @@ Vite is an opinionated build tool that aims to provide a faster and leaner devel
 - [What is the Nitro Vite plugin?](https://vercel.com/kb/guide/nitro-vite-plugin?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fvite&source_site=vercel-docs&relationship=related) — The Nitro Vite plugin \\(nitro/vite\\) adds SSR, API routes, and deploy-anywhere server builds to any Vite app. Learn what
 - [How to Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fvite&source_site=vercel-docs&relationship=related) — Deploy a TanStack Start app to Vercel with the Nitro Vite plugin. Covers Git and CLI deployment, Fluid compute defaults,
 - [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fvite&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
-- [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fvite&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
-- [Vite](https://turborepo.dev/docs/guides/frameworks/vite?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fvite&source_site=vercel-docs&relationship=related) — Add and configure Vite applications in your Turborepo monorepo.
+- [How to ship a Nitro app on Vercel](https://vercel.com/kb/guide/ship-a-nitro-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fvite&source_site=vercel-docs&relationship=related) — Deploy a Nitro app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
 - [Nitro on Vercel](https://vercel.com/docs/frameworks/backend/nitro?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fvite&source_site=vercel-docs&relationship=related) — Deploy Nitro applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurat
 - [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fvite&source_site=vercel-docs&relationship=related) — Learn about the frameworks that can be deployed to Vercel.
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fvite&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
@@ -52,14 +51,14 @@ Vite powers popular frameworks like [SvelteKit](/docs/frameworks/full-stack/svel
 
 ## Getting started
 
-To get started with  on Vercel:
+To get started with Vite on Vercel:
 
-- If you already have a project with , install [Vercel CLI](/docs/cli) and run the vercel command from your project's root directory
-- Clone one of our  example repos to your favorite git provider and deploy it on Vercel with the button below:
+- If you already have a project with Vite, install [Vercel CLI](/docs/cli) and run the vercel command from your project's root directory
+- Clone one of our Vite example repos to your favorite git provider and deploy it on Vercel with the button below:
 
 \- Or, choose a template from Vercel's marketplace:
 
-Vercel deployments can \[integrate with your git provider]\(/docs/git) to \[generate preview URLs]\(/docs/deployments/environments#preview-environment-pre-production) for each pull request you make to your  project.
+Vercel deployments can \[integrate with your git provider]\(/docs/git) to \[generate preview URLs]\(/docs/deployments/environments#preview-environment-pre-production) for each pull request you make to your Vite project.
 
 ## Environment Variables
 

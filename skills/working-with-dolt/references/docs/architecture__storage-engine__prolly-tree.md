@@ -2,8 +2,8 @@
 title: Prolly Tree
 description: The probabilistic B-tree structure that gives Dolt fast diffs and structural sharing — the core innovation behind it all.
 source: "https://www.dolthub.com/docs/architecture/storage-engine/prolly-tree.md"
-fetched_at: "2026-06-15T20:08:28.186Z"
-sha256: "6098689d712fcf031e540bc65d1fbfe789a6669f52e70aa0b1197a192a9316a8"
+fetched_at: "2026-09-14T09:39:37.291Z"
+sha256: "e32b1fb27593bbf2d561c10c280cdf7ef3a413a8375ba3e8981d63a9f5228859"
 ---
 
 "Prolly Tree" is short for ["Probabilistic B-tree"](https://github.com/attic-labs/noms/blob/master/doc/intro#prolly-trees-probabilistic-b-trees). "Prolly Tree" was coined by the good folks who built [Noms](https://github.com/attic-labs/noms), who as far as we can tell invented the data structure. We here at [DoltHub](https://www.dolthub.com) have immense respect for their pioneering work, without which [Dolt](https://www.doltdb.com) would not exist.
@@ -11,6 +11,8 @@ sha256: "6098689d712fcf031e540bc65d1fbfe789a6669f52e70aa0b1197a192a9316a8"
 ![Prolly Tree](../../.gitbook/assets/tim-prolly-tree-example.png)
 
 A Prolly Tree is a data structure closely related to a [B-tree](https://en.wikipedia.org/wiki/B-tree). Prolly Trees are generally useful but have proven particularly effective as the basis of [the storage engine](/architecture/storage-engine) for [version controlled databases](https://www.dolthub.com/blog/2022-08-04-database-versioning/).
+
+We built a [Prolly Tree Visualizer](https://www.prollytree.com) to help understand the concepts in this documentation. The visualizer is a web application where you can build and query a simple key/value Prolly Tree similar to the one described in this document.
 
 ## Motivation
 

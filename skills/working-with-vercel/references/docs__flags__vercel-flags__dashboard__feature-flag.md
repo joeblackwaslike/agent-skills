@@ -17,8 +17,8 @@ related:
 summary: Learn how to configure individual feature flags in the Vercel Dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/feature-flag.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "37c0ce17a789da69d5cd2f32d8c02c4083fa64dcf04195e87198d52689c9b9b6"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "61927a11db8f9397e700e3aaf71b2be6c1f99d57658d8f54a6afb6a9df7cfff1"
 ---
 
 # Feature Flag Configuration
@@ -41,7 +41,6 @@ When you select a flag from the Flags overview, you can configure how it behaves
 - [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Ffeature-flag&source_site=vercel-docs&relationship=related) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
 - [Using the Flags SDK with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Ffeature-flag&source_site=vercel-docs&relationship=related) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
 - [Draft Flags](https://vercel.com/docs/flags/vercel-flags/dashboard/drafts?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Ffeature-flag&source_site=vercel-docs&relationship=related) — Learn how draft flags work and how to promote them to Vercel Flags.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Ffeature-flag&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/dashboard/feature-flag.graph.md](/docs/flags/vercel-flags/dashboard/feature-flag.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Ffeature-flag&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

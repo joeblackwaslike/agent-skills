@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/replicate.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "d4ac1d13679bcf58c2c02e98d672829504e25dba75db3fe20ce82410cf6df9a4"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "90613f242367fbdb08149a638319ef267bc687675b4bf36d693f5b7a0281396f"
 ---
 
 # Replicate Provider
@@ -286,7 +286,6 @@ For more details, see the [Replicate models page](https://replicate.com/explore)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
-- [LMNT](/providers/ai-sdk-providers/lmnt)
 - [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)

@@ -14,8 +14,8 @@ related:
 summary: Configure your microfrontends.json.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/configuration.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "f74fadcd99f0320bdff70e2d5aa7c215d377a5e18fbef7f5517bff6b92886432"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "a1577493fcd10c1d962f95f6a2c09503862b2e09fc05e9ac244394b9bf29db02"
 ---
 
 # Microfrontends Configuration
@@ -30,8 +30,8 @@ The `microfrontends.json` file is used to configure your microfrontends. If this
 
 - [Microfrontends](https://turborepo.dev/docs/guides/microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fconfiguration&source_site=vercel-docs&relationship=related) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
 - [Microfrontends local development](https://vercel.com/docs/microfrontends/local-development?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fconfiguration&source_site=vercel-docs&relationship=related) — Learn how to run and test your microfrontends locally.
-- [vercel microfrontends](https://vercel.com/docs/cli/microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fconfiguration&source_site=vercel-docs&relationship=related) — Manage microfrontends groups from the CLI. Learn how to create groups, inspect group metadata, add and remove projects,
 - [Managing microfrontends](https://vercel.com/docs/microfrontends/managing-microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fconfiguration&source_site=vercel-docs&relationship=related) — Learn how to manage your microfrontends on Vercel.
+- [vercel microfrontends](https://vercel.com/docs/cli/microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fconfiguration&source_site=vercel-docs&relationship=related) — Manage microfrontends groups from the CLI. Learn how to create groups, inspect group metadata, add and remove projects,
 - [Microfrontends Routing](https://vercel.com/docs/microfrontends/routing?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fconfiguration&source_site=vercel-docs&relationship=related) — Configure which microfrontend handles each path and understand how Vercel selects deployments.
 - [Testing & troubleshooting microfrontends](https://vercel.com/docs/microfrontends/troubleshooting?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fconfiguration&source_site=vercel-docs&relationship=related) — Learn about testing, common issues, and how to troubleshoot microfrontends on Vercel.
 
@@ -40,17 +40,17 @@ Full cross-link map for this page: [/docs/microfrontends/configuration.graph.md]
 
 ## Schema
 
-Config$schemastringSee https://openapi.vercel.sh/microfrontends.json. versionstringThe version of the microfrontends config schema. applications\[ApplicationRouting]\(#applicationrouting)Mapping of Vercel project names to their microfrontend configurations. Requiredoptions\[Options]\(#options)Optional configuration options for the microfrontend. ApplicationRouting\[key: string]: \[Application]\(#application) Mapping of Vercel project names to their microfrontend configurations.  key: The Vercel project name of the microfrontend application.
+Config\*\*$schemastringSee https://openapi.vercel.sh/microfrontends.json. versionstringThe version of the microfrontends config schema. applications\[ApplicationRouting]\(#applicationrouting)Mapping of Vercel project names to their microfrontend configurations. Requiredoptions\[Options]\(#options)Optional configuration options for the microfrontend. \*\*ApplicationRouting\[key: string]: \[Application]\(#application) Mapping of Vercel project names to their microfrontend configurations.  key: The Vercel project name of the microfrontend application.
 
 Note: If this name does not also match the name \`name\` from the \`package.json\`, set \`packageName\` with the name used in \`package.json\`.
 
-See. \[application naming]\(/docs/microfrontends/configuration#application-naming).Application\[DefaultApplication]\(#defaultapplication) or \[ChildApplication]\(#childapplication).  The configuration for a microfrontend application. There must always be one default application. DefaultApplicationpackageNamestringThe name used to run the application, e.g. the \`name\` field in the \`package.json\`.
+See. \[application naming]\(/docs/microfrontends/configuration#application-naming).Application\[DefaultApplication]\(#defaultapplication) or \[ChildApplication]\(#childapplication).  The configuration for a microfrontend application. There must always be one default application. DefaultApplication\*\*packageNamestringThe name used to run the application, e.g. the \`name\` field in the \`package.json\`.
 
 This is used by the local proxy to map the application config to the locally running app.
 
 This is only necessary when the application name does not match the \`name\` used in \`package.json\`.
 
-See. \[application naming]\(/docs/microfrontends/configuration#application-naming).development\[DefaultDevelopment]\(#defaultdevelopment)Development configuration for the default application. RequiredDefaultDevelopmentlocalnumber | stringA local port number or host that this application runs on when it is running locally. If passing a string, include the protocol (optional), host (required) and port (optional).
+See. \[application naming]\(/docs/microfrontends/configuration#application-naming).development\[DefaultDevelopment]\(#defaultdevelopment)Development configuration for the default application. Required\*\*DefaultDevelopment\*\*localnumber | stringA local port number or host that this application runs on when it is running locally. If passing a string, include the protocol (optional), host (required) and port (optional).
 
 Examples of valid values: 8080, my.localhost.me, my.localhost.me:8080, https://my.localhost.me, https://my.localhost.me:8080.
 
@@ -64,7 +64,7 @@ See. \[local development]\(/docs/microfrontends/local-development).fallbackstrin
 
 If passing a string, include the protocol (optional), host (required) and port (optional). For example: \`https://this.ismyhost:8080\`. If omitted, the protocol defaults to HTTPS. If omitted, the port defaults to \`80\` for HTTP and \`443\` for HTTPS.
 
-See. \[local development]\(/docs/microfrontends/local-development).RequiredChildApplicationpackageNamestringThe name used to run the application, e.g. the \`name\` field in the \`package.json\`.
+See. \[local development]\(/docs/microfrontends/local-development).Required\*\*ChildApplication\*\*packageNamestringThe name used to run the application, e.g. the \`name\` field in the \`package.json\`.
 
 This is used by the local proxy to map the application config to the locally running app.
 
@@ -82,7 +82,7 @@ When this field is provided, \`/${assetPrefix}/:path\*\` must also be added to t
 
 The default value is the auto-generated asset prefix of the form \`vc-ap-\<hash>\`.
 
-See. \[asset prefix]\(/docs/microfrontends/path-routing#asset-prefix).ChildDevelopmentlocalnumber | stringA local port number or host that this application runs on when it is running locally. If passing a string, include the protocol (optional), host (required) and port (optional).
+See. \[asset prefix]\(/docs/microfrontends/path-routing#asset-prefix).\*\*ChildDevelopment\*\*localnumber | stringA local port number or host that this application runs on when it is running locally. If passing a string, include the protocol (optional), host (required) and port (optional).
 
 Examples of valid values: 8080, my.localhost.me, my.localhost.me:8080, https://my.localhost.me, https://my.localhost.me:8080.
 
@@ -96,13 +96,13 @@ See. \[local development]\(/docs/microfrontends/local-development).fallbackstrin
 
 If passing a string, include the protocol (optional), host (required) and port (optional). For example: \`https://this.ismyhost:8080\`. If omitted, the protocol defaults to HTTPS. If omitted, the port defaults to \`80\` for HTTP and \`443\` for HTTPS.
 
-See. \[local development]\(/docs/microfrontends/local-development).Routing\[PathGroup\[]]\(#pathgroup) A list of path groups that are routed to this application. PathGroupgroupstringGroup name for the paths. flagstringThe name of the feature flag that controls routing for this group of paths. See. \[routing changes safely with flags]\(/docs/microfrontends/path-routing#routing-changes-safely-with-flags).pathsstring\[]A list of path expressions that are routed to this application. See. \[supported path expressions]\(/docs/microfrontends/path-routing#supported-path-expressions).RequiredOptionsdisableOverridesbooleanIf you want to disable the overrides for the site. For example, if you are managing rewrites between applications externally, you may wish to disable the overrides on the toolbar as they will have no effect.
+See. \[local development]\(/docs/microfrontends/local-development).\*\*Routing\[PathGroup\[]]\(#pathgroup) A list of path groups that are routed to this application. PathGroup\*\*groupstringGroup name for the paths. flagstringThe name of the feature flag that controls routing for this group of paths. See. \[routing changes safely with flags]\(/docs/microfrontends/path-routing#routing-changes-safely-with-flags).pathsstring\[]A list of path expressions that are routed to this application. See. \[supported path expressions]\(/docs/microfrontends/path-routing#supported-path-expressions).Required\*\*Options\*\*disableOverridesbooleanIf you want to disable the overrides for the site. For example, if you are managing rewrites between applications externally, you may wish to disable the overrides on the toolbar as they will have no effect.
 
 See. \[routing overrides]\(/docs/microfrontends/managing-microfrontends/vercel-toolbar#routing-overrides).localProxyPortnumberThe port number used by the local proxy server.
 
 The default value is 3024.
 
-See. \[local development]\(/docs/microfrontends/local-development).
+See. \[local development]\(/docs/microfrontends/local-development).\*\*
 
 ## Example
 

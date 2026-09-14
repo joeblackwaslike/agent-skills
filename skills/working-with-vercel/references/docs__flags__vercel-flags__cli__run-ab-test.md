@@ -14,8 +14,8 @@ related:
 summary: Set up an A/B test with a feature flag, track results through Web Analytics, and clean up afterward using the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/cli/run-ab-test.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "9e0bcf461feb3cebd4fc3bfead80ec2c24e5e0ec27a3bd0c897e97bc90ad5518"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "354a418ad576eb9884c8ab43c7538e5daf4234adfcb253ecc729e2333b8dc9ee"
 ---
 
 # Running an A/B test
@@ -37,7 +37,6 @@ This workflow sets up a multi-variant layout experiment, tracks results through 
 - [Cleaning up after a full rollout](https://vercel.com/docs/flags/vercel-flags/cli/clean-up-after-rollout?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Frun-ab-test&source_site=vercel-docs&relationship=related) — Audit active flags, remove a fully rolled-out flag from your codebase, and archive it using the Vercel CLI.
 - [Observability](https://vercel.com/docs/flags/observability?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Frun-ab-test&source_site=vercel-docs&relationship=related) — Track feature flag evaluations and analyze their impact with Web Analytics.
 - [CLI Workflows](https://vercel.com/docs/agent-resources/workflows?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Frun-ab-test&source_site=vercel-docs&relationship=related) — End-to-end workflows that show how to compose Vercel CLI commands into complete debugging, deployment, and recovery sess
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Frun-ab-test&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/cli/run-ab-test.graph.md](/docs/flags/vercel-flags/cli/run-ab-test.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Frun-ab-test&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

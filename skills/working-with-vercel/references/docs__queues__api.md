@@ -13,8 +13,8 @@ related:
 summary: HTTP API reference for Vercel Queues. Publish, consume, acknowledge, and manage messages.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/api.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "478380b3ef15b6daa2120a8a08d9de5c6efa4ff180d06da098a607521d019520"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "75b81e3de7974d7075df67c15bdd0112973b67155bae0eca2b965cee3150f06a"
 ---
 
 # API Reference
@@ -30,8 +30,8 @@ The Vercel Queues API is a REST API for publishing, consuming, and managing mess
 - [Pricing and Limits](https://vercel.com/docs/queues/pricing?from=related&source_path=%2Fdocs%2Fqueues%2Fapi&source_site=vercel-docs&relationship=related) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
 - [Vercel Queues: JS SDK Reference](https://vercel.com/docs/queues/sdk?from=related&source_path=%2Fdocs%2Fqueues%2Fapi&source_site=vercel-docs&relationship=related) — Publish and consume messages with the Vercel Queues SDK for JavaScript and TypeScript.
 - [Vercel Queues: Python SDK Reference](https://vercel.com/docs/queues/python-sdk?from=related&source_path=%2Fdocs%2Fqueues%2Fapi&source_site=vercel-docs&relationship=related) — Publish and consume messages with the Vercel Queues Python SDK.
-- [Queues Observability](https://vercel.com/docs/queues/observability?from=related&source_path=%2Fdocs%2Fqueues%2Fapi&source_site=vercel-docs&relationship=related) — Monitor queue throughput, message age, retries, and consumer performance to optimize your queue-based workflows.
 - [Sign a message](https://vercel.com/docs/rest-api/kms/sign-a-message?from=related&source_path=%2Fdocs%2Fqueues%2Fapi&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/sign/message — Sign a raw message with a KMS issuer's active signing key. Authenticate t
+- [Quickstart](https://vercel.com/docs/queues/quickstart?from=related&source_path=%2Fdocs%2Fqueues%2Fapi&source_site=vercel-docs&relationship=related) — Set up Vercel Queues with the SDK.
 
 Full cross-link map for this page: [/docs/queues/api.graph.md](/docs/queues/api.graph.md?from=related&source_path=%2Fdocs%2Fqueues%2Fapi&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

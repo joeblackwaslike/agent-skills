@@ -16,8 +16,8 @@ related:
 summary: Vercel Runtime Cache is a specialized cache that stores responses from data fetches in Vercel functions
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/runtime-cache.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "a961ec1e3e8aaf91cc28a88f2ad181722c2a48f792d23c2e4cf12676d4dc319f"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "c0eabfa5ff201b0de1ec9cc6636f7f181c045a9d8d9ed2f625e209055872c2cd"
 ---
 
 # Runtime Cache
@@ -37,13 +37,13 @@ Runtime cache is a regional, ephemeral cache you can use for storing and retriev
 - [How to add per-request CSP nonces to CDN-cached HTML on Vercel](https://vercel.com/kb/guide/csp-nonces-with-cdn-cache?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related) — Use Routing Middleware and a self-fetch to add a fresh CSP nonce to cached HTML without rendering the page again on ever
 - [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
 - [Build a Weather API on Vercel: Express, FastAPI, and Nitro](https://vercel.com/kb/guide/weather-api-with-fastapi?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related) — Build a weather API on Vercel with FastAPI, Express, or Nitro. Compare the three runtimes, add caching and Observability
-- [Migrating to Cache Components](https://nextjs.org/docs/app/guides/migrating-to-cache-components?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related) — Learn how to migrate from route segment configs to Cache Components in Next.js.
 - [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related)
+- [Migrating to Cache Components](https://nextjs.org/docs/app/guides/migrating-to-cache-components?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related) — Learn how to migrate from route segment configs to Cache Components in Next.js.
 - [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
-- [cacheHandlers](https://nextjs.org/docs/app/api-reference/config/next-config-js/cacheHandlers?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related) — Configure custom cache handlers for use cache directives in Next.js.
 - [Introducing the Runtime Cache API](https://vercel.com/changelog/introducing-the-runtime-cache-api?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related)
+- [cacheHandlers](https://nextjs.org/docs/app/api-reference/config/next-config-js/cacheHandlers?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related) — Configure custom cache handlers for use cache directives in Next.js.
 - [Purging Vercel CDN Cache](https://vercel.com/docs/caching/cdn-cache/purge?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related) — Learn how to invalidate and delete cached content on Vercel's CDN, including cache keys and manual purging options.
-- [Cache Status and Reasons](https://vercel.com/docs/caching/cache-status?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
+- [vercel.functions API Reference \\(Python\\)](https://vercel.com/docs/functions/functions-api-reference/vercel-sdk-python?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related) — Learn about available APIs when working with Vercel Functions in Python.
 
 Full cross-link map for this page: [/docs/caching/runtime-cache.graph.md](/docs/caching/runtime-cache.graph.md?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -346,6 +346,8 @@ This example revalidates the cache every hour:
 
 > **💡 Note:** The Next.js examples are for Next.js 15 and above. For Next.js 14 and below, see [Data Cache](/docs/caching/runtime-cache/data-cache).
 
+**pages/api/products.ts**
+
 ```ts filename="pages/api/products.ts" framework=nextjs
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { cacheLife, cacheTag } from 'next/cache';
@@ -368,6 +370,8 @@ async function getProducts() {
 }
 ```
 
+**pages/api/products.js**
+
 ```js filename="pages/api/products.js" framework=nextjs
 import { cacheLife, cacheTag } from 'next/cache';
 
@@ -386,6 +390,8 @@ async function getProducts() {
 }
 ```
 
+**app/api/products/route.ts**
+
 ```ts filename="app/api/products/route.ts" framework=nextjs-app
 import { cacheLife } from 'next/cache';
 
@@ -403,6 +409,8 @@ async function getProducts() {
 }
 ```
 
+**app/api/products/route.js**
+
 ```js filename="app/api/products/route.js" framework=nextjs-app
 import { cacheLife } from 'next/cache';
 
@@ -419,6 +427,8 @@ async function getProducts() {
   return response.json();
 }
 ```
+
+**api/products.ts**
 
 ```ts filename="api/products.ts" framework=other
 import { getCache } from '@vercel/functions';
@@ -447,6 +457,8 @@ export default {
   },
 };
 ```
+
+**api/products.js**
 
 ```js filename="api/products.js" framework=other
 import { getCache } from '@vercel/functions';
@@ -480,6 +492,8 @@ export default {
 
 This example associates the `products` tag with the data:
 
+**pages/api/products.ts**
+
 ```ts filename="pages/api/products.ts" framework=nextjs
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { cacheLife, cacheTag } from 'next/cache';
@@ -502,6 +516,8 @@ async function getProducts() {
 }
 ```
 
+**pages/api/products.js**
+
 ```js filename="pages/api/products.js" framework=nextjs
 import { cacheLife, cacheTag } from 'next/cache';
 
@@ -519,6 +535,8 @@ async function getProducts() {
   return response.json();
 }
 ```
+
+**app/api/products/route.ts**
 
 ```ts filename="app/api/products/route.ts" framework=nextjs-app
 import { cacheLife, cacheTag } from 'next/cache';
@@ -538,6 +556,8 @@ async function getProducts() {
 }
 ```
 
+**app/api/products/route.js**
+
 ```js filename="app/api/products/route.js" framework=nextjs-app
 import { cacheLife, cacheTag } from 'next/cache';
 
@@ -555,6 +575,8 @@ async function getProducts() {
   return response.json();
 }
 ```
+
+**api/products.ts**
 
 ```ts filename="api/products.ts" framework=other
 import { getCache } from '@vercel/functions';
@@ -584,6 +606,8 @@ export default {
   },
 };
 ```
+
+**api/products.js**
 
 ```js filename="api/products.js" framework=other
 import { getCache } from '@vercel/functions';

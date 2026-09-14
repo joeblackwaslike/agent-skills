@@ -16,8 +16,8 @@ related:
 summary: Learn how to create and manage your own integration for internal or public use with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "b13d4ac79f994d284665d31bd340327635001c86500025c5da264230a431d4e3"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "396ba79f341136500c722404726f18ad0820ad22e8bfd9f431867687d2b0c14c"
 ---
 
 # Create an Integration
@@ -36,7 +36,7 @@ Learn the process of creating and managing integrations on Vercel, helping you e
 - [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration&source_site=vercel-docs&relationship=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
 - [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration&source_site=vercel-docs&relationship=related) — Learn how to manage project access and added products for your integrations.
 - [Storage on Vercel Marketplace](https://vercel.com/docs/marketplace-storage?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration&source_site=vercel-docs&relationship=related) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
+- [Setting Up Webhooks](https://vercel.com/docs/webhooks?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration&source_site=vercel-docs&relationship=related) — Learn how to set up webhooks and use them with Vercel Integrations.
 
 Full cross-link map for this page: [/docs/integrations/create-integration.graph.md](/docs/integrations/create-integration.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/overview.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "c7e78ffa11647acffe577615e092264e7859a1f852d192ad34573f55edeacaec"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "ad89a4f29f1c56a6a8d101f5b9d7c6198a30fe2a0058042f63a3ebc28f3d5c9d"
 ---
 
 # AI SDK Core
@@ -56,6 +56,7 @@ Please check out the [AI SDK Core API Reference](/docs/reference/ai-sdk-core) fo
 - [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
 - [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
+- [Batch](/docs/ai-sdk-core/batch)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)

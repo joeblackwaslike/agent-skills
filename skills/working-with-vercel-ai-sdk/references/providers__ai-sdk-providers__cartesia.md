@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/cartesia.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "94a30d99f2f21013a817ed31b8b34eb84cfe6fea029ef1618f877266e70de9e0"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "8332b9a1b87f7b468a34f3081fb2463468da477786e7aff5e0757ae51e332ab0"
 ---
 
 # Cartesia Provider
@@ -358,7 +358,6 @@ The following provider options are available:
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
-- [LMNT](/providers/ai-sdk-providers/lmnt)
 - [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/deepagents.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "552f960be2add97cb4cb258e7f59dcfe62e03112f65bb71f3c55d8ebf7f87f0d"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "e837efc9e85c3a2eb76ed8de2b9a293bb1b1efde3fca13b71f7141b31f44ccd4"
 ---
 
 # Deep Agents Harness
@@ -226,6 +226,7 @@ The adapter exposes these Deep Agents built-ins through `agent.tools`:
 - [Cline](/providers/ai-sdk-harnesses/cline)
 - [Cursor](/providers/ai-sdk-harnesses/cursor)
 - [fx](/providers/ai-sdk-harnesses/fx)
+- [GitHub Copilot](/providers/ai-sdk-harnesses/github-copilot)
 
 
 [Full Sitemap](/sitemap.md)

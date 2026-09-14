@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/advanced.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "6f3f6209d5f0d9d9602b5ed221fbf9a8a70faef7bbc9c88d5141a9327a78fba2"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "ea21440d36fee7234ca52c92445b634d48e342ba1bdf31383721aa19fcc93f5a"
 ---
 
 # Advanced
@@ -67,6 +67,7 @@ After these concepts, you should have a better understanding of the paradigms be
   - [File Uploads](/docs/ai-sdk-core/file-uploads)
   - [Language Model Middleware](/docs/ai-sdk-core/middleware)
   - [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
+  - [Batch](/docs/ai-sdk-core/batch)
   - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
   - [Error Handling](/docs/ai-sdk-core/error-handling)
   - [Testing](/docs/ai-sdk-core/testing)
@@ -141,10 +142,15 @@ After these concepts, you should have a better understanding of the paradigms be
     - [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
     - [createAgentUIStreamResponse](/docs/reference/ai-sdk-core/create-agent-ui-stream-response)
     - [pipeAgentUIStreamToResponse](/docs/reference/ai-sdk-core/pipe-agent-ui-stream-to-response)
+    - [experimental_startBatch](/docs/reference/ai-sdk-core/start-batch)
     - [tool](/docs/reference/ai-sdk-core/tool)
+    - [experimental_getBatchStatus](/docs/reference/ai-sdk-core/get-batch-status)
     - [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
+    - [experimental_getBatchResults](/docs/reference/ai-sdk-core/get-batch-results)
+    - [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
     - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
     - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+    - [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
     - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
     - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
     - [jsonSchema](/docs/reference/ai-sdk-core/json-schema)

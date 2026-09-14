@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/troubleshooting.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "949ba7b27cb07f840611e91e69df40d16b77e4b0313c0a3e29de261617e80270"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "a73bc3774c2f8f50385867925a580433e04d99c3ef836c854a510c642e3cd0f5"
 ---
 
 # Troubleshooting
@@ -67,6 +67,7 @@ This section is designed to help you quickly identify and resolve common issues 
   - [File Uploads](/docs/ai-sdk-core/file-uploads)
   - [Language Model Middleware](/docs/ai-sdk-core/middleware)
   - [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
+  - [Batch](/docs/ai-sdk-core/batch)
   - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
   - [Error Handling](/docs/ai-sdk-core/error-handling)
   - [Testing](/docs/ai-sdk-core/testing)
@@ -141,10 +142,15 @@ This section is designed to help you quickly identify and resolve common issues 
     - [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
     - [createAgentUIStreamResponse](/docs/reference/ai-sdk-core/create-agent-ui-stream-response)
     - [pipeAgentUIStreamToResponse](/docs/reference/ai-sdk-core/pipe-agent-ui-stream-to-response)
+    - [experimental_startBatch](/docs/reference/ai-sdk-core/start-batch)
     - [tool](/docs/reference/ai-sdk-core/tool)
+    - [experimental_getBatchStatus](/docs/reference/ai-sdk-core/get-batch-status)
     - [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
+    - [experimental_getBatchResults](/docs/reference/ai-sdk-core/get-batch-results)
+    - [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
     - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
     - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+    - [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
     - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
     - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
     - [jsonSchema](/docs/reference/ai-sdk-core/json-schema)

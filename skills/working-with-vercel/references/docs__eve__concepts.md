@@ -16,8 +16,8 @@ related:
 summary: Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/eve/concepts.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "f0d954b7dcb716b1dcffba640d87dfc82322c6fb4f0fc3b1d0571c0d14a64f4e"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "16ffe7bf1fe5fb0a1cab7ec446e9193262ff18d1db0f4eb444a8c0fea9358a7f"
 ---
 
 # Concepts
@@ -37,10 +37,9 @@ the runtime as a deployable app.
 - [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
 - [Security Model](https://eve.dev/docs/concepts/security-model?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — eve's trust boundaries, where secrets live, how credentials reach hosts, and what fails closed by default.
 - [Introducing eve, an open-source agent framework](https://vercel.com/changelog/introducing-eve-an-open-source-agent-framework?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related)
-- [Terminal UI](https://eve.dev/docs/guides/dev-tui?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — Use eve locally or connect to a deployed agent from an interactive terminal UI.
 - [Deployment](https://eve.dev/docs/guides/deployment/overview?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — Choose a deployment strategy and prepare an eve agent for production.
 - [The Agent Stack](https://vercel.com/blog/agent-stack?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related)
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
+- [Terminal UI](https://eve.dev/docs/guides/dev-tui?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — Use eve locally or connect to a deployed agent from an interactive terminal UI.
 
 Full cross-link map for this page: [/docs/eve/concepts.graph.md](/docs/eve/concepts.graph.md?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/settings.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "1cbaf0c1bc82cc59c3a4a90649c02cdb4b2d0fa9119149a11df69b9e49a199f3"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "bf8c81f55a283ed05bf36440b1e0daa2db8371e70ca58ce0dc6487f7349eb125"
 ---
 
 # Settings
@@ -295,6 +295,7 @@ const result = await generateText({
 - [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
 - [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
+- [Batch](/docs/ai-sdk-core/batch)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)

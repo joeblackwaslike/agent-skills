@@ -14,8 +14,8 @@ related:
 summary: Understand projects, deployments, domains, and architecture for multi-project platforms on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-project-platforms/concepts.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "c381fa2d79ef64ccba45ad0eeff78b09d621770b7466c46f02da5327dd44f6bf"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "e05861954df3ec4bd6ecce028bf25e41b138e0b2cb885c788a34b99a57deeea9"
 ---
 
 # Multi-Project Platforms Concepts
@@ -34,11 +34,12 @@ A Vercel project represents a single application with its own Git repository, en
 
 - [Introducing Vercel for Platforms](https://vercel.com/changelog/introducing-vercel-for-platforms?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-project-platforms%2Fconcepts&source_site=vercel-docs&relationship=related)
 - [Build a multi-tenant app with Next.js and Vercel](https://vercel.com/kb/guide/nextjs-multi-tenant-application?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-project-platforms%2Fconcepts&source_site=vercel-docs&relationship=related) — Create a Next.js application with multi-tenancy and custom domain support on Vercel.
+- [Introducing the Vercel Platforms Starter Kit](https://vercel.com/blog/platforms-starter-kit?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-project-platforms%2Fconcepts&source_site=vercel-docs&relationship=related)
 - [Multi-Tenant Platforms](https://vercel.com/docs/platforms/multi-tenant-platforms?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-project-platforms%2Fconcepts&source_site=vercel-docs&relationship=related) — Serve multiple customers from a single codebase and deployment, routing each tenant by subdomain or custom domain.
 - [Multi-Tenant Platform Concepts](https://vercel.com/docs/platforms/multi-tenant-platforms/concepts?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-project-platforms%2Fconcepts&source_site=vercel-docs&relationship=related) — Understand tenants, domains, routing, and architecture for building multi-tenant applications on Vercel for Platforms.
 - [Examples](https://vercel.com/docs/platforms/examples?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-project-platforms%2Fconcepts&source_site=vercel-docs&relationship=related) — Clone working multi-tenant and multi-project starters to begin your platform build.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-project-platforms%2Fconcepts&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 - [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-project-platforms%2Fconcepts&source_site=vercel-docs&relationship=related) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
+- [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-project-platforms%2Fconcepts&source_site=vercel-docs&relationship=related) — Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
 
 Full cross-link map for this page: [/docs/platforms/multi-project-platforms/concepts.graph.md](/docs/platforms/multi-project-platforms/concepts.graph.md?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-project-platforms%2Fconcepts&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

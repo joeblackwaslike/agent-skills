@@ -16,8 +16,8 @@ related:
 summary: Serve WebSocket connections in Vercel Functions for realtime features like chat, collaboration, and AI streaming.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/websockets.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "6475501ae8c6ebcf21270ccd17c2ff5cf178043b11212bb501a51c3cb1988939"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "3c1fb8dc8ff4e21d388ee77238dcda316c1e2475d9997fd0617d7230267e8134"
 ---
 
 # WebSockets
@@ -39,9 +39,8 @@ Vercel Functions can serve WebSocket connections, keeping a bidirectional connec
 - [Publish and subscribe to realtime data on Vercel](https://vercel.com/kb/guide/publish-and-subscribe-to-realtime-data-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fwebsockets&source_site=vercel-docs&relationship=related) — Learn how to publish and subscribe to realtime data on Vercel with WebSockets, SSE, Redis, and Queues, and when a manage
 - [Build Figma-style multiplayer cursors with WebSockets on Vercel](https://vercel.com/kb/guide/real-time-board-nextjs-fastapi?from=related&source_path=%2Fdocs%2Ffunctions%2Fwebsockets&source_site=vercel-docs&relationship=related) — Learn how to build Figma-style multiplayer cursors with Next.js and FastAPI, kept consistent across multiple Vercel Func
 - [Build Notion-style real-time presence with WebSockets on Vercel](https://vercel.com/kb/guide/real-time-presence-hono-react?from=related&source_path=%2Fdocs%2Ffunctions%2Fwebsockets&source_site=vercel-docs&relationship=related) — Build the avatar faces that appear when a teammate opens a page and vanish when they leave. Powered by a Hono WebSocket
-- [Using Express.js with Vercel](https://vercel.com/kb/guide/using-express-with-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fwebsockets&source_site=vercel-docs&relationship=related) — Learn how to use Express.js in a Serverless environment.
+- [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute?from=related&source_path=%2Fdocs%2Ffunctions%2Fwebsockets&source_site=vercel-docs&relationship=related) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
 - [Backends on Vercel](https://vercel.com/docs/frameworks/backend?from=related&source_path=%2Fdocs%2Ffunctions%2Fwebsockets&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fwebsockets&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/functions/websockets.graph.md](/docs/functions/websockets.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fwebsockets&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -182,6 +181,8 @@ The Bun WebSocket API on Vercel currently has these differences from a standalon
 
 Node.js server frameworks such as Express, Hono, and h3 can also serve WebSocket connections on Vercel:
 
+**api/server.ts**
+
 ```ts filename="api/server.ts" framework=express
 import { createServer } from 'node:http';
 import express from 'express';
@@ -199,6 +200,8 @@ wss.on('connection', (ws) => {
 
 export default server;
 ```
+
+**api/server.ts**
 
 ```ts filename="api/server.ts" framework=hono
 import { serve, upgradeWebSocket } from '@hono/node-server';
@@ -225,6 +228,8 @@ const server = serve({
 
 export default server;
 ```
+
+**api/server.ts**
 
 ```ts filename="api/server.ts" framework=h3
 import { H3, serve, defineWebSocketHandler } from 'h3';

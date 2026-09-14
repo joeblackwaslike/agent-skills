@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/deepinfra.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "ef85366735f649bda7c9aa1bda2e9cb3cbf463223e5a7e4f121501de24dee28c"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "56c7e0a664863d64b4857902e7f68aed78aa6098a34240c4ffcb602f48fc1f55"
 ---
 
 # DeepInfra Provider
@@ -341,7 +341,6 @@ const { embedding } = await embed({
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
-- [LMNT](/providers/ai-sdk-providers/lmnt)
 - [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)

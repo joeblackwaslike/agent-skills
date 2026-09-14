@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-rsc.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "b9053698c750be45ec39a7b332dc9168799112b21121fb5b602a3a81f2dc01b7"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "3613f18398e5a24cf96fbc774a8de11447d2402c87e826d10e89906545b5715c"
 ---
 
 # AI SDK RSC
@@ -119,6 +119,7 @@ sha256: "b9053698c750be45ec39a7b332dc9168799112b21121fb5b602a3a81f2dc01b7"
   - [File Uploads](/docs/ai-sdk-core/file-uploads)
   - [Language Model Middleware](/docs/ai-sdk-core/middleware)
   - [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
+  - [Batch](/docs/ai-sdk-core/batch)
   - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
   - [Error Handling](/docs/ai-sdk-core/error-handling)
   - [Testing](/docs/ai-sdk-core/testing)
@@ -193,10 +194,15 @@ sha256: "b9053698c750be45ec39a7b332dc9168799112b21121fb5b602a3a81f2dc01b7"
     - [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
     - [createAgentUIStreamResponse](/docs/reference/ai-sdk-core/create-agent-ui-stream-response)
     - [pipeAgentUIStreamToResponse](/docs/reference/ai-sdk-core/pipe-agent-ui-stream-to-response)
+    - [experimental_startBatch](/docs/reference/ai-sdk-core/start-batch)
     - [tool](/docs/reference/ai-sdk-core/tool)
+    - [experimental_getBatchStatus](/docs/reference/ai-sdk-core/get-batch-status)
     - [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
+    - [experimental_getBatchResults](/docs/reference/ai-sdk-core/get-batch-results)
+    - [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
     - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
     - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+    - [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
     - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
     - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
     - [jsonSchema](/docs/reference/ai-sdk-core/json-schema)

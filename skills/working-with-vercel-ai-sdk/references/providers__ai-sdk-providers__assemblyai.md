@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/assemblyai.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "5ad8b229959944f0a8e3ccd010e711ffadd67f9838da917ac9680d06fb9c0f95"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "c5084e1df366c80529e89e323f24c1b7620c7b0604892ee962bcb2300dd73e0b"
 ---
 
 # AssemblyAI Provider
@@ -412,7 +412,6 @@ AssemblyAI's documentation for per-language availability.
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
-- [LMNT](/providers/ai-sdk-providers/lmnt)
 - [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)

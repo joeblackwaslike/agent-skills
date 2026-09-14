@@ -16,8 +16,8 @@ related:
 summary: Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a deployment and long build times.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/troubleshoot-a-build.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "4f13af6b7fd3b567b75245cb91365c6375daa7a48687574d71a093a5050cd5ab"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "a96967f5b804bf6570881b01845808cda47f2e60666408fff9266df8eaf4a241"
 ---
 
 # Troubleshooting Build Errors
@@ -61,6 +61,12 @@ You can navigate to these views from the Deployment page by clicking on the **So
 If your build fails, Vercel will report the error message on the **Deployments** page so that you can investigate and fix the underlying issue.
 
 In the following we show you how to look up the error message of your failed build.
+
+> Install the [Vercel plugin](/docs/agent-resources/vercel-plugin?from=docs-callout\&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-a-build) to troubleshoot this failed build with your coding agent.
+>
+> ```bash
+> npx plugins add vercel/vercel-plugin
+> ```
 
 ### Investigating Build logs
 
@@ -187,7 +193,8 @@ Sometimes, you may not want to use the Build cache for a specific deployment. Yo
 
 - Use the **Redeploy** button for the specific deployment in the Project's [Deployments](/docs/deployments/managing-deployments) page. In the popup window that follows, leave the checkbox **Use existing Build Cache** unchecked. See [Redeploying a project](/docs/deployments/managing-deployments#redeploy-a-project) for more information.
 - Use [`vercel --force`](/docs/cli/deploy#force) with [Vercel CLI](/docs/cli) to build and deploy the project **without** the Build cache
-- Use an Environment Variable `VERCEL_FORCE_NO_BUILD_CACHE` with a value of `1` on your project to skip the Build cache
+- Use an Environment Variable `VERCEL_FORCE_NO_BUILD_CACHE` with a value of `1` on your project to skip **restoring** the existing Build cache at the start of the build, so the build starts with an empty cache. A successful build still uploads a fresh cache afterward.
+- Use an Environment Variable `VERCEL_FORCE_NO_BUILD_CACHE_UPLOAD` with a value of `1` on your project to skip **uploading** the Build cache at the end of the build, so the existing cache is left unchanged. This does not affect cache restore.
 - Use an Environment Variable `TURBO_FORCE` with a value of `true` on your project to skip Turborepo [Remote Cache](/docs/monorepos/remote-caching)
 - Use the `forceNew` optional query parameter with a value of `1` when [creating a new deployment with the Vercel API](/docs/rest-api/deployments/create-a-new-deployment) to skip the Build cache
 

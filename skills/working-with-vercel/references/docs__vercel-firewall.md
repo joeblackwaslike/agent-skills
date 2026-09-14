@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel Firewall helps protect your applications and websites from malicious attacks and unauthorized access.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "e772618d2063d5aca7ecd4dce260d3aa172607b248f5bbe638bc1a24d0f0de0e"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "335513257807cf4ee1e81a4a69f5da344637df0524a98928e959c091df635cfa"
 ---
 
 # Vercel Firewall
@@ -38,8 +38,8 @@ The Vercel Firewall is a robust, multi-layered security system designed to prote
 - [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel?from=related&source_path=%2Fdocs%2Fvercel-firewall&source_site=vercel-docs&relationship=related) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
 - [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation?from=related&source_path=%2Fdocs%2Fvercel-firewall&source_site=vercel-docs&relationship=related) — A practical checklist for keeping your storefront fast and your checkout path healthy through Black Friday and Cyber Mon
 - [Building an AI chat app with RAG and source citations on Vercel](https://vercel.com/kb/guide/building-ai-chat-app-with-rag-and-citations-on-vercel?from=related&source_path=%2Fdocs%2Fvercel-firewall&source_site=vercel-docs&relationship=related) — A production stack for AI chat with retrieval, reranking, source citations, and background ingestion on Vercel using Nex
-- [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related&source_path=%2Fdocs%2Fvercel-firewall&source_site=vercel-docs&relationship=related) — Learn how to debug how Vercel decides where to route your request
 - [How to build and maintain HIPAA-compliant applications on Vercel](https://vercel.com/kb/guide/hipaa-compliance-guide-vercel?from=related&source_path=%2Fdocs%2Fvercel-firewall&source_site=vercel-docs&relationship=related) — Deploy HIPAA-compliant healthcare apps on Vercel with built-in security, BAAs, and scalable serverless infrastructure.
+- [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall?from=related&source_path=%2Fdocs%2Fvercel-firewall&source_site=vercel-docs&relationship=related) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
 - [How we run Vercel's CDN in front of Discourse](https://vercel.com/blog/how-we-run-vercels-cdn-in-front-of-discourse?from=related&source_path=%2Fdocs%2Fvercel-firewall&source_site=vercel-docs&relationship=related)
 - [Life of a Vercel request: Securing your app's traffic with Vercel](https://vercel.com/blog/life-of-a-request-securing-your-apps-traffic-with-vercel?from=related&source_path=%2Fdocs%2Fvercel-firewall&source_site=vercel-docs&relationship=related)
 

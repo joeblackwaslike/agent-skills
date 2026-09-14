@@ -13,8 +13,8 @@ related:
 summary: View activity events for your Vercel project or team, filtered by type, date range, and project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/activity.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "43ad0d2eb0b269417b3f26ae8ffcb8aa829ed1e227039bcbccb501845e1e0a5b"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "ba8ea548df83723efa9420ca999a45184a208f50e3def97677013b9103af76d6"
 ---
 
 # vercel activity
@@ -29,9 +29,9 @@ The `vercel activity` command displays [activity events](/docs/activity-log) for
 
 - [vercel logs](https://vercel.com/docs/cli/logs?from=related&source_path=%2Fdocs%2Fcli%2Factivity&source_site=vercel-docs&relationship=related) — View and filter request logs for your Vercel project, or stream live runtime logs from a deployment.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Factivity&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel alerts](https://vercel.com/docs/cli/alerts?from=related&source_path=%2Fdocs%2Fcli%2Factivity&source_site=vercel-docs&relationship=related) — List recent alerts for a linked project, a specific project, or an entire team with the Vercel CLI.
+- [vercel alerts](https://vercel.com/docs/cli/alerts?from=related&source_path=%2Fdocs%2Fcli%2Factivity&source_site=vercel-docs&relationship=related) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Factivity&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel metrics](https://vercel.com/docs/cli/metrics?from=related&source_path=%2Fdocs%2Fcli%2Factivity&source_site=vercel-docs&relationship=related) — List and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
+- [vercel metrics](https://vercel.com/docs/cli/metrics?from=related&source_path=%2Fdocs%2Fcli%2Factivity&source_site=vercel-docs&relationship=related) — Discover and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
 
 Full cross-link map for this page: [/docs/cli/activity.graph.md](/docs/cli/activity.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Factivity&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

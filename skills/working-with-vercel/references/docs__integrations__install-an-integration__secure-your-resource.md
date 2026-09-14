@@ -14,8 +14,8 @@ related:
 summary: Learn how to secure native integration resources by choosing where they can connect and using Production-only mode to protect credentials.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/install-an-integration/secure-your-resource.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "07215fbd430d635d8cb32ae140b12ccadfbfc64b55183a33c8b841e774ac14c1"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "82e69a5cc2bc0d2dfd7ee7c5846f9693da734b92b74bf36e886c8774c99a8f1d"
 ---
 
 # Secure Your Resource
@@ -31,7 +31,6 @@ Secure a native integration resource by controlling where projects can connect t
 - [Secure Marketplace credentials with Production-only access](https://vercel.com/changelog/secure-marketplace-credentials-with-production-only-access?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fsecure-your-resource&source_site=vercel-docs&relationship=related)
 - [Rotating Secrets for Vercel Marketplace Integrations](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-supabase-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fsecure-your-resource&source_site=vercel-docs&relationship=related) — Rotate the Supabase service role key, JWT secret, and database password from your Vercel integration, then apply the new
 - [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fsecure-your-resource&source_site=vercel-docs&relationship=related) — Protect who can see your deployments.
-- [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fsecure-your-resource&source_site=vercel-docs&relationship=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fsecure-your-resource&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 - [Access Control](https://vercel.com/docs/security/access-control?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fsecure-your-resource&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fsecure-your-resource&source_site=vercel-docs&relationship=related) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.

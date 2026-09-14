@@ -16,8 +16,8 @@ related:
 summary: API reference for @vercel/connect, the TypeScript SDK for requesting runtime tokens from Vercel Connect.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/ts-sdk-reference.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "13092b461d664326f5fc56007440bb77eec9f972050ea48faf78ffb72c2f8147"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "f0154995ea7c87ab05a08a6f6ab38f3282d16ca101bfecce92a6ff74746f0ce9"
 ---
 
 # SDK Reference
@@ -33,14 +33,13 @@ sha256: "13092b461d664326f5fc56007440bb77eec9f972050ea48faf78ffb72c2f8147"
 - [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fts-sdk-reference&source_site=vercel-docs&relationship=related) — Authenticate Slack, Discord, GitHub, Linear, Notion, and Telegram adapters with Vercel Connect — short-lived runtime tok
 - [Vercel Connect now supports Linq](https://vercel.com/changelog/vercel-connect-now-supports-linq?from=related&source_path=%2Fdocs%2Fconnect%2Fts-sdk-reference&source_site=vercel-docs&relationship=related)
 - [Vercel Connect now supports Microsoft](https://vercel.com/changelog/vercel-connect-supports-microsoft?from=related&source_path=%2Fdocs%2Fconnect%2Fts-sdk-reference&source_site=vercel-docs&relationship=related)
+- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related&source_path=%2Fdocs%2Fconnect%2Fts-sdk-reference&source_site=vercel-docs&relationship=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
 - [Build your own Slackbot with Vercel Connect](https://vercel.com/kb/guide/build-a-slack-bot-with-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fts-sdk-reference&source_site=vercel-docs&relationship=related) — Learn how to build your very own Slackbot with Chat SDK and AI SDK. Vercel Connect supplies runtime Slack tokens and for
 - [Build a GitHub agent with Vercel Connect](https://vercel.com/kb/guide/github-agent-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fts-sdk-reference&source_site=vercel-docs&relationship=related) — Build a GitHub agent that helps your team work through issues and PRs. Chat SDK handles the interactivity and AI SDK run
-- [Build a Linear agent with Vercel Connect](https://vercel.com/kb/guide/linear-agent-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fts-sdk-reference&source_site=vercel-docs&relationship=related) — Build a native Linear Agent that helps your team manage issues. Mention it on any issue and it responds in real time, po
 - [How to build a Slack bot that manages files in Vercel Blob](https://vercel.com/kb/guide/slack-bot-vercel-blob?from=related&source_path=%2Fdocs%2Fconnect%2Fts-sdk-reference&source_site=vercel-docs&relationship=related) — Build a Slack bot using Chat SDK, AI SDK, and Files SDK that can list, read, upload, and delete files in Vercel Blob thr
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents?from=related&source_path=%2Fdocs%2Fconnect%2Fts-sdk-reference&source_site=vercel-docs&relationship=related)
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fconnect%2Fts-sdk-reference&source_site=vercel-docs&relationship=related)
 - [Auth.js](https://vercel.com/docs/connect/frameworks/authjs?from=related&source_path=%2Fdocs%2Fconnect%2Fts-sdk-reference&source_site=vercel-docs&relationship=related) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fconnect%2Fts-sdk-reference&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/connect/ts-sdk-reference.graph.md](/docs/connect/ts-sdk-reference.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fts-sdk-reference&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

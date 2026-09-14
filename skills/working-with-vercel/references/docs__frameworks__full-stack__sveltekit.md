@@ -17,8 +17,8 @@ related:
 summary: Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Middleware.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/sveltekit.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "369f352be484daf6700aed804996d802ba6de80289fa479941f291ec05a0c68b"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "eec44c03b6f365004ce818107f77a547ac2e420f88d3fb71eb9bae081b3cf2f0"
 ---
 
 # SvelteKit on Vercel
@@ -34,7 +34,6 @@ SvelteKit is a frontend framework that enables you to build Svelte applications 
 - [New features for SvelteKit: Optimize your application with ease](https://vercel.com/blog/feature-complete-sveltekit?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fsveltekit&source_site=vercel-docs&relationship=related)
 - [Using SvelteKit 1.0 on Vercel](https://vercel.com/blog/using-sveltekit-1-0-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fsveltekit&source_site=vercel-docs&relationship=related)
 - [What's new in Svelte 5](https://vercel.com/blog/whats-new-in-svelte-5?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fsveltekit&source_site=vercel-docs&relationship=related)
-- [Migrate an Astro app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-an-astro-app-from-webflow-cloud-to-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fsveltekit&source_site=vercel-docs&relationship=related) — Move your Astro app from Webflow Cloud to Vercel: swap the @astrojs/cloudflare adapter for @astrojs/vercel, drop the bas
 - [Nuxt on Vercel](https://vercel.com/docs/frameworks/full-stack/nuxt?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fsveltekit&source_site=vercel-docs&relationship=related) — Deploy Nuxt applications to Vercel and configure rendering, functions, middleware, routing, image optimization, and cach
 - [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fsveltekit&source_site=vercel-docs&relationship=related) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
 - [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fsveltekit&source_site=vercel-docs&relationship=related) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
@@ -48,14 +47,14 @@ You can deploy your SvelteKit projects to Vercel with zero configuration, enabli
 
 ## Get started with SvelteKit on Vercel
 
-To get started with  on Vercel:
+To get started with SvelteKit on Vercel:
 
-- If you already have a project with , install [Vercel CLI](/docs/cli) and run the vercel command from your project's root directory
-- Clone one of our  example repos to your favorite git provider and deploy it on Vercel with the button below:
+- If you already have a project with SvelteKit, install [Vercel CLI](/docs/cli) and run the vercel command from your project's root directory
+- Clone one of our SvelteKit example repos to your favorite git provider and deploy it on Vercel with the button below:
 
 \- Or, choose a template from Vercel's marketplace:
 
-Vercel deployments can \[integrate with your git provider]\(/docs/git) to \[generate preview URLs]\(/docs/deployments/environments#preview-environment-pre-production) for each pull request you make to your  project.
+Vercel deployments can \[integrate with your git provider]\(/docs/git) to \[generate preview URLs]\(/docs/deployments/environments#preview-environment-pre-production) for each pull request you make to your SvelteKit project.
 
 ## Use Vercel features with Svelte
 

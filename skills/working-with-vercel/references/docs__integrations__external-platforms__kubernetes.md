@@ -16,8 +16,8 @@ related:
 summary: Deploy your frontend on Vercel alongside your existing Kubernetes infrastructure.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/external-platforms/kubernetes.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "c239394f7b8594aaf6147a3936f4d856e556880909116f452f1b56fa4fdd6bd8"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "f09677d090e62a82a1d0e28d937c88e92444ad49b80cd04e1bcfb5ec66c6ad11"
 ---
 
 # Integrating Vercel and Kubernetes
@@ -40,7 +40,6 @@ Kubernetes (K8s) is an open-source system for automating deployment, scaling, an
 - [Does Vercel support Ruby on Rails applications?](https://vercel.com/kb/guide/does-vercel-support-ruby-on-rails-applications?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fkubernetes&source_site=vercel-docs&relationship=related) — Learn how you can use Ruby on Rails with your frontend on Vercel.
 - [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fkubernetes&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
 - [Migrate a Next.js app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-a-next-js-app-from-webflow-cloud-to-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fkubernetes&source_site=vercel-docs&relationship=related) — Move your Next.js app from Webflow Cloud to Vercel: remove the OpenNext Cloudflare adapter, drop the base path, map stor
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fkubernetes&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/integrations/external-platforms/kubernetes.graph.md](/docs/integrations/external-platforms/kubernetes.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fkubernetes&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

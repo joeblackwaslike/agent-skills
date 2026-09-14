@@ -13,8 +13,8 @@ related:
 summary: Understand how concurrency and same branch build queues manage multiple simultaneous deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/build-queues.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "f69d34c137011b0864da1172817239575c7205d821ffc86b681af58b6fd9fe18"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "243918f35987e3470f420993a6921d5e9cc072f9852f9a20fe78670399956cc0"
 ---
 
 # Build Queues
@@ -37,7 +37,6 @@ Build queueing is when a build must wait for resources to become available befor
 - [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-queues&source_site=vercel-docs&relationship=related) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
 - [Vercel Queues](https://vercel.com/docs/queues?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-queues&source_site=vercel-docs&relationship=related) — Publish agent events and background work to durable topics with independent consumers, automatic retries, and at-least-o
 - [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-queues&source_site=vercel-docs&relationship=related) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-queues&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/builds/build-queues.graph.md](/docs/builds/build-queues.graph.md?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-queues&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

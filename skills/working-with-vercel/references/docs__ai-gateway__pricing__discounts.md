@@ -14,8 +14,8 @@ related:
 summary: "Discounts on AI Gateway token spend: models already priced below list for every team, plus custom volume discounts with zero-fee ACH payments."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/pricing/discounts.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "d7d0db9f290131633ba188eec3c411df2bc5133cc35c0c4ec0345684c32a5fe8"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "3bba403e35316920cdff1584b41d75ea51625dfd8bcc0dd3ac81b891e6ec0624"
 ---
 
 # AI Gateway Discounts
@@ -32,11 +32,10 @@ Discounts on [AI Gateway](/docs/ai-gateway) token spend come in two forms: model
 - [AI Gateway is now available on AWS Marketplace](https://vercel.com/changelog/ai-gateway-is-now-available-on-aws-marketplace?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related)
 - [Introducing the AI Gateway](https://vercel.com/blog/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related)
 - [AI Gateway is now generally available](https://vercel.com/changelog/ai-gateway-is-now-generally-available?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related)
-- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including pricing and markup, SDK and API compatibility, model availabilit
-- [AI Gateway Usage & Billing](https://vercel.com/docs/ai-gateway/observability-and-spend/usage?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related) — Monitor your AI Gateway credit balance, usage, and generation details.
-- [Blackbox AI](https://vercel.com/docs/ai-gateway/coding-agents/blackbox?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related) — Use the Blackbox AI CLI with the AI Gateway.
-- [Model Allowlist](https://vercel.com/docs/ai-gateway/security-and-compliance/model-allowlist?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related) — Restrict which AI models your team can use through AI Gateway. Available on Pro and Enterprise.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
+- [AI Gateway Rate Limits](https://vercel.com/docs/ai-gateway/rate-limits?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related) — Learn how AI Gateway rate limits work on the free and paid tiers, what the 429 response looks like, and how to retry a r
+- [Chatbox with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/chatbox?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related) — Connect Chatbox to AI Gateway. Configure your API key, endpoint, and models to use multiple AI providers and monitor cha
+- [AI Gateway Framework Integrations](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related) — Connect LangChain, LiteLLM, LlamaIndex, Mastra, Pydantic AI, and other frameworks to Vercel AI Gateway with the AI SDK o
 
 Full cross-link map for this page: [/docs/ai-gateway/pricing/discounts.graph.md](/docs/ai-gateway/pricing/discounts.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

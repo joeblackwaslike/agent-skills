@@ -17,8 +17,8 @@ related:
 summary: Deploy Nuxt applications to Vercel and configure rendering, functions, middleware, routing, image optimization, and caching.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/nuxt.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "89824a27527ebb626a28e4461a97f8cdf46e629f42d727d1a12b4ab42cbc8ae1"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "40dff26d66b8c9be7c1f30a8bbf27920517ac71ecc9ceeacbfadc100ae9842ba"
 ---
 
 # Nuxt on Vercel
@@ -38,7 +38,7 @@ Nuxt is an open-source framework that streamlines the process of creating modern
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnuxt&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 - [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnuxt&source_site=vercel-docs&relationship=related) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
 - [Vite + Nitro on Vercel](https://vercel.com/docs/frameworks/full-stack/vite-with-nitro?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnuxt&source_site=vercel-docs&relationship=related) — Add a backend to any Vite app with Nitro and deploy to Vercel with zero configuration.
-- [Remix on Vercel](https://vercel.com/docs/frameworks/full-stack/remix?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnuxt&source_site=vercel-docs&relationship=related) — Deploy Remix applications to Vercel and configure the Vercel Vite preset, SSR, streaming, caching, and analytics.
+- [Frontends on Vercel](https://vercel.com/docs/frameworks/frontend?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnuxt&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
 
 Full cross-link map for this page: [/docs/frameworks/full-stack/nuxt.graph.md](/docs/frameworks/full-stack/nuxt.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnuxt&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

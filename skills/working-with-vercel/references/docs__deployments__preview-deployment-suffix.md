@@ -14,8 +14,8 @@ related:
 summary: When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that particular deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/preview-deployment-suffix.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "b8d4bf97e3620fed78e14cc9f20d7e50e2b8eb296cda572b40bd251ad925a982"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "0c5270f068ecfe48b9ebc2096b85d3609f2c6b557e5135df42de29d63a4f1602"
 ---
 
 # Preview Deployment Suffix
@@ -32,14 +32,13 @@ Preview Deployment Suffixes allow you to customize the URL of a [preview deploym
 
 - [Preview URLs optimized for multi-tenant platforms](https://vercel.com/changelog/preview-urls-optimized-for-multi-tenant-platforms?from=related&source_path=%2Fdocs%2Fdeployments%2Fpreview-deployment-suffix&source_site=vercel-docs&relationship=related)
 - [Are Vercel Preview Deployments indexed by search engines?](https://vercel.com/kb/guide/are-vercel-preview-deployment-indexed-by-search-engines?from=related&source_path=%2Fdocs%2Fdeployments%2Fpreview-deployment-suffix&source_site=vercel-docs&relationship=related) — Vercel Preview Deployments aren't indexed by default. Learn how the noindex header works, how to confirm it, and the cus
-- [Why do my Vercel deployments have multiple domains?](https://vercel.com/kb/guide/why-do-my-vercel-deployments-have-multiple-domains?from=related&source_path=%2Fdocs%2Fdeployments%2Fpreview-deployment-suffix&source_site=vercel-docs&relationship=related) — Learn about why Vercel auto generates URLs for your deployments.
 - [Custom domain](https://v0.app/docs/custom-domains?from=related&source_path=%2Fdocs%2Fdeployments%2Fpreview-deployment-suffix&source_site=vercel-docs&relationship=related) — Add custom domains to your v0 deployments to give your applications a professional, branded URL.
-- [How do I add a custom domain to my Vercel project?](https://vercel.com/kb/guide/how-do-i-add-a-custom-domain-to-my-vercel-project?from=related&source_path=%2Fdocs%2Fdeployments%2Fpreview-deployment-suffix&source_site=vercel-docs&relationship=related) — Learn how to add a custom domain to your Vercel project.
 - [Branch Domains](https://vercel.com/blog/branch-domains?from=related&source_path=%2Fdocs%2Fdeployments%2Fpreview-deployment-suffix&source_site=vercel-docs&relationship=related)
+- [Avoiding duplicate-content SEO with vercel.app URLs and custom domains](https://vercel.com/kb/guide/avoiding-duplicate-content-with-vercel-app-urls?from=related&source_path=%2Fdocs%2Fdeployments%2Fpreview-deployment-suffix&source_site=vercel-docs&relationship=related) — Discover why search engines may treat your vercel.app URL and custom domain as separate pages, and how to consolidate ra
+- [Accessing Deployments through Generated URLs](https://vercel.com/docs/deployments/generated-urls?from=related&source_path=%2Fdocs%2Fdeployments%2Fpreview-deployment-suffix&source_site=vercel-docs&relationship=related) — When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that parti
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fdeployments%2Fpreview-deployment-suffix&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Deployment Protection on Vercel](https://vercel.com/docs/deployment-protection?from=related&source_path=%2Fdocs%2Fdeployments%2Fpreview-deployment-suffix&source_site=vercel-docs&relationship=related) — Learn how to control access to your Vercel project's preview and production URLs with Deployment Protection. Configure p
 - [Vercel Pro Plan](https://vercel.com/docs/plans/pro-plan?from=related&source_path=%2Fdocs%2Fdeployments%2Fpreview-deployment-suffix&source_site=vercel-docs&relationship=related) — Learn about the Vercel Pro plan with credit-based billing, free viewer seats, and self-serve enterprise features for pro
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fdeployments%2Fpreview-deployment-suffix&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/deployments/preview-deployment-suffix.graph.md](/docs/deployments/preview-deployment-suffix.graph.md?from=related&source_path=%2Fdocs%2Fdeployments%2Fpreview-deployment-suffix&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

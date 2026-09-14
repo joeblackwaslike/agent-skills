@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/error-handling.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "9e2b2148c0f1b69740d98e6c8f5174d135153e24a7b9417084e98249a0a36fd9"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "d0bbcb243652dc81b74ea49ec95367d8604536fc4c1a1803684029ca93959f76"
 ---
 
 # Error Handling
@@ -266,6 +266,7 @@ for await (const chunk of stream) {
 - [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
 - [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
+- [Batch](/docs/ai-sdk-core/batch)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)

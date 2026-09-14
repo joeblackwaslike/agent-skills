@@ -11,14 +11,14 @@ prerequisites:
 related:
   - /docs/functions/limitations
   - /docs/functions/functions-api-reference
-  - /docs/functions/functions-api-reference?framework=other\&language=ts
   - /docs/services
   - /docs/functions/runtimes/node-js/advanced-node-configuration
+  - /docs/functions/runtimes/node-js/node-js-versions
 summary: Learn how to use the Node.js runtime to create functions and deploy Node.js servers on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/node-js.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "398300f216dfdc7991589f9adfbba4d20bc3f858d194b5e743100761de1b8a90"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "f172caea3c83552e374aaf7c4a184d623e8ecbf65681c2638e677342900c4ffc"
 ---
 
 # Using the Node.js Runtime with Vercel Functions
@@ -63,6 +63,8 @@ Vercel looks for a `server` entrypoint in the project root or the `src/` directo
 
 Call `server.listen()` during module startup. Vercel uses that call to detect the HTTP server, then routes incoming requests to the server through an internal port. The port you pass to `listen()` is only used when you run the file locally and does not expose a public port on Vercel.
 
+**server.ts**
+
 ```ts filename="server.ts" framework=all
 import { createServer } from 'node:http';
 
@@ -84,6 +86,8 @@ const server = createServer((request, response) => {
 
 server.listen(Number(process.env.PORT ?? 3000));
 ```
+
+**server.js**
 
 ```js filename="server.js" framework=all
 const { createServer } = require('node:http');
@@ -306,6 +310,8 @@ Express.js is a popular framework used with Node.js. For information on how to u
 
 The Node.js runtime can be used as an experimental feature to run middleware. To enable, add the flag to your `next.config.ts` file:
 
+**next.config.ts**
+
 ```ts filename="next.config.ts" framework=all
 import type { NextConfig } from 'next';
 
@@ -317,6 +323,8 @@ const nextConfig: NextConfig = {
 
 export default nextConfig;
 ```
+
+**next.config.ts**
 
 ```js filename="next.config.ts" framework=all
 const nextConfig = {
@@ -330,12 +338,16 @@ export default nextConfig;
 
 Then in your middleware file, set the runtime to `nodejs` in the `config` object:
 
+**middleware.ts**
+
 ```js {3} filename="middleware.ts" framework=all
 export const config = {
   matcher: '/about/:path*',
   runtime: 'nodejs',
 };
 ```
+
+**middleware.ts**
 
 ```ts {3} filename="middleware.ts" framework=all
 export const config = {

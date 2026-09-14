@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/pi.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "4bdcd5cbfda68fee8bf2db2e64fd946e0bc098d920055c20566663e8aba8aba1"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "06109c60973d8707cacba9036318cf913fbf80c2a8a7b71ca124bfb3bd2819b5"
 ---
 
 # Pi Harness
@@ -87,6 +87,7 @@ Settings:
 - `extensionFactories`: trusted inline Pi extension factories that run in the
   host Node.js process.
 - `mcpServers`: MCP server definitions keyed by server name.
+- `providers`: explicit Pi provider configurations for custom models.
 - `thinkingLevel`: Pi thinking level (`off`, `minimal`, `low`, `medium`,
   `high`, `xhigh`, or `max`).
 
@@ -130,6 +131,10 @@ The `auth` setting selects which credentials Pi reads from the host environment:
 - `ai-gateway`: use `AI_GATEWAY_API_KEY` or `VERCEL_OIDC_TOKEN` and the
   optional `AI_GATEWAY_BASE_URL`.
 
+If no applicable credential environment variable is set, the adapter attempts
+to resolve a native subscription from the host system unless AI Gateway
+authentication is selected.
+
 ```ts
 const harness = createPi({ auth: 'ai-gateway' });
 ```
@@ -153,6 +158,34 @@ With `custom`, standard providers use environment variables such as
 `OPENAI_API_KEY`, `OPENAI_BASE_URL`, `ANTHROPIC_API_KEY`, and
 `ANTHROPIC_BASE_URL`. Other providers use a `<PREFIX>_API_KEY` and matching
 `<PREFIX>_BASE_URL` pair.
+
+Authentication variables do not identify a provider's API protocol or models.
+Register that metadata explicitly when using a custom model:
+
+```ts
+const harness = createPi({
+  auth: {
+    MYPROVIDER_API_KEY: await resolveMyProviderToken(),
+    MYPROVIDER_BASE_URL: 'https://api.example.com/v1',
+  },
+  providers: {
+    myprovider: {
+      api: 'openai-completions',
+      models: [
+        {
+          id: 'my-custom-model',
+          name: 'My Custom Model',
+          reasoning: false,
+          input: ['text'],
+          cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
+          contextWindow: 128_000,
+          maxTokens: 16_384,
+        },
+      ],
+    },
+  },
+});
+```
 
 ## Sandbox
 
@@ -208,6 +241,7 @@ causes the turn to throw `HarnessCapabilityUnsupportedError`.
 - [Cline](/providers/ai-sdk-harnesses/cline)
 - [Cursor](/providers/ai-sdk-harnesses/cursor)
 - [fx](/providers/ai-sdk-harnesses/fx)
+- [GitHub Copilot](/providers/ai-sdk-harnesses/github-copilot)
 
 
 [Full Sitemap](/sitemap.md)

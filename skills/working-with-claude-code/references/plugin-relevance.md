@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/plugin-relevance.md"
-fetched_at: "2026-08-31T10:37:20.620Z"
-sha256: "e2516adee5893448fcebcdb58373052c2c881cbe995521d4782fe5253d066d54"
+fetched_at: "2026-09-14T09:37:17.168Z"
+sha256: "1dd6dcbd13adf115d9728d92bf152976b1e65d955ea5f933e5d5b1724b2c03c1"
 ---
 
 > ## Documentation Index
@@ -171,4 +171,4 @@ The validator reports unknown keys under `relevance` and `relevance.signals` as 
 
 * [Create and distribute a plugin marketplace](/docs/en/plugin-marketplaces): build the marketplace that hosts your plugins
 * [Recommend your plugin from your CLI](/docs/en/plugin-hints): prompt users from your own CLI instead of from Claude Code's session signals
-* [Settings reference](/docs/en/settings-reference#pluginsuggestionmarketplaces): `pluginSuggestionMarketplaces` and `extraKnownMarketplaces`
+* [All settings](/docs/en/settings-reference#pluginsuggestionmarketplaces): `pluginSuggestionMarketplaces` and `extraKnownMarketplaces`

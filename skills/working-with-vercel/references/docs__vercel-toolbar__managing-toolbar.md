@@ -16,8 +16,8 @@ related:
 summary: Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar/managing-toolbar.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "8fe0d236128516f307b11929f44397b694d0fea9a56545c986bc3b8caad97ee8"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "30e25b67940907b2f4b3c1a0b57844f60bb73f72050efe799f91230e8e59de0e"
 ---
 
 # Managing the visibility of the Vercel Toolbar
@@ -42,7 +42,6 @@ When the toolbar is enabled, you'll be able to view it on any preview or enabled
 - [Improvements to Vercel Toolbar: Shrinking when inactive, removal of avatars, and more](https://vercel.com/changelog/improvements-to-vercel-toolbar?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fmanaging-toolbar&source_site=vercel-docs&relationship=related)
 - [Enabling and Disabling Comments](https://vercel.com/docs/comments/how-comments-work?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fmanaging-toolbar&source_site=vercel-docs&relationship=related) — Learn when and where Comments are available, and how to enable and disable Comments at the account, project, and session
 - [Accessibility Audit Tool](https://vercel.com/docs/vercel-toolbar/accessibility-audit-tool?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fmanaging-toolbar&source_site=vercel-docs&relationship=related) — Learn how to use the Accessibility Audit Tool to automatically check the Web Content Accessibility Guidelines 2.0 level
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fmanaging-toolbar&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/vercel-toolbar/managing-toolbar.graph.md](/docs/vercel-toolbar/managing-toolbar.graph.md?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fmanaging-toolbar&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

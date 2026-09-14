@@ -15,8 +15,8 @@ related:
 summary: Learn how to tag your page views and custom events with feature flags
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/observability/web-analytics.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "e5f905daeda1b77a86727f040e242afff1bb4cd4d51f0c1a5b096b203de1cda9"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "2f785721690bf259ef0ea697d41b8a54c7a3c0e02bb3c9450b40a68f8aaa403b"
 ---
 
 # Integrate flags with Vercel Web Analytics
@@ -40,7 +40,6 @@ sha256: "e5f905daeda1b77a86727f040e242afff1bb4cd4d51f0c1a5b096b203de1cda9"
 - [Vercel Flags is now generally available](https://vercel.com/changelog/vercel-flags-ga?from=related&source_path=%2Fdocs%2Fflags%2Fobservability%2Fweb-analytics&source_site=vercel-docs&relationship=related)
 - [Using the Flags SDK with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk?from=related&source_path=%2Fdocs%2Fflags%2Fobservability%2Fweb-analytics&source_site=vercel-docs&relationship=related) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
 - [Running an A/B test](https://vercel.com/docs/flags/vercel-flags/cli/run-ab-test?from=related&source_path=%2Fdocs%2Fflags%2Fobservability%2Fweb-analytics&source_site=vercel-docs&relationship=related) — Set up an A/B test with a feature flag, track results through Web Analytics, and clean up afterward using the Vercel CLI
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fflags%2Fobservability%2Fweb-analytics&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/flags/observability/web-analytics.graph.md](/docs/flags/observability/web-analytics.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fobservability%2Fweb-analytics&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

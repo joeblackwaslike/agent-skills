@@ -16,8 +16,8 @@ related:
 summary: Every paid Pro team gets one free first-year custom domain on an eligible TLD. Claim yours at checkout or from domain search.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/free-domain-with-pro.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "7e20eae151746463b66d2ad520d17d14e4fbab8abf6d0624e3f32fb5bc5b1111"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "259edae7a1d5c64060efb4f4d98b7701a6c865f43baa10fe2a32df1933dacbd5"
 ---
 
 # Free Domain with Pro
@@ -36,10 +36,10 @@ Every paid Pro team gets one free first-year custom domain. You choose an [eligi
 - [Unlimited custom domains for all Pro teams](https://vercel.com/changelog/unlimited-custom-domains-for-all-pro-teams?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=related)
 - [Domain Linked to Another Account](https://vercel.com/kb/guide/domain-linked-to-another-account?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=related) — This guide explains how to claim a domain already linked to another Vercel account and add it to your team using the dom
 - [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=related) — Learn about the Hobby plan and how it compares to the Pro plan.
-- [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=related) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
 - [Account Plans on Vercel](https://vercel.com/docs/plans?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=related) — Learn about the different plans available on Vercel.
+- [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=related) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
 - [Programmatic Domain Management](https://vercel.com/docs/domains/registrar-api?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=related) — Programmatically search, price, purchase, renew, and manage domains with Vercel's domains registrar API endpoints.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
+- [Claim Domain Ownership](https://vercel.com/docs/rest-api/domains/claim-domain-ownership?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=related) — POST /v9/domains/{domain}/claim — Claim ownership of a domain for the authenticated team by verifying a TXT record. The
 
 Full cross-link map for this page: [/docs/domains/free-domain-with-pro.graph.md](/docs/domains/free-domain-with-pro.graph.md?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

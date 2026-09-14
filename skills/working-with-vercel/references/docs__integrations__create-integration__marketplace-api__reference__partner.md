@@ -3,7 +3,7 @@ title: Marketplace Partner API Reference
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner"
-last_updated: 2026-09-07
+last_updated: 2026-09-14
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how to implement Partner API endpoints for your Vercel integration
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "0c98a75e926079d7992cbfaf51e0af7f898268fe2bc4030a192dd8e5e479cc8a"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "54ce9d238998ca1f5fd2e060fff5ebb9f221d172cbe4759ae56ef33c48ad549f"
 ---
 
 # Partner API Reference

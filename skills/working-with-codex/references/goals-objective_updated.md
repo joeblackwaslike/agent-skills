@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/ext/goal/templates/goals/objective_updated.md"
-fetched_at: "2026-06-15T05:54:26.964Z"
-sha256: "6a0c09da9c848920b75164a681e83a6ef6fde7269f339845817639623167928b"
+fetched_at: "2026-09-14T09:38:11.275Z"
+sha256: "a9752da8f38e7a8f11f3cda0d8751894bd0c837cca61d697cdf46b55333b77d6"
 ---
 
 The active thread goal objective was edited by the user.
@@ -19,4 +19,4 @@ Budget:
 
 Adjust the current turn to pursue the updated objective. Avoid continuing work that only served the previous objective unless it also helps the updated objective.
 
-Do not call update_goal unless the updated goal is actually complete.
+Do not call update_goal unless the updated goal is actually complete or the user explicitly requests a pause.

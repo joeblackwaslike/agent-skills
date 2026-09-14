@@ -1,23 +1,23 @@
 ---
-title: File Attachments
+title: Anthropic Messages Images and PDFs with AI Gateway
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/images
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/images"
-last_updated: 2026-07-28
-type: conceptual
+last_updated: 2026-09-08
+type: reference
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api
   - /docs/ai-gateway/sdks-and-apis
 related:
   []
-summary: Send images and PDF documents as part of your Anthropic API message requests.
+summary: Send images and PDF documents as part of your Anthropic API message requests through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/images.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "25e6bc6886866bc7ef0a94326cabf18b9c48db4a6e61cde0dee64b369af15163"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "70206bca10a4ee82bb167e95cdc1f5c38f024a261c77fb8be6d73409c771e29b"
 ---
 
-# File Attachments
+# Anthropic Messages Images and PDFs with AI Gateway
 
 Send images and PDF documents as part of your message request.
 
@@ -27,60 +27,16 @@ Send images and PDF documents as part of your message request.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [File Attachments](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/images?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fimages&source_site=vercel-docs&relationship=related) — Send images and PDF documents to a model using the OpenAI Chat Completions API.
-- [File Attachments](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/images?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fimages&source_site=vercel-docs&relationship=related) — Send images and PDF documents for analysis using the OpenResponses API.
-- [File Attachments](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/images?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fimages&source_site=vercel-docs&relationship=related) — Send images and PDF documents for analysis using the OpenAI Responses API through AI Gateway.
-- [File Uploads](https://chat-sdk.dev/docs/files?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fimages&source_site=vercel-docs&relationship=related) — Send and receive files across chat platforms.
-- [Images, videos, and file uploads](https://v0.app/docs/images-and-videos?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fimages&source_site=vercel-docs&relationship=related) — Attach media, documents, code, and other supported assets to give v0 context or add them to your application.
-- [Messages](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fimages&source_site=vercel-docs&relationship=related) — Create messages using the Anthropic Messages API format with support for streaming.
-- [Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fimages&source_site=vercel-docs&relationship=related) — Use the AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
+- [Anthropic Messages Requests with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fimages&source_site=vercel-docs&relationship=related) — Create messages using the Anthropic Messages API format with support for streaming through AI Gateway.
+- [Anthropic Messages Streaming with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/streaming?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fimages&source_site=vercel-docs&relationship=related) — Stream Anthropic Messages API responses token by token as they are generated through AI Gateway.
+- [OpenAI Chat Completions Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/images?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fimages&source_site=vercel-docs&relationship=related) — Send images and PDF documents to a model using the OpenAI Chat Completions API through AI Gateway.
+- [OpenResponses Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/images?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fimages&source_site=vercel-docs&relationship=related) — Send images and PDF documents for analysis using the OpenResponses API through AI Gateway.
+- [Anthropic Messages Tool Calling with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/tool-calling?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fimages&source_site=vercel-docs&relationship=related) — Use function calling with the Anthropic Messages API to allow models to call tools and functions through AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/images.graph.md](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/images.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fimages&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Example request
-
-#### cURL
-
-```bash filename="attachments.sh"
-PDF_B64=$(base64 -i document.pdf)
-IMAGE_B64=$(base64 -i image.png)
-
-curl -X POST "https://ai-gateway.vercel.sh/v1/messages" \
-  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "anthropic/claude-opus-5",
-    "max_tokens": 1024,
-    "messages": [
-      {
-        "role": "user",
-        "content": [
-          {
-            "type": "document",
-            "source": {
-              "type": "base64",
-              "media_type": "application/pdf",
-              "data": "'"$PDF_B64"'"
-            }
-          },
-          {
-            "type": "image",
-            "source": {
-              "type": "base64",
-              "media_type": "image/png",
-              "data": "'"$IMAGE_B64"'"
-            }
-          },
-          {
-            "type": "text",
-            "text": "What do this document and image show?"
-          }
-        ]
-      }
-    ]
-  }'
-```
 
 #### TypeScript
 
@@ -134,7 +90,9 @@ const message = await anthropic.messages.create({
   ],
 });
 
-console.log('Response:', message.content[0].text);
+for (const block of message.content) {
+  if (block.type === 'text') console.log('Response:', block.text);
+}
 ```
 
 #### Python
@@ -190,7 +148,51 @@ message = client.messages.create(
     ],
 )
 
-print('Response:', message.content[0].text)
+for block in message.content:
+    if block.type == "text":
+        print('Response:', block.text)
+```
+
+#### cURL
+
+```bash filename="attachments.sh"
+PDF_B64=$(base64 -i document.pdf)
+IMAGE_B64=$(base64 -i image.png)
+
+curl -X POST "https://ai-gateway.vercel.sh/v1/messages" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "anthropic/claude-opus-5",
+    "max_tokens": 1024,
+    "messages": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "document",
+            "source": {
+              "type": "base64",
+              "media_type": "application/pdf",
+              "data": "'"$PDF_B64"'"
+            }
+          },
+          {
+            "type": "image",
+            "source": {
+              "type": "base64",
+              "media_type": "image/png",
+              "data": "'"$IMAGE_B64"'"
+            }
+          },
+          {
+            "type": "text",
+            "text": "What do this document and image show?"
+          }
+        ]
+      }
+    ]
+  }'
 ```
 
 ### Supported file types

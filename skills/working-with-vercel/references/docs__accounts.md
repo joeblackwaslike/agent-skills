@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your Vercel account and team members.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/accounts.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "d8c3b91deb48cca6cf998b976e43f7b3c0016a979c2bd449b7ee77e45a6b979c"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "01668297df1668f80d456110688a62c03a6b0573ebd5673f53cf5ee15435008b"
 ---
 
 # Account Management
@@ -36,12 +36,12 @@ When you first sign up for Vercel, you'll create an account. This account is use
 - [Tag-based cache invalidation now available for all responses](https://vercel.com/changelog/tag-based-cache-invalidation-now-available-for-all-responses?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related)
 - [Firewall Terraform Configuration](https://vercel.com/kb/guide/firewall-terraform-configuration?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — Learn how to create scalable firewall configurations with Terraform
 - [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
+- [Using TanStack AI with Vercel Sandbox](https://vercel.com/kb/guide/tanstack-ai-vercel-sandbox?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — Run coding agents in isolated Vercel Sandbox microVMs with the @tanstack/ai-sandbox-vercel provider, with durable resume
 - [Teams](https://v0.app/docs/teams?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — Collaborate with your team on projects with shared resources.
-- [Account](https://v0.app/docs/account?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — Manage your account and billing information.
 - [September 2020](https://vercel.com/blog/changelog-september-2020?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related)
-- [Troubleshoot project collaboration](https://vercel.com/docs/deployments/troubleshoot-project-collaboration?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — Learn about common reasons for deployment issues related to team member requirements and how to resolve them.
+- [Account](https://v0.app/docs/account?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — Manage your account and billing information.
 - [Transition your Hobby team after EMU enrollment](https://vercel.com/docs/security/enterprise-managed-users-account-update?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — Explains the account update screen EMU members see at SSO sign-in and how to complete it.
-- [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Troubleshoot project collaboration](https://vercel.com/docs/deployments/troubleshoot-project-collaboration?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — Learn about common reasons for deployment issues related to team member requirements and how to resolve them.
 
 Full cross-link map for this page: [/docs/accounts.graph.md](/docs/accounts.graph.md?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -116,9 +116,46 @@ Your Hobby team on Vercel can have only one login connection per third-party ser
 
 For multiple logins from the same service, create a new Vercel Hobby team.
 
+## Managing your profile
+
+You can change your personal avatar and username in [your account settings](/account/settings).
+
+If you're an [Enterprise Managed User](/docs/security/enterprise-managed-users), your organization manages your profile, and you can't change your avatar or username yourself.
+
+### Changing your avatar
+
+To update your personal avatar:
+
+1. Open [your account settings](/account/settings).
+2. In the **Avatar** section, select your current avatar.
+3. Choose a PNG, JPEG, or WebP image from your files.
+4. Adjust the crop and click **Set Avatar**.
+
+Your new avatar appears when the upload completes.
+
+### Changing your username
+
+Your username identifies your personal account and its URL namespace, `vercel.com/<username>`. To change it:
+
+1. Open [your account settings](/account/settings).
+2. In the **Username** section, enter your new username using up to 48 characters.
+3. Click **Save**.
+
+Vercel displays a confirmation when your username updates.
+
 ## Teams
 
 Teams on Vercel let you collaborate with other members on projects and access additional resources.
+
+### Switching teams
+
+To view another team's projects and resources:
+
+1. Open the [Vercel dashboard](/dashboard).
+2. Select the team switcher at the top left of the navigation bar.
+3. Select the team you want to view from the list of teams you belong to.
+
+To choose which team appears when you first log in or open the dashboard, [change your default team](#how-to-change-your-default-team).
 
 ### Creating a team
 

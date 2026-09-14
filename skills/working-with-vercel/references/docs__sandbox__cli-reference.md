@@ -16,8 +16,8 @@ related:
 summary: Based on the Docker CLI, you can use the Sandbox CLI to manage your Vercel Sandbox from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/cli-reference.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "4b7a7563332eec9489009468f5af170616c88e27d0b63cd7135fc3edc5f2aeda"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "fca536df47f61a38f35d992c4e519893f07d21f9835f533f09956d03d1f5ad32"
 ---
 
 # Sandbox CLI Reference
@@ -30,6 +30,7 @@ The Sandbox CLI, based on the Docker CLI, allows you to manage sandboxes, execut
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Drives for Vercel Sandbox in Private Beta](https://vercel.com/changelog/drives-for-vercel-sandbox-in-private-beta?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related)
 - [Full Sandbox egress firewall now available on Hobby plan](https://vercel.com/changelog/full-sandbox-egress-firewall-now-available-on-hobby-plan?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related)
 - [The Vercel Sandbox CLI is now more agent-friendly](https://vercel.com/changelog/the-vercel-sandbox-cli-is-now-more-agent-friendly?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related)
 - [Use and manage Vercel Sandbox directly from the Vercel CLI](https://vercel.com/changelog/use-vercel-sandbox-directly-within-vercel-cli?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related)
@@ -41,7 +42,6 @@ The Sandbox CLI, based on the Docker CLI, allows you to manage sandboxes, execut
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 - [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/sandbox/cli-reference.graph.md](/docs/sandbox/cli-reference.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -108,7 +108,7 @@ sandbox <subcommand>
 - [`copy`](#sandbox-copy): Copy files between your local filesystem and a remote sandbox. \[alias: `cp`]
 - [`stop`](#sandbox-stop): Stop the current session of one or more sandboxes.
 - [`remove`](#sandbox-remove): Permanently delete one or more sandboxes and all their sessions.
-- [`config`](#sandbox-config): View and update sandbox configuration (resources, timeout, persistence, snapshot retention, network policy, tags).
+- [`config`](#sandbox-config): View and update sandbox configuration (resources, timeout, persistence, snapshot retention, network policy, drive mounts, tags).
 - [`sessions`](#sandbox-sessions): Inspect VM sessions for a sandbox.
 - [`snapshot`](#sandbox-snapshot): Take a snapshot of the filesystem of a sandbox.
 - [`snapshots`](#sandbox-snapshots): Manage sandbox snapshots.
@@ -219,8 +219,11 @@ sandbox create --network-policy deny-all
 # Create sandbox with restricted Internet access (limited to Vercel's AI gateway)
 sandbox create --allowed-domain ai-gateway.vercel.sh
 
-# Mount a drive with read-only access (requires private beta access and beta CLI)
-sandbox create --mount cache:/data:read-only
+# Mount a drive with read-write access
+sandbox create --mount cache:/data
+
+# Mount a point-in-time, read-only snapshot of a drive
+sandbox create --mount cache:/data:snapshot
 ```
 
 ### Sandbox create options
@@ -237,7 +240,7 @@ sandbox create --mount cache:/data:read-only
 | `--snapshot <snapshot_id>`          | `-s`     | Create the sandbox from a previously saved snapshot. To fork from another sandbox by name, use [`sandbox fork`](#sandbox-fork) instead.                          |
 | `--env <key=value>`                 | `-e`     | Default environment variables for sandbox commands. Repeatable.                                                                                                  |
 | `--tag <key=value>`                 | `-t`     | Key-value tag. Up to five. Repeatable. See [Tags](/docs/sandbox/concepts/tags).                                                                                  |
-| `--mount <drive:path[:mode]>`       | -        | Mount a drive onto the sandbox. Repeatable. `mode` can be `read-write` (default) or `read-only`. See [Drives](/docs/sandbox/concepts/drives) to access the beta. |
+| `--mount <drive:path[:mode]>`       | -        | Mount a drive onto the sandbox. Repeatable. `mode` can be `read-write` (default) or `snapshot`. See [Drives](/docs/sandbox/concepts/drives).                 |
 | `--region <region>`                 | -        | [Region](/docs/sandbox/concepts/regions) to create the sandbox in. Defaults to the [project's default sandbox region](/docs/sandbox/concepts/regions#set-a-default-region-for-your-project), or `iad1`.                                  |
 | `--failover-regions <region,...>`   | -        | Comma-separated [regions](/docs/sandbox/concepts/regions#failover-regions) the sandbox can fail over to (e.g. `sfo1,cle1`). Must not include the main region. Not supported with `--mount`. Available on Pro and Enterprise plans, excluding [Pro trials](/docs/plans/pro-plan/trials). |
 | `--snapshot-expiration <duration>`  | -        | Default snapshot TTL. Defaults to `30d`. Use `none` or `0` for no expiration.                                                                                    |
@@ -351,6 +354,7 @@ sandbox config <subcommand> <name> [VALUE | OPTIONS]
 | `sandbox config current-snapshot <name> <snapshot-id>`       | Roll back the sandbox to a specific snapshot. New sessions resume from it.                                   |
 | `sandbox config network-policy <name> [OPTIONS]`             | Update the network firewall (see options below).                                                             |
 | `sandbox config ports <name> [-p PORT ...]`                  | Replace the exposed port list. Omit `-p` to clear all ports.                                                 |
+| `sandbox config mounts <name> [OPTIONS]`                     | Replace the mounted drives for new sessions. Omit `--mount` to remove all mounts.                           |
 | `sandbox config tags <name> [--tag key=value ...]`           | Replace the tag set. Omit `--tag` to clear all tags.                                                         |
 
 ### Sandbox config example
@@ -379,6 +383,12 @@ sandbox config ports my-sandbox -p 3000 -p 8000
 
 # Clear all exposed ports
 sandbox config ports my-sandbox
+
+# Replace the mounted drives for new sessions
+sandbox config mounts my-sandbox --mount cache:/data --mount shared:/shared:snapshot
+
+# Remove all drive mounts from new sessions
+sandbox config mounts my-sandbox
 
 # Replace the tag set
 sandbox config tags my-sandbox --tag env=production --tag team=infra
@@ -416,6 +426,24 @@ sandbox config network-policy my-sandbox --allowed-domain vercel.com --allowed-d
 | Argument | Description                       |
 | -------- | --------------------------------- |
 | `<name>` | The sandbox to update (by name).  |
+
+### Sandbox config mounts options
+
+| Option                        | Alias | Description                                                                                                                                     |
+| ----------------------------- | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--mount <drive:path[:mode]>` | -     | Mount a drive for new sessions. Repeatable. `mode` can be `read-write` (default) or `snapshot`. Omit this option to remove all existing mounts. |
+
+### Sandbox config mounts flags
+
+| Flag     | Short | Description               |
+| -------- | ----- | ------------------------- |
+| `--help` | `-h`  | Display help information. |
+
+### Sandbox config mounts arguments
+
+| Argument | Description                        |
+| -------- | ---------------------------------- |
+| `<name>` | The name of the sandbox to update. |
 
 ## `sandbox copy`
 
@@ -654,8 +682,11 @@ sandbox run --name my-sandbox --stop -- npm build
 # Permanently delete the sandbox after the command exits
 sandbox run --rm -- python3 script.py
 
-# Run a command with a read-only drive mounted (requires private beta access and beta CLI)
-sandbox run --mount cache:/data:read-only -- ls /data
+# Run a command with a drive mounted for read-write access
+sandbox run --mount cache:/data -- npm build
+
+# Run a command with a point-in-time, read-only snapshot of a drive
+sandbox run --mount cache:/data:snapshot -- ls /data
 ```
 
 ### Sandbox run options
@@ -675,7 +706,7 @@ sandbox run --mount cache:/data:read-only -- ls /data
 | `--tag <key=value>`           | `-t`     | Key-value tag. Repeatable. See [Tags](/docs/sandbox/concepts/tags).                                                                                                |
 | `--region <region>`           | -        | [Region](/docs/sandbox/concepts/regions) to create the sandbox in (when creating a new sandbox).                                                                   |
 | `--failover-regions <region,...>` | -    | Comma-separated [regions](/docs/sandbox/concepts/regions#failover-regions) the sandbox can fail over to (e.g. `sfo1,cle1`). Must not include the main region. Not supported with `--mount`. |
-| `--mount <drive:path[:mode]>` | -        | Mount a drive onto the sandbox. Repeatable. `mode` can be `read-write` (default) or `read-only`. See [Drives](/docs/sandbox/concepts/drives) to access the beta.   |
+| `--mount <drive:path[:mode]>` | -        | Mount a drive onto the sandbox. Repeatable. `mode` can be `read-write` (default) or `snapshot`. See [Drives](/docs/sandbox/concepts/drives).                     |
 
 ### Sandbox run flags
 
@@ -975,31 +1006,6 @@ sandbox sessions list my-sandbox --sort-order asc --limit 100
 > **🔒 Permissions Required**: Drives
 
 Drives are persistent storage that can be mounted into a sandbox. To learn more, see [Drives](/docs/sandbox/concepts/drives).
-
-Once you are added to the [private beta](https://vercel.com/changelog/drives-for-vercel-sandbox-in-private-beta), install the beta version of the `sandbox` CLI:
-
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i sandbox@beta
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn i sandbox@beta
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i sandbox@beta
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun i sandbox@beta
-    ```
-  </Code>
-</CodeBlock>
 
 ```bash filename="terminal"
 sandbox drives <subcommand>

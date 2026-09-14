@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/corporate-launcher.md"
-fetched_at: "2026-08-31T10:37:20.620Z"
-sha256: "aa63abe5707ddc28d7cdcf5331d40face45a17457a7daaec6f294e07cc04b320"
+fetched_at: "2026-09-14T09:37:17.168Z"
+sha256: "74ea19aa77f523c0db149d4b73314c430c858426f3e59ba8edc62df0f664393e"
 ---
 
 > ## Documentation Index
@@ -49,7 +49,7 @@ The following processes don't start through the launcher:
 
 ### Helper process names in process monitors
 
-With a launcher configured, `ps` and Activity Monitor show the versioned binary name for the background helper processes instead of Claude Code's `claude bg-pty-host` and `claude bg-spare` labels, because the launcher's `exec` rebuilds the argument list. The renaming is a side effect, not concealment: the processes are otherwise unchanged, and Claude Code identifies its own processes by binary path, never by display name.
+With a launcher configured, `ps` and Activity Monitor no longer show Claude Code's `claude bg-pty-host` and `claude bg-spare` labels for the background helper processes, because the launcher's `exec` rebuilds the argument list. Losing the labels is a side effect, not concealment: the processes are otherwise unchanged, and Claude Code identifies its own processes by binary path, never by display name.
 
 ## Set up the launcher
 

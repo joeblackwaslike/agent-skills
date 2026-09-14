@@ -2,8 +2,8 @@
 title: "What is DoltHub"
 description: The hosted Git server for Dolt databases — browsing, pull requests, discovery, and a public data catalog.
 source: "https://www.dolthub.com/docs/products/dolthub.md"
-fetched_at: "2026-07-13T06:56:02.638Z"
-sha256: "44c34ae36421b653375a606d60f8da1fb5abcadcbba2737a0526fefbd9367714"
+fetched_at: "2026-09-14T09:39:37.291Z"
+sha256: "a2d7b08416fefaa9ceb2898b574a971c8a34523a8ca90fdf2b8ae7e84c5d6ca5"
 ---
 
 
@@ -20,6 +20,10 @@ DoltHub has many uses. We recommend getting started by [sharing a database](/pro
 [Data Sharing](/products/dolthub/data-sharing)
 
 This documentation will walk you through discovering data on DoltHub, cloning a copy locally, making a change on a fork, and submitting a pull request to the original database.
+
+## DoltHub CLI
+
+Use [the DoltHub CLI (`dh`)](/products/dolthub/cli) to run SQL, import tables, and manage pull requests from your terminal. Start with [installation](/products/dolthub/cli/installation) or the [getting-started walkthrough](/products/dolthub/cli/getting-started).
 
 ## DoltHub API
 

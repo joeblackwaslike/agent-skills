@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/translation.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "b8a9664f96cb681c94d45e6604697800e5c2827fdf3df3a384e243bb7b6a58e6"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "699e33a46e5c46777159d91190700a15936f22fb20cd5e9c3ee07713f6f19aed"
 ---
 
 # Translation
@@ -234,6 +234,7 @@ providers. For more, see the respective provider documentation.
 - [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
 - [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
+- [Batch](/docs/ai-sdk-core/batch)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)

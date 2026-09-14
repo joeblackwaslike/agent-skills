@@ -17,8 +17,8 @@ related:
 summary: "Learn how to use Global Config with Vercel's Split integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-integrations/split-global-config.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "68e6b84dd5c0d22d718b994956bad00e7822779482f920fb540bfe9d1818e47b"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "ccc16426595ca01b031ceea4416fb8f2c3405426a70507d65c9b5e7d184d14a2"
 ---
 
 # Using Global Config with Split
@@ -36,7 +36,7 @@ This guide will help you get started with using Vercel's Split integration with 
 - [Client Uploads with Vercel Blob](https://vercel.com/docs/vercel-blob/client-upload?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
 - [Routing Middleware API](https://vercel.com/docs/routing-middleware/api?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
 - [Advanced Web Analytics Config with @vercel/analytics](https://vercel.com/docs/analytics/package?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — With the @vercel/analytics npm package, you are able to configure your application to send analytics data to Vercel.
-- [Redacting Sensitive Data from Web Analytics Events](https://vercel.com/docs/analytics/redacting-sensitive-data?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — Learn how to redact sensitive data from your Web Analytics events.
+- [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
 - [OG Image Generation Examples](https://vercel.com/docs/og-image-generation/examples?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — Learn how to use the @vercel/og library with examples.
 
 Full cross-link map for this page: [/docs/global-config/global-config-integrations/split-global-config.graph.md](/docs/global-config/global-config-integrations/split-global-config.graph.md?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=graph)

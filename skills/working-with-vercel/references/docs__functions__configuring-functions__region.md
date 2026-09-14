@@ -17,8 +17,8 @@ related:
 summary: Learn how to configure regions for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/region.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "f534617d5f32582eec9df8c338af04abe912658979fbcbc2df3781d19bbc62ab"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "94e38ff7902475d1c9427b256a15d27e2b650131bdd7adb105fec21cf2f3a676"
 ---
 
 # Configuring regions for Vercel Functions
@@ -38,11 +38,11 @@ The Vercel platform caches all static content in [the CDN](/docs/caching/cdn-cac
 - [Pro customers can now configure up to 3 regions for Vercel Functions](https://vercel.com/changelog/pro-customers-can-now-configure-up-to-3-regions-for-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fregion&source_site=vercel-docs&relationship=related)
 - [Vercel Edge Functions can now be regional or global](https://vercel.com/changelog/regional-edge-functions-are-now-available?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fregion&source_site=vercel-docs&relationship=related)
 - [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fregion&source_site=vercel-docs&relationship=related) — Learn how to build and scale performant APIs on Vercel.
-- [How can I reduce my Vercel Functions usage on Vercel?](https://vercel.com/kb/guide/how-can-i-reduce-my-serverless-execution-usage-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fregion&source_site=vercel-docs&relationship=related) — Reduce Vercel Functions usage and cost under Fluid compute pricing with caching, rendering strategies, and function conf
 - [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fregion&source_site=vercel-docs&relationship=related) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
+- [How can I improve function cold start performance on Vercel?](https://vercel.com/kb/guide/improve-function-cold-start-performance-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fregion&source_site=vercel-docs&relationship=related) — Learn how to confirm whether cold starts cause function latency on Vercel, and how Fluid compute reduces how often they
+- [How to choose a Salesforce Commerce Cloud storefront: PWA Kit, Storefront Next, or Next.js](https://vercel.com/kb/guide/salesforce-pwa-kit-vs-storefront-next-vs-nextjs?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fregion&source_site=vercel-docs&relationship=related) — Compare PWA Kit, Storefront Next, and a Next.js storefront on Vercel for Salesforce Commerce Cloud. Learn how caching, p
 - [Troubleshooting request ECONNRESET errors](https://vercel.com/kb/guide/troubleshooting-request-econnreset-errors?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fregion&source_site=vercel-docs&relationship=related) — Understand what ECONNRESET means in Vercel runtime logs, why it happens when calling external APIs, how to diagnose it,
 - [Deploying AI-driven apps on Vercel](https://vercel.com/blog/deploying-ai-applications?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fregion&source_site=vercel-docs&relationship=related)
-- [Effortless high availability for dynamic frontends](https://vercel.com/blog/effortless-high-availability-for-dynamic-frontends?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fregion&source_site=vercel-docs&relationship=related)
 
 Full cross-link map for this page: [/docs/functions/configuring-functions/region.graph.md](/docs/functions/configuring-functions/region.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fregion&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

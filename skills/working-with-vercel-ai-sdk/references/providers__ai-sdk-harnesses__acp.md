@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/acp.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "80e3b5c587032135b95e9fb7bea3ddf47cfe32daa894f42211261e49a6669cc3"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "19f37c0fab90406eff3f1b47414b6485749a31f0b3661b4167051c0af847209e"
 ---
 
 # Agent Client Protocol Harness
@@ -709,6 +709,7 @@ requests sent through ACP, the adapter applies the configured Harness
 - [Cline](/providers/ai-sdk-harnesses/cline)
 - [Cursor](/providers/ai-sdk-harnesses/cursor)
 - [fx](/providers/ai-sdk-harnesses/fx)
+- [GitHub Copilot](/providers/ai-sdk-harnesses/github-copilot)
 
 
 [Full Sitemap](/sitemap.md)

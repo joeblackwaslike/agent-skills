@@ -16,8 +16,8 @@ related:
 summary: Learn how to configure drains to forward observability data to custom HTTP endpoints, dedicated Audit Log destinations, and integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/using-drains.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "76c4532ef4ce67b1015649c0cc0108685e0fb0fb0ff12185032700b43773255d"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "44377d04d9e5edc9d27edc87b0cfde8faa7df5eabc7273f4328dace836d150c8"
 ---
 
 # Using Drains
@@ -35,7 +35,7 @@ You can add drains to your project by following the configuration steps below. W
 - [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains?from=related&source_path=%2Fdocs%2Fdrains%2Fusing-drains&source_site=vercel-docs&relationship=related)
 - [Correlate logs and traces with OpenTelemetry in Vercel Log Drains](https://vercel.com/changelog/correlate-logs-and-traces-with-opentelemetry-in-vercel-log-drains?from=related&source_path=%2Fdocs%2Fdrains%2Fusing-drains&source_site=vercel-docs&relationship=related)
 - [Migrating from Custom SIEM Log Streaming to Audit Log Drains](https://vercel.com/docs/audit-log/migrating-to-drains?from=related&source_path=%2Fdocs%2Fdrains%2Fusing-drains&source_site=vercel-docs&relationship=related) — Move your SIEM integration from Custom SIEM Log Streaming to Audit Log Drains, with wider event coverage and a new event
-- [Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains?from=related&source_path=%2Fdocs%2Fdrains%2Fusing-drains&source_site=vercel-docs&relationship=related) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
+- [AI Gateway Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains?from=related&source_path=%2Fdocs%2Fdrains%2Fusing-drains&source_site=vercel-docs&relationship=related) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
 - [Creates a new Integration Log Drain \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/creates-a-new-integration-log-drain-deprecated?from=related&source_path=%2Fdocs%2Fdrains%2Fusing-drains&source_site=vercel-docs&relationship=related) — POST /v2/integrations/log-drains — Creates an Integration log drain. This endpoint must be called with an OAuth2 client
 - [Retrieve a list of all Drains](https://vercel.com/docs/rest-api/drains/retrieve-a-list-of-all-drains?from=related&source_path=%2Fdocs%2Fdrains%2Fusing-drains&source_site=vercel-docs&relationship=related) — GET /v1/drains — Allows to retrieve the list of Drains of the authenticated team.
 - [Creates a Configurable Log Drain \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/creates-a-configurable-log-drain-deprecated?from=related&source_path=%2Fdocs%2Fdrains%2Fusing-drains&source_site=vercel-docs&relationship=related) — POST /v1/log-drains — Creates a configurable log drain. This endpoint must be called with a team AccessToken \\(integrati

@@ -1,12 +1,17 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-invalid-argument-error.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "b649b99084d5ec5bc314c8315f672ac71cc09fa006b6105ef07c6ad1aae19ac4"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "a306f4ec85d3d1f7bcf0068a7aa8f9711cdd4e57336fcb01df09c910ec5e22ba"
 ---
 
 # AI_InvalidArgumentError
 
 This error occurs when an invalid argument was provided.
+
+For example, `getTextFromDataUrl` throws this error when its `dataUrl` argument
+is malformed or cannot be decoded. Utility validation that is used by higher
+level APIs also uses this error, so you can handle invalid arguments with one
+stable error guard.
 
 ## Properties
 
@@ -22,7 +27,7 @@ You can check if an error is an instance of `AI_InvalidArgumentError` using:
 import { InvalidArgumentError } from 'ai';
 
 if (InvalidArgumentError.isInstance(error)) {
-  // Handle the error
+  console.error(`Invalid ${error.parameter}:`, error.message);
 }
 ```
 

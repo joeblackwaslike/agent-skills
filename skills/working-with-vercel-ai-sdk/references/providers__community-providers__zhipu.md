@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/zhipu.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "774e6be397a55165fa14c5d22e15b77fe5f9aa36b04827611ba58da9c3f6cf6e"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "6c36969f93831709e471c2e1f8fdf194d2fdd3a6dd2e8af70b6f5179b130a500"
 ---
 
 # Zhipu AI (Z.AI) Provider
@@ -126,6 +126,7 @@ console.log(result);
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
 - [Interfaze](/providers/community-providers/interfaze)
+- [Telnyx](/providers/community-providers/telnyx)
 - [Flowise](/providers/community-providers/flowise)
 
 

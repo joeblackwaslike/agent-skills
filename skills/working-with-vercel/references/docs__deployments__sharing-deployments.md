@@ -16,8 +16,8 @@ related:
 summary: Learn how to share a preview deployment with your team and external collaborators.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/sharing-deployments.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "0d06665a0d7ef51052564667299a435643587f4588406014931e0b1097bde73f"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "d0b7931af2003af4a127e78a83407d5c407a2070bd67240ccfdbf2b943e3cb3f"
 ---
 
 # Sharing a Preview Deployment
@@ -39,7 +39,6 @@ By default, members of your [Vercel team](/docs/accounts#creating-a-team) that h
 - [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments?from=related&source_path=%2Fdocs%2Fdeployments%2Fsharing-deployments&source_site=vercel-docs&relationship=related)
 - [Protecting Deployments](https://vercel.com/blog/security-controls-protected-preview-deployments-passwords?from=related&source_path=%2Fdocs%2Fdeployments%2Fsharing-deployments&source_site=vercel-docs&relationship=related)
 - [Managing Comments on Preview Deployments](https://vercel.com/docs/comments/managing-comments?from=related&source_path=%2Fdocs%2Fdeployments%2Fsharing-deployments&source_site=vercel-docs&relationship=related) — Learn how to manage Comments on your Preview Deployments from Team members and invited collaborators.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fdeployments%2Fsharing-deployments&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/deployments/sharing-deployments.graph.md](/docs/deployments/sharing-deployments.graph.md?from=related&source_path=%2Fdocs%2Fdeployments%2Fsharing-deployments&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

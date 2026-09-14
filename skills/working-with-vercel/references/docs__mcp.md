@@ -14,8 +14,8 @@ related:
 summary: Learn more about MCP and how you can use it on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/mcp.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "f6094db14c2231511be1d5caaae2ac29a45b0328c07f066632100eed9b4113c8"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "9e56f02d6294e17b9d90243d0a8981d4c5df2844f63c8f73e766a32d06830100"
 ---
 
 # Model Context Protocol
@@ -30,7 +30,6 @@ sha256: "f6094db14c2231511be1d5caaae2ac29a45b0328c07f066632100eed9b4113c8"
 
 - [OAuth support added to MCP Adapter](https://vercel.com/changelog/oauth-support-added-to-mcp-adapter?from=related&source_path=%2Fdocs%2Fmcp&source_site=vercel-docs&relationship=related)
 - [How to create a contentful asset on Vercel](https://vercel.com/kb/guide/how-to-create-a-contentful-asset-on-vercel?from=related&source_path=%2Fdocs%2Fmcp&source_site=vercel-docs&relationship=related) — This is my wonderful
-- [Make your documentation readable by AI agents](https://vercel.com/kb/guide/make-your-documentation-readable-by-ai-agents?from=related&source_path=%2Fdocs%2Fmcp&source_site=vercel-docs&relationship=related) — Serve markdown to AI agents using content negotiation, .md endpoints, agent auto-detection, llms.txt,   sitemap.md, and
 - [Build a ChatGPT Connector \\(MCP server\\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector?from=related&source_path=%2Fdocs%2Fmcp&source_site=vercel-docs&relationship=related) — Build a ChatGPT MCP server with mcp-handler and Fluid compute. Add search, fetch, and OAuth, deploy to Vercel, then vali
 - [Build an MCP Server with Weather tools using Express and Vercel](https://vercel.com/kb/guide/mcp-server-with-weather-tool-express?from=related&source_path=%2Fdocs%2Fmcp&source_site=vercel-docs&relationship=related) — Make your Express weather API accessible to AI assistants through the Model Context Protocol.
 - [Introducing Vercel MCP: Connect Vercel to your AI tools](https://vercel.com/blog/introducing-vercel-mcp-connect-vercel-to-your-ai-tools?from=related&source_path=%2Fdocs%2Fmcp&source_site=vercel-docs&relationship=related)
@@ -40,6 +39,7 @@ sha256: "f6094db14c2231511be1d5caaae2ac29a45b0328c07f066632100eed9b4113c8"
 - [MCP Server](https://v0.app/docs/api/v1/adapters/mcp-server?from=related&source_path=%2Fdocs%2Fmcp&source_site=vercel-docs&relationship=related) — The v0 MCP (Model Context Protocol) server allows you to integrate v0's capabilities directly into your IDE, providing s
 - [Vercel MCP now in Public Beta](https://vercel.com/changelog/vercels-mcp?from=related&source_path=%2Fdocs%2Fmcp&source_site=vercel-docs&relationship=related)
 - [Building efficient MCP servers](https://vercel.com/blog/building-efficient-mcp-servers?from=related&source_path=%2Fdocs%2Fmcp&source_site=vercel-docs&relationship=related)
+- [How to build an MCP server with Nuxt](https://vercel.com/kb/guide/how-to-build-an-mcp-server-with-nuxt?from=related&source_path=%2Fdocs%2Fmcp&source_site=vercel-docs&relationship=related) — Add an MCP server to your Nuxt app with the Nuxt MCP Toolkit. Create tools, resources, and prompt templates that AI assi
 
 Full cross-link map for this page: [/docs/mcp.graph.md](/docs/mcp.graph.md?from=related&source_path=%2Fdocs%2Fmcp&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

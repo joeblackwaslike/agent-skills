@@ -16,8 +16,8 @@ related:
 summary: Learn how to create and trigger deploy hooks to integrate Vercel deployments with other systems.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deploy-hooks.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "71b538932b852534becd8a0d8d8b8f45c9869f08fb802841eded5cbb1e110d52"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "ccf14e26797ea409df14d5893866daebdfa4b3c1ced78cfb6260ec29eff20127"
 ---
 
 # Creating & Triggering Deploy Hooks
@@ -38,8 +38,8 @@ Deploy Hooks allow you to create URLs that accept HTTP `POST` requests in order 
 - [vercel deploy-hooks](https://vercel.com/docs/cli/deploy-hooks?from=related&source_path=%2Fdocs%2Fdeploy-hooks&source_site=vercel-docs&relationship=related) — Manage Deploy Hooks for Git-triggered builds from the Vercel CLI: list, create, and remove deploy hook URLs that trigger
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments?from=related&source_path=%2Fdocs%2Fdeploy-hooks&source_site=vercel-docs&relationship=related) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
 - [Setting Up Webhooks](https://vercel.com/docs/webhooks?from=related&source_path=%2Fdocs%2Fdeploy-hooks&source_site=vercel-docs&relationship=related) — Learn how to set up webhooks and use them with Vercel Integrations.
-- [Git settings](https://vercel.com/docs/project-configuration/git-settings?from=related&source_path=%2Fdocs%2Fdeploy-hooks&source_site=vercel-docs&relationship=related) — Use the project settings to manage the Git connection, enable Git LFS, and create deploy hooks.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fdeploy-hooks&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Git settings](https://vercel.com/docs/project-configuration/git-settings?from=related&source_path=%2Fdocs%2Fdeploy-hooks&source_site=vercel-docs&relationship=related) — Use the project settings to manage the Git connection, enable Git LFS, and create deploy hooks.
 
 Full cross-link map for this page: [/docs/deploy-hooks.graph.md](/docs/deploy-hooks.graph.md?from=related&source_path=%2Fdocs%2Fdeploy-hooks&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

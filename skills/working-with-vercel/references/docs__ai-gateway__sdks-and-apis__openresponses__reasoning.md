@@ -1,10 +1,10 @@
 ---
-title: Reasoning
+title: OpenResponses Reasoning with AI Gateway
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/openresponses/reasoning
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/reasoning"
-last_updated: 2026-07-28
-type: conceptual
+last_updated: 2026-09-08
+type: reference
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/openresponses
   - /docs/ai-gateway/sdks-and-apis
@@ -13,14 +13,14 @@ related:
   - /docs/ai-gateway/models-and-providers/reasoning
   - /docs/ai-gateway/sdks-and-apis/openresponses/structured-outputs
   - /docs/ai-gateway/sdks-and-apis/openresponses/streaming
-summary: Control how much a reasoning model thinks before answering with the OpenResponses API.
+summary: Control how much a reasoning model thinks before answering with the OpenResponses API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/reasoning.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "0a1dca285b0d1aa292ec10fe9f331dccae933863811a99a0944854579f2646e0"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "a86f5713009acda760d2c68d7b601abffc7b398abfa53c64294ff2f4a99fc782"
 ---
 
-# Reasoning
+# OpenResponses Reasoning with AI Gateway
 
 Reasoning models work through a problem before answering. With the [OpenResponses API](/docs/ai-gateway/sdks-and-apis/openresponses), set the `reasoning` object to control how much thinking the model does. AI Gateway translates it to each provider's native reasoning configuration, so the same request shape works across providers.
 
@@ -30,40 +30,18 @@ Reasoning models work through a problem before answering. With the [OpenResponse
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Freasoning&source_site=vercel-docs&relationship=related) — Control how much a model thinks before answering with the OpenAI Responses API.
-- [OpenAI Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Freasoning&source_site=vercel-docs&relationship=related) — Configure reasoning and thinking for OpenAI models with the AI SDK and AI Gateway.
-- [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Freasoning&source_site=vercel-docs&relationship=related) — Control how much a model thinks before answering with the OpenAI Chat Completions API.
-- [Reasoning](https://ai-sdk.dev/docs/ai-sdk-core/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Freasoning&source_site=vercel-docs&relationship=related)
-- [Extended Thinking](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Freasoning&source_site=vercel-docs&relationship=related) — Configure how much Claude thinks before answering, using the Anthropic Messages API thinking parameter.
-- [Amazon Bedrock Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Freasoning&source_site=vercel-docs&relationship=related) — Configure reasoning for models hosted on Amazon Bedrock with the AI SDK and AI Gateway.
+- [OpenAI Responses Reasoning with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Freasoning&source_site=vercel-docs&relationship=related) — Control how much a model thinks before answering with the OpenAI Responses API through AI Gateway.
+- [OpenAI Chat Completions Reasoning with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Freasoning&source_site=vercel-docs&relationship=related) — Control how much a model thinks before answering with the OpenAI Chat Completions API through AI Gateway.
+- [AI Gateway OpenAI Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Freasoning&source_site=vercel-docs&relationship=related) — Configure reasoning and thinking for OpenAI models with the AI SDK and AI Gateway.
+- [Anthropic Messages Extended Thinking with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Freasoning&source_site=vercel-docs&relationship=related) — Configure how much Claude thinks before answering, using the Anthropic Messages API thinking parameter through AI Gatewa
+- [AI Gateway Amazon Bedrock Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Freasoning&source_site=vercel-docs&relationship=related) — Configure reasoning for models hosted on Amazon Bedrock with the AI SDK and AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openresponses/reasoning.graph.md](/docs/ai-gateway/sdks-and-apis/openresponses/reasoning.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Freasoning&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-#### cURL
-
-```bash filename="reasoning.sh"
-curl -X POST "https://ai-gateway.vercel.sh/v1/responses" \
-  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "openai/gpt-5.6-sol",
-    "input": [
-      {
-        "type": "message",
-        "role": "user",
-        "content": "A bat and ball cost $1.10. The bat costs $1 more than the ball. How much is the ball?"
-      }
-    ],
-    "reasoning": {
-      "effort": "high"
-    }
-  }'
-```
-
 #### TypeScript
 
-```typescript filename="reasoning.ts" {17-19}
+```typescript filename="reasoning.ts" {18-20}
 const apiKey = process.env.AI_GATEWAY_API_KEY;
 
 const response = await fetch('https://ai-gateway.vercel.sh/v1/responses', {
@@ -73,7 +51,7 @@ const response = await fetch('https://ai-gateway.vercel.sh/v1/responses', {
     Authorization: `Bearer ${apiKey}`,
   },
   body: JSON.stringify({
-    model: 'openai/gpt-5.6-sol',
+    model: 'openai/gpt-6-astra',
     input: [
       {
         type: 'message',
@@ -93,7 +71,7 @@ console.log(result.usage.output_tokens_details.reasoning_tokens);
 
 #### Python
 
-```python filename="reasoning.py" {19-21}
+```python filename="reasoning.py" {22-24}
 import os
 
 import requests
@@ -107,7 +85,7 @@ response = requests.post(
         "Authorization": f"Bearer {api_key}",
     },
     json={
-        "model": "openai/gpt-5.6-sol",
+        "model": "openai/gpt-6-astra",
         "input": [
             {
                 "type": "message",
@@ -125,23 +103,38 @@ result = response.json()
 print(result["usage"]["output_tokens_details"]["reasoning_tokens"])
 ```
 
+#### cURL
+
+```bash filename="reasoning.sh" {13-15}
+curl -X POST "https://ai-gateway.vercel.sh/v1/responses" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "openai/gpt-6-astra",
+    "input": [
+      {
+        "type": "message",
+        "role": "user",
+        "content": "A bat and ball cost $1.10. The bat costs $1 more than the ball. How much is the ball?"
+      }
+    ],
+    "reasoning": {
+      "effort": "high"
+    }
+  }'
+```
+
 ## Effort levels
 
-`reasoning.effort` controls how much the model thinks before answering. Higher effort costs more tokens and takes longer:
+Set `reasoning.effort` to request relative reasoning depth. The HTTP schema accepts `none`, `minimal`, `low`, `medium`, `high`, `xhigh`, and `max`. Choose a model-supported value from the `effort` entry in [`GET /v1/models`](/docs/ai-gateway/models-and-providers/reasoning#discover-model-reasoning-support). The catalog doesn't provide a structured default.
 
-| Level | Use it for |
-| ----- | ---------- |
-| `low` | Simple tasks and latency-sensitive work |
-| `medium` | A balance of speed and depth |
-| `high` | Complex reasoning, difficult coding, agentic tasks |
-
-Which levels a model accepts varies. See [Reasoning](/docs/ai-gateway/models-and-providers/reasoning) for the per-provider support matrix, including the levels above and below these three that some models add.
+AI Gateway translates shared effort for the serving provider. Some routes map it to token budgets or a smaller set of native levels. In cross-provider translation, `max` can map to `xhigh`; Anthropic adaptive thinking can retain `max`. See [API-format differences](/docs/ai-gateway/models-and-providers/reasoning#reasoning-levels) and [provider-specific options](/docs/ai-gateway/models-and-providers/reasoning#provider-specific-configuration) when exact native control matters.
 
 ## Reasoning summaries
 
 Set `reasoning.summary` to `auto` to ask for a readable summary of the model's thinking alongside the answer:
 
-```json
+```json {2-5}
 {
   "reasoning": {
     "effort": "low",
@@ -152,22 +145,29 @@ Set `reasoning.summary` to `auto` to ask for a readable summary of the model's t
 
 ## Reading the response
 
-Thinking appears in two places. The `output` array carries a `reasoning` item before the answer message, and `usage` reports how many tokens went to thinking:
+When the provider reports reasoning, the `output` array can contain a `reasoning` item and `usage` can report reasoning tokens:
 
-```typescript
+```typescript {3}
 const result = await response.json();
 
-const reasoning = result.output.find((item) => item.type === 'reasoning');
-const message = result.output.find((item) => item.type === 'message');
+const reasoning = result.output.find(
+  (item: { type: string }) => item.type === 'reasoning',
+);
+const message = result.output.find(
+  (item: { type: string }) => item.type === 'message',
+);
 
 console.log(result.usage.output_tokens_details.reasoning_tokens);
-console.log(message.content[0].text);
+for (const block of message.content) {
+  if (block.type === 'output_text') console.log(block.text);
+}
 ```
 
 > **💡 Note:** The raw chain of thought isn't returned. A `reasoning` item may carry an
 > `encrypted_content` field rather than readable text, so treat it as an opaque
 > value to pass back rather than something to display. Use `summary: "auto"`
-> when you want text you can show.
+> to request readable text on models that support summaries. An empty summary
+> doesn't prove that reasoning was disabled.
 
 ## Next steps
 

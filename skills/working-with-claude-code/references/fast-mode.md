@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/fast-mode.md"
-fetched_at: "2026-08-31T10:37:20.620Z"
-sha256: "9c7b13a89a9bda9f1697f84bf21acd27c60cfcebff78640a57c2e09eb626a397"
+fetched_at: "2026-09-14T09:37:17.168Z"
+sha256: "4adf1245700811adb28704a438344e829417f48eb5a56161a4d730cbc84a0ed3"
 ---
 
 > ## Documentation Index
@@ -115,7 +115,7 @@ You can combine both: use fast mode with a lower [effort level](/docs/en/model-c
 Fast mode requires all of the following:
 
 * **Anthropic API or subscription only**: fast mode is available through the Anthropic Console API and for Claude subscription plans using usage credits. It is not available on Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry, or Claude Platform on AWS. Console organizations must also have [fast mode access provisioned](#enable-fast-mode-for-your-organization).
-* **Usage credits turned on for subscription plans**: on a Pro, Max, Team, or Enterprise plan, your account must have [usage credits](/docs/en/costs#add-usage-credits-to-your-subscription) turned on, which allows billing beyond your plan's included usage. Until they're on, `/fast` shows "Fast mode requires usage credits · /usage-credits to turn them on". How you turn them on depends on your plan:
+* **Usage credits turned on for subscription plans**: on a Pro, Max, Team, or Enterprise plan, your account must have [usage credits](/docs/en/costs#add-usage-credits-to-your-subscription) turned on, which allows billing beyond your plan's included usage. Until they're on, `/fast` reports "Fast mode requires usage credits". How you turn them on depends on your plan:
   * On Pro and Max, turn them on in the **Usage credits** section of [**Settings > Usage**](https://claude.ai/settings/usage) on claude.ai, or run `/usage-credits` to open that page.
   * On Team and Enterprise, a member with billing access turns them on for the organization at [**Admin settings > Usage**](https://claude.ai/admin-settings/usage), and a member without it runs `/usage-credits` to send the organization's admins a request.
 

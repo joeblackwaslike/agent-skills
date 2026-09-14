@@ -16,8 +16,8 @@ related:
 summary: Vercel allows you to increase the speed of your builds when needed in specific situations and workflows.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/managing-builds.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "fd214a28d17dfddd6ccc0285317177cc06988bb81aa13ca2d9a776b25f92c122"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "7d7d4eeb130dc7472bc27fe8c72f07667e48d12f6242680f5f7f5adfd004a760"
 ---
 
 # Managing Builds
@@ -41,7 +41,7 @@ When you build your application code, Vercel runs compute to install dependencie
 - [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel?from=related&source_path=%2Fdocs%2Fbuilds%2Fmanaging-builds&source_site=vercel-docs&relationship=related) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
 - [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fbuilds%2Fmanaging-builds&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Limits](https://vercel.com/docs/limits?from=related&source_path=%2Fdocs%2Fbuilds%2Fmanaging-builds&source_site=vercel-docs&relationship=related) — Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
-- [Deploying Git Repositories with Vercel](https://vercel.com/docs/git?from=related&source_path=%2Fdocs%2Fbuilds%2Fmanaging-builds&source_site=vercel-docs&relationship=related) — Vercel automatically deploys supported Git repositories on every branch push and when changes merge into the production
+- [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments?from=related&source_path=%2Fdocs%2Fbuilds%2Fmanaging-builds&source_site=vercel-docs&relationship=related) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
 
 Full cross-link map for this page: [/docs/builds/managing-builds.graph.md](/docs/builds/managing-builds.graph.md?from=related&source_path=%2Fdocs%2Fbuilds%2Fmanaging-builds&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

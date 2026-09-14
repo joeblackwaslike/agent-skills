@@ -3,7 +3,7 @@ title: AI Gateway Rate Limits
 product: vercel
 url: /docs/ai-gateway/rate-limits
 canonical_url: "https://vercel.com/docs/ai-gateway/rate-limits"
-last_updated: 2026-09-02
+last_updated: 2026-09-07
 type: reference
 prerequisites:
   - /docs/ai-gateway
@@ -11,12 +11,12 @@ related:
   - /docs/ai-gateway/pricing
   - /docs/ai-gateway/observability-and-spend/budgets
   - /docs/ai-gateway/authentication-and-byok/byok
-  - /docs/ai-gateway/getting-started
+  - /docs/ai-gateway/faq
 summary: Learn how AI Gateway rate limits work on the free and paid tiers, what the 429 response looks like, and how to retry a rate-limited request.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/rate-limits.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "4fe1f32d52282db549dc980707d26a9b9cb0f6c5d79adc9193cc6d573b985ade"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "919ac12b204ac27bb509173abc5da8d2bbe0e6090a8df955369182c332f4af13"
 ---
 
 # AI Gateway Rate Limits
@@ -33,11 +33,10 @@ AI Gateway does not rate limit paid-tier requests. The free tier applies lower p
 - [Securing your AI applications with Rate Limiting](https://vercel.com/kb/guide/securing-ai-app-rate-limiting?from=related&source_path=%2Fdocs%2Fai-gateway%2Frate-limits&source_site=vercel-docs&relationship=related) — Learn how to secure your AI applications with rate limiting using Vercel WAF and Vercel AI SDK
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Frate-limits&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Frate-limits&source_site=vercel-docs&relationship=related) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
-- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Frate-limits&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including pricing and markup, SDK and API compatibility, model availabilit
 - [AI Gateway Discounts](https://vercel.com/docs/ai-gateway/pricing/discounts?from=related&source_path=%2Fdocs%2Fai-gateway%2Frate-limits&source_site=vercel-docs&relationship=related) — Discounts on AI Gateway token spend: models already priced below list for every team, plus custom volume discounts with
+- [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend?from=related&source_path=%2Fdocs%2Fai-gateway%2Frate-limits&source_site=vercel-docs&relationship=related) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
 - [Vercel Connect Limits](https://vercel.com/docs/connect/limits?from=related&source_path=%2Fdocs%2Fai-gateway%2Frate-limits&source_site=vercel-docs&relationship=related) — Platform limits and per-minute rate limits for Vercel Connect SDK methods, CLI commands, and public endpoints.
 - [Pricing and Limits](https://vercel.com/docs/eve/pricing?from=related&source_path=%2Fdocs%2Fai-gateway%2Frate-limits&source_site=vercel-docs&relationship=related) — Understand how eve usage maps to Vercel resources and inherited platform limits.
-- [Model Allowlist](https://vercel.com/docs/ai-gateway/security-and-compliance/model-allowlist?from=related&source_path=%2Fdocs%2Fai-gateway%2Frate-limits&source_site=vercel-docs&relationship=related) — Restrict which AI models your team can use through AI Gateway. Available on Pro and Enterprise.
 
 Full cross-link map for this page: [/docs/ai-gateway/rate-limits.graph.md](/docs/ai-gateway/rate-limits.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Frate-limits&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -52,12 +51,12 @@ Limits can change, so this page describes behavior rather than fixed numbers. To
 
 ## Free tier and paid tier
 
-|                | Free tier                                                    | Paid tier                            |
-| -------------- | ----------------------------------------------------------- | ------------------------------------ |
-| Model access   | [Free-tier-eligible models](/ai-gateway/models?freeTier=true) | All available models                 |
-| Rate limits    | Lower limit per model                                       | None from AI Gateway; provider limits still apply |
-| Custom limits  | Not available                                               | Available on request                 |
-| Credit basis   | Monthly included credit                                     | Purchased AI Gateway Credits         |
+|               | Free tier                                                     | Paid tier                                         |
+| ------------- | ------------------------------------------------------------- | ------------------------------------------------- |
+| Model access  | [Free-tier-eligible models](/ai-gateway/models?freeTier=true) | All available models                              |
+| Rate limits   | Lower limit per model                                         | None from AI Gateway; provider limits still apply |
+| Custom limits | Not available                                                 | Available on request                              |
+| Credit basis  | Monthly included credit                                       | Purchased AI Gateway Credits                      |
 
 Purchasing AI Gateway Credits moves your team to the paid tier, which raises your rate limits. See [AI Gateway Pricing](/docs/ai-gateway/pricing) for tiers, credits, and model rates.
 
@@ -134,12 +133,12 @@ Keep retries bounded. If a workload hits a limit regularly, raise the limit inst
 
 Rate limits and budgets both reject requests, but for different reasons:
 
-|                      | Rate limit                   | Budget                                            |
-| -------------------- | ---------------------------- | ------------------------------------------------- |
-| What it caps         | Request rate for a model     | Spend in dollars                                  |
-| Who sets it          | Vercel, per tier             | You, per team, project, API key, or user          |
-| Response when hit    | `429`                        | `402` with `quota_for_entity_exceeded`            |
-| Recovery             | Retry after a short wait     | Wait for the refresh period or raise the limit    |
+|                   | Rate limit               | Budget                                         |
+| ----------------- | ------------------------ | ---------------------------------------------- |
+| What it caps      | Request rate for a model | Spend in dollars                               |
+| Who sets it       | Vercel, per tier         | You, per team, project, API key, or user       |
+| Response when hit | `429`                    | `402` with `quota_for_entity_exceeded`         |
+| Recovery          | Retry after a short wait | Wait for the refresh period or raise the limit |
 
 To cap spend instead of request rate, set a [budget](/docs/ai-gateway/observability-and-spend/budgets).
 
@@ -155,7 +154,7 @@ Purchase [AI Gateway Credits](/docs/ai-gateway/pricing#top-up-your-ai-gateway-cr
 
 - [AI Gateway Pricing](/docs/ai-gateway/pricing) for tiers, credits, and model rates
 - [Budgets](/docs/ai-gateway/observability-and-spend/budgets) to cap spend by team, project, API key, or team member
-- [Troubleshoot your first request](/docs/ai-gateway/getting-started#troubleshoot-your-first-request) for the other first-run errors
+- [Troubleshoot request errors](/docs/ai-gateway/faq#why-did-my-ai-gateway-request-fail) by status code, type, and message
 
 
 ---

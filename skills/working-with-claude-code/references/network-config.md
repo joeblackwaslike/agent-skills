@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/network-config.md"
-fetched_at: "2026-09-07T08:59:03.477Z"
-sha256: "1341f34b5517901b1983764068cc14c0cf2c3a6db216cdbc60a3e107daafb741"
+fetched_at: "2026-09-14T09:37:17.168Z"
+sha256: "37954df0b7775772198b3ffc6690ff19b520ee8974633a22f1719b8db07aa3fd"
 ---
 
 > ## Documentation Index
@@ -228,6 +228,7 @@ Claude Code requires access to the following URLs. Allowlist these in your proxy
 | `bridge.claudeusercontent.com`       | [Claude in Chrome](/docs/en/chrome) extension WebSocket bridge                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | `*.frame.claudeusercontent.com`      | [Artifact](/docs/en/artifacts) content reads. The CLI fetches an artifact's files from this host when Claude opens one, and only when the Artifact tool is [available](/docs/en/artifacts#availability) for your account. To turn the tool off and drop this requirement, set [`"enableArtifact": false`](/docs/en/settings-reference#enableartifact) or [`CLAUDE_CODE_DISABLE_ARTIFACT=1`](/docs/en/env-vars); Claude Code also honors the deprecated [`disableArtifact`](/docs/en/settings-reference#disableartifact) setting. See [Disable artifacts](/docs/en/artifacts#disable-artifacts) for how these settings interact |
 | `raw.githubusercontent.com`          | Changelog feed for [`/release-notes`](/docs/en/commands). In interactive sessions, Claude Code also fetches it in the background at startup when its cached changelog doesn't yet cover the running version, such as the first start after an update; non-interactive and cloud sessions never fetch it                                                                                                                                                                                                                                                                                               |
+| `*-review.googlesource.com`          | Gerrit change lookup on `googlesource.com` checkouts. When a Claude Desktop Code tab session starts or resumes on a [trusted](/docs/en/permissions#project-allow-rules-and-workspace-trust) checkout whose `origin` is a `googlesource.com` host, Claude Code asks that host's `-review` server anonymously for the open change matching HEAD's `Change-Id`, once per start or resume. Other session types skip the lookup, and no other Gerrit host is contacted. Optional: disable with [`CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC`](/docs/en/env-vars)                                                  |
 | `http-intake.logs.us5.datadoghq.com` | Operational telemetry events, sent only when the CLI uses the Anthropic API directly, never for Amazon Bedrock, Google Cloud's Agent Platform, or Microsoft Foundry. Optional: disable with [`DISABLE_TELEMETRY`](/docs/en/data-usage#telemetry-services) or `DO_NOT_TRACK`                                                                                                                                                                                                                                                                                                                           |
 | `browser-intake-us5-datadoghq.com`   | Operational error reports, sent when the CLI uses the Anthropic API directly and a server-side rollout gate enables them. Optional: disable with `DISABLE_ERROR_REPORTING` or `DISABLE_TELEMETRY`; see [Telemetry services](/docs/en/data-usage#telemetry-services)                                                                                                                                                                                                                                                                                                                                   |
 | `formulae.brew.sh`                   | Update version checks on Homebrew installs. Other install methods don't contact this host                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
@@ -265,6 +266,6 @@ Artifacts can also load JavaScript libraries, such as React or a charting packag
 
 ## Additional resources
 
-* [Claude Code settings](/docs/en/settings)
+* [Settings files and precedence](/docs/en/settings)
 * [Environment variables reference](/docs/en/env-vars)
 * [Troubleshooting guide](/docs/en/troubleshooting)

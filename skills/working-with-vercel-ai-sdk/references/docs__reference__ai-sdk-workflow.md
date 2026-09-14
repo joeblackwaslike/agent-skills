@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-workflow.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "98b78b9a3e70e76772f023773d6398bf62da906cf7034b44ea1c36ef3b92e6a0"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "a762e5e2129221688ab816b2ffc526cf1b25ecbe47b96f0cdf5e03a7493647d6"
 ---
 
 # AI SDK Workflow
@@ -53,10 +53,15 @@ sha256: "98b78b9a3e70e76772f023773d6398bf62da906cf7034b44ea1c36ef3b92e6a0"
   - [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
   - [createAgentUIStreamResponse](/docs/reference/ai-sdk-core/create-agent-ui-stream-response)
   - [pipeAgentUIStreamToResponse](/docs/reference/ai-sdk-core/pipe-agent-ui-stream-to-response)
+  - [experimental_startBatch](/docs/reference/ai-sdk-core/start-batch)
   - [tool](/docs/reference/ai-sdk-core/tool)
+  - [experimental_getBatchStatus](/docs/reference/ai-sdk-core/get-batch-status)
   - [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
+  - [experimental_getBatchResults](/docs/reference/ai-sdk-core/get-batch-results)
+  - [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
   - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
   - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+  - [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
   - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
   - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
   - [jsonSchema](/docs/reference/ai-sdk-core/json-schema)

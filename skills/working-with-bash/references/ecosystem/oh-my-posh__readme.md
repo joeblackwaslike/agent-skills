@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/README.md"
-fetched_at: "2026-06-16T09:46:54.480Z"
-sha256: "02b1c7013e39f720159b73869c1bba3df64392885b35da3cf3e458090230d556"
+fetched_at: "2026-09-14T09:36:44.236Z"
+sha256: "4a1d5d5e17c5777b71d1c2e540e8924c5ff5d37a290b994837c8795e3d5b50db"
 ---
 
 <!-- markdownlint-disable -->
@@ -34,20 +34,20 @@ This repo was made with love using GitKraken.
 <!-- markdownlint-disable no-inline-html line-length -->
 <a href="https://coderabbit.link/posh">
     <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://victorious-bubble-f69a016683.media.strapiapp.com/White_Typemark_79b9189d19.svg">
-          <source media="(prefers-color-scheme: light)" srcset="https://victorious-bubble-f69a016683.media.strapiapp.com/Orange_Typemark_43bf516c9d.svg">
-          <img alt="CodeRabbit" height="44" src="https://victorious-bubble-f69a016683.media.strapiapp.com/Orange_Typemark_43bf516c9d.svg" />
+          <source media="(prefers-color-scheme: dark)" srcset="https://www.coderabbit.ai/press-kit/coderabbit-reverse-white.svg">
+          <source media="(prefers-color-scheme: light)" srcset="https://www.coderabbit.ai/press-kit/coderabbit-primary-black.svg">
+          <img alt="CodeRabbit" height="44" src="https://www.coderabbit.ai/press-kit/coderabbit-primary-black.svg" />
     </picture>
 </a>
-<!-- markdownlint-enable no-inline-html line-length -->J
+<!-- markdownlint-enable no-inline-html line-length -->
 
 [Want to become a sponsor?][sponsor-link]
 
 ## Join the community
 
-![Mastodon badge](https://img.shields.io/mastodon/follow/110275292073181892?domain=https%3A%2F%2Fhachyderm.io&label=Mastodon&style=social)
+[![Mastodon badge](https://img.shields.io/mastodon/follow/110275292073181892?domain=hachyderm.io&style=social&label=Mastodon)](https://hachyderm.io/@jandedobbeleer)
 
-![Discord badge](https://img.shields.io/discord/1023597603331526656)
+[![Discord badge](https://img.shields.io/discord/1023597603331526656?logo=discord&logoColor=white)](https://discord.com/invite/n7E3DkXssv)
 
 What started as the offspring of [oh-my-posh2](https://github.com/JanDeDobbeleer/oh-my-posh2) for PowerShell
 resulted in a cross platform, highly customizable and extensible prompt theme engine. After 4 years of working

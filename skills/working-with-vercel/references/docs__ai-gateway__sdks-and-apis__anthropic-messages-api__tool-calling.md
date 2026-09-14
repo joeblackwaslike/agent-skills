@@ -1,23 +1,23 @@
 ---
-title: Tool Calls
+title: Anthropic Messages Tool Calling with AI Gateway
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/tool-calling
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/tool-calling"
-last_updated: 2026-07-28
-type: conceptual
+last_updated: 2026-09-08
+type: reference
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api
   - /docs/ai-gateway/sdks-and-apis
 related:
   []
-summary: Use function calling with the Anthropic Messages API to allow models to call tools and functions.
+summary: Use function calling with the Anthropic Messages API to allow models to call tools and functions through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/tool-calling.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "7ddde42e6a4d5c5f9d27ae83653abc5a89a164c8b164ceeb7f714f2dba12a675"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "cef0e71fcf6c7b77006cb7f7cef7b666d65f34b113ac1e9f91da1c6235fc3aa0"
 ---
 
-# Tool Calls
+# Anthropic Messages Tool Calling with AI Gateway
 
 The Anthropic Messages API supports function calling, allowing models to call tools and functions.
 
@@ -27,65 +27,17 @@ The Anthropic Messages API supports function calling, allowing models to call to
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Tool Calls](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/tool-calling?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Ftool-calling&source_site=vercel-docs&relationship=related) — Use function calling with the Chat Completions API to enable models to call tools and functions through AI Gateway.
-- [Tool Calling](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/tool-calling?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Ftool-calling&source_site=vercel-docs&relationship=related) — Define tools the model can call using the OpenResponses API.
-- [Tool Calling](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/tool-calling?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Ftool-calling&source_site=vercel-docs&relationship=related) — Define tools the model can call with the OpenAI Responses API.
 - [Tools](https://ai-sdk.dev/docs/foundations/tools?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Ftool-calling&source_site=vercel-docs&relationship=related)
 - [What is an LLM Tool?](https://vercel.com/kb/guide/what-is-an-llm-tool?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Ftool-calling&source_site=vercel-docs&relationship=related) — Learn what tools are, how tool calling works, and how you can use them to build agents.
-- [Call Tools](https://ai-sdk.dev/cookbook/node/call-tools?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Ftool-calling&source_site=vercel-docs&relationship=related)
-- [Call Tools](https://ai-sdk.dev/cookbook/next/call-tools?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Ftool-calling&source_site=vercel-docs&relationship=related)
-- [How to add tools to your eve agent](https://vercel.com/kb/guide/how-to-add-eve-tools?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Ftool-calling&source_site=vercel-docs&relationship=related) — Add tools to an eve agent by creating a TypeScript file under agent/tools/ with defineTool, and gate sensitive ones on h
-- [Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Ftool-calling&source_site=vercel-docs&relationship=related) — Use the AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
-- [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Ftool-calling&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
+- [AI Gateway Tool Use and Function Calling](https://vercel.com/docs/ai-gateway/inputs-and-tools/tool-use?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Ftool-calling&source_site=vercel-docs&relationship=related) — Connect AI Gateway models to application tools with AI SDK 7, Python, Chat Completions, Messages, and Responses examples
+- [OpenAI Chat Completions Tool Calling with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/tool-calling?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Ftool-calling&source_site=vercel-docs&relationship=related) — Use function calling with the Chat Completions API to enable models to call tools and functions through AI Gateway.
+- [OpenAI Responses Tool Calling with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/tool-calling?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Ftool-calling&source_site=vercel-docs&relationship=related) — Define tools the model can call with the OpenAI Responses API through AI Gateway.
+- [OpenResponses Tool Calling with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/tool-calling?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Ftool-calling&source_site=vercel-docs&relationship=related) — Define tools the model can call using the OpenResponses API through AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/tool-calling.graph.md](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/tool-calling.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Ftool-calling&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Example request
-
-#### cURL
-
-```bash filename="tool-calls.sh"
-curl -X POST "https://ai-gateway.vercel.sh/v1/messages" \
-  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "anthropic/claude-opus-5",
-    "max_tokens": 1024,
-    "tools": [
-      {
-        "name": "get_weather",
-        "description": "Get the current weather in a given location",
-        "input_schema": {
-          "type": "object",
-          "properties": {
-            "location": {
-              "type": "string",
-              "description": "The city and state, e.g. San Francisco, CA"
-            },
-            "unit": {
-              "type": "string",
-              "enum": [
-                "celsius",
-                "fahrenheit"
-              ],
-              "description": "The unit for temperature"
-            }
-          },
-          "required": [
-            "location"
-          ]
-        }
-      }
-    ],
-    "messages": [
-      {
-        "role": "user",
-        "content": "What is the weather like in San Francisco?"
-      }
-    ]
-  }'
-```
 
 #### TypeScript
 
@@ -180,6 +132,50 @@ message = client.messages.create(
 )
 
 print('Response:', message.content)
+```
+
+#### cURL
+
+```bash filename="tool-calls.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/messages" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "anthropic/claude-opus-5",
+    "max_tokens": 1024,
+    "tools": [
+      {
+        "name": "get_weather",
+        "description": "Get the current weather in a given location",
+        "input_schema": {
+          "type": "object",
+          "properties": {
+            "location": {
+              "type": "string",
+              "description": "The city and state, e.g. San Francisco, CA"
+            },
+            "unit": {
+              "type": "string",
+              "enum": [
+                "celsius",
+                "fahrenheit"
+              ],
+              "description": "The unit for temperature"
+            }
+          },
+          "required": [
+            "location"
+          ]
+        }
+      }
+    ],
+    "messages": [
+      {
+        "role": "user",
+        "content": "What is the weather like in San Francisco?"
+      }
+    ]
+  }'
 ```
 
 Tool call response format

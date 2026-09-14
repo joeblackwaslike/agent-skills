@@ -3,7 +3,7 @@ title: finalize-installation
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/finalize-installation
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/finalize-installation"
-last_updated: 2026-09-07
+last_updated: 2026-09-14
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about finalize-installation on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/finalize-installation.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "3604282798e61eb25a757bfe68f22636d0a1da0d71a8a658066f63742c63eee9"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "e57722b1084e87f1679164aa9e66c80ef140f03d030bfd183720ec5ea8c539c9"
 ---
 
 # Finalize Installation

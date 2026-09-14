@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/concepts/security/openid-connect.md"
-fetched_at: "2026-08-03T07:31:11.280Z"
-sha256: "5416c47bc28301654db076df3c7ed87203ff81a7228f5f33e106afabededf23a"
+fetched_at: "2026-09-14T09:42:05.851Z"
+sha256: "ed01b618cfb60cde66174be6b01d5b9837e240323e5d1c413aea595c2c9f979e"
 ---
 
 ## Overview of OpenID Connect (OIDC)
@@ -88,6 +88,12 @@ The following example OIDC token uses a subject (`sub`) that references a job en
 To use OIDC in your workflows, you must establish a trust relationship between {% data variables.product.github %} and your cloud provider. This trust relationship ensures that only authorized workflows can request access tokens for your cloud resources.
 
 Before granting an access token, your cloud provider checks that the [`subject`](https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims) and any other claims used to set conditions in its trust settings match those in the request's JSON Web Token (JWT). If the trust configuration matches, your cloud provider issues a temporary access token to the workflow.
+
+{% ifversion dependabot-oidc-support %}
+
+OIDC tokens requested for {% data variables.product.prodname_dependabot %} update jobs have an `event_name` claim of `dynamic`. If your trust policy is intended to authorize only {% data variables.product.prodname_actions %} workflows and your cloud provider supports conditions on `event_name`, allow only the event names expected by your workflows.
+
+{% endif %}
 
 For steps and syntax for configuring OIDC trust and setting conditions for cloud providers, see [AUTOTITLE](/actions/reference/security/oidc#oidc-claims-used-to-define-trust-conditions-on-cloud-roles).
 

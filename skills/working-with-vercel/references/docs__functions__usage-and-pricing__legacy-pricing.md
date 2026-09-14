@@ -17,8 +17,8 @@ related:
 summary: Learn about legacy usage and pricing for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "925b5809992cf102f42520981a8b18e2fcae2401e3fb2ad7e932147c4c584c5b"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "407a773de301e5d89c9728840d9cdabf08a5c4dc06404be87d7470ef66c4d9af"
 ---
 
 # Legacy Usage & Pricing for Functions
@@ -37,6 +37,7 @@ Functions using the Node.js runtime are measured in [GB-hours](/docs/pricing/man
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Troubleshoot and optimize Function Invocations on Vercel](https://vercel.com/kb/guide/optimize-function-invocations?from=related&source_path=%2Fdocs%2Ffunctions%2Fusage-and-pricing%2Flegacy-pricing&source_site=vercel-docs&relationship=related) — Diagnose which routes drive Function Invocations and learn to optimize them. Separate necessary dynamic traffic from div
 - [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fusage-and-pricing%2Flegacy-pricing&source_site=vercel-docs&relationship=related)
 - [Higher defaults and limits for Vercel Functions running Fluid compute](https://vercel.com/changelog/higher-defaults-and-limits-for-vercel-functions-running-fluid-compute?from=related&source_path=%2Fdocs%2Ffunctions%2Fusage-and-pricing%2Flegacy-pricing&source_site=vercel-docs&relationship=related)
 - [Vercel Functions Limits](https://vercel.com/docs/functions/limitations?from=related&source_path=%2Fdocs%2Ffunctions%2Fusage-and-pricing%2Flegacy-pricing&source_site=vercel-docs&relationship=related) — Learn about the limits and restrictions of using Vercel Functions.

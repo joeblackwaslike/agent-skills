@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/mem0.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "0b83b45fc2c89147ac35fcc61cc8f3b3c70fbd202a9cf51667e5580db7cf13c2"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "25e20d65aed82ee1c5c557e85e056d1013e3710bb0a8347dc17d074c55ca6826"
 ---
 
 # Mem0 Provider
@@ -306,6 +306,7 @@ The Mem0 provider supports the following LLM providers:
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
 - [Interfaze](/providers/community-providers/interfaze)
+- [Telnyx](/providers/community-providers/telnyx)
 - [Flowise](/providers/community-providers/flowise)
 
 

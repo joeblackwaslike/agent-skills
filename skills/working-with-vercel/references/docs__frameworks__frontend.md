@@ -16,8 +16,8 @@ related:
 summary: Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no matter what tooling you use.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/frontend.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "17718eb7213582fe83e717e220ad607d097655dbff15ffa35a5f456dc6964ca4"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "3e81eb42f68894631bd1ff0e7220635cc164c790eb4a2cc5fc54c3b70048fdc2"
 ---
 
 # Frontends on Vercel
@@ -37,8 +37,8 @@ The following frontend frameworks are supported with zero-configuration.
 - [Run multiple frameworks in one project with Vercel Services](https://vercel.com/changelog/run-multiple-frameworks-in-one-project-with-vercel-services?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend&source_site=vercel-docs&relationship=related)
 - [Life of a Vercel request: What happens when a user presses enter](https://vercel.com/blog/life-of-a-vercel-request-what-happens-when-a-user-presses-enter?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend&source_site=vercel-docs&relationship=related)
 - [Remix on Vercel](https://vercel.com/docs/frameworks/full-stack/remix?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend&source_site=vercel-docs&relationship=related) — Deploy Remix applications to Vercel and configure the Vercel Vite preset, SSR, streaming, caching, and analytics.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 - [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
+- [Nuxt on Vercel](https://vercel.com/docs/frameworks/full-stack/nuxt?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend&source_site=vercel-docs&relationship=related) — Deploy Nuxt applications to Vercel and configure rendering, functions, middleware, routing, image optimization, and cach
 
 Full cross-link map for this page: [/docs/frameworks/frontend.graph.md](/docs/frameworks/frontend.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -65,6 +65,8 @@ Full cross-link map for this page: [/docs/frameworks/frontend.graph.md](/docs/fr
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/ember) | [View Demo](https://ember-template.vercel.app)
 - **eve**: A filesystem-first framework for durable backend agents on Vercel.
   - [Deploy](https://vercel.com/new/clone?demo-title=eve+Chat+Template&demo-description=A+persisted+Next.js+chat+template+for+eve%2C+built+with+shadcn%2Fui%2C+Tailwind+CSS%2C+Streamdown%2C+Better+Auth%2C+Drizzle%2C+and+Neon.&demo-url=https%3A%2F%2Feve-chat-template.labs.vercel.dev%2F&demo-image=%2F%2Fimages.ctfassets.net%2Fe5382hct74si%2FYXYTquqpBmvVFbASdIvrC%2F04d5a87ebe706ed31adc65193f3b4cdd%2Feve-chat__1_.png&project-name=eve+Chat+Template&repository-name=eve-chat-template&repository-url=https%3A%2F%2Fgithub.com%2Fvercel-labs%2Feve-chat-template&from=templates&skippable-integrations=1) | [View Demo](https://eve-chat-template.labs.vercel.dev/)
+- **Factory (Eve)**: A software factory built with Eve.
+  - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/factory-eve)
 - **FastHTML**: The fastest way to create an HTML app
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/fasthtml) | [View Demo](https://fasthtml-template.vercel.app)
 - **Gatsby.js**: Gatsby helps developers build blazing fast websites and apps with React.

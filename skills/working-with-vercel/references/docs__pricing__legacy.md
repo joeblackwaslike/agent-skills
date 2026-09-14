@@ -15,8 +15,8 @@ related:
 summary: Learn about legacy usage metrics, including Bandwidth, Requests, Vercel Function Invocations, and Vercel Function Execution.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/legacy.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "14d8ab4ff3b182f5c15232ae6c288a314dd6009c0973d5f5ae2778a5b3a2565f"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "f70696c2220be4492268e5989a4f4015fbcf1e6152d868563dd4bd1f67f3fb85"
 ---
 
 # Legacy Metrics
@@ -33,7 +33,6 @@ This chart includes traffic for both [preview](/docs/deployments/environments#pr
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How can I reduce my Vercel Functions usage on Vercel?](https://vercel.com/kb/guide/how-can-i-reduce-my-serverless-execution-usage-on-vercel?from=related&source_path=%2Fdocs%2Fpricing%2Flegacy&source_site=vercel-docs&relationship=related) — Reduce Vercel Functions usage and cost under Fluid compute pricing with caching, rendering strategies, and function conf
 - [Metrics for outgoing requests](https://vercel.com/changelog/metrics-for-outgoing-requests?from=related&source_path=%2Fdocs%2Fpricing%2Flegacy&source_site=vercel-docs&relationship=related)
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fpricing%2Flegacy&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related&source_path=%2Fdocs%2Fpricing%2Flegacy&source_site=vercel-docs&relationship=related) — Learn about legacy usage and pricing for Vercel Functions.

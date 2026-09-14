@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/gladia.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "56919804034f4ea364fcd729e3a48d36c40e4dd911a5d35d67fb17cb1627f176"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "d3009a549fe44c47f3abc982720b7b6a759986121739b6613001fbd940eb08ae"
 ---
 
 # Gladia Provider
@@ -293,7 +293,6 @@ The following provider options are available:
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
-- [LMNT](/providers/ai-sdk-providers/lmnt)
 - [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)

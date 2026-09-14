@@ -16,8 +16,8 @@ related:
 summary: Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS mitigation and SOC 2 compliance.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/compliance.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "2397cb04532181e1baf5adc7cb033ad4a0cdbc6a097a3593f6a02d8647edc8e0"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "33a51634b312cea53adb75395130a25820114214a376426b7cfe5598a316f0c3"
 ---
 
 # Security & Compliance Measures
@@ -39,9 +39,9 @@ This page covers the protection and compliance measures Vercel takes to ensure t
 - [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
 - [How to build and maintain HIPAA-compliant applications on Vercel](https://vercel.com/kb/guide/hipaa-compliance-guide-vercel?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related) — Deploy HIPAA-compliant healthcare apps on Vercel with built-in security, BAAs, and scalable serverless infrastructure.
 - [Does Vercel have a SOC 2 Type 2 attestation?](https://vercel.com/kb/guide/is-vercel-soc-2-compliant?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related) — Vercel holds a SOC 2 Type 2 attestation for Security, Confidentiality, and Availability. See what the report covers, how
-- [Ensuring safe and effective infrastructure testing](https://vercel.com/kb/guide/ensuring-safe-and-effective-infrastructure-testing?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related) — We conduct regular penetration testing through certified third-party assessors to secure the Vercel platform. This guide
 - [The Frontend Cloud: Powering resiliency for global web applications](https://vercel.com/blog/the-resiliency-of-the-frontend-cloud?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related)
 - [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
+- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related)
 
 Full cross-link map for this page: [/docs/security/compliance.graph.md](/docs/security/compliance.graph.md?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -79,6 +79,8 @@ Vercel supports GDPR compliance, which means that we commit to the following:
 For more information on how Vercel protects your personal data, and the data of your customers, refer to our [Privacy Policy](/legal/privacy-policy) and [Data Processing Addendum](/legal/dpa).
 
 ### PCI DSS
+
+Vercel supports PCI DSS compliance as a service provider and merchant. You can request Vercel's Attestation of Compliance (AOC) reports through the [Trust Center](https://security.vercel.com).
 
 Payment Card Industry Data Security Standard (PCI DSS) is a standard that defines the security and privacy requirements for payment card processing. PCI compliance requires that businesses who handle customer credit card information adhere to a set of information security standards.
 

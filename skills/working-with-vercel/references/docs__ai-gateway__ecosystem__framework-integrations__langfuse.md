@@ -1,28 +1,28 @@
 ---
-title: LangFuse
+title: Langfuse with AI Gateway
 product: vercel
 url: /docs/ai-gateway/ecosystem/framework-integrations/langfuse
 canonical_url: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/langfuse"
-last_updated: 2026-02-26
-type: conceptual
+last_updated: 2026-09-08
+type: how-to
 prerequisites:
   - /docs/ai-gateway/ecosystem/framework-integrations
   - /docs/ai-gateway/ecosystem
 related:
   - /docs/ai-gateway
-summary: Learn how to integrate Vercel AI Gateway with LangFuse to access multiple AI models through a unified interface
+summary: Trace and monitor AI Gateway requests with Langfuse. Configure an OpenAI client and wrap it with observeOpenAI to log model generations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/langfuse.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "e5a74c6ce9b9a2f8a6ece3e72fc2086793474c57c4a5e0091255d8912887970c"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "b549e0f14e1b955e8029e9aaaf0a0136bbd08b7dbe0e208cba4bb6523891c948"
 ---
 
-# LangFuse
+# Langfuse with AI Gateway
 
-[LangFuse](https://langfuse.com/) is an LLM engineering platform
+[Langfuse](https://langfuse.com/) is an LLM engineering platform
 that helps teams collaboratively develop, monitor, evaluate, and debug AI applications.
 This guide demonstrates how to integrate [Vercel AI Gateway](/docs/ai-gateway)
-with LangFuse to access various AI models and providers.
+with Langfuse to access various AI models and providers.
 
 
 <!-- docsgraph:related -->
@@ -32,11 +32,11 @@ with LangFuse to access various AI models and providers.
 
 - [Langfuse](https://ai-sdk.dev/providers/observability/langfuse?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Flangfuse&source_site=vercel-docs&relationship=related)
 - [Building an AI chatbot with Next.js, Langchain, and OpenAI](https://vercel.com/kb/guide/nextjs-langchain-vercel-ai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Flangfuse&source_site=vercel-docs&relationship=related) — Dive into the world of LangChain.js and Next.js with our detailed guide. Learn how to set up a chatbot, structure output
-- [LangChain](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/langchain?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Flangfuse&source_site=vercel-docs&relationship=related) — Learn how to integrate Vercel AI Gateway with LangChain to access multiple AI models through a unified interface
-- [LiteLLM](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/litellm?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Flangfuse&source_site=vercel-docs&relationship=related) — Learn how to integrate Vercel AI Gateway with LiteLLM to access multiple AI models through a unified interface
-- [Vercel & OpenAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Flangfuse&source_site=vercel-docs&relationship=related) — Integrate your Vercel project with OpenAI's powerful suite of models.
-- [LlamaIndex](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/llamaindex?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Flangfuse&source_site=vercel-docs&relationship=related) — Learn how to integrate Vercel AI Gateway with LlamaIndex to access multiple AI models through a unified interface
-- [LangChain](https://vercel.com/docs/sandbox/ecosystem/langchain?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Flangfuse&source_site=vercel-docs&relationship=related) — Give a LangChain agent a tool that executes model-generated code in an isolated Vercel Sandbox, with models served by AI
+- [LangChain with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/langchain?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Flangfuse&source_site=vercel-docs&relationship=related) — Learn how to integrate Vercel AI Gateway with LangChain to access multiple AI models through a unified interface.
+- [Ecosystem](https://vercel.com/docs/sandbox/ecosystem?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Flangfuse&source_site=vercel-docs&relationship=related) — Use Vercel Sandbox with the agent frameworks, model SDKs, and coding agents you already work with.
+- [LiteLLM with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/litellm?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Flangfuse&source_site=vercel-docs&relationship=related) — Learn how to integrate Vercel AI Gateway with LiteLLM to access multiple AI models through a unified interface.
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Flangfuse&source_site=vercel-docs&relationship=related) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
+- [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Flangfuse&source_site=vercel-docs&relationship=related) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integrations/langfuse.graph.md](/docs/ai-gateway/ecosystem/framework-integrations/langfuse.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Flangfuse&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -52,7 +52,7 @@ Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integra
   ```
 
 - ### Install dependencies
-  Install the required LangFuse packages along with the `dotenv` and `@types/node` packages:
+  Install the required Langfuse packages along with the `dotenv` and `@types/node` packages:
   <CodeBlock>
     <Code tab="pnpm">
       ```bash
@@ -78,7 +78,7 @@ Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integra
 
 - ### Configure environment variables
   Create a `.env` file with your [Vercel AI Gateway API key](/docs/ai-gateway#using-the-ai-gateway-with-an-api-key)
-  and LangFuse API keys:
+  and Langfuse API keys:
   ```bash filename=".env"
   AI_GATEWAY_API_KEY=your-api-key-here
 
@@ -91,7 +91,7 @@ Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integra
   > you can also use the `VERCEL_OIDC_TOKEN` environment variable which will be
   > automatically provided.
 
-- ### Create your LangFuse application
+- ### Create your Langfuse application
   Create a new file called `index.ts` with the following code:
   ```typescript filename="index.ts" {6, 14}
   import { observeOpenAI } from 'langfuse';

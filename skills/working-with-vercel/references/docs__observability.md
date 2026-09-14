@@ -16,8 +16,8 @@ related:
 summary: Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/observability.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "88201f5282734db7e6304588a12122fd59cc466a9b33082dc7e41762ee31db3a"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "500879a6af531fb8bf79b0ad5572f765f5dfd6b7ba05f1dd37939e7e9934c73e"
 ---
 
 # Observability
@@ -39,9 +39,9 @@ Find production errors, capture request traces, and discover queryable metrics f
 - [Enhanced firewall data now available in Monitoring](https://vercel.com/changelog/enhanced-firewall-data-now-available-in-monitoring?from=related&source_path=%2Fdocs%2Fobservability&source_site=vercel-docs&relationship=related)
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel?from=related&source_path=%2Fdocs%2Fobservability&source_site=vercel-docs&relationship=related) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
 - [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation?from=related&source_path=%2Fdocs%2Fobservability&source_site=vercel-docs&relationship=related) — A practical checklist for keeping your storefront fast and your checkout path healthy through Black Friday and Cyber Mon
-- [Connect Next.js to Amazon Aurora PostgreSQL using Vercel Marketplace](https://vercel.com/kb/guide/connect-next-js-to-amazon-aurora-postgresql-using-vercel-marketplace?from=related&source_path=%2Fdocs%2Fobservability&source_site=vercel-docs&relationship=related) — Learn how to connect your Next.js application to Amazon Aurora PostgreSQL securely using the Vercel Marketplace AWS inte
-- [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related&source_path=%2Fdocs%2Fobservability&source_site=vercel-docs&relationship=related) — Learn how to debug how Vercel decides where to route your request
 - [Running Docker on Vercel](https://vercel.com/kb/guide/docker?from=related&source_path=%2Fdocs%2Fobservability&source_site=vercel-docs&relationship=related) — Learn how to run Docker on Vercel by deploying OCI container images as Vercel Functions, storing them in Vercel Containe
+- [Build an incident response sre agent with eve](https://vercel.com/kb/guide/eve-incident-sre-agent?from=related&source_path=%2Fdocs%2Fobservability&source_site=vercel-docs&relationship=related) — sre is an incident response agent for Slack. It investigates production issues using a hypothesis-driven approach and re
+- [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis?from=related&source_path=%2Fdocs%2Fobservability&source_site=vercel-docs&relationship=related) — Learn how to build and scale performant APIs on Vercel.
 - [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure?from=related&source_path=%2Fdocs%2Fobservability&source_site=vercel-docs&relationship=related)
 - [How to integrate AI into your business](https://vercel.com/blog/how-to-integrate-ai-into-your-business?from=related&source_path=%2Fdocs%2Fobservability&source_site=vercel-docs&relationship=related)
 
@@ -64,7 +64,7 @@ vercel curl --trace --json /api/hello
 
 ```bash filename="terminal"
 # Most metrics require Observability Plus
-vercel metrics list
+vercel metrics schema
 ```
 
 > **🔒 Permissions Required**: Observability

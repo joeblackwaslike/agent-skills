@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/azure-ai.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "7002d7eda516ba53a5c17fa90b4ea558889207fce9a02387f83a4da9762e9939"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "60791b0af2c9d93d2a83b9e9c82ab6a4b063cf71089b018e9d90bb806f33588a"
 ---
 
 # Azure Custom Provider for AI SDK
@@ -127,6 +127,7 @@ const { text } = await generateText({
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
 - [Interfaze](/providers/community-providers/interfaze)
+- [Telnyx](/providers/community-providers/telnyx)
 - [Flowise](/providers/community-providers/flowise)
 
 

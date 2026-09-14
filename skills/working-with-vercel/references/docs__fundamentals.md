@@ -14,8 +14,8 @@ related:
 summary: Learn about the core concepts of Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/fundamentals.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "4e696f0033e4e63daae70742989a256304b8ba276e829cb357012d8c83acd166"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "a587059fd57a002a4e887906dcc7ff6f9b3c028a1ebb094ceba5828e98c82f03"
 ---
 
 # Vercel fundamental concepts
@@ -29,9 +29,9 @@ The articles below explain core concepts that shape how Vercel works:
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How Vercel CDN works](https://vercel.com/docs/how-vercel-cdn-works?from=related&source_path=%2Fdocs%2Ffundamentals&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
-- [Products](https://vercel.com/docs/products?from=related&source_path=%2Fdocs%2Ffundamentals&source_site=vercel-docs&relationship=related) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
 - [Vercel KMS Concepts](https://vercel.com/docs/kms/concepts?from=related&source_path=%2Fdocs%2Ffundamentals&source_site=vercel-docs&relationship=related) — Understand how Vercel KMS rotates signing keys and how it authorizes signing, management, and verification.
 - [Vercel Connect Concepts](https://vercel.com/docs/connect/concepts?from=related&source_path=%2Fdocs%2Ffundamentals&source_site=vercel-docs&relationship=related) — Understand the core building blocks of Vercel Connect: connectors, installations, tokens, project links, triggers, and a
+- [Products](https://vercel.com/docs/products?from=related&source_path=%2Fdocs%2Ffundamentals&source_site=vercel-docs&relationship=related) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Ffundamentals&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 
 Full cross-link map for this page: [/docs/fundamentals.graph.md](/docs/fundamentals.graph.md?from=related&source_path=%2Fdocs%2Ffundamentals&source_site=vercel-docs&relationship=graph)

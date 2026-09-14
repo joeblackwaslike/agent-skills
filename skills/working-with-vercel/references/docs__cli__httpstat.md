@@ -16,8 +16,8 @@ related:
 summary: Learn how to visualize HTTP request timing statistics for your Vercel deployments using the vercel httpstat CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/httpstat.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "ddafd56b5d5ecf24cd88f6b5297ee1a57e1449ea8b4d13717790deb27adfb85b"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "a488b28e8983832c19d10de0f48f6d4d5aae298bc530587424370652c4857b3b"
 ---
 
 # vercel httpstat
@@ -36,7 +36,7 @@ The `vercel httpstat` command works like `httpstat`, but automatically handles d
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fhttpstat&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel logs](https://vercel.com/docs/cli/logs?from=related&source_path=%2Fdocs%2Fcli%2Fhttpstat&source_site=vercel-docs&relationship=related) — View and filter request logs for your Vercel project, or stream live runtime logs from a deployment.
 - [vercel security](https://vercel.com/docs/cli/security?from=related&source_path=%2Fdocs%2Fcli%2Fhttpstat&source_site=vercel-docs&relationship=related) — Inspect the security posture of your Vercel team from the terminal: run every security check, list findings, and scope t
-- [vercel metrics](https://vercel.com/docs/cli/metrics?from=related&source_path=%2Fdocs%2Fcli%2Fhttpstat&source_site=vercel-docs&relationship=related) — List and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
+- [vercel metrics](https://vercel.com/docs/cli/metrics?from=related&source_path=%2Fdocs%2Fcli%2Fhttpstat&source_site=vercel-docs&relationship=related) — Discover and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
 
 Full cross-link map for this page: [/docs/cli/httpstat.graph.md](/docs/cli/httpstat.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fhttpstat&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

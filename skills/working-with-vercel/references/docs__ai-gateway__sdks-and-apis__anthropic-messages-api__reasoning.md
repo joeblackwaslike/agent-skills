@@ -1,10 +1,10 @@
 ---
-title: Extended Thinking
+title: Anthropic Messages Extended Thinking with AI Gateway
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning"
-last_updated: 2026-07-28
-type: conceptual
+last_updated: 2026-09-08
+type: reference
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api
   - /docs/ai-gateway/sdks-and-apis
@@ -14,14 +14,14 @@ related:
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning
   - /docs/ai-gateway/models-and-providers/reasoning/anthropic
   - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced
-summary: Configure how much Claude thinks before answering, using the Anthropic Messages API thinking parameter.
+summary: Configure how much Claude thinks before answering, using the Anthropic Messages API thinking parameter through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "13d2cc2bef924fa1ce24473c9ee90b19016a97d219a761f3a76266f1fbda5672"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "fb2015074595fdeab05ec3e403f8109ecc73c85584a1a343b7fd9736d58d0feb"
 ---
 
-# Extended Thinking
+# Anthropic Messages Extended Thinking with AI Gateway
 
 Anthropic calls reasoning **extended thinking**. Configure it with the `thinking` parameter on a [Messages](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages) request. Other API surfaces call the same capability reasoning: see [Reasoning](/docs/ai-gateway/models-and-providers/reasoning) for the cross-provider reference, or [Chat Completions reasoning](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning) for the OpenAI-shaped equivalent.
 
@@ -32,13 +32,11 @@ Anthropic calls reasoning **extended thinking**. Configure it with the `thinking
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Anthropic](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Freasoning&source_site=vercel-docs&relationship=related)
-- [Reasoning](https://ai-sdk.dev/docs/ai-sdk-core/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Freasoning&source_site=vercel-docs&relationship=related)
 - [Get started with Claude 3.7 Sonnet](https://ai-sdk.dev/cookbook/guides/sonnet-3-7?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Freasoning&source_site=vercel-docs&relationship=related)
-- [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Freasoning&source_site=vercel-docs&relationship=related) — Control how much a reasoning model thinks before answering with the OpenResponses API.
-- [Google and Vertex Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/google?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Freasoning&source_site=vercel-docs&relationship=related) — Configure thinking for Google Gemini and Gemma models with the AI SDK and AI Gateway.
-- [Amazon Bedrock Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Freasoning&source_site=vercel-docs&relationship=related) — Configure reasoning for models hosted on Amazon Bedrock with the AI SDK and AI Gateway.
-- [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Freasoning&source_site=vercel-docs&relationship=related) — Control how much a model thinks before answering with the OpenAI Responses API.
-- [Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Freasoning&source_site=vercel-docs&relationship=related) — Use the AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
+- [OpenResponses Reasoning with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Freasoning&source_site=vercel-docs&relationship=related) — Control how much a reasoning model thinks before answering with the OpenResponses API through AI Gateway.
+- [AI Gateway Amazon Bedrock Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Freasoning&source_site=vercel-docs&relationship=related) — Configure reasoning for models hosted on Amazon Bedrock with the AI SDK and AI Gateway.
+- [AI Gateway Google and Vertex Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/google?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Freasoning&source_site=vercel-docs&relationship=related) — Configure thinking for Google Gemini and Gemma models with the AI SDK and AI Gateway.
+- [AI Gateway OpenAI Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Freasoning&source_site=vercel-docs&relationship=related) — Configure reasoning and thinking for OpenAI models with the AI SDK and AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning.graph.md](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Freasoning&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -48,35 +46,15 @@ Configure thinking for models that support chain-of-thought reasoning. The `thin
 - **Adaptive thinking**: Set `thinking: { type: 'adaptive' }`. The model decides when and how much to think. Available on Claude 4.6 and later. Required on Claude Opus 4.7 and later.
 - **Extended thinking with a token budget**: Set `thinking: { type: 'enabled', budget_tokens: N }` for a fixed token budget. Available on Claude 4.6 and earlier. Deprecated on Claude 4.6. Returns a 400 error on Claude Opus 4.7 and later.
 
-See the [Anthropic reasoning reference](/docs/ai-gateway/models-and-providers/reasoning/anthropic#supported-models) for the full model support matrix.
+See the [Anthropic reasoning reference](/docs/ai-gateway/models-and-providers/reasoning/anthropic#supported-models) for native thinking modes and provider-specific exceptions.
 
-The `thinking` parameter works with any reasoning model, not just Anthropic models. AI Gateway maps it to the target provider's native reasoning configuration, so you can set a thinking budget on a request to an OpenAI or Google model too.
+The `thinking` parameter works across supported reasoning models, including models from other providers. AI Gateway maps it to the target provider's native reasoning configuration, so you can set a thinking budget on a request to an OpenAI or Google model too.
+
+Discover each model's controls through [`GET /v1/models`](/docs/ai-gateway/models-and-providers/reasoning#discover-model-reasoning-support). To set effort on adaptive models, send `output_config.effort` alongside `thinking: { type: 'adaptive' }`. The Messages request schema accepts `low`, `medium`, `high`, `xhigh`, and `max`; choose a level the model supports. The catalog doesn't provide a structured default.
 
 ## Adaptive thinking (Claude 4.6 and later)
 
 On Claude Opus 4.7 and later, set `display: 'summarized'` to receive thinking text, which is omitted by default:
-
-#### cURL
-
-```bash filename="adaptive-thinking.sh"
-curl -X POST "https://ai-gateway.vercel.sh/v1/messages" \
-  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "anthropic/claude-opus-5",
-    "max_tokens": 2048,
-    "thinking": {
-      "type": "adaptive",
-      "display": "summarized"
-    },
-    "messages": [
-      {
-        "role": "user",
-        "content": "Explain quantum entanglement in simple terms."
-      }
-    ]
-  }'
-```
 
 #### TypeScript
 
@@ -149,22 +127,18 @@ for block in message.content:
         print('💬 Response:', block.text)
 ```
 
-## Extended thinking with a token budget (Claude 4.6 and earlier)
-
-For pre-4.7 models, use `type: 'enabled'` with a `budget_tokens` value:
-
 #### cURL
 
-```bash filename="extended-thinking.sh"
+```bash filename="adaptive-thinking.sh"
 curl -X POST "https://ai-gateway.vercel.sh/v1/messages" \
   -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "anthropic/claude-sonnet-4.5",
-    "max_tokens": 8192,
+    "model": "anthropic/claude-opus-5",
+    "max_tokens": 2048,
     "thinking": {
-      "type": "enabled",
-      "budget_tokens": 5000
+      "type": "adaptive",
+      "display": "summarized"
     },
     "messages": [
       {
@@ -174,6 +148,10 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/messages" \
     ]
   }'
 ```
+
+## Extended thinking with a token budget (Claude 4.6 and earlier)
+
+For pre-4.7 models, use `type: 'enabled'` with a `budget_tokens` value:
 
 #### TypeScript
 
@@ -246,7 +224,31 @@ for block in message.content:
         print('💬 Response:', block.text)
 ```
 
+#### cURL
+
+```bash filename="extended-thinking.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/messages" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "anthropic/claude-sonnet-4.5",
+    "max_tokens": 8192,
+    "thinking": {
+      "type": "enabled",
+      "budget_tokens": 5000
+    },
+    "messages": [
+      {
+        "role": "user",
+        "content": "Explain quantum entanglement in simple terms."
+      }
+    ]
+  }'
+```
+
 ## Thinking parameters
+
+Set effort in the separate `output_config.effort` field, not inside `thinking`. The following fields belong to `thinking`:
 
 - **`type`**: Set to `'adaptive'` (Claude 4.6 and later) or `'enabled'` (Claude 4.6 and earlier)
 - **`budget_tokens`**: Maximum number of tokens to allocate for thinking. Only valid with `type: 'enabled'`
@@ -254,7 +256,7 @@ for block in message.content:
 
 ## Response with thinking
 
-When thinking is enabled, the response includes thinking blocks:
+When the provider returns thinking content, the response includes thinking blocks. Display settings and model behavior determine whether those blocks contain text:
 
 ```json
 {
@@ -283,7 +285,7 @@ When thinking is enabled, the response includes thinking blocks:
 
 ## Next steps
 
-- [Reasoning](/docs/ai-gateway/models-and-providers/reasoning) - Per-provider effort levels and model support
+- [Reasoning](/docs/ai-gateway/models-and-providers/reasoning) - Model discovery and API-format mappings
 - [Advanced](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced) - Web search, provider timeouts, and automatic caching
 
 

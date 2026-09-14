@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/qwen.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "f3b263b5ca83a92a613c28df6fa025e1d0845b38236ed2724d4176788fef2864"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "5c0cc262909f6a853f962932524fb22662a2cf68d9acc3e4cd8a71423e9e6718"
 ---
 
 # Qwen Provider
@@ -182,6 +182,7 @@ const model = qwen.embeddingModel('text-embedding-v3');
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
 - [Interfaze](/providers/community-providers/interfaze)
+- [Telnyx](/providers/community-providers/telnyx)
 - [Flowise](/providers/community-providers/flowise)
 
 

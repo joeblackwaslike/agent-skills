@@ -1,9 +1,9 @@
 ---
-title: Migrate to AI Gateway using your agent
+title: Migrate to AI Gateway Using Your Coding Agent
 product: vercel
 url: /docs/ai-gateway/getting-started/migrate-to-ai-gateway
 canonical_url: "https://vercel.com/docs/ai-gateway/getting-started/migrate-to-ai-gateway"
-last_updated: 2026-08-24
+last_updated: 2026-09-08
 type: how-to
 prerequisites:
   - /docs/ai-gateway/getting-started
@@ -17,11 +17,11 @@ related:
 summary: "Move your app's model calls to Vercel AI Gateway with a single coding-agent prompt, whatever provider or SDK you use today."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/migrate-to-ai-gateway.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "7332eeb31d2cd5789cc0f59301c3fc193a09bd3f34d5d56f696f75360313898d"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "397cd40e4ef2bffff4d8b58068dcf30d65fe1bd09a81c9bb27ba7df5c4c04226"
 ---
 
-# Migrate to AI Gateway using your agent
+# Migrate to AI Gateway Using Your Coding Agent
 
 AI Gateway puts one endpoint and one API key in front of hundreds of models, and layers on automatic provider fallbacks, per-request observability, spend limits, and pricing with no token markup. It speaks the [AI SDK](/docs/ai-gateway/sdks-and-apis/ai-sdk) natively and treats every model as a `creator/model` string, so it stays provider-neutral: switching providers becomes a one-line string change instead of an integration rewrite.
 
@@ -32,18 +32,17 @@ AI Gateway puts one endpoint and one API key in front of hundreds of models, and
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fmigrate-to-ai-gateway&source_site=vercel-docs&relationship=related)
-- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fmigrate-to-ai-gateway&source_site=vercel-docs&relationship=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
 - [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fmigrate-to-ai-gateway&source_site=vercel-docs&relationship=related) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
 - [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fmigrate-to-ai-gateway&source_site=vercel-docs&relationship=related)
-- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fmigrate-to-ai-gateway&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [How I use OpenCode with Vercel AI Gateway to build features fast](https://vercel.com/kb/guide/how-i-use-opencode-with-vercel-ai-gateway-to-build-features-fast?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fmigrate-to-ai-gateway&source_site=vercel-docs&relationship=related) — How to route different AI models to different coding tasks automatically, cutting token costs by ~70% without losing qua
-- [Xcode](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fmigrate-to-ai-gateway&source_site=vercel-docs&relationship=related) — Use Xcode's coding assistant with the AI Gateway.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fmigrate-to-ai-gateway&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
+- [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fmigrate-to-ai-gateway&source_site=vercel-docs&relationship=related) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
+- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fmigrate-to-ai-gateway&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
+- [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fmigrate-to-ai-gateway&source_site=vercel-docs&relationship=related) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
 
 Full cross-link map for this page: [/docs/ai-gateway/getting-started/migrate-to-ai-gateway.graph.md](/docs/ai-gateway/getting-started/migrate-to-ai-gateway.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fmigrate-to-ai-gateway&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-Rather than make those edits by hand, you hand the job to your coding agent. It reads the whole project, finds every place you call a model, including the background jobs and summary generators that are easy to forget, and reroutes each one through AI Gateway without changing what your app does. Your framework, streaming, tool schemas, and response shapes all stay put.
+Rather than make those edits by hand, you hand the job to your coding agent. It reads the whole project, finds every place you call a model, including the background jobs and summary generators that you might overlook, and reroutes each one through AI Gateway without changing what your app does. Your framework, streaming, tool schemas, and response shapes all stay put.
 
 **Agent prompt**
 

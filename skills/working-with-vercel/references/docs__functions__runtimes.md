@@ -16,8 +16,8 @@ related:
 summary: Runtimes transform your source code into Functions, which are served by our CDN. Learn about the official runtimes supported by Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "e4540fd1ab2fd806b76dde3f246403addf3c641ec231d2a0c2ae19ced8da1c52"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "2b2d93de6b28917c36c6650ea10c20f7b1ce08bb7d6bd5ae1c23ec75123859e8"
 ---
 
 # Runtimes
@@ -32,12 +32,12 @@ Vercel supports multiple runtimes for your functions. Each runtime has its own s
 
 - [Vercel Deployment Guide](https://ai-sdk.dev/docs/advanced/vercel-deployment-guide?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes&source_site=vercel-docs&relationship=related)
 - [waitUntil is now available for Vercel Functions](https://vercel.com/changelog/waituntil-is-now-available-for-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes&source_site=vercel-docs&relationship=related)
-- [How can I reduce my Vercel Functions usage on Vercel?](https://vercel.com/kb/guide/how-can-i-reduce-my-serverless-execution-usage-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes&source_site=vercel-docs&relationship=related) — Reduce Vercel Functions usage and cost under Fluid compute pricing with caching, rendering strategies, and function conf
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
 - [Vercel vs Render](https://vercel.com/kb/guide/vercel-vs-render?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Render: compute models, AI infrastructure, Docker and container image support, background
 - [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes&source_site=vercel-docs&relationship=related)
 - [Billions of dollars, billions of requests: Black Friday-Cyber Monday 2024](https://vercel.com/blog/black-friday-cyber-monday-2024-recap?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes&source_site=vercel-docs&relationship=related)
+- [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes&source_site=vercel-docs&relationship=related)
 - [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes&source_site=vercel-docs&relationship=related) — Learn how to build and scale performant APIs on Vercel.
 - [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes&source_site=vercel-docs&relationship=related) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
 - [Build image overview](https://vercel.com/docs/builds/build-image?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes&source_site=vercel-docs&relationship=related) — Learn about the container image used for Vercel builds.

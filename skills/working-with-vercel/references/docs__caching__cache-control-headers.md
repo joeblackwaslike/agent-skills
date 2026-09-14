@@ -15,8 +15,8 @@ related:
 summary: Learn about the cache-control headers sent to each Vercel deployment and how to use them to control the caching behavior of your application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/cache-control-headers.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "892c1c272cbf94039fe5752c60bb03770f9f6aa887ea4ab3fbff56e2425ad3d6"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "a780ab79a6e5822281948e875ef3ce767c4e4af8bcd0907330b3c1a364303502"
 ---
 
 # Cache-Control headers
@@ -38,7 +38,7 @@ You can control how Vercel's CDN caches your Function responses by setting a [Ca
 - [System Headers](https://vercel.com/docs/headers?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-control-headers&source_site=vercel-docs&relationship=related) — This reference covers the list of request, response, cache-control, and custom response headers included with deployment
 - [Data Cache for Next.js](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-control-headers&source_site=vercel-docs&relationship=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
 - [Cache Status and Reasons](https://vercel.com/docs/caching/cache-status?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-control-headers&source_site=vercel-docs&relationship=related) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
-- [@vercel/functions API Reference \\(Node.js\\)](https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-control-headers&source_site=vercel-docs&relationship=related) — Learn about available APIs when working with Vercel Functions.
+- [Purging Vercel CDN Cache](https://vercel.com/docs/caching/cdn-cache/purge?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-control-headers&source_site=vercel-docs&relationship=related) — Learn how to invalidate and delete cached content on Vercel's CDN, including cache keys and manual purging options.
 
 Full cross-link map for this page: [/docs/caching/cache-control-headers.graph.md](/docs/caching/cache-control-headers.graph.md?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-control-headers&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -223,6 +223,8 @@ The following example demonstrates `Cache-Control` headers that instruct:
 - Downstream CDNs to have a TTL of `60` seconds
 - Clients to have a TTL of `10` seconds
 
+**app/api/cache-control-headers/route.js**
+
 ```js filename="app/api/cache-control-headers/route.js" framework=nextjs
 export async function GET() {
   return new Response('Cache Control example', {
@@ -235,6 +237,8 @@ export async function GET() {
   });
 }
 ```
+
+**app/api/cache-control-headers/route.ts**
 
 ```ts filename="app/api/cache-control-headers/route.ts" framework=nextjs
 export async function GET() {
@@ -249,6 +253,8 @@ export async function GET() {
 }
 ```
 
+**app/api/cache-control-headers/route.js**
+
 ```js filename="app/api/cache-control-headers/route.js" framework=nextjs-app
 export async function GET() {
   return new Response('Cache Control example', {
@@ -261,6 +267,8 @@ export async function GET() {
   });
 }
 ```
+
+**app/api/cache-control-headers/route.ts**
 
 ```ts filename="app/api/cache-control-headers/route.ts" framework=nextjs-app
 export async function GET() {
@@ -275,6 +283,8 @@ export async function GET() {
 }
 ```
 
+**api/cache-control-headers.js**
+
 ```js filename="api/cache-control-headers.js" framework=other
 export default function handler(request, response) {
   response.setHeader('Vercel-CDN-Cache-Control', 'max-age=3600');
@@ -284,6 +294,8 @@ export default function handler(request, response) {
   return response.status(200).json({ name: 'Timmy Triangle' });
 }
 ```
+
+**api/cache-control-headers.ts**
 
 ```ts filename="api/cache-control-headers.ts" framework=other
 import type { VercelResponse } from '@vercel/node';

@@ -16,8 +16,8 @@ related:
 summary: Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no matter what tooling you use.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "9e0b9870ee8194a9029f56b6f1c24a368685a81c66cbae219094f7898fb6bfb8"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "ed82fdd6e16ba891859cc293a34b7dc0887607cedb0f5e3956607d17d2344015"
 ---
 
 # Backends on Vercel
@@ -40,7 +40,6 @@ Backends deployed to Vercel receive the benefits of Vercel's infrastructure, inc
 - [Building secure and performant web applications on Vercel](https://vercel.com/blog/building-secure-and-performant-web-applications-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend&source_site=vercel-docs&relationship=related)
 - [Zero-config backends on Vercel AI Cloud](https://vercel.com/blog/zero-config-backends-on-vercel-ai-cloud?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend&source_site=vercel-docs&relationship=related)
 - [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend&source_site=vercel-docs&relationship=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/frameworks/backend.graph.md](/docs/frameworks/backend.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

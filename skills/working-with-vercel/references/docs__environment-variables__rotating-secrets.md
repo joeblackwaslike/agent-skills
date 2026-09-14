@@ -16,8 +16,8 @@ related:
 summary: Safely rotate API keys, tokens, and other secrets in your Vercel environment variables.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/rotating-secrets.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "4fa3bb427683391f962126ce2b881e3ca8447cf2437506c8a0846b12e9cf53b2"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "7efd9b5e6550b7a2b712a0db7dd51d48372824808abc073b4b2cafee74c217fd"
 ---
 
 # Rotating environment variables
@@ -39,8 +39,8 @@ When you need to rotate API keys, tokens, or other credentials stored in your [e
 - [How to rotate the secrets of your Neon integration](https://vercel.com/kb/guide/how-to-reset-a-secret-for-a-neon-integration?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Frotating-secrets&source_site=vercel-docs&relationship=related) — This will guide you how to update the password for a Neon project.
 - [Legacy environment variable secrets are being sunset](https://vercel.com/changelog/legacy-environment-variable-secrets-are-being-sunset?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Frotating-secrets&source_site=vercel-docs&relationship=related)
 - [Implementing secrets rotation](https://vercel.com/docs/integrations/create-integration/secrets-rotation?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Frotating-secrets&source_site=vercel-docs&relationship=related) — Learn how to implement secrets rotation in your integration to allow users to rotate credentials securely.
-- [Rotate Installation Credential](https://vercel.com/docs/rest-api/marketplace/rotate-installation-credential?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Frotating-secrets&source_site=vercel-docs&relationship=related) — POST /v1/installations/{integrationConfigurationId}/credentials/rotate — Issues a replacement access token for an instal
 - [Managing environment variables](https://vercel.com/docs/environment-variables/managing-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Frotating-secrets&source_site=vercel-docs&relationship=related) — Learn how to create and manage environment variables for Vercel.
+- [Rotate Installation Credential](https://vercel.com/docs/rest-api/marketplace/rotate-installation-credential?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Frotating-secrets&source_site=vercel-docs&relationship=related) — POST /v1/installations/{integrationConfigurationId}/credentials/rotate — Issues a replacement access token for an instal
 - [Managing environment variables across environments](https://vercel.com/docs/environment-variables/manage-across-environments?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Frotating-secrets&source_site=vercel-docs&relationship=related) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
 - [Security Dashboard](https://vercel.com/docs/security/security-dashboard?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Frotating-secrets&source_site=vercel-docs&relationship=related) — The Security Dashboard aggregates the security posture of every account and project on your team, flags misconfiguration
 

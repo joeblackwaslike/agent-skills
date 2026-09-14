@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/interfaze.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "728355f84864bd0b2fe9417b2661f2e332fdc4d15ebf36893ec240ac6198f89a"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "0c25c4300ef35b8b418f5107e1f5618e7923e83786c2017fdae680c3d64728c3"
 ---
 
 # Interfaze
@@ -247,6 +247,7 @@ const interfaze = createInterfaze({
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
 - [Interfaze](/providers/community-providers/interfaze)
+- [Telnyx](/providers/community-providers/telnyx)
 - [Flowise](/providers/community-providers/flowise)
 
 

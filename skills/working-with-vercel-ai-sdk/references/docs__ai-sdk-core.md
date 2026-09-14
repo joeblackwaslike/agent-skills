@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "92e1d4caec7f7d25bd8173bf1b3eb6e064dedc5082f3a698d167325ca4aefb52"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "6a1110c1d9b4b9dbb4ac48ca6e894dd5d311764b13b9b2b88ed5fa37e2854452"
 ---
 
 # AI SDK Core
@@ -100,6 +100,11 @@ sha256: "92e1d4caec7f7d25bd8173bf1b3eb6e064dedc5082f3a698d167325ca4aefb52"
       href: '/docs/ai-sdk-core/speech',
     },
     {
+      title: 'Batch',
+      description: 'Submit requests for asynchronous batch processing.',
+      href: '/docs/ai-sdk-core/batch',
+    },
+    {
       title: 'File Uploads',
       description: 'Learn how to upload files to providers with the AI SDK.',
       href: '/docs/ai-sdk-core/file-uploads',
@@ -189,6 +194,7 @@ sha256: "92e1d4caec7f7d25bd8173bf1b3eb6e064dedc5082f3a698d167325ca4aefb52"
   - [File Uploads](/docs/ai-sdk-core/file-uploads)
   - [Language Model Middleware](/docs/ai-sdk-core/middleware)
   - [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
+  - [Batch](/docs/ai-sdk-core/batch)
   - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
   - [Error Handling](/docs/ai-sdk-core/error-handling)
   - [Testing](/docs/ai-sdk-core/testing)
@@ -263,10 +269,15 @@ sha256: "92e1d4caec7f7d25bd8173bf1b3eb6e064dedc5082f3a698d167325ca4aefb52"
     - [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
     - [createAgentUIStreamResponse](/docs/reference/ai-sdk-core/create-agent-ui-stream-response)
     - [pipeAgentUIStreamToResponse](/docs/reference/ai-sdk-core/pipe-agent-ui-stream-to-response)
+    - [experimental_startBatch](/docs/reference/ai-sdk-core/start-batch)
     - [tool](/docs/reference/ai-sdk-core/tool)
+    - [experimental_getBatchStatus](/docs/reference/ai-sdk-core/get-batch-status)
     - [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
+    - [experimental_getBatchResults](/docs/reference/ai-sdk-core/get-batch-results)
+    - [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
     - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
     - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+    - [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
     - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
     - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
     - [jsonSchema](/docs/reference/ai-sdk-core/json-schema)

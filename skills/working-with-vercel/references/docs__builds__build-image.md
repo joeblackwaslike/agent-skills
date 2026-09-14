@@ -16,8 +16,8 @@ related:
 summary: Learn about the container image used for Vercel builds.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/build-image.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "4888ee720d05485d4537e23d50070ba0a62e139727b09ba73616b8ebc81b6283"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "e9a358c37df26af7f9d9f80a63293fe1d97a1e39a322ef95e53f1ca7cf64358f"
 ---
 
 # Build image overview
@@ -41,7 +41,6 @@ Vercel supports [multiple runtimes](/docs/functions/runtimes).
 - [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-image&source_site=vercel-docs&relationship=related) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
 - [Vercel Container Registry](https://vercel.com/docs/container-registry?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-image&source_site=vercel-docs&relationship=related) — Store and manage Docker container images on Vercel. Build and push images with the Vercel CLI, then run them on Vercel F
 - [Build Output API](https://vercel.com/docs/build-output-api?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-image&source_site=vercel-docs&relationship=related) — The Build Output API is a file-system-based specification for a directory structure that can produce a Vercel deployment
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-image&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/builds/build-image.graph.md](/docs/builds/build-image.graph.md?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-image&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

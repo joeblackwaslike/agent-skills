@@ -2,8 +2,8 @@
 title: "Deployment"
 description: Creating, listing, and reading Hosted Dolt deployments and their instances.
 source: "https://www.dolthub.com/docs/products/hosted/api/v1/deployment.md"
-fetched_at: "2026-09-07T09:01:36.097Z"
-sha256: "0b83aeda9929ce0945d731d59065fc472ae609381cc7d67b6a6bc0ba9f433871"
+fetched_at: "2026-09-14T09:39:37.291Z"
+sha256: "9b562d19d4dffa7e6d2d3a2069700a03c9a34b254ba57de37755563eeb6986b1"
 ---
 
 # Deployment
@@ -106,9 +106,9 @@ As with any create, a `5xx` or a dropped connection does not tell you whether th
 |-------|------|----------|-------------|
 | `owner` | string | yes | The user or organization that will own the deployment. The caller must have permission to create deployments for it. 3–32 characters of letters, digits, hyphens, and underscores. |
 | `name` | string | yes | The deployment name, unique within the owner. 3–32 characters of letters, digits, hyphens, and underscores. |
-| `cloud` | string | yes | The cloud the deployment runs in. |
+| `cloud` | [`CloudProvider`](/products/hosted/api/v1/models#model-cloudprovider) | yes | The cloud the deployment runs in. |
 | `zone` | string | yes | The cloud region to provision in, as listed by the deployment options. |
-| `cluster_type` | string | no | The database engine the deployment runs. `mysql_with_dolt_replicas` is a MySQL primary with Dolt read replicas. |
+| `cluster_type` | [`ClusterType`](/products/hosted/api/v1/models#model-clustertype) | no | The database engine the deployment runs. `mysql_with_dolt_replicas` is a MySQL primary with Dolt read replicas. |
 | `instance_type_id` | string | yes | The **id** of the instance type, from the deployment options endpoint. Note a deployment reports `instance_type_name` on a read — the id and the display name are different values. |
 | `volume_type_id` | string | yes | The **id** of the storage type, from the deployment options endpoint. As with `instance_type_id`, this is the id rather than the display name. |
 | `volume_size_gb` | integer | yes | The size of the storage volume, in gigabytes. Must fall within the selected storage type's supported range. |
@@ -320,6 +320,8 @@ Only a deployment administrator may change settings.
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `disable_automatic_dolt_updates` | boolean | no | Whether to stop Dolt updating itself during the deployment's service window. Turn this on to pin the version, then roll it forward deliberately. |
+
+_Send at least one of these fields._
 
 **Example request**
 
@@ -659,6 +661,18 @@ curl -X PATCH 'https://hosted.doltdb.com/api/v1/deployments/{owner}/{deployment}
   -d '{"overrides":{"behavior_auto_commit":"false"}}'
 ```
 
+**Other request bodies**
+
+_Clear one override without touching the others._
+
+```json
+{
+  "overrides": {
+    "listener_max_connections": null
+  }
+}
+```
+
 **Responses**
 
 | Status | Description | Schema |
@@ -692,6 +706,147 @@ curl -X PATCH 'https://hosted.doltdb.com/api/v1/deployments/{owner}/{deployment}
         "is_overridden": false
       }
     ]
+  }
+}
+```
+
+---
+
+## Read a deployment's logs {#getDeploymentLogs}
+<span class="api-method" style="background:#29E3C1">GET</span> <code class="api-path">/api/v1/deployments/{owner}/{deployment}/logs</code>
+
+Returns log lines from one of the deployment's instances, newest page first.
+
+Logs come from a single instance. Omit `instance_id` and the deployment's primary is used, which is what you want unless you are chasing something on a specific replica; `GET /api/v1/deployments/{owner}/{deployment}/instances` lists the ids. Only instances that are not stopped can be read.
+
+This endpoint pages in both directions: `meta.next_page_token` walks further back through history, `meta.prev_page_token` walks toward the present, and either goes back as the query parameter of the same name. Both may be present at once, and either can come back on a page with no lines, so stop paging on an empty page rather than on a missing token.
+
+`start_time` and `end_time` bound the window; omit both for the most recent `lines` lines.
+
+
+**Parameters**
+
+| Name | In | Type | Required | Description |
+|------|----|------|----------|-------------|
+| `owner` | path | string | yes | The user or organization that owns the deployment. 3–32 characters of letters, digits, hyphens, and underscores. |
+| `deployment` | path | string | yes | The deployment name, unique within the owner. 3–32 characters of letters, digits, hyphens, and underscores. |
+| `instance_id` | query | string | no | Which instance to read. Defaults to the deployment's primary. `404` if the id names no live instance of this deployment. |
+| `lines` | query | integer | no | How many lines to return at most. Defaults to 100. |
+| `start_time` | query | string | no | Only return lines logged at or after this time. |
+| `end_time` | query | string | no | Only return lines logged at or before this time. |
+| `page_token` | query | string | no | The `meta.next_page_token` from a previous response, to read further back. Omit for the most recent page. |
+| `prev_page_token` | query | string | no | The `meta.prev_page_token` from a previous response, to read toward the present. |
+
+**Example request**
+
+```sh
+curl -X GET 'https://hosted.doltdb.com/api/v1/deployments/{owner}/{deployment}/logs' \
+  -H 'Authorization: Bearer YOUR_TOKEN'
+```
+
+**Responses**
+
+| Status | Description | Schema |
+|--------|-------------|--------|
+| `200` | A page of log lines. | [`LogLine[]`](/products/hosted/api/v1/models#model-logline) |
+| `400` | The request was malformed or failed input validation. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
+| `401` | Authentication credentials were missing or invalid. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
+| `404` | The requested resource does not exist. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
+| `405` | The HTTP method is not supported for this resource. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
+| `500` | An unexpected server error occurred. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
+| `503` | The service is temporarily unavailable. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
+
+**Example response `200`**
+
+```json
+{
+  "data": [
+    {
+      "time": "2026-09-03T09:14:02.481Z",
+      "text": "2026-09-03T09:14:02Z INFO  server ready on port 3306"
+    },
+    {
+      "time": "2026-09-03T09:14:07.902Z",
+      "text": "2026-09-03T09:14:07Z INFO  accepted connection from 10.0.1.7"
+    }
+  ],
+  "meta": {
+    "next_page_token": "eyJvZmZzZXQiOjI1fQ"
+  }
+}
+```
+
+---
+
+## Expose or stop exposing a deployment's remotesapi or MCP endpoint {#exposeDeploymentService}
+<span class="api-method" style="background:#F0A35C">PATCH</span> <code class="api-path">/api/v1/deployments/{owner}/{deployment}/expose</code>
+
+Turns one of the deployment's optional endpoints on or off. Send exactly one of `remotesapi` or `mcp`.
+
+Returns `202`: the change is queued, not applied. Poll `GET /api/v1/deployments/{owner}/{deployment}` until `expose_remotesapi_endpoint` or `expose_mcp` reports the value you asked for. Those fields are written once the change reaches the deployment's instances, so they are the signal that it took effect — the `202` only confirms the request was accepted.
+
+Exposing the remotesapi endpoint requires a WebPKI certificate; `webpki_cert` on the deployment says whether it has one, and a request without it returns `400`.
+
+Asking for the value a deployment already has is accepted and does nothing.
+
+
+**Parameters**
+
+| Name | In | Type | Required | Description |
+|------|----|------|----------|-------------|
+| `owner` | path | string | yes | The user or organization that owns the deployment. 3–32 characters of letters, digits, hyphens, and underscores. |
+| `deployment` | path | string | yes | The deployment name, unique within the owner. 3–32 characters of letters, digits, hyphens, and underscores. |
+
+**Request body**
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `remotesapi` | boolean | no | Whether to serve the remotesapi endpoint, which is what `dolt clone` and `dolt pull` talk to. Requires the deployment to have a WebPKI certificate — `400` otherwise, since a public endpoint with a private CA is unusable. |
+| `mcp` | boolean | no | Whether to serve the MCP endpoint. |
+
+_Send exactly one of these fields._
+
+**Example request**
+
+```sh
+curl -X PATCH 'https://hosted.doltdb.com/api/v1/deployments/{owner}/{deployment}/expose' \
+  -H 'Authorization: Bearer YOUR_TOKEN' \
+  -H 'Content-Type: application/json' \
+  -d '{"mcp":true}'
+```
+
+**Other request bodies**
+
+_Stop serving the remotesapi endpoint._
+
+```json
+{
+  "remotesapi": false
+}
+```
+
+**Responses**
+
+| Status | Description | Schema |
+|--------|-------------|--------|
+| `202` | The change was accepted and queued. | [`ExposeAccepted`](/products/hosted/api/v1/models#model-exposeaccepted) |
+| `400` | The request was malformed or failed input validation. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
+| `401` | Authentication credentials were missing or invalid. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
+| `403` | Authenticated, but not permitted to perform this action. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
+| `404` | The requested resource does not exist. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
+| `405` | The HTTP method is not supported for this resource. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
+| `500` | An unexpected server error occurred. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
+| `503` | The service is temporarily unavailable. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
+
+**Example response `202`**
+
+```json
+{
+  "data": {
+    "owner": "acme",
+    "name": "analytics",
+    "service": "mcp",
+    "requested": true
   }
 }
 ```
@@ -747,6 +902,172 @@ curl -X POST 'https://hosted.doltdb.com/api/v1/deployments/{owner}/{deployment}/
     "owner": "acme",
     "name": "analytics",
     "state": "stopping"
+  }
+}
+```
+
+---
+
+## List a deployment's metrics {#listDeploymentMetrics}
+<span class="api-method" style="background:#29E3C1">GET</span> <code class="api-path">/api/v1/deployments/{owner}/{deployment}/metrics</code>
+
+Returns the metrics this deployment collects. Each `id` is a value that `GET /api/v1/deployments/{owner}/{deployment}/metrics/{metric}` accepts.
+
+The set is not the same for every deployment: it depends on the cloud the deployment runs in, on whether it is Dolt or MySQL with Dolt replicas, and on whether it has read replicas.
+
+
+**Parameters**
+
+| Name | In | Type | Required | Description |
+|------|----|------|----------|-------------|
+| `owner` | path | string | yes | The user or organization that owns the deployment. 3–32 characters of letters, digits, hyphens, and underscores. |
+| `deployment` | path | string | yes | The deployment name, unique within the owner. 3–32 characters of letters, digits, hyphens, and underscores. |
+
+**Example request**
+
+```sh
+curl -X GET 'https://hosted.doltdb.com/api/v1/deployments/{owner}/{deployment}/metrics' \
+  -H 'Authorization: Bearer YOUR_TOKEN'
+```
+
+**Responses**
+
+| Status | Description | Schema |
+|--------|-------------|--------|
+| `200` | The metrics this deployment collects. | [`Metric[]`](/products/hosted/api/v1/models#model-metric) |
+| `400` | The request was malformed or failed input validation. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
+| `401` | Authentication credentials were missing or invalid. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
+| `403` | Authenticated, but not permitted to perform this action. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
+| `404` | The requested resource does not exist. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
+| `405` | The HTTP method is not supported for this resource. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
+| `422` | The request was well-formed but semantically invalid. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
+| `500` | An unexpected server error occurred. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
+| `503` | The service is temporarily unavailable. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
+
+**Example response `200`**
+
+```json
+{
+  "data": [
+    {
+      "id": "connections",
+      "display_name": "Connections"
+    },
+    {
+      "id": "queries",
+      "display_name": "Queries"
+    },
+    {
+      "id": "query_latency",
+      "display_name": "Query Latency"
+    },
+    {
+      "id": "cpu",
+      "display_name": "CPU Utilization"
+    },
+    {
+      "id": "mem",
+      "display_name": "Memory Usage"
+    },
+    {
+      "id": "disk",
+      "display_name": "Disk Usage"
+    },
+    {
+      "id": "diskio",
+      "display_name": "Disk IO"
+    },
+    {
+      "id": "network",
+      "display_name": "Network"
+    }
+  ]
+}
+```
+
+---
+
+## Read one of a deployment's metrics {#getDeploymentMetric}
+<span class="api-method" style="background:#29E3C1">GET</span> <code class="api-path">/api/v1/deployments/{owner}/{deployment}/metrics/{metric}</code>
+
+Returns one metric's readings over a window of time, oldest first.
+
+A metric is one or more series measured together, each named for what it measures and where it came from: `cpu` reports one series per host, and `network` reports bytes sent and bytes received for each host and interface, named like `Sent ip-10-0-0-125 ens3`. `timestamps` is the time axis they share, and every series has one value per timestamp. A `null` value means nothing was measured at that moment. It does not mean zero.
+
+`period_seconds` is how far apart the readings are. Hosted chooses it from the width of the window, so a wider window comes back coarser. Do not work it out from `timestamps`, which leaves out any moment no series measured.
+
+`start_time` and `end_time` default to the last hour. They must be in order and no more than 30 days apart, and the response echoes them back as asked. The readings themselves are minute-aligned: Hosted moves the start forward and the end backward to whole minutes before querying, so the first and last timestamps can sit inside the window rather than on its edges.
+
+`GET /api/v1/deployments/{owner}/{deployment}/metrics` lists the metrics a deployment collects. Asking for one it does not collect is a `404`.
+
+
+**Parameters**
+
+| Name | In | Type | Required | Description |
+|------|----|------|----------|-------------|
+| `owner` | path | string | yes | The user or organization that owns the deployment. 3–32 characters of letters, digits, hyphens, and underscores. |
+| `deployment` | path | string | yes | The deployment name, unique within the owner. 3–32 characters of letters, digits, hyphens, and underscores. |
+| `metric` | path | string | yes | Which metric to read, as listed by `GET /api/v1/deployments/{owner}/{deployment}/metrics`. |
+| `instance_id` | query | string | no | Which instance to read. Defaults to the deployment's primary. `404` if the id names no live instance of this deployment. |
+| `start_time` | query | string | no | The start of the window, inclusive. Defaults to an hour before `end_time`. |
+| `end_time` | query | string | no | The end of the window, inclusive. Defaults to now. |
+
+**Example request**
+
+```sh
+curl -X GET 'https://hosted.doltdb.com/api/v1/deployments/{owner}/{deployment}/metrics/{metric}' \
+  -H 'Authorization: Bearer YOUR_TOKEN'
+```
+
+**Responses**
+
+| Status | Description | Schema |
+|--------|-------------|--------|
+| `200` | The metric's series over the window. | [`MetricData`](/products/hosted/api/v1/models#model-metricdata) |
+| `400` | The request was malformed or failed input validation. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
+| `401` | Authentication credentials were missing or invalid. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
+| `403` | Authenticated, but not permitted to perform this action. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
+| `404` | The requested resource does not exist. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
+| `405` | The HTTP method is not supported for this resource. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
+| `422` | The request was well-formed but semantically invalid. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
+| `500` | An unexpected server error occurred. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
+| `503` | The service is temporarily unavailable. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
+
+**Example response `200`**
+
+```json
+{
+  "data": {
+    "metric": "network",
+    "instance_id": "3f1c9e7a-3b6d-4c5e-8a9f-0d1e2f3a4b5c",
+    "start_time": "2026-09-09T12:00:00Z",
+    "end_time": "2026-09-09T12:03:00Z",
+    "period_seconds": 60,
+    "timestamps": [
+      "2026-09-09T12:00:00Z",
+      "2026-09-09T12:01:00Z",
+      "2026-09-09T12:02:00Z"
+    ],
+    "series": [
+      {
+        "name": "Sent ip-10-0-0-125 ens3",
+        "unit": "Bytes",
+        "values": [
+          79210,
+          null,
+          72480
+        ]
+      },
+      {
+        "name": "Received ip-10-0-0-125 ens3",
+        "unit": "Bytes",
+        "values": [
+          74120,
+          60240,
+          66310
+        ]
+      }
+    ]
   }
 }
 ```

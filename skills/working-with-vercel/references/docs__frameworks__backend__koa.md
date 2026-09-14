@@ -17,8 +17,8 @@ related:
 summary: Deploy Koa applications to Vercel with zero configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/koa.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "613699f1e1744de3456ed5f3f9f6492b13a116854c272bed1edc67cd30fb29d3"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "6bdace0a0243a3d0980852273fcf7649770b502628ae8e3abdd0e2fd2b024e63"
 ---
 
 # Koa on Vercel
@@ -41,7 +41,6 @@ Koa is an expressive HTTP middleware framework for building web applications and
 - [NestJS on Vercel](https://vercel.com/docs/frameworks/backend/nestjs?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fkoa&source_site=vercel-docs&relationship=related) — Deploy NestJS applications to Vercel with zero configuration.
 - [Fastify on Vercel](https://vercel.com/docs/frameworks/backend/fastify?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fkoa&source_site=vercel-docs&relationship=related) — Deploy Fastify applications to Vercel with zero configuration.
 - [Hono on Vercel](https://vercel.com/docs/frameworks/backend/hono?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fkoa&source_site=vercel-docs&relationship=related) — Deploy Hono applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurati
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fkoa&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/frameworks/backend/koa.graph.md](/docs/frameworks/backend/koa.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fkoa&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

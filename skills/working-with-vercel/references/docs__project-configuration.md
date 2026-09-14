@@ -16,8 +16,8 @@ related:
 summary: Learn how to configure your Vercel projects using vercel.json, vercel.toml, vercel.ts, or the dashboard to control builds, routing, functions, and...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "a5257bd394dbeafafd4ba553bd391d0a5b18942287186e3e154f37299921fe66"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "9e200627d9983243b06452ce0a5e4f28f2f7a75b03f8949a4e38010306a3d194"
 ---
 
 # Project Configuration
@@ -39,7 +39,7 @@ Vercel automatically detects your framework and sets sensible defaults for build
 - [Can I route based on letter casing on Vercel?](https://vercel.com/kb/guide/can-i-route-based-on-letter-casing-on-vercel?from=related&source_path=%2Fdocs%2Fproject-configuration&source_site=vercel-docs&relationship=related) — Information on whether or not it is possible to route based on letting casing with Vercel.
 - [Does Vercel support Ruby on Rails applications?](https://vercel.com/kb/guide/does-vercel-support-ruby-on-rails-applications?from=related&source_path=%2Fdocs%2Fproject-configuration&source_site=vercel-docs&relationship=related) — Learn how you can use Ruby on Rails with your frontend on Vercel.
 - [How can I increase the limit of redirects or use dynamic redirects on Vercel?](https://vercel.com/kb/guide/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel?from=related&source_path=%2Fdocs%2Fproject-configuration&source_site=vercel-docs&relationship=related) — Instructions on how to use Serverless Functions to handle redirects on Vercel.
-- [How can I reduce my Vercel Functions usage on Vercel?](https://vercel.com/kb/guide/how-can-i-reduce-my-serverless-execution-usage-on-vercel?from=related&source_path=%2Fdocs%2Fproject-configuration&source_site=vercel-docs&relationship=related) — Reduce Vercel Functions usage and cost under Fluid compute pricing with caching, rendering strategies, and function conf
+- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain?from=related&source_path=%2Fdocs%2Fproject-configuration&source_site=vercel-docs&relationship=related) — Learn how to serve multiple Vercel projects from a single domain.
 - [Managing Global Configs with the Dashboard](https://vercel.com/docs/global-config/global-config-dashboard?from=related&source_path=%2Fdocs%2Fproject-configuration&source_site=vercel-docs&relationship=related) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
 - [Vercel CLI Global Options](https://vercel.com/docs/cli/global-options?from=related&source_path=%2Fdocs%2Fproject-configuration&source_site=vercel-docs&relationship=related) — Global options are commonly available to use with multiple Vercel CLI commands. Learn about Vercel CLI's global options
 

@@ -13,8 +13,8 @@ related:
 summary: Browse release notes for Vercel CLI versions, including major, minor, and patch changes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/release-notes.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "ceb732c1304ea5d9bf2395a4c9dedb43b6973f27201a17b1fa56bd2f09312c49"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "8d9bbfccb5ed03ef2b6f0c9b1445ff6ed4bc10669bf0b530c93af6496e25c5a6"
 ---
 
 # Vercel CLI Release Notes
@@ -27,7 +27,35 @@ Release notes for [Vercel CLI](/docs/cli) and its related packages. Each release
 
 To update to the latest version, see [updating Vercel CLI](/docs/cli#updating-vercel-cli) or run [`vercel upgrade`](/docs/cli/upgrade).
 
-vercel@59.11.7Published 2026-09-04Patch changes- 1109c9e: vercel@59.11.2Published 2026-09-02Patch changes- ac6a489: 
+vercel@59.16.0Published 2026-09-11Minor changes- 0239c8e: 
+- 0239c8e: 
+- 156e3ce: 
+- 54a6d73: 
+- 3d16792: Patch changes- 0b68fd0: 
+- 348e6f1: 
+- 0239c8e: 
+- 0239c8e: 
+- 2a57243: 
+- 62bec4e: 
+- 0239c8e: 
+- 7f1e9ff: vercel@59.15.1Published 2026-09-10Patch changes- bf9ade1: vercel@59.15.0Published 2026-09-09Minor changes- ffbc04b: Patch changes- 55e8d1e: 
+- 38ab4a2: vercel@59.14.0Published 2026-09-09Minor changes- a2ad023: 
+- 4766ac4: 
+- 98b4ea3: 
+- e6f1378: Patch changes- 7f78bd1: vercel@59.13.1Published 2026-09-09Patch changes- 664c7b7: vercel@59.12.0Published 2026-09-08Minor changes- 1ec44db: 
+- 1bc42b6: 
+- 1bc42b6: 
+- 1bc42b6: 
+- e1fb368: 
+- 38a4acd: Patch changes- a919cc2: 
+- 7411247: 
+- ef5c9f7: 
+- b174f14: 
+- 1bc42b6: 
+- 1bc42b6: 
+- 1bc42b6: 
+- 38a4acd: 
+- 2d541b2: vercel@59.11.7Published 2026-09-04Patch changes- 1109c9e: vercel@59.11.2Published 2026-09-02Patch changes- ac6a489: 
 - 5a11891: vercel@59.11.1Published 2026-09-01Patch changes- 66ecd0e: vercel@59.11.0Published 2026-09-01Minor changes- a652a99: Patch changes- daf77cd: vercel@59.10.0Published 2026-08-29Minor changes- 1758dcc: Patch changes- b107e95: 
 - 5434ad6: 
 - 9f6868e: 

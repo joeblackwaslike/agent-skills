@@ -3,7 +3,7 @@ title: submit-invoice
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/submit-invoice
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/submit-invoice"
-last_updated: 2026-09-07
+last_updated: 2026-09-14
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about submit-invoice on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/submit-invoice.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "ea393ec9620084bb840cd8900dc8e3a7a63bcdf2d0c6aac1c91afde7ae58df5c"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "244cf276b155dbe46b2e4257c0eee58af0ffe37170f3cec5963e32c74d7b57bd"
 ---
 
 # Submit Invoice

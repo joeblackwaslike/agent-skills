@@ -1,25 +1,25 @@
 ---
-title: Stripe Billing
+title: Stripe Usage-Based Billing with AI Gateway
 product: vercel
 url: /docs/ai-gateway/ecosystem/stripe-billing
 canonical_url: "https://vercel.com/docs/ai-gateway/ecosystem/stripe-billing"
-last_updated: 2026-07-28
+last_updated: 2026-09-08
 type: how-to
 prerequisites:
   - /docs/ai-gateway/ecosystem
   - /docs/ai-gateway
 related:
-  []
-summary: Add usage-based billing to your AI application with Stripe and AI Gateway.
+  - /docs/ai-gateway/sdks-and-apis
+summary: Send AI Gateway token usage to Stripe Billing Meters with an existing configured meter or private-preview access to meter dimensions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/stripe-billing.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "86becb2a149aad39e0b1660fdee56951855553c91791f1c0511ca5847460f843"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "c605004a6c2e064ed5e32b8b180d1793d5b2899d9bc8ac78964ba6334b76c388"
 ---
 
-# Stripe Billing
+# Stripe Usage-Based Billing with AI Gateway
 
-You can bill your customers for AI usage by connecting AI Gateway to [Stripe's metered billing](https://docs.stripe.com/billing/subscriptions/usage-based/implementation-guide). When you include Stripe headers in your requests, AI Gateway automatically emits meter events for every successful response.
+Send AI Gateway token usage to an existing [Stripe Billing Meters integration](https://docs.stripe.com/api/billing/meter). When you include Stripe headers in your requests, AI Gateway automatically emits meter events for every successful response.
 
 
 <!-- docsgraph:related -->
@@ -27,23 +27,24 @@ You can bill your customers for AI usage by connecting AI Gateway to [Stripe's m
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [From idea to secure checkout in minutes with Stripe](https://vercel.com/blog/from-idea-to-secure-checkout-in-minutes-with-stripe?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fstripe-billing&source_site=vercel-docs&relationship=related)
-- [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fstripe-billing&source_site=vercel-docs&relationship=related) — Learn about pricing for AI Gateway.
-- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fstripe-billing&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including pricing and markup, SDK and API compatibility, model availabilit
-- [AI Gateway Usage & Billing](https://vercel.com/docs/ai-gateway/observability-and-spend/usage?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fstripe-billing&source_site=vercel-docs&relationship=related) — Monitor your AI Gateway credit balance, usage, and generation details.
-- [Service Tiers](https://vercel.com/docs/ai-gateway/models-and-providers/service-tiers?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fstripe-billing&source_site=vercel-docs&relationship=related) — Control processing priority and cost for OpenAI, Google AI Studio, Google Vertex AI, and SpaceXAI models using service t
-- [Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fstripe-billing&source_site=vercel-docs&relationship=related) — Monitor AI Gateway requests and manage spend: observability, custom reporting, usage and billing APIs, and spending budg
+- [Ecosystem](https://vercel.com/docs/sandbox/ecosystem?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fstripe-billing&source_site=vercel-docs&relationship=related) — Use Vercel Sandbox with the agent frameworks, model SDKs, and coding agents you already work with.
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fstripe-billing&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
+- [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fstripe-billing&source_site=vercel-docs&relationship=related) — Understand AI Gateway token pricing, free and paid credits, BYOK costs, add-on charges, and payment fees. Manage credit
+- [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fstripe-billing&source_site=vercel-docs&relationship=related) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
+- [Anthropic Messages API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fstripe-billing&source_site=vercel-docs&relationship=related) — Use the Anthropic Messages API with AI Gateway. Configure authentication and send requests with streaming, tools, images
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem/stripe-billing.graph.md](/docs/ai-gateway/ecosystem/stripe-billing.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fstripe-billing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
+
+> **💡 Note:** This integration requires a Stripe billing meter with `model` and `token_type` dimensions. Stripe limits [meter dimensions to a private preview](https://docs.stripe.com/billing/subscriptions/usage-based/migrate-to-metronome/scope-your-migration#metering). Existing configured meters continue to work. To create a new dimensioned meter, you need Stripe preview access. Stripe recommends [Metronome for new integrations](https://docs.stripe.com/billing/subscriptions/usage-based#choosing-between-metronome-and-basic-usage-based-billing); see [Metronome compatibility](#metronome-compatibility) before starting.
 
 ## How it works
 
 When you include Stripe headers in your requests, AI Gateway:
 
 1. Routes the request to the appropriate AI provider
-2. On a successful response, emits two separate meter events to Stripe: one for input tokens and one for output tokens
-3. Includes the customer ID, token count, token type (`input` or `output`), and model ID in each meter event
+2. On a successful response, emits separate meter events for input, output, cache-read, and cache-write token counts when greater than zero
+3. Includes the customer ID, token count, token type (`input`, `output`, `cached_input`, or `cached_write`), and model ID in each meter event
 
 Stripe metering is **non-blocking**. If a meter event fails, AI Gateway still returns the AI response. Errors are logged for observability but don't affect the response.
 
@@ -52,11 +53,19 @@ Stripe metering is **non-blocking**. If a meter event fails, AI Gateway still re
 Before you start, you'll need:
 
 1. A [Stripe account](https://stripe.com) with access to the Billing Meter API
-2. A billing meter in your Stripe dashboard with the event name `token-billing-tokens` and dimension payload keys `model` and `token_type`. You can set this up in one of two ways:
-   - Go through the [token billing pricing plan flow](https://dashboard.stripe.com/token-billing) in Stripe to create your pricing plans, which also creates the meter with the correct configuration
-   - Manually create a billing meter in your Stripe dashboard with the event name `token-billing-tokens` and add `model` and `token_type` as dimension payload keys
+2. An existing billing meter with the event name `token-billing-tokens` and dimension payload keys `model` and `token_type`, or access to Stripe's private preview for meter dimensions. If you have preview access, you can create the meter in one of two ways:
+   - Use the [token billing pricing plan flow](https://dashboard.stripe.com/token-billing), if Stripe has enabled it for your account. The flow creates pricing plans and the meter with the required configuration.
+   - Manually create a billing meter in your Stripe dashboard with the event name `token-billing-tokens` and add `model` and `token_type` as dimension payload keys.
 3. A Stripe [restricted access key](#stripe-restricted-access-keys) (`rk_...`) with permission to write meter events
 4. Stripe customer IDs (`cus_...`) for the users you want to bill
+
+If you don't have an existing configured meter or preview access, contact Stripe before following these setup steps. A standard Stripe account alone doesn't satisfy the prerequisites.
+
+## Metronome compatibility
+
+Stripe recommends [Metronome](https://docs.stripe.com/billing/usage-based) for new usage-based billing integrations. AI Gateway's Stripe headers send Billing Meter events; they don't send events to Metronome's ingest API.
+
+To bill with Metronome, collect token usage from AI responses in your application and send usage events through your Metronome integration. With AI SDK, see [token usage](https://ai-sdk.dev/docs/ai-sdk-core/generating-text#generatetext). The Stripe header examples below apply only to the Billing Meters integration.
 
 ## Headers
 
@@ -71,147 +80,280 @@ Both headers must be present for meter events to fire. If either is missing, the
 
 ## Examples
 
+These examples use AI SDK 7 and the AI SDK for Python beta. Set `AI_GATEWAY_API_KEY`, `STRIPE_CUSTOMER_ID`, and `STRIPE_RESTRICTED_ACCESS_KEY` before running them. See [API format differences](/docs/ai-gateway/sdks-and-apis#api-format-differences) for setup, request fields, and response handling.
+
 #### AI SDK
 
-You can pass Stripe headers at the gateway level (applies to all requests) or per-request.
+#### TypeScript
 
-**Gateway-level headers:**
+```typescript filename="stripe-billing.ts"
+import { generateText } from 'ai';
 
-```typescript filename="ai-sdk-gateway.ts"
-import { createGateway } from '@ai-sdk/gateway';
-import { streamText } from 'ai';
-
-const gateway = createGateway({
-  baseURL: 'https://ai-gateway.vercel.sh/v1/ai',
-  apiKey: process.env.AI_GATEWAY_API_KEY,
+const { text } = await generateText({
+  model: 'anthropic/claude-sonnet-5',
+  prompt: 'Explain quantum computing in two sentences.',
   headers: {
-    'stripe-customer-id': process.env.STRIPE_CUSTOMER_ID,
-    'stripe-restricted-access-key': process.env.STRIPE_RESTRICTED_ACCESS_KEY,
+    'stripe-customer-id': process.env.STRIPE_CUSTOMER_ID!,
+    'stripe-restricted-access-key': process.env.STRIPE_RESTRICTED_ACCESS_KEY!,
   },
 });
 
-const result = streamText({
-  model: gateway('anthropic/claude-sonnet-5'),
-  prompt: 'Explain quantum computing in simple terms.',
-});
-
-for await (const part of result.textStream) {
-  process.stdout.write(part);
-}
+console.log(text);
 ```
 
-**Per-request headers** (useful when you bill different customers from the same gateway instance):
+#### Python (beta)
 
-```typescript filename="ai-sdk-per-request.ts"
-import { createGateway } from '@ai-sdk/gateway';
-import { streamText } from 'ai';
+```python filename="stripe-billing_ai.py"
+import asyncio
+import os
+import ai
 
-const gateway = createGateway({
-  baseURL: 'https://ai-gateway.vercel.sh/v1/ai',
-  apiKey: process.env.AI_GATEWAY_API_KEY,
-});
+async def main():
+    model = ai.get_model("anthropic/claude-sonnet-5")
+    messages = [ai.user_message("Explain quantum computing in two sentences.")]
+    params = ai.InferenceRequestParams(
+        extra_headers={"stripe-customer-id": os.environ["STRIPE_CUSTOMER_ID"], "stripe-restricted-access-key": os.environ["STRIPE_RESTRICTED_ACCESS_KEY"]}
+    )
+    async with ai.stream(model, messages, params=params) as stream:
+        async for event in stream:
+            if isinstance(event, ai.events.TextDelta):
+                print(event.chunk, end="", flush=True)
+    print()
 
-const result = streamText({
-  model: gateway('openai/gpt-5.6-sol'),
-  prompt: 'Summarize how usage-based billing works.',
-  headers: {
-    'stripe-customer-id': customerId,
-    'stripe-restricted-access-key': process.env.STRIPE_RESTRICTED_ACCESS_KEY,
-  },
-});
+asyncio.run(main())
 ```
 
-#### TypeScript (OpenAI Chat Completions)
+#### Chat Completions
 
-```typescript filename="openai.ts"
+#### TypeScript
+
+```typescript filename="stripe-billing-chat.ts"
 import OpenAI from 'openai';
 
-const openai = new OpenAI({
+const client = new OpenAI({
   apiKey: process.env.AI_GATEWAY_API_KEY,
   baseURL: 'https://ai-gateway.vercel.sh/v1',
   defaultHeaders: {
-    'stripe-customer-id': process.env.STRIPE_CUSTOMER_ID,
-    'stripe-restricted-access-key': process.env.STRIPE_RESTRICTED_ACCESS_KEY,
+    'stripe-customer-id': process.env.STRIPE_CUSTOMER_ID!,
+    'stripe-restricted-access-key': process.env.STRIPE_RESTRICTED_ACCESS_KEY!,
   },
 });
 
-const completion = await openai.chat.completions.create({
+const response = await client.chat.completions.create({
   model: 'anthropic/claude-sonnet-5',
-  messages: [{ role: 'user', content: 'Hello!' }],
+  messages: [
+    {
+      role: 'user',
+      content: 'Explain quantum computing in two sentences.',
+    },
+  ],
 });
 
-console.log(completion.choices[0].message.content);
+console.log(response.choices[0]?.message.content);
 ```
 
-#### TypeScript (Anthropic Messages API)
+#### Python
 
-```typescript filename="anthropic.ts"
-import Anthropic from '@anthropic-ai/sdk';
-
-const anthropic = new Anthropic({
-  apiKey: process.env.AI_GATEWAY_API_KEY,
-  baseURL: 'https://ai-gateway.vercel.sh',
-  defaultHeaders: {
-    'stripe-customer-id': process.env.STRIPE_CUSTOMER_ID,
-    'stripe-restricted-access-key': process.env.STRIPE_RESTRICTED_ACCESS_KEY,
-  },
-});
-
-const message = await anthropic.messages.create({
-  model: 'anthropic/claude-sonnet-5',
-  max_tokens: 1024,
-  messages: [{ role: 'user', content: 'Hello!' }],
-});
-
-console.log(message.content);
-```
-
-#### Python (OpenAI Chat Completions)
-
-```python filename="openai_billing.py"
+```python filename="stripe-billing_chat.py"
 import os
 from openai import OpenAI
 
 client = OpenAI(
-    api_key=os.getenv("AI_GATEWAY_API_KEY"),
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
     base_url="https://ai-gateway.vercel.sh/v1",
-    default_headers={
-        "stripe-customer-id": os.getenv("STRIPE_CUSTOMER_ID"),
-        "stripe-restricted-access-key": os.getenv("STRIPE_RESTRICTED_ACCESS_KEY"),
-    },
+    default_headers={"stripe-customer-id": os.environ["STRIPE_CUSTOMER_ID"], "stripe-restricted-access-key": os.environ["STRIPE_RESTRICTED_ACCESS_KEY"]},
 )
 
-completion = client.chat.completions.create(
+response = client.chat.completions.create(
     model="anthropic/claude-sonnet-5",
-    messages=[{"role": "user", "content": "Hello!"}],
+    messages=[{"role": "user", "content": "Explain quantum computing in two sentences."}],
 )
 
-print(completion.choices[0].message.content)
+print(response.choices[0].message.content)
 ```
 
-#### Python (Anthropic Messages API)
+#### cURL
 
-```python filename="anthropic_billing.py"
+```bash filename="stripe-billing-chat.sh"
+curl --fail-with-body https://ai-gateway.vercel.sh/v1/chat/completions \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -H "stripe-customer-id: $STRIPE_CUSTOMER_ID" \
+  -H "stripe-restricted-access-key: $STRIPE_RESTRICTED_ACCESS_KEY" \
+  -d '{
+  "model": "anthropic/claude-sonnet-5",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Explain quantum computing in two sentences."
+    }
+  ]
+}'
+```
+
+#### Messages API
+
+#### TypeScript
+
+```typescript filename="stripe-billing-messages.ts"
+import Anthropic from '@anthropic-ai/sdk';
+
+const client = new Anthropic({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh',
+  defaultHeaders: {
+    'stripe-customer-id': process.env.STRIPE_CUSTOMER_ID!,
+    'stripe-restricted-access-key': process.env.STRIPE_RESTRICTED_ACCESS_KEY!,
+  },
+});
+
+const response = await client.messages.create({
+  model: 'anthropic/claude-sonnet-5',
+  messages: [
+    {
+      role: 'user',
+      content: 'Explain quantum computing in two sentences.',
+    },
+  ],
+  max_tokens: 1024,
+});
+
+for (const block of response.content) {
+  if (block.type === 'text') console.log(block.text);
+}
+```
+
+#### Python
+
+```python filename="stripe-billing_messages.py"
 import os
-import anthropic
+from anthropic import Anthropic
 
-client = anthropic.Anthropic(
-    api_key=os.getenv("AI_GATEWAY_API_KEY"),
+client = Anthropic(
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
     base_url="https://ai-gateway.vercel.sh",
-    default_headers={
-        "stripe-customer-id": os.getenv("STRIPE_CUSTOMER_ID"),
-        "stripe-restricted-access-key": os.getenv("STRIPE_RESTRICTED_ACCESS_KEY"),
-    },
+    default_headers={"stripe-customer-id": os.environ["STRIPE_CUSTOMER_ID"], "stripe-restricted-access-key": os.environ["STRIPE_RESTRICTED_ACCESS_KEY"]},
 )
 
-message = client.messages.create(
+response = client.messages.create(
     model="anthropic/claude-sonnet-5",
+    messages=[{"role": "user", "content": "Explain quantum computing in two sentences."}],
     max_tokens=1024,
-    messages=[{"role": "user", "content": "Hello!"}],
 )
 
-print(message.content)
+for block in response.content:
+    if block.type == "text":
+        print(block.text)
 ```
+
+#### cURL
+
+```bash filename="stripe-billing-messages.sh"
+curl --fail-with-body https://ai-gateway.vercel.sh/v1/messages \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -H "anthropic-version: 2023-06-01" \
+  -H "stripe-customer-id: $STRIPE_CUSTOMER_ID" \
+  -H "stripe-restricted-access-key: $STRIPE_RESTRICTED_ACCESS_KEY" \
+  -d '{
+  "model": "anthropic/claude-sonnet-5",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Explain quantum computing in two sentences."
+    }
+  ],
+  "max_tokens": 1024
+}'
+```
+
+#### Responses / OpenResponses
+
+#### TypeScript
+
+```typescript filename="stripe-billing-responses.ts"
+import OpenAI from 'openai';
+
+const client = new OpenAI({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh/v1',
+  defaultHeaders: {
+    'stripe-customer-id': process.env.STRIPE_CUSTOMER_ID!,
+    'stripe-restricted-access-key': process.env.STRIPE_RESTRICTED_ACCESS_KEY!,
+  },
+});
+
+const response = await client.responses.create({
+  model: 'anthropic/claude-sonnet-5',
+  input: 'Explain quantum computing in two sentences.',
+});
+
+console.log(response.output_text);
+```
+
+#### Python
+
+```python filename="stripe-billing_responses.py"
+import os
+from openai import OpenAI
+
+client = OpenAI(
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
+    base_url="https://ai-gateway.vercel.sh/v1",
+    default_headers={"stripe-customer-id": os.environ["STRIPE_CUSTOMER_ID"], "stripe-restricted-access-key": os.environ["STRIPE_RESTRICTED_ACCESS_KEY"]},
+)
+
+response = client.responses.create(
+    model="anthropic/claude-sonnet-5",
+    input="Explain quantum computing in two sentences.",
+)
+
+print(response.output_text)
+```
+
+#### cURL
+
+```bash filename="stripe-billing-responses.sh"
+curl --fail-with-body https://ai-gateway.vercel.sh/v1/responses \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -H "stripe-customer-id: $STRIPE_CUSTOMER_ID" \
+  -H "stripe-restricted-access-key: $STRIPE_RESTRICTED_ACCESS_KEY" \
+  -d '{
+  "model": "anthropic/claude-sonnet-5",
+  "input": "Explain quantum computing in two sentences."
+}'
+```
+
+## Share billing configuration across requests
+
+Set the restricted key on a gateway instance, then pass the authenticated customer's Stripe ID on each request:
+
+```typescript filename="billing-gateway.ts"
+import { createGateway, generateText } from 'ai';
+
+const gateway = createGateway({
+  headers: {
+    'stripe-restricted-access-key': process.env.STRIPE_RESTRICTED_ACCESS_KEY!,
+  },
+});
+
+export async function generateForCustomer(
+  stripeCustomerId: string,
+  prompt: string,
+) {
+  const { text } = await generateText({
+    model: gateway('anthropic/claude-sonnet-5'),
+    prompt,
+    headers: {
+      'stripe-customer-id': stripeCustomerId,
+    },
+  });
+  return text;
+}
+```
+
+Look up `stripeCustomerId` from the authenticated user's billing record on your server. A shared customer ID would attribute every user's usage to the same customer. For HTTP clients, pass the customer header in the per-request options instead of setting it as a shared default.
 
 ## Stripe restricted access keys
 
@@ -228,7 +370,7 @@ If the key is ever exposed, the blast radius is limited. It can't access custome
 
 ## Meter event format
 
-Each successful request emits two meter events to Stripe's `/v2/billing/meter_events` endpoint, one for input tokens and one for output tokens:
+Each successful request can emit up to four events to Stripe's `/v2/billing/meter_events` endpoint. AI Gateway skips token types with a zero count. This example shows an input-token event:
 
 ```json
 {
@@ -242,7 +384,7 @@ Each successful request emits two meter events to Stripe's `/v2/billing/meter_ev
 }
 ```
 
-The `model` field uses the AI Gateway canonical model slug (e.g., `openai/gpt-5.6-sol`, `anthropic/claude-sonnet-5`).
+The `model` field identifies the serving provider and model. It uses `provider/creator/model-name` when the provider differs from the model creator, such as `bedrock/anthropic/claude-sonnet-5`. When they match, it uses `creator/model-name`, such as `anthropic/claude-sonnet-5`.
 
 ## Reliability
 
@@ -251,7 +393,7 @@ AI Gateway handles Stripe meter events with the following guarantees:
 - **Non-blocking**: You always get the AI response, even if Stripe metering fails
 - **Idempotent**: Each meter event has a unique identifier, which prevents duplicate billing
 - **Conditional**: AI Gateway only emits events on successful responses and when token counts are greater than zero
-- **Observable**: Failures log `stripe_meter_failed` metrics for monitoring
+- **Observable**: AI Gateway logs failed meter events for troubleshooting
 
 
 ---

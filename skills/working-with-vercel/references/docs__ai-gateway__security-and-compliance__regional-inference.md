@@ -1,26 +1,27 @@
 ---
-title: Regional Inference
+title: AI Gateway Regional Inference
 product: vercel
 url: /docs/ai-gateway/security-and-compliance/regional-inference
 canonical_url: "https://vercel.com/docs/ai-gateway/security-and-compliance/regional-inference"
-last_updated: 2026-07-25
+last_updated: 2026-09-08
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/security-and-compliance
   - /docs/ai-gateway
 related:
   - /docs/ai-gateway/security-and-compliance/zdr
+  - /docs/ai-gateway/sdks-and-apis
   - /docs/ai-gateway/authentication-and-byok/byok
   - /docs/ai-gateway/security-and-compliance/disallow-prompt-training
   - /docs/ai-gateway/models-and-providers
 summary: Route AI Gateway inference to the region you choose and control where providers store data, for data residency and compliance requirements.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/regional-inference.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "299b0a23e8183bad7ad641caa589ca5ce8bff769c6e7e5ba5a3cfb02a1ffa345"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "f35302d6dd13ef83e67de48779fa1ad6f7256b33e1eb2c7fdf71a649a72bec63"
 ---
 
-# Regional Inference
+# AI Gateway Regional Inference
 
 AI Gateway lets you pick which region to route each request to your model's
 provider, where available. This may help with your data residency, compliance,
@@ -40,10 +41,8 @@ running somewhere else.
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fregional-inference&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fregional-inference&source_site=vercel-docs&relationship=related)
 - [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fregional-inference&source_site=vercel-docs&relationship=related) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
-- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fregional-inference&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including pricing and markup, SDK and API compatibility, model availabilit
-- [Provider Options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fregional-inference&source_site=vercel-docs&relationship=related) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway
-- [Provider Options](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fregional-inference&source_site=vercel-docs&relationship=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fregional-inference&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fregional-inference&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
+- [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fregional-inference&source_site=vercel-docs&relationship=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/security-and-compliance/regional-inference.graph.md](/docs/ai-gateway/security-and-compliance/regional-inference.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fregional-inference&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -91,82 +90,18 @@ routes inference to that region:
 - You set the region in the request body or config only. There's no HTTP header
   for it.
 
-### Using AI SDK
+These examples use AI SDK 7 and the AI SDK for Python beta. Set `AI_GATEWAY_API_KEY` before running them. See [API format differences](/docs/ai-gateway/sdks-and-apis#api-format-differences) for setup, request fields, and response handling.
 
-Set `inferenceRegion` in `providerOptions`:
-
-#### streamText
-
-```typescript filename="inference-region.ts" {10-13}
-import type { GatewayProviderOptions } from '@ai-sdk/gateway';
-import { streamText } from 'ai';
-
-export async function POST(request: Request) {
-  const result = streamText({
-    model: 'openai/gpt-5.6-sol',
-    prompt: 'Summarize this contract clause.',
-    providerOptions: {
-      gateway: {
-        inferenceRegion: {
-          scope: 'zone',
-          geoRegion: 'us',
-        },
-      } satisfies GatewayProviderOptions,
-    },
-  });
-
-  return result.toDataStreamResponse();
-}
-```
-
-#### generateText
-
-```typescript filename="inference-region.ts" {10-13}
-import type { GatewayProviderOptions } from '@ai-sdk/gateway';
-import { generateText } from 'ai';
-
-export async function POST(request: Request) {
-  const { text } = await generateText({
-    model: 'openai/gpt-5.6-sol',
-    prompt: 'Summarize this contract clause.',
-    providerOptions: {
-      gateway: {
-        inferenceRegion: {
-          scope: 'zone',
-          geoRegion: 'us',
-        },
-      } satisfies GatewayProviderOptions,
-    },
-  });
-
-  return Response.json({ text });
-}
-```
-
-### Using the Chat Completions API
-
-Set `inferenceRegion` in `providerOptions`:
+#### AI SDK
 
 #### TypeScript
 
-```typescript filename="inference-region.ts" {20-23}
-import OpenAI from 'openai';
+```typescript filename="regional-inference.ts" {8-11}
+import { generateText } from 'ai';
 
-const apiKey = process.env.AI_GATEWAY_API_KEY || process.env.VERCEL_OIDC_TOKEN;
-
-const openai = new OpenAI({
-  apiKey,
-  baseURL: 'https://ai-gateway.vercel.sh/v1',
-});
-
-const completion = await openai.chat.completions.create({
-  model: 'openai/gpt-5.6-sol',
-  messages: [
-    {
-      role: 'user',
-      content: 'Summarize this contract clause.',
-    },
-  ],
+const { text } = await generateText({
+  model: 'openai/gpt-6-astra',
+  prompt: 'Explain quantum computing in two sentences.',
   providerOptions: {
     gateway: {
       inferenceRegion: {
@@ -176,61 +111,53 @@ const completion = await openai.chat.completions.create({
     },
   },
 });
+
+console.log(text);
 ```
 
-#### Python
+#### Python (beta)
 
-```python filename="inference-region.py" {20}
-import os
-from openai import OpenAI
+```python filename="regional-inference_ai.py" {8}
+import asyncio
+import ai
 
-client = OpenAI(
-    api_key=os.getenv("AI_GATEWAY_API_KEY"),
-    base_url="https://ai-gateway.vercel.sh/v1",
-)
+async def main():
+    model = ai.get_model("openai/gpt-6-astra")
+    messages = [ai.user_message("Explain quantum computing in two sentences.")]
+    params = ai.InferenceRequestParams(
+        extra_body={"providerOptions": {"gateway": {"inferenceRegion": {"scope": "zone", "geoRegion": "us"}}}}
+    )
+    async with ai.stream(model, messages, params=params) as stream:
+        async for event in stream:
+            if isinstance(event, ai.events.TextDelta):
+                print(event.chunk, end="", flush=True)
+    print()
 
-completion = client.chat.completions.create(
-    model="openai/gpt-5.6-sol",
-    messages=[
-        {
-            "role": "user",
-            "content": "Summarize this contract clause.",
-        }
-    ],
-    extra_body={
-        "providerOptions": {
-            "gateway": {
-                "inferenceRegion": {"scope": "zone", "geoRegion": "us"}
-            }
-        }
-    },
-)
+asyncio.run(main())
 ```
 
-### Using the Responses API
-
-Set `inferenceRegion` in `providerOptions`:
+#### Chat Completions
 
 #### TypeScript
 
-```typescript filename="inference-region.ts" {20-23}
-const apiKey = process.env.AI_GATEWAY_API_KEY || process.env.VERCEL_OIDC_TOKEN;
+```typescript filename="regional-inference-chat.ts" {20-23}
+import OpenAI from 'openai';
 
-const response = await fetch('https://ai-gateway.vercel.sh/v1/responses', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-    Authorization: `Bearer ${apiKey}`,
-  },
-  body: JSON.stringify({
-    model: 'openai/gpt-5.6-sol',
-    input: [
-      {
-        type: 'message',
-        role: 'user',
-        content: 'Summarize this contract clause.',
-      },
-    ],
+const client = new OpenAI({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh/v1',
+});
+
+const response = await client.chat.completions.create({
+  model: 'openai/gpt-6-astra',
+  messages: [
+    {
+      role: 'user',
+      content: 'Explain quantum computing in two sentences.',
+    },
+  ],
+  // AI Gateway extension fields are not included in the upstream SDK types.
+  ...{
     providerOptions: {
       gateway: {
         inferenceRegion: {
@@ -239,104 +166,213 @@ const response = await fetch('https://ai-gateway.vercel.sh/v1/responses', {
         },
       },
     },
-  }),
+  },
 });
+
+console.log(response.choices[0]?.message.content);
 ```
 
 #### Python
 
-```python filename="inference-region.py" {20}
+```python filename="regional-inference_chat.py" {12}
 import os
 from openai import OpenAI
 
 client = OpenAI(
-    api_key=os.getenv("AI_GATEWAY_API_KEY"),
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
+    base_url="https://ai-gateway.vercel.sh/v1",
+)
+
+response = client.chat.completions.create(
+    model="openai/gpt-6-astra",
+    messages=[{"role": "user", "content": "Explain quantum computing in two sentences."}],
+    extra_body={"providerOptions": {"gateway": {"inferenceRegion": {"scope": "zone", "geoRegion": "us"}}}},
+)
+
+print(response.choices[0].message.content)
+```
+
+#### cURL
+
+```bash filename="regional-inference-chat.sh" {14-17}
+curl --fail-with-body https://ai-gateway.vercel.sh/v1/chat/completions \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "model": "openai/gpt-6-astra",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Explain quantum computing in two sentences."
+    }
+  ],
+  "providerOptions": {
+    "gateway": {
+      "inferenceRegion": {
+        "scope": "zone",
+        "geoRegion": "us"
+      }
+    }
+  }
+}'
+```
+
+#### Messages API
+
+#### TypeScript
+
+```typescript filename="regional-inference-messages.ts" {20-23}
+import Anthropic from '@anthropic-ai/sdk';
+
+const client = new Anthropic({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh',
+});
+
+const response = await client.messages.create({
+  model: 'openai/gpt-6-astra',
+  messages: [
+    {
+      role: 'user',
+      content: 'Explain quantum computing in two sentences.',
+    },
+  ],
+  max_tokens: 1024,
+  ...{
+    providerOptions: {
+      gateway: {
+        inferenceRegion: {
+          scope: 'zone',
+          geoRegion: 'us',
+        },
+      },
+    },
+  },
+});
+
+for (const block of response.content) {
+  if (block.type === 'text') console.log(block.text);
+}
+```
+
+#### Python
+
+```python filename="regional-inference_messages.py" {13}
+import os
+from anthropic import Anthropic
+
+client = Anthropic(
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
+    base_url="https://ai-gateway.vercel.sh",
+)
+
+response = client.messages.create(
+    model="openai/gpt-6-astra",
+    messages=[{"role": "user", "content": "Explain quantum computing in two sentences."}],
+    max_tokens=1024,
+    extra_body={"providerOptions": {"gateway": {"inferenceRegion": {"scope": "zone", "geoRegion": "us"}}}},
+)
+
+for block in response.content:
+    if block.type == "text":
+        print(block.text)
+```
+
+#### cURL
+
+```bash filename="regional-inference-messages.sh" {16-19}
+curl --fail-with-body https://ai-gateway.vercel.sh/v1/messages \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -H "anthropic-version: 2023-06-01" \
+  -d '{
+  "model": "openai/gpt-6-astra",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Explain quantum computing in two sentences."
+    }
+  ],
+  "max_tokens": 1024,
+  "providerOptions": {
+    "gateway": {
+      "inferenceRegion": {
+        "scope": "zone",
+        "geoRegion": "us"
+      }
+    }
+  }
+}'
+```
+
+#### Responses / OpenResponses
+
+#### TypeScript
+
+```typescript filename="regional-inference-responses.ts" {14-17}
+import OpenAI from 'openai';
+
+const client = new OpenAI({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh/v1',
+});
+
+const response = await client.responses.create({
+  model: 'openai/gpt-6-astra',
+  input: 'Explain quantum computing in two sentences.',
+  ...{
+    providerOptions: {
+      gateway: {
+        inferenceRegion: {
+          scope: 'zone',
+          geoRegion: 'us',
+        },
+      },
+    },
+  },
+});
+
+console.log(response.output_text);
+```
+
+#### Python
+
+```python filename="regional-inference_responses.py" {12}
+import os
+from openai import OpenAI
+
+client = OpenAI(
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
     base_url="https://ai-gateway.vercel.sh/v1",
 )
 
 response = client.responses.create(
-    model="openai/gpt-5.6-sol",
-    input=[
-        {
-            "role": "user",
-            "content": "Summarize this contract clause.",
-        }
-    ],
-    extra_body={
-        "providerOptions": {
-            "gateway": {
-                "inferenceRegion": {"scope": "zone", "geoRegion": "us"}
-            }
-        }
-    },
+    model="openai/gpt-6-astra",
+    input="Explain quantum computing in two sentences.",
+    extra_body={"providerOptions": {"gateway": {"inferenceRegion": {"scope": "zone", "geoRegion": "us"}}}},
 )
+
+print(response.output_text)
 ```
 
-### Using the Anthropic Messages API
+#### cURL
 
-Set `inferenceRegion` in `providerOptions`:
-
-#### TypeScript
-
-```typescript filename="inference-region.ts" {22-25}
-import Anthropic from '@anthropic-ai/sdk';
-
-const apiKey = process.env.AI_GATEWAY_API_KEY || process.env.VERCEL_OIDC_TOKEN;
-
-const anthropic = new Anthropic({
-  apiKey,
-  baseURL: 'https://ai-gateway.vercel.sh',
-});
-
-const message = await anthropic.messages.create({
-  model: 'anthropic/claude-opus-5',
-  max_tokens: 1024,
-  messages: [
-    {
-      role: 'user',
-      content: 'Summarize this contract clause.',
-    },
-  ],
-  // @ts-expect-error -- providerOptions is not in the Anthropic SDK types
-  providerOptions: {
-    gateway: {
-      inferenceRegion: {
-        scope: 'zone',
-        geoRegion: 'us',
-      },
-    },
-  },
-});
-```
-
-#### Python
-
-```python filename="inference-region.py" {21}
-import os
-import anthropic
-
-client = anthropic.Anthropic(
-    api_key=os.getenv("AI_GATEWAY_API_KEY"),
-    base_url="https://ai-gateway.vercel.sh",
-)
-
-message = client.messages.create(
-    model="anthropic/claude-opus-5",
-    max_tokens=1024,
-    messages=[
-        {
-            "role": "user",
-            "content": "Summarize this contract clause.",
-        }
-    ],
-    extra_body={
-        "providerOptions": {
-            "gateway": {
-                "inferenceRegion": {"scope": "zone", "geoRegion": "us"}
-            }
-        }
-    },
-)
+```bash filename="regional-inference-responses.sh" {9-12}
+curl --fail-with-body https://ai-gateway.vercel.sh/v1/responses \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "model": "openai/gpt-6-astra",
+  "input": "Explain quantum computing in two sentences.",
+  "providerOptions": {
+    "gateway": {
+      "inferenceRegion": {
+        "scope": "zone",
+        "geoRegion": "us"
+      }
+    }
+  }
+}'
 ```
 
 ### Per-provider overrides (advanced)
@@ -345,7 +381,7 @@ Most callers set one region and stop. If more than one provider can serve a sing
 request, you can set a default plus per-provider overrides. The top-level value
 applies to every provider unless you list that provider under `providers`:
 
-```jsonc {6-7}
+```jsonc {2-9}
 {
   "inferenceRegion": {
     "scope": "zone",

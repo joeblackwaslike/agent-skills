@@ -16,8 +16,8 @@ related:
 summary: Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "8e037a1ef0c5c4b6df170edc33642668f15761a3957342f060f6a8423731cab6"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "f592a8a3bd7772ab1f4b7a62e763d91bf4d1736a38ef998ea2a12f2a82abc953"
 ---
 
 # Deploying to Vercel
@@ -111,17 +111,25 @@ Use [Vercel CLI](/docs/cli) to create deployments from a terminal, CI pipeline, 
 
 1. **Install Vercel CLI**:
 
+**terminal**
+
 ```bash filename="terminal" package-manager="npm"
 npm i -g vercel
 ```
+
+**terminal**
 
 ```bash filename="terminal" package-manager="bun"
 bun i -g vercel
 ```
 
+**terminal**
+
 ```bash filename="terminal" package-manager="yarn"
 yarn global add vercel
 ```
+
+**terminal**
 
 ```bash filename="terminal" package-manager="pnpm"
 pnpm i -g vercel

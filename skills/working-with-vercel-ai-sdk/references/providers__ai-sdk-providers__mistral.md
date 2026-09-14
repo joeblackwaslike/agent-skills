@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/mistral.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "b6d978bdd589dd358fa138e791b2ede7da31f1010d19e66ad9d23807e7d7dd9e"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "b5161b96dcf9873866f8121978912a13e9a8e06df913032973f1a781a6b6cb86"
 ---
 
 # Mistral AI Provider
@@ -200,8 +200,8 @@ const result = await generateText({
 
 Mistral offers reasoning models that provide step-by-step thinking capabilities:
 
-- **magistral-small-2507**: Smaller reasoning model for efficient step-by-step thinking
-- **magistral-medium-2507**: More powerful reasoning model balancing performance and cost
+- **magistral-small-latest**: Smaller reasoning model for efficient step-by-step thinking
+- **magistral-medium-latest**: More powerful reasoning model balancing performance and cost
 
 These models return structured reasoning content that the AI SDK extracts automatically. The reasoning is available via the `reasoningText` property in the result:
 
@@ -210,7 +210,7 @@ import { mistral } from '@ai-sdk/mistral';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: mistral('magistral-small-2507'),
+  model: mistral('magistral-small-latest'),
   prompt: 'What is 15 * 24?',
 });
 
@@ -324,32 +324,23 @@ const result = await generateText({
 
 ### Model Capabilities
 
-| Model                   | Image Input | Object Generation | Tool Usage | Tool Streaming |
-| ----------------------- | ----------- | ----------------- | ---------- | -------------- |
-| `pixtral-large-latest`  | <Check />   | <Check />         | <Check />  | <Check />      |
-| `mistral-large-latest`  | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `mistral-medium-latest` | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `mistral-medium-3`      | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `mistral-medium-2508`   | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `mistral-medium-2505`   | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `mistral-medium-3.5`    | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `mistral-small-latest`  | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `magistral-small-2507`  | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `magistral-medium-2507` | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `magistral-small-2506`  | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `magistral-medium-2506` | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `ministral-3b-latest`   | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `ministral-8b-latest`   | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `pixtral-12b-2409`      | <Check />   | <Check />         | <Check />  | <Check />      |
-| `open-mistral-7b`       | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `open-mixtral-8x7b`     | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `open-mixtral-8x22b`    | <Cross />   | <Check />         | <Check />  | <Check />      |
+| Model                     | Image Input | Tool Usage |
+| ------------------------- | ----------- | ---------- |
+| `labs-leanstral-1-5`      | <Check />   | <Check />  |
+| `magistral-medium-latest` | <Check />   | <Check />  |
+| `magistral-small-latest`  | <Check />   | <Check />  |
+| `ministral-14b-latest`    | <Check />   | <Check />  |
+| `ministral-8b-latest`     | <Check />   | <Check />  |
+| `mistral-large-latest`    | <Check />   | <Check />  |
+| `mistral-medium-latest`   | <Check />   | <Check />  |
+| `mistral-small-latest`    | <Check />   | <Check />  |
+| `voxtral-small-latest`    | <Cross />   | <Check />  |
+| `zai-glm-5-2`             | <Cross />   | <Check />  |
 
 <Note>
   The table above lists popular models. Please see the [Mistral
-  docs](https://docs.mistral.ai/getting-started/models/models_overview/) for a
-  full list of available models. The table above lists popular models. You can
-  also pass any available provider model ID as a string if needed.
+  docs](https://docs.mistral.ai/models) for a full list of available models. You
+  can also pass any available provider model ID as a string if needed.
 </Note>
 
 ## Transcription Models
@@ -596,7 +587,6 @@ models:
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
-- [LMNT](/providers/ai-sdk-providers/lmnt)
 - [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)

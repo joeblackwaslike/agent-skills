@@ -14,8 +14,8 @@ related:
 summary: Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/reference/traces.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "98eae69f4861e3b1c37e56d8ebfb82e1a86c1e7994f2bb37d32a7c2f52c0f739"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "36be0148367ffff237bdc7a5b740955778bb299203e0d9717bb67ef88fa227e2"
 ---
 
 # Trace Drains Reference
@@ -33,7 +33,7 @@ Trace Drains forward distributed tracing data from your deployments to external 
 - [Introducing Trace Drains on the Vercel Marketplace](https://vercel.com/changelog/introducing-trace-drains-on-the-vercel-marketplace?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Ftraces&source_site=vercel-docs&relationship=related)
 - [Export AI Gateway traces with Vercel Drains](https://vercel.com/changelog/export-ai-gateway-traces-with-vercel-drains?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Ftraces&source_site=vercel-docs&relationship=related)
 - [Export traces, web analytics events, and speed insights datapoints to any destination](https://vercel.com/changelog/export-more-data-with-vercel-drains?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Ftraces&source_site=vercel-docs&relationship=related)
-- [Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Ftraces&source_site=vercel-docs&relationship=related) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
+- [AI Gateway Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Ftraces&source_site=vercel-docs&relationship=related) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
 - [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Ftraces&source_site=vercel-docs&relationship=related) — Learn about Web Analytics Drains - data formats and custom events configuration.
 - [Speed Insights Drains Reference](https://vercel.com/docs/drains/reference/speed-insights?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Ftraces&source_site=vercel-docs&relationship=related) — Learn about Speed Insights Drains - data formats and performance metrics configuration.
 - [Audit Log Drains Reference](https://vercel.com/docs/drains/reference/audit-logs?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Ftraces&source_site=vercel-docs&relationship=related) — Learn about Audit Log Drains - data formats, fields, and team activity events.

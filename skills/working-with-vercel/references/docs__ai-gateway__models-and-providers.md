@@ -1,9 +1,9 @@
 ---
-title: Models & Providers
+title: AI Gateway Models and Providers
 product: vercel
 url: /docs/ai-gateway/models-and-providers
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers"
-last_updated: 2026-08-27
+last_updated: 2026-09-08
 type: conceptual
 prerequisites:
   - /docs/ai-gateway
@@ -13,14 +13,14 @@ related:
   - /docs/ai-gateway/models-and-providers/model-fallbacks
   - /docs/ai-gateway/models-and-providers/provider-timeouts
   - /docs/ai-gateway/models-and-providers/routing-rules
-summary: "Work with models and providers in AI Gateway: provider routing and fallbacks, filtering, timeouts, caching, service tiers, uptime and metrics, plus..."
+summary: Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web search, and compare provider...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "f70e53ddafc32a468d8248449d2958f79f2c4e3f05413c4d2436aa5fa26bffad"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "341ecae437a80297e5079e16f8dfae29031783a90ce4fa96adeb7c27f145653c"
 ---
 
-# Models & Providers
+# AI Gateway Models and Providers
 
 The AI Gateway's unified API provides flexibility, allowing you to switch between [different AI models](/ai-gateway/models) and providers without rewriting parts of your application. This is useful for testing different models or when you want to change the underlying AI provider for cost or performance reasons. You can also configure [provider routing and model fallbacks](/docs/ai-gateway/models-and-providers/provider-options) to ensure high availability and reliability.
 
@@ -37,10 +37,8 @@ The AI Gateway's unified API provides flexibility, allowing you to switch betwee
 - [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=related)
 - [Choosing a Provider](https://ai-sdk.dev/docs/getting-started/choosing-a-provider?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=related)
 - [Model fallbacks now available in Vercel AI Gateway](https://vercel.com/changelog/model-fallbacks-now-available-in-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=related)
-- [Provider Options](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API.
-- [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=related) — Learn how to add a new AI model to your Vercel projects
-- [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
-- [Video Generation](https://vercel.com/docs/ai-gateway/modalities/video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=related) — Generate videos from text prompts, images, or video input using AI models through Vercel AI Gateway.
+- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
+- [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=related) — Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere
 - [vercel ai-gateway](https://vercel.com/docs/cli/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=related) — Manage AI Gateway resources from the Vercel CLI: API keys, budgets, routing rules, models, leaderboards, and coding agen
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers.graph.md](/docs/ai-gateway/models-and-providers.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=graph)
@@ -61,7 +59,7 @@ Configure how AI Gateway selects providers and routes requests, and apply capabi
 
 Models are AI algorithms that process your input data to generate responses, such as [Grok 4.3](/ai-gateway/models/grok-4.3), [GPT-5.5](/ai-gateway/models/gpt-5.5), or [Claude Opus 4.7](/ai-gateway/models/claude-opus-4.7). Providers are the companies or services that host these models, such as SpaceXAI, OpenAI, or Anthropic.
 
-In some cases, multiple providers, including the model creator, host the same model. For example, you can use the `spacexai/grok-4.5` model from SpaceXAI or the `openai/gpt-5.6-sol` model from OpenAI, following the format `creator/model-name`.
+In some cases, multiple providers, including the model creator, host the same model. For example, you can use the `spacexai/grok-4.5` model from SpaceXAI or the `openai/gpt-6-astra` model from OpenAI, following the format `creator/model-name`.
 
 Different providers may have different specifications for the same model such as different pricing and performance. You can choose the one that best fits your needs, and compare options on the [AI Gateway leaderboards](/docs/ai-gateway/leaderboards) to see which models and providers developers use most.
 
@@ -84,7 +82,7 @@ Query the models endpoint directly to get a JSON list of all available models wi
 https://ai-gateway.vercel.sh/v1/models
 ```
 
-This endpoint requires no authentication and returns detailed information including model IDs, context windows, and pricing. See [Dynamic model discovery](#dynamic-model-discovery) for usage examples.
+This endpoint requires no authentication and returns model IDs, context windows, pricing, and reasoning controls. Use `reasoning_options` to discover effort levels, thinking budgets, or toggles. See [reasoning model discovery](/docs/ai-gateway/models-and-providers/reasoning#discover-model-reasoning-support) for TypeScript, Python, and cURL examples, or [Dynamic model discovery](#dynamic-model-discovery) for SDK usage.
 
 ### Specifying the model
 
@@ -191,7 +189,7 @@ export async function GET(request: NextRequest) {
   }
 
   const result = await generateText({
-    model: 'openai/gpt-5.6-sol',
+    model: 'openai/gpt-6-astra',
     prompt,
   });
 
@@ -224,7 +222,7 @@ availableModels.models.forEach((model) => {
     console.log(`  Output: $${model.pricing.output}/token`);
 
     // Some models have tiered pricing based on context size
-    if (model.pricing.inputTiers) {
+    if ('inputTiers' in model.pricing && Array.isArray(model.pricing.inputTiers)) {
       console.log('  Input tiers:');
       model.pricing.inputTiers.forEach((tier) => {
         const range =
@@ -247,7 +245,7 @@ availableModels.models.forEach((model) => {
 });
 
 const { text } = await generateText({
-  model: availableModels.models[0].id, // e.g., 'openai/gpt-5.6-sol'
+  model: availableModels.models[0].id, // e.g., 'openai/gpt-6-astra'
   prompt: 'Hello world',
 });
 ```
@@ -277,7 +275,10 @@ const videoModels = models.filter((m) => m.modelType === 'video');
 ```typescript filename="filter-models-rest.ts"
 // Using REST API
 const response = await fetch('https://ai-gateway.vercel.sh/v1/models');
-const { data: models } = await response.json();
+const {
+  data: models,
+}: { data: Array<{ id: string; name: string; type: string }> } =
+  await response.json();
 
 const textModels = models.filter((m) => m.type === 'language');
 const embeddingModels = models.filter((m) => m.type === 'embedding');

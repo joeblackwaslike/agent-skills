@@ -3,7 +3,7 @@ title: exchange-sso-token
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/exchange-sso-token
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/exchange-sso-token"
-last_updated: 2026-09-07
+last_updated: 2026-09-14
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about exchange-sso-token on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/exchange-sso-token.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "96463043c6a9243b1506c170c42dfa6fa353d02ba6d352953447ec487d56d59f"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "87693337687871d292f72f931cd12248a38a7161fb4dcb785ec63069fafccd0c"
 ---
 
 # SSO Token Exchange

@@ -16,8 +16,8 @@ related:
 summary: Connect your preferred feature flag provider through the Vercel Marketplace for a unified flags experience.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/marketplace.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "86a8ed908d93a61e81d4b9149439f05243034d7b790d21685e86b94bac9aef66"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "ccbdf446f4ce923ece1f7e8f97c442fc9343de8410e1b0f66e2b45462ba8fc2b"
 ---
 
 # Marketplace
@@ -38,7 +38,6 @@ When you connect a feature flag provider through the [Vercel Marketplace](https:
 - [Providers](https://flags-sdk.dev/docs/providers?from=related&source_path=%2Fdocs%2Fflags%2Fmarketplace&source_site=vercel-docs&relationship=related) — Combine your feature flag provider with the Flags SDK using an adapter.
 - [Shipping safer and smarter: Integrating feature flags deeper in the Vercel workflow](https://vercel.com/blog/feature-flags?from=related&source_path=%2Fdocs%2Fflags%2Fmarketplace&source_site=vercel-docs&relationship=related)
 - [Using the Flags SDK with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk?from=related&source_path=%2Fdocs%2Fflags%2Fmarketplace&source_site=vercel-docs&relationship=related) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fflags%2Fmarketplace&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/flags/marketplace.graph.md](/docs/flags/marketplace.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fmarketplace&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

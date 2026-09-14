@@ -17,8 +17,8 @@ related:
 summary: Learn how to set the maximum duration of a Vercel Function.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/duration.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "b656b882de979f45529ad0b53196168777cb258b13a8e335a78aa3804d2628f2"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "b697b8e2ab2bf5989254749794639993f0a10fd357d49a29647ed2d4cabeaa27"
 ---
 
 # Configuring Maximum Duration for Vercel Functions
@@ -38,10 +38,10 @@ The maximum duration configuration determines the longest time that a function c
 - [Vercel Functions for Hobby can now run up to 60 seconds](https://vercel.com/changelog/vercel-functions-for-hobby-can-now-run-up-to-60-seconds?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fduration&source_site=vercel-docs&relationship=related)
 - [Workflow steps now support extended function durations](https://vercel.com/changelog/workflow-steps-now-support-extended-function-durations?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fduration&source_site=vercel-docs&relationship=related)
 - [Building an AI chat app with RAG and source citations on Vercel](https://vercel.com/kb/guide/building-ai-chat-app-with-rag-and-citations-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fduration&source_site=vercel-docs&relationship=related) — A production stack for AI chat with retrieval, reranking, source citations, and background ingestion on Vercel using Nex
-- [How can I reduce my Vercel Functions usage on Vercel?](https://vercel.com/kb/guide/how-can-i-reduce-my-serverless-execution-usage-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fduration&source_site=vercel-docs&relationship=related) — Reduce Vercel Functions usage and cost under Fluid compute pricing with caching, rendering strategies, and function conf
-- [How to build AI Agents with Vercel and the AI SDK](https://vercel.com/kb/guide/how-to-build-ai-agents-with-vercel-and-the-ai-sdk?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fduration&source_site=vercel-docs&relationship=related) — Learn how to build, deploy, and scale AI agents on Vercel using the AI SDK. This guide covers calling LLMs, defining too
 - [Build a ChatGPT Connector \\(MCP server\\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fduration&source_site=vercel-docs&relationship=related) — Build a ChatGPT MCP server with mcp-handler and Fluid compute. Add search, fetch, and OAuth, deploy to Vercel, then vali
 - [Publish and subscribe to realtime data on Vercel](https://vercel.com/kb/guide/publish-and-subscribe-to-realtime-data-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fduration&source_site=vercel-docs&relationship=related) — Learn how to publish and subscribe to realtime data on Vercel with WebSockets, SSE, Redis, and Queues, and when a manage
+- [Production architecture for a RAG chatbot on Vercel](https://vercel.com/kb/guide/rag-chatbot-production-architecture-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fduration&source_site=vercel-docs&relationship=related) — Architect a production RAG chatbot on Vercel Functions with Fluid compute, AI Gateway, and a region-pinned vector store.
+- [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fduration&source_site=vercel-docs&relationship=related) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
 - [Introducing Spend Management](https://vercel.com/blog/introducing-spend-management-realtime-usage-alerts-sms-notifications?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fduration&source_site=vercel-docs&relationship=related)
 
 Full cross-link map for this page: [/docs/functions/configuring-functions/duration.graph.md](/docs/functions/configuring-functions/duration.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fduration&source_site=vercel-docs&relationship=graph)
@@ -67,6 +67,8 @@ The method of configuring the maximum duration depends on your framework and run
 Configure the duration in your function definition.
 For example, Next.js pages router and Node.js /api routes use an exported config object, while the Next.js app router uses a named maxDuration export.
 
+**app/api/my-function/route.ts**
+
 ```ts v0="build" {1} filename="app/api/my-function/route.ts" framework=nextjs-app
 export const maxDuration = 5; // This function can run for a maximum of 5 seconds
 
@@ -77,6 +79,8 @@ export function GET(request: Request) {
 }
 ```
 
+**app/api/my-function/route.js**
+
 ```js v0="build" {1} filename="app/api/my-function/route.js" framework=nextjs-app
 export const maxDuration = 5; // This function can run for a maximum of 5 seconds
 
@@ -86,6 +90,8 @@ export function GET(request) {
   });
 }
 ```
+
+**pages/api/handler.ts**
 
 ```ts v0="build" {4-6} filename="pages/api/handler.ts" framework=nextjs
 import { NextApiRequest, NextApiResponse } from 'next';
@@ -107,6 +113,8 @@ export default function handler(
 }
 ```
 
+**pages/api/handler.js**
+
 ```js v0="build" {2-4} filename="pages/api/handler.js" framework=nextjs
 // This function can run for a maximum of 5 seconds
 export const config = {
@@ -121,6 +129,8 @@ export default function handler(request, response) {
   });
 }
 ```
+
+**app/routes/function/my-function.ts**
 
 ```ts {2-4} filename="app/routes/function/my-function.ts" framework=remix
 // This function can run for a maximum of 5 seconds
@@ -137,6 +147,8 @@ export default function Serverless() {
 }
 ```
 
+**app/routes/function/my-function.js**
+
 ```js {2-4} filename="app/routes/function/my-function.js" framework=remix
 // This function can run for a maximum of 5 seconds
 export const config = {
@@ -152,6 +164,8 @@ export default function Serverless() {
 }
 ```
 
+**svelte.config.js**
+
 ```js {7} filename="svelte.config.js" framework=sveltekit
 import adapter from '@sveltejs/adapter-vercel';
 
@@ -164,6 +178,8 @@ export default {
   },
 };
 ```
+
+**svelte.config.js**
 
 ```ts {7} filename="svelte.config.js" framework=sveltekit
 import adapter from '@sveltejs/adapter-vercel';
@@ -178,6 +194,8 @@ export default {
 };
 ```
 
+**astro.config.mjs**
+
 ```js {8} filename="astro.config.mjs" framework=astro
 import { defineConfig } from 'astro/config';
 import vercel from '@astrojs/vercel/serverless';
@@ -190,6 +208,8 @@ export default defineConfig({
   }),
 });
 ```
+
+**astro.config.mjs**
 
 ```ts {8} filename="astro.config.mjs" framework=astro
 import { defineConfig } from 'astro/config';
@@ -204,6 +224,8 @@ export default defineConfig({
 });
 ```
 
+**nitro.config.ts**
+
 ```js {7} filename="nitro.config.ts" framework=nuxt
 import { defineNitroConfig } from 'nitropack';
 
@@ -217,6 +239,8 @@ export default defineNitroConfig({
 });
 ```
 
+**nitro.config.ts**
+
 ```ts {7} filename="nitro.config.ts" framework=nuxt
 import { defineNitroConfig } from 'nitropack';
 
@@ -229,6 +253,8 @@ export default defineNitroConfig({
   },
 });
 ```
+
+**api/my-function.ts**
 
 ```ts {3-5} filename="api/my-function.ts" framework=other
 import type { VercelRequest, VercelResponse } from '@vercel/node';
@@ -244,6 +270,8 @@ export default function handler(
   response.status(200).json({ message: 'Hello from Vercel!' });
 }
 ```
+
+**api/my-function.js**
 
 ```js {1-3} filename="api/my-function.js" framework=other
 export const config = {

@@ -16,8 +16,8 @@ related:
 summary: Add, sync, and verify environment variables across development, preview, production, and custom environments using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/manage-across-environments.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "924e5c90cc88aefc63114bcb50462a330a7358152ce9cea28797ccfc8d736ddf"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "61ab9a9d266cca577b4aff0c82226760dfcecdadd02fa203ede4b1cc5f9a3c69"
 ---
 
 # Managing environment variables across environments
@@ -33,9 +33,8 @@ Use this guide to manage environment variables across multiple environments. You
 - [Full-stack previews on Vercel](https://vercel.com/kb/guide/full-stack-preview-deployments-on-vercel?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Learn how to use full-stack previews for your Vercel projects. Deploy Next.js, FastAPI, and a containerized Go service t
 - [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
 - [Environment Variables UI](https://vercel.com/blog/environment-variables-ui?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related)
-- [How do I set up a staging environment on Vercel?](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Information on how to set up a staging environment on Vercel.
 - [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
-- [Environment Variables](https://v0.app/docs/api/v2/guides/environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Add environment variables to a v0 chat
+- [How to set up a staging environment on Vercel](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Set up a staging environment on Vercel with custom environments, staged production deployments, or a branch-based previe
 - [Managing environment variables](https://vercel.com/docs/environment-variables/managing-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Learn how to create and manage environment variables for Vercel.
 - [Environments](https://vercel.com/docs/deployments/environments?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Environments are for developing locally, testing changes in a pre-production environment, and serving end-users in produ
 - [Sensitive environment variables](https://vercel.com/docs/environment-variables/sensitive-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Environment variables that cannot be decrypted once created.
@@ -79,6 +78,12 @@ vercel pull --environment=preview --git-branch=feature-branch
 vercel env run -e preview -- npm test
 vercel env run -e production -- npm run build
 ```
+
+> Install the [Vercel plugin](/docs/agent-resources/vercel-plugin?from=docs-callout\&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments) to audit environment variables across environments with your coding agent.
+>
+> ```bash
+> npx plugins add vercel/vercel-plugin
+> ```
 
 ## 1. List your environments
 

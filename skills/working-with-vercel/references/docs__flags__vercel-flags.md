@@ -16,8 +16,8 @@ related:
 summary: Use Vercel as your feature flag provider to create and manage flags, define targeting rules, and run experiments directly from the dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "dc98c958ea4dd1fdf3d7205f7bfe789ea2046ce1939bcb11f63313eb008eead5"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "501ac671dcb707ebddbaa401ea7d3c988dfe106796196df3ce6a448d63aa4cfa"
 ---
 
 # Vercel Flags
@@ -42,7 +42,6 @@ Vercel Flags is a feature flag provider built into the Vercel platform. Create f
 - [Vercel Flags now supports JSON values](https://vercel.com/changelog/vercel-flags-now-supports-json-values?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags&source_site=vercel-docs&relationship=related)
 - [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags&source_site=vercel-docs&relationship=related)
 - [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags&source_site=vercel-docs&relationship=related) — API reference for the Flags SDK for Next.js and SvelteKit.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags.graph.md](/docs/flags/vercel-flags.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

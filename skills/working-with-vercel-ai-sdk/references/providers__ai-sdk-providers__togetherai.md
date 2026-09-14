@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/togetherai.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "780a555bd4cc2bc3a8445a1861c58d7b9242d6a59efc9cc41e65e1df814e6acb"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "49bfdfff2a6c557a44d493deab0f892a38421193894a2905fdb754991c3b1f4a"
 ---
 
 # Together.ai Provider
@@ -391,7 +391,6 @@ The following provider options are available:
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
-- [LMNT](/providers/ai-sdk-providers/lmnt)
 - [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)

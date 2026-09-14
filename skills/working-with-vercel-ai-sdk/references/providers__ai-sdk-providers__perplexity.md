@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/perplexity.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "78863225d700540965eedb161dae523ba3d69d371e1377d24a3737ea60aca332"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "fb73331fb528f2c93f44cc9c1c5f562f4f762c9d8c2b502b1a091ff79189f2d7"
 ---
 
 # Perplexity Provider
@@ -299,7 +299,6 @@ The following optional provider options are available for embedding models:
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
-- [LMNT](/providers/ai-sdk-providers/lmnt)
 - [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)

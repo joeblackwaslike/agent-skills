@@ -3,7 +3,7 @@ title: Vercel Workflows
 product: workflows
 url: /docs/workflows
 canonical_url: "https://vercel.com/docs/workflows"
-last_updated: 2026-09-03
+last_updated: 2026-09-04
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Build agents and applications that retry failed steps, wait for external events, and resume across crashes and deployments with Vercel Workflows.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/workflows.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "dfc6b510e2de7cfcfcc5d44e0aa08ea54e5783ecca82829af2b72a064b0092d5"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "3f44b807f6bd5a7d3e0f5a132bb41af4e6dbdb1f6e1c857f3318bbf1d705e330"
 ---
 
 # Vercel Workflows

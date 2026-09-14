@@ -10,13 +10,14 @@ prerequisites:
   - /docs/routing/redirects
 related:
   - /docs/project-configuration/vercel-json
+  - /docs/cli/dev
   - /docs/cli/redirects
   - /docs/rest-api/bulk-redirects/gets-project-level-redirects
 summary: Learn how to import thousands of simple redirects from CSV, JSON, or JSONL files.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/redirects/bulk-redirects/getting-started.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "33485725394cdedf3bb52f62d827cd85186bd42d0f594e3786250954477bf77d"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "0ecf66dfa95a7849212337badc5cd4cf07281e21ff5024a8681c81d951ec5fd9"
 ---
 
 # Getting Started
@@ -107,6 +108,8 @@ Learn more about bulk redirects fields and file formats in the [project configur
   ```
 
 - ### Deploy
+  Before deploying, you can test the bulk redirects configured through `bulkRedirectsPath` in `vercel.json` locally with [`vercel dev`](/docs/cli/dev).
+
   Deploy your project to Vercel. Your bulk redirects will be processed and applied automatically.
   ```bash
   vercel deploy

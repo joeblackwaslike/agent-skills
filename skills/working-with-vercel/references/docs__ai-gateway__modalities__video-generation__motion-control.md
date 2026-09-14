@@ -1,10 +1,10 @@
 ---
-title: Motion Control Video Generation
+title: AI Gateway Motion Control Video Generation
 product: vercel
 url: /docs/ai-gateway/modalities/video-generation/motion-control
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/video-generation/motion-control"
-last_updated: 2026-08-21
-type: conceptual
+last_updated: 2026-09-08
+type: how-to
 prerequisites:
   - /docs/ai-gateway/modalities/video-generation
   - /docs/ai-gateway/modalities
@@ -14,11 +14,11 @@ related:
 summary: Transfer motion from a reference video to a character image using KlingAI through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/motion-control.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "35f299f8f2493a329cc49c10a962d54113a587b23fb9c6231a2d783a38fc68f5"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "a3f78ff4237beab14af3e89489a6fc362060a1ae7f1c20d3ecd205691c49910d"
 ---
 
-# Motion Control Video Generation
+# AI Gateway Motion Control Video Generation
 
 Transfer motion from a reference video to a character in an image. The model analyzes the movements in your reference video and applies them to your character, creating a video where the character performs those same actions.
 
@@ -32,14 +32,11 @@ Transfer motion from a reference video to a character in an image. The model ana
 - [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fmotion-control&source_site=vercel-docs&relationship=related)
 - [Kling AI](https://ai-sdk.dev/providers/ai-sdk-providers/klingai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fmotion-control&source_site=vercel-docs&relationship=related)
 - [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fmotion-control&source_site=vercel-docs&relationship=related) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
-- [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fmotion-control&source_site=vercel-docs&relationship=related)
 - [AI Gateway now supports asynchronous video generation](https://vercel.com/changelog/ai-gateway-now-supports-asynchronous-video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fmotion-control&source_site=vercel-docs&relationship=related)
+- [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fmotion-control&source_site=vercel-docs&relationship=related)
 - [Grok Imagine Video on AI Gateway](https://vercel.com/changelog/grok-imagine-video-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fmotion-control&source_site=vercel-docs&relationship=related)
-- [Veo video models on AI Gateway](https://vercel.com/changelog/veo-video-models-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fmotion-control&source_site=vercel-docs&relationship=related)
-- [Image-to-Video Generation](https://vercel.com/docs/ai-gateway/modalities/video-generation/image-to-video?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fmotion-control&source_site=vercel-docs&relationship=related) — Animate static images into videos using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI G
-- [Video Editing](https://vercel.com/docs/ai-gateway/modalities/video-generation/video-editing?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fmotion-control&source_site=vercel-docs&relationship=related) — Edit existing videos using text prompts with Grok Imagine Video through AI Gateway.
-- [Reference-to-Video Generation](https://vercel.com/docs/ai-gateway/modalities/video-generation/reference-to-video?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fmotion-control&source_site=vercel-docs&relationship=related) — Generate videos featuring characters from reference images or videos using Google Veo, KlingAI, Wan, Seedance, or Grok I
-- [Text-to-Video Generation](https://vercel.com/docs/ai-gateway/modalities/video-generation/text-to-video?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fmotion-control&source_site=vercel-docs&relationship=related) — Generate videos from text prompts using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI G
+- [Wan models on AI Gateway](https://vercel.com/changelog/wan-models-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fmotion-control&source_site=vercel-docs&relationship=related)
+- [Video Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/video?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fmotion-control&source_site=vercel-docs&relationship=related) — Generate a video from a text prompt using AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation/motion-control.graph.md](/docs/ai-gateway/modalities/video-generation/motion-control.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fmotion-control&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -89,7 +86,7 @@ When using base64 encoding, submit only the raw base64 string without any prefix
 const image = 'iVBORw0KGgoAAAANSUhEUgAAAAUA...';
 
 // Incorrect - do not include data: prefix
-const image = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUA...';
+const dataUrl = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUA...';
 ```
 
 ### KlingAI video requirements

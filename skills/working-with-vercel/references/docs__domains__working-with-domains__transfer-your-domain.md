@@ -9,20 +9,44 @@ prerequisites:
   - /docs/domains/working-with-domains
   - /docs/domains
 related:
+  - /docs/projects/transferring-projects
   - /docs/cli/alias
-  - /docs/rbac/access-roles
-  - /docs/domains/pre-generating-ssl-certs
+  - /docs/deployments/generated-urls
+  - /docs/rest-api/projects/move-a-project-domain
   - /docs/domains/managing-dns-records
 summary: Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how to transfer domains with this...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/transfer-your-domain.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "fbd7feaaecd97754a73a756580681d2fabf04dafd30a7717cc9d466fe5128246"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "fdf9d8d280a2b4b2e5ced039981f181f4f5e15d249b1cf7e28f985075d914175"
 ---
 
 # Transferring Domains to Another Team or Project
 
 ## Transfer a domain to another Vercel user or Team
+
+If you are moving a website and its domains to another team, [transfer the project](/docs/projects/transferring-projects) so its deployments and project configuration move together. Review [how project transfers handle apex domains, subdomains, and wildcard domains](/docs/projects/transferring-projects#transferring-domains) before starting.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How do I delete a Vercel team?](https://vercel.com/kb/guide/how-do-i-delete-a-vercel-team?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Ftransfer-your-domain&source_site=vercel-docs&relationship=related) — Information on deleting a Vercel team.
+- [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Ftransfer-your-domain&source_site=vercel-docs&relationship=related) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
+- [How can I migrate a site to Vercel without downtime?](https://vercel.com/kb/guide/zero-downtime-migration?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Ftransfer-your-domain&source_site=vercel-docs&relationship=related) — Information about how to assign a Vercel deployment to a domain without downtime.
+- [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Ftransfer-your-domain&source_site=vercel-docs&relationship=related) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
+- [Deploying & Redirecting Domains](https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Ftransfer-your-domain&source_site=vercel-docs&relationship=related) — Learn how to deploy your domains and set up domain redirects with this guide.
+- [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Ftransfer-your-domain&source_site=vercel-docs&relationship=related) — Add and configure a custom domain for your Vercel project using the CLI.
+- [Troubleshooting domains](https://vercel.com/docs/domains/troubleshooting?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Ftransfer-your-domain&source_site=vercel-docs&relationship=related) — Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
+- [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Ftransfer-your-domain&source_site=vercel-docs&relationship=related) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
+- [Add a domain to a project](https://vercel.com/docs/rest-api/projects/add-a-domain-to-a-project?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Ftransfer-your-domain&source_site=vercel-docs&relationship=related) — POST /v10/projects/{idOrName}/domains — Add a domain to the project by passing its domain name and by specifying the pro
+
+Full cross-link map for this page: [/docs/domains/working-with-domains/transfer-your-domain.graph.md](/docs/domains/working-with-domains/transfer-your-domain.graph.md?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Ftransfer-your-domain&source_site=vercel-docs&relationship=graph)
+<!-- /docsgraph:related -->
+
+To move domain ownership without transferring a project, use the **Move** action below. The domain's DNS records are preserved, but moving ownership does not transfer its associated projects. This is also the option for a domain that is not currently assigned to a project.
 
 - ### Select the Domains tab
   You can move domains to another team using the [**Domains** section in your team dashboard sidebar](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fdomains\&title=Go+to+team%27s+domains+page).
@@ -31,26 +55,6 @@ sha256: "fbd7feaaecd97754a73a756580681d2fabf04dafd30a7717cc9d466fe5128246"
   Once on the **Domains** tab, select the context menu next to the domain you wish to move, and click **Move**. You can also use checkbox next to each domain to select more than one domain
 
   ![Image](https://vercel.com/front/docs/domains/move-light.png)
-
-
-<!-- docsgraph:related -->
-## Related pages
-
-> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
-
-- [Transferring Domains to Vercel](https://vercel.com/kb/guide/transferring-domains-to-vercel?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Ftransfer-your-domain&source_site=vercel-docs&relationship=related) — How to transfer your domain to Vercel.
-- [How can I move a domain to a Vercel team?](https://vercel.com/kb/guide/how-can-i-move-a-domain-to-a-team?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Ftransfer-your-domain&source_site=vercel-docs&relationship=related) — Information on how to move domains between accounts on Vercel.
-- [How do I transfer my domain to Vercel?](https://vercel.com/kb/guide/how-do-i-transfer-my-domain-to-vercel?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Ftransfer-your-domain&source_site=vercel-docs&relationship=related) — Information on how to transfer a domain to Vercel.
-- [How do I delete a Vercel team?](https://vercel.com/kb/guide/how-do-i-delete-a-vercel-team?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Ftransfer-your-domain&source_site=vercel-docs&relationship=related) — Information on deleting a Vercel team.
-- [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Ftransfer-your-domain&source_site=vercel-docs&relationship=related) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
-- [Transferring a project](https://vercel.com/docs/projects/transferring-projects?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Ftransfer-your-domain&source_site=vercel-docs&relationship=related) — Learn how to transfer a project between Vercel teams.
-- [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Ftransfer-your-domain&source_site=vercel-docs&relationship=related) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
-- [Troubleshooting domains](https://vercel.com/docs/domains/troubleshooting?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Ftransfer-your-domain&source_site=vercel-docs&relationship=related) — Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
-- [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Ftransfer-your-domain&source_site=vercel-docs&relationship=related) — Add and configure a custom domain for your Vercel project using the CLI.
-- [Notifications](https://vercel.com/docs/notifications?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Ftransfer-your-domain&source_site=vercel-docs&relationship=related) — Learn how to use Notifications to view and manage important alerts about your deployments, domains, integrations, accoun
-
-Full cross-link map for this page: [/docs/domains/working-with-domains/transfer-your-domain.graph.md](/docs/domains/working-with-domains/transfer-your-domain.graph.md?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Ftransfer-your-domain&source_site=vercel-docs&relationship=graph)
-<!-- /docsgraph:related -->
 
 - ### Select the team
   After selecting the domain(s) and clicking **Move**, you will be asked to confirm which profile or team you wish to move them to.
@@ -68,14 +72,36 @@ Full cross-link map for this page: [/docs/domains/working-with-domains/transfer-
 
 ## Transferring domains between projects
 
-You can use the Dashboard to remove a domain from a project and then re-add it to another. However, this could potentially end up with some site down-time. For more information on transferring domains with zero downtime, see [How to move a domain between Vercel projects with "Zero Downtime"?](/kb/guide/how-to-move-a-domain-between-vercel-projects-with-zero-downtime)
+To move a domain between projects in the same team, add it to the destination project and confirm the move. You do not need to remove it from the original project first. Deleting the domain before reassigning it can interrupt traffic.
+
+1. Deploy and test the destination project using its [generated deployment URL](/docs/deployments/generated-urls). Make sure the environment you will assign the domain to serves the version you want visitors to receive.
+2. In the destination project, open **Settings**, then **Domains**, and add the existing domain. Select the intended environment, Git branch, or redirect settings.
+3. When **Move Domain** appears, review the source and destination projects and the full list of domains. The move can include other domains that redirect to the selected domain.
+4. Confirm the move, then visit the custom domain and check its configuration in the destination project. Verify any redirects and branch assignments.
+
+For automated workflows, use the [Move a project domain API](/docs/rest-api/projects/move-a-project-domain) instead of separate remove and add requests. The API accepts the destination project ID and optional Git branch and redirect settings.
+
+To point a custom domain at a specific deployment with the CLI, use [`vercel alias`](/docs/cli/alias):
+
+```bash filename="terminal"
+vercel alias set your-deployment.vercel.app example.com
+```
+
+Replace `your-deployment.vercel.app` with the destination's unique deployment URL, and omit `https://` from the custom domain. This assigns the alias to that deployment. Also move the domain's project configuration using the steps above so future deployments use the intended project and environment.
+
+## Preparing for a registrar transfer
+
+Transferring a domain's registration and changing its DNS provider are separate operations. Before transferring a domain into or out of Vercel:
+
+- Check transfer eligibility with the current registrar. [ICANN transfer restrictions](https://www.icann.org/resources/pages/name-holder-faqs-2017-10-10-en) can include a 60-day lock after registration, a previous transfer, or changes to registrant details. Registry-specific rules can also apply.
+- Confirm that the receiving registrar supports the domain's top-level domain (TLD), and review its transfer requirements and charges.
+- Export or copy the current DNS records, including website, email, and verification records. Confirm whether the current DNS provider will continue serving them after the registration transfers.
+- If you also change nameservers, [migrate and verify the DNS records](/docs/domains/managing-dns-records#migrating-dns-records-from-an-external-registrar) before switching. Keep the previous DNS service active while the change propagates.
 
 ## Transferring domains out of Vercel
 
 - ### Verifying Transfer Eligibility
-  Due to [ICANN rules](https://www.icann.org/resources/pages/text-2012-02-25-en#:~:text=Please%20note%20that%20you%20may,60%20days%20after%20a%20transfer), a domain must be registered with a registrar for 60 days before it can be transferred to another.
-
-  You can verify that your domain has been registered with Vercel for at least 60 days by visiting the team's [Domains Dashboard](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fdomains\&title=Go+to+team%27s+domains+page). If the registrar is Vercel and the age greater than 60 days, it is eligible to transfer.
+  Review the [registrar transfer prerequisites](#preparing-for-a-registrar-transfer), then open the domain on your team's [Domains page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fdomains\&title=Go+to+team%27s+domains+page). Confirm that Vercel is the registrar and that the domain has no active transfer restriction. Domain age alone does not establish eligibility.
 
 - ### Select the **Domains** tab
   For domains that are registered with Vercel, you can retrieve an authorization code for transferring out to another registrar from **Domains** in the Dashboard sidebar.
@@ -96,23 +122,23 @@ You can use the Dashboard to remove a domain from a project and then re-add it t
 
 ## Transfer a domain to Vercel
 
-By transferring your domain into Vercel, you allow Vercel to manage the DNS records for the domain and can use it with any Projects listed under the account the domain is owned by.
+Transferring your domain into Vercel moves its registration to Vercel. You can also use a domain registered elsewhere with a Vercel project by [adding the domain](/docs/domains/working-with-domains/add-a-domain) and configuring DNS, without transferring its registration.
 
 > **💡 Note:** Domain transfers made within 45 days of an auto-renewal may not extend your domain's expiration by one year.
 > For more details, see [ICANN's advisory on transfers within the auto-renew grace period](https://www.icann.org/en/announcements/details/registrar-advisory-concerning-registration-transfers-within-the-auto-renew-grace-period-6-6-2002-en).If your domain is currently registered with **Name.com**, the transfer is
 > free and does not extend the registration period.
 
 - ### Verifying Transfer Eligibility
-  Due to [ICANN rules](https://www.icann.org/resources/pages/text-2012-02-25-en#:~:text=Please%20note%20that%20you%20may,60%20days%20after%20a%20transfer), a domain must be registered with a registrar for 60 days before it can be transferred to another. You will need to confirm this with your registrar before attempting the transfer to Vercel.
+  Review the [registrar transfer prerequisites](#preparing-for-a-registrar-transfer) and confirm eligibility with your current registrar.
 
-  If the domain has not been registered with the current registrar for at least 60 days, the domain transfer will fail.
-
-  NOTE: To find further information on ICANN rules, visit the [ICANN website](https://www.icann.org/resources/pages/text-2012-02-25-en#:~:text=Please%20note%20that%20you%20may,60%20days%20after%20a%20transfer).
+  If Vercel reports that the TLD is not supported for transfer, keep the registration with your current registrar and [connect the domain to your Vercel project](/docs/domains/working-with-domains/add-a-domain) through DNS instead.
 
 - ### Unlock the Domain
   Once you have verified your domain's eligibility to transfer, proceed with unlocking your domain in your registrar's domain settings. Most domains are usually locked by default to prevent unauthorized changes.
 
   The domain lock feature appears in different forms across registrars. Sign into the host where your domain is registered and look for a Domain Lock or similar option to unlock your domain. If this option is not available, contact your registrar to change this.
+
+  The status `clientTransferProhibited` indicates a registrar transfer lock. Ask the registrar whether you can unlock the domain or must wait for a transfer restriction to end.
 
 - ### Obtain Authorization Code
   After unlocking the domain, you will need to obtain an authorization code. The code will be sent to the email address associated with your domain by your registrar. In some cases, your authorization code pops up on your dashboard. This may be available in the domain registrars dashboard. If it is not available, contact your registrar to obtain this.
@@ -136,7 +162,7 @@ By transferring your domain into Vercel, you allow Vercel to manage the DNS reco
   > still does not work, contact your registrar.
 
 - ### Configure domain
-  Follow these steps to ensure that there is no downtime while the domain is transferred to Vercel.
+  Keep DNS and website migration separate from the registration transfer. Use the [registrar transfer preparation steps](#preparing-for-a-registrar-transfer) to preserve website and email records.
 
   **Pre-generate SSL certificates**
 
@@ -147,7 +173,7 @@ By transferring your domain into Vercel, you allow Vercel to manage the DNS reco
 
   **Set DNS records in your registrar**
 
-  Once you have pre-generated the SSL certificates, you need to add the new TXT records to your DNS records in your domain registrar dashboard. Learn how to do that [here](/docs/domains/managing-dns-records#migrating-dns-records-from-an-external-registrar).
+  For a website moving to Vercel, configure the A or CNAME records shown in your project's **Domains** settings at the authoritative DNS provider. Certificate-verification TXT records alone do not route website traffic. If you also switch to Vercel's nameservers, [copy and verify the full DNS configuration](/docs/domains/managing-dns-records#migrating-dns-records-from-an-external-registrar) first.
 
 - ### Deploy the domain
   You can deploy your app with Vercel once the domain has been successfully added to your account.

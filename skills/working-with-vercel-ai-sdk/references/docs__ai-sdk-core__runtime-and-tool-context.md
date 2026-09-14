@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/runtime-and-tool-context.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "a514fb6008bf62c5ff0519092a0ac9c288ca1e68404f30eaddaf608dec1c549d"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "8399d74ca23c06d17edc2705beaad706094e950031c4ab80eb7c66b013face1b"
 ---
 
 # Runtime and Tool Context
@@ -253,6 +253,7 @@ Learn more about [tools and tool calling](/docs/ai-sdk-core/tools-and-tool-calli
 - [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
 - [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
+- [Batch](/docs/ai-sdk-core/batch)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)

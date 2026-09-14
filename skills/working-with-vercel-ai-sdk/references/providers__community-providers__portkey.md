@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/portkey.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "15f999d905f6546bc2915390ae5882a23b1a81f7e3f1d0e3b9171895a6936311"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "600b3d97eb17294f80d02cab4d98caa84fdfb181cc6e94bd3892b1132ef6d8b2"
 ---
 
 # Portkey Provider
@@ -189,6 +189,7 @@ For detailed information on these features and advanced configuration options, p
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
 - [Interfaze](/providers/community-providers/interfaze)
+- [Telnyx](/providers/community-providers/telnyx)
 - [Flowise](/providers/community-providers/flowise)
 
 

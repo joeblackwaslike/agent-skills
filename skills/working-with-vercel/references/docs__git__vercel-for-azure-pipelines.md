@@ -16,8 +16,8 @@ related:
 summary: ​Vercel for Azure DevOps allows you to deploy from Azure Pipelines to Vercel automatically.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git/vercel-for-azure-pipelines.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "760b142a3b5ea6ca3c78a83aeb64bc57ba0dbef910b5eb21265442fac0cb0f89"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "7ff3f39f517f7579b156adf40c0ecfb406eb03477b17b44ba74ef4bd218a966b"
 ---
 
 # Deploying from Azure DevOps with Vercel
@@ -36,8 +36,8 @@ The [Vercel Deployment Extension](https://marketplace.visualstudio.com/items?ite
 - [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-azure-pipelines&source_site=vercel-docs&relationship=related) — Learn how to deploy based on tags/releases on Vercel.
 - [Deploying Bitbucket Projects with Vercel](https://vercel.com/docs/git/vercel-for-bitbucket?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-azure-pipelines&source_site=vercel-docs&relationship=related) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
 - [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-azure-pipelines&source_site=vercel-docs&relationship=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
-- [System environment variables](https://vercel.com/docs/environment-variables/system-environment-variables?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-azure-pipelines&source_site=vercel-docs&relationship=related) — System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-azure-pipelines&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [System environment variables](https://vercel.com/docs/environment-variables/system-environment-variables?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-azure-pipelines&source_site=vercel-docs&relationship=related) — System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the
 - [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-azure-pipelines&source_site=vercel-docs&relationship=related) — Learn how to configure Git for your project through vercel.json or vercel.ts.
 
 Full cross-link map for this page: [/docs/git/vercel-for-azure-pipelines.graph.md](/docs/git/vercel-for-azure-pipelines.graph.md?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-azure-pipelines&source_site=vercel-docs&relationship=graph)

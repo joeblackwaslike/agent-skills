@@ -16,8 +16,8 @@ related:
 summary: Mount an external object store such as Amazon S3 into a Vercel Sandbox with a FUSE driver, so code reads and writes remote files through the local...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/mount-remote-storage.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "62db36158b38a04f7ad3adde266656ab5d6ec4fa9598f588526ba45dadb6eba3"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "75bb610da995b28a2bdb32778621921a1dea329e8dd804b2a5c3d9978313c9c8"
 ---
 
 # Mount remote storage
@@ -37,7 +37,6 @@ Mount an external object store such as Amazon S3 into a sandbox and work with re
 - [How to install system packages in Vercel Sandbox](https://vercel.com/kb/guide/how-to-install-system-packages-in-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fmount-remote-storage&source_site=vercel-docs&relationship=related) — Learn how to install additional system packages in Vercel Sandbox with apt-get on the default Ubuntu-based managed image
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fmount-remote-storage&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 - [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fmount-remote-storage&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fmount-remote-storage&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/sandbox/mount-remote-storage.graph.md](/docs/sandbox/mount-remote-storage.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fmount-remote-storage&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

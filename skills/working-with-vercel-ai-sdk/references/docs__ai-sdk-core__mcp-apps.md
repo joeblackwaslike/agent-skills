@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/mcp-apps.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "6831b571c2b9bbb92348618f4d22fced8692e922f82958bbfc54f8375475fecb"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "8751b849c8b3a354c0ee90e050b6f9b84db86ab96c66cb4d21f736fd7bf1de20"
 ---
 
 # MCP Apps
@@ -294,6 +294,7 @@ export default function Chat() {
 - [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
 - [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
+- [Batch](/docs/ai-sdk-core/batch)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)

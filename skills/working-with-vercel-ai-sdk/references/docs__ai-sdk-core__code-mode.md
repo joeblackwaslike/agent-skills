@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/code-mode.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "0d5a651a642b18cc37cb139199409b172a3a77f6cc6707e2a1ab61a01ed222ab"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "14cb1b33aa845895fe01cbbbb621ee635da072763b0a505bfcad563f7d8a9f14"
 ---
 
 # Code Mode
@@ -282,6 +282,7 @@ signals and AI SDK tool execution context are forwarded to nested tool calls.
 - [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
 - [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
+- [Batch](/docs/ai-sdk-core/batch)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)

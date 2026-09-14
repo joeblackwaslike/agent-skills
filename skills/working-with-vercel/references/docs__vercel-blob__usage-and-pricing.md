@@ -16,8 +16,8 @@ related:
 summary: Learn about the pricing for Vercel Blob.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/usage-and-pricing.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "5b4b9653570bfba9e3c938c84e6cdaaf3abc20608f6d473eb884f658a92050bb"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "9353e5a112890560e4846e1ca663491fc0233fbe48ca6bb572487ebc67753cbf"
 ---
 
 # Vercel Blob Pricing
@@ -38,8 +38,8 @@ Vercel Blob usage is measured based on the following:
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
 - [Vercel Blob vs Netlify Blobs](https://vercel.com/kb/guide/vercel-blob-vs-netlify-blobs?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Compare Vercel Blob and Netlify Blobs on storage model, public URLs, delivery, limits, and pricing to choose the right o
 - [Vercel Blob is now generally available: Cost-efficient, durable storage](https://vercel.com/blog/vercel-blob-now-generally-available?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusage-and-pricing&source_site=vercel-docs&relationship=related)
-- [Vercel Blob is now generally available](https://vercel.com/changelog/vercel-blob-is-now-generally-available?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusage-and-pricing&source_site=vercel-docs&relationship=related)
 - [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
+- [Vercel Blob is now generally available](https://vercel.com/changelog/vercel-blob-is-now-generally-available?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusage-and-pricing&source_site=vercel-docs&relationship=related)
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Limits and Pricing for Image Optimization](https://vercel.com/docs/image-optimization/limits-and-pricing?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can i
 - [Vercel Storage overview](https://vercel.com/docs/storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
@@ -115,7 +115,7 @@ To remove these limits, you can start a Pro trial using the button below.
 
 ## Pro
 
-You pay for usage using your [monthly credit allocation](/docs/plans/pro-plan#credit-and-usage-allocation) which switches to on-demand once you have used your included credits.
+You pay for usage using your [monthly credit](/docs/plans/pro-plan#monthly-credit), which switches to on-demand once you have used it.
 
 Pro teams can [set up Spend Management](/docs/spend-management#managing-your-spend-amount) to get notified or to automatically take action, such as [using a webhook](/docs/spend-management#configuring-a-webhook) or pausing your projects when your usage hits a set spend amount.
 

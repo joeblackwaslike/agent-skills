@@ -1,25 +1,27 @@
 ---
-title: Automatic Caching
+title: AI Gateway Automatic Prompt Caching
 product: vercel
 url: /docs/ai-gateway/models-and-providers/automatic-caching
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/automatic-caching"
-last_updated: 2026-07-28
-type: conceptual
+last_updated: 2026-09-08
+type: reference
 prerequisites:
   - /docs/ai-gateway/models-and-providers
   - /docs/ai-gateway
 related:
   - /docs/ai-gateway/sdks-and-apis/responses
+  - /docs/ai-gateway/models-and-providers/provider-filtering-and-ordering
   - /docs/ai-gateway/models-and-providers/model-filtering
+  - /docs/ai-gateway/sdks-and-apis
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced
-summary: Enable automatic prompt caching across providers with AI Gateway to reduce costs and latency.
+summary: Enable automatic prompt caching and provider-side cache affinity with AI Gateway to reduce costs and latency.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/automatic-caching.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "e2c6562d2977048fda50c11012af815cffece642f073d5f96b87607289e5710f"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "e0d43888d3f6d51449acb907f1e4dc08baaff8d2d927c88f515ee147df8c9bd9"
 ---
 
-# Automatic Caching
+# AI Gateway Automatic Prompt Caching
 
 Some providers like Anthropic and MiniMax require explicit cache control markers to enable prompt caching, while others like OpenAI, Google, and DeepSeek cache automatically (sometimes called "implicit caching"). Use `caching: 'auto'` to let AI Gateway handle this for you. It applies the appropriate caching strategy based on the provider.
 
@@ -31,25 +33,20 @@ Some providers like Anthropic and MiniMax require explicit cache control markers
 
 - [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
 - [Dynamic Prompt Caching](https://ai-sdk.dev/cookbook/node/dynamic-prompt-caching?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related)
-- [Set cache control headers for functions](https://vercel.com/kb/guide/set-cache-control-headers?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related) — Learn how to set headers to cache your function's responses.
 - [Caching](https://ai-sdk.dev/docs/advanced/caching?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related)
 - [Local Caching Middleware](https://ai-sdk.dev/cookbook/node/local-caching-middleware?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related)
-- [Migrating to Cache Components](https://nextjs.org/docs/app/guides/migrating-to-cache-components?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related) — Learn how to migrate from route segment configs to Cache Components in Next.js.
-- [Advanced Features](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related) — Advanced Anthropic API features including web search, provider timeouts, and automatic caching.
-- [Provider Options](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API.
-- [Caching](https://vercel.com/docs/caching?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related) — Learn how Vercel caches content across multiple layers to deliver fast responses and reduce load on your backend.
-- [Data Cache for Next.js](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
-- [Zero Data Retention](https://vercel.com/docs/ai-gateway/security-and-compliance/zdr?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related) — Learn about zero data retention policies and how to enforce ZDR on a per-request basis with AI Gateway.
+- [Anthropic Messages Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related) — Advanced Anthropic API features including web search, provider timeouts, and automatic caching through AI Gateway.
+- [Anthropic Messages API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related) — Use the Anthropic Messages API with AI Gateway. Configure authentication and send requests with streaming, tools, images
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/automatic-caching.graph.md](/docs/ai-gateway/models-and-providers/automatic-caching.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 > **💡 Note:** **Supported providers:** Automatic caching works with Anthropic (direct,
-> Vertex, and Bedrock) and MiniMax.
+> Vertex, and Bedrock), MiniMax, and Alibaba.
 
 ## How it works
 
-When you set `caching: 'auto'` and the request routes to a provider that requires explicit cache markers, AI Gateway adds `cache_control` breakpoints to your messages. This covers Anthropic and MiniMax, which serves an Anthropic-compatible API and uses the same `cache_control` format. For providers with implicit caching (OpenAI, Google, DeepSeek), no modification is needed and caching works automatically.
+When you set `caching: 'auto'` and the request routes to a provider that requires explicit cache markers, AI Gateway adds `cache_control` breakpoints to your messages. This covers Anthropic, MiniMax, and Alibaba. AI Gateway uses the cache markers expected by each provider. For providers with implicit caching (OpenAI, Google, DeepSeek), no modification is needed and caching works automatically.
 
 For explicit-caching providers, AI Gateway places markers at two positions:
 
@@ -127,6 +124,113 @@ The anchor is advisory. Values that can't be used (not a positive integer, past 
 
 The anchor only applies when `caching: 'auto'` is set, and like the other markers it only modifies requests to explicit-caching providers.
 
+## Improve cache hits with cache affinity
+
+Send the same `x-session-affinity` header with related requests so AI Gateway can forward it to the selected provider. Providers that support session affinity can use the value to preserve prompt-cache locality.
+
+Use an opaque, stable value for each conversation, agent run, or related workflow. Don't include personal data in the value or reuse one value across unrelated sessions. The header does not affect your [routing configuration](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering) or which provider AI Gateway selects, and it does not guarantee a cache hit.
+
+### Add cache affinity with AI SDK
+
+Pass `x-session-affinity` to each AI SDK call with the `headers` option:
+
+```typescript filename="generate-text.ts"
+import { streamText } from 'ai';
+
+const result = streamText({
+  model: 'deepseek/deepseek-v4-flash-0731',
+  prompt: 'Hello world',
+  headers: {
+    'x-session-affinity': 'session_123',
+  },
+});
+```
+
+### Add cache affinity to compatibility API requests
+
+AI Gateway forwards `x-session-affinity` through its OpenAI-compatible, Anthropic-compatible, and OpenResponses API formats. Set it as a default SDK client header or include it directly in each HTTP request:
+
+#### Chat Completions
+
+```typescript filename="chat-completions.ts"
+import OpenAI from 'openai';
+
+const openai = new OpenAI({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh/v1',
+  defaultHeaders: {
+    'x-session-affinity': 'session_123',
+  },
+});
+
+const response = await openai.chat.completions.create({
+  model: 'deepseek/deepseek-v4-flash-0731',
+  messages: [{ role: 'user', content: 'Hello world' }],
+});
+```
+
+#### OpenAI Responses
+
+```typescript filename="responses.ts"
+import OpenAI from 'openai';
+
+const openai = new OpenAI({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh/v1',
+  defaultHeaders: {
+    'x-session-affinity': 'session_123',
+  },
+});
+
+const response = await openai.responses.create({
+  model: 'deepseek/deepseek-v4-flash-0731',
+  input: 'Hello world',
+});
+```
+
+#### Anthropic Messages
+
+```typescript filename="messages.ts"
+import Anthropic from '@anthropic-ai/sdk';
+
+const anthropic = new Anthropic({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh',
+  defaultHeaders: {
+    'x-session-affinity': 'session_123',
+  },
+});
+
+const message = await anthropic.messages.create({
+  model: 'anthropic/claude-sonnet-5',
+  max_tokens: 1024,
+  messages: [{ role: 'user', content: 'Hello world' }],
+});
+```
+
+#### OpenResponses
+
+```typescript filename="openresponses.ts"
+const response = await fetch('https://ai-gateway.vercel.sh/v1/responses', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    Authorization: `Bearer ${process.env.AI_GATEWAY_API_KEY}`,
+    'x-session-affinity': 'session_123',
+  },
+  body: JSON.stringify({
+    model: 'deepseek/deepseek-v4-flash-0731',
+    input: [
+      {
+        type: 'message',
+        role: 'user',
+        content: 'Hello world',
+      },
+    ],
+  }),
+});
+```
+
 ## Cost tradeoff
 
 On Anthropic, cache writes cost 1.25× the base input rate and cache reads cost 0.1×. The break-even is a single read: one follow-up request that reuses the cached prompt saves 0.9× per token read, more than offsetting the 0.25× write premium. Multi-turn conversations, agents, and tool-use loops re-read everything the previous turn wrote on every turn, so they come out well ahead. For true one-shot requests, where no follow-up ever reads the cache entry, the write premium is a small net cost. If your traffic is strictly one-shot, prefer manual cache markers (or no caching) over `caching: 'auto'`.
@@ -137,189 +241,315 @@ On Anthropic, cache writes cost 1.25× the base input rate and cache reads cost 
 
 ## Examples
 
+Use a stable system prompt long enough to meet the model's cache threshold. For a self-contained test, create a synthetic reference file:
+
+```bash filename="Terminal"
+awk 'BEGIN { for (i = 1; i <= 400; i++) print "Deployment check " i ": Production deployments require two approving reviewers and all automated checks to pass before release." }' > deployment-runbook.txt
+```
+
+The AI SDK does not return a separate cache-hit boolean. A positive cache-read token count confirms that the provider read part of the prompt from cache. A zero count can mean a cache miss, an ineligible prompt, or unavailable provider usage details.
+
+The AI SDK examples below send the same request twice. The second request can read the cached prefix. Provider thresholds and retention windows vary; see [Anthropic prompt caching](https://platform.claude.com/docs/en/build-with-claude/prompt-caching). For other API formats, run the example twice without changing the input. The cURL examples use `jq` to read the file into JSON.
+
+These examples use AI SDK 7 and the AI SDK for Python beta. Set `AI_GATEWAY_API_KEY` before running them. See [API format differences](/docs/ai-gateway/sdks-and-apis#api-format-differences) for setup, request fields, and response handling.
+
 #### AI SDK
 
-```typescript filename="app/api/chat/route.ts"
-import { streamText } from 'ai';
+#### TypeScript
 
-export async function POST(request: Request) {
-  const { prompt } = await request.json();
+```typescript filename="automatic-caching.ts"
+import { readFileSync } from 'node:fs';
+import { generateText } from 'ai';
 
-  const result = streamText({
+const system = readFileSync('deployment-runbook.txt', 'utf8');
+
+async function sendRequest() {
+  return generateText({
     model: 'anthropic/claude-sonnet-5',
-    system: 'You are a helpful assistant with access to a large knowledge base...',
-    prompt,
+    system,
+    prompt: 'What is required before a production deployment?',
     providerOptions: {
       gateway: {
         caching: 'auto',
       },
     },
   });
-
-  return result.toUIMessageStreamResponse();
 }
+
+await sendRequest();
+const second = await sendRequest();
+const cacheReadTokens =
+  second.usage.inputTokenDetails.cacheReadTokens ?? 0;
+
+console.log(second.text);
+console.log('Cache read tokens:', cacheReadTokens);
+console.log('Cache hit:', cacheReadTokens > 0);
+```
+
+#### Python (beta)
+
+```python filename="automatic-caching_ai.py"
+from pathlib import Path
+import asyncio
+import ai
+
+async def main():
+    system = Path("deployment-runbook.txt").read_text()
+    model = ai.get_model("anthropic/claude-sonnet-5")
+    messages = [ai.system_message(system), ai.user_message("What is required before a production deployment?")]
+    params = ai.InferenceRequestParams(
+        extra_body={"providerOptions": {"gateway": {"caching": "auto"}}}
+    )
+    async def send_request(print_text=False):
+        async with ai.stream(model, messages, params=params) as stream:
+            async for event in stream:
+                if print_text and isinstance(event, ai.events.TextDelta):
+                    print(event.chunk, end="", flush=True)
+        return stream.usage.cache_read_tokens or 0
+
+    await send_request()
+    cache_read_tokens = await send_request(print_text=True)
+    print()
+    print("Cache read tokens:", cache_read_tokens)
+    print("Cache hit:", cache_read_tokens > 0)
+
+asyncio.run(main())
 ```
 
 #### Chat Completions
 
 #### TypeScript
 
-```typescript filename="auto-caching.ts"
+```typescript filename="automatic-caching-chat.ts"
+import { readFileSync } from 'node:fs';
 import OpenAI from 'openai';
 
-const apiKey = process.env.AI_GATEWAY_API_KEY || process.env.VERCEL_OIDC_TOKEN;
-
-const openai = new OpenAI({
-  apiKey,
+const client = new OpenAI({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
   baseURL: 'https://ai-gateway.vercel.sh/v1',
 });
 
-// @ts-expect-error - providerOptions is a gateway extension
-const response = await openai.chat.completions.create({
+const system = readFileSync('deployment-runbook.txt', 'utf8');
+
+const response = await client.chat.completions.create({
   model: 'anthropic/claude-sonnet-5',
   messages: [
     {
       role: 'system',
-      content: 'You are a helpful assistant with access to a large knowledge base...',
+      content: system,
     },
     {
       role: 'user',
-      content: 'What is the capital of France?',
+      content: 'What is required before a production deployment?',
     },
   ],
-  providerOptions: {
-    gateway: {
-      caching: 'auto',
+  // AI Gateway extension fields are not included in the upstream SDK types.
+  ...{
+    providerOptions: {
+      gateway: {
+        caching: 'auto',
+      },
     },
   },
 });
 
-console.log(response.choices[0].message.content);
+console.log(response.choices[0]?.message.content);
+console.log(
+  'Cache read tokens:',
+  response.usage?.prompt_tokens_details?.cached_tokens ?? 0,
+);
 ```
 
 #### Python
 
-```python filename="auto-caching.py"
+```python filename="automatic-caching_chat.py"
+from pathlib import Path
 import os
 from openai import OpenAI
 
-api_key = os.getenv('AI_GATEWAY_API_KEY') or os.getenv('VERCEL_OIDC_TOKEN')
-
 client = OpenAI(
-    api_key=api_key,
-    base_url='https://ai-gateway.vercel.sh/v1'
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
+    base_url="https://ai-gateway.vercel.sh/v1",
 )
 
+system = Path("deployment-runbook.txt").read_text()
+
 response = client.chat.completions.create(
-    model='anthropic/claude-sonnet-5',
-    messages=[
-        {
-            'role': 'system',
-            'content': 'You are a helpful assistant with access to a large knowledge base...'
-        },
-        {
-            'role': 'user',
-            'content': 'What is the capital of France?'
-        }
-    ],
-    extra_body={
-        'providerOptions': {
-            'gateway': {
-                'caching': 'auto'
-            }
-        }
-    }
+    model="anthropic/claude-sonnet-5",
+    messages=[{"role": "system", "content": system}, {"role": "user", "content": "What is required before a production deployment?"}],
+    extra_body={"providerOptions": {"gateway": {"caching": "auto"}}},
 )
 
 print(response.choices[0].message.content)
+print("Cache read tokens:", response.usage.prompt_tokens_details.cached_tokens or 0)
 ```
 
-#### OpenAI Responses
+#### cURL
 
-```typescript filename="auto-caching.ts"
-const response = await fetch('https://ai-gateway.vercel.sh/v1/responses', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-    Authorization: `Bearer ${apiKey}`,
-  },
-  body: JSON.stringify({
-    model: 'anthropic/claude-sonnet-5',
-    caching: 'auto',
-    instructions: 'You are a helpful assistant with access to a large knowledge base...',
-    input: [{ type: 'message', role: 'user', content: 'What is the capital of France?' }],
-  }),
-});
+```bash filename="automatic-caching-chat.sh"
+jq -n --rawfile system deployment-runbook.txt '{
+  "model": "anthropic/claude-sonnet-5",
+  "messages": [{"role":"system","content":$system},{"role":"user","content":"What is required before a production deployment?"}],
+  "providerOptions": {"gateway": {"caching": "auto"}}
+}' | curl --fail-with-body https://ai-gateway.vercel.sh/v1/chat/completions \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  --data-binary @-
 ```
 
-#### Anthropic Messages
+#### Messages API
 
 #### TypeScript
 
-```typescript filename="auto-caching.ts"
+```typescript filename="automatic-caching-messages.ts"
+import { readFileSync } from 'node:fs';
 import Anthropic from '@anthropic-ai/sdk';
 
-const apiKey = process.env.AI_GATEWAY_API_KEY || process.env.VERCEL_OIDC_TOKEN;
-
-const anthropic = new Anthropic({
-  apiKey,
+const client = new Anthropic({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
   baseURL: 'https://ai-gateway.vercel.sh',
 });
 
-const message = await anthropic.messages.create({
+const system = readFileSync('deployment-runbook.txt', 'utf8');
+
+const response = await client.messages.create({
   model: 'anthropic/claude-sonnet-5',
-  max_tokens: 2048,
-  system: 'You are a helpful assistant with access to a large knowledge base...',
+  system,
   messages: [
     {
       role: 'user',
-      content: 'What is the capital of France?',
+      content: 'What is required before a production deployment?',
     },
   ],
-  // @ts-expect-error - providerOptions is a gateway extension
-  providerOptions: {
-    gateway: {
-      caching: 'auto',
+  max_tokens: 1024,
+  ...{
+    providerOptions: {
+      gateway: {
+        caching: 'auto',
+      },
     },
   },
 });
 
-console.log(message.content[0].type === 'text' ? message.content[0].text : '');
+for (const block of response.content) {
+  if (block.type === 'text') console.log(block.text);
+}
+console.log('Cache read tokens:', response.usage.cache_read_input_tokens ?? 0);
 ```
 
 #### Python
 
-```python filename="auto-caching.py"
+```python filename="automatic-caching_messages.py"
+from pathlib import Path
 import os
-import anthropic
+from anthropic import Anthropic
 
-api_key = os.getenv('AI_GATEWAY_API_KEY') or os.getenv('VERCEL_OIDC_TOKEN')
-
-client = anthropic.Anthropic(
-    api_key=api_key,
-    base_url='https://ai-gateway.vercel.sh'
+client = Anthropic(
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
+    base_url="https://ai-gateway.vercel.sh",
 )
 
-message = client.messages.create(
-    model='anthropic/claude-sonnet-5',
-    max_tokens=2048,
-    system='You are a helpful assistant with access to a large knowledge base...',
-    messages=[
-        {
-            'role': 'user',
-            'content': 'What is the capital of France?'
-        }
-    ],
-    extra_body={
-        'providerOptions': {
-            'gateway': {
-                'caching': 'auto'
-            }
-        }
-    }
+system = Path("deployment-runbook.txt").read_text()
+
+response = client.messages.create(
+    model="anthropic/claude-sonnet-5",
+    system=system,
+    messages=[{"role": "user", "content": "What is required before a production deployment?"}],
+    max_tokens=1024,
+    extra_body={"providerOptions": {"gateway": {"caching": "auto"}}},
 )
 
-print(message.content[0].text)
+for block in response.content:
+    if block.type == "text":
+        print(block.text)
+print("Cache read tokens:", response.usage.cache_read_input_tokens or 0)
+```
+
+#### cURL
+
+```bash filename="automatic-caching-messages.sh"
+jq -n --rawfile system deployment-runbook.txt '{
+  "model": "anthropic/claude-sonnet-5",
+  "messages": [{"role":"user","content":"What is required before a production deployment?"}], "system": $system, "max_tokens": 1024,
+  "providerOptions": {"gateway": {"caching": "auto"}}
+}' | curl --fail-with-body https://ai-gateway.vercel.sh/v1/messages \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -H "anthropic-version: 2023-06-01" \
+  --data-binary @-
+```
+
+#### Responses / OpenResponses
+
+#### TypeScript
+
+```typescript filename="automatic-caching-responses.ts"
+import { readFileSync } from 'node:fs';
+import OpenAI from 'openai';
+
+const client = new OpenAI({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh/v1',
+});
+
+const system = readFileSync('deployment-runbook.txt', 'utf8');
+
+const response = await client.responses.create({
+  model: 'anthropic/claude-sonnet-5',
+  instructions: system,
+  input: 'What is required before a production deployment?',
+  ...{
+    providerOptions: {
+      gateway: {
+        caching: 'auto',
+      },
+    },
+  },
+});
+
+console.log(response.output_text);
+console.log(
+  'Cache read tokens:',
+  response.usage?.input_tokens_details.cached_tokens ?? 0,
+);
+```
+
+#### Python
+
+```python filename="automatic-caching_responses.py"
+from pathlib import Path
+import os
+from openai import OpenAI
+
+client = OpenAI(
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
+    base_url="https://ai-gateway.vercel.sh/v1",
+)
+
+system = Path("deployment-runbook.txt").read_text()
+
+response = client.responses.create(
+    model="anthropic/claude-sonnet-5",
+    instructions=system,
+    input="What is required before a production deployment?",
+    extra_body={"providerOptions": {"gateway": {"caching": "auto"}}},
+)
+
+print(response.output_text)
+print("Cache read tokens:", response.usage.input_tokens_details.cached_tokens or 0)
+```
+
+#### cURL
+
+```bash filename="automatic-caching-responses.sh"
+jq -n --rawfile system deployment-runbook.txt '{
+  "model": "anthropic/claude-sonnet-5",
+  "input": "What is required before a production deployment?", "instructions": $system,
+  "providerOptions": {"gateway": {"caching": "auto"}}
+}' | curl --fail-with-body https://ai-gateway.vercel.sh/v1/responses \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  --data-binary @-
 ```
 
 ## Manual caching
@@ -341,6 +571,7 @@ For fine-grained control over what gets cached, you can manually add cache marke
 | Anthropic (via Vertex)  | Explicit     | Adds [`cache_control` breakpoints](#how-it-works)  |
 | Anthropic (via Bedrock) | Explicit     | Adds [`cache_control` breakpoints](#how-it-works)  |
 | MiniMax                 | Explicit     | Adds [`cache_control` breakpoints](#how-it-works)  |
+| Alibaba | Explicit | Adds [cache markers](#how-it-works) |
 
 
 ---

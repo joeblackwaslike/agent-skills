@@ -16,8 +16,8 @@ related:
 summary: Learn how to use Notifications to view and manage important alerts about your deployments, domains, integrations, account, and usage.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/notifications.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "eff188327b522d88490803326a428af310a58ab823454df8cf7165cf29a55414"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "fde673348af4e400a23a55f182a3f8a4def0e9725c75bad08f98bb2818b7da0d"
 ---
 
 # Notifications
@@ -35,13 +35,13 @@ Vercel sends configurable notifications to you through the [dashboard](https://v
 - [Push notifications support on desktop and mobile](https://vercel.com/changelog/push-notifications-support-on-desktop-and-mobile?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related)
 - [Get notified on build failures and more with new notification controls](https://vercel.com/changelog/new-notification-controls-available-in-public-beta?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related)
 - [Building a powerful notification system for Vercel with Knock](https://vercel.com/blog/building-a-powerful-notification-system-for-vercel-with-knock-app?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related)
-- [How do I disable Git Notifications from Deployments?](https://vercel.com/kb/guide/how-do-i-disable-git-notifications-from-deployments?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related) — If your project is connected via a Git account to your deployment, you will receive email notifications whenever the dep
 - [September 2020](https://vercel.com/blog/changelog-september-2020?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related)
+- [Improved web notifications are now generally available](https://vercel.com/changelog/improved-web-notifications-now-generally-available?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related)
 - [Configure alerts](https://vercel.com/docs/alerts/configure-alerts?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related) — Configure alert rules and notification destinations for Vercel Observability alerts.
 - [Audit Logs](https://vercel.com/docs/audit-log?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related) — Learn how to track and analyze your team members' activities.
+- [Deploying GitHub Projects with Vercel](https://vercel.com/docs/git/vercel-for-github?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related) — Vercel for GitHub automatically deploys your GitHub projects with Vercel, providing Preview Deployment URLs, and automat
 - [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Alerts](https://vercel.com/docs/alerts?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related) — Get notified when something's wrong with your Vercel projects. Set up alerts through Slack, webhooks, or email so you ca
 
 Full cross-link map for this page: [/docs/notifications.graph.md](/docs/notifications.graph.md?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -73,6 +73,12 @@ You can manage **your own** notifications by using the following steps:
 3. From here, you can toggle [where](#receiving-notifications) *you* would like to receive notifications for each different [type of notification](#types-of-notifications).
 
 Any changes you make will only be reflected for your notifications and not for any other members of the team. You cannot configure notifications for other users.
+
+### Deployment failure notifications
+
+Vercel notifies the deployment's creator when a deployment fails. Web and email notifications are enabled by default. To change where you receive these alerts, open **My Notifications** for the team and configure **Deployment Failures** using the [steps above](#managing-notifications).
+
+If you read a failure notification in the dashboard before Vercel sends the email, Vercel does not send that email. Your notification preferences affect only you.
 
 ### Notifications for Comments
 
@@ -118,7 +124,7 @@ It is *not* possible to disable all notifications for alerts that are critical t
 |                      | Deployment Failures                                              | Deployment owners will be notified about any deployment failures that occur for any Project on your team.                                                                                                                                                                                              |                                                                  |
 |                      | Deployment Promotions                                            | Deployment owners will be notified about any deployment promotions that occur for any Project on your team.                                                                                                                                                                                            |                                                                  |
 | **Domain**           |                                                                  |                                                                                                                                                                                                                                                                                                        |                                                                  |
-|                      | Configuration - Certificate renewal failed                       | Team owners will be notified if the SSL Certification renewal for any of their team's domains has failed. For more information, see [When is the SSL Certificate on my Vercel Domain renewed?](/kb/guide/renewal-of-ssl-certificates-with-a-vercel-domain).                                            |                                                                  |
+|                      | Configuration - Certificate renewal failed                       | Team owners will be notified if the SSL Certification renewal for any of their team's domains has failed. For more information, see [automatic certificate renewal](/docs/domains/working-with-ssl#automatic-certificate-renewal).                                            |                                                                  |
 |                      | Configuration - Domain Configured                                | Team owners will be notified of any domains that have been added to a project. For more information, see [Add a domain](/docs/domains/working-with-domains/add-a-domain).                                                                                                                                                   |                                                                  |
 |                      | Configuration - Domain Misconfigured                             | Team owners will be notified of any domains that have been added to a project and are misconfigured. These notifications will be batched. For more information, see [Add a domain](/docs/domains/working-with-domains/add-a-domain).                                                                                        |                                                                  |
 |                      | Configuration - Domain no payment source or payment failure      | Team owners will be notified if there were any payment issues while [Adding a domain](/docs/domains/working-with-domains/add-a-domain). Ensure a valid payment option is adding to **Settings > Billing**                                                                                                                   |                                                                  |

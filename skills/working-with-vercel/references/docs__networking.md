@@ -14,8 +14,8 @@ related:
 summary: Connect your Vercel projects to backend services with static IPs and secure networking options.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "0b4d7064440511524dbe9e0f5c58a8b063556d37ba17fcac4eb38d561c6b8341"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "98596ba8acb83786d3a3c4f63fc0abf53ddcc51377ba55a6425ea2ed7dc9e265"
 ---
 
 # Networking
@@ -36,7 +36,7 @@ Connect your projects to backend services that require IP allowlisting or dedica
 - [Cleveland, USA \\(cle1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cle1?from=related&source_path=%2Fdocs%2Fnetworking&source_site=vercel-docs&relationship=related) — Vercel pricing for the Cleveland, USA \\(cle1\\) region.
 - [Portland, USA \\(pdx1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/pdx1?from=related&source_path=%2Fdocs%2Fnetworking&source_site=vercel-docs&relationship=related) — Vercel pricing for the Portland, USA \\(pdx1\\) region.
 - [Services Pricing and Limits](https://vercel.com/docs/services/pricing?from=related&source_path=%2Fdocs%2Fnetworking&source_site=vercel-docs&relationship=related) — Understand how billing works for Vercel Services, what's charged, and which limits apply.
-- [Vercel CDN overview](https://vercel.com/docs/cdn?from=related&source_path=%2Fdocs%2Fnetworking&source_site=vercel-docs&relationship=related) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
+- [Paris, France \\(cdg1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cdg1?from=related&source_path=%2Fdocs%2Fnetworking&source_site=vercel-docs&relationship=related) — Vercel pricing for the Paris, France \\(cdg1\\) region.
 
 Full cross-link map for this page: [/docs/networking.graph.md](/docs/networking.graph.md?from=related&source_path=%2Fdocs%2Fnetworking&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

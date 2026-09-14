@@ -1,9 +1,9 @@
 ---
-title: Google and Vertex Reasoning
+title: AI Gateway Google and Vertex Reasoning
 product: vercel
 url: /docs/ai-gateway/models-and-providers/reasoning/google
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/google"
-last_updated: 2026-07-28
+last_updated: 2026-09-08
 type: reference
 prerequisites:
   - /docs/ai-gateway/models-and-providers/reasoning
@@ -14,11 +14,11 @@ related:
 summary: Configure thinking for Google Gemini and Gemma models with the AI SDK and AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/google.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "57012a7ec67b2374a1062ad40c3110193b427059c3aab0754694149d444218e6"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "bb9db3e3c970ce3df4b95c9ea6206af8738de129881e324aec07b309c469c953"
 ---
 
-# Google and Vertex Reasoning
+# AI Gateway Google and Vertex Reasoning
 
 Gemini 2.5 and later models use an internal "thinking process" that improves their reasoning and multi-step planning abilities, making them effective for complex tasks like coding, advanced mathematics, and data analysis.
 
@@ -30,25 +30,22 @@ Gemini 2.5 and later models use an internal "thinking process" that improves the
 
 - [Reasoning](https://ai-sdk.dev/docs/ai-sdk-core/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fgoogle&source_site=vercel-docs&relationship=related)
 - [Gemini 3.5 Flash on AI Gateway](https://vercel.com/changelog/gemini-3-5-flash-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fgoogle&source_site=vercel-docs&relationship=related)
-- [Google](https://ai-sdk.dev/providers/ai-sdk-providers/google?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fgoogle&source_site=vercel-docs&relationship=related)
 - [Gemini CLI](https://ai-sdk.dev/providers/community-providers/gemini-cli?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fgoogle&source_site=vercel-docs&relationship=related)
-- [Get started with Gemini 3](https://ai-sdk.dev/cookbook/guides/gemini?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fgoogle&source_site=vercel-docs&relationship=related)
-- [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fgoogle&source_site=vercel-docs&relationship=related) — Control how much a model thinks before answering with the OpenAI Chat Completions API.
-- [Extended Thinking](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fgoogle&source_site=vercel-docs&relationship=related) — Configure how much Claude thinks before answering, using the Anthropic Messages API thinking parameter.
-- [OpenAI Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fgoogle&source_site=vercel-docs&relationship=related) — Configure reasoning and thinking for OpenAI models with the AI SDK and AI Gateway.
-- [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fgoogle&source_site=vercel-docs&relationship=related) — Control how much a reasoning model thinks before answering with the OpenResponses API.
-- [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fgoogle&source_site=vercel-docs&relationship=related) — Control how much a model thinks before answering with the OpenAI Responses API.
+- [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fgoogle&source_site=vercel-docs&relationship=related)
+- [Gemini 3.1 Pro is live on AI Gateway](https://vercel.com/changelog/gemini-3-1-pro-is-live-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fgoogle&source_site=vercel-docs&relationship=related)
+- [AI Gateway OpenAI Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fgoogle&source_site=vercel-docs&relationship=related) — Configure reasoning and thinking for OpenAI models with the AI SDK and AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/reasoning/google.graph.md](/docs/ai-gateway/models-and-providers/reasoning/google.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fgoogle&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 These models are available through both Google AI and Google Vertex AI providers. The thinking configuration is the same. The only difference is using `providerOptions.vertex` instead of `providerOptions.google`. To route through Vertex, configure [Vertex AI credentials](/docs/ai-gateway/authentication-and-byok/byok) and set the provider order to prefer `vertex`.
 
-- **Gemma 4**: Use `chat_template_kwargs` with `enable_thinking: true` to enable reasoning
 - **Gemini 3 and later**: Use `thinkingLevel` to control the depth of reasoning
 - **Gemini 2.5**: Use `thinkingBudget` to set a token limit for thinking
 
 ## Supported models
+
+See the [AI SDK Google provider reference](https://ai-sdk.dev/providers/ai-sdk-providers/google) for supported reasoning options and response metadata.
 
 To see the current list of Google reasoning models, use the **Reasoning** filter on the [AI Gateway models page](https://vercel.com/ai-gateway/models?capabilities=reasoning\&providers=google,vertex).
 
@@ -59,11 +56,13 @@ The `thinkingLevel` parameter controls reasoning behavior:
 | Thinking level | Description                                                                                                                                 |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
 | `minimal`      | Matches "no thinking" for most queries. The model may still think minimally for complex coding tasks. Best for latency-sensitive workloads. |
-| `low`          | Minimizes latency and cost. Best for simple instruction following and chat.                                                                 |
+| `low`          | Minimizes latency and cost. Use for instruction following and chat with low reasoning requirements.                                                                 |
 | `medium`       | Balanced thinking for most tasks.                                                                                                           |
 | `high`         | Maximizes reasoning depth. The model may take significantly longer to reach a first output token.                                           |
 
-Not every level is available on every model, and defaults vary. Pro models don't support `minimal` and default to `high`; Flash models default to `high` on Gemini 3 and `medium` on Gemini 3.5; Flash-Lite models default to `minimal`. Requests using an unsupported level return an error naming the supported values.
+Select the exact model in [`GET /v1/models`](/docs/ai-gateway/models-and-providers/reasoning#discover-model-reasoning-support) and read the `effort` values in `reasoning_options`. Don't infer a new Flash or Pro model's supported levels or default from an older generation. The catalog doesn't expose a structured default; consult the [Google thinking documentation](https://ai.google.dev/gemini-api/docs/thinking) for model-specific behavior.
+
+The shared effort mapping and native `thinkingLevel` can differ. AI Gateway's cross-provider translation maps `low` to `low` and other effort levels to `high` on Gemini 3-family models. To request a native `minimal` or `medium` level listed in the catalog, use the serving provider's `thinkingConfig.thinkingLevel` option and verify support.
 
 ### Thinking budgets (Gemini 2.5)
 
@@ -71,17 +70,13 @@ The `thinkingBudget` parameter sets a specific number of thinking tokens. Set `t
 
 > **💡 Note:** Use `thinkingLevel` with Gemini 3 and later models. While `thinkingBudget` is accepted for backwards compatibility, using it with Gemini 3 and later models may result in unexpected performance.
 
-| Model                 | Default | Range      | Disable thinking    | Dynamic thinking               |
-| --------------------- | ------- | ---------- | ------------------- | ------------------------------ |
-| Gemini 2.5 Pro        | Dynamic | 128–32,768 | Not supported       | `thinkingBudget: -1` (default) |
-| Gemini 2.5 Flash      | Dynamic | 0–24,576   | `thinkingBudget: 0` | `thinkingBudget: -1` (default) |
-| Gemini 2.5 Flash Lite | Off     | 512–24,576 | `thinkingBudget: 0` | `thinkingBudget: -1`           |
+For an exact budget, check the model's `budget_tokens` entry in [catalog discovery](/docs/ai-gateway/models-and-providers/reasoning#discover-model-reasoning-support). Apply `min` and `max` when present; missing bounds don't mean an unlimited budget. The [Google thinking documentation](https://ai.google.dev/gemini-api/docs/thinking) describes disabling thinking and dynamic budgets for each model.
 
 ## Getting started
 
 ### Top-level reasoning option
 
-The AI SDK 7 top-level [`reasoning` option](/docs/ai-gateway/models-and-providers/reasoning#reasoning-levels) works across Gemini models without provider-specific configuration. On Gemini 3 and later it maps to `thinkingLevel`; on Gemini 2.5 it maps to a thinking budget sized as a percentage of the model's maximum output tokens:
+The AI SDK 7 top-level [`reasoning` option](/docs/ai-gateway/models-and-providers/reasoning#reasoning-levels) works across Gemini models without provider-specific configuration. On Gemini 3 and later it maps to `thinkingLevel`; on Gemini 2.5, AI Gateway maps effort to a thinking-token budget:
 
 ```typescript filename="top-level-reasoning.ts"
 import { generateText } from 'ai';
@@ -99,55 +94,7 @@ Use `providerOptions` when you need an exact `thinkingBudget`, `includeThoughts`
 
 ### Gemma 4 models
 
-Gemma 4 models support reasoning through `chat_template_kwargs`. Pass `enable_thinking: true` in the provider options for the provider serving the model (such as `parasail` or `novita`):
-
-#### AI SDK 7
-
-```typescript filename="gemma-4-thinking.ts"
-import { streamText } from 'ai';
-
-const result = streamText({
-  model: 'google/gemma-4-31b-it',
-  prompt: 'Tell me the history of the San Francisco Mission-style burrito.',
-  providerOptions: {
-    parasail: {
-      chat_template_kwargs: { enable_thinking: true },
-    },
-  },
-});
-
-for await (const part of result.stream) {
-  if (part.type === 'reasoning-delta') {
-    process.stdout.write(part.text);
-  } else if (part.type === 'text-delta') {
-    process.stdout.write(part.text);
-  }
-}
-```
-
-#### AI SDK 6
-
-```typescript filename="gemma-4-thinking.ts"
-import { streamText } from 'ai';
-
-const result = streamText({
-  model: 'google/gemma-4-31b-it',
-  prompt: 'Tell me the history of the San Francisco Mission-style burrito.',
-  providerOptions: {
-    parasail: {
-      chat_template_kwargs: { enable_thinking: true },
-    },
-  },
-});
-
-for await (const part of result.fullStream) {
-  if (part.type === 'reasoning-delta') {
-    process.stdout.write(part.text);
-  } else if (part.type === 'text-delta') {
-    process.stdout.write(part.text);
-  }
-}
-```
+Check the [catalog](/docs/ai-gateway/models-and-providers/reasoning#discover-model-reasoning-support) and the serving provider before configuring Gemma reasoning. The model's `reasoning` tag alone doesn't establish support for `chat_template_kwargs` or guarantee reasoning deltas. AI Gateway's shared reasoning translation currently treats Gemma as unsupported. For native provider options, verify both successful stream completion and reasoning output before relying on them.
 
 ### Gemini 3 and later models
 
@@ -269,7 +216,6 @@ const openai = new OpenAI({
   baseURL: 'https://ai-gateway.vercel.sh/v1',
 });
 
-// @ts-expect-error - reasoning parameter not yet in OpenAI types
 const completion = await openai.chat.completions.create({
   model: 'google/gemini-3.6-flash',
   messages: [
@@ -278,12 +224,19 @@ const completion = await openai.chat.completions.create({
       content: 'What is the sum of the first 10 prime numbers?',
     },
   ],
-  reasoning: {
-    effort: 'high',
+  // AI Gateway extension fields are not included in the upstream SDK types.
+  ...{
+    reasoning: {
+      effort: 'high',
+    },
   },
 });
 
-console.log('Reasoning:', completion.choices[0].message.reasoning);
+const message = completion.choices[0].message;
+console.log(
+  'Reasoning:',
+  'reasoning' in message ? message.reasoning : undefined,
+);
 console.log('Answer:', completion.choices[0].message.content);
 ```
 
@@ -341,10 +294,7 @@ curl https://ai-gateway.vercel.sh/v1/chat/completions \
 
 ### Gemma 4 thinking config
 
-| Parameter                              | Type    | Description                                            |
-| -------------------------------------- | ------- | ------------------------------------------------------ |
-| `chat_template_kwargs`                 | object  | Template arguments passed to the model's chat template |
-| `chat_template_kwargs.enable_thinking` | boolean | Set to `true` to enable the model's reasoning mode     |
+Native `chat_template_kwargs` support depends on the serving provider. See [Gemma 4 models](#gemma-4-models) before using this configuration; it isn't a shared AI Gateway reasoning control.
 
 ### Gemini 3 and later thinking config
 

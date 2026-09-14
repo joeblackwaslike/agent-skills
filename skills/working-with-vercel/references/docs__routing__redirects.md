@@ -16,8 +16,8 @@ related:
 summary: "Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/redirects.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "a6b3ba9efa8aa7144e865899c71f9e6f931d3630b9f9133e859cf70271fe4217"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "92fb35b152c0a051d0bb0f073604137c2ec43e214b161003c04a5aa7753ce9c5"
 ---
 
 # Redirects
@@ -32,10 +32,10 @@ Redirects are rules that instruct Vercel to send users to a different URL than t
 
 - [How can I increase the limit of redirects or use dynamic redirects on Vercel?](https://vercel.com/kb/guide/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Instructions on how to use Serverless Functions to handle redirects on Vercel.
 - [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
-- [Does Vercel support permanent redirects?](https://vercel.com/kb/guide/does-vercel-support-permanent-redirects?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Information on Vercel's support for permanent redirects.
 - [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
 - [How to handle redirects in Next.js](https://nextjs.org/docs/pages/guides/redirecting?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Learn the different ways to handle redirects in Next.js.
 - [redirects](https://nextjs.org/docs/pages/api-reference/config/next-config-js/redirects?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Add redirects to your Next.js app.
+- [redirects](https://nextjs.org/docs/app/api-reference/config/next-config-js/redirects?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Add redirects to your Next.js app.
 - [Rewrites on Vercel](https://vercel.com/docs/routing/rewrites?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Learn how to use rewrites to send users to different URLs without modifying the visible URL.
 - [Incremental Migration to Vercel](https://vercel.com/docs/incremental-migration?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Learn how to migrate your app or website to Vercel with minimal risk and high impact.
 - [vercel redirects](https://vercel.com/docs/cli/redirects?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Learn how to manage project-level redirects using the vercel redirects CLI command.

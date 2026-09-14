@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "666c662e0a81f5f2867380934dbce1c9f83bc5bc111aba17f0e3855958a43098"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "daae654b7b4081f82fe5818eed97839b4347a92b9e57547e3f4c81700318eab4"
 ---
 
 # Community Providers
@@ -33,7 +33,6 @@ Here are the community providers that implement the Language Model Specification
   - [Deepgram](/providers/ai-sdk-providers/deepgram)
   - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
   - [Gladia](/providers/ai-sdk-providers/gladia)
-  - [LMNT](/providers/ai-sdk-providers/lmnt)
   - [Google](/providers/ai-sdk-providers/google)
   - [Hume](/providers/ai-sdk-providers/hume)
   - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
@@ -72,6 +71,7 @@ Here are the community providers that implement the Language Model Specification
   - [Cline](/providers/ai-sdk-harnesses/cline)
   - [Cursor](/providers/ai-sdk-harnesses/cursor)
   - [fx](/providers/ai-sdk-harnesses/fx)
+  - [GitHub Copilot](/providers/ai-sdk-harnesses/github-copilot)
 - [Observability Integrations](/providers/observability)
   - [Arize AX](/providers/observability/arize-ax)
   - [Axiom](/providers/observability/axiom)
@@ -101,7 +101,6 @@ Here are the community providers that implement the Language Model Specification
   - [Clarifai](/providers/openai-compatible-providers/clarifai)
   - [Heroku](/providers/openai-compatible-providers/heroku)
   - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)
-  - [Synthorai](/providers/openai-compatible-providers/synthorai)
 - [Community Providers](/providers/community-providers)
   - [Writing a Custom Provider](/providers/community-providers/custom-providers)
   - [A2A](/providers/community-providers/a2a)
@@ -160,6 +159,7 @@ Here are the community providers that implement the Language Model Specification
   - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
   - [QVAC](/providers/community-providers/qvac)
   - [Interfaze](/providers/community-providers/interfaze)
+  - [Telnyx](/providers/community-providers/telnyx)
   - [Flowise](/providers/community-providers/flowise)
 - [Adapters](/providers/adapters)
   - [LangChain](/providers/adapters/langchain)

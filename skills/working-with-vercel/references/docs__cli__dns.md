@@ -12,8 +12,8 @@ related:
 summary: Learn how to manage your DNS records for your domains using the vercel dns CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/dns.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "b5629d5c3d83fd5c1316e8651172066171a9f3b108e33779a41ecbc8e41a2d5d"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "4ed238912fde5a66f91b878d878629248b1802638ba25525fce6971d84521b66"
 ---
 
 # vercel dns
@@ -31,8 +31,8 @@ The `vercel dns` command manages DNS records for domains: list, inspect, add, up
 - [vercel domains](https://vercel.com/docs/cli/domains?from=related&source_path=%2Fdocs%2Fcli%2Fdns&source_site=vercel-docs&relationship=related) — Learn how to buy, sell, transfer, and manage your domains using the vercel domains CLI command.
 - [Working with DNS](https://vercel.com/docs/domains/working-with-dns?from=related&source_path=%2Fdocs%2Fcli%2Fdns&source_site=vercel-docs&relationship=related) — Learn how DNS works in order to properly configure your domain.
 - [vercel certs](https://vercel.com/docs/cli/certs?from=related&source_path=%2Fdocs%2Fcli%2Fdns&source_site=vercel-docs&relationship=related) — Learn how to manage certificates for your domains using the vercel certs CLI command.
-- [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records?from=related&source_path=%2Fdocs%2Fcli%2Fdns&source_site=vercel-docs&relationship=related) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
 - [Update an existing DNS record](https://vercel.com/docs/rest-api/dns/update-an-existing-dns-record?from=related&source_path=%2Fdocs%2Fcli%2Fdns&source_site=vercel-docs&relationship=related) — PATCH /v1/domains/records/{recordId} — Updates an existing DNS record for a domain name.
+- [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fdns&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 
 Full cross-link map for this page: [/docs/cli/dns.graph.md](/docs/cli/dns.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fdns&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -16,8 +16,8 @@ related:
 summary: Use runtime logs to debug and monitor your Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/logs.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "abdfcc79950777385e247c06fcac0b5cb13fc40d2db29ba0ce22903431fa858a"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "dffad017697f36d7616f68aa80a76ebfedc7e0fa6a9d565d37df5711185f4402"
 ---
 
 # Vercel Function Logs
@@ -40,7 +40,6 @@ Vercel Functions allow you to debug and monitor your functions using runtime log
 - [Get logs for a deployment](https://vercel.com/docs/rest-api/logs/get-logs-for-a-deployment?from=related&source_path=%2Fdocs%2Ffunctions%2Flogs&source_site=vercel-docs&relationship=related) — GET /v1/projects/{projectId}/deployments/{deploymentId}/runtime-logs — Returns a stream of logs for a given deployment.
 - [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Ffunctions%2Flogs&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
 - [Container Images](https://vercel.com/docs/functions/container-images?from=related&source_path=%2Fdocs%2Ffunctions%2Flogs&source_site=vercel-docs&relationship=related) — Deploy OCI container images with a Dockerfile or Containerfile on Vercel Functions.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Ffunctions%2Flogs&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/functions/logs.graph.md](/docs/functions/logs.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Flogs&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -13,8 +13,8 @@ related:
 summary: Let AI investigate your error alerts to help you debug faster
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/investigation.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "87e57ed6d0cb541d5197d9f40666acceb444832e505d8bfbc2a4ad8ed09b13fe"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "d0199d1f508708981056445c679978e34d9204ec74a1bdc3f9f9a23ec34a525b"
 ---
 
 # Investigation
@@ -38,14 +38,15 @@ When you get an anomaly alert, Vercel Agent can investigate your logs and metric
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related&source_path=%2Fdocs%2Fagent%2Finvestigation&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Fagent%2Finvestigation&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related&source_path=%2Fdocs%2Fagent%2Finvestigation&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
-- [Installation](https://vercel.com/docs/agent/installation?from=related&source_path=%2Fdocs%2Fagent%2Finvestigation&source_site=vercel-docs&relationship=related) — Let AI automatically install Web Analytics and Speed Insights in your app
 - [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fagent%2Finvestigation&source_site=vercel-docs&relationship=related) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
-- [Managing Code Reviews](https://vercel.com/docs/agent/pr-review/usage?from=related&source_path=%2Fdocs%2Fagent%2Finvestigation&source_site=vercel-docs&relationship=related) — Customize which repositories get reviewed and track your review metrics and spending.
+- [Installation](https://vercel.com/docs/agent/installation?from=related&source_path=%2Fdocs%2Fagent%2Finvestigation&source_site=vercel-docs&relationship=related) — Let AI automatically install Web Analytics and Speed Insights in your app
 
 Full cross-link map for this page: [/docs/agent/investigation.graph.md](/docs/agent/investigation.graph.md?from=related&source_path=%2Fdocs%2Fagent%2Finvestigation&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-Vercel Agent starts investigations automatically when an alert fires. It checks patterns in your data, identifies what changed, and shows what might be causing the issue.
+## Eligible alerts for automatic investigation
+
+Vercel Agent automatically investigates Medium and High anomaly alerts. Low-severity alerts do not start automatic investigations. Alert rule severity settings control notifications and do not affect investigation eligibility.
 
 ## Getting started with Vercel Agent Investigation
 
@@ -54,7 +55,7 @@ Before you use Vercel Agent Investigation, make sure your team has:
 1. An [Observability Plus](/docs/observability/observability-plus) subscription. It includes 10 alert investigations per billing cycle by default
 2. Vercel Agent billing enabled for investigations beyond the included usage
 
-To run investigations **automatically for every alert**, [enable Vercel Agent Investigations](#enable-vercel-agent-investigations) for your team.
+To run investigations automatically for [eligible](#eligible-alerts-for-automatic-investigation) alerts, [enable Vercel Agent Investigations](#enable-vercel-agent-investigations) for your team.
 
 You can [run an investigation manually](#run-an-investigation-manually) if you want to investigate an alert that has already fired.
 
@@ -62,17 +63,18 @@ You can [run an investigation manually](#run-an-investigation-manually) if you w
 
 ### Enable Vercel Agent Investigations
 
-To run investigations automatically for every alert, enable Vercel Agent Investigations in your team's settings:
+To run investigations automatically for [eligible](#eligible-alerts-for-automatic-investigation) alerts, enable Vercel Agent Investigations in your team's settings:
 
 1. Go to your team's [Settings](https://vercel.com/d?to=%2Fteams%2F%5Bteam%5D%2Fsettings\&title=Go+to+Settings\&personalTo=%2Faccount) page.
 2. In the **General** section, find **Vercel Agent** and under **Investigations**, switch the toggle to **Enabled**.
-3. Select **Save** to confirm your changes.
+3. Under **Projects to Investigate**, choose **All projects** or **Specific projects**. If you choose **Specific projects**, select the projects that Vercel Agent should investigate.
+4. Select **Save** to confirm your changes.
 
-After you enable Vercel Agent Investigations, Vercel Agent runs an investigation automatically when an alert fires. Make sure your team has Vercel Agent billing enabled for investigations beyond the included usage.
+After you enable Vercel Agent Investigations, Vercel Agent runs an investigation automatically for [eligible](#eligible-alerts-for-automatic-investigation) alerts. Make sure your team has Vercel Agent billing enabled for investigations beyond the included usage.
 
 ## How to use Vercel Agent Investigation
 
-When you [enable Vercel Agent Investigations](#enable-vercel-agent-investigations), Vercel Agent runs an investigation automatically when an alert fires. It queries your logs and metrics around the time of the alert, looks for patterns that might explain the issue, checks for related errors or anomalies, and summarizes what it found.
+When you [enable Vercel Agent Investigations](#enable-vercel-agent-investigations), Vercel Agent runs an investigation automatically for [eligible](#eligible-alerts-for-automatic-investigation) alerts. It queries your logs and metrics around the time of the alert, looks for patterns that might explain the issue, checks for related errors or anomalies, and summarizes what it found.
 
 To view an investigation:
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/huggingface.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "2440e27818d02608e49a0f76a0359a292a54219203c580298f32ba0250e45153"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "67cf60a4d1c2daebb8e035df9dd97f5814b32905c1ac371454df4abbec28a180"
 ---
 
 # Hugging Face Provider
@@ -249,7 +249,6 @@ You can also pass image URLs:
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
-- [LMNT](/providers/ai-sdk-providers/lmnt)
 - [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)

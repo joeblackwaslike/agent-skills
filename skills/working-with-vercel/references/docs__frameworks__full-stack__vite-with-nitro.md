@@ -17,8 +17,8 @@ related:
 summary: Add a backend to any Vite app with Nitro and deploy to Vercel with zero configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/vite-with-nitro.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "244bbe01a813fdc1e1c006f1872cf5bf8dcf64f3168d959782ebd6d50fbf3969"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "044ceda32f53d4c6a08bb8b4088055d64104bf8143f08b09dc901e8a2c96c87f"
 ---
 
 # Vite + Nitro on Vercel
@@ -39,7 +39,6 @@ sha256: "244bbe01a813fdc1e1c006f1872cf5bf8dcf64f3168d959782ebd6d50fbf3969"
 - [How to migrate from Vite to Next.js](https://nextjs.org/docs/pages/guides/migrating/from-vite?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fvite-with-nitro&source_site=vercel-docs&relationship=related) — Learn how to migrate your existing React application from Vite to Next.js.
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fvite-with-nitro&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 - [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fvite-with-nitro&source_site=vercel-docs&relationship=related) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fvite-with-nitro&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/frameworks/full-stack/vite-with-nitro.graph.md](/docs/frameworks/full-stack/vite-with-nitro.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fvite-with-nitro&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

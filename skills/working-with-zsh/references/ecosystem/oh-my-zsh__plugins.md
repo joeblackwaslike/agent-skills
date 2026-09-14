@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/wiki/ohmyzsh/ohmyzsh/Plugins.md"
-fetched_at: "2026-06-16T09:07:15.812Z"
-sha256: "e584c74904e068fe47fc8f034fc4fadf3b6dced7d8948da77d6528f348ec8d82"
+fetched_at: "2026-09-14T09:50:30.563Z"
+sha256: "c98ee463d35ea01db70cf149321530156823b91fe5203e409420d4c2a34200af"
 ---
 
 <!-- prettier-ignore-start -->
@@ -383,8 +383,10 @@ plugins=(rails git ruby)
 - [zbell](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/zbell): this plugin prints a bell character when a command finishes if it has been running for longer than a specified duration.
 - [zeus](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/zeus): [Zeus](https://github.com/burke/zeus) preloads your Rails environment and forks that process whenever needed. This effectively speeds up Rails' boot process to under 1 sec. This plugin adds autocompletion for zeus and aliases for common usage.
 - [zoxide](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/zoxide): initializes [zoxide](https://github.com/ajeetdsouza/zoxide), a smarter cd command for your terminal.
+- [zsh-autosuggestions](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/zsh-autosuggestions): this plugin suggests commands as you type, based on command history and completions.
 - [zsh-interactive-cd](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/zsh-interactive-cd): this plugin provides an interactive way to change directories in zsh using fzf.
 - [zsh-navigation-tools](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/zsh-navigation-tools): set of tools like `n-history` – multi-word history searcher, `n-cd` – directory bookmark manager, `n-kill` – `htop` like kill utility, and more. Based on `n-list`, a tool generating selectable curses-based list of elements that has access to current `Zsh` session, i.e. has broad capabilities to work together with it. Feature highlights include incremental multi-word searching, approximate matching, ANSI coloring, themes, unique mode, horizontal scroll, grepping, advanced history management and various integrations with `Zsh`.
+- [zsh-syntax-highlighting](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/zsh-syntax-highlighting): this plugin enables Fish-like syntax highlighting for commands as they are typed at a zsh prompt.
 
 ### Removed
 

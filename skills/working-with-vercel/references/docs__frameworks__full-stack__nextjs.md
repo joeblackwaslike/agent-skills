@@ -17,8 +17,8 @@ related:
 summary: Vercel is the native Next.js platform, designed to enhance the Next.js experience.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/nextjs.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "8fb249105d097cbaddc94b4ae63c8a558618b01a620111ba36a43e99157389fe"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "20404c8ca9f5f1facf870099e7864ffc3fe3bf6d8424656fb2720f3e06fe7c5b"
 ---
 
 # Next.js on Vercel
@@ -38,11 +38,11 @@ sha256: "8fb249105d097cbaddc94b4ae63c8a558618b01a620111ba36a43e99157389fe"
 - [Next.js on Vercel vs Cloudflare](https://vercel.com/kb/guide/next-js-on-vercel-vs-cloudflare?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=related) — Compare running Next.js on Vercel Functions with Fluid compute against Cloudflare Workers with the OpenNext Cloudflare a
 - [Next.js on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/next-js-on-vercel-vs-webflow-cloud?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=related) — Compare running Next.js on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Ne
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
+- [Fetching Data](https://nextjs.org/docs/app/getting-started/fetching-data?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=related) — Learn how to fetch data and stream content that depends on data.
 - [opengraph-image and twitter-image](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=related) — API Reference for the Open Graph Image and Twitter Image file conventions.
-- [Introducing OG Image Generation: Fast, dynamic social card images at the Edge](https://vercel.com/blog/introducing-vercel-og-image-generation-fast-dynamic-social-card-images?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=related)
+- [OG Image Generation Examples](https://vercel.com/docs/og-image-generation/examples?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=related) — Learn how to use the @vercel/og library with examples.
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
-- [Data Cache for Next.js](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
-- [vercel dev](https://vercel.com/docs/cli/dev?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
+- [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=related) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
 
 Full cross-link map for this page: [/docs/frameworks/full-stack/nextjs.graph.md](/docs/frameworks/full-stack/nextjs.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -51,14 +51,14 @@ While Next.js works when self-hosting, deploying to Vercel is zero-configuration
 
 ## Getting started
 
-To get started with  on Vercel:
+To get started with Next.js on Vercel:
 
-- If you already have a project with , install [Vercel CLI](/docs/cli) and run the vercel command from your project's root directory
-- Clone one of our  example repos to your favorite git provider and deploy it on Vercel with the button below:
+- If you already have a project with Next.js, install [Vercel CLI](/docs/cli) and run the vercel command from your project's root directory
+- Clone one of our Next.js example repos to your favorite git provider and deploy it on Vercel with the button below:
 
 \- Or, choose a template from Vercel's marketplace:
 
-Vercel deployments can \[integrate with your git provider]\(/docs/git) to \[generate preview URLs]\(/docs/deployments/environments#preview-environment-pre-production) for each pull request you make to your  project.
+Vercel deployments can \[integrate with your git provider]\(/docs/git) to \[generate preview URLs]\(/docs/deployments/environments#preview-environment-pre-production) for each pull request you make to your Next.js project.
 
 ## Incremental Static Regeneration
 
@@ -260,6 +260,8 @@ When a user visits a route:
 
 This approach is useful for pages like dashboards, where unique, per-request data coexists with static elements such as sidebars or layouts. For example, this page caches its product list into the static shell with `use cache`, and streams the personalized greeting in at request time:
 
+**app/page.tsx**
+
 ```tsx filename="app/page.tsx" framework=nextjs
 import { Suspense } from 'react';
 import { cacheTag } from 'next/cache';
@@ -304,6 +306,8 @@ export default function Page() {
   );
 }
 ```
+
+**app/page.js**
 
 ```jsx filename="app/page.js" framework=nextjs
 import { Suspense } from 'react';
@@ -1016,8 +1020,7 @@ Learn more about deploying Next.js projects on Vercel with the following resourc
 - [Next.js with Stripe Checkout and Typescript](/kb/guide/getting-started-with-nextjs-typescript-stripe)
 - [Next.js with Magic.link](/kb/guide/add-auth-to-nextjs-with-magic)
 - [Generate a sitemap with Next.js](/kb/guide/how-do-i-generate-a-sitemap-for-my-nextjs-app-on-vercel)
-- [Next.js ecommerce with Shopify](/kb/guide/deploying-locally-built-nextjs)
-- [Deploy a locally built Next.js app](/kb/guide/deploying-locally-built-nextjs)
+- [Deploy a locally built Next.js app](/docs/cli/deploying-from-cli#deploying-from-local-build-prebuilt)
 - [Deploying Next.js to Vercel](https://www.youtube.com/watch?v=AiiGjB2AxqA)
 - [Learn about combining static and dynamic rendering on the same page in Next.js 14](https://www.youtube.com/watch?v=wv7w_Zx-FMU)
 - [Learn about suspense boundaries and streaming when loading your UI](https://nextjs.org/docs/app/api-reference/file-conventions/loading)

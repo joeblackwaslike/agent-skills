@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/advanced/caching.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "a9d70125f9c42aa6a1c04d4f54814f9d67f4ddeaebdad915cdb98f16a2372efa"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "d44ff9d94e7fa9a17f9a66770767a0ab727ad76598dadafc57b1d046cd1f5efb"
 ---
 
 # Caching Responses
@@ -109,6 +109,13 @@ export const cacheMiddleware: LanguageModelV4Middleware = {
 <Note>
   This example uses `@upstash/redis` to store and retrieve the assistant's
   responses but you can use any KV storage provider you would like.
+</Note>
+
+<Note>
+  This middleware caches the raw model response before AI SDK validates
+  structured output. When using structured output, cache only a response that
+  has passed your schema validation; otherwise, an invalid response can be
+  replayed from the cache on later requests.
 </Note>
 
 `LanguageModelV4Middleware` has two methods: `wrapGenerate` and `wrapStream`. `wrapGenerate` is called when using [`generateText`](/docs/reference/ai-sdk-core/generate-text), while `wrapStream` is called when using [`streamText`](/docs/reference/ai-sdk-core/stream-text).

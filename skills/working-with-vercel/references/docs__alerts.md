@@ -16,8 +16,8 @@ related:
 summary: "Get notified when something's wrong with your Vercel projects. Set up alerts through Slack, webhooks, or email so you can fix issues quickly."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/alerts.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "56993b105c7050d039c705fbb4839485f826034d362f6ac327c8ca20e6980548"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "065e71751f802ebcfb7a390de99b1e14e18a1dbb3cc06408572d3e989af1444c"
 ---
 
 # Alerts
@@ -43,7 +43,7 @@ Alerts let you know when something's wrong with your Vercel projects, like a spi
 - [Notifications](https://vercel.com/docs/notifications?from=related&source_path=%2Fdocs%2Falerts&source_site=vercel-docs&relationship=related) — Learn how to use Notifications to view and manage important alerts about your deployments, domains, integrations, accoun
 - [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability?from=related&source_path=%2Fdocs%2Falerts&source_site=vercel-docs&relationship=related) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 - [Glossary](https://vercel.com/docs/glossary?from=related&source_path=%2Fdocs%2Falerts&source_site=vercel-docs&relationship=related) — Learn about the terms and concepts used in Vercel's products and documentation.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Falerts&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
+- [Webhooks API Reference](https://vercel.com/docs/webhooks/webhooks-api?from=related&source_path=%2Fdocs%2Falerts&source_site=vercel-docs&relationship=related) — Vercel Integrations allow you to subscribe to certain trigger-based events through webhooks. Learn about the supported w
 
 Full cross-link map for this page: [/docs/alerts.graph.md](/docs/alerts.graph.md?from=related&source_path=%2Fdocs%2Falerts&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -84,9 +84,9 @@ Use [Configure alerts](/docs/alerts/configure-alerts) to create built-in alert r
 
 ## Investigate alerts with AI
 
-When you get an alert, [Agent Investigation](/docs/agent/investigation) can run on its own to help you debug. Instead of digging through logs and metrics yourself, AI analyzes what's happening and displays highlights of the anomaly in your dashboard.
+When you get an [eligible](/docs/agent/investigation#eligible-alerts-for-automatic-investigation) Medium or High anomaly alert, [Vercel Agent Investigation](/docs/agent/investigation) can run automatically. Low-severity alerts do not start automatic investigations.
 
-When you view an alert in the dashboard, you can click **Enable Auto Run** to trigger an investigation. This takes you to the **Agents** section in the sidebar, where you can set up investigations to run on new alerts. You can also click **Rerun** to start a new investigation.
+In the investigation panel, click **Configure Vercel Agent** to manage automatic investigations. You can also run an investigation manually.
 
 Learn more in the [Agent Investigation docs](/docs/agent/investigation).
 

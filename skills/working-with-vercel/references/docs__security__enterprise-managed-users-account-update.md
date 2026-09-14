@@ -15,8 +15,8 @@ related:
 summary: Explains the account update screen EMU members see at SSO sign-in and how to complete it.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/enterprise-managed-users-account-update.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "c3ac0d4cb48edfc1a52ef1ce31036121f1036ac6953a408978fb4d90ece1664c"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "0272dd5bf67c25d0e1658aff5cd1e5aa875e0bad3996dc5bf7ab081634ff0b5f"
 ---
 
 # Transition your Hobby team after EMU enrollment
@@ -36,10 +36,10 @@ Enabling [Enterprise Managed Users](/docs/security/enterprise-managed-users) (EM
 - [September 2020](https://vercel.com/blog/changelog-september-2020?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users-account-update&source_site=vercel-docs&relationship=related)
 - [Projects can now be transferred without downtime](https://vercel.com/changelog/projects-can-now-be-transferred-without-downtime?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users-account-update&source_site=vercel-docs&relationship=related)
 - [Account](https://v0.app/docs/account?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users-account-update&source_site=vercel-docs&relationship=related) — Manage your account and billing information.
-- [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users-account-update&source_site=vercel-docs&relationship=related) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
 - [Account Management](https://vercel.com/docs/accounts?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users-account-update&source_site=vercel-docs&relationship=related) — Learn how to manage your Vercel account and team members.
 - [Transferring a project](https://vercel.com/docs/projects/transferring-projects?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users-account-update&source_site=vercel-docs&relationship=related) — Learn how to transfer a project between Vercel teams.
 - [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users-account-update&source_site=vercel-docs&relationship=related) — Learn how to manage Sign in with Vercel from the Dashboard
+- [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users-account-update&source_site=vercel-docs&relationship=related) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
 - [Managing Global Configs with the Dashboard](https://vercel.com/docs/global-config/global-config-dashboard?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users-account-update&source_site=vercel-docs&relationship=related) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
 
 Full cross-link map for this page: [/docs/security/enterprise-managed-users-account-update.graph.md](/docs/security/enterprise-managed-users-account-update.graph.md?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users-account-update&source_site=vercel-docs&relationship=graph)

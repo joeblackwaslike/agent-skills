@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/transcription.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "ee215ea8ee96e56be88a517063cbab39d94d015ab4fddb0b8bdee7897502e7f9"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "d3ff748daa33b450f3041e05bdb1bf9090606c52f2baeb6d3cdeb4008207eb45"
 ---
 
 # Transcription
@@ -358,6 +358,7 @@ Above are a small subset of the transcription models supported by the AI SDK pro
 - [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
 - [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
+- [Batch](/docs/ai-sdk-core/batch)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)

@@ -16,8 +16,8 @@ related:
 summary: Learn about the different roles available for team members on a Vercel account.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac/access-roles.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "dfd98b061c2cf2f3e6a787b4b923a39721a1ebbfe56924594bef25b2bf88b458"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "d1413ca50acf3c34087130ea580def3f524291c36394256d904f6d87eb1c4045"
 ---
 
 # Access Roles
@@ -40,8 +40,8 @@ Vercel distinguishes between different roles to help manage team members' access
 - [The Complete Guide to Vercel Passport](https://vercel.com/kb/guide/vercel-passport?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=related) — Vercel Passport protects deployments behind your own identity provider, such as Okta or Auth0. Learn how Passport works,
 - [New project access controls for Enterprise customers](https://vercel.com/changelog/new-project-access-controls-for-enterprise-customers?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=related)
 - [Developer role now available for Pro teams](https://vercel.com/changelog/developer-role-now-available-for-pro-teams?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=related)
-- [Enterprise](https://v0.app/docs/enterprise?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=related) — Learn how to manage v0 seats, access, and more in your Vercel Enterprise account.
 - [Access Groups](https://vercel.com/docs/rbac/access-groups?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=related) — Learn how to configure access groups for team members on a Vercel account.
+- [Directory Sync](https://vercel.com/docs/directory-sync?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=related) — Learn how to configure Directory Sync for your Vercel Team.
 
 Full cross-link map for this page: [/docs/rbac/access-roles.graph.md](/docs/rbac/access-roles.graph.md?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

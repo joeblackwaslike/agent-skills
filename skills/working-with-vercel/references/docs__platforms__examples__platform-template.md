@@ -13,8 +13,8 @@ related:
 summary: Build an AI app builder on Vercel with sandboxes, AI Gateway, deployments, and project transfers.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/examples/platform-template.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "8e6645b79e06d7e0324872007cf4651dd2e898dcda59452d0225c1a0663b0b99"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "548b570457a26b1eb7dd7c32037f0a3810e928e6784b10b23cc3b9aca5d54211"
 ---
 
 # Platform Template
@@ -27,16 +27,17 @@ The Platform Template serves as a comprehensive reference for constructing an AI
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Build a v0-style app builder with OpenAI Agents API and Vercel Sandbox](https://vercel.com/kb/guide/v0-clone-openai-agents-vercel-sandbox?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples%2Fplatform-template&source_site=vercel-docs&relationship=related) — Build a chat-to-app workspace with live Next.js previews, follow-up edits, and saved projects using the OpenAI Agents AP
+- [Build an agentic app in FastAPI with OpenAI Agents API and Vercel Sandbox](https://vercel.com/kb/guide/fastapi-openai-agents-api-vercel-sandbox?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples%2Fplatform-template&source_site=vercel-docs&relationship=related) — Learn how to build a repository Q&A app using FastAPI, OpenAI Agents API, and Vercel Sandbox, with isolated code inspect
+- [Ship It](https://eve.dev/docs/tutorial/ship-it?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples%2Fplatform-template&source_site=vercel-docs&relationship=related) — Part 8 of the Build an Agent tutorial. Put a web dashboard on the agent with useEveAgent, replace placeholderAuth, and d
 - [Build with a Nitro starter template](https://vercel.com/kb/guide/build-with-a-nitro-starter-template?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples%2Fplatform-template&source_site=vercel-docs&relationship=related) — Deploy a Nitro app to Vercel from a starter template. Compare the Nitro Starter, route rules, cached HTTP handler, plugi
-- [Introducing the Vercel Platforms Starter Kit](https://vercel.com/blog/platforms-starter-kit?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples%2Fplatform-template&source_site=vercel-docs&relationship=related)
 - [How to ship a NestJS app on Vercel](https://vercel.com/kb/guide/ship-a-nestjs-app-on-vercel?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples%2Fplatform-template&source_site=vercel-docs&relationship=related) — Deploy a NestJS app to Vercel with zero configuration. Learn how to ship from a template, the Nest CLI, or Git, and conf
-- [Run and track deploys from Slack](https://vercel.com/kb/guide/run-and-track-deploys-from-slack?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples%2Fplatform-template&source_site=vercel-docs&relationship=related) — Build a Slack deploy bot with Chat SDK and Vercel Workflows. Dispatch GitHub Actions from a slash command, gate producti
-- [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples%2Fplatform-template&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
+- [Introducing the Vercel Platforms Starter Kit](https://vercel.com/blog/platforms-starter-kit?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples%2Fplatform-template&source_site=vercel-docs&relationship=related)
 - [OSS AI Vibe Coding Platform](https://vercel.com/docs/platforms/examples/oss-coding-agent?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples%2Fplatform-template&source_site=vercel-docs&relationship=related) — Build and deploy your own AI-powered coding platform with Vercel Sandboxes.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples%2Fplatform-template&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples%2Fplatform-template&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 - [Multi-Project Platforms Quickstart](https://vercel.com/docs/platforms/multi-project-platforms/quickstart?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples%2Fplatform-template&source_site=vercel-docs&relationship=related) — Programmatically host code for user-generated or AI-generated applications on Vercel.
 - [Multi-Project Platforms Concepts](https://vercel.com/docs/platforms/multi-project-platforms/concepts?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples%2Fplatform-template&source_site=vercel-docs&relationship=related) — Understand projects, deployments, domains, and architecture for multi-project platforms on Vercel.
+- [Products](https://vercel.com/docs/products?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples%2Fplatform-template&source_site=vercel-docs&relationship=related) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
 
 Full cross-link map for this page: [/docs/platforms/examples/platform-template.graph.md](/docs/platforms/examples/platform-template.graph.md?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples%2Fplatform-template&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

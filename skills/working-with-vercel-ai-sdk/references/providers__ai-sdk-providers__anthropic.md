@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "e512063271134b6a0e52e93d1e69bcf8e47a75d0e09c70ffe7f1065b9115513d"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "c7c83e84cc9dc5f4dfe0c91a6fbf30b8b02f0b803191ebc7ec0772c4f0018ca6"
 ---
 
 # Anthropic Provider
@@ -145,55 +145,19 @@ The following optional provider options are available for Anthropic models:
   Optional. Metadata to include with the request. See the [Anthropic API documentation](https://platform.claude.com/docs/en/api/messages/create) for details.
   - `userId` _string_ - An external identifier for the end-user. Should be a UUID, hash, or other opaque identifier. Must not contain PII.
 
-### Text Batches
+### Batch
 
 <Note type="warning">
-  Text batch support is experimental and the API may change in patch releases.
+  Batch support is experimental and the API may change in patch releases.
 </Note>
 
 Anthropic language models support asynchronous text generation through the
 [Message Batches API](https://platform.claude.com/docs/en/build-with-claude/batch-processing).
-Use the experimental text batch APIs to start a batch, poll its status, and
-stream its results:
+Pass the Anthropic provider to the AI SDK's [Batch](/docs/ai-sdk-core/batch)
+API for the complete workflow, including polling, persistence, and result handling.
 
-```ts
-import { anthropic } from '@ai-sdk/anthropic';
-import {
-  experimental_getBatchResults as getBatchResults,
-  experimental_getBatchStatus as getBatchStatus,
-  experimental_startTextBatch as startTextBatch,
-} from 'ai';
-import { setTimeout } from 'node:timers/promises';
-
-const model = anthropic('claude-haiku-4-5');
-
-const batch = await startTextBatch({
-  model,
-  requests: [
-    { id: 'capital-france', prompt: 'What is the capital of France?' },
-    { id: 'capital-germany', prompt: 'What is the capital of Germany?' },
-  ],
-});
-
-let status = batch.status;
-while (status === 'pending') {
-  await setTimeout(60_000);
-  ({ status } = await getBatchStatus({ model, batch }));
-}
-
-for await (const item of getBatchResults({ model, batch })) {
-  if (item.status === 'succeeded') {
-    console.log(item.id, item.text);
-  } else {
-    console.error(item.id, item.error);
-  }
-}
-```
-
-`startTextBatch` returns a serializable batch reference. Persist this reference
-to check the batch status or retrieve its results from another process. Results
-can arrive in a different order from the input requests, so match each result by
-its `id`.
+Each request specifies its `type` and `model`. Anthropic supports using
+different text models within the same batch.
 
 #### Batch Limitations
 
@@ -520,12 +484,13 @@ const result = streamText({
 ##### Thinking Binding Controls
 
 Fable 5.1 can recover from a thinking-block prefix mismatch by dropping the
-mismatched block. Set `blockBinding.prefixMismatchBehavior` to `drop_block`.
-You can provide block binding by itself to preserve the model's default
-thinking mode, or combine it with adaptive thinking.
+mismatched block. Set `blockBinding.prefixMismatchBehavior` to `drop_block`, or
+set it to `error` to reject the request. You can provide block binding by itself
+to preserve the model's default thinking mode, or combine it with adaptive
+thinking.
 
 ```ts highlight="7-11"
-const { text } = await generateText({
+const result = await generateText({
   model: anthropic('claude-fable-5-1'),
   prompt: 'Continue from this conversation.',
   providerOptions: {
@@ -538,7 +503,13 @@ const { text } = await generateText({
     } satisfies AnthropicLanguageModelOptions,
   },
 });
+
+console.log(result.providerMetadata?.anthropic?.inputTransformations);
 ```
+
+Dropped blocks are reported in
+`providerMetadata.anthropic.inputTransformations` with their `type`, `path`, and
+`reason`.
 
 #### Budget-Based Thinking
 
@@ -1908,7 +1879,6 @@ and the `mediaType` should be set to `'application/pdf'`.
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
-- [LMNT](/providers/ai-sdk-providers/lmnt)
 - [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)

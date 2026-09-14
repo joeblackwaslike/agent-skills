@@ -16,8 +16,8 @@ related:
 summary: Learn how to search, inspect, and share your runtime logs with the Logs tab.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/logs/runtime.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "1ccda0b981e68f95b6f64133d7fe86ce122d07802f445abb019261d4c15aa38e"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "859da1b043205d6353799ed12423f5fc5f029b23af8ed9fa50bd92b1ed7b1a1d"
 ---
 
 # Runtime Logs
@@ -38,11 +38,11 @@ The **Logs** section in the sidebar allows you to view, search, inspect, and [sh
 - [Function start type now available in Runtime Logs](https://vercel.com/changelog/function-start-type-now-available-in-runtime-logs?from=related&source_path=%2Fdocs%2Flogs%2Fruntime&source_site=vercel-docs&relationship=related)
 - [Improved streaming runtime logs exports](https://vercel.com/changelog/improved-streaming-runtime-logs-exports?from=related&source_path=%2Fdocs%2Flogs%2Fruntime&source_site=vercel-docs&relationship=related)
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related&source_path=%2Fdocs%2Flogs%2Fruntime&source_site=vercel-docs&relationship=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
-- [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related&source_path=%2Fdocs%2Flogs%2Fruntime&source_site=vercel-docs&relationship=related) — Learn how to debug how Vercel decides where to route your request
 - [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel?from=related&source_path=%2Fdocs%2Flogs%2Fruntime&source_site=vercel-docs&relationship=related) — Migrate containers from AWS to Vercel: deploy with Dockerfile.vercel, keep RDS, S3, and SQS in AWS over OIDC, and cut ov
 - [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute?from=related&source_path=%2Fdocs%2Flogs%2Fruntime&source_site=vercel-docs&relationship=related) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
 - [Build a Weather API on Vercel: Express, FastAPI, and Nitro](https://vercel.com/kb/guide/weather-api-with-fastapi?from=related&source_path=%2Fdocs%2Flogs%2Fruntime&source_site=vercel-docs&relationship=related) — Build a weather API on Vercel with FastAPI, Express, or Nitro. Compare the three runtimes, add caching and Observability
-- [Logs](https://vercel.com/docs/ai-gateway/observability-and-spend/logs?from=related&source_path=%2Fdocs%2Flogs%2Fruntime&source_site=vercel-docs&relationship=related) — Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the resu
+- [Vercel Function Logs](https://vercel.com/docs/functions/logs?from=related&source_path=%2Fdocs%2Flogs%2Fruntime&source_site=vercel-docs&relationship=related) — Use runtime logs to debug and monitor your Vercel Functions.
+- [AI Gateway Request Logs](https://vercel.com/docs/ai-gateway/observability-and-spend/logs?from=related&source_path=%2Fdocs%2Flogs%2Fruntime&source_site=vercel-docs&relationship=related) — Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the resu
 - [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Flogs%2Fruntime&source_site=vercel-docs&relationship=related) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 
 Full cross-link map for this page: [/docs/logs/runtime.graph.md](/docs/logs/runtime.graph.md?from=related&source_path=%2Fdocs%2Flogs%2Fruntime&source_site=vercel-docs&relationship=graph)

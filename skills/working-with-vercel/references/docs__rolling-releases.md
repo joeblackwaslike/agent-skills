@@ -16,8 +16,8 @@ related:
 summary: Learn how to use Rolling Releases for more cautious deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rolling-releases.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "875e6559660fe73fd1703d54767abcfdadd7981bf249ad2e00e0be1b2099f9a2"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "5743c7e39cb5d4cc8e1e21bc7dd3c899d13aa1e1e31a6508fac71cb14b503594"
 ---
 
 # Rolling Releases
@@ -35,9 +35,9 @@ Rolling Releases allow you to roll out new deployments to a small fraction of yo
 - [Rolling Releases are now generally available](https://vercel.com/changelog/rolling-releases-are-now-generally-available?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=related)
 - [Implementing Blue-Green Deployments on Vercel](https://vercel.com/kb/guide/blue_green_deployments_on_vercel?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=related) — This guide outlines how to implement blue-green deployments on Vercel, leveraging GitHub Actions for seamless and contro
 - [Connection Pooling with Vercel Functions](https://vercel.com/kb/guide/connection-pooling-with-functions?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=related) — Learn best practices for connecting to relational databases with Vercel Functions and Fluid compute
-- [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=related) — Learn how to debug how Vercel decides where to route your request
 - [How to gradually roll out new versions of your backend](https://vercel.com/kb/guide/how-to-gradually-roll-out-new-versions-of-your-backend?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=related) — Incrementally release updates to your backend to minimize impact of mistakes.
 - [Implementing Canary Deployments on Vercel](https://vercel.com/kb/guide/implementing_canary_deployments_on_vercel?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=related) — This guide explains how to set up canary deployments on Vercel, enabling developers to gradually roll out new versions t
+- [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Releasing safe and cost-efficient blue-green deployments](https://vercel.com/blog/releasing-safe-and-cost-efficient-blue-green-deployments?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=related)
 - [Scale to one: How Fluid solves cold starts](https://vercel.com/blog/scale-to-one-how-fluid-solves-cold-starts?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=related)
 - [The real serverless compute to database connection problem, solved](https://vercel.com/blog/the-real-serverless-compute-to-database-connection-problem-solved?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=related)

@@ -16,8 +16,8 @@ related:
 summary: Learn how to use vercel.json to configure and override the default behavior of Vercel from within your project. 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/vercel-json.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "c3a36d732c1ae2a33eaa11d32fdae4fed28bde0e26b53507abe52c77685e1426"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "639de311ecb1014dcfa34a8d9f7d1c7ffb15d466ea8653dc07101e55c3333546"
 ---
 
 # Static Configuration with vercel.json
@@ -880,13 +880,13 @@ https://old-domain.com/page,/new-page,true
 {"source": "https://old-domain.com/page", "destination": "/new-page", "permanent": true}
 ```
 
-> **💡 Note:** Bulk redirects do not work locally while using `vercel dev`
+> **💡 Note:** You can test bulk redirects locally with [`vercel dev`](/docs/cli/dev) when you configure `bulkRedirectsPath` in `vercel.json`.
 
 ### Bulk redirect field definition
 
 | Field                 | Type      | Required | Description                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | --------------------- | --------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `source`              | `string`  | Yes      | An absolute path or fully qualified URL that matches each incoming request (excluding query string). Max 2048 characters.                                                                                                                                                                                                                                                                                                                         |
+| `source`              | `string`  | Yes      | An absolute path or fully qualified URL that matches each incoming request, excluding the query string. The `source` field does not support query parameters. Vercel ignores any query parameters you include in `source`. Max 2048 characters.                                                                                                                                                                                                                                                                                                                         |
 | `destination`         | `string`  | Yes      | A location destination defined as an absolute pathname or external URL. Max 2048 characters.                                                                                                                                                                                                                                                                                                                                                      |
 | `permanent`           | `boolean` | No       | Toggle between permanent ([308](https://developer.mozilla.org/docs/Web/HTTP/Status/308)) and temporary ([307](https://developer.mozilla.org/docs/Web/HTTP/Status/307)) redirect. Default: `false`.                                                                                                                                                                                                                                                |
 | `statusCode`          | `integer` | No       | Specify the exact status code. Can be [301](https://developer.mozilla.org/docs/Web/HTTP/Status/301), [302](https://developer.mozilla.org/docs/Web/HTTP/Status/302), [303](https://developer.mozilla.org/docs/Web/HTTP/Status/303), [307](https://developer.mozilla.org/docs/Web/HTTP/Status/307), or [308](https://developer.mozilla.org/docs/Web/HTTP/Status/308). Overrides permanent when set, otherwise defers to permanent value or default. |

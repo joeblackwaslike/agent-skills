@@ -14,8 +14,8 @@ related:
 summary: Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control (RBAC).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "e06a474756452c4993195e560cd16a6b115f38bf8a6748356ed28cca85da4d74"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "84a6a97a04d45acd759c751ebc486bbceed61bec8893f8bc1c757dba13e4b128"
 ---
 
 # Role-based access control (RBAC)
@@ -36,7 +36,7 @@ Teams consist of members, and each member of a team can get assigned a role. The
 - [Directory Sync](https://vercel.com/docs/directory-sync?from=related&source_path=%2Fdocs%2Frbac&source_site=vercel-docs&relationship=related) — Learn how to configure Directory Sync for your Vercel Team.
 - [Scopes and Permissions](https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions?from=related&source_path=%2Fdocs%2Frbac&source_site=vercel-docs&relationship=related) — Learn how to manage scopes and permissions for Sign in with Vercel
 - [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication?from=related&source_path=%2Fdocs%2Frbac&source_site=vercel-docs&relationship=related) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
-- [Restricting Git Connections to a single Vercel team](https://vercel.com/docs/protected-git-scopes?from=related&source_path=%2Fdocs%2Frbac&source_site=vercel-docs&relationship=related) — Information to stop developers from deploying their repositories to a personal Vercel account by using Protected Git Sco
+- [List access groups for a team, project or member](https://vercel.com/docs/rest-api/access-groups/list-access-groups-for-a-team-project-or-member?from=related&source_path=%2Fdocs%2Frbac&source_site=vercel-docs&relationship=related) — GET /v1/access-groups — List access groups
 
 Full cross-link map for this page: [/docs/rbac.graph.md](/docs/rbac.graph.md?from=related&source_path=%2Fdocs%2Frbac&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

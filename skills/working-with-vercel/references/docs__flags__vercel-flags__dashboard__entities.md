@@ -16,8 +16,8 @@ related:
 summary: Define entities and their attributes for precise feature flag targeting.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/entities.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "9029f61ff864ee0b5381671b61db7913be86eae5a1424b86e6ee358b03875c1f"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "17e5e3c0b7e5e05e0590581b7720036b77f3917f7f69d27a85af1c1a97c41c31"
 ---
 
 # Entities
@@ -38,7 +38,6 @@ Entities represent the things your application knows about: users, teams, device
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fentities&source_site=vercel-docs&relationship=related)
 - [Evaluation Context](https://flags-sdk.dev/docs/frameworks/sveltekit/evaluation-context?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fentities&source_site=vercel-docs&relationship=related) — Segment by any criteria, using an evaluation context
 - [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fentities&source_site=vercel-docs&relationship=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fentities&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/dashboard/entities.graph.md](/docs/flags/vercel-flags/dashboard/entities.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fentities&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

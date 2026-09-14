@@ -16,8 +16,8 @@ related:
 summary: "Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you get started with using..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/quickstart.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "f6e6cbe6a3b1b943bfc21713c2f1e7d2223489a133c87837200813d306794fee"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "691eb0a70891a0822f6ad81300bf45802380639c9a7898cf523d4394a70b6cf1"
 ---
 
 # Getting started with Vercel Web Analytics
@@ -35,7 +35,7 @@ This guide will help you get started with using Vercel Web Analytics on your pro
 - [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related)
 - [Nuxt Analytics on Vercel](https://vercel.com/blog/nuxt-analytics-on-vercel?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related)
 - [How we made the Vercel Dashboard twice as fast](https://vercel.com/blog/how-we-made-the-vercel-dashboard-twice-as-fast?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related)
-- [Vercel Analytics for Gatsby](https://vercel.com/blog/gatsby-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related)
+- [Ship It](https://eve.dev/docs/tutorial/ship-it?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related) — Part 8 of the Build an Agent tutorial. Put a web dashboard on the agent with useEveAgent, replace placeholderAuth, and d
 - [Getting started with Speed Insights](https://vercel.com/docs/speed-insights/quickstart?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
 - [Create React App on Vercel](https://vercel.com/docs/frameworks/frontend/create-react-app?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related) — Deploy Create React App projects to Vercel and add Preview Deployments, Web Analytics, Speed Insights, and Observability
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.

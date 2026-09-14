@@ -1,10 +1,10 @@
 ---
-title: Image-to-Video Generation
+title: AI Gateway Image-to-Video Generation
 product: vercel
 url: /docs/ai-gateway/modalities/video-generation/image-to-video
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/video-generation/image-to-video"
-last_updated: 2026-08-28
-type: conceptual
+last_updated: 2026-09-08
+type: how-to
 prerequisites:
   - /docs/ai-gateway/modalities/video-generation
   - /docs/ai-gateway/modalities
@@ -16,11 +16,11 @@ related:
 summary: Animate static images into videos using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/image-to-video.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "8d0979fcaf525e76a8b271fe1a5905bc879bbbefb77c0346ac8c5f84a836ca4a"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "96d6b8ac03cba9e3d315d3fee48420da68e47db76c80c50b6ba576f6cc791c18"
 ---
 
-# Image-to-Video Generation
+# AI Gateway Image-to-Video Generation
 
 Animate a static image into a video. The image you provide becomes the video content itself - you're adding motion to that exact scene.
 
@@ -36,12 +36,11 @@ Animate a static image into a video. The image you provide becomes the video con
 - [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related)
 - [Wan models on AI Gateway](https://vercel.com/changelog/wan-models-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related)
 - [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
-- [Veo video models on AI Gateway](https://vercel.com/changelog/veo-video-models-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related)
 - [Alibaba](https://ai-sdk.dev/providers/ai-sdk-providers/alibaba?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related)
+- [Veo video models on AI Gateway](https://vercel.com/changelog/veo-video-models-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related)
 - [ByteDance](https://ai-sdk.dev/providers/ai-sdk-providers/bytedance?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related)
 - [Grok Imagine Video on AI Gateway](https://vercel.com/changelog/grok-imagine-video-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related)
-- [Text-to-Video Generation](https://vercel.com/docs/ai-gateway/modalities/video-generation/text-to-video?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related) — Generate videos from text prompts using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI G
-- [Motion Control Video Generation](https://vercel.com/docs/ai-gateway/modalities/video-generation/motion-control?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related) — Transfer motion from a reference video to a character image using KlingAI through AI Gateway.
+- [Video Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/video?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related) — Generate a video from a text prompt using AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation/image-to-video.graph.md](/docs/ai-gateway/modalities/video-generation/image-to-video.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -100,7 +99,7 @@ const result = await generateVideo({
     image: 'https://example.com/landscape.png',
     text: 'Camera slowly pans across the scene as clouds drift by',
   },
-  resolution: '1080p',
+  resolution: '1920x1080',
   generateAudio: true,
   providerOptions: {
     vertex: {
@@ -128,7 +127,7 @@ const result = await generateVideo({
     { image: 'https://example.com/end.png', frameType: 'last_frame' },
   ],
   aspectRatio: '16:9',
-  resolution: '720p',
+  resolution: '1280x720',
   duration: 8,
 });
 
@@ -177,7 +176,7 @@ When using base64 encoding, submit only the raw base64 string without any prefix
 const image = 'iVBORw0KGgoAAAANSUhEUgAAAAUA...';
 
 // Incorrect - do not include data: prefix
-const image = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUA...';
+const dataUrl = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUA...';
 ```
 
 ### KlingAI example
@@ -287,7 +286,7 @@ Control camera movement during video generation. This is mutually exclusive with
 | `'right_turn_forward'` | Rotate right then move forward     | No              |
 | `'left_turn_forward'`  | Rotate left then move forward      | No              |
 
-**Simple camera config options** (use only one, set others to 0):
+**`simple` camera configuration options** (use only one, set others to 0):
 
 | Config       | Range     | Description                                                  |
 | ------------ | --------- | ------------------------------------------------------------ |

@@ -1,9 +1,9 @@
 ---
-title: Compaction
+title: OpenAI Responses Compaction with AI Gateway
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/responses/compaction
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/compaction"
-last_updated: 2026-09-04
+last_updated: 2026-09-08
 type: reference
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/responses
@@ -16,11 +16,11 @@ related:
 summary: Compress long conversations into a single compaction item with the OpenAI Responses API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/compaction.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "41084ba4692f4548d65fadd95ef8010d64e3b549f94b45808855c9e536d34aa9"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "f11cc3cc8dd31a75fdbad25be855281ea8bdd26f1e0785ae434274e6ba7b60c2"
 ---
 
-# Compaction
+# OpenAI Responses Compaction with AI Gateway
 
 Long agent sessions eventually fill the model's context window. [Compaction](https://developers.openai.com/api/docs/guides/compaction) lets you hand the conversation so far to the model and get back a shorter version you can carry forward: your user messages, followed by one opaque `compaction` item that stands in for everything else.
 
@@ -30,12 +30,11 @@ Long agent sessions eventually fill the model's context window. [Compaction](htt
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Compact Agent Context](https://ai-sdk.dev/cookbook/guides/agent-context-compaction?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fcompaction&source_site=vercel-docs&relationship=related)
-- [OpenAI Chat Completions API](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fcompaction&source_site=vercel-docs&relationship=related) — Use the OpenAI Chat Completions API with AI Gateway for seamless integration with existing tools and libraries.
-- [Automatic Caching](https://vercel.com/docs/ai-gateway/models-and-providers/automatic-caching?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fcompaction&source_site=vercel-docs&relationship=related) — Enable automatic prompt caching across providers with AI Gateway to reduce costs and latency.
-- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fcompaction&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including pricing and markup, SDK and API compatibility, model availabilit
-- [Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fcompaction&source_site=vercel-docs&relationship=related) — Use the AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
-- [Chat Completions](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/chat-completions?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fcompaction&source_site=vercel-docs&relationship=related) — Create chat completions using the Chat Completions API with support for streaming, image attachments, and PDF documents.
+- [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fcompaction&source_site=vercel-docs&relationship=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
+- [OpenResponses API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fcompaction&source_site=vercel-docs&relationship=related) — Use the OpenResponses API specification with AI Gateway for a unified, provider-agnostic interface.
+- [OpenAI Responses API WebSocket Mode with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/websockets?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fcompaction&source_site=vercel-docs&relationship=related) — Keep a persistent connection open across turns with the OpenAI Responses API over WebSocket through AI Gateway.
+- [OpenAI Responses Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/images?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fcompaction&source_site=vercel-docs&relationship=related) — Send images and PDF documents for analysis using the OpenAI Responses API through AI Gateway.
+- [OpenAI Chat Completions API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fcompaction&source_site=vercel-docs&relationship=related) — Use OpenAI SDKs with the AI Gateway Chat Completions API. Configure the base URL and authentication for chat, streaming,
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/responses/compaction.graph.md](/docs/ai-gateway/sdks-and-apis/responses/compaction.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fcompaction&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -52,22 +51,6 @@ Requests are forwarded to OpenAI unchanged apart from the model ID, and OpenAI's
 
 Send the conversation you want to shrink as `input`. The response contains a `compaction` item you can pass back in the `input` of your next request in place of the original history:
 
-#### cURL
-
-```bash filename="compact.sh"
-curl -X POST "https://ai-gateway.vercel.sh/v1/responses/compact" \
-  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "openai/gpt-5.6-sol",
-    "input": [
-      { "role": "user", "content": "Refactor the auth module to use the new session store." },
-      { "role": "assistant", "content": "I updated session.ts and login.ts to read from SessionStore..." },
-      { "role": "user", "content": "Now add tests for the logout path." }
-    ]
-  }'
-```
-
 #### TypeScript
 
 ```typescript filename="compact.ts"
@@ -79,20 +62,32 @@ const client = new OpenAI({
 });
 
 const compacted = await client.responses.compact({
-  model: 'openai/gpt-5.6-sol',
+  model: 'openai/gpt-6-astra',
   input: [
-    { role: 'user', content: 'Refactor the auth module to use the new session store.' },
-    { role: 'assistant', content: 'I updated session.ts and login.ts to read from SessionStore...' },
-    { role: 'user', content: 'Now add tests for the logout path.' },
+    {
+      role: 'user',
+      content: 'Refactor the auth module to use the new session store.',
+    },
+    {
+      role: 'assistant',
+      content: 'I updated session.ts and login.ts to read from SessionStore...',
+    },
+    {
+      role: 'user',
+      content: 'Now add tests for the logout path.',
+    },
   ],
 });
 
 // Continue the conversation from the compacted history
 const next = await client.responses.create({
-  model: 'openai/gpt-5.6-sol',
+  model: 'openai/gpt-6-astra',
   input: [
-    ...compacted.output,
-    { role: 'user', content: 'Also cover the token refresh path.' },
+    ...(compacted.output as OpenAI.Responses.ResponseInputItem[]),
+    {
+      role: 'user',
+      content: 'Also cover the token refresh path.',
+    },
   ],
 });
 
@@ -111,7 +106,7 @@ client = OpenAI(
 )
 
 compacted = client.responses.compact(
-    model='openai/gpt-5.6-sol',
+    model='openai/gpt-6-astra',
     input=[
         {'role': 'user', 'content': 'Refactor the auth module to use the new session store.'},
         {'role': 'assistant', 'content': 'I updated session.ts and login.ts to read from SessionStore...'},
@@ -121,7 +116,7 @@ compacted = client.responses.compact(
 
 # Continue the conversation from the compacted history
 next_response = client.responses.create(
-    model='openai/gpt-5.6-sol',
+    model='openai/gpt-6-astra',
     input=[
         *compacted.output,
         {'role': 'user', 'content': 'Also cover the token refresh path.'},
@@ -129,6 +124,22 @@ next_response = client.responses.create(
 )
 
 print(next_response.output_text)
+```
+
+#### cURL
+
+```bash filename="compact.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/responses/compact" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "openai/gpt-6-astra",
+    "input": [
+      { "role": "user", "content": "Refactor the auth module to use the new session store." },
+      { "role": "assistant", "content": "I updated session.ts and login.ts to read from SessionStore..." },
+      { "role": "user", "content": "Now add tests for the logout path." }
+    ]
+  }'
 ```
 
 The response is a `response.compaction` object:
@@ -159,7 +170,7 @@ The `compaction` item's `encrypted_content` is opaque to you. Replay it in `inpu
 
 | Parameter | Type            | Description                                                                                         |
 | --------- | --------------- | --------------------------------------------------------------------------------------------------- |
-| `model`   | string          | An OpenAI model ID in `provider/model` format (for example, `openai/gpt-5.6-sol`)                    |
+| `model`   | string          | An OpenAI model ID in `provider/model` format (for example, `openai/gpt-6-astra`)                    |
 | `input`   | string or array | The conversation to compact. Must include at least one `user` message                                |
 
 ### Optional

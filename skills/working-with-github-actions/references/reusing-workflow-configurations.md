@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/reference/workflows-and-actions/reusing-workflow-configurations.md"
-fetched_at: "2026-08-10T05:30:56.796Z"
-sha256: "19650b4e46ce5ea083b6e91eee087fb814d6d85595419aede05945228109735e"
+fetched_at: "2026-09-14T09:42:05.851Z"
+sha256: "f6513aacbe95218a5bc793e70025e8a45cef3eefcd4b26872e92a6353a33e23f"
 ---
 
 ## Reusable workflows
@@ -71,6 +71,9 @@ When you call a reusable workflow, you can only use the following keywords in th
 * [`jobs.<job_id>.if`](/actions/reference/workflows-and-actions/workflow-syntax#jobsjob_idif)
 * [`jobs.<job_id>.concurrency`](/actions/reference/workflows-and-actions/workflow-syntax#jobsjob_idconcurrency)
 * [`jobs.<job_id>.permissions`](/actions/reference/workflows-and-actions/workflow-syntax#jobsjob_idpermissions)
+{%- ifversion actions-cache-mode %}
+* [`jobs.<job_id>.cache-mode`](/actions/reference/workflows-and-actions/workflow-syntax#jobsjob_idcache-mode)
+{%- endif %}
 
   > [!NOTE]
   >

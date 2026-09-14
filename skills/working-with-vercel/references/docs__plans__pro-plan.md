@@ -16,8 +16,8 @@ related:
 summary: Learn about the Vercel Pro plan with credit-based billing, free viewer seats, and self-serve enterprise features for professional teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/pro-plan.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "39b713d203b9036e6dace8f957bc3620fb24bf2f52836de64b2f9484b398d334"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "68dc02ee7701d60cb95e286aa0155d42aa3dcf4d4ab81a362a002eabf7b5a392"
 ---
 
 # Vercel Pro Plan
@@ -74,7 +74,7 @@ See the [docs page](/docs/domains/free-domain-with-pro#how-do-i-claim-my-free-do
 
 You can use your monthly credit across all infrastructure resources. Once you have used your monthly credit, Vercel bills additional usage on-demand.
 
-The monthly credit applies to all [managed infrastructure billable resources](/docs/pricing#managed-infrastructure-billable-resources) after their respective included allocations are exceeded.
+The monthly credit applies to all [managed infrastructure billable resources](/docs/pricing#managed-infrastructure-billable-resources) from the first unit you use.
 
 ### Credit and usage allocation
 
@@ -83,7 +83,7 @@ The monthly credit applies to all [managed infrastructure billable resources](/d
 
 ### Credit expiration
 
-The credit and allocations expire at the end of the month if they are not used, and are reset at the beginning of the following month.
+Your credit expires at the end of the month if you don't use it, and resets at the beginning of the following month.
 
 ### Managing your spend amount
 

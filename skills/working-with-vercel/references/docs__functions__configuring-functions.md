@@ -16,8 +16,8 @@ related:
 summary: Learn how to configure the runtime, region, maximum duration, and memory for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "fde1786f6d1976635e2e26da8202e15cb33786aa5d79869323aa382678445490"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "2dcb81cda6c3fa999850bb9e0c3ce80d16d53385247bd5315cd1b169bb3c30a9"
 ---
 
 # Configuring Functions
@@ -30,13 +30,12 @@ You can configure Vercel functions in many ways, including the runtime, region, 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How can I reduce my Vercel Functions usage on Vercel?](https://vercel.com/kb/guide/how-can-i-reduce-my-serverless-execution-usage-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions&source_site=vercel-docs&relationship=related) — Reduce Vercel Functions usage and cost under Fluid compute pricing with caching, rendering strategies, and function conf
 - [Customizing Serverless Functions](https://vercel.com/blog/customizing-serverless-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions&source_site=vercel-docs&relationship=related)
-- [Getting started with Vercel Functions](https://vercel.com/docs/functions/quickstart?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions&source_site=vercel-docs&relationship=related) — Build your first Vercel Function in a few steps.
 - [vercel.functions API Reference \\(Python\\)](https://vercel.com/docs/functions/functions-api-reference/vercel-sdk-python?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions&source_site=vercel-docs&relationship=related) — Learn about available APIs when working with Vercel Functions in Python.
+- [Getting started with Vercel Functions](https://vercel.com/docs/functions/quickstart?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions&source_site=vercel-docs&relationship=related) — Build your first Vercel Function in a few steps.
 - [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions&source_site=vercel-docs&relationship=related) — Learn about legacy usage and pricing for Vercel Functions.
 - [Using the Rust Runtime with Vercel functions](https://vercel.com/docs/functions/runtimes/rust?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions&source_site=vercel-docs&relationship=related) — Build fast, memory-safe serverless functions with Rust on Vercel.
-- [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Using the Ruby Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/ruby?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions&source_site=vercel-docs&relationship=related) — Learn how to use the Ruby runtime to compile Ruby Vercel Functions on Vercel.
 
 Full cross-link map for this page: [/docs/functions/configuring-functions.graph.md](/docs/functions/configuring-functions.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

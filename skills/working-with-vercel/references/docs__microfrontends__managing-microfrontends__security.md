@@ -17,8 +17,8 @@ related:
 summary: Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/managing-microfrontends/security.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "11acdbd964252d81a2e32aa49d0c2b020e837d2df405c9676dc5d642b1540d79"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "fdafd83e4df9496475d256491ca8a6994d3bac40dbbb128b8de241ad32020590"
 ---
 
 # Managing microfrontends security
@@ -37,7 +37,6 @@ Understand how and where you manage [Deployment Protection](/docs/deployment-pro
 - [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends%2Fsecurity&source_site=vercel-docs&relationship=related) — Learn how to get started with microfrontends on Vercel.
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends%2Fsecurity&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 - [Microfrontends local development](https://vercel.com/docs/microfrontends/local-development?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends%2Fsecurity&source_site=vercel-docs&relationship=related) — Learn how to run and test your microfrontends locally.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends%2Fsecurity&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/microfrontends/managing-microfrontends/security.graph.md](/docs/microfrontends/managing-microfrontends/security.graph.md?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends%2Fsecurity&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage Cron Jobs effectively in Vercel. Explore cron job duration, error handling, deployments, concurrency control, local execution,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cron-jobs/manage-cron-jobs.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "ad97453fe03a4a3f1cfb321554cb877eacab2ec303e4261cbe4693f7c7d276a2"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "c1702959cadab1bc32ce857965925c98a0dba0f36e8d0dd5a87e46f6dc127692"
 ---
 
 # Managing Cron Jobs
@@ -39,13 +39,12 @@ To view your active cron jobs:
 - [How to run background jobs in Next.js](https://vercel.com/kb/guide/how-to-run-background-jobs-in-nextjs-on-vercel?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fmanage-cron-jobs&source_site=vercel-docs&relationship=related) — Learn the durable way to run background jobs in Next.js on Vercel with the Workflow SDK, and when to reach for Queues or
 - [Translate Kubernetes manifests to vercel.json](https://vercel.com/kb/guide/kubernetes-manifests-to-vercel-json?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fmanage-cron-jobs&source_site=vercel-docs&relationship=related) — Translate Kubernetes Deployments, Services, Ingress, ConfigMaps, and CronJobs into vercel.json configuration and Vercel
 - [Troubleshooting Vercel Cron Jobs](https://vercel.com/kb/guide/troubleshooting-vercel-cron-jobs?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fmanage-cron-jobs&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot cron jobs that aren't being run or logged when using Vercel Cron Jobs.
-- [How to Setup Cron Jobs on Vercel](https://vercel.com/kb/guide/how-to-setup-cron-jobs-on-vercel?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fmanage-cron-jobs&source_site=vercel-docs&relationship=related) — Learn how to setup and use cron jobs on Vercel
 - [Run scheduled jobs with Vercel Cron Jobs and Vercel Functions](https://vercel.com/changelog/run-scheduled-jobs-with-vercel-cron-jobs-and-vercel-functions?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fmanage-cron-jobs&source_site=vercel-docs&relationship=related)
 - [Schedules](https://eve.dev/docs/schedules?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fmanage-cron-jobs&source_site=vercel-docs&relationship=related) — Run an agent on a cron cadence, either a fire-and-forget prompt or a handler that hands work off to a channel.
 - [Cron jobs now support 100 per project on every plan](https://vercel.com/changelog/cron-jobs-now-support-100-per-project-on-every-plan?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fmanage-cron-jobs&source_site=vercel-docs&relationship=related)
 - [vercel crons](https://vercel.com/docs/cli/crons?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fmanage-cron-jobs&source_site=vercel-docs&relationship=related) — Manage Cron Jobs from the Vercel CLI: add cron entries to your vercel.json, list them, and trigger them on demand.
 - [Limits](https://vercel.com/docs/limits?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fmanage-cron-jobs&source_site=vercel-docs&relationship=related) — Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fmanage-cron-jobs&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
+- [Run background tasks with Celery on Vercel](https://vercel.com/docs/frameworks/backend/celery?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fmanage-cron-jobs&source_site=vercel-docs&relationship=related) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
 
 Full cross-link map for this page: [/docs/cron-jobs/manage-cron-jobs.graph.md](/docs/cron-jobs/manage-cron-jobs.graph.md?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fmanage-cron-jobs&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

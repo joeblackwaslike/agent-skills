@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/generating-structured-data.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "2fbe0b6560dd59c8d105d0ec8b7920960be04633437cb6c6333dda1cd58cc881"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "517d451e9d6b212cb1df003126d2c30c9aa174d61a31705b0ca993e241cfd6c5"
 ---
 
 # Generating Structured Data
@@ -550,6 +550,7 @@ You can see structured output generation in action using various frameworks in t
 - [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
 - [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
+- [Batch](/docs/ai-sdk-core/batch)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)

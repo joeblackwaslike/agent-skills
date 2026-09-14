@@ -1,10 +1,10 @@
 ---
-title: Streaming
+title: Anthropic Messages Streaming with AI Gateway
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/streaming
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/streaming"
-last_updated: 2026-07-28
-type: conceptual
+last_updated: 2026-09-08
+type: reference
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api
   - /docs/ai-gateway/sdks-and-apis
@@ -13,14 +13,14 @@ related:
   - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/tool-calling
   - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning
   - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced
-summary: Stream Anthropic Messages API responses token by token as they are generated.
+summary: Stream Anthropic Messages API responses token by token as they are generated through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/streaming.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "7ee6357b2ddc8d7ddd87c29358c0d7163dacb727c167d545034ec0d127bae187"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "af2b97d171e4297cc6466d0d9353397c352b70a563ca9a9583ef94214499ca89"
 ---
 
-# Streaming
+# Anthropic Messages Streaming with AI Gateway
 
 Set `stream: true` on a [Messages](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages) request to receive tokens as the model produces them, instead of waiting for the complete response.
 
@@ -32,41 +32,16 @@ Set `stream: true` on a [Messages](/docs/ai-gateway/sdks-and-apis/anthropic-mess
 
 - [Streaming responses from LLMs](https://vercel.com/kb/guide/streaming-from-llm?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstreaming&source_site=vercel-docs&relationship=related) — Learn how to use the AI SDK to stream LLM responses.
 - [Streaming in web applications](https://vercel.com/kb/guide/what-is-streaming?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstreaming&source_site=vercel-docs&relationship=related) — Learn how streaming works in web applications. Explore benefits, use cases, and implementation details with Vercel Funct
-- [Streaming](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/streaming?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstreaming&source_site=vercel-docs&relationship=related) — Stream OpenAI Chat Completions responses token by token as they are generated.
-- [Streaming](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/streaming?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstreaming&source_site=vercel-docs&relationship=related) — Stream responses token by token using the OpenResponses API.
-- [Streaming](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/streaming?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstreaming&source_site=vercel-docs&relationship=related) — Stream tokens as they are generated with the OpenAI Responses API.
-- [Streaming](https://chat-sdk.dev/docs/streaming?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstreaming&source_site=vercel-docs&relationship=related) — Stream real-time text responses from AI models and other async sources to chat platforms.
-- [An Introduction to Streaming on the Web](https://vercel.com/blog/an-introduction-to-streaming-on-the-web?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstreaming&source_site=vercel-docs&relationship=related)
-- [Processing Data Chunks](https://vercel.com/kb/guide/processing-data-chunks?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstreaming&source_site=vercel-docs&relationship=related) — Learn how to create an API endpoint that processes data chunks.
-- [Stream Protocols](https://ai-sdk.dev/docs/ai-sdk-ui/stream-protocol?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstreaming&source_site=vercel-docs&relationship=related)
-- [Create Chat (Streaming)](https://v0.app/docs/api/v2/reference/chats/create-chat-streaming?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstreaming&source_site=vercel-docs&relationship=related) — Creates a new chat with a user message and returns a Server-Sent Events stream. Events include initial chat state, title
+- [OpenAI Chat Completions Streaming with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/streaming?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstreaming&source_site=vercel-docs&relationship=related) — Stream OpenAI Chat Completions responses token by token as they are generated through AI Gateway.
+- [OpenResponses Streaming with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/streaming?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstreaming&source_site=vercel-docs&relationship=related) — Stream responses token by token using the OpenResponses API through AI Gateway.
+- [OpenAI Responses Streaming with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/streaming?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstreaming&source_site=vercel-docs&relationship=related) — Stream tokens as they are generated with the OpenAI Responses API through AI Gateway.
+- [Anthropic Messages Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/images?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstreaming&source_site=vercel-docs&relationship=related) — Send images and PDF documents as part of your Anthropic API message requests through AI Gateway.
 - [Streaming](https://vercel.com/docs/functions/streaming-functions?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstreaming&source_site=vercel-docs&relationship=related) — Learn how to stream responses from Vercel Functions.
-- [Text Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/text?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstreaming&source_site=vercel-docs&relationship=related) — Generate and stream text responses using AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/streaming.graph.md](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/streaming.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstreaming&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Create a streaming message that delivers tokens as they are generated.
-
-#### cURL
-
-```bash filename="stream.sh"
-curl -X POST "https://ai-gateway.vercel.sh/v1/messages" \
-  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "anthropic/claude-opus-5",
-    "max_tokens": 150,
-    "messages": [
-      {
-        "role": "user",
-        "content": "Write a one-sentence bedtime story about a unicorn."
-      }
-    ],
-    "temperature": 0.7,
-    "stream": true
-  }'
-```
 
 #### TypeScript
 
@@ -128,6 +103,26 @@ with client.messages.stream(
 ) as stream:
     for text in stream.text_stream:
         print(text, end='', flush=True)
+```
+
+#### cURL
+
+```bash filename="stream.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/messages" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "anthropic/claude-opus-5",
+    "max_tokens": 150,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Write a one-sentence bedtime story about a unicorn."
+      }
+    ],
+    "temperature": 0.7,
+    "stream": true
+  }'
 ```
 
 ## Streaming event types

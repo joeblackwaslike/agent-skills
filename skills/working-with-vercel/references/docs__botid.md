@@ -16,8 +16,8 @@ related:
 summary: Protect your applications from automated attacks with intelligent bot detection and verification, powered by Kasada.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/botid.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "294a0c70e1e310850e010e5f5d7054bd87ad7e6d73c5aca13ec7edc568a74ea6"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "63eff35dc3a82d4077a6e98fb7c462ef476db68b5e4ab05cae0ac3d03934e11a"
 ---
 
 # BotID
@@ -41,9 +41,9 @@ sha256: "294a0c70e1e310850e010e5f5d7054bd87ad7e6d73c5aca13ec7edc568a74ea6"
 - [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
 - [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related) — Learn the key AI concepts and tools for building and scaling AI apps.
 - [How to Effectively Load Test Your Vercel Application](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
-- [Proxy](https://docs.vercel.shop/docs/anatomy/proxy?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related) — How the storefront assigns Shopify-owned routes while leaving application routes available to Next.js.
-- [Shop Configuration](https://docs.vercel.shop/docs/reference/shop-config?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related) — Configure storefront identity, analytics, and cross-cutting feature availability.
+- [Shop Configuration](https://docs.vercel.shop/docs/reference/shop-config?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related) — Choose optional storefront features and set your store's identity and locale.
 - [Billions of requests: Black Friday-Cyber Monday 2025](https://vercel.com/blog/bfcm-2025?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related)
+- [Protecting against token theft](https://vercel.com/blog/protecting-against-token-theft?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related)
 
 Full cross-link map for this page: [/docs/botid.graph.md](/docs/botid.graph.md?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

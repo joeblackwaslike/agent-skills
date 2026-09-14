@@ -12,8 +12,8 @@ related:
 summary: Configure Passport with Okta, Microsoft Entra ID, or another OpenID Connect provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport/set-up-identity-provider.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "eff827cfe9b60a5bedf70a0d264a95417c4383073e7383e8458df9c4f6a29439"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "74e3fe1fb5f96ed8400a90269990b36d86ff0f8b2af704d6e62edb0a44228fc0"
 ---
 
 # Set up Passport with an identity provider
@@ -36,7 +36,6 @@ This guide covers the common Passport setup flow for OpenID Connect providers, i
 - [Configure additional identity scopes](https://vercel.com/docs/passport/additional-identity-scopes?from=related&source_path=%2Fdocs%2Fpassport%2Fset-up-identity-provider&source_site=vercel-docs&relationship=related) — Request group membership and other provider-specific identity claims when using Passport.
 - [Auth.js](https://vercel.com/docs/connect/frameworks/authjs?from=related&source_path=%2Fdocs%2Fpassport%2Fset-up-identity-provider&source_site=vercel-docs&relationship=related) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
 - [SAML Single Sign-On](https://vercel.com/docs/saml?from=related&source_path=%2Fdocs%2Fpassport%2Fset-up-identity-provider&source_site=vercel-docs&relationship=related) — Learn how to configure SAML SSO for your organization on Vercel.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fpassport%2Fset-up-identity-provider&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/passport/set-up-identity-provider.graph.md](/docs/passport/set-up-identity-provider.graph.md?from=related&source_path=%2Fdocs%2Fpassport%2Fset-up-identity-provider&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -15,8 +15,8 @@ related:
 summary: Learn about cron jobs usage and pricing details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cron-jobs/usage-and-pricing.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "dfaa773aa8bf80a679cd34c103331e44e64dfd23dc7581d4af81f0c0579ab48a"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "02a7f63c844d962e1514c53f7f96a37f6f3fd2b2f3e668cdea8db74ac5f59c00"
 ---
 
 # Usage & Pricing for Cron Jobs
@@ -35,7 +35,6 @@ Cron jobs invoke [Vercel Functions](/docs/functions). This means the same [usage
 - [How to run Devin Outposts sessions on Vercel](https://vercel.com/kb/guide/devin-outposts-vercel-sandbox?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Run Devin Outposts sessions in isolated Vercel Sandbox microVMs. One browser authorization to set up, then sessions star
 - [Troubleshooting Vercel Cron Jobs](https://vercel.com/kb/guide/troubleshooting-vercel-cron-jobs?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot cron jobs that aren't being run or logged when using Vercel Cron Jobs.
 - [Introducing Vercel Cron Jobs](https://vercel.com/blog/cron-jobs?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fusage-and-pricing&source_site=vercel-docs&relationship=related)
-- [How to Setup Cron Jobs on Vercel](https://vercel.com/kb/guide/how-to-setup-cron-jobs-on-vercel?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Learn how to setup and use cron jobs on Vercel
 - [Vercel Cron Jobs are now generally available](https://vercel.com/changelog/vercel-cron-jobs-are-now-generally-available?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fusage-and-pricing&source_site=vercel-docs&relationship=related)
 - [Cron jobs now support 100 per project on every plan](https://vercel.com/changelog/cron-jobs-now-support-100-per-project-on-every-plan?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fusage-and-pricing&source_site=vercel-docs&relationship=related)
 - [vercel crons](https://vercel.com/docs/cli/crons?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Manage Cron Jobs from the Vercel CLI: add cron entries to your vercel.json, list them, and trigger them on demand.

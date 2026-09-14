@@ -3,7 +3,7 @@ title: Push Images from GitHub Actions
 product: vercel
 url: /docs/container-registry/github-actions
 canonical_url: "https://vercel.com/docs/container-registry/github-actions"
-last_updated: 2018-10-20
+last_updated: 2026-09-04
 type: how-to
 prerequisites:
   - /docs/container-registry
@@ -14,8 +14,8 @@ related:
 summary: Authenticate GitHub Actions with Vercel Container Registry using OIDC, then build and push images with your container tool.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/container-registry/github-actions.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "8032a8c64f4ec489b538325c429786dc3e8c6c94857eebcea3ee8274e48f0120"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "ed959e7f64f21cab8e7f7b41191c92a844a441c6847ff060e7a4f369cc57ebd1"
 ---
 
 # Push Images from GitHub Actions
@@ -37,7 +37,6 @@ Push images to Vercel Container Registry (VCR) from GitHub Actions without stori
 - [How can I use the Vercel CLI for custom workflows?](https://vercel.com/kb/guide/using-vercel-cli-for-custom-workflows?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fgithub-actions&source_site=vercel-docs&relationship=related) — You can use the Vercel CLI to deploy any application, including custom git providers and restricted source code.
 - [Use Remote Caching from External CI/CD](https://vercel.com/docs/monorepos/remote-caching/external-ci-cd?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fgithub-actions&source_site=vercel-docs&relationship=related) — Authenticate the Turborepo CLI to Vercel Remote Cache from your CI/CD provider using OpenID Connect \\(OIDC\\) or a Person
 - [Push an image manifest](https://vercel.com/docs/rest-api/vcr/push-an-image-manifest?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fgithub-actions&source_site=vercel-docs&relationship=related) — PUT /v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference} — PUT /v2/:teamSlug/:projectSlug/:repositoryName
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fgithub-actions&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/container-registry/github-actions.graph.md](/docs/container-registry/github-actions.graph.md?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fgithub-actions&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

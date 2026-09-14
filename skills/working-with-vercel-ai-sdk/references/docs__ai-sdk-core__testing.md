@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/testing.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "dbf7bb5304c2c2003a59990472efcef7a638aa5bd72dd5aea9778dc880a65c04"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "44243e679b1beb0086ee4994b4dde96e0abaf912796adb898bff777aac9fee3f"
 ---
 
 # Testing
@@ -244,6 +244,7 @@ export async function POST(req: Request) {
 - [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
 - [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
+- [Batch](/docs/ai-sdk-core/batch)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)

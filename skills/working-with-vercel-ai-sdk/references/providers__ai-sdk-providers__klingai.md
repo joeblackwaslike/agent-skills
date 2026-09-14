@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/klingai.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "8b2b1ec0ff580cce536defda4ac5744ca6dc598af73cff0157a5c5c223135e67"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "998c119d5b175481e7d7a4d259b0abcb909d67d7e5c78f9242b8985e0edce044"
 ---
 
 # Kling AI Provider
@@ -238,6 +238,29 @@ const { videos } = await generateVideo({
 });
 ```
 
+### Caller-Managed Callbacks
+
+For text-to-video, image-to-video, multi-image-to-video, and motion control,
+use `experimental_startVideo({ model, prompt, webhookUrl })` to register an
+application-owned callback receiver. The SDK forwards `webhookUrl` as
+`callback_url`, taking precedence over `providerOptions.klingai.callback_url`.
+When `webhookUrl` is omitted, a raw `callback_url` is passed through unchanged.
+
+KlingAI sends progress notifications (`task_status: 'submitted'` or
+`'processing'`) as well as terminal notifications (`'succeed'` or `'failed'`).
+Your receiver must filter progress notifications and correlate callbacks with
+the task. Use `experimental_getVideoStatus(model, { operation })` with the
+operation returned by `experimental_startVideo` to check status and retrieve
+the result after a terminal notification.
+
+These models deliberately do not expose `handleWebhookOption` because their
+callback protocol requires a progress-aware receiver. Core
+[`generateVideo({ webhook })`](/docs/reference/ai-sdk-core/generate-video)
+falls back to polling without calling the webhook factory. Plain
+`generateVideo()` also polls. Workflow's existing native webhook capability
+check rejects these direct provider models for webhook-based generation;
+use the explicit start/status flow for caller-managed callbacks.
+
 ### Video Provider Options
 
 The following provider options are available via `providerOptions.klingai`. Options vary by mode — see the
@@ -398,7 +421,6 @@ The following provider options are available via `providerOptions.klingai`. Opti
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
-- [LMNT](/providers/ai-sdk-providers/lmnt)
 - [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)

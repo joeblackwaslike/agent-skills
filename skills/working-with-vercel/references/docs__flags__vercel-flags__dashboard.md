@@ -17,8 +17,8 @@ related:
 summary: Learn how to manage your feature flags using the Vercel Dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "2f6fe850d0aa812efad1d71ca2da55c070905ec0a0515dae68f0f34185f3e7ea"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "1eb14dbcc16be4b4dde09c593a15ce24a692d61a2d8b35dcb4503bd0057de2d1"
 ---
 
 # Managing flags in the dashboard
@@ -39,7 +39,6 @@ The **Flags** section in your Vercel dashboard sidebar is the central place to m
 - [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard&source_site=vercel-docs&relationship=related)
 - [Using the Flags SDK with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard&source_site=vercel-docs&relationship=related) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
 - [Flags Explorer](https://vercel.com/docs/flags/flags-explorer?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard&source_site=vercel-docs&relationship=related) — View and override your application's feature flags from the Vercel Toolbar
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/dashboard.graph.md](/docs/flags/vercel-flags/dashboard.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

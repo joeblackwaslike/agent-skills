@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "f801c96cb4baa66317f6d4cf691ad27be1a63f1a66c4b57f8d4957225ef622d2"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "ff1f22e0801c7ed135d9a550f881dc617612878e0cb64e8993af681f2f8dbd7f"
 ---
 
 # AI SDK Harnesses
@@ -36,6 +36,11 @@ and response primitives.
       title: 'fx',
       description: 'Use fx through the AI SDK harness abstraction.',
       href: '/providers/ai-sdk-harnesses/fx',
+    },
+    {
+      title: 'GitHub Copilot',
+      description: 'Use GitHub Copilot through the AI SDK harness abstraction.',
+      href: '/providers/ai-sdk-harnesses/github-copilot',
     },
     {
       title: 'Grok Build',
@@ -103,7 +108,6 @@ tools, UI, and terminal usage.
   - [Deepgram](/providers/ai-sdk-providers/deepgram)
   - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
   - [Gladia](/providers/ai-sdk-providers/gladia)
-  - [LMNT](/providers/ai-sdk-providers/lmnt)
   - [Google](/providers/ai-sdk-providers/google)
   - [Hume](/providers/ai-sdk-providers/hume)
   - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
@@ -142,6 +146,7 @@ tools, UI, and terminal usage.
   - [Cline](/providers/ai-sdk-harnesses/cline)
   - [Cursor](/providers/ai-sdk-harnesses/cursor)
   - [fx](/providers/ai-sdk-harnesses/fx)
+  - [GitHub Copilot](/providers/ai-sdk-harnesses/github-copilot)
 - [Observability Integrations](/providers/observability)
   - [Arize AX](/providers/observability/arize-ax)
   - [Axiom](/providers/observability/axiom)
@@ -171,7 +176,6 @@ tools, UI, and terminal usage.
   - [Clarifai](/providers/openai-compatible-providers/clarifai)
   - [Heroku](/providers/openai-compatible-providers/heroku)
   - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)
-  - [Synthorai](/providers/openai-compatible-providers/synthorai)
 - [Community Providers](/providers/community-providers)
   - [Writing a Custom Provider](/providers/community-providers/custom-providers)
   - [A2A](/providers/community-providers/a2a)
@@ -230,6 +234,7 @@ tools, UI, and terminal usage.
   - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
   - [QVAC](/providers/community-providers/qvac)
   - [Interfaze](/providers/community-providers/interfaze)
+  - [Telnyx](/providers/community-providers/telnyx)
   - [Flowise](/providers/community-providers/flowise)
 - [Adapters](/providers/adapters)
   - [LangChain](/providers/adapters/langchain)

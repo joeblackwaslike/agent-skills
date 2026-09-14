@@ -16,8 +16,8 @@ related:
 summary: "Understand how Vercel Sandbox billing works, what's included in each plan, and the quotas that apply."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/pricing.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "5632dd1277a8b4e29acbd7e4f916d5fe961b92805efee7dcf2c93ec0666ccf4c"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "823688b60b90a9e6f07773c7f7e3c2f4bd3efa57de34553fe9a1e2ac2da83cf8"
 ---
 
 # Vercel Sandbox pricing and quotas
@@ -34,14 +34,14 @@ Vercel Sandbox usage is metered across several dimensions. This page explains ho
 - [Give every agent in Herdr its own Vercel Sandbox](https://vercel.com/changelog/give-every-agent-in-herdr-its-own-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related)
 - [More granular observability for Vercel Sandbox](https://vercel.com/changelog/more-granular-observability-for-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related)
 - [Vercel Sandbox can now run for up to 24 hours](https://vercel.com/changelog/vercel-sandbox-can-now-run-for-up-to-24-hours?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related)
-- [Vercel Sandbox now calculates snapshot storage costs daily](https://vercel.com/changelog/vercel-sandbox-now-calculates-snapshot-storage-costs-daily?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related)
+- [Vercel Sandbox is now available in all regions](https://vercel.com/changelog/vercel-sandbox-is-now-available-in-all-regions?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related)
 - [How to run Devin Outposts sessions on Vercel](https://vercel.com/kb/guide/devin-outposts-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related) — Run Devin Outposts sessions in isolated Vercel Sandbox microVMs. One browser authorization to set up, then sessions star
 - [Run Python code securely with AI SDK and Vercel Sandbox](https://vercel.com/kb/guide/python-ai-sdk-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related) — Add an \\`executeCode\\` tool to your AI SDK agent with the \\`ai-sdk-tool-code-execution\\` package to run Python 3.13 insi
+- [Run Terminal-Bench and any Harbor benchmark on Vercel Sandbox](https://vercel.com/kb/guide/run-terminal-bench-harbor-benchmarks-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related) — Run Terminal-Bench, SWE-bench, and any Harbor benchmark on Vercel Sandbox. Each trial executes in an isolated Firecracke
 - [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
+- [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Pricing and Limits](https://vercel.com/docs/eve/pricing?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related) — Understand how eve usage maps to Vercel resources and inherited platform limits.
-- [Account Plans on Vercel](https://vercel.com/docs/plans?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about the different plans available on Vercel.
 
 Full cross-link map for this page: [/docs/sandbox/pricing.graph.md](/docs/sandbox/pricing.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -55,12 +55,15 @@ Full cross-link map for this page: [/docs/sandbox/pricing.graph.md](/docs/sandbo
 | Sandbox Creations | 5,000/month | $0.60/1M | $0.60/1M |
 | Sandbox Data Transfer | 20 GB/month | $0.15/GB | $0.15/GB |
 | Snapshot Storage | 15 GB (lifetime) | $0.08/GB-month | $0.08/GB-month |
+| Drive Storage | 15 GB (lifetime) | $0.05/GB-month | $0.05/GB-month |
+| Drive Reads | 30 GB/month | $0.0015/GB | $0.0015/GB |
+| Drive Writes | 30 GB/month | $0.004/GB | $0.004/GB |
 | Concurrent Sandboxes | 10 | 10,000 | 10,000 |
 | Max Session Duration | 45 minutes | 24 hours | 24 hours |
 | vCPU Allocation Rate | 20-40/min | 5,000/min | 5,000/min |
 
 
-The Active CPU and Provisioned Memory rates in this table apply to the default `iad1` region. See [Regional pricing](#regional-pricing) for the rates in each region.
+The Active CPU, Provisioned Memory, Sandbox Data Transfer, and Drive rates in this table apply to the default `iad1` region. See [Regional pricing](#regional-pricing) for the rates in each region.
 
 On each billing cycle, Hobby plans receive a monthly allotment of Sandbox usage at no cost. Pro and Enterprise plans are charged based on usage.
 
@@ -68,9 +71,9 @@ Once you exceed your included limit on Hobby, sandbox creation is [paused](#hobb
 
 ## Regional pricing
 
-Sandboxes run in the [region](/docs/sandbox/concepts/regions) you choose when you create them. Active CPU and Provisioned Memory rates vary by region. The prices are per hour for CPU and per GB-hr for memory:
+Sandboxes run in the [region](/docs/sandbox/concepts/regions) you choose when you create them. Rates for Active CPU, Provisioned Memory, Sandbox Data Transfer, Drive Storage, Drive Reads, and Drive Writes vary by region. Select a region to view its rates:
 
-Sandbox Creations, Network, and [Snapshot Storage](#snapshot-storage) are billed at the same rate in all regions where Sandbox is available.
+Sandbox Creations and [Snapshot Storage](#snapshot-storage) are billed at the same rate in all regions where Sandbox is available.
 
 ## Billing information
 
@@ -84,7 +87,7 @@ To continue using Sandbox after exceeding your quotas, [upgrade to Pro](/docs/pl
 
 ### Pro
 
-All Sandbox usage on Pro plans is charged against your [$20/month credit](/docs/plans/pro-plan#credit-and-usage-allocation). After the credit is exhausted, usage is billed at the rates shown above.
+All Sandbox usage on Pro plans is charged against your [$20/month credit](/docs/plans/pro-plan#monthly-credit). After the credit is exhausted, usage is billed at the rates shown above.
 
 To control costs, configure [Spend Management](/docs/spend-management) to receive alerts or pause projects when you reach a specified amount.
 
@@ -94,7 +97,7 @@ Enterprise plans have custom pricing and quotas. [Contact sales](/contact/sales)
 
 ## Understanding the metrics
 
-Vercel tracks Sandbox usage across five metrics. Select a metric in the pricing table above to jump to its description.
+Vercel tracks Sandbox usage across eight metrics. Select a metric in the pricing table above to jump to its description.
 
 ### Active CPU
 
@@ -126,6 +129,20 @@ The storage used by [snapshots](/docs/sandbox/concepts/snapshots), measured in G
 
 Use a smaller [managed image](/docs/sandbox/concepts/images#vercel-managed-images) like `vercel/sandbox/ubuntu` or your own [custom image](/docs/sandbox/concepts/images#custom-images) to reduce individual snapshot sizes. Set an appropriate [snapshot retention period](/docs/sandbox/concepts/snapshots#snapshot-retention) to avoid storing snapshots longer than needed.
 
+### Drive Storage
+
+The data stored on your [drives](/docs/sandbox/concepts/drives), measured in GB per month. Storage is measured hourly on the logical used size of each drive, not the size you provisioned, and billed for the hours the data is stored. Deleting a drive stops its storage charges.
+
+A drive is stored in the [region](/docs/sandbox/concepts/regions) you create it in, and the rate varies by region. See [Regional pricing](#regional-pricing).
+
+### Drive Reads
+
+The logical amount of data your sandbox reads from a mounted drive, measured in GB.
+
+### Drive Writes
+
+The logical amount of data your sandbox writes to a mounted drive, measured in GB.
+
 ## Example calculations
 
 The following examples show estimated costs for common scenarios on Pro/Enterprise plans, using rates for the `iad1` region.
@@ -152,6 +169,8 @@ Each sandbox created with Sandbox SDK 3.0.0 or above, or from a [custom image](/
 | Hobby      | 4             | 8GB            | 15                 | 64 GB     |
 | Pro        | 8             | 16GB           | 15                 | 64 GB     |
 | Enterprise | 32            | 64GB           | 15                 | 64 GB     |
+
+A sandbox can mount up to 4 [drives](/docs/sandbox/concepts/drives) per run. A drive defaults to 1 TiB (1 GiB for Hobby) when you do not set a size, and the maximum quota is 16 TiB per drive. [Contact Vercel Support](/help) to request a quota above 16 TiB.
 
 ### Runtime limits
 
@@ -207,9 +226,9 @@ Snapshots expire **30 days after their last use by default**. You can configure 
 
 ### Regions
 
-Vercel Sandbox is available in the `iad1` (default), `sfo1`, `cle1`, and `cdg1` regions. You can choose the region per sandbox or set a project default. See [Regions](/docs/sandbox/concepts/regions).
+Vercel Sandbox is available in 19 regions. The default region is `iad1`. You can choose the region per sandbox or set a project default. See [Regions](/docs/sandbox/concepts/regions) for the full list.
 
-Active CPU and Provisioned Memory rates vary by region. See [Regional pricing](#regional-pricing) for the rates in each region. Sandbox Creations, Network, and [Snapshot Storage](#snapshot-storage) are billed at the same rate in all regions where Sandbox is available.
+Rates for Active CPU, Provisioned Memory, Sandbox Data Transfer, Drive Storage, Drive Reads, and Drive Writes vary by region. See [Regional pricing](#regional-pricing) for the rates in each region. Sandbox Creations and [Snapshot Storage](#snapshot-storage) are billed at the same rate in all regions where Sandbox is available.
 
 ## Managing costs
 

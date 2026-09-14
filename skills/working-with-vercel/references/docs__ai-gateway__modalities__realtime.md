@@ -1,10 +1,10 @@
 ---
-title: Realtime
+title: Realtime Voice with AI Gateway
 product: vercel
 url: /docs/ai-gateway/modalities/realtime
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/realtime"
-last_updated: 2026-08-24
-type: conceptual
+last_updated: 2026-09-08
+type: how-to
 prerequisites:
   - /docs/ai-gateway/modalities
   - /docs/ai-gateway
@@ -15,11 +15,11 @@ related:
 summary: Build low-latency, speech-to-speech voice agents with the AI SDK through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/realtime.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "e0baa9a4b16271be10eca58d6235f413f51ea1362be7cecfbb13f61ef207022e"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "f8fae756b0bc2e77fb649101e62609fc77a79b5891868d8187a93261ca64ed17"
 ---
 
-# Realtime
+# Realtime Voice with AI Gateway
 
 Build voice agents that listen and respond in real time. With the AI SDK, you stream microphone audio to a realtime model through AI Gateway and play back its spoken replies with low latency. The AI Gateway provider exposes `gateway.experimental_realtime`, which serves two roles: a server-side `getToken` helper that mints a connection, and a realtime model that acts as a codec, translating between normalized AI SDK events and the provider's wire format.
 
@@ -33,12 +33,10 @@ Build voice agents that listen and respond in real time. With the AI SDK, you st
 - [Grok Voice Think Fast 2.0 now available on AI Gateway](https://vercel.com/changelog/grok-voice-think-fast-2-0-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime&source_site=vercel-docs&relationship=related)
 - [Realtime voice, speech, and transcription now supported on AI Gateway](https://vercel.com/changelog/realtime-voice-speech-and-transcription-now-supported-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime&source_site=vercel-docs&relationship=related)
 - [Realtime](https://ai-sdk.dev/docs/ai-sdk-core/realtime?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime&source_site=vercel-docs&relationship=related)
-- [experimental_useRealtime](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-realtime?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime&source_site=vercel-docs&relationship=related)
 - [AI SDK 7](https://vercel.com/blog/ai-sdk-7?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime&source_site=vercel-docs&relationship=related)
 - [xAI Grok audio models now available on Vercel AI Gateway](https://vercel.com/changelog/xai-grok-audio-models-now-available-on-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime&source_site=vercel-docs&relationship=related)
-- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime&source_site=vercel-docs&relationship=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
-- [Speech to Text and Text to Speech Quickstart](https://vercel.com/docs/ai-gateway/getting-started/speech?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime&source_site=vercel-docs&relationship=related) — Generate speech from text and transcribe audio back to text with AI Gateway.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
+- [experimental_useRealtime](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-realtime?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime&source_site=vercel-docs&relationship=related)
+- [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime&source_site=vercel-docs&relationship=related) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/realtime.graph.md](/docs/ai-gateway/modalities/realtime.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -50,7 +48,7 @@ Realtime is for live conversation. To transcribe recorded audio, see [Speech to 
 > **💡 Note:** Realtime support ships in the stable AI SDK releases. Install it with `pnpm
 >   add ai @ai-sdk/gateway @ai-sdk/react`.
 
-These examples use `openai/gpt-realtime-2` and `spacexai/grok-voice-think-fast-1.0`. Swap the model ID to switch between them. `spacexai/grok-voice-think-fast-1.0` supports speech-to-speech only, so it does not handle transcription or translation.
+These examples use `openai/gpt-realtime-2`, which supports realtime connections over WebSocket. Before switching models, check that the model supports the realtime WebSocket endpoint. A successful token request does not guarantee that a model accepts a WebSocket connection.
 
 ## Browser voice agent
 
@@ -106,7 +104,7 @@ Outside the browser, use the realtime model as a codec to drive a WebSocket your
 import { gateway } from '@ai-sdk/gateway';
 import WebSocket from 'ws';
 
-const modelId = 'spacexai/grok-voice-think-fast-1.0';
+const modelId = 'openai/gpt-realtime-2';
 
 const { token, url } = await gateway.experimental_realtime.getToken({
   model: modelId,
@@ -130,7 +128,9 @@ ws.on('open', async () => {
     ),
   );
   ws.send(
-    JSON.stringify(await model.serializeClientEvent({ type: 'response-create' })),
+    JSON.stringify(
+      await model.serializeClientEvent({ type: 'response-create' }),
+    ),
   );
 });
 
@@ -161,12 +161,12 @@ Pass a `sessionConfig` to set the voice, turn detection, and other session optio
 
 AI Gateway enforces these limits on every realtime session:
 
-| Limit                    | Value      | What happens when exceeded                                    |
-| ------------------------ | ---------- | ------------------------------------------------------------- |
-| Maximum session duration | 25 minutes | The session closes gracefully                                 |
-| Idle timeout             | 5 minutes  | The session closes if nothing is sent or received             |
+| Limit                    | Value      | What happens when exceeded                                      |
+| ------------------------ | ---------- | --------------------------------------------------------------- |
+| Maximum session duration | 25 minutes | The session closes gracefully                                   |
+| Idle timeout             | 5 minutes  | The session closes if nothing is sent or received               |
 | First client message     | 30 seconds | The session closes if the client sends nothing after connecting |
-| Maximum message size     | 256 KB     | The message is rejected                                       |
+| Maximum message size     | 256 KB     | The message is rejected                                         |
 
 Teams also have a limit on concurrent realtime sessions. Additional connection attempts beyond the limit are rejected until a session ends.
 

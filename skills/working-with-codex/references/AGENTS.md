@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/openai/codex/main/AGENTS.md"
-fetched_at: "2026-07-13T06:55:09.770Z"
-sha256: "c3f80e8386eb170b00af1e21de40d770c4941e464915687e728e2d14a7e79480"
+fetched_at: "2026-09-14T09:38:11.275Z"
+sha256: "b3dc6716209116a311dce67ddd490d7d0b998031734720524ad407fe67c7cf48"
 ---
 
 # Rust/codex-rs
@@ -269,7 +269,6 @@ These guidelines apply to app-server protocol work in `codex-rs`, especially:
 
 - `app-server-protocol/src/protocol/common.rs`
 - `app-server-protocol/src/protocol/v2.rs`
-- `app-server/README.md`
 
 ### Core Rules
 
@@ -303,7 +302,6 @@ These guidelines apply to app-server protocol work in `codex-rs`, especially:
 
 ### Development Workflow
 
-- Update app-server docs/examples when API behavior changes (at minimum `app-server/README.md`).
 - Regenerate schema fixtures when API shapes change:
   `just write-app-server-schema`
   (and `just write-app-server-schema --experimental` when experimental API fixtures are affected).

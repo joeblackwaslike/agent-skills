@@ -3,7 +3,7 @@ title: Vercel Container Registry
 product: vercel
 url: /docs/container-registry
 canonical_url: "https://vercel.com/docs/container-registry"
-last_updated: 2026-08-13
+last_updated: 2026-09-04
 type: how-to
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Store and manage Docker container images on Vercel. Build and push images with the Vercel CLI, then run them on Vercel Functions or in Vercel Sandbox.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/container-registry.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "eb6c9e7e953446457b69d01a233f7207fa5ba35abd3bcc86d4ce9c2441403c6c"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "663ac85a1340751c3faca5dfc6b55b287c019b2a881a71c8db91d01051624ebb"
 ---
 
 # Vercel Container Registry

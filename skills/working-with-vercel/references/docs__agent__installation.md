@@ -15,8 +15,8 @@ related:
 summary: Let AI automatically install Web Analytics and Speed Insights in your app
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/installation.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "ec1fd8fee1cf59df7575b0c4593527d09d2ca78bf5f70358f40ab5116a12a2e8"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "56017ee63505c7005a1413b7df4023a8520bee5460bfdc61111149c1d58e0280"
 ---
 
 # Installation
@@ -40,7 +40,7 @@ Vercel Agent Installation helps add [Web Analytics](/docs/analytics) and [Speed 
 - [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related&source_path=%2Fdocs%2Fagent%2Finstallation&source_site=vercel-docs&relationship=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
 - [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart?from=related&source_path=%2Fdocs%2Fagent%2Finstallation&source_site=vercel-docs&relationship=related) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
 - [Interact with Integrations using Agent Tools](https://vercel.com/docs/integrations/install-an-integration/agent-tools?from=related&source_path=%2Fdocs%2Fagent%2Finstallation&source_site=vercel-docs&relationship=related) — Use Agent Tools to query, debug, and manage your installed integrations through a chat interface with natural language.
-- [Vercel Integrations](https://vercel.com/docs/integrations?from=related&source_path=%2Fdocs%2Fagent%2Finstallation&source_site=vercel-docs&relationship=related) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte
+- [Products](https://vercel.com/docs/products?from=related&source_path=%2Fdocs%2Fagent%2Finstallation&source_site=vercel-docs&relationship=related) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
 
 Full cross-link map for this page: [/docs/agent/installation.graph.md](/docs/agent/installation.graph.md?from=related&source_path=%2Fdocs%2Fagent%2Finstallation&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

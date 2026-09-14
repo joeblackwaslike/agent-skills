@@ -16,8 +16,8 @@ related:
 summary: How Vercel Connect is billed for token requests and triggers across plans and how to stop being billed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/pricing.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "5794961e6c3812b2a82436caa78223089b6f82f1f74aad1ca551d106b8f4d650"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "11dd3474b80fa16c99779e8abb0861c715be1c00ccd0ec713093ec1bd70461a4"
 ---
 
 # Vercel Connect Pricing
@@ -30,6 +30,7 @@ Vercel Connect is billed by token requests and triggers.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to set up a staging environment on Vercel](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related) — Set up a staging environment on Vercel with custom environments, staged production deployments, or a branch-based previe
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related)
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related)
 - [Pricing](https://v0.app/docs/pricing?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related) — Understand the v0 plans, pricing, and usage limits.
@@ -37,8 +38,8 @@ Vercel Connect is billed by token requests and triggers.
 - [Optimizing Vercel Connect Usage](https://vercel.com/docs/connect/optimizing-usage?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related) — Reduce billed token requests and triggers by using the SDK cache effectively, tuning refresh behavior, and pruning trigg
 - [Vercel Agent Pricing](https://vercel.com/docs/agent/pricing?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related) — Understand Vercel Agent pricing and how to track costs
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Account Plans on Vercel](https://vercel.com/docs/plans?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about the different plans available on Vercel.
 - [Vercel KMS Pricing and Limits](https://vercel.com/docs/kms/pricing?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related) — How Vercel KMS is billed per signing operation, the platform limits that apply, and how to stop being billed.
+- [Account Plans on Vercel](https://vercel.com/docs/plans?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about the different plans available on Vercel.
 
 Full cross-link map for this page: [/docs/connect/pricing.graph.md](/docs/connect/pricing.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -16,8 +16,8 @@ related:
 summary: Learn how draft flags work and how to promote them to Vercel Flags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/drafts.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "0c10c45cf108da44e2b9767313e5de68d628e9ac8d70d4badfbc8d04c0a79fda"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "90cbf70138055565dd0ec96d275ee3c8d2a940e5aa2bcb0e5f25863f2b6075cf"
 ---
 
 # Draft Flags
@@ -37,7 +37,6 @@ Drafts are flags that Vercel detects in your code but haven't been created in th
 - [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fdrafts&source_site=vercel-docs&relationship=related) — Using the Flags SDK in SvelteKit
 - [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fdrafts&source_site=vercel-docs&relationship=related)
 - [Setting up Flags Explorer](https://vercel.com/docs/flags/vercel-flags/cli/set-up-flags-explorer?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fdrafts&source_site=vercel-docs&relationship=related) — Add the Flags Explorer to the Vercel Toolbar so you can override flag values on preview deployments without affecting ot
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fdrafts&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/dashboard/drafts.graph.md](/docs/flags/vercel-flags/dashboard/drafts.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fdrafts&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

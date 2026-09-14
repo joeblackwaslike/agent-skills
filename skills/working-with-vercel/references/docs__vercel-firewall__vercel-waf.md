@@ -16,8 +16,8 @@ related:
 summary: Learn how to secure your website with the Vercel Web Application Firewall (WAF)
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "998b8f3c9e064e31de77919a96b28993ffc1bbb0848e07427159e1e3d9db9b1d"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "bb12c4dce1b561d2148906206858a2e4d830bfc5e105439337e327512a404ba7"
 ---
 
 # Vercel WAF
@@ -35,11 +35,11 @@ The Vercel WAF, part of the [Firewall](/docs/vercel-firewall), provides security
 - [Manage Vercel Firewall in the CLI](https://vercel.com/changelog/manage-vercel-firewall-in-the-cli?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf&source_site=vercel-docs&relationship=related)
 - [Vercel WAF for Blob is now generally available](https://vercel.com/changelog/vercel-waf-for-blob-is-now-generally-available?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf&source_site=vercel-docs&relationship=related)
 - [Web Application Firewall control now available with vercel.json](https://vercel.com/changelog/web-application-firewall-control-now-available-with-vercel-json?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf&source_site=vercel-docs&relationship=related)
-- [Ensuring safe and effective infrastructure testing](https://vercel.com/kb/guide/ensuring-safe-and-effective-infrastructure-testing?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf&source_site=vercel-docs&relationship=related) — We conduct regular penetration testing through certified third-party assessors to secure the Vercel platform. This guide
 - [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf&source_site=vercel-docs&relationship=related) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
 - [How to conduct PCI scans on Vercel: A complete guide to IP safelisting](https://vercel.com/kb/guide/how-to-conduct-pci-scans-on-vercel-guide?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf&source_site=vercel-docs&relationship=related) — Scan and verify your Vercel deployments for secure, PCI-compliant payment processing.
 - [How to Effectively Load Test Your Vercel Application](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf&source_site=vercel-docs&relationship=related) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
 - [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf&source_site=vercel-docs&relationship=related) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
+- [How to protect your AI app from bots](https://vercel.com/kb/guide/how-to-protect-your-ai-app-from-bots?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf&source_site=vercel-docs&relationship=related) — Learn how to protect your AI app from bots, scrapers, and abuse using Firewall, BotID, and more.
 - [Block, rate limit, and challenge traffic with the Vercel Firewall](https://vercel.com/changelog/block-rate-limit-and-challenge-traffic-with-the-vercel-firewall?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf&source_site=vercel-docs&relationship=related)
 - [Create Vercel Firewall rules with natural language](https://vercel.com/changelog/create-vercel-waf-custom-rules-using-natural-language?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf&source_site=vercel-docs&relationship=related)
 - [Using the REST API with the Firewall](https://vercel.com/docs/vercel-firewall/firewall-api?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf&source_site=vercel-docs&relationship=related) — Learn how to interact with the security endpoints of the Vercel REST API programmatically.

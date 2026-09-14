@@ -16,8 +16,8 @@ related:
 summary: Understand how the build step works when creating a Vercel Deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "efc3f29907c425146350a4fa36b9888a3c6e48e28d74e8e63ff0e7a032c7f581"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "ebb7c7c2d1d79debd38aa5c76ea980fd092b16532f876b9dc825ce6bd168a914"
 ---
 
 # Builds
@@ -32,9 +32,9 @@ Vercel automatically performs a **build** every time you deploy your code, wheth
 
 - [Basic build machines are now available on Pro and Enterprise](https://vercel.com/changelog/basic-build-machines?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related)
 - [Deploy steps are now up to 21% faster](https://vercel.com/changelog/deploy-steps-are-now-up-to-21-faster?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related)
+- [Deployment step now 10% faster](https://vercel.com/changelog/deployment-step-now-10-faster?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related)
 - [Deployment step now 15% faster](https://vercel.com/changelog/deployment-step-now-15-percent-faster?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related)
 - [Deployments are now up to 7 seconds faster](https://vercel.com/changelog/deployments-are-now-up-to-7-seconds-faster?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related)
-- [Deploys are now up to 33% faster for apps with many ISR pages](https://vercel.com/changelog/deploys-are-now-up-to-33-faster-for-apps-with-many-isr-pages?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related)
 - [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
 - [How can I allowlist IP addresses for a deployment?](https://vercel.com/kb/guide/how-to-allowlist-deployment-ip-address?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related) — Vercel deployments use dynamic outbound IPs by default. Learn how to allowlist IP addresses for a deployment with Static
 - [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,

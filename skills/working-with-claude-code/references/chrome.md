@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/chrome.md"
-fetched_at: "2026-08-31T10:37:20.620Z"
-sha256: "2214b06f38da822b3b628bf472c1571085201cd07a3827fa7d978477a945c39d"
+fetched_at: "2026-09-14T09:37:17.168Z"
+sha256: "300bad3a55706242fc5ffc4826be0d02b9b140456c44c637512bd9a4b4e79ce8"
 ---
 
 > ## Documentation Index
@@ -116,12 +116,9 @@ Site-level permissions are inherited from the Chrome extension. Manage permissio
 
 ### Browser tools in plan mode
 
-In [plan mode](/docs/en/permission-modes#analyze-before-you-edit-with-plan-mode), browser tool calls that only read the page or browser state run without a permission prompt, and calls that change state prompt for approval.
+In [plan mode](/docs/en/permission-modes#analyze-before-you-edit-with-plan-mode), a permission prompt appears before Claude records a GIF, opens a new tab, or runs a shortcut. If [bypass permissions mode is available](/docs/en/permission-modes#skip-all-checks-with-bypasspermissions-mode) in your session and [feature-flag fetching](/docs/en/env-vars#features-that-need-feature-flag-fetching) is off, these calls run without a prompt.
 
-* **Read-only calls**: `read_page`, `get_page_text`, `find`, reading console messages or network requests, and taking a screenshot
-* **State-changing calls**: clicks, typing, navigation, tab and window management, and recording a GIF
-
-An otherwise read-only call also prompts for approval when it sets a state-changing input flag, such as `createIfEmpty` on `tabs_context_mcp`, `clear` on the console and network readers, or `save_to_disk` on a screenshot. A `browser_batch` call runs without a prompt only when every action inside it is read-only.
+A `tabs_context_mcp` call also prompts when it sets `createIfEmpty`, and so does a `browser_batch` call that includes any of these actions.
 
 ## Example workflows
 

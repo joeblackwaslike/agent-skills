@@ -1,28 +1,25 @@
 ---
-title: Pydantic AI
+title: Pydantic AI with AI Gateway
 product: vercel
 url: /docs/ai-gateway/ecosystem/framework-integrations/pydantic-ai
 canonical_url: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/pydantic-ai"
-last_updated: 2026-07-28
-type: conceptual
+last_updated: 2026-09-08
+type: how-to
 prerequisites:
   - /docs/ai-gateway/ecosystem/framework-integrations
   - /docs/ai-gateway/ecosystem
 related:
   - /docs/ai-gateway
-summary: Learn how to integrate Vercel AI Gateway with Pydantic AI to access multiple AI models through a unified interface
+summary: Learn how to integrate Vercel AI Gateway with Pydantic AI to access multiple AI models through a unified interface.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/pydantic-ai.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "2590101549aea723626a5b4315ea329f5d74e4e886f341a8f0b5d81846943a94"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "c0847b82b5708877a8b2e098bab45186cce838f01d4dcca991d61a3fa25c5f14"
 ---
 
-# Pydantic AI
+# Pydantic AI with AI Gateway
 
-[Pydantic AI](https://ai.pydantic.dev/) is a Python agent framework
-designed to make it easy to build production grade applications with AI.
-This guide demonstrates how to integrate [Vercel AI Gateway](/docs/ai-gateway)
-with Pydantic AI to access various AI models and providers.
+Build Python agents with [Pydantic AI](https://ai.pydantic.dev/) and connect them to [AI Gateway](/docs/ai-gateway) for access to its model catalog and provider routing.
 
 
 <!-- docsgraph:related -->
@@ -30,12 +27,11 @@ with Pydantic AI to access various AI models and providers.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [AI models](https://v0.app/docs/ai-models?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fpydantic-ai&source_site=vercel-docs&relationship=related) — Add AI functionality to your v0 projects by integrating AI models and platforms.
-- [AI SDK for Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fpydantic-ai&source_site=vercel-docs&relationship=related) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
-- [Vercel & OpenAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fpydantic-ai&source_site=vercel-docs&relationship=related) — Integrate your Vercel project with OpenAI's powerful suite of models.
-- [Build with AI on Vercel](https://vercel.com/docs/agent-resources/integrations-for-models?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fpydantic-ai&source_site=vercel-docs&relationship=related) — Integrate powerful AI services and models seamlessly into your Vercel projects.
-- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fpydantic-ai&source_site=vercel-docs&relationship=related) — Create an AI Gateway API key, make your first request with TypeScript, Python, or cURL, and verify how the request was r
-- [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fpydantic-ai&source_site=vercel-docs&relationship=related) — Learn how to add the xAI native integration with Vercel.
+- [Ecosystem](https://vercel.com/docs/sandbox/ecosystem?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fpydantic-ai&source_site=vercel-docs&relationship=related) — Use Vercel Sandbox with the agent frameworks, model SDKs, and coding agents you already work with.
+- [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fpydantic-ai&source_site=vercel-docs&relationship=related) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fpydantic-ai&source_site=vercel-docs&relationship=related) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
+- [Pi with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/pi?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fpydantic-ai&source_site=vercel-docs&relationship=related) — Connect Pi to AI Gateway with one CLI command, or configure it manually.
+- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fpydantic-ai&source_site=vercel-docs&relationship=related) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integrations/pydantic-ai.graph.md](/docs/ai-gateway/ecosystem/framework-integrations/pydantic-ai.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fpydantic-ai&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -12,8 +12,8 @@ related:
 summary: "Programmatically search, price, purchase, renew, and manage domains with Vercel's domains registrar API endpoints."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/registrar-api.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "7767f1bfececfa311e3e27f3fd811ce243bce18e22abee2dc174a8e8239087d2"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "09fbff909ee4924b14108ccce5662d9731fd0dfff4d12ff2f6d381833aae4b18"
 ---
 
 # Programmatic Domain Management
@@ -29,7 +29,6 @@ The domains registrar API enables you to programmatically manage your domain lif
 - [New Domains Registrar API for domain search, pricing, purchase, and management](https://vercel.com/changelog/new-domains-registrar-api-for-domain-search-pricing-purchase-and-management?from=related&source_path=%2Fdocs%2Fdomains%2Fregistrar-api&source_site=vercel-docs&relationship=related)
 - [Get contact verification status for a domain](https://vercel.com/docs/rest-api/domains-registrar/get-contact-verification-status-for-a-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fregistrar-api&source_site=vercel-docs&relationship=related) — GET /v1/registrar/domains/{domain}/contact-verification — Get the registrant contact verification status for a domain. U
 - [List all the domains](https://vercel.com/docs/rest-api/domains/list-all-the-domains?from=related&source_path=%2Fdocs%2Fdomains%2Fregistrar-api&source_site=vercel-docs&relationship=related) — GET /v5/domains — Retrieves a list of domains registered for the authenticated user or team. By default it returns the l
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fdomains%2Fregistrar-api&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/domains/registrar-api.graph.md](/docs/domains/registrar-api.graph.md?from=related&source_path=%2Fdocs%2Fdomains%2Fregistrar-api&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

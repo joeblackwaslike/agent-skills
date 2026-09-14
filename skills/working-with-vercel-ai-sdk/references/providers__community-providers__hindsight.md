@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/hindsight.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "069d4246f7a42c78934914b0049f7f31c016005492ee8b7bb41d37ec1e651321"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "933b954d70f8baeeb62dd2c9b474430a88f6556adb105fce275ba87e793ff4df"
 ---
 
 # Hindsight
@@ -271,6 +271,7 @@ For full API documentation and configuration options, see the [Hindsight documen
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
 - [Interfaze](/providers/community-providers/interfaze)
+- [Telnyx](/providers/community-providers/telnyx)
 - [Flowise](/providers/community-providers/flowise)
 
 

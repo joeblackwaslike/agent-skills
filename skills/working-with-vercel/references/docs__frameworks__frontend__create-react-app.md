@@ -17,8 +17,8 @@ related:
 summary: Deploy Create React App projects to Vercel and add Preview Deployments, Web Analytics, Speed Insights, and Observability.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/frontend/create-react-app.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "07b306b07f2a1b664272173ba23fb62a081230954c77f3a399164c0c524e560f"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "4badddef85e10b02f8e82d5ec03099aa61533b5462c1dc854019400125a8f61e"
 ---
 
 # Create React App on Vercel
@@ -33,8 +33,8 @@ Create React App (CRA) is a development environment for building single-page app
 
 - [Deploy a headless BigCommerce storefront with Vercel](https://vercel.com/kb/guide/deploy-headless-bigcommerce-storefront-with-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fcreate-react-app&source_site=vercel-docs&relationship=related) — Deploy a headless BigCommerce storefront using Catalyst and Next.js on Vercel
 - [Deploying React with Vercel](https://vercel.com/kb/guide/deploying-react-with-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fcreate-react-app&source_site=vercel-docs&relationship=related) — Deploy React with Vercel to replace your build pipeline and shared staging. See how framework detection, previews, and F
-- [How to Deploy a Preact Site with Vercel](https://vercel.com/kb/guide/deploying-preact-with-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fcreate-react-app&source_site=vercel-docs&relationship=related) — Create your Preact app and deploy it with Vercel.
 - [Building secure and performant web applications on Vercel](https://vercel.com/blog/building-secure-and-performant-web-applications-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fcreate-react-app&source_site=vercel-docs&relationship=related)
+- [How to Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fcreate-react-app&source_site=vercel-docs&relationship=related) — Deploy a TanStack Start app to Vercel with the Nitro Vite plugin. Covers Git and CLI deployment, Fluid compute defaults,
 - [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fcreate-react-app&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fcreate-react-app&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 - [Remix on Vercel](https://vercel.com/docs/frameworks/full-stack/remix?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fcreate-react-app&source_site=vercel-docs&relationship=related) — Deploy Remix applications to Vercel and configure the Vercel Vite preset, SSR, streaming, caching, and analytics.

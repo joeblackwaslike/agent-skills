@@ -14,8 +14,8 @@ related:
 summary: A popover interface for deploying files to Vercel with real-time status tracking.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/blocks/deploy-popover.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "6bf97aee6b429b568f0af482b6b4f1cd1ae5dbb7e14ff78af9dd74495c140b1a"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "36d36ec5bf55880d6c2158c5de45ad96c4bd9ae1f84e009a04ca6314f739cd66"
 ---
 
 # Deploy Popover
@@ -36,8 +36,8 @@ The Deploy Popover component provides a user-friendly popover interface for depl
 - [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fdeploy-popover&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Deploying with Vercel Drop](https://vercel.com/docs/drop?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fdeploy-popover&source_site=vercel-docs&relationship=related) — Vercel Drop lets you deploy a file or folder by dragging it into your browser, with no Git or CLI required.
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fdeploy-popover&source_site=vercel-docs&relationship=related) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
-- [Upload Deployment Files](https://vercel.com/docs/rest-api/deployments/upload-deployment-files?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fdeploy-popover&source_site=vercel-docs&relationship=related) — POST /v2/files — Before you create a deployment you need to upload the required files for that deployment. To do it, you
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fdeploy-popover&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Upload Deployment Files](https://vercel.com/docs/rest-api/deployments/upload-deployment-files?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fdeploy-popover&source_site=vercel-docs&relationship=related) — POST /v2/files — Before you create a deployment you need to upload the required files for that deployment. To do it, you
 
 Full cross-link map for this page: [/docs/platforms/platform-elements/blocks/deploy-popover.graph.md](/docs/platforms/platform-elements/blocks/deploy-popover.graph.md?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fdeploy-popover&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

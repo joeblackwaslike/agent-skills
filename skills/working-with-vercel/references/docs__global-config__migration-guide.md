@@ -16,8 +16,8 @@ related:
 summary: Learn what changed when Edge Config was renamed to Global Config, and how to migrate your connection strings, SDK, and environment variables.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/migration-guide.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "a8baf54ac4e273d7938cc9bb2fe1ec58e9e2f4011e20928dbd73075a4c6f9684"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "b92c1954b195927eace57cdd360f422f55d64cb6a31c5aa7290a35a7baefa88c"
 ---
 
 # Migrating from Edge Config to Global Config
@@ -38,7 +38,6 @@ Edge Config is now **Global Config**. This rename better reflects that it is a g
 - [Edge Config is now generally available ](https://vercel.com/changelog/edge-config-is-now-generally-available?from=related&source_path=%2Fdocs%2Fglobal-config%2Fmigration-guide&source_site=vercel-docs&relationship=related)
 - [Edge Config: Ultra-low latency data at the edge](https://vercel.com/blog/edge-config-ultra-low-latency-data-at-the-edge?from=related&source_path=%2Fdocs%2Fglobal-config%2Fmigration-guide&source_site=vercel-docs&relationship=related)
 - [Vercel Edge Config is now generally available](https://vercel.com/blog/vercel-edge-config-is-now-generally-available?from=related&source_path=%2Fdocs%2Fglobal-config%2Fmigration-guide&source_site=vercel-docs&relationship=related)
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fglobal-config%2Fmigration-guide&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/global-config/migration-guide.graph.md](/docs/global-config/migration-guide.graph.md?from=related&source_path=%2Fdocs%2Fglobal-config%2Fmigration-guide&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

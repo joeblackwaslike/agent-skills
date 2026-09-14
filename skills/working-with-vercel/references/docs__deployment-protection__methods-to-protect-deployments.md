@@ -16,8 +16,8 @@ related:
 summary: "Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Trusted IPs."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "8bb213a5985472b0f673fdcbe5468419f2fd771adc0cb0b00a94da44c0652587"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "67ef67d594e0a9517d5e84f7bbbe431a932049973e6b8e0452eea30315ddedc0"
 ---
 
 # Methods to Protect Deployments
@@ -38,7 +38,6 @@ Vercel offers several methods for protecting your deployments. Depending on your
 - [Access Control](https://vercel.com/docs/security/access-control?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 - [Automated & Agent Access](https://vercel.com/docs/deployment-protection/automated-agent-access?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments&source_site=vercel-docs&relationship=related) — Grant AI agents, CI/CD pipelines, MCP servers, and testing tools access to Vercel deployments that have Deployment Prote
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/deployment-protection/methods-to-protect-deployments.graph.md](/docs/deployment-protection/methods-to-protect-deployments.graph.md?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

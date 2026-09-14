@@ -16,8 +16,8 @@ related:
 summary: Set up Vercel Queues with the SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/quickstart.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "0e9da511a55f396cab81f4e8fb7a951ff16ae7782fa1e3c8c240a99f217eb23c"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "f700db96f2181a9365de1c76ed997afe4831b53862d847bb4ed3001266b6142c"
 ---
 
 # Quickstart
@@ -30,17 +30,17 @@ This guide shows how to send your first queue message and process it with the Ve
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Build a v0-style app builder with OpenAI Agents API and Vercel Sandbox](https://vercel.com/kb/guide/v0-clone-openai-agents-vercel-sandbox?from=related&source_path=%2Fdocs%2Fqueues%2Fquickstart&source_site=vercel-docs&relationship=related) — Build a chat-to-app workspace with live Next.js previews, follow-up edits, and saved projects using the OpenAI Agents AP
 - [Vercel Python Queues SDK is now available in beta](https://vercel.com/changelog/vercel-python-queues-sdk-is-now-available-in-beta?from=related&source_path=%2Fdocs%2Fqueues%2Fquickstart&source_site=vercel-docs&relationship=related)
 - [How to run background jobs in Next.js](https://vercel.com/kb/guide/how-to-run-background-jobs-in-nextjs-on-vercel?from=related&source_path=%2Fdocs%2Fqueues%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn the durable way to run background jobs in Next.js on Vercel with the Workflow SDK, and when to reach for Queues or
 - [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel?from=related&source_path=%2Fdocs%2Fqueues%2Fquickstart&source_site=vercel-docs&relationship=related) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
 - [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel?from=related&source_path=%2Fdocs%2Fqueues%2Fquickstart&source_site=vercel-docs&relationship=related) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
 - [Vercel Queues now in public beta](https://vercel.com/changelog/vercel-queues-now-in-public-beta?from=related&source_path=%2Fdocs%2Fqueues%2Fquickstart&source_site=vercel-docs&relationship=related)
 - [Vercel Queues is now in Limited Beta](https://vercel.com/changelog/vercel-queues-is-now-in-limited-beta?from=related&source_path=%2Fdocs%2Fqueues%2Fquickstart&source_site=vercel-docs&relationship=related)
+- [How to ship a Flask app on Vercel](https://vercel.com/kb/guide/ship-a-flask-app-on-vercel?from=related&source_path=%2Fdocs%2Fqueues%2Fquickstart&source_site=vercel-docs&relationship=related) — Deploy a Flask app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
 - [Run background tasks with Celery on Vercel](https://vercel.com/docs/frameworks/backend/celery?from=related&source_path=%2Fdocs%2Fqueues%2Fquickstart&source_site=vercel-docs&relationship=related) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
 - [Queues concepts](https://vercel.com/docs/queues/concepts?from=related&source_path=%2Fdocs%2Fqueues%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fqueues%2Fquickstart&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
-- [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fqueues%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fqueues%2Fquickstart&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/queues/quickstart.graph.md](/docs/queues/quickstart.graph.md?from=related&source_path=%2Fdocs%2Fqueues%2Fquickstart&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -98,6 +98,8 @@ In this quickstart:
 
 - ### Send a message anywhere in your app
   Import `send` directly and call it from any server-side context: a route handler, a Server Action, a [Workflow](/docs/workflows) step, or an error handler.
+
+  **app/cart/checkout/route.ts**
   ```typescript filename="app/cart/checkout/route.ts" framework=nextjs-app
   import { send } from '@vercel/queue';
 
@@ -107,6 +109,7 @@ In this quickstart:
     return Response.json({ messageId });
   }
   ```
+  **api/checkout.py**
   ```python filename="api/checkout.py" framework=fastapi
   from fastapi import FastAPI, Request
   from vercel.queue import send
@@ -122,6 +125,7 @@ In this quickstart:
   ```
 
 - ### Handle incoming messages
+  **app/api/queues/fulfill-order/route.ts**
   ```typescript filename="app/api/queues/fulfill-order/route.ts" framework=nextjs-app
   import { handleCallback } from '@vercel/queue';
 
@@ -131,6 +135,7 @@ In this quickstart:
     console.log('Fulfilling order', metadata.messageId, order);
   });
   ```
+  **worker.py**
   ```python filename="worker.py" framework=fastapi
   from vercel.queue import Message, subscribe
 
@@ -147,6 +152,8 @@ In this quickstart:
   For JavaScript and TypeScript, add a consumer trigger to `vercel.json`. For Python, set `entrypoint` in `pyproject.toml` to the subscriber's Python module import path. For example, use `queues.orders` for the module at `queues/orders.py`. The Python build imports the module, reads the `@subscribe` configuration, and generates the queue-triggered function.
 
   Both configurations make the consumer private. The consumer has no public URL, and only Vercel's queue infrastructure can invoke it.
+
+  **vercel.json**
   ```json filename="vercel.json" framework=nextjs-app
   {
     "functions": {
@@ -156,6 +163,7 @@ In this quickstart:
     }
   }
   ```
+  **pyproject.toml**
   ```toml filename="pyproject.toml" framework=fastapi
   [[tool.vercel.subscribers]]
   entrypoint = "worker"
@@ -165,9 +173,13 @@ The top-level `send` and callback helpers use an auto-configured default client.
 
 To target a specific region when sending, pass the `region` option:
 
+**app/api/orders/route.ts**
+
 ```typescript filename="app/api/orders/route.ts" framework=nextjs-app
 await send('orders', payload, { region: 'sfo1' });
 ```
+
+**api/orders.py**
 
 ```python filename="api/orders.py" framework=fastapi
 from vercel.queue import QueueClient

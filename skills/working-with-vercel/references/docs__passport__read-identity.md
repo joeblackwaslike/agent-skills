@@ -14,8 +14,8 @@ related:
 summary: Read verified Passport identity in server-side code and apply application-level authorization.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport/read-identity.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "b594ac0456749c180a30d337330301adf52ffe07054c85d5f1bbf3e48193cf75"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "e0c77386de999b3dd9d40409b8fffc0a143ad5d5ab795917409c6f2d94fa8e3c"
 ---
 
 # Read Passport identity in your application
@@ -35,7 +35,6 @@ After Passport authenticates a visitor, Vercel stores a signed Passport session 
 - [Verify forwarded Passport tokens](https://vercel.com/docs/passport/verify-identity?from=related&source_path=%2Fdocs%2Fpassport%2Fread-identity&source_site=vercel-docs&relationship=related) — Verify a Passport token forwarded to your backend as a signed JWT.
 - [The complete guide to authentication on Vercel](https://vercel.com/kb/guide/complete-guide-authentication-vercel?from=related&source_path=%2Fdocs%2Fpassport%2Fread-identity&source_site=vercel-docs&relationship=related) — Learn how to implement authentication in your Vercel applications. Covers NextAuth/Auth.js setup, environment variable c
 - [Set up Passport with an identity provider](https://vercel.com/docs/passport/set-up-identity-provider?from=related&source_path=%2Fdocs%2Fpassport%2Fread-identity&source_site=vercel-docs&relationship=related) — Configure Passport with Okta, Microsoft Entra ID, or another OpenID Connect provider.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fpassport%2Fread-identity&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/passport/read-identity.graph.md](/docs/passport/read-identity.graph.md?from=related&source_path=%2Fdocs%2Fpassport%2Fread-identity&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

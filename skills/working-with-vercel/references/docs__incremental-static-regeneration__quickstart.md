@@ -14,8 +14,8 @@ related:
 summary: Learn how to set up Incremental Static Regeneration (ISR) with time-based and on-demand revalidation.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/incremental-static-regeneration/quickstart.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "22ea31df3d7456a033450650ad4ea81f23dae18bcdf7ac164e19803419b68747"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "fe04e2fa2465c4ab8c6b40623d0e6d5648675e06cb9919f2b571fbf4b1ab46b4"
 ---
 
 # Getting started with ISR
@@ -94,13 +94,19 @@ To deploy a SvelteKit route with ISR, export a config object with an `isr` prope
 
 To enable ISR in a Nuxt route, add a `routeRules` option to your `nuxt.config.ts`, as shown in the example below:
 
+**apps/example/page.tsx**
+
 ```ts filename="apps/example/page.tsx" framework=nextjs-app
 export const revalidate = 10; // seconds
 ```
 
+**apps/example/page.jsx**
+
 ```js filename="apps/example/page.jsx" framework=nextjs-app
 export const revalidate = 10; // seconds
 ```
+
+**pages/example/index.tsx**
 
 ```ts filename="pages/example/index.tsx" framework=nextjs
 export async function getStaticProps() {
@@ -115,6 +121,8 @@ export async function getStaticProps() {
 }
 ```
 
+**pages/example/index.jsx**
+
 ```js filename="pages/example/index.jsx" framework=nextjs
 export async function getStaticProps() {
   /* Fetch data here */
@@ -128,6 +136,8 @@ export async function getStaticProps() {
 }
 ```
 
+**example-route/+page.server.ts**
+
 ```ts filename="example-route/+page.server.ts" framework=sveltekit
 export const config = {
   isr: {
@@ -136,6 +146,8 @@ export const config = {
 };
 ```
 
+**example-route/+page.server.js**
+
 ```js filename="example-route/+page.server.js" framework=sveltekit
 export const config = {
   isr: {
@@ -143,6 +155,8 @@ export const config = {
   },
 };
 ```
+
+**nuxt.config.ts**
 
 ```ts filename="nuxt.config.ts" framework=nuxt
 export default defineNuxtConfig({
@@ -153,6 +167,8 @@ export default defineNuxtConfig({
   },
 });
 ```
+
+**nuxt.config.js**
 
 ```js filename="nuxt.config.js" framework=nuxt
 export default defineNuxtConfig({
@@ -171,6 +187,8 @@ The following example renders a list of blog posts from a demo API, revalidating
 > For \['sveltekit']:
 
 First, create a `+page.server.ts` file that exports your `config` object with `isr` configured and fetches your data:
+
+**routes/blog-posts/+page.server.ts**
 
 ```ts filename="routes/blog-posts/+page.server.ts" framework=sveltekit
 export const config = {
@@ -192,6 +210,8 @@ export async function load({ params }) {
   };
 }
 ```
+
+**routes/blog-posts/+page.server.js**
 
 ```js filename="routes/blog-posts/+page.server.js" framework=sveltekit
 export const config = {
@@ -218,6 +238,8 @@ export async function load({ params }) {
 
 Then, create a `+page.svelte.ts` file that renders the list of blog posts:
 
+**routes/blog-posts/+page.svelte**
+
 ```tsx filename="routes/blog-posts/+page.svelte" framework=sveltekit
 <script>
   /** @type {import('./$types').PageData} */
@@ -231,6 +253,8 @@ Then, create a `+page.svelte.ts` file that renders the list of blog posts:
 	{/each}
 </ul>
 ```
+
+**routes/blog-posts/+page.svelte**
 
 ```jsx filename="routes/blog-posts/+page.svelte" framework=sveltekit
 <script>
@@ -249,6 +273,8 @@ Then, create a `+page.svelte.ts` file that renders the list of blog posts:
 
 After enabling ISR in your `nuxt.config.ts` file [as described above](#time-based-revalidation), create an API route that fetches your data:
 
+**server/api/blog-posts.ts**
+
 ```ts filename="server/api/blog-posts.ts" framework=nuxt
 interface Post {
   title: string;
@@ -266,6 +292,8 @@ export default defineEventHandler(async (event) => {
 });
 ```
 
+**server/api/blog-posts.js**
+
 ```js filename="server/api/blog-posts.js" framework=nuxt
 export default defineEventHandler(async (event) => {
   const res = await fetch('https://api.vercel.app/blog');
@@ -282,6 +310,8 @@ export default defineEventHandler(async (event) => {
 
 Then, fetch the data and render it in a `.vue` file:
 
+**pages/blog-posts/index.vue**
+
 ```tsx filename="pages/blog-posts/index.vue" framework=nuxt
 <template>
   <ul>
@@ -296,6 +326,8 @@ Then, fetch the data and render it in a `.vue` file:
 </script>
 ```
 
+**pages/blog-posts/index.vue**
+
 ```jsx filename="pages/blog-posts/index.vue" framework=nuxt
 <template>
   <ul>
@@ -309,6 +341,8 @@ Then, fetch the data and render it in a `.vue` file:
   const { data } = await useFetch("/api/blog-posts");
 </script>
 ```
+
+**pages/blog-posts/index.tsx**
 
 ```ts v0="build" filename="pages/blog-posts/index.tsx" framework=nextjs
 export async function getStaticProps() {
@@ -339,6 +373,8 @@ export default function BlogPosts({ posts }: { posts: Post[] }) {
 }
 ```
 
+**pages/blog-posts/index.jsx**
+
 ```js v0="build" filename="pages/blog-posts/index.jsx" framework=nextjs
 export async function getStaticProps() {
   const res = await fetch('https://api.vercel.app/blog');
@@ -363,6 +399,8 @@ export default function BlogPosts({ posts }) {
 }
 ```
 
+**app/blog-posts/page.tsx**
+
 ```ts v0="build" filename="app/blog-posts/page.tsx" framework=nextjs-app
 export const revalidate = 10; // seconds
 
@@ -383,6 +421,8 @@ export default async function Page() {
   );
 }
 ```
+
+**app/blog-posts/page.jsx**
 
 ```js v0="build" filename="app/blog-posts/page.jsx" framework=nextjs-app
 export const revalidate = 10; // seconds
@@ -418,6 +458,8 @@ To trigger revalidation with SvelteKit:
 1. Set an `BYPASS_TOKEN` Environment Variable with a secret value
 2. Assign your Environment Variable to the `bypassToken` config option for your route:
 
+**routes/example-route/+page.server.ts**
+
 ```ts filename="routes/example-route/+page.server.ts" framework=sveltekit
 import { BYPASS_TOKEN } from '$env/static/private';
 
@@ -428,6 +470,8 @@ export const config = {
   },
 };
 ```
+
+**routes/example-route/+page.server.js**
 
 ```js filename="routes/example-route/+page.server.js" framework=sveltekit
 import { BYPASS_TOKEN } from '$env/static/private';
@@ -453,6 +497,8 @@ To trigger revalidation with Nuxt:
 1. Set an `BYPASS_TOKEN` Environment Variable with a secret value
 2. Assign your Environment Variable to the `bypassToken` config option in `nitro.config` file:
 
+**nitro.config.ts**
+
 ```ts filename="nitro.config.ts" framework=nuxt
 export default defineNitroConfig({
   vercel: {
@@ -462,6 +508,8 @@ export default defineNitroConfig({
   },
 });
 ```
+
+**nitro.config.js**
 
 ```js filename="nitro.config.js" framework=nuxt
 export default defineNitroConfig({
@@ -475,6 +523,8 @@ export default defineNitroConfig({
 
 3. Assign your Environment Variable to the `bypassToken` config option in `nuxt.config` file:
 
+**nuxt.config.ts**
+
 ```ts filename="nuxt.config.ts" framework=nuxt
 export default defineNuxtConfig({
   nitro: {
@@ -486,6 +536,8 @@ export default defineNuxtConfig({
   },
 });
 ```
+
+**nuxt.config.js**
 
 ```js filename="nuxt.config.js" framework=nuxt
 export default defineNuxtConfig({

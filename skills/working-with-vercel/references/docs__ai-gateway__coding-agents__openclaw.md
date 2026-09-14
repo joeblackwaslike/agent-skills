@@ -1,26 +1,26 @@
 ---
-title: OpenClaw
+title: OpenClaw with AI Gateway
 product: vercel
 url: /docs/ai-gateway/coding-agents/openclaw
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/openclaw"
-last_updated: 2026-08-12
-type: conceptual
+last_updated: 2026-09-08
+type: how-to
 prerequisites:
   - /docs/ai-gateway/coding-agents
   - /docs/ai-gateway
 related:
   - /docs/cli/ai-gateway
   - /docs/ai-gateway/observability-and-spend/budgets
-summary: Use OpenClaw with the AI Gateway as a model provider.
+summary: Connect OpenClaw to AI Gateway with the Vercel CLI or manual provider configuration. Use gateway models across coding agents and messaging channels.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/openclaw.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "a98efbcb09d0a607d513b9193170e90e911e2e240f1b0ca8bd1a2db5c0c73b42"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "8ce0713b8c41fd73140331fcb048b9b2e4d277ae9c2c58ee3fedb35870b2484b"
 ---
 
-# OpenClaw
+# OpenClaw with AI Gateway
 
-[OpenClaw](https://github.com/openclaw/openclaw) is a self-hosted gateway that connects chat apps to coding agents. Add AI Gateway as a model provider so every agent it runs shares one key, one catalog, and one spend view.
+[OpenClaw](https://github.com/openclaw/openclaw) is a self-hosted gateway that connects messaging platforms and coding agents. Add AI Gateway as a model provider so every agent and channel shares one key, one model catalog, and one spend view.
 
 
 <!-- docsgraph:related -->
@@ -29,23 +29,28 @@ sha256: "a98efbcb09d0a607d513b9193170e90e911e2e240f1b0ca8bd1a2db5c0c73b42"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenclaw&source_site=vercel-docs&relationship=related)
-- [OpenClaw \\(Clawdbot\\)](https://vercel.com/docs/ai-gateway/chat-platforms/openclaw?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenclaw&source_site=vercel-docs&relationship=related) — Use OpenClaw \\(formerly Clawdbot\\) with AI Gateway.
-- [Use AI Gateway with Clawdbot](https://vercel.com/changelog/use-ai-gateway-with-clawdbot?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenclaw&source_site=vercel-docs&relationship=related)
-- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenclaw&source_site=vercel-docs&relationship=related) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
-- [Chat Platforms](https://vercel.com/docs/ai-gateway/chat-platforms?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenclaw&source_site=vercel-docs&relationship=related) — Configure AI chat platforms to use the AI Gateway for unified model access and spend monitoring.
-- [Cline](https://vercel.com/docs/ai-gateway/coding-agents/cline?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenclaw&source_site=vercel-docs&relationship=related) — Use Cline with the AI Gateway.
-- [Xcode](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenclaw&source_site=vercel-docs&relationship=related) — Use Xcode's coding assistant with the AI Gateway.
+- [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenclaw&source_site=vercel-docs&relationship=related) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
+- [Deep Agents CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepagents?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenclaw&source_site=vercel-docs&relationship=related) — Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
+- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenclaw&source_site=vercel-docs&relationship=related) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
+- [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenclaw&source_site=vercel-docs&relationship=related) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
+- [Cline with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/cline?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenclaw&source_site=vercel-docs&relationship=related) — Connect Cline to AI Gateway through the Vercel CLI or VS Code settings. Configure model access and monitor usage and spe
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/openclaw.graph.md](/docs/ai-gateway/coding-agents/openclaw.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenclaw&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-> **💡 Note:** The Vercel CLI is the recommended way to set this up. [`vercel ai-gateway
->   coding-agents setup --agent openclaw`](/docs/cli/ai-gateway#setup) provisions
-> a key, adds the provider and a starter model list to
-> `~/.openclaw/openclaw.json`, and exports `AI_GATEWAY_API_KEY` from a managed
-> block in your shell startup file.
+## Set up with the Vercel CLI
+
+Run the [Vercel CLI setup command](/docs/cli/ai-gateway#setup) for OpenClaw:
+
+```bash filename="terminal"
+npx vercel ai-gateway setup --agent openclaw
+```
+
+The command provisions a key, adds the provider and a starter model list to `~/.openclaw/openclaw.json`, and exports `AI_GATEWAY_API_KEY` from a managed block in your shell startup file.
 
 ## Configuring OpenClaw
+
+If you can't use the Vercel CLI, configure OpenClaw manually:
 
 - ### Create an API key
   Go to the [**AI Gateway**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) section in the Vercel dashboard sidebar and click **API keys** to create a new API key.
@@ -68,7 +73,7 @@ Full cross-link map for this page: [/docs/ai-gateway/coding-agents/openclaw.grap
           "api": "openai-completions",
           "models": [
             { "id": "anthropic/claude-opus-5", "name": "Claude Opus 5 (Gateway)" },
-            { "id": "openai/gpt-5.6-sol", "name": "GPT-5.6 Sol (Gateway)" },
+            { "id": "openai/gpt-6-astra", "name": "GPT-6 Astra (Gateway)" },
             { "id": "google/gemini-3.6-flash", "name": "Gemini 3.6 Flash (Gateway)" }
           ]
         }

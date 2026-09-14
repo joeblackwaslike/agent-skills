@@ -14,8 +14,8 @@ related:
 summary: "Manage Cron Jobs from the Vercel CLI: add cron entries to your vercel.json, list them, and trigger them on demand."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/crons.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "5b21543644ac03421739462eb6aa0bd81073ad9f80bb54eba2469a863d9958e9"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "1e2f7c2e0849920b760b03cf3fac34dfcd03854842f6f2f1e86b6a74ec887605"
 ---
 
 # vercel crons
@@ -33,7 +33,7 @@ The `vercel crons` command (alias `vercel cron`) manages [Cron Jobs](/docs/cron-
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing Vercel Cron Jobs](https://vercel.com/blog/cron-jobs?from=related&source_path=%2Fdocs%2Fcli%2Fcrons&source_site=vercel-docs&relationship=related)
-- [How to Setup Cron Jobs on Vercel](https://vercel.com/kb/guide/how-to-setup-cron-jobs-on-vercel?from=related&source_path=%2Fdocs%2Fcli%2Fcrons&source_site=vercel-docs&relationship=related) — Learn how to setup and use cron jobs on Vercel
+- [Troubleshooting Vercel Cron Jobs](https://vercel.com/kb/guide/troubleshooting-vercel-cron-jobs?from=related&source_path=%2Fdocs%2Fcli%2Fcrons&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot cron jobs that aren't being run or logged when using Vercel Cron Jobs.
 - [Getting started with cron jobs](https://vercel.com/docs/cron-jobs/quickstart?from=related&source_path=%2Fdocs%2Fcli%2Fcrons&source_site=vercel-docs&relationship=related) — Learn how to schedule cron jobs to run at specific times or intervals.
 - [vercel vcr](https://vercel.com/docs/cli/vcr?from=related&source_path=%2Fdocs%2Fcli%2Fcrons&source_site=vercel-docs&relationship=related) — Manage Vercel Container Registry from the Vercel CLI: build and push images, manage repositories, tags, and images, and
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fcrons&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.

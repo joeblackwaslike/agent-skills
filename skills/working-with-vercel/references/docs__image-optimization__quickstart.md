@@ -14,8 +14,8 @@ related:
 summary: Learn how you can leverage Vercel Image Optimization in your projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/image-optimization/quickstart.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "81d80955093655b63ab0b9a57317549c5417181163233699526fe39ab3593b7c"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "a80dffc53eef3c58e8db3988814e0d8f380bd3842c6ab0fcdec013efe5874730"
 ---
 
 # Getting started with Image Optimization
@@ -33,10 +33,10 @@ This guide will help you get started with using Vercel Image Optimization in you
 - [Image Optimization](https://nextjs.org/docs/pages/getting-started/images?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fquickstart&source_site=vercel-docs&relationship=related) — Optimize your images with the built-in `next/image` component.
 - [Migrate a Next.js app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-a-next-js-app-from-webflow-cloud-to-vercel?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fquickstart&source_site=vercel-docs&relationship=related) — Move your Next.js app from Webflow Cloud to Vercel: remove the OpenNext Cloudflare adapter, drop the base path, map stor
 - [Nuxt on Vercel](https://vercel.com/docs/frameworks/full-stack/nuxt?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fquickstart&source_site=vercel-docs&relationship=related) — Deploy Nuxt applications to Vercel and configure rendering, functions, middleware, routing, image optimization, and cach
-- [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fquickstart&source_site=vercel-docs&relationship=related) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
 - [Getting started with Speed Insights](https://vercel.com/docs/speed-insights/quickstart?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fquickstart&source_site=vercel-docs&relationship=related) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
 - [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fquickstart&source_site=vercel-docs&relationship=related) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
 - [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fquickstart&source_site=vercel-docs&relationship=related) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
+- [Open Graph \\(OG\\) Image Generation](https://vercel.com/docs/og-image-generation?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to optimize social media image generation through the Open Graph Protocol and @vercel/og library.
 
 Full cross-link map for this page: [/docs/image-optimization/quickstart.graph.md](/docs/image-optimization/quickstart.graph.md?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fquickstart&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -16,8 +16,8 @@ related:
 summary: Reduce billed token requests and triggers by using the SDK cache effectively, tuning refresh behavior, and pruning trigger destinations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/optimizing-usage.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "017c67fad6ddb842e0dae176076b66e8aed364a9557e5f3af8750b5e934f0161"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "dfa9e451191888c1185f4f6fde74984be98146f5e8c15389ba3ff74ed734ba6c"
 ---
 
 # Optimizing Vercel Connect Usage
@@ -38,7 +38,6 @@ Vercel Connect bills two things: **token requests** (each call to Vercel Connect
 - [Authentication](https://vercel.com/docs/connect/concepts/authentication?from=related&source_path=%2Fdocs%2Fconnect%2Foptimizing-usage&source_site=vercel-docs&relationship=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
 - [Chat SDK](https://vercel.com/docs/connect/frameworks/chat-sdk?from=related&source_path=%2Fdocs%2Fconnect%2Foptimizing-usage&source_site=vercel-docs&relationship=related) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, GitHub, Linear, Notion,
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fconnect%2Foptimizing-usage&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fconnect%2Foptimizing-usage&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/connect/optimizing-usage.graph.md](/docs/connect/optimizing-usage.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Foptimizing-usage&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

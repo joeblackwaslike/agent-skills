@@ -16,8 +16,8 @@ related:
 summary: Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rolling-releases/rolling-release-deployment.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "e1fe86a85853bcbe5faefa584d354303428b2554325f7aa9fed025497d18e109"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "2abd62b200995d6109b6e0848f7ba55fa08f62181c498c056c271bd968a8c74b"
 ---
 
 # Performing a rolling release deployment
@@ -33,8 +33,8 @@ Use this guide to gradually roll out a new production deployment using rolling r
 - [How to gradually roll out new versions of your backend](https://vercel.com/kb/guide/how-to-gradually-roll-out-new-versions-of-your-backend?from=related&source_path=%2Fdocs%2Frolling-releases%2Frolling-release-deployment&source_site=vercel-docs&relationship=related) — Incrementally release updates to your backend to minimize impact of mistakes.
 - [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel?from=related&source_path=%2Fdocs%2Frolling-releases%2Frolling-release-deployment&source_site=vercel-docs&relationship=related) — Learn how to deploy based on tags/releases on Vercel.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Frolling-releases%2Frolling-release-deployment&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
-- [Promoting a preview deployment to production](https://vercel.com/docs/deployments/promote-preview-to-production?from=related&source_path=%2Fdocs%2Frolling-releases%2Frolling-release-deployment&source_site=vercel-docs&relationship=related) — Test a preview deployment and promote it to production using the CLI.
 - [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Frolling-releases%2Frolling-release-deployment&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
+- [Promoting a preview deployment to production](https://vercel.com/docs/deployments/promote-preview-to-production?from=related&source_path=%2Fdocs%2Frolling-releases%2Frolling-release-deployment&source_site=vercel-docs&relationship=related) — Test a preview deployment and promote it to production using the CLI.
 - [Performing an Instant Rollback on a Deployment](https://vercel.com/docs/instant-rollback?from=related&source_path=%2Fdocs%2Frolling-releases%2Frolling-release-deployment&source_site=vercel-docs&relationship=related) — Learn how to perform an Instant Rollback on your production deployments and quickly roll back to a previously deployed p
 - [Debugging production 500 errors](https://vercel.com/docs/observability/debug-production-errors?from=related&source_path=%2Fdocs%2Frolling-releases%2Frolling-release-deployment&source_site=vercel-docs&relationship=related) — Find, fix, and verify production 500 errors using the Vercel CLI.
 

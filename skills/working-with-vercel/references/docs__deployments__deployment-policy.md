@@ -16,8 +16,8 @@ related:
 summary: Use a deployment policy to control which Git sources and deployment mechanisms can deploy to your team and projects, per environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/deployment-policy.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "fda63badb054f1052a8fc2d16cb4c3ed2bb4ef084f63e342bc3cf21c0418eabe"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "3eeed4035fb8562775b7d01e822016a265c69abbc5a27846341b0fe1290530a4"
 ---
 
 # Deployment Policies
@@ -37,8 +37,8 @@ Deployment Policies are a set of rules that control which Git sources and deploy
 - [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel?from=related&source_path=%2Fdocs%2Fdeployments%2Fdeployment-policy&source_site=vercel-docs&relationship=related) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
 - [Deployment Retention](https://vercel.com/docs/deployment-retention?from=related&source_path=%2Fdocs%2Fdeployments%2Fdeployment-policy&source_site=vercel-docs&relationship=related) — Learn how Deployment Retention policies affect a deployment's lifecycle
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fdeployments%2Fdeployment-policy&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
-- [Deploying Git Repositories with Vercel](https://vercel.com/docs/git?from=related&source_path=%2Fdocs%2Fdeployments%2Fdeployment-policy&source_site=vercel-docs&relationship=related) — Vercel automatically deploys supported Git repositories on every branch push and when changes merge into the production
 - [Methods to Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments?from=related&source_path=%2Fdocs%2Fdeployments%2Fdeployment-policy&source_site=vercel-docs&relationship=related) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
+- [Deploying Git Repositories with Vercel](https://vercel.com/docs/git?from=related&source_path=%2Fdocs%2Fdeployments%2Fdeployment-policy&source_site=vercel-docs&relationship=related) — Vercel automatically deploys supported Git repositories on every branch push and when changes merge into the production
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fdeployments%2Fdeployment-policy&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 
 Full cross-link map for this page: [/docs/deployments/deployment-policy.graph.md](/docs/deployments/deployment-policy.graph.md?from=related&source_path=%2Fdocs%2Fdeployments%2Fdeployment-policy&source_site=vercel-docs&relationship=graph)

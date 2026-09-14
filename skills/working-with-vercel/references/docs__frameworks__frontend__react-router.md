@@ -17,8 +17,8 @@ related:
 summary: Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/frontend/react-router.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "a9e3928d0b4a5b9f30593443b2e96435e71b8864330b638f12885177ef516ebe"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "b41baf522523a7f125c18caf25d1815ddb468b7bdb7d792fc1a78aefddcf2b35"
 ---
 
 # React Router on Vercel
@@ -34,7 +34,6 @@ React Router is a multi-strategy router for React. When used [as a framework](ht
 - [How to deploy a Shopify App to Vercel](https://vercel.com/kb/guide/deploy-shopify-app-to-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Freact-router&source_site=vercel-docs&relationship=related) — Deploy the official Shopify CLI React Router app template to Vercel with the @vercel/react-router preset and Postgres se
 - [Support for React Router v7](https://vercel.com/changelog/support-for-react-router-v7?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Freact-router&source_site=vercel-docs&relationship=related)
 - [Deploying React with Vercel](https://vercel.com/kb/guide/deploying-react-with-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Freact-router&source_site=vercel-docs&relationship=related) — Deploy React with Vercel to replace your build pipeline and shared staging. See how framework detection, previews, and F
-- [How to ship a NestJS app on Vercel](https://vercel.com/kb/guide/ship-a-nestjs-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Freact-router&source_site=vercel-docs&relationship=related) — Deploy a NestJS app to Vercel with zero configuration. Learn how to ship from a template, the Nest CLI, or Git, and conf
 - [Remix on Vercel](https://vercel.com/docs/frameworks/full-stack/remix?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Freact-router&source_site=vercel-docs&relationship=related) — Deploy Remix applications to Vercel and configure the Vercel Vite preset, SSR, streaming, caching, and analytics.
 - [Create React App on Vercel](https://vercel.com/docs/frameworks/frontend/create-react-app?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Freact-router&source_site=vercel-docs&relationship=related) — Deploy Create React App projects to Vercel and add Preview Deployments, Web Analytics, Speed Insights, and Observability
 - [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Freact-router&source_site=vercel-docs&relationship=related) — Learn about the frameworks that can be deployed to Vercel.

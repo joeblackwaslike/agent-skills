@@ -15,8 +15,8 @@ related:
 summary: Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed and personalization to your...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing-middleware/api.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "4469c16d8ad9b5214575a18423417185f735634611ca5be607650a5f69e2e342"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "c80998b6975b2d1e2e6b99932e1b29ca20f037553604558e948e5707edca6b24"
 ---
 
 # Routing Middleware API
@@ -40,9 +40,9 @@ The Routing Middleware file should be named `middleware.ts` and placed at the ro
 - [route.js](https://nextjs.org/docs/app/api-reference/file-conventions/route?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — API reference for the route.js special file.
 - [Proxy](https://nextjs.org/docs/pages/api-reference/file-conventions/proxy?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — Learn how to use Proxy to run code before a request is completed.
 - [Vercel Edge Middleware: Dynamic at the speed of static (historical)](https://vercel.com/blog/vercel-edge-middleware-dynamic-at-the-speed-of-static?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related)
-- [Route Handlers](https://nextjs.org/docs/app/getting-started/route-handlers?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — Learn how to use Route Handlers
 - [Getting Started with Routing Middleware](https://vercel.com/docs/routing-middleware/getting-started?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
 - [Using the Node.js Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/node-js?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — Learn how to use the Node.js runtime to create functions and deploy Node.js servers on Vercel.
+- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 
 Full cross-link map for this page: [/docs/routing-middleware/api.graph.md](/docs/routing-middleware/api.graph.md?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

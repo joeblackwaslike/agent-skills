@@ -1,28 +1,25 @@
 ---
-title: LlamaIndex
+title: LlamaIndex with AI Gateway
 product: vercel
 url: /docs/ai-gateway/ecosystem/framework-integrations/llamaindex
 canonical_url: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/llamaindex"
-last_updated: 2026-07-28
-type: conceptual
+last_updated: 2026-09-08
+type: how-to
 prerequisites:
   - /docs/ai-gateway/ecosystem/framework-integrations
   - /docs/ai-gateway/ecosystem
 related:
   - /docs/ai-gateway
-summary: Learn how to integrate Vercel AI Gateway with LlamaIndex to access multiple AI models through a unified interface
+summary: Learn how to integrate Vercel AI Gateway with LlamaIndex to access multiple AI models through a unified interface.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/llamaindex.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "95eff871aed8b2ac5bf2ec87dfd9f229cd8c087a711d15075711f87a7ab27cab"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "8e10a7a0bd25ac3d8438beac723928e20a32b87714cc2757b73b999ea410650b"
 ---
 
-# LlamaIndex
+# LlamaIndex with AI Gateway
 
-[LlamaIndex](https://www.llamaindex.ai/) makes it simple to
-build knowledge assistants using LLMs connected to your enterprise data.
-This guide demonstrates how to integrate [Vercel AI Gateway](/docs/ai-gateway)
-with LlamaIndex to access various AI models and providers.
+[LlamaIndex](https://www.llamaindex.ai/) connects large language models (LLMs) to your enterprise data to build knowledge assistants. Connect LlamaIndex to [AI Gateway](/docs/ai-gateway) to use its model catalog and provider routing.
 
 
 <!-- docsgraph:related -->
@@ -31,12 +28,11 @@ with LlamaIndex to access various AI models and providers.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [LlamaGate](https://ai-sdk.dev/providers/community-providers/llamagate?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fllamaindex&source_site=vercel-docs&relationship=related)
-- [LlamaIndex](https://ai-sdk.dev/providers/adapters/llamaindex?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fllamaindex&source_site=vercel-docs&relationship=related)
-- [LiteLLM](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/litellm?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fllamaindex&source_site=vercel-docs&relationship=related) — Learn how to integrate Vercel AI Gateway with LiteLLM to access multiple AI models through a unified interface
-- [LangChain](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/langchain?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fllamaindex&source_site=vercel-docs&relationship=related) — Learn how to integrate Vercel AI Gateway with LangChain to access multiple AI models through a unified interface
-- [Vercel Deep Infra Integration](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fllamaindex&source_site=vercel-docs&relationship=related) — Learn how to add the Deep Infra native integration with Vercel.
-- [LangFuse](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/langfuse?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fllamaindex&source_site=vercel-docs&relationship=related) — Learn how to integrate Vercel AI Gateway with LangFuse to access multiple AI models through a unified interface
-- [Vercel LMNT Integration](https://vercel.com/docs/agent-resources/integrations-for-models/lmnt?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fllamaindex&source_site=vercel-docs&relationship=related) — Learn how to add LMNT connectable account integration with Vercel.
+- [LiteLLM with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/litellm?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fllamaindex&source_site=vercel-docs&relationship=related) — Learn how to integrate Vercel AI Gateway with LiteLLM to access multiple AI models through a unified interface.
+- [Ecosystem](https://vercel.com/docs/sandbox/ecosystem?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fllamaindex&source_site=vercel-docs&relationship=related) — Use Vercel Sandbox with the agent frameworks, model SDKs, and coding agents you already work with.
+- [LangChain with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/langchain?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fllamaindex&source_site=vercel-docs&relationship=related) — Learn how to integrate Vercel AI Gateway with LangChain to access multiple AI models through a unified interface.
+- [Pydantic AI with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/pydantic-ai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fllamaindex&source_site=vercel-docs&relationship=related) — Learn how to integrate Vercel AI Gateway with Pydantic AI to access multiple AI models through a unified interface.
+- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fllamaindex&source_site=vercel-docs&relationship=related) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integrations/llamaindex.graph.md](/docs/ai-gateway/ecosystem/framework-integrations/llamaindex.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fllamaindex&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

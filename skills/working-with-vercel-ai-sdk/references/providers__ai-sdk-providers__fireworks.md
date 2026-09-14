@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/fireworks.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "8bfd04c227ea4a4ee911fbf7f881c2c6352822960711c56559f0f9a21a20d89e"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "a6b74d75dc8ecfda1996be98866de3b6b51e72635705e314c82f05a2d7fa1ce0"
 ---
 
 # Fireworks Provider
@@ -512,7 +512,6 @@ support for these models:
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
-- [LMNT](/providers/ai-sdk-providers/lmnt)
 - [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)

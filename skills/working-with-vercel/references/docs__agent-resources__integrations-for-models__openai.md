@@ -13,8 +13,8 @@ related:
 summary: "Integrate your Vercel project with OpenAI's powerful suite of models."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/openai.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "1d749b667af507043cfb4d94dc0568e59898c1a482f17f700619a2e52f45172c"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "6651160435a96bdaf2260444b9a049dd95be04205a0a4b5634564293f4d6c159"
 ---
 
 # Vercel & OpenAI Integration
@@ -29,11 +29,12 @@ Vercel integrates with [OpenAI](https://platform.openai.com/overview) to enable 
 
 - [Introducing AI Integrations on Vercel](https://vercel.com/blog/ai-integrations?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fopenai&source_site=vercel-docs&relationship=related)
 - [AI models](https://v0.app/docs/ai-models?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fopenai&source_site=vercel-docs&relationship=related) — Add AI functionality to your v0 projects by integrating AI models and platforms.
+- [Build with OpenAI Agents API on Vercel](https://vercel.com/changelog/build-with-openai-agents-api-on-vercel?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fopenai&source_site=vercel-docs&relationship=related)
 - [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fopenai&source_site=vercel-docs&relationship=related) — Learn how to add the xAI native integration with Vercel.
 - [Vercel Together AI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/togetherai?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fopenai&source_site=vercel-docs&relationship=related) — Learn how to add Together AI connectable account integration with Vercel.
 - [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fopenai&source_site=vercel-docs&relationship=related) — Learn how to add a new AI model to your Vercel projects
+- [AI Gateway Framework Integrations](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fopenai&source_site=vercel-docs&relationship=related) — Connect LangChain, LiteLLM, LlamaIndex, Mastra, Pydantic AI, and other frameworks to Vercel AI Gateway with the AI SDK o
 - [Vercel Deep Infra Integration](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fopenai&source_site=vercel-docs&relationship=related) — Learn how to add the Deep Infra native integration with Vercel.
-- [Pydantic AI](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/pydantic-ai?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fopenai&source_site=vercel-docs&relationship=related) — Learn how to integrate Vercel AI Gateway with Pydantic AI to access multiple AI models through a unified interface
 
 Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/openai.graph.md](/docs/agent-resources/integrations-for-models/openai.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fopenai&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

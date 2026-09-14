@@ -1,7 +1,7 @@
 ---
 source: "https://oraios.github.io/serena/_sources/02-usage/040_workflow.md"
-fetched_at: "2026-07-06T05:38:23.051Z"
-sha256: "e78ad1b108101b09e0886c1040cec5e358623ae0eba73a41e3b9ced00fa5f1c2"
+fetched_at: "2026-09-14T09:43:13.785Z"
+sha256: "5b82076a17f5602811307392c36568581b0180c1fa745a03af58175b4f678f4d"
 ---
 
 # The Project Workflow
@@ -51,8 +51,11 @@ within the project directory.
 
 The file allows you to configure ...
   * the name by which you want to refer to the project (relevant when telling the LLM to dynamically activate the project)
-  * the set of programming languages for which language servers are spawned (not relevant when using the JetBrains plugin)
-    Note that you can dynamically add/remove language servers while Serena is running via the [Dashboard](060_dashboard).
+  * the set of built-in language servers and explicitly registered external adapters for which servers are spawned
+    (not relevant when using the JetBrains plugin). External adapter IDs become available after their Python package is installed;
+    see [External Language Server Adapters](../03-special-guides/external_language_server_registration.md).
+    The [Dashboard](060_dashboard) can dynamically add or remove built-in language servers and installed, registered external
+    adapters while Serena is running. It does not install adapter packages or offer unregistered adapter IDs.
   * the [language backend](per-project-language-backend) to use for this project (overriding the global setting)
   * the encoding used in source files
   * ignore rules

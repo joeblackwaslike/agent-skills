@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/terminal-config.md"
-fetched_at: "2026-09-07T08:59:03.477Z"
-sha256: "0ba2eef26b85eb12e87058e524f9ef94b4117f5fe2cc3f3626793635378036ae"
+fetched_at: "2026-09-14T09:37:17.168Z"
+sha256: "68c087fa0c2962e7bcde44a1078c8abb3182a130e0561919b3fb5ae6266a7f65"
 ---
 
 > ## Documentation Index
@@ -30,15 +30,16 @@ Pressing Enter submits your message. To add a line break without submitting, pre
 
 In most terminals you can also press Shift+Enter, but support varies by terminal emulator:
 
-| Terminal                                                                | Shift+Enter for newline                     |
-| :---------------------------------------------------------------------- | :------------------------------------------ |
-| Ghostty, Kitty, iTerm2, WezTerm, Warp, Apple Terminal, Windows Terminal | Works without setup                         |
-| VS Code, Cursor, Devin Desktop, Alacritty, Zed                          | Run `/terminal-setup` once                  |
-| gnome-terminal, JetBrains IDEs such as PyCharm and Android Studio       | Not available; use Ctrl+J or `\` then Enter |
+| Terminal                                                                                           | Shift+Enter for newline                                     |
+| :------------------------------------------------------------------------------------------------- | :---------------------------------------------------------- |
+| Ghostty, Kitty, iTerm2, WezTerm, Warp, Apple Terminal, Windows Terminal                            | Works without setup                                         |
+| Other terminals that support the kitty keyboard protocol, such as foot and Alacritty 0.16 or later | Works without setup. Requires Claude Code v2.1.269 or later |
+| VS Code, Cursor, Devin Desktop, Alacritty before 0.16, Zed                                         | Run `/terminal-setup` once                                  |
+| gnome-terminal, JetBrains IDEs such as PyCharm and Android Studio                                  | Not available; use Ctrl+J or `\` then Enter                 |
 
-For VS Code, Cursor, Devin Desktop, Alacritty, and Zed, `/terminal-setup` writes a Shift+Enter keybinding into the terminal's configuration file. On the first run you see a confirmation such as `Installed VSCode terminal Shift+Enter key binding`. Existing bindings are left in place; if you see a message such as `VSCode terminal Shift+Enter key binding already configured`, no change was made. Run `/terminal-setup` directly in the host terminal rather than inside tmux or screen, since it needs to write to the host terminal's configuration.
+For VS Code, Cursor, Devin Desktop, Alacritty before 0.16, and Zed, `/terminal-setup` writes a Shift+Enter keybinding into the terminal's configuration file. On the first run you see a confirmation such as `Installed VSCode terminal Shift+Enter key binding`. Existing bindings are left in place; if you see a message such as `VSCode terminal Shift+Enter key binding already configured`, no change was made. Run `/terminal-setup` directly in the host terminal rather than inside tmux or screen, since it needs to write to the host terminal's configuration.
 
-In VS Code, Cursor, and Devin Desktop, `/terminal-setup` also updates two editor settings: it sets `terminal.integrated.gpuAcceleration` to `"off"` to prevent garbled text in the integrated terminal, and it sets `terminal.integrated.mouseWheelScrollSensitivity` for smoother scrolling in [fullscreen mode](/docs/en/fullscreen). To undo the GPU acceleration change, set it back to `"auto"` and reload the editor window. Before v2.1.157, `/terminal-setup` left GPU acceleration unchanged.
+In VS Code, Cursor, and Devin Desktop, `/terminal-setup` also updates two editor settings: it sets `terminal.integrated.gpuAcceleration` to `"off"` to prevent garbled text in the integrated terminal, and it sets `terminal.integrated.mouseWheelScrollSensitivity` for smoother scrolling in [fullscreen mode](/docs/en/fullscreen). To undo the GPU acceleration change, set it back to `"auto"` and reload the editor window.
 
 In Zed, `/terminal-setup` updates your `keymap.json` in place:
 
@@ -211,12 +212,12 @@ The reference below covers the tokens you can set in `overrides`. The interactiv
 
   Signal success, failure, and warning states across messages and indicators.
 
-  | Token     | Controls                                             |
-  | :-------- | :--------------------------------------------------- |
-  | `success` | Success messages and passing checks                  |
-  | `error`   | Error messages and failures                          |
-  | `warning` | Warnings, caution messages, and the auto mode border |
-  | `merged`  | Merged pull request status                           |
+  | Token     | Controls                                                |
+  | :-------- | :------------------------------------------------------ |
+  | `success` | Success messages and passing checks                     |
+  | `error`   | Error messages and failures                             |
+  | `warning` | Warnings, caution messages, and the auto mode indicator |
+  | `merged`  | Merged pull request status                              |
 
   #### Input box and mode indicators
 
@@ -224,9 +225,9 @@ The reference below covers the tokens you can set in `overrides`. The interactiv
 
   | Token          | Controls                                                                                                                                                                             |
   | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-  | `promptBorder` | Input box border in Manual mode                                                                                                                                                      |
-  | `planMode`     | Plan mode accent and border                                                                                                                                                          |
-  | `autoAccept`   | Accept-edits mode accent and border                                                                                                                                                  |
+  | `promptBorder` | Input box border                                                                                                                                                                     |
+  | `planMode`     | Plan mode accent, plan messages, and plan-mode dialogs                                                                                                                               |
+  | `autoAccept`   | Accept-edits mode accent                                                                                                                                                             |
   | `bashBorder`   | Input box border when entering a `!` shell command                                                                                                                                   |
   | `ide`          | IDE connection indicator                                                                                                                                                             |
   | `fastMode`     | Fast mode indicator                                                                                                                                                                  |

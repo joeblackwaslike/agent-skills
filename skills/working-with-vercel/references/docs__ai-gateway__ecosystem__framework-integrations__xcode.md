@@ -1,26 +1,26 @@
 ---
-title: Xcode
+title: Xcode with AI Gateway
 product: vercel
 url: /docs/ai-gateway/ecosystem/framework-integrations/xcode
 canonical_url: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode"
-last_updated: 2026-08-26
-type: conceptual
+last_updated: 2026-09-08
+type: how-to
 prerequisites:
   - /docs/ai-gateway/ecosystem/framework-integrations
   - /docs/ai-gateway/ecosystem
 related:
   - /docs/cli/ai-gateway
   - /docs/ai-gateway/observability-and-spend/budgets
-summary: "Use Xcode's coding assistant with the AI Gateway."
+summary: "Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in Xcode settings."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "8faba1af20ab68d370cdfef7dd6f8c900ee0baaa0b29136bfc2fa6798476d553"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "9092fdd7adc242d1fb8be72993639fb11d21769f0bef402b1f4b317d10d0d9c0"
 ---
 
-# Xcode
+# Xcode with AI Gateway
 
-[Xcode](https://developer.apple.com/xcode/) is Apple's IDE for building apps across Apple platforms. Xcode 26's coding assistant accepts any model provider that supports the Chat Completions API. This allows you to add AI Gateway as a model provider and chat with any model in the gateway catalog, with your project files as context and your usage tracked in one place.
+[Xcode](https://developer.apple.com/xcode/) is Apple's IDE for building apps across Apple platforms. Xcode 26's AI chat accepts any model provider that supports the Chat Completions API. This allows you to add AI Gateway as a model provider and chat with any model in the gateway catalog, with your project files as context and your usage tracked in one place.
 
 
 <!-- docsgraph:related -->
@@ -28,12 +28,12 @@ sha256: "8faba1af20ab68d370cdfef7dd6f8c900ee0baaa0b29136bfc2fa6798476d553"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fxcode&source_site=vercel-docs&relationship=related)
-- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fxcode&source_site=vercel-docs&relationship=related) — Create an AI Gateway API key, make your first request with TypeScript, Python, or cURL, and verify how the request was r
-- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fxcode&source_site=vercel-docs&relationship=related) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
-- [Kilo Code](https://vercel.com/docs/ai-gateway/coding-agents/kilo-code?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fxcode&source_site=vercel-docs&relationship=related) — Use the Kilo Code CLI with the AI Gateway as an OpenAI-compatible provider.
-- [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fxcode&source_site=vercel-docs&relationship=related) — Learn how to add the xAI native integration with Vercel.
-- [Coding Agents](https://vercel.com/docs/ai-gateway/coding-agents?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fxcode&source_site=vercel-docs&relationship=related) — Configure popular AI coding agents to use the AI Gateway for unified model access and spend monitoring.
+- [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fxcode&source_site=vercel-docs&relationship=related) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
+- [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fxcode&source_site=vercel-docs&relationship=related) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
+- [Chatbox with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/chatbox?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fxcode&source_site=vercel-docs&relationship=related) — Connect Chatbox to AI Gateway. Configure your API key, endpoint, and models to use multiple AI providers and monitor cha
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fxcode&source_site=vercel-docs&relationship=related) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
+- [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fxcode&source_site=vercel-docs&relationship=related) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
+- [OpenClaw with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fxcode&source_site=vercel-docs&relationship=related) — Connect OpenClaw to AI Gateway with the Vercel CLI or manual provider configuration. Use gateway models across coding ag
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integrations/xcode.graph.md](/docs/ai-gateway/ecosystem/framework-integrations/xcode.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fxcode&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -72,15 +72,15 @@ Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integra
   Model IDs use the gateway's `creator/model-name` format, for example `anthropic/claude-opus-5`. The [models catalog](/ai-gateway/models) lists what's available.
 
 - ### Start a conversation
-  Open the coding assistant from the left navigator in a project window. Use the model picker on the message field to select one of your favorited gateway models, then send a prompt. The conversation includes the project context Xcode normally provides, such as the file you're working in.
+  Open AI chat from the left navigator in a project window. Use the model picker on the message field to select one of your favorited gateway models, then send a prompt. The conversation includes the project context Xcode normally provides, such as the file you're working in.
 
 - ### Verify requests in the dashboard
   Send a prompt, then check your [AI Gateway Overview](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) in the Vercel dashboard to see the request, the model that served it, and the cost.
 
 ## Limitations
 
-- Model providers you add power the **chat** side of Xcode's coding assistant. Xcode's agent integrations, such as Claude Agent and ChatGPT Codex, install and authenticate separately and don't route through a custom model provider.
-- Xcode stores the provider configuration in its own settings, so [`vercel ai-gateway coding-agents setup`](/docs/cli/ai-gateway#setup) can't complete this setup for you. The steps above are the whole process.
+- Model providers you add power Xcode's **chat** interface. Xcode's agent integrations, such as Claude Agent and ChatGPT Codex, install and authenticate separately and don't route through a custom model provider.
+- Xcode stores the provider configuration in its own settings, so [`vercel ai-gateway setup`](/docs/cli/ai-gateway#setup) can't complete this setup for you. The steps above are the whole process.
 
 ## Troubleshooting
 

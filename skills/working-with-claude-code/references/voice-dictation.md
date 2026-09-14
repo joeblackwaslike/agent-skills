@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/voice-dictation.md"
-fetched_at: "2026-08-31T10:37:20.620Z"
-sha256: "a42612da5ed0b984d817f12b3328902c646e073ae299a8ee40c1cee58c64beb2"
+fetched_at: "2026-09-14T09:37:17.168Z"
+sha256: "5ccf72c81a7326a8bad526c0092bf1b3d24802bebcb6c649e3cf90d623f39e4d"
 ---
 
 > ## Documentation Index
@@ -204,6 +204,6 @@ If your terminal app does not appear under System Settings → Privacy & Securit
 ## See also
 
 * [Customize keyboard shortcuts](/docs/en/keybindings): rebind `voice:pushToTalk` and other CLI keyboard actions
-* [Settings reference](/docs/en/settings-reference#voice): the `voice`, `language`, and other settings keys
+* [All settings](/docs/en/settings-reference#voice): the `voice`, `language`, and other settings keys
 * [Interactive mode](/docs/en/interactive-mode): keyboard shortcuts, input modes, and session controls
 * [Commands](/docs/en/commands): reference for `/voice`, `/config`, and all other commands

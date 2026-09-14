@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses/harness-adapters.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "074637d0f73e759319599a0d5971de9092847f7910a13939f24a25cb0e54d64b"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "ef4ce643532e1a04e53cc0de1ccadd5739195d7c5f5bd0f8cf8df305fa300829"
 ---
 
 # Harness Adapters
@@ -21,6 +21,7 @@ The AI SDK includes the following harness adapters:
 - [Cursor](/providers/ai-sdk-harnesses/cursor) (`@ai-sdk/harness-cursor`)
 - [Deep Agents](/providers/ai-sdk-harnesses/deepagents) (`@ai-sdk/harness-deepagents`)
 - [fx](/providers/ai-sdk-harnesses/fx) (`@ai-sdk/harness-fx`)
+- [GitHub Copilot](/providers/ai-sdk-harnesses/github-copilot) (`@ai-sdk/harness-github-copilot`)
 - [Grok Build](/providers/ai-sdk-harnesses/grok-build) (`@ai-sdk/harness-grok-build`)
 - [OpenCode](/providers/ai-sdk-harnesses/opencode) (`@ai-sdk/harness-opencode`)
 - [Pi](/providers/ai-sdk-harnesses/pi) (`@ai-sdk/harness-pi`)
@@ -33,17 +34,18 @@ The AI SDK includes the following harness adapters:
 
 ## Adapter Capabilities
 
-| Adapter                                                | Runtime location | Custom tools | Custom skills | Structured output | Built-in tool approval | Built-in tool filtering      |
-| ------------------------------------------------------ | ---------------- | ------------ | ------------- | ----------------- | ---------------------- | ---------------------------- |
-| [Claude Code](/providers/ai-sdk-harnesses/claude-code) | Sandbox bridge   | <Check />    | <Check />     | <Check />         | <Check />              | <Check />                    |
-| [Cline](/providers/ai-sdk-harnesses/cline)             | Host process     | <Check />    | <Check />     | <Check />         | <Check />              | <Check />                    |
-| [Codex](/providers/ai-sdk-harnesses/codex)             | Sandbox bridge   | <Check />    | <Check />     | <Check />         | <Cross />              | <Cross />                    |
-| [Cursor](/providers/ai-sdk-harnesses/cursor)           | Sandbox via ACP  | <Check />    | <Check />     | <Cross />         | <Check />              | <Cross />                    |
-| [Deep Agents](/providers/ai-sdk-harnesses/deepagents)  | Sandbox bridge   | <Check />    | <Check />     | <Check />         | <Check />              | <Check /> via auto-rejection |
-| [fx](/providers/ai-sdk-harnesses/fx)                   | Sandbox via ACP  | <Check />    | <Check />     | <Cross />         | <Check />              | <Cross />                    |
-| [Grok Build](/providers/ai-sdk-harnesses/grok-build)   | Sandbox via ACP  | <Check />    | <Check />     | <Check />         | <Check />              | <Cross />                    |
-| [OpenCode](/providers/ai-sdk-harnesses/opencode)       | Sandbox bridge   | <Check />    | <Check />     | <Check />         | <Check />              | <Check /> via auto-rejection |
-| [Pi](/providers/ai-sdk-harnesses/pi)                   | Host process     | <Check />    | <Check />     | <Cross />         | <Check />              | <Check />                    |
+| Adapter                                                      | Runtime location | Custom tools | Custom skills | Structured output | Built-in tool approval | Built-in tool filtering      |
+| ------------------------------------------------------------ | ---------------- | ------------ | ------------- | ----------------- | ---------------------- | ---------------------------- |
+| [Claude Code](/providers/ai-sdk-harnesses/claude-code)       | Sandbox bridge   | <Check />    | <Check />     | <Check />         | <Check />              | <Check />                    |
+| [Cline](/providers/ai-sdk-harnesses/cline)                   | Host process     | <Check />    | <Check />     | <Check />         | <Check />              | <Check />                    |
+| [Codex](/providers/ai-sdk-harnesses/codex)                   | Sandbox bridge   | <Check />    | <Check />     | <Check />         | <Cross />              | <Cross />                    |
+| [Cursor](/providers/ai-sdk-harnesses/cursor)                 | Sandbox via ACP  | <Check />    | <Check />     | <Cross />         | <Check />              | <Cross />                    |
+| [Deep Agents](/providers/ai-sdk-harnesses/deepagents)        | Sandbox bridge   | <Check />    | <Check />     | <Check />         | <Check />              | <Check /> via auto-rejection |
+| [fx](/providers/ai-sdk-harnesses/fx)                         | Sandbox via ACP  | <Check />    | <Check />     | <Cross />         | <Check />              | <Cross />                    |
+| [GitHub Copilot](/providers/ai-sdk-harnesses/github-copilot) | Sandbox via ACP  | <Check />    | <Check />     | <Cross />         | <Check />              | <Cross />                    |
+| [Grok Build](/providers/ai-sdk-harnesses/grok-build)         | Sandbox via ACP  | <Check />    | <Check />     | <Check />         | <Check />              | <Cross />                    |
+| [OpenCode](/providers/ai-sdk-harnesses/opencode)             | Sandbox bridge   | <Check />    | <Check />     | <Check />         | <Check />              | <Check /> via auto-rejection |
+| [Pi](/providers/ai-sdk-harnesses/pi)                         | Host process     | <Check />    | <Check />     | <Cross />         | <Check />              | <Check />                    |
 
 
 ## Navigation

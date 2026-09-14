@@ -17,8 +17,8 @@ related:
 summary: A project link binds a connector to a Vercel project, scoped to one or more environments. The link is what authorizes a runtime token request.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/project-links.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "917a6cf554bde0b45df788cf36188cb41383877f9f4d27502120a454b602d8b8"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "30e34fdca826819391a33e84343d7ab367e095fc7b7ac38e36e2aeabba3ca32c"
 ---
 
 # Project links
@@ -31,6 +31,7 @@ A **project link** connects a team-owned connector to one Vercel project on the 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to set up a staging environment on Vercel](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fproject-links&source_site=vercel-docs&relationship=related) — Set up a staging environment on Vercel with custom environments, staged production deployments, or a branch-based previe
 - [Vercel Connect now supports Custom Environments](https://vercel.com/changelog/vercel-connect-now-supports-custom-environments?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fproject-links&source_site=vercel-docs&relationship=related)
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fproject-links&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 - [Linking Projects with Vercel CLI](https://vercel.com/docs/cli/project-linking?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fproject-links&source_site=vercel-docs&relationship=related) — Learn how to link existing Vercel Projects with Vercel CLI.

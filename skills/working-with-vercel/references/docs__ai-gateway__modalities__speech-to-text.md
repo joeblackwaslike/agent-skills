@@ -1,24 +1,25 @@
 ---
-title: Speech to Text
+title: AI Gateway Speech to Text
 product: vercel
 url: /docs/ai-gateway/modalities/speech-to-text
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/speech-to-text"
-last_updated: 2026-08-27
-type: conceptual
+last_updated: 2026-09-08
+type: how-to
 prerequisites:
   - /docs/ai-gateway/modalities
   - /docs/ai-gateway
 related:
   - /docs/ai-gateway/modalities/realtime
   - /docs/ai-gateway/modalities/text-to-speech
+  - /docs/ai-gateway/sdks-and-apis/ai-sdk-python
 summary: Transcribe audio files into text with transcription models through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/speech-to-text.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "8e71c1e99895ef42f959b2c358726f30b3d1564a1b672dd205562b9f0ead578d"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "0b653dcd760708d0dabb6f6e00f80aacdee65145efc07daf96893467fa827f69"
 ---
 
-# Speech to Text
+# AI Gateway Speech to Text
 
 Transcribe recorded audio into text with transcription models such as `openai/whisper-1`, `openai/gpt-4o-transcribe`, and `google/gemini-3.5-transcribe`. Use this for voice notes, call recordings, podcast transcripts, or any audio file you already have. Browse available models on the [AI Gateway Models page](/ai-gateway/models?modality=audio:transcription).
 
@@ -34,12 +35,7 @@ Transcribe recorded audio into text with transcription models such as `openai/wh
 - [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fspeech-to-text&source_site=vercel-docs&relationship=related)
 - [ElevenLabs](https://ai-sdk.dev/providers/ai-sdk-providers/elevenlabs?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fspeech-to-text&source_site=vercel-docs&relationship=related)
 - [Cartesia](https://ai-sdk.dev/providers/ai-sdk-providers/cartesia?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fspeech-to-text&source_site=vercel-docs&relationship=related)
-- [experimental_streamTranscribe](https://ai-sdk.dev/docs/reference/ai-sdk-core/stream-transcribe?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fspeech-to-text&source_site=vercel-docs&relationship=related)
-- [xAI Grok audio models now available on Vercel AI Gateway](https://vercel.com/changelog/xai-grok-audio-models-now-available-on-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fspeech-to-text&source_site=vercel-docs&relationship=related)
-- [Speech to Text and Text to Speech Quickstart](https://vercel.com/docs/ai-gateway/getting-started/speech?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fspeech-to-text&source_site=vercel-docs&relationship=related) — Generate speech from text and transcribe audio back to text with AI Gateway.
-- [Text Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/text?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fspeech-to-text&source_site=vercel-docs&relationship=related) — Generate and stream text responses using AI Gateway.
-- [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fspeech-to-text&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fspeech-to-text&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
+- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fspeech-to-text&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/speech-to-text.graph.md](/docs/ai-gateway/modalities/speech-to-text.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fspeech-to-text&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -51,10 +47,14 @@ For live audio, use [streaming transcription](#streaming-transcription) to get t
 
 ## Transcribe with the AI SDK
 
-Use `experimental_transcribe` with a transcription model from the AI Gateway provider. The audio can be a `Buffer`, `Uint8Array`, base64 string, or `URL`:
+For SDK options and result types, see [AI SDK transcription](https://ai-sdk.dev/docs/ai-sdk-core/transcription) and [Python transcription](https://ai-python.dev/docs/basics/model-operations#transcribe-audio).
+
+Use `transcribe` with a transcription model from the AI Gateway provider. The audio can be a `Buffer`, `Uint8Array`, base64 string, or `URL`:
+
+#### TypeScript
 
 ```typescript filename="transcribe.ts"
-import { experimental_transcribe as transcribe } from 'ai';
+import { transcribe } from 'ai';
 import { gateway } from '@ai-sdk/gateway';
 import { readFile } from 'node:fs/promises';
 
@@ -67,6 +67,23 @@ console.log(result.text);
 console.log(`Audio duration: ${result.durationInSeconds} seconds`);
 ```
 
+#### Python (beta)
+
+```python filename="transcribe.py"
+import asyncio
+import ai
+from pathlib import Path
+
+async def main():
+    result = await ai.ops.transcribe(
+        ai.get_model('openai/whisper-1'),
+        Path("meeting.mp3").read_bytes(),
+    )
+    print(result.value.text)
+
+asyncio.run(main())
+```
+
 The result includes:
 
 - `text`: The full transcript.
@@ -77,6 +94,8 @@ The result includes:
 
 > **💡 Note:** Transcription support requires recent releases of the AI SDK: `ai` 7.0.31 and
 > `@ai-sdk/gateway` 4.0.23 or later. Install them with `pnpm add ai@latest @ai-sdk/gateway@latest`.
+
+The Python examples use the [AI SDK for Python beta](/docs/ai-gateway/sdks-and-apis/ai-sdk-python). These audio operations use dedicated AI Gateway endpoints. They are separate from Chat Completions, Messages, and Responses. See the [Python SDK setup](/docs/ai-gateway/sdks-and-apis/ai-sdk-python#installation) for installation requirements.
 
 ## Streaming transcription
 
@@ -148,19 +167,6 @@ const result = streamTranscribe({
 
 You can also call the transcription endpoint directly. Send a `POST` request with the model in the `ai-model-id` header and the audio as a base64-encoded string:
 
-#### cURL
-
-```bash filename="transcribe.sh"
-curl -X POST https://ai-gateway.vercel.sh/v4/ai/transcription-model \
-  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
-  -H "ai-model-id: openai/whisper-1" \
-  -H "Content-Type: application/json" \
-  -d "{
-    \"audio\": \"$(base64 -i meeting.mp3)\",
-    \"mediaType\": \"audio/mpeg\"
-  }"
-```
-
 #### TypeScript
 
 ```typescript filename="transcribe-rest.ts"
@@ -174,6 +180,8 @@ const response = await fetch(
     method: 'POST',
     headers: {
       Authorization: `Bearer ${process.env.AI_GATEWAY_API_KEY}`,
+      'ai-gateway-protocol-version': '0.0.1',
+      'ai-transcription-model-specification-version': '4',
       'ai-model-id': 'openai/whisper-1',
       'Content-Type': 'application/json',
     },
@@ -186,6 +194,39 @@ const response = await fetch(
 
 const result = await response.json();
 console.log(result.text);
+```
+
+#### Python
+
+```python filename="request.py"
+import json
+import os
+import urllib.request
+import base64
+from pathlib import Path
+
+request = urllib.request.Request(
+    'https://ai-gateway.vercel.sh/v4/ai/transcription-model',
+    data=json.dumps({'audio': base64.b64encode(Path("meeting.mp3").read_bytes()).decode(), 'mediaType': 'audio/mpeg'}).encode(),
+    headers={'Authorization': "Bearer " + os.environ["AI_GATEWAY_API_KEY"], 'ai-gateway-protocol-version': '0.0.1', 'ai-transcription-model-specification-version': '4', 'ai-model-id': 'openai/whisper-1', 'Content-Type': 'application/json'},
+)
+with urllib.request.urlopen(request) as response:
+    print(json.load(response))
+```
+
+#### cURL
+
+```bash filename="transcribe.sh"
+curl -X POST https://ai-gateway.vercel.sh/v4/ai/transcription-model \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "ai-gateway-protocol-version: 0.0.1" \
+  -H "ai-transcription-model-specification-version: 4" \
+  -H "ai-model-id: openai/whisper-1" \
+  -H "Content-Type: application/json" \
+  -d "{
+    \"audio\": \"$(base64 -i meeting.mp3)\",
+    \"mediaType\": \"audio/mpeg\"
+  }"
 ```
 
 The response is a JSON object:
@@ -205,7 +246,7 @@ The response is a JSON object:
 Pass provider-specific options through `providerOptions`. For example, request word-level timestamps from OpenAI models:
 
 ```typescript filename="transcribe-options.ts" {8-12}
-import { experimental_transcribe as transcribe } from 'ai';
+import { transcribe } from 'ai';
 import { gateway } from '@ai-sdk/gateway';
 import { readFile } from 'node:fs/promises';
 
@@ -218,6 +259,8 @@ const result = await transcribe({
     },
   },
 });
+
+console.log(result.text);
 ```
 
 ## Limitations

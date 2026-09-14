@@ -16,8 +16,8 @@ related:
 summary: Learn how DNS works in order to properly configure your domain.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-dns.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "c0b8c5363d4caa76fee5c12b2108f78adcf027ecaafb89296f4ce9af300dc473"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "bc1162f9d9ccbe00202a63fd02ff00ad48121eb06b82cd15cc53286ebd265603"
 ---
 
 # Working with DNS
@@ -32,14 +32,13 @@ DNS is the system used to connect domain names to IP addresses. When you make a 
 
 - [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-dns&source_site=vercel-docs&relationship=related) — Point your apex domain to Vercel with an A record \\(76.76.21.21 or your domain card's value\\), pair it with a www CNAME,
 - [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-dns&source_site=vercel-docs&relationship=related) — Migrate containers from AWS to Vercel: deploy with Dockerfile.vercel, keep RDS, S3, and SQS in AWS over OIDC, and cut ov
-- [Why am I no longer receiving email after adding my domain to Vercel?](https://vercel.com/kb/guide/why-has-email-stopped-working?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-dns&source_site=vercel-docs&relationship=related) — Fix email that stopped working after adding your domain to Vercel, with a concrete MX record table and the DNS preset cl
 - [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-dns&source_site=vercel-docs&relationship=related) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
-- [How long will it take for my Vercel DNS records to update?](https://vercel.com/kb/guide/how-long-to-update-dns-records?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-dns&source_site=vercel-docs&relationship=related) — Information on the length of time it may take for Vercel DNS changes to take place.
+- [Why is my Vercel domain not verified?](https://vercel.com/kb/guide/why-is-my-vercel-domain-unverified?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-dns&source_site=vercel-docs&relationship=related) — Information on why a Vercel domain may not be verified and how to verify it.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-dns&source_site=vercel-docs&relationship=related) — Add and configure a custom domain for your Vercel project using the CLI.
+- [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-dns&source_site=vercel-docs&relationship=related) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 - [vercel dns](https://vercel.com/docs/cli/dns?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-dns&source_site=vercel-docs&relationship=related) — Learn how to manage your DNS records for your domains using the vercel dns CLI command.
 - [Domain Connect](https://vercel.com/docs/domains/domain-connect?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-dns&source_site=vercel-docs&relationship=related) — Learn how to integrate your service with Vercel DNS using the Domain Connect protocol to automatically configure DNS rec
 - [Managing Nameservers](https://vercel.com/docs/domains/managing-nameservers?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-dns&source_site=vercel-docs&relationship=related) — Learn how to add custom nameservers and restore original nameservers for your domains on Vercel with this guide.
-- [Update an existing DNS record](https://vercel.com/docs/rest-api/dns/update-an-existing-dns-record?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-dns&source_site=vercel-docs&relationship=related) — PATCH /v1/domains/records/{recordId} — Updates an existing DNS record for a domain name.
 
 Full cross-link map for this page: [/docs/domains/working-with-dns.graph.md](/docs/domains/working-with-dns.graph.md?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-dns&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

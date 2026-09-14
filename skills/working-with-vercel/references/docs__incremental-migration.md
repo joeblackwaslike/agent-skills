@@ -16,8 +16,8 @@ related:
 summary: Learn how to migrate your app or website to Vercel with minimal risk and high impact.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/incremental-migration.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "12b9aaf97e7935549b72be5981c4061209babdb5f57a8fe25ebb3b4bd10a0220"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "013bf12edf28d63faa466d3f60b3b5e46cde8329f95c020b337ddd3a320d53e7"
 ---
 
 # Incremental Migration to Vercel
@@ -41,7 +41,6 @@ When migrating to Vercel you should use an incremental migration strategy. This 
 - [Headless Salesforce: An incremental migration from monolith to composable](https://vercel.com/blog/salesforce-incremental-migration?from=related&source_path=%2Fdocs%2Fincremental-migration&source_site=vercel-docs&relationship=related)
 - [Redirects](https://vercel.com/docs/routing/redirects?from=related&source_path=%2Fdocs%2Fincremental-migration&source_site=vercel-docs&relationship=related) — Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL.
 - [Integrating Vercel and Kubernetes](https://vercel.com/docs/integrations/external-platforms/kubernetes?from=related&source_path=%2Fdocs%2Fincremental-migration&source_site=vercel-docs&relationship=related) — Deploy your frontend on Vercel alongside your existing Kubernetes infrastructure.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fincremental-migration&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/incremental-migration.graph.md](/docs/incremental-migration.graph.md?from=related&source_path=%2Fdocs%2Fincremental-migration&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel routes, secures, and serves requests from your users to your application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/fundamentals/infrastructure.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "f35b06fee99f2cad35a2cd8ce039e406ff17f96a8852a2eecaedc46b52013a4c"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "a41f8ea8efc9a0e36f42b7fabdbef4268e206dffd0a07a5acdcab27d2b356544"
 ---
 
 # How requests flow through Vercel
@@ -32,12 +32,11 @@ When you deploy to Vercel, your code runs on a global network of servers. This n
 
 - [Building secure and performant web applications on Vercel](https://vercel.com/blog/building-secure-and-performant-web-applications-on-vercel?from=related&source_path=%2Fdocs%2Ffundamentals%2Finfrastructure&source_site=vercel-docs&relationship=related)
 - [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions?from=related&source_path=%2Fdocs%2Ffundamentals%2Finfrastructure&source_site=vercel-docs&relationship=related)
-- [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related&source_path=%2Fdocs%2Ffundamentals%2Finfrastructure&source_site=vercel-docs&relationship=related) — Learn how to debug how Vercel decides where to route your request
 - [How we run Vercel's CDN in front of Discourse](https://vercel.com/blog/how-we-run-vercels-cdn-in-front-of-discourse?from=related&source_path=%2Fdocs%2Ffundamentals%2Finfrastructure&source_site=vercel-docs&relationship=related)
 - [Life of a Vercel request: Securing your app's traffic with Vercel](https://vercel.com/blog/life-of-a-request-securing-your-apps-traffic-with-vercel?from=related&source_path=%2Fdocs%2Ffundamentals%2Finfrastructure&source_site=vercel-docs&relationship=related)
 - [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis?from=related&source_path=%2Fdocs%2Ffundamentals%2Finfrastructure&source_site=vercel-docs&relationship=related) — Learn how to build and scale performant APIs on Vercel.
+- [How Vercel CDN works](https://vercel.com/docs/how-vercel-cdn-works?from=related&source_path=%2Fdocs%2Ffundamentals%2Finfrastructure&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
 - [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds?from=related&source_path=%2Fdocs%2Ffundamentals%2Finfrastructure&source_site=vercel-docs&relationship=related) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Ffundamentals%2Finfrastructure&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/fundamentals/infrastructure.graph.md](/docs/fundamentals/infrastructure.graph.md?from=related&source_path=%2Fdocs%2Ffundamentals%2Finfrastructure&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

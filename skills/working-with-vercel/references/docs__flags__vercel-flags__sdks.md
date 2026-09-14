@@ -16,8 +16,8 @@ related:
 summary: Learn how to integrate Vercel Flags into your application using the Flags SDK, OpenFeature, or the core library.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/sdks.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "c64fa964cd98169d52ce8640fbc62113ab3a3409706d08528958fe8aa199066d"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "625ce18800e1f12380e32f8168c123a61f9ebdcad1e5b0b5f1be6601e844aaf2"
 ---
 
 # SDKs
@@ -38,7 +38,6 @@ There are multiple ways to use Vercel Flags, depending on your framework and how
 - [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks&source_site=vercel-docs&relationship=related) — API reference for the Flags SDK for Next.js and SvelteKit.
 - [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks&source_site=vercel-docs&relationship=related) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
 - [Segments](https://vercel.com/docs/flags/vercel-flags/dashboard/segments?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks&source_site=vercel-docs&relationship=related) — Create reusable user segments for targeting feature flags.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/sdks.graph.md](/docs/flags/vercel-flags/sdks.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

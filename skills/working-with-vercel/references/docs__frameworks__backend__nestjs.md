@@ -17,8 +17,8 @@ related:
 summary: Deploy NestJS applications to Vercel with zero configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/nestjs.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "ca43760c3df967cf472c276cd2a0b88ee02c1055b37be90ab619196146084c33"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "91352358cd4fc57ecf41dcfaf0f008ac3d4b344b05d8c2f73b1d11eacd52c1ac"
 ---
 
 # NestJS on Vercel
@@ -39,7 +39,6 @@ NestJS is a progressive Node.js framework for building efficient, reliable and s
 - [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fnestjs&source_site=vercel-docs&relationship=related) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
 - [Fastify on Vercel](https://vercel.com/docs/frameworks/backend/fastify?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fnestjs&source_site=vercel-docs&relationship=related) — Deploy Fastify applications to Vercel with zero configuration.
 - [Express on Vercel](https://vercel.com/docs/frameworks/backend/express?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fnestjs&source_site=vercel-docs&relationship=related) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fnestjs&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/frameworks/backend/nestjs.graph.md](/docs/frameworks/backend/nestjs.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fnestjs&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

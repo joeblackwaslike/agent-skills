@@ -1,23 +1,23 @@
 ---
-title: App Attribution
+title: AI Gateway App Attribution
 product: vercel
 url: /docs/ai-gateway/ecosystem/app-attribution
 canonical_url: "https://vercel.com/docs/ai-gateway/ecosystem/app-attribution"
-last_updated: 2026-07-28
-type: conceptual
+last_updated: 2026-09-08
+type: how-to
 prerequisites:
   - /docs/ai-gateway/ecosystem
   - /docs/ai-gateway
 related:
-  []
-summary: Attribute your requests so Vercel can identify and feature your app on AI Gateway pages
+  - /docs/ai-gateway/sdks-and-apis
+summary: Attribute your requests so Vercel can identify and feature your app on AI Gateway pages.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/app-attribution.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "c5681abe3f771972f2cf3e75c9c151b0bc2fb50c87811076db925336108f3805"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "eede59fe08214e54fdaef357949e48a8a49c4c78ffa485d2d54460fbf71cb464"
 ---
 
-# App Attribution
+# AI Gateway App Attribution
 
 App attribution allows Vercel to identify the application making a request
 through AI Gateway. When provided, your app can be featured on AI Gateway pages,
@@ -29,11 +29,12 @@ driving awareness.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Provider Options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fapp-attribution&source_site=vercel-docs&relationship=related) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway
-- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fapp-attribution&source_site=vercel-docs&relationship=related) — Create an AI Gateway API key, make your first request with TypeScript, Python, or cURL, and verify how the request was r
-- [Models & Providers](https://vercel.com/docs/ai-gateway/models-and-providers?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fapp-attribution&source_site=vercel-docs&relationship=related) — Work with models and providers in AI Gateway: provider routing and fallbacks, filtering, timeouts, caching, service tier
-- [Direct REST API Usage](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fapp-attribution&source_site=vercel-docs&relationship=related) — Use the AI Gateway API directly without client libraries using curl and fetch.
-- [Xcode](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fapp-attribution&source_site=vercel-docs&relationship=related) — Use Xcode's coding assistant with the AI Gateway.
+- [Choosing a Provider](https://ai-sdk.dev/docs/getting-started/choosing-a-provider?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fapp-attribution&source_site=vercel-docs&relationship=related)
+- [Ecosystem](https://vercel.com/docs/sandbox/ecosystem?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fapp-attribution&source_site=vercel-docs&relationship=related) — Use Vercel Sandbox with the agent frameworks, model SDKs, and coding agents you already work with.
+- [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fapp-attribution&source_site=vercel-docs&relationship=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
+- [AI Gateway Provider Routing and Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fapp-attribution&source_site=vercel-docs&relationship=related) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway.
+- [Call AI Gateway Chat Completions with REST](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fapp-attribution&source_site=vercel-docs&relationship=related) — Use AI Gateway API directly without client libraries using curl and fetch.
+- [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fapp-attribution&source_site=vercel-docs&relationship=related) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem/app-attribution.graph.md](/docs/ai-gateway/ecosystem/app-attribution.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fapp-attribution&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -52,82 +53,274 @@ You can set these headers directly in your server-side requests to AI Gateway.
 
 ## Examples
 
-#### TypeScript (AI SDK)
+These examples use AI SDK 7 and the AI SDK for Python beta. Set `AI_GATEWAY_API_KEY` before running them. See [API format differences](/docs/ai-gateway/sdks-and-apis#api-format-differences) for setup, request fields, and response handling.
 
-```typescript filename="ai-sdk.ts"
+#### AI SDK
+
+#### TypeScript
+
+```typescript filename="app-attribution.ts"
 import { streamText } from 'ai';
 
 const result = streamText({
+  model: 'anthropic/claude-sonnet-5',
+  prompt: 'Explain quantum computing in two sentences.',
   headers: {
     'http-referer': 'https://myapp.vercel.app',
     'x-title': 'MyApp',
   },
-  model: 'anthropic/claude-opus-5',
-  prompt: 'Hello, world!',
 });
 
-for await (const part of result.textStream) {
-  process.stdout.write(part);
+for await (const chunk of result.textStream) {
+  process.stdout.write(chunk);
 }
 ```
 
-#### TypeScript (OpenAI)
+#### Python (beta)
 
-```typescript filename="openai.ts"
-import OpenAI from 'openai';
+```python filename="app-attribution_ai.py"
+import asyncio
+import ai
 
-const openai = new OpenAI({
-  apiKey: process.env.AI_GATEWAY_API_KEY,
-  baseURL: 'https://ai-gateway.vercel.sh/v1',
-});
+async def main():
+    model = ai.get_model("anthropic/claude-sonnet-5")
+    messages = [ai.user_message("Explain quantum computing in two sentences.")]
+    params = ai.InferenceRequestParams(
+        extra_headers={"http-referer": "https://myapp.vercel.app", "x-title": "MyApp"}
+    )
+    async with ai.stream(model, messages, params=params) as stream:
+        async for event in stream:
+            if isinstance(event, ai.events.TextDelta):
+                print(event.chunk, end="", flush=True)
+    print()
 
-const response = await openai.chat.completions.create(
-  {
-    model: 'anthropic/claude-opus-5',
-    messages: [
-      {
-        role: 'user',
-        content: 'Hello, world!',
-      },
-    ],
-  },
-  {
-    headers: {
-      'http-referer': 'https://myapp.vercel.app',
-      'x-title': 'MyApp',
-    },
-  },
-);
-
-console.log(response.choices[0].message.content);
+asyncio.run(main())
 ```
 
-#### Python (OpenAI)
+#### Chat Completions
 
-```python filename="openai.py"
+#### TypeScript
+
+```typescript filename="app-attribution-chat.ts"
+import OpenAI from 'openai';
+
+const client = new OpenAI({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh/v1',
+  defaultHeaders: {
+    'http-referer': 'https://myapp.vercel.app',
+    'x-title': 'MyApp',
+  },
+});
+
+const response = await client.chat.completions.create({
+  model: 'anthropic/claude-sonnet-5',
+  messages: [
+    {
+      role: 'user',
+      content: 'Explain quantum computing in two sentences.',
+    },
+  ],
+  stream: true,
+});
+
+for await (const event of response) {
+  process.stdout.write(event.choices[0]?.delta.content ?? '');
+}
+```
+
+#### Python
+
+```python filename="app-attribution_chat.py"
 import os
 from openai import OpenAI
 
 client = OpenAI(
-  api_key=os.getenv('AI_GATEWAY_API_KEY'),
-  base_url='https://ai-gateway.vercel.sh/v1'
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
+    base_url="https://ai-gateway.vercel.sh/v1",
+    default_headers={"http-referer": "https://myapp.vercel.app", "x-title": "MyApp"},
 )
 
 response = client.chat.completions.create(
-    model='anthropic/claude-opus-5',
-    messages=[
-        {
-            'role': 'user',
-            'content': 'Hello, world!',
-        },
-    ],
-    extra_headers={
-        'http-referer': 'https://myapp.vercel.app',
-        'x-title': 'MyApp',
-    },
+    model="anthropic/claude-sonnet-5",
+    messages=[{"role": "user", "content": "Explain quantum computing in two sentences."}],
+    stream=True,
 )
 
-print(response.choices[0].message.content)
+for event in response:
+    if event.choices:
+        print(event.choices[0].delta.content or "", end="", flush=True)
+```
+
+#### cURL
+
+```bash filename="app-attribution-chat.sh"
+curl --fail-with-body --no-buffer https://ai-gateway.vercel.sh/v1/chat/completions \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -H "http-referer: https://myapp.vercel.app" \
+  -H "x-title: MyApp" \
+  -d '{
+  "model": "anthropic/claude-sonnet-5",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Explain quantum computing in two sentences."
+    }
+  ],
+  "stream": true
+}'
+```
+
+#### Messages API
+
+#### TypeScript
+
+```typescript filename="app-attribution-messages.ts"
+import Anthropic from '@anthropic-ai/sdk';
+
+const client = new Anthropic({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh',
+  defaultHeaders: {
+    'http-referer': 'https://myapp.vercel.app',
+    'x-title': 'MyApp',
+  },
+});
+
+const response = await client.messages.create({
+  model: 'anthropic/claude-sonnet-5',
+  messages: [
+    {
+      role: 'user',
+      content: 'Explain quantum computing in two sentences.',
+    },
+  ],
+  max_tokens: 1024,
+  stream: true,
+});
+
+for await (const event of response) {
+  if (
+    event.type === 'content_block_delta' &&
+    event.delta.type === 'text_delta'
+  ) {
+    process.stdout.write(event.delta.text);
+  }
+}
+```
+
+#### Python
+
+```python filename="app-attribution_messages.py"
+import os
+from anthropic import Anthropic
+
+client = Anthropic(
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
+    base_url="https://ai-gateway.vercel.sh",
+    default_headers={"http-referer": "https://myapp.vercel.app", "x-title": "MyApp"},
+)
+
+response = client.messages.create(
+    model="anthropic/claude-sonnet-5",
+    messages=[{"role": "user", "content": "Explain quantum computing in two sentences."}],
+    max_tokens=1024,
+    stream=True,
+)
+
+for event in response:
+    if event.type == "content_block_delta" and event.delta.type == "text_delta":
+        print(event.delta.text, end="", flush=True)
+```
+
+#### cURL
+
+```bash filename="app-attribution-messages.sh"
+curl --fail-with-body --no-buffer https://ai-gateway.vercel.sh/v1/messages \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -H "anthropic-version: 2023-06-01" \
+  -H "http-referer: https://myapp.vercel.app" \
+  -H "x-title: MyApp" \
+  -d '{
+  "model": "anthropic/claude-sonnet-5",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Explain quantum computing in two sentences."
+    }
+  ],
+  "max_tokens": 1024,
+  "stream": true
+}'
+```
+
+#### Responses / OpenResponses
+
+#### TypeScript
+
+```typescript filename="app-attribution-responses.ts"
+import OpenAI from 'openai';
+
+const client = new OpenAI({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh/v1',
+  defaultHeaders: {
+    'http-referer': 'https://myapp.vercel.app',
+    'x-title': 'MyApp',
+  },
+});
+
+const response = await client.responses.create({
+  model: 'anthropic/claude-sonnet-5',
+  input: 'Explain quantum computing in two sentences.',
+  stream: true,
+});
+
+for await (const event of response) {
+  if (event.type === 'response.output_text.delta') {
+    process.stdout.write(event.delta);
+  }
+}
+```
+
+#### Python
+
+```python filename="app-attribution_responses.py"
+import os
+from openai import OpenAI
+
+client = OpenAI(
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
+    base_url="https://ai-gateway.vercel.sh/v1",
+    default_headers={"http-referer": "https://myapp.vercel.app", "x-title": "MyApp"},
+)
+
+response = client.responses.create(
+    model="anthropic/claude-sonnet-5",
+    input="Explain quantum computing in two sentences.",
+    stream=True,
+)
+
+for event in response:
+    if event.type == "response.output_text.delta":
+        print(event.delta, end="", flush=True)
+```
+
+#### cURL
+
+```bash filename="app-attribution-responses.sh"
+curl --fail-with-body --no-buffer https://ai-gateway.vercel.sh/v1/responses \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -H "http-referer: https://myapp.vercel.app" \
+  -H "x-title: MyApp" \
+  -d '{
+  "model": "anthropic/claude-sonnet-5",
+  "input": "Explain quantum computing in two sentences.",
+  "stream": true
+}'
 ```
 
 ## Setting headers at the provider level

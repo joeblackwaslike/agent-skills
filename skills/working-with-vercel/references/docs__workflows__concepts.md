@@ -12,8 +12,8 @@ related:
 summary: Learn how workflows, steps, sleeps, and hooks work together to build durable applications.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/workflows/concepts.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "5bb1b9575e77a0343f5b3b58f5fda22f27925a6c77f4825f05724092284c781f"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "46b434a486b08c675d5bca04b4cf6b3d3a1ee261589812599adf502d347beb6b"
 ---
 
 # Workflow Concepts
@@ -31,13 +31,13 @@ You write async/await code as usual, and the framework handles queues, retry log
 - [How to run a multi-step research agent on Vercel](https://vercel.com/kb/guide/how-to-run-a-multi-step-research-agent-on-vercel?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=related) — An end-to-end architecture for production research agents on Vercel using Sandbox, Workflows, and AI Gateway with isolat
 - [How to run background jobs in Next.js](https://vercel.com/kb/guide/how-to-run-background-jobs-in-nextjs-on-vercel?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=related) — Learn the durable way to run background jobs in Next.js on Vercel with the Workflow SDK, and when to reach for Queues or
 - [How to migrate from Cloudflare Workflows to Vercel Workflows](https://vercel.com/kb/guide/migrate-cloudflare-workflows-to-vercel-workflows?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=related) — Migrate from Cloudflare Workflows to Vercel Workflows by mapping WorkflowEntrypoint, step.do, and waitForEvent to workfl
-- [Workflows and Steps](https://workflow-sdk.dev/docs/foundations/workflows-and-steps?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=related) — Understand the two function types that make up a workflow.
 - [Python](https://workflow-sdk.dev/docs/getting-started/python?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=related) — Set up the Workflow Python SDK in your Python application.
-- [Hooks & Webhooks](https://workflow-sdk.dev/docs/foundations/hooks?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=related) — Pause workflows and resume them with external data or HTTP requests.
-- [Building a Slack agent with durable workflows](https://vercel.com/kb/guide/building-a-slack-agent-with-durable-workflows?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=related) — Build an AI-powered Slack bot that gathers team data, drafts a summary, and refines it through conversation.
 - [Versioning](https://workflow-sdk.dev/docs/foundations/versioning?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=related) — Keep in-flight runs stable by default, then choose explicit upgrade boundaries when you need them.
+- [Workflows and Steps](https://workflow-sdk.dev/docs/foundations/workflows-and-steps?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=related) — Understand the two function types that make up a workflow.
+- [Building a Slack agent with durable workflows](https://vercel.com/kb/guide/building-a-slack-agent-with-durable-workflows?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=related) — Build an AI-powered Slack bot that gathers team data, drafts a summary, and refines it through conversation.
+- [Hooks & Webhooks](https://workflow-sdk.dev/docs/foundations/hooks?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=related) — Pause workflows and resume them with external data or HTTP requests.
 - [workflow](https://workflow-sdk.dev/docs/api-reference/workflow?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=related) — Explore the core workflow package for steps, streaming, hooks, and error handling.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
+- [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=related)
 
 Full cross-link map for this page: [/docs/workflows/concepts.graph.md](/docs/workflows/concepts.graph.md?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -200,6 +200,10 @@ When a hook receives data, the workflow resumes automatically. You don't need po
 
 By default, Workflows keep running on the deployment they were created on, so you can deploy new versions of your
 Workflows without affecting existing runs.
+
+The same pinning means a rollback does not stop runs on the deployment you rolled back from. A run whose steps keep failing on that deployment is retried there, and each retry is a function invocation on it, until the run fails or is cancelled.
+
+To stop runs on a deployment you no longer want executing, cancel them from the [Workflows observability tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability%2Fworkflows\&title=Vercel+Workflows) or the CLI. Deleting the deployment also stops its functions from being invoked, but runs pinned to a deleted deployment never complete or fail on their own, so cancel them as well. To see which deployments are consuming compute, open the Observability **Query** tab with [function duration grouped by deployment](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability%2Fquery%3Fmetric%3DserverlessFunctionInvocation.functionDurationGbhr%26aggregation%3Dsum%26by%3DdeploymentId\&title=Function+duration+by+deployment).
 
 
 ---

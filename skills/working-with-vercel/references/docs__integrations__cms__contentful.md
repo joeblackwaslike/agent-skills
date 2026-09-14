@@ -13,8 +13,8 @@ related:
 summary: Integrate Vercel with Contentful to deploy your content.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/cms/contentful.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "5bdf24fcf416fbc86b1737e2a4e488d3dd727ff2624f5d975daf6ff681bbed19"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "36d16c69d26bff068b23f45359ce5b165a2faa2debd01f28224a096d278d5ce1"
 ---
 
 # Vercel and Contentful Integration
@@ -32,7 +32,7 @@ sha256: "5bdf24fcf416fbc86b1737e2a4e488d3dd727ff2624f5d975daf6ff681bbed19"
 - [Integrate Vercel and Contentstack for your Headless CMS](https://vercel.com/kb/guide/integrate-vercel-and-contentstack?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fcontentful&source_site=vercel-docs&relationship=related) — Integrate Vercel with Contentstack, a headless CMS, to build and deploy dynamic, high-performance websites.
 - [Deploy a headless BigCommerce storefront with Vercel](https://vercel.com/kb/guide/deploy-headless-bigcommerce-storefront-with-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fcontentful&source_site=vercel-docs&relationship=related) — Deploy a headless BigCommerce storefront using Catalyst and Next.js on Vercel
 - [How to use Deploy Hooks with Vercel and a Headless CMS](https://vercel.com/kb/guide/set-up-and-use-deploy-hooks-with-vercel-and-headless-cms?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fcontentful&source_site=vercel-docs&relationship=related) — Create your own Deploy Hooks to trigger automatic deployments on Vercel when using a Headless CMS.
-- [How to Deploy a Vue.js Site with Vercel](https://vercel.com/kb/guide/deploying-vuejs-to-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fcontentful&source_site=vercel-docs&relationship=related) — Create your Vue.js app and deploy it with Vercel.
+- [Build an integrations hub with Nuxt and Vercel Connect](https://vercel.com/kb/guide/nuxt-and-vercel-connect?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fcontentful&source_site=vercel-docs&relationship=related) — Build an Integrations Hub with Nuxt and Vercel Connect. Connect GitHub and Linear over OAuth and mint short-lived tokens
 - [Vercel and Sitecore XM Cloud Integration](https://vercel.com/docs/integrations/cms/sitecore?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fcontentful&source_site=vercel-docs&relationship=related) — Integrate Vercel with Sitecore XM Cloud to deploy your content.
 - [Vercel Sanity Integration](https://vercel.com/docs/integrations/cms/sanity?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fcontentful&source_site=vercel-docs&relationship=related) — Learn how to integrate Sanity with Vercel. Follow our tutorial to deploy the Sanity template or install the integration
 - [Vercel DatoCMS Integration](https://vercel.com/docs/integrations/cms/dato-cms?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fcontentful&source_site=vercel-docs&relationship=related) — Learn how to integrate DatoCMS with Vercel. Follow our step-by-step tutorial to set up and manage your digital content s

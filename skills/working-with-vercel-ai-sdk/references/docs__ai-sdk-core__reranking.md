@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/reranking.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "f050e55e39e8021c474a0d61cc6410d147d254a20af789bd9611bda20a87504f"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "a539944f3c44eb1640c6c9f5b3d110942f96d7f0c3c202ca6844e7fa39141435"
 ---
 
 # Reranking
@@ -243,6 +243,7 @@ Several providers offer reranking models:
 - [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
 - [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
+- [Batch](/docs/ai-sdk-core/batch)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)

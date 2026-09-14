@@ -1,24 +1,24 @@
 ---
-title: Image Generation
+title: AI Gateway Chat Completions Image Generation Reference
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation"
-last_updated: 2026-08-27
-type: conceptual
+last_updated: 2026-09-08
+type: reference
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions
   - /docs/ai-gateway/sdks-and-apis
 related:
   - /docs/ai-gateway/modalities/image-generation/openai
   - /docs/ai-gateway/modalities/image-generation
-summary: Generate images using AI models that support multimodal output through the Chat Completions API.
+summary: Generate images using AI models that support multimodal output through the Chat Completions API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "7dce4673639e03cd1fe672b64da49a537a517bba871d4bf9e3f870cb9b30b8d6"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "5666f770d6e78725ff94fefe00d82d2a21602c4141c63f1896feae4105a1c49a"
 ---
 
-# Image Generation
+# AI Gateway Chat Completions Image Generation Reference
 
 Generate images using AI models that support multimodal output through the Chat Completions API. This feature allows you to create images alongside text responses using models like Google's Gemini 3.1 Flash Image.
 
@@ -28,11 +28,11 @@ Generate images using AI models that support multimodal output through the Chat 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Image Generation](https://vercel.com/docs/ai-gateway/modalities/image-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fimage-generation&source_site=vercel-docs&relationship=related) — Generate and edit images using AI models through Vercel AI Gateway with support for multiple providers and modalities.
-- [Image Generation with AI SDK](https://vercel.com/docs/ai-gateway/modalities/image-generation/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fimage-generation&source_site=vercel-docs&relationship=related) — Generate and edit images using AI models through Vercel AI Gateway with the AI SDK.
-- [File Attachments](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/images?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fimage-generation&source_site=vercel-docs&relationship=related) — Send images and PDF documents to a model using the OpenAI Chat Completions API.
-- [Image Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/image?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fimage-generation&source_site=vercel-docs&relationship=related) — Generate images from text prompts using AI Gateway.
-- [Modalities](https://vercel.com/docs/ai-gateway/modalities?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fimage-generation&source_site=vercel-docs&relationship=related) — The inputs and outputs AI Gateway models work with: text, image, and video generation, speech to text, text to speech, r
+- [OpenAI Chat Completions Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/images?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fimage-generation&source_site=vercel-docs&relationship=related) — Send images and PDF documents to a model using the OpenAI Chat Completions API through AI Gateway.
+- [AI Gateway Image Generation](https://vercel.com/docs/ai-gateway/modalities/image-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fimage-generation&source_site=vercel-docs&relationship=related) — Generate and edit images using AI models through Vercel AI Gateway with support for multiple providers and modalities.
+- [OpenAI Chat Completions Requests with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/chat-completions?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fimage-generation&source_site=vercel-docs&relationship=related) — Create chat completions using the Chat Completions API with support for streaming, image attachments, and PDF documents
+- [AI Gateway Image Generation with AI SDK](https://vercel.com/docs/ai-gateway/modalities/image-generation/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fimage-generation&source_site=vercel-docs&relationship=related) — Generate and edit images using AI models through Vercel AI Gateway with the AI SDK.
+- [AI Gateway Vision and Image Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/vision?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fimage-generation&source_site=vercel-docs&relationship=related) — Analyze images with AI Gateway using AI SDK 7, the Python beta, Chat Completions, Messages, and Responses APIs.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation.graph.md](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fimage-generation&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -51,70 +51,31 @@ To enable image generation, include the `modalities` parameter in your request:
 
 Example requests
 
-#### cURL
-
-```bash filename="image-generation.sh"
-curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
-  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "google/gemini-3.1-flash-image-preview",
-    "messages": [
-      {
-        "role": "user",
-        "content": "Generate a beautiful sunset over mountains and describe the scene."
-      }
-    ],
-    "modalities": [
-      "text",
-      "image"
-    ],
-    "stream": false
-  }'
-```
-
 #### TypeScript
 
 ```typescript filename="image-generation.ts"
 import OpenAI from 'openai';
 
-const apiKey = process.env.AI_GATEWAY_API_KEY || process.env.VERCEL_OIDC_TOKEN;
-
-const openai = new OpenAI({
-  apiKey,
+const client = new OpenAI({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
   baseURL: 'https://ai-gateway.vercel.sh/v1',
 });
 
-const completion = await openai.chat.completions.create({
+type ImageOutput = { images?: Array<{ image_url: { url: string } }> };
+
+const completion = await client.chat.completions.create({
   model: 'google/gemini-3.1-flash-image-preview',
-  messages: [
-    {
-      role: 'user',
-      content:
-        'Generate a beautiful sunset over mountains and describe the scene.',
-    },
-  ],
-  // @ts-expect-error - modalities not yet in OpenAI types but supported by gateway
+  messages: [{ role: 'user', content: 'Generate a sunset image and describe it.' }],
+  // @ts-expect-error AI Gateway supports image output beyond OpenAI's text/audio types.
   modalities: ['text', 'image'],
   stream: false,
 });
 
-const message = completion.choices[0].message;
-
-// Text content is always a string
-console.log('Text:', message.content);
-
-// Images are in a separate array
-if (message.images && Array.isArray(message.images)) {
-  console.log(`Generated ${message.images.length} images:`);
-  for (const [index, img] of message.images.entries()) {
-    if (img.type === 'image_url' && img.image_url) {
-      console.log(`Image ${index + 1}:`, {
-        size: img.image_url.url?.length || 0,
-        preview: `${img.image_url.url?.substring(0, 50)}...`,
-      });
-    }
-  }
+const message = completion.choices[0].message as
+  OpenAI.Chat.Completions.ChatCompletionMessage & ImageOutput;
+console.log(message.content);
+for (const image of message.images ?? []) {
+  console.log('Image:', image.image_url.url);
 }
 ```
 
@@ -160,6 +121,28 @@ if hasattr(message, 'images') and message.images:
             print(f"Preview: {image_url[:50]}...")
 
 print(f'Tokens used: {completion.usage}')
+```
+
+#### cURL
+
+```bash filename="image-generation.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "google/gemini-3.1-flash-image-preview",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Generate a beautiful sunset over mountains and describe the scene."
+      }
+    ],
+    "modalities": [
+      "text",
+      "image"
+    ],
+    "stream": false
+  }'
 ```
 
 Response format
@@ -238,61 +221,33 @@ For streaming requests, images are delivered in delta chunks:
 
 When processing streaming responses, check for both text content and images in each delta:
 
-#### cURL
-
-```bash filename="image-generation-stream.sh"
-curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
-  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "google/gemini-3.1-flash-image-preview",
-    "messages": [
-      {
-        "role": "user",
-        "content": "Generate a sunset image"
-      }
-    ],
-    "modalities": [
-      "text",
-      "image"
-    ],
-    "stream": true
-  }'
-```
-
 #### TypeScript
 
 ```typescript filename="streaming-images.ts"
 import OpenAI from 'openai';
 
-const openai = new OpenAI({
+const client = new OpenAI({
   apiKey: process.env.AI_GATEWAY_API_KEY,
   baseURL: 'https://ai-gateway.vercel.sh/v1',
 });
 
-const stream = await openai.chat.completions.create({
+type ImageOutput = { images?: Array<{ image_url: { url: string } }> };
+
+const stream = await client.chat.completions.create({
   model: 'google/gemini-3.1-flash-image-preview',
-  messages: [{ role: 'user', content: 'Generate a sunset image' }],
-  // @ts-expect-error - modalities not yet in OpenAI types
+  messages: [{ role: 'user', content: 'Generate a sunset image and describe it.' }],
+  // @ts-expect-error AI Gateway supports image output beyond OpenAI's text/audio types.
   modalities: ['text', 'image'],
   stream: true,
 });
 
 for await (const chunk of stream) {
-  const delta = chunk.choices[0]?.delta;
-
-  // Handle text content
-  if (delta?.content) {
-    process.stdout.write(delta.content);
-  }
-
-  // Handle images
-  if (delta?.images) {
-    for (const img of delta.images) {
-      if (img.type === 'image_url' && img.image_url) {
-        console.log(`\n[Image received: ${img.image_url.url.length} chars]`);
-      }
-    }
+  const delta = chunk.choices[0]?.delta as
+    | (OpenAI.Chat.Completions.ChatCompletionChunk.Choice.Delta & ImageOutput)
+    | undefined;
+  if (delta?.content) process.stdout.write(delta.content);
+  for (const image of delta?.images ?? []) {
+    console.log('Image:', image.image_url.url);
   }
 }
 ```
@@ -329,6 +284,28 @@ for chunk in stream:
                 if img.get('type') == 'image_url' and img.get('image_url'):
                     image_url = img['image_url']['url']
                     print(f"\n[Image received: {len(image_url)} chars]")
+```
+
+#### cURL
+
+```bash filename="image-generation-stream.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "google/gemini-3.1-flash-image-preview",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Generate a sunset image"
+      }
+    ],
+    "modalities": [
+      "text",
+      "image"
+    ],
+    "stream": true
+  }'
 ```
 
 ## Image-only models (different endpoint)

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/gemini-cli.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "e5a53bf2f80c0d9a53647fc03cb0a8f47a441c3439cb665612c78ec41c4860bd"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "7a800a400f137b01409a9a3a18f2e869334f3adf9f8f40771f848c64a1ff480c"
 ---
 
 # Gemini CLI Provider
@@ -221,6 +221,7 @@ For more details, see the [provider documentation](https://github.com/ben-vargas
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
 - [Interfaze](/providers/community-providers/interfaze)
+- [Telnyx](/providers/community-providers/telnyx)
 - [Flowise](/providers/community-providers/flowise)
 
 

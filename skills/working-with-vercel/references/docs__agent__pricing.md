@@ -16,8 +16,8 @@ related:
 summary: Understand Vercel Agent pricing and how to track costs
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/pricing.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "b83d85b591da159537ce9da3bad261f37b0c551238842d4933546dccfb709c2b"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "cca145351ff7789007ee9aac1d6229287f2d921f97cebdc62d667e6baa51e431"
 ---
 
 # Vercel Agent Pricing
@@ -39,7 +39,7 @@ Vercel Agent charges the underlying provider inference rate with no markup, plus
 - [An expanded Vercel Agent: chat, investigations, and approved actions, now in public beta](https://vercel.com/changelog/an-expanded-vercel-agent-chat-investigations-and-approved-actions-now-in-public-beta?from=related&source_path=%2Fdocs%2Fagent%2Fpricing&source_site=vercel-docs&relationship=related)
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fagent%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Pricing and Limits](https://vercel.com/docs/eve/pricing?from=related&source_path=%2Fdocs%2Fagent%2Fpricing&source_site=vercel-docs&relationship=related) — Understand how eve usage maps to Vercel resources and inherited platform limits.
-- [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing?from=related&source_path=%2Fdocs%2Fagent%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about pricing for AI Gateway.
+- [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing?from=related&source_path=%2Fdocs%2Fagent%2Fpricing&source_site=vercel-docs&relationship=related) — Understand AI Gateway token pricing, free and paid credits, BYOK costs, add-on charges, and payment fees. Manage credit
 - [Vercel Connect Pricing](https://vercel.com/docs/connect/pricing?from=related&source_path=%2Fdocs%2Fagent%2Fpricing&source_site=vercel-docs&relationship=related) — How Vercel Connect is billed for token requests and triggers across plans and how to stop being billed.
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fagent%2Fpricing&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 

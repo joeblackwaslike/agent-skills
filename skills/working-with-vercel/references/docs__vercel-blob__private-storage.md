@@ -16,8 +16,8 @@ related:
 summary: Learn how to use private Vercel Blob storage to serve files with authentication
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/private-storage.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "782c8fce3110d544e214b7229a24094bc497bc41d353edf8c12070c32c26521b"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "fa6a34b390629dec7ee9f4661f5cd8872ff64e2edccbb9c472d6a94083908404"
 ---
 
 # Private Storage
@@ -44,7 +44,6 @@ Private Blob stores require authentication for all read and write operations, en
 - [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fprivate-storage&source_site=vercel-docs&relationship=related) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
 - [How do I bypass the 4.5MB body size limit of Vercel Serverless Functions?](https://vercel.com/kb/guide/how-to-bypass-vercel-body-size-limit-serverless-functions?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fprivate-storage&source_site=vercel-docs&relationship=related) — Learn how to deal with the body size limit of Serverless Functions on Vercel.
 - [Private storage for Vercel Blob, now available in public beta](https://vercel.com/changelog/private-storage-for-vercel-blob-now-available-in-public-beta?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fprivate-storage&source_site=vercel-docs&relationship=related)
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fprivate-storage&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/vercel-blob/private-storage.graph.md](/docs/vercel-blob/private-storage.graph.md?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fprivate-storage&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

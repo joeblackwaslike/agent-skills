@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/mixedbread.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "f365c7c73c611c0ce71d517698768b06ffac24c828efc69588ebbf0779878601"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "3f932f48023603183cea6d7fd4c4e90b68fe6dee66761e5a5714a900137350c8"
 ---
 
 # Mixedbread Provider
@@ -186,6 +186,7 @@ The following provider options are available:
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
 - [Interfaze](/providers/community-providers/interfaze)
+- [Telnyx](/providers/community-providers/telnyx)
 - [Flowise](/providers/community-providers/flowise)
 
 

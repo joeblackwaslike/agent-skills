@@ -13,8 +13,8 @@ related:
 summary: Step-by-step guide to setting up BotID protection in your Vercel project
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/botid/get-started.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "016cfca0bdc8364a557bfd3370f7c7a0bf5bf292675b30f0cf9b92c3493300b9"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "48fb45ab9292010dd80d1866becabc4f3a55c8c4d8f28df30545c056c40adee2"
 ---
 
 # Get Started with BotID
@@ -38,7 +38,6 @@ This guide shows you how to add BotID protection to your Vercel project. BotID b
 - [Client Uploads with Vercel Blob](https://vercel.com/docs/vercel-blob/client-upload?from=related&source_path=%2Fdocs%2Fbotid%2Fget-started&source_site=vercel-docs&relationship=related) — Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fbotid%2Fget-started&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 - [Add the Vercel Toolbar to your local environment](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-localhost?from=related&source_path=%2Fdocs%2Fbotid%2Fget-started&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel Toolbar in your local environment.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fbotid%2Fget-started&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/botid/get-started.graph.md](/docs/botid/get-started.graph.md?from=related&source_path=%2Fdocs%2Fbotid%2Fget-started&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

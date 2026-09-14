@@ -16,8 +16,8 @@ related:
 summary: "Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cdn-security.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "ff165c05e4466beec9772e533ef5498815e1e9ba0c1b4e30e982b675d06796b3"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "4ecda926dc08403794e877f3e23e6f42f0050d4f33391f0cefe3bde5a75e4162"
 ---
 
 # CDN security
@@ -32,8 +32,8 @@ Vercel's CDN applies multiple layers of security to every incoming request befor
 
 - [Vercel security roundup: improved bot defenses, DoS mitigations, and insights](https://vercel.com/blog/vercel-security-roundup-improved-bot-defenses-dos-mitigations-and-insights?from=related&source_path=%2Fdocs%2Fcdn-security&source_site=vercel-docs&relationship=related)
 - [How we run Vercel's CDN in front of Discourse](https://vercel.com/blog/how-we-run-vercels-cdn-in-front-of-discourse?from=related&source_path=%2Fdocs%2Fcdn-security&source_site=vercel-docs&relationship=related)
-- [Life of a Vercel request: Securing your app's traffic with Vercel](https://vercel.com/blog/life-of-a-request-securing-your-apps-traffic-with-vercel?from=related&source_path=%2Fdocs%2Fcdn-security&source_site=vercel-docs&relationship=related)
 - [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Fcdn-security&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
+- [Life of a Vercel request: Securing your app's traffic with Vercel](https://vercel.com/blog/life-of-a-request-securing-your-apps-traffic-with-vercel?from=related&source_path=%2Fdocs%2Fcdn-security&source_site=vercel-docs&relationship=related)
 - [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn?from=related&source_path=%2Fdocs%2Fcdn-security&source_site=vercel-docs&relationship=related) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
 - [Vercel security overview](https://vercel.com/docs/security?from=related&source_path=%2Fdocs%2Fcdn-security&source_site=vercel-docs&relationship=related) — Vercel provides built-in and customizable features to ensure that your site is secure.
 - [Vercel Firewall](https://vercel.com/docs/vercel-firewall?from=related&source_path=%2Fdocs%2Fcdn-security&source_site=vercel-docs&relationship=related) — Learn how Vercel Firewall helps protect your applications and websites from malicious attacks and unauthorized access.

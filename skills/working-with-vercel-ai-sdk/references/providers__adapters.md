@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/adapters.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "7252488e57cf3cef4bb8bb90e8bb1d79947b6570403e065e62e66ea4c92fc05e"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "b292d13101b749a48131b7c6ebb2a8dcf0094eeae9a3571f1b8c3cd98af6a8df"
 ---
 
 # Adapters
@@ -35,7 +35,6 @@ The following adapters are currently available:
   - [Deepgram](/providers/ai-sdk-providers/deepgram)
   - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
   - [Gladia](/providers/ai-sdk-providers/gladia)
-  - [LMNT](/providers/ai-sdk-providers/lmnt)
   - [Google](/providers/ai-sdk-providers/google)
   - [Hume](/providers/ai-sdk-providers/hume)
   - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
@@ -74,6 +73,7 @@ The following adapters are currently available:
   - [Cline](/providers/ai-sdk-harnesses/cline)
   - [Cursor](/providers/ai-sdk-harnesses/cursor)
   - [fx](/providers/ai-sdk-harnesses/fx)
+  - [GitHub Copilot](/providers/ai-sdk-harnesses/github-copilot)
 - [Observability Integrations](/providers/observability)
   - [Arize AX](/providers/observability/arize-ax)
   - [Axiom](/providers/observability/axiom)
@@ -103,7 +103,6 @@ The following adapters are currently available:
   - [Clarifai](/providers/openai-compatible-providers/clarifai)
   - [Heroku](/providers/openai-compatible-providers/heroku)
   - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)
-  - [Synthorai](/providers/openai-compatible-providers/synthorai)
 - [Community Providers](/providers/community-providers)
   - [Writing a Custom Provider](/providers/community-providers/custom-providers)
   - [A2A](/providers/community-providers/a2a)
@@ -162,6 +161,7 @@ The following adapters are currently available:
   - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
   - [QVAC](/providers/community-providers/qvac)
   - [Interfaze](/providers/community-providers/interfaze)
+  - [Telnyx](/providers/community-providers/telnyx)
   - [Flowise](/providers/community-providers/flowise)
 - [Adapters](/providers/adapters)
   - [LangChain](/providers/adapters/langchain)

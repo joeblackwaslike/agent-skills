@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/tools-and-tool-calling.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "e175af3169f7a288fa77fa534181553ca8f20c6b854f0eb142dffc603c2e30ea"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "d6d5db15806b355074d71ff891a9e2a83ef1a33f57b379f8bdd18471a96883a1"
 ---
 
 # Tool Calling
@@ -1537,6 +1537,7 @@ You can see tools in action using various frameworks in the following examples:
 - [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
 - [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
+- [Batch](/docs/ai-sdk-core/batch)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)

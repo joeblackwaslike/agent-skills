@@ -1,10 +1,10 @@
 ---
-title: Provider Filtering, Ordering & Sorting
+title: AI Gateway Provider Filtering, Ordering, and Sorting
 product: vercel
 url: /docs/ai-gateway/models-and-providers/provider-filtering-and-ordering
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering"
-last_updated: 2026-08-27
-type: conceptual
+last_updated: 2026-09-08
+type: reference
 prerequisites:
   - /docs/ai-gateway/models-and-providers
   - /docs/ai-gateway
@@ -12,15 +12,16 @@ related:
   - /docs/ai-gateway/models-and-providers/model-filtering
   - /docs/ai-gateway/models-and-providers/provider-options
   - /docs/ai-gateway/sdks-and-apis/rest-api
+  - /docs/ai-gateway/sdks-and-apis
   - /docs/ai-gateway/pricing
-summary: Control which providers handle your requests, in what order, and how they are ranked using order, only, and sort options.
+summary: Control AI Gateway provider routing with order, only, and sort. Set preferences, restrict providers, and rank them by cost, latency, or throughput.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "51d6adfa293d25f3067477429fe86011daef10de3e0f5dd130e7bf6e86298db9"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "2a736dc2abea33febce3b0ae0f759cb873c66274291d9ec89d5d28d3aebf43a6"
 ---
 
-# Provider Filtering, Ordering & Sorting
+# AI Gateway Provider Filtering, Ordering, and Sorting
 
 By default, AI Gateway dynamically chooses providers based on recent uptime and latency. You can override this behavior to control which providers handle your requests and in what order using `order`, `only`, and `sort` in `providerOptions.gateway`. To instead filter by a capability of the model itself, see [Model Filtering](/docs/ai-gateway/models-and-providers/model-filtering).
 
@@ -33,18 +34,19 @@ By default, AI Gateway dynamically chooses providers based on recent uptime and 
 - [ Routing rules now available on AI Gateway](https://vercel.com/changelog/ai-gateway-routing-rules?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-filtering-and-ordering&source_site=vercel-docs&relationship=related)
 - [Sort providers by cost, latency, or throughput on AI Gateway](https://vercel.com/changelog/sort-providers-by-cost-latency-or-throughput-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-filtering-and-ordering&source_site=vercel-docs&relationship=related)
 - [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-filtering-and-ordering&source_site=vercel-docs&relationship=related)
-- [Advanced Configuration](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-filtering-and-ordering&source_site=vercel-docs&relationship=related) — Configure provider options, model fallbacks, BYOK credentials, and prompt caching.
-- [Direct REST API Usage](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-filtering-and-ordering&source_site=vercel-docs&relationship=related) — Use the AI Gateway API directly without client libraries using curl and fetch.
-- [Provider Options](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-filtering-and-ordering&source_site=vercel-docs&relationship=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API.
-- [Provider Allowlist](https://vercel.com/docs/ai-gateway/security-and-compliance/provider-allowlist?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-filtering-and-ordering&source_site=vercel-docs&relationship=related) — Restrict which AI providers your team can route through AI Gateway. Available on Pro and Enterprise.
-- [Model Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/model-fallbacks?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-filtering-and-ordering&source_site=vercel-docs&relationship=related) — Configure model-level failover to try backup models when the primary model is unavailable
+- [AI Gateway Service Tiers](https://vercel.com/docs/ai-gateway/models-and-providers/service-tiers?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-filtering-and-ordering&source_site=vercel-docs&relationship=related) — Control processing priority and cost for OpenAI, Google AI Studio, Google Vertex AI, and SpaceXAI models using service t
+- [Call AI Gateway Chat Completions with REST](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-filtering-and-ordering&source_site=vercel-docs&relationship=related) — Use AI Gateway API directly without client libraries using curl and fetch.
+- [OpenAI Chat Completions Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-filtering-and-ordering&source_site=vercel-docs&relationship=related) — Configure provider options, model fallbacks, BYOK credentials, and prompt caching through AI Gateway.
+- [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-filtering-and-ordering&source_site=vercel-docs&relationship=related) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering.graph.md](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-filtering-and-ordering&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Provider ordering
 
-Use the `order` array to specify the sequence in which providers should be attempted. Providers are specified using their `slug` string. You can find the slugs in the [table of available providers](/docs/ai-gateway/models-and-providers/provider-options#available-providers).
+Use the `order` array to specify the sequence in which providers should be attempted. Provider ordering works with a model served by more than one provider, such as `anthropic/claude-sonnet-5`.
+
+Providers are specified using their `slug` string. You can find the slugs in the [table of available providers](/docs/ai-gateway/models-and-providers/provider-options#available-providers). To find which providers serve a model programmatically, [get its provider endpoints](/docs/ai-gateway/sdks-and-apis/rest-api#get-model-endpoints).
 
 You can also copy the provider slug using the copy button next to a provider's name on a model's detail page:
 
@@ -70,58 +72,311 @@ The bottom section of the page lists the available providers for that model. The
 
 - ### Configure the provider order in your request
   Use the `providerOptions.gateway.order` configuration:
-  ```typescript filename="app/api/chat/route.ts" {7-11}
+
+  These examples use AI SDK 7 and the AI SDK for Python beta. Set `AI_GATEWAY_API_KEY` before running them. See [API format differences](/docs/ai-gateway/sdks-and-apis#api-format-differences) for setup, request fields, and response handling.
+  #### AI SDK
+  #### TypeScript
+  See the [AI SDK routing-options reference](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway#gateway-provider-options) for SDK configuration and usage.
+  ```typescript filename="provider-ordering.ts" {8}
   import { streamText } from 'ai';
 
-  export async function POST(request: Request) {
-    const { prompt } = await request.json();
-
-    const result = streamText({
-      model: 'anthropic/claude-sonnet-5',
-      prompt,
-      providerOptions: {
-        gateway: {
-          order: ['bedrock', 'anthropic'], // Try Amazon Bedrock first, then Anthropic
-        },
+  const result = streamText({
+    model: 'anthropic/claude-sonnet-5',
+    prompt: 'Explain quantum computing in two sentences.',
+    providerOptions: {
+      gateway: {
+        order: ['bedrock', 'anthropic'],
       },
-    });
+    },
+  });
 
-    return result.toUIMessageStreamResponse();
+  for await (const chunk of result.textStream) {
+    process.stdout.write(chunk);
   }
   ```
-  In this example:
-  - The gateway will first attempt to use Amazon Bedrock to serve the Claude 4 Sonnet model
-  - If Amazon Bedrock is unavailable or fails, it will fall back to Anthropic
-  - Other providers (like Vertex AI) are still available but will only be used after the specified providers
+  #### Python (beta)
+  ```python filename="provider-ordering_ai.py" {8}
+  import asyncio
+  import ai
 
-- ### Test the routing behavior
-  You can monitor which provider you used by checking the provider metadata in the response.
-  ```typescript filename="app/api/chat/route.ts" {16-17}
-  import { streamText } from 'ai';
+  async def main():
+      model = ai.get_model("anthropic/claude-sonnet-5")
+      messages = [ai.user_message("Explain quantum computing in two sentences.")]
+      params = ai.InferenceRequestParams(
+          extra_body={"providerOptions": {"gateway": {"order": ["bedrock", "anthropic"]}}}
+      )
+      async with ai.stream(model, messages, params=params) as stream:
+          async for event in stream:
+              if isinstance(event, ai.events.TextDelta):
+                  print(event.chunk, end="", flush=True)
+      print()
 
-  export async function POST(request: Request) {
-    const { prompt } = await request.json();
+  asyncio.run(main())
+  ```
+  #### Chat Completions
+  #### TypeScript
+  ```typescript filename="provider-ordering-chat.ts" {20}
+  import OpenAI from 'openai';
 
-    const result = streamText({
-      model: 'anthropic/claude-sonnet-5',
-      prompt,
+  const client = new OpenAI({
+    apiKey: process.env.AI_GATEWAY_API_KEY,
+    baseURL: 'https://ai-gateway.vercel.sh/v1',
+  });
+
+  const response = await client.chat.completions.create({
+    model: 'anthropic/claude-sonnet-5',
+    messages: [
+      {
+        role: 'user',
+        content: 'Explain quantum computing in two sentences.',
+      },
+    ],
+    // AI Gateway extension fields are not included in the upstream SDK types.
+    ...{
       providerOptions: {
         gateway: {
           order: ['bedrock', 'anthropic'],
         },
       },
-    });
+    },
+    stream: true,
+  });
 
-    // Log which provider was actually used
-    console.log(JSON.stringify(await result.providerMetadata, null, 2));
-
-    return result.toUIMessageStreamResponse();
+  for await (const event of response) {
+    process.stdout.write(event.choices[0]?.delta.content ?? '');
   }
+  ```
+  #### Python
+  ```python filename="provider-ordering_chat.py" {12}
+  import os
+  from openai import OpenAI
+
+  client = OpenAI(
+      api_key=os.environ["AI_GATEWAY_API_KEY"],
+      base_url="https://ai-gateway.vercel.sh/v1",
+  )
+
+  response = client.chat.completions.create(
+      model="anthropic/claude-sonnet-5",
+      messages=[{"role": "user", "content": "Explain quantum computing in two sentences."}],
+      extra_body={"providerOptions": {"gateway": {"order": ["bedrock", "anthropic"]}}},
+      stream=True,
+  )
+
+  for event in response:
+      if event.choices:
+          print(event.choices[0].delta.content or "", end="", flush=True)
+  ```
+  #### cURL
+  ```bash filename="provider-ordering-chat.sh" {14-17}
+  curl --fail-with-body --no-buffer https://ai-gateway.vercel.sh/v1/chat/completions \
+    -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+    -H "Content-Type: application/json" \
+    -d '{
+    "model": "anthropic/claude-sonnet-5",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Explain quantum computing in two sentences."
+      }
+    ],
+    "providerOptions": {
+      "gateway": {
+        "order": [
+          "bedrock",
+          "anthropic"
+        ]
+      }
+    },
+    "stream": true
+  }'
+  ```
+  #### Messages API
+  #### TypeScript
+  ```typescript filename="provider-ordering-messages.ts" {20}
+  import Anthropic from '@anthropic-ai/sdk';
+
+  const client = new Anthropic({
+    apiKey: process.env.AI_GATEWAY_API_KEY,
+    baseURL: 'https://ai-gateway.vercel.sh',
+  });
+
+  const response = await client.messages.create({
+    model: 'anthropic/claude-sonnet-5',
+    messages: [
+      {
+        role: 'user',
+        content: 'Explain quantum computing in two sentences.',
+      },
+    ],
+    max_tokens: 1024,
+    ...{
+      providerOptions: {
+        gateway: {
+          order: ['bedrock', 'anthropic'],
+        },
+      },
+    },
+    stream: true,
+  });
+
+  for await (const event of response) {
+    if (
+      event.type === 'content_block_delta' &&
+      event.delta.type === 'text_delta'
+    ) {
+      process.stdout.write(event.delta.text);
+    }
+  }
+  ```
+  #### Python
+  ```python filename="provider-ordering_messages.py" {13}
+  import os
+  from anthropic import Anthropic
+
+  client = Anthropic(
+      api_key=os.environ["AI_GATEWAY_API_KEY"],
+      base_url="https://ai-gateway.vercel.sh",
+  )
+
+  response = client.messages.create(
+      model="anthropic/claude-sonnet-5",
+      messages=[{"role": "user", "content": "Explain quantum computing in two sentences."}],
+      max_tokens=1024,
+      extra_body={"providerOptions": {"gateway": {"order": ["bedrock", "anthropic"]}}},
+      stream=True,
+  )
+
+  for event in response:
+      if event.type == "content_block_delta" and event.delta.type == "text_delta":
+          print(event.delta.text, end="", flush=True)
+  ```
+  #### cURL
+  ```bash filename="provider-ordering-messages.sh" {16-19}
+  curl --fail-with-body --no-buffer https://ai-gateway.vercel.sh/v1/messages \
+    -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+    -H "Content-Type: application/json" \
+    -H "anthropic-version: 2023-06-01" \
+    -d '{
+    "model": "anthropic/claude-sonnet-5",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Explain quantum computing in two sentences."
+      }
+    ],
+    "max_tokens": 1024,
+    "providerOptions": {
+      "gateway": {
+        "order": [
+          "bedrock",
+          "anthropic"
+        ]
+      }
+    },
+    "stream": true
+  }'
+  ```
+  #### Responses / OpenResponses
+  #### TypeScript
+  ```typescript filename="provider-ordering-responses.ts" {14}
+  import OpenAI from 'openai';
+
+  const client = new OpenAI({
+    apiKey: process.env.AI_GATEWAY_API_KEY,
+    baseURL: 'https://ai-gateway.vercel.sh/v1',
+  });
+
+  const response = await client.responses.create({
+    model: 'anthropic/claude-sonnet-5',
+    input: 'Explain quantum computing in two sentences.',
+    ...{
+      providerOptions: {
+        gateway: {
+          order: ['bedrock', 'anthropic'],
+        },
+      },
+    },
+    stream: true,
+  });
+
+  for await (const event of response) {
+    if (event.type === 'response.output_text.delta') {
+      process.stdout.write(event.delta);
+    }
+  }
+  ```
+  #### Python
+  ```python filename="provider-ordering_responses.py" {12}
+  import os
+  from openai import OpenAI
+
+  client = OpenAI(
+      api_key=os.environ["AI_GATEWAY_API_KEY"],
+      base_url="https://ai-gateway.vercel.sh/v1",
+  )
+
+  response = client.responses.create(
+      model="anthropic/claude-sonnet-5",
+      input="Explain quantum computing in two sentences.",
+      extra_body={"providerOptions": {"gateway": {"order": ["bedrock", "anthropic"]}}},
+      stream=True,
+  )
+
+  for event in response:
+      if event.type == "response.output_text.delta":
+          print(event.delta, end="", flush=True)
+  ```
+  #### cURL
+  ```bash filename="provider-ordering-responses.sh" {9-12}
+  curl --fail-with-body --no-buffer https://ai-gateway.vercel.sh/v1/responses \
+    -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+    -H "Content-Type: application/json" \
+    -d '{
+    "model": "anthropic/claude-sonnet-5",
+    "input": "Explain quantum computing in two sentences.",
+    "providerOptions": {
+      "gateway": {
+        "order": [
+          "bedrock",
+          "anthropic"
+        ]
+      }
+    },
+    "stream": true
+  }'
+  ```
+  In this example:
+  - AI Gateway will first attempt to use Amazon Bedrock to serve the Claude Sonnet 5 model
+  - If Amazon Bedrock is unavailable or fails, it will fall back to Anthropic
+  - Other providers (like Vertex AI) are still available but will only be used after the specified providers
+
+- ### Test the routing behavior
+  Read `providerMetadata.gateway.routing.finalProvider` to print the provider that served the response:
+  ```typescript filename="provider-ordering-result.ts" {8,13-18}
+  import { generateText } from 'ai';
+
+  const result = await generateText({
+    model: 'anthropic/claude-sonnet-5',
+    prompt: 'Explain quantum computing in two sentences.',
+    providerOptions: {
+      gateway: {
+        order: ['bedrock', 'anthropic'],
+      },
+    },
+  });
+
+  const gatewayMetadata = result.providerMetadata?.gateway as
+    | { routing?: { finalProvider?: string } }
+    | undefined;
+
+  console.log(result.text);
+  console.log('Provider:', gatewayMetadata?.routing?.finalProvider ?? 'unknown');
   ```
 
 ### Provider metadata output
 
-```json
+```json {9}
 {
   "anthropic": {},
   "gateway": {
@@ -201,25 +456,276 @@ In cases where your request encounters issues with one or more providers or if y
 
 Use the `only` array to restrict routing to a specific subset of providers. Providers are specified by their slug and are matched against the model's available providers.
 
-```typescript filename="app/api/chat/route.ts" {9-12}
-import { streamText } from 'ai';
+These examples use AI SDK 7 and the AI SDK for Python beta. Set `AI_GATEWAY_API_KEY` before running them. See [API format differences](/docs/ai-gateway/sdks-and-apis#api-format-differences) for setup, request fields, and response handling.
 
-export async function POST(request: Request) {
-  const { prompt } = await request.json();
+#### AI SDK
 
-  const result = streamText({
-    model: 'anthropic/claude-sonnet-5',
-    prompt,
+#### TypeScript
+
+```typescript filename="provider-filtering.ts" {8}
+import { generateText } from 'ai';
+
+const { text } = await generateText({
+  model: 'anthropic/claude-sonnet-5',
+  prompt: 'Explain quantum computing in two sentences.',
+  providerOptions: {
+    gateway: {
+      only: ['bedrock', 'anthropic'],
+    },
+  },
+});
+
+console.log(text);
+```
+
+#### Python (beta)
+
+```python filename="provider-filtering_ai.py" {8}
+import asyncio
+import ai
+
+async def main():
+    model = ai.get_model("anthropic/claude-sonnet-5")
+    messages = [ai.user_message("Explain quantum computing in two sentences.")]
+    params = ai.InferenceRequestParams(
+        extra_body={"providerOptions": {"gateway": {"only": ["bedrock", "anthropic"]}}}
+    )
+    async with ai.stream(model, messages, params=params) as stream:
+        async for event in stream:
+            if isinstance(event, ai.events.TextDelta):
+                print(event.chunk, end="", flush=True)
+    print()
+
+asyncio.run(main())
+```
+
+#### Chat Completions
+
+#### TypeScript
+
+```typescript filename="provider-filtering-chat.ts" {19}
+import OpenAI from 'openai';
+
+const client = new OpenAI({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh/v1',
+});
+
+const response = await client.chat.completions.create({
+  model: 'anthropic/claude-sonnet-5',
+  messages: [
+    {
+      role: 'user',
+      content: 'Explain quantum computing in two sentences.',
+    },
+  ],
+  ...{
     providerOptions: {
       gateway: {
-        only: ['bedrock', 'anthropic'], // Only consider these providers.
-        // This model is also available via 'vertex', but it won't be considered.
+        only: ['bedrock', 'anthropic'],
       },
     },
-  });
+  },
+});
 
-  return result.toUIMessageStreamResponse();
+console.log(response.choices[0]?.message.content);
+```
+
+#### Python
+
+```python filename="provider-filtering_chat.py" {12}
+import os
+from openai import OpenAI
+
+client = OpenAI(
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
+    base_url="https://ai-gateway.vercel.sh/v1",
+)
+
+response = client.chat.completions.create(
+    model="anthropic/claude-sonnet-5",
+    messages=[{"role": "user", "content": "Explain quantum computing in two sentences."}],
+    extra_body={"providerOptions": {"gateway": {"only": ["bedrock", "anthropic"]}}},
+)
+
+print(response.choices[0].message.content)
+```
+
+#### cURL
+
+```bash filename="provider-filtering-chat.sh" {14-17}
+curl --fail-with-body https://ai-gateway.vercel.sh/v1/chat/completions \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "model": "anthropic/claude-sonnet-5",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Explain quantum computing in two sentences."
+    }
+  ],
+  "providerOptions": {
+    "gateway": {
+      "only": [
+        "bedrock",
+        "anthropic"
+      ]
+    }
+  }
+}'
+```
+
+#### Messages API
+
+#### TypeScript
+
+```typescript filename="provider-filtering-messages.ts" {20}
+import Anthropic from '@anthropic-ai/sdk';
+
+const client = new Anthropic({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh',
+});
+
+const response = await client.messages.create({
+  model: 'anthropic/claude-sonnet-5',
+  messages: [
+    {
+      role: 'user',
+      content: 'Explain quantum computing in two sentences.',
+    },
+  ],
+  max_tokens: 1024,
+  ...{
+    providerOptions: {
+      gateway: {
+        only: ['bedrock', 'anthropic'],
+      },
+    },
+  },
+});
+
+for (const block of response.content) {
+  if (block.type === 'text') console.log(block.text);
 }
+```
+
+#### Python
+
+```python filename="provider-filtering_messages.py" {13}
+import os
+from anthropic import Anthropic
+
+client = Anthropic(
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
+    base_url="https://ai-gateway.vercel.sh",
+)
+
+response = client.messages.create(
+    model="anthropic/claude-sonnet-5",
+    messages=[{"role": "user", "content": "Explain quantum computing in two sentences."}],
+    max_tokens=1024,
+    extra_body={"providerOptions": {"gateway": {"only": ["bedrock", "anthropic"]}}},
+)
+
+for block in response.content:
+    if block.type == "text":
+        print(block.text)
+```
+
+#### cURL
+
+```bash filename="provider-filtering-messages.sh" {16-19}
+curl --fail-with-body https://ai-gateway.vercel.sh/v1/messages \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -H "anthropic-version: 2023-06-01" \
+  -d '{
+  "model": "anthropic/claude-sonnet-5",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Explain quantum computing in two sentences."
+    }
+  ],
+  "max_tokens": 1024,
+  "providerOptions": {
+    "gateway": {
+      "only": [
+        "bedrock",
+        "anthropic"
+      ]
+    }
+  }
+}'
+```
+
+#### Responses / OpenResponses
+
+#### TypeScript
+
+```typescript filename="provider-filtering-responses.ts" {14}
+import OpenAI from 'openai';
+
+const client = new OpenAI({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh/v1',
+});
+
+const response = await client.responses.create({
+  model: 'anthropic/claude-sonnet-5',
+  input: 'Explain quantum computing in two sentences.',
+  ...{
+    providerOptions: {
+      gateway: {
+        only: ['bedrock', 'anthropic'],
+      },
+    },
+  },
+});
+
+console.log(response.output_text);
+```
+
+#### Python
+
+```python filename="provider-filtering_responses.py" {12}
+import os
+from openai import OpenAI
+
+client = OpenAI(
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
+    base_url="https://ai-gateway.vercel.sh/v1",
+)
+
+response = client.responses.create(
+    model="anthropic/claude-sonnet-5",
+    input="Explain quantum computing in two sentences.",
+    extra_body={"providerOptions": {"gateway": {"only": ["bedrock", "anthropic"]}}},
+)
+
+print(response.output_text)
+```
+
+#### cURL
+
+```bash filename="provider-filtering-responses.sh" {9-12}
+curl --fail-with-body https://ai-gateway.vercel.sh/v1/responses \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "model": "anthropic/claude-sonnet-5",
+  "input": "Explain quantum computing in two sentences.",
+  "providerOptions": {
+    "gateway": {
+      "only": [
+        "bedrock",
+        "anthropic"
+      ]
+    }
+  }
+}'
 ```
 
 In this example:
@@ -231,7 +737,7 @@ In this example:
 
 When both `only` and `order` are provided, the `only` filter is applied first to define the allowed set, and then `order` defines the priority within that filtered set. Practically, the end result is the same as taking your `order` list and intersecting it with the `only` list.
 
-```typescript filename="app/api/chat/route.ts" {9-12}
+```typescript filename="app/api/chat/route.ts" {11-12}
 import { streamText } from 'ai';
 
 export async function POST(request: Request) {
@@ -266,29 +772,272 @@ Use the `sort` option to rank providers by a performance or cost metric. The gat
 
 ### Sort by cost
 
-```typescript filename="app/api/chat/route.ts" {9-11}
-import { streamText } from 'ai';
+These examples use AI SDK 7 and the AI SDK for Python beta. Set `AI_GATEWAY_API_KEY` before running them. See [API format differences](/docs/ai-gateway/sdks-and-apis#api-format-differences) for setup, request fields, and response handling.
 
-export async function POST(request: Request) {
-  const { prompt } = await request.json();
+#### AI SDK
 
-  const result = streamText({
-    model: 'anthropic/claude-sonnet-5',
-    prompt,
+#### TypeScript
+
+```typescript filename="provider-sorting.ts" {8}
+import { generateText } from 'ai';
+
+const { text } = await generateText({
+  model: 'anthropic/claude-sonnet-5',
+  prompt: 'Explain quantum computing in two sentences.',
+  providerOptions: {
+    gateway: {
+      sort: 'cost',
+    },
+  },
+});
+
+console.log(text);
+```
+
+#### Python (beta)
+
+```python filename="provider-sorting_ai.py" {8}
+import asyncio
+import ai
+
+async def main():
+    model = ai.get_model("anthropic/claude-sonnet-5")
+    messages = [ai.user_message("Explain quantum computing in two sentences.")]
+    params = ai.InferenceRequestParams(
+        extra_body={"providerOptions": {"gateway": {"sort": "cost"}}}
+    )
+    async with ai.stream(model, messages, params=params) as stream:
+        async for event in stream:
+            if isinstance(event, ai.events.TextDelta):
+                print(event.chunk, end="", flush=True)
+    print()
+
+asyncio.run(main())
+```
+
+#### Chat Completions
+
+#### TypeScript
+
+```typescript filename="provider-sorting-chat.ts" {19}
+import OpenAI from 'openai';
+
+const client = new OpenAI({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh/v1',
+});
+
+const response = await client.chat.completions.create({
+  model: 'anthropic/claude-sonnet-5',
+  messages: [
+    {
+      role: 'user',
+      content: 'Explain quantum computing in two sentences.',
+    },
+  ],
+  ...{
     providerOptions: {
       gateway: {
-        sort: 'cost', // Use the lowest cost provider first
+        sort: 'cost',
       },
     },
-  });
+  },
+});
 
-  return result.toUIMessageStreamResponse();
+console.log(response.choices[0]?.message.content);
+```
+
+#### Python
+
+```python filename="provider-sorting_chat.py" {12}
+import os
+from openai import OpenAI
+
+client = OpenAI(
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
+    base_url="https://ai-gateway.vercel.sh/v1",
+)
+
+response = client.chat.completions.create(
+    model="anthropic/claude-sonnet-5",
+    messages=[{"role": "user", "content": "Explain quantum computing in two sentences."}],
+    extra_body={"providerOptions": {"gateway": {"sort": "cost"}}},
+)
+
+print(response.choices[0].message.content)
+```
+
+#### cURL
+
+```bash filename="provider-sorting-chat.sh" {14}
+curl --fail-with-body https://ai-gateway.vercel.sh/v1/chat/completions \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "model": "anthropic/claude-sonnet-5",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Explain quantum computing in two sentences."
+    }
+  ],
+  "providerOptions": {
+    "gateway": {
+      "sort": "cost"
+    }
+  }
+}'
+```
+
+#### Messages API
+
+#### TypeScript
+
+```typescript filename="provider-sorting-messages.ts" {20}
+import Anthropic from '@anthropic-ai/sdk';
+
+const client = new Anthropic({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh',
+});
+
+const response = await client.messages.create({
+  model: 'anthropic/claude-sonnet-5',
+  messages: [
+    {
+      role: 'user',
+      content: 'Explain quantum computing in two sentences.',
+    },
+  ],
+  max_tokens: 1024,
+  ...{
+    providerOptions: {
+      gateway: {
+        sort: 'cost',
+      },
+    },
+  },
+});
+
+for (const block of response.content) {
+  if (block.type === 'text') console.log(block.text);
 }
+```
+
+#### Python
+
+```python filename="provider-sorting_messages.py" {13}
+import os
+from anthropic import Anthropic
+
+client = Anthropic(
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
+    base_url="https://ai-gateway.vercel.sh",
+)
+
+response = client.messages.create(
+    model="anthropic/claude-sonnet-5",
+    messages=[{"role": "user", "content": "Explain quantum computing in two sentences."}],
+    max_tokens=1024,
+    extra_body={"providerOptions": {"gateway": {"sort": "cost"}}},
+)
+
+for block in response.content:
+    if block.type == "text":
+        print(block.text)
+```
+
+#### cURL
+
+```bash filename="provider-sorting-messages.sh" {16}
+curl --fail-with-body https://ai-gateway.vercel.sh/v1/messages \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -H "anthropic-version: 2023-06-01" \
+  -d '{
+  "model": "anthropic/claude-sonnet-5",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Explain quantum computing in two sentences."
+    }
+  ],
+  "max_tokens": 1024,
+  "providerOptions": {
+    "gateway": {
+      "sort": "cost"
+    }
+  }
+}'
+```
+
+#### Responses / OpenResponses
+
+#### TypeScript
+
+```typescript filename="provider-sorting-responses.ts" {14}
+import OpenAI from 'openai';
+
+const client = new OpenAI({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh/v1',
+});
+
+const response = await client.responses.create({
+  model: 'anthropic/claude-sonnet-5',
+  input: 'Explain quantum computing in two sentences.',
+  ...{
+    providerOptions: {
+      gateway: {
+        sort: 'cost',
+      },
+    },
+  },
+});
+
+console.log(response.output_text);
+```
+
+#### Python
+
+```python filename="provider-sorting_responses.py" {12}
+import os
+from openai import OpenAI
+
+client = OpenAI(
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
+    base_url="https://ai-gateway.vercel.sh/v1",
+)
+
+response = client.responses.create(
+    model="anthropic/claude-sonnet-5",
+    input="Explain quantum computing in two sentences.",
+    extra_body={"providerOptions": {"gateway": {"sort": "cost"}}},
+)
+
+print(response.output_text)
+```
+
+#### cURL
+
+```bash filename="provider-sorting-responses.sh" {9}
+curl --fail-with-body https://ai-gateway.vercel.sh/v1/responses \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "model": "anthropic/claude-sonnet-5",
+  "input": "Explain quantum computing in two sentences.",
+  "providerOptions": {
+    "gateway": {
+      "sort": "cost"
+    }
+  }
+}'
 ```
 
 ### Sort by latency
 
-```typescript filename="app/api/chat/route.ts" {9-11}
+```typescript filename="app/api/chat/route.ts" {11}
 import { streamText } from 'ai';
 
 export async function POST(request: Request) {
@@ -312,7 +1061,7 @@ export async function POST(request: Request) {
 
 You can combine `sort` with `order` and `only`. When combined with `order`, the providers you specify in `order` are promoted to the front of the list, while the remaining providers follow the sorted order. When combined with `only`, sorting is applied within the restricted set of providers.
 
-```typescript filename="app/api/chat/route.ts" {9-12}
+```typescript filename="app/api/chat/route.ts" {11-12}
 import { streamText } from 'ai';
 
 export async function POST(request: Request) {
@@ -337,7 +1086,7 @@ export async function POST(request: Request) {
 
 When `sort` is active, the response's provider metadata includes a `sort` object inside `gateway.routing`:
 
-```json
+```json {4-13}
 {
   "gateway": {
     "routing": {

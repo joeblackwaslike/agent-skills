@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/generating-text.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "2e10c07fcfe2622fa78f53c66bdfaba88d4155ce6f4c1d3eac1894f79e300bf6"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "ceceb36e1f6f2fffec61b9f682c19816a95d3dfe7eed436fa3bac8cf17db9eb6"
 ---
 
 # Generating and Streaming Text
@@ -829,6 +829,7 @@ You can see `generateText` and `streamText` in action using various frameworks i
 - [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
 - [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
+- [Batch](/docs/ai-sdk-core/batch)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)

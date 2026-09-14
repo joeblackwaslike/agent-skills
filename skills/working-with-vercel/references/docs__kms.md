@@ -16,8 +16,8 @@ related:
 summary: Sign JWTs and messages with Vercel-managed signing keys. Learn about issuers, keys, and policies, and how to sign from Vercel Functions with...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "da68a5e1d83245aa3446e7125704adea774a5fdc432e2c7229dc2c2a0278f06a"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "e000a6dee312183e9409e39166c7031eac5881341edc59f257b4a799c84dac47"
 ---
 
 # Key Management Service (KMS)
@@ -54,7 +54,7 @@ Every signing request runs through two managed pieces:
 ## KMS primitives
 
 - **Issuer**: A team-owned signing identity with a stable ID, a public issuer URL, and one or more signing keys. You reference an issuer by its ID when you sign.
-- **Signing keys**: The key material an issuer signs with. KMS supports `RS256`, `RS384`, `RS512`, the `PS*` and `ES*` families, and `EdDSA`, and defaults to `RS512`. KMS does not support symmetric (`HS*`) keys.
+- **Signing keys**: The key material an issuer signs with. KMS supports `RS256`, `RS384`, `RS512`, the `PS*` and `ES*` families, and defaults to `RS512`. KMS does not support symmetric (`HS*`) keys.
 - **Key origin**: KMS can generate the key for you (a `vercel`-origin issuer), or you can import an existing PEM private key (an `external`-origin issuer). Import a key when the other side generates the key pair and keeps your public key, such as a GitHub App.
 - **Policies**: Rules that authorize signing. The deployment-OIDC policy (`project-grant`) lets a deployment sign when its OIDC token matches the granted project and environments. See [Authentication](/docs/kms/concepts/authentication).
 - **Certificates**: An issuer can expose a self-signed X.509 certificate for its active signing key, for workloads that require a PEM certificate rather than a JWKS lookup.

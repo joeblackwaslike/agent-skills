@@ -17,8 +17,8 @@ related:
 summary: Learn how to add a new AI model to your Vercel projects
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "9a8807ee43823832d9ec6cd214665ea9a24a9abd215b3775b792e841e4a48c55"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "c6f99db6e7f81b1fb6dbb5f4af41b0eebc6158772d6feb78690adea6d38adea3"
 ---
 
 # Adding a Model
@@ -37,7 +37,6 @@ If you have integrations installed, scroll to the bottom to access the models ex
 - [Adding a Provider](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-provider?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fadding-a-model&source_site=vercel-docs&relationship=related) — Learn how to add a new AI provider to your Vercel projects.
 - [Build with AI agents on Vercel](https://vercel.com/docs/agent-resources/integrations-for-agents?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fadding-a-model&source_site=vercel-docs&relationship=related) — Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
 - [Vercel Integrations](https://vercel.com/docs/integrations?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fadding-a-model&source_site=vercel-docs&relationship=related) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fadding-a-model&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/adding-a-model.graph.md](/docs/agent-resources/integrations-for-models/adding-a-model.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fadding-a-model&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

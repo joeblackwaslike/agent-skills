@@ -16,8 +16,8 @@ related:
 summary: "Learn how to manage your project's custom firewall rules, IP blocks, system bypass rules, attack challenge mode, and system mitigations using the..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/firewall.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "bce4c09f3fcf474d3963757598ebdeb1838318c21e6d7dcf49775c25938ad5bb"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "4715d794957f1153c64b4352838e53a53dd9e44c947f6b7a2df6bf112d8aa8ce"
 ---
 
 # vercel firewall
@@ -32,12 +32,12 @@ The `vercel firewall` command is used to configure the [Vercel Firewall](/docs/v
 
 - [Manage Vercel Firewall in the CLI](https://vercel.com/changelog/manage-vercel-firewall-in-the-cli?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related)
 - [Protect Sensitive Routes with Vercel WAF: Challenge and Deny Rule Recipes](https://vercel.com/kb/guide/suspicious-traffic-in-specific-countries?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — Use Vercel WAF custom rules to block or challenge unwanted traffic by country, ASN, IP address, user agent, path, or coo
-- [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
+- [Deny traffic from a set of IP addresses](https://vercel.com/kb/guide/deny-traffic-from-a-set-of-ip-addresses?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — Learn how to block specific IP addresses with the Vercel WAF API.
 - [Vercel WAF](https://vercel.com/docs/vercel-firewall/vercel-waf?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — Learn how to secure your website with the Vercel Web Application Firewall \\(WAF\\)
-- [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
+- [vercel alerts](https://vercel.com/docs/cli/alerts?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
+- [vercel routes](https://vercel.com/docs/cli/routes?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — Learn how to manage project-level routing rules using the vercel routes CLI command.
 - [vercel project](https://vercel.com/docs/cli/project?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — Perform the following commands from the terminal for your Vercel Projects: list, add, inspect, update settings, rename,
-- [Create System Bypass Rule](https://vercel.com/docs/rest-api/security/create-system-bypass-rule?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — POST /v1/security/firewall/bypass — Create new system bypass rules
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
+- [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 
 Full cross-link map for this page: [/docs/cli/firewall.graph.md](/docs/cli/firewall.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -48,7 +48,10 @@ For more information about Vercel Firewall, see the [Vercel Firewall documentati
 
 The `vercel firewall` command supports the following operations:
 
-- [`overview`](#overview) - Show a summary of your project's firewall configuration
+- [`overview`](#overview) - Show firewall configuration with the last day of activity
+- [`status`](#status) - Show firewall configuration in execution order
+- [`alerts`](#alerts) - List and inspect firewall alerts
+- [`persistent-actions`](#persistent-actions) - List and inspect actions applied to specific clients
 - [`rules`](#custom-rules) - Manage custom firewall rules
 - [`ip-blocks`](#ip-blocks) - Manage IP blocks
 - [`system-bypass`](#system-bypass) - Manage system bypass rules
@@ -62,17 +65,173 @@ Custom rule and IP block changes are staged until you run [`publish`](#publish).
 
 ### `overview`
 
-Show a summary of your project's firewall configuration, including active rules, IP blocks, bypasses, attack challenge mode status, and unpublished draft changes.
+Show your project's firewall configuration together with the last day of activity. The configuration block covers active rules, IP blocks, bypasses, managed rulesets, attack challenge mode status, and unpublished draft changes. Beneath it, the activity window reports traffic by action with a trend for each, the busiest rules resolved to their names, and any alerts raised in the same period.
 
 ```bash filename="terminal"
 vercel firewall overview
 ```
 
-*Using the \`vercel firewall overview\` command to show a summary of your project's firewall configuration.*
+*Using the \`vercel firewall overview\` command to show firewall configuration and recent activity.*
+
+Traffic, rule attribution, and alerts are team-scoped and require Observability Plus. Without it, the command still reports the configuration block on its own.
+
+**Options:**
+
+- `--json`: Output as JSON, including the activity period, totals, and the series behind each trend
+- `--project <name-or-id>`: Project name or ID, defaulting to the linked project
+
+**Examples:**
+
+```bash filename="terminal"
+# Show configuration and recent activity
+vercel firewall overview
+
+# Report the same data as JSON
+vercel firewall overview --json
+```
+
+### `status`
+
+Show firewall configuration in the order it is evaluated: bypass, then system mitigations, attack challenge mode, IP blocks, custom rules, and the managed rulesets for Bot Protection, AI Bots, and OWASP.
+
+```bash filename="terminal"
+vercel firewall status
+```
+
+*Using the \`vercel firewall status\` command to show firewall configuration in execution order.*
+
+Reach for `status` when you need to reason about which check runs first, and [`overview`](#overview) when you also want recent traffic and alerts.
 
 **Options:**
 
 - `--json`: Output as JSON
+- `--project <name-or-id>`: Project name or ID, defaulting to the linked project
+
+## Alerts
+
+Firewall alerts record periods when the platform detected and mitigated anomalous traffic, including DDoS mitigation episodes. Alerts are read-only and require a team scope.
+
+### `alerts list`
+
+Aliases: `ls`.
+
+List firewall alerts raised in a window, active ones first. Each row carries the alert's id for use with [`alerts inspect`](#alerts-inspect).
+
+```bash filename="terminal"
+vercel firewall alerts list
+```
+
+*Using the \`vercel firewall alerts list\` command to list recent firewall alerts.*
+
+**Options:**
+
+- `--json`: Output as JSON
+- `--project <name-or-id>`: Project name or ID, defaulting to the linked project
+- `--since <time>`: Start of the window, relative (`24h`, `7d`) or an ISO date. Defaults to 24 hours ago
+- `--until <time>`: End of the window. Defaults to now
+
+**Examples:**
+
+```bash filename="terminal"
+# List alerts from the last day
+vercel firewall alerts list
+
+# List alerts from the last week
+vercel firewall alerts list --since 7d
+```
+
+### `alerts inspect`
+
+Show one alert in detail: the window it covers, the request rate during it compared with the preceding day, the hosts it affected, and the IPs denied while it was active.
+
+```bash filename="terminal"
+vercel firewall alerts inspect <alert-id>
+```
+
+*Using the \`vercel firewall alerts inspect\` command to show one alert in detail.*
+
+**Options:**
+
+- `--json`: Output as JSON
+- `--project <name-or-id>`: Project name or ID, defaulting to the linked project
+
+**Examples:**
+
+```bash filename="terminal"
+# Inspect an alert by id
+vercel firewall alerts inspect al_abc123
+```
+
+Traffic and rate figures require Observability Plus. Without it, the command reports the alert's own details and notes that the activity window is unavailable.
+
+## Persistent actions
+
+When the firewall keeps applying a decision to a particular client rather than a single request, that decision is a persistent action: a challenge or denial that stays in force against an IP and hostname pair for a period. These are read-only and require a team scope.
+
+### `persistent-actions list`
+
+Aliases: `ls`.
+
+List persistent actions in a window, newest first, with a summary of what is currently in force. Actions still being applied show `Ongoing` in place of an end time, because their recorded end is a projected expiry rather than a time they stopped.
+
+```bash filename="terminal"
+vercel firewall persistent-actions list
+```
+
+*Using the \`vercel firewall persistent-actions list\` command to list actions applied to specific clients.*
+
+**Options:**
+
+- `--json`: Output as JSON
+- `--project <name-or-id>`: Project name or ID, defaulting to the linked project
+- `--since <time>`: Start of the window, relative (`1h`, `6h`) or an ISO date. Defaults to one hour ago
+- `--until <time>`: End of the window. Defaults to now
+- `--limit <number>`: Number of actions to show. Defaults to 10
+
+**Examples:**
+
+```bash filename="terminal"
+# List actions from the last hour
+vercel firewall persistent-actions list
+
+# Widen the window and show more rows
+vercel firewall persistent-actions list --since 6h --limit 50
+```
+
+### `persistent-actions inspect`
+
+Show one persistent action for an IP: its window, the rule kind and mitigation applied, and the traffic from that client broken down by action.
+
+```bash filename="terminal"
+vercel firewall persistent-actions inspect <ip>
+```
+
+*Using the \`vercel firewall persistent-actions inspect\` command to show one action in detail.*
+
+**Options:**
+
+- `--json`: Output as JSON
+- `--project <name-or-id>`: Project name or ID, defaulting to the linked project
+- `--host <hostname>`: Narrow to a hostname
+- `--action <action>`: Narrow to a mitigation, such as `challenge` or `deny`
+- `--since <time>`: Start of the window to search for the action. Defaults to one hour ago
+- `--until <time>`: End of the window. Defaults to now
+- `--paths`: Include the top request paths
+
+**Examples:**
+
+```bash filename="terminal"
+# Inspect the most recent action for an IP
+vercel firewall persistent-actions inspect 51.158.168.18
+
+# Pick one of several actions for the same IP
+vercel firewall persistent-actions inspect 51.158.168.18 --host vercel.com --action challenge
+
+# Include the paths the client requested
+vercel firewall persistent-actions inspect 51.158.168.18 --paths
+```
+
+When an IP has more than one matching action, the most recent is shown and the others are noted. Use `--host`, `--action`, `--since`, and `--until` to select a specific one. Traffic figures require Observability Plus.
 
 ## Custom rules
 
@@ -690,6 +849,9 @@ Each condition specifies a `type`, an `op` (operator), and usually a `value`.
 | `ja4_digest` | JA4 TLS fingerprint | No |
 | `ja3_digest` | JA3 TLS fingerprint (Enterprise only) | No |
 | `rate_limit_api_id` | Rate limit API grouping ID | No |
+
+| Type | Description | Needs `key` |
+| --- | --- | --- |
 | `bot_name` | Verified bot name (Security Plus only) | No |
 | `bot_category` | Verified bot category (Security Plus only) | No |
 

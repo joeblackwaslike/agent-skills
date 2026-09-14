@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/custom-providers.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "7a8e11107b008eba7a66619332a2134759ae0bb01739a3aedab2821edc56a842"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "6d4cdae2818c86c9ea8a370293ed45c08fe9c0dcc596706286a58b4c65710b69"
 ---
 
 # Writing a Custom Provider
@@ -904,6 +904,7 @@ headers: combineHeaders(this.config.headers?.(), options.headers),
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
 - [Interfaze](/providers/community-providers/interfaze)
+- [Telnyx](/providers/community-providers/telnyx)
 - [Flowise](/providers/community-providers/flowise)
 
 

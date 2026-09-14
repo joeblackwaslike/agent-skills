@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/dify.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "f92e58380220ca6c5d1e264b438edadea34166de25699905419191fddc310704"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "cdd0565c04bf9a6d8261e2dcdf396230b3fa6af4769768555f8267066322429d"
 ---
 
 # Dify Provider
@@ -134,6 +134,7 @@ Please refer to the **[Dify provider documentation](https://github.com/warmwind/
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
 - [Interfaze](/providers/community-providers/interfaze)
+- [Telnyx](/providers/community-providers/telnyx)
 - [Flowise](/providers/community-providers/flowise)
 
 

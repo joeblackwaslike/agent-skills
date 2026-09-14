@@ -16,8 +16,8 @@ related:
 summary: Understand how eve usage maps to Vercel resources and inherited platform limits.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/eve/pricing.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "d17630b5d2f47721200e5e8bb0862c09a09d18b7677e11e14ce59a1f24206a1d"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "544620253bd20c48a682426fa86f988aa7a389f929641525d402f04640aad66d"
 ---
 
 # Pricing and Limits
@@ -33,12 +33,13 @@ Sandbox for isolated command execution, and AI Gateway or model providers for mo
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=related) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
+- [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
 - [Pricing](https://v0.app/docs/pricing?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=related) — Understand the v0 plans, pricing, and usage limits.
 - [Vercel Agent Pricing](https://vercel.com/docs/agent/pricing?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=related) — Understand Vercel Agent pricing and how to track costs
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Pricing and Limits](https://vercel.com/docs/queues/pricing?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=related) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
 - [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about legacy usage and pricing for Vercel Functions.
-- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including pricing and markup, SDK and API compatibility, model availabilit
+- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 
 Full cross-link map for this page: [/docs/eve/pricing.graph.md](/docs/eve/pricing.graph.md?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

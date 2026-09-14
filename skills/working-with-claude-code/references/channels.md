@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/channels.md"
-fetched_at: "2026-08-24T04:44:18.863Z"
-sha256: "294a7e533dfaae5eb2b82f4e5db0faafb6c79e779129fa3315cdf647578a3ce9"
+fetched_at: "2026-09-14T09:37:17.168Z"
+sha256: "809496c86782e9beacb6bfa8085af1b6fa806592b51706c3b8c0718235ceba2b"
 ---
 
 > ## Documentation Index
@@ -51,7 +51,7 @@ Each supported channel is a plugin that requires [Bun](https://bun.sh). For a ha
         * `Marketplace "claude-plugins-official" not found`: add the marketplace with `/plugin marketplace add anthropics/claude-plugins-official`, then retry the install.
         * The plugin is [not found in the marketplace](/docs/en/discover-plugins#install-plugins): check the plugin name.
 
-        When the install asks for an installation scope, choose the user scope option so the plugin is available across all your projects. Check the install summary: if it reports `Run /reload-plugins to activate.`, run that command to activate the plugin's configure command.
+        When the install asks for an installation scope, choose the user scope option so the plugin is available across all your projects. Check the install summary: if it reports `Run /reload-plugins to activate.`, see [Apply plugin changes without restarting](/docs/en/discover-plugins#apply-plugin-changes-without-restarting) to make the plugin's configure command available.
       </Step>
 
       <Step title="Configure your token">
@@ -129,7 +129,7 @@ Each supported channel is a plugin that requires [Bun](https://bun.sh). For a ha
         * `Marketplace "claude-plugins-official" not found`: add the marketplace with `/plugin marketplace add anthropics/claude-plugins-official`, then retry the install.
         * The plugin is [not found in the marketplace](/docs/en/discover-plugins#install-plugins): check the plugin name.
 
-        When the install asks for an installation scope, choose the user scope option so the plugin is available across all your projects. Check the install summary: if it reports `Run /reload-plugins to activate.`, run that command to activate the plugin's configure command.
+        When the install asks for an installation scope, choose the user scope option so the plugin is available across all your projects. Check the install summary: if it reports `Run /reload-plugins to activate.`, see [Apply plugin changes without restarting](/docs/en/discover-plugins#apply-plugin-changes-without-restarting) to make the plugin's configure command available.
       </Step>
 
       <Step title="Configure your token">

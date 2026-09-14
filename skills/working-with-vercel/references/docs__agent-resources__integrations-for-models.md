@@ -16,8 +16,8 @@ related:
 summary: Integrate powerful AI services and models seamlessly into your Vercel projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "439a34f9b0679f24243628865973ceb81a372048b25958a024158fd1bb6c779c"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "f0ab1bb0897ac83e543165e33f9c34dad4b7d0d9b0c469eb721d0d776a623faf"
 ---
 
 # Build with AI on Vercel
@@ -36,10 +36,9 @@ AI services and models help enhance and automate the building and deployment of 
 - [xAI and Vercel partner to bring zero-friction AI to developers](https://vercel.com/blog/xai-and-vercel-partner-to-bring-zero-friction-ai-to-developers?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models&source_site=vercel-docs&relationship=related)
 - [AI Integrations and playground in the Vercel Dashboard](https://vercel.com/changelog/ai-integration-and-playground-in-the-vercel-dashboard?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models&source_site=vercel-docs&relationship=related)
 - [Groq, fal, and DeepInfra join the Vercel Marketplace ](https://vercel.com/changelog/groq-fal-and-deepinfra-join-the-vercel-marketplace?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models&source_site=vercel-docs&relationship=related)
-- [Introducing AI agents & services on the Vercel Marketplace](https://vercel.com/changelog/introducing-ai-agents-and-services-on-the-vercel-marketplace?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models&source_site=vercel-docs&relationship=related)
 - [Vercel Integrations](https://vercel.com/docs/integrations?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models&source_site=vercel-docs&relationship=related) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte
+- [AI Gateway Framework Integrations](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models&source_site=vercel-docs&relationship=related) — Connect LangChain, LiteLLM, LlamaIndex, Mastra, Pydantic AI, and other frameworks to Vercel AI Gateway with the AI SDK o
 - [Products](https://vercel.com/docs/products?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models&source_site=vercel-docs&relationship=related) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/agent-resources/integrations-for-models.graph.md](/docs/agent-resources/integrations-for-models.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

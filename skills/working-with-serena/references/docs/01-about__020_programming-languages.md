@@ -1,7 +1,7 @@
 ---
 source: "https://oraios.github.io/serena/_sources/01-about/020_programming-languages.md"
-fetched_at: "2026-09-07T09:04:28.360Z"
-sha256: "cd4e1f350bee79b698f4e6f25f030a24d60015964fe521ada609a6e1371031d6"
+fetched_at: "2026-09-14T09:43:13.785Z"
+sha256: "220f87148d50775492c35a8196ca29917383d357e940dfb29d3a00b1939922cc"
 ---
 
 # Language Support
@@ -196,8 +196,9 @@ Some languages require additional installations or setup steps, as noted.
 * **Zig**  
   (requires installation of ZLS - Zig Language Server)
 
-Support for further languages can easily be added by providing a shallow adapter for a new language server implementation,
-see Serena's [memory on that](https://github.com/oraios/serena/blob/main/.serena/memories/adding_new_language_support_guide.md).
+Additional language servers can easily be supported by providing an adapter implementation;
+see our [contribution guide](https://github.com/oraios/serena/blob/main/CONTRIBUTING.md).
+If you need to support a custom language server which is not yet publicly available, you have the option to [register an external language server](external-ls-registration).
 
 ## The Serena JetBrains Plugin
 

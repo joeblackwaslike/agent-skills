@@ -1,28 +1,28 @@
 ---
-title: Speech to Text and Text to Speech Quickstart
+title: "AI Gateway Speech Quickstart: Transcription and TTS"
 product: vercel
 url: /docs/ai-gateway/getting-started/speech
 canonical_url: "https://vercel.com/docs/ai-gateway/getting-started/speech"
-last_updated: 2026-09-02
+last_updated: 2026-09-08
 type: tutorial
 prerequisites:
   - /docs/ai-gateway/getting-started
   - /docs/ai-gateway
 related:
-  - /docs/ai-gateway/authentication-and-byok/oidc
+  - /docs/ai-gateway/pricing
   - /docs/ai-gateway/modalities/text-to-speech
   - /docs/ai-gateway/modalities/speech-to-text
   - /docs/ai-gateway/getting-started/realtime
-summary: Generate speech from text and transcribe audio back to text with AI Gateway.
+summary: Generate speech and transcribe it using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/speech.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "a695da572b84a1a7ae9e9f7ee1ff3fdf04a7844fe004d6d95b2a3da55a490468"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "cd39e2f5ef7ec9a2e366239ae8493fb31e3f389f56b744d9dee73d977e3bcc60"
 ---
 
-# Speech to Text and Text to Speech Quickstart
+# AI Gateway Speech Quickstart: Transcription and TTS
 
-Text to speech and speech to text are two halves of the same workflow: one turns text into spoken audio, the other turns audio back into text. They feed into each other, so this quickstart runs both as a round-trip. You generate speech from a sentence, then transcribe that audio and check the text comes back.
+Generate speech from text through AI Gateway, save the audio, and transcribe it back to text.
 
 
 <!-- docsgraph:related -->
@@ -35,133 +35,78 @@ Text to speech and speech to text are two halves of the same workflow: one turns
 - [xAI Grok audio models now available on Vercel AI Gateway](https://vercel.com/changelog/xai-grok-audio-models-now-available-on-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related)
 - [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related)
 - [Realtime voice, speech, and transcription now supported on AI Gateway](https://vercel.com/changelog/realtime-voice-speech-and-transcription-now-supported-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related)
-- [Text Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/text?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related) — Generate and stream text responses using AI Gateway.
-- [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
-- [Image Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/image?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related) — Generate images from text prompts using AI Gateway.
-- [Text Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/text-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related) — Generate text responses with the OpenAI Responses API through AI Gateway.
-- [AI SDK for Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
+- [AI Gateway Text Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/text?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related) — Generate and stream text responses using AI Gateway.
+- [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
+- [Video Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/video?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related) — Generate a video from a text prompt using AI Gateway.
+- [Realtime Voice with AI Gateway](https://vercel.com/docs/ai-gateway/modalities/realtime?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related) — Build low-latency, speech-to-speech voice agents with the AI SDK through Vercel AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/getting-started/speech.graph.md](/docs/ai-gateway/getting-started/speech.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-> **💡 Note:** Speech and transcription support ships in the stable AI SDK releases. Install
-> them with `pnpm add ai@latest @ai-sdk/gateway@latest`.
-
-## Prerequisites
-
-Before you begin, you need:
-
-- A Vercel account with a valid payment method to unlock free AI Gateway Credits
-- Node.js 22 or later
-- An AI Gateway API key or a Vercel OIDC token
-
-### Set up your API key
-
-Open the [Create API Key dialog](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fapi-keys%3FshowCreateKeyModal%3Dtrue\&title=AI+Gateway+API+Keys) in the Vercel dashboard, enter a name, and create the key.
-
-After you create your project in the next section, add a `.env.local` file to the project root and save your API key:
-
-```bash filename=".env.local"
-AI_GATEWAY_API_KEY=your_ai_gateway_api_key
-```
-
-> **💡 Note:** Instead of using an API key, you can use [OIDC
-> tokens](/docs/ai-gateway/authentication-and-byok/oidc) to authenticate your
-> requests.
-
 ## Generate and transcribe speech
 
-Install Vercel's focused AI Gateway skill before delegating this setup:
+### Use a coding agent
 
-```bash filename="Terminal"
-npx skills add vercel/vercel-plugin --skill ai-gateway
-```
+Paste this prompt into a coding agent with terminal access:
 
 **Agent prompt**
 
 ```text
-Use the AI Gateway skill to add a text-to-speech and speech-to-text round trip to this project. Read AI_GATEWAY_API_KEY from the environment or .env.local, and stop and tell me to create a key if it is not set anywhere. Choose current speech and transcription models such as openai/tts-1 and openai/whisper-1 from the live AI Gateway model list, save the audio and print the transcript, run the result, and run the project's type checker. Report the files changed and command output.
+Add a text-to-speech and speech-to-text round trip through AI Gateway in the current environment. Use the AI Gateway skill for this task. If it is unavailable, run npx skills add vercel/vercel-plugin --skill ai-gateway, then find and read its SKILL.md before continuing. Reuse the environment's language, framework, package manager, and AI client when possible, choose AI Gateway SDKs or APIs that support speech generation and transcription, and add only required dependencies. Read AI_GATEWAY_API_KEY from the environment. If it is missing, run npx vercel@latest whoami and pause for login if needed. Determine the team, then run npx vercel@latest --scope <team-slug> ai-gateway api-keys create --name <descriptive-name>. Capture stdout directly into AI_GATEWAY_API_KEY for the request or existing ignored secret storage, and never expose the value. Use openai/tts-1 and openai/whisper-1, save the audio, print the transcript, run the result, and report the output.
 ```
 
-- ### Set up your project
-  Create a new directory and initialize a Node.js project:
-  ```bash filename="Terminal"
-  mkdir ai-speech-demo
-  cd ai-speech-demo
-  pnpm init
-  pnpm pkg set type=module
-  ```
+### Run the Node.js example
 
-- ### Install dependencies
-  Install the AI SDK, the AI Gateway provider, and development dependencies:
-  #### npm
-  ```bash filename="Terminal"
-  npm install ai@latest @ai-sdk/gateway@latest dotenv @types/node tsx typescript
-  ```
-  #### yarn
-  ```bash filename="Terminal"
-  yarn add ai@latest @ai-sdk/gateway@latest dotenv @types/node tsx typescript
-  ```
-  #### pnpm
-  ```bash filename="Terminal"
-  pnpm add ai@latest @ai-sdk/gateway@latest dotenv @types/node tsx typescript
-  ```
-  #### bun
-  ```bash filename="Terminal"
-  bun add ai@latest @ai-sdk/gateway@latest dotenv @types/node tsx typescript
-  ```
+Use [Node.js 22.18 or later](https://nodejs.org/) and a team with available [AI Gateway Credits](/docs/ai-gateway/pricing). Export `AI_GATEWAY_API_KEY` in your current shell. If you need a key, open the [Create API Key dialog](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fapi-keys%3FshowCreateKeyModal%3Dtrue\&title=AI+Gateway+API+Keys).
 
-- ### Run the round-trip
-  Create an `index.ts` file. It generates speech from a sentence, saves the audio, then transcribes that same audio back to text:
-  ```typescript filename="index.ts"
-  import {
-    experimental_generateSpeech as generateSpeech,
-    experimental_transcribe as transcribe,
-  } from 'ai';
-  import { gateway } from '@ai-sdk/gateway';
-  import { writeFile } from 'node:fs/promises';
-  import { config } from 'dotenv';
+```bash filename="Terminal"
+export AI_GATEWAY_API_KEY="your_ai_gateway_api_key"
+```
 
-  config({ path: '.env.local' });
+Install the AI SDK:
 
-  async function main() {
-    const text = 'Thanks for trying out AI Gateway.';
+```bash filename="Terminal"
+pnpm add ai@latest
+```
 
-    // Text to speech
-    const speech = await generateSpeech({
-      model: gateway.speechModel('openai/tts-1'),
-      text,
-      voice: 'alloy',
-      outputFormat: 'mp3',
-    });
-    await writeFile('speech.mp3', speech.audio.uint8Array);
-    console.log('Saved speech.mp3');
+Create `index.mts`:
 
-    // Speech to text: transcribe the audio we just generated
-    const transcript = await transcribe({
-      model: gateway.transcriptionModel('openai/whisper-1'),
-      audio: speech.audio.uint8Array,
-    });
-    console.log('Transcript:', transcript.text);
-  }
+```typescript filename="index.mts"
+import {
+  experimental_generateSpeech as generateSpeech,
+  experimental_transcribe as transcribe,
+} from 'ai';
+import { writeFile } from 'node:fs/promises';
 
-  main().catch(console.error);
-  ```
-  Run your script:
-  ```bash filename="Terminal"
-  pnpm tsx index.ts
-  ```
-  You get `speech.mp3` with the spoken sentence, and the transcript prints back the text you started with.
+const text = 'Thanks for trying AI Gateway.';
+const speech = await generateSpeech({
+  model: 'openai/tts-1',
+  text,
+  voice: 'alloy',
+  outputFormat: 'mp3',
+});
+
+await writeFile('speech.mp3', speech.audio.uint8Array);
+
+const transcript = await transcribe({
+  model: 'openai/whisper-1',
+  audio: speech.audio.uint8Array,
+});
+
+console.log(transcript.text);
+```
+
+Run the script:
+
+```bash filename="Terminal"
+node index.mts
+```
 
 ## Next steps
 
-- Read the [Text to Speech reference](/docs/ai-gateway/modalities/text-to-speech) for voices, formats, and the full list of request options
-- Read the [Speech to Text reference](/docs/ai-gateway/modalities/speech-to-text) for segments, timestamps, and provider options
-- For live, two-way voice conversations, follow the [Realtime quickstart](/docs/ai-gateway/getting-started/realtime)
-
-## Use each on its own
-
-The two calls are independent. Use `experimental_generateSpeech` alone to add voiceovers or spoken responses, and `experimental_transcribe` alone to transcribe recordings, voice notes, or call audio. You can also call the REST endpoints directly without the AI SDK; see the [Text to Speech](/docs/ai-gateway/modalities/text-to-speech#generate-speech-with-the-rest-api) and [Speech to Text](/docs/ai-gateway/modalities/speech-to-text#transcribe-with-the-rest-api) references.
+- Generate speech with the [Text to Speech guide](/docs/ai-gateway/modalities/text-to-speech)
+- Transcribe recorded or streaming audio with the [Speech to Text guide](/docs/ai-gateway/modalities/speech-to-text)
+- Build live, two-way voice conversations with the [Realtime quickstart](/docs/ai-gateway/getting-started/realtime)
 
 
 ---

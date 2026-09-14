@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/fx.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "1019bd46b432160581947c2dbf885e74dc37468afce2a3682fb0927f23cbf5cb"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "509684917cf785b742b4a4fd367e5bae1d67eaee8443806f820786273ebd7a11"
 ---
 
 # fx Harness
@@ -120,6 +120,10 @@ Set one of these environment variables:
 - `VERCEL_OIDC_TOKEN`
 - `AI_GATEWAY_API_KEY`
 
+If no applicable credential environment variable is set, the adapter attempts
+to resolve a native subscription from the host system unless AI Gateway
+authentication is selected.
+
 fx prefers `VERCEL_OIDC_TOKEN` when both are available. The adapter brokers the
 selected credential only to the configured Gateway origin when the sandbox
 supports request transformations. Other sandboxes retain direct credential
@@ -217,6 +221,7 @@ or apply its own permission policy without sending an ACP permission request.
 - [Cline](/providers/ai-sdk-harnesses/cline)
 - [Cursor](/providers/ai-sdk-harnesses/cursor)
 - [fx](/providers/ai-sdk-harnesses/fx)
+- [GitHub Copilot](/providers/ai-sdk-harnesses/github-copilot)
 
 
 [Full Sitemap](/sitemap.md)

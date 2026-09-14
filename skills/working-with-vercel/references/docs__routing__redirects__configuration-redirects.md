@@ -15,8 +15,8 @@ related:
 summary: Learn how to define static redirects in your framework configuration or vercel.json with support for wildcards, pattern matching, and geolocation.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/redirects/configuration-redirects.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "8a0fe3c379d8368e9992be0c4c93ded4f672d5dfde356ac6dc2affa52d84627d"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "d0cb634b7bb46be6245d2fa950913f1692bec7277a3705c65ac7c6ba28f94167"
 ---
 
 # Configuration Redirects
@@ -30,7 +30,6 @@ Configuration redirects define routing rules that Vercel evaluates at build time
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How can I increase the limit of redirects or use dynamic redirects on Vercel?](https://vercel.com/kb/guide/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fconfiguration-redirects&source_site=vercel-docs&relationship=related) — Instructions on how to use Serverless Functions to handle redirects on Vercel.
-- [Does Vercel support permanent redirects?](https://vercel.com/kb/guide/does-vercel-support-permanent-redirects?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fconfiguration-redirects&source_site=vercel-docs&relationship=related) — Information on Vercel's support for permanent redirects.
 - [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fconfiguration-redirects&source_site=vercel-docs&relationship=related) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
 - [How do I perform Vercel redirects based on query strings?](https://vercel.com/kb/guide/how-do-i-perform-vercel-redirects-based-on-query-strings?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fconfiguration-redirects&source_site=vercel-docs&relationship=related) — When using redirects with the \\`vercel.json\\` or \\`next.config.js\\` configuration file, your URL may contain query param
 - [Can I use Vercel as a reverse proxy?](https://vercel.com/kb/guide/vercel-reverse-proxy-rewrites-external?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fconfiguration-redirects&source_site=vercel-docs&relationship=related) — Learn how to use rewrites to proxy requests from Vercel to other deployments.

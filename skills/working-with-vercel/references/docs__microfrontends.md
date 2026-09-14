@@ -16,8 +16,8 @@ related:
 summary: Learn how to use microfrontends on Vercel to split apart large applications, improve developer experience and make incremental migrations easier.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "997662317bd153cc74121a85deb5e4555c656b8f70550cb4b33db73500aace29"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "a0622c1a83eb2fe260685fd98b78182b5058f07806ff0c7fb1f8ca9faf5ebe03"
 ---
 
 # Microfrontends
@@ -37,11 +37,11 @@ Microfrontends allow you to split a single application into smaller, independent
 - [Preview links between microfrontends projects now serve all paths](https://vercel.com/changelog/preview-links-between-microfrontends-projects-now-serve-all-paths?from=related&source_path=%2Fdocs%2Fmicrofrontends&source_site=vercel-docs&relationship=related)
 - [Vercel Microfrontends checks for missing configuration](https://vercel.com/changelog/vercel-microfrontends-checks-for-missing-configuration?from=related&source_path=%2Fdocs%2Fmicrofrontends&source_site=vercel-docs&relationship=related)
 - [Build with an Express starter template](https://vercel.com/kb/guide/build-with-a-express-starter-template?from=related&source_path=%2Fdocs%2Fmicrofrontends&source_site=vercel-docs&relationship=related) — Deploy an Express app to Vercel from a template. Browse Express starters from Vercel and the community, then run them lo
-- [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related&source_path=%2Fdocs%2Fmicrofrontends&source_site=vercel-docs&relationship=related) — Learn how to debug how Vercel decides where to route your request
 - [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain?from=related&source_path=%2Fdocs%2Fmicrofrontends&source_site=vercel-docs&relationship=related) — Learn how to serve multiple Vercel projects from a single domain.
 - [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel?from=related&source_path=%2Fdocs%2Fmicrofrontends&source_site=vercel-docs&relationship=related) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
 - [How we run Vercel's CDN in front of Discourse](https://vercel.com/blog/how-we-run-vercels-cdn-in-front-of-discourse?from=related&source_path=%2Fdocs%2Fmicrofrontends&source_site=vercel-docs&relationship=related)
 - [Reference](https://vercel.com/docs/flags/flags-explorer/reference?from=related&source_path=%2Fdocs%2Fmicrofrontends&source_site=vercel-docs&relationship=related) — In-depth reference for configuring the Flags Explorer
+- [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fmicrofrontends&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
 
 Full cross-link map for this page: [/docs/microfrontends.graph.md](/docs/microfrontends.graph.md?from=related&source_path=%2Fdocs%2Fmicrofrontends&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

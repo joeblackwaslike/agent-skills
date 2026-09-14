@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/channels-reference.md"
-fetched_at: "2026-08-31T10:37:20.620Z"
-sha256: "3db15890de6d90a2d5628bbc239276a2348c975e1abd889ba4ec8df9ee200113"
+fetched_at: "2026-09-14T09:37:17.168Z"
+sha256: "fe5f5de5df3787bf5eef7ecb3f98d56e2a41760f9c3c75bde5cc11aae7d8bcaa"
 ---
 
 > ## Documentation Index
@@ -170,7 +170,7 @@ This example uses [Bun](https://bun.sh) as the runtime for its built-in HTTP ser
 
     If the event doesn't arrive, the diagnosis depends on what `curl` returned:
 
-    * **`curl` succeeds but nothing reaches Claude**: run `/mcp` in your session to check the server's status. A `failed` status usually means a dependency or import error in your server file; check the debug log at `~/.claude/debug/<session-id>.txt` for the stderr trace.
+    * **`curl` succeeds but nothing reaches Claude**: run `/mcp` in your session to check the server's status. A `failed` status usually means a dependency or import error in your server file. To see the stderr trace, restart with `claude --debug --dangerously-load-development-channels server:webhook` and check the debug log at `~/.claude/debug/<session-id>.txt`.
     * **`curl` fails with "connection refused"**: the port is either not bound yet or a stale process from an earlier run is holding it. `lsof -i :<port>` shows what's listening; `kill` the stale process before restarting your session.
   </Step>
 </Steps>

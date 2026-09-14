@@ -15,8 +15,8 @@ related:
 summary: Add the Flags Explorer to the Vercel Toolbar so you can override flag values on preview deployments without affecting other users.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/cli/set-up-flags-explorer.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "39baac32f32be31d7970f386c80b6ab6c99eb520888dedb1664dc8e087c5cf7f"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "628674dc5c74b1b5be84f7cd5a821f687267be4d402c4b517039fd432c2e08e6"
 ---
 
 # Setting up Flags Explorer
@@ -37,7 +37,6 @@ The [Flags Explorer](/docs/flags/flags-explorer) adds a panel to the [Vercel Too
 - [Using the Flags SDK with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Fset-up-flags-explorer&source_site=vercel-docs&relationship=related) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
 - [Draft Flags](https://vercel.com/docs/flags/vercel-flags/dashboard/drafts?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Fset-up-flags-explorer&source_site=vercel-docs&relationship=related) — Learn how draft flags work and how to promote them to Vercel Flags.
 - [CLI Workflows](https://vercel.com/docs/agent-resources/workflows?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Fset-up-flags-explorer&source_site=vercel-docs&relationship=related) — End-to-end workflows that show how to compose Vercel CLI commands into complete debugging, deployment, and recovery sess
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Fset-up-flags-explorer&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/cli/set-up-flags-explorer.graph.md](/docs/flags/vercel-flags/cli/set-up-flags-explorer.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Fset-up-flags-explorer&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

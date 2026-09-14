@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at any time and even delete a...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/managing-deployments.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "2b3cfa0259dbcea8e7956013b1cccfb46b58c950f7b6222aadb2f4e3fd497568"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "2f680663a179cdb9c84a4de51b1c0e81be7c43d89a683929f78c667528de4b82"
 ---
 
 # Managing Deployments
@@ -40,7 +40,7 @@ You can manage all current and previous deployments regardless of environment, s
 - [How do I delete an individual deployment?](https://vercel.com/kb/guide/how-do-i-delete-an-individual-deployment?from=related&source_path=%2Fdocs%2Fdeployments%2Fmanaging-deployments&source_site=vercel-docs&relationship=related) — Information on deleting an individual deployment.
 - [Implementing Canary Deployments on Vercel](https://vercel.com/kb/guide/implementing_canary_deployments_on_vercel?from=related&source_path=%2Fdocs%2Fdeployments%2Fmanaging-deployments&source_site=vercel-docs&relationship=related) — This guide explains how to set up canary deployments on Vercel, enabling developers to gradually roll out new versions t
 - [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues?from=related&source_path=%2Fdocs%2Fdeployments%2Fmanaging-deployments&source_site=vercel-docs&relationship=related)
-- [vercel redeploy](https://vercel.com/docs/cli/redeploy?from=related&source_path=%2Fdocs%2Fdeployments%2Fmanaging-deployments&source_site=vercel-docs&relationship=related) — Learn how to redeploy your project using the vercel redeploy CLI command.
+- [How we cut CDN metadata lookup latency by 91%](https://vercel.com/blog/how-we-cut-cdn-metadata-lookup-latency-by-91-percent?from=related&source_path=%2Fdocs%2Fdeployments%2Fmanaging-deployments&source_site=vercel-docs&relationship=related)
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fdeployments%2Fmanaging-deployments&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
 
 Full cross-link map for this page: [/docs/deployments/managing-deployments.graph.md](/docs/deployments/managing-deployments.graph.md?from=related&source_path=%2Fdocs%2Fdeployments%2Fmanaging-deployments&source_site=vercel-docs&relationship=graph)
@@ -52,6 +52,12 @@ Full cross-link map for this page: [/docs/deployments/managing-deployments.graph
 4. You can then filter, redeploy, or manually promote your deployment to production
 
 [Vercel CLI](https://vercel.com/cli) and [Vercel REST API](/docs/rest-api) also provide alternative ways to manage your deployments. You can find a full list of the commands available in the [Vercel CLI Reference](/docs/cli/deploying-from-cli), along with the deployments section of the [Vercel REST API Reference](/docs/rest-api/deployments/get-deployment-events).
+
+> Install the [Vercel plugin](/docs/agent-resources/vercel-plugin?from=docs-callout\&source_path=%2Fdocs%2Fdeployments%2Fmanaging-deployments) to manage deployments with your coding agent.
+>
+> ```bash
+> npx plugins add vercel/vercel-plugin
+> ```
 
 ## Filter deployment
 

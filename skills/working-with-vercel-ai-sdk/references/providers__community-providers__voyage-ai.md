@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/voyage-ai.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "fc4e9c9ade4816d3e007a24f365f2ec421ac6b2753f725fa49fdaa2742410fd7"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "1cd659c4a8f17ab111897151a24c6537e3d9badba00ea695d490beca6c279907"
 ---
 
 # Voyage AI Provider
@@ -358,6 +358,7 @@ The following provider options are available:
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
 - [Interfaze](/providers/community-providers/interfaze)
+- [Telnyx](/providers/community-providers/telnyx)
 - [Flowise](/providers/community-providers/flowise)
 
 

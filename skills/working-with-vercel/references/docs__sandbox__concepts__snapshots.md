@@ -17,8 +17,8 @@ related:
 summary: Save and restore sandbox state with snapshots for faster startups and environment sharing.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/snapshots.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "d32535871beee3d4210c423f9b5be1a7649641837daebbd0091d3def062f7d0c"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "0b561518759e85eca7d6479df99ef6a57a0c3b7f1a0efe406a7c2dfc09c2b5f5"
 ---
 
 # Snapshots
@@ -41,8 +41,8 @@ Snapshots capture the state of a running sandbox, including the filesystem and i
 - [Vercel Sandbox snapshots now allow custom retention periods](https://vercel.com/changelog/vercel-sandbox-snapshots-now-allow-custom-retention-periods?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=related)
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 - [Create a snapshot](https://vercel.com/docs/rest-api/sandboxes/create-a-snapshot?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=related) — POST /v2/sandboxes/sessions/{sessionId}/snapshot — Creates a point-in-time snapshot of a running session's filesystem. S
-- [List snapshots](https://vercel.com/docs/rest-api/sandboxes/list-snapshots?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=related) — GET /v2/sandboxes/snapshots — Retrieves a paginated list of snapshots for a specific project.
 - [Transferring a project](https://vercel.com/docs/projects/transferring-projects?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=related) — Learn how to transfer a project between Vercel teams.
+- [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
 
 Full cross-link map for this page: [/docs/sandbox/concepts/snapshots.graph.md](/docs/sandbox/concepts/snapshots.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

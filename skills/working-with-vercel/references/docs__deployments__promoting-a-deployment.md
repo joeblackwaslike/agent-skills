@@ -15,8 +15,8 @@ related:
 summary: Learn how to promote deployments to production on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/promoting-a-deployment.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "0e10949c5237279a34005e35c0283add9b7686853baeb75601baeff93691f479"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "dcd1a09592d9186d41bc653702a2b82df33206d9d2552b5ae4585e1bbd6297e5"
 ---
 
 # Promoting Deployments
@@ -30,9 +30,9 @@ By default, when you merge to or make commits to your production branch (often `
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Are Vercel Preview Deployments indexed by search engines?](https://vercel.com/kb/guide/are-vercel-preview-deployment-indexed-by-search-engines?from=related&source_path=%2Fdocs%2Fdeployments%2Fpromoting-a-deployment&source_site=vercel-docs&relationship=related) — Vercel Preview Deployments aren't indexed by default. Learn how the noindex header works, how to confirm it, and the cus
+- [How to set up a staging environment on Vercel](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel?from=related&source_path=%2Fdocs%2Fdeployments%2Fpromoting-a-deployment&source_site=vercel-docs&relationship=related) — Set up a staging environment on Vercel with custom environments, staged production deployments, or a branch-based previe
 - [How can I use the Vercel CLI for custom workflows?](https://vercel.com/kb/guide/using-vercel-cli-for-custom-workflows?from=related&source_path=%2Fdocs%2Fdeployments%2Fpromoting-a-deployment&source_site=vercel-docs&relationship=related) — You can use the Vercel CLI to deploy any application, including custom git providers and restricted source code.
 - [Stage and manually promote deployments to production](https://vercel.com/changelog/stage-and-manually-promote-deployments-to-production?from=related&source_path=%2Fdocs%2Fdeployments%2Fpromoting-a-deployment&source_site=vercel-docs&relationship=related)
-- [How do I set up a staging environment on Vercel?](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel?from=related&source_path=%2Fdocs%2Fdeployments%2Fpromoting-a-deployment&source_site=vercel-docs&relationship=related) — Information on how to set up a staging environment on Vercel.
 - [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues?from=related&source_path=%2Fdocs%2Fdeployments%2Fpromoting-a-deployment&source_site=vercel-docs&relationship=related)
 - [How to use a non-default branch for production deployments on Vercel](https://vercel.com/kb/guide/can-i-use-a-non-default-branch-for-production?from=related&source_path=%2Fdocs%2Fdeployments%2Fpromoting-a-deployment&source_site=vercel-docs&relationship=related) — Learn how to set a non-default branch for production on Vercel. Open the Production environment, change branch tracking,
 - [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel?from=related&source_path=%2Fdocs%2Fdeployments%2Fpromoting-a-deployment&source_site=vercel-docs&relationship=related) — Learn how to deploy based on tags/releases on Vercel.

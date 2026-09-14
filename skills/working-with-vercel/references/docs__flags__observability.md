@@ -13,8 +13,8 @@ related:
 summary: Track feature flag evaluations and analyze their impact with Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/observability.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "3f96d8ab9581ab9607c6d37b0c15a9647a0bde57fa059b16ebbbc58866471154"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "23b4cdcdcd39101696a264463f3229c082c746dfc2c01dc6bb0d659c57dc5917"
 ---
 
 # Observability
@@ -35,7 +35,6 @@ Feature flags play a crucial role in the software development lifecycle, enablin
 - [Managing flags in the dashboard](https://vercel.com/docs/flags/vercel-flags/dashboard?from=related&source_path=%2Fdocs%2Fflags%2Fobservability&source_site=vercel-docs&relationship=related) — Learn how to manage your feature flags using the Vercel Dashboard.
 - [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fflags%2Fobservability&source_site=vercel-docs&relationship=related) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [Marketplace](https://vercel.com/docs/flags/marketplace?from=related&source_path=%2Fdocs%2Fflags%2Fobservability&source_site=vercel-docs&relationship=related) — Connect your preferred feature flag provider through the Vercel Marketplace for a unified flags experience.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fflags%2Fobservability&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/flags/observability.graph.md](/docs/flags/observability.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fobservability&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

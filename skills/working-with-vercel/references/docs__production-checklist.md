@@ -16,8 +16,8 @@ related:
 summary: Ensure your application is ready for launch with this comprehensive production checklist by the Vercel engineering team. Covering operational...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/production-checklist.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "d94feb6fabc44ee772707d71636ad2541783db6b1c6d5fbf8229f8a565289cbd"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "3040122c64f483d3c6c3fba8c1d5bd27598f92331675b450ee45b02b2bbb863f"
 ---
 
 # Production checklist for launch
@@ -30,6 +30,7 @@ When launching your application on Vercel, it is important to ensure that it's r
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to choose a Salesforce Commerce Cloud storefront: PWA Kit, Storefront Next, or Next.js](https://vercel.com/kb/guide/salesforce-pwa-kit-vs-storefront-next-vs-nextjs?from=related&source_path=%2Fdocs%2Fproduction-checklist&source_site=vercel-docs&relationship=related) — Compare PWA Kit, Storefront Next, and a Next.js storefront on Vercel for Salesforce Commerce Cloud. Learn how caching, p
 - [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Fproduction-checklist&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
 - [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related&source_path=%2Fdocs%2Fproduction-checklist&source_site=vercel-docs&relationship=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
 - [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure?from=related&source_path=%2Fdocs%2Fproduction-checklist&source_site=vercel-docs&relationship=related)
@@ -41,7 +42,6 @@ When launching your application on Vercel, it is important to ensure that it's r
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fproduction-checklist&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Security & Compliance Measures](https://vercel.com/docs/security/compliance?from=related&source_path=%2Fdocs%2Fproduction-checklist&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fproduction-checklist&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Vercel CDN overview](https://vercel.com/docs/cdn?from=related&source_path=%2Fdocs%2Fproduction-checklist&source_site=vercel-docs&relationship=related) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
 
 Full cross-link map for this page: [/docs/production-checklist.graph.md](/docs/production-checklist.graph.md?from=related&source_path=%2Fdocs%2Fproduction-checklist&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

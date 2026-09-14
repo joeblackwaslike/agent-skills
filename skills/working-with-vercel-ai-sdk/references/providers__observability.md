@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "6c66c949d595c0a76f9169b4fa5a05d028d4734b129bc6e7a049d1668e4f28a2"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "8c1c4f2d67bd731375e0e01041be8d028479ef020a2716681c5e2419ced53019"
 ---
 
 # Observability Integrations
@@ -58,7 +58,6 @@ There are also providers that provide monitoring and tracing for the AI SDK thro
   - [Deepgram](/providers/ai-sdk-providers/deepgram)
   - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
   - [Gladia](/providers/ai-sdk-providers/gladia)
-  - [LMNT](/providers/ai-sdk-providers/lmnt)
   - [Google](/providers/ai-sdk-providers/google)
   - [Hume](/providers/ai-sdk-providers/hume)
   - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
@@ -97,6 +96,7 @@ There are also providers that provide monitoring and tracing for the AI SDK thro
   - [Cline](/providers/ai-sdk-harnesses/cline)
   - [Cursor](/providers/ai-sdk-harnesses/cursor)
   - [fx](/providers/ai-sdk-harnesses/fx)
+  - [GitHub Copilot](/providers/ai-sdk-harnesses/github-copilot)
 - [Observability Integrations](/providers/observability)
   - [Arize AX](/providers/observability/arize-ax)
   - [Axiom](/providers/observability/axiom)
@@ -126,7 +126,6 @@ There are also providers that provide monitoring and tracing for the AI SDK thro
   - [Clarifai](/providers/openai-compatible-providers/clarifai)
   - [Heroku](/providers/openai-compatible-providers/heroku)
   - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)
-  - [Synthorai](/providers/openai-compatible-providers/synthorai)
 - [Community Providers](/providers/community-providers)
   - [Writing a Custom Provider](/providers/community-providers/custom-providers)
   - [A2A](/providers/community-providers/a2a)
@@ -185,6 +184,7 @@ There are also providers that provide monitoring and tracing for the AI SDK thro
   - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
   - [QVAC](/providers/community-providers/qvac)
   - [Interfaze](/providers/community-providers/interfaze)
+  - [Telnyx](/providers/community-providers/telnyx)
   - [Flowise](/providers/community-providers/flowise)
 - [Adapters](/providers/adapters)
   - [LangChain](/providers/adapters/langchain)

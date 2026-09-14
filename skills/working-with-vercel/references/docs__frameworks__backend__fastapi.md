@@ -17,8 +17,8 @@ related:
 summary: Deploy a FastAPI app on Vercel. Learn how the Python runtime, ASGI, static assets, and Vercel Functions work together.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/fastapi.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "23ff95fdaab6f7a354f345b1728947ea33e8809e9601c2b5fd9abc8dc672fe10"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "fce861df4ca14c1fa4fb4a9d42897d63de45454f9063d039b24f9b888ef9150e"
 ---
 
 # Deploy a FastAPI app on Vercel
@@ -34,17 +34,17 @@ your repository.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastapi&source_site=vercel-docs&relationship=related) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
+- [FastAPI frontends and static files served from the CDN](https://vercel.com/changelog/fastapi-frontends-and-static-files-served-from-the-cdn?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastapi&source_site=vercel-docs&relationship=related)
 - [FastAPI Lifespan Events are now supported on Vercel](https://vercel.com/changelog/fastapi-lifespan-events-are-now-supported-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastapi&source_site=vercel-docs&relationship=related)
 - [Vercel now supports Build Commands for FastAPI and Flask](https://vercel.com/changelog/vercel-now-supports-build-commands-for-fastapi-and-flask?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastapi&source_site=vercel-docs&relationship=related)
 - [Zero-configuration FastAPI backends](https://vercel.com/changelog/zero-config-fastapi-backends?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastapi&source_site=vercel-docs&relationship=related)
+- [Build an agentic app in FastAPI with OpenAI Agents API and Vercel Sandbox](https://vercel.com/kb/guide/fastapi-openai-agents-api-vercel-sandbox?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastapi&source_site=vercel-docs&relationship=related) — Learn how to build a repository Q&A app using FastAPI, OpenAI Agents API, and Vercel Sandbox, with isolated code inspect
 - [Build Figma-style multiplayer cursors with WebSockets on Vercel](https://vercel.com/kb/guide/real-time-board-nextjs-fastapi?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastapi&source_site=vercel-docs&relationship=related) — Learn how to build Figma-style multiplayer cursors with Next.js and FastAPI, kept consistent across multiple Vercel Func
 - [Build a Weather API on Vercel: Express, FastAPI, and Nitro](https://vercel.com/kb/guide/weather-api-with-fastapi?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastapi&source_site=vercel-docs&relationship=related) — Build a weather API on Vercel with FastAPI, Express, or Nitro. Compare the three runtimes, add caching and Observability
 - [How to ship a Flask app on Vercel](https://vercel.com/kb/guide/ship-a-flask-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastapi&source_site=vercel-docs&relationship=related) — Deploy a Flask app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
-- [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastapi&source_site=vercel-docs&relationship=related) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
 - [Deploy a Flask app on Vercel](https://vercel.com/docs/frameworks/backend/flask?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastapi&source_site=vercel-docs&relationship=related) — Deploy a Flask app on Vercel. Learn how the Python runtime, WSGI, static assets, and Vercel Functions work together.
 - [Fastify on Vercel](https://vercel.com/docs/frameworks/backend/fastify?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastapi&source_site=vercel-docs&relationship=related) — Deploy Fastify applications to Vercel with zero configuration.
 - [Express on Vercel](https://vercel.com/docs/frameworks/backend/express?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastapi&source_site=vercel-docs&relationship=related) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
-- [Deploy Dramatiq workers on Vercel](https://vercel.com/docs/frameworks/backend/dramatiq?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastapi&source_site=vercel-docs&relationship=related) — Deploy Dramatiq workers on Vercel. Learn how Dramatiq actors use Vercel Queues and Vercel Functions to process backgroun
 
 Full cross-link map for this page: [/docs/frameworks/backend/fastapi.graph.md](/docs/frameworks/backend/fastapi.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastapi&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

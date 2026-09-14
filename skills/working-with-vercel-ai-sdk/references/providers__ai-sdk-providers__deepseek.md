@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/deepseek.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "31676f8a73090cfa6aeccd9c0d1bc9b731e48534655a7bef038cca2fa7385b55"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "8ff97925d8e78c171e769d10680fec2ca47d23a2c31b5d3473597371adb628f0"
 ---
 
 # DeepSeek Provider
@@ -79,7 +79,7 @@ const model = deepSeek.languageModel('deepseek-v4-flash');
 DeepSeek language models can be used in the `streamText` function
 (see [AI SDK Core](/docs/ai-sdk-core)).
 
-DeepSeek retired the `deepseek-chat` and `deepseek-reasoner` aliases on July 24, 2026. Use `deepseek-v4-flash` or `deepseek-v4-pro` for the current API. Custom
+DeepSeek retired the `deepseek-chat` and `deepseek-reasoner` aliases on July 24, 2026. Use `deepseek-flash` (the alias for the current V4.x Flash release), `deepseek-v4-flash`, or `deepseek-v4-pro` for the current API. Custom
 and legacy model IDs remain accepted as strings for compatibility with custom
 endpoints.
 
@@ -495,6 +495,7 @@ when its declared media type or filename indicates a supported image format.
 
 | Model                          | Text Generation | Object Generation | Image Input | Tool Usage | Tool Streaming |
 | ------------------------------ | --------------- | ----------------- | ----------- | ---------- | -------------- |
+| `deepseek-flash`               | <Check />       | <Check />         | <Cross />   | <Check />  | <Check />      |
 | `deepseek-v4-flash`            | <Check />       | <Check />         | <Cross />   | <Check />  | <Check />      |
 | `deepseek-v4-pro`              | <Check />       | <Check />         | <Cross />   | <Check />  | <Check />      |
 | `deepseek-v4-flash-vision-exp` | <Check />       | <Check />         | <Check />   | <Check />  | <Check />      |
@@ -525,7 +526,6 @@ when its declared media type or filename indicates a supported image format.
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
-- [LMNT](/providers/ai-sdk-providers/lmnt)
 - [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)

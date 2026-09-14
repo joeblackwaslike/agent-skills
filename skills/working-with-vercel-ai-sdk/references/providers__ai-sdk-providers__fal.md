@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/fal.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "c557b833b1c58d0385240fe796864038ff315f25a8207154c668b7be7bcfcf8e"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "1ef3889f0037a3eee737fce926cd20dee59c629d46ccd30eb58c3d74293940a5"
 ---
 
 # Fal Provider
@@ -327,7 +327,6 @@ Model-specific parameters (e.g., `audio_url`, `prompt`, `preview_text`, `ref_aud
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
-- [LMNT](/providers/ai-sdk-providers/lmnt)
 - [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)

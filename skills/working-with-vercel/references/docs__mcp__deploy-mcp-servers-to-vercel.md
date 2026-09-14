@@ -16,8 +16,8 @@ related:
 summary: Learn how to deploy Model Context Protocol (MCP) servers on Vercel with OAuth authentication and efficient scaling.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/mcp/deploy-mcp-servers-to-vercel.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "49b80b7d521c26d4a084d8feaee55cfe30a1e15352932dda6c3cd33eb473600e"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "1dc16d98df18cab745630b10e5316418780ced076b18c3d735be611a898bec07"
 ---
 
 # Deploy MCP servers to Vercel
@@ -41,7 +41,6 @@ Deploy your Model Context Protocol (MCP) servers on Vercel to [take advantage of
 - [Vercel MCP now in Public Beta](https://vercel.com/changelog/vercels-mcp?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related)
 - [MCP Server](https://v0.app/docs/api/v1/adapters/mcp-server?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related) — The v0 MCP (Model Context Protocol) server allows you to integrate v0's capabilities directly into your IDE, providing s
 - [AI SDK and MCP](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/mcp/deploy-mcp-servers-to-vercel.graph.md](/docs/mcp/deploy-mcp-servers-to-vercel.graph.md?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

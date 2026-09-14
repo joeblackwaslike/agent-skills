@@ -17,8 +17,8 @@ related:
 summary: Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "4267bbf0ba433c467ffeb7deae542624ba957ba4971542c365cfeaa93a51e9d8"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "c5e98d9149b45b719636a558130a5a9b18388ccda34c6d623a347a381fd6276c"
 ---
 
 # Using the Flags SDK with Vercel Flags
@@ -38,7 +38,6 @@ The [Flags SDK](/docs/flags/flags-sdk-reference) is the recommended way to use V
 - [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fflags-sdk&source_site=vercel-docs&relationship=related) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fflags-sdk&source_site=vercel-docs&relationship=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [Quickstart](https://flags-sdk.dev/docs/frameworks/next?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fflags-sdk&source_site=vercel-docs&relationship=related) — Learn how to start using the Flags SDK in your Next.js project.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fflags-sdk&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/sdks/flags-sdk.graph.md](/docs/flags/vercel-flags/sdks/flags-sdk.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fflags-sdk&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

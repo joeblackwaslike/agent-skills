@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/grok-build.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "824d4d7323d17c8289bbce5e8aae3cb29a1b7d57e124cba47137f17a2b2d407e"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "1626daa601d2dfe28a1939429c75aa990012e41eaffe22db04d94d9ed83ebf98"
 ---
 
 # Grok Build Harness
@@ -136,6 +136,10 @@ Supported environment variables:
 - `AI_GATEWAY_BASE_URL`
 - `XAI_API_KEY`
 
+If no applicable credential environment variable is set, the adapter attempts
+to resolve a native subscription from the host system unless AI Gateway
+authentication is selected.
+
 With direct authentication, the adapter uses `XAI_API_KEY`. With AI Gateway,
 it supplies the Gateway credential as `XAI_API_KEY`, maps the Gateway
 base URL ending in `/v1` to `GROK_XAI_API_BASE_URL` and
@@ -209,6 +213,9 @@ safe built-in operations internally without sending a permission request.
 - ACP v1 has no portable built-in tool filtering API. Filtering host tools is
   supported, but filtering Grok built-ins throws an unsupported-capability
   error.
+- Grok Build does not currently support built-in tool approval requests. Use
+  `permissionMode: 'allow-all'` with this adapter. Host-executed AI SDK tool
+  approvals still work.
 - A changed host-tool catalog requires Grok Build to refresh its ACP MCP tool
   list. If the implementation retains stale tools, the turn fails explicitly.
 - Custom `headers` are not natively supported and only applied via
@@ -236,6 +243,7 @@ safe built-in operations internally without sending a permission request.
 - [Cline](/providers/ai-sdk-harnesses/cline)
 - [Cursor](/providers/ai-sdk-harnesses/cursor)
 - [fx](/providers/ai-sdk-harnesses/fx)
+- [GitHub Copilot](/providers/ai-sdk-harnesses/github-copilot)
 
 
 [Full Sitemap](/sitemap.md)

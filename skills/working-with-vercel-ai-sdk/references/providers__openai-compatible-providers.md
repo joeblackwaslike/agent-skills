@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/openai-compatible-providers.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "15e87ee7a2ffc4ff217dfb4053725b52886a53a3136b46adbea76fb06821c573"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "6bd5c1e6f6593a87895a8a5e08a9b29d25e64a3580fb7bbd2792e59fbb4058d2"
 ---
 
 # OpenAI Compatible Providers
@@ -17,7 +17,6 @@ We provide detailed documentation for the following OpenAI compatible providers:
 - [Heroku](/providers/openai-compatible-providers/heroku)
 - [Clarifai](/providers/openai-compatible-providers/clarifai)
 - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)
-- [Synthorai](/providers/openai-compatible-providers/synthorai)
 
 The general setup and provider instance creation is the same for all of these providers.
 
@@ -709,7 +708,6 @@ This allows you to access provider-specific information while maintaining a cons
   - [Deepgram](/providers/ai-sdk-providers/deepgram)
   - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
   - [Gladia](/providers/ai-sdk-providers/gladia)
-  - [LMNT](/providers/ai-sdk-providers/lmnt)
   - [Google](/providers/ai-sdk-providers/google)
   - [Hume](/providers/ai-sdk-providers/hume)
   - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
@@ -748,6 +746,7 @@ This allows you to access provider-specific information while maintaining a cons
   - [Cline](/providers/ai-sdk-harnesses/cline)
   - [Cursor](/providers/ai-sdk-harnesses/cursor)
   - [fx](/providers/ai-sdk-harnesses/fx)
+  - [GitHub Copilot](/providers/ai-sdk-harnesses/github-copilot)
 - [Observability Integrations](/providers/observability)
   - [Arize AX](/providers/observability/arize-ax)
   - [Axiom](/providers/observability/axiom)
@@ -777,7 +776,6 @@ This allows you to access provider-specific information while maintaining a cons
   - [Clarifai](/providers/openai-compatible-providers/clarifai)
   - [Heroku](/providers/openai-compatible-providers/heroku)
   - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)
-  - [Synthorai](/providers/openai-compatible-providers/synthorai)
 - [Community Providers](/providers/community-providers)
   - [Writing a Custom Provider](/providers/community-providers/custom-providers)
   - [A2A](/providers/community-providers/a2a)
@@ -836,6 +834,7 @@ This allows you to access provider-specific information while maintaining a cons
   - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
   - [QVAC](/providers/community-providers/qvac)
   - [Interfaze](/providers/community-providers/interfaze)
+  - [Telnyx](/providers/community-providers/telnyx)
   - [Flowise](/providers/community-providers/flowise)
 - [Adapters](/providers/adapters)
   - [LangChain](/providers/adapters/langchain)

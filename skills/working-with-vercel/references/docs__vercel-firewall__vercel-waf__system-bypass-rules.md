@@ -17,8 +17,8 @@ related:
 summary: Learn how to configure IP-based system bypass rules with the Vercel Web Application Firewall (WAF).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/system-bypass-rules.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "859592d490601b855ddb36ef3d77e443deaf10d144dfac21f237f63807752e0f"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "5e85db38a5fdc8a1375d4e3743bf506befe83285b4ac2827dcbb7d510ffc599b"
 ---
 
 # WAF System Bypass Rules
@@ -40,9 +40,8 @@ While Vercel's system-level mitigations (such as [DDoS protection](/docs/vercel-
 - [Vercel Firewall now supports bypassing system mitigations for specific IPs](https://vercel.com/changelog/vercel-firewall-now-supports-bypassing-system-mitigations-for-specific-ips?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fsystem-bypass-rules&source_site=vercel-docs&relationship=related)
 - [Deny traffic from a set of IP addresses](https://vercel.com/kb/guide/deny-traffic-from-a-set-of-ip-addresses?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fsystem-bypass-rules&source_site=vercel-docs&relationship=related) — Learn how to block specific IP addresses with the Vercel WAF API.
 - [Create System Bypass Rule](https://vercel.com/docs/rest-api/security/create-system-bypass-rule?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fsystem-bypass-rules&source_site=vercel-docs&relationship=related) — POST /v1/security/firewall/bypass — Create new system bypass rules
-- [vercel firewall](https://vercel.com/docs/cli/firewall?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fsystem-bypass-rules&source_site=vercel-docs&relationship=related) — Learn how to manage your project's custom firewall rules, IP blocks, system bypass rules, attack challenge mode, and sys
 - [Remove System Bypass Rule](https://vercel.com/docs/rest-api/security/remove-system-bypass-rule?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fsystem-bypass-rules&source_site=vercel-docs&relationship=related) — DELETE /v1/security/firewall/bypass — Remove system bypass rules
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fsystem-bypass-rules&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
+- [vercel firewall](https://vercel.com/docs/cli/firewall?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fsystem-bypass-rules&source_site=vercel-docs&relationship=related) — Learn how to manage your project's custom firewall rules, IP blocks, system bypass rules, attack challenge mode, and sys
 
 Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf/system-bypass-rules.graph.md](/docs/vercel-firewall/vercel-waf/system-bypass-rules.graph.md?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fsystem-bypass-rules&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

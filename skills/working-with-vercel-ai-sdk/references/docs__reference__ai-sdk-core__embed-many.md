@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/embed-many.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "e9ea11e5406c095f02b056f560be93f1965dd06f9f3bace67f3a3b8fb8eba208"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "4bd4fec50db1518be0d38152b7f985ac3f47a92c10d0aae8a5e43cf4da1798cb"
 ---
 
 # `embedMany()`
@@ -82,11 +82,18 @@ const { embeddings } = await embedMany({
       type: 'number',
       isOptional: true,
       description:
-        'Maximum number of concurrent requests to the provider. Default: Infinity.',
+        'Maximum number of concurrent requests when a request is split into multiple model calls. Must be greater than 0 when chunking is active and the model supports parallel calls; invalid values throw AI_InvalidArgumentError. Default: Infinity.',
+    },
+    {
+      name: 'runtimeContext',
+      type: 'RUNTIME_CONTEXT',
+      isOptional: true,
+      description:
+        'User-defined runtime context passed to lifecycle callbacks. Defaults to an empty object. Telemetry integrations only receive top-level properties explicitly included with telemetry.includeRuntimeContext.',
     },
     {
       name: 'telemetry',
-      type: 'TelemetryOptions',
+      type: 'TelemetryOptions<RUNTIME_CONTEXT>',
       isOptional: true,
       description: 'Telemetry configuration.',
       properties: [
@@ -122,6 +129,13 @@ const { embeddings } = await embedMany({
                 'Identifier for this function. Used to group telemetry data by function.',
             },
             {
+              name: 'includeRuntimeContext',
+              type: '{ [KEY in keyof RUNTIME_CONTEXT]?: boolean }',
+              isOptional: true,
+              description:
+                'Top-level runtime context properties to include in telemetry. Only properties set to true are included. All properties are excluded by default. User callbacks still receive the full context.',
+            },
+            {
               name: 'integrations',
               isOptional: true,
               type: 'Telemetry | Telemetry[]',
@@ -134,14 +148,20 @@ const { embeddings } = await embedMany({
     },
     {
       name: 'onStart',
-      type: '(event: EmbedStartEvent) => PromiseLike<void> | void',
+      type: '(event: EmbedStartEvent<RUNTIME_CONTEXT>) => PromiseLike<void> | void',
       isOptional: true,
       description:
         'Callback that is called when the embedMany operation begins, before the embedding model is called. Errors thrown in this callback are silently caught and do not break the embedding flow.',
       properties: [
         {
-          type: 'EmbedStartEvent',
+          type: 'EmbedStartEvent<RUNTIME_CONTEXT>',
           parameters: [
+            {
+              name: 'runtimeContext',
+              type: 'RUNTIME_CONTEXT',
+              description:
+                'The full, unfiltered runtime context supplied to the operation.',
+            },
             {
               name: 'callId',
               type: 'string',
@@ -189,14 +209,20 @@ const { embeddings } = await embedMany({
     },
     {
       name: 'onEnd',
-      type: '(event: EmbedEndEvent) => PromiseLike<void> | void',
+      type: '(event: EmbedEndEvent<RUNTIME_CONTEXT>) => PromiseLike<void> | void',
       isOptional: true,
       description:
         'Callback that is called when the embedMany operation completes, after all embedding model calls return. Errors thrown in this callback are silently caught and do not break the embedding flow.',
       properties: [
         {
-          type: 'EmbedEndEvent',
+          type: 'EmbedEndEvent<RUNTIME_CONTEXT>',
           parameters: [
+            {
+              name: 'runtimeContext',
+              type: 'RUNTIME_CONTEXT',
+              description:
+                'The full, unfiltered runtime context supplied to the operation.',
+            },
             {
               name: 'callId',
               type: 'string',
@@ -327,10 +353,15 @@ const { embeddings } = await embedMany({
 - [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
 - [createAgentUIStreamResponse](/docs/reference/ai-sdk-core/create-agent-ui-stream-response)
 - [pipeAgentUIStreamToResponse](/docs/reference/ai-sdk-core/pipe-agent-ui-stream-to-response)
+- [experimental_startBatch](/docs/reference/ai-sdk-core/start-batch)
 - [tool](/docs/reference/ai-sdk-core/tool)
+- [experimental_getBatchStatus](/docs/reference/ai-sdk-core/get-batch-status)
 - [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
+- [experimental_getBatchResults](/docs/reference/ai-sdk-core/get-batch-results)
+- [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
 - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
 - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
 - [jsonSchema](/docs/reference/ai-sdk-core/json-schema)

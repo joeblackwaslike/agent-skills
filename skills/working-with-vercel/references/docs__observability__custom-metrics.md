@@ -13,8 +13,8 @@ related:
 summary: Learn how to emit application-specific metrics from Vercel Functions and analyze them in Observability.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/observability/custom-metrics.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "90e8070160a9b331dc8f247ffa9ad728a06f383a29919274f84b8a8bc09482de"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "664a965b200baeb57e8d3fd02f982b7fae09847559eed4ee9c7f8ec0e2787f73"
 ---
 
 # Emit Custom Metrics from Vercel Functions
@@ -127,7 +127,7 @@ After you deploy and invoke the Vercel Function, you can access custom metrics d
 List all available metrics:
 
 ```bash filename="terminal"
-vercel metrics list
+vercel metrics schema
 ```
 
 Query a custom metric and filter it by an attribute:

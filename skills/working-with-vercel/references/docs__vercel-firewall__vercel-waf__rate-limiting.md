@@ -13,8 +13,8 @@ related:
 summary: Learn how to configure custom rate limiting rules with the Vercel Web Application Firewall (WAF).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "f86af2a0c4d59882431a56081f34e91a0e41f325b198340d46047d0a08f9fe84"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "880cbe34a241041108a5588ed848a9fbe7b16343e8be784cf8eb15d63de2451b"
 ---
 
 # WAF Rate Limiting
@@ -39,8 +39,8 @@ Rate limiting allows you to control the number of times that a request from the 
 - [Rate Limiting SDK](https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting-sdk?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting&source_site=vercel-docs&relationship=related) — Learn how to configure a custom rule with rate limit in your code.
 - [Limits](https://vercel.com/docs/limits?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting&source_site=vercel-docs&relationship=related) — Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
 - [Production checklist for launch](https://vercel.com/docs/production-checklist?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting&source_site=vercel-docs&relationship=related) — Ensure your application is ready for launch with this comprehensive production checklist by the Vercel engineering team.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
 - [Public Storage](https://vercel.com/docs/vercel-blob/public-storage?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting&source_site=vercel-docs&relationship=related) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
+- [Firewall concepts](https://vercel.com/docs/vercel-firewall/firewall-concepts?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting&source_site=vercel-docs&relationship=related) — Understand the fundamentals behind the Vercel Firewall.
 
 Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf/rate-limiting.graph.md](/docs/vercel-firewall/vercel-waf/rate-limiting.graph.md?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -13,8 +13,8 @@ related:
 summary: This guide will help you get started with using Comments with your Vercel Preview Deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/comments/using-comments.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "fc2b189f54bc336497953857ef90152791b9f6983e680810c29754081133eda1"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "5278a18a048446443e4f197bd23880d26f1b1b7a8a045d3a30c31ec024908cf0"
 ---
 
 # Using Comments with Preview Deployments
@@ -40,7 +40,7 @@ You must be logged in to create a comment. You can press `c` to enable the comme
 - [Manage Vercel Toolbar comments from the CLI](https://vercel.com/changelog/manage-vercel-toolbar-comments-from-the-cli?from=related&source_path=%2Fdocs%2Fcomments%2Fusing-comments&source_site=vercel-docs&relationship=related)
 - [Vercel Toolbar](https://vercel.com/docs/vercel-toolbar?from=related&source_path=%2Fdocs%2Fcomments%2Fusing-comments&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel Toolbar to leave feedback, navigate through important dashboard pages, share deployments, us
 - [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fcomments%2Fusing-comments&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
-- [Vercel Documentation Sitemap](https://vercel.com/docs/sitemap.md?from=related&source_path=%2Fdocs%2Fcomments%2Fusing-comments&source_site=vercel-docs&relationship=related) — Browse Vercel documentation pages with summaries, prerequisites, and topics.
+- [Interaction Timing Tool](https://vercel.com/docs/vercel-toolbar/interaction-timing-tool?from=related&source_path=%2Fdocs%2Fcomments%2Fusing-comments&source_site=vercel-docs&relationship=related) — The interaction timing tool allows you to inspect in detail each interaction's latency and get notified for interactions
 
 Full cross-link map for this page: [/docs/comments/using-comments.graph.md](/docs/comments/using-comments.graph.md?from=related&source_path=%2Fdocs%2Fcomments%2Fusing-comments&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

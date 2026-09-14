@@ -3,7 +3,7 @@ title: Vercel Documentation
 product: vercel
 url: /docs
 canonical_url: "https://vercel.com/docs"
-last_updated: 2026-09-03
+last_updated: 2026-09-04
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Find guides and reference documentation for building, deploying, and managing applications with Vercel, including the CLI, SDKs, and APIs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "86612698bf7caa15c07b90a34c5c53aa3e940c1737f8d21b93fced0e44d27df1"
+fetched_at: "2026-09-14T09:45:03.548Z"
+sha256: "31883e01e5f35b6a58a981b1928a1d3355bb531c2c5aeba7fd76570cd84275e0"
 ---
 
 # Vercel Documentation
@@ -47,7 +47,7 @@ npx skills add vercel-labs/agent-skills
 npx -y add-mcp https://mcp.vercel.com -g
 
 # Route your agent's model calls through AI Gateway
-vercel ai-gateway coding-agents setup
+npx vercel ai-gateway setup
 ```
 
 #### Call a model
@@ -93,10 +93,10 @@ Help me set up this project on Vercel. Read https://vercel.com/docs/getting-star
 
 The latest changes across the Vercel platform. Browse the full [changelog](https://vercel.com/changelog) for everything that shipped.
 
-- Sep 4, 2026: [Ling 3.0 Flash Sante is now available on AI Gateway for free](https://vercel.com/changelog/ling-3-0-flash-sante-is-now-available-on-ai-gateway-for-free). Ling 3.0 Flash Sante from Inclusion AI is free on Vercel AI Gateway through October 4 through a -free model ID or regular ID.
-- Sep 4, 2026: [GPT 6 Astra now available on Vercel AI Gateway](https://vercel.com/changelog/gpt-6-astra-now-available-on-vercel-ai-gateway). GPT 6 Astra from OpenAI is now available on Vercel AI Gateway for coding, computer use, research, and multi-step professional workflows.
-- Sep 3, 2026: [Cursor Cloud Agents can now run in Vercel Sandbox](https://vercel.com/changelog/run-cursor-cloud-agents-vercel-sandbox). Run Cursor Cloud Agents on infrastructure you control with Vercel Sandbox, using scale-to-zero workers, isolated microVMs, and durable orchestration.
-- Sep 3, 2026: [Basic build machines are now available on Pro and Enterprise](https://vercel.com/changelog/basic-build-machines). Pro and Enterprise teams can now select Basic build machines, 2 vCPU and 8 GB, a lower-cost option for smaller apps. New projects still default to Elastic.
+- Sep 11, 2026: [Vercel Sandbox now provides 64 GB of storage](https://vercel.com/changelog/vercel-sandbox-64-gb-storage). Vercel Sandbox now provides 64 GB of storage per sandbox, up from 32 GB, by default on the latest SDK and CLI versions and when created with an image.
+- Sep 11, 2026: [Control who can manage connectors in Vercel Connect](https://vercel.com/changelog/control-who-can-manage-connectors-in-vercel-connect). Vercel Connect now lets teams on Pro and Enterprise plans restrict who can create and manage connectors.
+- Sep 10, 2026: [GitHub Copilot is now available in the AI SDK harness layer](https://vercel.com/changelog/github-copilot-ai-sdk-harness-adapter). GitHub Copilot now runs through the AI SDK harness layer via @ai-sdk/harness-github-copilot, using the same HarnessAgent interface as every other supported harness.
+- Sep 10, 2026: [FastAPI frontends and static files served from the CDN](https://vercel.com/changelog/fastapi-frontends-and-static-files-served-from-the-cdn). FastAPI frontends and static files are now promoted to the Vercel CDN at build time and served without invoking your Vercel Function.
 
 ## Build with AI
 

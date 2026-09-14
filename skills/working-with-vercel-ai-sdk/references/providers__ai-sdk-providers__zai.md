@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/zai.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "90b05dfb3d68561434f2174347f3af03ad9b8493253a89d620d4db04e6e41776"
+fetched_at: "2026-09-14T09:43:19.624Z"
+sha256: "96403101cca5c326271b2d281ec6931c671a3043f57ce9586fe5d9830e83601f"
 ---
 
 # Z.AI Provider
@@ -178,7 +178,6 @@ for await (const part of result.fullStream) {
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
-- [LMNT](/providers/ai-sdk-providers/lmnt)
 - [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
