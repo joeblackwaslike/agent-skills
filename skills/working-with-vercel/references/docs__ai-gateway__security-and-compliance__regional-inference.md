@@ -3,7 +3,7 @@ title: AI Gateway Regional Inference
 product: vercel
 url: /docs/ai-gateway/security-and-compliance/regional-inference
 canonical_url: "https://vercel.com/docs/ai-gateway/security-and-compliance/regional-inference"
-last_updated: 2026-09-08
+last_updated: 2026-09-10
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/security-and-compliance
@@ -17,8 +17,8 @@ related:
 summary: Route AI Gateway inference to the region you choose and control where providers store data, for data residency and compliance requirements.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/regional-inference.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "f35302d6dd13ef83e67de48779fa1ad6f7256b33e1eb2c7fdf71a649a72bec63"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "64bc0b28fc68df66e2a0bf02862eff49e80d8c85bf6fe3a3cc4671fe80de3911"
 ---
 
 # AI Gateway Regional Inference
@@ -39,8 +39,8 @@ running somewhere else.
 
 - [Regional inference now available on AI Gateway](https://vercel.com/changelog/regional-inference-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fregional-inference&source_site=vercel-docs&relationship=related)
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fregional-inference&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
-- [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fregional-inference&source_site=vercel-docs&relationship=related)
 - [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fregional-inference&source_site=vercel-docs&relationship=related) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
+- [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fregional-inference&source_site=vercel-docs&relationship=related)
 - [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fregional-inference&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
 - [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fregional-inference&source_site=vercel-docs&relationship=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
 

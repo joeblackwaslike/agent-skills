@@ -3,21 +3,21 @@ title: Fair Use Guidelines
 product: vercel
 url: /docs/limits/fair-use-guidelines
 canonical_url: "https://vercel.com/docs/limits/fair-use-guidelines"
-last_updated: 2026-07-29
+last_updated: 2026-09-14
 type: reference
 prerequisites:
   - /docs/limits
 related:
+  - /docs/pricing/regional-pricing
+  - /docs/functions/usage-and-pricing
   - /docs/image-optimization/limits-and-pricing
   - /docs/global-config/global-config-limits
   - /docs/builds/managing-builds
-  - /docs/pricing/regional-pricing
-  - /docs/deployments
 summary: Learn how Vercel applies fair use guidelines across plans and usage-based resources.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/limits/fair-use-guidelines.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "79c12f6ef9e89a7cb413e4fa253629856f51d5aaaba908d518c9147f98086155"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "82b0bc63ac13e45114eef965f58bcf1a3e1fb0e10c35db07e4b7d7eb5a5e0473"
 ---
 
 # Fair Use Guidelines
@@ -40,7 +40,7 @@ Vercel usage is subject to these fair use guidelines across plans and usage-base
 - [Account Plans on Vercel](https://vercel.com/docs/plans?from=related&source_path=%2Fdocs%2Flimits%2Ffair-use-guidelines&source_site=vercel-docs&relationship=related) — Learn about the different plans available on Vercel.
 - [Legacy Pricing for Image Optimization](https://vercel.com/docs/image-optimization/legacy-pricing?from=related&source_path=%2Fdocs%2Flimits%2Ffair-use-guidelines&source_site=vercel-docs&relationship=related) — This page outlines information on the pricing and limits for the source images-based legacy option.
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Flimits%2Ffair-use-guidelines&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
-- [Vercel Pro Plan](https://vercel.com/docs/plans/pro-plan?from=related&source_path=%2Fdocs%2Flimits%2Ffair-use-guidelines&source_site=vercel-docs&relationship=related) — Learn about the Vercel Pro plan with credit-based billing, free viewer seats, and self-serve enterprise features for pro
+- [CDN pricing and usage](https://vercel.com/docs/manage-cdn-usage?from=related&source_path=%2Fdocs%2Flimits%2Ffair-use-guidelines&source_site=vercel-docs&relationship=related) — Understand CDN pricing resources, monitor usage from your dashboard, and optimize Fast Data Transfer, Fast Origin Transf
 
 Full cross-link map for this page: [/docs/limits/fair-use-guidelines.graph.md](/docs/limits/fair-use-guidelines.graph.md?from=related&source_path=%2Fdocs%2Flimits%2Ffair-use-guidelines&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -51,21 +51,23 @@ Full cross-link map for this page: [/docs/limits/fair-use-guidelines.graph.md](/
 
 ## Usage guidelines
 
-As a guideline for our community, we expect most users to fall within the below ranges for each plan. These guidelines are not Pro plan entitlements; Vercel bills Pro usage through included credit, explicit included allowances, and on-demand rates. We will notify you if your usage is an outlier. Vercel aims to be as permissive as possible without allowing an unreasonable burden on our infrastructure. Where possible, we'll reach out before taking action to address unreasonable usage and work with you to correct it.
+As a guideline for our community, we expect most users to fall within the below ranges for each plan. These guidelines are not Pro plan entitlements; Vercel bills Pro usage through included credit and on-demand rates. We will notify you if your usage is an outlier. Vercel aims to be as permissive as possible without allowing an unreasonable burden on our infrastructure. Where possible, we'll reach out before taking action to address unreasonable usage and work with you to correct it.
 
 ### Typical monthly usage guidelines
 
-|                                                                                            | Hobby                                               | Pro                                                 |
-| ------------------------------------------------------------------------------------------ | --------------------------------------------------- | --------------------------------------------------- |
-| Fast Data Transfer                                                                         | Up to 100 GB                                        | Up to 1 TB                                          |
-| Fast Origin Transfer                                                                       | Up to 10 GB                                         | Usage-based                                         |
-| Active CPU                                                                                 | Up to 4 CPU-hrs                                     | Usage-based                                         |
-| Provisioned Memory                                                                         | Up to 360 GB-hrs                                    | Usage-based                                         |
-| Function Invocations                                                                       | Up to 1M invocations                                | Usage-based                                         |
-| [Image transformations](/docs/image-optimization/limits-and-pricing#image-transformations) | Up to 5K transformations/month                      | Usage-based                                         |
-| [Image cache reads](/docs/image-optimization/limits-and-pricing#image-cache-reads)         | Up to 300K reads/month                              | Usage-based                                         |
-| [Image cache writes](/docs/image-optimization/limits-and-pricing#image-cache-writes)       | Up to 100K writes/month                             | Usage-based                                         |
-| Storage                                                                                    | [Global Config](/docs/global-config/global-config-limits) | [Global Config](/docs/global-config/global-config-limits) |
+| Resource | Included (Pro) | Included (Hobby) |
+|----------|----------------|-----------------|
+| [Fast Data Transfer](/docs/pricing/regional-pricing) | Flat Rate CDN | First 100 GB |
+| [Function Invocations](/docs/functions/usage-and-pricing#invocations) | Usage-based | First 1,000,000 |
+| [Fast Origin Transfer](/docs/pricing/regional-pricing) | Usage-based | First 10 GB |
+| [Active CPU](/docs/functions/usage-and-pricing#active-cpu) | Usage-based | 4 hours |
+| [Provisioned Memory](/docs/functions/usage-and-pricing#provisioned-memory) | Usage-based | 360 GB-hrs |
+| [Image Optimization Transformations](/docs/image-optimization/limits-and-pricing#image-transformations) | Usage-based | 5K/month |
+| [Image Optimization Cache Reads](/docs/image-optimization/limits-and-pricing#image-cache-reads) | Usage-based | 300K/month |
+| [Image Optimization Cache Writes](/docs/image-optimization/limits-and-pricing#image-cache-writes) | Usage-based | 100K/month |
+
+
+For storage limits, see [Global Config limits](/docs/global-config/global-config-limits).
 
 For Teams on the Pro plan, you can pay for [additional usage](/docs/limits/fair-use-guidelines#additional-resources) as you go.
 
@@ -77,18 +79,19 @@ For [on-demand concurrent builds](/docs/builds/managing-builds#on-demand-concurr
 
 ### Additional resources
 
-Pro plan members can use a pay-as-you-go model for additional usage, giving you greater flexibility and control over your usage. Vercel automatically charges usage at the following rates after applicable included allowances and credit:
+Pro plan members can use a pay-as-you-go model for additional usage, giving you greater flexibility and control over your usage. Vercel automatically charges usage at the following rates once you use your credit:
 
-|                                                                                           | Pro                                                 |
-| ----------------------------------------------------------------------------------------- | --------------------------------------------------- |
-| Fast Data Transfer                                                                        | [Regionally priced](/docs/pricing/regional-pricing) |
-| Fast Origin Transfer                                                                      | [Regionally priced](/docs/pricing/regional-pricing) |
-| Active CPU                                                                                | Starting at $0.128 per hour                         |
-| Provisioned Memory                                                                        | Starting at $0.0106 per GB-hr                       |
-| Function Invocations                                                                      | $0.60 per 1M invocations                            |
-| [Image transformations](/docs/image-optimization/limits-and-pricing#image-transformations) | $0.05 per 1K transformations                        |
-| [Image cache reads](/docs/image-optimization/limits-and-pricing#image-cache-reads)         | $0.40 per 1M reads                                  |
-| [Image cache writes](/docs/image-optimization/limits-and-pricing#image-cache-writes)       | $4.00 per 1M writes                                 |
+| Resource | Price |
+|----------|-------|
+| [Fast Data Transfer](/docs/pricing/regional-pricing) | Regional |
+| [Function Invocations](/docs/functions/usage-and-pricing#invocations) | $0.60 per 1,000,000 Invocations |
+| [Fast Origin Transfer](/docs/pricing/regional-pricing) | Regional |
+| [Active CPU](/docs/functions/usage-and-pricing#active-cpu) | Starting at $0.128 per hour |
+| [Provisioned Memory](/docs/functions/usage-and-pricing#provisioned-memory) | Starting at $0.0106 per GB-hr |
+| [Image Optimization Transformations](/docs/image-optimization/limits-and-pricing#image-transformations) | $0.05 per 1K transformations |
+| [Image Optimization Cache Reads](/docs/image-optimization/limits-and-pricing#image-cache-reads) | $0.40 per 1M reads |
+| [Image Optimization Cache Writes](/docs/image-optimization/limits-and-pricing#image-cache-writes) | $4.00 per 1M writes |
+
 
 ### Commercial usage
 

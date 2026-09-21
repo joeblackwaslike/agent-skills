@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/language-model-v2-middleware.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "229f669fb0f4d23d6afaa441b987559faa6e312e3ae5b90fea63fe0a16d05c5d"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "c7f909b50439df9e289caf60b012e18981c0ef75b07d606317b31f5bf42c6967"
 ---
 
 # `LanguageModelV4Middleware`
@@ -88,6 +88,7 @@ See [Language Model Middleware](/docs/ai-sdk-core/middleware) for more informati
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+- [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
 - [uploadFile](/docs/reference/ai-sdk-core/upload-file)
 - [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
 - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
@@ -103,6 +104,7 @@ See [Language Model Middleware](/docs/ai-sdk-core/middleware) for more informati
 - [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
 - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [toolSearch](/docs/reference/ai-sdk-core/tool-search)
 - [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
 - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)

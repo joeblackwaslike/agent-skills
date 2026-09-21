@@ -3,7 +3,7 @@ title: Vercel CDN Cache
 product: vercel
 url: /docs/caching/cdn-cache
 canonical_url: "https://vercel.com/docs/caching/cdn-cache"
-last_updated: 2026-08-11
+last_updated: 2026-09-14
 type: conceptual
 prerequisites:
   - /docs/caching
@@ -16,8 +16,8 @@ related:
 summary: "Learn how Vercel's CDN cache stores your content across a global network to reduce latency and origin load."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/cdn-cache.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "2ae0fb6f432c127fe4cb889bec7546f574d77c40ee9e2c7bd58ab70c463c73d2"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "30b8f1a503a333a2c2cea975e4d55a30800a8bc4ba2224de5de623f86c058bef"
 ---
 
 # Vercel CDN Cache
@@ -36,12 +36,12 @@ Vercel's CDN caches your content (including pages, API responses, and static ass
 - [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
 - [Set cache control headers for functions](https://vercel.com/kb/guide/set-cache-control-headers?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache&source_site=vercel-docs&relationship=related) — Learn how to set headers to cache your function's responses.
 - [How to Configure the Cache-Control Response Header in Vercel Projects](https://vercel.com/kb/guide/how-to-configure-the-cache-control-response-header-in-vercel-projects?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache&source_site=vercel-docs&relationship=related) — After reviewing this guide, you will be able to set a cache-control header of any value to be returned when a specific p
-- [use cache](https://nextjs.org/docs/app/api-reference/directives/use-cache?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache&source_site=vercel-docs&relationship=related) — Learn how to use the "use cache" directive to cache data in your Next.js application.
-- [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache&source_site=vercel-docs&relationship=related)
+- [use cache: remote](https://nextjs.org/docs/app/api-reference/directives/use-cache-remote?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache&source_site=vercel-docs&relationship=related) — Learn how to use the "use cache: remote" directive for persistent, shared caching using remote cache handlers.
+- [How to use Next.js as a backend for your frontend](https://nextjs.org/docs/app/guides/backend-for-frontend?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache&source_site=vercel-docs&relationship=related) — Learn how to use Next.js as a backend framework
 - [@vercel/functions API Reference \\(Node.js\\)](https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache&source_site=vercel-docs&relationship=related) — Learn about available APIs when working with Vercel Functions.
-- [Private Storage](https://vercel.com/docs/vercel-blob/private-storage?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache&source_site=vercel-docs&relationship=related) — Learn how to use private Vercel Blob storage to serve files with authentication
-- [Cache Status and Reasons](https://vercel.com/docs/caching/cache-status?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache&source_site=vercel-docs&relationship=related) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
+- [Request headers](https://vercel.com/docs/headers/request-headers?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache&source_site=vercel-docs&relationship=related) — Learn about the request headers sent to each Vercel deployment and how to use them to process requests before sending a
 - [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache&source_site=vercel-docs&relationship=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
+- [Private Storage](https://vercel.com/docs/vercel-blob/private-storage?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache&source_site=vercel-docs&relationship=related) — Learn how to use private Vercel Blob storage to serve files with authentication
 
 Full cross-link map for this page: [/docs/caching/cdn-cache.graph.md](/docs/caching/cdn-cache.graph.md?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -363,6 +363,25 @@ The `Vary` response header instructs caches to use specific request headers as p
 
 When Vercel's CDN receives a request, it combines the cache key (described in the [Cache Invalidation](#cache-invalidation) section) with the values of any request headers specified in the `Vary` header to create a unique cache entry for each distinct combination.
 
+#### High-cardinality headers
+
+Some request headers carry a value that's close to unique per visitor. `Cookie` is the clearest example, since session and analytics cookies differ for everyone. Varying on a header like this gives nearly every request its own cache entry, so almost nothing is served from the cache and the entries that are written are unlikely to be read again.
+
+Vercel's CDN doesn't cache a response whose `Vary` names one of these headers:
+
+| Header   | Why it isn't cacheable                                              |
+| -------- | ------------------------------------------------------------------- |
+| `Cookie` | Session and analytics cookies give most visitors a distinct value. |
+
+The response is still generated and served normally. It's returned with [`x-vercel-cache: MISS`](#x-vercel-cache), the reason [Vary key denied](/docs/caching/cache-status#vary-key-denied) is recorded in [runtime logs](/docs/logs/runtime), and no cache entry is written for it.
+
+> **💡 Note:** Vercel doesn't drop the header and cache the response anyway. The response
+> genuinely differs per value, so serving a stored copy to a different visitor
+> would return one visitor's content to another. This matches how `Vary: *` is
+> already handled.
+
+If a route you expect to be cached returns `x-vercel-cache: MISS` with this reason, check the `Vary` header your origin sends. If the response doesn't actually change with that header, remove it from `Vary` and the response becomes cacheable again.
+
 #### Use cases
 
 > **💡 Note:** Vercel's CDN already includes the `Accept` and `Accept-Encoding` headers as
@@ -372,8 +391,10 @@ When Vercel's CDN receives a request, it combines the cache key (described in th
 The most common use case for the `Vary` header is content negotiation, serving different content based on:
 
 - User location (e.g., `X-Vercel-IP-Country`)
-- Device type (e.g., `User-Agent`)
 - Language preferences (e.g., `Accept-Language`)
+- Response format for an API that serves more than one (e.g., a custom `X-Api-Version`)
+
+Pick the narrowest header that captures the difference. Varying on `User-Agent` to serve two layouts, for example, splits the cache across every browser and version string your visitors send, when a header that holds only the value you branch on would produce two entries.
 
 **Example: Country-specific content**
 
@@ -707,7 +728,10 @@ This will create separate cache entries for each unique combination of country a
 
 - Use `Vary` headers selectively, as each additional header exponentially increases the number of cache entries. This doesn't directly impact your bill, but can result in more cache misses than desired
 - Only include headers that meaningfully impact content generation
+- Prefer a header with a small, known set of values. A header that's close to unique per visitor isn't cacheable at all, as described in [High-cardinality headers](#high-cardinality-headers)
+- Avoid varying on `Referer` for traffic-source rendering: browsers send only the referring origin cross-site, and same-origin navigation sends full URLs that fragment the cache. A query parameter, or reading the header in your function, captures the source without the fragmentation
 - Consider combining multiple variations into a single header value when possible
+- Set `Vary` on the routes that need it rather than globally in middleware or a proxy, so one header doesn't make every route uncacheable
 
 ## Cacheable response criteria
 
@@ -723,6 +747,7 @@ For server responses to be successfully cached with Vercel's CDN, the following 
 - Response doesn't contain the `set-cookie` header.
 - Response doesn't contain the `private`, `no-cache` or `no-store` directives in the `Cache-Control` header.
 - Response doesn't contain `Vary: *` header, which is treated as equivalent to `Cache-Control: private`.
+- Response doesn't contain a `Vary` header naming a [high-cardinality header](#high-cardinality-headers), such as `Cookie`.
 
 Vercel **doesn't allow bypassing the cache for static files** by design.
 

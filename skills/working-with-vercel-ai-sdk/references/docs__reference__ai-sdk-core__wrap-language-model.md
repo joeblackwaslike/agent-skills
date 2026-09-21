@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/wrap-language-model.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "ab13747a0ec3b721948268693b5596a4d879ae8392193855468cf1362544459c"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "5738fe36ebb4fa462621bbacc58d861c806b8e4084d1c92cddcc606dce629ffd"
 ---
 
 # `wrapLanguageModel()`
@@ -73,6 +73,7 @@ A new `LanguageModelV4` instance with middleware applied.
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+- [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
 - [uploadFile](/docs/reference/ai-sdk-core/upload-file)
 - [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
 - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
@@ -88,6 +89,7 @@ A new `LanguageModelV4` instance with middleware applied.
 - [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
 - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [toolSearch](/docs/reference/ai-sdk-core/tool-search)
 - [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
 - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)

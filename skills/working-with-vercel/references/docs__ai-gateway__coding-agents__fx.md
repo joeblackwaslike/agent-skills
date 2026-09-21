@@ -3,7 +3,7 @@ title: fx with AI Gateway
 product: vercel
 url: /docs/ai-gateway/coding-agents/fx
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/fx"
-last_updated: 2018-10-20
+last_updated: 2026-09-13
 type: how-to
 prerequisites:
   - /docs/ai-gateway/coding-agents
@@ -16,8 +16,8 @@ related:
 summary: Connect fx to AI Gateway with the Vercel CLI or the AI_GATEWAY_API_KEY environment variable.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/fx.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "a314c892dc44eb3685e02896fd1b961461d1b38900d96f78fde93f53f6739e65"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "997d8727b76b27d4e783b1a05e781e1776049ace2307df3dad5609f319102052"
 ---
 
 # fx with AI Gateway
@@ -31,11 +31,11 @@ sha256: "a314c892dc44eb3685e02896fd1b961461d1b38900d96f78fde93f53f6739e65"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [fx is now available in the AI SDK harness layer](https://vercel.com/changelog/fx-ai-sdk-harness-adapter?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Ffx&source_site=vercel-docs&relationship=related)
-- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Ffx&source_site=vercel-docs&relationship=related) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 - [ForgeCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/forge?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Ffx&source_site=vercel-docs&relationship=related) — Connect ForgeCode to AI Gateway with the Vercel CLI or custom provider and credential files.
+- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Ffx&source_site=vercel-docs&relationship=related) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 - [Blackbox AI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/blackbox?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Ffx&source_site=vercel-docs&relationship=related) — Configure the Blackbox AI CLI to use AI Gateway for code generation and debugging. Set your API key and model and monito
 - [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Ffx&source_site=vercel-docs&relationship=related) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
-- [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Ffx&source_site=vercel-docs&relationship=related) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Ffx&source_site=vercel-docs&relationship=related) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/fx.graph.md](/docs/ai-gateway/coding-agents/fx.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Ffx&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

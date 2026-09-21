@@ -13,13 +13,13 @@ related:
 summary: Understand how Vercel Agent scopes access, requests approval, and attributes changes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/chat/permissions.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "5fa9e7a68345bb466e524d9c3e89971979f6cebba487a9a3c96e59cce55cbe5d"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "e80ed638b549e918b46d6b896ca685bfcdc3fac39b38ac399fee731f47f5a706"
 ---
 
 # Vercel Agent Permissions
 
-> **🔒 Permissions Required**: Vercel Agent
+> **🔒 Permissions Required**: Vercel Agent (Public Beta)
 
 Vercel Agent uses your existing Vercel and GitHub permissions. It limits each request to the selected team and project context. Vercel Agent is read-only by default.
 

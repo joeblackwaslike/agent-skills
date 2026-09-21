@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/model-message.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "a65fa60a93d4b762e63da7eaaccbb16d8c45900106566d07aaf5f5bf6c59f9cc"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "db40817c623bfb9f8d4359ca249f6cc132267a105fe3a3b89afa714bf44c28ad"
 ---
 
 # `ModelMessage`
@@ -515,6 +515,7 @@ IANA media type.
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+- [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
 - [uploadFile](/docs/reference/ai-sdk-core/upload-file)
 - [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
 - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
@@ -530,6 +531,7 @@ IANA media type.
 - [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
 - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [toolSearch](/docs/reference/ai-sdk-core/tool-search)
 - [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
 - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)

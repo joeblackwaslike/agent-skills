@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/open-responses.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "0d9af31d2b3bd6374aba58f76cc530e48e338f02ea200ec4d9bbf277763d69a1"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "5380fdb14eef9f1e28dd5fa188512b444b553961b0771082653ca799588238a3"
 ---
 
 # Open Responses Provider
@@ -384,6 +384,7 @@ with extensions throws a `SerializationError`.
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
 - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
+- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

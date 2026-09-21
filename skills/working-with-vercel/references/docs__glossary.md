@@ -3,7 +3,7 @@ title: Glossary
 product: vercel
 url: /docs/glossary
 canonical_url: "https://vercel.com/docs/glossary"
-last_updated: 2026-08-21
+last_updated: 2026-09-15
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: "Learn about the terms and concepts used in Vercel's products and documentation."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/glossary.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "d50e4d212dae994f6c716f99e180c7ef298ab7a161c08bec1382e7504736c2e6"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "e0f0c5c21dd0f829b73ac397db1d4223c92d9422cf8a7c3b649cd2e2ece681d2"
 ---
 
 # Glossary
@@ -39,9 +39,9 @@ A full glossary of terms used in Vercel's products and documentation.
 - [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
 - [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related)
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
-- [Vercel vs Webflow Cloud](https://vercel.com/kb/guide/vercel-vs-webflow-cloud?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — Compare Vercel and Webflow Cloud for deploying Next.js and Astro apps, including runtime, framework support, storage, pr
 - [June 2020](https://vercel.com/blog/changelog-june-2020?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related)
-- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
+- [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
+- [Projects overview](https://vercel.com/docs/projects?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 
 Full cross-link map for this page: [/docs/glossary.graph.md](/docs/glossary.graph.md?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -422,7 +422,7 @@ Tools that install your project's dependencies. Vercel auto-detects npm, Yarn, p
 
 ### Password Protection
 
-A deployment protection method that restricts access to deployments using a password, available on Enterprise plans or through the Advanced Deployment Protection add-on for Pro plans.
+A deployment protection method that restricts access using a password. Pro teams pay $20 per month for each protected project. Enterprise includes Team Level Password Protection for every project, while existing Pro teams with the legacy Advanced Deployment Protection package retain team-level coverage for $150 per month per team. See [Usage & Pricing for Deployment Protection](/docs/deployment-protection/usage-and-pricing) for the full plan comparison.
 
 ### Plans
 
@@ -490,7 +490,7 @@ HTTP responses that tell clients to make a new request to a different URL, usefu
 
 ### Redis
 
-An in-memory key-value store connected to your Vercel project through the [Vercel Marketplace](#vercel-marketplace), provisioned from providers such as Upstash. Replaces the deprecated Vercel KV. See [Redis on Vercel](/docs/redis).
+An in-memory key-value store connected to your Vercel project through the [Vercel Marketplace](#vercel-marketplace), provisioned from providers such as Upstash. See [Redis on Vercel](/docs/redis).
 
 ### Region
 
@@ -498,7 +498,7 @@ Geographic locations where Vercel can run your functions and store data. Vercel 
 
 ### Release Phases
 
-The stages a Vercel product passes through before becoming generally available: Alpha (under development), Beta (pre-GA without an SLA), Private Beta (under NDA), Limited Beta (publicly announced with gated access), and General Availability (GA). See [Release Phases](/docs/release-phases).
+The stages a Vercel product passes through before becoming generally available: Alpha (under development), Beta (pre-GA without an SLA), Private Beta (under NDA), Limited Beta (publicly announced with gated access), Public Beta (available without special invitation), and General Availability (GA). See [Release Phases](/docs/release-phases).
 
 ### Repository
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/runtime-and-tool-context.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "8399d74ca23c06d17edc2705beaad706094e950031c4ab80eb7c66b013face1b"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "5bd88fbdb0213f5f4dbb46c57cc709f5a3971c93811dd227c969c3cbff2dd5e1"
 ---
 
 # Runtime and Tool Context
@@ -239,11 +239,13 @@ Learn more about [tools and tool calling](/docs/ai-sdk-core/tools-and-tool-calli
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Code Mode](/docs/ai-sdk-core/code-mode)
+- [Tool Search](/docs/ai-sdk-core/tool-search)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
+- [Evaluation](/docs/ai-sdk-core/evaluation)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)

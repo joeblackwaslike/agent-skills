@@ -15,8 +15,8 @@ related:
 summary: "Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from your terminal."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/sandbox.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "78da5fa9ffae4b6cde677182c09a860fffcb82d52ebc5ee11233c852603e89d5"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "43cc2b05e770dd305a9cd4b7454e2b759d6b248c9389d78a9a4efa8dc9d86952"
 ---
 
 # vercel sandbox
@@ -38,7 +38,7 @@ The `vercel sandbox` command is the entry point for managing [Vercel Sandbox](/d
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fcli%2Fsandbox&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 - [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes?from=related&source_path=%2Fdocs%2Fcli%2Fsandbox&source_site=vercel-docs&relationship=related) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem
 - [Delete a sandbox](https://vercel.com/docs/rest-api/sandboxes/delete-a-sandbox?from=related&source_path=%2Fdocs%2Fcli%2Fsandbox&source_site=vercel-docs&relationship=related) — DELETE /v2/sandboxes/{name} — Deletes a sandbox by name. If sandboxes are currently running, they will be stopped first.
-- [Get a named sandbox](https://vercel.com/docs/rest-api/sandboxes/get-a-named-sandbox?from=related&source_path=%2Fdocs%2Fcli%2Fsandbox&source_site=vercel-docs&relationship=related) — GET /v2/sandboxes/{name} — Retrieves a named sandbox by name, including its current sandbox and routes. If the sandbox i
+- [Snapshots](https://vercel.com/docs/sandbox/concepts/snapshots?from=related&source_path=%2Fdocs%2Fcli%2Fsandbox&source_site=vercel-docs&relationship=related) — Save and restore sandbox state with snapshots for faster startups and environment sharing.
 
 Full cross-link map for this page: [/docs/cli/sandbox.graph.md](/docs/cli/sandbox.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fsandbox&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

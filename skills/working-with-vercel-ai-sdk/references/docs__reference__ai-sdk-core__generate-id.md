@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-id.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "1ee45d8acb498b2e29d315274fdb6f0335266e9b5be3c8341c20c893df2b41a5"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "2f4c385be2389ab039904e5f04eca93626b4ef935d049aa5226f993d84ae29f6"
 ---
 
 # `generateId()`
@@ -44,6 +44,7 @@ A string representing the generated ID.
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+- [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
 - [uploadFile](/docs/reference/ai-sdk-core/upload-file)
 - [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
 - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
@@ -59,6 +60,7 @@ A string representing the generated ID.
 - [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
 - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [toolSearch](/docs/reference/ai-sdk-core/tool-search)
 - [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
 - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)

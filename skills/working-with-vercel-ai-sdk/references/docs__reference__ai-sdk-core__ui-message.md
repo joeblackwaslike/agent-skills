@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/ui-message.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "3bbb4d39cc23e5ad72aefaee5d048556002fc6fb3bdb0b1e49c69ef6d09e9016"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "677a5a9e51ad5a8029f31e0c99ca4b8aac3654f5ea7e5ab760bd93620d656f9a"
 ---
 
 # `UIMessage`
@@ -345,6 +345,7 @@ type StepStartUIPart = {
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+- [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
 - [uploadFile](/docs/reference/ai-sdk-core/upload-file)
 - [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
 - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
@@ -360,6 +361,7 @@ type StepStartUIPart = {
 - [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
 - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [toolSearch](/docs/reference/ai-sdk-core/tool-search)
 - [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
 - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)

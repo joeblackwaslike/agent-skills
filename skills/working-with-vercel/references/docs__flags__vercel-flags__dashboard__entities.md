@@ -16,8 +16,8 @@ related:
 summary: Define entities and their attributes for precise feature flag targeting.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/entities.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "17e5e3c0b7e5e05e0590581b7720036b77f3917f7f69d27a85af1c1a97c41c31"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "2f607f95299d0c895304f62034c2bb936414393ac4d256c1c6aa78f85301925e"
 ---
 
 # Entities
@@ -62,12 +62,18 @@ Before you can use targeting rules, you need to define your entities in the dash
 
 Each attribute has a type that determines how it can be used in targeting rules:
 
-| Type         | Description     | Example values                    |
-| ------------ | --------------- | --------------------------------- |
-| String       | Text values     | `"user@example.com"`, `"premium"` |
-| Number       | Numeric values  | `42`, `3.14`                      |
-| Boolean      | True or false   | `true`, `false`                   |
-| String Array | List of strings | `["admin", "editor"]`             |
+| Type         | Description             | Example values                    |
+| ------------ | ----------------------- | --------------------------------- |
+| String       | Text values             | `"user@example.com"`, `"premium"` |
+| Number       | Numeric values          | `42`, `3.14`                      |
+| Boolean      | True or false           | `true`, `false`                   |
+| String Array | List of strings         | `["admin", "editor"]`             |
+| Timestamp    | Unix epoch milliseconds | `Date.now()`, `1719792000000`     |
+
+> **💡 Note:** Timestamp values:
+> Pass Timestamp attributes in milliseconds, for example `Date.now()` or a
+> stored timestamp.<br />When using `Date.now()`, dedupe your `identify()` function as in this
+> [example](/docs/flags/vercel-flags/dashboard/entities#release-at-a-certain-time).
 
 ## Entity evaluation behavior
 
@@ -162,6 +168,20 @@ const result = await client.evaluate<boolean>(
 ## Common use cases
 
 Add extra attributes in `identify` when targeting rules need them. Create matching entities and attributes in the dashboard first.
+
+### Release at a certain time
+
+Pass the current time as `system.time` so rules can compare against a Timestamp attribute. Keep `Date.now()` inside `dedupe` so every flag in the request uses the same time.
+
+```ts filename="flags.ts"
+const identify = dedupe(async () => {
+  return {
+    system: {
+      time: Date.now(),
+    },
+  };
+});
+```
 
 ### Enable features for a specific branch
 

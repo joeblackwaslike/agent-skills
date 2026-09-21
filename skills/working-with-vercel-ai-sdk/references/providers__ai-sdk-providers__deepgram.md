@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/deepgram.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "3be359cf36635b7be828b1d83a33d3b992969e1b961dea7f1e256fe7d883ca64"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "ba15afd68b3bc968df03c19987280f4b5dd96abd54429bced35e070f1c128566"
 ---
 
 # Deepgram Provider
@@ -323,6 +323,7 @@ The following provider options are available:
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
 - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
+- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

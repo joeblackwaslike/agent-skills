@@ -16,8 +16,8 @@ related:
 summary: Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "f592a8a3bd7772ab1f4b7a62e763d91bf4d1736a38ef998ea2a12f2a82abc953"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "9dba009cf41bb0377e4019643da87d47f410921e7842fdb701d1b3350a573c98"
 ---
 
 # Deploying to Vercel
@@ -41,9 +41,9 @@ Create preview and production deployments from Git, Vercel CLI, or the REST API.
 - [Introducing the new Vercel Agent](https://vercel.com/blog/vercel-agent?from=related&source_path=%2Fdocs%2Fdeployments&source_site=vercel-docs&relationship=related)
 - [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel?from=related&source_path=%2Fdocs%2Fdeployments&source_site=vercel-docs&relationship=related) — Learn how to deploy based on tags/releases on Vercel.
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related&source_path=%2Fdocs%2Fdeployments&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
+- [Projects overview](https://vercel.com/docs/projects?from=related&source_path=%2Fdocs%2Fdeployments&source_site=vercel-docs&relationship=related) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fdeployments&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fdeployments&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fdeployments&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 
 Full cross-link map for this page: [/docs/deployments.graph.md](/docs/deployments.graph.md?from=related&source_path=%2Fdocs%2Fdeployments&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

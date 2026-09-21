@@ -3,7 +3,7 @@ title: Deploying Git Repositories with Vercel
 product: vercel
 url: /docs/git
 canonical_url: "https://vercel.com/docs/git"
-last_updated: 2026-08-28
+last_updated: 2026-09-08
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Vercel automatically deploys supported Git repositories on every branch push and when changes merge into the production branch.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "dceaecb03bec79d05769c5049d80633f02d8bc7034445e3b1c0b3e4b3974fea0"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "ab2f4334557897cbde52caefea757539a39dd335fd1c2df2575ea83e5c12650b"
 ---
 
 # Deploying Git Repositories with Vercel
@@ -93,7 +93,7 @@ Before disabling GitHub `deployment_status` events, check whether any GitHub Act
 - [Bitbucket Standard](https://www.atlassian.com/software/bitbucket/pricing)
 - [Bitbucket Premium](https://www.atlassian.com/software/bitbucket/pricing)
 
-* [Azure DevOps Pipelines](https://learn.microsoft.com/en-us/azure/devops/pipelines/get-started/what-is-azure-pipelines)
+* [Azure Pipelines](https://learn.microsoft.com/en-us/azure/devops/pipelines/get-started/what-is-azure-pipelines)
 
 ### Self-Hosted examples
 

@@ -12,8 +12,8 @@ related:
 summary: Learn how the Content Security Policy (CSP) offers defense against web vulnerabilities, its key features, and best practices.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cdn-security/security-headers.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "07ce09dabbe96eec125bc5834a122d91ce8affa37594775f6a503723bbea2327"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "aaf430d4ffe8cafb3bfbcdc572220d871c21e4dde9ec985d827e2e259c59ae37"
 ---
 
 # Content Security Policy
@@ -31,6 +31,8 @@ Content Security Policy is a browser feature designed to prevent cross-site scri
 - [Security](https://vercel.com/docs/vercel-blob/security?from=related&source_path=%2Fdocs%2Fcdn-security%2Fsecurity-headers&source_site=vercel-docs&relationship=related) — Learn how your Vercel Blob store is secured
 - [Understanding CSRF attacks](https://vercel.com/kb/guide/understanding-csrf-attacks?from=related&source_path=%2Fdocs%2Fcdn-security%2Fsecurity-headers&source_site=vercel-docs&relationship=related) — Understand the mechanics and risks of Cross-Site Request Forgery \\(CSRF\\) attacks, and discover crucial development prac
 - [Enhancing Security for Redirects and Rewrites](https://vercel.com/kb/guide/enhancing-security-for-redirects-and-rewrites?from=related&source_path=%2Fdocs%2Fcdn-security%2Fsecurity-headers&source_site=vercel-docs&relationship=related) — Learn how security measures in URI handling can prevent semantic attacks, where malicious hosts exploit redirects and re
+- [Avoiding duplicate-content SEO with vercel.app URLs and custom domains](https://vercel.com/kb/guide/avoiding-duplicate-content-with-vercel-app-urls?from=related&source_path=%2Fdocs%2Fcdn-security%2Fsecurity-headers&source_site=vercel-docs&relationship=related) — Discover why search engines may treat your vercel.app URL and custom domain as separate pages, and how to consolidate ra
+- [How to add per-request CSP nonces to CDN-cached HTML on Vercel](https://vercel.com/kb/guide/csp-nonces-with-cdn-cache?from=related&source_path=%2Fdocs%2Fcdn-security%2Fsecurity-headers&source_site=vercel-docs&relationship=related) — Use Routing Middleware and a self-fetch to add a fresh CSP nonce to cached HTML without rendering the page again on ever
 - [Vercel security overview](https://vercel.com/docs/security?from=related&source_path=%2Fdocs%2Fcdn-security%2Fsecurity-headers&source_site=vercel-docs&relationship=related) — Vercel provides built-in and customizable features to ensure that your site is secure.
 - [Encryption and TLS](https://vercel.com/docs/cdn-security/encryption?from=related&source_path=%2Fdocs%2Fcdn-security%2Fsecurity-headers&source_site=vercel-docs&relationship=related) — Learn how Vercel encrypts data in transit and at rest.
 - [WAF Examples](https://vercel.com/docs/vercel-firewall/vercel-waf/examples?from=related&source_path=%2Fdocs%2Fcdn-security%2Fsecurity-headers&source_site=vercel-docs&relationship=related) — Learn how to use Vercel WAF to protect your site in specific situations.

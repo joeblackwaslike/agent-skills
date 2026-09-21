@@ -3,7 +3,7 @@ title: Flags
 product: vercel
 url: /docs/flags
 canonical_url: "https://vercel.com/docs/flags"
-last_updated: 2026-08-11
+last_updated: 2026-09-15
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: "Control feature visibility, run experiments, and ship with confidence using Vercel's feature flags platform."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "caf0f781b99eb0666759c9c2cbdfb44bba2836b695a4eaeeaae2ce1b77e0e1ca"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "127b782752a733bbba0dfcc279ceb5f7993dd58496cc24cbd228cf40b99647f6"
 ---
 
 # Flags
@@ -55,7 +55,7 @@ Flags give you control over your application's behavior without redeploying:
 - Roll out features gradually to specific users, teams, or environments
 - Test in production safely before launching to everyone
 - Run A/B tests to measure impact on conversion and performance
-- Override flags locally with the Flags Explorer — no code changes needed
+- Override flags locally with the Flags Explorer, with no code changes needed
 - Ship and deploy independently from releasing features
 
 ## Choose your provider
@@ -72,7 +72,7 @@ Connect your preferred feature flag or experimentation provider. Integrate with 
 
 The **Flags** section in your Vercel Dashboard shows all your flags in one place, regardless of which provider you use. You can filter, search, and see the status of every flag across your project.
 
-This unified view lists all your flags in one place. Vercel Flags can be edited directly in the Vercel Dashboard. Marketplace flags link straight to their provider's dashboard—and since you're already signed in through Vercel, you can jump in and make changes immediately.
+This unified view lists all your flags in one place. Vercel Flags can be edited directly in the Vercel Dashboard. Marketplace flags link straight to their provider's dashboard. Since you're already signed in through Vercel, you can jump in and make changes immediately.
 
 ## Developer tools
 

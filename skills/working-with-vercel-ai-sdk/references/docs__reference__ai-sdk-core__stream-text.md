@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/stream-text.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "faecaaef7b95e15d6149794b07cf3546c329d82edf5043db7a0eaa43fd3b65e7"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "c8b7a73ffe0d6c5a2745ad01f33ded08bc6c59dab68e8da4c75d620c85a6769c"
 ---
 
 # `streamText()`
@@ -4317,6 +4317,7 @@ Limits a generation step to the listed tool names. `undefined` means no tool res
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+- [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
 - [uploadFile](/docs/reference/ai-sdk-core/upload-file)
 - [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
 - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
@@ -4332,6 +4333,7 @@ Limits a generation step to the listed tool names. `undefined` means no tool res
 - [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
 - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [toolSearch](/docs/reference/ai-sdk-core/tool-search)
 - [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
 - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)

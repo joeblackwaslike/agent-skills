@@ -17,13 +17,13 @@ related:
 summary: Deploy Dramatiq workers on Vercel. Learn how Dramatiq actors use Vercel Queues and Vercel Functions to process background tasks.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/dramatiq.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "ad054606cb21a546710fb927498d2e03fa97af1449b32e4a68660d239f305362"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "1d55979b290dae1b733a85132d9c78b6249d349d8848811e2e58f67e3af341be"
 ---
 
 # Deploy Dramatiq workers on Vercel
 
-> **🔒 Permissions Required**: Vercel Queues
+> **🔒 Permissions Required**: Vercel Queues (Beta)
 
 [Dramatiq](https://dramatiq.io/) is a distributed task processing library for
 Python. You declare functions as actors, send them messages, and workers run
@@ -35,8 +35,8 @@ them in the background.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Run background tasks with Celery on Vercel](https://vercel.com/changelog/run-background-tasks-with-celery-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fdramatiq&source_site=vercel-docs&relationship=related)
 - [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fdramatiq&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
+- [Run background tasks with Celery on Vercel](https://vercel.com/changelog/run-background-tasks-with-celery-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fdramatiq&source_site=vercel-docs&relationship=related)
 - [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fdramatiq&source_site=vercel-docs&relationship=related) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
 - [Quickstart](https://vercel.com/docs/queues/quickstart?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fdramatiq&source_site=vercel-docs&relationship=related) — Set up Vercel Queues with the SDK.
 - [Deploy a Django app on Vercel](https://vercel.com/docs/frameworks/full-stack/django?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fdramatiq&source_site=vercel-docs&relationship=related) — Deploy a Django app on Vercel. Learn how the Python runtime, WSGI, ASGI, static assets, and Vercel Functions work togeth

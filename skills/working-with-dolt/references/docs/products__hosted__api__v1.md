@@ -2,8 +2,8 @@
 title: "Hosted API v1"
 description: The Hosted Dolt v1 API — an explicit, versioned, OpenAPI-defined contract for deployments.
 source: "https://www.dolthub.com/docs/products/hosted/api/v1.md"
-fetched_at: "2026-09-14T09:39:37.291Z"
-sha256: "fac815c9a6caf5ea6b6e152ffb8a563c4599b45ce4237ffa900ae6d3b9435f20"
+fetched_at: "2026-09-21T09:41:04.785Z"
+sha256: "5e70e89fa8c52daa31e99f7ab5ac5c3986ec852e3f23df414b7844cbd43580b7"
 ---
 
 # Hosted API v1
@@ -56,6 +56,7 @@ See [Authentication](/products/hosted/api/v1/authentication) for how to create a
 | **PATCH** | `/api/v1/deployments/{owner}/{deployment}/config` | [Change some of a deployment's configuration overrides](/products/hosted/api/v1/deployment#patchDeploymentConfig) |
 | **GET** | `/api/v1/deployments/{owner}/{deployment}/logs` | [Read a deployment's logs](/products/hosted/api/v1/deployment#getDeploymentLogs) |
 | **PATCH** | `/api/v1/deployments/{owner}/{deployment}/expose` | [Expose or stop exposing the remotesapi or MCP endpoint](/products/hosted/api/v1/deployment#exposeDeploymentService) |
+| **GET** | `/api/v1/deployments/{owner}/{deployment}/service-windows` | [List a deployment's service windows](/products/hosted/api/v1/deployment#listDeploymentServiceWindows) |
 | **GET** | `/api/v1/deployments/{owner}/{deployment}/metrics` | [List a deployment's metrics](/products/hosted/api/v1/deployment#listDeploymentMetrics) |
 | **GET** | `/api/v1/deployments/{owner}/{deployment}/metrics/{metric}` | [Read one of a deployment's metrics](/products/hosted/api/v1/deployment#getDeploymentMetric) |
 | **GET** | `/api/v1/deployments/{owner}/{deployment}/backups` | [List a deployment's backups](/products/hosted/api/v1/deployment#listDeploymentBackups) |
@@ -91,7 +92,7 @@ List endpoints put the pagination cursor in `meta`:
 
 When `meta.next_page_token` is present, pass it back as the `page_token` query parameter to fetch the next page. On the last page `meta` is omitted entirely, so checking whether the token is present is all a client needs — it is never returned present but empty. Page size is fixed and not caller-controlled, so a full page is not itself a sign that another one follows.
 
-Two kinds of list depart from that. A pull request's [comments](/products/hosted/api/v1/pull-request#listDeploymentPullComments) and its [activity log](/products/hosted/api/v1/pull-request#listDeploymentPullLogs), and a deployment's [metrics catalogue](/products/hosted/api/v1/deployment#listDeploymentMetrics), are small enough by nature to be returned whole, so they take no `page_token` at all. And [log retrieval](/products/hosted/api/v1/deployment#getDeploymentLogs) walks a window of history rather than a finite list: it is the only endpoint that pages in both directions, and the only one whose page size you set (`lines`). There `meta.next_page_token` reads further back, `meta.prev_page_token` reads toward the present, both can be present at once, and either can come back on a page with no lines — so stop when a page comes back empty, not when a token is missing.
+Two kinds of list depart from that. A pull request's [comments](/products/hosted/api/v1/pull-request#listDeploymentPullComments) and its [activity log](/products/hosted/api/v1/pull-request#listDeploymentPullLogs), and a deployment's [metrics catalogue](/products/hosted/api/v1/deployment#listDeploymentMetrics) and [service windows](/products/hosted/api/v1/deployment#listDeploymentServiceWindows), are small enough by nature to be returned whole, so they take no `page_token` at all. And [log retrieval](/products/hosted/api/v1/deployment#getDeploymentLogs) walks a window of history rather than a finite list: it is the only endpoint that pages in both directions, and the only one whose page size you set (`lines`). There `meta.next_page_token` reads further back, `meta.prev_page_token` reads toward the present, both can be present at once, and either can come back on a page with no lines — so stop when a page comes back empty, not when a token is missing.
 
 Each endpoint's parameters say which of the three it is.
 

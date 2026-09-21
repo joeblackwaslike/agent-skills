@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-load-setting-error.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "89ad3602f6f32546f562eebd665e2c52c329e62651a436ea35b667dc9bea617f"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "de61498d98628242a5cd03339470873fc39948754ae466ede60a8c6ccea862af"
 ---
 
 # AI_LoadSettingError
@@ -30,6 +30,7 @@ if (LoadSettingError.isInstance(error)) {
 - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
 - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
 - [AI_EmptyResponseBodyError](/docs/reference/ai-sdk-errors/ai-empty-response-body-error)
+- [AI_EvaluationUnsupportedQuestionTypeError](/docs/reference/ai-sdk-errors/ai-evaluation-unsupported-question-type-error)
 - [AI_InvalidArgumentError](/docs/reference/ai-sdk-errors/ai-invalid-argument-error)
 - [AI_InvalidDataContentError](/docs/reference/ai-sdk-errors/ai-invalid-data-content-error)
 - [AI_InvalidMessageRoleError](/docs/reference/ai-sdk-errors/ai-invalid-message-role-error)

@@ -3,27 +3,26 @@ title: Projects overview
 product: vercel
 url: /docs/projects
 canonical_url: "https://vercel.com/docs/projects"
-last_updated: 2026-08-19
+last_updated: 2026-09-17
 type: conceptual
 prerequisites:
   []
 related:
-  - /docs/git
+  - /docs/cli
+  - /docs/rest-api
+  - /docs/drop
   - /docs/deployments
-  - /docs/domains/working-with-domains/add-a-domain
-  - /docs/monorepos
-  - /docs/project-configuration/project-settings
-summary: A project is the application that you have deployed to Vercel.
+  - /docs/frameworks/full-stack/nextjs
+summary: A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/projects.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "cd626c121cdfa84aff7591495df4ebf11320267c48f544b83b4223917215b015"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "b1ef0dbde566ed1c33f6d86265468cee04f97109e6b4c96e1876b25fb1dba776"
 ---
 
 # Projects overview
 
-Projects on Vercel represent applications that you have deployed to the platform from a [single Git repository](/docs/git). Each project can have multiple deployments: a single production deployment and many pre-production deployments. A project groups [deployments](/docs/deployments "Deployments")
-and [custom domains](/docs/domains/working-with-domains/add-a-domain "Custom Domains").
+Everything you deploy on Vercel lives in a project: a frontend, backend APIs, background workloads, containers, or multiple services. You or your agent can deploy a project from Git, [Vercel CLI](/docs/cli), the [Vercel REST API](/docs/rest-api), or [Vercel Drop](/docs/drop).
 
 
 <!-- docsgraph:related -->
@@ -38,26 +37,94 @@ and [custom domains](/docs/domains/working-with-domains/add-a-domain "Custom Dom
 - [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox?from=related&source_path=%2Fdocs%2Fprojects&source_site=vercel-docs&relationship=related) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
 - [How to fix “unable to find your GitHub repository” on Vercel](https://vercel.com/kb/guide/unable-to-find-github-repository?from=related&source_path=%2Fdocs%2Fprojects&source_site=vercel-docs&relationship=related) — Learn how to check GitHub permissions to ensure your Vercel account has sufficient access to import your repository.
 - [Projects](https://v0.app/docs/projects?from=related&source_path=%2Fdocs%2Fprojects&source_site=vercel-docs&relationship=related) — Projects in v0 are one app that is shared between many chats.
-- [Multi-Project Platforms Concepts](https://vercel.com/docs/platforms/multi-project-platforms/concepts?from=related&source_path=%2Fdocs%2Fprojects&source_site=vercel-docs&relationship=related) — Understand projects, deployments, domains, and architecture for multi-project platforms on Vercel.
+- [Deployments](https://v0.app/docs/deployments?from=related&source_path=%2Fdocs%2Fprojects&source_site=vercel-docs&relationship=related) — Preview and publish v0 projects on Vercel, then manage domains, visibility, and production updates.
 - [Multi-Project Platforms Reference](https://vercel.com/docs/platforms/multi-project-platforms/reference?from=related&source_path=%2Fdocs%2Fprojects&source_site=vercel-docs&relationship=related) — API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
-- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related&source_path=%2Fdocs%2Fprojects&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
+- [Multi-Project Platforms Concepts](https://vercel.com/docs/platforms/multi-project-platforms/concepts?from=related&source_path=%2Fdocs%2Fprojects&source_site=vercel-docs&relationship=related) — Understand projects, deployments, domains, and architecture for multi-project platforms on Vercel.
 - [Multi-Project Platforms Quickstart](https://vercel.com/docs/platforms/multi-project-platforms/quickstart?from=related&source_path=%2Fdocs%2Fprojects&source_site=vercel-docs&relationship=related) — Programmatically host code for user-generated or AI-generated applications on Vercel.
-- [Multi-Project Platforms](https://vercel.com/docs/platforms/multi-project-platforms?from=related&source_path=%2Fdocs%2Fprojects&source_site=vercel-docs&relationship=related) — Give each customer its own Vercel project and deployment, created and managed programmatically with the Vercel SDK.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fprojects&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 
 Full cross-link map for this page: [/docs/projects.graph.md](/docs/projects.graph.md?from=related&source_path=%2Fdocs%2Fprojects&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-While each project is only connected to a single, imported Git repository, you can have multiple projects connected to a single Git repository that includes many directories, which is particularly useful for [monorepo](/docs/monorepos) setups.
+A project groups [deployments](/docs/deployments), domains, environment variables, build and runtime settings, integrations, security controls, and observability. Each project belongs to a team and can have one production deployment alongside many pre-production or preview deployments.
 
-You can view all projects in your team's [Vercel dashboard](/dashboard), and selecting a project opens that project's dashboard, where you can:
+## What can you deploy
 
-- View an overview of the [production deployment](/docs/deployments) and any active pre-production deployments.
-- Configure [project settings](/docs/project-configuration/project-settings) such as setting [custom domains](/docs/domains), [environment variables](/docs/environment-variables), [deployment protection](/docs/deployment-protection), and more.
-- View details about each [deployment](/docs/deployments) for that project, such as the status, the commit that triggered the deployment, the deployment URL, and more.
-- Manage [observability](/docs/observability) for that project, including [Web Analytics](/docs/analytics), [Speed Insights](/docs/speed-insights), and [Logs](/docs/logs).
-- Managing the project's [firewall](/docs/vercel-firewall).
+### Frontend and full-stack applications
 
-Each project can also have its own [avatar](/docs/project-configuration/general-settings#project-avatar), which appears in the project list, team overview, Find, the scope switcher, and team deployments, as well as in Slack posts and GitHub pull request comments from the Vercel bot.
+Deploy static sites, server-rendered applications, and full-stack applications built with [Next.js](/docs/frameworks/full-stack/nextjs), React, Vue, Svelte, Nuxt, Astro, and other supported [frameworks](/docs/frameworks). Vercel detects the framework and configures the build output, routing, caching, and runtime for the project.
+
+Use [Incremental Static Regeneration](/docs/incremental-static-regeneration), streaming, [Partial Prerendering](/docs/partial-prerendering), [Image Optimization](/docs/image-optimization), and the [CDN](/docs/cdn) to serve content globally.
+
+### Backend APIs and services
+
+Use [Vercel Functions](/docs/functions) to deploy API routes, webhooks, streamed responses, and request handlers. Vercel Functions support multiple runtimes, including Node.js, [Python](/docs/functions/runtimes/python), [Go](/docs/functions/runtimes/go), Bun, Rust, Ruby, WebAssembly, and the Edge Runtime. You can also deploy backend frameworks such as [FastAPI](/docs/frameworks/backend/fastapi), Flask, Django, Express, Fastify, Hono, NestJS, and Koa.
+
+[Fluid Compute](/docs/fluid-compute) adds optimized concurrency, dynamic scaling, background processing, and failover to supported runtimes. Use it for workloads that spend time waiting on database queries, API calls, and AI requests.
+
+Vercel Functions can serve [WebSocket connections](/docs/functions/websockets) (currently in [Beta](/docs/release-phases#beta)) for realtime applications, chat, collaboration, and AI streaming. Connections remain on the function instance that accepted them, so applications should handle reconnects and store shared state in a durable data store.
+
+### Containerized applications and multi-service projects
+
+Use [Container Images](/docs/functions/container-images) (currently in [Beta](/docs/release-phases#beta)) to run Open Container Initiative (OCI)-compatible images built from a `Dockerfile` or `Containerfile`. [Vercel Container Registry](/docs/container-registry) stores images that you can run with Vercel Functions or use as custom [Sandbox](/docs/sandbox) images.
+
+With [Vercel Services](/docs/services), your project can contain multiple frontends and backends. Route public traffic to each service and use service bindings for private service-to-service communication. This lets a project represent a larger application without combining every component into one build.
+
+### Scheduled, queued, and durable workloads
+
+In a project, you can run work outside a user request with:
+
+- [Cron Jobs](/docs/cron-jobs) for scheduled function invocations.
+- [Vercel Queues](/docs/queues) for durable messages, delayed delivery, retries, and push or poll consumers.
+- [Vercel Workflows](/docs/workflows) for multi-step code that can retry steps, sleep, wait for external events, and resume across crashes and deployments.
+
+Workflows support JavaScript, TypeScript, and Python through the [Workflow SDK](https://workflow-sdk.dev/), and provide managed persistence and dashboard observability.
+
+### AI applications and agent workloads
+
+Combine a project with the [AI SDK](/docs/ai-sdk), [AI Gateway](/docs/ai-gateway), and [Chat SDK](https://chat-sdk.dev/) to build AI applications, chat experiences, and model-powered APIs. AI Gateway provides a unified API for model providers, routing, fallbacks, usage tracking, and spend controls.
+
+Use [Vercel Sandbox](/docs/sandbox) to run untrusted or agent-generated code in isolated Linux microVMs. Sandboxes support command execution, files, processes, exposed ports, snapshots, persistent environments, remote storage, and custom OCI images through the Vercel Container Registry.
+
+[Vercel Agent](/docs/agent), [eve](/docs/eve), [Vercel MCP](/docs/mcp), and [Vercel Connect](/docs/connect) provide additional building blocks for agents that investigate applications, call tools, access external services, and preserve progress across long-running tasks.
+
+### Platforms and independently deployed applications
+
+With [Vercel for Platforms](/docs/platforms), you can serve many tenants from one project, or give each tenant or generated application an isolated project and deployment. You can create projects programmatically and manage custom domains, subdomains and preview URLs.
+
+[Microfrontends](/docs/microfrontends) lets you split a large application into projects that deploy independently but render as one application. You can keep them in a monorepo or in separate repositories. Vercel routes requests between them.
+
+## From project to deployment
+
+When you connect a project to Git, pushes and pull requests can create deployments automatically. A project can also be deployed without a Git connection using [Vercel CLI](/docs/cli), [Vercel Drop](/docs/drop), the [Vercel REST API](/docs/rest-api), or [Deploy Hooks](/docs/deploy-hooks).
+
+Each deployment receives a URL and belongs to an [environment](/docs/deployments/environments), such as production, preview, or a custom environment. You can inspect deployments, share previews, promote a deployment to production, use [Rolling Releases](/docs/rolling-releases), or restore a previous version with [Instant Rollback](/docs/instant-rollback).
+
+When using a monorepo, you can connect multiple projects to one repository and assign each project its own root directory and build settings. Use [Turborepo](/docs/monorepos/turborepo) and [Remote Caching](/docs/monorepos/remote-caching) to coordinate builds across the repository.
+
+## What a project contains
+
+### Build and runtime configuration
+
+Project settings control the framework, root directory, install command, build command, output directory, Node.js version, [function runtime and region](/docs/functions/configuring-functions/region), and deployment behavior. You can manage these settings in the dashboard or define them in [`vercel.json`](/docs/project-configuration/vercel-json), [`vercel.ts`](/docs/project-configuration/vercel-ts), or [`vercel.toml`](/docs/project-configuration/vercel-toml).
+
+### Environment variables, data, and integrations
+
+Use [Environment Variables](/docs/environment-variables) for configuration and secrets across development, preview, production, and custom environments. Connect a project to [Vercel Blob](/docs/vercel-blob), [Global Config](/docs/global-config), or databases and other services through the [Vercel Marketplace](/docs/marketplace-storage). Marketplace resources can provide connection details to the project as environment variables.
+
+### Domains, delivery, and security
+
+Assign [custom domains](/docs/domains) and configure DNS, SSL, redirects, rewrites, headers, and caching for a project. Protect deployments with [Deployment Protection](/docs/deployment-protection), and protect application traffic with the [Vercel Firewall](/docs/vercel-firewall), Web Application Firewall (WAF) rules, rate limiting, bot management, and DDoS mitigation.
+
+### Observability and product operations
+
+Project dashboards include [runtime logs](/docs/logs), [Observability](/docs/observability), [Web Analytics](/docs/analytics), [Speed Insights](/docs/speed-insights), deployment diagnostics, and usage data. You can forward logs, traces, analytics, and other events to external systems with [Drains](/docs/drains).
+
+## Managing projects
+
+You can view all projects in your team's [Vercel dashboard](/dashboard). Selecting a project opens its project dashboard, where you can inspect deployments and configure its settings. Projects also support avatars, team permissions, project-level roles, and integrations.
+
+For instructions on creating, pausing, resuming, and deleting projects, see [Managing projects](/docs/projects/managing-projects). For the complete list of project settings, see [Project Settings](/docs/project-configuration/project-settings).
 
 ## Project limits
 

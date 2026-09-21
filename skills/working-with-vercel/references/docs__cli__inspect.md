@@ -12,8 +12,8 @@ related:
 summary: Learn how to retrieve information about your Vercel deployments using the vercel inspect CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/inspect.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "b5bfc40873a1c4bf1109e0a711cc95b07134dc64c0f18e2017c4112824d26e85"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "e8a1623f3d42500bba01b0880877c7c7406760f2c1870ab7c9e748e4da109ead"
 ---
 
 # vercel inspect
@@ -28,8 +28,8 @@ The `vercel inspect` command is used to retrieve information about a deployment 
 
 - [Improvements to command line logs](https://vercel.com/changelog/improvements-to-command-line-logs?from=related&source_path=%2Fdocs%2Fcli%2Finspect&source_site=vercel-docs&relationship=related)
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Finspect&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Finspect&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel logs](https://vercel.com/docs/cli/logs?from=related&source_path=%2Fdocs%2Fcli%2Finspect&source_site=vercel-docs&relationship=related) — View and filter request logs for your Vercel project, or stream live runtime logs from a deployment.
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Finspect&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel httpstat](https://vercel.com/docs/cli/httpstat?from=related&source_path=%2Fdocs%2Fcli%2Finspect&source_site=vercel-docs&relationship=related) — Learn how to visualize HTTP request timing statistics for your Vercel deployments using the vercel httpstat CLI command.
 - [vercel bisect](https://vercel.com/docs/cli/bisect?from=related&source_path=%2Fdocs%2Fcli%2Finspect&source_site=vercel-docs&relationship=related) — Learn how to perform a binary search on your deployments to help surface issues using the vercel bisect CLI command.
 

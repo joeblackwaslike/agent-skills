@@ -14,8 +14,8 @@ related:
 summary: Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/api.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "463b05ddd17b9457146ea86cb7ed068fd662a6cbd02a2df92d3cbdd92612dbc6"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "3887ed2ab2b00e1fccfc87b4bc353c935ca403d0ff3aa9cf3829673b085584fe"
 ---
 
 # vercel api
@@ -32,9 +32,9 @@ The `vercel api` command lets you make authenticated HTTP requests to the Vercel
 
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fapi&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel connect](https://vercel.com/docs/cli/connect?from=related&source_path=%2Fdocs%2Fcli%2Fapi&source_site=vercel-docs&relationship=related) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fapi&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel webhooks](https://vercel.com/docs/cli/webhooks?from=related&source_path=%2Fdocs%2Fcli%2Fapi&source_site=vercel-docs&relationship=related) — Learn how to manage webhooks for your Vercel account using the vercel webhooks CLI command.
 - [vercel tokens](https://vercel.com/docs/cli/tokens?from=related&source_path=%2Fdocs%2Fcli%2Fapi&source_site=vercel-docs&relationship=related) — Manage your personal Vercel authentication tokens from the CLI: list, create, and remove access tokens for use with the
+- [vercel comments](https://vercel.com/docs/cli/comments?from=related&source_path=%2Fdocs%2Fcli%2Fapi&source_site=vercel-docs&relationship=related) — Review and manage Vercel Toolbar comment threads from the terminal with the vercel comments CLI command.
 
 Full cross-link map for this page: [/docs/cli/api.graph.md](/docs/cli/api.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fapi&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

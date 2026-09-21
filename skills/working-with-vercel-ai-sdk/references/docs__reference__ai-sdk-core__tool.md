@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/tool.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "886135d53d3c201bfcdc2e9347a7dd2ec7e69e9501b2696a4d662aef2574faec"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "1136a24b6fe5a342cbe9713df5ce6ba9ae14e229c4da27535d326107e50877be"
 ---
 
 # `tool()`
@@ -65,6 +65,13 @@ export const weatherTool = tool({
               type: 'string | ((options: { context: CONTEXT; experimental_sandbox?: Experimental_SandboxSession }) => string)',
               description:
                 'Information about the purpose of the tool including details on how and when it can be used by the model. Provide a string for a fixed description, or a function to derive the description from the tool-specific context and optional experimental sandbox before each model call.',
+            },
+            {
+              name: 'deferLoading',
+              isOptional: true,
+              type: 'boolean',
+              description:
+                "Keep this tool out of the model context until toolSearch discovers it. Supports direct calling or code mode with toolDiscovery: 'conversation'. Discovered tools become available on the next model step. Defaults to false.",
             },
             {
               name: 'title',
@@ -262,6 +269,7 @@ The tool that was passed in.
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+- [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
 - [uploadFile](/docs/reference/ai-sdk-core/upload-file)
 - [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
 - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
@@ -277,6 +285,7 @@ The tool that was passed in.
 - [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
 - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [toolSearch](/docs/reference/ai-sdk-core/tool-search)
 - [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
 - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)

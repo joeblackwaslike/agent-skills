@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/validate-ui-messages.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "a73c114e5daf9ce24e4d4c83c7b6be8ebd19265000d3a835d76432c547bcb283"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "1a0efdf6e898ef4c4c23112248624d0ff2641eb6f07debc02ca4b03298550a0d"
 ---
 
 # `validateUIMessages`
@@ -101,6 +101,18 @@ const validatedMessages = await validateUIMessages({
 });
 ```
 
+## Deprecated `rawInput` field
+
+For backward compatibility, validation still accepts `rawInput` on tool parts
+in the `output-error` state. When a defined `rawInput` value is found,
+`validateUIMessages` emits an AI SDK deprecation warning through
+`AI_SDK_LOG_WARNINGS`.
+
+Migrate persisted messages to store tool arguments in `input` and remove
+`rawInput`. For backward compatibility, conversion uses `rawInput` as a
+fallback when `input` is `null` or `undefined`. `rawInput` will be removed in
+the next major version.
+
 
 ## Navigation
 
@@ -115,6 +127,7 @@ const validatedMessages = await validateUIMessages({
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+- [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
 - [uploadFile](/docs/reference/ai-sdk-core/upload-file)
 - [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
 - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
@@ -130,6 +143,7 @@ const validatedMessages = await validateUIMessages({
 - [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
 - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [toolSearch](/docs/reference/ai-sdk-core/tool-search)
 - [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
 - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)

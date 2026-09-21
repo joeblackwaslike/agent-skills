@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-stream-provider-error.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "7a8294ddeedf0a95eea0c7ad27fb9e1b370c74e1cda37f7eaef4c48eed055a61"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "cb44e7e6df5d3ff47700bf532f6a5f9a149c7ae9753bad477532a87b7ba49d35"
 ---
 
 # AI_StreamProviderError
@@ -58,6 +58,7 @@ preserved unchanged.
 - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
 - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
 - [AI_EmptyResponseBodyError](/docs/reference/ai-sdk-errors/ai-empty-response-body-error)
+- [AI_EvaluationUnsupportedQuestionTypeError](/docs/reference/ai-sdk-errors/ai-evaluation-unsupported-question-type-error)
 - [AI_InvalidArgumentError](/docs/reference/ai-sdk-errors/ai-invalid-argument-error)
 - [AI_InvalidDataContentError](/docs/reference/ai-sdk-errors/ai-invalid-data-content-error)
 - [AI_InvalidMessageRoleError](/docs/reference/ai-sdk-errors/ai-invalid-message-role-error)

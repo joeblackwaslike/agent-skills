@@ -3,7 +3,7 @@ title: AI Gateway Model Filtering
 product: vercel
 url: /docs/ai-gateway/models-and-providers/model-filtering
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/model-filtering"
-last_updated: 2026-09-08
+last_updated: 2026-09-17
 type: reference
 prerequisites:
   - /docs/ai-gateway/models-and-providers
@@ -16,8 +16,8 @@ related:
 summary: Restrict AI Gateway routing to models that have specific capabilities using the has option.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/model-filtering.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "5f1d2fcb64e1636dd9802c9d241a4f91e2cc1455d4a585e2baec89afc2dcf540"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "7d9360e1eec541b0d9f8f43de2ea1254a834ebe1b2b761f7c44fadd1fb7fdc38"
 ---
 
 # AI Gateway Model Filtering

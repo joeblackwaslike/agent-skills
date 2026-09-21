@@ -13,13 +13,13 @@ related:
 summary: The experimentalServices configuration model for deploying multiple backends and frontends in a single Vercel project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services/experimental.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "cd34a3d28a4b61e28ca123c5435d018eb853051a742303fce96d86aa6593323c"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "ae363185aecc26c002e420167e27f0f44a575e80c83e3aa863affbecab033961"
 ---
 
 # Experimental Services
 
-> **🔒 Permissions Required**: Services
+> **🔒 Permissions Required**: Services (Beta)
 
 > **💡 Note:** This page documents the earlier `experimentalServices` configuration model. New
 > projects should use the [`services`](/docs/services) model. The
@@ -41,6 +41,7 @@ Services let you deploy multiple backends and frontends within a single Vercel p
 - [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel?from=related&source_path=%2Fdocs%2Fservices%2Fexperimental&source_site=vercel-docs&relationship=related) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
 - [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute?from=related&source_path=%2Fdocs%2Fservices%2Fexperimental&source_site=vercel-docs&relationship=related) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
 - [Service configuration reference](https://vercel.com/docs/services/config-reference?from=related&source_path=%2Fdocs%2Fservices%2Fexperimental&source_site=vercel-docs&relationship=related) — Options available for service configuration.
+- [Projects overview](https://vercel.com/docs/projects?from=related&source_path=%2Fdocs%2Fservices%2Fexperimental&source_site=vercel-docs&relationship=related) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 - [Express on Vercel](https://vercel.com/docs/frameworks/backend/express?from=related&source_path=%2Fdocs%2Fservices%2Fexperimental&source_site=vercel-docs&relationship=related) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
 - [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart?from=related&source_path=%2Fdocs%2Fservices%2Fexperimental&source_site=vercel-docs&relationship=related) — Learn how to get started with microfrontends on Vercel.
 

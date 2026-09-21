@@ -15,13 +15,13 @@ related:
 summary: Let AI automatically install Web Analytics and Speed Insights in your app
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/installation.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "56017ee63505c7005a1413b7df4023a8520bee5460bfdc61111149c1d58e0280"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "c19fa9a359eb9a6e2aaae67181901450ed3e60a5947ef17971c9a6235195b9c3"
 ---
 
 # Installation
 
-> **🔒 Permissions Required**: Vercel Agent Installation
+> **🔒 Permissions Required**: Vercel Agent Installation (Public Beta)
 
 Vercel Agent Installation helps add [Web Analytics](/docs/analytics) and [Speed Insights](/docs/speed-insights) to your project with AI. After you start the installation, Vercel Agent automatically:
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/openai-compatible-providers.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "6bd5c1e6f6593a87895a8a5e08a9b29d25e64a3580fb7bbd2792e59fbb4058d2"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "6d21e35284a0a63b1d54520bb152a55571a0d0d838b600477c90336c7df944e4"
 ---
 
 # OpenAI Compatible Providers
@@ -14,6 +14,7 @@ We provide detailed documentation for the following OpenAI compatible providers:
 
 - [LM Studio](/providers/openai-compatible-providers/lmstudio)
 - [NIM](/providers/openai-compatible-providers/nim)
+- [ModelRush](/providers/openai-compatible-providers/modelrush)
 - [Heroku](/providers/openai-compatible-providers/heroku)
 - [Clarifai](/providers/openai-compatible-providers/clarifai)
 - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)
@@ -704,6 +705,7 @@ This allows you to access provider-specific information while maintaining a cons
   - [Fal](/providers/ai-sdk-providers/fal)
   - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
   - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
+  - [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
   - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
   - [Deepgram](/providers/ai-sdk-providers/deepgram)
   - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
@@ -773,6 +775,7 @@ This allows you to access provider-specific information while maintaining a cons
   - [Writing a Custom Provider](/providers/openai-compatible-providers/custom-providers)
   - [LM Studio](/providers/openai-compatible-providers/lmstudio)
   - [NVIDIA NIM](/providers/openai-compatible-providers/nim)
+  - [ModelRush](/providers/openai-compatible-providers/modelrush)
   - [Clarifai](/providers/openai-compatible-providers/clarifai)
   - [Heroku](/providers/openai-compatible-providers/heroku)
   - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)

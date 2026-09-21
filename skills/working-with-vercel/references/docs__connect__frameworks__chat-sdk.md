@@ -14,11 +14,11 @@ related:
   - /docs/connect/concepts/installations
   - /docs/connect/concepts/tokens
   - /docs/connect/concepts/authentication
-summary: Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, GitHub, Linear, Notion, and Telegram.
+summary: Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub, Linear, Notion, and...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/frameworks/chat-sdk.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "af8899a208b6f47f34d76bd5200d583458789826b6707763c1a85e310cba1990"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "4ef7eed17333610e254beb5017f55e37216c6c372e219b07f25389c185148f8e"
 ---
 
 # Chat SDK
@@ -35,14 +35,13 @@ supported platform.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Chat SDK now supports Vercel Connect](https://vercel.com/changelog/chat-sdk-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fchat-sdk&source_site=vercel-docs&relationship=related)
+- [CLI](https://chat-sdk.dev/docs/create-chat-sdk?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fchat-sdk&source_site=vercel-docs&relationship=related) — Scaffold a Chat SDK bot app with a single command.
 - [Build your own Slackbot with Vercel Connect](https://vercel.com/kb/guide/build-a-slack-bot-with-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fchat-sdk&source_site=vercel-docs&relationship=related) — Learn how to build your very own Slackbot with Chat SDK and AI SDK. Vercel Connect supplies runtime Slack tokens and for
+- [Chat SDK now supports Vercel Connect](https://vercel.com/changelog/chat-sdk-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fchat-sdk&source_site=vercel-docs&relationship=related)
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fchat-sdk&source_site=vercel-docs&relationship=related)
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fchat-sdk&source_site=vercel-docs&relationship=related)
 - [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fchat-sdk&source_site=vercel-docs&relationship=related)
-- [CLI](https://chat-sdk.dev/docs/create-chat-sdk?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fchat-sdk&source_site=vercel-docs&relationship=related) — Scaffold a Chat SDK bot app with a single command.
-- [Vercel Connect: Secure access to external services for your agents](https://vercel.com/changelog/vercel-connect-secure-access-to-external-services-for-your-agents?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fchat-sdk&source_site=vercel-docs&relationship=related)
-- [How to build an AI agent for Slack with Chat SDK and AI SDK](https://vercel.com/kb/guide/how-to-build-an-ai-agent-for-slack-with-chat-sdk-and-ai-sdk?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fchat-sdk&source_site=vercel-docs&relationship=related) — Build a Slack AI agent using Chat SDK, AI SDK's ToolLoopAgent, and Vercel AI Gateway. Covers project setup, tool definit
+- [How to build a Slack bot that manages files in Vercel Blob](https://vercel.com/kb/guide/slack-bot-vercel-blob?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fchat-sdk&source_site=vercel-docs&relationship=related) — Build a Slack bot using Chat SDK, AI SDK, and Files SDK that can list, read, upload, and delete files in Vercel Blob thr
 
 Full cross-link map for this page: [/docs/connect/frameworks/chat-sdk.graph.md](/docs/connect/frameworks/chat-sdk.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fchat-sdk&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -54,15 +53,14 @@ The helpers configure outbound and inbound requests separately:
 - **Outbound provider API requests:** Each credential field is an async
   resolver. The adapter calls it when it needs a provider credential.
   `@vercel/connect` handles caching and refreshes short-lived tokens.
-- **Inbound provider webhooks:** Slack, Discord, GitHub, and Linear can use
+- **Inbound provider webhooks:** Slack, Discord, Microsoft Teams, GitHub, and Linear can use
   [Connect triggers](/docs/connect/concepts/triggers). Connect verifies the
-  provider's signature, forwards the request, and adds a Vercel OpenID Connect
+  provider's request, forwards it, and adds a Vercel OpenID Connect
   (OIDC) bearer token. The helper's `webhookVerifier` verifies that OIDC token
-  instead of the provider's native signature.
+  instead of performing the provider's native verification.
 
-The inbound verifier does not verify Slack, Discord, GitHub, or Linear
-credentials itself. Only use it for requests forwarded through a Connect
-trigger.
+The inbound verifier does not verify provider signatures or Microsoft's
+native JWT itself. Only use it for requests forwarded through a Connect trigger.
 
 ## Check platform capabilities
 
@@ -70,6 +68,7 @@ trigger.
 | -------- | ----------------------- | --------------------------- | ----------------------------------------------------- |
 | Slack    | `connectSlackAdapter`   | `botToken`                  | Connect trigger and Vercel OIDC                       |
 | Discord  | `connectDiscordAdapter` | `botToken`, `applicationId` | Connect trigger and Vercel OIDC                       |
+| Microsoft Teams | `connectTeamsAdapter` | `appId`, `token` | Connect trigger and Vercel OIDC |
 | GitHub   | `connectGitHubAdapter`  | `installationToken`         | Connect trigger and Vercel OIDC                       |
 | Linear   | `connectLinearAdapter`  | `accessToken`               | Connect trigger and Vercel OIDC                       |
 | Notion   | `connectNotionAdapter`  | `token`                     | Direct Notion webhook and `NOTION_VERIFICATION_TOKEN` |
@@ -82,7 +81,9 @@ end user.
 ## Create and attach a trigger-capable connector
 
 The following example connects a Slack app. Replace `slack` with `discord`,
-`github`, or `linear` for another trigger-capable platform.
+`github`, `linear`, or `microsoft-teams` for another trigger-capable platform.
+For Microsoft Teams, use a connector UID such as `microsoft-teams/acme-teams`
+and the webhook route `/api/webhooks/teams` for `bot.webhooks.teams`.
 
 1. Create the connector and enable triggers:
 
@@ -173,6 +174,43 @@ const discord = createDiscordAdapter({
 
 Do not set `DISCORD_BOT_TOKEN`, `DISCORD_APPLICATION_ID`, or
 `DISCORD_PUBLIC_KEY` for the Connect-backed fields and trigger route.
+
+### Microsoft Teams
+
+`connectTeamsAdapter` resolves the bot's `appId` during initialization and
+supplies a scope-aware `token` callback for Bot Framework and Microsoft Graph:
+
+```ts filename="app/chat.ts" framework=all
+import { createTeamsAdapter } from '@chat-adapter/teams';
+import { connectTeamsAdapter } from '@vercel/connect/chat';
+
+const teams = createTeamsAdapter({
+  ...connectTeamsAdapter('microsoft-teams/acme-teams'),
+});
+```
+
+```js filename="app/chat.js" framework=all
+import { createTeamsAdapter } from '@chat-adapter/teams';
+import { connectTeamsAdapter } from '@vercel/connect/chat';
+
+const teams = createTeamsAdapter({
+  ...connectTeamsAdapter('microsoft-teams/acme-teams'),
+});
+```
+
+Omit `TEAMS_APP_ID` and `TEAMS_APP_PASSWORD` when using the helper. Enable
+trigger forwarding to `/api/webhooks/teams`; the helper verifies forwarded
+requests with Vercel OIDC instead of Microsoft's native JWT.
+
+The token callback requests separate tokens for
+`https://api.botframework.com/.default` and
+`https://graph.microsoft.com/.default`. Graph reads still require the
+appropriate installation and consent permissions. Connect uses the bot's
+home tenant for managed tokens.
+
+Chat initializes the adapter automatically before handling webhooks. Call
+`await bot.initialize()` before using adapter methods directly, because the
+`appId` resolver runs during initialization.
 
 ### GitHub
 

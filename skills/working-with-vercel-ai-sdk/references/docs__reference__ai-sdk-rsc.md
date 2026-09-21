@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-rsc.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "fb4dd9f98b29056a45aca0c59d8bab70e2dc6c4facfa1f48b88a6f74f0115763"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "b523016be2a67623515ea65bdae75812e08fbfbff6104584eb34f81bd79ed692"
 ---
 
 # AI SDK RSC
@@ -81,6 +81,7 @@ sha256: "fb4dd9f98b29056a45aca0c59d8bab70e2dc6c4facfa1f48b88a6f74f0115763"
   - [transcribe](/docs/reference/ai-sdk-core/transcribe)
   - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
   - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+  - [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
   - [uploadFile](/docs/reference/ai-sdk-core/upload-file)
   - [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
   - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
@@ -96,6 +97,7 @@ sha256: "fb4dd9f98b29056a45aca0c59d8bab70e2dc6c4facfa1f48b88a6f74f0115763"
   - [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
   - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
   - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+  - [toolSearch](/docs/reference/ai-sdk-core/tool-search)
   - [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
   - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
   - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
@@ -165,6 +167,7 @@ sha256: "fb4dd9f98b29056a45aca0c59d8bab70e2dc6c4facfa1f48b88a6f74f0115763"
   - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
   - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
   - [AI_EmptyResponseBodyError](/docs/reference/ai-sdk-errors/ai-empty-response-body-error)
+  - [AI_EvaluationUnsupportedQuestionTypeError](/docs/reference/ai-sdk-errors/ai-evaluation-unsupported-question-type-error)
   - [AI_InvalidArgumentError](/docs/reference/ai-sdk-errors/ai-invalid-argument-error)
   - [AI_InvalidDataContentError](/docs/reference/ai-sdk-errors/ai-invalid-data-content-error)
   - [AI_InvalidMessageRoleError](/docs/reference/ai-sdk-errors/ai-invalid-message-role-error)

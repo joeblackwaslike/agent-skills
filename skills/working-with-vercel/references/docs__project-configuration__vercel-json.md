@@ -16,8 +16,8 @@ related:
 summary: Learn how to use vercel.json to configure and override the default behavior of Vercel from within your project. 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/vercel-json.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "639de311ecb1014dcfa34a8d9f7d1c7ffb15d466ea8653dc07101e55c3333546"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "ff40b61e29235c07fff8f521f29febe7161d377091f25ac247d1e9c81231a661"
 ---
 
 # Static Configuration with vercel.json
@@ -38,8 +38,8 @@ The `vercel.json` file lets you configure, and override the default behavior of 
 - [Deploy ASP.NET Core on Vercel with Docker](https://vercel.com/kb/guide/dot-net-asp-net-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Build a .NET application with Docker and deploy it to Vercel Functions. Learn how to configure environment variables, in
 - [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 - [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
-- [Build Output Configuration](https://vercel.com/docs/build-output-api/configuration?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
 - [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
+- [Build Output Configuration](https://vercel.com/docs/build-output-api/configuration?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
 - [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
 
 Full cross-link map for this page: [/docs/project-configuration/vercel-json.graph.md](/docs/project-configuration/vercel-json.graph.md?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=graph)
@@ -97,7 +97,7 @@ This value overrides the [Build Command](/docs/builds/configure-a-build#build-co
 
 ## bunVersion
 
-> **🔒 Permissions Required**: The Bun runtime
+> **🔒 Permissions Required**: The Bun runtime (Beta)
 
 **Type:** `string`
 
@@ -331,7 +331,7 @@ In the example above, `api/eu-data.js` runs in Paris (`cdg1`) with London (`lhr1
 
 ### Using unsupported runtimes
 
-In order to use a runtime that is not [officially supported](/docs/functions/runtimes), you can add a `runtime` property to the definition:
+To use a runtime that is not [officially supported](/docs/functions/runtimes), you can add a `runtime` property to the definition:
 
 ```json filename="vercel.json"
 {
@@ -344,7 +344,7 @@ In order to use a runtime that is not [officially supported](/docs/functions/run
 }
 ```
 
-In the example above, the `api/test.php` Vercel Function does not use one of the [officially supported runtimes](/docs/functions/runtimes). In turn, a `runtime` property was added in order to invoke the [vercel-php](https://www.npmjs.com/package/vercel-php) community runtime.
+In the example above, the `api/test.php` Vercel Function does not use one of the [officially supported runtimes](/docs/functions/runtimes). In turn, a `runtime` property was added to invoke the [vercel-php](https://www.npmjs.com/package/vercel-php) community runtime.
 
 For more information on Runtimes, see the [Runtimes documentation](/docs/functions/runtimes):
 
@@ -893,7 +893,7 @@ https://old-domain.com/page,/new-page,true
 | `caseSensitive`       | `boolean` | No       | Toggle whether source path matching is case sensitive. Default: `false`.                                                                                                                                                                                                                                                                                                                                                                          |
 | `preserveQueryParams` | `boolean` | No       | Toggle whether to preserve the query string on the redirect. Default: `false`.                                                                                                                                                                                                                                                                                                                                                                    |
 
-In order to improve space efficiency, all boolean values can be the single characters `t` (true) or `f` (false) while using the CSV format.
+To improve space efficiency, all boolean values can be the single characters `t` (true) or `f` (false) while using the CSV format.
 
 ## regions
 

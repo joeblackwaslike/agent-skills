@@ -16,8 +16,8 @@ related:
 summary: Every paid Pro team gets one free first-year custom domain on an eligible TLD. Claim yours at checkout or from domain search.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/free-domain-with-pro.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "259edae7a1d5c64060efb4f4d98b7701a6c865f43baa10fe2a32df1933dacbd5"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "b9b2036a231f8fc028bb24dbac8561da1a473d43921109677a10c8b80a9726bc"
 ---
 
 # Free Domain with Pro
@@ -39,7 +39,7 @@ Every paid Pro team gets one free first-year custom domain. You choose an [eligi
 - [Account Plans on Vercel](https://vercel.com/docs/plans?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=related) — Learn about the different plans available on Vercel.
 - [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=related) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
 - [Programmatic Domain Management](https://vercel.com/docs/domains/registrar-api?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=related) — Programmatically search, price, purchase, renew, and manage domains with Vercel's domains registrar API endpoints.
-- [Claim Domain Ownership](https://vercel.com/docs/rest-api/domains/claim-domain-ownership?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=related) — POST /v9/domains/{domain}/claim — Claim ownership of a domain for the authenticated team by verifying a TXT record. The
+- [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=related) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
 
 Full cross-link map for this page: [/docs/domains/free-domain-with-pro.graph.md](/docs/domains/free-domain-with-pro.graph.md?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -16,8 +16,8 @@ related:
 summary: Learn how to apply custom domain aliases to your Vercel deployments using the vercel alias CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/alias.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "0882ce4661103865d785ce2da42c1d615715fe1e72953c075d31d0b17ecd50e7"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "9e826e5c68a0d2ff78ec9c3422023430ee2b6d7297ee61c4ce59892b0a162248"
 ---
 
 # vercel alias
@@ -33,10 +33,10 @@ The `vercel alias` command allows you to apply [custom domains](/docs/domains/wo
 - [Microfrontends routing now applies to vc alias and branch domains](https://vercel.com/changelog/microfrontends-routing-now-applies-to-vc-alias-and-branch-domains?from=related&source_path=%2Fdocs%2Fcli%2Falias&source_site=vercel-docs&relationship=related)
 - [How to alias a preview deployment using the CLI](https://vercel.com/kb/guide/how-to-alias-a-preview-deployment-using-the-cli?from=related&source_path=%2Fdocs%2Fcli%2Falias&source_site=vercel-docs&relationship=related) — Learn how to automatically alias a Vercel preview deployment.
 - [Assign an Alias](https://vercel.com/docs/rest-api/aliases/assign-an-alias?from=related&source_path=%2Fdocs%2Fcli%2Falias&source_site=vercel-docs&relationship=related) — POST /v2/deployments/{id}/aliases — Creates a new alias for the deployment resolved from the given deployment or alias I
-- [vercel domains](https://vercel.com/docs/cli/domains?from=related&source_path=%2Fdocs%2Fcli%2Falias&source_site=vercel-docs&relationship=related) — Learn how to buy, sell, transfer, and manage your domains using the vercel domains CLI command.
-- [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Falias&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [Deploying & Redirecting Domains](https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting?from=related&source_path=%2Fdocs%2Fcli%2Falias&source_site=vercel-docs&relationship=related) — Learn how to deploy your domains and set up domain redirects with this guide.
-- [Get an Alias](https://vercel.com/docs/rest-api/aliases/get-an-alias?from=related&source_path=%2Fdocs%2Fcli%2Falias&source_site=vercel-docs&relationship=related) — GET /v4/aliases/{idOrAlias} — Retrieves an Alias for the given host name or alias ID.
+- [vercel domains](https://vercel.com/docs/cli/domains?from=related&source_path=%2Fdocs%2Fcli%2Falias&source_site=vercel-docs&relationship=related) — Learn how to buy, sell, transfer, and manage your domains using the vercel domains CLI command.
+- [List Deployment Aliases](https://vercel.com/docs/rest-api/aliases/list-deployment-aliases?from=related&source_path=%2Fdocs%2Fcli%2Falias&source_site=vercel-docs&relationship=related) — GET /v2/deployments/{id}/aliases — Retrieves all Aliases for the Deployment with the given ID. The authenticated user or
+- [Delete an Alias](https://vercel.com/docs/rest-api/aliases/delete-an-alias?from=related&source_path=%2Fdocs%2Fcli%2Falias&source_site=vercel-docs&relationship=related) — DELETE /v2/aliases/{aliasId} — Delete an Alias with the specified ID.
 
 Full cross-link map for this page: [/docs/cli/alias.graph.md](/docs/cli/alias.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Falias&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -45,9 +45,9 @@ When a new deployment is created (with our [Git Integration](/docs/git), Vercel 
 
 Any custom domain that doesn't have a [custom preview branch](/docs/domains/working-with-domains/assign-domain-to-a-git-branch) configured (there can only be one Production Branch and it's [configured separately](/docs/git#production-branch) in the project settings) will be applied to production deployments created through any of the available sources.
 
-Custom domains that do have a custom preview branch configured, however, only get applied when using the [Git Integration](/docs/git).
+Branch-specific domains require a deployment associated with the configured Git branch. Git integrations supply this association automatically. For CLI deployments, check the [Git metadata](/docs/cli/deploy#associate-a-cli-deployment-with-a-git-branch), especially when deploying from CI or a detached checkout.
 
-If you're not using the [Git Integration](/docs/git), `vercel alias` is a great solution if you still need to apply custom domains based on Git branches, or other heuristics.
+Use `vercel alias` when you need to assign a domain manually, independently of automatic branch assignment.
 
 ## Preferred production commands
 
@@ -128,9 +128,30 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
-## Related guides
+## Troubleshooting alias conflicts
 
-- [How do I resolve alias related errors on Vercel?](/kb/guide/how-to-resolve-alias-errors-on-vercel)
+You might encounter one of these errors:
+
+- `The chosen alias <xyz>.vercel.app is already in use.`
+- `To move the domain, remove existing aliases associated with <domain>.`
+
+Check which team owns the alias before changing it. List aliases in each team you can access, using [`vercel switch`](/docs/cli/switch) or an explicit scope:
+
+```bash filename="terminal"
+vercel alias ls --scope your_team_slug --limit 100
+```
+
+The list shows aliases and their target deployments. The default limit is 20 and the maximum is 100, so an alias missing from this list isn't proof that it's available. Check the owning project's domains and deployments in the dashboard, especially for teams with more aliases than the list limit.
+
+If you own the conflicting alias and intend to detach it, remove the alias in its owning scope:
+
+```bash filename="terminal"
+vercel alias rm your-project.vercel.app --scope your_team_slug
+```
+
+Review the confirmation prompt. Removing an alias stops that hostname from serving its current deployment; you don't need to delete the deployment to remove its alias. Then retry the assignment or domain move.
+
+If a custom domain belongs to an account you can't access, follow [claiming domain ownership](/docs/domains/working-with-domains/claim-domain-ownership). You can't claim another team's `vercel.app` alias through DNS verification. Choose another alias or [contact support](/help) if a conflict persists after removal or account deletion.
 
 
 ---

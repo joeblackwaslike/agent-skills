@@ -3,7 +3,7 @@ title: Deployment Protection on Vercel
 product: vercel
 url: /docs/deployment-protection
 canonical_url: "https://vercel.com/docs/deployment-protection"
-last_updated: 2026-08-28
+last_updated: 2026-09-15
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: "Learn how to control access to your Vercel project's preview and production URLs with Deployment Protection. Configure protection methods and scope..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "6b3063e3f039521d6f6509136895031177bf8d946f6ea1f35ebe2e53fd1e02c7"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "eea9da26477b5e4fea7419c572e70d98f421a3acd6a3a65f3ee1807a0574adf3"
 ---
 
 # Deployment Protection on Vercel
@@ -46,32 +46,23 @@ Deployment Protection lets you control who can access your preview and productio
 Full cross-link map for this page: [/docs/deployment-protection.graph.md](/docs/deployment-protection.graph.md?from=related&source_path=%2Fdocs%2Fdeployment-protection&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-> **💡 Note:** On the Hobby plan, Vercel Authentication with Standard Protection is
-> available. This protects your preview deployments and deployment URLs, but
-> your production domain remains publicly accessible. To protect production
-> domains, you need a Pro or Enterprise plan.
-
 Deployment Protection requires authentication for all requests, including those to Routing Middleware.
 
 ## What protection methods are available
 
 You can choose from several methods to protect your deployments:
 
-- [**Vercel Authentication**](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication): Restricts access to only Vercel users with suitable access rights. **Available on all plans**
+- [**Vercel Authentication**](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication): Restricts access to only Vercel users with suitable access rights
 - [**Passport**](/docs/passport): Restricts access to visitors who authenticate through your identity provider. **Available on the Enterprise plan**
-
-* [**Password Protection**](/docs/deployment-protection/methods-to-protect-deployments/password-protection): Restricts access to users with the correct password. **Available on the Enterprise plan, or as a paid add-on for Pro plans**
-
+- [**Password Protection**](/docs/deployment-protection/methods-to-protect-deployments/password-protection): Restricts access to users with the correct password. **Available on Pro for $20 per month per protected project and included on Enterprise at the team level. Not available on Hobby**
 - [**Trusted IPs**](/docs/deployment-protection/methods-to-protect-deployments/trusted-ips): Restricts access to users with the correct IP address. **Available on the Enterprise plan**
 
 ## Choose which URLs to protect
 
 The protection scope determines which URLs you protect:
 
-- [**Standard Protection**](#standard-protection): Protects all deployments **except** production domains. **Available on all plans**
-
-* [**All Deployments**](#all-deployments): Protects **all** URLs, including production domains. **Available on Pro and Enterprise plans**
-
+- [**Standard Protection**](#standard-protection): Protects all deployments **except** production domains
+- [**All Deployments**](#all-deployments): Protects **all** URLs, including production domains
 - [**(Legacy) Standard Protection**](#legacy-standard-protection): Protects all preview URLs and deployment URLs. All up-to-date production URLs remain unprotected.
 - [**(Legacy) Pre-Production Deployments**](#legacy-pre-production-deployments): Protects only preview URLs. Does not protect past production deployments.
 
@@ -180,41 +171,29 @@ Select **(Legacy) Pre-Production Deployments** to protect preview URLs while the
 
 For example, Vercel generates a preview URL such as `my-preview-5678.vercel.app`, which will be protected. In contrast, all production URLs, including any past or current generated production branch URLs like `*-main.vercel.app`, remain accessible.
 
-## Advanced Deployment Protection
+## Password Protection pricing
 
-Advanced Deployment Protection features are available to Enterprise customers by default. Pro plan customers can access these features for an additional $150 per month:
+Password Protection pricing depends on your plan and when your team started using the feature:
 
-- [Password Protection](/docs/deployment-protection/methods-to-protect-deployments/password-protection)
-- [Private Production Deployments](/docs/deployment-protection#all-deployments)
-- [Deployment Protection Exceptions](/docs/deployment-protection/methods-to-bypass-deployment-protection/deployment-protection-exceptions)
+| Plan or billing model | Price | Coverage |
+| --- | --- | --- |
+| Hobby | Not available | Upgrade to Pro to enable Password Protection |
+| Pro | $20 per month per protected project | The project where you enable Password Protection |
+| Enterprise | Included | Every project through Team Level Password Protection |
+| Existing Pro teams with the legacy Advanced Deployment Protection package | $150 per month per team | Every project through Team Level Password Protection |
 
-[Passport](/docs/passport) is available on the Enterprise plan only and is not included in the Advanced Deployment Protection add-on.
+For project-priced Pro teams, enabling Password Protection adds a charge for that project. [Disable Password Protection from the project's settings](/docs/deployment-protection/methods-to-protect-deployments/password-protection#how-to-enable-and-manage-password-protection) to stop future charges for the project.
 
-### Enabling Advanced Deployment Protection
+Vercel Authentication for All Deployments and Deployment Protection Exceptions do not require a paid add-on.
 
-To enable Advanced Deployment Protection on a Pro plan:
-
-1. Navigate to your project's [**Deployment Protection**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fdeployment-protection\&title=Go+to+Deployment+Protection+settings) settings
-2. Choose one of the above protection features
-3. Click **Enable and Pay** when prompted to upgrade to the Advanced Deployment Protection add-on
-
-When you enable Advanced Deployment Protection, you pay $150 per month for the add-on and gain access to *all* Advanced Deployment Protection features.
-
-### Disabling Advanced Deployment Protection
-
-To disable Advanced Deployment Protection:
-
-1. Navigate to your team's [**Billing**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fbilling\&title=Go+to+Billing) page
-2. Click **Edit** on the feature you want to disable and follow the instructions
-
-You must have used the feature for **a minimum of 30 days** before you can disable it. Once cancelled, all Advanced Deployment Protection features are disabled.
+See [Usage & Pricing for Deployment Protection](/docs/deployment-protection/usage-and-pricing) for the full feature and plan comparison.
 
 ## Related resources
 
 - [Methods to protect deployments](/docs/deployment-protection/methods-to-protect-deployments): Learn about each protection method in detail
 - [Methods to bypass deployment protection](/docs/deployment-protection/methods-to-bypass-deployment-protection): Configure exceptions and shareable links
-
-* [Vercel plans](/docs/plans): Compare plan features and pricing
+- [Usage & Pricing](/docs/deployment-protection/usage-and-pricing): Compare feature availability and pricing by plan
+- [Vercel plans](/docs/plans): Compare plan features and pricing
 
 
 ---

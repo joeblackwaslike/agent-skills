@@ -16,13 +16,13 @@ related:
 summary: Learn how to use the Go runtime to run Go APIs on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/go.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "8043557e2fed18a42c1ab1a9d218953a3ec14bc7d98763c6e671fd5965abc733"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "9cf5f3c3a6ac1c0bda6aaa7dcdbd3c34c6401813f8e9fc3a665959d1cda74b25"
 ---
 
 # Using the Go Runtime with Vercel Functions
 
-> **🔒 Permissions Required**: The Go runtime
+> **🔒 Permissions Required**: The Go runtime (Beta)
 
 Use the Go runtime to deploy a Go HTTP server on Vercel. The Go Framework
 Preset works with standard `net/http` servers and frameworks such as `chi` or

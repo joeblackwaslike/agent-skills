@@ -3,7 +3,7 @@ title: vercel integration
 product: vercel
 url: /docs/cli/integration
 canonical_url: "https://vercel.com/docs/cli/integration"
-last_updated: 2026-06-12
+last_updated: 2026-09-17
 type: reference
 prerequisites:
   - /docs/cli
@@ -15,8 +15,8 @@ related:
 summary: Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover available products using the...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/integration.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "e435c2472ac4eaa708a189b0004e848a91058305401626bca4c9c7680b900cbe"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "c3f59c5fcd9e8b28e5bbcb0594a9a0f7db876933c3b79656c07d2ad70f0e06d4"
 ---
 
 # vercel integration
@@ -30,15 +30,17 @@ The `vercel integration` command manages [marketplace integrations](/docs/integr
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Build and deploy Shopify storefronts on Vercel](https://vercel.com/changelog/build-and-deploy-shopify-storefronts-on-vercel?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=related)
+- [Native Marketplace integrations now support custom environments](https://vercel.com/changelog/custom-environments-support-for-marketplace-integrations?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=related)
+- [Mem0 joins the Vercel Marketplace](https://vercel.com/changelog/mem0-joins-the-vercel-marketplace?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=related)
 - [Vercel CLI for Marketplace integrations optimized for agents](https://vercel.com/changelog/vercel-cli-for-marketplace-integrations-optimized-for-agents?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=related)
 - [Marketplace integrations now install provider skills](https://vercel.com/changelog/vercel-marketplace-agent-skills?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=related)
 - [How to deploy a Shopify App to Vercel](https://vercel.com/kb/guide/deploy-shopify-app-to-vercel?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=related) — Deploy the official Shopify CLI React Router app template to Vercel with the @vercel/react-router preset and Postgres se
 - [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
+- [vercel connect](https://vercel.com/docs/cli/connect?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=related) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
 - [vercel install](https://vercel.com/docs/cli/install?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=related) — Learn how to install marketplace native integrations and provision resources with the vercel install CLI command.
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=related) — Learn how you can add a product to your Vercel project through a native integration.
-- [vercel connect](https://vercel.com/docs/cli/connect?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=related) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
-- [Marketplace Vercel API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=related) — Learn how to call Vercel API endpoints to interact with Vercel resources
-- [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=related) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
+- [Storage on Vercel Marketplace](https://vercel.com/docs/marketplace-storage?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=related) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
+- [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 
 Full cross-link map for this page: [/docs/cli/integration.graph.md](/docs/cli/integration.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -92,7 +94,7 @@ vercel integration add <integration>/<product>
 | `--name`            | `-n`      | Custom name for the resource. Auto-generated if not provided.                                                                                                                                                                                                 |
 | `--metadata`        | `-m`      | Metadata as `KEY=VALUE`. Can be repeated for multiple keys.                                                                                                                                                                                                   |
 | `--plan`            | `-p`      | Billing plan ID to use for the resource.                                                                                                                                                                                                                      |
-| `--environment`     | `-e`      | Environments to connect: `production`, `preview`, `development`. Can be repeated. Defaults to all three.                                                                                                                                                      |
+| `--environment`     | `-e`      | Environments to connect. Accepts `production`, `preview`, `development`, or a Custom Environment slug or ID from the linked project. Can be repeated. Defaults to all three built-in environments.                                                           |
 | `--prefix`          |           | Prefix for environment variable names. The prefix is used as-is, so include a trailing underscore if you want a separator (e.g., `--prefix NEON2_` creates `NEON2_DATABASE_URL`). Must start with a letter and contain only letters, digits, and underscores. |
 | `--format`          | `-F`      | Output format. Use `json` for machine-readable output.                                                                                                                                                                                                        |
 | `--no-connect`      |           | Skip connecting the resource to the current project. Also skips env pull.                                                                                                                                                                                     |
@@ -105,6 +107,12 @@ vercel integration add <integration>/<product>
 > `Cannot use both --claim and --no-claim.`. In non-interactive environments,
 > if you provision a sandbox resource without `--claim` or `--no-claim`, the
 > command prints a hint pointing to [`claim`](#vercel-integration-resource-claim) instead of prompting.
+
+> **💡 Note:** Custom Environment slugs and IDs must belong to the linked project. If you
+> pass a slug, the CLI resolves the slug to the environment's stable ID before
+> sending the connection request. If you omit `--environment`, the command connects
+> `production`, `preview`, and `development`. The default does not include
+> Custom Environments.
 
 ### Post-provisioning behavior
 
@@ -136,6 +144,9 @@ vercel integration add neon --plan pro
 # Connect to specific environments only
 vercel integration add neon --environment production
 vercel integration add neon -e production -e preview
+
+# Connect to a Custom Environment in the linked project
+vercel integration add neon --environment staging
 
 # Provision without connecting to the current project
 vercel integration add neon --no-connect
@@ -538,7 +549,7 @@ It supports the following subcommands:
 - [`create-threshold`](#vercel-integration-resource-create-threshold): Set up auto-recharge for prepaid resources
 - [`claim`](#vercel-integration-resource-claim): Claim a sandbox marketplace resource
 
-In the examples below, `<resource-name>` (for example, `my-database`) is the name of a marketplace resource you've already provisioned — run [`vercel integration list`](#vercel-integration-list) to see the names of your resources. `<project>` (for example, `my-project`) is a project's name or ID — run [`vercel project ls`](/docs/cli/project) to list them, or find a project's ID in the [Vercel dashboard](/dashboard) under **Settings → General**.
+In the examples below, `<resource-name>` (for example, `my-database`) is the name of a marketplace resource you've already provisioned. Run [`vercel integration list`](#vercel-integration-list) to see the names of your resources. `<project>` (for example, `my-project`) is a project's name or ID. Run [`vercel project ls`](/docs/cli/project) to list them, or find a project's ID in the [Vercel dashboard](/dashboard) under **Settings → General**.
 
 ### vercel integration resource connect
 
@@ -561,7 +572,7 @@ vercel integration resource connect <resource-name> [project]
 
 | Option          | Shorthand | Description                                                                                                                                                                                                                                                  |
 | --------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `--environment` | `-e`      | Environments to connect: `production`, `preview`, `development`. Can be repeated. Defaults to all three.                                                                                                                                                     |
+| `--environment` | `-e`      | Environments to connect. Accepts `production`, `preview`, `development`, or a Custom Environment slug or ID from the target project. Can be repeated. Defaults to all three built-in environments.                                                          |
 | `--prefix`      |           | Prefix for environment variable names. The prefix is used as-is, so include a trailing underscore if you want a separator (e.g., `--prefix NEON2_` creates `NEON2_DATABASE_URL`). Must start with a letter and contain only letters, digits, and underscores. |
 | `--yes`         | `-y`      | Skip the confirmation prompt.                                                                                                                                                                                                                                |
 | `--format`      | `-F`      | Output format. Use `json` for machine-readable output. Requires `--yes`.                                                                                                                                                                                     |
@@ -571,6 +582,13 @@ vercel integration resource connect <resource-name> [project]
 > structured `outputAgentError` payload with `reason: "confirmation_required"`
 > and a `next` array containing the suggested command, then exits with code 1.
 
+> **💡 Note:** Custom Environment slugs and IDs must belong to the target project. If you
+> pass a slug, the CLI resolves the slug to the environment's stable ID before
+> sending the connection request. If you omit the project argument, the command uses
+> the linked project. If you omit `--environment`, the command connects
+> `production`, `preview`, and `development`. The default does not include
+> Custom Environments.
+
 #### Environment variable collisions
 
 If connecting would create an environment variable name that already exists on the project, the command exits with an error that names the conflicting variable, the project, and the affected environments. The follow-up message suggests either passing a `--prefix` to namespace the new variables, or removing the existing variable with `vercel env rm`.
@@ -578,7 +596,7 @@ If connecting would create an environment variable name that already exists on t
 #### Examples
 
 ```bash filename="terminal"
-# Connect to the currently linked project across all environments
+# Connect to the currently linked project across all three built-in environments
 vercel integration resource connect my-database
 
 # Connect to a specific project
@@ -587,6 +605,9 @@ vercel integration resource connect my-database my-project
 # Limit to specific environments
 vercel integration resource connect my-database --environment production
 vercel integration resource connect my-database -e production -e preview
+
+# Connect to a Custom Environment by slug
+vercel integration resource connect my-database --environment staging
 
 # Use a prefix to avoid environment variable collisions
 vercel integration resource connect my-database --prefix NEON2_

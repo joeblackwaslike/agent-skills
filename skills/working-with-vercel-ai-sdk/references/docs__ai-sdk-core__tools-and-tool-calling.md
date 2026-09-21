@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/tools-and-tool-calling.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "d6d5db15806b355074d71ff891a9e2a83ef1a33f57b379f8bdd18471a96883a1"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "b7dbeecc260d8c789f4d849c8b98ec82e0469ea4073e6578e9d1f574c2875abe"
 ---
 
 # Tool Calling
@@ -1523,11 +1523,13 @@ You can see tools in action using various frameworks in the following examples:
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Code Mode](/docs/ai-sdk-core/code-mode)
+- [Tool Search](/docs/ai-sdk-core/tool-search)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
+- [Evaluation](/docs/ai-sdk-core/evaluation)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)

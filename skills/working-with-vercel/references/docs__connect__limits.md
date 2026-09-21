@@ -15,8 +15,8 @@ related:
 summary: Platform limits and per-minute rate limits for Vercel Connect SDK methods, CLI commands, and public endpoints.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/limits.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "0deeb21a07b22f4c0f216674863410fe18d403cc3aa6904ee07befa7d9f2cba1"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "b07259c3c57274c520e3f904d571f9dead9a31e28a8a7ea9a1c2705c8f5296fa"
 ---
 
 # Vercel Connect Limits
@@ -31,11 +31,12 @@ The following limits apply. Contact your account team if you need higher limits.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Flimits&source_site=vercel-docs&relationship=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
 - [Authentication](https://vercel.com/docs/connect/concepts/authentication?from=related&source_path=%2Fdocs%2Fconnect%2Flimits&source_site=vercel-docs&relationship=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
 - [Optimizing Vercel Connect Usage](https://vercel.com/docs/connect/optimizing-usage?from=related&source_path=%2Fdocs%2Fconnect%2Flimits&source_site=vercel-docs&relationship=related) — Reduce billed token requests and triggers by using the SDK cache effectively, tuning refresh behavior, and pruning trigg
 - [Vercel Connect Pricing](https://vercel.com/docs/connect/pricing?from=related&source_path=%2Fdocs%2Fconnect%2Flimits&source_site=vercel-docs&relationship=related) — How Vercel Connect is billed for token requests and triggers across plans and how to stop being billed.
 - [Get a Connect token](https://vercel.com/docs/rest-api/connect/get-a-connect-token?from=related&source_path=%2Fdocs%2Fconnect%2Flimits&source_site=vercel-docs&relationship=related) — POST /v1/connect/token/{connector} — Get an access token for a connector identified by the path parameter and scoped to
-- [Limits](https://vercel.com/docs/limits?from=related&source_path=%2Fdocs%2Fconnect%2Flimits&source_site=vercel-docs&relationship=related) — Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
+- [List connectors](https://vercel.com/docs/rest-api/connect/list-connectors?from=related&source_path=%2Fdocs%2Fconnect%2Flimits&source_site=vercel-docs&relationship=related) — GET /v2/connect/connectors — List connectors that belong to a team.
 
 Full cross-link map for this page: [/docs/connect/limits.graph.md](/docs/connect/limits.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Flimits&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

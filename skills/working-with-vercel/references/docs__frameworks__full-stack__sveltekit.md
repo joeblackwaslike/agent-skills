@@ -17,8 +17,8 @@ related:
 summary: Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Middleware.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/sveltekit.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "eec44c03b6f365004ce818107f77a547ac2e420f88d3fb71eb9bae081b3cf2f0"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "7157dbc0ca1beb769c13a4d67f1113060d3dfe9c7db6529a665cf0ebfb42fa5c"
 ---
 
 # SvelteKit on Vercel
@@ -34,11 +34,12 @@ SvelteKit is a frontend framework that enables you to build Svelte applications 
 - [New features for SvelteKit: Optimize your application with ease](https://vercel.com/blog/feature-complete-sveltekit?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fsveltekit&source_site=vercel-docs&relationship=related)
 - [Using SvelteKit 1.0 on Vercel](https://vercel.com/blog/using-sveltekit-1-0-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fsveltekit&source_site=vercel-docs&relationship=related)
 - [What's new in Svelte 5](https://vercel.com/blog/whats-new-in-svelte-5?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fsveltekit&source_site=vercel-docs&relationship=related)
+- [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fsveltekit&source_site=vercel-docs&relationship=related) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
 - [Nuxt on Vercel](https://vercel.com/docs/frameworks/full-stack/nuxt?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fsveltekit&source_site=vercel-docs&relationship=related) — Deploy Nuxt applications to Vercel and configure rendering, functions, middleware, routing, image optimization, and cach
 - [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fsveltekit&source_site=vercel-docs&relationship=related) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
-- [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fsveltekit&source_site=vercel-docs&relationship=related) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fsveltekit&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 - [Vite + Nitro on Vercel](https://vercel.com/docs/frameworks/full-stack/vite-with-nitro?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fsveltekit&source_site=vercel-docs&relationship=related) — Add a backend to any Vite app with Nitro and deploy to Vercel with zero configuration.
+- [Remix on Vercel](https://vercel.com/docs/frameworks/full-stack/remix?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fsveltekit&source_site=vercel-docs&relationship=related) — Deploy Remix applications to Vercel and configure the Vercel Vite preset, SSR, streaming, caching, and analytics.
 
 Full cross-link map for this page: [/docs/frameworks/full-stack/sveltekit.graph.md](/docs/frameworks/full-stack/sveltekit.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fsveltekit&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -669,7 +670,7 @@ To render the draft content, SvelteKit will check for `__prerender_bypass`. If i
 
 ### Draft Mode security
 
-Deployments on Vercel automatically secure Draft Mode behind the same authentication used for Preview Comments. In order to enable or disable Draft Mode, the viewer must be logged in as a member of the [Team](/docs/accounts). Once enabled, Vercel's CDN will bypass the ISR cache automatically and invoke the underlying [Vercel Function](/docs/functions).
+Deployments on Vercel automatically secure Draft Mode behind the same authentication used for Preview Comments. To enable or disable Draft Mode, the viewer must be logged in as a member of the [Team](/docs/accounts). Once enabled, Vercel's CDN will bypass the ISR cache automatically and invoke the underlying [Vercel Function](/docs/functions).
 
 ### Enabling Draft Mode in Preview Deployments
 

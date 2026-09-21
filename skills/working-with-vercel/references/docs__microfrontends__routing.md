@@ -16,8 +16,8 @@ related:
 summary: Configure which microfrontend handles each path and understand how Vercel selects deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/routing.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "4b367de49202ec4fe450e587774eefdb86df38674ce6a553ea9199f044cb36a7"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "c3bfc01109928f93d05b3b398fa5ca494a78d44d44d215c44ba5014174cf9313"
 ---
 
 # Microfrontends Routing
@@ -34,12 +34,11 @@ Microfrontends routing determines which application handles a path and which dep
 - [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=related) — Learn how to serve multiple Vercel projects from a single domain.
 - [Microfrontends](https://turborepo.dev/docs/guides/microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=related) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
 - [Life of a Vercel request: Application-aware routing](https://vercel.com/blog/life-of-a-request-application-aware-routing?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=related)
-- [Microfrontends now generally available](https://vercel.com/changelog/microfrontends-now-generally-available?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=related)
 - [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=related) — Learn how to get started with microfrontends on Vercel.
 - [Managing with the Vercel Toolbar](https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel Toolbar to make it easier to manage microfrontends.
 - [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=related) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
+- [Projects overview](https://vercel.com/docs/projects?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=related) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 - [Routing](https://vercel.com/docs/routing?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
-- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 
 Full cross-link map for this page: [/docs/microfrontends/routing.graph.md](/docs/microfrontends/routing.graph.md?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -107,7 +106,7 @@ To assert whether the path expressions will work for your path, use the [`valida
 
 An *asset prefix* is a unique prefix prepended to paths in URLs of static assets, like JavaScript, CSS, or images. This is needed so that URLs are unique across microfrontends and can be correctly routed to the appropriate project. Without this, these static assets may collide with each other and not work correctly.
 
-When using `withMicrofrontends`, a default auto-generated asset prefix is automatically added. The default value is an obfuscated hash of the project name, like `vc-ap-b3331f`, in order to not leak the project name to users.
+When using `withMicrofrontends`, a default auto-generated asset prefix is automatically added. The default value is an obfuscated hash of the project name, like `vc-ap-b3331f`, so the project name isn't exposed to users.
 
 If you would like to use a human readable asset prefix, you can also set the asset prefix that is used in `microfrontends.json`.
 

@@ -16,8 +16,8 @@ related:
 summary: Understand how the build step works when creating a Vercel Deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "ebb7c7c2d1d79debd38aa5c76ea980fd092b16532f876b9dc825ce6bd168a914"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "6fbf06c315d40a5fbc5cac8634c62abeb6196119bdb1c61d8009e6dc38a6aa69"
 ---
 
 # Builds
@@ -41,7 +41,7 @@ Vercel automatically performs a **build** every time you deploy your code, wheth
 - [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related)
 - [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
 - [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
-- [vercel build](https://vercel.com/docs/cli/build?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
+- [Projects overview](https://vercel.com/docs/projects?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 
 Full cross-link map for this page: [/docs/builds.graph.md](/docs/builds.graph.md?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

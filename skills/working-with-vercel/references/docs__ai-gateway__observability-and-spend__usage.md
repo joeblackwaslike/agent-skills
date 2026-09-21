@@ -3,7 +3,7 @@ title: AI Gateway Generation Lookup and Usage API
 product: vercel
 url: /docs/ai-gateway/observability-and-spend/usage
 canonical_url: "https://vercel.com/docs/ai-gateway/observability-and-spend/usage"
-last_updated: 2026-09-07
+last_updated: 2026-09-11
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/observability-and-spend
@@ -16,8 +16,8 @@ related:
 summary: Look up an AI Gateway generation by ID to inspect its provider, latency, token usage, cost, and finish reason, or check your credit balance.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/usage.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "ab669571d08dbb606ec5511c8f388bffdef8102156a57e8e77a891a40f5ad061"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "41ba20bc8308d4e5031123846c59118628b8fdc0f1b0fe47ee345a9ec61b4271"
 ---
 
 # AI Gateway Generation Lookup and Usage API
@@ -31,7 +31,6 @@ AI Gateway records every generation it serves. Look up a generation by ID to ins
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [AI Gateway logs now have a dedicated page](https://vercel.com/changelog/ai-gateway-logs?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fusage&source_site=vercel-docs&relationship=related)
-- [AI Gateway now supports asynchronous video generation](https://vercel.com/changelog/ai-gateway-now-supports-asynchronous-video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fusage&source_site=vercel-docs&relationship=related)
 - [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fusage&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
 - [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fusage&source_site=vercel-docs&relationship=related) — Understand AI Gateway token pricing, free and paid credits, BYOK costs, add-on charges, and payment fees. Manage credit
 - [AI Gateway Observability](https://vercel.com/docs/ai-gateway/observability-and-spend/observability?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fusage&source_site=vercel-docs&relationship=related) — Monitor AI Gateway requests in the Vercel dashboard. Inspect token usage, latency, spend, and logs at team, project, and

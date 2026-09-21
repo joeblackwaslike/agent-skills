@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/claude-security.md"
-fetched_at: "2026-09-14T09:37:17.168Z"
-sha256: "16541cbe607479449fc3dd38a5ff1478b0c71cc5fab0295893bc8e9fe3637a13"
+fetched_at: "2026-09-21T09:39:23.760Z"
+sha256: "49a6cfd6b9e42dbff892c1bc3107611c901f52f1063bb149d65f7cdbf19b2acb"
 ---
 
 > ## Documentation Index
@@ -68,11 +68,11 @@ The plugin adds one command, `/claude-security`, which opens a menu of its three
   </Step>
 
   <Step title="Read the report">
-    While the scan runs, it reports each stage as it starts, with the detail available under [`/workflows`](/docs/en/workflows). Results land in a timestamped directory in your repository, described in [Read the scan results](#read-the-scan-results).
+    While the scan runs, it reports each stage as it starts, with the detail available under [`/workflows`](/docs/en/workflows). Results are written to a timestamped directory in your repository, described in [Read the scan results](#read-the-scan-results).
   </Step>
 
   <Step title="Turn findings into patches">
-    Run `/claude-security` again and pick **Suggest patches**, then choose which findings to address. Reviewed patches land in the report's `patches/` folder; [Fix findings](#fix-findings) covers how each patch is built and reviewed.
+    Run `/claude-security` again and pick **Suggest patches**, then choose which findings to address. Reviewed patches are written to the report's `patches/` folder; [Fix findings](#fix-findings) covers how each patch is built and reviewed.
   </Step>
 
   <Step title="Apply the patches you accept">
@@ -113,7 +113,7 @@ Before delivery, each patch is reviewed by an agent independent of the one that 
 
 ### Patches are never applied automatically
 
-Applying a patch is always your decision. Patches land in the report's `patches/` folder, one `F<n>.patch` per finding with a note beside it explaining the change. Apply one from your shell, or ask Claude to apply it and open a pull request:
+Applying a patch is always your decision. Patches are written to the report's `patches/` folder, one `F<n>.patch` per finding with a note beside it explaining the change. Apply one from your shell, or ask Claude to apply it and open a pull request:
 
 ```bash theme={null}
 git apply CLAUDE-SECURITY-<timestamp>/patches/F1.patch

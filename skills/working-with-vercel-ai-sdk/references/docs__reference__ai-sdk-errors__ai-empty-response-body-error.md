@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-empty-response-body-error.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "1d5d2d282e3da62a9ffc571fcd35cbef9d315d7512a04497cf837e5e6b2ac694"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "f729f619db5654cb1c165797810543f64789885046412cf402404f4902b78c19"
 ---
 
 # AI_EmptyResponseBodyError
@@ -30,6 +30,7 @@ if (EmptyResponseBodyError.isInstance(error)) {
 - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
 - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
 - [AI_EmptyResponseBodyError](/docs/reference/ai-sdk-errors/ai-empty-response-body-error)
+- [AI_EvaluationUnsupportedQuestionTypeError](/docs/reference/ai-sdk-errors/ai-evaluation-unsupported-question-type-error)
 - [AI_InvalidArgumentError](/docs/reference/ai-sdk-errors/ai-invalid-argument-error)
 - [AI_InvalidDataContentError](/docs/reference/ai-sdk-errors/ai-invalid-data-content-error)
 - [AI_InvalidMessageRoleError](/docs/reference/ai-sdk-errors/ai-invalid-message-role-error)

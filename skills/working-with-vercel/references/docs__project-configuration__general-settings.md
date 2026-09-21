@@ -16,8 +16,8 @@ related:
 summary: Configure basic settings for your Vercel project, including the project name, build and development settings, root directory, Node.js version,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/general-settings.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "9aac00f80f58d3adaaed60cb4dce8b452502331d4c66721b395d0e47ec7ffdd4"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "c08653168e034a6c7db7900984eb2a1369182d1bc71775c6dacf56f0f5c40366"
 ---
 
 # General settings
@@ -37,9 +37,9 @@ Project names can be up to 100 characters long and must be lowercase. They can i
 - [Using TanStack AI with Vercel Sandbox](https://vercel.com/kb/guide/tanstack-ai-vercel-sandbox?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgeneral-settings&source_site=vercel-docs&relationship=related) — Run coding agents in isolated Vercel Sandbox microVMs with the @tanstack/ai-sandbox-vercel provider, with durable resume
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgeneral-settings&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgeneral-settings&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
+- [Projects overview](https://vercel.com/docs/projects?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgeneral-settings&source_site=vercel-docs&relationship=related) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 - [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgeneral-settings&source_site=vercel-docs&relationship=related) — Learn how to customize your deployments using Vercel's build features.
 - [Linking Projects with Vercel CLI](https://vercel.com/docs/cli/project-linking?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgeneral-settings&source_site=vercel-docs&relationship=related) — Learn how to link existing Vercel Projects with Vercel CLI.
-- [Projects overview](https://vercel.com/docs/projects?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgeneral-settings&source_site=vercel-docs&relationship=related) — A project is the application that you have deployed to Vercel.
 
 Full cross-link map for this page: [/docs/project-configuration/general-settings.graph.md](/docs/project-configuration/general-settings.graph.md?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgeneral-settings&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

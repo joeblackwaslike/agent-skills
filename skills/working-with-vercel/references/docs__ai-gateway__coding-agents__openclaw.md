@@ -3,7 +3,7 @@ title: OpenClaw with AI Gateway
 product: vercel
 url: /docs/ai-gateway/coding-agents/openclaw
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/openclaw"
-last_updated: 2026-09-08
+last_updated: 2026-09-13
 type: how-to
 prerequisites:
   - /docs/ai-gateway/coding-agents
@@ -14,8 +14,8 @@ related:
 summary: Connect OpenClaw to AI Gateway with the Vercel CLI or manual provider configuration. Use gateway models across coding agents and messaging channels.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/openclaw.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "8ce0713b8c41fd73140331fcb048b9b2e4d277ae9c2c58ee3fedb35870b2484b"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "50f892b0255f4071ef4253359092df3cc72ebc60952b5701bdb85294a4ad0e19"
 ---
 
 # OpenClaw with AI Gateway

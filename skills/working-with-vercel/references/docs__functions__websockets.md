@@ -16,13 +16,13 @@ related:
 summary: Serve WebSocket connections in Vercel Functions for realtime features like chat, collaboration, and AI streaming.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/websockets.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "3c1fb8dc8ff4e21d388ee77238dcda316c1e2475d9997fd0617d7230267e8134"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "bd237dbd60b7c7357c929f47a44371ddc19716207166eb00a8ae56c01a7404e9"
 ---
 
 # WebSockets
 
-> **🔒 Permissions Required**: WebSockets
+> **🔒 Permissions Required**: WebSockets (Beta)
 
 Vercel Functions can serve WebSocket connections, keeping a bidirectional connection open between a client and your server-side code. Use WebSockets for realtime features such as interactive AI streaming, chat, and collaborative apps.
 
@@ -41,6 +41,7 @@ Vercel Functions can serve WebSocket connections, keeping a bidirectional connec
 - [Build Notion-style real-time presence with WebSockets on Vercel](https://vercel.com/kb/guide/real-time-presence-hono-react?from=related&source_path=%2Fdocs%2Ffunctions%2Fwebsockets&source_site=vercel-docs&relationship=related) — Build the avatar faces that appear when a teammate opens a page and vanish when they leave. Powered by a Hono WebSocket
 - [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute?from=related&source_path=%2Fdocs%2Ffunctions%2Fwebsockets&source_site=vercel-docs&relationship=related) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
 - [Backends on Vercel](https://vercel.com/docs/frameworks/backend?from=related&source_path=%2Fdocs%2Ffunctions%2Fwebsockets&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
+- [Projects overview](https://vercel.com/docs/projects?from=related&source_path=%2Fdocs%2Ffunctions%2Fwebsockets&source_site=vercel-docs&relationship=related) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 
 Full cross-link map for this page: [/docs/functions/websockets.graph.md](/docs/functions/websockets.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fwebsockets&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

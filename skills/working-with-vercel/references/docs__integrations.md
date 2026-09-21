@@ -3,7 +3,7 @@ title: Vercel Integrations
 product: vercel
 url: /docs/integrations
 canonical_url: "https://vercel.com/docs/integrations"
-last_updated: 2026-08-11
+last_updated: 2026-09-17
 type: conceptual
 prerequisites:
   []
@@ -12,12 +12,12 @@ related:
   - /docs/agent-resources/integrations-for-models
   - /docs/connect
   - /docs/integrations/install-an-integration/product-integration
-  - /docs/cli/integration
+  - /docs/marketplace-storage
 summary: "Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless content, commerce, and more."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "06ebbb8a787128680b3711c3331f7b60e6e7b65d56310bf9929a7f1580b69b96"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "9111ec8927f1e495ff0281d792ec0b380e55bf59d7182132ac5319db0fd1bca6"
 ---
 
 # Vercel Integrations
@@ -41,7 +41,7 @@ Integrations allow you to extend the capabilities of Vercel by connecting with t
 - [Supercharge your Vercel Projects with Integrations](https://vercel.com/blog/integrations-marketplace?from=related&source_path=%2Fdocs%2Fintegrations&source_site=vercel-docs&relationship=related)
 - [Log Drains](https://vercel.com/blog/log-drains?from=related&source_path=%2Fdocs%2Fintegrations&source_site=vercel-docs&relationship=related)
 - [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related&source_path=%2Fdocs%2Fintegrations&source_site=vercel-docs&relationship=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
-- [Storage on Vercel Marketplace](https://vercel.com/docs/marketplace-storage?from=related&source_path=%2Fdocs%2Fintegrations&source_site=vercel-docs&relationship=related) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
+- [Vercel Deep Infra Integration](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra?from=related&source_path=%2Fdocs%2Fintegrations&source_site=vercel-docs&relationship=related) — Learn how to add the Deep Infra native integration with Vercel.
 
 Full cross-link map for this page: [/docs/integrations.graph.md](/docs/integrations.graph.md?from=related&source_path=%2Fdocs%2Fintegrations&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -74,6 +74,7 @@ Native integrations provide the following benefits:
 As a Vercel customer:
 
 - [**Extend your Vercel workflow**](/docs/integrations/install-an-integration/product-integration): You can install an integration from the marketplace and add the product that fits your need.
+- [**Use a resource in a Custom Environment**](/docs/marketplace-storage#use-a-marketplace-resource-in-a-custom-environment): Connect a Native Marketplace resource to an exact Custom Environment and verify the variable scope.
 - [**Use the CLI**](/docs/cli/integration): Install integrations and provision resources from the command line with `vercel integration add`. Supports scripted usage for CI pipelines and AI agents.
 - View the [list of available native integrations](#native-integrations-list).
 - [**Add an AI provider**](/docs/agent-resources/integrations-for-models/adding-a-provider): You can add a provider to your Vercel workflow.

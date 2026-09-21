@@ -13,13 +13,13 @@ related:
 summary: Learn how to use the Ruby runtime to compile Ruby Vercel Functions on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/ruby.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "9c12463a875346fd2a3f29c7193072b41b610f854cfaa832d509b5d02093bff0"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "6f9c08eafdc75baab89e20a11510ea9b601626b0341bbd8ee8849cbac9a958af"
 ---
 
 # Using the Ruby Runtime with Vercel Functions
 
-> **🔒 Permissions Required**: The Ruby runtime
+> **🔒 Permissions Required**: The Ruby runtime (Beta)
 
 The Ruby runtime is used by Vercel to compile Ruby Vercel functions that define a singular HTTP handler from `.rb` files within an `/api` directory at your project's root.
 

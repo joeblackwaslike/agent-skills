@@ -16,8 +16,8 @@ related:
 summary: Add and configure a custom domain for your Vercel project using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/set-up-custom-domain.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "06b4899bf78f932b25c00e1360a405b10654cb395d6a37b9f8d24400af05ab3f"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "d3f167c1f87791a44cb024a7bfeeda6c4ce6fbd576e56f4dac98808aedc55ef2"
 ---
 
 # Setting up a custom domain
@@ -35,7 +35,7 @@ Use this guide to add a custom domain to your Vercel project from the CLI, confi
 - [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records?from=related&source_path=%2Fdocs%2Fdomains%2Fset-up-custom-domain&source_site=vercel-docs&relationship=related) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
 - [Working with domains](https://vercel.com/docs/domains/working-with-domains?from=related&source_path=%2Fdocs%2Fdomains%2Fset-up-custom-domain&source_site=vercel-docs&relationship=related) — Learn how domains work and the options Vercel provides for managing them.
 - [Assigning a custom domain to an environment](https://vercel.com/docs/domains/working-with-domains/add-a-domain-to-environment?from=related&source_path=%2Fdocs%2Fdomains%2Fset-up-custom-domain&source_site=vercel-docs&relationship=related) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
-- [Working with DNS](https://vercel.com/docs/domains/working-with-dns?from=related&source_path=%2Fdocs%2Fdomains%2Fset-up-custom-domain&source_site=vercel-docs&relationship=related) — Learn how DNS works in order to properly configure your domain.
+- [Working with DNS](https://vercel.com/docs/domains/working-with-dns?from=related&source_path=%2Fdocs%2Fdomains%2Fset-up-custom-domain&source_site=vercel-docs&relationship=related) — Learn how DNS works to properly configure your domain.
 - [Add Custom Domain](https://vercel.com/docs/platforms/platform-elements/actions/add-custom-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fset-up-custom-domain&source_site=vercel-docs&relationship=related) — Server action for programmatically adding custom domains to Vercel projects.
 
 Full cross-link map for this page: [/docs/domains/set-up-custom-domain.graph.md](/docs/domains/set-up-custom-domain.graph.md?from=related&source_path=%2Fdocs%2Fdomains%2Fset-up-custom-domain&source_site=vercel-docs&relationship=graph)

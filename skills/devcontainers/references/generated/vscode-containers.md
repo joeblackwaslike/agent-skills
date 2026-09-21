@@ -1,8 +1,8 @@
 ---
 title: "VS Code Dev Containers guide"
 source: "https://code.visualstudio.com/docs/devcontainers/containers"
-fetched_at: "2026-09-14T09:36:17.711Z"
-sha256: "8b18babff2ab86bea9929d5b36d661428a306d248a7f9623108bf83c68b1d7f6"
+fetched_at: "2026-09-21T09:38:38.892Z"
+sha256: "566d95c73ca5af9c3818879498dc281d82c5732bccc73757361e5ec522a361d0"
 ---
 
 # VS Code Dev Containers guide
@@ -786,8 +786,6 @@ From this point forward, the dotfiles repository will be used whenever a contain
 
 - If you clone a Git repository using SSH and your SSH key has a passphrase, VS Code's pull and sync features may hang when running remotely. Either use an SSH key without a passphrase, clone using HTTPS, or run `git push` from the command line to work around the issue.
 
-- Local proxy settings are not reused inside the container, which can prevent extensions from working unless the appropriate proxy information is configured (for example global `HTTP_PROXY` or `HTTPS_PROXY` environment variables with the appropriate proxy information).
-
 - There is an incompatibility between OpenSSH versions on Windows when the ssh-agent runs with version <= 8.8 and the SSH client (on any platform) runs version >= 8.9. The workaround is to upgrade OpenSSH on Windows to 8.9 or later, either using winget or an installer from Win32-OpenSSH/releases. (Note that `ssh-add -l` will work correctly, but `ssh ` will fail with `: Permission denied (publickey)`. This also affects Git when using SSH to connect to the repository.)
 
 
@@ -899,4 +897,4 @@ Check issue #8278 for a potential workaround.
 
                 
                 
-                9/9/2026
+                9/16/2026

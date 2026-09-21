@@ -3,7 +3,7 @@ title: get-invoice
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/get-invoice
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/get-invoice"
-last_updated: 2026-09-14
+last_updated: 2026-09-21
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about get-invoice on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/get-invoice.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "78141eae463b89a5d9bc2446a9f61c287f58f0ef26b1ec58581a8d173101cf8d"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "694270a4412ddf510408be03999a42e46d4e5e7669f7359ed42f8d6e8bfb0642"
 ---
 
 # Get Invoice
@@ -46,44 +46,44 @@ Success
 
 ```json
 {
-  "test": "boolean" // Whether the invoice is in the testmode (no real transaction created).,
-  "invoiceId": "string" // required // Vercel Marketplace Invoice ID.,
-  "externalId": "string" // Partner-supplied Invoice ID, if applicable.,
-  "state": "string" // required // Invoice state.,
-  "invoiceNumber": "string" // User-readable invoice number.,
-  "invoiceDate": "string" // required // Invoice date. ISO 8601 timestamp.,
-  "period": { // required
-    "start": "string" // required,
-    "end": "string" // required
-  },
-  "paidAt": "string" // Moment the invoice was paid. ISO 8601 timestamp.,
-  "refundedAt": "string" // Most recent moment the invoice was refunded. ISO 8601 timestamp.,
-  "memo": "string" // Additional memo for the invoice.,
-  "items": [ // required
-    "billingPlanId": "string" // required // Partner's billing plan ID.,
-    "resourceId": "string" // Partner's resource ID. If not specified, indicates installation-wide item.,
-    "start": "string" // Start and end are only needed if different from the period's start/end. ISO 8601 timestamp.,
-    "end": "string" // Start and end are only needed if different from the period's start/end. ISO 8601 timestamp.,
-    "name": "string" // required // Invoice item name.,
-    "details": "string" // Additional item details.,
-    "price": "string" // required // Item price. A dollar-based decimal string.,
-    "quantity": "number" // required // Item quantity.,
-    "units": "string" // required // Units for item's quantity.,
-    "total": "string" // required // Item total. A dollar-based decimal string.
-  ],
+  "created": "string" // required // System creation date. ISO 8601 timestamp.,
   "discounts": [
+    "amount": "string" // required // Discount amount. A dollar-based decimal string.,
     "billingPlanId": "string" // required // Partner's billing plan ID.,
-    "resourceId": "string" // Partner's resource ID. If not specified, indicates installation-wide discount.,
-    "start": "string" // Start and end are only needed if different from the period's start/end. ISO 8601 timestamp.,
+    "details": "string" // Additional discount details.,
     "end": "string" // Start and end are only needed if different from the period's start/end. ISO 8601 timestamp.,
     "name": "string" // required // Discount name.,
-    "details": "string" // Additional discount details.,
-    "amount": "string" // required // Discount amount. A dollar-based decimal string.
+    "resourceId": "string" // Partner's resource ID. If not specified, indicates installation-wide discount.,
+    "start": "string" // Start and end are only needed if different from the period's start/end. ISO 8601 timestamp.
   ],
-  "total": "string" // required // Invoice total amount. A dollar-based decimal string.,
+  "externalId": "string" // Partner-supplied Invoice ID, if applicable.,
+  "invoiceDate": "string" // required // Invoice date. ISO 8601 timestamp.,
+  "invoiceId": "string" // required // Vercel Marketplace Invoice ID.,
+  "invoiceNumber": "string" // User-readable invoice number.,
+  "items": [ // required
+    "billingPlanId": "string" // required // Partner's billing plan ID.,
+    "details": "string" // Additional item details.,
+    "end": "string" // Start and end are only needed if different from the period's start/end. ISO 8601 timestamp.,
+    "name": "string" // required // Invoice item name.,
+    "price": "string" // required // Item price. A dollar-based decimal string.,
+    "quantity": "number" // required // Item quantity.,
+    "resourceId": "string" // Partner's resource ID. If not specified, indicates installation-wide item.,
+    "start": "string" // Start and end are only needed if different from the period's start/end. ISO 8601 timestamp.,
+    "total": "string" // required // Item total. A dollar-based decimal string.,
+    "units": "string" // required // Units for item's quantity.
+  ],
+  "memo": "string" // Additional memo for the invoice.,
+  "paidAt": "string" // Moment the invoice was paid. ISO 8601 timestamp.,
+  "period": { // required
+    "end": "string" // required,
+    "start": "string" // required
+  },
+  "refundedAt": "string" // Most recent moment the invoice was refunded. ISO 8601 timestamp.,
   "refundReason": "string" // The reason for refund. Only applicable for states "refunded" or "refund_request".,
   "refundTotal": "string" // Refund amount. Only applicable for states "refunded" or "refund_request". A dollar-based decimal string.,
-  "created": "string" // required // System creation date. ISO 8601 timestamp.,
+  "state": "string" // required // Invoice state.,
+  "test": "boolean" // Whether the invoice is in the testmode (no real transaction created).,
+  "total": "string" // required // Invoice total amount. A dollar-based decimal string.,
   "updated": "string" // required // System update date. ISO 8601 timestamp.
 }
 ```

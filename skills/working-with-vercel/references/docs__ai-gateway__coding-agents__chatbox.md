@@ -3,7 +3,7 @@ title: Chatbox with AI Gateway
 product: vercel
 url: /docs/ai-gateway/coding-agents/chatbox
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/chatbox"
-last_updated: 2026-09-08
+last_updated: 2026-09-13
 type: how-to
 prerequisites:
   - /docs/ai-gateway/coding-agents
@@ -13,8 +13,8 @@ related:
 summary: Connect Chatbox to AI Gateway. Configure your API key, endpoint, and models to use multiple AI providers and monitor chat spending in one place.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/chatbox.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "8fc7c2ee97272d4b934ced76db238413b8747a615bb30b6ac72aa022a10863b0"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "4acbae0db1366b698f2d559cfe59e35590dee12042a6fd4e52bdfbe7cdb77704"
 ---
 
 # Chatbox with AI Gateway
@@ -32,7 +32,7 @@ sha256: "8fc7c2ee97272d4b934ced76db238413b8747a615bb30b6ac72aa022a10863b0"
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fchatbox&source_site=vercel-docs&relationship=related) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 - [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fchatbox&source_site=vercel-docs&relationship=related) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
 - [Deep Agents CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepagents?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fchatbox&source_site=vercel-docs&relationship=related) — Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
-- [Roo Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/roo-code?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fchatbox&source_site=vercel-docs&relationship=related) — Connect the Roo Code VS Code extension to AI Gateway. Configure your API key and models to access multiple providers and
+- [Command Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/command-code?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fchatbox&source_site=vercel-docs&relationship=related) — Connect Command Code to AI Gateway with your own API key and a custom base URL. Configure models, switch between them, a
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/chatbox.graph.md](/docs/ai-gateway/coding-agents/chatbox.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fchatbox&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

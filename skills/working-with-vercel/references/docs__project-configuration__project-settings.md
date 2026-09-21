@@ -3,7 +3,7 @@ title: Project settings
 product: vercel
 url: /docs/project-configuration/project-settings
 canonical_url: "https://vercel.com/docs/project-configuration/project-settings"
-last_updated: 2026-09-01
+last_updated: 2026-09-16
 type: reference
 prerequisites:
   - /docs/project-configuration
@@ -16,8 +16,8 @@ related:
 summary: Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection, functions, cron jobs, project...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/project-settings.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "f09f00af6c3a6565b3b0f7ee7effd31978f3bc258c7ca22a95ca9e3e723e76e7"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "66e70b45ec4888e54fddf5a665d26bf707c870a38f16193bb3f0d4aa38b6fb99"
 ---
 
 # Project settings
@@ -32,10 +32,10 @@ From the Vercel [dashboard](https://vercel.com/d?to=%2Fdashboard\&title=Open+Das
 
 - [How to use a non-default branch for production deployments on Vercel](https://vercel.com/kb/guide/can-i-use-a-non-default-branch-for-production?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fproject-settings&source_site=vercel-docs&relationship=related) — Learn how to set a non-default branch for production on Vercel. Open the Production environment, change branch tracking,
 - [Deploying Bitbucket Projects with Vercel](https://vercel.com/docs/git/vercel-for-bitbucket?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fproject-settings&source_site=vercel-docs&relationship=related) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
-- [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fproject-settings&source_site=vercel-docs&relationship=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
 - [Managing projects](https://vercel.com/docs/projects/managing-projects?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fproject-settings&source_site=vercel-docs&relationship=related) — Learn how to manage your projects through the Vercel Dashboard.
+- [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fproject-settings&source_site=vercel-docs&relationship=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
 - [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fproject-settings&source_site=vercel-docs&relationship=related) — Learn how to customize your deployments using Vercel's build features.
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fproject-settings&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Builds](https://vercel.com/docs/builds?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fproject-settings&source_site=vercel-docs&relationship=related) — Understand how the build step works when creating a Vercel Deployment.
 
 Full cross-link map for this page: [/docs/project-configuration/project-settings.graph.md](/docs/project-configuration/project-settings.graph.md?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fproject-settings&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -84,7 +84,7 @@ To ignore the build step:
 
 1. Choose a project from the [dashboard](https://vercel.com/d?to=%2Fdashboard\&title=Open+Dashboard)
 2. Open **Settings** in the sidebar and then select the **Build and Deployment** menu item
-3. In the **Ignored Build Step** section, select the behavior you would like. This behavior provides a command that outputs a code, which tells Vercel whether to issue a new build or not. The command is executed within the [Root Directory](/docs/builds/configure-a-build#root-directory) and can access all [System Environment Variables](/docs/environment-variables/system-environment-variables):
+3. In the **Ignored Build Step** section, select the behavior you would like. This behavior provides a command that outputs a code, which tells Vercel whether to issue a new build or not. The command is executed within the [Root Directory](/docs/builds/configure-a-build#root-directory) and can access the [System Environment Variables](/docs/environment-variables/system-environment-variables) that are available at build time. Runtime-only variables, such as `VERCEL_REGION`, are not available:
    - **Automatic**: Each commit will issue a new build
    - **Only build production**: When the `VERCEL_ENV` is production, a new build will be issued
    - **Only build preview**: When the `VERCEL_ENV` is preview, a new build will be issued
@@ -181,7 +181,7 @@ To learn more, see [Security Settings](/docs/project-configuration/security-sett
 
 ## Advanced
 
-Vercel provides some additional features in order to configure your project in a more advanced way. This includes:
+Vercel provides some additional features to configure your project in a more advanced way. This includes:
 
 - Displaying [directory listing](/docs/directory-listing)
 - Enabling [Skew protection](/docs/skew-protection)

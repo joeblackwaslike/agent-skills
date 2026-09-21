@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/middleware.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "0c7d02f5911608c856b077eeb817b189c11c4c83b9b923aa07223fde1a647158"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "fd39d993547adb0b082f44bf33d4ec9c20550f8d244fe94ee56564a48e2181be"
 ---
 
 # Language Model Middleware
@@ -532,11 +532,13 @@ console.log(text);
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Code Mode](/docs/ai-sdk-core/code-mode)
+- [Tool Search](/docs/ai-sdk-core/tool-search)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
+- [Evaluation](/docs/ai-sdk-core/evaluation)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)

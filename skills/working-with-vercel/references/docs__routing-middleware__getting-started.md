@@ -16,8 +16,8 @@ related:
 summary: Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed and personalization to your...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing-middleware/getting-started.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "ac6bbef18122a426cd48ef3a681c14723536241f699b6fac1433bf6ddfde5236"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "059b2f184988dfe15ec212672aeba8edf99eb375aaaf1d2b03c90387f4129903"
 ---
 
 # Getting Started with Routing Middleware
@@ -33,13 +33,13 @@ Routing Middleware lets you to run code before your pages load, giving you contr
 - [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fgetting-started&source_site=vercel-docs&relationship=related) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
 - [Vercel Edge Middleware: Dynamic at the speed of static (historical)](https://vercel.com/blog/vercel-edge-middleware-dynamic-at-the-speed-of-static?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fgetting-started&source_site=vercel-docs&relationship=related)
 - [Modifying request headers](https://vercel.com/kb/guide/modify-request-headers?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fgetting-started&source_site=vercel-docs&relationship=related) — Learn how to modify request headers in your Middleware.
-- [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fgetting-started&source_site=vercel-docs&relationship=related) — Migrate your website's configuration from Netlify to Vercel
 - [Life of a Vercel request: Application-aware routing](https://vercel.com/blog/life-of-a-request-application-aware-routing?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fgetting-started&source_site=vercel-docs&relationship=related)
+- [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fgetting-started&source_site=vercel-docs&relationship=related) — Migrate your website's configuration from Netlify to Vercel
 - [Routing](https://vercel.com/docs/routing?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fgetting-started&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fgetting-started&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 - [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fgetting-started&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
 - [Project-Level Routing Rules](https://vercel.com/docs/routing/project-routing-rules?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fgetting-started&source_site=vercel-docs&relationship=related) — Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code
-- [Redirects](https://vercel.com/docs/routing/redirects?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fgetting-started&source_site=vercel-docs&relationship=related) — Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL.
+- [Microfrontends Routing](https://vercel.com/docs/microfrontends/routing?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fgetting-started&source_site=vercel-docs&relationship=related) — Configure which microfrontend handles each path and understand how Vercel selects deployments.
 
 Full cross-link map for this page: [/docs/routing-middleware/getting-started.graph.md](/docs/routing-middleware/getting-started.graph.md?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fgetting-started&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

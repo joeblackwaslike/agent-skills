@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/extract-reasoning-middleware.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "fbd2547356a2ef1c125f6e88f12650c9b9a3e05fc0d42ce4a8bf69ad484ad079"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "da920db97ba66edde362a934004963c9a9f2ba8eacecf4f1233bc5814bd762c6"
 ---
 
 # `extractReasoningMiddleware()`
@@ -82,6 +82,7 @@ The middleware works with the `LanguageModelV4StreamPart` type for streaming res
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+- [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
 - [uploadFile](/docs/reference/ai-sdk-core/upload-file)
 - [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
 - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
@@ -97,6 +98,7 @@ The middleware works with the `LanguageModelV4StreamPart` type for streaming res
 - [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
 - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [toolSearch](/docs/reference/ai-sdk-core/tool-search)
 - [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
 - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)

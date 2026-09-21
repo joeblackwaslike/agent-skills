@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/troubleshoot-install.md"
-fetched_at: "2026-09-14T09:37:17.168Z"
-sha256: "9bc9b34c67d8a1b12328b454ade028fb9a1190f365cf13560e4393fe8979f72d"
+fetched_at: "2026-09-21T09:39:23.760Z"
+sha256: "0a1201f2a0e09eed4474ac17c275420663f5c04bad0887159208c5fd82078fd0"
 ---
 
 > ## Documentation Index
@@ -876,7 +876,7 @@ The `npm error path` line names the directory npm couldn't move. Delete that dir
     rm -rf "$(npm root -g)/@anthropic-ai/claude-code"
     ```
 
-    Then remove any leftover temp directories. If zsh prints `no matches found`, there were none to remove:
+    Then remove any leftover temp directories. If Zsh prints `no matches found`, there were none to remove:
 
     ```bash theme={null}
     rm -rf "$(npm root -g)/@anthropic-ai/.claude-code-"*

@@ -13,8 +13,8 @@ related:
 summary: Learn how to forward Vercel Audit Log Drain events to Splunk using the HTTP Event Collector (HEC).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/audit-logs-to-splunk.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "e9baf007fd8be9b411cc0011c6b38f333f281c2eba6e0cabfa64673542dc8d53"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "3320915cd4cc323e04b43e1cb7850a005dd47443b99236a14b7d2d1f18b46184"
 ---
 
 # Drain Audit Logs to Splunk
@@ -33,11 +33,10 @@ Audit Log Drains can forward team activity events to [Splunk](https://www.splunk
 - [Expanded Audit Log coverage, now delivered through Vercel Drains](https://vercel.com/changelog/expanded-audit-log-coverage-now-delivered-through-vercel-drains?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-splunk&source_site=vercel-docs&relationship=related)
 - [Drain Audit Logs to Datadog](https://vercel.com/docs/drains/audit-logs-to-datadog?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-splunk&source_site=vercel-docs&relationship=related) — Learn how to forward Vercel Audit Log Drain events to Datadog using the Datadog Logs API.
 - [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-splunk&source_site=vercel-docs&relationship=related)
-- [How do I store logs on Vercel?](https://vercel.com/kb/guide/how-do-i-store-logs-on-vercel?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-splunk&source_site=vercel-docs&relationship=related) — Learn how to store logs on Vercel.
 - [Migrating from Custom SIEM Log Streaming to Audit Log Drains](https://vercel.com/docs/audit-log/migrating-to-drains?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-splunk&source_site=vercel-docs&relationship=related) — Move your SIEM integration from Custom SIEM Log Streaming to Audit Log Drains, with wider event coverage and a new event
+- [Drain Audit Logs to Panther](https://vercel.com/docs/drains/audit-logs-to-panther?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-splunk&source_site=vercel-docs&relationship=related) — Learn how to forward Vercel Audit Log Drain events to Panther using Panther's built-in Vercel source.
 - [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-splunk&source_site=vercel-docs&relationship=related) — Learn about Web Analytics Drains - data formats and custom events configuration.
 - [Trace Drains Reference](https://vercel.com/docs/drains/reference/traces?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-splunk&source_site=vercel-docs&relationship=related) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
-- [Retrieves a Configurable Log Drain \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/retrieves-a-configurable-log-drain-deprecated?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-splunk&source_site=vercel-docs&relationship=related) — GET /v1/log-drains/{id} — Retrieves a Configurable Log Drain. This endpoint must be called with a team AccessToken \\(int
 
 Full cross-link map for this page: [/docs/drains/audit-logs-to-splunk.graph.md](/docs/drains/audit-logs-to-splunk.graph.md?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-splunk&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

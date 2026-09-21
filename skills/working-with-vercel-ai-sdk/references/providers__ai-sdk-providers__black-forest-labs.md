@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/black-forest-labs.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "ef650fba74de8fce1a4266949dc6c3a74cfc0d63339bd88ba91961ba5f31e088"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "79c94e638788d72e415a25816f307da11dcffdd0ab27de8df6af8ff5d4083fa7"
 ---
 
 # Black Forest Labs Provider
@@ -507,6 +507,7 @@ video object may contain the following properties:
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
 - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
+- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

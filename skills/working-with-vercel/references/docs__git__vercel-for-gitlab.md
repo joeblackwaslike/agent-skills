@@ -3,7 +3,7 @@ title: Deploying GitLab Projects with Vercel
 product: vercel
 url: /docs/git/vercel-for-gitlab
 canonical_url: "https://vercel.com/docs/git/vercel-for-gitlab"
-last_updated: 2026-08-11
+last_updated: 2026-09-16
 type: conceptual
 prerequisites:
   - /docs/git
@@ -16,8 +16,8 @@ related:
 summary: ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automatic Custom Domain updates.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git/vercel-for-gitlab.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "adf050d331d2a10f46bf16f6dde79ae61cf5883af3a4495aaad7de6dc63fe8fe"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "5dd0e90efd17d2ad42f8b813787dda547a73c7046bd621cb003715c57ed42041"
 ---
 
 # Deploying GitLab Projects with Vercel
@@ -321,7 +321,7 @@ VERCEL_GIT_COMMIT_AUTHOR_NAME=Timmy Triangle
 
 **Available at:&#x20;**&#x42;uild time
 
-The git SHA of the last successful deployment for the project and branch.
+The git SHA of the last successful deployment for the project and branch. It's empty on a branch's first deployment, since that branch has no previous successful deployment yet.
 
 **Note:&#x20;**&#x54;his variable is only exposed when an Ignored Build Step is provided.
 
@@ -343,9 +343,9 @@ We require some permissions through our Vercel for GitLab integration. Below are
 
 | Permission | Read | Write | Description                                                                                                                                                                          |
 | ---------- | ---- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `API`      | Y    | Y     | Allows us access to the API—including all groups and projects, the container registry, and the package registry—to clone repositories and add comments to pull requests and commits. |
+| `API`      | Y    | Y     | Allows us access to the API (including all groups and projects, the container registry, and the package registry) to clone repositories and add comments to pull requests and commits. |
 
-> **💡 Note:** We use the permissions above in order to provide you with the best possible
+> **💡 Note:** We use the permissions above to provide you with the best possible
 > deployment experience. If you have any questions or concerns about any of the
 > permission scopes, please [contact Vercel Support](/help#issues).
 

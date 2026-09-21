@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-message-conversion-error.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "dfd3b22f999fd9ae955a9d9a391308797f8dd3d8cce98ad1984bb2f9d7bae4a9"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "dbb5d637a24a7b92e277bb79289605b8d7b08970306f0c3bdffca4c99c3282d6"
 ---
 
 # AI_MessageConversionError
@@ -31,6 +31,7 @@ if (MessageConversionError.isInstance(error)) {
 - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
 - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
 - [AI_EmptyResponseBodyError](/docs/reference/ai-sdk-errors/ai-empty-response-body-error)
+- [AI_EvaluationUnsupportedQuestionTypeError](/docs/reference/ai-sdk-errors/ai-evaluation-unsupported-question-type-error)
 - [AI_InvalidArgumentError](/docs/reference/ai-sdk-errors/ai-invalid-argument-error)
 - [AI_InvalidDataContentError](/docs/reference/ai-sdk-errors/ai-invalid-data-content-error)
 - [AI_InvalidMessageRoleError](/docs/reference/ai-sdk-errors/ai-invalid-message-role-error)

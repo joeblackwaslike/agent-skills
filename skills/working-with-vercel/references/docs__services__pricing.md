@@ -16,8 +16,8 @@ related:
 summary: "Understand how billing works for Vercel Services, what's charged, and which limits apply."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services/pricing.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "6164169d870a3e4b42d115222a31273bbc9d442abd59989c8d2ca513f5f89d68"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "56e587ff075c05bea8ee05d7369ad13d5aaa515abf0e48d4021fc7c19dc174cc"
 ---
 
 # Services Pricing and Limits
@@ -52,6 +52,11 @@ Each service runs on Vercel's compute and is billed the same as [Vercel Function
 When one service calls another over a [binding](/docs/services/bindings), each call counts as one service request. Requests that arrive from the public internet are not service requests.
 
 Service requests are [regionally priced](/docs/pricing/regional-pricing), like other Managed Infrastructure resources, and are billed separately from CDN requests. A service-to-service call does not incur a separate Edge Request or Fast Data Transfer charge.
+
+| Resource | Price | Included (Pro) | Included (Hobby) |
+|----------|-------|----------------|-----------------|
+| [Service Requests](/docs/services/pricing) | Regional | Usage-based | N/A |
+
 
 See [Pricing](/docs/pricing) for plan details and included credits.
 

@@ -3,7 +3,7 @@ title: Flat Rate CDN
 product: vercel
 url: /docs/pricing/flat-rate-cdn
 canonical_url: "https://vercel.com/docs/pricing/flat-rate-cdn"
-last_updated: 2026-09-08
+last_updated: 2026-09-14
 type: reference
 prerequisites:
   - /docs/pricing
@@ -15,8 +15,8 @@ related:
 summary: Flat Rate CDN gives you fixed monthly CDN pricing and protection against usage spikes across capacity tiers.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/flat-rate-cdn.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "4abc3b251a4fae0ea051c5afeb098a3efbae7a25ea15ee3215d1398dc6819398"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "170fca1c515b8b84b52d14e1b1e7840f9f07829ff510c589727df894492369ef"
 ---
 
 # Flat Rate CDN
@@ -24,6 +24,25 @@ sha256: "4abc3b251a4fae0ea051c5afeb098a3efbae7a25ea15ee3215d1398dc6819398"
 > **🔒 Permissions Required**: Flat Rate CDN
 
 Flat Rate CDN gives you fixed monthly CDN pricing and protection against usage spikes. You pay for a capacity tier instead of per unit of usage, so a one-day traffic spike doesn't change your bill.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Introducing Flat Rate CDN](https://vercel.com/blog/introducing-flat-rate-cdn?from=related&source_path=%2Fdocs%2Fpricing%2Fflat-rate-cdn&source_site=vercel-docs&relationship=related)
+- [Flat Rate CDN is now GA for Pro teams](https://vercel.com/changelog/flat-rate-cdn-is-now-ga-for-pro-teams?from=related&source_path=%2Fdocs%2Fpricing%2Fflat-rate-cdn&source_site=vercel-docs&relationship=related)
+- [Flat Rate CDN in Limited Beta](https://vercel.com/changelog/flat-rate-cdn-in-limited-beta?from=related&source_path=%2Fdocs%2Fpricing%2Fflat-rate-cdn&source_site=vercel-docs&relationship=related)
+- [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn?from=related&source_path=%2Fdocs%2Fpricing%2Fflat-rate-cdn&source_site=vercel-docs&relationship=related) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
+- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related&source_path=%2Fdocs%2Fpricing%2Fflat-rate-cdn&source_site=vercel-docs&relationship=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
+- [How Vercel CDN works](https://vercel.com/docs/how-vercel-cdn-works?from=related&source_path=%2Fdocs%2Fpricing%2Fflat-rate-cdn&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
+- [Networking](https://vercel.com/docs/networking?from=related&source_path=%2Fdocs%2Fpricing%2Fflat-rate-cdn&source_site=vercel-docs&relationship=related) — Connect your Vercel projects to backend services with static IPs and secure networking options.
+- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fpricing%2Fflat-rate-cdn&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Services Pricing and Limits](https://vercel.com/docs/services/pricing?from=related&source_path=%2Fdocs%2Fpricing%2Fflat-rate-cdn&source_site=vercel-docs&relationship=related) — Understand how billing works for Vercel Services, what's charged, and which limits apply.
+
+Full cross-link map for this page: [/docs/pricing/flat-rate-cdn.graph.md](/docs/pricing/flat-rate-cdn.graph.md?from=related&source_path=%2Fdocs%2Fpricing%2Fflat-rate-cdn&source_site=vercel-docs&relationship=graph)
+<!-- /docsgraph:related -->
 
 ![Image](https://vercel.com/docs-assets/static/docs/cdn/flat-rate-cdn-cost-comparison-light.png)
 

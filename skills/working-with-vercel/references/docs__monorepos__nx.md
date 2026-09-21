@@ -16,8 +16,8 @@ related:
 summary: Nx is an extensible build system with support for monorepos, integrations, and Remote Caching on Vercel. Learn how to deploy Nx to Vercel with this...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/nx.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "e363b663725346aa8d79a6cad70e91cbaba5eedc5b5379b515789d77c4ad3f40"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "23849d7f69d255d797c7c96331851259fcae4eb4867e64d9b3e6ec2ec0a21f5e"
 ---
 
 # Deploying Nx to Vercel
@@ -31,11 +31,12 @@ Nx is an extensible build system with support for monorepos, integrations, and R
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Missing routes-manifest.json file or No Output Directory when using Turborepo or NX](https://vercel.com/kb/guide/missing-routes-manifest-or-output-turborepo-nx?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — How to solve the error \\`The file "/vercel/path0/apps/web/.next/routes-manifest.json" couldn't be found\\` or \\`No Output
-- [Import Turborepo, Nx, and Rush monorepos with zero configuration](https://vercel.com/changelog/import-turborepo-nx-and-rush-monorepos-with-zero-configuration?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related)
-- [How to ship a Nitro app on Vercel](https://vercel.com/kb/guide/ship-a-nitro-app-on-vercel?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — Deploy a Nitro app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
 - [Vercel](https://turborepo.dev/docs/guides/ci-vendors/vercel?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — Deploy your Turborepo on Vercel with zero-config Remote Caching.
+- [How to ship a Nitro app on Vercel](https://vercel.com/kb/guide/ship-a-nitro-app-on-vercel?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — Deploy a Nitro app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
+- [Import Turborepo, Nx, and Rush monorepos with zero configuration](https://vercel.com/changelog/import-turborepo-nx-and-rush-monorepos-with-zero-configuration?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related)
 - [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
 - [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
+- [Build with a Nitro starter template](https://vercel.com/kb/guide/build-with-a-nitro-starter-template?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — Deploy a Nitro app to Vercel from a starter template. Compare the Nitro Starter, route rules, cached HTTP handler, plugi
 - [Monorepos FAQ](https://vercel.com/docs/monorepos/monorepo-faq?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — Learn the answer to common questions about deploying monorepos on Vercel.
 - [Remote Caching](https://vercel.com/docs/monorepos/remote-caching?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — Vercel Remote Cache allows you to share build outputs and artifacts across distributed teams.
 - [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/image-generation.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "27de566d64bed78621da9c28a87dc4fceccb189c31891c5fe8b7a3a51a685669"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "79aa7abf75e817b40bebdf49848fc089c4a76df2edf0b8ca922959ecfb16208c"
 ---
 
 # Image Generation
@@ -382,11 +382,13 @@ Above are a small subset of the image models supported by the AI SDK providers. 
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Code Mode](/docs/ai-sdk-core/code-mode)
+- [Tool Search](/docs/ai-sdk-core/tool-search)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
+- [Evaluation](/docs/ai-sdk-core/evaluation)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)

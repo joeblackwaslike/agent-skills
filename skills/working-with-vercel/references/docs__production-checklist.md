@@ -16,8 +16,8 @@ related:
 summary: Ensure your application is ready for launch with this comprehensive production checklist by the Vercel engineering team. Covering operational...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/production-checklist.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "3040122c64f483d3c6c3fba8c1d5bd27598f92331675b450ee45b02b2bbb863f"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "7231919b8cd3e5e8f8ca242343dbfd6e97ec39a7c240b5289af2823bcaccfe57"
 ---
 
 # Production checklist for launch
@@ -37,10 +37,10 @@ When launching your application on Vercel, it is important to ensure that it's r
 - [Life of a Vercel request: What happens when a user presses enter](https://vercel.com/blog/life-of-a-vercel-request-what-happens-when-a-user-presses-enter?from=related&source_path=%2Fdocs%2Fproduction-checklist&source_site=vercel-docs&relationship=related)
 - [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions?from=related&source_path=%2Fdocs%2Fproduction-checklist&source_site=vercel-docs&relationship=related)
 - [Vercel security roundup: improved bot defenses, DoS mitigations, and insights](https://vercel.com/blog/vercel-security-roundup-improved-bot-defenses-dos-mitigations-and-insights?from=related&source_path=%2Fdocs%2Fproduction-checklist&source_site=vercel-docs&relationship=related)
-- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Fproduction-checklist&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
 - [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fproduction-checklist&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fproduction-checklist&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Security & Compliance Measures](https://vercel.com/docs/security/compliance?from=related&source_path=%2Fdocs%2Fproduction-checklist&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+- [Glossary](https://vercel.com/docs/glossary?from=related&source_path=%2Fdocs%2Fproduction-checklist&source_site=vercel-docs&relationship=related) — Learn about the terms and concepts used in Vercel's products and documentation.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fproduction-checklist&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 
 Full cross-link map for this page: [/docs/production-checklist.graph.md](/docs/production-checklist.graph.md?from=related&source_path=%2Fdocs%2Fproduction-checklist&source_site=vercel-docs&relationship=graph)

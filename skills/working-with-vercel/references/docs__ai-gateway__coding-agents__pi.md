@@ -3,7 +3,7 @@ title: Pi with AI Gateway
 product: vercel
 url: /docs/ai-gateway/coding-agents/pi
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/pi"
-last_updated: 2026-09-08
+last_updated: 2026-09-13
 type: how-to
 prerequisites:
   - /docs/ai-gateway/coding-agents
@@ -14,8 +14,8 @@ related:
 summary: Connect Pi to AI Gateway with one CLI command, or configure it manually.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/pi.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "42839c6ac9550ac08602b32f59de05abcbb4537327b511e1922b3d6a3660cd87"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "18841f872a3107cb98789af88138bdf42a2f78a8d51462bbc770946b936bee11"
 ---
 
 # Pi with AI Gateway

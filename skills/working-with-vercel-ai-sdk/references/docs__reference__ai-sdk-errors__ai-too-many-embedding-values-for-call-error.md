@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "b302f87ac31612a865d1606888c6599dedcf6021ac0e9c165e964cb0a75400ac"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "a66f9eae239675dbf6cf0ffdb0b6591590b33a9f4db40452951cd20fd64f7aed"
 ---
 
 # AI_TooManyEmbeddingValuesForCallError
@@ -33,6 +33,7 @@ if (TooManyEmbeddingValuesForCallError.isInstance(error)) {
 - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
 - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
 - [AI_EmptyResponseBodyError](/docs/reference/ai-sdk-errors/ai-empty-response-body-error)
+- [AI_EvaluationUnsupportedQuestionTypeError](/docs/reference/ai-sdk-errors/ai-evaluation-unsupported-question-type-error)
 - [AI_InvalidArgumentError](/docs/reference/ai-sdk-errors/ai-invalid-argument-error)
 - [AI_InvalidDataContentError](/docs/reference/ai-sdk-errors/ai-invalid-data-content-error)
 - [AI_InvalidMessageRoleError](/docs/reference/ai-sdk-errors/ai-invalid-message-role-error)

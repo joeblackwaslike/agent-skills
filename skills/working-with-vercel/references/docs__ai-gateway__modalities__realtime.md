@@ -3,20 +3,21 @@ title: Realtime Voice with AI Gateway
 product: vercel
 url: /docs/ai-gateway/modalities/realtime
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/realtime"
-last_updated: 2026-09-08
-type: how-to
+last_updated: 2026-09-15
+type: conceptual
 prerequisites:
   - /docs/ai-gateway/modalities
   - /docs/ai-gateway
 related:
   - /docs/ai-gateway/getting-started/realtime
+  - /docs/ai-gateway/modalities/realtime/gpt-live
   - /docs/ai-gateway/modalities/speech-to-text
   - /docs/ai-gateway/modalities/text-to-speech
 summary: Build low-latency, speech-to-speech voice agents with the AI SDK through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/realtime.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "f8fae756b0bc2e77fb649101e62609fc77a79b5891868d8187a93261ca64ed17"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "4a3950892fc377017e60fbd92b390a795d829cdc213f1de7fa4cc6c00b6ecc1e"
 ---
 
 # Realtime Voice with AI Gateway
@@ -34,21 +35,22 @@ Build voice agents that listen and respond in real time. With the AI SDK, you st
 - [Realtime voice, speech, and transcription now supported on AI Gateway](https://vercel.com/changelog/realtime-voice-speech-and-transcription-now-supported-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime&source_site=vercel-docs&relationship=related)
 - [Realtime](https://ai-sdk.dev/docs/ai-sdk-core/realtime?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime&source_site=vercel-docs&relationship=related)
 - [AI SDK 7](https://vercel.com/blog/ai-sdk-7?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime&source_site=vercel-docs&relationship=related)
+- [GPT-Live 1 now available on AI Gateway](https://vercel.com/changelog/gpt-live-1-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime&source_site=vercel-docs&relationship=related)
 - [xAI Grok audio models now available on Vercel AI Gateway](https://vercel.com/changelog/xai-grok-audio-models-now-available-on-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime&source_site=vercel-docs&relationship=related)
-- [experimental_useRealtime](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-realtime?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime&source_site=vercel-docs&relationship=related)
-- [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime&source_site=vercel-docs&relationship=related) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/realtime.graph.md](/docs/ai-gateway/modalities/realtime.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 For a step-by-step setup, see the [Realtime quickstart](/docs/ai-gateway/getting-started/realtime).
 
+For `openai/gpt-live-1`, use the [GPT-Live guide](/docs/ai-gateway/modalities/realtime/gpt-live). GPT-Live uses a separate WebSocket endpoint, continuous audio, client-managed delegation, and duration-based billing. It does not use the `gateway.experimental_realtime` examples on this page. Changing their model slug is not enough to connect to GPT-Live.
+
 Realtime is for live conversation. To transcribe recorded audio, see [Speech to Text](/docs/ai-gateway/modalities/speech-to-text); to generate spoken audio from text, see [Text to Speech](/docs/ai-gateway/modalities/text-to-speech).
 
 > **💡 Note:** Realtime support ships in the stable AI SDK releases. Install it with `pnpm
 >   add ai @ai-sdk/gateway @ai-sdk/react`.
 
-These examples use `openai/gpt-realtime-2`, which supports realtime connections over WebSocket. Before switching models, check that the model supports the realtime WebSocket endpoint. A successful token request does not guarantee that a model accepts a WebSocket connection.
+These examples use `openai/gpt-realtime-2`, which supports realtime connections over WebSocket. Other realtime models include `google/gemini-3.8-live` (latency-optimized) and `google/gemini-3.8-live-extended-thinking` (background reasoning while streaming audio; requires exactly one of `thinkingLevel` or `thinkingBudget` in `providerOptions.google.thinkingConfig`, for example `{ thinkingLevel: 'LOW' }`). Before switching models, check that the model supports the realtime WebSocket endpoint. A successful token request does not guarantee that a model accepts a WebSocket connection.
 
 ## Browser voice agent
 
@@ -159,7 +161,7 @@ Pass a `sessionConfig` to set the voice, turn detection, and other session optio
 
 ## Session limits
 
-AI Gateway enforces these limits on every realtime session:
+AI Gateway enforces these limits on the realtime sessions described on this page. For GPT-Live, see its [session lifecycle](/docs/ai-gateway/modalities/realtime/gpt-live#close-the-session):
 
 | Limit                    | Value      | What happens when exceeded                                      |
 | ------------------------ | ---------- | --------------------------------------------------------------- |

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/voyage.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "06c39e5f0a15876b727c701b28cb905e50fc0747eee233f9cfd8d1e70571811a"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "b95d33c9548a3e9087153cf160c068164cdc29ab508419fb6d995388ece265b2"
 ---
 
 # Voyage AI Provider
@@ -234,6 +234,7 @@ The following provider options are available:
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
 - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
+- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

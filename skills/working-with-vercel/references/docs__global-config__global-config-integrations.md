@@ -16,8 +16,8 @@ related:
 summary: Learn how to use Global Config with popular A/B testing and feature flag service integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-integrations.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "15344a597dbac0c9358d19d01bb7d19d3a11bf0776ceb96ac46002712fab8def"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "346492307c02c4eeb776f0afd744f1b895f51bf9f473fbd745e1ee9f8b2eb9c4"
 ---
 
 # Using Global Config with an integration
@@ -34,10 +34,10 @@ Vercel has partnered with A/B testing and feature flag services such as LaunchDa
 
 - [Global Config](https://flags-sdk.dev/docs/providers/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations&source_site=vercel-docs&relationship=related)
 - [Using Global Config](https://vercel.com/docs/global-config/using-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations&source_site=vercel-docs&relationship=related) — Learn how to use Global Configs in your projects.
-- [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations&source_site=vercel-docs&relationship=related) — POST /v1/global-config — Creates a Global Config.
 - [Get Global Configs](https://vercel.com/docs/rest-api/global-config/get-global-configs?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations&source_site=vercel-docs&relationship=related) — GET /v1/global-config — Returns all Global Configs.
+- [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations&source_site=vercel-docs&relationship=related) — POST /v1/global-config — Creates a Global Config.
+- [Get a Global Config](https://vercel.com/docs/rest-api/global-config/get-a-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations&source_site=vercel-docs&relationship=related) — GET /v1/global-config/{edgeConfigId} — Returns a Global Config.
 - [Get the data of a user-provided Global Config](https://vercel.com/docs/rest-api/marketplace/get-the-data-of-a-user-provided-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations&source_site=vercel-docs&relationship=related) — HEAD /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config — When the user
-- [Push data into a user-provided Global Config](https://vercel.com/docs/rest-api/marketplace/push-data-into-a-user-provided-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations&source_site=vercel-docs&relationship=related) — PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config — When the user
 
 Full cross-link map for this page: [/docs/global-config/global-config-integrations.graph.md](/docs/global-config/global-config-integrations.graph.md?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

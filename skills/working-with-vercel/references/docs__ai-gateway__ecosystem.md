@@ -3,7 +3,7 @@ title: AI Gateway Ecosystem and Integrations
 product: vercel
 url: /docs/ai-gateway/ecosystem
 canonical_url: "https://vercel.com/docs/ai-gateway/ecosystem"
-last_updated: 2026-09-08
+last_updated: 2026-09-15
 type: conceptual
 prerequisites:
   - /docs/ai-gateway
@@ -12,12 +12,12 @@ related:
   - /docs/ai-gateway/ecosystem/framework-integrations/llamaindex
   - /docs/ai-gateway/ecosystem/framework-integrations/mastra
   - /docs/ai-gateway/ecosystem/framework-integrations/pydantic-ai
-  - /docs/ai-gateway/ecosystem/framework-integrations/litellm
+  - /docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai
 summary: Connect frameworks, coding tools, and billing integrations to AI Gateway. Configure app attribution and explore integrations for your AI applications.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "d06ff4ba5133a2a5a27438715caa81f5a236c3713a1b678bc3739a0abd9915b1"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "2ac63ee9924f3fe8d58fbe565635bc22224b69a6024209f8bd000f5e33901e77"
 ---
 
 # AI Gateway Ecosystem and Integrations
@@ -31,11 +31,11 @@ AI Gateway integrates with the AI development ecosystem you use. Whether you're 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem&source_site=vercel-docs&relationship=related) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
-- [Build with AI on Vercel](https://vercel.com/docs/agent-resources/integrations-for-models?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem&source_site=vercel-docs&relationship=related) — Integrate powerful AI services and models seamlessly into your Vercel projects.
 - [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem&source_site=vercel-docs&relationship=related) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
-- [Deep Agents CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepagents?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem&source_site=vercel-docs&relationship=related) — Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
+- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
+- [Build with AI on Vercel](https://vercel.com/docs/agent-resources/integrations-for-models?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem&source_site=vercel-docs&relationship=related) — Integrate powerful AI services and models seamlessly into your Vercel projects.
 - [Python with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem&source_site=vercel-docs&relationship=related) — Use AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
-- [Coding Agents and Chat Platforms with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem&source_site=vercel-docs&relationship=related) — Connect coding agents and chat platforms to AI Gateway. Configure Claude Code, Codex, Chatbox, Open WebUI, and more.
+- [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem&source_site=vercel-docs&relationship=related) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem.graph.md](/docs/ai-gateway/ecosystem.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -50,6 +50,7 @@ These popular frameworks work through Chat Completions endpoints or native integ
 | [LlamaIndex](/docs/ai-gateway/ecosystem/framework-integrations/llamaindex)   | Python     | Native package   | Knowledge assistants, document Q\&A   |
 | [Mastra](/docs/ai-gateway/ecosystem/framework-integrations/mastra)           | TypeScript | Native           | AI workflows and agents              |
 | [Pydantic AI](/docs/ai-gateway/ecosystem/framework-integrations/pydantic-ai) | Python     | Native           | Type-safe agents, structured outputs |
+| [TanStack AI](/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai) | TypeScript/JS | Native adapter | Chat, embeddings, image generation |
 | [LiteLLM](/docs/ai-gateway/ecosystem/framework-integrations/litellm)         | Python     | Native prefix    | Unified LLM interface                |
 | [Langfuse](/docs/ai-gateway/ecosystem/framework-integrations/langfuse)       | Any        | Observability    | LLM analytics and tracing            |
 
@@ -101,6 +102,40 @@ agent = Agent(
 
 result = agent.run_sync("What is the capital of France?")
 ```
+
+### TanStack AI
+
+Install `@tanstack/ai` and `@tanstack/ai-vercel-gateway`, then set `AI_GATEWAY_API_KEY` in your server environment. Use the native adapter to stream a chat response:
+
+```ts filename="index.mts" framework=all
+import { chat } from '@tanstack/ai';
+import { vercelGatewayText } from '@tanstack/ai-vercel-gateway';
+
+const stream = chat({
+  adapter: vercelGatewayText('anthropic/claude-opus-5'),
+  messages: [{ role: 'user', content: 'Explain RAG in one sentence.' }],
+});
+
+for await (const chunk of stream) {
+  console.log(chunk);
+}
+```
+
+```js filename="index.mjs" framework=all
+import { chat } from '@tanstack/ai';
+import { vercelGatewayText } from '@tanstack/ai-vercel-gateway';
+
+const stream = chat({
+  adapter: vercelGatewayText('anthropic/claude-opus-5'),
+  messages: [{ role: 'user', content: 'Explain RAG in one sentence.' }],
+});
+
+for await (const chunk of stream) {
+  console.log(chunk);
+}
+```
+
+The example logs stream events containing the model's response. Follow [TanStack AI with AI Gateway](/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai) for installation, authentication, and run commands.
 
 See the [Framework Integrations documentation](/docs/ai-gateway/ecosystem/framework-integrations) for complete setup guides.
 

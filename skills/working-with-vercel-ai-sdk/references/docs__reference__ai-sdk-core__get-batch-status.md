@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/get-batch-status.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "b038df2e68a6a496f75f573c6f0754f9ad5a10c6e3ebc0554e04a31c0de14c85"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "ae291c7e0f52d611e6cdae7d939d1fa73437e4355d7609c566656fffabb0b6f3"
 ---
 
 # `experimental_getBatchStatus()`
@@ -147,6 +147,7 @@ console.log(status.status, status.requestCounts);
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+- [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
 - [uploadFile](/docs/reference/ai-sdk-core/upload-file)
 - [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
 - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
@@ -162,6 +163,7 @@ console.log(status.status, status.requestCounts);
 - [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
 - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [toolSearch](/docs/reference/ai-sdk-core/tool-search)
 - [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
 - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)

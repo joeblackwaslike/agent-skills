@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/prodia.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "feb388977fb729cf9c0102be885494ef9b4269e4899e73ad28f088f3b753e723"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "a1a5e52a6e008ed373fd94fd19d4b9dcafbe028e4c4b61c0bf3fbac087fb704c"
 ---
 
 # Prodia Provider
@@ -198,6 +198,7 @@ console.log('Elapsed:', metadata?.elapsed);
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
 - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
+- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

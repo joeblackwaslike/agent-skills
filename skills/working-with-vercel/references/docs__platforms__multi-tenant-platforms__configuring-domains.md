@@ -3,27 +3,28 @@ title: Configuring Custom Domains
 product: vercel
 url: /docs/platforms/multi-tenant-platforms/configuring-domains
 canonical_url: "https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains"
-last_updated: 2026-08-25
+last_updated: 2026-09-16
 type: how-to
 prerequisites:
   - /docs/platforms/multi-tenant-platforms
   - /docs/platforms
 related:
   - /docs/domains/working-with-nameservers
+  - /docs/domains/working-with-domains/add-a-domain
   - /docs/rest-api/sdk
   - /docs/deployments/generated-urls
 summary: Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "383be040ad078de7273b2b22a273725607c0093081d8016399ccc2ea756bcdcb"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "8db5635841727ae38ccac9365358008573124298d2cdfbb7bee9a5a77ef45e2e"
 ---
 
 # Configuring Custom Domains
 
 ## Using wildcard domains
 
-If you plan on offering subdomains like `*.acme.com`, add a wildcard domain to your Vercel project. This requires using [Vercel's nameservers](/docs/domains/working-with-nameservers) so that Vercel can manage the DNS challenges necessary for generating wildcard SSL certificates.
+If you plan on offering subdomains like `*.acme.com`, add a wildcard domain to your Vercel project. Vercel needs access to DNS challenges to issue and renew wildcard certificates. To configure the domain with [Vercel's nameservers](/docs/domains/working-with-nameservers):
 
 
 <!-- docsgraph:related -->
@@ -36,18 +37,20 @@ If you plan on offering subdomains like `*.acme.com`, add a wildcard domain to y
 - [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
 - [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
 - [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
-- [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 - [Working with domains](https://vercel.com/docs/domains/working-with-domains?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Learn how domains work and the options Vercel provides for managing them.
 - [Troubleshooting domains](https://vercel.com/docs/domains/troubleshooting?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
+- [Multi-tenant Limits](https://vercel.com/docs/platforms/multi-tenant-platforms/limits?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Understand the limits and features available for Vercel for Platforms.
 
 Full cross-link map for this page: [/docs/platforms/multi-tenant-platforms/configuring-domains.graph.md](/docs/platforms/multi-tenant-platforms/configuring-domains.graph.md?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 1. Point your domain to Vercel's nameservers (`ns1.vercel-dns.com` and `ns2.vercel-dns.com`).
 2. In your Vercel project settings, add the apex domain (e.g., `acme.com`).
-3. Add a wildcard domain: `.acme.com`.
+3. Add a wildcard domain: `*.acme.com`.
 
-Now, any `tenant.acme.com` you create—whether it's `tenant1.acme.com` or `docs.tenant1.acme.com`—automatically resolves to your Vercel deployment. Vercel issues individual certificates for each subdomain on the fly.
+If you can't change your domain's nameservers, follow [Use wildcard domains with an external DNS provider](/docs/domains/working-with-domains/add-a-domain#use-wildcard-domains-with-an-external-dns-provider) to delegate certificate validation and configure wildcard traffic routing.
+
+Now, any `tenant.acme.com` you create, whether it's `tenant1.acme.com` or `docs.tenant1.acme.com`, automatically resolves to your Vercel deployment. Vercel issues individual certificates for each subdomain on the fly.
 
 ### Protecting tenant subdomains with the Public Suffix List
 
@@ -225,7 +228,7 @@ If you add a tenant's domain but never verify it (e.g., by adding a `TXT` record
 
 ### Wildcard domain requires Vercel nameservers
 
-If you try to add `.acme.com` without pointing to `ns1.vercel-dns.com` and `ns2.vercel-dns.com`, wildcard SSL won't work. Make sure the apex domain's nameservers are correctly set.
+For `*.acme.com`, Vercel needs access to DNS challenges to issue and renew the wildcard certificate. Check that the apex domain uses Vercel's nameservers, or follow [Use wildcard domains with an external DNS provider](/docs/domains/working-with-domains/add-a-domain#use-wildcard-domains-with-an-external-dns-provider) to delegate `_acme-challenge` to Vercel.
 
 ### Exceeding subdomain length for preview URLs
 

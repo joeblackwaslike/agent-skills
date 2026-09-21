@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/fish-audio.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "bacd349de5ca5e3f9ea1efae94a581aca4e556053d364f0ac347b97e67e37ee3"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "825d5ec18d1c207f4ab6149d81fb9c516f22de0dc984d81caafb125cd4c8e02b"
 ---
 
 # Fish Audio Provider
@@ -361,6 +361,7 @@ console.log(result.providerMetadata?.fishAudio?.language); // 'English'
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
 - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
+- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

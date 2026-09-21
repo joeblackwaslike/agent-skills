@@ -3,7 +3,7 @@ title: Superset with AI Gateway
 product: vercel
 url: /docs/ai-gateway/coding-agents/superset
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/superset"
-last_updated: 2026-09-08
+last_updated: 2026-09-13
 type: how-to
 prerequisites:
   - /docs/ai-gateway/coding-agents
@@ -14,8 +14,8 @@ related:
 summary: Configure Superset to use AI Gateway with terminal-based coding agents. Set provider credentials and route model requests through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/superset.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "f15ac241c070ebc051a6c6644b31f8497d4319a7a37966ec73a81965fa3f9033"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "4b853f483a1fe2f02cdddc10483ef9d28fce034fed8aea3b075da64af4b33126"
 ---
 
 # Superset with AI Gateway

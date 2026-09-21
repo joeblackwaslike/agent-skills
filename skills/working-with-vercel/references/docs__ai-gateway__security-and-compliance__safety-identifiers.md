@@ -13,8 +13,8 @@ related:
 summary: Learn how to send a unique safety identifier per end user through AI Gateway so provider-side abuse action isolates individual users instead of your...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/safety-identifiers.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "1268c4a02923d23ca1dbd2906b4ee4dbdccc52311fe1eff36b73e63a8f3546e8"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "cced850e20820e03d806045188d0b18f010a32c9357378419f8a45281a5f232f"
 ---
 
 # AI Gateway Safety Identifiers
@@ -30,9 +30,9 @@ A safety identifier tells providers like OpenAI, Anthropic, and Meta which of yo
 - [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fsafety-identifiers&source_site=vercel-docs&relationship=related)
 - [AI Gateway App Attribution](https://vercel.com/docs/ai-gateway/ecosystem/app-attribution?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fsafety-identifiers&source_site=vercel-docs&relationship=related) — Attribute your requests so Vercel can identify and feature your app on AI Gateway pages.
 - [AI Gateway Provider Routing and Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fsafety-identifiers&source_site=vercel-docs&relationship=related) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway.
-- [AI Gateway Embeddings](https://vercel.com/docs/ai-gateway/modalities/embeddings?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fsafety-identifiers&source_site=vercel-docs&relationship=related) — Generate vector embeddings for semantic search, similarity matching, and retrieval-augmented generation \\(RAG\\) through
 - [OpenAI Chat Completions Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fsafety-identifiers&source_site=vercel-docs&relationship=related) — Configure provider options, model fallbacks, BYOK credentials, and prompt caching through AI Gateway.
 - [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fsafety-identifiers&source_site=vercel-docs&relationship=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
+- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fsafety-identifiers&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/security-and-compliance/safety-identifiers.graph.md](/docs/ai-gateway/security-and-compliance/safety-identifiers.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fsafety-identifiers&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

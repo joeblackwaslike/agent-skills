@@ -3,7 +3,7 @@ title: Cline with AI Gateway
 product: vercel
 url: /docs/ai-gateway/coding-agents/cline
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/cline"
-last_updated: 2026-09-08
+last_updated: 2026-09-13
 type: how-to
 prerequisites:
   - /docs/ai-gateway/coding-agents
@@ -14,8 +14,8 @@ related:
 summary: Connect Cline to AI Gateway through the Vercel CLI or VS Code settings. Configure model access and monitor usage and spending in one dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/cline.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "c39e839c8876398527b81e0a41cd07145513613089b057b51ab2e0e2a7984647"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "896849268a1ed98f0dd9e7ae7b8f16a22d8448e1060abd2812887c1ca349637e"
 ---
 
 # Cline with AI Gateway

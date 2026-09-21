@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/wrap-image-model.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "4b5b30a82af759f89895793bcd9a62715834f840cbd6014353f013e1c9745f27"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "98a201acf644536fb6c9dc617ea9d34a837673a8bbb4a6791e3e1107ddd36fbf"
 ---
 
 # `wrapImageModel()`
@@ -78,6 +78,7 @@ A new `ImageModelV4` instance with middleware applied.
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+- [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
 - [uploadFile](/docs/reference/ai-sdk-core/upload-file)
 - [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
 - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
@@ -93,6 +94,7 @@ A new `ImageModelV4` instance with middleware applied.
 - [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
 - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [toolSearch](/docs/reference/ai-sdk-core/tool-search)
 - [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
 - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)

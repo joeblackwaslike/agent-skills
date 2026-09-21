@@ -3,7 +3,7 @@ title: Bypass Deployment Protection for testing, sharing, and automation
 product: vercel
 url: /docs/deployment-protection/methods-to-bypass-deployment-protection
 canonical_url: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection"
-last_updated: 2026-08-21
+last_updated: 2026-09-15
 type: conceptual
 prerequisites:
   - /docs/deployment-protection
@@ -16,8 +16,8 @@ related:
 summary: Learn how to bypass Deployment Protection for specific domains, or for all deployments in a project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "2e3ecf036050f92d05179d735c251cb9ce6004622e100e81319e8fbb2fa4c372"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "a7ae26fd2810a9f3ee22fe6d96eace20b15d226bf8bb57bc5c1bf070e7054e1d"
 ---
 
 # Bypass Deployment Protection for testing, sharing, and automation
@@ -31,13 +31,12 @@ Deployment Protection secures your deployments, but sometimes you need to grant 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection&source_site=vercel-docs&relationship=related) — Protect who can see your deployments.
-- [How to test a Slack bot with your Vercel preview deployment](https://vercel.com/kb/guide/test-slack-bot-with-vercel-preview-deployment?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection&source_site=vercel-docs&relationship=related) — Learn how to build and test a Slack bot using Vercel preview deployments. This guide covers setting up your Slack app, c
 - [How do I add password protection to my Vercel deployment?](https://vercel.com/kb/guide/how-do-i-add-password-protection-to-my-vercel-deployment?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection&source_site=vercel-docs&relationship=related) — Enable Password Protection on a Vercel deployment, configure automation and CORS bypasses, and verify the gate before yo
 - [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection&source_site=vercel-docs&relationship=related)
+- [How to test a Slack bot with your Vercel preview deployment](https://vercel.com/kb/guide/test-slack-bot-with-vercel-preview-deployment?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection&source_site=vercel-docs&relationship=related) — Learn how to build and test a Slack bot using Vercel preview deployments. This guide covers setting up your Slack app, c
 - [Automated & Agent Access](https://vercel.com/docs/deployment-protection/automated-agent-access?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection&source_site=vercel-docs&relationship=related) — Grant AI agents, CI/CD pipelines, MCP servers, and testing tools access to Vercel deployments that have Deployment Prote
 - [Restrict access to production source maps](https://vercel.com/docs/deployment-protection/protected-source-maps?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection&source_site=vercel-docs&relationship=related) — Protected Source Maps gates requests for browser source maps behind Vercel Authentication, so only authorized users can
 - [Restrict access to deployments with Passport](https://vercel.com/docs/passport?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection&source_site=vercel-docs&relationship=related) — Learn how to protect deployments with Passport, read visitor identity, and verify Passport tokens in server-side code.
-- [Access Control](https://vercel.com/docs/security/access-control?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 
 Full cross-link map for this page: [/docs/deployment-protection/methods-to-bypass-deployment-protection.graph.md](/docs/deployment-protection/methods-to-bypass-deployment-protection.graph.md?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

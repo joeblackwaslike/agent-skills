@@ -16,8 +16,8 @@ related:
 summary: Build platforms where agents and users deploy apps with isolated projects or shared multi-tenant deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "c04b6edc2ddb31432e356347ba3957fced73f437b3c5513c3b40e4ac78847e9a"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "dd7b6624f6804a89fc1fa9fe98bd1b944f61ac09a756c97af5b3c517ac3c6d21"
 ---
 
 # Vercel for Platforms
@@ -36,7 +36,7 @@ Vercel for Platforms gives generated apps isolated projects and deployments. Mul
 - [Introducing Vercel for Platforms](https://vercel.com/changelog/introducing-vercel-for-platforms?from=related&source_path=%2Fdocs%2Fplatforms&source_site=vercel-docs&relationship=related)
 - [Introducing the Vercel Platforms Starter Kit](https://vercel.com/blog/platforms-starter-kit?from=related&source_path=%2Fdocs%2Fplatforms&source_site=vercel-docs&relationship=related)
 - [Build a multi-tenant app with Next.js and Vercel](https://vercel.com/kb/guide/nextjs-multi-tenant-application?from=related&source_path=%2Fdocs%2Fplatforms&source_site=vercel-docs&relationship=related) — Create a Next.js application with multi-tenancy and custom domain support on Vercel.
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fplatforms&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Projects overview](https://vercel.com/docs/projects?from=related&source_path=%2Fdocs%2Fplatforms&source_site=vercel-docs&relationship=related) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 - [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs?from=related&source_path=%2Fdocs%2Fplatforms&source_site=vercel-docs&relationship=related) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
 
 Full cross-link map for this page: [/docs/platforms.graph.md](/docs/platforms.graph.md?from=related&source_path=%2Fdocs%2Fplatforms&source_site=vercel-docs&relationship=graph)

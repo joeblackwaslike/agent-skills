@@ -16,8 +16,8 @@ related:
 summary: Run Devin Outposts sessions in isolated Vercel Sandbox microVMs, with the control plane deployed on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/ecosystem/devin.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "2ee3db537af125bea97c7d219aedaa370b36a763a4494b135fe24609a79f1f52"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "dbaa565c6a213119e169f7f1e038c4f6b6c339b3594a0587d760f379bf1f8d4c"
 ---
 
 # Devin
@@ -37,8 +37,8 @@ online, so you can start sessions from any device, including a phone.
 - [Vercel Sandbox now supports Devin Outposts](https://vercel.com/changelog/vercel-sandbox-now-supports-devin-outposts?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fdevin&source_site=vercel-docs&relationship=related)
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fdevin&source_site=vercel-docs&relationship=related) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
 - [Sandbox](https://v0.app/docs/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fdevin&source_site=vercel-docs&relationship=related) — VM-backed chats run your project inside an isolated Vercel Sandbox that hosts your code, dev server, terminal, and agent
-- [Using TanStack AI with Vercel Sandbox](https://vercel.com/kb/guide/tanstack-ai-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fdevin&source_site=vercel-docs&relationship=related) — Run coding agents in isolated Vercel Sandbox microVMs with the @tanstack/ai-sandbox-vercel provider, with durable resume
 - [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fdevin&source_site=vercel-docs&relationship=related) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
+- [Using TanStack AI with Vercel Sandbox](https://vercel.com/kb/guide/tanstack-ai-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fdevin&source_site=vercel-docs&relationship=related) — Run coding agents in isolated Vercel Sandbox microVMs with the @tanstack/ai-sandbox-vercel provider, with durable resume
 - [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fdevin&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fdevin&source_site=vercel-docs&relationship=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fdevin&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat

@@ -3,7 +3,7 @@ title: ZCode with AI Gateway
 product: vercel
 url: /docs/ai-gateway/coding-agents/zcode
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/zcode"
-last_updated: 2018-10-20
+last_updated: 2026-09-13
 type: how-to
 prerequisites:
   - /docs/ai-gateway/coding-agents
@@ -15,8 +15,8 @@ related:
 summary: Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/zcode.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "5052f11c53fd450190581629f065c375f31379e0f49b25df14932b344e0b275e"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "2ef6c255a4a95dbcf30878c2e62ca6fd8d0e8aae7d295e02ac0bf2883d300898"
 ---
 
 # ZCode with AI Gateway

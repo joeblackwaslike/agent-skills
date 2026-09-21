@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/channels.md"
-fetched_at: "2026-09-14T09:37:17.168Z"
-sha256: "809496c86782e9beacb6bfa8085af1b6fa806592b51706c3b8c0718235ceba2b"
+fetched_at: "2026-09-21T09:39:23.760Z"
+sha256: "0521def6e65123e04363b14e5a9402cf9055f8e24c96146917ca78019b4cf96e"
 ---
 
 > ## Documentation Index
@@ -194,7 +194,9 @@ Each supported channel is a plugin that requires [Bun](https://bun.sh). For a ha
         * `Marketplace "claude-plugins-official" not found`: add the marketplace with `/plugin marketplace add anthropics/claude-plugins-official`, then retry the install.
         * The plugin is [not found in the marketplace](/docs/en/discover-plugins#install-plugins): check the plugin name.
 
-        When the install asks for an installation scope, choose the user scope option so the plugin is available across all your projects. If the install summary reports `Run /reload-plugins to activate.`, you can skip that here, because restarting in the next step picks up the plugin.
+        When the install asks for an installation scope, choose the user scope option so the plugin is available across all your projects.
+
+        If the install summary reports `Run /reload-plugins to activate.`, you don't need to act on it here, because restarting in the next step picks up the plugin.
       </Step>
 
       <Step title="Restart with channels enabled">
@@ -249,7 +251,9 @@ To try the fakechat demo, you'll need:
     * `Marketplace "claude-plugins-official" not found`: add the marketplace with `/plugin marketplace add anthropics/claude-plugins-official`, then retry the install.
     * The plugin is [not found in the marketplace](/docs/en/discover-plugins#install-plugins): check the plugin name.
 
-    When the install asks for an installation scope, choose the user scope option so the plugin is available across all your projects. If the install summary reports `Run /reload-plugins to activate.`, you can skip that here, because restarting in the next step picks up the plugin.
+    When the install asks for an installation scope, choose the user scope option so the plugin is available across all your projects.
+
+    If the install summary reports `Run /reload-plugins to activate.`, you don't need to act on it here, because restarting in the next step picks up the plugin.
   </Step>
 
   <Step title="Restart with the channel enabled">
@@ -357,12 +361,12 @@ Report issues or feedback on the [Claude Code GitHub repository](https://github.
 
 Several Claude Code features connect to systems outside the terminal, each suited to a different kind of work:
 
-| Feature                                              | What it does                                                          | Good for                                                  |
-| ---------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------- |
-| [Claude Code on the web](/docs/en/claude-code-on-the-web) | Runs tasks in a fresh cloud sandbox, cloned from GitHub               | Delegating self-contained async work you check on later   |
-| [Claude in Slack](/docs/en/slack)                         | Spawns a web session from an `@Claude` mention in a channel or thread | Starting tasks directly from team conversation context    |
-| Standard [MCP server](/docs/en/mcp)                       | Claude queries it during a task; nothing is pushed to the session     | Giving Claude on-demand access to read or query a system  |
-| [Remote Control](/docs/en/remote-control)                 | You drive your local session from claude.ai or the Claude mobile app  | Steering an in-progress session while away from your desk |
+| Feature                                      | What it does                                                            | Good for                                                  |
+| -------------------------------------------- | ----------------------------------------------------------------------- | --------------------------------------------------------- |
+| [Cloud sessions](/docs/en/claude-code-on-the-web) | Run tasks in a fresh cloud sandbox, cloned from GitHub                  | Delegating self-contained async work you check on later   |
+| [Claude in Slack](/docs/en/slack)                 | Spawns a cloud session from an `@Claude` mention in a channel or thread | Starting tasks directly from team conversation context    |
+| Standard [MCP server](/docs/en/mcp)               | Claude queries it during a task; nothing is pushed to the session       | Giving Claude on-demand access to read or query a system  |
+| [Remote Control](/docs/en/remote-control)         | You drive your local session from claude.ai or the Claude mobile app    | Steering an in-progress session while away from your desk |
 
 Channels fill the gap in that list by pushing events from non-Claude sources into your already-running local session.
 

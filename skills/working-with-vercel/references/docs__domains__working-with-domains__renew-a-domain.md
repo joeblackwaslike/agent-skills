@@ -9,12 +9,12 @@ prerequisites:
   - /docs/domains/working-with-domains
   - /docs/domains
 related:
-  []
+  - /docs/rest-api/domains-registrar/update-auto-renew-for-a-domain
 summary: Learn how to manage automatic and manual renewals for custom domains purchased through or registered with Vercel, and how to redeem expired domains...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/renew-a-domain.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "412b0caea2274a099b57f85c3e4e5ab488eb8bf9562998fc6733c2108b99f299"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "e98d0fd7488c84ae401de9dba74d93d83b61d87574082396f4e15cedbd47ed71"
 ---
 
 # Managing Domain Renewals and Redemptions
@@ -33,11 +33,11 @@ Custom domains purchased through or registered with Vercel are [automatically re
 - [Self-serve domain renewals and redemptions now available](https://vercel.com/changelog/self-serve-domain-renewals-and-redemptions-now-available?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=related)
 - [Lifecycle of a domain](https://vercel.com/kb/guide/lifecycle-of-a-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=related) — Understand the states a .com domain passes through from registration to deletion, and how to renew or recover it at each
 - [Auto Renewal can now be disabled for Domains](https://vercel.com/changelog/auto-renewal-can-now-be-disabled-for-domains?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=related)
-- [Update auto-renew for a domain](https://vercel.com/docs/rest-api/domains-registrar/update-auto-renew-for-a-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=related) — PATCH /v1/registrar/domains/{domain}/auto-renew — Update the auto-renew setting for a domain
 - [Renew a domain](https://vercel.com/docs/rest-api/domains-registrar/renew-a-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=related) — POST /v1/registrar/domains/{domain}/renew — Renew a domain
 - [Programmatic Domain Management](https://vercel.com/docs/domains/registrar-api?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=related) — Programmatically search, price, purchase, renew, and manage domains with Vercel's domains registrar API endpoints.
 - [Working with SSL Certificates](https://vercel.com/docs/domains/working-with-ssl?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=related) — Learn how Vercel uses SSL certification to keep your site secure.
 - [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=related) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
+- [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=related) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
 
 Full cross-link map for this page: [/docs/domains/working-with-domains/renew-a-domain.graph.md](/docs/domains/working-with-domains/renew-a-domain.graph.md?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -77,6 +77,19 @@ If auto renewal is on, Vercel will use the following process to renew the domain
 1. 60 days before expiration, Vercel will send you a warning email that the domain will expire and that we will try to renew it
 2. 30 days before expiration, Vercel will try to renew the domain
 3. Starting at 29 days before expiration, Vercel will check for any failed renewals and try to renew them again
+
+### Turning off auto renewal before the renewal window
+
+Vercel begins processing an automatic renewal 30 days before your domain's expiration date. Once that renewal is in progress, the auto renewal setting is locked for the current cycle:
+
+- The **Auto Renewal** toggle may not respond, and changing it does not cancel the renewal that is already processing. The renewal, and its charge, still complete.
+- Requests to the [update auto-renew endpoint](/docs/rest-api/domains-registrar/update-auto-renew-for-a-domain) fail with the error code `domain_already_renewing` until the renewal finishes.
+
+To prevent a domain from renewing, turn off auto renewal **more than 30 days before its expiration date**. You can check each domain's expiration or renewal date in its row in the [**Domains** tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fdomains\&title=Go+to+Domains).
+
+> **💡 Note:** If the renewal window has already started, wait for the in-progress renewal to
+> complete. The domain's expiration date then moves forward by the renewed term,
+> and you can turn off auto renewal to prevent the next cycle.
 
 ## Manual renewal
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/bytedance.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "c67f75b459926e47de0c80ede9ea2293c568380050d01ff1ec65242fabe5c415"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "466e5d36ff342fae70511109764a923f075ca68263038ca6596d3db20369110c"
 ---
 
 # ByteDance Provider
@@ -525,6 +525,7 @@ All models output MP4 video at 24 fps.
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
 - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
+- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

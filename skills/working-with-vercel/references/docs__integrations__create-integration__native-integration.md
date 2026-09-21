@@ -3,7 +3,7 @@ title: Native integration concepts
 product: vercel
 url: /docs/integrations/create-integration/native-integration
 canonical_url: "https://vercel.com/docs/integrations/create-integration/native-integration"
-last_updated: 2026-08-28
+last_updated: 2026-09-17
 type: conceptual
 prerequisites:
   - /docs/integrations/create-integration
@@ -13,12 +13,12 @@ related:
   - /docs/integrations/create-integration/marketplace-api
   - /docs/integrations
   - /docs/integrations/create-integration
-  - /docs/integrations/create-integration/marketplace-flows
+  - /docs/webhooks/webhooks-api
 summary: "As an integration provider, understanding how your service interacts with Vercel's platform will help you create and optimize your integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/native-integration.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "12e8bd9e21d050bb485816379738836304002e9eef6573b230fc4226c31ba306"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "960ea8e25869274ef24fef9b7b8d8c03726036e96b0472a47e99cb4d76feed17"
 ---
 
 # Native integration concepts
@@ -32,11 +32,10 @@ Native integrations allow a two-way connection between Vercel and third-party pr
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fnative-integration&source_site=vercel-docs&relationship=related) — Learn how you can add a product to your Vercel project through a native integration.
-- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fnative-integration&source_site=vercel-docs&relationship=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
 - [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fnative-integration&source_site=vercel-docs&relationship=related) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
 - [Marketplace Partner API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fnative-integration&source_site=vercel-docs&relationship=related) — Learn how to implement Partner API endpoints for your Vercel integration
 - [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fnative-integration&source_site=vercel-docs&relationship=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
-- [Marketplace Vercel API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fnative-integration&source_site=vercel-docs&relationship=related) — Learn how to call Vercel API endpoints to interact with Vercel resources
+- [Storage on Vercel Marketplace](https://vercel.com/docs/marketplace-storage?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fnative-integration&source_site=vercel-docs&relationship=related) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
 
 Full cross-link map for this page: [/docs/integrations/create-integration/native-integration.graph.md](/docs/integrations/create-integration/native-integration.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fnative-integration&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -150,6 +149,22 @@ flowchart TB
 - One installation can host multiple products and resources.
 - One product can have multiple resource instances.
 - Resources can be connected to multiple projects independently.
+
+## Project connection environments
+
+If a CLI or REST request omits the environment list, Vercel uses the three built-in environments only.
+
+The `integration-resource.project-connected` and `integration-resource.project-disconnected` webhooks contain provider-facing deployment targets.
+
+Because `qa` and `staging` both map to `preview`, changing only the exact Custom Environment can leave the provider-facing target set unchanged. Vercel does not send either project connection webhook for such a scope-only change.
+
+For example:
+
+- A connection to `qa` produces `targets: ['preview']`.
+- A connection to `qa` and `staging` also produces `targets: ['preview']`.
+- A connection to `production`, `preview`, and `qa` produces `targets: ['production', 'preview']`.
+
+See [Project connection events](/docs/webhooks/webhooks-api#integration-resource.project-connected) for the payload fields.
 
 ## Environment variables and prefixes
 

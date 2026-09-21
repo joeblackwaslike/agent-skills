@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "e694f7afbfa146335c1eb512dbc1ee50fd878fd1f0c88126981646ba98dc88d7"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "f65a9132a752e0a4a9dc443056ab57f7e4cce566543d4ade917dc2752f48f9a9"
 ---
 
 # AI_NoTranscriptGeneratedError
@@ -30,6 +30,7 @@ if (NoTranscriptGeneratedError.isInstance(error)) {
 - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
 - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
 - [AI_EmptyResponseBodyError](/docs/reference/ai-sdk-errors/ai-empty-response-body-error)
+- [AI_EvaluationUnsupportedQuestionTypeError](/docs/reference/ai-sdk-errors/ai-evaluation-unsupported-question-type-error)
 - [AI_InvalidArgumentError](/docs/reference/ai-sdk-errors/ai-invalid-argument-error)
 - [AI_InvalidDataContentError](/docs/reference/ai-sdk-errors/ai-invalid-data-content-error)
 - [AI_InvalidMessageRoleError](/docs/reference/ai-sdk-errors/ai-invalid-message-role-error)

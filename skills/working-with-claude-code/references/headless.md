@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/headless.md"
-fetched_at: "2026-09-14T09:37:17.168Z"
-sha256: "72521df6ef71d978d8c8298e518db15a4362b4fbf97f32a36626e31d088675a1"
+fetched_at: "2026-09-21T09:39:23.760Z"
+sha256: "5c0a2bc88989093c1c6803f3efaaf27851c8f0bbc41cbfecfc4ac938cfe6292b"
 ---
 
 > ## Documentation Index
@@ -315,7 +315,13 @@ claude -p "Look at my staged changes and create an appropriate commit" \
 The `--allowedTools` flag uses [permission rule syntax](/docs/en/settings-reference#permission-rule-syntax). The trailing ` *` enables prefix matching, so `Bash(git diff *)` allows any command starting with `git diff`. The space before `*` is important: without it, `Bash(git diff*)` would also match `git diff-index`.
 
 <Note>
-  User-invoked [skills](/docs/en/skills) and custom commands work in `-p` mode: include `/skill-name` in the prompt string and Claude Code expands it before running. Built-in commands that only run in the terminal interface, such as `/login`, aren't available in `-p` mode. `/model`, `/effort`, `/fast`, `/color`, and `/rename` accept the value as an argument, for example `/model sonnet`, and `/mcp` with no argument prints a text summary of server status; these forms require Claude Code v2.1.205 or later and follow each command's [availability notes](/docs/en/commands#all-commands). To change a setting from a `-p` invocation, pass `key=value` to `/config`, for example `/config thinking=false`.
+  Command support differs in `-p` mode:
+
+  * User-invoked [skills](/docs/en/skills) and custom commands work. Include `/skill-name` in the prompt string and Claude Code expands it before running.
+  * Built-in commands that only run in the terminal interface, such as `/login`, aren't available.
+  * `/model`, `/effort`, `/fast`, `/color`, and `/rename` accept the value as an argument, for example `/model sonnet`, and `/mcp` with no argument prints a text summary of server status. These forms require Claude Code v2.1.205 or later and follow each command's [availability notes](/docs/en/commands#all-commands).
+  * To change a setting, pass `key=value` to `/config`, for example `/config thinking=false`.
+  * `/output-style <style>` switches [output styles](/docs/en/output-styles) and `/output-style` alone lists them. Requires Claude Code v2.1.269 or later.
 </Note>
 
 ### Customize the system prompt

@@ -15,8 +15,8 @@ related:
 summary: Learn how to configure custom error pages for 5xx server errors on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/custom-error-pages.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "24cbe6d77b7b1d8816fc29974bc2246d748ba0c7c2c6c4bf319b184189d03286"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "d1d71bd0bc650f5d3cb084464364b54f4c64604e12f79834b50270ced2eaeda7"
 ---
 
 # Custom error pages
@@ -37,9 +37,9 @@ Custom error pages let you replace Vercel's platform error pages with your own b
 - [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors?from=related&source_path=%2Fdocs%2Fcustom-error-pages&source_site=vercel-docs&relationship=related) — Learn the systematic steps to identify and resolve 404 issues.
 - [Avoiding duplicate-content SEO with vercel.app URLs and custom domains](https://vercel.com/kb/guide/avoiding-duplicate-content-with-vercel-app-urls?from=related&source_path=%2Fdocs%2Fcustom-error-pages&source_site=vercel-docs&relationship=related) — Discover why search engines may treat your vercel.app URL and custom domain as separate pages, and how to consolidate ra
 - [What can I do when I run into build output limits with Next.js on Vercel?](https://vercel.com/kb/guide/what-can-i-do-when-i-run-into-build-output-limits-with-next-js-on-vercel?from=related&source_path=%2Fdocs%2Fcustom-error-pages&source_site=vercel-docs&relationship=related) — Learn how to work with build output limits for Next.js on Vercel.
+- [Redirects](https://vercel.com/docs/routing/redirects?from=related&source_path=%2Fdocs%2Fcustom-error-pages&source_site=vercel-docs&relationship=related) — Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL.
 - [Configuration Redirects](https://vercel.com/docs/routing/redirects/configuration-redirects?from=related&source_path=%2Fdocs%2Fcustom-error-pages&source_site=vercel-docs&relationship=related) — Learn how to define static redirects in your framework configuration or vercel.json with support for wildcards, pattern
 - [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Fcustom-error-pages&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
-- [Redirects](https://vercel.com/docs/routing/redirects?from=related&source_path=%2Fdocs%2Fcustom-error-pages&source_site=vercel-docs&relationship=related) — Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL.
 - [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features?from=related&source_path=%2Fdocs%2Fcustom-error-pages&source_site=vercel-docs&relationship=related) — Learn how to customize your deployments using Vercel's build features.
 - [Troubleshooting Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel/troubleshooting?from=related&source_path=%2Fdocs%2Fcustom-error-pages&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot common errors with Sign in with Vercel
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/luma.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "88bb4145e2445417073182de164a99fe50b75904d55a1d1b688b1a08c8294cfd"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "70ec89c81c1a9991eb574f31711f98d3be7943b81d547cbbf57a2dbaa37f5a22"
 ---
 
 # Luma Provider
@@ -267,6 +267,7 @@ Learn more at https://docs.lumalabs.ai/docs/image-generation#character-reference
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
 - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
+- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

@@ -17,8 +17,8 @@ related:
 summary: A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are available.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/connectors.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "d8422ce5c93a7df17dd79359764203cc073e5d686e78921d1306474c3d331964"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "5929baca755c60c3bf8bedac4bf7ff2e8a8e8742c33e1e8e62f1d3ecd62faf5d"
 ---
 
 # Connectors
@@ -35,13 +35,13 @@ A **connector** is the team-owned record that represents one third-party service
 - [Vercel Connect adds 100+ preset connectors](https://vercel.com/changelog/vercel-connect-preset-connectors?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fconnectors&source_site=vercel-docs&relationship=related)
 - [Vercel Connect now supports Microsoft](https://vercel.com/changelog/vercel-connect-supports-microsoft?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fconnectors&source_site=vercel-docs&relationship=related)
 - [Vercel Connect](https://v0.app/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fconnectors&source_site=vercel-docs&relationship=related) — Connect your v0 apps and agents to third-party services – no API keys required.
-- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fconnectors&source_site=vercel-docs&relationship=related) — Authenticate Slack, Discord, GitHub, Linear, Notion, and Telegram adapters with Vercel Connect — short-lived runtime tok
+- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fconnectors&source_site=vercel-docs&relationship=related) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect — short-
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fconnectors&source_site=vercel-docs&relationship=related)
 - [Get a connector project connection](https://vercel.com/docs/rest-api/connect/get-a-connector-project-connection?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fconnectors&source_site=vercel-docs&relationship=related) — GET /v1/connect/connectors/{connector}/projects/{projectId} — Get the configuration that connects a connector to a proje
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fconnectors&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 - [List connectors for a project](https://vercel.com/docs/rest-api/connect/list-connectors-for-a-project?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fconnectors&source_site=vercel-docs&relationship=related) — GET /v2/connect/projects/{projectId}/connectors — List the connectors connected to a project and the environments where
 - [Delete a connector](https://vercel.com/docs/rest-api/connect/delete-a-connector?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fconnectors&source_site=vercel-docs&relationship=related) — DELETE /v1/connect/connectors/{connector} — Delete a connector, its project connections, and its installation records.
-- [List connectors](https://vercel.com/docs/rest-api/connect/list-connectors?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fconnectors&source_site=vercel-docs&relationship=related) — GET /v2/connect/connectors — List connectors that belong to a team.
+- [Disconnect a connector from a project](https://vercel.com/docs/rest-api/connect/disconnect-a-connector-from-a-project?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fconnectors&source_site=vercel-docs&relationship=related) — DELETE /v1/connect/connectors/{connector}/projects/{projectId} — Disconnect a connector from a project.
 
 Full cross-link map for this page: [/docs/connect/concepts/connectors.graph.md](/docs/connect/concepts/connectors.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fconnectors&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

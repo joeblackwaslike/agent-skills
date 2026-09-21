@@ -3,7 +3,7 @@ title: Deploying Bitbucket Projects with Vercel
 product: vercel
 url: /docs/git/vercel-for-bitbucket
 canonical_url: "https://vercel.com/docs/git/vercel-for-bitbucket"
-last_updated: 2026-08-11
+last_updated: 2026-09-16
 type: conceptual
 prerequisites:
   - /docs/git
@@ -16,8 +16,8 @@ related:
 summary: ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and automatic Custom Domain...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git/vercel-for-bitbucket.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "be51d649b91b1c771f9ba3236146a4dc94f9a6e6b9549310da0e6f0fc949a587"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "1069a92516c8c0d7dfb4a4c636659e15b1b16a0f236189a4c6854db41cfdccd6"
 ---
 
 # Deploying Bitbucket Projects with Vercel
@@ -321,7 +321,7 @@ VERCEL_GIT_COMMIT_AUTHOR_NAME=Timmy Triangle
 
 **Available at:&#x20;**&#x42;uild time
 
-The git SHA of the last successful deployment for the project and branch.
+The git SHA of the last successful deployment for the project and branch. It's empty on a branch's first deployment, since that branch has no previous successful deployment yet.
 
 **Note:&#x20;**&#x54;his variable is only exposed when an Ignored Build Step is provided.
 
@@ -368,7 +368,7 @@ User permissions allow us to offer an enhanced experience through information ab
 | ---------- | ---- | ----- | --------------------------------------------------------- |
 | `Account`  | Y    | N     | Allows us to associate an email with a Bitbucket account. |
 
-> **💡 Note:** We use the permissions above in order to provide you with the best possible
+> **💡 Note:** We use the permissions above to provide you with the best possible
 > deployment experience. If you have any questions or concerns about any of the
 > permission scopes, please [contact Vercel Support](/help#issues).
 

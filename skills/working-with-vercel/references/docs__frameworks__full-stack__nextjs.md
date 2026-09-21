@@ -3,7 +3,7 @@ title: Next.js on Vercel
 product: vercel
 url: /docs/frameworks/full-stack/nextjs
 canonical_url: "https://vercel.com/docs/frameworks/full-stack/nextjs"
-last_updated: 2026-08-11
+last_updated: 2026-09-08
 type: conceptual
 prerequisites:
   - /docs/frameworks/full-stack
@@ -17,8 +17,8 @@ related:
 summary: Vercel is the native Next.js platform, designed to enhance the Next.js experience.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/nextjs.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "20404c8ca9f5f1facf870099e7864ffc3fe3bf6d8424656fb2720f3e06fe7c5b"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "18a44fffe98431748775f58918f5442c17793272ff82d7728262073287c2b81b"
 ---
 
 # Next.js on Vercel
@@ -702,7 +702,7 @@ When self-hosting, every request using Draft Mode hits the Next.js server, poten
 
 ### Draft Mode security
 
-Deployments on Vercel automatically secure Draft Mode behind the same authentication used for Preview Comments. In order to enable or disable Draft Mode, the viewer must be logged in as a member of the [Team](/docs/accounts). Once enabled, Vercel's CDN will bypass the ISR cache automatically and invoke the underlying [Vercel Function](/docs/functions).
+Deployments on Vercel automatically secure Draft Mode behind the same authentication used for Preview Comments. To enable or disable Draft Mode, the viewer must be logged in as a member of the [Team](/docs/accounts). Once enabled, Vercel's CDN will bypass the ISR cache automatically and invoke the underlying [Vercel Function](/docs/functions).
 
 ### Enabling Draft Mode in Preview Deployments
 

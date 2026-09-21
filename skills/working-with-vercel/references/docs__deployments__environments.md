@@ -3,7 +3,7 @@ title: Environments
 product: vercel
 url: /docs/deployments/environments
 canonical_url: "https://vercel.com/docs/deployments/environments"
-last_updated: 2026-08-14
+last_updated: 2026-09-17
 type: conceptual
 prerequisites:
   - /docs/deployments
@@ -16,13 +16,13 @@ related:
 summary: Environments are for developing locally, testing changes in a pre-production environment, and serving end-users in production.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/environments.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "2fdd8d12d473a85fe3cf736a3b7278a9428c6c08154a4824d80972eaddedd14c"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "79e991b1eb0487fa875181f24b61d65fb5c7d232cde6ebfa66232e4b6de7efab"
 ---
 
 # Environments
 
-Vercel provides three default environments—**Local**, **Preview**, and **Production**:
+Vercel provides three default environments (**Local**, **Preview**, and **Production**):
 
 
 <!-- docsgraph:related -->
@@ -32,10 +32,10 @@ Vercel provides three default environments—**Local**, **Preview**, and **Produ
 
 - [How to set up a staging environment on Vercel](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel?from=related&source_path=%2Fdocs%2Fdeployments%2Fenvironments&source_site=vercel-docs&relationship=related) — Set up a staging environment on Vercel with custom environments, staged production deployments, or a branch-based previe
 - [Additional custom environments can now be purchased](https://vercel.com/changelog/additional-custom-environments-can-now-be-purchased?from=related&source_path=%2Fdocs%2Fdeployments%2Fenvironments&source_site=vercel-docs&relationship=related)
+- [Native Marketplace integrations now support custom environments](https://vercel.com/changelog/custom-environments-support-for-marketplace-integrations?from=related&source_path=%2Fdocs%2Fdeployments%2Fenvironments&source_site=vercel-docs&relationship=related)
 - [Prioritize production builds available on all plans](https://vercel.com/changelog/prioritize-production-deployments-to-build-before-queued-preview?from=related&source_path=%2Fdocs%2Fdeployments%2Fenvironments&source_site=vercel-docs&relationship=related)
 - [Set team-wide defaults for Deployment Protection](https://vercel.com/changelog/set-team-wide-defaults-for-deployment-protection?from=related&source_path=%2Fdocs%2Fdeployments%2Fenvironments&source_site=vercel-docs&relationship=related)
 - [Vercel Connect now supports Custom Environments](https://vercel.com/changelog/vercel-connect-now-supports-custom-environments?from=related&source_path=%2Fdocs%2Fdeployments%2Fenvironments&source_site=vercel-docs&relationship=related)
-- [Vercel Secure Compute now supports multiple environments](https://vercel.com/changelog/vercel-secure-compute-now-supports-multiple-environments?from=related&source_path=%2Fdocs%2Fdeployments%2Fenvironments&source_site=vercel-docs&relationship=related)
 - [Are Vercel Preview Deployments indexed by search engines?](https://vercel.com/kb/guide/are-vercel-preview-deployment-indexed-by-search-engines?from=related&source_path=%2Fdocs%2Fdeployments%2Fenvironments&source_site=vercel-docs&relationship=related) — Vercel Preview Deployments aren't indexed by default. Learn how the noindex header works, how to confirm it, and the cus
 - [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation?from=related&source_path=%2Fdocs%2Fdeployments%2Fenvironments&source_site=vercel-docs&relationship=related) — A practical checklist for keeping your storefront fast and your checkout path healthy through Black Friday and Cyber Mon
 - [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related&source_path=%2Fdocs%2Fdeployments%2Fenvironments&source_site=vercel-docs&relationship=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
@@ -277,6 +277,12 @@ vercel connect attach slack/acme-slack --environment staging --triggers \
 The trigger target is added to the connector's project link automatically. For a project with no existing trigger destinations, passing `--environment staging`, as shown above, keeps token access limited to `staging`. Existing trigger destinations remain registered, and the CLI preserves any Custom Environments they require on the project link. Before sending events to a Custom Environment, deploy to it and [assign a domain](/docs/domains/working-with-domains/add-a-domain-to-environment) to the environment. The domain must be verified and serve the environment's latest deployment directly rather than redirect elsewhere.
 
 See [Project links](/docs/connect/concepts/project-links) for token-access configuration and [Triggers](/docs/connect/concepts/triggers) for destination setup and lifecycle behavior.
+
+### Using custom environments with Marketplace resources
+
+You can connect a Native Marketplace resource to a Custom Environment. In Project Settings, environment variables provided by the resource, such as a database's `DATABASE_URL`, apply to the environments selected on the resource connection.
+
+See [setup and verification steps](/docs/marketplace-storage#use-a-marketplace-resource-in-a-custom-environment) and [Deployment Action environment targets](/docs/integrations/create-integration/deployment-integration-action#environment-targets).
 
 ### Pricing and limits
 

@@ -3,7 +3,7 @@ title: AI Gateway Custom Reporting API
 product: vercel
 url: /docs/ai-gateway/observability-and-spend/custom-reporting
 canonical_url: "https://vercel.com/docs/ai-gateway/observability-and-spend/custom-reporting"
-last_updated: 2026-09-08
+last_updated: 2026-09-11
 type: reference
 prerequisites:
   - /docs/ai-gateway/observability-and-spend
@@ -16,8 +16,8 @@ related:
 summary: Query AI Gateway usage data grouped by model, user, tag, provider, or credential type using the Custom Reporting API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/custom-reporting.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "4fb8ff60a021f9fd5d7858f596b20cbdad05050219a14a571237309c2b7be548"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "a12bd334ce625717cc0d434f0178e8f1673b08b84a5bbc95d3d8a74709c1268a"
 ---
 
 # AI Gateway Custom Reporting API
@@ -30,6 +30,7 @@ The Custom Reporting API gives you detailed visibility into your AI Gateway usag
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [TypeSafe AI's Jev now available on AI Gateway](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=related)
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=related) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [Custom reporting now available on AI Gateway](https://vercel.com/changelog/custom-reporting-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=related)
@@ -37,9 +38,8 @@ The Custom Reporting API gives you detailed visibility into your AI Gateway usag
 - [Get Usage Report](https://v0.app/docs/api/v1/reference/reports/get-usage?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=related) — Retrieves detailed usage events for the authenticated user or team, including costs, event types, models used, and metad
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=related) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 - [Monitoring Reference](https://vercel.com/docs/query/monitoring/monitoring-reference?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=related) — This reference covers the clauses, fields, and variables used to create a Monitoring query.
-- [Aggregates page views](https://vercel.com/docs/rest-api/web-analytics/aggregates-page-views?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=related) — GET /v1/query/web-analytics/visits/aggregate — Counts pageviews on a project, within the requested date range. Results a
-- [Aggregates custom events](https://vercel.com/docs/rest-api/web-analytics/aggregates-custom-events?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=related) — GET /v1/query/web-analytics/events/aggregate — Counts custom events on a project, within the requested date range. Resul
 - [AI Gateway Request Logs](https://vercel.com/docs/ai-gateway/observability-and-spend/logs?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=related) — Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the resu
+- [Aggregates custom events](https://vercel.com/docs/rest-api/web-analytics/aggregates-custom-events?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=related) — GET /v1/query/web-analytics/events/aggregate — Counts custom events on a project, within the requested date range. Resul
 
 Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend/custom-reporting.graph.md](/docs/ai-gateway/observability-and-spend/custom-reporting.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

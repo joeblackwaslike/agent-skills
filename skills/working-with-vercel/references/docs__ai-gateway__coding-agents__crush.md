@@ -3,7 +3,7 @@ title: Crush with AI Gateway
 product: vercel
 url: /docs/ai-gateway/coding-agents/crush
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/crush"
-last_updated: 2026-09-08
+last_updated: 2026-09-13
 type: how-to
 prerequisites:
   - /docs/ai-gateway/coding-agents
@@ -14,8 +14,8 @@ related:
 summary: Configure the Crush terminal coding agent with AI Gateway. Set up provider credentials and models and monitor request usage and spending.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/crush.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "68a00b6f76ad5713cb30de43627551924257ef40ccfb43d87259c1a1446c58f3"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "149155f809f26ccc833e763e27902e7c0d74cad374c015567e5caed772059b7f"
 ---
 
 # Crush with AI Gateway

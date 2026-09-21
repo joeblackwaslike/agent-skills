@@ -3,7 +3,7 @@ title: Queues Observability
 product: vercel
 url: /docs/queues/observability
 canonical_url: "https://vercel.com/docs/queues/observability"
-last_updated: 2026-08-12
+last_updated: 2026-09-10
 type: how-to
 prerequisites:
   - /docs/queues
@@ -15,8 +15,8 @@ related:
 summary: Monitor queue throughput, message age, retries, and consumer performance to optimize your queue-based workflows.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/observability.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "df5b0a3f3c78338f754011fcdb41cdd858103daff4d71e9ce5ee33ce33e79d70"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "70f3a7dcd8b8d002a75fd726c55364bfa50811169632d83655212829d9244082"
 ---
 
 # Queues Observability

@@ -3,7 +3,7 @@ title: JS SDK Reference
 product: vercel
 url: /docs/sandbox/sdk-reference
 canonical_url: "https://vercel.com/docs/sandbox/sdk-reference"
-last_updated: 2026-09-04
+last_updated: 2026-09-15
 type: reference
 prerequisites:
   - /docs/sandbox
@@ -16,8 +16,8 @@ related:
 summary: A comprehensive reference for the Vercel Sandbox JavaScript SDK, which lets you run code in a secure, isolated environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/sdk-reference.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "447bff9d36fc9c702f123b02c5a6caf16116fb42202238d66e6df3c0194f186c"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "fabc9f93caf662268483833fe061bbf105642a7fa46d95fd10e5b38a7269a75b"
 ---
 
 # JS SDK Reference
@@ -38,9 +38,9 @@ Use the Vercel Sandbox JavaScript SDK to create isolated Linux microVMs on deman
 - [Build a v0-style app builder with OpenAI Agents API and Vercel Sandbox](https://vercel.com/kb/guide/v0-clone-openai-agents-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — Build a chat-to-app workspace with live Next.js previews, follow-up edits, and saved projects using the OpenAI Agents AP
 - [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
+- [Fork a named sandbox](https://vercel.com/docs/rest-api/sandboxes/fork-a-named-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — POST /v2/sandboxes/{name}/fork — Forks a named sandbox, creating a new named sandbox from the source's configuration. Re
 - [Stop a session](https://vercel.com/docs/rest-api/sandboxes/stop-a-session?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — POST /v2/sandboxes/sessions/{sessionId}/stop — Stops a running session and releases its allocated resources. All running
 - [Get a named sandbox](https://vercel.com/docs/rest-api/sandboxes/get-a-named-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — GET /v2/sandboxes/{name} — Retrieves a named sandbox by name, including its current sandbox and routes. If the sandbox i
-- [Fork a named sandbox](https://vercel.com/docs/rest-api/sandboxes/fork-a-named-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — POST /v2/sandboxes/{name}/fork — Forks a named sandbox, creating a new named sandbox from the source's configuration. Re
 - [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
 
 Full cross-link map for this page: [/docs/sandbox/sdk-reference.graph.md](/docs/sandbox/sdk-reference.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=graph)
@@ -434,7 +434,7 @@ Creation parameters (such as `keepLastSnapshots` or `snapshotExpiration`) apply 
 
 Behavior:
 
-- If a sandbox with that `name` exists, `getOrCreate` retrieves it without resuming it by default. The sandbox resumes on the first SDK call (such as `runCommand`), and `onResume` fires at that point — not before `getOrCreate` resolves. Pass `resume: true` to resume immediately and have `onResume` awaited before `getOrCreate` resolves.
+- If a sandbox with that `name` exists, `getOrCreate` retrieves it without resuming it by default. The sandbox resumes on the first SDK call (such as `runCommand`), and `onResume` fires at that point, not before `getOrCreate` resolves. Pass `resume: true` to resume immediately and have `onResume` awaited before `getOrCreate` resolves.
 - If a sandbox with that `name` exists, its configuration is not updated. Creation parameters passed to `getOrCreate` are ignored; use [`sandbox.update()`](#sandbox.update) to change the configuration of an existing sandbox.
 - If no sandbox exists, a fresh sandbox is created with the parameters you pass, and `onCreate` is awaited before `getOrCreate` resolves.
 - If the sandbox exists but its snapshot expired, the stale sandbox is deleted, re-created with the same name, and `onCreate` fires.
@@ -456,7 +456,7 @@ const sandbox = await Sandbox.getOrCreate({
 
 `Sandbox.fork()` creates a new sandbox seeded from the current snapshot of an existing one. The new sandbox inherits the source's config, including its environment variables. Any field you pass in overrides the copied value. If the source has no current snapshot, the fork falls back to a fresh create with the source's `image` plus the copied config.
 
-Pass `env` to override the copied environment variables. `image` is not accepted as an override — when the source has a snapshot the image is inherited from it; otherwise it is copied from the source sandbox.
+Pass `env` to override the copied environment variables. `image` is not accepted as an override. When the source has a snapshot, the image is inherited from it; otherwise it is copied from the source sandbox.
 
 The fork runs in the source sandbox's [region](/docs/sandbox/concepts/regions) unless you pass `region`. The fork also inherits the source's failover regions; pass `failoverRegions` to replace them. If the source has a snapshot, that snapshot must be available in the target region.
 
@@ -1715,7 +1715,7 @@ await snapshot.delete();
 
 ## Drive class
 
-> **🔒 Permissions Required**: Drives
+> **🔒 Permissions Required**: Drives (Private Beta)
 
 A `Drive` represents persistent storage that can be mounted into a sandbox. To learn more, see [Drives](/docs/sandbox/concepts/drives).
 

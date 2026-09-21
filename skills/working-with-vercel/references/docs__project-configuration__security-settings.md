@@ -16,8 +16,8 @@ related:
 summary: Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibility, Git Fork Protection, and...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/security-settings.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "762a7d570d737df44414b76221f6d7544a935ad39ff7ca48315b329d3bb89318"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "1b6c311d9e1ad5ef182ae2d96a31908e21ffe1eabc640ef221ff1a98018dab8b"
 ---
 
 # Security settings
@@ -33,9 +33,9 @@ To adjust your project's security settings:
 - [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fsecurity-settings&source_site=vercel-docs&relationship=related) — Protect who can see your deployments.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fsecurity-settings&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 - [Vercel security overview](https://vercel.com/docs/security?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fsecurity-settings&source_site=vercel-docs&relationship=related) — Vercel provides built-in and customizable features to ensure that your site is secure.
-- [Methods to Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fsecurity-settings&source_site=vercel-docs&relationship=related) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
 - [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fsecurity-settings&source_site=vercel-docs&relationship=related) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
-- [Access Control](https://vercel.com/docs/security/access-control?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fsecurity-settings&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+- [Methods to Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fsecurity-settings&source_site=vercel-docs&relationship=related) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
+- [General settings](https://vercel.com/docs/project-configuration/general-settings?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fsecurity-settings&source_site=vercel-docs&relationship=related) — Configure basic settings for your Vercel project, including the project name, build and development settings, root direc
 
 Full cross-link map for this page: [/docs/project-configuration/security-settings.graph.md](/docs/project-configuration/security-settings.graph.md?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fsecurity-settings&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

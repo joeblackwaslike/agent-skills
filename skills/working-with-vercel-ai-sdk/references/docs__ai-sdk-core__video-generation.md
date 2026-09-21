@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/video-generation.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "72cb72f4cae3ae111248a1b5f3d548717d5cf37871f4f9832cdd69aee48cb27f"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "31f1301b090e5264f843b5b9e3c155a1cf2579036fe487c1a6af98a6ec906b22"
 ---
 
 # Video Generation
@@ -498,11 +498,13 @@ Above are a small subset of the video models supported by the AI SDK providers. 
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Code Mode](/docs/ai-sdk-core/code-mode)
+- [Tool Search](/docs/ai-sdk-core/tool-search)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
+- [Evaluation](/docs/ai-sdk-core/evaluation)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)

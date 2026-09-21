@@ -17,8 +17,8 @@ related:
 summary: Review this checklist before submitting your native or connectable account integration for approval on the Vercel Marketplace.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/approval-checklist.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "dda655dc0aa5da72e8a4989e4f1c716df178c5ce57fe3ffc1516b70da90a41c8"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "44eb8887ecf13dedc2e45cc83e3ae5741ea6d43e6000526792ccaabe07181e36"
 ---
 
 # Integration Approval Checklist
@@ -32,8 +32,8 @@ Before submitting your integration for review, work through the checklist that m
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fapproval-checklist&source_site=vercel-docs&relationship=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
-- [Upgrade an Integration](https://vercel.com/docs/integrations/create-integration/upgrade-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fapproval-checklist&source_site=vercel-docs&relationship=related) — Lean more about when you may need to upgrade your Integration.
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fapproval-checklist&source_site=vercel-docs&relationship=related) — Learn how you can add a product to your Vercel project through a native integration.
+- [Upgrade an Integration](https://vercel.com/docs/integrations/create-integration/upgrade-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fapproval-checklist&source_site=vercel-docs&relationship=related) — Lean more about when you may need to upgrade your Integration.
 - [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fapproval-checklist&source_site=vercel-docs&relationship=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
 - [Marketplace Partner API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fapproval-checklist&source_site=vercel-docs&relationship=related) — Learn how to implement Partner API endpoints for your Vercel integration
 - [Marketplace Vercel API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fapproval-checklist&source_site=vercel-docs&relationship=related) — Learn how to call Vercel API endpoints to interact with Vercel resources

@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/api/origin/llms.txt"
-fetched_at: "2026-09-14T09:38:41.937Z"
-sha256: "6ce89b684acf9591c1973d89d1118964e699a22fa7e597c74b7eb941ec3c4783"
+fetched_at: "2026-09-21T09:40:19.892Z"
+sha256: "8d3ec00dc7f202fec27c1ca362a0ea828349fdcbf6d7d0201d27425e6bf7fd73"
 ---
 
 # Cursor Origin API
@@ -40,28 +40,6 @@ The base URL for API requests is `https://api.cursor.com/v1/origin`. The Origin 
 - [Response headers](https://cursor.com/docs/api/origin#response-headers)
 - [Exceeding the limit](https://cursor.com/docs/api/origin#exceeding-the-limit)
 - [Checking remaining quota](https://cursor.com/docs/api/origin#checking-remaining-quota)
-- [Webhooks](https://cursor.com/docs/api/origin#webhooks)
-- [Headers](https://cursor.com/docs/api/origin#headers)
-- [Signature verification](https://cursor.com/docs/api/origin#signature-verification)
-- [Delivery envelope](https://cursor.com/docs/api/origin#delivery-envelope)
-- [Events](https://cursor.com/docs/api/origin#events)
-- [Event payloads](https://cursor.com/docs/api/origin#event-payloads)
-- [Repository Created](https://cursor.com/docs/api/origin#repository-created)
-- [Repository Deleted](https://cursor.com/docs/api/origin#repository-deleted)
-- [Repository Push](https://cursor.com/docs/api/origin#repository-push)
-- [Repository Metadata Updated](https://cursor.com/docs/api/origin#repository-metadata-updated)
-- [Pull Request Events](https://cursor.com/docs/api/origin#pull-request-events)
-- [Pull Request Comment](https://cursor.com/docs/api/origin#pull-request-comment)
-- [Pull Request Review Events](https://cursor.com/docs/api/origin#pull-request-review-events)
-- [Pull Request Reviewer Events](https://cursor.com/docs/api/origin#pull-request-reviewer-events)
-- [Check Run Events](https://cursor.com/docs/api/origin#check-run-events)
-- [Check Run Rerequested](https://cursor.com/docs/api/origin#check-run-rerequested)
-- [Installation Created](https://cursor.com/docs/api/origin#installation-created)
-- [Installation Updated](https://cursor.com/docs/api/origin#installation-updated)
-- [Installation Suspended](https://cursor.com/docs/api/origin#installation-suspended)
-- [Installation Unsuspended](https://cursor.com/docs/api/origin#installation-unsuspended)
-- [Installation Deleted](https://cursor.com/docs/api/origin#installation-deleted)
-- [Recovery](https://cursor.com/docs/api/origin#recovery)
 - [Common conventions](https://cursor.com/docs/api/origin#common-conventions)
 - [Pagination](https://cursor.com/docs/api/origin#pagination)
 - [Errors](https://cursor.com/docs/api/origin#errors)
@@ -89,6 +67,7 @@ The base URL for API requests is `https://api.cursor.com/v1/origin`. The Origin 
 - [Revoke App Signing Key](https://cursor.com/docs/api/origin#revoke-app-signing-key)
 - [List Namespace Apps](https://cursor.com/docs/api/origin#list-namespace-apps)
 - [Create App](https://cursor.com/docs/api/origin#create-app)
+- [Add App Installation Repositories](https://cursor.com/docs/api/origin#add-app-installation-repositories)
 
 ## Repositories
 
@@ -99,11 +78,6 @@ The base URL for API requests is `https://api.cursor.com/v1/origin`. The Origin 
 - [List Branches](https://cursor.com/docs/api/origin#list-branches)
 - [Get Repo Tarball](https://cursor.com/docs/api/origin#get-repo-tarball)
 - [Sync Mirror](https://cursor.com/docs/api/origin#sync-mirror)
-- [Detach Repo Mirror](https://cursor.com/docs/api/origin#detach-repo-mirror)
-- [Get Mirror Transition Job](https://cursor.com/docs/api/origin#get-mirror-transition-job)
-- [Get Active Mirror Transition Job](https://cursor.com/docs/api/origin#get-active-mirror-transition-job)
-- [Force Repo Mirror Cutover](https://cursor.com/docs/api/origin#force-repo-mirror-cutover)
-- [Transition Repo Mirror](https://cursor.com/docs/api/origin#transition-repo-mirror)
 
 ## Checks
 
@@ -127,6 +101,7 @@ The base URL for API requests is `https://api.cursor.com/v1/origin`. The Origin 
 - [List Comparison Files](https://cursor.com/docs/api/origin#list-comparison-files)
 - [Get Contents](https://cursor.com/docs/api/origin#get-contents)
 - [Batch Get Contents](https://cursor.com/docs/api/origin#batch-get-contents)
+- [Grep Contents](https://cursor.com/docs/api/origin#grep-contents)
 
 ## Git data
 
@@ -135,6 +110,7 @@ The base URL for API requests is `https://api.cursor.com/v1/origin`. The Origin 
 - [Create Commit From Files](https://cursor.com/docs/api/origin#create-commit-from-files)
 - [Get Git Ref](https://cursor.com/docs/api/origin#get-git-ref)
 - [Create Git Ref](https://cursor.com/docs/api/origin#create-git-ref)
+- [Delete Git Ref](https://cursor.com/docs/api/origin#delete-git-ref)
 - [List Matching Git Refs](https://cursor.com/docs/api/origin#list-matching-git-refs)
 - [List Matching Git Refs by Path](https://cursor.com/docs/api/origin#list-matching-git-refs-by-path)
 - [Get Tag](https://cursor.com/docs/api/origin#get-tag)
@@ -180,6 +156,7 @@ The base URL for API requests is `https://api.cursor.com/v1/origin`. The Origin 
 - [Remove All Pull Request Labels](https://cursor.com/docs/api/origin#remove-all-pull-request-labels)
 - [Remove Pull Request Label](https://cursor.com/docs/api/origin#remove-pull-request-label)
 - [Merge Pull Request](https://cursor.com/docs/api/origin#merge-pull-request)
+- [Get Pull Request Mergeability](https://cursor.com/docs/api/origin#get-pull-request-mergeability)
 - [List Pull Request Requested Reviewers](https://cursor.com/docs/api/origin#list-pull-request-requested-reviewers)
 - [Request Pull Request Reviewers](https://cursor.com/docs/api/origin#request-pull-request-reviewers)
 - [Remove Pull Request Requested Reviewers](https://cursor.com/docs/api/origin#remove-pull-request-requested-reviewers)
@@ -195,3 +172,31 @@ The base URL for API requests is `https://api.cursor.com/v1/origin`. The Origin 
 - [Get Ruleset](https://cursor.com/docs/api/origin#get-ruleset)
 - [Update Ruleset](https://cursor.com/docs/api/origin#update-ruleset)
 - [Delete Ruleset](https://cursor.com/docs/api/origin#delete-ruleset)
+
+## Webhooks
+
+- [Headers](https://cursor.com/docs/api/origin#headers)
+- [Signature verification](https://cursor.com/docs/api/origin#signature-verification)
+- [Delivery envelope](https://cursor.com/docs/api/origin#delivery-envelope)
+- [Recovery](https://cursor.com/docs/api/origin#recovery)
+
+## Webhooks reference
+
+- [Events](https://cursor.com/docs/api/origin#events)
+- [Event payloads](https://cursor.com/docs/api/origin#event-payloads)
+- [Repository Created](https://cursor.com/docs/api/origin#repository-created)
+- [Repository Deleted](https://cursor.com/docs/api/origin#repository-deleted)
+- [Repository Push](https://cursor.com/docs/api/origin#repository-push)
+- [Repository Metadata Updated](https://cursor.com/docs/api/origin#repository-metadata-updated)
+- [Pull Request Events](https://cursor.com/docs/api/origin#pull-request-events)
+- [Pull Request Label Events](https://cursor.com/docs/api/origin#pull-request-label-events)
+- [Pull Request Comment](https://cursor.com/docs/api/origin#pull-request-comment)
+- [Pull Request Review Events](https://cursor.com/docs/api/origin#pull-request-review-events)
+- [Pull Request Reviewer Events](https://cursor.com/docs/api/origin#pull-request-reviewer-events)
+- [Check Run Events](https://cursor.com/docs/api/origin#check-run-events)
+- [Check Run Rerequested](https://cursor.com/docs/api/origin#check-run-rerequested)
+- [Installation Created](https://cursor.com/docs/api/origin#installation-created)
+- [Installation Updated](https://cursor.com/docs/api/origin#installation-updated)
+- [Installation Suspended](https://cursor.com/docs/api/origin#installation-suspended)
+- [Installation Unsuspended](https://cursor.com/docs/api/origin#installation-unsuspended)
+- [Installation Deleted](https://cursor.com/docs/api/origin#installation-deleted)

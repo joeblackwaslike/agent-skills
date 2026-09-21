@@ -3,7 +3,7 @@ title: Managing Builds
 product: vercel
 url: /docs/builds/managing-builds
 canonical_url: "https://vercel.com/docs/builds/managing-builds"
-last_updated: 2026-09-03
+last_updated: 2026-09-17
 type: how-to
 prerequisites:
   - /docs/builds
@@ -11,13 +11,13 @@ related:
   - /docs/fluid-compute
   - /docs/cdn
   - /docs/plans/hobby
-  - /docs/builds/build-queues
-  - /docs/pricing
+  - /docs/cli/deploy
+  - /docs/git/vercel-for-github
 summary: Vercel allows you to increase the speed of your builds when needed in specific situations and workflows.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/managing-builds.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "7d7d4eeb130dc7472bc27fe8c72f07667e48d12f6242680f5f7f5adfd004a760"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "c74bf66e960d0bba67ad6c616948b6cd49398224a6c6bd9c98babb6296504117"
 ---
 
 # Managing Builds
@@ -40,8 +40,8 @@ When you build your application code, Vercel runs compute to install dependencie
 - [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands?from=related&source_path=%2Fdocs%2Fbuilds%2Fmanaging-builds&source_site=vercel-docs&relationship=related) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
 - [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel?from=related&source_path=%2Fdocs%2Fbuilds%2Fmanaging-builds&source_site=vercel-docs&relationship=related) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
 - [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fbuilds%2Fmanaging-builds&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
-- [Limits](https://vercel.com/docs/limits?from=related&source_path=%2Fdocs%2Fbuilds%2Fmanaging-builds&source_site=vercel-docs&relationship=related) — Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments?from=related&source_path=%2Fdocs%2Fbuilds%2Fmanaging-builds&source_site=vercel-docs&relationship=related) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
+- [Deploying Git Repositories with Vercel](https://vercel.com/docs/git?from=related&source_path=%2Fdocs%2Fbuilds%2Fmanaging-builds&source_site=vercel-docs&relationship=related) — Vercel automatically deploys supported Git repositories on every branch push and when changes merge into the production
 
 Full cross-link map for this page: [/docs/builds/managing-builds.graph.md](/docs/builds/managing-builds.graph.md?from=related&source_path=%2Fdocs%2Fbuilds%2Fmanaging-builds&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -75,6 +75,14 @@ For Pro and Enterprise customers, Elastic build machines auto-scale based on you
 | Elastic            | 4-30            | 8-60        | Auto-scaled    |
 
 You can set the build machine type in the **Build and Deployment** section of your settings [for your team](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fbuild-and-deployment%23build-machines\&title=Set+team+level+build+machines) or [for individual projects](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fbuild-and-deployment%23build-machine\&title=Configure+your+build+machine).
+
+### Selecting a build machine per deployment
+
+You can select Turbo for one deployment without changing the project's build machine settings:
+
+- Run [`vc deploy --turbo`](/docs/cli/deploy) for a CLI deployment.
+- Include `#VERCEL_BUILD_MACHINE=TURBO` in the commit message for a deployment [triggered by Vercel's GitHub integration](/docs/git/vercel-for-github#select-turbo-for-one-deployment).
+- Set `buildMachine` to `turbo` when [creating a deployment with the REST API](/docs/rest-api/deployments/create-a-new-deployment#buildMachine).
 
 Basic is included with Hobby. For paid teams, Basic usage is billed at $0.0035 per CPU minute, or $0.007 per build minute. Elastic build machines are also billed by CPU minute, starting at $0.0035 per CPU minute. A CPU minute is one minute of build time multiplied by the number of vCPU cores used. For example, if a build takes 3 minutes and Elastic assigns the Standard machine (4 vCPUs), you're billed for 3 minutes × 4 cores = 12 CPU minutes.
 

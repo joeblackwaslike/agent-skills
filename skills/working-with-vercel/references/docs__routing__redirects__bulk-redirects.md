@@ -3,7 +3,7 @@ title: Bulk Redirects
 product: vercel
 url: /docs/routing/redirects/bulk-redirects
 canonical_url: "https://vercel.com/docs/routing/redirects/bulk-redirects"
-last_updated: 2026-08-11
+last_updated: 2026-09-16
 type: reference
 prerequisites:
   - /docs/routing/redirects
@@ -12,11 +12,12 @@ related:
   - /docs/cli/dev
   - /docs/routing/redirects/bulk-redirects/getting-started
   - /docs/project-configuration/vercel-json
+  - /docs/plans
 summary: Learn how to import thousands of simple redirects from CSV, JSON, or JSONL files.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/redirects/bulk-redirects.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "5ce7a9581e90aeb4050431d3ea52756640beae3fff639027cbd54af042f0ae5f"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "85fdd8538ec7ca8439075b28460ee9f2a7ab1c297ad2f63a60207cd940623a4a"
 ---
 
 # Bulk Redirects
@@ -36,8 +37,8 @@ With bulk redirects, you can handle thousands of simple path-to-path or path-to-
 - [Scaling redirects to infinity on Vercel](https://vercel.com/blog/scaling-redirects-to-infinity-on-vercel?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fbulk-redirects&source_site=vercel-docs&relationship=related)
 - [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fbulk-redirects&source_site=vercel-docs&relationship=related) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
 - [How can I increase the limit of redirects or use dynamic redirects on Vercel?](https://vercel.com/kb/guide/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fbulk-redirects&source_site=vercel-docs&relationship=related) — Instructions on how to use Serverless Functions to handle redirects on Vercel.
-- [Managing redirects at scale](https://vercel.com/docs/routing/redirects/manage-redirects-at-scale?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fbulk-redirects&source_site=vercel-docs&relationship=related) — Add, bulk upload, version, and roll back project-level redirects using the CLI.
 - [Configuration Redirects](https://vercel.com/docs/routing/redirects/configuration-redirects?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fbulk-redirects&source_site=vercel-docs&relationship=related) — Learn how to define static redirects in your framework configuration or vercel.json with support for wildcards, pattern
+- [Managing redirects at scale](https://vercel.com/docs/routing/redirects/manage-redirects-at-scale?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fbulk-redirects&source_site=vercel-docs&relationship=related) — Add, bulk upload, version, and roll back project-level redirects using the CLI.
 - [Delete project-level redirects.](https://vercel.com/docs/rest-api/bulk-redirects/delete-project-level-redirects?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fbulk-redirects&source_site=vercel-docs&relationship=related) — DELETE /v1/bulk-redirects — Deletes the provided redirects from the latest version of the projects' bulk redirects. Stag
 - [Edit a project-level redirect.](https://vercel.com/docs/rest-api/bulk-redirects/edit-a-project-level-redirect?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fbulk-redirects&source_site=vercel-docs&relationship=related) — PATCH /v1/bulk-redirects — Edits a single redirect identified by its source path. Stages a new change with the modified
 - [vercel redirects](https://vercel.com/docs/cli/redirects?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fbulk-redirects&source_site=vercel-docs&relationship=related) — Learn how to manage project-level redirects using the vercel redirects CLI command.
@@ -75,7 +76,7 @@ Each redirect supports the following fields:
 |`caseSensitive`      |`boolean`| No       |`false`| Toggle whether source path matching is case sensitive.                                                                                                                                                                                                                                                                                                                                                                                            |
 |`preserveQueryParams`|`boolean`| No       |`false\` | Toggle whether to preserve the query string on the redirect.                                                                                                                                                                                                                                                                                                                                                                                      |
 
-In order to improve space efficiency, all boolean values can be the single characters `t` (true) or `f` (false).
+To improve space efficiency, all boolean values can be the single characters `t` (true) or `f` (false).
 
 We recommend using status code `307` or `308` to avoid the ambiguity of non `GET` methods, which is necessary when your application needs to redirect a public API.
 
@@ -83,7 +84,9 @@ For complete configuration details and advanced options, see the [`bulkRedirects
 
 ## Limits and pricing
 
-Each project has a free configurable capacity of bulk redirects, and additional bulk redirect capacity can be purchased in groups of 25,000 redirects by going to the [Advanced section of your project's settings](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fadvanced\&title=Go+to+Project+Settings+Advanced). At runtime, requests served by bulk redirects are treated like any other request for billing purposes. For more information, see the [pricing page](https://vercel.com/pricing).
+Bulk redirects are available on the [Pro and Enterprise plans](/docs/plans). They are not available on the Hobby plan.
+
+Each project includes bulk redirect capacity based on your plan, shown in the table below, and additional bulk redirect capacity can be purchased in groups of 25,000 redirects by going to the [Advanced section of your project's settings](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fadvanced\&title=Go+to+Project+Settings+Advanced). At runtime, requests served by bulk redirects are treated like any other request for billing purposes. For more information, see the [pricing page](https://vercel.com/pricing).
 
 | Plan | Included in plan | Price for additional capacity |
 | --- | --- | --- |

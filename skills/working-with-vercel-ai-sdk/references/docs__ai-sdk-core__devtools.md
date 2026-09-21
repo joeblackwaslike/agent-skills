@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/devtools.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "f4dc0f5020c20d0cf9d67d8ff559b278b0ab8c82d1e29bb1c616ce3dcf6a2b51"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "1ed2af204401bdb1de6d3eef6cb2673a043679fb2cb8ebfe799977abbbacedb7"
 ---
 
 # DevTools
@@ -212,11 +212,13 @@ DevTools stores all AI interactions locally in plain text files, including:
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Code Mode](/docs/ai-sdk-core/code-mode)
+- [Tool Search](/docs/ai-sdk-core/tool-search)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
+- [Evaluation](/docs/ai-sdk-core/evaluation)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)

@@ -3,7 +3,7 @@ title: Vercel Blob Pricing
 product: vercel
 url: /docs/vercel-blob/usage-and-pricing
 canonical_url: "https://vercel.com/docs/vercel-blob/usage-and-pricing"
-last_updated: 2026-08-11
+last_updated: 2026-09-08
 type: reference
 prerequisites:
   - /docs/vercel-blob
@@ -16,8 +16,8 @@ related:
 summary: Learn about the pricing for Vercel Blob.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/usage-and-pricing.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "9353e5a112890560e4846e1ca663491fc0233fbe48ca6bb572487ebc67753cbf"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "786e233cc77229a0d79c232f3c69ba2051481a438caf12875be6f8e4b9360c95"
 ---
 
 # Vercel Blob Pricing
@@ -63,11 +63,12 @@ See the [usage details](#usage-details) and [pricing example](#pricing-example) 
 
 ## Pricing
 
-| Resource | Price |
-|----------|-------|
-| [Blob Simple Operations](/docs/vercel-blob/usage-and-pricing#pricing) | Regional |
-| [Blob Advanced Operations](/docs/vercel-blob/usage-and-pricing#pricing) | Regional |
-| [Blob Data Transfer](/docs/vercel-blob/usage-and-pricing#pricing) | Regional |
+| Resource | Price | Included (Pro) | Included (Hobby) |
+|----------|-------|----------------|-----------------|
+| [Blob Storage Size](/docs/vercel-blob/usage-and-pricing#pricing) | Regional | Usage-based | 1GB/month |
+| [Blob Simple Operations](/docs/vercel-blob/usage-and-pricing#pricing) | Regional | Usage-based | First 10,000 |
+| [Blob Advanced Operations](/docs/vercel-blob/usage-and-pricing#pricing) | Regional | Usage-based | First 2,000 |
+| [Blob Data Transfer](/docs/vercel-blob/usage-and-pricing#pricing) | Regional | Flat Rate CDN | First 10 GB |
 
 
 <br />

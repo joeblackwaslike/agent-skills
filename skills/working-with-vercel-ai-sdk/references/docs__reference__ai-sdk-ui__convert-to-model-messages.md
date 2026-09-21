@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/convert-to-model-messages.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "b30df82f949f07d884f989a71c6242a521ef160dfe3920e0e8f055a884bad993"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "4550dc9dfaf934025814109a4072e3b8b9eec29514b7b7686c43b2b045a5fa73"
 ---
 
 # `convertToModelMessages()`
@@ -70,6 +70,18 @@ A Promise that resolves to an array of [`ModelMessage`](/docs/reference/ai-sdk-c
     },
   ]}
 />
+
+## Deprecated `rawInput` field
+
+Tool parts in the `output-error` state should store their tool arguments in
+`input`. The legacy `rawInput` field remains supported for persisted messages,
+but `convertToModelMessages` emits an AI SDK deprecation warning when it
+encounters a defined value.
+
+When both fields are present, `input` takes precedence when it is non-nullish.
+For backward compatibility, `rawInput` remains the fallback when `input` is
+`null` or `undefined`. Migrate stored messages to `input` before the next major
+version, when `rawInput` will be removed.
 
 ## Tool Approval States
 

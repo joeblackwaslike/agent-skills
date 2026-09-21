@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/mcp-tools.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "e3bc4d56c326b66c9ce5bb23dd8da643e9e6fcb614617949f23c0352d62943ea"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "1eddbb8c73ec60ca6e1fc517ea5dd53febbc9aeea8c8a46da132083e58aba0cf"
 ---
 
 # Model Context Protocol (MCP)
@@ -691,11 +691,13 @@ You can see MCP in action in the following examples:
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Code Mode](/docs/ai-sdk-core/code-mode)
+- [Tool Search](/docs/ai-sdk-core/tool-search)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
+- [Evaluation](/docs/ai-sdk-core/evaluation)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)

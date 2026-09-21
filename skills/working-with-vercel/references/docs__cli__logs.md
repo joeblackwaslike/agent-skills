@@ -12,8 +12,8 @@ related:
 summary: View and filter request logs for your Vercel project, or stream live runtime logs from a deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/logs.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "565e77b8e3263ec8cc84b79eff76ba6933e35a404fb289f2812d1c920a15e72d"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "adcd2649da3e9d93e338b06e838069059d769c8511d31e0d352d68a820e10f43"
 ---
 
 # vercel logs
@@ -31,8 +31,8 @@ The `vercel logs` command displays request logs for your project or streams live
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel activity](https://vercel.com/docs/cli/activity?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related) — View activity events for your Vercel project or team, filtered by type, date range, and project.
 - [vercel traces](https://vercel.com/docs/cli/traces?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related) — Inspect a request trace in the terminal, open it in the Vercel Dashboard, or manage the trace sampling rules for a proje
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel inspect](https://vercel.com/docs/cli/inspect?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to retrieve information about your Vercel deployments using the vercel inspect CLI command.
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 
 Full cross-link map for this page: [/docs/cli/logs.graph.md](/docs/cli/logs.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

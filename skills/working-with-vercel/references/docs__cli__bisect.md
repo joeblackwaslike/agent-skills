@@ -12,8 +12,8 @@ related:
 summary: Learn how to perform a binary search on your deployments to help surface issues using the vercel bisect CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/bisect.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "b463fc57e99064bc2bba7936b9b1987ace22c39b0674a62448edaf42731290f9"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "65d82608fea6214357045c354712e623b381188b32b285e91b25e1355e45c2c7"
 ---
 
 # vercel bisect
@@ -27,8 +27,8 @@ The `vercel bisect` command can be used to perform a [binary search](https://wik
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fbisect&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fbisect&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel inspect](https://vercel.com/docs/cli/inspect?from=related&source_path=%2Fdocs%2Fcli%2Fbisect&source_site=vercel-docs&relationship=related) — Learn how to retrieve information about your Vercel deployments using the vercel inspect CLI command.
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fbisect&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel curl](https://vercel.com/docs/cli/curl?from=related&source_path=%2Fdocs%2Fcli%2Fbisect&source_site=vercel-docs&relationship=related) — Learn how to make HTTP requests to your Vercel deployments with automatic deployment protection bypass using the vercel
 - [vercel remove](https://vercel.com/docs/cli/remove?from=related&source_path=%2Fdocs%2Fcli%2Fbisect&source_site=vercel-docs&relationship=related) — Learn how to remove a deployment using the vercel remove CLI command.
 

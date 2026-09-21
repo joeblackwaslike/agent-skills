@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/deepinfra.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "56c7e0a664863d64b4857902e7f68aed78aa6098a34240c4ffcb602f48fc1f55"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "3370d548f4faea623b15c0346063d87a928ed49e364e1b4e919ed764e7ae821f"
 ---
 
 # DeepInfra Provider
@@ -337,6 +337,7 @@ const { embedding } = await embed({
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
 - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
+- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

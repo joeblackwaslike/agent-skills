@@ -3,7 +3,7 @@ title: Deploying from Azure DevOps with Vercel
 product: vercel
 url: /docs/git/vercel-for-azure-pipelines
 canonical_url: "https://vercel.com/docs/git/vercel-for-azure-pipelines"
-last_updated: 2026-08-28
+last_updated: 2026-09-16
 type: conceptual
 prerequisites:
   - /docs/git
@@ -16,8 +16,8 @@ related:
 summary: ​Vercel for Azure DevOps allows you to deploy from Azure Pipelines to Vercel automatically.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git/vercel-for-azure-pipelines.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "7ff3f39f517f7579b156adf40c0ecfb406eb03477b17b44ba74ef4bd218a966b"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "c444a8d88d4d6ea8b5cc48d2af44af1b9d22fa292145084d1c85df44ed1e1d24"
 ---
 
 # Deploying from Azure DevOps with Vercel
@@ -30,15 +30,14 @@ The [Vercel Deployment Extension](https://marketplace.visualstudio.com/items?ite
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How can I use Bitbucket Pipelines with Vercel?](https://vercel.com/kb/guide/how-can-i-use-bitbucket-pipelines-with-vercel?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-azure-pipelines&source_site=vercel-docs&relationship=related) — Learn how to use Bitbucket Pipelines to deploy to Vercel including support for Bitbucket Data Center.
 - [Vercel extension for Azure DevOps now available](https://vercel.com/changelog/vercel-extension-for-azure-devops-now-available?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-azure-pipelines&source_site=vercel-docs&relationship=related)
+- [How can I use Bitbucket Pipelines with Vercel?](https://vercel.com/kb/guide/how-can-i-use-bitbucket-pipelines-with-vercel?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-azure-pipelines&source_site=vercel-docs&relationship=related) — Learn how to use Bitbucket Pipelines to deploy to Vercel including support for Bitbucket Data Center.
 - [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-azure-pipelines&source_site=vercel-docs&relationship=related) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
-- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-azure-pipelines&source_site=vercel-docs&relationship=related) — Learn how to deploy based on tags/releases on Vercel.
 - [Deploying Bitbucket Projects with Vercel](https://vercel.com/docs/git/vercel-for-bitbucket?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-azure-pipelines&source_site=vercel-docs&relationship=related) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
 - [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-azure-pipelines&source_site=vercel-docs&relationship=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
+- [Deploying GitHub Projects with Vercel](https://vercel.com/docs/git/vercel-for-github?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-azure-pipelines&source_site=vercel-docs&relationship=related) — Vercel for GitHub automatically deploys your GitHub projects with Vercel, providing Preview Deployment URLs, and automat
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-azure-pipelines&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [System environment variables](https://vercel.com/docs/environment-variables/system-environment-variables?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-azure-pipelines&source_site=vercel-docs&relationship=related) — System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the
-- [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-azure-pipelines&source_site=vercel-docs&relationship=related) — Learn how to configure Git for your project through vercel.json or vercel.ts.
 
 Full cross-link map for this page: [/docs/git/vercel-for-azure-pipelines.graph.md](/docs/git/vercel-for-azure-pipelines.graph.md?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-azure-pipelines&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -148,7 +147,7 @@ Before you update your pipeline file to enable preview deployments, you need to 
 
 ### Triggers and comments on pull requests
 
-In order to allow pull requests in Azure Repos to create a deployment and report back with a comment, you need the following:
+To allow pull requests in Azure Repos to create a deployment and report back with a comment, you need the following:
 
 - An Azure DevOps Personal Access Token
 - A build validation policy for your branch

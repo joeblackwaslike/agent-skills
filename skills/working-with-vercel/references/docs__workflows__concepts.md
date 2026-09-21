@@ -3,7 +3,7 @@ title: Workflow Concepts
 product: workflows
 url: /docs/workflows/concepts
 canonical_url: "https://vercel.com/docs/workflows/concepts"
-last_updated: 2026-07-14
+last_updated: 2026-09-10
 type: conceptual
 prerequisites:
   - /docs/workflows
@@ -12,8 +12,8 @@ related:
 summary: Learn how workflows, steps, sleeps, and hooks work together to build durable applications.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/workflows/concepts.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "46b434a486b08c675d5bca04b4cf6b3d3a1ee261589812599adf502d347beb6b"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "46fdcbb53e578ffbb047b46494cf5b6de9ebb88ada371455a1c52d13a3e04d63"
 ---
 
 # Workflow Concepts

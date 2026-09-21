@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/google-vertex.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "2220b8df5a562b1d46bf54b06f114f183f7243b536b14954967dd70d49a16297"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "b4479bb2cfed3cccb2f8470c7d563039f15a867de32ac1cff4df3f059efa5124"
 ---
 
 # Google Vertex Provider
@@ -1833,6 +1833,7 @@ See also [Anthropic Model Comparison](https://docs.anthropic.com/en/docs/about-c
 
 | Model                           | Image Input | Object Generation | Tool Usage | Tool Streaming | Computer Use |
 | ------------------------------- | ----------- | ----------------- | ---------- | -------------- | ------------ |
+| `claude-fable-5-1`              | <Check />   | <Check />         | <Check />  | <Check />      | <Check />    |
 | `claude-3-7-sonnet@20250219`    | <Check />   | <Check />         | <Check />  | <Check />      | <Check />    |
 | `claude-3-5-sonnet-v2@20241022` | <Check />   | <Check />         | <Check />  | <Check />      | <Check />    |
 | `claude-3-5-sonnet@20240620`    | <Check />   | <Check />         | <Check />  | <Check />      | <Cross />    |
@@ -2191,6 +2192,7 @@ The following models are available through the MaaS provider. You can also pass 
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
 - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
+- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

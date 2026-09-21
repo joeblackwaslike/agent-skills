@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/testing.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "44243e679b1beb0086ee4994b4dde96e0abaf912796adb898bff777aac9fee3f"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "da84ad35e0355561a566e99755411aa0e2a6a1f62e12e92bfe4fe6e5d064f50d"
 ---
 
 # Testing
@@ -180,6 +180,81 @@ const result = streamText({
 });
 ```
 
+### ToolLoopAgent
+
+You can provide a sequence of mock responses to test an agent that calls a tool
+and continues to a final response:
+
+```ts
+import { ToolLoopAgent, tool } from 'ai';
+import { MockLanguageModelV4 } from 'ai/test';
+import { expect, it } from 'vitest';
+import { z } from 'zod';
+
+it('executes a tool and continues the loop', async () => {
+  const weatherRequests: string[] = [];
+  const usage = {
+    inputTokens: {
+      total: 10,
+      noCache: 10,
+      cacheRead: undefined,
+      cacheWrite: undefined,
+    },
+    outputTokens: {
+      total: 5,
+      text: 5,
+      reasoning: undefined,
+    },
+  };
+
+  const model = new MockLanguageModelV4({
+    doGenerate: [
+      {
+        content: [
+          {
+            type: 'tool-call',
+            toolCallId: 'call-1',
+            toolName: 'weather',
+            input: '{"city":"San Francisco"}',
+          },
+        ],
+        finishReason: { unified: 'tool-calls', raw: undefined },
+        usage,
+        warnings: [],
+      },
+      {
+        content: [{ type: 'text', text: 'It is 72°F in San Francisco.' }],
+        finishReason: { unified: 'stop', raw: undefined },
+        usage,
+        warnings: [],
+      },
+    ],
+  });
+
+  const agent = new ToolLoopAgent({
+    model,
+    tools: {
+      weather: tool({
+        description: 'Get the weather for a city.',
+        inputSchema: z.object({ city: z.string() }),
+        execute: async ({ city }) => {
+          weatherRequests.push(city);
+          return { temperature: 72 };
+        },
+      }),
+    },
+  });
+
+  const result = await agent.generate({
+    prompt: 'What is the weather in San Francisco?',
+  });
+
+  expect(weatherRequests).toEqual(['San Francisco']);
+  expect(result.text).toBe('It is 72°F in San Francisco.');
+  expect(model.doGenerateCalls).toHaveLength(2);
+});
+```
+
 ### Simulate UI Message Stream Responses
 
 You can also simulate [UI Message Stream](/docs/ai-sdk-ui/stream-protocol#ui-message-stream-example) responses for testing,
@@ -230,11 +305,13 @@ export async function POST(req: Request) {
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Code Mode](/docs/ai-sdk-core/code-mode)
+- [Tool Search](/docs/ai-sdk-core/tool-search)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
+- [Evaluation](/docs/ai-sdk-core/evaluation)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)

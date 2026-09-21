@@ -14,8 +14,8 @@ related:
 summary: Inspect a request trace in the terminal, open it in the Vercel Dashboard, or manage the trace sampling rules for a project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/traces.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "576ab8725ef810d71e316d2117821c9423205756053d3d551dc8f4e9b09474ad"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "9f1887814be3bcd06d052380d80791ad791309f2d3518bd9f9a68560f168cd07"
 ---
 
 # vercel traces
@@ -28,6 +28,7 @@ The `vercel traces` command helps you inspect request traces for a linked projec
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [OpenTelemetry](https://eve.dev/docs/observability/otel?from=related&source_path=%2Fdocs%2Fcli%2Ftraces&source_site=vercel-docs&relationship=related) — Configure OpenTelemetry destinations, content capture, and managed exports.
 - [vercel logs](https://vercel.com/docs/cli/logs?from=related&source_path=%2Fdocs%2Fcli%2Ftraces&source_site=vercel-docs&relationship=related) — View and filter request logs for your Vercel project, or stream live runtime logs from a deployment.
 - [vercel alerts](https://vercel.com/docs/cli/alerts?from=related&source_path=%2Fdocs%2Fcli%2Ftraces&source_site=vercel-docs&relationship=related) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
 - [vercel metrics](https://vercel.com/docs/cli/metrics?from=related&source_path=%2Fdocs%2Fcli%2Ftraces&source_site=vercel-docs&relationship=related) — Discover and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.

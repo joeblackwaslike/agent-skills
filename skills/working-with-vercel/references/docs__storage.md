@@ -16,8 +16,8 @@ related:
 summary: Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/storage.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "ee0c8e0cfb6f8081ebd6756e6d3e7166de7b0ad49e03bacd5b23658c89653c74"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "e6cbd3b8b1bfc04e11d6f71c72a5ef9a51b65acdbf489d5e2bd599a690a6a7b6"
 ---
 
 # Vercel Storage overview
@@ -41,7 +41,7 @@ Upload generated files with Vercel Blob, read low-latency configuration with Glo
 - [Introducing storage on Vercel](https://vercel.com/blog/vercel-storage?from=related&source_path=%2Fdocs%2Fstorage&source_site=vercel-docs&relationship=related)
 - [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel?from=related&source_path=%2Fdocs%2Fstorage&source_site=vercel-docs&relationship=related) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
 - [Introducing the Vercel Marketplace](https://vercel.com/blog/introducing-the-vercel-marketplace?from=related&source_path=%2Fdocs%2Fstorage&source_site=vercel-docs&relationship=related)
-- [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs?from=related&source_path=%2Fdocs%2Fstorage&source_site=vercel-docs&relationship=related) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
+- [Migrate a Next.js app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-a-next-js-app-from-webflow-cloud-to-vercel?from=related&source_path=%2Fdocs%2Fstorage&source_site=vercel-docs&relationship=related) — Move your Next.js app from Webflow Cloud to Vercel: remove the OpenNext Cloudflare adapter, drop the base path, map stor
 - [Public Storage](https://vercel.com/docs/vercel-blob/public-storage?from=related&source_path=%2Fdocs%2Fstorage&source_site=vercel-docs&relationship=related) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fstorage&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 

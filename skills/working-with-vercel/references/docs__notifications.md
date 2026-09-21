@@ -3,7 +3,7 @@ title: Notifications
 product: vercel
 url: /docs/notifications
 canonical_url: "https://vercel.com/docs/notifications"
-last_updated: 2026-08-11
+last_updated: 2026-09-14
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how to use Notifications to view and manage important alerts about your deployments, domains, integrations, account, and usage.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/notifications.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "fde673348af4e400a23a55f182a3f8a4def0e9725c75bad08f98bb2818b7da0d"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "215826ae0db2da2f32b8686d8ce19b33687f31f03add8dcf640e86727a19ec6d"
 ---
 
 # Notifications
@@ -39,9 +39,9 @@ Vercel sends configurable notifications to you through the [dashboard](https://v
 - [Improved web notifications are now generally available](https://vercel.com/changelog/improved-web-notifications-now-generally-available?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related)
 - [Configure alerts](https://vercel.com/docs/alerts/configure-alerts?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related) — Configure alert rules and notification destinations for Vercel Observability alerts.
 - [Audit Logs](https://vercel.com/docs/audit-log?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related) — Learn how to track and analyze your team members' activities.
-- [Deploying GitHub Projects with Vercel](https://vercel.com/docs/git/vercel-for-github?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related) — Vercel for GitHub automatically deploys your GitHub projects with Vercel, providing Preview Deployment URLs, and automat
 - [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Alerts](https://vercel.com/docs/alerts?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related) — Get notified when something's wrong with your Vercel projects. Set up alerts through Slack, webhooks, or email so you ca
 
 Full cross-link map for this page: [/docs/notifications.graph.md](/docs/notifications.graph.md?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -90,7 +90,7 @@ You can receive feedback on your deployments with the Comments feature. When som
 
 > **🔒 Permissions Required**: Customizing on-demand usage notifications
 
-You'll receive notifications as you accrue usage past the [included amounts](/docs/limits#usage-summary) for products like Vercel Functions, Image Optimization, and more.
+You'll receive notifications as you accrue usage past the [included amounts](/docs/limits/fair-use-guidelines#typical-monthly-usage-guidelines) for products like Vercel Functions, Image Optimization, and more.
 
 **Team owners** on the **Pro** plan can customize which usage categories they want to receive notifications for based on percentage thresholds or absolute dollar values.
 

@@ -3,7 +3,7 @@ title: Zed with AI Gateway
 product: vercel
 url: /docs/ai-gateway/coding-agents/zed
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/zed"
-last_updated: 2018-10-20
+last_updated: 2026-09-13
 type: how-to
 prerequisites:
   - /docs/ai-gateway/coding-agents
@@ -16,8 +16,8 @@ related:
 summary: Connect Zed to AI Gateway with the Vercel CLI or its built-in Vercel AI Gateway provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/zed.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "ee25d14064a6c9e198cf5382301d85c9b704e802cf1a2bdaa29e12d8254817f6"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "768ef9b11dec162180e83fcfb4cc130c70b9996eaa5a3376d95cd99b07870c25"
 ---
 
 # Zed with AI Gateway

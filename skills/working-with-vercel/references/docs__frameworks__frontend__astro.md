@@ -17,8 +17,8 @@ related:
 summary: Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Middleware.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/frontend/astro.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "3516207a9053e9df15c8bff0575d4620fda77d7e8531217ed2fe65e288dbab79"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "b5ce30c5d198d10def63021103ca96a5e1f9873b34dc4acdc1b2901ad10061bb"
 ---
 
 # Astro on Vercel
@@ -41,7 +41,7 @@ Astro is an all-in-one web framework that enables you to build performant static
 - [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fastro&source_site=vercel-docs&relationship=related) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fastro&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 - [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fastro&source_site=vercel-docs&relationship=related) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
-- [Remix on Vercel](https://vercel.com/docs/frameworks/full-stack/remix?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fastro&source_site=vercel-docs&relationship=related) — Deploy Remix applications to Vercel and configure the Vercel Vite preset, SSR, streaming, caching, and analytics.
+- [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fastro&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
 
 Full cross-link map for this page: [/docs/frameworks/frontend/astro.graph.md](/docs/frameworks/frontend/astro.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fastro&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

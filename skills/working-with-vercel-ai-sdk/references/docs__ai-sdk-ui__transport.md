@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/transport.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "c7c459e787da58e267005c5453d6039d96c5fd97e044716f60f40a55d08f7896"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "01c799b348f00f5cbbb009b6a00ca215d3a1d3bfcfba7ba3795a3f9748e98697"
 ---
 
 # Transport
@@ -163,7 +163,7 @@ For chat apps built on the [Workflow SDK](/docs/agents/workflow-agent), `Workflo
 
 ```tsx
 import { useChat } from '@ai-sdk/react';
-import { WorkflowChatTransport } from '@ai-sdk/workflow';
+import { WorkflowChatTransport } from '@ai-sdk/workflow/client';
 import { useMemo } from 'react';
 
 export default function Chat() {

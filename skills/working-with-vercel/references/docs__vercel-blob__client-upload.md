@@ -3,7 +3,7 @@ title: Client Uploads with Vercel Blob
 product: vercel
 url: /docs/vercel-blob/client-upload
 canonical_url: "https://vercel.com/docs/vercel-blob/client-upload"
-last_updated: 2026-08-26
+last_updated: 2026-09-15
 type: tutorial
 prerequisites:
   - /docs/vercel-blob
@@ -14,8 +14,8 @@ related:
 summary: Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/client-upload.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "d0894e617fe82f8eb1d0f295a4a96da7e6302a5c342ef3748b2fc95d9fc4f156"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "86725dfb9a6476e08d368695824b2d803b6aaa6da1498d00f3a7414736c0b210"
 ---
 
 # Client Uploads with Vercel Blob
@@ -86,10 +86,10 @@ Vercel Blob works with any frontend framework. First, install the package:
   Since you created the Blob store in a project, we automatically created and added the following Environment Variables to the project for you.
 
   The default setup uses OIDC authentication with short-lived, auto-rotated credentials:
-  - `BLOB_STORE_ID` — identifies your Blob store
-  - `VERCEL_OIDC_TOKEN` — a short-lived token automatically rotated by Vercel; used with `BLOB_STORE_ID` for server-side access
+  - `BLOB_STORE_ID`: Identifies your Blob store
+  - `VERCEL_OIDC_TOKEN`: A short-lived token automatically rotated by Vercel; used with `BLOB_STORE_ID` for server-side access
   A long-lived static token is also added as a fallback and is required for generating client upload tokens:
-  - `BLOB_READ_WRITE_TOKEN` — a long-lived static read-write token; required by `handleUpload` to generate client tokens for browser uploads, and for code that runs outside Vercel. Not needed by [`handleUploadPresigned`](/docs/vercel-blob/vercel-signed-urls#handleuploadpresigned), which works with OIDC and verifies callbacks with `BLOB_WEBHOOK_PUBLIC_KEY`
+  - `BLOB_READ_WRITE_TOKEN`: A long-lived static read-write token; required by `handleUpload` to generate client tokens for browser uploads, and for code that runs outside Vercel. Not needed by [`handleUploadPresigned`](/docs/vercel-blob/vercel-signed-urls#handleuploadpresigned), which works with OIDC and verifies callbacks with `BLOB_WEBHOOK_PUBLIC_KEY`
   To use these Environment Variables locally, we recommend pulling them with the Vercel CLI:
   ```bash
   vercel env pull

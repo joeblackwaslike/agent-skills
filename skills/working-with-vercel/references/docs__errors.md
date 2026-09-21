@@ -12,8 +12,8 @@ related:
 summary: Use this guide to find specific solutions and insights for common Vercel errors.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "88df5f2eda0f2aa16254f640306c27d46f3fce3f27eacc13b3f49cd195fa04be"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "f3278910df5f08189a3f064b773d90b266140f0ade5012ee2876576e46a81fb5"
 ---
 
 # Error Codes
@@ -30,7 +30,6 @@ When developing your application with Vercel, you may encounter a variety of err
 - [View specific error codes in runtime logs](https://vercel.com/changelog/view-specific-error-codes-in-runtime-logs?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=related)
 - [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=related) — Learn the systematic steps to identify and resolve 404 issues.
 - [How do I resolve "ERR_SSL_PROTOCOL_ERROR" with Vercel?](https://vercel.com/kb/guide/resolve-err-ssl-protocol-error-with-vercel?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=related) — Information about how to resolve the "ERR_SSL_PROTOCOL_ERROR" error with Vercel.
-- [Why am I unable to login or signup to the Vercel platform?](https://vercel.com/kb/guide/why-can-i-not-signup?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=related) — Information on what to do if you are experiencing issues logging in or signing up to the Vercel platform.
 - [Custom error pages](https://vercel.com/docs/custom-error-pages?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=related) — Learn how to configure custom error pages for 5xx server errors on Vercel.
 - [REST API Errors](https://vercel.com/docs/rest-api/errors?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=related) — General and specific errors you may encounter when using the Vercel REST API.
 - [Products](https://vercel.com/docs/products?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=related) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.

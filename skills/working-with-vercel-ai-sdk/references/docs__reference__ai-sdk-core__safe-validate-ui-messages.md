@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/safe-validate-ui-messages.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "78d3087e40b6dd66b417974d5b982a3ebe646a85b7ace722ff9a9804ff317a40"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "7886ad78d6657f2b8c3b2873a7c78f2a47903a5b44f15a1e1508deeaed59ed61"
 ---
 
 # `safeValidateUIMessages`
@@ -33,6 +33,18 @@ if (!result.success) {
   const validatedMessages = result.data;
 }
 ```
+
+## Deprecated `rawInput` field
+
+For backward compatibility, validation still accepts `rawInput` on tool parts
+in the `output-error` state. When a defined `rawInput` value is found,
+`safeValidateUIMessages` emits an AI SDK deprecation warning through
+`AI_SDK_LOG_WARNINGS`.
+
+Migrate persisted messages to store tool arguments in `input` and remove
+`rawInput`. For backward compatibility, conversion uses `rawInput` as a
+fallback when `input` is `null` or `undefined`. `rawInput` will be removed in
+the next major version.
 
 ## Advanced Usage
 
@@ -127,6 +139,7 @@ if (!result.success) {
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+- [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
 - [uploadFile](/docs/reference/ai-sdk-core/upload-file)
 - [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
 - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
@@ -142,6 +155,7 @@ if (!result.success) {
 - [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
 - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [toolSearch](/docs/reference/ai-sdk-core/tool-search)
 - [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
 - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)

@@ -3,7 +3,7 @@ title: Observability
 product: vercel
 url: /docs/observability
 canonical_url: "https://vercel.com/docs/observability"
-last_updated: 2026-09-03
+last_updated: 2026-09-10
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/observability.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "500879a6af531fb8bf79b0ad5572f765f5dfd6b7ba05f1dd37939e7e9934c73e"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "fe6b76b615e9248b56d8d38ea8d032c54834511137a90824311d741d932f4b75"
 ---
 
 # Observability

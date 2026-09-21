@@ -17,8 +17,8 @@ related:
 summary: "Learn how to invalidate and delete cached content on Vercel's CDN, including cache keys and manual purging options."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/cdn-cache/purge.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "de2764624a1d79531041696fe8fe684cfddb0d171bddf7753cfb41abe9920aa4"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "7327c9cba26d538a4153c79c3c434278fc27b6faded66e782ca4d3c3c574784e"
 ---
 
 # Purging Vercel CDN Cache
@@ -36,6 +36,7 @@ Learn how to [invalidate and delete](#programmatically-purging-vercel-cache) cac
 - [Vercel CDN now respects Cache-Control headers from external origins by default](https://vercel.com/changelog/vercels-cdn-now-respects-cache-control-headers-from-external-origins-by-default?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=related)
 - [How to add per-request CSP nonces to CDN-cached HTML on Vercel](https://vercel.com/kb/guide/csp-nonces-with-cdn-cache?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=related) — Use Routing Middleware and a self-fetch to add a fresh CSP nonce to cached HTML without rendering the page again on ever
 - [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=related) — Reduce ISR costs by analyzing Incremental Static Regeneration \\(ISR\\) behavior to find pages and tags that revalidate to
+- [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=related) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
 - [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=related) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
 - [Invalidate the CDN cache by tag](https://vercel.com/changelog/invalidate-the-cdn-cache-by-tag?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=related)
 - [Tag-based cache invalidation now available for all responses](https://vercel.com/changelog/tag-based-cache-invalidation-now-available-for-all-responses?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=related)
@@ -44,7 +45,6 @@ Learn how to [invalidate and delete](#programmatically-purging-vercel-cache) cac
 - [Diagnosing and fixing cache issues](https://vercel.com/docs/caching/cdn-cache/debug-cache-issues?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=related) — Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
 - [Runtime Cache](https://vercel.com/docs/caching/runtime-cache?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=related) — Vercel Runtime Cache is a specialized cache that stores responses from data fetches in Vercel functions
 - [Cache Status and Reasons](https://vercel.com/docs/caching/cache-status?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=related) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
-- [Dangerously delete by tag](https://vercel.com/docs/rest-api/edge-cache/dangerously-delete-by-tag?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=related) — POST /v1/edge-cache/dangerously-delete-by-tags — Marks a cache tag as deleted, causing cache entries associated with tha
 
 Full cross-link map for this page: [/docs/caching/cdn-cache/purge.graph.md](/docs/caching/cdn-cache/purge.graph.md?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

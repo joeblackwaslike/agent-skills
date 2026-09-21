@@ -12,8 +12,8 @@ related:
 summary: Learn how to buy, sell, transfer, and manage your domains using the vercel domains CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/domains.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "2fa50db1179b2d3540dd188e3873ff6bd86b3da8b71e4e55307eb46199098d07"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "b690a31830fd9007ea94de60998d88ba68c49c4162457c602010acdc445915ba"
 ---
 
 # vercel domains
@@ -29,8 +29,8 @@ The `vercel domains` command manages domains under the current scope. With it, y
 - [Vercel CLI now supports verifying DNS configuration](https://vercel.com/changelog/vercel-cli-now-supports-verifying-dns-configuration?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=related)
 - [vercel dns](https://vercel.com/docs/cli/dns?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=related) — Learn how to manage your DNS records for your domains using the vercel dns CLI command.
 - [vercel buy](https://vercel.com/docs/cli/buy?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=related) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 
 Full cross-link map for this page: [/docs/cli/domains.graph.md](/docs/cli/domains.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=graph)

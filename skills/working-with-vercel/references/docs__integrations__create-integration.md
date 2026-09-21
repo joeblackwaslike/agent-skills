@@ -3,7 +3,7 @@ title: Create an Integration
 product: vercel
 url: /docs/integrations/create-integration
 canonical_url: "https://vercel.com/docs/integrations/create-integration"
-last_updated: 2026-08-24
+last_updated: 2026-09-16
 type: how-to
 prerequisites:
   - /docs/integrations
@@ -16,8 +16,8 @@ related:
 summary: Learn how to create and manage your own integration for internal or public use with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "396ba79f341136500c722404726f18ad0820ad22e8bfd9f431867687d2b0c14c"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "7246e696cdd430298aeaafd51b4ba92e6b1ac3a94bd2e9b8c5d3076136191542"
 ---
 
 # Create an Integration
@@ -60,7 +60,7 @@ Integrations can be created by filling out the **Create Integration** form. To a
 
 ### Native integration product creation
 
-> **💡 Note:** In order to create native integrations, please share your `team_id` and
+> **💡 Note:** To create native integrations, please share your `team_id` and
 > Integration's [URL
 > Slug](/docs/integrations/create-integration/submit-integration#url-slug) with
 > Vercel in your shared Slack channel (`#shared-mycompanyname`). You can sign up

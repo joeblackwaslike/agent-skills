@@ -16,8 +16,8 @@ related:
 summary: Learn how to interact with Vercel Blob storage using the vercel blob CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/blob.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "38589a80892b4e9ccaecc152ccc3074853fd122df8f6b9c35d0e2fcae5209dfe"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "37bc0f3294588269a634f7538779ad8ffb41f882944221df45f66b7d4c3e8ab9"
 ---
 
 # vercel blob
@@ -33,8 +33,8 @@ The `vercel blob` command is used to interact with [Vercel Blob](/docs/vercel-bl
 - [Vercel Blob CLI is now available](https://vercel.com/changelog/vercel-blob-cli-is-now-available?from=related&source_path=%2Fdocs%2Fcli%2Fblob&source_site=vercel-docs&relationship=related)
 - [Vercel Blob now available in all Vercel Regions](https://vercel.com/changelog/vercel-blob-now-available-in-all-vercel-regions?from=related&source_path=%2Fdocs%2Fcli%2Fblob&source_site=vercel-docs&relationship=related)
 - [vercel global-config](https://vercel.com/docs/cli/global-config?from=related&source_path=%2Fdocs%2Fcli%2Fblob&source_site=vercel-docs&relationship=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fblob&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [Managing Vercel Blob storage from the CLI](https://vercel.com/docs/vercel-blob/manage-blob-storage?from=related&source_path=%2Fdocs%2Fcli%2Fblob&source_site=vercel-docs&relationship=related) — Create blob stores, upload files, list contents, and manage storage using the CLI.
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fblob&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel cache](https://vercel.com/docs/cli/cache?from=related&source_path=%2Fdocs%2Fcli%2Fblob&source_site=vercel-docs&relationship=related) — Learn how to manage cache for your project using the vercel cache CLI command.
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fblob&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 

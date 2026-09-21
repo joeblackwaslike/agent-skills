@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/togetherai.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "49bfdfff2a6c557a44d493deab0f892a38421193894a2905fdb754991c3b1f4a"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "5e3961c934b6ccf19c300d10f0c1379f99618b8295fc69a35fd9d2c1bf406e8c"
 ---
 
 # Together.ai Provider
@@ -387,6 +387,7 @@ The following provider options are available:
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
 - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
+- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

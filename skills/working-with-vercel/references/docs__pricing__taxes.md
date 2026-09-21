@@ -12,8 +12,8 @@ related:
 summary: This page covers frequently asked questions around taxes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/taxes.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "de48bd1bd2fcf4d66fc303171efdf66c1100359aae9cb57bc1e0c3e359dfdedf"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "4ff6ac7ad98e8f0db1a2197f47b302257bbb8182e87d96a7bd4999244573f01a"
 ---
 
 # Taxes
@@ -30,11 +30,12 @@ All prices shown are in USD and exclude value-added tax (VAT), goods and service
 
 - [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Fpricing%2Ftaxes&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
 - [Advanced Invoice Settings](https://vercel.com/blog/advanced-invoice-settings?from=related&source_path=%2Fdocs%2Fpricing%2Ftaxes&source_site=vercel-docs&relationship=related)
+- [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing?from=related&source_path=%2Fdocs%2Fpricing%2Ftaxes&source_site=vercel-docs&relationship=related)
 - [Services Pricing and Limits](https://vercel.com/docs/services/pricing?from=related&source_path=%2Fdocs%2Fpricing%2Ftaxes&source_site=vercel-docs&relationship=related) — Understand how billing works for Vercel Services, what's charged, and which limits apply.
 - [Manage Billing and Refunds for Integrations](https://vercel.com/docs/integrations/create-integration/billing?from=related&source_path=%2Fdocs%2Fpricing%2Ftaxes&source_site=vercel-docs&relationship=related) — Learn how billing works for native integrations, including invoice lifecycle, pricing models, and refunds.
 - [Billing FAQ for Enterprise Plan](https://vercel.com/docs/plans/enterprise/billing?from=related&source_path=%2Fdocs%2Fpricing%2Ftaxes&source_site=vercel-docs&relationship=related) — This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
-- [Billing & Invoices](https://vercel.com/docs/pricing/understanding-my-invoice?from=related&source_path=%2Fdocs%2Fpricing%2Ftaxes&source_site=vercel-docs&relationship=related) — Learn how Vercel invoices are structured for Pro and Enterprise plans, including plan charges, credits, and usage-based
 - [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing?from=related&source_path=%2Fdocs%2Fpricing%2Ftaxes&source_site=vercel-docs&relationship=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
+- [Billing & Invoices](https://vercel.com/docs/pricing/understanding-my-invoice?from=related&source_path=%2Fdocs%2Fpricing%2Ftaxes&source_site=vercel-docs&relationship=related) — Learn how Vercel invoices are structured for Pro and Enterprise plans, including plan charges, credits, and usage-based
 
 Full cross-link map for this page: [/docs/pricing/taxes.graph.md](/docs/pricing/taxes.graph.md?from=related&source_path=%2Fdocs%2Fpricing%2Ftaxes&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -59,24 +60,34 @@ Invoices will now show a separate line item for sales tax or VAT, clearly indica
 
 For most customers, no action is required. Vercel automatically calculates and adds sales tax or VAT to your invoice based on your billing information.
 
-However, if your organization is US tax-exempt or VAT-registered, follow the steps in [What if my organization is tax-exempt?](#what-if-my-organization-is-tax-exempt)
+If your US-based organization is tax-exempt, follow the [US tax-exemption process](#what-if-my-organization-is-tax-exempt). If your organization is VAT-registered, [add your VAT ID in billing settings](#what-if-my-organization-is-vat-registered).
 
 ### What if my organization is tax-exempt?
 
 If you qualify for tax exemption in the US, please send your exemption certificate to <tax@vercel.com>. Once our team verifies your certificate, we'll mark your account as tax-exempt, and sales tax won't be applied to your invoices.
 
-If your organization is VAT-registered, our system will automatically handle this if you've provided a valid VAT ID number in your [billing settings](/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fbilling%23tax-id\&title=Go+to+Billing). You may have an obligation to self-report the VAT under the reverse charge mechanism.
+### What if my organization is VAT-registered?
+
+Add your valid VAT ID in your [billing settings](/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fbilling%23tax-id\&title=Go+to+Billing). Vercel applies the VAT treatment automatically based on your billing details. VAT IDs do not require manual verification by the tax team.
+
+If your invoices still include VAT, check the following in your billing settings:
+
+- Include the country prefix in your VAT ID, such as `PL` for Poland or `GB` for the United Kingdom.
+- For organizations in the European Union (EU), select **EU VAT number** as the tax ID type. A domestic tax ID, such as **Polish NIP number**, is a different option.
+- For organizations in the United Kingdom, select **United Kingdom VAT number** as the tax ID type.
+
+Update your VAT ID in billing settings yourself. The tax team cannot update it on your behalf. You may have an obligation to self-report VAT under the reverse charge mechanism.
 
 ### Can I get a refund for an incorrect tax charge?
 
 Yes. If you were charged tax on an invoice that should have been exempt, you can ask to have the invoice reissued without tax at [vercel.com/help](/help). Vercel refunds the original invoice and issues a corrected one.
 
-Before you start, make sure your exemption is on file:
+Before you request a correction, complete the steps that apply to your organization:
 
-- If your organization is VAT-registered, confirm your VAT ID is correct in your [billing settings](/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fbilling%23tax-id\&title=Go+to+Billing).
+- If your organization is VAT-registered, [check your VAT ID, country prefix, and tax ID type](#what-if-my-organization-is-vat-registered) in billing settings.
 - If your US-based organization is tax-exempt, [send your exemption certificate to tax@vercel.com](#what-if-my-organization-is-tax-exempt) and wait for confirmation from our team.
 
-Once your exemption is on file, go to [vercel.com/help](/help) and ask to correct the tax on the affected invoice.
+After updating your VAT ID or receiving confirmation of your US sales-tax exemption, go to [vercel.com/help](/help) and ask to correct the tax on the affected invoice. If a reissued invoice still includes unexpected VAT after you have checked your VAT ID details, ask for support to investigate.
 
 ### When will international customers start being charged VAT?
 
@@ -88,7 +99,7 @@ You can refer to our [terms of service](/legal/terms#payments) on collecting sal
 
 ### Who can I contact with tax-related questions?
 
-If you have specific questions about tax collection or exemptions, please contact our team at <tax@vercel.com>.
+For questions about tax collection or US sales-tax exemptions, contact <tax@vercel.com>. For VAT ID issues, [check your billing settings](#what-if-my-organization-is-vat-registered). You do not need to email your VAT registration information to the tax team for verification.
 
 
 ---

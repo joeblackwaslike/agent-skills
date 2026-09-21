@@ -12,8 +12,8 @@ related:
 summary: Generate an AGENTS.md file with Vercel deployment best practices using the vercel agent CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/agent.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "18ac80a0c1e19cd26729094a69f4a5f6205d6b1abf1816765d27cacef2f7a498"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "39f822ce441aa2624d6d5f354a5e1fea8799a5437a1b440bd543c65bbfe8f278"
 ---
 
 # vercel agent
@@ -27,8 +27,8 @@ The `vercel agent` command writes a section related to Vercel deployment best pr
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related&source_path=%2Fdocs%2Fcli%2Fagent&source_site=vercel-docs&relationship=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fagent&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fcli%2Fagent&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fagent&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel build](https://vercel.com/docs/cli/build?from=related&source_path=%2Fdocs%2Fcli%2Fagent&source_site=vercel-docs&relationship=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
 - [Agent Resources](https://vercel.com/docs/agent-resources?from=related&source_path=%2Fdocs%2Fcli%2Fagent&source_site=vercel-docs&relationship=related) — Set up AI coding tools with Vercel documentation, reusable skills, and secure access to projects, deployments, and logs.
 - [vercel skills](https://vercel.com/docs/cli/skills?from=related&source_path=%2Fdocs%2Fcli%2Fagent&source_site=vercel-docs&relationship=related) — Discover agent skills relevant to your project using the vercel skills CLI command.

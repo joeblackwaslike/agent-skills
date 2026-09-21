@@ -3,7 +3,7 @@ title: Managing environment variables
 product: vercel
 url: /docs/environment-variables/managing-environment-variables
 canonical_url: "https://vercel.com/docs/environment-variables/managing-environment-variables"
-last_updated: 2026-04-27
+last_updated: 2026-09-11
 type: how-to
 prerequisites:
   - /docs/environment-variables
@@ -13,8 +13,8 @@ related:
 summary: Learn how to create and manage environment variables for Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/managing-environment-variables.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "ef99e46ba108e99cc20d08ad4dfcdf90f6b64b4551f44c975fa92dd3b4f24211"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "5c9955c8f6089b3ff8fc63d24ea6bdb4c5adbd369f3e7d36ba51ad40cb1c2523"
 ---
 
 # Managing environment variables

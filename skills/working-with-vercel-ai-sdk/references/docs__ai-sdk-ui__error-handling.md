@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/error-handling.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "891af98b5777fb10061ab889f2cf36fc0d0c62b191c9eb0f1f268fc9f38ab514"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "e440944bdc098496a233795e1ce6b1df3973308fe9dcbfae56e16c394c1c45e4"
 ---
 
 # Error Handling and warnings
@@ -170,8 +170,23 @@ export default function Chat() {
 Errors can be processed by passing an [`onError`](/docs/reference/ai-sdk-ui/use-chat#on-error) callback function as an option to the [`useChat`](/docs/reference/ai-sdk-ui/use-chat) or [`useCompletion`](/docs/reference/ai-sdk-ui/use-completion) hooks.
 The callback function receives an error object as an argument.
 
-```tsx file="app/page.tsx" highlight="6-9"
+AI SDK-created client errors use exported error classes with marker-based
+`.isInstance()` guards:
+
+| Error class                                                                                         | AI SDK UI failure                                                                         |
+| --------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| [`APICallError`](/docs/reference/ai-sdk-errors/ai-api-call-error)                                   | A chat transport or completion request returns a non-successful HTTP response.            |
+| [`EmptyResponseBodyError`](/docs/reference/ai-sdk-errors/ai-empty-response-body-error)              | A successful chat transport or completion response has no body.                           |
+| [`UIMessageStreamError`](/docs/reference/ai-sdk-errors/ai-ui-message-stream-error)                  | A completion data stream reports an error or a UI message stream contains invalid chunks. |
+| [`InvalidArgumentError`](/docs/reference/ai-sdk-errors/ai-invalid-argument-error)                   | An invalid stream protocol or message ID is used.                                         |
+| [`UnsupportedFunctionalityError`](/docs/reference/ai-sdk-errors/ai-unsupported-functionality-error) | A `FileList` is used in an environment that does not support it.                          |
+
+Errors thrown by custom fetch implementations, callbacks, and stream parsers
+continue to propagate unchanged.
+
+```tsx file="app/page.tsx" highlight="2,9-15"
 import { useChat } from '@ai-sdk/react';
+import { APICallError, EmptyResponseBodyError } from 'ai';
 
 export default function Page() {
   const {
@@ -179,11 +194,22 @@ export default function Page() {
   } = useChat({
     // handle error:
     onError: error => {
-      console.error(error);
+      if (APICallError.isInstance(error)) {
+        console.error('Request failed with status:', error.statusCode);
+      } else if (EmptyResponseBodyError.isInstance(error)) {
+        console.error('The server returned no response body.');
+      } else {
+        console.error(error);
+      }
     },
   });
 }
 ```
+
+For AI SDK UI requests, `APICallError.requestBodyValues` is `undefined` so
+prompts and messages are not copied into client-facing error objects. The
+response text remains available as `message` and `responseBody`; display a
+generic message to users to avoid leaking server information.
 
 ### Injecting Errors for Testing
 

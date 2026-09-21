@@ -3,7 +3,7 @@ title: Log Drains Reference
 product: vercel
 url: /docs/drains/reference/logs
 canonical_url: "https://vercel.com/docs/drains/reference/logs"
-last_updated: 2026-08-11
+last_updated: 2026-09-11
 type: reference
 prerequisites:
   - /docs/drains
@@ -16,8 +16,8 @@ related:
 summary: Learn about Log Drains - data formats, sources, environments, and security configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/reference/logs.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "068df35ae3ba43d559dc7ab335c809ce8523d541e6c5d601b42e13b694815311"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "b06abe0117db52a63de59451e5e325fab4f63083829343b4e5124b5c7769b720"
 ---
 
 # Log Drains Reference
@@ -33,12 +33,12 @@ Log Drains forward logs from your deployments to external endpoints for storage 
 - [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
 - [Log drains now support log source selection](https://vercel.com/changelog/log-drains-now-support-log-source-selection?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Flogs&source_site=vercel-docs&relationship=related)
 - [Log Drains](https://vercel.com/blog/log-drains?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Flogs&source_site=vercel-docs&relationship=related)
-- [How do I store logs on Vercel?](https://vercel.com/kb/guide/how-do-i-store-logs-on-vercel?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to store logs on Vercel.
+- [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
 - [Audit Log Drains Reference](https://vercel.com/docs/drains/reference/audit-logs?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Flogs&source_site=vercel-docs&relationship=related) — Learn about Audit Log Drains - data formats, fields, and team activity events.
 - [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Flogs&source_site=vercel-docs&relationship=related) — Learn about Web Analytics Drains - data formats and custom events configuration.
 - [Trace Drains Reference](https://vercel.com/docs/drains/reference/traces?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Flogs&source_site=vercel-docs&relationship=related) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
 - [Drain Audit Logs to Datadog](https://vercel.com/docs/drains/audit-logs-to-datadog?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to forward Vercel Audit Log Drain events to Datadog using the Datadog Logs API.
-- [Speed Insights Drains Reference](https://vercel.com/docs/drains/reference/speed-insights?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Flogs&source_site=vercel-docs&relationship=related) — Learn about Speed Insights Drains - data formats and performance metrics configuration.
+- [Creates a Configurable Log Drain \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/creates-a-configurable-log-drain-deprecated?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Flogs&source_site=vercel-docs&relationship=related) — POST /v1/log-drains — Creates a configurable log drain. This endpoint must be called with a team AccessToken \\(integrati
 
 Full cross-link map for this page: [/docs/drains/reference/logs.graph.md](/docs/drains/reference/logs.graph.md?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Flogs&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

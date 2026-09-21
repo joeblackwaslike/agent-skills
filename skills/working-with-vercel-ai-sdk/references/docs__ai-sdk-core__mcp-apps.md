@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/mcp-apps.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "8751b849c8b3a354c0ee90e050b6f9b84db86ab96c66cb4d21f736fd7bf1de20"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "49bd4a608fe52e97157101e0793f9b550cbf67263411083e044b05fe4c106268"
 ---
 
 # MCP Apps
@@ -280,11 +280,13 @@ export default function Chat() {
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Code Mode](/docs/ai-sdk-core/code-mode)
+- [Tool Search](/docs/ai-sdk-core/tool-search)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
+- [Evaluation](/docs/ai-sdk-core/evaluation)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)

@@ -16,8 +16,8 @@ related:
 summary: Learn how to use Global Configs in your projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/using-global-config.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "e2def7cd3f883ca24b6b2044cf711a700fec0c2b72f0fdc7a46a4ce8800f52d4"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "f992c26f387bd2ed9c999c33a72c8866a6f34eca248520ea211b04ea473f151a"
 ---
 
 # Using Global Config
@@ -32,8 +32,8 @@ sha256: "e2def7cd3f883ca24b6b2044cf711a700fec0c2b72f0fdc7a46a4ce8800f52d4"
 
 - [Global Config](https://flags-sdk.dev/docs/providers/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fusing-global-config&source_site=vercel-docs&relationship=related)
 - [Getting started with Global Config](https://vercel.com/docs/global-config/get-started?from=related&source_path=%2Fdocs%2Fglobal-config%2Fusing-global-config&source_site=vercel-docs&relationship=related) — Learn how to create a Global Config store and read from it in your project.
-- [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fusing-global-config&source_site=vercel-docs&relationship=related) — POST /v1/global-config — Creates a Global Config.
 - [Get Global Configs](https://vercel.com/docs/rest-api/global-config/get-global-configs?from=related&source_path=%2Fdocs%2Fglobal-config%2Fusing-global-config&source_site=vercel-docs&relationship=related) — GET /v1/global-config — Returns all Global Configs.
+- [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fusing-global-config&source_site=vercel-docs&relationship=related) — POST /v1/global-config — Creates a Global Config.
 - [Get a Global Config](https://vercel.com/docs/rest-api/global-config/get-a-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fusing-global-config&source_site=vercel-docs&relationship=related) — GET /v1/global-config/{edgeConfigId} — Returns a Global Config.
 - [vercel global-config](https://vercel.com/docs/cli/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fusing-global-config&source_site=vercel-docs&relationship=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
 

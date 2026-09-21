@@ -3,7 +3,7 @@ title: Getting started with Vercel Functions
 product: vercel
 url: /docs/functions/quickstart
 canonical_url: "https://vercel.com/docs/functions/quickstart"
-last_updated: 2026-03-20
+last_updated: 2026-09-11
 type: tutorial
 prerequisites:
   - /docs/functions
@@ -16,8 +16,8 @@ related:
 summary: Build your first Vercel Function in a few steps.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/quickstart.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "b1eff524ced3e0ca0233147a9886cbd1606baeb57d184837abaa915da064620c"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "3203192eefb1d474c8544a59e6ae9affc03f3aa66d2952afa23a2145e3df959c"
 ---
 
 # Getting started with Vercel Functions

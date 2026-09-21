@@ -3,7 +3,7 @@ title: Building Integrations with Vercel REST API
 product: vercel
 url: /docs/integrations/create-integration/vercel-api-integrations
 canonical_url: "https://vercel.com/docs/integrations/create-integration/vercel-api-integrations"
-last_updated: 2026-08-28
+last_updated: 2026-09-16
 type: reference
 prerequisites:
   - /docs/integrations/create-integration
@@ -17,8 +17,8 @@ related:
 summary: Learn how to use Vercel REST API to build your integrations and work with redirect URLs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/vercel-api-integrations.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "2d9bc5ccef20e65c355310c73cdb9758d0b476b202b497bf9a42f0a701a6b5ce"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "efe59bfd1177f581effa1b9733c223aa2c5cca8d317dc0cd78975e9f3f46cf99"
 ---
 
 # Building Integrations with Vercel REST API
@@ -107,7 +107,7 @@ If your integration is installed on a team, append the `teamId` query parameter 
 
 Each installation of your integration is stored and tracked as a configuration.
 
-Sometimes it makes sense to fetch the configuration in order to get more insights about the current scope or the projects your integration has access to.
+Sometimes it makes sense to fetch the configuration to get more insights about the current scope or the projects your integration has access to.
 
 To see which endpoints are available, see the [Configurations](/docs/project-configuration) documentation for more details.
 

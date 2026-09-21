@@ -17,8 +17,8 @@ related:
 summary: "Create, view, and delete AI Gateway API keys, and set each key's budget and spend attribution, from the dashboard, CLI, or API."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok/api-keys.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "5e7151e36464eed755d72113d5b47cbacc10d43648996cea5055dd5acfb474be"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "6575cab798cdb612c8937850c2f8c59517bebdb6ea00594ab8350c9cf69aa45d"
 ---
 
 # AI Gateway API Keys
@@ -31,6 +31,7 @@ Use API keys to authenticate AI Gateway requests. You can:
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [TanStack AI](https://chat-sdk.dev/docs/ai/tanstack-ai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fapi-keys&source_site=vercel-docs&relationship=related) — Feed thread history into TanStack AI's chat() and give it Chat SDK tools, with no runtime dependency on @tanstack/ai.
 - [Budgets for API keys on AI Gateway](https://vercel.com/changelog/budgets-for-api-keys-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fapi-keys&source_site=vercel-docs&relationship=related)
 - [Claude Sonnet 5 now available on Vercel AI Gateway](https://vercel.com/changelog/claude-sonnet-5-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fapi-keys&source_site=vercel-docs&relationship=related)
 - [DeepSeek models now available via Azure on AI Gateway](https://vercel.com/changelog/deepseek-models-now-available-via-azure-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fapi-keys&source_site=vercel-docs&relationship=related)

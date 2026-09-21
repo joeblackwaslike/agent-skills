@@ -3,7 +3,7 @@ title: Vercel KMS Pricing and Limits
 product: vercel
 url: /docs/kms/pricing
 canonical_url: "https://vercel.com/docs/kms/pricing"
-last_updated: 2026-08-18
+last_updated: 2026-09-07
 type: reference
 prerequisites:
   - /docs/kms
@@ -13,8 +13,8 @@ related:
 summary: How Vercel KMS is billed per signing operation, the platform limits that apply, and how to stop being billed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms/pricing.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "470d0530374f12030ed3129059e138329e0a9c74a33b06d458b66937f024d814"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "9db4a44b9e225debec06ac49801e60aabc7049e785c459164d83b059511ed450"
 ---
 
 # Vercel KMS Pricing and Limits

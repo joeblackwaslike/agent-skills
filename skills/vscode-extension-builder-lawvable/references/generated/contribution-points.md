@@ -1,8 +1,8 @@
 ---
 title: "Contribution Points"
 source: "https://code.visualstudio.com/api/references/contribution-points"
-fetched_at: "2026-09-14T09:36:38.395Z"
-sha256: "88f5540d492697c0b7ad71dae3bd4bcf765939e2cc9d4b6cc629d4b58bb47504"
+fetched_at: "2026-09-21T09:38:51.493Z"
+sha256: "f386e8a82988efc7f070c5d20935b4ae0f471c71d3f874596cee0dafb066bbba"
 ---
 
 # Contribution Points
@@ -1714,7 +1714,7 @@ In addition to a title, commands can also define icons that VS Code will show in
 
 ## contributes.taskDefinitions
 
-Contributes and defines an object literal structure that allows to uniquely identify a contributed task in the system. A task definition has at minimum a `type` property but it usually defines additional properties. For example a task definition for a task representing a script in a package.json file looks like this:
+Contributes and defines an object literal structure for uniquely identifying a contributed task in the system. A task definition has at minimum a `type` property but it usually defines additional properties. For example a task definition for a task representing a script in a package.json file looks like this:
 
 
 ```
@@ -2105,4 +2105,4 @@ Available completion events include:
 Once a step has been checked off, it will remain checked off until the user explicitly unchecks the step or resets their progress (via the **Getting Started: Reset Progress** command).
 
  
- 9/9/2026
+ 9/16/2026

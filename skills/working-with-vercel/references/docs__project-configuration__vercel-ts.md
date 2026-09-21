@@ -16,8 +16,8 @@ related:
 summary: Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/vercel-ts.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "ab482fec2a23473ded1ea40008fc0b8d2797e0a7397919ff13f7134f1fc788b5"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "cdfb01d616a58b9ed35f8e089cc92f6ad0966d73713ff75b756f52570d15dfaa"
 ---
 
 # Programmatic Configuration with vercel.ts
@@ -39,8 +39,8 @@ The `vercel.ts` file lets you configure and override the default behavior of Ver
 - [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
 - [Build Output Configuration](https://vercel.com/docs/build-output-api/configuration?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
 - [@vercel/functions API Reference \\(Node.js\\)](https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Learn about available APIs when working with Vercel Functions.
-- [Cache-Control headers](https://vercel.com/docs/caching/cache-control-headers?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Learn about the cache-control headers sent to each Vercel deployment and how to use them to control the caching behavior
 - [Frontends on Vercel](https://vercel.com/docs/frameworks/frontend?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
+- [Cache-Control headers](https://vercel.com/docs/caching/cache-control-headers?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Learn about the cache-control headers sent to each Vercel deployment and how to use them to control the caching behavior
 
 Full cross-link map for this page: [/docs/project-configuration/vercel-ts.graph.md](/docs/project-configuration/vercel-ts.graph.md?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -235,7 +235,7 @@ This value overrides the [Build Command](/docs/builds/configure-a-build#build-co
 
 ## bunVersion
 
-> **🔒 Permissions Required**: The Bun runtime
+> **🔒 Permissions Required**: The Bun runtime (Beta)
 
 **Type:** `string`
 
@@ -478,7 +478,7 @@ In the example above, `api/eu-data.js` runs in Paris (`cdg1`) with London (`lhr1
 
 ### Using unsupported runtimes
 
-In order to use a runtime that is not [officially supported](/docs/functions/runtimes), you can add a `runtime` property to the definition:
+To use a runtime that is not [officially supported](/docs/functions/runtimes), you can add a `runtime` property to the definition:
 
 ```typescript filename="vercel.ts"
 import type { VercelConfig } from '@vercel/config/v1';
@@ -492,7 +492,7 @@ export const config: VercelConfig = {
 };
 ```
 
-In the example above, the `api/test.php` Vercel Function does not use one of the [officially supported runtimes](/docs/functions/runtimes). In turn, a `runtime` property was added in order to invoke the [vercel-php](https://www.npmjs.com/package/vercel-php) community runtime.
+In the example above, the `api/test.php` Vercel Function does not use one of the [officially supported runtimes](/docs/functions/runtimes). In turn, a `runtime` property was added to invoke the [vercel-php](https://www.npmjs.com/package/vercel-php) community runtime.
 
 For more information on Runtimes, see the [Runtimes documentation](/docs/functions/runtimes):
 
@@ -943,7 +943,7 @@ https://old-domain.com/page,/new-page,true
 | `caseSensitive`       | `boolean` | No       | Toggle whether source path matching is case sensitive. Default: `false`.                                                                                                                                                                                                                                                                                                                                                                          |
 | `preserveQueryParams` | `boolean` | No       | Toggle whether to preserve the query string on the redirect. Default: `false`.                                                                                                                                                                                                                                                                                                                                                                    |
 
-In order to improve space efficiency, all boolean values can be the single characters `t` (true) or `f` (false) while using the CSV format.
+To improve space efficiency, all boolean values can be the single characters `t` (true) or `f` (false) while using the CSV format.
 
 ## regions
 

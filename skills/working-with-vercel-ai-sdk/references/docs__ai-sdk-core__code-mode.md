@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/code-mode.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "14cb1b33aa845895fe01cbbbb621ee635da072763b0a505bfcad563f7d8a9f14"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "4a3c68d120aa89dfa87e1e6100bbb800aa7a4cb87b37ea53a59121f0f836f132"
 ---
 
 # Code Mode
@@ -113,6 +113,45 @@ The code mode tool description includes TypeScript signatures generated from
 the input and output schemas of its allowed tools. Descriptions,
 `inputExamples`, and precise schemas help the model write correct code.
 
+### Discovering Tools Through Conversation
+
+By default, changing the tools routed through code mode also changes the
+provider-visible `code_mode` tool description. Set `toolDiscovery` to
+`'conversation'` to keep that tool definition stable and provide the current
+host-tool catalog in a user message instead:
+
+```ts
+const codeMode = codeModeTool({
+  toolDiscovery: 'conversation',
+});
+
+const tools = {
+  code_mode: codeMode,
+  getInventory,
+  getDemand,
+} as const;
+
+const result = await generateText({
+  model: __MODEL__,
+  tools,
+  experimental_toolCallers: {
+    getInventory: ['code_mode'],
+    getDemand: ['code_mode'],
+  },
+  prompt: 'Compare inventory and demand for product sku_123.',
+});
+```
+
+The AI SDK adds a complete code mode capability catalog to the conversation
+before calling the model. The catalog contains TypeScript signatures and call
+examples for the tools routed through code mode. When the effective tools or
+their definitions change in a later step or generation call, the SDK adds a
+new catalog that replaces earlier catalogs.
+
+This mode can improve prompt-cache reuse because the provider-visible tool
+definition stays unchanged. Actual cache behavior depends on the model
+provider.
+
 For the example above, the model can generate a program like:
 
 ```ts
@@ -134,6 +173,17 @@ that are not valid JavaScript identifiers use bracket notation:
 const user = await tools['lookup-user']({ userId: 'user_123' });
 return { id: user.id, plan: user.plan };
 ```
+
+### Searching Deferred Tools
+
+Use `toolSearch()` with `deferLoading: true` to expose tools only when the model
+needs them. With `toolDiscovery: 'conversation'`, discovered definitions arrive
+in user messages, preserving the tool-definition cache by keeping the
+provider-visible code mode tool unchanged. Actual prompt-cache reuse depends on
+the provider.
+
+See [Tool Search](/docs/ai-sdk-core/tool-search) for direct-calling and code mode
+examples.
 
 ## Writing Code Mode Programs
 
@@ -268,11 +318,13 @@ signals and AI SDK tool execution context are forwarded to nested tool calls.
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Code Mode](/docs/ai-sdk-core/code-mode)
+- [Tool Search](/docs/ai-sdk-core/tool-search)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
+- [Evaluation](/docs/ai-sdk-core/evaluation)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)

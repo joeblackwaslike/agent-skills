@@ -3,7 +3,7 @@ title: Rolling back a production deployment
 product: vercel
 url: /docs/deployments/rollback-production-deployment
 canonical_url: "https://vercel.com/docs/deployments/rollback-production-deployment"
-last_updated: 2026-05-28
+last_updated: 2026-09-11
 type: how-to
 prerequisites:
   - /docs/deployments
@@ -16,8 +16,8 @@ related:
 summary: Recover from a bad production deployment by rolling back, investigating the root cause, and redeploying a fix.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/rollback-production-deployment.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "4ff74966eaddfb6f06157ffa6534e273ddef3bbae2a0f8611ad8f6be8b1b4e22"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "12138ef5a38f9ebde32d809c5b89542fa79aef6a6b94edf0e6d56d96140803b2"
 ---
 
 # Rolling back a production deployment
@@ -32,12 +32,11 @@ Use this guide to recover from a bad production deployment. You'll roll back to 
 
 - [How to gradually roll out new versions of your backend](https://vercel.com/kb/guide/how-to-gradually-roll-out-new-versions-of-your-backend?from=related&source_path=%2Fdocs%2Fdeployments%2Frollback-production-deployment&source_site=vercel-docs&relationship=related) — Incrementally release updates to your backend to minimize impact of mistakes.
 - [How to determine which Vercel Deployment introduced an issue?](https://vercel.com/kb/guide/how-to-determine-which-vercel-deployment-introduced-an-issue?from=related&source_path=%2Fdocs%2Fdeployments%2Frollback-production-deployment&source_site=vercel-docs&relationship=related) — Process to quickly determine when a deployment issue was introduced using the Vercel CLI
-- [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors?from=related&source_path=%2Fdocs%2Fdeployments%2Frollback-production-deployment&source_site=vercel-docs&relationship=related) — Learn the systematic steps to identify and resolve 404 issues.
 - [Performing a rolling release deployment](https://vercel.com/docs/rolling-releases/rolling-release-deployment?from=related&source_path=%2Fdocs%2Fdeployments%2Frollback-production-deployment&source_site=vercel-docs&relationship=related) — Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.
 - [Promoting a preview deployment to production](https://vercel.com/docs/deployments/promote-preview-to-production?from=related&source_path=%2Fdocs%2Fdeployments%2Frollback-production-deployment&source_site=vercel-docs&relationship=related) — Test a preview deployment and promote it to production using the CLI.
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments?from=related&source_path=%2Fdocs%2Fdeployments%2Frollback-production-deployment&source_site=vercel-docs&relationship=related) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
+- [Promoting Deployments](https://vercel.com/docs/deployments/promoting-a-deployment?from=related&source_path=%2Fdocs%2Fdeployments%2Frollback-production-deployment&source_site=vercel-docs&relationship=related) — Learn how to promote deployments to production on Vercel.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fdeployments%2Frollback-production-deployment&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
-- [Point production traffic to a previous production deployment by ID](https://vercel.com/docs/rest-api/projects/point-production-traffic-to-a-previous-production-deployment-by-id?from=related&source_path=%2Fdocs%2Fdeployments%2Frollback-production-deployment&source_site=vercel-docs&relationship=related) — POST /v1/projects/{projectId}/rollback/{deploymentId} — Allows users to rollback to a deployment.
 
 Full cross-link map for this page: [/docs/deployments/rollback-production-deployment.graph.md](/docs/deployments/rollback-production-deployment.graph.md?from=related&source_path=%2Fdocs%2Fdeployments%2Frollback-production-deployment&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

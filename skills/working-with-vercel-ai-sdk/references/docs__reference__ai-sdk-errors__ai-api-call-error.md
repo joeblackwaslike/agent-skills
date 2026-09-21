@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-api-call-error.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "5e21a95b1b973ff387b5da15ca9a537a8b37278853444dba14c9572cfb2df962"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "f09f84ffee023c70836491f7126950b8979bf94d0a0231c6286557f1c84afb70"
 ---
 
 # AI_APICallError
@@ -18,6 +18,10 @@ This error occurs when an API call fails.
 - `isRetryable`: Whether the request can be retried based on the status code
 - `data`: Any additional data associated with the error (optional)
 - `cause`: The underlying error that caused the API call to fail (optional)
+
+When this error is created for an AI SDK UI chat transport or completion
+request, `requestBodyValues` is `undefined` so prompts and messages are not
+copied into the client-facing error object.
 
 ## Checking for this Error
 
@@ -37,6 +41,7 @@ if (APICallError.isInstance(error)) {
 - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
 - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
 - [AI_EmptyResponseBodyError](/docs/reference/ai-sdk-errors/ai-empty-response-body-error)
+- [AI_EvaluationUnsupportedQuestionTypeError](/docs/reference/ai-sdk-errors/ai-evaluation-unsupported-question-type-error)
 - [AI_InvalidArgumentError](/docs/reference/ai-sdk-errors/ai-invalid-argument-error)
 - [AI_InvalidDataContentError](/docs/reference/ai-sdk-errors/ai-invalid-data-content-error)
 - [AI_InvalidMessageRoleError](/docs/reference/ai-sdk-errors/ai-invalid-message-role-error)

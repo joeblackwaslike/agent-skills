@@ -14,8 +14,8 @@ related:
 summary: "Understand how Vercel Queues billing works, what's included, and which service limits apply."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/pricing.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "84f423a2ae040fabb1a63ec2c98e72ddf8006fc29b96934819ce877874c5ea53"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "4e871cd90a16f172091ed18b541a4ead4a7a16cb0c59247badac3b95be73957f"
 ---
 
 # Pricing and Limits
@@ -30,9 +30,9 @@ Vercel Queues is billed per API operation. Every API call counts as one operatio
 
 - [Services Pricing and Limits](https://vercel.com/docs/services/pricing?from=related&source_path=%2Fdocs%2Fqueues%2Fpricing&source_site=vercel-docs&relationship=related) — Understand how billing works for Vercel Services, what's charged, and which limits apply.
 - [Queues concepts](https://vercel.com/docs/queues/concepts?from=related&source_path=%2Fdocs%2Fqueues%2Fpricing&source_site=vercel-docs&relationship=related) — Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
-- [Limits and Pricing for Monitoring](https://vercel.com/docs/query/monitoring/limits-and-pricing?from=related&source_path=%2Fdocs%2Fqueues%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about our limits and pricing when using Monitoring. Different limitations are applied depending on your plan.
-- [Vercel KMS Pricing and Limits](https://vercel.com/docs/kms/pricing?from=related&source_path=%2Fdocs%2Fqueues%2Fpricing&source_site=vercel-docs&relationship=related) — How Vercel KMS is billed per signing operation, the platform limits that apply, and how to stop being billed.
 - [API Reference](https://vercel.com/docs/queues/api?from=related&source_path=%2Fdocs%2Fqueues%2Fpricing&source_site=vercel-docs&relationship=related) — HTTP API reference for Vercel Queues. Publish, consume, acknowledge, and manage messages.
+- [Pricing and Limits](https://vercel.com/docs/eve/pricing?from=related&source_path=%2Fdocs%2Fqueues%2Fpricing&source_site=vercel-docs&relationship=related) — Understand how eve usage maps to Vercel resources and inherited platform limits.
+- [Vercel KMS Pricing and Limits](https://vercel.com/docs/kms/pricing?from=related&source_path=%2Fdocs%2Fqueues%2Fpricing&source_site=vercel-docs&relationship=related) — How Vercel KMS is billed per signing operation, the platform limits that apply, and how to stop being billed.
 
 Full cross-link map for this page: [/docs/queues/pricing.graph.md](/docs/queues/pricing.graph.md?from=related&source_path=%2Fdocs%2Fqueues%2Fpricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -52,6 +52,11 @@ Messages are metered in 4 KiB chunks. For example, a 12 KiB message counts as th
 Sends with an idempotency key and push deliveries with max concurrency are billed at 2x units for that operation. Other operations on the same message are unaffected.
 
 Operations are [regionally priced](/docs/pricing/regional-pricing) like other Managed Infrastructure resources. See [pricing](/docs/pricing) for plan details and included credits.
+
+| Resource | Price | Included (Pro) | Included (Hobby) |
+|----------|-------|----------------|-----------------|
+| [Queue API Operations](/docs/queues/pricing) | Regional | Usage-based | First 1,000,000 |
+
 
 Functions invoked by Queues in push mode continue to be charged at the [existing compute rates](/docs/functions/usage-and-pricing).
 

@@ -12,8 +12,8 @@ related:
 summary: Learn how to promote an existing deployment using the vercel promote CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/promote.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "f474d5e08fba3a998141be8349ebfe2f905e4a2b1e0ea0e300093dbd9b08e3e8"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "5e98a4772c562c9461b5bda33d156c23f3cbe3a5c8ab07ac6ff149fec6e23338"
 ---
 
 # vercel promote
@@ -28,8 +28,8 @@ The `vercel promote` command is used to promote an existing deployment to be the
 
 - [Promoting a preview deployment to production](https://vercel.com/docs/deployments/promote-preview-to-production?from=related&source_path=%2Fdocs%2Fcli%2Fpromote&source_site=vercel-docs&relationship=related) — Test a preview deployment and promote it to production using the CLI.
 - [Promoting Deployments](https://vercel.com/docs/deployments/promoting-a-deployment?from=related&source_path=%2Fdocs%2Fcli%2Fpromote&source_site=vercel-docs&relationship=related) — Learn how to promote deployments to production on Vercel.
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fpromote&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel redeploy](https://vercel.com/docs/cli/redeploy?from=related&source_path=%2Fdocs%2Fcli%2Fpromote&source_site=vercel-docs&relationship=related) — Learn how to redeploy your project using the vercel redeploy CLI command.
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fpromote&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel redirects](https://vercel.com/docs/cli/redirects?from=related&source_path=%2Fdocs%2Fcli%2Fpromote&source_site=vercel-docs&relationship=related) — Learn how to manage project-level redirects using the vercel redirects CLI command.
 
 Full cross-link map for this page: [/docs/cli/promote.graph.md](/docs/cli/promote.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fpromote&source_site=vercel-docs&relationship=graph)

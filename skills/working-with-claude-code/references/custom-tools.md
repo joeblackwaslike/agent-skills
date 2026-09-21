@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/custom-tools.md"
-fetched_at: "2026-09-14T09:37:17.168Z"
-sha256: "839f9e77351743e25c28455ae2fe841498dba2cc2e0cca090fa5533e856f65aa"
+fetched_at: "2026-09-21T09:39:23.760Z"
+sha256: "d512ca722c2f9b8242f05d6c0d69a9b4bd08971a68a8e220ec0d72fde966fc32"
 ---
 
 > ## Documentation Index
@@ -136,7 +136,7 @@ See the [`tool()`](/docs/en/agent-sdk/typescript#tool) TypeScript reference or t
 
 Pass the MCP server you created to `query` via the `mcpServers` option. The key in `mcpServers` becomes the `{server_name}` segment in each tool's fully qualified name: `mcp__{server_name}__{tool_name}`. List that name in `allowedTools` so the tool runs without a permission prompt.
 
-These snippets reuse the `weatherServer` from the [example above](#weather-tool-example) to ask Claude what the weather is in a specific location.
+These snippets reuse the `weatherServer` from the [weather tool example](#weather-tool-example) to ask Claude what the weather is in a specific location.
 
 <CodeGroup>
   ```python Python theme={null}

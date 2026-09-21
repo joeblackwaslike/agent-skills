@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/fal.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "1ef3889f0037a3eee737fce926cd20dee59c629d46ccd30eb58c3d74293940a5"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "76c1223a55dbd920b84b92527c97374f8558757f6272df1a1569282a72dc8a9f"
 ---
 
 # Fal Provider
@@ -323,6 +323,7 @@ Model-specific parameters (e.g., `audio_url`, `prompt`, `preview_text`, `ref_aud
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
 - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
+- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

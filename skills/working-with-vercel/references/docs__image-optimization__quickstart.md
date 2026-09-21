@@ -14,8 +14,8 @@ related:
 summary: Learn how you can leverage Vercel Image Optimization in your projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/image-optimization/quickstart.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "a80dffc53eef3c58e8db3988814e0d8f380bd3842c6ab0fcdec013efe5874730"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "006a214bb076d6bbef2a7bc5e54e372e8c23cbfa28b6c9c3c2ed74fd658f0dbc"
 ---
 
 # Getting started with Image Optimization
@@ -28,10 +28,10 @@ This guide will help you get started with using Vercel Image Optimization in you
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
 - [How to Optimize Next.js + Sitecore JSS](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-jss?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fquickstart&source_site=vercel-docs&relationship=related) — This guide covers performance and usage considerations when building and deploying your Next.js and Sitecore JSS applica
 - [Build with Vercel Blob on Nuxt](https://vercel.com/kb/guide/vercel-blob-nuxt?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fquickstart&source_site=vercel-docs&relationship=related) — Set up Vercel Blob in a Nuxt application with NuxtHub, upload and serve files, and deliver optimized images with Nuxt Im
 - [Image Optimization](https://nextjs.org/docs/pages/getting-started/images?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fquickstart&source_site=vercel-docs&relationship=related) — Optimize your images with the built-in `next/image` component.
-- [Migrate a Next.js app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-a-next-js-app-from-webflow-cloud-to-vercel?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fquickstart&source_site=vercel-docs&relationship=related) — Move your Next.js app from Webflow Cloud to Vercel: remove the OpenNext Cloudflare adapter, drop the base path, map stor
 - [Nuxt on Vercel](https://vercel.com/docs/frameworks/full-stack/nuxt?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fquickstart&source_site=vercel-docs&relationship=related) — Deploy Nuxt applications to Vercel and configure rendering, functions, middleware, routing, image optimization, and cach
 - [Getting started with Speed Insights](https://vercel.com/docs/speed-insights/quickstart?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fquickstart&source_site=vercel-docs&relationship=related) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
 - [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fquickstart&source_site=vercel-docs&relationship=related) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge

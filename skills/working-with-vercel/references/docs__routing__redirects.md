@@ -16,8 +16,8 @@ related:
 summary: "Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/redirects.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "92fb35b152c0a051d0bb0f073604137c2ec43e214b161003c04a5aa7753ce9c5"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "6caac7306b5d61622a8788e48d1be4105c78d92baaf6ba125eec382461ca4ac2"
 ---
 
 # Redirects
@@ -33,14 +33,13 @@ Redirects are rules that instruct Vercel to send users to a different URL than t
 - [How can I increase the limit of redirects or use dynamic redirects on Vercel?](https://vercel.com/kb/guide/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Instructions on how to use Serverless Functions to handle redirects on Vercel.
 - [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
 - [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
-- [How to handle redirects in Next.js](https://nextjs.org/docs/pages/guides/redirecting?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Learn the different ways to handle redirects in Next.js.
-- [redirects](https://nextjs.org/docs/pages/api-reference/config/next-config-js/redirects?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Add redirects to your Next.js app.
-- [redirects](https://nextjs.org/docs/app/api-reference/config/next-config-js/redirects?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Add redirects to your Next.js app.
-- [Rewrites on Vercel](https://vercel.com/docs/routing/rewrites?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Learn how to use rewrites to send users to different URLs without modifying the visible URL.
+- [Emergency Redirect](https://vercel.com/kb/guide/emergency-redirect?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Learn how to implement an emergency redirect without re-deploying your site.
+- [Avoiding duplicate-content SEO with vercel.app URLs and custom domains](https://vercel.com/kb/guide/avoiding-duplicate-content-with-vercel-app-urls?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Discover why search engines may treat your vercel.app URL and custom domain as separate pages, and how to consolidate ra
 - [Incremental Migration to Vercel](https://vercel.com/docs/incremental-migration?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Learn how to migrate your app or website to Vercel with minimal risk and high impact.
+- [Rewrites on Vercel](https://vercel.com/docs/routing/rewrites?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Learn how to use rewrites to send users to different URLs without modifying the visible URL.
 - [vercel redirects](https://vercel.com/docs/cli/redirects?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Learn how to manage project-level redirects using the vercel redirects CLI command.
+- [Reverse Proxy Servers and Vercel](https://vercel.com/docs/security/reverse-proxy?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Learn why reverse proxy servers are not recommended with Vercel's firewall.
 - [Vercel CDN overview](https://vercel.com/docs/cdn?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
-- [vercel dev](https://vercel.com/docs/cli/dev?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
 
 Full cross-link map for this page: [/docs/routing/redirects.graph.md](/docs/routing/redirects.graph.md?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -178,6 +177,58 @@ You can redirect a `www` subdomain to an apex domain, or other domain redirects,
 ### Firewall Redirects
 
 In emergency situations, you can also define redirects using [Firewall rules](/docs/vercel-firewall/vercel-waf/examples#emergency-redirect) to redirect requests to a new page. Firewall redirects execute before CDN configuration redirects (e.g. `vercel.json` or `next.config.js`) are evaluated.
+
+## Choose a canonical production domain
+
+If both `your-project.vercel.app` and your custom domain serve the same production pages, choose the custom domain as the preferred URL. Duplicate URLs don't automatically incur a search penalty, but they can split signals and make search engines choose a different canonical URL.
+
+Choose the behavior you need:
+
+- **Send visitors to the custom domain:** Use a permanent, hostname-scoped redirect, preserving each page's path and query string.
+- **Keep both public URLs accessible:** Set an absolute `rel="canonical"` URL for the corresponding page on your custom domain. Don't point every page at the homepage. Search engines may select a different canonical URL.
+- **Exclude staging or another host from search:** Use [host-scoped `X-Robots-Tag: noindex`](/docs/headers/response-headers#x-robots-tag). Google [doesn't recommend `noindex` to select a canonical URL](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls).
+
+You don't need all three mechanisms on every URL. Keep internal links and sitemaps consistent with the preferred domain, and leave preview hostnames outside production-only redirect rules.
+
+### Redirect the production vercel.app hostname
+
+This configuration redirects only `your-project.vercel.app`, preserving the path. Query parameters pass through unless you explicitly replace them in the destination:
+
+```json filename="vercel.json"
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "your-project\\.vercel\\.app" }],
+      "destination": "https://www.example.com/:path*",
+      "permanent": true
+    }
+  ]
+}
+```
+
+Replace both hostnames with your production URLs. Matching the exact source hostname avoids redirecting the destination back to itself or redirecting every preview URL.
+
+### Publish a firewall redirect
+
+If you need a redirect without redeploying, create a [WAF custom rule](/docs/vercel-firewall/vercel-waf/custom-rules):
+
+1. Open the project's **Firewall**, then **Configure** and **Add Rule**.
+2. Match **Hostname** exactly to the unwanted production hostname, such as `your-project.vercel.app`.
+3. Choose **Redirect** and enter the destination URL. The dashboard creates a temporary **307** redirect to that URL. Use the configuration rule above when you need a permanent redirect that preserves each page's path and query string.
+4. Select **Save Rule**, then **Review Changes**. Review the pending changes and select **Publish** to apply them.
+
+### Verify the selected behavior
+
+Check a nested path and query string on both domains, and confirm preview URLs still work:
+
+```bash filename="terminal"
+curl -I 'https://your-project.vercel.app/about?ref=test'
+curl -I 'https://www.example.com/about?ref=test'
+```
+
+For the permanent redirect example, expect `308` and a `Location` pointing to `https://www.example.com/about?ref=test`. The destination should serve the page without a loop or an unintended `noindex`. If you chose canonical tags instead, inspect the rendered HTML for the corresponding absolute canonical URL. Use [Google Search Console URL Inspection](https://support.google.com/webmasters/answer/9012289) to check indexing and Google's selected canonical after recrawling.
 
 ## Redirect status codes
 

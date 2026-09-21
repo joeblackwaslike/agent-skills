@@ -3,7 +3,7 @@ title: Requirements for listing an Integration
 product: vercel
 url: /docs/integrations/create-integration/submit-integration
 canonical_url: "https://vercel.com/docs/integrations/create-integration/submit-integration"
-last_updated: 2026-08-28
+last_updated: 2026-09-16
 type: reference
 prerequisites:
   - /docs/integrations/create-integration
@@ -17,8 +17,8 @@ related:
 summary: Learn about all the requirements and guidelines needed when creating your Integration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/submit-integration.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "3f053f60a7e74e2c63cdcb320de33a98fff2faba8e1f30c2d1006a4c29c7aeb2"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "2366d50bc716aec9e1bbb457ebf070b7fa5bf8a06cf0c6f9d3226d5be634dfee"
 ---
 
 # Requirements for listing an Integration
@@ -439,7 +439,7 @@ Under the **Resources** section, Vercel automatically adds a **Support** link th
 
 ### Product Snippets
 
-These code snippets are designed to be quick starts for the integration user to connect with the installed product with tools such as `cURL` in order to retrieve data and test that their application is working as expected.
+These code snippets are designed to be quick starts for the integration user to connect with the installed product with tools such as `cURL` to retrieve data and test that their application is working as expected.
 
 You can add up to 6 code snippets to help users get started with your product. These appear at the top of the product's detail page under a **Quickstart** section with a tab for each code block.
 

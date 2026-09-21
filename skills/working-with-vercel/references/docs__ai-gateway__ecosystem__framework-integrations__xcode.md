@@ -3,7 +3,7 @@ title: Xcode with AI Gateway
 product: vercel
 url: /docs/ai-gateway/ecosystem/framework-integrations/xcode
 canonical_url: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode"
-last_updated: 2026-09-08
+last_updated: 2026-09-13
 type: how-to
 prerequisites:
   - /docs/ai-gateway/ecosystem/framework-integrations
@@ -14,8 +14,8 @@ related:
 summary: "Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in Xcode settings."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "9092fdd7adc242d1fb8be72993639fb11d21769f0bef402b1f4b317d10d0d9c0"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "1370443bc81746aa61a7c5b8c72a93479dfd0a38c13b9692a8ae0481f1caa704"
 ---
 
 # Xcode with AI Gateway

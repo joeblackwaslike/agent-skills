@@ -12,8 +12,8 @@ related:
 summary: Learn how to manage project-level routing rules using the vercel routes CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/routes.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "0fbee489bf0f131fdb81144db37cd54b0d1612a022a81a6038ccee1040f449d6"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "3f81204b9127a1a3e233a05fe3d905ccb4cca9aa3e4197b9c4e1a9298dc9957c"
 ---
 
 # vercel routes
@@ -34,7 +34,7 @@ The `vercel routes` command lets you manage routing rules for a project. These r
 - [vercel rolling-release](https://vercel.com/docs/cli/rolling-release?from=related&source_path=%2Fdocs%2Fcli%2Froutes&source_site=vercel-docs&relationship=related) — Learn how to manage your project's rolling releases using the vercel rolling-release CLI command.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Froutes&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [Project-Level Routing Rules](https://vercel.com/docs/routing/project-routing-rules?from=related&source_path=%2Fdocs%2Fcli%2Froutes&source_site=vercel-docs&relationship=related) — Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Froutes&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [vercel alerts](https://vercel.com/docs/cli/alerts?from=related&source_path=%2Fdocs%2Fcli%2Froutes&source_site=vercel-docs&relationship=related) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
 
 Full cross-link map for this page: [/docs/cli/routes.graph.md](/docs/cli/routes.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Froutes&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

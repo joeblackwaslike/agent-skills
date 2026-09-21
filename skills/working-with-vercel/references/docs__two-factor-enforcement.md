@@ -13,8 +13,8 @@ related:
 summary: Learn how to enforce two-factor authentication (2FA) for your Vercel team members to enhance security.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/two-factor-enforcement.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "1d0c4bcac734330dfbdac6fb3c5c5b7aa99a2252b7f1efb2f503300b2db3c60f"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "2618b0087194c85ae1cc5b9e738d776c8e3b609899f8015c72fa9b54a1c03d82"
 ---
 
 # Two-factor enforcement
@@ -31,9 +31,9 @@ To enhance the security of your Vercel team, you can enforce two-factor authenti
 - [Two-Factor Authentication (2FA) is now available](https://vercel.com/changelog/2fa-is-now-available?from=related&source_path=%2Fdocs%2Ftwo-factor-enforcement&source_site=vercel-docs&relationship=related)
 - [SAML Single Sign-On](https://vercel.com/docs/saml?from=related&source_path=%2Fdocs%2Ftwo-factor-enforcement&source_site=vercel-docs&relationship=related) — Learn how to configure SAML SSO for your organization on Vercel.
 - [Directory Sync](https://vercel.com/docs/directory-sync?from=related&source_path=%2Fdocs%2Ftwo-factor-enforcement&source_site=vercel-docs&relationship=related) — Learn how to configure Directory Sync for your Vercel Team.
-- [Access Control](https://vercel.com/docs/security/access-control?from=related&source_path=%2Fdocs%2Ftwo-factor-enforcement&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication?from=related&source_path=%2Fdocs%2Ftwo-factor-enforcement&source_site=vercel-docs&relationship=related) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
 - [Role-based access control \\(RBAC\\)](https://vercel.com/docs/rbac?from=related&source_path=%2Fdocs%2Ftwo-factor-enforcement&source_site=vercel-docs&relationship=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
+- [Access Control](https://vercel.com/docs/security/access-control?from=related&source_path=%2Fdocs%2Ftwo-factor-enforcement&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 
 Full cross-link map for this page: [/docs/two-factor-enforcement.graph.md](/docs/two-factor-enforcement.graph.md?from=related&source_path=%2Fdocs%2Ftwo-factor-enforcement&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

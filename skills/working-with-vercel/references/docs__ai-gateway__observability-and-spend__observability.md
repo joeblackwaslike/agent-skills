@@ -3,7 +3,7 @@ title: AI Gateway Observability
 product: vercel
 url: /docs/ai-gateway/observability-and-spend/observability
 canonical_url: "https://vercel.com/docs/ai-gateway/observability-and-spend/observability"
-last_updated: 2026-09-07
+last_updated: 2026-09-08
 type: reference
 prerequisites:
   - /docs/ai-gateway/observability-and-spend
@@ -14,8 +14,8 @@ related:
 summary: Monitor AI Gateway requests in the Vercel dashboard. Inspect token usage, latency, spend, and logs at team, project, and API key scopes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/observability.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "40087ea966c1f17c319026bf93068cb927ebcdaa8873cf06160422fdbe9face0"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "258720ae92c712da0b4a36fd5b2f7e1c761cc76181f46c1d16758928b3575038"
 ---
 
 # AI Gateway Observability
@@ -38,7 +38,7 @@ The AI Gateway logs spend, model usage, and observability metrics related to you
 - [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fobservability&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fobservability&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Aider with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/aider?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fobservability&source_site=vercel-docs&relationship=related) — Connect Aider to AI Gateway with the Vercel CLI or an OpenAI-compatible base URL, API key, and model metadata.
-- [AI Gateway Framework Integrations](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fobservability&source_site=vercel-docs&relationship=related) — Connect LangChain, LiteLLM, LlamaIndex, Mastra, Pydantic AI, and other frameworks to Vercel AI Gateway with the AI SDK o
+- [AI Gateway Framework Integrations](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fobservability&source_site=vercel-docs&relationship=related) — Connect LangChain, LiteLLM, LlamaIndex, Mastra, Pydantic AI, TanStack AI, and other frameworks to Vercel AI Gateway with
 
 Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend/observability.graph.md](/docs/ai-gateway/observability-and-spend/observability.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fobservability&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

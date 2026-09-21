@@ -3,7 +3,7 @@ title: CDN pricing and usage
 product: vercel
 url: /docs/manage-cdn-usage
 canonical_url: "https://vercel.com/docs/manage-cdn-usage"
-last_updated: 2026-08-11
+last_updated: 2026-09-14
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Understand CDN pricing resources, monitor usage from your dashboard, and optimize Fast Data Transfer, Fast Origin Transfer, and CDN Requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/manage-cdn-usage.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "5a3f4f23cc45d7d7b9f798dd4fa7ab43a58d1804bf82382455b9926c3db3e451"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "b664c9f3a4b94c8c5b36b387ad974ea521e5456c73b3a801c4538f3bc027c215"
 ---
 
 # CDN pricing and usage
@@ -33,14 +33,15 @@ CDN pricing covers three resources:
 - [Flat Rate CDN is now GA for Pro teams](https://vercel.com/changelog/flat-rate-cdn-is-now-ga-for-pro-teams?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=related)
 - [Vercel Blob now supports consistent reads on private storage](https://vercel.com/changelog/vercel-blob-now-supports-consistent-reads-on-private-storage?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=related)
 - [Penetration testing on Vercel](https://vercel.com/kb/guide/penetration-testing-on-vercel?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=related) — Learn how to perform pentesting on Vercel.
+- [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=related) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
+- [Introducing Flat Rate CDN](https://vercel.com/blog/introducing-flat-rate-cdn?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=related)
 - [Life of a Vercel request: Navigating the Edge Network](https://vercel.com/blog/life-of-a-vercel-request-navigating-the-edge-network?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=related)
 - [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=related) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
-- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
+- [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=related)
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [How Vercel CDN works](https://vercel.com/docs/how-vercel-cdn-works?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
 - [Calculating usage of resources](https://vercel.com/docs/pricing/how-does-vercel-calculate-usage-of-resources?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=related) — Understand how Vercel measures and calculates your resource usage based on a typical user journey.
-- [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=related) — Learn about legacy usage and pricing for Vercel Functions.
-- [Limits and Pricing for Image Optimization](https://vercel.com/docs/image-optimization/limits-and-pricing?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=related) — This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can i
+- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
 
 Full cross-link map for this page: [/docs/manage-cdn-usage.graph.md](/docs/manage-cdn-usage.graph.md?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -58,6 +59,11 @@ Pro plans charge for CDN usage per unit, and [pricing](/docs/pricing) varies by 
 When a user visits your site, the data transfer between Vercel's CDN and the user's device gets measured as Fast Data Transfer. The data transferred gets measured based on data volume transferred, and can include assets such as your homepage, images, and other static files.
 
 Fast Data Transfer usage incurs alongside [CDN Requests](#cdn-requests) every time a user visits your site, and is [priced regionally](/docs/pricing/regional-pricing).
+
+| Resource | Price | Included (Pro) | Included (Hobby) |
+|----------|-------|----------------|-----------------|
+| [Fast Data Transfer](/docs/pricing/regional-pricing) | Regional | Flat Rate CDN | First 100 GB |
+
 
 ### Optimizing Fast Data Transfer
 
@@ -83,6 +89,11 @@ Fast Data Transfer is calculated based on the full size of each HTTP request and
 ## Fast Origin Transfer
 
 Fast Origin Transfer is incurred when using several Vercel products including Vercel Functions, Middleware, Blob and Data Cache (used through ISR).
+
+| Resource | Price | Included (Pro) | Included (Hobby) |
+|----------|-------|----------------|-----------------|
+| [Fast Origin Transfer](/docs/pricing/regional-pricing) | Regional | Usage-based | First 10 GB |
+
 
 ### Calculating Fast Origin Transfer
 
@@ -129,6 +140,12 @@ When visiting your site, requests are made to a Vercel CDN [region](/docs/pricin
 > **💡 Note:** CDN Requests appear as **Edge Requests** in your billing dashboard and usage
 > charts.
 
+| Resource | Price | Included (Pro) | Included (Hobby) |
+|----------|-------|----------------|-----------------|
+| [Edge Requests](/docs/pricing/regional-pricing) | Regional | Flat Rate CDN | First 1,000,000 |
+| [Edge Request CPU Duration](/docs/pricing/regional-pricing) | Regional | 1 Hour | N/A |
+
+
 ### Managing CDN Requests
 
 You can view the **Edge Requests** chart on **Usage** in your dashboard sidebar. This chart shows:
@@ -165,6 +182,12 @@ To investigate further:
 
 - Identify the deployment where the metric increased.
 - Compare rewrites, redirects, and pages to the previous deployment.
+
+## Flat Rate CDN
+
+[Flat Rate CDN](/docs/pricing/flat-rate-cdn) replaces the per-unit charges on this page with a fixed monthly price for a capacity tier that covers your content delivery.
+
+You enable it from your team's **Billing** page. For the steps, see [Enable and configure Flat Rate CDN](/docs/pricing/flat-rate-cdn#enable-and-configure-flat-rate-cdn).
 
 
 ---

@@ -12,8 +12,8 @@ related:
 summary: Learn how to integrate Vercel with payment processors and ecommerce platforms, including Stripe, Shopify, BigCommerce, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/ecommerce.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "b93ce063f1ccd7cfdb85b90740920bdc1f0f75736150d3aa14abf2da0f648acb"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "ad504c0b2ec8439498e0fd7774723115706e3a882e5c30dda4ae873c0451ff7d"
 ---
 
 # Vercel Commerce and Payments Integrations
@@ -33,10 +33,10 @@ Add commerce and payments to your Vercel projects. Use the Stripe native integra
 - [Supercharge your Vercel Projects with Integrations](https://vercel.com/blog/integrations-marketplace?from=related&source_path=%2Fdocs%2Fintegrations%2Fecommerce&source_site=vercel-docs&relationship=related)
 - [Getting started with Next.js, TypeScript, and Stripe Checkout](https://vercel.com/kb/guide/getting-started-with-nextjs-typescript-stripe?from=related&source_path=%2Fdocs%2Fintegrations%2Fecommerce&source_site=vercel-docs&relationship=related) — Add payments functionality to your Next.js applications with Stripe and deploy to Vercel.
 - [Vercel is now available in Stripe Projects](https://vercel.com/changelog/vercel-is-now-available-in-stripe-projects?from=related&source_path=%2Fdocs%2Fintegrations%2Fecommerce&source_site=vercel-docs&relationship=related)
+- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related&source_path=%2Fdocs%2Fintegrations%2Fecommerce&source_site=vercel-docs&relationship=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
 - [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fecommerce&source_site=vercel-docs&relationship=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
 - [Marketplace Vercel API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fecommerce&source_site=vercel-docs&relationship=related) — Learn how to call Vercel API endpoints to interact with Vercel resources
 - [Vercel CMS Integrations](https://vercel.com/docs/integrations/cms?from=related&source_path=%2Fdocs%2Fintegrations%2Fecommerce&source_site=vercel-docs&relationship=related) — Learn how to integrate Vercel with CMS platforms, including Contentful, Sanity, and Sitecore XM Cloud.
-- [Storage on Vercel Marketplace](https://vercel.com/docs/marketplace-storage?from=related&source_path=%2Fdocs%2Fintegrations%2Fecommerce&source_site=vercel-docs&relationship=related) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fecommerce&source_site=vercel-docs&relationship=related) — Learn how you can add a product to your Vercel project through a native integration.
 
 Full cross-link map for this page: [/docs/integrations/ecommerce.graph.md](/docs/integrations/ecommerce.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fecommerce&source_site=vercel-docs&relationship=graph)

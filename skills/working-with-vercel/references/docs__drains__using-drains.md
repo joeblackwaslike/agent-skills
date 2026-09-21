@@ -3,7 +3,7 @@ title: Using Drains
 product: vercel
 url: /docs/drains/using-drains
 canonical_url: "https://vercel.com/docs/drains/using-drains"
-last_updated: 2026-09-01
+last_updated: 2026-09-17
 type: how-to
 prerequisites:
   - /docs/drains
@@ -16,8 +16,8 @@ related:
 summary: Learn how to configure drains to forward observability data to custom HTTP endpoints, dedicated Audit Log destinations, and integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/using-drains.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "44377d04d9e5edc9d27edc87b0cfde8faa7df5eabc7273f4328dace836d150c8"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "1e73a1c3e1d0468a4f89de861d6c8fe0a62284f7744aa2f292717f0cf1f7b8ae"
 ---
 
 # Using Drains
@@ -89,6 +89,10 @@ Teams on [Pro](/docs/plans/pro-plan) and [Enterprise](/docs/plans/enterprise) pl
   **Endpoint URL**
 
   This is the URL of the endpoint we will send your data to. The request will be sent over HTTPS using the POST method. Make sure your endpoint responds with a 200 OK status code.
+
+  **Payload Size**
+
+  Vercel batches drained data into payloads of up to 5 MB.
 
   **Format**
 

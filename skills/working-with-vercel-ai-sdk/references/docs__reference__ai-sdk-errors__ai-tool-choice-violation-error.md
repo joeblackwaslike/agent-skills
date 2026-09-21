@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-tool-choice-violation-error.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "7dce04bb1beaa8f061f562a47b9e6ac70a71b4d871aa13722ba5c0fb2c023581"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "3d418f70798c889c8da993d0fd7482fcf5912e303837180ae262d0ad19eb06b0"
 ---
 
 # ToolChoiceViolationError
@@ -44,6 +44,7 @@ if (ToolChoiceViolationError.isInstance(error)) {
 - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
 - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
 - [AI_EmptyResponseBodyError](/docs/reference/ai-sdk-errors/ai-empty-response-body-error)
+- [AI_EvaluationUnsupportedQuestionTypeError](/docs/reference/ai-sdk-errors/ai-evaluation-unsupported-question-type-error)
 - [AI_InvalidArgumentError](/docs/reference/ai-sdk-errors/ai-invalid-argument-error)
 - [AI_InvalidDataContentError](/docs/reference/ai-sdk-errors/ai-invalid-data-content-error)
 - [AI_InvalidMessageRoleError](/docs/reference/ai-sdk-errors/ai-invalid-message-role-error)

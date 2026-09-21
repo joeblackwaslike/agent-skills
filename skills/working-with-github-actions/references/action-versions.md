@@ -2,7 +2,7 @@
 
 Latest release versions for commonly used GitHub Actions.
 Auto-updated by `scripts/update_docs.js` — do not edit manually.
-Last updated: 2026-09-14
+Last updated: 2026-09-21
 
 ## GitHub Official
 
@@ -32,16 +32,16 @@ Last updated: 2026-09-14
 | Action | Latest tag | Pin usage |
 |--------|-----------|-----------|
 | `docker/login-action` | `v4.6.0` | `uses: docker/login-action@v4.6.0` |
-| `docker/build-push-action` | `v7.3.0` | `uses: docker/build-push-action@v7.3.0` |
+| `docker/build-push-action` | `v7.4.0` | `uses: docker/build-push-action@v7.4.0` |
 | `docker/metadata-action` | `v6.2.0` | `uses: docker/metadata-action@v6.2.0` |
-| `docker/setup-buildx-action` | `v4.3.0` | `uses: docker/setup-buildx-action@v4.3.0` |
-| `docker/setup-qemu-action` | `v4.3.0` | `uses: docker/setup-qemu-action@v4.3.0` |
+| `docker/setup-buildx-action` | `v4.4.1` | `uses: docker/setup-buildx-action@v4.4.1` |
+| `docker/setup-qemu-action` | `v4.4.0` | `uses: docker/setup-qemu-action@v4.4.0` |
 
 ## Cloud Deployments
 
 | Action | Latest tag | Pin usage |
 |--------|-----------|-----------|
-| `aws-actions/configure-aws-credentials` | `v6.2.4` | `uses: aws-actions/configure-aws-credentials@v6.2.4` |
+| `aws-actions/configure-aws-credentials` | `v6.3.0` | `uses: aws-actions/configure-aws-credentials@v6.3.0` |
 | `aws-actions/amazon-ecr-login` | `v2.1.7` | `uses: aws-actions/amazon-ecr-login@v2.1.7` |
 | `google-github-actions/auth` | `v3` | `uses: google-github-actions/auth@v3` |
 | `google-github-actions/setup-gcloud` | `v3.0.1` | `uses: google-github-actions/setup-gcloud@v3.0.1` |
@@ -59,7 +59,7 @@ Last updated: 2026-09-14
 
 | Action | Latest tag | Pin usage |
 |--------|-----------|-----------|
-| `codecov/codecov-action` | `v7.0.0` | `uses: codecov/codecov-action@v7.0.0` |
+| `codecov/codecov-action` | `v7.1.1` | `uses: codecov/codecov-action@v7.1.1` |
 | `github/codeql-action/init` | `codeql-bundle-v2.27.0` | `uses: github/codeql-action/init@codeql-bundle-v2.27.0` |
 | `dependabot/fetch-metadata` | `v3.1.0` | `uses: dependabot/fetch-metadata@v3.1.0` |
 

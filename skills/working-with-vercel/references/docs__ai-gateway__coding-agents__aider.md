@@ -3,7 +3,7 @@ title: Aider with AI Gateway
 product: vercel
 url: /docs/ai-gateway/coding-agents/aider
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/aider"
-last_updated: 2018-10-20
+last_updated: 2026-09-13
 type: how-to
 prerequisites:
   - /docs/ai-gateway/coding-agents
@@ -16,8 +16,8 @@ related:
 summary: Connect Aider to AI Gateway with the Vercel CLI or an OpenAI-compatible base URL, API key, and model metadata.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/aider.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "4321d7b2e782f68b12a406bcf839a4518a8f8da0860082a81aa4f3f606745495"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "5c838c7b83aa0be0ec0be8d34f0f59c1ffa1656eec8c5dcf2282f2fb6e67502e"
 ---
 
 # Aider with AI Gateway

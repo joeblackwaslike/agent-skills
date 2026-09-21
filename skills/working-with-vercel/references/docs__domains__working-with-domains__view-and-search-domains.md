@@ -13,8 +13,8 @@ related:
 summary: Learn how to view and search all registered domains that are assigned to Vercel Projects through the Vercel dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/view-and-search-domains.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "e8e0d2ef2f3b54bc9f8e1577f8c899146f18d9b1afaff69d9ac3528a6847103f"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "e31862ade6c22d2feff576a39ab760d59a45581afb5351b7405c1c6b93bc07ec"
 ---
 
 # Viewing & Searching Domains
@@ -33,7 +33,7 @@ To view all your registered domains, open [**Domains**](https://vercel.com/d?to=
 - [Search and buy domains in the dashboard](https://vercel.com/changelog/search-and-buy-domains-in-the-dashboard?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fview-and-search-domains&source_site=vercel-docs&relationship=related)
 - [vercel domains](https://vercel.com/docs/cli/domains?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fview-and-search-domains&source_site=vercel-docs&relationship=related) — Learn how to buy, sell, transfer, and manage your domains using the vercel domains CLI command.
 - [List all the domains](https://vercel.com/docs/rest-api/domains/list-all-the-domains?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fview-and-search-domains&source_site=vercel-docs&relationship=related) — GET /v5/domains — Retrieves a list of domains registered for the authenticated user or team. By default it returns the l
-- [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fview-and-search-domains&source_site=vercel-docs&relationship=related) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
+- [Check domain availability and pricing](https://vercel.com/docs/rest-api/domains-registrar/check-domain-availability-and-pricing?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fview-and-search-domains&source_site=vercel-docs&relationship=related) — POST /v1/registrar/domains/search — Check registration availability for 1–200 exact domain names, such as \\`example.com\\
 - [Programmatic Domain Management](https://vercel.com/docs/domains/registrar-api?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fview-and-search-domains&source_site=vercel-docs&relationship=related) — Programmatically search, price, purchase, renew, and manage domains with Vercel's domains registrar API endpoints.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fview-and-search-domains&source_site=vercel-docs&relationship=related) — Add and configure a custom domain for your Vercel project using the CLI.
 

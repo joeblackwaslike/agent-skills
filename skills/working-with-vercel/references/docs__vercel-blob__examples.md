@@ -13,8 +13,8 @@ related:
 summary: Examples on how to use Vercel Blob in your applications
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/examples.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "11fdfd660092425243a915b05d1555a6f0c2f368d3f78c80d0227dbc82d3f4c1"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "0a58fdd557980c7e0da42e985b7501d158159d7db0fb3dec46ef9c873392ee59"
 ---
 
 # Vercel Blob examples
@@ -35,12 +35,11 @@ Vercel Blob supports [range requests](https://developer.mozilla.org/docs/Web/HTT
 - [Vercel Blob is now generally available: Cost-efficient, durable storage](https://vercel.com/blog/vercel-blob-now-generally-available?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fexamples&source_site=vercel-docs&relationship=related)
 - [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fexamples&source_site=vercel-docs&relationship=related) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
 - [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fexamples&source_site=vercel-docs&relationship=related) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
-- [How can I use AWS S3 with Vercel?](https://vercel.com/kb/guide/how-can-i-use-aws-s3-with-vercel?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fexamples&source_site=vercel-docs&relationship=related) — Example how to use AWS S3 library on Vercel
 - [Public Storage](https://vercel.com/docs/vercel-blob/public-storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fexamples&source_site=vercel-docs&relationship=related) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
+- [Server Uploads with Vercel Blob](https://vercel.com/docs/vercel-blob/server-upload?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fexamples&source_site=vercel-docs&relationship=related) — Learn how to upload files to Vercel Blob using Server Actions and Route Handlers
 - [Cancel a blob upload](https://vercel.com/docs/rest-api/vcr/cancel-a-blob-upload?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fexamples&source_site=vercel-docs&relationship=related) — DELETE /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid} — DELETE /v2/:teamSlug/:projectSlug/:repositor
 - [Delete a blob](https://vercel.com/docs/rest-api/vcr/delete-a-blob?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fexamples&source_site=vercel-docs&relationship=related) — DELETE /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/{digest} — DELETE /v2/:teamSlug/:projectSlug/:repositoryName/
 - [Vercel Storage overview](https://vercel.com/docs/storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fexamples&source_site=vercel-docs&relationship=related) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
-- [Delete a Blob store](https://vercel.com/docs/rest-api/storage/delete-a-blob-store?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fexamples&source_site=vercel-docs&relationship=related) — DELETE /storage/stores/blob/{id} — Delete a Blob store
 
 Full cross-link map for this page: [/docs/vercel-blob/examples.graph.md](/docs/vercel-blob/examples.graph.md?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fexamples&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

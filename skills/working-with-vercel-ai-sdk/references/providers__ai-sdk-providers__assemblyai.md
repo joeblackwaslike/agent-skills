@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/assemblyai.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "c5084e1df366c80529e89e323f24c1b7620c7b0604892ee962bcb2300dd73e0b"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "7ca5d528235dd75ca4a3ccb7152666dea2982f513a02a2779eca410c0bdf2b47"
 ---
 
 # AssemblyAI Provider
@@ -408,6 +408,7 @@ AssemblyAI's documentation for per-language availability.
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
 - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
+- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

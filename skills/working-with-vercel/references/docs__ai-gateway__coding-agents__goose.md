@@ -3,7 +3,7 @@ title: Goose with AI Gateway
 product: vercel
 url: /docs/ai-gateway/coding-agents/goose
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/goose"
-last_updated: 2018-10-20
+last_updated: 2026-09-13
 type: how-to
 prerequisites:
   - /docs/ai-gateway/coding-agents
@@ -16,8 +16,8 @@ related:
 summary: Connect Goose to AI Gateway with the Vercel CLI or a custom OpenAI-compatible provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/goose.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "b67da7c74186067fc14f615f1dc6a077ba04b8415c404fe8b483d28dd5a2bf45"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "0bacce3939ee45794d2aaf84f4d49c84c6efbe52fc86d8b9c1fb38c1483f90ca"
 ---
 
 # Goose with AI Gateway

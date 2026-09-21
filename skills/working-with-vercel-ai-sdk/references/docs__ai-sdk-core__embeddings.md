@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/embeddings.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "9dab24ad541a3d341a070e0d9b24b368367962d64bdbbca8ad8c9579f70ea151"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "9993a9c783b6d705309eb91ae6461b71681cd77b39f9c53e513e5292ad83fb36"
 ---
 
 # Embeddings
@@ -250,11 +250,13 @@ Several providers offer embedding models:
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Code Mode](/docs/ai-sdk-core/code-mode)
+- [Tool Search](/docs/ai-sdk-core/tool-search)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
+- [Evaluation](/docs/ai-sdk-core/evaluation)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)

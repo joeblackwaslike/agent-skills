@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/telemetry.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "1da847ce05dfe69bb17efc68747831d46602e9629e232f6dce380c8a4363aa55"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "9b0e454803e236a8a9e19e952a2759fb5f21bd911bf7e372472a17e97b3e4bb7"
 ---
 
 # Telemetry
@@ -866,11 +866,13 @@ Tool call spans (`ai.toolCall`) contain the following attributes:
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Code Mode](/docs/ai-sdk-core/code-mode)
+- [Tool Search](/docs/ai-sdk-core/tool-search)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
+- [Evaluation](/docs/ai-sdk-core/evaluation)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)

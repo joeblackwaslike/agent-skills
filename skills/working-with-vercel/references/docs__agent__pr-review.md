@@ -16,13 +16,13 @@ related:
 summary: Get automatic AI-powered code reviews on your pull requests
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/pr-review.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "5442b814e1b742825ba5fa237911439ee19a0c2cc2e5b75c1543ef9ec86a9df7"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "8622804a147e115f0f5ded8a8a5ece1dddfdef8a0e0ad041cc8aa1441f448353"
 ---
 
 # Code Review
 
-> **🔒 Permissions Required**: Vercel Agent Code Review
+> **🔒 Permissions Required**: Vercel Agent Code Review (Public Beta)
 
 Code Review is part of [Vercel Agent](/docs/agent). It provides Sandbox-validated suggestions on your pull requests as one capability within the broader Vercel Agent.
 
@@ -38,11 +38,11 @@ Code Review is part of [Vercel Agent](/docs/agent). It provides Sandbox-validate
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
-- [On-demand Vercel Agent code reviews](https://vercel.com/changelog/on-demand-vercel-agent-code-reviews?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review&source_site=vercel-docs&relationship=related)
 - [AI code reviews by Vercel Agent now in Public Beta](https://vercel.com/changelog/ai-code-reviews-by-vercel-agent-now-in-beta?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review&source_site=vercel-docs&relationship=related)
+- [On-demand Vercel Agent code reviews](https://vercel.com/changelog/on-demand-vercel-agent-code-reviews?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review&source_site=vercel-docs&relationship=related)
 - [Apply code suggestions from Vercel Agent with one click](https://vercel.com/changelog/apply-code-suggestions-from-vercel-agent-with-one-click?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review&source_site=vercel-docs&relationship=related)
-- [Automatic build fix suggestions with Vercel Agent](https://vercel.com/changelog/automatic-build-fix-suggestions-with-vercel-agent?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review&source_site=vercel-docs&relationship=related)
 - [Introducing Vercel for Slack](https://vercel.com/blog/introducing-vercel-for-slack?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review&source_site=vercel-docs&relationship=related)
+- [Automatic build fix suggestions with Vercel Agent](https://vercel.com/changelog/automatic-build-fix-suggestions-with-vercel-agent?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review&source_site=vercel-docs&relationship=related)
 - [Installation](https://vercel.com/docs/agent/installation?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review&source_site=vercel-docs&relationship=related) — Let AI automatically install Web Analytics and Speed Insights in your app
 
 Full cross-link map for this page: [/docs/agent/pr-review.graph.md](/docs/agent/pr-review.graph.md?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review&source_site=vercel-docs&relationship=graph)

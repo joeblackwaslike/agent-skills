@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/generating-structured-data.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "517d451e9d6b212cb1df003126d2c30c9aa174d61a31705b0ca993e241cfd6c5"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "0fb408131571591d3eeb4e00b793a109c98b79908c99b6bbc854465a11e2edd5"
 ---
 
 # Generating Structured Data
@@ -536,11 +536,13 @@ You can see structured output generation in action using various frameworks in t
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Code Mode](/docs/ai-sdk-core/code-mode)
+- [Tool Search](/docs/ai-sdk-core/tool-search)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
+- [Evaluation](/docs/ai-sdk-core/evaluation)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)

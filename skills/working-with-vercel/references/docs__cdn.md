@@ -3,7 +3,7 @@ title: Vercel CDN overview
 product: vercel
 url: /docs/cdn
 canonical_url: "https://vercel.com/docs/cdn"
-last_updated: 2026-08-11
+last_updated: 2026-09-14
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: "Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deployment."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cdn.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "5a288db1b19fe478df3237fd612409bd846040f67b08a35d5f18decc44522fa4"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "c7a4063dbada575329dcb34c63267ffe414028c725f292aad027d1fb3b9033f3"
 ---
 
 # Vercel CDN overview
@@ -147,6 +147,29 @@ You can configure branded error pages for 5xx server errors so visitors see a co
 CDN pricing covers [CDN requests](/docs/manage-cdn-usage#cdn-requests), data transfer to visitors, and [Fast Origin Transfer](/docs/manage-cdn-usage#fast-origin-transfer). Pricing can vary by the region where requests originate. CDN requests appear as **Edge Requests** in **Billing** and on the **Usage** page.
 
 For resource definitions, rates, usage dashboards, and ways to manage or stop charges, see [CDN pricing and usage](/docs/manage-cdn-usage).
+
+### CDN service tiers
+
+Vercel offers three CDN service tiers for different reliability, cost, and usage patterns: [On-demand CDN](#on-demand-cdn), [Flat Rate CDN](#flat-rate-cdn), and [Flex CDN](#flex-cdn).
+
+#### On-demand CDN
+
+On-demand CDN is the usage-based model for teams that want CDN usage to scale automatically with demand. You pay for the CDN resources your team uses, without choosing a predefined capacity level.
+
+Use On-demand CDN when you need the highest level of reliability, have mission-critical or highly variable traffic, or prefer to pay directly for usage.
+
+#### Flat Rate CDN
+
+[Flat Rate CDN](/docs/pricing/flat-rate-cdn) is a Pro feature that gives your team a fixed monthly price for CDN capacity that matches your typical usage.
+
+Use Flat Rate CDN when you want reliable delivery and predictable monthly CDN costs. Short-term spikes in usage **do not** change your bill, but remain subject to the [fair use guidelines](/docs/pricing/flat-rate-cdn#fair-use-guidelines).
+
+#### Flex CDN
+
+Flex CDN is a best-effort service tier for projects that can tolerate reduced reliability.
+Traffic on Flex CDN has no latency or availability guarantees, regardless of level.
+
+Flex CDN is available only to teams using Flat Rate CDN. To move a project onto Flex, see [Excluding projects from Flat Rate CDN](/docs/pricing/flat-rate-cdn#excluding-projects-from-flat-rate-cdn).
 
 
 ---

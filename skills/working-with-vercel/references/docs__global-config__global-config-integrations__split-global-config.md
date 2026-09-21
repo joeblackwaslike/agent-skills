@@ -17,8 +17,8 @@ related:
 summary: "Learn how to use Global Config with Vercel's Split integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-integrations/split-global-config.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "ccc16426595ca01b031ceea4416fb8f2c3405426a70507d65c9b5e7d184d14a2"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "21eca3a261359fa2eed292ca51e33ac9df3b16ac8c6326cecf30a28aabed9fe1"
 ---
 
 # Using Global Config with Split
@@ -33,16 +33,17 @@ This guide will help you get started with using Vercel's Split integration with 
 
 - [How to use Next.js as a backend for your frontend](https://nextjs.org/docs/app/guides/backend-for-frontend?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — Learn how to use Next.js as a backend framework
 - [route.js](https://nextjs.org/docs/app/api-reference/file-conventions/route?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — API reference for the route.js special file.
+- [How to upgrade to version 15](https://nextjs.org/docs/app/guides/upgrading/version-15?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — Upgrade your Next.js Application from Version 14 to 15.
 - [Client Uploads with Vercel Blob](https://vercel.com/docs/vercel-blob/client-upload?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
-- [Routing Middleware API](https://vercel.com/docs/routing-middleware/api?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
 - [Advanced Web Analytics Config with @vercel/analytics](https://vercel.com/docs/analytics/package?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — With the @vercel/analytics npm package, you are able to configure your application to send analytics data to Vercel.
-- [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
+- [Routing Middleware API](https://vercel.com/docs/routing-middleware/api?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
 - [OG Image Generation Examples](https://vercel.com/docs/og-image-generation/examples?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — Learn how to use the @vercel/og library with examples.
+- [Using Global Config with DevCycle](https://vercel.com/docs/global-config/global-config-integrations/devcycle-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — Learn how to use Global Config with Vercel's DevCycle integration.
 
 Full cross-link map for this page: [/docs/global-config/global-config-integrations/split-global-config.graph.md](/docs/global-config/global-config-integrations/split-global-config.graph.md?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-> **🔒 Permissions Required**: The Split Global Config integration
+> **🔒 Permissions Required**: The Split Global Config integration (Beta)
 
 Split is a feature flag provider that tracks event data, enabling you to release features, target them to audiences, and measure their impact on customer experience metrics securely.
 

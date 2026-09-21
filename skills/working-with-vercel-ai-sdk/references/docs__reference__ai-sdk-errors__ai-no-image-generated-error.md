@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-image-generated-error.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "2c9ff2cec737343719d360c666516905c6a384d0300f4ab3056b15a5f5a5d3b6"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "6b636bab710798d95353f0992b1b98ce4b2e869af5d5a17871c420a20fc46384"
 ---
 
 # AI_NoImageGeneratedError
@@ -49,6 +49,7 @@ try {
 - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
 - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
 - [AI_EmptyResponseBodyError](/docs/reference/ai-sdk-errors/ai-empty-response-body-error)
+- [AI_EvaluationUnsupportedQuestionTypeError](/docs/reference/ai-sdk-errors/ai-evaluation-unsupported-question-type-error)
 - [AI_InvalidArgumentError](/docs/reference/ai-sdk-errors/ai-invalid-argument-error)
 - [AI_InvalidDataContentError](/docs/reference/ai-sdk-errors/ai-invalid-data-content-error)
 - [AI_InvalidMessageRoleError](/docs/reference/ai-sdk-errors/ai-invalid-message-role-error)

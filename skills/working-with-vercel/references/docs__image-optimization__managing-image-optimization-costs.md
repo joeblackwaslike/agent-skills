@@ -12,8 +12,8 @@ related:
 summary: Learn how to measure and manage Image Optimization usage with this guide to avoid any unexpected costs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/image-optimization/managing-image-optimization-costs.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "faaa259bf739ef5896a0b713d638b7802312721f2a2bf1062093dfc7c9a79580"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "e148ed41dd24d2a5f66730066b43d737d0b302aa3dad2b29b8020da5ce00ecc5"
 ---
 
 # Managing Usage & Costs
@@ -34,6 +34,7 @@ Your Image Optimization usage over time is displayed under the **Image Optimizat
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fmanaging-image-optimization-costs&source_site=vercel-docs&relationship=related) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
 - [Protecting your app (and wallet) against malicious traffic](https://vercel.com/blog/protecting-your-app-and-wallet-against-malicious-traffic?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fmanaging-image-optimization-costs&source_site=vercel-docs&relationship=related)
 - [Faster transformations and reduced pricing for Image Optimization](https://vercel.com/changelog/faster-transformations-and-reduced-pricing-for-image-optimization?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fmanaging-image-optimization-costs&source_site=vercel-docs&relationship=related)
 - [Limits and Pricing for Image Optimization](https://vercel.com/docs/image-optimization/limits-and-pricing?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fmanaging-image-optimization-costs&source_site=vercel-docs&relationship=related) — This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can i

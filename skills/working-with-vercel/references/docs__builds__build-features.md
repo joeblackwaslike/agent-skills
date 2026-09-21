@@ -3,7 +3,7 @@ title: Build Features for Customizing Deployments
 product: vercel
 url: /docs/builds/build-features
 canonical_url: "https://vercel.com/docs/builds/build-features"
-last_updated: 2026-08-11
+last_updated: 2026-09-16
 type: reference
 prerequisites:
   - /docs/builds
@@ -16,8 +16,8 @@ related:
 summary: "Learn how to customize your deployments using Vercel's build features."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/build-features.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "d2ee2f30ab2480bb7546a86f855cbb597a7aae0eb85530ab012a86c6b71fcf86"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "f2c92e620291f797ed7c3d19bd969f8e407b58849714a7cfba68984363088cb8"
 ---
 
 # Build Features for Customizing Deployments
@@ -54,7 +54,7 @@ To learn more, check out the [guide here](/kb/guide/using-private-dependencies-w
 
 ## Ignored files and folders
 
-Vercel ignores certain files and folders by default and prevents them from being uploaded during the deployment process for security and performance reasons. Please note that these ignored files are only relevant when using Vercel CLI.
+Vercel ignores certain files and folders by default and prevents them from being uploaded during the deployment process for security and performance reasons. These ignored files are only relevant when using Vercel CLI.
 
 ```bash filename="ignored-files"
 .hg

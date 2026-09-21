@@ -17,8 +17,8 @@ related:
 summary: "Learn how to use Global Config with Vercel's Statsig integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-integrations/statsig-global-config.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "5764be63b314c5126c4bf00cd64674d7036d4bed01dadf9bd5e5d5a199ed426b"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "6144d5b3a0ee4282d34a062b98f21d90731a28af426d68ff1b8f42c168a0fa78"
 ---
 
 # Using Global Config with Statsig
@@ -36,8 +36,8 @@ This guide will help you get started with using Vercel's Statsig integration wit
 - [Using Global Config with LaunchDarkly](https://vercel.com/docs/global-config/global-config-integrations/launchdarkly-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fstatsig-global-config&source_site=vercel-docs&relationship=related) — Learn how to use Global Config with Vercel's LaunchDarkly integration.
 - [Using Global Config with DevCycle](https://vercel.com/docs/global-config/global-config-integrations/devcycle-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fstatsig-global-config&source_site=vercel-docs&relationship=related) — Learn how to use Global Config with Vercel's DevCycle integration.
 - [Managing Global Configs with Vercel REST API](https://vercel.com/docs/global-config/vercel-api?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fstatsig-global-config&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel REST API to create and update Global Configs. You can also read data stored in Global Config
+- [Get Global Configs](https://vercel.com/docs/rest-api/global-config/get-global-configs?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fstatsig-global-config&source_site=vercel-docs&relationship=related) — GET /v1/global-config — Returns all Global Configs.
 - [vercel global-config](https://vercel.com/docs/cli/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fstatsig-global-config&source_site=vercel-docs&relationship=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
-- [Marketplace](https://vercel.com/docs/flags/marketplace?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fstatsig-global-config&source_site=vercel-docs&relationship=related) — Connect your preferred feature flag provider through the Vercel Marketplace for a unified flags experience.
 
 Full cross-link map for this page: [/docs/global-config/global-config-integrations/statsig-global-config.graph.md](/docs/global-config/global-config-integrations/statsig-global-config.graph.md?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fstatsig-global-config&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

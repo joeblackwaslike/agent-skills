@@ -13,8 +13,8 @@ related:
 summary: Understand how concurrency and same branch build queues manage multiple simultaneous deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/build-queues.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "243918f35987e3470f420993a6921d5e9cc072f9852f9a20fe78670399956cc0"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "ea554a1fec2d2d44e39851c0ab2c3c98f8d151867cbe22fd505844d2b0e0b291"
 ---
 
 # Build Queues
@@ -33,8 +33,8 @@ Build queueing is when a build must wait for resources to become available befor
 - [Limit on-demand concurrent builds to one build per branch](https://vercel.com/changelog/limit-on-demand-concurrent-builds-to-one-build-per-branch?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-queues&source_site=vercel-docs&relationship=related)
 - [Commits to the same branch now build with no queues](https://vercel.com/changelog/build-commits-to-the-same-branch-without-waiting?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-queues&source_site=vercel-docs&relationship=related)
 - [Enterprise teams can now ship faster without build queues](https://vercel.com/changelog/enterprise-teams-can-now-ship-faster-without-build-queues?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-queues&source_site=vercel-docs&relationship=related)
-- [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-queues&source_site=vercel-docs&relationship=related)
 - [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-queues&source_site=vercel-docs&relationship=related) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
+- [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-queues&source_site=vercel-docs&relationship=related)
 - [Vercel Queues](https://vercel.com/docs/queues?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-queues&source_site=vercel-docs&relationship=related) — Publish agent events and background work to durable topics with independent consumers, automatic retries, and at-least-o
 - [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-queues&source_site=vercel-docs&relationship=related) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
 

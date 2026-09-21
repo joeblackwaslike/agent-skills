@@ -3,7 +3,7 @@ title: AI Gateway Framework Integrations
 product: vercel
 url: /docs/ai-gateway/ecosystem/framework-integrations
 canonical_url: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations"
-last_updated: 2026-09-08
+last_updated: 2026-09-14
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/ecosystem
@@ -14,11 +14,11 @@ related:
   - /docs/ai-gateway/models-and-providers
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions
   - /docs/ai-sdk
-summary: Connect LangChain, LiteLLM, LlamaIndex, Mastra, Pydantic AI, and other frameworks to Vercel AI Gateway with the AI SDK or compatible APIs.
+summary: Connect LangChain, LiteLLM, LlamaIndex, Mastra, Pydantic AI, TanStack AI, and other frameworks to Vercel AI Gateway with native adapters, the AI SDK,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "42dff061eb429c08eefa416294f8ba84231f57b55cd9890ab1cb06c2d3d62eab"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "9a78a54f946487c7accccfc3b6e1acba5ebf9974bcf86ba0c4b00453abeac988"
 ---
 
 # AI Gateway Framework Integrations
@@ -33,10 +33,10 @@ using the Gateway's features like [cost tracking](/docs/ai-gateway/observability
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Ecosystem](https://vercel.com/docs/sandbox/ecosystem?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations&source_site=vercel-docs&relationship=related) — Use Vercel Sandbox with the agent frameworks, model SDKs, and coding agents you already work with.
 - [Build with AI on Vercel](https://vercel.com/docs/agent-resources/integrations-for-models?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations&source_site=vercel-docs&relationship=related) — Integrate powerful AI services and models seamlessly into your Vercel projects.
+- [Ecosystem](https://vercel.com/docs/sandbox/ecosystem?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations&source_site=vercel-docs&relationship=related) — Use Vercel Sandbox with the agent frameworks, model SDKs, and coding agents you already work with.
 - [Vercel & OpenAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations&source_site=vercel-docs&relationship=related) — Integrate your Vercel project with OpenAI's powerful suite of models.
-- [Frameworks and Adapters](https://vercel.com/docs/connect/frameworks?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations&source_site=vercel-docs&relationship=related) — Use Vercel Connect with AI SDK, MCP clients, eve, Chat SDK, Better Auth, and Auth.js.
+- [Frameworks and Adapters](https://vercel.com/docs/connect/frameworks?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations&source_site=vercel-docs&relationship=related) — Use Vercel Connect with AI SDK, TanStack AI, MCP clients, eve, Chat SDK, Better Auth, and Auth.js.
 - [Vercel Integrations](https://vercel.com/docs/integrations?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations&source_site=vercel-docs&relationship=related) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integrations.graph.md](/docs/ai-gateway/ecosystem/framework-integrations.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations&source_site=vercel-docs&relationship=graph)
@@ -60,6 +60,7 @@ The following below list is a non-exhaustive list of frameworks that currently s
 - [LlamaIndex](/docs/ai-gateway/ecosystem/framework-integrations/llamaindex)
 - [Mastra](/docs/ai-gateway/ecosystem/framework-integrations/mastra)
 - [Pydantic AI](/docs/ai-gateway/ecosystem/framework-integrations/pydantic-ai)
+- [TanStack AI](/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai)
 - [WordPress](/docs/ai-gateway/ecosystem/framework-integrations/wordpress)
 - [Xcode](/docs/ai-gateway/ecosystem/framework-integrations/xcode)
 

@@ -1,12 +1,12 @@
 ---
 source: "https://google.github.io/styleguide/shellguide.html"
-fetched_at: "2026-06-16T09:46:54.480Z"
-sha256: "19b6c7c425d05b57598ff10adbb22c21be9990349a9f4f9039957bf061fb99f2"
+fetched_at: "2026-09-21T09:38:58.619Z"
+sha256: "3fb243a0553f94a1e8746f7dfdb4f0d8332ec511b83a625ea99c053f9c51bc84"
 ---
 
-styleguide | Style guides for Google-originated open-source projects
+Google Style Guides | Style guides for Google-originated open-source projects
 
-styleguide
+Google Style Guides
 
 Shell Style Guide
 

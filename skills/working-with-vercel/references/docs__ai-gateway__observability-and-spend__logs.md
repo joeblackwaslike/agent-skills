@@ -3,7 +3,7 @@ title: AI Gateway Request Logs
 product: vercel
 url: /docs/ai-gateway/observability-and-spend/logs
 canonical_url: "https://vercel.com/docs/ai-gateway/observability-and-spend/logs"
-last_updated: 2026-09-07
+last_updated: 2026-09-11
 type: how-to
 prerequisites:
   - /docs/ai-gateway/observability-and-spend
@@ -17,8 +17,8 @@ related:
 summary: Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the results as CSV or JSON.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/logs.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "d69ad2faa626e788b1b767df9ebddc310cd7ff630afa522e0f10fc49d7558014"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "ba6a647e14b2c729dac1b55efa12ceb43e98d1df9f5e08cc6017a6336fd63c5a"
 ---
 
 # AI Gateway Request Logs
@@ -33,13 +33,14 @@ The Logs page lists every request and asynchronous job your team sends through A
 
 - [AI Gateway logs now have a dedicated page](https://vercel.com/changelog/ai-gateway-logs?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related)
 - [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related)
-- [Access and share AI Gateway leaderboard data](https://vercel.com/changelog/open-data-and-shareable-charts-for-ai-gateway-leaderboards?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related)
+- [TypeSafe AI's Jev now available on AI Gateway](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related)
+- [How to classify, route, and score with Jev and AI SDK](https://vercel.com/kb/guide/typesafe-jev-and-ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — Use Jev from TypeSafe AI with AI SDK's experimental \\`evaluate\\` API to classify, route, score, and verify inside your a
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
+- [Access and share AI Gateway leaderboard data](https://vercel.com/changelog/open-data-and-shareable-charts-for-ai-gateway-leaderboards?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related)
 - [Runtime Logs](https://vercel.com/docs/logs/runtime?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to search, inspect, and share your runtime logs with the Logs tab.
 - [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
 - [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
 - [Amp with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/amp?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — Connect Amp to AI Gateway through Amp's Model Routing settings. Add an AI Gateway API key, choose models for Amp's modes
-- [AI Gateway Video Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/video-input?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — Analyze video clips with AI Gateway using AI SDK 7, Python, Chat Completions, and Responses / OpenResponses.
 
 Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend/logs.graph.md](/docs/ai-gateway/observability-and-spend/logs.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/provider-registry.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "d117e6c0fa437d316b706b505d8b4c54e8c4577326d94681d49f4fb7dcac7cc9"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "5efe05cbb5472e8b3ac186a4387fe3d0e985181e4a5a97ca467aa5f58c3f8ef3"
 ---
 
 # `createProviderRegistry()`
@@ -300,6 +300,24 @@ The `createProviderRegistry` function returns a `Provider` instance. It has the 
   ]}
 />
 
+## Experimental evaluation models
+
+The inferred return type also exposes `evaluationModel('providerId:modelId')`,
+returning `Experimental_EvaluationModelV4`. The provider must expose an
+`evaluationModel` factory. Custom separators and model ID
+inference work as they do for video models. Language and image middleware do not
+wrap evaluation models. `ProviderRegistryProvider` remains a stable interface;
+use the inferred return type or `Experimental_EvaluationProviderRegistry` to
+retain experimental evaluation access.
+
+Unavailable evaluation capabilities or models throw `NoSuchModelError` with
+`modelType: 'evaluationModel'`; unknown registry providers throw
+`NoSuchProviderError`. These capabilities are structural extensions and are not
+added to the stable `ProviderV4` contract. Direct evaluation string IDs default
+to Gateway when no default provider is configured.
+See [Evaluation](/docs/ai-sdk-core/evaluation#model-aliases-and-registries)
+for runnable usage patterns.
+
 
 ## Navigation
 
@@ -314,6 +332,7 @@ The `createProviderRegistry` function returns a `Provider` instance. It has the 
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+- [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
 - [uploadFile](/docs/reference/ai-sdk-core/upload-file)
 - [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
 - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
@@ -329,6 +348,7 @@ The `createProviderRegistry` function returns a `Provider` instance. It has the 
 - [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
 - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [toolSearch](/docs/reference/ai-sdk-core/tool-search)
 - [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
 - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)

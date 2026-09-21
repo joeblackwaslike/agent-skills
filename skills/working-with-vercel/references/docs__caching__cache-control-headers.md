@@ -3,7 +3,7 @@ title: Cache-Control headers
 product: vercel
 url: /docs/caching/cache-control-headers
 canonical_url: "https://vercel.com/docs/caching/cache-control-headers"
-last_updated: 2026-08-11
+last_updated: 2026-09-14
 type: reference
 prerequisites:
   - /docs/caching
@@ -15,8 +15,8 @@ related:
 summary: Learn about the cache-control headers sent to each Vercel deployment and how to use them to control the caching behavior of your application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/cache-control-headers.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "a780ab79a6e5822281948e875ef3ce767c4e4af8bcd0907330b3c1a364303502"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "2db5b72eb4e69afe61a047e7fc9ba5d51833324119cf67b6edf74222ead8a790"
 ---
 
 # Cache-Control headers
@@ -36,8 +36,8 @@ You can control how Vercel's CDN caches your Function responses by setting a [Ca
 - [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-control-headers&source_site=vercel-docs&relationship=related) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
 - [Response headers](https://vercel.com/docs/headers/response-headers?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-control-headers&source_site=vercel-docs&relationship=related) — Learn about the response headers sent to each Vercel deployment and how to use them to process responses before sending
 - [System Headers](https://vercel.com/docs/headers?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-control-headers&source_site=vercel-docs&relationship=related) — This reference covers the list of request, response, cache-control, and custom response headers included with deployment
-- [Data Cache for Next.js](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-control-headers&source_site=vercel-docs&relationship=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
 - [Cache Status and Reasons](https://vercel.com/docs/caching/cache-status?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-control-headers&source_site=vercel-docs&relationship=related) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
+- [Data Cache for Next.js](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-control-headers&source_site=vercel-docs&relationship=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
 - [Purging Vercel CDN Cache](https://vercel.com/docs/caching/cdn-cache/purge?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-control-headers&source_site=vercel-docs&relationship=related) — Learn how to invalidate and delete cached content on Vercel's CDN, including cache keys and manual purging options.
 
 Full cross-link map for this page: [/docs/caching/cache-control-headers.graph.md](/docs/caching/cache-control-headers.graph.md?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-control-headers&source_site=vercel-docs&relationship=graph)
@@ -53,7 +53,7 @@ The right `Cache-Control` value depends on what you're caching and how fresh it 
 
 | Content type                                    | Recommended header            | When to use                                                                                                                                                 |
 | ----------------------------------------------- | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Server-rendered, same for all visitors          | `max-age=0, s-maxage=86400`   | Pages where every visitor sees the same content. Don't use `s-maxage` for per-user responses unless you set a [`Vary`](/docs/caching/cdn-cache#vary-header) header. |
+| Server-rendered, same for all visitors          | `max-age=0, s-maxage=86400`   | Pages where every visitor sees the same content. For per-user responses use `private` instead, because a [`Vary`](/docs/caching/cdn-cache#vary-header) on `Cookie` [isn't cacheable](/docs/caching/cdn-cache#high-cardinality-headers). |
 | Semi-static (product pages, blogs, marketing)   | `max-age=120, s-maxage=86400` | Content that tolerates short staleness. A 60-120s browser TTL reduces [edge requests](/docs/manage-cdn-usage#edge-requests) for return visitors.            |
 | Personalized or per-user                        | `private, max-age=0`          | Responses that vary by cookie, session, or auth. `private` prevents CDN caching.                                                                            |
 | Immutable static assets (hashed JS, CSS, fonts) | `max-age=31536000, immutable` | Content-hashed assets. Frameworks like Next.js set this automatically.                                                                                      |

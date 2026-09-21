@@ -15,8 +15,8 @@ related:
 summary: Run terminal-based coding agents in persistent Vercel Sandbox microVMs from Herdr. Review and apply their changes locally as Git patches.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/ecosystem/herdr.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "57b5f7eb51766e53876a43b5cdd10cc4382e5964ca8353f394f1ec8aee4030d7"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "a48541418b5aa7715977728f44a9491affbdc0901736e4aa647608eea570f9aa"
 ---
 
 # Herdr
@@ -37,12 +37,11 @@ back as a Git patch you review and apply locally.
 - [Give every agent in Herdr its own Vercel Sandbox](https://vercel.com/changelog/give-every-agent-in-herdr-its-own-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fherdr&source_site=vercel-docs&relationship=related)
 - [Using TanStack AI with Vercel Sandbox](https://vercel.com/kb/guide/tanstack-ai-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fherdr&source_site=vercel-docs&relationship=related) — Run coding agents in isolated Vercel Sandbox microVMs with the @tanstack/ai-sandbox-vercel provider, with durable resume
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fherdr&source_site=vercel-docs&relationship=related) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
-- [Build a v0-style app builder with OpenAI Agents API and Vercel Sandbox](https://vercel.com/kb/guide/v0-clone-openai-agents-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fherdr&source_site=vercel-docs&relationship=related) — Build a chat-to-app workspace with live Next.js previews, follow-up edits, and saved projects using the OpenAI Agents AP
 - [Hermes](https://vercel.com/docs/sandbox/ecosystem/hermes?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fherdr&source_site=vercel-docs&relationship=related) — Run Hermes Agent terminal commands in isolated Vercel Sandbox microVMs, with models served through Vercel AI Gateway.
 - [Working with Sandbox](https://vercel.com/docs/sandbox/working-with-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fherdr&source_site=vercel-docs&relationship=related) — Task-oriented examples for common Vercel Sandbox operations in TypeScript and Python.
+- [Harbor and Terminal-Bench](https://vercel.com/docs/sandbox/ecosystem/harbor?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fherdr&source_site=vercel-docs&relationship=related) — Run Terminal-Bench and any other Harbor Hub dataset on Vercel Sandbox, with each trial in its own isolated Firecracker m
 - [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fherdr&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
 - [Run isolated AI agents in one sandbox](https://vercel.com/docs/sandbox/concepts/multi-agent?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fherdr&source_site=vercel-docs&relationship=related) — Give each AI agent an isolated Linux user in a Vercel Sandbox with the @vercel/sandbox createUser, createGroup, and asUs
-- [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fherdr&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 
 Full cross-link map for this page: [/docs/sandbox/ecosystem/herdr.graph.md](/docs/sandbox/ecosystem/herdr.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fherdr&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

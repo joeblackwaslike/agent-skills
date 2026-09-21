@@ -14,8 +14,8 @@ related:
 summary: Learn how to configure access groups for team members on a Vercel account.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac/access-groups.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "08cd2fc6c3aa413f54dacd38cef4885821a0438131e630ebe5336b824d6f2d9d"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "7b43e93ecaff0489e1237ee8947795a1fe5142a89b1310a5f9e32c0c2f435cea"
 ---
 
 # Access Groups
@@ -34,8 +34,8 @@ Access Groups provide a way to manage groups of Vercel users across projects on 
 - [Access groups now generally available on Enterprise plans](https://vercel.com/changelog/access-groups-now-generally-available-on-enterprise-plans?from=related&source_path=%2Fdocs%2Frbac%2Faccess-groups&source_site=vercel-docs&relationship=related)
 - [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members?from=related&source_path=%2Fdocs%2Frbac%2Faccess-groups&source_site=vercel-docs&relationship=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
 - [Create an access group project](https://vercel.com/docs/rest-api/access-groups/create-an-access-group-project?from=related&source_path=%2Fdocs%2Frbac%2Faccess-groups&source_site=vercel-docs&relationship=related) — POST /v1/access-groups/{accessGroupIdOrName}/projects — Allows creation of an access group project
-- [Creates an access group](https://vercel.com/docs/rest-api/access-groups/creates-an-access-group?from=related&source_path=%2Fdocs%2Frbac%2Faccess-groups&source_site=vercel-docs&relationship=related) — POST /v1/access-groups — Allows to create an access group
 - [List access groups for a team, project or member](https://vercel.com/docs/rest-api/access-groups/list-access-groups-for-a-team-project-or-member?from=related&source_path=%2Fdocs%2Frbac%2Faccess-groups&source_site=vercel-docs&relationship=related) — GET /v1/access-groups — List access groups
+- [Creates an access group](https://vercel.com/docs/rest-api/access-groups/creates-an-access-group?from=related&source_path=%2Fdocs%2Frbac%2Faccess-groups&source_site=vercel-docs&relationship=related) — POST /v1/access-groups — Allows to create an access group
 - [List members of an access group](https://vercel.com/docs/rest-api/access-groups/list-members-of-an-access-group?from=related&source_path=%2Fdocs%2Frbac%2Faccess-groups&source_site=vercel-docs&relationship=related) — GET /v1/access-groups/{idOrName}/members — List members of an access group
 
 Full cross-link map for this page: [/docs/rbac/access-groups.graph.md](/docs/rbac/access-groups.graph.md?from=related&source_path=%2Fdocs%2Frbac%2Faccess-groups&source_site=vercel-docs&relationship=graph)

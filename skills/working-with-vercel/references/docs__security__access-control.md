@@ -3,25 +3,24 @@ title: Access Control
 product: vercel
 url: /docs/security/access-control
 canonical_url: "https://vercel.com/docs/security/access-control"
-last_updated: 2026-08-21
+last_updated: 2026-09-15
 type: reference
 prerequisites:
   - /docs/security
 related:
-  - /docs/deployment-protection/methods-to-protect-deployments/password-protection
-  - /docs/deployment-protection
-  - /docs/deployments/environments
   - /docs/deployment-protection/methods-to-protect-deployments/vercel-authentication
+  - /docs/deployment-protection/methods-to-protect-deployments/password-protection
+  - /docs/deployment-protection/usage-and-pricing
 summary: Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS mitigation, SOC 2 compliance and...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/access-control.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "29b7c635cee8db8e6d6ad816433b0be81274e2172964ee3c280a7acd39fd2e02"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "51ede2c09fb75cc2bffe52640f0cc3f8f10381294d29a7dbc157d455aefa6c17"
 ---
 
 # Access Control
 
-You can protect deployments with [Password protection](/docs/deployment-protection/methods-to-protect-deployments/password-protection) and [SSO protection](/docs/deployment-protection#advanced-deployment-protection). **Password protection is available for Enterprise teams, or Pro teams with the Advanced Deployment Protection add-on**, while **SSO protection is only available for Teams on the Enterprise plan**. Both methods protect [Preview](/docs/deployments/environments#preview-environment-pre-production) and [Production](/docs/deployments/environments#production-environment) deployments.
+You can protect preview and production deployments with [Vercel Authentication](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication) on all plans at no additional cost. [Password Protection](/docs/deployment-protection/methods-to-protect-deployments/password-protection) costs $20 per month per protected project on Pro and is included at the team level on Enterprise. Password Protection is not available on Hobby. See [Usage & Pricing for Deployment Protection](/docs/deployment-protection/usage-and-pricing) for the full plan comparison.
 
 
 <!-- docsgraph:related -->
@@ -31,12 +30,13 @@ You can protect deployments with [Password protection](/docs/deployment-protecti
 
 - [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related&source_path=%2Fdocs%2Fsecurity%2Faccess-control&source_site=vercel-docs&relationship=related) — Protect who can see your deployments.
 - [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments?from=related&source_path=%2Fdocs%2Fsecurity%2Faccess-control&source_site=vercel-docs&relationship=related)
-- [Protecting Deployments](https://vercel.com/blog/security-controls-protected-preview-deployments-passwords?from=related&source_path=%2Fdocs%2Fsecurity%2Faccess-control&source_site=vercel-docs&relationship=related)
+- [Protect production deployments for free on every plan](https://vercel.com/changelog/protect-production-deployments-for-free-on-every-plan?from=related&source_path=%2Fdocs%2Fsecurity%2Faccess-control&source_site=vercel-docs&relationship=related)
 - [How do I add password protection to my Vercel deployment?](https://vercel.com/kb/guide/how-do-i-add-password-protection-to-my-vercel-deployment?from=related&source_path=%2Fdocs%2Fsecurity%2Faccess-control&source_site=vercel-docs&relationship=related) — Enable Password Protection on a Vercel deployment, configure automation and CORS bypasses, and verify the gate before yo
+- [Protecting Deployments](https://vercel.com/blog/security-controls-protected-preview-deployments-passwords?from=related&source_path=%2Fdocs%2Fsecurity%2Faccess-control&source_site=vercel-docs&relationship=related)
+- [Deployment Protection on Vercel](https://vercel.com/docs/deployment-protection?from=related&source_path=%2Fdocs%2Fsecurity%2Faccess-control&source_site=vercel-docs&relationship=related) — Learn how to control access to your Vercel project's preview and production URLs with Deployment Protection. Configure p
 - [Methods to Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments?from=related&source_path=%2Fdocs%2Fsecurity%2Faccess-control&source_site=vercel-docs&relationship=related) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fsecurity%2Faccess-control&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 - [Role-based access control \\(RBAC\\)](https://vercel.com/docs/rbac?from=related&source_path=%2Fdocs%2Fsecurity%2Faccess-control&source_site=vercel-docs&relationship=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
-- [SAML Single Sign-On](https://vercel.com/docs/saml?from=related&source_path=%2Fdocs%2Fsecurity%2Faccess-control&source_site=vercel-docs&relationship=related) — Learn how to configure SAML SSO for your organization on Vercel.
 
 Full cross-link map for this page: [/docs/security/access-control.graph.md](/docs/security/access-control.graph.md?from=related&source_path=%2Fdocs%2Fsecurity%2Faccess-control&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

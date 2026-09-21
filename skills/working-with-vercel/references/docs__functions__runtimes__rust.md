@@ -13,13 +13,13 @@ related:
 summary: Build fast, memory-safe serverless functions with Rust on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/rust.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "fb05d1251056b20faa6365c8b339075ac780e5b0c203e91e333f4e6ac86de6e6"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "2ecb12e08979a60e3629ad876eb62986c306abe171448a81891767c6f2700b69"
 ---
 
 # Using the Rust Runtime with Vercel functions
 
-> **🔒 Permissions Required**: The Rust runtime
+> **🔒 Permissions Required**: The Rust runtime (Beta)
 
 Use Rust to build high-performance, memory-safe serverless functions. The Rust runtime runs on [Fluid compute](/docs/fluid-compute) for optimal performance and lower latency.
 
@@ -33,8 +33,8 @@ Use Rust to build high-performance, memory-safe serverless functions. The Rust r
 - [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Frust&source_site=vercel-docs&relationship=related) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
 - [Deploy Rust on Vercel with Docker](https://vercel.com/kb/guide/deploy-rust-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Frust&source_site=vercel-docs&relationship=related) — Build a Rust application with Axum and Docker, then deploy it to Vercel Functions. Learn how to configure environment va
 - [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Frust&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
+- [Vercel Functions are now faster—and powered by Rust](https://vercel.com/blog/vercel-functions-are-now-faster-and-powered-by-rust?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Frust&source_site=vercel-docs&relationship=related)
 - [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Frust&source_site=vercel-docs&relationship=related) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
-- [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Frust&source_site=vercel-docs&relationship=related) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
 - [Fastify on Vercel](https://vercel.com/docs/frameworks/backend/fastify?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Frust&source_site=vercel-docs&relationship=related) — Deploy Fastify applications to Vercel with zero configuration.
 
 Full cross-link map for this page: [/docs/functions/runtimes/rust.graph.md](/docs/functions/runtimes/rust.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Frust&source_site=vercel-docs&relationship=graph)

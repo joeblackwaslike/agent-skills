@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/prompt-engineering.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "12bafba738a62fb6acdb6ee11770f9bf8fd3363f86ae0e2c6abff261e5796e26"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "61e05c60c1423189b240e6b655c17caf77c710e51ffc5e46cbda49e205ae871c"
 ---
 
 # Prompt Engineering
@@ -172,11 +172,13 @@ console.log(result.finalStep.request.body);
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Code Mode](/docs/ai-sdk-core/code-mode)
+- [Tool Search](/docs/ai-sdk-core/tool-search)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
+- [Evaluation](/docs/ai-sdk-core/evaluation)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)

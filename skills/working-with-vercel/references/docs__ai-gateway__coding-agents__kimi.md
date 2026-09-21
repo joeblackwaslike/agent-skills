@@ -3,7 +3,7 @@ title: Kimi CLI with AI Gateway
 product: vercel
 url: /docs/ai-gateway/coding-agents/kimi
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/kimi"
-last_updated: 2018-10-20
+last_updated: 2026-09-13
 type: how-to
 prerequisites:
   - /docs/ai-gateway/coding-agents
@@ -15,8 +15,8 @@ related:
 summary: Connect Kimi CLI to AI Gateway with the Vercel CLI or a TOML provider and model shortlist.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/kimi.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "ca6394558b7000e1d66a793d2419e8aa8921e2d18a95ccf324e49246a8cd7e49"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "70d5d0825cf6bebb42aa1cd4ecb8c4344f42bdfed78b75a55cdee87e70b8a69c"
 ---
 
 # Kimi CLI with AI Gateway

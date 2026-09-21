@@ -3,7 +3,7 @@ title: AI SDK
 product: ai-sdk
 url: /docs/ai-sdk
 canonical_url: "https://vercel.com/docs/ai-sdk"
-last_updated: 2026-09-03
+last_updated: 2026-09-14
 type: integration
 prerequisites:
   []
@@ -12,8 +12,8 @@ related:
 summary: Build TypeScript agents and AI applications with a unified API for models, tools, structured output, and streaming.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-sdk.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "e78b75c59906c99d023deaae6f5cc301a948e3c555e279f63029aa3f6e938cc3"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "95b7ea67213a0b8222ce7cfe16e6fefcbf18b3b12d7778feed699f7ecbe4c3c9"
 ---
 
 # AI SDK
@@ -35,8 +35,8 @@ Build TypeScript agents and AI applications with one API for models, tools, stru
 - [AI SDK by Vercel](https://ai-sdk.dev/docs/introduction?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related)
 - [Vercel AI SDK 3.1: ModelFusion joins the team](https://vercel.com/blog/vercel-ai-sdk-3-1-modelfusion-joins-the-team?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related)
 - [Get started with GPT-5](https://ai-sdk.dev/cookbook/guides/gpt-5?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related)
-- [@v0-sdk/ai-tools](https://v0.app/docs/api/v1/packages/ai-tools?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related) — AI SDK tools for the v0 API
 - [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related) — Learn the key AI concepts and tools for building and scaling AI apps.
+- [@v0-sdk/ai-tools](https://v0.app/docs/api/v1/packages/ai-tools?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related) — AI SDK tools for the v0 API
 - [Get started with Llama 3.1](https://ai-sdk.dev/cookbook/guides/llama-3_1?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related)
 - [How to build an AI agent for Slack with Chat SDK and AI SDK](https://vercel.com/kb/guide/how-to-build-an-ai-agent-for-slack-with-chat-sdk-and-ai-sdk?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related) — Build a Slack AI agent using Chat SDK, AI SDK's ToolLoopAgent, and Vercel AI Gateway. Covers project setup, tool definit
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
@@ -51,7 +51,7 @@ import { ToolLoopAgent, tool } from 'ai';
 import { z } from 'zod';
 
 const agent = new ToolLoopAgent({
-  model: 'anthropic/claude-sonnet-5',
+  model: 'anthropic/claude-fable-5.1',
   tools: {
     getWeather: tool({
       description: 'Get the current weather for a location',
@@ -78,7 +78,7 @@ console.log(text);
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: 'openai/gpt-5.6-sol',
+  model: 'openai/gpt-6-astra',
   prompt: 'Explain quantum entanglement in one paragraph.',
 });
 
@@ -92,7 +92,7 @@ import { generateObject } from 'ai';
 import { z } from 'zod';
 
 const { object } = await generateObject({
-  model: 'openai/gpt-5.6-sol',
+  model: 'openai/gpt-6-astra',
   schema: z.object({
     sentiment: z.enum(['positive', 'neutral', 'negative']),
   }),
@@ -114,24 +114,24 @@ console.log(object);
 
 At the center of the AI SDK is [AI SDK Core](https://ai-sdk.dev/docs/ai-sdk-core/overview), which provides a unified API to call any LLM.
 
-The following example shows how to generate text with the AI SDK using OpenAI's GPT-5:
+The following example shows how to generate text with the AI SDK using OpenAI's GPT-6 Astra:
 
 ```typescript
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: 'openai/gpt-5.6-sol',
+  model: 'openai/gpt-6-astra',
   prompt: 'Explain the concept of quantum entanglement.',
 });
 ```
 
-The unified interface lets you switch providers by changing the model string. For example, to use Anthropic's Claude Opus 5:
+The unified interface lets you switch providers by changing the model string. For example, to use Anthropic's Claude Fable 5.1:
 
-```typescript {2,5}
+```typescript {4}
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: 'anthropic/claude-opus-5',
+  model: 'anthropic/claude-fable-5.1',
   prompt: 'How many people will live in the world in 2040?',
 });
 ```
@@ -147,7 +147,7 @@ import { generateObject } from 'ai';
 import { z } from 'zod';
 
 const { object } = await generateObject({
-  model: 'openai/gpt-5.6-sol',
+  model: 'openai/gpt-6-astra',
   schema: z.object({
     recipe: z.object({
       name: z.string(),
@@ -168,7 +168,7 @@ import { generateText, tool } from 'ai';
 import { z } from 'zod';
 
 const { text } = await generateText({
-  model: 'openai/gpt-5.6-sol',
+  model: 'openai/gpt-6-astra',
   prompt: 'What is the weather like today in San Francisco?',
   tools: {
     getWeather: tool({
@@ -213,6 +213,8 @@ The AI SDK is available as a package. To install it, run the following command:
 </CodeBlock>
 
 See the [AI SDK Getting Started](https://ai-sdk.dev/docs/getting-started) guide for more information on how to get started with the AI SDK.
+
+Follow [Build AI agents with AI Gateway and AI SDK](/kb/guide/ai-gateway-and-ai-sdk) to set up authentication, stream responses, and add tools and model fallbacks.
 
 ## Use Vercel Connect with AI SDK
 

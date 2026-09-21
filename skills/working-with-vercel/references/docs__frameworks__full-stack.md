@@ -16,8 +16,8 @@ related:
 summary: Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no matter what tooling you use.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "407a06f982ba32f9920d178950f4c0ceed262fb1eac0bffbc1a361b3d42e15cb"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "3e6583307d11a1a16776b9e3d8924ad03c3fb03af1e0731ec39574e573185a34"
 ---
 
 # Full-stack frameworks on Vercel
@@ -37,6 +37,7 @@ The following full-stack frameworks are supported with zero-configuration.
 - [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack&source_site=vercel-docs&relationship=related) — Learn about the frameworks that can be deployed to Vercel.
 - [New features for SvelteKit: Optimize your application with ease](https://vercel.com/blog/feature-complete-sveltekit?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack&source_site=vercel-docs&relationship=related)
 - [Optimized CDN caching and deploying of immutable static assets](https://vercel.com/changelog/optimized-cdn-caching-and-deploying-of-immutable-static-assets?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack&source_site=vercel-docs&relationship=related)
+- [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, container image functions, security defaults,
 - [Remix without limits (historical)](https://vercel.com/blog/vercel-remix-integration-with-edge-functions-support?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack&source_site=vercel-docs&relationship=related)
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 - [Vite on Vercel](https://vercel.com/docs/frameworks/frontend/vite?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack&source_site=vercel-docs&relationship=related) — Deploy Vite projects to Vercel and configure environment variables, Vercel Functions, server-side rendering, and SPA rew

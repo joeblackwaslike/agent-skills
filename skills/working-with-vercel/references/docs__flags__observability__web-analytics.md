@@ -15,13 +15,13 @@ related:
 summary: Learn how to tag your page views and custom events with feature flags
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/observability/web-analytics.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "2f785721690bf259ef0ea697d41b8a54c7a3c0e02bb3c9450b40a68f8aaa403b"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "489968db8fa8f50447e894d7a440aeb1d6d2e4786e021df03c763944c7bae0ed"
 ---
 
 # Integrate flags with Vercel Web Analytics
 
-> **🔒 Permissions Required**: Web Analytics integration
+> **🔒 Permissions Required**: Web Analytics integration (Beta)
 
 ![Image](`/docs-assets/static/docs/workflow-collaboration/feature-flags/flags-in-web-analytics-light.png`)
 
@@ -37,7 +37,7 @@ sha256: "2f785721690bf259ef0ea697d41b8a54c7a3c0e02bb3c9450b40a68f8aaa403b"
 - [Introducing feature flag management from the Vercel Toolbar](https://vercel.com/blog/toolbar-feature-flags?from=related&source_path=%2Fdocs%2Fflags%2Fobservability%2Fweb-analytics&source_site=vercel-docs&relationship=related)
 - [Shipping safer and smarter: Integrating feature flags deeper in the Vercel workflow](https://vercel.com/blog/feature-flags?from=related&source_path=%2Fdocs%2Fflags%2Fobservability%2Fweb-analytics&source_site=vercel-docs&relationship=related)
 - [Observe your feature flags with the Vercel DX platform](https://vercel.com/changelog/observe-your-feature-flags-with-the-vercel-dx-platform?from=related&source_path=%2Fdocs%2Fflags%2Fobservability%2Fweb-analytics&source_site=vercel-docs&relationship=related)
-- [Vercel Flags is now generally available](https://vercel.com/changelog/vercel-flags-ga?from=related&source_path=%2Fdocs%2Fflags%2Fobservability%2Fweb-analytics&source_site=vercel-docs&relationship=related)
+- [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta?from=related&source_path=%2Fdocs%2Fflags%2Fobservability%2Fweb-analytics&source_site=vercel-docs&relationship=related)
 - [Using the Flags SDK with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk?from=related&source_path=%2Fdocs%2Fflags%2Fobservability%2Fweb-analytics&source_site=vercel-docs&relationship=related) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
 - [Running an A/B test](https://vercel.com/docs/flags/vercel-flags/cli/run-ab-test?from=related&source_path=%2Fdocs%2Fflags%2Fobservability%2Fweb-analytics&source_site=vercel-docs&relationship=related) — Set up an A/B test with a feature flag, track results through Web Analytics, and clean up afterward using the Vercel CLI
 

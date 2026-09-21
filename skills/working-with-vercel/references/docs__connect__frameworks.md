@@ -9,15 +9,15 @@ prerequisites:
   - /docs/connect
 related:
   - /docs/connect/frameworks/ai-sdk-and-mcp
+  - /docs/connect/frameworks/tanstack-ai
   - /docs/connect/frameworks/eve
   - /docs/connect/frameworks/chat-sdk
   - /docs/connect/frameworks/better-auth
-  - /docs/connect/frameworks/authjs
-summary: Use Vercel Connect with AI SDK, MCP clients, eve, Chat SDK, Better Auth, and Auth.js.
+summary: Use Vercel Connect with AI SDK, TanStack AI, MCP clients, eve, Chat SDK, Better Auth, and Auth.js.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/frameworks.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "b2867be97dc5759766ca8352841082d5e32321c46555cd5532fd8f10a1cd7e8f"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "cd040474efa95493cc1feb25923238675101c50ddaf8f315e9a9705c929bf674"
 ---
 
 # Frameworks and Adapters
@@ -34,13 +34,12 @@ the task your application needs to perform.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks&source_site=vercel-docs&relationship=related) — Authenticate Slack, Discord, GitHub, Linear, Notion, and Telegram adapters with Vercel Connect — short-lived runtime tok
+- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks&source_site=vercel-docs&relationship=related) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect — short-
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks&source_site=vercel-docs&relationship=related)
-- [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks&source_site=vercel-docs&relationship=related)
-- [Vercel Connect](https://v0.app/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks&source_site=vercel-docs&relationship=related) — Connect your v0 apps and agents to third-party services – no API keys required.
 - [Authentication](https://vercel.com/docs/connect/concepts/authentication?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks&source_site=vercel-docs&relationship=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
-- [AI Gateway Framework Integrations](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks&source_site=vercel-docs&relationship=related) — Connect LangChain, LiteLLM, LlamaIndex, Mastra, Pydantic AI, and other frameworks to Vercel AI Gateway with the AI SDK o
-- [Connectors](https://vercel.com/docs/connect/concepts/connectors?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks&source_site=vercel-docs&relationship=related) — A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are
+- [AI Gateway Framework Integrations](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks&source_site=vercel-docs&relationship=related) — Connect LangChain, LiteLLM, LlamaIndex, Mastra, Pydantic AI, TanStack AI, and other frameworks to Vercel AI Gateway with
+- [Vercel Connect Concepts](https://vercel.com/docs/connect/concepts?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks&source_site=vercel-docs&relationship=related) — Understand the core building blocks of Vercel Connect: connectors, installations, tokens, project links, triggers, and a
+- [MCP Integrations](https://vercel.com/docs/mcp/integrations?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks&source_site=vercel-docs&relationship=related) — Connect AI SDK, TanStack AI, and eve applications to MCP servers to discover and call tools.
 
 Full cross-link map for this page: [/docs/connect/frameworks.graph.md](/docs/connect/frameworks.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -50,6 +49,7 @@ Full cross-link map for this page: [/docs/connect/frameworks.graph.md](/docs/con
 | Integration | Package | Use it to |
 | --- | --- | --- |
 | [AI SDK and MCP](/docs/connect/frameworks/ai-sdk-and-mcp) | `@vercel/connect/ai-sdk` or `@vercel/connect/mcp` | Authenticate an MCP client, request user consent, and pass MCP tools to an AI SDK model |
+| [TanStack AI](/docs/connect/frameworks/tanstack-ai)         | `@vercel/connect/tanstack-ai`                      | Authenticate MCP transports, handle user consent, and pass MCP clients to TanStack AI          |
 | [eve](/docs/connect/frameworks/eve) | `@vercel/connect/eve` | Authorize eve connections, supply channel credentials, and verify Connect OAuth gateway tokens |
 | [Chat SDK](/docs/connect/frameworks/chat-sdk) | `@vercel/connect/chat` | Supply adapter credentials and verify trigger-forwarded webhooks |
 | [Better Auth](/docs/connect/frameworks/better-auth) | `@vercel/connect/betterauth` | Sign users into an application through Connect with Better Auth |
@@ -57,7 +57,9 @@ Full cross-link map for this page: [/docs/connect/frameworks.graph.md](/docs/con
 
 AI SDK and framework-agnostic MCP clients use the same
 `connectAuthProvider()` implementation. Import it from the entry point that
-matches your client.
+matches your client. For TanStack AI, use
+[`connectMCPTransport()`](/docs/connect/frameworks/tanstack-ai)
+to build the transport configuration with a Connect auth provider.
 
 ## Use the root SDK directly
 

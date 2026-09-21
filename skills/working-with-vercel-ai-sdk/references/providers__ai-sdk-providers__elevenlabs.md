@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/elevenlabs.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "d177c7052417b04f64c1c175e6608e19d174b84ca40f679b62bc75f8d2ed6657"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "faeed280c49b3a7eb2327d3616a9e354cdcf10d8ef5709a838e5c8b281cd2c29"
 ---
 
 # ElevenLabs Provider
@@ -333,6 +333,7 @@ streaming transcription.
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
 - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
+- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

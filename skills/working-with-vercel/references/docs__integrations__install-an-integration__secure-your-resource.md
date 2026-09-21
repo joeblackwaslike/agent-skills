@@ -3,7 +3,7 @@ title: Secure Your Resource
 product: vercel
 url: /docs/integrations/install-an-integration/secure-your-resource
 canonical_url: "https://vercel.com/docs/integrations/install-an-integration/secure-your-resource"
-last_updated: 2026-08-11
+last_updated: 2026-09-17
 type: how-to
 prerequisites:
   - /docs/integrations/install-an-integration
@@ -14,8 +14,8 @@ related:
 summary: Learn how to secure native integration resources by choosing where they can connect and using Production-only mode to protect credentials.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/install-an-integration/secure-your-resource.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "82e69a5cc2bc0d2dfd7ee7c5846f9693da734b92b74bf36e886c8774c99a8f1d"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "b0edbe8ed8aaafd88c9e89c8ce7dbe07fcc25a9f261b8b8ade93e9cd926ef966"
 ---
 
 # Secure Your Resource
@@ -30,12 +30,11 @@ Secure a native integration resource by controlling where projects can connect t
 
 - [Secure Marketplace credentials with Production-only access](https://vercel.com/changelog/secure-marketplace-credentials-with-production-only-access?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fsecure-your-resource&source_site=vercel-docs&relationship=related)
 - [Rotating Secrets for Vercel Marketplace Integrations](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-supabase-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fsecure-your-resource&source_site=vercel-docs&relationship=related) — Rotate the Supabase service role key, JWT secret, and database password from your Vercel integration, then apply the new
-- [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fsecure-your-resource&source_site=vercel-docs&relationship=related) — Protect who can see your deployments.
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fsecure-your-resource&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 - [Access Control](https://vercel.com/docs/security/access-control?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fsecure-your-resource&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fsecure-your-resource&source_site=vercel-docs&relationship=related) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
 - [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fsecure-your-resource&source_site=vercel-docs&relationship=related) — Learn how to manage project access and added products for your integrations.
-- [Methods to Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fsecure-your-resource&source_site=vercel-docs&relationship=related) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
+- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fsecure-your-resource&source_site=vercel-docs&relationship=related) — Learn how you can add a product to your Vercel project through a native integration.
 
 Full cross-link map for this page: [/docs/integrations/install-an-integration/secure-your-resource.graph.md](/docs/integrations/install-an-integration/secure-your-resource.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fsecure-your-resource&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -46,8 +45,8 @@ Confirm these requirements:
 
 - The resource has an **Allowed Environments** section in **Settings**
 - You have a **Member** or **Owner** role to set a resource to **Production only**
-- You have an **Owner** role to allow Development and Preview again
-- You have reviewed existing Development and Preview project connections
+- You have an **Owner** role to allow non-production environments again
+- You have reviewed existing non-production project connections
 
 > **💡 Note:** Securing a resource is a dashboard action. The CLI currently supports
 > `remove`, `disconnect`, and `create-threshold` for integration resources. See
@@ -61,29 +60,29 @@ To secure a resource:
 2. Select **Manage** for the integration, and then open the installed product resource.
 3. Open **Settings** and find **Allowed Environments**.
 4. Select **Production only**.
-5. Review the affected Development and Preview connections.
+5. Review the affected non-production connections.
 6. Check the acknowledgment that non-production connections will be removed.
 7. Select **Save**.
 
-After save completes, Vercel removes Development and Preview targets from existing connections. Connections that include Production remain connected in Production only, and connections that do not include Production are disconnected.
+After save completes, Vercel removes Preview, Development, and Custom Environment targets from existing connections. Connections that include Production remain connected in Production only. Connections that do not include Production are disconnected.
 
 ## What Production-only mode changes
 
 When a resource is secured with **Production only**:
 
-- New connections to Development or Preview are blocked
-- Existing Development or Preview targets are removed when you save
+- New connections to Preview, Development, or Custom Environments are blocked
+- Existing Preview, Development, and Custom Environment targets are removed when you save
 - Connection rows without a Production target are disconnected
 - Resource credentials are protected as sensitive values and are not readable in the dashboard or CLI
 
-## Allow Development or Preview again
+## Allow non-production environments again
 
 If you need broader access later:
 
 This operation requires the **Owner** role.
 
 1. Open the resource **Settings** page.
-2. In **Allowed Environments**, select an option that includes Development and Preview.
+2. In **Allowed Environments**, select an option that includes non-production environments.
 3. Select **Save** and complete the required multi-factor authentication (MFA) challenge.
 4. Reconnect any projects that were fully disconnected from the **Projects** tab.
 
@@ -92,7 +91,7 @@ This operation requires the **Owner** role.
 If save is blocked:
 
 - Confirm you selected the acknowledgment checkbox
-- Review the listed Development and Preview connections before retrying
+- Review the listed non-production connections before retrying
 - Reopen the resource page and verify your latest Allowed Environments setting
 
 

@@ -3,7 +3,7 @@ title: Quickstart
 product: vercel
 url: /docs/sandbox/quickstart
 canonical_url: "https://vercel.com/docs/sandbox/quickstart"
-last_updated: 2026-08-25
+last_updated: 2026-09-11
 type: tutorial
 prerequisites:
   - /docs/sandbox
@@ -16,8 +16,8 @@ related:
 summary: Learn how to run your first code in a Vercel Sandbox.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/quickstart.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "834177bb975a6edfc814d63996ca17f4c58f9450a397dc93d6715d3afab1c438"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "40347c7018b5bae04bae539378fdbf53ca69ce589684b6917b8e83e05f36927a"
 ---
 
 # Quickstart
@@ -35,7 +35,7 @@ This guide shows you how to run your first code in a Vercel Sandbox.
 - [Safely running AI generated code in your Next.js application](https://vercel.com/kb/guide/running-ai-generated-code-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fquickstart&source_site=vercel-docs&relationship=related) — How to execute untrusted, AI‑generated code from a Next.js app using Vercel Sandbox, an isolated, ephemeral environment.
 - [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
 - [Using TanStack AI with Vercel Sandbox](https://vercel.com/kb/guide/tanstack-ai-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fquickstart&source_site=vercel-docs&relationship=related) — Run coding agents in isolated Vercel Sandbox microVMs with the @tanstack/ai-sandbox-vercel provider, with durable resume
-- [Using private GitHub repositories with Vercel Sandbox](https://vercel.com/kb/guide/sandbox-private-github-repositories?from=related&source_path=%2Fdocs%2Fsandbox%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to use Vercel Sandbox with private GitHub repositories using fine-grained tokens, classic tokens, or GitHub Ap
+- [Sandbox](https://v0.app/docs/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fquickstart&source_site=vercel-docs&relationship=related) — VM-backed chats run your project inside an isolated Vercel Sandbox that hosts your code, dev server, terminal, and agent
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fquickstart&source_site=vercel-docs&relationship=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 - [OpenAI SDK](https://vercel.com/docs/sandbox/ecosystem/openai-sdk?from=related&source_path=%2Fdocs%2Fsandbox%2Fquickstart&source_site=vercel-docs&relationship=related) — Use OpenAI function calling with AI Gateway to execute model-generated code in an isolated Vercel Sandbox.

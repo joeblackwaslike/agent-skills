@@ -3,7 +3,7 @@ title: WAF Managed Rulesets
 product: vercel
 url: /docs/vercel-firewall/vercel-waf/managed-rulesets
 canonical_url: "https://vercel.com/docs/vercel-firewall/vercel-waf/managed-rulesets"
-last_updated: 2026-07-17
+last_updated: 2026-09-10
 type: how-to
 prerequisites:
   - /docs/vercel-firewall/vercel-waf
@@ -17,8 +17,8 @@ related:
 summary: Learn how to use WAF Managed Rulesets with the Vercel Web Application Firewall (WAF)
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/managed-rulesets.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "190a72f91eef7e1318ab6830048cf69ea532087298ec631e7738d1d667c40fe0"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "0c0cff39be88d8c9d405ce05381fe8b6008a3986ad3926d5b34f2e6c9aa997e1"
 ---
 
 # WAF Managed Rulesets
@@ -42,7 +42,7 @@ WAF Managed Rulesets are collections of predefined WAF rules based on standards 
 - [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fmanaged-rulesets&source_site=vercel-docs&relationship=related) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 - [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fmanaged-rulesets&source_site=vercel-docs&relationship=related) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
 - [CDN security](https://vercel.com/docs/cdn-security?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fmanaged-rulesets&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
-- [Limits](https://vercel.com/docs/limits?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fmanaged-rulesets&source_site=vercel-docs&relationship=related) — Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
+- [Vercel Enterprise Plan](https://vercel.com/docs/plans/enterprise?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fmanaged-rulesets&source_site=vercel-docs&relationship=related) — Learn about the Enterprise plan for Vercel, including features, pricing, and more.
 
 Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf/managed-rulesets.graph.md](/docs/vercel-firewall/vercel-waf/managed-rulesets.graph.md?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fmanaged-rulesets&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

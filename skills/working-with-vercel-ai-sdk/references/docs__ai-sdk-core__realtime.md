@@ -1,17 +1,21 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/realtime.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "614f742616486baed9f5efc10c81ebe96c7bbd51d20dc7901be0c99c2c741ed3"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "d18a1c2f50ca86469ce900e64771385edd300d815cd425fab638fd390af1ba7a"
 ---
 
 # Realtime
 
 <Note type="warning">Realtime is an experimental feature.</Note>
 
-The AI SDK provides realtime models for bidirectional audio and text
-conversations over WebSockets. Realtime sessions run in the browser and connect
+This guide covers legacy token-based, turn-based realtime conversations over
+WebSockets. These sessions run in the browser and connect
 directly to the provider using a short-lived token that you create on your
 server. You can also route the connection through [AI Gateway](/providers/ai-sdk-providers/ai-gateway#realtime).
+
+For OpenAI Live's continuous JSON/PCM16 WSS relay runtime and application-handled
+client delegation, see
+[`experimental_useRealtime`](/docs/reference/ai-sdk-ui/use-realtime#continuous-conversations).
 
 The typical flow is:
 
@@ -20,6 +24,13 @@ The typical flow is:
 1. The browser opens a WebSocket connection to the provider or AI Gateway.
 1. The model streams audio, text, and tool calls back to the browser.
 1. Tool calls are handled by your application with `onToolCall`.
+
+For continuous **OpenAI Live** conversations, use an application-owned WebSocket
+relay or optional WebRTC via `api.session`. Live uses client delegation: your
+application handles delegated work and submits context rather than using the
+turn-based tool loop below. See the
+[`experimental_useRealtime` reference](/docs/reference/ai-sdk-ui/use-realtime)
+for SDP setup, server-owned permissions, capture ownership, and graceful close.
 
 ## Setup Endpoint
 
@@ -95,18 +106,21 @@ Then use the matching Gateway realtime model in the browser:
 import { experimental_useRealtime } from '@ai-sdk/react';
 import { gateway } from 'ai';
 
+const model = gateway.experimental_realtime('openai/gpt-realtime-2');
+const sessionConfig = {
+  instructions: 'You are a helpful assistant. Be concise.',
+  inputAudioTranscription: {},
+  voice: 'alloy',
+  turnDetection: { type: 'server-vad' as const },
+};
+
 export default function RealtimePage() {
   const realtime = experimental_useRealtime({
-    model: gateway.experimental_realtime('openai/gpt-realtime-2'),
+    model,
     api: {
       token: '/api/realtime/setup',
     },
-    sessionConfig: {
-      instructions: 'You are a helpful assistant. Be concise.',
-      inputAudioTranscription: {},
-      voice: 'alloy',
-      turnDetection: { type: 'server-vad' },
-    },
+    sessionConfig,
   });
 
   // ...
@@ -135,18 +149,21 @@ microphone audio, play model audio, send text messages, and render messages.
 import { openai } from '@ai-sdk/openai';
 import { experimental_useRealtime } from '@ai-sdk/react';
 
+const model = openai.experimental_realtime('gpt-realtime');
+const sessionConfig = {
+  instructions: 'You are a helpful assistant. Be concise.',
+  inputAudioTranscription: {},
+  voice: 'alloy',
+  turnDetection: { type: 'server-vad' as const },
+};
+
 export default function RealtimePage() {
   const realtime = experimental_useRealtime({
-    model: openai.experimental_realtime('gpt-realtime'),
+    model,
     api: {
       token: '/api/realtime/setup',
     },
-    sessionConfig: {
-      instructions: 'You are a helpful assistant. Be concise.',
-      inputAudioTranscription: {},
-      voice: 'alloy',
-      turnDetection: { type: 'server-vad' },
-    },
+    sessionConfig,
   });
 
   return (
@@ -166,6 +183,10 @@ export default function RealtimePage() {
   );
 }
 ```
+
+Keep model and session configuration objects stable across renders. Use module
+scope as above, or `useMemo` when configuration depends on props. Replacing either
+object replaces the hook's session.
 
 ## Tool Calling
 
@@ -205,13 +226,15 @@ export async function POST(request: Request) {
 
 ### Client Tool Handler
 
-```tsx filename='app/realtime/page.tsx' highlight="10-24"
+```tsx filename='app/realtime/page.tsx' highlight="12-26"
 import { openai } from '@ai-sdk/openai';
 import { experimental_useRealtime } from '@ai-sdk/react';
 
+const model = openai.experimental_realtime('gpt-realtime');
+
 export default function RealtimePage() {
   const realtime = experimental_useRealtime({
-    model: openai.experimental_realtime('gpt-realtime'),
+    model,
     api: {
       token: '/api/realtime/setup',
     },
@@ -287,11 +310,13 @@ for Gateway-specific token and provider option details.
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Code Mode](/docs/ai-sdk-core/code-mode)
+- [Tool Search](/docs/ai-sdk-core/tool-search)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
+- [Evaluation](/docs/ai-sdk-core/evaluation)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)

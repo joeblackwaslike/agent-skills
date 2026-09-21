@@ -14,8 +14,8 @@ related:
 summary: Enable AI models to search the web and retrieve source-grounded data using built-in tools through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/web-search.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "88e8a20b37cccf81ef34e8ed660d429039e89db976de989620fed74d52955e99"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "462c21cde339201fcc2402c89eee42fdbd353eff3324a265f1275291d65a1d11"
 ---
 
 # AI Gateway Web Search
@@ -35,8 +35,8 @@ AI Gateway provides built-in search tools that let AI models access current web 
 - [Google](https://ai-sdk.dev/providers/ai-sdk-providers/google?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
 - [xAI Grok](https://ai-sdk.dev/providers/ai-sdk-providers/xai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
 - [Groq](https://ai-sdk.dev/providers/ai-sdk-providers/groq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
-- [Access Perplexity Web Search on Vercel AI Gateway with any model](https://vercel.com/changelog/access-perplexity-web-search-on-vercel-ai-gateway-with-any-model?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
 - [OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
+- [Access Perplexity Web Search on Vercel AI Gateway with any model](https://vercel.com/changelog/access-perplexity-web-search-on-vercel-ai-gateway-with-any-model?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
 - [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related) — Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/web-search.graph.md](/docs/ai-gateway/models-and-providers/web-search.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=graph)

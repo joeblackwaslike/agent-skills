@@ -16,8 +16,8 @@ related:
 summary: Generate speech and transcribe it using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/speech.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "cd39e2f5ef7ec9a2e366239ae8493fb31e3f389f56b744d9dee73d977e3bcc60"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "7c7857d46503fc9a38cdcacd168adcf0876fbceada6ab12012ab46644d5be12b"
 ---
 
 # AI Gateway Speech Quickstart: Transcription and TTS
@@ -36,7 +36,7 @@ Generate speech from text through AI Gateway, save the audio, and transcribe it 
 - [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related)
 - [Realtime voice, speech, and transcription now supported on AI Gateway](https://vercel.com/changelog/realtime-voice-speech-and-transcription-now-supported-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related)
 - [AI Gateway Text Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/text?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related) — Generate and stream text responses using AI Gateway.
-- [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
+- [AI Gateway now supports streaming transcription](https://vercel.com/changelog/ai-gateway-now-supports-streaming-transcription?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related)
 - [Video Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/video?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related) — Generate a video from a text prompt using AI Gateway.
 - [Realtime Voice with AI Gateway](https://vercel.com/docs/ai-gateway/modalities/realtime?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related) — Build low-latency, speech-to-speech voice agents with the AI SDK through Vercel AI Gateway.
 

@@ -17,8 +17,8 @@ related:
 summary: Discover model reasoning capabilities and configure effort across AI SDK, Chat Completions, Messages, and Responses with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "948e00989717b6c9427b75d55b8b80dd6ae1732f4d01517201e672776bcc4fb6"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "02e7d31c7e582669f174e1721c554e65d6642369ced19c2cc4744d2f324aca80"
 ---
 
 # AI Gateway Reasoning
@@ -35,8 +35,8 @@ Control how much a model reasons before answering. Use the [model catalog](https
 - [Anthropic](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning&source_site=vercel-docs&relationship=related)
 - [OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning&source_site=vercel-docs&relationship=related)
 - [Cohere](https://ai-sdk.dev/providers/ai-sdk-providers/cohere?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning&source_site=vercel-docs&relationship=related)
+- [Moonshot AI](https://ai-sdk.dev/providers/ai-sdk-providers/moonshotai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning&source_site=vercel-docs&relationship=related)
 - [OpenResponses Reasoning with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning&source_site=vercel-docs&relationship=related) — Control how much a reasoning model thinks before answering with the OpenResponses API through AI Gateway.
-- [AI Gateway Text Generation](https://vercel.com/docs/ai-gateway/modalities/text-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning&source_site=vercel-docs&relationship=related) — Generate and stream text from hundreds of models through AI Gateway, with tool calling and structured output.
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning&source_site=vercel-docs&relationship=related) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
 

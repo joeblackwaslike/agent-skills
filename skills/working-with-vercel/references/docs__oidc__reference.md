@@ -3,7 +3,7 @@ title: OIDC Federation Reference
 product: vercel
 url: /docs/oidc/reference
 canonical_url: "https://vercel.com/docs/oidc/reference"
-last_updated: 2026-08-04
+last_updated: 2026-09-17
 type: reference
 prerequisites:
   - /docs/oidc
@@ -12,8 +12,8 @@ related:
 summary: Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/reference.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "8261ff7a6230726e8cca9779db642438956c2e025e906bc8406630f8576ad64e"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "d844e7c6f923ed58429106a190631bc54cf915e4795db4caeeb28cb0d6d4294c"
 ---
 
 # OIDC Federation Reference
@@ -34,8 +34,8 @@ They are available from the [@vercel/oidc](https://www.npmjs.com/package/@vercel
 - [Trusted Sources for Deployment Protection](https://vercel.com/changelog/trusted-sources-for-deployment-protection?from=related&source_path=%2Fdocs%2Foidc%2Freference&source_site=vercel-docs&relationship=related)
 - [Enhancing security of backend connectivity with OpenID Connect](https://vercel.com/blog/enhancing-security-of-backend-connectivity-with-openid-connect?from=related&source_path=%2Fdocs%2Foidc%2Freference&source_site=vercel-docs&relationship=related)
 - [OpenID Connect (OIDC) Federation now generally available](https://vercel.com/changelog/openid-connect-federation-now-generally-available?from=related&source_path=%2Fdocs%2Foidc%2Freference&source_site=vercel-docs&relationship=related)
-- [Tokens](https://vercel.com/docs/sign-in-with-vercel/tokens?from=related&source_path=%2Fdocs%2Foidc%2Freference&source_site=vercel-docs&relationship=related) — Learn how to Sign in with Vercel
 - [Passport token claims](https://vercel.com/docs/passport/token-claims?from=related&source_path=%2Fdocs%2Foidc%2Freference&source_site=vercel-docs&relationship=related) — Review the standard, deployment, and visitor identity claims in a Passport token.
+- [Tokens](https://vercel.com/docs/sign-in-with-vercel/tokens?from=related&source_path=%2Fdocs%2Foidc%2Freference&source_site=vercel-docs&relationship=related) — Learn how to Sign in with Vercel
 - [Vercel KMS Authentication](https://vercel.com/docs/kms/concepts/authentication?from=related&source_path=%2Fdocs%2Foidc%2Freference&source_site=vercel-docs&relationship=related) — How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel ac
 - [SDK Reference](https://vercel.com/docs/connect/ts-sdk-reference?from=related&source_path=%2Fdocs%2Foidc%2Freference&source_site=vercel-docs&relationship=related) — API reference for @vercel/connect, the TypeScript SDK for requesting runtime tokens from Vercel Connect.
 - [Create an issuer](https://vercel.com/docs/rest-api/kms/create-an-issuer?from=related&source_path=%2Fdocs%2Foidc%2Freference&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers — Create a new KMS issuer for the authenticated team. An issuer owns the asymmetric signing keys th
@@ -220,7 +220,7 @@ This is a list of standard tokens that you can expect from an OpenID Connect JWT
 | ----- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `iss` | Issuer     | When using the **team** issuer mode, the issuer is set to `https://oidc.vercel.com/[TEAM_SLUG]`<br />When using the **global** issuer mode, the issuer is set to `https://oidc.vercel.com` |
 | `aud` | Audience   | Defaults to `https://vercel.com/[TEAM_SLUG]`. You can set a custom audience by passing the `audience` option to `getVercelOidcToken()` or `awsCredentialsProvider()` |
-| `sub` | Subject    | The subject is set to `owner:[TEAM_SLUG]:project:[PROJECT_NAME]:environment:[ENVIRONMENT]`                                                                                                 |
+| `sub` | Subject    | The subject is set to `owner:[TEAM_SLUG]:project:[PROJECT_NAME]:environment:[ENVIRONMENT]`. `[ENVIRONMENT]` is `development`, `preview`, `production`, or a Custom Environment slug.       |
 | `iat` | Issued at  | The time the token was created                                                                                                                                                             |
 | `nbf` | Not before | The token is not valid before this time                                                                                                                                                    |
 | `exp` | Expires at | Build tokens expire after one hour. Function tokens for `preview` and `production` expire after two hours. `development` tokens expire after 12 hours.                                     |
@@ -229,14 +229,15 @@ This is a list of standard tokens that you can expect from an OpenID Connect JWT
 
 These claims provide more granular access control:
 
-| Claim         | Description                                                                            |
-| ------------- | -------------------------------------------------------------------------------------- |
-| `owner`       | The team slug, e.g. `acme`                                                             |
-| `owner_id`    | The team ID, e.g. `team_7Gw5ZMzpQA8h90F832KGp7nwbuh3`                                  |
-| `project`     | The project name, e.g. `acme_website`                                                  |
-| `project_id`  | The project ID, e.g. `prj_7Gw5ZMBpQA8h9GF832KGp7nwbuh3`                                |
-| `environment` | The environment: `development` or `preview` or `production`                            |
-| `user_id`     | When environment is `development`, this is the ID of the user who was issued the token |
+| Claim                   | Description                                                                                                             |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `owner`                 | The team slug, e.g. `acme`                                                                                              |
+| `owner_id`              | The team ID, e.g. `team_7Gw5ZMzpQA8h90F832KGp7nwbuh3`                                                                   |
+| `project`               | The project name, e.g. `acme_website`                                                                                   |
+| `project_id`            | The project ID, e.g. `prj_7Gw5ZMBpQA8h9GF832KGp7nwbuh3`                                                                 |
+| `environment`           | The environment: `development`, `preview`, `production`, or a Custom Environment slug                                  |
+| `custom_environment_id` | The stable Custom Environment ID. This claim is present only when the deployment targets a Custom Environment.          |
+| `user_id`               | When environment is `development`, this is the ID of the user who was issued the token                                  |
 
 ### JWT headers
 

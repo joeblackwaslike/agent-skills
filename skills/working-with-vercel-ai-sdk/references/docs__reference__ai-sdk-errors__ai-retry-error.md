@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-retry-error.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "a8e86758c4d0341b1ddd2aef370c90887d5c0546a2f4695125d6468ddf4a93b8"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "5992282b6aad7847e03ab0ec9942a6329fa6c9081833297bcb061590981691ba"
 ---
 
 # AI_RetryError
@@ -33,6 +33,7 @@ if (RetryError.isInstance(error)) {
 - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
 - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
 - [AI_EmptyResponseBodyError](/docs/reference/ai-sdk-errors/ai-empty-response-body-error)
+- [AI_EvaluationUnsupportedQuestionTypeError](/docs/reference/ai-sdk-errors/ai-evaluation-unsupported-question-type-error)
 - [AI_InvalidArgumentError](/docs/reference/ai-sdk-errors/ai-invalid-argument-error)
 - [AI_InvalidDataContentError](/docs/reference/ai-sdk-errors/ai-invalid-data-content-error)
 - [AI_InvalidMessageRoleError](/docs/reference/ai-sdk-errors/ai-invalid-message-role-error)

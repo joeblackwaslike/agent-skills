@@ -3,7 +3,7 @@ title: vercel cache
 product: vercel
 url: /docs/cli/cache
 canonical_url: "https://vercel.com/docs/cli/cache"
-last_updated: 2026-09-03
+last_updated: 2026-09-15
 type: reference
 prerequisites:
   - /docs/cli
@@ -15,8 +15,8 @@ related:
 summary: Learn how to manage cache for your project using the vercel cache CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/cache.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "084320faea19d966e6b4369802ba8547b9f2e0e190a9e542f0ad5d74f1db1bb3"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "540af3aaa33efd48422bebfc80d67652fd587c7ad9aad979ad15dbd93c7f3796"
 ---
 
 # vercel cache
@@ -34,10 +34,10 @@ The `vercel cache` command is used to manage the cache for your project, such as
 - [Tag-based cache invalidation now available for all responses](https://vercel.com/changelog/tag-based-cache-invalidation-now-available-for-all-responses?from=related&source_path=%2Fdocs%2Fcli%2Fcache&source_site=vercel-docs&relationship=related)
 - [You can now invalidate the CDN cache by providing a source image](https://vercel.com/changelog/you-can-now-invalidate-the-cdn-cache-by-providing-a-source-image?from=related&source_path=%2Fdocs%2Fcli%2Fcache&source_site=vercel-docs&relationship=related)
 - [vercel blob](https://vercel.com/docs/cli/blob?from=related&source_path=%2Fdocs%2Fcli%2Fcache&source_site=vercel-docs&relationship=related) — Learn how to interact with Vercel Blob storage using the vercel blob CLI command.
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fcache&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [Diagnosing and fixing cache issues](https://vercel.com/docs/caching/cdn-cache/debug-cache-issues?from=related&source_path=%2Fdocs%2Fcli%2Fcache&source_site=vercel-docs&relationship=related) — Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
 - [vercel domains](https://vercel.com/docs/cli/domains?from=related&source_path=%2Fdocs%2Fcli%2Fcache&source_site=vercel-docs&relationship=related) — Learn how to buy, sell, transfer, and manage your domains using the vercel domains CLI command.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fcache&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fcache&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 
 Full cross-link map for this page: [/docs/cli/cache.graph.md](/docs/cli/cache.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fcache&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -131,7 +131,7 @@ vercel cache invalidate --tag blog-posts,user-profiles,homepage
 
 The `--srcimg` option specifies a source image to invalidate or delete from the cache. This invalidates or deletes all cached transformations of the source image. This option works with both `invalidate` and `dangerously-delete` subcommands.
 
-The value must exactly match how your app references the source image — a relative path or a full URL — including any query parameters. Unlike user-defined cache tags, source image tags may contain commas and have a maximum length of 1013 bytes of UTF-8.
+The value must exactly match how your app references the source image (a relative path or a full URL), including any query parameters. Unlike user-defined cache tags, source image tags may contain commas and have a maximum length of 1013 bytes of UTF-8.
 
 You can't use both `--tag` and `--srcimg` options together. Choose one based on whether you're invalidating cached content by tag or by source image.
 

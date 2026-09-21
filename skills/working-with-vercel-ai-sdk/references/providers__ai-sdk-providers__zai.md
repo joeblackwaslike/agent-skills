@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/zai.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "96403101cca5c326271b2d281ec6931c671a3043f57ce9586fe5d9830e83601f"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "4d5e477fa80d9cbe9e169d8e947217ce2594a9b65679408d5bae059127a9e42d"
 ---
 
 # Z.AI Provider
@@ -174,6 +174,7 @@ for await (const part of result.fullStream) {
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
 - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
+- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

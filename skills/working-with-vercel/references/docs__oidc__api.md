@@ -3,17 +3,17 @@ title: Connect to your own API
 product: vercel
 url: /docs/oidc/api
 canonical_url: "https://vercel.com/docs/oidc/api"
-last_updated: 2026-08-12
+last_updated: 2026-09-17
 type: how-to
 prerequisites:
   - /docs/oidc
 related:
-  []
+  - /docs/deployments/environments
 summary: "Learn how to configure your own API to trust Vercel's OpenID Connect (OIDC) Identity Provider (IdP)"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/api.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "7e547e19f71e789a4aafdf1787bb883427026f3c714867388f1254cc0946c01a"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "676a5eaa0612dac90006957c79744f314afbdb3e317fc2a9156860a333535970"
 ---
 
 # Connect to your own API
@@ -111,8 +111,8 @@ Make sure that you:
 - Replace `[TEAM_SLUG]` with your team identifier from the Vercel's team URL
 - Replace `[PROJECT_NAME]` with your [project's name](https://vercel.com/docs/projects#project-name) in your [project's
   settings](https://vercel.com/docs/projects#project-settings)
-- Replace `[ENVIRONMENT]` with one of Vercel's [environments](https://vercel.com/docs/deployments/environments#deployment-environments),
-  `development`, `preview` or `production`
+- Replace `[ENVIRONMENT]` with `development`, `preview`, `production`, or a
+  [Custom Environment](/docs/deployments/environments#custom-environments) slug
 
 ### Use the `getVercelOidcToken` function
 

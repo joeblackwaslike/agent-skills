@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-invalid-argument-error.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "a306f4ec85d3d1f7bcf0068a7aa8f9711cdd4e57336fcb01df09c910ec5e22ba"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "9e8af2569aa6b85933e8a0638221839d19bfb3fe36c766e24c9608690f5a1961"
 ---
 
 # AI_InvalidArgumentError
@@ -37,6 +37,7 @@ if (InvalidArgumentError.isInstance(error)) {
 - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
 - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
 - [AI_EmptyResponseBodyError](/docs/reference/ai-sdk-errors/ai-empty-response-body-error)
+- [AI_EvaluationUnsupportedQuestionTypeError](/docs/reference/ai-sdk-errors/ai-evaluation-unsupported-question-type-error)
 - [AI_InvalidArgumentError](/docs/reference/ai-sdk-errors/ai-invalid-argument-error)
 - [AI_InvalidDataContentError](/docs/reference/ai-sdk-errors/ai-invalid-data-content-error)
 - [AI_InvalidMessageRoleError](/docs/reference/ai-sdk-errors/ai-invalid-message-role-error)

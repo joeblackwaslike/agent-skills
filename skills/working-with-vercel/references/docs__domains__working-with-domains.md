@@ -3,7 +3,7 @@ title: Working with domains
 product: vercel
 url: /docs/domains/working-with-domains
 canonical_url: "https://vercel.com/docs/domains/working-with-domains"
-last_updated: 2026-09-02
+last_updated: 2026-09-16
 type: conceptual
 prerequisites:
   - /docs/domains
@@ -16,8 +16,8 @@ related:
 summary: Learn how domains work and the options Vercel provides for managing them.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "c23b36aa0687aba7bdfcbab78929a0329c329cc0ad77cf4d467793e6dbdec311"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "e602362a8d59671985756ba426f9a8988a4bbaf10ce70f413aa3f5b04c2d3775"
 ---
 
 # Working with domains
@@ -76,7 +76,7 @@ For most domains purchased through or transferred into Vercel, you can manage WH
 
 ## Domain ownership and Project assignment
 
-When you are using domains with Vercel, there are two areas of the dashboard that you may need to go to in order to configure them correctly. The first relates to your ownership and the second relates to configuring the domain for your Project:
+When you are using domains with Vercel, there are two areas of the dashboard that you may need to visit to configure them correctly. The first relates to your ownership and the second relates to configuring the domain for your Project:
 
 - **Domain ownership**: Domains are owned by a specific team and can be accessed from the [**Domains** section in the sidebar on your team's dashboard](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fdomains\&title=Go+to+team%27s+domains+page). All your domains, regardless of where they are registered, are *listed* here and are owned by the owner of the team. You can [view and search all of your team's domains](/docs/domains/working-with-domains/view-and-search-domains) from this section. If you are using Vercel's nameservers, which is the case by default if you buy your domain through Vercel, you can manage DNS records, custom nameservers, and SSL certificates here. Domains that are registered by a third-party should manage DNS records and nameservers with the third-party.
 
@@ -102,7 +102,7 @@ You can also configure **wildcard domains**. Using a wildcard domain, such as `*
 
 To add a wildcard domain, follow the steps in [Adding a domain](/docs/domains/working-with-domains/add-a-domain#using-wildcard-domain).
 
-Wildcard domains **must** be configured with the [nameservers method](/docs/domains/working-with-domains/add-a-domain#vercel-nameservers). This is because in order to generate the wildcard certificates, Vercel needs to be able to set DNS records, since the service that Vercel uses to generate those requires us to solve a challenge to verify ownership.
+Wildcard domains **must** be configured with the [nameservers method](/docs/domains/working-with-domains/add-a-domain#vercel-nameservers). This is because Vercel needs to be able to set DNS records to generate the wildcard certificates, since the service that Vercel uses to generate those requires us to solve a challenge to verify ownership.
 
 ## Using email with domains
 
@@ -117,7 +117,7 @@ Because many domain providers do not offer a mail service, several third-party s
 ## More resources
 
 - [Domains overview: Learn the concepts behind how domains work](/docs/domains)
-- [Learn how DNS works in order to properly configure your domain](/docs/domains/working-with-dns)
+- [Learn how DNS works to properly configure your domain](/docs/domains/working-with-dns)
 - [Learn about nameservers and the benefits Vercel nameservers provide](/docs/domains/working-with-nameservers)
 - [Learn how Vercel uses SSL certificates to keep your site secure](/docs/domains/working-with-ssl)
 - [Learn how to remove a domain from a project or your account](/docs/domains/working-with-domains/remove-a-domain)

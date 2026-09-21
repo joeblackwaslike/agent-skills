@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel automatically scales your functions to handle traffic surges.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/concurrency-scaling.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "06821710ced1edf4395e4b5bcaa31b17e870bff2c5ca4ad123a697e0ef5ead11"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "9efc42b2e7ff7ab494373568dfb517c7d998c6b7eade8ccd49171dd62cac8005"
 ---
 
 # Concurrency scaling
@@ -38,10 +38,10 @@ Vercel automatically scales your functions to handle traffic surges, ensuring op
 - [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fconcurrency-scaling&source_site=vercel-docs&relationship=related)
 - [Why are my Vercel builds queued?](https://vercel.com/kb/guide/why-are-my-vercel-builds-queued?from=related&source_path=%2Fdocs%2Ffunctions%2Fconcurrency-scaling&source_site=vercel-docs&relationship=related) — Learn about why your Vercel builds may be getting queued and how to resolve this.
 - [What is Vercel's policy regarding load testing deployments?](https://vercel.com/kb/guide/what-s-vercel-s-policy-regarding-load-testing-deployments?from=related&source_path=%2Fdocs%2Ffunctions%2Fconcurrency-scaling&source_site=vercel-docs&relationship=related) — Learn about Vercel's policies regarding load tests.
-- [Pricing and Limits](https://vercel.com/docs/queues/pricing?from=related&source_path=%2Fdocs%2Ffunctions%2Fconcurrency-scaling&source_site=vercel-docs&relationship=related) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
-- [Limits](https://vercel.com/docs/limits?from=related&source_path=%2Fdocs%2Ffunctions%2Fconcurrency-scaling&source_site=vercel-docs&relationship=related) — Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
 - [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related&source_path=%2Fdocs%2Ffunctions%2Fconcurrency-scaling&source_site=vercel-docs&relationship=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
+- [Pricing and Limits](https://vercel.com/docs/queues/pricing?from=related&source_path=%2Fdocs%2Ffunctions%2Fconcurrency-scaling&source_site=vercel-docs&relationship=related) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
 - [Multi-tenant Limits](https://vercel.com/docs/platforms/multi-tenant-platforms/limits?from=related&source_path=%2Fdocs%2Ffunctions%2Fconcurrency-scaling&source_site=vercel-docs&relationship=related) — Understand the limits and features available for Vercel for Platforms.
+- [Usage & Pricing for Cron Jobs](https://vercel.com/docs/cron-jobs/usage-and-pricing?from=related&source_path=%2Fdocs%2Ffunctions%2Fconcurrency-scaling&source_site=vercel-docs&relationship=related) — Learn about cron jobs usage and pricing details.
 
 Full cross-link map for this page: [/docs/functions/concurrency-scaling.graph.md](/docs/functions/concurrency-scaling.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fconcurrency-scaling&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

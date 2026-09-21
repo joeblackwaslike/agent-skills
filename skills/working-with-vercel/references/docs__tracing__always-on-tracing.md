@@ -16,8 +16,8 @@ related:
 summary: Continuously collect traces from your production and preview traffic using sampling rules, so you can debug real requests without reproducing them.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/tracing/always-on-tracing.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "52ebf6f4413adca6acbab17bb7bbd903dde25301060ce01cebb857e3b2b13880"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "fe32c2e8601b16d8262242b2ea59b98558f6c580aa9c1ac86930a7e5936b7368"
 ---
 
 # Always-on Tracing
@@ -31,6 +31,7 @@ With always-on tracing, Vercel continuously collects traces from your production
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Always-on tracing for production and preview traffic](https://vercel.com/changelog/always-on-tracing-for-production-and-preview-traffic?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=related)
+- [OpenTelemetry](https://eve.dev/docs/observability/otel?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=related) — Configure OpenTelemetry destinations, content capture, and managed exports.
 - [Track a request's full lifecycle with session tracing](https://vercel.com/changelog/session-tracing-now-available?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=related)
 - [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=related) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [Observability Plus](https://vercel.com/docs/observability/observability-plus?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=related) — Learn about using Observability Plus and its limits.
@@ -41,7 +42,7 @@ With always-on tracing, Vercel continuously collects traces from your production
 Full cross-link map for this page: [/docs/tracing/always-on-tracing.graph.md](/docs/tracing/always-on-tracing.graph.md?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-> **🔒 Permissions Required**: Always-on tracing
+> **🔒 Permissions Required**: Always-on tracing (Beta)
 
 ## When to use always-on tracing
 

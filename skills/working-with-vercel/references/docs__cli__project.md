@@ -16,8 +16,8 @@ related:
 summary: "Perform the following commands from the terminal for your Vercel Projects: list, add, inspect, update settings, rename, remove, and configure access,..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/project.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "e07d9aa1b40bb28013f498146896cb3356f52dc5806c1f9608f5a11b5af848ea"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "27a36b4259dcac33aaa419f1a370ec5ac46e987ae34476c2497b73376d946ea2"
 ---
 
 # vercel project
@@ -33,10 +33,10 @@ The `vercel project` command manages your Vercel Projects from the terminal: lis
 - [Update Project Settings from the Vercel CLI](https://vercel.com/changelog/update-project-settings-from-the-vercel-cli?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=related)
 - [How do I change the name of my Vercel Project?](https://vercel.com/kb/guide/how-do-i-change-the-name-of-my-vercel-project?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=related) — Change your Vercel project name in the dashboard, CLI, or REST API, then update the environment variables, callbacks, an
 - [vercel connect](https://vercel.com/docs/cli/connect?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=related) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
+- [vercel integration](https://vercel.com/docs/cli/integration?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=related) — Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover avai
 - [vercel tokens](https://vercel.com/docs/cli/tokens?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=related) — Manage your personal Vercel authentication tokens from the CLI: list, create, and remove access tokens for use with the
 - [vercel env](https://vercel.com/docs/cli/env?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=related) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
 - [Managing projects](https://vercel.com/docs/projects/managing-projects?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=related) — Learn how to manage your projects through the Vercel Dashboard.
-- [vercel integration](https://vercel.com/docs/cli/integration?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=related) — Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover avai
 
 Full cross-link map for this page: [/docs/cli/project.graph.md](/docs/cli/project.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

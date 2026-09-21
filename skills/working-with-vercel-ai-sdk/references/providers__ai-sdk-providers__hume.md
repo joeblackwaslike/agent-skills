@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/hume.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "a7e602bbd3c0419b11d72d475b73104ec378f0a7ca163ea1a5b7395dbba77217"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "4f35766e047781452d6c99d748bfff68e279caf2537b1cc6e0ccd129e59cb104"
 ---
 
 # Hume Provider
@@ -161,6 +161,7 @@ The following provider options are available:
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
 - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
+- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

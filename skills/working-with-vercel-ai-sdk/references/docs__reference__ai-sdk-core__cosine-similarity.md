@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/cosine-similarity.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "dee0ed80b133c3e7466ad8a895dd26d82b691506efe79005ac3d57cab93185a7"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "54458eae87879ac26c22b504fd17e65c3fccd5246b5ffff678297a4bc32d3916"
 ---
 
 # `cosineSimilarity()`
@@ -66,6 +66,7 @@ A number between -1 and 1 representing the cosine similarity between the two vec
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+- [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
 - [uploadFile](/docs/reference/ai-sdk-core/upload-file)
 - [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
 - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
@@ -81,6 +82,7 @@ A number between -1 and 1 representing the cosine similarity between the two vec
 - [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
 - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [toolSearch](/docs/reference/ai-sdk-core/tool-search)
 - [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
 - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)

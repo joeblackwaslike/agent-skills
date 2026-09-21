@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/plugin-dependencies.md"
-fetched_at: "2026-09-14T09:37:17.168Z"
-sha256: "566c016cf497b7e27052dffed7a4458b7875fa7f48a360c7b1a1e43995fea154"
+fetched_at: "2026-09-21T09:39:23.760Z"
+sha256: "51a35b04e9dca54f568fcd70351f8db009aa75a40cdb87a34e5a4b309c93d434"
 ---
 
 > ## Documentation Index
@@ -43,7 +43,7 @@ The following manifest declares one unversioned dependency and one constrained d
 }
 ```
 
-An entry can be a bare string with only the plugin name, like `"audit-logger"` in the example above, which depends on whatever version that plugin's marketplace provides. For more control, use an object with these fields:
+An entry can be a bare string with only the plugin name, like `"audit-logger"` in the `deploy-kit` manifest, which depends on whatever version that plugin's marketplace provides. For more control, use an object with these fields:
 
 | Field         | Type   | Description                                                                                                                                                                                                                                                             |
 | :------------ | :----- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -75,7 +75,7 @@ For example, a platform team can publish role-specific bundles in an internal ma
 
 Installing `backend-standard` resolves and installs all four dependencies.
 
-To add a tool to the standard set later, publish a new `backend-standard` version with the extra dependency. Auto-update is off by default for non-Anthropic marketplaces, so engineers pick up the new version in one of two ways:
+To add a tool to the standard set later, publish a new `backend-standard` version with the extra dependency. Unless the marketplace [auto-updates](/docs/en/discover-plugins#configure-auto-updates), engineers pick up the new version in one of two ways:
 
 * Enable auto-update for the marketplace in `/plugin`. The next auto-update moves the bundle to the new version and installs any dependencies it adds.
 * Run `claude plugin update backend-standard`, then `/reload-plugins` to install the newly added dependencies.

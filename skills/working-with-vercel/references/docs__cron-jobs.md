@@ -3,7 +3,7 @@ title: Cron Jobs
 product: vercel
 url: /docs/cron-jobs
 canonical_url: "https://vercel.com/docs/cron-jobs"
-last_updated: 2026-08-11
+last_updated: 2026-09-16
 type: how-to
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn about cron jobs, how they work, and how to use them on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cron-jobs.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "39c9e3265e2719176532ce829d153ab4e46608b9a73b589920b4cb16d24ca36b"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "6de49338127cf55976718750e1abf981ea5c77106dbb9fe273decc3aeb405b0e"
 ---
 
 # Cron Jobs
@@ -64,7 +64,7 @@ Learn how to set up and configure cron jobs for your project using our [Quicksta
 
 ## How cron jobs work
 
-To trigger a cron job, Vercel makes an HTTP GET request to your project's production deployment URL, using the `path` provided in your project's `vercel.json` file. An example endpoint Vercel would make a request to in order to trigger a cron job might be: `https://*.vercel.app/api/cron`.
+To trigger a cron job, Vercel makes an HTTP GET request to your project's production deployment URL, using the `path` provided in your project's `vercel.json` file. For example, Vercel might request the following endpoint to trigger a cron job: `https://*.vercel.app/api/cron`.
 
 Vercel Functions triggered by a cron job on Vercel will always contain `vercel-cron/1.0` as the user agent. Each request also includes an `x-vercel-cron-schedule` header containing the cron expression that triggered the invocation (e.g., `0 5 * * *`). You can use this header to determine which schedule triggered your function when multiple cron jobs share the same path.
 

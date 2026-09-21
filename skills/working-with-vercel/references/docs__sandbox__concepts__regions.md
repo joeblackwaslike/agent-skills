@@ -3,7 +3,7 @@ title: Sandbox Regions
 product: vercel
 url: /docs/sandbox/concepts/regions
 canonical_url: "https://vercel.com/docs/sandbox/concepts/regions"
-last_updated: 2026-08-26
+last_updated: 2026-09-10
 type: conceptual
 prerequisites:
   - /docs/sandbox/concepts
@@ -17,8 +17,8 @@ related:
 summary: Choose the regions where Vercel Sandbox runs your sandboxes, set a project default, and configure failover regions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/regions.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "cf3c16f3aa1bf0af775b9a824b718291fe3f2c55d0a48530fdb71a962c136b03"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "b1bafcd7c5d6208cd9d737b2bd4a2fd6f3719e2b60ca6e92df02f31bf4caf5cb"
 ---
 
 # Sandbox Regions

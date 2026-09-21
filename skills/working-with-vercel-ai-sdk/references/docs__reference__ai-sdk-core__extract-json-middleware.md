@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/extract-json-middleware.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "67e7b303e86b928fc5ff8c2944e4d03fead941a1f73e28806b2a064771ae4c41"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "9ea43f9549dbcd2cace6f8199157082dc1b8cff4a984b4e37131d88f60bf0551"
 ---
 
 # `extractJsonMiddleware()`
@@ -161,6 +161,7 @@ This approach ensures efficient streaming while correctly handling code fences t
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+- [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
 - [uploadFile](/docs/reference/ai-sdk-core/upload-file)
 - [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
 - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
@@ -176,6 +177,7 @@ This approach ensures efficient streaming while correctly handling code fences t
 - [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
 - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [toolSearch](/docs/reference/ai-sdk-core/tool-search)
 - [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
 - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)

@@ -14,8 +14,8 @@ related:
 summary: Learn what each performance metric on Speed Insights means and how the scores are calculated.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/metrics.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "3fa66d9b7ff6d3786181486019bcef1ff722c91aa502438c77bcbb4a89293ddd"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "1e688662417faab55a59c84043652c11f253b467c7497747fb31fa0133fb481e"
 ---
 
 # Speed Insights Metrics
@@ -44,8 +44,8 @@ While many performance measurement tools, like [Lighthouse](https://web.dev/meas
 - [Improved Speed Insights experience](https://vercel.com/changelog/improved-speed-insights-experience?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmetrics&source_site=vercel-docs&relationship=related)
 - [How we made the Vercel Dashboard twice as fast](https://vercel.com/blog/how-we-made-the-vercel-dashboard-twice-as-fast?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmetrics&source_site=vercel-docs&relationship=related)
 - [Improving INP with React 18 and Suspense](https://vercel.com/blog/improving-interaction-to-next-paint-with-react-18-and-suspense?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmetrics&source_site=vercel-docs&relationship=related)
-- [First Input Delay \\(FID\\) vs. Interaction to Next Paint \\(INP\\)](https://vercel.com/kb/guide/first-input-delay-vs-interaction-to-next-paint?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmetrics&source_site=vercel-docs&relationship=related) — Learn about the differences between FID and INP and how to optimize your website's INP score.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmetrics&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
+- [Anatomy of the Checks API](https://vercel.com/docs/checks/creating-checks?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmetrics&source_site=vercel-docs&relationship=related) — Learn how to create your own Checks with Vercel Integrations. You can build your own Integration to register any arbitra
 
 Full cross-link map for this page: [/docs/speed-insights/metrics.graph.md](/docs/speed-insights/metrics.graph.md?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmetrics&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

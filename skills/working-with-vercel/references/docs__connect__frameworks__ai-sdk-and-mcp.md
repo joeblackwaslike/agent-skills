@@ -16,8 +16,8 @@ related:
 summary: Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "5649c682d59d324eab366cb4a386e4cceecca0ede968246baaf48e201810e1c7"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "0778f2a8f545b6c9809b1cb85603dcf32dd98f8937c1534cce12668703753e12"
 ---
 
 # AI SDK and MCP
@@ -32,13 +32,11 @@ This tutorial connects an AI SDK route to Linear's Model Context Protocol (MCP) 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fai-sdk-and-mcp&source_site=vercel-docs&relationship=related)
-- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fai-sdk-and-mcp&source_site=vercel-docs&relationship=related) — Authenticate Slack, Discord, GitHub, Linear, Notion, and Telegram adapters with Vercel Connect — short-lived runtime tok
-- [eve](https://vercel.com/docs/connect/frameworks/eve?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fai-sdk-and-mcp&source_site=vercel-docs&relationship=related) — Use Vercel Connect to configure eve channel credentials, authorize MCP client connections, and authenticate inbound Conn
+- [TanStack AI](https://vercel.com/docs/connect/frameworks/tanstack-ai?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fai-sdk-and-mcp&source_site=vercel-docs&relationship=related) — Connect a TanStack AI app to OAuth-protected MCP servers with Vercel Connect, handle user consent, and manage MCP client
+- [AI SDK with MCP](https://vercel.com/docs/mcp/integrations/ai-sdk?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fai-sdk-and-mcp&source_site=vercel-docs&relationship=related) — Connect the AI SDK to an MCP server on Vercel, discover its tools, and call them with models served through AI Gateway.
+- [eve](https://vercel.com/docs/connect/frameworks/eve?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fai-sdk-and-mcp&source_site=vercel-docs&relationship=related) — Use Vercel Connect to configure eve channel credentials, including Microsoft Teams, authorize MCP client connections, an
 - [Auth.js](https://vercel.com/docs/connect/frameworks/authjs?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fai-sdk-and-mcp&source_site=vercel-docs&relationship=related) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
-- [Chat SDK](https://vercel.com/docs/connect/frameworks/chat-sdk?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fai-sdk-and-mcp&source_site=vercel-docs&relationship=related) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, GitHub, Linear, Notion,
-- [AI SDK](https://vercel.com/docs/ai-sdk?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fai-sdk-and-mcp&source_site=vercel-docs&relationship=related) — Build TypeScript agents and AI applications with a unified API for models, tools, structured output, and streaming.
-- [Use Vercel](https://vercel.com/docs/agent-resources/vercel-mcp?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fai-sdk-and-mcp&source_site=vercel-docs&relationship=related) — Vercel MCP has tools available for searching docs, managing teams, projects, and deployments, and querying Web Analytics
+- [TanStack AI with MCP](https://vercel.com/docs/mcp/integrations/tanstack-ai?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fai-sdk-and-mcp&source_site=vercel-docs&relationship=related) — Connect TanStack AI to a Model Context Protocol server on Vercel and call its tools with models served through AI Gatewa
 
 Full cross-link map for this page: [/docs/connect/frameworks/ai-sdk-and-mcp.graph.md](/docs/connect/frameworks/ai-sdk-and-mcp.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fai-sdk-and-mcp&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

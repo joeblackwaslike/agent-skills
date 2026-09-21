@@ -15,8 +15,8 @@ related:
 summary: Learn how to manage webhooks for your Vercel account using the vercel webhooks CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/webhooks.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "d0fe21d34e236e0727718efe8c322fdd4c48973713b8f767e6f9fa40ba94022a"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "e58c1350cd3a66028ebe3c4cc2f85d8aac9c16a8c4b0b2053113b3fe2c17c999"
 ---
 
 # vercel webhooks
@@ -34,8 +34,8 @@ The `vercel webhooks` command is used to manage [webhooks](/docs/webhooks) for y
 - [vercel deploy-hooks](https://vercel.com/docs/cli/deploy-hooks?from=related&source_path=%2Fdocs%2Fcli%2Fwebhooks&source_site=vercel-docs&relationship=related) — Manage Deploy Hooks for Git-triggered builds from the Vercel CLI: list, create, and remove deploy hook URLs that trigger
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fwebhooks&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [Get a list of webhooks](https://vercel.com/docs/rest-api/webhooks/get-a-list-of-webhooks?from=related&source_path=%2Fdocs%2Fcli%2Fwebhooks&source_site=vercel-docs&relationship=related) — GET /v1/webhooks — Get a list of webhooks
-- [Get a webhook](https://vercel.com/docs/rest-api/webhooks/get-a-webhook?from=related&source_path=%2Fdocs%2Fcli%2Fwebhooks&source_site=vercel-docs&relationship=related) — GET /v1/webhooks/{id} — Get a webhook
 - [vercel crons](https://vercel.com/docs/cli/crons?from=related&source_path=%2Fdocs%2Fcli%2Fwebhooks&source_site=vercel-docs&relationship=related) — Manage Cron Jobs from the Vercel CLI: add cron entries to your vercel.json, list them, and trigger them on demand.
+- [Get a webhook](https://vercel.com/docs/rest-api/webhooks/get-a-webhook?from=related&source_path=%2Fdocs%2Fcli%2Fwebhooks&source_site=vercel-docs&relationship=related) — GET /v1/webhooks/{id} — Get a webhook
 
 Full cross-link map for this page: [/docs/cli/webhooks.graph.md](/docs/cli/webhooks.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fwebhooks&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

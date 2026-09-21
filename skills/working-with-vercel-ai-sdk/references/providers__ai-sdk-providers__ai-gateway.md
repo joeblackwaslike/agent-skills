@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "33ea7036ec08eb3c561b3fe0a3679457d4eeef31ccc3bd59f8011851f1a06f79"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "47590c3c913ce3ee9da9178e715dd9818c4e1a3368be2f14caebe434d12f714a"
 ---
 
 # AI Gateway Provider
@@ -1625,6 +1625,7 @@ Model capabilities depend on the specific provider and model you're using. For d
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
 - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
+- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

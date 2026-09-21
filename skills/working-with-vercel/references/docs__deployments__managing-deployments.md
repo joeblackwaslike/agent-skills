@@ -3,7 +3,7 @@ title: Managing Deployments
 product: vercel
 url: /docs/deployments/managing-deployments
 canonical_url: "https://vercel.com/docs/deployments/managing-deployments"
-last_updated: 2026-08-21
+last_updated: 2026-09-15
 type: how-to
 prerequisites:
   - /docs/deployments
@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at any time and even delete a...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/managing-deployments.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "2f680663a179cdb9c84a4de51b1c0e81be7c43d89a683929f78c667528de4b82"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "0679cebb4320460a65a0a7207d252da2de1f780eb8020975d45260c9a1833bf9"
 ---
 
 # Managing Deployments
@@ -126,7 +126,7 @@ You can set the retention policy for your deployments to automatically delete th
 
 Vercel provides a way to protect your deployments from being accessed by unauthorized users. You can use [Vercel Authentication](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication) to restrict access to your deployments to only Vercel users with [suitable access rights](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication#who-can-access-protected-deployments). You can also configure which [environments](/docs/deployment-protection#choose-which-urls-to-protect) are protected.
 
-In addition, Enterprise teams can use [Trusted IPs](/docs/deployment-protection/methods-to-protect-deployments/trusted-ips) and [Password Protection](/docs/deployment-protection/methods-to-protect-deployments/password-protection) to further secure their deployments. Password protection is also available as a paid add-on for Pro teams.
+Vercel Authentication can protect preview and production deployments on all plans at no additional cost. [Password Protection](/docs/deployment-protection/methods-to-protect-deployments/password-protection) costs $20 per month per protected project on Pro and is included on Enterprise. [Trusted IPs](/docs/deployment-protection/methods-to-protect-deployments/trusted-ips) is available on Enterprise. See [Usage & Pricing for Deployment Protection](/docs/deployment-protection/usage-and-pricing) for the full plan comparison.
 
 To learn more, see [Deployment Protection](/docs/deployment-protection).
 

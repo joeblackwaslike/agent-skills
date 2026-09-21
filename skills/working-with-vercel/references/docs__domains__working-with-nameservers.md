@@ -3,7 +3,7 @@ title: Working with nameservers
 product: vercel
 url: /docs/domains/working-with-nameservers
 canonical_url: "https://vercel.com/docs/domains/working-with-nameservers"
-last_updated: 2026-07-15
+last_updated: 2026-09-16
 type: conceptual
 prerequisites:
   - /docs/domains
@@ -16,8 +16,8 @@ related:
 summary: Learn about nameservers and the benefits Vercel nameservers provide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-nameservers.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "5177adc5f66cde9145b38ac80bbb58b32014254d605f75d994b2310a973d426b"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "4d379a3723906aaecff6cf0b38c1414e05584c6e008b074d5f8d426cdbef001f"
 ---
 
 # Working with nameservers
@@ -36,8 +36,8 @@ Nameservers are the actual servers on the network that are responsible for resol
 - [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-nameservers&source_site=vercel-docs&relationship=related) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
 - [Why is my Vercel domain not verified?](https://vercel.com/kb/guide/why-is-my-vercel-domain-unverified?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-nameservers&source_site=vercel-docs&relationship=related) — Information on why a Vercel domain may not be verified and how to verify it.
 - [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-nameservers&source_site=vercel-docs&relationship=related) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
-- [Update nameservers for a domain](https://vercel.com/docs/rest-api/domains-registrar/update-nameservers-for-a-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-nameservers&source_site=vercel-docs&relationship=related) — PATCH /v1/registrar/domains/{domain}/nameservers — Update the nameservers for a domain. Pass an empty array to use Verce
 - [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-nameservers&source_site=vercel-docs&relationship=related) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
+- [Update nameservers for a domain](https://vercel.com/docs/rest-api/domains-registrar/update-nameservers-for-a-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-nameservers&source_site=vercel-docs&relationship=related) — PATCH /v1/registrar/domains/{domain}/nameservers — Update the nameservers for a domain. Pass an empty array to use Verce
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-nameservers&source_site=vercel-docs&relationship=related) — Add and configure a custom domain for your Vercel project using the CLI.
 - [Deploying & Redirecting Domains](https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-nameservers&source_site=vercel-docs&relationship=related) — Learn how to deploy your domains and set up domain redirects with this guide.
 
@@ -75,7 +75,7 @@ Learn how domains work and the options Vercel provides for managing them.
 
 **Working with DNS** [→](/docs/domains/working-with-dns)
 
-Learn how DNS works in order to properly configure your domain.
+Learn how DNS works to properly configure your domain.
 
 **Working with SSL** [→](/docs/domains/working-with-ssl)
 

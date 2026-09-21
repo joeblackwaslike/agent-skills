@@ -3,7 +3,7 @@ title: Queues concepts
 product: vercel
 url: /docs/queues/concepts
 canonical_url: "https://vercel.com/docs/queues/concepts"
-last_updated: 2026-08-12
+last_updated: 2026-09-10
 type: conceptual
 prerequisites:
   - /docs/queues
@@ -16,8 +16,8 @@ related:
 summary: Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/concepts.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "b006cd1b952d6c242e84c1f1da407959d9a336e13f11fc864563812da69891e6"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "cec6398a9f13a5b5a198bc3317a2bf7b6d18ee1c473e4a3c462f27660fa555a9"
 ---
 
 # Queues concepts
@@ -35,8 +35,9 @@ Vercel Queues is a durable event streaming system for asynchronous workloads. Yo
 - [Framework Integrations](https://workflow-sdk.dev/docs/how-it-works/framework-integrations?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related) — Build a custom framework integration using the Workflow SDK compiler and runtime.
 - [Vercel Queues now in public beta](https://vercel.com/changelog/vercel-queues-now-in-public-beta?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related)
 - [Vercel Queues is now in Limited Beta](https://vercel.com/changelog/vercel-queues-is-now-in-limited-beta?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related)
-- [How to send emails from an application on Vercel](https://vercel.com/kb/guide/sending-emails-from-an-application-on-vercel?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related) — Send email from Vercel Functions over an HTTP API instead of SMTP. Match the right Next.js pattern to your trigger and f
 - [Quickstart](https://vercel.com/docs/queues/quickstart?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related) — Set up Vercel Queues with the SDK.
+- [Deploy Dramatiq workers on Vercel](https://vercel.com/docs/frameworks/backend/dramatiq?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related) — Deploy Dramatiq workers on Vercel. Learn how Dramatiq actors use Vercel Queues and Vercel Functions to process backgroun
+- [Glossary](https://vercel.com/docs/glossary?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related) — Learn about the terms and concepts used in Vercel's products and documentation.
 
 Full cross-link map for this page: [/docs/queues/concepts.graph.md](/docs/queues/concepts.graph.md?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

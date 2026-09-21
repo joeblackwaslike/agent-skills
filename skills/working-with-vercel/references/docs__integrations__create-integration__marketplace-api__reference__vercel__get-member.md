@@ -3,7 +3,7 @@ title: get-member
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/get-member
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/get-member"
-last_updated: 2026-09-14
+last_updated: 2026-09-21
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about get-member on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/get-member.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "d4da21d1b8f1b83423976527480102f0dfaee5dcf03279fea55eef4bcaa3d9a6"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "99910d0b2e30b34929a842ee2daf93bec4a4aecd8bc53cd0d4fb07f4c84b95c5"
 ---
 
 # Get Member Information
@@ -46,9 +46,9 @@ Success
 
 ```json
 {
+  "globalUserId": "string",
   "id": "string" // required,
   "role": "string" // required // "The `ADMIN` role, by default, is provided to users capable of installing integrations, while the `USER` role can be granted to Vercel users with the Vercel `Billing` or Vercel `Viewer` role, which are considered to be Read-Only roles.",
-  "globalUserId": "string",
   "userEmail": "string"
 }
 ```

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-download-error.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "01dfd5e9669e6f0e33fa9a38adadc72dc86f8bff49a8107e5ff21f7e6f29f52d"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "68acd461125c73710bb5c7fbb700d52afbc7f801593fb2669d465120526a6fa4"
 ---
 
 # AI_DownloadError
@@ -34,6 +34,7 @@ if (DownloadError.isInstance(error)) {
 - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
 - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
 - [AI_EmptyResponseBodyError](/docs/reference/ai-sdk-errors/ai-empty-response-body-error)
+- [AI_EvaluationUnsupportedQuestionTypeError](/docs/reference/ai-sdk-errors/ai-evaluation-unsupported-question-type-error)
 - [AI_InvalidArgumentError](/docs/reference/ai-sdk-errors/ai-invalid-argument-error)
 - [AI_InvalidDataContentError](/docs/reference/ai-sdk-errors/ai-invalid-data-content-error)
 - [AI_InvalidMessageRoleError](/docs/reference/ai-sdk-errors/ai-invalid-message-role-error)

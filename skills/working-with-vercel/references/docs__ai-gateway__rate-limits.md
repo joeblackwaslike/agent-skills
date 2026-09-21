@@ -3,7 +3,7 @@ title: AI Gateway Rate Limits
 product: vercel
 url: /docs/ai-gateway/rate-limits
 canonical_url: "https://vercel.com/docs/ai-gateway/rate-limits"
-last_updated: 2026-09-07
+last_updated: 2026-09-08
 type: reference
 prerequisites:
   - /docs/ai-gateway
@@ -15,8 +15,8 @@ related:
 summary: Learn how AI Gateway rate limits work on the free and paid tiers, what the 429 response looks like, and how to retry a rate-limited request.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/rate-limits.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "919ac12b204ac27bb509173abc5da8d2bbe0e6090a8df955369182c332f4af13"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "96e201786b7cd92c8abf751fd3351c70cdba74b054ad2fdc3f3da83b83f278b5"
 ---
 
 # AI Gateway Rate Limits

@@ -16,8 +16,8 @@ related:
 summary: Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/eve/concepts.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "16ffe7bf1fe5fb0a1cab7ec446e9193262ff18d1db0f4eb444a8c0fea9358a7f"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "49a4774d80ced155116903d6871f23d0311c35e4267fe2cf99da17839fa3c0ae"
 ---
 
 # Concepts
@@ -32,14 +32,15 @@ the runtime as a deployable app.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Get started with eve: durable AI agents in TypeScript](https://eve.dev/docs/getting-started?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — Create an eve project, configure a model, understand its filesystem layout, and run your first agent.
 - [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
-- [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
 - [Security Model](https://eve.dev/docs/concepts/security-model?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — eve's trust boundaries, where secrets live, how credentials reach hosts, and what fails closed by default.
-- [Introducing eve, an open-source agent framework](https://vercel.com/changelog/introducing-eve-an-open-source-agent-framework?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related)
-- [Deployment](https://eve.dev/docs/guides/deployment/overview?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — Choose a deployment strategy and prepare an eve agent for production.
-- [The Agent Stack](https://vercel.com/blog/agent-stack?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related)
+- [Get started with eve: durable AI agents in TypeScript](https://eve.dev/docs/getting-started?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — Create an eve project, configure model credentials, and run your first agent.
 - [Terminal UI](https://eve.dev/docs/guides/dev-tui?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — Use eve locally or connect to a deployed agent from an interactive terminal UI.
+- [Self-Host eve](https://eve.dev/docs/guides/deployment/self-hosting?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — Run an eve agent as a Node service with your own workflow storage, sandbox backend, and routing.
+- [Introducing eve, an open-source agent framework](https://vercel.com/changelog/introducing-eve-an-open-source-agent-framework?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related)
+- [The Agent Stack](https://vercel.com/blog/agent-stack?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related)
+- [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
+- [How Software Factories Work](https://vercel.com/docs/eve/software-factory?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — Understand what software factories are, when to use them, and how eve coordinates agents from work item to reviewed chan
 
 Full cross-link map for this page: [/docs/eve/concepts.graph.md](/docs/eve/concepts.graph.md?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

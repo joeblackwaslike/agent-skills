@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-object-generated-error.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "9ff7f04e6f4340e4e718ef6a87a4affa4a645411faeda9321ed880a31f796099"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "22e6a39322cd369cd11693265e480161c8cf54a3baed948c785efeede4bfe272"
 ---
 
 # AI_NoObjectGeneratedError
@@ -49,6 +49,7 @@ try {
 - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
 - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
 - [AI_EmptyResponseBodyError](/docs/reference/ai-sdk-errors/ai-empty-response-body-error)
+- [AI_EvaluationUnsupportedQuestionTypeError](/docs/reference/ai-sdk-errors/ai-evaluation-unsupported-question-type-error)
 - [AI_InvalidArgumentError](/docs/reference/ai-sdk-errors/ai-invalid-argument-error)
 - [AI_InvalidDataContentError](/docs/reference/ai-sdk-errors/ai-invalid-data-content-error)
 - [AI_InvalidMessageRoleError](/docs/reference/ai-sdk-errors/ai-invalid-message-role-error)

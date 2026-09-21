@@ -3,7 +3,7 @@ title: get-v1-installations-resources-experimentation-global-config
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/get-v1-installations-resources-experimentation-global-config
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/get-v1-installations-resources-experimentation-global-config"
-last_updated: 2026-09-14
+last_updated: 2026-09-21
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about get-v1-installations-resources-experimentation-global-config on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/get-v1-installations-resources-experimentation-global-config.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "a84e22e59df8972b004b55290d86952dd55363f08fa708b887726ef3d8913d1f"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "f98ec1f7fa11827a9b2c72fc8e5cd0c838cbb4b0823f88e6226852895b332358"
 ---
 
 # Get the data of a user-provided Global Config
@@ -46,10 +46,10 @@ The Global Config data
 
 ```json
 {
-  "items": "object" // required,
-  "updatedAt": "number" // required,
   "digest": "string" // required,
-  "purpose": "string"
+  "items": "object" // required,
+  "purpose": "string",
+  "updatedAt": "number" // required
 }
 ```
 

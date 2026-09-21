@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/file-uploads.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "3604064b20fbbe8cc1220e089390d2feb320e5f56b93fc53246e959f7361338d"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "7fe841e72d3af34a4668afad0347829f42162acd300cdc283d3fb0dd7d173864"
 ---
 
 # File Uploads
@@ -191,11 +191,13 @@ if they encounter a provider reference in a message.
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Code Mode](/docs/ai-sdk-core/code-mode)
+- [Tool Search](/docs/ai-sdk-core/tool-search)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
+- [Evaluation](/docs/ai-sdk-core/evaluation)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)

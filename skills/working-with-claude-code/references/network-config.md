@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/network-config.md"
-fetched_at: "2026-09-14T09:37:17.168Z"
-sha256: "37954df0b7775772198b3ffc6690ff19b520ee8974633a22f1719b8db07aa3fd"
+fetched_at: "2026-09-21T09:39:23.760Z"
+sha256: "721d5b5f85b8c595fdc6fdcc9103e93611a6f5fa15b6ba0650e93f1547d13be0"
 ---
 
 > ## Documentation Index
@@ -250,7 +250,7 @@ Anthropic checks connections to `bridge.claudeusercontent.com` against your orga
 
 ### GitHub allow lists and firewalls
 
-[Claude Code on the web](/docs/en/claude-code-on-the-web) in Anthropic-hosted environments and [Code Review](/docs/en/code-review) connect to your repositories from Anthropic-managed infrastructure; sessions in a [self-hosted environment](/docs/en/self-hosted-environments) connect from inside your network, unless the runner opts into the [Anthropic git proxy](/docs/en/self-hosted-environments-deploy#use-the-anthropic-git-proxy), which fetches from Anthropic's side.
+[Cloud sessions](/docs/en/claude-code-on-the-web) in Anthropic-hosted environments and [Code Review](/docs/en/code-review) connect to your repositories from Anthropic-managed infrastructure; sessions in a [self-hosted environment](/docs/en/self-hosted-environments) connect from inside your network, unless the runner opts into the [Anthropic git proxy](/docs/en/self-hosted-environments-deploy#use-the-anthropic-git-proxy), which fetches from Anthropic's side.
 
 If your GitHub Enterprise Cloud organization restricts access by IP address, enable [IP allow list inheritance for installed GitHub Apps](https://docs.github.com/en/enterprise-cloud@latest/organizations/keeping-your-organization-secure/managing-security-settings-for-your-organization/managing-allowed-ip-addresses-for-your-organization#allowing-access-by-github-apps) and also [add an allow list entry](https://docs.github.com/en/enterprise-cloud@latest/organizations/keeping-your-organization-secure/managing-security-settings-for-your-organization/managing-allowed-ip-addresses-for-your-organization#adding-an-allowed-ip-address) for Anthropic's [outbound IP addresses](https://platform.claude.com/docs/en/api/ip-addresses#outbound-ip-addresses). Inheritance covers only the requests the Claude GitHub App makes as an installation, not the requests it makes on your users' behalf. For other firewalls, see the [Anthropic API IP addresses](https://platform.claude.com/docs/en/api/ip-addresses).
 

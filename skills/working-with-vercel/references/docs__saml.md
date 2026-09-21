@@ -15,8 +15,8 @@ related:
 summary: Learn how to configure SAML SSO for your organization on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/saml.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "38b0478774066caf3936d687167e4ac64511a5ae136a780690153f6361bfb36f"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "5c22cebebdf3529488aa11078e999def38551cbb8dca1024b36b351c44f8b837"
 ---
 
 # SAML Single Sign-On
@@ -37,10 +37,10 @@ To manage the [members](/docs/rbac/managing-team-members) of your team through a
 - [SAML Single Sign-On and Directory Sync now fully available](https://vercel.com/changelog/saml-single-sign-on-and-directory-sync-now-fully-available?from=related&source_path=%2Fdocs%2Fsaml&source_site=vercel-docs&relationship=related)
 - [The Complete Guide to Vercel Passport](https://vercel.com/kb/guide/vercel-passport?from=related&source_path=%2Fdocs%2Fsaml&source_site=vercel-docs&relationship=related) — Vercel Passport protects deployments behind your own identity provider, such as Okta or Auth0. Learn how Passport works,
 - [Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel?from=related&source_path=%2Fdocs%2Fsaml&source_site=vercel-docs&relationship=related) — Learn how to Sign in with Vercel
-- [Access Control](https://vercel.com/docs/security/access-control?from=related&source_path=%2Fdocs%2Fsaml&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [OpenID Connect \\(OIDC\\) Federation](https://vercel.com/docs/oidc?from=related&source_path=%2Fdocs%2Fsaml&source_site=vercel-docs&relationship=related) — Secure the access to your backend using OIDC Federation to enable auto-generated, short-lived, and non-persistent creden
 - [Account Management](https://vercel.com/docs/accounts?from=related&source_path=%2Fdocs%2Fsaml&source_site=vercel-docs&relationship=related) — Learn how to manage your Vercel account and team members.
 - [Two-factor enforcement](https://vercel.com/docs/two-factor-enforcement?from=related&source_path=%2Fdocs%2Fsaml&source_site=vercel-docs&relationship=related) — Learn how to enforce two-factor authentication \\(2FA\\) for your Vercel team members to enhance security.
+- [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication?from=related&source_path=%2Fdocs%2Fsaml&source_site=vercel-docs&relationship=related) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
 
 Full cross-link map for this page: [/docs/saml.graph.md](/docs/saml.graph.md?from=related&source_path=%2Fdocs%2Fsaml&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

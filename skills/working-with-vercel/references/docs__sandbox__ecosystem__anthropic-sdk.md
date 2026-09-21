@@ -17,8 +17,8 @@ related:
 summary: Use Anthropic tool use with AI Gateway to execute model-generated code in an isolated Vercel Sandbox.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/ecosystem/anthropic-sdk.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "be99be13984814e3bdaa43b21d6d1873fcab9856b1fbf852a7d7fb26d2700b70"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "bcbb34e3755e7e34e35e85626ff9a8f7201e42ac012074e8676943fb4fc23a1e"
 ---
 
 # Anthropic SDK
@@ -40,9 +40,10 @@ credentials covers both the model and the sandbox.
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fanthropic-sdk&source_site=vercel-docs&relationship=related) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
 - [Safely running AI generated code in your Next.js application](https://vercel.com/kb/guide/running-ai-generated-code-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fanthropic-sdk&source_site=vercel-docs&relationship=related) — How to execute untrusted, AI‑generated code from a Next.js app using Vercel Sandbox, an isolated, ephemeral environment.
 - [Run Python code securely with AI SDK and Vercel Sandbox](https://vercel.com/kb/guide/python-ai-sdk-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fanthropic-sdk&source_site=vercel-docs&relationship=related) — Add an \\`executeCode\\` tool to your AI SDK agent with the \\`ai-sdk-tool-code-execution\\` package to run Python 3.13 insi
-- [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fanthropic-sdk&source_site=vercel-docs&relationship=related) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
+- [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fanthropic-sdk&source_site=vercel-docs&relationship=related) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
 - [OpenAI SDK](https://vercel.com/docs/sandbox/ecosystem/openai-sdk?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fanthropic-sdk&source_site=vercel-docs&relationship=related) — Use OpenAI function calling with AI Gateway to execute model-generated code in an isolated Vercel Sandbox.
 - [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fanthropic-sdk&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
+- [OSS AI Vibe Coding Platform](https://vercel.com/docs/platforms/examples/oss-coding-agent?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fanthropic-sdk&source_site=vercel-docs&relationship=related) — Build and deploy your own AI-powered coding platform with Vercel Sandboxes.
 
 Full cross-link map for this page: [/docs/sandbox/ecosystem/anthropic-sdk.graph.md](/docs/sandbox/ecosystem/anthropic-sdk.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fanthropic-sdk&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

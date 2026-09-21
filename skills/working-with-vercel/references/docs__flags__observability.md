@@ -3,7 +3,7 @@ title: Observability
 product: vercel
 url: /docs/flags/observability
 canonical_url: "https://vercel.com/docs/flags/observability"
-last_updated: 2026-06-08
+last_updated: 2026-09-15
 type: conceptual
 prerequisites:
   - /docs/flags
@@ -13,8 +13,8 @@ related:
 summary: Track feature flag evaluations and analyze their impact with Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/observability.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "23b4cdcdcd39101696a264463f3229c082c746dfc2c01dc6bb0d659c57dc5917"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "70aeae19ba12221ca2788f149764823f8bc098de6961d1ca006cdc0460581a6b"
 ---
 
 # Observability
@@ -27,8 +27,8 @@ Feature flags play a crucial role in the software development lifecycle, enablin
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Observe your feature flags with the Vercel DX platform](https://vercel.com/changelog/observe-your-feature-flags-with-the-vercel-dx-platform?from=related&source_path=%2Fdocs%2Fflags%2Fobservability&source_site=vercel-docs&relationship=related)
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags?from=related&source_path=%2Fdocs%2Fflags%2Fobservability&source_site=vercel-docs&relationship=related)
+- [Observe your feature flags with the Vercel DX platform](https://vercel.com/changelog/observe-your-feature-flags-with-the-vercel-dx-platform?from=related&source_path=%2Fdocs%2Fflags%2Fobservability&source_site=vercel-docs&relationship=related)
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related&source_path=%2Fdocs%2Fflags%2Fobservability&source_site=vercel-docs&relationship=related)
 - [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates?from=related&source_path=%2Fdocs%2Fflags%2Fobservability&source_site=vercel-docs&relationship=related)
 - [Vercel Flags](https://vercel.com/docs/flags/vercel-flags?from=related&source_path=%2Fdocs%2Fflags%2Fobservability&source_site=vercel-docs&relationship=related) — Use Vercel as your feature flag provider to create and manage flags, define targeting rules, and run experiments directl
@@ -62,7 +62,7 @@ The observability integration works by reporting flag values as your application
 2. Vercel captures these evaluations and associates them with the request or event
 3. View the data in the Web Analytics dashboard
 
-If you're using the Flags SDK, flag reporting happens automatically—no manual instrumentation required.
+If you're using the Flags SDK, flag reporting happens automatically, with no manual instrumentation required.
 
 ## Next steps
 

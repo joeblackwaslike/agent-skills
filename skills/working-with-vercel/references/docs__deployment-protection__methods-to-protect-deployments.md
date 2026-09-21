@@ -3,7 +3,7 @@ title: Methods to Protect Deployments
 product: vercel
 url: /docs/deployment-protection/methods-to-protect-deployments
 canonical_url: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments"
-last_updated: 2026-08-28
+last_updated: 2026-09-15
 type: conceptual
 prerequisites:
   - /docs/deployment-protection
@@ -12,12 +12,12 @@ related:
   - /docs/deployment-protection/methods-to-bypass-deployment-protection
   - /docs/deployment-protection/methods-to-protect-deployments/vercel-authentication
   - /docs/passport
-  - /docs/deployment-protection/methods-to-protect-deployments/password-protection
+  - /docs/deployment-protection/usage-and-pricing
 summary: "Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Trusted IPs."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "67ef67d594e0a9517d5e84f7bbbe431a932049973e6b8e0452eea30315ddedc0"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "d5c9ee2dd6ca42a34e515855c7b501b0d430496e0e0c1d309e8fa82d7d857a3a"
 ---
 
 # Methods to Protect Deployments
@@ -36,8 +36,8 @@ Vercel offers several methods for protecting your deployments. Depending on your
 - [How to identify and authorize visitors with the Vercel Passport token in Next.js](https://vercel.com/kb/guide/vercel-passport-nextjs?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments&source_site=vercel-docs&relationship=related) — Read the Vercel Passport token server-side in a Next.js app to identify visitors with the external_sub claim and authori
 - [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments&source_site=vercel-docs&relationship=related)
 - [Access Control](https://vercel.com/docs/security/access-control?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
-- [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 - [Automated & Agent Access](https://vercel.com/docs/deployment-protection/automated-agent-access?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments&source_site=vercel-docs&relationship=related) — Grant AI agents, CI/CD pipelines, MCP servers, and testing tools access to Vercel deployments that have Deployment Prote
+- [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 
 Full cross-link map for this page: [/docs/deployment-protection/methods-to-protect-deployments.graph.md](/docs/deployment-protection/methods-to-protect-deployments.graph.md?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -70,6 +70,8 @@ Learn more about [Passport](/docs/passport) and how to enable it.
 
 > **🔒 Permissions Required**: Password Protection
 
+Password Protection costs $20 per month per protected project on Pro and is included at the team level on Enterprise. Password Protection is not available on Hobby. See [Usage & Pricing for Deployment Protection](/docs/deployment-protection/usage-and-pricing) for the full plan comparison.
+
 Password Protection on Vercel lets you restrict access to both non-public, and public deployments depending on the type of [environment protection](/docs/deployment-protection#choose-which-urls-to-protect) you choose.
 
 Learn more about [Password Protection](/docs/deployment-protection/methods-to-protect-deployments/password-protection) and how to enable it.
@@ -86,6 +88,7 @@ Learn more about [Trusted IPs](/docs/deployment-protection/methods-to-protect-de
 
 - [Understanding Deployment Protection by environment](/docs/deployment-protection#choose-which-urls-to-protect)
 - [Methods to bypass deployment protection](/docs/deployment-protection/methods-to-bypass-deployment-protection)
+- [Usage & Pricing for Deployment Protection](/docs/deployment-protection/usage-and-pricing)
 
 
 ---

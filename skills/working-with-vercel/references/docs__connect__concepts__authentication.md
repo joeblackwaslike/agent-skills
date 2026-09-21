@@ -17,8 +17,8 @@ related:
 summary: "Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and Vercel Connect calling the..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/authentication.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "e80d21847acbe380941fe9d78a1340661bca9e6648a0b55da7540a88e5326fc1"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "9274198138445be1191081432a4f70d82113aeb63c3c234276272bd711ef4033"
 ---
 
 # Authentication
@@ -32,7 +32,7 @@ Vercel Connect sits between your code and a provider. Each token request has two
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
-- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Authenticate Slack, Discord, GitHub, Linear, Notion, and Telegram adapters with Vercel Connect — short-lived runtime tok
+- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect — short-
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related)
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related)
 - [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related)
@@ -116,6 +116,7 @@ That depends on the connector type or connection method:
 | GitHub | GitHub app install per organization or user; tokens issued by GitHub |
 | Linear | Linear app install per workspace; tokens issued by Linear |
 | Microsoft | Microsoft Entra app registered in your tenant; Entra issues delegated or app-only tokens |
+| Microsoft Teams | Vercel registers the Azure Bot resource and Microsoft Entra app, manages installation and administrator consent, and requests tokens for Bot Framework and Microsoft Graph |
 | Photon | Photon project credentials supplied at create time; Vercel Connect attaches them |
 | Snowflake | Snowflake Partner Connect OAuth or Workload Identity Federation |
 | Salesforce | Managed OAuth flow brokered by Vercel |

@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/security-guidance.md"
-fetched_at: "2026-09-14T09:37:17.168Z"
-sha256: "543522ea006fa9a4232e09991374d1a3080c7dc3b5f01dd3a33d7f15a4ce042f"
+fetched_at: "2026-09-21T09:39:23.760Z"
+sha256: "f79df6cc63cd205f3c7d89812bfcaea0190e632d5496f1b4cec0c3d4d5add03e"
 ---
 
 > ## Documentation Index
@@ -36,7 +36,7 @@ In a terminal Claude Code session, install from the [official Anthropic marketpl
 `/plugin` opens an interactive panel and is available only in the terminal CLI. If Claude replies that `/plugin` isn't available in this environment, install another way:
 
 * **Claude desktop app, local or SSH session**: open the [plugin browser](/docs/en/desktop#install-plugins) by clicking the **+** button next to the prompt, then **Plugins**, then **Add plugin**
-* **Claude Code on the web or a desktop cloud session**: declare the plugin in `.claude/settings.json` as shown under [Enable in cloud sessions](#enable-in-cloud-sessions-and-shared-repositories)
+* **Cloud sessions**: declare the plugin in `.claude/settings.json` as shown under [Enable in cloud sessions](#enable-in-cloud-sessions-and-shared-repositories)
 
 The terminal install prompts for a scope. Choose user scope to write the plugin to your user settings, so it loads in every new local session you start on this machine.
 
@@ -49,7 +49,7 @@ Check the install summary. If it reports `Run /reload-plugins to activate.`, see
 
 ### Enable in cloud sessions and shared repositories
 
-User-scoped plugins do not carry into [Claude Code on the web](/docs/en/claude-code-on-the-web), because those sessions run in the cloud rather than on your machine. To enable the plugin there, or to turn it on for everyone who clones a repository, declare it in the project's checked-in settings:
+User-scoped plugins do not carry into [cloud sessions](/docs/en/claude-code-on-the-web), because those sessions don't run on your machine. To enable the plugin there, or to turn it on for everyone who clones a repository, declare it in the project's checked-in settings:
 
 ```json .claude/settings.json theme={null}
 {

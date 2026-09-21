@@ -3,7 +3,7 @@ title: Private Storage
 product: vercel
 url: /docs/vercel-blob/private-storage
 canonical_url: "https://vercel.com/docs/vercel-blob/private-storage"
-last_updated: 2026-08-26
+last_updated: 2026-09-15
 type: conceptual
 prerequisites:
   - /docs/vercel-blob
@@ -16,8 +16,8 @@ related:
 summary: Learn how to use private Vercel Blob storage to serve files with authentication
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/private-storage.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "fa6a34b390629dec7ee9f4661f5cd8872ff64e2edccbb9c472d6a94083908404"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "065a1b020e39fe21e3083c67b2f3aca61a1cbb1cacdb6879dc1cc4c5ca6182b4"
 ---
 
 # Private Storage
@@ -39,8 +39,8 @@ Private Blob stores require authentication for all read and write operations, en
 - [Vercel Blob now supports consistent reads on private storage](https://vercel.com/changelog/vercel-blob-now-supports-consistent-reads-on-private-storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fprivate-storage&source_site=vercel-docs&relationship=related)
 - [Vercel Private Blob is now generally available](https://vercel.com/changelog/vercel-private-blob-is-now-generally-available?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fprivate-storage&source_site=vercel-docs&relationship=related)
 - [Vercel Blob vs Netlify Blobs](https://vercel.com/kb/guide/vercel-blob-vs-netlify-blobs?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fprivate-storage&source_site=vercel-docs&relationship=related) — Compare Vercel Blob and Netlify Blobs on storage model, public URLs, delivery, limits, and pricing to choose the right o
-- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fprivate-storage&source_site=vercel-docs&relationship=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
 - [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fprivate-storage&source_site=vercel-docs&relationship=related) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
+- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fprivate-storage&source_site=vercel-docs&relationship=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
 - [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fprivate-storage&source_site=vercel-docs&relationship=related) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
 - [How do I bypass the 4.5MB body size limit of Vercel Serverless Functions?](https://vercel.com/kb/guide/how-to-bypass-vercel-body-size-limit-serverless-functions?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fprivate-storage&source_site=vercel-docs&relationship=related) — Learn how to deal with the body size limit of Serverless Functions on Vercel.
 - [Private storage for Vercel Blob, now available in public beta](https://vercel.com/changelog/private-storage-for-vercel-blob-now-available-in-public-beta?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fprivate-storage&source_site=vercel-docs&relationship=related)
@@ -577,7 +577,7 @@ export default async function handler(request) {
 How it works:
 
 1. **First request**: `get()` returns `statusCode: 200` with `stream` and an `ETag`. The browser caches the response.
-2. **Subsequent requests**: The browser sends `If-None-Match` with the cached ETag. When forwarded to the blob store, `get()` returns `statusCode: 304` with `stream: null` — no data is re-downloaded.
+2. **Subsequent requests**: The browser sends `If-None-Match` with the cached ETag. When forwarded to the blob store, `get()` returns `statusCode: 304` with `stream: null`, so no data is re-downloaded.
 
 > **💡 Note:** Avoid caching private blob responses in Vercel's CDN cache (e.g. with
 > `s-maxage`) and avoid relying on middleware for auth. While both can work, a

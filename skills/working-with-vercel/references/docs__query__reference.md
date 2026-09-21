@@ -3,28 +3,28 @@ title: Query Reference
 product: vercel
 url: /docs/query/reference
 canonical_url: "https://vercel.com/docs/query/reference"
-last_updated: 2026-08-11
+last_updated: 2026-09-14
 type: reference
 prerequisites:
   - /docs/query
 related:
-  - /docs/manage-cdn-usage
-  - /docs/functions/usage-and-pricing
-  - /docs/incremental-static-regeneration/limits-and-pricing
-  - /docs/query/monitoring/monitoring-reference
   - /docs/caching/cdn-cache
-summary: This reference covers the dimensions and operators used to create a query.
+  - /docs/deployments/environments
+  - /docs/regions
+  - /docs/vercel-firewall/vercel-waf
+  - /docs/skew-protection
+summary: Use this reference to find the event types, metrics, aggregations, dimensions, and operators available in Query.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query/reference.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "443801dc8c08db8dc99075f106b9affaca533b15bff01e22d8a4f6382a161428"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "09d09ee7796498ada10540357a92fbccbff668567ad3876cc4b89096422e8be0"
 ---
 
 # Query Reference
 
 ## Metric
 
-The metric selects what query data is displayed. You can choose one field at a time, and the same metric can be applied to different event types. For instance, **Function Wall Time** can be selected for edge, serverless, or middleware functions, aggregating each field in various ways.
+In Query, you first select an event type, then a metric from that event type. For example, select **Function Invocations** and **Active CPU Time** to query the CPU time used by Vercel Functions.
 
 
 <!-- docsgraph:related -->
@@ -33,107 +33,140 @@ The metric selects what query data is displayed. You can choose one field at a t
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Troubleshoot and optimize Function Invocations on Vercel](https://vercel.com/kb/guide/optimize-function-invocations?from=related&source_path=%2Fdocs%2Fquery%2Freference&source_site=vercel-docs&relationship=related) — Diagnose which routes drive Function Invocations and learn to optimize them. Separate necessary dynamic traffic from div
+- [Monitoring Reference](https://vercel.com/docs/query/monitoring/monitoring-reference?from=related&source_path=%2Fdocs%2Fquery%2Freference&source_site=vercel-docs&relationship=related) — This reference covers the clauses, fields, and variables used to create a Monitoring query.
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api?from=related&source_path=%2Fdocs%2Fquery%2Freference&source_site=vercel-docs&relationship=related) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
-- [AI Gateway Custom Reporting API](https://vercel.com/docs/ai-gateway/observability-and-spend/custom-reporting?from=related&source_path=%2Fdocs%2Fquery%2Freference&source_site=vercel-docs&relationship=related) — Query AI Gateway usage data grouped by model, user, tag, provider, or credential type using the Custom Reporting API.
+- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fquery%2Freference&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
+- [Aggregates custom events](https://vercel.com/docs/rest-api/web-analytics/aggregates-custom-events?from=related&source_path=%2Fdocs%2Fquery%2Freference&source_site=vercel-docs&relationship=related) — GET /v1/query/web-analytics/events/aggregate — Counts custom events on a project, within the requested date range. Resul
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fquery%2Freference&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
-- [vercel metrics](https://vercel.com/docs/cli/metrics?from=related&source_path=%2Fdocs%2Fquery%2Freference&source_site=vercel-docs&relationship=related) — Discover and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
-- [Aggregates page views](https://vercel.com/docs/rest-api/web-analytics/aggregates-page-views?from=related&source_path=%2Fdocs%2Fquery%2Freference&source_site=vercel-docs&relationship=related) — GET /v1/query/web-analytics/visits/aggregate — Counts pageviews on a project, within the requested date range. Results a
 
 Full cross-link map for this page: [/docs/query/reference.graph.md](/docs/query/reference.graph.md?from=related&source_path=%2Fdocs%2Fquery%2Freference&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-| **Field Name**                    | **Description**                                                                                                           | **Aggregations**                                       |
-| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
-| **Edge Requests**                 | The number of [Edge Requests](/docs/manage-cdn-usage#edge-requests)                                                     | Count, Count per Second, Percentages                   |
-| **Duration**                      | The time spent serving a request, as measured by Vercel's CDN                                                             | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
-| **Incoming Fast Data Transfer**   | The incoming amount of [Fast Data Transfer](/docs/manage-cdn-usage#fast-data-transfer) used by the request.             | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
-| **Outgoing Fast Data Transfer**   | The outgoing amount of [Fast Data Transfer](/docs/manage-cdn-usage#fast-data-transfer) used by the response.            | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
-| **Total Fast Data Transfer**      | The total amount of [Fast Data Transfer](/docs/manage-cdn-usage#fast-data-transfer) used by the response.               | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
-| **Function Invocations**          | The number of [function invocations](/docs/functions/usage-and-pricing#invocations)                                       | Count, Count per Second, Percentages                   |
-| **Function CPU Time**             | The amount of CPU time a Vercel Function has spent responding to requests, as measured in milliseconds.                   | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
-| **Incoming Fast Origin Transfer** | The amount of [Fast Origin Transfer](/docs/manage-cdn-usage#fast-origin-transfer) used by the request.                  | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
-| **Outgoing Fast Origin Transfer** | The amount of [Fast Origin Transfer](/docs/manage-cdn-usage#fast-origin-transfer) used by the response.                 | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
-| **Provisioned Memory**            | The amount of memory provisioned to a Vercel Function.                                                                    | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
-| **Peak Memory**                   | The maximum amount of memory used by Vercel Function at any point in time.                                                | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
-| **Requests Blocked**              | All requests blocked by either the system or user.                                                                        | Count, Count per Second, Percentages                   |
-| **ISR Read Units**                | The amount of [Read Units](/docs/incremental-static-regeneration/limits-and-pricing) used to access ISR data                         | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
-| **ISR Write Units**               | The amount of [Write Units](/docs/incremental-static-regeneration/limits-and-pricing) used to store new ISR data                     | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
-| **ISR Read/Write**                | The amount of ISR operations                                                                                              | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
-| **Time to First Byte**            | The time between the request for a resource and when the first byte of a response begins to arrive.                       | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
-| **Function Wall Time**            | The duration that a Vercel Function has run                                                                               | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
-| **Firewall Actions**              | The incoming web traffic observed by firewall rules.                                                                      | Sum, Sum per Second, Unique, Percentages,              |
-| **Optimizations**                 | The number of image transformations                                                                                       | Sum, Sum per Second, Unique, Percentages,              |
-| **Source Size**                   | The source size of image optimizations                                                                                    | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
-| **Optimized Size**                | The optimized size of image optimizations                                                                                 | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
-| **Compression Ratio**             | The compression ratio of image optimizations                                                                              | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
-| **Size Change**                   | The size change of image optimizations                                                                                    | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
-| **Sandbox Active CPU Time**       | The total CPU time consumed by sandboxes, measured in milliseconds and displayed as time.                                 | Sum, Sum per Second, Min/Max, Percentiles              |
-| **Sandbox CPU Usage**             | The percentage of CPU used by sandboxes.                                                                                  | Min/Max, Percentiles                                   |
-| **Sandbox Provisioned Memory**    | The amount of memory provisioned to sandboxes.                                                                            | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
-| **Sandbox Peak Memory**           | The maximum amount of memory used by sandboxes.                                                                           | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
-| **Sandbox Data Transfer In**      | The amount of public network data transferred into sandboxes.                                                             | Sum, Sum per Second, Min/Max, Percentiles              |
-| **Sandbox Data Transfer Out**     | The amount of public network data transferred out of sandboxes.                                                           | Sum, Sum per Second, Min/Max, Percentiles              |
+The metric picker displays only the event types and metrics available to your team. The following tables use the labels shown in the picker for current event types. Deprecated event types may also appear for historical data.
+
+### CDN metrics
+
+| **Event type**            | **Metrics**                                                                                                                                                                      |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Requests**              | Count, External Rewrite Connect Time, External Rewrite DNS Time, Fast Data Transfer (Incoming), Fast Data Transfer (Outgoing), Fast Data Transfer (Total), Routing CPU Duration |
+| **Image Transformations** | Count, Compression Ratio, Duration, Optimized Size, Size Change, Source Size                                                                                                     |
+| **ISR Operations**        | Read Bandwidth, Write Bandwidth, Read Units, Write Units                                                                                                                         |
+
+### Compute metrics
+
+| **Event type**               | **Metrics**                                                                                                                                                                                                                                                          |
+| ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Function Invocations**     | Count, Duration (ms), Active CPU Time, Duration (Gb-hrs), Time to First Byte, Incoming Fast Origin Transfer, Outgoing Fast Origin Transfer, Total Fast Origin Transfer, Peak Memory, Provisioned Memory                                                             |
+| **Middleware Invocations**   | Count, Duration, Active CPU Time, Time to First Byte, Incoming Fast Origin Transfer, Outgoing Fast Origin Transfer, Total Fast Origin Transfer                                                                                                                        |
+| **External APIs**            | Count, Duration, Transfer Bytes                                                                                                                                                                                                                                      |
+| **Queue Actions**            | Count, Messages Sent, Messages Received, Messages Deleted, Notifications, Visibility Changes, Message Age When Received, Redeliveries, Retry Depth                                                                                                                   |
+| **Workflows**                | Hooks Conflict, Hooks Created, Hooks Disposed, Hooks Received, Runs Cancelled, Runs Completed, Runs Created, Runs Failed, Runs Started, Steps Cancelled, Steps Completed, Steps Created, Steps Failed, Steps Retrying, Steps Started, Waits Completed, Waits Created |
+| **Sandboxes**                | Active CPU Time, CPU Usage, Data Transfer In, Data Transfer Out, Peak Memory, Provisioned Memory                                                                                                                                                                     |
+
+### Networking metrics
+
+| **Event type**                  | **Metrics**  |
+| ------------------------------- | ------------ |
+| **PrivateLink Data Transfer**   | Count, Bytes |
+
+### AI metrics
+
+| **Event type**            | **Metrics**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **AI Gateway Requests**   | Count, Audio Duration, Audio Input Tokens, Audio Output Tokens, Cache Creation 1h Input Tokens, Cache Creation Tokens, Cached Input Tokens, Cost, Duration, Gateway Cost, Gateway Tool Call Cost, Gateway Tool Calls, Google Maps Search Calls, Image Count, Image Input Tokens, Input Tokens, Model Allowlist Cost, Output Tokens, Provider Allowlist Cost, Quota Write Cost, Realtime Client Messages, Realtime Session Duration, Region Pinning Cost, Reporting Write Cost, Reranking Query Count, Surcharge Cost, Time to First Token, Video Count, Video Duration, Video FPS, Video Input Tokens, Web Search Calls, ZDR Cost |
+
+### Security metrics
+
+| **Event type**            | **Metrics** |
+| ------------------------- | ----------- |
+| **Blocked Connections**   | Count       |
+| **Firewall Actions**      | Count       |
+| **BotID Checks**          | Count       |
+
+### Real User Monitoring metrics
+
+| **Event type**                    | **Metrics**                                                                                                                               |
+| --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| **Web Analytics Page Views**      | Count, Visitors                                                                                                                           |
+| **Web Analytics Custom Events**   | Count, Visitors                                                                                                                           |
+| **Speed Insights**                | Time to First Byte, Cumulative Layout Shift, First Contentful Paint, First Input Delay, Interaction to Next Paint, Largest Contentful Paint |
+
+### Custom metrics
+
+| **Event type** | **Metrics**                                            |
+| -------------- | ------------------------------------------------------ |
+| **Metrics**    | The custom metrics available to your team              |
 
 ### Aggregations
 
-Metrics can be aggregated in the following ways:
+The aggregation determines how Query combines the selected metric's values. The aggregation picker displays only the options supported by the selected metric.
 
-| **Aggregation**                          | **Description**                                                                                                                                                                                                                                           |
-| ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Count**                                | The number of requests that occurred                                                                                                                                                                                                                      |
-| **Count per Second**                     | The average rate of requests that occurred                                                                                                                                                                                                                |
-| **Sum**                                  | The sum of the field value across all requests                                                                                                                                                                                                            |
-| **Sum per Second**                       | The sum of the field value as a rate per second                                                                                                                                                                                                           |
-| **Minimum**                              | The smallest observed field value                                                                                                                                                                                                                         |
-| **Maximum**                              | The largest observed field value                                                                                                                                                                                                                          |
-| **Percentiles (75th, 90th, 95th, 99th)** | Percentiles for the field values. For example, 90% of requests will have a duration that is less than the 90th percentile of duration.                                                                                                                    |
-| **Percentages**                          | Each group is reported as a percentage of the ungrouped whole. For example, if a query for request groups by hosts, one host may have 10% of the total request count. Anything excluded by the `where` clause is not counted towards the ungrouped whole. |
+| **Aggregation** | **Description**                                                                                                                                                                                                                                      |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Count**       | The number of data points emitted for the selected custom metric. For built-in event types, select the **Count** metric and the **Sum** aggregation instead.                                                                                          |
+| **Sum**         | The total of the metric values.                                                                                                                                                                                                                       |
+| **Average**     | The arithmetic mean of the metric values.                                                                                                                                                                                                            |
+| **Min**         | The smallest metric value.                                                                                                                                                                                                                           |
+| **Max**         | The largest metric value.                                                                                                                                                                                                                            |
+| **P50**         | The value below which 50% of the metric values fall.                                                                                                                                                                                                 |
+| **P75**         | The value below which 75% of the metric values fall.                                                                                                                                                                                                 |
+| **P90**         | The value below which 90% of the metric values fall.                                                                                                                                                                                                 |
+| **P95**         | The value below which 95% of the metric values fall.                                                                                                                                                                                                 |
+| **P99**         | The value below which 99% of the metric values fall.                                                                                                                                                                                                 |
+| **Std Dev**     | The standard deviation of the metric values.                                                                                                                                                                                                         |
+| **Per Second**  | The metric value expressed as a rate per second.                                                                                                                                                                                                     |
+| **Percent**     | Each group as a percentage of the ungrouped total. Values excluded by the filter are also excluded from the total.                                                                                                                                   |
+| **Unique**      | The number of distinct values. Query uses this aggregation for the **Visitors** metrics.                                                                                                                                                              |
 
 Aggregations are calculated within each point on the chart (hourly, daily, etc) and also across the entire query window.
 
 ## Filter
 
-The filter bar defines the conditions to filter your query data. It only fetches data that meets a specified condition based on several [fields](/docs/query/monitoring/monitoring-reference#group-by-and-where-fields) and operators:
+The filter bar defines the conditions to filter your query data. It only fetches data that meets a specified condition based on several [fields](#group-by-and-where-fields) and operators:
 
-| **Operator**                  | **Description**                                                                                              |     |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------------ | --- |
-| `is`, `is not`                | The operator that allows you to specify a single value                                                       |
-| `is any of `, `is not any of` | The operator that allows you to specify multiple values. For example, `host in ('vercel.com', 'nextjs.com')` |
-| `startsWith`                  | Filter data values that begin with some specific characters                                                  |
-| `endsWith`                    | Filter data values that end with specific characters                                                         |
-| `>,>=,<,<=`                   | Numerical operators that allow numerical comparisons                                                         |
+| **Operator**                              | **Description**                                            |
+| ----------------------------------------- | ---------------------------------------------------------- |
+| `is`, `is not`                            | Match or exclude one value.                                |
+| `is any of`, `is not any of`              | Match or exclude any value in a list.                      |
+| `is set`, `is not set`                    | Match based on whether the field has a value.              |
+| `contains`, `not contains`                | Match based on whether text contains a value.              |
+| `starts with`, `not starts with`          | Match based on the beginning of a text value.              |
+| `ends with`, `not ends with`              | Match based on the end of a text value.                    |
+| `matches pattern`, `not matches pattern`  | Match based on a text pattern.                             |
+| `>`, `>=`, `<`, `<=`                      | Compare numerical values.                                  |
+| `includes any`, `includes all`            | Match array fields that include selected values.           |
+| `excludes any`, `excludes all`            | Match array fields that exclude selected values.           |
 
 ## Group by
 
 The `Group By` clause calculates statistics for each combination of [field](#group-by-and-where-fields) values. Each group is displayed as a separate color in the chart view, and has a separate row in the table view.
 
-For example, grouping by `Request HostName` and `HTTP Status` will display data broken down by each combination of `Request Hostname` and `HTTP Status`.
+For example, grouping by **Request Hostname** and **HTTP Status** displays data for each combination of hostname and status code.
 
 ## Group by and where fields
 
-There are several fields available for use within the [Filter](#filter) and [group by](#group-by):
+The available fields depend on the selected event type. The following fields are common across one or more event types:
 
-| **Field Name**      | **Description**                                                                                                                                                                                                                                                                  |     |
-| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+| **Field Name**      | **Description**                                                                                                                                                                                                                                                                  |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Request Hostname`  | Group by the request's domains and subdomains                                                                                                                                                                                                                                    |
-| `project`           | Group by the request's project                                                                                                                                                                                                                                                   |
+| `Project`           | Group by the request's project                                                                                                                                                                                                                                                   |
 | `Deployment ID`     | Group by the request's deployment ID                                                                                                                                                                                                                                             |
 | `HTTP Status`       | Group by the request's HTTP response code                                                                                                                                                                                                                                        |
-| `route`             | The mapped path used by the request. For example, if you have a dynamic route like `/blog/[slug]` and a blog post is `/blog/my-blog-post`, the `route` is `/blog/[slug]`                                                                                                         |
-| `Request Path`      | The path used by the request. For example, if you have a dynamic route like `/blog/[slug]` and a blog post is `/blog/my-blog-post`, the `request_path` is `/blog/my-blog-post`                                                                                                   |
+| `Route`             | The mapped path used by the request. For example, if you have a dynamic route like `/blog/[slug]` and a blog post is `/blog/my-blog-post`, the route is `/blog/[slug]`                                                                                                           |
+| `Request Path`      | The path used by the request. For example, if you have a dynamic route like `/blog/[slug]` and a blog post is `/blog/my-blog-post`, the request path is `/blog/my-blog-post`                                                                                                      |
 | `Cache Result`      | The [cache](/docs/caching/cdn-cache#x-vercel-cache) status for the request                                                                                                                                                                                                               |
-| `environment`       | Group by the environment (`production` or [`preview`](/docs/deployments/environments#preview-environment-pre-production))                                                                                                                                                        |
+| `Environment`       | Group by the environment (`production` or [`preview`](/docs/deployments/environments#preview-environment-pre-production))                                                                                                                                                        |
 | `Request Method`    | Group by the HTTP request method (`GET`, `POST`, `PUT`, etc.)                                                                                                                                                                                                                    |
 | `Referrer URL`      | Group by the HTTP referrer URL                                                                                                                                                                                                                                                   |
 | `Referrer Hostname` | Group by the HTTP referrer domain                                                                                                                                                                                                                                                |
-| `Client IP`         | Group by the request's IP address                                                                                                                                                                                                                                                |
-| `Client IP Country` | Group by the request's IP country                                                                                                                                                                                                                                                |
-| `Client User Agent` | Group by the request's user agent                                                                                                                                                                                                                                                |
+| `IP Address`        | Group by the request's IP address                                                                                                                                                                                                                                                |
+| `IP Country`        | Group by the request's IP country                                                                                                                                                                                                                                                |
+| `User Agent`        | Group by the request's user agent                                                                                                                                                                                                                                                |
 | `AS Number`         | The [autonomous system number (ASN)](# "ASN") for the request. This is related to what network the request came from (either a home network or a cloud provider) |
 | `CDN Region`        | Group by the [region](/docs/regions) the request was routed to                                                                                                                                                                                                                   |
 | `ISR Cache Region`  | Group by the ISR cache region                                                                                                                                                                                                                                                    |
-| `Cache Result`      | Group by cache result                                                                                                                                                                                                                                                            |
-| `WAF Action`        | Group by the WAF action taken by the [Vercel Firewall](/docs/vercel-firewall/vercel-waf) (`deny`, `challenge`, `rate_limit`, `bypass` or `log`)                                                                                                                                         |
+| `WAF Action`        | Group by the action taken by the [Vercel Firewall](/docs/vercel-firewall/vercel-waf), including `allow`, `bypass`, `challenge`, `challenge-solved`, `challenge-failed`, `deny`, `log`, `rate_limit`, and `redirect`                                                                  |
 | `WAF Rule ID`       | Group by the firewall rule ID                                                                                                                                                                                                                                                    |
 | `Skew Protection`   | When `active`, the request would have been subject to [version skew](/docs/skew-protection) but was protected, otherwise `inactive`.                                                                                                                                             |
 | `Sandbox Name`      | Group by the sandbox name                                                                                                                                                                                                                                                        |

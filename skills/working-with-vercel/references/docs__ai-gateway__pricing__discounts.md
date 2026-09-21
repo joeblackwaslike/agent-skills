@@ -14,8 +14,8 @@ related:
 summary: "Discounts on AI Gateway token spend: models already priced below list for every team, plus custom volume discounts with zero-fee ACH payments."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/pricing/discounts.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "3bba403e35316920cdff1584b41d75ea51625dfd8bcc0dd3ac81b891e6ec0624"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "ec6a5300584237d370a1f1c5b804f36105d07c525bed9f25fa3af60d2e94dfb7"
 ---
 
 # AI Gateway Discounts
@@ -35,7 +35,7 @@ Discounts on [AI Gateway](/docs/ai-gateway) token spend come in two forms: model
 - [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
 - [AI Gateway Rate Limits](https://vercel.com/docs/ai-gateway/rate-limits?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related) — Learn how AI Gateway rate limits work on the free and paid tiers, what the 429 response looks like, and how to retry a r
 - [Chatbox with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/chatbox?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related) — Connect Chatbox to AI Gateway. Configure your API key, endpoint, and models to use multiple AI providers and monitor cha
-- [AI Gateway Framework Integrations](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related) — Connect LangChain, LiteLLM, LlamaIndex, Mastra, Pydantic AI, and other frameworks to Vercel AI Gateway with the AI SDK o
+- [AI Gateway Framework Integrations](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=related) — Connect LangChain, LiteLLM, LlamaIndex, Mastra, Pydantic AI, TanStack AI, and other frameworks to Vercel AI Gateway with
 
 Full cross-link map for this page: [/docs/ai-gateway/pricing/discounts.graph.md](/docs/ai-gateway/pricing/discounts.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing%2Fdiscounts&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/embed-many.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "4bd4fec50db1518be0d38152b7f985ac3f47a92c10d0aae8a5e43cf4da1798cb"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "c082a6fe1ba5206f16ba55aa76b30e67eb59d6d1a14cf92aeb4117aeb8ca3b80"
 ---
 
 # `embedMany()`
@@ -346,6 +346,7 @@ const { embeddings } = await embedMany({
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+- [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
 - [uploadFile](/docs/reference/ai-sdk-core/upload-file)
 - [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
 - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
@@ -361,6 +362,7 @@ const { embeddings } = await embedMany({
 - [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
 - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [toolSearch](/docs/reference/ai-sdk-core/tool-search)
 - [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
 - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)

@@ -13,8 +13,8 @@ related:
 summary: Learn how to preview and download Vercel compliance documents from the dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/attestations-and-compliance-report.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "e5bf5af568b445a0eaad863c8685311835075f9dcd486cfce6136382c7a185c6"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "fe8ca77244bb90b8ba3b8874a291fca31e6c4fba2258d3e2d97ad6c3a4fd870d"
 ---
 
 # Attestations and Compliance Report
@@ -33,8 +33,8 @@ Team members on Pro and Enterprise plans can preview and download Vercel's compl
 - [Security](https://v0.app/docs/security?from=related&source_path=%2Fdocs%2Fsecurity%2Fattestations-and-compliance-report&source_site=vercel-docs&relationship=related) — Learn about v0's security practices, threat modeling, and enterprise security features.
 - [Security Dashboard](https://vercel.com/docs/security/security-dashboard?from=related&source_path=%2Fdocs%2Fsecurity%2Fattestations-and-compliance-report&source_site=vercel-docs&relationship=related) — The Security Dashboard aggregates the security posture of every account and project on your team, flags misconfiguration
 - [Get certs](https://vercel.com/docs/rest-api/certs/get-certs?from=related&source_path=%2Fdocs%2Fsecurity%2Fattestations-and-compliance-report&source_site=vercel-docs&relationship=related) — GET /v8/certs — Get certs
-- [Access Control](https://vercel.com/docs/security/access-control?from=related&source_path=%2Fdocs%2Fsecurity%2Fattestations-and-compliance-report&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fsecurity%2Fattestations-and-compliance-report&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
+- [Access Control](https://vercel.com/docs/security/access-control?from=related&source_path=%2Fdocs%2Fsecurity%2Fattestations-and-compliance-report&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Upload a cert](https://vercel.com/docs/rest-api/certs/upload-a-cert?from=related&source_path=%2Fdocs%2Fsecurity%2Fattestations-and-compliance-report&source_site=vercel-docs&relationship=related) — PUT /v8/certs — Upload a cert
 
 Full cross-link map for this page: [/docs/security/attestations-and-compliance-report.graph.md](/docs/security/attestations-and-compliance-report.graph.md?from=related&source_path=%2Fdocs%2Fsecurity%2Fattestations-and-compliance-report&source_site=vercel-docs&relationship=graph)

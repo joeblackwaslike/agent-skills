@@ -2,8 +2,8 @@
 title: "Models"
 description: Request and response schemas for the Hosted v1 API.
 source: "https://www.dolthub.com/docs/products/hosted/api/v1/models.md"
-fetched_at: "2026-09-14T09:39:37.291Z"
-sha256: "56b86bed94d86b07ba63f402e0361f252ab82f9fe81e1c7eaaa96ab6edce8501"
+fetched_at: "2026-09-21T09:41:04.785Z"
+sha256: "09620fec3156ebedc5252799baad923834cb8288d1316e68f06856ecaf4867c3"
 ---
 
 # Models
@@ -251,6 +251,36 @@ One metric a deployment collects. Read it with `GET /api/v1/deployments/{owner}/
 |-------|------|----------|-------------|
 | `id` | `string` | yes | The metric's identifier. Today's values are `connections`, `queries`, `query_latency`, `cpu`, `mem`, `disk`, `diskio`, `network`, and `replication_lag`, but this is a string rather than an enum because Hosted adds metrics without a new API version. |
 | `display_name` | `string` | yes | The metric's name for display. |
+
+---
+
+## DayOfWeek {#model-dayofweek}
+The day of the week a service window falls on, in UTC.
+
+**Enum values**
+
+| Value |
+|-------|
+| `sunday` |
+| `monday` |
+| `tuesday` |
+| `wednesday` |
+| `thursday` |
+| `friday` |
+| `saturday` |
+
+---
+
+## ServiceWindow {#model-servicewindow}
+One weekly window in which Hosted may restart the deployment's instances for maintenance.
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `id` | `string` | yes | The window's identifier, unique within the deployment. A default window has no identifier of its own and reports the nil UUID, `00000000-0000-0000-0000-000000000000`. |
+| `day_of_week` | [`DayOfWeek`](/products/hosted/api/v1/models#model-dayofweek) | yes | The day of the week a service window falls on, in UTC. |
+| `start_hour_utc` | `integer` | yes | The first hour of the window, in UTC. Inclusive. |
+| `end_hour_utc` | `integer` | yes | The hour the window ends, in UTC. Exclusive, so a window of 3 to 5 covers 03:00 until 05:00. |
+| `is_default` | `boolean` | yes | Whether this is the default window Hosted falls back to rather than one that was configured. `true` means no maintenance window has been set for this deployment. |
 
 ---
 

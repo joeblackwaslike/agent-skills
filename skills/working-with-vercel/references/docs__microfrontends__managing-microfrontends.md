@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your microfrontends on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/managing-microfrontends.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "c8b925a291fb83e0af4589fc30519e8cd0cab7932993036ada583cea25c0d471"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "02bce353f28556083ac95504dac907032bc1b54ec075966b87a31469ded5bdfd"
 ---
 
 # Managing microfrontends
@@ -35,10 +35,11 @@ With a project's **Microfrontends** settings of the Vercel dashboard, you can:
 - [Microfrontends](https://turborepo.dev/docs/guides/microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends&source_site=vercel-docs&relationship=related) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
 - [How Vercel adopted microfrontends](https://vercel.com/blog/how-vercel-adopted-microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends&source_site=vercel-docs&relationship=related)
 - [Microfrontends now generally available](https://vercel.com/changelog/microfrontends-now-generally-available?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends&source_site=vercel-docs&relationship=related)
-- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends&source_site=vercel-docs&relationship=related) — Learn how to serve multiple Vercel projects from a single domain.
+- [Microfrontends Routing](https://vercel.com/docs/microfrontends/routing?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends&source_site=vercel-docs&relationship=related) — Configure which microfrontend handles each path and understand how Vercel selects deployments.
 - [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends&source_site=vercel-docs&relationship=related) — Learn how to get started with microfrontends on Vercel.
 - [Testing & troubleshooting microfrontends](https://vercel.com/docs/microfrontends/troubleshooting?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends&source_site=vercel-docs&relationship=related) — Learn about testing, common issues, and how to troubleshoot microfrontends on Vercel.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Projects overview](https://vercel.com/docs/projects?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends&source_site=vercel-docs&relationship=related) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 
 Full cross-link map for this page: [/docs/microfrontends/managing-microfrontends.graph.md](/docs/microfrontends/managing-microfrontends.graph.md?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -309,7 +310,7 @@ export function MyComponent() {
 
 > **💡 Note:** When using this feature, all paths from the `microfrontends.json` file will be
 > visible on the client side. This information is used to know which
-> microfrontend each link comes from in order to apply prefetching and
+> microfrontend each link comes from to apply prefetching and
 > prerendering.
 
 ## Observability data routing

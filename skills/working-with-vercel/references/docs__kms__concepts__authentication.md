@@ -17,8 +17,8 @@ related:
 summary: How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel access token, and how relying...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms/concepts/authentication.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "e028af9c5caf68b445aa3dabdb057034befe1533f517d670cc0ba3a86eed8111"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "9869c8c3a94f7861c74579d7a8e95d9657f662cbda3b5e231968b464cfd8b8c4"
 ---
 
 # Vercel KMS Authentication
@@ -36,7 +36,7 @@ KMS authorizes requests differently depending on what you are doing. Signing is 
 - [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 - [Create a signing key](https://vercel.com/docs/rest-api/kms/create-a-signing-key?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/keys — Create a new signing key for a KMS issuer. Depending on the activation mode, the
-- [Create an issuer policy](https://vercel.com/docs/rest-api/kms/create-an-issuer-policy?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/policies — Attach a policy to a KMS issuer that grants a project's deployments permissio
+- [Sign a message](https://vercel.com/docs/rest-api/kms/sign-a-message?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/sign/message — Sign a raw message with a KMS issuer's active signing key. Authenticate t
 
 Full cross-link map for this page: [/docs/kms/concepts/authentication.graph.md](/docs/kms/concepts/authentication.graph.md?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

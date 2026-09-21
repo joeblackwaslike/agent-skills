@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/openai-compatible-providers/heroku.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "8ff801516765d643b4db7b34aacb606b0a5542ea41aaa89ecbd90f4b6ca4d166"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "bc88f665758bb84ba684eedba49a79680e657c35d6b9c59434f0980e59b1cc36"
 ---
 
 # Heroku Provider
@@ -115,6 +115,7 @@ Heroku language models also support structured data generation with [`Output`](/
 - [Writing a Custom Provider](/providers/openai-compatible-providers/custom-providers)
 - [LM Studio](/providers/openai-compatible-providers/lmstudio)
 - [NVIDIA NIM](/providers/openai-compatible-providers/nim)
+- [ModelRush](/providers/openai-compatible-providers/modelrush)
 - [Clarifai](/providers/openai-compatible-providers/clarifai)
 - [Heroku](/providers/openai-compatible-providers/heroku)
 - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)

@@ -3,7 +3,7 @@ title: Using the Integrations REST API
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api"
-last_updated: 2026-07-10
+last_updated: 2026-09-17
 type: reference
 prerequisites:
   - /docs/integrations/create-integration
@@ -17,8 +17,8 @@ related:
 summary: Learn how to authenticate and use the Integrations REST API to build your integration server.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "7744ee624166d3018e77fddfbcd3ecbf9101209cf8c10e7edb7d1f6c7c3c4e92"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "4858f4fa1e2a3d8ce1dcd417ef603cdb437fb2fc81cadedc096a583d67c7de8a"
 ---
 
 # Using the Integrations REST API
@@ -31,11 +31,12 @@ Learn how to authenticate and use the Integrations REST API to build your native
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [vercel integration](https://vercel.com/docs/cli/integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-api&source_site=vercel-docs&relationship=related) — Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover avai
+- [Native Marketplace integrations now support custom environments](https://vercel.com/changelog/custom-environments-support-for-marketplace-integrations?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-api&source_site=vercel-docs&relationship=related)
 - [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-api&source_site=vercel-docs&relationship=related) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
 - [SAML Single Sign-On](https://vercel.com/docs/saml?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-api&source_site=vercel-docs&relationship=related) — Learn how to configure SAML SSO for your organization on Vercel.
 - [SSO Token Exchange](https://vercel.com/docs/rest-api/authentication/sso-token-exchange?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-api&source_site=vercel-docs&relationship=related) — POST /v1/integrations/sso/token — During the autorization process, Vercel sends the user to the provider \\\[redirectLogin
 - [Authentication](https://vercel.com/docs/connect/concepts/authentication?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-api&source_site=vercel-docs&relationship=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
+- [vercel integration](https://vercel.com/docs/cli/integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-api&source_site=vercel-docs&relationship=related) — Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover avai
 
 Full cross-link map for this page: [/docs/integrations/create-integration/marketplace-api.graph.md](/docs/integrations/create-integration/marketplace-api.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-api&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -473,6 +474,16 @@ async function getInstallation(installationId: string) {
 }
 ```
 
+## Custom Environment connections
+
+> **💡 Note:** The REST API resource connection request accepts `production`, `preview`,
+> `development`, or a Custom Environment slug or ID from the target project in
+> `envVarEnvironments`. Vercel validates each Custom Environment against the
+> target project. If the request uses a stable ID, Vercel stores the matching
+> slug in the connection record. If the request omits `envVarEnvironments`,
+> Vercel uses all three built-in environments. The default does not include
+> Custom Environments.
+
 ## Environment variable prefixes
 
 When you provision a resource or update secrets, you can include an optional `prefix` field for each secret. Vercel prepends this prefix to the secret name when creating environment variables in connected projects. This lets users connect the same resource type to multiple projects, or multiple resources to one project, without name collisions.
@@ -505,6 +516,14 @@ Users can also set a custom prefix when connecting a resource to a project. Lear
 ## Secrets rotation
 
 When your integration provisions resources with credentials, you should implement secrets rotation to allow users to update credentials securely. Learn how to [implement secrets rotation](/docs/integrations/create-integration/secrets-rotation) in your integration.
+
+## Project connection events
+
+Vercel can send `integration-resource.project-connected` and `integration-resource.project-disconnected` events after a resource connection changes. These webhooks describe provider-facing targets, not every environment scope change. If only the Custom Environment scope changes and the provider-facing target set remains unchanged, Vercel does not send either webhook event. For example, replacing `qa` with `staging` keeps the provider-facing target as `preview` and does not produce either event.
+
+When Vercel sends either event, the `payload.targets` field contains a deduplicated list of `production`, `preview`, and `development` targets. Vercel maps each Custom Environment to `preview`. The field does not include the exact Custom Environment slug or ID. For example, `qa` produces `['preview']`. A selection of `production`, `preview`, and `qa` produces `['production', 'preview']`.
+
+See the [Webhooks API reference](/docs/webhooks/webhooks-api#integration-resource.project-connected) for all project connection payload fields.
 
 ## Working with billing events through webhooks
 

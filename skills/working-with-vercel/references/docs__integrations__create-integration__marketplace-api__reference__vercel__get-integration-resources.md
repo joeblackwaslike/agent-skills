@@ -3,7 +3,7 @@ title: get-integration-resources
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/get-integration-resources
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/get-integration-resources"
-last_updated: 2026-09-14
+last_updated: 2026-09-21
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about get-integration-resources on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/get-integration-resources.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "83f0b8c136425caaa78f777a9499283c052e1b67bd2e9e018543460f3b7453ba"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "809c7794b8c9d3f18fa848adae6d7235554cd89215daeaf2cb5de39ef82f458a"
 ---
 
 # Get Integration Resources
@@ -46,34 +46,34 @@ Success
 ```json
 {
   "resources": [ // required
-    "partnerId": "string" // required // The ID provided by the partner for the given resource,
+    "billingPlanId": "string" // The ID of the billing plan the resource is subscribed to, if applicable,
     "internalId": "string" // required // The ID assigned by Vercel for the given resource,
+    "metadata": "object" // The configured metadata for the resource as defined by its product's Metadata Schema,
     "name": "string" // required // The name of the resource as it is recorded in Vercel,
-    "status": "string" // The current status of the resource,
+    "notification": {
+      "href": "string",
+      "level": "string" // required,
+      "message": "string",
+      "title": "string" // required
+    },
+    "partnerId": "string" // required // The ID provided by the partner for the given resource,
     "productId": "string" // required // The ID of the product the resource is derived from,
     "protocolSettings": {
-      "experimentation": {
-        "edgeConfigSyncingEnabled": "boolean",
-        "edgeConfigId": "string",
-        "globalConfigId": "string",
-        "globalConfigSyncingEnabled": "boolean",
-        "edgeConfigTokenId": "string"
-      },
       "authentication": {
         "appUrls": [
-          "url": "string" // required,
-          "target": "string" // required
+          "target": "string" // required,
+          "url": "string" // required
         ]
+      },
+      "experimentation": {
+        "edgeConfigId": "string",
+        "edgeConfigSyncingEnabled": "boolean",
+        "edgeConfigTokenId": "string",
+        "globalConfigId": "string",
+        "globalConfigSyncingEnabled": "boolean"
       }
     },
-    "notification": {
-      "level": "string" // required,
-      "title": "string" // required,
-      "message": "string",
-      "href": "string"
-    },
-    "billingPlanId": "string" // The ID of the billing plan the resource is subscribed to, if applicable,
-    "metadata": "object" // The configured metadata for the resource as defined by its product's Metadata Schema
+    "status": "string" // The current status of the resource
   ]
 }
 ```

@@ -16,8 +16,8 @@ related:
 summary: Learn how to interact with the security endpoints of the Vercel REST API programmatically.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/firewall-api.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "aca556ecf2e5d79c4f6ab3350100e3459698daead8ec2dc19ff73d4f0c3e79cd"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "46cd0eadbdff179f15b2cae77f503b2b9051f86155a10df345bae0ce375ae6fb"
 ---
 
 # Using the REST API with the Firewall
@@ -35,8 +35,8 @@ The security section of the [Vercel REST API](/docs/rest-api) allows you to prog
 - [WAF Examples](https://vercel.com/docs/vercel-firewall/vercel-waf/examples?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-api&source_site=vercel-docs&relationship=related) — Learn how to use Vercel WAF to protect your site in specific situations.
 - [Vercel WAF](https://vercel.com/docs/vercel-firewall/vercel-waf?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-api&source_site=vercel-docs&relationship=related) — Learn how to secure your website with the Vercel Web Application Firewall \\(WAF\\)
 - [Read Firewall Actions by Project](https://vercel.com/docs/rest-api/security/read-firewall-actions-by-project?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-api&source_site=vercel-docs&relationship=related) — GET /v1/security/firewall/events — Retrieve firewall actions for a project Rule names are resolved against the project's
-- [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-api&source_site=vercel-docs&relationship=related) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 - [Generate a firewall rule from natural language](https://vercel.com/docs/rest-api/security/generate-a-firewall-rule-from-natural-language?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-api&source_site=vercel-docs&relationship=related) — POST /v1/security/firewall/config/generate-rule — Generate a firewall rule from a natural language description.
+- [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-api&source_site=vercel-docs&relationship=related) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 
 Full cross-link map for this page: [/docs/vercel-firewall/firewall-api.graph.md](/docs/vercel-firewall/firewall-api.graph.md?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-api&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

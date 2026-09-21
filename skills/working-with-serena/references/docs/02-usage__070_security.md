@@ -1,7 +1,7 @@
 ---
 source: "https://oraios.github.io/serena/_sources/02-usage/070_security.md"
-fetched_at: "2026-08-10T05:31:54.245Z"
-sha256: "29c9d076ebd075d657244d8d7eb611f924fcedf602d95ec1e862511fcfe78b63"
+fetched_at: "2026-09-21T09:43:54.627Z"
+sha256: "4b3c88a839820994f603a99bfa621b6497289e867dc743ea562792b0506ffc00"
 ---
 
 # Security Considerations
@@ -29,18 +29,22 @@ However, reports which amount to noting that Serena's tools can execute commands
 describe intended functionality rather than vulnerabilities, and we will reject advisories that fail to recognise this
 or otherwise ignore the above assumptions.  
 Sandboxing is the *only* way to fully protect against unintended consequences when using coding agents;
-constraints on the tools themselves cannot achieve this and are therefore not an approach we pursue.
+constraints on the tools or REPL APIs cannot achieve this and are therefore not an approach we pursue.
 :::
 
 ## General Recommendations for Risk Reduction
 
 To reduce the risk of unintended consequences, we recommend that you:
 - back up your work regularly (keep the project being worked on under version control),
-- restrict the set of allowed tools via the [configuration](050_configuration),
+- restrict the set of allowed tools via the [configuration](050_configuration)
+  (note that restrictions are effective for the tool interface only, see [below](repl-security)),
 - do not expose [Serena's network services](network-security) to untrusted networks.
 
 If you do not fully trust the client/the LLM, we additionally recommend to monitor tool executions carefully 
 (provided that your MCP client supports this).
+Note that with the REPL interface, such monitoring is necessarily coarser: every action appears as the same tool
+being called, and the client cannot tell a read-only call from a modifying one by the tool's name alone.
+What needs to be reviewed is the submitted code.
 
 (sandboxing)=
 ## Sandboxing
@@ -102,6 +106,28 @@ Note that the effective set of trusted paths depends on the age of your configur
 the introduction of this setting retain a pattern that trusts all projects, ensuring that existing workflows are
 not broken, whereas newly created configurations trust no project by default.
 The applicable value can be inspected in the dashboard.
+
+(repl-security)=
+## The REPL Interface
+
+With the [REPL interface](agent-interfaces), the agent does not invoke individual tools; it submits Python code,
+which Serena executes.
+In the default configuration, Serena is equally capable either way, as shell execution and file modification are
+available in both interfaces.
+The difference lies in what restrictions can achieve:
+
+- With the **tool interface**, excluding a tool removes the respective capability: a tool that is not exposed
+  cannot be invoked, so forbidding shell execution or file modification is effective.
+- With the **REPL interface**, there is no such guarantee.
+  Restricting the available operations (`included_apis`/`excluded_apis`) steers the agent towards the intended
+  way of working, but the submitted code can, in principle, do anything the Serena process can do — irrespective
+  of the operations Serena itself provides.
+  Excluding shell execution, for example, does not prevent the code from achieving the same effect by other means.
+- The `read_only` project setting is subject to the same limitation: Serena's own editing operations are refused,
+  yet code executed in the REPL is not prevented from modifying files.
+
+The assumptions stated above therefore apply unchanged, but if you require actual constraints rather than
+guidance, [sandboxing](sandboxing) is the answer.
 
 (network-security)=
 ## Network Security

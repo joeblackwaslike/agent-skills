@@ -16,8 +16,8 @@ related:
 summary: This page outlines information on the pricing and limits for the source images-based legacy option.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/image-optimization/legacy-pricing.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "a1e14d836f510f499444b7a844198e5862ece345e28e8ce0165dca0de7075458"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "cd9f39c170f06f4a8d6cb5b5d7cfc5b39c492b00bf7395cce203b77afe3f8c2f"
 ---
 
 # Legacy Pricing for Image Optimization
@@ -39,6 +39,7 @@ Image Optimization pricing is dependent on your plan and how many unique [source
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flegacy-pricing&source_site=vercel-docs&relationship=related) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
 - [Limits and Pricing for Image Optimization](https://vercel.com/docs/image-optimization/limits-and-pricing?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flegacy-pricing&source_site=vercel-docs&relationship=related) — This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can i
 - [Changes to Vercel Image Optimization](https://vercel.com/changelog/changes-to-vercel-image-optimizations?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flegacy-pricing&source_site=vercel-docs&relationship=related)
 - [Faster transformations and reduced pricing for Image Optimization](https://vercel.com/changelog/faster-transformations-and-reduced-pricing-for-image-optimization?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flegacy-pricing&source_site=vercel-docs&relationship=related)

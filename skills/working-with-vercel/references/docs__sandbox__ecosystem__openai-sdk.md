@@ -17,8 +17,8 @@ related:
 summary: Use OpenAI function calling with AI Gateway to execute model-generated code in an isolated Vercel Sandbox.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/ecosystem/openai-sdk.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "14d81e23542646a4297a52c58eecfce5195edae537f2c4b54c7cf8069c325fb3"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "f387b5a892671f6d5cf3fc230a7adf6c9f9201906bd9abc6704ecd8a7ed91645"
 ---
 
 # OpenAI SDK
@@ -43,6 +43,7 @@ credentials covers both the model and the sandbox.
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fopenai-sdk&source_site=vercel-docs&relationship=related) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
 - [Anthropic SDK](https://vercel.com/docs/sandbox/ecosystem/anthropic-sdk?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fopenai-sdk&source_site=vercel-docs&relationship=related) — Use Anthropic tool use with AI Gateway to execute model-generated code in an isolated Vercel Sandbox.
 - [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fopenai-sdk&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
+- [OpenAI Agents API](https://vercel.com/docs/sandbox/ecosystem/openai-agents-api?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fopenai-sdk&source_site=vercel-docs&relationship=related) — Connect OpenAI Agents API sessions to Vercel Sandbox for isolated code execution and persistent workspace files.
 - [OSS AI Vibe Coding Platform](https://vercel.com/docs/platforms/examples/oss-coding-agent?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fopenai-sdk&source_site=vercel-docs&relationship=related) — Build and deploy your own AI-powered coding platform with Vercel Sandboxes.
 
 Full cross-link map for this page: [/docs/sandbox/ecosystem/openai-sdk.graph.md](/docs/sandbox/ecosystem/openai-sdk.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fopenai-sdk&source_site=vercel-docs&relationship=graph)

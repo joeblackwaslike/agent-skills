@@ -14,8 +14,8 @@ related:
 summary: Configure your microfrontends.json.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/configuration.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "a1577493fcd10c1d962f95f6a2c09503862b2e09fc05e9ac244394b9bf29db02"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "39dc04704ac4f62ae536bd5bf9a56f3d6a63a1afcb686fec387bf25be3c7e308"
 ---
 
 # Microfrontends Configuration
@@ -150,7 +150,7 @@ If the application name differs from the `name` field in `package.json` for the 
 
 The microfrontends configuration file can be named either `microfrontends.json` or `microfrontends.jsonc`.
 
-You can also define a custom configuration file by setting the `VC_MICROFRONTENDS_CONFIG_FILE_NAME` environment variable — for example, `microfrontends-dev.json`. The file name must end with either `.json` or `.jsonc`, and it may include a path, such as `/path/to/microfrontends.json`. The filename / path specified is relative to the [root directory](/docs/builds/configure-a-build#root-directory) for the [default application](/docs/microfrontends/quickstart#key-concepts).
+You can also define a custom configuration file by setting the `VC_MICROFRONTENDS_CONFIG_FILE_NAME` environment variable (for example, `microfrontends-dev.json`). The file name must end with either `.json` or `.jsonc`, and it may include a path, such as `/path/to/microfrontends.json`. The filename / path specified is relative to the [root directory](/docs/builds/configure-a-build#root-directory) for the [default application](/docs/microfrontends/quickstart#key-concepts).
 
 Be sure to add the [environment variable](/docs/environment-variables/managing-environment-variables) to all projects within the microfrontends group.
 

@@ -3,7 +3,7 @@ title: Skew Protection
 product: vercel
 url: /docs/skew-protection
 canonical_url: "https://vercel.com/docs/skew-protection"
-last_updated: 2026-08-28
+last_updated: 2026-09-16
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: "Learn how Vercel's Skew Protection ensures that the client and server stay in sync for any particular deployment."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/skew-protection.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "b0af692284dc8d57d72f20cd38000b6a4daa35cd409b523b2ab805bafaa527ba"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "9b5f68cf591c8faa1c3d0c4db6dee77708d921205773a980dbc63ac116c64cef"
 ---
 
 # Skew Protection
@@ -244,7 +244,7 @@ The `useDeploymentId` configuration enables Skew Protection for all framework-ma
 
 ### Skew Protection with SvelteKit
 
-If you are using SvelteKit, you will need to install `@sveltejs/adapter-vercel` version 5.2.0 or newer in order to [enable Skew Protection](#enable-skew-protection).
+If you are using SvelteKit, you will need to install `@sveltejs/adapter-vercel` version 5.2.0 or newer to [enable Skew Protection](#enable-skew-protection).
 
 Older versions can be upgraded by running `npm i -D @sveltejs/adapter-vercel@latest`.
 
@@ -256,7 +256,7 @@ Older versions can be upgraded by running `npm i @builder.io/qwik@latest`.
 
 ### Skew Protection with Astro
 
-If you are using Astro, you will need to install `@astrojs/vercel` version 9.0.0 or newer in order to [enable Skew Protection](#enable-skew-protection).
+If you are using Astro, you will need to install `@astrojs/vercel` version 9.0.0 or newer to [enable Skew Protection](#enable-skew-protection).
 
 ```js {8} filename="astro.config.mjs"
 import { defineConfig } from 'astro/config';
@@ -368,7 +368,7 @@ export function SessionComplete() {
 
 Skew Protection is available for all deployment environments for Pro and Enterprise teams. You can configure a custom maximum age up to, but not exceeding, your project's [retention policy](/docs/deployment-retention).
 
-Vercel automatically adjusts the maximum age to 60 days for requests from Googlebot and Bingbot in order to handle any delay between document crawl and render.
+Vercel automatically adjusts the maximum age to 60 days for requests from Googlebot and Bingbot to handle any delay between document crawl and render.
 
 Deployments that have been deleted either manually or automatically using a [retention policy](/docs/deployment-retention) will not be accessible through Skew Protection.
 

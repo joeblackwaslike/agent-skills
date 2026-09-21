@@ -3,7 +3,7 @@ title: vercel deploy
 product: vercel
 url: /docs/cli/deploy
 canonical_url: "https://vercel.com/docs/cli/deploy"
-last_updated: 2026-08-11
+last_updated: 2026-09-17
 type: reference
 prerequisites:
   - /docs/cli
@@ -16,8 +16,8 @@ related:
 summary: Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/deploy.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "6f96e101fccd0a6e2ff95f3ba92495c086d193bf210c95dbe3d377d87559ad93"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "eab498689013689c03b52d4281fb910af25512505fb7ae3016e17bb62c763729"
 ---
 
 # vercel deploy
@@ -34,13 +34,13 @@ The `vercel deploy` command deploys Vercel projects, executable from the project
 - [Dry-run deployments with Vercel CLI](https://vercel.com/changelog/dry-run-deployments-with-vercel-cli?from=related&source_path=%2Fdocs%2Fcli%2Fdeploy&source_site=vercel-docs&relationship=related)
 - [Improvements to command line logs](https://vercel.com/changelog/improvements-to-command-line-logs?from=related&source_path=%2Fdocs%2Fcli%2Fdeploy&source_site=vercel-docs&relationship=related)
 - [Split-tgz is now the default CLI archive deployment behavior](https://vercel.com/changelog/split-tgz-is-now-the-default-cli-archive-deployment-behavior?from=related&source_path=%2Fdocs%2Fcli%2Fdeploy&source_site=vercel-docs&relationship=related)
-- [Why are my branch specific variables and domains not linked to my CLI deployments?](https://vercel.com/kb/guide/branch-variables-and-domains-not-linked-to-cli-deployments?from=related&source_path=%2Fdocs%2Fcli%2Fdeploy&source_site=vercel-docs&relationship=related) — How to link CLI deployments to the correct branch for use with custom environments and branch specific domains and envir
 - [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel?from=related&source_path=%2Fdocs%2Fcli%2Fdeploy&source_site=vercel-docs&relationship=related) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
 - [How to alias a preview deployment using the CLI](https://vercel.com/kb/guide/how-to-alias-a-preview-deployment-using-the-cli?from=related&source_path=%2Fdocs%2Fcli%2Fdeploy&source_site=vercel-docs&relationship=related) — Learn how to automatically alias a Vercel preview deployment.
 - [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues?from=related&source_path=%2Fdocs%2Fcli%2Fdeploy&source_site=vercel-docs&relationship=related)
 - [vercel redeploy](https://vercel.com/docs/cli/redeploy?from=related&source_path=%2Fdocs%2Fcli%2Fdeploy&source_site=vercel-docs&relationship=related) — Learn how to redeploy your project using the vercel redeploy CLI command.
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related&source_path=%2Fdocs%2Fcli%2Fdeploy&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [vercel curl](https://vercel.com/docs/cli/curl?from=related&source_path=%2Fdocs%2Fcli%2Fdeploy&source_site=vercel-docs&relationship=related) — Learn how to make HTTP requests to your Vercel deployments with automatic deployment protection bypass using the vercel
+- [vercel env](https://vercel.com/docs/cli/env?from=related&source_path=%2Fdocs%2Fcli%2Fdeploy&source_site=vercel-docs&relationship=related) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
 - [vercel rolling-release](https://vercel.com/docs/cli/rolling-release?from=related&source_path=%2Fdocs%2Fcli%2Fdeploy&source_site=vercel-docs&relationship=related) — Learn how to manage your project's rolling releases using the vercel rolling-release CLI command.
 
 Full cross-link map for this page: [/docs/cli/deploy.graph.md](/docs/cli/deploy.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fdeploy&source_site=vercel-docs&relationship=graph)
@@ -54,6 +54,12 @@ vercel
 
 *Using the \`vercel\` command from the root of a Vercel
 project directory.*
+
+### Fast static deployments
+
+Vercel automatically detects eligible static deployments and makes them ready without a build step. This optimization supports deployments containing only HTML (`.html`, `.htm`) or Markdown (`.md`) files, with up to 10 files and a total size of up to 5 MB.
+
+Eligibility also depends on your project's build settings and deployment configuration. Other deployments automatically use the standard deployment flow.
 
 ## Extended usage
 
@@ -321,6 +327,38 @@ vercel deploy --meta KEY1=value1
 ```
 
 > **💡 Note:** Deployments can be filtered using this data with [`vercel list   --meta`](/docs/cli/list#meta).
+
+#### Associate a CLI deployment with a Git branch
+
+The CLI reads Git metadata from the local checkout. If the checkout has no Git metadata or uses a detached HEAD, a deployment can lack the branch association needed for branch-specific Preview variables and domains. Check the linked Vercel project, team, and branch shown on the deployment first.
+
+For a GitHub-linked project, supply the branch explicitly when deploying source files:
+
+```bash filename="terminal"
+vercel deploy --meta githubDeployment=1 --meta githubCommitRef=feature-checkout
+```
+
+Use the keys for your project's Git provider:
+
+| Provider | Deployment marker | Branch key |
+| --- | --- | --- |
+| GitHub | `githubDeployment=1` | `githubCommitRef` |
+| GitLab | `gitlabDeployment=1` | `gitlabCommitRef` |
+| Bitbucket | `bitbucketDeployment=1` | `bitbucketCommitRef` |
+
+Use the branch name, such as `feature-checkout`, rather than a pull request merge ref. These values describe the deployment; they do not check out the branch or connect a Git repository. Other provider metadata keys are not interchangeable by changing their prefix.
+
+Confirm that the environment variable is assigned to **Preview** and the same branch, and that the [branch domain](/docs/domains/working-with-domains/assign-domain-to-a-git-branch) is configured on this project. A production deployment uses Production settings even if you attach branch metadata. A named [custom environment](/docs/deployments/environments#custom-environments) requires its own target, such as `--target=staging`.
+
+For a local or prebuilt deployment, fetch the branch's variables **before** building:
+
+```bash filename="terminal"
+vercel pull --environment=preview --git-branch=feature-checkout
+vercel build
+vercel deploy --prebuilt --meta githubDeployment=1 --meta githubCommitRef=feature-checkout
+```
+
+Adding metadata at upload time cannot change values already embedded in build output. For a custom environment, use matching commands: `vercel pull --environment=staging`, `vercel build --target=staging`, and `vercel deploy --prebuilt --target=staging`. After deploying, verify the environment and assigned domains in the dashboard.
 
 ### target
 

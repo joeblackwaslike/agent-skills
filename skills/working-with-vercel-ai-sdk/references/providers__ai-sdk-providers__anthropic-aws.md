@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic-aws.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "c81f9f3c8ffa80da6a3822a28294994fd019fd4130316c54484e18c89b06e843"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "42a8fe0b88d0845c710b9c3998972fd72d4859d3510370e0cefd3dd88bf4187d"
 ---
 
 # Claude Platform on AWS Provider
@@ -153,6 +153,7 @@ Your IAM principal needs permission to call the Claude Platform on AWS actions o
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
 - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
+- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

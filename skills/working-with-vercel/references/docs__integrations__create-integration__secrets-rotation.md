@@ -3,7 +3,7 @@ title: Implementing secrets rotation
 product: vercel
 url: /docs/integrations/create-integration/secrets-rotation
 canonical_url: "https://vercel.com/docs/integrations/create-integration/secrets-rotation"
-last_updated: 2026-07-15
+last_updated: 2026-09-17
 type: how-to
 prerequisites:
   - /docs/integrations/create-integration
@@ -14,8 +14,8 @@ related:
 summary: Learn how to implement secrets rotation in your integration to allow users to rotate credentials securely.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/secrets-rotation.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "2fca3d7ddac69c8b93988d712929c8276a28029e0678aa2f00b2488349a6fafd"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "b2bdd25e40dbefe3eed8d8cb9774a9627fed002385f3e903b0ebc9d07abef841"
 ---
 
 # Implementing secrets rotation
@@ -51,7 +51,7 @@ Vercel calls your partner API to trigger a rotation. This happens when a user or
 1. The customer clicks "rotate secret" in the Vercel dashboard for a resource you manage
 2. Vercel makes a `POST` request to your `/v1/installations/{installationId}/resources/{resourceId}/secrets/rotate` endpoint
 3. Your backend either generates new secrets for the resource and returns them in the response or returns `sync: false` and performs the rotation asynchronously, calling the `https://api.vercel.com/v1/installations/{installationId}/resources/{resourceId}/secrets` endpoint on Vercel to complete the rotation
-4. Once Vercel has the new secrets for the resource, the customer's linked projects will be redeployed to pick up the new secrets.
+4. Vercel updates the environment variables provided by the resource in the customer's linked projects and does not redeploy the projects. The customer must create new deployments to use the new values.
 5. After the period of time specified in `delayOldSecretsExpirationHours`, the old secrets should stop working and be deleted by your code
 
 > **💡 Note:** It's critical that you keep the old secrets active for the amount of time specified in the request to your rotate secrets endpoint. Failing to do so will prevent customer's applications from being able to connect to the resource until their projects are redeployed. This may take a long time for customers that have many linked projects.
@@ -88,7 +88,9 @@ When using user authentication, the token contains claims about the user who ini
 - `reason` (optional): A string explaining why the rotation was requested
 - `delayOldSecretsExpirationHours` (optional): Number of hours (0-720, max 30 days) before old secrets expire. Can be a decimal amount (ex: `2.5`).
 
-Once you receive this request, you should rotate the secrets for this resource and keep the old ones live for the specified amount of time, to allow for linked projects to be redeployed to get the new values.
+Once you receive this request, rotate the secrets for this resource and keep the old secrets live for the specified time. Customers need time to create new deployments that use the new values.
+
+For a Custom Environment, Vercel first uses the Preview-specific secret value. If no Preview-specific value exists, Vercel uses the default secret value.
 
 > **💡 Note:** Discuss with Vercel partner support what values should be sent to your backend for `delayOldSecretsExpirationHours`.
 
@@ -242,7 +244,8 @@ When testing your implementation:
 5. For synchronous rotation, confirm Vercel receives and updates the secrets
 6. For asynchronous rotation, verify your background job completes and calls Vercel's API
 7. Confirm the resource now displays the correct environment variables on the resource page in the Vercel dashboard
-8. Confirm old credentials expire at the correct time
+8. Create a new deployment and confirm that the deployment uses the new values
+9. Confirm old credentials expire at the correct time
 
 ## Best practices
 

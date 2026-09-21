@@ -13,8 +13,8 @@ related:
 summary: Review Vercel Flags request pricing and limits for flags, segments, configuration size, and connected projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/limits-and-pricing.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "b1c93377e2f0eae4413e479220cc931fe8ed4b1cd3d8750453463501b6ce36f7"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "ba616fca427ba438e1cce86dc5ae65a1957eeab0dfc56b1ccf171fb9444ce6fa"
 ---
 
 # Limits and Pricing for Vercel Flags
@@ -34,9 +34,9 @@ Vercel Flags is priced at \*\*$0.03 per 1,000 flag requests\*\* for Pro teams. E
 - [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Flimits-and-pricing&source_site=vercel-docs&relationship=related)
 - [Pricing for Flags Explorer](https://vercel.com/docs/flags/flags-explorer/limits-and-pricing?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Compare monthly Flags Explorer override limits and the price of unlimited overrides across Vercel plans.
 - [Container Registry limits and pricing](https://vercel.com/docs/container-registry/limits-and-pricing?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Storage pricing, size limits, plan limits, and compatibility limits for Vercel Container Registry.
+- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
 - [Feature Flag Configuration](https://vercel.com/docs/flags/vercel-flags/dashboard/feature-flag?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn how to configure individual feature flags in the Vercel Dashboard.
 - [List segments](https://vercel.com/docs/rest-api/feature-flags/list-segments?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — GET /v1/projects/{projectIdOrName}/feature-flags/segments — List all feature flag segments for a project.
-- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/limits-and-pricing.graph.md](/docs/flags/vercel-flags/limits-and-pricing.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Flimits-and-pricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

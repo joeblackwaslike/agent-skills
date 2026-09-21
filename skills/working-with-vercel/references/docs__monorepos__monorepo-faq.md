@@ -16,8 +16,8 @@ related:
 summary: Learn the answer to common questions about deploying monorepos on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/monorepo-faq.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "1aa633489781076628b34e6cb6a27a6fd2679383f68842bbda532c641fabb3ca"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "c1cc89a7219ef883e1d09904c2b3a2cb910a6854f7b282e02fe759cff1f653a9"
 ---
 
 # Monorepos FAQ
@@ -42,9 +42,9 @@ on the "Billing" page in the team settings.
 - [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain?from=related&source_path=%2Fdocs%2Fmonorepos%2Fmonorepo-faq&source_site=vercel-docs&relationship=related) — Learn how to serve multiple Vercel projects from a single domain.
 - [Deploying Nx to Vercel](https://vercel.com/docs/monorepos/nx?from=related&source_path=%2Fdocs%2Fmonorepos%2Fmonorepo-faq&source_site=vercel-docs&relationship=related) — Nx is an extensible build system with support for monorepos, integrations, and Remote Caching on Vercel. Learn how to de
 - [Builds](https://vercel.com/docs/builds?from=related&source_path=%2Fdocs%2Fmonorepos%2Fmonorepo-faq&source_site=vercel-docs&relationship=related) — Understand how the build step works when creating a Vercel Deployment.
+- [Projects overview](https://vercel.com/docs/projects?from=related&source_path=%2Fdocs%2Fmonorepos%2Fmonorepo-faq&source_site=vercel-docs&relationship=related) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 - [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features?from=related&source_path=%2Fdocs%2Fmonorepos%2Fmonorepo-faq&source_site=vercel-docs&relationship=related) — Learn how to customize your deployments using Vercel's build features.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fmonorepos%2Fmonorepo-faq&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related&source_path=%2Fdocs%2Fmonorepos%2Fmonorepo-faq&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 
 Full cross-link map for this page: [/docs/monorepos/monorepo-faq.graph.md](/docs/monorepos/monorepo-faq.graph.md?from=related&source_path=%2Fdocs%2Fmonorepos%2Fmonorepo-faq&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

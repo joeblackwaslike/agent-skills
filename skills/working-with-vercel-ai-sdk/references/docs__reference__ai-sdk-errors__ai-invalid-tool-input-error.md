@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-invalid-tool-input-error.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "51f337a966f07c72a758e1ab43ba0afbc12a9f7d0434397e719719db4bb4b46e"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "2d31614e7b625ee5fff96fb07d55ec5437610715275bc7ca9562a6a6021e11ab"
 ---
 
 # AI_InvalidToolInputError
@@ -33,6 +33,7 @@ if (InvalidToolInputError.isInstance(error)) {
 - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
 - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
 - [AI_EmptyResponseBodyError](/docs/reference/ai-sdk-errors/ai-empty-response-body-error)
+- [AI_EvaluationUnsupportedQuestionTypeError](/docs/reference/ai-sdk-errors/ai-evaluation-unsupported-question-type-error)
 - [AI_InvalidArgumentError](/docs/reference/ai-sdk-errors/ai-invalid-argument-error)
 - [AI_InvalidDataContentError](/docs/reference/ai-sdk-errors/ai-invalid-data-content-error)
 - [AI_InvalidMessageRoleError](/docs/reference/ai-sdk-errors/ai-invalid-message-role-error)

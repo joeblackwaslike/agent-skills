@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/provider-management.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "d6e861eecffe1e3cc75d6a676e0e83560409ec7f3f6640475c441ba9836b5efa"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "bce16b29599fd2f3951f4e5a9622e8a739af77c4543000e1a8bffea768913dc1"
 ---
 
 # Provider & Model Management
@@ -470,6 +470,16 @@ const result = await streamText({
 
 This simplifies provider usage and makes it easier to switch between providers without changing your model references throughout your codebase.
 
+## Experimental evaluation models
+
+Custom providers accept `evaluationModels` aliases, and registries expose
+`evaluationModel('provider:model')`. These methods return model instances for
+`experimental_evaluate`. Direct string IDs use Gateway by default, or an
+explicitly configured default provider with an `evaluationModel` method. Registry
+middleware for language and image models does not apply to evaluation.
+See [Evaluation](/docs/ai-sdk-core/evaluation#model-aliases-and-registries)
+for aliases, default-provider configuration, and capability differences.
+
 
 ## Navigation
 
@@ -481,11 +491,13 @@ This simplifies provider usage and makes it easier to switch between providers w
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Code Mode](/docs/ai-sdk-core/code-mode)
+- [Tool Search](/docs/ai-sdk-core/tool-search)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
+- [Evaluation](/docs/ai-sdk-core/evaluation)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)

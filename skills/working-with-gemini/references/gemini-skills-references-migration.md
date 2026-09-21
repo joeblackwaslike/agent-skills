@@ -1,128 +1,180 @@
 ---
-source: "https://raw.githubusercontent.com/google-gemini/gemini-skills/main/skills/gemini-api-dev/references/migration.md"
-fetched_at: "2026-09-07T09:02:18.333Z"
-sha256: "e71418ee68fbe36998bd3fc3fad06ca685b8e09c0eb987fb5678efcb586dedd9"
+source: "https://raw.githubusercontent.com/google-gemini/gemini-skills/main/skills/gemini-live-api-dev/references/migration.md"
+fetched_at: "2026-09-21T09:41:39.746Z"
+sha256: "62b4c58c35d152f60bb9b548224a5ce3e4ce09cad07db0944e923a3d40ce4709"
 ---
 
-# Migration Reference
+# Gemini Live API Migration & Upgrading Reference
 
-How to migrate existing Gemini API code to the Interactions API and/or upgrade between model generations. Covers the agent workflow for performing migrations safely.
+Step-by-step checklists and protocol deltas for migrating legacy Live API models (Gemini 2.0, 2.5, and 3.1 Live) to **Gemini 3.8 Live** (`gemini-3.8-live`) and **Gemini 3.8 Live Extended Thinking** (`gemini-3.8-live-extended-thinking`).
 
-For detailed before/after code examples across all feature areas (text generation, multi-turn, streaming, function calling, structured output, grounding, multimodal), fetch the full migration guide: https://ai.google.dev/gemini-api/docs/migrate-to-interactions.md.txt
+For full hosted documentation, fetch:
+- [Gemini 3.8 Live Model Card & Migration Guide](https://ai.google.dev/gemini-api/docs/models/gemini-3.8-live.md.txt) (`#migrating`)
+- [Gemini 3.8 Live Extended Thinking Model Card & Upgrading Guide](https://ai.google.dev/gemini-api/docs/models/gemini-3.8-live-extended-thinking.md.txt) (`#upgrading`)
+- [Thinking in the Live API Guide](https://ai.google.dev/gemini-api/docs/live-api/thinking.md.txt)
 
-## Confirm the Migration Scope
+---
 
-**Before any edits, confirm the scope.** If the user's request does not explicitly name a single file, a specific directory, or an explicit file list, ask first and do not start editing.
+## 1. Migrating to Gemini 3.8 Live (`gemini-3.8-live`)
 
-Even imperative requests like "migrate my code", "upgrade to gemini 3", "migrate my app to gemini", or "switch to the Interactions API" leave the scope ambiguous. Ask:
+Use `gemini-3.8-live` as the default option for low-latency conversational voice agents without reasoning delays.
 
-> Before I start editing, can you confirm the scope?
-> 1. Entire project
-> 2. Specific subdirectory (e.g. `src/`, `api/`)
-> 3. Specific file or list of files
+### Model Replacements
 
-**Sizing the scope (large repos).** Before asking, get a per-directory count:
+| Legacy Model | Replacement | Notes |
+| :--- | :--- | :--- |
+| `gemini-3.1-flash-live-preview` | `gemini-3.8-live` (or `gemini-3.8-live-extended-thinking`) | Upgrades to default async tool calling & full-session client content |
+| `gemini-2.5-flash-native-audio-preview-12-2025` | `gemini-3.8-live` | Upgrades to 3.8 native audio dialogue |
+| `gemini-live-2.5-flash-preview` / `gemini-2.0-flash-live-001` | `gemini-3.8-live` | Deprecated preview models |
 
-```sh
-rg -l "generate_content|generateContent|gemini-1\.5|gemini-2\.0|gemini-2\.5|gemini-3\.1-flash-lite|gemini-3\.5|gemini-3\.6|gemini-3\.7|gemini-3-flash|thinking_budget|temperature" --type-not md | cut -d/ -f1 | sort | uniq -c | sort -rn
+### Migration Checklist (`gemini-3.1-flash-live-preview` → `gemini-3.8-live`)
+
+- [ ] **Model string**: Update your model string from `gemini-3.1-flash-live-preview` to `gemini-3.8-live`.
+- [ ] **Thinking level**: `thinking_level` is not supported for `gemini-3.8-live`.
+  Omit `thinking_level` (or `thinking_config`) from your session setup.
+- [ ] **Asynchronous function calling**: Async execution (`behavior: NON_BLOCKING`) is now the default function calling mode. You can still use synchronous blocking mode for backwards compatibility by setting `behavior: BLOCKING` on your tool declarations. Function scheduling (`SILENT`, `WHEN_IDLE`, `INTERRUPTED`) is supported.
+- [ ] **Client content updates**: `send_client_content` is supported throughout the entire session lifecycle with explicit roles (`user` or `model`). Setting `turn_complete=true` unconditionally interrupts active model generation. If you send content without `turn_complete`, the server waits for subsequent messages before responding.
+- [ ] **Proactive audio**: Proactive audio is permanently enabled. Remove `proactive_audio: false` (setting it returns an error).
+- [ ] **Affective dialogue**: Affective dialogue is removed from the API. Remove any `enable_affective_dialog` configurations from your code.
+- [ ] **Turn coverage**: Defaults to `TURN_INCLUDES_AUDIO_ACTIVITY_AND_ALL_VIDEO`. Video frames are sent to the model by default, so only send frames when needed to manage context and cost.
+- [ ] **Response modalities**: Audio is the supported response modality (`response_modalities=["AUDIO"]`). Enable output audio transcription (`output_audio_transcription`) if your application requires a text transcript.
+
+---
+
+## 2. Upgrading to Gemini 3.8 Live Extended Thinking (`gemini-3.8-live-extended-thinking`)
+
+`gemini-3.8-live-extended-thinking` introduces background reasoning during live audio sessions. It plans and executes asynchronous tools in the background while speaking natural conversational fillers (e.g., *"Checking flight options now..."*) to keep the interaction active.
+
+### Upgrading Checklist & Protocol Deltas
+
+When integrating `gemini-3.8-live-extended-thinking`, update your client state management to handle asynchronous reasoning signals:
+
+- [ ] **Model string**: Set `model="gemini-3.8-live-extended-thinking"`.
+- [ ] **Asynchronous reasoning protocol**: When interacting with models that use asynchronous reasoning, `turnComplete: true` no longer indicates that the model is idle. The server may continue processing background reasoning or tool calls. Your client must continue listening for subsequent server messages (such as tool calls or audio frames) after `turnComplete: true` arrives.
+- [ ] **Monitoring `interaction_status`**: Use the `interaction_status` (Python) / `interactionStatus` (JS) field on incoming server messages to determine current server state:
+  - `IN_PROGRESS`: The server is actively processing user input, running background reasoning, or awaiting responses for asynchronous tool calls. Additional model output or tool calls may follow.
+  - `IDLE`: The server has finished all processing, reasoning, and tool calls. The session is idle and waiting for user input.
+- [ ] **Asynchronous function calling**: Only asynchronous non-blocking execution (`behavior: NON_BLOCKING`) is supported. Synchronous blocking mode is not supported and returns a hard error. Function scheduling configurations are not supported.
+- [ ] **Thinking configuration**: Configure background reasoning using `thinking_config` (`thinking_level`: `"low"` | `"medium"` | `"high"`) in your setup configuration. Note that MINIMAL is not supported.
+- [ ] **Client content updates**: `send_client_content` is supported throughout the entire session lifecycle with explicit roles (`user` or `model`). Setting `turn_complete=true` immediately interrupts active generation.
+- [ ] **Proactive audio**: Permanently enabled. Setting `proactive_audio: false` returns an error.
+
+---
+
+## 3. SDK Implementation Examples (`gemini-3.8-live-extended-thinking`)
+
+### Python
+
+```python
+import asyncio
+from google import genai
+from google.genai import types
+
+client = genai.Client()
+model = "gemini-3.8-live-extended-thinking"
+
+search_flights = types.FunctionDeclaration(
+    name="search_flights",
+    description="Searches for available flights to a destination.",
+    behavior="NON_BLOCKING",
+    parameters={
+        "type": "OBJECT",
+        "properties": {"destination": {"type": "STRING"}},
+        "required": ["destination"],
+    },
+)
+
+config = types.LiveConnectConfig(
+    response_modalities=["AUDIO"],
+    thinking_config=types.ThinkingConfig(thinking_level="low"),
+    tools=[types.Tool(function_declarations=[search_flights])],
+)
+
+async def main():
+    async with client.aio.live.connect(model=model, config=config) as session:
+        async for message in session.receive():
+            status = getattr(message, "interaction_status", None)
+
+            # 1. Play spoken conversational fillers or final audio response
+            if message.server_content and message.server_content.model_turn:
+                for part in message.server_content.model_turn.parts:
+                    if part.inline_data:
+                        # Process 24kHz PCM audio chunk
+                        pass
+
+            # 2. Execute asynchronous non-blocking tool call
+            if message.tool_call:
+                for call in message.tool_call.function_calls:
+                    response = types.FunctionResponse(
+                        id=call.id,
+                        name=call.name,
+                        response={"result": "Flight DL 145 ($145)"},
+                    )
+                    await session.send_tool_response(function_responses=[response])
+
+            # 3. Session is idle only when status == "IDLE"
+            if status == "IDLE":
+                print("Session is idle and ready for user input.")
+
+if __name__ == "__main__":
+    asyncio.run(main())
 ```
 
-Present the breakdown in your question (e.g. *"Found 42 references across 3 directories: src/ (28), tests/ (10), scripts/ (4). Which to migrate?"*).
+### JavaScript / TypeScript
 
-**Proceed without asking** only when the scope is already unambiguous, the user named an exact file ("migrate `app.py`"), pointed at a directory ("migrate everything under `src/`"), or already confirmed scope in an earlier turn.
+```javascript
+import { GoogleGenAI } from '@google/genai';
 
-## API Migration: `generateContent` → `Interactions`
+const ai = new GoogleGenAI({});
+const model = 'gemini-3.8-live-extended-thinking';
 
-The core changes when migrating from `generateContent` to the Interactions API:
+const searchFlights = {
+  name: 'search_flights',
+  description: 'Searches for available flights to a destination.',
+  behavior: 'NON_BLOCKING',
+  parameters: {
+    type: 'OBJECT',
+    properties: { destination: { type: 'STRING' } },
+    required: ['destination'],
+  },
+};
 
-| What | `generateContent` | Interactions API |
-|------|----------------|-----------------|
-| **SDK method** | `client.models.generate_content()` | `client.interactions.create()` |
-| **Response text** | `response.text` | `interaction.steps[-1].content[0].text` |
-| **Multi-turn** | Manual history array or `client.chats.create()` | `previous_interaction_id=interaction.id` |
-| **Streaming** | `generate_content_stream()` / `:streamGenerateContent` | `stream=True` + `step.delta` events |
-| **Structured output** | `config.response_format` inside `GenerateContentConfig` | Top-level `response_format` array |
-| **Function calling** | `candidates[0].content.parts[0].function_call` | `function_call` step in `interaction.steps` |
-| **Search grounding** | `groundingMetadata` on candidates | `google_search_call`/`google_search_result` steps + inline `annotations` |
-| **Config/types** | `types.GenerateContentConfig(...)`, `types.Tool(...)`, `types.Content(...)`, `types.Part.*` | Not used. Interactions API uses plain Python dicts and direct params. Check the feature docs for exact format. |
-| **REST endpoint** | `POST /v1beta/models/{model}:generateContent` | `POST /v1beta/interactions` |
-| **SDK package** | `google-genai` ≥ 1.x or legacy `google-generativeai` | `google-genai` ≥ 2.0.0 |
+const session = await ai.live.connect({
+  model,
+  config: {
+    responseModalities: ['audio'],
+    thinkingConfig: { thinkingLevel: 'low' },
+    tools: [{ functionDeclarations: [searchFlights] }],
+  },
+  callbacks: {
+    onmessage: async (message) => {
+      // 1. Play spoken conversational fillers or final audio response
+      if (message.serverContent?.modelTurn?.parts) {
+        for (const part of message.serverContent.modelTurn.parts) {
+          if (part.inlineData) {
+            // Process base64 24kHz PCM audio chunk
+          }
+        }
+      }
 
-For full before/after code examples, fetch the [Migration Guide](https://ai.google.dev/gemini-api/docs/migrate-to-interactions.md.txt) or read the Interactions API documentation pages for each feature.
+      // 2. Execute asynchronous non-blocking tool call
+      if (message.toolCall?.functionCalls) {
+        for (const call of message.toolCall.functionCalls) {
+          session.sendToolResponse({
+            functionResponses: [{
+              id: call.id,
+              name: call.name,
+              response: { result: 'Flight DL 145 ($145)' },
+            }],
+          });
+        }
+      }
 
-## Model Migration
-
-### Deprecated Models
-
-| Model | Status | Drop-in Replacement |
-|-------|--------|-------------------|
-| `gemini-2.0-flash` | Deprecated | `gemini-3.8-flash` |
-| `gemini-2.0-flash-lite` | Deprecated | `gemini-3.5-flash-lite` |
-| `gemini-1.5-pro` | Deprecated | `gemini-3.8-flash` |
-| `gemini-1.5-flash` | Deprecated | `gemini-3.8-flash` |
-
-### Active Legacy Models (migration recommended)
-
-| Current Model | Recommended Target | Why |
-|--------------|-------------------|-----|
-| `gemini-3.7-flash`, `gemini-3.6-flash`, `gemini-3.5-flash`, or `gemini-3-flash-preview` | `gemini-3.8-flash` | Latest Flash: stronger agentic/multimodal performance, reduced token usage/loop spiraling |
-| `gemini-2.5-flash` | `gemini-3.8-flash` or `gemini-3.5-flash-lite` | Latest Flash with Interactions API support, or latest Flash-Lite for cheaper/simpler tasks. |
-| `gemini-2.5-flash-lite` or `gemini-3.1-flash-lite` | `gemini-3.5-flash-lite` | Latest Flash-lite with Interactions API support |
-| `gemini-2.5-pro` | `gemini-3.1-pro-preview` | Latest Pro with 1M context, complex reasoning |
-
-> **Note:** Within the Interactions API, model upgrades are generally drop-in — change the model string and verify. The breaking changes are at the **API level** (generateContent → Interactions) and parameter deprecations (`temperature`, `top_p`, `top_k`).
-
-## Migration Checklist
-
-Every item is tagged: **`[BLOCKS]`** items cause errors or broken behavior if missed. **`[TUNE]`** items are quality/performance adjustments.
-
-### API Migration (generateContent → Interactions)
-
-- [ ] Updated SDK: `google-genai` ≥ 2.0.0 (Python) / `@google/genai` ≥ 2.0.0 (JS)
-- [ ] Replaced `client.models.generate_content()` → `client.interactions.create()`
-- [ ] Replaced `response.text` → `interaction.steps[-1].content[0].text`
-- [ ] Replaced `response.candidates[0].content.parts` → iterate `interaction.steps`
-- [ ] Replaced `client.chats.create()` / manual history → `previous_interaction_id`
-- [ ] Removed all `types.*` wrappers (`GenerateContentConfig`, `Tool`, `Content`, `Part`) — Interactions API uses plain dicts. Check feature docs for exact format.
-- [ ] Moved `response_format` from `GenerateContentConfig` to top-level parameter
-- [ ] Replaced `generate_content_stream()` → `stream=True` + step-based event handling
-- [ ] Updated function calling: candidates-based → step-based tool lifecycle
-- [ ] REST: Changed endpoint to `/v1beta/interactions`
-- [ ] REST: Add `Api-Revision: 2026-05-20` header (SDK ≥ 2.0.0 sets it automatically)
-- [ ] Replaced `google-generativeai` (Python) → `google-genai` ≥ 2.0.0
-- [ ] Replaced `@google/generative-ai` (JS) → `@google/genai` ≥ 2.0.0
-- [ ] Updated all import statements to match new package names
-
-### Model String Updates
-
-- [ ] Replaced `gemini-2.0-*` model strings with current equivalents
-- [ ] Replaced `gemini-1.5-*` model strings with current equivalents
-- [ ] Consider upgrading `gemini-3.7-flash` → `gemini-3.8-flash`
-- [ ] Consider upgrading `gemini-3.6-flash` → `gemini-3.8-flash`
-- [ ] Consider upgrading `gemini-3.5-flash` → `gemini-3.8-flash`
-- [ ] Consider upgrading `gemini-3-flash-preview` → `gemini-3.8-flash`
-- [ ] Consider upgrading `gemini-2.5-flash` → `gemini-3.8-flash`
-- [ ] Consider upgrading `gemini-3.1-flash-lite` → `gemini-3.5-flash-lite`
-- [ ] Consider upgrading `gemini-2.5-flash-lite` → `gemini-3.5-flash-lite` or `gemini-3.1-flash-lite`
-- [ ] Consider upgrading `gemini-2.5-pro` → `gemini-3.1-pro-preview`
-
-### Migrate to Gemini 3.8 Flash or Gemini 3.5 Flash-Lite
-
-Use this checklist if the user requests to migrate to Gemini 3.8 Flash or Gemini 3.5 Flash-Lite. For full documentation of the changes, fetch the [Latest Gemini models guide](https://ai.google.dev/gemini-api/docs/latest-model.md.txt) and look for the migration section.
-
-- [ ] Updated model name to `gemini-3.8-flash` or `gemini-3.5-flash-lite` (depending on user request)
-- [ ] Removed `temperature`, `top_p`, `top_k` from config
-- [ ] Replaced `thinking_budget` with `thinking_level` (`minimal`, `low`, `medium`, `high`)
-
----
-
-## Verify the Migration
-
-After updating, run a spot-check to confirm the Interactions API is working:
-
-1. Make a single `client.interactions.create()` call with a simple input
-2. Assert `interaction.steps` is not empty
-3. Assert at least one step has `type == "model_output"` with non-empty text
-4. For multi-turn, verify `previous_interaction_id` preserves context across turns
-
-For verification code snippets, fetch the [Migration Guide](https://ai.google.dev/gemini-api/docs/migrate-to-interactions.md.txt).
+      // 3. Session is idle only when interactionStatus === 'IDLE'
+      if (message.interactionStatus === 'IDLE') {
+        console.log('Session is idle and waiting for input.');
+      }
+    },
+  },
+});
+```

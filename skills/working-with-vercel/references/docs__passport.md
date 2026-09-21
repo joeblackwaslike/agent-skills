@@ -16,8 +16,8 @@ related:
 summary: Learn how to protect deployments with Passport, read visitor identity, and verify Passport tokens in server-side code.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "8532b2d2aa7c5bd48d4b40e736f623afc44492a8d31318bf87a83a8b5f3f8122"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "f7477af6f9e845ae8342d23b442e0801c4330bde7675709dbc2142fa35844df5"
 ---
 
 # Restrict access to deployments with Passport
@@ -39,7 +39,7 @@ Passport lets you protect deployments with your own identity provider. Visitors 
 - [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Fpassport&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
 - [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related&source_path=%2Fdocs%2Fpassport&source_site=vercel-docs&relationship=related) — Protect who can see your deployments.
 - [Access Control](https://vercel.com/docs/security/access-control?from=related&source_path=%2Fdocs%2Fpassport&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
-- [Password Protection](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/password-protection?from=related&source_path=%2Fdocs%2Fpassport&source_site=vercel-docs&relationship=related) — Require visitors to enter a password before they can view your deployments.
+- [Bypass Deployment Protection for testing, sharing, and automation](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection?from=related&source_path=%2Fdocs%2Fpassport&source_site=vercel-docs&relationship=related) — Learn how to bypass Deployment Protection for specific domains, or for all deployments in a project.
 - [Auth.js](https://vercel.com/docs/connect/frameworks/authjs?from=related&source_path=%2Fdocs%2Fpassport&source_site=vercel-docs&relationship=related) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
 
 Full cross-link map for this page: [/docs/passport.graph.md](/docs/passport.graph.md?from=related&source_path=%2Fdocs%2Fpassport&source_site=vercel-docs&relationship=graph)

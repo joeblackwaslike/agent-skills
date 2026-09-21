@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/typescript-v2-preview.md"
-fetched_at: "2026-08-10T05:26:58.686Z"
-sha256: "d59d67e7bc6f7f27a75fbae3837acc1396216aad619d5bc8161185aed1121ba5"
+fetched_at: "2026-09-21T09:39:23.760Z"
+sha256: "e9db92c5509efc9988fa54a9fe3301b049ff04c582b4a1eca2f624a7203bd9aa"
 ---
 
 > ## Documentation Index
@@ -18,7 +18,7 @@ sha256: "d59d67e7bc6f7f27a75fbae3837acc1396216aad619d5bc8161185aed1121ba5"
   To migrate, use the [`query()` API](/docs/en/agent-sdk/typescript) and the [session options](/docs/en/agent-sdk/sessions) it accepts. Pass an `AsyncIterable<SDKUserMessage>` for multi-turn conversations, or `options.resume` to continue a saved session. This page is kept for reference if you maintain code on Agent SDK 0.2.x or earlier.
 </Warning>
 
-V2 was an experimental session API that removed the need for async generators and yield coordination. Instead of managing generator state across turns, each turn was a separate `send()`/`stream()` cycle. The API surface reduced to three concepts:
+V2 was an experimental session API that removed the need for async generators and yield coordination. Instead of managing generator state across turns, each turn was a separate `send()`/`stream()` cycle. The API surface reduced to creating a session, sending a message, and streaming the response:
 
 * `createSession()` / `resumeSession()`: Start or continue a conversation
 * `session.send()`: Send a message

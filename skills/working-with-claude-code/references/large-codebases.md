@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/large-codebases.md"
-fetched_at: "2026-09-14T09:37:17.168Z"
-sha256: "ccaf014e4b5bb5d1f89b6320784d680179ee94039a1856f40119fe4d8aa467a9"
+fetched_at: "2026-09-21T09:39:23.760Z"
+sha256: "236ebb95fef81651e02febbc1a8a670fa671b4b40d81d40424e10e73a5466bdb"
 ---
 
 > ## Documentation Index
@@ -361,7 +361,7 @@ For more on creating and organizing skills, see [Skills](/docs/en/skills).
 
 ### Keep skills discoverable
 
-With skills spread across many directories, the list Claude chooses from can grow large. Claude picks a skill by reading every discovered skill's name and description, and only the chosen skill's full content loads into context. This section covers how to keep that list small and write descriptions that survive shortening.
+With skills spread across many directories, the list Claude chooses from can grow large. Claude picks a skill by reading every discovered skill's name and description, and only the chosen skill's full content loads into context. This section covers how to keep that list small.
 
 Which skills are in scope depends on where you start Claude:
 
@@ -369,7 +369,7 @@ Which skills are in scope depends on where you start Claude:
 * **From the repository root**: root skills, plus skills from every subdirectory Claude touches during the session, which can accumulate into the hundreds
 * **After adding a sibling with [`--add-dir`](#grant-access-across-packages-or-repositories)**: that sibling's skills load too. The `additionalDirectories` setting grants file access only and does not load skills
 
-Names always load, but [descriptions are shortened when there are many](/docs/en/skills#skill-descriptions-are-cut-short), which can strip the keywords Claude uses to decide whether a skill applies. Keep descriptions short and lead with words a request would contain, like "writing or modifying tests in `packages/api/`".
+Names always load, but [when there are many, some skills lose their descriptions entirely](/docs/en/skills#skill-descriptions-are-cut-short), which can strip the keywords Claude uses to decide whether a skill applies. Keep descriptions short and lead with words a request would contain, like "writing or modifying tests in `packages/api/`".
 
 For skills that many directories share, such as PR conventions or a deploy checklist, place them in the repository root's `.claude/skills/` so they load from any starting directory. When shared skills need their own version history or must work across repositories, package them as a [plugin](/docs/en/plugins) instead. Plugin skills use a `plugin-name:skill-name` namespace, so they never collide with per-directory skills. A platform team can version and update them in one place.
 

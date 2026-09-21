@@ -16,13 +16,13 @@ related:
 summary: Review and manage Vercel Toolbar comment threads from the terminal with the vercel comments CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/comments.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "be2f43b0ee2a7f6cd238cd99ae0b2d200bfd20e0de6f5e0e4a8dbaabc957810d"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "5fd619666c3a68f9af038720ac1501360fc8094ef274e5b5f0e376342b3e773d"
 ---
 
 # vercel comments
 
-> **🔒 Permissions Required**: The vercel comments command
+> **🔒 Permissions Required**: The vercel comments command (Beta)
 
 The `vercel comments` command lets you review and manage existing [Vercel Toolbar Comments](/docs/comments) from the terminal. You can list, inspect, reply to, resolve, reopen, and open threads, as well as edit or delete their messages. Use the [Vercel Toolbar](/docs/vercel-toolbar) to create new comment threads.
 
@@ -35,8 +35,8 @@ The `vercel comments` command lets you review and manage existing [Vercel Toolba
 - [Manage Vercel Toolbar comments from the CLI](https://vercel.com/changelog/manage-vercel-toolbar-comments-from-the-cli?from=related&source_path=%2Fdocs%2Fcli%2Fcomments&source_site=vercel-docs&relationship=related)
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fcomments&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel alerts](https://vercel.com/docs/cli/alerts?from=related&source_path=%2Fdocs%2Fcli%2Fcomments&source_site=vercel-docs&relationship=related) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
-- [vercel traces](https://vercel.com/docs/cli/traces?from=related&source_path=%2Fdocs%2Fcli%2Fcomments&source_site=vercel-docs&relationship=related) — Inspect a request trace in the terminal, open it in the Vercel Dashboard, or manage the trace sampling rules for a proje
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fcomments&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel traces](https://vercel.com/docs/cli/traces?from=related&source_path=%2Fdocs%2Fcli%2Fcomments&source_site=vercel-docs&relationship=related) — Inspect a request trace in the terminal, open it in the Vercel Dashboard, or manage the trace sampling rules for a proje
 - [vercel connect](https://vercel.com/docs/cli/connect?from=related&source_path=%2Fdocs%2Fcli%2Fcomments&source_site=vercel-docs&relationship=related) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
 
 Full cross-link map for this page: [/docs/cli/comments.graph.md](/docs/cli/comments.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fcomments&source_site=vercel-docs&relationship=graph)

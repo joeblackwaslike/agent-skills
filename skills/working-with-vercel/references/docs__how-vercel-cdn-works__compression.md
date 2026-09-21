@@ -12,8 +12,8 @@ related:
 summary: Vercel helps reduce data transfer and improve performance by supporting both Gzip and Brotli compression
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/how-vercel-cdn-works/compression.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "9db10efd3cfcb2c22481168314d558da6d6d2b1b66d07ad168a9cf9c3188fad6"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "75aa81933f9851c683b115b63fef2b7a20737618fb1c7657c93d3f4e386dc448"
 ---
 
 # Vercel CDN Compression
@@ -28,13 +28,14 @@ Vercel helps reduce data transfer and improve performance by supporting both Gzi
 
 - [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Fhow-vercel-cdn-works%2Fcompression&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
 - [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn?from=related&source_path=%2Fdocs%2Fhow-vercel-cdn-works%2Fcompression&source_site=vercel-docs&relationship=related) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
-- [What are the best practices for hosting videos on Vercel?](https://vercel.com/kb/guide/best-practices-for-hosting-videos-on-vercel-nextjs-mp4-gif?from=related&source_path=%2Fdocs%2Fhow-vercel-cdn-works%2Fcompression&source_site=vercel-docs&relationship=related) — Learn the ideal solutions for using video files like .mp4 and .gif on Vercel to prevent excess bandwidth consumption.
+- [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel?from=related&source_path=%2Fdocs%2Fhow-vercel-cdn-works%2Fcompression&source_site=vercel-docs&relationship=related) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
 - [How we run Vercel's CDN in front of Discourse](https://vercel.com/blog/how-we-run-vercels-cdn-in-front-of-discourse?from=related&source_path=%2Fdocs%2Fhow-vercel-cdn-works%2Fcompression&source_site=vercel-docs&relationship=related)
+- [What are the best practices for hosting videos on Vercel?](https://vercel.com/kb/guide/best-practices-for-hosting-videos-on-vercel-nextjs-mp4-gif?from=related&source_path=%2Fdocs%2Fhow-vercel-cdn-works%2Fcompression&source_site=vercel-docs&relationship=related) — Learn the ideal solutions for using video files like .mp4 and .gif on Vercel to prevent excess bandwidth consumption.
 - [Vercel CDN overview](https://vercel.com/docs/cdn?from=related&source_path=%2Fdocs%2Fhow-vercel-cdn-works%2Fcompression&source_site=vercel-docs&relationship=related) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
 - [CDN security](https://vercel.com/docs/cdn-security?from=related&source_path=%2Fdocs%2Fhow-vercel-cdn-works%2Fcompression&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
 - [Encryption and TLS](https://vercel.com/docs/cdn-security/encryption?from=related&source_path=%2Fdocs%2Fhow-vercel-cdn-works%2Fcompression&source_site=vercel-docs&relationship=related) — Learn how Vercel encrypts data in transit and at rest.
 - [Caching](https://vercel.com/docs/caching?from=related&source_path=%2Fdocs%2Fhow-vercel-cdn-works%2Fcompression&source_site=vercel-docs&relationship=related) — Learn how Vercel caches content across multiple layers to deliver fast responses and reduce load on your backend.
-- [Limits and Pricing for Image Optimization](https://vercel.com/docs/image-optimization/limits-and-pricing?from=related&source_path=%2Fdocs%2Fhow-vercel-cdn-works%2Fcompression&source_site=vercel-docs&relationship=related) — This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can i
+- [Flat Rate CDN](https://vercel.com/docs/pricing/flat-rate-cdn?from=related&source_path=%2Fdocs%2Fhow-vercel-cdn-works%2Fcompression&source_site=vercel-docs&relationship=related) — Flat Rate CDN gives you fixed monthly CDN pricing and protection against usage spikes across capacity tiers.
 
 Full cross-link map for this page: [/docs/how-vercel-cdn-works/compression.graph.md](/docs/how-vercel-cdn-works/compression.graph.md?from=related&source_path=%2Fdocs%2Fhow-vercel-cdn-works%2Fcompression&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

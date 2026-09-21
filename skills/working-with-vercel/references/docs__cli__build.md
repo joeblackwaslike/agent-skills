@@ -3,7 +3,7 @@ title: vercel build
 product: vercel
 url: /docs/cli/build
 canonical_url: "https://vercel.com/docs/cli/build"
-last_updated: 2026-08-11
+last_updated: 2026-09-10
 type: reference
 prerequisites:
   - /docs/cli
@@ -14,8 +14,8 @@ related:
 summary: Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/build.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "511b044b4cf7c1d16f5079af40f4c7037d83a2d29336cca530cdeda6859118a3"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "4ede6fea0e2b96edc912654c4bc4fae3c90035bcd93ba80151a6663849d1a4a0"
 ---
 
 # vercel build
@@ -32,8 +32,8 @@ Build artifacts are placed into the `.vercel/output` directory according to the
 
 - [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands?from=related&source_path=%2Fdocs%2Fcli%2Fbuild&source_site=vercel-docs&relationship=related) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
 - [Troubleshooting Vercel Cron Jobs](https://vercel.com/kb/guide/troubleshooting-vercel-cron-jobs?from=related&source_path=%2Fdocs%2Fcli%2Fbuild&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot cron jobs that aren't being run or logged when using Vercel Cron Jobs.
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fbuild&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel dev](https://vercel.com/docs/cli/dev?from=related&source_path=%2Fdocs%2Fcli%2Fbuild&source_site=vercel-docs&relationship=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fbuild&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related&source_path=%2Fdocs%2Fcli%2Fbuild&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fbuild&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel link](https://vercel.com/docs/cli/link?from=related&source_path=%2Fdocs%2Fcli%2Fbuild&source_site=vercel-docs&relationship=related) — Learn how to link a local directory to a Vercel Project using the vercel link CLI command.

@@ -3,7 +3,7 @@ title: Managing DNS Records
 product: vercel
 url: /docs/domains/managing-dns-records
 canonical_url: "https://vercel.com/docs/domains/managing-dns-records"
-last_updated: 2026-08-28
+last_updated: 2026-09-15
 type: how-to
 prerequisites:
   - /docs/domains
@@ -12,8 +12,8 @@ related:
 summary: Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/managing-dns-records.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "06d8ecfea614b940c08f3d8b5c9732dfc812c4418f31448d197d3ef964dee4bb"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "c3590fd2bbdbf5222202d286a3639e7c92c14031d89b3274c59f1b43ef22b626"
 ---
 
 # Managing DNS Records
@@ -32,9 +32,9 @@ Once you've added a domain and it's using Vercel's nameservers, you can view its
 - [How can I migrate a site to Vercel without downtime?](https://vercel.com/kb/guide/zero-downtime-migration?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-dns-records&source_site=vercel-docs&relationship=related) — Information about how to assign a Vercel deployment to a domain without downtime.
 - [DNS Records UI](https://vercel.com/blog/dns-records-ui?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-dns-records&source_site=vercel-docs&relationship=related)
 - [How can I do a "Zero Downtime" DNS migration to Vercel?](https://vercel.com/kb/guide/zero-downtime-migration-for-dns?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-dns-records&source_site=vercel-docs&relationship=related) — Information about how to migrate your DNS records to Vercel without downtime.
-- [Working with DNS](https://vercel.com/docs/domains/working-with-dns?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-dns-records&source_site=vercel-docs&relationship=related) — Learn how DNS works in order to properly configure your domain.
-- [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-dns-records&source_site=vercel-docs&relationship=related) — Add and configure a custom domain for your Vercel project using the CLI.
+- [Working with DNS](https://vercel.com/docs/domains/working-with-dns?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-dns-records&source_site=vercel-docs&relationship=related) — Learn how DNS works to properly configure your domain.
 - [Troubleshooting domains](https://vercel.com/docs/domains/troubleshooting?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-dns-records&source_site=vercel-docs&relationship=related) — Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
+- [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-dns-records&source_site=vercel-docs&relationship=related) — Add and configure a custom domain for your Vercel project using the CLI.
 - [Working with domains](https://vercel.com/docs/domains/working-with-domains?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-dns-records&source_site=vercel-docs&relationship=related) — Learn how domains work and the options Vercel provides for managing them.
 - [Working with nameservers](https://vercel.com/docs/domains/working-with-nameservers?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-dns-records&source_site=vercel-docs&relationship=related) — Learn about nameservers and the benefits Vercel nameservers provide.
 
@@ -121,7 +121,7 @@ Vercel streamlines this process for common third-party services by allowing you 
 
 ![Image](`/docs-assets/static/docs/concepts/projects/custom-domains/dns-presents-light.png`)
 
-3. You will be presented with a list of commonly used third-party providers. If your provider is listed, select it, and the necessary DNS Records—such as MX for email or TXT for other services like [Bluesky](/kb/guide/use-my-domain-bluesky) will automatically be configured on your domain.
+3. You will be presented with a list of commonly used third-party providers. If your provider is listed, select it, and the necessary DNS records, such as MX for email or TXT for other services like Bluesky, will automatically be configured on your domain.
 
 If your provider is not listed, please refer to their documentation to find out which DNS Records you need to add.
 

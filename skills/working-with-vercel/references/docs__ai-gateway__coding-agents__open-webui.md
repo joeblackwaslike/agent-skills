@@ -3,7 +3,7 @@ title: Open WebUI with AI Gateway
 product: vercel
 url: /docs/ai-gateway/coding-agents/open-webui
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/open-webui"
-last_updated: 2026-09-08
+last_updated: 2026-09-13
 type: how-to
 prerequisites:
   - /docs/ai-gateway/coding-agents
@@ -13,8 +13,8 @@ related:
 summary: Connect Open WebUI to AI Gateway. Configure your API key, endpoint, and models to use multiple AI providers and monitor chat spending in one place.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/open-webui.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "437452136f557aa7c1dbb7f606d5410e7e796e0802b0ff9b9ab63b6a77add586"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "2b84178c520436906f348f4c8bac1fba720b0d6d69eab9f28de0f8010e162e6a"
 ---
 
 # Open WebUI with AI Gateway

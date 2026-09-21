@@ -3,7 +3,7 @@ title: Key Management Service (KMS)
 product: vercel
 url: /docs/kms
 canonical_url: "https://vercel.com/docs/kms"
-last_updated: 2026-08-18
+last_updated: 2026-09-07
 type: conceptual
 prerequisites:
   []
@@ -16,13 +16,13 @@ related:
 summary: Sign JWTs and messages with Vercel-managed signing keys. Learn about issuers, keys, and policies, and how to sign from Vercel Functions with...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "e000a6dee312183e9409e39166c7031eac5881341edc59f257b4a799c84dac47"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "1cf4a09d71ecdeb05830c7bfaadfbd131ae468c62457eb6a2042585cac96f422"
 ---
 
 # Key Management Service (KMS)
 
-> **🔒 Permissions Required**: Key Management Service
+> **🔒 Permissions Required**: Key Management Service (Beta)
 
 Vercel Key Management Service (KMS) gives you managed signing keys that live on Vercel. You sign JWTs and messages by calling the KMS signing API from your Vercel Functions, and Vercel publishes the matching public keys so any relying party can verify the result. Your private keys never leave Vercel, so you avoid storing signing material in environment variables.
 
@@ -34,10 +34,10 @@ Vercel Key Management Service (KMS) gives you managed signing keys that live on 
 
 - [Sign JWTs from your Functions without managing private keys](https://vercel.com/changelog/sign-jwts-from-your-functions-without-managing-private-keys?from=related&source_path=%2Fdocs%2Fkms&source_site=vercel-docs&relationship=related)
 - [Create a signing key](https://vercel.com/docs/rest-api/kms/create-a-signing-key?from=related&source_path=%2Fdocs%2Fkms&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/keys — Create a new signing key for a KMS issuer. Depending on the activation mode, the
-- [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token?from=related&source_path=%2Fdocs%2Fkms&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
-- [Activate a signing key](https://vercel.com/docs/rest-api/kms/activate-a-signing-key?from=related&source_path=%2Fdocs%2Fkms&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/keys/{keyId}/activate — Activate a pending signing key so the issuer starts signing with
-- [Revoke a signing key](https://vercel.com/docs/rest-api/kms/revoke-a-signing-key?from=related&source_path=%2Fdocs%2Fkms&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/keys/{keyId}/revoke — Immediately revoke a signing key that is already scheduled for rev
 - [Sign a message](https://vercel.com/docs/rest-api/kms/sign-a-message?from=related&source_path=%2Fdocs%2Fkms&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/sign/message — Sign a raw message with a KMS issuer's active signing key. Authenticate t
+- [Activate a signing key](https://vercel.com/docs/rest-api/kms/activate-a-signing-key?from=related&source_path=%2Fdocs%2Fkms&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/keys/{keyId}/activate — Activate a pending signing key so the issuer starts signing with
+- [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token?from=related&source_path=%2Fdocs%2Fkms&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
+- [Revoke a signing key](https://vercel.com/docs/rest-api/kms/revoke-a-signing-key?from=related&source_path=%2Fdocs%2Fkms&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/keys/{keyId}/revoke — Immediately revoke a signing key that is already scheduled for rev
 
 Full cross-link map for this page: [/docs/kms.graph.md](/docs/kms.graph.md?from=related&source_path=%2Fdocs%2Fkms&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

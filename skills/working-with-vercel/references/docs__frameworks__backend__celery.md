@@ -17,13 +17,13 @@ related:
 summary: Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without a long-lived worker process.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/celery.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "8b37c0f37454a37b989045369b60292a7e192aa87fe62f09ca1b7f3ee07420aa"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "0ec162a8374a7f932ea3ef854ca8cf845edfe52066a79fe86a7001c30be3fdc9"
 ---
 
 # Run background tasks with Celery on Vercel
 
-> **🔒 Permissions Required**: Vercel Queues
+> **🔒 Permissions Required**: Vercel Queues (Beta)
 
 Deploy Celery on Vercel with the Python runtime, Vercel Queues, and Vercel
 Functions. Vercel builds each Celery worker as a private, queue-triggered

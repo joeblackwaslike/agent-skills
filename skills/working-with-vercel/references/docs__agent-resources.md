@@ -3,7 +3,7 @@ title: Agent Resources
 product: vercel
 url: /docs/agent-resources
 canonical_url: "https://vercel.com/docs/agent-resources"
-last_updated: 2026-09-03
+last_updated: 2026-09-15
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Set up AI coding tools with Vercel documentation, reusable skills, and secure access to projects, deployments, and logs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "a5513555fb95420b844f85f054ec7d474608c0dd41b0cbcb67131b85da9d1a5e"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "529fec16b511d60561228c91371988a6a524b81d9faad1983eec47d3e9c5a236"
 ---
 
 # Agent Resources
@@ -32,12 +32,13 @@ Give AI coding tools Vercel documentation, reusable skills, and secure access to
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent?from=related&source_path=%2Fdocs%2Fagent-resources&source_site=vercel-docs&relationship=related) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
 - [Agent Skills: Creating, Installing, and Sharing Reusable Agent Context](https://vercel.com/kb/guide/agent-skills-creating-installing-and-sharing-reusable-agent-context?from=related&source_path=%2Fdocs%2Fagent-resources&source_site=vercel-docs&relationship=related) — This guide will cover what skills are, how to create custom skills for yourself and your team, and how to publish them t
 - [How to set up your Next.js project for AI coding agents](https://nextjs.org/docs/app/guides/ai-agents?from=related&source_path=%2Fdocs%2Fagent-resources&source_site=vercel-docs&relationship=related) — Learn how to configure your Next.js project so AI coding agents use up-to-date documentation instead of outdated trainin
+- [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent?from=related&source_path=%2Fdocs%2Fagent-resources&source_site=vercel-docs&relationship=related) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
 - [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related&source_path=%2Fdocs%2Fagent-resources&source_site=vercel-docs&relationship=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
 - [Building Slack agents can be easy](https://vercel.com/blog/building-slack-agents-can-be-easy?from=related&source_path=%2Fdocs%2Fagent-resources&source_site=vercel-docs&relationship=related)
 - [Introducing the Vercel plugin for coding agents](https://vercel.com/changelog/introducing-vercel-plugin-for-coding-agents?from=related&source_path=%2Fdocs%2Fagent-resources&source_site=vercel-docs&relationship=related)
+- [Ship It](https://eve.dev/docs/tutorial/ship-it?from=related&source_path=%2Fdocs%2Fagent-resources&source_site=vercel-docs&relationship=related) — Part 8 of the Build an Agent tutorial. Put a web dashboard on the agent with useEveAgent, replace placeholderAuth, and d
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fagent-resources&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 - [AI SDK](https://vercel.com/docs/ai-sdk?from=related&source_path=%2Fdocs%2Fagent-resources&source_site=vercel-docs&relationship=related) — Build TypeScript agents and AI applications with a unified API for models, tools, structured output, and streaming.
 
@@ -137,6 +138,12 @@ Skills.sh supports 18+ AI agents including Claude Code, GitHub Copilot, Cursor, 
 - Specialized domains (security, infrastructure, marketing)
 
 See [Agent Skills](/docs/agent-resources/skills) for the complete list of Vercel-provided skills, or browse the [Skills.sh directory](https://skills.sh) to find skills from the community.
+
+## TanStack Intent
+
+[TanStack Intent](https://tanstack.com/intent/latest) loads agent skills from installed dependencies, keeping the guidance aligned with the package version in your project. Use it when building with libraries that publish skills, such as TanStack AI, Start, and Query.
+
+Follow the [TanStack Intent setup instructions](/docs/agent-resources/skills#tanstack-intent) to select permitted skills and configure your coding agent. See [Choosing between TanStack Intent and skills](/kb/guide/tanstack-intent-vs-skills) for how the two tools fit into your workflow.
 
 ## CLI workflows
 

@@ -16,8 +16,8 @@ related:
 summary: List of available data sources that you can view and monitor with Observability on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/observability/insights.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "f56e85a54908b7bc0dfe48882f870c98e4477c3fc63cf9945866b82b9e838ae4"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "38026da30f02e3fbc9ae9af86c2a45d3c5565e9eb493c5ef91afaa844445902e"
 ---
 
 # Observability Insights
@@ -35,10 +35,10 @@ Vercel organizes Observability through sections that correspond to different fea
 - [Anyone can build agents, but it takes a platform to run them](https://vercel.com/blog/anyone-can-build-agents-but-it-takes-a-platform-to-run-them?from=related&source_path=%2Fdocs%2Fobservability%2Finsights&source_site=vercel-docs&relationship=related)
 - [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Fobservability%2Finsights&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fobservability%2Finsights&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Glossary](https://vercel.com/docs/glossary?from=related&source_path=%2Fdocs%2Fobservability%2Finsights&source_site=vercel-docs&relationship=related) — Learn about the terms and concepts used in Vercel's products and documentation.
 - [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability?from=related&source_path=%2Fdocs%2Fobservability%2Finsights&source_site=vercel-docs&relationship=related) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
 - [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure?from=related&source_path=%2Fdocs%2Fobservability%2Finsights&source_site=vercel-docs&relationship=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 - [Query](https://vercel.com/docs/query?from=related&source_path=%2Fdocs%2Fobservability%2Finsights&source_site=vercel-docs&relationship=related) — Query and visualize your Vercel usage, traffic, and more in observability.
-- [Getting started with Speed Insights](https://vercel.com/docs/speed-insights/quickstart?from=related&source_path=%2Fdocs%2Fobservability%2Finsights&source_site=vercel-docs&relationship=related) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
 
 Full cross-link map for this page: [/docs/observability/insights.graph.md](/docs/observability/insights.graph.md?from=related&source_path=%2Fdocs%2Fobservability%2Finsights&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

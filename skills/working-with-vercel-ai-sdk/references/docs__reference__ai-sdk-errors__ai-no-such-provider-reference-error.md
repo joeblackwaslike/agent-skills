@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "fd00fd7beb8d453b015a5c055912567803fcf04fa5abb0f9d762915ad2654bd0"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "53f2d9e9c196aca7a799284ea1618db9eee092039828f04ec1d22a69c1ec55a9"
 ---
 
 # AI_NoSuchProviderReferenceError
@@ -33,6 +33,7 @@ if (NoSuchProviderReferenceError.isInstance(error)) {
 - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
 - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
 - [AI_EmptyResponseBodyError](/docs/reference/ai-sdk-errors/ai-empty-response-body-error)
+- [AI_EvaluationUnsupportedQuestionTypeError](/docs/reference/ai-sdk-errors/ai-evaluation-unsupported-question-type-error)
 - [AI_InvalidArgumentError](/docs/reference/ai-sdk-errors/ai-invalid-argument-error)
 - [AI_InvalidDataContentError](/docs/reference/ai-sdk-errors/ai-invalid-data-content-error)
 - [AI_InvalidMessageRoleError](/docs/reference/ai-sdk-errors/ai-invalid-message-role-error)

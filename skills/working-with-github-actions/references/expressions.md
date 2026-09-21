@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/reference/workflows-and-actions/expressions.md"
-fetched_at: "2026-08-03T07:31:11.280Z"
-sha256: "b488eaede6f7d9e5f458edcf2d27ea59e2876f71516858d7001617bb819fe53d"
+fetched_at: "2026-09-21T09:43:00.018Z"
+sha256: "90488c521ba2955b40cbdfa3167c8fac74e3dca77f80ca86aeb6b26960b31a74"
 ---
 
 ## Literals
@@ -400,18 +400,18 @@ You may also use the `*` syntax on an object. For example, suppose you have an o
   "scallions":
   {
     "colors": ["green", "white", "red"],
-    "ediblePortions": ["roots", "stalks"],
+    "ediblePortions": ["roots", "stalks"]
   },
   "beets":
   {
     "colors": ["purple", "red", "gold", "white", "pink"],
-    "ediblePortions": ["roots", "stems", "leaves"],
+    "ediblePortions": ["roots", "stems", "leaves"]
   },
   "artichokes":
   {
     "colors": ["green", "purple", "red", "black"],
-    "ediblePortions": ["hearts", "stems", "leaves"],
-  },
+    "ediblePortions": ["hearts", "stems", "leaves"]
+  }
 }
 ```
 
@@ -422,7 +422,7 @@ The filter `vegetables.*.ediblePortions` could evaluate to:
 [
   ["roots", "stalks"],
   ["hearts", "stems", "leaves"],
-  ["roots", "stems", "leaves"],
+  ["roots", "stems", "leaves"]
 ]
 ```
 

@@ -3,7 +3,7 @@ title: Server Uploads with Vercel Blob
 product: vercel
 url: /docs/vercel-blob/server-upload
 canonical_url: "https://vercel.com/docs/vercel-blob/server-upload"
-last_updated: 2026-08-11
+last_updated: 2026-09-15
 type: tutorial
 prerequisites:
   - /docs/vercel-blob
@@ -14,8 +14,8 @@ related:
 summary: Learn how to upload files to Vercel Blob using Server Actions and Route Handlers
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/server-upload.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "e3893d74b5287cddccda094a4430a9c22a4beccfe2a80c18657bda390d90d8bd"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "44f1ff4106381cb53bb5555ea1b1f4864865e326388476cf21b4456f055178f3"
 ---
 
 # Server Uploads with Vercel Blob
@@ -100,10 +100,10 @@ pip install vercel
   Since you created the Blob store in a project, we automatically created and added the following Environment Variables to the project for you.
 
   By default, connected stores use OIDC-based authentication with short-lived, automatically rotated credentials:
-  - `BLOB_STORE_ID` — identifies your Blob store
-  - `VERCEL_OIDC_TOKEN` — a short-lived token issued at runtime; rotated automatically
+  - `BLOB_STORE_ID`: Identifies your Blob store
+  - `VERCEL_OIDC_TOKEN`: A short-lived token issued at runtime; rotated automatically
   The following variable is also added as a fallback for code running outside Vercel or to generate client tokens for browser uploads:
-  - `BLOB_READ_WRITE_TOKEN` — a long-lived static read-write token
+  - `BLOB_READ_WRITE_TOKEN`: A long-lived static read-write token
   To use these Environment Variables locally, we recommend pulling them with the Vercel CLI:
   ```bash
   vercel env pull

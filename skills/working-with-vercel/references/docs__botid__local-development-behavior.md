@@ -12,8 +12,8 @@ related:
 summary: How BotID behaves in local development environments and testing options
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/botid/local-development-behavior.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "661891e4b658505b91894dea42ba07acbe03a9c42f938eeb793b568f6084ce6f"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "e3c50984a2018cd34d544e3fbb6b8054ec9fce096665612362a1d41fda23ff09"
 ---
 
 # Local Development Behavior
@@ -30,11 +30,11 @@ During local development, BotID behaves differently than in production to facili
 - [Deploying and testing BotID](https://vercel.com/kb/guide/deploying-and-testing-botid?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=related) — This guide gives an overview on Vercel BotID and how to deploy and test it in production
 - [​Introducing BotID, invisible bot filtering for critical routes](https://vercel.com/blog/introducing-botid?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=related)
 - [Vercel BotID now leverages Vercel's verified bot directory](https://vercel.com/changelog/vercel-botid-now-leverages-vercels-verified-bot-directory?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=related)
-- [How to test a Slack bot with your Vercel preview deployment](https://vercel.com/kb/guide/test-slack-bot-with-vercel-preview-deployment?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=related) — Learn how to build and test a Slack bot using Vercel preview deployments. This guide covers setting up your Slack app, c
 - [Vercel BotID now  available for all frameworks](https://vercel.com/changelog/botid-now-available-for-all-frameworks?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=related)
 - [Vercel BotID is now generally available](https://vercel.com/changelog/vercel-botid-is-now-generally-available?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=related)
 - [vercel dev](https://vercel.com/docs/cli/dev?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
 - [Add the Vercel Toolbar to local and production environments](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel Toolbar in production and local environments.
+- [Bypass Deployment Protection for testing, sharing, and automation](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=related) — Learn how to bypass Deployment Protection for specific domains, or for all deployments in a project.
 
 Full cross-link map for this page: [/docs/botid/local-development-behavior.graph.md](/docs/botid/local-development-behavior.graph.md?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

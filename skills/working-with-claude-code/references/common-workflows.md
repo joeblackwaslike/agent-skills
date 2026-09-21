@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/common-workflows.md"
-fetched_at: "2026-08-24T04:44:18.863Z"
-sha256: "b1af423b31aa38de0b6dfb817dff13042dd1d5ba99b0067f61279065de034995"
+fetched_at: "2026-09-21T09:39:23.760Z"
+sha256: "3bb3ca85d21c902d4bb0dd1b2dcc74db91ec241bca8c2ea952c1d6f7213d7a4b"
 ---
 
 > ## Documentation Index
@@ -414,7 +414,7 @@ Pick a scheduling option based on where you want the task to run:
 | [Routines](/docs/en/routines)                               | Cloud, Anthropic-managed by default | Tasks that should run even when your computer is off. Can also trigger on API calls or GitHub events in addition to a schedule. Configure at [claude.ai/code/routines](https://claude.ai/code/routines). |
 | [Desktop scheduled tasks](/docs/en/desktop-scheduled-tasks) | Your machine, via the desktop app   | Tasks that need direct access to local files, tools, or uncommitted changes.                                                                                                                             |
 | [GitHub Actions](/docs/en/github-actions)                   | Your CI pipeline                    | Tasks tied to repo events like opened PRs, or cron schedules that should live alongside your workflow config.                                                                                            |
-| [`/loop`](/docs/en/scheduled-tasks)                         | The current CLI session             | Quick polling while a session is open. Tasks stop when you start a new conversation; `--resume` and `--continue` restore unexpired ones.                                                                 |
+| [`/loop`](/docs/en/scheduled-tasks)                         | The current CLI session             | Quick polling while a session is open. `--resume` and `--continue` restore unexpired fixed-interval loops.                                                                                               |
 
 <Tip>
   When writing prompts for scheduled tasks, be explicit about what success looks like and what to do with results. The task runs autonomously, so it can't ask clarifying questions. For example: "Review open PRs labeled `needs-review`, leave inline comments on any issues, and post a summary in the `#eng-reviews` Slack channel."

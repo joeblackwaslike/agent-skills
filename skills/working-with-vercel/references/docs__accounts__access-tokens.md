@@ -3,7 +3,7 @@ title: Access tokens
 product: vercel
 url: /docs/accounts/access-tokens
 canonical_url: "https://vercel.com/docs/accounts/access-tokens"
-last_updated: 2026-08-03
+last_updated: 2026-09-08
 type: how-to
 prerequisites:
   - /docs/accounts
@@ -16,8 +16,8 @@ related:
 summary: Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate API and CLI requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/accounts/access-tokens.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "d5c7b70959c890e8f2100e94897954fe12d3b3df7e83a615730d5ff2ac9749bb"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "11f9b4bdcdbbbf261bc1b8fac169b44798d3e0129ee47b4817b720e3f37be003"
 ---
 
 # Access tokens

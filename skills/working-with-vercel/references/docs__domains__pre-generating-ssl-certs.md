@@ -3,7 +3,7 @@ title: Pre-Generate SSL Certificates
 product: vercel
 url: /docs/domains/pre-generating-ssl-certs
 canonical_url: "https://vercel.com/docs/domains/pre-generating-ssl-certs"
-last_updated: 2026-08-28
+last_updated: 2026-09-16
 type: how-to
 prerequisites:
   - /docs/domains
@@ -14,8 +14,8 @@ related:
 summary: test
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/pre-generating-ssl-certs.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "3dfd8e517e43ff98534bed47c10dc7e754219822c1434d85e1ecd5bd5f7744d2"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "9e4e2485fecce8024fa863c03bf0a97a93a4e147ced90d8010f07be872f00ea9"
 ---
 
 # Pre-Generate SSL Certificates
@@ -43,7 +43,7 @@ DNS changes.
 - [Uploading Custom SSL Certificates](https://vercel.com/docs/domains/custom-ssl-certificate?from=related&source_path=%2Fdocs%2Fdomains%2Fpre-generating-ssl-certs&source_site=vercel-docs&relationship=related) — By default, Vercel provides all domains with a custom SSL certificates. However, Enterprise teams can upload their own c
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fpre-generating-ssl-certs&source_site=vercel-docs&relationship=related) — Add and configure a custom domain for your Vercel project using the CLI.
 - [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fpre-generating-ssl-certs&source_site=vercel-docs&relationship=related) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
-- [Troubleshooting domains](https://vercel.com/docs/domains/troubleshooting?from=related&source_path=%2Fdocs%2Fdomains%2Fpre-generating-ssl-certs&source_site=vercel-docs&relationship=related) — Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
+- [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fpre-generating-ssl-certs&source_site=vercel-docs&relationship=related) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 
 Full cross-link map for this page: [/docs/domains/pre-generating-ssl-certs.graph.md](/docs/domains/pre-generating-ssl-certs.graph.md?from=related&source_path=%2Fdocs%2Fdomains%2Fpre-generating-ssl-certs&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -52,7 +52,7 @@ You can do this using either the Vercel Domains dashboard, or the [Vercel CLI](/
 
 ## Generating a Certificate
 
-In order to issue certificates through the dashboard for a domain, first ensure the domain belongs to a team. You can then click into the domain management page,
+To issue certificates through the dashboard for a domain, first ensure the domain belongs to a team. You can then click into the domain management page,
 scroll down to "SSL Certificates" and click "Pre-generate SSL certificates". Please note this option is only available if you do not already
 have any SSL certificates issued for the domain.
 
@@ -69,7 +69,7 @@ and example.com.*
 
 ## Setting your DNS records and finalizing
 
-In order to verify ownership of your domain, copy the TXT records into your DNS on the registrar you are using.
+To verify ownership of your domain, copy the TXT records into your DNS on the registrar you are using.
 
 Click "Verify" to verify that the records have been set and issue the certificate. DNS records can take time to propagate,
 so if it doesn't work immediately, it's worth waiting for the records to propagate before taking further action.

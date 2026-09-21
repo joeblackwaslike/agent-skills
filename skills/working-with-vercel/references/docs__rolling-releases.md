@@ -3,7 +3,7 @@ title: Rolling Releases
 product: vercel
 url: /docs/rolling-releases
 canonical_url: "https://vercel.com/docs/rolling-releases"
-last_updated: 2026-08-11
+last_updated: 2026-09-15
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how to use Rolling Releases for more cautious deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rolling-releases.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "5743c7e39cb5d4cc8e1e21bc7dd3c899d13aa1e1e31a6508fac71cb14b503594"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "5afb4c9ffa40d92dadbfca46905089228c6f98f138444f49d8a2ddc351b12d2d"
 ---
 
 # Rolling Releases
@@ -42,7 +42,7 @@ Rolling Releases allow you to roll out new deployments to a small fraction of yo
 - [Scale to one: How Fluid solves cold starts](https://vercel.com/blog/scale-to-one-how-fluid-solves-cold-starts?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=related)
 - [The real serverless compute to database connection problem, solved](https://vercel.com/blog/the-real-serverless-compute-to-database-connection-problem-solved?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=related)
 - [Complete the rolling release for the project](https://vercel.com/docs/rest-api/rolling-release/complete-the-rolling-release-for-the-project?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=related) — POST /v1/projects/{idOrName}/rolling-release/complete — Force-complete a Rolling Release. The canary deployment will beg
-- [Rolling back a production deployment](https://vercel.com/docs/deployments/rollback-production-deployment?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=related) — Recover from a bad production deployment by rolling back, investigating the root cause, and redeploying a fix.
+- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Audit Logs](https://vercel.com/docs/audit-log?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=related) — Learn how to track and analyze your team members' activities.
 
 Full cross-link map for this page: [/docs/rolling-releases.graph.md](/docs/rolling-releases.graph.md?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=graph)
@@ -268,7 +268,7 @@ To stop an active rolling release programmatically, use one of these approaches:
 
 2. **Promote the canary to 100%:** Call `POST /v1/projects/{idOrName}/rolling-release/complete`. The canary deployment then serves all production traffic and the rolling release is complete.
 
-If you disable Rolling Releases via the config endpoint (PATCH or DELETE) while a rolling release is in progress, the config change alone does not stop the current rolling release—it only affects future deployments. After disabling, you must still call the complete endpoint or the rollback endpoint to resolve the active rolling release.
+If you disable Rolling Releases via the config endpoint (PATCH or DELETE) while a rolling release is in progress, the config change alone does not stop the current rolling release. It only affects future deployments. After disabling, you must still call the complete endpoint or the rollback endpoint to resolve the active rolling release.
 
 For detailed API specifications, request/response schemas, and code examples:
 

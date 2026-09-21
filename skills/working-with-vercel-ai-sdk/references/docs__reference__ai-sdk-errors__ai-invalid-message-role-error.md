@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-invalid-message-role-error.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "bd03033d01439e5a591b6277da3f66ea08ab0edc4728d69e1f646df497ee9094"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "f49d7a6e038de3a7e5185fa92e31a69feeccbe112c17b007eb66b8011ddb7b6c"
 ---
 
 # AI_InvalidMessageRoleError
@@ -31,6 +31,7 @@ if (InvalidMessageRoleError.isInstance(error)) {
 - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
 - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
 - [AI_EmptyResponseBodyError](/docs/reference/ai-sdk-errors/ai-empty-response-body-error)
+- [AI_EvaluationUnsupportedQuestionTypeError](/docs/reference/ai-sdk-errors/ai-evaluation-unsupported-question-type-error)
 - [AI_InvalidArgumentError](/docs/reference/ai-sdk-errors/ai-invalid-argument-error)
 - [AI_InvalidDataContentError](/docs/reference/ai-sdk-errors/ai-invalid-data-content-error)
 - [AI_InvalidMessageRoleError](/docs/reference/ai-sdk-errors/ai-invalid-message-role-error)

@@ -16,8 +16,8 @@ related:
 summary: Partial Prerendering serves a cached static shell instantly, then renders and streams the dynamic parts of a page per request.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/partial-prerendering.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "a09c8f96d8258c5b2fc300a8ebc9940717b1112aabf989c082b78f9978230243"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "f570b2b6d2519da7adce9371c05b8fae6247fff86b1cc336071d42bdbea6d365"
 ---
 
 # Partial Prerendering (PPR)
@@ -39,10 +39,10 @@ Partial Prerendering (PPR) is a rendering strategy that combines fast cached sta
 - [Implementing PPR in an Adapter](https://nextjs.org/docs/app/api-reference/adapters/implementing-ppr-in-an-adapter?from=related&source_path=%2Fdocs%2Fpartial-prerendering&source_site=vercel-docs&relationship=related) — Implement Partial Prerendering support in an adapter using fallback output and cache hooks.
 - [Introducing Serverless Pre-Rendering (SPR)](https://vercel.com/blog/serverless-pre-rendering?from=related&source_path=%2Fdocs%2Fpartial-prerendering&source_site=vercel-docs&relationship=related)
 - [ISR: A flexible way to cache dynamic content](https://vercel.com/blog/isr-a-flexible-way-to-cache-dynamic-content?from=related&source_path=%2Fdocs%2Fpartial-prerendering&source_site=vercel-docs&relationship=related)
-- [How can I prerender my application on Vercel?](https://vercel.com/kb/guide/how-can-i-prerender-my-application-on-vercel?from=related&source_path=%2Fdocs%2Fpartial-prerendering&source_site=vercel-docs&relationship=related) — Learn how to enable prerendering with your frontend framework on Vercel for better performance and SEO.
 - [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache?from=related&source_path=%2Fdocs%2Fpartial-prerendering&source_site=vercel-docs&relationship=related)
+- [How can I prerender my application on Vercel?](https://vercel.com/kb/guide/how-can-i-prerender-my-application-on-vercel?from=related&source_path=%2Fdocs%2Fpartial-prerendering&source_site=vercel-docs&relationship=related) — Learn how to enable prerendering with your frontend framework on Vercel for better performance and SEO.
+- [Deploying React with Vercel](https://vercel.com/kb/guide/deploying-react-with-vercel?from=related&source_path=%2Fdocs%2Fpartial-prerendering&source_site=vercel-docs&relationship=related) — Deploy React with Vercel to replace your build pipeline and shared staging. See how framework detection, previews, and F
 - [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Fpartial-prerendering&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
-- [Vercel CDN overview](https://vercel.com/docs/cdn?from=related&source_path=%2Fdocs%2Fpartial-prerendering&source_site=vercel-docs&relationship=related) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fpartial-prerendering&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 
 Full cross-link map for this page: [/docs/partial-prerendering.graph.md](/docs/partial-prerendering.graph.md?from=related&source_path=%2Fdocs%2Fpartial-prerendering&source_site=vercel-docs&relationship=graph)

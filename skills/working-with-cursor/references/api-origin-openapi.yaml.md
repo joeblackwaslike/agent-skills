@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/api/origin/openapi.yaml"
-fetched_at: "2026-09-14T09:38:41.937Z"
-sha256: "4d1aef16d438c0ab95debf7001b158d356f6ef61d6ba03b0984dd97a58aa7239"
+fetched_at: "2026-09-21T09:40:19.892Z"
+sha256: "4c0f7ad40905c707232a16b85b5fa687f0208c53d956c2d30f0c93a14003829d"
 ---
 
 # Generated with protoc-gen-openapi
@@ -765,7 +765,7 @@ paths:
                 tokenTypes:
                     - user
                 scopes:
-                    - app:settings:read
+                    - namespace:apps:read
         patch:
             tags:
                 - OriginService
@@ -1090,7 +1090,16 @@ paths:
                   in: query
                   description: |-
                     Opaque cursor from a previous response's `next_page_token`. Empty for the
-                     first page.
+                     first page. The same filter must be used when requesting subsequent pages.
+                  schema:
+                    type: string
+                - name: filter
+                  in: query
+                  description: |-
+                    Optional case-insensitive substring filter applied to repository names and
+                     owner namespaces. A single-slash `owner/repo` value matches each half
+                     against its corresponding field. Leading and trailing whitespace is
+                     ignored; an empty value applies no filter.
                   schema:
                     type: string
             responses:
@@ -1398,6 +1407,126 @@ paths:
                     - user
                 scopes:
                     - namespace:apps:create
+    /v1/origin/namespaces/{namespaceSlug}/installations/{installationId}/repos:
+        post:
+            tags:
+                - OriginService
+            description: |-
+                Adds repositories to an installation's repository selection.
+
+                 Requires a user credential with installation-management access to the
+                 target namespace; app and installation credentials cannot change an
+                 installation's repositories. Additive only: the listed repositories are
+                 unioned with the current selection, and a request whose repositories are
+                 all already granted succeeds without changing anything. Every listed
+                 repository must belong to the target namespace, or the request fails and
+                 nothing is granted. Fails with a failed-precondition error when the
+                 installation already covers all of the namespace's repositories
+                 (repo_selection_mode `all`), is suspended, or predates per-installation
+                 scopes.
+            operationId: OriginService_AddAppInstallationRepositories
+            parameters:
+                - name: namespaceSlug
+                  in: path
+                  description: Slug of the namespace the installation belongs to.
+                  required: true
+                  schema:
+                    type: string
+                - name: installationId
+                  in: path
+                  description: Installation identifier.
+                  required: true
+                  schema:
+                    type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            required:
+                                - repoIds
+                            type: object
+                            properties:
+                                repoIds:
+                                    type: array
+                                    items:
+                                        type: string
+                                    description: |-
+                                        Repository IDs to add to the installation's selection. At least one is
+                                         required; values are deduplicated, and repositories that are already part
+                                         of the selection are accepted without change. Every listed repository
+                                         must belong to the namespace, or the request fails and nothing is
+                                         granted.
+                        examples:
+                            addAppInstallationRepositories:
+                                value:
+                                    repoIds:
+                                        - repo_01k2ja2000e0080000000000q4
+                                        - repo_01k2ja2000e0080000000000q5
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/AppInstallation'
+                            examples:
+                                addAppInstallationRepositories:
+                                    value:
+                                        id: inst_01k2ja2000e0080000000000b2
+                                        appId: app_01k2ja2000e0080000000000a1
+                                        target:
+                                            slug: acme
+                                            id: ns_01k2ja2000e0080000000000p3
+                                            type: team
+                                        createdAt: "2026-08-01T09:30:00Z"
+                                        updatedAt: "2026-08-02T14:45:00Z"
+                                        repoSelectionMode: selected
+                                        scopes:
+                                            - repository:contents:read
+                                            - repository:pull_requests:read
+                                            - repository:metadata:read
+                "400":
+                    description: Bad Request
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Status'
+                "401":
+                    description: Unauthorized
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Status'
+                "403":
+                    description: Forbidden
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Status'
+                "429":
+                    description: Too Many Requests
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Status'
+                default:
+                    description: Default error response
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Status'
+                "404":
+                    description: The addressed resource, or its repository, does not exist or is not visible to the caller. Not-found and no-access are deliberately indistinguishable; a 404 never confirms that the resource does not exist.
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Status'
+            x-origin-scopes:
+                tokenTypes:
+                    - user
+                scopes:
+                    - namespace:installations:write
     /v1/origin/owners/{ownerSlug}/grants:
         get:
             tags:
@@ -1544,7 +1673,6 @@ paths:
                                     description: |-
                                         `PERMISSION_READ`, `PERMISSION_CONTRIBUTOR`, `PERMISSION_WRITE`, or
                                          `PERMISSION_ADMIN`.
-                                    format: enum
                         examples:
                             upsertNamespaceGrant:
                                 value:
@@ -1933,7 +2061,7 @@ paths:
                 tokenTypes:
                     - user
                 scopes:
-                    - namespace:new_repository:write
+                    - namespace:repositories:create
     /v1/origin/repos/{ownerSlug}/{repoName}:
         get:
             tags:
@@ -2082,7 +2210,6 @@ paths:
                                     description: |-
                                         New repository visibility, `internal` or `private`. Unspecified leaves
                                          the visibility unchanged.
-                                    format: enum
                         examples:
                             updateRepo:
                                 value:
@@ -2771,11 +2898,13 @@ paths:
                 - OriginService
             description: |-
                 Asks the app that reported a check run to run it again. Origin records
-                 the request on the run (`rerequested_at`) and notifies the owning app
-                 through the `repository.check_run.rerequested` webhook event; the app
-                 answers by posting a fresh run for the same head SHA and `key` — a new
-                 run or an update of this one — which clears `rerequested_at`. The run's
-                 own status and conclusion are never changed by this call.
+                 the request on the run (`rerequested_at`, and `status` becomes
+                 `rerequested` while `conclusion` and the timings keep describing the
+                 superseded attempt) and notifies the owning app through the
+                 `repository.check_run.rerequested` webhook event; the app answers by
+                 posting a fresh run for the same head SHA and `key` — a new run, or an
+                 update of this one, which clears `rerequested_at` and stores the posted
+                 status.
 
                  The run must be `completed`, must have been declared re-requestable
                  (`is_rerequestable`), must be the current attempt for its `key`, and must
@@ -2785,7 +2914,7 @@ paths:
                  ALREADY_EXISTS; once the owning app has answered, the run may be
                  re-requested again. Any principal with repository contents write may
                  re-request any re-requestable run, whichever app reported it. Returns
-                 the run with `rerequested_at` set.
+                 the run with `rerequested_at` set and `status` `rerequested`.
             operationId: OriginService_RerequestCheckRun
             parameters:
                 - name: ownerSlug
@@ -2839,7 +2968,7 @@ paths:
                                         sha: 9a41f0c3d2b8e7f6a5c4d3e2f1b0a9c8d7e6f5a4
                                         key: ci-8842-unit-tests
                                         name: unit-tests
-                                        status: completed
+                                        status: rerequested
                                         conclusion: failure
                                         detailsUrl: https://ci.acme.dev/runs/8842
                                         externalUpdatedAt: "2026-08-02T14:44:30Z"
@@ -3574,8 +3703,8 @@ paths:
                 - name: status
                   in: query
                   description: |-
-                    Optional status filter: `queued`, `in_progress`, or `completed`. Any
-                     other value is rejected with INVALID_ARGUMENT.
+                    Optional status filter: `queued`, `in_progress`, `completed`, or
+                     `rerequested`. Any other value is rejected with INVALID_ARGUMENT.
                   schema:
                     type: string
             responses:
@@ -5092,6 +5221,92 @@ paths:
                     - user
                 scopes:
                     - repository:contents:write
+    /v1/origin/repos/{ownerSlug}/{repoName}/git/refs/{ref}:
+        delete:
+            tags:
+                - OriginService
+            description: |-
+                Deletes a branch reference.
+                 `ref` names the branch as `refs/heads/<branch>` or `heads/<branch>`; only
+                 branch references can be deleted. A branch that does not exist returns
+                 NOT_FOUND. The repository default branch and a branch protected by a
+                 deletion rule are refused with FAILED_PRECONDITION, as is a delete on a
+                 repository whose contents are mirrored from another host. Pull requests
+                 whose head is the deleted branch are closed, as after a pushed deletion.
+                 A branch whose tip moves while the delete is in flight fails with
+                 FAILED_PRECONDITION or ABORTED; retry to delete the new tip.
+            operationId: OriginService_DeleteGitRef
+            parameters:
+                - name: ownerSlug
+                  in: path
+                  description: Owning entity's unique slug.
+                  required: true
+                  schema:
+                    type: string
+                - name: repoName
+                  in: path
+                  description: Repo name, unique to the owner entity.
+                  required: true
+                  schema:
+                    type: string
+                - name: ref
+                  in: path
+                  description: Branch reference to delete, as `refs/heads/<branch>` or `heads/<branch>`.
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "204":
+                    description: OK
+                    content: {}
+                "400":
+                    description: Bad Request
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Status'
+                "401":
+                    description: Unauthorized
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Status'
+                "403":
+                    description: Forbidden
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Status'
+                "429":
+                    description: Too Many Requests
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Status'
+                default:
+                    description: Default error response
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Status'
+                "404":
+                    description: The addressed resource, or its repository, does not exist or is not visible to the caller. Not-found and no-access are deliberately indistinguishable; a 404 never confirms that the resource does not exist.
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Status'
+                "409":
+                    description: The request conflicts with the current state of the resource.
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Status'
+            x-origin-scopes:
+                tokenTypes:
+                    - installation
+                    - user
+                scopes:
+                    - repository:contents:write
     /v1/origin/repos/{ownerSlug}/{repoName}/git/tags/{sha}:
         get:
             tags:
@@ -5453,7 +5668,6 @@ paths:
                                         - custom
                                     type: string
                                     description: '`read`, `write`, or `admin`.'
-                                    format: enum
                         examples:
                             upsertRepositoryGrant:
                                 value:
@@ -6478,7 +6692,6 @@ paths:
                                         - outbound_to_inbound
                                     type: string
                                     description: The mirror-state change to start.
-                                    format: enum
                         examples:
                             transitionRepoMirror:
                                 value:
@@ -6568,9 +6781,10 @@ paths:
                 - OriginService
             description: |-
                 Lists pull requests in a repo, optionally filtered by head branch, base
-                 branch, author, creation-time range, and state, in creation order
-                 (newest first by default; set `direction=asc` for oldest first). Each
-                 pull request includes its assigned labels.
+                 branch, author, creation-time range, and state, sorted by creation order
+                 or by last update (`sort_by`), most recent first by default (set
+                 `direction=asc` for earliest first). Each pull request includes its
+                 assigned labels.
             operationId: OriginService_ListPullRequests
             parameters:
                 - name: ownerSlug
@@ -6592,7 +6806,10 @@ paths:
                     type: string
                 - name: state
                   in: query
-                  description: '"open" | "closed" | "all". Defaults to "open".'
+                  description: |-
+                    Lifecycle filter: "open" (the default), "closed", "merged", or "all".
+                     "closed" includes merged pull requests; "merged" is only those. Any other
+                     value is rejected with INVALID_ARGUMENT.
                   schema:
                     type: string
                 - name: pageSize
@@ -6628,8 +6845,11 @@ paths:
                 - name: direction
                   in: query
                   description: |-
-                    Sort direction by creation order (pull number): `"desc"` (newest first,
-                     the default) or `"asc"` (oldest first).
+                    Sort direction along `sort_by`; defaults to `"desc"`. With
+                     `sort_by=created`, `"desc"` lists the most recently created pull request
+                     first and `"asc"` the earliest created first. With `sort_by=updated`,
+                     `"desc"` lists the most recently updated first and `"asc"` the least
+                     recently updated first. Any other value is rejected with INVALID_ARGUMENT.
                   schema:
                     type: string
                 - name: since
@@ -6646,6 +6866,13 @@ paths:
                     Optional inclusive upper bound on creation time (RFC 3339 timestamp):
                      only pull requests created at or before this instant. Malformed
                      timestamps are rejected with INVALID_ARGUMENT.
+                  schema:
+                    type: string
+                - name: sortBy
+                  in: query
+                  description: |-
+                    Sort key: `"created"` (creation order, the default) or `"updated"` (time
+                     of last update). Any other value is rejected with INVALID_ARGUMENT.
                   schema:
                     type: string
             responses:
@@ -7141,7 +7368,7 @@ paths:
                     content:
                         application/json:
                             schema:
-                                $ref: '#/components/schemas/Thread'
+                                $ref: '#/components/schemas/CommentThread'
                             examples:
                                 updatePullRequestThread:
                                     value:
@@ -8490,7 +8717,6 @@ paths:
                                          the repository does not allow fails with FAILED_PRECONDITION. Omit to use
                                          the repository's default: a merge commit when allowed, otherwise squash;
                                          squash when the base branch requires linear history.
-                                    format: enum
                         examples:
                             mergePullRequest:
                                 value:
@@ -8594,6 +8820,170 @@ paths:
                     - user
                 scopes:
                     - repository:contents:write
+    /v1/origin/repos/{ownerSlug}/{repoName}/pulls/{pullNumber}/mergeability:
+        get:
+            tags:
+                - OriginService
+            description: |-
+                Returns whether the pull request can be merged and, when it cannot, the
+                 conditions that block it. Evaluates the same conditions MergePullRequest
+                 enforces: for a stacked pull request the verdict covers every pull request
+                 from the stack root through this one, and each blocker names the pull
+                 request it belongs to. A `mergeable` verdict means a merge of the same
+                 head is expected to succeed. Stacks of more than 200 pull requests in
+                 total, merged ancestors included, are rejected with FAILED_PRECONDITION.
+            operationId: OriginService_GetPullRequestMergeability
+            parameters:
+                - name: ownerSlug
+                  in: path
+                  description: Owning entity's unique slug.
+                  required: true
+                  schema:
+                    type: string
+                - name: repoName
+                  in: path
+                  description: Repo name, unique to the owner entity.
+                  required: true
+                  schema:
+                    type: string
+                - name: pullNumber
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+                  x-cursor-visibility: PREVIEW
+                - name: expectedHeadSha
+                  in: query
+                  description: |-
+                    Optional guard: the full commit SHA (40- or 64-character hex) expected to
+                     be the pull request's current head. When set and the evaluated head
+                     differs, the request is rejected with ABORTED (HTTP 409) instead of
+                     returning a result. Values that are not a full commit SHA are rejected
+                     with INVALID_ARGUMENT.
+                  schema:
+                    type: string
+                  x-cursor-visibility: PREVIEW
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/PullRequestMergeability'
+                            examples:
+                                getPullRequestMergeability:
+                                    value:
+                                        pullRequest:
+                                            id: pr_01k2ja2000e0080000000000d4
+                                            number: "17"
+                                            repository:
+                                                id: repo_01k2ja2000e0080000000000a1
+                                                name: launch-control
+                                                owner:
+                                                    slug: acme
+                                                    id: ns_01k2ja2000e0080000000000b2
+                                        verdict: blocked
+                                        blockers:
+                                            - pullRequest:
+                                                id: pr_01k2ja2000e0080000000000d4
+                                                number: "17"
+                                                repository:
+                                                    id: repo_01k2ja2000e0080000000000a1
+                                                    name: launch-control
+                                                    owner:
+                                                        slug: acme
+                                                        id: ns_01k2ja2000e0080000000000b2
+                                              kind: required_approvals
+                                              message: Approving review count is 0; 1 required. Request reviews and wait for the required approvals.
+                                              requiredApprovals:
+                                                requiredCount: 1
+                                                approvedCount: 0
+                                            - pullRequest:
+                                                id: pr_01k2ja2000e0080000000000d4
+                                                number: "17"
+                                                repository:
+                                                    id: repo_01k2ja2000e0080000000000a1
+                                                    name: launch-control
+                                                    owner:
+                                                        slug: acme
+                                                        id: ns_01k2ja2000e0080000000000b2
+                                              kind: required_checks
+                                              message: Required status checks are pending. Wait for checks to finish or fix the failing checks.
+                                              requiredChecks:
+                                                state: pending
+                                                checks:
+                                                    - name: ci / build
+                                                      owner:
+                                                        app:
+                                                            id: app_01k2ja2000e0080000000000e5
+                                                            displayName: Launch CI
+                                                      checkRun:
+                                                        id: cr_01k2ja2000e0080000000000f6
+                                                        name: ci / build
+                                                        checkSuite:
+                                                            id: crg_01k2ja2000e0080000000000f7
+                                        evaluatedPullRequests:
+                                            - id: pr_01k2ja2000e0080000000000d4
+                                              number: "17"
+                                              repository:
+                                                id: repo_01k2ja2000e0080000000000a1
+                                                name: launch-control
+                                                owner:
+                                                    slug: acme
+                                                    id: ns_01k2ja2000e0080000000000b2
+                                        headSha: 9a41f0c3d2b8e7f6a5c4d3e2f1b0a9c8d7e6f5a4
+                                        baseRef: main
+                                        baseSha: 3b1f9c2d8a7e6f5049c8b7a6d5e4f3a2b1c0d9e8
+                                        evaluatedAt: "2026-08-02T14:45:00Z"
+                "400":
+                    description: Bad Request
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Status'
+                "401":
+                    description: Unauthorized
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Status'
+                "403":
+                    description: Forbidden
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Status'
+                "429":
+                    description: Too Many Requests
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Status'
+                default:
+                    description: Default error response
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Status'
+                "404":
+                    description: The addressed resource, or its repository, does not exist or is not visible to the caller. Not-found and no-access are deliberately indistinguishable; a 404 never confirms that the resource does not exist.
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Status'
+                "409":
+                    description: The request conflicts with the current state of the resource.
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Status'
+            x-origin-scopes:
+                tokenTypes:
+                    - installation
+                    - user
+                scopes:
+                    - repository:pull_requests:read
+            x-cursor-visibility: PREVIEW
     /v1/origin/repos/{ownerSlug}/{repoName}/pulls/{pullNumber}/requested_reviewers:
         get:
             tags:
@@ -9077,7 +9467,6 @@ paths:
                                         - comment
                                     type: string
                                     description: The review decision.
-                                    format: enum
                                 body:
                                     type: string
                                     description: Free-text review summary. May be empty.
@@ -9575,7 +9964,6 @@ paths:
                                         - evaluate
                                         - disabled
                                     type: string
-                                    format: enum
                                 kind:
                                     enum:
                                         - merge_branch
@@ -9583,7 +9971,6 @@ paths:
                                         - push_tag
                                         - push_repository
                                     type: string
-                                    format: enum
                                 includedRefNames:
                                     type: array
                                     items:
@@ -9834,7 +10221,6 @@ paths:
                                         - evaluate
                                         - disabled
                                     type: string
-                                    format: enum
                                 kind:
                                     enum:
                                         - merge_branch
@@ -9842,7 +10228,6 @@ paths:
                                         - push_tag
                                         - push_repository
                                     type: string
-                                    format: enum
                                 includedRefNames:
                                     type: array
                                     items:
@@ -10034,8 +10419,10 @@ paths:
                  REST: the first request for a given repository and resolved commit
                  streams `application/gzip` bytes. Later requests for the same commit
                  respond 302 with a short-lived signed download URL in `Location`.
-                 Archive entries are at the root of the tar (no wrapping directory).
-                 Empty repositories return 409 Conflict.
+                 The archive contains a single top-level directory named
+                 `{owner_slug}-{name}-{short_sha}/`, where `short_sha` is the first 7 hex
+                 characters of the resolved commit — the same layout as GitHub's tarball
+                 endpoint. Empty repositories return 409 Conflict.
             operationId: OriginService_GetRepoTarball
             parameters:
                 - name: ownerSlug
@@ -10131,8 +10518,10 @@ paths:
                  REST: the first request for a given repository and resolved commit
                  streams `application/gzip` bytes. Later requests for the same commit
                  respond 302 with a short-lived signed download URL in `Location`.
-                 Archive entries are at the root of the tar (no wrapping directory).
-                 Empty repositories return 409 Conflict.
+                 The archive contains a single top-level directory named
+                 `{owner_slug}-{name}-{short_sha}/`, where `short_sha` is the first 7 hex
+                 characters of the resolved commit — the same layout as GitHub's tarball
+                 endpoint. Empty repositories return 409 Conflict.
             operationId: OriginService_GetRepoTarball_2
             parameters:
                 - name: ownerSlug
@@ -10207,6 +10596,192 @@ paths:
                                 $ref: '#/components/schemas/Status'
                 "409":
                     description: The request conflicts with the current state of the resource.
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Status'
+            x-origin-scopes:
+                tokenTypes:
+                    - installation
+                    - user
+                scopes:
+                    - repository:contents:read
+    /v1/origin/repos/{ownerSlug}/{repoName}:grep:
+        post:
+            tags:
+                - OriginService
+            description: |-
+                Searches the text of the files in the repository at a ref and returns the
+                 lines that match, plus any requested surrounding context lines.
+                 The search is line-oriented: a pattern never matches across a line break,
+                 and each returned entry is one line. The response is complete only when
+                 `limit_hit` is false; see `max_results`. An empty repository (no refs)
+                 returns no matches and `limit_hit` false. Uses POST because the search
+                 parameters travel in the request body.
+            operationId: OriginService_GrepContents
+            parameters:
+                - name: ownerSlug
+                  in: path
+                  description: Owning entity's unique slug.
+                  required: true
+                  schema:
+                    type: string
+                - name: repoName
+                  in: path
+                  description: Repo name, unique to the owner entity.
+                  required: true
+                  schema:
+                    type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            required:
+                                - query
+                            type: object
+                            properties:
+                                ref:
+                                    type: string
+                                    description: |-
+                                        Commit, branch, tag, or symbolic ref (for example `HEAD`) to search.
+                                         Empty means the repository's default branch.
+                                query:
+                                    type: string
+                                    description: |-
+                                        The pattern to search for. By default it is a regular expression
+                                         supporting character classes, quantifiers, alternation, groups, and
+                                         anchors; set `literal` to search for the text exactly instead. Whitespace
+                                         is significant and is searched for as given. When `literal` is false,
+                                         case-insensitive matching is a leading `(?i)` in the pattern (for example
+                                         `(?i)launch`) and whole-word matching is `\b` around it (for example
+                                         `\blaunch\b`). An empty pattern is rejected with INVALID_ARGUMENT.
+                                         Maximum UTF-8 size: 4096 bytes.
+                                literal:
+                                    type: boolean
+                                    description: Search for `query` as exact text rather than as a regular expression.
+                                caseInsensitive:
+                                    type: boolean
+                                    description: |-
+                                        Match upper and lower case as equivalent. Applied only when `literal` is
+                                         true. Ignored for a regular-expression search; write a leading `(?i)` in
+                                         `query` instead.
+                                wholeWord:
+                                    type: boolean
+                                    description: |-
+                                        Match only complete words. Applied only when `literal` is true. Ignored
+                                         for a regular-expression search; write `\b` around the pattern instead.
+                                contextBefore:
+                                    type: integer
+                                    description: |-
+                                        How many lines immediately before each matching line to return as
+                                         context. Values above 10 are reduced to 10.
+                                    format: uint32
+                                contextAfter:
+                                    type: integer
+                                    description: |-
+                                        How many lines immediately after each matching line to return as context.
+                                         Values above 10 are reduced to 10.
+                                    format: uint32
+                                filterPath:
+                                    type: string
+                                    description: |-
+                                        Restrict the search to this file or directory, relative to the repository
+                                         root. Empty searches the whole repository. Maximum UTF-8 size: 4096 bytes.
+                                includes:
+                                    type: array
+                                    items:
+                                        type: string
+                                    description: |-
+                                        Glob patterns naming the paths to search. Matching is case-insensitive; a
+                                         pattern containing no `/` matches at any depth, `*` matches within one
+                                         path segment, and `**` matches across segments. When any include is
+                                         present, a path matching none of them is not searched. At most 20
+                                         entries. Maximum UTF-8 size per pattern: 4096 bytes.
+                                excludes:
+                                    type: array
+                                    items:
+                                        type: string
+                                    description: |-
+                                        Glob patterns naming paths to leave out, in the same syntax as
+                                         `includes`. An exclude beats an include, and excluding a directory leaves
+                                         out everything beneath it. At most 20 entries. Maximum UTF-8 size per
+                                         pattern: 4096 bytes.
+                                maxResults:
+                                    type: integer
+                                    description: |-
+                                        The most matching occurrences to return. Zero requests the default of
+                                         1000, and values above 1000 are reduced to 1000. Context lines do not
+                                         count toward the cap.
+                                    format: uint32
+                        examples:
+                            grepContents:
+                                value:
+                                    ref: main
+                                    query: 'emitLaunchTelemetry\('
+                                    contextBefore: 1
+                                    contextAfter: 1
+                                    includes:
+                                        - '*.ts'
+                                    excludes:
+                                        - '**/node_modules/**'
+                                    maxResults: 50
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/GrepContentsResponse'
+                            examples:
+                                grepContents:
+                                    value:
+                                        matches:
+                                            - path: src/telemetry.ts
+                                              lineNumber: 11
+                                              line: 'export function emitLaunchTelemetry(stage: string): void {'
+                                              kind: match
+                                              submatches:
+                                                - start: 16
+                                                  end: 37
+                                            - path: src/telemetry.ts
+                                              lineNumber: 12
+                                              line: '  console.log("launch", stage);'
+                                              kind: context
+                                              submatches: []
+                                        limitHit: false
+                "400":
+                    description: Bad Request
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Status'
+                "401":
+                    description: Unauthorized
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Status'
+                "403":
+                    description: Forbidden
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Status'
+                "429":
+                    description: Too Many Requests
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Status'
+                default:
+                    description: Default error response
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Status'
+                "404":
+                    description: The addressed resource, or its repository, does not exist or is not visible to the caller. Not-found and no-access are deliberately indistinguishable; a 404 never confirms that the resource does not exist.
                     content:
                         application/json:
                             schema:
@@ -10339,6 +10914,29 @@ paths:
                     - repository:contents:read
 components:
     schemas:
+        AddAppInstallationRepositoriesRequest:
+            required:
+                - namespaceSlug
+                - installationId
+                - repoIds
+            type: object
+            properties:
+                namespaceSlug:
+                    type: string
+                    description: Slug of the namespace the installation belongs to.
+                installationId:
+                    type: string
+                    description: Installation identifier.
+                repoIds:
+                    type: array
+                    items:
+                        type: string
+                    description: |-
+                        Repository IDs to add to the installation's selection. At least one is
+                         required; values are deduplicated, and repositories that are already part
+                         of the selection are accepted without change. Every listed repository
+                         must belong to the namespace, or the request fails and nothing is
+                         granted.
         AddAppSigningKeyRequest:
             required:
                 - appId
@@ -10494,7 +11092,6 @@ components:
                         - selected
                     type: string
                     description: Whether the app can access all repos belonging to the owner, or only selected repos.
-                    format: enum
                 scopes:
                     readOnly: true
                     type: array
@@ -10638,7 +11235,6 @@ components:
                          `already_in_flight` (a send was already running; success, not an error),
                          or `not_found`. `not_found` covers unknown ids, ids older than the 7-day
                          retention window, and namespaces where the app is no longer installed.
-                    format: enum
             description: The outcome for one requested delivery id.
         BatchUpsertCheckRunsRequest:
             required:
@@ -10754,8 +11350,14 @@ components:
                         - queued
                         - in_progress
                         - completed
+                        - rerequested
                     type: string
-                    format: enum
+                    description: |-
+                        Lifecycle state. `rerequested` is a completed run whose re-run was
+                         requested and not yet answered by the owning app: pending for readers
+                         (render like `queued`), with `conclusion` and the timings still
+                         describing the superseded attempt. Set only by Origin on re-request
+                         (RerequestCheckRun); apps cannot post it.
                 conclusion:
                     readOnly: true
                     enum:
@@ -10768,8 +11370,10 @@ components:
                         - action_required
                         - stale
                     type: string
-                    description: Present iff `status == completed`.
-                    format: enum
+                    description: |-
+                        Present iff `status` is `completed` or `rerequested`. For a
+                         `rerequested` run it is the superseded attempt's verdict: treat the run
+                         as pending and read `conclusion` only when `status == completed`.
                 detailsUrl:
                     readOnly: true
                     type: string
@@ -10800,12 +11404,14 @@ components:
                 externalId:
                     readOnly: true
                     type: string
-                    description: Provider-assigned immutable identity for this check attempt.
+                    description: |-
+                        Provider-assigned immutable identity for this check attempt (see
+                         `CheckRunInput.external_id`: one per execution is the recommended style).
                 actor:
                     readOnly: true
                     allOf:
                         - $ref: '#/components/schemas/OriginActor'
-                    description: Principal that produced the check run.
+                    description: Principal that produced the check run; always the owning suite's `actor`.
                 output:
                     readOnly: true
                     allOf:
@@ -10827,12 +11433,13 @@ components:
                     type: string
                     description: |-
                         Set while a re-request is outstanding; cleared when the provider posts
-                         again. Unset means no re-request is pending. While set, the run stays in
-                         the commit's CI state as pending (`status` and `conclusion` are the
-                         superseded result); the owning app answers by posting the run it
-                         committed to by declaring `is_rerequestable` — a new run for the same
-                         `key`, or an update of this run (which clears this field) — after which
-                         the run may be re-requested again.
+                         again. Unset means no re-request is pending. While set, `status` is
+                         `rerequested` and the run stays in the commit's CI state as pending
+                         (`conclusion` and the timings are the superseded result); the owning app
+                         answers by posting the run it committed to by declaring
+                         `is_rerequestable` — a new run for the same `key`, or an update of this
+                         run (which clears this field) — after which the run may be re-requested
+                         again.
                     format: date-time
                 rerequestedBy:
                     readOnly: true
@@ -10860,7 +11467,6 @@ components:
                         - warning
                         - failure
                     type: string
-                    format: enum
                 message:
                     readOnly: true
                     type: string
@@ -10905,7 +11511,6 @@ components:
                         - warning
                         - failure
                     type: string
-                    format: enum
                 message:
                     type: string
                     description: 'Non-empty annotation message. Maximum UTF-8 size: 65535 bytes.'
@@ -10966,8 +11571,12 @@ components:
                         - queued
                         - in_progress
                         - completed
+                        - rerequested
                     type: string
-                    format: enum
+                    description: |-
+                        Settable values: `queued`, `in_progress` or `completed`. `rerequested` is
+                         read-only — set only by Origin on re-request — and a post carrying it is
+                         rejected with INVALID_ARGUMENT.
                 conclusion:
                     enum:
                         - success
@@ -10980,7 +11589,6 @@ components:
                         - stale
                     type: string
                     description: Required iff `status == completed`.
-                    format: enum
                 externalUpdatedAt:
                     type: string
                     description: |-
@@ -11002,7 +11610,13 @@ components:
                          provider's job/build URL).
                 externalId:
                     type: string
-                    description: Provider-assigned immutable identity for this check attempt.
+                    description: |-
+                        Provider-assigned immutable identity for this check attempt. Mint a new
+                         value per execution (a rerun is a new run for the same `key`; the latest
+                         attempt per `key` is what CI state, required checks and the default
+                         listings show, and earlier attempts stay as history). Reusing an
+                         `external_id` updates that run in place instead, which discards its
+                         previous result.
                 output:
                     allOf:
                         - $ref: '#/components/schemas/CheckRunOutput'
@@ -11050,6 +11664,25 @@ components:
                         Detailed output. May contain Markdown.
                          Maximum UTF-8 size: 65535 bytes.
             description: Human-readable output reported for a check run.
+        CheckRunReference:
+            type: object
+            properties:
+                id:
+                    type: string
+                    x-cursor-visibility: PREVIEW
+                name:
+                    type: string
+                    x-cursor-visibility: PREVIEW
+                checkSuite:
+                    allOf:
+                        - $ref: '#/components/schemas/CheckSuiteReference'
+                    description: Suite the check run belongs to.
+                    x-cursor-visibility: PREVIEW
+            description: |-
+                Identity and display coordinates of a check run, for embedding in resources
+                 that a `repository:checks` read does not gate. Everything else about the run
+                 (status, conclusion, output, details URL) is `GetCheckRun`.
+            x-cursor-visibility: PREVIEW
         CheckRunRerequestedWebhookPayload:
             type: object
             properties:
@@ -11065,14 +11698,16 @@ components:
                     allOf:
                         - $ref: '#/components/schemas/CheckRun'
                     description: |-
-                        The re-requested check run; `check_run.rerequested_at` records the stamp
-                         and `check_run.rerequested_by` the principal that asked.
+                        The re-requested check run (`status: rerequested`);
+                         `check_run.rerequested_at` records the stamp and
+                         `check_run.rerequested_by` the principal that asked.
             description: |-
                 repository.check_run.rerequested webhook payload, delivered only to the app
                  that owns the check run. Answer by posting a fresh run for the same head
                  SHA and key — a new run (new external_id) or an update of the re-requested
-                 run — the stamped run's status is never reset by Origin, and the answering
-                 post clears `rerequested_at`. Each accepted re-request emits one event, and
+                 run. The stamped run reads `status: rerequested` (its conclusion and
+                 timings are the superseded result) until the answering post clears
+                 `rerequested_at`. Each accepted re-request emits one event, and
                  a run may be re-requested again once answered, so dedupe redeliveries on
                  the event id alone; `check_run.rerequested_at` carries the outstanding
                  stamp. The payload carries no pull request context (check runs attach to
@@ -11123,7 +11758,7 @@ components:
                     sha: 9a41f0c3d2b8e7f6a5c4d3e2f1b0a9c8d7e6f5a4
                     key: ci-8842-unit-tests
                     name: unit-tests
-                    status: completed
+                    status: rerequested
                     conclusion: failure
                     detailsUrl: https://ci.acme.dev/runs/8842
                     externalUpdatedAt: "2026-08-02T14:44:30Z"
@@ -11161,10 +11796,6 @@ components:
                     allOf:
                         - $ref: '#/components/schemas/CheckRun'
                     description: The check run snapshot at this lifecycle point.
-                actor:
-                    allOf:
-                        - $ref: '#/components/schemas/OriginActor'
-                    description: The principal that produced the check run.
             description: Committed snapshot for an Origin check-run lifecycle event.
             x-origin-webhook-events:
                 - repository.check_run.created
@@ -11228,10 +11859,6 @@ components:
                         title: Unit tests
                         summary: 128 tests passed.
                         text: All suites green.
-                actor:
-                    user:
-                        id: user_01k2ja2000e0080000000000c3
-                        email: jane@acme.dev
         CheckSuite:
             type: object
             properties:
@@ -11304,6 +11931,92 @@ components:
             properties:
                 id:
                     type: string
+        CodeownerApprovalBlocker:
+            type: object
+            properties:
+                requirements:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/CodeownerRequirement'
+                    x-cursor-visibility: PREVIEW
+            x-cursor-visibility: PREVIEW
+        CodeownerRequirement:
+            type: object
+            properties:
+                owners:
+                    type: array
+                    items:
+                        type: string
+                    description: Code owners, any one of whom can satisfy the requirement.
+                    x-cursor-visibility: PREVIEW
+                paths:
+                    type: array
+                    items:
+                        type: string
+                    description: Changed paths this owner set covers.
+                    x-cursor-visibility: PREVIEW
+            description: One owner set that still needs an approval.
+            x-cursor-visibility: PREVIEW
+        CommentThread:
+            type: object
+            properties:
+                id:
+                    readOnly: true
+                    type: string
+                version:
+                    readOnly: true
+                    allOf:
+                        - $ref: '#/components/schemas/PullRequestVersion'
+                    description: |-
+                        The pull request version the thread was filed against, including its
+                         head and base SHAs (see `PullRequestReview.pull_request_version`).
+                path:
+                    readOnly: true
+                    type: string
+                    description: |-
+                        File path of the thread's diff anchor. Empty for general-discussion
+                         threads.
+                side:
+                    readOnly: true
+                    enum:
+                        - left
+                        - right
+                    type: string
+                    description: Diff side of the anchor. Unset for general-discussion threads.
+                startLine:
+                    readOnly: true
+                    type: integer
+                    description: |-
+                        First line of the anchored range in the `side` version of the file.
+                         0 for file-level and general-discussion threads.
+                    format: uint32
+                endLine:
+                    readOnly: true
+                    type: integer
+                    description: |-
+                        Inclusive last line of the anchored range. 0 when the anchor is a
+                         single line or has no line range.
+                    format: uint32
+                resolvedAt:
+                    readOnly: true
+                    type: string
+                    description: When the thread was resolved. Unset while the thread is open.
+                    format: date-time
+                createdAt:
+                    readOnly: true
+                    type: string
+                    format: date-time
+                updatedAt:
+                    readOnly: true
+                    type: string
+                    format: date-time
+            description: |-
+                A pull request comment thread as stored: identity, the version it was
+                 filed against, its diff anchor, and resolution state.
+
+                 A thread takes one of three shapes: general discussion (no diff anchor),
+                 file-level (`path` and `side` set with no line range), or line-anchored
+                 (`path`, `side`, and `start_line` set, optionally with `end_line`).
         Commit:
             type: object
             properties:
@@ -11354,7 +12067,6 @@ components:
                         - behind
                         - diverged
                     type: string
-                    format: enum
                 aheadBy:
                     type: integer
                     description: Commits `head` is ahead of the merge base.
@@ -11827,7 +12539,6 @@ components:
                         - comment
                     type: string
                     description: The review decision.
-                    format: enum
                 body:
                     type: string
                     description: Free-text review summary. May be empty.
@@ -11881,7 +12592,6 @@ components:
                         - evaluate
                         - disabled
                     type: string
-                    format: enum
                 kind:
                     enum:
                         - merge_branch
@@ -11889,7 +12599,6 @@ components:
                         - push_tag
                         - push_repository
                     type: string
-                    format: enum
                 includedRefNames:
                     type: array
                     items:
@@ -11922,6 +12631,19 @@ components:
                     description: |-
                         The unique identifier of the installation to delete. Bound from the URL
                          path; the installation must belong to the authenticated app.
+        DeleteGitRefRequest:
+            required:
+                - identifier
+                - ref
+            type: object
+            properties:
+                identifier:
+                    allOf:
+                        - $ref: '#/components/schemas/RepoIdentifier'
+                    description: 'Identity of the repo: `(owner_slug, name)`.'
+                ref:
+                    type: string
+                    description: Branch reference to delete, as `refs/heads/<branch>` or `heads/<branch>`.
         DeleteLabelRequest:
             required:
                 - identifier
@@ -12206,6 +12928,29 @@ components:
                     $ref: '#/components/schemas/RepoIdentifier'
                 commentId:
                     type: string
+        GetPullRequestMergeabilityRequest:
+            required:
+                - identifier
+                - pullNumber
+            type: object
+            properties:
+                identifier:
+                    allOf:
+                        - $ref: '#/components/schemas/RepoIdentifier'
+                    x-cursor-visibility: PREVIEW
+                pullNumber:
+                    type: string
+                    x-cursor-visibility: PREVIEW
+                expectedHeadSha:
+                    type: string
+                    description: |-
+                        Optional guard: the full commit SHA (40- or 64-character hex) expected to
+                         be the pull request's current head. When set and the evaluated head
+                         differs, the request is rejected with ABORTED (HTTP 409) instead of
+                         returning a result. Values that are not a full commit SHA are rejected
+                         with INVALID_ARGUMENT.
+                    x-cursor-visibility: PREVIEW
+            x-cursor-visibility: PREVIEW
         GetPullRequestRequest:
             required:
                 - identifier
@@ -12415,6 +13160,147 @@ components:
                     description: The type of the serialized message.
             additionalProperties: true
             description: Contains an arbitrary serialized message along with a @type that describes the type of the serialized message.
+        GrepContentsMatch:
+            type: object
+            properties:
+                path:
+                    type: string
+                    description: Path to the file, relative to the repository root.
+                lineNumber:
+                    type: integer
+                    description: One-based line number of this line within the file.
+                    format: uint32
+                line:
+                    type: string
+                    description: The line's text, without its trailing line terminator.
+                kind:
+                    enum:
+                        - match
+                        - context
+                    type: string
+                    description: Whether this line carries matches or was returned as context.
+                submatches:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/GrepContentsSubmatch'
+                    description: |-
+                        Where the matches sit inside `line`. Always empty on a context line. When
+                         `limit_hit` is true, the last matching line may carry only some of its
+                         matches. Ranges that fall entirely past `line` are omitted; ranges that
+                         would extend past `line` are reduced to the bytes that remain.
+            description: |-
+                One line of a search result: either a line carrying matches or a line
+                 returned as context around one.
+        GrepContentsRequest:
+            required:
+                - identifier
+                - query
+            type: object
+            properties:
+                identifier:
+                    allOf:
+                        - $ref: '#/components/schemas/RepoIdentifier'
+                    description: 'Identity of the repo: `(owner_slug, name)`.'
+                ref:
+                    type: string
+                    description: |-
+                        Commit, branch, tag, or symbolic ref (for example `HEAD`) to search.
+                         Empty means the repository's default branch.
+                query:
+                    type: string
+                    description: |-
+                        The pattern to search for. By default it is a regular expression
+                         supporting character classes, quantifiers, alternation, groups, and
+                         anchors; set `literal` to search for the text exactly instead. Whitespace
+                         is significant and is searched for as given. When `literal` is false,
+                         case-insensitive matching is a leading `(?i)` in the pattern (for example
+                         `(?i)launch`) and whole-word matching is `\b` around it (for example
+                         `\blaunch\b`). An empty pattern is rejected with INVALID_ARGUMENT.
+                         Maximum UTF-8 size: 4096 bytes.
+                literal:
+                    type: boolean
+                    description: Search for `query` as exact text rather than as a regular expression.
+                caseInsensitive:
+                    type: boolean
+                    description: |-
+                        Match upper and lower case as equivalent. Applied only when `literal` is
+                         true. Ignored for a regular-expression search; write a leading `(?i)` in
+                         `query` instead.
+                wholeWord:
+                    type: boolean
+                    description: |-
+                        Match only complete words. Applied only when `literal` is true. Ignored
+                         for a regular-expression search; write `\b` around the pattern instead.
+                contextBefore:
+                    type: integer
+                    description: |-
+                        How many lines immediately before each matching line to return as
+                         context. Values above 10 are reduced to 10.
+                    format: uint32
+                contextAfter:
+                    type: integer
+                    description: |-
+                        How many lines immediately after each matching line to return as context.
+                         Values above 10 are reduced to 10.
+                    format: uint32
+                filterPath:
+                    type: string
+                    description: |-
+                        Restrict the search to this file or directory, relative to the repository
+                         root. Empty searches the whole repository. Maximum UTF-8 size: 4096 bytes.
+                includes:
+                    type: array
+                    items:
+                        type: string
+                    description: |-
+                        Glob patterns naming the paths to search. Matching is case-insensitive; a
+                         pattern containing no `/` matches at any depth, `*` matches within one
+                         path segment, and `**` matches across segments. When any include is
+                         present, a path matching none of them is not searched. At most 20
+                         entries. Maximum UTF-8 size per pattern: 4096 bytes.
+                excludes:
+                    type: array
+                    items:
+                        type: string
+                    description: |-
+                        Glob patterns naming paths to leave out, in the same syntax as
+                         `includes`. An exclude beats an include, and excluding a directory leaves
+                         out everything beneath it. At most 20 entries. Maximum UTF-8 size per
+                         pattern: 4096 bytes.
+                maxResults:
+                    type: integer
+                    description: |-
+                        The most matching occurrences to return. Zero requests the default of
+                         1000, and values above 1000 are reduced to 1000. Context lines do not
+                         count toward the cap.
+                    format: uint32
+        GrepContentsResponse:
+            type: object
+            properties:
+                matches:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/GrepContentsMatch'
+                    description: |-
+                        The matching lines and their context lines. The order in which files and
+                         lines appear is unspecified and may differ between identical requests.
+                limitHit:
+                    type: boolean
+                    description: |-
+                        Whether the search reached `max_results`. Narrow `query`, `filter_path`,
+                         or the glob lists to search a smaller set of files.
+        GrepContentsSubmatch:
+            type: object
+            properties:
+                start:
+                    type: integer
+                    description: Byte offset of the first byte of the match within the line.
+                    format: uint32
+                end:
+                    type: integer
+                    description: Byte offset one past the last byte of the match within the line.
+                    format: uint32
+            description: One matched range of bytes inside a line.
         InlineCommentAnchor:
             required:
                 - path
@@ -12437,7 +13323,6 @@ components:
                     description: |-
                         Diff side of the anchor: `left` for the base version of the file,
                          `right` for the head version.
-                    format: enum
                 startLine:
                     type: integer
                     description: |-
@@ -12715,7 +13600,14 @@ components:
                     type: string
                     description: |-
                         Opaque cursor from a previous response's `next_page_token`. Empty for the
-                         first page.
+                         first page. The same filter must be used when requesting subsequent pages.
+                filter:
+                    type: string
+                    description: |-
+                        Optional case-insensitive substring filter applied to repository names and
+                         owner namespaces. A single-slash `owner/repo` value matches each half
+                         against its corresponding field. Leading and trailing whitespace is
+                         ignored; an empty value applies no filter.
         ListAppInstallationRepositoriesResponse:
             type: object
             properties:
@@ -12733,7 +13625,6 @@ components:
                         - selected
                     type: string
                     description: Whether the authenticated installation can access all repos belonging to an owner, or only selected repos.
-                    format: enum
         ListAppInstallationsRequest:
             type: object
             properties:
@@ -12852,8 +13743,8 @@ components:
                 status:
                     type: string
                     description: |-
-                        Optional status filter: `queued`, `in_progress`, or `completed`. Any
-                         other value is rejected with INVALID_ARGUMENT.
+                        Optional status filter: `queued`, `in_progress`, `completed`, or
+                         `rerequested`. Any other value is rejected with INVALID_ARGUMENT.
         ListCheckRunsForCommitResponse:
             type: object
             properties:
@@ -13371,7 +14262,10 @@ components:
                     description: Optional exact branch (head-ref) filter. Omit to list across every branch.
                 state:
                     type: string
-                    description: '"open" | "closed" | "all". Defaults to "open".'
+                    description: |-
+                        Lifecycle filter: "open" (the default), "closed", "merged", or "all".
+                         "closed" includes merged pull requests; "merged" is only those. Any other
+                         value is rejected with INVALID_ARGUMENT.
                 pageSize:
                     type: integer
                     description: Maximum results to return. Defaults to 30; maximum 100.
@@ -13397,8 +14291,11 @@ components:
                 direction:
                     type: string
                     description: |-
-                        Sort direction by creation order (pull number): `"desc"` (newest first,
-                         the default) or `"asc"` (oldest first).
+                        Sort direction along `sort_by`; defaults to `"desc"`. With
+                         `sort_by=created`, `"desc"` lists the most recently created pull request
+                         first and `"asc"` the earliest created first. With `sort_by=updated`,
+                         `"desc"` lists the most recently updated first and `"asc"` the least
+                         recently updated first. Any other value is rejected with INVALID_ARGUMENT.
                 since:
                     type: string
                     description: |-
@@ -13411,6 +14308,11 @@ components:
                         Optional inclusive upper bound on creation time (RFC 3339 timestamp):
                          only pull requests created at or before this instant. Malformed
                          timestamps are rejected with INVALID_ARGUMENT.
+                sortBy:
+                    type: string
+                    description: |-
+                        Sort key: `"created"` (creation order, the default) or `"updated"` (time
+                         of last update). Any other value is rejected with INVALID_ARGUMENT.
         ListPullRequestsResponse:
             type: object
             properties:
@@ -13551,6 +14453,26 @@ components:
                 nextPageToken:
                     type: string
                     description: Opaque cursor for the next page; empty when there are no more pages.
+        MergeConflictBlocker:
+            type: object
+            properties:
+                conflictedPaths:
+                    type: array
+                    items:
+                        type: string
+                    description: Paths that conflict with the base branch. At most 100 are listed.
+                    x-cursor-visibility: PREVIEW
+                truncated:
+                    type: boolean
+                    description: Whether more paths conflict than are listed.
+                    x-cursor-visibility: PREVIEW
+                inheritedFromDownstack:
+                    type: boolean
+                    description: |-
+                        The conflict comes from a pull request below this one in the stack, so
+                         this pull request is waiting on that one rather than conflicted itself.
+                    x-cursor-visibility: PREVIEW
+            x-cursor-visibility: PREVIEW
         MergePullRequestRequest:
             required:
                 - identifier
@@ -13584,7 +14506,6 @@ components:
                          the repository does not allow fails with FAILED_PRECONDITION. Omit to use
                          the repository's default: a merge commit when allowed, otherwise squash;
                          squash when the base branch requires linear history.
-                    format: enum
         MergePullRequestResponse:
             type: object
             properties:
@@ -13620,7 +14541,6 @@ components:
                         - outbound_to_inbound
                     type: string
                     description: The mirror-direction change this job performs.
-                    format: enum
                 status:
                     readOnly: true
                     enum:
@@ -13635,7 +14555,6 @@ components:
                         Lifecycle state. `succeeded`, `failed_rolled_back`, and `superseded` are
                          terminal; `requires_attention` needs operator intervention or a forced
                          cutover.
-                    format: enum
                 phase:
                     readOnly: true
                     type: string
@@ -13714,7 +14633,6 @@ components:
                         - PERMISSION_CUSTOM
                     type: string
                     description: Permission the principal holds on every repository under the owner.
-                    format: enum
             description: |-
                 One grant of access to an owner: the principal that holds it and the
                  permission it confers on every repository under that owner. The principal is
@@ -13762,7 +14680,6 @@ components:
                         - members
                         - admins
                     type: string
-                    format: enum
             description: |-
                 A fixed group of the team that owns a repository or an owner: every team
                  member or every team admin. These are the owning team's default access
@@ -13808,7 +14725,6 @@ components:
                         - user
                     type: string
                     description: '`team` or `user`. Output-only; unset when unknown.'
-                    format: enum
             description: The owner of a repo.
         PingWebhookRequest:
             type: object
@@ -13960,7 +14876,7 @@ components:
                     type: string
                 thread:
                     allOf:
-                        - $ref: '#/components/schemas/Thread'
+                        - $ref: '#/components/schemas/CommentThread'
                     description: |-
                         The thread this comment belongs to, including its diff anchor and
                          resolution state.
@@ -14050,6 +14966,180 @@ components:
                 previousFilename:
                     type: string
             description: A file changed in a pull request.
+        PullRequestLabelWebhookPayload:
+            type: object
+            properties:
+                pullRequest:
+                    allOf:
+                        - $ref: '#/components/schemas/PullRequestReference'
+                    description: The pull request whose assigned labels changed.
+                label:
+                    allOf:
+                        - $ref: '#/components/schemas/Label'
+                    description: The label the event is about.
+                actor:
+                    allOf:
+                        - $ref: '#/components/schemas/OriginActor'
+                    description: |-
+                        The principal that assigned the label, when known. Set only on
+                         `pull_request.label.added`.
+            description: |-
+                A change to the pull request's assigned labels. Read the current set with
+                 `ListPullRequestLabels`.
+            x-origin-webhook-events:
+                - pull_request.label.added
+                - pull_request.label.removed
+            example:
+                pullRequest:
+                    id: pr_01k2ja2000e0080000000000d4
+                    number: "17"
+                    repository:
+                        id: repo_01k2ja2000e0080000000000q4
+                        name: rocket
+                        owner:
+                            slug: acme
+                            id: ns_01k2ja2000e0080000000000p3
+                            type: team
+                label:
+                    id: lbl_01k2ja2000e0080000000000m1
+                    name: bug
+                    color: d73a4a
+                    description: Something isn't working
+                actor:
+                    user:
+                        id: user_01k2ja2000e0080000000000c3
+                        email: jane@acme.dev
+        PullRequestMergeability:
+            type: object
+            properties:
+                pullRequest:
+                    allOf:
+                        - $ref: '#/components/schemas/PullRequestReference'
+                    description: The pull request the verdict is about.
+                    x-cursor-visibility: PREVIEW
+                verdict:
+                    enum:
+                        - mergeable
+                        - blocked
+                    type: string
+                    description: |-
+                        Overall answer for every pull request in `evaluated_pull_requests`:
+                         `mergeable` means merging `pull_request` lands all of them (for a stacked
+                         pull request, the whole stack below it as well). Unrecognized values must
+                         be treated as `blocked`.
+                    x-cursor-visibility: PREVIEW
+                blockers:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/PullRequestMergeabilityBlocker'
+                    description: |-
+                        Everything preventing the merge, ordered by the pull request they belong
+                         to (stack root first) and then by kind. Empty when `verdict` is
+                         `mergeable`. At most one blocker per pull request per kind, except
+                         `required_checks` (one per state) and `rule_failure` / `ruleset_error`
+                         (one per distinct message); the same kind can appear for different pull
+                         requests in the stack. Every blocker's `pull_request` is one of
+                         `evaluated_pull_requests`.
+
+                         New kinds are added over time. Decode with unknown values tolerated
+                         (`ignoreUnknownFields` in protobuf-es, `DiscardUnknown` in Go protojson):
+                         a blocker whose `kind` postdates your client then decodes with `kind`
+                         unset and `message` intact, and is still blocking. Strict decoders reject
+                         the whole response instead.
+                    x-cursor-visibility: PREVIEW
+                evaluatedPullRequests:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/PullRequestReference'
+                    description: |-
+                        Pull requests a merge of `pull_request` would land, stack root first and
+                         ending with `pull_request`. Ancestors that already merged are not listed:
+                         they are history, not part of the evaluation. Exactly one element for an
+                         unstacked pull request.
+                    x-cursor-visibility: PREVIEW
+                headSha:
+                    type: string
+                    description: Head commit of `pull_request` that was evaluated.
+                    x-cursor-visibility: PREVIEW
+                baseRef:
+                    type: string
+                    description: |-
+                        Branch the evaluated pull requests merge into: the stack root's base, not
+                         this pull request's own base when it is stacked.
+                    x-cursor-visibility: PREVIEW
+                baseSha:
+                    type: string
+                    description: |-
+                        Tip commit of `base_ref` at `evaluated_at`. A later push to `base_ref`
+                         may change the verdict. Empty when the base branch could not be
+                         determined (for example, an invalid stack).
+                    x-cursor-visibility: PREVIEW
+                evaluatedAt:
+                    type: string
+                    description: |-
+                        When this result was evaluated. Changes after this time are not
+                         reflected; re-query to pick them up.
+                    format: date-time
+                    x-cursor-visibility: PREVIEW
+            description: Whether a pull request can be merged, and why not when it cannot.
+            x-cursor-visibility: PREVIEW
+        PullRequestMergeabilityBlocker:
+            type: object
+            properties:
+                pullRequest:
+                    allOf:
+                        - $ref: '#/components/schemas/PullRequestReference'
+                    description: Pull request in `evaluated_pull_requests` this blocker belongs to.
+                    x-cursor-visibility: PREVIEW
+                kind:
+                    enum:
+                        - draft
+                        - closed
+                        - merged
+                        - merge_conflict
+                        - required_checks
+                        - required_approvals
+                        - codeowner_approval
+                        - behind_base
+                        - needs_restack
+                        - restack_pending
+                        - conflict_check_pending
+                        - invalid_stack
+                        - ruleset_error
+                        - rule_failure
+                    type: string
+                    description: |-
+                        Category of the blocker. Never unset on the wire; a client that decodes
+                         it unset received a kind newer than itself (see `blockers`).
+                    x-cursor-visibility: PREVIEW
+                message:
+                    type: string
+                    description: |-
+                        Human-readable statement of the blocker and how to clear it. Never empty:
+                         what to render when `kind` is unrecognized.
+                    x-cursor-visibility: PREVIEW
+                requiredChecks:
+                    allOf:
+                        - $ref: '#/components/schemas/RequiredChecksBlocker'
+                    x-cursor-visibility: PREVIEW
+                requiredApprovals:
+                    allOf:
+                        - $ref: '#/components/schemas/RequiredApprovalsBlocker'
+                    x-cursor-visibility: PREVIEW
+                codeownerApproval:
+                    allOf:
+                        - $ref: '#/components/schemas/CodeownerApprovalBlocker'
+                    x-cursor-visibility: PREVIEW
+                mergeConflict:
+                    allOf:
+                        - $ref: '#/components/schemas/MergeConflictBlocker'
+                    x-cursor-visibility: PREVIEW
+                stackShape:
+                    allOf:
+                        - $ref: '#/components/schemas/StackShapeBlocker'
+                    x-cursor-visibility: PREVIEW
+            description: One condition preventing a merge.
+            x-cursor-visibility: PREVIEW
         PullRequestRef:
             type: object
             properties:
@@ -14097,7 +15187,6 @@ components:
                         - request_changes
                         - comment
                     type: string
-                    format: enum
                 body:
                     type: string
                     description: Free-text review summary. Empty when the reviewer left no summary.
@@ -14195,7 +15284,6 @@ components:
                         - codeowners
                     type: string
                     description: How the review request was created.
-                    format: enum
                 createdBy:
                     allOf:
                         - $ref: '#/components/schemas/OriginActor'
@@ -14529,7 +15617,6 @@ components:
                         - private
                     type: string
                     description: Repository visibility, `internal` or `private`.
-                    format: enum
                 allowMergeCommit:
                     readOnly: true
                     type: boolean
@@ -14618,7 +15705,6 @@ components:
                         - admin
                         - custom
                     type: string
-                    format: enum
             description: |-
                 A permission granted directly on a repository to one user, group, or
                  owning-team group.
@@ -14656,7 +15742,6 @@ components:
                     enum:
                         - github
                     type: string
-                    format: enum
                 sourceId:
                     readOnly: true
                     type: string
@@ -14668,7 +15753,6 @@ components:
                         - outbound
                     type: string
                     description: Effective direction during a transition, until cutover completes.
-                    format: enum
             description: The external source and lifecycle state of a mirrored repository.
         RepositoryPushCommit:
             type: object
@@ -14823,6 +15907,64 @@ components:
                         Group identifiers to request. Each must uniquely match a group candidate
                          for the repository by public `grp_…` id, qualified group slug, or group
                          slug.
+        RequiredApprovalsBlocker:
+            type: object
+            properties:
+                requiredCount:
+                    type: integer
+                    description: Approving reviews the repository rules require.
+                    format: int32
+                    x-cursor-visibility: PREVIEW
+                approvedCount:
+                    type: integer
+                    description: Approving reviews currently counted toward the requirement.
+                    format: int32
+                    x-cursor-visibility: PREVIEW
+            x-cursor-visibility: PREVIEW
+        RequiredCheck:
+            type: object
+            properties:
+                name:
+                    type: string
+                    description: Name the repository rule requires.
+                    x-cursor-visibility: PREVIEW
+                owner:
+                    allOf:
+                        - $ref: '#/components/schemas/OriginActor'
+                    description: Principal expected to report the check.
+                    x-cursor-visibility: PREVIEW
+                checkRun:
+                    allOf:
+                        - $ref: '#/components/schemas/CheckRunReference'
+                    description: |-
+                        The check run on `head_sha` matching this requirement, by reference.
+                         Unset when none has been reported (state `missing`). A reference rather
+                         than the full `CheckRun`: this resource is readable with
+                         `repository:pull_requests` read alone, while a run's status, conclusion,
+                         output and details URL are gated by `repository:checks` read
+                         (`GetCheckRun`); the requirement's state is `RequiredChecksBlocker.state`.
+                    x-cursor-visibility: PREVIEW
+            description: A check a repository rule requires on the evaluated head.
+            x-cursor-visibility: PREVIEW
+        RequiredChecksBlocker:
+            type: object
+            properties:
+                state:
+                    enum:
+                        - missing
+                        - pending
+                        - failing
+                        - action_required
+                    type: string
+                    description: State shared by every check in this blocker.
+                    x-cursor-visibility: PREVIEW
+                checks:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/RequiredCheck'
+                    description: Required checks in that state.
+                    x-cursor-visibility: PREVIEW
+            x-cursor-visibility: PREVIEW
         RerequestCheckRunRequest:
             required:
                 - identifier
@@ -14893,7 +16035,6 @@ components:
                         - evaluate
                         - disabled
                     type: string
-                    format: enum
                 kind:
                     enum:
                         - merge_branch
@@ -14901,7 +16042,6 @@ components:
                         - push_tag
                         - push_repository
                     type: string
-                    format: enum
                 includedRefNames:
                     type: array
                     items:
@@ -14955,7 +16095,6 @@ components:
                         - always
                         - pull_request_only
                     type: string
-                    format: enum
                 user:
                     $ref: '#/components/schemas/RulesetUserBypassActor'
                 team:
@@ -14978,7 +16117,6 @@ components:
                         - always
                         - pull_request_only
                     type: string
-                    format: enum
                 user:
                     $ref: '#/components/schemas/RulesetUserBypassActor'
                 team:
@@ -14999,7 +16137,6 @@ components:
                         - repository_admin
                         - repository_write
                     type: string
-                    format: enum
             description: |-
                 Bypass granted to holders of a policy-backed Origin role. Payload role is
                  one of `namespace_admin`, `repository_admin`, or `repository_write`.
@@ -15078,6 +16215,25 @@ components:
                     type: array
                     items:
                         $ref: '#/components/schemas/Label'
+        StackShapeBlocker:
+            type: object
+            properties:
+                reason:
+                    enum:
+                        - partially_merged
+                        - cycle
+                        - missing_parent
+                        - cross_repository_parent
+                        - base_branch_missing
+                    type: string
+                    x-cursor-visibility: PREVIEW
+                relatedPullRequests:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/PullRequestReference'
+                    description: Other pull requests involved, when the reason names any.
+                    x-cursor-visibility: PREVIEW
+            x-cursor-visibility: PREVIEW
         Status:
             type: object
             properties:
@@ -15137,67 +16293,6 @@ components:
                     type: string
                     description: One of "commit", "tree", "blob", or "tag".
             description: The git object an annotated tag points at.
-        Thread:
-            type: object
-            properties:
-                id:
-                    readOnly: true
-                    type: string
-                version:
-                    readOnly: true
-                    allOf:
-                        - $ref: '#/components/schemas/PullRequestVersion'
-                    description: |-
-                        The pull request version the thread was filed against, including its
-                         head and base SHAs (see `PullRequestReview.pull_request_version`).
-                path:
-                    readOnly: true
-                    type: string
-                    description: |-
-                        File path of the thread's diff anchor. Empty for general-discussion
-                         threads.
-                side:
-                    readOnly: true
-                    enum:
-                        - left
-                        - right
-                    type: string
-                    description: Diff side of the anchor. Unset for general-discussion threads.
-                    format: enum
-                startLine:
-                    readOnly: true
-                    type: integer
-                    description: |-
-                        First line of the anchored range in the `side` version of the file.
-                         0 for file-level and general-discussion threads.
-                    format: uint32
-                endLine:
-                    readOnly: true
-                    type: integer
-                    description: |-
-                        Inclusive last line of the anchored range. 0 when the anchor is a
-                         single line or has no line range.
-                    format: uint32
-                resolvedAt:
-                    readOnly: true
-                    type: string
-                    description: When the thread was resolved. Unset while the thread is open.
-                    format: date-time
-                createdAt:
-                    readOnly: true
-                    type: string
-                    format: date-time
-                updatedAt:
-                    readOnly: true
-                    type: string
-                    format: date-time
-            description: |-
-                A pull request comment thread as stored: identity, the version it was
-                 filed against, its diff anchor, and resolution state.
-
-                 A thread takes one of three shapes: general discussion (no diff anchor),
-                 file-level (`path` and `side` set with no line range), or line-anchored
-                 (`path`, `side`, and `start_line` set, optionally with `end_line`).
         ThreadReference:
             type: object
             properties:
@@ -15219,7 +16314,6 @@ components:
                         - outbound_to_inbound
                     type: string
                     description: The mirror-state change to start.
-                    format: enum
         TransitionRepoMirrorResponse:
             type: object
             properties:
@@ -15419,7 +16513,6 @@ components:
                     description: |-
                         New repository visibility, `internal` or `private`. Unspecified leaves
                          the visibility unchanged.
-                    format: enum
         UpdateRulesetRequest:
             required:
                 - identifier
@@ -15444,7 +16537,6 @@ components:
                         - evaluate
                         - disabled
                     type: string
-                    format: enum
                 kind:
                     enum:
                         - merge_branch
@@ -15452,7 +16544,6 @@ components:
                         - push_tag
                         - push_repository
                     type: string
-                    format: enum
                 includedRefNames:
                     type: array
                     items:
@@ -15504,7 +16595,6 @@ components:
                     description: |-
                         `PERMISSION_READ`, `PERMISSION_CONTRIBUTOR`, `PERMISSION_WRITE`, or
                          `PERMISSION_ADMIN`.
-                    format: enum
         UpsertRepositoryGrantRequest:
             required:
                 - identifier
@@ -15527,7 +16617,6 @@ components:
                         - custom
                     type: string
                     description: '`read`, `write`, or `admin`.'
-                    format: enum
         WebhookApp:
             type: object
             properties:
@@ -15593,7 +16682,6 @@ components:
                         - automatic
                         - manual
                     type: string
-                    format: enum
                 responseStatusCode:
                     readOnly: true
                     type: integer
@@ -15638,7 +16726,6 @@ components:
                         - all
                         - selected
                     type: string
-                    format: enum
                 repositories:
                     type: array
                     items:

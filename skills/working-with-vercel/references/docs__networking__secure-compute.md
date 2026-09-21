@@ -3,7 +3,7 @@ title: Secure Compute
 product: vercel
 url: /docs/networking/secure-compute
 canonical_url: "https://vercel.com/docs/networking/secure-compute"
-last_updated: 2026-07-29
+last_updated: 2026-09-15
 type: reference
 prerequisites:
   - /docs/networking
@@ -16,8 +16,8 @@ related:
 summary: Secure Compute provides dedicated private networks with VPC peering for Enterprise teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/secure-compute.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "38f43730b83e2d0488183acc248dd2a77259130bd7911971e89da52bcf270fc2"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "63db271e9e092cb6c1f985e578bb37e85995e2d919eced99b5a3c5a3f0bee248"
 ---
 
 # Secure Compute
@@ -32,6 +32,7 @@ Secure Compute creates private connections between your [Vercel Functions](/docs
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Secure Compute and Static IP builds start 64% faster](https://vercel.com/changelog/secure-compute-and-static-ip-builds-start-64-faster?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related)
 - [Vercel Functions can now be up to 5GB in package size](https://vercel.com/changelog/vercel-functions-can-now-be-up-to-5-gb-in-package-size?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related)
 - [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
 - [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
@@ -43,7 +44,6 @@ Secure Compute creates private connections between your [Vercel Functions](/docs
 - [VPC Peering now available as self-service for Vercel’s Secure Compute](https://vercel.com/changelog/vpc-peering-now-available-as-self-service-for-vercel-secure-compute?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related)
 - [Improved infrastructure security with Vercel Secure Compute](https://vercel.com/changelog/improve-infrastructure-security-with-vercel-secure-compute?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related)
 - [Security & Compliance Measures](https://vercel.com/docs/security/compliance?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
-- [Vercel Enterprise Plan](https://vercel.com/docs/plans/enterprise?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related) — Learn about the Enterprise plan for Vercel, including features, pricing, and more.
 
 Full cross-link map for this page: [/docs/networking/secure-compute.graph.md](/docs/networking/secure-compute.graph.md?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -62,7 +62,7 @@ Here's what you get with Secure Compute:
 
 - Your own dedicated private network inside a VPC
 - Static IPs that won't change, plus a NAT Gateway
-- Complete isolation — only your specified resources can reach your Vercel Functions
+- Complete isolation, so only your specified resources can reach your Vercel Functions
 
 ## Enabling Secure Compute
 
@@ -97,7 +97,7 @@ Each private network has its own dedicated IP pair and is isolated from others, 
 
 You can create multiple Secure Compute networks for your team directly from the dashboard. For example, separate networks for different projects, environments, or teams. Navigate to your team's **Settings** → [**Networking**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fnetworking%23secure-compute\&title=Networking) and click **Create Network** to add additional networks.
 
-Once your IP pair is ready, add it to your backend's access control list. You'll still need to use a username/password or authentication key on top of the IP filtering — the IPs alone aren't enough.
+Once your IP pair is ready, add it to your backend's access control list. You'll still need to use a username/password or authentication key on top of the IP filtering. The IPs alone aren't enough.
 
 ## Specific region
 
@@ -200,7 +200,13 @@ To set up VPC peering:
 
 The connection can be deleted from either the Vercel dashboard, or the AWS VPC dashboard.
 
-## VPN Support
+## VPN support
+
+Because Secure Compute gives you a dedicated network that Vercel runs on your behalf, you can establish private connectivity with networks in any cloud provider, including your own data centers. Where [VPC peering](#vpc-peering) covers AWS, a site-to-site (S2S) VPN terminated on your Secure Compute network covers everything else:
+
+- **Microsoft Azure**: connect to an Azure Virtual Network. Once the connection is established, your Vercel Functions can reach Azure services exposed in the same network, including VMs, Kubernetes clusters, or platform services through Private Endpoints. See [Using Vercel with Microsoft Azure](/docs/integrations/external-platforms/azure).
+- **Google Cloud**: connect to a Google Cloud VPC network and the services running inside it.
+- **On-premises and other environments**: connect to a data center or any other network that terminates a standard site-to-site VPN.
 
 If your current security and compliance obligations require more than dedicated IP addresses, contact us for guidance related to your specific needs.
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/cohere.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "3106a609bc1006d7933f89518efd3b26ca0ab389b99488e54df87611f7134485"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "5428f8044492e8c8170f6d9333018bacf7d47eb5bcdb01630a31f0a362d8bd21"
 ---
 
 # Cohere Provider
@@ -362,6 +362,7 @@ The following provider options are available:
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
 - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
+- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

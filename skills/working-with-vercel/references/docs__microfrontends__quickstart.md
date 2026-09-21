@@ -16,8 +16,8 @@ related:
 summary: Learn how to get started with microfrontends on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/quickstart.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "030a3e6cc8694e3316d139d584b4d8c3be9867ebc889bc31e37c9e2bcf5cdbaf"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "eb0bb7c180b2602f457a4cf83ed32028c15a2bc67149ae820cfc601c9f1e4088"
 ---
 
 # Getting started with microfrontends
@@ -35,7 +35,6 @@ This quickstart guide will help you set up microfrontends on Vercel. Microfronte
 - [Incremental Migrations with Microfrontends](https://vercel.com/kb/guide/incremental-migrations-with-microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to migrate legacy applications using microfrontends
 - [Microfrontends](https://turborepo.dev/docs/guides/microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fquickstart&source_site=vercel-docs&relationship=related) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
 - [How Vercel adopted microfrontends](https://vercel.com/blog/how-vercel-adopted-microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fquickstart&source_site=vercel-docs&relationship=related)
-- [How to Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fquickstart&source_site=vercel-docs&relationship=related) — Deploy a TanStack Start app to Vercel with the Nitro Vite plugin. Covers Git and CLI deployment, Fluid compute defaults,
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fquickstart&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 - [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
 

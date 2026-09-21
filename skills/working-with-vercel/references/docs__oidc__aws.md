@@ -13,8 +13,8 @@ related:
 summary: "Learn how to configure your AWS account to trust Vercel's OpenID Connect (OIDC) Identity Provider (IdP)."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/aws.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "756f5f50905e0133ab470c8c2d9da7e087c2fcd32c13766a04e5088fba66fe5b"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "530a54ea4f4b1ce8163f6eea46b3d3cc978244aa23bba78db2321f5b05972e52"
 ---
 
 # Connect to Amazon Web Services (AWS)
@@ -30,9 +30,9 @@ To understand how AWS supports OIDC, and for a detailed user guide on creating a
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Connect Next.js to Amazon Aurora PostgreSQL using Vercel Marketplace](https://vercel.com/kb/guide/connect-next-js-to-amazon-aurora-postgresql-using-vercel-marketplace?from=related&source_path=%2Fdocs%2Foidc%2Faws&source_site=vercel-docs&relationship=related) — Learn how to connect your Next.js application to Amazon Aurora PostgreSQL securely using the Vercel Marketplace AWS inte
+- [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel?from=related&source_path=%2Fdocs%2Foidc%2Faws&source_site=vercel-docs&relationship=related) — Migrate containers from AWS to Vercel: deploy with Dockerfile.vercel, keep RDS, S3, and SQS in AWS over OIDC, and cut ov
 - [How can I use AWS S3 with Vercel?](https://vercel.com/kb/guide/how-can-i-use-aws-s3-with-vercel?from=related&source_path=%2Fdocs%2Foidc%2Faws&source_site=vercel-docs&relationship=related) — Example how to use AWS S3 library on Vercel
 - [AWS databases are now live on the Vercel Marketplace and v0](https://vercel.com/blog/aws-databases-are-now-live-on-the-vercel-marketplace-and-v0?from=related&source_path=%2Fdocs%2Foidc%2Faws&source_site=vercel-docs&relationship=related)
-- [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel?from=related&source_path=%2Fdocs%2Foidc%2Faws&source_site=vercel-docs&relationship=related) — Migrate containers from AWS to Vercel: deploy with Dockerfile.vercel, keep RDS, S3, and SQS in AWS over OIDC, and cut ov
 - [Enhancing security of backend connectivity with OpenID Connect](https://vercel.com/blog/enhancing-security-of-backend-connectivity-with-openid-connect?from=related&source_path=%2Fdocs%2Foidc%2Faws&source_site=vercel-docs&relationship=related)
 - [Connect to Microsoft Azure](https://vercel.com/docs/oidc/azure?from=related&source_path=%2Fdocs%2Foidc%2Faws&source_site=vercel-docs&relationship=related) — Learn how to configure your Microsoft Azure account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
 - [Functions API Reference](https://vercel.com/docs/functions/functions-api-reference?from=related&source_path=%2Fdocs%2Foidc%2Faws&source_site=vercel-docs&relationship=related) — Learn about available APIs when working with Vercel Functions.

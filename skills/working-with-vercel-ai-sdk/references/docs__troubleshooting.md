@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/troubleshooting.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "a73bc3774c2f8f50385867925a580433e04d99c3ef836c854a510c642e3cd0f5"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "9f37a4188126ff4656161258238f2d4747beae4565291465567f734fc22aaf12"
 ---
 
 # Troubleshooting
@@ -53,11 +53,13 @@ This section is designed to help you quickly identify and resolve common issues 
   - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
   - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
   - [Code Mode](/docs/ai-sdk-core/code-mode)
+  - [Tool Search](/docs/ai-sdk-core/tool-search)
   - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
   - [Settings](/docs/ai-sdk-core/settings)
   - [Reasoning](/docs/ai-sdk-core/reasoning)
   - [Embeddings](/docs/ai-sdk-core/embeddings)
   - [Reranking](/docs/ai-sdk-core/reranking)
+  - [Evaluation](/docs/ai-sdk-core/evaluation)
   - [Image Generation](/docs/ai-sdk-core/image-generation)
   - [Realtime](/docs/ai-sdk-core/realtime)
   - [Transcription](/docs/ai-sdk-core/transcription)
@@ -135,6 +137,7 @@ This section is designed to help you quickly identify and resolve common issues 
     - [transcribe](/docs/reference/ai-sdk-core/transcribe)
     - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
     - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+    - [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
     - [uploadFile](/docs/reference/ai-sdk-core/upload-file)
     - [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
     - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
@@ -150,6 +153,7 @@ This section is designed to help you quickly identify and resolve common issues 
     - [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
     - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
     - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+    - [toolSearch](/docs/reference/ai-sdk-core/tool-search)
     - [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
     - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
     - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
@@ -219,6 +223,7 @@ This section is designed to help you quickly identify and resolve common issues 
     - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
     - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
     - [AI_EmptyResponseBodyError](/docs/reference/ai-sdk-errors/ai-empty-response-body-error)
+    - [AI_EvaluationUnsupportedQuestionTypeError](/docs/reference/ai-sdk-errors/ai-evaluation-unsupported-question-type-error)
     - [AI_InvalidArgumentError](/docs/reference/ai-sdk-errors/ai-invalid-argument-error)
     - [AI_InvalidDataContentError](/docs/reference/ai-sdk-errors/ai-invalid-data-content-error)
     - [AI_InvalidMessageRoleError](/docs/reference/ai-sdk-errors/ai-invalid-message-role-error)

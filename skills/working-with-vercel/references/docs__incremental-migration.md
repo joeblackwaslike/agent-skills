@@ -16,8 +16,8 @@ related:
 summary: Learn how to migrate your app or website to Vercel with minimal risk and high impact.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/incremental-migration.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "013bf12edf28d63faa466d3f60b3b5e46cde8329f95c020b337ddd3a320d53e7"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "2a1509015191427fcbfd5a242d2226c897e2a80d5e770ff21bdaf02b39b95147"
 ---
 
 # Incremental Migration to Vercel
@@ -31,8 +31,8 @@ When migrating to Vercel you should use an incremental migration strategy. This 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Can I use Vercel as a reverse proxy?](https://vercel.com/kb/guide/vercel-reverse-proxy-rewrites-external?from=related&source_path=%2Fdocs%2Fincremental-migration&source_site=vercel-docs&relationship=related) — Learn how to use rewrites to proxy requests from Vercel to other deployments.
-- [Incremental Migrations with Microfrontends](https://vercel.com/kb/guide/incremental-migrations-with-microfrontends?from=related&source_path=%2Fdocs%2Fincremental-migration&source_site=vercel-docs&relationship=related) — Learn how to migrate legacy applications using microfrontends
 - [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime?from=related&source_path=%2Fdocs%2Fincremental-migration&source_site=vercel-docs&relationship=related) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
+- [Incremental Migrations with Microfrontends](https://vercel.com/kb/guide/incremental-migrations-with-microfrontends?from=related&source_path=%2Fdocs%2Fincremental-migration&source_site=vercel-docs&relationship=related) — Learn how to migrate legacy applications using microfrontends
 - [Why all application migrations should be incremental ](https://vercel.com/blog/incremental-migrations?from=related&source_path=%2Fdocs%2Fincremental-migration&source_site=vercel-docs&relationship=related)
 - [Migrate a Next.js app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-a-next-js-app-from-webflow-cloud-to-vercel?from=related&source_path=%2Fdocs%2Fincremental-migration&source_site=vercel-docs&relationship=related) — Move your Next.js app from Webflow Cloud to Vercel: remove the OpenNext Cloudflare adapter, drop the base path, map stor
 - [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify?from=related&source_path=%2Fdocs%2Fincremental-migration&source_site=vercel-docs&relationship=related) — Migrate your website's configuration from Netlify to Vercel

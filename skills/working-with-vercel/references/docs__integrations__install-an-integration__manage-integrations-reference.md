@@ -3,7 +3,7 @@ title: Permissions and Access
 product: vercel
 url: /docs/integrations/install-an-integration/manage-integrations-reference
 canonical_url: "https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference"
-last_updated: 2026-08-11
+last_updated: 2026-09-17
 type: how-to
 prerequisites:
   - /docs/integrations/install-an-integration
@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage project access and added products for your integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "cb7fbda2439cb1ed1e57da6ac84403bda72dc2872611a6e5b2fa695dabfb00b9"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "ecb0941a318274fc31c16a45d6b81cd2403aa75ff5a072ff32ca636da107bd0c"
 ---
 
 # Permissions and Access
@@ -34,9 +34,9 @@ To view an integration's permissions:
 
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fmanage-integrations-reference&source_site=vercel-docs&relationship=related) — Learn how you can add a product to your Vercel project through a native integration.
 - [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fmanage-integrations-reference&source_site=vercel-docs&relationship=related) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
-- [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fmanage-integrations-reference&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 - [Create an Integration](https://vercel.com/docs/integrations/create-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fmanage-integrations-reference&source_site=vercel-docs&relationship=related) — Learn how to create and manage your own integration for internal or public use with Vercel.
-- [Scopes and Permissions](https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fmanage-integrations-reference&source_site=vercel-docs&relationship=related) — Learn how to manage scopes and permissions for Sign in with Vercel
+- [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fmanage-integrations-reference&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fmanage-integrations-reference&source_site=vercel-docs&relationship=related) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
 
 Full cross-link map for this page: [/docs/integrations/install-an-integration/manage-integrations-reference.graph.md](/docs/integrations/install-an-integration/manage-integrations-reference.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fmanage-integrations-reference&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -80,6 +80,8 @@ To manage which projects the installed integration has access to:
 4. From the dialog, select the option to manage which projects have access.
 
 For native integration resources, you can also [secure your resource](/docs/integrations/install-an-integration/secure-your-resource) from a resource's **Settings** page by configuring **Allowed Environments** and enforcing Production-only usage.
+
+For each Native Marketplace resource connection, you can select Production, Preview, Development, and individual Custom Environments. Production-only mode treats Preview, Development, and every Custom Environment as non-production.
 
 ### Disabled integrations
 

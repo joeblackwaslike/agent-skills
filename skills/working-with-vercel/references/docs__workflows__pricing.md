@@ -3,7 +3,7 @@ title: Workflow Pricing and Limits
 product: workflows
 url: /docs/workflows/pricing
 canonical_url: "https://vercel.com/docs/workflows/pricing"
-last_updated: 2026-06-16
+last_updated: 2026-09-16
 type: reference
 prerequisites:
   - /docs/workflows
@@ -16,8 +16,8 @@ related:
 summary: Understand how Vercel Workflows billing works and the limits that apply to runs, streams, and platform resources.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/workflows/pricing.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "d53dcc668bd62119c38adcff1b1642869a84f8b0bd2b69584a10cd8afcca821a"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "42ade1e6629ff83e7c0de63ab7d049e69dda0d521fb8fc06a361b089f025749f"
 ---
 
 # Workflow Pricing and Limits
@@ -36,11 +36,11 @@ Vercel bills Workflows usage across three resources:
 - [Workflow SDK vs AWS Step Functions](https://workflow-sdk.dev/docs/comparisons/workflow-sdk-vs-aws-step-functions?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — AWS Step Functions is a managed state-machine orchestrator authored in declarative ASL JSON. The Workflow SDK expresses
 - [Workflow SDK vs Cloudflare Workflows](https://workflow-sdk.dev/docs/comparisons/workflow-sdk-vs-cloudflare-workflows?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Cloudflare Workflows is a durable engine on Workers and Durable Objects. It and the Workflow SDK both replay, but differ
 - [Workflow SDK vs Inngest](https://workflow-sdk.dev/docs/comparisons/workflow-sdk-vs-inngest?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Inngest is an event-driven durable-functions platform that invokes your code over HTTP and memoizes step results. The Wo
-- [Vercel vs Webflow Cloud](https://vercel.com/kb/guide/vercel-vs-webflow-cloud?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Compare Vercel and Webflow Cloud for deploying Next.js and Astro apps, including runtime, framework support, storage, pr
+- [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
 - [Limits](https://vercel.com/docs/limits?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
-- [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about legacy usage and pricing for Vercel Functions.
 - [Pricing and Limits](https://vercel.com/docs/eve/pricing?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Understand how eve usage maps to Vercel resources and inherited platform limits.
 - [Workflow Concepts](https://vercel.com/docs/workflows/concepts?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Learn how workflows, steps, sleeps, and hooks work together to build durable applications.
+- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 
 Full cross-link map for this page: [/docs/workflows/pricing.graph.md](/docs/workflows/pricing.graph.md?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=graph)
@@ -104,6 +104,8 @@ The following limits apply to all Workflow runs.
 | Max stream chunk size                   | 10 MB                                                      |                                                                                                                                                                                                                      |
 | Max stream chunks per second per stream | 1,000                                                      |                                                                                                                                                                                                                      |
 | Hook token size                         | 255 bytes                                                  |                                                                                                                                                                                                                      |
+| Attributes per run                      | 64                                                         | (Keys are 1-256 characters and values are strings up to 256 bytes. Keys starting with $ are reserved.)                                                                                        |
+| Attribute write size                    | 8 KiB                                                      | (Maximum size of the event data written by a single setAttributes call, including keys, values, and writer metadata. Split larger updates across calls.)                                     |
 | Workflow name                           | 255 bytes                                                  | (Workflow names are derived from the file path and function name.)                                                                                                                             |
 | Step name                               | 255 bytes                                                  | (Step names are derived from the file path and function name.)                                                                                                                                 |
 

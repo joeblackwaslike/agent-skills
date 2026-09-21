@@ -16,8 +16,8 @@ related:
 summary: Learn about the container image used for Vercel builds.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/build-image.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "e9a358c37df26af7f9d9f80a63293fe1d97a1e39a322ef95e53f1ca7cf64358f"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "a1cede86e258a303d032ee7d24c569e89654b7d62ece2576124fb14ad1aad644"
 ---
 
 # Build image overview
@@ -36,11 +36,11 @@ Vercel supports [multiple runtimes](/docs/functions/runtimes).
 - [Running Docker on Vercel](https://vercel.com/kb/guide/docker?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-image&source_site=vercel-docs&relationship=related) — Learn how to run Docker on Vercel by deploying OCI container images as Vercel Functions, storing them in Vercel Containe
 - [How to install system packages in Vercel Sandbox](https://vercel.com/kb/guide/how-to-install-system-packages-in-vercel-sandbox?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-image&source_site=vercel-docs&relationship=related) — Learn how to install additional system packages in Vercel Sandbox with apt-get on the default Ubuntu-based managed image
 - [Deploy Rust on Vercel with Docker](https://vercel.com/kb/guide/deploy-rust-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-image&source_site=vercel-docs&relationship=related) — Build a Rust application with Axum and Docker, then deploy it to Vercel Functions. Learn how to configure environment va
-- [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-image&source_site=vercel-docs&relationship=related) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
 - [vercel build](https://vercel.com/docs/cli/build?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-image&source_site=vercel-docs&relationship=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
 - [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-image&source_site=vercel-docs&relationship=related) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
 - [Vercel Container Registry](https://vercel.com/docs/container-registry?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-image&source_site=vercel-docs&relationship=related) — Store and manage Docker container images on Vercel. Build and push images with the Vercel CLI, then run them on Vercel F
 - [Build Output API](https://vercel.com/docs/build-output-api?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-image&source_site=vercel-docs&relationship=related) — The Build Output API is a file-system-based specification for a directory structure that can produce a Vercel deployment
+- [Projects overview](https://vercel.com/docs/projects?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-image&source_site=vercel-docs&relationship=related) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 
 Full cross-link map for this page: [/docs/builds/build-image.graph.md](/docs/builds/build-image.graph.md?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-image&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

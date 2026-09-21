@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/cartesia.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "8332b9a1b87f7b468a34f3081fb2463468da477786e7aff5e0757ae51e332ab0"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "003da3fd9c5f06ed898b5093bf919e0767e245e4d6c56971f81824183044be00"
 ---
 
 # Cartesia Provider
@@ -354,6 +354,7 @@ The following provider options are available:
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
 - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
+- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

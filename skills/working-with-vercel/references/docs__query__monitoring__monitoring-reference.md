@@ -17,8 +17,8 @@ related:
 summary: This reference covers the clauses, fields, and variables used to create a Monitoring query.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query/monitoring/monitoring-reference.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "3cc0e0cebff05db08353566b0bc1e996f7e38452151eb7a09e0309775b0dc000"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "a33788fd3c5703b4b7c142830b50933cf5607f4daa442b505fab81461f715633"
 ---
 
 # Monitoring Reference
@@ -31,7 +31,7 @@ Monitoring is now
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Query Reference](https://vercel.com/docs/query/reference?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring%2Fmonitoring-reference&source_site=vercel-docs&relationship=related) — This reference covers the dimensions and operators used to create a query.
+- [Query Reference](https://vercel.com/docs/query/reference?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring%2Fmonitoring-reference&source_site=vercel-docs&relationship=related) — Use this reference to find the event types, metrics, aggregations, dimensions, and operators available in Query.
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring%2Fmonitoring-reference&source_site=vercel-docs&relationship=related) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 - [Tools](https://vercel.com/docs/agent-resources/vercel-mcp/tools?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring%2Fmonitoring-reference&source_site=vercel-docs&relationship=related) — Available tools in Vercel MCP for searching docs, managing teams, projects, deployments, Web Analytics, runtime logs and
 - [Audit Logs](https://vercel.com/docs/audit-log?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring%2Fmonitoring-reference&source_site=vercel-docs&relationship=related) — Learn how to track and analyze your team members' activities.

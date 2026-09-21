@@ -3,7 +3,7 @@ title: SNAPSHOT_NOT_FOUND
 product: vercel
 url: /docs/errors/SNAPSHOT_NOT_FOUND
 canonical_url: "https://vercel.com/docs/errors/SNAPSHOT_NOT_FOUND"
-last_updated: 2026-05-25
+last_updated: 2026-09-15
 type: reference
 prerequisites:
   []
@@ -13,13 +13,13 @@ related:
 summary: The Sandbox cannot resume because the snapshot it references no longer exists.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/snapshot_not_found.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "d6634f9b7fe94f34314e0d5b067eba5092efd7f7e3dbc53ad78b9021daf09921"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "5a4ceeaf0068360e9e21341a9dc7e0c6f6334542a0b6970db9cbf251b98715cc"
 ---
 
 # SNAPSHOT_NOT_FOUND
 
-The `SNAPSHOT_NOT_FOUND` error occurs when a Sandbox tries to resume from a snapshot that is gone — typically because the snapshot expired and was deleted, was deleted explicitly, or never existed. This most commonly surfaces on `Sandbox.get({ name })` or any SDK call that auto-resumes a stopped [persistent Sandbox](/docs/sandbox/concepts/persistent-sandboxes), and on `Sandbox.create({ source: { type: 'snapshot', snapshotId } })` when the referenced snapshot ID is invalid.
+The `SNAPSHOT_NOT_FOUND` error occurs when a Sandbox tries to resume from a snapshot that is gone, typically because the snapshot expired and was deleted, was deleted explicitly, or never existed. This most commonly surfaces on `Sandbox.get({ name })` or any SDK call that auto-resumes a stopped [persistent Sandbox](/docs/sandbox/concepts/persistent-sandboxes), and on `Sandbox.create({ source: { type: 'snapshot', snapshotId } })` when the referenced snapshot ID is invalid.
 
 **Error Code:** `410`
 

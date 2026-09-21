@@ -3,7 +3,7 @@ title: Getting Started
 product: vercel
 url: /docs/routing/redirects/bulk-redirects/getting-started
 canonical_url: "https://vercel.com/docs/routing/redirects/bulk-redirects/getting-started"
-last_updated: 2026-08-11
+last_updated: 2026-09-08
 type: how-to
 prerequisites:
   - /docs/routing/redirects/bulk-redirects
@@ -16,8 +16,8 @@ related:
 summary: Learn how to import thousands of simple redirects from CSV, JSON, or JSONL files.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/redirects/bulk-redirects/getting-started.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "0ecf66dfa95a7849212337badc5cd4cf07281e21ff5024a8681c81d951ec5fd9"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "697e9075f22fd4c9e82b781417530b8c84add33f9fc9924a3c38aa9a82cb2f86"
 ---
 
 # Getting Started
@@ -34,7 +34,6 @@ Bulk redirects can be specified either as part of a Vercel deployment or updated
 - [Bulk redirects are now generally available](https://vercel.com/changelog/bulk-redirects-are-now-generally-available?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fbulk-redirects%2Fgetting-started&source_site=vercel-docs&relationship=related)
 - [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fbulk-redirects%2Fgetting-started&source_site=vercel-docs&relationship=related) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
 - [Scaling redirects to infinity on Vercel](https://vercel.com/blog/scaling-redirects-to-infinity-on-vercel?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fbulk-redirects%2Fgetting-started&source_site=vercel-docs&relationship=related)
-- [How can I increase the limit of redirects or use dynamic redirects on Vercel?](https://vercel.com/kb/guide/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fbulk-redirects%2Fgetting-started&source_site=vercel-docs&relationship=related) — Instructions on how to use Serverless Functions to handle redirects on Vercel.
 - [Managing redirects at scale](https://vercel.com/docs/routing/redirects/manage-redirects-at-scale?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fbulk-redirects%2Fgetting-started&source_site=vercel-docs&relationship=related) — Add, bulk upload, version, and roll back project-level redirects using the CLI.
 - [Edit a project-level redirect.](https://vercel.com/docs/rest-api/bulk-redirects/edit-a-project-level-redirect?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fbulk-redirects%2Fgetting-started&source_site=vercel-docs&relationship=related) — PATCH /v1/bulk-redirects — Edits a single redirect identified by its source path. Stages a new change with the modified
 - [Delete project-level redirects.](https://vercel.com/docs/rest-api/bulk-redirects/delete-project-level-redirects?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fbulk-redirects%2Fgetting-started&source_site=vercel-docs&relationship=related) — DELETE /v1/bulk-redirects — Deletes the provided redirects from the latest version of the projects' bulk redirects. Stag

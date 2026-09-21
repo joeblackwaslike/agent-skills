@@ -17,8 +17,8 @@ related:
 summary: Add a backend to any Vite app with Nitro and deploy to Vercel with zero configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/vite-with-nitro.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "044ceda32f53d4c6a08bb8b4088055d64104bf8143f08b09dc901e8a2c96c87f"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "1e96a28326540e5ea4fe43cfcb2e182ab2f7e4179d92dd20f1e034090d257939"
 ---
 
 # Vite + Nitro on Vercel
@@ -34,9 +34,10 @@ sha256: "044ceda32f53d4c6a08bb8b4088055d64104bf8143f08b09dc901e8a2c96c87f"
 - [What is the Nitro Vite plugin?](https://vercel.com/kb/guide/nitro-vite-plugin?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fvite-with-nitro&source_site=vercel-docs&relationship=related) — The Nitro Vite plugin \\(nitro/vite\\) adds SSR, API routes, and deploy-anywhere server builds to any Vite app. Learn what
 - [How to ship a Nitro app on Vercel](https://vercel.com/kb/guide/ship-a-nitro-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fvite-with-nitro&source_site=vercel-docs&relationship=related) — Deploy a Nitro app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
 - [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fvite-with-nitro&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
-- [Build a Weather API on Vercel: Express, FastAPI, and Nitro](https://vercel.com/kb/guide/weather-api-with-fastapi?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fvite-with-nitro&source_site=vercel-docs&relationship=related) — Build a weather API on Vercel with FastAPI, Express, or Nitro. Compare the three runtimes, add caching and Observability
 - [How to migrate from Vite to Next.js](https://nextjs.org/docs/app/guides/migrating/from-vite?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fvite-with-nitro&source_site=vercel-docs&relationship=related) — Learn how to migrate your existing React application from Vite to Next.js.
+- [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fvite-with-nitro&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
 - [How to migrate from Vite to Next.js](https://nextjs.org/docs/pages/guides/migrating/from-vite?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fvite-with-nitro&source_site=vercel-docs&relationship=related) — Learn how to migrate your existing React application from Vite to Next.js.
+- [Build a Weather API on Vercel: Express, FastAPI, and Nitro](https://vercel.com/kb/guide/weather-api-with-fastapi?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fvite-with-nitro&source_site=vercel-docs&relationship=related) — Build a weather API on Vercel with FastAPI, Express, or Nitro. Compare the three runtimes, add caching and Observability
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fvite-with-nitro&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 - [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fvite-with-nitro&source_site=vercel-docs&relationship=related) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
 

@@ -3,7 +3,7 @@ title: Accessing Deployments through Generated URLs
 product: vercel
 url: /docs/deployments/generated-urls
 canonical_url: "https://vercel.com/docs/deployments/generated-urls"
-last_updated: 2026-08-28
+last_updated: 2026-09-08
 type: conceptual
 prerequisites:
   - /docs/deployments
@@ -16,8 +16,8 @@ related:
 summary: When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that particular deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/generated-urls.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "a1ba7e4d292edce79e027fbda66eb5cad9819a0d95278accc2c5bad17a7ad3d0"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "4a8a34091b23ba88386c073a4d972ca2cd1f0118b14116f2c3cb42bbb5b3c33b"
 ---
 
 # Accessing Deployments through Generated URLs
@@ -40,8 +40,8 @@ When you create a new [deployment](/docs/deployments) in either a preview or pro
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fdeployments%2Fgenerated-urls&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related&source_path=%2Fdocs%2Fdeployments%2Fgenerated-urls&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [Deploying Git Repositories with Vercel](https://vercel.com/docs/git?from=related&source_path=%2Fdocs%2Fdeployments%2Fgenerated-urls&source_site=vercel-docs&relationship=related) — Vercel automatically deploys supported Git repositories on every branch push and when changes merge into the production
-- [Deploying & Redirecting Domains](https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting?from=related&source_path=%2Fdocs%2Fdeployments%2Fgenerated-urls&source_site=vercel-docs&relationship=related) — Learn how to deploy your domains and set up domain redirects with this guide.
 - [System environment variables](https://vercel.com/docs/environment-variables/system-environment-variables?from=related&source_path=%2Fdocs%2Fdeployments%2Fgenerated-urls&source_site=vercel-docs&relationship=related) — System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the
+- [Deploying & Redirecting Domains](https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting?from=related&source_path=%2Fdocs%2Fdeployments%2Fgenerated-urls&source_site=vercel-docs&relationship=related) — Learn how to deploy your domains and set up domain redirects with this guide.
 
 Full cross-link map for this page: [/docs/deployments/generated-urls.graph.md](/docs/deployments/generated-urls.graph.md?from=related&source_path=%2Fdocs%2Fdeployments%2Fgenerated-urls&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

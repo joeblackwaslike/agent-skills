@@ -12,8 +12,8 @@ related:
 summary: System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the Git branch deployed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/system-environment-variables.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "2ce3f912203be2ae78bc28a538b2632bcba7230255177099d835d56d2bd24964"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "32d29dd9146c65a3138dbe542b2394e33aa53ab8fcda8335570f981cab793a10"
 ---
 
 # System environment variables
@@ -297,7 +297,7 @@ VERCEL_GIT_COMMIT_AUTHOR_NAME=Timmy Triangle
 
 **Available at:&#x20;**&#x42;uild time
 
-The git SHA of the last successful deployment for the project and branch.
+The git SHA of the last successful deployment for the project and branch. It's empty on a branch's first deployment, since that branch has no previous successful deployment yet.
 
 **Note:&#x20;**&#x54;his variable is only exposed when an Ignored Build Step is provided.
 

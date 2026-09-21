@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/goal.md"
-fetched_at: "2026-09-14T09:37:17.168Z"
-sha256: "50029aae9822b8b13a14111494dc617667b8757d4b49a392c2e0fb83b1ffd227"
+fetched_at: "2026-09-21T09:39:23.760Z"
+sha256: "bbf71445a5ca9b8f4fdca7d53e59285c026f1faa3316e81763499ad109917782"
 ---
 
 > ## Documentation Index
@@ -59,7 +59,7 @@ While the goal is active, the transcript shows each verdict the evaluator return
 
 ### Write an effective condition
 
-The [evaluator](#how-evaluation-works) judges your condition against what Claude has surfaced in the conversation. It doesn't run commands or read files independently, so write the condition as something Claude's own output can demonstrate. "All tests in `test/auth` pass" works because Claude runs the tests and the result lands in the transcript for the evaluator to read.
+The [evaluator](#how-evaluation-works) judges your condition against what Claude has surfaced in the conversation. It doesn't run commands or read files independently, so write the condition as something Claude's own output can demonstrate. "All tests in `test/auth` pass" works because Claude runs the tests and the result appears in the transcript for the evaluator to read.
 
 A condition that holds up across many turns usually has:
 

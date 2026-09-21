@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/chatbot-message-persistence.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "e67d232329a16cc83d3a5b165f13bdf3888fafac0f4a5c79e6bb38f3073d004c"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "1c335cc040d9b14789f46f656dbefba3770f6041b8d1cc0a56f06b4e25a7c832"
 ---
 
 # Chatbot Message Persistence
@@ -92,6 +92,41 @@ export async function loadChat(id: string): Promise<UIMessage[]> {
 ## Validating messages on the server
 
 When processing messages on the server that contain tool calls, custom metadata, or data parts, you should validate them using `validateUIMessages` before sending them to the model.
+
+### Migrating deprecated tool `rawInput`
+
+Older persisted tool parts in the `output-error` state may contain `rawInput`.
+This field is deprecated and will be removed in the next major version. Store
+tool arguments in `input` instead. AI SDK emits a deprecation warning when
+`validateUIMessages`, `safeValidateUIMessages`, or `convertToModelMessages`
+encounters a defined `rawInput` value. UI stream processing also warns when it
+reconstructs a static `output-error` part with `rawInput`.
+
+Migrate each legacy part by copying `rawInput` to `input` when `input` is
+`null` or `undefined`, then remove `rawInput`. This preserves the current
+backward-compatible conversion behavior:
+
+```ts
+import { isToolUIPart } from 'ai';
+
+const migratedParts = message.parts.map(part => {
+  if (
+    !isToolUIPart(part) ||
+    part.state !== 'output-error' ||
+    !('rawInput' in part) ||
+    part.rawInput === undefined
+  ) {
+    return part;
+  }
+
+  const { rawInput, ...partWithoutRawInput } = part;
+
+  return {
+    ...partWithoutRawInput,
+    input: part.input ?? rawInput,
+  };
+});
+```
 
 ### Validation with tools
 

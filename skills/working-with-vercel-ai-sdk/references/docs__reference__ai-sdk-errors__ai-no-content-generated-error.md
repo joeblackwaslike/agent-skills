@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-content-generated-error.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "4331a15dc1a3337066e6b440510779c145bbaf677d5995d659692528f5517083"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "d4f640d527d0602fbd0c82381efdc8a3f20e374d14ba28ca3dd57c5283c747a9"
 ---
 
 # AI_NoContentGeneratedError
@@ -30,6 +30,7 @@ if (NoContentGeneratedError.isInstance(error)) {
 - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
 - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
 - [AI_EmptyResponseBodyError](/docs/reference/ai-sdk-errors/ai-empty-response-body-error)
+- [AI_EvaluationUnsupportedQuestionTypeError](/docs/reference/ai-sdk-errors/ai-evaluation-unsupported-question-type-error)
 - [AI_InvalidArgumentError](/docs/reference/ai-sdk-errors/ai-invalid-argument-error)
 - [AI_InvalidDataContentError](/docs/reference/ai-sdk-errors/ai-invalid-data-content-error)
 - [AI_InvalidMessageRoleError](/docs/reference/ai-sdk-errors/ai-invalid-message-role-error)

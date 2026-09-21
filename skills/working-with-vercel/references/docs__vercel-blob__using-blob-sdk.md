@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel Blob SDK to access your blob store from your apps.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/using-blob-sdk.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "40d593e9d220f4931776dabee4070ec15723ef8ae1541355a44446b7355d269b"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "0937d8257619122c697a2819ff017e9bfa083e91a818b4dd89490aaeee94ed9d"
 ---
 
 # @vercel/blob
@@ -41,8 +41,8 @@ To start using [Vercel Blob](/storage/blob) SDK, follow the steps below:
 - [Migrate an Astro app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-an-astro-app-from-webflow-cloud-to-vercel?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusing-blob-sdk&source_site=vercel-docs&relationship=related) — Move your Astro app from Webflow Cloud to Vercel: swap the @astrojs/cloudflare adapter for @astrojs/vercel, drop the bas
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusing-blob-sdk&source_site=vercel-docs&relationship=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
 - [Public Storage](https://vercel.com/docs/vercel-blob/public-storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusing-blob-sdk&source_site=vercel-docs&relationship=related) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
-- [Complete a blob upload](https://vercel.com/docs/rest-api/vcr/complete-a-blob-upload?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusing-blob-sdk&source_site=vercel-docs&relationship=related) — PUT /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid} — PUT /v2/:teamSlug/:projectSlug/:repositoryName/
 - [Create a Blob store](https://vercel.com/docs/rest-api/storage/create-a-blob-store?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusing-blob-sdk&source_site=vercel-docs&relationship=related) — POST /storage/stores/blob — Create a Blob store
+- [Complete a blob upload](https://vercel.com/docs/rest-api/vcr/complete-a-blob-upload?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusing-blob-sdk&source_site=vercel-docs&relationship=related) — PUT /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid} — PUT /v2/:teamSlug/:projectSlug/:repositoryName/
 
 Full cross-link map for this page: [/docs/vercel-blob/using-blob-sdk.graph.md](/docs/vercel-blob/using-blob-sdk.graph.md?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusing-blob-sdk&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

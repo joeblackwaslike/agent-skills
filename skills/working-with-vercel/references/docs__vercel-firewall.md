@@ -3,7 +3,7 @@ title: Vercel Firewall
 product: vercel
 url: /docs/vercel-firewall
 canonical_url: "https://vercel.com/docs/vercel-firewall"
-last_updated: 2026-08-11
+last_updated: 2026-09-10
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel Firewall helps protect your applications and websites from malicious attacks and unauthorized access.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "335513257807cf4ee1e81a4a69f5da344637df0524a98928e959c091df635cfa"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "8201681e84145d3d0d684a9a6193c85a0fdc0c830fc517daac765500ee2106ea"
 ---
 
 # Vercel Firewall

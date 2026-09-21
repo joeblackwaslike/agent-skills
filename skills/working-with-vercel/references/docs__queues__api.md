@@ -3,7 +3,7 @@ title: API Reference
 product: vercel
 url: /docs/queues/api
 canonical_url: "https://vercel.com/docs/queues/api"
-last_updated: 2026-08-12
+last_updated: 2026-09-15
 type: reference
 prerequisites:
   - /docs/queues
@@ -13,8 +13,8 @@ related:
 summary: HTTP API reference for Vercel Queues. Publish, consume, acknowledge, and manage messages.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/api.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "75b81e3de7974d7075df67c15bdd0112973b67155bae0eca2b965cee3150f06a"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "5d93834317bbed495845d385426d0242e20ee895c11d56145ee539399c675c35"
 ---
 
 # API Reference
@@ -30,7 +30,7 @@ The Vercel Queues API is a REST API for publishing, consuming, and managing mess
 - [Pricing and Limits](https://vercel.com/docs/queues/pricing?from=related&source_path=%2Fdocs%2Fqueues%2Fapi&source_site=vercel-docs&relationship=related) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
 - [Vercel Queues: JS SDK Reference](https://vercel.com/docs/queues/sdk?from=related&source_path=%2Fdocs%2Fqueues%2Fapi&source_site=vercel-docs&relationship=related) — Publish and consume messages with the Vercel Queues SDK for JavaScript and TypeScript.
 - [Vercel Queues: Python SDK Reference](https://vercel.com/docs/queues/python-sdk?from=related&source_path=%2Fdocs%2Fqueues%2Fapi&source_site=vercel-docs&relationship=related) — Publish and consume messages with the Vercel Queues Python SDK.
-- [Sign a message](https://vercel.com/docs/rest-api/kms/sign-a-message?from=related&source_path=%2Fdocs%2Fqueues%2Fapi&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/sign/message — Sign a raw message with a KMS issuer's active signing key. Authenticate t
+- [Poll Mode](https://vercel.com/docs/queues/poll-mode?from=related&source_path=%2Fdocs%2Fqueues%2Fapi&source_site=vercel-docs&relationship=related) — Consume messages from Vercel Queues by polling on your own schedule, from any environment.
 - [Quickstart](https://vercel.com/docs/queues/quickstart?from=related&source_path=%2Fdocs%2Fqueues%2Fapi&source_site=vercel-docs&relationship=related) — Set up Vercel Queues with the SDK.
 
 Full cross-link map for this page: [/docs/queues/api.graph.md](/docs/queues/api.graph.md?from=related&source_path=%2Fdocs%2Fqueues%2Fapi&source_site=vercel-docs&relationship=graph)
@@ -92,7 +92,7 @@ Raw binary payload. The entire request body is stored as the message content.
 
 #### Response
 
-**`201 Created`** — Message stored and delivered to consumers:
+A **`201 Created`** response means the message was stored and delivered to consumers:
 
 ```json
 {
@@ -102,7 +102,7 @@ Raw binary payload. The entire request body is stored as the message content.
 
 The `Vqs-Message-Id` response header also contains the assigned message ID.
 
-**`202 Accepted`** — Message stored but delivery is deferred. This happens during [regional failover](/docs/queues/concepts#failover), when the message is temporarily stored in a neighboring region and will be relocated and delivered once the target region recovers:
+A **`202 Accepted`** response means the message was stored but delivery is deferred. This happens during [regional failover](/docs/queues/concepts#failover), when the message is temporarily stored in a neighboring region and will be relocated and delivered once the target region recovers:
 
 ```json
 {

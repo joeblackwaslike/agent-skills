@@ -3,7 +3,7 @@ title: Cache Status and Reasons
 product: vercel
 url: /docs/caching/cache-status
 canonical_url: "https://vercel.com/docs/caching/cache-status"
-last_updated: 2026-08-28
+last_updated: 2026-09-15
 type: reference
 prerequisites:
   - /docs/caching
@@ -16,8 +16,8 @@ related:
 summary: Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass, or serve stale from the...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/cache-status.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "39e45c216133aaa5c73032b31f01417d8d88174da4e614be0b0ee3d24157a081"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "14fa7c978ae21b914202e5f6621526c0e0169e753a01be088d90498fee2981bb"
 ---
 
 # Cache Status and Reasons
@@ -36,6 +36,7 @@ Vercel records how each cacheable request resolves as a cache **status**, and wh
 - [Troubleshoot and optimize Function Invocations on Vercel](https://vercel.com/kb/guide/optimize-function-invocations?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-status&source_site=vercel-docs&relationship=related) — Diagnose which routes drive Function Invocations and learn to optimize them. Separate necessary dynamic traffic from div
 - [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-status&source_site=vercel-docs&relationship=related)
 - [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-status&source_site=vercel-docs&relationship=related) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
+- [Caching audits: Five antipatterns that cost performance and money](https://vercel.com/kb/guide/caching-antipatterns?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-status&source_site=vercel-docs&relationship=related) — Five caching antipatterns from hundreds of Vercel technical audits: write amplification, deploy-wiped caches, spinner sh
 
 Full cross-link map for this page: [/docs/caching/cache-status.graph.md](/docs/caching/cache-status.graph.md?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-status&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -89,6 +90,12 @@ Vercel couldn't read a stored response from the cache, so the request fell throu
 > application code. An application error during background revalidation surfaces
 > as `STALE` if the request is within the [stale-while-revalidate](/docs/caching/cache-control-headers#stale-while-revalidate) window, because Vercel keeps serving the last good response.
 
+### Vary key denied
+
+Your origin sent a `Vary` header naming a request header whose value is close to unique per visitor, such as `Cookie`. Storing the response would create a separate cache entry for nearly every request, so Vercel generates and serves the response without caching it. The reason names the headers that caused it, for example `vary_key_denied:cookie`.
+
+To make the route cacheable, check whether the response really changes with that header. If it doesn't, remove it from `Vary`. If it does, the response is per-visitor and belongs behind `Cache-Control: private` rather than the CDN cache. See [high-cardinality headers](/docs/caching/cdn-cache#high-cardinality-headers).
+
 ## BYPASS
 
 A `BYPASS` means Vercel skipped the cache on purpose for this request and served fresh content from your function or origin. Unlike a miss, it doesn't consult the cache at all, so the reason describes what opted this request out.
@@ -139,7 +146,7 @@ The cached entry had been deleted, so Vercel regenerated the response from your 
 
 ### Tag-based deletion
 
-When the deletion was triggered by a [cache tag](/docs/caching/cdn-cache/purge) — through [`dangerouslyDeleteByTag()`](/docs/functions/functions-api-reference/vercel-functions-package#dangerouslydeletebytag), [`revalidateTag()`](https://nextjs.org/docs/app/api-reference/functions/revalidateTag) called without a lifetime, or a [dashboard purge](/docs/caching/cdn-cache/purge) that deletes by tag — the `REVALIDATED` response carries this reason. It's the deletion counterpart to a `STALE` response's [Tag-based invalidation](#tag-based-invalidation): both start from a tag, but invalidation keeps serving the existing copy while it refreshes in the background, whereas deletion leaves nothing to serve, so the request blocks on the foreground regeneration.
+When the deletion was triggered by a [cache tag](/docs/caching/cdn-cache/purge) (through [`dangerouslyDeleteByTag()`](/docs/functions/functions-api-reference/vercel-functions-package#dangerouslydeletebytag), [`revalidateTag()`](https://nextjs.org/docs/app/api-reference/functions/revalidateTag) called without a lifetime, or a [dashboard purge](/docs/caching/cdn-cache/purge) that deletes by tag), the `REVALIDATED` response carries this reason. It's the deletion counterpart to a `STALE` response's [Tag-based invalidation](#tag-based-invalidation): both start from a tag, but invalidation keeps serving the existing copy while it refreshes in the background, whereas deletion leaves nothing to serve, so the request blocks on the foreground regeneration.
 
 ## Related
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/advanced/secure-url-fetching.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "db6072fa2d7e30d9f0f41101073249b26926a5c4eb307f9473c782348a59946e"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "322ed4bbb09bf5c8db7bc9122a10aec6cd2c79ab8ecdb38fc8f560f340392e45"
 ---
 
 # Secure URL Fetching
@@ -61,7 +61,13 @@ On Node.js, the default validated download fetch uses `node:dns` and an
 The connector uses those exact results, closing both hostname-to-private-IP and
 DNS-rebinding bypasses.
 
-If you inject or globally replace `fetch`, it is responsible for equivalent DNS
+Wrapping or replacing global `fetch` does not disable this protection: the
+default Node.js download transport is independent of global `fetch`.
+
+Bun, Deno, Cloudflare Workers, and framework edge runtimes use their platform
+fetch, even when they expose a Node-compatible `process` object.
+
+If you explicitly inject a custom `fetch`, it is responsible for equivalent DNS
 validation and connection pinning. Other runtimes do not expose Node's
 DNS/socket hooks, so server deployments on those runtimes should restrict
 network egress to private, loopback, link-local, and cloud-metadata ranges.
@@ -79,7 +85,7 @@ code.
 
 ### 2. Harden an injected `fetch`
 
-The Node.js default is already pinned. If you inject or globally replace
+The Node.js default is already pinned. If you explicitly inject a custom
 `fetch`, back it with an `undici`
 `Agent` whose `connect.lookup` validates the resolved IP and lets the socket
 connect only to a safe address — closing both the hostname-to-private and the

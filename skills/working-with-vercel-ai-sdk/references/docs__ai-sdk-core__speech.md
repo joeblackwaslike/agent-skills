@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/speech.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "94d6ab95d1a45fa37ee0dae83f2170ef0ec90d44108131b50052987d83fe658b"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "7a1dd5fae48360e48309c9964883c9d995f7757915c060f3c037ce8fe8c43b1d"
 ---
 
 # Speech
@@ -174,11 +174,13 @@ Above are a small subset of the speech models supported by the AI SDK providers.
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Code Mode](/docs/ai-sdk-core/code-mode)
+- [Tool Search](/docs/ai-sdk-core/tool-search)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
+- [Evaluation](/docs/ai-sdk-core/evaluation)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)

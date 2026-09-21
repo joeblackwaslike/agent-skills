@@ -3,7 +3,7 @@ title: Create a Native Integration
 product: vercel
 url: /docs/integrations/create-integration/marketplace-product
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-product"
-last_updated: 2026-08-11
+last_updated: 2026-09-16
 type: tutorial
 prerequisites:
   - /docs/integrations/create-integration
@@ -17,8 +17,8 @@ related:
 summary: Learn how to create a product for your Vercel native integration
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-product.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "5043094d42e7ade68fb4a5efadb655937d3c2f654952de61e39359ff4f70b7ef"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "229d39cbf5daba13ff1a35781539190e84f2341c20fd2fbfa0d1437bd33b45e0"
 ---
 
 # Create a Native Integration
@@ -59,7 +59,7 @@ In this tutorial, you create a storage product for your native integration throu
   Before you can create a product, you must have an existing integration. [Create a new Native Integration](/docs/integrations/create-integration) or use your existing one.
 
 - ### Deploy the integration server
-  In order to deploy the integration server, you should update your integration configuration to set the **base URL** to the integration server URL:
+  To deploy the integration server, you should update your integration configuration to set the **base URL** to the integration server URL:
   1. Select the team you would like to use from the team switcher.
   2. From your [dashboard](/dashboard), open [**Integrations**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fintegrations\&title=Go+to+Integrations) in the sidebar and then select the **Integrations Console** button.
   3. Select the integration you would like to use for the product.

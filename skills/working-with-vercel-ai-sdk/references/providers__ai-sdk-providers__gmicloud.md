@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/gmicloud.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "e5d67e3a2e04a7c443fd3f380dfad0a1e715bac72ae8a6872441457324b2bd04"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "418961049e53c54f04e2445775c17044ea72ea345e5334f14d746ee9c5fa8d61"
 ---
 
 # GMI Cloud Provider
@@ -87,6 +87,7 @@ GMI Cloud's edge reports a generic banner in `error.message` on rejections and n
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
 - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
+- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

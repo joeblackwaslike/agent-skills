@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/revai.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "4489d486f82005161b4ef2a649ba4b87a25de2ab40285f605b4c0c8a8d6379d3"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "1e4c8a14eb8d05e81ef886d5cdfff44d0a0ca25dd48ac320c07c382b37517916"
 ---
 
 # Rev.ai Provider
@@ -222,6 +222,7 @@ The following provider options are available:
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
 - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
+- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

@@ -16,8 +16,8 @@ related:
 summary: Learn about pricing for Vercel Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/limits-and-pricing.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "1abb6eca20762cabc87fabdc92c0749ab6ddb7bcec3c2413f35ff4a999ac6592"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "42ce0fb2af2f1e4b9b8b8344ad4253547b3e0d2e9a94d745162b9035a9dbd010"
 ---
 
 # Pricing for Web Analytics
@@ -40,8 +40,8 @@ After you enable Vercel Web Analytics, your plan determines which features you c
 - [Web Analytics is now generally available](https://vercel.com/changelog/web-analytics-is-now-generally-available?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related)
 - [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related)
 - [Observability Plus](https://vercel.com/docs/observability/observability-plus?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn about using Observability Plus and its limits.
-- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Limits and Pricing for Speed Insights](https://vercel.com/docs/speed-insights/limits-and-pricing?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn about our limits and pricing when using Vercel Speed Insights. Different limitations are applied depending on your
+- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Limits and Pricing for Monitoring](https://vercel.com/docs/query/monitoring/limits-and-pricing?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn about our limits and pricing when using Monitoring. Different limitations are applied depending on your plan.
 - [Account Plans on Vercel](https://vercel.com/docs/plans?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn about the different plans available on Vercel.
 

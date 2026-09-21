@@ -3,7 +3,7 @@ title: Query
 product: vercel
 url: /docs/query
 canonical_url: "https://vercel.com/docs/query"
-last_updated: 2026-08-11
+last_updated: 2026-09-16
 type: how-to
 prerequisites:
   []
@@ -15,15 +15,15 @@ related:
 summary: Query and visualize your Vercel usage, traffic, and more in observability.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "fce9d0db76b720a40c101cc0824988a128a6b0bbc6ce05f4ebc1920e4a11963c"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "08abadff8281ec7e89519dacd1e886b744063f6a201c46fbe1f8d1142a860163"
 ---
 
 # Query
 
 > **🔒 Permissions Required**: Query
 
-You can use Query to get deeper visibility into your application when debugging issues, monitoring usage, or optimizing for speed and reliability. Query lets you explore traffic, errors, latency and similar metrics in order to:
+You can use Query to get deeper visibility into your application when debugging issues, monitoring usage, or optimizing for speed and reliability. Query lets you explore traffic, errors, latency and similar metrics to:
 
 
 <!-- docsgraph:related -->

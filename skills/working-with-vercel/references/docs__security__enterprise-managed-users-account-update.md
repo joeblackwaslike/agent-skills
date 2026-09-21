@@ -15,8 +15,8 @@ related:
 summary: Explains the account update screen EMU members see at SSO sign-in and how to complete it.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/enterprise-managed-users-account-update.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "0272dd5bf67c25d0e1658aff5cd1e5aa875e0bad3996dc5bf7ab081634ff0b5f"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "6395d87f3adc0b7c80174970dd5a80799e4d4a8d7cd2d5242e1b2620ff8d681e"
 ---
 
 # Transition your Hobby team after EMU enrollment
@@ -39,13 +39,13 @@ Enabling [Enterprise Managed Users](/docs/security/enterprise-managed-users) (EM
 - [Account Management](https://vercel.com/docs/accounts?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users-account-update&source_site=vercel-docs&relationship=related) — Learn how to manage your Vercel account and team members.
 - [Transferring a project](https://vercel.com/docs/projects/transferring-projects?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users-account-update&source_site=vercel-docs&relationship=related) — Learn how to transfer a project between Vercel teams.
 - [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users-account-update&source_site=vercel-docs&relationship=related) — Learn how to manage Sign in with Vercel from the Dashboard
-- [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users-account-update&source_site=vercel-docs&relationship=related) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
 - [Managing Global Configs with the Dashboard](https://vercel.com/docs/global-config/global-config-dashboard?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users-account-update&source_site=vercel-docs&relationship=related) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
+- [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users-account-update&source_site=vercel-docs&relationship=related) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
 
 Full cross-link map for this page: [/docs/security/enterprise-managed-users-account-update.graph.md](/docs/security/enterprise-managed-users-account-update.graph.md?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users-account-update&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-> **🔒 Permissions Required**: Hobby team transition
+> **🔒 Permissions Required**: Hobby team transition (Beta)
 
 ## Who sees the account update screen
 

@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/troubleshooting.md"
-fetched_at: "2026-09-14T09:37:17.168Z"
-sha256: "aeb3473f0f5a5ce66b4fd02ead6678ec19fe0ea7a4b6a716e9d63b797525e47b"
+fetched_at: "2026-09-21T09:39:23.760Z"
+sha256: "cf3af01fb7bfb78e5bd06b26d19c0e31ad1c52e423f1b9d2ec839eaadb574be6"
 ---
 
 > ## Documentation Index
@@ -51,7 +51,7 @@ If memory usage stays high after these steps, run `/heapdump` to write two files
 
 The command also prints a summary in the conversation, showing resident set size, JS heap, array buffers, and unaccounted native memory, plus any leak indicators it detected, such as a high memory growth rate or an unusually high number of open handles. The summary says whether most memory is in the JS heap, which the snapshot captures, or in native memory, which it doesn't.
 
-Do one of two things with the output:
+Report the output or investigate it yourself:
 
 * **Report it**: open a [GitHub issue](https://github.com/anthropics/claude-code/issues) and attach only the `-diagnostics.json` file, which carries the statistics behind the printed summary and no conversation content or credentials
 * **Investigate it yourself**: if the summary says most memory is JS heap, open the `.heapsnapshot` file in Chrome DevTools under Memory → Load and sort by retained size to see what's holding the memory
@@ -90,7 +90,7 @@ If characters render as boxes, smears, or the wrong glyphs when running Claude C
 
 In [fullscreen rendering](/docs/en/fullscreen), Claude Code scrolls the conversation itself rather than leaving it to your terminal. If each wheel notch moves fewer lines than you want, run `/scroll-speed` to raise the number of lines per notch and save it, or set the `CLAUDE_CODE_SCROLL_SPEED` environment variable, except in the JetBrains IDE terminal, where Claude Code applies its own scroll handling and neither takes effect. See [Mouse wheel scrolling](/docs/en/fullscreen#mouse-wheel-scrolling) for the values each accepts.
 
-To move faster without changing the speed, press `PgUp` and `PgDn` to scroll half a screen at a time. To hand scrolling back to your terminal's native scrollback instead, run `/tui default` to switch to the classic renderer.
+To move faster without changing the speed, press `PgUp` and `PgDn` to scroll half a screen at a time. To use your terminal's native scrollback instead, run `/tui default` to switch to the classic renderer.
 
 ### Clipboard commands such as `pbcopy` fail inside the sandbox
 

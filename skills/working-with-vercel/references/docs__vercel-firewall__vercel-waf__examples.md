@@ -16,8 +16,8 @@ related:
 summary: Learn how to use Vercel WAF to protect your site in specific situations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/examples.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "ecc7d9ff537dadf26a3c39b431d944e88d9b100f4ec7533baff66f6cee04ce23"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "925bc70c954ac2d826066480aeb48d5c73f75e7593ed2381e08fd457b7f5120b"
 ---
 
 # WAF Examples
@@ -41,8 +41,8 @@ sha256: "ecc7d9ff537dadf26a3c39b431d944e88d9b100f4ec7533baff66f6cee04ce23"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Using the REST API with the Firewall](https://vercel.com/docs/vercel-firewall/firewall-api?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fexamples&source_site=vercel-docs&relationship=related) — Learn how to interact with the security endpoints of the Vercel REST API programmatically.
-- [Rule Configuration Reference](https://vercel.com/docs/vercel-firewall/vercel-waf/rule-configuration?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fexamples&source_site=vercel-docs&relationship=related) — List of configurable options with the Vercel WAF
 - [WAF Rate Limiting](https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fexamples&source_site=vercel-docs&relationship=related) — Learn how to configure custom rate limiting rules with the Vercel Web Application Firewall \\(WAF\\).
+- [Rule Configuration Reference](https://vercel.com/docs/vercel-firewall/vercel-waf/rule-configuration?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fexamples&source_site=vercel-docs&relationship=related) — List of configurable options with the Vercel WAF
 - [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fexamples&source_site=vercel-docs&relationship=related) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 - [WAF System Bypass Rules](https://vercel.com/docs/vercel-firewall/vercel-waf/system-bypass-rules?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fexamples&source_site=vercel-docs&relationship=related) — Learn how to configure IP-based system bypass rules with the Vercel Web Application Firewall \\(WAF\\).
 

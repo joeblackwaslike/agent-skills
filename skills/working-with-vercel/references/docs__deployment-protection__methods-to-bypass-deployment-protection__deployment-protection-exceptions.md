@@ -3,7 +3,7 @@ title: Deployment Protection Exceptions
 product: vercel
 url: /docs/deployment-protection/methods-to-bypass-deployment-protection/deployment-protection-exceptions
 canonical_url: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/deployment-protection-exceptions"
-last_updated: 2026-08-28
+last_updated: 2026-09-15
 type: how-to
 prerequisites:
   - /docs/deployment-protection/methods-to-bypass-deployment-protection
@@ -16,8 +16,8 @@ related:
 summary: Disable Deployment Protection for a list of preview domains.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/deployment-protection-exceptions.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "c23105ac1cdec40e87dde74b530866caf44799ffe8d9f4c9b3847b5d38e92a2a"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "0dee4638fe10bc9225db9e277c0be452b4c42b36ac7a939840e5049d8b98df7e"
 ---
 
 # Deployment Protection Exceptions
@@ -38,8 +38,8 @@ Deployment Protection Exceptions let you disable Deployment Protection (includin
 - [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Fdeployment-protection-exceptions&source_site=vercel-docs&relationship=related)
 - [Methods to Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Fdeployment-protection-exceptions&source_site=vercel-docs&relationship=related) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
 - [OPTIONS Allowlist](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/options-allowlist?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Fdeployment-protection-exceptions&source_site=vercel-docs&relationship=related) — Learn how to disable Deployment Protection for CORS preflight requests for a list of paths.
-- [Access Control](https://vercel.com/docs/security/access-control?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Fdeployment-protection-exceptions&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Preview Deployment Suffix](https://vercel.com/docs/deployments/preview-deployment-suffix?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Fdeployment-protection-exceptions&source_site=vercel-docs&relationship=related) — When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that parti
+- [Access Control](https://vercel.com/docs/security/access-control?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Fdeployment-protection-exceptions&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Fdeployment-protection-exceptions&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 
 Full cross-link map for this page: [/docs/deployment-protection/methods-to-bypass-deployment-protection/deployment-protection-exceptions.graph.md](/docs/deployment-protection/methods-to-bypass-deployment-protection/deployment-protection-exceptions.graph.md?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Fdeployment-protection-exceptions&source_site=vercel-docs&relationship=graph)

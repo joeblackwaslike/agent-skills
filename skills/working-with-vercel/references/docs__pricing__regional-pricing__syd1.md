@@ -3,7 +3,7 @@ title: Sydney, Australia (syd1) pricing
 product: vercel
 url: /docs/pricing/regional-pricing/syd1
 canonical_url: "https://vercel.com/docs/pricing/regional-pricing/syd1"
-last_updated: 2026-02-13
+last_updated: 2026-09-14
 type: reference
 prerequisites:
   - /docs/pricing/regional-pricing
@@ -12,13 +12,13 @@ related:
   - /docs/plans/pro-plan
   - /docs/pricing/taxes
   - /docs/pricing/understanding-my-invoice
-  - /docs/fluid-compute
-  - /docs/functions/usage-and-pricing
+  - /docs/sandbox
+  - /docs/sandbox/pricing
 summary: Vercel pricing for the Sydney, Australia (syd1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/syd1.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "c5686c688f0f08b7b19458ed81bc97cd35f7a925c1d047dbaa32a97f86354adf"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "09fb4ca236b16ac3169baa91540d4137eb07a047ab96487bbb0768597cc764d4"
 ---
 
 # Sydney, Australia (syd1) pricing
@@ -44,18 +44,15 @@ Full cross-link map for this page: [/docs/pricing/regional-pricing/syd1.graph.md
 
 The **Included** column shows the amount of usage covered in your [billing cycle](/docs/pricing/understanding-my-invoice#understanding-your-invoice). If you use more than this amount, the **Additional** column lists the rates for any extra usage.
 
-> **💡 Note:** Active CPU and Provisioned Memory are billed at different rates depending on
-> the region your [fluid compute](/docs/fluid-compute) is deployed. The rates
-> for each region can be found in the [fluid
-> pricing](/docs/functions/usage-and-pricing) documentation. [Vercel
-> Sandbox](/docs/sandbox) compute is also billed by region. See [Sandbox
-> pricing](/docs/sandbox/pricing#regional-pricing) for the rates in the
-> regions where Sandbox is available.
+> **💡 Note:** Vercel prices [Vercel Sandbox](/docs/sandbox) compute by region too. Its rates
+> live on a separate page because Sandbox runs in fewer regions than the
+> resources below. For the rate in each region where Sandbox is available, see
+> [Sandbox pricing](/docs/sandbox/pricing#regional-pricing).
 
 | Resource | On-demand (Billing Cycle) |
 | --- | --- |
-| [Fast Data Transfer](/docs/manage-cdn-usage#fast-data-transfer) | Included First 1 TB, then $0.16 per 1 GB |
-| [Edge Requests](/docs/manage-cdn-usage#edge-requests) | Included First 10,000,000, then $2.60 per 1,000,000 Requests |
+| [Fast Data Transfer](/docs/manage-cdn-usage#fast-data-transfer) | $0.16 per 1 GB |
+| [Edge Requests](/docs/manage-cdn-usage#edge-requests) | $2.60 per 1,000,000 Requests |
 | [ISR Writes](/docs/incremental-static-regeneration/limits-and-pricing#isr-writes-chart) | $5.20 per 1,000,000 Write Units |
 | [ISR Reads](/docs/incremental-static-regeneration/limits-and-pricing#isr-reads-chart) | $0.52 per 1,000,000 Read Units |
 | [Runtime Cache Writes](/docs/caching/runtime-cache) | $5.20 per 1,000,000 Write Units |
@@ -63,6 +60,8 @@ The **Included** column shows the amount of usage covered in your [billing cycle
 | [Fast Origin Transfer](/docs/manage-cdn-usage#fast-origin-transfer) | $0.29 per 1 GB |
 | [Queue API Operations](/docs/queues/pricing) | $0.8544 per 1,000,000 Operations |
 | [Edge Requests - Additional CPU Duration](/docs/manage-cdn-usage#edge-request-cpu-duration) | $0.39 per 1 Hour |
+| [Fluid Active CPU](/docs/functions/usage-and-pricing#active-cpu) | $0.18 per Hour |
+| [Fluid Provisioned Memory](/docs/functions/usage-and-pricing#provisioned-memory) | $0.0149 per GB-hr |
 | [Image Optimization Transformation](/docs/image-optimization/limits-and-pricing#image-transformations) | $0.0662 per 1K |
 | [Image Optimization Cache Reads](/docs/image-optimization/limits-and-pricing#image-cache-reads) | $0.52 per 1M |
 | [Image Optimization Cache Writes](/docs/image-optimization/limits-and-pricing#image-cache-writes) | $5.20 per 1M |

@@ -3,7 +3,7 @@ title: Remix on Vercel
 product: vercel
 url: /docs/frameworks/full-stack/remix
 canonical_url: "https://vercel.com/docs/frameworks/full-stack/remix"
-last_updated: 2026-08-26
+last_updated: 2026-09-16
 type: conceptual
 prerequisites:
   - /docs/frameworks/full-stack
@@ -17,8 +17,8 @@ related:
 summary: Deploy Remix applications to Vercel and configure the Vercel Vite preset, SSR, streaming, caching, and analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/remix.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "a59a814ad5d376a5e0be38ead55192255dd5b25d2e4390df4684aadef8b1eab1"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "c5ba60005e59f4611fba567dec208c5cffb2113ac605431044da9ac2fb3855e6"
 ---
 
 # Remix on Vercel
@@ -261,7 +261,7 @@ export default function DeferredRoute() {
 
 ## `Cache-Control` headers
 
-Vercel's [CDN](/docs/cdn) caches your content at the edge in order to serve data to your users as fast as possible. [Static caching](/docs/cdn-cache#static-files-caching) works with zero configuration.
+Vercel's [CDN](/docs/cdn) caches your content at the edge to serve data to your users as fast as possible. [Static caching](/docs/cdn-cache#static-files-caching) works with zero configuration.
 
 By adding a `Cache-Control` header to responses returned by your Remix routes, you can specify a set of caching rules for both client (browser) requests and server responses. A cache must obey the requirements defined in the Cache-Control header.
 

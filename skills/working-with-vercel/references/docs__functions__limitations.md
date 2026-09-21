@@ -16,8 +16,8 @@ related:
 summary: Learn about the limits and restrictions of using Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/limitations.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "faae3d64234dd480ce7bd2b14af04ad8299b537eb3835342330c0e9a7d3b1961"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "342854651a69c7f3e6bfb878fda1809cb9b60deedbfd369ae0250ba91f6963f3"
 ---
 
 # Vercel Functions Limits
@@ -40,8 +40,8 @@ The table below outlines the limits and restrictions of using Vercel Functions w
 - [Running Docker on Vercel vs Render](https://vercel.com/kb/guide/docker-on-vercel-vs-render?from=related&source_path=%2Fdocs%2Ffunctions%2Flimitations&source_site=vercel-docs&relationship=related) — Compare how Vercel and Render run Docker workloads, including deployment model, scaling, image sources, state, and netwo
 - [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments?from=related&source_path=%2Fdocs%2Ffunctions%2Flimitations&source_site=vercel-docs&relationship=related) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
 - [How to Effectively Load Test Your Vercel Application](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application?from=related&source_path=%2Fdocs%2Ffunctions%2Flimitations&source_site=vercel-docs&relationship=related) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
+- [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Ffunctions%2Flimitations&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
 - [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives?from=related&source_path=%2Fdocs%2Ffunctions%2Flimitations&source_site=vercel-docs&relationship=related) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
-- [Pricing and Limits](https://vercel.com/docs/eve/pricing?from=related&source_path=%2Fdocs%2Ffunctions%2Flimitations&source_site=vercel-docs&relationship=related) — Understand how eve usage maps to Vercel resources and inherited platform limits.
 
 Full cross-link map for this page: [/docs/functions/limitations.graph.md](/docs/functions/limitations.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Flimitations&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

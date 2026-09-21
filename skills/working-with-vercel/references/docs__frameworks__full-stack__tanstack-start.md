@@ -3,7 +3,7 @@ title: TanStack Start on Vercel
 product: vercel
 url: /docs/frameworks/full-stack/tanstack-start
 canonical_url: "https://vercel.com/docs/frameworks/full-stack/tanstack-start"
-last_updated: 2026-08-26
+last_updated: 2026-09-15
 type: conceptual
 prerequisites:
   - /docs/frameworks/full-stack
@@ -11,12 +11,14 @@ prerequisites:
 related:
   - /docs/functions
   - /docs/fluid-compute
+  - /docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai
+  - /docs/sandbox/ecosystem/tanstack-ai
   - /docs/integrations/lovable
 summary: Deploy TanStack Start applications to Vercel with Nitro and configure Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/tanstack-start.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "c82702c88fb5e531fab1614348085b8cd977c757d7cb7dbff3f1be392c72d42e"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "5d1105e4ee75b6d17f0a42f1865c85dbbab4d43203982d087ea679ed67f1392d"
 ---
 
 # TanStack Start on Vercel
@@ -35,10 +37,11 @@ TanStack Start is a fullstack framework powered by TanStack Router for React and
 - [You can now deploy Lovable apps to Vercel](https://vercel.com/changelog/you-can-now-deploy-lovable-apps-to-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Ftanstack-start&source_site=vercel-docs&relationship=related)
 - [Adding keyboard shortcuts to React apps with TanStack Hotkeys](https://vercel.com/kb/guide/adding-keyboard-shortcuts-to-react-apps-with-tanstack-hotkeys?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Ftanstack-start&source_site=vercel-docs&relationship=related) — Add cross-platform keyboard shortcuts to your React app with TanStack Hotkeys. Install, register, scope, and display sho
 - [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Ftanstack-start&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
-- [Choosing between TanStack Intent and \\`skills\\`](https://vercel.com/kb/guide/tanstack-intent-vs-skills?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Ftanstack-start&source_site=vercel-docs&relationship=related) — TanStack Intent vs skills: compare how each tool sources, versions, and discovers agent skills for AI coding agents, and
+- [Using TanStack Intent to ship and consume agent skills](https://vercel.com/kb/guide/tanstack-intent?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Ftanstack-start&source_site=vercel-docs&relationship=related) — TanStack Intent is a CLI for shipping and consuming agent skills, markdown files that teach AI coding agents how to use
 - [What is the Nitro Vite plugin?](https://vercel.com/kb/guide/nitro-vite-plugin?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Ftanstack-start&source_site=vercel-docs&relationship=related) — The Nitro Vite plugin \\(nitro/vite\\) adds SSR, API routes, and deploy-anywhere server builds to any Vite app. Learn what
 - [Nitro on Vercel](https://vercel.com/docs/frameworks/backend/nitro?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Ftanstack-start&source_site=vercel-docs&relationship=related) — Deploy Nitro applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurat
 - [NestJS on Vercel](https://vercel.com/docs/frameworks/backend/nestjs?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Ftanstack-start&source_site=vercel-docs&relationship=related) — Deploy NestJS applications to Vercel with zero configuration.
+- [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Ftanstack-start&source_site=vercel-docs&relationship=related) — Learn about the frameworks that can be deployed to Vercel.
 
 Full cross-link map for this page: [/docs/frameworks/full-stack/tanstack-start.graph.md](/docs/frameworks/full-stack/tanstack-start.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Ftanstack-start&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -92,6 +95,16 @@ export default defineConfig({
 ### Vercel Functions
 
 TanStack Start apps on Vercel benefit from the advantages of [Vercel Functions](/docs/functions) and use [Fluid Compute](/docs/fluid-compute) by default. This means your TanStack Start app will automatically scale up and down based on traffic.
+
+## Build AI applications
+
+Connect your TanStack Start application to models, tools, and coding agents with these integrations:
+
+- [TanStack AI with AI Gateway](/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai): Authenticate model requests and stream responses through the dedicated adapter.
+- [TanStack AI with Vercel Sandbox](/docs/sandbox/ecosystem/tanstack-ai): Run coding agents in isolated microVMs with a configured workspace.
+- [AI SDK with TanStack Start](https://ai-sdk.dev/docs/getting-started/tanstack-start): Build a chat application with the AI SDK.
+
+For a TanStack AI chat interface, follow the [TanStack AI quickstart](https://tanstack.com/ai/latest/docs/getting-started/quick-start) and use the AI Gateway adapter in your server route.
 
 ## Lovable
 

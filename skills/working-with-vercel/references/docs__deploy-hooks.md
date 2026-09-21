@@ -3,7 +3,7 @@ title: Creating & Triggering Deploy Hooks
 product: vercel
 url: /docs/deploy-hooks
 canonical_url: "https://vercel.com/docs/deploy-hooks"
-last_updated: 2026-08-28
+last_updated: 2026-09-16
 type: conceptual
 prerequisites:
   []
@@ -16,13 +16,13 @@ related:
 summary: Learn how to create and trigger deploy hooks to integrate Vercel deployments with other systems.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deploy-hooks.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "ccf14e26797ea409df14d5893866daebdfa4b3c1ced78cfb6260ec29eff20127"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "ffca2af6edd0ff92e58ec6b1dd95dd03dd32b984c8f7f530bc0edcfdb3f7c227"
 ---
 
 # Creating & Triggering Deploy Hooks
 
-Deploy Hooks allow you to create URLs that accept HTTP `POST` requests in order to trigger deployments and re-run the [Build Step](/docs/builds/configure-a-build). These URLs are uniquely linked to your project, repository, and branch, so there is no need to use any authentication mechanism or provide any payload to the `POST` request.
+Deploy Hooks allow you to create URLs that accept HTTP `POST` requests to trigger deployments and re-run the [Build Step](/docs/builds/configure-a-build). These URLs are uniquely linked to your project, repository, and branch, so there is no need to use any authentication mechanism or provide any payload to the `POST` request.
 
 
 <!-- docsgraph:related -->

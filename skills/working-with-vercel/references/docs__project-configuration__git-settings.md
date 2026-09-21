@@ -15,8 +15,8 @@ related:
 summary: Use the project settings to manage the Git connection, enable Git LFS, and create deploy hooks.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/git-settings.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "f4a513fa65f552241215509b1fe596d7455f32d3f070d1781cdf4de11766e033"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "e87354321c842d439c1afc0d3559ff6c0721f1a4ad4a1f17d1ae1b29560f080c"
 ---
 
 # Git settings
@@ -34,9 +34,9 @@ Once you have [connected a Git repository](/docs/git#deploying-a-git-repository)
 - [New Git Integration Settings](https://vercel.com/blog/new-git-integration-settings?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgit-settings&source_site=vercel-docs&relationship=related)
 - [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgit-settings&source_site=vercel-docs&relationship=related) — Learn how to configure Git for your project through vercel.json or vercel.ts.
 - [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgit-settings&source_site=vercel-docs&relationship=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
+- [Deploying GitHub Projects with Vercel](https://vercel.com/docs/git/vercel-for-github?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgit-settings&source_site=vercel-docs&relationship=related) — Vercel for GitHub automatically deploys your GitHub projects with Vercel, providing Preview Deployment URLs, and automat
 - [vercel git](https://vercel.com/docs/cli/git?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgit-settings&source_site=vercel-docs&relationship=related) — Learn how to manage your Git provider connections using the vercel git CLI command.
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgit-settings&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
-- [Troubleshoot project collaboration](https://vercel.com/docs/deployments/troubleshoot-project-collaboration?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgit-settings&source_site=vercel-docs&relationship=related) — Learn about common reasons for deployment issues related to team member requirements and how to resolve them.
 
 Full cross-link map for this page: [/docs/project-configuration/git-settings.graph.md](/docs/project-configuration/git-settings.graph.md?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgit-settings&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

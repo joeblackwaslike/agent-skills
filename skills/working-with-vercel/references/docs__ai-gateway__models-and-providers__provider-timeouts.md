@@ -3,7 +3,7 @@ title: AI Gateway Provider Timeouts
 product: vercel
 url: /docs/ai-gateway/models-and-providers/provider-timeouts
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-timeouts"
-last_updated: 2026-09-08
+last_updated: 2026-09-10
 type: reference
 prerequisites:
   - /docs/ai-gateway/models-and-providers
@@ -15,8 +15,8 @@ related:
 summary: Configure AI Gateway timeouts for BYOK providers. Fail over to the next provider when a request takes too long to start streaming.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-timeouts.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "3c3e0e3c446de42b2a0128d073aad630eef2a5c3528301dbbcc70a70b99a2df0"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "f576310010ff1b20da8fd59e4b40612cbc739d419e0ec30272eb73111814c560"
 ---
 
 # AI Gateway Provider Timeouts

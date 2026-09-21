@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/api/origin/llms-full.txt"
-fetched_at: "2026-09-14T09:38:41.937Z"
-sha256: "b2248d97c0bd058cbbe2becefdb437e5a76d97e338879e4749d6266904572697"
+fetched_at: "2026-09-21T09:40:19.892Z"
+sha256: "5d14b27190d44d3f2e7b362e862034a6394095c573e2871a6c7a7f45c00479ff"
 ---
 
 # Origin API
@@ -257,6 +257,8 @@ git -c credential.helper="!f() { echo username=x-access-token; echo password=${I
 
 The Origin CLI credential helper is for user logins. App integrations pass the installation token as shown here. Treat the token like a password, never log it, and mint a fresh one before `expiresAt` when a job still needs Git access.
 
+Git over HTTPS meters its own budget, separate from the REST budget in [Rate limits](https://cursor.com/docs/api/origin/llms-full.txt#rate-limits). A charged Git response carries the same `X-RateLimit-Limit`, `X-RateLimit-Remaining`, and `X-RateLimit-Used` headers, with `X-RateLimit-Resource` set to `git` rather than `core`. Over-budget Git requests return `429` with `Retry-After` and `X-RateLimit-Reset`. Read the headers to pace a job rather than assuming a number; unmetered requests carry no rate-limit headers.
+
 On a mirrored repository, an installation token clones, fetches, and pulls, and Origin rejects `git push` with `403` until the mirror becomes a stable outbound mirror. See [Mirrored repositories](https://cursor.com/docs/api/origin/llms-full.txt#mirrored-repositories).
 
 ### User-authenticated CLI requests
@@ -326,33 +328,35 @@ Webhook signatures do not carry a key ID, so verification should try each active
 
 Request only the minimum scopes your app needs. `repository:metadata:read` and app or installation metadata access are granted automatically and should not be added separately to installation URLs.
 
-| Scope                                    | Allows                                                                                                                                                                                                    |
-| ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `repository:metadata:read`               | Read repository metadata and mirror transition jobs. Added automatically.                                                                                                                                 |
-| `repository:contents:read`               | Read commits, branches, contents, comparison files, and low-level Git objects. Download a repository archive. Clone, fetch, and pull over Git HTTPS. Sync a mirrored repository from its upstream source. |
-| `repository:contents:write`              | Push over Git HTTPS. Merge pull requests. Create branches and commit file changes through the Git data endpoints. Re-request a check run.                                                                 |
-| `repository:pull_requests:read`          | Read pull requests, changed files, pull request commits, and assigned labels.                                                                                                                             |
-| `repository:pull_requests:write`         | Create and update pull requests. Assign and remove pull request labels.                                                                                                                                   |
-| `repository:pull_requests:reviews:read`  | Read pull request comments, comment threads, submitted reviews, and requested reviewers.                                                                                                                  |
-| `repository:pull_requests:reviews:write` | Create and update comments; resolve and reopen comment threads; create, update, and dismiss reviews; request and remove reviewers.                                                                        |
-| `repository:checks:read`                 | Read check suites, runs, and check run annotations.                                                                                                                                                       |
-| `repository:checks:write`                | Create and update check suites and runs. Append check run annotations.                                                                                                                                    |
-| `repository:labels:read`                 | Read the label definitions a repository owns.                                                                                                                                                             |
-| `repository:labels:write`                | Create, update, and delete repository label definitions.                                                                                                                                                  |
-| `repository:rulesets:read`               | Read repository rulesets.                                                                                                                                                                                 |
-| `repository:rulesets:write`              | Create, update, and delete repository rulesets.                                                                                                                                                           |
-| `repository:settings:read`               | Read the grants held directly on a repository.                                                                                                                                                            |
-| `repository:settings:write`              | Update repository settings: the default branch, visibility, merge methods, and automatic head-branch deletion. Upsert and delete grants on a repository.                                                  |
-| `namespace:settings:read`                | Read the grants held directly on an owner.                                                                                                                                                                |
-| `namespace:settings:write`               | Upsert and delete grants on an owner.                                                                                                                                                                     |
+| Scope                                    | Allows                                                                                                                                                                                                                      |
+| ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `repository:metadata:read`               | Read repository metadata. Added automatically.                                                                                                                                                                              |
+| `repository:contents:read`               | Read commits, branches, contents, comparison files, and low-level Git objects. Search file text. Download a repository archive. Clone, fetch, and pull over Git HTTPS. Sync a mirrored repository from its upstream source. |
+| `repository:contents:write`              | Push over Git HTTPS. Merge pull requests. Create branches and commit file changes through the Git data endpoints. Re-request a check run.                                                                                   |
+| `repository:pull_requests:read`          | Read pull requests, changed files, pull request commits, assigned labels, and merge eligibility.                                                                                                                            |
+| `repository:pull_requests:write`         | Create and update pull requests. Assign and remove pull request labels.                                                                                                                                                     |
+| `repository:pull_requests:reviews:read`  | Read pull request comments, comment threads, submitted reviews, and requested reviewers.                                                                                                                                    |
+| `repository:pull_requests:reviews:write` | Create and update comments; resolve and reopen comment threads; create, update, and dismiss reviews; request and remove reviewers.                                                                                          |
+| `repository:checks:read`                 | Read check suites, runs, and check run annotations.                                                                                                                                                                         |
+| `repository:checks:write`                | Create and update check suites and runs. Append check run annotations.                                                                                                                                                      |
+| `repository:labels:read`                 | Read the label definitions a repository owns.                                                                                                                                                                               |
+| `repository:labels:write`                | Create, update, and delete repository label definitions.                                                                                                                                                                    |
+| `repository:rulesets:read`               | Read repository rulesets.                                                                                                                                                                                                   |
+| `repository:rulesets:write`              | Create, update, and delete repository rulesets.                                                                                                                                                                             |
+| `repository:settings:read`               | Read the grants held directly on a repository.                                                                                                                                                                              |
+| `repository:settings:write`              | Update repository settings: the default branch, visibility, merge methods, and automatic head-branch deletion. Upsert and delete grants on a repository.                                                                    |
+| `namespace:settings:read`                | Read the grants held directly on an owner.                                                                                                                                                                                  |
+| `namespace:settings:write`               | Upsert and delete grants on an owner.                                                                                                                                                                                       |
 
 Requesting a `:write` scope also grants the matching `:read` scope, so `repository:labels:write` covers `repository:labels:read` and you do not have to list both. The reverse does not hold: a read scope never grants writes.
 
 The installation token can only narrow these grants. It cannot add a scope or repository the workspace admin did not approve.
 
-Mirror-state changes sit outside this table. [Transition Repo Mirror](https://cursor.com/docs/api/origin/llms-full.txt#transition-repo-mirror), [Force Repo Mirror Cutover](https://cursor.com/docs/api/origin/llms-full.txt#force-repo-mirror-cutover), and [Detach Repo Mirror](https://cursor.com/docs/api/origin/llms-full.txt#detach-repo-mirror) take `repository:mirror:write` or `repository:mirror:delete`, which an app cannot request at installation: they are carried by a Cursor user credential, and the caller must also administer the repository on the mirror's upstream source.
+Mirror-state changes sit outside this table. [Transition Repo Mirror](https://cursor.com/docs/api/origin/migrations#transition-repo-mirror), [Force Repo Mirror Cutover](https://cursor.com/docs/api/origin/migrations#force-repo-mirror-cutover), and [Detach Repo Mirror](https://cursor.com/docs/api/origin/migrations#detach-repo-mirror) take `repository:mirror:write` or `repository:mirror:delete`, which an app cannot request at installation: they are carried by a Cursor user credential, and the caller must also administer the repository on the mirror's upstream source.
 
-App management sits outside it for the same reason. [Create App](https://cursor.com/docs/api/origin/llms-full.txt#create-app) takes `namespace:apps:create`, [List Namespace Apps](https://cursor.com/docs/api/origin/llms-full.txt#list-namespace-apps) takes `namespace:apps:read`, [Get App](https://cursor.com/docs/api/origin/llms-full.txt#get-app) takes `app:settings:read`, and [Update App](https://cursor.com/docs/api/origin/llms-full.txt#update-app), [Add App Signing Key](https://cursor.com/docs/api/origin/llms-full.txt#add-app-signing-key), and [Revoke App Signing Key](https://cursor.com/docs/api/origin/llms-full.txt#revoke-app-signing-key) take `app:settings:write`. A publisher holds these on a Cursor user credential; an app cannot request them for itself.
+Installation management sits outside it too. [Add App Installation Repositories](https://cursor.com/docs/api/origin/llms-full.txt#add-app-installation-repositories) takes `namespace:installations:write`, which an app cannot request at installation: a namespace admin holds it on a Cursor user credential, and the same credential kind that consented to the installation is the one that can extend it.
+
+App management sits outside it for the same reason. [Create App](https://cursor.com/docs/api/origin/llms-full.txt#create-app) takes `namespace:apps:create`, [List Namespace Apps](https://cursor.com/docs/api/origin/llms-full.txt#list-namespace-apps) and [Get App](https://cursor.com/docs/api/origin/llms-full.txt#get-app) take `namespace:apps:read`, and [Update App](https://cursor.com/docs/api/origin/llms-full.txt#update-app), [Add App Signing Key](https://cursor.com/docs/api/origin/llms-full.txt#add-app-signing-key), and [Revoke App Signing Key](https://cursor.com/docs/api/origin/llms-full.txt#revoke-app-signing-key) take `app:settings:write`. A publisher holds these on a Cursor user credential; an app cannot request them for itself.
 
 The table covers the scopes an app requests at installation. To look up the scope a single operation requires, read its `x-origin-scopes` extension in the [OpenAPI specification](https://cursor.com/docs/api/origin/openapi.yaml). That extension covers every operation, including the `app`, `installation`, and `namespace` scopes that come with the credential itself rather than from an installation grant. An operation whose scopes all come with the credential marks its extension `ambient: true`: there is nothing to request for it, and presenting the right credential is enough.
 
@@ -365,7 +369,7 @@ An installation uses every scope it holds on a native Origin repository and on a
 
 Every other scope returns `403` on that repository, whatever the workspace admin approved. Over the REST API, repository and contents reads, commit comparison, and [Sync Mirror](https://cursor.com/docs/api/origin/llms-full.txt#sync-mirror) keep working, and Origin rejects pull requests, reviews, comments, checks, rulesets, and every write. Over Git HTTPS, clone, fetch, pull, and LFS download keep working, and Origin rejects push and LFS upload.
 
-Moving a repository out of that state is a user-credential operation rather than something an installation can do: [Transition Repo Mirror](https://cursor.com/docs/api/origin/llms-full.txt#transition-repo-mirror) advances the mirror direction, [Force Repo Mirror Cutover](https://cursor.com/docs/api/origin/llms-full.txt#force-repo-mirror-cutover) cuts over to the upstream source without pushing divergent refs back, and [Detach Repo Mirror](https://cursor.com/docs/api/origin/llms-full.txt#detach-repo-mirror) disconnects the mirror for good.
+Moving a repository out of that state is a user-credential operation rather than something an installation can do: [Transition Repo Mirror](https://cursor.com/docs/api/origin/migrations#transition-repo-mirror) advances the mirror direction, [Force Repo Mirror Cutover](https://cursor.com/docs/api/origin/migrations#force-repo-mirror-cutover) cuts over to the upstream source without pushing divergent refs back, and [Detach Repo Mirror](https://cursor.com/docs/api/origin/migrations#detach-repo-mirror) disconnects the mirror for good.
 
 The `mirror` object on a repository does not tell you whether writes are allowed. A mirror partway through a transition can report `mirror.status` as `outbound` and still be read-only, so treat the `403` as authoritative rather than branching on `mirror.status`.
 
@@ -381,12 +385,12 @@ The Origin API uses a shared per-principal point budget that resets on a rolling
 
 Every endpoint charges a fixed cost against that budget before the handler runs. Authentication and authorization failures are not charged.
 
-| Cost | Operations                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 0    | [Get Rate Limit](https://cursor.com/docs/api/origin/llms-full.txt#get-rate-limit). Status only; does not consume points.                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| 1    | Most read endpoints, plus [Create Installation Access Token](https://cursor.com/docs/api/origin/llms-full.txt#create-installation-access-token)                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| 5    | Ordinary writes, plus these heavier reads: [Get Commit](https://cursor.com/docs/api/origin/llms-full.txt#get-commit), [List Commit Files](https://cursor.com/docs/api/origin/llms-full.txt#list-commit-files), [List Comparison Files](https://cursor.com/docs/api/origin/llms-full.txt#list-comparison-files), [List Pull Request Files](https://cursor.com/docs/api/origin/llms-full.txt#list-pull-request-files), and [Get Repo Tarball](https://cursor.com/docs/api/origin/llms-full.txt#get-repo-tarball)                                                           |
-| 10   | [Create App](https://cursor.com/docs/api/origin/llms-full.txt#create-app), [Create Repo](https://cursor.com/docs/api/origin/llms-full.txt#create-repo), [Create Commit From Files](https://cursor.com/docs/api/origin/llms-full.txt#create-commit-from-files), [Merge Pull Request](https://cursor.com/docs/api/origin/llms-full.txt#merge-pull-request), [Transition Repo Mirror](https://cursor.com/docs/api/origin/llms-full.txt#transition-repo-mirror), and [Force Repo Mirror Cutover](https://cursor.com/docs/api/origin/llms-full.txt#force-repo-mirror-cutover) |
+| Cost | Operations                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0    | [Get Rate Limit](https://cursor.com/docs/api/origin/llms-full.txt#get-rate-limit). Status only; does not consume points.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| 1    | Most read endpoints, plus [Create Installation Access Token](https://cursor.com/docs/api/origin/llms-full.txt#create-installation-access-token)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| 5    | Ordinary writes, plus these heavier reads: [Get Commit](https://cursor.com/docs/api/origin/llms-full.txt#get-commit), [List Commit Files](https://cursor.com/docs/api/origin/llms-full.txt#list-commit-files), [List Comparison Files](https://cursor.com/docs/api/origin/llms-full.txt#list-comparison-files), [List Pull Request Files](https://cursor.com/docs/api/origin/llms-full.txt#list-pull-request-files), [Get Repo Tarball](https://cursor.com/docs/api/origin/llms-full.txt#get-repo-tarball), and [Grep Contents](https://cursor.com/docs/api/origin/llms-full.txt#grep-contents)                                                                                     |
+| 10   | [Create App](https://cursor.com/docs/api/origin/llms-full.txt#create-app), [Create Repo](https://cursor.com/docs/api/origin/llms-full.txt#create-repo), [Create Commit From Files](https://cursor.com/docs/api/origin/llms-full.txt#create-commit-from-files), [Merge Pull Request](https://cursor.com/docs/api/origin/llms-full.txt#merge-pull-request), [Get Pull Request Mergeability](https://cursor.com/docs/api/origin/llms-full.txt#get-pull-request-mergeability), [Transition Repo Mirror](https://cursor.com/docs/api/origin/migrations#transition-repo-mirror), and [Force Repo Mirror Cutover](https://cursor.com/docs/api/origin/migrations#force-repo-mirror-cutover) |
 
 Cursor can raise per-app minute budgets for design partners. Contact Cursor if your integration needs a higher limit.
 
@@ -424,2908 +428,6 @@ Wait for `Retry-After`, or until `X-RateLimit-Reset`, before retrying. Use backo
 ### Checking remaining quota
 
 Call [Get Rate Limit](https://cursor.com/docs/api/origin/llms-full.txt#get-rate-limit) to read the current budget without consuming points. The response body mirrors the `X-RateLimit-*` headers for the shared `core` resource.
-
-## Webhooks
-
-Origin sends signed HTTP `POST` requests to the app's registered HTTPS webhook URL with `content-type: application/json`.
-
-Delivery is at least once. Deduplicate retries with `webhook-id`, durably accept the request, return `2xx` quickly, and process the event asynchronously.
-
-Origin retries transport errors, `429`, and `5xx` responses up to seven total attempts. Retry delays are 5 seconds, 30 seconds, 1 minute, 2 minutes, 4 minutes, and 8 minutes. Other `4xx` responses are terminal.
-
-To confirm a receiver works before any real event reaches it, call [Ping Webhook](https://cursor.com/docs/api/origin/llms-full.txt#ping-webhook).
-
-Origin delivers events for mirrored repositories, and installation event payloads list them in the selected repository arrays. Delivery does not widen what the installation can call: see [Mirrored repositories](https://cursor.com/docs/api/origin/llms-full.txt#mirrored-repositories).
-
-### Headers
-
-| Header                    | Description                                               |
-| ------------------------- | --------------------------------------------------------- |
-| `content-type`            | `application/json`                                        |
-| `user-agent`              | `Cursor-Origin-Webhook/1.0`                               |
-| `webhook-id`              | Stable delivery ID and idempotency key.                   |
-| `webhook-timestamp`       | Unix timestamp included in the signature.                 |
-| `webhook-signature`       | `v1ed,BASE64_SIGNATURE`                                   |
-| `webhook-event-type`      | Event slug for routing.                                   |
-| `webhook-event-id`        | Underlying Origin event ID mirrored from the signed body. |
-| `webhook-app-id`          | Target app ID.                                            |
-| `webhook-installation-id` | Target installation ID.                                   |
-
-Routing headers are conveniences. After signature verification, the body is authoritative.
-
-### Signature verification
-
-Use the raw request body before parsing it. Construct:
-
-```text
-lowercaseHex(SHA-256("<webhook-id>.<webhook-timestamp>.<raw-request-body>"))
-```
-
-Verify the Ed25519 signature over the UTF-8 bytes of that hexadecimal digest against an active Origin JWKS key. Reject timestamps more than five minutes from the current time.
-
-```typescript
-import {
-  createHash,
-  createPublicKey,
-  verify,
-  type JsonWebKeyInput,
-} from "node:crypto";
-
-export async function verifyOriginWebhook(
-  body: Buffer,
-  headers: Record<string, string | undefined>
-): Promise<boolean> {
-  const id = headers["webhook-id"];
-  const timestamp = Number(headers["webhook-timestamp"]);
-  const signature = headers["webhook-signature"]
-    ?.split(/\s+/)
-    .find((value) => value.startsWith("v1ed,"));
-
-  const now = Math.floor(Date.now() / 1000);
-  if (
-    !id ||
-    !signature ||
-    !Number.isInteger(timestamp) ||
-    Math.abs(now - timestamp) > 300
-  ) {
-    return false;
-  }
-
-  const digest = createHash("sha256")
-    .update(`${id}.${timestamp}.`)
-    .update(body)
-    .digest("hex");
-
-  // Cache this response in production.
-  const { keys } = await fetch(
-    "https://api.cursor.com/v1/origin/keys"
-  ).then((response) => response.json()) as {
-    keys: JsonWebKeyInput[];
-  };
-
-  return keys.some((jwk) => {
-    try {
-      return verify(
-        null,
-        Buffer.from(digest),
-        createPublicKey({ key: jwk, format: "jwk" }),
-        Buffer.from(signature.slice(5), "base64")
-      );
-    } catch {
-      return false;
-    }
-  });
-}
-```
-
-### Delivery envelope
-
-Each request wraps the event payload with delivery, app, and installation identity:
-
-```json
-{
-  "deliveryId": "whd_01...",
-  "appId": "app_01...",
-  "installationId": "i_01...",
-  "event": {
-    "id": "evt_01...",
-    "type": "pull_request.comment.created",
-    "eventTime": "2026-07-01T10:03:00Z",
-    "payload": {}
-  }
-}
-```
-
-`deliveryId` is stable across retries. `event.id` identifies the underlying domain event.
-
-### Events
-
-| Event                               | Delivered when                                                                                                                               |
-| ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| `repository.created`                | A repository is created.                                                                                                                     |
-| `repository.deleted`                | A repository is deleted.                                                                                                                     |
-| `repository.pushed`                 | One or more refs change in a push.                                                                                                           |
-| `repository.metadata.updated`       | A repository's default branch changes.                                                                                                       |
-| `pull_request.created`              | A pull request opens.                                                                                                                        |
-| `pull_request.head_ref.pushed`      | The pull request head advances.                                                                                                              |
-| `pull_request.base_ref.updated`     | The base ref or resolved base commit changes.                                                                                                |
-| `pull_request.metadata.updated`     | The title or description changes.                                                                                                            |
-| `pull_request.closed`               | A pull request closes without merging, including when Origin closes it because a push left its head with no history in common with its base. |
-| `pull_request.merged`               | A pull request merges.                                                                                                                       |
-| `pull_request.reopened`             | A closed pull request reopens.                                                                                                               |
-| `pull_request.published`            | A draft becomes open.                                                                                                                        |
-| `pull_request.comment.created`      | A visible pull request comment is created.                                                                                                   |
-| `pull_request.review.submitted`     | A review is submitted with any verdict.                                                                                                      |
-| `pull_request.review.dismissed`     | A submitted review is dismissed, explicitly or by being superseded.                                                                          |
-| `pull_request.reviewer.added`       | A reviewer is requested.                                                                                                                     |
-| `pull_request.reviewer.removed`     | A reviewer is removed.                                                                                                                       |
-| `pull_request.reviewer.rerequested` | A reviewer is requested again.                                                                                                               |
-| `repository.check_run.created`      | A check run is created.                                                                                                                      |
-| `repository.check_run.completed`    | A check run completes.                                                                                                                       |
-| `repository.check_run.rerequested`  | A completed check run is re-requested. Delivered only to the app that owns the run.                                                          |
-| `installation.created`              | The app is installed.                                                                                                                        |
-| `installation.updated`              | Scopes, repository selection, or the owner namespace slug change.                                                                            |
-| `installation.suspended`            | The installation is suspended.                                                                                                               |
-| `installation.unsuspended`          | A suspended installation is restored.                                                                                                        |
-| `installation.deleted`              | The app is uninstalled.                                                                                                                      |
-
-Every event's payload shape is documented field by field in [Event payloads](https://cursor.com/docs/api/origin/llms-full.txt#event-payloads).
-
-The five `installation.*` events go to the app itself rather than to a repository subscription. Origin always sends them, so they do not appear in the app's selectable event list. Every other event in this table is a repository-scoped subscription.
-
-Origin does not deliver `repository.pushed` for a repository it mirrors from GitHub. GitHub owns those pushes and sends its own push webhooks, so an Origin delivery would duplicate them. Pushes to native Origin repositories and to outbound mirrors are delivered as usual, and the mirror state does not affect any other event. `repository.deleted` is delivered for a repository mirrored from GitHub: stopping the sync deletes the Cursor-side repository only, and GitHub sends nothing for it.
-
-### Event payloads
-
-Each event's [envelope](https://cursor.com/docs/api/origin/llms-full.txt#delivery-envelope) carries the event's payload object in `payload`. Events that share a shape share a payload family; each family below documents the events that deliver it, its fields, and a sample payload, generated from the [OpenAPI specification](https://cursor.com/docs/api/origin/openapi.yaml).
-
-### Repository Created
-
-repository.created
-
-#### Payload Fields
-
-`repository` object
-
-The created repository.
-
-`repository.id` string
-
-`repository.name` string Required
-
-The repo name, unique to its owner. Required on create.
-
-`repository.fullName` string
-
-"\{owner.login}/\{name}". Derived.
-
-`repository.owner` object
-
-The owning entity. Determined by the parent on create; not settable directly.
-
-`repository.owner.slug` string
-
-Unique URL-friendly name of the owner.
-
-`repository.owner.id` string
-
-Unique ID of the owner namespace.
-
-`repository.owner.type` string
-
-`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
-
-`repository.defaultBranch` string
-
-Default branch name. Always set on responses. On create, omitting this field or leaving it empty defaults to "main".
-
-`repository.createdAt` string
-
-RFC 3339 timestamp.
-
-`repository.updatedAt` string
-
-RFC 3339 timestamp.
-
-`repository.pushedAt` string
-
-Most-recent-push timestamp on any branch; absent until the first push. RFC 3339 timestamp.
-
-`repository.cloneUrl` string
-
-HTTPS URL for cloning the repository.
-
-`repository.mirror` object
-
-Mirror metadata. Absent for a native repository and before a mirror's initial sync is ready.
-
-`repository.mirror.source` string
-
-One of `github`.
-
-`repository.mirror.sourceId` string
-
-Opaque repository identifier assigned by the source.
-
-`repository.mirror.status` string
-
-Effective direction during a transition, until cutover completes. One of `inbound`, `outbound`.
-
-`repository.visibility` string
-
-Repository visibility, `internal` or `private`. One of `internal`, `private`.
-
-`repository.allowMergeCommit` boolean
-
-Whether pull requests may land as merge commits.
-
-`repository.allowSquashMerge` boolean
-
-Whether pull requests may land as squash merges.
-
-`repository.deleteBranchOnMerge` boolean
-
-Whether the head branch is deleted automatically on merge.
-
-**Sample `event.payload`:**
-
-```json
-{
-  "repository": {
-    "id": "repo_01k2ja2000e0080000000000q4",
-    "name": "rocket",
-    "fullName": "acme/rocket",
-    "owner": {
-      "slug": "acme",
-      "id": "ns_01k2ja2000e0080000000000p3",
-      "type": "team"
-    },
-    "defaultBranch": "main",
-    "createdAt": "2026-08-01T09:30:00Z",
-    "updatedAt": "2026-08-01T09:30:00Z",
-    "cloneUrl": "https://origin.cursor.com/git/acme/rocket.git"
-  }
-}
-```
-
-### Repository Deleted
-
-repository.deleted
-
-#### Payload Fields
-
-`repository` object
-
-The repository that was deleted. A reference only: the repository no longer resolves through the API once deleted.
-
-`repository.id` string
-
-`repository.name` string
-
-`repository.owner` object
-
-The owner of a repo.
-
-`repository.owner.slug` string
-
-Unique URL-friendly name of the owner.
-
-`repository.owner.id` string
-
-Unique ID of the owner namespace.
-
-`repository.owner.type` string
-
-`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
-
-`deletedAt` string
-
-When the repository was deleted. RFC 3339 timestamp.
-
-**Sample `event.payload`:**
-
-```json
-{
-  "repository": {
-    "id": "repo_01k2ja2000e0080000000000q4",
-    "name": "rocket",
-    "owner": {
-      "slug": "acme",
-      "id": "ns_01k2ja2000e0080000000000p3",
-      "type": "team"
-    }
-  },
-  "deletedAt": "2026-08-03T08:15:00Z"
-}
-```
-
-### Repository Push
-
-repository.pushed
-
-One atomic push, which may update several refs. There is no commits array; each ref update carries best-effort tip metadata only.
-
-#### Payload Fields
-
-`repository` object
-
-The repository the push targeted.
-
-`repository.id` string
-
-`repository.name` string
-
-`repository.owner` object
-
-The owner of a repo.
-
-`repository.owner.slug` string
-
-Unique URL-friendly name of the owner.
-
-`repository.owner.id` string
-
-Unique ID of the owner namespace.
-
-`repository.owner.type` string
-
-`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
-
-`refUpdates` array
-
-Refs included from this push, capped at 100.
-
-`refUpdates[].ref` string
-
-The full git ref that was pushed. Example: `refs/heads/main` or `refs/tags/v3.14.1`.
-
-`refUpdates[].before` string
-
-The SHA of the most recent commit on `ref` before the push. All-zero (`0000000000000000000000000000000000000000`) when the ref was just created.
-
-`refUpdates[].after` string
-
-The SHA of the most recent commit on `ref` after the push. All-zero (`0000000000000000000000000000000000000000`) when the ref was deleted.
-
-`refUpdates[].created` boolean
-
-Whether this push created the ref.
-
-`refUpdates[].deleted` boolean
-
-Whether this push deleted the ref.
-
-`refUpdates[].forced` boolean
-
-Whether this push rewrote history: a non-fast-forward update of an existing ref (the new tip is not a descendant of the old tip). False for ref creates, deletes, fast-forward updates, and pushes observed before Origin tracked force-push status.
-
-`refUpdates[].headCommit` object
-
-Best-effort metadata for the commit at the peeled new tip. Unset for deletions, non-commit refs, historical pushes, and extraction failures.
-
-`refUpdates[].headCommit.sha` string
-
-`refUpdates[].headCommit.author` object
-
-Git identity and timestamp for a commit's author or committer. This is the identity recorded in the commit object, not a linked user account.
-
-`refUpdates[].headCommit.author.name` string
-
-`refUpdates[].headCommit.author.email` string
-
-`refUpdates[].headCommit.author.date` string
-
-ISO-8601 timestamp preserving the git signature's original timezone offset (e.g. "2014-11-07T22:01:45+01:00").
-
-`refUpdates[].headCommit.committer` object
-
-Git identity and timestamp for a commit's author or committer. This is the identity recorded in the commit object, not a linked user account.
-
-`refUpdates[].headCommit.committer.name` string
-
-`refUpdates[].headCommit.committer.email` string
-
-`refUpdates[].headCommit.committer.date` string
-
-ISO-8601 timestamp preserving the git signature's original timezone offset (e.g. "2014-11-07T22:01:45+01:00").
-
-`refUpdates[].headCommit.message` string
-
-`pushedAt` string
-
-When Origin observed the push. RFC 3339 timestamp.
-
-`pusher` object
-
-The principal that performed the push, as verified by Origin. Absent when Origin itself performed the push, such as the merge push that advances the base ref when a pull request merges.
-
-`pusher.user` object
-
-`pusher.user.id` string
-
-`pusher.user.email` string Required
-
-`pusher.user.displayName` string
-
-Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
-
-`pusher.user.handle` string
-
-The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
-
-`pusher.app` object
-
-`pusher.app.id` string
-
-`pusher.app.displayName` string
-
-The app's registered display name, never empty when present. Omitted on payloads whose app could not be resolved and on the first-party Cursor facade actor.
-
-`pusher.serviceAccount` object
-
-`pusher.serviceAccount.id` string
-
-`refUpdatesCount` integer
-
-Number of ref updates in the atomic push. ref\_updates may be shorter when the producer capped the list.
-
-**Sample `event.payload`:**
-
-```json
-{
-  "repository": {
-    "id": "repo_01k2ja2000e0080000000000q4",
-    "name": "rocket",
-    "owner": {
-      "slug": "acme",
-      "id": "ns_01k2ja2000e0080000000000p3",
-      "type": "team"
-    }
-  },
-  "refUpdates": [
-    {
-      "ref": "refs/heads/add-telemetry",
-      "before": "5c8d7e6f5a4b3c2d1e0f9a8b7c6d5e4f3a2b1c0d",
-      "after": "9a41f0c3d2b8e7f6a5c4d3e2f1b0a9c8d7e6f5a4",
-      "created": false,
-      "deleted": false,
-      "forced": false,
-      "headCommit": {
-        "sha": "9a41f0c3d2b8e7f6a5c4d3e2f1b0a9c8d7e6f5a4",
-        "author": {
-          "name": "Jane Doe",
-          "email": "jane@acme.dev",
-          "date": "2026-08-01T09:30:00Z"
-        },
-        "committer": {
-          "name": "Jane Doe",
-          "email": "jane@acme.dev",
-          "date": "2026-08-01T09:30:00Z"
-        },
-        "message": "Add launch telemetry"
-      }
-    }
-  ],
-  "pushedAt": "2026-08-02T14:45:00Z",
-  "pusher": {
-    "user": {
-      "id": "user_01k2ja2000e0080000000000c3",
-      "email": "jane@acme.dev"
-    }
-  },
-  "refUpdatesCount": 1
-}
-```
-
-### Repository Metadata Updated
-
-repository.metadata.updated
-
-Carries the full repository snapshot with no delta and no updating actor. Compare successive snapshots or refetch the repository to see what changed.
-
-#### Payload Fields
-
-`repository` object
-
-The full repository snapshot after the update.
-
-`repository.id` string
-
-`repository.name` string Required
-
-The repo name, unique to its owner. Required on create.
-
-`repository.fullName` string
-
-"\{owner.login}/\{name}". Derived.
-
-`repository.owner` object
-
-The owning entity. Determined by the parent on create; not settable directly.
-
-`repository.owner.slug` string
-
-Unique URL-friendly name of the owner.
-
-`repository.owner.id` string
-
-Unique ID of the owner namespace.
-
-`repository.owner.type` string
-
-`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
-
-`repository.defaultBranch` string
-
-Default branch name. Always set on responses. On create, omitting this field or leaving it empty defaults to "main".
-
-`repository.createdAt` string
-
-RFC 3339 timestamp.
-
-`repository.updatedAt` string
-
-RFC 3339 timestamp.
-
-`repository.pushedAt` string
-
-Most-recent-push timestamp on any branch; absent until the first push. RFC 3339 timestamp.
-
-`repository.cloneUrl` string
-
-HTTPS URL for cloning the repository.
-
-`repository.mirror` object
-
-Mirror metadata. Absent for a native repository and before a mirror's initial sync is ready.
-
-`repository.mirror.source` string
-
-One of `github`.
-
-`repository.mirror.sourceId` string
-
-Opaque repository identifier assigned by the source.
-
-`repository.mirror.status` string
-
-Effective direction during a transition, until cutover completes. One of `inbound`, `outbound`.
-
-`repository.visibility` string
-
-Repository visibility, `internal` or `private`. One of `internal`, `private`.
-
-`repository.allowMergeCommit` boolean
-
-Whether pull requests may land as merge commits.
-
-`repository.allowSquashMerge` boolean
-
-Whether pull requests may land as squash merges.
-
-`repository.deleteBranchOnMerge` boolean
-
-Whether the head branch is deleted automatically on merge.
-
-**Sample `event.payload`:**
-
-```json
-{
-  "repository": {
-    "id": "repo_01k2ja2000e0080000000000q4",
-    "name": "rocket",
-    "fullName": "acme/rocket",
-    "owner": {
-      "slug": "acme",
-      "id": "ns_01k2ja2000e0080000000000p3",
-      "type": "team"
-    },
-    "defaultBranch": "release",
-    "createdAt": "2026-08-01T09:30:00Z",
-    "updatedAt": "2026-08-03T08:15:00Z",
-    "cloneUrl": "https://origin.cursor.com/git/acme/rocket.git",
-    "pushedAt": "2026-08-02T14:45:00Z"
-  }
-}
-```
-
-### Pull Request Events
-
-pull\_request.created
-pull\_request.published
-pull\_request.reopened
-pull\_request.closed
-pull\_request.merged
-pull\_request.metadata.updated
-pull\_request.head\_ref.pushed
-pull\_request.base\_ref.updated
-
-A pull request lifecycle change. The lifecycle action is the envelope's `event.type`; there is no separate action field.
-
-#### Payload Fields
-
-`pullRequest` object
-
-The pull request snapshot. Assigned labels are omitted; read them with `GetPullRequest`.
-
-`pullRequest.id` string
-
-Stable Origin pull request identifier.
-
-`pullRequest.number` string
-
-Pull request number within its repository.
-
-`pullRequest.state` string
-
-"open" or "closed". A draft is "open"; merged and closed pull requests are both "closed".
-
-`pullRequest.draft` boolean
-
-Whether the pull request is still a draft.
-
-`pullRequest.merged` boolean
-
-Whether the pull request has been merged.
-
-`pullRequest.title` string
-
-Pull request title.
-
-`pullRequest.body` string
-
-Pull request description.
-
-`pullRequest.head` object
-
-The source side of the pull request - what is being merged in.
-
-`pullRequest.head.ref` string
-
-The ref this side points at, as Origin records it.
-
-`pullRequest.head.sha` string
-
-Tip commit SHA of this side at the change's latest version.
-
-`pullRequest.base` object
-
-The target side of the pull request — what it merges into.
-
-`pullRequest.base.ref` string
-
-The ref this side points at, as Origin records it.
-
-`pullRequest.base.sha` string
-
-Tip commit SHA of this side at the change's latest version.
-
-`pullRequest.author` object
-
-The principal that opened the pull request.
-
-`pullRequest.author.user` object
-
-`pullRequest.author.user.id` string
-
-`pullRequest.author.user.email` string Required
-
-`pullRequest.author.user.displayName` string
-
-Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
-
-`pullRequest.author.user.handle` string
-
-The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
-
-`pullRequest.author.app` object
-
-`pullRequest.author.app.id` string
-
-`pullRequest.author.app.displayName` string
-
-The app's registered display name, never empty when present. Omitted on payloads whose app could not be resolved and on the first-party Cursor facade actor.
-
-`pullRequest.author.serviceAccount` object
-
-`pullRequest.author.serviceAccount.id` string
-
-`pullRequest.createdAt` string
-
-When the pull request was opened. RFC 3339 timestamp.
-
-`pullRequest.updatedAt` string
-
-When the pull request was last updated. RFC 3339 timestamp.
-
-`pullRequest.closedAt` string
-
-When the pull request was closed or merged; unset while open. RFC 3339 timestamp.
-
-`pullRequest.mergedAt` string
-
-When the pull request was merged; unset unless merged. RFC 3339 timestamp.
-
-`pullRequest.mergeCommitSha` string
-
-SHA of the resulting merge commit; set once merged.
-
-`pullRequest.additions` integer
-
-Lines added by the pull request's latest version.
-
-`pullRequest.deletions` integer
-
-Lines deleted by the pull request's latest version.
-
-`pullRequest.changedFiles` integer
-
-Files changed by the pull request's latest version.
-
-`pullRequest.version` object
-
-The pull request's latest version.
-
-`pullRequest.version.number` string
-
-Monotonic version number within the change (1-based).
-
-`pullRequest.version.headSha` string
-
-Head commit SHA for this version.
-
-`pullRequest.version.baseSha` string
-
-Base commit SHA this version is diffed against.
-
-`pullRequest.version.createdAt` string
-
-When this version was created. RFC 3339 timestamp.
-
-`repository` object
-
-The repository the pull request belongs to.
-
-`repository.id` string
-
-`repository.name` string
-
-`repository.owner` object
-
-The owner of a repo.
-
-`repository.owner.slug` string
-
-Unique URL-friendly name of the owner.
-
-`repository.owner.id` string
-
-Unique ID of the owner namespace.
-
-`repository.owner.type` string
-
-`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
-
-**Sample `event.payload`:**
-
-```json
-{
-  "pullRequest": {
-    "id": "pr_01k2ja2000e0080000000000d4",
-    "number": "17",
-    "state": "open",
-    "draft": false,
-    "merged": false,
-    "title": "Add launch telemetry",
-    "body": "Adds structured launch telemetry to the ignition path.",
-    "head": {
-      "ref": "add-telemetry",
-      "sha": "9a41f0c3d2b8e7f6a5c4d3e2f1b0a9c8d7e6f5a4"
-    },
-    "base": {
-      "ref": "main",
-      "sha": "3b1f9c2d8a7e6f5049c8b7a6d5e4f3a2b1c0d9e8"
-    },
-    "author": {
-      "user": {
-        "id": "user_01k2ja2000e0080000000000c3",
-        "email": "jane@acme.dev"
-      }
-    },
-    "createdAt": "2026-08-01T09:30:00Z",
-    "updatedAt": "2026-08-02T14:45:00Z",
-    "additions": 128,
-    "deletions": 46,
-    "changedFiles": 5,
-    "version": {
-      "number": "3",
-      "headSha": "9a41f0c3d2b8e7f6a5c4d3e2f1b0a9c8d7e6f5a4",
-      "baseSha": "3b1f9c2d8a7e6f5049c8b7a6d5e4f3a2b1c0d9e8",
-      "createdAt": "2026-08-01T09:30:00Z"
-    }
-  },
-  "repository": {
-    "id": "repo_01k2ja2000e0080000000000q4",
-    "name": "rocket",
-    "owner": {
-      "slug": "acme",
-      "id": "ns_01k2ja2000e0080000000000p3",
-      "type": "team"
-    }
-  }
-}
-```
-
-### Pull Request Comment
-
-pull\_request.comment.created
-
-A comment created on a pull request. Comments filed with a review are delivered when the review submits, one event per comment.
-
-#### Payload Fields
-
-`pullRequest` object
-
-The pull request the comment was filed on.
-
-`pullRequest.id` string
-
-Immutable Origin change id.
-
-`pullRequest.number` string
-
-`pullRequest.repository` object
-
-Repository reference for this pull request.
-
-`pullRequest.repository.id` string
-
-`pullRequest.repository.name` string
-
-`pullRequest.repository.owner` object
-
-The owner of a repo.
-
-`pullRequest.repository.owner.slug` string
-
-Unique URL-friendly name of the owner.
-
-`pullRequest.repository.owner.id` string
-
-Unique ID of the owner namespace.
-
-`pullRequest.repository.owner.type` string
-
-`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
-
-`comment` object
-
-The created comment. A comment that opened its thread carries the thread's diff anchor inline; a reply carries only `comment.thread.id`. Thread resolution state is not part of the event; read it with `GetPullRequestComment`.
-
-`comment.id` string
-
-`comment.thread` object
-
-The thread this comment belongs to, including its diff anchor and resolution state.
-
-`comment.thread.id` string
-
-`comment.thread.version` object
-
-The pull request version the thread was filed against, including its head and base SHAs (see `PullRequestReview.pull_request_version`).
-
-`comment.thread.version.number` string
-
-Monotonic version number within the change (1-based).
-
-`comment.thread.version.headSha` string
-
-Head commit SHA for this version.
-
-`comment.thread.version.baseSha` string
-
-Base commit SHA this version is diffed against.
-
-`comment.thread.version.createdAt` string
-
-When this version was created. RFC 3339 timestamp.
-
-`comment.thread.path` string
-
-File path of the thread's diff anchor. Empty for general-discussion threads.
-
-`comment.thread.side` string
-
-Diff side of the anchor. Unset for general-discussion threads. One of `left`, `right`.
-
-`comment.thread.startLine` integer
-
-First line of the anchored range in the `side` version of the file. 0 for file-level and general-discussion threads.
-
-`comment.thread.endLine` integer
-
-Inclusive last line of the anchored range. 0 when the anchor is a single line or has no line range.
-
-`comment.thread.resolvedAt` string
-
-When the thread was resolved. Unset while the thread is open. RFC 3339 timestamp.
-
-`comment.thread.createdAt` string
-
-RFC 3339 timestamp.
-
-`comment.thread.updatedAt` string
-
-RFC 3339 timestamp.
-
-`comment.body` string
-
-`comment.author` object
-
-A user, app, or service account that performed an externally visible action.
-
-`comment.author.user` object
-
-`comment.author.user.id` string
-
-`comment.author.user.email` string Required
-
-`comment.author.user.displayName` string
-
-Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
-
-`comment.author.user.handle` string
-
-The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
-
-`comment.author.app` object
-
-`comment.author.app.id` string
-
-`comment.author.app.displayName` string
-
-The app's registered display name, never empty when present. Omitted on payloads whose app could not be resolved and on the first-party Cursor facade actor.
-
-`comment.author.serviceAccount` object
-
-`comment.author.serviceAccount.id` string
-
-`comment.createdAt` string
-
-RFC 3339 timestamp.
-
-`comment.updatedAt` string
-
-RFC 3339 timestamp.
-
-**Sample `event.payload`:**
-
-```json
-{
-  "pullRequest": {
-    "id": "pr_01k2ja2000e0080000000000d4",
-    "number": "17",
-    "repository": {
-      "id": "repo_01k2ja2000e0080000000000q4",
-      "name": "rocket",
-      "owner": {
-        "slug": "acme",
-        "id": "ns_01k2ja2000e0080000000000p3",
-        "type": "team"
-      }
-    }
-  },
-  "comment": {
-    "id": "cmt_01k2ja2000e0080000000000e5",
-    "thread": {
-      "id": "cth_01k2ja2000e0080000000000s6",
-      "version": {
-        "number": "3",
-        "headSha": "9a41f0c3d2b8e7f6a5c4d3e2f1b0a9c8d7e6f5a4",
-        "baseSha": "3b1f9c2d8a7e6f5049c8b7a6d5e4f3a2b1c0d9e8",
-        "createdAt": "2026-08-01T09:30:00Z"
-      },
-      "path": "src/telemetry/retry.ts",
-      "side": "right",
-      "startLine": 42,
-      "endLine": 45,
-      "createdAt": "2026-08-01T09:30:00Z",
-      "updatedAt": "2026-08-02T14:45:00Z"
-    },
-    "body": "Should the retry budget be configurable?",
-    "author": {
-      "user": {
-        "id": "user_01k2ja2000e0080000000000c3",
-        "email": "jane@acme.dev"
-      }
-    },
-    "createdAt": "2026-08-01T09:30:00Z",
-    "updatedAt": "2026-08-02T14:45:00Z"
-  }
-}
-```
-
-### Pull Request Review Events
-
-pull\_request.review\.submitted
-pull\_request.review\.dismissed
-
-#### Payload Fields
-
-`pullRequest` object
-
-The pull request the review was filed on.
-
-`pullRequest.id` string
-
-Immutable Origin change id.
-
-`pullRequest.number` string
-
-`pullRequest.repository` object
-
-Repository reference for this pull request.
-
-`pullRequest.repository.id` string
-
-`pullRequest.repository.name` string
-
-`pullRequest.repository.owner` object
-
-The owner of a repo.
-
-`pullRequest.repository.owner.slug` string
-
-Unique URL-friendly name of the owner.
-
-`pullRequest.repository.owner.id` string
-
-Unique ID of the owner namespace.
-
-`pullRequest.repository.owner.type` string
-
-`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
-
-`review` object
-
-The review that was submitted or dismissed. On a dismissal, `review.dismissal` is set.
-
-`review.id` string
-
-Stable Origin review identifier.
-
-`review.author` object
-
-The principal that authored the review.
-
-`review.author.user` object
-
-`review.author.user.id` string
-
-`review.author.user.email` string Required
-
-`review.author.user.displayName` string
-
-Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
-
-`review.author.user.handle` string
-
-The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
-
-`review.author.app` object
-
-`review.author.app.id` string
-
-`review.author.app.displayName` string
-
-The app's registered display name, never empty when present. Omitted on payloads whose app could not be resolved and on the first-party Cursor facade actor.
-
-`review.author.serviceAccount` object
-
-`review.author.serviceAccount.id` string
-
-`review.verdict` string
-
-One of `approve`, `request_changes`, `comment`.
-
-`review.body` string
-
-Free-text review summary. Empty when the reviewer left no summary.
-
-`review.submittedAt` string
-
-When the review was submitted. Unset for an unsubmitted draft review. RFC 3339 timestamp.
-
-`review.pullRequestVersion` object
-
-The pull request version and head SHA the verdict applies to.
-
-`review.pullRequestVersion.number` string
-
-Monotonic version number within the change (1-based).
-
-`review.pullRequestVersion.headSha` string
-
-Head commit SHA for this version.
-
-`review.pullRequestVersion.baseSha` string
-
-Base commit SHA this version is diffed against.
-
-`review.pullRequestVersion.createdAt` string
-
-When this version was created. RFC 3339 timestamp.
-
-`review.dismissal` object
-
-Set once the review has been dismissed; absent while the verdict still counts toward the pull request's review state.
-
-`review.dismissal.dismissedBy` object
-
-The principal that dismissed the review. Absent when the dismissal was recorded under an actor kind this API does not expose.
-
-`review.dismissal.dismissedBy.user` object
-
-`review.dismissal.dismissedBy.user.id` string
-
-`review.dismissal.dismissedBy.user.email` string Required
-
-`review.dismissal.dismissedBy.user.displayName` string
-
-Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
-
-`review.dismissal.dismissedBy.user.handle` string
-
-The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
-
-`review.dismissal.dismissedBy.app` object
-
-`review.dismissal.dismissedBy.app.id` string
-
-`review.dismissal.dismissedBy.app.displayName` string
-
-The app's registered display name, never empty when present. Omitted on payloads whose app could not be resolved and on the first-party Cursor facade actor.
-
-`review.dismissal.dismissedBy.serviceAccount` object
-
-`review.dismissal.dismissedBy.serviceAccount.id` string
-
-`review.dismissal.dismissedAt` string
-
-When the review was dismissed. RFC 3339 timestamp.
-
-`review.dismissal.message` string
-
-Reason recorded with the dismissal. Reviews retired automatically because their author submitted a newer verdict carry a server-generated reason.
-
-**Sample `event.payload`:**
-
-```json
-{
-  "pullRequest": {
-    "id": "pr_01k2ja2000e0080000000000d4",
-    "number": "17",
-    "repository": {
-      "id": "repo_01k2ja2000e0080000000000q4",
-      "name": "rocket",
-      "owner": {
-        "slug": "acme",
-        "id": "ns_01k2ja2000e0080000000000p3",
-        "type": "team"
-      }
-    }
-  },
-  "review": {
-    "id": "rev_01k2ja2000e0080000000000f6",
-    "author": {
-      "user": {
-        "id": "user_01k2ja2000e0080000000000c3",
-        "email": "jane@acme.dev"
-      }
-    },
-    "verdict": "approve",
-    "body": "Approving. The telemetry schema matches the spec.",
-    "submittedAt": "2026-08-02T15:00:00Z",
-    "pullRequestVersion": {
-      "number": "3",
-      "headSha": "9a41f0c3d2b8e7f6a5c4d3e2f1b0a9c8d7e6f5a4",
-      "baseSha": "3b1f9c2d8a7e6f5049c8b7a6d5e4f3a2b1c0d9e8",
-      "createdAt": "2026-08-01T09:30:00Z"
-    }
-  }
-}
-```
-
-### Pull Request Reviewer Events
-
-pull\_request.reviewer.added
-pull\_request.reviewer.removed
-pull\_request.reviewer.rerequested
-
-A change to the pull request's requested reviewers. Read the current pending set with `ListPullRequestRequestedReviewers`.
-
-#### Payload Fields
-
-`pullRequest` object
-
-The pull request whose requested reviewers changed.
-
-`pullRequest.id` string
-
-Immutable Origin change id.
-
-`pullRequest.number` string
-
-`pullRequest.repository` object
-
-Repository reference for this pull request.
-
-`pullRequest.repository.id` string
-
-`pullRequest.repository.name` string
-
-`pullRequest.repository.owner` object
-
-The owner of a repo.
-
-`pullRequest.repository.owner.slug` string
-
-Unique URL-friendly name of the owner.
-
-`pullRequest.repository.owner.id` string
-
-Unique ID of the owner namespace.
-
-`pullRequest.repository.owner.type` string
-
-`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
-
-`reviewer` object
-
-The requested reviewer the event is about.
-
-`reviewer.user` object
-
-`reviewer.user.id` string
-
-`reviewer.user.email` string Required
-
-`reviewer.user.displayName` string
-
-Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
-
-`reviewer.user.handle` string
-
-The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
-
-`reviewer.group` object
-
-Public Origin group identity (`grp_…`). Currently id-only.
-
-`reviewer.group.id` string
-
-`createdVia` string
-
-How the review request was created. One of `manual`, `codeowners`.
-
-`createdBy` object
-
-The principal that created the review request, when known.
-
-`createdBy.user` object
-
-`createdBy.user.id` string
-
-`createdBy.user.email` string Required
-
-`createdBy.user.displayName` string
-
-Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
-
-`createdBy.user.handle` string
-
-The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
-
-`createdBy.app` object
-
-`createdBy.app.id` string
-
-`createdBy.app.displayName` string
-
-The app's registered display name, never empty when present. Omitted on payloads whose app could not be resolved and on the first-party Cursor facade actor.
-
-`createdBy.serviceAccount` object
-
-`createdBy.serviceAccount.id` string
-
-`createdAt` string
-
-When the review request was created. RFC 3339 timestamp.
-
-**Sample `event.payload`:**
-
-```json
-{
-  "pullRequest": {
-    "id": "pr_01k2ja2000e0080000000000d4",
-    "number": "17",
-    "repository": {
-      "id": "repo_01k2ja2000e0080000000000q4",
-      "name": "rocket",
-      "owner": {
-        "slug": "acme",
-        "id": "ns_01k2ja2000e0080000000000p3",
-        "type": "team"
-      }
-    }
-  },
-  "reviewer": {
-    "user": {
-      "id": "user_01k2ja2000e0080000000000c3",
-      "email": "jane@acme.dev"
-    }
-  },
-  "createdVia": "codeowners",
-  "createdAt": "2026-08-02T14:45:00Z"
-}
-```
-
-### Check Run Events
-
-repository.check\_run.created
-repository.check\_run.completed
-
-Committed snapshot for an Origin check-run lifecycle event.
-
-#### Payload Fields
-
-`repository` object
-
-The repository the check run belongs to.
-
-`repository.id` string
-
-`repository.name` string
-
-`repository.owner` object
-
-The owner of a repo.
-
-`repository.owner.slug` string
-
-Unique URL-friendly name of the owner.
-
-`repository.owner.id` string
-
-Unique ID of the owner namespace.
-
-`repository.owner.type` string
-
-`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
-
-`checkSuite` object
-
-The suite the check run belongs to.
-
-`checkSuite.id` string
-
-Server-assigned unique ID of the suite.
-
-`checkSuite.repository` object
-
-Repository the suite belongs to.
-
-`checkSuite.repository.id` string
-
-`checkSuite.repository.name` string
-
-`checkSuite.repository.owner` object
-
-The owner of a repo.
-
-`checkSuite.repository.owner.slug` string
-
-Unique URL-friendly name of the owner.
-
-`checkSuite.repository.owner.id` string
-
-Unique ID of the owner namespace.
-
-`checkSuite.repository.owner.type` string
-
-`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
-
-`checkSuite.sha` string
-
-Resolved head commit SHA the suite is attached to (lowercase hex).
-
-`checkSuite.key` string
-
-App-chosen idempotency key for the suite.
-
-`checkSuite.name` string
-
-Human-facing suite name.
-
-`checkSuite.detailsUrl` string
-
-Link to more detail about the suite as a whole, if set.
-
-`checkSuite.createdAt` string
-
-RFC 3339 timestamp.
-
-`checkSuite.updatedAt` string
-
-RFC 3339 timestamp.
-
-`checkSuite.externalId` string
-
-Provider-assigned immutable identity for this suite attempt.
-
-`checkSuite.actor` object
-
-Principal that produced the suite.
-
-`checkSuite.actor.user` object
-
-`checkSuite.actor.user.id` string
-
-`checkSuite.actor.user.email` string Required
-
-`checkSuite.actor.user.displayName` string
-
-Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
-
-`checkSuite.actor.user.handle` string
-
-The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
-
-`checkSuite.actor.app` object
-
-`checkSuite.actor.app.id` string
-
-`checkSuite.actor.app.displayName` string
-
-The app's registered display name, never empty when present. Omitted on payloads whose app could not be resolved and on the first-party Cursor facade actor.
-
-`checkSuite.actor.serviceAccount` object
-
-`checkSuite.actor.serviceAccount.id` string
-
-`checkRun` object
-
-The check run snapshot at this lifecycle point.
-
-`checkRun.id` string
-
-Server-assigned unique ID of the check run.
-
-`checkRun.repository` object
-
-Repository the check run belongs to.
-
-`checkRun.repository.id` string
-
-`checkRun.repository.name` string
-
-`checkRun.repository.owner` object
-
-The owner of a repo.
-
-`checkRun.repository.owner.slug` string
-
-Unique URL-friendly name of the owner.
-
-`checkRun.repository.owner.id` string
-
-Unique ID of the owner namespace.
-
-`checkRun.repository.owner.type` string
-
-`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
-
-`checkRun.checkSuite` object
-
-Suite this check run belongs to.
-
-`checkRun.checkSuite.id` string
-
-`checkRun.sha` string
-
-Resolved head commit SHA the check run is attached to (lowercase hex).
-
-`checkRun.key` string
-
-App-chosen idempotency key for the check run.
-
-`checkRun.name` string
-
-Human-facing check-run name.
-
-`checkRun.status` string
-
-One of `queued`, `in_progress`, `completed`.
-
-`checkRun.conclusion` string
-
-Present iff `status == completed`. One of `success`, `failure`, `neutral`, `cancelled`, `skipped`, `timed_out`, `action_required`, `stale`.
-
-`checkRun.detailsUrl` string
-
-Link to more detail about this specific check run, if set.
-
-`checkRun.externalUpdatedAt` string
-
-The external system's last-update time used for ordering. RFC 3339 timestamp.
-
-`checkRun.startedAt` string
-
-When the check run started, if reported. RFC 3339 timestamp.
-
-`checkRun.completedAt` string
-
-When the check run completed, if reported. RFC 3339 timestamp.
-
-`checkRun.createdAt` string
-
-RFC 3339 timestamp.
-
-`checkRun.updatedAt` string
-
-RFC 3339 timestamp.
-
-`checkRun.externalId` string
-
-Provider-assigned immutable identity for this check attempt.
-
-`checkRun.actor` object
-
-Principal that produced the check run.
-
-`checkRun.actor.user` object
-
-`checkRun.actor.user.id` string
-
-`checkRun.actor.user.email` string Required
-
-`checkRun.actor.user.displayName` string
-
-Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
-
-`checkRun.actor.user.handle` string
-
-The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
-
-`checkRun.actor.app` object
-
-`checkRun.actor.app.id` string
-
-`checkRun.actor.app.displayName` string
-
-The app's registered display name, never empty when present. Omitted on payloads whose app could not be resolved and on the first-party Cursor facade actor.
-
-`checkRun.actor.serviceAccount` object
-
-`checkRun.actor.serviceAccount.id` string
-
-`checkRun.output` object
-
-Human-readable output for this check run, if set.
-
-`checkRun.output.title` string
-
-Short headline for the output. Maximum length: 255 characters.
-
-`checkRun.output.summary` string
-
-Summary of the output. May contain Markdown. Maximum UTF-8 size: 65535 bytes.
-
-`checkRun.output.text` string
-
-Detailed output. May contain Markdown. Maximum UTF-8 size: 65535 bytes.
-
-`checkRun.deadlineAt` string
-
-Optional deadline. Omitted or unset means no expiration. RFC 3339 timestamp.
-
-`checkRun.isRerequestable` boolean
-
-Whether the reporting app declared this run re-requestable (`CheckRunInput.is_rerequestable`).
-
-`checkRun.rerequestedAt` string
-
-Set while a re-request is outstanding; cleared when the provider posts again. Unset means no re-request is pending. While set, the run stays in the commit's CI state as pending (`status` and `conclusion` are the superseded result); the owning app answers by posting the run it committed to by declaring `is_rerequestable` — a new run for the same `key`, or an update of this run (which clears this field) — after which the run may be re-requested again. RFC 3339 timestamp.
-
-`checkRun.rerequestedBy` object
-
-Principal that re-requested the run. Present iff `rerequested_at` is set; cleared together with it when the owning app answers.
-
-`checkRun.rerequestedBy.user` object
-
-`checkRun.rerequestedBy.user.id` string
-
-`checkRun.rerequestedBy.user.email` string Required
-
-`checkRun.rerequestedBy.user.displayName` string
-
-Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
-
-`checkRun.rerequestedBy.user.handle` string
-
-The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
-
-`checkRun.rerequestedBy.app` object
-
-`checkRun.rerequestedBy.app.id` string
-
-`checkRun.rerequestedBy.app.displayName` string
-
-The app's registered display name, never empty when present. Omitted on payloads whose app could not be resolved and on the first-party Cursor facade actor.
-
-`checkRun.rerequestedBy.serviceAccount` object
-
-`checkRun.rerequestedBy.serviceAccount.id` string
-
-`actor` object
-
-The principal that produced the check run.
-
-`actor.user` object
-
-`actor.user.id` string
-
-`actor.user.email` string Required
-
-`actor.user.displayName` string
-
-Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
-
-`actor.user.handle` string
-
-The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
-
-`actor.app` object
-
-`actor.app.id` string
-
-`actor.app.displayName` string
-
-The app's registered display name, never empty when present. Omitted on payloads whose app could not be resolved and on the first-party Cursor facade actor.
-
-`actor.serviceAccount` object
-
-`actor.serviceAccount.id` string
-
-**Sample `event.payload`:**
-
-```json
-{
-  "repository": {
-    "id": "repo_01k2ja2000e0080000000000q4",
-    "name": "rocket",
-    "owner": {
-      "slug": "acme",
-      "id": "ns_01k2ja2000e0080000000000p3",
-      "type": "team"
-    }
-  },
-  "checkSuite": {
-    "id": "crg_01k2ja2000e0080000000000h8",
-    "repository": {
-      "id": "repo_01k2ja2000e0080000000000q4",
-      "name": "rocket",
-      "owner": {
-        "slug": "acme",
-        "id": "ns_01k2ja2000e0080000000000p3",
-        "type": "team"
-      }
-    },
-    "sha": "9a41f0c3d2b8e7f6a5c4d3e2f1b0a9c8d7e6f5a4",
-    "key": "ci-8842",
-    "name": "CI",
-    "detailsUrl": "https://ci.acme.dev/runs/8842",
-    "createdAt": "2026-08-01T09:30:00Z",
-    "updatedAt": "2026-08-02T14:45:00Z",
-    "externalId": "build-8842",
-    "actor": {
-      "user": {
-        "id": "user_01k2ja2000e0080000000000c3",
-        "email": "jane@acme.dev"
-      }
-    }
-  },
-  "checkRun": {
-    "id": "cr_01k2ja2000e0080000000000g7",
-    "repository": {
-      "id": "repo_01k2ja2000e0080000000000q4",
-      "name": "rocket",
-      "owner": {
-        "slug": "acme",
-        "id": "ns_01k2ja2000e0080000000000p3",
-        "type": "team"
-      }
-    },
-    "checkSuite": {
-      "id": "crg_01k2ja2000e0080000000000h8"
-    },
-    "sha": "9a41f0c3d2b8e7f6a5c4d3e2f1b0a9c8d7e6f5a4",
-    "key": "ci-8842-unit-tests",
-    "name": "unit-tests",
-    "status": "completed",
-    "conclusion": "success",
-    "detailsUrl": "https://ci.acme.dev/runs/8842",
-    "externalUpdatedAt": "2026-08-02T14:44:30Z",
-    "startedAt": "2026-08-02T14:40:00Z",
-    "completedAt": "2026-08-02T14:44:30Z",
-    "createdAt": "2026-08-01T09:30:00Z",
-    "updatedAt": "2026-08-02T14:45:00Z",
-    "externalId": "run-8842",
-    "actor": {
-      "user": {
-        "id": "user_01k2ja2000e0080000000000c3",
-        "email": "jane@acme.dev"
-      }
-    },
-    "output": {
-      "title": "Unit tests",
-      "summary": "128 tests passed.",
-      "text": "All suites green."
-    }
-  },
-  "actor": {
-    "user": {
-      "id": "user_01k2ja2000e0080000000000c3",
-      "email": "jane@acme.dev"
-    }
-  }
-}
-```
-
-### Check Run Rerequested
-
-repository.check\_run.rerequested
-
-repository.check\_run.rerequested webhook payload, delivered only to the app that owns the check run. Answer by posting a fresh run for the same head SHA and key — a new run (new external\_id) or an update of the re-requested run — the stamped run's status is never reset by Origin, and the answering post clears `rerequested_at`. Each accepted re-request emits one event, and a run may be re-requested again once answered, so dedupe redeliveries on the event id alone; `check_run.rerequested_at` carries the outstanding stamp. The payload carries no pull request context (check runs attach to `(repository, sha)`): a consumer that needs the pull request resolves it from `check_run.sha` via its own head mapping, or `ListPullRequests` filtered to the head branch it built.
-
-#### Payload Fields
-
-`repository` object
-
-The repository the check run belongs to.
-
-`repository.id` string
-
-`repository.name` string
-
-`repository.owner` object
-
-The owner of a repo.
-
-`repository.owner.slug` string
-
-Unique URL-friendly name of the owner.
-
-`repository.owner.id` string
-
-Unique ID of the owner namespace.
-
-`repository.owner.type` string
-
-`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
-
-`checkSuite` object
-
-The suite the check run belongs to.
-
-`checkSuite.id` string
-
-Server-assigned unique ID of the suite.
-
-`checkSuite.repository` object
-
-Repository the suite belongs to.
-
-`checkSuite.repository.id` string
-
-`checkSuite.repository.name` string
-
-`checkSuite.repository.owner` object
-
-The owner of a repo.
-
-`checkSuite.repository.owner.slug` string
-
-Unique URL-friendly name of the owner.
-
-`checkSuite.repository.owner.id` string
-
-Unique ID of the owner namespace.
-
-`checkSuite.repository.owner.type` string
-
-`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
-
-`checkSuite.sha` string
-
-Resolved head commit SHA the suite is attached to (lowercase hex).
-
-`checkSuite.key` string
-
-App-chosen idempotency key for the suite.
-
-`checkSuite.name` string
-
-Human-facing suite name.
-
-`checkSuite.detailsUrl` string
-
-Link to more detail about the suite as a whole, if set.
-
-`checkSuite.createdAt` string
-
-RFC 3339 timestamp.
-
-`checkSuite.updatedAt` string
-
-RFC 3339 timestamp.
-
-`checkSuite.externalId` string
-
-Provider-assigned immutable identity for this suite attempt.
-
-`checkSuite.actor` object
-
-Principal that produced the suite.
-
-`checkSuite.actor.user` object
-
-`checkSuite.actor.user.id` string
-
-`checkSuite.actor.user.email` string Required
-
-`checkSuite.actor.user.displayName` string
-
-Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
-
-`checkSuite.actor.user.handle` string
-
-The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
-
-`checkSuite.actor.app` object
-
-`checkSuite.actor.app.id` string
-
-`checkSuite.actor.app.displayName` string
-
-The app's registered display name, never empty when present. Omitted on payloads whose app could not be resolved and on the first-party Cursor facade actor.
-
-`checkSuite.actor.serviceAccount` object
-
-`checkSuite.actor.serviceAccount.id` string
-
-`checkRun` object
-
-The re-requested check run; `check_run.rerequested_at` records the stamp and `check_run.rerequested_by` the principal that asked.
-
-`checkRun.id` string
-
-Server-assigned unique ID of the check run.
-
-`checkRun.repository` object
-
-Repository the check run belongs to.
-
-`checkRun.repository.id` string
-
-`checkRun.repository.name` string
-
-`checkRun.repository.owner` object
-
-The owner of a repo.
-
-`checkRun.repository.owner.slug` string
-
-Unique URL-friendly name of the owner.
-
-`checkRun.repository.owner.id` string
-
-Unique ID of the owner namespace.
-
-`checkRun.repository.owner.type` string
-
-`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
-
-`checkRun.checkSuite` object
-
-Suite this check run belongs to.
-
-`checkRun.checkSuite.id` string
-
-`checkRun.sha` string
-
-Resolved head commit SHA the check run is attached to (lowercase hex).
-
-`checkRun.key` string
-
-App-chosen idempotency key for the check run.
-
-`checkRun.name` string
-
-Human-facing check-run name.
-
-`checkRun.status` string
-
-One of `queued`, `in_progress`, `completed`.
-
-`checkRun.conclusion` string
-
-Present iff `status == completed`. One of `success`, `failure`, `neutral`, `cancelled`, `skipped`, `timed_out`, `action_required`, `stale`.
-
-`checkRun.detailsUrl` string
-
-Link to more detail about this specific check run, if set.
-
-`checkRun.externalUpdatedAt` string
-
-The external system's last-update time used for ordering. RFC 3339 timestamp.
-
-`checkRun.startedAt` string
-
-When the check run started, if reported. RFC 3339 timestamp.
-
-`checkRun.completedAt` string
-
-When the check run completed, if reported. RFC 3339 timestamp.
-
-`checkRun.createdAt` string
-
-RFC 3339 timestamp.
-
-`checkRun.updatedAt` string
-
-RFC 3339 timestamp.
-
-`checkRun.externalId` string
-
-Provider-assigned immutable identity for this check attempt.
-
-`checkRun.actor` object
-
-Principal that produced the check run.
-
-`checkRun.actor.user` object
-
-`checkRun.actor.user.id` string
-
-`checkRun.actor.user.email` string Required
-
-`checkRun.actor.user.displayName` string
-
-Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
-
-`checkRun.actor.user.handle` string
-
-The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
-
-`checkRun.actor.app` object
-
-`checkRun.actor.app.id` string
-
-`checkRun.actor.app.displayName` string
-
-The app's registered display name, never empty when present. Omitted on payloads whose app could not be resolved and on the first-party Cursor facade actor.
-
-`checkRun.actor.serviceAccount` object
-
-`checkRun.actor.serviceAccount.id` string
-
-`checkRun.output` object
-
-Human-readable output for this check run, if set.
-
-`checkRun.output.title` string
-
-Short headline for the output. Maximum length: 255 characters.
-
-`checkRun.output.summary` string
-
-Summary of the output. May contain Markdown. Maximum UTF-8 size: 65535 bytes.
-
-`checkRun.output.text` string
-
-Detailed output. May contain Markdown. Maximum UTF-8 size: 65535 bytes.
-
-`checkRun.deadlineAt` string
-
-Optional deadline. Omitted or unset means no expiration. RFC 3339 timestamp.
-
-`checkRun.isRerequestable` boolean
-
-Whether the reporting app declared this run re-requestable (`CheckRunInput.is_rerequestable`).
-
-`checkRun.rerequestedAt` string
-
-Set while a re-request is outstanding; cleared when the provider posts again. Unset means no re-request is pending. While set, the run stays in the commit's CI state as pending (`status` and `conclusion` are the superseded result); the owning app answers by posting the run it committed to by declaring `is_rerequestable` — a new run for the same `key`, or an update of this run (which clears this field) — after which the run may be re-requested again. RFC 3339 timestamp.
-
-`checkRun.rerequestedBy` object
-
-Principal that re-requested the run. Present iff `rerequested_at` is set; cleared together with it when the owning app answers.
-
-`checkRun.rerequestedBy.user` object
-
-`checkRun.rerequestedBy.user.id` string
-
-`checkRun.rerequestedBy.user.email` string Required
-
-`checkRun.rerequestedBy.user.displayName` string
-
-Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
-
-`checkRun.rerequestedBy.user.handle` string
-
-The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
-
-`checkRun.rerequestedBy.app` object
-
-`checkRun.rerequestedBy.app.id` string
-
-`checkRun.rerequestedBy.app.displayName` string
-
-The app's registered display name, never empty when present. Omitted on payloads whose app could not be resolved and on the first-party Cursor facade actor.
-
-`checkRun.rerequestedBy.serviceAccount` object
-
-`checkRun.rerequestedBy.serviceAccount.id` string
-
-**Sample `event.payload`:**
-
-```json
-{
-  "repository": {
-    "id": "repo_01k2ja2000e0080000000000q4",
-    "name": "rocket",
-    "owner": {
-      "slug": "acme",
-      "id": "ns_01k2ja2000e0080000000000p3",
-      "type": "team"
-    }
-  },
-  "checkSuite": {
-    "id": "crg_01k2ja2000e0080000000000h8",
-    "repository": {
-      "id": "repo_01k2ja2000e0080000000000q4",
-      "name": "rocket",
-      "owner": {
-        "slug": "acme",
-        "id": "ns_01k2ja2000e0080000000000p3",
-        "type": "team"
-      }
-    },
-    "sha": "9a41f0c3d2b8e7f6a5c4d3e2f1b0a9c8d7e6f5a4",
-    "key": "ci-8842",
-    "name": "CI",
-    "detailsUrl": "https://ci.acme.dev/runs/8842",
-    "createdAt": "2026-08-01T09:30:00Z",
-    "updatedAt": "2026-08-02T15:10:00Z",
-    "externalId": "build-8842",
-    "actor": {
-      "user": {
-        "id": "user_01k2ja2000e0080000000000c3",
-        "email": "jane@acme.dev"
-      }
-    }
-  },
-  "checkRun": {
-    "id": "cr_01k2ja2000e0080000000000g7",
-    "repository": {
-      "id": "repo_01k2ja2000e0080000000000q4",
-      "name": "rocket",
-      "owner": {
-        "slug": "acme",
-        "id": "ns_01k2ja2000e0080000000000p3",
-        "type": "team"
-      }
-    },
-    "checkSuite": {
-      "id": "crg_01k2ja2000e0080000000000h8"
-    },
-    "sha": "9a41f0c3d2b8e7f6a5c4d3e2f1b0a9c8d7e6f5a4",
-    "key": "ci-8842-unit-tests",
-    "name": "unit-tests",
-    "status": "completed",
-    "conclusion": "failure",
-    "detailsUrl": "https://ci.acme.dev/runs/8842",
-    "externalUpdatedAt": "2026-08-02T14:44:30Z",
-    "startedAt": "2026-08-02T14:40:00Z",
-    "completedAt": "2026-08-02T14:44:30Z",
-    "createdAt": "2026-08-01T09:30:00Z",
-    "updatedAt": "2026-08-02T15:10:00Z",
-    "externalId": "run-8842",
-    "actor": {
-      "user": {
-        "id": "user_01k2ja2000e0080000000000c3",
-        "email": "jane@acme.dev"
-      }
-    },
-    "output": {
-      "title": "Unit tests",
-      "summary": "1 of 129 tests failed.",
-      "text": "FAIL telemetry.spec.ts > flushes queued events on shutdown"
-    },
-    "isRerequestable": true,
-    "rerequestedAt": "2026-08-02T15:10:00Z",
-    "rerequestedBy": {
-      "user": {
-        "id": "user_01k2ja2000e0080000000000c3",
-        "email": "jane@acme.dev"
-      }
-    }
-  }
-}
-```
-
-### Installation Created
-
-installation.created
-
-#### Payload Fields
-
-`installation` object
-
-The installation snapshot at the time of the event.
-
-`installation.id` string
-
-`installation.appId` string
-
-The installed app's identifier; the same value as `app.id` on the payload.
-
-`installation.target` object
-
-The owner of a repo.
-
-`installation.target.slug` string
-
-Unique URL-friendly name of the owner.
-
-`installation.target.id` string
-
-Unique ID of the owner namespace.
-
-`installation.target.type` string
-
-`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
-
-`installation.repoSelectionMode` string
-
-One of `all`, `selected`.
-
-`installation.repositories` array
-
-Empty when repository\_selection is "all". Capped at 5,000; see repositories\_count for the true total.
-
-`installation.repositories[].id` string
-
-`installation.repositories[].name` string
-
-`installation.repositories[].owner` object
-
-The owner of a repo.
-
-`installation.repositories[].owner.slug` string
-
-Unique URL-friendly name of the owner.
-
-`installation.repositories[].owner.id` string
-
-Unique ID of the owner namespace.
-
-`installation.repositories[].owner.type` string
-
-`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
-
-`installation.scopes` array
-
-`installation.repositoriesCount` integer
-
-True total; 0 when repository\_selection is "all".
-
-`installation.createdAt` string
-
-RFC 3339 timestamp.
-
-`installation.updatedAt` string
-
-RFC 3339 timestamp.
-
-`installation.deletedAt` string
-
-RFC 3339 timestamp.
-
-`installation.suspendedAt` string
-
-Set while the installation is suspended; unset when it is active. RFC 3339 timestamp.
-
-`installation.installedBy` object
-
-User who originally installed the app.
-
-`installation.installedBy.id` string
-
-`installation.installedBy.email` string Required
-
-`installation.installedBy.displayName` string
-
-Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
-
-`installation.installedBy.handle` string
-
-The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
-
-`app` object
-
-The app the installation belongs to.
-
-`app.id` string
-
-`app.displayName` string
-
-The app's registered display name, never empty when present. Omitted when enqueue-time hydration could not resolve the app.
-
-**Sample `event.payload`:**
-
-```json
-{
-  "installation": {
-    "id": "inst_01k2ja2000e0080000000000b2",
-    "appId": "app_01k2ja2000e0080000000000a1",
-    "target": {
-      "slug": "acme",
-      "id": "ns_01k2ja2000e0080000000000p3",
-      "type": "team"
-    },
-    "repoSelectionMode": "selected",
-    "repositories": [
-      {
-        "id": "repo_01k2ja2000e0080000000000q4",
-        "name": "rocket",
-        "owner": {
-          "slug": "acme",
-          "id": "ns_01k2ja2000e0080000000000p3",
-          "type": "team"
-        }
-      }
-    ],
-    "scopes": [
-      "repository:contents:read",
-      "repository:pull_requests:read"
-    ],
-    "repositoriesCount": 1,
-    "createdAt": "2026-08-01T09:30:00Z",
-    "updatedAt": "2026-08-01T09:30:00Z",
-    "installedBy": {
-      "id": "user_01k2ja2000e0080000000000c3",
-      "email": "jane@acme.dev"
-    }
-  },
-  "app": {
-    "id": "app_01k2ja2000e0080000000000a1",
-    "displayName": "CI Status Bot"
-  }
-}
-```
-
-### Installation Updated
-
-installation.updated
-
-#### Payload Fields
-
-`installation` object
-
-The installation snapshot at the time of the event.
-
-`installation.id` string
-
-`installation.appId` string
-
-The installed app's identifier; the same value as `app.id` on the payload.
-
-`installation.target` object
-
-The owner of a repo.
-
-`installation.target.slug` string
-
-Unique URL-friendly name of the owner.
-
-`installation.target.id` string
-
-Unique ID of the owner namespace.
-
-`installation.target.type` string
-
-`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
-
-`installation.repoSelectionMode` string
-
-One of `all`, `selected`.
-
-`installation.repositories` array
-
-Empty when repository\_selection is "all". Capped at 5,000; see repositories\_count for the true total.
-
-`installation.repositories[].id` string
-
-`installation.repositories[].name` string
-
-`installation.repositories[].owner` object
-
-The owner of a repo.
-
-`installation.repositories[].owner.slug` string
-
-Unique URL-friendly name of the owner.
-
-`installation.repositories[].owner.id` string
-
-Unique ID of the owner namespace.
-
-`installation.repositories[].owner.type` string
-
-`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
-
-`installation.scopes` array
-
-`installation.repositoriesCount` integer
-
-True total; 0 when repository\_selection is "all".
-
-`installation.createdAt` string
-
-RFC 3339 timestamp.
-
-`installation.updatedAt` string
-
-RFC 3339 timestamp.
-
-`installation.deletedAt` string
-
-RFC 3339 timestamp.
-
-`installation.suspendedAt` string
-
-Set while the installation is suspended; unset when it is active. RFC 3339 timestamp.
-
-`installation.installedBy` object
-
-User who originally installed the app.
-
-`installation.installedBy.id` string
-
-`installation.installedBy.email` string Required
-
-`installation.installedBy.displayName` string
-
-Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
-
-`installation.installedBy.handle` string
-
-The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
-
-`app` object
-
-The app the installation belongs to.
-
-`app.id` string
-
-`app.displayName` string
-
-The app's registered display name, never empty when present. Omitted when enqueue-time hydration could not resolve the app.
-
-**Sample `event.payload`:**
-
-```json
-{
-  "installation": {
-    "id": "inst_01k2ja2000e0080000000000b2",
-    "appId": "app_01k2ja2000e0080000000000a1",
-    "target": {
-      "slug": "acme",
-      "id": "ns_01k2ja2000e0080000000000p3",
-      "type": "team"
-    },
-    "repoSelectionMode": "selected",
-    "repositories": [
-      {
-        "id": "repo_01k2ja2000e0080000000000q4",
-        "name": "rocket",
-        "owner": {
-          "slug": "acme",
-          "id": "ns_01k2ja2000e0080000000000p3",
-          "type": "team"
-        }
-      }
-    ],
-    "scopes": [
-      "repository:contents:read",
-      "repository:pull_requests:read"
-    ],
-    "repositoriesCount": 1,
-    "createdAt": "2026-08-01T09:30:00Z",
-    "updatedAt": "2026-08-02T14:45:00Z",
-    "installedBy": {
-      "id": "user_01k2ja2000e0080000000000c3",
-      "email": "jane@acme.dev"
-    }
-  },
-  "app": {
-    "id": "app_01k2ja2000e0080000000000a1",
-    "displayName": "CI Status Bot"
-  }
-}
-```
-
-### Installation Suspended
-
-installation.suspended
-
-#### Payload Fields
-
-`installation` object
-
-The installation snapshot at the time of the event.
-
-`installation.id` string
-
-`installation.appId` string
-
-The installed app's identifier; the same value as `app.id` on the payload.
-
-`installation.target` object
-
-The owner of a repo.
-
-`installation.target.slug` string
-
-Unique URL-friendly name of the owner.
-
-`installation.target.id` string
-
-Unique ID of the owner namespace.
-
-`installation.target.type` string
-
-`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
-
-`installation.repoSelectionMode` string
-
-One of `all`, `selected`.
-
-`installation.repositories` array
-
-Empty when repository\_selection is "all". Capped at 5,000; see repositories\_count for the true total.
-
-`installation.repositories[].id` string
-
-`installation.repositories[].name` string
-
-`installation.repositories[].owner` object
-
-The owner of a repo.
-
-`installation.repositories[].owner.slug` string
-
-Unique URL-friendly name of the owner.
-
-`installation.repositories[].owner.id` string
-
-Unique ID of the owner namespace.
-
-`installation.repositories[].owner.type` string
-
-`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
-
-`installation.scopes` array
-
-`installation.repositoriesCount` integer
-
-True total; 0 when repository\_selection is "all".
-
-`installation.createdAt` string
-
-RFC 3339 timestamp.
-
-`installation.updatedAt` string
-
-RFC 3339 timestamp.
-
-`installation.deletedAt` string
-
-RFC 3339 timestamp.
-
-`installation.suspendedAt` string
-
-Set while the installation is suspended; unset when it is active. RFC 3339 timestamp.
-
-`installation.installedBy` object
-
-User who originally installed the app.
-
-`installation.installedBy.id` string
-
-`installation.installedBy.email` string Required
-
-`installation.installedBy.displayName` string
-
-Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
-
-`installation.installedBy.handle` string
-
-The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
-
-`app` object
-
-The app the installation belongs to.
-
-`app.id` string
-
-`app.displayName` string
-
-The app's registered display name, never empty when present. Omitted when enqueue-time hydration could not resolve the app.
-
-**Sample `event.payload`:**
-
-```json
-{
-  "installation": {
-    "id": "inst_01k2ja2000e0080000000000b2",
-    "appId": "app_01k2ja2000e0080000000000a1",
-    "target": {
-      "slug": "acme",
-      "id": "ns_01k2ja2000e0080000000000p3",
-      "type": "team"
-    },
-    "repoSelectionMode": "selected",
-    "repositories": [
-      {
-        "id": "repo_01k2ja2000e0080000000000q4",
-        "name": "rocket",
-        "owner": {
-          "slug": "acme",
-          "id": "ns_01k2ja2000e0080000000000p3",
-          "type": "team"
-        }
-      }
-    ],
-    "scopes": [
-      "repository:contents:read",
-      "repository:pull_requests:read"
-    ],
-    "repositoriesCount": 1,
-    "createdAt": "2026-08-01T09:30:00Z",
-    "installedBy": {
-      "id": "user_01k2ja2000e0080000000000c3",
-      "email": "jane@acme.dev"
-    },
-    "suspendedAt": "2026-08-03T08:15:00Z"
-  },
-  "app": {
-    "id": "app_01k2ja2000e0080000000000a1",
-    "displayName": "CI Status Bot"
-  }
-}
-```
-
-### Installation Unsuspended
-
-installation.unsuspended
-
-#### Payload Fields
-
-`installation` object
-
-The installation snapshot at the time of the event.
-
-`installation.id` string
-
-`installation.appId` string
-
-The installed app's identifier; the same value as `app.id` on the payload.
-
-`installation.target` object
-
-The owner of a repo.
-
-`installation.target.slug` string
-
-Unique URL-friendly name of the owner.
-
-`installation.target.id` string
-
-Unique ID of the owner namespace.
-
-`installation.target.type` string
-
-`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
-
-`installation.repoSelectionMode` string
-
-One of `all`, `selected`.
-
-`installation.repositories` array
-
-Empty when repository\_selection is "all". Capped at 5,000; see repositories\_count for the true total.
-
-`installation.repositories[].id` string
-
-`installation.repositories[].name` string
-
-`installation.repositories[].owner` object
-
-The owner of a repo.
-
-`installation.repositories[].owner.slug` string
-
-Unique URL-friendly name of the owner.
-
-`installation.repositories[].owner.id` string
-
-Unique ID of the owner namespace.
-
-`installation.repositories[].owner.type` string
-
-`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
-
-`installation.scopes` array
-
-`installation.repositoriesCount` integer
-
-True total; 0 when repository\_selection is "all".
-
-`installation.createdAt` string
-
-RFC 3339 timestamp.
-
-`installation.updatedAt` string
-
-RFC 3339 timestamp.
-
-`installation.deletedAt` string
-
-RFC 3339 timestamp.
-
-`installation.suspendedAt` string
-
-Set while the installation is suspended; unset when it is active. RFC 3339 timestamp.
-
-`installation.installedBy` object
-
-User who originally installed the app.
-
-`installation.installedBy.id` string
-
-`installation.installedBy.email` string Required
-
-`installation.installedBy.displayName` string
-
-Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
-
-`installation.installedBy.handle` string
-
-The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
-
-`app` object
-
-The app the installation belongs to.
-
-`app.id` string
-
-`app.displayName` string
-
-The app's registered display name, never empty when present. Omitted when enqueue-time hydration could not resolve the app.
-
-**Sample `event.payload`:**
-
-```json
-{
-  "installation": {
-    "id": "inst_01k2ja2000e0080000000000b2",
-    "appId": "app_01k2ja2000e0080000000000a1",
-    "target": {
-      "slug": "acme",
-      "id": "ns_01k2ja2000e0080000000000p3",
-      "type": "team"
-    },
-    "repoSelectionMode": "selected",
-    "repositories": [
-      {
-        "id": "repo_01k2ja2000e0080000000000q4",
-        "name": "rocket",
-        "owner": {
-          "slug": "acme",
-          "id": "ns_01k2ja2000e0080000000000p3",
-          "type": "team"
-        }
-      }
-    ],
-    "scopes": [
-      "repository:contents:read",
-      "repository:pull_requests:read"
-    ],
-    "repositoriesCount": 1,
-    "createdAt": "2026-08-01T09:30:00Z",
-    "installedBy": {
-      "id": "user_01k2ja2000e0080000000000c3",
-      "email": "jane@acme.dev"
-    }
-  },
-  "app": {
-    "id": "app_01k2ja2000e0080000000000a1",
-    "displayName": "CI Status Bot"
-  }
-}
-```
-
-### Installation Deleted
-
-installation.deleted
-
-#### Payload Fields
-
-`installation` object
-
-The installation snapshot at the time of the event.
-
-`installation.id` string
-
-`installation.appId` string
-
-The installed app's identifier; the same value as `app.id` on the payload.
-
-`installation.target` object
-
-The owner of a repo.
-
-`installation.target.slug` string
-
-Unique URL-friendly name of the owner.
-
-`installation.target.id` string
-
-Unique ID of the owner namespace.
-
-`installation.target.type` string
-
-`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
-
-`installation.repoSelectionMode` string
-
-One of `all`, `selected`.
-
-`installation.repositories` array
-
-Empty when repository\_selection is "all". Capped at 5,000; see repositories\_count for the true total.
-
-`installation.repositories[].id` string
-
-`installation.repositories[].name` string
-
-`installation.repositories[].owner` object
-
-The owner of a repo.
-
-`installation.repositories[].owner.slug` string
-
-Unique URL-friendly name of the owner.
-
-`installation.repositories[].owner.id` string
-
-Unique ID of the owner namespace.
-
-`installation.repositories[].owner.type` string
-
-`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
-
-`installation.scopes` array
-
-`installation.repositoriesCount` integer
-
-True total; 0 when repository\_selection is "all".
-
-`installation.createdAt` string
-
-RFC 3339 timestamp.
-
-`installation.updatedAt` string
-
-RFC 3339 timestamp.
-
-`installation.deletedAt` string
-
-RFC 3339 timestamp.
-
-`installation.suspendedAt` string
-
-Set while the installation is suspended; unset when it is active. RFC 3339 timestamp.
-
-`installation.installedBy` object
-
-User who originally installed the app.
-
-`installation.installedBy.id` string
-
-`installation.installedBy.email` string Required
-
-`installation.installedBy.displayName` string
-
-Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
-
-`installation.installedBy.handle` string
-
-The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
-
-`app` object
-
-The app the installation belongs to.
-
-`app.id` string
-
-`app.displayName` string
-
-The app's registered display name, never empty when present. Omitted when enqueue-time hydration could not resolve the app.
-
-**Sample `event.payload`:**
-
-```json
-{
-  "installation": {
-    "id": "inst_01k2ja2000e0080000000000b2",
-    "appId": "app_01k2ja2000e0080000000000a1",
-    "target": {
-      "slug": "acme",
-      "id": "ns_01k2ja2000e0080000000000p3",
-      "type": "team"
-    },
-    "repoSelectionMode": "selected",
-    "repositories": [
-      {
-        "id": "repo_01k2ja2000e0080000000000q4",
-        "name": "rocket",
-        "owner": {
-          "slug": "acme",
-          "id": "ns_01k2ja2000e0080000000000p3",
-          "type": "team"
-        }
-      }
-    ],
-    "scopes": [
-      "repository:contents:read",
-      "repository:pull_requests:read"
-    ],
-    "repositoriesCount": 1,
-    "createdAt": "2026-08-01T09:30:00Z",
-    "installedBy": {
-      "id": "user_01k2ja2000e0080000000000c3",
-      "email": "jane@acme.dev"
-    },
-    "deletedAt": "2026-08-03T08:15:00Z"
-  },
-  "app": {
-    "id": "app_01k2ja2000e0080000000000a1",
-    "displayName": "CI Status Bot"
-  }
-}
-```
-
-### Recovery
-
-Use an app JWT to query [`GET /app/webhook/deliveries`](https://cursor.com/docs/api/origin/llms-full.txt#list-webhook-deliveries). Filter by delivery status, event type, installation, time range, or page token. `delivered=false` returns every delivery the receiver has never acknowledged with `2xx`. Deliveries stay listable for seven days, so recover within that window.
-
-Use [`POST /app/webhook/deliveries:batchRedeliver`](https://cursor.com/docs/api/origin/llms-full.txt#batch-redeliver-webhook-deliveries) to queue redelivery for up to 100 delivery IDs. The operation deduplicates IDs and reports the result for each delivery.
-
-An owner can pause an app's webhook delivery from the app's settings. While delivery is paused, redelivery requests return `FailedPrecondition` (HTTP 400) and nothing is queued; resume delivery first. Clearing the app's `webhookUrl` through [Update App](https://cursor.com/docs/api/origin/llms-full.txt#update-app) has a stronger effect: it cancels the pending deliveries outright, and setting a URL again does not bring them back.
 
 ## Common conventions
 
@@ -3918,7 +1020,11 @@ Max repositories to return. Defaults to 30 when unset or 0. Values above 100 are
 
 `pageToken` string
 
-Opaque cursor from a previous response's `next_page_token`. Empty for the first page.
+Opaque cursor from a previous response's `next_page_token`. Empty for the first page. The same filter must be used when requesting subsequent pages.
+
+`filter` string
+
+Optional case-insensitive substring filter applied to repository names and owner namespaces. A single-slash `owner/repo` value matches each half against its corresponding field. Leading and trailing whitespace is ignored; an empty value applies no filter.
 
 #### Response Fields
 
@@ -4313,7 +1419,7 @@ curl --request POST \
 
 /v1/origin/apps/
 
-Requires scope `app:settings:read` (user access token).
+Requires scope `namespace:apps:read` (user access token).
 
 Returns a single app by its identifier. This is the management read for app publishers; [Get Authenticated App](https://cursor.com/docs/api/origin/llms-full.txt#get-authenticated-app) is the equivalent self-read for the app's own JWT credential.
 
@@ -4710,6 +1816,8 @@ Requires scope `namespace:apps:create` (user access token).
 
 Creates an app owned by a namespace. Apps are created private. Generate the Ed25519 key pair locally and send only the public key; Origin stores it to verify the app's JWTs. Invalid webhook URLs, event types, redirect URIs, or scopes return `InvalidArgument` (HTTP 400).
 
+The namespace owner must be eligible to write to Origin when the request is made, the same requirement [Create Repo](https://cursor.com/docs/api/origin/llms-full.txt#create-repo) carries. A user owner must be on a Pro, Pro Student, Pro+, Ultra, or Start plan. A team owner must have an active paid team plan, must not be on Privacy Mode (Legacy), and must not have Origin turned off by a team admin. An ineligible owner returns `FailedPrecondition` (HTTP 400). Origin reads the namespace owner's eligibility, not the calling user's.
+
 #### Path Parameters
 
 `namespaceSlug` string Required
@@ -4843,6 +1951,139 @@ curl --request POST \
   "defaultScopes": [
     "repository:contents:read",
     "repository:pull_requests:read"
+  ]
+}
+```
+
+### Add App Installation Repositories
+
+/v1/origin/namespaces//installations//repos
+
+Requires scope `namespace:installations:write` (user access token).
+
+Adds repositories to an installation's repository selection and returns the updated installation. The write is additive: the listed repositories are unioned with the current selection, a request whose repositories are all already granted succeeds without changing anything, and the installation's scopes never change.
+
+Every listed repository must belong to the target namespace, or the request returns `FailedPrecondition` (HTTP 400) and grants nothing. The same error covers an installation that already carries every repository in the namespace (`repoSelectionMode` is `all`), one that is suspended, and one that predates per-installation scopes. An installation that does not exist, or that belongs to another namespace, returns `404`; the message names the consent page to open when the app has never been installed in the namespace, because this endpoint cannot perform a first install.
+
+The caller must be a Cursor user credential with installation-management access to the namespace. App tokens, installation tokens, and service accounts cannot change an installation's repositories.
+
+#### Path Parameters
+
+`namespaceSlug` string Required
+
+Slug of the namespace the installation belongs to.
+
+`installationId` string Required
+
+Installation identifier.
+
+#### Request Body
+
+`repoIds` array Required
+
+Repository IDs to add to the installation's selection. At least one is required; values are deduplicated, and repositories that are already part of the selection are accepted without change. Every listed repository must belong to the namespace, or the request fails and nothing is granted.
+
+#### Response Fields
+
+`id` string
+
+Installation identifier that the app stores and uses to mint installation access tokens.
+
+`appId` string
+
+Identifier of the installed app.
+
+`target` object
+
+Owner selected by the customer for this installation.
+
+`target.slug` string
+
+URL-facing owner slug used with the owner ID to identify the repository owner.
+
+`target.id` string
+
+Origin owner identifier.
+
+`target.type` string
+
+Owner namespace type. Output-only. Allowed values: `team`, `user`. Omitted when unknown.
+
+`createdAt` string
+
+RFC 3339 installation creation timestamp.
+
+`updatedAt` string
+
+RFC 3339 timestamp for the latest installation update.
+
+`repoSelectionMode` string
+
+Repository grant mode; exactly all or selected.
+
+`scopes` array
+
+Scopes approved for the installation.
+
+`installedBy` object
+
+The user who originally installed the app, not the most recent re-consent actor. Output-only. Absent when that user record can no longer be read.
+
+`installedBy.id` string
+
+Public identifier for the user, prefixed `user_`.
+
+`installedBy.email` string
+
+Email address of the user.
+
+`installedBy.displayName` string
+
+Display name of the user: the account's first and last name joined with a space, the same name the product renders. Omitted when the account has no name.
+
+`installedBy.handle` string
+
+The user's claimed profile handle, without the `@` prefix. Present only while that profile is publicly visible; omitted otherwise.
+
+`suspendedAt` string
+
+RFC 3339 timestamp set while the installation is suspended. Omitted while the installation is active.
+
+`deletedAt` string
+
+RFC 3339 timestamp for the installation's deletion. Carried only on the `installation.deleted` webhook snapshot; a deleted installation no longer resolves through the API, so this endpoint never returns it.
+
+```bash
+curl --request POST \
+  --url 'https://api.cursor.com/v1/origin/namespaces/NAMESPACE_SLUG/installations/INSTALLATION_ID/repos' \
+  --header 'Authorization: Bearer YOUR_ORIGIN_TOKEN' \
+  --header 'Content-Type: application/json' \
+  --data '{
+  "repoIds": [
+    "repo_01k2ja2000e0080000000000q4",
+    "repo_01k2ja2000e0080000000000q5"
+  ]
+}'
+```
+
+**Response shape:**
+
+```json
+{
+  "id": "inst_01k2ja2000e0080000000000b2",
+  "appId": "app_01k2ja2000e0080000000000a1",
+  "target": {
+    "slug": "acme",
+    "id": "ns_01k2ja2000e0080000000000p3",
+    "type": "team"
+  },
+  "createdAt": "2026-08-01T09:30:00Z",
+  "updatedAt": "2026-08-02T14:45:00Z",
+  "repoSelectionMode": "selected",
+  "scopes": [
+    "repository:contents:read",
+    "repository:pull_requests:read",
+    "repository:metadata:read"
   ]
 }
 ```
@@ -5297,7 +2538,7 @@ curl --request PATCH \
 
 /v1/origin/repos/
 
-Requires scope `namespace:new_repository:write` (user access token).
+Requires scope `namespace:repositories:create` (user access token).
 
 Creates a repo belonging to an owner.
 
@@ -5515,7 +2756,7 @@ Requires scope `repository:contents:read` (installation access token or user acc
 
 Downloads a gzip-compressed tar of the repository tree at `ref`.
 
-Origin keys the archive on the repository and the commit `ref` resolves to. The first request for a given commit responds `200` with `Content-Type: application/gzip` and streams the archive as the response body. Later requests for the same commit respond `302` with an empty body and a signed download URL in `Location`, valid for 15 minutes; follow the redirect to fetch the bytes. Archive entries sit at the root of the tar, with no wrapping directory. An empty repository returns `ABORTED` (HTTP 409 Conflict), and a ref that does not resolve returns `404`.
+Origin keys the archive on the repository and the commit `ref` resolves to. The first request for a given commit responds `200` with `Content-Type: application/gzip` and streams the archive as the response body. Later requests for the same commit respond `302` with an empty body and a signed download URL in `Location`, valid for 15 minutes; follow the redirect to fetch the bytes. The archive contains a single top-level directory named `{ownerSlug}-{repoName}-{shortSha}/`, where `shortSha` is the first 7 hex characters of the resolved commit, matching the layout of GitHub's tarball endpoint. An empty repository returns `ABORTED` (HTTP 409 Conflict), and a ref that does not resolve returns `404`.
 
 Send the ref as a query parameter instead of a path segment to address a ref containing "/": `GET /v1/origin/repos/{ownerSlug}/{repoName}/tarball?ref=refs/heads/main`. Omit it to archive the repository's default branch.
 
@@ -5615,368 +2856,34 @@ curl --request POST \
 }
 ```
 
+The mirror-transition endpoints are documented on the [Origin Migration API](https://cursor.com/docs/api/origin/migrations). [Sync Mirror](https://cursor.com/docs/api/origin/llms-full.txt#sync-mirror) stays on this page.
+
 ### Detach Repo Mirror
 
-/v1/origin/repos///mirror
-
-Requires scope `repository:mirror:delete` (user access token).
-
-Permanently disconnects a mirrored repository from its upstream source. The repository keeps its current contents and becomes a native repository, syncing stops in both directions, and the mirror's deploy credential is deleted. The response body is empty.
-
-Detaching is not reversible through this API. A repository that never had a mirror returns `FailedPrecondition` (HTTP 400); detaching an already-detached repository succeeds without effect.
-
-#### Path Parameters
-
-`ownerSlug` string Required
-
-Owning entity's unique slug.
-
-`repoName` string Required
-
-Repo name, unique to the owner entity.
-
-#### Response Fields
-
-Successful requests return no response body.
-
-```bash
-curl --request DELETE \
-  --url 'https://api.cursor.com/v1/origin/repos/OWNER_SLUG/REPO_NAME/mirror' \
-  --header 'Authorization: Bearer YOUR_ORIGIN_TOKEN'
-```
-
-**Response:**
-
-```text
-204 No Content
-```
+See [Detach Repo Mirror](https://cursor.com/docs/api/origin/migrations#detach-repo-mirror).
 
 ### Get Mirror Transition Job
 
-/v1/origin/repos///mirror/transition-jobs/
-
-Requires scope `repository:metadata:read` (installation access token or user access token).
-
-Returns one mirror transition job by id. An unknown job id returns `404`.
-
-#### Path Parameters
-
-`ownerSlug` string Required
-
-Owning entity's unique slug.
-
-`repoName` string Required
-
-Repo name, unique to the owner entity.
-
-`jobId` string Required
-
-Identifier of the transition job, as returned in `job.id`.
-
-#### Response Fields
-
-`id` string
-
-Unique identifier of the job.
-
-`transition` string
-
-The mirror-direction change this job performs. Allowed values: `initial_to_inbound`, `inbound_to_outbound`, `outbound_to_inbound`.
-
-`status` string
-
-Lifecycle state. Allowed values: `queued`, `running`, `succeeded`, `failed_rolled_back`, `requires_attention`, `superseded`. `succeeded`, `failed_rolled_back`, and `superseded` are terminal. `requires_attention` needs operator intervention or a forced cutover.
-
-`phase` string
-
-Progress detail within `status`, for display and debugging. One of `queued`, `starting`, `draining-writes`, `initializing-mirror-fetch`, `finalizing-mirror-fetch`, `finalizing-mirror-push`, `snapshotting-refs`, `verifying-integrity`, `reopening-inbound-mirror`, `committing-target-status`, `rolling-back`, or `completed`. New phases can appear as the transition process evolves, so poll `status` for completion rather than matching on phases.
-
-`attemptCount` integer
-
-Number of times this job has been attempted.
-
-`drainUntil` string
-
-RFC 3339 timestamp of when the write-drain window of an in-progress transition ends. Absent outside the draining phase.
-
-`lastErrorCode` string
-
-Stable code identifying why the job last failed, such as `InboundMirrorDrainTimeout` or `MirrorIntegrityMismatch`. Absent while the job has not failed.
-
-`lastErrorMessage` string
-
-Human-readable detail for `lastErrorCode`. Absent while the job has not failed.
-
-`startedAt` string
-
-RFC 3339 timestamp of when the job started running. Absent while queued.
-
-`completedAt` string
-
-RFC 3339 timestamp of when the job reached a terminal status. Absent until then.
-
-`createdAt` string
-
-RFC 3339 job creation timestamp.
-
-`updatedAt` string
-
-RFC 3339 job update timestamp.
-
-```bash
-curl --request GET \
-  --url 'https://api.cursor.com/v1/origin/repos/OWNER_SLUG/REPO_NAME/mirror/transition-jobs/JOB_ID' \
-  --header 'Authorization: Bearer YOUR_ORIGIN_TOKEN'
-```
-
-**Response shape:**
-
-```json
-{
-  "id": "rmt_01k2ja2000e0080000000000m3",
-  "transition": "inbound_to_outbound",
-  "status": "succeeded",
-  "phase": "completed",
-  "attemptCount": 1,
-  "startedAt": "2026-08-02T15:00:00Z",
-  "completedAt": "2026-08-02T15:12:00Z",
-  "createdAt": "2026-08-02T14:59:30Z",
-  "updatedAt": "2026-08-02T15:12:00Z"
-}
-```
+See [Get Mirror Transition Job](https://cursor.com/docs/api/origin/migrations#get-mirror-transition-job).
 
 ### Get Active Mirror Transition Job
 
-/v1/origin/repos///mirror/transition-jobs:active
-
-Requires scope `repository:metadata:read` (installation access token or user access token).
-
-Returns the repository's currently active mirror transition job and its most recent terminal one. Both fields are optional, so a repository that has never transitioned returns an empty object. Poll this endpoint to follow a transition: once `activeJob` disappears, `lastJob` tells you how it ended.
-
-#### Path Parameters
-
-`ownerSlug` string Required
-
-Owning entity's unique slug.
-
-`repoName` string Required
-
-Repo name, unique to the owner entity.
-
-#### Response Fields
-
-`activeJob` object
-
-The currently active transition job, carrying the same fields as [Get Mirror Transition Job](https://cursor.com/docs/api/origin/llms-full.txt#get-mirror-transition-job). Absent when no transition is in progress.
-
-`lastJob` object
-
-The most recent job that reached a terminal status, carrying the same fields as [Get Mirror Transition Job](https://cursor.com/docs/api/origin/llms-full.txt#get-mirror-transition-job). Absent when the repository has never completed a transition.
-
-```bash
-curl --request GET \
-  --url 'https://api.cursor.com/v1/origin/repos/OWNER_SLUG/REPO_NAME/mirror/transition-jobs:active' \
-  --header 'Authorization: Bearer YOUR_ORIGIN_TOKEN'
-```
-
-**Response shape:**
-
-```json
-{
-  "activeJob": {
-    "id": "rmt_01k2ja2000e0080000000000m4",
-    "transition": "outbound_to_inbound",
-    "status": "running",
-    "phase": "draining-writes",
-    "attemptCount": 1,
-    "drainUntil": "2026-08-02T15:05:00Z",
-    "startedAt": "2026-08-02T15:00:00Z",
-    "createdAt": "2026-08-02T14:59:30Z",
-    "updatedAt": "2026-08-02T15:01:00Z"
-  },
-  "lastJob": {
-    "id": "rmt_01k2ja2000e0080000000000m3",
-    "transition": "inbound_to_outbound",
-    "status": "succeeded",
-    "phase": "completed",
-    "attemptCount": 1,
-    "startedAt": "2026-08-01T10:00:00Z",
-    "completedAt": "2026-08-01T10:12:00Z",
-    "createdAt": "2026-08-01T09:59:30Z",
-    "updatedAt": "2026-08-01T10:12:00Z"
-  }
-}
-```
+See [Get Active Mirror Transition Job](https://cursor.com/docs/api/origin/migrations#get-active-mirror-transition-job).
 
 ### Force Repo Mirror Cutover
 
-/v1/origin/repos///mirror:forceCutover
-
-Requires scope `repository:mirror:write` (user access token).
-
-Forces an `outbound_to_inbound` cutover without pushing this host's divergent state back to the upstream source. The source is adopted as the source of truth as it stands, and refs that exist only on this host are snapshotted and abandoned. Returns the job tracking the forced cutover.
-
-Accepted only for a repository in `outbound` status, or one stuck in an outbound-to-inbound transition whose active job reports `requires_attention`, in which case that job is superseded. Any other state, including a queued or running transition job, returns `FailedPrecondition` (HTTP 400). The caller must administer the repository on the mirror's upstream source; a caller without that access returns `403`.
-
-#### Path Parameters
-
-`ownerSlug` string Required
-
-Owning entity's unique slug.
-
-`repoName` string Required
-
-Repo name, unique to the owner entity.
-
-#### Request Body
-
-The request takes no fields. Send an empty JSON object.
-
-#### Response Fields
-
-`repository` object
-
-The repository, reflecting its transitioning mirror state. Carries the same fields as [Get Repo](https://cursor.com/docs/api/origin/llms-full.txt#get-repo).
-
-`job` object
-
-The job tracking the transition, carrying the same fields as [Get Mirror Transition Job](https://cursor.com/docs/api/origin/llms-full.txt#get-mirror-transition-job). Poll it until it reaches a terminal status.
-
-```bash
-curl --request POST \
-  --url 'https://api.cursor.com/v1/origin/repos/OWNER_SLUG/REPO_NAME/mirror:forceCutover' \
-  --header 'Authorization: Bearer YOUR_ORIGIN_TOKEN' \
-  --header 'Content-Type: application/json' \
-  --data '{}'
-```
-
-**Response shape:**
-
-```json
-{
-  "repository": {
-    "id": "repo_01k2ja2000e0080000000000q4",
-    "name": "rocket",
-    "fullName": "acme/rocket",
-    "owner": {
-      "slug": "acme",
-      "id": "ns_01k2ja2000e0080000000000p3",
-      "type": "team"
-    },
-    "defaultBranch": "main",
-    "createdAt": "2026-08-01T09:30:00Z",
-    "updatedAt": "2026-08-02T15:00:00Z",
-    "pushedAt": "2026-08-02T14:45:00Z",
-    "cloneUrl": "https://origin.cursor.com/git/acme/rocket.git",
-    "mirror": {
-      "source": "github",
-      "sourceId": "R_kgDOAbc123",
-      "status": "outbound"
-    }
-  },
-  "job": {
-    "id": "rmt_01k2ja2000e0080000000000m4",
-    "transition": "outbound_to_inbound",
-    "status": "running",
-    "phase": "snapshotting-refs",
-    "attemptCount": 1,
-    "startedAt": "2026-08-02T15:00:00Z",
-    "createdAt": "2026-08-02T14:59:30Z",
-    "updatedAt": "2026-08-02T15:01:00Z"
-  }
-}
-```
+See [Force Repo Mirror Cutover](https://cursor.com/docs/api/origin/migrations#force-repo-mirror-cutover).
 
 ### Transition Repo Mirror
 
-/v1/origin/repos///mirror:transition
-
-Requires scope `repository:mirror:write` (user access token).
-
-Starts a mirror-state transition on a mirrored repository and returns the job tracking it. The repository enters a transitioning mirror status while the job runs, so poll [Get Active Mirror Transition Job](https://cursor.com/docs/api/origin/llms-full.txt#get-active-mirror-transition-job) or [Get Mirror Transition Job](https://cursor.com/docs/api/origin/llms-full.txt#get-mirror-transition-job) until the job reaches a terminal status.
-
-A repository that is not in the transition's expected start state, or that already has an active transition job, returns `FailedPrecondition` (HTTP 400). The caller must administer the repository on the mirror's upstream source; a caller without that access returns `403`.
-
-#### Path Parameters
-
-`ownerSlug` string Required
-
-Owning entity's unique slug.
-
-`repoName` string Required
-
-Repo name, unique to the owner entity.
-
-#### Request Body
-
-`transition` string Required
-
-The mirror-state change to start. Allowed values: `initial_to_inbound`, `inbound_to_outbound`, `outbound_to_inbound`.
-
-#### Response Fields
-
-`repository` object
-
-The repository, reflecting its transitioning mirror state. Carries the same fields as [Get Repo](https://cursor.com/docs/api/origin/llms-full.txt#get-repo).
-
-`job` object
-
-The job tracking the transition, carrying the same fields as [Get Mirror Transition Job](https://cursor.com/docs/api/origin/llms-full.txt#get-mirror-transition-job). Poll it until it reaches a terminal status.
-
-```bash
-curl --request POST \
-  --url 'https://api.cursor.com/v1/origin/repos/OWNER_SLUG/REPO_NAME/mirror:transition' \
-  --header 'Authorization: Bearer YOUR_ORIGIN_TOKEN' \
-  --header 'Content-Type: application/json' \
-  --data '{
-  "transition": "inbound_to_outbound"
-}'
-```
-
-**Response shape:**
-
-```json
-{
-  "repository": {
-    "id": "repo_01k2ja2000e0080000000000q4",
-    "name": "rocket",
-    "fullName": "acme/rocket",
-    "owner": {
-      "slug": "acme",
-      "id": "ns_01k2ja2000e0080000000000p3",
-      "type": "team"
-    },
-    "defaultBranch": "main",
-    "createdAt": "2026-08-01T09:30:00Z",
-    "updatedAt": "2026-08-02T15:00:00Z",
-    "pushedAt": "2026-08-02T14:45:00Z",
-    "cloneUrl": "https://origin.cursor.com/git/acme/rocket.git",
-    "mirror": {
-      "source": "github",
-      "sourceId": "R_kgDOAbc123",
-      "status": "inbound"
-    }
-  },
-  "job": {
-    "id": "rmt_01k2ja2000e0080000000000m3",
-    "transition": "inbound_to_outbound",
-    "status": "running",
-    "phase": "draining-writes",
-    "attemptCount": 1,
-    "drainUntil": "2026-08-02T15:05:00Z",
-    "startedAt": "2026-08-02T15:00:00Z",
-    "createdAt": "2026-08-02T14:59:30Z",
-    "updatedAt": "2026-08-02T15:01:00Z"
-  }
-}
-```
+See [Transition Repo Mirror](https://cursor.com/docs/api/origin/migrations#transition-repo-mirror).
 
 ## Checks
 
 - The first run upsert creates its suite automatically.
 - Required checks match the installing app plus the suite `key`, and optionally a run `key`. `name` is display-only and is not used for matching.
 - Keep `key` values stable across attempts and readable for users, since required-check configuration is keyed on them.
-- Reuse `externalId` to update an attempt; use a new `externalId` for a retry.
+- Reuse `externalId` to update an attempt, which discards that attempt's previous result; use a new `externalId` for a retry so the earlier attempt stays as history.
 - Use `checkRun.output` for human-readable results:
   - `title`: short result headline, up to 255 characters.
   - `summary`: primary Markdown summary, up to 65,535 UTF-8 bytes.
@@ -6047,7 +2954,7 @@ Human-facing check-run name.
 
 `checkRun.status` string Required
 
-Allowed values: `CHECK_RUN_LIFECYCLE_STATUS_UNSPECIFIED`, `queued`, `in_progress`, `completed`.
+Settable values: `CHECK_RUN_LIFECYCLE_STATUS_UNSPECIFIED`, `queued`, `in_progress`, `completed`. The schema also lists `rerequested`, which only Origin sets on re-request; a request carrying it returns `InvalidArgument` (HTTP 400).
 
 `checkRun.conclusion` string
 
@@ -6265,11 +3172,11 @@ Display-only run name; it is not used for required-check matching.
 
 `checkRun.status` string
 
-Lifecycle status; queued, in\_progress, or completed.
+Lifecycle status; queued, in\_progress, completed, or rerequested. A rerequested run is a completed run whose re-run was asked for and the owning app has not answered yet: treat it as pending and render it like queued.
 
 `checkRun.conclusion` string
 
-Required for a completed run; success, failure, neutral, cancelled, skipped, timed\_out, action\_required, or stale.
+Present for a completed or rerequested run; success, failure, neutral, cancelled, skipped, timed\_out, action\_required, or stale. On a rerequested run it is the superseded attempt's verdict, so read it only when `status` is `completed`.
 
 `checkRun.detailsUrl` string
 
@@ -6301,7 +3208,7 @@ Provider identity for one attempt. Reuse it to update that attempt and use a new
 
 `checkRun.actor` object
 
-Public actor that produced the run.
+Public actor that produced the run. Always the owning check suite's `actor`.
 
 `checkRun.actor.user` object
 
@@ -6369,7 +3276,7 @@ Whether the reporting app declared this run re-requestable.
 
 `checkRun.rerequestedAt` string
 
-RFC 3339 timestamp of the outstanding re-request. Absent when no re-request is pending, and cleared when the app that owns the run posts again. While it is set the run stays in the commit's latest check state and reads as pending, even though `status` and `conclusion` still carry the superseded result, so a required check blocks merging until the app answers.
+RFC 3339 timestamp of the outstanding re-request. Absent when no re-request is pending, and cleared when the app that owns the run posts again. While it is set, `status` is `rerequested` and the run stays in the commit's latest check state and reads as pending, with `conclusion` and the timings still carrying the superseded result, so a required check blocks merging until the app answers.
 
 `checkRun.rerequestedBy` object
 
@@ -6537,7 +3444,7 @@ Human-facing check-run name.
 
 `checkRuns[0].status` string Required
 
-Allowed values: `CHECK_RUN_LIFECYCLE_STATUS_UNSPECIFIED`, `queued`, `in_progress`, `completed`.
+Settable values: `CHECK_RUN_LIFECYCLE_STATUS_UNSPECIFIED`, `queued`, `in_progress`, `completed`. The schema also lists `rerequested`, which only Origin sets on re-request; a request carrying it returns `InvalidArgument` (HTTP 400).
 
 `checkRuns[0].conclusion` string
 
@@ -6755,11 +3662,11 @@ Display-only run name; it is not used for required-check matching.
 
 `checkRuns[].status` string
 
-Lifecycle status; queued, in\_progress, or completed.
+Lifecycle status; queued, in\_progress, completed, or rerequested. A rerequested run is a completed run whose re-run was asked for and the owning app has not answered yet: treat it as pending and render it like queued.
 
 `checkRuns[].conclusion` string
 
-Required for a completed run; success, failure, neutral, cancelled, skipped, timed\_out, action\_required, or stale.
+Present for a completed or rerequested run; success, failure, neutral, cancelled, skipped, timed\_out, action\_required, or stale. On a rerequested run it is the superseded attempt's verdict, so read it only when `status` is `completed`.
 
 `checkRuns[].detailsUrl` string
 
@@ -6791,7 +3698,7 @@ Provider identity for one attempt. Reuse it to update that attempt and use a new
 
 `checkRuns[].actor` object
 
-Public actor that produced the run.
+Public actor that produced the run. Always the owning check suite's `actor`.
 
 `checkRuns[].actor.user` object
 
@@ -6859,7 +3766,7 @@ Whether the reporting app declared this run re-requestable.
 
 `checkRuns[].rerequestedAt` string
 
-RFC 3339 timestamp of the outstanding re-request. Absent when no re-request is pending, and cleared when the app that owns the run posts again. While it is set the run stays in the commit's latest check state and reads as pending, even though `status` and `conclusion` still carry the superseded result, so a required check blocks merging until the app answers.
+RFC 3339 timestamp of the outstanding re-request. Absent when no re-request is pending, and cleared when the app that owns the run posts again. While it is set, `status` is `rerequested` and the run stays in the commit's latest check state and reads as pending, with `conclusion` and the timings still carrying the superseded result, so a required check blocks merging until the app answers.
 
 `checkRuns[].rerequestedBy` object
 
@@ -7049,11 +3956,11 @@ Display-only run name; it is not used for required-check matching.
 
 `status` string
 
-Lifecycle status; queued, in\_progress, or completed.
+Lifecycle status; queued, in\_progress, completed, or rerequested. A rerequested run is a completed run whose re-run was asked for and the owning app has not answered yet: treat it as pending and render it like queued.
 
 `conclusion` string
 
-Required for a completed run; success, failure, neutral, cancelled, skipped, timed\_out, action\_required, or stale.
+Present for a completed or rerequested run; success, failure, neutral, cancelled, skipped, timed\_out, action\_required, or stale. On a rerequested run it is the superseded attempt's verdict, so read it only when `status` is `completed`.
 
 `detailsUrl` string
 
@@ -7085,7 +3992,7 @@ Provider identity for one attempt. Reuse it to update that attempt and use a new
 
 `actor` object
 
-Public actor that produced the run.
+Public actor that produced the run. Always the owning check suite's `actor`.
 
 `actor.user` object
 
@@ -7153,7 +4060,7 @@ Whether the reporting app declared this run re-requestable.
 
 `rerequestedAt` string
 
-RFC 3339 timestamp of the outstanding re-request. Absent when no re-request is pending, and cleared when the app that owns the run posts again. While it is set the run stays in the commit's latest check state and reads as pending, even though `status` and `conclusion` still carry the superseded result, so a required check blocks merging until the app answers.
+RFC 3339 timestamp of the outstanding re-request. Absent when no re-request is pending, and cleared when the app that owns the run posts again. While it is set, `status` is `rerequested` and the run stays in the commit's latest check state and reads as pending, with `conclusion` and the timings still carrying the superseded result, so a required check blocks merging until the app answers.
 
 `rerequestedBy` object
 
@@ -7531,7 +4438,7 @@ curl --request POST \
 
 Requires scope `repository:contents:write` (installation access token or user access token).
 
-Asks the app that reported a check run to run it again. Origin records the request on the run as `rerequestedAt` and notifies the owning app with [`repository.check_run.rerequested`](https://cursor.com/docs/api/origin/llms-full.txt#events). The app answers by posting a fresh run for the same head SHA and `key`, either a new run or an update of this one, which clears `rerequestedAt`. The call never changes the run's own `status` or `conclusion`.
+Asks the app that reported a check run to run it again. Origin records the request on the run as `rerequestedAt` and notifies the owning app with [`repository.check_run.rerequested`](https://cursor.com/docs/api/origin/llms-full.txt#events). The app answers by posting a fresh run for the same head SHA and `key`, either a new run or an update of this one, which clears `rerequestedAt` and stores the posted status. While the request is outstanding the run's `status` is `rerequested`; its `conclusion` and timings keep describing the superseded attempt. The call returns the run with `rerequestedAt` set and `status` `rerequested`.
 
 The run must be `completed`, must carry `isRerequestable`, must be the current attempt for its `key`, and must sit on the current head of an open pull request. Anything else returns `FailedPrecondition` (HTTP 400).
 
@@ -7611,11 +4518,11 @@ Display-only run name; it is not used for required-check matching.
 
 `status` string
 
-Lifecycle status; queued, in\_progress, or completed.
+Lifecycle status; queued, in\_progress, completed, or rerequested. A rerequested run is a completed run whose re-run was asked for and the owning app has not answered yet: treat it as pending and render it like queued.
 
 `conclusion` string
 
-Required for a completed run; success, failure, neutral, cancelled, skipped, timed\_out, action\_required, or stale.
+Present for a completed or rerequested run; success, failure, neutral, cancelled, skipped, timed\_out, action\_required, or stale. On a rerequested run it is the superseded attempt's verdict, so read it only when `status` is `completed`.
 
 `detailsUrl` string
 
@@ -7647,7 +4554,7 @@ Provider identity for one attempt. Reuse it to update that attempt and use a new
 
 `actor` object
 
-Public actor that produced the run.
+Public actor that produced the run. Always the owning check suite's `actor`.
 
 `actor.user` object
 
@@ -7715,7 +4622,7 @@ Whether the reporting app declared this run re-requestable.
 
 `rerequestedAt` string
 
-RFC 3339 timestamp of the outstanding re-request. Absent when no re-request is pending, and cleared when the app that owns the run posts again. While it is set the run stays in the commit's latest check state and reads as pending, even though `status` and `conclusion` still carry the superseded result, so a required check blocks merging until the app answers.
+RFC 3339 timestamp of the outstanding re-request. Absent when no re-request is pending, and cleared when the app that owns the run posts again. While it is set, `status` is `rerequested` and the run stays in the commit's latest check state and reads as pending, with `conclusion` and the timings still carrying the superseded result, so a required check blocks merging until the app answers.
 
 `rerequestedBy` object
 
@@ -7749,7 +4656,7 @@ curl --request POST \
   "sha": "9a41f0c3d2b8e7f6a5c4d3e2f1b0a9c8d7e6f5a4",
   "key": "ci-8842-unit-tests",
   "name": "unit-tests",
-  "status": "completed",
+  "status": "rerequested",
   "conclusion": "failure",
   "detailsUrl": "https://ci.acme.dev/runs/8842",
   "externalUpdatedAt": "2026-08-02T14:44:30Z",
@@ -7949,7 +4856,7 @@ curl --request GET \
 
 Requires scope `repository:checks:read` (installation access token or user access token).
 
-Lists a suite's current check runs. When a run key was reported more than once in the suite, only the latest attempt for that key is returned; superseded attempts are omitted. A run that has been re-requested stays in the listing and reads as pending, with `rerequestedAt` set and its superseded `status` and `conclusion` unchanged, until the app that owns it answers. Read a superseded attempt by its own id with [Get Check Run](https://cursor.com/docs/api/origin/llms-full.txt#get-check-run). Paginated.
+Lists a suite's current check runs. When a run key was reported more than once in the suite, only the latest attempt for that key is returned; superseded attempts are omitted. A run that has been re-requested stays in the listing and reads as pending, with `status` `rerequested` and `rerequestedAt` set, and its superseded `conclusion` and timings unchanged, until the app that owns it answers. Read a superseded attempt by its own id with [Get Check Run](https://cursor.com/docs/api/origin/llms-full.txt#get-check-run). Paginated.
 
 #### Path Parameters
 
@@ -8035,11 +4942,11 @@ Display-only run name; it is not used for required-check matching.
 
 `checkRuns[].status` string
 
-Lifecycle status; queued, in\_progress, or completed.
+Lifecycle status; queued, in\_progress, completed, or rerequested. A rerequested run is a completed run whose re-run was asked for and the owning app has not answered yet: treat it as pending and render it like queued.
 
 `checkRuns[].conclusion` string
 
-Required for a completed run; success, failure, neutral, cancelled, skipped, timed\_out, action\_required, or stale.
+Present for a completed or rerequested run; success, failure, neutral, cancelled, skipped, timed\_out, action\_required, or stale. On a rerequested run it is the superseded attempt's verdict, so read it only when `status` is `completed`.
 
 `checkRuns[].detailsUrl` string
 
@@ -8071,7 +4978,7 @@ Provider identity for one attempt. Reuse it to update that attempt and use a new
 
 `checkRuns[].actor` object
 
-Public actor that produced the run.
+Public actor that produced the run. Always the owning check suite's `actor`.
 
 `checkRuns[].actor.user` object
 
@@ -8139,7 +5046,7 @@ Whether the reporting app declared this run re-requestable.
 
 `checkRuns[].rerequestedAt` string
 
-RFC 3339 timestamp of the outstanding re-request. Absent when no re-request is pending, and cleared when the app that owns the run posts again. While it is set the run stays in the commit's latest check state and reads as pending, even though `status` and `conclusion` still carry the superseded result, so a required check blocks merging until the app answers.
+RFC 3339 timestamp of the outstanding re-request. Absent when no re-request is pending, and cleared when the app that owns the run posts again. While it is set, `status` is `rerequested` and the run stays in the commit's latest check state and reads as pending, with `conclusion` and the timings still carrying the superseded result, so a required check blocks merging until the app answers.
 
 `checkRuns[].rerequestedBy` object
 
@@ -8208,7 +5115,7 @@ curl --request GET \
 
 Requires scope `repository:checks:read` (installation access token or user access token).
 
-Lists a commit's current check runs across all suites: only runs belonging to each suite's latest attempt, and within each suite only the latest attempt per run key. Superseded attempts are omitted. A run that has been re-requested stays in the listing and reads as pending, with `rerequestedAt` set and its superseded `status` and `conclusion` unchanged, until the app that owns it answers. Read a superseded attempt by its own id with [Get Check Run](https://cursor.com/docs/api/origin/llms-full.txt#get-check-run). Optionally filtered by check name and status. Paginated.
+Lists a commit's current check runs across all suites: only runs belonging to each suite's latest attempt, and within each suite only the latest attempt per run key. Superseded attempts are omitted. A run that has been re-requested stays in the listing and reads as pending, with `status` `rerequested` and `rerequestedAt` set, and its superseded `conclusion` and timings unchanged, until the app that owns it answers. Read a superseded attempt by its own id with [Get Check Run](https://cursor.com/docs/api/origin/llms-full.txt#get-check-run). Optionally filtered by check name and status. Paginated.
 
 Filters apply to the collapsed set, so a run matches on its latest attempt's status and a filter never resurfaces a superseded attempt. Page tokens embed the filters they were minted under, so a token replayed under different filters is rejected; restart pagination when a filter changes.
 
@@ -8242,7 +5149,7 @@ Optional exact check-run name filter, matched against `checkRuns[].name`. Omit t
 
 `status` string
 
-Optional status filter. Allowed values: `queued`, `in_progress`, `completed`. Any other value returns `InvalidArgument` (HTTP 400). Omit to list runs in any status.
+Optional status filter. Allowed values: `queued`, `in_progress`, `completed`, `rerequested`. Any other value returns `InvalidArgument` (HTTP 400). Omit to list runs in any status.
 
 #### Response Fields
 
@@ -8304,11 +5211,11 @@ Display-only run name; it is not used for required-check matching.
 
 `checkRuns[].status` string
 
-Lifecycle status; queued, in\_progress, or completed.
+Lifecycle status; queued, in\_progress, completed, or rerequested. A rerequested run is a completed run whose re-run was asked for and the owning app has not answered yet: treat it as pending and render it like queued.
 
 `checkRuns[].conclusion` string
 
-Required for a completed run; success, failure, neutral, cancelled, skipped, timed\_out, action\_required, or stale.
+Present for a completed or rerequested run; success, failure, neutral, cancelled, skipped, timed\_out, action\_required, or stale. On a rerequested run it is the superseded attempt's verdict, so read it only when `status` is `completed`.
 
 `checkRuns[].detailsUrl` string
 
@@ -8340,7 +5247,7 @@ Provider identity for one attempt. Reuse it to update that attempt and use a new
 
 `checkRuns[].actor` object
 
-Public actor that produced the run.
+Public actor that produced the run. Always the owning check suite's `actor`.
 
 `checkRuns[].actor.user` object
 
@@ -8408,7 +5315,7 @@ Whether the reporting app declared this run re-requestable.
 
 `checkRuns[].rerequestedAt` string
 
-RFC 3339 timestamp of the outstanding re-request. Absent when no re-request is pending, and cleared when the app that owns the run posts again. While it is set the run stays in the commit's latest check state and reads as pending, even though `status` and `conclusion` still carry the superseded result, so a required check blocks merging until the app answers.
+RFC 3339 timestamp of the outstanding re-request. Absent when no re-request is pending, and cleared when the app that owns the run posts again. While it is set, `status` is `rerequested` and the run stays in the commit's latest check state and reads as pending, with `conclusion` and the timings still carrying the superseded result, so a required check blocks merging until the app answers.
 
 `checkRuns[].rerequestedBy` object
 
@@ -9678,6 +6585,155 @@ curl --request POST \
 }
 ```
 
+### Grep Contents
+
+/v1/origin/repos//:grep
+
+Requires scope `repository:contents:read` (installation access token or user access token).
+
+Searches the text of the files in the repository at a ref and returns the lines that match, plus any requested surrounding context lines. The search is line-oriented: a pattern never matches across a line break, and each returned entry is one line. The repository is scanned for every request, so there is no pagination and no cursor; the response is complete only when `limitHit` is false. An empty repository with no refs returns no matches and `limitHit` false. Uses POST because the search parameters travel in the request body.
+
+#### Path Parameters
+
+`ownerSlug` string Required
+
+Owning entity's unique slug.
+
+`repoName` string Required
+
+Repo name, unique to the owner entity.
+
+#### Request Body
+
+`ref` string
+
+Commit, branch, tag, or symbolic ref (for example `HEAD`) to search. Empty means the repository's default branch.
+
+`query` string Required
+
+The pattern to search for. By default it is a regular expression supporting character classes, quantifiers, alternation, groups, and anchors; set `literal` to search for the text exactly instead. Whitespace is significant and is searched for as given. When `literal` is false, case-insensitive matching is a leading `(?i)` in the pattern (for example `(?i)launch`) and whole-word matching is `\b` around it (for example `\blaunch\b`). An empty pattern returns `InvalidArgument` (HTTP 400). Maximum UTF-8 size: 4096 bytes.
+
+`literal` boolean
+
+Search for `query` as exact text rather than as a regular expression.
+
+`caseInsensitive` boolean
+
+Match upper and lower case as equivalent. Applied only when `literal` is true. Ignored for a regular-expression search; write a leading `(?i)` in `query` instead.
+
+`wholeWord` boolean
+
+Match only complete words. Applied only when `literal` is true. Ignored for a regular-expression search; write `\b` around the pattern instead.
+
+`contextBefore` integer
+
+How many lines immediately before each matching line to return as context. Values above 10 are reduced to 10.
+
+`contextAfter` integer
+
+How many lines immediately after each matching line to return as context. Values above 10 are reduced to 10.
+
+`filterPath` string
+
+Restrict the search to this file or directory, relative to the repository root. Empty searches the whole repository. Maximum UTF-8 size: 4096 bytes.
+
+`includes` array
+
+Glob patterns naming the paths to search. Matching is case-insensitive; a pattern containing no `/` matches at any depth, `*` matches within one path segment, and `**` matches across segments. When any include is present, a path matching none of them is not searched. At most 20 entries. Maximum UTF-8 size per pattern: 4096 bytes.
+
+`excludes` array
+
+Glob patterns naming paths to leave out, in the same syntax as `includes`. An exclude beats an include, and excluding a directory leaves out everything beneath it. At most 20 entries. Maximum UTF-8 size per pattern: 4096 bytes.
+
+`maxResults` integer
+
+The most matching occurrences to return. Zero requests the default of 1000, and values above 1000 are reduced to 1000. Context lines do not count toward the cap.
+
+#### Response Fields
+
+`matches` array
+
+The matching lines and their context lines. The order in which files and lines appear is unspecified and can differ between identical requests.
+
+`matches[].path` string
+
+Path to the file, relative to the repository root.
+
+`matches[].lineNumber` integer
+
+One-based line number of this line within the file.
+
+`matches[].line` string
+
+The line's text, without its trailing line terminator.
+
+`matches[].kind` string
+
+Whether this line carries matches or was returned as context. Allowed values: `match`, `context`.
+
+`matches[].submatches` array
+
+Where the matches sit inside `line`. Always empty on a context line. When `limitHit` is true, the last matching line can carry only some of its matches. Ranges that fall entirely past `line` are omitted, and ranges that would extend past `line` are reduced to the bytes that remain.
+
+`matches[].submatches[].start` integer
+
+Byte offset of the first byte of the match within the line.
+
+`matches[].submatches[].end` integer
+
+Byte offset one past the last byte of the match within the line.
+
+`limitHit` boolean
+
+Whether the search reached `maxResults`. Narrow `query`, `filterPath`, or the glob lists to search a smaller set of files.
+
+```bash
+curl --request POST \
+  --url 'https://api.cursor.com/v1/origin/repos/OWNER_SLUG/REPO_NAME:grep' \
+  --header 'Authorization: Bearer YOUR_ORIGIN_TOKEN' \
+  --header 'Content-Type: application/json' \
+  --data '{
+  "ref": "main",
+  "query": "emitLaunchTelemetry\\(",
+  "contextBefore": 1,
+  "contextAfter": 1,
+  "includes": [
+    "*.ts"
+  ],
+  "excludes": [
+    "**/node_modules/**"
+  ],
+  "maxResults": 50
+}'
+```
+
+```json
+{
+  "matches": [
+    {
+      "path": "src/telemetry.ts",
+      "lineNumber": 11,
+      "line": "export function emitLaunchTelemetry(stage: string): void {",
+      "kind": "match",
+      "submatches": [
+        {
+          "start": 16,
+          "end": 37
+        }
+      ]
+    },
+    {
+      "path": "src/telemetry.ts",
+      "lineNumber": 12,
+      "line": "  console.log(\"launch\", stage);",
+      "kind": "context",
+      "submatches": []
+    }
+  ],
+  "limitHit": false
+}
+```
+
 ## Git data
 
 Low-level git objects. Reads need `repository:contents:read`, and an empty repository returns `409`. [Create Commit From Files](https://cursor.com/docs/api/origin/llms-full.txt#create-commit-from-files) and [Create Git Ref](https://cursor.com/docs/api/origin/llms-full.txt#create-git-ref) write git objects and need `repository:contents:write`.
@@ -10122,6 +7178,46 @@ curl --request POST \
 }
 ```
 
+### Delete Git Ref
+
+/v1/origin/repos///git/refs/
+
+Requires scope `repository:contents:write` (installation access token or user access token).
+
+Deletes a branch reference. The response body is empty.
+
+Only branch references can be deleted. A branch that does not exist returns `404`. The repository default branch, a branch a deletion rule protects, and a repository whose contents are mirrored from another host return `FailedPrecondition` (HTTP 400). Pull requests whose head is the deleted branch are closed, as after a pushed deletion. A branch whose tip moves while the delete is in flight fails with `FailedPrecondition` (HTTP 400) or `Aborted` (HTTP 409 Conflict); retry to delete the new tip.
+
+#### Path Parameters
+
+`ownerSlug` string Required
+
+Owning entity's unique slug.
+
+`repoName` string Required
+
+Repo name, unique to the owner entity.
+
+`ref` string Required
+
+Branch reference to delete, as `refs/heads/<branch>` or `heads/<branch>`.
+
+#### Response Fields
+
+Successful requests return no response body.
+
+```bash
+curl --request DELETE \
+  --url 'https://api.cursor.com/v1/origin/repos/OWNER_SLUG/REPO_NAME/git/refs/REF' \
+  --header 'Authorization: Bearer YOUR_ORIGIN_TOKEN'
+```
+
+**Response:**
+
+```text
+204 No Content
+```
+
 ### List Matching Git Refs
 
 /v1/origin/repos///git/matching-refs
@@ -10487,7 +7583,7 @@ The user's claimed profile handle, without the `@` prefix. Present only while th
 
 `grants[].group` object
 
-A Cursor organization group principal.
+A Cursor group principal: a group the owner's team owns, or a group in that team's organization.
 
 `grants[].group.id` string
 
@@ -10569,7 +7665,7 @@ curl --request GET \
 
 Requires scope `repository:settings:write` (installation access token or user access token).
 
-Sets the permission a user, group, or owning-team group holds directly on a repository, replacing any permission granted directly to that principal before. Repeating a grant the principal already holds succeeds without change. A user must be an active member of the repository owner's team or organization, and a group an active group of that organization; otherwise the request returns `FailedPrecondition` (HTTP 400).
+Sets the permission a user, group, or owning-team group holds directly on a repository, replacing any permission granted directly to that principal before. Repeating a grant the principal already holds succeeds without change. A user must be an active member of the repository owner's team or organization. A group must be one the owner's team owns, or an active group in that team's organization; otherwise the request returns `FailedPrecondition` (HTTP 400).
 
 #### Path Parameters
 
@@ -10605,7 +7701,7 @@ The user's claimed profile handle, without the `@` prefix. Present only while th
 
 `group` object
 
-A Cursor organization group principal.
+A Cursor group principal: a group the owner's team owns, or a group in that team's organization.
 
 `group.id` string
 
@@ -10647,7 +7743,7 @@ The user's claimed profile handle, without the `@` prefix. Present only while th
 
 `group` object
 
-A Cursor organization group principal.
+A Cursor group principal: a group the owner's team owns, or a group in that team's organization.
 
 `group.id` string
 
@@ -10732,7 +7828,7 @@ The user's claimed profile handle, without the `@` prefix. Present only while th
 
 `group` object
 
-A Cursor organization group principal.
+A Cursor group principal: a group the owner's team owns, or a group in that team's organization.
 
 `group.id` string
 
@@ -10820,7 +7916,7 @@ The user's claimed profile handle, without the `@` prefix. Present only while th
 
 `grants[].group` object
 
-A Cursor organization group principal.
+A Cursor group principal: a group the owner's team owns, or a group in that team's organization.
 
 `grants[].group.id` string
 
@@ -10889,7 +7985,7 @@ curl --request GET \
 
 Requires scope `namespace:settings:write` (installation access token or user access token).
 
-Sets the permission a user, group, or owning-team group holds directly on an owner, replacing any permission granted directly to that principal before. Repeating a grant the principal already holds succeeds without change. The request returns `FailedPrecondition` (HTTP 400) when the user is not an active member of the owning team or its organization, when the group is not an active group of that organization, or when the write would leave the owner without an admin.
+Sets the permission a user, group, or owning-team group holds directly on an owner, replacing any permission granted directly to that principal before. Repeating a grant the principal already holds succeeds without change. The request returns `FailedPrecondition` (HTTP 400) when the user is not an active member of the owning team or its organization, when the group is neither owned by that team nor an active group in its organization, or when the write would leave the owner without an admin.
 
 #### Path Parameters
 
@@ -10921,7 +8017,7 @@ The user's claimed profile handle, without the `@` prefix. Present only while th
 
 `group` object
 
-A Cursor organization group principal.
+A Cursor group principal: a group the owner's team owns, or a group in that team's organization.
 
 `group.id` string
 
@@ -10963,7 +8059,7 @@ The user's claimed profile handle, without the `@` prefix. Present only while th
 
 `group` object
 
-A Cursor organization group principal.
+A Cursor group principal: a group the owner's team owns, or a group in that team's organization.
 
 `group.id` string
 
@@ -11044,7 +8140,7 @@ The user's claimed profile handle, without the `@` prefix. Present only while th
 
 `group` object
 
-A Cursor organization group principal.
+A Cursor group principal: a group the owner's team owns, or a group in that team's organization.
 
 `group.id` string
 
@@ -11428,7 +8524,7 @@ Requires scope `repository:pull_requests:read` (installation access token or use
 
 Lists pull requests in a repo, optionally filtered by head branch, base branch, author, creation-time range, and state. Each pull request includes its assigned labels.
 
-Results come back in creation order, newest first. Set `direction=asc` for oldest first. Page tokens embed the filters they were minted under, so a token replayed with different filters is rejected; restart pagination when a filter changes.
+Results are sorted by creation order or by last update, selected with `sortBy`, most recent first. Set `direction=asc` for the other order. Page tokens embed the sort and the filters they were minted under, so a token replayed under a different sort or filter set is rejected; restart pagination when either changes.
 
 #### Path Parameters
 
@@ -11448,7 +8544,7 @@ Optional exact branch (head-ref) filter. Omit to list across every branch.
 
 `state` string
 
-"open" | "closed" | "all". Defaults to "open".
+Lifecycle filter. Allowed values: `open` (the default), `closed`, `merged`, `all`. `closed` covers every pull request that is no longer open, merged ones included; `merged` narrows to the merged subset. Any other value returns `InvalidArgument` (HTTP 400).
 
 `pageSize` integer
 
@@ -11468,7 +8564,7 @@ Optional exact base-branch filter. Accepts a short name (`main`) or a fully qual
 
 `direction` string
 
-Sort direction by creation order. `"desc"` returns newest first and is the default; `"asc"` returns oldest first. Any other value returns `InvalidArgument` (HTTP 400).
+Sort direction along `sortBy`. `"desc"` is the default: with `sortBy=created` it returns the most recently created first, and with `sortBy=updated` the most recently updated first. `"asc"` reverses each. Any other value returns `InvalidArgument` (HTTP 400).
 
 `since` string
 
@@ -11477,6 +8573,10 @@ Optional inclusive lower bound on creation time, as an RFC 3339 timestamp such a
 `until` string
 
 Optional inclusive upper bound on creation time, in the same RFC 3339 format as `since`. Returns only pull requests created at or before that instant. A malformed timestamp returns `InvalidArgument` (HTTP 400).
+
+`sortBy` string
+
+Sort key. Allowed values: `created` (creation order, the default) or `updated` (time of last update). Any other value returns `InvalidArgument` (HTTP 400).
 
 #### Response Fields
 
@@ -14286,6 +11386,301 @@ curl --request POST \
 }
 ```
 
+### Get Pull Request Mergeability
+
+/v1/origin/repos///pulls//mergeability
+
+Requires scope `repository:pull_requests:read` (installation access token or user access token).
+
+Returns whether the pull request can be merged and, when it cannot, the conditions that block it. The verdict is evaluated against the same conditions [Merge Pull Request](https://cursor.com/docs/api/origin/llms-full.txt#merge-pull-request) enforces, so a `mergeable` verdict means a merge of the same head is expected to succeed. For a stacked pull request the verdict covers every pull request from the stack root through this one, and each blocker names the pull request it belongs to.
+
+A stack of more than 200 pull requests in total, merged ancestors included, returns `FailedPrecondition` (HTTP 400).
+
+This operation is in preview and its shape can change while the contract settles. Decode responses with unknown fields and unknown enum values tolerated, treat an unrecognized `verdict` as `blocked`, and render `blockers[].message` when you do not recognize `blockers[].kind`.
+
+#### Path Parameters
+
+`ownerSlug` string Required
+
+Owning entity's unique slug.
+
+`repoName` string Required
+
+Repo name, unique to the owner entity.
+
+`pullNumber` string Required
+
+Repository-local pull request number.
+
+#### Query Parameters
+
+`expectedHeadSha` string
+
+Optional guard: the full commit SHA, 40 or 64 hexadecimal characters, expected to be the pull request's current head. When it is set and the evaluated head differs, the request returns `Aborted` (HTTP 409 Conflict) instead of a result. A value that is not a full commit SHA returns `InvalidArgument` (HTTP 400).
+
+#### Response Fields
+
+`pullRequest` object
+
+The pull request the verdict is about.
+
+`pullRequest.id` string
+
+Stable pull request identifier.
+
+`pullRequest.number` string
+
+Repository-local pull request number encoded as a JSON string.
+
+`pullRequest.repository` object
+
+Repository container reference for the pull request.
+
+`pullRequest.repository.id` string
+
+Repository identifier in a container reference.
+
+`pullRequest.repository.name` string
+
+Repository name in a container reference.
+
+`pullRequest.repository.owner` object
+
+Owner reference for the repository.
+
+`pullRequest.repository.owner.slug` string
+
+URL-facing owner slug used with the owner ID to identify the repository owner.
+
+`pullRequest.repository.owner.id` string
+
+Origin owner identifier.
+
+`pullRequest.repository.owner.type` string
+
+Owner namespace type. Output-only. Allowed values: `team`, `user`. Omitted when unknown.
+
+`verdict` string
+
+Overall answer for every pull request in `evaluatedPullRequests`. Allowed values: `mergeable`, meaning merging `pullRequest` lands all of them, and `blocked`. Treat an unrecognized value as `blocked`.
+
+`blockers` array
+
+Everything preventing the merge, ordered by the pull request they belong to, stack root first, and then by kind. Empty when `verdict` is `mergeable`. At most one blocker per pull request per kind, except `required_checks`, which carries one per state, and `rule_failure` and `ruleset_error`, which carry one per distinct message.
+
+`blockers[].pullRequest` object
+
+Pull request in `evaluatedPullRequests` this blocker belongs to. Carries the same fields as `pullRequest`.
+
+`blockers[].kind` string
+
+Category of the blocker. Allowed values: `draft`, `closed`, `merged`, `merge_conflict`, `required_checks`, `required_approvals`, `codeowner_approval`, `behind_base`, `needs_restack`, `restack_pending`, `conflict_check_pending`, `invalid_stack`, `ruleset_error`, `rule_failure`. Kinds are added over time; a blocker whose kind postdates your client decodes with `kind` unset and is still blocking.
+
+`blockers[].message` string
+
+Human-readable statement of the blocker and how to clear it. Never empty, so it is what to render when `kind` is unrecognized.
+
+`blockers[].requiredChecks` object
+
+Set on a `required_checks` blocker.
+
+`blockers[].requiredChecks.state` string
+
+State shared by every check in this blocker. Allowed values: `missing`, `pending`, `failing`, `action_required`.
+
+`blockers[].requiredChecks.checks` array
+
+Required checks in that state.
+
+`blockers[].requiredChecks.checks[].name` string
+
+Name the repository rule requires.
+
+`blockers[].requiredChecks.checks[].owner` object
+
+Principal expected to report the check, carrying the same actor variants as a check run's `actor`.
+
+`blockers[].requiredChecks.checks[].checkRun` object
+
+The check run on `headSha` matching this requirement, by reference. Omitted when none has been reported, which is state `missing`. It carries only `id`, `name`, and `checkSuite.id`, because this operation is readable with [`repository:pull_requests:read`](https://cursor.com/docs/api/origin/llms-full.txt#scopes) alone while a run's status, conclusion, output, and details URL need [`repository:checks:read`](https://cursor.com/docs/api/origin/llms-full.txt#scopes); read those with [Get Check Run](https://cursor.com/docs/api/origin/llms-full.txt#get-check-run).
+
+`blockers[].requiredApprovals` object
+
+Set on a `required_approvals` blocker.
+
+`blockers[].requiredApprovals.requiredCount` integer
+
+Approving reviews the repository rules require.
+
+`blockers[].requiredApprovals.approvedCount` integer
+
+Approving reviews currently counted toward the requirement.
+
+`blockers[].codeownerApproval` object
+
+Set on a `codeowner_approval` blocker.
+
+`blockers[].codeownerApproval.requirements` array
+
+Owner sets that still need an approval.
+
+`blockers[].codeownerApproval.requirements[].owners` array
+
+Code owners, any one of whom can satisfy the requirement.
+
+`blockers[].codeownerApproval.requirements[].paths` array
+
+Changed paths this owner set covers.
+
+`blockers[].mergeConflict` object
+
+Set on a `merge_conflict` blocker.
+
+`blockers[].mergeConflict.conflictedPaths` array
+
+Paths that conflict with the base branch. At most 100 are listed.
+
+`blockers[].mergeConflict.truncated` boolean
+
+Whether more paths conflict than are listed.
+
+`blockers[].mergeConflict.inheritedFromDownstack` boolean
+
+Whether the conflict comes from a pull request below this one in the stack, so this pull request is waiting on that one rather than conflicted itself.
+
+`blockers[].stackShape` object
+
+Set on an `invalid_stack` blocker.
+
+`blockers[].stackShape.reason` string
+
+Why the stack cannot be evaluated. Allowed values: `partially_merged`, `cycle`, `missing_parent`, `cross_repository_parent`, `base_branch_missing`.
+
+`blockers[].stackShape.relatedPullRequests` array
+
+Other pull requests involved, when the reason names any. Each carries the same fields as `pullRequest`.
+
+`evaluatedPullRequests` array
+
+Pull requests a merge of `pullRequest` would land, stack root first and ending with `pullRequest`. Ancestors that already merged are history and are not listed. Exactly one element for an unstacked pull request. Each carries the same fields as `pullRequest`.
+
+`headSha` string
+
+Head commit of `pullRequest` that was evaluated.
+
+`baseRef` string
+
+Branch the evaluated pull requests merge into: the stack root's base, not this pull request's own base when it is stacked.
+
+`baseSha` string
+
+Tip commit of `baseRef` at `evaluatedAt`. A later push to `baseRef` can change the verdict. Empty when the base branch could not be determined, for example on an invalid stack.
+
+`evaluatedAt` string
+
+RFC 3339 timestamp for when this result was evaluated. Changes after this time are not reflected; re-query to pick them up.
+
+```bash
+curl --request GET \
+  --url 'https://api.cursor.com/v1/origin/repos/OWNER_SLUG/REPO_NAME/pulls/PULL_NUMBER/mergeability' \
+  --header 'Authorization: Bearer YOUR_ORIGIN_TOKEN'
+```
+
+```json
+{
+  "pullRequest": {
+    "id": "pr_01k2ja2000e0080000000000d4",
+    "number": "17",
+    "repository": {
+      "id": "repo_01k2ja2000e0080000000000a1",
+      "name": "launch-control",
+      "owner": {
+        "slug": "acme",
+        "id": "ns_01k2ja2000e0080000000000b2"
+      }
+    }
+  },
+  "verdict": "blocked",
+  "blockers": [
+    {
+      "pullRequest": {
+        "id": "pr_01k2ja2000e0080000000000d4",
+        "number": "17",
+        "repository": {
+          "id": "repo_01k2ja2000e0080000000000a1",
+          "name": "launch-control",
+          "owner": {
+            "slug": "acme",
+            "id": "ns_01k2ja2000e0080000000000b2"
+          }
+        }
+      },
+      "kind": "required_approvals",
+      "message": "Approving review count is 0; 1 required. Request reviews and wait for the required approvals.",
+      "requiredApprovals": {
+        "requiredCount": 1,
+        "approvedCount": 0
+      }
+    },
+    {
+      "pullRequest": {
+        "id": "pr_01k2ja2000e0080000000000d4",
+        "number": "17",
+        "repository": {
+          "id": "repo_01k2ja2000e0080000000000a1",
+          "name": "launch-control",
+          "owner": {
+            "slug": "acme",
+            "id": "ns_01k2ja2000e0080000000000b2"
+          }
+        }
+      },
+      "kind": "required_checks",
+      "message": "Required status checks are pending. Wait for checks to finish or fix the failing checks.",
+      "requiredChecks": {
+        "state": "pending",
+        "checks": [
+          {
+            "name": "ci / build",
+            "owner": {
+              "app": {
+                "id": "app_01k2ja2000e0080000000000e5",
+                "displayName": "Launch CI"
+              }
+            },
+            "checkRun": {
+              "id": "cr_01k2ja2000e0080000000000f6",
+              "name": "ci / build",
+              "checkSuite": {
+                "id": "crg_01k2ja2000e0080000000000f7"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "evaluatedPullRequests": [
+    {
+      "id": "pr_01k2ja2000e0080000000000d4",
+      "number": "17",
+      "repository": {
+        "id": "repo_01k2ja2000e0080000000000a1",
+        "name": "launch-control",
+        "owner": {
+          "slug": "acme",
+          "id": "ns_01k2ja2000e0080000000000b2"
+        }
+      }
+    }
+  ],
+  "headSha": "9a41f0c3d2b8e7f6a5c4d3e2f1b0a9c8d7e6f5a4",
+  "baseRef": "main",
+  "baseSha": "3b1f9c2d8a7e6f5049c8b7a6d5e4f3a2b1c0d9e8",
+  "evaluatedAt": "2026-08-02T14:45:00Z"
+}
+```
+
 ### List Pull Request Requested Reviewers
 
 /v1/origin/repos///pulls//requested\_reviewers
@@ -16280,6 +13675,2999 @@ curl --request DELETE \
 
 ```text
 204 No Content
+```
+
+## Webhooks
+
+Origin sends signed HTTP `POST` requests to the app's registered HTTPS webhook URL with `content-type: application/json`.
+
+Delivery is at least once. Deduplicate retries with `webhook-id`, durably accept the request, return `2xx` quickly, and process the event asynchronously.
+
+Origin waits 10 seconds for the receiver's response headers. That deadline covers DNS resolution, the connection, the TLS handshake, and the time to the response, and it applies to every attempt. An attempt that passes it is recorded as a transport error and retried.
+
+Origin retries transport errors, `429`, and `5xx` responses up to seven total attempts. Retry delays are 5 seconds, 30 seconds, 1 minute, 2 minutes, 4 minutes, and 8 minutes. Other `4xx` responses are terminal.
+
+To confirm a receiver works before any real event reaches it, call [Ping Webhook](https://cursor.com/docs/api/origin/llms-full.txt#ping-webhook).
+
+Origin delivers events for mirrored repositories, and installation event payloads list them in the selected repository arrays. Delivery does not widen what the installation can call: see [Mirrored repositories](https://cursor.com/docs/api/origin/llms-full.txt#mirrored-repositories).
+
+### Headers
+
+| Header                    | Description                                               |
+| ------------------------- | --------------------------------------------------------- |
+| `content-type`            | `application/json`                                        |
+| `user-agent`              | `Cursor-Origin-Webhook/1.0`                               |
+| `webhook-id`              | Stable delivery ID and idempotency key.                   |
+| `webhook-timestamp`       | Unix timestamp included in the signature.                 |
+| `webhook-signature`       | `v1ed,BASE64_SIGNATURE`                                   |
+| `webhook-event-type`      | Event slug for routing.                                   |
+| `webhook-event-id`        | Underlying Origin event ID mirrored from the signed body. |
+| `webhook-app-id`          | Target app ID.                                            |
+| `webhook-installation-id` | Target installation ID.                                   |
+
+Routing headers are conveniences. After signature verification, the body is authoritative.
+
+### Signature verification
+
+Use the raw request body before parsing it. Construct:
+
+```text
+lowercaseHex(SHA-256("<webhook-id>.<webhook-timestamp>.<raw-request-body>"))
+```
+
+Verify the Ed25519 signature over the UTF-8 bytes of that hexadecimal digest against an active Origin JWKS key. Reject timestamps more than five minutes from the current time.
+
+```typescript
+import {
+  createHash,
+  createPublicKey,
+  verify,
+  type JsonWebKeyInput,
+} from "node:crypto";
+
+export async function verifyOriginWebhook(
+  body: Buffer,
+  headers: Record<string, string | undefined>
+): Promise<boolean> {
+  const id = headers["webhook-id"];
+  const timestamp = Number(headers["webhook-timestamp"]);
+  const signature = headers["webhook-signature"]
+    ?.split(/\s+/)
+    .find((value) => value.startsWith("v1ed,"));
+
+  const now = Math.floor(Date.now() / 1000);
+  if (
+    !id ||
+    !signature ||
+    !Number.isInteger(timestamp) ||
+    Math.abs(now - timestamp) > 300
+  ) {
+    return false;
+  }
+
+  const digest = createHash("sha256")
+    .update(`${id}.${timestamp}.`)
+    .update(body)
+    .digest("hex");
+
+  // Cache this response in production.
+  const { keys } = await fetch(
+    "https://api.cursor.com/v1/origin/keys"
+  ).then((response) => response.json()) as {
+    keys: JsonWebKeyInput[];
+  };
+
+  return keys.some((jwk) => {
+    try {
+      return verify(
+        null,
+        Buffer.from(digest),
+        createPublicKey({ key: jwk, format: "jwk" }),
+        Buffer.from(signature.slice(5), "base64")
+      );
+    } catch {
+      return false;
+    }
+  });
+}
+```
+
+### Delivery envelope
+
+Each request wraps the event payload with delivery, app, and installation identity:
+
+```json
+{
+  "deliveryId": "whd_01...",
+  "appId": "app_01...",
+  "installationId": "i_01...",
+  "event": {
+    "id": "evt_01...",
+    "type": "pull_request.comment.created",
+    "eventTime": "2026-07-01T10:03:00Z",
+    "payload": {}
+  }
+}
+```
+
+`deliveryId` is stable across retries. `event.id` identifies the underlying domain event.
+
+### Recovery
+
+Use an app JWT to query [`GET /app/webhook/deliveries`](https://cursor.com/docs/api/origin/llms-full.txt#list-webhook-deliveries). Filter by delivery status, event type, installation, time range, or page token. `delivered=false` returns every delivery the receiver has never acknowledged with `2xx`. Deliveries stay listable for seven days, so recover within that window.
+
+Use [`POST /app/webhook/deliveries:batchRedeliver`](https://cursor.com/docs/api/origin/llms-full.txt#batch-redeliver-webhook-deliveries) to queue redelivery for up to 100 delivery IDs. The operation deduplicates IDs and reports the result for each delivery.
+
+An owner can pause an app's webhook delivery from the app's settings, and Origin can pause it on its own: an app whose receiver fails at least 20 delivery rounds across a 72-hour window, with no successful delivery in that window and failures reaching more than one installer namespace, is disabled automatically. Either way delivery stops until an owner resumes it, redelivery requests return `FailedPrecondition` (HTTP 400) and nothing is queued, and the API exposes no field for the paused state, so treat a redelivery `FailedPrecondition` as the signal. Clearing the app's `webhookUrl` through [Update App](https://cursor.com/docs/api/origin/llms-full.txt#update-app) has a stronger effect: it cancels the pending deliveries outright, and setting a URL again does not bring them back.
+
+## Webhooks reference
+
+Every event Origin delivers, and each event's payload documented field by field. For subscription mechanics, headers, signature verification, the delivery envelope, and retries, see [Webhooks](https://cursor.com/docs/api/origin/llms-full.txt#webhooks).
+
+### Events
+
+| Event                               | Delivered when                                                                                                                               |
+| ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| `repository.created`                | A repository is created.                                                                                                                     |
+| `repository.deleted`                | A repository is deleted.                                                                                                                     |
+| `repository.pushed`                 | One or more refs change in a push.                                                                                                           |
+| `repository.metadata.updated`       | A repository's default branch changes.                                                                                                       |
+| `pull_request.created`              | A pull request opens.                                                                                                                        |
+| `pull_request.head_ref.pushed`      | The pull request head advances.                                                                                                              |
+| `pull_request.base_ref.updated`     | The base ref or resolved base commit changes.                                                                                                |
+| `pull_request.metadata.updated`     | The title or description changes.                                                                                                            |
+| `pull_request.closed`               | A pull request closes without merging, including when Origin closes it because a push left its head with no history in common with its base. |
+| `pull_request.merged`               | A pull request merges.                                                                                                                       |
+| `pull_request.reopened`             | A closed pull request reopens.                                                                                                               |
+| `pull_request.published`            | A draft becomes open.                                                                                                                        |
+| `pull_request.label.added`          | A label is assigned to a pull request.                                                                                                       |
+| `pull_request.label.removed`        | A label is unassigned from a pull request, including when the label definition is deleted.                                                   |
+| `pull_request.comment.created`      | A visible pull request comment is created.                                                                                                   |
+| `pull_request.review.submitted`     | A review is submitted with any verdict.                                                                                                      |
+| `pull_request.review.dismissed`     | A submitted review is dismissed, explicitly or by being superseded.                                                                          |
+| `pull_request.reviewer.added`       | A reviewer is requested.                                                                                                                     |
+| `pull_request.reviewer.removed`     | A reviewer is removed.                                                                                                                       |
+| `pull_request.reviewer.rerequested` | A reviewer is requested again.                                                                                                               |
+| `repository.check_run.created`      | A check run is created.                                                                                                                      |
+| `repository.check_run.completed`    | A check run completes.                                                                                                                       |
+| `repository.check_run.rerequested`  | A completed check run is re-requested. Delivered only to the app that owns the run.                                                          |
+| `installation.created`              | The app is installed.                                                                                                                        |
+| `installation.updated`              | Scopes, repository selection, or the owner namespace slug change.                                                                            |
+| `installation.suspended`            | The installation is suspended.                                                                                                               |
+| `installation.unsuspended`          | A suspended installation is restored.                                                                                                        |
+| `installation.deleted`              | The app is uninstalled.                                                                                                                      |
+
+Every event's payload shape is documented field by field in [Event payloads](https://cursor.com/docs/api/origin/llms-full.txt#event-payloads).
+
+The five `installation.*` events go to the app itself rather than to a repository subscription. Origin always sends them, so they do not appear in the app's selectable event list. Every other event in this table is a repository-scoped subscription.
+
+Origin does not deliver `repository.pushed` for a repository it mirrors from GitHub. GitHub owns those pushes and sends its own push webhooks, so an Origin delivery would duplicate them. Pushes to native Origin repositories and to outbound mirrors are delivered as usual, and the mirror state does not affect any other event. `repository.deleted` is delivered for a repository mirrored from GitHub: stopping the sync deletes the Cursor-side repository only, and GitHub sends nothing for it.
+
+### Event payloads
+
+Each event's [envelope](https://cursor.com/docs/api/origin/llms-full.txt#delivery-envelope) carries the event's payload object in `payload`. Events that share a shape share a payload family; each family below documents the events that deliver it, its fields, and a sample payload, generated from the [OpenAPI specification](https://cursor.com/docs/api/origin/openapi.yaml).
+
+### Repository Created
+
+repository.created
+
+#### Payload Fields
+
+`repository` object
+
+The created repository.
+
+`repository.id` string
+
+`repository.name` string Required
+
+The repo name, unique to its owner. Required on create.
+
+`repository.fullName` string
+
+"\{owner.login}/\{name}". Derived.
+
+`repository.owner` object
+
+The owning entity. Determined by the parent on create; not settable directly.
+
+`repository.owner.slug` string
+
+Unique URL-friendly name of the owner.
+
+`repository.owner.id` string
+
+Unique ID of the owner namespace.
+
+`repository.owner.type` string
+
+`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
+
+`repository.defaultBranch` string
+
+Default branch name. Always set on responses. On create, omitting this field or leaving it empty defaults to "main".
+
+`repository.createdAt` string
+
+RFC 3339 timestamp.
+
+`repository.updatedAt` string
+
+RFC 3339 timestamp.
+
+`repository.pushedAt` string
+
+Most-recent-push timestamp on any branch; absent until the first push. RFC 3339 timestamp.
+
+`repository.cloneUrl` string
+
+HTTPS URL for cloning the repository.
+
+`repository.mirror` object
+
+Mirror metadata. Absent for a native repository and before a mirror's initial sync is ready.
+
+`repository.mirror.source` string
+
+One of `github`.
+
+`repository.mirror.sourceId` string
+
+Opaque repository identifier assigned by the source.
+
+`repository.mirror.status` string
+
+Effective direction during a transition, until cutover completes. One of `inbound`, `outbound`.
+
+`repository.visibility` string
+
+Repository visibility, `internal` or `private`. One of `internal`, `private`.
+
+`repository.allowMergeCommit` boolean
+
+Whether pull requests may land as merge commits.
+
+`repository.allowSquashMerge` boolean
+
+Whether pull requests may land as squash merges.
+
+`repository.deleteBranchOnMerge` boolean
+
+Whether the head branch is deleted automatically on merge.
+
+**Sample `event.payload`:**
+
+```json
+{
+  "repository": {
+    "id": "repo_01k2ja2000e0080000000000q4",
+    "name": "rocket",
+    "fullName": "acme/rocket",
+    "owner": {
+      "slug": "acme",
+      "id": "ns_01k2ja2000e0080000000000p3",
+      "type": "team"
+    },
+    "defaultBranch": "main",
+    "createdAt": "2026-08-01T09:30:00Z",
+    "updatedAt": "2026-08-01T09:30:00Z",
+    "cloneUrl": "https://origin.cursor.com/git/acme/rocket.git"
+  }
+}
+```
+
+### Repository Deleted
+
+repository.deleted
+
+#### Payload Fields
+
+`repository` object
+
+The repository that was deleted. A reference only: the repository no longer resolves through the API once deleted.
+
+`repository.id` string
+
+`repository.name` string
+
+`repository.owner` object
+
+The owner of a repo.
+
+`repository.owner.slug` string
+
+Unique URL-friendly name of the owner.
+
+`repository.owner.id` string
+
+Unique ID of the owner namespace.
+
+`repository.owner.type` string
+
+`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
+
+`deletedAt` string
+
+When the repository was deleted. RFC 3339 timestamp.
+
+**Sample `event.payload`:**
+
+```json
+{
+  "repository": {
+    "id": "repo_01k2ja2000e0080000000000q4",
+    "name": "rocket",
+    "owner": {
+      "slug": "acme",
+      "id": "ns_01k2ja2000e0080000000000p3",
+      "type": "team"
+    }
+  },
+  "deletedAt": "2026-08-03T08:15:00Z"
+}
+```
+
+### Repository Push
+
+repository.pushed
+
+One atomic push, which may update several refs. There is no commits array; each ref update carries best-effort tip metadata only.
+
+#### Payload Fields
+
+`repository` object
+
+The repository the push targeted.
+
+`repository.id` string
+
+`repository.name` string
+
+`repository.owner` object
+
+The owner of a repo.
+
+`repository.owner.slug` string
+
+Unique URL-friendly name of the owner.
+
+`repository.owner.id` string
+
+Unique ID of the owner namespace.
+
+`repository.owner.type` string
+
+`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
+
+`refUpdates` array
+
+Refs included from this push, capped at 100.
+
+`refUpdates[].ref` string
+
+The full git ref that was pushed. Example: `refs/heads/main` or `refs/tags/v3.14.1`.
+
+`refUpdates[].before` string
+
+The SHA of the most recent commit on `ref` before the push. All-zero (`0000000000000000000000000000000000000000`) when the ref was just created.
+
+`refUpdates[].after` string
+
+The SHA of the most recent commit on `ref` after the push. All-zero (`0000000000000000000000000000000000000000`) when the ref was deleted.
+
+`refUpdates[].created` boolean
+
+Whether this push created the ref.
+
+`refUpdates[].deleted` boolean
+
+Whether this push deleted the ref.
+
+`refUpdates[].forced` boolean
+
+Whether this push rewrote history: a non-fast-forward update of an existing ref (the new tip is not a descendant of the old tip). False for ref creates, deletes, fast-forward updates, and pushes observed before Origin tracked force-push status.
+
+`refUpdates[].headCommit` object
+
+Best-effort metadata for the commit at the peeled new tip. Unset for deletions, non-commit refs, historical pushes, and extraction failures.
+
+`refUpdates[].headCommit.sha` string
+
+`refUpdates[].headCommit.author` object
+
+Git identity and timestamp for a commit's author or committer. This is the identity recorded in the commit object, not a linked user account.
+
+`refUpdates[].headCommit.author.name` string
+
+`refUpdates[].headCommit.author.email` string
+
+`refUpdates[].headCommit.author.date` string
+
+ISO-8601 timestamp preserving the git signature's original timezone offset (e.g. "2014-11-07T22:01:45+01:00").
+
+`refUpdates[].headCommit.committer` object
+
+Git identity and timestamp for a commit's author or committer. This is the identity recorded in the commit object, not a linked user account.
+
+`refUpdates[].headCommit.committer.name` string
+
+`refUpdates[].headCommit.committer.email` string
+
+`refUpdates[].headCommit.committer.date` string
+
+ISO-8601 timestamp preserving the git signature's original timezone offset (e.g. "2014-11-07T22:01:45+01:00").
+
+`refUpdates[].headCommit.message` string
+
+`pushedAt` string
+
+When Origin observed the push. RFC 3339 timestamp.
+
+`pusher` object
+
+The principal that performed the push, as verified by Origin. Absent when Origin itself performed the push, such as the merge push that advances the base ref when a pull request merges.
+
+`pusher.user` object
+
+`pusher.user.id` string
+
+`pusher.user.email` string Required
+
+`pusher.user.displayName` string
+
+Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
+
+`pusher.user.handle` string
+
+The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
+
+`pusher.app` object
+
+`pusher.app.id` string
+
+`pusher.app.displayName` string
+
+The app's registered display name, never empty when present. Omitted on payloads whose app could not be resolved and on the first-party Cursor facade actor.
+
+`pusher.serviceAccount` object
+
+`pusher.serviceAccount.id` string
+
+`refUpdatesCount` integer
+
+Number of ref updates in the atomic push. ref\_updates may be shorter when the producer capped the list.
+
+**Sample `event.payload`:**
+
+```json
+{
+  "repository": {
+    "id": "repo_01k2ja2000e0080000000000q4",
+    "name": "rocket",
+    "owner": {
+      "slug": "acme",
+      "id": "ns_01k2ja2000e0080000000000p3",
+      "type": "team"
+    }
+  },
+  "refUpdates": [
+    {
+      "ref": "refs/heads/add-telemetry",
+      "before": "5c8d7e6f5a4b3c2d1e0f9a8b7c6d5e4f3a2b1c0d",
+      "after": "9a41f0c3d2b8e7f6a5c4d3e2f1b0a9c8d7e6f5a4",
+      "created": false,
+      "deleted": false,
+      "forced": false,
+      "headCommit": {
+        "sha": "9a41f0c3d2b8e7f6a5c4d3e2f1b0a9c8d7e6f5a4",
+        "author": {
+          "name": "Jane Doe",
+          "email": "jane@acme.dev",
+          "date": "2026-08-01T09:30:00Z"
+        },
+        "committer": {
+          "name": "Jane Doe",
+          "email": "jane@acme.dev",
+          "date": "2026-08-01T09:30:00Z"
+        },
+        "message": "Add launch telemetry"
+      }
+    }
+  ],
+  "pushedAt": "2026-08-02T14:45:00Z",
+  "pusher": {
+    "user": {
+      "id": "user_01k2ja2000e0080000000000c3",
+      "email": "jane@acme.dev"
+    }
+  },
+  "refUpdatesCount": 1
+}
+```
+
+### Repository Metadata Updated
+
+repository.metadata.updated
+
+Carries the full repository snapshot with no delta and no updating actor. Compare successive snapshots or refetch the repository to see what changed.
+
+#### Payload Fields
+
+`repository` object
+
+The full repository snapshot after the update.
+
+`repository.id` string
+
+`repository.name` string Required
+
+The repo name, unique to its owner. Required on create.
+
+`repository.fullName` string
+
+"\{owner.login}/\{name}". Derived.
+
+`repository.owner` object
+
+The owning entity. Determined by the parent on create; not settable directly.
+
+`repository.owner.slug` string
+
+Unique URL-friendly name of the owner.
+
+`repository.owner.id` string
+
+Unique ID of the owner namespace.
+
+`repository.owner.type` string
+
+`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
+
+`repository.defaultBranch` string
+
+Default branch name. Always set on responses. On create, omitting this field or leaving it empty defaults to "main".
+
+`repository.createdAt` string
+
+RFC 3339 timestamp.
+
+`repository.updatedAt` string
+
+RFC 3339 timestamp.
+
+`repository.pushedAt` string
+
+Most-recent-push timestamp on any branch; absent until the first push. RFC 3339 timestamp.
+
+`repository.cloneUrl` string
+
+HTTPS URL for cloning the repository.
+
+`repository.mirror` object
+
+Mirror metadata. Absent for a native repository and before a mirror's initial sync is ready.
+
+`repository.mirror.source` string
+
+One of `github`.
+
+`repository.mirror.sourceId` string
+
+Opaque repository identifier assigned by the source.
+
+`repository.mirror.status` string
+
+Effective direction during a transition, until cutover completes. One of `inbound`, `outbound`.
+
+`repository.visibility` string
+
+Repository visibility, `internal` or `private`. One of `internal`, `private`.
+
+`repository.allowMergeCommit` boolean
+
+Whether pull requests may land as merge commits.
+
+`repository.allowSquashMerge` boolean
+
+Whether pull requests may land as squash merges.
+
+`repository.deleteBranchOnMerge` boolean
+
+Whether the head branch is deleted automatically on merge.
+
+**Sample `event.payload`:**
+
+```json
+{
+  "repository": {
+    "id": "repo_01k2ja2000e0080000000000q4",
+    "name": "rocket",
+    "fullName": "acme/rocket",
+    "owner": {
+      "slug": "acme",
+      "id": "ns_01k2ja2000e0080000000000p3",
+      "type": "team"
+    },
+    "defaultBranch": "release",
+    "createdAt": "2026-08-01T09:30:00Z",
+    "updatedAt": "2026-08-03T08:15:00Z",
+    "cloneUrl": "https://origin.cursor.com/git/acme/rocket.git",
+    "pushedAt": "2026-08-02T14:45:00Z"
+  }
+}
+```
+
+### Pull Request Events
+
+pull\_request.created
+pull\_request.published
+pull\_request.reopened
+pull\_request.closed
+pull\_request.merged
+pull\_request.metadata.updated
+pull\_request.head\_ref.pushed
+pull\_request.base\_ref.updated
+
+A pull request lifecycle change. The lifecycle action is the envelope's `event.type`; there is no separate action field.
+
+#### Payload Fields
+
+`pullRequest` object
+
+The pull request snapshot. Assigned labels are omitted; read them with `GetPullRequest`.
+
+`pullRequest.id` string
+
+Stable Origin pull request identifier.
+
+`pullRequest.number` string
+
+Pull request number within its repository.
+
+`pullRequest.state` string
+
+"open" or "closed". A draft is "open"; merged and closed pull requests are both "closed".
+
+`pullRequest.draft` boolean
+
+Whether the pull request is still a draft.
+
+`pullRequest.merged` boolean
+
+Whether the pull request has been merged.
+
+`pullRequest.title` string
+
+Pull request title.
+
+`pullRequest.body` string
+
+Pull request description.
+
+`pullRequest.head` object
+
+The source side of the pull request - what is being merged in.
+
+`pullRequest.head.ref` string
+
+The ref this side points at, as Origin records it.
+
+`pullRequest.head.sha` string
+
+Tip commit SHA of this side at the change's latest version.
+
+`pullRequest.base` object
+
+The target side of the pull request — what it merges into.
+
+`pullRequest.base.ref` string
+
+The ref this side points at, as Origin records it.
+
+`pullRequest.base.sha` string
+
+Tip commit SHA of this side at the change's latest version.
+
+`pullRequest.author` object
+
+The principal that opened the pull request.
+
+`pullRequest.author.user` object
+
+`pullRequest.author.user.id` string
+
+`pullRequest.author.user.email` string Required
+
+`pullRequest.author.user.displayName` string
+
+Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
+
+`pullRequest.author.user.handle` string
+
+The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
+
+`pullRequest.author.app` object
+
+`pullRequest.author.app.id` string
+
+`pullRequest.author.app.displayName` string
+
+The app's registered display name, never empty when present. Omitted on payloads whose app could not be resolved and on the first-party Cursor facade actor.
+
+`pullRequest.author.serviceAccount` object
+
+`pullRequest.author.serviceAccount.id` string
+
+`pullRequest.createdAt` string
+
+When the pull request was opened. RFC 3339 timestamp.
+
+`pullRequest.updatedAt` string
+
+When the pull request was last updated. RFC 3339 timestamp.
+
+`pullRequest.closedAt` string
+
+When the pull request was closed or merged; unset while open. RFC 3339 timestamp.
+
+`pullRequest.mergedAt` string
+
+When the pull request was merged; unset unless merged. RFC 3339 timestamp.
+
+`pullRequest.mergeCommitSha` string
+
+SHA of the resulting merge commit; set once merged.
+
+`pullRequest.additions` integer
+
+Lines added by the pull request's latest version.
+
+`pullRequest.deletions` integer
+
+Lines deleted by the pull request's latest version.
+
+`pullRequest.changedFiles` integer
+
+Files changed by the pull request's latest version.
+
+`pullRequest.version` object
+
+The pull request's latest version.
+
+`pullRequest.version.number` string
+
+Monotonic version number within the change (1-based).
+
+`pullRequest.version.headSha` string
+
+Head commit SHA for this version.
+
+`pullRequest.version.baseSha` string
+
+Base commit SHA this version is diffed against.
+
+`pullRequest.version.createdAt` string
+
+When this version was created. RFC 3339 timestamp.
+
+`repository` object
+
+The repository the pull request belongs to.
+
+`repository.id` string
+
+`repository.name` string
+
+`repository.owner` object
+
+The owner of a repo.
+
+`repository.owner.slug` string
+
+Unique URL-friendly name of the owner.
+
+`repository.owner.id` string
+
+Unique ID of the owner namespace.
+
+`repository.owner.type` string
+
+`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
+
+**Sample `event.payload`:**
+
+```json
+{
+  "pullRequest": {
+    "id": "pr_01k2ja2000e0080000000000d4",
+    "number": "17",
+    "state": "open",
+    "draft": false,
+    "merged": false,
+    "title": "Add launch telemetry",
+    "body": "Adds structured launch telemetry to the ignition path.",
+    "head": {
+      "ref": "add-telemetry",
+      "sha": "9a41f0c3d2b8e7f6a5c4d3e2f1b0a9c8d7e6f5a4"
+    },
+    "base": {
+      "ref": "main",
+      "sha": "3b1f9c2d8a7e6f5049c8b7a6d5e4f3a2b1c0d9e8"
+    },
+    "author": {
+      "user": {
+        "id": "user_01k2ja2000e0080000000000c3",
+        "email": "jane@acme.dev"
+      }
+    },
+    "createdAt": "2026-08-01T09:30:00Z",
+    "updatedAt": "2026-08-02T14:45:00Z",
+    "additions": 128,
+    "deletions": 46,
+    "changedFiles": 5,
+    "version": {
+      "number": "3",
+      "headSha": "9a41f0c3d2b8e7f6a5c4d3e2f1b0a9c8d7e6f5a4",
+      "baseSha": "3b1f9c2d8a7e6f5049c8b7a6d5e4f3a2b1c0d9e8",
+      "createdAt": "2026-08-01T09:30:00Z"
+    }
+  },
+  "repository": {
+    "id": "repo_01k2ja2000e0080000000000q4",
+    "name": "rocket",
+    "owner": {
+      "slug": "acme",
+      "id": "ns_01k2ja2000e0080000000000p3",
+      "type": "team"
+    }
+  }
+}
+```
+
+### Pull Request Label Events
+
+pull\_request.label.added
+pull\_request.label.removed
+
+A change to the pull request's assigned labels. Read the current set with `ListPullRequestLabels`.
+
+#### Payload Fields
+
+`pullRequest` object
+
+The pull request whose assigned labels changed.
+
+`pullRequest.id` string
+
+Immutable Origin change id.
+
+`pullRequest.number` string
+
+`pullRequest.repository` object
+
+Repository reference for this pull request.
+
+`pullRequest.repository.id` string
+
+`pullRequest.repository.name` string
+
+`pullRequest.repository.owner` object
+
+The owner of a repo.
+
+`pullRequest.repository.owner.slug` string
+
+Unique URL-friendly name of the owner.
+
+`pullRequest.repository.owner.id` string
+
+Unique ID of the owner namespace.
+
+`pullRequest.repository.owner.type` string
+
+`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
+
+`label` object
+
+The label the event is about.
+
+`label.id` string
+
+`label.name` string
+
+`label.color` string
+
+Six-character hex color without a leading `#`.
+
+`label.description` string
+
+`actor` object
+
+The principal that assigned the label, when known. Set only on `pull_request.label.added`.
+
+`actor.user` object
+
+`actor.user.id` string
+
+`actor.user.email` string Required
+
+`actor.user.displayName` string
+
+Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
+
+`actor.user.handle` string
+
+The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
+
+`actor.app` object
+
+`actor.app.id` string
+
+`actor.app.displayName` string
+
+The app's registered display name, never empty when present. Omitted on payloads whose app could not be resolved and on the first-party Cursor facade actor.
+
+`actor.serviceAccount` object
+
+`actor.serviceAccount.id` string
+
+**Sample `event.payload`:**
+
+```json
+{
+  "pullRequest": {
+    "id": "pr_01k2ja2000e0080000000000d4",
+    "number": "17",
+    "repository": {
+      "id": "repo_01k2ja2000e0080000000000q4",
+      "name": "rocket",
+      "owner": {
+        "slug": "acme",
+        "id": "ns_01k2ja2000e0080000000000p3",
+        "type": "team"
+      }
+    }
+  },
+  "label": {
+    "id": "lbl_01k2ja2000e0080000000000m1",
+    "name": "bug",
+    "color": "d73a4a",
+    "description": "Something isn't working"
+  },
+  "actor": {
+    "user": {
+      "id": "user_01k2ja2000e0080000000000c3",
+      "email": "jane@acme.dev"
+    }
+  }
+}
+```
+
+### Pull Request Comment
+
+pull\_request.comment.created
+
+A comment created on a pull request. Comments filed with a review are delivered when the review submits, one event per comment.
+
+#### Payload Fields
+
+`pullRequest` object
+
+The pull request the comment was filed on.
+
+`pullRequest.id` string
+
+Immutable Origin change id.
+
+`pullRequest.number` string
+
+`pullRequest.repository` object
+
+Repository reference for this pull request.
+
+`pullRequest.repository.id` string
+
+`pullRequest.repository.name` string
+
+`pullRequest.repository.owner` object
+
+The owner of a repo.
+
+`pullRequest.repository.owner.slug` string
+
+Unique URL-friendly name of the owner.
+
+`pullRequest.repository.owner.id` string
+
+Unique ID of the owner namespace.
+
+`pullRequest.repository.owner.type` string
+
+`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
+
+`comment` object
+
+The created comment. A comment that opened its thread carries the thread's diff anchor inline; a reply carries only `comment.thread.id`. Thread resolution state is not part of the event; read it with `GetPullRequestComment`.
+
+`comment.id` string
+
+`comment.thread` object
+
+The thread this comment belongs to, including its diff anchor and resolution state.
+
+`comment.thread.id` string
+
+`comment.thread.version` object
+
+The pull request version the thread was filed against, including its head and base SHAs (see `PullRequestReview.pull_request_version`).
+
+`comment.thread.version.number` string
+
+Monotonic version number within the change (1-based).
+
+`comment.thread.version.headSha` string
+
+Head commit SHA for this version.
+
+`comment.thread.version.baseSha` string
+
+Base commit SHA this version is diffed against.
+
+`comment.thread.version.createdAt` string
+
+When this version was created. RFC 3339 timestamp.
+
+`comment.thread.path` string
+
+File path of the thread's diff anchor. Empty for general-discussion threads.
+
+`comment.thread.side` string
+
+Diff side of the anchor. Unset for general-discussion threads. One of `left`, `right`.
+
+`comment.thread.startLine` integer
+
+First line of the anchored range in the `side` version of the file. 0 for file-level and general-discussion threads.
+
+`comment.thread.endLine` integer
+
+Inclusive last line of the anchored range. 0 when the anchor is a single line or has no line range.
+
+`comment.thread.resolvedAt` string
+
+When the thread was resolved. Unset while the thread is open. RFC 3339 timestamp.
+
+`comment.thread.createdAt` string
+
+RFC 3339 timestamp.
+
+`comment.thread.updatedAt` string
+
+RFC 3339 timestamp.
+
+`comment.body` string
+
+`comment.author` object
+
+A user, app, or service account that performed an externally visible action.
+
+`comment.author.user` object
+
+`comment.author.user.id` string
+
+`comment.author.user.email` string Required
+
+`comment.author.user.displayName` string
+
+Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
+
+`comment.author.user.handle` string
+
+The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
+
+`comment.author.app` object
+
+`comment.author.app.id` string
+
+`comment.author.app.displayName` string
+
+The app's registered display name, never empty when present. Omitted on payloads whose app could not be resolved and on the first-party Cursor facade actor.
+
+`comment.author.serviceAccount` object
+
+`comment.author.serviceAccount.id` string
+
+`comment.createdAt` string
+
+RFC 3339 timestamp.
+
+`comment.updatedAt` string
+
+RFC 3339 timestamp.
+
+**Sample `event.payload`:**
+
+```json
+{
+  "pullRequest": {
+    "id": "pr_01k2ja2000e0080000000000d4",
+    "number": "17",
+    "repository": {
+      "id": "repo_01k2ja2000e0080000000000q4",
+      "name": "rocket",
+      "owner": {
+        "slug": "acme",
+        "id": "ns_01k2ja2000e0080000000000p3",
+        "type": "team"
+      }
+    }
+  },
+  "comment": {
+    "id": "cmt_01k2ja2000e0080000000000e5",
+    "thread": {
+      "id": "cth_01k2ja2000e0080000000000s6",
+      "version": {
+        "number": "3",
+        "headSha": "9a41f0c3d2b8e7f6a5c4d3e2f1b0a9c8d7e6f5a4",
+        "baseSha": "3b1f9c2d8a7e6f5049c8b7a6d5e4f3a2b1c0d9e8",
+        "createdAt": "2026-08-01T09:30:00Z"
+      },
+      "path": "src/telemetry/retry.ts",
+      "side": "right",
+      "startLine": 42,
+      "endLine": 45,
+      "createdAt": "2026-08-01T09:30:00Z",
+      "updatedAt": "2026-08-02T14:45:00Z"
+    },
+    "body": "Should the retry budget be configurable?",
+    "author": {
+      "user": {
+        "id": "user_01k2ja2000e0080000000000c3",
+        "email": "jane@acme.dev"
+      }
+    },
+    "createdAt": "2026-08-01T09:30:00Z",
+    "updatedAt": "2026-08-02T14:45:00Z"
+  }
+}
+```
+
+### Pull Request Review Events
+
+pull\_request.review\.submitted
+pull\_request.review\.dismissed
+
+#### Payload Fields
+
+`pullRequest` object
+
+The pull request the review was filed on.
+
+`pullRequest.id` string
+
+Immutable Origin change id.
+
+`pullRequest.number` string
+
+`pullRequest.repository` object
+
+Repository reference for this pull request.
+
+`pullRequest.repository.id` string
+
+`pullRequest.repository.name` string
+
+`pullRequest.repository.owner` object
+
+The owner of a repo.
+
+`pullRequest.repository.owner.slug` string
+
+Unique URL-friendly name of the owner.
+
+`pullRequest.repository.owner.id` string
+
+Unique ID of the owner namespace.
+
+`pullRequest.repository.owner.type` string
+
+`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
+
+`review` object
+
+The review that was submitted or dismissed. On a dismissal, `review.dismissal` is set.
+
+`review.id` string
+
+Stable Origin review identifier.
+
+`review.author` object
+
+The principal that authored the review.
+
+`review.author.user` object
+
+`review.author.user.id` string
+
+`review.author.user.email` string Required
+
+`review.author.user.displayName` string
+
+Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
+
+`review.author.user.handle` string
+
+The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
+
+`review.author.app` object
+
+`review.author.app.id` string
+
+`review.author.app.displayName` string
+
+The app's registered display name, never empty when present. Omitted on payloads whose app could not be resolved and on the first-party Cursor facade actor.
+
+`review.author.serviceAccount` object
+
+`review.author.serviceAccount.id` string
+
+`review.verdict` string
+
+One of `approve`, `request_changes`, `comment`.
+
+`review.body` string
+
+Free-text review summary. Empty when the reviewer left no summary.
+
+`review.submittedAt` string
+
+When the review was submitted. Unset for an unsubmitted draft review. RFC 3339 timestamp.
+
+`review.pullRequestVersion` object
+
+The pull request version and head SHA the verdict applies to.
+
+`review.pullRequestVersion.number` string
+
+Monotonic version number within the change (1-based).
+
+`review.pullRequestVersion.headSha` string
+
+Head commit SHA for this version.
+
+`review.pullRequestVersion.baseSha` string
+
+Base commit SHA this version is diffed against.
+
+`review.pullRequestVersion.createdAt` string
+
+When this version was created. RFC 3339 timestamp.
+
+`review.dismissal` object
+
+Set once the review has been dismissed; absent while the verdict still counts toward the pull request's review state.
+
+`review.dismissal.dismissedBy` object
+
+The principal that dismissed the review. Absent when the dismissal was recorded under an actor kind this API does not expose.
+
+`review.dismissal.dismissedBy.user` object
+
+`review.dismissal.dismissedBy.user.id` string
+
+`review.dismissal.dismissedBy.user.email` string Required
+
+`review.dismissal.dismissedBy.user.displayName` string
+
+Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
+
+`review.dismissal.dismissedBy.user.handle` string
+
+The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
+
+`review.dismissal.dismissedBy.app` object
+
+`review.dismissal.dismissedBy.app.id` string
+
+`review.dismissal.dismissedBy.app.displayName` string
+
+The app's registered display name, never empty when present. Omitted on payloads whose app could not be resolved and on the first-party Cursor facade actor.
+
+`review.dismissal.dismissedBy.serviceAccount` object
+
+`review.dismissal.dismissedBy.serviceAccount.id` string
+
+`review.dismissal.dismissedAt` string
+
+When the review was dismissed. RFC 3339 timestamp.
+
+`review.dismissal.message` string
+
+Reason recorded with the dismissal. Reviews retired automatically because their author submitted a newer verdict carry a server-generated reason.
+
+**Sample `event.payload`:**
+
+```json
+{
+  "pullRequest": {
+    "id": "pr_01k2ja2000e0080000000000d4",
+    "number": "17",
+    "repository": {
+      "id": "repo_01k2ja2000e0080000000000q4",
+      "name": "rocket",
+      "owner": {
+        "slug": "acme",
+        "id": "ns_01k2ja2000e0080000000000p3",
+        "type": "team"
+      }
+    }
+  },
+  "review": {
+    "id": "rev_01k2ja2000e0080000000000f6",
+    "author": {
+      "user": {
+        "id": "user_01k2ja2000e0080000000000c3",
+        "email": "jane@acme.dev"
+      }
+    },
+    "verdict": "approve",
+    "body": "Approving. The telemetry schema matches the spec.",
+    "submittedAt": "2026-08-02T15:00:00Z",
+    "pullRequestVersion": {
+      "number": "3",
+      "headSha": "9a41f0c3d2b8e7f6a5c4d3e2f1b0a9c8d7e6f5a4",
+      "baseSha": "3b1f9c2d8a7e6f5049c8b7a6d5e4f3a2b1c0d9e8",
+      "createdAt": "2026-08-01T09:30:00Z"
+    }
+  }
+}
+```
+
+### Pull Request Reviewer Events
+
+pull\_request.reviewer.added
+pull\_request.reviewer.removed
+pull\_request.reviewer.rerequested
+
+A change to the pull request's requested reviewers. Read the current pending set with `ListPullRequestRequestedReviewers`.
+
+#### Payload Fields
+
+`pullRequest` object
+
+The pull request whose requested reviewers changed.
+
+`pullRequest.id` string
+
+Immutable Origin change id.
+
+`pullRequest.number` string
+
+`pullRequest.repository` object
+
+Repository reference for this pull request.
+
+`pullRequest.repository.id` string
+
+`pullRequest.repository.name` string
+
+`pullRequest.repository.owner` object
+
+The owner of a repo.
+
+`pullRequest.repository.owner.slug` string
+
+Unique URL-friendly name of the owner.
+
+`pullRequest.repository.owner.id` string
+
+Unique ID of the owner namespace.
+
+`pullRequest.repository.owner.type` string
+
+`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
+
+`reviewer` object
+
+The requested reviewer the event is about.
+
+`reviewer.user` object
+
+`reviewer.user.id` string
+
+`reviewer.user.email` string Required
+
+`reviewer.user.displayName` string
+
+Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
+
+`reviewer.user.handle` string
+
+The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
+
+`reviewer.group` object
+
+Public Origin group identity (`grp_…`). Currently id-only.
+
+`reviewer.group.id` string
+
+`createdVia` string
+
+How the review request was created. One of `manual`, `codeowners`.
+
+`createdBy` object
+
+The principal that created the review request, when known.
+
+`createdBy.user` object
+
+`createdBy.user.id` string
+
+`createdBy.user.email` string Required
+
+`createdBy.user.displayName` string
+
+Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
+
+`createdBy.user.handle` string
+
+The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
+
+`createdBy.app` object
+
+`createdBy.app.id` string
+
+`createdBy.app.displayName` string
+
+The app's registered display name, never empty when present. Omitted on payloads whose app could not be resolved and on the first-party Cursor facade actor.
+
+`createdBy.serviceAccount` object
+
+`createdBy.serviceAccount.id` string
+
+`createdAt` string
+
+When the review request was created. RFC 3339 timestamp.
+
+**Sample `event.payload`:**
+
+```json
+{
+  "pullRequest": {
+    "id": "pr_01k2ja2000e0080000000000d4",
+    "number": "17",
+    "repository": {
+      "id": "repo_01k2ja2000e0080000000000q4",
+      "name": "rocket",
+      "owner": {
+        "slug": "acme",
+        "id": "ns_01k2ja2000e0080000000000p3",
+        "type": "team"
+      }
+    }
+  },
+  "reviewer": {
+    "user": {
+      "id": "user_01k2ja2000e0080000000000c3",
+      "email": "jane@acme.dev"
+    }
+  },
+  "createdVia": "codeowners",
+  "createdAt": "2026-08-02T14:45:00Z"
+}
+```
+
+### Check Run Events
+
+repository.check\_run.created
+repository.check\_run.completed
+
+Committed snapshot for an Origin check-run lifecycle event.
+
+#### Payload Fields
+
+`repository` object
+
+The repository the check run belongs to.
+
+`repository.id` string
+
+`repository.name` string
+
+`repository.owner` object
+
+The owner of a repo.
+
+`repository.owner.slug` string
+
+Unique URL-friendly name of the owner.
+
+`repository.owner.id` string
+
+Unique ID of the owner namespace.
+
+`repository.owner.type` string
+
+`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
+
+`checkSuite` object
+
+The suite the check run belongs to.
+
+`checkSuite.id` string
+
+Server-assigned unique ID of the suite.
+
+`checkSuite.repository` object
+
+Repository the suite belongs to.
+
+`checkSuite.repository.id` string
+
+`checkSuite.repository.name` string
+
+`checkSuite.repository.owner` object
+
+The owner of a repo.
+
+`checkSuite.repository.owner.slug` string
+
+Unique URL-friendly name of the owner.
+
+`checkSuite.repository.owner.id` string
+
+Unique ID of the owner namespace.
+
+`checkSuite.repository.owner.type` string
+
+`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
+
+`checkSuite.sha` string
+
+Resolved head commit SHA the suite is attached to (lowercase hex).
+
+`checkSuite.key` string
+
+App-chosen idempotency key for the suite.
+
+`checkSuite.name` string
+
+Human-facing suite name.
+
+`checkSuite.detailsUrl` string
+
+Link to more detail about the suite as a whole, if set.
+
+`checkSuite.createdAt` string
+
+RFC 3339 timestamp.
+
+`checkSuite.updatedAt` string
+
+RFC 3339 timestamp.
+
+`checkSuite.externalId` string
+
+Provider-assigned immutable identity for this suite attempt.
+
+`checkSuite.actor` object
+
+Principal that produced the suite.
+
+`checkSuite.actor.user` object
+
+`checkSuite.actor.user.id` string
+
+`checkSuite.actor.user.email` string Required
+
+`checkSuite.actor.user.displayName` string
+
+Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
+
+`checkSuite.actor.user.handle` string
+
+The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
+
+`checkSuite.actor.app` object
+
+`checkSuite.actor.app.id` string
+
+`checkSuite.actor.app.displayName` string
+
+The app's registered display name, never empty when present. Omitted on payloads whose app could not be resolved and on the first-party Cursor facade actor.
+
+`checkSuite.actor.serviceAccount` object
+
+`checkSuite.actor.serviceAccount.id` string
+
+`checkRun` object
+
+The check run snapshot at this lifecycle point.
+
+`checkRun.id` string
+
+Server-assigned unique ID of the check run.
+
+`checkRun.repository` object
+
+Repository the check run belongs to.
+
+`checkRun.repository.id` string
+
+`checkRun.repository.name` string
+
+`checkRun.repository.owner` object
+
+The owner of a repo.
+
+`checkRun.repository.owner.slug` string
+
+Unique URL-friendly name of the owner.
+
+`checkRun.repository.owner.id` string
+
+Unique ID of the owner namespace.
+
+`checkRun.repository.owner.type` string
+
+`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
+
+`checkRun.checkSuite` object
+
+Suite this check run belongs to.
+
+`checkRun.checkSuite.id` string
+
+`checkRun.sha` string
+
+Resolved head commit SHA the check run is attached to (lowercase hex).
+
+`checkRun.key` string
+
+App-chosen idempotency key for the check run.
+
+`checkRun.name` string
+
+Human-facing check-run name.
+
+`checkRun.status` string
+
+Lifecycle state. `rerequested` is a completed run whose re-run was requested and not yet answered by the owning app: pending for readers (render like `queued`), with `conclusion` and the timings still describing the superseded attempt. Set only by Origin on re-request (RerequestCheckRun); apps cannot post it. One of `queued`, `in_progress`, `completed`, `rerequested`.
+
+`checkRun.conclusion` string
+
+Present iff `status` is `completed` or `rerequested`. For a `rerequested` run it is the superseded attempt's verdict: treat the run as pending and read `conclusion` only when `status == completed`. One of `success`, `failure`, `neutral`, `cancelled`, `skipped`, `timed_out`, `action_required`, `stale`.
+
+`checkRun.detailsUrl` string
+
+Link to more detail about this specific check run, if set.
+
+`checkRun.externalUpdatedAt` string
+
+The external system's last-update time used for ordering. RFC 3339 timestamp.
+
+`checkRun.startedAt` string
+
+When the check run started, if reported. RFC 3339 timestamp.
+
+`checkRun.completedAt` string
+
+When the check run completed, if reported. RFC 3339 timestamp.
+
+`checkRun.createdAt` string
+
+RFC 3339 timestamp.
+
+`checkRun.updatedAt` string
+
+RFC 3339 timestamp.
+
+`checkRun.externalId` string
+
+Provider-assigned immutable identity for this check attempt (see `CheckRunInput.external_id`: one per execution is the recommended style).
+
+`checkRun.actor` object
+
+Principal that produced the check run; always the owning suite's `actor`.
+
+`checkRun.actor.user` object
+
+`checkRun.actor.user.id` string
+
+`checkRun.actor.user.email` string Required
+
+`checkRun.actor.user.displayName` string
+
+Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
+
+`checkRun.actor.user.handle` string
+
+The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
+
+`checkRun.actor.app` object
+
+`checkRun.actor.app.id` string
+
+`checkRun.actor.app.displayName` string
+
+The app's registered display name, never empty when present. Omitted on payloads whose app could not be resolved and on the first-party Cursor facade actor.
+
+`checkRun.actor.serviceAccount` object
+
+`checkRun.actor.serviceAccount.id` string
+
+`checkRun.output` object
+
+Human-readable output for this check run, if set.
+
+`checkRun.output.title` string
+
+Short headline for the output. Maximum length: 255 characters.
+
+`checkRun.output.summary` string
+
+Summary of the output. May contain Markdown. Maximum UTF-8 size: 65535 bytes.
+
+`checkRun.output.text` string
+
+Detailed output. May contain Markdown. Maximum UTF-8 size: 65535 bytes.
+
+`checkRun.deadlineAt` string
+
+Optional deadline. Omitted or unset means no expiration. RFC 3339 timestamp.
+
+`checkRun.isRerequestable` boolean
+
+Whether the reporting app declared this run re-requestable (`CheckRunInput.is_rerequestable`).
+
+`checkRun.rerequestedAt` string
+
+Set while a re-request is outstanding; cleared when the provider posts again. Unset means no re-request is pending. While set, `status` is `rerequested` and the run stays in the commit's CI state as pending (`conclusion` and the timings are the superseded result); the owning app answers by posting the run it committed to by declaring `is_rerequestable` — a new run for the same `key`, or an update of this run (which clears this field) — after which the run may be re-requested again. RFC 3339 timestamp.
+
+`checkRun.rerequestedBy` object
+
+Principal that re-requested the run. Present iff `rerequested_at` is set; cleared together with it when the owning app answers.
+
+`checkRun.rerequestedBy.user` object
+
+`checkRun.rerequestedBy.user.id` string
+
+`checkRun.rerequestedBy.user.email` string Required
+
+`checkRun.rerequestedBy.user.displayName` string
+
+Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
+
+`checkRun.rerequestedBy.user.handle` string
+
+The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
+
+`checkRun.rerequestedBy.app` object
+
+`checkRun.rerequestedBy.app.id` string
+
+`checkRun.rerequestedBy.app.displayName` string
+
+The app's registered display name, never empty when present. Omitted on payloads whose app could not be resolved and on the first-party Cursor facade actor.
+
+`checkRun.rerequestedBy.serviceAccount` object
+
+`checkRun.rerequestedBy.serviceAccount.id` string
+
+**Sample `event.payload`:**
+
+```json
+{
+  "repository": {
+    "id": "repo_01k2ja2000e0080000000000q4",
+    "name": "rocket",
+    "owner": {
+      "slug": "acme",
+      "id": "ns_01k2ja2000e0080000000000p3",
+      "type": "team"
+    }
+  },
+  "checkSuite": {
+    "id": "crg_01k2ja2000e0080000000000h8",
+    "repository": {
+      "id": "repo_01k2ja2000e0080000000000q4",
+      "name": "rocket",
+      "owner": {
+        "slug": "acme",
+        "id": "ns_01k2ja2000e0080000000000p3",
+        "type": "team"
+      }
+    },
+    "sha": "9a41f0c3d2b8e7f6a5c4d3e2f1b0a9c8d7e6f5a4",
+    "key": "ci-8842",
+    "name": "CI",
+    "detailsUrl": "https://ci.acme.dev/runs/8842",
+    "createdAt": "2026-08-01T09:30:00Z",
+    "updatedAt": "2026-08-02T14:45:00Z",
+    "externalId": "build-8842",
+    "actor": {
+      "user": {
+        "id": "user_01k2ja2000e0080000000000c3",
+        "email": "jane@acme.dev"
+      }
+    }
+  },
+  "checkRun": {
+    "id": "cr_01k2ja2000e0080000000000g7",
+    "repository": {
+      "id": "repo_01k2ja2000e0080000000000q4",
+      "name": "rocket",
+      "owner": {
+        "slug": "acme",
+        "id": "ns_01k2ja2000e0080000000000p3",
+        "type": "team"
+      }
+    },
+    "checkSuite": {
+      "id": "crg_01k2ja2000e0080000000000h8"
+    },
+    "sha": "9a41f0c3d2b8e7f6a5c4d3e2f1b0a9c8d7e6f5a4",
+    "key": "ci-8842-unit-tests",
+    "name": "unit-tests",
+    "status": "completed",
+    "conclusion": "success",
+    "detailsUrl": "https://ci.acme.dev/runs/8842",
+    "externalUpdatedAt": "2026-08-02T14:44:30Z",
+    "startedAt": "2026-08-02T14:40:00Z",
+    "completedAt": "2026-08-02T14:44:30Z",
+    "createdAt": "2026-08-01T09:30:00Z",
+    "updatedAt": "2026-08-02T14:45:00Z",
+    "externalId": "run-8842",
+    "actor": {
+      "user": {
+        "id": "user_01k2ja2000e0080000000000c3",
+        "email": "jane@acme.dev"
+      }
+    },
+    "output": {
+      "title": "Unit tests",
+      "summary": "128 tests passed.",
+      "text": "All suites green."
+    }
+  }
+}
+```
+
+### Check Run Rerequested
+
+repository.check\_run.rerequested
+
+repository.check\_run.rerequested webhook payload, delivered only to the app that owns the check run. Answer by posting a fresh run for the same head SHA and key — a new run (new external\_id) or an update of the re-requested run. The stamped run reads `status: rerequested` (its conclusion and timings are the superseded result) until the answering post clears `rerequested_at`. Each accepted re-request emits one event, and a run may be re-requested again once answered, so dedupe redeliveries on the event id alone; `check_run.rerequested_at` carries the outstanding stamp. The payload carries no pull request context (check runs attach to `(repository, sha)`): a consumer that needs the pull request resolves it from `check_run.sha` via its own head mapping, or `ListPullRequests` filtered to the head branch it built.
+
+#### Payload Fields
+
+`repository` object
+
+The repository the check run belongs to.
+
+`repository.id` string
+
+`repository.name` string
+
+`repository.owner` object
+
+The owner of a repo.
+
+`repository.owner.slug` string
+
+Unique URL-friendly name of the owner.
+
+`repository.owner.id` string
+
+Unique ID of the owner namespace.
+
+`repository.owner.type` string
+
+`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
+
+`checkSuite` object
+
+The suite the check run belongs to.
+
+`checkSuite.id` string
+
+Server-assigned unique ID of the suite.
+
+`checkSuite.repository` object
+
+Repository the suite belongs to.
+
+`checkSuite.repository.id` string
+
+`checkSuite.repository.name` string
+
+`checkSuite.repository.owner` object
+
+The owner of a repo.
+
+`checkSuite.repository.owner.slug` string
+
+Unique URL-friendly name of the owner.
+
+`checkSuite.repository.owner.id` string
+
+Unique ID of the owner namespace.
+
+`checkSuite.repository.owner.type` string
+
+`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
+
+`checkSuite.sha` string
+
+Resolved head commit SHA the suite is attached to (lowercase hex).
+
+`checkSuite.key` string
+
+App-chosen idempotency key for the suite.
+
+`checkSuite.name` string
+
+Human-facing suite name.
+
+`checkSuite.detailsUrl` string
+
+Link to more detail about the suite as a whole, if set.
+
+`checkSuite.createdAt` string
+
+RFC 3339 timestamp.
+
+`checkSuite.updatedAt` string
+
+RFC 3339 timestamp.
+
+`checkSuite.externalId` string
+
+Provider-assigned immutable identity for this suite attempt.
+
+`checkSuite.actor` object
+
+Principal that produced the suite.
+
+`checkSuite.actor.user` object
+
+`checkSuite.actor.user.id` string
+
+`checkSuite.actor.user.email` string Required
+
+`checkSuite.actor.user.displayName` string
+
+Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
+
+`checkSuite.actor.user.handle` string
+
+The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
+
+`checkSuite.actor.app` object
+
+`checkSuite.actor.app.id` string
+
+`checkSuite.actor.app.displayName` string
+
+The app's registered display name, never empty when present. Omitted on payloads whose app could not be resolved and on the first-party Cursor facade actor.
+
+`checkSuite.actor.serviceAccount` object
+
+`checkSuite.actor.serviceAccount.id` string
+
+`checkRun` object
+
+The re-requested check run (`status: rerequested`); `check_run.rerequested_at` records the stamp and `check_run.rerequested_by` the principal that asked.
+
+`checkRun.id` string
+
+Server-assigned unique ID of the check run.
+
+`checkRun.repository` object
+
+Repository the check run belongs to.
+
+`checkRun.repository.id` string
+
+`checkRun.repository.name` string
+
+`checkRun.repository.owner` object
+
+The owner of a repo.
+
+`checkRun.repository.owner.slug` string
+
+Unique URL-friendly name of the owner.
+
+`checkRun.repository.owner.id` string
+
+Unique ID of the owner namespace.
+
+`checkRun.repository.owner.type` string
+
+`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
+
+`checkRun.checkSuite` object
+
+Suite this check run belongs to.
+
+`checkRun.checkSuite.id` string
+
+`checkRun.sha` string
+
+Resolved head commit SHA the check run is attached to (lowercase hex).
+
+`checkRun.key` string
+
+App-chosen idempotency key for the check run.
+
+`checkRun.name` string
+
+Human-facing check-run name.
+
+`checkRun.status` string
+
+Lifecycle state. `rerequested` is a completed run whose re-run was requested and not yet answered by the owning app: pending for readers (render like `queued`), with `conclusion` and the timings still describing the superseded attempt. Set only by Origin on re-request (RerequestCheckRun); apps cannot post it. One of `queued`, `in_progress`, `completed`, `rerequested`.
+
+`checkRun.conclusion` string
+
+Present iff `status` is `completed` or `rerequested`. For a `rerequested` run it is the superseded attempt's verdict: treat the run as pending and read `conclusion` only when `status == completed`. One of `success`, `failure`, `neutral`, `cancelled`, `skipped`, `timed_out`, `action_required`, `stale`.
+
+`checkRun.detailsUrl` string
+
+Link to more detail about this specific check run, if set.
+
+`checkRun.externalUpdatedAt` string
+
+The external system's last-update time used for ordering. RFC 3339 timestamp.
+
+`checkRun.startedAt` string
+
+When the check run started, if reported. RFC 3339 timestamp.
+
+`checkRun.completedAt` string
+
+When the check run completed, if reported. RFC 3339 timestamp.
+
+`checkRun.createdAt` string
+
+RFC 3339 timestamp.
+
+`checkRun.updatedAt` string
+
+RFC 3339 timestamp.
+
+`checkRun.externalId` string
+
+Provider-assigned immutable identity for this check attempt (see `CheckRunInput.external_id`: one per execution is the recommended style).
+
+`checkRun.actor` object
+
+Principal that produced the check run; always the owning suite's `actor`.
+
+`checkRun.actor.user` object
+
+`checkRun.actor.user.id` string
+
+`checkRun.actor.user.email` string Required
+
+`checkRun.actor.user.displayName` string
+
+Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
+
+`checkRun.actor.user.handle` string
+
+The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
+
+`checkRun.actor.app` object
+
+`checkRun.actor.app.id` string
+
+`checkRun.actor.app.displayName` string
+
+The app's registered display name, never empty when present. Omitted on payloads whose app could not be resolved and on the first-party Cursor facade actor.
+
+`checkRun.actor.serviceAccount` object
+
+`checkRun.actor.serviceAccount.id` string
+
+`checkRun.output` object
+
+Human-readable output for this check run, if set.
+
+`checkRun.output.title` string
+
+Short headline for the output. Maximum length: 255 characters.
+
+`checkRun.output.summary` string
+
+Summary of the output. May contain Markdown. Maximum UTF-8 size: 65535 bytes.
+
+`checkRun.output.text` string
+
+Detailed output. May contain Markdown. Maximum UTF-8 size: 65535 bytes.
+
+`checkRun.deadlineAt` string
+
+Optional deadline. Omitted or unset means no expiration. RFC 3339 timestamp.
+
+`checkRun.isRerequestable` boolean
+
+Whether the reporting app declared this run re-requestable (`CheckRunInput.is_rerequestable`).
+
+`checkRun.rerequestedAt` string
+
+Set while a re-request is outstanding; cleared when the provider posts again. Unset means no re-request is pending. While set, `status` is `rerequested` and the run stays in the commit's CI state as pending (`conclusion` and the timings are the superseded result); the owning app answers by posting the run it committed to by declaring `is_rerequestable` — a new run for the same `key`, or an update of this run (which clears this field) — after which the run may be re-requested again. RFC 3339 timestamp.
+
+`checkRun.rerequestedBy` object
+
+Principal that re-requested the run. Present iff `rerequested_at` is set; cleared together with it when the owning app answers.
+
+`checkRun.rerequestedBy.user` object
+
+`checkRun.rerequestedBy.user.id` string
+
+`checkRun.rerequestedBy.user.email` string Required
+
+`checkRun.rerequestedBy.user.displayName` string
+
+Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
+
+`checkRun.rerequestedBy.user.handle` string
+
+The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
+
+`checkRun.rerequestedBy.app` object
+
+`checkRun.rerequestedBy.app.id` string
+
+`checkRun.rerequestedBy.app.displayName` string
+
+The app's registered display name, never empty when present. Omitted on payloads whose app could not be resolved and on the first-party Cursor facade actor.
+
+`checkRun.rerequestedBy.serviceAccount` object
+
+`checkRun.rerequestedBy.serviceAccount.id` string
+
+**Sample `event.payload`:**
+
+```json
+{
+  "repository": {
+    "id": "repo_01k2ja2000e0080000000000q4",
+    "name": "rocket",
+    "owner": {
+      "slug": "acme",
+      "id": "ns_01k2ja2000e0080000000000p3",
+      "type": "team"
+    }
+  },
+  "checkSuite": {
+    "id": "crg_01k2ja2000e0080000000000h8",
+    "repository": {
+      "id": "repo_01k2ja2000e0080000000000q4",
+      "name": "rocket",
+      "owner": {
+        "slug": "acme",
+        "id": "ns_01k2ja2000e0080000000000p3",
+        "type": "team"
+      }
+    },
+    "sha": "9a41f0c3d2b8e7f6a5c4d3e2f1b0a9c8d7e6f5a4",
+    "key": "ci-8842",
+    "name": "CI",
+    "detailsUrl": "https://ci.acme.dev/runs/8842",
+    "createdAt": "2026-08-01T09:30:00Z",
+    "updatedAt": "2026-08-02T15:10:00Z",
+    "externalId": "build-8842",
+    "actor": {
+      "user": {
+        "id": "user_01k2ja2000e0080000000000c3",
+        "email": "jane@acme.dev"
+      }
+    }
+  },
+  "checkRun": {
+    "id": "cr_01k2ja2000e0080000000000g7",
+    "repository": {
+      "id": "repo_01k2ja2000e0080000000000q4",
+      "name": "rocket",
+      "owner": {
+        "slug": "acme",
+        "id": "ns_01k2ja2000e0080000000000p3",
+        "type": "team"
+      }
+    },
+    "checkSuite": {
+      "id": "crg_01k2ja2000e0080000000000h8"
+    },
+    "sha": "9a41f0c3d2b8e7f6a5c4d3e2f1b0a9c8d7e6f5a4",
+    "key": "ci-8842-unit-tests",
+    "name": "unit-tests",
+    "status": "rerequested",
+    "conclusion": "failure",
+    "detailsUrl": "https://ci.acme.dev/runs/8842",
+    "externalUpdatedAt": "2026-08-02T14:44:30Z",
+    "startedAt": "2026-08-02T14:40:00Z",
+    "completedAt": "2026-08-02T14:44:30Z",
+    "createdAt": "2026-08-01T09:30:00Z",
+    "updatedAt": "2026-08-02T15:10:00Z",
+    "externalId": "run-8842",
+    "actor": {
+      "user": {
+        "id": "user_01k2ja2000e0080000000000c3",
+        "email": "jane@acme.dev"
+      }
+    },
+    "output": {
+      "title": "Unit tests",
+      "summary": "1 of 129 tests failed.",
+      "text": "FAIL telemetry.spec.ts > flushes queued events on shutdown"
+    },
+    "isRerequestable": true,
+    "rerequestedAt": "2026-08-02T15:10:00Z",
+    "rerequestedBy": {
+      "user": {
+        "id": "user_01k2ja2000e0080000000000c3",
+        "email": "jane@acme.dev"
+      }
+    }
+  }
+}
+```
+
+### Installation Created
+
+installation.created
+
+#### Payload Fields
+
+`installation` object
+
+The installation snapshot at the time of the event.
+
+`installation.id` string
+
+`installation.appId` string
+
+The installed app's identifier; the same value as `app.id` on the payload.
+
+`installation.target` object
+
+The owner of a repo.
+
+`installation.target.slug` string
+
+Unique URL-friendly name of the owner.
+
+`installation.target.id` string
+
+Unique ID of the owner namespace.
+
+`installation.target.type` string
+
+`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
+
+`installation.repoSelectionMode` string
+
+One of `all`, `selected`.
+
+`installation.repositories` array
+
+Empty when repository\_selection is "all". Capped at 5,000; see repositories\_count for the true total.
+
+`installation.repositories[].id` string
+
+`installation.repositories[].name` string
+
+`installation.repositories[].owner` object
+
+The owner of a repo.
+
+`installation.repositories[].owner.slug` string
+
+Unique URL-friendly name of the owner.
+
+`installation.repositories[].owner.id` string
+
+Unique ID of the owner namespace.
+
+`installation.repositories[].owner.type` string
+
+`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
+
+`installation.scopes` array
+
+`installation.repositoriesCount` integer
+
+True total; 0 when repository\_selection is "all".
+
+`installation.createdAt` string
+
+RFC 3339 timestamp.
+
+`installation.updatedAt` string
+
+RFC 3339 timestamp.
+
+`installation.deletedAt` string
+
+RFC 3339 timestamp.
+
+`installation.suspendedAt` string
+
+Set while the installation is suspended; unset when it is active. RFC 3339 timestamp.
+
+`installation.installedBy` object
+
+User who originally installed the app.
+
+`installation.installedBy.id` string
+
+`installation.installedBy.email` string Required
+
+`installation.installedBy.displayName` string
+
+Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
+
+`installation.installedBy.handle` string
+
+The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
+
+`app` object
+
+The app the installation belongs to.
+
+`app.id` string
+
+`app.displayName` string
+
+The app's registered display name, never empty when present. Omitted when enqueue-time hydration could not resolve the app.
+
+**Sample `event.payload`:**
+
+```json
+{
+  "installation": {
+    "id": "inst_01k2ja2000e0080000000000b2",
+    "appId": "app_01k2ja2000e0080000000000a1",
+    "target": {
+      "slug": "acme",
+      "id": "ns_01k2ja2000e0080000000000p3",
+      "type": "team"
+    },
+    "repoSelectionMode": "selected",
+    "repositories": [
+      {
+        "id": "repo_01k2ja2000e0080000000000q4",
+        "name": "rocket",
+        "owner": {
+          "slug": "acme",
+          "id": "ns_01k2ja2000e0080000000000p3",
+          "type": "team"
+        }
+      }
+    ],
+    "scopes": [
+      "repository:contents:read",
+      "repository:pull_requests:read"
+    ],
+    "repositoriesCount": 1,
+    "createdAt": "2026-08-01T09:30:00Z",
+    "updatedAt": "2026-08-01T09:30:00Z",
+    "installedBy": {
+      "id": "user_01k2ja2000e0080000000000c3",
+      "email": "jane@acme.dev"
+    }
+  },
+  "app": {
+    "id": "app_01k2ja2000e0080000000000a1",
+    "displayName": "CI Status Bot"
+  }
+}
+```
+
+### Installation Updated
+
+installation.updated
+
+#### Payload Fields
+
+`installation` object
+
+The installation snapshot at the time of the event.
+
+`installation.id` string
+
+`installation.appId` string
+
+The installed app's identifier; the same value as `app.id` on the payload.
+
+`installation.target` object
+
+The owner of a repo.
+
+`installation.target.slug` string
+
+Unique URL-friendly name of the owner.
+
+`installation.target.id` string
+
+Unique ID of the owner namespace.
+
+`installation.target.type` string
+
+`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
+
+`installation.repoSelectionMode` string
+
+One of `all`, `selected`.
+
+`installation.repositories` array
+
+Empty when repository\_selection is "all". Capped at 5,000; see repositories\_count for the true total.
+
+`installation.repositories[].id` string
+
+`installation.repositories[].name` string
+
+`installation.repositories[].owner` object
+
+The owner of a repo.
+
+`installation.repositories[].owner.slug` string
+
+Unique URL-friendly name of the owner.
+
+`installation.repositories[].owner.id` string
+
+Unique ID of the owner namespace.
+
+`installation.repositories[].owner.type` string
+
+`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
+
+`installation.scopes` array
+
+`installation.repositoriesCount` integer
+
+True total; 0 when repository\_selection is "all".
+
+`installation.createdAt` string
+
+RFC 3339 timestamp.
+
+`installation.updatedAt` string
+
+RFC 3339 timestamp.
+
+`installation.deletedAt` string
+
+RFC 3339 timestamp.
+
+`installation.suspendedAt` string
+
+Set while the installation is suspended; unset when it is active. RFC 3339 timestamp.
+
+`installation.installedBy` object
+
+User who originally installed the app.
+
+`installation.installedBy.id` string
+
+`installation.installedBy.email` string Required
+
+`installation.installedBy.displayName` string
+
+Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
+
+`installation.installedBy.handle` string
+
+The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
+
+`app` object
+
+The app the installation belongs to.
+
+`app.id` string
+
+`app.displayName` string
+
+The app's registered display name, never empty when present. Omitted when enqueue-time hydration could not resolve the app.
+
+**Sample `event.payload`:**
+
+```json
+{
+  "installation": {
+    "id": "inst_01k2ja2000e0080000000000b2",
+    "appId": "app_01k2ja2000e0080000000000a1",
+    "target": {
+      "slug": "acme",
+      "id": "ns_01k2ja2000e0080000000000p3",
+      "type": "team"
+    },
+    "repoSelectionMode": "selected",
+    "repositories": [
+      {
+        "id": "repo_01k2ja2000e0080000000000q4",
+        "name": "rocket",
+        "owner": {
+          "slug": "acme",
+          "id": "ns_01k2ja2000e0080000000000p3",
+          "type": "team"
+        }
+      }
+    ],
+    "scopes": [
+      "repository:contents:read",
+      "repository:pull_requests:read"
+    ],
+    "repositoriesCount": 1,
+    "createdAt": "2026-08-01T09:30:00Z",
+    "updatedAt": "2026-08-02T14:45:00Z",
+    "installedBy": {
+      "id": "user_01k2ja2000e0080000000000c3",
+      "email": "jane@acme.dev"
+    }
+  },
+  "app": {
+    "id": "app_01k2ja2000e0080000000000a1",
+    "displayName": "CI Status Bot"
+  }
+}
+```
+
+### Installation Suspended
+
+installation.suspended
+
+#### Payload Fields
+
+`installation` object
+
+The installation snapshot at the time of the event.
+
+`installation.id` string
+
+`installation.appId` string
+
+The installed app's identifier; the same value as `app.id` on the payload.
+
+`installation.target` object
+
+The owner of a repo.
+
+`installation.target.slug` string
+
+Unique URL-friendly name of the owner.
+
+`installation.target.id` string
+
+Unique ID of the owner namespace.
+
+`installation.target.type` string
+
+`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
+
+`installation.repoSelectionMode` string
+
+One of `all`, `selected`.
+
+`installation.repositories` array
+
+Empty when repository\_selection is "all". Capped at 5,000; see repositories\_count for the true total.
+
+`installation.repositories[].id` string
+
+`installation.repositories[].name` string
+
+`installation.repositories[].owner` object
+
+The owner of a repo.
+
+`installation.repositories[].owner.slug` string
+
+Unique URL-friendly name of the owner.
+
+`installation.repositories[].owner.id` string
+
+Unique ID of the owner namespace.
+
+`installation.repositories[].owner.type` string
+
+`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
+
+`installation.scopes` array
+
+`installation.repositoriesCount` integer
+
+True total; 0 when repository\_selection is "all".
+
+`installation.createdAt` string
+
+RFC 3339 timestamp.
+
+`installation.updatedAt` string
+
+RFC 3339 timestamp.
+
+`installation.deletedAt` string
+
+RFC 3339 timestamp.
+
+`installation.suspendedAt` string
+
+Set while the installation is suspended; unset when it is active. RFC 3339 timestamp.
+
+`installation.installedBy` object
+
+User who originally installed the app.
+
+`installation.installedBy.id` string
+
+`installation.installedBy.email` string Required
+
+`installation.installedBy.displayName` string
+
+Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
+
+`installation.installedBy.handle` string
+
+The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
+
+`app` object
+
+The app the installation belongs to.
+
+`app.id` string
+
+`app.displayName` string
+
+The app's registered display name, never empty when present. Omitted when enqueue-time hydration could not resolve the app.
+
+**Sample `event.payload`:**
+
+```json
+{
+  "installation": {
+    "id": "inst_01k2ja2000e0080000000000b2",
+    "appId": "app_01k2ja2000e0080000000000a1",
+    "target": {
+      "slug": "acme",
+      "id": "ns_01k2ja2000e0080000000000p3",
+      "type": "team"
+    },
+    "repoSelectionMode": "selected",
+    "repositories": [
+      {
+        "id": "repo_01k2ja2000e0080000000000q4",
+        "name": "rocket",
+        "owner": {
+          "slug": "acme",
+          "id": "ns_01k2ja2000e0080000000000p3",
+          "type": "team"
+        }
+      }
+    ],
+    "scopes": [
+      "repository:contents:read",
+      "repository:pull_requests:read"
+    ],
+    "repositoriesCount": 1,
+    "createdAt": "2026-08-01T09:30:00Z",
+    "installedBy": {
+      "id": "user_01k2ja2000e0080000000000c3",
+      "email": "jane@acme.dev"
+    },
+    "suspendedAt": "2026-08-03T08:15:00Z"
+  },
+  "app": {
+    "id": "app_01k2ja2000e0080000000000a1",
+    "displayName": "CI Status Bot"
+  }
+}
+```
+
+### Installation Unsuspended
+
+installation.unsuspended
+
+#### Payload Fields
+
+`installation` object
+
+The installation snapshot at the time of the event.
+
+`installation.id` string
+
+`installation.appId` string
+
+The installed app's identifier; the same value as `app.id` on the payload.
+
+`installation.target` object
+
+The owner of a repo.
+
+`installation.target.slug` string
+
+Unique URL-friendly name of the owner.
+
+`installation.target.id` string
+
+Unique ID of the owner namespace.
+
+`installation.target.type` string
+
+`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
+
+`installation.repoSelectionMode` string
+
+One of `all`, `selected`.
+
+`installation.repositories` array
+
+Empty when repository\_selection is "all". Capped at 5,000; see repositories\_count for the true total.
+
+`installation.repositories[].id` string
+
+`installation.repositories[].name` string
+
+`installation.repositories[].owner` object
+
+The owner of a repo.
+
+`installation.repositories[].owner.slug` string
+
+Unique URL-friendly name of the owner.
+
+`installation.repositories[].owner.id` string
+
+Unique ID of the owner namespace.
+
+`installation.repositories[].owner.type` string
+
+`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
+
+`installation.scopes` array
+
+`installation.repositoriesCount` integer
+
+True total; 0 when repository\_selection is "all".
+
+`installation.createdAt` string
+
+RFC 3339 timestamp.
+
+`installation.updatedAt` string
+
+RFC 3339 timestamp.
+
+`installation.deletedAt` string
+
+RFC 3339 timestamp.
+
+`installation.suspendedAt` string
+
+Set while the installation is suspended; unset when it is active. RFC 3339 timestamp.
+
+`installation.installedBy` object
+
+User who originally installed the app.
+
+`installation.installedBy.id` string
+
+`installation.installedBy.email` string Required
+
+`installation.installedBy.displayName` string
+
+Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
+
+`installation.installedBy.handle` string
+
+The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
+
+`app` object
+
+The app the installation belongs to.
+
+`app.id` string
+
+`app.displayName` string
+
+The app's registered display name, never empty when present. Omitted when enqueue-time hydration could not resolve the app.
+
+**Sample `event.payload`:**
+
+```json
+{
+  "installation": {
+    "id": "inst_01k2ja2000e0080000000000b2",
+    "appId": "app_01k2ja2000e0080000000000a1",
+    "target": {
+      "slug": "acme",
+      "id": "ns_01k2ja2000e0080000000000p3",
+      "type": "team"
+    },
+    "repoSelectionMode": "selected",
+    "repositories": [
+      {
+        "id": "repo_01k2ja2000e0080000000000q4",
+        "name": "rocket",
+        "owner": {
+          "slug": "acme",
+          "id": "ns_01k2ja2000e0080000000000p3",
+          "type": "team"
+        }
+      }
+    ],
+    "scopes": [
+      "repository:contents:read",
+      "repository:pull_requests:read"
+    ],
+    "repositoriesCount": 1,
+    "createdAt": "2026-08-01T09:30:00Z",
+    "installedBy": {
+      "id": "user_01k2ja2000e0080000000000c3",
+      "email": "jane@acme.dev"
+    }
+  },
+  "app": {
+    "id": "app_01k2ja2000e0080000000000a1",
+    "displayName": "CI Status Bot"
+  }
+}
+```
+
+### Installation Deleted
+
+installation.deleted
+
+#### Payload Fields
+
+`installation` object
+
+The installation snapshot at the time of the event.
+
+`installation.id` string
+
+`installation.appId` string
+
+The installed app's identifier; the same value as `app.id` on the payload.
+
+`installation.target` object
+
+The owner of a repo.
+
+`installation.target.slug` string
+
+Unique URL-friendly name of the owner.
+
+`installation.target.id` string
+
+Unique ID of the owner namespace.
+
+`installation.target.type` string
+
+`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
+
+`installation.repoSelectionMode` string
+
+One of `all`, `selected`.
+
+`installation.repositories` array
+
+Empty when repository\_selection is "all". Capped at 5,000; see repositories\_count for the true total.
+
+`installation.repositories[].id` string
+
+`installation.repositories[].name` string
+
+`installation.repositories[].owner` object
+
+The owner of a repo.
+
+`installation.repositories[].owner.slug` string
+
+Unique URL-friendly name of the owner.
+
+`installation.repositories[].owner.id` string
+
+Unique ID of the owner namespace.
+
+`installation.repositories[].owner.type` string
+
+`team` or `user`. Output-only; unset when unknown. One of `team`, `user`.
+
+`installation.scopes` array
+
+`installation.repositoriesCount` integer
+
+True total; 0 when repository\_selection is "all".
+
+`installation.createdAt` string
+
+RFC 3339 timestamp.
+
+`installation.updatedAt` string
+
+RFC 3339 timestamp.
+
+`installation.deletedAt` string
+
+RFC 3339 timestamp.
+
+`installation.suspendedAt` string
+
+Set while the installation is suspended; unset when it is active. RFC 3339 timestamp.
+
+`installation.installedBy` object
+
+User who originally installed the app.
+
+`installation.installedBy.id` string
+
+`installation.installedBy.email` string Required
+
+`installation.installedBy.displayName` string
+
+Human-readable display name: the account's first and last name, each trimmed, joined with a space — exactly the name the product UI renders. Omitted when the account has no name; never synthesized from the email, the id, or any other field. May also be absent on webhook payloads whose actor could not be resolved.
+
+`installation.installedBy.handle` string
+
+The user's claimed profile handle (the identity behind cursor.com /@handle), without the @ prefix. Present only while the user's profile is publicly visible; omitted for users without a claimed handle and for non-public profiles.
+
+`app` object
+
+The app the installation belongs to.
+
+`app.id` string
+
+`app.displayName` string
+
+The app's registered display name, never empty when present. Omitted when enqueue-time hydration could not resolve the app.
+
+**Sample `event.payload`:**
+
+```json
+{
+  "installation": {
+    "id": "inst_01k2ja2000e0080000000000b2",
+    "appId": "app_01k2ja2000e0080000000000a1",
+    "target": {
+      "slug": "acme",
+      "id": "ns_01k2ja2000e0080000000000p3",
+      "type": "team"
+    },
+    "repoSelectionMode": "selected",
+    "repositories": [
+      {
+        "id": "repo_01k2ja2000e0080000000000q4",
+        "name": "rocket",
+        "owner": {
+          "slug": "acme",
+          "id": "ns_01k2ja2000e0080000000000p3",
+          "type": "team"
+        }
+      }
+    ],
+    "scopes": [
+      "repository:contents:read",
+      "repository:pull_requests:read"
+    ],
+    "repositoriesCount": 1,
+    "createdAt": "2026-08-01T09:30:00Z",
+    "installedBy": {
+      "id": "user_01k2ja2000e0080000000000c3",
+      "email": "jane@acme.dev"
+    },
+    "deletedAt": "2026-08-03T08:15:00Z"
+  },
+  "app": {
+    "id": "app_01k2ja2000e0080000000000a1",
+    "displayName": "CI Status Bot"
+  }
+}
 ```
 
 

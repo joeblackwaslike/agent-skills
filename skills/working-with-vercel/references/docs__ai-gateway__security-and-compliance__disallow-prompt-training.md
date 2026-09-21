@@ -3,7 +3,7 @@ title: AI Gateway Disallow Prompt Training
 product: vercel
 url: /docs/ai-gateway/security-and-compliance/disallow-prompt-training
 canonical_url: "https://vercel.com/docs/ai-gateway/security-and-compliance/disallow-prompt-training"
-last_updated: 2026-09-08
+last_updated: 2026-09-10
 type: how-to
 prerequisites:
   - /docs/ai-gateway/security-and-compliance
@@ -15,8 +15,8 @@ related:
 summary: Learn how to prevent AI providers from using your prompts and responses for model training through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/disallow-prompt-training.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "1814697cf41d4302f0eb073e7a4b9b93cbe23c8f195a3bd4cae2a70737e14d03"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "4455e1e9f0feba218edfa6ef3fa118f65653b1b63e6490cb99a5de8c5678d599"
 ---
 
 # AI Gateway Disallow Prompt Training
@@ -29,13 +29,12 @@ No training on prompt data is available to all AI Gateway users at no extra char
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [TypeSafe AI's Jev now available on AI Gateway](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=related)
+- [How to classify, route, and score with Jev and AI SDK](https://vercel.com/kb/guide/typesafe-jev-and-ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=related) — Use Jev from TypeSafe AI with AI SDK's experimental \\`evaluate\\` API to classify, route, score, and verify inside your a
 - [Zero Data Retention on AI Gateway](https://vercel.com/blog/zdr-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=related)
 - [Team-wide Zero Data Retention and prompt training controls now on AI Gateway](https://vercel.com/changelog/zero-data-retention-no-prompt-training-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=related)
 - [Team-wide provider allowlist on AI Gateway](https://vercel.com/changelog/team-wide-provider-allowlist-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=related)
 - [AI Gateway Provider Routing and Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=related) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway.
-- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
-- [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=related) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
-- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/security-and-compliance/disallow-prompt-training.graph.md](/docs/ai-gateway/security-and-compliance/disallow-prompt-training.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fdisallow-prompt-training&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -551,6 +550,12 @@ Together AI
 ✓
 
 Terms of service
+
+TypeSafe AI
+
+✓
+
+Data policy
 
 Voyage AI by MongoDB
 

@@ -16,13 +16,13 @@ related:
 summary: Deploy OCI container images with a Dockerfile or Containerfile on Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/container-images.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "4e2906c2f27a242d33789b120297d5774f419847e13522c984648da4d1a1bc33"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "553e0e80e05fc51dedeaee08418322832fbb783d8da86223d964582f38884116"
 ---
 
 # Container Images
 
-> **🔒 Permissions Required**: Container Images
+> **🔒 Permissions Required**: Container Images (Beta)
 
 Vercel Functions can run Open Container Initiative (OCI) compatible container images stored in [Vercel Container Registry (VCR)](/docs/container-registry). Functions scale up and down automatically based on demand, and use [Active CPU](/docs/functions/usage-and-pricing) pricing. You are only billed for CPU when your code is actively running, not while waiting for I/O or sleeping.
 
@@ -41,6 +41,7 @@ Vercel Functions can run Open Container Initiative (OCI) compatible container im
 - [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fcontainer-images&source_site=vercel-docs&relationship=related) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
 - [Run any Dockerfile on Vercel](https://vercel.com/blog/dockerfile-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fcontainer-images&source_site=vercel-docs&relationship=related)
 - [Container Registry limits and pricing](https://vercel.com/docs/container-registry/limits-and-pricing?from=related&source_path=%2Fdocs%2Ffunctions%2Fcontainer-images&source_site=vercel-docs&relationship=related) — Storage pricing, size limits, plan limits, and compatibility limits for Vercel Container Registry.
+- [Projects overview](https://vercel.com/docs/projects?from=related&source_path=%2Fdocs%2Ffunctions%2Fcontainer-images&source_site=vercel-docs&relationship=related) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 
 Full cross-link map for this page: [/docs/functions/container-images.graph.md](/docs/functions/container-images.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fcontainer-images&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

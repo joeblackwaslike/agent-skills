@@ -3,7 +3,7 @@ title: AI Gateway REST API Reference
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/rest-api
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/rest-api"
-last_updated: 2026-09-08
+last_updated: 2026-09-11
 type: reference
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis
@@ -17,8 +17,8 @@ related:
 summary: "Reference for AI Gateway REST endpoints: models, usage, generations, and reporting."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/rest-api.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "d2d94d353c47fb4a0bb67e3c51d5e1da96d08a07c97d6692ba32b9d53515cc8a"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "f7753dee849ed722cab7caca87fd87118dcb6a727d7612530f77359847861a9c"
 ---
 
 # AI Gateway REST API Reference
@@ -34,9 +34,9 @@ For sending inference requests, the [AI SDK](/docs/ai-gateway/sdks-and-apis/ai-s
 - [AI Gateway production index](https://vercel.com/blog/ai-gateway-production-index?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=related)
 - [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
 - [AI Gateway Provider Filtering, Ordering, and Sorting](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=related) — Control AI Gateway provider routing with order, only, and sort. Set preferences, restrict providers, and rank them by co
-- [Aggregates page views](https://vercel.com/docs/rest-api/web-analytics/aggregates-page-views?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=related) — GET /v1/query/web-analytics/visits/aggregate — Counts pageviews on a project, within the requested date range. Results a
-- [Aggregates custom events](https://vercel.com/docs/rest-api/web-analytics/aggregates-custom-events?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=related) — GET /v1/query/web-analytics/events/aggregate — Counts custom events on a project, within the requested date range. Resul
+- [Evaluation](https://vercel.com/docs/ai-gateway/modalities/evaluation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=related) — Evaluate shared state against typed questions and get back structured choices, scores, and boolean probabilities through
 - [Counts page views](https://vercel.com/docs/rest-api/web-analytics/counts-page-views?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=related) — GET /v1/query/web-analytics/visits/count — Counts the number of page views on a project \\(production only\\), since Web A
+- [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=related) — Understand AI Gateway token pricing, free and paid credits, BYOK costs, add-on charges, and payment fees. Manage credit
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/rest-api.graph.md](/docs/ai-gateway/sdks-and-apis/rest-api.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

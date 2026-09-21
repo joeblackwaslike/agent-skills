@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/error-handling.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "d0bbcb243652dc81b74ea49ec95367d8604536fc4c1a1803684029ca93959f76"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "cd564848f641790cf5991d67776394b8ad9a520ec1ea17de236b32f24e59d776"
 ---
 
 # Error Handling
@@ -252,11 +252,13 @@ for await (const chunk of stream) {
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Code Mode](/docs/ai-sdk-core/code-mode)
+- [Tool Search](/docs/ai-sdk-core/tool-search)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
+- [Evaluation](/docs/ai-sdk-core/evaluation)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)

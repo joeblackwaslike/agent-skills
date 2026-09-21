@@ -3,7 +3,7 @@ title: Framework environment variables
 product: vercel
 url: /docs/environment-variables/framework-environment-variables
 canonical_url: "https://vercel.com/docs/environment-variables/framework-environment-variables"
-last_updated: 2026-08-11
+last_updated: 2026-09-16
 type: reference
 prerequisites:
   - /docs/environment-variables
@@ -13,13 +13,13 @@ related:
 summary: "Framework environment variables are automatically populated by the Vercel, based on your project's framework."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/framework-environment-variables.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "c4c282430e3a1f06dce412ac2a11fbfef46cfe44e719ff85d474768814a2481c"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "5db016874e8f14d3df736b7693b6a19b72b7437bfecc655a99523b031412fa9e"
 ---
 
 # Framework environment variables
 
-Frameworks typically use a prefix in order to expose environment variables to the browser.
+Frameworks typically use a prefix to expose environment variables to the browser.
 
 
 <!-- docsgraph:related -->
@@ -29,7 +29,6 @@ Frameworks typically use a prefix in order to expose environment variables to th
 
 - [System environment variables](https://vercel.com/docs/environment-variables/system-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fframework-environment-variables&source_site=vercel-docs&relationship=related) — System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the
 - [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fframework-environment-variables&source_site=vercel-docs&relationship=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
-- [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fframework-environment-variables&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
 - [Vite on Vercel](https://vercel.com/docs/frameworks/frontend/vite?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fframework-environment-variables&source_site=vercel-docs&relationship=related) — Deploy Vite projects to Vercel and configure environment variables, Vercel Functions, server-side rendering, and SPA rew
 - [Deploying Bitbucket Projects with Vercel](https://vercel.com/docs/git/vercel-for-bitbucket?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fframework-environment-variables&source_site=vercel-docs&relationship=related) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
 - [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fframework-environment-variables&source_site=vercel-docs&relationship=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa

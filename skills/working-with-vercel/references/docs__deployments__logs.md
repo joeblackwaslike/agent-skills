@@ -16,8 +16,8 @@ related:
 summary: "Learn how to use Vercel's build logs to monitor the progress of building or running your deployment, and check for possible errors or build failures."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/logs.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "440e20eeaa6b10df7df900639fe5902544b728b9a4835526e226ad1dcbb09e1f"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "157e7d23a210405c4ef5362f617058517e8d625e768916c6008524bfe782fceb"
 ---
 
 # Accessing Build Logs
@@ -40,8 +40,8 @@ When you deploy your website to Vercel, the platform generates build logs that s
 - [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors?from=related&source_path=%2Fdocs%2Fdeployments%2Flogs&source_site=vercel-docs&relationship=related) — Learn the systematic steps to identify and resolve 404 issues.
 - [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions?from=related&source_path=%2Fdocs%2Fdeployments%2Flogs&source_site=vercel-docs&relationship=related)
 - [Logs](https://vercel.com/docs/logs?from=related&source_path=%2Fdocs%2Fdeployments%2Flogs&source_site=vercel-docs&relationship=related) — Use logs to find information on deployment builds, function executions, and more.
-- [Link and share Build Logs](https://vercel.com/changelog/link-and-share-build-logs?from=related&source_path=%2Fdocs%2Fdeployments%2Flogs&source_site=vercel-docs&relationship=related)
 - [Get logs for a deployment](https://vercel.com/docs/rest-api/logs/get-logs-for-a-deployment?from=related&source_path=%2Fdocs%2Fdeployments%2Flogs&source_site=vercel-docs&relationship=related) — GET /v1/projects/{projectId}/deployments/{deploymentId}/runtime-logs — Returns a stream of logs for a given deployment.
+- [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build?from=related&source_path=%2Fdocs%2Fdeployments%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
 
 Full cross-link map for this page: [/docs/deployments/logs.graph.md](/docs/deployments/logs.graph.md?from=related&source_path=%2Fdocs%2Fdeployments%2Flogs&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

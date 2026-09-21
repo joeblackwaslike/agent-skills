@@ -3,7 +3,7 @@ title: get-integration-resource
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/get-integration-resource
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/get-integration-resource"
-last_updated: 2026-09-14
+last_updated: 2026-09-21
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about get-integration-resource on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/get-integration-resource.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "ba6f17d1c6bb0f38eeb7106c6ccb673c3308311740a35202e661d18a20d5e034"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "d07240cdf3d13480f52474a7cc5a1006dd6f571d052d1441bfe0814f9b9162b1"
 ---
 
 # Get Integration Resource
@@ -46,31 +46,31 @@ Success
 
 ```json
 {
+  "billingPlanId": "string" // The ID of the billing plan the resource is subscribed to, if applicable,
   "id": "string" // required // The ID provided by the 3rd party provider for the given resource,
   "internalId": "string" // required // The ID assigned by Vercel for the given resource,
+  "metadata": "object" // The configured metadata for the resource as defined by its product's Metadata Schema,
   "name": "string" // required // The name of the resource as it is recorded in Vercel,
-  "status": "string" // The current status of the resource,
+  "notification": {
+    "href": "string",
+    "level": "string" // required,
+    "message": "string",
+    "title": "string" // required
+  },
   "productId": "string" // required // The ID of the product the resource is derived from,
   "protocolSettings": {
+    "authentication": {
+      "appUrls": [
+        "target": "string" // required,
+        "url": "string" // required
+      ]
+    },
     "experimentation": {
       "edgeConfigId": "string",
       "globalConfigId": "string"
-    },
-    "authentication": {
-      "appUrls": [
-        "url": "string" // required,
-        "target": "string" // required
-      ]
     }
   },
-  "notification": {
-    "level": "string" // required,
-    "title": "string" // required,
-    "message": "string",
-    "href": "string"
-  },
-  "billingPlanId": "string" // The ID of the billing plan the resource is subscribed to, if applicable,
-  "metadata": "object" // The configured metadata for the resource as defined by its product's Metadata Schema
+  "status": "string" // The current status of the resource
 }
 ```
 

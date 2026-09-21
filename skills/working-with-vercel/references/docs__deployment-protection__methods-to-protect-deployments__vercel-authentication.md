@@ -3,7 +3,7 @@ title: Restrict access to deployments with Vercel Authentication
 product: vercel
 url: /docs/deployment-protection/methods-to-protect-deployments/vercel-authentication
 canonical_url: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication"
-last_updated: 2026-08-28
+last_updated: 2026-09-15
 type: how-to
 prerequisites:
   - /docs/deployment-protection/methods-to-protect-deployments
@@ -17,15 +17,15 @@ related:
 summary: Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "0bf9206510191fdf39829253df5c733af755db94f713f4aaf68d54aa530da25a"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "11498331e8b1b7771c4cc89d9fd04c4cc4920667977c8dc36312782982a974fe"
 ---
 
 # Restrict access to deployments with Vercel Authentication
 
 > **🔒 Permissions Required**: Vercel Authentication
 
-Vercel Authentication lets you restrict access to your public and non-public deployments. It is the **recommended** approach to protecting your deployments, and available on all plans. When enabled, it allows only users with deployment access to view and comment on your site.
+Vercel Authentication lets you restrict access to your public and non-public deployments. It is the **recommended** approach to protecting your deployments. When enabled, it allows only users with deployment access to view and comment on your site.
 
 
 <!-- docsgraph:related -->

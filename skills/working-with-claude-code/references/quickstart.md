@@ -1,6 +1,6 @@
 ---
 source: "https://code.claude.com/docs/en/quickstart.md"
-fetched_at: "2026-09-14T09:37:17.168Z"
+fetched_at: "2026-09-21T09:39:23.760Z"
 sha256: "c68c8537c767e88dc4cddfdb6d5e9a2aa85ed3118f3c9d0e2a4539c82222e06f"
 ---
 

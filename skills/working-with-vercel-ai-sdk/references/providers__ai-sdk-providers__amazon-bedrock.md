@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "0f59324b36d1692ed97d374d704a78ab8db345929d965086629d6cd88bb3ad19"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "6baaf04ec814c08b26ed3bfcb7d203e10eb840ee6e90d43d4bd564ca5c980a48"
 ---
 
 # Amazon Bedrock Provider
@@ -278,6 +278,42 @@ The legacy `providerOptions.bedrock` key remains supported. For parity with the
 Anthropic provider, `providerOptions.anthropic.structuredOutputMode` is also
 honored for Anthropic models on Bedrock. When both are provided, the
 `amazonBedrock` or legacy `bedrock` value takes precedence.
+
+For an Anthropic application inference profile, prefer the Bedrock Anthropic
+provider. It uses Bedrock's native InvokeModel API, which accepts application
+inference profile ARNs, and identifies the model as Anthropic automatically:
+
+```ts
+import { amazonBedrockAnthropic } from '@ai-sdk/amazon-bedrock/anthropic';
+
+const profileArn =
+  'arn:aws:bedrock:us-east-1:123456789012:application-inference-profile/qibm5eutlkcy';
+
+const model = amazonBedrockAnthropic(profileArn);
+```
+
+Use `modelFamily: 'anthropic'` only when you need to use the generic
+`@ai-sdk/amazon-bedrock` provider, which uses Bedrock's Converse API (for
+example, when IAM permits Converse but not InvokeModel). Application inference
+profile ARNs do not identify their underlying model, so declaring the family
+allows Anthropic-specific features, including native structured output:
+
+```ts
+import {
+  amazonBedrock,
+  type AmazonBedrockChatModelSettings,
+} from '@ai-sdk/amazon-bedrock';
+
+const profileArn =
+  'arn:aws:bedrock:us-east-1:123456789012:application-inference-profile/qibm5eutlkcy';
+
+const model = amazonBedrock(profileArn, {
+  modelFamily: 'anthropic',
+} satisfies AmazonBedrockChatModelSettings);
+```
+
+For an underlying model that does not reliably support native structured
+output, set `structuredOutputMode` to `"jsonTool"`.
 
 ### File Inputs
 
@@ -1720,6 +1756,7 @@ const result = await generateText({
 
 Anthropic has reasoning support for Claude 3.7 and Claude 4 models on Bedrock, including:
 
+- `us.anthropic.claude-fable-5-1`
 - `us.anthropic.claude-sonnet-5`
 - `us.anthropic.claude-fable-5`
 - `us.anthropic.claude-opus-4-8`
@@ -1765,6 +1802,7 @@ on how to integrate reasoning into your chatbot.
 
 | Model                                          | Image Input | Object Generation | Tool Usage | Computer Use | Reasoning |
 | ---------------------------------------------- | ----------- | ----------------- | ---------- | ------------ | --------- |
+| `us.anthropic.claude-fable-5-1`                | <Check />   | <Check />         | <Check />  | <Check />    | <Check /> |
 | `us.anthropic.claude-sonnet-5`                 | <Check />   | <Check />         | <Check />  | <Check />    | <Check /> |
 | `us.anthropic.claude-fable-5`                  | <Check />   | <Check />         | <Check />  | <Check />    | <Check /> |
 | `us.anthropic.claude-opus-4-8`                 | <Check />   | <Check />         | <Check />  | <Check />    | <Check /> |
@@ -1967,6 +2005,7 @@ Static IAM user keys do not require `sessionToken`.
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
 - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
+- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/translation.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "699e33a46e5c46777159d91190700a15936f22fb20cd5e9c3ee07713f6f19aed"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "88716f6db623b5f9f229551067d84bc4410c109074f4a59bb5194b8a7dcde6d4"
 ---
 
 # Translation
@@ -220,11 +220,13 @@ providers. For more, see the respective provider documentation.
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Code Mode](/docs/ai-sdk-core/code-mode)
+- [Tool Search](/docs/ai-sdk-core/tool-search)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
+- [Evaluation](/docs/ai-sdk-core/evaluation)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)

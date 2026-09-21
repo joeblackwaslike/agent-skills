@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-load-api-key-error.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "9d0068d5903fc0b9b51f78575e759c71440e80a86cc42a2ed8a23d093ed3469f"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "fa205a1b1b4951e4ddc2b9f178313d5875363a3cb7390943e9bdb054969ccd0d"
 ---
 
 # AI_LoadAPIKeyError
@@ -30,6 +30,7 @@ if (LoadAPIKeyError.isInstance(error)) {
 - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
 - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
 - [AI_EmptyResponseBodyError](/docs/reference/ai-sdk-errors/ai-empty-response-body-error)
+- [AI_EvaluationUnsupportedQuestionTypeError](/docs/reference/ai-sdk-errors/ai-evaluation-unsupported-question-type-error)
 - [AI_InvalidArgumentError](/docs/reference/ai-sdk-errors/ai-invalid-argument-error)
 - [AI_InvalidDataContentError](/docs/reference/ai-sdk-errors/ai-invalid-data-content-error)
 - [AI_InvalidMessageRoleError](/docs/reference/ai-sdk-errors/ai-invalid-message-role-error)

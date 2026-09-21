@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-skills/main/README.md"
-fetched_at: "2026-09-14T09:40:16.185Z"
-sha256: "cd3d546a5b2a47f8adddef7db365d552b13e0604ee498d485d3066000abe4484"
+fetched_at: "2026-09-21T09:41:39.746Z"
+sha256: "b8b4bd1477682a220809ea485beb57a28512f2e1e48f10bd5b574a72f4c08ff5"
 ---
 
 # Gemini API skills
@@ -39,7 +39,7 @@ and 96% with Gemini 3.1 Pro. For more details, see our blog post:
 
 | Skill | Description |
 | :--- | :--- |
-| [`gemini-api-dev`](skills/gemini-api-dev) | Skill for building apps with the [Gemini API](https://ai.google.dev/gemini-api/docs/interactions?ua=chat) (Interactions API). Covers text generation, multi-turn chat, streaming, function calling, structured output, image generation, Deep Research agents, deprecated model guardrails, and both Python and TypeScript SDKs. |
+| [`gemini-api-dev`](skills/gemini-api-dev) | Skill for building apps with the [Gemini API](https://ai.google.dev/gemini-api/docs/interactions?ua=chat) (Interactions API). Covers text generation, multi-turn chat, streaming, function calling, structured output, image generation, managed agents, Deep Research, deprecated model guardrails, and both Python and TypeScript SDKs. |
 | [`gemini-live-api-dev`](skills/gemini-live-api-dev) | Skill for building real-time, bidirectional streaming apps with the Gemini Live API. Covers WebSocket-based audio/video/text streaming, voice activity detection, native audio features, function calling, and session management. |
 | [`gemini-omni-flash-api`](skills/gemini-omni-flash-api) | Specialized generative AI video skill focused on Gemini Omni 1.1 Flash (`gemini-omni-1.1-flash`), video editing, image and video referenced generation, first and last frame transitions, and video extensions using the Interactions API. |
 

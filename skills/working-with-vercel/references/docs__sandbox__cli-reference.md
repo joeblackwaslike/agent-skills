@@ -3,7 +3,7 @@ title: Sandbox CLI Reference
 product: vercel
 url: /docs/sandbox/cli-reference
 canonical_url: "https://vercel.com/docs/sandbox/cli-reference"
-last_updated: 2026-09-04
+last_updated: 2026-09-10
 type: reference
 prerequisites:
   - /docs/sandbox
@@ -16,8 +16,8 @@ related:
 summary: Based on the Docker CLI, you can use the Sandbox CLI to manage your Vercel Sandbox from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/cli-reference.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "fca536df47f61a38f35d992c4e519893f07d21f9835f533f09956d03d1f5ad32"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "b8504e91230aacbf9dbb710f2b5d723331afacac6ec57196f6b78a58dfcc1d95"
 ---
 
 # Sandbox CLI Reference
@@ -37,10 +37,10 @@ The Sandbox CLI, based on the Docker CLI, allows you to manage sandboxes, execut
 - [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
 - [Vercel Sandbox supports forking](https://vercel.com/changelog/vercel-sandbox-supports-forking?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related)
 - [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — Learn how to save sandbox state with snapshots and skip installation on future runs.
-- [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
 - [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
+- [Fork a named sandbox](https://vercel.com/docs/rest-api/sandboxes/fork-a-named-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — POST /v2/sandboxes/{name}/fork — Forks a named sandbox, creating a new named sandbox from the source's configuration. Re
 - [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
 
 Full cross-link map for this page: [/docs/sandbox/cli-reference.graph.md](/docs/sandbox/cli-reference.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=graph)
@@ -1003,7 +1003,7 @@ sandbox sessions list my-sandbox --sort-order asc --limit 100
 
 ## `sandbox drives`
 
-> **🔒 Permissions Required**: Drives
+> **🔒 Permissions Required**: Drives (Beta)
 
 Drives are persistent storage that can be mounted into a sandbox. To learn more, see [Drives](/docs/sandbox/concepts/drives).
 

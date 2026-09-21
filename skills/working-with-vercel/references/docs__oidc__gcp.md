@@ -13,8 +13,8 @@ related:
 summary: "Learn how to configure your GCP project to trust Vercel's OpenID Connect (OIDC) Identity Provider (IdP)."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/gcp.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "eb71de9e3a2d9e39ce49b1f180f2ec5a34bea16e343ce3f048a0198c1258729e"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "3c3924cf57e84033dec8de9c2fb5f55ae7622cdaeda2a832027c334b8b5c165b"
 ---
 
 # Connect to Google Cloud Platform (GCP)
@@ -29,9 +29,9 @@ To understand how GCP supports OIDC through Workload Identity Federation, consul
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Connect to Microsoft Azure](https://vercel.com/docs/oidc/azure?from=related&source_path=%2Fdocs%2Foidc%2Fgcp&source_site=vercel-docs&relationship=related) — Learn how to configure your Microsoft Azure account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Foidc%2Fgcp&source_site=vercel-docs&relationship=related)
 - [Connect to Amazon Web Services \\(AWS\\)](https://vercel.com/docs/oidc/aws?from=related&source_path=%2Fdocs%2Foidc%2Fgcp&source_site=vercel-docs&relationship=related) — Learn how to configure your AWS account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
+- [Connect to Microsoft Azure](https://vercel.com/docs/oidc/azure?from=related&source_path=%2Fdocs%2Foidc%2Fgcp&source_site=vercel-docs&relationship=related) — Learn how to configure your Microsoft Azure account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
 - [Connect to your own API](https://vercel.com/docs/oidc/api?from=related&source_path=%2Fdocs%2Foidc%2Fgcp&source_site=vercel-docs&relationship=related) — Learn how to configure your own API to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\)
 - [AI Gateway OIDC Authentication](https://vercel.com/docs/ai-gateway/authentication-and-byok/oidc?from=related&source_path=%2Fdocs%2Foidc%2Fgcp&source_site=vercel-docs&relationship=related) — Authenticate AI Gateway requests from Vercel deployments with OIDC tokens. Configure the AI SDK or send bearer tokens di
 - [AI Gateway Authentication and BYOK](https://vercel.com/docs/ai-gateway/authentication-and-byok?from=related&source_path=%2Fdocs%2Foidc%2Fgcp&source_site=vercel-docs&relationship=related) — Authenticate AI Gateway requests with API keys or OIDC tokens, and configure bring your own key \\(BYOK\\) credentials for

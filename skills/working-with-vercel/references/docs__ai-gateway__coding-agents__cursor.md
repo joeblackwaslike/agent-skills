@@ -3,7 +3,7 @@ title: Cursor with AI Gateway
 product: vercel
 url: /docs/ai-gateway/coding-agents/cursor
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/cursor"
-last_updated: 2026-09-08
+last_updated: 2026-09-13
 type: how-to
 prerequisites:
   - /docs/ai-gateway/coding-agents
@@ -14,8 +14,8 @@ related:
 summary: Connect Cursor to AI Gateway with its OpenAI base URL override. Configure the Cursor compatibility endpoint, API key, and model IDs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/cursor.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "439e2ba6f40acaa6e52085c63229982d3ef9054c5286d009b1e72736295c238c"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "d27f2e9fc41af34e46dccbb442f075e14077ceac134c3352923374d9cc1006c9"
 ---
 
 # Cursor with AI Gateway

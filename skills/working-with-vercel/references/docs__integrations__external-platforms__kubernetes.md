@@ -3,7 +3,7 @@ title: Integrating Vercel and Kubernetes
 product: vercel
 url: /docs/integrations/external-platforms/kubernetes
 canonical_url: "https://vercel.com/docs/integrations/external-platforms/kubernetes"
-last_updated: 2026-08-11
+last_updated: 2026-09-15
 type: how-to
 prerequisites:
   - /docs/integrations
@@ -16,8 +16,8 @@ related:
 summary: Deploy your frontend on Vercel alongside your existing Kubernetes infrastructure.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/external-platforms/kubernetes.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "f09677d090e62a82a1d0e28d937c88e92444ad49b80cd04e1bcfb5ec66c6ad11"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "d492d55b7d7ccfa8188df51509f163796dc0b54877dbff9cf0cbf5ced7e4a39d"
 ---
 
 # Integrating Vercel and Kubernetes
@@ -37,14 +37,14 @@ Kubernetes (K8s) is an open-source system for automating deployment, scaling, an
 - [Accelerating developer velocity and creating high-impact web teams](https://vercel.com/blog/accelerating-developer-velocity-and-creating-high-impact-web-teams?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fkubernetes&source_site=vercel-docs&relationship=related)
 - [The Frontend Cloud: Powering resiliency for global web applications](https://vercel.com/blog/the-resiliency-of-the-frontend-cloud?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fkubernetes&source_site=vercel-docs&relationship=related)
 - [Iterating from design to deploy: the shape of future builders](https://vercel.com/blog/iterating-from-design-to-deploy?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fkubernetes&source_site=vercel-docs&relationship=related)
-- [Does Vercel support Ruby on Rails applications?](https://vercel.com/kb/guide/does-vercel-support-ruby-on-rails-applications?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fkubernetes&source_site=vercel-docs&relationship=related) — Learn how you can use Ruby on Rails with your frontend on Vercel.
 - [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fkubernetes&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
 - [Migrate a Next.js app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-a-next-js-app-from-webflow-cloud-to-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fkubernetes&source_site=vercel-docs&relationship=related) — Move your Next.js app from Webflow Cloud to Vercel: remove the OpenNext Cloudflare adapter, drop the base path, map stor
+- [Does Vercel support Ruby on Rails applications?](https://vercel.com/kb/guide/does-vercel-support-ruby-on-rails-applications?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fkubernetes&source_site=vercel-docs&relationship=related) — Learn how you can use Ruby on Rails with your frontend on Vercel.
 
 Full cross-link map for this page: [/docs/integrations/external-platforms/kubernetes.graph.md](/docs/integrations/external-platforms/kubernetes.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fkubernetes&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-You can integrate Vercel with your existing Kubernetes infrastructure to optimize the delivery of your frontend applications—reducing the number of services your teams need to manage, while still taking advantage of Kubernetes for your backend and other containerized workloads.
+You can integrate Vercel with your existing Kubernetes infrastructure to optimize the delivery of your frontend applications. This reduces the number of services your teams need to manage, while still taking advantage of Kubernetes for your backend and other containerized workloads.
 
 Let’s look at key Kubernetes concepts and how Vercel’s [managed infrastructure](/products/managed-infrastructure) handles them:
 
@@ -171,7 +171,7 @@ To incrementally move your frontend applications to Vercel:
   Over time, you can evaluate whether specific backend services could also benefit from a serverless architecture and be migrated to Vercel.
 
 - ### Accelerate frontend iteration velocity on Vercel
-  With Vercel, your development processes become simpler and faster. Vercel combines all the tools you need for CI/CD, staging, testing, feedback, and QA into one streamlined [developer experience platform](/products/dx-platform) to optimize the delivery of high-quality frontend applications. Instant deployments, live previews, and comments accelerate your feedback cycle, while uniform testing environments ensure the quality of your work—letting you focus on what you do best: Building top-notch frontend applications.
+  With Vercel, your development processes become simpler and faster. Vercel combines all the tools you need for CI/CD, staging, testing, feedback, and QA into one streamlined [developer experience platform](/products/dx-platform) to optimize the delivery of high-quality frontend applications. Instant deployments, live previews, and comments accelerate your feedback cycle, while uniform testing environments ensure the quality of your work, letting you focus on what you do best: building top-notch frontend applications.
 
   A [recent study](/roi) found Vercel customers see:
   - Up to 90% increase in site performance

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "154e468e41ad51092bff11aa105b82181dc89e55262dbe1ec931bf85ea59956c"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "ebbe4c0c903919a7615628c2ed01db373bb0b942aff7d81e89c6bf01dde503a4"
 ---
 
 # AI_ToolCallNotFoundForApprovalError
@@ -31,6 +31,7 @@ if (ToolCallNotFoundForApprovalError.isInstance(error)) {
 - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
 - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
 - [AI_EmptyResponseBodyError](/docs/reference/ai-sdk-errors/ai-empty-response-body-error)
+- [AI_EvaluationUnsupportedQuestionTypeError](/docs/reference/ai-sdk-errors/ai-evaluation-unsupported-question-type-error)
 - [AI_InvalidArgumentError](/docs/reference/ai-sdk-errors/ai-invalid-argument-error)
 - [AI_InvalidDataContentError](/docs/reference/ai-sdk-errors/ai-invalid-data-content-error)
 - [AI_InvalidMessageRoleError](/docs/reference/ai-sdk-errors/ai-invalid-message-role-error)

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/overview.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "ad89a4f29f1c56a6a8d101f5b9d7c6198a30fe2a0058042f63a3ebc28f3d5c9d"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "6c8c535dc240136e84ee5ae56ade557a9fa66e077ac75f2fbff0e0befa135df2"
 ---
 
 # AI SDK Core
@@ -42,11 +42,13 @@ Please check out the [AI SDK Core API Reference](/docs/reference/ai-sdk-core) fo
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Code Mode](/docs/ai-sdk-core/code-mode)
+- [Tool Search](/docs/ai-sdk-core/tool-search)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
+- [Evaluation](/docs/ai-sdk-core/evaluation)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "672e463293b0098d4b259cf9d8b5fce6c7518b693ab42ba706a532c3a90ed39b"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "2a5889565dc5c35f8d3ee71571f001b4ce4756a6540ef0b99de5468eccba98e1"
 ---
 
 # AI SDK Providers
@@ -132,6 +132,7 @@ Not all providers support all AI SDK features. Here's a quick comparison of the 
   - [Fal](/providers/ai-sdk-providers/fal)
   - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
   - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
+  - [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
   - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
   - [Deepgram](/providers/ai-sdk-providers/deepgram)
   - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
@@ -201,6 +202,7 @@ Not all providers support all AI SDK features. Here's a quick comparison of the 
   - [Writing a Custom Provider](/providers/openai-compatible-providers/custom-providers)
   - [LM Studio](/providers/openai-compatible-providers/lmstudio)
   - [NVIDIA NIM](/providers/openai-compatible-providers/nim)
+  - [ModelRush](/providers/openai-compatible-providers/modelrush)
   - [Clarifai](/providers/openai-compatible-providers/clarifai)
   - [Heroku](/providers/openai-compatible-providers/heroku)
   - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)

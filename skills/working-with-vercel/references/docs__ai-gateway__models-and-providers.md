@@ -16,8 +16,8 @@ related:
 summary: Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web search, and compare provider...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "341ecae437a80297e5079e16f8dfae29031783a90ce4fa96adeb7c27f145653c"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "4e639e03f182c7108a10ba98a20084a2ca531bc091f70c33df0d663eab764245"
 ---
 
 # AI Gateway Models and Providers
@@ -39,7 +39,7 @@ The AI Gateway's unified API provides flexibility, allowing you to switch betwee
 - [Model fallbacks now available in Vercel AI Gateway](https://vercel.com/changelog/model-fallbacks-now-available-in-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=related)
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
 - [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=related) — Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere
-- [vercel ai-gateway](https://vercel.com/docs/cli/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=related) — Manage AI Gateway resources from the Vercel CLI: API keys, budgets, routing rules, models, leaderboards, and coding agen
+- [vercel ai-gateway](https://vercel.com/docs/cli/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=related) — Manage AI Gateway resources from the Vercel CLI: API keys, budgets, routing rules, virtual models, models, leaderboards,
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers.graph.md](/docs/ai-gateway/models-and-providers.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

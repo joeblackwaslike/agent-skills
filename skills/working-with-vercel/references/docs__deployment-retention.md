@@ -3,7 +3,7 @@ title: Deployment Retention
 product: vercel
 url: /docs/deployment-retention
 canonical_url: "https://vercel.com/docs/deployment-retention"
-last_updated: 2026-08-21
+last_updated: 2026-09-16
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: "Learn how Deployment Retention policies affect a deployment's lifecycle"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-retention.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "ab92be63fb6cf94bbb22a0df922e6abf4631d2f6bcd16ac7d603615cd020362c"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "c201d4e3ac5dcfbae495abd247e8569f6f91bbc97129f70a4eda4c20643bb89c"
 ---
 
 # Deployment Retention
@@ -36,8 +36,8 @@ Deployment retention refers to the configured policies that determine how long d
 - [Deployment retention policies now preserve active branch deployments](https://vercel.com/changelog/deployment-retention-policies-now-preserve-active-branch-deployments?from=related&source_path=%2Fdocs%2Fdeployment-retention&source_site=vercel-docs&relationship=related)
 - [Deployment Storage keeps your deployments rollback-ready](https://vercel.com/changelog/deployment-storage-keeps-your-deployments-rollback-ready?from=related&source_path=%2Fdocs%2Fdeployment-retention&source_site=vercel-docs&relationship=related)
 - [Hobby projects now default to 30-day deployment retention](https://vercel.com/changelog/hobby-projects-now-default-to-30-day-deployment-retention?from=related&source_path=%2Fdocs%2Fdeployment-retention&source_site=vercel-docs&relationship=related)
+- [Hobby projects now retain fewer deployments to free up storage](https://vercel.com/changelog/hobby-projects-now-retain-fewer-deployments-to-free-up-storage?from=related&source_path=%2Fdocs%2Fdeployment-retention&source_site=vercel-docs&relationship=related)
 - [Skew Protection max age now supports the full deployment lifetime](https://vercel.com/changelog/skew-protection-max-age-now-supports-the-full-deployment-lifetime?from=related&source_path=%2Fdocs%2Fdeployment-retention&source_site=vercel-docs&relationship=related)
-- [Updated defaults for deployment retention](https://vercel.com/changelog/updated-defaults-for-deployment-retention?from=related&source_path=%2Fdocs%2Fdeployment-retention&source_site=vercel-docs&relationship=related)
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments?from=related&source_path=%2Fdocs%2Fdeployment-retention&source_site=vercel-docs&relationship=related) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
 - [Optimize Deployment Storage](https://vercel.com/docs/deployment-storage/optimize?from=related&source_path=%2Fdocs%2Fdeployment-retention&source_site=vercel-docs&relationship=related) — Set retention periods, review remaining usage, and reduce deployment output size.
 - [Deployment Policies](https://vercel.com/docs/deployments/deployment-policy?from=related&source_path=%2Fdocs%2Fdeployment-retention&source_site=vercel-docs&relationship=related) — Use a deployment policy to control which Git sources and deployment mechanisms can deploy to your team and projects, per
@@ -94,11 +94,18 @@ vercel list [project-name] [--policy errored=6m]
 
 ### Exceptions to the retention policy
 
-Deployments older than the configured retention interval are not always deleted. Deployments will be kept while any of the following is true:
+Deployments older than the configured retention interval are not always deleted. Vercel keeps a deployment while any of the following is true.
 
-- The deployment is one of the last 10 deployments created in the project.
-- The deployment is one of the last 20 production deployments in state Ready.
-- The deployment is one of the last 20 non-production deployments in state Ready.
+These recent deployment exceptions depend on your plan:
+
+| Exception | Hobby | Pro and Enterprise |
+| --- | --- | --- |
+| Last deployments created in the project | Last 3 | Last 10 |
+| Production deployments in state Ready | Last 3 | Last 20 |
+| Non-production deployments in state Ready | Not applied | Last 20 |
+
+These exceptions apply on every plan:
+
 - The deployment has a production alias assigned to it.
 - The deployment is the target of a [branch alias](/docs/domains/working-with-domains/assign-domain-to-a-git-branch) for a [custom environment](/docs/deployments/environments#custom-environments).
 - The deployment is a non-production deployment and has any custom alias assigned to it.

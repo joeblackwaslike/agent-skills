@@ -3,7 +3,7 @@ title: AI Gateway Service Tiers
 product: vercel
 url: /docs/ai-gateway/models-and-providers/service-tiers
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/service-tiers"
-last_updated: 2026-09-08
+last_updated: 2026-09-10
 type: reference
 prerequisites:
   - /docs/ai-gateway/models-and-providers
@@ -14,8 +14,8 @@ related:
 summary: Control processing priority and cost for OpenAI, Google AI Studio, Google Vertex AI, and SpaceXAI models using service tiers through AI Gateway,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/service-tiers.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "42ca09abd6e402a4728f556fa3beb734d6f14bc8b4263011f93a0aa1766d114e"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "6e5b81631f10a8f2f5961148eaa12d077bc029c069e731cdbddec46c728410ea"
 ---
 
 # AI Gateway Service Tiers

@@ -14,8 +14,8 @@ related:
 summary: Authenticate GitHub Actions with Vercel Container Registry using OIDC, then build and push images with your container tool.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/container-registry/github-actions.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "ed959e7f64f21cab8e7f7b41191c92a844a441c6847ff060e7a4f369cc57ebd1"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "f6cd26b231119c6ab59a5056793a7f3fae9dddf0ab8cd669367f229ead08ea1c"
 ---
 
 # Push Images from GitHub Actions
@@ -34,7 +34,7 @@ Push images to Vercel Container Registry (VCR) from GitHub Actions without stori
 - [Manage Vercel Container Registry with Vercel CLI](https://vercel.com/changelog/manage-vercel-container-registry-with-vercel-cli?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fgithub-actions&source_site=vercel-docs&relationship=related)
 - [Running Docker on Vercel](https://vercel.com/kb/guide/docker?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fgithub-actions&source_site=vercel-docs&relationship=related) — Learn how to run Docker on Vercel by deploying OCI container images as Vercel Functions, storing them in Vercel Containe
 - [GitHub Actions](https://turborepo.dev/docs/guides/ci-vendors/github-actions?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fgithub-actions&source_site=vercel-docs&relationship=related) — Configure GitHub Actions workflows to run Turborepo tasks with Remote Caching.
-- [How can I use the Vercel CLI for custom workflows?](https://vercel.com/kb/guide/using-vercel-cli-for-custom-workflows?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fgithub-actions&source_site=vercel-docs&relationship=related) — You can use the Vercel CLI to deploy any application, including custom git providers and restricted source code.
+- [vercel vcr](https://vercel.com/docs/cli/vcr?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fgithub-actions&source_site=vercel-docs&relationship=related) — Manage Vercel Container Registry from the Vercel CLI: build and push images, manage repositories, tags, and images, and
 - [Use Remote Caching from External CI/CD](https://vercel.com/docs/monorepos/remote-caching/external-ci-cd?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fgithub-actions&source_site=vercel-docs&relationship=related) — Authenticate the Turborepo CLI to Vercel Remote Cache from your CI/CD provider using OpenID Connect \\(OIDC\\) or a Person
 - [Push an image manifest](https://vercel.com/docs/rest-api/vcr/push-an-image-manifest?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fgithub-actions&source_site=vercel-docs&relationship=related) — PUT /v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference} — PUT /v2/:teamSlug/:projectSlug/:repositoryName
 

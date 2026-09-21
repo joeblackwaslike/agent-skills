@@ -12,8 +12,8 @@ related:
 summary: How to properly handle form submissions with BotID protection
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/botid/form-submissions.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "cdb2a0309da55b6cc254e813edad54c073620aeabb47badc72ddf3a3c1bcc208"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "de48871236edf65667db5a4e73647c28f7d93f5f26c99b511a691611ecd63fa8"
 ---
 
 # Form Submissions
@@ -28,8 +28,8 @@ BotID does **not** support traditional HTML forms that use the `action` and `met
 
 - [Export your Webflow site and host it on Vercel](https://vercel.com/kb/guide/webflow-vercel-drop?from=related&source_path=%2Fdocs%2Fbotid%2Fform-submissions&source_site=vercel-docs&relationship=related) — Learn how to export your Webflow site's code and host it on Vercel with Vercel Drop. Drag your .zip export into the brow
 - [Triage form submissions with Chat SDK](https://vercel.com/kb/guide/triage-form-submissions-with-chat-sdk?from=related&source_path=%2Fdocs%2Fbotid%2Fform-submissions&source_site=vercel-docs&relationship=related) — Build a Slack bot that triages form submissions with interactive cards. Forward, edit, or mark as spam without leaving S
-- [Deploying React Forms Using Formspree with Vercel](https://vercel.com/kb/guide/deploying-react-forms-using-formspree-with-vercel?from=related&source_path=%2Fdocs%2Fbotid%2Fform-submissions&source_site=vercel-docs&relationship=related) — Create and deploy a React form with the help of Formspree and Vercel.
 - [Using SvelteKit Form Actions](https://vercel.com/kb/guide/using-sveltekit-form-actions?from=related&source_path=%2Fdocs%2Fbotid%2Fform-submissions&source_site=vercel-docs&relationship=related) — This guide explains how to use form actions in SvelteKit to handle form submissions, process form data, and enhance form
+- [Deploying React Forms Using Formspree with Vercel](https://vercel.com/kb/guide/deploying-react-forms-using-formspree-with-vercel?from=related&source_path=%2Fdocs%2Fbotid%2Fform-submissions&source_site=vercel-docs&relationship=related) — Create and deploy a React form with the help of Formspree and Vercel.
 - [How to create forms with API Routes](https://nextjs.org/docs/pages/guides/forms?from=related&source_path=%2Fdocs%2Fbotid%2Fform-submissions&source_site=vercel-docs&relationship=related) — Learn how to handle form submissions and data mutations with Next.js.
 - [Form](https://nextjs.org/docs/pages/api-reference/components/form?from=related&source_path=%2Fdocs%2Fbotid%2Fform-submissions&source_site=vercel-docs&relationship=related) — Learn how to use the `\<Form\>` component to handle form submissions and search params updates with client-side navigation
 - [Deploying and testing BotID](https://vercel.com/kb/guide/deploying-and-testing-botid?from=related&source_path=%2Fdocs%2Fbotid%2Fform-submissions&source_site=vercel-docs&relationship=related) — This guide gives an overview on Vercel BotID and how to deploy and test it in production

@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage Cron Jobs effectively in Vercel. Explore cron job duration, error handling, deployments, concurrency control, local execution,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cron-jobs/manage-cron-jobs.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "c1702959cadab1bc32ce857965925c98a0dba0f36e8d0dd5a87e46f6dc127692"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "507184615c305ebaa296a538183ae6d148b48e1e4eaa87edd93b34cecb5bf949"
 ---
 
 # Managing Cron Jobs
@@ -43,7 +43,6 @@ To view your active cron jobs:
 - [Schedules](https://eve.dev/docs/schedules?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fmanage-cron-jobs&source_site=vercel-docs&relationship=related) — Run an agent on a cron cadence, either a fire-and-forget prompt or a handler that hands work off to a channel.
 - [Cron jobs now support 100 per project on every plan](https://vercel.com/changelog/cron-jobs-now-support-100-per-project-on-every-plan?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fmanage-cron-jobs&source_site=vercel-docs&relationship=related)
 - [vercel crons](https://vercel.com/docs/cli/crons?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fmanage-cron-jobs&source_site=vercel-docs&relationship=related) — Manage Cron Jobs from the Vercel CLI: add cron entries to your vercel.json, list them, and trigger them on demand.
-- [Limits](https://vercel.com/docs/limits?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fmanage-cron-jobs&source_site=vercel-docs&relationship=related) — Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
 - [Run background tasks with Celery on Vercel](https://vercel.com/docs/frameworks/backend/celery?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fmanage-cron-jobs&source_site=vercel-docs&relationship=related) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
 
 Full cross-link map for this page: [/docs/cron-jobs/manage-cron-jobs.graph.md](/docs/cron-jobs/manage-cron-jobs.graph.md?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fmanage-cron-jobs&source_site=vercel-docs&relationship=graph)

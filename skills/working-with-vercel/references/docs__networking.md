@@ -3,7 +3,7 @@ title: Networking
 product: vercel
 url: /docs/networking
 canonical_url: "https://vercel.com/docs/networking"
-last_updated: 2026-08-20
+last_updated: 2026-09-15
 type: reference
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Connect your Vercel projects to backend services with static IPs and secure networking options.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "98596ba8acb83786d3a3c4f63fc0abf53ddcc51377ba55a6425ea2ed7dc9e265"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "2363d8b7067b7d66604f34aa293038040db6fb1a9bc8fbeb019b9b15c67f632a"
 ---
 
 # Networking
@@ -31,12 +31,11 @@ Connect your projects to backend services that require IP allowlisting or dedica
 - [How can I allowlist IP addresses for a deployment?](https://vercel.com/kb/guide/how-to-allowlist-deployment-ip-address?from=related&source_path=%2Fdocs%2Fnetworking&source_site=vercel-docs&relationship=related) — Vercel deployments use dynamic outbound IPs by default. Learn how to allowlist IP addresses for a deployment with Static
 - [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related&source_path=%2Fdocs%2Fnetworking&source_site=vercel-docs&relationship=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
 - [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Fnetworking&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
-- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Fnetworking&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fnetworking&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Cleveland, USA \\(cle1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cle1?from=related&source_path=%2Fdocs%2Fnetworking&source_site=vercel-docs&relationship=related) — Vercel pricing for the Cleveland, USA \\(cle1\\) region.
+- [Vercel CDN overview](https://vercel.com/docs/cdn?from=related&source_path=%2Fdocs%2Fnetworking&source_site=vercel-docs&relationship=related) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
 - [Portland, USA \\(pdx1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/pdx1?from=related&source_path=%2Fdocs%2Fnetworking&source_site=vercel-docs&relationship=related) — Vercel pricing for the Portland, USA \\(pdx1\\) region.
+- [Cleveland, USA \\(cle1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cle1?from=related&source_path=%2Fdocs%2Fnetworking&source_site=vercel-docs&relationship=related) — Vercel pricing for the Cleveland, USA \\(cle1\\) region.
 - [Services Pricing and Limits](https://vercel.com/docs/services/pricing?from=related&source_path=%2Fdocs%2Fnetworking&source_site=vercel-docs&relationship=related) — Understand how billing works for Vercel Services, what's charged, and which limits apply.
-- [Paris, France \\(cdg1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cdg1?from=related&source_path=%2Fdocs%2Fnetworking&source_site=vercel-docs&relationship=related) — Vercel pricing for the Paris, France \\(cdg1\\) region.
 
 Full cross-link map for this page: [/docs/networking.graph.md](/docs/networking.graph.md?from=related&source_path=%2Fdocs%2Fnetworking&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -69,7 +68,7 @@ When your database or API needs to see traffic from known IP addresses, Static I
 
 ## Secure Compute
 
-For when you need your own private Virtual Private Cloud (VPC). Secure Compute gives you dedicated networks with VPC peering — your infrastructure stays completely isolated from other customers.
+For when you need your own private Virtual Private Cloud (VPC). Secure Compute gives you dedicated networks with VPC peering, so your infrastructure stays completely isolated from other customers.
 
 - **Use case**: Full network isolation and VPC peering
 - **Network**: Dedicated VPC per customer

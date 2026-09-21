@@ -16,8 +16,8 @@ related:
 summary: Learn how to get started with Sign in with Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/getting-started.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "2815feba4a38dd2c53f0b365fea8af383482343b0bd67064b3ecf64924bf0f44"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "ce4f5b093fa5cb55d1f06d1de7bbbc627d61f3f6eea21918d343d5903cb90c8e"
 ---
 
 # Getting started with Sign in with Vercel
@@ -33,8 +33,8 @@ This guide uses Next.js App Router. You'll create a Sign in with Vercel button t
 - [Sign in with Vercel now generally available](https://vercel.com/changelog/sign-in-with-vercel?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fgetting-started&source_site=vercel-docs&relationship=related)
 - [Build a Claude Managed Agent with Vercel Workflow](https://vercel.com/kb/guide/claude-managed-agent-vercel?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fgetting-started&source_site=vercel-docs&relationship=related) — Learn how to build a Claude Managed Agent on Vercel with auth, credential vaults, durable polling, and a chat UI.
 - [Build a fullstack app with Next.js 16 and Prisma Postgres](https://vercel.com/kb/guide/nextjs-prisma-postgres?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fgetting-started&source_site=vercel-docs&relationship=related) — Create a fullstack blog with the Next.js App Router, Prisma, Sign in with Vercel, Prisma Postgres from the Vercel Market
-- [The complete guide to authentication on Vercel](https://vercel.com/kb/guide/complete-guide-authentication-vercel?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fgetting-started&source_site=vercel-docs&relationship=related) — Learn how to implement authentication in your Vercel applications. Covers NextAuth/Auth.js setup, environment variable c
 - [How to identify and authorize visitors with the Vercel Passport token in Next.js](https://vercel.com/kb/guide/vercel-passport-nextjs?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fgetting-started&source_site=vercel-docs&relationship=related) — Read the Vercel Passport token server-side in a Next.js app to identify visitors with the external_sub claim and authori
+- [The complete guide to authentication on Vercel](https://vercel.com/kb/guide/complete-guide-authentication-vercel?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fgetting-started&source_site=vercel-docs&relationship=related) — Learn how to implement authentication in your Vercel applications. Covers NextAuth/Auth.js setup, environment variable c
 - [Get Started with BotID](https://vercel.com/docs/botid/get-started?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fgetting-started&source_site=vercel-docs&relationship=related) — Step-by-step guide to setting up BotID protection in your Vercel project
 - [Auth.js](https://vercel.com/docs/connect/frameworks/authjs?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fgetting-started&source_site=vercel-docs&relationship=related) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
 - [Create an Auth Token](https://vercel.com/docs/rest-api/authentication/create-an-auth-token?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fgetting-started&source_site=vercel-docs&relationship=related) — POST /v3/user/tokens — Creates and returns a new authentication token for the currently authenticated User. The \\`bearer

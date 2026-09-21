@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/generating-text.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "ceceb36e1f6f2fffec61b9f682c19816a95d3dfe7eed436fa3bac8cf17db9eb6"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "66f4795d468d35173cf1eb98f3c2dce4dfa636a1323d2d32f828b61bd920459f"
 ---
 
 # Generating and Streaming Text
@@ -815,11 +815,13 @@ You can see `generateText` and `streamText` in action using various frameworks i
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Code Mode](/docs/ai-sdk-core/code-mode)
+- [Tool Search](/docs/ai-sdk-core/tool-search)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
+- [Evaluation](/docs/ai-sdk-core/evaluation)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)

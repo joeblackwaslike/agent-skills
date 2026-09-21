@@ -3,7 +3,7 @@ title: Vercel Perplexity Integration
 product: vercel
 url: /docs/agent-resources/integrations-for-models/perplexity
 canonical_url: "https://vercel.com/docs/agent-resources/integrations-for-models/perplexity"
-last_updated: 2026-02-10
+last_updated: 2026-09-15
 type: how-to
 prerequisites:
   - /docs/agent-resources/integrations-for-models
@@ -15,8 +15,8 @@ related:
 summary: Learn how to add Perplexity connectable account integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/perplexity.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "ced9d26aa397387eaeb35d72078b4292f7f11249733638115f8057440be4a4df"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "adf2551cb02e07140014b0f2c56fe674522742cd73deeddd94c0417a1f1b7d90"
 ---
 
 # Vercel Perplexity Integration
@@ -27,8 +27,8 @@ with large language models, delivering concise, well-sourced, and conversational
 responses. Integrating Perplexity via its [Sonar
 API](https://sonar.perplexity.ai/) with Vercel allows your applications to
 deliver real-time, web-wide research and question-answering
-capabilities—complete with accurate citations, customizable sources, and
-advanced reasoning—enabling users to access up-to-date, trustworthy information
+capabilities, complete with accurate citations, customizable sources, and
+advanced reasoning. Users can access up-to-date, trustworthy information
 directly within your product experience.
 
 
@@ -37,7 +37,6 @@ directly within your product experience.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Access Perplexity Web Search on Vercel AI Gateway with any model](https://vercel.com/changelog/access-perplexity-web-search-on-vercel-ai-gateway-with-any-model?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fperplexity&source_site=vercel-docs&relationship=related)
 - [Vercel ElevenLabs Integration](https://vercel.com/docs/agent-resources/integrations-for-models/elevenlabs?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fperplexity&source_site=vercel-docs&relationship=related) — Learn how to add the ElevenLabs connectable account integration with Vercel.
 - [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fperplexity&source_site=vercel-docs&relationship=related) — Learn how to add the xAI native integration with Vercel.
 - [Vercel Deep Infra Integration](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fperplexity&source_site=vercel-docs&relationship=related) — Learn how to add the Deep Infra native integration with Vercel.

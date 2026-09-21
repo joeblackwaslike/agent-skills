@@ -3,7 +3,7 @@ title: Pricing on Vercel
 product: vercel
 url: /docs/pricing
 canonical_url: "https://vercel.com/docs/pricing"
-last_updated: 2026-09-03
+last_updated: 2026-09-14
 type: reference
 prerequisites:
   []
@@ -11,13 +11,13 @@ related:
   - /docs/pricing/taxes
   - /docs/pricing/how-does-vercel-calculate-usage-of-resources
   - /docs/functions/usage-and-pricing
-  - /docs/image-optimization/limits-and-pricing
-  - /docs/global-config/global-config-limits
+  - /docs/pricing/flat-rate-cdn
+  - /docs/manage-cdn-usage
 summary: "Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "75b7b64e65174141ec66a4452140e80bc6a239522848fa5b930d3b23bc69f318"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "2976a4c4380bf66fc4b101c43685b676143893cc1552ac861a0bf64f55296d86"
 ---
 
 # Pricing on Vercel
@@ -32,8 +32,8 @@ Vercel's pricing model includes billable metrics and pricing models across Manag
 
 - [Basic build machines are now available on Pro and Enterprise](https://vercel.com/changelog/basic-build-machines?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related)
 - [Preview URLs optimized for multi-tenant platforms](https://vercel.com/changelog/preview-urls-optimized-for-multi-tenant-platforms?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related)
-- [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 - [Account Plans on Vercel](https://vercel.com/docs/plans?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about the different plans available on Vercel.
+- [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 - [Build Queues](https://vercel.com/docs/builds/build-queues?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related) — Understand how concurrency and same branch build queues manage multiple simultaneous deployments.
 - [Preview Deployment Suffix](https://vercel.com/docs/deployments/preview-deployment-suffix?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related) — When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that parti
 - [Glossary](https://vercel.com/docs/glossary?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about the terms and concepts used in Vercel's products and documentation.
@@ -57,7 +57,19 @@ Each product's usage breaks down into resources. Vercel bills each resource by u
 
 ### Managed Infrastructure billable resources
 
-Some resources include an amount of usage your projects can use within your billing cycle. Pro teams also receive a monthly usage credit and can use many resources on demand. If you exceed an included amount or credit, Vercel charges for the extra usage.
+For Hobby teams, some resources include an amount of usage your projects can use within your billing cycle. Pro teams get a monthly usage credit instead, then move to on-demand pricing. Once you pass an included amount or use your credit, Vercel charges per unit of usage.
+
+For content delivery, you can pay on demand or through [Flat Rate CDN](/docs/pricing/flat-rate-cdn), which covers your CDN usage with a fixed monthly capacity tier.
+
+#### [CDN](/docs/manage-cdn-usage)
+
+| Resource | Price | Included (Pro) | Included (Hobby) |
+|----------|-------|----------------|-----------------|
+| [Fast Data Transfer](/docs/pricing/regional-pricing) | Regional | Flat Rate CDN | First 100 GB |
+| [Fast Origin Transfer](/docs/pricing/regional-pricing) | Regional | Usage-based | First 10 GB |
+| [Edge Requests](/docs/pricing/regional-pricing) | Regional | Flat Rate CDN | First 1,000,000 |
+| [Edge Request CPU Duration](/docs/pricing/regional-pricing) | Regional | 1 Hour | N/A |
+
 
 #### [Vercel Functions](/docs/functions/usage-and-pricing)
 
@@ -128,11 +140,12 @@ Monitoring is now part of [Observability Plus](/docs/observability/observability
 
 #### [Blob](/docs/vercel-blob/usage-and-pricing)
 
-| Resource | Price |
-|----------|-------|
-| [Blob Simple Operations](/docs/vercel-blob/usage-and-pricing#pricing) | Regional |
-| [Blob Advanced Operations](/docs/vercel-blob/usage-and-pricing#pricing) | Regional |
-| [Blob Data Transfer](/docs/vercel-blob/usage-and-pricing#pricing) | Regional |
+| Resource | Price | Included (Pro) | Included (Hobby) |
+|----------|-------|----------------|-----------------|
+| [Blob Storage Size](/docs/vercel-blob/usage-and-pricing#pricing) | Regional | Usage-based | 1GB/month |
+| [Blob Simple Operations](/docs/vercel-blob/usage-and-pricing#pricing) | Regional | Usage-based | First 10,000 |
+| [Blob Advanced Operations](/docs/vercel-blob/usage-and-pricing#pricing) | Regional | Usage-based | First 2,000 |
+| [Blob Data Transfer](/docs/vercel-blob/usage-and-pricing#pricing) | Regional | Flat Rate CDN | First 10 GB |
 
 
 #### [Microfrontends](/docs/microfrontends#limits-and-pricing)
@@ -189,9 +202,8 @@ The below table lists the billable DX Platform resources for the Pro plan. Most 
 | [Preview Deployment Suffix](/docs/deployments/generated-urls#preview-deployment-suffix) | $100 / month | N/A |
 | [SAML Single Sign-On](/docs/saml) | $300 / month | N/A |
 | [HIPAA BAA](/docs/security/compliance#hipaa) | $350 / month | N/A |
-| [Advanced Deployment Protection](/docs/deployment-protection#advanced-deployment-protection) | $150 / month | N/A |
+| [Password Protection](/docs/deployment-protection/methods-to-protect-deployments/password-protection) | $20 / month per project | N/A |
 | [Flags Explorer](/docs/flags/flags-explorer) | $250 / month | N/A |
-| [Observability Plus](/docs/observability/observability-plus) | $1.20 per 1,000,000 Events | N/A |
 | [Static IPs](/docs/networking/static-ips) | $100 / month per project, plus Private Data Transfer | N/A |
 | [Web Analytics Plus](/docs/analytics/limits-and-pricing#pro-with-web-analytics-plus) | $10 / month | N/A |
 | [Speed Insights Plus](/docs/speed-insights/limits-and-pricing) | $10 / month per project | N/A |

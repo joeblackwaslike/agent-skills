@@ -3,7 +3,7 @@ title: AI Gateway Provider Routing and Fallbacks
 product: vercel
 url: /docs/ai-gateway/models-and-providers/provider-options
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-options"
-last_updated: 2026-09-08
+last_updated: 2026-09-10
 type: reference
 prerequisites:
   - /docs/ai-gateway/models-and-providers
@@ -17,8 +17,8 @@ related:
 summary: Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-options.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "444854d44b0316e923a74263deaa37d2b6658372918b5605c6cd0be7cdb95f40"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "6c0e005263134ff9ef50d60fe1070c07a013a3986939c7b593b625fb61c36a16"
 ---
 
 # AI Gateway Provider Routing and Fallbacks
@@ -541,6 +541,12 @@ Blackbox AI
 
 blackbox.ai
 
+boundless
+
+Boundless
+
+boundless.network
+
 bytedance
 
 ByteDance
@@ -643,6 +649,12 @@ Inceptron
 
 inceptron.io
 
+inference-net
+
+Inference.net
+
+inference.net
+
 interfaze
 
 Interfaze
@@ -672,6 +684,12 @@ mistral
 Mistral
 
 mistral.ai
+
+mixedbread
+
+Mixedbread
+
+mixedbread.com
 
 modal
 
@@ -822,6 +840,12 @@ togetherai
 Together AI
 
 together.ai
+
+typesafe-ai
+
+TypeSafe AI
+
+typesafe.ai
 
 vertex
 

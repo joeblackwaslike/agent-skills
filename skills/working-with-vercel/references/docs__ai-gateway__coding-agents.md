@@ -3,7 +3,7 @@ title: Coding Agents and Chat Platforms with AI Gateway
 product: vercel
 url: /docs/ai-gateway/coding-agents
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents"
-last_updated: 2026-09-08
+last_updated: 2026-09-13
 type: conceptual
 prerequisites:
   - /docs/ai-gateway
@@ -16,8 +16,8 @@ related:
 summary: Connect coding agents and chat platforms to AI Gateway. Configure Claude Code, Codex, Chatbox, Open WebUI, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "fa36113a930b4871b4c9645ec639e6d865e5c220a36faf46ef2c5ddb7e14a275"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "7e7620b0b14d3721f73e314340ddd0971df17019fe058769ddb82e66e0755931"
 ---
 
 # Coding Agents and Chat Platforms with AI Gateway

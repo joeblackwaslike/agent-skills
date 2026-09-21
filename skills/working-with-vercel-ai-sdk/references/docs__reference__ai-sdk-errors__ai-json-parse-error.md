@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-json-parse-error.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "99245589540f80c314721c1839137576ca102764b831354debac3f7e4dda56a6"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "83b52d26e46b78ceb2edd6b44041ea8b98ded9a868cfd258ef72deab6316262a"
 ---
 
 # AI_JSONParseError
@@ -31,6 +31,7 @@ if (JSONParseError.isInstance(error)) {
 - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
 - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
 - [AI_EmptyResponseBodyError](/docs/reference/ai-sdk-errors/ai-empty-response-body-error)
+- [AI_EvaluationUnsupportedQuestionTypeError](/docs/reference/ai-sdk-errors/ai-evaluation-unsupported-question-type-error)
 - [AI_InvalidArgumentError](/docs/reference/ai-sdk-errors/ai-invalid-argument-error)
 - [AI_InvalidDataContentError](/docs/reference/ai-sdk-errors/ai-invalid-data-content-error)
 - [AI_InvalidMessageRoleError](/docs/reference/ai-sdk-errors/ai-invalid-message-role-error)

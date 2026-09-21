@@ -3,7 +3,7 @@ title: Webhooks API Reference
 product: vercel
 url: /docs/webhooks/webhooks-api
 canonical_url: "https://vercel.com/docs/webhooks/webhooks-api"
-last_updated: 2026-09-03
+last_updated: 2026-09-17
 type: reference
 prerequisites:
   - /docs/webhooks
@@ -16,8 +16,8 @@ related:
 summary: Vercel Integrations allow you to subscribe to certain trigger-based events through webhooks. Learn about the supported webhook events and how to use...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/webhooks/webhooks-api.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "b7914d04c530320c0cac553d6cd09572adffdc242af6cf57d55fa50db38609f4"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "433ba9c3e56449295a74e7558891e85b5bb17ba7f3ed7b8ba513485fee08e88f"
 ---
 
 # Webhooks API Reference
@@ -34,8 +34,8 @@ Vercel Integrations allow you to subscribe to certain trigger-based events throu
 - [Subscribe to webhook events for Vercel Flags](https://vercel.com/changelog/subscribe-to-webhook-events-for-vercel-flags?from=related&source_path=%2Fdocs%2Fwebhooks%2Fwebhooks-api&source_site=vercel-docs&relationship=related)
 - [Audit Logs](https://vercel.com/docs/audit-log?from=related&source_path=%2Fdocs%2Fwebhooks%2Fwebhooks-api&source_site=vercel-docs&relationship=related) — Learn how to track and analyze your team members' activities.
 - [Deployment integration actions](https://vercel.com/docs/integrations/create-integration/deployment-integration-action?from=related&source_path=%2Fdocs%2Fwebhooks%2Fwebhooks-api&source_site=vercel-docs&relationship=related) — These actions allow integration providers to set up automated tasks with Vercel deployments.
-- [Performing an Instant Rollback on a Deployment](https://vercel.com/docs/instant-rollback?from=related&source_path=%2Fdocs%2Fwebhooks%2Fwebhooks-api&source_site=vercel-docs&relationship=related) — Learn how to perform an Instant Rollback on your production deployments and quickly roll back to a previously deployed p
 - [Get deployment events](https://vercel.com/docs/rest-api/deployments/get-deployment-events?from=related&source_path=%2Fdocs%2Fwebhooks%2Fwebhooks-api&source_site=vercel-docs&relationship=related) — GET /v3/deployments/{idOrUrl}/events — Get the build logs of a deployment by deployment ID and build ID. It can work as
+- [Performing an Instant Rollback on a Deployment](https://vercel.com/docs/instant-rollback?from=related&source_path=%2Fdocs%2Fwebhooks%2Fwebhooks-api&source_site=vercel-docs&relationship=related) — Learn how to perform an Instant Rollback on your production deployments and quickly roll back to a previously deployed p
 - [List deployments](https://vercel.com/docs/rest-api/deployments/list-deployments?from=related&source_path=%2Fdocs%2Fwebhooks%2Fwebhooks-api&source_site=vercel-docs&relationship=related) — GET /v7/deployments — List deployments under the authenticated user or team. If a deployment hasn't finished uploading \\
 
 Full cross-link map for this page: [/docs/webhooks/webhooks-api.graph.md](/docs/webhooks/webhooks-api.graph.md?from=related&source_path=%2Fdocs%2Fwebhooks%2Fwebhooks-api&source_site=vercel-docs&relationship=graph)
@@ -552,7 +552,7 @@ Occurs whenever the user connects the integration resource to a project.
 | **payload.project.name**     | [String](/docs/rest-api#types)       | The name of the project.                                                                      |
 | **payload.projectId**        | [ID](/docs/rest-api#types)           | The ID of the project (same as project.id).                                                   |
 | **payload.productionDomain** | [String](/docs/rest-api#types)       | The production domain for the connected project (e.g., "my-app.vercel.app" or "example.com"). |
-| **payload.targets**          | [List](/docs/rest-api#types)         | The list of the deployment targets.                                                           |
+| **payload.targets**          | [List](/docs/rest-api#types)         | For Native Marketplace installations, the deduplicated list of provider-facing targets contains `production`, `preview`, or `development`. Custom Environments use `preview`. Custom Environment slugs and IDs are not included. Other integration types can receive exact Custom Environment target strings. |
 
 ### integration-resource.project-disconnected
 
@@ -566,7 +566,7 @@ Occurs whenever the user disconnects the integration resource to a project.
 | **payload.project.id**       | [ID](/docs/rest-api#types)           | The ID of the project.                                                                        |
 | **payload.projectId**        | [ID](/docs/rest-api#types)           | The ID of the project (same as project.id).                                                   |
 | **payload.productionDomain** | [String](/docs/rest-api#types)       | The production domain for the connected project (e.g., "my-app.vercel.app" or "example.com"). |
-| **payload.targets**          | [List](/docs/rest-api#types)         | The list of the deployment targets.                                                           |
+| **payload.targets**          | [List](/docs/rest-api#types)         | For Native Marketplace installations, the deduplicated list of provider-facing targets contains `production`, `preview`, or `development`. Custom Environments use `preview`. Custom Environment slugs and IDs are not included. Other integration types can receive exact Custom Environment target strings. |
 
 ### marketplace.invoice.created
 

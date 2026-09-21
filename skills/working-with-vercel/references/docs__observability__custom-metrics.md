@@ -3,7 +3,7 @@ title: Emit Custom Metrics from Vercel Functions
 product: vercel
 url: /docs/observability/custom-metrics
 canonical_url: "https://vercel.com/docs/observability/custom-metrics"
-last_updated: 2026-08-20
+last_updated: 2026-09-10
 type: reference
 prerequisites:
   - /docs/observability
@@ -13,8 +13,8 @@ related:
 summary: Learn how to emit application-specific metrics from Vercel Functions and analyze them in Observability.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/observability/custom-metrics.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "664a965b200baeb57e8d3fd02f982b7fae09847559eed4ee9c7f8ec0e2787f73"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "834ed87aaa5585c72404575307caccf96d84928efa11eaca9adb350ac60913eb"
 ---
 
 # Emit Custom Metrics from Vercel Functions

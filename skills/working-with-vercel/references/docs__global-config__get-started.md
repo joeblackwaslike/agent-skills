@@ -16,8 +16,8 @@ related:
 summary: Learn how to create a Global Config store and read from it in your project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/get-started.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "1ce625d3931ce22988e9c559f9694053c4b60987d9fbf296e531e9bde78c6c43"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "d6206edf1debe61495de3f63922864b62e1b84a69f2a316a59d1ba178eb69cb7"
 ---
 
 # Getting started with Global Config
@@ -35,7 +35,7 @@ Global Config is a distributed key-value store that allows you to store and retr
 - [Using Global Config with LaunchDarkly](https://vercel.com/docs/global-config/global-config-integrations/launchdarkly-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fget-started&source_site=vercel-docs&relationship=related) — Learn how to use Global Config with Vercel's LaunchDarkly integration.
 - [Using Global Config with DevCycle](https://vercel.com/docs/global-config/global-config-integrations/devcycle-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fget-started&source_site=vercel-docs&relationship=related) — Learn how to use Global Config with Vercel's DevCycle integration.
 - [Using Global Config with Statsig](https://vercel.com/docs/global-config/global-config-integrations/statsig-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fget-started&source_site=vercel-docs&relationship=related) — Learn how to use Global Config with Vercel's Statsig integration.
-- [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fget-started&source_site=vercel-docs&relationship=related) — POST /v1/global-config — Creates a Global Config.
+- [Using Global Config with an integration](https://vercel.com/docs/global-config/global-config-integrations?from=related&source_path=%2Fdocs%2Fglobal-config%2Fget-started&source_site=vercel-docs&relationship=related) — Learn how to use Global Config with popular A/B testing and feature flag service integrations.
 - [Vercel Storage overview](https://vercel.com/docs/storage?from=related&source_path=%2Fdocs%2Fglobal-config%2Fget-started&source_site=vercel-docs&relationship=related) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
 
 Full cross-link map for this page: [/docs/global-config/get-started.graph.md](/docs/global-config/get-started.graph.md?from=related&source_path=%2Fdocs%2Fglobal-config%2Fget-started&source_site=vercel-docs&relationship=graph)

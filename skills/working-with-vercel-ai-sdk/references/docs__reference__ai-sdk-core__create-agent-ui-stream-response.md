@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/create-agent-ui-stream-response.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "a77ceff0c9d04daeeb55d84a47e1602b5bb0db7ce96c5fd7dd7489a48b713b0a"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "0bf5e9b60a621003b57ecc9a0beaf28a2c82e931ef8666ded72859e69e397410"
 ---
 
 # `createAgentUIStreamResponse`
@@ -204,6 +204,7 @@ export async function POST(request: Request) {
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+- [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
 - [uploadFile](/docs/reference/ai-sdk-core/upload-file)
 - [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
 - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
@@ -219,6 +220,7 @@ export async function POST(request: Request) {
 - [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
 - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [toolSearch](/docs/reference/ai-sdk-core/tool-search)
 - [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
 - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)

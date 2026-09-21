@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/llm-gateway.md"
-fetched_at: "2026-09-07T08:59:03.477Z"
-sha256: "236a7b796b0255310652fa290588809971d92ef4f8b43f2a3da5c1b16544f85f"
+fetched_at: "2026-09-21T09:39:23.760Z"
+sha256: "e863684e59a07b3817483d81dc7ff96d91c96a12edba8fbe41649c6387daa4b5"
 ---
 
 > ## Documentation Index
@@ -32,7 +32,7 @@ A gateway gives your organization one place to manage:
 * **Audit logging**: log every model request for compliance
 * **Provider switching**: change the provider in gateway configuration, without touching developer machines
 
-All of these except provider switching apply whether the upstream is Anthropic's API or a [cloud provider](/docs/en/third-party-integrations). Provider switching without reconfiguring developer machines also depends on the gateway exposing a single [Anthropic-format endpoint](/docs/en/llm-gateway-protocol#api-formats) regardless of upstream; a gateway that exposes a provider's own format ties the client configuration to that provider.
+All of these except provider switching apply whether the upstream is Anthropic's API or a [cloud provider](/docs/en/third-party-integrations). Provider switching without reconfiguring developer machines also depends on the gateway exposing a single [Anthropic-format endpoint](/docs/en/llm-gateway-protocol#api-formats) regardless of upstream. A gateway that exposes a provider's own format ties the client configuration to that provider and changes [what Claude Code sends and which defaults it applies](/docs/en/llm-gateway-protocol#how-the-connection-method-changes-client-behavior).
 
 The tradeoff is that the gateway becomes infrastructure your organization operates. Claude Code adds capabilities with each release, and a gateway that doesn't forward them breaks the corresponding features, so the gateway product needs to be kept updated as Claude Code evolves. The [gateway compatibility guide](/docs/en/llm-gateway-protocol) covers what to forward.
 

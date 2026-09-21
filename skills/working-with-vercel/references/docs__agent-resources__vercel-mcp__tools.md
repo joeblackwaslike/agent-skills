@@ -3,7 +3,7 @@ title: Tools
 product: vercel
 url: /docs/agent-resources/vercel-mcp/tools
 canonical_url: "https://vercel.com/docs/agent-resources/vercel-mcp/tools"
-last_updated: 2026-08-11
+last_updated: 2026-09-15
 type: conceptual
 prerequisites:
   - /docs/agent-resources/vercel-mcp
@@ -17,8 +17,8 @@ related:
 summary: Available tools in Vercel MCP for searching docs, managing teams, projects, deployments, Web Analytics, runtime logs and errors, Agent Runs, design...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "07cc698be1f16acd6eb8bd1d1a8f1d461ca7bc644ea66f20b06daaa113f4da95"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "59f0396c3a985be394c515bf862bbefb34659bfc8f7b3229a5b9e3e57b33fc7e"
 ---
 
 # Tools
@@ -337,8 +337,8 @@ You typically won't invoke this tool directly. Your AI client calls it automatic
 | `creditType`   | string  | For `credits` | -           | Which credit balance to top up: `v0`, `gateway` (AI Gateway), or `agent` (Vercel Agent)                                                                                         |
 | `amount`       | number  | For `credits` | -           | Amount to purchase, in whole US dollars (1–1000)                                                                                                                                |
 | `domain`       | string  | For `domain`  | -           | The domain to register (e.g., example.com)                                                                                                                                     |
-| `years`        | number  | No            | TLD minimum | For `domain` — registration term in years (max 10)                                                                                                                             |
-| `autoRenew`    | boolean | No            | true        | For `domain` — whether to auto-renew at the end of the term                                                                                                                     |
+| `years`        | number  | No            | TLD minimum | Registration term in years for `domain` (max 10)                                                                                                                             |
+| `autoRenew`    | boolean | No            | true        | Whether to auto-renew `domain` at the end of the term                                                                                                                     |
 | `productAlias` | string  | For `addon`   | -           | The add-on to quote. Only `siem` is available today                                                                                                                             |
 | `quantity`     | number  | For `addon`   | -           | Number of units                                                                                                                                                                 |
 

@@ -3,7 +3,7 @@ title: Poll Mode
 product: vercel
 url: /docs/queues/poll-mode
 canonical_url: "https://vercel.com/docs/queues/poll-mode"
-last_updated: 2026-08-12
+last_updated: 2026-09-17
 type: conceptual
 prerequisites:
   - /docs/queues
@@ -16,8 +16,8 @@ related:
 summary: Consume messages from Vercel Queues by polling on your own schedule, from any environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/poll-mode.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "01aecdef4246c6da4a084e1de501c8464c27a06c41fc458345f1605e56d68215"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "db3a064ebd39ae5bc284b5e8795894926088c6d8588e990ed0dfaffa5e88fce2"
 ---
 
 # Poll Mode
@@ -37,8 +37,8 @@ In poll mode, your application polls for messages from a queue on its own schedu
 - [Vercel Queues: JS SDK Reference](https://vercel.com/docs/queues/sdk?from=related&source_path=%2Fdocs%2Fqueues%2Fpoll-mode&source_site=vercel-docs&relationship=related) — Publish and consume messages with the Vercel Queues SDK for JavaScript and TypeScript.
 - [Quickstart](https://vercel.com/docs/queues/quickstart?from=related&source_path=%2Fdocs%2Fqueues%2Fpoll-mode&source_site=vercel-docs&relationship=related) — Set up Vercel Queues with the SDK.
 - [API Reference](https://vercel.com/docs/queues/api?from=related&source_path=%2Fdocs%2Fqueues%2Fpoll-mode&source_site=vercel-docs&relationship=related) — HTTP API reference for Vercel Queues. Publish, consume, acknowledge, and manage messages.
-- [Queues Observability](https://vercel.com/docs/queues/observability?from=related&source_path=%2Fdocs%2Fqueues%2Fpoll-mode&source_site=vercel-docs&relationship=related) — Monitor queue throughput, message age, retries, and consumer performance to optimize your queue-based workflows.
 - [Run background tasks with Celery on Vercel](https://vercel.com/docs/frameworks/backend/celery?from=related&source_path=%2Fdocs%2Fqueues%2Fpoll-mode&source_site=vercel-docs&relationship=related) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
+- [Queues Observability](https://vercel.com/docs/queues/observability?from=related&source_path=%2Fdocs%2Fqueues%2Fpoll-mode&source_site=vercel-docs&relationship=related) — Monitor queue throughput, message age, retries, and consumer performance to optimize your queue-based workflows.
 
 Full cross-link map for this page: [/docs/queues/poll-mode.graph.md](/docs/queues/poll-mode.graph.md?from=related&source_path=%2Fdocs%2Fqueues%2Fpoll-mode&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -160,11 +160,42 @@ await receive('orders', 'fulfillment', handler, {
 });
 ```
 
-| Option                     | Type     | Default   | Description                                                |
-| -------------------------- | -------- | --------- | ---------------------------------------------------------- |
-| `limit`                    | `number` | `1`       | Maximum messages to receive (max: `10`)                    |
-| `visibilityTimeoutSeconds` | `number` | 5 minutes | How long received messages are hidden from other consumers |
-| `messageId`                | `string` | -         | Receive a specific message by ID                           |
+| Option                     | Type                       | Default      | Description                                                |
+| -------------------------- | -------------------------- | ------------ | ---------------------------------------------------------- |
+| `limit`                    | `number`                   | `1`          | Maximum messages to receive (max: `10`)                    |
+| `visibilityTimeoutSeconds` | `number`                   | 5 minutes    | How long received messages are hidden from other consumers |
+| `messageId`                | `string`                   | -            | Receive a specific message by ID                           |
+| `cursorFallback`           | `"earliest" \| "latest"` | `"earliest"` | Starting position for a missing consumer group cursor      |
+
+### Cursor fallback behavior
+
+`cursorFallback` controls where polling starts when a source shard has no cursor for the consumer group. It does not move or reset an existing cursor.
+
+- `"earliest"` starts at the earliest retained message. This is the default and lets a new consumer group replay available backlog.
+- `"latest"` starts after each missing shard's committed head. Use this when a consumer should process new messages without replaying retained backlog.
+
+Vercel discovers source shards as it polls and initializes missing cursors when it encounters them. With `"latest"`, each cursor starts after that shard's feeder-committed head at the time the shard is observed. Active shards are typically encountered during the initial polling requests; once a shard has a cursor, later polls continue from that cursor rather than applying the fallback again. Messages buffered above an observed shard head remain eligible for delivery.
+
+This initialization is per shard rather than a single topic-wide cutoff.
+
+For example, use `"latest"` when a newly deployed worker should skip messages retained before each shard is first discovered:
+
+```typescript filename="lib/poll-worker.ts" framework=nextjs-app
+import { PollingQueueClient } from '@vercel/queue';
+
+const { receive } = new PollingQueueClient({ region: 'iad1' });
+
+const result = await receive(
+  'orders',
+  'fulfillment',
+  async (message) => {
+    await processOrder(message);
+  },
+  { cursorFallback: 'latest' },
+);
+```
+
+The option applies to the current receive request. If multiple workers share a consumer group, configure them to send the same `cursorFallback` value. Existing shard cursors continue from their current positions and are never moved, even if a later request uses a different value. During startup, a consumer group can briefly have some shards using existing positions while newly encountered shards are initialized at their latest committed heads.
 
 ## Versioning with deployment IDs
 

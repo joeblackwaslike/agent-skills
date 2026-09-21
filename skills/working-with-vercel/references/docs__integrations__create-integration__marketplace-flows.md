@@ -3,7 +3,7 @@ title: Native Integration Flows
 product: vercel
 url: /docs/integrations/create-integration/marketplace-flows
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-flows"
-last_updated: 2026-08-28
+last_updated: 2026-09-17
 type: reference
 prerequisites:
   - /docs/integrations/create-integration
@@ -17,8 +17,8 @@ related:
 summary: Learn how information flows between the integration user, Vercel, and the integration provider for Vercel native integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-flows.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "dc8287b2116f0330b4302afdfe86514c9d1fb02750e28a44f087f0ac5dd09a1d"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "1f2d0a4b046e2ec865840ecfdf94468a1477ac8dd9456fb906288cc12bd3c19a"
 ---
 
 # Native Integration Flows
@@ -34,8 +34,8 @@ As a Vercel integration provider, when you [create a native product integration]
 - [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-flows&source_site=vercel-docs&relationship=related) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-flows&source_site=vercel-docs&relationship=related) — Learn how you can add a product to your Vercel project through a native integration.
 - [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-flows&source_site=vercel-docs&relationship=related) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
-- [vercel integration](https://vercel.com/docs/cli/integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-flows&source_site=vercel-docs&relationship=related) — Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover avai
 - [Marketplace](https://vercel.com/docs/flags/marketplace?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-flows&source_site=vercel-docs&relationship=related) — Connect your preferred feature flag provider through the Vercel Marketplace for a unified flags experience.
+- [Upgrade an Integration](https://vercel.com/docs/integrations/create-integration/upgrade-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-flows&source_site=vercel-docs&relationship=related) — Lean more about when you may need to upgrade your Integration.
 
 Full cross-link map for this page: [/docs/integrations/create-integration/marketplace-flows.graph.md](/docs/integrations/create-integration/marketplace-flows.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-flows&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -163,6 +163,12 @@ sequenceDiagram
 ```
 
 ## Connections between Vercel and the provider
+
+### Connect a resource to project environments
+
+In Project Settings, environment variables provided by the resource apply to the environments selected on the resource connection. Deployment Actions are separate. For a Custom Environment deployment, Vercel uses a resource connection for that Custom Environment when one exists. Otherwise, Vercel uses a Preview connection and can add the environment variables from that connection to the deployment.
+
+Vercel updates the project variables after a connection or secret change, but completed deployments keep their previous values. Create a new deployment to use the updated values.
 
 ### Open in Provider button flow
 

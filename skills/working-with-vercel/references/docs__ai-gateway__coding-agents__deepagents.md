@@ -3,7 +3,7 @@ title: Deep Agents CLI with AI Gateway
 product: vercel
 url: /docs/ai-gateway/coding-agents/deepagents
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/deepagents"
-last_updated: 2018-10-20
+last_updated: 2026-09-13
 type: how-to
 prerequisites:
   - /docs/ai-gateway/coding-agents
@@ -16,8 +16,8 @@ related:
 summary: Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/deepagents.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "30e711c3132bad1be3e3e43d9e7626be7288572f78063f576a8b3e65fa26e2b3"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "ecc506015db514cb9d58e0dc3f9c6296a820301a895827ba523fcf6125fc621d"
 ---
 
 # Deep Agents CLI with AI Gateway

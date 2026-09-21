@@ -3,7 +3,7 @@ title: AI Gateway Model Fallbacks
 product: vercel
 url: /docs/ai-gateway/models-and-providers/model-fallbacks
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/model-fallbacks"
-last_updated: 2026-09-08
+last_updated: 2026-09-10
 type: reference
 prerequisites:
   - /docs/ai-gateway/models-and-providers
@@ -15,8 +15,8 @@ related:
 summary: Configure AI Gateway model fallbacks to try backup models when the primary model is unavailable. Set fallback order and combine it with provider...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/model-fallbacks.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "bac4a3f5f48364a5be2838dc07b9483541d0a1be75b3462b217359548566ec0a"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "38fc85106bd5ed9ac876204b9f45ab7b0809610a6dfa3738e6e23765c360adeb"
 ---
 
 # AI Gateway Model Fallbacks
@@ -37,6 +37,7 @@ You can configure model failover to specify backups that are tried in order if t
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [Model fallbacks now available in Vercel AI Gateway](https://vercel.com/changelog/model-fallbacks-now-available-in-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related)
 - [Provider & Model Management](https://ai-sdk.dev/docs/ai-sdk-core/provider-management?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related)
+- [TanStack AI with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related) — Connect TanStack AI to Vercel AI Gateway with the official adapter to authenticate requests and stream responses from AI
 - [AI Gateway Video Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/video-input?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related) — Analyze video clips with AI Gateway using AI SDK 7, Python, Chat Completions, and Responses / OpenResponses.
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
 

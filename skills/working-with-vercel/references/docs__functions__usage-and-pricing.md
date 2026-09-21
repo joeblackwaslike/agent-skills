@@ -12,8 +12,8 @@ related:
 summary: Learn about usage and pricing for fluid compute on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/usage-and-pricing.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "166e254006eae63db03833c72b9e1c837cb51d4417bb55dfc60555b33133606c"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "39a3181a9f04c3d931f8b22046169cead4d84ef1636a6a896513df2ee73d4f69"
 ---
 
 # Fluid compute pricing
@@ -37,7 +37,7 @@ Vercel prices Functions on fluid compute based on your plan and resource usage. 
 - [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app?from=related&source_path=%2Fdocs%2Ffunctions%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Learn the key AI concepts and tools for building and scaling AI apps.
 - [Build a ChatGPT Connector \\(MCP server\\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector?from=related&source_path=%2Fdocs%2Ffunctions%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Build a ChatGPT MCP server with mcp-handler and Fluid compute. Add search, fetch, and OAuth, deploy to Vercel, then vali
 - [Building Slack agents can be easy](https://vercel.com/blog/building-slack-agents-can-be-easy?from=related&source_path=%2Fdocs%2Ffunctions%2Fusage-and-pricing&source_site=vercel-docs&relationship=related)
-- [Regional Pricing](https://vercel.com/docs/pricing/regional-pricing?from=related&source_path=%2Fdocs%2Ffunctions%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Vercel pricing for Managed Infrastructure resources in different regions.
+- [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Ffunctions%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 
 Full cross-link map for this page: [/docs/functions/usage-and-pricing.graph.md](/docs/functions/usage-and-pricing.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fusage-and-pricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

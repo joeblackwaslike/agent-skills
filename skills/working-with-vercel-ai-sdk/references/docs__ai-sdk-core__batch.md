@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/batch.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "d414c27332d91cffae08f65ce8fb734afcba56d62b074cd0ff1a24dd01e65206"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "da4ab488c5cfb993b15606b24fc2e9fdb55536fdc25c6f5bc1154d5f07584d1b"
 ---
 
 # Batch
@@ -67,8 +67,7 @@ support are:
 
 See the provider documentation for the supported models, limits, and native
 batch behavior. For example, OpenAI batch support is available through the
-Responses API, not `openai.chat()`, and xAI batch support is available through
-the Responses API, not `xai.chat()`.
+Responses API, not `openai.chat()`.
 
 ## Starting a batch
 
@@ -383,11 +382,13 @@ submitted.
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Code Mode](/docs/ai-sdk-core/code-mode)
+- [Tool Search](/docs/ai-sdk-core/tool-search)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
+- [Evaluation](/docs/ai-sdk-core/evaluation)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)

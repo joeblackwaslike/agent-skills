@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "ff1f22e0801c7ed135d9a550f881dc617612878e0cb64e8993af681f2f8dbd7f"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "c9f733fb982281c15fa90bf12ddf68b7bb3f65c5561e92bd97601fca7831ad45"
 ---
 
 # AI SDK Harnesses
@@ -104,6 +104,7 @@ tools, UI, and terminal usage.
   - [Fal](/providers/ai-sdk-providers/fal)
   - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
   - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
+  - [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
   - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
   - [Deepgram](/providers/ai-sdk-providers/deepgram)
   - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
@@ -173,6 +174,7 @@ tools, UI, and terminal usage.
   - [Writing a Custom Provider](/providers/openai-compatible-providers/custom-providers)
   - [LM Studio](/providers/openai-compatible-providers/lmstudio)
   - [NVIDIA NIM](/providers/openai-compatible-providers/nim)
+  - [ModelRush](/providers/openai-compatible-providers/modelrush)
   - [Clarifai](/providers/openai-compatible-providers/clarifai)
   - [Heroku](/providers/openai-compatible-providers/heroku)
   - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)

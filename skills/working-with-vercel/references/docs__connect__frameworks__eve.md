@@ -3,7 +3,7 @@ title: eve
 product: vercel
 url: /docs/connect/frameworks/eve
 canonical_url: "https://vercel.com/docs/connect/frameworks/eve"
-last_updated: 2026-08-28
+last_updated: 2026-09-15
 type: how-to
 prerequisites:
   - /docs/connect/frameworks
@@ -14,11 +14,11 @@ related:
   - /docs/cli/connect
   - /docs/connect/concepts/installations
   - /docs/connect/concepts/tokens
-summary: Use Vercel Connect to configure eve channel credentials, authorize MCP client connections, and authenticate inbound Connect OAuth requests.
+summary: Use Vercel Connect to configure eve channel credentials, including Microsoft Teams, authorize MCP client connections, and authenticate inbound...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/frameworks/eve.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "115572be0d2dc4bba6660f479999d1df00ab1bbb46e22c5269d8ef3a8271a252"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "11ee73006ed3bcb8901080a8f665de19c412bed670a1132a8d1c58ec065839b5"
 ---
 
 # eve
@@ -38,11 +38,12 @@ tokens, so your app doesn't store provider refresh tokens.
 
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related)
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related)
-- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related) — Authenticate Slack, Discord, GitHub, Linear, Notion, and Telegram adapters with Vercel Connect — short-lived runtime tok
+- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect — short-
 - [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related)
-- [Build an integrations hub with Nuxt and Vercel Connect](https://vercel.com/kb/guide/nuxt-and-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related) — Build an Integrations Hub with Nuxt and Vercel Connect. Connect GitHub and Linear over OAuth and mint short-lived tokens
 - [Connections](https://eve.dev/docs/connections?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related) — Expose external MCP and OpenAPI servers to the model, with connection tokens the model never sees.
-- [Chat SDK](https://vercel.com/docs/connect/frameworks/chat-sdk?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, GitHub, Linear, Notion,
+- [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
+- [eve with MCP](https://vercel.com/docs/mcp/integrations/eve?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related) — Give eve agents access to MCP tools through filesystem connections and authorize requests with Vercel Connect.
+- [Chat SDK](https://vercel.com/docs/connect/frameworks/chat-sdk?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
 - [AI SDK and MCP](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
 - [Auth.js](https://vercel.com/docs/connect/frameworks/authjs?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
 - [eve](https://vercel.com/docs/eve?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related) — Build and deploy durable backend AI agents with eve, an open-source, filesystem-first framework.
@@ -52,7 +53,7 @@ Full cross-link map for this page: [/docs/connect/frameworks/eve.graph.md](/docs
 
 ## Understand the integration points
 
-The entrypoint exposes three helpers, one for each place eve can use Vercel
+The entrypoint supports three integration points where eve can use Vercel
 Connect:
 
 - **Channel credentials:** The `connect<Channel>Credentials()` helpers resolve
@@ -90,6 +91,7 @@ shape expected by the matching eve channel:
 | --- | --- | --- |
 | Slack | `connectSlackCredentials` | Slack bot token and Vercel OIDC webhook verifier |
 | Discord | `connectDiscordCredentials` | Discord bot token, application ID, and Vercel OIDC webhook verifier |
+| Microsoft Teams | `connectTeamsCredentials` | Teams bot credentials and Vercel OIDC webhook verifier |
 | GitHub | `connectGitHubCredentials` | GitHub installation token and Vercel OIDC webhook verifier |
 | Linear | `connectLinearCredentials` | Linear access token and Vercel OIDC webhook verifier |
 | Linq | `connectLinqCredentials` | Linq API key and Vercel OIDC webhook verifier |
@@ -138,6 +140,31 @@ import { discordChannel } from 'eve/channels/discord';
 
 export default discordChannel({
   credentials: connectDiscordCredentials('discord/my-agent'),
+});
+```
+
+### Microsoft Teams
+
+`connectTeamsCredentials` resolves bot credentials and supplies the webhook
+verifier. Connect manages the Azure Bot resource and Microsoft Entra app, so
+you don't need to store a client secret. The verifier checks forwarded
+activities with Vercel OIDC:
+
+```ts filename="agent/channels/teams.ts" framework=all
+import { connectTeamsCredentials } from '@vercel/connect/eve';
+import { teamsChannel } from 'eve/channels/teams';
+
+export default teamsChannel({
+  credentials: connectTeamsCredentials('microsoft-teams/my-agent'),
+});
+```
+
+```js filename="agent/channels/teams.js" framework=all
+import { connectTeamsCredentials } from '@vercel/connect/eve';
+import { teamsChannel } from 'eve/channels/teams';
+
+export default teamsChannel({
+  credentials: connectTeamsCredentials('microsoft-teams/my-agent'),
 });
 ```
 
@@ -352,22 +379,26 @@ that context when the subject depends on the MCP server URL. Prefer
 
 ## Control connector provisioning
 
-`connect()` sets `autoProvision` to `true` by default. Before the first token
-or authorization request, it uses the eve connection URL and deployment OIDC
-token to create or link a managed OAuth connector for the current Vercel
-project.
+`connect()` sets `autoProvision` to `false` by default. Set it to `true` to
+opt in to runtime provisioning. When a token or authorization request reports
+a missing connector or project link, the helper uses the eve connection URL
+and deployment OIDC token to create or link a managed OAuth connector, then
+retries the request. The new project link uses the environment authenticated
+by the OIDC token.
 
 Automatic provisioning only runs for a provisionable connector UID and a
-connection with a URL. It skips opaque `scl_...` IDs. Disable it when you
-manage [connectors](/docs/connect/concepts/connectors) and
-[project links](/docs/connect/concepts/project-links) separately:
+connection with a URL. It skips opaque `scl_...` IDs. To enable it:
 
 ```ts
 auth: connect({
   connector: 'linear/my-agent',
-  autoProvision: false,
+  autoProvision: true,
 }),
 ```
+
+If you manage [connectors](/docs/connect/concepts/connectors) and
+[project links](/docs/connect/concepts/project-links) separately, leave
+`autoProvision` at its default of `false`.
 
 ## Understand the consent lifecycle
 

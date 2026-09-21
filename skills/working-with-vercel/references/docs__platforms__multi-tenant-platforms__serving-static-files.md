@@ -15,8 +15,8 @@ related:
 summary: Serve tenant-specific static files like robots.txt, sitemap.xml, and llms.txt dynamically using route handlers.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/serving-static-files.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "74902e7f8bf6368ee8d913f883f8412d89ce409394f95548896a07466ee5c3aa"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "7129a278287bd6a1d65bd67fec231fa579c690ffaa67fc53f47cc6ad9430ece7"
 ---
 
 # Serving Static Files
@@ -35,7 +35,7 @@ Multi-tenant applications need tenant-specific versions of static files like `ro
 - [Multi-Tenant Platform Concepts](https://vercel.com/docs/platforms/multi-tenant-platforms/concepts?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fserving-static-files&source_site=vercel-docs&relationship=related) — Understand tenants, domains, routing, and architecture for building multi-tenant applications on Vercel for Platforms.
 - [Configuring Custom Subpaths](https://vercel.com/docs/platforms/multi-tenant-platforms/custom-subpaths?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fserving-static-files&source_site=vercel-docs&relationship=related) — Host platform content on custom subpaths of customer domains while maintaining a single Next.js application.
 - [Multi-Tenant Template](https://vercel.com/docs/platforms/examples/multi-tenant-template?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fserving-static-files&source_site=vercel-docs&relationship=related) — Build SaaS applications that serve multiple domains from a single Next.js codebase.
-- [Vercel CDN overview](https://vercel.com/docs/cdn?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fserving-static-files&source_site=vercel-docs&relationship=related) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
+- [Nuxt on Vercel](https://vercel.com/docs/frameworks/full-stack/nuxt?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fserving-static-files&source_site=vercel-docs&relationship=related) — Deploy Nuxt applications to Vercel and configure rendering, functions, middleware, routing, image optimization, and cach
 
 Full cross-link map for this page: [/docs/platforms/multi-tenant-platforms/serving-static-files.graph.md](/docs/platforms/multi-tenant-platforms/serving-static-files.graph.md?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fserving-static-files&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

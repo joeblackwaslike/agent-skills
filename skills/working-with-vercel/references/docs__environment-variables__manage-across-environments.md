@@ -3,7 +3,7 @@ title: Managing environment variables across environments
 product: vercel
 url: /docs/environment-variables/manage-across-environments
 canonical_url: "https://vercel.com/docs/environment-variables/manage-across-environments"
-last_updated: 2026-08-20
+last_updated: 2026-09-11
 type: how-to
 prerequisites:
   - /docs/environment-variables
@@ -16,8 +16,8 @@ related:
 summary: Add, sync, and verify environment variables across development, preview, production, and custom environments using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/manage-across-environments.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "61ab9a9d266cca577b4aff0c82226760dfcecdadd02fa203ede4b1cc5f9a3c69"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "14c9ddaa23181f4dec3d82968352af290fcaf50032e0d4b97b7153cbba45131e"
 ---
 
 # Managing environment variables across environments

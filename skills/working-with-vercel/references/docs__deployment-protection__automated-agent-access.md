@@ -3,7 +3,7 @@ title: Automated & Agent Access
 product: vercel
 url: /docs/deployment-protection/automated-agent-access
 canonical_url: "https://vercel.com/docs/deployment-protection/automated-agent-access"
-last_updated: 2026-08-21
+last_updated: 2026-09-15
 type: how-to
 prerequisites:
   - /docs/deployment-protection
@@ -16,8 +16,8 @@ related:
 summary: Grant AI agents, CI/CD pipelines, MCP servers, and testing tools access to Vercel deployments that have Deployment Protection enabled.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/automated-agent-access.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "c0a1dbb137605067b3fb1b2f368b4cea648c5a457af6d950eecfa441fcc5c898"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "718d0f73f46ac02e2677ac8a711bb0c0a1a64d9f8286c3546bdd584d296b9bfc"
 ---
 
 # Automated & Agent Access
@@ -35,6 +35,7 @@ AI agents, CI/CD pipelines, MCP servers, and end-to-end testing tools can't comp
 - [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fautomated-agent-access&source_site=vercel-docs&relationship=related) — Protect who can see your deployments.
 - [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fautomated-agent-access&source_site=vercel-docs&relationship=related)
 - [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fautomated-agent-access&source_site=vercel-docs&relationship=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
+- [Troubleshooting Cross-Origin Errors \\(net::ERR_BLOCKED_BY_ORB\\) with Deployment Protection](https://vercel.com/kb/guide/troubleshooting-cross-origin-errors-neterr-blocked-by-orb-with-deployment-protection?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fautomated-agent-access&source_site=vercel-docs&relationship=related) — Learn to resolve \\`net::ERR_BLOCKED_BY_ORB\\` errors on protected Vercel deployments. This guide explains how cross-origi
 - [Methods to Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fautomated-agent-access&source_site=vercel-docs&relationship=related) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
 
 Full cross-link map for this page: [/docs/deployment-protection/automated-agent-access.graph.md](/docs/deployment-protection/automated-agent-access.graph.md?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fautomated-agent-access&source_site=vercel-docs&relationship=graph)
@@ -60,10 +61,10 @@ Automated systems making HTTP requests (with `fetch`, `curl`, or headless browse
 
 ## Choose the right bypass method
 
-| Method                                                                                                                                   | Best for                                                                            | Plan availability                                             |
-| ---------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------------------- |
-| [Protection Bypass for Automation](/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation)     | CI/CD pipelines, testing tools, AI agents calling API routes, MCP servers, webhooks | All plans                                                     |
-| [Deployment Protection Exceptions](/docs/deployment-protection/methods-to-bypass-deployment-protection/deployment-protection-exceptions) | Making a specific preview domain permanently public for external integrations       | Enterprise, or Pro with Advanced Deployment Protection add-on |
+| Method                                                                                                                                   | Best for                                                                            | Plan availability |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------- |
+| [Protection Bypass for Automation](/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation)     | CI/CD pipelines, testing tools, AI agents calling API routes, MCP servers, webhooks | All plans         |
+| [Deployment Protection Exceptions](/docs/deployment-protection/methods-to-bypass-deployment-protection/deployment-protection-exceptions) | Making a specific preview domain permanently public for external integrations       | All plans         |
 
 Use Protection Bypass for Automation for most automated access scenarios. It authenticates individual requests with a secret token without making any domain publicly accessible.
 
@@ -112,8 +113,6 @@ If your automated system needs to access a specific preview domain without any a
 > **💡 Note:** Deployment Protection Exceptions make the specified domain accessible to
 > anyone, not only your automated systems. Use this option only when public
 > access to that preview domain is acceptable.
-
-Deployment Protection Exceptions are available on Enterprise plans, or with the [Advanced Deployment Protection](/docs/deployment-protection#advanced-deployment-protection) add-on for Pro plans.
 
 To add an exception, follow the steps in [Deployment Protection Exceptions](/docs/deployment-protection/methods-to-bypass-deployment-protection/deployment-protection-exceptions).
 

@@ -3,7 +3,7 @@ title: Sandbox firewall
 product: vercel
 url: /docs/sandbox/concepts/firewall
 canonical_url: "https://vercel.com/docs/sandbox/concepts/firewall"
-last_updated: 2026-08-31
+last_updated: 2026-09-16
 type: conceptual
 prerequisites:
   - /docs/sandbox/concepts
@@ -17,8 +17,8 @@ related:
 summary: Define network policies on sandboxes, preventing data exfiltration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/firewall.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "469aaad7b7fff66e5ca917e7a3e64a5913d7061057ed2e20fc8a9c4f8237a429"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "a302bdc80ad8243e266821ad87819d0ad0337604d1090d3f306e70b4d188221c"
 ---
 
 # Sandbox firewall
@@ -513,7 +513,7 @@ asyncio.run(main())
 
 ## TLS termination
 
-In order to apply transformation and forwarding rules within requests, the firewall needs to terminate TLS connections. Only connections targeting domains with defined transformation rules are terminated in the proxy.
+To apply transformation and forwarding rules within requests, the firewall needs to terminate TLS connections. Only connections targeting domains with defined transformation rules are terminated in the proxy.
 
 A unique, per-sandbox CA is added to the system certificates. Standard environment variables are configured automatically to ensure compatibility with most clients. If your application uses a custom CA bundle, configure it to trust the mounted certificate. See [Proxy CA certificates](/docs/sandbox/concepts#proxy-ca-certificates).
 

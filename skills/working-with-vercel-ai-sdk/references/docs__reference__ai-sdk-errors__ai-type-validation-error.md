@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-type-validation-error.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "c9a14619c6196db51b2b03b3146542fe2dcae91f04b8098b7c256f002e2c9e1f"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "238525686e2104c22a792ccb309d0233906e93ffa75bc71096c4cab342c33c66"
 ---
 
 # AI_TypeValidationError
@@ -31,6 +31,7 @@ if (TypeValidationError.isInstance(error)) {
 - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
 - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
 - [AI_EmptyResponseBodyError](/docs/reference/ai-sdk-errors/ai-empty-response-body-error)
+- [AI_EvaluationUnsupportedQuestionTypeError](/docs/reference/ai-sdk-errors/ai-evaluation-unsupported-question-type-error)
 - [AI_InvalidArgumentError](/docs/reference/ai-sdk-errors/ai-invalid-argument-error)
 - [AI_InvalidDataContentError](/docs/reference/ai-sdk-errors/ai-invalid-data-content-error)
 - [AI_InvalidMessageRoleError](/docs/reference/ai-sdk-errors/ai-invalid-message-role-error)

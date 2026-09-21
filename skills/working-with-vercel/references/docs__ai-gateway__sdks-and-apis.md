@@ -3,7 +3,7 @@ title: AI Gateway SDKs and APIs
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis"
-last_updated: 2026-09-08
+last_updated: 2026-09-13
 type: reference
 prerequisites:
   - /docs/ai-gateway
@@ -16,8 +16,8 @@ related:
 summary: Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere Rerank APIs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "b57b6a09794eb50d095874902c114bb60813eb05f79c2b328999fd5835c68a86"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "f386eac3f6b0b312b9d57db6049feb1cda6465556c3dfccf7d2ef6bc17824b61"
 ---
 
 # AI Gateway SDKs and APIs
@@ -283,6 +283,7 @@ Switching surfaces is a client-side change. It does not change your billing, you
 | [OpenAI Responses API](/docs/ai-gateway/sdks-and-apis/responses)                      | OpenAI Responses API users                                           | [Streaming](/docs/ai-gateway/sdks-and-apis/responses/streaming), [Tools](/docs/ai-gateway/sdks-and-apis/responses/tool-calling), [Structured output](/docs/ai-gateway/sdks-and-apis/responses/structured-outputs)                             |
 | [OpenResponses](/docs/ai-gateway/sdks-and-apis/openresponses)                         | New projects, provider-agnostic design                               | [Streaming](/docs/ai-gateway/sdks-and-apis/openresponses/streaming), [Tools](/docs/ai-gateway/sdks-and-apis/openresponses/tool-calling), [Images](/docs/ai-gateway/sdks-and-apis/openresponses/images)                                  |
 | [Cohere Rerank API](/docs/ai-gateway/sdks-and-apis/cohere-rerank)                     | Reranking documents with the Cohere SDK or plain HTTP                | [Rerank](/docs/ai-gateway/sdks-and-apis/cohere-rerank#supported-endpoints), [Provider routing](/docs/ai-gateway/sdks-and-apis/cohere-rerank#provider-routing)                                                                                |
+| [TypeSafe API](/docs/ai-gateway/sdks-and-apis/typesafe)                              | Existing TypeSafe clients, evaluation over HTTP                      | [Migrating](/docs/ai-gateway/sdks-and-apis/typesafe#migrating-an-existing-client), [Endpoints](/docs/ai-gateway/sdks-and-apis/typesafe#supported-endpoints)                                                       |
 | [Python](/docs/ai-gateway/sdks-and-apis/python)                                       | Python developers                                                    | [Async](/docs/ai-gateway/sdks-and-apis/python#async-support), [Streaming](/docs/ai-gateway/sdks-and-apis/python#streaming), [Frameworks](/docs/ai-gateway/sdks-and-apis/python#framework-integrations)                                       |
 
 ## Capability coverage

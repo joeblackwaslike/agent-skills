@@ -16,8 +16,8 @@ related:
 summary: Publish agent events and background work to durable topics with independent consumers, automatic retries, and at-least-once delivery.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "8c5885b4b907d96db66fd095a86feea5ac606d31d68e22445c8d96610479e1b3"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "5c9abaa23d813e91f0aeda10084430786ee1070d62a4bc9dd164898d9b4b6b33"
 ---
 
 # Vercel Queues
@@ -83,7 +83,7 @@ export const POST = handleCallback(async (order, metadata) => {
 }
 ```
 
-> **🔒 Permissions Required**: Vercel Queues
+> **🔒 Permissions Required**: Vercel Queues (Beta)
 
 Each Vercel Queues topic is a durable, append-only log that retains messages until they expire. Messages fan out to every consumer group subscribed to the topic, and new consumer groups can join at any time to replay non-expired history.
 

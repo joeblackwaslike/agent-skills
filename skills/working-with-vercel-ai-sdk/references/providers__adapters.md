@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/adapters.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "b292d13101b749a48131b7c6ebb2a8dcf0094eeae9a3571f1b8c3cd98af6a8df"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "94cf59e3981f486c13791ca9bf7b928f74cedac82c4439f36d4dfeb2e4bdb228"
 ---
 
 # Adapters
@@ -31,6 +31,7 @@ The following adapters are currently available:
   - [Fal](/providers/ai-sdk-providers/fal)
   - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
   - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
+  - [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
   - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
   - [Deepgram](/providers/ai-sdk-providers/deepgram)
   - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
@@ -100,6 +101,7 @@ The following adapters are currently available:
   - [Writing a Custom Provider](/providers/openai-compatible-providers/custom-providers)
   - [LM Studio](/providers/openai-compatible-providers/lmstudio)
   - [NVIDIA NIM](/providers/openai-compatible-providers/nim)
+  - [ModelRush](/providers/openai-compatible-providers/modelrush)
   - [Clarifai](/providers/openai-compatible-providers/clarifai)
   - [Heroku](/providers/openai-compatible-providers/heroku)
   - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)

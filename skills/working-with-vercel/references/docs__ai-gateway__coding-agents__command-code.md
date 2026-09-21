@@ -3,7 +3,7 @@ title: Command Code with AI Gateway
 product: vercel
 url: /docs/ai-gateway/coding-agents/command-code
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/command-code"
-last_updated: 2026-09-11
+last_updated: 2026-09-13
 type: how-to
 prerequisites:
   - /docs/ai-gateway/coding-agents
@@ -17,8 +17,8 @@ related:
 summary: Connect Command Code to AI Gateway with your own API key and a custom base URL. Configure models, switch between them, and monitor usage and spending.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/command-code.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "d070fc24f7e6d371062d70cef12c8ef05b7c2631506b43ebd4b47ec8fe56370a"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "104bf3c8f9ad1ba099b8ae4f90f6fb64f575078b613f4c3e1d0dafde2e4709e3"
 ---
 
 # Command Code with AI Gateway

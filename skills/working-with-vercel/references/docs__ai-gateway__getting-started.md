@@ -3,7 +3,7 @@ title: Getting Started with AI Gateway
 product: vercel
 url: /docs/ai-gateway/getting-started
 canonical_url: "https://vercel.com/docs/ai-gateway/getting-started"
-last_updated: 2026-09-08
+last_updated: 2026-09-13
 type: tutorial
 prerequisites:
   - /docs/ai-gateway
@@ -16,8 +16,8 @@ related:
 summary: Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScript, or Python.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "d583ade0186749f44fdbbe4ab72a8fe52842b687db251827324337d22a32abac"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "7c499c1af15d222f609dc01ed690edc8a29fe4f4f1a665cfb4e3ee0978888cd2"
 ---
 
 # Getting Started with AI Gateway
@@ -33,9 +33,9 @@ Use AI Gateway from any environment to call models, connect coding agents, and i
 - [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started&source_site=vercel-docs&relationship=related)
 - [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started&source_site=vercel-docs&relationship=related) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
 - [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started&source_site=vercel-docs&relationship=related)
+- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started&source_site=vercel-docs&relationship=related) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
-- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started&source_site=vercel-docs&relationship=related) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 - [Deep Agents CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepagents?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started&source_site=vercel-docs&relationship=related) — Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
 
 Full cross-link map for this page: [/docs/ai-gateway/getting-started.graph.md](/docs/ai-gateway/getting-started.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started&source_site=vercel-docs&relationship=graph)
@@ -195,6 +195,7 @@ Use a [supported SDK or API](/docs/ai-gateway/sdks-and-apis) to connect an exist
 
 - [Troubleshoot request errors](/docs/ai-gateway/faq#why-did-my-ai-gateway-request-fail) by status code, type, and message
 - Generate [text](/docs/ai-gateway/getting-started/text), [images](/docs/ai-gateway/getting-started/image), [video](/docs/ai-gateway/getting-started/video), [realtime audio](/docs/ai-gateway/getting-started/realtime), or [speech](/docs/ai-gateway/getting-started/speech)
+- Evaluate application state with typed questions in the [Evaluation quickstart](/docs/ai-gateway/getting-started/evaluation)
 - [Browse models](/ai-gateway/models) by capability, provider, price, and free-tier availability, or query [`GET /v1/models`](/docs/ai-gateway/sdks-and-apis/rest-api#list-models)
 - Configure [provider routing](/docs/ai-gateway/models-and-providers/provider-options) and [model fallbacks](/docs/ai-gateway/models-and-providers/model-fallbacks)
 - [Build an agent application](https://ai-sdk.dev/docs/agents/building-agents)

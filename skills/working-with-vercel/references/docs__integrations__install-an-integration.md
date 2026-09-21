@@ -3,7 +3,7 @@ title: Install an Integration
 product: vercel
 url: /docs/integrations/install-an-integration
 canonical_url: "https://vercel.com/docs/integrations/install-an-integration"
-last_updated: 2026-05-05
+last_updated: 2026-09-11
 type: conceptual
 prerequisites:
   - /docs/integrations
@@ -16,8 +16,8 @@ related:
 summary: "Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing tools, connect to your CMS,..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/install-an-integration.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "b93279bbaf13d5f2623c8041e2e969ba19038bf1419afdc488590558d5de1a21"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "7bc1cf18cf89c66dacb91092db1a0757a8071f310d51962d7b48318ac43efb55"
 ---
 
 # Install an Integration

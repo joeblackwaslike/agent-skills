@@ -15,8 +15,8 @@ related:
 summary: Discover the package managers supported by Vercel for dependency management. Learn how Vercel detects and uses npm, Yarn, pnpm, and Bun for optimal...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/package-managers.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "53239b8faac7fe4b72631220f6de9d070a7d13a1e9913160754a0938269d95c6"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "c1578505eb4a0e958e09a9abc3cbbac1c69e36b1e84003bbbe969ae3c721c5d4"
 ---
 
 # Package Managers
@@ -35,8 +35,8 @@ Vercel will automatically detect the package manager used in your project and in
 - [How do I use the latest npm version for my Vercel Deployment?](https://vercel.com/kb/guide/how-do-i-use-the-latest-npm-version-for-my-vercel-deployment?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related) — Learn how to use the latest npm version for Vercel deployments.
 - [Projects using pnpm can now be deployed with zero configuration](https://vercel.com/changelog/projects-using-pnpm-can-now-be-deployed-with-zero-configuration?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related)
 - [Customizing the Install Command while creating Projects](https://vercel.com/changelog/customizing-the-install-command-while-creating-projects?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related)
-- [How do I use private dependencies with Vercel?](https://vercel.com/kb/guide/using-private-dependencies-with-vercel?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related) — Information on how to use private dependencies with a Vercel deployment.
 - [Automatic pnpm v10 support](https://vercel.com/changelog/automatic-pnpm-v10-support?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related)
+- [How do I use private dependencies with Vercel?](https://vercel.com/kb/guide/using-private-dependencies-with-vercel?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related) — Information on how to use private dependencies with a Vercel deployment.
 - [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
 - [Automatic pnpm v8 support](https://vercel.com/changelog/automatic-pnpm-v8-support?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related)
 - [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related) — Learn how to customize your deployments using Vercel's build features.

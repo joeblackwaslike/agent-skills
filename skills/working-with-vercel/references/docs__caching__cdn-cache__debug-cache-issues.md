@@ -17,8 +17,8 @@ related:
 summary: Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/cdn-cache/debug-cache-issues.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "5e1bad1c87c8cd05e21eaa367b2628e70860b1e8d1a6597b6cc2981560ceabde"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "860fcce27206277eebac1cfa09a905f1a3f15ade27b5a60d16083328cd870f12"
 ---
 
 # Diagnosing and fixing cache issues
@@ -35,6 +35,7 @@ Use this guide to diagnose and fix cache-related issues. You'll identify whether
 - [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fdebug-cache-issues&source_site=vercel-docs&relationship=related) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
 - [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fdebug-cache-issues&source_site=vercel-docs&relationship=related) — Learn the systematic steps to identify and resolve 404 issues.
 - [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fdebug-cache-issues&source_site=vercel-docs&relationship=related) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
+- [Caching audits: Five antipatterns that cost performance and money](https://vercel.com/kb/guide/caching-antipatterns?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fdebug-cache-issues&source_site=vercel-docs&relationship=related) — Five caching antipatterns from hundreds of Vercel technical audits: write amplification, deploy-wiped caches, spinner sh
 - [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fdebug-cache-issues&source_site=vercel-docs&relationship=related) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
 - [Purging Vercel CDN Cache](https://vercel.com/docs/caching/cdn-cache/purge?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fdebug-cache-issues&source_site=vercel-docs&relationship=related) — Learn how to invalidate and delete cached content on Vercel's CDN, including cache keys and manual purging options.
 - [Debugging slow Vercel Functions](https://vercel.com/docs/functions/debug-slow-functions?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fdebug-cache-issues&source_site=vercel-docs&relationship=related) — Diagnose and fix slow Vercel Functions using CLI tools, logs, and timing analysis.

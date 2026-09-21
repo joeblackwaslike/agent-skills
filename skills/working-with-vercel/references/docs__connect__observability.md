@@ -16,8 +16,8 @@ related:
 summary: Monitor token requests, authorizations, revocations, and trigger deliveries for your connectors.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/observability.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "60a2decc8c695fb89ed9af5960ba6c3849a99ca4ae055eb4ec103ae434b3d312"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "fe269427ee9e41e00953ce7ff73cda2e5d809c9d9e6a915861807ef12e8a3573"
 ---
 
 # Observability
@@ -33,11 +33,11 @@ Every connector has an **Observability** tab that shows runtime events for token
 - [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fconnect%2Fobservability&source_site=vercel-docs&relationship=related) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
 - [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fobservability&source_site=vercel-docs&relationship=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
 - [Vercel Connect adds observability support](https://vercel.com/changelog/vercel-connect-adds-observability-support?from=related&source_path=%2Fdocs%2Fconnect%2Fobservability&source_site=vercel-docs&relationship=related)
-- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fobservability&source_site=vercel-docs&relationship=related) — Authenticate Slack, Discord, GitHub, Linear, Notion, and Telegram adapters with Vercel Connect — short-lived runtime tok
+- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fobservability&source_site=vercel-docs&relationship=related) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect — short-
 - [Triggers](https://vercel.com/docs/connect/concepts/triggers?from=related&source_path=%2Fdocs%2Fconnect%2Fobservability&source_site=vercel-docs&relationship=related) — Incoming webhooks from third-party services, verified by Vercel Connect and forwarded to your projects.
-- [Authentication](https://vercel.com/docs/connect/concepts/authentication?from=related&source_path=%2Fdocs%2Fconnect%2Fobservability&source_site=vercel-docs&relationship=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
 - [SDK Reference](https://vercel.com/docs/connect/ts-sdk-reference?from=related&source_path=%2Fdocs%2Fconnect%2Fobservability&source_site=vercel-docs&relationship=related) — API reference for @vercel/connect, the TypeScript SDK for requesting runtime tokens from Vercel Connect.
 - [Tokens](https://vercel.com/docs/connect/concepts/tokens?from=related&source_path=%2Fdocs%2Fconnect%2Fobservability&source_site=vercel-docs&relationship=related) — Short-lived provider credentials issued by Vercel Connect. Each token request specifies a subject, optional installation
+- [List connectors for a project](https://vercel.com/docs/rest-api/connect/list-connectors-for-a-project?from=related&source_path=%2Fdocs%2Fconnect%2Fobservability&source_site=vercel-docs&relationship=related) — GET /v2/connect/projects/{projectId}/connectors — List the connectors connected to a project and the environments where
 - [List connectors](https://vercel.com/docs/rest-api/connect/list-connectors?from=related&source_path=%2Fdocs%2Fconnect%2Fobservability&source_site=vercel-docs&relationship=related) — GET /v2/connect/connectors — List connectors that belong to a team.
 
 Full cross-link map for this page: [/docs/connect/observability.graph.md](/docs/connect/observability.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fobservability&source_site=vercel-docs&relationship=graph)

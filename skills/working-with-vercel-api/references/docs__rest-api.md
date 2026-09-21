@@ -3,7 +3,7 @@ title: Vercel REST API Reference
 product: vercel
 url: /docs/rest-api
 canonical_url: "https://vercel.com/docs/rest-api"
-last_updated: 2026-09-14
+last_updated: 2026-09-21
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Interact programmatically with your Vercel account using the SDK or direct HTTP requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rest-api.md"
-fetched_at: "2026-09-14T09:44:59.314Z"
-sha256: "b9bcdf9f2edd97e8810f4b0a3bc52b196ddf05e27f842304e2303b938ca7a729"
+fetched_at: "2026-09-21T09:45:47.145Z"
+sha256: "0ba9c16d917e63c0b77abca0ce8b322630c3a01a3dbd28e9dff4be8313223f28"
 ---
 
 # Vercel REST API Reference
@@ -189,7 +189,10 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **GET** | [`/v1/registrar/tlds/{tld}/price`](/docs/rest-api/domains-registrar/get-tld-price-data.md) | Get TLD price data |
 | **GET** | [`/v1/registrar/domains/{domain}/availability`](/docs/rest-api/domains-registrar/get-availability-for-a-domain.md) | Get availability for a domain |
 | **GET** | [`/v1/registrar/domains/{domain}/price`](/docs/rest-api/domains-registrar/get-price-data-for-a-domain.md) | Get price data for a domain |
+| **POST** | [`/v1/registrar/domains/price`](/docs/rest-api/domains-registrar/get-price-data-for-multiple-domains.md) | Get price data for multiple domains |
 | **POST** | [`/v1/registrar/domains/availability`](/docs/rest-api/domains-registrar/get-availability-for-multiple-domains.md) | Get availability for multiple domains |
+| **POST** | [`/v1/registrar/domains/search`](/docs/rest-api/domains-registrar/check-domain-availability-and-pricing.md) | Check domain availability and pricing |
+| **GET** | [`/v1/registrar/domains/{domain}/contact-info/schema`](/docs/rest-api/domains-registrar/get-contact-info-schema.md) | Get contact info schema |
 | **GET** | [`/v1/registrar/domains/{domain}/auth-code`](/docs/rest-api/domains-registrar/get-the-auth-code-for-a-domain.md) | Get the auth code for a domain |
 | **POST** | [`/v1/registrar/domains/{domain}/buy`](/docs/rest-api/domains-registrar/buy-a-domain.md) | Buy a domain |
 | **POST** | [`/v1/registrar/domains/buy`](/docs/rest-api/domains-registrar/buy-multiple-domains.md) | Buy multiple domains |
@@ -199,7 +202,6 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **PATCH** | [`/v1/registrar/domains/{domain}/auto-renew`](/docs/rest-api/domains-registrar/update-auto-renew-for-a-domain.md) | Update auto-renew for a domain |
 | **PATCH** | [`/v1/registrar/domains/{domain}/nameservers`](/docs/rest-api/domains-registrar/update-nameservers-for-a-domain.md) | Update nameservers for a domain |
 | **GET** | [`/v1/registrar/domains/{domain}/contact-verification`](/docs/rest-api/domains-registrar/get-contact-verification-status-for-a-domain.md) | Get contact verification status for a domain |
-| **GET** | [`/v1/registrar/domains/{domain}/contact-info/schema`](/docs/rest-api/domains-registrar/get-contact-info-schema.md) | Get contact info schema |
 | **GET** | [`/v1/registrar/orders/{orderId}`](/docs/rest-api/domains-registrar/get-a-domain-order.md) | Get a domain order |
 
 ## domains
@@ -636,7 +638,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 
 - [REST API errors](/docs/rest-api/errors)
 
-- [OpenAPI spec](https://openapi.vercel.sh/) (machine-readable, all endpoints)
+- [OpenAPI spec](https://vercel.com/openapi.json) (machine-readable, all endpoints)
 
 ---
 

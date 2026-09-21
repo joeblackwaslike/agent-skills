@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/fireworks.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "a6b74d75dc8ecfda1996be98866de3b6b51e72635705e314c82f05a2d7fa1ce0"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "2d2867f4fb31a102c2b7b5048f71fdd4f7a26fa1d4a9b5efe6a63a76ab68d74b"
 ---
 
 # Fireworks Provider
@@ -508,6 +508,7 @@ support for these models:
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
 - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
+- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

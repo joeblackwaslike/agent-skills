@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-video-generated-error.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "5a88999e09e8156f157abf998476c6ee250a801b26c81411e256cda3b68f00bb"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "e5c76b23b669f32db9f551ecfed02252709de5d068f9c071a22d7a20268dc91f"
 ---
 
 # AI_NoVideoGeneratedError
@@ -45,6 +45,7 @@ try {
 - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
 - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
 - [AI_EmptyResponseBodyError](/docs/reference/ai-sdk-errors/ai-empty-response-body-error)
+- [AI_EvaluationUnsupportedQuestionTypeError](/docs/reference/ai-sdk-errors/ai-evaluation-unsupported-question-type-error)
 - [AI_InvalidArgumentError](/docs/reference/ai-sdk-errors/ai-invalid-argument-error)
 - [AI_InvalidDataContentError](/docs/reference/ai-sdk-errors/ai-invalid-data-content-error)
 - [AI_InvalidMessageRoleError](/docs/reference/ai-sdk-errors/ai-invalid-message-role-error)

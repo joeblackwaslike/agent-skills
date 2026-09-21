@@ -3,21 +3,21 @@ title: Vercel Hobby Plan
 product: vercel
 url: /docs/plans/hobby
 canonical_url: "https://vercel.com/docs/plans/hobby"
-last_updated: 2026-08-31
+last_updated: 2026-09-14
 type: reference
 prerequisites:
   - /docs/plans
 related:
   - /docs/pricing/taxes
   - /docs/global-config/using-global-config
+  - /docs/pricing/regional-pricing
   - /docs/functions/usage-and-pricing
   - /docs/image-optimization/limits-and-pricing
-  - /docs/speed-insights/limits-and-pricing
 summary: Learn about the Hobby plan and how it compares to the Pro plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/hobby.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "197207b2c454aea126c251b4a91d6ec944e0ae11340371c805c34606261138f2"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "0987cc87e640c5b457ddc7e7f5fee82e4a845c02e718654eaaef783ca71dd2e2"
 ---
 
 # Vercel Hobby Plan
@@ -33,13 +33,12 @@ The Hobby plan is **free** and aimed at developers with personal projects, and s
 - [Why has my account or deployment been paused?](https://vercel.com/kb/guide/why-is-my-account-deployment-blocked?from=related&source_path=%2Fdocs%2Fplans%2Fhobby&source_site=vercel-docs&relationship=related) — Learn why a Vercel account or deployment gets paused, from budget and usage limits to policy violations, and how to resu
 - [A more flexible Pro plan for modern teams](https://vercel.com/blog/new-pro-pricing-plan?from=related&source_path=%2Fdocs%2Fplans%2Fhobby&source_site=vercel-docs&relationship=related)
 - [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing?from=related&source_path=%2Fdocs%2Fplans%2Fhobby&source_site=vercel-docs&relationship=related)
-- [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Fplans%2Fhobby&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
 - [Included Pro usage is now credit-based](https://vercel.com/changelog/included-pro-usage-is-now-credit-based?from=related&source_path=%2Fdocs%2Fplans%2Fhobby&source_site=vercel-docs&relationship=related)
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fplans%2Fhobby&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing?from=related&source_path=%2Fdocs%2Fplans%2Fhobby&source_site=vercel-docs&relationship=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 - [Account Management](https://vercel.com/docs/accounts?from=related&source_path=%2Fdocs%2Fplans%2Fhobby&source_site=vercel-docs&relationship=related) — Learn how to manage your Vercel account and team members.
 - [Observability Plus](https://vercel.com/docs/observability/observability-plus?from=related&source_path=%2Fdocs%2Fplans%2Fhobby&source_site=vercel-docs&relationship=related) — Learn about using Observability Plus and its limits.
-- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fplans%2Fhobby&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Free Domain with Pro](https://vercel.com/docs/domains/free-domain-with-pro?from=related&source_path=%2Fdocs%2Fplans%2Fhobby&source_site=vercel-docs&relationship=related) — Every paid Pro team gets one free first-year custom domain on an eligible TLD. Claim yours at checkout or from domain se
 
 Full cross-link map for this page: [/docs/plans/hobby.graph.md](/docs/plans/hobby.graph.md?from=related&source_path=%2Fdocs%2Fplans%2Fhobby&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -50,6 +49,9 @@ Full cross-link map for this page: [/docs/plans/hobby.graph.md](/docs/plans/hobb
 | --------------------------------------------------------------------------------------------------- | -------------------- |
 | [Global Config Reads](/docs/global-config/using-global-config#reading-data-from-global-configs)           | First 100,000        |
 | [Global Config Writes](/docs/global-config/using-global-config#writing-data-to-global-configs)             | First 100            |
+| [Fast Data Transfer](/docs/pricing/regional-pricing)                                                | First 100 GB            |
+| [Fast Origin Transfer](/docs/pricing/regional-pricing)                                              | First 10 GB          |
+| [Edge Requests](/docs/pricing/regional-pricing)                                                     | First 1,000,000 |
 | [Active CPU](/docs/functions/usage-and-pricing)                                                     | 4 CPU-hrs            |
 | [Provisioned Memory](/docs/functions/usage-and-pricing)                                             | 360 GB-hrs           |
 | [Function Invocations](/docs/functions/usage-and-pricing)                                           | First 1,000,000      |
@@ -82,7 +84,6 @@ The Pro plan offers more resources and advanced features compared to the Hobby p
 
 | Feature | Hobby | Pro |
 | -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Edge Requests | Up to 1,000,000 requests | 10,000,000 requests included, then on-demand |
 | Projects | 200 | Unlimited |
 | Vercel Function maximum duration | 300s (5 minutes) | 300s (default) - [configurable up to 800s](/docs/functions/configuring-functions/duration); [extended max duration up to 1800s](/docs/functions/configuring-functions/duration#extended-max-duration-beta) (30 minutes, beta) |
 | Build vCPUs | 2 | 4, up to [30](/docs/builds/managing-builds#build-machine-types) |
@@ -104,9 +105,7 @@ The Pro plan offers more resources and advanced features compared to the Hobby p
 | [DDoS Mitigation](/docs/vercel-firewall/ddos-mitigation) | On by default. Optional [Attack Mode](/docs/vercel-firewall/attack-mode). | On by default. Optional [Attack Mode](/docs/vercel-firewall/attack-mode). |
 | [Vercel WAF IP Blocking](/docs/vercel-firewall/vercel-waf/ip-blocking) | Up to 3 | Up to 100 |
 | [Vercel WAF Custom Rules](/docs/vercel-firewall/vercel-waf/custom-rules) | Up to 3 | Up to 40 |
-
-| Deployment Protection | [Vercel Authentication](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication) | [Vercel Authentication](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication), [Password Protection](/docs/deployment-protection/methods-to-protect-deployments/password-protection) (Add-on), [Sharable Links](/docs/deployment-protection/methods-to-bypass-deployment-protection/sharable-links) |
-
+| [Deployment Protection](/docs/deployment-protection/usage-and-pricing) | [Vercel Authentication](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication) for preview and production deployments, [Deployment Protection Exceptions](/docs/deployment-protection/methods-to-bypass-deployment-protection/deployment-protection-exceptions), and [Shareable Links](/docs/deployment-protection/methods-to-bypass-deployment-protection/sharable-links) | The Hobby features, plus [Password Protection](/docs/deployment-protection/methods-to-protect-deployments/password-protection) for $20 per month per protected project |
 | [Connect Token Requests](/docs/connect/pricing#token-requests) | 500 included | Unlimited (on-demand) |
 | [Connect Triggers](/docs/connect/pricing#triggers) | 1,000 included | Unlimited (on-demand) |
 

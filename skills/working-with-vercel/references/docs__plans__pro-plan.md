@@ -3,7 +3,7 @@ title: Vercel Pro Plan
 product: vercel
 url: /docs/plans/pro-plan
 canonical_url: "https://vercel.com/docs/plans/pro-plan"
-last_updated: 2026-09-02
+last_updated: 2026-09-15
 type: reference
 prerequisites:
   - /docs/plans
@@ -16,8 +16,8 @@ related:
 summary: Learn about the Vercel Pro plan with credit-based billing, free viewer seats, and self-serve enterprise features for professional teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/pro-plan.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "68dc02ee7701d60cb95e286aa0155d42aa3dcf4d4ab81a362a002eabf7b5a392"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "ca85dfd0d662df1debb19baf96150ebdf6557c6f0564b29abcafe112d21f33cd"
 ---
 
 # Vercel Pro Plan
@@ -33,11 +33,11 @@ The Vercel Pro plan is designed for professional developers, freelancers, and bu
 - [Free domain with Pro offer now includes .app and .dev](https://vercel.com/changelog/app-and-dev-domains-included-with-free-domain-for-pro?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related)
 - [Free domain for one year, now for all Pro teams](https://vercel.com/changelog/free-domain-for-one-year-now-for-all-pro-teams?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related)
 - [Free domain now included with new Pro subscriptions](https://vercel.com/changelog/free-domain-now-included-with-new-pro-subscriptions?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related)
+- [Hobby projects now retain fewer deployments to free up storage](https://vercel.com/changelog/hobby-projects-now-retain-fewer-deployments-to-free-up-storage?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related)
 - [Vercel MCP now supports purchases](https://vercel.com/changelog/vercel-mcp-now-supports-purchases?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related)
 - [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
 - [Why has my account or deployment been paused?](https://vercel.com/kb/guide/why-is-my-account-deployment-blocked?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related) — Learn why a Vercel account or deployment gets paused, from budget and usage limits to policy violations, and how to resu
 - [A more flexible Pro plan for modern teams](https://vercel.com/blog/new-pro-pricing-plan?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related)
-- [Included Pro usage is now credit-based](https://vercel.com/changelog/included-pro-usage-is-now-credit-based?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related)
 - [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related) — Learn about the Hobby plan and how it compares to the Pro plan.
 - [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related)
 - [Account Management](https://vercel.com/docs/accounts?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan&source_site=vercel-docs&relationship=related) — Learn how to manage your Vercel account and team members.
@@ -79,7 +79,7 @@ The monthly credit applies to all [managed infrastructure billable resources](/d
 ### Credit and usage allocation
 
 - **Monthly credit**: Every Pro plan has $20 in monthly credit.
-- **Included infrastructure usage**: Each month, you have 1 TB [Fast Data Transfer](/docs/manage-cdn-usage#fast-data-transfer) and 10,000,000 [Edge Requests](/docs/manage-cdn-usage#edge-requests) included. Once you exceed these included allocations, Vercel will charge usage against your monthly credit before switching to on-demand billing.
+- **[Flat Rate CDN](/docs/pricing/flat-rate-cdn)**: Pro includes the lowest capacity tier at no extra cost, with a capacity of 1 million CDN requests and 1 TB of data transfer each month.
 
 ### Credit expiration
 
@@ -138,9 +138,7 @@ The following features are available as add-ons:
 
 - **[SAML Single Sign-On](/docs/saml)**: $300/month
 - **[HIPAA BAA](/docs/security/compliance#hipaa)**: Healthcare compliance agreements for $350/month
-
-* **[Advanced Deployment Protection](/docs/deployment-protection#advanced-deployment-protection)**: $150/month
-
+- **[Password Protection](/docs/deployment-protection/methods-to-protect-deployments/password-protection)**: $20 per month per protected project
 - **[Flags Explorer](/docs/flags/flags-explorer)**: $250/month
 - **[Observability Plus](/docs/observability/observability-plus)**: $1.20 per 1 million events
 - **[Preview Deployment Suffix](/docs/deployments/preview-deployment-suffix)**: $100/month

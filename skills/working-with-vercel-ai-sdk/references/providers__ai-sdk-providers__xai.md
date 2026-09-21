@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/xai.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "ba8dc2b62eaaf568ed4ea8ca380258cfd5c3dcbaba099299c87ec9275742d975"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "f41004e2d20fb67d89242b8c83b6826bda1f4538a203f86ee8f76583beffdf45"
 ---
 
 # xAI Grok Provider
@@ -66,13 +66,6 @@ first argument is the model id, e.g. `grok-4.6`.
 const model = xai('grok-4.6');
 ```
 
-<Note>
-  Since AI SDK 7, `xai(modelId)` uses the xAI Responses API by default. To use
-  the [Chat Completions
-  API](https://docs.x.ai/docs/api-reference#chat-completions) (legacy), use
-  `xai.chat(modelId)`.
-</Note>
-
 ### Example
 
 You can use xAI language models to generate text with the `generateText` function:
@@ -95,8 +88,7 @@ and support structured data generation with [`Output`](/docs/reference/ai-sdk-co
 
 For models with configurable reasoning, you can control how much effort the
 model spends thinking before responding via
-`providerOptions.xai.reasoningEffort`. This works for both the Responses API
-(default) and the Chat Completions API (`xai.chat()`).
+`providerOptions.xai.reasoningEffort`.
 
 ```ts
 import { xai } from '@ai-sdk/xai';
@@ -142,9 +134,7 @@ The AI SDK option accepts these values, but each xAI model supports a subset:
 ### Priority Processing
 
 `providerOptions.xai.serviceTier` requests higher scheduling priority, which
-typically lowers time-to-first-token and speeds up inter-token latency. This
-works for both the Responses API (default) and the Chat Completions API
-(`xai.chat()`).
+typically lowers time-to-first-token and speeds up inter-token latency.
 
 ```ts
 import { xai } from '@ai-sdk/xai';
@@ -1506,6 +1496,7 @@ is capped at `720p` — a `1080p` request is downgraded with a warning.
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
 - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
+- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

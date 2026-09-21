@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "8c1c4f2d67bd731375e0e01041be8d028479ef020a2716681c5e2419ced53019"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "7e79bc712bdcf98e198e9c3375bcc6887e68a463e5944b63a725ac0db34066ee"
 ---
 
 # Observability Integrations
@@ -54,6 +54,7 @@ There are also providers that provide monitoring and tracing for the AI SDK thro
   - [Fal](/providers/ai-sdk-providers/fal)
   - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
   - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
+  - [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
   - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
   - [Deepgram](/providers/ai-sdk-providers/deepgram)
   - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
@@ -123,6 +124,7 @@ There are also providers that provide monitoring and tracing for the AI SDK thro
   - [Writing a Custom Provider](/providers/openai-compatible-providers/custom-providers)
   - [LM Studio](/providers/openai-compatible-providers/lmstudio)
   - [NVIDIA NIM](/providers/openai-compatible-providers/nim)
+  - [ModelRush](/providers/openai-compatible-providers/modelrush)
   - [Clarifai](/providers/openai-compatible-providers/clarifai)
   - [Heroku](/providers/openai-compatible-providers/heroku)
   - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)

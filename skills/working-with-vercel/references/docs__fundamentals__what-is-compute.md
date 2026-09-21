@@ -16,8 +16,8 @@ related:
 summary: Learn how compute works on Vercel with Fluid compute, and how it compares to traditional server and serverless models.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/fundamentals/what-is-compute.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "26f9dc26e26a812895ba8144aa54084693b29a9158f1f26c49e16c355ad84453"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "0cfd7ce7853f791cea54732eaf9282fd07b5dd024ea35e2b46af107833ab1328"
 ---
 
 # What is Compute?
@@ -38,8 +38,8 @@ Compute is the work a server performs to respond to a request, such as rendering
 - [Fluid compute: Evolving serverless for AI workloads](https://vercel.com/blog/fluid-compute-evolving-serverless-for-ai-workloads?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related)
 - [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related) — Learn how to build and scale performant APIs on Vercel.
 - [How AI Gateway runs on Fluid compute](https://vercel.com/blog/how-ai-gateway-runs-on-fluid-compute?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related)
+- [Vercel Functions can now run on Fluid compute](https://vercel.com/changelog/vercel-functions-can-now-run-on-fluid-compute?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related)
 - [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
-- [Next.js on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/next-js-on-vercel-vs-webflow-cloud?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related) — Compare running Next.js on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Ne
 - [Backends on Vercel](https://vercel.com/docs/frameworks/backend?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
 - [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
 

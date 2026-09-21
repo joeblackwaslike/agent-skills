@@ -16,8 +16,8 @@ related:
 summary: Give your agents and services secure, short-lived access to third-party APIs like Slack, GitHub, Microsoft, and Snowflake, without storing provider...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "536d761c9e5b22f6f5478548c2946801bc8fd0412186ccf7e3d22bd1ddfd8fe7"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "af9070d0c2c1f6857b42afeb268544c8f2859232c969dd32fdc97997a4e1dc82"
 ---
 
 # Vercel Connect
@@ -35,8 +35,8 @@ With [Vercel Connect](/connect), your deployed apps can talk to other services. 
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents?from=related&source_path=%2Fdocs%2Fconnect&source_site=vercel-docs&relationship=related)
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fconnect&source_site=vercel-docs&relationship=related)
 - [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect&source_site=vercel-docs&relationship=related)
+- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect&source_site=vercel-docs&relationship=related) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect — short-
 - [Vercel Connect: Secure access to external services for your agents](https://vercel.com/changelog/vercel-connect-secure-access-to-external-services-for-your-agents?from=related&source_path=%2Fdocs%2Fconnect&source_site=vercel-docs&relationship=related)
-- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect&source_site=vercel-docs&relationship=related) — Authenticate Slack, Discord, GitHub, Linear, Notion, and Telegram adapters with Vercel Connect — short-lived runtime tok
 - [Vercel Connect](https://v0.app/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect&source_site=vercel-docs&relationship=related) — Connect your v0 apps and agents to third-party services – no API keys required.
 - [Connections](https://eve.dev/docs/connections?from=related&source_path=%2Fdocs%2Fconnect&source_site=vercel-docs&relationship=related) — Expose external MCP and OpenAPI servers to the model, with connection tokens the model never sees.
 - [Control who can manage connectors in Vercel Connect](https://vercel.com/changelog/control-who-can-manage-connectors-in-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect&source_site=vercel-docs&relationship=related)
@@ -98,6 +98,7 @@ Each connector type has its own provider-side flow:
 
 - **Slack** and **GitHub**: Managed app installs, scoped to one workspace or organization per installation.
 - **Microsoft**: A Microsoft Entra app that Vercel registers in your own Microsoft tenant, installed when a tenant administrator grants it admin consent.
+- **Microsoft Teams**: A managed Azure Bot resource and Microsoft Entra app that Vercel registers for you. Connect manages installation, administrator consent, and tokens, and forwards verified Teams activities through triggers.
 - **Custom OAuth**: Managed OAuth against the service's URL, on behalf of the installing user (authorization-code flow) or as your service (client-credentials flow).
 - **API key**: A credential the connector owner supplies once at create time.
 
@@ -108,7 +109,7 @@ For the full picture, including how token requests are authorized against projec
 ## Frameworks and adapters
 
 Use the [`@vercel/connect` framework adapters](/docs/connect/frameworks) to add
-Connect authentication to AI SDK and MCP clients, eve connections, Chat SDK
+Connect authentication to AI SDK, TanStack AI, and MCP clients, eve connections, Chat SDK
 adapters, Better Auth, and Auth.js.
 
 ## Reference
@@ -173,7 +174,7 @@ securely access third-party services and APIs:
 
 **Concepts**: Understand connectors, installations, tokens, project links, triggers, and authentication. [Learn more →](/docs/connect/concepts)
 
-**Frameworks and Adapters**: Use Vercel Connect with eve, AI SDK, MCP clients, Chat SDK, Better Auth, and Auth.js. [Learn more →](/docs/connect/frameworks)
+**Frameworks and Adapters**: Use Vercel Connect with eve, AI SDK, TanStack AI, MCP clients, Chat SDK, Better Auth, and Auth.js. [Learn more →](/docs/connect/frameworks)
 
 **Observability**: Monitor token requests, authorizations, triggers, and revocations for each connector. [Learn more →](/docs/connect/observability)
 

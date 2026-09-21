@@ -3,7 +3,7 @@ title: Understanding Vercel
 product: vercel
 url: /docs/plans/pro-plan/trials
 canonical_url: "https://vercel.com/docs/plans/pro-plan/trials"
-last_updated: 2026-08-21
+last_updated: 2026-09-14
 type: reference
 prerequisites:
   - /docs/plans/pro-plan
@@ -11,14 +11,14 @@ prerequisites:
 related:
   - /docs/plans/pro-plan
   - /docs/limits
+  - /docs/limits/fair-use-guidelines
   - /docs/functions/usage-and-pricing
   - /docs/image-optimization/limits-and-pricing
-  - /docs/pricing/manage-and-optimize-usage
 summary: "Learn all about Vercel's Pro Plan free trial, including features, usage limits, and options post-trial. Learn how to manage your team's projects with..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/pro-plan/trials.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "b9f182c4a125f5cd4da53b6642d87e36a4329b59eec7588d1af2b1b3213108b1"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "85d0a9565c7f453aa42fe9c34c96fd479bddb7a4e76d0b64d6ca7b19be178965"
 ---
 
 # Understanding Vercel
@@ -38,7 +38,7 @@ Vercel offers three plan tiers: **Hobby**, **Pro**, and **Enterprise**.
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan%2Ftrials&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Pricing for Web Analytics](https://vercel.com/docs/analytics/limits-and-pricing?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan%2Ftrials&source_site=vercel-docs&relationship=related) — Learn about pricing for Vercel Web Analytics.
 - [Free Domain with Pro](https://vercel.com/docs/domains/free-domain-with-pro?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan%2Ftrials&source_site=vercel-docs&relationship=related) — Every paid Pro team gets one free first-year custom domain on an eligible TLD. Claim yours at checkout or from domain se
-- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan%2Ftrials&source_site=vercel-docs&relationship=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
+- [Account Management](https://vercel.com/docs/accounts?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan%2Ftrials&source_site=vercel-docs&relationship=related) — Learn how to manage your Vercel account and team members.
 
 Full cross-link map for this page: [/docs/plans/pro-plan/trials.graph.md](/docs/plans/pro-plan/trials.graph.md?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan%2Ftrials&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -57,7 +57,7 @@ The Pro trial offers an opportunity to explore [Pro features](/docs/plans/pro-pl
 
 ## Trial Limitations
 
-The trial plan includes a $20 credit and follows the same [general limits](/docs/limits#general-limits) as a regular plan but with specified usage restrictions. See how these compare to the [non-trial usage limits](/docs/limits#usage-summary):
+The trial plan includes a $20 credit and follows the same [general limits](/docs/limits#general-limits) as a regular plan but with specified usage restrictions. See how these compare to the [non-trial usage limits](/docs/limits/fair-use-guidelines#typical-monthly-usage-guidelines):
 
 |                                                                                            | Pro Trial Limits     |
 | ------------------------------------------------------------------------------------------ | -------------------- |

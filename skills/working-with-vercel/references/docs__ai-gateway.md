@@ -3,7 +3,7 @@ title: "Vercel AI Gateway: Models, Routing, and Observability"
 product: vercel
 url: /docs/ai-gateway
 canonical_url: "https://vercel.com/docs/ai-gateway"
-last_updated: 2026-09-07
+last_updated: 2026-09-14
 type: integration
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Call AI models from any infrastructure through a managed gateway. Centralize credentials, request logs, spend budgets, routing, and provider failover.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "ced7f5d9448ae724fe1234f24c533aa26fabad1e9c78f800a4f5d35fb58bd416"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "b461538884da0ab9816ff6c60b24f77543824d5eae385191fed06600af8ffed8"
 ---
 
 # Vercel AI Gateway: Models, Routing, and Observability
@@ -34,6 +34,7 @@ Use one managed gateway from any infrastructure to centralize credentials, log r
 
 - [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available?from=related&source_path=%2Fdocs%2Fai-gateway&source_site=vercel-docs&relationship=related)
 - [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway&source_site=vercel-docs&relationship=related)
+- [TanStack AI](https://chat-sdk.dev/docs/ai/tanstack-ai?from=related&source_path=%2Fdocs%2Fai-gateway&source_site=vercel-docs&relationship=related) — Feed thread history into TanStack AI's chat() and give it Chat SDK tools, with no runtime dependency on @tanstack/ai.
 - [Agent configuration (agent.ts)](https://eve.dev/docs/agent-config?from=related&source_path=%2Fdocs%2Fai-gateway&source_site=vercel-docs&relationship=related) — Configure an eve agent's model, reasoning effort, compaction, limits, and runtime behavior in agent.ts.
 - [Deployment](https://eve.dev/docs/guides/deployment/overview?from=related&source_path=%2Fdocs%2Fai-gateway&source_site=vercel-docs&relationship=related) — Choose a deployment strategy and prepare an eve agent for production.
 - [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related&source_path=%2Fdocs%2Fai-gateway&source_site=vercel-docs&relationship=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
@@ -43,7 +44,6 @@ Use one managed gateway from any infrastructure to centralize credentials, log r
 - [Auto-recharge available in AI Gateway](https://vercel.com/changelog/auto-recharge-available-in-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway&source_site=vercel-docs&relationship=related)
 - [Claude Opus 4.1 is now supported in Vercel AI Gateway](https://vercel.com/changelog/claude-4-1-opus-is-now-supported-in-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway&source_site=vercel-docs&relationship=related)
 - [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide?from=related&source_path=%2Fdocs%2Fai-gateway&source_site=vercel-docs&relationship=related) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
-- [Build your own Slackbot with Vercel Connect](https://vercel.com/kb/guide/build-a-slack-bot-with-vercel-connect?from=related&source_path=%2Fdocs%2Fai-gateway&source_site=vercel-docs&relationship=related) — Learn how to build your very own Slackbot with Chat SDK and AI SDK. Vercel Connect supplies runtime Slack tokens and for
 
 Full cross-link map for this page: [/docs/ai-gateway.graph.md](/docs/ai-gateway.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -106,6 +106,8 @@ Budgets cover spend billed through AI Gateway system credentials. BYOK spend is 
 ## Choose how to start
 
 **Make your first request**: Start with a coding agent, cURL, TypeScript, or Python. [Learn more →](/docs/ai-gateway/getting-started)
+
+**Build an AI agent with AI SDK**: Follow a step-by-step guide to add streaming, tools, and model fallbacks. [Learn more →](/kb/guide/ai-gateway-and-ai-sdk)
 
 **Use an SDK or API**: Connect an existing AI SDK, OpenAI, Anthropic, or HTTP client. [Learn more →](/docs/ai-gateway/sdks-and-apis)
 

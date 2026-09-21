@@ -3,7 +3,7 @@ title: vercel ai-gateway
 product: vercel
 url: /docs/cli/ai-gateway
 canonical_url: "https://vercel.com/docs/cli/ai-gateway"
-last_updated: 2026-08-28
+last_updated: 2026-09-17
 type: reference
 prerequisites:
   - /docs/cli
@@ -11,18 +11,18 @@ related:
   - /docs/ai-gateway
   - /docs/ai-gateway/observability-and-spend
   - /docs/ai-gateway/models-and-providers/routing-rules
+  - /docs/ai-gateway/models-and-providers/virtual-models
   - /docs/ai-gateway/models-and-providers
-  - /docs/ai-gateway/coding-agents
-summary: "Manage AI Gateway resources from the Vercel CLI: API keys, budgets, routing rules, models, leaderboards, and coding agent setup."
+summary: "Manage AI Gateway resources from the Vercel CLI: API keys, budgets, routing rules, virtual models, models, leaderboards, and coding agent setup."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/ai-gateway.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "c2e9572d7dcfd90e8c674069e1c3bd83db23917c420e642d344ee69139a42e55"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "4dd2637a23cfbf0e95bde121a73fe7aad13ecb5c423db6cda005cf2c3dc576cf"
 ---
 
 # vercel ai-gateway
 
-The `vercel ai-gateway` command manages [AI Gateway](/docs/ai-gateway) resources from the Vercel CLI, including API keys, [budgets](/docs/ai-gateway/observability-and-spend), [routing rules](/docs/ai-gateway/models-and-providers/routing-rules), [models](/docs/ai-gateway/models-and-providers), leaderboards, and [coding agents](/docs/ai-gateway/coding-agents).
+The `vercel ai-gateway` command manages [AI Gateway](/docs/ai-gateway) resources from the Vercel CLI, including API keys, [budgets](/docs/ai-gateway/observability-and-spend), [routing rules](/docs/ai-gateway/models-and-providers/routing-rules), [virtual models](/docs/ai-gateway/models-and-providers/virtual-models), [models](/docs/ai-gateway/models-and-providers), leaderboards, and [coding agents](/docs/ai-gateway/coding-agents).
 
 
 <!-- docsgraph:related -->
@@ -536,7 +536,7 @@ For a client that speaks the Anthropic protocol and appends `/v1/messages` itsel
 | Grok Build | `~/.grok/config.toml` (honors `$GROK_HOME`) | `endpoints.models_base_url` pointed at the gateway and a default model entry whose `env_key` references `AI_GATEWAY_API_KEY` |
 | Junie CLI | `$JUNIE_HOME/models/` (default `~/.junie`) | A stable `vercel-ai-gateway` profile pinned to the top model, plus one profile per shortlisted gateway model, each with an env reference to `AI_GATEWAY_API_KEY` |
 | Kimi CLI | `$KIMI_SHARE_DIR/config.toml` (default `~/.kimi`, mode `0600`) | A gateway provider and a `[models]` shortlist; Kimi requires a literal `api_key`, so the key lands in this file |
-| omp | None | omp reads `AI_GATEWAY_API_KEY` natively and fills `/model` from the gateway catalog, so only the shell export is written — never omp's SQLite store |
+| omp | None | omp reads `AI_GATEWAY_API_KEY` natively and fills `/model` from the gateway catalog, so only the shell export is written, never omp's SQLite store |
 | OpenHands | `~/.openhands/agent_settings.json` | A minimal `llm` block pointing at the gateway with an `openai/`-prefixed model ID; an existing condenser LLM is repointed the same way, and the pinned model's per-token cost fields come from the gateway catalog |
 | Qwen Code | `~/.qwen/settings.json` | `modelProviders.openai` entries, each with an `envKey` reference to `AI_GATEWAY_API_KEY` so the key never lands in the file |
 | Mistral Vibe | `$VIBE_HOME/config.toml` (default `~/.vibe`) | The gateway provider and an unaliased `[[models]]` shortlist, with `api_key_env_var` keeping the key in the shell environment and `active_model` pinned to the leading Mistral model |
@@ -697,6 +697,96 @@ If at least one agent config can be written, the run exits `0` and lists the res
 > agent config files or shell startup file hold it whenever the macOS Keychain
 > isn't used. Keep all of these secret.
 
+### virtual-models
+
+Manage [virtual models](/docs/ai-gateway/models-and-providers/virtual-models) for the current team. A virtual model is a reusable model configuration you call as `vmc/<slug>`, so routing, credentials, and provider options live in one place instead of in every request. See the [virtual models documentation](/docs/ai-gateway/models-and-providers/virtual-models) for concepts and request behavior.
+
+```bash filename="terminal"
+vercel ai-gateway virtual-models [subcommand]
+```
+
+Every subcommand accepts `--format json` (or `--json`) for machine-readable output.
+
+#### create
+
+Create a virtual model. Run it with no arguments to be prompted for the slug and target model.
+
+```bash filename="terminal"
+vercel ai-gateway virtual-models create
+```
+
+*Create a virtual model interactively.*
+
+```bash filename="terminal"
+vercel ai-gateway virtual-models create my-model --model openai/gpt-5.1
+```
+
+*Create a virtual model in a single command.*
+
+Fields without a dedicated flag are set through `--config`, which takes a JSON object. Flags take precedence over the same key in `--config`.
+
+```bash filename="terminal"
+vercel ai-gateway virtual-models create my-model --model openai/gpt-5.1 --config '{"sort":"cost","zeroDataRetention":true}'
+```
+
+*Set provider options alongside the common flags.*
+
+##### Options
+
+| Option | Type | Description |
+| --- | --- | --- |
+| `--kind <KIND>` | String | Virtual model kind: `alias` or `relay` (default: `alias`). A relay also needs a `baseUrl` in `--config`, and the team has to be allowlisted for it |
+| `--model <SLUG>` | String | Model the virtual model points at. Required unless you set `modelSlug` in `--config` or answer the prompt |
+| `--display-name <NAME>` | String | Human-readable name shown in the dashboard |
+| `--description <TEXT>` | String | Description of the virtual model |
+| `--provider-order <LIST>` | String | Comma-separated providers to try, in order |
+| `--provider-only <LIST>` | String | Comma-separated providers to restrict routing to |
+| `--config <JSON>` | String | JSON object of any other virtual model fields |
+
+#### list
+
+List virtual models for the current team. Alias: `ls`. Archived virtual models are hidden unless you pass `--include-archived`.
+
+```bash filename="terminal"
+vercel ai-gateway virtual-models list
+```
+
+#### inspect
+
+Show every field set on a virtual model, by slug.
+
+```bash filename="terminal"
+vercel ai-gateway virtual-models inspect my-model
+```
+
+#### edit
+
+Edit a virtual model by its slug. Takes the same field flags and `--config` as `create` except `--kind`, which is create-only, and requires at least one of them.
+
+```bash filename="terminal"
+vercel ai-gateway virtual-models edit my-model --model anthropic/claude-sonnet-4.5
+```
+
+*Point an existing virtual model at a different model.*
+
+#### remove
+
+Remove a virtual model by its slug. Aliases: `rm` and `delete`. There is no confirmation prompt, so the virtual model is removed as soon as the command runs. Requests to `vmc/<slug>` stop resolving once it is removed, and the configuration is preserved so you can restore it later.
+
+Removing is not the same as archiving. A removed virtual model stops resolving and no longer appears in `list`, even with `--include-archived`. An archived one still appears, labeled `archived`.
+
+```bash filename="terminal"
+vercel ai-gateway virtual-models rm my-model
+```
+
+#### restore
+
+Restore a removed virtual model by its slug. Requests to `vmc/<slug>` resolve again, using the configuration the virtual model had before it was removed. Because a removed virtual model is not listed, you need to know its slug.
+
+```bash filename="terminal"
+vercel ai-gateway virtual-models restore my-model
+```
+
 ### models
 
 Browse the [models](/docs/ai-gateway/models-and-providers) available through AI Gateway and compare the providers that serve them. Both commands are read-only. Add `--format json` to either command for the full, machine-readable payload.
@@ -707,7 +797,7 @@ vercel ai-gateway models [subcommand]
 
 #### list
 
-List the models available through AI Gateway. The table shows each model's ID, name, owner, and type. Alias: `ls`.
+List the models available through AI Gateway. The table shows each model's ID, name, owner, and type. Alias: `ls`. Your team's [virtual models](/docs/ai-gateway/models-and-providers/virtual-models) are listed alongside the catalog, and you can narrow the list to one or the other.
 
 ```bash filename="terminal"
 vercel ai-gateway models ls
@@ -715,10 +805,18 @@ vercel ai-gateway models ls
 
 *List every model available through AI Gateway.*
 
+```bash filename="terminal"
+vercel ai-gateway models ls --virtual
+```
+
+*List only your team's virtual models.*
+
 ##### Options
 
 | Option | Type | Description |
 | --- | --- | --- |
+| `--virtual` | Boolean | Show only your team's virtual models |
+| `--no-virtual` | Boolean | Hide virtual models |
 | `--format <FORMAT>` | String | Set to `json` to output the full model payload |
 
 #### endpoints

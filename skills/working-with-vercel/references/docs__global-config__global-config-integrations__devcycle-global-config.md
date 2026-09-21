@@ -17,8 +17,8 @@ related:
 summary: "Learn how to use Global Config with Vercel's DevCycle integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-integrations/devcycle-global-config.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "85497760822b62122f635efae8d561be216d87b5979a6927d5ab3b56c904d937"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "f61d44cf801a3fea58ad32872e4d893441b15a86ea4721a3669f299b96b0f6d5"
 ---
 
 # Using Global Config with DevCycle
@@ -41,7 +41,7 @@ This guide will help you get started with using Vercel's DevCycle integration wi
 Full cross-link map for this page: [/docs/global-config/global-config-integrations/devcycle-global-config.graph.md](/docs/global-config/global-config-integrations/devcycle-global-config.graph.md?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fdevcycle-global-config&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-> **🔒 Permissions Required**: The DevCycle Global Config integration
+> **🔒 Permissions Required**: The DevCycle Global Config integration (Beta)
 
 DevCycle is a feature management platform designed for developers. DevCycle allows you to work with feature flags more naturally, where you write code, so you can deliver better features, faster.
 

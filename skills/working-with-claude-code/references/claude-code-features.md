@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/claude-code-features.md"
-fetched_at: "2026-09-14T09:37:17.168Z"
-sha256: "a48c7852f655f888a5bd8c58897b0805e1efd11b72dca6f0eaeaa8c0673a5650"
+fetched_at: "2026-09-21T09:39:23.760Z"
+sha256: "7e149e4a914d0ac480e0b9fabbcb75e8e497ecc244e840e7ac04d5fff0b555f8"
 ---
 
 > ## Documentation Index
@@ -14,7 +14,7 @@ sha256: "a48c7852f655f888a5bd8c58897b0805e1efd11b72dca6f0eaeaa8c0673a5650"
 
 The Agent SDK is built on the same foundation as Claude Code, which means your SDK agents have access to the same filesystem-based features: project instructions (`CLAUDE.md` and rules), skills, hooks, and more.
 
-When you omit `settingSources`, `query()` reads the same filesystem settings as the Claude Code CLI: user, project, and local settings, CLAUDE.md files, and `.claude/` skills, agents, and commands. To run without these, pass `settingSources: []`, which limits the agent to what you configure programmatically. Managed policy settings and the global `~/.claude.json` config are read regardless of this option. See [What settingSources does not control](#what-settingsources-does-not-control).
+When you omit `settingSources`, `query()` reads the same filesystem settings as the Claude Code CLI: user, project, and local settings, CLAUDE.md files, and `.claude/` skills, agents, and commands. To run without these, pass `settingSources: []`, which limits the agent to what you configure programmatically. Managed policy settings and the global `~/.claude.json` config are read regardless of this option. For more information, see [What settingSources does not control](#what-settingsources-does-not-control).
 
 ## Control filesystem settings with settingSources
 
@@ -107,7 +107,7 @@ The `cwd` option determines where the SDK looks for project-level inputs. Projec
 
 ## Project instructions (CLAUDE.md and rules)
 
-`CLAUDE.md` files and `.claude/rules/*.md` files give your agent persistent context about your project: coding conventions, build commands, architecture decisions, and instructions. When `settingSources` includes `"project"` (as in the example above), the SDK loads these files into context at session start. The agent then follows your project conventions without you repeating them in every prompt.
+`CLAUDE.md` files and `.claude/rules/*.md` files give your agent persistent context about your project: coding conventions, build commands, architecture decisions, and instructions. When `settingSources` includes `"project"`, as in the [`settingSources` example](#control-filesystem-settings-with-settingsources), the SDK loads these files into context at session start. The agent then follows your project conventions without you repeating them in every prompt.
 
 ### CLAUDE.md load locations
 

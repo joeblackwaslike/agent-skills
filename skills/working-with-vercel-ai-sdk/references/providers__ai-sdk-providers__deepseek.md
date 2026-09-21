@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/deepseek.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "8ff97925d8e78c171e769d10680fec2ca47d23a2c31b5d3473597371adb628f0"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "5d305c586bdd65b83f94419e9bf9460ddb84a7a565ccddfc4925b00410b72f12"
 ---
 
 # DeepSeek Provider
@@ -522,6 +522,7 @@ when its declared media type or filename indicates a supported image format.
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
 - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
+- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

@@ -3,7 +3,7 @@ title: AI SDK with AI Gateway
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/ai-sdk
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk"
-last_updated: 2026-09-08
+last_updated: 2026-09-14
 type: how-to
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis
@@ -17,8 +17,8 @@ related:
 summary: Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "9753c523abaad00b0f0ed33df9e17468fc1bf74a9f7e4de191099944cb6e4ac1"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "e831cfbb1d6af8e9a103be51512356e3dff8d938d5eab4214276bbc307bb4ec5"
 ---
 
 # AI SDK with AI Gateway
@@ -35,15 +35,15 @@ The [AI SDK](https://ai-sdk.dev/) is the recommended way to build AI-powered Typ
 - [Get started with GPT-5](https://ai-sdk.dev/cookbook/guides/gpt-5?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk&source_site=vercel-docs&relationship=related)
 - [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk&source_site=vercel-docs&relationship=related) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
 - [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk&source_site=vercel-docs&relationship=related) — Learn the key AI concepts and tools for building and scaling AI apps.
+- [Get started with OpenAI o1](https://ai-sdk.dev/cookbook/guides/o1?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk&source_site=vercel-docs&relationship=related)
 - [AI SDK](https://vercel.com/docs/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk&source_site=vercel-docs&relationship=related) — Build TypeScript agents and AI applications with a unified API for models, tools, structured output, and streaming.
-- [Python with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk&source_site=vercel-docs&relationship=related) — Use AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/ai-sdk.graph.md](/docs/ai-gateway/sdks-and-apis/ai-sdk.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Installation
 
-See the [AI SDK getting-started guide](https://ai-sdk.dev/docs/getting-started) for runtime and package setup.
+See the [AI SDK getting-started guide](/kb/guide/ai-gateway-and-ai-sdk) for runtime and package setup.
 
 Install the `ai` package:
 

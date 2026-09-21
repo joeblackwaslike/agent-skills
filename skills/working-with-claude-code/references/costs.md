@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/costs.md"
-fetched_at: "2026-09-14T09:37:17.168Z"
-sha256: "d5c3cb138d462a6176d067cb303e8e5439e23cd0d062f00e73bcce26148280ad"
+fetched_at: "2026-09-21T09:39:23.760Z"
+sha256: "6c5ca34fa65f38c44e5dffeac3e5f44db486aeb001490ff16beac6b3034e8526"
 ---
 
 > ## Documentation Index
@@ -69,7 +69,7 @@ On a Pro, Max, Team, or Enterprise plan, `/usage` also shows a breakdown of what
 
 Press `d` or `w` to switch between the last 24 hours and the last 7 days. The figures are approximate and computed from local session history on this machine, so usage from other devices or claude.ai is not included.
 
-In the [VS Code extension](/docs/en/vs-code#check-account-and-usage), the attribution shares and behavior flags appear in the Account & usage dialog with a Day and Week toggle, without the Loops rows. Requires Claude Code v2.1.174 or later.
+In the [VS Code extension](/docs/en/vs-code#check-account-and-usage), the attribution shares and behavior flags appear in the Account & usage dialog with a Day and Week toggle, without the Loops rows.
 
 #### Check your usage-credits spend
 
@@ -132,7 +132,7 @@ By default, Claude Code computes every cost figure it shows developers at list p
   </Step>
 
   <Step title="Write the setting">
-    Set `multiplier` for a flat percentage off list price, list each model's four per-token rates under `overrides`, or do both. The [`modelPricing` entry](/docs/en/settings-reference#modelpricing) has the shape and a paste-ready example.
+    Set `multiplier` below 1 for a flat discount or above 1 for a markup, list each model's four per-token rates under `overrides`, or do both. A markup requires Claude Code v2.1.271 or later. The [`modelPricing` entry](/docs/en/settings-reference#modelpricing) has the shape and a paste-ready example.
   </Step>
 
   <Step title="Deploy it through managed settings">

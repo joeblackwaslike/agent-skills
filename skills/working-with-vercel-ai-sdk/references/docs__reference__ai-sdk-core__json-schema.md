@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/json-schema.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "7889eaf52fc1b9477a6c25631376fd6c945b41b3d3bee80414a45102b792b287"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "a2aeb49f7f5739b390c31df09bfd2422d5cd3151a18e145d8d744d5820a1b2a2"
 ---
 
 # `jsonSchema()`
@@ -108,6 +108,7 @@ A JSON schema object that is compatible with the AI SDK.
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+- [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
 - [uploadFile](/docs/reference/ai-sdk-core/upload-file)
 - [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
 - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
@@ -123,6 +124,7 @@ A JSON schema object that is compatible with the AI SDK.
 - [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
 - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [toolSearch](/docs/reference/ai-sdk-core/tool-search)
 - [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
 - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)

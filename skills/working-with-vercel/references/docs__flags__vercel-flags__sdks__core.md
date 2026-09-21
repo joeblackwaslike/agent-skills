@@ -3,7 +3,7 @@ title: Using the Core Library
 product: vercel
 url: /docs/flags/vercel-flags/sdks/core
 canonical_url: "https://vercel.com/docs/flags/vercel-flags/sdks/core"
-last_updated: 2026-06-24
+last_updated: 2026-09-16
 type: how-to
 prerequisites:
   - /docs/flags/vercel-flags/sdks
@@ -17,8 +17,8 @@ related:
 summary: Use the Vercel Flags core evaluation library directly for custom setups.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/sdks/core.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "d7efa99fb35f23f5889fa72128e999d98676257568b4cee8c464cfff6af5e862"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "59d2137af3530b1dacca1bf6639ef283cfcfa74c30abd2f53405d6d476a28e01"
 ---
 
 # Using the Core Library
@@ -105,6 +105,14 @@ import { createClient } from '@vercel/flags-core';
 const client = createClient(process.env.FLAGS_SDK_KEY);
 ```
 
+### Use request-scoped OIDC
+
+On Vercel, the OpenID Connect (OIDC) token can come from the current request context. The token might not be available while modules load. Create the client at module scope, but call `evaluate()` or `bulkEvaluate()` inside a request handler. These methods initialize the client when you first call them.
+
+Do not call `initialize()` at module scope or store a module-scoped initialization promise when you use request-scoped OIDC. Awaiting an already-started promise inside a request handler does not move that work into the request context. This also applies to embedded definitions because the client uses the token's `project_id` claim to select the correct definitions.
+
+Local credentials can hide this timing requirement. For example, `vercel env pull` writes an OIDC token to `.env.local`. Keep evaluation and explicit initialization inside the request handler so the same code works locally and in a deployment.
+
 ### Client options
 
 `createClient` accepts an optional second argument to configure how the client fetches and updates flag definitions. Pass `undefined` as the first argument to keep the default Vercel OIDC authentication:
@@ -118,16 +126,19 @@ const client = createClient(undefined, {
 });
 ```
 
-| Option      | Type                                       | Default | Description                                                                                                       |
-| ----------- | ------------------------------------------ | ------- | ----------------------------------------------------------------------------------------------------------------- |
-| `datafile`  | `DatafileInput`                            | -       | An initial datafile for immediate reads without waiting for a network request.                                    |
-| `stream`    | `boolean \| { initTimeoutMs: number }`     | `true`  | Enable streaming updates via SSE. Set `initTimeoutMs` to control how long to wait for the first update.           |
-| `polling`   | `boolean \| { intervalMs, initTimeoutMs }` | `true`  | Enable polling as a fallback. `intervalMs` controls refresh frequency, `initTimeoutMs` controls the initial wait. |
-| `buildStep` | `boolean`                                  | auto    | Override build step auto-detection. See [Data source fallback chain](#data-source-fallback-chain).                |
+| Option      | Type                                       | Default          | Description                                                                                                       |
+| ----------- | ------------------------------------------ | ---------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `datafile`  | `DatafileInput`                            | -                | An initial datafile for immediate reads without waiting for a network request.                                    |
+| `stream`    | `boolean \| { initTimeoutMs: number }`     | `true`           | Enable streaming updates via SSE. Set `initTimeoutMs` to control how long to wait for the first update.           |
+| `polling`   | `boolean \| { intervalMs, initTimeoutMs }` | `true`           | Enable polling as a fallback. `intervalMs` controls refresh frequency, `initTimeoutMs` controls the initial wait. |
+| `buildStep` | `boolean`                                  | Auto-detected    | Override build step auto-detection. See [Data source fallback chain](#data-source-fallback-chain).                |
+| `waitUntil` | `(promise: Promise<unknown>) => void`       | Runtime-specific | Keep background usage and exposure reporting alive until the supplied promise settles.                            |
+
+The Next.js export uses `after` from `next/server` as its `waitUntil` default. Other runtimes use `waitUntil` from `@vercel/functions`. Pass your platform's lifecycle function when it does not support either default. An explicit `waitUntil` option always takes precedence.
 
 ## Initializing the client
 
-Before evaluating flags, initialize the client to load flag definitions and subscribe to changes:
+The client initializes automatically when you call `evaluate()` or `bulkEvaluate()`. Call `initialize()` explicitly only when you need to load definitions and handle initialization errors before evaluation:
 
 ```ts
 await client.initialize();

@@ -3,7 +3,7 @@ title: Slack
 product: vercel
 url: /docs/agent/chat/slack
 canonical_url: "https://vercel.com/docs/agent/chat/slack"
-last_updated: 2026-08-20
+last_updated: 2026-09-15
 type: conceptual
 prerequisites:
   - /docs/agent/chat
@@ -17,17 +17,17 @@ related:
 summary: Use Vercel Agent in Slack by mentioning @Vercel in a supported channel or thread
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/chat/slack.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "5e4a545a2cad78d7de5ec9e909b4af94daa1fa579ad25024554e0d87deef26bf"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "a9d5e1e1e7bed8b57d306ba9874f4987270af83abb77996e67da77f441601485"
 ---
 
 # Slack
 
-> **🔒 Permissions Required**: Vercel Agent in Slack
+> **🔒 Permissions Required**: Vercel Agent in Slack (Public Beta)
 
 Mention `@Vercel` in a Slack channel or thread to investigate deployments, review pull requests, or turn a discussion into code changes and open a pull request after you approve the proposed work. Vercel Agent uses the surrounding discussion to understand your request and provide relevant context.
 
-Vercel Agent in Slack is available in beta on [Pro](/docs/plans/pro) and [Enterprise](/docs/plans/enterprise) plans. See [Vercel Agent pricing](/docs/agent/pricing) for details.
+Vercel Agent in Slack is available in public beta on [Pro](/docs/plans/pro) and [Enterprise](/docs/plans/enterprise) plans. See [Vercel Agent pricing](/docs/agent/pricing) for details.
 
 ## Getting started
 
@@ -69,7 +69,7 @@ Slack thread context can include messages from multiple people. Vercel Agent tre
 - A Slack workspace can be connected to multiple Vercel teams.
 - Each Slack thread is scoped to one Vercel team for its lifetime.
 - You cannot switch the team for an existing thread.
-- In channel threads, the ephemeral team selector sets which team new threads use by default — it does not change the team for the thread you're already in.
+- In channel threads, the ephemeral team selector sets which team new threads use by default. It does not change the team for the thread you're already in.
 - In direct messages, selecting a team switches the current conversation immediately.
 - When starting a new thread, name an eligible Vercel team in your first message to route the session to that team. If the team name is ambiguous or cannot be matched, use the team selector instead.
 - Do not ask Vercel Agent to switch teams mid-conversation.

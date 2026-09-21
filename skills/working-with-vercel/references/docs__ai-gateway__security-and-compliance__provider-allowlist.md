@@ -3,7 +3,7 @@ title: AI Gateway Provider Allowlist
 product: vercel
 url: /docs/ai-gateway/security-and-compliance/provider-allowlist
 canonical_url: "https://vercel.com/docs/ai-gateway/security-and-compliance/provider-allowlist"
-last_updated: 2026-09-07
+last_updated: 2026-09-08
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/security-and-compliance
@@ -14,8 +14,8 @@ related:
 summary: Restrict which AI providers your team can route through AI Gateway. Available on Pro and Enterprise.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/provider-allowlist.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "54402fc214ff227f27fa25806cf6e0b74fa5961a9ea1081be04a48cdd0a5c99f"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "fc2f664798defe37966b9db3eba0a6ee43ed44dd1af5b2b95c2a5484b4828dc5"
 ---
 
 # AI Gateway Provider Allowlist

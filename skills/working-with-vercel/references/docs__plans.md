@@ -16,8 +16,8 @@ related:
 summary: Learn about the different plans available on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "c707eb5c741a6b439fe8896e8b442bff50fae6118734bf18b44a65dff6ae7c22"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "0a84c3d80de4902ee7e50e2069911f25eb414139d61103b1b3565f67d978e4a8"
 ---
 
 # Account Plans on Vercel
@@ -40,7 +40,7 @@ Vercel offers multiple account plans: Hobby, Pro, and Enterprise.
 - [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
 - [Pricing for Web Analytics](https://vercel.com/docs/analytics/limits-and-pricing?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=related) — Learn about pricing for Vercel Web Analytics.
 - [Account Management](https://vercel.com/docs/accounts?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=related) — Learn how to manage your Vercel account and team members.
-- [Usage & Pricing for Cron Jobs](https://vercel.com/docs/cron-jobs/usage-and-pricing?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=related) — Learn about cron jobs usage and pricing details.
+- [Deployment Protection on Vercel](https://vercel.com/docs/deployment-protection?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=related) — Learn how to control access to your Vercel project's preview and production URLs with Deployment Protection. Configure p
 
 Full cross-link map for this page: [/docs/plans.graph.md](/docs/plans.graph.md?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -88,7 +88,7 @@ You can also learn more about how [usage incurs on your site](/docs/pricing/how-
 All plans [receive notifications](/docs/notifications#on-demand-usage-notifications) by email and on the dashboard when they are approaching and exceed their usage limits.
 
 - Hobby plans will be paused when they exceed the included free tier usage
-- Pro plans users can configure [Spend Management](/docs/spend-management) to automatically pause deployments, trigger a webhook, or send SMS notifications when they reach 100% usage
+- Pro teams and Enterprise teams on the Flexible Commitment plan can configure [Spend Management](/docs/spend-management) to automatically pause deployments, trigger a webhook, or send SMS notifications when they reach 100% usage
 
 For Pro and Enterprise teams, when you reach 100% usage your deployments are **not** automatically stopped. Rather, Vercel enables you to incur on-demand usage as your site grows. It's important to be aware of the [usage page of your dashboard](/docs/pricing/manage-and-optimize-usage) to see if you are approaching your limit.
 

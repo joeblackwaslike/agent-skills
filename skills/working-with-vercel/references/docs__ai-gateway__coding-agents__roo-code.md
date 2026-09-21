@@ -3,7 +3,7 @@ title: Roo Code with AI Gateway
 product: vercel
 url: /docs/ai-gateway/coding-agents/roo-code
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/roo-code"
-last_updated: 2026-09-08
+last_updated: 2026-09-13
 type: how-to
 prerequisites:
   - /docs/ai-gateway/coding-agents
@@ -13,8 +13,8 @@ related:
 summary: Connect the Roo Code VS Code extension to AI Gateway. Configure your API key and models to access multiple providers and monitor spending.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/roo-code.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "2257cec4cbd7bd6400540210d5d247901e5117bcc9e5449481e922e2e2640254"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "d87e402e8387277ecfeabd123b229d2ae26f4d56107e1cb25d371c16d0a7ea52"
 ---
 
 # Roo Code with AI Gateway

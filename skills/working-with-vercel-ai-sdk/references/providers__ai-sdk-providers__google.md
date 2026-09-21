@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/google.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "eda1ca4af96ff610c1d3433e2c51cf279bf9128560b4aea67b8fccc169e557cc"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "3fd32a5db8890c65e2dfc8f3673bede450954a58ed41db3b256d990e13ac84f4"
 ---
 
 # Google Provider
@@ -1187,6 +1187,50 @@ Gemini Live Translation accepts audio input and produces translated audio
 output. Text input, tools, and custom instructions are not supported by this
 model.
 
+### Gemini 3.8 Live
+
+`gemini-3.8-live` and `gemini-3.8-live-extended-thinking` are audio-only
+realtime models: request `outputModalities: ['audio']`, and add
+`outputAudioTranscription: {}` if you want the assistant's transcript as
+`audio-transcript-delta` events. Server-side voice activity detection and
+proactive audio are always on.
+
+`gemini-3.8-live-extended-thinking` reasons in the background while streaming
+audio. Google requires exactly one of `thinkingLevel` (`low`, `medium`, `high`)
+or `thinkingBudget` for it; the provider sends `thinkingLevel: 'low'` when you
+set neither. Override it through `providerOptions.google.thinkingConfig`:
+
+```ts
+import {
+  google,
+  type Experimental_GoogleRealtimeModelOptions as GoogleRealtimeModelOptions,
+} from '@ai-sdk/google';
+
+const token = await google.experimental_realtime.getToken({
+  model: 'gemini-3.8-live-extended-thinking',
+  sessionConfig: {
+    outputModalities: ['audio'],
+    outputAudioTranscription: {},
+    providerOptions: {
+      google: {
+        thinkingConfig: { thinkingLevel: 'high' },
+      } satisfies GoogleRealtimeModelOptions,
+    },
+  },
+});
+```
+
+Tools declared in the session config run asynchronously (`NON_BLOCKING`) by
+default on these models, so the model keeps talking while a tool call is in
+flight. Set `providerOptions.google.defaultToolBehavior: 'BLOCKING'` on
+`gemini-3.8-live` to make it wait for the result instead.
+
+On the extended thinking model, `turnComplete` (the `response-done` event) does
+not mean the model is idle. Watch the `interactionStatus` custom event: its
+`raw.interactionStatus` is `IN_PROGRESS`, `IDLE`, or `WAITING_FOR_INPUT`. A
+`waitingForInput` custom event is emitted when the model has stopped and needs
+user input to continue.
+
 ## Translation Models
 
 <Note type="warning">Speech translation is an experimental feature.</Note>
@@ -2262,6 +2306,57 @@ const result = await generateSpeech({
 | `gemini-2.5-pro-preview-tts`   | <Check />     | <Check />              |
 | `gemini-3.1-flash-tts-preview` | <Check />     | <Check />              |
 
+## Evaluation Models
+
+Create an experimental evaluation model with `google.evaluationModel(modelId)`.
+It uses Gemini structured output for Choice, Score, and Boolean questions. Choose a model
+that supports structured output, such as `gemini-3.5-flash-lite`.
+
+```ts
+import { google } from '@ai-sdk/google';
+import { experimental_evaluate } from 'ai';
+
+const { answers } = await experimental_evaluate({
+  model: google.evaluationModel('gemini-3.5-flash-lite'),
+  state: 'I was charged twice.',
+  questions: {
+    requestsRefund: {
+      type: 'boolean',
+      instructions: 'Is the customer requesting money back?',
+    },
+    department: {
+      type: 'choice',
+      instructions: 'Which team should handle this?',
+      criteria: { billing: 'Charges and refunds', support: 'Other requests' },
+    },
+  },
+  providerOptions: {
+    google: { thinkingConfig: { thinkingLevel: 'minimal' } },
+  },
+});
+```
+
+The factory respects `createGoogle` settings and forwards `providerOptions.google`,
+including thinking configuration. Thinking controls depend on the selected model;
+use options supported by that model. The existing Gemini implementation sends the
+answer schema as `generationConfig.responseJsonSchema`.
+
+Choice labels are returned exactly, and Scores are finite fractional positions
+within the ordered rubric. The adapter validates complete answers after parsing
+and rejects safety-blocked, truncated, or invalid output. It preserves usage
+(including reasoning tokens), warnings, response data, and provider metadata.
+
+Choice and Score answers do not include probability distributions. Boolean
+answers contain prompted estimates of P(true), validated to be finite and in
+`[0, 1]`. These estimates are not guaranteed to be calibrated. Apply thresholds
+in application code, for example `answers.requestsRefund.probability >= 0.5`. See [Evaluation](/docs/ai-sdk-core/evaluation).
+
+Evaluation models can also be accessed through `customProvider` aliases or
+`createProviderRegistry().evaluationModel('provider:model')`. Direct string IDs
+use Gateway by default, or an explicitly configured default provider with an
+`evaluationModel` method. See
+[model aliases and registries](/docs/ai-sdk-core/evaluation#model-aliases-and-registries).
+
 
 ## Navigation
 
@@ -2277,6 +2372,7 @@ const result = await generateSpeech({
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
 - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
+- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

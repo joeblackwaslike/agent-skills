@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-output-generated-error.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "b9a5313fa7d18fbb45d440c9ff7daaf2eabc85a6b6da7f52ab9400126cb205fc"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "8b9a171b9aa88213c6123eb6f62f1a75244660dddb10b9b1fefd726674a92ebb"
 ---
 
 # AI_NoOutputGeneratedError
@@ -36,6 +36,7 @@ if (NoOutputGeneratedError.isInstance(error)) {
 - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
 - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
 - [AI_EmptyResponseBodyError](/docs/reference/ai-sdk-errors/ai-empty-response-body-error)
+- [AI_EvaluationUnsupportedQuestionTypeError](/docs/reference/ai-sdk-errors/ai-evaluation-unsupported-question-type-error)
 - [AI_InvalidArgumentError](/docs/reference/ai-sdk-errors/ai-invalid-argument-error)
 - [AI_InvalidDataContentError](/docs/reference/ai-sdk-errors/ai-invalid-data-content-error)
 - [AI_InvalidMessageRoleError](/docs/reference/ai-sdk-errors/ai-invalid-message-role-error)

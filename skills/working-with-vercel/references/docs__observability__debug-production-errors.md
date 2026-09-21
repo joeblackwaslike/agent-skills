@@ -16,8 +16,8 @@ related:
 summary: Find, fix, and verify production 500 errors using the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/observability/debug-production-errors.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "f2a98f7ec6d47fe08d0accef421c490d4ace3f393fe8c67840d871cc34a05057"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "2bc5a04a162dc8ffea83d57c668c2d51950805f4b542316fa63f911e2e59ab15"
 ---
 
 # Debugging production 500 errors
@@ -33,6 +33,7 @@ Use this guide to debug production 500 errors. You'll identify the problem, trac
 - [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors?from=related&source_path=%2Fdocs%2Fobservability%2Fdebug-production-errors&source_site=vercel-docs&relationship=related) — Learn the systematic steps to identify and resolve 404 issues.
 - [How to determine which Vercel Deployment introduced an issue?](https://vercel.com/kb/guide/how-to-determine-which-vercel-deployment-introduced-an-issue?from=related&source_path=%2Fdocs%2Fobservability%2Fdebug-production-errors&source_site=vercel-docs&relationship=related) — Process to quickly determine when a deployment issue was introduced using the Vercel CLI
 - [Rolling back a production deployment](https://vercel.com/docs/deployments/rollback-production-deployment?from=related&source_path=%2Fdocs%2Fobservability%2Fdebug-production-errors&source_site=vercel-docs&relationship=related) — Recover from a bad production deployment by rolling back, investigating the root cause, and redeploying a fix.
+- [Deploy Rust on Vercel with Docker](https://vercel.com/kb/guide/deploy-rust-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fobservability%2Fdebug-production-errors&source_site=vercel-docs&relationship=related) — Build a Rust application with Axum and Docker, then deploy it to Vercel Functions. Learn how to configure environment va
 - [Debugging slow Vercel Functions](https://vercel.com/docs/functions/debug-slow-functions?from=related&source_path=%2Fdocs%2Fobservability%2Fdebug-production-errors&source_site=vercel-docs&relationship=related) — Diagnose and fix slow Vercel Functions using CLI tools, logs, and timing analysis.
 - [Diagnosing and fixing cache issues](https://vercel.com/docs/caching/cdn-cache/debug-cache-issues?from=related&source_path=%2Fdocs%2Fobservability%2Fdebug-production-errors&source_site=vercel-docs&relationship=related) — Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
 - [Performing a rolling release deployment](https://vercel.com/docs/rolling-releases/rolling-release-deployment?from=related&source_path=%2Fdocs%2Fobservability%2Fdebug-production-errors&source_site=vercel-docs&relationship=related) — Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.

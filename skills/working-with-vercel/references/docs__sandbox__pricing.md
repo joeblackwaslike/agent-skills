@@ -3,7 +3,7 @@ title: Vercel Sandbox pricing and quotas
 product: vercel
 url: /docs/sandbox/pricing
 canonical_url: "https://vercel.com/docs/sandbox/pricing"
-last_updated: 2026-09-02
+last_updated: 2026-09-10
 type: reference
 prerequisites:
   - /docs/sandbox
@@ -16,8 +16,8 @@ related:
 summary: "Understand how Vercel Sandbox billing works, what's included in each plan, and the quotas that apply."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/pricing.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "823688b60b90a9e6f07773c7f7e3c2f4bd3efa57de34553fe9a1e2ac2da83cf8"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "35bc2288236de3e0b99090938636249d2dd2165b7688e78af2b6b547e7ff464d"
 ---
 
 # Vercel Sandbox pricing and quotas
@@ -40,8 +40,8 @@ Vercel Sandbox usage is metered across several dimensions. This page explains ho
 - [Run Terminal-Bench and any Harbor benchmark on Vercel Sandbox](https://vercel.com/kb/guide/run-terminal-bench-harbor-benchmarks-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related) — Run Terminal-Bench, SWE-bench, and any Harbor benchmark on Vercel Sandbox. Each trial executes in an isolated Firecracke
 - [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
 - [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
-- [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 
 Full cross-link map for this page: [/docs/sandbox/pricing.graph.md](/docs/sandbox/pricing.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

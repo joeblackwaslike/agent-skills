@@ -16,8 +16,8 @@ related:
 summary: The Security Dashboard aggregates the security posture of every account and project on your team, flags misconfigurations, and shows how to fix them.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/security-dashboard.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "2ecaa4bbe0568c8080b33a4e23b6863f2e8fcd485bbaa2a6853d983f6de4eead"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "f7a6e465ae5c8c65c29102aa8d8820ad89572c08fa1af724ea5d9e2e6b00b340"
 ---
 
 # Security Dashboard
@@ -38,7 +38,7 @@ The Security Dashboard aggregates the security posture of every account and proj
 - [Attestations and Compliance Report](https://vercel.com/docs/security/attestations-and-compliance-report?from=related&source_path=%2Fdocs%2Fsecurity%2Fsecurity-dashboard&source_site=vercel-docs&relationship=related) — Learn how to preview and download Vercel compliance documents from the dashboard.
 - [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related&source_path=%2Fdocs%2Fsecurity%2Fsecurity-dashboard&source_site=vercel-docs&relationship=related) — Learn how to manage Sign in with Vercel from the Dashboard
 - [List all checks for a project](https://vercel.com/docs/rest-api/checks-v2/list-all-checks-for-a-project?from=related&source_path=%2Fdocs%2Fsecurity%2Fsecurity-dashboard&source_site=vercel-docs&relationship=related) — GET /v2/projects/{projectIdOrName}/checks — List all checks for a project, optionally filtered by target.
-- [Access Control](https://vercel.com/docs/security/access-control?from=related&source_path=%2Fdocs%2Fsecurity%2Fsecurity-dashboard&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+- [Managing Global Configs with the Dashboard](https://vercel.com/docs/global-config/global-config-dashboard?from=related&source_path=%2Fdocs%2Fsecurity%2Fsecurity-dashboard&source_site=vercel-docs&relationship=related) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
 
 Full cross-link map for this page: [/docs/security/security-dashboard.graph.md](/docs/security/security-dashboard.graph.md?from=related&source_path=%2Fdocs%2Fsecurity%2Fsecurity-dashboard&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

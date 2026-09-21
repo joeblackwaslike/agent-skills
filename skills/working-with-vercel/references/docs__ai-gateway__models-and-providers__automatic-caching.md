@@ -3,7 +3,7 @@ title: AI Gateway Automatic Prompt Caching
 product: vercel
 url: /docs/ai-gateway/models-and-providers/automatic-caching
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/automatic-caching"
-last_updated: 2026-09-08
+last_updated: 2026-09-11
 type: reference
 prerequisites:
   - /docs/ai-gateway/models-and-providers
@@ -17,8 +17,8 @@ related:
 summary: Enable automatic prompt caching and provider-side cache affinity with AI Gateway to reduce costs and latency.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/automatic-caching.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "e0d43888d3f6d51449acb907f1e4dc08baaff8d2d927c88f515ee147df8c9bd9"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "8a9d220cd30077dd228e9d3deca8976c010350465f72abf01333532eab038c67"
 ---
 
 # AI Gateway Automatic Prompt Caching
@@ -35,8 +35,8 @@ Some providers like Anthropic and MiniMax require explicit cache control markers
 - [Dynamic Prompt Caching](https://ai-sdk.dev/cookbook/node/dynamic-prompt-caching?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related)
 - [Caching](https://ai-sdk.dev/docs/advanced/caching?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related)
 - [Local Caching Middleware](https://ai-sdk.dev/cookbook/node/local-caching-middleware?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related)
+- [Amazon Bedrock](https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related)
 - [Anthropic Messages Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related) — Advanced Anthropic API features including web search, provider timeouts, and automatic caching through AI Gateway.
-- [Anthropic Messages API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related) — Use the Anthropic Messages API with AI Gateway. Configure authentication and send requests with streaming, tools, images
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/automatic-caching.graph.md](/docs/ai-gateway/models-and-providers/automatic-caching.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

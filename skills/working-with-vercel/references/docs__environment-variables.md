@@ -3,7 +3,7 @@ title: Environment variables
 product: vercel
 url: /docs/environment-variables
 canonical_url: "https://vercel.com/docs/environment-variables"
-last_updated: 2026-08-20
+last_updated: 2026-09-17
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn more about environment variables on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "0554c8f6183899e911978b058304579e1430203db53f063413316bb1dd889c1d"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "0ccbe032d8bd1472e2cc7baac9ec0cdb23398637b8112c6f55235e8bf2347ca0"
 ---
 
 # Environment variables
@@ -75,8 +75,8 @@ Vercel also provides support for custom runtimes, through the Build Output API. 
 - [Guides for runtime builders](https://github.com/vercel/vercel/blob/main/DEVELOPING_A_RUNTIME.md#supporting-large-environment)
 - [Build Output API documentation](/docs/build-output-api/primitives#base-config)
 
-> **💡 Note:** While Vercel allows environment variables up to a total of 64KB in size, Edge
-> Functions and Middleware using the `edge` runtime are limited to 5KB per
+> **💡 Note:** While Vercel allows environment variables up to a total of 64KB in size,
+> functions and Middleware using the `edge` runtime are limited to 5KB per
 > Environment Variable.
 
 ## Environments
@@ -128,6 +128,8 @@ For more information, see [Environment variables for local development](/docs/de
 In that case, the Integration that added the Variable will be displayed in your project settings:
 
 ![Image](`/docs-assets/static/docs/concepts/projects/environment-variables/integration-env-variable-light.png`)
+
+For Native Marketplace resources, the variable scope matches the environments on the project connection. The scope can include Production, Preview, Development, and individual Custom Environments. A Custom Environment uses the provider's Preview secret value when one exists. Otherwise, the Custom Environment uses the default secret value.
 
 
 ---

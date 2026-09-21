@@ -17,8 +17,8 @@ related:
 summary: Lean more about when you may need to upgrade your Integration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/upgrade-integration.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "455e2d3f48e2ae590c3d310815e904f027ed5d8f26eb483570073ea4485db08e"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "efb740df265cefaaedf568f6326272bd170bae1c72d7cc5d1bef6a88a86001ee"
 ---
 
 # Upgrade an Integration
@@ -35,9 +35,9 @@ You should upgrade your integration if you are using any of the following scenar
 - [Integrations can now be managed more efficiently](https://vercel.com/changelog/integrations-can-now-be-managed-more-efficiently?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fupgrade-integration&source_site=vercel-docs&relationship=related)
 - [July 2020](https://vercel.com/blog/changelog-july-2020?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fupgrade-integration&source_site=vercel-docs&relationship=related)
 - [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fupgrade-integration&source_site=vercel-docs&relationship=related) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
-- [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fupgrade-integration&source_site=vercel-docs&relationship=related) — Learn how to manage project access and added products for your integrations.
-- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fupgrade-integration&source_site=vercel-docs&relationship=related) — Learn how you can add a product to your Vercel project through a native integration.
 - [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fupgrade-integration&source_site=vercel-docs&relationship=related) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
+- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fupgrade-integration&source_site=vercel-docs&relationship=related) — Learn how you can add a product to your Vercel project through a native integration.
+- [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fupgrade-integration&source_site=vercel-docs&relationship=related) — Learn how to manage project access and added products for your integrations.
 - [Update Installation](https://vercel.com/docs/rest-api/marketplace/update-installation?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fupgrade-integration&source_site=vercel-docs&relationship=related) — PATCH /v1/installations/{integrationConfigurationId} — This endpoint updates an integration installation.
 
 Full cross-link map for this page: [/docs/integrations/create-integration/upgrade-integration.graph.md](/docs/integrations/create-integration/upgrade-integration.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fupgrade-integration&source_site=vercel-docs&relationship=graph)

@@ -3,7 +3,7 @@ title: vercel alerts
 product: vercel
 url: /docs/cli/alerts
 canonical_url: "https://vercel.com/docs/cli/alerts"
-last_updated: 2026-08-05
+last_updated: 2026-09-10
 type: reference
 prerequisites:
   - /docs/cli
@@ -14,8 +14,8 @@ related:
 summary: List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/alerts.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "d7e16c07121fde43065399ee179053b006e4dcce8a8d0b6d7f5f98d2521b62b2"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "138181ca91d34a4fe1570326d3eb558982740bfd3f137d5b61c77ccc18874c83"
 ---
 
 # vercel alerts

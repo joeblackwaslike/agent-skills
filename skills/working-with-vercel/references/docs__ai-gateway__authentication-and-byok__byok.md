@@ -17,8 +17,8 @@ related:
 summary: Learn how to configure your own provider keys with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok/byok.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "f369c47b0c0ee301bde0695ee8643bb131f08f62bd2a7324571a446bee349afc"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "1b035e54f2eae25312ecdc923d1bf3b878f1da09ec79e4088b3c6f89d52eb62b"
 ---
 
 # Bring Your Own Key (BYOK) to AI Gateway
@@ -42,6 +42,7 @@ If a query using your credentials fails, AI Gateway will retry the query with it
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fbyok&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fbyok&source_site=vercel-docs&relationship=related) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fbyok&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
+- [Evaluation](https://vercel.com/docs/ai-gateway/modalities/evaluation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fbyok&source_site=vercel-docs&relationship=related) — Evaluate shared state against typed questions and get back structured choices, scores, and boolean probabilities through
 
 Full cross-link map for this page: [/docs/ai-gateway/authentication-and-byok/byok.graph.md](/docs/ai-gateway/authentication-and-byok/byok.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fbyok&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

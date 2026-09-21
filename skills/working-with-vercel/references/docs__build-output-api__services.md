@@ -3,7 +3,7 @@ title: Services
 product: vercel
 url: /docs/build-output-api/services
 canonical_url: "https://vercel.com/docs/build-output-api/services"
-last_updated: 2026-08-11
+last_updated: 2026-09-15
 type: reference
 prerequisites:
   - /docs/build-output-api
@@ -15,8 +15,8 @@ related:
 summary: Learn how a deployment with multiple services is structured in the Build Output API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/services.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "44bcc900aa18487bb89aaf420208d79212b45bbc6013f13c12490e202f636da9"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "59aa95ccd635488e85f13462b75e9c60c44e2cc4c3d3f38a6076615ea93cb167"
 ---
 
 # Services
@@ -38,6 +38,7 @@ A deployment can contain multiple services. In the Build Output API, each servic
 - [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fservices&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
 - [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fservices&source_site=vercel-docs&relationship=related) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
 - [Products](https://vercel.com/docs/products?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fservices&source_site=vercel-docs&relationship=related) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
+- [Projects overview](https://vercel.com/docs/projects?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fservices&source_site=vercel-docs&relationship=related) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 
 Full cross-link map for this page: [/docs/build-output-api/services.graph.md](/docs/build-output-api/services.graph.md?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fservices&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -100,7 +101,7 @@ A service is internal by default. Public traffic reaches it only when the top-le
 ## Constraints
 
 - Middleware is not supported inside a service.
-- The Edge runtime is not supported inside a service. A service that emits an Edge Function output is rejected at deploy.
+- The Edge runtime is not supported inside a service. A service that emits a Function with Edge Runtime is rejected at deploy.
 - A deployment can contain up to 100 services.
 - Service names may contain only lowercase letters, hyphens, and underscores, must start and end with a letter, and are limited to 64 characters.
 

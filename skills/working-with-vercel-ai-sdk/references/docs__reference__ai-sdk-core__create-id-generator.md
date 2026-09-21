@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/create-id-generator.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "a00e227fc85ef0bd625ad73bc50cb5ff32395f0b175dfa3dafff36dc2759e874"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "e0b6cadb51c8cc9175fe13dd4b6922ef41b0313bbc0523829854b892634408e0"
 ---
 
 # `createIdGenerator()`
@@ -103,6 +103,7 @@ const id1 = generateUserId(); // e.g., "user_1a2b3c4d"
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+- [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
 - [uploadFile](/docs/reference/ai-sdk-core/upload-file)
 - [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
 - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
@@ -118,6 +119,7 @@ const id1 = generateUserId(); // e.g., "user_1a2b3c4d"
 - [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
 - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [toolSearch](/docs/reference/ai-sdk-core/tool-search)
 - [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
 - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)

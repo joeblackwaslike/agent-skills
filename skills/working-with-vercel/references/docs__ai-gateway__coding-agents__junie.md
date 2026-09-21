@@ -3,7 +3,7 @@ title: Junie CLI with AI Gateway
 product: vercel
 url: /docs/ai-gateway/coding-agents/junie
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/junie"
-last_updated: 2018-10-20
+last_updated: 2026-09-13
 type: how-to
 prerequisites:
   - /docs/ai-gateway/coding-agents
@@ -15,8 +15,8 @@ related:
 summary: Connect Junie CLI to AI Gateway with the Vercel CLI or custom model profiles.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/junie.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "fccda4ffa57240ee85353c75927a785e614bd5fd1db3bf0174b3553149085101"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "3fc4264b97ec1fb637a5a8420590d693593bd5a87dce2e4e0610dfbfcc4dd599"
 ---
 
 # Junie CLI with AI Gateway

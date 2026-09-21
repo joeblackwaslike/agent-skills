@@ -3,7 +3,7 @@ title: ForgeCode with AI Gateway
 product: vercel
 url: /docs/ai-gateway/coding-agents/forge
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/forge"
-last_updated: 2018-10-20
+last_updated: 2026-09-13
 type: how-to
 prerequisites:
   - /docs/ai-gateway/coding-agents
@@ -16,8 +16,8 @@ related:
 summary: Connect ForgeCode to AI Gateway with the Vercel CLI or custom provider and credential files.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/forge.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "080c853fc08ea361279cfbc6e0f2d41d0b3428d170d1f3bedb36c97ca6664504"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "a5786984223583037584e87a9446c3bdb14de08616ac53abb4ae48e5384d72a7"
 ---
 
 # ForgeCode with AI Gateway

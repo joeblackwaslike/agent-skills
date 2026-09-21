@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/getting-started/expo.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "ff3f28fbc19c4b8ba003603fdac5d9b07a71aa0413840aadaa90cf606b740c32"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "106ec26f76f5057e9a520904707c756489ab5650e9fee9609c9db825106685e3"
 ---
 
 # Expo Quickstart
@@ -103,6 +103,13 @@ Let's take a look at what is happening in this code:
 4. Finally, return the result to the client to stream the response.
 
 This API route creates a POST request endpoint at `/api/chat`.
+
+<Note>
+  If a deployed Expo API Route buffers the response despite the streaming
+  headers above, test the same handler without the deployment adapter to isolate
+  the cause. As a workaround, host the chat endpoint in a separate Vercel
+  Function and set `EXPO_PUBLIC_API_BASE_URL` to that function's base URL.
+</Note>
 
 ## Choosing a Provider
 

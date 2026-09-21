@@ -17,8 +17,8 @@ related:
 summary: Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/quickstart.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "b5d7fdb7d8c49bbed70769619247dfe2d71ec24da9fdbb19b515bc94262e9a9d"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "40ac0db35b17fea90fb0b18ea32b7a7ea067f0b8f5b67d2d07694ca8c1ac2d72"
 ---
 
 # Getting Started with Vercel Flags
@@ -34,8 +34,8 @@ This guide walks you through creating a feature flag in the Vercel Dashboard and
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fquickstart&source_site=vercel-docs&relationship=related)
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fquickstart&source_site=vercel-docs&relationship=related)
 - [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fquickstart&source_site=vercel-docs&relationship=related) — Using the Flags SDK in SvelteKit
-- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fquickstart&source_site=vercel-docs&relationship=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [Quickstart](https://flags-sdk.dev/docs/frameworks/next?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to start using the Flags SDK in your Next.js project.
+- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fquickstart&source_site=vercel-docs&relationship=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/quickstart.graph.md](/docs/flags/vercel-flags/quickstart.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fquickstart&source_site=vercel-docs&relationship=graph)

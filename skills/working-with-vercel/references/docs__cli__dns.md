@@ -12,8 +12,8 @@ related:
 summary: Learn how to manage your DNS records for your domains using the vercel dns CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/dns.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "4ed238912fde5a66f91b878d878629248b1802638ba25525fce6971d84521b66"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "38b926f28eee82e1cd6ca97113ba65f0911a934fd732717912fb5fd0976d079a"
 ---
 
 # vercel dns
@@ -29,7 +29,7 @@ The `vercel dns` command manages DNS records for domains: list, inspect, add, up
 - [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records?from=related&source_path=%2Fdocs%2Fcli%2Fdns&source_site=vercel-docs&relationship=related) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
 - [Vercel CLI expands commands for DNS, domains, and projects](https://vercel.com/changelog/vercel-cli-expands-commands-for-dns-domains-and-projects?from=related&source_path=%2Fdocs%2Fcli%2Fdns&source_site=vercel-docs&relationship=related)
 - [vercel domains](https://vercel.com/docs/cli/domains?from=related&source_path=%2Fdocs%2Fcli%2Fdns&source_site=vercel-docs&relationship=related) — Learn how to buy, sell, transfer, and manage your domains using the vercel domains CLI command.
-- [Working with DNS](https://vercel.com/docs/domains/working-with-dns?from=related&source_path=%2Fdocs%2Fcli%2Fdns&source_site=vercel-docs&relationship=related) — Learn how DNS works in order to properly configure your domain.
+- [Working with DNS](https://vercel.com/docs/domains/working-with-dns?from=related&source_path=%2Fdocs%2Fcli%2Fdns&source_site=vercel-docs&relationship=related) — Learn how DNS works to properly configure your domain.
 - [vercel certs](https://vercel.com/docs/cli/certs?from=related&source_path=%2Fdocs%2Fcli%2Fdns&source_site=vercel-docs&relationship=related) — Learn how to manage certificates for your domains using the vercel certs CLI command.
 - [Update an existing DNS record](https://vercel.com/docs/rest-api/dns/update-an-existing-dns-record?from=related&source_path=%2Fdocs%2Fcli%2Fdns&source_site=vercel-docs&relationship=related) — PATCH /v1/domains/records/{recordId} — Updates an existing DNS record for a domain name.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fdns&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.

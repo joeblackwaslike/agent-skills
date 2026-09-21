@@ -8,16 +8,16 @@ type: reference
 prerequisites:
   []
 related:
+  - /docs/analytics/limits-and-pricing
   - /docs/speed-insights/limits-and-pricing
   - /docs/observability
   - /docs/analytics
   - /docs/analytics/package
-  - /docs/speed-insights/package
 summary: Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize your usage of Web Analytics...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/manage-and-optimize-observability.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "5056c7e749b3add02e3ff103594bd961b4df46f01f96de64e490d9439f9303f2"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "5dabd7636b1025723c98740c7ab7f6d76e23446d70299462935ab72b20626d6d"
 ---
 
 # Manage and optimize usage for Observability
@@ -31,21 +31,22 @@ The Observability section covers usage for Observability, Monitoring, Web Analyt
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel Observability is now generally available](https://vercel.com/changelog/vercel-observability-is-now-generally-available?from=related&source_path=%2Fdocs%2Fmanage-and-optimize-observability&source_site=vercel-docs&relationship=related)
-- [Pricing for Web Analytics](https://vercel.com/docs/analytics/limits-and-pricing?from=related&source_path=%2Fdocs%2Fmanage-and-optimize-observability&source_site=vercel-docs&relationship=related) — Learn about pricing for Vercel Web Analytics.
 - [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage?from=related&source_path=%2Fdocs%2Fmanage-and-optimize-observability&source_site=vercel-docs&relationship=related) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fmanage-and-optimize-observability&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Limits and Pricing for Monitoring](https://vercel.com/docs/query/monitoring/limits-and-pricing?from=related&source_path=%2Fdocs%2Fmanage-and-optimize-observability&source_site=vercel-docs&relationship=related) — Learn about our limits and pricing when using Monitoring. Different limitations are applied depending on your plan.
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fmanage-and-optimize-observability&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fmanage-and-optimize-observability&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
 
 Full cross-link map for this page: [/docs/manage-and-optimize-observability.graph.md](/docs/manage-and-optimize-observability.graph.md?from=related&source_path=%2Fdocs%2Fmanage-and-optimize-observability&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Plan usage
 
-| Resource | Price |
-|----------|-------|
-| [Speed Insights Events](/docs/speed-insights/limits-and-pricing) | $0.65 |
-| [Observability Plus Events](/docs/observability#tracked-events) | $1.20 |
+| Resource | Price | Included (Pro) | Included (Hobby) |
+|----------|-------|----------------|-----------------|
+| [Web Analytics Events](/docs/analytics/limits-and-pricing#what-is-an-event-in-vercel-web-analytics) | $0.03 | Usage-based | 50,000 events / month included |
+| [Speed Insights Events](/docs/speed-insights/limits-and-pricing) | $0.65 | 10,000 events over the last 30 days, shared across the team | 10,000 events over the last 30 days, shared across the team |
+| [Observability Plus Events](/docs/observability#tracked-events) | $1.20 | N/A | N/A |
 
 
 ## Managing Web Analytics events

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-invalid-prompt-error.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "099e69adc934fce1d0c368ff832d2cceb0b0aacb56fab1ac1853dff6d7845cd3"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "1d94b894a96674a34f551b12159b8a364435bf1719c086c729045b25d79138a3"
 ---
 
 # AI_InvalidPromptError
@@ -53,6 +53,7 @@ if (InvalidPromptError.isInstance(error)) {
 - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
 - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
 - [AI_EmptyResponseBodyError](/docs/reference/ai-sdk-errors/ai-empty-response-body-error)
+- [AI_EvaluationUnsupportedQuestionTypeError](/docs/reference/ai-sdk-errors/ai-evaluation-unsupported-question-type-error)
 - [AI_InvalidArgumentError](/docs/reference/ai-sdk-errors/ai-invalid-argument-error)
 - [AI_InvalidDataContentError](/docs/reference/ai-sdk-errors/ai-invalid-data-content-error)
 - [AI_InvalidMessageRoleError](/docs/reference/ai-sdk-errors/ai-invalid-message-role-error)

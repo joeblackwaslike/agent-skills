@@ -14,13 +14,13 @@ related:
 summary: Understand how Vercel Agent reads linked GitHub repositories and creates pull requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/chat/github.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "d080c1736011973ee98d88f2a36dbb6052963e3c3f16568f1727961a370e66ba"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "e733f5a0e93dc6df31494ca4861c972001c1e10ac3efb688e07c2357ad7f4af6"
 ---
 
 # GitHub Operations
 
-> **🔒 Permissions Required**: Vercel Agent GitHub operations
+> **🔒 Permissions Required**: Vercel Agent GitHub operations (Public Beta)
 
 Vercel Agent can read and update GitHub repositories linked to projects in your selected Vercel team. It uses a secure sandbox for repository work and requires your approval before it writes to GitHub.
 

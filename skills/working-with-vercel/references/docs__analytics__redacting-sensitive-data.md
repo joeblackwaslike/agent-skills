@@ -12,8 +12,8 @@ related:
 summary: Learn how to redact sensitive data from your Web Analytics events.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/redacting-sensitive-data.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "5bc93f6670bea1601b2cb4317e8a6126f0498b77c52fa953d999572691f0cf36"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "249c768161b47eb6c20fe3ccdc3e770091484fb1d7b4d5778981372451fe50c0"
 ---
 
 # Redacting Sensitive Data from Web Analytics Events
@@ -29,14 +29,13 @@ Sometimes, URLs and query parameters may contain sensitive data. This could be a
 - [How to upgrade to version 15](https://nextjs.org/docs/app/guides/upgrading/version-15?from=related&source_path=%2Fdocs%2Fanalytics%2Fredacting-sensitive-data&source_site=vercel-docs&relationship=related) — Upgrade your Next.js Application from Version 14 to 15.
 - [Build Imgur-style image hosting with Nuxt and Vercel Blob](https://vercel.com/kb/guide/vercel-blob-nuxt-imgur-clone?from=related&source_path=%2Fdocs%2Fanalytics%2Fredacting-sensitive-data&source_site=vercel-docs&relationship=related) — Learn how to build an Imgur-style paste-to-share image host using Nuxt and Vercel Blob, with direct-to-storage client up
 - [How to optimize third-party libraries](https://nextjs.org/docs/app/guides/third-party-libraries?from=related&source_path=%2Fdocs%2Fanalytics%2Fredacting-sensitive-data&source_site=vercel-docs&relationship=related) — Optimize the performance of third-party libraries in your application with the `@next/third-parties` package.
-- [Build a Claude Managed Agent with Vercel Sandbox](https://vercel.com/kb/guide/run-claude-managed-agent-tools-with-vercel-sandbox?from=related&source_path=%2Fdocs%2Fanalytics%2Fredacting-sensitive-data&source_site=vercel-docs&relationship=related) — Build a Claude Managed Agent with Vercel Sandbox: each session runs in a fresh microVM with credential brokering and a w
 - [How to use Next.js as a backend for your frontend](https://nextjs.org/docs/app/guides/backend-for-frontend?from=related&source_path=%2Fdocs%2Fanalytics%2Fredacting-sensitive-data&source_site=vercel-docs&relationship=related) — Learn how to use Next.js as a backend framework
 - [How to optimize third-party libraries](https://nextjs.org/docs/pages/guides/third-party-libraries?from=related&source_path=%2Fdocs%2Fanalytics%2Fredacting-sensitive-data&source_site=vercel-docs&relationship=related) — Optimize the performance of third-party libraries in your application with the `@next/third-parties` package.
+- [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs?from=related&source_path=%2Fdocs%2Fanalytics%2Fredacting-sensitive-data&source_site=vercel-docs&relationship=related) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
 - [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart?from=related&source_path=%2Fdocs%2Fanalytics%2Fredacting-sensitive-data&source_site=vercel-docs&relationship=related) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
 - [Tracking custom events](https://vercel.com/docs/analytics/custom-events?from=related&source_path=%2Fdocs%2Fanalytics%2Fredacting-sensitive-data&source_site=vercel-docs&relationship=related) — Learn how to send custom analytics events from your application.
 - [Get Started with BotID](https://vercel.com/docs/botid/get-started?from=related&source_path=%2Fdocs%2Fanalytics%2Fredacting-sensitive-data&source_site=vercel-docs&relationship=related) — Step-by-step guide to setting up BotID protection in your Vercel project
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fanalytics%2Fredacting-sensitive-data&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
-- [Add the Vercel Toolbar to your local environment](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-localhost?from=related&source_path=%2Fdocs%2Fanalytics%2Fredacting-sensitive-data&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel Toolbar in your local environment.
 
 Full cross-link map for this page: [/docs/analytics/redacting-sensitive-data.graph.md](/docs/analytics/redacting-sensitive-data.graph.md?from=related&source_path=%2Fdocs%2Fanalytics%2Fredacting-sensitive-data&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

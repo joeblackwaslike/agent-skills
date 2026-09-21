@@ -16,8 +16,8 @@ related:
 summary: Learn about testing, common issues, and how to troubleshoot microfrontends on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/troubleshooting.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "bf7552dfa84ef3bf5e4c6f5cebaf8ecc5e7d03878e929532dff7a79e4086ac9b"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "3eb027ef9f97f974756b79fade064c4e562cb3894c50eb70076c67abbb0e0bd4"
 ---
 
 # Testing & troubleshooting microfrontends
@@ -34,8 +34,8 @@ The `@vercel/microfrontends` package includes test utilities to help avoid commo
 
 - [Microfrontends](https://turborepo.dev/docs/guides/microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
 - [Microfrontends support is now in Public Beta](https://vercel.com/changelog/microfrontends-support-is-now-in-public-beta?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Ftroubleshooting&source_site=vercel-docs&relationship=related)
-- [How Vercel adopted microfrontends](https://vercel.com/blog/how-vercel-adopted-microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Ftroubleshooting&source_site=vercel-docs&relationship=related)
 - [Why is my deployed project giving a 404?](https://vercel.com/kb/guide/why-is-my-deployed-project-giving-404?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Vercel 404 errors often hit healthy builds when routing metadata does not match the request path. Learn the causes and h
+- [How Vercel adopted microfrontends](https://vercel.com/blog/how-vercel-adopted-microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Ftroubleshooting&source_site=vercel-docs&relationship=related)
 - [Incremental Migrations with Microfrontends](https://vercel.com/kb/guide/incremental-migrations-with-microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Learn how to migrate legacy applications using microfrontends
 - [Managing microfrontends](https://vercel.com/docs/microfrontends/managing-microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Learn how to manage your microfrontends on Vercel.
 - [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.

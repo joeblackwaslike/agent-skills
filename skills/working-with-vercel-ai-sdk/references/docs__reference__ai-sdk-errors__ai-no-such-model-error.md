@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-such-model-error.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "db0d7a1e54273d657bb84a4135569772342b8097291cf3c0103ede157e7c2f91"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "242cc69cb86d096a59a9f7bcd3b636c51ccd43551b1f46620615bc7aefc9d086"
 ---
 
 # AI_NoSuchModelError
@@ -26,12 +26,17 @@ if (NoSuchModelError.isInstance(error)) {
 }
 ```
 
+Experimental evaluation resolution uses `modelType: 'evaluationModel'`. This
+includes unavailable evaluation capabilities and unknown evaluation model or
+provider IDs. See [Evaluation](/docs/ai-sdk-core/evaluation#default-provider-strings).
+
 
 ## Navigation
 
 - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
 - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
 - [AI_EmptyResponseBodyError](/docs/reference/ai-sdk-errors/ai-empty-response-body-error)
+- [AI_EvaluationUnsupportedQuestionTypeError](/docs/reference/ai-sdk-errors/ai-evaluation-unsupported-question-type-error)
 - [AI_InvalidArgumentError](/docs/reference/ai-sdk-errors/ai-invalid-argument-error)
 - [AI_InvalidDataContentError](/docs/reference/ai-sdk-errors/ai-invalid-data-content-error)
 - [AI_InvalidMessageRoleError](/docs/reference/ai-sdk-errors/ai-invalid-message-role-error)

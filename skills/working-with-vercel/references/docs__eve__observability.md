@@ -13,8 +13,8 @@ related:
 summary: View agent runs in the Vercel dashboard with no setup, and optionally export AI SDK spans through OpenTelemetry.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/eve/observability.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "1ceb31354f78726bf746791b4c60bfbbd080cfcb4894e277754b2c27396c8c12"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "97f86204760ebb6ae08d601ce10d5780a79b6d91a6f091f32602d949a983e1b8"
 ---
 
 # Observability
@@ -30,11 +30,12 @@ eve gives you two ways to observe an agent:
 - [Agent Runs now show subagent activity on eve projects](https://vercel.com/changelog/agent-runs-now-show-subagent-activity-on-eve-projects?from=related&source_path=%2Fdocs%2Feve%2Fobservability&source_site=vercel-docs&relationship=related)
 - [Agent Runs now available in the Vercel MCP and CLI](https://vercel.com/changelog/agent-runs-vercel-mcp-cli?from=related&source_path=%2Fdocs%2Feve%2Fobservability&source_site=vercel-docs&relationship=related)
 - [Trace and debug eve agent sessions with Vercel Observability](https://vercel.com/changelog/eve-agent-observability?from=related&source_path=%2Fdocs%2Feve%2Fobservability&source_site=vercel-docs&relationship=related)
-- [Observability](https://eve.dev/docs/guides/instrumentation?from=related&source_path=%2Fdocs%2Feve%2Fobservability&source_site=vercel-docs&relationship=related) — Trace an agent with OpenTelemetry in instrumentation.ts, read the workflow run tags eve emits, and debug discovery with
-- [Instrumentation Providers](https://eve.dev/docs/guides/instrumentation-providers?from=related&source_path=%2Fdocs%2Feve%2Fobservability&source_site=vercel-docs&relationship=related) — Configure the experimental instrumentation provider layout, control captured inputs and outputs, and redact OpenTelemetr
+- [OpenTelemetry](https://eve.dev/docs/observability/otel?from=related&source_path=%2Fdocs%2Feve%2Fobservability&source_site=vercel-docs&relationship=related) — Configure OpenTelemetry destinations, content capture, and managed exports.
 - [Terminal UI](https://eve.dev/docs/guides/dev-tui?from=related&source_path=%2Fdocs%2Feve%2Fobservability&source_site=vercel-docs&relationship=related) — Use eve locally or connect to a deployed agent from an interactive terminal UI.
+- [Confident AI](https://ai-sdk.dev/providers/observability/confident-ai?from=related&source_path=%2Fdocs%2Feve%2Fobservability&source_site=vercel-docs&relationship=related)
 - [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related&source_path=%2Fdocs%2Feve%2Fobservability&source_site=vercel-docs&relationship=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
-- [Get started with eve: durable AI agents in TypeScript](https://eve.dev/docs/getting-started?from=related&source_path=%2Fdocs%2Feve%2Fobservability&source_site=vercel-docs&relationship=related) — Create an eve project, configure a model, understand its filesystem layout, and run your first agent.
+- [Instrumentation](https://eve.dev/docs/observability/instrumentation?from=related&source_path=%2Fdocs%2Feve%2Fobservability&source_site=vercel-docs&relationship=related) — Configure lifecycle instrumentation, handle runtime events, and control the content each destination receives.
+- [eve](https://eve.dev/docs/channels/eve?from=related&source_path=%2Fdocs%2Feve%2Fobservability&source_site=vercel-docs&relationship=related) — The default HTTP API for an agent, covering session routes, auth, and customization.
 - [Introducing eve, an open-source agent framework](https://vercel.com/changelog/introducing-eve-an-open-source-agent-framework?from=related&source_path=%2Fdocs%2Feve%2Fobservability&source_site=vercel-docs&relationship=related)
 - [The Agent Stack](https://vercel.com/blog/agent-stack?from=related&source_path=%2Fdocs%2Feve%2Fobservability&source_site=vercel-docs&relationship=related)
 - [Pricing and Limits](https://vercel.com/docs/eve/pricing?from=related&source_path=%2Fdocs%2Feve%2Fobservability&source_site=vercel-docs&relationship=related) — Understand how eve usage maps to Vercel resources and inherited platform limits.

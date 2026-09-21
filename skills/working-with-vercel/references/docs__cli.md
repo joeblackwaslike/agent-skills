@@ -3,7 +3,7 @@ title: Vercel CLI Overview
 product: vercel
 url: /docs/cli
 canonical_url: "https://vercel.com/docs/cli"
-last_updated: 2026-08-25
+last_updated: 2026-09-17
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel command-line interface (CLI) to manage and configure your Vercel Projects from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "9512bef51c3fad8c7e45dd0f292643f6f7175c57d4d7f3f979e1942cd6d1f1c7"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "4bbc7c85b0a68885b9ff59481c9dafd9a7bfcb9acd56d222333b89a75710b584"
 ---
 
 # Vercel CLI Overview
@@ -40,8 +40,8 @@ Vercel gives you multiple ways to interact with and configure your Vercel Projec
 - [Experimental native binaries for Vercel CLI](https://vercel.com/changelog/experimental-native-binaries-for-vercel-cli?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related)
 - [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related) — Point your apex domain to Vercel with an A record \\(76.76.21.21 or your domain card's value\\), pair it with a www CNAME,
 - [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
+- [How to automatically approve tool calls in eve with Jev](https://vercel.com/kb/guide/auto-approve-tool-calls-eve-jev?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related) — Use Jev to review tool calls in eve, allow routine actions, and request human approval when needed. Configure the policy
 - [Build with an Express starter template](https://vercel.com/kb/guide/build-with-a-express-starter-template?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related) — Deploy an Express app to Vercel from a template. Browse Express starters from Vercel and the community, then run them lo
-- [Build with a FastAPI starter template](https://vercel.com/kb/guide/build-with-a-fastapi-starter-template?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related) — Browse FastAPI starter templates for Vercel and deploy one in a few steps. Compare minimal, AI, agent, and full-stack Fa
 
 Full cross-link map for this page: [/docs/cli.graph.md](/docs/cli.graph.md?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

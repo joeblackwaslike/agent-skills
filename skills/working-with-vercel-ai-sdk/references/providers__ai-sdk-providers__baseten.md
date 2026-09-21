@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/baseten.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "44c20c0ea3f47cd4c766ae9d2b68ded54db7ed5c453db6bb9aa4b091df86d929"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "bee7f9f638e40de5f5da78ddaa04899c9a1f394b7f11a2115a3eecf4a3ebfa59"
 ---
 
 # Baseten Provider
@@ -284,6 +284,7 @@ try {
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
 - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
+- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

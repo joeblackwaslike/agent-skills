@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/custom-provider.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "17ef0596d909423a38863b5e313d53bbe1a3dfe124544ef3ba5d16b8ad4032aa"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "c2492d45519a78eae52bf220ed67fc5ef562048ae57944954e10272cd9251448"
 ---
 
 # `customProvider()`
@@ -203,6 +203,24 @@ The `customProvider` function returns a `Provider` instance. It has the followin
   ]}
 />
 
+## Experimental evaluation models
+
+Pass `evaluationModels: Record<string, Experimental_EvaluationModel>` to define
+aliases for evaluation model instances or string IDs. The returned provider adds
+`evaluationModel(alias): Experimental_EvaluationModelV4`. String aliases resolve
+through Gateway by default, or an explicitly configured default provider with
+an `evaluationModel` method. Unknown aliases use the fallback provider's evaluation
+factory when available; model failures and unsupported questions do not trigger
+substitution.
+
+Unavailable evaluation capabilities or models throw `NoSuchModelError` with
+`modelType: 'evaluationModel'`; unknown registry providers throw
+`NoSuchProviderError`. These capabilities are structural extensions and are not
+added to the stable `ProviderV4` contract. Direct evaluation string IDs default
+to Gateway when no default provider is configured.
+See [Evaluation](/docs/ai-sdk-core/evaluation#model-aliases-and-registries)
+for runnable usage patterns.
+
 
 ## Navigation
 
@@ -217,6 +235,7 @@ The `customProvider` function returns a `Provider` instance. It has the followin
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+- [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
 - [uploadFile](/docs/reference/ai-sdk-core/upload-file)
 - [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
 - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
@@ -232,6 +251,7 @@ The `customProvider` function returns a `Provider` instance. It has the followin
 - [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
 - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [toolSearch](/docs/reference/ai-sdk-core/tool-search)
 - [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
 - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)

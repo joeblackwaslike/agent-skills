@@ -3,7 +3,7 @@ title: Filtering Analytics
 product: vercel
 url: /docs/analytics/filtering
 canonical_url: "https://vercel.com/docs/analytics/filtering"
-last_updated: 2026-08-11
+last_updated: 2026-09-16
 type: how-to
 prerequisites:
   - /docs/analytics
@@ -15,13 +15,13 @@ related:
 summary: "Learn how filters allow you to explore insights about your website's visitors."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/filtering.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "37bf1ad5a7a18b914633d942f91a5335ba3be15946e4753002837e60863b8489"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "78dd93d8de5236b385fc6335ccd47018caa85ff36980985374189662028d09c8"
 ---
 
 # Filtering Analytics
 
-Web Analytics provides you with a way to filter your data in order to gain a deeper understanding of your website
+Web Analytics provides you with a way to filter your data to gain a deeper understanding of your website
 traffic. This guide will show you how to use the filtering feature and provide examples of how
 to use it to answer specific questions.
 

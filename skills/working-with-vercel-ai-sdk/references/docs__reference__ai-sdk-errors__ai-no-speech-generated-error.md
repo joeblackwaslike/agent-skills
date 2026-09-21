@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-speech-generated-error.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "df30c8d53dbbe21a3efceea8bd44276f0e33be27e4e67095c69b5340f89d4ac3"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "cbbd68db697fbf603d67f61427b85d1e12007d7aae24dfc7c0afc2aa98f1e926"
 ---
 
 # AI_NoSpeechGeneratedError
@@ -30,6 +30,7 @@ if (NoSpeechGeneratedError.isInstance(error)) {
 - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
 - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
 - [AI_EmptyResponseBodyError](/docs/reference/ai-sdk-errors/ai-empty-response-body-error)
+- [AI_EvaluationUnsupportedQuestionTypeError](/docs/reference/ai-sdk-errors/ai-evaluation-unsupported-question-type-error)
 - [AI_InvalidArgumentError](/docs/reference/ai-sdk-errors/ai-invalid-argument-error)
 - [AI_InvalidDataContentError](/docs/reference/ai-sdk-errors/ai-invalid-data-content-error)
 - [AI_InvalidMessageRoleError](/docs/reference/ai-sdk-errors/ai-invalid-message-role-error)

@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/terminal-config.md"
-fetched_at: "2026-09-14T09:37:17.168Z"
-sha256: "68c087fa0c2962e7bcde44a1078c8abb3182a130e0561919b3fb5ae6266a7f65"
+fetched_at: "2026-09-21T09:39:23.760Z"
+sha256: "2b1062c910f02e3c12ec9cd2879391363845caa8c62b378becf3015ce5b25f7a"
 ---
 
 > ## Documentation Index
@@ -122,7 +122,7 @@ The example below plays a system sound on macOS. The linked guide has desktop no
 
 ## Configure tmux
 
-When Claude Code runs inside tmux, two things break by default: Shift+Enter submits instead of inserting a newline, and desktop notifications and the [progress bar](/docs/en/settings-reference#terminalprogressbarenabled) never reach the outer terminal. Add these lines to `~/.tmux.conf`, then run `tmux source-file ~/.tmux.conf` to apply them to the running server:
+When Claude Code runs inside tmux, by default Shift+Enter submits instead of inserting a newline, and desktop notifications and the [progress bar](/docs/en/settings-reference#terminalprogressbarenabled) never reach the outer terminal. Add these lines to `~/.tmux.conf`, then run `tmux source-file ~/.tmux.conf` to apply them to the running server:
 
 ```bash ~/.tmux.conf theme={null}
 set -g allow-passthrough on

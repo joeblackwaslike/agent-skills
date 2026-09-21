@@ -3,7 +3,7 @@ title: eve
 product: vercel
 url: /docs/eve
 canonical_url: "https://vercel.com/docs/eve"
-last_updated: 2026-09-03
+last_updated: 2026-09-14
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Build and deploy durable backend AI agents with eve, an open-source, filesystem-first framework.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/eve.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "1a1a113d189ff8bc7e3e97daad55683c6707fc2fbad47be8f63aedde9ea3a274"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "cc85ed69ab8ffe158afbb99ad8528c3c32a0f2e5f9258f1779d4caf6e1b1a0cd"
 ---
 
 # eve
@@ -34,16 +34,16 @@ Build durable backend AI agents with eve, an open-source, filesystem-first frame
 
 - [Introducing eve, an open-source agent framework](https://vercel.com/changelog/introducing-eve-an-open-source-agent-framework?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related)
 - [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
+- [The Agent Stack](https://vercel.com/blog/agent-stack?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related)
 - [Give your eve agent secure access to your private AWS RDS database](https://vercel.com/kb/guide/give-eve-agent-secure-access-to-aws-rds-database?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Connect an eve agent to a private AWS RDS database using Vercel Secure Compute and VPC peering, with a read-only query t
 - [How to run a multi-step research agent on Vercel](https://vercel.com/kb/guide/how-to-run-a-multi-step-research-agent-on-vercel?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — An end-to-end architecture for production research agents on Vercel using Sandbox, Workflows, and AI Gateway with isolat
-- [The Agent Stack](https://vercel.com/blog/agent-stack?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related)
 - [Deployment](https://eve.dev/docs/guides/deployment/overview?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Choose a deployment strategy and prepare an eve agent for production.
-- [Next.js](https://eve.dev/docs/guides/frontend/nextjs?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Run an eve agent and a Next.js app as one project with withEve.
-- [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
 - [How to add tools to your eve agent](https://vercel.com/kb/guide/how-to-add-eve-tools?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Add tools to an eve agent by creating a TypeScript file under agent/tools/ with defineTool, and gate sensitive ones on h
-- [Build your first Slack agent with eve](https://vercel.com/kb/guide/eve-slack-agent-starter?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Deploy the eve Slack agent template: a starter Slack bot built on the eve framework with an example tool and skill.
+- [Next.js](https://eve.dev/docs/guides/frontend/nextjs?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Run an eve agent and a Next.js app as one project with withEve.
 - [Terminal UI](https://eve.dev/docs/guides/dev-tui?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Use eve locally or connect to a deployed agent from an interactive terminal UI.
-- [Ship It](https://eve.dev/docs/tutorial/ship-it?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Part 8 of the Build an Agent tutorial. Put a web dashboard on the agent with useEveAgent, replace placeholderAuth, and d
+- [Self-Host eve](https://eve.dev/docs/guides/deployment/self-hosting?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Run an eve agent as a Node service with your own workflow storage, sandbox backend, and routing.
+- [Build your first Slack agent with eve](https://vercel.com/kb/guide/eve-slack-agent-starter?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Deploy the eve Slack agent template: a starter Slack bot built on the eve framework with an example tool and skill.
+- [How to use subagents with eve](https://vercel.com/kb/guide/how-to-use-eve-subagents?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Learn how to use subagents with eve, including the built-in agent tool, declared specialist subagents, the isolation bou
 
 Full cross-link map for this page: [/docs/eve.graph.md](/docs/eve.graph.md?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -58,7 +58,7 @@ You are a concise assistant. Use tools when they are available.
 import { defineAgent } from 'eve';
 
 export default defineAgent({
-  model: 'openai/gpt-5.4-mini',
+  model: 'openai/gpt-6-astra',
 });
 ```
 
@@ -132,11 +132,11 @@ And `agent/agent.ts`:
 import { defineAgent } from 'eve';
 
 export default defineAgent({
-  model: 'openai/gpt-5.4-mini',
+  model: 'openai/gpt-6-astra',
 });
 ```
 
-eve resolves model strings such as `openai/gpt-5.4-mini` through [AI Gateway](/docs/ai-gateway), so
+eve resolves model strings such as `openai/gpt-6-astra` through [AI Gateway](/docs/ai-gateway), so
 on Vercel you authenticate with OIDC and don't need to manage provider API keys.
 
 ### Add a tool
@@ -194,6 +194,8 @@ Deploy an eve template to start building AI agents that use Vercel Connect to
 securely access third-party services and APIs:
 
 ## Resources
+
+**How software factories work**: Learn when to use a software factory and how eve coordinates work from issue to review. [Learn more →](/docs/eve/software-factory)
 
 **eve documentation**: Explore the complete framework documentation, including guides, channels, tools, skills, and API references. [Learn more →](https://eve.dev/docs)
 

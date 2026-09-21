@@ -3,7 +3,7 @@ title: Use Vercel
 product: vercel
 url: /docs/agent-resources/vercel-mcp
 canonical_url: "https://vercel.com/docs/agent-resources/vercel-mcp"
-last_updated: 2026-08-13
+last_updated: 2026-09-15
 type: conceptual
 prerequisites:
   - /docs/agent-resources
@@ -12,13 +12,13 @@ related:
 summary: Vercel MCP has tools available for searching docs, managing teams, projects, and deployments, and querying Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "be67db6fc97d860052f0b79fde63c3d2a17011c6a4c6a7379b3ee99632fa740d"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "470aadc8401195a27943efc8aea74cb105d6e9dd6afb0fa6b0986753ea0848b3"
 ---
 
 # Use Vercel
 
-> **🔒 Permissions Required**: Vercel MCP
+> **🔒 Permissions Required**: Vercel MCP (Beta)
 
 Connect your AI tools to Vercel using the [Model Context Protocol (MCP)](https://modelcontextprotocol.io),
 an open standard that lets AI assistants interact with your Vercel projects.
@@ -36,10 +36,10 @@ an open standard that lets AI assistants interact with your Vercel projects.
 - [Vercel MCP now in Public Beta](https://vercel.com/changelog/vercels-mcp?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=related)
 - [Improve Cumulative Layout Shift \\(CLS\\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=related) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
 - [Build a ChatGPT Connector \\(MCP server\\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=related) — Build a ChatGPT MCP server with mcp-handler and Fluid compute. Add search, fetch, and OAuth, deploy to Vercel, then vali
-- [Manage Vercel projects with a software factory](https://vercel.com/kb/guide/software-factory-vercel-mcp?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=related) — Add Vercel's hosted MCP to the eve software factory template so Foreman can read build logs, runtime errors, and deploym
+- [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=related) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
 - [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=related)
-- [Model Context Protocol (MCP) explained: An FAQ](https://vercel.com/blog/model-context-protocol-mcp-explained?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=related)
 - [How to build an MCP server with Nuxt](https://vercel.com/kb/guide/how-to-build-an-mcp-server-with-nuxt?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=related) — Add an MCP server to your Nuxt app with the Nuxt MCP Toolkit. Create tools, resources, and prompt templates that AI assi
+- [Model Context Protocol (MCP) explained: An FAQ](https://vercel.com/blog/model-context-protocol-mcp-explained?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=related)
 - [Build an MCP Server with Weather tools using Express and Vercel](https://vercel.com/kb/guide/mcp-server-with-weather-tool-express?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=related) — Make your Express weather API accessible to AI assistants through the Model Context Protocol.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp.graph.md](/docs/agent-resources/vercel-mcp.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=graph)
@@ -73,6 +73,8 @@ specifications.
 ## Available tools
 
 Vercel MCP provides a comprehensive set of tools for searching documentation, managing your Vercel projects, and querying Web Analytics. See the [tools reference](/docs/agent-resources/vercel-mcp/tools) for detailed information about each available tool and the two main categories: public tools (available without authentication) and authenticated tools (requiring Vercel authentication).
+
+Follow [Manage Vercel projects with a software factory](/kb/guide/software-factory-vercel-mcp) to give an eve agent read-only access to deployment data through Vercel Connect and diagnose failed deployments.
 
 ## Connecting to Vercel MCP
 
@@ -227,7 +229,7 @@ Now that you've added Vercel MCP, let's start the server and authorize:
 3. Select **Vercel**
 4. Click **Start Server**
 5. When the dialog appears saying `The MCP Server Definition 'Vercel' wants to authenticate to Vercel MCP`, click **Allow**
-6. A popup will ask `Do you want Code to open the external website?` — click **Cancel**
+6. When a popup asks `Do you want Code to open the external website?`, click **Cancel**
 7. You'll see a message: `Having trouble authenticating to 'Vercel MCP'? Would you like to try a different way? (URL Handler)`
 8. Click **Yes**
 9. Click **Open** and complete the Vercel sign-in flow to connect to Vercel MCP

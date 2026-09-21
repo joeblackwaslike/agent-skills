@@ -3,7 +3,7 @@ title: Working with Sandbox
 product: vercel
 url: /docs/sandbox/working-with-sandbox
 canonical_url: "https://vercel.com/docs/sandbox/working-with-sandbox"
-last_updated: 2026-09-02
+last_updated: 2026-09-15
 type: conceptual
 prerequisites:
   - /docs/sandbox
@@ -16,8 +16,8 @@ related:
 summary: Task-oriented examples for common Vercel Sandbox operations in TypeScript and Python.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/working-with-sandbox.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "3c3487975dc7df941f5975a215654f6a5ad5270d707448a6b5a6dddc1ec34eb5"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "88d2eb36d7564e49b25725015a42eb411170427dc4c61e274ee5b124424cd05b"
 ---
 
 # Working with Sandbox
@@ -120,7 +120,7 @@ const sandbox = await Sandbox.create({
 
 ## Resume a long-lived sandbox
 
-Persistent sandboxes keep their filesystem across sessions. Create a sandbox, write a file, stop it, then resume by name and read the file back — no snapshot ID to track and no setup to repeat.
+Persistent sandboxes keep their filesystem across sessions. Create a sandbox, write a file, stop it, then resume by name and read the file back, with no snapshot ID to track and no setup to repeat.
 
 **TypeScript**
 
@@ -552,7 +552,7 @@ The dashboard is the safest way to delete a single sandbox interactively. It req
 
 ### Programmatically
 
-Use `sandbox.delete()` from the JS SDK to remove the sandbox in code — useful for cleanup at the end of a job or when reacting to an event:
+Use `sandbox.delete()` from the JS SDK to remove the sandbox in code. This is useful for cleanup at the end of a job or when reacting to an event:
 
 ```ts filename="index.ts"
 import { Sandbox } from '@vercel/sandbox';

@@ -3,7 +3,7 @@ title: Removing a Domain from a Project or Account
 product: vercel
 url: /docs/domains/working-with-domains/remove-a-domain
 canonical_url: "https://vercel.com/docs/domains/working-with-domains/remove-a-domain"
-last_updated: 2026-08-11
+last_updated: 2026-09-08
 type: how-to
 prerequisites:
   - /docs/domains/working-with-domains
@@ -13,8 +13,8 @@ related:
 summary: Remove a domain from a Vercel project, or delete it from your account and all associated projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/remove-a-domain.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "f41bc69a35dbd08d7cdf69144b7d76c779f7cbfdf2fc71eecdb819a3b1d79fff"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "a1e80dbac65b262d0d139c2cf9fe8666e5a77336549f887c06e903e9c2c5e627"
 ---
 
 # Removing a Domain from a Project or Account
@@ -28,8 +28,6 @@ To remove a domain from one Vercel project, delete it from the project's **Domai
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Remove a domain from a project](https://vercel.com/docs/rest-api/projects/remove-a-domain-from-a-project?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fremove-a-domain&source_site=vercel-docs&relationship=related) — DELETE /v9/projects/{idOrName}/domains/{domain} — Remove a domain from a project by passing the domain name and by speci
-- [How do I delete a Vercel team?](https://vercel.com/kb/guide/how-do-i-delete-a-vercel-team?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fremove-a-domain&source_site=vercel-docs&relationship=related) — Information on deleting a Vercel team.
-- [How do I delete my Vercel account?](https://vercel.com/kb/guide/how-do-i-delete-my-vercel-account?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fremove-a-domain&source_site=vercel-docs&relationship=related) — This guide covers how to delete your personal or team account on Vercel.
 - [Remove a domain by name](https://vercel.com/docs/rest-api/domains/remove-a-domain-by-name?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fremove-a-domain&source_site=vercel-docs&relationship=related) — DELETE /v6/domains/{domain} — Delete a previously registered domain name from Vercel. Deleting a domain will automatical
 - [Delete a Project](https://vercel.com/docs/rest-api/projects/delete-a-project?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fremove-a-domain&source_site=vercel-docs&relationship=related) — DELETE /v9/projects/{idOrName} — Delete a specific project by passing either the project \\`id\\` or \\`name\\` in the URL.
 - [Add a domain to a project](https://vercel.com/docs/rest-api/projects/add-a-domain-to-a-project?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fremove-a-domain&source_site=vercel-docs&relationship=related) — POST /v10/projects/{idOrName}/domains — Add a domain to the project by passing its domain name and by specifying the pro

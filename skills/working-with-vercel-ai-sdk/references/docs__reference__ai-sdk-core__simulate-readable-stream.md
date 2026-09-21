@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/simulate-readable-stream.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "071fd37442884a9fe6c6ae9996fe33fd7d99ec7d416e90b3bfdf7cf170999793"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "bed5a9f36e17979dfb056cb4a2f0ca0bfeb37614b95eeb19ac35db73bc588b42"
 ---
 
 # `simulateReadableStream()`
@@ -108,6 +108,7 @@ const stream = simulateReadableStream({
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+- [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
 - [uploadFile](/docs/reference/ai-sdk-core/upload-file)
 - [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
 - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
@@ -123,6 +124,7 @@ const stream = simulateReadableStream({
 - [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
 - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [toolSearch](/docs/reference/ai-sdk-core/tool-search)
 - [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
 - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)

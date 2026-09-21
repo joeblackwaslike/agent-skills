@@ -1,7 +1,7 @@
 ---
 source: "https://docs.github.com/en/rest/pulls/review-requests"
-fetched_at: "2026-07-20T06:52:02.847Z"
-sha256: "694632a41d3fddfbd4ab6964dc70ba035852fac8c516c3a24fb247703fab41b6"
+fetched_at: "2026-09-21T09:43:24.629Z"
+sha256: "2f88583dfa3accb0bd2d50d1ef39b3159cf3eb114fb9f37c975e8a62d88258a0"
 ---
 
 # REST API endpoints for review requests
@@ -242,6 +242,8 @@ curl -L \
   * `description`: required, string
   * `color`: required, string
   * `default`: required, boolean
+  * `archived_by`: required, all of:
+    * **Simple User** (see above)
 * `milestone`: required, any of:
   * **null**
   * **Milestone**

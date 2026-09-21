@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "c7c83e84cc9dc5f4dfe0c91a6fbf30b8b02f0b803191ebc7ec0772c4f0018ca6"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "57b414511614c52f8231588ab4b2ef76ef91128fb1f0c24c416da4ec6509c181"
 ---
 
 # Anthropic Provider
@@ -1053,12 +1053,13 @@ You can enable web search using the provider-defined web search tool:
 import { anthropic } from '@ai-sdk/anthropic';
 import { generateText } from 'ai';
 
-const webSearchTool = anthropic.tools.webSearch_20250305({
+const webSearchTool = anthropic.tools.webSearch_20260318({
   maxUses: 5,
+  responseInclusion: 'excluded',
 });
 
 const result = await generateText({
-  model: anthropic('claude-opus-4-20250514'),
+  model: anthropic('claude-opus-5'),
   prompt: 'What are the latest developments in AI?',
   tools: {
     web_search: webSearchTool,
@@ -1072,6 +1073,10 @@ const result = await generateText({
 </Note>
 
 #### Configuration Options
+
+Use `webSearch_20260318` for dynamic filtering and response inclusion control.
+The older `webSearch_20260209` and `webSearch_20250305` versions remain
+available for applications that need their earlier behavior.
 
 The web search tool supports several configuration options:
 
@@ -1091,11 +1096,17 @@ The web search tool supports several configuration options:
 
   Optional user location information to provide geographically relevant search results.
 
+- **responseInclusion** _'full' | 'excluded'_
+
+  Available with `webSearch_20260318`. Controls whether search result blocks
+  consumed by a completed code execution call in the same turn are included in
+  the API response. The default is `'full'`. Use `'excluded'` to omit those
+  nested call/result pairs and reduce output token usage.
+
 ```ts
-const webSearchTool = anthropic.tools.webSearch_20250305({
+const webSearchTool = anthropic.tools.webSearch_20260318({
   maxUses: 3,
   allowedDomains: ['techcrunch.com', 'wired.com'],
-  blockedDomains: ['example-spam-site.com'],
   userLocation: {
     type: 'approximate',
     country: 'US',
@@ -1103,16 +1114,24 @@ const webSearchTool = anthropic.tools.webSearch_20250305({
     city: 'San Francisco',
     timezone: 'America/Los_Angeles',
   },
+  responseInclusion: 'excluded',
 });
 
 const result = await generateText({
-  model: anthropic('claude-opus-4-20250514'),
+  model: anthropic('claude-opus-5'),
   prompt: 'Find local news about technology',
   tools: {
     web_search: webSearchTool,
   },
 });
 ```
+
+<Note>
+  `responseInclusion: 'excluded'` only omits results consumed by code execution
+  calls that complete in the same turn. Results from direct calls and from code
+  execution calls that pause before completing are always returned in full so
+  they can be sent back on the next turn.
+</Note>
 
 ### Web Fetch Tool
 
@@ -1125,11 +1144,14 @@ import { anthropic } from '@ai-sdk/anthropic';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: anthropic('claude-sonnet-4-0'),
+  model: anthropic('claude-opus-5'),
   prompt:
     'What is this page about? https://en.wikipedia.org/wiki/Maglemosian_culture',
   tools: {
-    web_fetch: anthropic.tools.webFetch_20250910({ maxUses: 1 }),
+    web_fetch: anthropic.tools.webFetch_20260318({
+      maxUses: 1,
+      responseInclusion: 'excluded',
+    }),
   },
 });
 ```
@@ -1473,6 +1495,19 @@ The web fetch tool supports several configuration options:
 - **maxContentTokens** _number_
 
   The maxContentTokens parameter limits the amount of content that will be included in the context.
+
+- **useCache** _boolean_
+
+  Available with `webFetch_20260318`. Set to `false` to bypass cached content
+  and fetch fresh content. The default is `true`; disabling the cache can
+  increase latency.
+
+- **responseInclusion** _'full' | 'excluded'_
+
+  Available with `webFetch_20260318`. Controls whether fetch result blocks
+  consumed by a completed code execution call in the same turn are included in
+  the API response. The default is `'full'`. Direct results and results from
+  code execution calls that pause before completing are always returned in full.
 
 #### Error Handling
 
@@ -1860,6 +1895,55 @@ and the `mediaType` should be set to `'application/pdf'`.
   any available provider model ID as a string if needed.
 </Note>
 
+## Evaluation Models
+
+Create an experimental evaluation model with `anthropic.evaluationModel(modelId)`.
+It uses the Messages API's structured-output support for Choice, Score, and Boolean
+questions. `claude-haiku-4-5-20251001` is one supported model.
+
+```ts
+import { anthropic } from '@ai-sdk/anthropic';
+import { experimental_evaluate } from 'ai';
+
+const { answers } = await experimental_evaluate({
+  model: anthropic.evaluationModel('claude-haiku-4-5-20251001'),
+  state: 'I was charged twice.',
+  questions: {
+    requestsRefund: {
+      type: 'boolean',
+      instructions: 'Is the customer requesting money back?',
+    },
+    department: {
+      type: 'choice',
+      instructions: 'Which team should handle this?',
+      criteria: { billing: 'Charges and refunds', support: 'Other requests' },
+    },
+  },
+});
+```
+
+Choice labels are preserved exactly, and Scores are finite fractional positions
+on the ordered rubric. Anthropic does not support numeric bounds in its native
+output schema, so the adapter describes them in the prompt and validates them
+after parsing. Invalid answers, refusals, and truncation fail the entire call.
+
+The adapter returns no probability distributions for Choice or Score. Boolean
+answers contain prompted estimates of P(true), validated to be finite and in
+`[0, 1]`. These estimates are not guaranteed to be calibrated. Apply thresholds
+in application code, for example `answers.requestsRefund.probability >= 0.5`.
+It respects
+`createAnthropic` configuration and forwards `providerOptions.anthropic`, including
+`structuredOutputMode`. Supported models use native structured output by default;
+`jsonTool` uses the existing Messages JSON-tool fallback. Usage, warnings,
+response information, and provider metadata are preserved.
+See [Evaluation](/docs/ai-sdk-core/evaluation).
+
+Evaluation models can also be accessed through `customProvider` aliases or
+`createProviderRegistry().evaluationModel('provider:model')`. Direct string IDs
+use Gateway by default, or an explicitly configured default provider with an
+`evaluationModel` method. See
+[model aliases and registries](/docs/ai-sdk-core/evaluation#model-aliases-and-registries).
+
 
 ## Navigation
 
@@ -1875,6 +1959,7 @@ and the `mediaType` should be set to `'application/pdf'`.
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
 - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
+- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

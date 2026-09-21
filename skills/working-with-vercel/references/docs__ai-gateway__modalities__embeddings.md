@@ -3,18 +3,19 @@ title: AI Gateway Embeddings
 product: vercel
 url: /docs/ai-gateway/modalities/embeddings
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/embeddings"
-last_updated: 2026-09-08
+last_updated: 2026-09-15
 type: how-to
 prerequisites:
   - /docs/ai-gateway/modalities
   - /docs/ai-gateway
 related:
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions/embeddings
+  - /docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai
 summary: Generate vector embeddings for semantic search, similarity matching, and retrieval-augmented generation (RAG) through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/embeddings.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "5a8f088b5e0accf44626bf9817eef5c0f5259d328ba6193dca9285abf34828b0"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "b4c13c44f819c053ec7ff24dd48068c629180f10095eea7adbb9778b9f845394"
 ---
 
 # AI Gateway Embeddings
@@ -27,19 +28,18 @@ Generate vector embeddings for semantic search, similarity matching, and retriev
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fembeddings&source_site=vercel-docs&relationship=related) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
 - [AI Gateway Image Generation](https://vercel.com/docs/ai-gateway/modalities/image-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fembeddings&source_site=vercel-docs&relationship=related) — Generate and edit images using AI models through Vercel AI Gateway with support for multiple providers and modalities.
-- [OpenAI Chat Completions API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fembeddings&source_site=vercel-docs&relationship=related) — Use OpenAI SDKs with the AI Gateway Chat Completions API. Configure the base URL and authentication for chat, streaming,
-- [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fembeddings&source_site=vercel-docs&relationship=related) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
-- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fembeddings&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fembeddings&source_site=vercel-docs&relationship=related) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
+- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fembeddings&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fembeddings&source_site=vercel-docs&relationship=related) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
+- [AI Gateway Framework Integrations](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fembeddings&source_site=vercel-docs&relationship=related) — Connect LangChain, LiteLLM, LlamaIndex, Mastra, Pydantic AI, TanStack AI, and other frameworks to Vercel AI Gateway with
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/embeddings.graph.md](/docs/ai-gateway/modalities/embeddings.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fembeddings&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 To see which models AI Gateway supports for embeddings, use the **Embedding** filter at the [AI Gateway Models page](/ai-gateway/models?capabilities=embedding).
 
-Use AI SDK 7, the AI SDK for Python beta, or the [OpenAI-compatible Embeddings API](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/embeddings). Embeddings use `/v1/embeddings`; Chat Completions, Messages, and Responses don't accept embedding requests. Set `AI_GATEWAY_API_KEY` before running the examples.
+Use AI SDK 7, the AI SDK for Python beta, [TanStack AI](#tanstack-ai), or the [OpenAI-compatible Embeddings API](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/embeddings). Embeddings use `/v1/embeddings`; Chat Completions, Messages, and Responses don't accept embedding requests. Set `AI_GATEWAY_API_KEY` before running the examples.
 
 ## Single value
 
@@ -237,6 +237,12 @@ export async function GET() {
   return Response.json(result);
 }
 ```
+
+## TanStack AI
+
+Use TanStack AI's `embed` function with `vercelGatewayEmbedding` from `@tanstack/ai-vercel-gateway` to generate embeddings. The adapter reads `AI_GATEWAY_API_KEY`, or uses `VERCEL_OIDC_TOKEN` when the API key is absent.
+
+Follow the [TanStack AI setup guide](/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai) for installation and authentication, then use the [embedding example](/kb/guide/tanstack-ai-vercel-ai-gateway#generate-embeddings). See the [TanStack AI adapter reference](https://tanstack.com/ai/latest/docs/adapters/vercel-gateway#embeddings) for the API and result shape.
 
 
 ---

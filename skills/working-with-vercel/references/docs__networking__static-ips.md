@@ -16,8 +16,8 @@ related:
 summary: Access IP-restricted backend services through shared static egress IPs for Pro and Enterprise teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/static-ips.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "202efbcbc3461d22ae1185b0f20306d03c6fe30cb02a61b24af98399df74fced"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "57d7deb994bd26b1d6c8f4de55b8f8fcca6e36cc501b80fa55846c0ca9f8e6dc"
 ---
 
 # Static IPs
@@ -33,6 +33,7 @@ With Static IPs (shared pool), you can access backend services that require IP a
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How can I allowlist IP addresses for a deployment?](https://vercel.com/kb/guide/how-to-allowlist-deployment-ip-address?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related) — Vercel deployments use dynamic outbound IPs by default. Learn how to allowlist IP addresses for a deployment with Static
+- [Secure Compute and Static IP builds start 64% faster](https://vercel.com/changelog/secure-compute-and-static-ip-builds-start-64-faster?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related)
 - [Vercel Functions can now be up to 5GB in package size](https://vercel.com/changelog/vercel-functions-can-now-be-up-to-5-gb-in-package-size?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related)
 - [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
 - [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
@@ -42,8 +43,7 @@ With Static IPs (shared pool), you can access backend services that require IP a
 - [Route build traffic through Static IPs](https://vercel.com/changelog/route-build-traffic-through-static-ips?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related)
 - [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
 - [Restrict deployment access by IP address](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/trusted-ips?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related) — Trusted IPs let you restrict access to your deployments to a list of allowed IP addresses.
-- [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Vercel CDN overview](https://vercel.com/docs/cdn?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
+- [Flat Rate CDN](https://vercel.com/docs/pricing/flat-rate-cdn?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related) — Flat Rate CDN gives you fixed monthly CDN pricing and protection against usage spikes across capacity tiers.
 
 Full cross-link map for this page: [/docs/networking/static-ips.graph.md](/docs/networking/static-ips.graph.md?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

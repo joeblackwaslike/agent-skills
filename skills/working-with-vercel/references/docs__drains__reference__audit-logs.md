@@ -16,8 +16,8 @@ related:
 summary: Learn about Audit Log Drains - data formats, fields, and team activity events.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/reference/audit-logs.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "072ca4b24f5e35ffc6f877794b6935214695e1ac47212a9bde39d064e003a96c"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "0c52bf11d0ae39a1aaaa445e3c5483e2e51b666f73feeecc29ded81a058d097a"
 ---
 
 # Audit Log Drains Reference
@@ -34,7 +34,6 @@ Audit Log Drains forward team activity events to external endpoints for storage,
 
 - [Audit Log Drains now support Datadog, Splunk, and Panther](https://vercel.com/changelog/audit-log-drains-now-support-datadog-splunk-and-panther?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Faudit-logs&source_site=vercel-docs&relationship=related)
 - [Expanded Audit Log coverage, now delivered through Vercel Drains](https://vercel.com/changelog/expanded-audit-log-coverage-now-delivered-through-vercel-drains?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Faudit-logs&source_site=vercel-docs&relationship=related)
-- [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Faudit-logs&source_site=vercel-docs&relationship=related)
 - [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Faudit-logs&source_site=vercel-docs&relationship=related) — Learn about Web Analytics Drains - data formats and custom events configuration.
 - [Log Drains Reference](https://vercel.com/docs/drains/reference/logs?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Faudit-logs&source_site=vercel-docs&relationship=related) — Learn about Log Drains - data formats, sources, environments, and security configuration.
 - [Trace Drains Reference](https://vercel.com/docs/drains/reference/traces?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Faudit-logs&source_site=vercel-docs&relationship=related) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.

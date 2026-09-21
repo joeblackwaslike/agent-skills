@@ -1,7 +1,7 @@
 ---
 source: "https://docs.github.com/en/rest/pulls/pulls"
-fetched_at: "2026-08-03T07:31:37.157Z"
-sha256: "0263331967226e12594230015891abc7d76a272eddc0297c832a0d02f23463d7"
+fetched_at: "2026-09-21T09:43:24.629Z"
+sha256: "fab25c9e01cfd97cf9439762f5f8f03e1ddc4bc17bbb0b7a4235ab75170e2239"
 ---
 
 # REST API endpoints for pull requests
@@ -166,6 +166,8 @@ Array of `Pull Request Simple`:
   * `description`: required, string
   * `color`: required, string
   * `default`: required, boolean
+  * `archived_by`: required, all of:
+    * **Simple User** (see above)
 * `milestone`: required, any of:
   * **null**
   * **Milestone**
@@ -521,6 +523,8 @@ curl -L \
   * `description`: required, string or null
   * `color`: required, string
   * `default`: required, boolean
+  * `archived_by`: required, all of:
+    * **Simple User** (see above)
 * `milestone`: required, any of:
   * **null**
   * **Milestone**

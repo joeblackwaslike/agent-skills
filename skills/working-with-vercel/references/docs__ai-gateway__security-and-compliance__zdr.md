@@ -3,7 +3,7 @@ title: AI Gateway Zero Data Retention (ZDR)
 product: vercel
 url: /docs/ai-gateway/security-and-compliance/zdr
 canonical_url: "https://vercel.com/docs/ai-gateway/security-and-compliance/zdr"
-last_updated: 2026-09-08
+last_updated: 2026-09-10
 type: how-to
 prerequisites:
   - /docs/ai-gateway/security-and-compliance
@@ -16,8 +16,8 @@ related:
 summary: Learn about zero data retention policies and how to enforce ZDR on a per-request basis with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/zdr.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "c66404d61dedb3c9b7ca84dade7d16ebb53f7520071cf79fc8814395092b1bd3"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "e9313c2862e02b707decd8669f2d03f30aaf28047ac4ecb46d1370059d40bf30"
 ---
 
 # AI Gateway Zero Data Retention (ZDR)
@@ -34,11 +34,13 @@ Zero data retention (ZDR) is available for Pro and Enterprise users on AI Gatewa
 - [Inkling Small from Thinking Machines is now available on AI Gateway](https://vercel.com/changelog/inkling-small-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related)
 - [Kimi K3 and Kimi K3 Fast with ZDR and US-based providers now on AI Gateway](https://vercel.com/changelog/kimi-k3-and-kimi-k3-fast-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related)
 - [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related)
-- [WebSocket support for OpenAI Responses API live on AI Gateway](https://vercel.com/changelog/websocket-support-for-openai-responses-api-live-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related)
+- [TypeSafe AI's Jev now available on AI Gateway](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related)
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
+- [How to classify, route, and score with Jev and AI SDK](https://vercel.com/kb/guide/typesafe-jev-and-ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related) — Use Jev from TypeSafe AI with AI SDK's experimental \\`evaluate\\` API to classify, route, score, and verify inside your a
+- [GPT-Live](https://vercel.com/docs/ai-gateway/modalities/realtime/gpt-live?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related) — Connect GPT-Live through AI Gateway to stream voice, handle client delegation, and track session duration.
 - [AI Gateway Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
-- [vercel ai-gateway](https://vercel.com/docs/cli/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related) — Manage AI Gateway resources from the Vercel CLI: API keys, budgets, routing rules, models, leaderboards, and coding agen
+- [vercel ai-gateway](https://vercel.com/docs/cli/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related) — Manage AI Gateway resources from the Vercel CLI: API keys, budgets, routing rules, virtual models, models, leaderboards,
 
 Full cross-link map for this page: [/docs/ai-gateway/security-and-compliance/zdr.graph.md](/docs/ai-gateway/security-and-compliance/zdr.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -615,6 +617,14 @@ Together AI
 ✓
 
 Terms of service
+
+TypeSafe AI
+
+✓
+
+✓
+
+Except as necessary to comply with its legal obligations, TypeSafe shall not retain (a) prompts that are Customer Data for any longer than is necessary to generate Output for Customer and (b) Output for any longer than necessary to enable TypeSafe to fulfil its obligations to Customer under the Agreement.
 
 Wafer
 

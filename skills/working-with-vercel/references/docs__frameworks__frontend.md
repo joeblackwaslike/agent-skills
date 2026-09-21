@@ -16,8 +16,8 @@ related:
 summary: Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no matter what tooling you use.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/frontend.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "3e81eb42f68894631bd1ff0e7220635cc164c790eb4a2cc5fc54c3b70048fdc2"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "3c1077ad57dc83956793700a6d1853b245c96750915a0380517622840ca73c00"
 ---
 
 # Frontends on Vercel
@@ -33,6 +33,7 @@ The following frontend frameworks are supported with zero-configuration.
 - [Full-stack frameworks on Vercel](https://vercel.com/docs/frameworks/full-stack?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
 - [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend&source_site=vercel-docs&relationship=related) — Learn about the frameworks that can be deployed to Vercel.
 - [Announcing the Build Output API](https://vercel.com/blog/build-output-api?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend&source_site=vercel-docs&relationship=related)
+- [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, container image functions, security defaults,
 - [New features for SvelteKit: Optimize your application with ease](https://vercel.com/blog/feature-complete-sveltekit?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend&source_site=vercel-docs&relationship=related)
 - [Run multiple frameworks in one project with Vercel Services](https://vercel.com/changelog/run-multiple-frameworks-in-one-project-with-vercel-services?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend&source_site=vercel-docs&relationship=related)
 - [Life of a Vercel request: What happens when a user presses enter](https://vercel.com/blog/life-of-a-vercel-request-what-happens-when-a-user-presses-enter?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend&source_site=vercel-docs&relationship=related)

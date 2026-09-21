@@ -16,8 +16,8 @@ related:
 summary: Learn how to implement common Vercel platform features through the Build Output API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/features.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "73ab0a2533d6258f8246454a19d1c9c3610ba7dc0d65638282d26b73e8c1d162"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "cbabb7b0bc16a8b66895d5007aa37ef55eb5335801f01cdc454ac3fdbbdc2517"
 ---
 
 # Features
@@ -115,8 +115,8 @@ shared by many URL paths in a Project (e.g. authentication),
 before passing the request through to the underlying resource (such as a page or asset)
 at that path.
 
-A Routing Middleware is represented on the file system in the same format as an [Edge
-Function](/docs/build-output-api/v3/#vercel-primitives/edge-functions). To use the middleware,
+A Routing Middleware is represented on the file system in the same format as a [Function with Edge
+Runtime](/docs/build-output-api/v3/#vercel-primitives/edge-functions). To use the middleware,
 add additional rules in the [`routes` configuration](/docs/build-output-api/configuration#routes)
 mapping URLs (using the `src` property) to the middleware (using the `middlewarePath` property).
 

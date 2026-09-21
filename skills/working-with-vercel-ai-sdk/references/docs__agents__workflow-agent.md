@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/agents/workflow-agent.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "e846ebf296a797e44b01e34646372f5a07b92d26b7ccd60266ff5daa121fad9e"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "425da382e0b650b262d222345d025c9628802416240ecea25b289034b49ec9f1"
 ---
 
 # WorkflowAgent
@@ -199,7 +199,7 @@ Workflow functions can time out or be interrupted by network failures. `Workflow
 'use client';
 
 import { useChat } from '@ai-sdk/react';
-import { WorkflowChatTransport } from '@ai-sdk/workflow';
+import { WorkflowChatTransport } from '@ai-sdk/workflow/client';
 import { useMemo } from 'react';
 
 export default function Chat() {

@@ -3,7 +3,7 @@ title: Encryption and TLS
 product: vercel
 url: /docs/cdn-security/encryption
 canonical_url: "https://vercel.com/docs/cdn-security/encryption"
-last_updated: 2026-08-13
+last_updated: 2026-09-15
 type: conceptual
 prerequisites:
   - /docs/cdn-security
@@ -12,8 +12,8 @@ related:
 summary: Learn how Vercel encrypts data in transit and at rest.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cdn-security/encryption.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "dcbd918d40502a143eb9097e3c1b6db9bb1b1619e542d401a819abea2c66f2c9"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "a1331bc234f3f00c8fe4a301f6a23fd776ff59a882508099831f5e883888792a"
 ---
 
 # Encryption and TLS
@@ -32,8 +32,8 @@ Every **deployment** on Vercel is served over an HTTPS connection. Vercel automa
 - [Working with SSL Certificates](https://vercel.com/docs/domains/working-with-ssl?from=related&source_path=%2Fdocs%2Fcdn-security%2Fencryption&source_site=vercel-docs&relationship=related) — Learn how Vercel uses SSL certification to keep your site secure.
 - [Security](https://vercel.com/docs/vercel-blob/security?from=related&source_path=%2Fdocs%2Fcdn-security%2Fencryption&source_site=vercel-docs&relationship=related) — Learn how your Vercel Blob store is secured
 - [Vercel security overview](https://vercel.com/docs/security?from=related&source_path=%2Fdocs%2Fcdn-security%2Fencryption&source_site=vercel-docs&relationship=related) — Vercel provides built-in and customizable features to ensure that your site is secure.
-- [How Vercel CDN works](https://vercel.com/docs/how-vercel-cdn-works?from=related&source_path=%2Fdocs%2Fcdn-security%2Fencryption&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
 - [Security & Compliance Measures](https://vercel.com/docs/security/compliance?from=related&source_path=%2Fdocs%2Fcdn-security%2Fencryption&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+- [How Vercel CDN works](https://vercel.com/docs/how-vercel-cdn-works?from=related&source_path=%2Fdocs%2Fcdn-security%2Fencryption&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
 
 Full cross-link map for this page: [/docs/cdn-security/encryption.graph.md](/docs/cdn-security/encryption.graph.md?from=related&source_path=%2Fdocs%2Fcdn-security%2Fencryption&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -137,7 +137,7 @@ When a hostname is requested, the CDN reads the certificate and key from the dat
 
 ## Full specification
 
-For a complete breakdown, see the [SSL Labs report for vercel.com](https://www.ssllabs.com/ssltest/analyze.html?d=vercel.com). You can select any IP address — the results are the same for all.
+For a complete breakdown, see the [SSL Labs report for vercel.com](https://www.ssllabs.com/ssltest/analyze.html?d=vercel.com). You can select any IP address. The results are the same for all.
 
 
 ---

@@ -15,8 +15,8 @@ related:
 summary: Learn how to assign a domain to a different Git branch with this guide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/assign-domain-to-a-git-branch.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "2cdac4ea5847043a113af193ec7214dd316f27ab8b34518075ec4cd1a4407e41"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "5c7e473ffb23274e56296c17b86d126aee1f061df8e929e36cfe5663a6819fe1"
 ---
 
 # Assigning a domain to a Git branch
@@ -34,12 +34,11 @@ Every commit pushed to the [Production Branch](/docs/git#production-branch) of y
 - [How to set up a staging environment on Vercel](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fassign-domain-to-a-git-branch&source_site=vercel-docs&relationship=related) — Set up a staging environment on Vercel with custom environments, staged production deployments, or a branch-based previe
 - [Branch Domains](https://vercel.com/blog/branch-domains?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fassign-domain-to-a-git-branch&source_site=vercel-docs&relationship=related)
 - [How to use a non-default branch for production deployments on Vercel](https://vercel.com/kb/guide/can-i-use-a-non-default-branch-for-production?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fassign-domain-to-a-git-branch&source_site=vercel-docs&relationship=related) — Learn how to set a non-default branch for production on Vercel. Open the Production environment, change branch tracking,
-- [Why are my branch specific variables and domains not linked to my CLI deployments?](https://vercel.com/kb/guide/branch-variables-and-domains-not-linked-to-cli-deployments?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fassign-domain-to-a-git-branch&source_site=vercel-docs&relationship=related) — How to link CLI deployments to the correct branch for use with custom environments and branch specific domains and envir
 - [Assigning a custom domain to an environment](https://vercel.com/docs/domains/working-with-domains/add-a-domain-to-environment?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fassign-domain-to-a-git-branch&source_site=vercel-docs&relationship=related) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fassign-domain-to-a-git-branch&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fassign-domain-to-a-git-branch&source_site=vercel-docs&relationship=related) — Add and configure a custom domain for your Vercel project using the CLI.
-- [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fassign-domain-to-a-git-branch&source_site=vercel-docs&relationship=related) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 - [Git settings](https://vercel.com/docs/project-configuration/git-settings?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fassign-domain-to-a-git-branch&source_site=vercel-docs&relationship=related) — Use the project settings to manage the Git connection, enable Git LFS, and create deploy hooks.
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fassign-domain-to-a-git-branch&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 
 Full cross-link map for this page: [/docs/domains/working-with-domains/assign-domain-to-a-git-branch.graph.md](/docs/domains/working-with-domains/assign-domain-to-a-git-branch.graph.md?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fassign-domain-to-a-git-branch&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

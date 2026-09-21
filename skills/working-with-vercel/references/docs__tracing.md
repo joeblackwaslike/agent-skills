@@ -3,7 +3,7 @@ title: Tracing
 product: vercel
 url: /docs/tracing
 canonical_url: "https://vercel.com/docs/tracing"
-last_updated: 2026-08-25
+last_updated: 2026-09-16
 type: how-to
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how to trace your application to understand performance and infrastructure details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/tracing.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "c8083bf93114b5079ffb91f347d34b6ae78a37060942abf6ff2ee37da71bc02f"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "5b3a6e51295bc36dd466a05cc37c68dcdc2788fdf17e43ece5adf670010a3f49"
 ---
 
 # Tracing
@@ -39,8 +39,8 @@ In observability, tracing is the process of collecting and analyzing how a reque
 - [Always-on tracing for production and preview traffic](https://vercel.com/changelog/always-on-tracing-for-production-and-preview-traffic?from=related&source_path=%2Fdocs%2Ftracing&source_site=vercel-docs&relationship=related)
 - [How to set up instrumentation with OpenTelemetry](https://nextjs.org/docs/app/guides/open-telemetry?from=related&source_path=%2Fdocs%2Ftracing&source_site=vercel-docs&relationship=related) — Learn how to instrument your Next.js app with OpenTelemetry.
 - [Track a request's full lifecycle with session tracing](https://vercel.com/changelog/session-tracing-now-available?from=related&source_path=%2Fdocs%2Ftracing&source_site=vercel-docs&relationship=related)
+- [OpenTelemetry](https://eve.dev/docs/observability/otel?from=related&source_path=%2Fdocs%2Ftracing&source_site=vercel-docs&relationship=related) — Configure OpenTelemetry destinations, content capture, and managed exports.
 - [Export traces, web analytics events, and speed insights datapoints to any destination](https://vercel.com/changelog/export-more-data-with-vercel-drains?from=related&source_path=%2Fdocs%2Ftracing&source_site=vercel-docs&relationship=related)
-- [Trace any Vercel request from the CLI](https://vercel.com/changelog/trace-any-vercel-request-from-the-cli?from=related&source_path=%2Fdocs%2Ftracing&source_site=vercel-docs&relationship=related)
 - [AI Gateway Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains?from=related&source_path=%2Fdocs%2Ftracing&source_site=vercel-docs&relationship=related) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
 
 Full cross-link map for this page: [/docs/tracing.graph.md](/docs/tracing.graph.md?from=related&source_path=%2Fdocs%2Ftracing&source_site=vercel-docs&relationship=graph)
@@ -98,7 +98,7 @@ For detailed instructions on starting traces, managing active sessions, and view
 
 ## Using OpenTelemetry
 
-Vercel uses [OpenTelemetry](https://opentelemetry.io/), an open standard for collecting traces from your application. In order to capture framework and custom spans, install the `@vercel/otel` package. This package provides helper methods to make it easier to instrument your application with OpenTelemetry.
+Vercel uses [OpenTelemetry](https://opentelemetry.io/), an open standard for collecting traces from your application. To capture framework and custom spans, install the `@vercel/otel` package. This package provides helper methods to make it easier to instrument your application with OpenTelemetry.
 
 See the [Instrumentation](/docs/tracing/instrumentation) guide to set up OpenTelemetry for your project.
 

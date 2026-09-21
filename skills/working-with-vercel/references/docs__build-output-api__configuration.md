@@ -16,8 +16,8 @@ related:
 summary: Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/configuration.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "f71700b045a0f7a05dbfa7af4c3adaa1eddae8de5fe2d5c24662c447f483d4cd"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "0cc3eb0df27babcf2f2215b71a3476fa516abc2df2571da5c12a15e0cf16255b"
 ---
 
 # Build Output Configuration
@@ -33,6 +33,7 @@ sha256: "f71700b045a0f7a05dbfa7af4c3adaa1eddae8de5fe2d5c24662c447f483d4cd"
 - [Next.js 16.3 support on Vercel](https://vercel.com/blog/vercel-supports-next-js-16-3?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related)
 - [Image](https://nextjs.org/docs/pages/api-reference/components/image?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Optimize Images in your Next.js Application using the built-in `next/image` Component.
 - [Image Component](https://nextjs.org/docs/app/api-reference/components/image?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Optimize Images in your Next.js Application using the built-in `next/image` Component.
+- [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
 - [Image (Legacy)](https://nextjs.org/docs/pages/api-reference/components/image-legacy?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Backwards compatible Image Optimization with the Legacy Image component.
 - [opengraph-image and twitter-image](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — API Reference for the Open Graph Image and Twitter Image file conventions.
 - [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.

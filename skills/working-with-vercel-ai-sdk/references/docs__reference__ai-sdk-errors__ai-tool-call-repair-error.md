@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-tool-call-repair-error.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "0264f24d31c5cff48ee0381f863268f8cca41dd5381853611d0307a4119a79ab"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "029a2a610263cc8c48ae20e6f03f2f76de52a71d94d3ab6a78416108729eb6d4"
 ---
 
 # ToolCallRepairError
@@ -34,6 +34,7 @@ if (ToolCallRepairError.isInstance(error)) {
 - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
 - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
 - [AI_EmptyResponseBodyError](/docs/reference/ai-sdk-errors/ai-empty-response-body-error)
+- [AI_EvaluationUnsupportedQuestionTypeError](/docs/reference/ai-sdk-errors/ai-evaluation-unsupported-question-type-error)
 - [AI_InvalidArgumentError](/docs/reference/ai-sdk-errors/ai-invalid-argument-error)
 - [AI_InvalidDataContentError](/docs/reference/ai-sdk-errors/ai-invalid-data-content-error)
 - [AI_InvalidMessageRoleError](/docs/reference/ai-sdk-errors/ai-invalid-message-role-error)

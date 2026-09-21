@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-translation-generated-error.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "afbf9ac3dbde4ec77afabaa53b651fb5a9962afaca99feeab3995517c8d31109"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "fab1ee3900f82ad19fe6110e827fe318967f6eca01146a0bde3d50b5dd18fcb4"
 ---
 
 # AI_NoTranslationGeneratedError
@@ -32,6 +32,7 @@ if (NoTranslationGeneratedError.isInstance(error)) {
 - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
 - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
 - [AI_EmptyResponseBodyError](/docs/reference/ai-sdk-errors/ai-empty-response-body-error)
+- [AI_EvaluationUnsupportedQuestionTypeError](/docs/reference/ai-sdk-errors/ai-evaluation-unsupported-question-type-error)
 - [AI_InvalidArgumentError](/docs/reference/ai-sdk-errors/ai-invalid-argument-error)
 - [AI_InvalidDataContentError](/docs/reference/ai-sdk-errors/ai-invalid-data-content-error)
 - [AI_InvalidMessageRoleError](/docs/reference/ai-sdk-errors/ai-invalid-message-role-error)

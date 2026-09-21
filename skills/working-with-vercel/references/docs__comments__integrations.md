@@ -16,8 +16,8 @@ related:
 summary: Learn how Comments integrates with Git providers like GitHub, GitLab, and BitBucket, as well as the Vercel app for Slack.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/comments/integrations.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "0d1e60b035b76f433b61cf3f8af8eb4f1b2b8ec47a30d9437449b78e2e060950"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "16b684e3a0eb55f124b2990ab070009381d7c4ff67cdbc51d48f535ca72ade7f"
 ---
 
 # Integrations for Comments
@@ -36,8 +36,8 @@ Comments are available for projects using **any** Git provider. Github, BitBucke
 - [Slack](https://v0.app/docs/slack?from=related&source_path=%2Fdocs%2Fcomments%2Fintegrations&source_site=vercel-docs&relationship=related) — Add v0 to your Slack workspace so your whole team can contribute to production.
 - [Manage Vercel Toolbar comments from the CLI](https://vercel.com/changelog/manage-vercel-toolbar-comments-from-the-cli?from=related&source_path=%2Fdocs%2Fcomments%2Fintegrations&source_site=vercel-docs&relationship=related)
 - [Convert Comments on deployments to Jira issues](https://vercel.com/changelog/convert-comments-on-deployments-to-jira-issues?from=related&source_path=%2Fdocs%2Fcomments%2Fintegrations&source_site=vercel-docs&relationship=related)
-- [Convert comments to GitHub Issues](https://vercel.com/changelog/convert-comments-to-github-issues?from=related&source_path=%2Fdocs%2Fcomments%2Fintegrations&source_site=vercel-docs&relationship=related)
 - [Run and track deploys from Slack](https://vercel.com/kb/guide/run-and-track-deploys-from-slack?from=related&source_path=%2Fdocs%2Fcomments%2Fintegrations&source_site=vercel-docs&relationship=related) — Build a Slack deploy bot with Chat SDK and Vercel Workflows. Dispatch GitHub Actions from a slash command, gate producti
+- [Convert comments to GitHub Issues](https://vercel.com/changelog/convert-comments-to-github-issues?from=related&source_path=%2Fdocs%2Fcomments%2Fintegrations&source_site=vercel-docs&relationship=related)
 - [July 2020](https://vercel.com/blog/changelog-july-2020?from=related&source_path=%2Fdocs%2Fcomments%2Fintegrations&source_site=vercel-docs&relationship=related)
 - [Using Comments with Preview Deployments](https://vercel.com/docs/comments/using-comments?from=related&source_path=%2Fdocs%2Fcomments%2Fintegrations&source_site=vercel-docs&relationship=related) — This guide will help you get started with using Comments with your Vercel Preview Deployments.
 - [vercel comments](https://vercel.com/docs/cli/comments?from=related&source_path=%2Fdocs%2Fcomments%2Fintegrations&source_site=vercel-docs&relationship=related) — Review and manage Vercel Toolbar comment threads from the terminal with the vercel comments CLI command.

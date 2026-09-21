@@ -1,15 +1,17 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-ui-message-stream-error.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "3a1ca71a9e6d6a18e46979a75f89a3ba6a5854c7b6a33a9a12844c0a041ba076"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "6ed692496b1e51520978a16eccdf17056defc66f1e1d659249aa9eda13893bfe"
 ---
 
 # AI_UIMessageStreamError
 
-This error occurs when a UI message stream contains invalid or out-of-sequence chunks.
+This error occurs when a UI message stream reports an error or contains invalid
+or out-of-sequence chunks.
 
 Common causes:
 
+- Receiving an `error` chunk in a completion data stream
 - Receiving a `text-delta` chunk without a preceding `text-start` chunk
 - Receiving a `text-end` chunk without a preceding `text-start` chunk
 - Receiving a `reasoning-delta` chunk without a preceding `reasoning-start` chunk
@@ -22,7 +24,9 @@ This error often surfaces when an upstream request fails **before any tokens are
 ## Properties
 
 - `chunkType`: The type of chunk that caused the error (e.g., `text-delta`, `reasoning-end`, `tool-input-delta`)
-- `chunkId`: The ID associated with the failing chunk (part ID or toolCallId)
+- `chunkId`: The ID associated with the failing chunk (part ID or toolCallId).
+  This is an empty string for chunks, such as completion `error` chunks, that do
+  not have an ID.
 - `message`: The error message with details about what went wrong
 
 ## Checking for this Error
@@ -73,6 +77,7 @@ if (UIMessageStreamError.isInstance(error)) {
 - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
 - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
 - [AI_EmptyResponseBodyError](/docs/reference/ai-sdk-errors/ai-empty-response-body-error)
+- [AI_EvaluationUnsupportedQuestionTypeError](/docs/reference/ai-sdk-errors/ai-evaluation-unsupported-question-type-error)
 - [AI_InvalidArgumentError](/docs/reference/ai-sdk-errors/ai-invalid-argument-error)
 - [AI_InvalidDataContentError](/docs/reference/ai-sdk-errors/ai-invalid-data-content-error)
 - [AI_InvalidMessageRoleError](/docs/reference/ai-sdk-errors/ai-invalid-message-role-error)

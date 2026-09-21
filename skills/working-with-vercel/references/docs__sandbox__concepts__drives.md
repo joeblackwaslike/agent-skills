@@ -3,7 +3,7 @@ title: Drives
 product: vercel
 url: /docs/sandbox/concepts/drives
 canonical_url: "https://vercel.com/docs/sandbox/concepts/drives"
-last_updated: 2026-09-04
+last_updated: 2026-09-15
 type: conceptual
 prerequisites:
   - /docs/sandbox/concepts
@@ -17,13 +17,13 @@ related:
 summary: Persistent storage that can be mounted into sandboxes and shared across runs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/drives.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "2eabecebcae25b75bf34d9d1f9a17efeeded1d795c42b6e435011b472f3d5f29"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "e65d62cdded2b68d97897aa857851d09352af9cb4e89d01bc6cee00f2133a872"
 ---
 
 # Drives
 
-> **🔒 Permissions Required**: Drives
+> **🔒 Permissions Required**: Drives (Beta)
 
 Drives provide persistent storage that you mount into a sandbox as a working directory. Your agent can generate code, download dependencies, and build up context in that directory, keeping its progress across sessions.
 
@@ -75,7 +75,7 @@ Drives also support [read-only snapshots](#snapshots) for sharing a point-in-tim
 
 ### Example: a shared dependency cache
 
-You run an agent that installs the same 10 GB of dependencies on every sandbox. With a snapshot, each sandbox gets its own copy — reinstalling and storing them separately every time. With a drive, they all read from one shared copy that persists across runs.
+You run an agent that installs the same 10 GB of dependencies on every sandbox. With a snapshot, each sandbox gets its own copy, reinstalling and storing them separately every time. With a drive, they all read from one shared copy that persists across runs.
 
 ```ts filename="index.ts"
 import { Sandbox, Drive } from '@vercel/sandbox';
@@ -95,7 +95,7 @@ const sandbox = await Sandbox.create({
 });
 ```
 
-A snapshot copies the entire filesystem per sandbox. A drive is one directory many sandboxes share — one copy, one update, read by all.
+A snapshot copies the entire filesystem per sandbox. A drive is one directory that many sandboxes share, so there is one copy to update and every sandbox reads from it.
 
 ## Usage
 

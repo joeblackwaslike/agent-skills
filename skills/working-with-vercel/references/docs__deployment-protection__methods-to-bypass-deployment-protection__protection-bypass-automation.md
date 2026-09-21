@@ -3,7 +3,7 @@ title: Protection Bypass for Automation
 product: vercel
 url: /docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation
 canonical_url: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation"
-last_updated: 2026-08-28
+last_updated: 2026-09-16
 type: how-to
 prerequisites:
   - /docs/deployment-protection/methods-to-bypass-deployment-protection
@@ -17,8 +17,8 @@ related:
 summary: Learn how to bypass Vercel Deployment Protection for automated tooling (e.g. E2E testing).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "bad118fd122107560cafc0d9e572b6e7049d8419878ec51977acd7e22c44dadc"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "5bdd14ae934a75486f5be913542e18b17d782441615910fa7d011b727b1db6a2"
 ---
 
 # Protection Bypass for Automation
@@ -75,7 +75,7 @@ This design lets you test protected deployments reliably while maintaining criti
 
 You can create multiple bypass secrets per project to manage access independently for different tools (for example, "CI/CD pipeline" or "Playwright tests"). Vercel automatically sets one secret as the `VERCEL_AUTOMATION_BYPASS_SECRET` [system environment variable](/docs/environment-variables/system-environment-variables#VERCEL_AUTOMATION_BYPASS_SECRET) in your deployments. When you have multiple secrets, you can choose which one to use as the environment variable.
 
-You can use each available secret to bypass Deployment Protection on all deployments in a project until the secret is revoked. When you build a deployment, Vercel sets the environment variable value, so regenerating or deleting the secret in the project settings will invalidate previous deployments. You will need to redeploy your app if you update the secret in order to use the new value.
+You can use each available secret to bypass Deployment Protection on all deployments in a project until the secret is revoked. When you build a deployment, Vercel sets the environment variable value, so regenerating or deleting the secret in the project settings will invalidate previous deployments. You will need to redeploy your app if you update the secret to use the new value.
 
 ![Image](<&#xA;    '/docs-assets/static/docs/deployment-protection/protection-bypass-light.png'&#xA;  >)
 

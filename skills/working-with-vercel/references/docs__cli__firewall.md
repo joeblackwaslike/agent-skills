@@ -3,26 +3,26 @@ title: vercel firewall
 product: vercel
 url: /docs/cli/firewall
 canonical_url: "https://vercel.com/docs/cli/firewall"
-last_updated: 2026-07-15
+last_updated: 2026-09-16
 type: reference
 prerequisites:
   - /docs/cli
 related:
   - /docs/vercel-firewall
+  - /docs/observability/observability-plus
   - /docs/vercel-firewall/vercel-waf/custom-rules
-  - /docs/vercel-firewall/vercel-waf/ip-blocking
-  - /docs/vercel-firewall/vercel-waf/system-bypass-rules
-  - /docs/vercel-firewall/ddos-mitigation
-summary: "Learn how to manage your project's custom firewall rules, IP blocks, system bypass rules, attack challenge mode, and system mitigations using the..."
+  - /docs/bot-management
+  - /docs/botid
+summary: "Learn how to explore firewall traffic and manage your project's custom firewall rules, managed bot rules, IP blocks, system bypass rules, attack..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/firewall.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "4715d794957f1153c64b4352838e53a53dd9e44c947f6b7a2df6bf112d8aa8ce"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "3c82fdedb60e0e280ccf185764a46d97e6d7889559e11539353696e9847d6a21"
 ---
 
 # vercel firewall
 
-The `vercel firewall` command is used to configure the [Vercel Firewall](/docs/vercel-firewall) from the command line, including custom rules, IP blocks, system bypass rules, attack challenge mode, and system mitigations. You can match traffic with [condition parameters](#condition-types) and [actions](#actions), stage updates to rules and IP blocks as drafts, and publish them when you are ready.
+The `vercel firewall` command is used to inspect and configure the [Vercel Firewall](/docs/vercel-firewall) from the command line, including traffic, custom rules, managed bot rules, IP blocks, system bypass rules, attack challenge mode, and system mitigations. You can match traffic with [condition parameters](#condition-types) and [actions](#actions), stage updates to rules and IP blocks as drafts, and publish them when you are ready.
 
 
 <!-- docsgraph:related -->
@@ -32,12 +32,13 @@ The `vercel firewall` command is used to configure the [Vercel Firewall](/docs/v
 
 - [Manage Vercel Firewall in the CLI](https://vercel.com/changelog/manage-vercel-firewall-in-the-cli?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related)
 - [Protect Sensitive Routes with Vercel WAF: Challenge and Deny Rule Recipes](https://vercel.com/kb/guide/suspicious-traffic-in-specific-countries?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — Use Vercel WAF custom rules to block or challenge unwanted traffic by country, ASN, IP address, user agent, path, or coo
-- [Deny traffic from a set of IP addresses](https://vercel.com/kb/guide/deny-traffic-from-a-set-of-ip-addresses?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — Learn how to block specific IP addresses with the Vercel WAF API.
-- [Vercel WAF](https://vercel.com/docs/vercel-firewall/vercel-waf?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — Learn how to secure your website with the Vercel Web Application Firewall \\(WAF\\)
+- [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
+- [Create Vercel Firewall rules with natural language](https://vercel.com/changelog/create-vercel-waf-custom-rules-using-natural-language?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related)
 - [vercel alerts](https://vercel.com/docs/cli/alerts?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
-- [vercel routes](https://vercel.com/docs/cli/routes?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — Learn how to manage project-level routing rules using the vercel routes CLI command.
-- [vercel project](https://vercel.com/docs/cli/project?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — Perform the following commands from the terminal for your Vercel Projects: list, add, inspect, update settings, rename,
+- [Read Firewall Configuration](https://vercel.com/docs/rest-api/security/read-firewall-configuration?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — GET /v1/security/firewall/config/{configVersion} — Retrieve the specified firewall configuration for a project. The depl
 - [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
+- [Rate Limiting SDK](https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting-sdk?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — Learn how to configure a custom rule with rate limit in your code.
+- [vercel flags](https://vercel.com/docs/cli/flags?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — Learn how to manage feature flags for your Vercel project using the vercel flags CLI command.
 
 Full cross-link map for this page: [/docs/cli/firewall.graph.md](/docs/cli/firewall.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -50,16 +51,18 @@ The `vercel firewall` command supports the following operations:
 
 - [`overview`](#overview) - Show firewall configuration with the last day of activity
 - [`status`](#status) - Show firewall configuration in execution order
+- [`traffic`](#traffic) - Explore firewall traffic by action, client, and rule
 - [`alerts`](#alerts) - List and inspect firewall alerts
 - [`persistent-actions`](#persistent-actions) - List and inspect actions applied to specific clients
-- [`rules`](#custom-rules) - Manage custom firewall rules
+- [`rules`](#custom-rules) - Manage custom firewall rules and managed bot rules
+- [`bot-management`](#bot-management) - List managed bot rules and unknown bot traffic
 - [`ip-blocks`](#ip-blocks) - Manage IP blocks
 - [`system-bypass`](#system-bypass) - Manage system bypass rules
 - [`attack-mode`](#attack-mode) - Enable or disable Attack Mode
 - [`system-mitigations`](#system-mitigations) - Pause or resume automatic DDoS mitigation
 - [Staging and publishing](#staging-and-publishing-workflow) - Review, publish, or discard staged changes with `diff`, `publish`, and `discard`
 
-Custom rule and IP block changes are staged until you run [`publish`](#publish). System bypass, attack challenge mode, and system mitigations apply immediately.
+Custom rule, managed bot rule, and IP block changes are staged until you run [`publish`](#publish). System bypass, attack challenge mode, and system mitigations apply immediately.
 
 ## Overview
 
@@ -73,7 +76,7 @@ vercel firewall overview
 
 *Using the \`vercel firewall overview\` command to show firewall configuration and recent activity.*
 
-Traffic, rule attribution, and alerts are team-scoped and require Observability Plus. Without it, the command still reports the configuration block on its own.
+Traffic, rule attribution, and alerts are team-scoped. The activity window is the last 24 hours, which every team plan retains, so this command does not need an Observability Plus subscription. See [Traffic](#traffic) for the retention that bounds the other traffic commands. Without a team scope, the command reports the configuration block on its own.
 
 **Options:**
 
@@ -106,6 +109,164 @@ Reach for `status` when you need to reason about which check runs first, and [`o
 
 - `--json`: Output as JSON
 - `--project <name-or-id>`: Project name or ID, defaulting to the linked project
+
+## Traffic
+
+Report the requests the firewall acted on. `traffic list` answers what happened across the project. `traffic inspect` takes one value from those lists and shows only its traffic. Both are read-only and need a team scope.
+
+How far back you can read is bounded by your plan's firewall data retention. [Observability Plus](/docs/observability/observability-plus) extends that retention to 30 days.
+
+The CLI allows a query only when `--since` falls inside the data your plan still keeps. Shortening the window with `--until` does not help if `--since` is already too far back.
+
+| Command | What happens |
+| --- | --- |
+| `vercel firewall traffic list` | Succeeds on every team plan. The default window is the last 24 hours. |
+| `vercel firewall traffic list --since 1h` | Succeeds. The window starts inside retention. |
+| `vercel firewall traffic list --since 7d` | Fails without Observability Plus. Succeeds with Observability Plus. |
+| `vercel firewall traffic list --since 5d --until 4d` | Fails without Observability Plus. The window is one day long, but it starts before retained data. |
+
+Both subcommands describe traffic with the same 10 dimensions: `ip`, `ja4`, `asn`, `user-agent`, `path`, `rule`, `host`, `bot`, `country`, and `action`. Each dimension plays three roles:
+
+- `traffic list` reports it as a top list, which you choose with `--dimension`
+- `traffic inspect` takes it as the dimension to inspect, or as `--group-by`
+- A flag of the same name narrows either report to matching requests, such as `--ip 1.2.3.4` or `--action deny`
+
+You can combine the narrowing flags with each other and with `--filter`.
+
+`--since` and `--until` both accept a relative offset (`1h`, `24h`, `7d`) or an ISO 8601 date.
+
+### `traffic list`
+
+Aliases: `ls`.
+
+Show requests by firewall action over a window, with a trend and total for each action, followed by a top list per dimension: the busiest client IPs, JA4 TLS fingerprints, autonomous systems, user agents, request paths, rules, hostnames, and verified bots.
+
+```bash filename="terminal"
+vercel firewall traffic list
+```
+
+*Using the \`vercel firewall traffic list\` command to show requests by firewall action and the top clients behind them.*
+
+The command prints the window, requests by action, then a top list per dimension:
+
+```text filename="stdout"
+  Firewall traffic  Sep 6 12:00 – Sep 7 12:00 UTC · 24 points (1h each)
+
+  Requests by Action
+  Action   Trend    Total  Peak  Peak at
+  Allow    ▁▃▆█▆▃▁  40.0k  2.1k  14:00
+  Deny     ▁▃█▆▃▁   2.4k   1.5k  13:00
+
+  Top IPs
+  1.2.3.4           1.8k
+  5.6.7.8           600
+
+  Rules
+  DDoS Mitigation   2.4k
+
+  Verified Bots
+  github-hookshot   900
+
+  Break any of these values down further:
+  vercel firewall traffic inspect <dimension> <value>
+```
+
+The default report also includes top lists for JA4 digests, AS names, user agents, request paths, and hosts.
+
+Each top list is its own query. A dimension your account cannot report marks that list unavailable instead of failing the command. The rule list shows a rule's name where the firewall configuration names it. `--json` keeps the rule id as `value` for [`traffic inspect`](#traffic-inspect).
+
+**Options:**
+
+- `--json`: Output as JSON, including the period, per-action totals and series, and each top list
+- `--project <name-or-id>`: Project name or ID, defaulting to the linked project
+- `--since <time>`: Start of the window. Defaults to 24 hours ago
+- `--until <time>`: End of the window. Defaults to now
+- `--top <number>`: Rows per top list. Defaults to 5
+- `--dimension <dim>`: Top list to include, from the dimensions above. Repeatable, or comma-separated. Defaults to every dimension except `country` and `action`
+- `--alert <alert-id>`: Scope the window and rule to one alert from [`alerts list`](#alerts-list)
+- `--filter <expr>`: KQL filter expression. Repeatable, ANDed together
+- `--ip <ip>`, `--ja4 <digest>`, `--asn <name>`, `--user-agent <ua>`, `--path <path>`, `--rule <rule-id>`, `--host <hostname>`, `--bot <bot>`, `--country <code>`, `--action <action>`: Narrow every top list to requests matching the given dimension value
+
+**Examples:**
+
+```bash filename="terminal"
+# Show traffic from the last day
+vercel firewall traffic list
+
+# Show the last hour, with the top 20 rows per list
+vercel firewall traffic list --since 1h --top 20
+
+# Show which countries and user agents denied traffic came from
+vercel firewall traffic list --action deny --dimension country --dimension user-agent
+
+# Scope the report to the period and rule of one alert
+vercel firewall traffic list --alert al_abc123
+```
+
+### `traffic inspect`
+
+Show one dimension value in detail: its requests by action over the window, and a breakdown of that traffic by a second dimension. Pass one of the dimensions above and one of its values, such as an IP from the `Top IPs` list.
+
+```bash filename="terminal"
+vercel firewall traffic inspect <dimension> <value>
+```
+
+*Using the \`vercel firewall traffic inspect\` command to show one traffic dimension value in detail.*
+
+The command prints the value, its requests by action, and a breakdown by a second dimension:
+
+```text filename="stdout"
+  1.2.3.4  IP Address
+  AS Name         EXAMPLE-AS
+  AS Number       64500
+  Country         DE
+  Requests        2.4k
+
+  Requests by Action  Sep 6 12:00 – Sep 6 12:15 UTC · 2 points (15m each)
+  Action   Trend  Total  Peak  Peak at
+  Deny     ▁█     2.4k   1.5k  12:15
+
+  Breakdown by Request Path  (top 10)
+  Request Path  Trend  Total  Peak  Peak at
+  /api/login    ▁█     2.0k   1.2k  12:15
+  (not set)     █▁     400    400   12:00
+```
+
+The breakdown dimension defaults to whichever pairs best with the one being inspected: paths for a client, clients for a path or a rule. Use `--group-by` to choose another, naming any dimension but the one being inspected. Inspecting a rule takes the rule id. [`traffic list`](#traffic-list) shows the rule's name in text output and the id as `value` in `--json`.
+
+**Options:**
+
+- `--json`: Output as JSON, including the period, totals, series, and the breakdown with a series per row
+- `--project <name-or-id>`: Project name or ID, defaulting to the linked project
+- `--since <time>`: Start of the window. Defaults to 24 hours ago
+- `--until <time>`: End of the window. Defaults to now
+- `--group-by <dim>`: Dimension to break the traffic down by. Defaults to the one that pairs with the inspected dimension
+- `--top <number>`: Rows in the breakdown. Defaults to 10
+- `--alert <alert-id>`: Scope the window and rule to one alert from [`alerts list`](#alerts-list)
+- `--filter <expr>`: KQL filter expression. Repeatable, ANDed together
+- `--ip <ip>`, `--ja4 <digest>`, `--asn <name>`, `--user-agent <ua>`, `--path <path>`, `--rule <rule-id>`, `--host <hostname>`, `--bot <bot>`, `--country <code>`, `--action <action>`: Narrow the inspected value further, to requests matching the given dimension value as well
+
+**Examples:**
+
+```bash filename="terminal"
+# Inspect one client IP
+vercel firewall traffic inspect ip 1.2.3.4
+
+# See which IPs a rule acted on
+vercel firewall traffic inspect rule rule_abc123 --group-by ip
+
+# Inspect a path over the last week
+vercel firewall traffic inspect path /api/checkout --since 7d
+
+# Narrow one client to what the firewall denied
+vercel firewall traffic inspect ip 1.2.3.4 --action deny
+```
+
+A value with no traffic in the window returns a not-found error, not an empty report. Otherwise a typo and a quiet client would look the same:
+
+```text filename="stdout"
+Error: No firewall traffic for IP Address "9.9.9.9" in this window. Run vercel firewall traffic list to see which values have traffic, or widen the window with `--since`.
+```
 
 ## Alerts
 
@@ -162,7 +323,7 @@ vercel firewall alerts inspect <alert-id>
 vercel firewall alerts inspect al_abc123
 ```
 
-Traffic and rate figures require Observability Plus. Without it, the command reports the alert's own details and notes that the activity window is unavailable.
+The chart reaches a day further back than the alert to compare it against. On Pro that lands outside [firewall retention](#traffic), so Pro needs Observability Plus for the traffic and rate figures. Without it, the command reports the alert's own details and notes that the activity window is unavailable.
 
 ## Persistent actions
 
@@ -231,7 +392,7 @@ vercel firewall persistent-actions inspect 51.158.168.18 --host vercel.com --act
 vercel firewall persistent-actions inspect 51.158.168.18 --paths
 ```
 
-When an IP has more than one matching action, the most recent is shown and the others are noted. Use `--host`, `--action`, `--since`, and `--until` to select a specific one. Traffic figures require Observability Plus.
+When an IP has more than one matching action, the most recent is shown and the others are noted. Use `--host`, `--action`, `--since`, and `--until` to select a specific one. The chart covers the action's own window, so a recent action charts on any plan. An action older than your [firewall retention](#traffic) needs Observability Plus.
 
 ## Custom rules
 
@@ -241,7 +402,7 @@ When an IP has more than one matching action, the most recent is shown and the o
 
 Aliases: `ls`.
 
-List all custom firewall rules, including any unpublished draft changes. Draft additions, removals, and modifications are annotated in the output.
+List managed bot rules, then custom firewall rules, including any unpublished draft changes. Draft additions, removals, and modifications are annotated in the output. Managed bot rules appear only on a project. `--team-level` lists custom rules alone.
 
 ```bash filename="terminal"
 vercel firewall rules list
@@ -266,7 +427,7 @@ vercel firewall rules list --expand
 
 ### `rules inspect`
 
-Show the full configuration of a custom firewall rule, including conditions, action, and rate limit settings.
+Show a custom rule or a managed bot rule. Custom rules include conditions, action, and rate limit settings. Managed bot rules show the current action and IDs.
 
 ```bash filename="terminal"
 vercel firewall rules inspect <name-or-id>
@@ -286,6 +447,9 @@ vercel firewall rules inspect "Block bots"
 
 # Inspect by ID
 vercel firewall rules inspect rule_abc123
+
+# Inspect a managed bot rule
+vercel firewall rules inspect bot-protection
 ```
 
 ### `rules add`
@@ -402,7 +566,7 @@ Conditions within a group are combined with AND. Use `--or` between conditions t
 
 ### `rules edit`
 
-Edit an existing custom firewall rule. You can edit using AI, an interactive editor, command-line flags, or a JSON payload.
+Edit an existing custom firewall rule, or change the action on a [managed bot rule](#bot-management). Custom rules accept AI, an interactive editor, command-line flags, or a JSON payload. Managed bot rules accept `--action` only.
 
 ```bash filename="terminal"
 vercel firewall rules edit <name-or-id> [options]
@@ -444,6 +608,9 @@ vercel firewall rules edit "My Rule" --name "New Name" --yes
 # Replace conditions
 vercel firewall rules edit "My Rule" \
   --condition '{"type":"path","op":"pre","value":"/new"}' --yes
+
+# Change a managed bot rule action
+vercel firewall rules edit ai-bots --action deny --yes
 ```
 
 ### `rules enable`
@@ -520,6 +687,78 @@ vercel firewall rules reorder "My Rule" --first --yes
 # Move to position 3
 vercel firewall rules reorder "My Rule" --position 3 --yes
 ```
+
+## Bot management
+
+[Bot Protection](/docs/bot-management#bot-protection-managed-ruleset), [AI Bots](/docs/bot-management#ai-bots-managed-ruleset), and [BotID](/docs/botid) are reserved managed rules. They appear at the top of [`rules list`](#rules-list) and in `bot-management`. They are project-only. `--team-level` has no managed bot settings.
+
+Action changes are [staged as drafts and require publishing](#staging-and-publishing-workflow). `rules add`, `remove`, `enable`, `disable`, and `reorder` refuse these slugs. Change the action with [`rules edit --action`](#rules-edit) instead.
+
+### `bot-management`
+
+List the three managed bot rules and the top unknown bot categories over the last 24 hours, matching the Bot Management card in the dashboard.
+
+```bash filename="terminal"
+vercel firewall bot-management
+```
+
+*Using the \`vercel firewall bot-management\` command to list managed bot rules and unknown bot traffic.*
+
+The command prints the current action for each rule, then unknown bot traffic:
+
+```text filename="stdout"
+  Managed
+
+  Name             Action      ID
+  Bot Protection   Challenge   bot-protection
+  AI Bots          Allow       ai-bots
+  BotID            Basic       bot-id
+
+  Unknown Bot Traffic
+  ai_scraper          1.2k
+  headless_chrome     800
+
+  Next steps:
+  Change Bot Protection
+  vercel firewall rules edit bot-protection --action log
+  Change AI Bots
+  vercel firewall rules edit ai-bots --action deny
+  Change BotID
+  vercel firewall rules edit bot-id --action deep-analysis
+  Break unknown bot traffic down further
+  vercel firewall traffic inspect unknown-bot <category>
+```
+
+Unknown bot traffic is team-scoped and reads request counts rather than the firewall metric, so it needs [Observability Plus](/docs/observability/observability-plus). Without it, the managed rules still print and the unknown-bot panel notes that Observability Plus is required. Without a team scope, the command reports the managed rules on their own.
+
+Drill into a category with `vercel firewall traffic inspect unknown-bot <category>`.
+
+**Options:**
+
+- `--json`: Output as JSON, including `{ managed, unknownBotTraffic }`
+- `--project <name-or-id>`: Project name or ID, defaulting to the linked project
+
+**Examples:**
+
+```bash filename="terminal"
+# List managed bot rules and unknown bot traffic
+vercel firewall bot-management
+
+# Report the same data as JSON
+vercel firewall bot-management --json
+
+# Change AI Bots to deny, then publish
+vercel firewall rules edit ai-bots --action deny --yes
+vercel firewall publish --yes
+```
+
+| Rule | ID | Actions |
+| --- | --- | --- |
+| Bot Protection | `bot-protection` | `off`, `log`, `challenge` |
+| AI Bots | `ai-bots` | `allow`, `log`, `challenge`, `deny` |
+| BotID | `bot-id` | `basic`, `deep-analysis` |
+
+Inspect also accepts the WAF id that traffic reports, such as `managed_bot_protection`. BotID Deep Analysis is not available on Hobby.
 
 ## IP blocks
 
@@ -850,11 +1089,6 @@ Each condition specifies a `type`, an `op` (operator), and usually a `value`.
 | `ja3_digest` | JA3 TLS fingerprint (Enterprise only) | No |
 | `rate_limit_api_id` | Rate limit API grouping ID | No |
 
-| Type | Description | Needs `key` |
-| --- | --- | --- |
-| `bot_name` | Verified bot name (Security Plus only) | No |
-| `bot_category` | Verified bot category (Security Plus only) | No |
-
 ### Operators
 
 | Operator | Meaning | Value format | Negated form |
@@ -907,6 +1141,8 @@ For more information on global options and their usage, refer to the [options se
 - [Vercel Firewall overview](/docs/vercel-firewall)
 - [Rule configuration reference](/docs/vercel-firewall/vercel-waf/rule-configuration)
 - [Custom rules](/docs/vercel-firewall/vercel-waf/custom-rules)
+- [Bot Management](/docs/bot-management)
+- [BotID](/docs/botid)
 - [IP blocking](/docs/vercel-firewall/vercel-waf/ip-blocking)
 - [Rate limiting](/docs/vercel-firewall/vercel-waf/rate-limiting)
 - [System bypass rules](/docs/vercel-firewall/vercel-waf/system-bypass-rules)

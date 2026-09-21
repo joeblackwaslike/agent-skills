@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/skill-uploads.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "7b31f73d19d1f3d0d7fc5901683a819ad051a3f0fe0a4f90ed152c4fcf59cf6b"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "6ea1b15a2a249abac7e2ffd3fd4bce09d975f9f6f15a994f24d8b0c47615e101"
 ---
 
 # Skill Uploads
@@ -208,11 +208,13 @@ The following providers support `skills()` and skill uploads:
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Code Mode](/docs/ai-sdk-core/code-mode)
+- [Tool Search](/docs/ai-sdk-core/tool-search)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
+- [Evaluation](/docs/ai-sdk-core/evaluation)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)

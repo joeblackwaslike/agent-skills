@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/claude-platform-on-aws.md"
-fetched_at: "2026-08-31T10:37:20.620Z"
-sha256: "8b8b259956c3abb62366823f071d1c3f429b7947ec2fbb34a4907342afc0dbe1"
+fetched_at: "2026-09-21T09:39:23.760Z"
+sha256: "3ac79637645821f27a8dfaadded790981454940d5ae44985c4975d7ccb68daf9"
 ---
 
 > ## Documentation Index
@@ -257,7 +257,7 @@ The key is sent as `x-api-key` and takes precedence over SigV4, so any AWS crede
 Treat workspace API keys like any other production credential. The [user settings file](/docs/en/settings) `env` block is a convenient way to scope the key to your machine without exporting it globally.
 
 <Note>
-  The `/login` and `/logout` commands don't sign you into a Claude.ai subscription for Claude Platform on AWS. Authentication runs through your AWS credentials or workspace API key.
+  The `/login` and `/logout` commands don't sign you into a claude.ai subscription for Claude Platform on AWS. Authentication runs through your AWS credentials or workspace API key.
 </Note>
 
 ### 2. Configure Claude Code

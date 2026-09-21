@@ -13,8 +13,8 @@ related:
 summary: Resolve tenants and route requests by subdomain, custom domain, or path using Next.js Proxy on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/middleware-and-routing.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "ee8c06e48b02d65f7616019fb4f0e0fdca771ba6a664e1862c80257ce78845ae"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "c563aef447e5321d980f854550f12b01dd473327741efb32d8273ed63615ed28"
 ---
 
 # Proxy and Routing
@@ -33,8 +33,8 @@ Tenant headers must come from the proxy, never from the client. Any caller can a
 - [Multi-Tenant Platform Concepts](https://vercel.com/docs/platforms/multi-tenant-platforms/concepts?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fmiddleware-and-routing&source_site=vercel-docs&relationship=related) — Understand tenants, domains, routing, and architecture for building multi-tenant applications on Vercel for Platforms.
 - [Multi-Tenant Template](https://vercel.com/docs/platforms/examples/multi-tenant-template?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fmiddleware-and-routing&source_site=vercel-docs&relationship=related) — Build SaaS applications that serve multiple domains from a single Next.js codebase.
 - [Serving Static Files](https://vercel.com/docs/platforms/multi-tenant-platforms/serving-static-files?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fmiddleware-and-routing&source_site=vercel-docs&relationship=related) — Serve tenant-specific static files like robots.txt, sitemap.xml, and llms.txt dynamically using route handlers.
-- [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fmiddleware-and-routing&source_site=vercel-docs&relationship=related) — Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
 - [Configuring Custom Subpaths](https://vercel.com/docs/platforms/multi-tenant-platforms/custom-subpaths?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fmiddleware-and-routing&source_site=vercel-docs&relationship=related) — Host platform content on custom subpaths of customer domains while maintaining a single Next.js application.
+- [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fmiddleware-and-routing&source_site=vercel-docs&relationship=related) — Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
 
 Full cross-link map for this page: [/docs/platforms/multi-tenant-platforms/middleware-and-routing.graph.md](/docs/platforms/multi-tenant-platforms/middleware-and-routing.graph.md?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fmiddleware-and-routing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

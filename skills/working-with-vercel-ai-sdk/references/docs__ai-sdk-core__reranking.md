@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/reranking.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "a539944f3c44eb1640c6c9f5b3d110942f96d7f0c3c202ca6844e7fa39141435"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "196480bed0438873648e493bbdac206176e9fc472b155fbe8db81c509e8d8c07"
 ---
 
 # Reranking
@@ -229,11 +229,13 @@ Several providers offer reranking models:
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Code Mode](/docs/ai-sdk-core/code-mode)
+- [Tool Search](/docs/ai-sdk-core/tool-search)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
+- [Evaluation](/docs/ai-sdk-core/evaluation)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)

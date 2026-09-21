@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/get-realtime-tool-definitions.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "8f7151dda6b31b039a47de7565e5f7e2bd4042eb220e78b2ab49e7811acbe2a8"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "46288eeefcc402347f4eec3d4cd4aa1f119446d1f6232a84c9e2276b7f241412"
 ---
 
 # `experimental_getRealtimeToolDefinitions()`
@@ -140,6 +140,7 @@ Each returned definition contains:
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+- [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
 - [uploadFile](/docs/reference/ai-sdk-core/upload-file)
 - [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
 - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
@@ -155,6 +156,7 @@ Each returned definition contains:
 - [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
 - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [toolSearch](/docs/reference/ai-sdk-core/tool-search)
 - [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
 - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)

@@ -16,13 +16,13 @@ related:
 summary: Deploy multiple backends and frontends within a single Vercel project using services.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "ca1b294ddc6d653b0e73f2f6bf921064376f84848f12a27ad3c924ed3cc7656e"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "b0f1dd031d511a541c552d9e3c65c1518f2be001944f86d90f890e0358a1a9a9"
 ---
 
 # Services
 
-> **🔒 Permissions Required**: Services
+> **🔒 Permissions Required**: Services (Beta)
 
 Services let you deploy multiple backends and frontends within a single Vercel project. For example, a Next.js frontend and a FastAPI backend in the same repository deploy together with shared routing, environment variables, and a unique domain,
 replacing the need to split monorepos into separate Vercel projects.
@@ -42,9 +42,9 @@ replacing the need to split monorepos into separate Vercel projects.
 - [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fservices&source_site=vercel-docs&relationship=related) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
 - [Deploy PHP on Vercel with Docker](https://vercel.com/kb/guide/deploy-php-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fservices&source_site=vercel-docs&relationship=related) — Build a PHP application with FrankenPHP and Docker, then deploy it to Vercel Functions with managed configuration, stora
 - [Secure internal communication between services (beta)](https://vercel.com/changelog/secure-internal-communication-between-services?from=related&source_path=%2Fdocs%2Fservices&source_site=vercel-docs&relationship=related)
+- [Projects overview](https://vercel.com/docs/projects?from=related&source_path=%2Fdocs%2Fservices&source_site=vercel-docs&relationship=related) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 - [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Fservices&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
 - [Glossary](https://vercel.com/docs/glossary?from=related&source_path=%2Fdocs%2Fservices&source_site=vercel-docs&relationship=related) — Learn about the terms and concepts used in Vercel's products and documentation.
-- [Static Configuration with vercel.json](https://vercel.com/docs/project-configuration/vercel-json?from=related&source_path=%2Fdocs%2Fservices&source_site=vercel-docs&relationship=related) — Learn how to use vercel.json to configure and override the default behavior of Vercel from within your project.
 
 Full cross-link map for this page: [/docs/services.graph.md](/docs/services.graph.md?from=related&source_path=%2Fdocs%2Fservices&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

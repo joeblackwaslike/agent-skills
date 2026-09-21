@@ -3,7 +3,7 @@ title: Qwen Code with AI Gateway
 product: vercel
 url: /docs/ai-gateway/coding-agents/qwen
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/qwen"
-last_updated: 2018-10-20
+last_updated: 2026-09-13
 type: how-to
 prerequisites:
   - /docs/ai-gateway/coding-agents
@@ -16,8 +16,8 @@ related:
 summary: Connect Qwen Code to AI Gateway with the Vercel CLI or OpenAI-compatible model provider entries.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/qwen.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "f52eaedda903b724906d7ed425faaf99d84c0e6da2663d3e75fb197f3afe19dd"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "771e692632bb2b2985815e4acce1fc51b060cf466efbac150e4eaf8970f8f990"
 ---
 
 # Qwen Code with AI Gateway

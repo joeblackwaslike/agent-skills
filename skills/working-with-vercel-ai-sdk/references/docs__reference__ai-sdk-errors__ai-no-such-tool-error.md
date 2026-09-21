@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-such-tool-error.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "e90c6d369af99b0d30f4d8697184319f8e8df1edc7e3b655c5e86ae6657eaa97"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "061760880e383fad5c2319bf417e170fe683c1a5b65fe1f4b1b974c517967b7b"
 ---
 
 # AI_NoSuchToolError
@@ -32,6 +32,7 @@ if (NoSuchToolError.isInstance(error)) {
 - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
 - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
 - [AI_EmptyResponseBodyError](/docs/reference/ai-sdk-errors/ai-empty-response-body-error)
+- [AI_EvaluationUnsupportedQuestionTypeError](/docs/reference/ai-sdk-errors/ai-evaluation-unsupported-question-type-error)
 - [AI_InvalidArgumentError](/docs/reference/ai-sdk-errors/ai-invalid-argument-error)
 - [AI_InvalidDataContentError](/docs/reference/ai-sdk-errors/ai-invalid-data-content-error)
 - [AI_InvalidMessageRoleError](/docs/reference/ai-sdk-errors/ai-invalid-message-role-error)

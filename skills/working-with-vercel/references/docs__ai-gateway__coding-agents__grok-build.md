@@ -3,7 +3,7 @@ title: Grok Build with AI Gateway
 product: vercel
 url: /docs/ai-gateway/coding-agents/grok-build
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/grok-build"
-last_updated: 2026-09-08
+last_updated: 2026-09-13
 type: how-to
 prerequisites:
   - /docs/ai-gateway/coding-agents
@@ -14,8 +14,8 @@ related:
 summary: Connect Grok Build to AI Gateway with environment variables. Populate the model picker from the model catalog and monitor requests and spending.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/grok-build.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "f0c6f2e4748c0be7a74007299b05ad7decf08135ee02118bd922ee531ffbb9c6"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "2407a0fb66a07628d7ec8b5ef582c1dc6f8e2bb63179e4c7e0507f0bcaf24a73"
 ---
 
 # Grok Build with AI Gateway

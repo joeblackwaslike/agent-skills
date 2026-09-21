@@ -14,8 +14,8 @@ related:
 summary: Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/buy.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "66e229ea51dc2744a2b9756e0dba1b01f2c5d8e6330cbf5e007c1cab51390a67"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "2be6404610c06c2dc0371f1e38c27ee0a304d297e0c8aca3353b7433f0f93802"
 ---
 
 # vercel buy
@@ -32,8 +32,8 @@ The `vercel buy` command allows you to purchase Vercel products for your team di
 - [vercel usage](https://vercel.com/docs/cli/usage?from=related&source_path=%2Fdocs%2Fcli%2Fbuy&source_site=vercel-docs&relationship=related) — Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fbuy&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel teams](https://vercel.com/docs/cli/teams?from=related&source_path=%2Fdocs%2Fcli%2Fbuy&source_site=vercel-docs&relationship=related) — Learn how to list, add, switch, invite, and manage your teams with the vercel teams CLI command.
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fbuy&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fbuy&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel upgrade](https://vercel.com/docs/cli/upgrade?from=related&source_path=%2Fdocs%2Fcli%2Fbuy&source_site=vercel-docs&relationship=related) — Upgrade the Vercel CLI to the latest version and manage automatic updates with the vercel upgrade CLI command.
 
 Full cross-link map for this page: [/docs/cli/buy.graph.md](/docs/cli/buy.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fbuy&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

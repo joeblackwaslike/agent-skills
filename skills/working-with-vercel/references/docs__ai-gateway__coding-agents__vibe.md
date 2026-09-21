@@ -3,7 +3,7 @@ title: Mistral Vibe with AI Gateway
 product: vercel
 url: /docs/ai-gateway/coding-agents/vibe
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/vibe"
-last_updated: 2018-10-20
+last_updated: 2026-09-13
 type: how-to
 prerequisites:
   - /docs/ai-gateway/coding-agents
@@ -16,8 +16,8 @@ related:
 summary: Connect Mistral Vibe to AI Gateway with the Vercel CLI or a TOML provider and model shortlist.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/vibe.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "be9f9d9e5646830f952e4b1c67d9c5db5e048e1e8b7755ca7214c86a8a3120c7"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "85e9b8b935f597df959b59362fbf3a5edc7e8e3eb5dd1aa56ef2eebf457e05f5"
 ---
 
 # Mistral Vibe with AI Gateway

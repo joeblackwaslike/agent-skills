@@ -3,7 +3,7 @@ title: Deploy MCP servers to Vercel
 product: vercel
 url: /docs/mcp/deploy-mcp-servers-to-vercel
 canonical_url: "https://vercel.com/docs/mcp/deploy-mcp-servers-to-vercel"
-last_updated: 2026-08-31
+last_updated: 2026-09-15
 type: how-to
 prerequisites:
   - /docs/mcp
@@ -16,8 +16,8 @@ related:
 summary: Learn how to deploy Model Context Protocol (MCP) servers on Vercel with OAuth authentication and efficient scaling.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/mcp/deploy-mcp-servers-to-vercel.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "1dc16d98df18cab745630b10e5316418780ced076b18c3d735be611a898bec07"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "38aa8981f3009c766944121f11e9249adf035a97bbbb1be872c1fb179bed6214"
 ---
 
 # Deploy MCP servers to Vercel
@@ -32,14 +32,12 @@ Deploy your Model Context Protocol (MCP) servers on Vercel to [take advantage of
 
 - [Introducing Vercel MCP: Connect Vercel to your AI tools](https://vercel.com/blog/introducing-vercel-mcp-connect-vercel-to-your-ai-tools?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related)
 - [Build a ChatGPT Connector \\(MCP server\\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related) — Build a ChatGPT MCP server with mcp-handler and Fluid compute. Add search, fetch, and OAuth, deploy to Vercel, then vali
-- [Build an MCP Server with Weather tools using Express and Vercel](https://vercel.com/kb/guide/mcp-server-with-weather-tool-express?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related) — Make your Express weather API accessible to AI assistants through the Model Context Protocol.
-- [How to create a contentful asset on Vercel](https://vercel.com/kb/guide/how-to-create-a-contentful-asset-on-vercel?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related) — This is my wonderful
-- [Building efficient MCP servers](https://vercel.com/blog/building-efficient-mcp-servers?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related)
 - [How to build an MCP server with Nuxt](https://vercel.com/kb/guide/how-to-build-an-mcp-server-with-nuxt?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related) — Add an MCP server to your Nuxt app with the Nuxt MCP Toolkit. Create tools, resources, and prompt templates that AI assi
+- [Build an MCP Server with Weather tools using Express and Vercel](https://vercel.com/kb/guide/mcp-server-with-weather-tool-express?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related) — Make your Express weather API accessible to AI assistants through the Model Context Protocol.
+- [Building efficient MCP servers](https://vercel.com/blog/building-efficient-mcp-servers?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related)
 - [Model Context Protocol (MCP) explained: An FAQ](https://vercel.com/blog/model-context-protocol-mcp-explained?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related)
 - [Using xmcp with Next.js](https://vercel.com/kb/guide/using-xmcp-with-nextjs?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related) — Add an MCP server to an existing Next.js app with xmcp. Create typed tools, add authentication, and deploy to Vercel as
-- [Vercel MCP now in Public Beta](https://vercel.com/changelog/vercels-mcp?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related)
-- [MCP Server](https://v0.app/docs/api/v1/adapters/mcp-server?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related) — The v0 MCP (Model Context Protocol) server allows you to integrate v0's capabilities directly into your IDE, providing s
+- [How to create a contentful asset on Vercel](https://vercel.com/kb/guide/how-to-create-a-contentful-asset-on-vercel?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related) — This is my wonderful
 - [AI SDK and MCP](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
 
 Full cross-link map for this page: [/docs/mcp/deploy-mcp-servers-to-vercel.graph.md](/docs/mcp/deploy-mcp-servers-to-vercel.graph.md?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=graph)
@@ -60,58 +58,118 @@ Vercel provides the following features for production MCP deployments:
 
 ## Deploy an MCP server on Vercel
 
-Use the `mcp-handler` package and create the following API route to host an MCP server that provides a single tool that rolls a dice.
+Use [`mcp-handler`](https://github.com/vercel/mcp-handler) to create an MCP server in an existing Next.js App Router application. You'll need Node.js 20 or later.
+
+Install `mcp-handler` v2, the MCP server SDK v2, and Zod v4:
+
+<CodeBlock>
+  <Code tab="pnpm">
+    ```bash
+    pnpm i mcp-handler@2.1.1 @modelcontextprotocol/server@2 zod@4
+    ```
+  </Code>
+  <Code tab="yarn">
+    ```bash
+    yarn i mcp-handler@2.1.1 @modelcontextprotocol/server@2 zod@4
+    ```
+  </Code>
+  <Code tab="npm">
+    ```bash
+    npm i mcp-handler@2.1.1 @modelcontextprotocol/server@2 zod@4
+    ```
+  </Code>
+  <Code tab="bun">
+    ```bash
+    bun i mcp-handler@2.1.1 @modelcontextprotocol/server@2 zod@4
+    ```
+  </Code>
+</CodeBlock>
+
+Create a route that exposes a tool for rolling an N-sided die:
+
+**app/api/mcp/route.ts**
 
 ```ts filename="app/api/mcp/route.ts"
-import { z } from 'zod';
 import { createMcpHandler } from 'mcp-handler';
+import { z } from 'zod';
 
-const handler = createMcpHandler(
-  (server) => {
-    server.tool(
-      'roll_dice',
-      'Rolls an N-sided die',
-      { sides: z.number().int().min(2) },
-      async ({ sides }) => {
-        const value = 1 + Math.floor(Math.random() * sides);
-        return {
-          content: [{ type: 'text', text: `🎲 You rolled a ${value}!` }],
-        };
-      },
-    );
-  },
-  {},
-  { basePath: '/api' },
-);
+const handler = createMcpHandler((server) => {
+  server.registerTool(
+    'roll_dice',
+    {
+      description: 'Roll an N-sided die',
+      inputSchema: z.object({ sides: z.number().int().min(2) }),
+    },
+    async ({ sides }) => {
+      const value = 1 + Math.floor(Math.random() * sides);
+      return {
+        content: [{ type: 'text', text: `🎲 You rolled a ${value}!` }],
+      };
+    },
+  );
+});
 
-export { handler as GET, handler as POST, handler as DELETE };
+export { handler as GET, handler as POST };
 ```
+
+**app/api/mcp/route.js**
+
+```js filename="app/api/mcp/route.js"
+import { createMcpHandler } from 'mcp-handler';
+import { z } from 'zod';
+
+const handler = createMcpHandler((server) => {
+  server.registerTool(
+    'roll_dice',
+    {
+      description: 'Roll an N-sided die',
+      inputSchema: z.object({ sides: z.number().int().min(2) }),
+    },
+    async ({ sides }) => {
+      const value = 1 + Math.floor(Math.random() * sides);
+      return {
+        content: [{ type: 'text', text: `🎲 You rolled a ${value}!` }],
+      };
+    },
+  );
+});
+
+export { handler as GET, handler as POST };
+```
+
+Clients connect to `/api/mcp` using Streamable HTTP. Your framework determines the route, so you don't need to configure a base path in `mcp-handler`.
+
+> **💡 Note:** Version 2 of `mcp-handler` uses `@modelcontextprotocol/server`
+> instead of `@modelcontextprotocol/sdk`, changes tool registration, and removes
+> legacy HTTP+SSE transport and Redis configuration. Follow the [migration
+> guide](https://github.com/vercel/mcp-handler#migrating-from-1x) to update an
+> existing server.
 
 ### Test the MCP server locally
 
-This assumes that your MCP server application, with the above-mentioned API route, runs locally at `http://localhost:3000`.
+Start your Next.js development server at `http://localhost:3000` before opening the MCP Inspector.
 
 1. Run the MCP inspector:
 
 <CodeBlock>
   <Code tab="pnpm">
     ```bash
-    pnpm i 
+    pnpm i @modelcontextprotocol/inspector@latest
     ```
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i 
+    yarn i @modelcontextprotocol/inspector@latest
     ```
   </Code>
   <Code tab="npm">
     ```bash
-    npm i 
+    npm i @modelcontextprotocol/inspector@latest
     ```
   </Code>
   <Code tab="bun">
     ```bash
-    bun i 
+    bun i @modelcontextprotocol/inspector@latest
     ```
   </Code>
 </CodeBlock>
@@ -122,7 +180,7 @@ This assumes that your MCP server application, with the above-mentioned API rout
    - Select **Streamable HTTP** in the drop-down on the left
    - In the **URL** field, use `http://localhost:3000/api/mcp`
    - Expand **Configuration**
-   - In the **Proxy Session Token** field, paste the token from the terminal where your MCP server is running
+   - In the **Proxy Session Token** field, paste the token printed in the terminal where MCP Inspector is running
    - Click **Connect**
 4. Test the tools:
    - Click **List Tools** under Tools
@@ -147,67 +205,129 @@ Using [Cursor](https://www.cursor.com/), add the URL of your MCP server to the [
 
 You can now use your MCP roll dice tool in [Cursor's AI chat](https://docs.cursor.com/context/model-context-protocol#using-mcp-in-chat) or any other MCP client.
 
+To call the same tool from your own application, follow the [AI SDK](/docs/mcp/integrations/ai-sdk) or [TanStack AI](/docs/mcp/integrations/tanstack-ai) example. Explore [MCP integrations](/docs/mcp/integrations) for connection and authentication options, including eve.
+
 ## Enabling authorization
 
-The `mcp-handler` provides built-in OAuth support to secure your MCP server.
-This ensures that only authorized clients with valid tokens can access your tools.
+`mcp-handler` includes helpers for verifying bearer tokens and publishing OAuth protected resource metadata. You provide an authorization server and the logic that validates its tokens. The package does not issue tokens or run an authorization server.
 
 ### Secure your server with OAuth
 
-To add OAuth authorization to [the MCP server you created in the previous section](#deploy-an-mcp-server-on-vercel):
+Wrap your MCP handler with `withMcpAuth` and set `required: true` to require a valid token. Return the verified client's identity and scopes from `verifyToken`.
 
-1. Use the `withMcpAuth` function to wrap your MCP handler
-2. Implement token verification logic
-3. Configure required scopes and metadata path
+The following example uses a token from the `MCP_DEMO_TOKEN` environment variable for local testing. Set that variable in `.env.local` before starting your development server. For production, replace the comparison with your authorization server's token verification, including issuer, audience, expiration, and granted scopes.
 
-```typescript filename="app/api/[transport]/route.ts"
-import { withMcpAuth } from 'mcp-handler';
-import { AuthInfo } from '@modelcontextprotocol/sdk/server/auth/types.js';
+Replace your MCP route with the following code:
 
-const handler = createMcpHandler(/* ... same configuration as above ... */);
+**app/api/mcp/route.ts**
+
+```ts filename="app/api/mcp/route.ts"
+import type { AuthInfo } from '@modelcontextprotocol/server';
+import { createMcpHandler, withMcpAuth } from 'mcp-handler';
+import { z } from 'zod';
+
+const handler = createMcpHandler((server) => {
+  server.registerTool(
+    'roll_dice',
+    {
+      description: 'Roll an N-sided die',
+      inputSchema: z.object({ sides: z.number().int().min(2) }),
+    },
+    async ({ sides }) => {
+      const value = 1 + Math.floor(Math.random() * sides);
+      return {
+        content: [{ type: 'text', text: `🎲 You rolled a ${value}!` }],
+      };
+    },
+  );
+});
 
 const verifyToken = async (
-  req: Request,
+  _req: Request,
   bearerToken?: string,
 ): Promise<AuthInfo | undefined> => {
-  if (!bearerToken) return undefined;
-
-  const isValid = bearerToken === '123';
-  if (!isValid) return undefined;
+  if (!bearerToken || bearerToken !== process.env.MCP_DEMO_TOKEN) {
+    return undefined;
+  }
 
   return {
     token: bearerToken,
-    scopes: ['read:stuff'],
-    clientId: 'user123',
-    extra: {
-      userId: '123',
-    },
+    scopes: ['read:dice'],
+    clientId: 'demo-client',
   };
 };
 
 const authHandler = withMcpAuth(handler, verifyToken, {
   required: true,
-  requiredScopes: ['read:stuff'],
+  requiredScopes: ['read:dice'],
   resourceMetadataPath: '/.well-known/oauth-protected-resource',
 });
 
 export { authHandler as GET, authHandler as POST };
 ```
 
+**app/api/mcp/route.js**
+
+```js filename="app/api/mcp/route.js"
+import { createMcpHandler, withMcpAuth } from 'mcp-handler';
+import { z } from 'zod';
+
+const handler = createMcpHandler((server) => {
+  server.registerTool(
+    'roll_dice',
+    {
+      description: 'Roll an N-sided die',
+      inputSchema: z.object({ sides: z.number().int().min(2) }),
+    },
+    async ({ sides }) => {
+      const value = 1 + Math.floor(Math.random() * sides);
+      return {
+        content: [{ type: 'text', text: `🎲 You rolled a ${value}!` }],
+      };
+    },
+  );
+});
+
+const verifyToken = async (_req, bearerToken) => {
+  if (!bearerToken || bearerToken !== process.env.MCP_DEMO_TOKEN) {
+    return undefined;
+  }
+
+  return {
+    token: bearerToken,
+    scopes: ['read:dice'],
+    clientId: 'demo-client',
+  };
+};
+
+const authHandler = withMcpAuth(handler, verifyToken, {
+  required: true,
+  requiredScopes: ['read:dice'],
+  resourceMetadataPath: '/.well-known/oauth-protected-resource',
+});
+
+export { authHandler as GET, authHandler as POST };
+```
+
+With this configuration, requests without a valid token receive `401`. If a verified token lacks a required scope, the handler returns `403`.
+
 ### Expose OAuth metadata endpoint
 
 To comply with the MCP specification, your server must expose a [metadata endpoint](https://modelcontextprotocol.io/specification/draft/basic/authorization#authorization-server-discovery) that provides OAuth configuration details.
-Among other things, this endpoint allows MCP clients to discover, how to authorize with your server, which authorization servers can issue valid tokens,
+Among other things, this endpoint allows MCP clients to discover how to authorize with your server, which authorization servers can issue valid tokens,
 and what scopes are supported.
 
 #### How to add OAuth metadata endpoint
 
 1. In your `app/` directory, create a `.well-known` folder.
 2. Inside this directory, create a subdirectory called `oauth-protected-resource`.
-3. In this subdirectory, create a `route.ts` file with the following code for that specific route.
+3. In this subdirectory, create a `route.ts` or `route.js` file with the following code.
 4. Replace the `https://example-authorization-server-issuer.com` URL with your own [Authorization Server (AS) Issuer URL](https://datatracker.ietf.org/doc/html/rfc9728#name-protected-resource-metadata).
+5. Set `resourceUrl` to the public URL of your MCP route, including `/api/mcp`.
 
-```typescript filename="app/.well-known/oauth-protected-resource/route.ts"
+**app/.well-known/oauth-protected-resource/route.ts**
+
+```ts filename="app/.well-known/oauth-protected-resource/route.ts"
 import {
   protectedResourceHandler,
   metadataCorsOptionsRequestHandler,
@@ -215,6 +335,25 @@ import {
 
 const handler = protectedResourceHandler({
   authServerUrls: ['https://example-authorization-server-issuer.com'],
+  resourceUrl: 'https://my-mcp-server.vercel.app/api/mcp',
+});
+
+const corsHandler = metadataCorsOptionsRequestHandler();
+
+export { handler as GET, corsHandler as OPTIONS };
+```
+
+**app/.well-known/oauth-protected-resource/route.js**
+
+```js filename="app/.well-known/oauth-protected-resource/route.js"
+import {
+  protectedResourceHandler,
+  metadataCorsOptionsRequestHandler,
+} from 'mcp-handler';
+
+const handler = protectedResourceHandler({
+  authServerUrls: ['https://example-authorization-server-issuer.com'],
+  resourceUrl: 'https://my-mcp-server.vercel.app/api/mcp',
 });
 
 const corsHandler = metadataCorsOptionsRequestHandler();

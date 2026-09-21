@@ -3,22 +3,22 @@ title: AI Gateway Batch Processing
 product: vercel
 url: /docs/ai-gateway/models-and-providers/batch-processing
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/batch-processing"
-last_updated: 2026-09-07
+last_updated: 2026-09-18
 type: reference
 prerequisites:
   - /docs/ai-gateway/models-and-providers
   - /docs/ai-gateway
 related:
+  - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api
   - /docs/ai-gateway/authentication-and-byok
   - /docs/ai-gateway/security-and-compliance/regional-inference
   - /docs/ai-gateway/observability-and-spend
   - /docs/ai-gateway/authentication-and-byok/byok
-  - /docs/ai-gateway/security-and-compliance/zdr
 summary: Process large volumes of text generation requests asynchronously through AI Gateway at 50% of standard token prices, with results available within 24...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/batch-processing.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "ec7d31889ba59ed7f47d31664228c9a06513873e3372ce0ebba5e440f1467387"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "058824572b1e859b957d48b03b70d4f18d2b9afd313980f0b76594eac6ec50a5"
 ---
 
 # AI Gateway Batch Processing
@@ -36,6 +36,8 @@ Use batch processing when you don't need immediate responses:
 > `experimental_` prefix and may change in minor releases.
 
 ## Requirements
+
+For the native Anthropic SDK workflow, see [Message batches](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api#message-batches).
 
 Batch processing uses the AI SDK's experimental batch functions with the AI Gateway provider:
 

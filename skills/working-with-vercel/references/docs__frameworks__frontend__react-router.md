@@ -3,7 +3,7 @@ title: React Router on Vercel
 product: vercel
 url: /docs/frameworks/frontend/react-router
 canonical_url: "https://vercel.com/docs/frameworks/frontend/react-router"
-last_updated: 2026-08-26
+last_updated: 2026-09-16
 type: conceptual
 prerequisites:
   - /docs/frameworks/frontend
@@ -17,8 +17,8 @@ related:
 summary: Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/frontend/react-router.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "b41baf522523a7f125c18caf25d1815ddb468b7bdb7d792fc1a78aefddcf2b35"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "b62bc12905e307a02de1daecd9d9aa96c4d241dc7cf47dbe9417e8bf62c5dec2"
 ---
 
 # React Router on Vercel
@@ -182,7 +182,7 @@ React Router docs for general instructions.
 
 ## `Cache-Control` headers
 
-Vercel's [CDN](/docs/cdn) caches your content at the edge in order to serve data to your users as fast as possible. [Static caching](/docs/cdn-cache#static-files-caching) works with zero configuration.
+Vercel's [CDN](/docs/cdn) caches your content at the edge to serve data to your users as fast as possible. [Static caching](/docs/cdn-cache#static-files-caching) works with zero configuration.
 
 By adding a `Cache-Control` header to responses returned by your React Router routes, you can specify a set of caching rules for both client (browser) requests and server responses. A cache must obey the requirements defined in the Cache-Control header.
 

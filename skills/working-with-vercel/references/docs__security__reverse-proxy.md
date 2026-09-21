@@ -9,11 +9,12 @@ prerequisites:
   - /docs/security
 related:
   - /docs/vercel-firewall
+  - /docs/domains/troubleshooting
 summary: "Learn why reverse proxy servers are not recommended with Vercel's firewall."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/reverse-proxy.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "84b92b01330f79da05dcd43c945db8596b2fcb2d625767dd6f6bfdd188a949e6"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "8fbe5446f5cf9f181675a97b1bad828e4d4fc3b745bb205d195ebeace2d82485"
 ---
 
 # Reverse Proxy Servers and Vercel
@@ -31,11 +32,11 @@ sha256: "84b92b01330f79da05dcd43c945db8596b2fcb2d625767dd6f6bfdd188a949e6"
 - [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
 - [Should I use Cloudflare in front of Vercel?](https://vercel.com/kb/guide/cloudflare-with-vercel?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=related) — Information on using Cloudflare together with Vercel.
 - [Can I use a proxy on top of my Vercel Deployment?](https://vercel.com/kb/guide/can-i-use-a-proxy-on-top-of-my-vercel-deployment?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=related) — General information about using an external proxy to serve a Vercel Deployment.
-- [Encryption and TLS](https://vercel.com/docs/cdn-security/encryption?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=related) — Learn how Vercel encrypts data in transit and at rest.
+- [Redirects](https://vercel.com/docs/routing/redirects?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=related) — Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL.
 - [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
-- [How Vercel CDN works](https://vercel.com/docs/how-vercel-cdn-works?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
-- [CDN security](https://vercel.com/docs/cdn-security?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
-- [Using the REST API with the Firewall](https://vercel.com/docs/vercel-firewall/firewall-api?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=related) — Learn how to interact with the security endpoints of the Vercel REST API programmatically.
+- [Encryption and TLS](https://vercel.com/docs/cdn-security/encryption?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=related) — Learn how Vercel encrypts data in transit and at rest.
+- [Routing](https://vercel.com/docs/routing?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
+- [Deploying & Redirecting Domains](https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=related) — Learn how to deploy your domains and set up domain redirects with this guide.
 
 Full cross-link map for this page: [/docs/security/reverse-proxy.graph.md](/docs/security/reverse-proxy.graph.md?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -88,6 +89,14 @@ Ensure that the following requirements are met if you are running self-hosted re
 - Use consistent and predictable Vercel project domains for onboarding. For example, use \*.vercel.example.com and ensure your Proxy always sends traffic to those specific hostnames.
 
 For detailed setup instructions, please contact your Vercel account representative.
+
+## Cloudflare redirect loops
+
+Cloudflare's **Flexible** SSL/TLS mode is one possible cause of `ERR_TOO_MANY_REDIRECTS`. The browser connects to Cloudflare over HTTPS, but Cloudflare connects to Vercel over HTTP. Vercel redirects HTTP to HTTPS, so the browser repeatedly requests the same HTTPS URL.
+
+In Cloudflare's **SSL/TLS** settings, use **Full (strict)** with a valid certificate on the Vercel origin. **Full** also uses HTTPS to the origin, but doesn't validate the origin certificate. Follow [Cloudflare's redirect-loop troubleshooting](https://developers.cloudflare.com/ssl/troubleshooting/too-many-redirects/) and the proxy prerequisites above. Vercel's automatic HTTP-to-HTTPS redirect can't be disabled; configure the proxy's connection to use HTTPS.
+
+If the origin certificate hasn't been issued, use [certificate diagnostics](/docs/domains/troubleshooting#check-dns-and-the-http-challenge-path). If the loop continues with HTTPS to the origin, inspect application redirects, domain redirects, and Cloudflare rules for conflicting destinations or schemes.
 
 ## More resources
 

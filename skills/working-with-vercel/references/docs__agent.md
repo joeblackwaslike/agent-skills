@@ -16,13 +16,13 @@ related:
 summary: Use Vercel Agent to investigate production issues, review code, and take approved actions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "345efa08f09e634cac226783045939f98a94278fe76382d263a856c993fc14d4"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "1028559c1a809436c24409ad03b315250d74d481962dd1759fc6214c0430674e"
 ---
 
 # Vercel Agent
 
-> **🔒 Permissions Required**: Vercel Agent
+> **🔒 Permissions Required**: Vercel Agent (Public Beta)
 
 Vercel Agent is an AI assistant built into Vercel. Use it to understand your projects, investigate production issues, review code, and take approved actions.
 

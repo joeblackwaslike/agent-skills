@@ -16,8 +16,8 @@ related:
 summary: Move your installation of a Native Integration from one Vercel team to another, including its resources and prepayment balances.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/install-an-integration/transferring-an-integration.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "0d4387e9d8ba39c1cfb7f9a71db4226999c4caf6bc78ef9320b5c9398554186a"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "4dad1b4098120312b876545712afd7876e71cadecb6259ef512420bb8367eaed"
 ---
 
 # Transferring an Integration
@@ -31,8 +31,9 @@ You can transfer your installation of a [Native Integration](/docs/integrations/
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Transfer Marketplace resources between teams](https://vercel.com/changelog/transfer-marketplace-resources-between-teams?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Ftransferring-an-integration&source_site=vercel-docs&relationship=related)
-- [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Ftransferring-an-integration&source_site=vercel-docs&relationship=related) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
+- [Transfer Vercel projects with zero downtime](https://vercel.com/blog/transfer-vercel-projects-with-zero-downtime?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Ftransferring-an-integration&source_site=vercel-docs&relationship=related)
 - [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Ftransferring-an-integration&source_site=vercel-docs&relationship=related) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
+- [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Ftransferring-an-integration&source_site=vercel-docs&relationship=related) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
 - [Create an Integration](https://vercel.com/docs/integrations/create-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Ftransferring-an-integration&source_site=vercel-docs&relationship=related) — Learn how to create and manage your own integration for internal or public use with Vercel.
 - [Requirements for listing an Integration](https://vercel.com/docs/integrations/create-integration/submit-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Ftransferring-an-integration&source_site=vercel-docs&relationship=related) — Learn about all the requirements and guidelines needed when creating your Integration.
 - [Transition your Hobby team after EMU enrollment](https://vercel.com/docs/security/enterprise-managed-users-account-update?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Ftransferring-an-integration&source_site=vercel-docs&relationship=related) — Explains the account update screen EMU members see at SSO sign-in and how to complete it.

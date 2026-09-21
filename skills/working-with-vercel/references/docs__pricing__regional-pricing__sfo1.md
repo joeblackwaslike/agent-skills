@@ -3,7 +3,7 @@ title: San Francisco, USA (sfo1) pricing
 product: vercel
 url: /docs/pricing/regional-pricing/sfo1
 canonical_url: "https://vercel.com/docs/pricing/regional-pricing/sfo1"
-last_updated: 2026-02-13
+last_updated: 2026-09-14
 type: reference
 prerequisites:
   - /docs/pricing/regional-pricing
@@ -12,13 +12,13 @@ related:
   - /docs/plans/pro-plan
   - /docs/pricing/taxes
   - /docs/pricing/understanding-my-invoice
-  - /docs/fluid-compute
-  - /docs/functions/usage-and-pricing
+  - /docs/sandbox
+  - /docs/sandbox/pricing
 summary: Vercel pricing for the San Francisco, USA (sfo1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/sfo1.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "bf97e32ad08799484109cadb0a267b64051e0c37291ef9934a0e0886261633fb"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "626df7fc22d26025b0f85f30016ac99a3a42e49fcedeca50087f8939f8cf1e76"
 ---
 
 # San Francisco, USA (sfo1) pricing
@@ -35,7 +35,7 @@ The table below shows Managed Infrastructure products with pricing specific to t
 - [Sydney, Australia \\(syd1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/syd1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fsfo1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Sydney, Australia \\(syd1\\) region.
 - [Dublin, Ireland \\(dub1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/dub1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fsfo1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Dublin, Ireland \\(dub1\\) region.
 - [Hong Kong \\(hkg1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/hkg1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fsfo1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Hong Kong \\(hkg1\\) region.
-- [Cleveland, USA \\(cle1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cle1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fsfo1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Cleveland, USA \\(cle1\\) region.
+- [Portland, USA \\(pdx1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/pdx1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fsfo1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Portland, USA \\(pdx1\\) region.
 
 Full cross-link map for this page: [/docs/pricing/regional-pricing/sfo1.graph.md](/docs/pricing/regional-pricing/sfo1.graph.md?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fsfo1&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -44,18 +44,15 @@ Full cross-link map for this page: [/docs/pricing/regional-pricing/sfo1.graph.md
 
 The **Included** column shows the amount of usage covered in your [billing cycle](/docs/pricing/understanding-my-invoice#understanding-your-invoice). If you use more than this amount, the **Additional** column lists the rates for any extra usage.
 
-> **💡 Note:** Active CPU and Provisioned Memory are billed at different rates depending on
-> the region your [fluid compute](/docs/fluid-compute) is deployed. The rates
-> for each region can be found in the [fluid
-> pricing](/docs/functions/usage-and-pricing) documentation. [Vercel
-> Sandbox](/docs/sandbox) compute is also billed by region. See [Sandbox
-> pricing](/docs/sandbox/pricing#regional-pricing) for the rates in the
-> regions where Sandbox is available.
+> **💡 Note:** Vercel prices [Vercel Sandbox](/docs/sandbox) compute by region too. Its rates
+> live on a separate page because Sandbox runs in fewer regions than the
+> resources below. For the rate in each region where Sandbox is available, see
+> [Sandbox pricing](/docs/sandbox/pricing#regional-pricing).
 
 | Resource | On-demand (Billing Cycle) |
 | --- | --- |
-| [Fast Data Transfer](/docs/manage-cdn-usage#fast-data-transfer) | Included First 1 TB, then $0.15 per 1 GB |
-| [Edge Requests](/docs/manage-cdn-usage#edge-requests) | Included First 10,000,000, then $2.40 per 1,000,000 Requests |
+| [Fast Data Transfer](/docs/manage-cdn-usage#fast-data-transfer) | $0.15 per 1 GB |
+| [Edge Requests](/docs/manage-cdn-usage#edge-requests) | $2.40 per 1,000,000 Requests |
 | [ISR Writes](/docs/incremental-static-regeneration/limits-and-pricing#isr-writes-chart) | $4.80 per 1,000,000 Write Units |
 | [ISR Reads](/docs/incremental-static-regeneration/limits-and-pricing#isr-reads-chart) | $0.48 per 1,000,000 Read Units |
 | [Runtime Cache Writes](/docs/caching/runtime-cache) | $4.80 per 1,000,000 Write Units |
@@ -63,6 +60,8 @@ The **Included** column shows the amount of usage covered in your [billing cycle
 | [Fast Origin Transfer](/docs/manage-cdn-usage#fast-origin-transfer) | $0.06 per 1 GB |
 | [Queue API Operations](/docs/queues/pricing) | $0.72 per 1,000,000 Operations |
 | [Edge Requests - Additional CPU Duration](/docs/manage-cdn-usage#edge-request-cpu-duration) | $0.36 per 1 Hour |
+| [Fluid Active CPU](/docs/functions/usage-and-pricing#active-cpu) | $0.177 per Hour |
+| [Fluid Provisioned Memory](/docs/functions/usage-and-pricing#provisioned-memory) | $0.0147 per GB-hr |
 | [Image Optimization Transformation](/docs/image-optimization/limits-and-pricing#image-transformations) | $0.0658 per 1K |
 | [Image Optimization Cache Reads](/docs/image-optimization/limits-and-pricing#image-cache-reads) | $0.48 per 1M |
 | [Image Optimization Cache Writes](/docs/image-optimization/limits-and-pricing#image-cache-writes) | $4.80 per 1M |

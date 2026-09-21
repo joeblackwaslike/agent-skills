@@ -3,7 +3,7 @@ title: Vercel Sandbox
 product: vercel
 url: /docs/sandbox
 canonical_url: "https://vercel.com/docs/sandbox"
-last_updated: 2026-09-03
+last_updated: 2026-09-14
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Run untrusted or agent-generated code in isolated Linux microVMs with Vercel Sandbox.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "87301143b8159bd20ab588705965740c4708eb479023b4ca671449c5cb26b7b3"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "246424d98ac2dba7953d09f37e9abc8701afb362715ca25f63724092b7965099"
 ---
 
 # Vercel Sandbox

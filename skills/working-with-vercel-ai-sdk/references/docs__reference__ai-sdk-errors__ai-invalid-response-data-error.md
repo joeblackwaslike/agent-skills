@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-invalid-response-data-error.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "a1e1c757c8c0174cacb6721750c75362ecaba9bc85a5eeca86bc1abed4ab31b0"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "cbe7732731348b9c275cb073e5a37f0e39aad660442db867bbb2c885d803b251"
 ---
 
 # AI_InvalidResponseDataError
@@ -31,6 +31,7 @@ if (InvalidResponseDataError.isInstance(error)) {
 - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
 - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
 - [AI_EmptyResponseBodyError](/docs/reference/ai-sdk-errors/ai-empty-response-body-error)
+- [AI_EvaluationUnsupportedQuestionTypeError](/docs/reference/ai-sdk-errors/ai-evaluation-unsupported-question-type-error)
 - [AI_InvalidArgumentError](/docs/reference/ai-sdk-errors/ai-invalid-argument-error)
 - [AI_InvalidDataContentError](/docs/reference/ai-sdk-errors/ai-invalid-data-content-error)
 - [AI_InvalidMessageRoleError](/docs/reference/ai-sdk-errors/ai-invalid-message-role-error)

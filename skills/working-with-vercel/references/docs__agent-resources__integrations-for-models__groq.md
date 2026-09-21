@@ -16,8 +16,8 @@ related:
 summary: Learn how to add the Groq native integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/groq.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "e23de0f99b2c074a5b4c555743192849c13dc39ba92646d556d5299066e0ca6f"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "d75f914e1e401a25d2fa62229f65c2026ad3c808489993eb69834e5ee87460bd"
 ---
 
 # Vercel Groq Integration
@@ -33,6 +33,7 @@ applications requiring low latency.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Groq, fal, and DeepInfra join the Vercel Marketplace ](https://vercel.com/changelog/groq-fal-and-deepinfra-join-the-vercel-marketplace?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fgroq&source_site=vercel-docs&relationship=related)
 - [Vercel Deep Infra Integration](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fgroq&source_site=vercel-docs&relationship=related) — Learn how to add the Deep Infra native integration with Vercel.
 - [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fgroq&source_site=vercel-docs&relationship=related) — Learn how to add the xAI native integration with Vercel.
 - [Vercel ElevenLabs Integration](https://vercel.com/docs/agent-resources/integrations-for-models/elevenlabs?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fgroq&source_site=vercel-docs&relationship=related) — Learn how to add the ElevenLabs connectable account integration with Vercel.

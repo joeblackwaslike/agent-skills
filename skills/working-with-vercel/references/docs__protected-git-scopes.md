@@ -3,7 +3,7 @@ title: Restricting Git Connections to a single Vercel team
 product: vercel
 url: /docs/protected-git-scopes
 canonical_url: "https://vercel.com/docs/protected-git-scopes"
-last_updated: 2026-08-28
+last_updated: 2026-09-16
 type: conceptual
 prerequisites:
   []
@@ -12,8 +12,8 @@ related:
 summary: Information to stop developers from deploying their repositories to a personal Vercel account by using Protected Git Scopes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/protected-git-scopes.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "6219827f8b400b7cb66a146101aa747d1cb204db9349772fae059f4ee76b3b7c"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "56bf867ceb3e2e99834cf5da490645149966e96390c2015e893eac22ac49fcd3"
 ---
 
 # Restricting Git Connections to a single Vercel team
@@ -45,7 +45,7 @@ Protected Git Scopes restrict Vercel account and team access to Organization-lev
 
 You can [add](#adding-a-protected-git-scope) up to five Protected Git Scopes to your Vercel Team. Protected Git Scopes are configured at the team level, not per project. Multiple teams can specify the same scope, allowing both teams access.
 
-In order to add a Protected Git Scope to your Vercel Team, you must be an [Owner](/docs/rbac/access-roles#owner-role) of the Vercel Team, and have the required permission in the Git namespace.
+To add a Protected Git Scope to your Vercel Team, you must be an [Owner](/docs/rbac/access-roles#owner-role) of the Vercel Team, and have the required permission in the Git namespace.
 
 For Github you must be an `admin`, for Gitlab you must be an `owner`, and for Bitbucket you must be a `owner`.
 

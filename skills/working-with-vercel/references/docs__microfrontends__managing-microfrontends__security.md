@@ -17,8 +17,8 @@ related:
 summary: Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/managing-microfrontends/security.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "fdafd83e4df9496475d256491ca8a6994d3bac40dbbb128b8de241ad32020590"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "74f350b667991818b9f12679aeeb1f13c966e8b559786e7dda335584b0101792"
 ---
 
 # Managing microfrontends security
@@ -31,8 +31,8 @@ Understand how and where you manage [Deployment Protection](/docs/deployment-pro
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends%2Fsecurity&source_site=vercel-docs&relationship=related) — Protect who can see your deployments.
 - [Life of a Vercel request: Securing your app's traffic with Vercel](https://vercel.com/blog/life-of-a-request-securing-your-apps-traffic-with-vercel?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends%2Fsecurity&source_site=vercel-docs&relationship=related)
+- [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends%2Fsecurity&source_site=vercel-docs&relationship=related) — Protect who can see your deployments.
 - [Vercel security overview](https://vercel.com/docs/security?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends%2Fsecurity&source_site=vercel-docs&relationship=related) — Vercel provides built-in and customizable features to ensure that your site is secure.
 - [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends%2Fsecurity&source_site=vercel-docs&relationship=related) — Learn how to get started with microfrontends on Vercel.
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends%2Fsecurity&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit

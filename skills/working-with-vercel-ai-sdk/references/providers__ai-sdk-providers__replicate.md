@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/replicate.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "90613f242367fbdb08149a638319ef267bc687675b4bf36d693f5b7a0281396f"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "206465fa44956e4452c9a88898aa9b6bc769e387454cc2c23a5cb87908a38b89"
 ---
 
 # Replicate Provider
@@ -258,6 +258,8 @@ const { images } = await generateImage({
 Common provider options for image generation:
 
 - **maxWaitTimeInSeconds** _number_ - Maximum time in seconds to wait for the prediction to complete in sync mode. By default, Replicate uses [sync mode](https://replicate.com/docs/topics/predictions/create-a-prediction#timeout-duration) with a 60-second timeout. Set to a positive number to use a custom duration (e.g., `120` for 2 minutes). When not specified, uses the default 60-second wait.
+- **pollIntervalMillis** _number_ - Interval in milliseconds between polling attempts when a prediction does not complete within the synchronous wait duration. Defaults to 500 milliseconds.
+- **maxPollAttempts** _number_ - Maximum number of polling attempts before giving up. Defaults to 240 attempts.
 - **guidance_scale** _number_ - Guidance scale for classifier-free guidance. Higher values make the output more closely match the prompt.
 - **num_inference_steps** _number_ - Number of denoising steps. More steps = higher quality but slower.
 - **negative_prompt** _string_ - Negative prompt to guide what to avoid in the generation.
@@ -282,6 +284,7 @@ For more details, see the [Replicate models page](https://replicate.com/explore)
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
 - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
+- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

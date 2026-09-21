@@ -3,7 +3,7 @@ title: Error List
 product: vercel
 url: /docs/errors/error-list
 canonical_url: "https://vercel.com/docs/errors/error-list"
-last_updated: 2026-08-20
+last_updated: 2026-09-16
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: You may encounter a variety of errors when you interact with the Vercel platform. This section focuses on errors that can happen when you interact...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/error-list.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "e58599a488e8bce7f8f80e5ffd5a5b2d8186432090c220afb635034f6f10481c"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "22a3fcb830be6a827699000e5fec4308764cacb647bf1435124284b8fea4a122"
 ---
 
 # Error List
@@ -54,7 +54,7 @@ Once you have defined the `build` [script](https://docs.npmjs.com/misc/scripts),
 
 ## Maximum team member requests
 
-The maximum amount of open requests to join a team is 10. In order to allow for more requests, the existing requests need to be approved or declined by a [Team Owner](/docs/rbac/access-roles#owner-role).
+The maximum amount of open requests to join a team is 10. To allow for more requests, the existing requests need to be approved or declined by a [Team Owner](/docs/rbac/access-roles#owner-role).
 
 This ensures the list always remains manageable and protected against spam.
 
@@ -292,7 +292,7 @@ Alternatively, if you already added the domain to a project, read [the configuri
 
 ## Leaving the team
 
-You cannot leave a team if you are the last remaining [Owner](/docs/rbac/access-roles#owner-role) or the last confirmed [Member](/docs/rbac/access-roles#member-role). In order to leave the Team, first designate a different confirmed [Member](/docs/rbac/access-roles#member-role) to be an [Team Owner](/docs/rbac/access-roles#owner-role).
+You cannot leave a team if you are the last remaining [Owner](/docs/rbac/access-roles#owner-role) or the last confirmed [Member](/docs/rbac/access-roles#member-role). To leave the Team, first designate a different confirmed [Member](/docs/rbac/access-roles#member-role) to be an [Team Owner](/docs/rbac/access-roles#owner-role).
 
 If you are the only remaining [Member](/docs/rbac/access-roles#member-role), you should instead delete the Team.
 
@@ -322,7 +322,7 @@ When you connected your Hobby team with your GitHub account, the [Vercel GitHub 
 
 However, Vercel was unable to retrieve the app installation from GitHub, which made it appear as if the [Vercel GitHub App](https://github.com/apps/vercel) was never installed.
 
-In order to solve this issue, wait a couple of minutes and try connecting to GitHub again. If you are still unable to connect, please contact [GitHub Support](https://support.github.com/contact) to determine why the [Vercel GitHub App](https://github.com/apps/vercel) was not able to be installed.
+To solve this issue, wait a couple of minutes and try connecting to GitHub again. If you are still unable to connect, please contact [GitHub Support](https://support.github.com/contact) to determine why the [Vercel GitHub App](https://github.com/apps/vercel) was not able to be installed.
 
 ## Preview branch used as production branch
 
@@ -400,7 +400,7 @@ Adjust the Build and Development Commands defined for your Project to not invoke
 
 Instead, they should invoke the Build Command provided by your framework.
 
-If you are unsure about which value to provide, disable the **Override** option in order to default to the preferred settings for the [Framework Preset](/docs/deployments/configure-a-build#framework-preset) you have selected.
+If you are unsure about which value to provide, disable the **Override** option to default to the preferred settings for the [Framework Preset](/docs/deployments/configure-a-build#framework-preset) you have selected.
 
 ## Pnpm engine unsupported
 

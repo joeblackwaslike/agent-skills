@@ -3,7 +3,7 @@ title: Deploying GitHub Projects with Vercel
 product: vercel
 url: /docs/git/vercel-for-github
 canonical_url: "https://vercel.com/docs/git/vercel-for-github"
-last_updated: 2026-08-11
+last_updated: 2026-09-17
 type: conceptual
 prerequisites:
   - /docs/git
@@ -16,8 +16,8 @@ related:
 summary: Vercel for GitHub automatically deploys your GitHub projects with Vercel, providing Preview Deployment URLs, and automatic Custom Domain updates.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git/vercel-for-github.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "816a186efa1b2363ed66682c55ef99f5014a13bb21b8cab5048d805b53039ea9"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "f97f50e06fbde4154c870fd6e12dab3738634e0e2bf43374d25f2088d1180a28"
 ---
 
 # Deploying GitHub Projects with Vercel
@@ -38,9 +38,9 @@ Vercel for GitHub automatically deploys your GitHub projects with [Vercel](/), p
 - [How to fix “unable to find your GitHub repository” on Vercel](https://vercel.com/kb/guide/unable-to-find-github-repository?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-github&source_site=vercel-docs&relationship=related) — Learn how to check GitHub permissions to ensure your Vercel account has sufficient access to import your repository.
 - [Using Vercel Agent to review pull requests](https://vercel.com/kb/guide/vercel-agent-code-review?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-github&source_site=vercel-docs&relationship=related) — Set up Vercel Agent Code Review to automatically review pull requests, apply validated fixes, request reviews with @verc
 - [Introducing `vercel dev`: Serverless, on localhost](https://vercel.com/blog/vercel-dev?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-github&source_site=vercel-docs&relationship=related)
+- [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-github&source_site=vercel-docs&relationship=related) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
 - [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-github&source_site=vercel-docs&relationship=related) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
 - [September 2020](https://vercel.com/blog/changelog-september-2020?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-github&source_site=vercel-docs&relationship=related)
-- [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-github&source_site=vercel-docs&relationship=related) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
 - [July 2020](https://vercel.com/blog/changelog-july-2020?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-github&source_site=vercel-docs&relationship=related)
 
 Full cross-link map for this page: [/docs/git/vercel-for-github.graph.md](/docs/git/vercel-for-github.graph.md?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-github&source_site=vercel-docs&relationship=graph)
@@ -72,6 +72,19 @@ repository to preview changes made before they are pushed to production.
 With each new push, if Vercel is already building a previous commit on the same branch, the current build will complete and any commit pushed during this time will be queued. Once the first build completes, the most recent commit will begin deployment and the other queued builds will be cancelled. This ensures that you always have the latest changes deployed as quickly as possible.
 
 You can disable this feature for GitHub by configuring the [github.autoJobCancellation](/docs/project-configuration/git-configuration#github.autojobcancelation) option in your `vercel.json` file.
+
+### Select Turbo for one deployment
+
+To select a [Turbo build machine](/docs/builds/managing-builds#build-machines) for one deployment, include the exact, case-sensitive marker `#VERCEL_BUILD_MACHINE=TURBO` in the Git commit message. This marker currently supports deployments triggered by Vercel's GitHub integration only. Vercel's GitLab and Bitbucket integrations don't support it.
+
+For example, create a commit with a subject and the marker in its body:
+
+```bash
+git commit -m "Test this change with Turbo" \
+  -m "#VERCEL_BUILD_MACHINE=TURBO"
+```
+
+The marker applies only to the deployment triggered by that commit. It doesn't change the project's build machine settings. You must have permission to update the project's build machine. If Turbo isn't available or you don't have permission, Vercel uses the project's normal build machine selection instead of failing the deployment. Normal Turbo plan eligibility and billing still apply.
 
 ### Updating the Production Domain
 
@@ -343,7 +356,7 @@ VERCEL_GIT_COMMIT_AUTHOR_NAME=Timmy Triangle
 
 **Available at:&#x20;**&#x42;uild time
 
-The git SHA of the last successful deployment for the project and branch.
+The git SHA of the last successful deployment for the project and branch. It's empty on a branch's first deployment, since that branch has no previous successful deployment yet.
 
 **Note:&#x20;**&#x54;his variable is only exposed when an Ignored Build Step is provided.
 
@@ -395,7 +408,7 @@ User permissions allow us to offer an enhanced experience through information ab
 | ----------------- | ---- | ----- | ------------------------------------------------------ |
 | `Email addresses` | Y    | N     | Allows us to associate an email with a GitHub account. |
 
-> **💡 Note:** We use the permissions above in order to provide you with the best possible
+> **💡 Note:** We use the permissions above to provide you with the best possible
 > deployment experience. If you have any questions or concerns about any of the
 > permission scopes, please [contact Vercel Support](/help#issues).
 

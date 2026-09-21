@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-unsupported-functionality-error.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "d4fa68c6c6a7b33971b4417fbc925d93c8b04495b5b1fc0dd2a5590ebb1fc57d"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "69f41de7399aad42407e6a8463633a2a2788768b53a93f52755d080fd4254858"
 ---
 
 # AI_UnsupportedFunctionalityError
@@ -31,6 +31,7 @@ if (UnsupportedFunctionalityError.isInstance(error)) {
 - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
 - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
 - [AI_EmptyResponseBodyError](/docs/reference/ai-sdk-errors/ai-empty-response-body-error)
+- [AI_EvaluationUnsupportedQuestionTypeError](/docs/reference/ai-sdk-errors/ai-evaluation-unsupported-question-type-error)
 - [AI_InvalidArgumentError](/docs/reference/ai-sdk-errors/ai-invalid-argument-error)
 - [AI_InvalidDataContentError](/docs/reference/ai-sdk-errors/ai-invalid-data-content-error)
 - [AI_InvalidMessageRoleError](/docs/reference/ai-sdk-errors/ai-invalid-message-role-error)

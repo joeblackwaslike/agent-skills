@@ -3,7 +3,7 @@ title: Harbor and Terminal-Bench
 product: vercel
 url: /docs/sandbox/ecosystem/harbor
 canonical_url: "https://vercel.com/docs/sandbox/ecosystem/harbor"
-last_updated: 2026-08-21
+last_updated: 2026-09-11
 type: tutorial
 prerequisites:
   - /docs/sandbox/ecosystem
@@ -17,8 +17,8 @@ related:
 summary: Run Terminal-Bench and any other Harbor Hub dataset on Vercel Sandbox, with each trial in its own isolated Firecracker microVM.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/ecosystem/harbor.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "190fb49207bb1b6b0d3280e1b945d808d080d3a62f5e2241e2177e0362c5b3ef"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "efeac6531f00ff9f1ceca34d20609d45d149b16224d68a53c732adb47ed22e7f"
 ---
 
 # Harbor and Terminal-Bench
@@ -42,10 +42,10 @@ parallel than on your local machine.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Run Terminal-Bench and any Harbor benchmark on Vercel Sandbox](https://vercel.com/kb/guide/run-terminal-bench-harbor-benchmarks-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fharbor&source_site=vercel-docs&relationship=related) — Run Terminal-Bench, SWE-bench, and any Harbor benchmark on Vercel Sandbox. Each trial executes in an isolated Firecracke
+- [Run Terminal-Bench and other Harbor evals on Vercel Sandbox](https://vercel.com/changelog/run-terminal-bench-and-other-harbor-evals-on-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fharbor&source_site=vercel-docs&relationship=related)
 - [How to run Herdr coding agents in isolated Vercel Sandboxes](https://vercel.com/kb/guide/run-herdr-coding-agents-isolated-vercel-sandboxes?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fharbor&source_site=vercel-docs&relationship=related) — Install the vercel.sandbox plugin for Herdr, approve an upload manifest, run each AI coding agent in its own isolated Ve
 - [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fharbor&source_site=vercel-docs&relationship=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
 - [Using TanStack AI with Vercel Sandbox](https://vercel.com/kb/guide/tanstack-ai-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fharbor&source_site=vercel-docs&relationship=related) — Run coding agents in isolated Vercel Sandbox microVMs with the @tanstack/ai-sandbox-vercel provider, with durable resume
-- [Running Docker on Vercel](https://vercel.com/kb/guide/docker?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fharbor&source_site=vercel-docs&relationship=related) — Learn how to run Docker on Vercel by deploying OCI container images as Vercel Functions, storing them in Vercel Containe
 - [Harbor with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/harbor?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fharbor&source_site=vercel-docs&relationship=related) — Evaluate coding-agent harnesses with Harbor and AI Gateway. Choose a harness, configure its connection, and pass separat
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fharbor&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 - [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fharbor&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.

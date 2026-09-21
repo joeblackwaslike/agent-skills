@@ -3,7 +3,7 @@ title: Conductor with AI Gateway
 product: vercel
 url: /docs/ai-gateway/coding-agents/conductor
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/conductor"
-last_updated: 2026-09-08
+last_updated: 2026-09-13
 type: how-to
 prerequisites:
   - /docs/ai-gateway/coding-agents
@@ -14,8 +14,8 @@ related:
 summary: Connect Conductor to AI Gateway through its Claude Code configuration. Route parallel coding agents through the Anthropic-compatible endpoint.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/conductor.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "5c14ba3f37cd2114917059be338a438de48496041fe6d360623428e17045dd4c"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "f42dea2b08bcc8d7fbea97247f4e45651e88be2e730c14d35706c08c7d899f20"
 ---
 
 # Conductor with AI Gateway
@@ -34,7 +34,7 @@ AI Gateway provides [Anthropic-compatible API endpoints](/docs/ai-gateway/sdks-a
 - [Claude Code and Claude Agent SDK with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/claude-code?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fconductor&source_site=vercel-docs&relationship=related) — Connect Claude Code to AI Gateway with one CLI command, or configure it manually.
 - [Superset with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/superset?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fconductor&source_site=vercel-docs&relationship=related) — Configure Superset to use AI Gateway with terminal-based coding agents. Set provider credentials and route model request
 - [Command Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/command-code?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fconductor&source_site=vercel-docs&relationship=related) — Connect Command Code to AI Gateway with your own API key and a custom base URL. Configure models, switch between them, a
-- [Cline with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/cline?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fconductor&source_site=vercel-docs&relationship=related) — Connect Cline to AI Gateway through the Vercel CLI or VS Code settings. Configure model access and monitor usage and spe
+- [OpenClaw with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fconductor&source_site=vercel-docs&relationship=related) — Connect OpenClaw to AI Gateway with the Vercel CLI or manual provider configuration. Use gateway models across coding ag
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/conductor.graph.md](/docs/ai-gateway/coding-agents/conductor.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fconductor&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

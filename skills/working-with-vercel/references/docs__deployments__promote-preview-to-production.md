@@ -16,8 +16,8 @@ related:
 summary: Test a preview deployment and promote it to production using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/promote-preview-to-production.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "4f8b6ff481dce0945a92f977400113e1a5004828aa61400255d574032956345c"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "59c1b226306598d1f6181933bd8778eda549cbcd69512647afe1a5ffb9af2351"
 ---
 
 # Promoting a preview deployment to production
@@ -35,7 +35,6 @@ Use this guide to verify a preview deployment and promote it to production. You'
 - [Promoting Deployments](https://vercel.com/docs/deployments/promoting-a-deployment?from=related&source_path=%2Fdocs%2Fdeployments%2Fpromote-preview-to-production&source_site=vercel-docs&relationship=related) — Learn how to promote deployments to production on Vercel.
 - [Stage and manually promote deployments to production](https://vercel.com/changelog/stage-and-manually-promote-deployments-to-production?from=related&source_path=%2Fdocs%2Fdeployments%2Fpromote-preview-to-production&source_site=vercel-docs&relationship=related)
 - [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel?from=related&source_path=%2Fdocs%2Fdeployments%2Fpromote-preview-to-production&source_site=vercel-docs&relationship=related) — Learn how to deploy based on tags/releases on Vercel.
-- [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues?from=related&source_path=%2Fdocs%2Fdeployments%2Fpromote-preview-to-production&source_site=vercel-docs&relationship=related)
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fdeployments%2Fpromote-preview-to-production&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related&source_path=%2Fdocs%2Fdeployments%2Fpromote-preview-to-production&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [Performing a rolling release deployment](https://vercel.com/docs/rolling-releases/rolling-release-deployment?from=related&source_path=%2Fdocs%2Fdeployments%2Fpromote-preview-to-production&source_site=vercel-docs&relationship=related) — Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.

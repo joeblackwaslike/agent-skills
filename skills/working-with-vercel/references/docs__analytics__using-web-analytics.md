@@ -3,7 +3,7 @@ title: Using Web Analytics
 product: vercel
 url: /docs/analytics/using-web-analytics
 canonical_url: "https://vercel.com/docs/analytics/using-web-analytics"
-last_updated: 2026-08-28
+last_updated: 2026-09-16
 type: how-to
 prerequisites:
   - /docs/analytics
@@ -15,8 +15,8 @@ related:
 summary: "Learn how to use Vercel's Web Analytics to understand how visitors are using your website."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/using-web-analytics.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "a66822d07f8362eebef56e0684a4e44d13add69a152e8df9d3988376ee1f73f1"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "316f62263e0c3f4ed8872086e91ef4cd760340504289db444f93bdc3cfdc312a"
 ---
 
 # Using Web Analytics
@@ -91,7 +91,7 @@ The export will include up to 250 entries from the panel, not just the top entri
 ## Disabling Web Analytics
 
 1. Select a project from your [dashboard](/dashboard) and open [**Analytics**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fanalytics\&title=Go+to+Analytics) in the sidebar.
-2. Remove the `@vercel/analytics` package from your codebase and dependencies in order to prevent your app from sending analytics events to Vercel.
+2. Remove the `@vercel/analytics` package from your codebase and dependencies to prevent your app from sending analytics events to Vercel.
 3. If events have been collected, click on the ellipsis on the top-right of the **Web Analytics** page and select **Disable Web Analytics**. If no data has been collected yet then you will see an **Awaiting Data** popup. From here you can click the **Disable Web Analytics** button:
 
 ![Image](`/docs-assets/static/docs/concepts/web-analytics/getting-started-light.png`)

@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/scheduled-tasks.md"
-fetched_at: "2026-09-14T09:37:17.168Z"
-sha256: "5f3f6064bcdc5c454244a49e2ac80652cd3f4e891090d544b85cb155f5cdbaa3"
+fetched_at: "2026-09-21T09:39:23.760Z"
+sha256: "11a74cf0d77d8c0cd9576d760b4c6d5b4c55e0d5a5ea566816513078ebabb33c"
 ---
 
 > ## Documentation Index
@@ -157,7 +157,7 @@ what scheduled tasks do I have?
 cancel the deploy check job
 ```
 
-Under the hood, Claude uses these tools:
+These are the underlying tools Claude uses:
 
 | Tool         | Purpose                                                                                                         |
 | :----------- | :-------------------------------------------------------------------------------------------------------------- |
@@ -214,7 +214,7 @@ Session-scoped scheduling has inherent constraints:
 * Tasks only fire while Claude Code is running and idle. Closing the terminal or letting the session exit stops them firing. [Backgrounding the session](/docs/en/agent-view#from-inside-a-session) carries `/loop` tasks over to a background session, which keeps running without a terminal.
 * No catch-up for missed fires. If a task's scheduled time passes while Claude is busy on a long-running request, it fires once when Claude becomes idle, not once per missed interval.
 * Starting a fresh conversation clears all session-scoped tasks. When you resume a session with `claude --resume` or `claude --continue`, Claude Code restores the tasks scheduled with `CronCreate`, except recurring tasks that have [expired](#seven-day-expiry) and one-shot tasks whose scheduled time has passed. A [self-paced `/loop`](#let-claude-choose-the-interval) isn't restored, so run `/loop` again to restart it. Background Bash and monitor tasks are never restored on resume.
-* With [feature-flag fetching off](/docs/en/env-vars#features-that-need-feature-flag-fetching), Claude Code stores a task you asked to keep across sessions in the project's `.claude` directory. When that directory or the task file in it is a symlink, Claude Code returns an error instead of scheduling the task.
+* With [feature-flag fetching off](/docs/en/env-vars#features-that-need-feature-flag-fetching), Claude Code stores a task you asked to keep across sessions in the project's `.claude/scheduled_tasks.json` file. When the `.claude` directory or that file is a symlink, Claude Code returns an error instead of scheduling the task. A saved task runs only in the project folder where you created it. If you copy the file into another folder, such as a new worktree, sessions there list the copied tasks but don't run them, so create the task again in that folder.
 
 For cron-driven automation that needs to run unattended:
 

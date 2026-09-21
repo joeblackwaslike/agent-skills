@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/azure.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "a434d666d04cde878e4ae193b6624b57db75d2a5bf71915c06b6d075067ab390"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "241bfca0df30ecd9a6ab7c4f5d6a43e4153464099756cbaa3c02c54667213021"
 ---
 
 # Azure OpenAI Provider
@@ -1197,6 +1197,7 @@ Azure OpenAI supports TTS models through deployments. The capabilities depend on
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
 - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
+- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

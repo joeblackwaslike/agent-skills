@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/setup.md"
-fetched_at: "2026-09-14T09:37:17.168Z"
-sha256: "c6db06fd0151af5c848bd6fb5a39fd4c6b81b5c53db5cf37e0b670be192d94f1"
+fetched_at: "2026-09-21T09:39:23.760Z"
+sha256: "b4e5709f5a9554258e50343dc193815ad5888ce06d131fa4fe0e890f692e4a24"
 ---
 
 > ## Documentation Index
@@ -194,7 +194,7 @@ claude doctor
 
 ## Authenticate
 
-Claude Code requires a Pro, Max, Team, Enterprise, or Console account. The free Claude.ai plan does not include Claude Code access. You can also use Claude Code with a third-party API provider like [Amazon Bedrock](/docs/en/amazon-bedrock), [Google Cloud's Agent Platform](/docs/en/google-vertex-ai), or [Microsoft Foundry](/docs/en/microsoft-foundry).
+Claude Code requires a Pro, Max, Team, Enterprise, or Console account. The free claude.ai plan does not include Claude Code access. You can also use Claude Code with a third-party API provider like [Amazon Bedrock](/docs/en/amazon-bedrock), [Google Cloud's Agent Platform](/docs/en/google-vertex-ai), or [Microsoft Foundry](/docs/en/microsoft-foundry).
 
 After installing, log in by running `claude` and following the browser prompts. If the `ANTHROPIC_API_KEY` environment variable is set, Claude Code prompts you once to approve the key instead of opening a browser. See [Authentication](/docs/en/authentication) for all account types and team setup options.
 

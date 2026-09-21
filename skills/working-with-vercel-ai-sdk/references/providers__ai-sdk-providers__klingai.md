@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/klingai.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "998c119d5b175481e7d7a4d259b0abcb909d67d7e5c78f9242b8985e0edce044"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "3e7b29d42cbbf6e57d4ca5d939c4dd4b898d671800b3b2d356720ffcd3b7662a"
 ---
 
 # Kling AI Provider
@@ -417,6 +417,7 @@ The following provider options are available via `providerOptions.klingai`. Opti
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
 - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
+- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

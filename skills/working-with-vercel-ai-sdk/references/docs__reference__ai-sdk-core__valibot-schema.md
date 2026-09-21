@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/valibot-schema.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "c26e30a5a70a8ec24366e2893c40381c94e251862395e5e2f8192e370a674617"
+fetched_at: "2026-09-21T09:43:58.833Z"
+sha256: "8660d9200521622d5664cdb03749b7bb96fb1fb1749f8acf1eab1978799d719a"
 ---
 
 # `valibotSchema()`
@@ -72,6 +72,7 @@ A Schema object that is compatible with the AI SDK, containing both the JSON sch
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+- [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
 - [uploadFile](/docs/reference/ai-sdk-core/upload-file)
 - [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
 - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
@@ -87,6 +88,7 @@ A Schema object that is compatible with the AI SDK, containing both the JSON sch
 - [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
 - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [toolSearch](/docs/reference/ai-sdk-core/tool-search)
 - [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
 - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)

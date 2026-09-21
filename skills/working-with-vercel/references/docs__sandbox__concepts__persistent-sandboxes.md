@@ -3,7 +3,7 @@ title: Persistence
 product: vercel
 url: /docs/sandbox/concepts/persistent-sandboxes
 canonical_url: "https://vercel.com/docs/sandbox/concepts/persistent-sandboxes"
-last_updated: 2026-08-25
+last_updated: 2026-09-15
 type: conceptual
 prerequisites:
   - /docs/sandbox/concepts
@@ -17,8 +17,8 @@ related:
 summary: Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot management.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/persistent-sandboxes.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "c1254f17913a8393964629871de0ff3a7a10f6edf4c4a4b88c707f9560b9f2b9"
+fetched_at: "2026-09-21T09:45:51.435Z"
+sha256: "42ba1422f22a6e353f5a0bf76b3de3ea4c8a729a313d50b9c44c072b82cbd59e"
 ---
 
 # Persistence
@@ -49,7 +49,7 @@ Full cross-link map for this page: [/docs/sandbox/concepts/persistent-sandboxes.
 
 **Persistence is the default.** Every sandbox created with [`Sandbox.create()`](/docs/sandbox/sdk-reference#sandbox.create) or [`sandbox create`](/docs/sandbox/cli-reference#sandbox-create) is persistent unless you explicitly opt out.
 
-> **💡 Note:** Each automatic snapshot consumes [Snapshot Storage](/docs/sandbox/pricing#snapshot-storage), which is billed separately from compute. For one-off or ephemeral workloads, pass `persistent: false` to `Sandbox.create()` (or `--non-persistent` to `sandbox create`) to opt out — see [Opt out of persistence](#opt-out-of-persistence).
+> **💡 Note:** Each automatic snapshot consumes [Snapshot Storage](/docs/sandbox/pricing#snapshot-storage), which is billed separately from compute. For one-off or ephemeral workloads, pass `persistent: false` to `Sandbox.create()` (or `--non-persistent` to `sandbox create`) to opt out. See [Opt out of persistence](#opt-out-of-persistence).
 
 ## Persistent vs. non-persistent sandboxes
 
@@ -90,7 +90,7 @@ asyncio.run(main())
 
 ## Key concepts
 
-These are the building blocks you'll encounter when working with persistent sandboxes — the two-level sandbox/session model, sandbox names, snapshot retention, automatic resume, and lifecycle hooks.
+These are the building blocks you'll encounter when working with persistent sandboxes: the two-level sandbox/session model, sandbox names, snapshot retention, automatic resume, and lifecycle hooks.
 
 ### Sandboxes and sessions
 
@@ -263,7 +263,7 @@ asyncio.run(main())
 
 Behavior:
 
-- If a sandbox with that `name` exists, `getOrCreate` retrieves it without resuming it by default. The sandbox resumes on the first SDK call (such as `runCommand`), and `onResume` fires at that point — not before `getOrCreate` resolves. Pass `resume: true` to resume immediately and have `onResume` awaited before `getOrCreate` resolves.
+- If a sandbox with that `name` exists, `getOrCreate` retrieves it without resuming it by default. The sandbox resumes on the first SDK call (such as `runCommand`), and `onResume` fires at that point, not before `getOrCreate` resolves. Pass `resume: true` to resume immediately and have `onResume` awaited before `getOrCreate` resolves.
 - If a sandbox with that `name` exists, its configuration is not updated. Creation parameters passed to `getOrCreate` are ignored; use [`sandbox.update`](#update-sandbox-configuration) to change the configuration of an existing sandbox.
 - If it does not exist, a fresh sandbox is created with the parameters you pass, and `onCreate` fires (awaited before `getOrCreate` resolves).
 - If the sandbox exists but its snapshot has expired, the stale sandbox is deleted, re-created with the same name, and `onCreate` fires.
