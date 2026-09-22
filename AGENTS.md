@@ -15,6 +15,8 @@ Doc-wrapping skills keep `references/` current via `skills/<name>/scripts/update
 
 Fetched docs carry `source`/`fetched_at`/`sha256` frontmatter (the sha drives change-detection, so unchanged content doesn't churn timestamps); each `SKILL.md` carries `metadata.last_updated`. Both flow through `scripts/lib/doc-frontmatter.cjs`. See `authoring-agent-skills` for the full doc-fetching + freshness cookbook (`withFrontmatter`/`setSkillLastUpdated`, `node scripts/backfill-last-updated.cjs`).
 
+**Local auto-update:** a `SessionStart` hook bundled in the plugin (`.claude-plugin/hooks/hooks.json` → `.claude-plugin/hooks/auto-update.sh`) runs `claude plugin update agent-skills@agent-marketplace` once per week (on first session start after the Monday workflow commits). To opt out, set `AGENT_SKILLS_AUTO_UPDATE=false` in your environment or under `env` in `~/.claude/settings.json`.
+
 ## Releasing — this plugin ships by commit SHA, not by a version string
 
 **Do not add a `version` field to `.claude-plugin/plugin.json`.** With `version` omitted from
