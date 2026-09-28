@@ -3,7 +3,7 @@ title: AI Gateway Evaluation Quickstart
 product: vercel
 url: /docs/ai-gateway/getting-started/evaluation
 canonical_url: "https://vercel.com/docs/ai-gateway/getting-started/evaluation"
-last_updated: 2018-10-20
+last_updated: 2026-09-22
 type: tutorial
 prerequisites:
   - /docs/ai-gateway/getting-started
@@ -15,8 +15,8 @@ related:
 summary: Evaluate application state and return a typed boolean answer using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/evaluation.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "67cce8e287839badfea2a2a00003acac729d7dee21d0ececb9089b758820b078"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "a2c33d8d7659688645fe5ccf75932fa37252a2084802d555c368d1b00b256eef"
 ---
 
 # AI Gateway Evaluation Quickstart
@@ -29,14 +29,14 @@ Evaluate application state through AI Gateway and return a typed boolean answer.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Evaluation](https://ai-sdk.dev/docs/ai-sdk-core/evaluation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fevaluation&source_site=vercel-docs&relationship=related)
 - [An Introduction to Evals](https://vercel.com/kb/guide/an-introduction-to-evals?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fevaluation&source_site=vercel-docs&relationship=related) — Evaluations test model and agent outputs to ensure they meet the standards and requirements you specify.
 - [Automatic Model Selection](https://eve.dev/docs/guides/evaluate?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fevaluation&source_site=vercel-docs&relationship=related) — Choose agent models automatically or evaluate typed questions in your tools and application code.
-- [Evaluation](https://ai-sdk.dev/docs/ai-sdk-core/evaluation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fevaluation&source_site=vercel-docs&relationship=related)
 - [TypeSafe AI's Jev now available on AI Gateway](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fevaluation&source_site=vercel-docs&relationship=related)
-- [How to automatically approve tool calls in eve with Jev](https://vercel.com/kb/guide/auto-approve-tool-calls-eve-jev?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fevaluation&source_site=vercel-docs&relationship=related) — Use Jev to review tool calls in eve, allow routine actions, and request human approval when needed. Configure the policy
+- [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fevaluation&source_site=vercel-docs&relationship=related) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
+- [AI Gateway now supports TypeSafe clients and an HTTP API for Jev](https://vercel.com/changelog/ai-gateway-now-supports-typesafe-clients-and-http-api-for-jev?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fevaluation&source_site=vercel-docs&relationship=related)
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fevaluation&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fevaluation&source_site=vercel-docs&relationship=related) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
-- [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fevaluation&source_site=vercel-docs&relationship=related) — Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere
 
 Full cross-link map for this page: [/docs/ai-gateway/getting-started/evaluation.graph.md](/docs/ai-gateway/getting-started/evaluation.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fevaluation&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -109,6 +109,9 @@ This quickstart logs only `result.answers`. The probability can vary, but you sh
 - Migrate an existing client to the [TypeSafe-compatible API](/docs/ai-gateway/sdks-and-apis/typesafe)
 - Add [choice and score questions](/docs/ai-gateway/modalities/evaluation#question-types)
 - Evaluate [multiple questions](/docs/ai-gateway/modalities/evaluation#multiple-questions-in-one-request) or [structured state](/docs/ai-gateway/modalities/evaluation#structured-state)
+- Learn how to [classify, route, and score with Jev and AI SDK](/kb/guide/typesafe-jev-and-ai-sdk) and [route form submissions](/kb/guide/jev-ai-sdk-form-router)
+- Learn how to [automatically approve tool calls in eve with Jev](/kb/guide/auto-approve-tool-calls-eve-jev)
+- Build a [product review moderation workflow with Jev and TanStack AI](/kb/guide/moderate-product-reviews-jev-tanstack-ai)
 - Browse [evaluation models](/ai-gateway/models?capabilities=evaluation)
 
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/wrap-language-model.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "5738fe36ebb4fa462621bbacc58d861c806b8e4084d1c92cddcc606dce629ffd"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "e725c2ff599d3a1ad03667032d78e15f117f6326d12c889538996d05ee5bffe5"
 ---
 
 # `wrapLanguageModel()`
@@ -14,7 +14,7 @@ See [Language Model Middleware](/docs/ai-sdk-core/middleware) for more informati
 import { wrapLanguageModel, gateway } from 'ai';
 
 const wrappedLanguageModel = wrapLanguageModel({
-  model: gateway('openai/gpt-4.1'),
+  model: gateway('openai/gpt-6-astra'),
   middleware: yourLanguageModelMiddleware,
 });
 ```

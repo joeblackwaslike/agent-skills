@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/node/generate-text-with-chat-prompt.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "0f6daa16ed224fb368abe81a2f82eab09a4f879e1ce6d137daedd888d066a3dc"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "4cece3c83b8596b00b109b2ffc4316554986020f9a7cf90522a0a116a6b97f09"
 ---
 
 # Generate Text with Chat Prompt
@@ -14,7 +14,7 @@ A chat completion allows you to generate text based on a series of messages. Thi
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: 'openai/gpt-4o',
+  model: 'openai/gpt-6-astra',
   maxOutputTokens: 1024,
   instructions: 'You are a helpful chatbot.',
   messages: [

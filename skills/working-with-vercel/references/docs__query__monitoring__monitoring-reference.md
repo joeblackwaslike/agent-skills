@@ -17,8 +17,8 @@ related:
 summary: This reference covers the clauses, fields, and variables used to create a Monitoring query.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query/monitoring/monitoring-reference.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "a33788fd3c5703b4b7c142830b50933cf5607f4daa442b505fab81461f715633"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "9fac812f7266e73362ecac55345f8648e0886c78a4222bc80ad4b28fb6ef876b"
 ---
 
 # Monitoring Reference
@@ -33,9 +33,9 @@ Monitoring is now
 
 - [Query Reference](https://vercel.com/docs/query/reference?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring%2Fmonitoring-reference&source_site=vercel-docs&relationship=related) — Use this reference to find the event types, metrics, aggregations, dimensions, and operators available in Query.
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring%2Fmonitoring-reference&source_site=vercel-docs&relationship=related) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
+- [Aggregates page views](https://vercel.com/docs/rest-api/web-analytics/aggregates-page-views?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring%2Fmonitoring-reference&source_site=vercel-docs&relationship=related) — GET /v1/query/web-analytics/visits/aggregate — Counts pageviews on a project, within the requested date range. Results a
 - [Tools](https://vercel.com/docs/agent-resources/vercel-mcp/tools?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring%2Fmonitoring-reference&source_site=vercel-docs&relationship=related) — Available tools in Vercel MCP for searching docs, managing teams, projects, deployments, Web Analytics, runtime logs and
-- [Audit Logs](https://vercel.com/docs/audit-log?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring%2Fmonitoring-reference&source_site=vercel-docs&relationship=related) — Learn how to track and analyze your team members' activities.
-- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring%2Fmonitoring-reference&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Counts page views](https://vercel.com/docs/rest-api/web-analytics/counts-page-views?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring%2Fmonitoring-reference&source_site=vercel-docs&relationship=related) — GET /v1/query/web-analytics/visits/count — Counts the number of page views on a project \\(production only\\), since Web A
 
 Full cross-link map for this page: [/docs/query/monitoring/monitoring-reference.graph.md](/docs/query/monitoring/monitoring-reference.graph.md?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring%2Fmonitoring-reference&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

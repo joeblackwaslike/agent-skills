@@ -16,8 +16,8 @@ related:
 summary: A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/projects.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "b1ef0dbde566ed1c33f6d86265468cee04f97109e6b4c96e1876b25fb1dba776"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "3e9b3fcc88c7215f64cd39c835e68819fb8e3b3797c7c0232bff0acf605f011d"
 ---
 
 # Projects overview
@@ -36,12 +36,11 @@ Everything you deploy on Vercel lives in a project: a frontend, backend APIs, ba
 - [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup?from=related&source_path=%2Fdocs%2Fprojects&source_site=vercel-docs&relationship=related) — Learn how to save sandbox state with snapshots and skip installation on future runs.
 - [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox?from=related&source_path=%2Fdocs%2Fprojects&source_site=vercel-docs&relationship=related) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
 - [How to fix “unable to find your GitHub repository” on Vercel](https://vercel.com/kb/guide/unable-to-find-github-repository?from=related&source_path=%2Fdocs%2Fprojects&source_site=vercel-docs&relationship=related) — Learn how to check GitHub permissions to ensure your Vercel account has sufficient access to import your repository.
-- [Projects](https://v0.app/docs/projects?from=related&source_path=%2Fdocs%2Fprojects&source_site=vercel-docs&relationship=related) — Projects in v0 are one app that is shared between many chats.
-- [Deployments](https://v0.app/docs/deployments?from=related&source_path=%2Fdocs%2Fprojects&source_site=vercel-docs&relationship=related) — Preview and publish v0 projects on Vercel, then manage domains, visibility, and production updates.
 - [Multi-Project Platforms Reference](https://vercel.com/docs/platforms/multi-project-platforms/reference?from=related&source_path=%2Fdocs%2Fprojects&source_site=vercel-docs&relationship=related) — API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
 - [Multi-Project Platforms Concepts](https://vercel.com/docs/platforms/multi-project-platforms/concepts?from=related&source_path=%2Fdocs%2Fprojects&source_site=vercel-docs&relationship=related) — Understand projects, deployments, domains, and architecture for multi-project platforms on Vercel.
 - [Multi-Project Platforms Quickstart](https://vercel.com/docs/platforms/multi-project-platforms/quickstart?from=related&source_path=%2Fdocs%2Fprojects&source_site=vercel-docs&relationship=related) — Programmatically host code for user-generated or AI-generated applications on Vercel.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fprojects&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Builds](https://vercel.com/docs/builds?from=related&source_path=%2Fdocs%2Fprojects&source_site=vercel-docs&relationship=related) — Understand how the build step works when creating a Vercel Deployment.
 
 Full cross-link map for this page: [/docs/projects.graph.md](/docs/projects.graph.md?from=related&source_path=%2Fdocs%2Fprojects&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

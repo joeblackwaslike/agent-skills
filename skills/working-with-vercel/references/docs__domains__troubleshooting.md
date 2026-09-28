@@ -3,7 +3,7 @@ title: Troubleshooting domains
 product: vercel
 url: /docs/domains/troubleshooting
 canonical_url: "https://vercel.com/docs/domains/troubleshooting"
-last_updated: 2026-09-16
+last_updated: 2026-09-18
 type: reference
 prerequisites:
   - /docs/domains
@@ -16,8 +16,8 @@ related:
 summary: Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/troubleshooting.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "72caf6f9e3a6b8c8be4ec2e53d576469ba03276cc9014dc5f7b279453da5a306"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "b87b17f1cb3a8c45bad9cda7ff93cfd5c6cce063e7c50e18e704ce31707eb000"
 ---
 
 # Troubleshooting domains
@@ -34,7 +34,7 @@ There are many common reasons why your domain configuration may not be working. 
 - [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records?from=related&source_path=%2Fdocs%2Fdomains%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
 - [How to resolve IP blocking issues ](https://vercel.com/kb/guide/how-to-resolve-ip-blocking-issues?from=related&source_path=%2Fdocs%2Fdomains%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Learn to troubleshoot IP blocking issues for both shared and personal networks.
 - [How to set up email with your Vercel domain](https://vercel.com/kb/guide/set-up-email-with-your-vercel-domain?from=related&source_path=%2Fdocs%2Fdomains%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Set up email on your Vercel domain by adding your provider's MX and TXT records in Vercel DNS, and send transactional em
-- [Why is my domain not automatically generating an SSL/TLS certificate?](https://vercel.com/kb/guide/domain-not-generating-ssl-certificate?from=related&source_path=%2Fdocs%2Fdomains%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Information on why a domain may not be automatically generating an SSL/TLS certificate.
+- [Why is my Vercel domain not verified?](https://vercel.com/kb/guide/why-is-my-vercel-domain-unverified?from=related&source_path=%2Fdocs%2Fdomains%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Information on why a Vercel domain may not be verified and how to verify it.
 - [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains?from=related&source_path=%2Fdocs%2Fdomains%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related&source_path=%2Fdocs%2Fdomains%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Add and configure a custom domain for your Vercel project using the CLI.
 - [Working with SSL Certificates](https://vercel.com/docs/domains/working-with-ssl?from=related&source_path=%2Fdocs%2Fdomains%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Learn how Vercel uses SSL certification to keep your site secure.

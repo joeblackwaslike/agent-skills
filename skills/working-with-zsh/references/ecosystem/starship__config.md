@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/starship/starship/main/docs/config/README.md"
-fetched_at: "2026-09-21T09:50:30.374Z"
-sha256: "1681a5ead14cf0cb274c3882b1c4e60bc91a874b8ae8c4b106adad4071cfa382"
+fetched_at: "2026-09-28T10:49:10.059Z"
+sha256: "21b3c7b69c0890f7f0cbacf168dbb249d39717f05db3e15f3f403dab6557d69d"
 ---
 
 # Configuration
@@ -2578,6 +2578,12 @@ The `jj_bookmark` module shows the [Jujutsu](https://docs.jj-vcs.dev/) bookmark 
 
 It looks at `@ | @-` to find bookmarks and will prioritize displaying those of `@` (after filtering has been applied).
 
+> [!TIP]
+> Jujutsu modules are not in the default `format` entry nor is JJ first in the [`vcs` module](#vcs), you can either:
+>
+> - Add them manually
+> - Use the [`vcs` module](#vcs) (not in `format` by default) with `order = ["jj", "git", "..."]`
+
 ### Options
 
 | Option              | Default                                                                               | Description                                                                              |
@@ -2619,6 +2625,12 @@ diverged_symbol = "⇕"
 ## JJ Change
 
 The `jj_change` module shows the current [Jujutsu](https://docs.jj-vcs.dev/) change and optionally the underlying commit when the current directory is in a Jujutsu repository.
+
+> [!TIP]
+> Jujutsu modules are not in the default `format` entry nor is JJ first in the [`vcs` module](#vcs), you can either:
+>
+> - Add them manually
+> - Use the [`vcs` module](#vcs) (not in `format` by default) with `order = ["jj", "git", "..."]`
 
 ### Options
 
@@ -2665,6 +2677,12 @@ format = "($change:$commit) "
 
 The `jj_metrics` module shows the number of added and deleted lines in the current [Jujutsu](https://docs.jj-vcs.dev/) repository.
 
+> [!TIP]
+> Jujutsu modules are not in the default `format` entry nor is JJ first in the [`vcs` module](#vcs), you can either:
+>
+> - Add them manually
+> - Use the [`vcs` module](#vcs) (not in `format` by default) with `order = ["jj", "git", "..."]`
+
 ### Options
 
 | Option               | Default                                                      | Description                           |
@@ -2699,6 +2717,12 @@ format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
 ## JJ Status
 
 The `jj_status` module shows symbols representing the state of the [Jujutsu](https://docs.jj-vcs.dev/) repo in your current directory.
+
+> [!TIP]
+> Jujutsu modules are not in the default `format` entry nor is JJ first in the [`vcs` module](#vcs), you can either:
+>
+> - Add them manually
+> - Use the [`vcs` module](#vcs) (not in `format` by default) with `order = ["jj", "git", "..."]`
 
 ### Options
 
@@ -5257,10 +5281,11 @@ The module will be shown only if a configured VCS is currently in use.
 
 | Option           | Default                                                     | Description                                           |
 | ---------------- | ----------------------------------------------------------- | ----------------------------------------------------- |
-| `order`          | `["git", "hg", "pijul", "fossil"]`                          | The order in which to search VCSes.                   |
+| `order`          | `["git", "jj", "hg", "pijul", "fossil"]`                    | The order in which to search VCSes.                   |
 | `fossil_modules` | `"$fossil_branch$fossil_metrics"`                           | Modules to show when a Fossil repository is found.    |
 | `git_modules`    | `"$git_branch$git_commit$git_state$git_metrics$git_status"` | Modules to show when a Git repository is found.       |
 | `hg_modules`     | `"$hg_branch$hg_state"`                                     | Modules to show when a Mercurial repository is found. |
+| `jj_modules`     | `"$jj_bookmark$jj_change$jj_metrics$jj_status"`             | Modules to show when a Jujutsu repository is found.   |
 | `pijul_modules`  | `"$pijul_channel"`                                          | Modules to show when a Pijul repository is found.     |
 | `disabled`       | `false`                                                     | Disables the `vcs` module.                            |
 

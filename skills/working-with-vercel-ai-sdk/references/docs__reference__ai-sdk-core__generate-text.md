@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-text.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "ba34594df76efd88f599c46951b7ec5cd8cdb21477069f882000569cdae0faa5"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "8cc93a3458a54223960283e79428df9a5aab72ea35686b23f01d0433aa55f1b0"
 ---
 
 # `generateText()`
@@ -41,7 +41,7 @@ To see `generateText` in action, check out [these examples](#examples).
     {
       name: 'model',
       type: 'LanguageModel',
-      description: "The language model to use. Example: openai('gpt-4o')",
+      description: "The language model to use. Example: openai('gpt-6-astra')",
     },
     {
       name: 'instructions',
@@ -930,6 +930,13 @@ To see `generateText` in action, check out [these examples](#examples).
               description:
                 'The error that occurred while parsing the tool call.',
             },
+            {
+              name: 'abortSignal',
+              type: 'AbortSignal',
+              isOptional: true,
+              description:
+                'An optional signal for cancelling the tool call repair.',
+            },
           ],
         },
       ],
@@ -1111,7 +1118,8 @@ To see `generateText` in action, check out [these examples](#examples).
             {
               name: 'modelId',
               type: 'string',
-              description: 'The specific model identifier (e.g., "gpt-4o").',
+              description:
+                'The specific model identifier (e.g., "gpt-6-astra").',
             },
             {
               name: 'instructions',
@@ -1263,7 +1271,8 @@ To see `generateText` in action, check out [these examples](#examples).
             {
               name: 'modelId',
               type: 'string',
-              description: 'The specific model identifier (e.g., "gpt-4o").',
+              description:
+                'The specific model identifier (e.g., "gpt-6-astra").',
             },
             {
               name: 'instructions',

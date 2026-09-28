@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/arize-ax.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "34eed2daa64acccb0673b645271601d9703de521e62f622e1c88908fa3442618"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "04220761c37c598b0bd79bbdffd56e1d17a5ce5db1bc0b766bdd79ee69540582"
 ---
 
 # Arize AX Observability
@@ -83,7 +83,7 @@ import { generateText } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
 const result = await generateText({
-  model: openai('gpt-5-mini'),
+  model: openai('gpt-6-luna'),
   prompt: 'Please write a haiku.',
 });
 ```
@@ -142,7 +142,7 @@ Once the integration is registered, telemetry is emitted automatically for all A
 
 ```typescript
 const result = await generateText({
-  model: openai('gpt-5-mini'),
+  model: openai('gpt-6-luna'),
   prompt: 'Please write a haiku.',
 });
 ```
@@ -196,7 +196,7 @@ Once the integration is registered, telemetry is emitted automatically for all A
 
 ```typescript
 const result = await generateText({
-  model: openai('gpt-5-mini'),
+  model: openai('gpt-6-luna'),
   prompt: 'Please write a haiku.',
 });
 ```

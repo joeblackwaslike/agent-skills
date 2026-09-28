@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/getting-started/svelte.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "8c3886a6221236999905b548f3ecd799bb0c610eea4c2379bd83eb41ca9be35f"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "b17ddb4a2f61e424d67fd19b9621fa01b91a16eda996a5ce99ad5e450afa1840"
 ---
 
 # Svelte Quickstart
@@ -88,7 +88,7 @@ export async function POST({ request }) {
   const { messages }: { messages: UIMessage[] } = await request.json();
 
   const result = streamText({
-    model: gateway('anthropic/claude-sonnet-4.5'),
+    model: gateway('anthropic/claude-sonnet-5'),
     messages: await convertToModelMessages(messages),
   });
 
@@ -126,11 +126,11 @@ You can also explicitly import and use the gateway provider in two other equival
 ```ts
 // Option 1: Import from 'ai' package (included by default)
 import { gateway } from 'ai';
-model: gateway('anthropic/claude-sonnet-4.5');
+model: gateway('anthropic/claude-sonnet-5');
 
 // Option 2: Install and import from '@ai-sdk/gateway' package
 import { gateway } from '@ai-sdk/gateway';
-model: gateway('anthropic/claude-sonnet-4.5');
+model: gateway('anthropic/claude-sonnet-5');
 ```
 
 ### Using other providers
@@ -142,7 +142,7 @@ To use a different provider, install its package and create a provider instance.
 ```ts
 import { openai } from '@ai-sdk/openai';
 
-model: openai('gpt-5.1');
+model: openai('gpt-6-astra');
 ```
 
 #### Updating the global provider
@@ -248,7 +248,7 @@ export async function POST({ request }) {
   const { messages }: { messages: UIMessage[] } = await request.json();
 
   const result = streamText({
-    model: gateway('anthropic/claude-sonnet-4.5'),
+    model: gateway('anthropic/claude-sonnet-5'),
     messages: await convertToModelMessages(messages),
     tools: {
       weather: tool({
@@ -372,7 +372,7 @@ export async function POST({ request }) {
   const { messages }: { messages: UIMessage[] } = await request.json();
 
   const result = streamText({
-    model: gateway('anthropic/claude-sonnet-4.5'),
+    model: gateway('anthropic/claude-sonnet-5'),
     messages: await convertToModelMessages(messages),
     stopWhen: isStepCount(5),
     tools: {
@@ -429,7 +429,7 @@ export async function POST({ request }) {
   const { messages }: { messages: UIMessage[] } = await request.json();
 
   const result = streamText({
-    model: gateway('anthropic/claude-sonnet-4.5'),
+    model: gateway('anthropic/claude-sonnet-5'),
     messages: await convertToModelMessages(messages),
     stopWhen: isStepCount(5),
     tools: {

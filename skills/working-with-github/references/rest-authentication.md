@@ -1,14 +1,14 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/rest/authentication/authenticating-to-the-rest-api.md"
-fetched_at: "2026-07-13T06:58:22.643Z"
-sha256: "6e755a4b84edff0768fbbfe0ea0f21d7ecb9b11cbaf6f32325b43c47b058f525"
+fetched_at: "2026-09-28T10:42:53.812Z"
+sha256: "0e7ea2ad708ffa3fb49087aa07082efd0cf114d9cadf1b62a2afed53d313891b"
 ---
 
 ## About authentication
 
 Many REST API endpoints require authentication or return additional information if you are authenticated. Additionally, you can make more requests per hour when you are authenticated.
 
-To authenticate your request, you will need to provide an authentication token with the required scopes or permissions. There a few different ways to get a token: You can create a {% data variables.product.pat_generic %}, generate a token with a {% data variables.product.prodname_github_app %}, or use the built-in `GITHUB_TOKEN` in a {% data variables.product.prodname_actions %} workflow.
+To authenticate your request, you will need to provide an authentication token with the required scopes or permissions. There are a few different ways to get a token: You can create a {% data variables.product.pat_generic %}, generate a token with a {% data variables.product.prodname_github_app %}, or use the built-in `GITHUB_TOKEN` in a {% data variables.product.prodname_actions %} workflow.
 
 After creating a token, you can authenticate your request by sending the token in the `Authorization` header of your request. For example, in the following request, replace `YOUR-TOKEN` with a reference to your token:
 

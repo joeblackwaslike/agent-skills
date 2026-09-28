@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/rsc/save-messages-to-database.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "9cd8512f3b2da2af953f91b5585709813d21471a5271f8a1bfc9868255612bba"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "eff6467b403c905d0d3690ae6651e1266d65436b94cfa9e2bd596245738e75d8"
 ---
 
 # Save Messages To Database
@@ -125,7 +125,7 @@ export async function continueConversation(
   const history = getMutableAIState();
 
   const result = await streamUI({
-    model: 'openai/gpt-5.4',
+    model: 'openai/gpt-6-astra',
     messages: [...history.get(), { role: 'user', content: input }],
     text: ({ content, done }) => {
       if (done) {

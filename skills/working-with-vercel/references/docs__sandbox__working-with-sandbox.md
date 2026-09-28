@@ -16,8 +16,8 @@ related:
 summary: Task-oriented examples for common Vercel Sandbox operations in TypeScript and Python.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/working-with-sandbox.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "88d2eb36d7564e49b25725015a42eb411170427dc4c61e274ee5b124424cd05b"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "525eff481bd155df5946ff70211aa6afc7936a1accc8d081814dcb0a1322639e"
 ---
 
 # Working with Sandbox
@@ -33,7 +33,7 @@ Use Vercel Sandbox to run code, stream command output, manage files, capture sna
 - [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related)
 - [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
 - [Vercel Sandboxes are now generally available](https://vercel.com/changelog/vercel-sandboxes-ga?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related)
-- [Using TanStack AI with Vercel Sandbox](https://vercel.com/kb/guide/tanstack-ai-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related) — Run coding agents in isolated Vercel Sandbox microVMs with the @tanstack/ai-sandbox-vercel provider, with durable resume
+- [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 - [Running commands in a Vercel Sandbox](https://vercel.com/docs/sandbox/run-commands-in-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related) — Create isolated sandbox environments to run builds, tests, and commands safely.
 - [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
@@ -49,7 +49,7 @@ Full cross-link map for this page: [/docs/sandbox/working-with-sandbox.graph.md]
 
 Create a sandbox, write a file into it, run the file, and inspect the command output.
 
-**TypeScript**
+**index.ts**
 
 ```ts filename="index.ts"
 import { Sandbox } from '@vercel/sandbox';
@@ -78,9 +78,9 @@ try {
 }
 ```
 
-**Python**
+**main.py**
 
-```python filename="main.py"
+```py filename="main.py"
 import asyncio
 from datetime import timedelta
 
@@ -122,7 +122,7 @@ const sandbox = await Sandbox.create({
 
 Persistent sandboxes keep their filesystem across sessions. Create a sandbox, write a file, stop it, then resume by name and read the file back, with no snapshot ID to track and no setup to repeat.
 
-**TypeScript**
+**index.ts**
 
 ```ts filename="index.ts"
 import { Sandbox } from '@vercel/sandbox';
@@ -144,9 +144,9 @@ const notes = await resumed.runCommand('cat', ['/vercel/sandbox/notes.txt']);
 console.log(await notes.stdout()); // Hello from the first session.
 ```
 
-**Python**
+**main.py**
 
-```python filename="main.py"
+```py filename="main.py"
 from vercel import sandbox
 
 # First run: create a named sandbox, write a file, stop it.
@@ -167,7 +167,7 @@ print(await resumed.fs.read_text("notes.txt"))
 
 By default, sandboxes timeout after 5 minutes. For longer tasks, set a custom timeout when creating the sandbox:
 
-**TypeScript**
+**index.ts**
 
 ```ts filename="index.ts"
 import { Sandbox } from '@vercel/sandbox';
@@ -183,9 +183,9 @@ try {
 }
 ```
 
-**Python**
+**main.py**
 
-```python filename="main.py"
+```py filename="main.py"
 import asyncio
 from datetime import timedelta
 
@@ -204,7 +204,7 @@ asyncio.run(main())
 
 To extend a running sandbox, call `extendTimeout` in TypeScript or `extend_timeout()` in Python:
 
-**TypeScript**
+**index.ts**
 
 ```ts filename="index.ts"
 import { Sandbox } from '@vercel/sandbox';
@@ -218,9 +218,9 @@ try {
 }
 ```
 
-**Python**
+**main.py**
 
-```python filename="main.py"
+```py filename="main.py"
 import asyncio
 from datetime import timedelta
 
@@ -241,7 +241,7 @@ See [Pricing and Limits](/docs/sandbox/pricing#runtime-limits) for maximum durat
 
 Use a detached command when you need to follow long-running output, keep a server alive, or wait for completion later.
 
-**TypeScript**
+**index.ts**
 
 ```ts filename="index.ts"
 import { Sandbox } from '@vercel/sandbox';
@@ -270,9 +270,9 @@ try {
 }
 ```
 
-**Python**
+**main.py**
 
-```python filename="main.py"
+```py filename="main.py"
 import asyncio
 import sys
 from datetime import timedelta
@@ -303,7 +303,7 @@ asyncio.run(main())
 
 Use file APIs when your local application needs to send input files to the sandbox and retrieve a build output.
 
-**TypeScript**
+**index.ts**
 
 ```ts filename="index.ts"
 import { Sandbox } from '@vercel/sandbox';
@@ -339,9 +339,9 @@ try {
 }
 ```
 
-**Python**
+**main.py**
 
-```python filename="main.py"
+```py filename="main.py"
 import asyncio
 
 import anyio
@@ -394,7 +394,7 @@ const child = await Sandbox.fork({
 });
 ```
 
-**TypeScript**
+**index.ts**
 
 ```ts filename="index.ts"
 import { Sandbox } from '@vercel/sandbox';
@@ -431,9 +431,9 @@ try {
 }
 ```
 
-**Python**
+**main.py**
 
-```python filename="main.py"
+```py filename="main.py"
 import asyncio
 from datetime import timedelta
 
@@ -499,7 +499,7 @@ There are three ways to stop a sandbox:
 
 ### Programmatically
 
-**TypeScript**
+**index.ts**
 
 ```ts filename="index.ts"
 import { Sandbox } from '@vercel/sandbox';
@@ -513,9 +513,9 @@ try {
 }
 ```
 
-**Python**
+**main.py**
 
-```python filename="main.py"
+```py filename="main.py"
 import asyncio
 
 from vercel import sandbox

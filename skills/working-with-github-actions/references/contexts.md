@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/reference/workflows-and-actions/contexts.md"
-fetched_at: "2026-08-17T04:46:35.458Z"
-sha256: "156b572cb26b8c872c6808b63885ed6ffdb3a0d85b2ff051f3386dbe0966be57"
+fetched_at: "2026-09-28T10:42:29.141Z"
+sha256: "20deadb3ad78a895e8287cea2700465aecebf7e5f793d8a3f01dda40a8cb89a6"
 ---
 
 ## Available contexts
@@ -711,6 +711,8 @@ There are no standard properties in the `matrix` context, only those which are d
 |---------------|------|-------------|
 | `matrix` | `object` | This context is only available for jobs in a matrix, and changes for each job in a workflow run. You can access this context from any job or step in a workflow. This object contains the properties listed below. |
 | `matrix.<property_name>` | `string` | The value of a matrix property. |
+
+{% data reusables.actions.workflows.matrix-keys-are-case-insensitive %}
 
 ### Example contents of the `matrix` context
 

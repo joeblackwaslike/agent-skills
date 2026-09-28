@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/node/stream-object.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "6ef32ddcd133e1878552875bcc849fb06e6f515cd3334db9d129960403c3c7b4"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "2e533e79f35ae335985d317d219fa8ecba114080886fe09cdbb1589ac0445d89"
 ---
 
 # Stream Object
@@ -18,7 +18,7 @@ import { streamText, Output } from 'ai';
 import { z } from 'zod';
 
 const { partialOutputStream } = streamText({
-  model: 'openai/gpt-4.1',
+  model: 'openai/gpt-6-astra',
   output: Output.object({
     schema: z.object({
       recipe: z.object({

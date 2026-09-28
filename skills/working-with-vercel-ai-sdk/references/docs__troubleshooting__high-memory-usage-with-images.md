@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/troubleshooting/high-memory-usage-with-images.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "c2183e95b3c7bec248290692708ce192e9cd2b12269f33c02bb08571461f3a87"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "0d04459d09d0930dde9e88ceabefbe0b97953de0a28d3de6706418f481cbd5a6"
 ---
 
 # High memory usage when processing many images
@@ -31,7 +31,7 @@ import { generateText } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
 const result = await generateText({
-  model: openai('gpt-4o'),
+  model: openai('gpt-6-astra'),
   messages: [
     {
       role: 'user',
@@ -86,7 +86,7 @@ const results = [];
 
 for (const imageUrl of imageUrls) {
   const result = await generateText({
-    model: openai('gpt-4o'),
+    model: openai('gpt-6-astra'),
     messages: [
       {
         role: 'user',

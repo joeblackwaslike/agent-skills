@@ -3,7 +3,7 @@ title: Bring Your Own Key (BYOK) to AI Gateway
 product: vercel
 url: /docs/ai-gateway/authentication-and-byok/byok
 canonical_url: "https://vercel.com/docs/ai-gateway/authentication-and-byok/byok"
-last_updated: 2026-09-08
+last_updated: 2026-09-22
 type: how-to
 prerequisites:
   - /docs/ai-gateway/authentication-and-byok
@@ -17,15 +17,15 @@ related:
 summary: Learn how to configure your own provider keys with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok/byok.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "1b035e54f2eae25312ecdc923d1bf3b878f1da09ec79e4088b3c6f89d52eb62b"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "0f8610ef10bd022054c0969f6db6aacb527658608232faf5baf84221bc108239"
 ---
 
 # Bring Your Own Key (BYOK) to AI Gateway
 
 Using your own credentials with an external AI provider allows AI Gateway to authenticate requests on your behalf with [no added markup](/docs/ai-gateway/pricing#bring-your-own-key-byok).
 This approach is useful for using credits provided by the AI provider or executing AI queries that access private cloud data.
-If a query using your credentials fails, AI Gateway will retry the query with its system credentials to improve service availability.
+If a query using your credentials fails, AI Gateway will retry the query with its system credentials to improve service availability. When [ZDR](#zero-data-retention-zdr) is enabled, this fallback is limited to ZDR-eligible system credentials.
 
 
 <!-- docsgraph:related -->
@@ -34,13 +34,12 @@ If a query using your credentials fails, AI Gateway will retry the query with it
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [10x more capacity for Laguna S 2.1 on AI Gateway](https://vercel.com/changelog/10x-more-capacity-for-laguna-s-2-1-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fbyok&source_site=vercel-docs&relationship=related)
+- [Claude Opus 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-opus-5-5-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fbyok&source_site=vercel-docs&relationship=related)
 - [Claude Sonnet 5 now available on Vercel AI Gateway](https://vercel.com/changelog/claude-sonnet-5-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fbyok&source_site=vercel-docs&relationship=related)
 - [DeepSeek V4.1 Flash now available on AI Gateway](https://vercel.com/changelog/deepseek-v4-1-flash-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fbyok&source_site=vercel-docs&relationship=related)
 - [DeepSeek V4 Flash now runs updated weights on AI Gateway](https://vercel.com/changelog/deepseek-v4-flash-now-runs-updated-weights-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fbyok&source_site=vercel-docs&relationship=related)
-- [DeepSeek V4 Pro now runs updated weights on AI Gateway](https://vercel.com/changelog/deepseek-v4-pro-now-runs-updated-weights-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fbyok&source_site=vercel-docs&relationship=related)
 - [How I use OpenCode with Vercel AI Gateway to build features fast](https://vercel.com/kb/guide/how-i-use-opencode-with-vercel-ai-gateway-to-build-features-fast?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fbyok&source_site=vercel-docs&relationship=related) — How to route different AI models to different coding tasks automatically, cutting token costs by ~70% without losing qua
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fbyok&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
-- [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fbyok&source_site=vercel-docs&relationship=related) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fbyok&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
 - [Evaluation](https://vercel.com/docs/ai-gateway/modalities/evaluation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fbyok&source_site=vercel-docs&relationship=related) — Evaluate shared state against typed questions and get back structured choices, scores, and boolean probabilities through
 
@@ -480,6 +479,10 @@ You can also configure model mappings in the dashboard when adding or editing BY
 When ZDR is enabled, either team-wide or per-request, AI Gateway skips your BYOK keys by default. BYOK keys operate under your own agreements and permissions with providers, which can differ from the ZDR agreements Vercel has negotiated for AI Gateway system credentials.
 
 If you have your own ZDR agreement with a provider, mark an individual BYOK key as ZDR-compliant to include it in the ZDR routing set. This applies to both team-wide and request-level ZDR.
+
+Marking a key as ZDR-compliant makes it eligible for ZDR routing; it does not enable ZDR. ZDR is enforced only when team-wide ZDR is on or the request sets `zeroDataRetention: true`. Without team-wide or request-level ZDR enabled, normal routing and fallback apply. Marking a BYOK key as ZDR-compliant does not enforce ZDR for the request.
+
+ZDR also changes fallback. With ZDR enabled, a ZDR-marked BYOK key is tried first, and a failed request falls back only to system credentials for providers with ZDR agreements. If none are available for the model, the request fails instead of routing through a non-ZDR provider.
 
 > **💡 Note:** For the full behavior and configuration steps, see [ZDR and
 > BYOK](/docs/ai-gateway/security-and-compliance/zdr#byok).

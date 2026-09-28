@@ -16,8 +16,8 @@ related:
 summary: Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/concepts.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "cec6398a9f13a5b5a198bc3317a2bf7b6d18ee1c473e4a3c462f27660fa555a9"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "a03b984fe8ad05aaf4dcf0ecb7f1582008efd0aff182b3dba9c925dd3ed7450e"
 ---
 
 # Queues concepts
@@ -175,7 +175,7 @@ See the [API reference](/docs/queues/api) for details on each operation.
 
 ## Regions and data residency
 
-Vercel Queues is available in all 20 [Vercel regions](/docs/regions). When you create a queue, you select a region, and your message data is persisted in that region. The three-zone replication described in [Durability](#durability) happens across availability zones within your selected region.
+Vercel Queues is available in all 19 [Vercel regions](/docs/regions). When you create a queue, you select a region, and your message data is persisted in that region. The three-zone replication described in [Durability](#durability) happens across availability zones within your selected region.
 
 Choose a region close to your producers and consumers to minimize latency. If you need queues in multiple regions, create separate queues in each region. See the [regions documentation](/docs/regions#region-list) for the full list of available regions.
 

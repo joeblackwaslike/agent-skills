@@ -3,7 +3,7 @@ title: AI SDK
 product: ai-sdk
 url: /docs/ai-sdk
 canonical_url: "https://vercel.com/docs/ai-sdk"
-last_updated: 2026-09-14
+last_updated: 2026-09-22
 type: integration
 prerequisites:
   []
@@ -12,8 +12,8 @@ related:
 summary: Build TypeScript agents and AI applications with a unified API for models, tools, structured output, and streaming.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-sdk.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "95b7ea67213a0b8222ce7cfe16e6fefcbf18b3b12d7778feed699f7ecbe4c3c9"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "d421c82f458b43eadbc007d97e769153935dc4f4d9df2f0e9731838126a29038"
 ---
 
 # AI SDK
@@ -32,11 +32,11 @@ Build TypeScript agents and AI applications with one API for models, tools, stru
 - [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related)
 - [Zero Data Retention on AI Gateway](https://vercel.com/blog/zdr-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related)
 - [Tools](https://ai-sdk.dev/docs/foundations/tools?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related)
-- [AI SDK by Vercel](https://ai-sdk.dev/docs/introduction?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related)
 - [Vercel AI SDK 3.1: ModelFusion joins the team](https://vercel.com/blog/vercel-ai-sdk-3-1-modelfusion-joins-the-team?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related)
+- [AI SDK by Vercel](https://ai-sdk.dev/docs/introduction?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related)
 - [Get started with GPT-5](https://ai-sdk.dev/cookbook/guides/gpt-5?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related)
 - [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related) — Learn the key AI concepts and tools for building and scaling AI apps.
-- [@v0-sdk/ai-tools](https://v0.app/docs/api/v1/packages/ai-tools?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related) — AI SDK tools for the v0 API
+- [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
 - [Get started with Llama 3.1](https://ai-sdk.dev/cookbook/guides/llama-3_1?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related)
 - [How to build an AI agent for Slack with Chat SDK and AI SDK](https://vercel.com/kb/guide/how-to-build-an-ai-agent-for-slack-with-chat-sdk-and-ai-sdk?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related) — Build a Slack AI agent using Chat SDK, AI SDK's ToolLoopAgent, and Vercel AI Gateway. Covers project setup, tool definit
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
@@ -226,6 +226,22 @@ requests credentials and supports user consent flows.
 Follow the [AI SDK and MCP tutorial](/docs/connect/frameworks/ai-sdk-and-mcp) to
 configure Vercel Connect, make MCP tools available to an AI SDK application,
 and handle tool approval.
+
+## Use Jev with AI SDK
+
+[Jev](/kb/jev-from-typesafe-ai), an evaluation model from TypeSafe AI, returns typed choices, scores, and
+boolean probabilities that your application can use to classify requests, route
+work, and assess proposed actions. Call Jev through AI Gateway with the
+experimental `evaluate` API in AI SDK 7 or later.
+
+Learn how to [classify, route, and score with Jev and AI SDK](/kb/guide/typesafe-jev-and-ai-sdk),
+or follow [Route form submissions with Jev and AI SDK](/kb/guide/jev-ai-sdk-form-router)
+to build a form router with configurable destinations and a fallback model for
+uncertain decisions.
+
+## Build with a template
+
+Start with an AI SDK template to build a chatbot or route form submissions with Jev:
 
 ## More resources
 

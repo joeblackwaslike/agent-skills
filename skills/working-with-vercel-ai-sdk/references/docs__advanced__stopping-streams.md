@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/advanced/stopping-streams.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "269ef93a9bbb319cd61a704cb4ac36becf6ce631bf233f1710bafc3cbe043637"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "dde40fbe645acb1907c5a84d11540ac7af38ac81d00ef26dbcfb044d5ee97573"
 ---
 
 # Stopping Streams
@@ -205,6 +205,14 @@ export async function POST(req: Request) {
 ```
 
 The `consumeStream` function is necessary for proper abort handling in UI message streams. It ensures that the stream is properly consumed even when aborted, preventing potential memory leaks or hanging connections.
+
+The `onEnd` callback distinguishes consumer cancellation from an observed
+abort. When the consumer cancels the UI message stream before an outcome is
+declared, such as during a client disconnect, `isCancelled` is `true`,
+`outcome.status` remains `'unknown'`, and `isAborted` remains `false`. When the
+stream observes an `abort` part first, `outcome.status` is `'aborted'`,
+`isAborted` is `true`, and `isCancelled` is absent. Check both flags when the
+same cleanup should run for either case.
 
 ## AI SDK RSC
 

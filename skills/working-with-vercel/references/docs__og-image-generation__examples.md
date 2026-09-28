@@ -12,8 +12,8 @@ related:
 summary: Learn how to use the @vercel/og library with examples.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/og-image-generation/examples.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "78dd5c28bfc14296db139c28b63fda3c79c70640f75e84c3815b25c7eb603900"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "7cc74f1ee8ec441c23bacd276ff97ec8144e31d8d976f33a9631990aeea77669"
 ---
 
 # OG Image Generation Examples
@@ -31,11 +31,11 @@ Create an api route with `route.tsx` in `/app/api/og/` and paste the following c
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [OG Image Generation: The Complete Customization Guide](https://vercel.com/kb/guide/using-custom-font?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fexamples&source_site=vercel-docs&relationship=related) — Learn how to use custom fonts in your Vercel OG image, plus emoji, external images, non-Latin text, dynamic titles, and
-- [Using emoji in your OG image](https://vercel.com/kb/guide/using-emoji-in-image?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fexamples&source_site=vercel-docs&relationship=related) — Learn how to use emojis to generate an OG image.
 - [Using an SVG image in your OG image](https://vercel.com/kb/guide/using-svg-image?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fexamples&source_site=vercel-docs&relationship=related) — Learn how to use SVG embedded content to generate your OG images.
 - [opengraph-image and twitter-image](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fexamples&source_site=vercel-docs&relationship=related) — API Reference for the Open Graph Image and Twitter Image file conventions.
 - [Using an external image as OG image](https://vercel.com/kb/guide/using-an-external-dynamic-image?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fexamples&source_site=vercel-docs&relationship=related) — Learn how to pass the username as a URL parameter to pull an external profile image for the image generation.
 - [Using Tailwind CSS with your OG Image](https://vercel.com/kb/guide/using-tailwind?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fexamples&source_site=vercel-docs&relationship=related) — Learn how to use Tailwind CSS to style your OG images.
+- [Using languages in your OG image](https://vercel.com/kb/guide/using-different-languages?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fexamples&source_site=vercel-docs&relationship=related) — Learn how to use other languages in the text of your OG image.
 - [ImageResponse](https://nextjs.org/docs/app/api-reference/functions/image-response?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fexamples&source_site=vercel-docs&relationship=related) — API Reference for the ImageResponse constructor.
 - [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fexamples&source_site=vercel-docs&relationship=related) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
 - [Client Uploads with Vercel Blob](https://vercel.com/docs/vercel-blob/client-upload?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fexamples&source_site=vercel-docs&relationship=related) — Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob

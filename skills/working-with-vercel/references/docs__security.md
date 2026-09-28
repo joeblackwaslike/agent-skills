@@ -16,8 +16,8 @@ related:
 summary: Vercel provides built-in and customizable features to ensure that your site is secure.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "d36b07d7dd74a37713fd40e75331c27e87d3f8d3462c4d6ae93d8fb82601b62d"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "4eeab138e4c8cc9443ec449f6293dc9868a2eeab048243fd4591d8a695b60d1b"
 ---
 
 # Vercel security overview
@@ -36,7 +36,6 @@ Cloud-deployed web applications face constant security threats, with attackers l
 - [Vercel security roundup: improved bot defenses, DoS mitigations, and insights](https://vercel.com/blog/vercel-security-roundup-improved-bot-defenses-dos-mitigations-and-insights?from=related&source_path=%2Fdocs%2Fsecurity&source_site=vercel-docs&relationship=related)
 - [Life of a Vercel request: Securing your app's traffic with Vercel](https://vercel.com/blog/life-of-a-request-securing-your-apps-traffic-with-vercel?from=related&source_path=%2Fdocs%2Fsecurity&source_site=vercel-docs&relationship=related)
 - [Vercel security roundup: Faster defenses and better visibility for your apps](https://vercel.com/blog/vercel-security-roundup-faster-defenses-and-better-visibility-for-your-apps?from=related&source_path=%2Fdocs%2Fsecurity&source_site=vercel-docs&relationship=related)
-- [Security](https://v0.app/docs/security?from=related&source_path=%2Fdocs%2Fsecurity&source_site=vercel-docs&relationship=related) — Learn about v0's security practices, threat modeling, and enterprise security features.
 - [Vercel Firewall](https://vercel.com/docs/vercel-firewall?from=related&source_path=%2Fdocs%2Fsecurity&source_site=vercel-docs&relationship=related) — Learn how Vercel Firewall helps protect your applications and websites from malicious attacks and unauthorized access.
 - [CDN security](https://vercel.com/docs/cdn-security?from=related&source_path=%2Fdocs%2Fsecurity&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fsecurity&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit

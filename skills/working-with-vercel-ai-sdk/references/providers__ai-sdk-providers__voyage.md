@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/voyage.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "b95d33c9548a3e9087153cf160c068164cdc29ab508419fb6d995388ece265b2"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "5f4edca560ce6d68156f1a0f0bd4fa4799089f4fae7ceb1652a1fc240930ffe6"
 ---
 
 # Voyage AI Provider
@@ -62,7 +62,7 @@ You can create models that call the [Voyage AI embeddings API](https://docs.voya
 using the `.embedding()` factory method.
 
 ```ts
-const model = voyage.embedding('voyage-3.5');
+const model = voyage.embedding('voyage-4');
 ```
 
 You can use Voyage AI embedding models to generate embeddings with the `embed` function:
@@ -72,7 +72,7 @@ import { voyage } from '@ai-sdk/voyage';
 import { embed } from 'ai';
 
 const { embedding } = await embed({
-  model: voyage.embedding('voyage-3.5'),
+  model: voyage.embedding('voyage-4'),
   value: 'sunny day at the beach',
 });
 ```

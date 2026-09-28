@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/langfuse.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "44ada89112eebe9ae5528178446ed4163bb18a6763cb872581c30337982a6b04"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "0054dcd030a2cd66a1f574e48f0751e03914e7ca3cf90584d2da4505fe6a245e"
 ---
 
 # Langfuse Observability
@@ -154,7 +154,7 @@ const result = await propagateAttributes(
   },
   () =>
     generateText({
-      model: openai('gpt-5.5'),
+      model: openai('gpt-6-astra'),
       prompt: 'Write a short story about a cat.',
       telemetry: {
         functionId: 'story-generation',
@@ -169,7 +169,7 @@ AI SDK v7 excludes `runtimeContext` from telemetry events unless each top-level 
 
 ```ts
 const result = await generateText({
-  model: openai('gpt-5.5'),
+  model: openai('gpt-6-astra'),
   prompt: 'Write a short story about a cat.',
   runtimeContext: {
     route: 'api/story',
@@ -198,7 +198,7 @@ const langfuseClient = new LangfuseClient();
 const langfusePrompt = await langfuseClient.getPrompt('support-chat/default');
 
 const result = await generateText({
-  model: openai('gpt-5.5'),
+  model: openai('gpt-6-astra'),
   prompt: langfusePrompt.compile({ topic: 'RAG' }),
   runtimeContext: {
     route: 'support-chat',
@@ -261,7 +261,7 @@ By default, the exporter captures the input and output of each request. You can 
 
 ```ts
 const result = await generateText({
-  model: openai('gpt-5.5'),
+  model: openai('gpt-6-astra'),
   prompt: 'Write a short story about a cat.',
   telemetry: {
     recordInputs: false,
@@ -276,7 +276,7 @@ Telemetry is enabled by default when a telemetry integration is registered. You 
 
 ```ts
 const result = await generateText({
-  model: openai('gpt-5.5'),
+  model: openai('gpt-6-astra'),
   prompt: 'Write a short story about a cat.',
   telemetry: {
     isEnabled: false,

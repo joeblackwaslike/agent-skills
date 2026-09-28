@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "7e79bc712bdcf98e198e9c3375bcc6887e68a463e5944b63a725ac0db34066ee"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "f2c7232d07b1c2b6376a0dfffe34a9608e3fa64f5be63580a1712bd2830f3cad"
 ---
 
 # Observability Integrations
@@ -125,6 +125,7 @@ There are also providers that provide monitoring and tracing for the AI SDK thro
   - [LM Studio](/providers/openai-compatible-providers/lmstudio)
   - [NVIDIA NIM](/providers/openai-compatible-providers/nim)
   - [ModelRush](/providers/openai-compatible-providers/modelrush)
+  - [Cheaper Inference](/providers/openai-compatible-providers/cheaper-inference)
   - [Clarifai](/providers/openai-compatible-providers/clarifai)
   - [Heroku](/providers/openai-compatible-providers/heroku)
   - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)

@@ -15,8 +15,8 @@ related:
 summary: Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/connect.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "ad668d77cd4f05a189e7b19e2eb2964c83f814cb28950e0746cc162793bb1cc2"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "73366ec218108ae54eff354148d03a0ef723ea2f6e4e4722589bd810ab1a8901"
 ---
 
 # vercel connect
@@ -33,6 +33,7 @@ The `vercel connect` command manages [Vercel Connect](/docs/connect) connectors.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel Connect now supports CLI setup for 100+ connectors](https://vercel.com/changelog/vercel-cli-100-services?from=related&source_path=%2Fdocs%2Fcli%2Fconnect&source_site=vercel-docs&relationship=related)
+- [Vercel Connect now supports Microsoft Teams](https://vercel.com/changelog/vercel-connect-microsoft-teams?from=related&source_path=%2Fdocs%2Fcli%2Fconnect&source_site=vercel-docs&relationship=related)
 - [Vercel Connect now supports Linq](https://vercel.com/changelog/vercel-connect-now-supports-linq?from=related&source_path=%2Fdocs%2Fcli%2Fconnect&source_site=vercel-docs&relationship=related)
 - [Vercel Connect now supports Microsoft](https://vercel.com/changelog/vercel-connect-supports-microsoft?from=related&source_path=%2Fdocs%2Fcli%2Fconnect&source_site=vercel-docs&relationship=related)
 - [Build Claude Managed Agents with Chat SDK](https://vercel.com/kb/guide/claude-managed-agents-chat-sdk?from=related&source_path=%2Fdocs%2Fcli%2Fconnect&source_site=vercel-docs&relationship=related) — Ship a Slack research bot built on Claude Managed Agents and Chat SDK. One persistent session per thread, streamed brief
@@ -43,7 +44,6 @@ The `vercel connect` command manages [Vercel Connect](/docs/connect) connectors.
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fconnect&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel alerts](https://vercel.com/docs/cli/alerts?from=related&source_path=%2Fdocs%2Fcli%2Fconnect&source_site=vercel-docs&relationship=related) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
 - [List connectors for a project](https://vercel.com/docs/rest-api/connect/list-connectors-for-a-project?from=related&source_path=%2Fdocs%2Fcli%2Fconnect&source_site=vercel-docs&relationship=related) — GET /v2/connect/projects/{projectId}/connectors — List the connectors connected to a project and the environments where
-- [vercel global-config](https://vercel.com/docs/cli/global-config?from=related&source_path=%2Fdocs%2Fcli%2Fconnect&source_site=vercel-docs&relationship=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
 
 Full cross-link map for this page: [/docs/cli/connect.graph.md](/docs/cli/connect.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fconnect&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

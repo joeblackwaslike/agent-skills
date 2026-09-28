@@ -3,7 +3,7 @@ title: Concepts
 product: vercel
 url: /docs/eve/concepts
 canonical_url: "https://vercel.com/docs/eve/concepts"
-last_updated: 2026-08-28
+last_updated: 2026-09-21
 type: conceptual
 prerequisites:
   - /docs/eve
@@ -16,8 +16,8 @@ related:
 summary: Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/eve/concepts.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "49a4774d80ced155116903d6871f23d0311c35e4267fe2cf99da17839fa3c0ae"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "6c0ad8729aabd5c9013db8504a8ad8219cb6f957ed16486eb6f9e6e03ff5e238"
 ---
 
 # Concepts
@@ -33,10 +33,10 @@ the runtime as a deployable app.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
-- [Security Model](https://eve.dev/docs/concepts/security-model?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — eve's trust boundaries, where secrets live, how credentials reach hosts, and what fails closed by default.
-- [Get started with eve: durable AI agents in TypeScript](https://eve.dev/docs/getting-started?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — Create an eve project, configure model credentials, and run your first agent.
 - [Terminal UI](https://eve.dev/docs/guides/dev-tui?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — Use eve locally or connect to a deployed agent from an interactive terminal UI.
-- [Self-Host eve](https://eve.dev/docs/guides/deployment/self-hosting?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — Run an eve agent as a Node service with your own workflow storage, sandbox backend, and routing.
+- [Get started with eve: durable AI agents in TypeScript](https://eve.dev/docs/getting-started?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — Create an eve project, configure model credentials, and run your first agent.
+- [Security Model](https://eve.dev/docs/concepts/security-model?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — eve's trust boundaries, where secrets live, how credentials reach hosts, and what fails closed by default.
+- [Self-Host eve](https://eve.dev/docs/guides/deployment/self-hosting?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — Run an eve agent as a Node service with your own workflow storage, sandbox provider, and routing.
 - [Introducing eve, an open-source agent framework](https://vercel.com/changelog/introducing-eve-an-open-source-agent-framework?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related)
 - [The Agent Stack](https://vercel.com/blog/agent-stack?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related)
 - [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
@@ -121,6 +121,11 @@ Tools are typed actions the model can call during a turn. Each file in `agent/to
 tool, and the filename becomes the tool name the model sees. Learn more about
 [adding tools to your eve agent](/kb/guide/how-to-add-eve-tools).
 
+You can use Jev to review proposed tool calls against your approval criteria before they run.
+Calls classified as `clear` run automatically, while `caution` calls pause for human approval.
+Follow [Automatically approve tool calls in eve with Jev](/kb/guide/auto-approve-tool-calls-eve-jev)
+to configure the policy and test its failure paths.
+
 Skills are larger procedures or reference material that the model loads on demand. Use skills for
 repeatable workflows, multi-step instructions, or domain knowledge that should not be part of the
 always-on prompt. Keeping skills separate helps the model use the right context only when it is
@@ -158,20 +163,22 @@ untrusted or model-generated commands.
 
 ## Observability
 
-Every eve project gets Agent Runs in the Vercel dashboard. Agent Runs shows sessions, turns, tool
-calls, reasoning, timing, and token usage without an `instrumentation.ts` file.
+Every eve project gets [Agent Runs](/docs/eve/agent-runs) in the Vercel dashboard. Agent Runs shows
+sessions, turns, tool calls, reasoning, timing, and token usage without an instrumentation file.
 
-As the deployer, where your agent processes personal, sensitive, or regulated data, you may be
-required to disclose this capture as required by applicable laws and in your privacy materials.
+New eve deployments automatically configure tracing to sample at 100%. Existing deployments must
+configure sampling. See [Agent Runs](/docs/eve/agent-runs) for setup, pricing, retention, and
+trace-content controls.
 
-If you also want AI SDK spans in an external OpenTelemetry backend, add `agent/instrumentation.ts`.
-See [eve observability](/docs/eve/observability) for the dashboard view and OpenTelemetry setup.
+See [eve observability](/docs/eve/observability) for process-wide OpenTelemetry settings, built-in
+exports, and third-party destinations.
 
 ## Next steps
 
 - [Getting started](/docs/eve): create your first eve project.
 - [Pricing and Limits](/docs/eve/pricing): understand the Vercel resources eve uses.
-- [Observability](/docs/eve/observability): inspect Agent Runs and optional OpenTelemetry spans.
+- [Agent Runs](/docs/eve/agent-runs): inspect agent sessions and configure trace collection.
+- [Observability](/docs/eve/observability): configure OpenTelemetry exports and policies.
 
 
 ---

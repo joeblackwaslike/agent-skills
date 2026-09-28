@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel Blob SDK to access your blob store from your apps.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/using-blob-sdk.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "0937d8257619122c697a2819ff017e9bfa083e91a818b4dd89490aaeee94ed9d"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "22f6d7203cbe0b8d70aefe95996e0c592f7c7216f6799198d8ca913889578b01"
 ---
 
 # @vercel/blob
@@ -86,7 +86,7 @@ pip install vercel
 
 - ### Create a Blob store
   1. Go to your project's [**Storage** tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fstores\&title=Go+to+Storage)
-  2. Select **Create Database**, then choose **Blob**
+  2. Select **Create Storage**, then choose **Blob**
   3. Select **Continue**, then set the access to **Private** or **Public**
   4. Choose a name for your store and select **Create a new Blob store**
   5. Select the environments where you would like the read-write token to be included. **Production** and **Preview** are preselected; include **Development** if you plan to work with the store locally. You can also update the prefix of the Environment Variable in Advanced Options

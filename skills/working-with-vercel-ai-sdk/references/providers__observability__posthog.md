@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/posthog.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "1986660328dd0c0ffc9c591fc9f55c573f0620484b13856240494622de893148"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "984f1c8bb956362ec63640081b99eb7a2f0017ce90e87de5fd96617fd1044c14"
 ---
 
 # PostHog LLM Analytics
@@ -59,7 +59,7 @@ import { generateText } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
 const result = await generateText({
-  model: openai('gpt-4o'),
+  model: openai('gpt-6-astra'),
   prompt: 'Tell me a fun fact about hedgehogs.',
   telemetry: {
     functionId: 'my-ai-function',
@@ -108,7 +108,7 @@ import { generateText } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
 const result = await generateText({
-  model: openai('gpt-4o'),
+  model: openai('gpt-6-astra'),
   prompt: 'Tell me a fun fact about hedgehogs.',
   telemetry: {
     functionId: 'my-ai-function',
@@ -139,7 +139,7 @@ Pass `posthog_distinct_id` in the `metadata` field to associate LLM events with 
 
 ```ts highlight="6"
 const result = await generateText({
-  model: openai('gpt-4o'),
+  model: openai('gpt-6-astra'),
   prompt: 'Write a short story about a cat.',
   telemetry: {
     metadata: {
@@ -155,7 +155,7 @@ You can disable recording of inputs and outputs by setting `recordInputs` and `r
 
 ```ts highlight="5-6"
 const result = await generateText({
-  model: openai('gpt-4o'),
+  model: openai('gpt-6-astra'),
   prompt: 'Write a short story about a cat.',
   telemetry: {
     recordInputs: false,

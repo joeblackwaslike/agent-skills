@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-speech.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "37dcd822536c925b191676e826ebbcae17132dc9e9d293a85cd4c0966964b71c"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "4c2e674667ecac545e1ae4718ce58585e517cd1d5083418f650bf9aa4ef420d8"
 ---
 
 # `generateSpeech()`
@@ -13,7 +13,7 @@ import { generateSpeech } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
 const { audio } = await generateSpeech({
-  model: openai.speech('tts-1'),
+  model: openai.speech('gpt-4o-mini-tts'),
   text: 'Hello from the AI SDK!',
   voice: 'alloy',
 });
@@ -30,7 +30,7 @@ import { generateSpeech } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
 const { audio } = await generateSpeech({
-  model: openai.speech('tts-1'),
+  model: openai.speech('gpt-4o-mini-tts'),
   text: 'Hello from the AI SDK!',
   voice: 'alloy',
 });
@@ -80,7 +80,7 @@ const { audio } = await generateSpeech({
       type: 'string',
       isOptional: true,
       description:
-        'The output format to use for the speech e.g. "mp3", "wav", etc.',
+        'The output format to use for the speech, such as "mp3", "wav", or headerless "audio/l16", "audio/mulaw", and "audio/alaw". Supported formats and defaults vary by provider and model.',
     },
     {
       name: 'instructions',

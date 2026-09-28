@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/rsc/stream-updates-to-visual-interfaces.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "16b59a5774195e0c8cf1dc800bbbfc85e0ce45452dbd29e62ddf77799d6b4db3"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "5a5e5fabd2a51d3a51f6fa36e7f74022a6df8e4f52d95f81be9277aa120af2ce"
 ---
 
 # Stream Updates to Visual Interfaces
@@ -96,7 +96,7 @@ export async function continueConversation(
   const history = getMutableAIState();
 
   const result = await streamUI({
-    model: 'openai/gpt-5.4',
+    model: 'openai/gpt-6-astra',
     messages: [...history.get(), { role: 'user', content: input }],
     text: ({ content, done }) => {
       if (done) {

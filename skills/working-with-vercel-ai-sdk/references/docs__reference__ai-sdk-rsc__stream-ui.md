@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-rsc/stream-ui.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "68839c2eee0946499d4c5dc63436685d72a02ea1930e3b1ee6961d88ef734244"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "2e5ef4d2fa260aebf5788fc71526bb39ed5762631bf5e7d7e6d0d330b17a757e"
 ---
 
 # `streamUI`
@@ -27,7 +27,7 @@ To see `streamUI` in action, check out [these examples](#examples).
     {
       name: 'model',
       type: 'LanguageModel',
-      description: 'The language model to use. Example: openai("gpt-4.1")',
+      description: 'The language model to use. Example: openai("gpt-6-astra")',
     },
     {
       name: 'initial',

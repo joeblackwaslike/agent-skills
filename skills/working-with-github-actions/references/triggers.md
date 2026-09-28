@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/reference/workflows-and-actions/events-that-trigger-workflows.md"
-fetched_at: "2026-09-07T09:03:37.447Z"
-sha256: "8d4d849c8e4546cbb340e31b81ac823fad702ba328187544edcd9e52115bced9"
+fetched_at: "2026-09-28T10:42:29.141Z"
+sha256: "d0f123cf3774b30467a190b62a5c91aaa730b1c30cdb64a387f6b924d5a4d167"
 ---
 
 ## About events that trigger workflows
@@ -370,14 +370,17 @@ on:
 
 Runs your workflow when a pull request is added to a merge queue, which adds the pull request to a merge group. For more information see [AUTOTITLE](/pull-requests/how-tos/merge-and-close-pull-requests/merging-a-pull-request-with-a-merge-queue).
 
-For example, you can run a workflow when the `checks_requested` activity has occurred.
+You can use the `branches` or `branches-ignore` filter to configure your workflow to run only for merge groups that target specific branches. For more information, see [AUTOTITLE](/actions/using-workflows/workflow-syntax-for-github-actions#onmerge_groupbranchesbranches-ignore).
+
+For example, the following workflow runs when the `checks_requested` activity occurs for a merge group that targets `main`.
 
 ```yaml
 on:
   pull_request:
-    branches: [ "main" ]
+    branches: [main]
   merge_group:
     types: [checks_requested]
+    branches: [main]
 ```
 
 ## `milestone`

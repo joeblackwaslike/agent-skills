@@ -16,8 +16,8 @@ related:
 summary: Connect DeepSeek Harness to AI Gateway with the Vercel CLI or a YAML provider and model shortlist.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/deepseek.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "8aa22038fbbcca6f120959e19e6aca7367445826a0b2a24c100e30679fcfe23d"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "b2f59662783367c24a7af6df47fcdfd6ced0d5924c9937ac99e9135f4939856f"
 ---
 
 # DeepSeek Harness with AI Gateway
@@ -30,7 +30,6 @@ sha256: "8aa22038fbbcca6f120959e19e6aca7367445826a0b2a24c100e30679fcfe23d"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [DeepSeek V4.1 Flash now available on AI Gateway](https://vercel.com/changelog/deepseek-v4-1-flash-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fdeepseek&source_site=vercel-docs&relationship=related)
 - [Deep Agents CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepagents?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fdeepseek&source_site=vercel-docs&relationship=related) — Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
 - [OpenHands with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/openhands?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fdeepseek&source_site=vercel-docs&relationship=related) — Connect OpenHands to AI Gateway with the Vercel CLI or an OpenAI-compatible LLM configuration.
 - [Continue CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/continue?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fdeepseek&source_site=vercel-docs&relationship=related) — Connect Continue CLI to AI Gateway with the Vercel CLI or a YAML model configuration that reads your API key from the en

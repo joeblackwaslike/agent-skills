@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/node/call-tools.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "ccb9216b6c7573243baebbea30830660cd4204e72c5f1e56eccf815d576d810a"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "18199bd9edf154f09f8c1ed273da65d63ab54f0a9083e80675bc9fe9734927a8"
 ---
 
 # Call Tools
@@ -14,7 +14,7 @@ import { generateText, tool } from 'ai';
 import { z } from 'zod';
 
 const result = await generateText({
-  model: 'openai/gpt-4.1',
+  model: 'openai/gpt-6-astra',
   tools: {
     weather: tool({
       description: 'Get the weather in a location',
@@ -48,7 +48,7 @@ dotenv.config();
 
 async function main() {
   const result = await generateText({
-    model: 'openai/gpt-4o',
+    model: 'openai/gpt-4.1',
     maxOutputTokens: 512,
     tools: {
       weather: tool({
@@ -107,7 +107,7 @@ dotenv.config();
 
 async function main() {
   const result = await generateText({
-    model: 'openai/gpt-4o',
+    model: 'openai/gpt-4.1',
     maxOutputTokens: 512,
     tools: {
       weather: tool({

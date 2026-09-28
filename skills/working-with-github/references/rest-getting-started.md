@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/rest/using-the-rest-api/getting-started-with-the-rest-api.md"
-fetched_at: "2026-07-13T06:58:22.643Z"
-sha256: "6e886b1db7c8cf2b5c4a3565ce12917bc1abd8ecff16d422771289d540ce89ff"
+fetched_at: "2026-09-28T10:42:53.812Z"
+sha256: "21aa4e0573a5ec3d293f33e9bdf477a853187204d6c7d32b1d0b3a56f2012769"
 ---
 
 ## Introduction
@@ -122,7 +122,7 @@ Many endpoints require authentication or return additional information if you ar
 
 {% curl %}
 
-To authenticate your request, you will need to provide an authentication token with the required scopes or permissions. There a few different ways to get a token: You can create a {% data variables.product.pat_generic %}, generate a token with a {% data variables.product.prodname_github_app %}, or use the built-in `GITHUB_TOKEN` in a {% data variables.product.prodname_actions %} workflow. For more information, see [AUTOTITLE](/rest/authentication/authenticating-to-the-rest-api).
+To authenticate your request, you will need to provide an authentication token with the required scopes or permissions. There are a few different ways to get a token: You can create a {% data variables.product.pat_generic %}, generate a token with a {% data variables.product.prodname_github_app %}, or use the built-in `GITHUB_TOKEN` in a {% data variables.product.prodname_actions %} workflow. For more information, see [AUTOTITLE](/rest/authentication/authenticating-to-the-rest-api).
 
 For an example of a request that uses an authentication token, see [Making a request](#making-a-request).
 
@@ -142,7 +142,7 @@ Although some REST API endpoints are accessible without authentication, {% data 
 
 {% javascript %}
 
-To authenticate your request, you will need to provide an authentication token with the required scopes or permissions. There a few different ways to get a token: You can create a {% data variables.product.pat_generic %}, generate a token with a {% data variables.product.prodname_github_app %}, or use the built-in `GITHUB_TOKEN` in a {% data variables.product.prodname_actions %} workflow. For more information, see [AUTOTITLE](/rest/authentication/authenticating-to-the-rest-api).
+To authenticate your request, you will need to provide an authentication token with the required scopes or permissions. There are a few different ways to get a token: You can create a {% data variables.product.pat_generic %}, generate a token with a {% data variables.product.prodname_github_app %}, or use the built-in `GITHUB_TOKEN` in a {% data variables.product.prodname_actions %} workflow. For more information, see [AUTOTITLE](/rest/authentication/authenticating-to-the-rest-api).
 
 For an example of a request that uses an authentication token, see [Making a request](#making-a-request).
 

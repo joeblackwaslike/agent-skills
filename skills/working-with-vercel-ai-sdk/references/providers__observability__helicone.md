@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/helicone.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "9a4728832be86a3e4d470df6991ce29d68dff8c0d50b7c22b1b1a973bb3836b8"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "9abd867e4d6c84e47048b3a6ff81b15393721668d8c7123787f44b9889693d15"
 ---
 
 # Helicone Observability
@@ -96,7 +96,7 @@ const helicone = createHelicone({
 });
 
 const result = await generateText({
-  model: helicone('gpt-4o-mini', {
+  model: helicone('gpt-6-luna', {
     extraBody: {
       helicone: {
         userId: 'user@example.com',
@@ -129,7 +129,7 @@ const helicone = createHelicone({
 });
 
 const result = await generateText({
-  model: helicone('gpt-4o-mini', {
+  model: helicone('gpt-6-luna', {
     extraBody: {
       helicone: {
         properties: {
@@ -167,7 +167,7 @@ const helicone = createHelicone({
 });
 
 const result = await generateText({
-  model: helicone('gpt-4o-mini', {
+  model: helicone('gpt-6-luna', {
     extraBody: {
       helicone: {
         sessionId: 'convo-123',
@@ -205,7 +205,7 @@ const helicone = createHelicone({
 });
 
 const result = await generateText({
-  model: helicone('gpt-4o-mini', {
+  model: helicone('gpt-6-luna', {
     extraBody: {
       helicone: {
         tags: ['customer-support', 'urgent'],
@@ -243,7 +243,7 @@ const helicone = createHelicone({
 });
 
 const result = await streamText({
-  model: helicone('gpt-4o-mini', {
+  model: helicone('gpt-6-luna', {
     extraBody: {
       helicone: {
         userId: 'user@example.com',

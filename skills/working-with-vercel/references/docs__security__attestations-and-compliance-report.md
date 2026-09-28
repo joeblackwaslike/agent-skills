@@ -13,8 +13,8 @@ related:
 summary: Learn how to preview and download Vercel compliance documents from the dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/attestations-and-compliance-report.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "fe8ca77244bb90b8ba3b8874a291fca31e6c4fba2258d3e2d97ad6c3a4fd870d"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "22a1c3488d3ef16aad687a7f8647075a5df58a4e680365da88b16a712c7b9f52"
 ---
 
 # Attestations and Compliance Report
@@ -30,7 +30,6 @@ Team members on Pro and Enterprise plans can preview and download Vercel's compl
 - [Does Vercel have a SOC 2 Type 2 attestation?](https://vercel.com/kb/guide/is-vercel-soc-2-compliant?from=related&source_path=%2Fdocs%2Fsecurity%2Fattestations-and-compliance-report&source_site=vercel-docs&relationship=related) — Vercel holds a SOC 2 Type 2 attestation for Security, Confidentiality, and Availability. See what the report covers, how
 - [Compliance documents are now available in Team settings](https://vercel.com/changelog/compliance-documents-are-now-available-in-team-settings?from=related&source_path=%2Fdocs%2Fsecurity%2Fattestations-and-compliance-report&source_site=vercel-docs&relationship=related)
 - [Vercel Security Dashboard is now generally available](https://vercel.com/changelog/vercel-security-dashboard-is-now-generally-available?from=related&source_path=%2Fdocs%2Fsecurity%2Fattestations-and-compliance-report&source_site=vercel-docs&relationship=related)
-- [Security](https://v0.app/docs/security?from=related&source_path=%2Fdocs%2Fsecurity%2Fattestations-and-compliance-report&source_site=vercel-docs&relationship=related) — Learn about v0's security practices, threat modeling, and enterprise security features.
 - [Security Dashboard](https://vercel.com/docs/security/security-dashboard?from=related&source_path=%2Fdocs%2Fsecurity%2Fattestations-and-compliance-report&source_site=vercel-docs&relationship=related) — The Security Dashboard aggregates the security posture of every account and project on your team, flags misconfiguration
 - [Get certs](https://vercel.com/docs/rest-api/certs/get-certs?from=related&source_path=%2Fdocs%2Fsecurity%2Fattestations-and-compliance-report&source_site=vercel-docs&relationship=related) — GET /v8/certs — Get certs
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fsecurity%2Fattestations-and-compliance-report&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit

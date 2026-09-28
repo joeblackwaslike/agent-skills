@@ -16,8 +16,8 @@ related:
 summary: Learn about the Hobby plan and how it compares to the Pro plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/hobby.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "0987cc87e640c5b457ddc7e7f5fee82e4a845c02e718654eaaef783ca71dd2e2"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "1ee3ef01f55bbe13ab5c0ef3c5e13e92ef54913a888d1d1d66eb3aae3d690ad0"
 ---
 
 # Vercel Hobby Plan
@@ -30,15 +30,16 @@ The Hobby plan is **free** and aimed at developers with personal projects, and s
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Agent Runs](https://eve.dev/docs/observability/agent-runs?from=related&source_path=%2Fdocs%2Fplans%2Fhobby&source_site=vercel-docs&relationship=related) — Inspect eve sessions in Vercel and configure the Agent Runs destination.
 - [Why has my account or deployment been paused?](https://vercel.com/kb/guide/why-is-my-account-deployment-blocked?from=related&source_path=%2Fdocs%2Fplans%2Fhobby&source_site=vercel-docs&relationship=related) — Learn why a Vercel account or deployment gets paused, from budget and usage limits to policy violations, and how to resu
 - [A more flexible Pro plan for modern teams](https://vercel.com/blog/new-pro-pricing-plan?from=related&source_path=%2Fdocs%2Fplans%2Fhobby&source_site=vercel-docs&relationship=related)
 - [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing?from=related&source_path=%2Fdocs%2Fplans%2Fhobby&source_site=vercel-docs&relationship=related)
-- [Included Pro usage is now credit-based](https://vercel.com/changelog/included-pro-usage-is-now-credit-based?from=related&source_path=%2Fdocs%2Fplans%2Fhobby&source_site=vercel-docs&relationship=related)
+- [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Fplans%2Fhobby&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fplans%2Fhobby&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing?from=related&source_path=%2Fdocs%2Fplans%2Fhobby&source_site=vercel-docs&relationship=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 - [Account Management](https://vercel.com/docs/accounts?from=related&source_path=%2Fdocs%2Fplans%2Fhobby&source_site=vercel-docs&relationship=related) — Learn how to manage your Vercel account and team members.
 - [Observability Plus](https://vercel.com/docs/observability/observability-plus?from=related&source_path=%2Fdocs%2Fplans%2Fhobby&source_site=vercel-docs&relationship=related) — Learn about using Observability Plus and its limits.
-- [Free Domain with Pro](https://vercel.com/docs/domains/free-domain-with-pro?from=related&source_path=%2Fdocs%2Fplans%2Fhobby&source_site=vercel-docs&relationship=related) — Every paid Pro team gets one free first-year custom domain on an eligible TLD. Claim yours at checkout or from domain se
+- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fplans%2Fhobby&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 
 Full cross-link map for this page: [/docs/plans/hobby.graph.md](/docs/plans/hobby.graph.md?from=related&source_path=%2Fdocs%2Fplans%2Fhobby&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

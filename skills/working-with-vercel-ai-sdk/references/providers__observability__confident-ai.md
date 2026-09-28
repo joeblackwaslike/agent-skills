@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/confident-ai.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "0fea6d87871778b9bdf8097bbdc5d3bfc2520949ed8eb7ccf6553c34ba5ae05a"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "cd428f2cc2f39c513295767a696ac5241be2e6824084e9a9baff638357a47198"
 ---
 
 # Confident AI Observability
@@ -75,7 +75,7 @@ registerTelemetry(new OpenTelemetry({ tracer: createVercelAITracer() }));
 
 try {
   const { text } = await generateText({
-    model: openai('gpt-4o'),
+    model: openai('gpt-6-astra'),
     prompt: 'How do you make the best coffee?',
   });
   console.log(text);
@@ -143,7 +143,7 @@ const { text } = await traceContext(
   },
   () =>
     generateText({
-      model: openai('gpt-4o'),
+      model: openai('gpt-6-astra'),
       prompt: 'How do you make the best coffee?',
     }),
 );
@@ -161,7 +161,7 @@ import { turn, updateTrace } from 'confident-trace';
 async function chat(prompt: string, threadId: string) {
   return turn({ name: 'chat', threadId }, async () => {
     const { text } = await generateText({
-      model: openai('gpt-4o'),
+      model: openai('gpt-6-astra'),
       prompt,
     });
     updateTrace({ input: prompt, output: text });

@@ -15,8 +15,8 @@ related:
 summary: Give each AI agent an isolated Linux user in a Vercel Sandbox with the @vercel/sandbox createUser, createGroup, and asUser methods, then share files...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/multi-agent.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "441b0e187dd71878d535b7789fa031cbdbf545fcf61ccce285b26803052aa64f"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "117673eb8648e5bd2b42a78d07c4c71e79a94beb6f20bc5a8bf3e106ad536e64"
 ---
 
 # Run isolated AI agents in one sandbox
@@ -30,9 +30,10 @@ Run several AI agents in one sandbox, each as its own Linux user with a private 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Run multiple isolated agents in a single Sandbox](https://vercel.com/changelog/run-multiple-isolated-agents-in-a-single-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fmulti-agent&source_site=vercel-docs&relationship=related)
+- [Run a research workspace on Vercel](https://vercel.com/kb/guide/run-research-workspace-vercel?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fmulti-agent&source_site=vercel-docs&relationship=related) — Plan a durable research workspace on Vercel's Agentic Infrastructure with Workflows, internal API tools, Vercel Sandbox
 - [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fmulti-agent&source_site=vercel-docs&relationship=related)
-- [Using TanStack AI with Vercel Sandbox](https://vercel.com/kb/guide/tanstack-ai-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fmulti-agent&source_site=vercel-docs&relationship=related) — Run coding agents in isolated Vercel Sandbox microVMs with the @tanstack/ai-sandbox-vercel provider, with durable resume
 - [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fmulti-agent&source_site=vercel-docs&relationship=related) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
+- [Sandbox](https://eve.dev/docs/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fmulti-agent&source_site=vercel-docs&relationship=related) — Configure the isolated filesystem and command environment used by an eve agent.
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fmulti-agent&source_site=vercel-docs&relationship=related) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
 - [Safely running AI generated code in your Next.js application](https://vercel.com/kb/guide/running-ai-generated-code-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fmulti-agent&source_site=vercel-docs&relationship=related) — How to execute untrusted, AI‑generated code from a Next.js app using Vercel Sandbox, an isolated, ephemeral environment.
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fmulti-agent&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.

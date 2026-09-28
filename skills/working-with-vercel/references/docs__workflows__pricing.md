@@ -16,8 +16,8 @@ related:
 summary: Understand how Vercel Workflows billing works and the limits that apply to runs, streams, and platform resources.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/workflows/pricing.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "42ade1e6629ff83e7c0de63ab7d049e69dda0d521fb8fc06a361b089f025749f"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "6d0c3f78849f9a7a5c0fda555ba0d49cb4eb69d07e3a0015335c74af62939a8d"
 ---
 
 # Workflow Pricing and Limits
@@ -32,16 +32,16 @@ Vercel bills Workflows usage across three resources:
 
 - [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
 - [How to migrate from Cloudflare Workflows to Vercel Workflows](https://vercel.com/kb/guide/migrate-cloudflare-workflows-to-vercel-workflows?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Migrate from Cloudflare Workflows to Vercel Workflows by mapping WorkflowEntrypoint, step.do, and waitForEvent to workfl
+- [Run a research workspace on Vercel](https://vercel.com/kb/guide/run-research-workspace-vercel?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Plan a durable research workspace on Vercel's Agentic Infrastructure with Workflows, internal API tools, Vercel Sandbox
 - [Workflow SDK vs AWS Bedrock AgentCore](https://workflow-sdk.dev/docs/comparisons/workflow-sdk-vs-aws-agentcore?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — AgentCore hosts and operates AI agents in isolated microVMs but is not a durable-execution engine. The Workflow SDK prov
 - [Workflow SDK vs AWS Step Functions](https://workflow-sdk.dev/docs/comparisons/workflow-sdk-vs-aws-step-functions?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — AWS Step Functions is a managed state-machine orchestrator authored in declarative ASL JSON. The Workflow SDK expresses
 - [Workflow SDK vs Cloudflare Workflows](https://workflow-sdk.dev/docs/comparisons/workflow-sdk-vs-cloudflare-workflows?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Cloudflare Workflows is a durable engine on Workers and Durable Objects. It and the Workflow SDK both replay, but differ
-- [Workflow SDK vs Inngest](https://workflow-sdk.dev/docs/comparisons/workflow-sdk-vs-inngest?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Inngest is an event-driven durable-functions platform that invokes your code over HTTP and memoizes step results. The Wo
 - [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
+- [How to run background jobs in Next.js](https://vercel.com/kb/guide/how-to-run-background-jobs-in-nextjs-on-vercel?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Learn the durable way to run background jobs in Next.js on Vercel with the Workflow SDK, and when to reach for Queues or
 - [Limits](https://vercel.com/docs/limits?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
-- [Pricing and Limits](https://vercel.com/docs/eve/pricing?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Understand how eve usage maps to Vercel resources and inherited platform limits.
 - [Workflow Concepts](https://vercel.com/docs/workflows/concepts?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Learn how workflows, steps, sleeps, and hooks work together to build durable applications.
+- [Pricing and Limits](https://vercel.com/docs/eve/pricing?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Understand how eve usage maps to Vercel resources and inherited platform limits.
 - [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
-- [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 
 Full cross-link map for this page: [/docs/workflows/pricing.graph.md](/docs/workflows/pricing.graph.md?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -132,9 +132,9 @@ This means hitting the rate limit will not cause your workflow to fail, but it w
 
 | Plan       | Requests per minute |
 | ---------- | ------------------- |
-| Hobby      | 100,000             |
-| Pro        | 1,000,000           |
-| Enterprise | 5,000,000           |
+| Hobby      | 50,000              |
+| Pro        | 500,000             |
+| Enterprise | 2,500,000           |
 
 
 ---

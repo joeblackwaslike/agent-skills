@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/env.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "211603cc2e4e16fd72cef29c65f0c53eb891f5eb41f9c2405b4935acacc70826"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "75a98d1c5760c998475c1300ac5136d63b3118038cf960308b11657f957d91ab"
 ---
 
 # vercel env
@@ -31,6 +31,7 @@ The `vercel env` command is used to manage [Environment Variables](/docs/environ
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related&source_path=%2Fdocs%2Fcli%2Fenv&source_site=vercel-docs&relationship=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
+- [Route form submissions with Jev and AI SDK](https://vercel.com/kb/guide/jev-ai-sdk-form-router?from=related&source_path=%2Fdocs%2Fcli%2Fenv&source_site=vercel-docs&relationship=related) — Route form submissions to the right team with the Jev x AI SDK Form Router template. Jev routes clear cases and a fallba
 - [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare?from=related&source_path=%2Fdocs%2Fcli%2Fenv&source_site=vercel-docs&relationship=related) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
 - [How do I use private dependencies with Vercel?](https://vercel.com/kb/guide/using-private-dependencies-with-vercel?from=related&source_path=%2Fdocs%2Fcli%2Fenv&source_site=vercel-docs&relationship=related) — Information on how to use private dependencies with a Vercel deployment.
 - [vercel pull](https://vercel.com/docs/cli/pull?from=related&source_path=%2Fdocs%2Fcli%2Fenv&source_site=vercel-docs&relationship=related) — Learn how to update your local project with remote environment variables using the vercel pull CLI command.

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-tui/run-agent-tui.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "ae8b9d3368d26df3804dbcf7a18f585a9e96a656bb6703ece72ab409d3cc7348"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "5a50c273c8d3b08643d6b29d6559c690438d0aab33bdffc86489d5cea02588b7"
 ---
 
 # `runAgentTUI()`
@@ -18,7 +18,7 @@ import { runAgentTUI } from '@ai-sdk/tui';
 import { ToolLoopAgent } from 'ai';
 
 const agent = new ToolLoopAgent({
-  model: openai('gpt-5'),
+  model: openai('gpt-6-astra'),
   instructions: 'You are a helpful terminal assistant.',
 });
 
@@ -192,17 +192,21 @@ await runAgentTUI({
 ## Example with Sandbox
 
 ```ts
-import { createJustBashSandbox } from '@ai-sdk/sandbox-just-bash';
+import { createJustBashNetworkSandboxSession } from '@ai-sdk/sandbox-just-bash';
 
-const sandboxSession = await createJustBashSandbox({
+const sandboxSession = await createJustBashNetworkSandboxSession({
   cwd: '/home/user',
-}).createSession();
-
-await runAgentTUI({
-  title: 'Sandbox Assistant',
-  agent,
-  sandbox: sandboxSession.restricted(),
 });
+
+try {
+  await runAgentTUI({
+    title: 'Sandbox Assistant',
+    agent,
+    sandbox: sandboxSession.restricted(),
+  });
+} finally {
+  await sandboxSession.destroy();
+}
 ```
 
 The sandbox is forwarded to every `agent.stream()` call as

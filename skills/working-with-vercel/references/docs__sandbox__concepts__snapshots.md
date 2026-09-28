@@ -17,8 +17,8 @@ related:
 summary: Save and restore sandbox state with snapshots for faster startups and environment sharing.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/snapshots.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "0b561518759e85eca7d6479df99ef6a57a0c3b7f1a0efe406a7c2dfc09c2b5f5"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "a55e0ee19ae663bf452f80f7e6d4b9795a2269af8887c88995518b2b0301a540"
 ---
 
 # Snapshots
@@ -101,9 +101,9 @@ Call `snapshot()` on a running sandbox:
 
 > **💡 Note:** Once you create a snapshot, the sandbox shuts down automatically and becomes unreachable. You don't need to stop it afterwards.
 
-**CLI**
+**terminal.sh**
 
-```bash
+```bash filename="terminal.sh"
 # Create a snapshot of a running sandbox (by name)
 sandbox snapshot my-sandbox --stop
 
@@ -114,11 +114,9 @@ sandbox snapshot my-sandbox --stop --expiration 14d
 sandbox snapshot my-sandbox --stop --expiration 0
 ```
 
-The `--stop` flag confirms that the sandbox will be stopped when snapshotting. By default, snapshots expire 30 days after their last use. Use `--expiration` (e.g. `--expiration 14d`) to set a custom expiration time, or `--expiration 0` to never expire the snapshot.
+**index.ts**
 
-**TypeScript**
-
-```ts
+```ts filename="index.ts"
 import { Sandbox } from '@vercel/sandbox';
 import ms from 'ms';
 
@@ -132,9 +130,9 @@ const snapshot = await sandbox.snapshot({ expiration: ms('14d') });
 console.log(snapshot.snapshotId);
 ```
 
-**Python**
+**main.py**
 
-```python filename="main.py"
+```py filename="main.py"
 import asyncio
 from datetime import timedelta
 
@@ -155,27 +153,29 @@ async def main() -> None:
 asyncio.run(main())
 ```
 
+In the CLI, the `--stop` flag confirms that the sandbox will stop when snapshotting. Snapshots expire 30 days after their last use by default. Use `--expiration` (for example, `--expiration 14d`) to set a custom expiration time, or `--expiration 0` to prevent the snapshot from expiring.
+
 ## Create a sandbox from a snapshot
 
 Pass the snapshot ID when creating a new sandbox:
 
-**CLI**
+**terminal.sh**
 
-```bash
+```bash filename="terminal.sh"
 sandbox create --snapshot snap_abc123
 ```
 
-**TypeScript**
+**index.ts**
 
-```ts
+```ts filename="index.ts"
 const sandbox = await Sandbox.create({
   source: { type: 'snapshot', snapshotId: 'snap_abc123' },
 });
 ```
 
-**Python**
+**main.py**
 
-```python filename="main.py"
+```py filename="main.py"
 import asyncio
 
 from vercel import sandbox
@@ -204,9 +204,9 @@ Read the regions where a snapshot is available with the `snapshot.regions` acces
 
 View all snapshots for your project:
 
-**CLI**
+**terminal.sh**
 
-```bash
+```bash filename="terminal.sh"
 # List snapshots for the current project
 sandbox snapshots list
 
@@ -214,9 +214,9 @@ sandbox snapshots list
 sandbox snapshots list --project my-app
 ```
 
-**TypeScript**
+**index.ts**
 
-```ts
+```ts filename="index.ts"
 import { Snapshot } from '@vercel/sandbox';
 
 // Auto-paginates through every page
@@ -229,9 +229,9 @@ for await (const snapshot of result) {
 const forSandbox = await Snapshot.list({ name: 'my-sandbox' });
 ```
 
-**Python**
+**main.py**
 
-```python filename="main.py"
+```py filename="main.py"
 import asyncio
 
 from vercel import sandbox
@@ -249,26 +249,24 @@ asyncio.run(main())
 
 Look up a snapshot by ID:
 
-**CLI**
+**terminal.sh**
 
-The CLI doesn't support retrieving a single snapshot by ID. Use `sandbox snapshots list` to view all snapshots for your project:
-
-```bash
+```bash filename="terminal.sh"
 sandbox snapshots list
 ```
 
-**TypeScript**
+**index.ts**
 
-```ts
+```ts filename="index.ts"
 import { Snapshot } from '@vercel/sandbox';
 
 const snapshot = await Snapshot.get({ snapshotId: 'snap_abc123' });
 console.log(snapshot.status); // "created" | "deleted" | "failed"
 ```
 
-**Python**
+**main.py**
 
-```python filename="main.py"
+```py filename="main.py"
 import asyncio
 
 from vercel import sandbox
@@ -282,13 +280,15 @@ async def main() -> None:
 asyncio.run(main())
 ```
 
+The CLI doesn't support retrieving a single snapshot by ID. Use `sandbox snapshots list` to view all snapshots for your project.
+
 ## Delete a snapshot
 
 Remove snapshots you no longer need:
 
-**CLI**
+**terminal.sh**
 
-```bash
+```bash filename="terminal.sh"
 # Delete a single snapshot
 sandbox snapshots delete snap_abc123
 
@@ -296,15 +296,15 @@ sandbox snapshots delete snap_abc123
 sandbox snapshots delete snap_abc123 snap_def456
 ```
 
-**TypeScript**
+**index.ts**
 
-```ts
+```ts filename="index.ts"
 await snapshot.delete();
 ```
 
-**Python**
+**main.py**
 
-```python filename="main.py"
+```py filename="main.py"
 import asyncio
 
 from vercel import sandbox

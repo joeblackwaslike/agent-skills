@@ -12,8 +12,8 @@ related:
 summary: Learn how the consent page works when users authorize your app
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/consent-page.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "b259b41f084897315c762bdadb5de2a590190af9275c03856996ea6f25210259"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "1a71e0e4172cb234e88934b7126c4e5550cc63b78c91f42f83ed5049dc782c60"
 ---
 
 # Consent Page
@@ -30,7 +30,7 @@ When users sign in to your application for the first time, Vercel shows them a c
 - [Scopes and Permissions](https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fconsent-page&source_site=vercel-docs&relationship=related) — Learn how to manage scopes and permissions for Sign in with Vercel
 - [AI SDK and MCP](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fconsent-page&source_site=vercel-docs&relationship=related) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
 - [Troubleshooting Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel/troubleshooting?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fconsent-page&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot common errors with Sign in with Vercel
-- [Vercel Connect product terms](https://vercel.com/docs/connect/legal?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fconsent-page&source_site=vercel-docs&relationship=related) — Product terms governing your use of Vercel Connect, including Customer Managed Connectors, Vercel Managed Connectors, an
+- [vercel signup](https://vercel.com/docs/cli/signup?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fconsent-page&source_site=vercel-docs&relationship=related) — Learn how to create a new Vercel account using the vercel signup CLI command.
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel/consent-page.graph.md](/docs/sign-in-with-vercel/consent-page.graph.md?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fconsent-page&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

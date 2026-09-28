@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/validate-ui-messages.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "1a0efdf6e898ef4c4c23112248624d0ff2641eb6f07debc02ca4b03298550a0d"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "632c5e09e3bf21601e66a1c79e3343162027c07429eda6ebf63a5fa5075810cf"
 ---
 
 # `validateUIMessages`
@@ -98,6 +98,24 @@ const validatedMessages = await validateUIMessages({
   metadataSchema,
   dataSchemas,
   tools,
+});
+```
+
+When validating approval messages produced with
+`experimental_refineToolInput`, pass the same refinement functions so
+`validateUIMessages` can reconstruct and verify the approved input:
+
+```typescript
+const experimental_refineToolInput = {
+  weather: (input: { location: string }) => ({
+    location: input.location.trim(),
+  }),
+};
+
+const validatedMessages = await validateUIMessages({
+  messages,
+  tools,
+  experimental_refineToolInput,
 });
 ```
 

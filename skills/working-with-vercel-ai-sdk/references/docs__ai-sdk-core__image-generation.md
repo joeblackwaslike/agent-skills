@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/image-generation.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "79aa7abf75e817b40bebdf49848fc089c4a76df2edf0b8ca922959ecfb16208c"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "8d50795897b57a914bd52087663bacf45b6854e1aba89029d11f11e468b0b9fb"
 ---
 
 # Image Generation
@@ -287,7 +287,7 @@ const { image } = await generateImage({
 
 ## Generating Images with Language Models
 
-Some language models such as Google `gemini-2.5-flash-image` support multi-modal outputs including images.
+Some language models such as Google `gemini-3.1-flash-image-preview` support multi-modal outputs including images.
 With such models, you can access the generated images using the `files` property of the response.
 
 ```ts
@@ -295,7 +295,7 @@ import { google } from '@ai-sdk/google';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: google('gemini-2.5-flash-image'),
+  model: google('gemini-3.1-flash-image-preview'),
   prompt: 'Generate an image of a comic cat',
 });
 

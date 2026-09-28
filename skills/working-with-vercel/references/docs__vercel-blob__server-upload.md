@@ -14,8 +14,8 @@ related:
 summary: Learn how to upload files to Vercel Blob using Server Actions and Route Handlers
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/server-upload.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "44f1ff4106381cb53bb5555ea1b1f4864865e326388476cf21b4456f055178f3"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "cf16f7e7fc22a2e67614c309cc864bbc0f90beab95dea0b7a0be2b20d49f955b"
 ---
 
 # Server Uploads with Vercel Blob
@@ -90,7 +90,7 @@ pip install vercel
 
 - ### Create a Blob store
   1. Go to your project's [**Storage** section in the sidebar](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fstores\&title=Go+to+Storage)
-  2. Select **Create Database**, then choose **Blob**
+  2. Select **Create Storage**, then choose **Blob**
   3. Select **Continue**, then set the access to **Private** or **Public**
   4. Use the name "Images" and select **Create a new Blob store**
   5. Select the environments where you would like the read-write token to be included. **Production** and **Preview** are preselected; include **Development** if you plan to work with the store locally. You can also update the prefix of the Environment Variable in Advanced Options

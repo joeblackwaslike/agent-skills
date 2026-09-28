@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/telemetry.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "9b0e454803e236a8a9e19e952a2759fb5f21bd911bf7e372472a17e97b3e4bb7"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "f35f0ac750cc7231f272f2fc6a54ea1beea01c41d2e5b94fa8c6ca28aba2fa54"
 ---
 
 # Telemetry
@@ -127,7 +127,7 @@ const result = await generateText({
 });
 ```
 
-In this example, telemetry integrations receive `runtimeContext` as `{ requestId: 'req_abc' }`. Properties set to `false` or omitted are excluded. If `telemetry.includeRuntimeContext` is omitted, no runtime context properties are included. `telemetry.includeRuntimeContext` is supported by `generateText`, `streamText`, `ToolLoopAgent`, `embed`, `embedMany`, and `rerank`.
+In this example, telemetry integrations receive `runtimeContext` as `{ requestId: 'req_abc' }`. Properties set to `false` or omitted are excluded. If `telemetry.includeRuntimeContext` is omitted, no runtime context properties are included. `telemetry.includeRuntimeContext` is supported by `generateText`, `streamText`, `ToolLoopAgent`, `embed`, `embedMany`, `rerank`, and `experimental_evaluate`.
 
 <Note>
   `telemetry.includeRuntimeContext` only filters telemetry integrations,
@@ -236,7 +236,7 @@ import { streamText } from 'ai';
 import { DevToolsTelemetry } from '@ai-sdk/devtools';
 
 const result = streamText({
-  model: openai('gpt-4o'),
+  model: openai('gpt-6-astra'),
   prompt: 'Hello!',
   telemetry: {
     integrations: [DevToolsTelemetry()],
@@ -385,6 +385,29 @@ export function myIntegration(): Telemetry {
       description: 'Called when an individual reranking model call completes.',
     },
     {
+      name: 'experimental_onEvaluateStart',
+      type: '(event: Experimental_EvaluateStartEvent) => void | PromiseLike<void>',
+      description: 'Called when an experimental evaluation operation begins.',
+    },
+    {
+      name: 'experimental_onEvaluationModelCallStart',
+      type: '(event: Experimental_EvaluationModelCallStartEvent) => void | PromiseLike<void>',
+      description:
+        'Called when the logical evaluation model call begins. The call includes any provider retries.',
+    },
+    {
+      name: 'experimental_onEvaluationModelCallEnd',
+      type: '(event: Experimental_EvaluationModelCallEndEvent) => void | PromiseLike<void>',
+      description:
+        'Called when the logical evaluation model call, including any retries, completes.',
+    },
+    {
+      name: 'experimental_onEvaluateEnd',
+      type: '(event: Experimental_EvaluateEndEvent) => void | PromiseLike<void>',
+      description:
+        'Called when an experimental evaluation operation completes.',
+    },
+    {
       name: 'onEnd',
       type: '(event: GenerateTextEndEvent) => void | PromiseLike<void>',
       description:
@@ -398,6 +421,9 @@ export function myIntegration(): Telemetry {
     },
   ]}
 />
+
+Experimental evaluation events use the four `experimental_*` callbacks above.
+They are not included in the stable `onStart` and `onEnd` event unions.
 
 The event types for each method are the same as the corresponding [lifecycle callbacks](/docs/ai-sdk-core/lifecycle-callbacks). See the lifecycle callbacks documentation for the full property reference of each event.
 
@@ -525,6 +551,31 @@ For `rerank`, the integration records spans with `CLIENT` kind:
   - `gen_ai.provider.name`: the provider
   - `gen_ai.request.model`: the model ID
 
+#### experimental_evaluate
+
+For `experimental_evaluate`, the integration records two spans with `CLIENT`
+kind: an **`evaluate {modelId}`** root span for the whole operation and one
+**`evaluate {modelId}`** child span for evaluation model work, including
+retries. Both include the provider and requested model with
+`gen_ai.operation.name: "evaluate"`. Token
+usage is recorded on the child span. When evaluation attributes are enabled,
+answers are recorded on both spans so the operation span contains its output.
+
+`evaluate` is an AI SDK-defined custom operation name, not a well-known
+OpenTelemetry GenAI operation. OpenTelemetry permits custom operation names
+when no well-known value describes the operation.
+
+OpenTelemetry's `gen_ai.evaluation.result` event describes the result of
+evaluating a GenAI output for quality or other characteristics. In contrast,
+`experimental_evaluate` can evaluate arbitrary JSON state for classification,
+routing, scoring, and similar tasks. The integration therefore does not emit a
+`gen_ai.evaluation.result` event.
+
+Evaluation state, questions, and answers also do not have applicable GenAI
+semantic-convention attributes. Enable the `experimental_evaluation`
+supplemental option to record them under AI SDK-specific
+`ai.evaluation.*` attributes.
+
 #### GenAI span details
 
 ##### GenAI message format
@@ -580,10 +631,10 @@ registerTelemetry(
 
 The callback runs when each span is created and receives:
 
-- `spanType`: the type of span being created (`operation`, `step`, `languageModel`, `tool`, `embedding`, or `reranking`).
+- `spanType`: the type of span being created (`operation`, `step`, `languageModel`, `tool`, `embedding`, `reranking`, or `experimental_evaluation`).
 - `operationId`: the AI SDK operation ID for the current call, such as `ai.generateText` or `ai.streamText`.
 - `callId`: the unique ID for the current AI SDK call.
-- `runtimeContext`: the telemetry-filtered runtime context for text generation, embedding, and reranking spans. Text generation spans also reflect updates from `prepareStep`.
+- `runtimeContext`: the telemetry-filtered runtime context for text generation, embedding, reranking, and evaluation spans. Text generation spans also reflect updates from `prepareStep`.
 
 Custom attributes are merged with AI SDK attributes on the span. AI SDK-owned
 attributes take precedence when a custom attribute uses the same key.
@@ -643,6 +694,7 @@ registerTelemetry(
     providerMetadata: true,
     embedding: true,
     reranking: true,
+    experimental_evaluation: true,
     runtimeContext: true,
     headers: true,
     toolChoice: true,
@@ -657,6 +709,7 @@ The available options are:
 - `providerMetadata`: `ai.response.providerMetadata` on operation, step, and model-call spans.
 - `embedding`: embedding inputs and outputs.
 - `reranking`: rerank input documents and ranking output.
+- `experimental_evaluation`: experimental evaluation state, questions, and answers.
 - `runtimeContext`: `ai.settings.context.*`.
 - `headers`: `ai.request.headers.*`.
 - `toolChoice`: `ai.prompt.toolChoice`.

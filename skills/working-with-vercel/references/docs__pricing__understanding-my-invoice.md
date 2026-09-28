@@ -15,8 +15,8 @@ related:
 summary: Learn how Vercel invoices are structured for Pro and Enterprise plans, including plan charges, credits, and usage-based resources.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/understanding-my-invoice.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "f8175abe36f11911490f6eaab79f233735689fb1fa5fbea1948538bb359be194"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "cda3e0b6a4fe4e5f009826c1d55b13d8e5b49a0ec94be8367eacfb32b2bb1bbf"
 ---
 
 # Billing & Invoices
@@ -34,7 +34,6 @@ You can view your current invoice from the **Settings** section in your dashboar
 - [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing?from=related&source_path=%2Fdocs%2Fpricing%2Funderstanding-my-invoice&source_site=vercel-docs&relationship=related)
 - [Billing FAQ for Enterprise Plan](https://vercel.com/docs/plans/enterprise/billing?from=related&source_path=%2Fdocs%2Fpricing%2Funderstanding-my-invoice&source_site=vercel-docs&relationship=related) — This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
 - [Advanced Invoice Settings](https://vercel.com/blog/advanced-invoice-settings?from=related&source_path=%2Fdocs%2Fpricing%2Funderstanding-my-invoice&source_site=vercel-docs&relationship=related)
-- [Pricing](https://v0.app/docs/pricing?from=related&source_path=%2Fdocs%2Fpricing%2Funderstanding-my-invoice&source_site=vercel-docs&relationship=related) — Understand the v0 plans, pricing, and usage limits.
 - [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing?from=related&source_path=%2Fdocs%2Fpricing%2Funderstanding-my-invoice&source_site=vercel-docs&relationship=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 - [Manage Billing and Refunds for Integrations](https://vercel.com/docs/integrations/create-integration/billing?from=related&source_path=%2Fdocs%2Fpricing%2Funderstanding-my-invoice&source_site=vercel-docs&relationship=related) — Learn how billing works for native integrations, including invoice lifecycle, pricing models, and refunds.
 - [Account Plans on Vercel](https://vercel.com/docs/plans?from=related&source_path=%2Fdocs%2Fpricing%2Funderstanding-my-invoice&source_site=vercel-docs&relationship=related) — Learn about the different plans available on Vercel.

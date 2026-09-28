@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/sentry.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "fb749429da904320a5679d26f674ba5068cce54f31b23a1b6408617591f93914"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "3346f8de4516a9b1ef2eade6df7a18c47e99a8ab95a52661ac259c136514aaf1"
 ---
 
 # Sentry Observability
@@ -103,7 +103,7 @@ export const runtime = 'nodejs';
 
 export async function POST() {
   const result = await generateText({
-    model: anthropic('claude-sonnet-4-5'),
+    model: anthropic('claude-sonnet-5'),
     prompt: 'What is the weather in Tokyo?',
     telemetry: {
       functionId: 'anthropic-weather-demo',
@@ -125,7 +125,7 @@ import { generateText } from 'ai';
 
 await Sentry.startSpan({ name: 'ai-sdk-demo' }, async () => {
   const result = await generateText({
-    model: openai('gpt-5-mini'),
+    model: openai('gpt-6-luna'),
     prompt: 'Write a haiku about observability.',
     telemetry: {
       functionId: 'haiku-demo',
@@ -165,7 +165,7 @@ Or enable it for one AI SDK call with the `telemetry` option:
 
 ```ts
 const result = await generateText({
-  model: openai('gpt-5-mini'),
+  model: openai('gpt-6-luna'),
   prompt: 'Summarize this support ticket.',
   telemetry: {
     functionId: 'support-summary',

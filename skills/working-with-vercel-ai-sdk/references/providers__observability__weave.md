@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/weave.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "9b03b257933c21cb8ba37876901bc98971b8f1c255e8830bf3f2bf62497dbed7"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "fbca27f3a983d82f168142187f0f6b096d36dce2059149b7970e947ec0ed8477"
 ---
 
 # Weave Observability
@@ -59,7 +59,7 @@ import { generateText } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
 const result = await generateText({
-  model: openai('gpt-4o-mini'),
+  model: openai('gpt-6-luna'),
   prompt: 'What is 2 + 2?',
   telemetry: {
     metadata: {

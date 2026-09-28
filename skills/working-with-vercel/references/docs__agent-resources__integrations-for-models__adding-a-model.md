@@ -17,8 +17,8 @@ related:
 summary: Learn how to add a new AI model to your Vercel projects
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "c6f99db6e7f81b1fb6dbb5f4af41b0eebc6158772d6feb78690adea6d38adea3"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "1c21a41f5ef953bc94f32e531ca3172ec4dba23ac9f475941e86830620e74fd0"
 ---
 
 # Adding a Model
@@ -32,10 +32,10 @@ If you have integrations installed, scroll to the bottom to access the models ex
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing AI Integrations on Vercel](https://vercel.com/blog/ai-integrations?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fadding-a-model&source_site=vercel-docs&relationship=related)
-- [AI models](https://v0.app/docs/ai-models?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fadding-a-model&source_site=vercel-docs&relationship=related) — Add AI functionality to your v0 projects by integrating AI models and platforms.
 - [Groq, fal, and DeepInfra join the Vercel Marketplace ](https://vercel.com/changelog/groq-fal-and-deepinfra-join-the-vercel-marketplace?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fadding-a-model&source_site=vercel-docs&relationship=related)
 - [Adding a Provider](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-provider?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fadding-a-model&source_site=vercel-docs&relationship=related) — Learn how to add a new AI provider to your Vercel projects.
 - [Build with AI agents on Vercel](https://vercel.com/docs/agent-resources/integrations-for-agents?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fadding-a-model&source_site=vercel-docs&relationship=related) — Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
+- [Vercel AI Gateway: Models, Routing, and Observability](https://vercel.com/docs/ai-gateway?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fadding-a-model&source_site=vercel-docs&relationship=related) — Call AI models from any infrastructure through a managed gateway. Centralize credentials, request logs, spend budgets, r
 - [Vercel Integrations](https://vercel.com/docs/integrations?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fadding-a-model&source_site=vercel-docs&relationship=related) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte
 
 Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/adding-a-model.graph.md](/docs/agent-resources/integrations-for-models/adding-a-model.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fadding-a-model&source_site=vercel-docs&relationship=graph)

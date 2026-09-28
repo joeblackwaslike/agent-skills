@@ -17,8 +17,8 @@ related:
 summary: Discover model reasoning capabilities and configure effort across AI SDK, Chat Completions, Messages, and Responses with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "02e7d31c7e582669f174e1721c554e65d6642369ced19c2cc4744d2f324aca80"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "e36743865afed7aa5caa1d652bf05b19817ea8e63766f6f24770a04b2b156894"
 ---
 
 # AI Gateway Reasoning
@@ -31,9 +31,9 @@ Control how much a model reasons before answering. Use the [model catalog](https
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning&source_site=vercel-docs&relationship=related)
 - [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning&source_site=vercel-docs&relationship=related)
 - [Anthropic](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning&source_site=vercel-docs&relationship=related)
-- [OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning&source_site=vercel-docs&relationship=related)
 - [Cohere](https://ai-sdk.dev/providers/ai-sdk-providers/cohere?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning&source_site=vercel-docs&relationship=related)
 - [Moonshot AI](https://ai-sdk.dev/providers/ai-sdk-providers/moonshotai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning&source_site=vercel-docs&relationship=related)
 - [OpenResponses Reasoning with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning&source_site=vercel-docs&relationship=related) — Control how much a reasoning model thinks before answering with the OpenResponses API through AI Gateway.

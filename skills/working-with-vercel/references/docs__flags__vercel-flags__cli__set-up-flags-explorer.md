@@ -15,8 +15,8 @@ related:
 summary: Add the Flags Explorer to the Vercel Toolbar so you can override flag values on preview deployments without affecting other users.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/cli/set-up-flags-explorer.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "628674dc5c74b1b5be84f7cd5a821f687267be4d402c4b517039fd432c2e08e6"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "14876cdf5c7fd6c249df21327ef24aa0e321a8299af01918a6e148d0de473951"
 ---
 
 # Setting up Flags Explorer
@@ -31,8 +31,8 @@ The [Flags Explorer](/docs/flags/flags-explorer) adds a panel to the [Vercel Too
 
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Fset-up-flags-explorer&source_site=vercel-docs&relationship=related)
 - [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Fset-up-flags-explorer&source_site=vercel-docs&relationship=related) — Using the Flags SDK in SvelteKit
-- [Quickstart](https://flags-sdk.dev/docs/frameworks/next?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Fset-up-flags-explorer&source_site=vercel-docs&relationship=related) — Learn how to start using the Flags SDK in your Next.js project.
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Fset-up-flags-explorer&source_site=vercel-docs&relationship=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
+- [Quickstart](https://flags-sdk.dev/docs/frameworks/next?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Fset-up-flags-explorer&source_site=vercel-docs&relationship=related) — Learn how to start using the Flags SDK in your Next.js project.
 - [Flags Explorer is now generally available](https://vercel.com/changelog/flags-explorer-is-now-generally-available?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Fset-up-flags-explorer&source_site=vercel-docs&relationship=related)
 - [Using the Flags SDK with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Fset-up-flags-explorer&source_site=vercel-docs&relationship=related) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
 - [Draft Flags](https://vercel.com/docs/flags/vercel-flags/dashboard/drafts?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Fset-up-flags-explorer&source_site=vercel-docs&relationship=related) — Learn how draft flags work and how to promote them to Vercel Flags.

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/stream-text.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "c8b7a73ffe0d6c5a2745ad01f33ded08bc6c59dab68e8da4c75d620c85a6769c"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "22f63f87629b80896ffc77c6116be5083b3be050ae8196d8aa00deafcd37c402"
 ---
 
 # `streamText()`
@@ -43,7 +43,7 @@ To see `streamText` in action, check out [these examples](#examples).
     {
       name: 'model',
       type: 'LanguageModel',
-      description: "The language model to use. Example: openai('gpt-4.1')",
+      description: "The language model to use. Example: openai('gpt-6-astra')",
     },
     {
       name: 'instructions',
@@ -980,6 +980,13 @@ To see `streamText` in action, check out [these examples](#examples).
               type: 'NoSuchToolError | InvalidToolInputError',
               description:
                 'The error that occurred while parsing the tool call.',
+            },
+            {
+              name: 'abortSignal',
+              type: 'AbortSignal',
+              isOptional: true,
+              description:
+                'An optional signal for cancelling the tool call repair.',
             },
           ],
         },
@@ -2125,7 +2132,8 @@ To see `streamText` in action, check out [these examples](#examples).
             {
               name: 'modelId',
               type: 'string',
-              description: 'The specific model identifier (e.g., "gpt-4o").',
+              description:
+                'The specific model identifier (e.g., "gpt-6-astra").',
             },
             {
               name: 'instructions',
@@ -2277,7 +2285,8 @@ To see `streamText` in action, check out [these examples](#examples).
             {
               name: 'modelId',
               type: 'string',
-              description: 'The specific model identifier (e.g., "gpt-4o").',
+              description:
+                'The specific model identifier (e.g., "gpt-6-astra").',
             },
             {
               name: 'instructions',
@@ -4076,13 +4085,13 @@ To see `streamText` in action, check out [these examples](#examples).
             },
             {
               name: 'onEnd',
-              type: '(options: { messages: UIMessage[]; isContinuation: boolean; responseMessage: UIMessage; isAborted: boolean; outcome: UIMessageStreamOutcome; finishReason?: FinishReason; }) => PromiseLike<void> | void',
+              type: '(options: { messages: UIMessage[]; isContinuation: boolean; responseMessage: UIMessage; isAborted: boolean; isCancelled?: true; outcome: UIMessageStreamOutcome; finishReason?: FinishReason; }) => PromiseLike<void> | void',
               isOptional: true,
-              description: 'Callback function called when the stream ends. Provides the updated messages, continuation and abort state, model finish reason, and operation-level outcome.',
+              description: 'Callback function called when the stream ends. Provides the updated messages, continuation, abort and consumer-cancellation state, model finish reason, and operation-level outcome.',
             },
             {
               name: 'onFinish',
-              type: '(options: { messages: UIMessage[]; isContinuation: boolean; responseMessage: UIMessage; isAborted: boolean; outcome: UIMessageStreamOutcome; finishReason?: FinishReason; }) => PromiseLike<void> | void',
+              type: '(options: { messages: UIMessage[]; isContinuation: boolean; responseMessage: UIMessage; isAborted: boolean; isCancelled?: true; outcome: UIMessageStreamOutcome; finishReason?: FinishReason; }) => PromiseLike<void> | void',
               isOptional: true,
               description: 'Deprecated alias for `onEnd`.',
             },

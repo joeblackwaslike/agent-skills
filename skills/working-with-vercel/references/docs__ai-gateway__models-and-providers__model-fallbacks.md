@@ -9,14 +9,15 @@ prerequisites:
   - /docs/ai-gateway/models-and-providers
   - /docs/ai-gateway
 related:
+  - /docs/ai-gateway/models-and-providers/evaluation-fallbacks
   - /docs/ai-gateway/sdks-and-apis
   - /docs/ai-gateway/models-and-providers/provider-options
   - /docs/ai-gateway/observability-and-spend/logs
 summary: Configure AI Gateway model fallbacks to try backup models when the primary model is unavailable. Set fallback order and combine it with provider...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/model-fallbacks.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "38fc85106bd5ed9ac876204b9f45ab7b0809610a6dfa3738e6e23765c360adeb"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "6331a8d06d4b5811862f93690d451b33971fcb93c209cbde6ae5d0e187cbf29c"
 ---
 
 # AI Gateway Model Fallbacks
@@ -37,6 +38,7 @@ You can configure model failover to specify backups that are tried in order if t
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [Model fallbacks now available in Vercel AI Gateway](https://vercel.com/changelog/model-fallbacks-now-available-in-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related)
 - [Provider & Model Management](https://ai-sdk.dev/docs/ai-sdk-core/provider-management?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related)
+- [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related)
 - [TanStack AI with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related) — Connect TanStack AI to Vercel AI Gateway with the official adapter to authenticate requests and stream responses from AI
 - [AI Gateway Video Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/video-input?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related) — Analyze video clips with AI Gateway using AI SDK 7, Python, Chat Completions, and Responses / OpenResponses.
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
@@ -47,6 +49,8 @@ Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/model-
 ## Using the `models` option
 
 Add a `models` array to `providerOptions.gateway` to list fallback models. The same option works across every AI Gateway API format. Select your API below:
+
+String entries on this page react to execution failure. On an evaluation request, a string entry can also name a language model, which answers through structured output. Evaluation requests can also add one conditional object that reacts to a successful but uncertain result. AI Gateway rejects a conditional object with a `400` error on any other request type, and when the conditional object names the primary model itself. See [Evaluation Fallbacks](/docs/ai-gateway/models-and-providers/evaluation-fallbacks) for confidence, Boolean probability, compound conditions, and full-request reruns.
 
 These examples use AI SDK 7 and the AI SDK for Python beta. Set `AI_GATEWAY_API_KEY` before running them. See [API format differences](/docs/ai-gateway/sdks-and-apis#api-format-differences) for setup, request fields, and response handling.
 

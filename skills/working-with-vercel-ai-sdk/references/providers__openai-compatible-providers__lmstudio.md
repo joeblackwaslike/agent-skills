@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/openai-compatible-providers/lmstudio.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "2910535c281101d49935f5267652b9792ec99f4c414e5c84c75962553b9a5ec1"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "3f15bcaa6725c835f33193160a4099471372feec7a4e14ae3c0ee1db1ec8a3cd"
 ---
 
 # LM Studio Provider
@@ -133,6 +133,7 @@ const { embeddings } = await embedMany({
 - [LM Studio](/providers/openai-compatible-providers/lmstudio)
 - [NVIDIA NIM](/providers/openai-compatible-providers/nim)
 - [ModelRush](/providers/openai-compatible-providers/modelrush)
+- [Cheaper Inference](/providers/openai-compatible-providers/cheaper-inference)
 - [Clarifai](/providers/openai-compatible-providers/clarifai)
 - [Heroku](/providers/openai-compatible-providers/heroku)
 - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)

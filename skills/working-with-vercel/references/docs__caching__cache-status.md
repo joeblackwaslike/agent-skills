@@ -16,8 +16,8 @@ related:
 summary: Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass, or serve stale from the...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/cache-status.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "14fa7c978ae21b914202e5f6621526c0e0169e753a01be088d90498fee2981bb"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "241054cbb3092e12374854a94b9fa4c4fbfbdfc54eba69b44e298e4b63071b6c"
 ---
 
 # Cache Status and Reasons
@@ -126,7 +126,7 @@ The entry passed its revalidation window, so Vercel served the existing copy and
 
 ### Tag-based invalidation
 
-Invalidating a [cache tag](/docs/caching/cdn-cache/purge) attached to this entry marked it stale on the next request. Vercel served the existing response and regenerated it in the background. You invalidate tags through [`invalidateByTag()`](/docs/functions/functions-api-reference/vercel-functions-package#invalidatebytag) or a framework function like `revalidateTag()`.
+Invalidating a [cache tag](/docs/caching/cdn-cache/purge) attached to this entry marked it stale on the next request. Vercel served the existing response and regenerated it in the background. You invalidate tags through [`invalidateByTag()`](/docs/functions/functions-api-reference/vercel-functions-package#invalidatebytag) or, on Next.js 16 and later, `revalidateTag()` called with a cache-life profile such as `'max'`.
 
 ### Revalidation error
 
@@ -140,13 +140,13 @@ The response was served from static storage, such as a page prerendered at build
 
 ## REVALIDATED
 
-The cached entry had been deleted, so Vercel regenerated the response from your origin in the foreground. Because there's no stale copy to fall back on, the request waits for that regeneration and pays the full generation latency, unlike `STALE`, where an expired entry is served immediately while Vercel refreshes the next one in the background. An entry is deleted on demand through [`dangerouslyDeleteByTag()`](/docs/functions/functions-api-reference/vercel-functions-package#dangerouslydeletebytag), a framework function like [`revalidatePath()`](https://nextjs.org/docs/app/api-reference/functions/revalidatePath) or [`revalidateTag()`](https://nextjs.org/docs/app/api-reference/functions/revalidateTag) called without a lifetime, or a [dashboard purge](/docs/caching/cdn-cache/purge) that deletes by tag.
+The cached entry had been deleted, so Vercel regenerated the response from your origin in the foreground. Because there's no stale copy to fall back on, the request waits for that regeneration and pays the full generation latency, unlike `STALE`, where an expired entry is served immediately while Vercel refreshes the next one in the background. An entry is deleted on demand through [`dangerouslyDeleteByTag()`](/docs/functions/functions-api-reference/vercel-functions-package#dangerouslydeletebytag), a framework function like [`revalidateTag()`](https://nextjs.org/docs/app/api-reference/functions/revalidateTag) or [`revalidatePath()`](https://nextjs.org/docs/app/api-reference/functions/revalidatePath), or a [dashboard purge](/docs/caching/cdn-cache/purge) that deletes by tag.
 
 ![Image](`/docs-assets/static/docs/concepts/edge-network/x-vercel-cache-revalidated2x.png?v=4\&lightbox`)
 
 ### Tag-based deletion
 
-When the deletion was triggered by a [cache tag](/docs/caching/cdn-cache/purge) (through [`dangerouslyDeleteByTag()`](/docs/functions/functions-api-reference/vercel-functions-package#dangerouslydeletebytag), [`revalidateTag()`](https://nextjs.org/docs/app/api-reference/functions/revalidateTag) called without a lifetime, or a [dashboard purge](/docs/caching/cdn-cache/purge) that deletes by tag), the `REVALIDATED` response carries this reason. It's the deletion counterpart to a `STALE` response's [Tag-based invalidation](#tag-based-invalidation): both start from a tag, but invalidation keeps serving the existing copy while it refreshes in the background, whereas deletion leaves nothing to serve, so the request blocks on the foreground regeneration.
+This reason appears when a [cache tag](/docs/caching/cdn-cache/purge) deletion triggered the regeneration: [`dangerouslyDeleteByTag()`](/docs/functions/functions-api-reference/vercel-functions-package#dangerouslydeletebytag), [`revalidateTag()`](https://nextjs.org/docs/app/api-reference/functions/revalidateTag) without a cache-life profile (the only form available on Next.js 15 and earlier), or a [dashboard purge](/docs/caching/cdn-cache/purge) by tag. It's the deletion counterpart to a `STALE` response's [Tag-based invalidation](#tag-based-invalidation): both start from a tag, but invalidation keeps serving the existing copy while it refreshes in the background, whereas deletion leaves nothing to serve, so the request blocks on the foreground regeneration.
 
 ## Related
 

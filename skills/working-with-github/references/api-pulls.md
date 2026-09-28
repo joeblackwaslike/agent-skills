@@ -1,7 +1,7 @@
 ---
 source: "https://docs.github.com/en/rest/pulls/pulls"
-fetched_at: "2026-09-21T09:43:24.629Z"
-sha256: "fab25c9e01cfd97cf9439762f5f8f03e1ddc4bc17bbb0b7a4235ab75170e2239"
+fetched_at: "2026-09-28T10:42:53.812Z"
+sha256: "e23c4c5222fb1b114349558c1a76a1f582f51ae529354de8cfb072584aad1a6e"
 ---
 
 # REST API endpoints for pull requests
@@ -784,6 +784,8 @@ application/vnd.github.diff: For more information, see "git-diff" in the Git doc
 * **404** - Resource not found
 
 * **406** - Unacceptable
+
+* **422** - Validation failed, or the endpoint has been spammed.
 
 * **500** - Internal Error
 

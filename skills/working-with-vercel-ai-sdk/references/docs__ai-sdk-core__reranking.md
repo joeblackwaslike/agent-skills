@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/reranking.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "196480bed0438873648e493bbdac206176e9fc472b155fbe8db81c509e8d8c07"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "abb50523e60088b879c0adf4f337284d75211bb6c370badef1498d92e5a051cd"
 ---
 
 # Reranking
@@ -13,7 +13,7 @@ often producing more accurate relevance scores.
 ## Reranking Documents
 
 The AI SDK provides the [`rerank`](/docs/reference/ai-sdk-core/rerank) function to rerank documents based on their relevance to a query.
-You can use it with reranking models, e.g. `cohere.reranking('rerank-v3.5')` or `bedrock.reranking('cohere.rerank-v3-5:0')`.
+You can use it with reranking models, e.g. `cohere.reranking('rerank-v4.0-pro')` or `bedrock.reranking('cohere.rerank-v3-5:0')`.
 
 ```tsx
 import { rerank } from 'ai';
@@ -26,7 +26,7 @@ const documents = [
 ];
 
 const { ranking } = await rerank({
-  model: cohere.reranking('rerank-v3.5'),
+  model: cohere.reranking('rerank-v4.0-pro'),
   documents,
   query: 'talk about rain',
   topN: 2, // Return top 2 most relevant documents
@@ -61,7 +61,7 @@ const documents = [
 ];
 
 const { ranking, rerankedDocuments } = await rerank({
-  model: cohere.reranking('rerank-v3.5'),
+  model: cohere.reranking('rerank-v4.0-pro'),
   documents,
   query: 'Which pricing did we get from Oracle?',
   topN: 1,
@@ -80,7 +80,7 @@ import { cohere } from '@ai-sdk/cohere';
 import { rerank } from 'ai';
 
 const { ranking, rerankedDocuments, originalDocuments } = await rerank({
-  model: cohere.reranking('rerank-v3.5'),
+  model: cohere.reranking('rerank-v4.0-pro'),
   documents: ['sunny day at the beach', 'rainy afternoon in the city'],
   query: 'talk about rain',
 });
@@ -107,7 +107,7 @@ import { cohere } from '@ai-sdk/cohere';
 import { rerank } from 'ai';
 
 const { ranking } = await rerank({
-  model: cohere.reranking('rerank-v3.5'),
+  model: cohere.reranking('rerank-v4.0-pro'),
   documents: ['doc1', 'doc2', 'doc3', 'doc4', 'doc5'],
   query: 'relevant information',
   topN: 3, // Return only top 3 most relevant documents
@@ -123,7 +123,7 @@ import { cohere } from '@ai-sdk/cohere';
 import { rerank } from 'ai';
 
 const { ranking } = await rerank({
-  model: cohere.reranking('rerank-v3.5'),
+  model: cohere.reranking('rerank-v4.0-pro'),
   documents: ['sunny day at the beach', 'rainy afternoon in the city'],
   query: 'talk about rain',
   providerOptions: {
@@ -145,7 +145,7 @@ import { cohere } from '@ai-sdk/cohere';
 import { rerank } from 'ai';
 
 const { ranking } = await rerank({
-  model: cohere.reranking('rerank-v3.5'),
+  model: cohere.reranking('rerank-v4.0-pro'),
   documents: ['sunny day at the beach', 'rainy afternoon in the city'],
   query: 'talk about rain',
   maxRetries: 0, // Disable retries
@@ -163,7 +163,7 @@ import { cohere } from '@ai-sdk/cohere';
 import { rerank } from 'ai';
 
 const { ranking } = await rerank({
-  model: cohere.reranking('rerank-v3.5'),
+  model: cohere.reranking('rerank-v4.0-pro'),
   documents: ['sunny day at the beach', 'rainy afternoon in the city'],
   query: 'talk about rain',
   abortSignal: AbortSignal.timeout(5000), // Abort after 5 seconds
@@ -180,7 +180,7 @@ import { cohere } from '@ai-sdk/cohere';
 import { rerank } from 'ai';
 
 const { ranking } = await rerank({
-  model: cohere.reranking('rerank-v3.5'),
+  model: cohere.reranking('rerank-v4.0-pro'),
   documents: ['sunny day at the beach', 'rainy afternoon in the city'],
   query: 'talk about rain',
   headers: { 'X-Custom-Header': 'custom-value' },
@@ -196,7 +196,7 @@ import { cohere } from '@ai-sdk/cohere';
 import { rerank } from 'ai';
 
 const { ranking, response } = await rerank({
-  model: cohere.reranking('rerank-v3.5'),
+  model: cohere.reranking('rerank-v4.0-pro'),
   documents: ['sunny day at the beach', 'rainy afternoon in the city'],
   query: 'talk about rain',
 });
@@ -210,6 +210,8 @@ Several providers offer reranking models:
 
 | Provider                                                                      | Model                                 |
 | ----------------------------------------------------------------------------- | ------------------------------------- |
+| [Cohere](/providers/ai-sdk-providers/cohere#reranking-models)                 | `rerank-v4.0-pro`                     |
+| [Cohere](/providers/ai-sdk-providers/cohere#reranking-models)                 | `rerank-v4.0-fast`                    |
 | [Cohere](/providers/ai-sdk-providers/cohere#reranking-models)                 | `rerank-v3.5`                         |
 | [Cohere](/providers/ai-sdk-providers/cohere#reranking-models)                 | `rerank-english-v3.0`                 |
 | [Cohere](/providers/ai-sdk-providers/cohere#reranking-models)                 | `rerank-multilingual-v3.0`            |

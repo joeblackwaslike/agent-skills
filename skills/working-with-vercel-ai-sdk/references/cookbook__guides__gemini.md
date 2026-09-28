@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides/gemini.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "43cabac5a987782db86a6e48e34b6168d55918ba97875fd67c2cbc726228a8d6"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "483d45be8cf6f8ac5447b4230205ddd7b7db18f1d7722ae06de306e19ea833ee"
 ---
 
 # Get started with Gemini 3
@@ -35,7 +35,7 @@ import { google } from '@ai-sdk/google';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: google('gemini-3-pro-preview'),
+  model: google('gemini-3.1-pro-preview'),
   prompt: 'Explain the concept of the Hilbert space.',
 });
 console.log(text);
@@ -50,7 +50,7 @@ import { google, GoogleLanguageModelOptions } from '@ai-sdk/google';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: google('gemini-3-pro-preview'),
+  model: google('gemini-3.1-pro-preview'),
   prompt: 'What is the sum of the first 10 prime numbers?',
   providerOptions: {
     google: {
@@ -80,7 +80,7 @@ import { generateText, tool, isStepCount } from 'ai';
 import { google } from '@ai-sdk/google';
 
 const result = await generateText({
-  model: google('gemini-3-pro-preview'),
+  model: google('gemini-3.1-pro-preview'),
   prompt: 'What is the weather in San Francisco?',
   tools: {
     weather: tool({
@@ -112,7 +112,7 @@ import { GoogleProviderMetadata } from '@ai-sdk/google';
 import { generateText } from 'ai';
 
 const { text, sources, providerMetadata } = await generateText({
-  model: google('gemini-3-pro-preview'),
+  model: google('gemini-3.1-pro-preview'),
   tools: {
     google_search: google.tools.googleSearch({}),
   },
@@ -160,7 +160,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: google('gemini-3-pro-preview'),
+    model: google('gemini-3.1-pro-preview'),
     messages: await convertToModelMessages(messages),
   });
 

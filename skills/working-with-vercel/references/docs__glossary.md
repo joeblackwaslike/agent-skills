@@ -3,7 +3,7 @@ title: Glossary
 product: vercel
 url: /docs/glossary
 canonical_url: "https://vercel.com/docs/glossary"
-last_updated: 2026-09-15
+last_updated: 2026-09-18
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: "Learn about the terms and concepts used in Vercel's products and documentation."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/glossary.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "e0f0c5c21dd0f829b73ac397db1d4223c92d9422cf8a7c3b649cd2e2ece681d2"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "b723efc67bb7df4157077e2e5e0c90f849500b449ec8845314511af286c350de"
 ---
 
 # Glossary
@@ -494,7 +494,7 @@ An in-memory key-value store connected to your Vercel project through the [Verce
 
 ### Region
 
-Geographic locations where Vercel can run your functions and store data. Vercel has 20 compute-capable regions globally.
+Geographic locations where Vercel can run your functions and store data. Vercel has 19 compute-capable regions globally.
 
 ### Release Phases
 

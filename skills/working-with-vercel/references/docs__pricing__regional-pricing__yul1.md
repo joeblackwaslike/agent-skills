@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the Montréal, Canada (yul1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/yul1.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "75a39f3afb251acf031415d5b9529ebee42cf30f7bab52db5a1fa16b2bd2b1ec"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "c5ec060c65540575b7533bf14cba553e4264c08ca1a977552fa5390affce0930"
 ---
 
 # Montréal, Canada (yul1) pricing
@@ -62,7 +62,7 @@ The **Included** column shows the amount of usage covered in your [billing cycle
 | [Queue API Operations](/docs/queues/pricing) | $0.66 per 1,000,000 Operations |
 | [Edge Requests - Additional CPU Duration](/docs/manage-cdn-usage#edge-request-cpu-duration) | $0.33 per 1 Hour |
 | [Fluid Active CPU](/docs/functions/usage-and-pricing#active-cpu) | $0.1469 per Hour |
-| [Fluid Provisioned Memory](/docs/functions/usage-and-pricing#provisioned-memory) | $0.01033 per GB-hr |
+| [Fluid Provisioned Memory](/docs/functions/usage-and-pricing#provisioned-memory) | $0.01217 per GB-hr |
 | [Image Optimization Transformation](/docs/image-optimization/limits-and-pricing#image-transformations) | $0.055 per 1K |
 | [Image Optimization Cache Reads](/docs/image-optimization/limits-and-pricing#image-cache-reads) | $0.44 per 1M |
 | [Image Optimization Cache Writes](/docs/image-optimization/limits-and-pricing#image-cache-writes) | $4.40 per 1M |

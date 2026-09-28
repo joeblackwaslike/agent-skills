@@ -16,8 +16,8 @@ related:
 summary: Vercel Blob is a scalable, cost-effective object storage service with private and public access modes for files up to 5 TB.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "4b5bad30d2e5c6e48821c6b73dd1dbf6fb1a0ef135535c07057d0063852d787b"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "c37bd163f726b3984a397f9e6eb007d1c502318d3a1a546e998e810d12fc7390"
 ---
 
 # Vercel Blob
@@ -39,8 +39,8 @@ sha256: "4b5bad30d2e5c6e48821c6b73dd1dbf6fb1a0ef135535c07057d0063852d787b"
 - [Create private blob stores with a single click in v0](https://vercel.com/changelog/create-private-blob-stores-with-a-single-click-in-v0?from=related&source_path=%2Fdocs%2Fvercel-blob&source_site=vercel-docs&relationship=related)
 - [Persistent memory for eve agents](https://vercel.com/changelog/persistent-memory-for-eve-agents?from=related&source_path=%2Fdocs%2Fvercel-blob&source_site=vercel-docs&relationship=related)
 - [Signed URLs are now available for Vercel Blob](https://vercel.com/changelog/signed-urls-are-now-available-for-vercel-blob?from=related&source_path=%2Fdocs%2Fvercel-blob&source_site=vercel-docs&relationship=related)
+- [Unlimited Vercel Blob stores on every plan](https://vercel.com/changelog/unlimited-vercel-blob-stores-on-every-plan?from=related&source_path=%2Fdocs%2Fvercel-blob&source_site=vercel-docs&relationship=related)
 - [Vercel Blob CLI is now available](https://vercel.com/changelog/vercel-blob-cli-is-now-available?from=related&source_path=%2Fdocs%2Fvercel-blob&source_site=vercel-docs&relationship=related)
-- [Vercel Blob is now generally available](https://vercel.com/changelog/vercel-blob-is-now-generally-available?from=related&source_path=%2Fdocs%2Fvercel-blob&source_site=vercel-docs&relationship=related)
 - [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide?from=related&source_path=%2Fdocs%2Fvercel-blob&source_site=vercel-docs&relationship=related) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel?from=related&source_path=%2Fdocs%2Fvercel-blob&source_site=vercel-docs&relationship=related) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
 - [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud?from=related&source_path=%2Fdocs%2Fvercel-blob&source_site=vercel-docs&relationship=related) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
@@ -82,7 +82,7 @@ const blob = await put('avatar.jpg', imageFile, {
 });
 ```
 
-You can create and manage your Vercel Blob stores from your [account dashboard](/dashboard) or the [Vercel CLI](/docs/cli/blob). You can create blob stores in any of the 20 [regions](/docs/regions#region-list) to optimize performance and meet data residency requirements. You can scope your Vercel Blob stores to your Hobby team or [team](/docs/accounts#creating-a-team), and [connect them to as many projects as you want](#connecting-a-store-to-your-projects).
+You can create and manage your Vercel Blob stores from your [account dashboard](/dashboard) or the [Vercel CLI](/docs/cli/blob). You can create blob stores in any of the 19 [regions](/docs/regions#region-list) to optimize performance and meet data residency requirements. You can scope your Vercel Blob stores to your Hobby team or [team](/docs/accounts#creating-a-team), and [connect them to as many projects as you want](#connecting-a-store-to-your-projects).
 
 To get started, see the [server-side](/docs/vercel-blob/server-upload), or [client-side](/docs/vercel-blob/client-upload) quickstart guides. Or visit the full API reference for the [Vercel Blob SDK](/docs/vercel-blob/using-blob-sdk).
 
@@ -263,7 +263,7 @@ Understanding Blob Data Transfer helps you manage your [usage and pricing](/docs
 
 Vercel Blob delivers content through a specialized network optimized for static assets:
 
-- **Region-based distribution**: Content is served from 20 regional hubs strategically located around the world
+- **Region-based distribution**: Content is served from 19 regional hubs strategically located around the world
 - **Optimized for non-critical assets**: Well-suited for content "below the fold" that isn't essential for initial page rendering metrics like First Contentful Paint (FCP) or Largest Contentful Paint (LCP)
 - **Cost-optimized for large assets**: 3x more cost-efficient than [Fast Data Transfer](/docs/cdn) on average
 - **Great for media delivery**: Ideal for large media files like images, videos, and documents
@@ -278,7 +278,7 @@ Client uploads have no data transfer charges. Server uploads incur [Fast Data Tr
 
 ## Choosing your Blob store region
 
-You can create Blob stores in any of the 20 [regions](/docs/regions#region-list). Use the region selector in the dashboard at blob store creation time, or use the [CLI](/docs/cli/blob) with the `--region` option.
+You can create Blob stores in any of the 19 [regions](/docs/regions#region-list). Use the region selector in the dashboard at blob store creation time, or use the [CLI](/docs/cli/blob) with the `--region` option.
 
 Select a region close to your customers and functions to minimize upload time. Region selection also helps meet data regulatory requirements. Vercel Blob [pricing](/docs/vercel-blob/usage-and-pricing) is regionalized, so check the pricing for your selected region.
 

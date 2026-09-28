@@ -17,8 +17,8 @@ related:
 summary: Define team-wide rules that rewrite requests from one model to another or deny specific models in AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/routing-rules.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "4c77eb6a1570e77718990f562c2b2f9798d05911d7b8cc88fd5deace76603f83"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "d275daa1a22e9bd7d416b70f39c0749286fe0c0b4aa037b16d6e59ce7074d1db"
 ---
 
 # AI Gateway Routing Rules
@@ -32,10 +32,10 @@ Routing rules let you control how AI Gateway handles your team's requests at the
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [ Routing rules now available on AI Gateway](https://vercel.com/changelog/ai-gateway-routing-rules?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Frouting-rules&source_site=vercel-docs&relationship=related)
+- [Claude Opus 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-opus-5-5-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Frouting-rules&source_site=vercel-docs&relationship=related)
 - [DeepSeek V4.1 Flash now available on AI Gateway](https://vercel.com/changelog/deepseek-v4-1-flash-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Frouting-rules&source_site=vercel-docs&relationship=related)
+- [Ember-1 from Fireworks now available on AI Gateway](https://vercel.com/changelog/ember-1-from-fireworks-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Frouting-rules&source_site=vercel-docs&relationship=related)
 - [Gemini 3.6 Flash and Gemini 3.5 Flash-Lite are now available on AI Gateway](https://vercel.com/changelog/gemini-3-6-flash-3-5-flash-lite-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Frouting-rules&source_site=vercel-docs&relationship=related)
-- [Gemini 3.7 Flash now available on AI Gateway for 50% off](https://vercel.com/changelog/gemini-3-7-flash-now-available-on-ai-gateway-for-50-off?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Frouting-rules&source_site=vercel-docs&relationship=related)
-- [GLM 5.3 FlashX now available on AI Gateway](https://vercel.com/changelog/glm-5-3-flashx-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Frouting-rules&source_site=vercel-docs&relationship=related)
 - [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Frouting-rules&source_site=vercel-docs&relationship=related) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Frouting-rules&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [List rules](https://vercel.com/docs/rest-api/ai-gateway/list-rules?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Frouting-rules&source_site=vercel-docs&relationship=related) — GET /v1/ai-gateway/rules — List the authenticated team's routing rules

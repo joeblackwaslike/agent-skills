@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/cohere.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "5428f8044492e8c8170f6d9333018bacf7d47eb5bcdb01630a31f0a362d8bd21"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "d0f63a9088b7f8dc0ccd2b7bfe017ad934015589bb92c6a52d7979bc431f6de9"
 ---
 
 # Cohere Provider
@@ -64,11 +64,11 @@ You can use the following optional settings to customize the Cohere provider ins
 ## Language Models
 
 You can create models that call the [Cohere chat API](https://docs.cohere.com/v2/docs/chat-api) using a provider instance.
-The first argument is the model id, e.g. `command-r-plus`.
+The first argument is the model id, e.g. `command-a-03-2025`.
 Some Cohere chat models support tool calls.
 
 ```ts
-const model = cohere('command-r-plus');
+const model = cohere('command-a-03-2025');
 ```
 
 ### Example
@@ -80,7 +80,7 @@ import { cohere } from '@ai-sdk/cohere';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: cohere('command-r-plus'),
+  model: cohere('command-a-03-2025'),
   prompt: 'Write a vegetarian lasagna recipe for 4 people.',
 });
 ```
@@ -207,7 +207,7 @@ You can create models that call the [Cohere embed API](https://docs.cohere.com/v
 using the `.embedding()` factory method.
 
 ```ts
-const model = cohere.embedding('embed-english-v3.0');
+const model = cohere.embedding('embed-v4.0');
 ```
 
 You can use Cohere embedding models to generate embeddings with the `embed` function:
@@ -217,7 +217,7 @@ import { cohere, type CohereEmbeddingModelOptions } from '@ai-sdk/cohere';
 import { embed } from 'ai';
 
 const { embedding } = await embed({
-  model: cohere.embedding('embed-english-v3.0'),
+  model: cohere.embedding('embed-v4.0'),
   value: 'sunny day at the beach',
   providerOptions: {
     cohere: {
@@ -234,7 +234,7 @@ import { cohere, type CohereEmbeddingModelOptions } from '@ai-sdk/cohere';
 import { embed } from 'ai';
 
 const { embedding } = await embed({
-  model: cohere.embedding('embed-english-v3.0'),
+  model: cohere.embedding('embed-v4.0'),
   value: 'sunny day at the beach',
   providerOptions: {
     cohere: {
@@ -281,7 +281,7 @@ You can create models that call the [Cohere rerank API](https://docs.cohere.com/
 using the `.reranking()` factory method.
 
 ```ts
-const model = cohere.reranking('rerank-v3.5');
+const model = cohere.reranking('rerank-v4.0-pro');
 ```
 
 You can use Cohere reranking models to rerank documents with the `rerank` function:
@@ -297,7 +297,7 @@ const documents = [
 ];
 
 const { ranking } = await rerank({
-  model: cohere.reranking('rerank-v3.5'),
+  model: cohere.reranking('rerank-v4.0-pro'),
   documents,
   query: 'talk about rain',
   topN: 2,
@@ -317,7 +317,7 @@ import { cohere, type CohereRerankingModelOptions } from '@ai-sdk/cohere';
 import { rerank } from 'ai';
 
 const { ranking } = await rerank({
-  model: cohere.reranking('rerank-v3.5'),
+  model: cohere.reranking('rerank-v4.0-pro'),
   documents: ['sunny day at the beach', 'rainy afternoon in the city'],
   query: 'talk about rain',
   providerOptions: {
@@ -343,6 +343,8 @@ The following provider options are available:
 
 | Model                      |
 | -------------------------- |
+| `rerank-v4.0-pro`          |
+| `rerank-v4.0-fast`         |
 | `rerank-v3.5`              |
 | `rerank-english-v3.0`      |
 | `rerank-multilingual-v3.0` |

@@ -1,10 +1,16 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides/o3.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "b29b1fa8be84aee91cc5673a2710dee375b6364c11d05abbc9ecd43d5f303f37"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "d5e4869c6f8ac01195fc143552b55818cdbb3ec59f62869b2b9aab90149bd438"
 ---
 
 # Get started with OpenAI o3-mini
+
+<Note>
+  This guide covers o3-mini and keeps its model ID intentionally. For current
+  models, see the [OpenAI provider
+  documentation](/providers/ai-sdk-providers/openai).
+</Note>
 
 With the [release of OpenAI's o3-mini model](https://openai.com/index/openai-o3-mini/), there has never been a better time to start building AI applications, particularly those that require complex STEM reasoning capabilities.
 

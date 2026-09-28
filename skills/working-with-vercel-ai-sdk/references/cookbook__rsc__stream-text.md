@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/rsc/stream-text.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "d16478a15e45d6636a635443a97a3e280ffc01b9317d8ff73acda54b07a67709"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "7a20f596b5a8883a9b29afa80706233521c845668e1b4dcb9736b5c1e51745a9"
 ---
 
 # Stream Text
@@ -72,7 +72,7 @@ export async function generate(input: string) {
 
   (async () => {
     const { textStream } = streamText({
-      model: 'openai/gpt-5.4',
+      model: 'openai/gpt-6-astra',
       prompt: input,
     });
 

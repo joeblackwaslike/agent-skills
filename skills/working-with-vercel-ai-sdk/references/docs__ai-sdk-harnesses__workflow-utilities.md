@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses/workflow-utilities.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "08d67872930eff1316e1a4a8caace36d7ec35d8740e1e3c971ad1add254130f5"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "4485656e1db8c01e92e86ea3e1f9a470d4d3be75f1e71df068af839957780e28"
 ---
 
 # Workflow Utilities
@@ -24,7 +24,7 @@ before following the examples.
 <InstallPackages packages="@ai-sdk/workflow-harness workflow" />
 
 In addition to the workflow specific packages, install the core harness package,
-a harness adapter, and a sandbox provider as shown in
+a harness adapter, and a sandbox adapter as shown in
 [HarnessAgent](/docs/ai-sdk-harnesses/harness-agent).
 
 ## Configuring the Harness Agent
@@ -36,15 +36,10 @@ semantic agent steps, set `stopWhen` to `isStepCount(1)` so one call to
 ```ts filename='harness-workflow/agent.ts' highlight="13-17"
 import { HarnessAgent } from '@ai-sdk/harness/agent';
 import { claudeCode } from '@ai-sdk/harness-claude-code';
-import { createVercelSandbox } from '@ai-sdk/sandbox-vercel';
 import { isStepCount } from 'ai';
 
 export const agent = new HarnessAgent({
   harness: claudeCode,
-  sandbox: createVercelSandbox({
-    runtime: 'node24',
-    ports: [4000],
-  }),
   instructions: 'You are a helpful coding assistant.',
   /*
    * Only needed for semantic agent-step workflows.
@@ -63,7 +58,7 @@ the shared agent with the highlighted `stopWhen` option shown above, then call
 ### Defining the Agent Step
 
 Keep the Workflow step in its own module and import the agent dynamically inside
-the step body. This keeps the agent, sandbox provider, and other Node.js
+the step body. This keeps the agent, sandbox adapter, and other Node.js
 dependencies out of the workflow bundle.
 
 ```ts filename='harness-workflow/agent-step.ts'
@@ -78,10 +73,25 @@ export async function agentStep(
   'use step';
 
   const { agent } = await import('./agent');
+  const {
+    createVercelNetworkSandboxSession,
+    resumeVercelNetworkSandboxSession,
+  } = await import('@ai-sdk/sandbox-vercel');
+  const sandboxId = `harness-${state.sessionId}`;
+  const isFirstStep = state.resumeFrom == null && state.continueFrom == null;
+  const sandboxSession = isFirstStep
+    ? await createVercelNetworkSandboxSession({
+        sandboxId,
+        runtime: 'node24',
+        ports: [4000],
+        template: await agent.getSandboxTemplate(),
+      })
+    : await resumeVercelNetworkSandboxSession({ sandboxId });
 
   return runHarnessAgentStep({
     agent,
     state,
+    sandboxSession,
   });
 }
 ```
@@ -166,7 +176,9 @@ export async function POST(request: Request) {
 }
 ```
 
-The `sessionId` gives the sandbox a stable identity across workflow runs. Keep
+The workflow state `sessionId` identifies the harness session. The step derives
+`sandboxId` from it before first creating the sandbox and uses that same ID to
+reattach on later steps. The state does not serialize a live sandbox. Keep
 `agent.ts`, `agent-step.ts`, `workflow.ts`, and the route in separate modules so
 the workflow bundle does not include Node-heavy agent, sandbox, or framework
 dependencies.
@@ -195,10 +207,25 @@ export async function timeSliceStep(
   'use step';
 
   const { agent } = await import('./agent');
+  const {
+    createVercelNetworkSandboxSession,
+    resumeVercelNetworkSandboxSession,
+  } = await import('@ai-sdk/sandbox-vercel');
+  const sandboxId = `harness-${state.sessionId}`;
+  const isFirstStep = state.resumeFrom == null && state.continueFrom == null;
+  const sandboxSession = isFirstStep
+    ? await createVercelNetworkSandboxSession({
+        sandboxId,
+        runtime: 'node24',
+        ports: [4000],
+        template: await agent.getSandboxTemplate(),
+      })
+    : await resumeVercelNetworkSandboxSession({ sandboxId });
 
   return runHarnessAgentTimeSlice({
     agent,
     state,
+    sandboxSession,
   });
 }
 ```
@@ -282,10 +309,17 @@ export async function POST(request: Request) {
 }
 ```
 
-The `sessionId` gives the sandbox a stable identity across workflow runs. Keep
+The workflow state `sessionId` identifies the harness session. The step derives
+`sandboxId` from it; otherwise, you must persist `sandboxSession.id` separately
+to reattach across steps. Keep
 `agent.ts`, `time-slice-step.ts`, `workflow.ts`, and the route in separate
 modules so the workflow bundle does not include Node-heavy agent, sandbox, or
 framework dependencies.
+
+`destroyOnFinish` destroys the harness session, but never the supplied sandbox.
+The caller can explicitly call `sandboxSession.destroy()` on the network
+session when no later step needs to reattach. Never destroy it at a
+time-slice boundary where a subsequent step must resume it.
 
 ## Resume Persistence
 

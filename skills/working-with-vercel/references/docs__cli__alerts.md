@@ -14,8 +14,8 @@ related:
 summary: List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/alerts.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "138181ca91d34a4fe1570326d3eb558982740bfd3f137d5b61c77ccc18874c83"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "45d9e2e6783139b19c0077a88945d6c722496adae15ff553fe845f680d2fda38"
 ---
 
 # vercel alerts
@@ -29,11 +29,11 @@ The `vercel alerts` command lists recent [alerts](/docs/alerts) for the linked p
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Pull anomaly alert details using the Vercel CLI](https://vercel.com/changelog/pull-anomaly-alert-details-using-the-vercel-cli?from=related&source_path=%2Fdocs%2Fcli%2Falerts&source_site=vercel-docs&relationship=related)
-- [vercel traces](https://vercel.com/docs/cli/traces?from=related&source_path=%2Fdocs%2Fcli%2Falerts&source_site=vercel-docs&relationship=related) — Inspect a request trace in the terminal, open it in the Vercel Dashboard, or manage the trace sampling rules for a proje
 - [vercel security](https://vercel.com/docs/cli/security?from=related&source_path=%2Fdocs%2Fcli%2Falerts&source_site=vercel-docs&relationship=related) — Inspect the security posture of your Vercel team from the terminal: run every security check, list findings, and scope t
 - [vercel activity](https://vercel.com/docs/cli/activity?from=related&source_path=%2Fdocs%2Fcli%2Falerts&source_site=vercel-docs&relationship=related) — View activity events for your Vercel project or team, filtered by type, date range, and project.
 - [vercel metrics](https://vercel.com/docs/cli/metrics?from=related&source_path=%2Fdocs%2Fcli%2Falerts&source_site=vercel-docs&relationship=related) — Discover and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Falerts&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel logs](https://vercel.com/docs/cli/logs?from=related&source_path=%2Fdocs%2Fcli%2Falerts&source_site=vercel-docs&relationship=related) — View and filter request logs for your Vercel project, or stream live runtime logs from a deployment.
 
 Full cross-link map for this page: [/docs/cli/alerts.graph.md](/docs/cli/alerts.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Falerts&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

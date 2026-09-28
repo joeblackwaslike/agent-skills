@@ -3,21 +3,21 @@ title: Restrict access to deployments with Passport
 product: vercel
 url: /docs/passport
 canonical_url: "https://vercel.com/docs/passport"
-last_updated: 2026-07-30
+last_updated: 2026-09-21
 type: how-to
 prerequisites:
   []
 related:
   - /docs/passport/set-up-identity-provider
+  - /docs/microfrontends/routing
+  - /docs/deployment-protection/methods-to-protect-deployments
+  - /docs/microfrontends/managing-microfrontends/security
   - /docs/passport/additional-identity-scopes
-  - /docs/passport/read-identity
-  - /docs/passport/token-claims
-  - /docs/passport/verify-identity
 summary: Learn how to protect deployments with Passport, read visitor identity, and verify Passport tokens in server-side code.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "f7477af6f9e845ae8342d23b442e0801c4330bde7675709dbc2142fa35844df5"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "33e1ca648624166ac4c71c9ea905ddd2f7191fb0324bd040309fe1cf1d89fcf4"
 ---
 
 # Restrict access to deployments with Passport
@@ -38,8 +38,8 @@ Passport lets you protect deployments with your own identity provider. Visitors 
 - [How to identify and authorize visitors with the Vercel Passport token in Next.js](https://vercel.com/kb/guide/vercel-passport-nextjs?from=related&source_path=%2Fdocs%2Fpassport&source_site=vercel-docs&relationship=related) — Read the Vercel Passport token server-side in a Next.js app to identify visitors with the external_sub claim and authori
 - [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Fpassport&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
 - [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related&source_path=%2Fdocs%2Fpassport&source_site=vercel-docs&relationship=related) — Protect who can see your deployments.
-- [Access Control](https://vercel.com/docs/security/access-control?from=related&source_path=%2Fdocs%2Fpassport&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Bypass Deployment Protection for testing, sharing, and automation](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection?from=related&source_path=%2Fdocs%2Fpassport&source_site=vercel-docs&relationship=related) — Learn how to bypass Deployment Protection for specific domains, or for all deployments in a project.
+- [Access Control](https://vercel.com/docs/security/access-control?from=related&source_path=%2Fdocs%2Fpassport&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Auth.js](https://vercel.com/docs/connect/frameworks/authjs?from=related&source_path=%2Fdocs%2Fpassport&source_site=vercel-docs&relationship=related) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
 
 Full cross-link map for this page: [/docs/passport.graph.md](/docs/passport.graph.md?from=related&source_path=%2Fdocs%2Fpassport&source_site=vercel-docs&relationship=graph)
@@ -57,6 +57,18 @@ Passport has two parts:
 When a visitor opens a protected deployment, Vercel redirects them to your identity provider. After the identity provider authenticates the visitor, Vercel validates the response and sets a session cookie for the protected deployment.
 
 New to Passport? [Set up Passport with an identity provider](/docs/passport/set-up-identity-provider) first, then return to the other guides when you need to use identity in application code.
+
+## Use Passport with microfrontends
+
+For a URL that uses [microfrontends routing](/docs/microfrontends/routing), the default application's Passport configuration protects every path, including paths served by child applications. Configure Passport on the default application to protect the composed microfrontend experience.
+
+Passport completes authentication at `/.well-known/vercel/passport/callback` on the requested hostname. Vercel handles this callback before routing to your application, so you do not need to create the path in the default or child application.
+
+For URLs with microfrontends routing, child paths use the default application's Passport configuration. Child applications cannot have an independent Passport connection while they belong to the group.
+
+The default application's Passport configuration does not protect a child application's direct domains. Protect those domains with another [Deployment Protection method](/docs/deployment-protection/methods-to-protect-deployments). To configure Passport on the child project, remove it from the group first.
+
+Learn more about [Deployment Protection and microfrontends](/docs/microfrontends/managing-microfrontends/security#deployment-protection-and-microfrontends).
 
 ## Guides
 

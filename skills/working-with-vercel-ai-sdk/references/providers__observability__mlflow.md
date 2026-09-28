@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/mlflow.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "6ae800461eaaf4a5f4b0203cdcfe0474883bf3c6985cf10176e4215e435b4d9e"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "415f61f681e2f7a0227b674e132f7038f27137c311667db776e59b3e78f61fbd"
 ---
 
 # MLflow Observability
@@ -90,7 +90,7 @@ export async function POST(req: Request) {
   const { prompt } = await req.json();
 
   const { text } = await generateText({
-    model: openai('gpt-5'),
+    model: openai('gpt-6-astra'),
     prompt,
   });
 
@@ -135,7 +135,7 @@ init();
 registerTelemetry(new LegacyOpenTelemetry());
 
 const result = await generateText({
-  model: openai('gpt-5'),
+  model: openai('gpt-6-astra'),
   prompt: 'What is MLflow?',
 });
 
@@ -156,7 +156,7 @@ import { streamText } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
 const stream = await streamText({
-  model: openai('gpt-5'),
+  model: openai('gpt-6-astra'),
   prompt: 'Explain vector databases in one paragraph.',
 });
 

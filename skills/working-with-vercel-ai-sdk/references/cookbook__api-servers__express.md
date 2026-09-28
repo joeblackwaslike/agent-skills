@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/api-servers/express.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "f64b14642b51921ef7ce00d752060e8b0f6aece96b32f9385cdb14936807f310"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "d011a35a7ef5a7709b9fa1c5b4f8761ce1d5026c6f88047acff325fa74942cbd"
 ---
 
 # Express
@@ -39,7 +39,7 @@ const app = express();
 
 app.post('/', async (req: Request, res: Response) => {
   const result = streamText({
-    model: 'openai/gpt-4o',
+    model: 'openai/gpt-6-astra',
     prompt: 'Invent a new holiday and describe its traditions.',
   });
 
@@ -84,7 +84,7 @@ app.post('/custom-data-parts', async (req: Request, res: Response) => {
         });
 
         const result = streamText({
-          model: 'openai/gpt-4o',
+          model: 'openai/gpt-6-astra',
           prompt: 'Invent a new holiday and describe its traditions.',
         });
 
@@ -113,7 +113,7 @@ const app = express();
 
 app.post('/', async (req: Request, res: Response) => {
   const result = streamText({
-    model: 'openai/gpt-4o',
+    model: 'openai/gpt-6-astra',
     prompt: 'Invent a new holiday and describe its traditions.',
   });
 

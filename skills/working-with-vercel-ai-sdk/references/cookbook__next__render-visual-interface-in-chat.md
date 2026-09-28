@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/render-visual-interface-in-chat.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "3055a89321b22c09ec703b70bf07f40694d11462d8383900e74b78f0326a8744"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "147d4c10de6c1aebf612426de47a4c89033894424fda9a64c4a526cd15b2b52a"
 ---
 
 # Render Visual Interface in Chat
@@ -263,7 +263,7 @@ export async function POST(request: Request) {
   const { messages }: { messages: ChatMessage[] } = await request.json();
 
   const result = streamText({
-    model: 'openai/gpt-4.1',
+    model: 'openai/gpt-6-astra',
     messages: await convertToModelMessages(messages),
     tools,
     stopWhen: isStepCount(5),

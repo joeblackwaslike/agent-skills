@@ -16,8 +16,8 @@ related:
 summary: Connect your preferred feature flag provider through the Vercel Marketplace for a unified flags experience.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/marketplace.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "ccbdf446f4ce923ece1f7e8f97c442fc9343de8410e1b0f66e2b45462ba8fc2b"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "7cb98709a4b5f90b6de4f24ec5b002af23b49208bfdc029c9d050e58bb071ee8"
 ---
 
 # Marketplace
@@ -31,9 +31,9 @@ When you connect a feature flag provider through the [Vercel Marketplace](https:
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates?from=related&source_path=%2Fdocs%2Fflags%2Fmarketplace&source_site=vercel-docs&relationship=related)
-- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related&source_path=%2Fdocs%2Fflags%2Fmarketplace&source_site=vercel-docs&relationship=related)
 - [Statsig joins the Vercel Marketplace](https://vercel.com/changelog/statsig-joins-the-vercel-marketplace?from=related&source_path=%2Fdocs%2Fflags%2Fmarketplace&source_site=vercel-docs&relationship=related)
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags?from=related&source_path=%2Fdocs%2Fflags%2Fmarketplace&source_site=vercel-docs&relationship=related)
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related&source_path=%2Fdocs%2Fflags%2Fmarketplace&source_site=vercel-docs&relationship=related)
 - [LaunchDarkly is now available on the Vercel Marketplace](https://vercel.com/changelog/launchdarkly-is-now-available-on-the-vercel-marketplace?from=related&source_path=%2Fdocs%2Fflags%2Fmarketplace&source_site=vercel-docs&relationship=related)
 - [Providers](https://flags-sdk.dev/docs/providers?from=related&source_path=%2Fdocs%2Fflags%2Fmarketplace&source_site=vercel-docs&relationship=related) — Combine your feature flag provider with the Flags SDK using an adapter.
 - [Shipping safer and smarter: Integrating feature flags deeper in the Vercel workflow](https://vercel.com/blog/feature-flags?from=related&source_path=%2Fdocs%2Fflags%2Fmarketplace&source_site=vercel-docs&relationship=related)

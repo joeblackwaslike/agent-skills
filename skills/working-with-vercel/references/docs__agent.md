@@ -3,7 +3,7 @@ title: Vercel Agent
 product: vercel
 url: /docs/agent
 canonical_url: "https://vercel.com/docs/agent"
-last_updated: 2026-08-19
+last_updated: 2026-09-18
 type: integration
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Use Vercel Agent to investigate production issues, review code, and take approved actions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "1028559c1a809436c24409ad03b315250d74d481962dd1759fc6214c0430674e"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "e02414b393f4d08821583defbfe4c099b2111eb6de76701899cf10da48be2e06"
 ---
 
 # Vercel Agent

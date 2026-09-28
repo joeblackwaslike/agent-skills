@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/getting-started/nuxt.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "733a14dfc07446ffb01d040b440ef11af05382177e23afc7c516e4088154ef8b"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "e5b8ea6baa8fa2315fa97049da3d42d31e64707b1481ebd389842ebc02f38f92"
 ---
 
 # Vue.js (Nuxt) Quickstart
@@ -100,7 +100,7 @@ export default defineLazyEventHandler(async () => {
     const { messages }: { messages: UIMessage[] } = await readBody(event);
 
     const result = streamText({
-      model: gateway('anthropic/claude-sonnet-4.5'),
+      model: gateway('anthropic/claude-sonnet-5'),
       messages: await convertToModelMessages(messages),
     });
 
@@ -134,11 +134,11 @@ You can also explicitly import and use the gateway provider in two other equival
 ```ts
 // Option 1: Import from 'ai' package (included by default)
 import { gateway } from 'ai';
-model: gateway('anthropic/claude-sonnet-4.5');
+model: gateway('anthropic/claude-sonnet-5');
 
 // Option 2: Install and import from '@ai-sdk/gateway' package
 import { gateway } from '@ai-sdk/gateway';
-model: gateway('anthropic/claude-sonnet-4.5');
+model: gateway('anthropic/claude-sonnet-5');
 ```
 
 ### Using other providers
@@ -150,12 +150,12 @@ To use a different provider, install its package and create a provider instance.
 ```ts
 import { openai } from '@ai-sdk/openai';
 
-model: openai('gpt-5.1');
+model: openai('gpt-6-astra');
 ```
 
 ## Wire up the UI
 
-Now that you have an API route that can query an LLM, it's time to setup your frontend. The AI SDK's [ UI ](/docs/ai-sdk-ui/overview) package abstract the complexity of a chat interface into one hook, [`useChat`](/docs/reference/ai-sdk-ui/use-chat).
+Now that you have an API route that can query an LLM, it's time to set up your frontend. The AI SDK's [ UI ](/docs/ai-sdk-ui/overview) package abstracts the complexity of a chat interface into one hook, [`useChat`](/docs/reference/ai-sdk-ui/use-chat).
 
 Update your root page (`pages/index.vue`) with the following code to show a list of chat messages and provide a user message input:
 
@@ -252,7 +252,7 @@ export default defineLazyEventHandler(async () => {
     const { messages }: { messages: UIMessage[] } = await readBody(event);
 
     const result = streamText({
-      model: gateway('anthropic/claude-sonnet-4.5'),
+      model: gateway('anthropic/claude-sonnet-5'),
       messages: await convertToModelMessages(messages),
       tools: {
         weather: tool({
@@ -377,7 +377,7 @@ export default defineLazyEventHandler(async () => {
     const { messages }: { messages: UIMessage[] } = await readBody(event);
 
     const result = streamText({
-      model: gateway('anthropic/claude-sonnet-4.5'),
+      model: gateway('anthropic/claude-sonnet-5'),
       messages: await convertToModelMessages(messages),
       stopWhen: isStepCount(5),
       tools: {
@@ -438,7 +438,7 @@ export default defineLazyEventHandler(async () => {
     const { messages }: { messages: UIMessage[] } = await readBody(event);
 
     const result = streamText({
-      model: gateway('anthropic/claude-sonnet-4.5'),
+      model: gateway('anthropic/claude-sonnet-5'),
       messages: await convertToModelMessages(messages),
       stopWhen: isStepCount(5),
       tools: {

@@ -13,8 +13,8 @@ related:
 summary: Configure adaptive and extended thinking for Anthropic Claude models with the AI SDK and AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/anthropic.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "878597f007fd188b398bdc4ef4adf24134bbaa81cfda390695144bfa54b366ee"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "70f78d4407de96310039b50616a1e5abd3a30aa4832f120004581e8329fa79ac"
 ---
 
 # AI Gateway Anthropic Reasoning
@@ -31,9 +31,9 @@ Anthropic Claude models support thinking, which lets the model reason through co
 - [Reasoning](https://ai-sdk.dev/docs/ai-sdk-core/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=related)
 - [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=related)
 - [Use Claude Opus 4.6 on AI Gateway](https://vercel.com/changelog/claude-opus-4.6-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=related)
+- [Claude Opus 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-opus-5-5-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=related)
+- [OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=related)
 - [Get started with Claude 4](https://ai-sdk.dev/cookbook/guides/claude-4?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=related)
-- [Get started with Claude 3.7 Sonnet](https://ai-sdk.dev/cookbook/guides/sonnet-3-7?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=related)
-- [Claude Opus 4.7 on AI Gateway](https://vercel.com/changelog/opus-4.7-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=related)
 - [AI Gateway Amazon Bedrock Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=related) — Configure reasoning for models hosted on Amazon Bedrock with the AI SDK and AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/reasoning/anthropic.graph.md](/docs/ai-gateway/models-and-providers/reasoning/anthropic.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=graph)

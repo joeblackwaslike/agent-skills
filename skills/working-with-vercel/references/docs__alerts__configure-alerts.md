@@ -14,8 +14,8 @@ related:
 summary: Configure alert rules and notification destinations for Vercel Observability alerts.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/alerts/configure-alerts.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "a9b95d699e86d0948eaaded4914828c8fd93718223a643d58ad5bcf780cb174d"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "5e92f4032a285f993fdb0b024115686d62910e17b33f195b28225cc5768c496e"
 ---
 
 # Configure alerts
@@ -78,9 +78,9 @@ After you start creating a built-in alert rule, select **Error anomaly** under *
 
 ## Configure notification destinations
 
-When you create an alert rule, use **Configure notifications** to choose where Vercel sends matching alerts. For built-in alert rules, you also choose the alert severity under **Notification Severity**. You can subscribe team owners, route alerts to Slack, configure personal subscriptions, or add a webhook destination.
+When you create an alert rule, use **Configure notifications** to choose the destinations that receive matching alerts, and, for built-in alert rules, the alert severity under **Notification Severity**. Each of the following is its own destination:
 
-- **Subscribe Team Owners**: Automatically include team owners.
+- **Subscribe Team Owners**: Automatically include team owners in Vercel Notifications.
 - **Configure Slack Channels**: Route alerts to one or more Slack channels.
 - **Your Notifications**: Set your own push, email, and Inbox subscriptions.
 - **Add Webhook**: Forward alert events to a webhook destination from the Alerts settings page.

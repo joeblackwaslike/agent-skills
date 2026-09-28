@@ -16,8 +16,8 @@ related:
 summary: "View and override your application's feature flags from the Vercel Toolbar"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/flags-explorer.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "ad8d99a4458c3216a415e3c1b3746f58ba5c7d1f2653dc3d0c65afa8ff22efad"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "9912f2690a07d9d9abac8be908ce9e2b0274724144381e3654691e1ce91beb62"
 ---
 
 # Flags Explorer
@@ -33,10 +33,10 @@ The Flags Explorer is a feature of the [Vercel Toolbar](/docs/vercel-toolbar) th
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Quickstart](https://flags-sdk.dev/docs/frameworks/next?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer&source_site=vercel-docs&relationship=related) — Learn how to start using the Flags SDK in your Next.js project.
+- [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer&source_site=vercel-docs&relationship=related) — Using the Flags SDK in SvelteKit
 - [Providers](https://flags-sdk.dev/docs/providers?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer&source_site=vercel-docs&relationship=related) — Combine your feature flag provider with the Flags SDK using an adapter.
-- [Flagsmith](https://flags-sdk.dev/docs/providers/flagsmith?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer&source_site=vercel-docs&relationship=related)
+- [Flagsmith](https://flags-sdk.dev/docs/providers/flagsmith?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer&source_site=vercel-docs&relationship=related) — Evaluate Flagsmith flags with the Flags SDK.
 - [GrowthBook](https://flags-sdk.dev/docs/providers/growthbook?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer&source_site=vercel-docs&relationship=related)
-- [Hypertune](https://flags-sdk.dev/docs/providers/hypertune?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer&source_site=vercel-docs&relationship=related)
 - [LaunchDarkly is now available on the Vercel Marketplace](https://vercel.com/changelog/launchdarkly-is-now-available-on-the-vercel-marketplace?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer&source_site=vercel-docs&relationship=related)
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer&source_site=vercel-docs&relationship=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer&source_site=vercel-docs&relationship=related)

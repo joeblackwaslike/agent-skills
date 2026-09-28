@@ -17,8 +17,8 @@ related:
 summary: Configure provider options, model fallbacks, BYOK credentials, and prompt caching through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "f59193110832cab682fff2f38df02adfc82896bb7ece693b55a1a714a8071115"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "433ef97de9b2bfaf0b0f7740a457db8b82e52b118dabec02fe4e5e5a74d1414c"
 ---
 
 # OpenAI Chat Completions Configuration with AI Gateway
@@ -32,11 +32,11 @@ Control which providers serve your request, what happens when one fails, and how
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fadvanced&source_site=vercel-docs&relationship=related)
+- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fadvanced&source_site=vercel-docs&relationship=related)
 - [Provider & Model Management](https://ai-sdk.dev/docs/ai-sdk-core/provider-management?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fadvanced&source_site=vercel-docs&relationship=related)
-- [Bring Your Own Key \\(BYOK\\) to AI Gateway](https://vercel.com/docs/ai-gateway/authentication-and-byok/byok?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fadvanced&source_site=vercel-docs&relationship=related) — Learn how to configure your own provider keys with AI Gateway.
 - [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fadvanced&source_site=vercel-docs&relationship=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
+- [Bring Your Own Key \\(BYOK\\) to AI Gateway](https://vercel.com/docs/ai-gateway/authentication-and-byok/byok?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fadvanced&source_site=vercel-docs&relationship=related) — Learn how to configure your own provider keys with AI Gateway.
 - [AI Gateway Model Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/model-fallbacks?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fadvanced&source_site=vercel-docs&relationship=related) — Configure AI Gateway model fallbacks to try backup models when the primary model is unavailable. Set fallback order and
-- [Call AI Gateway Chat Completions with REST](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fadvanced&source_site=vercel-docs&relationship=related) — Use AI Gateway API directly without client libraries using curl and fetch.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced.graph.md](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fadvanced&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

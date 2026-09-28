@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/introduction.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "b410dfec6d1962d00a632be053bd061433dc8caf222e667afdad8d9ff72182b6"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "fa634301de1cae6d4535eb55cbadc54d34af9de6e4ee403a25f703046b32e165"
 ---
 
 # AI SDK
@@ -27,7 +27,7 @@ For example, here’s how you can generate text with various models using the AI
 The AI SDK has these primary surfaces:
 
 - **[AI SDK Core](/docs/ai-sdk-core):** A unified API for generating text, structured objects, tool calls, and building agents with LLMs.
-- **[AI SDK UI](/docs/ai-sdk-ui):** A set of framework-agnostic hooks for quickly building chat and generative user interface.
+- **[AI SDK UI](/docs/ai-sdk-ui):** A set of framework-agnostic hooks for quickly building chat and generative user interfaces.
 - **[AI SDK Harnesses](/docs/ai-sdk-harnesses):** A uniform API for running established agent harnesses with `HarnessAgent`.
 
 ## Model Providers

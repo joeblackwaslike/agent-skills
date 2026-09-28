@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/batch.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "da4ab488c5cfb993b15606b24fc2e9fdb55536fdc25c6f5bc1154d5f07584d1b"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "d304fe41232fda1bd347c61d1986c58b22a8d698aabe958a43672c8ca66496b9"
 ---
 
 # Batch
@@ -143,7 +143,7 @@ const batch = await startBatch({
     {
       id: 'red-panda',
       type: 'image',
-      model: 'gemini-2.5-flash-image',
+      model: 'gemini-3.1-flash-image-preview',
       prompt: 'A red panda reading beside a cabin window',
       aspectRatio: '16:9',
     },

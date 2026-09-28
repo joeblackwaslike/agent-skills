@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses/tools.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "ca14790b1198914c1e13fc0c78e36e177aeef5cc65536302cd0347cc86483a72"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "248dd4e5cd0991eefda8dd0381d064c2cee101eb7db27fec510566ec6538c589"
 ---
 
 # Harness Tools
@@ -26,10 +26,6 @@ the combined tool set through `agent.tools`.
 ```ts
 const agent = new HarnessAgent({
   harness: claudeCode,
-  sandbox: createVercelSandbox({
-    runtime: 'node24',
-    ports: [4000],
-  }),
 });
 
 agent.tools.bash;
@@ -61,7 +57,6 @@ Pass AI SDK tools to `HarnessAgent` the same way you do for a `ToolLoopAgent`:
 ```ts
 import { HarnessAgent } from '@ai-sdk/harness/agent';
 import { claudeCode } from '@ai-sdk/harness-claude-code';
-import { createVercelSandbox } from '@ai-sdk/sandbox-vercel';
 import { tool } from 'ai';
 import { z } from 'zod';
 
@@ -83,16 +78,59 @@ const weather = tool({
 
 const agent = new HarnessAgent({
   harness: claudeCode,
-  sandbox: createVercelSandbox({
-    runtime: 'node24',
-    ports: [4000],
-  }),
   tools: { weather },
 });
 ```
 
 When the harness calls `weather`, `HarnessAgent` executes the tool in your host
 process, then submits the result back to the harness runtime.
+
+Host-executed tools can declare a `contextSchema` and receive turn-scoped
+context through `toolsContext`:
+
+```ts
+const lookupAccount = tool({
+  inputSchema: z.object({}),
+  contextSchema: z.object({ userId: z.string() }),
+  execute: async (_, { context }) => {
+    return loadAccount(context.userId);
+  },
+});
+
+const agent = new HarnessAgent({
+  harness: claudeCode,
+  tools: { lookupAccount },
+  toolsContext: {
+    lookupAccount: { userId: 'user-123' },
+  },
+});
+```
+
+Use `prepareCall` to replace `toolsContext` when the value depends on custom
+call options. The type of `toolsContext` follows the tool set: it is rejected
+when no tool declares a context schema, required when a tool requires a
+context object, and optional when every context object is optional.
+`HarnessAgent` validates each entry against the tool's `contextSchema` before
+execution and exposes the configured map in step results and lifecycle
+callbacks.
+
+Tool context remains host-only and is not serialized into suspended-turn state.
+When recreating a session for an unfinished turn, rebind it explicitly:
+
+```ts
+const session = await agent.createSession({
+  sessionId,
+  continueFrom,
+  sandboxSession,
+  toolsContext: {
+    lookupAccount: { userId: 'user-123' },
+  },
+});
+```
+
+Missing or invalid context fails validation before the host tool executes. The
+validation error returned to the harness runtime is intentionally generic so
+host-only context values and schema details are not disclosed to the model.
 
 ## Client-Side Tools
 
@@ -146,10 +184,6 @@ with `tools`.
 ```ts
 const agent = new HarnessAgent({
   harness: claudeCode,
-  sandbox: createVercelSandbox({
-    runtime: 'node24',
-    ports: [4000],
-  }),
   tools: { weather },
   activeTools: ['weather'],
 });
@@ -160,10 +194,6 @@ const agent = new HarnessAgent({
 ```ts
 const agent = new HarnessAgent({
   harness: claudeCode,
-  sandbox: createVercelSandbox({
-    runtime: 'node24',
-    ports: [4000],
-  }),
   tools: { weather },
   inactiveTools: ['bash', 'write'],
 });
@@ -215,7 +245,6 @@ Use `permissionMode` for adapter-native built-ins:
 ```ts
 const agent = new HarnessAgent({
   harness: pi,
-  sandbox: createVercelSandbox({ runtime: 'node24' }),
   permissionMode: 'allow-edits',
 });
 ```
@@ -234,10 +263,6 @@ Use `toolApproval` for host-executed tools:
 ```ts
 const agent = new HarnessAgent({
   harness: claudeCode,
-  sandbox: createVercelSandbox({
-    runtime: 'node24',
-    ports: [4000],
-  }),
   tools: { weather },
   toolApproval: {
     weather: 'user-approval',

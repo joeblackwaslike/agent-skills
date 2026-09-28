@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/channels-reference.md"
-fetched_at: "2026-09-21T09:39:23.760Z"
-sha256: "ff07eaca09f2fe7a89b148682eccc8a9fdadd915c05dd950ae60f9ac5e87e826"
+fetched_at: "2026-09-28T10:38:50.037Z"
+sha256: "b65a281b094cdda10cf737eafca6f186760eb0c642d651a85a803fbdf4990316"
 ---
 
 > ## Documentation Index
@@ -189,7 +189,7 @@ claude --dangerously-load-development-channels plugin:yourplugin@yourmarketplace
 claude --dangerously-load-development-channels server:webhook
 ```
 
-The bypass is per-entry. Combining this flag with `--channels` doesn't extend the bypass to the `--channels` entries. During the research preview, the approved allowlist is Anthropic-curated, so your channel stays on the development flag while you build and test.
+The bypass is per-entry. Combining this flag with `--channels` doesn't extend the bypass to the `--channels` entries. During the research preview, your channel isn't on the approved allowlist, so it stays on the development flag while you build and test.
 
 <Note>
   This flag skips the allowlist only. The `channelsEnabled` organization policy still applies. Don't use it to run channels from untrusted sources.
@@ -780,9 +780,9 @@ The three channel-specific pieces in this file:
 
 ## Package as a plugin
 
-To make your channel installable and shareable, wrap it in a [plugin](/docs/en/plugins) and publish it to a [marketplace](/docs/en/plugin-marketplaces). Users install it with `/plugin install`, then enable it per session with `--channels plugin:<name>@<marketplace>`.
+To make your channel installable and shareable, wrap it in a [plugin](/docs/en/plugins/overview) and publish it to a [marketplace](/docs/en/plugins/overview). Users install it with `/plugin install`, then enable it per session with `--channels plugin:<name>@<marketplace>`.
 
-A channel published to your own marketplace still needs `--dangerously-load-development-channels` to run, since it isn't on the [approved allowlist](/docs/en/channels#supported-channels). The default allowlist is the channel plugins in `claude-plugins-official`, which Anthropic curates at its discretion. The [in-app submission forms](/docs/en/plugins#submit-your-plugin-to-the-community-marketplace) add plugins to the community marketplace, which is not on the channel allowlist.
+A channel published to your own marketplace still needs `--dangerously-load-development-channels` to run, since it isn't on the [approved allowlist](/docs/en/channels#supported-channels). The default allowlist is the channel plugins in `claude-plugins-official`. The community marketplace is not on the channel allowlist.
 
 If you are working with an Anthropic partner contact, reach out to them to coordinate an official-marketplace listing. On Team and Enterprise plans, an admin can instead include your plugin in the organization's own [`allowedChannelPlugins`](/docs/en/channels#restrict-which-channel-plugins-can-run) list, which replaces the default Anthropic allowlist.
 
@@ -791,4 +791,4 @@ If you are working with an Anthropic partner contact, reach out to them to coord
 * [Channels](/docs/en/channels) to install and use Telegram, Discord, iMessage, or the fakechat demo, and to enable channels for a Team or Enterprise org
 * [Working channel implementations](https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins) for complete server code with pairing flows, reply tools, and file attachments
 * [MCP](/docs/en/mcp) for the underlying protocol that channel servers implement
-* [Plugins](/docs/en/plugins) to package your channel so users can install it with `/plugin install`
+* [Plugins](/docs/en/plugins/overview) to package your channel so users can install it with `/plugin install`

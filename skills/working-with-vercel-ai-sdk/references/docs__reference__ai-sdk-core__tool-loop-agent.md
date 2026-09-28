@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/tool-loop-agent.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "3b034975508fde46a15849492512a2ed42622ac8b725132d9a7e319c06b62f7c"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "06331d25c2e4ee866d9390fd4c60cab564bb768492fab287c4779c209530bac9"
 ---
 
 # `ToolLoopAgent`
@@ -173,7 +173,8 @@ To see `ToolLoopAgent` in action, check out [these examples](#examples).
             {
               name: 'modelId',
               type: 'string',
-              description: 'The specific model identifier (e.g., "gpt-4o").',
+              description:
+                'The specific model identifier (e.g., "gpt-6-astra").',
             },
             {
               name: 'instructions',
@@ -320,7 +321,8 @@ To see `ToolLoopAgent` in action, check out [these examples](#examples).
             {
               name: 'modelId',
               type: 'string',
-              description: 'The specific model identifier (e.g., "gpt-4o").',
+              description:
+                'The specific model identifier (e.g., "gpt-6-astra").',
             },
             {
               name: 'instructions',

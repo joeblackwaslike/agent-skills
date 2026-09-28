@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/rsc/generate-text-with-chat-prompt.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "5c5ab21b55b40bbd41d0421a55e94a9b34d381b328680479d8a70ed73895b519"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "0d8a6a7995700ce11fe1d1045241f72806ef756f8551991eaf0f38de10659a25"
 ---
 
 # Generate Text with Chat Prompt
@@ -95,7 +95,7 @@ export async function continueConversation(history: Message[]) {
   'use server';
 
   const { text } = await generateText({
-    model: 'openai/gpt-5.4',
+    model: 'openai/gpt-6-astra',
     instructions: 'You are a friendly assistant!',
     messages: history,
   });

@@ -16,8 +16,8 @@ related:
 summary: "Learn how to use Vercel's build logs to monitor the progress of building or running your deployment, and check for possible errors or build failures."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/logs.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "157e7d23a210405c4ef5362f617058517e8d625e768916c6008524bfe782fceb"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "73bad8d875919b6c380c496404dadfc8ee96b02e29d515629fbf32016db2cd27"
 ---
 
 # Accessing Build Logs
@@ -41,7 +41,7 @@ When you deploy your website to Vercel, the platform generates build logs that s
 - [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions?from=related&source_path=%2Fdocs%2Fdeployments%2Flogs&source_site=vercel-docs&relationship=related)
 - [Logs](https://vercel.com/docs/logs?from=related&source_path=%2Fdocs%2Fdeployments%2Flogs&source_site=vercel-docs&relationship=related) — Use logs to find information on deployment builds, function executions, and more.
 - [Get logs for a deployment](https://vercel.com/docs/rest-api/logs/get-logs-for-a-deployment?from=related&source_path=%2Fdocs%2Fdeployments%2Flogs&source_site=vercel-docs&relationship=related) — GET /v1/projects/{projectId}/deployments/{deploymentId}/runtime-logs — Returns a stream of logs for a given deployment.
-- [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build?from=related&source_path=%2Fdocs%2Fdeployments%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
+- [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features?from=related&source_path=%2Fdocs%2Fdeployments%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to customize your deployments using Vercel's build features.
 
 Full cross-link map for this page: [/docs/deployments/logs.graph.md](/docs/deployments/logs.graph.md?from=related&source_path=%2Fdocs%2Fdeployments%2Flogs&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

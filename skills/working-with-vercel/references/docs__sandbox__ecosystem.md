@@ -3,7 +3,7 @@ title: Ecosystem
 product: vercel
 url: /docs/sandbox/ecosystem
 canonical_url: "https://vercel.com/docs/sandbox/ecosystem"
-last_updated: 2026-09-17
+last_updated: 2026-09-23
 type: conceptual
 prerequisites:
   - /docs/sandbox
@@ -16,8 +16,8 @@ related:
 summary: Use Vercel Sandbox with the agent frameworks, model SDKs, and coding agents you already work with.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/ecosystem.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "e0b2d9fb7365782733ca08f0242216c5fffdab94932cbdc02dc65a0a7c0649cb"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "1d710b44d78b02784fa61551b7f6bb8495e2d14bf524c5e193528c7332c59ede"
 ---
 
 # Ecosystem
@@ -35,9 +35,9 @@ tool inside an isolated Firecracker microVM.
 - [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
 - [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related)
 - [Using TanStack AI with Vercel Sandbox](https://vercel.com/kb/guide/tanstack-ai-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related) — Run coding agents in isolated Vercel Sandbox microVMs with the @tanstack/ai-sandbox-vercel provider, with durable resume
+- [Sandbox](https://eve.dev/docs/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related) — Configure the isolated filesystem and command environment used by an eve agent.
 - [How to run Herdr coding agents in isolated Vercel Sandboxes](https://vercel.com/kb/guide/run-herdr-coding-agents-isolated-vercel-sandboxes?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related) — Install the vercel.sandbox plugin for Herdr, approve an upload manifest, run each AI coding agent in its own isolated Ve
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
-- [The Agent Stack](https://vercel.com/blog/agent-stack?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related)
 - [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
 - [Run isolated AI agents in one sandbox](https://vercel.com/docs/sandbox/concepts/multi-agent?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related) — Give each AI agent an isolated Linux user in a Vercel Sandbox with the @vercel/sandbox createUser, createGroup, and asUs
 
@@ -48,7 +48,7 @@ Full cross-link map for this page: [/docs/sandbox/ecosystem.graph.md](/docs/sand
 
 The LangChain, OpenAI SDK, and Anthropic SDK guides define a `run_code`
 tool backed by
-[`sandbox.runCommand()`](/docs/sandbox/sdk-reference#sandboxruncommand),
+[`sandbox.runCommand()`](/docs/sandbox/sdk-reference#sandbox.runcommand),
 pass it to the framework's tool-calling loop, and return the command output
 to the model. Model requests route through [AI Gateway](/docs/ai-gateway),
 while Vercel credentials authenticate the sandbox.
@@ -78,10 +78,23 @@ the provider's API credentials.
 | --- | --- | --- |
 | [OpenAI Agents API](/docs/sandbox/ecosystem/openai-agents-api) | Hosted agent API | OpenAI-managed sessions with Sandbox execution and persistent files |
 
+## Content and storage
+
+These integrations give an agent a filesystem view of a content or object
+store, so it reads and writes through standard file operations instead of
+calling a storage API. The files live in the provider, not the sandbox. That
+means the provider's permissions decide what the agent can open, and the
+agent's work is still there after the sandbox is deleted.
+
+| Integration                                    | Type             | Use case                                              |
+| ---------------------------------------------- | ---------------- | ----------------------------------------------------- |
+| [Box Mount](/docs/sandbox/ecosystem/box-mount) | Content platform | Agents reading and writing Box content as local files |
+
 ## Coding agents
 
 | Integration                            | Type          | Use case                                    |
 | -------------------------------------- | ------------- | ------------------------------------------- |
+| [Cursor](/docs/sandbox/ecosystem/cursor) | Coding agent | Cursor Cloud Agents on Self-Hosted Machines |
 | [Devin](/docs/sandbox/ecosystem/devin) | Coding agent  | Devin Outposts sessions in Sandbox microVMs |
 | [Herdr](/docs/sandbox/ecosystem/herdr) | Agent manager | Terminal coding agents in persistent Sandboxes |
 | [Hermes](/docs/sandbox/ecosystem/hermes) | Coding agent | Hermes terminal commands in Sandbox microVMs |

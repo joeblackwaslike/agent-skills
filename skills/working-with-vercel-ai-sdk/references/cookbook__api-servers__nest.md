@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/api-servers/nest.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "d51a1f43a5a9ee1e88e6b3aa35454b0d4274b4fd279de6a010d4eb499e80f8fd"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "8df9fc382c4af7a979819fa9edff9533f6e5c6c81c8d8a97f88d7542f98e2cbd"
 ---
 
 # Nest.js
@@ -32,7 +32,7 @@ export class AppController {
   @Post('/')
   async root(@Res() res: Response) {
     const result = streamText({
-      model: 'openai/gpt-4o',
+      model: 'openai/gpt-6-astra',
       prompt: 'Invent a new holiday and describe its traditions.',
     });
 
@@ -75,7 +75,7 @@ export class AppController {
         });
 
         const result = streamText({
-          model: 'openai/gpt-4o',
+          model: 'openai/gpt-6-astra',
           prompt: 'Invent a new holiday and describe its traditions.',
         });
         writer.merge(
@@ -110,7 +110,7 @@ export class AppController {
   @Post()
   async example(@Res() res: Response) {
     const result = streamText({
-      model: 'openai/gpt-4o',
+      model: 'openai/gpt-6-astra',
       prompt: 'Invent a new holiday and describe its traditions.',
     });
 

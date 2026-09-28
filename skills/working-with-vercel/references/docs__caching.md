@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel caches content across multiple layers to deliver fast responses and reduce load on your backend.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "bead7ee8154b3cc781b11fb59bb0a2b89949c0567cfc00bd58f9428311f22aa1"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "5dafa73014f2f014c90226c580db0d2483a6cb17888f46a822dec58522e382f4"
 ---
 
 # Caching
@@ -35,7 +35,7 @@ Vercel caches content at multiple layers between the visitor and your backend. T
 - [Troubleshoot and optimize Function Invocations on Vercel](https://vercel.com/kb/guide/optimize-function-invocations?from=related&source_path=%2Fdocs%2Fcaching&source_site=vercel-docs&relationship=related) — Diagnose which routes drive Function Invocations and learn to optimize them. Separate necessary dynamic traffic from div
 - [Can I use Vercel as a reverse proxy?](https://vercel.com/kb/guide/vercel-reverse-proxy-rewrites-external?from=related&source_path=%2Fdocs%2Fcaching&source_site=vercel-docs&relationship=related) — Learn how to use rewrites to proxy requests from Vercel to other deployments.
 - [Set cache control headers for functions](https://vercel.com/kb/guide/set-cache-control-headers?from=related&source_path=%2Fdocs%2Fcaching&source_site=vercel-docs&relationship=related) — Learn how to set headers to cache your function's responses.
-- [How Vercel CDN works](https://vercel.com/docs/how-vercel-cdn-works?from=related&source_path=%2Fdocs%2Fcaching&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
+- [Preventing the stampede: Request collapsing in the Vercel CDN ](https://vercel.com/blog/cdn-request-collapsing?from=related&source_path=%2Fdocs%2Fcaching&source_site=vercel-docs&relationship=related)
 - [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure?from=related&source_path=%2Fdocs%2Fcaching&source_site=vercel-docs&relationship=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 - [vercel.functions API Reference \\(Python\\)](https://vercel.com/docs/functions/functions-api-reference/vercel-sdk-python?from=related&source_path=%2Fdocs%2Fcaching&source_site=vercel-docs&relationship=related) — Learn about available APIs when working with Vercel Functions in Python.
 - [Glossary](https://vercel.com/docs/glossary?from=related&source_path=%2Fdocs%2Fcaching&source_site=vercel-docs&relationship=related) — Learn about the terms and concepts used in Vercel's products and documentation.

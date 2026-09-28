@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses/terminal-ui.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "e99c8033ea80ddb9e15ed3e636b816948e4f2d5e6b5a75936c731a01cfcf2e9a"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "44891df4534da0ef97d70897a735440e7e637b612bb5832cef8c7d0298eb7080"
 ---
 
 # Harnesses with Terminal UI
@@ -20,15 +20,11 @@ session for the lifetime of the terminal UI.
 ```ts filename='tui.ts'
 import { HarnessAgent, type HarnessAgentSession } from '@ai-sdk/harness/agent';
 import { codex } from '@ai-sdk/harness-codex';
-import { createVercelSandbox } from '@ai-sdk/sandbox-vercel';
+import { createVercelNetworkSandboxSession } from '@ai-sdk/sandbox-vercel';
 import { runAgentTUI, type AgentTUIAgent } from '@ai-sdk/tui';
 
 const agent = new HarnessAgent({
   harness: codex,
-  sandbox: createVercelSandbox({
-    runtime: 'node24',
-    ports: [4000],
-  }),
 });
 
 function createTUIAgent({
@@ -57,7 +53,12 @@ function createTUIAgent({
   } as AgentTUIAgent;
 }
 
-const session = await agent.createSession();
+const sandboxSession = await createVercelNetworkSandboxSession({
+  runtime: 'node24',
+  ports: [4000],
+  template: await agent.getSandboxTemplate(),
+});
+const session = await agent.createSession({ sandboxSession });
 
 try {
   await runAgentTUI({
@@ -68,6 +69,7 @@ try {
   });
 } finally {
   await session.destroy();
+  await sandboxSession.destroy();
 }
 ```
 

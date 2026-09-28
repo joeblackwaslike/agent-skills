@@ -16,8 +16,8 @@ related:
 summary: Discover the essentials of our Shared Responsibility Model, outlining the key roles and responsibilities for customers, Vercel, and shared aspects in...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/shared-responsibility.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "5f0c710c08b952e6e70b19216e2e37ddf8ca344ce22d59dd890e17a7006ee2ae"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "49e9c75ae24309368a8edc17975a6a3c3ea8b146fb2ae342e2d5481b2092f0df"
 ---
 
 # Shared Responsibility Model
@@ -81,7 +81,7 @@ Vercel manages infrastructure components, such as compute, storage, and networki
 ## Vercel responsibilities
 
 - **Infrastructure**: Vercel is responsible for the security and availability of the underlying infrastructure used to provide our services. Vercel maintains strict security protocols and regularly performs upgrades to ensure that our infrastructure is up to date and secure
-  - **Multiple Availability Zones and Globally Located Edge Locations**: Vercel makes use of 20 different [regions](/docs/regions), which are strategically placed around the globe to provide fast and reliable content delivery to customers
+  - **Multiple Availability Zones and Globally Located Edge Locations**: Vercel makes use of 19 different [regions](/docs/regions), which are strategically placed around the globe to provide fast and reliable content delivery to customers
 - **Compute**: Vercel provides a compute environment for customer applications that utilizes Vercel Functions and containers to ensure the secure execution of customer code and middleware. Industry-standard security practices are used to isolate customer applications and ensure they are not impacted by other applications running on the platform
 - **Storage**: Vercel is responsible for the security and reliability of storage environments for customer data. This includes the storage of application code, configuration files, and other data required to run customer applications. Vercel uses industry-standard encryption and access controls to ensure that customer data is protected from unauthorized access
 - **Networking**: Vercel is responsible for providing a secure and reliable networking environment for customer applications. This includes the network infrastructure used to connect customer applications to the internet, as well as the firewalls and other security measures used to protect them from unauthorized access. Industry-standard security practices are used to monitor network traffic and detect and respond to potential security threats

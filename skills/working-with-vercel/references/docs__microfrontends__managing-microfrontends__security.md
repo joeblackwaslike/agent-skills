@@ -17,8 +17,8 @@ related:
 summary: Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/managing-microfrontends/security.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "74f350b667991818b9f12679aeeb1f13c966e8b559786e7dda335584b0101792"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "d3d338646f4585ee8c8f7dd3274cf5e27f5fe08663fbbbb97a9e04de8b158b1d"
 ---
 
 # Managing microfrontends security
@@ -37,6 +37,7 @@ Understand how and where you manage [Deployment Protection](/docs/deployment-pro
 - [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends%2Fsecurity&source_site=vercel-docs&relationship=related) — Learn how to get started with microfrontends on Vercel.
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends%2Fsecurity&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 - [Microfrontends local development](https://vercel.com/docs/microfrontends/local-development?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends%2Fsecurity&source_site=vercel-docs&relationship=related) — Learn how to run and test your microfrontends locally.
+- [Restrict access to deployments with Passport](https://vercel.com/docs/passport?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends%2Fsecurity&source_site=vercel-docs&relationship=related) — Learn how to protect deployments with Passport, read visitor identity, and verify Passport tokens in server-side code.
 
 Full cross-link map for this page: [/docs/microfrontends/managing-microfrontends/security.graph.md](/docs/microfrontends/managing-microfrontends/security.graph.md?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends%2Fsecurity&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -56,7 +57,7 @@ For requests directly to a child application (a domain belonging to a child micr
 
 - Requests are **only** verified by the [Deployment Protection](/docs/deployment-protection) settings for the project of the **child application**
 
-This applies to all [protection methods](/docs/deployment-protection/methods-to-protect-deployments) and [bypass methods](/docs/deployment-protection/methods-to-bypass-deployment-protection), including:
+This applies to the following [protection methods](/docs/deployment-protection/methods-to-protect-deployments) and [bypass methods](/docs/deployment-protection/methods-to-bypass-deployment-protection):
 
 - [Vercel Authentication](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication)
 - [Password Protection](/docs/deployment-protection/methods-to-protect-deployments/password-protection)
@@ -76,6 +77,10 @@ We recommend the following configuration:
 - **Child apps**: Enable [protection for all deployments](/docs/deployment-protection) so that child apps are not directly accessible. Since child app content is served through the default app's URL, child apps can only be accessed via the URL of the default project.
 
 This works because Vercel handles routing to child apps within a single request at the network layer, as explained in [routing](/docs/microfrontends/routing). It is not a rewrite that results in a separate request to the child app's URL. Deployment protection on the child app therefore applies only when the child app's URL is accessed directly.
+
+On URLs with microfrontends routing, Passport is configured on the default application and its configuration protects every child path. Child applications cannot have an independent Passport connection while they belong to the group. Direct requests to a child application's domains do not use the default application's Passport configuration. While a child belongs to a group, protect its direct domains with another [Deployment Protection method](/docs/deployment-protection/methods-to-protect-deployments). To configure Passport on the child project, remove it from the group first.
+
+The default application handles the `/.well-known/vercel/passport/callback` request before application routing, so neither application needs to implement the callback path.
 
 ## Vercel Firewall and microfrontends
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/raindrop.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "0fc469e8dca56566bd26dd04dd0edf247e614fb95b0cef7b62142ff189cf4e79"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "5d978878a032fa7f3c6bc69cbf24d8c2a992cc2b856f58e54a135b16bde4098e"
 ---
 
 # Raindrop Observability
@@ -40,7 +40,7 @@ import { generateText } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
 const { text } = await generateText({
-  model: openai('gpt-5-mini'),
+  model: openai('gpt-6-luna'),
   prompt: 'Write a short welcome message for a new user.',
   telemetry: {
     functionId: 'welcome-message',
@@ -67,7 +67,7 @@ const raindropTelemetry = raindrop({
 });
 
 const { text } = await generateText({
-  model: openai('gpt-5-mini'),
+  model: openai('gpt-6-luna'),
   prompt: 'Summarize the latest support ticket.',
   telemetry: {
     functionId: 'support-summary',
@@ -111,7 +111,7 @@ export async function POST(req: Request) {
   });
 
   const result = streamText({
-    model: openai('gpt-5-mini'),
+    model: openai('gpt-6-luna'),
     messages: await convertToModelMessages(messages),
     telemetry: {
       functionId: 'chat-route',
@@ -134,7 +134,7 @@ export async function POST(req: Request) {
 
 ```ts
 const result = await generateText({
-  model: openai('gpt-5-mini'),
+  model: openai('gpt-6-luna'),
   prompt: 'Summarize this private document.',
   telemetry: {
     recordInputs: false,

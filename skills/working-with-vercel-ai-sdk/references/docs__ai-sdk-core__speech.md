@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/speech.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "7a1dd5fae48360e48309c9964883c9d995f7757915c060f3c037ce8fe8c43b1d"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "19ff34ccf946732b00687108d42e55b265c4d1377d2c49af39f8095773bab403"
 ---
 
 # Speech
@@ -14,7 +14,7 @@ import { generateSpeech } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
 const audio = await generateSpeech({
-  model: openai.speech('tts-1'),
+  model: openai.speech('gpt-4o-mini-tts'),
   text: 'Hello, world!',
   voice: 'alloy',
 });
@@ -39,7 +39,7 @@ import { generateSpeech } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
 const audio = await generateSpeech({
-  model: openai.speech('tts-1'),
+  model: openai.speech('gpt-4o-mini-tts'),
   text: 'Hello, world!',
   providerOptions: {
     openai: {
@@ -60,7 +60,7 @@ import { openai } from '@ai-sdk/openai';
 import { generateSpeech } from 'ai';
 
 const audio = await generateSpeech({
-  model: openai.speech('tts-1'),
+  model: openai.speech('gpt-4o-mini-tts'),
   text: 'Hello, world!',
   abortSignal: AbortSignal.timeout(1000), // Abort after 1 second
 });
@@ -76,7 +76,7 @@ import { openai } from '@ai-sdk/openai';
 import { generateSpeech } from 'ai';
 
 const audio = await generateSpeech({
-  model: openai.speech('tts-1'),
+  model: openai.speech('gpt-4o-mini-tts'),
   text: 'Hello, world!',
   headers: { 'X-Custom-Header': 'custom-value' },
 });
@@ -91,7 +91,7 @@ import { openai } from '@ai-sdk/openai';
 import { generateSpeech } from 'ai';
 
 const audio = await generateSpeech({
-  model: openai.speech('tts-1'),
+  model: openai.speech('gpt-4o-mini-tts'),
   text: 'Hello, world!',
 });
 
@@ -118,7 +118,7 @@ import { openai } from '@ai-sdk/openai';
 
 try {
   await generateSpeech({
-    model: openai.speech('tts-1'),
+    model: openai.speech('gpt-4o-mini-tts'),
     text: 'Hello, world!',
   });
 } catch (error) {
@@ -148,6 +148,8 @@ try {
 | [Google](/providers/ai-sdk-providers/google#speech-models)               | `gemini-2.5-flash-preview-tts`      |
 | [Google](/providers/ai-sdk-providers/google#speech-models)               | `gemini-2.5-pro-preview-tts`        |
 | [Google](/providers/ai-sdk-providers/google#speech-models)               | `gemini-3.1-flash-tts-preview`      |
+| [Google](/providers/ai-sdk-providers/google#speech-models)               | `gemini-3.8-flash-tts`              |
+| [Google](/providers/ai-sdk-providers/google#speech-models)               | `gemini-3.8-flash-lite-tts`         |
 | [Google Vertex](/providers/ai-sdk-providers/google-vertex#speech-models) | `gemini-2.5-flash-tts`              |
 | [Google Vertex](/providers/ai-sdk-providers/google-vertex#speech-models) | `gemini-2.5-pro-tts`                |
 | [Google Vertex](/providers/ai-sdk-providers/google-vertex#speech-models) | `gemini-2.5-flash-lite-preview-tts` |

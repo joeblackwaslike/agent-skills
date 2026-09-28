@@ -3,7 +3,7 @@ title: vercel alias
 product: vercel
 url: /docs/cli/alias
 canonical_url: "https://vercel.com/docs/cli/alias"
-last_updated: 2026-08-11
+last_updated: 2026-09-18
 type: reference
 prerequisites:
   - /docs/cli
@@ -16,8 +16,8 @@ related:
 summary: Learn how to apply custom domain aliases to your Vercel deployments using the vercel alias CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/alias.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "9e826e5c68a0d2ff78ec9c3422023430ee2b6d7297ee61c4ce59892b0a162248"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "8b7ca14095b2f2d00f4d0a2e410fb5b8d1c82dda002c21e5240c8f7d03e6398f"
 ---
 
 # vercel alias

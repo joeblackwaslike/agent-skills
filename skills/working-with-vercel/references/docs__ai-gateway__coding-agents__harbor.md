@@ -17,8 +17,8 @@ related:
 summary: Evaluate coding-agent harnesses with Harbor and AI Gateway. Choose a harness, configure its connection, and pass separate credentials to verifiers.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/harbor.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "8d8ac3eeb6c192217bd1747b8ac891c0648679d6fcfed2b5366a4d48f2c91444"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "9f335a98d250184528dad1924fbc7f0fc8c9394636044508b35f80ce9fa8baf0"
 ---
 
 # Harbor with AI Gateway
@@ -33,8 +33,8 @@ sha256: "8d8ac3eeb6c192217bd1747b8ac891c0648679d6fcfed2b5366a4d48f2c91444"
 
 - [Run Terminal-Bench and any Harbor benchmark on Vercel Sandbox](https://vercel.com/kb/guide/run-terminal-bench-harbor-benchmarks-vercel-sandbox?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fharbor&source_site=vercel-docs&relationship=related) — Run Terminal-Bench, SWE-bench, and any Harbor benchmark on Vercel Sandbox. Each trial executes in an isolated Firecracke
 - [Run Terminal-Bench and other Harbor evals on Vercel Sandbox](https://vercel.com/changelog/run-terminal-bench-and-other-harbor-evals-on-vercel-sandbox?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fharbor&source_site=vercel-docs&relationship=related)
-- [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fharbor&source_site=vercel-docs&relationship=related) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
 - [OpenCode](https://ai-sdk.dev/providers/ai-sdk-harnesses/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fharbor&source_site=vercel-docs&relationship=related)
+- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fharbor&source_site=vercel-docs&relationship=related) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
 - [Harbor and Terminal-Bench](https://vercel.com/docs/sandbox/ecosystem/harbor?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fharbor&source_site=vercel-docs&relationship=related) — Run Terminal-Bench and any other Harbor Hub dataset on Vercel Sandbox, with each trial in its own isolated Firecracker m
 - [DeepSeek Harness with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepseek?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fharbor&source_site=vercel-docs&relationship=related) — Connect DeepSeek Harness to AI Gateway with the Vercel CLI or a YAML provider and model shortlist.
 

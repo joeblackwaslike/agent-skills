@@ -3,7 +3,7 @@ title: Better Auth
 product: vercel
 url: /docs/connect/frameworks/better-auth
 canonical_url: "https://vercel.com/docs/connect/frameworks/better-auth"
-last_updated: 2026-08-28
+last_updated: 2026-09-18
 type: tutorial
 prerequisites:
   - /docs/connect/frameworks
@@ -17,8 +17,8 @@ related:
 summary: Use Vercel Connect as a generic OAuth provider for Better Auth in a Next.js application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/frameworks/better-auth.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "b0b4ce7140d9f1b25facddcfbabf40915ac43e201fc0ea4f61022996cf301992"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "88456096bf0530295eb4007145b2785596ba7ed8d555759dd89cd47d76bf808d"
 ---
 
 # Better Auth

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/node/intercept-fetch-requests.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "0d56f6a583898b2afce92df4933f2f4a0a0978a9a203f879f80bd0b026134f5e"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "752f501d48e78b83e08c88e2010ee85547c3aa9ffd18c80bb06269ba6b834fce"
 ---
 
 # Intercepting Fetch Requests
@@ -37,7 +37,7 @@ const gateway = createGateway({
 });
 
 const { text } = await generateText({
-  model: gateway('openai/gpt-4o'),
+  model: gateway('openai/gpt-6-astra'),
   prompt: 'Why is the sky blue?',
 });
 ```

@@ -10,12 +10,12 @@ prerequisites:
 related:
   - /docs/eve
   - /docs/eve/concepts
-  - /docs/eve/observability
+  - /docs/eve/agent-runs
 summary: Understand what software factories are, when to use them, and how eve coordinates agents from work item to reviewed change.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/eve/software-factory.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "5fc850f70164b1c1dcf56c4dfa81c9bc5c3c981b92fbc7cb85f71c05c9e2b102"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "76295138c8119ae89ae98df81452cb8bd0865fcb0fb2528045c720a312c0c07f"
 ---
 
 # How Software Factories Work
@@ -30,12 +30,13 @@ Software factories organize AI agents into repeatable development workflows that
 
 - [How to add tools to your eve agent](https://vercel.com/kb/guide/how-to-add-eve-tools?from=related&source_path=%2Fdocs%2Feve%2Fsoftware-factory&source_site=vercel-docs&relationship=related) — Add tools to an eve agent by creating a TypeScript file under agent/tools/ with defineTool, and gate sensitive ones on h
 - [Introducing eve](https://vercel.com/blog/introducing-eve?from=related&source_path=%2Fdocs%2Feve%2Fsoftware-factory&source_site=vercel-docs&relationship=related)
-- [Self-Host eve](https://eve.dev/docs/guides/deployment/self-hosting?from=related&source_path=%2Fdocs%2Feve%2Fsoftware-factory&source_site=vercel-docs&relationship=related) — Run an eve agent as a Node service with your own workflow storage, sandbox backend, and routing.
-- [How to build a GitHub agent with eve and GitHub Tools](https://vercel.com/kb/guide/github-agent-eve?from=related&source_path=%2Fdocs%2Feve%2Fsoftware-factory&source_site=vercel-docs&relationship=related) — Build a GitHub agent with eve, GitHub Tools, and Vercel Connect. Register AI-callable GitHub tools, gate writes behind d
+- [Self-Host eve](https://eve.dev/docs/guides/deployment/self-hosting?from=related&source_path=%2Fdocs%2Feve%2Fsoftware-factory&source_site=vercel-docs&relationship=related) — Run an eve agent as a Node service with your own workflow storage, sandbox provider, and routing.
 - [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related&source_path=%2Fdocs%2Feve%2Fsoftware-factory&source_site=vercel-docs&relationship=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
-- [Deployment](https://eve.dev/docs/guides/deployment/overview?from=related&source_path=%2Fdocs%2Feve%2Fsoftware-factory&source_site=vercel-docs&relationship=related) — Choose a deployment strategy and prepare an eve agent for production.
-- [How to use subagents with eve](https://vercel.com/kb/guide/how-to-use-eve-subagents?from=related&source_path=%2Fdocs%2Feve%2Fsoftware-factory&source_site=vercel-docs&relationship=related) — Learn how to use subagents with eve, including the built-in agent tool, declared specialist subagents, the isolation bou
+- [How to build a GitHub agent with eve and GitHub Tools](https://vercel.com/kb/guide/github-agent-eve?from=related&source_path=%2Fdocs%2Feve%2Fsoftware-factory&source_site=vercel-docs&relationship=related) — Build a GitHub agent with eve, GitHub Tools, and Vercel Connect. Register AI-callable GitHub tools, gate writes behind d
 - [The Agent Stack](https://vercel.com/blog/agent-stack?from=related&source_path=%2Fdocs%2Feve%2Fsoftware-factory&source_site=vercel-docs&relationship=related)
+- [How to use subagents with eve](https://vercel.com/kb/guide/how-to-use-eve-subagents?from=related&source_path=%2Fdocs%2Feve%2Fsoftware-factory&source_site=vercel-docs&relationship=related) — Learn how to use subagents with eve, including the built-in agent tool, declared specialist subagents, the isolation bou
+- [Deployment](https://eve.dev/docs/guides/deployment/overview?from=related&source_path=%2Fdocs%2Feve%2Fsoftware-factory&source_site=vercel-docs&relationship=related) — Choose a deployment strategy and prepare an eve agent for production.
+- [Draft documentation fixes from reader feedback with Sanity and eve](https://vercel.com/kb/guide/sanity-eve-agent?from=related&source_path=%2Fdocs%2Feve%2Fsoftware-factory&source_site=vercel-docs&relationship=related) — Build an autonomous agent that drafts fixes in Sanity, stages them for human review, and calls the model through AI Gate
 
 Full cross-link map for this page: [/docs/eve/software-factory.graph.md](/docs/eve/software-factory.graph.md?from=related&source_path=%2Fdocs%2Feve%2Fsoftware-factory&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -92,7 +93,7 @@ Several eve capabilities support the workflow:
 | Keep progress across interruptions | [Durable sessions](/docs/eve/concepts#durability) use Vercel Workflows to preserve progress across turns, pauses, and redeploys. |
 | Run repository commands            | [Sandboxes](/docs/eve/concepts#sandbox) isolate the environment where agents inspect code and run checks.                        |
 | Access external services           | [Connections](/docs/eve/concepts#connections) link agents to services and can use Vercel Connect for delegated credentials.      |
-| Inspect a run                      | [Agent Runs](/docs/eve/observability) shows the sessions and tool calls behind an outcome.                                       |
+| Inspect a run                      | [Agent Runs](/docs/eve/agent-runs) shows the sessions and tool calls behind an outcome.                                          |
 
 Foreman, the [eve software factory template](https://eve.dev/templates/eve-software-factory-template), is one implementation of this pattern. It routes GitHub and Linear work through classifier, analyst, implementer, and reviewer agents. Its workflow ends with a reviewed draft pull request; a person decides when to mark it ready and merge it.
 

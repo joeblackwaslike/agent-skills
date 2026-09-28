@@ -3,7 +3,7 @@ title: Triggers
 product: vercel
 url: /docs/connect/concepts/triggers
 canonical_url: "https://vercel.com/docs/connect/concepts/triggers"
-last_updated: 2026-08-20
+last_updated: 2026-09-18
 type: conceptual
 prerequisites:
   - /docs/connect/concepts
@@ -16,8 +16,8 @@ related:
 summary: Incoming webhooks from third-party services, verified by Vercel Connect and forwarded to your projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/triggers.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "ad38d9e4d1abd7aee49bba4d2f3c48acc79eeebfe0f8422f1310ffdddd702191"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "56cef5bf9234325511e683f6af862b4360c08ca6561eb3b8069fe5b69dc67d01"
 ---
 
 # Triggers
@@ -32,6 +32,7 @@ A **trigger** is an incoming webhook from a third-party service that Vercel Conn
 
 - [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftriggers&source_site=vercel-docs&relationship=related) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect — short-
 - [Chat SDK now supports Vercel Connect](https://vercel.com/changelog/chat-sdk-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftriggers&source_site=vercel-docs&relationship=related)
+- [Vercel Connect now supports Microsoft Teams](https://vercel.com/changelog/vercel-connect-microsoft-teams?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftriggers&source_site=vercel-docs&relationship=related)
 - [How to set up a staging environment on Vercel](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftriggers&source_site=vercel-docs&relationship=related) — Set up a staging environment on Vercel with custom environments, staged production deployments, or a branch-based previe
 - [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftriggers&source_site=vercel-docs&relationship=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftriggers&source_site=vercel-docs&relationship=related)

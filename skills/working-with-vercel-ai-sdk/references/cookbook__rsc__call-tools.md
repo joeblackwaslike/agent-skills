@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/rsc/call-tools.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "7eeed44b3f89f306d6fb3f6e2830035485f095bad382fded6082642be6b4e1f0"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "55d01fff1efa01b9b4c37b895dea1021075799be871bdd09d2b34226a8ed3fa7"
 ---
 
 # Call Tools
@@ -99,7 +99,7 @@ export async function continueConversation(history: Message[]) {
   'use server';
 
   const { text, toolResults } = await generateText({
-    model: 'openai/gpt-5.4',
+    model: 'openai/gpt-6-astra',
     instructions: 'You are a friendly assistant!',
     messages: history,
     tools: {

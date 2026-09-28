@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/node/stream-text-with-chat-prompt.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "4347450da01c563f15e6da38acc92d377d46bf5127601a766dca5a0f064ca37b"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "95f4fd57b0b7957c207fa2c692a6c92c2b93925cb544eae9ce9905b3c86fb59c"
 ---
 
 # Stream Text with Chat Prompt
@@ -15,7 +15,7 @@ rather than have users wait for it to finish.
 import { streamText } from 'ai';
 
 const result = streamText({
-  model: 'openai/gpt-4o',
+  model: 'openai/gpt-6-astra',
   maxOutputTokens: 1024,
   instructions: 'You are a helpful chatbot.',
   messages: [

@@ -17,8 +17,8 @@ related:
 summary: Learn how information flows between the integration user, Vercel, and the integration provider for Vercel native integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-flows.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "1f2d0a4b046e2ec865840ecfdf94468a1477ac8dd9456fb906288cc12bd3c19a"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "454b90afe895bcb78db844545a80f46cc14061a64736fc9e0582d6fe8f885a44"
 ---
 
 # Native Integration Flows
@@ -44,7 +44,7 @@ The following diagrams help you understand how information flows in both directi
 
 ## Create a storage product flow
 
-When a Vercel user, who wants to install a provider native integration, selects **Storage** in the Vercel dashboard sidebar, followed by **Create Database**, they are taken through the following steps to provide the key information required for the provider to be able to create a product for this user.
+When a Vercel user, who wants to install a provider native integration, selects **Storage** in the Vercel dashboard sidebar, followed by **Create Storage**, they are taken through the following steps to provide the key information required for the provider to be able to create a product for this user.
 
 After reviewing the flow diagram below, explore the sequence for each step:
 
@@ -94,7 +94,7 @@ sequenceDiagram
     participant Vercel Dashboard
     participant Vercel Platform
     participant Provider Integration
-    User->>Vercel Dashboard: Click Create Database
+    User->>Vercel Dashboard: Click Create Storage
     Vercel Dashboard->>User: Show Browse Storage Modal
     User->>Vercel Dashboard: Select Storage Provider and click Continue
     Vercel Dashboard->>User: Show Accept Terms Modal

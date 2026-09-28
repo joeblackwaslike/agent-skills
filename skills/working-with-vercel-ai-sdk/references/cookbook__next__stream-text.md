@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/stream-text.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "08880bc04ae2cf88be78088c43329090905594b616c9fa69b90a63fc0890187b"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "6b50c9f47e4c7e49277ea48de1494993cb8cbb2a8a9239dbd2579b57328d1e1b"
 ---
 
 # Stream Text
@@ -57,7 +57,7 @@ export async function POST(req: Request) {
   const { prompt }: { prompt: string } = await req.json();
 
   const result = streamText({
-    model: 'openai/gpt-4o',
+    model: 'openai/gpt-6-astra',
     instructions: 'You are a helpful assistant.',
     prompt,
   });

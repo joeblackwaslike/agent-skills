@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/troubleshooting/use-chat-custom-request-options.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "21a74d1e0720f0a168f5f6d72ecc3bcc0fd80759393e0e3fba5eae6cfe5926f6"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "d0aa125a53d21a25f22e0eebb8d017b93ff477c73d45af2349d416f8aca860c3"
 ---
 
 # Custom headers, body, and credentials not working with useChat
@@ -74,7 +74,7 @@ const { messages, sendMessage } = useChat({
       'X-App-ID': 'my-app', // Static app identifier
     },
     body: {
-      model: 'gpt-5.1', // Default model
+      model: 'gpt-6-astra', // Default model
       stream: true, // Static configuration
     },
     credentials: 'include', // Static credentials policy
@@ -126,7 +126,7 @@ const { messages, sendMessage } = useChat({
       'X-API-Version': 'v1',
     },
     body: {
-      model: 'gpt-5.1',
+      model: 'gpt-6-astra',
     },
   }),
 });
@@ -140,7 +140,7 @@ sendMessage(
       'X-Request-ID': '123', // This is added
     },
     body: {
-      model: 'gpt-5-mini', // This overrides the hook-level body field
+      model: 'gpt-4.1-mini', // Supports the temperature setting below
       temperature: 0.5, // This is added
     },
   },

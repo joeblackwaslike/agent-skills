@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/start-batch.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "778924d6b088bb628c5963b43ad1bdf56fed2c2f962bb62dc31a6ab34fb341f4"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "54616ea96dad32a56fd3fa3788f36e61d06bc1e7ace6ea35d5c9444c74b90f5c"
 ---
 
 # `experimental_startBatch()`
@@ -21,7 +21,7 @@ const batch = await startBatch({
     {
       id: 'france',
       type: 'text',
-      model: 'gpt-4.1-nano',
+      model: 'gpt-5.4-nano',
       prompt: 'What is the capital of France?',
     },
   ],

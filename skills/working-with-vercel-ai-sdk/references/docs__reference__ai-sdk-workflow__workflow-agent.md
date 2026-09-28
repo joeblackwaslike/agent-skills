@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-workflow/workflow-agent.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "f4889377923d651200af1f59320aff1566f513a1e4f65db7245e39f0cb07ea0c"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "0c652d67a7817be46b48563999a4e751e71f44676962ff11eb70b6b01f59cf67"
 ---
 
 # `WorkflowAgent`
@@ -18,7 +18,7 @@ import { tool } from 'ai';
 import { z } from 'zod';
 
 const agent = new WorkflowAgent({
-  model: 'anthropic/claude-sonnet-4-6',
+  model: 'anthropic/claude-sonnet-5',
   instructions: 'You are a helpful assistant.',
   tools: {
     weather: tool({
@@ -72,7 +72,7 @@ To see `WorkflowAgent` in action, check out [these examples](#examples).
       type: 'LanguageModel',
       isRequired: true,
       description:
-        "The language model to use. A string compatible with the Vercel AI Gateway (e.g., 'anthropic/claude-sonnet-4-6') or a provider instance (e.g., `openai('gpt-4o')`).",
+        "The language model to use. A string compatible with the Vercel AI Gateway (e.g., 'anthropic/claude-sonnet-5') or a provider instance (e.g., `openai('gpt-6-astra')`).",
     },
     {
       name: 'instructions',
@@ -809,7 +809,7 @@ Infers the UI message type for a `WorkflowAgent` instance. Optionally accepts a 
 import { WorkflowAgent, InferWorkflowAgentUIMessage } from '@ai-sdk/workflow';
 
 const agent = new WorkflowAgent({
-  model: 'anthropic/claude-sonnet-4-6',
+  model: 'anthropic/claude-sonnet-5',
   tools: { weather: weatherTool },
 });
 
@@ -836,7 +836,7 @@ import { tool } from 'ai';
 import { z } from 'zod';
 
 const agent = new WorkflowAgent({
-  model: 'anthropic/claude-sonnet-4-6',
+  model: 'anthropic/claude-sonnet-5',
   instructions: 'You are a helpful assistant.',
   tools: {
     weather: tool({
@@ -891,7 +891,7 @@ export async function chat(messages: UIMessage[]) {
   const modelMessages = await convertToModelMessages(messages);
 
   const agent = new WorkflowAgent({
-    model: 'anthropic/claude-sonnet-4-6',
+    model: 'anthropic/claude-sonnet-5',
     instructions: 'You are a flight booking assistant.',
     tools: {
       searchFlights: tool({
@@ -938,7 +938,7 @@ import { WorkflowAgent, Output } from '@ai-sdk/workflow';
 import { z } from 'zod';
 
 const analysisAgent = new WorkflowAgent({
-  model: 'anthropic/claude-sonnet-4-6',
+  model: 'anthropic/claude-sonnet-5',
 });
 
 const result = await analysisAgent.stream({
@@ -978,7 +978,7 @@ import { tool } from 'ai';
 import { z } from 'zod';
 
 const agent = new WorkflowAgent({
-  model: 'anthropic/claude-sonnet-4-6',
+  model: 'anthropic/claude-sonnet-5',
   experimental_toolApprovalSecret: {
     environmentVariable: 'TOOL_APPROVAL_SECRET',
   },
@@ -1010,7 +1010,7 @@ serialize it. A stream-level reference overrides the constructor value.
 import { WorkflowAgent } from '@ai-sdk/workflow';
 
 const agent = new WorkflowAgent({
-  model: 'anthropic/claude-sonnet-4-6',
+  model: 'anthropic/claude-sonnet-5',
   tools: { weather: weatherTool },
 
   // Agent-wide callbacks

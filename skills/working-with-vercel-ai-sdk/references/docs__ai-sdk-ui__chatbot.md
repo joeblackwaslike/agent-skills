@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/chatbot.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "9b9a4497dd58b85e8ce9f13eefc4ced6a221207b54e76742eb55e064c92cb3b6"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "f3b191ddbdf456bc257935e7ea7665a446fdbabfaf1756bd0560d4bc142858db"
 ---
 
 # Chatbot
@@ -324,17 +324,32 @@ When the user clicks the "Regenerate" button, the AI provider will regenerate th
 
 ### Throttling UI Updates
 
-<Note>This feature is currently only available for React.</Note>
-
 By default, the `useChat` hook will trigger a render every time a new chunk is received.
-You can throttle the UI updates with the `throttle` option.
+React and Vue applications can throttle reactive message updates with the `throttle` option.
+Stream processing and event callbacks remain immediate, and the latest messages are published before the chat enters a terminal `ready` or `error` status.
 
-```tsx filename="page.tsx" highlight="2-3"
-const { messages, ... } = useChat({
-  // Throttle the messages and data updates to 50ms:
-  throttle: 50
-})
-```
+<Tabs items={['React', 'Vue']}>
+  <Tab>
+    ```tsx filename="page.tsx" highlight="2-3"
+    const { messages, ... } = useChat({
+      // Throttle reactive message updates to 50ms:
+      throttle: 50,
+    });
+    ```
+  </Tab>
+  <Tab>
+    ```vue filename="pages/index.vue" highlight="4-6"
+    <script setup lang="ts">
+    import { useChat } from '@ai-sdk/vue';
+
+    const { messages } = useChat({
+      throttle: 50,
+    });
+    </script>
+    ```
+
+  </Tab>
+</Tabs>
 
 ## Event Callbacks
 
@@ -370,7 +385,7 @@ It's worth noting that you can abort the processing by throwing an error in the 
 
 ### Custom headers, body, and credentials
 
-By default, the `useChat` hook sends a HTTP POST request to the `/api/chat` endpoint with the message list as the request body. You can customize the request in two ways:
+By default, the `useChat` hook sends an HTTP POST request to the `/api/chat` endpoint with the message list as the request body. You can customize the request in two ways:
 
 #### Hook-Level Configuration (Applied to all requests)
 
@@ -529,7 +544,7 @@ return createUIMessageStreamResponse({
       if (part.type === 'start') {
         return {
           createdAt: Date.now(),
-          model: 'gpt-5.1',
+          model: 'gpt-6-astra',
         };
       }
 
@@ -933,7 +948,7 @@ Check out the [stream protocol guide](/docs/ai-sdk-ui/stream-protocol) for more 
 ## Reasoning
 
 Some models such as DeepSeek `deepseek-r1`
-and Anthropic `claude-sonnet-4-5-20250929` support reasoning tokens.
+and Anthropic `claude-sonnet-5` support reasoning tokens.
 These tokens are typically sent before the message content.
 You can forward them to the client with the `sendReasoning` option:
 
@@ -1060,7 +1075,7 @@ messages.map(message => (
 
 ## Image Generation
 
-Some models such as Google `gemini-2.5-flash-image` support image generation.
+Some models such as Google `gemini-3.1-flash-image-preview` support image generation.
 When images are generated, they are exposed as files to the client.
 On the client side, you can access file parts of the message object
 and render them as images.

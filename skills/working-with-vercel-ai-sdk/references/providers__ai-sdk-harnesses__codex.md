@@ -1,14 +1,14 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/codex.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "7d0b687d91995f0d664b4924a53d52a5e338269e645cbef3949865eb5ee848c0"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "2c7734a8f2e90be97968aa1b5d052f0609a413dedeeb45d2b4e692d618f49071"
 ---
 
 # Codex Harness
 
-The Codex harness adapter connects `HarnessAgent` to Codex through
-`@openai/codex-sdk`. The adapter runs a bridge inside the sandbox and streams
-Codex thread events back to the host over a sandbox-exposed WebSocket.
+The Codex harness adapter connects `HarnessAgent` to the Codex app-server.
+The adapter runs a bridge inside the sandbox and streams Codex thread events
+back to the host over a sandbox-exposed WebSocket.
 
 <Note>
   Harness packages are **experimental**. Expect breaking changes between
@@ -35,18 +35,19 @@ import { codex, createCodex } from '@ai-sdk/harness-codex';
 ```ts
 import { HarnessAgent } from '@ai-sdk/harness/agent';
 import { codex } from '@ai-sdk/harness-codex';
-import { createVercelSandbox } from '@ai-sdk/sandbox-vercel';
+import { createVercelNetworkSandboxSession } from '@ai-sdk/sandbox-vercel';
 
 const agent = new HarnessAgent({
   harness: codex,
   model: 'gpt-5.6-luna',
-  sandbox: createVercelSandbox({
-    runtime: 'node24',
-    ports: [4000],
-  }),
 });
 
-const session = await agent.createSession();
+const sandboxSession = await createVercelNetworkSandboxSession({
+  runtime: 'node24',
+  ports: [4000],
+  template: await agent.getSandboxTemplate(),
+});
+const session = await agent.createSession({ sandboxSession });
 
 let exitCode = 0;
 try {
@@ -65,6 +66,7 @@ try {
   console.error(err);
 } finally {
   await session.destroy();
+  await sandboxSession.destroy();
   process.exit(exitCode);
 }
 ```
@@ -107,16 +109,45 @@ Settings:
 - `webSearch`: allow live web search.
 - `port`: bridge port override.
 - `startupTimeoutMs`: maximum time to wait for the bridge to start.
+- `reconnect`: reconnect timing after an established bridge WebSocket
+  connection drops. `maxElapsedMs` controls the total retry window, including
+  connection establishment and backoff delays, and defaults to 30 seconds.
+  `initialDelayMs` defaults to 50 milliseconds, and `maxDelayMs` defaults to
+  2 seconds. These retries use exponential backoff and are separate from
+  `startupTimeoutMs`. They cannot recover when the sandbox, bridge process, or
+  bridge endpoint is permanently unavailable.
 - `mintBridgeToken`: synchronous function that receives the sandbox id and
   returns the bridge authentication token. By default, the adapter generates a
   random 32-byte token. Custom implementations must return a suitably secret
   token.
 
+## Built-in Tool Filtering
+
+Codex supports `activeTools` and `inactiveTools` for `bash`, `webSearch`,
+`apply_patch`, and `view_image`. Host tools are filtered before they are sent
+to Codex. Native Codex configuration disables `bash`, `view_image`, and
+`webSearch` individually. When `bash`, `apply_patch`, and `view_image` are all
+inactive, the adapter disables Codex environments and explicitly disables
+`bash` and `view_image`. When `apply_patch` is inactive but `bash` or
+`view_image` remains active, the adapter installs a Codex `PreToolUse` hook
+that denies patch execution. Before starting each turn, the adapter checks
+that Codex loaded and trusted the hook and fails the turn if it did not.
+Including `webSearch` in `activeTools` does not enable it on its own; set
+`webSearch: true` on `createCodex()` to allow live search.
+
+```ts
+const agent = new HarnessAgent({
+  harness: createCodex(),
+  sandbox: createVercelSandbox({ runtime: 'node24', ports: [4000] }),
+  inactiveTools: ['apply_patch'],
+});
+```
+
 ## Structured Output
 
 Codex supports schema-backed [`HarnessAgent` structured output](/docs/ai-sdk-harnesses/harness-agent#generate-structured-output).
-The adapter passes the JSON Schema through the Codex SDK's native
-`outputSchema` turn option.
+The adapter passes the JSON Schema through the Codex app-server's `turn/start`
+`outputSchema` parameter.
 
 ## Authentication
 
@@ -175,21 +206,21 @@ Codex requires a network sandbox with at least one exposed port,
 e.g. `@ai-sdk/sandbox-vercel`:
 
 ```ts
-const sandbox = createVercelSandbox({
+const sandboxSession = await createVercelNetworkSandboxSession({
   runtime: 'node24',
   ports: [4000],
+  template: await agent.getSandboxTemplate(),
 });
 ```
 
 ## Built-in Tools
 
-The adapter exposes these common Codex built-ins through `agent.tools`:
+The adapter exposes these Codex built-ins through `agent.tools`:
 
-- `bash`
-- `webSearch`
-
-Additional Codex built-ins may also appear in `agent.tools` when they do not
-fit a common tool shape.
+- `bash` and `webSearch` use the common cross-harness tool names.
+- `apply_patch` accepts Codex's freeform patch string.
+- `view_image` accepts a local image `path`, with optional `detail` and
+  `environment_id` fields.
 
 Codex file changes may also appear as dynamic `fileChange` tool parts because
 some Codex file mutations do not originate from a visible model-callable tool.
@@ -200,9 +231,9 @@ Codex does not currently support built-in tool approval requests. Use
 `permissionMode: 'allow-all'` with this adapter. Host-executed AI SDK tool
 approvals still work.
 
-Codex does not currently support built-in tool filtering. You can still use
-`activeTools` and `inactiveTools` to filter host-executed tools, but filtering
-Codex built-ins such as `bash` or `webSearch` will throw.
+When the app-server must cold-resume a thread, Codex does not provide raw
+events for `apply_patch` and `view_image`, so those tool calls and results
+cannot be surfaced for that resumed thread.
 
 ## Related
 

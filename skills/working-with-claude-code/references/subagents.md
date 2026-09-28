@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/subagents.md"
-fetched_at: "2026-09-21T09:39:23.760Z"
-sha256: "ad9ed4a85c252ab298ea9c77f1644bc928ad80814d0595a664a486b054ab3e8c"
+fetched_at: "2026-09-28T10:38:50.037Z"
+sha256: "41eb87f77e4aca2e540dd6b37eb54269ad24102a9c3d023774e6985a1f8ca5a9"
 ---
 
 > ## Documentation Index
@@ -622,7 +622,7 @@ You can cap that growth in three ways: how deeply subagents nest, how many run a
 | :---------- | :------------------------------------------------------- | :----------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Depth       | [`CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH`](/docs/en/env-vars)   | `3` layers of subagents below your main agent. `1` stops your subagents from spawning any of their own | Leaves a subagent at the bottom layer unable to spawn, so it does its delegated work itself. See [nested subagents](/docs/en/sub-agents#let-subagents-spawn-their-own-subagents)                                                                                                                                                          |
 | Concurrency | [`CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS`](/docs/en/env-vars)   | `20` subagents running at once, counting every subagent Claude spawns with the Agent tool              | Refuses to spawn another subagent, returning `Concurrent subagent limit reached`, until the running count drops below the limit. Sessions with [ultracode](/docs/en/model-config#adjust-effort-level) active are never refused. See the [concurrent subagent limit](/docs/en/sub-agents#concurrent-subagent-limit)                             |
-| Spend       | `maxBudgetUsd` in TypeScript, `max_budget_usd` in Python | No limit. Compared against `total_cost_usd`, so subagent requests count                                | Enforces the cap in three ways: refuses to spawn more subagents, returning `Budget limit reached`, stops background subagents that are still running, and ends the query with the `error_max_budget_usd` result subtype. For how the caps behave across a session, see [turns and budget](/docs/en/agent-sdk/agent-loop#turns-and-budget) |
+| Spend       | `maxBudgetUsd` in TypeScript, `max_budget_usd` in Python | No limit. Counts the call's own spend, subagent requests included                                      | Enforces the cap in three ways: refuses to spawn more subagents, returning `Budget limit reached`, stops background subagents that are still running, and ends the query with the `error_max_budget_usd` result subtype. For how the caps behave across a session, see [turns and budget](/docs/en/agent-sdk/agent-loop#turns-and-budget) |
 
 The two SDKs treat the `env` option differently: the TypeScript SDK replaces the subprocess environment with it, so spread `process.env` into it to keep variables like `PATH`, while the Python SDK merges it into the inherited environment. This example turns nesting off, allows at most five subagents at a time, and stops the query once the estimated spend reaches \$5:
 
@@ -713,7 +713,7 @@ The `Workflow` tool is available in the TypeScript Agent SDK v0.3.149 and later.
 
 If Claude completes tasks directly instead of delegating to your subagent:
 
-* **Use explicit prompting**: mention the subagent by name in your prompt, for example "Use the code-reviewer agent to..."
+* **Use explicit prompting**: mention the subagent by name in your prompt, for example "Use the code-reviewer agent to check the authentication module"
 * **Write a clear description**: explain exactly when to use the subagent so Claude can match tasks appropriately
 
 ### Filesystem-based agents not loading

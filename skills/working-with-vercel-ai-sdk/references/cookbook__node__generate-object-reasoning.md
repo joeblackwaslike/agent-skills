@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/node/generate-object-reasoning.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "e7bd580f0eb2b94cb3566fa9f1c8fc099736ec0c6977d2af424fde33e7fb926e"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "18286ea529142a26b5bdf7b2a9cb10b7204f7394446c05efc69dd7cc937010d3"
 ---
 
 # Generate Object with a Reasoning Model
@@ -24,7 +24,7 @@ async function main() {
   });
 
   const { output } = await generateText({
-    model: 'openai/gpt-4o-mini',
+    model: 'openai/gpt-6-luna',
     prompt: 'Extract the desired information from this text: \n' + rawOutput,
     output: Output.array({
       element: z.object({

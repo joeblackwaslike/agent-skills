@@ -3,7 +3,7 @@ title: Mount remote storage
 product: vercel
 url: /docs/sandbox/mount-remote-storage
 canonical_url: "https://vercel.com/docs/sandbox/mount-remote-storage"
-last_updated: 2026-08-25
+last_updated: 2026-09-23
 type: how-to
 prerequisites:
   - /docs/sandbox
@@ -16,8 +16,8 @@ related:
 summary: Mount an external object store such as Amazon S3 into a Vercel Sandbox with a FUSE driver, so code reads and writes remote files through the local...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/mount-remote-storage.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "75bb610da995b28a2bdb32778621921a1dea329e8dd804b2a5c3d9978313c9c8"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "4040e1b1b3c1d0b454323da262b05f3ac9e246f3c8f04cfb8a7bc07db375bf59"
 ---
 
 # Mount remote storage
@@ -32,11 +32,12 @@ Mount an external object store such as Amazon S3 into a sandbox and work with re
 
 - [Vercel Sandbox now supports FUSE-based filesystems](https://vercel.com/changelog/vercel-sandbox-now-supports-fuse-based-filesystems?from=related&source_path=%2Fdocs%2Fsandbox%2Fmount-remote-storage&source_site=vercel-docs&relationship=related)
 - [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related&source_path=%2Fdocs%2Fsandbox%2Fmount-remote-storage&source_site=vercel-docs&relationship=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
+- [Drives for Vercel Sandbox are now in public beta](https://vercel.com/changelog/drives-for-vercel-sandbox-are-now-in-public-beta?from=related&source_path=%2Fdocs%2Fsandbox%2Fmount-remote-storage&source_site=vercel-docs&relationship=related)
 - [Using private GitHub repositories with Vercel Sandbox](https://vercel.com/kb/guide/sandbox-private-github-repositories?from=related&source_path=%2Fdocs%2Fsandbox%2Fmount-remote-storage&source_site=vercel-docs&relationship=related) — Learn how to use Vercel Sandbox with private GitHub repositories using fine-grained tokens, classic tokens, or GitHub Ap
 - [Run Docker containers inside Vercel Sandbox](https://vercel.com/changelog/run-docker-containers-inside-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fmount-remote-storage&source_site=vercel-docs&relationship=related)
-- [How to install system packages in Vercel Sandbox](https://vercel.com/kb/guide/how-to-install-system-packages-in-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fmount-remote-storage&source_site=vercel-docs&relationship=related) — Learn how to install additional system packages in Vercel Sandbox with apt-get on the default Ubuntu-based managed image
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fmount-remote-storage&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 - [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fmount-remote-storage&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
+- [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes?from=related&source_path=%2Fdocs%2Fsandbox%2Fmount-remote-storage&source_site=vercel-docs&relationship=related) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem
 
 Full cross-link map for this page: [/docs/sandbox/mount-remote-storage.graph.md](/docs/sandbox/mount-remote-storage.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fmount-remote-storage&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -55,7 +56,7 @@ Outbound access from the mount still follows the sandbox [firewall network polic
 
 This example uses Mountpoint for Amazon S3, the official FUSE driver for S3. Download and install the `mount-s3` package, create a mount directory, then mount the bucket:
 
-**TypeScript**
+**index.ts**
 
 ```ts filename="index.ts"
 import { Sandbox } from '@vercel/sandbox';
@@ -120,9 +121,9 @@ try {
 }
 ```
 
-**Python**
+**main.py**
 
-```python filename="main.py"
+```py filename="main.py"
 import asyncio
 import os
 
@@ -363,6 +364,10 @@ The sandbox never receives AWS credentials, and every request to the bucket pass
 ## Mount other providers
 
 Mountpoint is specific to S3, but the same pattern works with any FUSE driver. Install the driver with your image's package manager, create a mount directory, then run the driver's mount command with `sudo`. On the default Ubuntu-based [managed images](/docs/sandbox/concepts/images), refresh the package index with `apt-get update` before installing. Legacy Amazon Linux runtimes use `dnf` instead. The same approach covers other object stores, network filesystems, and custom mounts, so a sandbox can persist files to more than one storage provider in a single session.
+
+Some providers sync content into the sandbox instead of serving it through a
+FUSE driver. For Box content, see
+[Box Mount](/docs/sandbox/ecosystem/box-mount).
 
 
 ---

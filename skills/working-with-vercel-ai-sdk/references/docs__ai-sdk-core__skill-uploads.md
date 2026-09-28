@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/skill-uploads.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "6ea1b15a2a249abac7e2ffd3fd4bce09d975f9f6f15a994f24d8b0c47615e101"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "64d783beafc2305ff58338af5c099142f0d52bfe1ddeabcfa68affbe3aa5d1bb"
 ---
 
 # Skill Uploads
@@ -175,7 +175,7 @@ Pass the `providerReference` inside the `shell` tool's `environment.skills` arra
 
 ```ts
 await generateText({
-  model: openai.responses('gpt-5.2'),
+  model: openai.responses('gpt-6-astra'),
   tools: {
     shell: openai.tools.shell({
       environment: {

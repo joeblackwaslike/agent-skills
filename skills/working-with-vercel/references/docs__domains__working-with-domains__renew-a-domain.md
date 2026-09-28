@@ -3,7 +3,7 @@ title: Managing Domain Renewals and Redemptions
 product: vercel
 url: /docs/domains/working-with-domains/renew-a-domain
 canonical_url: "https://vercel.com/docs/domains/working-with-domains/renew-a-domain"
-last_updated: 2026-08-28
+last_updated: 2026-09-18
 type: how-to
 prerequisites:
   - /docs/domains/working-with-domains
@@ -13,8 +13,8 @@ related:
 summary: Learn how to manage automatic and manual renewals for custom domains purchased through or registered with Vercel, and how to redeem expired domains...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/renew-a-domain.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "e98d0fd7488c84ae401de9dba74d93d83b61d87574082396f4e15cedbd47ed71"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "d3b89a377b8f481ff822d2d3a4f1eda0300e96a1123ad6a4252ab283ad1b624b"
 ---
 
 # Managing Domain Renewals and Redemptions
@@ -33,8 +33,8 @@ Custom domains purchased through or registered with Vercel are [automatically re
 - [Self-serve domain renewals and redemptions now available](https://vercel.com/changelog/self-serve-domain-renewals-and-redemptions-now-available?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=related)
 - [Lifecycle of a domain](https://vercel.com/kb/guide/lifecycle-of-a-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=related) — Understand the states a .com domain passes through from registration to deletion, and how to renew or recover it at each
 - [Auto Renewal can now be disabled for Domains](https://vercel.com/changelog/auto-renewal-can-now-be-disabled-for-domains?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=related)
-- [Renew a domain](https://vercel.com/docs/rest-api/domains-registrar/renew-a-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=related) — POST /v1/registrar/domains/{domain}/renew — Renew a domain
 - [Programmatic Domain Management](https://vercel.com/docs/domains/registrar-api?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=related) — Programmatically search, price, purchase, renew, and manage domains with Vercel's domains registrar API endpoints.
+- [Renew a domain](https://vercel.com/docs/rest-api/domains-registrar/renew-a-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=related) — POST /v1/registrar/domains/{domain}/renew — Renew a domain
 - [Working with SSL Certificates](https://vercel.com/docs/domains/working-with-ssl?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=related) — Learn how Vercel uses SSL certification to keep your site secure.
 - [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=related) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 - [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=related) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t

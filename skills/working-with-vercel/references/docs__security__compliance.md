@@ -16,8 +16,8 @@ related:
 summary: Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS mitigation and SOC 2 compliance.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/compliance.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "a2a9191b88946c177aa7cb72401e627dc90c5181570a53b5fb8a045c66bf2b98"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "db6965e42faefaf82e023142f50917f3bdf1cd512cc89b7c3ddf85bd951497ed"
 ---
 
 # Security & Compliance Measures
@@ -40,8 +40,8 @@ This page covers the protection and compliance measures Vercel takes to ensure t
 - [How to build and maintain HIPAA-compliant applications on Vercel](https://vercel.com/kb/guide/hipaa-compliance-guide-vercel?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related) — Deploy HIPAA-compliant healthcare apps on Vercel with built-in security, BAAs, and scalable serverless infrastructure.
 - [Does Vercel have a SOC 2 Type 2 attestation?](https://vercel.com/kb/guide/is-vercel-soc-2-compliant?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related) — Vercel holds a SOC 2 Type 2 attestation for Security, Confidentiality, and Availability. See what the report covers, how
 - [The Frontend Cloud: Powering resiliency for global web applications](https://vercel.com/blog/the-resiliency-of-the-frontend-cloud?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related)
-- [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
 - [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related)
+- [Vercel supports HIPAA compliance](https://vercel.com/blog/vercel-supports-hipaa-compliance?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related)
 
 Full cross-link map for this page: [/docs/security/compliance.graph.md](/docs/security/compliance.graph.md?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -148,7 +148,7 @@ TISAX results are not intended for the general public. Vercel's assessment resul
 
 ## Infrastructure
 
-The Vercel CDN and deployment platform primarily uses Amazon Web Services (AWS), and currently has 20 different [regions](/docs/regions) and an [Anycast network](# "What is an Anycast network?") with global IP addresses.
+The Vercel CDN and deployment platform primarily uses Amazon Web Services (AWS), and currently has 19 different [regions](/docs/regions) and an [Anycast network](# "What is an Anycast network?") with global IP addresses.
 
 We use a multi-layered security approach that combines people, processes, and technology, including centralized [IAM](# "What is IAM?"), to regulate access to production resources.
 

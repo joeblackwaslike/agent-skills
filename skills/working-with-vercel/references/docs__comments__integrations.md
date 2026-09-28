@@ -16,8 +16,8 @@ related:
 summary: Learn how Comments integrates with Git providers like GitHub, GitLab, and BitBucket, as well as the Vercel app for Slack.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/comments/integrations.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "16b684e3a0eb55f124b2990ab070009381d7c4ff67cdbc51d48f535ca72ade7f"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "0ecd4f3c74e2b29feb5587a5fa04079f1f96d5d49cbcd529080885775d2480f1"
 ---
 
 # Integrations for Comments
@@ -33,8 +33,8 @@ Comments are available for projects using **any** Git provider. Github, BitBucke
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Comments now available in Vercel's Slack integration](https://vercel.com/changelog/comments-now-available-in-vercels-slack-integration?from=related&source_path=%2Fdocs%2Fcomments%2Fintegrations&source_site=vercel-docs&relationship=related)
-- [Slack](https://v0.app/docs/slack?from=related&source_path=%2Fdocs%2Fcomments%2Fintegrations&source_site=vercel-docs&relationship=related) — Add v0 to your Slack workspace so your whole team can contribute to production.
 - [Manage Vercel Toolbar comments from the CLI](https://vercel.com/changelog/manage-vercel-toolbar-comments-from-the-cli?from=related&source_path=%2Fdocs%2Fcomments%2Fintegrations&source_site=vercel-docs&relationship=related)
+- [Slack](https://v0.app/docs/slack?from=related&source_path=%2Fdocs%2Fcomments%2Fintegrations&source_site=vercel-docs&relationship=related) — Add v0 to your Slack workspace so your whole team can contribute to production.
 - [Convert Comments on deployments to Jira issues](https://vercel.com/changelog/convert-comments-on-deployments-to-jira-issues?from=related&source_path=%2Fdocs%2Fcomments%2Fintegrations&source_site=vercel-docs&relationship=related)
 - [Run and track deploys from Slack](https://vercel.com/kb/guide/run-and-track-deploys-from-slack?from=related&source_path=%2Fdocs%2Fcomments%2Fintegrations&source_site=vercel-docs&relationship=related) — Build a Slack deploy bot with Chat SDK and Vercel Workflows. Dispatch GitHub Actions from a slash command, gate producti
 - [Convert comments to GitHub Issues](https://vercel.com/changelog/convert-comments-to-github-issues?from=related&source_path=%2Fdocs%2Fcomments%2Fintegrations&source_site=vercel-docs&relationship=related)

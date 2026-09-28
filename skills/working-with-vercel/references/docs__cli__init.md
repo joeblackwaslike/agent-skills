@@ -13,8 +13,8 @@ related:
 summary: Learn how to initialize Vercel supported framework examples locally using the vercel init CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/init.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "e02a7c61f5f6315cc5134661f36ef7d5b17d1240ae81a1c9d66632ea0ac82c0f"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "d355d9ffc975c84828948c06eb88fb7070305a7ac3fddf1774118065301d4955"
 ---
 
 # vercel init
@@ -34,9 +34,9 @@ The `vercel init` command is used to initialize [Vercel supported framework](/do
 - [How to ship a Flask app on Vercel](https://vercel.com/kb/guide/ship-a-flask-app-on-vercel?from=related&source_path=%2Fdocs%2Fcli%2Finit&source_site=vercel-docs&relationship=related) — Deploy a Flask app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
 - [vercel dev](https://vercel.com/docs/cli/dev?from=related&source_path=%2Fdocs%2Fcli%2Finit&source_site=vercel-docs&relationship=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
 - [vercel build](https://vercel.com/docs/cli/build?from=related&source_path=%2Fdocs%2Fcli%2Finit&source_site=vercel-docs&relationship=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
+- [vercel signup](https://vercel.com/docs/cli/signup?from=related&source_path=%2Fdocs%2Fcli%2Finit&source_site=vercel-docs&relationship=related) — Learn how to create a new Vercel account using the vercel signup CLI command.
 - [vercel link](https://vercel.com/docs/cli/link?from=related&source_path=%2Fdocs%2Fcli%2Finit&source_site=vercel-docs&relationship=related) — Learn how to link a local directory to a Vercel Project using the vercel link CLI command.
 - [vercel install](https://vercel.com/docs/cli/install?from=related&source_path=%2Fdocs%2Fcli%2Finit&source_site=vercel-docs&relationship=related) — Learn how to install marketplace native integrations and provision resources with the vercel install CLI command.
-- [vercel login](https://vercel.com/docs/cli/login?from=related&source_path=%2Fdocs%2Fcli%2Finit&source_site=vercel-docs&relationship=related) — Learn how to login into your Vercel account using the vercel login CLI command.
 
 Full cross-link map for this page: [/docs/cli/init.graph.md](/docs/cli/init.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Finit&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

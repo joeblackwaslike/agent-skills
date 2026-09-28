@@ -16,8 +16,8 @@ related:
 summary: Access IP-restricted backend services through shared static egress IPs for Pro and Enterprise teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/static-ips.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "57d7deb994bd26b1d6c8f4de55b8f8fcca6e36cc501b80fa55846c0ca9f8e6dc"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "4e68b415c5712ed3edd2a4d9ef2ffe6d1144b41e679e0c5ac45aba08711c195c"
 ---
 
 # Static IPs
@@ -41,9 +41,9 @@ With Static IPs (shared pool), you can access backend services that require IP a
 - [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
 - [Static IPs are now available for more secure connectivity](https://vercel.com/changelog/static-ips-are-now-available-for-more-secure-connectivity?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related)
 - [Route build traffic through Static IPs](https://vercel.com/changelog/route-build-traffic-through-static-ips?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related)
-- [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
 - [Restrict deployment access by IP address](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/trusted-ips?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related) — Trusted IPs let you restrict access to your deployments to a list of allowed IP addresses.
 - [Flat Rate CDN](https://vercel.com/docs/pricing/flat-rate-cdn?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related) — Flat Rate CDN gives you fixed monthly CDN pricing and protection against usage spikes across capacity tiers.
+- [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 
 Full cross-link map for this page: [/docs/networking/static-ips.graph.md](/docs/networking/static-ips.graph.md?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

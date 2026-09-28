@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/agents/policy-tool-approvals.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "f302998c95876bf39dc0f27935f470ef939016c189717dae13a99f7131fc7f78"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "dcb0602bed4d8db6f583b2add59b6b93661e00199c3cd2333df751ca78da768d"
 ---
 
 # Policy-Based Tool Approvals
@@ -81,7 +81,7 @@ const toolApproval = opaPolicy({
 
 // 3. Pass it to generateText (or streamText / ToolLoopAgent). Everything else is normal.
 const result = await generateText({
-  model: anthropic('claude-sonnet-4-5'),
+  model: anthropic('claude-sonnet-5'),
   tools: { git, bash, queryLogs },
   toolApproval,
   prompt: 'find the failing test and push the fix',
@@ -292,7 +292,7 @@ import { wasmPolicyClient, opaCapabilityMiddleware } from '@ai-sdk/policy-opa';
 const client = await wasmPolicyClient({ wasm });
 
 const wrappedModel = wrapLanguageModel({
-  model: anthropic('claude-sonnet-4-5'),
+  model: anthropic('claude-sonnet-5'),
   middleware: opaCapabilityMiddleware({ client, path: 'agent/tools/allowed' }),
 });
 ```

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/agents/tool-approvals.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "f12bf28ab056fac68f598d0552742b938b6bf4d24974b58777e0573b55172f92"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "84b17467346f0c51b5d23c0a7012a2fdeb7b26b6654731948e1d8b2e7470de4a"
 ---
 
 # Tool Approvals
@@ -272,6 +272,22 @@ Only call `addToolApprovalResponse` for manual approvals. Automatic approvals an
 When a manual approval status includes a reason, it is available as
 `part.approval.requestReason`. A reason supplied with
 `addToolApprovalResponse` is stored separately as `part.approval.reason`.
+
+### Schema transforms and persisted approvals
+
+Approval requests preserve the original schema input in `inputSchemaInput` when
+it differs from the input presented for approval. Keep this field when persisting
+`responseMessages` or UI messages; the UI message conversion functions preserve it
+automatically.
+
+On continuation, the SDK reconstructs the transformed input and checks that it
+matches the approved input. It never replaces the approved input with a different
+value. Older or projected histories that omit the original input are rejected as
+invalid tool input if revalidation fails or would change the approved value.
+
+The original input is included in persisted messages and UI approval streams,
+including fields removed by schema transforms. A transform that removes a field
+does not redact it from approval metadata.
 
 ## Security Considerations
 

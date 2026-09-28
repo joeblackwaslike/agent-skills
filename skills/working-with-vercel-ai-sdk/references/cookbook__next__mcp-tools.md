@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/mcp-tools.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "0085e8471bf432745d4b44e033f019a21668f6064c8220a6c59917b018d747d6"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "e44e475afd67a398a094cfdd62b8ce8f2ff396d52844d3ba1000c7fd6c632f2c"
 ---
 
 # MCP Tools
@@ -84,7 +84,7 @@ export async function POST(req: Request) {
     };
 
     const response = await streamText({
-      model: 'openai/gpt-4o',
+      model: 'openai/gpt-6-astra',
       tools,
       prompt,
       // When streaming, the client should be closed after the response is finished:

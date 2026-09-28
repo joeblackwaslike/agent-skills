@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-rsc/migrating-to-ui.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "6247fc487a43f515a0a1e72dbdbb3dbf91ba23a3345c9acd2a66e81291a03fba"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "628a8ea9362fcc98db7a9938fc23ea38985cd85b977f843e518450d48418f988"
 ---
 
 # Migrating from RSC to UI
@@ -48,7 +48,7 @@ export async function sendMessage(message: string) {
   messages.update([...messages.get(), { role: 'user', content: message }]);
 
   const { value: stream } = await streamUI({
-    model: openai('gpt-4o'),
+    model: openai('gpt-6-astra'),
     instructions: 'you are a friendly assistant!',
     messages: messages.get(),
     text: async function* ({ content, done }) {
@@ -188,7 +188,7 @@ import { getWeather } from '@/utils/queries';
 import { Weather } from '@/components/weather';
 
 const { value: stream } = await streamUI({
-  model: openai('gpt-4o'),
+  model: openai('gpt-6-astra'),
   instructions: 'you are a friendly assistant!',
   messages,
   text: async function* ({ content, done }) {
@@ -400,7 +400,7 @@ import { openai } from '@ai-sdk/openai';
 import { streamUI } from '@ai-sdk/rsc';
 
 const { value: stream } = await streamUI({
-  model: openai('gpt-4o'),
+  model: openai('gpt-6-astra'),
   instructions: 'you are a friendly assistant!',
   messages,
   initial: <div>Loading...</div>,

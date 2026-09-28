@@ -3,7 +3,7 @@ title: TanStack Start on Vercel
 product: vercel
 url: /docs/frameworks/full-stack/tanstack-start
 canonical_url: "https://vercel.com/docs/frameworks/full-stack/tanstack-start"
-last_updated: 2026-09-15
+last_updated: 2026-09-22
 type: conceptual
 prerequisites:
   - /docs/frameworks/full-stack
@@ -17,8 +17,8 @@ related:
 summary: Deploy TanStack Start applications to Vercel with Nitro and configure Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/tanstack-start.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "5d1105e4ee75b6d17f0a42f1865c85dbbab4d43203982d087ea679ed67f1392d"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "9544b0732231a9848558e08c48bdc9489da3840280038bf11a89c065bb8ca6a0"
 ---
 
 # TanStack Start on Vercel
@@ -105,6 +105,10 @@ Connect your TanStack Start application to models, tools, and coding agents with
 - [AI SDK with TanStack Start](https://ai-sdk.dev/docs/getting-started/tanstack-start): Build a chat application with the AI SDK.
 
 For a TanStack AI chat interface, follow the [TanStack AI quickstart](https://tanstack.com/ai/latest/docs/getting-started/quick-start) and use the AI Gateway adapter in your server route.
+
+To add content moderation, follow [Moderate product reviews with Jev and TanStack AI](/kb/guide/moderate-product-reviews-jev-tanstack-ai).
+The guide uses a TanStack Start server route to evaluate reviews through AI Gateway
+and hold flagged or uncertain reviews for a moderator.
 
 ## Lovable
 

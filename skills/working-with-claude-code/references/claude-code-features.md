@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/claude-code-features.md"
-fetched_at: "2026-09-21T09:39:23.760Z"
-sha256: "7e149e4a914d0ac480e0b9fabbcb75e8e497ecc244e840e7ac04d5fff0b555f8"
+fetched_at: "2026-09-28T10:38:50.037Z"
+sha256: "c8deb3e4fd0ba6365e220b23e06ca567c9975bc51b3e19c2df17d78c32663861"
 ---
 
 > ## Documentation Index
@@ -292,7 +292,7 @@ For full details on programmatic hooks, see [Control execution with hooks](/docs
 
 The Agent SDK gives you access to several ways to extend your agent's behavior. If you're unsure which to use, this table maps common goals to the right approach.
 
-| You want to...                                                                                    | Use                                           | SDK surface                                                                                                                                                    |
+| What you want to do                                                                               | Use                                           | SDK surface                                                                                                                                                    |
 | :------------------------------------------------------------------------------------------------ | :-------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Set project conventions your agent always follows                                                 | [CLAUDE.md](/docs/en/memory)                       | `settingSources: ["project"]` loads it automatically                                                                                                           |
 | Give the agent reference material it loads when relevant                                          | [Skills](/docs/en/agent-sdk/skills)                | `settingSources` + `skills` option                                                                                                                             |

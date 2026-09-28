@@ -1,7 +1,7 @@
 ---
 source: "https://oraios.github.io/serena/_sources/02-usage/030_clients.md"
-fetched_at: "2026-09-07T09:04:28.360Z"
-sha256: "e982d7a64fe22c34f5d6452dd26441235cd2419de49583c85b8593952a38397e"
+fetched_at: "2026-09-28T10:43:25.309Z"
+sha256: "d22b86d601e6db1fa7413ab29ff7ad9574af24fb65538b030c44f87026bbb141"
 ---
 
 # Connecting Your MCP Client
@@ -130,8 +130,8 @@ When using Serena, we highly recommend that you start CC as
 claude --system-prompt="$(serena prompts print-cc-system-prompt-override)"
 ```
 
-You can also consider adding the content of `serena cc-system-prompt-override` to your `CLAUDE.md` files,
-but the effect be insufficient for counteracting Claude Code's bias towards internal tools.
+You can also consider adding the content of `serena prompts print-cc-system-prompt-override` to your `CLAUDE.md` files,
+but the effect may be insufficient for counteracting Claude Code's bias towards internal tools.
 :::
 
 **Global Configuration**. To add the Serena MCP server for all your projects, use the user-level configuration of claude code and the `--project-from-cwd` flag:

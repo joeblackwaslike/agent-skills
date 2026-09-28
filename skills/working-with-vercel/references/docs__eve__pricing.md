@@ -12,12 +12,12 @@ related:
   - /docs/workflows/pricing
   - /docs/sandbox/pricing
   - /docs/ai-gateway/pricing
-  - /docs/functions/limitations
+  - /docs/tracing/always-on-tracing
 summary: Understand how eve usage maps to Vercel resources and inherited platform limits.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/eve/pricing.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "792106b0b65e989246cd94172e379944154038e94f109e39ba2d5cce5e30d598"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "c5b0b6b78af6129a2cf65ba0e4775af84cc98fb6c2a14e66765e47ead0b07a7f"
 ---
 
 # Pricing and Limits
@@ -33,12 +33,13 @@ Sandbox for isolated command execution, and AI Gateway or model providers for mo
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=related) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
+- [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
 - [Security Model](https://eve.dev/docs/concepts/security-model?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=related) — eve's trust boundaries, where secrets live, how credentials reach hosts, and what fails closed by default.
 - [Vercel Agent Pricing](https://vercel.com/docs/agent/pricing?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=related) — Understand Vercel Agent pricing and how to track costs
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Pricing and Limits](https://vercel.com/docs/queues/pricing?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=related) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
-- [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about legacy usage and pricing for Vercel Functions.
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about legacy usage and pricing for Vercel Functions.
 
 Full cross-link map for this page: [/docs/eve/pricing.graph.md](/docs/eve/pricing.graph.md?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -55,6 +56,7 @@ Full cross-link map for this page: [/docs/eve/pricing.graph.md](/docs/eve/pricin
 | Vercel Sandbox | Running isolated filesystem and command execution when your agent uses the Vercel sandbox backend. | [Sandbox pricing and limits](/docs/sandbox/pricing) |
 | AI Gateway | Resolving model strings such as `openai/gpt-5.4-mini` and routing model requests. | [AI Gateway pricing](/docs/ai-gateway/pricing) |
 | Model providers | Processing input, cached, and output tokens for the models your agent calls. | [AI Gateway model list](/ai-gateway/models) |
+| Always-on Tracing | Indexing spans for Agent Runs after sampling. | [Always-on Tracing usage and pricing](/docs/tracing/always-on-tracing#usage-and-pricing) |
 
 ## Common cost drivers
 
@@ -110,7 +112,8 @@ calls, and turn breakdowns, making it a practical starting point for real usage 
 ## Next steps
 
 - [Concepts](/docs/eve/concepts): learn how eve's runtime pieces fit together.
-- [Observability](/docs/eve/observability): inspect Agent Runs and optional OpenTelemetry spans.
+- [Agent Runs](/docs/eve/agent-runs): inspect agent sessions and configure trace collection.
+- [Observability](/docs/eve/observability): configure OpenTelemetry exports and policies.
 
 
 ---

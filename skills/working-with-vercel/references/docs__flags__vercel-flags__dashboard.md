@@ -17,8 +17,8 @@ related:
 summary: Learn how to manage your feature flags using the Vercel Dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "1eb14dbcc16be4b4dde09c593a15ce24a692d61a2d8b35dcb4503bd0057de2d1"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "dd6a6b77aaaed38059c1757c9fae2be8882e73f5d265331cfe5bd7555a3a6447"
 ---
 
 # Managing flags in the dashboard
@@ -31,8 +31,8 @@ The **Flags** section in your Vercel dashboard sidebar is the central place to m
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard&source_site=vercel-docs&relationship=related)
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard&source_site=vercel-docs&relationship=related)
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard&source_site=vercel-docs&relationship=related)
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard&source_site=vercel-docs&relationship=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard&source_site=vercel-docs&relationship=related) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
 - [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard&source_site=vercel-docs&relationship=related) — Using the Flags SDK in SvelteKit

@@ -1,17 +1,17 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/chat-with-pdf.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "9185c3845198768781131836977e9e0ef63c819d6b55d1192c101a4839c8cd87"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "061896455664f34347e500eb9ff6e98607525af64b6dd54581d0858ce27db83b"
 ---
 
 # Chat with PDFs
 
-Some language models like Anthropic's Claude Sonnet 3.5 and Google's Gemini 2.0 can understand PDFs and respond to questions about their contents. In this example, we'll show you how to build a chat interface that accepts PDF uploads.
+Some language models like Anthropic's Claude Sonnet 5 and Google's Gemini 3.8 Flash can understand PDFs and respond to questions about their contents. In this example, we'll show you how to build a chat interface that accepts PDF uploads.
 
 <Note>
   This example requires a provider that supports PDFs, such as Anthropic's
-  Claude 3.7, Google's Gemini 2.5, or OpenAI's GPT-4.1. Check the [provider
-  documentation](/providers/ai-sdk-providers) for up-to-date support
+  Claude Sonnet 5, Google's Gemini 3.8 Flash, or OpenAI's GPT-6 Astra. Check the
+  [provider documentation](/providers/ai-sdk-providers) for up-to-date support
   information.
 </Note>
 
@@ -34,7 +34,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: 'anthropic/claude-sonnet-4',
+    model: 'anthropic/claude-sonnet-5',
     messages: await convertToModelMessages(messages),
   });
 

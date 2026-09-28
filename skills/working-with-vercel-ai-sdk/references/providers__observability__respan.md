@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/respan.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "02c3a08490369722a1893a000539e527a9d7e903e88baad66856e952cbaed6ef"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "43c00edf5c491821340a7e4046f12260caec2d268c2e8f7ae512166a05ececa4"
 ---
 
 # Respan Observability
@@ -91,7 +91,7 @@ import { openai } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: openai('gpt-4o-mini'),
+  model: openai('gpt-6-luna'),
   prompt: 'Tell me a joke about AI',
   experimental_telemetry: { isEnabled: true },
 });
@@ -113,7 +113,7 @@ const provider = createOpenAI({
 });
 
 const result = await generateText({
-  model: provider('gpt-4.1-nano'),
+  model: provider('gpt-5.4-nano'),
   prompt: 'Tell me a joke about AI',
   experimental_telemetry: { isEnabled: true },
 });

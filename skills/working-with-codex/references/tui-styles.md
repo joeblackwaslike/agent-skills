@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/tui/styles.md"
-fetched_at: "2026-09-21T09:39:57.671Z"
-sha256: "a00086e537aba3eed275a644a665204bf2d12e09f4d27413587cce1912a5dff5"
+fetched_at: "2026-09-28T10:39:25.885Z"
+sha256: "58808ac324dd93ce62894e5aa85fe8bd0c5985ebb92c8cab1f3d6688bfe8f1fc"
 ---
 
 # Headers, primary, and secondary text
@@ -40,3 +40,11 @@ sha256: "a00086e537aba3eed275a644a665204bf2d12e09f4d27413587cce1912a5dff5"
 - Avoid ANSI `blue` and `yellow` because for now the style guide doesn't use them. Prefer a foreground color mentioned above.
 
 (There are some rules to try to catch this in `clippy.toml`.)
+
+# Menu descriptions
+
+- Prefer concise built-in option descriptions and disabled-option explanations without trailing
+  periods.
+- When a description needs multiple sentences, keep normal punctuation, including the final period.
+  Do not combine sentences at the expense of clarity.
+- Preserve externally supplied descriptions as written.

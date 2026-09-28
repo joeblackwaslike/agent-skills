@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/setup.md"
-fetched_at: "2026-09-21T09:39:23.760Z"
-sha256: "b4e5709f5a9554258e50343dc193815ad5888ce06d131fa4fe0e890f692e4a24"
+fetched_at: "2026-09-28T10:38:50.037Z"
+sha256: "e3e1baf3229f5af8c66410050e946986da57a6e4b255d43b409c4349d234f504"
 ---
 
 > ## Documentation Index
@@ -37,11 +37,9 @@ Claude Code runs on the following platforms and configurations:
 
 <Tip>
   Prefer a graphical interface? The [Desktop app](/docs/en/desktop-quickstart) lets you use Claude Code without the terminal. Download it for [macOS](https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect?utm_source=claude_code\&utm_medium=docs), [Windows](https://claude.com/download?utm_source=claude_code\&utm_medium=docs), or [Linux](/docs/en/desktop-linux).
-
-  New to the terminal? See the [terminal guide](/docs/en/terminal-guide) for step-by-step instructions.
 </Tip>
 
-To install Claude Code, use one of the following methods:
+To install Claude Code, open a terminal and run the command for your system. If you haven't used a terminal before, the [terminal guide](/docs/en/terminal-guide) shows how to open one and paste the command.
 
 <Tabs>
   <Tab title="Native Install (Recommended)">
@@ -62,6 +60,8 @@ To install Claude Code, use one of the following methods:
     ```batch theme={null}
     curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
     ```
+
+    When the installer finishes, open a new terminal window and run `claude --version`. A working installation prints a version number. If your shell says `claude` isn't found or isn't recognized, the install directory isn't on your PATH yet: see [Fix your PATH](/docs/en/troubleshoot-install#command-not-found-claude-after-installation).
 
     If you see `The token '&&' is not a valid statement separator`, you're in PowerShell, not CMD. If you see `'irm' is not recognized as an internal or external command`, you're in CMD, not PowerShell. Your prompt shows `PS C:\` when you're in PowerShell and `C:\` without the `PS` when you're in CMD.
 

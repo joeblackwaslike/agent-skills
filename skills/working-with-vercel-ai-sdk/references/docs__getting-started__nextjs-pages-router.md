@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/getting-started/nextjs-pages-router.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "74fa34ce33408cca149322e54bbd6c2f9eab4b62e9265e90689ba2f173400d75"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "cf58d89f3da031a49f2778513abb31264fa4c3c98c400d9fab8b0fdbb8bc782b"
 ---
 
 # Next.js Pages Router Quickstart
@@ -127,11 +127,11 @@ You can also explicitly import and use the gateway provider in two other equival
 ```ts
 // Option 1: Import from 'ai' package (included by default)
 import { gateway } from 'ai';
-model: gateway('anthropic/claude-sonnet-4.5');
+model: gateway('anthropic/claude-sonnet-5');
 
 // Option 2: Install and import from '@ai-sdk/gateway' package
 import { gateway } from '@ai-sdk/gateway';
-model: gateway('anthropic/claude-sonnet-4.5');
+model: gateway('anthropic/claude-sonnet-5');
 ```
 
 ### Using other providers
@@ -143,7 +143,7 @@ To use a different provider, install its package and create a provider instance.
 ```ts
 import { openai } from '@ai-sdk/openai';
 
-model: openai('gpt-5.1');
+model: openai('gpt-6-astra');
 ```
 
 #### Updating the global provider
@@ -154,7 +154,7 @@ Pick the approach that best matches how you want to manage providers across your
 
 ## Wire up the UI
 
-Now that you have an API route that can query an LLM, it's time to setup your frontend. The AI SDK's [ UI ](/docs/ai-sdk-ui) package abstract the complexity of a chat interface into one hook, [`useChat`](/docs/reference/ai-sdk-ui/use-chat).
+Now that you have an API route that can query an LLM, it's time to set up your frontend. The AI SDK's [ UI ](/docs/ai-sdk-ui) package abstracts the complexity of a chat interface into one hook, [`useChat`](/docs/reference/ai-sdk-ui/use-chat).
 
 Update your root page (`pages/index.tsx`) with the following code to show a list of chat messages and provide a user message input:
 

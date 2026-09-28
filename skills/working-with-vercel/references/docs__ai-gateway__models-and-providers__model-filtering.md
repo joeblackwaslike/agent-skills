@@ -11,13 +11,14 @@ prerequisites:
 related:
   - /docs/ai-gateway/models-and-providers/provider-filtering-and-ordering
   - /docs/ai-gateway/authentication-and-byok
+  - /docs/ai-gateway/modalities/evaluation
   - /docs/ai-gateway/sdks-and-apis
   - /docs/ai-gateway/models-and-providers/automatic-caching
 summary: Restrict AI Gateway routing to models that have specific capabilities using the has option.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/model-filtering.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "7d9360e1eec541b0d9f8f43de2ea1254a834ebe1b2b761f7c44fadd1fb7fdc38"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "5407691ad2e4ffa3121e03a9ffdedc06da7f643e3acc0aac46c80a7722e4f43f"
 ---
 
 # AI Gateway Model Filtering
@@ -30,12 +31,12 @@ sha256: "7d9360e1eec541b0d9f8f43de2ea1254a834ebe1b2b761f7c44fadd1fb7fdc38"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Model fallbacks now available in Vercel AI Gateway](https://vercel.com/changelog/model-fallbacks-now-available-in-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-filtering&source_site=vercel-docs&relationship=related)
 - [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-filtering&source_site=vercel-docs&relationship=related)
-- [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-filtering&source_site=vercel-docs&relationship=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
 - [AI Gateway Provider Routing and Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-filtering&source_site=vercel-docs&relationship=related) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway.
+- [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-filtering&source_site=vercel-docs&relationship=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
 - [OpenAI Chat Completions Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-filtering&source_site=vercel-docs&relationship=related) — Configure provider options, model fallbacks, BYOK credentials, and prompt caching through AI Gateway.
 - [AI Gateway Model Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/model-fallbacks?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-filtering&source_site=vercel-docs&relationship=related) — Configure AI Gateway model fallbacks to try backup models when the primary model is unavailable. Set fallback order and
+- [AI Gateway Model Allowlist](https://vercel.com/docs/ai-gateway/security-and-compliance/model-allowlist?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-filtering&source_site=vercel-docs&relationship=related) — Restrict which AI models your team can use through AI Gateway. Available on Pro and Enterprise.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/model-filtering.graph.md](/docs/ai-gateway/models-and-providers/model-filtering.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-filtering&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -50,7 +51,12 @@ The following capabilities are supported:
 | ------------------ | ------------------------------------------------------- |
 | `free` | Models with free inference |
 | `implicit-caching` | Models that perform automatic (implicit) prompt caching |
+| `structured-output` | Models that produce schema-constrained output (JSON schema) |
 | `vision` | Models that accept image input |
+
+AI Gateway sets `structured-output` on a provider model only after a live probe shows that provider produces schema-constrained output, so the same model can carry the capability on some providers and not others. `has: ['structured-output']` routes only to the providers that carry it.
+
+[Evaluation](/docs/ai-gateway/modalities/evaluation) requests don't need `structured-output` in `has`. AI Gateway adds the requirement automatically to language-model fallbacks, and adding it to the request-wide `has` would also filter the native evaluation model.
 
 These examples use AI SDK 7 and the AI SDK for Python beta. Set `AI_GATEWAY_API_KEY` before running them. See [API format differences](/docs/ai-gateway/sdks-and-apis#api-format-differences) for setup, request fields, and response handling.
 
@@ -334,6 +340,26 @@ In this example:
 > automatically. To instead let AI Gateway add cache markers for providers that
 > require explicit caching, see [Automatic Caching](/docs/ai-gateway/models-and-providers/automatic-caching).
 
+## Filter by serving weight format
+
+Weight-format conditions route on the weight format the serving provider reports for the model (for example, fp8 or int4 quantized weights). Use `quantization:<value>` to require a format, or `!quantization:<value>` to exclude one:
+
+```typescript filename="model-filtering.ts" {8}
+import { generateText } from 'ai';
+
+const { text } = await generateText({
+  model: 'deepseek/deepseek-v4-flash',
+  prompt: 'Summarize this report',
+  providerOptions: {
+    gateway: {
+      has: ['!quantization:fp8'], // Skip providers serving fp8-quantized weights
+    },
+  },
+});
+```
+
+A negated condition also matches providers with no recorded weight format.
+
 ## Combining with provider filtering
 
 `has` composes with the provider-level [`order`, `only`, and `sort`](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering) options. The model-capability filter and the provider filters are both applied, so the request is routed only to providers that satisfy your provider constraints *and* whose model has the required capabilities.
@@ -342,7 +368,7 @@ In this example:
 
 | Option | Type                        | Description                                                       |
 | ------ | --------------------------- | ---------------------------------------------------------------- |
-| `has`  | `Array<'implicit-caching'>` | Restrict routing to models that have all of the given capabilities |
+| `has`  | `Array<'free' \| 'implicit-caching' \| 'structured-output' \| 'vision' \| 'quantization:<value>' \| '!quantization:<value>'>` | Restrict routing to models that have all of the given capabilities or satisfy the given weight-format conditions |
 
 Set `has` under `providerOptions.gateway` in every request format shown above. OpenAI and Anthropic Python clients pass that object through `extra_body`; TypeScript clients spread the Gateway extension into the request. See [API format differences](/docs/ai-gateway/sdks-and-apis#api-format-differences).
 

@@ -16,8 +16,8 @@ related:
 summary: Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/limits.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "59da30aa25cb3e5e9d6b47472c6e326043e40bc68aa677be2f6b1083ba1afd2f"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "7fc983f2e84266013595f95c77f89fa5e308a2979d2accda21a2a10137b768d7"
 ---
 
 # Limits
@@ -172,7 +172,7 @@ See the Cron Jobs [limits](/docs/cron-jobs/usage-and-pricing) section for more i
 
 ## Vercel Workflows limits
 
-Vercel Workflows limits include concurrency limits of up to 100,000, 50 MB max payload size, and 2 GB max entity storage per run. See [Workflow pricing and limits](/docs/workflows/pricing#workflow-run-limits) for the full list of run, stream, and platform constraints.
+Vercel Workflows limits the size and throughput of each workflow run, including events and steps per run, payload size, stored data per run, and stream throughput. It also rate limits the requests your team's workflows make to the Workflows backend, such as creating events, writing to streams, and reading run data. Requests over the rate limit are retried automatically with backoff, so hitting it slows your workflows down but does not cause them to fail. See [Workflow limits](/docs/workflows/pricing#workflow-run-limits) and [Workflow rate limits](/docs/workflows/pricing#rate-limits) for the values on each plan.
 
 ## Vercel Functions
 
@@ -368,6 +368,8 @@ The following table lists all API rate limits that apply when using the [Vercel 
 | Uploads per day (Free). | 5000 | 86400 | `owner` |
 | Uploads per day (Pro). | 40000 | 86400 | `owner` |
 | Uploads per day (Enterprise). | 80000 | 86400 | `owner` |
+| API key creation per team per hour. | 500 | 3600 | `team` |
+| API key creation per user per hour. | 32 | 3600 | `user` |
 | Token retrieval per minute. | 160 | 60 | `owner` |
 | Token creation per hour. | 32 | 3600 | `owner` |
 | Token deletion per ten minutes. | 120 | 600 | `owner` |

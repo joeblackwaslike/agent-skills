@@ -16,8 +16,8 @@ related:
 summary: Every paid Pro team gets one free first-year custom domain on an eligible TLD. Claim yours at checkout or from domain search.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/free-domain-with-pro.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "b9b2036a231f8fc028bb24dbac8561da1a473d43921109677a10c8b80a9726bc"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "3913394049544162e06c50cf5815e9ca5c376528e1e1cf512e6b2ca327738cc4"
 ---
 
 # Free Domain with Pro
@@ -34,11 +34,10 @@ Every paid Pro team gets one free first-year custom domain. You choose an [eligi
 - [Free domain for one year, now for all Pro teams](https://vercel.com/changelog/free-domain-for-one-year-now-for-all-pro-teams?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=related)
 - [Free domain now included with new Pro subscriptions](https://vercel.com/changelog/free-domain-now-included-with-new-pro-subscriptions?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=related)
 - [Unlimited custom domains for all Pro teams](https://vercel.com/changelog/unlimited-custom-domains-for-all-pro-teams?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=related)
-- [Domain Linked to Another Account](https://vercel.com/kb/guide/domain-linked-to-another-account?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=related) — This guide explains how to claim a domain already linked to another Vercel account and add it to your team using the dom
 - [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=related) — Learn about the Hobby plan and how it compares to the Pro plan.
+- [Programmatic Domain Management](https://vercel.com/docs/domains/registrar-api?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=related) — Programmatically search, price, purchase, renew, and manage domains with Vercel's domains registrar API endpoints.
 - [Account Plans on Vercel](https://vercel.com/docs/plans?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=related) — Learn about the different plans available on Vercel.
 - [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=related) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
-- [Programmatic Domain Management](https://vercel.com/docs/domains/registrar-api?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=related) — Programmatically search, price, purchase, renew, and manage domains with Vercel's domains registrar API endpoints.
 - [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=related) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
 
 Full cross-link map for this page: [/docs/domains/free-domain-with-pro.graph.md](/docs/domains/free-domain-with-pro.graph.md?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=graph)

@@ -17,8 +17,8 @@ related:
 summary: This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/pro-plan/billing.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "4dd2263ca2918c579039143136fed1688a367ec9bd167c32deaf2dc691c62ab6"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "811a7a85dfb8fc91ce2d5869d87e7cfd76f4be2a2565e797b0b2b9b9528aec89"
 ---
 
 # Billing FAQ for Pro Plan
@@ -33,7 +33,7 @@ The Vercel Pro plan is designed for professional developers, freelancers, and bu
 
 - [A more flexible Pro plan for modern teams](https://vercel.com/blog/new-pro-pricing-plan?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan%2Fbilling&source_site=vercel-docs&relationship=related)
 - [Billing FAQ for Enterprise Plan](https://vercel.com/docs/plans/enterprise/billing?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan%2Fbilling&source_site=vercel-docs&relationship=related) — This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
-- [Pricing](https://v0.app/docs/pricing?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan%2Fbilling&source_site=vercel-docs&relationship=related) — Understand the v0 plans, pricing, and usage limits.
+- [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan%2Fbilling&source_site=vercel-docs&relationship=related)
 - [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan%2Fbilling&source_site=vercel-docs&relationship=related) — Learn about the Hobby plan and how it compares to the Pro plan.
 - [Understanding Vercel](https://vercel.com/docs/plans/pro-plan/trials?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan%2Fbilling&source_site=vercel-docs&relationship=related) — Learn all about Vercel's Pro Plan free trial, including features, usage limits, and options post-trial. Learn how to man
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan%2Fbilling&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y

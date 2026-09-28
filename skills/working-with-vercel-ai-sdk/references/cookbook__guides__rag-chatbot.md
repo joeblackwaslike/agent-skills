@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides/rag-chatbot.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "041227d3f9050a72c76b0d3ff397dc1446a0cf0ff132772525322cd41302a069"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "d40ac52da6ed4d1a25148556c76e16ba1f88fb88f13bc5e98496ab9fbfedd859"
 ---
 
 # RAG Agent Guide
@@ -492,7 +492,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: 'openai/gpt-4o',
+    model: 'openai/gpt-6-astra',
     messages: await convertToModelMessages(messages),
   });
 
@@ -528,7 +528,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: 'openai/gpt-4o',
+    model: 'openai/gpt-6-astra',
     instructions: `You are a helpful assistant. Check your knowledge base before answering any questions.
     Only respond to questions using information from tool calls.
     if no relevant information is found in the tool calls, respond, "Sorry, I don't know."`,
@@ -574,7 +574,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: 'openai/gpt-4o',
+    model: 'openai/gpt-6-astra',
     instructions: `You are a helpful assistant. Check your knowledge base before answering any questions.
     Only respond to questions using information from tool calls.
     if no relevant information is found in the tool calls, respond, "Sorry, I don't know."`,
@@ -707,7 +707,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: 'openai/gpt-4o',
+    model: 'openai/gpt-6-astra',
     instructions: `You are a helpful assistant. Check your knowledge base before answering any questions.
     Only respond to questions using information from tool calls.
     if no relevant information is found in the tool calls, respond, "Sorry, I don't know."`,
@@ -822,7 +822,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: 'openai/gpt-4o',
+    model: 'openai/gpt-6-astra',
     messages: await convertToModelMessages(messages),
     stopWhen: isStepCount(5),
     instructions: `You are a helpful assistant. Check your knowledge base before answering any questions.

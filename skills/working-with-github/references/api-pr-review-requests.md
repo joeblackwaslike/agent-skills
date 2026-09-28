@@ -1,7 +1,7 @@
 ---
 source: "https://docs.github.com/en/rest/pulls/review-requests"
-fetched_at: "2026-09-21T09:43:24.629Z"
-sha256: "2f88583dfa3accb0bd2d50d1ef39b3159cf3eb114fb9f37c975e8a62d88258a0"
+fetched_at: "2026-09-28T10:42:53.812Z"
+sha256: "f139ff923577c0e1893c2a5e19b088e9fc28a603ef5ed36443cbf855cc6430c2"
 ---
 
 # REST API endpoints for review requests
@@ -167,6 +167,8 @@ This endpoint triggers notifications. Creating content too quickly using this en
 - **403** - Forbidden
 
 - **422** - Unprocessable Entity if user is not a collaborator
+
+- **503** - Service unavailable
 
 ### Code examples
 

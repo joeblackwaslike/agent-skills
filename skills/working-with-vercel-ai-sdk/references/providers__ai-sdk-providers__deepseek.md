@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/deepseek.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "5d305c586bdd65b83f94419e9bf9460ddb84a7a565ccddfc4925b00410b72f12"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "0fd512ba5eb1adb33ce3c6a33f3af3c2df1408757a9d0f5a5343011ec287899c"
 ---
 
 # DeepSeek Provider
@@ -162,7 +162,7 @@ import {
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: deepSeek('deepseek-chat'),
+  model: deepSeek('deepseek-flash'),
   instructions: {
     role: 'system',
     content: 'Help the customer plan a short trip.',
@@ -214,7 +214,7 @@ import {
 import { streamText } from 'ai';
 
 const result = streamText({
-  model: deepSeek('deepseek-chat'),
+  model: deepSeek('deepseek-flash'),
   messages: [
     {
       role: 'user',
@@ -327,7 +327,7 @@ const deepSeek = createDeepSeek({
 });
 
 const result = await generateText({
-  model: deepSeek('deepseek-chat'),
+  model: deepSeek('deepseek-flash'),
   prompt: 'What is the weather in San Francisco?',
   tools: {
     weather: tool({

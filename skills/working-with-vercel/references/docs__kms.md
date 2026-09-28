@@ -16,8 +16,8 @@ related:
 summary: Sign JWTs and messages with Vercel-managed signing keys. Learn about issuers, keys, and policies, and how to sign from Vercel Functions with...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "1cf4a09d71ecdeb05830c7bfaadfbd131ae468c62457eb6a2042585cac96f422"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "0028140cc274a18b433b597a801f6783eac8ced6ef0c8f15b0a57c093c9ec14b"
 ---
 
 # Key Management Service (KMS)
@@ -34,9 +34,9 @@ Vercel Key Management Service (KMS) gives you managed signing keys that live on 
 
 - [Sign JWTs from your Functions without managing private keys](https://vercel.com/changelog/sign-jwts-from-your-functions-without-managing-private-keys?from=related&source_path=%2Fdocs%2Fkms&source_site=vercel-docs&relationship=related)
 - [Create a signing key](https://vercel.com/docs/rest-api/kms/create-a-signing-key?from=related&source_path=%2Fdocs%2Fkms&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/keys — Create a new signing key for a KMS issuer. Depending on the activation mode, the
+- [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token?from=related&source_path=%2Fdocs%2Fkms&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
 - [Sign a message](https://vercel.com/docs/rest-api/kms/sign-a-message?from=related&source_path=%2Fdocs%2Fkms&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/sign/message — Sign a raw message with a KMS issuer's active signing key. Authenticate t
 - [Activate a signing key](https://vercel.com/docs/rest-api/kms/activate-a-signing-key?from=related&source_path=%2Fdocs%2Fkms&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/keys/{keyId}/activate — Activate a pending signing key so the issuer starts signing with
-- [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token?from=related&source_path=%2Fdocs%2Fkms&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
 - [Revoke a signing key](https://vercel.com/docs/rest-api/kms/revoke-a-signing-key?from=related&source_path=%2Fdocs%2Fkms&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/keys/{keyId}/revoke — Immediately revoke a signing key that is already scheduled for rev
 
 Full cross-link map for this page: [/docs/kms.graph.md](/docs/kms.graph.md?from=related&source_path=%2Fdocs%2Fkms&source_site=vercel-docs&relationship=graph)
@@ -50,6 +50,10 @@ Every signing request runs through two managed pieces:
 
 - **Signing**: Your code calls the KMS signing API through the [`@vercel/kms`](/docs/kms/ts-sdk-reference) SDK. Inside a Vercel Function, the deployment's [OIDC token](/docs/oidc) authorizes the request automatically, so you manage no credentials.
 - **Verification**: Vercel publishes each issuer's public keys as a JWKS at a stable URL. A relying party fetches the JWKS and verifies the signature without contacting Vercel. KMS sets the JWT `kid` header on each signature, so a verifier selects the right key automatically.
+
+## FIPS 140-3 cryptography
+
+KMS signs JWTs and messages on an [Amazon Linux 2023](https://aws.amazon.com/linux/amazon-linux-2023/) (AL2023) image with OpenSSL in *FIPS mode*, using FIPS 140-3 Level 1 validated cryptographic primitives of the Amazon Linux 2023 OpenSSL FIPS Provider ([CMVP certificate 5021](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/5021)).
 
 ## KMS primitives
 

@@ -3,7 +3,7 @@ title: TanStack AI with MCP
 product: vercel
 url: /docs/mcp/integrations/tanstack-ai
 canonical_url: "https://vercel.com/docs/mcp/integrations/tanstack-ai"
-last_updated: 2026-09-17
+last_updated: 2026-09-18
 type: how-to
 prerequisites:
   - /docs/mcp/integrations
@@ -17,8 +17,8 @@ related:
 summary: Connect TanStack AI to a Model Context Protocol server on Vercel and call its tools with models served through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/mcp/integrations/tanstack-ai.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "79aec5e7d27f941d48ba8c800ec9bf337f416cc8640eda616b4e581877169736"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "9762603e38586d9492e9f8b87913f8d07ac7d25395204a4ac142a3613ce65346"
 ---
 
 # TanStack AI with MCP
@@ -31,12 +31,12 @@ Give [TanStack AI](https://tanstack.com/ai) access to tools from a [Model Contex
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Vercel Connect now supports TanStack AI](https://vercel.com/changelog/vercel-connect-tanstack-ai?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations%2Ftanstack-ai&source_site=vercel-docs&relationship=related)
 - [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
 - [MCP server support on Vercel](https://vercel.com/changelog/mcp-server-support-on-vercel?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations%2Ftanstack-ai&source_site=vercel-docs&relationship=related)
 - [Introducing Vercel MCP: Connect Vercel to your AI tools](https://vercel.com/blog/introducing-vercel-mcp-connect-vercel-to-your-ai-tools?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations%2Ftanstack-ai&source_site=vercel-docs&relationship=related)
 - [Build an MCP Server with Weather tools using Express and Vercel](https://vercel.com/kb/guide/mcp-server-with-weather-tool-express?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Make your Express weather API accessible to AI assistants through the Model Context Protocol.
 - [AI SDK with MCP](https://vercel.com/docs/mcp/integrations/ai-sdk?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Connect the AI SDK to an MCP server on Vercel, discover its tools, and call them with models served through AI Gateway.
-- [How to build an MCP server with Nuxt](https://vercel.com/kb/guide/how-to-build-an-mcp-server-with-nuxt?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Add an MCP server to your Nuxt app with the Nuxt MCP Toolkit. Create tools, resources, and prompt templates that AI assi
 
 Full cross-link map for this page: [/docs/mcp/integrations/tanstack-ai.graph.md](/docs/mcp/integrations/tanstack-ai.graph.md?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations%2Ftanstack-ai&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

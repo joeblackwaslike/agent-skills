@@ -3,7 +3,7 @@ title: update-resource
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/update-resource
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/update-resource"
-last_updated: 2026-09-21
+last_updated: 2026-09-28
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about update-resource on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/update-resource.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "21a3f44fc214219d237703f80d0512601d44d25e84d896af12e395286a56c68e"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "a1faf5a12cb46f65aa9307625ef11fdf3897b7f2aabe7b1bf15bf107d57dfdc5"
 ---
 
 # Update Resource
@@ -65,7 +65,24 @@ This endpoint updates an existing resource in the installation. All parameters a
   },
   "notification": "value",
   "extras": "object",
-  "secrets": "value"
+  "secrets": "value",
+  "customClaims": {
+    "roles": [
+"string"
+    ],
+    "defaultRole": "string" // Role used when the deployment does not request one. Required when `roles` is set.,
+    "claimRules": [
+      "when": {
+        "role": [
+"string"
+        ],
+        "environment": [
+"string"
+        ]
+      },
+      "claims": "object" // required // Claims to set (string, number, or boolean), shallow-merged over earlier rules and over the default claims. `null` removes a claim. Reserved claims cannot be set; `aud` and `sub` can be overridden with a string but not removed.
+    ]
+  }
 }
 ```
 

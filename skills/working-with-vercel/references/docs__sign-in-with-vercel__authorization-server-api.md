@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Authorization Server API
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/authorization-server-api.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "4d6fe0e0102ba65bfc3bfe6136f38920b9a19b2cf7f9fd11ed77e3f0eb31d126"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "20dbc04d13e3d2dad152e6726a9e363253905dd46ebad1fb3e48fcd6daaabfef"
 ---
 
 # Authorization Server API
@@ -32,9 +32,9 @@ The Authorization Server API exposes a set of endpoints which are used by your a
 
 - [Sign JWTs from your Functions without managing private keys](https://vercel.com/changelog/sign-jwts-from-your-functions-without-managing-private-keys?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fauthorization-server-api&source_site=vercel-docs&relationship=related)
 - [Getting started with Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel/getting-started?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fauthorization-server-api&source_site=vercel-docs&relationship=related) — Learn how to get started with Sign in with Vercel
+- [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fauthorization-server-api&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
 - [Vercel KMS Authentication](https://vercel.com/docs/kms/concepts/authentication?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fauthorization-server-api&source_site=vercel-docs&relationship=related) — How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel ac
 - [Vercel KMS Quickstart](https://vercel.com/docs/kms/quickstart?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fauthorization-server-api&source_site=vercel-docs&relationship=related) — Create a KMS issuer, sign a JWT from a Vercel Function with @vercel/kms, and verify it against the published JWKS.
-- [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fauthorization-server-api&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
 - [OIDC Federation Reference](https://vercel.com/docs/oidc/reference?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fauthorization-server-api&source_site=vercel-docs&relationship=related) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel/authorization-server-api.graph.md](/docs/sign-in-with-vercel/authorization-server-api.graph.md?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fauthorization-server-api&source_site=vercel-docs&relationship=graph)

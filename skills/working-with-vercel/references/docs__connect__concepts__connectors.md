@@ -17,8 +17,8 @@ related:
 summary: A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are available.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/connectors.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "5929baca755c60c3bf8bedac4bf7ff2e8a8e8742c33e1e8e62f1d3ecd62faf5d"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "76ce68b60a15eec43dc57d4e83b58d98a8843d1f38795fa59b1480233385c77f"
 ---
 
 # Connectors
@@ -31,10 +31,10 @@ A **connector** is the team-owned record that represents one third-party service
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Vercel Connect now supports Microsoft Teams](https://vercel.com/changelog/vercel-connect-microsoft-teams?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fconnectors&source_site=vercel-docs&relationship=related)
 - [Vercel Connect now supports Linq](https://vercel.com/changelog/vercel-connect-now-supports-linq?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fconnectors&source_site=vercel-docs&relationship=related)
 - [Vercel Connect adds 100+ preset connectors](https://vercel.com/changelog/vercel-connect-preset-connectors?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fconnectors&source_site=vercel-docs&relationship=related)
 - [Vercel Connect now supports Microsoft](https://vercel.com/changelog/vercel-connect-supports-microsoft?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fconnectors&source_site=vercel-docs&relationship=related)
-- [Vercel Connect](https://v0.app/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fconnectors&source_site=vercel-docs&relationship=related) — Connect your v0 apps and agents to third-party services – no API keys required.
 - [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fconnectors&source_site=vercel-docs&relationship=related) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect — short-
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fconnectors&source_site=vercel-docs&relationship=related)
 - [Get a connector project connection](https://vercel.com/docs/rest-api/connect/get-a-connector-project-connection?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fconnectors&source_site=vercel-docs&relationship=related) — GET /v1/connect/connectors/{connector}/projects/{projectId} — Get the configuration that connects a connector to a proje

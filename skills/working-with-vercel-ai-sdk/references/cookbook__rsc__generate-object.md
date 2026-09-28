@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/rsc/generate-object.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "2b72ad13114c3bd3c1f6f4a56a04fe2062df06a63ae62b886076ca80020f244f"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "82917227f831375fbcadb0d41743d352bbe7a34037ee2dbd943e75c57468857d"
 ---
 
 # Generate Object
@@ -92,7 +92,7 @@ export async function getNotifications(input: string) {
   'use server';
 
   const { output: notifications } = await generateText({
-    model: 'openai/gpt-5.4',
+    model: 'openai/gpt-6-astra',
     instructions: 'You generate three notifications for a messages app.',
     prompt: input,
     output: Output.object({

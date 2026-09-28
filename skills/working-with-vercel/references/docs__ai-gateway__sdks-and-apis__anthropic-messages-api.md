@@ -17,8 +17,8 @@ related:
 summary: Use the Anthropic Messages API with AI Gateway. Configure authentication and send requests with streaming, tools, images, and extended thinking.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "cdc74b2045d056b662f4104a444c0cf25a6ea4c5a32516578e2663e21d676014"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "061dc7b04cf35c8871705fb600079a824fbc13ae4075f1b8fe2d8b70b4678254"
 ---
 
 # Anthropic Messages API with AI Gateway
@@ -31,6 +31,7 @@ AI Gateway provides Anthropic Messages API endpoints, so you can use the Anthrop
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Claude Opus 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-opus-5-5-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api&source_site=vercel-docs&relationship=related)
 - [Fast mode for Opus 4.7 available on AI Gateway](https://vercel.com/changelog/fast-mode-for-opus-4-7-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api&source_site=vercel-docs&relationship=related)
 - [Opus 4.6 Fast Mode available on AI Gateway](https://vercel.com/changelog/opus-4-6-fast-mode-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api&source_site=vercel-docs&relationship=related)
 - [Service tiers now available on AI Gateway](https://vercel.com/changelog/service-tiers-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api&source_site=vercel-docs&relationship=related)

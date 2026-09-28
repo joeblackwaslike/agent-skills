@@ -3,7 +3,7 @@ title: TanStack AI
 product: vercel
 url: /docs/connect/frameworks/tanstack-ai
 canonical_url: "https://vercel.com/docs/connect/frameworks/tanstack-ai"
-last_updated: 2018-10-20
+last_updated: 2026-09-18
 type: tutorial
 prerequisites:
   - /docs/connect/frameworks
@@ -17,8 +17,8 @@ related:
 summary: Connect a TanStack AI app to OAuth-protected MCP servers with Vercel Connect, handle user consent, and manage MCP clients.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/frameworks/tanstack-ai.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "9d64300929091f605bdde98ae74510190bd4647f53077cf5949bb24e3a2fdc69"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "16d071c570cf6d4380e413629d3d534db65bdbc4ba2cf29403a060ae8a1a1fd2"
 ---
 
 # TanStack AI
@@ -33,12 +33,13 @@ Connect a TanStack AI chat route to Linear's Model Context Protocol (MCP) server
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Vercel Connect now supports TanStack AI](https://vercel.com/changelog/vercel-connect-tanstack-ai?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Ftanstack-ai&source_site=vercel-docs&relationship=related)
 - [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
 - [AI SDK and MCP](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
 - [AI SDK with MCP](https://vercel.com/docs/mcp/integrations/ai-sdk?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Connect the AI SDK to an MCP server on Vercel, discover its tools, and call them with models served through AI Gateway.
 - [AI Gateway Ecosystem and Integrations](https://vercel.com/docs/ai-gateway/ecosystem?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Connect frameworks, coding tools, and billing integrations to AI Gateway. Configure app attribution and explore integrat
 - [Deploy MCP servers to Vercel](https://vercel.com/docs/mcp/deploy-mcp-servers-to-vercel?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Learn how to deploy Model Context Protocol \\(MCP\\) servers on Vercel with OAuth authentication and efficient scaling.
-- [AI SDK](https://vercel.com/docs/ai-sdk?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Build TypeScript agents and AI applications with a unified API for models, tools, structured output, and streaming.
+- [Chat SDK](https://vercel.com/docs/connect/frameworks/chat-sdk?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
 
 Full cross-link map for this page: [/docs/connect/frameworks/tanstack-ai.graph.md](/docs/connect/frameworks/tanstack-ai.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Ftanstack-ai&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/provider-registry.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "5efe05cbb5472e8b3ac186a4387fe3d0e985181e4a5a97ca467aa5f58c3f8ef3"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "0497bc4901f39ad90f3b49adb679906e526dd5e4fd73e265a9fedfa364c3ff87"
 ---
 
 # `createProviderRegistry()`
@@ -63,7 +63,7 @@ import { generateText } from 'ai';
 import { registry } from './registry';
 
 const { text } = await generateText({
-  model: registry.languageModel('openai:gpt-4.1'),
+  model: registry.languageModel('openai:gpt-6-astra'),
   prompt: 'Invent a new holiday and describe its traditions.',
 });
 ```

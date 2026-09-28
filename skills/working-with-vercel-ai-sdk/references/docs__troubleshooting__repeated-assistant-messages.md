@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/troubleshooting/repeated-assistant-messages.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "389cb28e204fefa0e3c0dc606c76c9cefe98ecf417e9afe550a9b448c51a8b7a"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "677762993f942b3e3949e45084ced77fc03818e6d7ac0b4c4338f6e7ad5e3360"
 ---
 
 # Repeated assistant messages in useChat
@@ -16,7 +16,7 @@ export async function POST(req: Request) {
   const { messages } = await req.json();
 
   const result = streamText({
-    model: 'openai/gpt-5-mini',
+    model: 'openai/gpt-6-luna',
     messages: await convertToModelMessages(messages),
     tools: {
       weather: {
@@ -50,7 +50,7 @@ export async function POST(req: Request) {
   const { messages } = await req.json();
 
   const result = streamText({
-    model: 'openai/gpt-5-mini',
+    model: 'openai/gpt-6-luna',
     messages: await convertToModelMessages(messages),
     tools: {
       weather: {

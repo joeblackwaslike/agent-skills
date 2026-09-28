@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides/gpt-5.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "6625237134ee112c39e19bfe54f5f2f5fa017236361701e2ac18176989854ebd"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "6cce7ed2174806d8557fe2aa9bd3215248628be1741c509b004deb59785049c6"
 ---
 
 # Get started with OpenAI GPT-5
@@ -10,9 +10,14 @@ With the [release of OpenAI's GPT-5 model](https://openai.com/index/introducing-
 
 The [AI SDK](/) is a powerful TypeScript toolkit for building AI applications with large language models (LLMs) like OpenAI GPT-5 alongside popular frameworks like React, Next.js, Vue, Svelte, Node.js, and more.
 
+<Note>
+  This guide covers GPT-5-specific behavior. For current models and examples,
+  see the [OpenAI provider documentation](/providers/ai-sdk-providers/openai).
+</Note>
+
 ## OpenAI GPT-5
 
-OpenAI's GPT-5 represents their latest advancement in language models, offering powerful new features including verbosity control for tailored response lengths, integrated web search capabilities, reasoning summaries for transparency, and native support for text, images, audio, and PDFs. The model is available in three variants: `gpt-5`, `gpt-5-mini` for faster, more cost-effective processing, and `gpt-5-nano` for ultra-efficient operations.
+OpenAI's GPT-5 introduced powerful new features including verbosity control for tailored response lengths, integrated web search capabilities, reasoning summaries for transparency, and native support for text, images, audio, and PDFs. The model is available in three variants: `gpt-5`, `gpt-5-mini` for faster, more cost-effective processing, and `gpt-5-nano` for ultra-efficient operations.
 
 ### Prompt Engineering for GPT-5
 

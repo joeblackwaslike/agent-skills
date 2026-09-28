@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/code-review.md"
-fetched_at: "2026-09-21T09:39:23.760Z"
-sha256: "b495a955ebe3368e1a870d47f7e8e94761310854207422cbf03590adf26a9985"
+fetched_at: "2026-09-28T10:38:50.037Z"
+sha256: "015656af5afd84d5a1f9137e024b634320eada2249e86f0dad1eed703ad017a4"
 ---
 
 > ## Documentation Index
@@ -271,11 +271,11 @@ Monitor spend via the weekly cost chart in [analytics](#view-usage) or the per-r
 
 ## Troubleshooting
 
-Review runs are best-effort. A failed run never blocks your PR, but it also doesn't retry on its own. This section covers how to recover from a failed run and where to look when the check run reports issues you can't find.
+Review runs are best-effort, and a failed run never blocks your PR. Code Review retries some interrupted reviews on its own. This section covers how to run a review again yourself and where to look when the check run reports issues you can't find.
 
 ### Retrigger a failed or timed-out review
 
-When the review infrastructure hits an internal error or exceeds its time limit, the check run completes with a title of **Code review encountered an error** or **Code review timed out**. The conclusion is still neutral, so nothing blocks your merge, but no findings are posted.
+When a review fails or exceeds its time limit, the check run completes with a title such as **Code review failed** or **Code review timed out**. The conclusion is still neutral, so nothing blocks your merge. Unless the check run's summary says a new review of the commit has been queued automatically, run the review again yourself.
 
 To run the review again, comment `@claude review` on the PR. This starts a fresh review without subscribing the PR to future pushes. If the PR isn't [from a fork](#review-pull-requests-from-forks), you can instead click **Re-run** on the **Claude Code Review** check in GitHub's Checks tab. A re-run also starts a fresh review without subscribing the PR.
 

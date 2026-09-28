@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/deepagents.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "e837efc9e85c3a2eb76ed8de2b9a293bb1b1efde3fca13b71f7141b31f44ccd4"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "d5c020f6ffdc7eb764bc8d30550c67f85f874a0a2e47227c120e54b0d68437bf"
 ---
 
 # Deep Agents Harness
@@ -38,18 +38,19 @@ configuration.
 ```ts
 import { HarnessAgent } from '@ai-sdk/harness/agent';
 import { deepAgents } from '@ai-sdk/harness-deepagents';
-import { createVercelSandbox } from '@ai-sdk/sandbox-vercel';
+import { createVercelNetworkSandboxSession } from '@ai-sdk/sandbox-vercel';
 
 const agent = new HarnessAgent({
   harness: deepAgents,
   model: 'anthropic/claude-sonnet-4-6',
-  sandbox: createVercelSandbox({
-    runtime: 'node24',
-    ports: [4000],
-  }),
 });
 
-const session = await agent.createSession();
+const sandboxSession = await createVercelNetworkSandboxSession({
+  runtime: 'node24',
+  ports: [4000],
+  template: await agent.getSandboxTemplate(),
+});
+const session = await agent.createSession({ sandboxSession });
 
 let exitCode = 0;
 try {
@@ -68,6 +69,7 @@ try {
   console.error(err);
 } finally {
   await session.destroy();
+  await sandboxSession.destroy();
   process.exit(exitCode);
 }
 ```
@@ -101,6 +103,13 @@ Settings:
 - `recursionLimit`: maximum LangGraph super-steps per turn. When omitted, the
   Deep Agents default applies.
 - `startupTimeoutMs`: maximum time to wait for the bridge to start.
+- `reconnect`: reconnect timing after an established bridge WebSocket
+  connection drops. `maxElapsedMs` controls the total retry window, including
+  connection establishment and backoff delays, and defaults to 30 seconds.
+  `initialDelayMs` defaults to 50 milliseconds, and `maxDelayMs` defaults to
+  2 seconds. These retries use exponential backoff and are separate from
+  `startupTimeoutMs`. They cannot recover when the sandbox, bridge process, or
+  bridge endpoint is permanently unavailable.
 - `mintBridgeToken`: synchronous function that receives the sandbox id and
   returns the bridge authentication token. By default, the adapter generates a
   random 32-byte token. Custom implementations must return a suitably secret
@@ -169,9 +178,10 @@ Deep Agents requires a network sandbox with at least one exposed port,
 e.g. `@ai-sdk/sandbox-vercel`:
 
 ```ts
-const sandbox = createVercelSandbox({
+const sandboxSession = await createVercelNetworkSandboxSession({
   runtime: 'node24',
   ports: [4000],
+  template: await agent.getSandboxTemplate(),
 });
 ```
 

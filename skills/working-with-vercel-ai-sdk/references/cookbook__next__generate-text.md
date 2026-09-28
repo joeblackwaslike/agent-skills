@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/generate-text.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "4ffabf5717d2d9194fad159abfcf1420ac76c013afd653294d02c193e2bd9326"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "cf65a10e9a761b1ac630d161a84d2470168b200ecd431eaa0ae8e64b4612a43e"
 ---
 
 # Generate Text
@@ -64,7 +64,7 @@ export async function POST(req: Request) {
   const { prompt }: { prompt: string } = await req.json();
 
   const { text } = await generateText({
-    model: 'openai/gpt-4o',
+    model: 'openai/gpt-6-astra',
     instructions: 'You are a helpful assistant.',
     prompt,
   });

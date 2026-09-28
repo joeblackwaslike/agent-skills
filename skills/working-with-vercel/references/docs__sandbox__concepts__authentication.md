@@ -15,8 +15,8 @@ related:
 summary: Learn how to authenticate with Vercel Sandbox using OIDC tokens or access tokens.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/authentication.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "693cb0f5a85af1b9acc98d472f98477262fbbb44e78c183fdf97dcebae552490"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "74df4915e88df014625c1fffac8c43453d7fcd512fa27f0d352926b8d08bb5dc"
 ---
 
 # Sandbox Authentication
@@ -79,9 +79,9 @@ VERCEL_TOKEN=your_access_token
 
 Then pass them to `Sandbox.create()`:
 
-**TypeScript**
+**index.ts**
 
-```ts
+```ts filename="index.ts"
 import { Sandbox } from '@vercel/sandbox';
 
 const sandbox = await Sandbox.create({
@@ -91,9 +91,9 @@ const sandbox = await Sandbox.create({
 });
 ```
 
-**Python**
+**main.py**
 
-```python
+```py filename="main.py"
 import asyncio
 import os
 
@@ -122,8 +122,6 @@ async def main() -> None:
 
 asyncio.run(main())
 ```
-
-> **💡 Note:** For async operations, import `AsyncSandbox` instead of `Sandbox` and use `await` with all methods.
 
 ## Which method to use
 

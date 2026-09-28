@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "c9f733fb982281c15fa90bf12ddf68b7bb3f65c5561e92bd97601fca7831ad45"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "f2cebb96866cd0cce248c0c4e45d3a96b5efca24404ace4159f47c9755ae4de4"
 ---
 
 # AI SDK Harnesses
@@ -73,16 +73,27 @@ All harness adapters are used with `HarnessAgent`:
 ```ts
 import { HarnessAgent } from '@ai-sdk/harness/agent';
 import { codex } from '@ai-sdk/harness-codex';
-import { createVercelSandbox } from '@ai-sdk/sandbox-vercel';
+import { createVercelNetworkSandboxSession } from '@ai-sdk/sandbox-vercel';
 
 const agent = new HarnessAgent({
   harness: codex,
   model: 'gpt-5.6-luna',
-  sandbox: createVercelSandbox({
-    runtime: 'node24',
-    ports: [4000],
-  }),
 });
+
+const sandboxSession = await createVercelNetworkSandboxSession({
+  runtime: 'node24',
+  ports: [4000],
+  template: await agent.getSandboxTemplate(),
+});
+const session = await agent.createSession({ sandboxSession });
+try {
+  console.log(
+    (await agent.generate({ session, prompt: 'Inspect this project.' })).text,
+  );
+} finally {
+  await session.destroy();
+  await sandboxSession.destroy();
+}
 ```
 
 Read the [Harnesses](/docs/ai-sdk-harnesses) documentation for sessions,
@@ -175,6 +186,7 @@ tools, UI, and terminal usage.
   - [LM Studio](/providers/openai-compatible-providers/lmstudio)
   - [NVIDIA NIM](/providers/openai-compatible-providers/nim)
   - [ModelRush](/providers/openai-compatible-providers/modelrush)
+  - [Cheaper Inference](/providers/openai-compatible-providers/cheaper-inference)
   - [Clarifai](/providers/openai-compatible-providers/clarifai)
   - [Heroku](/providers/openai-compatible-providers/heroku)
   - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)

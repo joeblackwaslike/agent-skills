@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/create-ui-message-stream.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "964a1bbace49efc4454ec957071ac653ffcbf8e7003cbae4501da5f036ffbeb8"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "01983c8c10f8c798eb12334781f2c1c82abaa97482727cb2432e37b2c9e57b12"
 ---
 
 # `createUIMessageStream`
@@ -135,7 +135,7 @@ outcomes and call `setOutcome` once.
     },
     {
       name: 'onEnd',
-      type: '(options: { messages: UIMessage[]; isContinuation: boolean; isAborted: boolean; outcome: UIMessageStreamOutcome; responseMessage: UIMessage; finishReason?: FinishReason }) => PromiseLike<void> | void',
+      type: '(options: { messages: UIMessage[]; isContinuation: boolean; isAborted: boolean; isCancelled?: true; outcome: UIMessageStreamOutcome; responseMessage: UIMessage; finishReason?: FinishReason }) => PromiseLike<void> | void',
       description: 'A callback function that is called when the stream ends.',
       properties: [
         {
@@ -158,10 +158,16 @@ outcomes and call `setOutcome` once.
               description: 'Indicates whether the stream was aborted.',
             },
             {
+              name: 'isCancelled',
+              type: 'true | undefined',
+              description:
+                'Present and true when the consumer cancelled the stream before an outcome was declared, for example because the client disconnected.',
+            },
+            {
               name: 'outcome',
               type: "UIMessageStreamOutcome = { status: 'completed' } | { status: 'failed'; error?: unknown } | { status: 'aborted' } | { status: 'unknown' }",
               description:
-                'The operation-level outcome of the stream. It reflects the stream owner declaration unless a fatal stream-processing failure occurs, and is separate from model finish reasons and individual error chunks.',
+                "The operation-level outcome of the stream. It reflects the stream owner declaration unless a fatal stream-processing failure occurs, and is separate from model finish reasons and individual error chunks. It remains 'unknown' when the consumer cancels before an outcome is declared; check isCancelled to distinguish that case from normal closure without a declared outcome.",
             },
             {
               name: 'responseMessage',
@@ -181,7 +187,7 @@ outcomes and call `setOutcome` once.
     },
     {
       name: 'onFinish',
-      type: '(options: { messages: UIMessage[]; isContinuation: boolean; isAborted: boolean; outcome: UIMessageStreamOutcome; responseMessage: UIMessage; finishReason?: FinishReason }) => PromiseLike<void> | void',
+      type: '(options: { messages: UIMessage[]; isContinuation: boolean; isAborted: boolean; isCancelled?: true; outcome: UIMessageStreamOutcome; responseMessage: UIMessage; finishReason?: FinishReason }) => PromiseLike<void> | void',
       description: 'Deprecated alias for `onEnd`.',
     },
     {

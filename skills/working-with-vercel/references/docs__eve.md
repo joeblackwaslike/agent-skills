@@ -3,7 +3,7 @@ title: eve
 product: vercel
 url: /docs/eve
 canonical_url: "https://vercel.com/docs/eve"
-last_updated: 2026-09-14
+last_updated: 2026-09-21
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Build and deploy durable backend AI agents with eve, an open-source, filesystem-first framework.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/eve.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "cc85ed69ab8ffe158afbb99ad8528c3c32a0f2e5f9258f1779d4caf6e1b1a0cd"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "06416f637b54146dfbeb8b13a8d4b2fc14978dcbd55cbe7b970781deb1a49508"
 ---
 
 # eve
@@ -35,15 +35,15 @@ Build durable backend AI agents with eve, an open-source, filesystem-first frame
 - [Introducing eve, an open-source agent framework](https://vercel.com/changelog/introducing-eve-an-open-source-agent-framework?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related)
 - [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
 - [The Agent Stack](https://vercel.com/blog/agent-stack?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related)
+- [How to add tools to your eve agent](https://vercel.com/kb/guide/how-to-add-eve-tools?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Add tools to an eve agent by creating a TypeScript file under agent/tools/ with defineTool, and gate sensitive ones on h
 - [Give your eve agent secure access to your private AWS RDS database](https://vercel.com/kb/guide/give-eve-agent-secure-access-to-aws-rds-database?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Connect an eve agent to a private AWS RDS database using Vercel Secure Compute and VPC peering, with a read-only query t
 - [How to run a multi-step research agent on Vercel](https://vercel.com/kb/guide/how-to-run-a-multi-step-research-agent-on-vercel?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — An end-to-end architecture for production research agents on Vercel using Sandbox, Workflows, and AI Gateway with isolat
-- [Deployment](https://eve.dev/docs/guides/deployment/overview?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Choose a deployment strategy and prepare an eve agent for production.
-- [How to add tools to your eve agent](https://vercel.com/kb/guide/how-to-add-eve-tools?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Add tools to an eve agent by creating a TypeScript file under agent/tools/ with defineTool, and gate sensitive ones on h
-- [Next.js](https://eve.dev/docs/guides/frontend/nextjs?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Run an eve agent and a Next.js app as one project with withEve.
 - [Terminal UI](https://eve.dev/docs/guides/dev-tui?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Use eve locally or connect to a deployed agent from an interactive terminal UI.
-- [Self-Host eve](https://eve.dev/docs/guides/deployment/self-hosting?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Run an eve agent as a Node service with your own workflow storage, sandbox backend, and routing.
-- [Build your first Slack agent with eve](https://vercel.com/kb/guide/eve-slack-agent-starter?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Deploy the eve Slack agent template: a starter Slack bot built on the eve framework with an example tool and skill.
+- [Deployment](https://eve.dev/docs/guides/deployment/overview?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Choose a deployment strategy and prepare an eve agent for production.
+- [Next.js](https://eve.dev/docs/guides/frontend/nextjs?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Run an eve agent and a Next.js app as one project with withEve.
 - [How to use subagents with eve](https://vercel.com/kb/guide/how-to-use-eve-subagents?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Learn how to use subagents with eve, including the built-in agent tool, declared specialist subagents, the isolation bou
+- [Self-Host eve](https://eve.dev/docs/guides/deployment/self-hosting?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Run an eve agent as a Node service with your own workflow storage, sandbox provider, and routing.
+- [How to build a GitHub agent with eve and GitHub Tools](https://vercel.com/kb/guide/github-agent-eve?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Build a GitHub agent with eve, GitHub Tools, and Vercel Connect. Register AI-callable GitHub tools, gate writes behind d
 
 Full cross-link map for this page: [/docs/eve.graph.md](/docs/eve.graph.md?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -185,7 +185,7 @@ curl http://127.0.0.1:3000/eve/v1/session/<sessionId>/stream
   incremental output and resume after cold starts, deploys, or long pauses.
 - [**Tools and skills**](/docs/eve/concepts#tools-and-skills): Give the model typed actions and
   load larger procedures only when relevant.
-- [**Agent Runs**](/docs/eve/observability): Inspect sessions, turns, tools, reasoning, timing, and
+- [**Agent Runs**](/docs/eve/agent-runs): Inspect sessions, turns, tools, reasoning, timing, and
   token usage in the Vercel dashboard.
 
 ## Start with a template
@@ -203,7 +203,11 @@ securely access third-party services and APIs:
 
 **Pricing and Limits**: Understand how eve usage maps to Vercel resources and inherited platform limits. [Learn more →](/docs/eve/pricing)
 
-**Observability**: Inspect agent runs in the Vercel dashboard with no setup, and optionally export AI SDK spans through OpenTelemetry. [Learn more →](/docs/eve/observability)
+**Agent Runs**: Inspect eve sessions, configure trace sampling, and control the content Agent Runs receives. [Learn more →](/docs/eve/agent-runs)
+
+**Observability**: Configure process-wide OpenTelemetry settings, built-in exports, and third-party destinations. [Learn more →](/docs/eve/observability)
+
+**Automatically approve tool calls with Jev**: Use Jev to review tool calls, approve routine actions, and request human approval when needed. [Learn more →](/kb/guide/auto-approve-tool-calls-eve-jev)
 
 
 ---

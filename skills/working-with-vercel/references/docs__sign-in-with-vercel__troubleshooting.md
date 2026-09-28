@@ -14,8 +14,8 @@ related:
 summary: Learn how to troubleshoot common errors with Sign in with Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/troubleshooting.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "5226d1ca88560d1c6ed7433dbe82fbbbf63597c70beea2c7182d2cabefa14ca3"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "a5851ba14da1e0bfb98dd21d2f811c5f2747fe66a54df98ebbfe7ea2f13c668f"
 ---
 
 # Troubleshooting Sign in with Vercel
@@ -30,10 +30,10 @@ When users try to authorize your app, several errors can occur. Common troublesh
 
 - [The complete guide to authentication on Vercel](https://vercel.com/kb/guide/complete-guide-authentication-vercel?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Learn how to implement authentication in your Vercel applications. Covers NextAuth/Auth.js setup, environment variable c
 - [Vercel KMS Authentication](https://vercel.com/docs/kms/concepts/authentication?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel ac
+- [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
 - [Revoke a signing key](https://vercel.com/docs/rest-api/kms/revoke-a-signing-key?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/keys/{keyId}/revoke — Immediately revoke a signing key that is already scheduled for rev
 - [Create a signing key](https://vercel.com/docs/rest-api/kms/create-a-signing-key?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/keys — Create a new signing key for a KMS issuer. Depending on the activation mode, the
 - [Tokens](https://vercel.com/docs/sign-in-with-vercel/tokens?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Learn how to Sign in with Vercel
-- [For Service Providers](https://vercel.com/docs/connect/providers?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — What your service needs to declare so Vercel Connect can discover, register, and authorize against it using standard OAu
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel/troubleshooting.graph.md](/docs/sign-in-with-vercel/troubleshooting.graph.md?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Ftroubleshooting&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

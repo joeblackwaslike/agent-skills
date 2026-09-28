@@ -1,10 +1,16 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides/o1.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "149a70c7ebe5508a7db2dae4419a653e9b4324e8b4f7024627b7c83c70bc61c9"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "6feb639e00cfc18387788efec4f8a24e6f509a7c9d6e42c5097bdc5f5807d436"
 ---
 
 # Get started with OpenAI o1
+
+<Note>
+  This guide covers the o1 model family and keeps its model IDs intentionally.
+  For current models, see the [OpenAI provider
+  documentation](/providers/ai-sdk-providers/openai).
+</Note>
 
 With the [release of OpenAI's o1 series models](https://openai.com/index/learning-to-reason-with-llms/), there has never been a better time to start building AI applications, particularly those that require complex reasoning capabilities.
 

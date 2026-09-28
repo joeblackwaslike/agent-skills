@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/axiom.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "e21c43722da519acfe91a17132d25be543fc34acad9e7c286466accb16f800d0"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "0efad2fcf6af6dc1bb83c6195dcdc26852f88a3cc28886b019cefca4c90ec113"
 ---
 
 # Axiom Observability
@@ -103,7 +103,7 @@ const openaiProvider = createOpenAI({
 });
 
 // 2. Wrap the model to enable automatic tracing
-const tracedGpt4o = wrapAISDKModel(openaiProvider('gpt-4o'));
+const tracedGpt4o = wrapAISDKModel(openaiProvider('gpt-6-astra'));
 
 // 3. Use the wrapped model as you normally would
 const { text } = await generateText({

@@ -12,8 +12,8 @@ related:
 summary: Learn how to configure Vercel CLI under your system user.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/global-configuration.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "f285278a1d64fd4865e16e3ec353f1cd6de8cdd85e081cc91e3dd1994d6dc903"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "aa2700fc555241b2caec2dfeb43cbbebb6a9a41bd754a40488a0b2e8ae11cec0"
 ---
 
 # Global Vercel CLI Configuration
@@ -28,8 +28,8 @@ Using the following files and configuration options, you can configure [Vercel C
 
 - [Vercel CLI Global Options](https://vercel.com/docs/cli/global-options?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fglobal-configuration&source_site=vercel-docs&relationship=related) — Global options are commonly available to use with multiple Vercel CLI commands. Learn about Vercel CLI's global options
 - [vercel global-config](https://vercel.com/docs/cli/global-config?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fglobal-configuration&source_site=vercel-docs&relationship=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
-- [vercel login](https://vercel.com/docs/cli/login?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fglobal-configuration&source_site=vercel-docs&relationship=related) — Learn how to login into your Vercel account using the vercel login CLI command.
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fglobal-configuration&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel login](https://vercel.com/docs/cli/login?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fglobal-configuration&source_site=vercel-docs&relationship=related) — Learn how to login into your Vercel account using the vercel login CLI command.
 - [Managing Global Configs with the Dashboard](https://vercel.com/docs/global-config/global-config-dashboard?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fglobal-configuration&source_site=vercel-docs&relationship=related) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
 
 Full cross-link map for this page: [/docs/project-configuration/global-configuration.graph.md](/docs/project-configuration/global-configuration.graph.md?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fglobal-configuration&source_site=vercel-docs&relationship=graph)

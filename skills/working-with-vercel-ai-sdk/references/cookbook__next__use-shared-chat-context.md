@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/use-shared-chat-context.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "10f1a4b70ee1a87710294456e294c34640fbed106dd78df614d24eca036b75eb"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "660a29699c714c2d094e205971765a197d665bdee450c8ef20a1aa081f4022d5"
 ---
 
 # Share useChat State Across Components
@@ -173,7 +173,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: 'openai/gpt-4o-mini',
+    model: 'openai/gpt-6-luna',
     messages: await convertToModelMessages(messages),
   });
 

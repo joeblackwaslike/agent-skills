@@ -14,8 +14,8 @@ related:
 summary: test
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/pre-generating-ssl-certs.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "9e4e2485fecce8024fa863c03bf0a97a93a4e147ced90d8010f07be872f00ea9"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "dc769ab745639370719738515822dc24e73eee5db70d503965235bd9fa042be1"
 ---
 
 # Pre-Generate SSL Certificates
@@ -38,7 +38,6 @@ DNS changes.
 - [Pre-generate SSL certs, now in the Domains dashboard](https://vercel.com/changelog/pre-generate-domain-ssl-certs-now-in-dashboard?from=related&source_path=%2Fdocs%2Fdomains%2Fpre-generating-ssl-certs&source_site=vercel-docs&relationship=related)
 - [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare?from=related&source_path=%2Fdocs%2Fdomains%2Fpre-generating-ssl-certs&source_site=vercel-docs&relationship=related) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
 - [How can I migrate a site to Vercel without downtime?](https://vercel.com/kb/guide/zero-downtime-migration?from=related&source_path=%2Fdocs%2Fdomains%2Fpre-generating-ssl-certs&source_site=vercel-docs&relationship=related) — Information about how to assign a Vercel deployment to a domain without downtime.
-- [Why is my domain not automatically generating an SSL/TLS certificate?](https://vercel.com/kb/guide/domain-not-generating-ssl-certificate?from=related&source_path=%2Fdocs%2Fdomains%2Fpre-generating-ssl-certs&source_site=vercel-docs&relationship=related) — Information on why a domain may not be automatically generating an SSL/TLS certificate.
 - [Working with SSL Certificates](https://vercel.com/docs/domains/working-with-ssl?from=related&source_path=%2Fdocs%2Fdomains%2Fpre-generating-ssl-certs&source_site=vercel-docs&relationship=related) — Learn how Vercel uses SSL certification to keep your site secure.
 - [Uploading Custom SSL Certificates](https://vercel.com/docs/domains/custom-ssl-certificate?from=related&source_path=%2Fdocs%2Fdomains%2Fpre-generating-ssl-certs&source_site=vercel-docs&relationship=related) — By default, Vercel provides all domains with a custom SSL certificates. However, Enterprise teams can upload their own c
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fpre-generating-ssl-certs&source_site=vercel-docs&relationship=related) — Add and configure a custom domain for your Vercel project using the CLI.

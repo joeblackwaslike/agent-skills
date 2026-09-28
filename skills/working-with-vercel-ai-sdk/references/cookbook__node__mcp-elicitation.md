@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/node/mcp-elicitation.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "cef98f9a94a9c10035e77675208b4e8be3b1a5b0300371d78f18bee086674aa6"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "a6a784590b3d1c4243a0958b2d0cc3c32cca1ad3a2e0d1c3741ed515c1c1fa44"
 ---
 
 # MCP Elicitation
@@ -50,7 +50,7 @@ try {
   const tools = await mcpClient.tools();
 
   const { text } = await generateText({
-    model: 'openai/gpt-4o-mini',
+    model: 'openai/gpt-6-luna',
     tools,
     prompt: 'Register a new user account',
   });

@@ -3,7 +3,7 @@ title: Container Registry limits and pricing
 product: vercel
 url: /docs/container-registry/limits-and-pricing
 canonical_url: "https://vercel.com/docs/container-registry/limits-and-pricing"
-last_updated: 2026-09-04
+last_updated: 2026-09-22
 type: reference
 prerequisites:
   - /docs/container-registry
@@ -12,8 +12,8 @@ related:
 summary: Storage pricing, size limits, plan limits, and compatibility limits for Vercel Container Registry.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/container-registry/limits-and-pricing.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "a35493dab955a8e1d9c17548bb529de798c065d6bea94a8b6bbf39f8a48dc2f9"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "f5c559d6816218ce123c8b52f450d9ea7227ab508410936b5b85f90307991e43"
 ---
 
 # Container Registry limits and pricing
@@ -50,7 +50,7 @@ Full cross-link map for this page: [/docs/container-registry/limits-and-pricing.
 
 | Resource                          | Limit  |
 | --------------------------------- | ------ |
-| Compressed image layer            | 500 MB |
+| Compressed image layer            | 2 GB   |
 | Total image size                  | 15 GB  |
 | Manifest body                     | 4 MB   |
 | Image config blob                 | 1 MB   |

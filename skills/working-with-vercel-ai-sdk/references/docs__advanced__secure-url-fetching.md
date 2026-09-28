@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/advanced/secure-url-fetching.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "322ed4bbb09bf5c8db7bc9122a10aec6cd2c79ab8ecdb38fc8f560f340392e45"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "4b70aada6c1c5ac04a4493d38368d990431901d208aec54ea308eadcbdf1eba1"
 ---
 
 # Secure URL Fetching
@@ -45,6 +45,45 @@ When the SDK fetches a URL taken from a provider response, it:
   drops all of them except the user-agent.
 
 A blocked URL surfaces as a `DownloadError`.
+
+## Fetching untrusted URLs directly
+
+For custom integrations using `@ai-sdk/provider-utils`, use `fetchUntrustedUrl`
+when the URL comes from a response or other untrusted input. It validates URLs
+and redirects and withholds credentials and unknown custom headers on the first
+request unless the URL matches a configured origin:
+
+```ts
+import { fetchUntrustedUrl } from '@ai-sdk/provider-utils';
+
+const response = await fetchUntrustedUrl({
+  url: result.downloadUrl,
+  headers: {
+    authorization: `Bearer ${apiKey}`,
+    accept: 'image/*',
+  },
+  credentialedOrigin: providerBaseURL,
+});
+```
+
+Here, `Authorization` is sent only when the initial URL has the same origin as
+`providerBaseURL`. Otherwise, only allowlisted metadata such as `Accept`,
+`Range`, and `User-Agent` is sent. A cross-origin redirect drops all caller
+headers except `User-Agent`, and credentials are never reattached on later hops.
+
+`credentialedOrigin` must come from your configuration, never from the response
+URL. It does not disable URL validation. For a configured private endpoint, pass
+`trustedOrigin` as well; if `credentialedOrigin` is omitted, `fetchUntrustedUrl`
+uses `trustedOrigin` as the origin allowed to receive credentials. Extra protocol
+metadata can be allowed with `untrustedFirstHopHeaders: ['x-protocol-version']`.
+Only list headers that are safe to disclose to any destination; use a configured
+origin for credentials.
+
+The existing `fetchWithValidatedRedirects` helper preserves its first-request
+behavior: it sanitizes risky headers but still forwards authentication and
+custom headers. Switch to `fetchUntrustedUrl` to opt into first-request
+credential isolation. Existing calls to `getFromApi` also retain their behavior;
+pass `credentialedOrigin` when fetching response-supplied URLs with credentials.
 
 ## Self-hosted and local endpoints
 

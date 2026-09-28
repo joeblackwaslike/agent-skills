@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/zdharma-continuum/zinit/main/README.md"
-fetched_at: "2026-09-07T09:10:44.999Z"
-sha256: "55382c81f388b26f98685bfe52d842338e57cf204980118782182a8d892fb63e"
+fetched_at: "2026-09-28T10:49:10.059Z"
+sha256: "c95c1fbe9eda032dd300661787a2cb6af766c836543c37bbfcbe5ba941d8fd91"
 ---
 
 <p align="center">
@@ -416,7 +416,7 @@ zi snippet OMZP::ruby
 ### Use `zi ice svn` if a plugin/snippet requires an entire subdirectory<a name="use-zi-ice-svn-if-a-pluginsnippet-requires-an-entire-subdirectory"></a>
 
 1. [gitfast](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gitfast)
-2. [osx](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/osx)
+2. [macOS](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/macos)
 
 ```zsh
 zi ice svn

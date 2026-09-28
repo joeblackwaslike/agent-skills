@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/node/local-caching-middleware.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "a6d3d5258d44abe3e42a82416f4148df4ad4ddd27a1d0773429b62bdc2842734"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "c5535be117a688f9c97ba9d1a0c4ceb4c0ae1cbd685abb6de9acf4531e09e38c"
 ---
 
 # Local Caching Middleware
@@ -225,7 +225,7 @@ import { cached } from '../middleware/your-cache-middleware';
 
 async function main() {
   const result = streamText({
-    model: cached(openai('gpt-4o')),
+    model: cached(openai('gpt-4.1')),
     maxOutputTokens: 512,
     temperature: 0.3,
     maxRetries: 5,

@@ -16,8 +16,8 @@ related:
 summary: "Learn how to customize your deployments using Vercel's build features."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/build-features.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "f2c92e620291f797ed7c3d19bd969f8e407b58849714a7cfba68984363088cb8"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "5d7ab8b5591d60d9aa35851995558e06462b80ff4759e531930f117fbf6e1bbb"
 ---
 
 # Build Features for Customizing Deployments
@@ -30,6 +30,7 @@ Vercel provides the following features to customize your deployments:
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Private Dependencies](https://v0.app/docs/private-dependencies?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-features&source_site=vercel-docs&relationship=related) — Install private npm packages in v0 by configuring NPM_TOKEN or NPM_RC as environment variables.
 - [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-features&source_site=vercel-docs&relationship=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
 - [Deploying Bitbucket Projects with Vercel](https://vercel.com/docs/git/vercel-for-bitbucket?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-features&source_site=vercel-docs&relationship=related) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-features&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,

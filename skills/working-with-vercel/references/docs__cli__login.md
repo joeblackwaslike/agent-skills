@@ -8,12 +8,13 @@ type: reference
 prerequisites:
   - /docs/cli
 related:
+  - /docs/cli/signup
   - /docs/cli/global-options
 summary: Learn how to login into your Vercel account using the vercel login CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/login.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "cbd28b0c33f22d6821fdf243dcda2d76ba18914018a26fe5c6a97fd7d8ccf2cb"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "1d199711e8472b5d288f6dd986ba10a83672d57cdb9cd54c9dd4e8eb342ff7ab"
 ---
 
 # vercel login
@@ -31,10 +32,12 @@ The `vercel login` command allows you to login to your Vercel account through Ve
 - [vercel whoami](https://vercel.com/docs/cli/whoami?from=related&source_path=%2Fdocs%2Fcli%2Flogin&source_site=vercel-docs&relationship=related) — Learn how to display the username of the currently logged in user with the vercel whoami CLI command.
 - [vercel open](https://vercel.com/docs/cli/open?from=related&source_path=%2Fdocs%2Fcli%2Flogin&source_site=vercel-docs&relationship=related) — Learn how to open your current project in the Vercel Dashboard using the vercel open CLI command.
 - [vercel help](https://vercel.com/docs/cli/help?from=related&source_path=%2Fdocs%2Fcli%2Flogin&source_site=vercel-docs&relationship=related) — Learn how to use the vercel help CLI command to get information about all available Vercel CLI commands.
-- [vercel link](https://vercel.com/docs/cli/link?from=related&source_path=%2Fdocs%2Fcli%2Flogin&source_site=vercel-docs&relationship=related) — Learn how to link a local directory to a Vercel Project using the vercel link CLI command.
+- [vercel dev](https://vercel.com/docs/cli/dev?from=related&source_path=%2Fdocs%2Fcli%2Flogin&source_site=vercel-docs&relationship=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
 
 Full cross-link map for this page: [/docs/cli/login.graph.md](/docs/cli/login.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Flogin&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
+
+If you don't have a Vercel account yet, use [`vercel signup`](/docs/cli/signup) to create one.
 
 ## Usage
 

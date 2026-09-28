@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/foundations/tools.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "a14795763a6d8bd5e05a83a191d451f18d78bc49c4c404685270b192b4c26fc9"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "7c519d73f98932715052cb9fed1e23618acec123819e4edafc18c715a1e0ab14"
 ---
 
 # Tools
@@ -123,7 +123,7 @@ import { openai } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: openai('gpt-5.2'),
+  model: openai('gpt-6-astra'),
   tools: {
     web_search: openai.tools.webSearch(),
   },
@@ -184,7 +184,7 @@ import { generateText, tool } from 'ai';
 import { z } from 'zod';
 
 const result = await generateText({
-  model: 'openai/gpt-5-mini',
+  model: 'openai/gpt-6-luna',
   tools: {
     search: tool({
       inputSchema: z.object({

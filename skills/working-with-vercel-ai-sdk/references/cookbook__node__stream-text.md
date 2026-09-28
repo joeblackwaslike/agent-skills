@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/node/stream-text.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "f35b3d322a1afa53d33015c126cd35595cfc78e04c6b1cca38bede90ab7e94e4"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "6c52ab06276347267d3b04792e56554c32ed6156f04711ebf9227c2d91c66235"
 ---
 
 # Stream Text
@@ -29,7 +29,7 @@ Overall, Joyful Hearts Day is a day to celebrate love, kindness, and positivity,
 import { streamText } from 'ai';
 
 const result = streamText({
-  model: 'openai/gpt-4o',
+  model: 'openai/gpt-4.1',
   maxOutputTokens: 512,
   prompt: 'Invent a new holiday and describe its traditions.',
 });
@@ -45,7 +45,7 @@ for await (const textPart of result.textStream) {
 import { streamText } from 'ai';
 
 const result = streamText({
-  model: 'openai/gpt-4o',
+  model: 'openai/gpt-4.1',
   maxOutputTokens: 512,
   prompt: 'Invent a new holiday and describe its traditions.',
 });

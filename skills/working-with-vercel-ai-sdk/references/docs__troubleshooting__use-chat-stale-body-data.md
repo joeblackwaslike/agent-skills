@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/troubleshooting/use-chat-stale-body-data.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "cf056f720d951884f70fad7ef396ed1680877956c645307da04967b2c8269a4b"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "cda75e9d1fbe88a9efc5affdfcf08c0be218ae06716519c40caa516a87fd5968"
 ---
 
 # Stale body values with useChat
@@ -129,7 +129,7 @@ export async function POST(req: Request) {
   const { messages, temperature, userId } = await req.json();
 
   const result = streamText({
-    model: 'openai/gpt-5-mini',
+    model: 'openai/gpt-4.1-mini', // Supports dynamic temperature settings
     messages: await convertToModelMessages(messages),
     temperature, // Use the dynamic temperature from the request
     // ... other configuration

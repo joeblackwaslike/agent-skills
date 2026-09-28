@@ -14,8 +14,8 @@ related:
 summary: Learn how to install marketplace native integrations and provision resources with the vercel install CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/install.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "4ae6337de6a0e8c6145cf54e7b3f0182b1704648bc4f8c835474ef0cc4685f74"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "666b1ea3780b1b94d1be216c8301a293d6240678eef5e7d9234aae7c91182a27"
 ---
 
 # vercel install
@@ -32,8 +32,8 @@ sha256: "4ae6337de6a0e8c6145cf54e7b3f0182b1704648bc4f8c835474ef0cc4685f74"
 - [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related&source_path=%2Fdocs%2Fcli%2Finstall&source_site=vercel-docs&relationship=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
 - [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related&source_path=%2Fdocs%2Fcli%2Finstall&source_site=vercel-docs&relationship=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
 - [vercel build](https://vercel.com/docs/cli/build?from=related&source_path=%2Fdocs%2Fcli%2Finstall&source_site=vercel-docs&relationship=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
+- [vercel signup](https://vercel.com/docs/cli/signup?from=related&source_path=%2Fdocs%2Fcli%2Finstall&source_site=vercel-docs&relationship=related) — Learn how to create a new Vercel account using the vercel signup CLI command.
 - [vercel init](https://vercel.com/docs/cli/init?from=related&source_path=%2Fdocs%2Fcli%2Finstall&source_site=vercel-docs&relationship=related) — Learn how to initialize Vercel supported framework examples locally using the vercel init CLI command.
-- [vercel upgrade](https://vercel.com/docs/cli/upgrade?from=related&source_path=%2Fdocs%2Fcli%2Finstall&source_site=vercel-docs&relationship=related) — Upgrade the Vercel CLI to the latest version and manage automatic updates with the vercel upgrade CLI command.
 - [vercel dev](https://vercel.com/docs/cli/dev?from=related&source_path=%2Fdocs%2Fcli%2Finstall&source_site=vercel-docs&relationship=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
 
 Full cross-link map for this page: [/docs/cli/install.graph.md](/docs/cli/install.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Finstall&source_site=vercel-docs&relationship=graph)

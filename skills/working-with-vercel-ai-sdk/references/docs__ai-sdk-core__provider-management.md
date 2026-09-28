@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/provider-management.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "bce16b29599fd2f3951f4e5a9622e8a739af77c4543000e1a8bffea768913dc1"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "91e63bf6127e68f97e3d4a8f6a9c4bd55733704d2249be0b7c363ea630e160a7"
 ---
 
 # Provider & Model Management
@@ -39,8 +39,8 @@ import {
 export const openai = customProvider({
   languageModels: {
     // replacement model with custom provider options:
-    'gpt-5.1': wrapLanguageModel({
-      model: gateway('openai/gpt-5.1'),
+    'gpt-6-astra': wrapLanguageModel({
+      model: gateway('openai/gpt-6-astra'),
       middleware: defaultSettingsMiddleware({
         settings: {
           providerOptions: {
@@ -52,8 +52,8 @@ export const openai = customProvider({
       }),
     }),
     // alias model with custom provider options:
-    'gpt-5.1-high-reasoning': wrapLanguageModel({
-      model: gateway('openai/gpt-5.1'),
+    'gpt-6-astra-high-reasoning': wrapLanguageModel({
+      model: gateway('openai/gpt-6-astra'),
       middleware: defaultSettingsMiddleware({
         settings: {
           providerOptions: {
@@ -79,8 +79,8 @@ import { customProvider, gateway } from 'ai';
 // custom provider with alias names:
 export const anthropic = customProvider({
   languageModels: {
-    opus: gateway('anthropic/claude-opus-4.1'),
-    sonnet: gateway('anthropic/claude-sonnet-4.5'),
+    opus: gateway('anthropic/claude-opus-5.5'),
+    sonnet: gateway('anthropic/claude-sonnet-5'),
     haiku: gateway('anthropic/claude-haiku-4.5'),
   },
   fallbackProvider: gateway,
@@ -101,10 +101,10 @@ import {
 
 export const myProvider = customProvider({
   languageModels: {
-    'text-medium': gateway('anthropic/claude-3-5-sonnet-20240620'),
-    'text-small': gateway('openai/gpt-5-mini'),
+    'text-medium': gateway('anthropic/claude-sonnet-5'),
+    'text-small': gateway('openai/gpt-6-luna'),
     'reasoning-medium': wrapLanguageModel({
-      model: gateway('openai/gpt-5.1'),
+      model: gateway('openai/gpt-6-astra'),
       middleware: defaultSettingsMiddleware({
         settings: {
           providerOptions: {
@@ -116,7 +116,7 @@ export const myProvider = customProvider({
       }),
     }),
     'reasoning-fast': wrapLanguageModel({
-      model: gateway('openai/gpt-5.1'),
+      model: gateway('openai/gpt-6-astra'),
       middleware: defaultSettingsMiddleware({
         settings: {
           providerOptions: {
@@ -147,7 +147,7 @@ import { customProvider, uploadFile, uploadSkill } from 'ai';
 // custom provider with files interface:
 const myOpenAI = customProvider({
   languageModels: {
-    'gpt-4o-mini': openai.responses('gpt-4o-mini'),
+    'gpt-6-luna': openai.responses('gpt-6-luna'),
   },
   files: openai.files(),
 });
@@ -155,7 +155,7 @@ const myOpenAI = customProvider({
 // custom provider with skills interface:
 const myAnthropic = customProvider({
   languageModels: {
-    sonnet: anthropic('claude-sonnet-4-5'),
+    sonnet: anthropic('claude-sonnet-5'),
   },
   skills: anthropic.skills(),
 });
@@ -225,9 +225,9 @@ import { generateText } from 'ai';
 import { registry } from './registry';
 
 const { text } = await generateText({
-  model: registry.languageModel('openai:gpt-5.1'), // default separator
+  model: registry.languageModel('openai:gpt-6-astra'), // default separator
   // or with custom separator:
-  // model: customSeparatorRegistry.languageModel('openai > gpt-5.1'),
+  // model: customSeparatorRegistry.languageModel('openai > gpt-6-astra'),
   prompt: 'Invent a new holiday and describe its traditions.',
 });
 ```
@@ -296,7 +296,7 @@ import {
 
 const registry = createProviderRegistry({
   openai: customProvider({
-    languageModels: { 'gpt-4o-mini': openai.responses('gpt-4o-mini') },
+    languageModels: { 'gpt-6-luna': openai.responses('gpt-6-luna') },
     files: openai.files(),
   }),
 });
@@ -308,7 +308,7 @@ const { providerReference } = await uploadFile({
 });
 
 const { text } = await generateText({
-  model: registry.languageModel('openai:gpt-4o-mini'),
+  model: registry.languageModel('openai:gpt-6-luna'),
   messages: [
     {
       role: 'user',
@@ -331,7 +331,7 @@ import { createProviderRegistry, customProvider, uploadSkill } from 'ai';
 
 const registry = createProviderRegistry({
   anthropic: customProvider({
-    languageModels: { sonnet: anthropic('claude-sonnet-4-5') },
+    languageModels: { sonnet: anthropic('claude-sonnet-5') },
     skills: anthropic.skills(),
   }),
 });
@@ -357,7 +357,7 @@ Here is an example that implements the following concepts:
 - pre-configure model settings (here: `anthropic > reasoning`)
 - validate the provider-specific options (here: `AnthropicLanguageModelOptions`)
 - use a fallback provider (here: `anthropic > *`)
-- limit a provider to certain models without a fallback (here: `groq > gemma2-9b-it`, `groq > qwen-qwq-32b`)
+- limit a provider to certain models without a fallback (here: `groq > llama-3.1-8b-instant`, `groq > qwen/qwen3.6-27b`)
 - define a custom separator for the provider registry (here: `>`)
 
 ```ts
@@ -420,8 +420,8 @@ export const registry = createProviderRegistry(
     // limit a provider to certain models without a fallback
     groq: customProvider({
       languageModels: {
-        'gemma2-9b-it': groq('gemma2-9b-it'),
-        'qwen-qwq-32b': groq('qwen-qwq-32b'),
+        'llama-3.1-8b-instant': groq('llama-3.1-8b-instant'),
+        'qwen/qwen3.6-27b': groq('qwen/qwen3.6-27b'),
       },
     }),
   },
@@ -463,7 +463,7 @@ globalThis.AI_SDK_DEFAULT_PROVIDER = openai;
 import { streamText } from 'ai';
 
 const result = await streamText({
-  model: 'gpt-5.1', // Uses OpenAI provider without prefix
+  model: 'gpt-6-astra', // Uses OpenAI provider without prefix
   prompt: 'Invent a new holiday and describe its traditions.',
 });
 ```

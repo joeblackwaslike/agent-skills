@@ -16,8 +16,8 @@ related:
 summary: Vercel allows you to increase the speed of your builds when needed in specific situations and workflows.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/managing-builds.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "c74bf66e960d0bba67ad6c616948b6cd49398224a6c6bd9c98babb6296504117"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "af3bb8a55e7770bb7f2a6d4eca73d91aabc96781cfc1583ceb30beb8bf87ebdf"
 ---
 
 # Managing Builds
@@ -34,7 +34,7 @@ When you build your application code, Vercel runs compute to install dependencie
 - [Commits to the same branch now build with no queues](https://vercel.com/changelog/build-commits-to-the-same-branch-without-waiting?from=related&source_path=%2Fdocs%2Fbuilds%2Fmanaging-builds&source_site=vercel-docs&relationship=related)
 - [Bulk enable on-demand concurrent builds across projects ](https://vercel.com/changelog/bulk-enable-on-demand-concurrent-builds-across-projects?from=related&source_path=%2Fdocs%2Fbuilds%2Fmanaging-builds&source_site=vercel-docs&relationship=related)
 - [Configure build machine settings across all projects](https://vercel.com/changelog/configure-build-machine-settings-across-all-projects?from=related&source_path=%2Fdocs%2Fbuilds%2Fmanaging-builds&source_site=vercel-docs&relationship=related)
-- [Elastic build machines now available in beta](https://vercel.com/changelog/elastic-build-machines-are-available-in-beta?from=related&source_path=%2Fdocs%2Fbuilds%2Fmanaging-builds&source_site=vercel-docs&relationship=related)
+- [Deployments now show billable duration and CPU minutes](https://vercel.com/changelog/deployments-now-show-billable-duration-and-cpu-minutes?from=related&source_path=%2Fdocs%2Fbuilds%2Fmanaging-builds&source_site=vercel-docs&relationship=related)
 - [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel?from=related&source_path=%2Fdocs%2Fbuilds%2Fmanaging-builds&source_site=vercel-docs&relationship=related) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
 - [Troubleshooting Build Error: "Build step did not complete within the maximum of 45 minutes"](https://vercel.com/kb/guide/troubleshooting-build-error-build-step-did-not-complete-within-45-minutes?from=related&source_path=%2Fdocs%2Fbuilds%2Fmanaging-builds&source_site=vercel-docs&relationship=related) — Learn common reasons Vercel builds hit the 45-minute limit and how to reduce build times so your deployments stay fast a
 - [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands?from=related&source_path=%2Fdocs%2Fbuilds%2Fmanaging-builds&source_site=vercel-docs&relationship=related) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,

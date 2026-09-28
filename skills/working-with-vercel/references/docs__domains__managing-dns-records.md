@@ -3,7 +3,7 @@ title: Managing DNS Records
 product: vercel
 url: /docs/domains/managing-dns-records
 canonical_url: "https://vercel.com/docs/domains/managing-dns-records"
-last_updated: 2026-09-15
+last_updated: 2026-09-18
 type: how-to
 prerequisites:
   - /docs/domains
@@ -12,8 +12,8 @@ related:
 summary: Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/managing-dns-records.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "c3590fd2bbdbf5222202d286a3639e7c92c14031d89b3274c59f1b43ef22b626"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "3b16f9adaaba4f115b7ad67a4b85a85d407940b818e5031ab00bc1c8bfc2e589"
 ---
 
 # Managing DNS Records

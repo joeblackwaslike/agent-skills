@@ -3,7 +3,7 @@ title: Code Review
 product: vercel
 url: /docs/agent/pr-review
 canonical_url: "https://vercel.com/docs/agent/pr-review"
-last_updated: 2026-08-28
+last_updated: 2026-09-18
 type: how-to
 prerequisites:
   - /docs/agent
@@ -16,8 +16,8 @@ related:
 summary: Get automatic AI-powered code reviews on your pull requests
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/pr-review.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "8622804a147e115f0f5ded8a8a5ece1dddfdef8a0e0ad041cc8aa1441f448353"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "5078391ff612266616e3965cfa7f2e3c3a5785d4d551423559fd551a9946c8a0"
 ---
 
 # Code Review

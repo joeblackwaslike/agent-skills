@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/middleware.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "fd39d993547adb0b082f44bf33d4ec9c20550f8d244fe94ee56564a48e2181be"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "b7a5a9a22f4fbdb262ce002ac3a923832603cb7fed39aff9400e0c4574444791"
 ---
 
 # Language Model Middleware
@@ -311,6 +311,9 @@ You can implement any of the following three function to modify the behavior of 
 3. `wrapStream`: Wraps the `doStream` method of the [language model](https://github.com/vercel/ai/blob/main/packages/provider/src/language-model/v4/language-model-v4.ts).
    You can modify the parameters, call the language model, and modify the result.
 
+Every `LanguageModelV4Middleware` object must set
+`specificationVersion: 'v4'`.
+
 Here are some examples of how to implement language model middleware:
 
 ## Examples
@@ -331,6 +334,8 @@ import type {
 } from '@ai-sdk/provider';
 
 export const yourLogMiddleware: LanguageModelV4Middleware = {
+  specificationVersion: 'v4',
+
   wrapGenerate: async ({ doGenerate, params }) => {
     console.log('doGenerate called');
     console.log(`params: ${JSON.stringify(params, null, 2)}`);
@@ -408,6 +413,8 @@ import type { LanguageModelV4Middleware } from '@ai-sdk/provider';
 const cache = new Map<string, any>();
 
 export const yourCacheMiddleware: LanguageModelV4Middleware = {
+  specificationVersion: 'v4',
+
   wrapGenerate: async ({ doGenerate, params }) => {
     const cacheKey = JSON.stringify(params);
 
@@ -440,6 +447,8 @@ This example shows how to use RAG as middleware.
 import type { LanguageModelV4Middleware } from '@ai-sdk/provider';
 
 export const yourRagMiddleware: LanguageModelV4Middleware = {
+  specificationVersion: 'v4',
+
   transformParams: async ({ params }) => {
     const lastUserMessageText = getLastUserMessageText({
       prompt: params.prompt,
@@ -466,27 +475,101 @@ Guard rails are a way to ensure that the generated text of a language model call
 is safe and appropriate. This example shows how to use guardrails as middleware.
 
 ```ts
-import type { LanguageModelV4Middleware } from '@ai-sdk/provider';
+import type {
+  LanguageModelV4Middleware,
+  LanguageModelV4StreamPart,
+} from '@ai-sdk/provider';
+
+const redactText = (text: string) => text.replace(/badword/g, '<REDACTED>');
 
 export const yourGuardrailMiddleware: LanguageModelV4Middleware = {
+  specificationVersion: 'v4',
+
   wrapGenerate: async ({ doGenerate }) => {
     const result = await doGenerate();
 
     // filtering approach, e.g. for PII or other sensitive information:
     const content = result.content.map(part =>
-      part.type === 'text'
-        ? { ...part, text: part.text.replace(/badword/g, '<REDACTED>') }
-        : part,
+      part.type === 'text' ? { ...part, text: redactText(part.text) } : part,
     );
 
     return { ...result, content };
   },
 
-  // here you would implement the guardrail logic for streaming
-  // Note: streaming guardrails are difficult to implement, because
-  // you do not know the full content of the stream until it's finished.
+  wrapStream: async ({ doStream }) => {
+    const { stream, ...rest } = await doStream();
+
+    // Keep a separate buffer for each text block in the stream.
+    const buffers = new Map<string, string>();
+
+    const transformStream = new TransformStream<
+      LanguageModelV4StreamPart,
+      LanguageModelV4StreamPart
+    >({
+      transform(chunk, controller) {
+        if (chunk.type === 'text-start') {
+          buffers.set(chunk.id, '');
+          controller.enqueue(chunk);
+          return;
+        }
+
+        if (chunk.type === 'text-delta') {
+          buffers.set(chunk.id, (buffers.get(chunk.id) ?? '') + chunk.delta);
+          return;
+        }
+
+        if (chunk.type === 'text-end') {
+          const bufferedText = buffers.get(chunk.id);
+
+          if (bufferedText != null) {
+            const redactedText = redactText(bufferedText);
+
+            if (redactedText) {
+              controller.enqueue({
+                type: 'text-delta',
+                id: chunk.id,
+                delta: redactedText,
+              });
+            }
+
+            buffers.delete(chunk.id);
+          }
+        }
+
+        controller.enqueue(chunk);
+      },
+
+      flush(controller) {
+        for (const [id, bufferedText] of buffers) {
+          const redactedText = redactText(bufferedText);
+
+          if (redactedText) {
+            controller.enqueue({
+              type: 'text-delta',
+              id,
+              delta: redactedText,
+            });
+          }
+        }
+      },
+    });
+
+    return {
+      stream: stream.pipeThrough(transformStream),
+      ...rest,
+    };
+  },
 };
 ```
+
+<Note>
+  The streaming example buffers each text block until `text-end` so matches
+  split across `text-delta` chunks cannot leak through. This delays output and
+  uses memory proportional to the text block size. Do not redact each delta
+  independently. An incremental implementation must retain every possible
+  incomplete match, and a fixed-size buffer alone is not safe for unbounded
+  variable-length patterns.
+</Note>
 
 ## Configuring Per Request Custom Metadata
 
@@ -498,6 +581,8 @@ __PROVIDER_IMPORT__;
 import type { LanguageModelV4Middleware } from '@ai-sdk/provider';
 
 export const yourLogMiddleware: LanguageModelV4Middleware = {
+  specificationVersion: 'v4',
+
   wrapGenerate: async ({ doGenerate, params }) => {
     console.log('METADATA', params?.providerMetadata?.yourLogMiddleware);
     const result = await doGenerate();

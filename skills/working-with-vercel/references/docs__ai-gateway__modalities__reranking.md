@@ -13,8 +13,8 @@ related:
 summary: Rerank documents by relevance to a search query for improved retrieval-augmented generation (RAG) pipelines through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/reranking.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "beff44b5619da86dcf0f16b7dfa112ca0a65209bf0a68777b9e256bc1958bff7"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "f3b1346fe681e3394a572a683ff96eb936f8ee00e2b9d5a8c055a3c97cdae898"
 ---
 
 # AI Gateway Reranking
@@ -34,7 +34,6 @@ Rerank documents by relevance to a search query. Reranking is useful for improvi
 - [Cohere](https://ai-sdk.dev/providers/ai-sdk-providers/cohere?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Freranking&source_site=vercel-docs&relationship=related)
 - [Voyage AI](https://ai-sdk.dev/providers/ai-sdk-providers/voyage?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Freranking&source_site=vercel-docs&relationship=related)
 - [Together.ai](https://ai-sdk.dev/providers/ai-sdk-providers/togetherai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Freranking&source_site=vercel-docs&relationship=related)
-- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Freranking&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/reranking.graph.md](/docs/ai-gateway/modalities/reranking.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Freranking&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

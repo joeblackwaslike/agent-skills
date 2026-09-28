@@ -3,7 +3,7 @@ title: AI Gateway Zero Data Retention (ZDR)
 product: vercel
 url: /docs/ai-gateway/security-and-compliance/zdr
 canonical_url: "https://vercel.com/docs/ai-gateway/security-and-compliance/zdr"
-last_updated: 2026-09-10
+last_updated: 2026-09-22
 type: how-to
 prerequisites:
   - /docs/ai-gateway/security-and-compliance
@@ -16,8 +16,8 @@ related:
 summary: Learn about zero data retention policies and how to enforce ZDR on a per-request basis with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/zdr.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "e9313c2862e02b707decd8669f2d03f30aaf28047ac4ecb46d1370059d40bf30"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "067c64871f0d92e37c8eb136fc75441e30988be2e6beac4a2308a0f564e30d47"
 ---
 
 # AI Gateway Zero Data Retention (ZDR)
@@ -31,10 +31,10 @@ Zero data retention (ZDR) is available for Pro and Enterprise users on AI Gatewa
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [ Routing rules now available on AI Gateway](https://vercel.com/changelog/ai-gateway-routing-rules?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related)
+- [Claude Opus 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-opus-5-5-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related)
+- [Ember-1 from Fireworks now available on AI Gateway](https://vercel.com/changelog/ember-1-from-fireworks-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related)
+- [Grok 4.7 now available and 40% off on AI Gateway, fx, and eve](https://vercel.com/changelog/grok-4-7-now-available-and-40-off-on-ai-gateway-fx-eve?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related)
 - [Inkling Small from Thinking Machines is now available on AI Gateway](https://vercel.com/changelog/inkling-small-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related)
-- [Kimi K3 and Kimi K3 Fast with ZDR and US-based providers now on AI Gateway](https://vercel.com/changelog/kimi-k3-and-kimi-k3-fast-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related)
-- [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related)
-- [TypeSafe AI's Jev now available on AI Gateway](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related)
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [How to classify, route, and score with Jev and AI SDK](https://vercel.com/kb/guide/typesafe-jev-and-ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related) — Use Jev from TypeSafe AI with AI SDK's experimental \\`evaluate\\` API to classify, route, score, and verify inside your a
@@ -383,6 +383,8 @@ When ZDR is enabled, either team-wide or per-request, AI Gateway skips your [BYO
 
 If you have your own ZDR agreement with a provider, you can mark a BYOK key as ZDR-compliant. AI Gateway then includes that key in the ZDR routing set. This option applies to both team-wide and request-level ZDR.
 
+Marking a key as ZDR makes it eligible for ZDR routing. It does not enable ZDR by itself. ZDR routing applies only when team-wide ZDR is on or the request sets `zeroDataRetention: true`.
+
 To mark a BYOK key as ZDR:
 
 1. Go to the [AI Gateway Bring Your Own Key (BYOK) page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbyok\&title=AI+Gateway+BYOK) in your Vercel dashboard.
@@ -496,14 +498,6 @@ Bedrock
 
 Data protection
 
-Cerebras
-
-✓
-
-✓
-
-Privacy policy
-
 Claude Platform on AWS
 
 ✓
@@ -554,6 +548,14 @@ Groq
 
 ZDR policy
 
+Meta
+
+✓
+
+✓
+
+ZDR policy
+
 Mistral
 
 ✓
@@ -594,6 +596,14 @@ Nebius
 
 Legal quick guide
 
+OpenAI
+
+✓
+
+✓
+
+ZDR with safety retention
+
 Parasail
 
 ✓
@@ -603,6 +613,22 @@ Parasail
 Terms of service
 
 Particle.AI
+
+✓
+
+✓
+
+ZDR policy
+
+Relace
+
+✓
+
+✓
+
+ZDR policy
+
+Runware
 
 ✓
 

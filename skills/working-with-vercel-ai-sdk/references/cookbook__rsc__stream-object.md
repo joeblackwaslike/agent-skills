@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/rsc/stream-object.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "ffe5ee85bee771adf413fbaab01c08d80e9b5fb70987837da667b38060733afa"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "b105bdc2a151c505cabe7bfc86bc0504b2805956fb7325608a58c1dff7a2c11c"
 ---
 
 # Stream Object
@@ -101,7 +101,7 @@ export async function generate(input: string) {
 
   (async () => {
     const { partialOutputStream } = streamText({
-      model: 'openai/gpt-5.4',
+      model: 'openai/gpt-6-astra',
       instructions: 'You generate three notifications for a messages app.',
       prompt: input,
       output: Output.object({

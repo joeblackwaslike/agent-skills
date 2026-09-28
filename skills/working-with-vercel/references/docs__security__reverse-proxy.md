@@ -3,7 +3,7 @@ title: Reverse Proxy Servers and Vercel
 product: vercel
 url: /docs/security/reverse-proxy
 canonical_url: "https://vercel.com/docs/security/reverse-proxy"
-last_updated: 2026-06-16
+last_updated: 2026-09-18
 type: conceptual
 prerequisites:
   - /docs/security
@@ -13,8 +13,8 @@ related:
 summary: "Learn why reverse proxy servers are not recommended with Vercel's firewall."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/reverse-proxy.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "8fbe5446f5cf9f181675a97b1bad828e4d4fc3b745bb205d195ebeace2d82485"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "0a29589d510b04b92ea15763c565069b719a764908ae64a961b4f13d643fa3c9"
 ---
 
 # Reverse Proxy Servers and Vercel
@@ -28,10 +28,10 @@ sha256: "8fbe5446f5cf9f181675a97b1bad828e4d4fc3b745bb205d195ebeace2d82485"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Accessing Vercel-hosted sites from mainland China](https://vercel.com/kb/guide/accessing-vercel-hosted-sites-from-mainland-china?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=related) — Understand why Vercel-hosted sites may be slow or inaccessible in mainland China, and explore steps to improve performan
-- [Why is my domain not automatically generating an SSL/TLS certificate?](https://vercel.com/kb/guide/domain-not-generating-ssl-certificate?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=related) — Information on why a domain may not be automatically generating an SSL/TLS certificate.
 - [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
 - [Should I use Cloudflare in front of Vercel?](https://vercel.com/kb/guide/cloudflare-with-vercel?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=related) — Information on using Cloudflare together with Vercel.
 - [Can I use a proxy on top of my Vercel Deployment?](https://vercel.com/kb/guide/can-i-use-a-proxy-on-top-of-my-vercel-deployment?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=related) — General information about using an external proxy to serve a Vercel Deployment.
+- [Using Self-hosted & Reverse Proxies with Vercel](https://vercel.com/kb/guide/how-to-setup-verified-proxy?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=related) — Learn about using self-hosted or reverse proxies with Vercel deployments.
 - [Redirects](https://vercel.com/docs/routing/redirects?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=related) — Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL.
 - [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 - [Encryption and TLS](https://vercel.com/docs/cdn-security/encryption?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=related) — Learn how Vercel encrypts data in transit and at rest.

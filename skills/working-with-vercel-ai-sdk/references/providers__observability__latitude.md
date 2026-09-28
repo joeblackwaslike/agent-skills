@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/latitude.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "362ff3065591e086ed5bbed6e2b309dd7d20dd5189d3cc12b76e8fff3d15d3bf"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "4eb229a8f7cf51528de0b2b90a72dead7a31f4c3a4373750820b012b6254d2df"
 ---
 
 # Latitude Observability
@@ -43,7 +43,7 @@ const latitude = new Latitude({
 registerTelemetry(new OpenTelemetry());
 
 const { text } = await generateText({
-  model: openai('gpt-4o'),
+  model: openai('gpt-6-astra'),
   prompt: 'Hello',
 });
 
@@ -57,7 +57,7 @@ import { capture } from '@latitude-data/telemetry';
 
 await capture('generate-support-reply', async () => {
   const { text } = await generateText({
-    model: openai('gpt-4o'),
+    model: openai('gpt-6-astra'),
     prompt: 'Hello',
   });
   return text;

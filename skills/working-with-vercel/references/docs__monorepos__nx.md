@@ -16,8 +16,8 @@ related:
 summary: Nx is an extensible build system with support for monorepos, integrations, and Remote Caching on Vercel. Learn how to deploy Nx to Vercel with this...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/nx.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "23849d7f69d255d797c7c96331851259fcae4eb4867e64d9b3e6ec2ec0a21f5e"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "05f3c5ff1001d0c9e36608aff19dae28f086e61f17d9a7950249bfeedbf51344"
 ---
 
 # Deploying Nx to Vercel
@@ -39,9 +39,9 @@ Nx is an extensible build system with support for monorepos, integrations, and R
 - [Build with a Nitro starter template](https://vercel.com/kb/guide/build-with-a-nitro-starter-template?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — Deploy a Nitro app to Vercel from a starter template. Compare the Nitro Starter, route rules, cached HTTP handler, plugi
 - [Monorepos FAQ](https://vercel.com/docs/monorepos/monorepo-faq?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — Learn the answer to common questions about deploying monorepos on Vercel.
 - [Remote Caching](https://vercel.com/docs/monorepos/remote-caching?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — Vercel Remote Cache allows you to share build outputs and artifacts across distributed teams.
-- [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
 - [NestJS on Vercel](https://vercel.com/docs/frameworks/backend/nestjs?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — Deploy NestJS applications to Vercel with zero configuration.
-- [Builds](https://vercel.com/docs/builds?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — Understand how the build step works when creating a Vercel Deployment.
+- [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
+- [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — Learn how to customize your deployments using Vercel's build features.
 
 Full cross-link map for this page: [/docs/monorepos/nx.graph.md](/docs/monorepos/nx.graph.md?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

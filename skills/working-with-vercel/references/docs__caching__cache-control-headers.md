@@ -15,8 +15,8 @@ related:
 summary: Learn about the cache-control headers sent to each Vercel deployment and how to use them to control the caching behavior of your application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/cache-control-headers.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "2db5b72eb4e69afe61a047e7fc9ba5d51833324119cf67b6edf74222ead8a790"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "bad884885e988ab8082f5ef9c25e2144af69e5fa4a02ba64ec924bf3c4b6e433"
 ---
 
 # Cache-Control headers
@@ -36,9 +36,9 @@ You can control how Vercel's CDN caches your Function responses by setting a [Ca
 - [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-control-headers&source_site=vercel-docs&relationship=related) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
 - [Response headers](https://vercel.com/docs/headers/response-headers?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-control-headers&source_site=vercel-docs&relationship=related) — Learn about the response headers sent to each Vercel deployment and how to use them to process responses before sending
 - [System Headers](https://vercel.com/docs/headers?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-control-headers&source_site=vercel-docs&relationship=related) — This reference covers the list of request, response, cache-control, and custom response headers included with deployment
-- [Cache Status and Reasons](https://vercel.com/docs/caching/cache-status?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-control-headers&source_site=vercel-docs&relationship=related) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
 - [Data Cache for Next.js](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-control-headers&source_site=vercel-docs&relationship=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
-- [Purging Vercel CDN Cache](https://vercel.com/docs/caching/cdn-cache/purge?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-control-headers&source_site=vercel-docs&relationship=related) — Learn how to invalidate and delete cached content on Vercel's CDN, including cache keys and manual purging options.
+- [Cache Status and Reasons](https://vercel.com/docs/caching/cache-status?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-control-headers&source_site=vercel-docs&relationship=related) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
+- [@vercel/functions API Reference \\(Node.js\\)](https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-control-headers&source_site=vercel-docs&relationship=related) — Learn about available APIs when working with Vercel Functions.
 
 Full cross-link map for this page: [/docs/caching/cache-control-headers.graph.md](/docs/caching/cache-control-headers.graph.md?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-control-headers&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

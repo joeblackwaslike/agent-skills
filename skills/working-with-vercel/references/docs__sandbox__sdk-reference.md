@@ -12,12 +12,12 @@ related:
   - /docs/sandbox/concepts/persistent-sandboxes
   - /docs/sandbox/concepts/tags
   - /docs/sandbox/concepts/regions
-  - /docs/sandbox/pricing
+  - /docs/sandbox/concepts/secure-compute
 summary: A comprehensive reference for the Vercel Sandbox JavaScript SDK, which lets you run code in a secure, isolated environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/sdk-reference.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "fabc9f93caf662268483833fe061bbf105642a7fa46d95fd10e5b38a7269a75b"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "a79a4eb0769e20e6508325cadecf9cc8250df2efb748b893e77a1ac3120d0fc4"
 ---
 
 # JS SDK Reference
@@ -40,7 +40,7 @@ Use the Vercel Sandbox JavaScript SDK to create isolated Linux microVMs on deman
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 - [Fork a named sandbox](https://vercel.com/docs/rest-api/sandboxes/fork-a-named-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — POST /v2/sandboxes/{name}/fork — Forks a named sandbox, creating a new named sandbox from the source's configuration. Re
 - [Stop a session](https://vercel.com/docs/rest-api/sandboxes/stop-a-session?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — POST /v2/sandboxes/sessions/{sessionId}/stop — Stops a running session and releases its allocated resources. All running
-- [Get a named sandbox](https://vercel.com/docs/rest-api/sandboxes/get-a-named-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — GET /v2/sandboxes/{name} — Retrieves a named sandbox by name, including its current sandbox and routes. If the sandbox i
+- [Update a sandbox](https://vercel.com/docs/rest-api/sandboxes/update-a-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — PATCH /v2/sandboxes/{name} — Updates the configuration of a sandbox. Only the provided fields will be modified; omitted
 - [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
 
 Full cross-link map for this page: [/docs/sandbox/sdk-reference.graph.md](/docs/sandbox/sdk-reference.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=graph)
@@ -230,6 +230,16 @@ The additional [regions](/docs/sandbox/concepts/regions#failover-regions) this s
 console.log(sandbox.failoverRegions);
 ```
 
+#### `networkId`
+
+The ID of the [Secure Compute network](/docs/sandbox/concepts/secure-compute) assigned to this sandbox. Returns `undefined` when no network is assigned. An updated ID reflects the saved configuration. Once updated, a running session uses the new network after it stops and resumes.
+
+**Returns:** `string | undefined`.
+
+```ts
+console.log(sandbox.networkId);
+```
+
 #### `createdAt` and `updatedAt`
 
 Timestamps for when the sandbox was created and last updated.
@@ -375,8 +385,9 @@ Sandboxes are persistent by default: when the sandbox stops, the filesystem is a
 | `ports`              | `number[]`                   | No       | Ports to expose for `sandbox.domain()`. Up to 15.                                                                                                                                                                   |
 | `timeout`            | `number`                     | No       | Session timeout in milliseconds. Defaults to 5 minutes.                                                                                                                                                             |
 | `region`             | `string`                     | No       | [Region](/docs/sandbox/concepts/regions) to create the sandbox in. Defaults to the [project's default sandbox region](/docs/sandbox/concepts/regions#set-a-default-region-for-your-project), or `iad1`.                                                                                     |
-| `failoverRegions`    | `string[]`                   | No       | Additional [regions](/docs/sandbox/concepts/regions#failover-regions) the sandbox can fall back to when the main region is unavailable. Must not include the main `region`. Not supported together with `mounts`. Available on Pro and Enterprise plans, excluding [Pro trials](/docs/plans/pro-plan/trials).            |
+| `failoverRegions`    | `string[]`                   | No       | Additional [regions](/docs/sandbox/concepts/regions#failover-regions) the sandbox can fall back to when the main region is unavailable. Must not include the main `region`. Available on Pro and Enterprise plans, excluding [Pro trials](/docs/plans/pro-plan/trials).            |
 | `networkPolicy`      | `NetworkPolicy`              | No       | Firewall rules for sandbox egress traffic. Defaults to `"allow-all"`.                                                                                                                                               |
+| `networkId`          | `string`                     | No       | [Secure Compute network ID](/docs/sandbox/concepts/secure-compute) to use from the first session.                                                                                                                                              |
 | `env`                | `Record<string, string>`     | No       | Default environment variables for commands run in this sandbox. Per-command `runCommand({ env })` values override these defaults.                                                                                   |
 | `mounts`             | `SandboxMounts`              | No       | Drives to attach to the sandbox, keyed by absolute mount path. Pass a `Drive` for read-write access or `drive.snapshot()` for a point-in-time, read-only snapshot.                                                  |
 | `tags`               | `Record<string, string>`     | No       | Up to five key-value [tags](/docs/sandbox/concepts/tags).                                                                                                                                                           |
@@ -459,6 +470,8 @@ const sandbox = await Sandbox.getOrCreate({
 Pass `env` to override the copied environment variables. `image` is not accepted as an override. When the source has a snapshot, the image is inherited from it; otherwise it is copied from the source sandbox.
 
 The fork runs in the source sandbox's [region](/docs/sandbox/concepts/regions) unless you pass `region`. The fork also inherits the source's failover regions; pass `failoverRegions` to replace them. If the source has a snapshot, that snapshot must be available in the target region.
+
+The fork also inherits the source sandbox's [Secure Compute network](/docs/sandbox/concepts/secure-compute) unless you pass `networkId`.
 
 **Returns:** `Promise<Sandbox>`.
 
@@ -661,7 +674,7 @@ console.log(result.networkTransfer); // { ingress, egress }
 
 #### `sandbox.update()`
 
-`sandbox.update()` updates any mutable parameter on the sandbox. When `ports` is provided, it replaces the full current port list. When `mounts` is provided, it replaces all mounts and applies to the next session. `networkPolicy` is applied to the current session and future sessions.
+`sandbox.update()` updates any mutable parameter on the sandbox. When `ports` is provided, it replaces the full current port list. When `mounts` is provided, it replaces all mounts and applies to the next session. `networkPolicy` is applied to the current session and future sessions. Changes to `networkId` take effect when the sandbox starts its next session, not in the running session.
 
 ```ts
 await sandbox.update({
@@ -685,13 +698,14 @@ await sandbox.update({
 | `resources.vcpus`    | `number`                   | No       | New vCPU count (memory auto-scales to 2048 MB per vCPU).                                               |
 | `timeout`            | `number`                   | No       | New session timeout in milliseconds.                                                                   |
 | `networkPolicy`      | `NetworkPolicy`            | No       | Replace the firewall policy on the current and future sessions.                                        |
+| `networkId`          | `string \| null`           | No       | Assign a [Secure Compute network](/docs/sandbox/concepts/secure-compute) by ID, or pass `null` to remove it. The running session keeps its current network until it stops and resumes. |
 | `ports`              | `number[]`                 | No       | Replace the exposed ports. Ports not present in the array are deregistered.                            |
 | `tags`               | `Record<string, string>`   | No       | Replace the tag set. Pass `{}` to clear.                                                               |
 | `persistent`         | `boolean`                  | No       | Enable or disable auto-snapshotting on stop.                                                           |
 | `snapshotExpiration` | `number`                   | No       | New default snapshot TTL in milliseconds. Use `0` for no expiration.                                   |
 | `keepLastSnapshots`  | `object \| null`           | No       | Retention policy that keeps only the N most recent snapshots. Pass `null` to clear. See [`keepLastSnapshots`](#keeplastsnapshots) for field details. |
 | `currentSnapshotId`  | `string`                   | No       | Point the sandbox at a different snapshot. New sessions resume from it.                                |
-| `failoverRegions`    | `string[]`                 | No       | Replace the [failover regions](/docs/sandbox/concepts/regions#failover-regions). Must not include the sandbox's main region. Not supported for sandboxes with mounts. Pass `[]` to remove them. Applies to the next session; the running session keeps the region it started in. Available on Pro and Enterprise plans, excluding [Pro trials](/docs/plans/pro-plan/trials). |
+| `failoverRegions`    | `string[]`                 | No       | Replace the [failover regions](/docs/sandbox/concepts/regions#failover-regions). Must not include the sandbox's main region. Pass `[]` to remove them. Applies to the next session; the running session keeps the region it started in. Available on Pro and Enterprise plans, excluding [Pro trials](/docs/plans/pro-plan/trials). |
 | `mounts`             | `SandboxMounts`            | No       | Replace the drives mounted in the next session. Pass a `Drive` for read-write access or `drive.snapshot()` for a point-in-time, read-only snapshot. Pass `{}` to remove all mounts. |
 | `opts.signal`        | `AbortSignal`              | No       | Cancel the operation.                                                                                  |
 
@@ -1495,7 +1509,7 @@ When such rules are defined, encryption is intercepted to allow request alterati
 
 Each rule can define a set of [matchers](/docs/sandbox/concepts/firewall#matchers) on the path, method, query parameters, and headers. When defined, only requests matching the specified dimensions will be transformed or forwarded. Learn more about transformation rules and forwarding rules in the [firewall documentation](/docs/sandbox/concepts/firewall).
 
-```ts
+```ts filename="index.ts"
 // Allow traffic only to the provided websites.
 {
   "allow": ["ai-gateway.vercel.sh", "google.com"]
@@ -1895,7 +1909,7 @@ Use `Drive.getOrCreate()` to retrieve an existing drive by name or create it if 
 | --------- | ------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `name`    | `string`      | Yes      | Drive name. Must be unique within the project.                                                                                                             |
 | `region`  | `string`      | No       | [Region](/docs/sandbox/concepts/regions#regions-and-drives) where the drive is created and stores its data. Defaults to `iad1`.                            |
-| `maxSize` | `number`      | No       | Maximum drive size in bytes. Defaults to 1 TiB when omitted. The maximum quota is 16 TiB. [Contact Vercel Support](/help) to request a quota above 16 TiB. |
+| `maxSize` | `number`      | No       | Maximum drive size in bytes. Defaults to 1 TiB when omitted. The default maximum quota is 16 TiB. |
 | `signal`  | `AbortSignal` | No       | Cancel the request if necessary.                                                                                                                           |
 
 A drive's region can't change after creation. Calling `Drive.getOrCreate()` with a `region` or `maxSize` that doesn't match the existing drive fails with a `conflict` error.

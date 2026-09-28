@@ -3,7 +3,7 @@ title: TanStack AI with AI Gateway
 product: vercel
 url: /docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai
 canonical_url: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai"
-last_updated: 2026-09-15
+last_updated: 2026-09-22
 type: how-to
 prerequisites:
   - /docs/ai-gateway/ecosystem/framework-integrations
@@ -17,8 +17,8 @@ related:
 summary: Connect TanStack AI to Vercel AI Gateway with the official adapter to authenticate requests and stream responses from AI models.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "0b75419d2adae73e74d93fbb67891c329d0c9bea97d8c35271cc4c4abdb73979"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "8c3f5e0b54b6e6b0c211e4b4a75cda87d7beed8ff56b3dc33a6f969a389c78b5"
 ---
 
 # TanStack AI with AI Gateway
@@ -32,12 +32,17 @@ Connect [TanStack AI](https://tanstack.com/ai) to [AI Gateway](/docs/ai-gateway)
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [TanStack AI](https://chat-sdk.dev/docs/ai/tanstack-ai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Feed thread history into TanStack AI's chat() and give it Chat SDK tools, with no runtime dependency on @tanstack/ai.
-- [Vercel AI SDK vs TanStack AI](https://vercel.com/kb/guide/vercel-ai-sdk-vs-tanstack-ai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Compare the Vercel AI SDK and TanStack AI for building AI-powered TypeScript applications and agents. Learn how AI SDK a
+- [Adding keyboard shortcuts to React apps with TanStack Hotkeys](https://vercel.com/kb/guide/adding-keyboard-shortcuts-to-react-apps-with-tanstack-hotkeys?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Add cross-platform keyboard shortcuts to your React app with TanStack Hotkeys. Install, register, scope, and display sho
+- [How to Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Deploy a TanStack Start app to Vercel with the Nitro Vite plugin. Covers Git and CLI deployment, Fluid compute defaults,
+- [What is the Nitro Vite plugin?](https://vercel.com/kb/guide/nitro-vite-plugin?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — The Nitro Vite plugin \\(nitro/vite\\) adds SSR, API routes, and deploy-anywhere server builds to any Vite app. Learn what
+- [Using TanStack Intent to ship and consume agent skills](https://vercel.com/kb/guide/tanstack-intent?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — TanStack Intent is a CLI for shipping and consuming agent skills, markdown files that teach AI coding agents how to use
+- [TanStack Start on Vercel vs Cloudflare](https://vercel.com/kb/guide/tanstack-start-on-vercel-vs-cloudflare?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Compare running TanStack Start on Vercel Functions with Fluid compute against Cloudflare Workers. Learn how the runtimes
+- [Vercel Connect now supports TanStack AI](https://vercel.com/changelog/vercel-connect-tanstack-ai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Ftanstack-ai&source_site=vercel-docs&relationship=related)
 - [TanStack AI with Vercel Sandbox](https://vercel.com/docs/sandbox/ecosystem/tanstack-ai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Run TanStack AI coding agents in isolated Vercel Sandbox microVMs with the dedicated provider, workspace configuration,
-- [Ecosystem](https://vercel.com/docs/sandbox/ecosystem?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Use Vercel Sandbox with the agent frameworks, model SDKs, and coding agents you already work with.
-- [AI Gateway Embeddings](https://vercel.com/docs/ai-gateway/modalities/embeddings?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Generate vector embeddings for semantic search, similarity matching, and retrieval-augmented generation \\(RAG\\) through
+- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
+- [TanStack Start on Vercel](https://vercel.com/docs/frameworks/full-stack/tanstack-start?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Deploy TanStack Start applications to Vercel with Nitro and configure Vercel Functions.
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai.graph.md](/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Ftanstack-ai&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -138,6 +143,17 @@ pnpm dlx tsx --env-file=.env index.mts
 For JavaScript, run `node --env-file=.env index.mjs`. Your terminal displays stream events containing the generated story.
 
 The adapter uses the [OpenAI Responses API](/docs/ai-gateway/sdks-and-apis/responses) by default. To use [Chat Completions](/docs/ai-gateway/sdks-and-apis/openai-chat-completions), pass `{ api: 'chat' }` as the second argument to `vercelGatewayText`.
+
+## Evaluate with Jev
+
+Use TanStack AI's `decide()` function with `vercelGatewayDecider` from
+`@tanstack/ai-vercel-gateway` to evaluate application state with [Jev](/kb/jev-from-typesafe-ai) through AI Gateway.
+Jev returns typed choices, scores, and boolean probabilities that your code can use
+to classify content and decide what happens next.
+
+Follow [Moderate product reviews with Jev and TanStack AI](/kb/guide/moderate-product-reviews-jev-tanstack-ai)
+to build a moderation workflow in TanStack Start that publishes clear reviews and
+holds flagged or uncertain reviews for a moderator.
 
 ## Next steps
 

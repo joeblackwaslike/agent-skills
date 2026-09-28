@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/node/call-tools-with-image-prompt.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "28d2957aa086f28c86c07d472182dfd4c39ea47ac2de261fb9db1dea8ab4f351"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "aafba4025553841dc073b07001125c223c0796f4560ed0b9922560440b04440b"
 ---
 
 # Call Tools with Image Prompt
@@ -13,7 +13,7 @@ import { generateText, tool } from 'ai';
 import { z } from 'zod';
 
 const result = await generateText({
-  model: 'openai/gpt-4.1',
+  model: 'openai/gpt-6-astra',
   messages: [
     {
       role: 'user',

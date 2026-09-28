@@ -1,179 +1,809 @@
 ---
-source: "https://code.claude.com/docs/en/cli-reference.md"
-fetched_at: "2026-09-21T09:39:23.760Z"
-sha256: "a43cdbaed0f2cb8c0746ff941f6eb8bbc36c4971ab37134be08b6ee503a66317"
+source: "https://code.claude.com/docs/en/plugins/cli-reference.md"
+fetched_at: "2026-09-28T10:38:50.037Z"
+sha256: "8d3991e30284b7c2bb16bc160773d790d6e33c40ad80283dbb6cc180cfd06bac"
 ---
 
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
 
-# CLI reference
+# Plugin commands reference
 
-> Complete reference for Claude Code command-line interface, including commands and flags.
+> Complete reference for the claude plugin shell commands, /plugin and /reload-plugins in a session, and the flags that load a plugin for one session.
 
-## CLI commands
+You run plugin commands either as `claude plugin` from your shell or a script, or as `/plugin` and `/reload-plugins` inside a Claude Code session. This reference gives each command's flags, defaults, output, and exit codes, along with the two flags that load a plugin for one session.
 
-You can start sessions, pipe content, resume conversations, and manage updates with these commands:
+Run `claude plugin --help` on your build to confirm which subcommands your version has.
 
-| Command                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | Example                                                     |
-| :------------------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------- |
-| `claude`                        | Start interactive session                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | `claude`                                                    |
-| `claude "query"`                | Start interactive session with initial prompt                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | `claude "explain this project"`                             |
-| `claude -p "query"`             | Query via SDK, then exit                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | `claude -p "explain this function"`                         |
-| `cat file \| claude -p "query"` | Process piped content                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | `cat logs.txt \| claude -p "explain"`                       |
-| `claude -c`                     | Continue most recent conversation in current directory                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | `claude -c`                                                 |
-| `claude -c -p "query"`          | Continue via SDK                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | `claude -c -p "Check for type errors"`                      |
-| `claude -r "<session>" "query"` | Resume session by ID or name                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | `claude -r "auth-refactor" "Finish this PR"`                |
-| `claude update`                 | Update to latest version                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | `claude update`                                             |
-| `claude gateway`                | Start the self-hosted [Claude apps gateway](/docs/en/claude-apps-gateway) server, for administrators deploying SSO and policy in front of Claude Code on Amazon Bedrock, Google Cloud's Agent Platform, or Microsoft Foundry. Requires `--config` pointing at a [`gateway.yaml`](/docs/en/claude-apps-gateway-config). Available in Claude Code v2.1.195 and later.                                                                                                                                                                                                                                                                                                                                                                                                                   | `claude gateway --config gateway.yaml`                      |
-| `claude install [version]`      | Install or reinstall the native binary. Accepts a version like `2.1.118`, or `stable` or `latest`. See [Install a specific version](/docs/en/setup#install-a-specific-version)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | `claude install stable`                                     |
-| `claude auth login`             | Sign in to your Anthropic account. Use `--email` to pre-fill your email address, `--sso` to force SSO authentication, and `--console` to sign in with Anthropic Console for API usage billing instead of a Claude subscription                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | `claude auth login --console`                               |
-| `claude auth logout`            | Log out from your Anthropic account                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | `claude auth logout`                                        |
-| `claude auth status`            | Show authentication status as JSON. Use `--text` for human-readable output. Exits with code 0 if logged in, 1 if not                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | `claude auth status`                                        |
-| `claude agents`                 | Open [agent view](/docs/en/agent-view) to monitor and dispatch parallel background sessions. Use `--cwd <path>` to show only sessions started under that directory, or `--json` to print active sessions as a JSON array for scripting (`--json --all` also includes completed background sessions). Pass `--permission-mode`, `--model`, `--effort`, or `--agent` to set [defaults for dispatched sessions](/docs/en/agent-view#permission-mode-model-and-effort). Accepts `--settings`, `--add-dir`, `--plugin-dir`, and `--mcp-config` like the top-level `claude` command. Opening agent view requires an interactive terminal                                                                                                                                                    | `claude agents --json`                                      |
-| `claude attach <id>`            | Attach to a [background session](/docs/en/agent-view#manage-sessions-from-the-shell) in this terminal                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | `claude attach 7c5dcf5d`                                    |
-| `claude auto-mode defaults`     | Print the built-in [auto mode](/docs/en/permission-modes#eliminate-prompts-with-auto-mode) classifier rules as JSON. Use `claude auto-mode config` to see your effective config with settings applied. `--label <prefix>` prints only the rules whose label starts with that prefix, matched case-insensitively. Requires Claude Code v2.1.208 or later                                                                                                                                                                                                                                                                                                                                                                                                                          | `claude auto-mode defaults --label 'Git Destructive'`       |
-| `claude auto-mode reset`        | Restore the default [auto mode](/docs/en/permission-modes#eliminate-prompts-with-auto-mode) configuration by removing the `autoMode` section from your user settings file. Prompts for confirmation before writing; pass `-y`/`--yes` to skip the prompt. Rules from [managed settings](/docs/en/server-managed-settings) or the `--settings` flag still apply. Requires Claude Code v2.1.212 or later. See [Inspect the defaults and your effective config](/docs/en/auto-mode-config#inspect-the-defaults-and-your-effective-config)                                                                                                                                                                                                                                                     | `claude auto-mode reset --yes`                              |
-| `claude daemon status`          | Print the background-session [supervisor's](/docs/en/agent-view#the-supervisor-process) state, version, socket directory, and worker count for diagnostics. Exits 1 if the supervisor isn't running                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | `claude daemon status`                                      |
-| `claude daemon stop --any`      | Stop the background-session [supervisor](/docs/en/agent-view#the-supervisor-process) and the sessions it hosts. Pass `--keep-workers` to leave background sessions running so the next supervisor reconnects to them. `--any` confirms stopping an on-demand supervisor, which is the default. Use this to recover from an [unresponsive supervisor](/docs/en/agent-view#agent-view-says-the-background-service-did-not-respond)                                                                                                                                                                                                                                                                                                                                                      | `claude daemon stop --any --keep-workers`                   |
-| `claude doctor`                 | Print read-only installation and settings diagnostics from the terminal without starting a session, including install health, settings-file validation errors, and Remote Control eligibility. For the in-session setup checkup that can also apply fixes, run [`/doctor`](/docs/en/commands#all-commands)                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | `claude doctor`                                             |
-| `claude import [source]`        | Start an interactive session that runs [`/import`](/docs/en/commands#all-commands) to bring configuration from other coding agents into Claude Code. Accepts the same `--dry-run` and `--yes` options as the command. Not available on Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry, or Claude Platform on AWS. Also unavailable when you turn off [feature-flag fetching](/docs/en/env-vars#features-that-need-feature-flag-fetching). Requires Claude Code v2.1.213 or later                                                                                                                                                                                                                                                                                    | `claude import codex --dry-run`                             |
-| `claude logs <id>`              | Print recent output from a [background session](/docs/en/agent-view#manage-sessions-from-the-shell)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | `claude logs 7c5dcf5d`                                      |
-| `claude mcp`                    | Configure Model Context Protocol (MCP) servers                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | See the [Claude Code MCP documentation](/docs/en/mcp).           |
-| `claude mcp login <name>`       | Run a configured MCP server's OAuth flow without opening the interactive `/mcp` panel. Works for HTTP, SSE, and claude.ai connector servers. Add `--no-browser` over SSH to print the authorization URL instead of opening a browser, then paste the redirect URL back at the prompt. Requires Claude Code v2.1.186 or later. See [Authenticate from the command line](/docs/en/mcp#authenticate-from-the-command-line)                                                                                                                                                                                                                                                                                                                                                          | `claude mcp login sentry`                                   |
-| `claude mcp logout <name>`      | Clear stored OAuth credentials for an MCP server. Requires Claude Code v2.1.186 or later                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | `claude mcp logout sentry`                                  |
-| `claude plugin`                 | Manage Claude Code [plugins](/docs/en/plugins). Alias: `claude plugins`. See [plugin reference](/docs/en/plugins-reference#cli-commands-reference) for subcommands                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | `claude plugin install code-review@claude-plugins-official` |
-| `claude project purge [path]`   | Delete all local Claude Code state for a project: transcripts, task lists, debug logs, file-edit history, prompt history lines, and the project's entry in `~/.claude.json`. Omit `[path]` to pick from an interactive list. Flags: `--dry-run` to preview, `-y`/`--yes` to skip confirmation, `-i`/`--interactive` to confirm each item, `--all` for every project. See [Clear local data](/docs/en/claude-directory#clear-local-data)                                                                                                                                                                                                                                                                                                                                          | `claude project purge ~/work/repo --dry-run`                |
-| `claude remote-control`         | Start a [Remote Control](/docs/en/remote-control) server to control Claude Code from Claude.ai or the Claude app. Runs in server mode (no local interactive session). See [Server mode flags](/docs/en/remote-control#start-a-remote-control-session). After you stop the server, you can bring back the sessions it was serving. See [Resume sessions after stopping the server](/docs/en/remote-control#resume-sessions-after-stopping-the-server)                                                                                                                                                                                                                                                                                                                                       | `claude remote-control --name "My Project"`                 |
-| `claude respawn <id>`           | Restart a [background session](/docs/en/agent-view#manage-sessions-from-the-shell), running or stopped, with its conversation intact. Use `--all` to restart every running session, e.g. to pick up an updated Claude Code binary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | `claude respawn 7c5dcf5d`                                   |
-| `claude rm <id>`                | Remove a [background session](/docs/en/agent-view#manage-sessions-from-the-shell) from the list. When the removal is [refused over the session's worktree](/docs/en/agent-view#what-deleting-a-session-removes) and a second `claude rm` can resolve it, the refusal prints the exact flag and value to pass: `--discard-unpushed <commit>@<worktree-id>` discards a worktree that has unpushed commits along with those commits, and `--force-remove-worktree <worktree-id>` deletes a worktree directory that git or the `WorktreeRemove` hook couldn't remove. `--discard-unpushed` requires Claude Code v2.1.260 or later, and `--force-remove-worktree` requires v2.1.268 or later. The conversation transcript stays on your local machine, available through `claude --resume` | `claude rm 7c5dcf5d`                                        |
-| `claude self-hosted-runner`     | Start a runner process that registers this machine or container with a [self-hosted environment](/docs/en/self-hosted-environments) and hosts Claude Code cloud sessions on your infrastructure. Run `claude self-hosted-runner setup` for a guided operator walkthrough, `claude self-hosted-runner doctor` to [diagnose a deployed runner](/docs/en/self-hosted-environments-deploy#troubleshooting), and `claude self-hosted-runner orchestrator` to spawn [on-demand runners](/docs/en/self-hosted-environments-configuration#on-demand-runners). Requires Claude Code v2.1.224 or later                                                                                                                                                                                               | `claude self-hosted-runner setup`                           |
-| `claude setup-token`            | Generate a long-lived OAuth token for CI and scripts. Prints the token to the terminal without saving it. Requires a Claude subscription. See [Generate a long-lived token](/docs/en/authentication#generate-a-long-lived-token)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | `claude setup-token`                                        |
-| `claude stop <id>`              | Stop a [background session](/docs/en/agent-view#manage-sessions-from-the-shell). Also accepts `claude kill`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | `claude stop 7c5dcf5d`                                      |
-| `claude ultrareview [target]`   | Run [ultrareview](/docs/en/ultrareview#run-ultrareview-non-interactively) non-interactively. Prints findings to stdout and exits 0 on success or 1 on failure. Use `--json` for the raw payload and `--timeout <minutes>` to override the 45-minute default. Use `--post` on a `github.com` pull request target to post the finished findings to the PR as one plain comment from your GitHub account. `--no-post` is the default. `--post` and `--no-post` require Claude Code v2.1.227 or later. See [Post findings to the pull request](/docs/en/ultrareview#post-findings-to-the-pull-request)                                                                                                                                                                                    | `claude ultrareview 1234 --json`                            |
+<Note>
+  These cases are covered on other pages:
 
-If you mistype a subcommand, Claude Code suggests the closest match and exits without starting a session. For example, `claude udpate` prints `Did you mean claude update?`.
+  * **Install and manage steps, and where `/plugin` runs**: see [Install and manage plugins](/docs/en/plugins/install)
+  * **What a command changes on disk and which scope takes precedence**: see [Plugin loading reference](/docs/en/plugins/loading)
+  * **What an error message means**: see [Troubleshoot plugins](/docs/en/plugins/troubleshooting)
+</Note>
 
-As of v2.1.199, `claude --dangerously-skip-permissions daemon <subcommand>` runs the `daemon` subcommand. Earlier versions treated `daemon <subcommand>` as the prompt for a new interactive session, so the subcommand never ran when the flag came first, a common setup when `claude` is aliased to include the flag. Only a leading `--dangerously-skip-permissions` or `--allow-dangerously-skip-permissions` routes to `daemon` this way; any other leading flag still starts an interactive session.
+## claude plugin commands
 
-## CLI flags
+Run `claude plugin <subcommand>` from your shell or a script, outside a Claude Code session. These subcommands install and manage plugins without opening the [`/plugin`](#plugin-in-a-session) panel.
 
-Customize Claude Code's behavior with these command-line flags. `claude --help` does not list every flag, so a flag's absence from `--help` does not mean it is unavailable.
+`claude plugins` is an alias for `claude plugin`.
 
-| Flag                                            | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | Example                                                                                             |
-| :---------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------- |
-| `--add-dir`                                     | Add additional working directories for Claude to read and edit files. Grants file access; Claude Code [doesn't discover](/docs/en/permissions#additional-directories-grant-file-access-not-configuration) most `.claude/` configuration from these directories. Validates that each path exists as a directory. You can't add most [network paths](/docs/en/errors#working-directory-is-a-network-path), such as `\\server\share`. To persist these directories across sessions, set [`permissions.additionalDirectories`](/docs/en/settings-reference#permissions-additionaldirectories) in settings                                                                                                                                                                                                                                                                                   | `claude --add-dir ../apps ../lib`                                                                   |
-| `--advisor <model>`                             | Enable the server-side [advisor tool](/docs/en/advisor) for this session with a model alias, `fable`, `opus`, or `sonnet`, or a full model ID. Takes precedence over the `advisorModel` setting for the session. `fable` requires [Fable access](/docs/en/advisor#choose-an-advisor-model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | `claude --advisor opus`                                                                             |
-| `--agent`                                       | Specify an agent for the current session (overrides the `agent` setting)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | `claude --agent my-custom-agent`                                                                    |
-| `--agents`                                      | Define custom subagents dynamically via JSON. Accepts the [fields listed for CLI-defined subagents](/docs/en/sub-agents#choose-the-subagent-scope). Claude Code validates the JSON at startup and exits on an invalid value; see [`Invalid --agents configuration`](/docs/en/errors#invalid-agents-configuration) for the message and for the flags and environment variable that skip the validation. Validation requires Claude Code v2.1.242 or later                                                                                                                                                                                                                                                                                                                                                                                                                           | `claude --agents '{"reviewer":{"description":"Reviews code","prompt":"You are a code reviewer"}}'`  |
-| `--allow-dangerously-skip-permissions`          | Add `bypassPermissions` to the `Shift+Tab` mode cycle without starting in it. Lets you begin in a different mode like `plan` and switch to `bypassPermissions` later. See [permission modes](/docs/en/permission-modes#skip-all-checks-with-bypasspermissions-mode)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | `claude --permission-mode plan --allow-dangerously-skip-permissions`                                |
-| `--allowedTools`, `--allowed-tools`             | Tools that execute without prompting for permission. See [permission rule syntax](/docs/en/settings-reference#permission-rule-syntax) for pattern matching. To restrict which tools are available, use `--tools` instead. If you name one of the [task-tracking tools](/docs/en/tools-reference#task-tool-availability) here, Claude Code also opts the session in                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | `"Bash(git log *)" "Bash(git diff *)" "Read"`                                                       |
-| `--append-subagent-system-prompt`               | Append custom text to the end of every [subagent](/docs/en/sub-agents)'s system prompt, nested subagents included, apart from a [forked subagent](/docs/en/sub-agents#fork-the-current-conversation), which reuses the conversation's own prompt. Only applies in non-interactive mode with `-p`. Requires Claude Code v2.1.205 or later                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | `claude -p --append-subagent-system-prompt "Cite file paths in every answer" "query"`               |
-| `--append-subagent-system-prompt-file`          | Load text from a file and append it to [subagent](/docs/en/sub-agents) system prompts. An alternative to `--append-subagent-system-prompt` for text too long to pass on the command line. The two flags can't be combined. Only applies in non-interactive mode with `-p`. Requires Claude Code v2.1.261 or later                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | `claude -p --append-subagent-system-prompt-file ./subagent-rules.txt "query"`                       |
-| `--append-system-prompt`                        | Append custom text to the end of the default system prompt                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | `claude --append-system-prompt "Always use TypeScript"`                                             |
-| `--append-system-prompt-file`                   | Load additional system prompt text from a file and append to the default prompt                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | `claude --append-system-prompt-file ./extra-rules.txt`                                              |
-| `--autocompact <auto\|tokens>`                  | Set the [auto-compact window](/docs/en/model-config#set-the-auto-compact-window) for this session without changing your saved settings. Accepts the same values as `/autocompact`; that section covers the value forms and what overrides the flag. Requires Claude Code v2.1.221 or later                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | `claude --autocompact 500k`                                                                         |
-| `--ax-screen-reader`                            | Render screen-reader friendly output: flat text without decorative borders or animations. Forces the classic renderer, so the [`tui`](/docs/en/settings-reference#tui) setting has no effect; attached [background sessions](/docs/en/agent-view) still render fullscreen. Takes precedence over [`CLAUDE_AX_SCREEN_READER`](/docs/en/env-vars) and the [`axScreenReader`](/docs/en/settings-reference#axscreenreader) setting. Requires Claude Code v2.1.181 or later                                                                                                                                                                                                                                                                                                                                                                                                                       | `claude --ax-screen-reader`                                                                         |
-| `--bare`                                        | Minimal mode: skip auto-discovery of hooks, skills, custom commands, subagents, plugins, MCP servers, auto memory, and CLAUDE.md so scripted calls start faster. Skills in a directory you pass with `--add-dir` still load. Claude has access to Bash, file read, and file edit tools. Sets [`CLAUDE_CODE_SIMPLE`](/docs/en/env-vars). See [bare mode](/docs/en/headless#start-faster-with-bare-mode)                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | `claude --bare -p "query"`                                                                          |
-| `--betas`                                       | Beta headers to include in API requests (API key users only)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | `claude --betas interleaved-thinking`                                                               |
-| `--bg`, `--background`                          | Start the session as a [background agent](/docs/en/agent-view) and return immediately. Prints the session ID and management commands. Combine with `--exec` to run a shell command as a background job instead of a Claude session, or with `--agent` to run a specific subagent. Can't be combined with `-p`/`--print`; see the [error reference](/docs/en/errors#command-line-errors)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | `claude --bg "investigate the flaky test"`                                                          |
-| `--channels`                                    | (Research preview) MCP servers whose [channel](/docs/en/channels) notifications Claude should listen for in this session. Space-separated list of `plugin:<name>@<marketplace>` entries. Requires Anthropic authentication through claude.ai or a Console API key                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | `claude --channels plugin:my-notifier@my-marketplace`                                               |
-| `--chrome`                                      | Enable [Chrome browser integration](/docs/en/chrome) for web automation and testing                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | `claude --chrome`                                                                                   |
-| `--cloud`                                       | With a task description, create a new [cloud session](/docs/en/claude-code-on-the-web). With a session ID (`session_...` or `cse_...`) or a claude.ai/code URL, queue a message into that existing session instead, with `-p`. See [send a follow-up message](/docs/en/claude-code-on-the-web#send-follow-ups-from-the-cli).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | `claude --cloud "Fix the login bug"`                                                                |
-| `--continue`, `-c`                              | Load the most recent conversation in the current directory, including a [background session that has finished](/docs/en/sessions#resume-a-session); opening finished background sessions requires Claude Code v2.1.257 or later. Skips sessions created with `claude -p` or the Agent SDK, and sessions whose first prompt was `/loop`. `claude -p --continue` includes `-p`, SDK, and `/loop` sessions. Includes sessions that added this directory with `/add-dir`                                                                                                                                                                                                                                                                                                                                                                                                          | `claude --continue`                                                                                 |
-| `--dangerously-load-development-channels`       | Enable [channels](/docs/en/channels-reference#test-during-the-research-preview) that are not on the approved allowlist, for local development. Accepts `plugin:<name>@<marketplace>` and `server:<name>` entries. Prompts for confirmation                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | `claude --dangerously-load-development-channels server:webhook`                                     |
-| `--dangerously-skip-permissions`                | Skip permission prompts. Equivalent to `--permission-mode bypassPermissions`. See [permission modes](/docs/en/permission-modes#skip-all-checks-with-bypasspermissions-mode) for what this does and does not skip. For sessions started with `--bg`, the mode [persists when the supervisor restarts the session](/docs/en/agent-view#permission-mode-model-and-effort)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | `claude --dangerously-skip-permissions`                                                             |
-| `--debug`                                       | Enable debug mode with optional category filtering, such as `--debug='mcp,startup'` or `--debug='!1p'`. The filter binds only in the `=` form; a space-separated filter enables debug mode without filtering                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | `claude --debug='mcp,startup'`                                                                      |
-| `--debug-file <path>`                           | Write debug logs to a specific file path. Implicitly enables debug mode. Takes precedence over `CLAUDE_CODE_DEBUG_LOGS_DIR`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | `claude --debug-file /tmp/claude-debug.log`                                                         |
-| `--disable-slash-commands`                      | Disable all skills and commands for this session                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | `claude --disable-slash-commands`                                                                   |
-| `--disallowedTools`, `--disallowed-tools`       | Deny rules. A bare tool name removes the matching tools from Claude's context: `"Edit"` removes Edit, `"*"` removes every tool, and `"mcp__*"` removes every MCP tool. A scoped rule such as `Bash(rm *)` leaves the tool available and denies only calls that match [as written](/docs/en/permissions#bash-rule-limits). A rule naming [`EndConversation`](/docs/en/tools-reference#endconversation-tool-behavior) can't remove it while any other tool remains                                                                                                                                                                                                                                                                                                                                                                                                                   | `"Bash(git log *)" "Bash(git diff *)" "Edit"`                                                       |
-| `--effort`                                      | Set the [effort level](/docs/en/model-config#adjust-effort-level) for the current session. Options: `low`, `medium`, `high`, `xhigh`, `max`, or `ultracode`. Available levels depend on the model. `ultracode` requests `xhigh` effort with [ultracode](/docs/en/workflows#let-claude-decide-with-ultracode) turned on, and requires Claude Code v2.1.203 or later. Overrides the [`modelSettings`](/docs/en/settings-reference#modelsettings) and [`effortLevel`](/docs/en/settings-reference#effortlevel) settings for this session and does not persist                                                                                                                                                                                                                                                                                                                                   | `claude --effort high`                                                                              |
-| `--enable-auto-mode`                            | Removed in v2.1.111. Auto mode is now in the `Shift+Tab` cycle by default; use `--permission-mode auto` to start in it                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | `claude --permission-mode auto`                                                                     |
-| `--environment <environment-id>`                | Create a new cloud session that runs on the [self-hosted environment](/docs/en/self-hosted-environments) with the given ID. Environment IDs start with `ccpool_`. See [`--environment` dispatch behavior](/docs/en/self-hosted-environments-testing#environment-dispatch-behavior) for dispatch behavior and the flag combinations it rejects. Requires Claude Code v2.1.224 or later                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | `claude -p "Fix the login bug" --environment ccpool_abc123`                                         |
-| `--exclude-dynamic-system-prompt-sections`      | Move per-machine sections from the system prompt (working directory, environment info, memory paths, git-repo flag) into the first user message. Improves prompt-cache reuse across different users and machines running the same task. Only applies with the default system prompt; ignored when `--system-prompt` or `--system-prompt-file` is set. Use with `-p` for scripted, multi-user workloads                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | `claude -p --exclude-dynamic-system-prompt-sections "query"`                                        |
-| `--exec`                                        | Run a shell command as a PTY-backed background job instead of starting a Claude session. Use with `--bg` to launch from the shell                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | `claude --bg --exec 'pytest -x'`                                                                    |
-| `--fallback-model`                              | Enable automatic fallback to the specified model(s) when the primary model is overloaded or not available, for example a retired model. Accepts a comma-separated list tried in order. See [Fallback model chains](/docs/en/model-config#fallback-model-chains). To persist a chain across sessions, use the [`fallbackModel` setting](/docs/en/settings-reference#fallbackmodel), which this flag overrides                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | `claude --fallback-model sonnet,haiku`                                                              |
-| `--fork-session`                                | When resuming, create a new session ID instead of reusing the original (use with `--resume` or `--continue`)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | `claude --resume abc123 --fork-session`                                                             |
-| `--forward-subagent-text`                       | Emit [subagent](/docs/en/sub-agents) text and thinking blocks in the output stream as `assistant` and `user` messages with `parent_tool_use_id` set, so you can reconstruct each subagent's transcript. Without this flag, Claude Code omits the text and thinking blocks of a subagent that runs in the [foreground](/docs/en/sub-agents#run-subagents-in-foreground-or-background). Requires `--print` and `--output-format stream-json`. Claude Code also forwards messages from [nested subagents](/docs/en/sub-agents#let-subagents-spawn-their-own-subagents), setting `parent_tool_use_id` to the ID of the Agent tool call that spawned each one; this requires Claude Code v2.1.219 or later. The [`CLAUDE_CODE_FORWARD_SUBAGENT_TEXT`](/docs/en/env-vars) environment variable enables the same behavior. Requires Claude Code v2.1.211 or later                                   | `claude -p --output-format stream-json --verbose --forward-subagent-text "query"`                   |
-| `--from-pr`                                     | Open the session picker filtered to sessions linked to a specific pull request. Accepts a PR number, a GitHub or GitHub Enterprise PR URL, a GitLab merge request URL, or a Bitbucket pull request URL. Sessions are linked automatically when Claude creates the pull request                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | `claude --from-pr 123`                                                                              |
-| `--ide`                                         | Automatically connect to IDE on startup if exactly one valid IDE is available                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | `claude --ide`                                                                                      |
-| `--init`                                        | Run [Setup hooks](/docs/en/hooks#setup) with the `init` matcher before the session (print mode only)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | `claude -p --init "query"`                                                                          |
-| `--init-only`                                   | Run [Setup](/docs/en/hooks#setup) and `SessionStart` hooks, then exit without starting a conversation                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | `claude --init-only`                                                                                |
-| `--include-hook-events`                         | Include hook lifecycle events in the output stream. `SessionStart` and `Setup` hook events are always included and don't need this flag. Some hook events, such as `Notification`, `SessionEnd`, `PreCompact`, and `PostCompact`, never produce a `hook_started` event, even with this flag. For those events, Claude Code still emits `hook_progress` while a command hook that runs for more than a second produces output, and emits `hook_response` only when a [hook that runs in the background](/docs/en/hooks#run-hooks-in-the-background) finishes. Requires `--output-format stream-json`                                                                                                                                                                                                                                                                           | `claude -p --output-format stream-json --verbose --include-hook-events "query"`                     |
-| `--include-partial-messages`                    | Include partial streaming events in output. Requires `--print` and `--output-format stream-json`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | `claude -p --output-format stream-json --verbose --include-partial-messages "query"`                |
-| `--input-format`                                | Specify input format for print mode (options: `text`, `stream-json`)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | `claude -p --output-format json --input-format stream-json`                                         |
-| `--json-schema`                                 | Get validated JSON output matching a JSON Schema after the agent completes its workflow (print mode only). See [structured outputs](/docs/en/agent-sdk/structured-outputs). Claude Code exits with an error on an invalid schema and accepts the `format` keyword as an annotation without client-side validation                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | `claude -p --json-schema '{"type":"object","properties":{...}}' "query"`                            |
-| `--maintenance`                                 | Run [Setup hooks](/docs/en/hooks#setup) with the `maintenance` matcher before the session (print mode only)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | `claude -p --maintenance "query"`                                                                   |
-| `--max-budget-usd`                              | Maximum dollar amount to spend on API calls before stopping (print mode only). Spend from [subagents](/docs/en/sub-agents) counts toward the cap. Once spend reaches the cap, spawning another subagent fails with `Budget limit reached`, and Claude Code stops background subagents that are still running; the cap-enforcement behaviors require Claude Code v2.1.217 or later                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | `claude -p --max-budget-usd 5.00 "query"`                                                           |
-| `--max-turns`                                   | Limit the number of agentic turns (print mode only). Exits with an error when the limit is reached. No limit by default. With `--input-format stream-json`, a message still queued when the limit ends a turn stays queued and starts a new turn with its own limit                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | `claude -p --max-turns 3 "query"`                                                                   |
-| `--mcp-config`                                  | Load MCP servers from JSON files or strings (space-separated). When you pass this flag with `-p`, Claude Code waits for still-pending servers to connect before running the first turn, up to the [`MCP_TIMEOUT`](/docs/en/env-vars) startup timeout, 30 seconds by default; a server with a [cached tool list](/docs/en/mcp#managing-your-servers) skips the wait and connects on first use. The wait requires Claude Code v2.1.221 or later                                                                                                                                                                                                                                                                                                                                                                                                                                      | `claude --mcp-config ./mcp.json`                                                                    |
-| `--model`                                       | Sets the model for the current session with a [model alias](/docs/en/model-config#model-aliases) such as `sonnet`, `opus`, `haiku`, or `fable`, or a model's full name. Overrides the [`model`](/docs/en/settings-reference#model) setting and [`ANTHROPIC_MODEL`](/docs/en/model-config#environment-variables)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | `claude --model claude-sonnet-5`                                                                    |
-| `--name`, `-n`                                  | Set a display name for the session, shown in `/resume` and the terminal title. You can resume a named session with `claude --resume <name>`. In an interactive session, if another live session on this machine already uses the name, Claude Code applies [a variant of it](/docs/en/sessions#name-your-sessions) instead. <br /><br />[`/rename`](/docs/en/commands) changes the name mid-session and also shows it on the prompt bar                                                                                                                                                                                                                                                                                                                                                                                                                                            | `claude -n "my-feature-work"`                                                                       |
-| `--no-chrome`                                   | Disable [Chrome browser integration](/docs/en/chrome) for this session                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | `claude --no-chrome`                                                                                |
-| `--no-session-persistence`                      | Disable session persistence so sessions are not saved to disk and cannot be resumed. Print mode only. The [`CLAUDE_CODE_SKIP_PROMPT_HISTORY`](/docs/en/env-vars) environment variable does the same in any mode                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | `claude -p --no-session-persistence "query"`                                                        |
-| `--output-format`                               | Specify output format for print mode (options: `text`, `json`, `stream-json`)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | `claude -p "query" --output-format json`                                                            |
-| `--permission-mode`                             | Begin in a specified [permission mode](/docs/en/permission-modes). Accepts `default`, `acceptEdits`, `plan`, `auto`, `dontAsk`, `bypassPermissions`, or `manual` as an alias for `default`. The `manual` alias selects the permission mode the UI labels Manual and requires Claude Code v2.1.200 or later; `claude --help` lists it in place of `default`, and both values work. Overrides `defaultMode` from settings files. Without this flag or `--dangerously-skip-permissions`, a new session starts in the permission mode described in [which permission mode a session starts in](/docs/en/permission-modes#which-mode-a-session-starts-in). For `-p`, that's `default` when nothing is configured                                                                                                                                                                        | `claude --permission-mode plan`                                                                     |
-| `--permission-prompt-tool`                      | Specify an MCP tool to handle permission prompts in non-interactive mode. Claude Code waits for that tool's MCP server to connect before running the first turn, up to the [`MCP_TIMEOUT`](/docs/en/env-vars) startup timeout, 30 seconds by default. <br /><br />The prompt tool can't approve an MCP tool marked as [requiring user interaction](/docs/en/mcp#require-approval-for-a-specific-tool): Claude Code converts an `allow` result for one to a deny. This restriction requires Claude Code v2.1.199 or later                                                                                                                                                                                                                                                                                                                                                           | `claude -p --permission-prompt-tool mcp_auth_tool "query"`                                          |
-| `--permission-prompts`                          | Set who answers permission prompts in print mode. With the default `host`, Claude Code sends them to the Agent SDK host or the `--permission-prompt-tool` tool. Pass `none` when nobody can answer, and Claude Code denies them instead. See [Turn off permission prompts in unattended runs](/docs/en/headless#turn-off-permission-prompts-in-unattended-runs). Requires Claude Code v2.1.259 or later                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | `claude -p --permission-prompts none "query"`                                                       |
-| `--plugin-dir`                                  | Load a plugin from a directory or `.zip` archive, or several from a [folder of plugins](/docs/en/plugins#test-your-plugins-locally), for this session only. Each flag takes one path. Repeat the flag for more paths: `--plugin-dir A --plugin-dir B.zip`. Passing a folder of plugins requires Claude Code v2.1.265 or later                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | `claude --plugin-dir ./my-plugin`                                                                   |
-| `--plugin-url`                                  | Fetch a plugin `.zip` archive from a URL for this session only. Repeat the flag for multiple plugins, or pass space-separated URLs in a single quoted value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | `claude --plugin-url https://example.com/plugin.zip`                                                |
-| `--print`, `-p`                                 | Print response without interactive mode (see [Agent SDK documentation](/docs/en/agent-sdk/overview) for programmatic usage details)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | `claude -p "query"`                                                                                 |
-| `--prompt-suggestions`                          | Emit a `prompt_suggestion` message with a predicted next user prompt after each turn that generates one; very short conversations can produce none. Requires `--print`, `--output-format stream-json`, and `--verbose`. See [Prompt suggestions](/docs/en/interactive-mode#prompt-suggestions)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | `claude -p --prompt-suggestions --output-format stream-json --verbose "query"`                      |
-| `--ref <branch>`                                | With `--environment`, base the new session's checkout on a named ref instead of local `HEAD`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | `claude -p "Run the smoke test" --environment ccpool_abc123 --ref main`                             |
-| `--remote`                                      | Deprecated alias for `--cloud`, including the existing-session form                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | `claude --remote "Fix the login bug"`                                                               |
-| `--remote-control`, `--rc`                      | Start an interactive session with [Remote Control](/docs/en/remote-control#start-a-remote-control-session) enabled so you can also control it from claude.ai or the Claude app. Optionally pass a name for the session                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | `claude --remote-control "My Project"`                                                              |
-| `--remote-control-session-name-prefix <prefix>` | Prefix for auto-generated [Remote Control](/docs/en/remote-control) session names when no explicit name is set. Defaults to your machine's hostname, producing names like `myhost-graceful-unicorn`. Set `CLAUDE_REMOTE_CONTROL_SESSION_NAME_PREFIX` for the same effect                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | `claude remote-control --remote-control-session-name-prefix dev-box`                                |
-| `--replay-user-messages`                        | Re-emit user messages from stdin back on stdout for acknowledgment. Requires `--input-format stream-json` and `--output-format stream-json`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | `claude -p --input-format stream-json --output-format stream-json --verbose --replay-user-messages` |
-| `--restricted`                                  | Start in restricted mode. Use it when an evaluation harness drives `claude` on a shared machine and Claude Code must not run commands or read that machine's user and project settings. Claude Code removes the built-in tools that run commands or code, and WebFetch, unless you name them individually in `--tools`, not through the `default` preset. It also confines the built-in file tools to the [working directories](/docs/en/permissions#working-directories), loads only [managed settings](/docs/en/managed-settings) and `--settings`, refuses [`bypassPermissions`](/docs/en/permission-modes#skip-all-checks-with-bypasspermissions-mode), and [refuses to create cloud sessions](/docs/en/errors#cloud-sessions-cannot-be-created-from-a-restricted-session). Requires Claude Code v2.1.248 or later                                                                       | `claude --restricted -p "query"`                                                                    |
-| `--resume`, `-r`                                | Resume a specific session by ID or name, or show an interactive picker to choose a session. In place of an ID, you can pass the absolute path to a session's `.jsonl` [transcript file](/docs/en/sessions#where-transcripts-are-stored). The picker and name search include sessions that added this directory with `/add-dir`. When you pass a session ID, Claude Code searches the current project directory and its git worktrees, then every other project on this machine. Before v2.1.223, the ID search covered only the current project directory and its git worktrees. [Background sessions](/docs/en/agent-view) appear in the picker marked with `bg`                                                                                                                                                                                                                  | `claude --resume auth-refactor`                                                                     |
-| `--safe-mode`                                   | Start with all customizations disabled to troubleshoot a broken configuration: CLAUDE.md, skills, plugins, hooks, MCP servers, custom commands and agents, output styles, workflows, custom themes, custom keybindings, status line and file-suggestion commands, LSP servers, and auto memory do not load. Authentication, model selection, built-in tools, and permissions work normally, which differs from [`--bare`](/docs/en/headless#start-faster-with-bare-mode). Managed settings policy still applies, including policy-configured hooks, status line, and file-suggestion commands; managed plugins, managed skills, managed CLAUDE.md, and policy-configured MCP servers do not. Useful for checking whether a customization is what triggers [automatic model fallback](/docs/en/model-config#automatic-model-fallback). Sets [`CLAUDE_CODE_SAFE_MODE`](/docs/en/env-vars) | `claude --safe-mode`                                                                                |
-| `--session-id`                                  | Use a specific session ID for the conversation (must be a valid UUID)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | `claude --session-id "550e8400-e29b-41d4-a716-446655440000"`                                        |
-| `--setting-sources`                             | Comma-separated list of setting sources to load (`user`, `project`, `local`)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | `claude --setting-sources user,project`                                                             |
-| `--settings`                                    | Path to a settings JSON file or an inline JSON string. Values you set here override the same keys in your `settings.json` files for this session. Keys you omit keep their file-based values. The file must be a regular file no larger than 2 MiB. See [settings precedence](/docs/en/settings#settings-precedence)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | `claude --settings ./settings.json`                                                                 |
-| `--strict-mcp-config`                           | Only use MCP servers from `--mcp-config`, ignoring all other MCP configurations. See [Exclusive control with managed-mcp.json](/docs/en/managed-mcp#exclusive-control-with-managed-mcp-json) for what the flag does under a managed MCP file                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | `claude --strict-mcp-config --mcp-config ./mcp.json`                                                |
-| `--system-prompt`                               | Replace the entire system prompt with custom text                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | `claude --system-prompt "You are a Python expert"`                                                  |
-| `--system-prompt-file`                          | Load system prompt from a file, replacing the default prompt                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | `claude --system-prompt-file ./custom-prompt.txt`                                                   |
-| `--system-prompt-snapshot`                      | Pass `off` to rebuild the system prompt on every request instead of reusing the prompt [recorded on the conversation's first request](#system-prompt-flags-in-resumed-conversations), for example while you iterate on `--append-system-prompt` text across `--continue` runs. Requires Claude Code v2.1.257 or later                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | `claude --system-prompt-snapshot off`                                                               |
-| `--teleport`                                    | Resume a [cloud session](/docs/en/claude-code-on-the-web) in your local terminal                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | `claude --teleport`                                                                                 |
-| `--teammate-mode`                               | Set how [agent team](/docs/en/agent-teams) teammates display: `in-process` (default), `auto`, `tmux`, or `iterm2` (added in v2.1.186). Overrides the [`teammateMode`](/docs/en/settings-reference#teammatemode) setting for this session. See [Choose a display mode](/docs/en/agent-teams#choose-a-display-mode)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | `claude --teammate-mode auto`                                                                       |
-| `--tmux`                                        | Create a tmux session for the worktree. Requires `--worktree`. Uses iTerm2 native panes when available; pass `--tmux=classic` for traditional tmux                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | `claude -w feature-auth --tmux`                                                                     |
-| `--tools`                                       | Restrict which built-in tools Claude can use. Use `""` to disable all, `"default"` for the default set, or tool names like `"Bash,Edit,Read"`. On macOS, Linux, and WSL, the default set leaves out `Glob` and `Grep`, as described under [Glob tool behavior](/docs/en/tools-reference#glob-tool-behavior). If you name one of the [task-tracking tools](/docs/en/tools-reference#task-tool-availability) here, Claude Code also opts the session in. The flag doesn't affect MCP tools; to deny those too, use `--disallowedTools "mcp__*"`. A list that omits [`EndConversation`](/docs/en/tools-reference#endconversation-tool-behavior) doesn't remove it; `""` removes it only when no MCP tools remain                                                                                                                                                                           | `claude --tools "Bash,Edit,Read"`                                                                   |
-| `--verbose`                                     | Enable verbose logging, shows full turn-by-turn output. Overrides the [`viewMode`](/docs/en/settings-reference#viewmode) setting for this session                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | `claude --verbose`                                                                                  |
-| `--version`, `-v`                               | Output the version number                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | `claude -v`                                                                                         |
-| `--worktree`, `-w`                              | Start Claude in an isolated [git worktree](/docs/en/worktrees) at `<repo>/.claude/worktrees/<name>`. If you don't give a name, Claude Code generates one. Pass `#<number>`, a GitHub pull request URL, or a GitLab merge request URL to [fetch that PR or MR from `origin` and branch the worktree from it](/docs/en/worktrees#branch-from-a-pull-request). Branching from a GitLab merge request requires Claude Code v2.1.233 or later                                                                                                                                                                                                                                                                                                                                                                                                                                           | `claude -w feature-auth`                                                                            |
+Every subcommand shares these exit codes, plugin arguments, and scope values:
 
-### System prompt flags
+* **Exit codes**: `0` on success and `1` on failure. `validate` adds exit `2` for an unexpected error, and `eval` adds the codes listed in [its section](#plugin-eval).
+* **Plugin arguments**: a `<plugin>` argument is a plugin `name` or `name@marketplace`. When two marketplaces offer the same name, use the qualified form.
+* **Scopes**: `--scope` takes `user`, `project`, or `local`, and names the settings file the command writes to. `update` also takes `managed`.
 
-Claude Code provides five flags for customizing the system prompt. Four set its text, and with `--system-prompt-snapshot` you control whether a conversation keeps the text it started with. All five work in both interactive and non-interactive modes.
+### plugin init
 
-| Flag                          | Behavior                                                                                                                                                                    | Example                                                                    |
-| :---------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------- |
-| `--system-prompt`             | Replaces the entire default prompt                                                                                                                                          | `claude --system-prompt "You are a Python expert"`                         |
-| `--system-prompt-file`        | Replaces with file contents                                                                                                                                                 | `claude --system-prompt-file ./prompts/review.txt`                         |
-| `--append-system-prompt`      | Appends to the default prompt                                                                                                                                               | `claude --append-system-prompt "Always use TypeScript"`                    |
-| `--append-system-prompt-file` | Appends file contents to the default prompt                                                                                                                                 | `claude --append-system-prompt-file ./style-rules.txt`                     |
-| `--system-prompt-snapshot`    | With `off`, rebuilds the prompt on every request. With `on`, the default, reuses a recorded prompt where [recording applies](#system-prompt-flags-in-resumed-conversations) | `claude --append-system-prompt "Draft rules" --system-prompt-snapshot off` |
+Scaffold a new plugin at `~/.claude/skills/<name>/`. It loads in your next session as `<name>@skills-dir` with no install step.
 
-`--system-prompt` and `--system-prompt-file` are mutually exclusive. The append flags can be combined with either replacement flag.
+`new` is an alias for `init`.
 
-Choose based on whether Claude Code's default identity still fits your task. Use an append flag when Claude should remain a coding assistant that also follows your extra rules: per-invocation instructions, output formatting, or domain context for a `-p` script. Appending preserves the default tool guidance, safety instructions, and coding conventions, so you only supply what differs. Use a replacement flag when the surface, identity, or permission model differs from Claude Code's, like a non-coding agent in a pipeline that no human watches. Replacing drops all of the default prompt, including tool guidance and safety instructions, so you take responsibility for whatever your task still needs.
+For the create, test, and edit workflow that begins with this command, see [Create a plugin](/docs/en/plugins/create).
 
-For persistent personas you can switch between and share across a project, use [output styles](/docs/en/output-styles). For project conventions Claude should always follow, use [CLAUDE.md](/docs/en/memory). The [Agent SDK guide on system prompts](/docs/en/agent-sdk/modifying-system-prompts#decide-on-a-starting-point) covers the same decision in more depth.
+```bash theme={null}
+claude plugin init <name> [options]
+```
 
-#### System prompt flags in resumed conversations
+`<name>` becomes the directory name under `~/.claude/skills/` and the plugin's `name` in its manifest.
 
-By default, Claude Code builds the system prompt once, on a conversation's first request, with the text from any system prompt flags applied, and records it in the session. Until the conversation is compacted, every later request uses that recorded prompt, including after you return to the conversation with `--resume` or `--continue`. If you pass different system prompt flag text, or none, on that later launch, it takes effect once the conversation is compacted or when you start a new conversation.
+The command has no flag for another location. To scaffold inside a project instead, see [Create a plugin](/docs/en/plugins/create).
 
-Outside of [cloud sessions](/docs/en/cloud-environments), if you start Claude Code in [bare mode](/docs/en/headless#start-faster-with-bare-mode) by passing `--bare` or setting `CLAUDE_CODE_SIMPLE=1`, recording stays off unless you pass `--system-prompt-snapshot on`. Before v2.1.268, sessions that don't [fetch feature flags](/docs/en/env-vars#features-that-need-feature-flag-fetching), including sessions on Amazon Bedrock, Google Cloud's Agent Platform, and Microsoft Foundry, rebuilt the prompt on every request and `--system-prompt-snapshot` had no effect.
+| Flag                     | Description                                                                                             |
+| :----------------------- | :------------------------------------------------------------------------------------------------------ |
+| `--description <text>`   | Manifest description                                                                                    |
+| `--author <name>`        | Author name. Defaults to `git config user.name`                                                         |
+| `--author-email <email>` | Author email. Defaults to `git config user.email`                                                       |
+| `--with <components...>` | Also scaffold starter files for `skills`, `agents`, `hooks`, `mcp`, `lsp`, `output-style`, or `channel` |
+| `-f, --force`            | Overwrite an existing `.claude-plugin/` at the target                                                   |
 
-To rebuild the prompt on every request instead, for example while you iterate on its wording across `--continue` runs, pass `--system-prompt-snapshot off`. Before v2.1.265, passing any of the system prompt flags also turned recording off unless you passed `--system-prompt-snapshot on`.
+Scaffold a plugin with starter skill and hook files:
 
-## See also
+```bash theme={null}
+claude plugin init my-helper --with skills hooks
+```
 
-* [Chrome extension](/docs/en/chrome) - Browser automation and web testing
-* [Interactive mode](/docs/en/interactive-mode) - Shortcuts, input modes, and interactive features
-* [Quickstart guide](/docs/en/quickstart) - Getting started with Claude Code
-* [Common workflows](/docs/en/common-workflows) - Advanced workflows and patterns
-* [Settings](/docs/en/settings) - Configuration options
-* [Agent SDK documentation](/docs/en/agent-sdk/overview) - Programmatic usage and integrations
+Claude Code validates what it wrote and prints `Created plugin "my-helper" at ~/.claude/skills/my-helper`, followed by the id it loads as and the `claude plugin disable` command that turns it off.
+
+Claude Code exits `1` without writing when it can't scaffold safely, and the message names the reason. These are common reasons:
+
+* An unknown `--with` value
+* An existing scaffold at the target without `--force`
+* A managed setting that blocks skills-directory plugins
+
+### plugin install
+
+Install a plugin from a marketplace you've added. `i` is an alias for `install`.
+
+```bash theme={null}
+claude plugin install <plugin> [options]
+```
+
+Most plugins install without a prompt. For a plugin whose marketplace entry [runs a command to install it](/docs/en/plugins/host-marketplace) or [sets a `headersHelper` for its download](/docs/en/plugins/host-marketplace#how-users-accept-a-headershelper-command), Claude Code first prints the command and asks `Run this command now? [y/N]`.
+
+| Flag                        | Description                                                                                                                                                                                                                                                                                         |
+| :-------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `-s, --scope <scope>`       | Installation scope: `user`, `project`, or `local`. Defaults to `user`                                                                                                                                                                                                                               |
+| `--config <key=value>`      | Set a [`userConfig`](/docs/en/plugins/manifest-reference) option the plugin's manifest declares. Repeat the flag for each option. Requires Claude Code v2.1.147 or later                                                                                                                                 |
+| `-y, --yes`                 | Accept the displayed install command without the `Run this command now?` prompt. Ignored when the command runs inside a Claude Code session, such as from the Bash tool or a hook. Requires Claude Code v2.1.229 or later                                                                           |
+| `--accept-command <sha256>` | Accept the displayed install command whose `sha256` a previous [`--json` run](#plugin-json-result) reported in `shownCommand`, in place of `-y`. Can't be combined with `-y`. See [Accept a displayed install command](#accept-a-displayed-install-command). Requires Claude Code v2.1.271 or later |
+| `--json`                    | Print the result as one JSON object on the last line of stdout instead of the human-readable message, for use in scripts. See [JSON result format](#plugin-json-result). Requires Claude Code v2.1.268 or later                                                                                     |
+
+Pass `-y` from your own terminal to accept the displayed command without the prompt. Here's what happens without a TTY and when Claude runs the command:
+
+* **stdin or stdout isn't a TTY, and you pass neither `-y` nor `--accept-command`**: the install is refused. The output says the command was only displayed, and the exit code is `1`
+* **Claude runs the command through its Bash tool**: `-y` is ignored. Run the command from your own terminal instead
+
+Install a plugin for everyone who clones the project:
+
+```bash theme={null}
+claude plugin install formatter@my-marketplace --scope project
+```
+
+Claude Code prints `Successfully installed plugin: formatter@my-marketplace (scope: project)`. When nothing new is installed, the output says why:
+
+* **Already installed at that scope**: the output is `Plugin "formatter@my-marketplace" is already installed (scope: project)` and the exit code is `0`
+* **You decline a command-source prompt**: the output is `Aborted.` and the exit code is `1`
+* **You decline a `headersHelper` prompt, or it can't be confirmed without a TTY**: the output is `Aborted — the command was not run.` and the exit code is `1`
+
+<h4 id="plugin-json-result">
+  JSON result format
+</h4>
+
+When you pass `--json` to `plugin install`, the last line of stdout is one JSON object. Parse only that line, because Claude Code prints any command the marketplace declares ahead of it.
+
+Three fields are always present:
+
+* `command`: the subcommand that ran, such as `install`
+* `outcome`: `ok` or `failed`
+* `message`: a human-readable description of the result
+
+Other fields, such as `pluginId`, `scope`, and `failureCode`, appear only when they apply.
+
+The `--json` option on `plugin uninstall`, `plugin update`, `plugin enable`, and `plugin disable` prints the same object with that subcommand's own fields.
+
+A usage error, such as an invalid `--scope`, prints no result line and exits `1` with the reason on stderr.
+
+#### Accept a displayed install command
+
+When a `--json` run displays a marketplace-declared command and doesn't run it, the `failed` result also carries a `shownCommand` object. Its fields include the command as displayed, the plugin it belongs to, and the command's `sha256`.
+
+To accept exactly that command, re-run with that `sha256` as `--accept-command` from your own terminal, because the flag has no effect inside a Claude Code session. Requires Claude Code v2.1.271 or later.
+
+The `sha256` counts as acceptance for exactly that command, plugin, and marketplace catalog. If any of them changed since the command was displayed, Claude Code doesn't accept the `sha256` and shows the command again. A change that the run's own marketplace refresh fetches also counts as such a change.
+
+If `shownCommand.acceptCommandMatched` is `false`, the `sha256` you passed doesn't match the command now displayed. Review that command before re-running with its `sha256`.
+
+### plugin uninstall
+
+Remove an installed plugin from one scope. `remove` and `rm` are aliases for `uninstall`.
+
+```bash theme={null}
+claude plugin uninstall <plugin> [options]
+```
+
+| Flag                  | Description                                                                                                                                                                                                    |
+| :-------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `-s, --scope <scope>` | Uninstall from scope: `user`, `project`, or `local`. Defaults to `user`                                                                                                                                        |
+| `--keep-data`         | Preserve the plugin's persistent data directory, `~/.claude/plugins/data/<id>/`                                                                                                                                |
+| `--prune`             | Also remove auto-installed [dependencies](/docs/en/plugins/dependencies) that no remaining plugin needs                                                                                                             |
+| `-y, --yes`           | Skip the `--prune` confirmation prompt. Required with `--prune` when stdin or stdout isn't a TTY                                                                                                               |
+| `--json`              | Print the result as one JSON object on the last line of stdout, in the [same format as `plugin install --json`](#plugin-json-result). Can't be combined with `--prune`. Requires Claude Code v2.1.268 or later |
+
+Uninstall a plugin from project scope:
+
+```bash theme={null}
+claude plugin uninstall formatter@my-marketplace --scope project
+```
+
+Claude Code prints `Successfully uninstalled plugin: formatter (scope: project)`. When the plugin isn't installed at that scope, the command prints a line that starts `Failed to uninstall plugin "formatter@my-marketplace":` and exits `1`.
+
+If the failure line continues with `"formatter" was not uninstalled:`, Claude Code couldn't confirm that the scope's settings no longer switch the plugin on, so the plugin stays installed with everything it saved. With `--json`, the result carries `failureCode: "settings_still_on"`. This settings check requires Claude Code v2.1.282 or later.
+
+#### What an uninstall deletes and keeps
+
+When you uninstall a plugin from the last scope it's installed at, Claude Code also deletes the plugin's stored [options and secrets](/docs/en/plugins/manifest-reference#user-configuration) and its data directory, `~/.claude/plugins/data/<id>/`. There are three exceptions:
+
+* With `--keep-data`, the data directory stays
+* When another installed plugin uses the same folder, such as one whose ID differs from this one only in letter case, the data directory stays
+* When Claude Code can't read the list of installed plugins back after it removes the plugin from that scope, the options, secrets, and data directory all stay, because the plugin may still be installed at another scope. The uninstall still succeeds. The message lists what stayed and how to delete it, and with `--json` the result carries `savedKept: "install_records_unreadable"`
+
+With `--json`, `keptData` reports whether the directory stayed, and `/plugin` shows `· data preserved` when it did. For a directory that stays without `--keep-data`, this reporting requires Claude Code v2.1.281 or later. The `savedKept` field requires Claude Code v2.1.282 or later.
+
+### plugin enable
+
+Enable a disabled plugin. For a [plugin synced from claude.ai](/docs/en/plugins/loading#synced-plugins), pass `<name>@synced` as the plugin.
+
+```bash theme={null}
+claude plugin enable <plugin> [options]
+```
+
+| Flag                  | Description                                                                                                                                                                  |
+| :-------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `-s, --scope <scope>` | Scope to enable at: `user`, `project`, or `local`. Auto-detected when omitted                                                                                                |
+| `--json`              | Print the result as one JSON object on the last line of stdout, in the [same format as `plugin install --json`](#plugin-json-result). Requires Claude Code v2.1.268 or later |
+
+Without `--scope`, the command checks your settings files in the order local, project, user, and uses the first scope that mentions the plugin.
+
+If you pass a `--scope` where the plugin isn't declared, the command either writes an override or fails:
+
+* **A scope that [takes precedence](/docs/en/plugins/loading) over the declaring one**: Claude Code writes an override at the scope you passed. For example, `claude plugin disable formatter --scope local` turns off a project-enabled plugin for you alone
+* **Any other scope**: the command fails with `Plugin "formatter" is installed at project scope, not user. Use --scope project or omit --scope to auto-detect.`
+
+If the plugin is already enabled at the resolved scope, the command prints `Plugin "formatter" is already enabled` and exits `1`. With `--json`, the result has `"failureCode": "already_in_goal_state"` and `"alreadyInGoalState": true`, so a script can treat that case as success.
+
+When the plugin declares [dependencies](/docs/en/plugins/dependencies), Claude Code enables them too. The command fails in these cases:
+
+* **A dependency is not installed**: enable fails and prints the `claude plugin install` command for each missing dependency
+* **A dependency is blocked by your organization's plugin policy**: enable fails and names the blocked dependency
+* **A dependency is set to `false` at a scope with higher precedence than the target scope**: enable fails. Enable the dependency at that scope, or pass `--scope` to write there
+
+Re-enable a plugin wherever it's declared:
+
+```bash theme={null}
+claude plugin enable formatter
+```
+
+Claude Code prints `Successfully enabled plugin: formatter (scope: project)`, naming the scope it detected.
+
+### plugin disable
+
+Disable a plugin without uninstalling it. For a [plugin synced from claude.ai](/docs/en/plugins/loading#synced-plugins), pass `<name>@synced` as the plugin.
+
+```bash theme={null}
+claude plugin disable [plugin] [options]
+```
+
+| Flag                  | Description                                                                                                                                                                  |
+| :-------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `-a, --all`           | Disable every enabled plugin. Can't be combined with a plugin name or `--scope`                                                                                              |
+| `-s, --scope <scope>` | Scope to disable at: `user`, `project`, or `local`. Auto-detected when omitted                                                                                               |
+| `--json`              | Print the result as one JSON object on the last line of stdout, in the [same format as `plugin install --json`](#plugin-json-result). Requires Claude Code v2.1.268 or later |
+
+Without `--scope`, the scope is auto-detected in the same local, project, user order as [`plugin enable`](#plugin-enable).
+
+If you pass neither a plugin name nor `--all`, Claude Code prints `Please specify a plugin name or use --all to disable all plugins` and exits `1`. Disabling a plugin that is already disabled prints `Plugin "formatter" is already disabled` and exits `1`, as [`plugin enable`](#plugin-enable) does for an already-enabled plugin.
+
+The command fails for a plugin that is still required:
+
+* **Another enabled plugin [depends on](/docs/en/plugins/dependencies) it**: the command fails and names the dependents to disable first
+* **Your organization requires it as a synced plugin**: the command fails and saves nothing
+
+Disable one plugin:
+
+```bash theme={null}
+claude plugin disable formatter
+```
+
+Claude Code prints `Successfully disabled plugin: formatter (scope: project)`.
+
+### plugin update
+
+Update a plugin to the latest version its marketplace offers. The new version loads in your next session, or after you run `/reload-plugins` in a running one.
+
+```bash theme={null}
+claude plugin update <plugin> [options]
+```
+
+| Flag                        | Description                                                                                                                                                                                                                              |
+| :-------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `-s, --scope <scope>`       | Scope to update: `user`, `project`, `local`, or `managed`. Auto-detected when omitted                                                                                                                                                    |
+| `-y, --yes`                 | Accept a changed install command from a [command-source](/docs/en/plugins/host-marketplace) plugin, without the prompt. Required when stdin or stdout isn't a TTY, unless you pass `--accept-command`. Requires Claude Code v2.1.229 or later |
+| `--accept-command <sha256>` | Accept the marketplace-declared command whose `sha256` a previous [`--json` run](#plugin-json-result) reported in `shownCommand`, in place of `-y`. Can't be combined with `-y`. Requires Claude Code v2.1.271 or later                  |
+| `--json`                    | Print the result as one JSON object on the last line of stdout, in the [same format as `plugin install --json`](#plugin-json-result). Requires Claude Code v2.1.268 or later                                                             |
+
+If you omit `--scope`, the command updates the plugin at the most specific scope it's installed at for your current project, checking local, project, user, then managed.
+
+Before v2.1.281, the command used `user` when you omitted `--scope`, so updating a plugin installed only at project or local scope failed with `Plugin "<name>" is not installed at scope user`. On those versions, pass `--scope`.
+
+`managed` is the one scope you can update but not install to. For admin-installed plugins, see [Manage plugins for your organization](/docs/en/plugins/org).
+
+Update a plugin:
+
+```bash theme={null}
+claude plugin update formatter@my-marketplace
+```
+
+Claude Code prints `Checking for updates for plugin "formatter@my-marketplace"…`, then the result. When nothing is newer, it prints `formatter is already at the latest version (1.0.0).` and exits `0`.
+
+You can pass a bare plugin name, which the command matches against your installed plugins. When installed plugins from different marketplaces share the name, the command refuses the update and lists the qualified `plugin-name@marketplace-name` commands to run instead. Updating by bare name requires Claude Code v2.1.246 or later.
+
+### plugin list
+
+List installed plugins with their version, scope, and status.
+
+```bash theme={null}
+claude plugin list [options]
+```
+
+| Flag          | Description                                                                                          |
+| :------------ | :--------------------------------------------------------------------------------------------------- |
+| `--json`      | Print the list as JSON                                                                               |
+| `--available` | Also list plugins your marketplaces offer that you haven't installed. Has no effect without `--json` |
+
+Claude Code groups the human-readable output by how each plugin loads:
+
+* **`Installed plugins:`**: plugins you installed from a marketplace
+* **`Session-only plugins (--plugin-dir / --plugin-url):`**: plugins loaded by those flags in the same command, as in `claude --plugin-dir ./my-plugin plugin list`
+* **`Skills-directory plugins (.claude/skills/*):`**: plugins Claude Code found in a skills directory
+* **`Synced from claude.ai`**: [plugins synced from your claude.ai account](/docs/en/plugins/loading#synced-plugins)
+
+With nothing in any group, Claude Code prints ``No plugins installed. Use `claude plugin install` to install a plugin.``
+
+#### JSON output
+
+With `--json`, Claude Code prints an array with one object per installation. Each object carries the fields below. `id`, `version`, `scope`, `enabled`, and `installPath` are always present, and the others appear only when they apply.
+
+| Field          | Type             | Description                                                                                                                                                                                                                              |
+| :------------- | :--------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`           | string           | `name@marketplace` for installs, `name@inline` for session-only plugins, `name@skills-dir` for skills-directory plugins, `name@synced` for plugins synced from claude.ai                                                                 |
+| `version`      | string           | For a marketplace install, the [version Claude Code computed](/docs/en/plugins/loading#versions-and-updates) at install. For a session-only, skills-directory, or synced plugin, the manifest's `version`, or `unknown` when it declares none |
+| `scope`        | string           | `user`, `project`, `local`, or `managed` for installs; `user` or `project` for skills-directory plugins; `session` for session-only plugins; `synced` for plugins synced from claude.ai                                                  |
+| `enabled`      | boolean          | Whether the plugin is enabled in your merged settings                                                                                                                                                                                    |
+| `installPath`  | string           | Directory the plugin loads from                                                                                                                                                                                                          |
+| `installedAt`  | string           | ISO timestamp of the install. Marketplace installs only                                                                                                                                                                                  |
+| `lastUpdated`  | string           | ISO timestamp of the last update. Marketplace installs only                                                                                                                                                                              |
+| `projectPath`  | string           | Project the install belongs to. `project` and `local` scope only                                                                                                                                                                         |
+| `mcpServers`   | object           | The plugin's MCP server definitions, when a marketplace-installed plugin has any                                                                                                                                                         |
+| `errors`       | array of strings | Load errors, when the plugin failed to load                                                                                                                                                                                              |
+| `notes`        | array of strings | Authoring warnings for a plugin that loaded and works                                                                                                                                                                                    |
+| `errorDetails` | array of objects | One object per `errors` entry, giving its diagnostic `type` and the names it refers to, such as the plugin, marketplace, server, or file. Requires Claude Code v2.1.268 or later                                                         |
+| `noteDetails`  | array of objects | The same detail objects for each `notes` entry. Requires Claude Code v2.1.268 or later                                                                                                                                                   |
+
+With `--json --available`, Claude Code prints one object instead of an array. Its `installed` field holds the array of installed-plugin objects, and its `available` field holds one object per uninstalled marketplace plugin with the fields below.
+
+| Field             | Type             | Description                                                                                                            |
+| :---------------- | :--------------- | :--------------------------------------------------------------------------------------------------------------------- |
+| `pluginId`        | string           | `name@marketplace`                                                                                                     |
+| `name`            | string           | The plugin's name in the marketplace                                                                                   |
+| `marketplaceName` | string           | The marketplace that offers it                                                                                         |
+| `source`          | string or object | The marketplace entry's [source](/docs/en/plugins/marketplace-reference): a string for a relative path, an object otherwise |
+| `description`     | string           | The entry's description, when it has one                                                                               |
+| `version`         | string           | The entry's version, when it declares one                                                                              |
+| `installCount`    | number           | Install count, when Claude Code has one for the plugin                                                                 |
+
+### plugin details
+
+Show a plugin's component inventory and its projected token cost.
+
+The plugin must be loaded: installed, found in a skills directory, or passed with `--plugin-dir` or `--plugin-url` in the same command. The `<name>` is a plugin `name` or `name@marketplace`.
+
+```bash theme={null}
+claude plugin details <name>
+```
+
+The command takes no flags beyond `--help`.
+
+Show what an installed plugin contributes:
+
+```bash theme={null}
+claude plugin details formatter
+```
+
+Claude Code prints the plugin's name, version, description, and source, then these sections:
+
+* **`Component inventory`**: the plugin's skills, agents, hooks, MCP servers, and LSP servers
+* **`Projected token cost`**: the always-on tokens the plugin adds to every session
+* **`Per-component (rounded)`**: always-on and on-invoke estimates for each skill, agent, and command. Omitted when the plugin has none
+
+For what the two cost figures mean, see [Measure plugin cost and usage](/docs/en/plugins/measure).
+
+For a plugin that isn't loaded, Claude Code prints ``Plugin "formatter" not found. Run `claude plugin list` to see installed plugins, or pass --plugin-dir <path> to load one from disk.`` and exits `1`.
+
+### plugin prune
+
+Remove auto-installed [dependencies](/docs/en/plugins/dependencies) that no installed plugin needs anymore. The command never removes a plugin you installed yourself. `autoremove` is an alias for `prune`.
+
+```bash theme={null}
+claude plugin prune [options]
+```
+
+| Flag                  | Description                                                             |
+| :-------------------- | :---------------------------------------------------------------------- |
+| `-s, --scope <scope>` | Prune at scope: `user`, `project`, or `local`. Defaults to `user`       |
+| `--dry-run`           | List what would be removed without removing it                          |
+| `-y, --yes`           | Skip the confirmation prompt. Required when stdin or stdout isn't a TTY |
+
+Preview what a prune would remove:
+
+```bash theme={null}
+claude plugin prune --dry-run
+```
+
+Claude Code lists the orphaned dependencies and ends with `(dry run — nothing removed)`. With none to remove, it prints a line that starts `Nothing to prune`.
+
+Without `--dry-run`, the command removes the orphaned dependencies only after you confirm at the prompt or pass `-y`.
+
+The exit code is `0` whatever you answer at the prompt.
+
+What `prune` does depends on whether a terminal is attached and whether you pass `-y`:
+
+| Terminal and flags               | What happens                                                                                  |
+| :------------------------------- | :-------------------------------------------------------------------------------------------- |
+| Interactive terminal, no `-y`    | Lists the orphaned dependencies and asks `Remove? [y/N]`                                      |
+| Any terminal, `-y`               | Removes them and prints `Removed N auto-installed plugins: <names>`                           |
+| Non-TTY stdin or stdout, no `-y` | Prints the list and ``Not a TTY — run `claude plugin prune -y` to remove.``, removing nothing |
+
+### plugin eval
+
+Run a plugin's [eval cases](/docs/en/plugin-evals) and report scored results. Requires Claude Code v2.1.269 or later.
+
+Each case is a prompt plus graders. Claude Code runs it several times in an isolated session with only the target plugin loaded, and by default also without the plugin so the report shows the difference.
+
+See [Test plugins with evals](/docs/en/plugin-evals) for the case format, graders, results, and CI usage.
+
+```bash theme={null}
+claude plugin eval [target] [options]
+```
+
+The optional `target` defaults to the current directory and takes any of these forms:
+
+* A plugin directory
+* A single `prompt.md` or `case.yaml` file
+* An installed plugin as `name` or `name@marketplace`
+* `name@skills-dir`
+
+Put the target before `--tag`, `--allow-tools`, and `--json`. Each of these options takes the words that follow it as its value, so a target written after one of them is read as a tag, a tool name, or the JSON output path instead of as the target.
+
+This table lists the options most runs use. Run `claude plugin eval --help` for the complete set, including `--case`, `--tag`, `--output-dir`, `--report`, `--allow-real-servers`, `--keep-temp`, and `--verbose`.
+
+| Option                     | Description                                                                                                                                                     | Default                                                                        |
+| :------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------- |
+| `--runs <n>`               | Runs per case in each [arm](/docs/en/plugin-evals#compare-against-a-no-plugin-baseline)                                                                              | Each case's `runs`, else 3                                                     |
+| `-j, --concurrency <n>`    | Agent sessions to run at once, 1 to 8. They share your rate limit                                                                                               | `1`                                                                            |
+| `--model <model>`          | Model for the agent under test                                                                                                                                  | Each case's `model`, else `ANTHROPIC_MODEL` if set, else Claude Code's default |
+| `--judge-model <model>`    | Model for `llm` and `baseline` graders                                                                                                                          | A small fast model                                                             |
+| `--ablation <mode>`        | `none` or `with-without`. See [Compare against a no-plugin baseline](/docs/en/plugin-evals#compare-against-a-no-plugin-baseline)                                     | `with-without` when a plugin resolves, else `none`                             |
+| `--threshold <0..1>`       | Exit 1 if any case scores below this                                                                                                                            | `1.0`                                                                          |
+| `--max-cost-usd <usd>`     | Stop before the next run once spend reaches this, exit 2, and report partial results                                                                            | No limit                                                                       |
+| `--allow-tools <tools...>` | Grant tools beyond the read-only set, such as `Bash`, `Write`, `Edit`, or `"mcp__plugin_<plugin>_<server>__*"`. See [Grant tools](/docs/en/plugin-evals#grant-tools) |                                                                                |
+| `--scaffold`               | Run each case's [`scaffold_script`](/docs/en/plugin-evals#add-setup-or-history-with-case-yaml)                                                                       | Off                                                                            |
+| `--trust-plugin`           | Skip the first-run trust prompt, for CI. See [What a run can access](/docs/en/plugin-evals#security)                                                                 | Off                                                                            |
+| `--mocks <mode>`           | `record` or `off`. See [Mock MCP servers](/docs/en/plugin-evals#mock-mcp-servers)                                                                                    | `record`                                                                       |
+| `--eval-dir <dir>`         | Directory below the plugin that holds the cases                                                                                                                 | The manifest's `experimental.evals`, else `evals`                              |
+| `--json [path]`            | Print the [result document](/docs/en/plugin-evals#json-result) to stdout, or write it to a `.json` path                                                              |                                                                                |
+| `--no-publish`             | Keep the HTML report local                                                                                                                                      |                                                                                |
+
+The exit code reports how the run ended. To act on it in a pipeline, see [Run evals in CI](/docs/en/plugin-evals#run-evals-in-ci).
+
+| Exit code | Meaning                                                        |
+| :-------- | :------------------------------------------------------------- |
+| `0`       | Every case meets the threshold                                 |
+| `1`       | A failing case, a load error, or an untrusted plugin directory |
+| `2`       | A partial run                                                  |
+| `130`     | Interrupted                                                    |
+| `143`     | Terminated                                                     |
+
+### plugin eval init
+
+Create an eval suite for the plugin in the current directory. Requires Claude Code v2.1.269 or later. See [Create your first eval suite](/docs/en/plugin-evals#create-your-first-eval-suite).
+
+```bash theme={null}
+claude plugin eval init [name] [options]
+```
+
+In a terminal, the command opens an interactive Claude Code session for an authoring interview. In the interview, Claude does the following:
+
+1. Reads the plugin
+2. Asks you what it should do well
+3. Proposes cases and graders
+4. Writes the case files
+5. Runs the cases and reviews the grades with you to check that the graders score the way you would
+
+With `--bare`, or without a terminal, the command writes a blank single-case template instead. When Claude runs the command from inside a Claude Code session, the command prints the interview instructions for that session to follow rather than writing a template.
+
+The optional `name` is a case name. It's required with `--bare` or without a terminal, because the command writes the blank template for that case. The interview doesn't need one.
+
+The command accepts these options:
+
+| Option              | Description                                                                                       | Default                                           |
+| :------------------ | :------------------------------------------------------------------------------------------------ | :------------------------------------------------ |
+| `--bare`            | Write a blank `prompt.md` and `graders/criteria.md` for `<name>` instead of running the interview |                                                   |
+| `-i, --interactive` | Require the interview. Fails without a terminal instead of writing a template                     |                                                   |
+| `--eval-dir <dir>`  | Directory below the current directory to write cases into                                         | The manifest's `experimental.evals`, else `evals` |
+
+### plugin tag
+
+Create an annotated git tag named `<name>--v<version>` for a plugin release. Before tagging, the command checks that the plugin's `plugin.json` and any marketplace entry that lists it agree on the version.
+
+For when to tag a release, see [Publish a plugin](/docs/en/plugins/publish).
+
+```bash theme={null}
+claude plugin tag [path] [options]
+```
+
+The `[path]` is the plugin directory, defaulting to the current directory. The command finds the marketplace entry by walking up from that directory to a `.claude-plugin/marketplace.json` that lists the plugin.
+
+| Flag                  | Description                                                                         |
+| :-------------------- | :---------------------------------------------------------------------------------- |
+| `--push`              | Push the tag to `--remote` after creating it                                        |
+| `--dry-run`           | Print what would be tagged without creating the tag                                 |
+| `-f, --force`         | Skip the dirty-working-tree and tag-already-exists checks                           |
+| `-m, --message <msg>` | Tag annotation message. `%s` stands for the version. Defaults to `<name> <version>` |
+| `--remote <name>`     | Remote to push to with `--push`. Defaults to `origin`                               |
+
+Preview the tag for a plugin in a marketplace checkout:
+
+```bash theme={null}
+claude plugin tag plugins/formatter --dry-run
+```
+
+Claude Code prints the plan:
+
+* The plugin name
+* The version and which file it came from
+* The matching marketplace entry, when there is one
+* The tag name
+* The `git tag` and `git push` commands it would run
+
+Without `--dry-run`, Claude Code prints `Created tag formatter--v1.0.0` and either `Pushed to origin` or the push command to run yourself. If the push fails, the tag is still created locally and the command exits with an error.
+
+The command exits `1` and prints the reason when it can't tag safely. Common reasons are:
+
+* No `version` in `plugin.json` or the marketplace entry
+* The tag already exists
+* The working tree is dirty
+
+### plugin validate
+
+Validate a plugin manifest, a marketplace manifest, or the skills, agents, and commands in a directory, and exit with a code a CI job can act on. For the create, test, and edit workflow, see [Create a plugin](/docs/en/plugins/create). For what the validator checks in each manifest, see the [plugin manifest reference](/docs/en/plugins/manifest-reference) and the [marketplace reference](/docs/en/plugins/marketplace-reference).
+
+```bash theme={null}
+claude plugin validate <path> [options]
+```
+
+| Flag       | Description                                                                                                                                           |
+| :--------- | :---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--strict` | Treat warnings as errors, so unrecognized fields and missing metadata that the runtime tolerates fail the run. Requires Claude Code v2.1.145 or later |
+| `--json`   | Output the validation report as one JSON object with the same exit codes. Requires Claude Code v2.1.259 or later                                      |
+
+Validate a plugin before committing it:
+
+```bash theme={null}
+claude plugin validate ./my-plugin --strict
+```
+
+#### Validate a directory
+
+The `<path>` is a manifest file or a directory. Given a directory, Claude Code picks what to validate by what it finds there:
+
+* `.claude-plugin/marketplace.json`, when it exists
+* Otherwise `.claude-plugin/plugin.json`
+* Otherwise the component files, chosen by the directory's name. Validating component files without a manifest requires Claude Code v2.1.233 or later:
+  * A directory named `skills`, `agents`, or `commands`: the files inside it
+  * A directory named `.claude`: the `skills`, `agents`, and `commands` directories inside it
+  * Any other directory: those three directories under its `.claude`
+
+Claude Code doesn't follow symlinks inside the directory you name. What it does depends on where the link is:
+
+* **A linked `skills`, `agents`, or `commands` directory under the plugin or `.claude` root**: Claude Code warns that nothing in it was read.
+* **A linked entry inside a `skills`, `agents`, or `commands` directory**: Claude Code skips it and warns, per directory, how many entries it skipped that a session would load.
+* **The `skills`, `agents`, or `commands` directory you name is itself a symlink, or its parent `.claude` directory is**: Claude Code reports an error and checks nothing in it. Name the real directory instead.
+
+A few files are not read by a validation run:
+
+* **A `SKILL.md` at the plugin root**: when you run `claude plugin validate` against a plugin directory, Claude Code doesn't check a `SKILL.md` at the plugin root
+* **A `CLAUDE.md` at the plugin root**: in a plugin run, Claude Code also warns about a `CLAUDE.md` at the plugin root
+* **Plugin files in a marketplace run**: from a marketplace directory, Claude Code doesn't open the plugins' skill, agent, command, or hook files, or the MCP server files they bundle. To find errors in those files, validate each plugin directory
+
+#### Output and exit codes
+
+Claude Code prints the file it validated, any errors and warnings with their paths, and a verdict line. The exit code follows the verdict:
+
+| Exit code | Verdict line                                                                    | Meaning                                                    |
+| :-------- | :------------------------------------------------------------------------------ | :--------------------------------------------------------- |
+| `0`       | `Validation passed` or `Validation passed with warnings`                        | The manifest loads. With `--strict`, no warnings either    |
+| `1`       | `Validation failed` or `Validation failed (--strict treats warnings as errors)` | An error, or a warning under `--strict`                    |
+| `2`       | `Unexpected error during validation: <reason>`                                  | The validator itself failed, such as on an unreadable path |
+
+With `--json`, Claude Code writes the report to stdout as one JSON object with these top-level fields:
+
+* `success`: the same verdict the exit code gives
+* `strict`: whether the run treated warnings as errors
+* `target`: the resolved path Claude Code validated
+* `manifest`: the manifest's own result, or `null` for a run without a manifest
+* `contents`: per-file results, each naming its `file` and carrying `errors`, `warnings`, and `notes` arrays
+
+On exit `2`, the command writes nothing to stdout. The error message goes to stderr.
+
+## claude plugin marketplace commands
+
+Run `claude plugin marketplace <subcommand>` from your shell to add, list, refresh, and remove the marketplaces you install plugins from.
+
+* **Exit codes**: these subcommands follow the [exit-code convention](#claude-plugin-commands) of the plugin commands
+* **Scopes**: their `--scope` flag has no `-s` short form
+
+For what a marketplace is and how Claude Code caches it, see [Plugin loading reference](/docs/en/plugins/loading).
+
+### plugin marketplace add
+
+Add a marketplace from a GitHub repository, a git URL, a hosted `marketplace.json`, or a local path, and declare it in a settings file.
+
+After you add it, Claude Code installs any [dependencies](/docs/en/plugins/dependencies) that your installed plugins were missing.
+
+```bash theme={null}
+claude plugin marketplace add <source> [options]
+```
+
+| Flag                  | Description                                                                                                                                                              |
+| :-------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--scope <scope>`     | Settings file to declare the marketplace in: `user`, `project`, or `local`. Defaults to `user`                                                                           |
+| `--sparse <paths...>` | Limit the git checkout to these directories, for monorepos. `github` and `git` sources only                                                                              |
+| `--claudeai`          | Read the argument as the name of a [marketplace hosted on claude.ai](/docs/en/plugins/install#add-from-claude-ai) instead of a source. Requires Claude Code v2.1.273 or later |
+
+`<source>` takes any of the forms in the table below, and its form decides the source type and how Claude Code fetches the marketplace. For the resulting source object, see the [marketplace reference](/docs/en/plugins/marketplace-reference).
+
+| You type                                                                               | Source type | How Claude Code fetches it                                                                               |
+| :------------------------------------------------------------------------------------- | :---------- | :------------------------------------------------------------------------------------------------------- |
+| `owner/repo`, `owner/repo#ref`, or `owner/repo@ref`                                    | `github`    | Clones the GitHub repository, pinned to `ref` when given. Owner and repo must follow GitHub naming rules |
+| `user@host:path[.git][#ref]`                                                           | `git`       | Clones over SSH                                                                                          |
+| `https://example.com/repo.git[#ref]`, or a URL containing `/_git/`                     | `git`       | Clones over HTTPS, including Azure DevOps URLs                                                           |
+| `https://github.com/owner/repo` or `https://gitlab.com/namespace/project`              | `git`       | Clones over HTTPS after appending `.git`                                                                 |
+| Any other `http://` or `https://` URL, including a self-hosted git host without `.git` | `url`       | Fetches the URL as a `marketplace.json`. To clone a repository there instead, append `.git`              |
+| `./path`, `../path`, `/path`, or `~/path` to a directory                               | `directory` | Reads the directory in place. On Windows, `.\`, `..\`, and `C:\` forms also work                         |
+| The same path forms, to a `.json` file                                                 | `file`      | Reads the file in place                                                                                  |
+
+For a host whose clone URLs don't carry the `.git` suffix, such as AWS CodeCommit, add the marketplace as a git entry in [`extraKnownMarketplaces`](/docs/en/settings-reference#extraknownmarketplaces) instead. Claude Code clones a git entry whether or not its URL ends in `.git`.
+
+Claude Code also clones a `gitlab.com` URL with nested subgroups, such as `https://gitlab.com/group/subgroup/project`.
+
+Add a marketplace and share it with the project:
+
+```bash theme={null}
+claude plugin marketplace add your-org/your-marketplace --scope project
+```
+
+Claude Code prints `Successfully added marketplace: your-marketplace (declared in project settings)`, using the `name` from the marketplace's own manifest. A repeat add or an invalid source prints one of these results instead:
+
+* **Marketplace already on disk**: the output is `Marketplace 'your-marketplace' already on disk — declared in project settings` and the exit code is `0`
+* **Unrecognized source**: the output is `Invalid marketplace source format. Try: owner/repo, https://..., or ./path` and the exit code is `1`
+* **Bare host such as `gitlab.example.com/team/plugins`**: the add fails as an invalid `owner/repo` shorthand, and the message tells you to add `https://` or use a local path
+
+Add a [marketplace hosted on claude.ai](/docs/en/plugins/install#add-from-claude-ai) by the name printed in the `From claude.ai:` section of `claude plugin marketplace list`:
+
+```bash theme={null}
+claude plugin marketplace add --claudeai claudeai-organization-library
+```
+
+With `--claudeai`, the command refuses `--scope` and `--sparse`. The marketplace is hosted for your account, not declared in a settings file, so you can't share it through a project's `.claude/settings.json`.
+
+### plugin marketplace list
+
+List every marketplace you've added, with its source.
+
+```bash theme={null}
+claude plugin marketplace list [options]
+```
+
+| Flag     | Description            |
+| :------- | :--------------------- |
+| `--json` | Print the list as JSON |
+
+Claude Code prints `Configured marketplaces:` and one `Source:` line per marketplace, or `No marketplaces configured`.
+
+With `--json`, Claude Code prints an array with one object per marketplace, carrying the fields below. Every field is a string.
+
+| Field             | Description                                                            |
+| :---------------- | :--------------------------------------------------------------------- |
+| `name`            | The marketplace's name                                                 |
+| `source`          | `github`, `git`, `url`, `directory`, `file`, or `claudeai`             |
+| `repo`            | `owner/repo`. `github` sources only                                    |
+| `url`             | The clone or fetch URL. `git` and `url` sources only                   |
+| `path`            | The local path. `directory` and `file` sources only                    |
+| `ref`             | The pinned branch or tag. `github` and `git` sources, only when pinned |
+| `installLocation` | Where Claude Code cached the marketplace                               |
+
+An added [claude.ai marketplace](/docs/en/plugins/install#add-from-claude-ai) has no local clone, so its entry carries its claude.ai identifiers, `marketplaceId` and `organizationUuid`, in place of `installLocation`. It also carries `scope` when one is recorded, and `status`.
+
+If your terminal sessions [sync plugins from your claude.ai account](/docs/en/plugins/loading#synced-plugins), the text listing ends with a `From claude.ai:` section. That section names the marketplaces claude.ai lists for your account that you haven't added, both git-based and hosted. It requires Claude Code v2.1.273 or later.
+
+To add a marketplace from that section, see [Add a marketplace from claude.ai](/docs/en/plugins/install#add-from-claude-ai).
+
+The `--json` output covers configured marketplaces only and leaves the section out.
+
+### plugin marketplace remove
+
+Remove a marketplace's declaration from your settings. `rm` is an alias for `remove`.
+
+<Warning>
+  When you remove a marketplace from the last scope that declares it, Claude Code also deletes its cache and uninstalls every plugin you installed from it. Without `--scope`, the command removes the declaration from every scope. To refresh a marketplace without losing its plugins, run `plugin marketplace update` instead.
+</Warning>
+
+```bash theme={null}
+claude plugin marketplace remove <name> [options]
+```
+
+The `<name>` is the marketplace name that `plugin marketplace list` shows, not the source you passed to `add`.
+
+| Flag              | Description                                                                                                                                     |
+| :---------------- | :---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--scope <scope>` | Remove the declaration from one settings scope: `user`, `project`, or `local`. Without it, Claude Code removes the declaration from every scope |
+
+Remove a marketplace from every scope:
+
+```bash theme={null}
+claude plugin marketplace remove your-marketplace
+```
+
+Claude Code prints `Successfully removed marketplace: your-marketplace`, adding `(from project settings)` when you scoped it. If you scope to a settings file that doesn't declare the marketplace, the command fails with `Marketplace 'your-marketplace' is not declared in project settings. Omit --scope to remove it from all scopes.`
+
+### plugin marketplace update
+
+Refresh one marketplace, or every marketplace, from its source to fetch new plugins and versions. A marketplace added with a branch or tag `ref` updates to the latest commit of that ref, not the repository's default branch.
+
+```bash theme={null}
+claude plugin marketplace update [name]
+```
+
+The command takes no flags beyond `--help`.
+
+Refresh one marketplace:
+
+```bash theme={null}
+claude plugin marketplace update your-marketplace
+```
+
+Claude Code prints `Successfully updated marketplace: your-marketplace`. When you omit the name, it prints a count such as `Successfully updated 2 marketplaces`. With no marketplaces added, it prints `No marketplaces configured` and exits `0`.
+
+<h2 id="plugin-in-a-session">
+  /plugin in a session
+</h2>
+
+Inside an interactive session, `/plugin` opens the plugin panel. Each subcommand opens the panel on a tab, runs an action there, or prints a result inline. `/plugins` and `/marketplace` are aliases for `/plugin`.
+
+You can run these commands only in an interactive terminal session. In a non-interactive run such as `claude -p`, Claude Code replies that `/plugin` isn't available in this environment.
+
+For which surfaces have `/plugin`, how to install without it, and what each panel tab shows, see [Install and manage plugins](/docs/en/plugins/install).
+
+A `<plugin>` is a plugin `name` or `name@marketplace`.
+
+The table below lists every session form. The shell subcommands `init`, `update`, `details`, `prune`, `eval`, and `eval init` have no session form.
+
+| Command                                             | Aliases                                        | What it does                                                                                                                                                                                                                                                                                 |
+| :-------------------------------------------------- | :--------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/plugin`                                           |                                                | Opens the panel on the **Discover** tab. Any unrecognized first word after `/plugin` does the same                                                                                                                                                                                           |
+| `/plugin help`                                      | `/plugin --help`, `/plugin -h`                 | Shows the usage list of `/plugin` subcommands                                                                                                                                                                                                                                                |
+| `/plugin list [--enabled\|--disabled]`              | `ls`                                           | Prints your marketplace-installed plugins inline, with version, scope, and status. A filter flag shows only that state. A plugin whose enable state hasn't been applied yet is marked `— run /reload-plugins to apply`. Requires Claude Code v2.1.163 or later                               |
+| `/plugin install`                                   | `i`                                            | Opens the **Discover** tab                                                                                                                                                                                                                                                                   |
+| `/plugin install <plugin>`                          | `i`                                            | Opens the plugin's details in the **Discover** tab. With `name@marketplace`, opens them in that marketplace's list                                                                                                                                                                           |
+| `/plugin install <plugin> --marketplace <source>`   | `i`                                            | Adds the marketplace at `<source>` when you haven't added it yet, asking you to confirm first, then opens the plugin's details. See [Add a marketplace and install in one command](/docs/en/plugins/install#add-a-marketplace-and-install-in-one-command). Requires Claude Code v2.1.275 or later |
+| `/plugin manage`                                    |                                                | Opens the **Installed** tab                                                                                                                                                                                                                                                                  |
+| `/plugin stats`                                     |                                                | Opens the **Stats** tab, in sessions where [`/skill-doctor`](/docs/en/skills#find-unused-skills) is available. Anywhere else it opens the panel on the **Discover** tab                                                                                                                           |
+| `/plugin enable <plugin>`                           |                                                | Opens the **Installed** tab at the plugin and enables it                                                                                                                                                                                                                                     |
+| `/plugin disable <plugin>`                          |                                                | Opens the **Installed** tab at the plugin and disables it                                                                                                                                                                                                                                    |
+| `/plugin uninstall <plugin>`                        |                                                | Opens the **Installed** tab at the plugin and uninstalls it                                                                                                                                                                                                                                  |
+| `/plugin configure <plugin>`                        | `config`                                       | Opens the plugin's [`userConfig`](/docs/en/plugins/manifest-reference) dialog, or reports that the plugin declares none. Requires Claude Code v2.1.147 or later                                                                                                                                   |
+| `/plugin validate <path>`                           |                                                | Prints the same report as `claude plugin validate`, inline                                                                                                                                                                                                                                   |
+| `/plugin tag [path] [--push] [--dry-run] [--force]` |                                                | Creates the release tag as `claude plugin tag` does. Accepts `--push`, `--dry-run`, and `--force` or `-f`; with any other flag or an extra argument, Claude Code prints usage instead                                                                                                        |
+| `/plugin marketplace`                               | `market`                                       | Does nothing visible. Pass `add`, `list`, `update`, or `remove`                                                                                                                                                                                                                              |
+| `/plugin marketplace add [source]`                  | `market add`                                   | With a source, adds it and reports the result. Without one, opens the **Add marketplace** input                                                                                                                                                                                              |
+| `/plugin marketplace list`                          | `market list`                                  | Prints your marketplace names inline                                                                                                                                                                                                                                                         |
+| `/plugin marketplace update [name]`                 | `market update`                                | Opens the **Marketplaces** tab. With a name, refreshes that marketplace there                                                                                                                                                                                                                |
+| `/plugin marketplace remove [name]`                 | `market remove`, `market rm`, `marketplace rm` | Opens the **Marketplaces** tab. With a name, removes that marketplace there                                                                                                                                                                                                                  |
+
+If you name a plugin that isn't installed in the current project in `/plugin enable`, `disable`, `uninstall`, or `configure`, Claude Code prints `Plugin "<plugin>" is not installed in this project` instead of acting.
+
+<h2 id="reload-plugins">
+  /reload-plugins
+</h2>
+
+Apply pending plugin changes to the running session without restarting it. Pending changes are plugins you installed, updated, enabled, disabled, or edited on disk since the session started.
+
+When you close the `/plugin` panel with pending changes you made in it, Claude Code runs `/reload-plugins` for you. Run it yourself after plugin changes that happen outside the panel, such as a `claude plugin` command you ran in another terminal.
+
+```text theme={null}
+/reload-plugins [--force]
+```
+
+| Flag      | Description                                                                                       |
+| :-------- | :------------------------------------------------------------------------------------------------ |
+| `--force` | Apply the reload even when it would invalidate the prompt cache. `force` without dashes works too |
+
+### Reload summary
+
+Claude Code reloads every active plugin and prints one summary line, `Reloaded: N plugins · N skills · N agents · N hooks · N plugin MCP servers · N plugin LSP servers`, omitting the plugin MCP server count in a session without an interactive terminal. When any plugin failed, the summary adds `N errors during load. Run /plugin for details.`
+
+The skills count covers every skill a plugin provides, both its `commands/` entries and its `SKILL.md` skills. The agents count is the number of agents loaded in the session, including ones that don't come from plugins.
+
+When a reloaded plugin's [dependencies](/docs/en/plugins/dependencies) are missing, Claude Code installs them, reloads again, and appends `(+ N dependencies: <names>) resolved` to the summary.
+
+### Reloads that change MCP tools
+
+When the reload would add or remove a plugin MCP server or the `LSP` tool, and that change would invalidate the [prompt cache](/docs/en/prompt-caching#enabling-or-disabling-a-plugin), Claude Code doesn't apply the reload. It prints a line such as `This reload changes MCP tools (<server>) — your next message will re-read the whole conversation instead of using the cache. Run /reload-plugins --force to apply.` Pass `--force` to apply it anyway.
+
+### Sessions without an interactive terminal
+
+`/reload-plugins` also runs in sessions without an interactive terminal, such as the desktop app, the Agent SDK, and [non-interactive mode](/docs/en/headless) with `-p`. Requires Claude Code v2.1.260 or later.
+
+In those sessions, the command runs only when you type it into the session yourself, such as in the `-p` prompt or the desktop app's prompt box. When it arrives another way, such as through [Remote Control](/docs/en/remote-control) or a message relayed from Slack, the command replies `/reload-plugins isn't available over a remote connection in this session.` and reloads nothing.
+
+The reload in those sessions doesn't connect or disconnect plugin MCP servers. Those changes take effect in your next session.
+
+## Flags that load a plugin for one session
+
+Two `claude` flags load a plugin for one session only, without installing it. Both are repeatable.
+
+Plugin authors use them to test a plugin before publishing. For the load-edit-reload workflow, see [Develop without a marketplace](/docs/en/plugins/create#develop-without-a-marketplace).
+
+| Flag                  | Description                                                                                                                                                                | Example                                                                     |
+| :-------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------- |
+| `--plugin-dir <path>` | Load a plugin from a directory or a `.zip` archive of one. A folder of plugins loads each child folder that holds a `.claude-plugin/plugin.json`. Each flag takes one path | `claude --plugin-dir ./my-plugin --plugin-dir ./other.zip`                  |
+| `--plugin-url <url>`  | Fetch a plugin `.zip` archive from a URL. Repeat the flag, or pass several URLs space-separated in one quoted value                                                        | `claude --plugin-url "https://example.com/a.zip https://example.com/b.zip"` |
+
+A plugin that either flag loads is a session-only plugin. `claude plugin list` shows it as `<name>@inline` with scope `session`, but only when the same flag precedes the subcommand. For example, run `claude --plugin-dir ./my-plugin plugin list`.
+
+When a session-only plugin shares a name with an installed plugin, Claude Code loads the session-only copy for that session and skips the installed one. The installed copy loads instead if you disabled the session-only copy with `claude plugin disable <name>@inline`, or if managed settings lock that plugin name. For the precedence, see [Plugin loading reference](/docs/en/plugins/loading).
+
+An administrator can reject both flags, and folders named in the [`CLAUDE_CODE_PLUGIN_DIRS`](/docs/en/env-vars#variables) variable, with the managed [`disableSideloadFlags`](/docs/en/settings-reference#disablesideloadflags) setting. Claude Code then prints that the flag is disabled by your organization's managed settings and exits `1` without starting.
+
+From the Agent SDK, the [`plugins`](/docs/en/agent-sdk/plugins) option is the equivalent of `--plugin-dir`.
+
+## Next steps
+
+* [Install and manage plugins](/docs/en/plugins/install): the same operations as steps, with what you see at each one
+* [Plugin loading reference](/docs/en/plugins/loading): what each command changes on disk and which scope takes effect
+* [Troubleshoot plugins](/docs/en/plugins/troubleshooting): install, marketplace, load, and validation error messages with their fixes
+* [Plugin manifest reference](/docs/en/plugins/manifest-reference): the fields `claude plugin validate` checks

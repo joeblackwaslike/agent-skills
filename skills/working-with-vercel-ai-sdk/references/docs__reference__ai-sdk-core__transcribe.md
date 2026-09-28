@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/transcribe.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "fc13672b780998d9d26128637c3f517a1ad8f7778088a839883c102222dfc99b"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "d8819fb634b3d3e88485e4e65b67a653b4900a3aecd58cd011b0e3b505d15002"
 ---
 
 # `transcribe()`
@@ -14,7 +14,7 @@ import { openai } from '@ai-sdk/openai';
 import { readFile } from 'fs/promises';
 
 const { text: transcript } = await transcribe({
-  model: openai.transcription('whisper-1'),
+  model: openai.transcription('gpt-4o-transcribe'),
   audio: await readFile('audio.mp3'),
 });
 

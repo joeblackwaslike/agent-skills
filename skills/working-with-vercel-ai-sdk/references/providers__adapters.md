@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/adapters.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "94cf59e3981f486c13791ca9bf7b928f74cedac82c4439f36d4dfeb2e4bdb228"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "ccb95cc4d110590c59f61c61742813fa13c7e7a7d722878656345c2b1e5a855f"
 ---
 
 # Adapters
@@ -102,6 +102,7 @@ The following adapters are currently available:
   - [LM Studio](/providers/openai-compatible-providers/lmstudio)
   - [NVIDIA NIM](/providers/openai-compatible-providers/nim)
   - [ModelRush](/providers/openai-compatible-providers/modelrush)
+  - [Cheaper Inference](/providers/openai-compatible-providers/cheaper-inference)
   - [Clarifai](/providers/openai-compatible-providers/clarifai)
   - [Heroku](/providers/openai-compatible-providers/heroku)
   - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)

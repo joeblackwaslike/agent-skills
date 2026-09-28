@@ -17,8 +17,8 @@ related:
 summary: Learn about the Edge runtime, an environment in which Vercel Functions can run.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/edge.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "8d4824a30abebff75602f39e97e9c3acd95b4e739e12eed0eea3d8ecf575df25"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "cb684be72f7a0a765fa6ae7b4ea257ecc51f8700fe4bf33e17a6c1567f701a2c"
 ---
 
 # Edge Runtime
@@ -42,14 +42,14 @@ To convert your Vercel Function to use the Edge runtime, add the following code 
 - [Improved Node.js compatibility for Edge Middleware and Edge Functions](https://vercel.com/changelog/improved-node-js-compatibility-for-edge-middleware-and-edge-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related)
 - [New execution duration limit for Edge Functions](https://vercel.com/changelog/new-execution-duration-limit-for-edge-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related)
 - [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
-- [How can I make my library compatible with the Vercel Edge Runtime?](https://vercel.com/kb/guide/library-sdk-compatible-with-vercel-edge-runtime-and-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related) — Learn how to make your library or SDK compatible with the Edge Runtime for existing Edge Runtime code and Routing Middle
-- [How to send emails from an application on Vercel](https://vercel.com/kb/guide/sending-emails-from-an-application-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related) — Send email from Vercel Functions over an HTTP API instead of SMTP. Match the right Next.js pattern to your trigger and f
 - [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
+- [Vercel Edge Functions are now generally available](https://vercel.com/blog/edge-functions-generally-available?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related)
 - [Edge Runtime](https://nextjs.org/docs/pages/api-reference/edge?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related) — API Reference for the Edge Runtime.
 - [Edge Runtime](https://nextjs.org/docs/app/api-reference/edge?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related) — API Reference for the Edge Runtime.
 - [Introducing the Edge Runtime](https://vercel.com/blog/introducing-the-edge-runtime?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related)
 - [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
 - [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
+- [@vercel/functions API Reference \\(Node.js\\)](https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related) — Learn about available APIs when working with Vercel Functions.
 
 Full cross-link map for this page: [/docs/functions/runtimes/edge.graph.md](/docs/functions/runtimes/edge.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

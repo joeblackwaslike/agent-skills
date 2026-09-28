@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/opencode.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "eed6a9758b92749c8a6ca499ace5096b10b7bec5c9c19d963080b61b519b31d4"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "7136da8ada17f8a5b6ca4e47a8fdbb323cbc57ce9708ae44dada6b463434d9bc"
 ---
 
 # OpenCode Harness
@@ -37,18 +37,19 @@ import { openCode, createOpenCode } from '@ai-sdk/harness-opencode';
 ```ts
 import { HarnessAgent } from '@ai-sdk/harness/agent';
 import { openCode } from '@ai-sdk/harness-opencode';
-import { createVercelSandbox } from '@ai-sdk/sandbox-vercel';
+import { createVercelNetworkSandboxSession } from '@ai-sdk/sandbox-vercel';
 
 const agent = new HarnessAgent({
   harness: openCode,
   model: 'anthropic/claude-sonnet-4-6',
-  sandbox: createVercelSandbox({
-    runtime: 'node24',
-    ports: [4000],
-  }),
 });
 
-const session = await agent.createSession();
+const sandboxSession = await createVercelNetworkSandboxSession({
+  runtime: 'node24',
+  ports: [4000],
+  template: await agent.getSandboxTemplate(),
+});
+const session = await agent.createSession({ sandboxSession });
 
 let exitCode = 0;
 try {
@@ -67,6 +68,7 @@ try {
   console.error(err);
 } finally {
   await session.destroy();
+  await sandboxSession.destroy();
   process.exit(exitCode);
 }
 ```
@@ -114,6 +116,13 @@ Settings:
   such as `low`, `medium`, or `high`.
 - `port`: bridge port override.
 - `startupTimeoutMs`: maximum time to wait for the bridge to start.
+- `reconnect`: reconnect timing after an established bridge WebSocket
+  connection drops. `maxElapsedMs` controls the total retry window, including
+  connection establishment and backoff delays, and defaults to 30 seconds.
+  `initialDelayMs` defaults to 50 milliseconds, and `maxDelayMs` defaults to
+  2 seconds. These retries use exponential backoff and are separate from
+  `startupTimeoutMs`. They cannot recover when the sandbox, bridge process, or
+  bridge endpoint is permanently unavailable.
 - `mintBridgeToken`: synchronous function that receives the sandbox id and
   returns the bridge authentication token. By default, the adapter generates a
   random 32-byte token. Custom implementations must return a suitably secret
@@ -187,9 +196,10 @@ OpenCode requires a network sandbox with at least one exposed port,
 e.g. `@ai-sdk/sandbox-vercel`:
 
 ```ts
-const sandbox = createVercelSandbox({
+const sandboxSession = await createVercelNetworkSandboxSession({
   runtime: 'node24',
   ports: [4000],
+  template: await agent.getSandboxTemplate(),
 });
 ```
 

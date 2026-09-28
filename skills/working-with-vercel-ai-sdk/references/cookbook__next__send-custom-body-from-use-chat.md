@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/send-custom-body-from-use-chat.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "3dc03659b21fcf706ca852b4c7db84c44626c7f6674d2cbc1b26e163f93f59d7"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "e99c47c73ab1cda376b3a9fc92ddd5f03019c8d5c76d5268c1297405de2d3673"
 ---
 
 # Send Custom Body from useChat
@@ -103,7 +103,7 @@ export async function POST(req: Request) {
 
   // Call the language model
   const result = streamText({
-    model: 'openai/gpt-4.1',
+    model: 'openai/gpt-6-astra',
     messages: await convertToModelMessages(messages),
   });
 

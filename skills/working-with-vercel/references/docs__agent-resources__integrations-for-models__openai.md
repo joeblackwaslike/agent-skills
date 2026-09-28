@@ -13,8 +13,8 @@ related:
 summary: "Integrate your Vercel project with OpenAI's powerful suite of models."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/openai.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "fedd1306f2e6323265b7de0fd8b2e514c8923120ae6fcdb19a58fbbdce329aa8"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "d5980ed81940dfb5fb8c77574c6cd6100de42667ed9c05ae17f408dca408adeb"
 ---
 
 # Vercel & OpenAI Integration
@@ -28,7 +28,6 @@ Vercel integrates with [OpenAI](https://platform.openai.com/overview) to enable 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing AI Integrations on Vercel](https://vercel.com/blog/ai-integrations?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fopenai&source_site=vercel-docs&relationship=related)
-- [AI models](https://v0.app/docs/ai-models?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fopenai&source_site=vercel-docs&relationship=related) — Add AI functionality to your v0 projects by integrating AI models and platforms.
 - [Build with OpenAI Agents API on Vercel](https://vercel.com/changelog/build-with-openai-agents-api-on-vercel?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fopenai&source_site=vercel-docs&relationship=related)
 - [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fopenai&source_site=vercel-docs&relationship=related) — Learn how to add the xAI native integration with Vercel.
 - [Vercel Together AI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/togetherai?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fopenai&source_site=vercel-docs&relationship=related) — Learn how to add Together AI connectable account integration with Vercel.

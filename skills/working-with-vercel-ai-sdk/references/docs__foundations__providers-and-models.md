@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/foundations/providers-and-models.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "34321f45db99c096af78e6702178ebe3cd60b14598d85e08a8a2ce27144398f0"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "d6ca3ed46b1f07841d3c9d9fdfb300b8d5d7b923ad231cc2ecb3242bb83bcd81"
 ---
 
 # Providers and Models
@@ -118,12 +118,15 @@ Here are the capabilities of popular models:
 
 | Provider                                           | Model                                       | Image Input | Object Generation | Tool Usage | Tool Streaming |
 | -------------------------------------------------- | ------------------------------------------- | ----------- | ----------------- | ---------- | -------------- |
+| [xAI Grok](/providers/ai-sdk-providers/xai)        | `grok-4.7`                                  | <Check />   | <Check />         | <Check />  | <Check />      |
 | [xAI Grok](/providers/ai-sdk-providers/xai)        | `grok-4.6`                                  | <Check />   | <Check />         | <Check />  | <Check />      |
 | [xAI Grok](/providers/ai-sdk-providers/xai)        | `grok-4.5`                                  | <Check />   | <Check />         | <Check />  | <Check />      |
 | [xAI Grok](/providers/ai-sdk-providers/xai)        | `grok-4`                                    | <Cross />   | <Check />         | <Check />  | <Check />      |
 | [xAI Grok](/providers/ai-sdk-providers/xai)        | `grok-3`                                    | <Cross />   | <Check />         | <Check />  | <Check />      |
 | [xAI Grok](/providers/ai-sdk-providers/xai)        | `grok-3-mini`                               | <Cross />   | <Check />         | <Check />  | <Check />      |
 | [OpenAI](/providers/ai-sdk-providers/openai)       | `gpt-6-astra`                               | <Check />   | <Check />         | <Check />  | <Check />      |
+| [OpenAI](/providers/ai-sdk-providers/openai)       | `gpt-6-luna`                                | <Check />   | <Check />         | <Check />  | <Check />      |
+| [OpenAI](/providers/ai-sdk-providers/openai)       | `gpt-6-sol`                                 | <Check />   | <Check />         | <Check />  | <Check />      |
 | [OpenAI](/providers/ai-sdk-providers/openai)       | `gpt-5.6`                                   | <Check />   | <Check />         | <Check />  | <Check />      |
 | [OpenAI](/providers/ai-sdk-providers/openai)       | `gpt-5.6-luna`                              | <Check />   | <Check />         | <Check />  | <Check />      |
 | [OpenAI](/providers/ai-sdk-providers/openai)       | `gpt-5.6-sol`                               | <Check />   | <Check />         | <Check />  | <Check />      |
@@ -146,6 +149,7 @@ Here are the capabilities of popular models:
 | [OpenAI](/providers/ai-sdk-providers/openai)       | `gpt-5.1`                                   | <Check />   | <Check />         | <Check />  | <Check />      |
 | [OpenAI](/providers/ai-sdk-providers/openai)       | `gpt-5-codex`                               | <Check />   | <Check />         | <Check />  | <Check />      |
 | [OpenAI](/providers/ai-sdk-providers/openai)       | `gpt-5-chat-latest`                         | <Check />   | <Check />         | <Check />  | <Check />      |
+| [Anthropic](/providers/ai-sdk-providers/anthropic) | `claude-opus-5-5`                           | <Check />   | <Check />         | <Check />  | <Check />      |
 | [Anthropic](/providers/ai-sdk-providers/anthropic) | `claude-sonnet-5`                           | <Check />   | <Check />         | <Check />  | <Check />      |
 | [Anthropic](/providers/ai-sdk-providers/anthropic) | `claude-fable-5-1`                          | <Check />   | <Check />         | <Check />  | <Check />      |
 | [Anthropic](/providers/ai-sdk-providers/anthropic) | `claude-fable-5`                            | <Check />   | <Check />         | <Check />  | <Check />      |

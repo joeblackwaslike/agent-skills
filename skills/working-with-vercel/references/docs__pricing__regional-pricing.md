@@ -16,8 +16,8 @@ related:
 summary: Vercel pricing for Managed Infrastructure resources in different regions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "3bdb6bed5fa899cb70c525be9618d1ddfbeb1797f6b6784ccbb414ff3ea7147b"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "967a2a87869cc751b148dec858a87c9e9c048e6a9b1ce86337190f5b76bfc174"
 ---
 
 # Regional Pricing
@@ -66,8 +66,8 @@ The **On-demand** column lists the rate range Vercel charges for each resource w
 | Fast Origin Transfer | 1 GB for $0.06 - $0.43 |
 | Queue API Operations | 1,000,000 Operations for $0.60 - $0.96 |
 | Edge Request CPU Duration | 1 Hour for $0.30 - $0.48 |
-| Active CPU | $0.108 - $0.221 per 1 Hour |
-| Provisioned Memory | $0.009 - $0.0183 per 1 GB-hr |
+| Active CPU | $0.128 - $0.221 per 1 Hour |
+| Provisioned Memory | $0.0106 - $0.0183 per 1 GB-hr |
 | Image Optimization Transformations | $0.05 - $0.0812 per 1K |
 | Image Optimization Cache Reads | $0.40 - $0.64 per 1M |
 | Image Optimization Cache Writes | $4.00 - $6.40 per 1M |

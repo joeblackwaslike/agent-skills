@@ -15,13 +15,13 @@ related:
 summary: Generate spoken audio from text with speech models through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/text-to-speech.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "be32809c3b99084789faa5b25db1096c359334c2d887962ca39fc24de4e5dc85"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "87e892c88f258478daabf7071ca125ac3f8962d95fd4f9056e18e60473d8f2d9"
 ---
 
 # AI Gateway Text to Speech
 
-Generate spoken audio from text with speech models such as `openai/tts-1` and `openai/tts-1-hd`. Use this for voiceovers, audio versions of written content, or spoken responses in your app.
+Generate spoken audio from text with Google and OpenAI speech models. Use this for voiceovers, audio versions of written content, or spoken responses in your app.
 
 
 <!-- docsgraph:related -->
@@ -29,12 +29,12 @@ Generate spoken audio from text with speech models such as `openai/tts-1` and `o
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Gemini 3.8 text-to-speech models now available on AI Gateway](https://vercel.com/changelog/gemini-3-8-text-to-speech-models-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-to-speech&source_site=vercel-docs&relationship=related)
 - [Realtime voice, speech, and transcription now supported on AI Gateway](https://vercel.com/changelog/realtime-voice-speech-and-transcription-now-supported-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-to-speech&source_site=vercel-docs&relationship=related)
 - [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-to-speech&source_site=vercel-docs&relationship=related)
+- [generateSpeech](https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-speech?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-to-speech&source_site=vercel-docs&relationship=related)
 - [AI Gateway Speech Quickstart: Transcription and TTS](https://vercel.com/docs/ai-gateway/getting-started/speech?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-to-speech&source_site=vercel-docs&relationship=related) — Generate speech and transcribe it using AI Gateway.
-- [AI Gateway Text Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/text?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-to-speech&source_site=vercel-docs&relationship=related) — Generate and stream text responses using AI Gateway.
-- [OpenAI Responses Text Generation with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/text-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-to-speech&source_site=vercel-docs&relationship=related) — Generate text responses with the OpenAI Responses API through AI Gateway.
-- [OpenResponses Text Generation with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/text-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-to-speech&source_site=vercel-docs&relationship=related) — Generate text responses using the OpenResponses API through AI Gateway.
+- [AI Gateway Audio Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/audio-input?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-to-speech&source_site=vercel-docs&relationship=related) — Analyze recorded audio with AI Gateway, compare audio input with transcription and realtime voice, and choose a supporte
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-to-speech&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/text-to-speech.graph.md](/docs/ai-gateway/modalities/text-to-speech.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-to-speech&source_site=vercel-docs&relationship=graph)
@@ -44,6 +44,15 @@ Use this to turn text into spoken audio. For live, two-way voice, see [Realtime]
 
 > **💡 Note:** Text to speech is in beta and access is rolling out gradually. Speech models
 > may not appear in the model catalog yet for your team.
+
+## Supported models
+
+| Provider | Model ID |
+| --- | --- |
+| Google | `google/gemini-3.8-flash-lite-tts` |
+| Google | `google/gemini-3.8-flash-tts` |
+| OpenAI | `openai/tts-1` |
+| OpenAI | `openai/tts-1-hd` |
 
 ## Generate speech with the AI SDK
 
@@ -96,6 +105,140 @@ asyncio.run(main())
 >   ai @ai-sdk/gateway`.
 
 The Python examples use the [AI SDK for Python beta](/docs/ai-gateway/sdks-and-apis/ai-sdk-python). These audio operations use dedicated AI Gateway endpoints. They are separate from Chat Completions, Messages, and Responses. See the [Python SDK setup](/docs/ai-gateway/sdks-and-apis/ai-sdk-python#installation) for installation requirements.
+
+### Generate speech with Google
+
+Use either `google/gemini-3.8-flash-lite-tts` or `google/gemini-3.8-flash-tts` with `gateway.speechModel()`. Both support single-voice narration and two-speaker dialogue.
+
+Choose a prebuilt voice such as `Kore`, `Puck`, `Zephyr`, or `Charon`. Voice names are case-sensitive, and the default is `Kore`. Set `instructions` to control delivery without changing the spoken text:
+
+```typescript filename="generate-google-speech.ts"
+import { generateSpeech } from 'ai';
+import { gateway } from '@ai-sdk/gateway';
+import { writeFile } from 'node:fs/promises';
+
+const result = await generateSpeech({
+  model: gateway.speechModel('google/gemini-3.8-flash-lite-tts'),
+  text: 'Welcome to the audio edition.',
+  voice: 'Kore',
+  instructions: 'Warm, relaxed, and speaking slowly',
+  outputFormat: 'wav',
+});
+
+await writeFile('greeting.wav', result.audio.uint8Array);
+
+console.log('Saved greeting.wav');
+```
+
+```javascript filename="generate-google-speech.js"
+import { generateSpeech } from 'ai';
+import { gateway } from '@ai-sdk/gateway';
+import { writeFile } from 'node:fs/promises';
+
+const result = await generateSpeech({
+  model: gateway.speechModel('google/gemini-3.8-flash-lite-tts'),
+  text: 'Welcome to the audio edition.',
+  voice: 'Kore',
+  instructions: 'Warm, relaxed, and speaking slowly',
+  outputFormat: 'wav',
+});
+
+await writeFile('greeting.wav', result.audio.uint8Array);
+
+console.log('Saved greeting.wav');
+```
+
+Google returns WAV audio by default. Save `result.audio.uint8Array` directly as it already includes the WAV header. Gemini 3.8 also supports `pcm`, `mulaw`, and `alaw` through `outputFormat`.
+
+### Generate dialogue with Google
+
+For two-speaker dialogue, configure voices and structured `turns` under `providerOptions.google`. Set `text` to an empty string because `turns` supplies the transcript. Each turn's `speechMetadata.speaker` must match a configured speaker:
+
+```typescript filename="generate-google-dialogue.ts"
+import { generateSpeech } from 'ai';
+import { gateway } from '@ai-sdk/gateway';
+import { writeFile } from 'node:fs/promises';
+
+const result = await generateSpeech({
+  model: gateway.speechModel('google/gemini-3.8-flash-tts'),
+  text: '',
+  outputFormat: 'wav',
+  providerOptions: {
+    google: {
+      multiSpeakerVoiceConfig: {
+        speakerVoiceConfigs: [
+          {
+            speaker: 'Host',
+            voiceConfig: { prebuiltVoiceConfig: { voiceName: 'Kore' } },
+          },
+          {
+            speaker: 'Guest',
+            voiceConfig: { prebuiltVoiceConfig: { voiceName: 'Puck' } },
+          },
+        ],
+      },
+      turns: [
+        {
+          text: 'What are we exploring today?',
+          speechMetadata: { speaker: 'Host', style: 'curious' },
+        },
+        {
+          text: 'How to turn text into spoken audio.',
+          speechMetadata: { speaker: 'Guest', style: 'cheerful' },
+        },
+      ],
+    },
+  },
+});
+
+await writeFile('dialogue.wav', result.audio.uint8Array);
+
+console.log('Saved dialogue.wav');
+```
+
+```javascript filename="generate-google-dialogue.js"
+import { generateSpeech } from 'ai';
+import { gateway } from '@ai-sdk/gateway';
+import { writeFile } from 'node:fs/promises';
+
+const result = await generateSpeech({
+  model: gateway.speechModel('google/gemini-3.8-flash-tts'),
+  text: '',
+  outputFormat: 'wav',
+  providerOptions: {
+    google: {
+      multiSpeakerVoiceConfig: {
+        speakerVoiceConfigs: [
+          {
+            speaker: 'Host',
+            voiceConfig: { prebuiltVoiceConfig: { voiceName: 'Kore' } },
+          },
+          {
+            speaker: 'Guest',
+            voiceConfig: { prebuiltVoiceConfig: { voiceName: 'Puck' } },
+          },
+        ],
+      },
+      turns: [
+        {
+          text: 'What are we exploring today?',
+          speechMetadata: { speaker: 'Host', style: 'curious' },
+        },
+        {
+          text: 'How to turn text into spoken audio.',
+          speechMetadata: { speaker: 'Guest', style: 'cheerful' },
+        },
+      ],
+    },
+  },
+});
+
+await writeFile('dialogue.wav', result.audio.uint8Array);
+
+console.log('Saved dialogue.wav');
+```
+
+A turn's `speechMetadata.style` overrides `instructions`. Turns without a style inherit `instructions`. For more options, see the [AI SDK Google speech documentation](https://ai-sdk.dev/providers/ai-sdk-providers/google#speech-models).
 
 ## Request options
 
@@ -192,7 +335,7 @@ The response is a JSON object with the base64-encoded audio:
 ## Limitations
 
 - Audio returns base64-encoded in a JSON response. Streaming audio output is not supported.
-- Text to speech supports OpenAI speech models only.
+- Google speech models don't support `speed` or `language`. Set pacing through `instructions` since the model detects the language from the text.
 
 
 ---

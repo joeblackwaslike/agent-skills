@@ -16,8 +16,8 @@ related:
 summary: Learn how to Sign in with Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "c1831a924259f2a4c6067a5b1ea6fde7a2405cdb9411f5faad5d0e228fb69836"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "7568ad99f8b1a06e2ff4977fe03615e12021d643c2fd2b7ef79af06d15458872"
 ---
 
 # Sign in with Vercel
@@ -38,7 +38,7 @@ Sign in with Vercel lets people use their Vercel account to log in to your appli
 - [Vercel Connect](https://vercel.com/docs/connect?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel&source_site=vercel-docs&relationship=related) — Give your agents and services secure, short-lived access to third-party APIs like Slack, GitHub, Microsoft, and Snowflak
 - [SAML Single Sign-On](https://vercel.com/docs/saml?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel&source_site=vercel-docs&relationship=related) — Learn how to configure SAML SSO for your organization on Vercel.
 - [Vercel KMS Authentication](https://vercel.com/docs/kms/concepts/authentication?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel&source_site=vercel-docs&relationship=related) — How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel ac
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [vercel signup](https://vercel.com/docs/cli/signup?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel&source_site=vercel-docs&relationship=related) — Learn how to create a new Vercel account using the vercel signup CLI command.
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel.graph.md](/docs/sign-in-with-vercel.graph.md?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

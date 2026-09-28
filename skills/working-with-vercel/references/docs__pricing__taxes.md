@@ -3,7 +3,7 @@ title: Taxes
 product: vercel
 url: /docs/pricing/taxes
 canonical_url: "https://vercel.com/docs/pricing/taxes"
-last_updated: 2026-08-31
+last_updated: 2026-09-19
 type: reference
 prerequisites:
   - /docs/pricing
@@ -12,8 +12,8 @@ related:
 summary: This page covers frequently asked questions around taxes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/taxes.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "4ff6ac7ad98e8f0db1a2197f47b302257bbb8182e87d96a7bd4999244573f01a"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "35be98086eb3a0b57fd631cc587c678ce3eec289f1fe62fb7c8ce7e77e1031ef"
 ---
 
 # Taxes

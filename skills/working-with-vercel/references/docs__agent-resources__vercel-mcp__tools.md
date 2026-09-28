@@ -17,8 +17,8 @@ related:
 summary: Available tools in Vercel MCP for searching docs, managing teams, projects, deployments, Web Analytics, runtime logs and errors, Agent Runs, design...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "59f0396c3a985be394c515bf862bbefb34659bfc8f7b3229a5b9e3e57b33fc7e"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "aabf491b26f151e412285ec3c0410a5d03ad9f0f89598dbce6616428f1d3ff42"
 ---
 
 # Tools
@@ -32,12 +32,11 @@ The Vercel MCP server provides [MCP tools](https://modelcontextprotocol.io/speci
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Agent Runs now available in the Vercel MCP and CLI](https://vercel.com/changelog/agent-runs-vercel-mcp-cli?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools&source_site=vercel-docs&relationship=related)
-- [Query Web Analytics from the Vercel CLI](https://vercel.com/changelog/query-web-analytics-from-the-vercel-cli?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools&source_site=vercel-docs&relationship=related)
 - [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools&source_site=vercel-docs&relationship=related) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools&source_site=vercel-docs&relationship=related) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
-- [Audit Logs](https://vercel.com/docs/audit-log?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools&source_site=vercel-docs&relationship=related) — Learn how to track and analyze your team members' activities.
-- [Monitoring Reference](https://vercel.com/docs/query/monitoring/monitoring-reference?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools&source_site=vercel-docs&relationship=related) — This reference covers the clauses, fields, and variables used to create a Monitoring query.
+- [Counts page views](https://vercel.com/docs/rest-api/web-analytics/counts-page-views?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools&source_site=vercel-docs&relationship=related) — GET /v1/query/web-analytics/visits/count — Counts the number of page views on a project \\(production only\\), since Web A
+- [Aggregates page views](https://vercel.com/docs/rest-api/web-analytics/aggregates-page-views?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools&source_site=vercel-docs&relationship=related) — GET /v1/query/web-analytics/visits/aggregate — Counts pageviews on a project, within the requested date range. Results a
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools.graph.md](/docs/agent-resources/vercel-mcp/tools.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

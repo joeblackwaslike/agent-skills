@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/direct-chat-transport.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "b4d85541b91fae601ca48a9cbf48602c50db0c60dd8aea951a338316ff772b87"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "ea9a417ebbccd8bbc5aedea5d954562ffb74bef56c017f3749715eca343054b4"
 ---
 
 # `DirectChatTransport`
@@ -203,7 +203,7 @@ import { DirectChatTransport, ToolLoopAgent } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
 const agent = new ToolLoopAgent({
-  model: openai('gpt-4o'),
+  model: openai('gpt-6-astra'),
   instructions: 'You are a helpful assistant.',
 });
 
@@ -247,7 +247,7 @@ const weatherTool = tool({
 });
 
 const agent = new ToolLoopAgent({
-  model: openai('gpt-4o'),
+  model: openai('gpt-6-astra'),
   instructions: 'You are a helpful assistant with access to weather data.',
   tools: { weather: weatherTool },
 });
@@ -269,7 +269,7 @@ import { DirectChatTransport, ToolLoopAgent } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
 const agent = new ToolLoopAgent<{ userId: string }>({
-  model: openai('gpt-4o'),
+  model: openai('gpt-6-astra'),
   prepareCall: ({ options, ...rest }) => ({
     ...rest,
     providerOptions: {

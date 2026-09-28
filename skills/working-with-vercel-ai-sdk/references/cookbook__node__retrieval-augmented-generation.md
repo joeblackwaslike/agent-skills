@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/node/retrieval-augmented-generation.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "2b14915900cddd91b29c670ea3ebc51c97db9352cbe51d7e9bb82ff3ad0bba84"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "106f6d94378b21d32c181c01f74595c288b9474ff4d85caa98c9d0455c0f4e30"
 ---
 
 # Retrieval Augmented Generation
@@ -59,7 +59,7 @@ async function main() {
     .join('\n');
 
   const { text } = await generateText({
-    model: 'openai/gpt-4o',
+    model: 'openai/gpt-6-astra',
     prompt: `Answer the following question based only on the provided context:
              ${context}
 

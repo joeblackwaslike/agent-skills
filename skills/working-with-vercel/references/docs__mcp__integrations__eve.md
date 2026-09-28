@@ -17,8 +17,8 @@ related:
 summary: Give eve agents access to MCP tools through filesystem connections and authorize requests with Vercel Connect.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/mcp/integrations/eve.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "f79f23f6901befff7caf4214ead2b88dcf492c2488e446124ab5cb2b6179322a"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "9d255ea6a376191240737cf984eb4476f7cbcb098ca958195017721c139819d1"
 ---
 
 # eve with MCP
@@ -37,7 +37,7 @@ Connect an [eve](/docs/eve) agent to a [Model Context Protocol (MCP)](/docs/mcp)
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations%2Feve&source_site=vercel-docs&relationship=related)
 - [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations%2Feve&source_site=vercel-docs&relationship=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
 - [Terminal UI](https://eve.dev/docs/guides/dev-tui?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations%2Feve&source_site=vercel-docs&relationship=related) — Use eve locally or connect to a deployed agent from an interactive terminal UI.
-- [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations%2Feve&source_site=vercel-docs&relationship=related)
+- [Connections](https://eve.dev/docs/connections?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations%2Feve&source_site=vercel-docs&relationship=related) — Expose external MCP and OpenAPI servers to the model, with connection tokens the model never sees.
 - [AI SDK and MCP](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations%2Feve&source_site=vercel-docs&relationship=related) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
 - [Use Vercel](https://vercel.com/docs/agent-resources/vercel-mcp?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations%2Feve&source_site=vercel-docs&relationship=related) — Vercel MCP has tools available for searching docs, managing teams, projects, and deployments, and querying Web Analytics
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations%2Feve&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/getting-started/choosing-a-provider.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "9ed68071e0de4fe03896a3ecf7f62ee9977eb3aa293831d80470d6ff7bb99749"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "bb6ccdbc9a1628f4e04fc73e4e3fb1ec3a33b1cb524c173643a5735792d591cd"
 ---
 
 # Choosing a Provider
@@ -46,7 +46,7 @@ The AI Gateway is the default [global provider](/docs/ai-sdk-core/provider-manag
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: 'anthropic/claude-sonnet-5',
   prompt: 'What is love?',
 });
 ```
@@ -56,11 +56,11 @@ You can also explicitly import and use the gateway provider:
 ```ts
 // Option 1: Import from 'ai' package (included by default)
 import { gateway } from 'ai';
-model: gateway('anthropic/claude-sonnet-4.5');
+model: gateway('anthropic/claude-sonnet-5');
 
 // Option 2: Install and import from '@ai-sdk/gateway' package
 import { gateway } from '@ai-sdk/gateway';
-model: gateway('anthropic/claude-sonnet-4.5');
+model: gateway('anthropic/claude-sonnet-5');
 ```
 
 ## Using Dedicated Providers
@@ -72,7 +72,7 @@ You can also use [first-party](/providers/ai-sdk-providers), [OpenAI-compatible]
 ```ts
 import { anthropic } from '@ai-sdk/anthropic';
 
-model: anthropic('claude-sonnet-4-5');
+model: anthropic('claude-sonnet-5');
 ```
 
 You can change the default global provider so string model references use your preferred provider everywhere in your application. Learn more about [provider management](/docs/ai-sdk-core/provider-management#global-provider-configuration).

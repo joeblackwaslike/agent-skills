@@ -16,8 +16,8 @@ related:
 summary: Learn how your Vercel Blob store is secured
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/security.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "19df1c16e2145ebd7e4ee5705190255db2c1615b67e4873f4491756f042a4991"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "af7c3594408b0ba52a4d21d754cd5343ab04308682246cdb475719834fc23c18"
 ---
 
 # Security
@@ -38,6 +38,7 @@ For files that require authentication, use [private storage](/docs/vercel-blob/p
 - [Vercel WAF for Blob is now in beta](https://vercel.com/changelog/vercel-waf-for-blob-is-now-in-beta?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fsecurity&source_site=vercel-docs&relationship=related)
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fsecurity&source_site=vercel-docs&relationship=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
 - [Vercel Private Blob is now generally available](https://vercel.com/changelog/vercel-private-blob-is-now-generally-available?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fsecurity&source_site=vercel-docs&relationship=related)
+- [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fsecurity&source_site=vercel-docs&relationship=related) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
 - [Vercel security overview](https://vercel.com/docs/security?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fsecurity&source_site=vercel-docs&relationship=related) — Vercel provides built-in and customizable features to ensure that your site is secure.
 - [Public Storage](https://vercel.com/docs/vercel-blob/public-storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fsecurity&source_site=vercel-docs&relationship=related) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
 - [CDN security](https://vercel.com/docs/cdn-security?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fsecurity&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers

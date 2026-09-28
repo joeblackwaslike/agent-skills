@@ -16,8 +16,8 @@ related:
 summary: Store and manage Docker container images on Vercel. Build and push images with the Vercel CLI, then run them on Vercel Functions or in Vercel Sandbox.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/container-registry.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "663ac85a1340751c3faca5dfc6b55b287c019b2a881a71c8db91d01051624ebb"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "6344e701da6a9213f4f2d4d4b25ce39fa7f98ce106c2f01cfd83e6f2719ad66a"
 ---
 
 # Vercel Container Registry
@@ -35,7 +35,7 @@ Vercel Container Registry (VCR) is a Docker-compatible container registry built 
 - [Bring your Dockerfile to Vercel Functions](https://vercel.com/changelog/bring-your-dockerfile-to-vercel-functions?from=related&source_path=%2Fdocs%2Fcontainer-registry&source_site=vercel-docs&relationship=related)
 - [Introducing VCR: Vercel Container Registry](https://vercel.com/changelog/introducing-vcr-vercel-container-registry?from=related&source_path=%2Fdocs%2Fcontainer-registry&source_site=vercel-docs&relationship=related)
 - [Share Vercel Container Registry repositories across teams](https://vercel.com/changelog/share-vercel-container-registry-repositories-across-teams?from=related&source_path=%2Fdocs%2Fcontainer-registry&source_site=vercel-docs&relationship=related)
-- [Vercel Container Registry repositories can now be made public](https://vercel.com/changelog/vercel-container-registry-repositories-can-now-be-made-public?from=related&source_path=%2Fdocs%2Fcontainer-registry&source_site=vercel-docs&relationship=related)
+- [Push images to Vercel Container Registry from GitHub Actions](https://vercel.com/changelog/vcr-login-github-action?from=related&source_path=%2Fdocs%2Fcontainer-registry&source_site=vercel-docs&relationship=related)
 - [Deploy Go apps on Vercel using Docker](https://vercel.com/kb/guide/deploy-go-using-docker-vercel?from=related&source_path=%2Fdocs%2Fcontainer-registry&source_site=vercel-docs&relationship=related) — Deploy an existing Dockerized Go app to Vercel using Memos as a real-world example, with Neon Postgres for durable data.
 - [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fcontainer-registry&source_site=vercel-docs&relationship=related) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
 - [Running Docker on Vercel vs Render](https://vercel.com/kb/guide/docker-on-vercel-vs-render?from=related&source_path=%2Fdocs%2Fcontainer-registry&source_site=vercel-docs&relationship=related) — Compare how Vercel and Render run Docker workloads, including deployment model, scaling, image sources, state, and netwo

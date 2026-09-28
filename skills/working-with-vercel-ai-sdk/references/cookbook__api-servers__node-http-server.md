@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/api-servers/node-http-server.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "8fd7f02a175dabbed7de8dc50392dca4f8bb45e1396bb12375c6bcfd5dd78b32"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "1bfcc0cfc63608b86b50449072c1eeb00e865410a382ff2c2ee226dd3aaabce2"
 ---
 
 # Node.js HTTP Server
@@ -37,7 +37,7 @@ import { createServer } from 'http';
 
 createServer(async (req, res) => {
   const result = streamText({
-    model: 'openai/gpt-4o',
+    model: 'openai/gpt-6-astra',
     prompt: 'Invent a new holiday and describe its traditions.',
   });
 
@@ -77,7 +77,7 @@ createServer(async (req, res) => {
           });
 
           const result = streamText({
-            model: 'openai/gpt-4o',
+            model: 'openai/gpt-6-astra',
             prompt: 'Invent a new holiday and describe its traditions.',
           });
 
@@ -113,7 +113,7 @@ import { createServer } from 'http';
 
 createServer(async (req, res) => {
   const result = streamText({
-    model: 'openai/gpt-4o',
+    model: 'openai/gpt-6-astra',
     prompt: 'Invent a new holiday and describe its traditions.',
   });
 

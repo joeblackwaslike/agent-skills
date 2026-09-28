@@ -16,8 +16,8 @@ related:
 summary: "Learn how to explore firewall traffic and manage your project's custom firewall rules, managed bot rules, IP blocks, system bypass rules, attack..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/firewall.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "3c82fdedb60e0e280ccf185764a46d97e6d7889559e11539353696e9847d6a21"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "aab98f45fc48d9b4ddf4c55c147f8c56ec2c5c402fdf6a525fa83b7060328c07"
 ---
 
 # vercel firewall
@@ -38,7 +38,7 @@ The `vercel firewall` command is used to inspect and configure the [Vercel Firew
 - [Read Firewall Configuration](https://vercel.com/docs/rest-api/security/read-firewall-configuration?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — GET /v1/security/firewall/config/{configVersion} — Retrieve the specified firewall configuration for a project. The depl
 - [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 - [Rate Limiting SDK](https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting-sdk?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — Learn how to configure a custom rule with rate limit in your code.
-- [vercel flags](https://vercel.com/docs/cli/flags?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — Learn how to manage feature flags for your Vercel project using the vercel flags CLI command.
+- [Generate a firewall rule from natural language](https://vercel.com/docs/rest-api/security/generate-a-firewall-rule-from-natural-language?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — POST /v1/security/firewall/config/generate-rule — Generate a firewall rule from a natural language description.
 
 Full cross-link map for this page: [/docs/cli/firewall.graph.md](/docs/cli/firewall.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

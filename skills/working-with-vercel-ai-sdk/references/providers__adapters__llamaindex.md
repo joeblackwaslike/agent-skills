@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/adapters/llamaindex.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "c340cd46112e0f8e07799cd277189adf6d9cd2a847bca50adcae6c6e9e4bc3a9"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "fb92e1b0e44315d74aded8803efd7e6339c7f6eba9deae3f966f4dccc0e534f8"
 ---
 
 # LlamaIndex
@@ -24,7 +24,7 @@ export const maxDuration = 60;
 export async function POST(req: Request) {
   const { prompt } = await req.json();
 
-  const llm = new OpenAI({ model: 'gpt-4o' });
+  const llm = new OpenAI({ model: 'gpt-6-astra' });
   const chatEngine = new SimpleChatEngine({ llm });
 
   const stream = await chatEngine.chat({

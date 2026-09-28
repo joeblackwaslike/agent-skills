@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/patronus.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "97b790edc225a193bd4d2892796672a7f065e589403ba9d66b8411de237023f7"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "1b90885cd064fad5f3c0c5f4beb9a71c2856c6e0efeacf7183ac4ba9c30773ea"
 ---
 
 # Patronus Observability
@@ -66,7 +66,7 @@ import { generateText } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
 const result = await generateText({
-  model: openai('gpt-4o'),
+  model: openai('gpt-6-astra'),
   prompt: 'Write a haiku about spring.',
   telemetry: {
     functionId: 'spring-haiku', // span name
@@ -94,7 +94,7 @@ export async function POST(req: Request) {
     try {
       /* 1️⃣ generate answer */
       const answer = await generateText({
-        model: openai('gpt-4o'),
+        model: openai('gpt-6-astra'),
         prompt: body.prompt,
         telemetry: { functionId: 'chat' },
       });

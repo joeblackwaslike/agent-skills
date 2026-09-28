@@ -3,21 +3,21 @@ title: Vercel Sandbox
 product: vercel
 url: /docs/sandbox
 canonical_url: "https://vercel.com/docs/sandbox"
-last_updated: 2026-09-14
+last_updated: 2026-09-22
 type: conceptual
 prerequisites:
   []
 related:
+  - /docs/sandbox/pricing
   - /docs/sandbox/sdk-reference
   - /docs/sandbox/python-sdk-reference
   - /docs/sandbox/cli-reference
   - /docs/sandbox/concepts/authentication
-  - /docs/sandbox/concepts/images
 summary: Run untrusted or agent-generated code in isolated Linux microVMs with Vercel Sandbox.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "246424d98ac2dba7953d09f37e9abc8701afb362715ca25f63724092b7965099"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "25dcd45409c89a5e34052a47fbc196df8e411f6b8fde899cb3c0a4037af938dd"
 ---
 
 # Vercel Sandbox
@@ -34,7 +34,7 @@ Run untrusted or agent-generated code in isolated Linux microVMs. Use Vercel San
 
 - [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related)
 - [Security Model](https://eve.dev/docs/concepts/security-model?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related) — eve's trust boundaries, where secrets live, how credentials reach hosts, and what fails closed by default.
-- [Sandbox](https://eve.dev/docs/sandbox?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related) — The agent's isolated bash environment, including built-in file tools, a seeded /workspace, backends, lifecycle, and netw
+- [Sandbox](https://eve.dev/docs/sandbox?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related) — Configure the isolated filesystem and command environment used by an eve agent.
 - [Build with OpenAI Agents API on Vercel](https://vercel.com/changelog/build-with-openai-agents-api-on-vercel?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related)
 - [Connect to and manage Sandboxes from the dashboard](https://vercel.com/changelog/connect-to-and-manage-sandboxes-from-the-dashboard?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related)
 - [Custom tags available in beta on Vercel Sandbox](https://vercel.com/changelog/custom-tags-available-in-beta-on-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related)
@@ -58,6 +58,27 @@ Use sandboxes to:
 - **Build interactive tools**: Create code playgrounds, AI-powered UI builders, or developer sandboxes.
 - **Test in isolation**: Preview how user-submitted or agent-generated code behaves in a self-contained environment with access to logs, file edits, and live previews.
 - **Run development servers**: Spin up and test applications with live previews.
+
+## Active CPU pricing for agents
+
+Research shows that waiting for model inference accounts for [71% to 98% of runtime](https://arxiv.org/html/2605.26297v1#S5) across five agent benchmarks. With [Active CPU pricing](/docs/sandbox/pricing#active-cpu), Vercel doesn't charge you for CPU while your code waits for model responses or external APIs. You pay only for actively used CPU time.
+
+The example below uses 10% CPU utilization.
+
+### Example
+
+For a sandbox with **1 vCPU and 2 GB of memory** running for **one hour at 10% CPU utilization**:
+
+| Resource | Sandbox (Active CPU) | Wall-clock CPU billing |
+| --- | --- | --- |
+| CPU | $0.0128 | $0.1280 |
+| Provisioned memory | $0.0424 | $0.0424 |
+| CPU + memory | $0.0552 | $0.1704 |
+
+
+Both columns use the same `iad1` rates to compare billing methods. Wall-clock billing charges for CPU throughout the hour, including time spent waiting. Your CPU usage will vary.
+
+You still pay for [allocated memory](/docs/sandbox/pricing#provisioned-memory) while the sandbox runs, including time spent waiting. The totals include CPU and memory only. See [pricing](/docs/sandbox/pricing) for other charges and included usage, and [stop your sandbox](/docs/sandbox/sdk-reference#sandbox.stop) when you finish using it.
 
 ## Using Vercel Sandbox
 
@@ -93,6 +114,7 @@ For detailed information about the sandbox environment, see [Concepts](/docs/san
 - **[Fast startup](/docs/sandbox/concepts#how-sandboxes-work)**: Sandboxes start in milliseconds, making them ideal for real-time user interactions and latency-sensitive workloads.
 - **[Multi-agent isolation](/docs/sandbox/concepts/multi-agent)**: Give each AI agent its own Linux user with a private home directory, and share files between agents with groups.
 - **[Persistent sandboxes](/docs/sandbox/concepts/persistent-sandboxes)**: Sandboxes that auto-save state on stop and resume where you left off. Persistence is the default. No manual snapshot management needed.
+- **[Secure Compute](/docs/sandbox/concepts/secure-compute)**: Attach sandboxes to a Secure Compute network to send their public-internet traffic through static IPs, and reach your own VPC over VPC peering.
 - **[Snapshotting](/docs/sandbox/concepts/snapshots)**: Save the state of a running sandbox to resume later. Skip dependency installation on subsequent runs.
 - **[Tags](/docs/sandbox/concepts/tags)**: Categorize sandboxes by environment, team, or any other criteria using key-value tags.
 - **[Drives (beta)](/docs/sandbox/concepts/drives)**: Attach persistent filesystem storage to sandboxes and reuse data across sandbox runs.

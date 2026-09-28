@@ -16,8 +16,8 @@ related:
 summary: Learn how to use private Vercel Blob storage to serve files with authentication
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/private-storage.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "065a1b020e39fe21e3083c67b2f3aca61a1cbb1cacdb6879dc1cc4c5ca6182b4"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "06e65e3a913cb52a56867329e043ce3fccddd1a6c63bed8c539e062320ed1815"
 ---
 
 # Private Storage
@@ -38,11 +38,11 @@ Private Blob stores require authentication for all read and write operations, en
 
 - [Vercel Blob now supports consistent reads on private storage](https://vercel.com/changelog/vercel-blob-now-supports-consistent-reads-on-private-storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fprivate-storage&source_site=vercel-docs&relationship=related)
 - [Vercel Private Blob is now generally available](https://vercel.com/changelog/vercel-private-blob-is-now-generally-available?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fprivate-storage&source_site=vercel-docs&relationship=related)
+- [Run a research workspace on Vercel](https://vercel.com/kb/guide/run-research-workspace-vercel?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fprivate-storage&source_site=vercel-docs&relationship=related) — Plan a durable research workspace on Vercel's Agentic Infrastructure with Workflows, internal API tools, Vercel Sandbox
 - [Vercel Blob vs Netlify Blobs](https://vercel.com/kb/guide/vercel-blob-vs-netlify-blobs?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fprivate-storage&source_site=vercel-docs&relationship=related) — Compare Vercel Blob and Netlify Blobs on storage model, public URLs, delivery, limits, and pricing to choose the right o
-- [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fprivate-storage&source_site=vercel-docs&relationship=related) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fprivate-storage&source_site=vercel-docs&relationship=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
+- [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fprivate-storage&source_site=vercel-docs&relationship=related) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
 - [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fprivate-storage&source_site=vercel-docs&relationship=related) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
-- [How do I bypass the 4.5MB body size limit of Vercel Serverless Functions?](https://vercel.com/kb/guide/how-to-bypass-vercel-body-size-limit-serverless-functions?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fprivate-storage&source_site=vercel-docs&relationship=related) — Learn how to deal with the body size limit of Serverless Functions on Vercel.
 - [Private storage for Vercel Blob, now available in public beta](https://vercel.com/changelog/private-storage-for-vercel-blob-now-available-in-public-beta?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fprivate-storage&source_site=vercel-docs&relationship=related)
 
 Full cross-link map for this page: [/docs/vercel-blob/private-storage.graph.md](/docs/vercel-blob/private-storage.graph.md?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fprivate-storage&source_site=vercel-docs&relationship=graph)
@@ -56,7 +56,7 @@ You can create a private Blob store from the Vercel dashboard or the CLI:
 
 - **Dashboard**:
   1. Go to your project's [**Storage** tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fstores\&title=Go+to+Storage)
-  2. Select **Create Database**, then choose **Blob**
+  2. Select **Create Storage**, then choose **Blob**
   3. Select **Continue**, then set the access to **Private**
 - **[CLI](/docs/cli/blob)**: Run `vercel blob create-store [name] --access private`
 

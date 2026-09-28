@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/node/dynamic-prompt-caching.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "8012fe932931fe46b538bf7ad6d8095601188dc2c5bd0516de9ca7ff84d544a4"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "62237819854792f60080ff2d8813668d3af247571e0608194fe8419c052861bb"
 ---
 
 # Dynamic Prompt Caching
@@ -116,7 +116,7 @@ import { addCacheControlToMessages } from './add-cache-control-to-messages';
 
 async function main() {
   const result = await generateText({
-    model: anthropic('claude-sonnet-4-5'),
+    model: anthropic('claude-sonnet-5'),
     prompt: 'Help me analyze this codebase and suggest improvements.',
     stopWhen: isStepCount(10),
     tools: {

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/rsc/stream-ui-record-token-usage.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "61de55c785822678ce4630b0de3c86717cf2b67a29b93d4f00fd42427c60e2e3"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "62fccbf86ad43f3c3b7b83bc8a68269a4d0cd94928241e67caa9a9c57907dfb7"
 ---
 
 # Record Token Usage after Streaming User Interfaces
@@ -100,7 +100,7 @@ export async function continueConversation(
   const history = getMutableAIState();
 
   const result = await streamUI({
-    model: 'openai/gpt-5.4',
+    model: 'openai/gpt-6-astra',
     messages: [...history.get(), { role: 'user', content: input }],
     text: ({ content, done }) => {
       if (done) {

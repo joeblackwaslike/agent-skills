@@ -17,8 +17,8 @@ related:
 summary: Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-options.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "6c0e005263134ff9ef50d60fe1070c07a013a3986939c7b593b625fb61c36a16"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "4a44684a3f2e9c7040a0b69d2c2fef79e77fc61d0d74d606f9950792e7c04ad7"
 ---
 
 # AI Gateway Provider Routing and Fallbacks
@@ -104,7 +104,9 @@ You can set per-provider timeouts to trigger fast failover when a provider is sl
 
 ## Model fallbacks
 
-For model-level failover strategies that try backup models when your primary model fails or is unavailable, see the dedicated [Model Fallbacks](/docs/ai-gateway/models-and-providers/model-fallbacks) documentation.
+String model fallbacks try backup models when the primary model fails or is unavailable. See [Model Fallbacks](/docs/ai-gateway/models-and-providers/model-fallbacks) for failure-based routing.
+
+Evaluation requests can also add one conditional object to `providerOptions.gateway.models`. It reruns a successful evaluation when a confidence, Boolean probability, or compound condition matches. AI Gateway rejects a conditional object with a `400` error on any other request type, and when the conditional object names the primary model itself. See [Evaluation Fallbacks](/docs/ai-gateway/models-and-providers/evaluation-fallbacks) for the complete wire contract and provider-option behavior.
 
 ## Advanced configuration
 
@@ -667,6 +669,12 @@ Kling AI
 
 klingai.com
 
+meituan
+
+Meituan LongCat
+
+longcat.ai
+
 meta
 
 Meta
@@ -804,6 +812,12 @@ sambanova
 SambaNova
 
 sambanova.ai
+
+stealth
+
+Stealth
+
+vercel.com
 
 stepfun
 

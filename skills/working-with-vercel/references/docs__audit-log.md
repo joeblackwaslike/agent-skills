@@ -16,8 +16,8 @@ related:
 summary: "Learn how to track and analyze your team members' activities."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/audit-log.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "13bffff783ca797e045fc155bdc58bb85a6dfa2788701455fd8bd25fa78e7306"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "a27a73a8b12ef19629db1a5c5063a6fa828431f8d71033d667b78fe5a3a67d63"
 ---
 
 # Audit Logs
@@ -42,8 +42,8 @@ Audit logs help you track and analyze your [team members'](/docs/rbac/managing-t
 - [Encryption](https://workflow-sdk.dev/docs/how-it-works/encryption?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related) — Understand how workflow and step data is encrypted at rest.
 - [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
 - [June 2020](https://vercel.com/blog/changelog-june-2020?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related)
+- [July 2020](https://vercel.com/blog/changelog-july-2020?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related)
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Vercel CLI Overview](https://vercel.com/docs/cli?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel command-line interface \\(CLI\\) to manage and configure your Vercel Projects from the command
 
 Full cross-link map for this page: [/docs/audit-log.graph.md](/docs/audit-log.graph.md?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

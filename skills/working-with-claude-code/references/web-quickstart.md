@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/web-quickstart.md"
-fetched_at: "2026-09-21T09:39:23.760Z"
-sha256: "56b31df35fcb954fd588a4c61e1e936bc79a0b6614b442cc4ae49436a1c5c510"
+fetched_at: "2026-09-28T10:38:50.037Z"
+sha256: "a7da7908371a2bc762d9927ddd3933480e4d3f63c0fc6cc9d3f74c88364db3b4"
 ---
 
 > ## Documentation Index
@@ -13,7 +13,7 @@ sha256: "56b31df35fcb954fd588a4c61e1e936bc79a0b6614b442cc4ae49436a1c5c510"
 > Run Claude Code in the cloud from your browser or phone. Connect a GitHub repository, submit a task, and review the PR without local setup.
 
 <Note>
-  Cloud sessions are in research preview for Pro, Max, and Team users, and for Enterprise users with premium seats or Chat + Claude Code seats.
+  Cloud sessions are available on Pro, Max, and Team plans, and for Enterprise users with premium seats or Chat + Claude Code seats.
 </Note>
 
 A cloud session runs Claude Code on cloud infrastructure instead of your machine, Anthropic-managed by default. This quickstart starts one from [claude.ai/code](https://claude.ai/code) in your browser. You can also start one from the Claude mobile app, the Desktop app, or your terminal with `claude --cloud`.

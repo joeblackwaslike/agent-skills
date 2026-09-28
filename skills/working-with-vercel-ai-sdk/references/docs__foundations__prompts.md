@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/foundations/prompts.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "b01eae7bcba7787d8e6f4f08d6875ced0606421460c4165daee9941ba303101c"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "8e6089c776fde3c4fe50d2ba6eb69b89a275a8a635da2b240f3b3ab75d8fd2bb"
 ---
 
 # Prompts
@@ -315,7 +315,7 @@ import { google } from '@ai-sdk/google';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: google('gemini-2.5-flash'),
+  model: google('gemini-3.8-flash'),
   messages: [
     {
       role: 'user',

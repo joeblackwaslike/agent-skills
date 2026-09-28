@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/laminar.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "178b7bbc3a2e6a2d57bfcb728da684249a59a992129926108d0b1c2b66a49e03"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "3625ebafd193e72f350cd8d8339c27c9e3777364fd842260d6d1bb059c7a7ed1"
 ---
 
 # Laminar observability
@@ -94,7 +94,7 @@ import { openai } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: openai('gpt-5.4-mini'),
+  model: openai('gpt-6-luna'),
   prompt: 'What is Laminar flow?',
 });
 ```
@@ -205,7 +205,7 @@ import { openai } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: openai('gpt-5.4-mini'),
+  model: openai('gpt-6-luna'),
   prompt: 'What is Laminar flow?',
 });
 ```
@@ -297,7 +297,7 @@ If you want to override the default span name, you can set the `functionId` insi
 
 ```javascript
 const { text } = await generateText({
-  model: openai('gpt-5.4-mini'),
+  model: openai('gpt-6-luna'),
   prompt: `Write a poem about Laminar flow.`,
   telemetry: {
     functionId: 'poem-writer',
@@ -330,7 +330,7 @@ const result = await observe(
   { name: 'poem writer' },
   async (topic: string, mood: string) => {
     const { text } = await generateText({
-      model: openai('gpt-5.4-mini'),
+      model: openai('gpt-6-luna'),
       prompt: `Write a poem about ${topic} in ${mood} mood.`,
     });
     return text;
@@ -346,7 +346,7 @@ In Laminar, metadata is set on the trace level. Metadata contains key-value pair
 
 ```javascript
 const { text } = await generateText({
-  model: openai('gpt-5.4-mini'),
+  model: openai('gpt-6-luna'),
   prompt: `Write a poem about Laminar flow.`,
   telemetry: {
     metadata: {
@@ -367,7 +367,7 @@ Tags can subsequently be used to filter traces in Laminar.
 
 ```javascript
 const { text } = await generateText({
-  model: openai('gpt-5.4-mini'),
+  model: openai('gpt-6-luna'),
   prompt: `Write a poem about Laminar flow.`,
   telemetry: {
     metadata: {
@@ -384,7 +384,7 @@ reserved metadata keys.
 
 ```javascript
 const { text } = await generateText({
-  model: openai('gpt-5.4-mini'),
+  model: openai('gpt-6-luna'),
   prompt: `Write a poem about Laminar flow.`,
   telemetry: {
     metadata: {

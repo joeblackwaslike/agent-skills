@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/openai-compatible-providers/modelrush.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "04cbc980b30b8286fa939f390544d4df46cb8f86d1e8ae474d0d3edf4ff4da97"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "bf106b501c49b20469b5837187e681d8ce96f4c7af78b4aacaa28eb49f25e1bb"
 ---
 
 # ModelRush Provider
@@ -86,6 +86,7 @@ Use the [ModelRush models endpoint](https://modelrush.ai/docs/api/models) or [mo
 - [LM Studio](/providers/openai-compatible-providers/lmstudio)
 - [NVIDIA NIM](/providers/openai-compatible-providers/nim)
 - [ModelRush](/providers/openai-compatible-providers/modelrush)
+- [Cheaper Inference](/providers/openai-compatible-providers/cheaper-inference)
 - [Clarifai](/providers/openai-compatible-providers/clarifai)
 - [Heroku](/providers/openai-compatible-providers/heroku)
 - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)

@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/desktop-scheduled-tasks.md"
-fetched_at: "2026-09-14T09:37:17.168Z"
-sha256: "1bc1f38acdba7def39ee3da2d8a8fb0e468c5c322b0c30734e6f7fede367ab90"
+fetched_at: "2026-09-28T10:38:50.037Z"
+sha256: "aea75b9909be1a09cb896abbbe0720773235c14b367056fa837091874e0b32f4"
 ---
 
 > ## Documentation Index
@@ -61,7 +61,7 @@ Pick a preset from the Schedule control:
 
 * **Manual**: no schedule, only runs when you click **Run now**. Useful for saving a prompt you trigger on demand
 * **Hourly**: runs every hour
-* **Daily**: shows a time picker, defaults to 9:00 AM local time
+* **Daily**: runs every day at the local time you pick
 * **Weekdays**: same as Daily but skips Saturday and Sunday
 * **Weekly**: shows a time picker and a day picker
 

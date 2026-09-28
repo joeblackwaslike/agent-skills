@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/agents/memory.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "d13fdd8249282f5d60ffe2f59d55549d8914e15df7a8cb325796e632ca5bd2f7"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "79a16ca9471afb3d11d10eeeffc4cc76dc6314fd621c2e0bc690850e865ed40d"
 ---
 
 # Memory
@@ -130,7 +130,7 @@ const mem0 = createMem0({
 });
 
 const agent = new ToolLoopAgent({
-  model: mem0('gpt-4.1', { user_id: 'user-123' }),
+  model: mem0('gpt-6-astra', { user_id: 'user-123' }),
 });
 
 const { text } = await agent.generate({
@@ -241,7 +241,7 @@ const mongodbMemory = createMongoDBMemory({
 
 // Scope to a user and session per request
 const agent = new ToolLoopAgent({
-  model: openai('gpt-4.1'),
+  model: openai('gpt-6-astra'),
   tools: mongodbMemory({ userId: 'alice', sessionId: 'sess-001' }),
   stopWhen: isLoopFinished(),
 });

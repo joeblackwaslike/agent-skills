@@ -16,8 +16,8 @@ related:
 summary: Understand Vercel Agent pricing and how to track costs
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/pricing.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "f7cca6a7ba1824d9a3c5551045de07f93a8c0df1c79a15b6b8b7d46e6508a72e"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "5cc88a409131b425433933065cc4618120dab99656db30a30c1f94837ad87fd7"
 ---
 
 # Vercel Agent Pricing
@@ -35,8 +35,8 @@ Vercel Agent charges the underlying provider inference rate with no markup, plus
 - [Vercel for Slack now in public beta](https://vercel.com/changelog/vercel-for-slack-now-in-public-beta?from=related&source_path=%2Fdocs%2Fagent%2Fpricing&source_site=vercel-docs&relationship=related)
 - [Using Vercel Agent to review pull requests](https://vercel.com/kb/guide/vercel-agent-code-review?from=related&source_path=%2Fdocs%2Fagent%2Fpricing&source_site=vercel-docs&relationship=related) — Set up Vercel Agent Code Review to automatically review pull requests, apply validated fixes, request reviews with @verc
 - [Vercel Agent has updated pricing](https://vercel.com/changelog/vercel-agent-has-updated-pricing?from=related&source_path=%2Fdocs%2Fagent%2Fpricing&source_site=vercel-docs&relationship=related)
-- [Pricing](https://v0.app/docs/pricing?from=related&source_path=%2Fdocs%2Fagent%2Fpricing&source_site=vercel-docs&relationship=related) — Understand the v0 plans, pricing, and usage limits.
 - [An expanded Vercel Agent: chat, investigations, and approved actions, now in public beta](https://vercel.com/changelog/an-expanded-vercel-agent-chat-investigations-and-approved-actions-now-in-public-beta?from=related&source_path=%2Fdocs%2Fagent%2Fpricing&source_site=vercel-docs&relationship=related)
+- [Pricing](https://v0.app/docs/pricing?from=related&source_path=%2Fdocs%2Fagent%2Fpricing&source_site=vercel-docs&relationship=related) — Understand the v0 plans, pricing, and usage limits.
 - [Pricing and Limits](https://vercel.com/docs/eve/pricing?from=related&source_path=%2Fdocs%2Fagent%2Fpricing&source_site=vercel-docs&relationship=related) — Understand how eve usage maps to Vercel resources and inherited platform limits.
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fagent%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing?from=related&source_path=%2Fdocs%2Fagent%2Fpricing&source_site=vercel-docs&relationship=related) — Understand AI Gateway token pricing, free and paid credits, BYOK costs, add-on charges, and payment fees. Manage credit

@@ -16,8 +16,8 @@ related:
 summary: Learn more about environment variables on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "0ccbe032d8bd1472e2cc7baac9ec0cdb23398637b8112c6f55235e8bf2347ca0"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "8193a77a0a559d40bbbbfab44aad3cdd044a0228b283b990232f446db7416b2d"
 ---
 
 # Environment variables
@@ -32,6 +32,7 @@ Environment variables are key-value pairs configured outside your source code so
 
 - [Using environment variables](https://turborepo.dev/docs/crafting-your-repository/using-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=related) — Account for environment variables in task hashing, configure environment modes, and handle .env files.
 - [Deployments](https://v0.app/docs/deployments?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=related) — Preview and publish v0 projects on Vercel, then manage domains, visibility, and production updates.
+- [External APIs](https://v0.app/docs/external-apis?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=related) — Build full-stack applications by calling external APIs with environment variables.
 - [Environment variables now use Config and Secret types](https://vercel.com/changelog/environment-variables-now-use-config-and-secret-types?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=related)
 - [Environments Variables per Git branch](https://vercel.com/changelog/environments-variables-per-git-branch?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=related)
 - [Improved environment variables UI](https://vercel.com/changelog/improved-environment-variables-ui?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=related)
@@ -41,7 +42,6 @@ Environment variables are key-value pairs configured outside your source code so
 - [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
 - [Deploy a Bolt.new app with Vercel Drop](https://vercel.com/kb/guide/bolt-vercel-drop?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=related) — Export your Bolt.new project as a .zip and deploy it to Vercel with Vercel Drop. Vercel detects the framework and builds
 - [Build a daily digest bot with Chat SDK and Workflow SDK](https://vercel.com/kb/guide/daily-digest-bot-with-chat-sdk-and-workflow-sdk?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=related) — Build a daily digest bot that posts a daily digest of GitHub stats to Slack. Learn how to use Vercel Connect to set up S
-- [Deploy a headless Shopify storefront with Vercel](https://vercel.com/kb/guide/deploy-headless-shopify-storefront-with-vercel?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=related) — Deploy a headless Shopify storefront using the Next.js Commerce template on Vercel
 
 Full cross-link map for this page: [/docs/environment-variables.graph.md](/docs/environment-variables.graph.md?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

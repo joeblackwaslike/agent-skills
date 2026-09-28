@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/getting-started/coding-agents.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "728c199951cb5039e951f0ece61f4dbf917920a8001f042bc16fc1282ff3c3bd"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "80535f1dd9727bd8ee75494df85b38eee651c164d54f5476b5d8d1b534c28b8b"
 ---
 
 # Getting Started with Coding Agents
@@ -75,7 +75,7 @@ Once an integration is registered, [telemetry](/docs/ai-sdk-core/telemetry) is e
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: openai('gpt-4o'),
+  model: openai('gpt-6-astra'),
   prompt: 'What cities are in the United States?',
 });
 ```

@@ -12,13 +12,13 @@ related:
   - /docs/deployments/generated-urls
   - /docs/deployments/promoting-a-deployment
   - /docs/image-optimization
+  - /docs/caching/cache-status
   - /docs/functions
-  - /docs/routing/rewrites
 summary: "Learn how to invalidate and delete cached content on Vercel's CDN, including cache keys and manual purging options."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/cdn-cache/purge.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "7327c9cba26d538a4153c79c3c434278fc27b6faded66e782ca4d3c3c574784e"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "8b77da8f14c8bdcdf5c7d52ab98dfbb534e18230b3c1fd7cb1127e69865be365"
 ---
 
 # Purging Vercel CDN Cache
@@ -40,11 +40,11 @@ Learn how to [invalidate and delete](#programmatically-purging-vercel-cache) cac
 - [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=related) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
 - [Invalidate the CDN cache by tag](https://vercel.com/changelog/invalidate-the-cdn-cache-by-tag?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=related)
 - [Tag-based cache invalidation now available for all responses](https://vercel.com/changelog/tag-based-cache-invalidation-now-available-for-all-responses?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=related)
-- [Manually purge the CDN cache](https://vercel.com/changelog/manually-purge-the-cdn-cache?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=related)
+- [You can now invalidate the CDN cache by providing a source image](https://vercel.com/changelog/you-can-now-invalidate-the-cdn-cache-by-providing-a-source-image?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=related)
+- [Runtime Cache](https://vercel.com/docs/caching/runtime-cache?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=related) — Vercel Runtime Cache is a specialized cache that stores responses from data fetches in Vercel functions
 - [Data Cache for Next.js](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
 - [Diagnosing and fixing cache issues](https://vercel.com/docs/caching/cdn-cache/debug-cache-issues?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=related) — Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
-- [Runtime Cache](https://vercel.com/docs/caching/runtime-cache?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=related) — Vercel Runtime Cache is a specialized cache that stores responses from data fetches in Vercel functions
-- [Cache Status and Reasons](https://vercel.com/docs/caching/cache-status?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=related) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
+- [Dangerously delete by tag](https://vercel.com/docs/rest-api/edge-cache/dangerously-delete-by-tag?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=related) — POST /v1/edge-cache/dangerously-delete-by-tags — Marks a cache tag as deleted, causing cache entries associated with tha
 
 Full cross-link map for this page: [/docs/caching/cdn-cache/purge.graph.md](/docs/caching/cdn-cache/purge.graph.md?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fpurge&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -73,11 +73,11 @@ When you purge by cache tag, Vercel purges all three types of cache: CDN cache, 
 
 ### Invalidating the cache
 
-When you invalidate a cache tag, all cached content associated with that tag is marked as stale. The next request serves the stale content instantly while revalidation happens in the background. This approach has no latency impact for users while ensuring content gets updated.
+When you invalidate a cache tag, all cached content associated with that tag is marked as stale. The next request serves the stale content instantly while revalidation happens in the background. This approach has no latency impact for users while ensuring content gets updated. In request logs this appears as cache status `STALE` with the reason **Tag-based invalidation**. See [Cache Status](/docs/caching/cache-status#tag-based-invalidation).
 
 ### Deleting the cache
 
-When you delete a cache tag, the cached entries are marked for deletion. The next request fetches content from your origin before responding to the user. This can slow down the first request after deletion. If many users request the same deleted content simultaneously, it can create a cache stampede where multiple requests hit your origin at once.
+When you delete a cache tag, the cached entries are marked for deletion. The next request fetches content from your origin before responding to the user. This can slow down the first request after deletion. If many users request the same deleted content simultaneously, it can create a cache stampede where multiple requests hit your origin at once. In request logs this appears as cache status `REVALIDATED` with the reason **Tag-based deletion**. See [Cache Status](/docs/caching/cache-status#tag-based-deletion).
 
 ### Cache tags
 
@@ -143,12 +143,18 @@ This allows you to purge by a single source image without purging the entire pro
 
 ## Programmatically purging CDN Cache
 
-You can purge Vercel CDN cache in any of the following ways:
+Each method below either [invalidates](#invalidating-the-cache) or [deletes](#deleting-the-cache) the CDN cache. Select the column that matches the behavior you're looking for:
 
-- [next/cache](https://nextjs.org/docs/app/api-reference/functions/cacheTag): Use helper methods like `revalidatePath()`, `revalidateTag()`, or `updateTag()`
-- [@vercel/functions](/docs/functions/functions-api-reference/vercel-functions-package): Use helper methods like `invalidateByTag()`, `dangerouslyDeleteByTag()`, `invalidateBySrcImage()`, or `dangerouslyDeleteBySrcImage()`
-- [Vercel CLI](/docs/cli/cache): Use the `vercel cache invalidate` command or `vercel cache dangerously-delete` command with `--tag` or `--srcimg` options
-- [REST API](/docs/rest-api/edge-cache/invalidate-by-tag): Make direct API calls to the edge cache endpoint like `/invalidate-by-tag`, `/dangerously-delete-by-tag`, `/invalidate-by-source-image`, or `/dangerously-delete-by-source-image`
+| Method                                                                                                        | Invalidate (serve stale, refresh in background)                                     | Delete (regenerate in the foreground)                                                                  |
+| ------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| [`@vercel/functions`](/docs/functions/functions-api-reference/vercel-functions-package)                       | `invalidateByTag()`, `invalidateBySrcImage()`                                       | `dangerouslyDeleteByTag()`, `dangerouslyDeleteBySrcImage()`                                            |
+| [`next/cache`](https://nextjs.org/docs/15/app/api-reference/functions/revalidateTag) on Next.js 15 and earlier | None in `next/cache`. Use `invalidateByTag()` from `@vercel/functions`.                    | `revalidateTag(tag)`, `revalidatePath(path)`, `unstable_expireTag(tag)`                                          |
+| [`next/cache`](https://nextjs.org/docs/app/api-reference/functions/revalidateTag) on Next.js 16 and later    | `revalidateTag(tag, 'max')`  | `revalidateTag(tag)`, `revalidatePath(path)`, `updateTag(tag)`                                            |
+| [Vercel CLI](/docs/cli/cache)                                                                                 | `vercel cache invalidate` with `--tag` or `--srcimg`                                | `vercel cache dangerously-delete` with `--tag` or `--srcimg`                                           |
+| [REST API](/docs/rest-api/edge-cache/invalidate-by-tag)                                                                                            | `/invalidate-by-tag`, `/invalidate-by-source-image`                                 | `/dangerously-delete-by-tag`, `/dangerously-delete-by-source-image`                                    |
+
+> **💡 Note:** On Next.js 15 and earlier, `revalidateTag()` always deletes. Use
+> `invalidateByTag()` from `@vercel/functions` to invalidate instead.
 
 ## Manually purging Vercel CDN Cache
 

@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/claude-apps-gateway-on-aws.md"
-fetched_at: "2026-09-21T09:39:23.760Z"
-sha256: "c2116399cda0623f46451fa6c817b11d2b016029b8b5a4858b45aceaf4401252"
+fetched_at: "2026-09-28T10:38:50.037Z"
+sha256: "9ede369b647a24b77bf7f0f3b3f9601678f42d178c2822026e96f04dfd7da768"
 ---
 
 > ## Documentation Index
@@ -253,6 +253,8 @@ The steps below provision the full deployment with `aws` commands.
 
     store:
       postgres_url: ${GATEWAY_POSTGRES_URL}          # EKS: ${file:/secrets/postgres-url}
+      # readiness_grace_seconds: 300                 # keep passing the health check
+                                                     # through an RDS failover
 
     upstreams:
       - provider: bedrock
@@ -421,7 +423,9 @@ The steps below provision the full deployment with `aws` commands.
           --load-balancers "targetGroupArn=$TG_ARN,containerName=gateway,containerPort=8080"
         ```
 
-        The 60-second grace period gives a cold task time to pull the image, connect to the store, and answer its first health check before ECS starts counting failures against the deployment. The target group's health check on `GET /readyz` verifies the store is reachable, so a task that can't reach Postgres never enters rotation; see [Outage behavior](/docs/en/claude-apps-gateway-deploy#outage-behavior) for the tradeoff and the `/healthz` alternative.
+        The 60-second grace period gives a cold task time to pull the image, connect to the store, and answer its first health check before ECS starts counting failures against the deployment.
+
+        The target group's health check on `GET /readyz` verifies the store is reachable, so a task that can't reach Postgres never enters rotation. To keep tasks passing the check through a short database outage such as an RDS failover, set `store.readiness_grace_seconds` as described in [Outage behavior](/docs/en/claude-apps-gateway-deploy#outage-behavior), which also covers the `/healthz` alternative.
 
         The tasks run in private subnets with no public IP, so all egress (to Bedrock, your IdP, Secrets Manager, ECR, and CloudWatch Logs) goes through the NAT gateway. To keep Bedrock traffic off the public path, create a `bedrock-runtime` interface VPC endpoint and point the upstream's `base_url` at it, as shown in the [Bedrock upstream reference](/docs/en/claude-apps-gateway-config#amazon-bedrock); the IdP still needs internet egress.
 

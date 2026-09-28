@@ -3,7 +3,7 @@ title: Preview Deployment Suffix
 product: vercel
 url: /docs/deployments/preview-deployment-suffix
 canonical_url: "https://vercel.com/docs/deployments/preview-deployment-suffix"
-last_updated: 2026-08-28
+last_updated: 2026-09-18
 type: conceptual
 prerequisites:
   - /docs/deployments
@@ -14,8 +14,8 @@ related:
 summary: When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that particular deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/preview-deployment-suffix.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "1ac952c5f45699ea142a30acf4070932dafd318ee90996c410aea95d892b485c"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "6a9911297ff8e5a1b8ee2bf08349a17b80b2325096f36055fe31d73ed2a64c40"
 ---
 
 # Preview Deployment Suffix
@@ -32,8 +32,8 @@ Preview Deployment Suffixes allow you to customize the URL of a [preview deploym
 
 - [Preview URLs optimized for multi-tenant platforms](https://vercel.com/changelog/preview-urls-optimized-for-multi-tenant-platforms?from=related&source_path=%2Fdocs%2Fdeployments%2Fpreview-deployment-suffix&source_site=vercel-docs&relationship=related)
 - [Are Vercel Preview Deployments indexed by search engines?](https://vercel.com/kb/guide/are-vercel-preview-deployment-indexed-by-search-engines?from=related&source_path=%2Fdocs%2Fdeployments%2Fpreview-deployment-suffix&source_site=vercel-docs&relationship=related) — Vercel Preview Deployments aren't indexed by default. Learn how the noindex header works, how to confirm it, and the cus
-- [Custom domain](https://v0.app/docs/custom-domains?from=related&source_path=%2Fdocs%2Fdeployments%2Fpreview-deployment-suffix&source_site=vercel-docs&relationship=related) — Add custom domains to your v0 deployments to give your applications a professional, branded URL.
 - [Branch Domains](https://vercel.com/blog/branch-domains?from=related&source_path=%2Fdocs%2Fdeployments%2Fpreview-deployment-suffix&source_site=vercel-docs&relationship=related)
+- [Project-level deployment suffixes](https://vercel.com/changelog/project-level-deployment-suffixes?from=related&source_path=%2Fdocs%2Fdeployments%2Fpreview-deployment-suffix&source_site=vercel-docs&relationship=related)
 - [Accessing Deployments through Generated URLs](https://vercel.com/docs/deployments/generated-urls?from=related&source_path=%2Fdocs%2Fdeployments%2Fpreview-deployment-suffix&source_site=vercel-docs&relationship=related) — When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that parti
 - [Multi-tenant Preview URLs](https://vercel.com/docs/platforms/multi-tenant-platforms/preview-url-prefixes?from=related&source_path=%2Fdocs%2Fdeployments%2Fpreview-deployment-suffix&source_site=vercel-docs&relationship=related) — Test tenant-specific experiences in preview deployments using dynamic URL prefixes.
 - [Working with domains](https://vercel.com/docs/domains/working-with-domains?from=related&source_path=%2Fdocs%2Fdeployments%2Fpreview-deployment-suffix&source_site=vercel-docs&relationship=related) — Learn how domains work and the options Vercel provides for managing them.

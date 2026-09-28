@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage bot traffic to your site.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/bot-management.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "21431c543effd975bccc3305cede0297368e79cd30487c8a2ff9fd075ff004e8"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "c6e7387ce2b12c12c7ccebe805c535ff07fe925253f4b6874545b10c39894d70"
 ---
 
 # Bot Management
@@ -478,6 +478,30 @@ cursor-server
 ai\_assistant
 
 Cursor connects to Model Context Protocol (MCP) servers on behalf of a Cursor user, so their AI coding agent can use the tools a site exposes.
+
+View
+
+customerio-actions
+
+webhook
+
+Customer.io's Actions engine delivers data and automated event notifications to customer-configured destinations and downstream integrations.
+
+View
+
+customerio-linkcheck
+
+verification
+
+Customer.io Link Check verifies that links in message templates are accessible and return valid HTTP status codes.
+
+View
+
+customerio-trustybot
+
+verification
+
+Customer.io TrustyBot crawls customer websites upon account sign-up to review website content, domain use, and compliance with email deliverability standards.
 
 View
 
@@ -1270,6 +1294,14 @@ site24x7
 monitor
 
 Site24x7 Bot is used by Site24x7's monitoring services to perform various checks on websites, including uptime and performance monitoring.
+
+View
+
+siteimprove
+
+accessibility
+
+The Siteimprove crawler is a cloud-based bot that scans websites to monitor quality, SEO, accessibility, and policy compliance. It identifies itself through specific user agent strings (such as SiteCheck-sitecrawl) and respects robots.txt rules while crawling domains configured within customer accounts.
 
 View
 

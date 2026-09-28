@@ -3,7 +3,7 @@ title: Redirects
 product: vercel
 url: /docs/routing/redirects
 canonical_url: "https://vercel.com/docs/routing/redirects"
-last_updated: 2026-08-11
+last_updated: 2026-09-18
 type: conceptual
 prerequisites:
   - /docs/routing
@@ -16,8 +16,8 @@ related:
 summary: "Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/redirects.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "6caac7306b5d61622a8788e48d1be4105c78d92baaf6ba125eec382461ca4ac2"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "93c36332e173d63c985f7cbb418a9d57e184c5f29f3c80605b8fb6d8469e7437"
 ---
 
 # Redirects
@@ -34,7 +34,7 @@ Redirects are rules that instruct Vercel to send users to a different URL than t
 - [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
 - [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
 - [Emergency Redirect](https://vercel.com/kb/guide/emergency-redirect?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Learn how to implement an emergency redirect without re-deploying your site.
-- [Avoiding duplicate-content SEO with vercel.app URLs and custom domains](https://vercel.com/kb/guide/avoiding-duplicate-content-with-vercel-app-urls?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Discover why search engines may treat your vercel.app URL and custom domain as separate pages, and how to consolidate ra
+- [How to handle redirects in Next.js](https://nextjs.org/docs/pages/guides/redirecting?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Learn the different ways to handle redirects in Next.js.
 - [Incremental Migration to Vercel](https://vercel.com/docs/incremental-migration?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Learn how to migrate your app or website to Vercel with minimal risk and high impact.
 - [Rewrites on Vercel](https://vercel.com/docs/routing/rewrites?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Learn how to use rewrites to send users to different URLs without modifying the visible URL.
 - [vercel redirects](https://vercel.com/docs/cli/redirects?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Learn how to manage project-level redirects using the vercel redirects CLI command.

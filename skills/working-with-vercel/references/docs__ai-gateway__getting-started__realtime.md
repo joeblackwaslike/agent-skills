@@ -15,8 +15,8 @@ related:
 summary: Start a realtime speech session using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/realtime.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "cfe2af6e4558619d37093ce8fdaccf2fdf82f0030cccbc12d3220217221032b9"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "02edf8497a183a6131bf8bf6fe7d993c49aeae38039f366ec76d157705224886"
 ---
 
 # AI Gateway Realtime Quickstart
@@ -37,6 +37,7 @@ Start a realtime speech session through AI Gateway.
 - [GPT-Live 1 now available on AI Gateway](https://vercel.com/changelog/gpt-live-1-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Frealtime&source_site=vercel-docs&relationship=related)
 - [Video Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/video?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Frealtime&source_site=vercel-docs&relationship=related) — Generate a video from a text prompt using AI Gateway.
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Frealtime&source_site=vercel-docs&relationship=related) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
+- [gptme with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/gptme?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Frealtime&source_site=vercel-docs&relationship=related) — Connect gptme to AI Gateway with the Vercel CLI or a TOML provider configuration.
 
 Full cross-link map for this page: [/docs/ai-gateway/getting-started/realtime.graph.md](/docs/ai-gateway/getting-started/realtime.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Frealtime&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

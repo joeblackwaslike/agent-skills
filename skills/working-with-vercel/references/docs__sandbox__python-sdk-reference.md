@@ -9,17 +9,20 @@ prerequisites:
   - /docs/sandbox
 related:
   - /docs/sandbox/sdk-reference
+  - /docs/sandbox/concepts/drives
+  - /docs/sandbox/concepts/regions
+  - /docs/sandbox/concepts/secure-compute
   - /docs/sandbox/concepts/authentication
-summary: Reference for the Vercel Sandbox Python SDK, including sandbox lifecycle, processes, files, snapshots, persistence, and network policies.
+summary: Reference for the Vercel Sandbox Python SDK, including sandbox lifecycle, processes, files, drives, snapshots, persistence, and network policies.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/python-sdk-reference.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "15163cdc8fc6d1d9f1935de2682ba1d61b745468f7608059b6be234808187dc2"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "f2625c21e8090d615d7ae97da2d6b8c1b33d16c0bd58095b8152560eab8fb8ac"
 ---
 
 # Python SDK Reference
 
-Use the Vercel Sandbox Python SDK to create isolated Linux microVMs, run processes, manage files, and preserve environments between sessions.
+Use the Vercel Sandbox Python SDK to create isolated Linux microVMs, run processes, manage files and drives, and preserve environments between sessions.
 
 
 <!-- docsgraph:related -->
@@ -29,13 +32,14 @@ Use the Vercel Sandbox Python SDK to create isolated Linux microVMs, run process
 
 - [Build an agentic app in FastAPI with OpenAI Agents API and Vercel Sandbox](https://vercel.com/kb/guide/fastapi-openai-agents-api-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — Learn how to build a repository Q&A app using FastAPI, OpenAI Agents API, and Vercel Sandbox, with isolated code inspect
 - [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
-- [Sandbox](https://eve.dev/docs/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — The agent's isolated bash environment, including built-in file tools, a seeded /workspace, backends, lifecycle, and netw
-- [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — Learn how to save sandbox state with snapshots and skip installation on future runs.
+- [Vercel Sandbox](https://eve.dev/docs/sandbox/vercel?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — Create snapshot-backed persistent sandboxes on Vercel.
+- [Sandbox](https://eve.dev/docs/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — Configure the isolated filesystem and command environment used by an eve agent.
+- [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
 - [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem
-- [Working with Sandbox](https://vercel.com/docs/sandbox/working-with-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — Task-oriented examples for common Vercel Sandbox operations in TypeScript and Python.
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 - [Snapshots](https://vercel.com/docs/sandbox/concepts/snapshots?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — Save and restore sandbox state with snapshots for faster startups and environment sharing.
 - [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
+- [Tags](https://vercel.com/docs/sandbox/concepts/tags?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — Categorize sandboxes by environment, team, or any other criteria using key-value tags.
 
 Full cross-link map for this page: [/docs/sandbox/python-sdk-reference.graph.md](/docs/sandbox/python-sdk-reference.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -86,7 +90,7 @@ asyncio.run(main())
 
 `create_sandbox()` returns a single-use operation that you can either await or use as an async context manager:
 
-- `async with sandbox.create_sandbox() as box` stops and destroys the sandbox on exit.
+- `async with sandbox.create_sandbox() as box` stops and destroys the sandbox on exit, including snapshots no other sandbox uses.
 - `box = await sandbox.create_sandbox()` leaves lifecycle management to you. Call `stop()` to end the current session or `destroy()` to delete the sandbox.
 - Pass `destroy=False` to stop, but not destroy, a context-managed sandbox on exit.
 
@@ -94,24 +98,31 @@ asyncio.run(main())
 
 The function accepts these keyword arguments:
 
-| Parameter              | Type                                                      | Description                                                                              |
-| ---------------------- | --------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `project_id`           | `str \| None`                                             | Project that owns the sandbox. The SDK uses your resolved credentials when omitted.      |
-| `name`                 | `str \| None`                                             | Stable sandbox name. Vercel generates one when omitted.                                  |
-| `image`                | `str \| None`                                             | Vercel Container Registry image reference.                                               |
-| `source`               | `GitSource \| TarballSource \| SnapshotSource \| None`    | Initial filesystem source.                                                               |
-| `ports`                | `list[int] \| None`                                       | Ports to expose through the sandbox routes.                                              |
-| `execution_time_limit` | `int \| float \| timedelta \| None`                       | Maximum runtime for the current session. Numbers represent seconds.                      |
-| `resources`            | `SandboxResources \| None`                                | Requested virtual CPUs and memory.                                                       |
-| `persistent`           | `bool \| None`                                            | Whether Vercel snapshots the filesystem when the session stops.                          |
-| `network_policy`       | `NetworkPolicy \| None`                                   | Outbound network policy.                                                                 |
-| `env`                  | `Mapping[str, str] \| None`                               | Environment variables available to processes in the sandbox.                             |
-| `tags`                 | `Mapping[str, str] \| None`                               | Metadata used to organize and query sandboxes.                                           |
-| `snapshot_expiration`  | `int \| float \| timedelta \| SnapshotExpiration \| None` | Default snapshot lifetime. Numbers represent seconds. Zero disables expiration.          |
-| `snapshot_retention`   | `SnapshotRetention \| None`                               | Automatic snapshot retention policy.                                                     |
-| `destroy`              | `bool`                                                    | Whether context-manager exit destroys the sandbox after stopping it. Defaults to `True`. |
+| Parameter              | Type                                                                | Description                                                                              |
+| ---------------------- | ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `name`                 | `str \| None`                                                       | Stable sandbox name. Vercel generates one when omitted.                                  |
+| `image`                | `str \| None`                                                       | Vercel Container Registry image reference.                                               |
+| `source`               | `GitSource \| TarballSource \| SnapshotSource \| None`              | Initial filesystem source.                                                               |
+| `ports`                | `list[int] \| None`                                                 | Ports to expose through the sandbox routes.                                              |
+| `execution_time_limit` | `int \| float \| timedelta \| None`                                 | Maximum runtime for the current session. Numbers represent seconds.                      |
+| `resources`            | `SandboxResources \| None`                                          | Requested virtual CPUs and memory.                                                       |
+| `persistent`           | `bool \| None`                                                      | Whether Vercel snapshots the filesystem when the session stops.                          |
+| `network_policy`       | `NetworkPolicy \| None`                                             | Outbound network policy.                                                                 |
+| `network_id`           | `str \| None`                                                       | Secure Compute network ID to attach to the sandbox.                                      |
+| `env`                  | `Mapping[str, str] \| None`                                         | Environment variables available to processes in the sandbox.                             |
+| `tags`                 | `Mapping[str, str] \| None`                                         | Metadata used to organize and query sandboxes.                                           |
+| `mounts`               | `Mapping[str \| PurePosixPath, str \| Drive \| DriveMount] \| None` | Drives keyed by absolute mount path. Drives use read-write mode by default.              |
+| `snapshot_expiration`  | `int \| float \| timedelta \| SnapshotExpiration \| None`           | Default snapshot lifetime. Numbers represent seconds. Zero disables expiration.          |
+| `snapshot_retention`   | `SnapshotRetention \| None`                                         | Automatic snapshot retention policy.                                                     |
+| `region`               | `str \| None`                                                       | Preferred region for the sandbox.                                                        |
+| `failover_regions`     | `Iterable[str] \| None`                                             | Regions to try if the preferred region lacks capacity.                                   |
+| `destroy`              | `bool`                                                              | Whether context-manager exit destroys the sandbox after stopping it. Defaults to `True`. |
 
 When you omit `image`, the Sandbox API uses `vercel/sandbox/universal:latest`. You can pass a bare repository, tag, digest, or fully qualified Vercel Container Registry reference. The `box.image` property contains the resolved image reference.
+
+The SDK selects the owning project from its resolved credentials. To use another project, configure `SandboxServiceOptions` with credentials for that project.
+
+Drive mount paths must be absolute, and a sandbox with mounted drives can't use failover regions. See [Drives](/docs/sandbox/concepts/drives) and [Regions](/docs/sandbox/concepts/regions).
 
 Create a persistent sandbox without automatic cleanup:
 
@@ -164,7 +175,7 @@ async with sandbox.fork_sandbox(
     print(result.stdout)
 ```
 
-The fork inherits the source sandbox's current snapshot and configuration. Values passed to `fork_sandbox()` replace the corresponding inherited values. Like `create_sandbox()`, the returned operation is single-use, awaitable, and an async context manager. Context-manager exit stops and destroys the fork by default.
+The fork uses the named source sandbox as its starting point and inherits its configuration and Secure Compute network (`network_id`), except for drive mounts. Values passed to `fork_sandbox()` replace the corresponding inherited values. Pass `network_id` to override the inherited network. Pass `mounts` to attach drives to the fork. Like `create_sandbox()`, the returned operation is single-use, awaitable, and an async context manager. Context-manager exit stops and destroys the fork by default.
 
 ## Retrieve and resume sandboxes
 
@@ -178,7 +189,7 @@ print(box.status)
 print(box.current_snapshot_id)
 ```
 
-`get_sandbox()` accepts `name`, optional `project_id`, and optional `include_system_routes`. The lookup is passive and doesn't start a new runtime session.
+`get_sandbox()` accepts `name` and optional `include_system_routes`. The lookup is passive and doesn't start a new runtime session. The SDK uses the project from its resolved credentials.
 
 Process and filesystem operations on the returned handle automatically resume a stopped persistent sandbox. The same `box` handle adopts the replacement session before retrying the operation:
 
@@ -252,7 +263,7 @@ Use one of these query models:
 | `SandboxQueryByCurrentSnapshotId` | `sort_order`                                         |
 | `TagFilter`                       | Exact `key` and `value` match                        |
 
-All query functions accept `page_size` and `cursor`. `query_sandboxes()` also accepts `project_id`.
+All query functions accept `page_size` and `cursor`. Queries use the project from the SDK's resolved credentials.
 
 ## Sandbox handles
 
@@ -260,31 +271,34 @@ A `Sandbox` handle describes the persistent sandbox and its current runtime sess
 
 ### Properties
 
-| Property               | Type                             | Description                                                              |
-| ---------------------- | -------------------------------- | ------------------------------------------------------------------------ |
-| `name`                 | `str`                            | Stable sandbox identity.                                                 |
-| `current_session_id`   | `str`                            | Identifier for the current runtime session.                              |
-| `current_session`      | `SandboxRuntimeSession \| None`  | Current session handle when the API response includes it.                |
-| `image`                | `str \| None`                    | Resolved image reference.                                                |
-| `status`               | `SandboxStatus \| None`          | Current lifecycle state.                                                 |
-| `persistent`           | `bool \| None`                   | Whether stop creates an automatic snapshot.                              |
-| `current_snapshot_id`  | `str \| None`                    | Snapshot used for the next resume.                                       |
-| `project_id`           | `str \| None`                    | Owning project.                                                          |
-| `cwd`                  | `str \| None`                    | Default working directory.                                               |
-| `region`               | `str \| None`                    | Runtime region.                                                          |
-| `memory`               | `int \| None`                    | Memory in megabytes.                                                     |
-| `vcpus`                | `int \| None`                    | Number of virtual CPUs.                                                  |
-| `execution_time_limit` | `timedelta \| None`              | Current session execution limit.                                         |
-| `network_policy`       | `NetworkPolicy \| None`          | Current outbound network policy.                                         |
-| `snapshot_expiration`  | `timedelta \| None`              | Default snapshot expiration.                                             |
-| `snapshot_retention`   | `SnapshotRetentionState \| None` | Active retention policy.                                                 |
-| `status_updated_at`    | `int \| None`                    | Unix timestamp for the latest status update.                             |
-| `created_at`           | `int \| None`                    | Unix creation timestamp.                                                 |
-| `updated_at`           | `int \| None`                    | Unix update timestamp.                                                   |
-| `tags`                 | `dict[str, str] \| None`         | Copy of the sandbox tags.                                                |
-| `routes`               | `tuple[SandboxRouteState, ...]`  | Exposed routes. Each route has `url`, `port`, `subdomain`, and `system`. |
-| `raw`                  | `dict \| None`                   | Copy of the raw API response data.                                       |
-| `fs`                   | `SandboxFilesystem`              | Filesystem for the current session.                                      |
+| Property               | Type                              | Description                                                              |
+| ---------------------- | --------------------------------- | ------------------------------------------------------------------------ |
+| `name`                 | `str`                             | Stable sandbox identity.                                                 |
+| `current_session_id`   | `str`                             | Identifier for the current runtime session.                              |
+| `current_session`      | `SandboxRuntimeSession \| None`   | Current session handle when the API response includes it.                |
+| `image`                | `str \| None`                     | Resolved image reference.                                                |
+| `status`               | `SandboxStatus \| None`           | Current lifecycle state.                                                 |
+| `persistent`           | `bool \| None`                    | Whether stop creates an automatic snapshot.                              |
+| `current_snapshot_id`  | `str \| None`                     | Snapshot used for the next resume.                                       |
+| `project_id`           | `str \| None`                     | Owning project.                                                          |
+| `cwd`                  | `str \| None`                     | Default working directory.                                               |
+| `region`               | `str \| None`                     | Runtime region.                                                          |
+| `failover_regions`      | `tuple[str, ...]`                 | Configured failover regions.                                             |
+| `memory`               | `int \| None`                     | Memory in megabytes.                                                     |
+| `vcpus`                | `int \| None`                     | Number of virtual CPUs.                                                  |
+| `execution_time_limit` | `timedelta \| None`               | Current session execution limit.                                         |
+| `network_policy`       | `NetworkPolicy \| None`           | Current outbound network policy.                                         |
+| `network_id`           | `str \| None`                     | Attached Secure Compute network ID.                                      |
+| `snapshot_expiration`  | `timedelta \| None`               | Default snapshot expiration.                                             |
+| `snapshot_retention`   | `SnapshotRetentionState \| None`  | Active retention policy.                                                 |
+| `status_updated_at`    | `int \| None`                     | Unix timestamp for the latest status update.                             |
+| `created_at`           | `int \| None`                     | Unix creation timestamp.                                                 |
+| `updated_at`           | `int \| None`                     | Unix update timestamp.                                                   |
+| `tags`                 | `dict[str, str] \| None`          | Copy of the sandbox tags.                                                |
+| `routes`               | `tuple[SandboxRouteState, ...]`   | Exposed routes. Each route has `url`, `port`, `subdomain`, and `system`. |
+| `mounts`               | `dict[str, SandboxMount] \| None` | Drives mounted by path. Each mount has `drive` and `mode`.               |
+| `raw`                  | `dict \| None`                    | Copy of the raw API response data.                                       |
+| `fs`                   | `SandboxFilesystem`               | Filesystem for the current session.                                      |
 
 `SandboxStatus` can be `PENDING`, `RUNNING`, `STOPPING`, `STOPPED`, `FAILED`, `ABORTED`, or `SNAPSHOTTING`.
 
@@ -353,7 +367,7 @@ await box.update(
 )
 ```
 
-You can update `ports`, `execution_time_limit`, `resources`, `persistent`, `network_policy`, `env`, `tags`, `snapshot_expiration`, `snapshot_retention`, and `current_snapshot_id`. Only non-`None` values are sent. Passing `snapshot_retention=None` explicitly removes the retention policy. `ports` replaces the complete exposed port list. Set `current_snapshot_id` to choose the snapshot restored on the next resume. The method refreshes and returns the same `Sandbox` handle.
+You can update `ports`, `execution_time_limit`, `resources`, `persistent`, `network_policy`, `network_id`, `env`, `tags`, `mounts`, `snapshot_expiration`, `snapshot_retention`, `current_snapshot_id`, `region`, and `failover_regions`. Only non-`None` values are sent, except that `snapshot_retention=None` removes the retention policy and `network_id=None` detaches the [Secure Compute](/docs/sandbox/concepts/secure-compute) network. Network changes apply from the sandbox's next session. `ports` replaces the complete exposed port list. `mounts` replaces all drive mounts for the next session, and an empty mapping removes all mounts. Pass `failover_regions=[]` to clear failover regions. Set `current_snapshot_id` to choose the snapshot restored on the next resume. The method refreshes and returns the same `Sandbox` handle.
 
 ### `extend_execution_time_limit()`
 
@@ -376,11 +390,13 @@ Stop the current runtime session without deleting a persistent sandbox:
 await box.stop()
 ```
 
-Delete the sandbox, its sessions, and its snapshots permanently:
+Delete the sandbox and its sessions. By default, snapshots remain until they expire:
 
 ```python filename="main.py"
 await box.destroy()
 ```
+
+To delete snapshots that no other sandbox uses, pass `delete_orphan_snapshots=True` to `destroy()`. Context-managed sandbox creation deletes these orphaned snapshots on exit by default.
 
 ### `list_sessions()` and `list_snapshots()`
 
@@ -392,6 +408,109 @@ snapshots = await box.list_snapshots(page_size=20, sort_order="desc")
 ```
 
 Use the module-level query functions when you want automatic pagination.
+
+## Manage drives
+
+[Drives](/docs/sandbox/concepts/drives) provide persistent storage that you can mount into sandboxes. A drive belongs to one project and region, and its files remain available after a sandbox stops.
+
+### Create or retrieve a drive
+
+Use `get_or_create_drive()` to retrieve a named drive or create it when it doesn't exist. It returns a tuple containing the drive and `created`, a boolean indicating whether the drive was created by this call:
+
+```python filename="main.py"
+from vercel import sandbox
+
+drive, created = await sandbox.get_or_create_drive(
+    name="workspace-cache",
+    max_size_bytes=200 * 1024 * 1024 * 1024,
+    region="sfo1",
+)
+```
+
+The function accepts these keyword arguments:
+
+| Parameter        | Type          | Description                                                          |
+| ---------------- | ------------- | -------------------------------------------------------------------- |
+| `name`           | `str`         | Project-local drive name.                                            |
+| `max_size_bytes` | `int \| None` | Maximum size for a new drive. The project default applies if omitted. |
+| `region`         | `str \| None` | Region for a new drive. Uses the SDK default when omitted.            |
+
+When you omit `region`, the SDK uses `SandboxServiceOptions.region`, which reads `VERCEL_REGION` by default. If neither is set, the SDK omits the region and the Sandbox API creates the drive in `iad1`. Requesting an existing drive with a different region or maximum size fails with a `conflict` error.
+
+### Mount a drive
+
+Pass a mapping of absolute mount paths to drive handles or names. Drives mount in read-write mode by default:
+
+```python filename="main.py"
+drive, created = await sandbox.get_or_create_drive(name="workspace-cache")
+
+box = await sandbox.create_sandbox(
+    name="my-sandbox",
+    mounts={"/data": drive},
+)
+```
+
+Call `drive.snapshot()` to create a read-only, point-in-time mount that multiple sandboxes can use concurrently:
+
+```python filename="main.py"
+reader = await sandbox.create_sandbox(
+    name="reader",
+    mounts={"/data": drive.snapshot()},
+)
+```
+
+You can also construct a mount explicitly with `DriveMount(drive, mode="read-write")` or `DriveMount(drive, mode="snapshot")`.
+
+`create_sandbox()`, `fork_sandbox()`, and `get_or_create_sandbox()` accept `mounts`. A fork doesn't inherit its source sandbox's mounts. Pass `mounts` to attach drives to the fork.
+
+Mount paths must be absolute and can't overlap. You can mount each drive once and mount up to four drives per sandbox. All mounted drives and the sandbox must use the same region.
+
+### List drives
+
+`query_drives()` returns an async iterator and follows pagination cursors automatically:
+
+```python filename="main.py"
+from vercel.sandbox import DriveQueryByName
+
+query = DriveQueryByName(
+    name_prefix="workspace",
+    sort_order="asc",
+)
+
+async for drive in sandbox.query_drives(query=query, page_size=10):
+    print(drive.name, drive.current_sandbox_name or "detached")
+```
+
+Use one of these query models:
+
+| Type                    | Fields                               |
+| ----------------------- | ------------------------------------ |
+| `DriveQueryByCreatedAt` | `sort_order`                         |
+| `DriveQueryByUpdatedAt` | `sort_order`                         |
+| `DriveQueryByName`      | `sort_order`, optional `name_prefix` |
+
+`query_drives()` also accepts `page_size` and `cursor`. It uses the project from the SDK's resolved credentials.
+
+### Drive properties and deletion
+
+| Property                   | Type          | Description                             |
+| -------------------------- | ------------- | --------------------------------------- |
+| `id`                       | `str`         | Drive identifier.                       |
+| `name`                     | `str`         | Project-local drive name.               |
+| `project_id`               | `str`         | Owning project.                         |
+| `region`                   | `str`         | Storage region.                         |
+| `max_size_bytes`           | `int`         | Maximum drive size in bytes.            |
+| `current_session_id`       | `str \| None` | Attached runtime session, when present. |
+| `current_sandbox_name`     | `str \| None` | Attached sandbox, when present.         |
+| `created_at`, `updated_at` | `int`         | Unix timestamps.                        |
+
+Delete a detached drive and all its data:
+
+```python filename="main.py"
+await drive.delete()
+```
+
+Use `await sandbox.delete_drive(name="workspace-cache")` when you don't have a drive handle. You can't delete a drive while it is attached to a running sandbox.
 
 ## Run processes
 
@@ -637,7 +756,7 @@ async for item in sandbox.query_snapshots(
     print(item.id, item.status)
 ```
 
-`query_snapshots()` accepts optional `project_id`, `name`, `page_size`, `cursor`, and `sort_order`.
+`query_snapshots()` accepts optional `name`, `page_size`, `cursor`, and `sort_order`. It uses the project from the SDK's resolved credentials.
 
 ### Query runtime sessions
 
@@ -651,7 +770,7 @@ async for runtime_session in sandbox.query_sessions(
     print(runtime_session.id, runtime_session.status)
 ```
 
-A `SandboxRuntimeSession` exposes `id`, `sandbox_name`, `project_id`, `status`, `cwd`, `region`, `memory`, `vcpus`, `execution_time_limit`, `network_policy`, `requested_at`, `started_at`, and `stopped_at`.
+A `SandboxRuntimeSession` exposes `id`, `sandbox_name`, `project_id`, `status`, `cwd`, `region`, `memory`, `vcpus`, `execution_time_limit`, `network_policy`, `network_id`, `requested_at`, `started_at`, and `stopped_at`.
 
 A runtime session also provides `fs`, process methods, `refresh()`, `extend_execution_time_limit()`, `update_network_policy()`, `snapshot()`, and `stop()`. These methods operate on that session and don't trigger automatic resume after it stops.
 
@@ -839,7 +958,7 @@ with sandbox.create_sandbox() as box:
     print(result.stdout)
 ```
 
-Remove `await` and use regular context managers and iterators. Sync handle names include `SyncSandbox`, `SyncSandboxRuntimeSession`, `SyncProcess`, `SyncSnapshot`, and sync filesystem reader and writer types.
+Remove `await` and use regular context managers and iterators. Sync handle names include `SyncSandbox`, `SyncSandboxRuntimeSession`, `SyncProcess`, `SyncDrive`, `SyncSnapshot`, and sync filesystem reader and writer types.
 
 Use `with box.session() as runtime_session:` to clean up the acquired session on exit, or `runtime_session = box.session()` to manage cleanup yourself.
 
@@ -857,6 +976,8 @@ These exported types support precise annotations:
 | `SandboxSessionOperation`                  | Single-use awaitable and async context manager returned by `box.session()`.    |
 | `SandboxSource`                            | Union of `GitSource`, `TarballSource`, and `SnapshotSource`.                   |
 | `SandboxQuery`                             | Union of the four sandbox query models.                                        |
+| `DriveQuery`                               | Union of the three drive query models.                                         |
+| `DriveReference`                           | Drive name or handle accepted by `DriveMount`.                                 |
 | `SandboxFilesystemBatch`                   | Async batch returned by `box.fs.batch()`.                                      |
 | `SandboxTextReader`, `SandboxBinaryReader` | Async streaming file readers returned by `box.fs.open()`.                      |
 | `SandboxTextWriter`, `SandboxBinaryWriter` | Async streaming file writers returned by `box.fs.open()`.                      |
@@ -906,9 +1027,9 @@ By default, the SDK resolves credentials in this order:
 
 For local development, run `vercel link` and `vercel env pull`, then load `.env.local` into your Python process with a tool such as `python-dotenv`. For other environments, set all three access-token variables. See [Sandbox Authentication](/docs/sandbox/concepts/authentication).
 
-## CLI-only and JavaScript-only features
+## CLI-only features
 
-The Python SDK doesn't currently expose interactive PTY shells or the Drives API. Use `sandbox connect` for an interactive shell. Use the Sandbox CLI or JavaScript SDK for Drive operations.
+The Python SDK doesn't currently expose interactive PTY shells. Use `sandbox connect` for an interactive shell.
 
 Installing `vercel` also installs the `sandbox` and `vercel-sandbox` console commands. These commands delegate to the JavaScript Sandbox CLI through `npx`, so they require Node.js. The Python API itself doesn't require Node.js.
 
@@ -1010,6 +1131,7 @@ asyncio.run(main())
 | `base_url`              | `https://vercel.com/api`              | Sandbox API base URL. Override it only for testing or Vercel-managed development environments.                   |
 | `credentials_factory`   | Default OIDC and environment resolver | Callable that returns `SandboxCredentials`. Use an async callable for async Sandbox and a sync callable for sync. |
 | `file_transfer_timeout` | 5 minutes                             | Timeout for streaming file uploads and downloads.                                                               |
+| `region`                | `VERCEL_REGION` or `None`             | Default region for Sandbox operations, including Drive creation.                                                |
 
 
 ---

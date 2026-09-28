@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/braintrust.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "19d59f5d85f5dd460222e9efe24db91562cff60a94fa062eead48c8a1eda93ad"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "e8081a587de15ad552ee5b8f1f7b65a820e2b98395c73236d1e464f296addeee"
 ---
 
 # Braintrust Observability
@@ -44,7 +44,7 @@ import { generateText } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
 const result = await generateText({
-  model: openai('gpt-4o-mini'),
+  model: openai('gpt-6-luna'),
   prompt: 'What is 2 + 2?',
   context: {
     query: 'weather',
@@ -64,7 +64,7 @@ export async function POST(req: Request) {
   const { prompt } = await req.json();
 
   const result = await streamText({
-    model: openai('gpt-4o-mini'),
+    model: openai('gpt-6-luna'),
     prompt,
   });
 
@@ -108,7 +108,7 @@ registerTelemetry(new LegacyOpenTelemetry());
 
 async function main() {
   const result = await generateText({
-    model: openai('gpt-4o-mini'),
+    model: openai('gpt-6-luna'),
     messages: [
       {
         role: 'user',

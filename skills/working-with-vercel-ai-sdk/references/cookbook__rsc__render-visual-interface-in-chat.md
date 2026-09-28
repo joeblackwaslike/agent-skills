@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/rsc/render-visual-interface-in-chat.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "3c7bb9cd90587cb485dfcd80143a0d19ae9929f0e7d8fc8f9a3b0edc82609466"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "e151a8bb991dc48c2143314b9c481bea46296992a2066ccaaa1bfeacc4e79132"
 ---
 
 # Render Visual Interface in Chat
@@ -138,7 +138,7 @@ export async function continueConversation(
   const history = getMutableAIState();
 
   const result = await streamUI({
-    model: 'openai/gpt-5.4',
+    model: 'openai/gpt-6-astra',
     messages: [...history.get(), { role: 'user', content: input }],
     text: ({ content, done }) => {
       if (done) {

@@ -16,8 +16,8 @@ related:
 summary: Connect AI SDK, TanStack AI, and eve applications to MCP servers to discover and call tools.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/mcp/integrations.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "63b69e1fc49c2a6f56dbb2ed2e14abf11eaad4085037efd974c30e47c044a416"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "2b194c6fa3a0777eee1a843ca4b74e690a9835bd109fec5476a4cbc4ba4a21c2"
 ---
 
 # MCP Integrations
@@ -30,9 +30,9 @@ Connect your application or agent to a [Model Context Protocol (MCP)](/docs/mcp)
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [MCP Integrations](https://v0.app/docs/MCP?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations&source_site=vercel-docs&relationship=related) — Connect and use MCP servers directly in v0
 - [Introducing Vercel MCP: Connect Vercel to your AI tools](https://vercel.com/blog/introducing-vercel-mcp-connect-vercel-to-your-ai-tools?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations&source_site=vercel-docs&relationship=related)
 - [MCP server support on Vercel](https://vercel.com/changelog/mcp-server-support-on-vercel?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations&source_site=vercel-docs&relationship=related)
+- [MCP Integrations](https://v0.app/docs/MCP?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations&source_site=vercel-docs&relationship=related) — Connect and use MCP servers directly in v0
 - [MCP Server](https://v0.app/docs/api/v1/adapters/mcp-server?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations&source_site=vercel-docs&relationship=related) — The v0 MCP (Model Context Protocol) server allows you to integrate v0's capabilities directly into your IDE, providing s
 - [MCP Connections](https://eve.dev/docs/connections/mcp?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations&source_site=vercel-docs&relationship=related) — Connect an eve agent to a remote MCP server, authorize it with Vercel Connect or static credentials, and control which t
 - [How to build an MCP server with Nuxt](https://vercel.com/kb/guide/how-to-build-an-mcp-server-with-nuxt?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations&source_site=vercel-docs&relationship=related) — Add an MCP server to your Nuxt app with the Nuxt MCP Toolkit. Create tools, resources, and prompt templates that AI assi

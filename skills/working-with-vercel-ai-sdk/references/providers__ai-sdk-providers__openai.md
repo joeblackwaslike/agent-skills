@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/openai.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "0869199464d6335778603d36076a3f2749115832cc866e178538a19e34a96315"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "d49fce1abe30efa8f1e8c124beb2172d4b56c3cc7b02aa57539e272c8eaf31ed"
 ---
 
 # OpenAI Provider
@@ -81,14 +81,14 @@ You can use the following optional settings to customize the OpenAI provider ins
 The OpenAI provider instance is a function that you can invoke to create a language model:
 
 ```ts
-const model = openai('gpt-5');
+const model = openai('gpt-6-astra');
 ```
 
 It automatically selects the correct API based on the model id.
 You can also pass additional settings in the second argument:
 
 ```ts
-const model = openai('gpt-5', {
+const model = openai('gpt-6-astra', {
   // additional settings
 });
 ```
@@ -110,7 +110,7 @@ import { openai } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: openai('gpt-5'),
+  model: openai('gpt-6-astra'),
   prompt: 'Write a vegetarian lasagna recipe for 4 people.',
 });
 ```
@@ -124,7 +124,7 @@ and support structured data generation with [`Output`](/docs/reference/ai-sdk-co
 You can use the OpenAI responses API with the `openai(modelId)` or `openai.responses(modelId)` factory methods. It is the default API that is used by the OpenAI provider (since AI SDK 5).
 
 ```ts
-const model = openai('gpt-5');
+const model = openai('gpt-6-astra');
 ```
 
 Further configuration can be done using OpenAI provider options.
@@ -135,7 +135,7 @@ import { openai, OpenAILanguageModelResponsesOptions } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: openai('gpt-5'), // or openai.responses('gpt-5')
+  model: openai('gpt-6-astra'), // or openai.responses('gpt-6-astra')
   providerOptions: {
     openai: {
       parallelToolCalls: false,
@@ -193,9 +193,9 @@ The following provider options are available:
   Reasoning effort for reasoning models. Defaults to `medium`. If you use `providerOptions` to set the `reasoningEffort` option, this model setting will be ignored.
 
 <Note>
-  Supported reasoning efforts vary by model. GPT-5.6 supports `'none'`, `'low'`,
-  `'medium'`, `'high'`, `'xhigh'`, and `'max'`. GPT-6 and later models support
-  `'low'`, `'medium'`, `'high'`, `'xhigh'`, and `'max'`.
+  Supported reasoning efforts vary by model. GPT-5.6 and GPT-6 support `'none'`,
+  `'low'`, `'medium'`, `'high'`, `'xhigh'`, and `'max'`. GPT-6 Astra does not
+  support `'none'`.
 </Note>
 
 <Note type="warning">
@@ -204,12 +204,16 @@ The following provider options are available:
   and returns a warning. Use the Responses API for GPT-6 tool calling.
 </Note>
 
-- **reasoningEffortUpdate** _'low' | 'medium' | 'high' | 'xhigh' | 'max'_
+- **reasoningEffortUpdate** _'none' | 'low' | 'medium' | 'high' | 'xhigh' | 'max'_
   Updates the reasoning effort for GPT-6 and later models starting with the
   current response without changing the request-level effort. Use this with
   `previousResponseId` to preserve the original prompt prefix for caching.
   Configuration updates require standard, single-agent mode and cannot be
   combined with automatic compaction or automatic truncation.
+
+  The SDK checks effort values against the selected model for both request-level
+  and message-level updates. For example, GPT-6 Sol and Luna support `none`,
+  while GPT-6 Astra does not.
 
 - **reasoningMode** _'standard' | 'pro'_
   Controls how much model work GPT-5.6 performs before returning a final answer. `'standard'` is the default. Use `'pro'` for difficult tasks where quality matters more than latency and token usage.
@@ -293,7 +297,7 @@ import { openai, type OpenaiResponsesProviderMetadata } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: openai('gpt-5'),
+  model: openai('gpt-6-astra'),
 });
 
 const providerMetadata = result.providerMetadata as
@@ -320,58 +324,121 @@ The following OpenAI-specific metadata may be returned:
 
 #### Changing Reasoning Effort Mid-Conversation
 
-GPT-6 and later models can change reasoning effort between responses without
-changing the request-level `reasoning` setting. The provider sends
-`reasoningEffortUpdate` as an OpenAI `configuration_update` input item before
-the next user message. Keeping the request-level effort unchanged preserves the
-original prompt prefix for prompt caching.
+You can increase reasoning effort for difficult work or reduce it for routine
+follow-ups while preserving the conversation prefix for prompt caching:
 
-```ts highlight="8,26,32"
+- Set the initial effort with request-level `reasoning` and keep that setting
+  unchanged throughout the conversation.
+- For later changes, add a message-level `reasoningEffortUpdate` before the next
+  user message, following
+  [OpenAI's configuration update guidance](https://developers.openai.com/api/docs/guides/reasoning#change-reasoning-mid-conversation).
+
+The new effort applies until another update changes it. When sending conversation
+history in `messages`, include earlier effort updates along with the other messages.
+
+Represent an update as an empty system message with
+`providerOptions.openai.reasoningEffortUpdate`.
+
+You **must** set `allowSystemInMessages: true` to allow these trusted system messages.
+
+In this example, the conversation starts at low effort and switches to high
+effort for the follow-up. Both requests keep `reasoning: 'low'`.
+
+```ts
 import {
   openai,
-  type OpenAILanguageModelResponsesOptions,
-  type OpenaiResponsesProviderMetadata,
+  type OpenAIResponsesSystemMessageOptions,
 } from '@ai-sdk/openai';
-import { generateText } from 'ai';
+import { generateText, type ModelMessage } from 'ai';
+
+const messages: ModelMessage[] = [
+  { role: 'user', content: 'Draft a migration plan.' },
+];
 
 const first = await generateText({
   model: openai.responses('gpt-6-astra'),
   reasoning: 'low',
-  prompt: 'Draft a database migration plan.',
+  messages,
 });
 
-const metadata = first.finalStep.providerMetadata as
-  | OpenaiResponsesProviderMetadata
-  | undefined;
-const previousResponseId = metadata?.openai.responseId;
-
-if (!previousResponseId) {
-  throw new Error('OpenAI did not return a response ID.');
-}
+messages.push(...first.responseMessages);
+messages.push(
+  {
+    role: 'system',
+    content: '',
+    providerOptions: {
+      openai: {
+        reasoningEffortUpdate: 'high',
+      } satisfies OpenAIResponsesSystemMessageOptions,
+    },
+  },
+  { role: 'user', content: 'Analyze the failure modes.' },
+);
 
 const second = await generateText({
   model: openai.responses('gpt-6-astra'),
   reasoning: 'low',
-  prompt: 'Analyze the failure modes and propose rollback steps.',
-  providerOptions: {
-    openai: {
-      previousResponseId,
-      reasoningEffortUpdate: 'high',
-    } satisfies OpenAILanguageModelResponsesOptions,
-  },
+  allowSystemInMessages: true,
+  messages,
 });
+
+messages.push(...second.responseMessages);
 ```
 
-The response metadata continues to report the request-level reasoning effort,
-not the effective effort selected by `reasoningEffortUpdate`. Configuration
-updates are not supported with `reasoningMode: 'pro'`,
-`contextManagement`, or `truncation: 'auto'`. Explicit compaction with
-`compactionTrigger` remains supported; send a new `reasoningEffortUpdate` after
-compaction when the effort should change again.
+<Note>
+  The OpenAI Responses provider sends each message-level effort update as a
+  `configuration_update` input item.
+</Note>
+
+Message-level updates also work with `streamText` and `previousResponseId`.
+
+##### Restrictions
+
+Effort updates are supported on GPT-6-family models with these settings:
+
+| Setting             | Required value         |
+| ------------------- | ---------------------- |
+| `reasoningMode`     | `'standard'` (default) |
+| `contextManagement` | Omitted                |
+| `truncation`        | `'disabled'` (default) |
+
+- Each update **must** use exactly `content: ''`.
+- Updates cannot be consecutive, even with the same effort. This also applies
+  across the boundary with history referenced by previousResponseId or
+  conversation.
+
+Requests that violate these restrictions are rejected.
+
+<Note>
+  Effort update messages are sent even if `systemMessageMode` is set to
+  `remove`.
+</Note>
+
+##### Compaction
+
+**Effort updates are incompatible with automatic compaction through
+`providerOptions.openai.contextManagement` or compaction through OpenAI's
+`/responses/compact` endpoint.**
+
+To compact conversations containing effort updates, use [explicit
+compaction](#explicit-compaction) with
+`providerOptions.openai.compactionTrigger`.
+
+After compaction, add a fresh effort update before the next user message,
+[as OpenAI recommends](https://developers.openai.com/api/docs/guides/reasoning#change-reasoning-mid-conversation). Keep request-level `reasoning` unchanged.
+
+##### Request-Level Update Option
+
+The request-level `providerOptions.openai.reasoningEffortUpdate` option is a
+convenience that prepends a configuration update to the input. When using
+message-level updates, omit this option.
+
+The request-level option continues to warn and omit updates for unsupported
+models or configurations.
 
 #### Reasoning Output
 
-For reasoning models like `gpt-5`, you can enable reasoning summaries to see the model's thought process. Different models support different summarizers—for example, `o4-mini` supports detailed summaries. Set `reasoningSummary: "auto"` to automatically receive the richest level available. When `reasoningEffort` is set to a value other than `'none'`, the OpenAI Responses provider defaults `reasoningSummary` to `'detailed'`; set `reasoningSummary: null` to omit reasoning summaries.
+For reasoning models like `gpt-6-astra`, you can enable reasoning summaries to see the model's thought process. Different models support different summarizers—for example, `o4-mini` supports detailed summaries. Set `reasoningSummary: "auto"` to automatically receive the richest level available. When `reasoningEffort` is set to a value other than `'none'`, the OpenAI Responses provider defaults `reasoningSummary` to `'detailed'`; set `reasoningSummary: null` to omit reasoning summaries.
 
 ```ts highlight="10-14,17-23"
 import {
@@ -381,7 +448,7 @@ import {
 import { streamText } from 'ai';
 
 const result = streamText({
-  model: openai('gpt-5'),
+  model: openai('gpt-6-astra'),
   prompt: 'Tell me about the Mission burrito debate in San Francisco.',
   providerOptions: {
     openai: {
@@ -409,7 +476,7 @@ import {
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: openai('gpt-5'),
+  model: openai('gpt-6-astra'),
   prompt: 'Tell me about the Mission burrito debate in San Francisco.',
   providerOptions: {
     openai: {
@@ -446,7 +513,7 @@ const wsFetch = createWebSocketFetch();
 const openai = createOpenAI({ fetch: wsFetch });
 
 const result = streamText({
-  model: openai('gpt-4.1-mini'),
+  model: openai('gpt-6-luna'),
   prompt: 'Hello!',
   tools: {
     // ...
@@ -482,7 +549,7 @@ import {
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: openai('gpt-5-mini'),
+  model: openai('gpt-6-luna'),
   prompt: 'Write a poem about a boy and his first pet dog.',
   providerOptions: {
     openai: {
@@ -592,7 +659,7 @@ import { generateText, isStepCount, tool } from 'ai';
 import { z } from 'zod';
 
 const result = await generateText({
-  model: openai('gpt-5.6'),
+  model: openai('gpt-6-astra'),
   stopWhen: isStepCount(10),
   prompt: 'Compare inventory with demand for sku_123.',
   tools: {
@@ -647,7 +714,7 @@ The OpenAI responses API supports web search through the `openai.tools.webSearch
 
 ```ts
 const result = await generateText({
-  model: openai('gpt-5'),
+  model: openai('gpt-6-astra'),
   prompt: 'What happened in San Francisco last week?',
   tools: {
     web_search: openai.tools.webSearch({
@@ -703,7 +770,7 @@ You can force the use of the file search tool by setting the `toolChoice` parame
 
 ```ts
 const result = await generateText({
-  model: openai('gpt-5'),
+  model: openai('gpt-6-astra'),
   prompt: 'What does the document say about user authentication?',
   tools: {
     file_search: openai.tools.fileSearch({
@@ -785,7 +852,7 @@ import { openai } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: openai('gpt-5'),
+  model: openai('gpt-6-astra'),
   prompt:
     'Generate an image of an echidna swimming across the Mozambique channel.',
   tools: {
@@ -805,7 +872,7 @@ import { openai } from '@ai-sdk/openai';
 import { streamText } from 'ai';
 
 const result = streamText({
-  model: openai('gpt-5'),
+  model: openai('gpt-6-astra'),
   prompt:
     'Generate an image of an echidna swimming across the Mozambique channel.',
   tools: {
@@ -855,7 +922,7 @@ import { openai } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: openai('gpt-5'),
+  model: openai('gpt-6-astra'),
   prompt: 'Write and run Python code to calculate the factorial of 10',
   tools: {
     code_interpreter: openai.tools.codeInterpreter({
@@ -888,7 +955,7 @@ import { openai } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: openai('gpt-5'),
+  model: openai('gpt-6-astra'),
   prompt: 'Search the web for the latest news about AI developments',
   tools: {
     mcp: openai.tools.mcp({
@@ -980,7 +1047,7 @@ import { generateText, isStepCount } from 'ai';
 import { captureScreenshot, executeComputerAction } from '@/utils/computer-use';
 
 const result = await generateText({
-  model: openai.responses('gpt-5.4'),
+  model: openai.responses('gpt-6-astra'),
   tools: {
     computer: openai.tools.computer({
       needsApproval: ({ pendingSafetyChecks }) =>
@@ -1102,7 +1169,7 @@ import { openai } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: openai('gpt-5.2'),
+  model: openai('gpt-6-astra'),
   tools: {
     shell: openai.tools.shell({
       execute: async ({ action }) => {
@@ -1121,7 +1188,7 @@ Set `environment.type` to `'containerAuto'` to run commands in an OpenAI-hosted 
 
 ```ts
 const result = await generateText({
-  model: openai('gpt-5.2'),
+  model: openai('gpt-6-astra'),
   tools: {
     shell: openai.tools.shell({
       environment: {
@@ -1154,7 +1221,7 @@ Set `environment.type` to `'containerReference'` to use an existing container by
 
 ```ts
 const result = await generateText({
-  model: openai('gpt-5.2'),
+  model: openai('gpt-6-astra'),
   tools: {
     shell: openai.tools.shell({
       environment: {
@@ -1183,7 +1250,7 @@ For local execution (default or `type: 'local'`), your execute function must ret
 
 ```ts
 const result = await generateText({
-  model: openai('gpt-5.2'),
+  model: openai('gpt-6-astra'),
   tools: {
     shell: openai.tools.shell({
       environment: {
@@ -1214,7 +1281,7 @@ const result = await generateText({
 
 ```ts
 const result = await generateText({
-  model: openai('gpt-5.2'),
+  model: openai('gpt-6-astra'),
   tools: {
     shell: openai.tools.shell({
       execute: async ({ action }) => {
@@ -1252,7 +1319,7 @@ import { openai } from '@ai-sdk/openai';
 import { generateText, isStepCount } from 'ai';
 
 const result = await generateText({
-  model: openai('gpt-5.1'),
+  model: openai('gpt-6-astra'),
   tools: {
     apply_patch: openai.tools.applyPatch({
       execute: async ({ callId, operation }) => {
@@ -1293,7 +1360,7 @@ import { generateText, tool, isStepCount } from 'ai';
 import { z } from 'zod';
 
 const result = await generateText({
-  model: openai.responses('gpt-5.4'),
+  model: openai.responses('gpt-6-astra'),
   prompt: 'What is the weather in San Francisco?',
   stopWhen: isStepCount(10),
   tools: {
@@ -1345,7 +1412,7 @@ const crmNamespace = {
 };
 
 const result = await generateText({
-  model: openai.responses('gpt-5.4'),
+  model: openai.responses('gpt-6-astra'),
   prompt: 'List open orders for customer cust_123.',
   tools: {
     toolSearch: openai.tools.toolSearch(),
@@ -1390,7 +1457,7 @@ import { generateText, tool, isStepCount } from 'ai';
 import { z } from 'zod';
 
 const result = await generateText({
-  model: openai.responses('gpt-5.4'),
+  model: openai.responses('gpt-6-astra'),
   prompt: 'What is the weather in San Francisco?',
   stopWhen: isStepCount(10),
   tools: {
@@ -1469,7 +1536,7 @@ import { openai } from '@ai-sdk/openai';
 import { generateText, isStepCount } from 'ai';
 
 const result = await generateText({
-  model: openai.responses('gpt-5.2-codex'),
+  model: openai.responses('gpt-6-sol'),
   tools: {
     write_sql: openai.tools.customTool({
       description: 'Write a SQL SELECT query to answer the user question.',
@@ -1498,7 +1565,7 @@ import { openai } from '@ai-sdk/openai';
 import { streamText } from 'ai';
 
 const result = streamText({
-  model: openai.responses('gpt-5.2-codex'),
+  model: openai.responses('gpt-6-sol'),
   tools: {
     write_sql: openai.tools.customTool({
       description: 'Write a SQL SELECT query to answer the user question.',
@@ -1544,7 +1611,7 @@ import { openai } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: openai.responses('gpt-5.5'),
+  model: openai.responses('gpt-6-astra'),
   tools: {
     weather: weatherTool,
     cityAttractions: cityAttractionsTool,
@@ -1595,7 +1662,7 @@ You can pass Image files as part of the message content using the 'image' type:
 
 ```ts
 const result = await generateText({
-  model: openai('gpt-5'),
+  model: openai('gpt-6-astra'),
   messages: [
     {
       role: 'user',
@@ -1645,7 +1712,7 @@ You can pass PDF files as part of the message content using the `file` type:
 
 ```ts
 const result = await generateText({
-  model: openai('gpt-5'),
+  model: openai('gpt-6-astra'),
   messages: [
     {
       role: 'user',
@@ -1698,7 +1765,7 @@ The OpenAI Responses API supports structured outputs. You can use `generateText`
 
 ```ts
 const result = await generateText({
-  model: openai('gpt-4.1'),
+  model: openai('gpt-6-astra'),
   output: Output.object({
     schema: z.object({
       recipe: z.object({
@@ -1752,7 +1819,7 @@ import {
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: openai('gpt-4.1-mini'),
+  model: openai('gpt-6-luna'),
   prompt:
     'Create a program that generates five random numbers between 1 and 100 with two decimal places, and show me the execution results. Also save the result to a file.',
   tools: {
@@ -1832,7 +1899,7 @@ import {
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: openai('gpt-5'),
+  model: openai('gpt-6-astra'),
   prompt: 'How many "r"s are in the word "strawberry"?',
   providerOptions: {
     openai: {
@@ -1875,7 +1942,7 @@ import {
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: openai('gpt-4.1-mini'),
+  model: openai('gpt-6-luna'),
   prompt:
     'Create a program that generates five random numbers between 1 and 100 with two decimal places, and show me the execution results. Also save the result to a file.',
   tools: {
@@ -1943,7 +2010,7 @@ import {
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: openai.responses('gpt-5.2'),
+  model: openai.responses('gpt-6-astra'),
   messages: conversationHistory,
   providerOptions: {
     openai: {
@@ -2008,7 +2075,7 @@ import {
 import { streamText } from 'ai';
 
 const result = streamText({
-  model: openai.responses('gpt-5.2'),
+  model: openai.responses('gpt-6-astra'),
   messages: conversationHistory,
   providerOptions: {
     openai: {
@@ -2106,13 +2173,13 @@ models differ.
 ### Chat Models
 
 You can create models that call the [OpenAI chat API](https://platform.openai.com/docs/api-reference/chat) using the `.chat()` factory method.
-The first argument is the model id, e.g. `gpt-4`.
+The first argument is the model id, e.g. `gpt-6-astra`.
 The OpenAI chat models support tool calls and some have multi-modal capabilities.
 Use this factory when a custom `baseURL` points at an OpenAI-compatible endpoint
 that implements Chat Completions but not the Responses API.
 
 ```ts
-const model = openai.chat('gpt-5');
+const model = openai.chat('gpt-6-astra');
 ```
 
 OpenAI chat models support also some model specific provider options that are not part of the [standard call settings](/docs/ai-sdk-core/settings).
@@ -2262,7 +2329,7 @@ import { openai, type OpenAILanguageModelChatOptions } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 
 const { text, usage } = await generateText({
-  model: openai.chat('gpt-5'),
+  model: openai.chat('gpt-6-astra'),
   prompt: 'Invent a new holiday and describe its traditions.',
   providerOptions: {
     openai: {
@@ -2290,7 +2357,7 @@ import { openai, type OpenAILanguageModelChatOptions } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: openai.chat('gpt-5'),
+  model: openai.chat('gpt-6-astra'),
   messages: [
     { role: 'system', content: 'You are a helpful assistant.' },
     { role: 'user', content: 'Tell me a joke.' },
@@ -2325,7 +2392,7 @@ import { generateText, Output } from 'ai';
 import { z } from 'zod';
 
 const result = await generateText({
-  model: openai.chat('gpt-4o-2024-08-06'),
+  model: openai.chat('gpt-6-astra'),
   providerOptions: {
     openai: {
       strictJsonSchema: false,
@@ -2395,7 +2462,7 @@ You can pass Image files as part of the message content using the 'image' type:
 
 ```ts
 const result = await generateText({
-  model: openai.chat('gpt-5'),
+  model: openai.chat('gpt-6-astra'),
   messages: [
     {
       role: 'user',
@@ -2435,7 +2502,7 @@ You can pass PDF files as part of the message content using the `file` type:
 
 ```ts
 const result = await generateText({
-  model: openai.chat('gpt-5'),
+  model: openai.chat('gpt-6-astra'),
   messages: [
     {
       role: 'user',
@@ -2490,7 +2557,7 @@ You can enable predicted outputs by adding the `prediction` option to the `provi
 
 ```ts highlight="15-18"
 const result = streamText({
-  model: openai.chat('gpt-5'),
+  model: openai.chat('gpt-4o'),
   messages: [
     {
       role: 'user',
@@ -2534,7 +2601,7 @@ You can use the `openai` provider option to set the [image input detail](https:/
 
 ```ts highlight="13-16"
 const result = await generateText({
-  model: openai.chat('gpt-5'),
+  model: openai.chat('gpt-6-astra'),
   messages: [
     {
       role: 'user',
@@ -2615,7 +2682,7 @@ import { openai } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 
 const { text, usage } = await generateText({
-  model: openai.chat('gpt-4o-mini'),
+  model: openai.chat('gpt-6-luna'),
   prompt: `A 1024-token or longer prompt...`,
 });
 
@@ -2629,7 +2696,7 @@ import { openai, type OpenAILanguageModelChatOptions } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 
 const { text, usage } = await generateText({
-  model: openai.chat('gpt-5'),
+  model: openai.chat('gpt-6-astra'),
   prompt: `A 1024-token or longer prompt...`,
   providerOptions: {
     openai: {
@@ -2651,7 +2718,7 @@ import {
 import { generateText } from 'ai';
 
 const { usage } = await generateText({
-  model: openai('gpt-5.6'),
+  model: openai('gpt-6-astra'),
   providerOptions: {
     openai: {
       promptCacheKey: 'tenant:acme:support-v1',
@@ -2690,7 +2757,7 @@ import { openai, type OpenAILanguageModelChatOptions } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 
 const { text, usage } = await generateText({
-  model: openai.chat('gpt-5.5'),
+  model: openai.chat('gpt-6-astra'),
   prompt: `A 1024-token or longer prompt...`,
   providerOptions: {
     openai: {
@@ -2812,6 +2879,8 @@ The following optional provider options are available for OpenAI completion mode
 | Model                 | Image Input | Audio Input | Object Generation | Tool Usage |
 | --------------------- | ----------- | ----------- | ----------------- | ---------- |
 | `gpt-6-astra`         | <Check />   | <Cross />   | <Check />         | <Check />  |
+| `gpt-6-luna`          | <Check />   | <Cross />   | <Check />         | <Check />  |
+| `gpt-6-sol`           | <Check />   | <Cross />   | <Check />         | <Check />  |
 | `gpt-5.6`             | <Check />   | <Cross />   | <Check />         | <Check />  |
 | `gpt-5.6-luna`        | <Check />   | <Cross />   | <Check />         | <Check />  |
 | `gpt-5.6-sol`         | <Check />   | <Cross />   | <Check />         | <Check />  |
@@ -3021,7 +3090,7 @@ You can create models that call the [OpenAI image generation API](https://platfo
 using the `.image()` factory method.
 
 ```ts
-const model = openai.image('dall-e-3');
+const model = openai.image('gpt-image-2.5-sunburst');
 ```
 
 <Note>
@@ -3188,10 +3257,10 @@ For more information on the available OpenAI image model options, see the [OpenA
 You can create models that call the [OpenAI transcription API](https://platform.openai.com/docs/api-reference/audio/transcribe)
 using the `.transcription()` factory method.
 
-The first argument is the model id e.g. `whisper-1`.
+The first argument is the model id e.g. `gpt-4o-transcribe`.
 
 ```ts
-const model = openai.transcription('whisper-1');
+const model = openai.transcription('gpt-4o-transcribe');
 ```
 
 You can also pass additional provider-specific options using the `providerOptions` argument. For example, supplying the input language in ISO-639-1 (e.g. `en`) format will improve accuracy and latency.
@@ -3201,7 +3270,7 @@ import { transcribe } from 'ai';
 import { openai, type OpenAITranscriptionModelOptions } from '@ai-sdk/openai';
 
 const result = await transcribe({
-  model: openai.transcription('whisper-1'),
+  model: openai.transcription('gpt-4o-transcribe'),
   audio: new Uint8Array([1, 2, 3, 4]),
   providerOptions: {
     openai: { language: 'en' } satisfies OpenAITranscriptionModelOptions,
@@ -3343,10 +3412,10 @@ Unsupported source and output settings surface as call warnings.
 You can create models that call the [OpenAI speech API](https://platform.openai.com/docs/api-reference/audio/speech)
 using the `.speech()` factory method.
 
-The first argument is the model id e.g. `tts-1`.
+The first argument is the model id e.g. `gpt-4o-mini-tts`.
 
 ```ts
-const model = openai.speech('tts-1');
+const model = openai.speech('gpt-4o-mini-tts');
 ```
 
 The `voice` argument can be set to one of OpenAI's available voices: `alloy`, `ash`, `coral`, `echo`, `fable`, `onyx`, `nova`, `sage`, or `shimmer`.
@@ -3356,7 +3425,7 @@ import { generateSpeech } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
 const result = await generateSpeech({
-  model: openai.speech('tts-1'),
+  model: openai.speech('gpt-4o-mini-tts'),
   text: 'Hello, world!',
   voice: 'alloy', // OpenAI voice ID
 });
@@ -3369,7 +3438,7 @@ import { generateSpeech } from 'ai';
 import { openai, type OpenAISpeechModelOptions } from '@ai-sdk/openai';
 
 const result = await generateSpeech({
-  model: openai.speech('tts-1'),
+  model: openai.speech('gpt-4o-mini-tts'),
   text: 'Hello, world!',
   voice: 'alloy',
   providerOptions: {
@@ -3403,14 +3472,14 @@ const result = await generateSpeech({
 
 Create an experimental evaluation model with `openai.evaluationModel(modelId)`.
 It uses the Responses API with structured output to answer Choice, Score, and
-Boolean questions. Choose a model that supports structured output, such as `gpt-5.6-luna`.
+Boolean questions. Choose a model that supports structured output, such as `gpt-6-luna`.
 
 ```ts
 import { openai } from '@ai-sdk/openai';
 import { experimental_evaluate } from 'ai';
 
 const { answers } = await experimental_evaluate({
-  model: openai.evaluationModel('gpt-5.6-luna'),
+  model: openai.evaluationModel('gpt-6-luna'),
   state: 'I was charged twice.',
   questions: {
     requestsRefund: {

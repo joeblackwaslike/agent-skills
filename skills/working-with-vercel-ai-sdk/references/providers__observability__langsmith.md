@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/langsmith.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "d8b9759c54df6bf84630b9150e94a9dbf074b9c1a6551e10340a78546966668b"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "769ff28223bfa22ab35e4372e400cf0219eee4875f75ce3b19a3690bbe2465b9"
 ---
 
 # LangSmith Observability
@@ -49,7 +49,7 @@ import { wrapAISDK } from 'langsmith/experimental/vercel';
 const { generateText, streamText } = wrapAISDK(ai);
 
 await generateText({
-  model: openai('gpt-5-nano'),
+  model: openai('gpt-5.4-nano'),
   prompt: 'Write a vegetarian lasagna recipe for 4 people.',
 });
 ```
@@ -69,7 +69,7 @@ import { wrapAISDK } from 'langsmith/experimental/vercel';
 const { generateText, streamText } = wrapAISDK(ai);
 
 await generateText({
-  model: openai('gpt-5-nano'),
+  model: openai('gpt-5.4-nano'),
   messages: [
     {
       role: 'user',
@@ -117,7 +117,7 @@ const { generateText, streamText } = wrapAISDK(ai);
 const wrapper = traceable(
   async (input: string) => {
     const { text } = await generateText({
-      model: openai('gpt-5-nano'),
+      model: openai('gpt-5.4-nano'),
       messages: [
         {
           role: 'user',

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/rsc/stream-text-with-chat-prompt.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "b5c0a05f07a0a862e77417445196429a237e228da22251852a7f0f5f993187ae"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "04ec054688b4ab9b98dbaa213390911f70c7c8b79de6952eb8b0b9e623871481"
 ---
 
 # Stream Text with Chat Prompt
@@ -108,7 +108,7 @@ export async function continueConversation(history: Message[]) {
 
   (async () => {
     const { textStream } = streamText({
-      model: 'openai/gpt-5.4',
+      model: 'openai/gpt-6-astra',
       instructions:
         "You are a dude that doesn't drop character until the DVD commentary.",
       messages: history,

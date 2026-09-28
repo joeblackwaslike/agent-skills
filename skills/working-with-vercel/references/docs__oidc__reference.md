@@ -12,8 +12,8 @@ related:
 summary: Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/reference.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "d844e7c6f923ed58429106a190631bc54cf915e4795db4caeeb28cb0d6d4294c"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "3328eb0bc7a4bfbf8f865becca2a735c421efe425510cbb63921550ba2841ac0"
 ---
 
 # OIDC Federation Reference
@@ -37,8 +37,8 @@ They are available from the [@vercel/oidc](https://www.npmjs.com/package/@vercel
 - [Passport token claims](https://vercel.com/docs/passport/token-claims?from=related&source_path=%2Fdocs%2Foidc%2Freference&source_site=vercel-docs&relationship=related) — Review the standard, deployment, and visitor identity claims in a Passport token.
 - [Tokens](https://vercel.com/docs/sign-in-with-vercel/tokens?from=related&source_path=%2Fdocs%2Foidc%2Freference&source_site=vercel-docs&relationship=related) — Learn how to Sign in with Vercel
 - [Vercel KMS Authentication](https://vercel.com/docs/kms/concepts/authentication?from=related&source_path=%2Fdocs%2Foidc%2Freference&source_site=vercel-docs&relationship=related) — How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel ac
+- [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token?from=related&source_path=%2Fdocs%2Foidc%2Freference&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
 - [SDK Reference](https://vercel.com/docs/connect/ts-sdk-reference?from=related&source_path=%2Fdocs%2Foidc%2Freference&source_site=vercel-docs&relationship=related) — API reference for @vercel/connect, the TypeScript SDK for requesting runtime tokens from Vercel Connect.
-- [Create an issuer](https://vercel.com/docs/rest-api/kms/create-an-issuer?from=related&source_path=%2Fdocs%2Foidc%2Freference&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers — Create a new KMS issuer for the authenticated team. An issuer owns the asymmetric signing keys th
 
 Full cross-link map for this page: [/docs/oidc/reference.graph.md](/docs/oidc/reference.graph.md?from=related&source_path=%2Fdocs%2Foidc%2Freference&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

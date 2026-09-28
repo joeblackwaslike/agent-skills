@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/prompt-engineering.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "61e05c60c1423189b240e6b655c17caf77c710e51ffc5e46cbda49e205ae871c"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "cfe244b7497410caddf802d4a83cf7542c9440d88a8d3904123c62e142691436"
 ---
 
 # Prompt Engineering
@@ -14,7 +14,7 @@ When you create prompts that include tools, getting good results can be tricky a
 
 Here are a few tips to help you get the best results:
 
-1. Use a model that is strong at tool calling, such as `gpt-5` or `gpt-4.1`. Weaker models will often struggle to call tools effectively and flawlessly.
+1. Use a model that is strong at tool calling, such as `gpt-6-astra` or `claude-sonnet-5`. Weaker models will often struggle to call tools effectively and flawlessly.
 1. Keep the number of tools low, e.g. to 5 or less.
 1. Keep the complexity of the tool parameters low. Complex Zod schemas with many nested and optional elements, unions, etc. can be challenging for the model to work with.
 1. Use semantically meaningful names for your tools, parameters, parameter properties, etc. The more information you pass to the model, the better it can understand what you want.

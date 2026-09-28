@@ -13,8 +13,8 @@ related:
 summary: Learn how to inspect and validate your Open Graph metadata through the Open Graph deployment tab.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/og-preview.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "4969351302339076156d17ac98b2d4a1be119789030f28ab770b001fbec9271a"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "a275cc22dfad095eef674ce37e9992fc257f568adb6fe934e2e56a8835432ebd"
 ---
 
 # Inspecting your Open Graph metadata
@@ -30,7 +30,6 @@ You can use the **Open Graph** section in the sidebar on every deployment on Ver
 - [OG Image Generation: The Complete Customization Guide](https://vercel.com/kb/guide/using-custom-font?from=related&source_path=%2Fdocs%2Fdeployments%2Fog-preview&source_site=vercel-docs&relationship=related) — Learn how to use custom fonts in your Vercel OG image, plus emoji, external images, non-Latin text, dynamic titles, and
 - [Inspect and validate Open Graph metadata for enhanced link sharing](https://vercel.com/changelog/open-graph-link-sharing-inspector?from=related&source_path=%2Fdocs%2Fdeployments%2Fog-preview&source_site=vercel-docs&relationship=related)
 - [Inspect Open Graph data with the Vercel Toolbar](https://vercel.com/changelog/inspect-open-graph-data-with-the-vercel-toolbar?from=related&source_path=%2Fdocs%2Fdeployments%2Fog-preview&source_site=vercel-docs&relationship=related)
-- [Displaying headlines in social previews with Vercel OG](https://vercel.com/kb/guide/displaying-article-headlines-in-social-previews?from=related&source_path=%2Fdocs%2Fdeployments%2Fog-preview&source_site=vercel-docs&relationship=related) — Twitter/X is planning to remove headlines from social previews. To get around this limitation, Vercel OG offers a way to
 - [Metadata and OG images](https://nextjs.org/docs/app/getting-started/metadata-and-og-images?from=related&source_path=%2Fdocs%2Fdeployments%2Fog-preview&source_site=vercel-docs&relationship=related) — Learn how to add metadata to your pages and create dynamic OG images.
 - [Accessing Deployments through Generated URLs](https://vercel.com/docs/deployments/generated-urls?from=related&source_path=%2Fdocs%2Fdeployments%2Fog-preview&source_site=vercel-docs&relationship=related) — When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that parti
 - [List deployments](https://vercel.com/docs/rest-api/deployments/list-deployments?from=related&source_path=%2Fdocs%2Fdeployments%2Fog-preview&source_site=vercel-docs&relationship=related) — GET /v7/deployments — List deployments under the authenticated user or team. If a deployment hasn't finished uploading \\

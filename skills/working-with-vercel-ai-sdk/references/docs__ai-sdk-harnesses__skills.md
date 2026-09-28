@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses/skills.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "09cc463b9724c194aba69ebabb6cfa29df7c847501e76fae9ca7c800a913c340"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "edf8d7dadbb7993ea30c5c48cdfb81b97da562fe0a26f51f83f2e9fca1df3e32"
 ---
 
 # Harness Skills
@@ -19,10 +19,6 @@ Pass skills to `HarnessAgent` with the `skills` setting:
 ```ts
 const agent = new HarnessAgent({
   harness: claudeCode,
-  sandbox: createVercelSandbox({
-    runtime: 'node24',
-    ports: [4000],
-  }),
   skills: [
     {
       name: 'careful-refactors',

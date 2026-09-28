@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "47590c3c913ce3ee9da9178e715dd9818c4e1a3368be2f14caebe434d12f714a"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "ddf6ce5a31bfdb103fd5f6b325302d02853db62701940d6f266f616ba67108ec"
 ---
 
 # AI Gateway Provider
@@ -30,7 +30,7 @@ For most use cases, you can use the AI Gateway directly with a model string:
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: 'openai/gpt-5.4',
+  model: 'openai/gpt-6-astra',
   prompt: 'Hello world',
 });
 ```
@@ -40,7 +40,7 @@ const { text } = await generateText({
 import { generateText, gateway } from 'ai';
 
 const { text } = await generateText({
-  model: gateway('openai/gpt-5.4'),
+  model: gateway('openai/gpt-6-astra'),
   prompt: 'Hello world',
 });
 ```
@@ -201,7 +201,7 @@ You can create language models using a provider instance. The first argument is 
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: 'openai/gpt-5.4',
+  model: 'openai/gpt-6-astra',
   prompt: 'Explain quantum computing in simple terms',
 });
 ```
@@ -221,7 +221,7 @@ the failure without inspecting the Gateway's serialized error payload.
 </Note>
 
 AI Gateway supports durable text batches through `experimental_startBatch`,
-`experimental_getBatchStatus`, and `experimental_getBatchResults`. See
+`experimental_getBatchStatus`, `experimental_getBatchResults`, and `experimental_cancelBatch`. See
 [Batch](/docs/ai-sdk-core/batch) for the provider-agnostic workflow,
 and the [AI Gateway batch processing guide](https://vercel.com/docs/ai-gateway/models-and-providers/batch-processing)
 for supported models, limits, and Gateway-specific behavior.
@@ -415,6 +415,19 @@ Each request specifies its `type` and `model`. AI Gateway currently requires
 every text request in a batch to use the same model and throws before submission
 when the models differ.
 
+### Cancelling a batch
+
+Pass the batch reference returned by `experimental_startBatch` to request cancellation:
+
+```ts
+import { gateway } from '@ai-sdk/gateway';
+import { experimental_cancelBatch as cancelBatch } from 'ai';
+
+await cancelBatch({ provider: gateway, batch });
+```
+
+Cancellation is asynchronous. Continue checking `experimental_getBatchStatus` until the batch is terminal, then read `experimental_getBatchResults` for any partial results. A batch may finish before cancellation takes effect, and successful requests remain billable. Cancellation returns acknowledgement metadata, not confirmation that provider execution has stopped.
+
 ## Reranking Models
 
 You can create reranking models using the `rerankingModel` method on the provider instance:
@@ -574,7 +587,7 @@ availableModels.models.forEach(model => {
 
 // Use any discovered model with plain string
 const { text } = await generateText({
-  model: availableModels.models[0].id, // e.g., 'openai/gpt-5.4'
+  model: availableModels.models[0].id, // e.g., 'openai/gpt-6-astra'
   prompt: 'Hello world',
 });
 ```
@@ -608,7 +621,7 @@ import { gateway, generateText } from 'ai';
 
 // Make a request
 const result = await generateText({
-  model: gateway('anthropic/claude-sonnet-4'),
+  model: gateway('anthropic/claude-sonnet-5'),
   prompt: 'Explain quantum entanglement briefly',
 });
 
@@ -631,7 +644,7 @@ With `streamText`, you can capture the generation ID from the first chunk via `s
 import { gateway, streamText } from 'ai';
 
 const result = streamText({
-  model: gateway('anthropic/claude-sonnet-4'),
+  model: gateway('anthropic/claude-sonnet-5'),
   prompt: 'Explain quantum entanglement briefly',
 });
 
@@ -661,7 +674,7 @@ a tool is running:
 import { gateway, generateText } from 'ai';
 
 await generateText({
-  model: gateway('anthropic/claude-sonnet-4'),
+  model: gateway('anthropic/claude-sonnet-5'),
   prompt: 'Explain quantum entanglement briefly',
   onLanguageModelCallEnd({ providerMetadata }) {
     const generationId = providerMetadata?.gateway?.generationId as
@@ -708,7 +721,7 @@ It returns a `GatewayGenerationInfo` object with the following fields:
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: 'anthropic/claude-sonnet-4.6',
+  model: 'anthropic/claude-sonnet-5',
   prompt: 'Write a haiku about programming',
 });
 
@@ -721,7 +734,7 @@ console.log(text);
 import { streamText } from 'ai';
 
 const { textStream } = await streamText({
-  model: 'openai/gpt-5.4',
+  model: 'openai/gpt-6-astra',
   prompt: 'Explain the benefits of serverless architecture',
 });
 
@@ -737,7 +750,7 @@ import { generateText, tool } from 'ai';
 import { z } from 'zod';
 
 const { text } = await generateText({
-  model: 'xai/grok-4.6',
+  model: 'spacexai/grok-4.7',
   prompt: 'What is the weather like in San Francisco?',
   tools: {
     getWeather: tool({
@@ -763,7 +776,7 @@ import { generateText, isStepCount } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
 const result = await generateText({
-  model: 'openai/gpt-5.4-mini',
+  model: 'openai/gpt-6-luna',
   prompt: 'What is the Vercel AI Gateway?',
   stopWhen: isStepCount(10),
   tools: {
@@ -972,6 +985,132 @@ This initial Gateway integration supports Exa's plain Search modes and
 token-efficient content controls. Deep synthesis modes and generated summaries
 are intentionally not exposed yet because they have separate pricing from
 standard Search.
+
+#### Browserbase Search
+
+The Browserbase Search tool enables models to search the web using [Browserbase's Search API](https://docs.browserbase.com/reference/api/web-search). It is executed by AI Gateway and returns fast, structured search results without opening a browser session.
+
+```ts
+import { gateway, generateText } from 'ai';
+
+const result = await generateText({
+  model: 'openai/gpt-5.6-luna',
+  prompt:
+    'Find official guidance on traveling with power banks on U.S. flights. Return the most relevant page titles and URLs.',
+  tools: {
+    browserbase_search: gateway.tools.browserbaseSearch(),
+  },
+});
+
+console.log(result.text);
+console.log('Tool calls:', JSON.stringify(result.toolCalls, null, 2));
+console.log('Tool results:', JSON.stringify(result.toolResults, null, 2));
+```
+
+You can configure the maximum number of results returned by each search:
+
+```ts
+import { gateway, generateText } from 'ai';
+
+const result = await generateText({
+  model: 'openai/gpt-5.6-luna',
+  prompt:
+    'Find three recent reviews comparing e-readers for outdoor reading. Return their titles and URLs.',
+  tools: {
+    browserbase_search: gateway.tools.browserbaseSearch({
+      numResults: 3,
+    }),
+  },
+});
+
+console.log(result.text);
+```
+
+The Browserbase Search tool supports this optional configuration option:
+
+- **numResults** _number_
+
+  Maximum number of search results to return (1-25, default: 10).
+
+The tool works with both `generateText` and `streamText`.
+
+#### Browserbase Fetch
+
+The Browserbase Fetch tool enables models to retrieve page content using [Browserbase's Fetch API](https://docs.browserbase.com/platform/fetch/overview). It is a lightweight option for pages that do not require JavaScript execution or browser interaction, and it supports raw, Markdown, and schema-driven JSON output.
+
+```ts
+import { gateway, generateText } from 'ai';
+
+const result = await generateText({
+  model: 'openai/gpt-5.6-luna',
+  prompt:
+    'Fetch https://www.nps.gov/yose/planyourvisit/halfdome.htm and summarize the permit requirements and main safety warnings.',
+  tools: {
+    browserbase_fetch: gateway.tools.browserbaseFetch(),
+  },
+});
+
+console.log(result.text);
+console.log('Tool calls:', JSON.stringify(result.toolCalls, null, 2));
+console.log('Tool results:', JSON.stringify(result.toolResults, null, 2));
+```
+
+You can configure the output format and request behavior. For example, use JSON extraction to return content matching a JSON Schema:
+
+```ts
+import { gateway, generateText } from 'ai';
+
+const result = await generateText({
+  model: 'openai/gpt-5.6-luna',
+  prompt:
+    'Fetch https://www.nps.gov/yose/planyourvisit/halfdome.htm and extract its page title, whether a permit is required, and three safety tips.',
+  tools: {
+    browserbase_fetch: gateway.tools.browserbaseFetch({
+      allowRedirects: true,
+      format: 'json',
+      schema: {
+        type: 'object',
+        properties: {
+          pageTitle: { type: 'string' },
+          permitRequired: { type: 'boolean' },
+          safetyTips: {
+            type: 'array',
+            items: { type: 'string' },
+            maxItems: 3,
+          },
+        },
+        required: ['pageTitle', 'permitRequired', 'safetyTips'],
+      },
+    }),
+  },
+});
+
+console.log(result.text);
+```
+
+The Browserbase Fetch tool supports these optional configuration options:
+
+- **format** _'raw' | 'markdown' | 'json'_
+
+  Output format for the fetched content. `raw` returns the upstream response body unchanged and is the default. `markdown` converts the page to Markdown. `json` performs structured extraction and requires `schema`.
+
+- **schema** _object_
+
+  JSON Schema describing the desired structured content. Only used when `format` is `json`.
+
+- **allowRedirects** _boolean_
+
+  Follow HTTP redirects. Defaults to `false`.
+
+- **proxies** _boolean_
+
+  Route the request through Browserbase's proxy network. Defaults to `false`.
+
+- **allowInsecureSsl** _boolean_
+
+  Bypass TLS certificate verification. Defaults to `false`; only enable it for trusted hosts.
+
+The Fetch API does not execute JavaScript. Use a browser session for interactive or JavaScript-rendered pages. The tool works with both `generateText` and `streamText`.
 
 #### Tako Search
 
@@ -1195,7 +1334,7 @@ import type { GatewayProviderOptions } from '@ai-sdk/gateway';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: 'openai/gpt-5.4',
+  model: 'openai/gpt-6-astra',
   prompt: 'Summarize this document...',
   providerOptions: {
     gateway: {
@@ -1237,7 +1376,7 @@ The `getSpendReport()` method accepts the following parameters:
 - **groupBy** _string_ - Aggregation dimension: `'day'` (default), `'user'`, `'model'`, `'tag'`, `'provider'`, or `'credential_type'`
 - **datePart** _string_ - Time granularity when `groupBy` is `'day'`: `'day'` or `'hour'`
 - **userId** _string_ - Filter to a specific user
-- **model** _string_ - Filter to a specific model (e.g. `'anthropic/claude-sonnet-4.5'`)
+- **model** _string_ - Filter to a specific model (e.g. `'anthropic/claude-sonnet-5'`)
 - **provider** _string_ - Filter to a specific provider (e.g. `'anthropic'`)
 - **credentialType** _string_ - Filter by `'byok'` or `'system'` credentials
 - **tags** _string[]_ - Filter to requests matching these tags
@@ -1296,7 +1435,7 @@ import type { GatewayProviderOptions } from '@ai-sdk/gateway';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: 'anthropic/claude-sonnet-4.6',
+  model: 'anthropic/claude-sonnet-5',
   prompt: 'Explain quantum computing',
   providerOptions: {
     gateway: {
@@ -1338,7 +1477,7 @@ The following gateway provider options are available:
 
   Specifies fallback models to use when the primary model fails or is unavailable. The gateway will try the primary model first (specified in the `model` parameter), then try each model in this array in order until one succeeds.
 
-  Example: `models: ['openai/gpt-5.4-nano', 'gemini-3-flash-preview']` will try the fallback models in order if the primary model fails.
+  Example: `models: ['openai/gpt-5.4-nano', 'google/gemini-3.8-flash']` will try the fallback models in order if the primary model fails.
 
 - **user** _string_
 
@@ -1378,15 +1517,20 @@ The following gateway provider options are available:
 
   The unique identifier for the entity against which quota is tracked. Used for quota management and enforcement purposes.
 
-- **has** _Array&lt;'implicit-caching' | 'vision'&gt;_
+- **has** _Array&lt;'implicit-caching' | 'reasoning' | 'structured-output' | 'tool-use' | 'vision' | `quantization:${string}` | `!quantization:${string}`&gt;_
 
   Restricts routing to provider models that have all of the specified capabilities. Applies to both BYOK and system credentials, since the capability is a property of the model rather than the credential. If no provider model for the requested model satisfies the capabilities, the request fails. Unsupported values are rejected.
 
   Supported capabilities:
   - `'implicit-caching'` — models that perform automatic (implicit) prompt caching.
+  - `'reasoning'` — models that support reasoning.
+  - `'structured-output'` — models that support schema-constrained output.
+  - `'tool-use'` — models that support tool calling.
   - `'vision'` — models that accept image input.
 
-  Example: `has: ['implicit-caching']` will only route to models that support implicit caching. Example: `has: ['vision']` will only route to models that accept image input.
+  Weight-format conditions route on the serving provider's recorded weight format: `'quantization:fp8'` requires a provider serving fp8 weights, while `'!quantization:fp8'` excludes fp8 providers. A negated condition also matches providers whose weight format is not recorded, so exclusions remain usable while the catalog is populated.
+
+  Example: `has: ['implicit-caching']` will only route to models that support implicit caching. Example: `has: ['vision']` will only route to models that accept image input. Example: `has: ['tool-use']` will only route to models that support tool calling. Example: `has: ['!quantization:fp8']` will only route to providers that do not serve fp8 weights.
 
 - **providerTimeouts** _object_
 
@@ -1412,7 +1556,7 @@ The following gateway provider options are available:
   import { generateText } from 'ai';
 
   const { text } = await generateText({
-    model: 'openai/gpt-5-mini',
+    model: 'openai/gpt-6-luna',
     prompt: 'Hello',
     providerOptions: {
       gateway: {
@@ -1429,7 +1573,7 @@ import type { GatewayProviderOptions } from '@ai-sdk/gateway';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: 'anthropic/claude-sonnet-4.6',
+  model: 'anthropic/claude-sonnet-5',
   prompt: 'Write a haiku about programming',
   providerOptions: {
     gateway: {
@@ -1449,11 +1593,11 @@ import type { GatewayProviderOptions } from '@ai-sdk/gateway';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: 'openai/gpt-5.4', // Primary model
+  model: 'openai/gpt-6-astra', // Primary model
   prompt: 'Write a TypeScript haiku',
   providerOptions: {
     gateway: {
-      models: ['openai/gpt-5.4-nano', 'gemini-3-flash-preview'], // Fallback models
+      models: ['openai/gpt-5.4-nano', 'gemini-3.8-flash'], // Fallback models
     } satisfies GatewayProviderOptions,
   },
 });
@@ -1474,7 +1618,7 @@ import type { GatewayProviderOptions } from '@ai-sdk/gateway';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: 'anthropic/claude-sonnet-4.6',
+  model: 'anthropic/claude-sonnet-5',
   prompt: 'Analyze this sensitive document...',
   providerOptions: {
     gateway: {
@@ -1493,7 +1637,7 @@ import type { GatewayProviderOptions } from '@ai-sdk/gateway';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: 'anthropic/claude-sonnet-4.6',
+  model: 'anthropic/claude-sonnet-5',
   prompt: 'Analyze this proprietary business data...',
   providerOptions: {
     gateway: {
@@ -1512,7 +1656,7 @@ import type { GatewayProviderOptions } from '@ai-sdk/gateway';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: 'anthropic/claude-sonnet-4.6',
+  model: 'anthropic/claude-sonnet-5',
   prompt: 'Summarize this report...',
   providerOptions: {
     gateway: {
@@ -1524,14 +1668,14 @@ const { text } = await generateText({
 
 #### Filtering by Model Capability
 
-Set `has` to restrict routing to provider models that have the specified capabilities. This applies to both BYOK and system credentials, since the capability is a property of the model rather than the credential. `'implicit-caching'` limits routing to models that perform automatic prompt caching, and `'vision'` limits routing to models that accept image input. If no provider model for the requested model satisfies the capabilities, the request fails.
+Set `has` to restrict routing to provider models that have the specified capabilities. This applies to both BYOK and system credentials, since the capability is a property of the model rather than the credential. `'implicit-caching'` limits routing to models that perform automatic prompt caching, `'vision'` limits routing to models that accept image input, `'reasoning'` limits routing to models that support reasoning, `'structured-output'` limits routing to models that support schema-constrained output, and `'tool-use'` limits routing to models that support tool calling. Weight-format conditions (`'quantization:fp8'` to require, `'!quantization:fp8'` to exclude) limit routing by the serving provider's recorded weight format. If no provider model for the requested model satisfies the capabilities, the request fails.
 
 ```ts
 import type { GatewayProviderOptions } from '@ai-sdk/gateway';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: 'openai/gpt-5.5',
+  model: 'openai/gpt-6-astra',
   prompt: 'Summarize this report...',
   providerOptions: {
     gateway: {
@@ -1550,7 +1694,7 @@ import { generateText } from 'ai';
 import fs from 'node:fs';
 
 const { text } = await generateText({
-  model: 'anthropic/claude-sonnet-4.6',
+  model: 'anthropic/claude-sonnet-5',
   messages: [
     {
       role: 'user',

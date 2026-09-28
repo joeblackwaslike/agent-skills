@@ -16,8 +16,8 @@ related:
 summary: Learn how to set up webhooks and use them with Vercel Integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/webhooks.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "ab5c4d4d34b4d30ff7316fc6025438a4a3ca098e33b4d1d7e3efe0a249e722e3"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "b730cf7ad6d695d7f15139050a6fac888d9a88763e508867335e96c72bd23829"
 ---
 
 # Setting Up Webhooks
@@ -34,7 +34,6 @@ A webhook is a trigger-based HTTP endpoint configured to receive HTTP POST reque
 - [Webhooks are now generally available](https://vercel.com/changelog/webhooks-are-now-generally-available?from=related&source_path=%2Fdocs%2Fwebhooks&source_site=vercel-docs&relationship=related)
 - [Integration Webhooks are now easier to configure](https://vercel.com/changelog/integration-webhooks-are-now-easier-to-configure?from=related&source_path=%2Fdocs%2Fwebhooks&source_site=vercel-docs&relationship=related)
 - [Configurable webhooks ](https://vercel.com/changelog/configurable-webhooks?from=related&source_path=%2Fdocs%2Fwebhooks&source_site=vercel-docs&relationship=related)
-- [Create Webhook](https://v0.app/docs/api/v2/reference/webhooks/create-webhook?from=related&source_path=%2Fdocs%2Fwebhooks&source_site=vercel-docs&relationship=related) — Creates a new webhook that listens for specific events. Supports optional association with a chat.
 - [Creates a webhook](https://vercel.com/docs/rest-api/webhooks/creates-a-webhook?from=related&source_path=%2Fdocs%2Fwebhooks&source_site=vercel-docs&relationship=related) — POST /v1/webhooks — Creates a webhook
 - [Get a webhook](https://vercel.com/docs/rest-api/webhooks/get-a-webhook?from=related&source_path=%2Fdocs%2Fwebhooks&source_site=vercel-docs&relationship=related) — GET /v1/webhooks/{id} — Get a webhook
 - [Get a list of webhooks](https://vercel.com/docs/rest-api/webhooks/get-a-list-of-webhooks?from=related&source_path=%2Fdocs%2Fwebhooks&source_site=vercel-docs&relationship=related) — GET /v1/webhooks — Get a list of webhooks

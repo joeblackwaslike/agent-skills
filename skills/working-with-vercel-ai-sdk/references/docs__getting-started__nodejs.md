@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/getting-started/nodejs.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "ee05eb5b017cf109c946e0c9641e7f7139874f46b88f4cd4fb3d96ed3fd5999b"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "2f4d00b7703f0b590857eb86571f63b82589befb95c2a38897fe35a31fb82240"
 ---
 
 # Node.js Quickstart
@@ -147,11 +147,11 @@ You can also explicitly import and use the gateway provider in two other equival
 ```ts
 // Option 1: Import from 'ai' package (included by default)
 import { gateway } from 'ai';
-model: gateway('anthropic/claude-sonnet-4.5');
+model: gateway('anthropic/claude-sonnet-5');
 
 // Option 2: Install and import from '@ai-sdk/gateway' package
 import { gateway } from '@ai-sdk/gateway';
-model: gateway('anthropic/claude-sonnet-4.5');
+model: gateway('anthropic/claude-sonnet-5');
 ```
 
 ### Using other providers
@@ -163,7 +163,7 @@ To use a different provider, install its package and create a provider instance.
 ```ts
 import { openai } from '@ai-sdk/openai';
 
-model: openai('gpt-5.1');
+model: openai('gpt-6-astra');
 ```
 
 ## Enhance Your Agent with Tools

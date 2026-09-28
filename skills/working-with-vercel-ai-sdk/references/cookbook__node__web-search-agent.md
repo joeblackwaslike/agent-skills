@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/node/web-search-agent.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "da5790127bb8114fc5b489f79e243e887aa39b922e4fd567ae9f0233a1b4e8cd"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "7c2f1967098efa198979dc873a7a36962d963d3fcabb4924126eb72495b57c12"
 ---
 
 # Web Search Agent
@@ -28,7 +28,7 @@ import { openai } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 
 const { text, sources } = await generateText({
-  model: 'openai/gpt-5-mini',
+  model: 'openai/gpt-6-luna',
   prompt: 'What happened in San Francisco last week?',
   tools: {
     web_search: openai.tools.webSearch({}),
@@ -46,7 +46,7 @@ import { openai } from '@ai-sdk/openai';
 import { ToolLoopAgent } from 'ai';
 
 const agent = new ToolLoopAgent({
-  model: 'openai/gpt-5-mini',
+  model: 'openai/gpt-6-luna',
   tools: {
     web_search: openai.tools.webSearch({
       searchContextSize: 'low',
@@ -96,7 +96,7 @@ import { google } from '@ai-sdk/google';
 import { generateText } from 'ai';
 
 const { text, sources, providerMetadata } = await generateText({
-  model: 'google/gemini-2.5-flash',
+  model: 'google/gemini-3.8-flash',
   tools: {
     google_search: google.tools.googleSearch({}),
   },

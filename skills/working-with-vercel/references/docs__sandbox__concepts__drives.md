@@ -3,7 +3,7 @@ title: Drives
 product: vercel
 url: /docs/sandbox/concepts/drives
 canonical_url: "https://vercel.com/docs/sandbox/concepts/drives"
-last_updated: 2026-09-15
+last_updated: 2026-09-21
 type: conceptual
 prerequisites:
   - /docs/sandbox/concepts
@@ -17,13 +17,13 @@ related:
 summary: Persistent storage that can be mounted into sandboxes and shared across runs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/drives.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "e65d62cdded2b68d97897aa857851d09352af9cb4e89d01bc6cee00f2133a872"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "7f3d4b0ab01d49632aa11692cb3763402d47e81551dd55bb014e5dc4a06e99ab"
 ---
 
 # Drives
 
-> **🔒 Permissions Required**: Drives (Beta)
+> **🔒 Permissions Required**: Drives (Public Beta)
 
 Drives provide persistent storage that you mount into a sandbox as a working directory. Your agent can generate code, download dependencies, and build up context in that directory, keeping its progress across sessions.
 
@@ -34,17 +34,19 @@ Drives provide persistent storage that you mount into a sandbox as a working dir
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fdrives&source_site=vercel-docs&relationship=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
+- [Drives for Vercel Sandbox are now in public beta](https://vercel.com/changelog/drives-for-vercel-sandbox-are-now-in-public-beta?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fdrives&source_site=vercel-docs&relationship=related)
 - [Drives for Vercel Sandbox in Private Beta](https://vercel.com/changelog/drives-for-vercel-sandbox-in-private-beta?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fdrives&source_site=vercel-docs&relationship=related)
 - [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fdrives&source_site=vercel-docs&relationship=related) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
 - [Compute that takes any shape](https://vercel.com/blog/fluid-compute-takes-any-shape?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fdrives&source_site=vercel-docs&relationship=related)
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fdrives&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
-- [List drives](https://vercel.com/docs/rest-api/sandboxes/list-drives?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fdrives&source_site=vercel-docs&relationship=related) — GET /v2/sandboxes/drives — Retrieves a paginated list of drives belonging to a specific project. Drives are in private b
-- [Delete a drive](https://vercel.com/docs/rest-api/sandboxes/delete-a-drive?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fdrives&source_site=vercel-docs&relationship=related) — DELETE /v2/sandboxes/drives/{name} — Deletes a drive by project and name. Attached drives cannot be deleted. Stop or rep
+- [List drives](https://vercel.com/docs/rest-api/sandboxes/list-drives?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fdrives&source_site=vercel-docs&relationship=related) — GET /v2/sandboxes/drives — Retrieves a paginated list of drives belonging to a specific project.
 
 Full cross-link map for this page: [/docs/sandbox/concepts/drives.graph.md](/docs/sandbox/concepts/drives.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fdrives&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Files written to a drive persist after the sandbox stops. Mount the same drive in a later run to pick up where you left off, even when starting from a different sandbox environment. You can mount up to four drives in a sandbox, each at its own path alongside the sandbox's own filesystem.
+
+You currently need to mount a drive into a sandbox to read and write files using the sandbox's drive mount path.
 
 ## When to use drives vs snapshots
 
@@ -77,6 +79,8 @@ Drives also support [read-only snapshots](#snapshots) for sharing a point-in-tim
 
 You run an agent that installs the same 10 GB of dependencies on every sandbox. With a snapshot, each sandbox gets its own copy, reinstalling and storing them separately every time. With a drive, they all read from one shared copy that persists across runs.
 
+**index.ts**
+
 ```ts filename="index.ts"
 import { Sandbox, Drive } from '@vercel/sandbox';
 
@@ -95,6 +99,28 @@ const sandbox = await Sandbox.create({
 });
 ```
 
+**main.py**
+
+```py filename="main.py"
+from vercel import sandbox
+
+cache, created = await sandbox.get_or_create_drive(name="shared-deps")
+
+# One sandbox populates the cache (single read-write mount)
+writer = await sandbox.create_sandbox(mounts={"/cache": cache})
+await writer.run_process(
+    "pnpm",
+    ["install", "--store-dir", "/cache"],
+    check=True,
+)
+await writer.stop()
+
+# Later sandboxes read the same cache without reinstalling
+reader = await sandbox.create_sandbox(
+    mounts={"/cache": cache.snapshot()},
+)
+```
+
 A snapshot copies the entire filesystem per sandbox. A drive is one directory that many sandboxes share, so there is one copy to update and every sandbox reads from it.
 
 ## Usage
@@ -103,7 +129,7 @@ A snapshot copies the entire filesystem per sandbox. A drive is one directory th
 
 Create a drive before mounting it into a sandbox. Drive names are unique within a Vercel project.
 
-**TypeScript**
+**index.ts**
 
 ```ts filename="index.ts"
 import { Drive } from '@vercel/sandbox';
@@ -115,29 +141,29 @@ const drive = await Drive.getOrCreate({
 });
 ```
 
-If you omit `maxSize`, the drive defaults to 1 TiB (1 GiB for Hobby). Set `maxSize` to specify the maximum drive size in bytes, up to the 16 TiB quota. [Contact Vercel Support](/help) to request a quota above 16 TiB.
+**main.py**
 
-Drives are created in `iad1` by default. Set `region` to store the drive in another [region](/docs/sandbox/concepts/regions#regions-and-drives).
+```py filename="main.py"
+from vercel import sandbox
 
-**CLI**
-
-```bash filename="Terminal"
-sandbox drives get-or-create workspace-cache
+drive, created = await sandbox.get_or_create_drive(
+    name="workspace-cache",
+    max_size_bytes=200 * 1024 * 1024 * 1024,  # 200 GiB
+    region="sfo1",
+)
 ```
 
-If you omit `--max-size`, the drive defaults to 1 TiB (1 GiB for Hobby). Set `--max-size` to specify the maximum drive size in bytes, up to the 16 TiB quota:
+**terminal.sh**
 
-```bash filename="Terminal"
-sandbox drives get-or-create workspace-cache --max-size 214748364800
+```bash filename="terminal.sh"
+sandbox drives get-or-create workspace-cache \
+  --max-size 214748364800 \
+  --region sfo1
 ```
 
-[Contact Vercel Support](/help) to request a quota above 16 TiB.
+If you omit the maximum size, the drive defaults to 1 TiB (1 GiB for Hobby). Set `maxSize` in TypeScript, `max_size_bytes` in Python, or `--max-size` in the CLI to specify the maximum drive size in bytes. The default maximum quota is 16 TiB.
 
-Drives are created in `iad1` by default. Set `--region` to store the drive in another [region](/docs/sandbox/concepts/regions#regions-and-drives):
-
-```bash filename="Terminal"
-sandbox drives get-or-create workspace-cache --region sfo1
-```
+Drives are created in `iad1` by default. Set `region` in the SDKs or `--region` in the CLI to store the drive in another [region](/docs/sandbox/concepts/regions#regions-and-drives).
 
 A drive's region can't change after creation. Requesting an existing drive with a different region or maximum size than it was created with fails with a `conflict` error.
 
@@ -147,7 +173,7 @@ Mount a drive by passing the drive name and mount path when creating a sandbox. 
 
 Drives are mounted as read-write by default. Only one sandbox at a time can mount a given drive as read-write: use [snapshots](#snapshots) for shared access.
 
-**TypeScript**
+**index.ts**
 
 ```ts filename="index.ts"
 import { Sandbox, Drive } from '@vercel/sandbox';
@@ -163,19 +189,35 @@ const sandbox = await Sandbox.create({
 });
 ```
 
-**CLI**
+**main.py**
 
-Use `--mount` with the format `drive:/path[:read-write|snapshot]`:
+```py filename="main.py"
+from vercel import sandbox
 
-```bash filename="Terminal"
+drive, created = await sandbox.get_or_create_drive(name="workspace-cache")
+
+# Mount as read-write once
+box = await sandbox.create_sandbox(
+    name="my-sandbox",
+    mounts={"/data": drive},
+)
+```
+
+**terminal.sh**
+
+```bash filename="terminal.sh"
 sandbox create --name my-sandbox --mount workspace-cache:/data
 ```
 
+In the CLI, `--mount` uses the format `drive:/path[:read-write|snapshot]`.
+
 #### Snapshots
 
-You can also mount a drive by taking a point-in-time, read-only snapshot of it. Snapshots allow multiple sandboxes to mount the same drive concurrently:
+You can also mount a drive by taking a point-in-time, read-only snapshot of it. Snapshots allow multiple sandboxes to mount the same drive concurrently. Each snapshot mount reflects the drive as it was at the moment you mounted it, and does not include any writes made to the drive thereafter. Mount a new snapshot to pick up more recent writes.
 
-**TypeScript**
+> **💡 Note:** A drive must be mounted read-write and written to at least once before you can mount a snapshot of it. Mounting a snapshot of a drive that has never been written to fails with a `drive_not_initialized` error.
+
+**index.ts**
 
 ```ts filename="index.ts"
 import { Sandbox, Drive } from '@vercel/sandbox';
@@ -197,20 +239,38 @@ const secondReader = await Sandbox.create({
 });
 ```
 
-**CLI**
+**main.py**
 
-Use `--mount` with the format `drive:/path[:read-write|snapshot]`:
+```py filename="main.py"
+from vercel import sandbox
 
-```bash filename="Terminal"
+drive, created = await sandbox.get_or_create_drive(name="shared")
+
+# Mount many snapshots of the same drive
+first_reader = await sandbox.create_sandbox(
+    name="reader-1",
+    mounts={"/data": drive.snapshot()},
+)
+second_reader = await sandbox.create_sandbox(
+    name="reader-2",
+    mounts={"/data": drive.snapshot()},
+)
+```
+
+**terminal.sh**
+
+```bash filename="terminal.sh"
 sandbox create --name reader-1 --mount shared:/data:snapshot
 sandbox create --name reader-2 --mount shared:/data:snapshot
 ```
+
+In the CLI, `--mount` uses the format `drive:/path[:read-write|snapshot]`.
 
 ### Listing drives
 
 List drives to view the currently attached sandboxes (if any) and metadata such as creation date and size.
 
-**TypeScript**
+**index.ts**
 
 ```ts filename="index.ts"
 import { Drive } from '@vercel/sandbox';
@@ -227,9 +287,24 @@ for (const drive of result.drives) {
 }
 ```
 
-**CLI**
+**main.py**
 
-```bash filename="Terminal"
+```py filename="main.py"
+from vercel import sandbox
+from vercel.sandbox import DriveQueryByName
+
+query = DriveQueryByName(
+    name_prefix="workspace",
+    sort_order="asc",
+)
+
+async for drive in sandbox.query_drives(query=query, page_size=10):
+    print(drive.name, drive.current_sandbox_name or "detached")
+```
+
+**terminal.sh**
+
+```bash filename="terminal.sh"
 sandbox drives ls
 sandbox drives ls --name-prefix workspace --limit 10
 ```
@@ -238,7 +313,7 @@ sandbox drives ls --name-prefix workspace --limit 10
 
 Deleting a drive permanently removes all data stored in the drive. A drive cannot be deleted if it is currently attached to a running sandbox.
 
-**TypeScript**
+**index.ts**
 
 ```ts filename="index.ts"
 import { Drive } from '@vercel/sandbox';
@@ -247,17 +322,26 @@ const drive = await Drive.getOrCreate({ name: 'workspace-cache' });
 await drive.delete();
 ```
 
-**CLI**
+**main.py**
 
-```bash filename="Terminal"
+```py filename="main.py"
+from vercel import sandbox
+
+drive, created = await sandbox.get_or_create_drive(name="workspace-cache")
+await drive.delete()
+```
+
+**terminal.sh**
+
+```bash filename="terminal.sh"
 sandbox drives rm workspace-cache
 ```
 
 ## Limits
 
 - A sandbox can mount up to 4 drives per run
-- A drive defaults to 1 TiB when you do not set a size (1 GiB for Hobby). The maximum quota is 16 TiB per drive. [Contact Vercel Support](/help) to request a quota above 16 TiB
-- A drive is stored in a single [region](/docs/sandbox/concepts/regions). A sandbox that mounts a drive must run in the same region, and can't have [failover regions](/docs/sandbox/concepts/regions#failover-regions)
+- A drive defaults to 1 TiB when you do not set a size (1 GiB for Hobby). The default maximum quota is 16 TiB
+- A drive is stored in a single [region](/docs/sandbox/concepts/regions). A sandbox's main region must match a drive's region.
 
 ## Pricing
 
@@ -271,6 +355,7 @@ See [Sandbox pricing](/docs/sandbox/pricing#drive-storage) for the rates in each
 - [Snapshots](/docs/sandbox/concepts/snapshots): Save and restore a full sandbox filesystem.
 - [CLI Reference](/docs/sandbox/cli-reference): Command reference for the Sandbox CLI.
 - [JS SDK Reference](/docs/sandbox/sdk-reference): Full API documentation for the JavaScript SDK.
+- [Python SDK Reference](/docs/sandbox/python-sdk-reference): Full API documentation for the Python SDK.
 
 
 ---

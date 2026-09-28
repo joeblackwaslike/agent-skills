@@ -1,7 +1,7 @@
 ---
 source: "https://oraios.github.io/serena/_sources/01-about/020_programming-languages.md"
-fetched_at: "2026-09-14T09:43:13.785Z"
-sha256: "220f87148d50775492c35a8196ca29917383d357e940dfb29d3a00b1939922cc"
+fetched_at: "2026-09-28T10:43:25.309Z"
+sha256: "fdbb0d7709fdce4d5cf34bf897a34a8e12832525d49716254fbc90c4b21ffa9a"
 ---
 
 # Language Support
@@ -48,16 +48,18 @@ Some languages require additional installations or setup steps, as noted.
   subsumes `typescript` and `html` for `.ts`/`.html` files, so do not also list those)
 * **Ansible**  
   (experimental; requires Node.js and npm; automatically installs `@ansible/ansible-language-server`;
-  must be explicitly specified in the `languages` entry in the `project.yml`; requires `ansible` in PATH for full functionality)
+  must be explicitly specified in the `language_servers` entry in the `project.yml`; requires `ansible` in PATH for full functionality;
   the upstream `@ansible/ansible-language-server@1.2.3` supports hover, completion, definition,
   semantic tokens, and validation; document symbols, workspace symbols, references, and rename
   are not supported by this version)
+* **Astro**  
+  (requires Node.js v18+ and npm; supports `.astro` files plus TypeScript/JavaScript files via `@astrojs/language-server`; a companion `typescript-language-server` + `@astrojs/ts-plugin` is spawned automatically for cross-file rename, go-to-definition, and references across `.ts`/`.js` and `.astro` files; use language `astro` for Astro projects instead of also enabling `typescript`)
 * **Bash**
 * **BSL** (1C:Enterprise / OneScript)  
   (requires Java 21+ on PATH; uses [bsl-language-server](https://github.com/1c-syntax/bsl-language-server) by 1c-syntax; the JAR is auto-downloaded and SHA-256-verified for the bundled default version; supports `.bsl` and `.os` files; configure optional `ls_path` or `bsl_ls_version` under `ls_specific_settings.bsl`)
 * **C#**  
   (by default, uses the Roslyn language server (language `csharp`), requiring [.NET v10+](https://dotnet.microsoft.com/en-us/download/dotnet) and, on Windows, `pwsh` ([PowerShell 7+](https://learn.microsoft.com/en-us/powershell/scripting/install/install-powershell-on-windows?view=powershell-7.5));
-  set language to `csharp_omnisharp` to use OmiSharp instead)
+  set language to `csharp_omnisharp` to use OmniSharp instead)
 * **C/C++**  
   (by default, uses the clangd language server (language `cpp`) but we also support ccls (language `cpp_ccls`);
   for best results, provide a `compile_commands.json` at the repository root;

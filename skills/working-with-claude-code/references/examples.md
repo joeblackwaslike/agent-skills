@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/examples.md"
-fetched_at: "2026-08-10T05:26:58.686Z"
-sha256: "82e9d6a127da350342d302286a7d63c8a8394fdf25c5f8624cced3cd72c5e705"
+fetched_at: "2026-09-28T10:38:50.037Z"
+sha256: "80248539c566ea16350663c69870fd2bfd1a37f8d1c43475622ebf2d5e54be1a"
 ---
 
 > ## Documentation Index
@@ -12,7 +12,7 @@ sha256: "82e9d6a127da350342d302286a7d63c8a8394fdf25c5f8624cced3cd72c5e705"
 
 > Find a complete, runnable Agent SDK project or a guided recipe in the Claude Cookbook that matches what you want to build.
 
-This page routes you to complete, runnable Agent SDK projects and guided Claude Cookbook recipes. TypeScript applications live in the [`claude-agent-sdk-demos`](https://github.com/anthropics/claude-agent-sdk-demos) repo, and Python recipes live in the [Claude Cookbook](https://platform.claude.com/cookbook).
+This page routes you to complete, runnable Agent SDK projects and guided Claude Cookbook recipes. The applications live in the [`claude-agent-sdk-demos`](https://github.com/anthropics/claude-agent-sdk-demos) repo, and Python recipes live in the [Claude Cookbook](https://platform.claude.com/cookbook).
 
 ## Run a minimal agent first
 
@@ -22,9 +22,9 @@ If you haven't built anything with the SDK yet, start with one of these before a
 
 * [Hello World](https://github.com/anthropics/claude-agent-sdk-demos/tree/main/hello-world): a minimal TypeScript project to clone when you want to start from repo code
 
-## Explore a TypeScript application
+## Explore a demo application
 
-The TypeScript applications in [`claude-agent-sdk-demos`](https://github.com/anthropics/claude-agent-sdk-demos) are demos for local development, from an email client to a multi-agent research system. Clone the demo whose shape matches what you're building.
+The applications in [`claude-agent-sdk-demos`](https://github.com/anthropics/claude-agent-sdk-demos) are demos for local development, from an email client to a multi-agent research system. Clone the demo whose shape matches what you're building.
 
 ## Work through a Python recipe
 

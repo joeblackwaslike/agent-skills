@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/api-servers/fastify.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "a8f7fb4389b45708ba50d945a2418a9deb8bbbf2868917d76f77e5c067e4b0b9"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "5a79c06553620ce78278c8de948bdaa1f88210eeec7515ad148fb07774fcc06b"
 ---
 
 # Fastify
@@ -35,7 +35,7 @@ const fastify = Fastify({ logger: true });
 
 fastify.post('/', async function (request, reply) {
   const result = streamText({
-    model: 'openai/gpt-4o',
+    model: 'openai/gpt-6-astra',
     prompt: 'Invent a new holiday and describe its traditions.',
   });
 
@@ -71,7 +71,7 @@ fastify.post('/stream-data', async function (request, reply) {
       });
 
       const result = streamText({
-        model: 'openai/gpt-4o',
+        model: 'openai/gpt-6-astra',
         prompt: 'Invent a new holiday and describe its traditions.',
       });
 
@@ -106,7 +106,7 @@ const fastify = Fastify({ logger: true });
 
 fastify.post('/', async function (request, reply) {
   const result = streamText({
-    model: 'openai/gpt-4o',
+    model: 'openai/gpt-6-astra',
     prompt: 'Invent a new holiday and describe its traditions.',
   });
 

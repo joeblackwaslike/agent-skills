@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/chatbot-resume-streams.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "bdbac838f179bc21467ac2c916cf35d9fb30b1e0d3b0050af2e2c8f09bc73336"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "c8c3a9895547829d5c48c5d899f22a3d6b95748854ca1610f253bdb9a09c9b80"
 ---
 
 # Chatbot Resume Streams
@@ -129,7 +129,7 @@ export async function POST(req: Request) {
   saveChat({ id, messages, activeStreamId: null });
 
   const result = streamText({
-    model: 'openai/gpt-5-mini',
+    model: 'openai/gpt-6-luna',
     messages: await convertToModelMessages(messages),
   });
 

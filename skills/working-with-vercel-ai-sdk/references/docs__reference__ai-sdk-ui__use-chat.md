@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "eba6aee6876cf66bec5ae64965845aadd3bea3156e8a7b86de17e16cdd0e377a"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "1ff2b5c54d9fe9124952801475d26bf2319929b172acb5f9dded5dbb54de237c"
 ---
 
 # `useChat()`
@@ -339,7 +339,7 @@ Allows you to easily create a conversational user interface for your chatbot app
       type: 'number',
       isOptional: true,
       description:
-        'Custom throttle wait in ms for the chat messages and data updates. Default is undefined, which disables throttling.',
+        'React and Vue only. Custom throttle wait time in milliseconds for reactive chat message updates. Positive values reduce UI update frequency without delaying stream processing or callbacks, and the latest messages are published before a ready or error status. Default is undefined, which disables throttling.',
     },
     {
       name: 'resume',

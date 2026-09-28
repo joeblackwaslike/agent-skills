@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/adapters/langchain.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "6ab4a061d060deea986adc16b984ea36d7027c17c842b14ec624f141c7fc75bd"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "d4d0aea86cc46d79176b3f3a6941e492eda9f726de9c8bb5393119e02e2da11a"
 ---
 
 # LangChain
@@ -47,7 +47,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const model = new ChatOpenAI({
-    model: 'gpt-4o-mini',
+    model: 'gpt-4.1-mini',
     temperature: 0,
   });
 
@@ -116,7 +116,7 @@ import { toBaseMessages, toUIMessageStream } from '@ai-sdk/langchain';
 export const maxDuration = 60;
 
 const model = new ChatOpenAI({
-  model: 'gpt-4o',
+  model: 'gpt-4.1',
   temperature: 0.7,
 });
 
@@ -165,7 +165,7 @@ import { StateGraph, MessagesAnnotation } from '@langchain/langgraph';
 export const maxDuration = 30;
 
 const model = new ChatOpenAI({
-  model: 'gpt-4o-mini',
+  model: 'gpt-4.1-mini',
   temperature: 0,
 });
 
@@ -212,7 +212,7 @@ import { createUIMessageStreamResponse, UIMessage } from 'ai';
 export const maxDuration = 30;
 
 const model = new ChatOpenAI({
-  model: 'gpt-4o-mini',
+  model: 'gpt-4.1-mini',
   temperature: 0,
 });
 
@@ -256,7 +256,7 @@ import { z } from 'zod';
 
 export const maxDuration = 60;
 
-const model = new ChatOpenAI({ model: 'gpt-4o-mini' });
+const model = new ChatOpenAI({ model: 'gpt-6-luna' });
 
 // Tool that emits progress updates during execution
 const analyzeDataTool = tool(

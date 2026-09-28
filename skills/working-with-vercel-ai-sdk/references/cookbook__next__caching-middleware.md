@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/caching-middleware.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "6a0fe1f383dfee01964c841ac991ac02cac9bceb91ae6bbba600065bacabdf83"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "55185af255ceebd290fb4d7143950eba2bf4eaf8429f3cacc8f83069c6092c2c"
 ---
 
 # Caching Middleware
@@ -175,7 +175,7 @@ import {
 import { z } from 'zod';
 
 const wrappedModel = wrapLanguageModel({
-  model: 'openai/gpt-4o-mini',
+  model: 'openai/gpt-6-luna',
   middleware: cacheMiddleware,
 });
 

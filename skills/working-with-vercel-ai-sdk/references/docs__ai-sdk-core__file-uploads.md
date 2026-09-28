@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/file-uploads.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "7fe841e72d3af34a4668afad0347829f42162acd300cdc283d3fb0dd7d173864"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "28084307e17ecf5c345e611492b62c68b7eed65f2e96ea28a49da436252843ab"
 ---
 
 # File Uploads
@@ -27,7 +27,7 @@ const { providerReference } = await uploadFile({
 });
 
 const { text } = await generateText({
-  model: openai.responses('gpt-4o-mini'),
+  model: openai.responses('gpt-6-luna'),
   messages: [
     {
       role: 'user',

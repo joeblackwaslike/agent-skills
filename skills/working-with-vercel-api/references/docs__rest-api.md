@@ -3,7 +3,7 @@ title: Vercel REST API Reference
 product: vercel
 url: /docs/rest-api
 canonical_url: "https://vercel.com/docs/rest-api"
-last_updated: 2026-09-21
+last_updated: 2026-09-28
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Interact programmatically with your Vercel account using the SDK or direct HTTP requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rest-api.md"
-fetched_at: "2026-09-21T09:45:47.145Z"
-sha256: "0ba9c16d917e63c0b77abca0ce8b322630c3a01a3dbd28e9dff4be8313223f28"
+fetched_at: "2026-09-28T10:45:17.525Z"
+sha256: "07a4809191addddea94e106a1a970c5d22ccb5e63fb77058855dfd815e9a1be0"
 ---
 
 # Vercel REST API Reference
@@ -184,6 +184,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 
 | Method | Endpoint | Description |
 |---|---|---|
+| **POST** | [`/v1/registrar/domains/search`](/docs/rest-api/domains-registrar/get-domain-availability-and-pricing.md) | Get Domain Availability and Pricing |
 | **GET** | [`/v1/registrar/tlds/supported`](/docs/rest-api/domains-registrar/get-supported-tlds.md) | Get supported TLDs |
 | **GET** | [`/v1/registrar/tlds/{tld}`](/docs/rest-api/domains-registrar/get-tld.md) | Get TLD |
 | **GET** | [`/v1/registrar/tlds/{tld}/price`](/docs/rest-api/domains-registrar/get-tld-price-data.md) | Get TLD price data |
@@ -191,7 +192,6 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **GET** | [`/v1/registrar/domains/{domain}/price`](/docs/rest-api/domains-registrar/get-price-data-for-a-domain.md) | Get price data for a domain |
 | **POST** | [`/v1/registrar/domains/price`](/docs/rest-api/domains-registrar/get-price-data-for-multiple-domains.md) | Get price data for multiple domains |
 | **POST** | [`/v1/registrar/domains/availability`](/docs/rest-api/domains-registrar/get-availability-for-multiple-domains.md) | Get availability for multiple domains |
-| **POST** | [`/v1/registrar/domains/search`](/docs/rest-api/domains-registrar/check-domain-availability-and-pricing.md) | Check domain availability and pricing |
 | **GET** | [`/v1/registrar/domains/{domain}/contact-info/schema`](/docs/rest-api/domains-registrar/get-contact-info-schema.md) | Get contact info schema |
 | **GET** | [`/v1/registrar/domains/{domain}/auth-code`](/docs/rest-api/domains-registrar/get-the-auth-code-for-a-domain.md) | Get the auth code for a domain |
 | **POST** | [`/v1/registrar/domains/{domain}/buy`](/docs/rest-api/domains-registrar/buy-a-domain.md) | Buy a domain |
@@ -369,10 +369,10 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 
 | Method | Endpoint | Description |
 |---|---|---|
-| **GET** | [`/v1/kms/issuers`](/docs/rest-api/kms/list-issuers.md) | List issuers |
-| **POST** | [`/v1/kms/issuers`](/docs/rest-api/kms/create-an-issuer.md) | Create an issuer |
 | **POST** | [`/v1/kms/issuers/{issuerId}/sign/message`](/docs/rest-api/kms/sign-a-message.md) | Sign a message |
 | **POST** | [`/v1/kms/issuers/{issuerId}/sign/token`](/docs/rest-api/kms/sign-a-token.md) | Sign a token |
+| **GET** | [`/v1/kms/issuers`](/docs/rest-api/kms/list-issuers.md) | List issuers |
+| **POST** | [`/v1/kms/issuers`](/docs/rest-api/kms/create-an-issuer.md) | Create an issuer |
 | **POST** | [`/v1/kms/issuers/{issuerId}/keys`](/docs/rest-api/kms/create-a-signing-key.md) | Create a signing key |
 | **POST** | [`/v1/kms/issuers/{issuerId}/keys/{keyId}/activate`](/docs/rest-api/kms/activate-a-signing-key.md) | Activate a signing key |
 | **POST** | [`/v1/kms/issuers/{issuerId}/keys/{keyId}/revoke`](/docs/rest-api/kms/revoke-a-signing-key.md) | Revoke a signing key |
@@ -590,6 +590,27 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **DELETE** | [`/v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference}`](/docs/rest-api/vcr/delete-an-image-manifest.md) | Delete an image manifest |
 | **HEAD** | [`/v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference}`](/docs/rest-api/vcr/check-if-a-manifest-exists.md) | Check if a manifest exists |
 | **GET** | [`/v2/{teamSlug}/{projectSlug}/{repositoryName}/tags/list`](/docs/rest-api/vcr/list-image-tags.md) | List image tags |
+
+## vercel-ci
+
+| Method | Endpoint | Description |
+|---|---|---|
+| **GET** | [`/v2/vercel-ci/invocations`](/docs/rest-api/vercel-ci/list-invocations-for-a-team-optionally-filtered-by-repository-and-invocation-metadata.md) | List invocations for a team, optionally filtered by repository and invocation metadata |
+| **GET** | [`/v1/vercel-ci/invocations/{invocationId}/attempts`](/docs/rest-api/vercel-ci/list-all-attempts-for-an-invocation.md) | List all attempts for an invocation |
+| **GET** | [`/v1/vercel-ci/invocations/{invocationId}/tree`](/docs/rest-api/vercel-ci/get-an-invocation-with-its-jobs-and-tasks.md) | Get an invocation with its jobs and tasks |
+| **GET** | [`/v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}`](/docs/rest-api/vercel-ci/get-a-specific-invocation-attempt.md) | Get a specific invocation attempt |
+| **POST** | [`/v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/retry`](/docs/rest-api/vercel-ci/retry-a-terminal-vercel-ci-invocation-attempt.md) | Retry a terminal Vercel CI invocation attempt |
+| **GET** | [`/v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions`](/docs/rest-api/vercel-ci/list-job-definitions-for-an-invocation-attempt.md) | List job definitions for an invocation attempt |
+| **GET** | [`/v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}`](/docs/rest-api/vercel-ci/get-a-specific-job-definition.md) | Get a specific job definition |
+| **GET** | [`/v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs`](/docs/rest-api/vercel-ci/list-all-runs-for-a-job-definition.md) | List all runs for a job definition |
+| **GET** | [`/v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}`](/docs/rest-api/vercel-ci/get-a-specific-job-run-attempt.md) | Get a specific job run attempt |
+| **GET** | [`/v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/task-definitions`](/docs/rest-api/vercel-ci/list-all-task-definitions-for-a-job-run.md) | List all task definitions for a job run |
+| **GET** | [`/v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/task-runs`](/docs/rest-api/vercel-ci/list-task-runs-for-a-job-run.md) | List task runs for a job run |
+| **GET** | [`/v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/logs`](/docs/rest-api/vercel-ci/get-log-lines-for-an-invocation-attempt.md) | Get log lines for an invocation attempt |
+| **GET** | [`/v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/task-logs`](/docs/rest-api/vercel-ci/get-log-lines-for-the-tasks-of-an-invocation-attempt.md) | Get log lines for the tasks of an invocation attempt |
+| **GET** | [`/v1/vercel-ci/log-search`](/docs/rest-api/vercel-ci/search-the-task-logs-of-several-invocation-attempts.md) | Search the task logs of several invocation attempts |
+| **GET** | [`/v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/logs`](/docs/rest-api/vercel-ci/get-log-lines-for-a-specific-job-run-attempt.md) | Get log lines for a specific job run attempt |
+| **GET** | [`/v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/task-definitions/{taskDefinitionId}/runs/{taskRunAttempt}/logs`](/docs/rest-api/vercel-ci/get-log-lines-for-a-specific-task-run-attempt.md) | Get log lines for a specific task run attempt |
 
 ## web-analytics
 

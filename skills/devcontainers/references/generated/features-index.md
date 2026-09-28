@@ -1,8 +1,8 @@
 ---
 title: "Available features index"
 source: "https://containers.dev/features"
-fetched_at: "2026-09-21T09:38:38.892Z"
-sha256: "fde94fa81c900ce0fa60663e96ccf5216c58c2cc3c9fd2e08e6522a32ea92c49"
+fetched_at: "2026-09-28T10:38:04.080Z"
+sha256: "f35c67d8ebf0ecec47f2ffefc97675d5e792a2f439005997407944b69dc3e6d7"
 ---
 
 # Available features index
@@ -108,7 +108,7 @@ Features
 | Anaconda | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/anaconda:1` | `1.1.0` |
 | AWS CLI | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/aws-cli:1` | `1.1.4` |
 | Azure CLI | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/azure-cli:1` | `1.3.0` |
-| Common Utilities | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/common-utils:2` | `2.6.0` |
+| Common Utilities | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/common-utils:2` | `2.7.0` |
 | Conda | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/conda:2` | `2.0.1` |
 | GitHub Copilot CLI | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/copilot-cli:1` | `1.1.3` |
 | Light-weight Desktop | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/desktop-lite:1` | `1.2.10` |
@@ -117,8 +117,8 @@ Features
 | Dotnet CLI | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/dotnet:2` | `2.5.0` |
 | Git (from source) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/git:1` | `1.3.8` |
 | Git Large File Support (LFS) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/git-lfs:1` | `1.2.5` |
-| GitHub CLI | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/github-cli:1` | `1.1.2` |
-| Go | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/go:1` | `1.3.4` |
+| GitHub CLI | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/github-cli:1` | `1.1.3` |
+| Go | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/go:1` | `1.4.0` |
 | Hugo | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/hugo:1` | `1.1.3` |
 | Java (via SDKMAN!) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/java:1` | `1.8.3` |
 | Kubectl, Helm, and Minikube | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/kubectl-helm-minikube:1` | `1.3.1` |
@@ -239,8 +239,8 @@ Features
 | bats (Bash Automated Testing System) | edouard-lopez | `ghcr.io/edouard-lopez/devcontainer-features/bats:0` | `0.0.1` |
 | Azure Functions Core Tools | jlaundry | `ghcr.io/jlaundry/devcontainer-features/azure-functions-core-tools:1` | `1.0.1` |
 | SQL Server ODBC Driver | jlaundry | `ghcr.io/jlaundry/devcontainer-features/mssql-odbc-driver:1` | `1.0.3` |
-| kotlinc | mikaello | `ghcr.io/mikaello/devcontainer-features/kotlinc:1` | `1.1.0` |
-| Modern shell utils | mikaello | `ghcr.io/mikaello/devcontainer-features/modern-shell-utils:2` | `2.0.0` |
+| kotlinc | mikaello | `ghcr.io/mikaello/devcontainer-features/kotlinc:1` | `1.2.0` |
+| Modern shell utils | mikaello | `ghcr.io/mikaello/devcontainer-features/modern-shell-utils:3` | `3.0.0` |
 | actionlint | jsburckhardt | `ghcr.io/jsburckhardt/devcontainer-features/actionlint:1` | `1.0.0` |
 | ast-grep | jsburckhardt | `ghcr.io/jsburckhardt/devcontainer-features/ast-grep:1` | `1.0.0` |
 | bat | jsburckhardt | `ghcr.io/jsburckhardt/devcontainer-features/bat:1` | `1.0.0` |
@@ -411,13 +411,16 @@ Features
 | Staticcheck | Ivan Stasiuk | `ghcr.io/brokeyourbike/devcontainer-features/staticcheck:0` | `0.2.0` |
 | Vapor Toolbox | Nikita Kurpas | `ghcr.io/nikitakurpas/features/vapor-toolbox:1` | `1.0.0` |
 | AWS CLI Persistence | Joshua Ji | `ghcr.io/joshuanianji/devcontainer-features/aws-cli-persistence:1` | `1.0.3` |
+| Claude Code Persistence | Joshua Ji | `ghcr.io/joshuanianji/devcontainer-features/claude-code-persistence:1` | `1.0.0` |
 | Google Cloud CLI Persistence | Joshua Ji | `ghcr.io/joshuanianji/devcontainer-features/gcloud-cli-persistence:1` | `1.0.4` |
-| Gel CLI | Joshua Ji | `ghcr.io/joshuanianji/devcontainer-features/gel-cli:1` | `1.0.0` |
+| Gel CLI | Joshua Ji | `ghcr.io/joshuanianji/devcontainer-features/gel-cli:1` | `1.0.1` |
 | Github CLI Persistence | Joshua Ji | `ghcr.io/joshuanianji/devcontainer-features/github-cli-persistence:1` | `1.0.4` |
 | Google Cloud CLI | Joshua Ji | `ghcr.io/joshuanianji/devcontainer-features/google-cloud-cli:1` | `1.0.0` |
 | Lamdera | Joshua Ji | `ghcr.io/joshuanianji/devcontainer-features/lamdera:1` | `1.0.2` |
 | Mount pnpm Store | Joshua Ji | `ghcr.io/joshuanianji/devcontainer-features/mount-pnpm-store:1` | `1.1.0` |
+| OpenCode Persistence | Joshua Ji | `ghcr.io/joshuanianji/devcontainer-features/opencode-persistence:1` | `1.0.0` |
 | Terraform CLI Persistence | Joshua Ji | `ghcr.io/joshuanianji/devcontainer-features/terraform-cli-persistence:1` | `1.0.3` |
+| Token Monitor Agent | Joshua Ji | `ghcr.io/joshuanianji/devcontainer-features/token-monitor-agent:1` | `1.0.0` |
 | Stripe CLI | Thanan Traiongthawon | `ghcr.io/nullcoder/devcontainer-features/stripe-cli:1` | `1.0.0` |
 | npm registry | jayree | `ghcr.io/jayree/devcontainer-features/npm-registry:1` | `1.0.1` |
 | Salesforce CLI (autocomplete) | jayree | `ghcr.io/jayree/devcontainer-features/sf-autocomplete:1` | `1.0.4` |
@@ -617,11 +620,11 @@ Features
 | uv | Valentin Heiligers | `ghcr.io/va-h/devcontainers-features/uv:1` | `1.1.4` |
 | AWS CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/aws-cli:1` | `1.6.29` |
 | Azure CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/azure-cli:1` | `1.0.22` |
-| Common Utilities | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/common-utils:1` | `1.4.134` |
+| Common Utilities | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/common-utils:1` | `1.4.136` |
 | Docker (Docker-in-Docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-in-docker:1` | `1.3.40` |
 | Docker (docker-outside-of-docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-outside-of-docker:1` | `1.3.40` |
-| Google Cloud CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/gcloud-cli:1` | `1.0.77` |
-| Go | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/go:1` | `1.7.39` |
+| Google Cloud CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/gcloud-cli:1` | `1.0.78` |
+| Go | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/go:1` | `1.7.40` |
 | Terraform, tflint, and TFGrunt | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/terraform:1` | `1.3.28` |
 | bpmnlint | Waqqas Jabbar | `ghcr.io/waqqas/feature/bpmnlint:1` | `1.0.1` |
 | dmnlint | Waqqas Jabbar | `ghcr.io/waqqas/feature/dmnlint:1` | `1.0.1` |
@@ -1420,6 +1423,7 @@ Features
 | direnv with dotenv support | esimkowitz | `ghcr.io/esimkowitz/devcontainer-features/direnv:1` | `1.0.1` |
 | Fish Shell with Starship Prompt | esimkowitz | `ghcr.io/esimkowitz/devcontainer-features/fish-starship:1` | `1.2.2` |
 | SSH Commit Signing | esimkowitz | `ghcr.io/esimkowitz/devcontainer-features/ssh-signing:1` | `1.0.1` |
+| Enchiridion | iyaki | `ghcr.io/iyaki/devcontainer-features/enchiridion:2` | `2.0.0` |
 | Lefthook | iyaki | `ghcr.io/iyaki/devcontainer-features/lefthook:2` | `2.0.1` |
 | Oh My Pi | iyaki | `ghcr.io/iyaki/devcontainer-features/oh-my-pi:1` | `1.0.0` |
 | PHPantom LSP | iyaki | `ghcr.io/iyaki/devcontainer-features/phpantom:1` | `1.0.0` |

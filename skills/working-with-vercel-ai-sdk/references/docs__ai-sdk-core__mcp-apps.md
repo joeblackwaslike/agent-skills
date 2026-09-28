@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/mcp-apps.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "49bd4a608fe52e97157101e0793f9b550cbf67263411083e044b05fe4c106268"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "392ae2938a22dda41a302af5e29a04581e7d3d0addea5ffb5bca2a3326828c09"
 ---
 
 # MCP Apps
@@ -69,7 +69,7 @@ export async function POST(req: Request) {
     const tools = client.toolsFromDefinitions(modelVisible);
 
     const result = streamText({
-      model: openai('gpt-4o-mini'),
+      model: openai('gpt-6-luna'),
       tools,
       messages: await convertToModelMessages(messages),
       onEnd: async () => {

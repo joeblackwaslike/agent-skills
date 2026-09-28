@@ -3,7 +3,7 @@ title: Partial Prerendering (PPR)
 product: vercel
 url: /docs/partial-prerendering
 canonical_url: "https://vercel.com/docs/partial-prerendering"
-last_updated: 2026-08-28
+last_updated: 2026-09-22
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Partial Prerendering serves a cached static shell instantly, then renders and streams the dynamic parts of a page per request.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/partial-prerendering.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "f570b2b6d2519da7adce9371c05b8fae6247fff86b1cc336071d42bdbea6d365"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "c97826620824c3f7de70af27029c093eccdd66f2a02ac5163f2c22b67c64e5a7"
 ---
 
 # Partial Prerendering (PPR)
@@ -69,7 +69,7 @@ To get started:
 
 When you deploy PPR with your framework on Vercel, the CDN adds these optimizations:
 
-- **Instant shell with dynamic content in one response**: Once a region has pulled the shell into its [CDN cache](/docs/caching/cdn-cache), Vercel serves it from the nearest of [Vercel's 20 regions](/docs/regions) for a fast Time to First Byte, while your function renders the dynamic parts and streams them into the same response.
+- **Instant shell with dynamic content in one response**: Once a region has pulled the shell into its [CDN cache](/docs/caching/cdn-cache), Vercel serves it from the nearest of Vercel's 19 [regions](/docs/regions) for a fast Time to First Byte, while your function renders the dynamic parts and streams them into the same response.
 - **Durable storage**: At deployment time, Vercel writes the shell to the [global ISR cache](/docs/incremental-static-regeneration/limits-and-pricing#isr-cache-region). On the first request in each region, Vercel pulls the shell into the regional [CDN cache](/docs/caching/cdn-cache). The shell persists in the global ISR cache until you revalidate it.
 - **Cache shielding and request collapsing**: on a CDN cache miss, Vercel reads from the global ISR cache before invoking your function, and it [collapses](/docs/incremental-static-regeneration/request-collapsing) concurrent requests to the same path into one invocation per region.
 - **Globally consistent purging**: when you revalidate content, all caches across all regions update within 300 milliseconds. Vercel purges HTML and data payloads together, so visitors see consistent content across full page loads and client-side transitions.

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/azure.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "241bfca0df30ecd9a6ab7c4f5d6a43e4153464099756cbaa3c02c54667213021"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "e03ba6c329ffa45915cb60b23d3dc4d9248e0ab4dca29af9a411be3c317a9038"
 ---
 
 # Azure OpenAI Provider
@@ -418,6 +418,54 @@ The following Azure-specific metadata may be returned:
 <Note>
   The providerMetadata is only returned with the default responses API, and is
   not supported when using 'azure.chat' or 'azure.completion'
+</Note>
+
+#### Changing Reasoning Effort Mid-Conversation
+
+Azure Responses models support message-level reasoning effort updates through
+`providerOptions.azure.reasoningEffortUpdate`. The `openai` namespace is also
+accepted when the message has no `azure` options. Use the
+`OpenAIResponsesSystemMessageOptions` type exported from `@ai-sdk/azure` to
+validate these options:
+
+```ts
+import { azure, type OpenAIResponsesSystemMessageOptions } from '@ai-sdk/azure';
+import { generateText } from 'ai';
+
+const result = await generateText({
+  // Use the name of your GPT-6 deployment.
+  model: azure.responses('gpt-6-astra'),
+  reasoning: 'low',
+  allowSystemInMessages: true,
+  messages: [
+    {
+      role: 'system',
+      content: '',
+      providerOptions: {
+        azure: {
+          reasoningEffortUpdate: 'high',
+        } satisfies OpenAIResponsesSystemMessageOptions,
+      },
+    },
+    { role: 'user', content: 'Analyze the failure modes of this migration.' },
+  ],
+});
+```
+
+Keep the request-level `reasoning` unchanged throughout the conversation and
+retain earlier effort updates when resending message history. These updates
+also work with `streamText`. See the [OpenAI reasoning effort
+guide](/providers/ai-sdk-providers/openai#changing-reasoning-effort-mid-conversation)
+for continuation, compaction, and configuration restrictions.
+
+<Note>
+  The SDK infers support for effort updates from the deployment name passed to
+  `azure.responses()`. The name must identify a supported GPT-6-or-later model
+  family, such as `gpt-6-astra`. A custom name such as `production` is not
+  recognized, even when the underlying deployment runs GPT-6. In that case,
+  message-level updates throw, and request-level updates are omitted with a
+  warning. Setting `forceReasoning: true` does not override this capability
+  check.
 </Note>
 
 #### Web Search Tool

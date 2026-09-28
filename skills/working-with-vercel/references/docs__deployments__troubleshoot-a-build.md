@@ -3,7 +3,7 @@ title: Troubleshooting Build Errors
 product: vercel
 url: /docs/deployments/troubleshoot-a-build
 canonical_url: "https://vercel.com/docs/deployments/troubleshoot-a-build"
-last_updated: 2026-09-11
+last_updated: 2026-09-21
 type: conceptual
 prerequisites:
   - /docs/deployments
@@ -11,13 +11,13 @@ related:
   - /docs/deployments/logs
   - /docs/project-configuration
   - /docs/rbac
-  - /docs/builds/managing-builds
-  - /docs/environment-variables
+  - /docs/integrations
+  - /docs/integrations/create-integration/deployment-integration-action
 summary: Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a deployment and long build times.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/troubleshoot-a-build.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "66c2f7a3436971cebb3d876d158cd6904e524dd477d5fa99746c7b1b0a2986b9"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "9905b844f703b9ef6518e9868fdbd6cdf9dbd1c1fa657ca752da42d2111563c2"
 ---
 
 # Troubleshooting Build Errors
@@ -39,8 +39,8 @@ You can troubleshoot build errors that occur during the Build step of your deplo
 - [Troubleshooting Build Error: "Build step did not complete within the maximum of 45 minutes"](https://vercel.com/kb/guide/troubleshooting-build-error-build-step-did-not-complete-within-45-minutes?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-a-build&source_site=vercel-docs&relationship=related) — Learn common reasons Vercel builds hit the 45-minute limit and how to reduce build times so your deployments stay fast a
 - [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-a-build&source_site=vercel-docs&relationship=related) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
 - [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-a-build&source_site=vercel-docs&relationship=related) — Learn the systematic steps to identify and resolve 404 issues.
+- [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-a-build&source_site=vercel-docs&relationship=related) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
 - [Deploying Turborepo to Vercel](https://vercel.com/docs/monorepos/turborepo?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-a-build&source_site=vercel-docs&relationship=related) — Learn about Turborepo, a build system for monorepos that allows you to have faster incremental builds, content-aware has
-- [Diagnosing and fixing cache issues](https://vercel.com/docs/caching/cdn-cache/debug-cache-issues?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-a-build&source_site=vercel-docs&relationship=related) — Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
 - [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-a-build&source_site=vercel-docs&relationship=related) — Learn how to customize your deployments using Vercel's build features.
 
 Full cross-link map for this page: [/docs/deployments/troubleshoot-a-build.graph.md](/docs/deployments/troubleshoot-a-build.graph.md?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-a-build&source_site=vercel-docs&relationship=graph)
@@ -98,10 +98,30 @@ Builds can fail without providing any build logs when Vercel detects a missing p
 - An invalid [`vercel.json` configuration](/docs/project-configuration) was committed
 - When using [Ignored Build Steps](/kb/guide/how-do-i-use-the-ignored-build-step-field-on-vercel)
 - Commits were made from a contributor that is not a [team member](/docs/rbac)
+- A [Marketplace integration](/docs/integrations) resource connected to the project failed to provision before the build started
 
 In this case, you cannot access the **Building** accordion described above, and instead, Vercel will present an overlay that contains the error message.
 
 ![Image](`/docs-assets/static/docs/concepts/deployments/build-error-no-logs-v2-light.png`)
+
+### Integration resource provisioning failures
+
+If your project is connected to a [Marketplace integration](/docs/integrations) resource, Vercel provisions integration resources and runs any configured [deployment integration actions](/docs/integrations/create-integration/deployment-integration-action) before the Build step starts. While this happens, the deployment is held in a provisioning state and the build does not begin.
+
+If provisioning fails, the deployment fails before any build output is produced, so no build logs are available. This can happen when the integration provider cannot complete the request, for example because the integration account is suspended on the provider's side.
+
+To identify a provisioning failure:
+
+1. From your Vercel [dashboard](/dashboard), select the project and then **Deployments** in the sidebar
+2. Select the failed deployment
+3. In the **Deployment Details** section, expand the **Provisioning Integrations** step. It lists each connected integration resource and deployment action with its status. A failed or timed-out item is marked with an error state, which tells you the deployment failed during provisioning rather than during the build
+
+To resolve the failure:
+
+1. Open the affected integration from the **Integrations** section of your dashboard and select **Manage** to open the provider's dashboard, then resolve the issue on the provider's side
+2. [Redeploy](/docs/deployments/managing-deployments#redeploy-a-project) the project. Provisioning runs again on the new deployment
+
+While the **Provisioning Integrations** step is still pending, you can also select **Skip** to let the deployment continue without waiting for the integration. Only skip provisioning if your build does not depend on the resource, since the resource may not be ready when the build runs.
 
 ## Cancelled Builds due to limits
 

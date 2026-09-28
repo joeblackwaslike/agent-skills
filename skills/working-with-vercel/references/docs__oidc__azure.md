@@ -3,7 +3,7 @@ title: Connect to Microsoft Azure
 product: vercel
 url: /docs/oidc/azure
 canonical_url: "https://vercel.com/docs/oidc/azure"
-last_updated: 2026-09-16
+last_updated: 2026-09-18
 type: how-to
 prerequisites:
   - /docs/oidc
@@ -14,8 +14,8 @@ related:
 summary: "Learn how to configure your Microsoft Azure account to trust Vercel's OpenID Connect (OIDC) Identity Provider (IdP)."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/azure.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "be591318401ff1a297e21bceb41d46f32392f7824a8db88ac9956b199b5ec765"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "7412e20efed3944f3473e95d3e6a14ee22feb005732ab28079ee9bc2b3e2212d"
 ---
 
 # Connect to Microsoft Azure

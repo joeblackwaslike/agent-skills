@@ -1,18 +1,12 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/issues/tracking-your-work-with-issues/learning-about-issues/about-issues.md"
-fetched_at: "2026-07-13T06:58:22.643Z"
-sha256: "cce40cff5a8dbb378531ceab0cf3445c378f06cad2cbdea958d0a628d71b6bd2"
+fetched_at: "2026-09-28T10:42:53.812Z"
+sha256: "91f255f5879ce9c7ff3c87963e810f5275d527fbcd08a227cb632a435a962841"
 ---
 
 You can create issues in your repository to plan, discuss, and track work. Issues are quick to create, flexible, and can be used in many ways. Issues can track bug reports, new features and ideas, and anything else you need to write down or discuss with your team, and you can use {% data variables.projects.projects_v2 %} to plan and track the work for your team. {% ifversion sub-issues %}You can also break your work down further by adding sub-issues and easily browse the full hierarchy of work to be done.{% endif %}
 
 Issues can be created in a variety of ways, so you can choose the most convenient method for your workflow. For example, you can create an issue from a repository,{% ifversion sub-issues %} while adding sub-issues,{% endif %} convert a comment in an issue or pull request, create an issue from a specific line of code, or via a URL query. You can also create an issue from your platform of choice: through the web UI, {% data variables.product.prodname_desktop %}, {% data variables.product.prodname_cli %}, GraphQL and REST APIs, or {% data variables.product.prodname_mobile %}. See [AUTOTITLE](/issues/tracking-your-work-with-issues/using-issues/creating-an-issue).
-
-{% ifversion copilot %}
-
-> [!TIP] You can also use {% data variables.copilot.copilot_chat_short %} to generate ideas, outlines, or drafts for discussions or blog posts, based on your issues. See [AUTOTITLE](/copilot/tutorials/copilot-cookbook/document-code/write-discussions-or-blog-posts).
-
-{% endif %}
 
 {% ifversion sub-issues %}
 

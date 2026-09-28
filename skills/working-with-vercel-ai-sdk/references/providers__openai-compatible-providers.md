@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/openai-compatible-providers.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "6d21e35284a0a63b1d54520bb152a55571a0d0d838b600477c90336c7df944e4"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "f318f95a146daf8e1ed71eeddcc237497bbbb8f9b75be54289c420e33b652b05"
 ---
 
 # OpenAI Compatible Providers
@@ -15,6 +15,7 @@ We provide detailed documentation for the following OpenAI compatible providers:
 - [LM Studio](/providers/openai-compatible-providers/lmstudio)
 - [NIM](/providers/openai-compatible-providers/nim)
 - [ModelRush](/providers/openai-compatible-providers/modelrush)
+- [Cheaper Inference](/providers/openai-compatible-providers/cheaper-inference)
 - [Heroku](/providers/openai-compatible-providers/heroku)
 - [Clarifai](/providers/openai-compatible-providers/clarifai)
 - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)
@@ -776,6 +777,7 @@ This allows you to access provider-specific information while maintaining a cons
   - [LM Studio](/providers/openai-compatible-providers/lmstudio)
   - [NVIDIA NIM](/providers/openai-compatible-providers/nim)
   - [ModelRush](/providers/openai-compatible-providers/modelrush)
+  - [Cheaper Inference](/providers/openai-compatible-providers/cheaper-inference)
   - [Clarifai](/providers/openai-compatible-providers/clarifai)
   - [Heroku](/providers/openai-compatible-providers/heroku)
   - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)

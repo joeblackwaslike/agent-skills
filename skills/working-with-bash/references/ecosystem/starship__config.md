@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/starship/starship/main/README.md"
-fetched_at: "2026-09-21T09:38:58.619Z"
-sha256: "4aba883e3fdf4f07961893fbd854df90bc50c6fe5c3ddb14c0b433dfc4d10445"
+fetched_at: "2026-09-28T10:38:26.295Z"
+sha256: "3a1c69539c6b04c737a9dfbba9b74f7973231c58d336fef2aac7284dd2da17c5"
 ---
 
 <p align="center">
@@ -82,17 +82,6 @@ sha256: "4aba883e3fdf4f07961893fbd854df90bc50c6fe5c3ddb14c0b433dfc4d10445"
 </p>
 
 <h1></h1>
-
-> [!WARNING]
-> **The default branch has been renamed from `master` to `main`.**
-> If you have a local clone, update it by running:
->
-> ```sh
-> git branch -m master main
-> git fetch origin
-> git branch -u origin/main main
-> git remote set-head origin -a
-> ```
 
 <img
   src="https://raw.githubusercontent.com/starship/starship/main/media/demo.gif"
@@ -369,10 +358,6 @@ Please check out these previous works that helped inspire the creation of starsh
 ## ❤️ Sponsors
 
 Support this project by [becoming a sponsor](https://github.com/sponsors/starship). Your name or logo will show up here with a link to your website.
-
-**Supporter Tier**
-
-- [Alex Holmes](https://github.com/alexhholmes)
 
 ## 🔒 Code Signing Policy
 

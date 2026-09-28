@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/foundations/provider-options.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "c196ff51ca8b54f32740eebd29e492a158a8f58e7fea83c1ef75aed3dbc94e73"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "e44395d76a95f48ae1db16555e70707f7dad4adc0913ffb378378dff1fee97de"
 ---
 
 # Provider Options
@@ -10,7 +10,7 @@ Provider options let you pass provider-specific configuration that goes beyond t
 
 ```ts
 const result = await generateText({
-  model: openai('gpt-5.2'),
+  model: openai('gpt-6-astra'),
   prompt: 'Explain quantum entanglement.',
   providerOptions: {
     openai: {
@@ -43,7 +43,7 @@ The sections below cover the most frequently used provider options, focusing on 
 
 ### Reasoning Effort
 
-For reasoning models (e.g. `o3`, `o4-mini`, `gpt-5.2`), `reasoningEffort` controls how much internal reasoning the model performs before responding. Lower values are faster and cheaper; higher values produce more thorough answers.
+For reasoning models (e.g. `gpt-6-astra`, `gpt-6-sol`, `gpt-6-luna`), `reasoningEffort` controls how much internal reasoning the model performs before responding. Lower values are faster and cheaper; higher values produce more thorough answers.
 
 ```ts
 import {
@@ -53,11 +53,11 @@ import {
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: openai('gpt-5.2'),
+  model: openai('gpt-6-astra'),
   prompt: 'Invent a new holiday and describe its traditions.',
   providerOptions: {
     openai: {
-      reasoningEffort: 'low', // 'none' | 'minimal' | 'low' | 'medium' | 'high' | 'xhigh'
+      reasoningEffort: 'low', // 'low' | 'medium' | 'high' | 'xhigh' | 'max'
     } satisfies OpenAILanguageModelResponsesOptions,
   },
 });
@@ -100,7 +100,7 @@ import {
 import { streamText } from 'ai';
 
 const result = streamText({
-  model: openai('gpt-5.2'),
+  model: openai('gpt-6-astra'),
   prompt: 'Tell me about the Mission burrito debate in San Francisco.',
   providerOptions: {
     openai: {
@@ -128,7 +128,7 @@ import {
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: openai('gpt-5.2'),
+  model: openai('gpt-6-astra'),
   prompt: 'Tell me about the Mission burrito debate in San Francisco.',
   providerOptions: {
     openai: {
@@ -157,7 +157,7 @@ import {
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: openai('gpt-5-mini'),
+  model: openai('gpt-6-luna'),
   prompt: 'Write a poem about a boy and his first pet dog.',
   providerOptions: {
     openai: {
@@ -215,7 +215,7 @@ import { anthropic, AnthropicLanguageModelOptions } from '@ai-sdk/anthropic';
 import { generateText } from 'ai';
 
 const { text, usage } = await generateText({
-  model: anthropic('claude-opus-4-20250514'),
+  model: anthropic('claude-opus-5-5'),
   prompt: 'How many people will live in the world in 2040?',
   providerOptions: {
     anthropic: {
@@ -240,7 +240,7 @@ import { anthropic, AnthropicLanguageModelOptions } from '@ai-sdk/anthropic';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: anthropic('claude-opus-4-6'),
+  model: anthropic('claude-opus-5-5'),
   prompt: 'Write a short poem about the sea.',
   providerOptions: {
     anthropic: {
@@ -264,7 +264,7 @@ import {
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: openai('gpt-5.2'),
+  model: openai('gpt-6-astra'),
   prompt: 'What are the implications of quantum computing for cryptography?',
   providerOptions: {
     openai: {
@@ -302,7 +302,7 @@ import type { OpenAILanguageModelResponsesOptions } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: 'openai/gpt-5.2', // AI Gateway model string
+  model: 'openai/gpt-6-astra', // AI Gateway model string
   prompt: 'What are the implications of quantum computing for cryptography?',
   providerOptions: {
     openai: {

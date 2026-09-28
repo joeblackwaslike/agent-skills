@@ -1,7 +1,7 @@
 ---
 source: "https://oraios.github.io/serena/_sources/02-usage/045_memories.md"
-fetched_at: "2026-06-16T12:24:33.275Z"
-sha256: "f8e7d66bdd1621d7d513f38d8085ae83e6405dac5125f5743998e5013678af0e"
+fetched_at: "2026-09-28T10:43:25.309Z"
+sha256: "68e0c07c015385c4563acf352fe0cdad31a409c5f1b7a0acd11ec4d90fabb6a6"
 ---
 
 # Memories & Onboarding
@@ -86,7 +86,9 @@ This convention has two practical consequences:
 
 - **Renames keep references intact.** When you rename or move a memory with the `rename_memory`
   tool, Serena rewrites every `` `mem:OLD_NAME` `` occurrence across all memories to point to
-  the new name. References that do not use the `mem:` prefix will not be updated automatically.
+  the new name, except in memories matched by `read_only_memory_patterns`, which the agent cannot
+  write; `serena memories check` reports such a reference as stale.
+  References that do not use the `mem:` prefix will not be updated automatically.
 - **Integrity checks** (see [below](memory-cli)) report any `` `mem:NAME` `` whose target does
   not resolve to an existing memory, and propose similarly-named candidates as likely intended
   targets.

@@ -9,19 +9,20 @@ prerequisites:
   - /docs/cli
 related:
   - /docs/flags/vercel-flags
+  - /docs/flags/vercel-flags/dashboard/entities
   - /docs/flags/vercel-flags/dashboard
   - /docs/flags/vercel-flags/dashboard/segments
   - /docs/cli/global-options
 summary: Learn how to manage feature flags for your Vercel project using the vercel flags CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/flags.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "5039b115376752c8d0c174279d00f37cc2bbc94dea0939a799362778914e71ed"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "ce2c1444b59b359c13fedb01a4523ae556f8cee81ab40eb59dffbe964120be97"
 ---
 
 # vercel flags
 
-The `vercel flags` command manages [Vercel Flags](/docs/flags/vercel-flags) for a project from the command line. Use `vercel flags` to create and update feature flags, view version history and evaluation metrics, manage rules and rollouts, or configure reusable segments and SDK keys.
+The `vercel flags` command manages [Vercel Flags](/docs/flags/vercel-flags) for a project from the command line. Use `vercel flags` to create and update feature flags, view version history and evaluation metrics, manage rules and rollouts, define entities and attribute labels, or configure reusable segments and SDK keys.
 
 
 <!-- docsgraph:related -->
@@ -36,9 +37,9 @@ The `vercel flags` command manages [Vercel Flags](/docs/flags/vercel-flags) for 
 - [Vercel Flags are now optimized for agents](https://vercel.com/changelog/vercel-flags-are-now-optimized-for-agents?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=related)
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=related)
 - [Rolling out a new feature](https://vercel.com/docs/flags/vercel-flags/cli/roll-out-feature?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=related) — Create a feature flag, wire it into your application with the Flags SDK, and start a staged rollout using the Vercel CLI
-- [vercel rolling-release](https://vercel.com/docs/cli/rolling-release?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=related) — Learn how to manage your project's rolling releases using the vercel rolling-release CLI command.
+- [vercel env](https://vercel.com/docs/cli/env?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=related) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
 - [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
-- [Running an A/B test](https://vercel.com/docs/flags/vercel-flags/cli/run-ab-test?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=related) — Set up an A/B test with a feature flag, track results through Web Analytics, and clean up afterward using the Vercel CLI
+- [vercel traces](https://vercel.com/docs/cli/traces?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=related) — Search spans, inspect request traces, capture session traces, or manage trace sampling rules for a project from the term
 - [vercel routes](https://vercel.com/docs/cli/routes?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=related) — Learn how to manage project-level routing rules using the vercel routes CLI command.
 
 Full cross-link map for this page: [/docs/cli/flags.graph.md](/docs/cli/flags.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=graph)
@@ -166,6 +167,20 @@ vercel flags segments ls
 
 *Using the \`vercel flags segments\` command to list reusable targeting segments.*
 
+```bash filename="terminal"
+vercel flags entities ls
+```
+
+*Using the \`vercel flags entities\` command to list the entities and attributes
+available for targeting.*
+
+```bash filename="terminal"
+vercel flags labels ls [entity.attribute]
+```
+
+*Using the \`vercel flags labels\` command to list value labels for an entity
+attribute.*
+
 ## Extended usage
 
 ### Adding flags
@@ -237,11 +252,11 @@ vercel flags versions welcome-message --environment production
 
 *Listing only versions that changed the production environment.*
 
-The command returns up to 20 versions per page by default. Use `--limit` to set a page size from 1 to 100. When another page is available, the CLI prints a next-page command with `--cursor`:
+The command returns up to 20 versions per page by default. Use `--limit` to set a page size from 1 to 100. When another page is available, the CLI prints a next-page command with `--next`:
 
 ```bash filename="terminal"
 vercel flags versions welcome-message --limit 10
-vercel flags versions welcome-message --limit 10 --cursor next_page_cursor
+vercel flags versions welcome-message --limit 10 --next next_page_cursor
 ```
 
 *Requesting up to 10 versions, then using the cursor from the previous response
@@ -553,7 +568,7 @@ vercel flags split ai-summary-model --environment production --by user.id \
 *Routing 5% of production summary requests to a candidate AI model using
 \`user.id\` for bucketing.*
 
-The `--by` option selects the entity attribute used for stable bucketing. Define the entity and attribute in the dashboard before running the command. For example, create a `User` entity with an `id` attribute, then pass `--by user.id`.
+The `--by` option selects the entity attribute used for stable bucketing. Define the entity and attribute with [`vercel flags entities`](#entities) or in the dashboard before running the command. For example, create a `user` entity with an `id` attribute, then pass `--by user.id`. You can't use a timestamp attribute for bucketing.
 
 Pass one `--weight` value for every variant. Weights are ratios that Vercel Flags normalizes into percentages, so `stable=1` and `candidate=1` produce the same allocation as `stable=50` and `candidate=50`. Use `0` for variants that should receive no traffic. At least one variant must have a weight greater than `0`.
 
@@ -634,7 +649,17 @@ vercel flags rules add my-feature --environment production \
 
 *Adding a rule that only matches when both conditions are true.*
 
-See [available rule operators](#available-rule-operators) for the complete operator list, including aliases and value formats.
+Timestamp attributes accept a date and time instead of a plain value:
+
+```bash filename="terminal"
+vercel flags rules add my-feature --environment production \
+  --condition user.signupAt:after:2026-04-16T09:00:00Z --variant on
+```
+
+*Adding a rule that matches users who signed up after April 16, 2026 at 09:00
+UTC.*
+
+See [available rule operators](#available-rule-operators) for the complete operator list, including aliases, timestamp operators, and value formats.
 
 Use the same outcome options as `vercel flags set`, `vercel flags split`, and `vercel flags rollout` when adding or updating a rule. For example, a matching rule can serve one variant, split traffic across variants, or run a progressive rollout:
 
@@ -685,12 +710,29 @@ Use these operators in `vercel flags rules` conditions and `vercel flags segment
 | `!contains` | Does not contain the value. | `does-not-contain`, `notcontains`, `not-contains`, `notContains` |
 | `ex` | Has any value. | `exists` |
 | `!ex` | Has no value. | `!exists`, `not-exists` |
-| `gt` | Is greater than the value. | `>` |
-| `gte` | Is greater than or equal to the value. | `>=` |
-| `lt` | Is less than the value. | `<` |
-| `lte` | Is less than or equal to the value. | `<=` |
+| `gt` | Is greater than the value. | `>`, `after` |
+| `gte` | Is greater than or equal to the value. | `>=`, `at-or-after` |
+| `lt` | Is less than the value. | `<`, `before` |
+| `lte` | Is less than or equal to the value. | `<=`, `at-or-before` |
 
 The list operators `oneOf`, `!oneOf`, `containsAllOf`, `containsAnyOf`, and `containsNoneOf` accept comma-separated values, such as `user.plan:oneOf:pro,enterprise`. The existence operators `ex` and `!ex` don't require a value, such as `user.email:ex`.
+
+#### Timestamp operators
+
+Attributes with the `timestamp` type accept only these four operators, the same four the dashboard offers. The CLI rejects every other operator on timestamp attributes, including `eq`, `ex`, `oneOf`, `contains`, and `startsWith`.
+
+| Operator | Meaning | Maps to |
+| - | - | - |
+| `after` | Is after the date and time (exclusive). | `gt` |
+| `at-or-after` | Is at or after the date and time (inclusive). | `gte` |
+| `before` | Is before the date and time (exclusive). | `lt` |
+| `at-or-before` | Is at or before the date and time (inclusive). | `lte` |
+
+The CLI also accepts `on-or-after` and `on-or-before` as legacy spellings of `at-or-after` and `at-or-before`.
+
+Pass the value as an ISO 8601 date and time, such as `2026-04-16T09:00:00Z`, or as epoch milliseconds, such as `1776330000000`. The date and time must include at least hours and minutes, so the CLI rejects date-only values such as `2026-04-16`. A date and time without a timezone uses the timezone of the machine that runs the command. The CLI rejects epoch values in seconds.
+
+Your application must pass timestamp values as epoch milliseconds in the evaluation context, for example `Date.now()`. See [entity attribute types](/docs/flags/vercel-flags/dashboard/entities#attribute-types).
 
 ### Enabling and disabling flags
 
@@ -818,6 +860,16 @@ vercel flags segments create paid-users --label "Paid users" \
 
 *Creating a segment with a list rule.*
 
+For timestamp attributes, use the [timestamp operators](#timestamp-operators) with an ISO 8601 date and time:
+
+```bash filename="terminal"
+vercel flags segments create early-adopters --label "Early adopters" \
+  --add rule:user.signupAt:before:2026-04-16T09:00:00Z
+```
+
+*Creating a segment for users who signed up before April 16, 2026 at 09:00
+UTC.*
+
 Use `--data` when you want to provide the full segment data JSON. The JSON object can include `rules`, `include`, and `exclude` fields:
 
 ```bash filename="terminal"
@@ -826,6 +878,115 @@ vercel flags segments create staff --label Staff \
 ```
 
 *Creating a segment from full JSON data.*
+
+### Entities
+
+The `vercel flags entities` subcommand manages the [entities](/docs/flags/vercel-flags/dashboard/entities) and attributes that rules, segments, splits, and rollouts can target. Define an entity and its attributes before you reference them in a condition or with `--by`.
+
+```bash filename="terminal"
+vercel flags entities ls
+```
+
+*Listing the kind, label, and attributes of every entity in the linked
+project.*
+
+Create an entity by passing its kind and one or more attributes as `KEY:TYPE`:
+
+```bash filename="terminal"
+vercel flags entities create user --label User \
+  --attribute id:string --attribute plan:string --attribute signupAt:timestamp
+```
+
+*Creating a \`user\` entity with string and timestamp attributes.*
+
+If you omit `--label`, the CLI derives a label from the kind, for example `User` for `user`. Entity kinds and attribute keys can contain up to 128 letters, numbers, dashes, and underscores. Labels can be up to 128 characters. A project can have up to 32 entities, and each entity can have up to 32 attributes.
+
+Attributes use these types:
+
+| Type | Description | Example values |
+| - | - | - |
+| `string` | Text values | `pro`, `user@example.com` |
+| `number` | Numeric values | `42`, `3.14` |
+| `boolean` | True or false | `true`, `false` |
+| `stringArray` | List of strings | `admin,editor` |
+| `timestamp` | Date and time as epoch milliseconds | `1776330000000` |
+
+Update an entity's label or attributes:
+
+```bash filename="terminal"
+vercel flags entities update user --label "End user" \
+  --add-attribute email:string --remove-attribute legacyId
+```
+
+*Renaming an entity, adding one attribute, and removing another.*
+
+```bash filename="terminal"
+vercel flags entities update user --set-attribute-type signupAt:timestamp
+```
+
+*Changing an attribute to the \`timestamp\` type.*
+
+Removing an attribute or changing its type fails while flags or segments still reference the attribute. Changing an attribute type also removes its existing value labels.
+
+Delete an entity with `rm`:
+
+```bash filename="terminal"
+vercel flags entities rm device --yes
+```
+
+*Deleting an entity without a confirmation prompt.*
+
+You can't delete an entity while flags or segments reference it. Remove every reference first, then run `vercel flags entities rm`.
+
+### Labels
+
+The `vercel flags labels` subcommand manages value [labels](/docs/flags/vercel-flags/dashboard/entities#how-to-add-labels) for `string` and `stringArray` attributes. Labels map raw values such as IDs to readable names in the dashboard and CLI output.
+
+```bash filename="terminal"
+vercel flags labels ls
+```
+
+*Listing the attributes that have labels and how many labels each one has.*
+
+```bash filename="terminal"
+vercel flags labels ls user.plan --limit 50
+```
+
+*Listing the labels for the \`user.plan\` attribute.*
+
+Set or remove one label at a time:
+
+```bash filename="terminal"
+vercel flags labels set user.plan pro "Pro Plan"
+```
+
+*Setting the label for the \`pro\` value of \`user.plan\`.*
+
+```bash filename="terminal"
+vercel flags labels rm user.plan pro
+```
+
+*Removing the label for the \`pro\` value of \`user.plan\`.*
+
+Use `apply` to change up to 100 labels in one command:
+
+```bash filename="terminal"
+vercel flags labels apply user.plan \
+  --set "pro=Pro Plan" --set "enterprise=Enterprise Plan" --remove legacy
+```
+
+*Setting two labels and removing one in a single update.*
+
+You can also pass label operations as a JSON array with `--data`. Each operation has an `operation` of `upsert` or `delete`, a `value`, and for `upsert` a `label`. `--data` can't be combined with `--set` or `--remove`.
+
+```bash filename="terminal"
+vercel flags labels apply user.plan \
+  --data '[{"operation":"upsert","value":"pro","label":"Pro Plan"},{"operation":"delete","value":"legacy"}]'
+```
+
+*Applying label operations from JSON.*
+
+Removing a label never changes targeting. Rules that reference the raw value keep working.
 
 ### SDK keys
 
@@ -975,7 +1136,7 @@ vercel flags evaluations new-checkout --since 7d --granularity 4h
 
 ### JSON
 
-The `--json` option prints machine-readable output for commands that support JSON output, including `vercel flags list`, `vercel flags versions`, `vercel flags versions diff`, `vercel flags evaluations`, `vercel flags rules ls`, `vercel flags segments ls`, `vercel flags segments inspect`, `vercel flags segments create`, `vercel flags segments update`, and `vercel flags sdk-keys ls`.
+The `--json` option prints machine-readable output for commands that support JSON output, including `vercel flags list`, `vercel flags versions`, `vercel flags versions diff`, `vercel flags evaluations`, `vercel flags rules ls`, `vercel flags segments ls`, `vercel flags segments inspect`, `vercel flags segments create`, `vercel flags segments update`, `vercel flags entities ls`, `vercel flags entities create`, `vercel flags entities update`, every `vercel flags labels` subcommand, and `vercel flags sdk-keys ls`.
 
 ```bash filename="terminal"
 vercel flags segments inspect beta-users --json
@@ -987,21 +1148,31 @@ vercel flags segments inspect beta-users --json
 
 `vercel flags versions` and `vercel flags versions list` return up to 20 versions per page by default. Use `--limit` to request a different page size. The value must be an integer from 1 through 100.
 
+`vercel flags labels ls` also returns up to 20 lists or labels per page. Use `--limit` to change the page size and [`--next`](#next) to continue from the previous page. For `vercel flags labels ls`, any positive integer is valid.
+
 ```bash filename="terminal"
 vercel flags versions welcome-message --limit 10
 ```
 
 *Using the \`vercel flags versions\` command with the \`--limit\` option.*
 
-### Cursor
+### Next
 
-The `--cursor` option gets the next page from a previous `vercel flags versions` or `vercel flags versions list` response. Human-readable output prints a next-page command when another page is available. JSON output returns the next cursor as `pagination.next`.
+The `--next` option gets the next page from a previous `vercel flags list`, `vercel flags versions`, or `vercel flags labels ls` response. Human-readable output prints a next-page command when another page is available. JSON output returns the next cursor as `pagination.next`.
 
 ```bash filename="terminal"
-vercel flags versions welcome-message --limit 10 --cursor next_page_cursor
+vercel flags versions welcome-message --limit 10 --next next_page_cursor
 ```
 
-*Using the \`vercel flags versions\` command with the \`--cursor\` option.*
+*Using the \`vercel flags versions\` command with the \`--next\` option.*
+
+```bash filename="terminal"
+vercel flags labels ls user.plan --limit 50 --next next_page_cursor
+```
+
+*Using the \`vercel flags labels ls\` command with the \`--next\` option.*
+
+`vercel flags versions` also accepts the deprecated `--cursor` option as an alias for `--next`.
 
 ### Revision
 
@@ -1050,7 +1221,7 @@ vercel flags segments create beta-users --label "Beta users" \
 
 ### Data
 
-The `--data` option provides full segment data JSON when using `vercel flags segments create`, or replaces segment data when using `vercel flags segments update`. The JSON object can include `rules`, `include`, and `exclude` fields.
+The `--data` option provides full segment data JSON when using `vercel flags segments create`, or replaces segment data when using `vercel flags segments update`. The JSON object can include `rules`, `include`, and `exclude` fields. When using `vercel flags labels apply`, `--data` provides a JSON array of label operations instead.
 
 ```bash filename="terminal"
 vercel flags segments update staff \
@@ -1073,6 +1244,42 @@ vercel flags segments update beta-users --add include:user.id=user_789 \
 *Using \`--add\` and \`--remove\` to update exact segment values.*
 
 For rules, use `rule:ENTITY.ATTRIBUTE:OPERATOR:VALUE`. See [available rule operators](#available-rule-operators) for `OPERATOR` values. To remove a rule by ID, use `--remove rule:RULE_ID`.
+
+When using `vercel flags labels apply`, `--remove` takes a raw attribute value and removes its label.
+
+### Attribute
+
+The `--attribute` option, shorthand `-a`, adds an attribute as `KEY:TYPE` when using `vercel flags entities create`. Repeat the option to add multiple attributes. See [entities](#entities) for the list of types.
+
+```bash filename="terminal"
+vercel flags entities create team --attribute id:string --attribute features:stringArray
+```
+
+*Using the \`vercel flags entities create\` command with repeated \`--attribute\`
+options.*
+
+### Add attribute, remove attribute, and set attribute type
+
+The `--add-attribute`, `--remove-attribute`, and `--set-attribute-type` options change an entity when using `vercel flags entities update`. `--add-attribute` and `--set-attribute-type` take `KEY:TYPE`. `--remove-attribute` takes only the key. Each option is repeatable.
+
+```bash filename="terminal"
+vercel flags entities update user --add-attribute email:string \
+  --set-attribute-type signupAt:timestamp --remove-attribute legacyId
+```
+
+*Adding, retyping, and removing attributes in one update.*
+
+`--remove-attribute` and `--set-attribute-type` fail while flags or segments still reference the attribute. Changing a type also removes the attribute's value labels.
+
+### Set
+
+The `--set` option creates or replaces a value label as `VALUE=LABEL` when using `vercel flags labels apply`. Repeat the option to set multiple labels.
+
+```bash filename="terminal"
+vercel flags labels apply user.plan --set "pro=Pro Plan" --set "enterprise=Enterprise Plan"
+```
+
+*Using the \`vercel flags labels apply\` command with repeated \`--set\` options.*
 
 ### Condition
 
@@ -1162,7 +1369,7 @@ vercel flags update welcome-message --variant control --value welcome-back
 
 ### Label
 
-The `--label` option, shorthand `-l`, sets a variant label when using `vercel flags update`, a segment label when using `vercel flags segments create` or `vercel flags segments update`, or an SDK key label when using `vercel flags sdk-keys add`.
+The `--label` option, shorthand `-l`, sets a variant label when using `vercel flags update`, a segment label when using `vercel flags segments create` or `vercel flags segments update`, an entity label when using `vercel flags entities create` or `vercel flags entities update`, or an SDK key label when using `vercel flags sdk-keys add`.
 
 ```bash filename="terminal"
 vercel flags update welcome-message --variant control --label "Welcome back"
@@ -1227,7 +1434,7 @@ vercel flags sdk-keys add --type server --environment production
 
 ### Yes
 
-The `--yes` option, shorthand `-y`, skips the confirmation prompt when archiving, unarchiving, or deleting a flag, deleting a segment, or deleting an SDK key.
+The `--yes` option, shorthand `-y`, skips the confirmation prompt when archiving, unarchiving, or deleting a flag, deleting a segment, deleting an entity, or deleting an SDK key.
 
 ```bash filename="terminal"
 vercel flags archive my-feature --yes

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/openai-compatible-providers/custom-providers.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "b11c0da848d061f1985efc19bc41fe60dffcd9d4dab53033eefe0e58141fb0c1"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "cf228fd176e484fcca49f0683015dbab918ba3cbed288b1ae19a2232974fcf0f"
 ---
 
 # Writing a Custom Provider
@@ -274,6 +274,7 @@ You can see the latest available exports in the AI SDK [GitHub repository](https
 - [LM Studio](/providers/openai-compatible-providers/lmstudio)
 - [NVIDIA NIM](/providers/openai-compatible-providers/nim)
 - [ModelRush](/providers/openai-compatible-providers/modelrush)
+- [Cheaper Inference](/providers/openai-compatible-providers/cheaper-inference)
 - [Clarifai](/providers/openai-compatible-providers/clarifai)
 - [Heroku](/providers/openai-compatible-providers/heroku)
 - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)

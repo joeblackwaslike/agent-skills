@@ -16,8 +16,8 @@ related:
 summary: ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automatic Custom Domain updates.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git/vercel-for-gitlab.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "5dd0e90efd17d2ad42f8b813787dda547a73c7046bd621cb003715c57ed42041"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "c060edc001c3659223167e107569e48c45d0dd14613be46f0ba08cc816c822e4"
 ---
 
 # Deploying GitLab Projects with Vercel
@@ -35,10 +35,11 @@ Vercel for GitLab automatically deploys your GitLab projects with [Vercel](/), p
 - [July 2020](https://vercel.com/blog/changelog-july-2020?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-gitlab&source_site=vercel-docs&relationship=related)
 - [September 2020](https://vercel.com/blog/changelog-september-2020?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-gitlab&source_site=vercel-docs&relationship=related)
 - [How can I use Bitbucket Pipelines with Vercel?](https://vercel.com/kb/guide/how-can-i-use-bitbucket-pipelines-with-vercel?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-gitlab&source_site=vercel-docs&relationship=related) — Learn how to use Bitbucket Pipelines to deploy to Vercel including support for Bitbucket Data Center.
-- [Deploying GitHub Projects with Vercel](https://vercel.com/docs/git/vercel-for-github?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-gitlab&source_site=vercel-docs&relationship=related) — Vercel for GitHub automatically deploys your GitHub projects with Vercel, providing Preview Deployment URLs, and automat
+- [June 2020](https://vercel.com/blog/changelog-june-2020?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-gitlab&source_site=vercel-docs&relationship=related)
 - [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-gitlab&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-gitlab&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 - [Git settings](https://vercel.com/docs/project-configuration/git-settings?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-gitlab&source_site=vercel-docs&relationship=related) — Use the project settings to manage the Git connection, enable Git LFS, and create deploy hooks.
+- [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-gitlab&source_site=vercel-docs&relationship=related) — Learn how to configure Git for your project through vercel.json or vercel.ts.
 
 Full cross-link map for this page: [/docs/git/vercel-for-gitlab.graph.md](/docs/git/vercel-for-gitlab.graph.md?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-gitlab&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

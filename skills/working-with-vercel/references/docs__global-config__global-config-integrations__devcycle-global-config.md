@@ -17,8 +17,8 @@ related:
 summary: "Learn how to use Global Config with Vercel's DevCycle integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-integrations/devcycle-global-config.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "f61d44cf801a3fea58ad32872e4d893441b15a86ea4721a3669f299b96b0f6d5"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "9fc9b7ded01b2927c1c2739f378520b1fc57f03ad27bc28cfe0cb07ca97bdc3a"
 ---
 
 # Using Global Config with DevCycle
@@ -31,7 +31,7 @@ This guide will help you get started with using Vercel's DevCycle integration wi
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Global Config](https://flags-sdk.dev/docs/providers/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fdevcycle-global-config&source_site=vercel-docs&relationship=related)
+- [Introducing Edge Config: Globally distributed, instant configuration](https://vercel.com/blog/edge-config-public-beta?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fdevcycle-global-config&source_site=vercel-docs&relationship=related)
 - [Using Global Config with LaunchDarkly](https://vercel.com/docs/global-config/global-config-integrations/launchdarkly-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fdevcycle-global-config&source_site=vercel-docs&relationship=related) — Learn how to use Global Config with Vercel's LaunchDarkly integration.
 - [Using Global Config with Statsig](https://vercel.com/docs/global-config/global-config-integrations/statsig-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fdevcycle-global-config&source_site=vercel-docs&relationship=related) — Learn how to use Global Config with Vercel's Statsig integration.
 - [Using Global Config](https://vercel.com/docs/global-config/using-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fdevcycle-global-config&source_site=vercel-docs&relationship=related) — Learn how to use Global Configs in your projects.

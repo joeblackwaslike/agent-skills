@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides/natural-language-postgres.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "e1e856221d74ef439d08e20468d9a0040803299a66a4e5bd6a2514f2c376b0df"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "ae1f7eb12f138d2988234dc55617d841b33d1b0b5bf971fcda79bd83162caf73"
 ---
 
 # Natural Language Postgres Guide
@@ -173,7 +173,7 @@ As a reminder, this application will have three main features:
 2. Create a chart from the query results
 3. Explain SQL queries in plain English
 
-For each of these features, you'll use the AI SDK via [ Server Actions ](https://react.dev/reference/rsc/server-actions) to interact with OpenAI's GPT-4o and GPT-4o-mini models. Server Actions are a powerful React Server Component feature that allows you to call server-side functions directly from your frontend code.
+For each of these features, you'll use the AI SDK via [ Server Actions ](https://react.dev/reference/rsc/server-actions) to interact with OpenAI's GPT-6 Astra and GPT-6 Luna models. Server Actions are a powerful React Server Component feature that allows you to call server-side functions directly from your frontend code.
 
 Let's start with generating a SQL query from natural language.
 
@@ -272,7 +272,7 @@ export const generateQuery = async (input: string) => {
   'use server';
   try {
     const result = await generateText({
-      model: 'openai/gpt-4o',
+      model: 'openai/gpt-6-astra',
       instructions: `You are a SQL (postgres) ...`, // SYSTEM PROMPT AS ABOVE - OMITTED FOR BREVITY
       prompt: `Generate the query necessary to retrieve the data the user wants: ${input}`,
       output: Output.object({
@@ -389,7 +389,7 @@ export const explainQuery = async (input: string, sqlQuery: string) => {
   'use server';
   try {
     const result = await generateText({
-      model: 'openai/gpt-4o',
+      model: 'openai/gpt-6-astra',
       instructions: `You are a SQL (postgres) expert. ...`, // SYSTEM PROMPT AS ABOVE - OMITTED FOR BREVITY
       prompt: `Explain the SQL query you generated to retrieve the data the user wanted. Assume the user is not an expert in SQL. Break down the query into steps. Be concise.
 
@@ -436,7 +436,7 @@ export const explainQuery = async (input: string, sqlQuery: string) => {
   'use server';
   try {
     const result = await generateText({
-      model: 'openai/gpt-4o',
+      model: 'openai/gpt-6-astra',
       instructions: `You are a SQL (postgres) expert. ...`, // SYSTEM PROMPT AS ABOVE - OMITTED FOR BREVITY
       prompt: `Explain the SQL query you generated to retrieve the data the user wanted. Assume the user is not an expert in SQL. Break down the query into steps. Be concise.
 
@@ -589,7 +589,7 @@ export const generateChartConfig = async (
 
   try {
     const { output: config } = await generateText({
-      model: 'openai/gpt-4o',
+      model: 'openai/gpt-6-astra',
       instructions: 'You are a data visualization expert.',
       prompt: `Given the following data from a SQL query result, generate the chart config that best visualises the data and answers the users query.
       For multiple groups use multi-lines.

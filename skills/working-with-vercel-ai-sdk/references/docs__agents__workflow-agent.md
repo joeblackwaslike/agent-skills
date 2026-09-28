@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/agents/workflow-agent.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "425da382e0b650b262d222345d025c9628802416240ecea25b289034b49ec9f1"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "161a54b3b66824f1ef1378bbe5cd1f645c0e30cb6213dde85cc9e3252cd2ffe2"
 ---
 
 # WorkflowAgent
@@ -52,7 +52,7 @@ import { tool } from 'ai';
 import { z } from 'zod';
 
 const agent = new WorkflowAgent({
-  model: 'anthropic/claude-sonnet-4-6',
+  model: 'anthropic/claude-sonnet-5',
   instructions: 'You are a helpful assistant.',
   tools: {
     weather: tool({
@@ -75,11 +75,11 @@ The `model` parameter accepts two forms:
 
 ```ts
 // String — AI Gateway model ID
-new WorkflowAgent({ model: 'anthropic/claude-sonnet-4-6' });
+new WorkflowAgent({ model: 'anthropic/claude-sonnet-5' });
 
 // Provider instance
 import { openai } from '@ai-sdk/openai';
-new WorkflowAgent({ model: openai('gpt-4o') });
+new WorkflowAgent({ model: openai('gpt-6-astra') });
 ```
 
 ## Using the Agent in a Workflow
@@ -104,7 +104,7 @@ export async function chat(messages: UIMessage[]) {
   const modelMessages = await convertToModelMessages(messages);
 
   const agent = new WorkflowAgent({
-    model: 'anthropic/claude-sonnet-4-6',
+    model: 'anthropic/claude-sonnet-5',
     instructions: 'You are a flight booking assistant.',
     tools: {
       searchFlights: tool({
@@ -329,7 +329,7 @@ the writable stream. The workflow suspends until the user approves or denies:
 
 ```ts
 const agent = new WorkflowAgent({
-  model: 'anthropic/claude-sonnet-4-6',
+  model: 'anthropic/claude-sonnet-5',
   tools: {
     bookFlight: tool({
       description: 'Book a flight',
@@ -363,7 +363,7 @@ workflow. For tools that perform sensitive operations, configure
 
 ```ts highlight="4"
 const agent = new WorkflowAgent({
-  model: 'anthropic/claude-sonnet-4-6',
+  model: 'anthropic/claude-sonnet-5',
   experimental_toolApprovalSecret: {
     environmentVariable: 'TOOL_APPROVAL_SECRET',
   },
@@ -527,7 +527,7 @@ current step:
 
 ```ts
 const agent = new WorkflowAgent({
-  model: 'anthropic/claude-sonnet-4-6',
+  model: 'anthropic/claude-sonnet-5',
   tools: {
     shell: tool({
       description: 'Run a shell command in the sandbox.',
@@ -562,7 +562,7 @@ Called once before the agent loop starts. Use it to transform model, instruction
 
 ```ts
 const agent = new WorkflowAgent({
-  model: 'anthropic/claude-sonnet-4-6',
+  model: 'anthropic/claude-sonnet-5',
   prepareCall: async ({ model, tools, messages }) => {
     return {
       instructions: `Current time: ${new Date().toISOString()}`,
@@ -598,7 +598,7 @@ Agents provide lifecycle callbacks for logging, observability, and custom teleme
 
 ```ts
 const agent = new WorkflowAgent({
-  model: 'anthropic/claude-sonnet-4-6',
+  model: 'anthropic/claude-sonnet-5',
 
   onStart({ messages }) {
     console.log(`Agent started with ${messages.length} messages`);
@@ -683,7 +683,7 @@ export type MyAgentUIMessage = InferWorkflowAgentUIMessage<typeof myAgent>;
 
 - const agent = new DurableAgent({
 + const agent = new WorkflowAgent({
-    model: 'anthropic/claude-sonnet-4-6',
+    model: 'anthropic/claude-sonnet-5',
     instructions: 'You are a helpful assistant.',
     tools: { /* ... */ },
   });
@@ -796,7 +796,7 @@ For persistence, store `UIMessage[]` as your source of truth and call [`convertT
 
 ```diff
   const agent = new WorkflowAgent({
-    model: 'anthropic/claude-sonnet-4-6',
+    model: 'anthropic/claude-sonnet-5',
     tools: { weather: weatherTool },
 -   experimental_context: { tenantId: 'tenant_123', apiKey: 'sk-...' },
 +   runtimeContext: { tenantId: 'tenant_123' },

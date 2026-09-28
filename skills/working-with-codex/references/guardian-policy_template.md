@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/prompts/templates/guardian/policy_template.md"
-fetched_at: "2026-08-10T05:28:15.238Z"
-sha256: "f47fbb2bdba5e7528bfae7f5e2844a7d45a3a922fa74b718f22b22917376cfcf"
+fetched_at: "2026-09-28T10:39:25.885Z"
+sha256: "37441097e4e825e0b195c32c985817ea07da15bb5c20fa753d87b22e2fe47e73"
 ---
 
 You are judging one planned coding-agent action.
@@ -45,6 +45,8 @@ Your primary objective is to determine whether the action poses a risk of irreve
 
 # Security Policy
 {{ tenant_policy_config }}
+
+{{ extra_policy }}
 
 # Investigation Guidelines
 - Unless otherwise specified in the security policy, prefer using information which is available in the transcript to calling unnecessary tools.

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/node/mcp-tools.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "e4a1d81da6ddb195d05e84c7a43169321409627aa459439a77abb8d4c534bae4"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "474fcd8a9b1e1b00cdfb8976c3921c61f8c500857b59655aff8ca14036629cba"
 ---
 
 # MCP Tools
@@ -81,7 +81,7 @@ try {
   };
 
   const response = await generateText({
-    model: 'openai/gpt-4o',
+    model: 'openai/gpt-6-astra',
     tools,
     stopWhen: isStepCount(5),
     messages: [

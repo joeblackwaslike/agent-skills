@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides/llama-3_1.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "b1c2f6a5f819efd8e4297e9dbd1f47474b1e0e28b8d683557f7ff44de93b8767"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "cf0ffbd533e860bca77e24d79c5a9ca4fcc5d94eefc8c4897f548ce91128c7e7"
 ---
 
 # Get started with Llama 3.1
@@ -358,7 +358,7 @@ import { generateText } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
 const { text } = await generateText({
-  model: openai('gpt-4.1'),
+  model: openai('gpt-6-astra'),
   prompt: 'What is love?',
 });
 ```
@@ -378,9 +378,9 @@ const { text } = await generateText({
 Thanks to the unified API, the core structure of the code remains the same. The main differences are:
 
 1. Creating a DeepInfra client
-2. Changing the model name from `openai("gpt-4.1")` to `deepinfra("meta-llama/Meta-Llama-3.1-70B-Instruct")`.
+2. Changing the model name from `openai("gpt-6-astra")` to `deepinfra("meta-llama/Meta-Llama-3.1-70B-Instruct")`.
 
-With just these few changes, you've migrated from using OpenAI's GPT-4-Turbo to Meta's Llama 3.1 hosted on DeepInfra. The `generateText` function and its usage remain identical, showcasing the power of the AI SDK's unified API.
+With just these few changes, you've migrated from using OpenAI's GPT-6 Astra to Meta's Llama 3.1 hosted on DeepInfra. The `generateText` function and its usage remain identical, showcasing the power of the AI SDK's unified API.
 
 This feature allows you to easily experiment with different models, compare their performance, and choose the best one for your specific use case without having to rewrite large portions of your codebase.
 

@@ -16,8 +16,8 @@ related:
 summary: Learn about the different roles available for team members on a Vercel account.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac/access-roles.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "6d5daa05883a8a2cedeb13bf8281deaa0a427ed6c6e7a316ededa5c16ddf7dc0"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "4611ba90eda985cc1efc85a4889d7ad45a1ed45c51b3ef4e689a4d85865aefc6"
 ---
 
 # Access Roles
@@ -31,7 +31,7 @@ Vercel distinguishes between different roles to help manage team members' access
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Account](https://v0.app/docs/account?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=related) — Manage your account and billing information.
-- [Design Systems 2.0](https://v0.app/docs/design-systems-2?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=related) — Teach v0 to build with your team's components, tokens, and design system conventions.
+- [Enterprise](https://v0.app/docs/enterprise?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=related) — Learn how to manage v0 seats, access, and more in your Vercel Enterprise account.
 - [GitHub](https://v0.app/docs/github?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=related) — Connect GitHub repositories to v0 and ship changes through branches, previews, pull requests, and CI.
 - [Private Dependencies](https://v0.app/docs/private-dependencies?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=related) — Install private npm packages in v0 by configuring NPM_TOKEN or NPM_RC as environment variables.
 - [Teams](https://v0.app/docs/teams?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=related) — Collaborate with your team on projects with shared resources.

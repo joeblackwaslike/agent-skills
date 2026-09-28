@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/xai.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "f41004e2d20fb67d89242b8c83b6826bda1f4538a203f86ee8f76583beffdf45"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "9f95e893629d3f65c48d36ce4377ae170a4d73f3ded1e05aeb418cd53de00346"
 ---
 
 # xAI Grok Provider
@@ -60,10 +60,10 @@ You can use the following optional settings to customize the xAI provider instan
 ## Language Models
 
 You can create [xAI models](https://console.x.ai) using a provider instance. The
-first argument is the model id, e.g. `grok-4.6`.
+first argument is the model id, e.g. `grok-4.7`.
 
 ```ts
-const model = xai('grok-4.6');
+const model = xai('grok-4.7');
 ```
 
 ### Example
@@ -75,7 +75,7 @@ import { xai } from '@ai-sdk/xai';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: xai('grok-4.6'),
+  model: xai('grok-4.7'),
   prompt: 'Write a vegetarian lasagna recipe for 4 people.',
 });
 ```
@@ -141,7 +141,7 @@ import { xai } from '@ai-sdk/xai';
 import { generateText } from 'ai';
 
 const { providerMetadata } = await generateText({
-  model: xai('grok-4.6'),
+  model: xai('grok-4.7'),
   prompt: 'Explain quantum entanglement.',
   providerOptions: {
     xai: { serviceTier: 'priority' },
@@ -190,7 +190,7 @@ calling pattern.
 The xAI Responses API is the default when using `xai(modelId)` (since AI SDK 7). You can also use `xai.responses(modelId)` explicitly. This enables the model to autonomously orchestrate tool calls and research on xAI's servers.
 
 ```ts
-const model = xai.responses('grok-4.6');
+const model = xai.responses('grok-4.7');
 ```
 
 The Responses API provides server-side tools that the model can autonomously execute during its reasoning process:
@@ -212,7 +212,7 @@ import { xai } from '@ai-sdk/xai';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: xai.responses('grok-4.6'),
+  model: xai.responses('grok-4.7'),
   messages: [
     {
       role: 'user',
@@ -237,7 +237,7 @@ import { xai } from '@ai-sdk/xai';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: xai('grok-4.6'),
+  model: xai('grok-4.7'),
   messages: [
     {
       role: 'user',
@@ -274,7 +274,7 @@ import { xai } from '@ai-sdk/xai';
 import { generateText } from 'ai';
 
 const { text, sources } = await generateText({
-  model: xai.responses('grok-4.6'),
+  model: xai.responses('grok-4.7'),
   prompt: 'What are the latest developments in AI?',
   tools: {
     web_search: xai.tools.webSearch({
@@ -312,7 +312,7 @@ The X search tool enables searching X (Twitter) for posts, with filtering by han
 
 ```ts
 const { text, sources } = await generateText({
-  model: xai.responses('grok-4.6'),
+  model: xai.responses('grok-4.7'),
   prompt: 'What are people saying about AI on X this week?',
   tools: {
     x_search: xai.tools.xSearch({
@@ -358,7 +358,7 @@ The code execution tool enables the model to write and execute Python code for c
 
 ```ts
 const { text } = await generateText({
-  model: xai.responses('grok-4.6'),
+  model: xai.responses('grok-4.7'),
   prompt:
     'Calculate the compound interest for $10,000 at 5% annually for 10 years',
   tools: {
@@ -373,7 +373,7 @@ The view image tool enables the model to view and analyze images:
 
 ```ts
 const { text } = await generateText({
-  model: xai.responses('grok-4.6'),
+  model: xai.responses('grok-4.7'),
   prompt: 'Describe what you see in the image',
   tools: {
     view_image: xai.tools.viewImage(),
@@ -387,7 +387,7 @@ The view X video tool enables the model to view and analyze videos from X (Twitt
 
 ```ts
 const { text } = await generateText({
-  model: xai.responses('grok-4.6'),
+  model: xai.responses('grok-4.7'),
   prompt: 'Summarize the content of this X video',
   tools: {
     view_x_video: xai.tools.viewXVideo(),
@@ -404,7 +404,7 @@ import { xai } from '@ai-sdk/xai';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: xai.responses('grok-4.6'),
+  model: xai.responses('grok-4.7'),
   prompt:
     'Generate an image of a corgi surfing a big wave, in the style of a Japanese woodblock print',
   tools: {
@@ -442,7 +442,7 @@ The MCP server tool enables the model to connect to remote [Model Context Protoc
 
 ```ts
 const { text } = await generateText({
-  model: xai.responses('grok-4.6'),
+  model: xai.responses('grok-4.7'),
   prompt: 'Use the weather tool to check conditions in San Francisco',
   tools: {
     weather_server: xai.tools.mcpServer({
@@ -490,7 +490,7 @@ import { xai, type XaiLanguageModelResponsesOptions } from '@ai-sdk/xai';
 import { streamText } from 'ai';
 
 const result = streamText({
-  model: xai.responses('grok-4.6'),
+  model: xai.responses('grok-4.7'),
   prompt: 'What documents do you have access to?',
   tools: {
     file_search: xai.tools.fileSearch({
@@ -537,7 +537,7 @@ import { xai } from '@ai-sdk/xai';
 import { streamText } from 'ai';
 
 const { stream } = streamText({
-  model: xai.responses('grok-4.6'),
+  model: xai.responses('grok-4.7'),
   prompt: 'Research AI safety developments and calculate risk metrics',
   tools: {
     web_search: xai.tools.webSearch(),
@@ -571,7 +571,7 @@ import { xai, type XaiLanguageModelResponsesOptions } from '@ai-sdk/xai';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: xai.responses('grok-4.6'),
+  model: xai.responses('grok-4.7'),
   providerOptions: {
     xai: {
       reasoningEffort: 'high',
@@ -589,15 +589,39 @@ The following provider options are available:
 
 - **logprobs** _boolean_
 
-  Return log probabilities for output tokens.
+  Return log probabilities for output tokens. This is silently ignored by `grok-4.20` and newer models.
 
 - **topLogprobs** _number_
 
-  Number of most likely tokens to return per token position (0-8). When set, `logprobs` is automatically enabled.
+  Number of most likely tokens to return per token position (0-8). When set, `logprobs` is automatically enabled. This is silently ignored by `grok-4.20` and newer models.
 
-- **include** _Array&lt;'file_search_call.results'&gt;_
+- **minP** _number_
 
-  Specify additional output data to include in the model response. Use `['file_search_call.results']` to include file search results with scores and content.
+  Set the min-p sampling threshold between 0 and 1. Tokens whose probability is below `minP` times the most likely token's probability are excluded. Unlike the standard AI SDK `topK` option, `minP` is xAI-specific and must be set in `providerOptions.xai`.
+
+- **maxTurns** _number_
+
+  Set the maximum number of assistant/server-side tool turns xAI may perform within one API request. This limits xAI's internal loop for provider-executed tools such as web search; it is separate from AI SDK's `stopWhen`, which limits the outer loop of AI SDK steps and API requests.
+
+- **parallelToolCalls** _boolean_
+
+  Allow the model to call tools in parallel. Defaults to `true`.
+
+- **promptCacheKey** _string_
+
+  Route requests with shared prompt prefixes to improve cache reuse.
+
+- **safetyIdentifier** _string_
+
+  Provide a stable, preferably hashed end-user identifier for safety monitoring.
+
+- **user** _string_
+
+  Provide an end-user identifier for abuse monitoring.
+
+- **include** _Array&lt;'file_search_call.results' | 'web_search_call.action.sources' | 'code_interpreter_call.outputs' | 'reasoning.encrypted_content' | 'no_inline_citations'&gt;_
+
+  Include file-search results, web-search sources, code-interpreter outputs, or encrypted reasoning content, or disable inline citations.
 
 - **store** _boolean_
 
@@ -1063,7 +1087,7 @@ import { xai, type XaiVideoModelOptions } from '@ai-sdk/xai';
 import { experimental_generateVideo as generateVideo } from 'ai';
 
 const { video } = await generateVideo({
-  model: xai.video('grok-imagine-video'),
+  model: xai.video('grok-imagine-video-1.5'),
   prompt: 'A chicken flying into the sunset in the style of 90s anime.',
   aspectRatio: '16:9',
   duration: 5,
@@ -1085,7 +1109,7 @@ import { xai, type XaiVideoModelOptions } from '@ai-sdk/xai';
 import { experimental_generateVideo as generateVideo } from 'ai';
 
 const { video } = await generateVideo({
-  model: xai.video('grok-imagine-video'),
+  model: xai.video('grok-imagine-video-1.5'),
   prompt: {
     image: 'https://example.com/start-frame.png',
     text: 'The cat slowly turns its head and blinks',
@@ -1107,7 +1131,7 @@ import { experimental_generateVideo as generateVideo } from 'ai';
 import fs from 'node:fs';
 
 const { video } = await generateVideo({
-  model: xai.video('grok-imagine-video'),
+  model: xai.video('grok-imagine-video-1.5'),
   prompt: 'The cat slowly turns its head and blinks',
   frameImages: [
     {
@@ -1125,9 +1149,9 @@ const { video } = await generateVideo({
 ```
 
 <Note>
-  xAI does not support first-last-frame interpolation. A `last_frame` entry in
-  `frameImages` is ignored with a warning — use the `extend-video` mode to
-  continue from a video's last frame instead.
+  `grok-imagine-video-1.5` supports first-last-frame interpolation. Earlier
+  models ignore a `last_frame` entry with a warning. Use `extend-video` when you
+  want to continue an existing video rather than pin its final frame.
 </Note>
 
 ### Video Editing
@@ -1139,7 +1163,7 @@ import { xai, type XaiVideoModelOptions } from '@ai-sdk/xai';
 import { experimental_generateVideo as generateVideo } from 'ai';
 
 const { video } = await generateVideo({
-  model: xai.video('grok-imagine-video'),
+  model: xai.video('grok-imagine-video-1.5'),
   prompt: 'Give the person sunglasses and a hat',
   providerOptions: {
     xai: {
@@ -1177,7 +1201,7 @@ const providerOptions = {
 
 // Step 1: Apply an initial edit
 const step1 = await generateVideo({
-  model: xai.video('grok-imagine-video'),
+  model: xai.video('grok-imagine-video-1.5'),
   prompt: 'Add a party hat to the person',
   providerOptions,
 });
@@ -1188,7 +1212,7 @@ const step1VideoUrl = step1.providerMetadata?.xai?.videoUrl as string;
 // Step 2: Apply two more edits concurrently, building on step 1
 const [withSunglasses, withScarf] = await Promise.all([
   generateVideo({
-    model: xai.video('grok-imagine-video'),
+    model: xai.video('grok-imagine-video-1.5'),
     prompt: 'Add sunglasses',
     providerOptions: {
       xai: {
@@ -1199,7 +1223,7 @@ const [withSunglasses, withScarf] = await Promise.all([
     },
   }),
   generateVideo({
-    model: xai.video('grok-imagine-video'),
+    model: xai.video('grok-imagine-video-1.5'),
     prompt: 'Add a scarf',
     providerOptions: {
       xai: {
@@ -1222,7 +1246,7 @@ import { experimental_generateVideo as generateVideo } from 'ai';
 
 // Step 1: Generate a source video
 const source = await generateVideo({
-  model: xai.video('grok-imagine-video'),
+  model: xai.video('grok-imagine-video-1.5'),
   prompt: 'A cat sitting on a sunlit windowsill, tail gently swishing.',
   duration: 5,
   aspectRatio: '16:9',
@@ -1237,7 +1261,7 @@ const sourceUrl = source.providerMetadata?.xai?.videoUrl as string;
 
 // Step 2: Extend the video with a new scene
 const extended = await generateVideo({
-  model: xai.video('grok-imagine-video'),
+  model: xai.video('grok-imagine-video-1.5'),
   prompt: 'The cat turns its head, notices a butterfly, and leaps off.',
   duration: 6,
   providerOptions: {
@@ -1265,7 +1289,7 @@ import { xai, type XaiVideoModelOptions } from '@ai-sdk/xai';
 import { experimental_generateVideo as generateVideo } from 'ai';
 
 const { video } = await generateVideo({
-  model: xai.video('grok-imagine-video'),
+  model: xai.video('grok-imagine-video-1.5'),
   prompt:
     'The comic cat from <IMAGE_1> and the comic dog from <IMAGE_2> ' +
     'are having a playful chase through a sunlit park. ' +
@@ -1295,7 +1319,7 @@ import { experimental_generateVideo as generateVideo } from 'ai';
 import fs from 'node:fs';
 
 const { video } = await generateVideo({
-  model: xai.video('grok-imagine-video'),
+  model: xai.video('grok-imagine-video-1.5'),
   prompt:
     'The comic cat and the comic dog are having a playful chase ' +
     'through a sunlit park. Cinematic slow-motion, warm afternoon light.',
@@ -1313,17 +1337,17 @@ const { video } = await generateVideo({
 });
 ```
 
-`inputReferences` accepts image references only. A reference with a non-image
-media type (for example a video or audio clip) is ignored with a warning, and a
-reference with no media type is treated as an image. If no image reference
-remains, reference-to-video is not selected and no reference images are sent.
+`inputReferences` accepts image and audio references. Audio references must
+declare an audio media type and can be supplied alone or together with images;
+they are sent through `reference_audios`. A reference with no media type is
+treated as an image. Video references are ignored with a warning.
 
 #### Reference Audio
 
-Reference-to-video can also give the subject a voice. `referenceVoiceIds` takes
-up to 3 xAI **preset** voice ids — you cannot upload your own audio clips.
-Reference the voices from the prompt with `<AUDIO_0>`, `<AUDIO_1>`, and
-`<AUDIO_2>`, in the order the voices are passed.
+Reference-to-video can also give the subject a voice. Use `inputReferences` for
+caller-supplied audio clips, or `referenceVoiceIds` for up to 3 xAI preset voice
+ids. Reference them from the prompt with `<AUDIO_0>`, `<AUDIO_1>`, and
+`<AUDIO_2>`, in the order they are passed.
 
 ```ts
 import { xai, type XaiVideoModelOptions } from '@ai-sdk/xai';
@@ -1358,19 +1382,18 @@ available voices. `referenceVoiceIds` is ignored with a warning when the
 resolved operation is not reference-to-video.
 
 <Note>
-  xAI documents reference audio as available in the United States only, for
-  trusted partners. Requests from accounts without access are rejected by the
-  xAI API.
+  Preset voices are generally available. Caller-supplied voice clips are
+  available to trusted partners on request. xAI accepts at most three audio
+  references per request.
 </Note>
 
 <Note>
   Reference-to-video supports `duration`, `aspectRatio`, and `resolution`. Use
-  `mode` to select the operation — each mode is mutually exclusive. When both
-  are provided, `frameImages` takes precedence over `inputReferences`, and
+  `mode` to select the operation — each mode is mutually exclusive.
   `inputReferences` takes precedence over the legacy `referenceImageUrls`
-  provider option. Reference-to-video is supported by the `grok-imagine-video`
-  and `grok-imagine-video-1.5` models; native 1080p requires
-  `grok-imagine-video-1.5`.
+  provider option and can be combined with pinned frames. Reference-to-video is
+  supported by the `grok-imagine-video` and `grok-imagine-video-1.5` models;
+  native 1080p requires `grok-imagine-video-1.5`.
 </Note>
 
 ### Video Provider Options
@@ -1435,6 +1458,42 @@ You can validate the provider options using the `XaiVideoModelOptions` type.
   `<AUDIO_1>`, and `<AUDIO_2>` tags in the prompt to reference the voices.
   Ignored with a warning outside reference-to-video. Reference audio is
   documented as US-only and limited to trusted partners.
+
+- **storageOptions** _object_
+
+  Stores the generated video in the xAI Files API. Set `filename` and
+  optionally `expiresAfter` (up to 30 days) and `publicUrl`. Stored-file
+  details and storage errors are returned in `providerMetadata.xai.fileOutput`
+  and `providerMetadata.xai.storageError`.
+
+- **keyframes** _Array\<\{ imageUrl: string; timestampSeconds: number \}\>_
+
+  Up to four mid-video image anchors. Each timestamp must fall strictly inside
+  the video duration. Keyframes are supported by `grok-imagine-video-1.5` and
+  are ignored with a warning for editing and extension operations.
+
+### Audio and Frame Controls
+
+Use the provider-neutral `generateAudio` option to request or disable generated
+audio. Use `frameImages` for exact endpoint frames:
+
+```ts
+const { video } = await generateVideo({
+  model: xai.video('grok-imagine-video-1.5'),
+  prompt: 'A paper boat drifting down a rain-soaked street',
+  generateAudio: false,
+  frameImages: [
+    {
+      frameType: 'last_frame',
+      image: 'https://example.com/final-frame.png',
+    },
+  ],
+});
+```
+
+`last_frame` is supported only by `grok-imagine-video-1.5`. The provider emits
+an unsupported-feature warning and omits the field for other model IDs. A
+`first_frame` is sent as xAI's standard `image` input.
 
 <Note>
   Video generation is an asynchronous process that can take several minutes.

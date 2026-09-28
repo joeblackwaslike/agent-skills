@@ -3,7 +3,7 @@ title: Auth.js
 product: vercel
 url: /docs/connect/frameworks/authjs
 canonical_url: "https://vercel.com/docs/connect/frameworks/authjs"
-last_updated: 2026-08-28
+last_updated: 2026-09-18
 type: tutorial
 prerequisites:
   - /docs/connect/frameworks
@@ -17,8 +17,8 @@ related:
 summary: Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/frameworks/authjs.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "1ffc9d6670c3c7ffaa8d3a28ca265ad78bfa5d79cedbc20ac52733daa66fd87c"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "c3839061c5d68d404133a205b0da96fd87e4224534b6b7917675849ffaca171f"
 ---
 
 # Auth.js

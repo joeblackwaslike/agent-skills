@@ -16,8 +16,8 @@ related:
 summary: Continuously collect traces from your production and preview traffic using sampling rules, so you can debug real requests without reproducing them.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/tracing/always-on-tracing.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "fe32c2e8601b16d8262242b2ea59b98558f6c580aa9c1ac86930a7e5936b7368"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "58a860173792e2158c93052c3894509591afa312ace9578ba4cde89301c7c5b1"
 ---
 
 # Always-on Tracing
@@ -31,13 +31,14 @@ With always-on tracing, Vercel continuously collects traces from your production
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Always-on tracing for production and preview traffic](https://vercel.com/changelog/always-on-tracing-for-production-and-preview-traffic?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=related)
-- [OpenTelemetry](https://eve.dev/docs/observability/otel?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=related) — Configure OpenTelemetry destinations, content capture, and managed exports.
+- [Agent Runs](https://eve.dev/docs/observability/agent-runs?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=related) — Inspect eve sessions in Vercel and configure the Agent Runs destination.
+- [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
 - [Track a request's full lifecycle with session tracing](https://vercel.com/changelog/session-tracing-now-available?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=related)
+- [Agent Runs](https://vercel.com/docs/eve/agent-runs?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=related) — Inspect eve agent sessions, configure trace sampling, and control the content Agent Runs receives.
 - [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=related) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [Observability Plus](https://vercel.com/docs/observability/observability-plus?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=related) — Learn about using Observability Plus and its limits.
 - [Runtime Logs](https://vercel.com/docs/logs/runtime?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=related) — Learn how to search, inspect, and share your runtime logs with the Logs tab.
 - [Understanding Vercel](https://vercel.com/docs/plans/pro-plan/trials?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=related) — Learn all about Vercel's Pro Plan free trial, including features, usage limits, and options post-trial. Learn how to man
-- [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=related) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
 
 Full cross-link map for this page: [/docs/tracing/always-on-tracing.graph.md](/docs/tracing/always-on-tracing.graph.md?from=related&source_path=%2Fdocs%2Ftracing%2Falways-on-tracing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -112,7 +113,9 @@ Beta pricing
 
 Hobby
 
-1 million span units included per month
+1
+
+million span units included per month
 
 Pro
 

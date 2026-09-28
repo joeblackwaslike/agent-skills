@@ -1,7 +1,7 @@
 ---
 source: "https://google.github.io/styleguide/shellguide.html"
-fetched_at: "2026-09-21T09:38:58.619Z"
-sha256: "3fb243a0553f94a1e8746f7dfdb4f0d8332ec511b83a625ea99c053f9c51bc84"
+fetched_at: "2026-09-28T10:38:26.295Z"
+sha256: "1c581b0551fb21cec8150d548992d74a851c426386ff32c9a8fc57a3ed22d8b9"
 ---
 
 Google Style Guides | Style guides for Google-originated open-source projects
@@ -610,7 +610,8 @@ if [ "filename" == f* ]; then
   echo "Match"
 fi
 
-For the gory details, see E14 in the Bash FAQ
+For the gory details, see E14 in the
+Bash FAQ.
 
 Testing Strings
 
@@ -951,14 +952,16 @@ Naming Conventions
 
 Function Names
 
-Lower-case, with underscores to separate words. Separate libraries with ::.
+Lower-case, with underscores to separate words. Standalone functions do not need
+to be namespaced, but libraries can create namespaces by prefixing all functions
+with the library or package name, using :: as the package delimiter.
+
+Note that certain circumstances, such as auto-completions in an interactive
+shell, do not work well with colon-delimited names, so avoid namespacing in
+those contexts.
+
 Parentheses are required after the function name. The keyword function is
 optional, but must be used consistently throughout a project.
-
-If you’re writing single functions, use lowercase and separate words with
-underscore. If you’re writing a package, separate package names with ::.
-However, functions intended for interactive use may choose to avoid colons as it
-can confuse bash auto-completion.
 
 Braces must be on the same line as the function name (as with other languages at
 Google) and no space between the function name and the parenthesis.
@@ -973,9 +976,8 @@ mypackage::my_func() {
   …
 }
 
-The function keyword is extraneous when “()” is present
-after the function name, but enhances quick identification of
-functions.
+The function keyword is extraneous when “()” is present after the function
+name, but enhances quick identification of functions.
 
 Variable Names
 

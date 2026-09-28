@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/traceloop.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "619054375ce0f7779e02de148933125ea6b6e60a074e78a73196b8f4b3dd7a4b"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "abb16327d6658ee7cbbdf1429db405d49bc15b70d0eaf5c5a1411ec6adb12357"
 ---
 
 # Traceloop
@@ -39,7 +39,7 @@ import { generateText } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
 const result = await generateText({
-  model: openai('gpt-4o-mini'),
+  model: openai('gpt-6-luna'),
   prompt: 'What is 2 + 2?',
   telemetry: {
     metadata: {

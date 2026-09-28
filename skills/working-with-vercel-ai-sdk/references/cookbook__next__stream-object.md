@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/stream-object.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "4cdb9b78806f92d4cc00d7ddd878ac6564ce55c68a6f36897fd71e4b08461263"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "6ea6ef91ee37abee20e274d1b15d5e8ebaadb9a174fe8e31fe1e76599bd07be2"
 ---
 
 # Stream Object
@@ -110,7 +110,7 @@ export async function POST(req: Request) {
   const context = await req.json();
 
   const result = streamText({
-    model: 'openai/gpt-4.1',
+    model: 'openai/gpt-6-astra',
     output: Output.object({ schema: notificationSchema }),
     prompt:
       `Generate 3 notifications for a messages app in this context:` + context,
@@ -246,7 +246,7 @@ export async function POST(req: Request) {
   const context = await req.json();
 
   const result = streamText({
-    model: 'openai/gpt-4.1',
+    model: 'openai/gpt-6-astra',
     output: Output.array({ element: notificationSchema }),
     prompt:
       `Generate 3 notifications for a messages app in this context:` + context,
@@ -313,7 +313,7 @@ export async function POST(req: Request) {
   const context = await req.json();
 
   const result = streamText({
-    model: 'openai/gpt-4o',
+    model: 'openai/gpt-6-astra',
     output: Output.json(),
     prompt:
       `Generate 3 notifications (in JSON) for a messages app in this context:` +

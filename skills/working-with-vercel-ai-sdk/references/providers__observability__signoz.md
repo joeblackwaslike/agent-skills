@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/signoz.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "7db156285d399ba307f285c3dfc7410f6332f36bd42440f6fd1aba01f4f8fa08"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "0c10e870875b5f4727193c93662b9c17be08e6fc6957fe5dcc2fb954ed8c4a6e"
 ---
 
 # SigNoz Observability
@@ -89,7 +89,7 @@ With `@ai-sdk/otel` installed and `registerTelemetry` added to your `instrumenta
 
 ```jsx
 const result = await generateText({
-  model: openai('gpt-5-mini'),
+  model: openai('gpt-6-luna'),
   prompt: 'Write a short story about a cat.',
 });
 ```
@@ -108,7 +108,7 @@ You can provide a `functionId` to identify the function that the telemetry data 
 
 ```jsx
 const result = await generateText({
-  model: openai('gpt-5-mini'),
+  model: openai('gpt-6-luna'),
   prompt: 'Write a short story about a cat.',
   context: {
     something: 'custom',
@@ -136,7 +136,7 @@ registerTelemetry(
 );
 
 const result = await generateText({
-  model: openai('gpt-5-mini'),
+  model: openai('gpt-6-luna'),
   prompt: 'Write a short story about a cat.',
 });
 ```

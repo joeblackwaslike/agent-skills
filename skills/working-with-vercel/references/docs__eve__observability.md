@@ -8,18 +8,22 @@ type: conceptual
 prerequisites:
   - /docs/eve
 related:
+  - /docs/eve/agent-runs
   - /docs/eve/concepts
   - /docs/observability
-summary: View agent runs in the Vercel dashboard with no setup, and optionally export AI SDK spans through OpenTelemetry.
+summary: Configure process-wide OpenTelemetry settings, third-party destinations, filtering, and built-in exports for eve agents.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/eve/observability.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "97f86204760ebb6ae08d601ce10d5780a79b6d91a6f091f32602d949a983e1b8"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "ba2804d97a91acc875375e75496ad45767ecf7bfff0aa4c28320a42211f8d54f"
 ---
 
 # Observability
 
-eve gives you two ways to observe an agent:
+eve configures its built-in OpenTelemetry destinations automatically. `eve dev` records local
+traces, while preview and production deployments export to
+[Agent Runs](/docs/eve/agent-runs) by default. Use this page to configure process-wide tracing,
+third-party destinations, and export policies.
 
 
 <!-- docsgraph:related -->
@@ -30,114 +34,167 @@ eve gives you two ways to observe an agent:
 - [Agent Runs now show subagent activity on eve projects](https://vercel.com/changelog/agent-runs-now-show-subagent-activity-on-eve-projects?from=related&source_path=%2Fdocs%2Feve%2Fobservability&source_site=vercel-docs&relationship=related)
 - [Agent Runs now available in the Vercel MCP and CLI](https://vercel.com/changelog/agent-runs-vercel-mcp-cli?from=related&source_path=%2Fdocs%2Feve%2Fobservability&source_site=vercel-docs&relationship=related)
 - [Trace and debug eve agent sessions with Vercel Observability](https://vercel.com/changelog/eve-agent-observability?from=related&source_path=%2Fdocs%2Feve%2Fobservability&source_site=vercel-docs&relationship=related)
-- [OpenTelemetry](https://eve.dev/docs/observability/otel?from=related&source_path=%2Fdocs%2Feve%2Fobservability&source_site=vercel-docs&relationship=related) — Configure OpenTelemetry destinations, content capture, and managed exports.
-- [Terminal UI](https://eve.dev/docs/guides/dev-tui?from=related&source_path=%2Fdocs%2Feve%2Fobservability&source_site=vercel-docs&relationship=related) — Use eve locally or connect to a deployed agent from an interactive terminal UI.
-- [Confident AI](https://ai-sdk.dev/providers/observability/confident-ai?from=related&source_path=%2Fdocs%2Feve%2Fobservability&source_site=vercel-docs&relationship=related)
-- [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related&source_path=%2Fdocs%2Feve%2Fobservability&source_site=vercel-docs&relationship=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
+- [Agent Runs](https://eve.dev/docs/observability/agent-runs?from=related&source_path=%2Fdocs%2Feve%2Fobservability&source_site=vercel-docs&relationship=related) — Inspect eve sessions in Vercel and configure the Agent Runs destination.
 - [Instrumentation](https://eve.dev/docs/observability/instrumentation?from=related&source_path=%2Fdocs%2Feve%2Fobservability&source_site=vercel-docs&relationship=related) — Configure lifecycle instrumentation, handle runtime events, and control the content each destination receives.
-- [eve](https://eve.dev/docs/channels/eve?from=related&source_path=%2Fdocs%2Feve%2Fobservability&source_site=vercel-docs&relationship=related) — The default HTTP API for an agent, covering session routes, auth, and customization.
-- [Introducing eve, an open-source agent framework](https://vercel.com/changelog/introducing-eve-an-open-source-agent-framework?from=related&source_path=%2Fdocs%2Feve%2Fobservability&source_site=vercel-docs&relationship=related)
-- [The Agent Stack](https://vercel.com/blog/agent-stack?from=related&source_path=%2Fdocs%2Feve%2Fobservability&source_site=vercel-docs&relationship=related)
+- [Migrate Instrumentation](https://eve.dev/docs/observability/instrumentation-migration?from=related&source_path=%2Fdocs%2Feve%2Fobservability&source_site=vercel-docs&relationship=related) — Move a single instrumentation.ts configuration into lifecycle instrumentation and OpenTelemetry destinations.
+- [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related&source_path=%2Fdocs%2Feve%2Fobservability&source_site=vercel-docs&relationship=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
+- [Terminal UI](https://eve.dev/docs/guides/dev-tui?from=related&source_path=%2Fdocs%2Feve%2Fobservability&source_site=vercel-docs&relationship=related) — Use eve locally or connect to a deployed agent from an interactive terminal UI.
+- [How to set up instrumentation with OpenTelemetry](https://nextjs.org/docs/app/guides/open-telemetry?from=related&source_path=%2Fdocs%2Feve%2Fobservability&source_site=vercel-docs&relationship=related) — Learn how to instrument your Next.js app with OpenTelemetry.
+- [Instrumentation](https://vercel.com/docs/tracing/instrumentation?from=related&source_path=%2Fdocs%2Feve%2Fobservability&source_site=vercel-docs&relationship=related) — Learn how to instrument your application to understand performance and infrastructure details.
+- [Tracing](https://vercel.com/docs/tracing?from=related&source_path=%2Fdocs%2Feve%2Fobservability&source_site=vercel-docs&relationship=related) — Learn how to trace your application to understand performance and infrastructure details.
 - [Pricing and Limits](https://vercel.com/docs/eve/pricing?from=related&source_path=%2Fdocs%2Feve%2Fobservability&source_site=vercel-docs&relationship=related) — Understand how eve usage maps to Vercel resources and inherited platform limits.
 
 Full cross-link map for this page: [/docs/eve/observability.graph.md](/docs/eve/observability.graph.md?from=related&source_path=%2Fdocs%2Feve%2Fobservability&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-- **Agent Runs**: the primary view. Every eve project gets a built-in Agent Runs dashboard in
-  Vercel. It works by default with no instrumentation or configuration.
-- **OpenTelemetry export**: optional. Send AI SDK spans to your own OpenTelemetry backend when you
-  want traces alongside the rest of your stack.
+## Configure OpenTelemetry
 
-## Agent Runs
+OpenTelemetry configuration uses separate helpers for process-wide settings, built-in destinations,
+and third-party destinations:
 
-Open your project in the Vercel dashboard and go to [**Agent Runs**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability%2Fagent-runs\&title=Agent+Runs). This is the
-primary observability surface for eve, and it appears automatically for eve projects, with no
-instrumentation file required.
+- Use `otel()` for process-wide settings such as the resource, sampler, propagators, or trace capture
+  policy. Declare it at most once.
+- Use `localTraces()` to customize local tracing.
+- Use `agentRuns()` to customize the built-in
+  [Agent Runs integration](/docs/eve/agent-runs).
+- Use `otelIntegration()` only to add a third-party OpenTelemetry destination. Declare one file per
+  exporter or processor chain.
 
-The overview shows:
+### Configure process-wide trace content
 
-- **Runs** over time, broken down by trigger (such as Slack and HTTP).
-- **Token usage** over the same window, split into input, output, and cached tokens.
-- A **table of runs** with the triggering message, trigger type, tokens in and out, turn count,
-  duration, and time.
+Add `agent/instrumentation/otel.ts` when you need process-wide OpenTelemetry settings or want to
+control the content eve writes to every destination:
 
-Select a run to drill into it. The run detail shows its model, trigger, and deployment, then a
-per-turn breakdown with:
+```ts filename="agent/instrumentation/otel.ts"
+import { otel } from 'eve/instrumentation/otel';
 
-- **Timings** for each step in the turn, including skill loads and individual tool calls.
-- **Input** and **Output** for the turn.
-- **Reasoning** the model produced along the way.
-- **Tool Calls** made during the turn, with their arguments and results.
-- Input, cached, and output token counts for the turn.
-
-Because this view is always on, it is the fastest way to confirm an agent is running in production
-and to inspect what happened on any given session.
-
-As the deployer, where your agent processes personal, sensitive, or regulated data, you may be
-required to disclose this capture as required by applicable laws and in your privacy materials.
-
-## Export AI SDK spans with OpenTelemetry
-
-Agent Runs covers most needs on its own. If you also want AI SDK traces in an external backend, eve
-can export them through OpenTelemetry.
-
-eve auto-discovers `agent/instrumentation.ts` and runs it at server startup before any agent code.
-Its presence enables telemetry, and there is no separate toggle. Register an OpenTelemetry provider in
-the `setup` callback, which receives the resolved agent name:
-
-```ts filename="agent/instrumentation.ts"
-import { BraintrustExporter } from '@braintrust/otel';
-import { defineInstrumentation } from 'eve/instrumentation';
-import { registerOTel } from '@vercel/otel';
-
-export default defineInstrumentation({
-  setup: ({ agentName }) =>
-    registerOTel({
-      serviceName: agentName,
-      traceExporter: new BraintrustExporter({
-        parent: `project_name:${agentName}`,
-        filterAISpans: true,
-      }),
-    }),
+export default otel({
+  resource: {
+    'deployment.environment': process.env.VERCEL_ENV ?? 'development',
+  },
+  tracePolicy: ({ audience, environment }) => ({
+    emit: true,
+    recordInputs: audience === 'public' || environment === 'development',
+    recordOutputs: audience === 'public' || environment === 'development',
+  }),
 });
 ```
 
-Any OpenTelemetry-compatible backend works, such as Braintrust, Raindrop, Arize, Honeycomb, Datadog, or Jaeger. Install the
-exporter you need and configure it in the callback. The agent name is resolved at compile time from
-your project, so you never hard-code a service name.
+The `tracePolicy` is a capture ceiling shared by every OpenTelemetry destination. A destination
+cannot restore content excluded by this policy. The policy does not affect lifecycle instrumentation
+created with `defineInstrumentation()`.
 
-Three optional fields control what the AI SDK records inside those spans:
+To configure content for the built-in Vercel integration, see
+[Configure Agent Runs trace content](/docs/eve/agent-runs#configure-agent-runs-trace-content).
 
-- `recordInputs`: record full message history on each step span (default `true`). Set to `false`
-  for sensitive inputs or smaller payloads.
-- `recordOutputs`: record model outputs on spans (default `true`).
-- `functionId`: override the function name on spans (defaults to the agent name).
+### Add a third-party OpenTelemetry destination
 
-## Trace hierarchy
+Install `@vercel/otel` before using its exporters:
 
-When telemetry is enabled, each turn produces a trace with a parent span per turn and child spans
-for each model call and tool execution:
-
-```text
-ai.eve.turn  {eve.session.id}
-  +-- ai.streamText                           step 1
-  |     +-- ai.streamText.doStream            model call
-  |     +-- ai.toolCall  {toolName: search}   tool exec
-  +-- ai.streamText                           step 2
-  |     +-- ai.streamText.doStream
-  |     +-- ai.toolCall  {toolName: read}
-  +-- ai.streamText                           step 3 (final text)
+```bash
+pnpm add @vercel/otel
 ```
 
-eve injects session, turn, step, and channel context onto the spans (`eve.version`,
-`eve.session.id`, `eve.environment`, `eve.turn.id`, `eve.turn.sequence`, `eve.step.index`,
-`eve.channel.kind`). You can attach your own per-call values through the `events["step.started"]`
-callback, which returns a `runtimeContext` object that rides onto the model-call span.
+Create an integration file for the destination:
+
+```ts filename="agent/instrumentation/honeycomb.ts"
+import { OTLPHttpProtoTraceExporter } from '@vercel/otel';
+import { otelIntegration } from 'eve/instrumentation/otel';
+
+export default otelIntegration({
+  exportPolicy: {
+    span: () => ({ redact: true, inputs: true, outputs: true }),
+  },
+  traceExporter: new OTLPHttpProtoTraceExporter({
+    url: 'https://api.honeycomb.io/v1/traces',
+    headers: {
+      'x-honeycomb-team': process.env.HONEYCOMB_API_KEY!,
+    },
+  }),
+});
+```
+
+Any OpenTelemetry-compatible backend can receive eve traces. Pass `spanProcessors` to
+`otelIntegration()` when a destination needs additional filtering or transformation. The example's
+`exportPolicy` preserves span metadata while removing inputs and outputs from this destination.
+
+### Add runtime context to a third-party destination
+
+For a third-party destination, use `runtimeContext` to add JSON values to AI SDK spans for each model
+attempt. For typed channel metadata, import the channel definition and narrow with `isChannel`:
+
+```ts filename="agent/instrumentation/support.ts"
+import { isChannel } from 'eve/instrumentation';
+import { otelIntegration } from 'eve/instrumentation/otel';
+
+import supportChannel from '../channels/support';
+
+export default otelIntegration({
+  runtimeContext(input) {
+    if (!isChannel(input.channel, supportChannel)) return undefined;
+
+    return {
+      'support.channel_id': input.channel.metadata.channelId ?? '',
+      'support.user_id': input.channel.metadata.triggeringUserId ?? '',
+    };
+  },
+});
+```
+
+The resolver receives the channel, session, final model input, step, and turn. Keys beginning with
+`eve.` are reserved. Content excluded by `otel({ tracePolicy })` is not available to the resolver.
+
+### Filter built-in and third-party destinations
+
+Third-party destinations created with `otelIntegration()` and built-in destinations configured with
+`localTraces()` or `agentRuns()` accept one `exportPolicy` object or an array applied in order. Each
+policy filters spans and attributes before that destination's processors receive them.
+
+Return `{ emit: true }` to retain a span or attribute, and `{ emit: false }` to omit it from this
+destination. For attributes, return `{ replace: true, value }` to replace the value. To retain a
+span while redacting content, return `{ redact: true }` with `inputs: true`, `outputs: true`, or both.
+Policies run in array order, and each policy receives the result of the policies before it.
+
+For an Agent Runs filtering example, see
+[Configure Agent Runs trace content](/docs/eve/agent-runs#configure-agent-runs-trace-content).
+
+## Trace topology
+
+OpenTelemetry destinations receive the following trace topology for an ordinary agent turn:
+
+```text
+invoke_agent <agent>
+  +-- agent.step
+        +-- chat <model>
+        +-- agent.action
+              +-- execute_tool <tool>
+```
+
+Each turn starts a new trace. The first subagent trace links to its caller with
+`eve.link.type=agent.dispatch`; the link is not an authorization grant. Use
+`gen_ai.conversation.id` to find traces for one conversation in your destination's span-search
+surface.
+
+## Manage built-in destinations
+
+Instrumentation has two environment-specific defaults:
+
+- **Local traces**: `eve dev` records local traces by default. Omitting
+  `agent/instrumentation/local.ts` preserves the default. Export `localTraces(...)` from that file to
+  reconfigure it, or export `disableInstrumentation()` to disable it.
+- **Vercel Agent Runs**: Preview and production deployments export to
+  [Agent Runs](/docs/eve/agent-runs) by default. Omitting `agent/instrumentation/agent-runs.ts`
+  preserves the default. Export `agentRuns(...)` from that file to reconfigure it, or export
+  `disableInstrumentation()` to disable it.
 
 ## Next steps
 
 - [Concepts](/docs/eve/concepts): learn how eve's runtime pieces fit together.
-- [Observability](/docs/observability): the broader Vercel observability surface
+- [Agent Runs](/docs/eve/agent-runs): inspect agent sessions and configure the built-in Vercel
+  integration.
+- [Vercel Observability](/docs/observability): inspect traces alongside logs and metrics.
+- [OpenTelemetry on eve](https://eve.dev/docs/observability/otel): review the full eve
+  instrumentation reference.
 
 
 ---

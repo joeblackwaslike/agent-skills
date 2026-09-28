@@ -16,8 +16,8 @@ related:
 summary: Based on the Docker CLI, you can use the Sandbox CLI to manage your Vercel Sandbox from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/cli-reference.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "b8504e91230aacbf9dbb710f2b5d723331afacac6ec57196f6b78a58dfcc1d95"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "bb09035910f8a2556f17d2e74f5be64cf7fdcbab0017c1178f0d64447431e6b4"
 ---
 
 # Sandbox CLI Reference
@@ -37,11 +37,11 @@ The Sandbox CLI, based on the Docker CLI, allows you to manage sandboxes, execut
 - [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
 - [Vercel Sandbox supports forking](https://vercel.com/changelog/vercel-sandbox-supports-forking?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related)
 - [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — Learn how to save sandbox state with snapshots and skip installation on future runs.
+- [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
 - [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 - [Fork a named sandbox](https://vercel.com/docs/rest-api/sandboxes/fork-a-named-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — POST /v2/sandboxes/{name}/fork — Forks a named sandbox, creating a new named sandbox from the source's configuration. Re
-- [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
 
 Full cross-link map for this page: [/docs/sandbox/cli-reference.graph.md](/docs/sandbox/cli-reference.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -186,6 +186,9 @@ sandbox create
 # Create a sandbox with an explicit name
 sandbox create --name my-sandbox
 
+# Create a sandbox on a Secure Compute network
+sandbox create --name my-sandbox --network-id 3k9x7m2p5q8w1z4n
+
 # Create a sandbox with 1 vCPU and open an interactive shell
 sandbox create --vcpus 1 --connect
 
@@ -242,12 +245,13 @@ sandbox create --mount cache:/data:snapshot
 | `--tag <key=value>`                 | `-t`     | Key-value tag. Up to five. Repeatable. See [Tags](/docs/sandbox/concepts/tags).                                                                                  |
 | `--mount <drive:path[:mode]>`       | -        | Mount a drive onto the sandbox. Repeatable. `mode` can be `read-write` (default) or `snapshot`. See [Drives](/docs/sandbox/concepts/drives).                 |
 | `--region <region>`                 | -        | [Region](/docs/sandbox/concepts/regions) to create the sandbox in. Defaults to the [project's default sandbox region](/docs/sandbox/concepts/regions#set-a-default-region-for-your-project), or `iad1`.                                  |
-| `--failover-regions <region,...>`   | -        | Comma-separated [regions](/docs/sandbox/concepts/regions#failover-regions) the sandbox can fail over to (e.g. `sfo1,cle1`). Must not include the main region. Not supported with `--mount`. Available on Pro and Enterprise plans, excluding [Pro trials](/docs/plans/pro-plan/trials). |
+| `--failover-regions <region,...>`   | -        | Comma-separated [regions](/docs/sandbox/concepts/regions#failover-regions) the sandbox can fail over to (e.g. `sfo1,cle1`). Must not include the main region. Available on Pro and Enterprise plans, excluding [Pro trials](/docs/plans/pro-plan/trials). |
 | `--snapshot-expiration <duration>`  | -        | Default snapshot TTL. Defaults to `30d`. Use `none` or `0` for no expiration.                                                                                    |
 | `--keep-last-snapshots <count>`     | -        | Retention policy: keep only the N (1–10) most recent snapshots of this sandbox.                                                                                  |
 | `--keep-last-snapshots-for <dur>`   | -        | Expiration applied to kept snapshots. Use `none` or `0` for no expiration.                                                                                       |
 | `--delete-evicted-snapshots <bool>` | -        | `true` (default) deletes evicted snapshots immediately; `false` keeps them until their existing expiration. See [Snapshot retention](#snapshot-retention).       |
 | `--network-policy <mode>`           | -        | Base network mode to start the sandbox with ('allow-all' - default or 'deny-all'). Leave unset if using more specific rules.                                     |
+| `--network-id <id>`                 | -        | [Secure Compute network ID](/docs/sandbox/concepts/secure-compute) to use from the first session.                                                               |
 | `--allowed-domain <domain>`         | -        | List of domains (or pattern) to allow access to (only applicable in 'custom' mode). Use wildcard `*` to match multiple domains or subdomains.                    |
 | `--allowed-cidr <cidr>`             | -        | List of address ranges to allow access to (only applicable in 'custom' mode). Traffic to those addresses will bypass domain matching.                            |
 | `--denied-cidr <cidr>`              | -        | List of address ranges to deny access to (only applicable in 'custom' mode). Those take precedence over allowed domains and addresses.                           |
@@ -277,6 +281,8 @@ Fork an existing sandbox into a new one. The fork is seeded from the source sand
 
 The fork runs in the source sandbox's [region](/docs/sandbox/concepts/regions) unless you pass `--region`. The fork also inherits the source's failover regions. Pass `--failover-regions` to replace them. If the source has a snapshot, that snapshot must be available in the target region.
 
+The fork inherits the source's [Secure Compute network](/docs/sandbox/concepts/secure-compute) unless you pass `--network-id`.
+
 ```bash filename="terminal"
 sandbox fork [OPTIONS] <source>
 ```
@@ -305,7 +311,8 @@ sandbox fork my-source --name my-forked-sandbox --vcpus 4 --env FOO=1
 | `--env <key=value>`                 | `-e`     | Environment variables for the fork. Not copied from the source. Repeatable.                                                                                      |
 | `--tag <key=value>`                 | `-t`     | Tag the fork. Repeatable. When provided, fully replaces the tags copied from the source.                                                                         |
 | `--region <region>`                 | -        | Override the [region](/docs/sandbox/concepts/regions) copied from the source. If the source has a snapshot, it must be available in this region.                 |
-| `--failover-regions <region,...>`   | -        | Comma-separated [regions](/docs/sandbox/concepts/regions#failover-regions) the fork can fail over to (e.g. `sfo1,cle1`). Must not include the main region. Not supported for sandboxes with mounted drives. Available on Pro and Enterprise plans, excluding [Pro trials](/docs/plans/pro-plan/trials). |
+| `--failover-regions <region,...>`   | -        | Comma-separated [regions](/docs/sandbox/concepts/regions#failover-regions) the fork can fail over to (e.g. `sfo1,cle1`). Must not include the main region. Available on Pro and Enterprise plans, excluding [Pro trials](/docs/plans/pro-plan/trials). |
+| `--network-id <id>`                 | -        | [Secure Compute network ID](/docs/sandbox/concepts/secure-compute) for the fork. Overrides the network inherited from the source.                                |
 | `--snapshot-expiration <duration>`  | -        | Override the default snapshot TTL (e.g. `7d`, `30d`). Use `none` or `0` for no expiration.                                                                       |
 | `--keep-last-snapshots <count>`     | -        | Override the retention policy (1–10).                                                                                                                            |
 | `--keep-last-snapshots-for <dur>`   | -        | Expiration applied to kept snapshots. Use `none` or `0` for no expiration.                                                                                       |
@@ -353,6 +360,7 @@ sandbox config <subcommand> <name> [VALUE | OPTIONS]
 | `sandbox config delete-evicted-snapshots <name> <bool>`      | Whether evicted snapshots are deleted immediately.                                                           |
 | `sandbox config current-snapshot <name> <snapshot-id>`       | Roll back the sandbox to a specific snapshot. New sessions resume from it.                                   |
 | `sandbox config network-policy <name> [OPTIONS]`             | Update the network firewall (see options below).                                                             |
+| `sandbox config network-id <name> <id\|none>`                | Assign a [Secure Compute network](/docs/sandbox/concepts/secure-compute) by ID, or pass `none` to remove it. Takes effect on the next session. |
 | `sandbox config ports <name> [-p PORT ...]`                  | Replace the exposed port list. Omit `-p` to clear all ports.                                                 |
 | `sandbox config mounts <name> [OPTIONS]`                     | Replace the mounted drives for new sessions. Omit `--mount` to remove all mounts.                           |
 | `sandbox config tags <name> [--tag key=value ...]`           | Replace the tag set. Omit `--tag` to clear all tags.                                                         |
@@ -362,6 +370,10 @@ sandbox config <subcommand> <name> [VALUE | OPTIONS]
 ```bash filename="terminal"
 # Inspect the current configuration of a sandbox
 sandbox config list my-sandbox
+
+# Attach a Secure Compute network, or remove it from the next session
+sandbox config network-id my-sandbox 3k9x7m2p5q8w1z4n
+sandbox config network-id my-sandbox none
 
 # Update vCPUs and timeout
 sandbox config vcpus my-sandbox 4
@@ -705,7 +717,7 @@ sandbox run --mount cache:/data:snapshot -- ls /data
 | `--env <key=value>`           | `-e`     | Set environment variables for your command.                                                                                                                        |
 | `--tag <key=value>`           | `-t`     | Key-value tag. Repeatable. See [Tags](/docs/sandbox/concepts/tags).                                                                                                |
 | `--region <region>`           | -        | [Region](/docs/sandbox/concepts/regions) to create the sandbox in (when creating a new sandbox).                                                                   |
-| `--failover-regions <region,...>` | -    | Comma-separated [regions](/docs/sandbox/concepts/regions#failover-regions) the sandbox can fail over to (e.g. `sfo1,cle1`). Must not include the main region. Not supported with `--mount`. |
+| `--failover-regions <region,...>` | -    | Comma-separated [regions](/docs/sandbox/concepts/regions#failover-regions) the sandbox can fail over to (e.g. `sfo1,cle1`). Must not include the main region. |
 | `--mount <drive:path[:mode]>` | -        | Mount a drive onto the sandbox. Repeatable. `mode` can be `read-write` (default) or `snapshot`. See [Drives](/docs/sandbox/concepts/drives).                     |
 
 ### Sandbox run flags
@@ -1081,7 +1093,7 @@ sandbox drives get-or-create cache --region sfo1
 
 | Option                | Alias    | Description                                                                                                                                                      |
 | --------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `--max-size <bytes>`  | -        | Maximum drive size in bytes. Defaults to 1 TiB when omitted. The maximum quota is 16 TiB. [Contact Vercel Support](/help) to request a quota above 16 TiB.       |
+| `--max-size <bytes>`  | -        | Maximum drive size in bytes. Defaults to 1 TiB when omitted. The default maximum quota is 16 TiB.       |
 | `--region <region>`   | -        | [Region](/docs/sandbox/concepts/regions#regions-and-drives) where the drive is created, defaults to `iad1`. A drive's region can't change after creation.        |
 | `--token <token>`     | -        | Your [Vercel authentication token](/kb/guide/how-do-i-use-a-vercel-api-access-token). If you don't provide it, we'll use a stored token or prompt you to log in. |
 | `--project <project>` | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) you want to use with this command.                                             |

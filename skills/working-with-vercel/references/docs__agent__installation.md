@@ -3,7 +3,7 @@ title: Installation
 product: vercel
 url: /docs/agent/installation
 canonical_url: "https://vercel.com/docs/agent/installation"
-last_updated: 2026-09-01
+last_updated: 2026-09-18
 type: how-to
 prerequisites:
   - /docs/agent
@@ -15,8 +15,8 @@ related:
 summary: Let AI automatically install Web Analytics and Speed Insights in your app
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/installation.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "c19fa9a359eb9a6e2aaae67181901450ed3e60a5947ef17971c9a6235195b9c3"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "733992764166329c2dcd509e8c1d4686bf3cca991c43911c8dc9f342a357702f"
 ---
 
 # Installation

@@ -12,8 +12,8 @@ related:
 summary: System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the Git branch deployed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/system-environment-variables.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "32d29dd9146c65a3138dbe542b2394e33aa53ab8fcda8335570f981cab793a10"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "628453d201fa27256c15d7f427999cf59c1b3a48d91998570d014c15c2570e07"
 ---
 
 # System environment variables
@@ -35,8 +35,8 @@ Vercel provides a set of environment variables that are automatically populated 
 - [Framework environment variables](https://vercel.com/docs/environment-variables/framework-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsystem-environment-variables&source_site=vercel-docs&relationship=related) — Framework environment variables are automatically populated by the Vercel, based on your project's framework.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsystem-environment-variables&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 - [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsystem-environment-variables&source_site=vercel-docs&relationship=related) — Learn how to configure Git for your project through vercel.json or vercel.ts.
-- [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsystem-environment-variables&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 - [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsystem-environment-variables&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
+- [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsystem-environment-variables&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 
 Full cross-link map for this page: [/docs/environment-variables/system-environment-variables.graph.md](/docs/environment-variables/system-environment-variables.graph.md?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsystem-environment-variables&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applications, and executing...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "f734f24e91b9ac4719c58089285ce05e190acc0833de773af1a52216cab4767c"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "8b0b3da053777d40231183dbf07cca33491f9b490c91fb2ff2916fe9d82b0aed"
 ---
 
 # Understanding Sandboxes
@@ -33,8 +33,8 @@ Vercel Sandboxes provide on-demand, isolated compute environments for running un
 - [A sandbox without a network boundary is only half a sandbox](https://vercel.com/blog/a-sandbox-without-a-network-boundary-is-only-half-a-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts&source_site=vercel-docs&relationship=related)
 - [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts&source_site=vercel-docs&relationship=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
 - [Vercel Sandboxes are now generally available](https://vercel.com/changelog/vercel-sandboxes-ga?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts&source_site=vercel-docs&relationship=related)
-- [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts&source_site=vercel-docs&relationship=related) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
 - [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts&source_site=vercel-docs&relationship=related)
+- [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts&source_site=vercel-docs&relationship=related) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
 - [Running commands in a Vercel Sandbox](https://vercel.com/docs/sandbox/run-commands-in-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts&source_site=vercel-docs&relationship=related) — Create isolated sandbox environments to run builds, tests, and commands safely.
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts&source_site=vercel-docs&relationship=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 
@@ -97,9 +97,9 @@ Sandboxes are identified by a **name** that is unique within your project. If yo
 
 To create a sandbox, you can use the [CLI](/docs/sandbox/cli-reference), the [JS SDK](/docs/sandbox/sdk-reference), or the [Python SDK](/docs/sandbox/python-sdk-reference):
 
-**CLI**
+**terminal.sh**
 
-```bash
+```bash filename="terminal.sh"
 # Create a sandbox with a random name
 sandbox create
 
@@ -107,9 +107,9 @@ sandbox create
 sandbox create --name my-sandbox
 ```
 
-**TypeScript**
+**index.ts**
 
-```ts
+```ts filename="index.ts"
 import { Sandbox } from '@vercel/sandbox';
 
 // Create a new sandbox
@@ -124,9 +124,9 @@ const sandboxFromSnapshot = await Sandbox.create({
 const existing = await Sandbox.get({ name: 'my-sandbox' });
 ```
 
-**Python**
+**main.py**
 
-```python
+```py filename="main.py"
 from vercel import sandbox
 from vercel.sandbox import SnapshotSource
 
@@ -145,9 +145,9 @@ existing = await sandbox.get_sandbox(name="my-sandbox")
 
 Once created, you can run commands inside the sandbox. Commands can run in blocking mode (wait for completion) or detached mode (return immediately).
 
-**CLI**
+**terminal.sh**
 
-```bash
+```bash filename="terminal.sh"
 # Run a command in an existing sandbox (by name)
 sandbox exec my-sandbox -- npm install
 
@@ -158,9 +158,9 @@ sandbox exec --interactive --tty my-sandbox -- bash
 sandbox exec --env DEBUG=true my-sandbox -- npm test
 ```
 
-**TypeScript**
+**index.ts**
 
-```ts
+```ts filename="index.ts"
 // Blocking: waits for the command to finish
 const result = await sandbox.runCommand('npm', ['install']);
 console.log(result.exitCode);
@@ -178,9 +178,9 @@ for await (const log of cmd.logs()) {
 }
 ```
 
-**Python**
+**main.py**
 
-```python
+```py filename="main.py"
 # Wait for a process and capture its output.
 result = await box.run_process(
     "npm",
@@ -205,21 +205,21 @@ Sandboxes automatically stop after a timeout. The default timeout is 5 minutes, 
 
 Alternatively, you can stop them manually. `stop()` resolves once the VM is fully stopped, and returns the final session state. For persistent sandboxes, the resolved value also includes metadata for the snapshot captured during shutdown.
 
-**CLI**
+**terminal.sh**
 
-```bash
+```bash filename="terminal.sh"
 sandbox stop my-sandbox
 ```
 
-**TypeScript**
+**index.ts**
 
-```ts
+```ts filename="index.ts"
 await sandbox.stop();
 ```
 
-**Python**
+**main.py**
 
-```python
+```py filename="main.py"
 await box.stop()
 ```
 
@@ -291,6 +291,8 @@ Sandboxes can make outbound HTTP requests by default, so you can install package
 
 Internet access from the sandbox can be restricted through network policies defined by the users, as part of the [sandbox firewall](/docs/sandbox/concepts/firewall).
 
+To send a sandbox's public-internet traffic through a Secure Compute network's static IPs, and to reach your own AWS VPC over VPC peering, see [Using Secure Compute with Sandbox](/docs/sandbox/concepts/secure-compute).
+
 #### Proxy CA certificates
 
 Vercel Sandbox mounts a unique, per-sandbox certificate authority (CA) certificate for the sandbox proxy in these locations:
@@ -342,6 +344,7 @@ Sandboxes run on Vercel's secure infrastructure, which maintains SOC 2 Type II c
 - [Tags](/docs/sandbox/concepts/tags): Categorize sandboxes by environment, team, or any other criteria using key-value tags.
 - [Drives (Beta)](/docs/sandbox/concepts/drives): Attach persistent filesystem storage to sandboxes and reuse data across sandbox runs.
 - [Regions](/docs/sandbox/concepts/regions): Choose where your sandboxes run and configure failover regions.
+- [Secure Compute](/docs/sandbox/concepts/secure-compute): Send a sandbox's public-internet traffic through a network's static IPs, and reach your own VPC over VPC peering.
 - [Quickstart](/docs/sandbox/quickstart): Run your first sandbox.
 - [Working with Sandbox](/docs/sandbox/working-with-sandbox): Task-oriented guides for common operations.
 - [Authentication](/docs/sandbox/concepts/authentication): Configure SDK authentication.

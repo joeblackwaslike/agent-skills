@@ -3,7 +3,7 @@ title: AI Gateway Custom Reporting API
 product: vercel
 url: /docs/ai-gateway/observability-and-spend/custom-reporting
 canonical_url: "https://vercel.com/docs/ai-gateway/observability-and-spend/custom-reporting"
-last_updated: 2026-09-11
+last_updated: 2026-09-23
 type: reference
 prerequisites:
   - /docs/ai-gateway/observability-and-spend
@@ -16,8 +16,8 @@ related:
 summary: Query AI Gateway usage data grouped by model, user, tag, provider, or credential type using the Custom Reporting API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/custom-reporting.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "a12bd334ce625717cc0d434f0178e8f1673b08b84a5bbc95d3d8a74709c1268a"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "a713acaaf3b21f86135f301970f489ecd5027e1da6021718526f3c9a7bfcf8da"
 ---
 
 # AI Gateway Custom Reporting API
@@ -35,11 +35,11 @@ The Custom Reporting API gives you detailed visibility into your AI Gateway usag
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [Custom reporting now available on AI Gateway](https://vercel.com/changelog/custom-reporting-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=related)
 - [Unified reporting for all AI Gateway usage](https://vercel.com/blog/unified-reporting-for-your-ai-spend?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=related)
-- [Get Usage Report](https://v0.app/docs/api/v1/reference/reports/get-usage?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=related) — Retrieves detailed usage events for the authenticated user or team, including costs, event types, models used, and metad
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=related) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 - [Monitoring Reference](https://vercel.com/docs/query/monitoring/monitoring-reference?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=related) — This reference covers the clauses, fields, and variables used to create a Monitoring query.
 - [AI Gateway Request Logs](https://vercel.com/docs/ai-gateway/observability-and-spend/logs?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=related) — Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the resu
-- [Aggregates custom events](https://vercel.com/docs/rest-api/web-analytics/aggregates-custom-events?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=related) — GET /v1/query/web-analytics/events/aggregate — Counts custom events on a project, within the requested date range. Resul
+- [Aggregates page views](https://vercel.com/docs/rest-api/web-analytics/aggregates-page-views?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=related) — GET /v1/query/web-analytics/visits/aggregate — Counts pageviews on a project, within the requested date range. Results a
+- [Tools](https://vercel.com/docs/agent-resources/vercel-mcp/tools?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=related) — Available tools in Vercel MCP for searching docs, managing teams, projects, deployments, Web Analytics, runtime logs and
 
 Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend/custom-reporting.graph.md](/docs/ai-gateway/observability-and-spend/custom-reporting.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fcustom-reporting&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

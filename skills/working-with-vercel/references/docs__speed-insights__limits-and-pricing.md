@@ -3,7 +3,7 @@ title: Limits and Pricing for Speed Insights
 product: vercel
 url: /docs/speed-insights/limits-and-pricing
 canonical_url: "https://vercel.com/docs/speed-insights/limits-and-pricing"
-last_updated: 2026-09-01
+last_updated: 2026-09-23
 type: reference
 prerequisites:
   - /docs/speed-insights
@@ -16,8 +16,8 @@ related:
 summary: Learn about our limits and pricing when using Vercel Speed Insights. Different limitations are applied depending on your plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/limits-and-pricing.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "936fd94594693cb5c1319663c89097a26f60274d42df92adba1798ae7252cf86"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "c73bcc602a41f417f2cb1a9220816a3e2a378f95be04a2eb4b6f72cf91edfc13"
 ---
 
 # Limits and Pricing for Speed Insights
@@ -34,24 +34,27 @@ Speed Insights has two tiers:
 
 - [Improve Cumulative Layout Shift \\(CLS\\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel?from=related&source_path=%2Fdocs%2Fspeed-insights%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
 - [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent?from=related&source_path=%2Fdocs%2Fspeed-insights%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
+- [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Fspeed-insights%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
 - [Speed Insights now has a free tier](https://vercel.com/changelog/speed-insights-free-tier?from=related&source_path=%2Fdocs%2Fspeed-insights%2Flimits-and-pricing&source_site=vercel-docs&relationship=related)
 - [Using Speed Insights](https://vercel.com/docs/speed-insights/using-speed-insights?from=related&source_path=%2Fdocs%2Fspeed-insights%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn how to use Speed Insights to analyze your application's performance data.
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fspeed-insights%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
-- [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fspeed-insights%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Observability Plus](https://vercel.com/docs/observability/observability-plus?from=related&source_path=%2Fdocs%2Fspeed-insights%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn about using Observability Plus and its limits.
 - [Pricing for Web Analytics](https://vercel.com/docs/analytics/limits-and-pricing?from=related&source_path=%2Fdocs%2Fspeed-insights%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn about pricing for Vercel Web Analytics.
+- [Observability Plus](https://vercel.com/docs/observability/observability-plus?from=related&source_path=%2Fdocs%2Fspeed-insights%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn about using Observability Plus and its limits.
+- [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fspeed-insights%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 
 Full cross-link map for this page: [/docs/speed-insights/limits-and-pricing.graph.md](/docs/speed-insights/limits-and-pricing.graph.md?from=related&source_path=%2Fdocs%2Fspeed-insights%2Flimits-and-pricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-- **Speed Insights** is available on every plan. Add the `@vercel/speed-insights` package to start reporting events and view essential performance insights.
-- **Speed Insights Plus** unlocks all Core Web Vitals, breakdowns, and [Drains](/docs/drains). Upgrade each project individually.
+- Speed Insights is free on Hobby, Pro, and Enterprise. Add the `@vercel/speed-insights` package to start collecting events.
+- Speed Insights Plus is available for projects on Pro and Enterprise. It adds all Core Web Vitals, detailed breakdowns, and [Drains](/docs/drains).
+
+Events from the free tier have no usage charges and do not count toward Plus usage. Speed Insights Plus has no included event allowance on Pro.
 
 |                 | Speed Insights                                                                                                                       | Speed Insights Plus                                                                                                   |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------- |
 | Price           | Free on all plans                                                                                                                   | $10.00 per project, per month on Pro. Included on Enterprise. Plus on-demand events |
-| Included events | 10,000 events over the last 30 days, shared across the team                                                                                                  | 10,000 events over the last 30 days, shared across the team                                                                           |
-| Additional events | Not available                                                                                                                   | $0.65 per 10,000 events                                                                                                       |
+| Included events | 10,000 events over the last 30 days, shared across the team                                                                                                  | None on Pro. Enterprise terms follow your contract. |
+| Event usage | Free within the included limit                                                                                                                   | $0.65 per 10,000 events on Pro. Enterprise pricing follows your contract. |
 | Metrics         | [Real Experience Score (RES)](/docs/speed-insights/metrics#real-experience-score-res) only | Insights to all Core Web Vitals (FCP, LCP, INP, CLS, TTFB)                                                      |
 | Breakdowns      | Path and route counts with Great and Needs Improvement entries only                                                   | All breakdowns, including Poor entries, countries, and element selectors                                                                                                        |
 | Date ranges     | 24 hours and 7 days                                                                                                   | 24 hours and 7 days, including 30 days on Pro and 90 days on Enterprise                                                    |
@@ -59,8 +62,9 @@ Full cross-link map for this page: [/docs/speed-insights/limits-and-pricing.grap
 
 ## Pricing
 
-Speed Insights is available for free on all plans.
-Speed Insights Plus is available on the Pro and Enterprise plans.
+The free tier has no project fee or event charges on any plan.
+On Pro, all events collected by Speed Insights Plus projects count toward paid usage.
+On Pro, Plus also has a per-project monthly fee. Enterprise pricing follows your contract.
 
 The following table outlines the price for events on each version of Speed Insights:
 
@@ -74,9 +78,13 @@ Pro teams can [set up Spend Management](/docs/spend-management#managing-your-spe
 ## Limitations
 
 Projects that are only on Speed Insights share a free allocation of 10,000 events over the last 30 days.
-If your team goes beyond this allocation, Vercel pauses the ingestion for those projects for the next 14 days.
+This is a rolling window, not a calendar-month or billing-cycle reset.
 
-Ingestion is not paused for projects on Speed Insights Plus.
+When your team reaches the free tier limit, Vercel pauses collection for those projects for at least 14 days.
+The pause continues while usage over the last 30 days remains above half of the free allocation.
+Your sites keep running, and you do not incur event overage charges for the free tier.
+
+Speed Insights Plus projects do not count toward the free tier limit. Reaching that limit does not pause collection for Plus projects.
 
 If your team is on the Hobby plan, you have to upgrade to Pro to use Speed Insights Plus.
 

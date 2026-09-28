@@ -1,12 +1,12 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/stream-text-with-image-prompt.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "b4e5b936b5e2b3a61b1dbc5ad76e1c82e72c7fd1772520ac04c4e6df655e6016"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "ae97285a4548c6b32c5937bc8f8bdd361e432ba80fb006d5a1398f54461c96fd"
 ---
 
 # Stream Text with Image Prompt
 
-Vision models such as GPT-4o can process both text and images. In this example, we will show you how to send an image URL along with the user's message to the model with `useChat`.
+Vision models such as GPT-6 Astra can process both text and images. In this example, we will show you how to send an image URL along with the user's message to the model with `useChat`.
 
 ## Using Image URLs
 
@@ -29,7 +29,7 @@ export async function POST(req: Request) {
 
   // Call the language model
   const result = streamText({
-    model: 'openai/gpt-4.1',
+    model: 'openai/gpt-6-astra',
     messages: await convertToModelMessages(messages),
   });
 

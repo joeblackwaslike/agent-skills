@@ -3,7 +3,7 @@ title: get-integration-resource
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/get-integration-resource
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/get-integration-resource"
-last_updated: 2026-09-21
+last_updated: 2026-09-28
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about get-integration-resource on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/get-integration-resource.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "d07240cdf3d13480f52474a7cc5a1006dd6f571d052d1441bfe0814f9b9162b1"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "d1ee8ba9948cb3910ebbda2553ea698a8ea54e5433e9b7f7ec895d5a84d8051a"
 ---
 
 # Get Integration Resource
@@ -47,6 +47,23 @@ Success
 ```json
 {
   "billingPlanId": "string" // The ID of the billing plan the resource is subscribed to, if applicable,
+  "customClaims": {
+    "claimRules": [
+      "claims": "object" // required,
+      "when": {
+        "environment": [
+"string"
+        ],
+        "role": [
+"string"
+        ]
+      }
+    ],
+    "defaultRole": "string",
+    "roles": [
+"string"
+    ]
+  },
   "id": "string" // required // The ID provided by the 3rd party provider for the given resource,
   "internalId": "string" // required // The ID assigned by Vercel for the given resource,
   "metadata": "object" // The configured metadata for the resource as defined by its product's Metadata Schema,

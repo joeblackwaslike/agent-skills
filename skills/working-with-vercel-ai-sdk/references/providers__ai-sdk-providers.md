@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "2a5889565dc5c35f8d3ee71571f001b4ce4756a6540ef0b99de5468eccba98e1"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "cfae0607b496682dec815d933e35b9d3976daa64a98fafafd9328212cbf6b800"
 ---
 
 # AI SDK Providers
@@ -27,6 +27,8 @@ Not all providers support all AI SDK features. Here's a quick comparison of the 
 | [xAI Grok](/providers/ai-sdk-providers/xai)                | `grok-3`                                            | <Cross />   | <Check />         | <Check />  | <Check />      |
 | [xAI Grok](/providers/ai-sdk-providers/xai)                | `grok-3-mini`                                       | <Cross />   | <Check />         | <Check />  | <Check />      |
 | [OpenAI](/providers/ai-sdk-providers/openai)               | `gpt-6-astra`                                       | <Check />   | <Check />         | <Check />  | <Check />      |
+| [OpenAI](/providers/ai-sdk-providers/openai)               | `gpt-6-luna`                                        | <Check />   | <Check />         | <Check />  | <Check />      |
+| [OpenAI](/providers/ai-sdk-providers/openai)               | `gpt-6-sol`                                         | <Check />   | <Check />         | <Check />  | <Check />      |
 | [OpenAI](/providers/ai-sdk-providers/openai)               | `gpt-5.6`                                           | <Check />   | <Check />         | <Check />  | <Check />      |
 | [OpenAI](/providers/ai-sdk-providers/openai)               | `gpt-5.6-luna`                                      | <Check />   | <Check />         | <Check />  | <Check />      |
 | [OpenAI](/providers/ai-sdk-providers/openai)               | `gpt-5.6-sol`                                       | <Check />   | <Check />         | <Check />  | <Check />      |
@@ -44,6 +46,7 @@ Not all providers support all AI SDK features. Here's a quick comparison of the 
 | [OpenAI](/providers/ai-sdk-providers/openai)               | `gpt-4.1-mini`                                      | <Check />   | <Check />         | <Check />  | <Check />      |
 | [OpenAI](/providers/ai-sdk-providers/openai)               | `gpt-4o`                                            | <Check />   | <Check />         | <Check />  | <Check />      |
 | [OpenAI](/providers/ai-sdk-providers/openai)               | `gpt-4o-mini`                                       | <Check />   | <Check />         | <Check />  | <Check />      |
+| [Anthropic](/providers/ai-sdk-providers/anthropic)         | `claude-opus-5-5`                                   | <Check />   | <Check />         | <Check />  | <Check />      |
 | [Anthropic](/providers/ai-sdk-providers/anthropic)         | `claude-sonnet-5`                                   | <Check />   | <Check />         | <Check />  | <Check />      |
 | [Anthropic](/providers/ai-sdk-providers/anthropic)         | `claude-fable-5-1`                                  | <Check />   | <Check />         | <Check />  | <Check />      |
 | [Anthropic](/providers/ai-sdk-providers/anthropic)         | `claude-fable-5`                                    | <Check />   | <Check />         | <Check />  | <Check />      |
@@ -203,6 +206,7 @@ Not all providers support all AI SDK features. Here's a quick comparison of the 
   - [LM Studio](/providers/openai-compatible-providers/lmstudio)
   - [NVIDIA NIM](/providers/openai-compatible-providers/nim)
   - [ModelRush](/providers/openai-compatible-providers/modelrush)
+  - [Cheaper Inference](/providers/openai-compatible-providers/cheaper-inference)
   - [Clarifai](/providers/openai-compatible-providers/clarifai)
   - [Heroku](/providers/openai-compatible-providers/heroku)
   - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)

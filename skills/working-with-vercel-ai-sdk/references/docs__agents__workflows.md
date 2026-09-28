@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/agents/workflows.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "821b556d82a8291098561bdbf7bfffee0bb902ccd566b8f1404037089d5d0256"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "c3a26a38d71fc458e9793ed15c109c11df4457a1f4dc5567413fe600daa237a6"
 ---
 
 # Workflow Patterns
@@ -130,8 +130,8 @@ async function handleCustomerQuery(query: string) {
   const { text: response } = await generateText({
     model:
       classification.complexity === 'simple'
-        ? 'openai/gpt-4o-mini'
-        : 'openai/o4-mini',
+        ? 'openai/gpt-6-luna'
+        : 'openai/gpt-6-astra',
     instructions: {
       general:
         'You are an expert customer service agent handling general inquiries.',

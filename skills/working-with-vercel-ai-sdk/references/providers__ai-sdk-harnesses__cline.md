@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/cline.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "4c33c7b98184437c573b6632211b544860f3e90173ab237131a02971e850a2f1"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "1d4f2cd4d0a5ef5577c33405dd8d22dce47d8db21586ad76f7b8ad2df5d0d00c"
 ---
 
 # Cline Harness
@@ -37,17 +37,18 @@ import { cline, createCline } from '@ai-sdk/harness-cline';
 ```ts
 import { HarnessAgent } from '@ai-sdk/harness/agent';
 import { cline } from '@ai-sdk/harness-cline';
-import { createVercelSandbox } from '@ai-sdk/sandbox-vercel';
+import { createVercelNetworkSandboxSession } from '@ai-sdk/sandbox-vercel';
 
 const agent = new HarnessAgent({
   harness: cline,
   model: 'anthropic/claude-opus-5',
-  sandbox: createVercelSandbox({
-    runtime: 'node24',
-  }),
 });
 
-const session = await agent.createSession();
+const sandboxSession = await createVercelNetworkSandboxSession({
+  runtime: 'node24',
+  template: await agent.getSandboxTemplate(),
+});
+const session = await agent.createSession({ sandboxSession });
 
 let exitCode = 0;
 try {
@@ -66,6 +67,7 @@ try {
   console.error(err);
 } finally {
   await session.destroy();
+  await sandboxSession.destroy();
   process.exit(exitCode);
 }
 ```
@@ -158,8 +160,9 @@ The Cline runtime runs on the host and does not need sandbox ports, so any
 network sandbox works — including port-less configurations:
 
 ```ts
-const sandbox = createVercelSandbox({
+const sandboxSession = await createVercelNetworkSandboxSession({
   runtime: 'node24',
+  template: await agent.getSandboxTemplate(),
 });
 ```
 
@@ -197,7 +200,7 @@ tool when the task calls for it.
 Conversation state lives in the host-process runtime. On `detach`/`stop` the
 adapter persists the conversation history into the sandbox workspace
 (`.cline-harness/history.json` in the session working directory), so a future
-process can resume the session after the sandbox provider reattaches. Because
+process can resume the session after the caller reattaches the sandbox. Because
 the runtime is host-resident, suspended turns are rerun-continued from the
 persisted history rather than losslessly attached (same trade-off as the
 [Pi adapter](/providers/ai-sdk-harnesses/pi)).

@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/ext/image-generation/imagegen_description.md"
-fetched_at: "2026-09-21T09:39:57.671Z"
-sha256: "faff66103700c6f3251529ce71bc5ad076429e3e5c1b8177bae138a54246d7af"
+fetched_at: "2026-09-28T10:39:25.885Z"
+sha256: "ee89dd3b9df94cc8b42b14e48714c68d11d4cd66113853b42ccf9cbd7858af61"
 ---
 
 The `image_gen.imagegen` tool enables image generation from descriptions and editing of existing images based on specific instructions. Use it when:
@@ -12,6 +12,7 @@ The `image_gen.imagegen` tool enables image generation from descriptions and edi
 Guidelines:
 - imagegen needs a few minutes to finish. In code-mode, use the first-line @exec directive to give the initial call 120 seconds and the same yield for any waits that follow. Once it finishes, return the image with generatedImage(result).
 - Avoid printing the full result or its base64 image data with `text()` or `notify()`; print only small metadata when needed.
+- Set `transparent_background` to true when the request calls for a transparent background, including background removal or a cutout; set it to false otherwise. For edits, preserve existing transparency unless the user asks to change it.
 - Omit both `referenced_image_paths` and `num_last_images_to_include` when generating a brand new image.
 - For edits, use `referenced_image_paths` when every target image has a local file path.
 - If you have not seen a local image yet, use `view_image` to inspect it before editing.

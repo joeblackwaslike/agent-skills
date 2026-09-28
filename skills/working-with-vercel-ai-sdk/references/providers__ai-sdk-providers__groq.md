@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/groq.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "b3bab32c37b19602f4769a552d00526a38fc554f2230987c72567b93126e3856"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "48433d2fdcf068316c242ca2fd8feee042c08d3a23d64eda96762bbf6ccf8d4c"
 ---
 
 # Groq Provider
@@ -60,15 +60,15 @@ You can use the following optional settings to customize the Groq provider insta
 ## Language Models
 
 You can create [Groq models](https://console.groq.com/docs/models) using a provider instance.
-The first argument is the model id, e.g. `gemma2-9b-it`.
+The first argument is the model id, e.g. `llama-3.1-8b-instant`.
 
 ```ts
-const model = groq('gemma2-9b-it');
+const model = groq('llama-3.1-8b-instant');
 ```
 
 ### Reasoning Models
 
-Groq offers several reasoning models such as `qwen-qwq-32b` and `deepseek-r1-distill-llama-70b`.
+Groq offers reasoning models such as `qwen/qwen3.6-27b` and `openai/gpt-oss-120b`.
 You can configure how the reasoning is exposed in the generated text by using the `reasoningFormat` option.
 It supports the options `parsed`, `hidden`, and `raw`.
 
@@ -95,7 +95,7 @@ The following optional provider options are available for Groq language models:
 
 - **reasoningFormat** _'parsed' | 'raw' | 'hidden'_
 
-  Controls how reasoning is exposed in the generated text. Only supported by reasoning models like `qwen-qwq-32b` and `deepseek-r1-distill-*` models.
+  Controls how reasoning is exposed in the generated text. Supported by reasoning models such as `qwen/qwen3.6-27b`; available formats depend on the model.
 
   For a complete list of reasoning models and their capabilities, see [Groq's reasoning models documentation](https://console.groq.com/docs/reasoning).
 
@@ -185,7 +185,7 @@ import { generateText, Output } from 'ai';
 import { z } from 'zod';
 
 const result = await generateText({
-  model: groq('gemma2-9b-it'),
+  model: groq('llama-3.1-8b-instant'),
   providerOptions: {
     groq: {
       structuredOutputs: false,
@@ -223,7 +223,7 @@ import { groq } from '@ai-sdk/groq';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: groq('gemma2-9b-it'),
+  model: groq('llama-3.1-8b-instant'),
   prompt: 'Write a vegetarian lasagna recipe for 4 people.',
 });
 ```
@@ -398,7 +398,7 @@ const result = await generateText({
 
 // ❌ Unsupported - will show warning and ignore tool
 const result = await generateText({
-  model: groq('gemma2-9b-it'),
+  model: groq('llama-3.1-8b-instant'),
   tools: { browser_search: groq.tools.browserSearch({}) },
 });
 // Warning: "Browser search is only supported on models: openai/gpt-oss-20b, openai/gpt-oss-120b"

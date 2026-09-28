@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/getting-started/expo.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "106ec26f76f5057e9a520904707c756489ab5650e9fee9609c9db825106685e3"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "e67dd9e29f04f02f8e8c5f135ce9ee565d322d6858f0d4eaa633bb3806aaa1bc"
 ---
 
 # Expo Quickstart
@@ -126,11 +126,11 @@ You can also explicitly import and use the gateway provider in two other equival
 ```ts
 // Option 1: Import from 'ai' package (included by default)
 import { gateway } from 'ai';
-model: gateway('anthropic/claude-sonnet-4.5');
+model: gateway('anthropic/claude-sonnet-5');
 
 // Option 2: Install and import from '@ai-sdk/gateway' package
 import { gateway } from '@ai-sdk/gateway';
-model: gateway('anthropic/claude-sonnet-4.5');
+model: gateway('anthropic/claude-sonnet-5');
 ```
 
 ### Using other providers
@@ -142,7 +142,7 @@ To use a different provider, install its package and create a provider instance.
 ```ts
 import { openai } from '@ai-sdk/openai';
 
-model: openai('gpt-5.1');
+model: openai('gpt-6-astra');
 ```
 
 #### Updating the global provider

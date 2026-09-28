@@ -3,7 +3,7 @@ title: reference
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference"
-last_updated: 2026-09-21
+last_updated: 2026-09-28
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn about reference on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "ed51957f2439e35da12e579fd9e7982e927c78da3b69e6323d9d682964dfaff2"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "e07d87d7f8e85146041bb6eab0ea226c0fa348e4a353b7d9622d42ee511a8753"
 ---
 
 # Vercel Marketplace REST API
@@ -950,6 +950,7 @@ Content-Type: `application/json`
 - `notification`: object
 - `extras`: object
 - `secrets`: array
+- `customClaims`: object - Custom claims embedded in the resource tokens Vercel mints for this resource.
 
 **Responses:**
 
@@ -989,6 +990,7 @@ Content-Type: `application/json`
 - `notification`
 - `extras`: object
 - `secrets`
+- `customClaims`: object - Custom claims embedded in the resource tokens Vercel mints for this resource.
 
 **Responses:**
 

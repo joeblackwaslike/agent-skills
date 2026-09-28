@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/node/knowledge-base-agent.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "e331f316005244bacdc6977c990e311fbf5d6d14c278c77bbd12566a8e8ef490"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "7d5a4ec3b7ceaff56e7309d5e782f7fe3619b07bd4969463363439212ef2558d"
 ---
 
 In this recipe, you'll learn how to build an AI agent that can interact with a knowledge base using [Upstash Search](https://upstash.com/docs/search). The agent will be able to both retrieve information from the knowledge base and add new resources to it, leveraging AI SDK tools.
@@ -134,7 +134,7 @@ const index = search.index<KnowledgeContent>('knowledge-base');
 
 async function main(prompt: string) {
   const { text } = await generateText({
-    model: 'openai/gpt-4o',
+    model: 'openai/gpt-6-astra',
     prompt,
     stopWhen: isStepCount(5),
     tools: {

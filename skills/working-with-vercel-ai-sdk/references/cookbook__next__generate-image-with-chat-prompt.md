@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/generate-image-with-chat-prompt.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "77d73bb23ecbffb6b860baa75bd3a5cc6a42ade0f2abdb37c5ab0ecb0b689e31"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "e1837e9c717b8b62bdd14fdf905a994a5171a6e3ccee68e6cdf26eac875314fa"
 ---
 
 # Generate Image with Chat Prompt
@@ -55,7 +55,7 @@ export async function POST(request: Request) {
   const { messages }: { messages: UIMessage[] } = await request.json();
 
   const result = streamText({
-    model: 'openai/gpt-4o',
+    model: 'openai/gpt-6-astra',
     messages: await convertToModelMessages(messages),
     stopWhen: isStepCount(5),
     tools,

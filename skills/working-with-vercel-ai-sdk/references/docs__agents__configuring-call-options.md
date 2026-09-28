@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/agents/configuring-call-options.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "c18a4e436a8016366781f72be8e15ed6f0796412da105edc0449b3654a93dfff"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "b97d59baecdc74fa435a894b66cbe0e7f96ee58c49ed49525a2dbae4475a083d"
 ---
 
 # Configuring Call Options
@@ -88,7 +88,9 @@ const agent = new ToolLoopAgent({
   prepareCall: ({ options, ...settings }) => ({
     ...settings,
     model:
-      options.complexity === 'simple' ? 'openai/gpt-4o-mini' : 'openai/o1-mini',
+      options.complexity === 'simple'
+        ? 'openai/gpt-6-luna'
+        : 'openai/gpt-6-astra',
   }),
 });
 
@@ -159,7 +161,7 @@ import { ToolLoopAgent } from 'ai';
 import { z } from 'zod';
 
 const agent = new ToolLoopAgent({
-  model: 'openai/o3',
+  model: 'openai/gpt-6-astra',
   callOptionsSchema: z.object({
     taskDifficulty: z.enum(['low', 'medium', 'high']),
   }),

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic-aws.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "42a8fe0b88d0845c710b9c3998972fd72d4859d3510370e0cefd3dd88bf4187d"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "a51c49aee75e3aed7a4d20b52e029be039268c38a2d1dbbd8fa99c6ad54009a3"
 ---
 
 # Claude Platform on AWS Provider
@@ -113,7 +113,7 @@ You can create models that call the Anthropic Messages API on AWS using the prov
 ```ts
 import { anthropicAws } from '@ai-sdk/anthropic-aws';
 
-const model = anthropicAws('claude-sonnet-4-6');
+const model = anthropicAws('claude-sonnet-5');
 ```
 
 Model IDs are identical to the first-party Anthropic API. See the [Anthropic provider docs](/providers/ai-sdk-providers/anthropic#language-models) for the full list of language model options, prompt caching, computer use, web search, code execution, and Agent Skills. All of these work identically here because Claude Platform on AWS uses Anthropic's runtime directly.
@@ -125,7 +125,7 @@ import { anthropicAws } from '@ai-sdk/anthropic-aws';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: anthropicAws('claude-sonnet-4-6'),
+  model: anthropicAws('claude-sonnet-5'),
   prompt: 'Invent a new holiday and describe its traditions.',
 });
 ```

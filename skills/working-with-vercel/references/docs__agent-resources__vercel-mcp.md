@@ -12,8 +12,8 @@ related:
 summary: Vercel MCP has tools available for searching docs, managing teams, projects, and deployments, and querying Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "470aadc8401195a27943efc8aea74cb105d6e9dd6afb0fa6b0986753ea0848b3"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "8b1d893d80ada4ce6810fa1b7c4f37e8d72f0faadfa4825aea6c83d7793812e1"
 ---
 
 # Use Vercel
@@ -40,7 +40,7 @@ an open standard that lets AI assistants interact with your Vercel projects.
 - [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=related)
 - [How to build an MCP server with Nuxt](https://vercel.com/kb/guide/how-to-build-an-mcp-server-with-nuxt?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=related) — Add an MCP server to your Nuxt app with the Nuxt MCP Toolkit. Create tools, resources, and prompt templates that AI assi
 - [Model Context Protocol (MCP) explained: An FAQ](https://vercel.com/blog/model-context-protocol-mcp-explained?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=related)
-- [Build an MCP Server with Weather tools using Express and Vercel](https://vercel.com/kb/guide/mcp-server-with-weather-tool-express?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=related) — Make your Express weather API accessible to AI assistants through the Model Context Protocol.
+- [MCP Server](https://v0.app/docs/api/v1/adapters/mcp-server?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=related) — The v0 MCP (Model Context Protocol) server allows you to integrate v0's capabilities directly into your IDE, providing s
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp.graph.md](/docs/agent-resources/vercel-mcp.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -96,8 +96,10 @@ The list of supported AI tools that can connect to Vercel MCP to date:
 - [Windsurf](#windsurf)
 - [Gemini Code Assist](#gemini-code-assist)
 - [Gemini CLI](#gemini-cli)
+- [OpenCode](#opencode)
+- [Pi](#pi)
 
-Additional clients will be added over time.
+Additional clients will be added over time. The [Quick Setup](#quick-setup) `add-mcp` command also configures other HTTP MCP clients, including Cline, fx, Grok Build, Kimi Code, Kilo Code, and Zed.
 
 ## Setup
 
@@ -315,6 +317,48 @@ Gemini CLI shares the same configuration as [Gemini Code Assist](#gemini-code-as
 4. When prompted, authenticate with Vercel to grant access
 
 For more details on configuring MCP servers with Gemini tools, see the [Google documentation](https://developers.google.com/gemini-code-assist/docs/use-agentic-chat-pair-programmer#configure-mcp-servers).
+
+### OpenCode
+
+[OpenCode](https://opencode.ai) is a terminal coding agent. Use `add-mcp` or add the snippet below to `opencode.json` or `~/.config/opencode/opencode.json`. For more details, see the [OpenCode MCP documentation](https://opencode.ai/docs/mcp-servers/).
+
+```bash
+npx add-mcp https://mcp.vercel.com -a opencode
+```
+
+```json
+{
+  "mcp": {
+    "vercel": {
+      "type": "remote",
+      "url": "https://mcp.vercel.com"
+    }
+  }
+}
+```
+
+When OpenCode needs to authenticate, it starts the OAuth flow. You can also run `opencode mcp auth vercel`.
+
+### Pi
+
+[Pi](https://pi.dev) connects to MCP servers through [pi-mcp-adapter](https://pi.dev/packages/pi-mcp-adapter). Install the adapter, then add Vercel MCP with `add-mcp` or by merging the snippet below into `~/.pi/agent/mcp.json` (or `.mcp.json` in the project).
+
+```bash
+pi install npm:pi-mcp-adapter
+npx add-mcp https://mcp.vercel.com -a pi
+```
+
+```json
+{
+  "mcpServers": {
+    "vercel": {
+      "url": "https://mcp.vercel.com"
+    }
+  }
+}
+```
+
+Restart Pi, or run `/reload` in a running session, then complete the Vercel sign-in flow when prompted.
 
 > **💡 Note:** Setup steps may vary based on your MCP client version. Always check your
 > client's documentation for the latest instructions.

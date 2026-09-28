@@ -14,8 +14,8 @@ related:
 summary: Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/client-upload.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "86725dfb9a6476e08d368695824b2d803b6aaa6da1498d00f3a7414736c0b210"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "61adbaeaf2d0cf8571bad6ae5628b042bbeb13b198e2aa819852fbd90eb7f523"
 ---
 
 # Client Uploads with Vercel Blob
@@ -76,7 +76,7 @@ Vercel Blob works with any frontend framework. First, install the package:
 
 - ### Create a Blob store
   1. Go to your project's [**Storage** section in the sidebar](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fstores\&title=Go+to+Storage)
-  2. Select **Create Database**, then choose **Blob**
+  2. Select **Create Storage**, then choose **Blob**
   3. Select **Continue**, then set the access to **Private** or **Public**
   4. Use the name "Images" and select **Create a new Blob store**
   5. Select the environments where you would like the read-write token to be included. **Production** and **Preview** are preselected; include **Development** if you plan to work with the store locally. You can also update the prefix of the Environment Variable in Advanced Options

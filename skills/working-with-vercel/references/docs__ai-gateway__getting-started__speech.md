@@ -16,8 +16,8 @@ related:
 summary: Generate speech and transcribe it using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/speech.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "7c7857d46503fc9a38cdcacd168adcf0876fbceada6ab12012ab46644d5be12b"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "83678fcedf52c6df9580b06c73797d6237924ac3c7db6b1ef191e7028fe66b2c"
 ---
 
 # AI Gateway Speech Quickstart: Transcription and TTS
@@ -32,11 +32,10 @@ Generate speech from text through AI Gateway, save the audio, and transcribe it 
 
 - [Fish Audio models now available on Vercel AI Gateway for free](https://vercel.com/changelog/fish-audio-models-now-available-on-ai-gateway-for-free?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related)
 - [Gemini 3.5 Transcribe now available on AI Gateway](https://vercel.com/changelog/gemini-3-5-transcribe-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related)
+- [Gemini 3.8 text-to-speech models now available on AI Gateway](https://vercel.com/changelog/gemini-3-8-text-to-speech-models-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related)
 - [xAI Grok audio models now available on Vercel AI Gateway](https://vercel.com/changelog/xai-grok-audio-models-now-available-on-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related)
 - [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related)
 - [Realtime voice, speech, and transcription now supported on AI Gateway](https://vercel.com/changelog/realtime-voice-speech-and-transcription-now-supported-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related)
-- [AI Gateway Text Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/text?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related) — Generate and stream text responses using AI Gateway.
-- [AI Gateway now supports streaming transcription](https://vercel.com/changelog/ai-gateway-now-supports-streaming-transcription?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related)
 - [Video Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/video?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related) — Generate a video from a text prompt using AI Gateway.
 - [Realtime Voice with AI Gateway](https://vercel.com/docs/ai-gateway/modalities/realtime?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fspeech&source_site=vercel-docs&relationship=related) — Build low-latency, speech-to-speech voice agents with the AI SDK through Vercel AI Gateway.
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-rsc/multistep-interfaces.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "33eac68502bc4534335019c20ff4dd0ca319b7399590d2e02efed5a11734aebb"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "520b9b3008c47d8227ab402f477bf59ec8dbbc2a045424e37695fa3580e108c4"
 ---
 
 # Designing Multistep Interfaces
@@ -83,7 +83,7 @@ export async function submitUserMessage(input: string) {
   'use server';
 
   const ui = await streamUI({
-    model: openai('gpt-4o'),
+    model: openai('gpt-6-astra'),
     instructions: 'you are a flight booking assistant',
     prompt: input,
     text: async ({ content }) => <div>{content}</div>,

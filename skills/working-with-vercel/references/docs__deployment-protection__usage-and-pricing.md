@@ -16,8 +16,8 @@ related:
 summary: Compare Deployment Protection feature availability and pricing across Hobby, Pro, and Enterprise plans.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/usage-and-pricing.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "9b949a6783a71a08dffa6eac39671775fc1fe78e3432f235099ece5cad9a518a"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "bc3eff213858a7eff2c31c29df2002f3a0323487fd2afe58f1a829ff178b3a5f"
 ---
 
 # Usage & Pricing for Deployment Protection
@@ -37,7 +37,7 @@ Most Deployment Protection features are available on all plans at no additional 
 - [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Protect who can see your deployments.
 - [Deployment Protection is now enabled by default for new projects](https://vercel.com/changelog/deployment-protection-is-now-enabled-by-default-for-new-projects?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fusage-and-pricing&source_site=vercel-docs&relationship=related)
 - [Access Control](https://vercel.com/docs/security/access-control?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
-- [Vercel Pro Plan](https://vercel.com/docs/plans/pro-plan?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Learn about the Vercel Pro plan with credit-based billing, free viewer seats, and self-serve enterprise features for pro
+- [Vercel Pro Plan](https://vercel.com/docs/plans/pro-plan?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Learn about the Vercel Pro plan with credit-based billing, one free first-year domain, free viewer seats, and self-serve
 - [Account Plans on Vercel](https://vercel.com/docs/plans?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Learn about the different plans available on Vercel.
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a

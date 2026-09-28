@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "0104204272b71dcaccaa23d4c1be927c158df8ef0743bda571fcce21f75435e7"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "c5584bbc4efffde94367b219283cdecdb30dcfb5ca2ae4d67e83053e3b885cee"
 ---
 
 # Community Providers
@@ -100,6 +100,7 @@ Here are the community providers that implement the Language Model Specification
   - [LM Studio](/providers/openai-compatible-providers/lmstudio)
   - [NVIDIA NIM](/providers/openai-compatible-providers/nim)
   - [ModelRush](/providers/openai-compatible-providers/modelrush)
+  - [Cheaper Inference](/providers/openai-compatible-providers/cheaper-inference)
   - [Clarifai](/providers/openai-compatible-providers/clarifai)
   - [Heroku](/providers/openai-compatible-providers/heroku)
   - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)

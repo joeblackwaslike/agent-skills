@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-rsc/loading-state.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "cd5e70511040cdcd940d220310ebfffb18fc4e60673fa7d809b97c37f2229822"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "471699e5ee505d2d24b61f243d862c1f9dd2ddfcbea3b101351727ddfd008739"
 ---
 
 # Handling Loading State
@@ -215,7 +215,7 @@ import { streamUI } from '@ai-sdk/rsc';
 
 export async function generateResponse(prompt: string) {
   const result = await streamUI({
-    model: openai('gpt-4o'),
+    model: openai('gpt-6-astra'),
     prompt,
     text: async function* ({ content }) {
       yield <div>loading...</div>;

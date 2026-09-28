@@ -17,8 +17,8 @@ related:
 summary: Define network policies on sandboxes, preventing data exfiltration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/firewall.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "a302bdc80ad8243e266821ad87819d0ad0337604d1090d3f306e70b4d188221c"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "448d0e48b6049ae6f900e781098176ecc16629d6d239d89205be7e30761e97a7"
 ---
 
 # Sandbox firewall
@@ -34,15 +34,15 @@ Network firewall allows users to restrict egress traffic from their sandbox. It 
 - [Security Model](https://eve.dev/docs/concepts/security-model?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Ffirewall&source_site=vercel-docs&relationship=related) — eve's trust boundaries, where secrets live, how credentials reach hosts, and what fails closed by default.
 - [Full Sandbox egress firewall now available on Hobby plan](https://vercel.com/changelog/full-sandbox-egress-firewall-now-available-on-hobby-plan?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Ffirewall&source_site=vercel-docs&relationship=related)
 - [How to run a multi-step research agent on Vercel](https://vercel.com/kb/guide/how-to-run-a-multi-step-research-agent-on-vercel?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Ffirewall&source_site=vercel-docs&relationship=related) — An end-to-end architecture for production research agents on Vercel using Sandbox, Workflows, and AI Gateway with isolat
+- [Run a research workspace on Vercel](https://vercel.com/kb/guide/run-research-workspace-vercel?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Ffirewall&source_site=vercel-docs&relationship=related) — Plan a durable research workspace on Vercel's Agentic Infrastructure with Workflows, internal API tools, Vercel Sandbox
 - [A sandbox without a network boundary is only half a sandbox](https://vercel.com/blog/a-sandbox-without-a-network-boundary-is-only-half-a-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Ffirewall&source_site=vercel-docs&relationship=related)
 - [How v0 authenticates to Snowflake without exposing the user's OAuth token](https://vercel.com/blog/how-v0-authenticates-to-snowflake-without-exposing-the-users-oauth-token?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Ffirewall&source_site=vercel-docs&relationship=related)
-- [Vercel Sandbox firewall now supports request proxying and filtering](https://vercel.com/changelog/vercel-sandbox-firewall-now-supports-request-proxying-and-filtering?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Ffirewall&source_site=vercel-docs&relationship=related)
 - [Advanced egress firewall filtering for Vercel Sandbox](https://vercel.com/changelog/advanced-egress-firewall-filtering-for-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Ffirewall&source_site=vercel-docs&relationship=related)
+- [Vercel Sandbox firewall now supports request proxying and filtering](https://vercel.com/changelog/vercel-sandbox-firewall-now-supports-request-proxying-and-filtering?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Ffirewall&source_site=vercel-docs&relationship=related)
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Ffirewall&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 - [Safely inject credentials in HTTP headers with Vercel Sandbox](https://vercel.com/changelog/safely-inject-credentials-in-http-headers-with-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Ffirewall&source_site=vercel-docs&relationship=related)
 - [Protect Sensitive Routes with Vercel WAF: Challenge and Deny Rule Recipes](https://vercel.com/kb/guide/suspicious-traffic-in-specific-countries?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Ffirewall&source_site=vercel-docs&relationship=related) — Use Vercel WAF custom rules to block or challenge unwanted traffic by country, ASN, IP address, user agent, path, or coo
 - [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Ffirewall&source_site=vercel-docs&relationship=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
-- [Update network policy](https://vercel.com/docs/rest-api/sandboxes/update-network-policy?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Ffirewall&source_site=vercel-docs&relationship=related) — POST /v2/sandboxes/sessions/{sessionId}/network-policy — Replaces the network access policy of a running session. Use th
 
 Full cross-link map for this page: [/docs/sandbox/concepts/firewall.graph.md](/docs/sandbox/concepts/firewall.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Ffirewall&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -121,9 +121,9 @@ When this matters for your threat model, prefer allowlisting narrow, single-purp
 
 A `transform` rule can force the HTTP `Host` header to the allowed domain. Because the firewall terminates TLS for domains with transformation rules, the header is rewritten before the request leaves the sandbox, so every request that reaches the destination carries the hostname you allowed regardless of the `Host` header the client sent:
 
-**TypeScript**
+**index.ts**
 
-```ts
+```ts filename="index.ts"
 import { Sandbox } from '@vercel/sandbox';
 
 // Pin the Host header on all requests to the allowed domain.
@@ -138,9 +138,9 @@ const sandbox = await Sandbox.create({
 });
 ```
 
-**Python**
+**main.py**
 
-```python filename="main.py"
+```py filename="main.py"
 import asyncio
 
 from vercel import sandbox
@@ -196,9 +196,9 @@ Each rule can define [matchers](#matchers) on the path, method, query parameters
 
 Brokering relies on the client sending an [SNI (Server Name Indication)](/docs/glossary#sni-server-name-indication). When a policy combines a catch-all (`*`) rule with per-domain transforms, connections without a detectable domain pass through unmodified. Examples are TLS without SNI, or non-TLS protocols such as SSH. Use a restrictive allowlist without a catch-all if you need domain-less traffic to be denied.
 
-**TypeScript**
+**index.ts**
 
-```ts
+```ts filename="index.ts"
 import { Sandbox } from '@vercel/sandbox';
 
 // Sandbox has access to everything, with credential brokering for two specific domains.
@@ -233,9 +233,9 @@ await sandbox.update({
 });
 ```
 
-**Python**
+**main.py**
 
-```python filename="main.py"
+```py filename="main.py"
 import asyncio
 import os
 
@@ -313,9 +313,9 @@ The `forwardURL` receives the original request as-is, with the addition of the f
 
 We recommend using the `defineSandboxProxy` helper from `@vercel/sandbox/proxy` to setup a proxy with automatic OIDC validation and extracted metadata.
 
-**TypeScript**
+**index.ts**
 
-```ts
+```ts filename="index.ts"
 import { Sandbox } from '@vercel/sandbox';
 
 // Sandbox has access to everything, with a proxy forwarding for *.github.com.
@@ -332,9 +332,9 @@ const sandbox = await Sandbox.create({
 });
 ```
 
-**Python**
+**main.py**
 
-```python filename="main.py"
+```py filename="main.py"
 import asyncio
 
 from vercel import sandbox
@@ -409,9 +409,9 @@ Matcher supports exact, prefix, or regex matching:
 - `startsWith`: Match values that start with the given prefix.
 - `regex`: Match values against an RE2 regular expression. Anchor with ^ or $ as needed.
 
-**TypeScript**
+**index.ts**
 
-```ts
+```ts filename="index.ts"
 import { Sandbox } from '@vercel/sandbox';
 
 const sandbox = await Sandbox.create({
@@ -440,9 +440,9 @@ const sandbox = await Sandbox.create({
 });
 ```
 
-**Python**
+**main.py**
 
-```python filename="main.py"
+```py filename="main.py"
 import asyncio
 import os
 
@@ -521,9 +521,9 @@ A unique, per-sandbox CA is added to the system certificates. Standard environme
 
 Policies can be defined on sandboxes on creation, ensuring they will never run without them.
 
-**CLI**
+**terminal.sh**
 
-```bash
+```bash filename="terminal.sh"
 # Sandbox has full Internet and secure-compute access (default).
 sandbox create --network-policy allow-all
 
@@ -534,9 +534,9 @@ sandbox create --network-policy deny-all
 sandbox create --allowed-domain "*.google.com" --allowed-domain ai-gateway.vercel.sh
 ```
 
-**TypeScript**
+**index.ts**
 
-```ts
+```ts filename="index.ts"
 import { Sandbox } from '@vercel/sandbox';
 
 // Sandbox has full Internet and secure-compute access (default).
@@ -557,9 +557,9 @@ const sandbox = await Sandbox.create({
 });
 ```
 
-**Python**
+**main.py**
 
-```python filename="main.py"
+```py filename="main.py"
 import asyncio
 
 from vercel import sandbox
@@ -595,9 +595,9 @@ Policies can be updated on running sandboxes, allowing for incremental restricti
 For instance start by installing needed packages, downloading data, and then run untrusted code on it.
 Without live updates the entire run would have to get Internet access (creating exfiltration risk), or multiple steps and sandboxes would be needed.
 
-**CLI**
+**terminal.sh**
 
-```bash
+```bash filename="terminal.sh"
 sandbox create --network-policy allow-all
 
 # Install packages
@@ -612,9 +612,9 @@ sandbox config network-policy my-sandbox --network-policy deny-all
 sandbox exec my-sandbox -- ./agent
 ```
 
-**TypeScript**
+**index.ts**
 
-```ts
+```ts filename="index.ts"
 import { Sandbox } from '@vercel/sandbox';
 
 // Start with Internet access (default)
@@ -631,9 +631,9 @@ await sandbox.update({ networkPolicy: 'deny-all' });
 await sandbox.runCommand('./agent', []);
 ```
 
-**Python**
+**main.py**
 
-```python filename="main.py"
+```py filename="main.py"
 import asyncio
 
 from vercel import sandbox

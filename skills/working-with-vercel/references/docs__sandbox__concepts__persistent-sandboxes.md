@@ -17,8 +17,8 @@ related:
 summary: Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot management.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/persistent-sandboxes.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "42ba1422f22a6e353f5a0bf76b3de3ea4c8a729a313d50b9c44c072b82cbd59e"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "4b210b5d6c8f5a1d4f1118453dc6c5d03d9b6c944ea313404b7b155dc97d0bba"
 ---
 
 # Persistence
@@ -67,15 +67,15 @@ Persistence changes how a sandbox behaves when its current session stops. The ta
 
 To opt out, pass `persistent: false` at creation time, or update the sandbox later with `sandbox.update({ persistent: false })`. From the CLI, pass `--non-persistent` to `sandbox create`. Non-persistent sandboxes discard their filesystem when the session stops and don't accrue [Snapshot Storage](/docs/sandbox/pricing#snapshot-storage) costs.
 
-**TypeScript**
+**index.ts**
 
 ```ts filename="index.ts"
 const sandbox = await Sandbox.create({ persistent: false });
 ```
 
-**Python**
+**main.py**
 
-```python filename="main.py"
+```py filename="main.py"
 import asyncio
 
 from vercel import sandbox
@@ -116,7 +116,7 @@ You can set a default expiration for the automatic snapshots, plus a retention p
 - **`snapshotExpiration`**: Default TTL for any snapshot of this sandbox, measured from the snapshot's last use. The timer resets each time the snapshot is used. Defaults to 30 days (`2,592,000,000` ms). Use `0` (or `"none"` in the CLI) to keep snapshots indefinitely.
 - **`keepLastSnapshots`**: Keep only the N (1–10) most recent snapshots, optionally with a different expiration and an option to delete evicted snapshots immediately.
 
-**TypeScript**
+**index.ts**
 
 ```ts filename="index.ts"
 const sandbox = await Sandbox.create({
@@ -130,9 +130,9 @@ const sandbox = await Sandbox.create({
 });
 ```
 
-**Python**
+**main.py**
 
-```python filename="main.py"
+```py filename="main.py"
 import asyncio
 from datetime import timedelta
 
@@ -181,7 +181,7 @@ Two methods do **not** auto-resume:
 
 Call `Sandbox.create()` with a `name` to create a persistent sandbox. Persistence is on by default, so you only need to set `name`; the snippet below also sets a 7-day snapshot expiration:
 
-**TypeScript**
+**index.ts**
 
 ```ts filename="index.ts"
 import { Sandbox } from '@vercel/sandbox';
@@ -196,9 +196,9 @@ await sandbox.runCommand('npm', ['install']);
 await sandbox.stop(); // Filesystem is snapshotted automatically
 ```
 
-**Python**
+**main.py**
 
-```python filename="main.py"
+```py filename="main.py"
 import asyncio
 from datetime import timedelta
 
@@ -223,7 +223,7 @@ asyncio.run(main())
 
 Creation parameters (such as `keepLastSnapshots` or `snapshotExpiration`) apply only when `getOrCreate` creates the sandbox. If a sandbox with the same `name` already exists, `getOrCreate` returns it with its existing configuration and ignores the creation parameters you pass. To change the configuration of an existing sandbox, use [`sandbox.update`](#update-sandbox-configuration).
 
-**TypeScript**
+**index.ts**
 
 ```ts filename="index.ts"
 const sandbox = await Sandbox.getOrCreate({
@@ -244,9 +244,9 @@ const sandbox = await Sandbox.getOrCreate({
 });
 ```
 
-**Python**
+**main.py**
 
-```python filename="main.py"
+```py filename="main.py"
 import asyncio
 
 from vercel import sandbox
@@ -272,7 +272,7 @@ Behavior:
 
 Use `Sandbox.get({ name })` to retrieve a persistent sandbox by name. The handle is returned immediately; the SDK starts a new session on the next call that needs a running VM:
 
-**TypeScript**
+**index.ts**
 
 ```ts filename="index.ts"
 // Retrieve the sandbox by name. The next SDK call resumes the session.
@@ -282,9 +282,9 @@ const sandbox = await Sandbox.get({ name: 'my-sandbox' });
 await sandbox.runCommand('npm', ['run', 'dev']);
 ```
 
-**Python**
+**main.py**
 
-```python filename="main.py"
+```py filename="main.py"
 import asyncio
 
 from vercel import sandbox
@@ -304,7 +304,7 @@ Pass `resume: false` to skip auto-resume. The sandbox resumes on the next SDK ca
 
 `sandbox.update` replaces individual update helpers and accepts any of the mutable parameters at once. When `ports` is provided, it is treated as the **full** desired port list; any currently exposed port not present in the array is deregistered.
 
-**TypeScript**
+**index.ts**
 
 ```ts filename="index.ts"
 await sandbox.update({
@@ -320,9 +320,9 @@ await sandbox.update({
 });
 ```
 
-**Python**
+**main.py**
 
-```python filename="main.py"
+```py filename="main.py"
 import asyncio
 from datetime import timedelta
 
@@ -352,15 +352,15 @@ asyncio.run(main())
 
 Deleting a sandbox permanently removes the sandbox and all of its sessions. Its [snapshots](/docs/sandbox/concepts/snapshots) survive the deletion, because several sandboxes can start from the same snapshot. They stay available until they expire or you delete them, and they keep incurring [storage charges](/docs/sandbox/pricing#snapshot-storage) in the meantime.
 
-**TypeScript**
+**index.ts**
 
 ```ts filename="index.ts"
 await sandbox.delete();
 ```
 
-**Python**
+**main.py**
 
-```python filename="main.py"
+```py filename="main.py"
 import asyncio
 
 from vercel import sandbox
@@ -378,7 +378,7 @@ asyncio.run(main())
 
 `Sandbox.list` supports cursor-based pagination and returns an async-iterable that auto-paginates through every page.
 
-**TypeScript**
+**index.ts**
 
 ```ts filename="index.ts"
 const result = await Sandbox.list({
@@ -402,9 +402,9 @@ for await (const page of result.pages()) {
 const all = await result.toArray();
 ```
 
-**Python**
+**main.py**
 
-```python filename="main.py"
+```py filename="main.py"
 import asyncio
 
 from vercel import sandbox

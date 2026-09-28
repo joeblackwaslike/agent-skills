@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/maxim.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "ab7773513426b506fe7a85e0943acc75938ab7d9bd395c5635fa39cfa7c96fe2"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "3a8bf6906b5aa992a92b9d833aff7d1136fd22b861b46c071ca06a5b7d41c35a"
 ---
 
 # Maxim Observability
@@ -69,7 +69,7 @@ async function initializeMaxim() {
 import { openai } from '@ai-sdk/openai';
 import { wrapMaximAISDKModel } from '@maximai/maxim-js/vercel-ai-sdk';
 
-const model = wrapMaximAISDKModel(openai('gpt-5'), logger);
+const model = wrapMaximAISDKModel(openai('gpt-6-astra'), logger);
 ```
 
 ## Make LLM calls using wrapped models
@@ -187,7 +187,7 @@ import { streamText } from 'ai';
 import { openai } from '@ai-sdk/openai';
 import { wrapMaximAISDKModel, MaximVercelProviderMetadata } from '@maximai/maxim-js/vercel-ai-sdk';
 
-const model = wrapMaximAISDKModel(openai('gpt-5'), logger);
+const model = wrapMaximAISDKModel(openai('gpt-6-astra'), logger);
 
 const { textStream } = await streamText({
   model: model,
@@ -218,9 +218,9 @@ import { google } from '@ai-sdk/google';
 import { wrapMaximAISDKModel } from '@maximai/maxim-js/vercel-ai-sdk';
 
 // Wrap different provider models
-const openaiModel = wrapMaximAISDKModel(openai('gpt-5'), logger);
+const openaiModel = wrapMaximAISDKModel(openai('gpt-6-astra'), logger);
 const anthropicModel = wrapMaximAISDKModel(
-  anthropic('claude-3-5-sonnet-20241022'),
+  anthropic('claude-sonnet-5'),
   logger,
 );
 const googleModel = wrapMaximAISDKModel(google('gemini-pro'), logger);
@@ -246,7 +246,7 @@ import { Maxim } from "@maximai/maxim-js";
 
 const maxim = new Maxim({ apiKey });
 const logger = await maxim.logger({ id: process.env.MAXIM_LOG_REPO_ID });
-const model = wrapMaximAISDKModel(openai('gpt-5'), logger);
+const model = wrapMaximAISDKModel(openai('gpt-6-astra'), logger);
 
 export async function POST(req) {
   const { messages } = await req.json();

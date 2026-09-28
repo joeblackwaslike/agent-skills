@@ -15,8 +15,8 @@ related:
 summary: Query and visualize your Vercel usage, traffic, and more in observability.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "08abadff8281ec7e89519dacd1e886b744063f6a201c46fbe1f8d1142a860163"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "e6f581200b941d175473fcced61579257a88814f6771b755674cdfa5d7687bd3"
 ---
 
 # Query
@@ -37,7 +37,6 @@ You can use Query to get deeper visibility into your application when debugging 
 - [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
 - [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
 - [Query data on external API requests in Vercel Observability](https://vercel.com/changelog/query-data-on-external-api-requests-in-vercel-observability?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related)
-- [Query and visualize workflow data in Vercel Observability](https://vercel.com/changelog/query-and-visualize-workflow-data-in-vercel-observability?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related)
 - [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.

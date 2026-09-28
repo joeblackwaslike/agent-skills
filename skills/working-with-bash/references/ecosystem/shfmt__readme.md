@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/mvdan/sh/master/README.md"
-fetched_at: "2026-09-14T09:36:44.236Z"
-sha256: "ff0d2e0f85a96df3b05606a0d0d9bf2530fcfb91f94a0230725f9462db40cc1d"
+fetched_at: "2026-09-28T10:38:26.295Z"
+sha256: "6909b58ba427ba20d2a6f37051944d66e9d9b662d3065c5e018cf2fde312b012"
 ---
 
 # sh
@@ -24,7 +24,7 @@ expand `$VAR` and `~` in strings, and glob with `**` or match `case`-style patte
 
 To run shell scripts without a system shell, including on Windows,
 see the [interp package](https://pkg.go.dev/mvdan.cc/sh/v3/interp);
-its handlers allow sandboxing what scripts can execute and access.
+its handlers allow configuring what scripts can execute and access.
 
 ### shfmt
 

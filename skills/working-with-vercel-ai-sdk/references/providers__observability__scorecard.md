@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/scorecard.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "7befba9f4374c9a3a43d46e7cb07f668a30016f3126f3e15bb70f232a646e279"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "d127c8139627fd5c2b8ce0d249b0e7cd3741a9e9095b9382727b3e6188d4f16c"
 ---
 
 # Scorecard
@@ -46,7 +46,7 @@ import { generateText } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
 const result = await generateText({
-  model: openai('gpt-4o-mini'),
+  model: openai('gpt-6-luna'),
   prompt: 'Tell me a joke',
 });
 ```

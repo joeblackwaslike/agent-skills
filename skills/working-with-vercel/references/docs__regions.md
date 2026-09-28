@@ -14,8 +14,8 @@ related:
 summary: "View the list of regions supported by Vercel's CDN and learn about our global infrastructure."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/regions.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "0e66665f5c86510b0705df7395b8e1cb0da695323b996ed223ea17ac2cf5e6cd"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "1859fa492641a00fd47626d97e32825d3e88712769140ab14171fb60e18f8f49"
 ---
 
 # Global network and regions
@@ -38,8 +38,8 @@ sha256: "0e66665f5c86510b0705df7395b8e1cb0da695323b996ed223ea17ac2cf5e6cd"
 - [Update regarding Vercel service disruption on October 20, 2025](https://vercel.com/blog/update-regarding-vercel-service-disruption-on-october-20-2025?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related)
 - [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related)
 - [Effortless high availability for dynamic frontends](https://vercel.com/blog/effortless-high-availability-for-dynamic-frontends?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related)
-- [Improved resiliency for Vercel Functions with inter-region failover support](https://vercel.com/changelog/improved-resiliency-for-vercel-functions-with-failover-support?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related)
 - [Regional execution for ultra-low latency rendering at the edge](https://vercel.com/blog/regional-execution-for-ultra-low-latency-rendering-at-the-edge?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related)
+- [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
 
 Full cross-link map for this page: [/docs/regions.graph.md](/docs/regions.graph.md?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -51,7 +51,7 @@ Full cross-link map for this page: [/docs/regions.graph.md](/docs/regions.graph.
 Vercel's CDN is built on a sophisticated global infrastructure designed to optimize performance and reliability:
 
 - **Points of Presence (PoPs)**: We operate over 126 PoPs distributed across the globe. These PoPs serve as the first point of contact for incoming requests, ensuring low-latency access for users worldwide.
-- **Vercel Regions**: Behind these PoPs, we maintain 20 compute-capable regions where your code can run close to your data.
+- **Vercel Regions**: Behind these PoPs, we maintain 19 compute-capable regions where your code can run close to your data.
 - **Private Network**: Traffic flows from PoPs to the nearest region through private, low-latency connections, ensuring fast and efficient data transfer.
 
 This architecture balances the benefits of widespread geographical distribution with the efficiency of concentrated caching and compute resources.
@@ -74,7 +74,6 @@ Our approach to caching is designed to maximize efficiency and performance:
 | cle1 | us-east-2 | Cleveland, USA |
 | cpt1 | af-south-1 | Cape Town, South Africa |
 | dub1 | eu-west-1 | Dublin, Ireland |
-| dxb1 | me-central-1 | Dubai, United Arab Emirates |
 | fra1 | eu-central-1 | Frankfurt, Germany |
 | gru1 | sa-east-1 | São Paulo, Brazil |
 | hkg1 | ap-east-1 | Hong Kong |
@@ -94,7 +93,7 @@ For information on different resource pricing based on region, see the [regional
 
 ### Points of Presence (PoPs)
 
-In addition to our 20 compute-capable regions, Vercel's CDN includes 126 PoPs distributed across the globe. These PoPs serve several crucial functions:
+In addition to our 19 compute-capable regions, Vercel's CDN includes 126 PoPs distributed across the globe. These PoPs serve several crucial functions:
 
 1. TCP termination and routing: PoPs terminate TCP and route requests over a private network to the nearest Vercel region with single-digit millisecond latency.
 2. DDoS protection: They provide a first line of defense against distributed denial-of-service attacks.

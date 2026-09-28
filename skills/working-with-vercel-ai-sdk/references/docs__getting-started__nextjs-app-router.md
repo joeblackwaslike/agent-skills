@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/getting-started/nextjs-app-router.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "f7ecdefe6c9731a9189b7b90f97f95874d1464d6cfb700e01bd7927093be9b81"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "3a2a3f242c346d9df20c61e0cb898b5d07016a3acbc015596ac45b6143b08810"
 ---
 
 # Next.js App Router Quickstart
@@ -123,11 +123,11 @@ You can also explicitly import and use the gateway provider in two other equival
 ```ts
 // Option 1: Import from 'ai' package (included by default)
 import { gateway } from 'ai';
-model: gateway('anthropic/claude-sonnet-4.5');
+model: gateway('anthropic/claude-sonnet-5');
 
 // Option 2: Install and import from '@ai-sdk/gateway' package
 import { gateway } from '@ai-sdk/gateway';
-model: gateway('anthropic/claude-sonnet-4.5');
+model: gateway('anthropic/claude-sonnet-5');
 ```
 
 ### Using other providers
@@ -139,7 +139,7 @@ To use a different provider, install its package and create a provider instance.
 ```ts
 import { openai } from '@ai-sdk/openai';
 
-model: openai('gpt-5.1');
+model: openai('gpt-6-astra');
 ```
 
 #### Updating the global provider

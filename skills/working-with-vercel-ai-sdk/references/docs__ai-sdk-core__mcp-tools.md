@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/mcp-tools.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "1eddbb8c73ec60ca6e1fc517ea5dd53febbc9aeea8c8a46da132083e58aba0cf"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "f7d20a9b701c383a49b1c43cba2f268671030db4aefea568ba05fc822ad674ef"
 ---
 
 # Model Context Protocol (MCP)
@@ -236,6 +236,37 @@ Dynamic client registration requests include an OAuth `application_type`. The
 client infers `native` for loopback, localhost, and custom-scheme redirects,
 and `web` for remote HTTP(S) redirects. You can override this by setting
 `application_type` in the provider's `clientMetadata`.
+
+### Dynamic Client Credential Recovery
+
+To let the SDK replace invalid credentials created through dynamic client
+registration, implement `isClientInformationDynamicallyRegistered` on the
+OAuth client provider. Return `true` only when the current client information
+came from a dynamic registration response. Persist this provenance alongside
+the credentials when the provider is recreated between requests.
+
+```typescript
+const myOAuthClientProvider = {
+  // ...other OAuthClientProvider methods
+
+  async saveClientInformation(clientInformation) {
+    await saveClientRecord({
+      clientInformation,
+      dynamicallyRegistered: true,
+    });
+  },
+
+  async isClientInformationDynamicallyRegistered() {
+    return (await loadClientRecord())?.dynamicallyRegistered === true;
+  },
+};
+```
+
+When this method is omitted or returns `false`, client information is treated
+as pre-registered and is preserved after `invalid_client` and
+`unauthorized_client` errors. The SDK does not infer provenance from fields such
+as `redirect_uris`, because pre-registered clients can contain the same
+metadata as dynamically registered clients.
 
 ### Retrying Transient Tool Failures
 

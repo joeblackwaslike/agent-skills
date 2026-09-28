@@ -1,8 +1,8 @@
 ---
 title: "VS Code API"
 source: "https://code.visualstudio.com/api/references/vscode-api"
-fetched_at: "2026-09-07T08:58:30.097Z"
-sha256: "f56dae860e6bfcbe3576462f5cd459b5e3cb9bcab7aa5bfbd0618b8ba415a8d1"
+fetched_at: "2026-09-28T10:38:19.765Z"
+sha256: "fa88af03702e782401164694d98ce136ec80ed654c32c5afbb661c00f614cd14"
 ---
 
 # VS Code API
@@ -97,7 +97,7 @@ options: [AuthenticationGetSessionOptions](https://code.visualstudio.com/api/ref
 ReturnsDescription
 Thenable<[AuthenticationSession](https://code.visualstudio.com/api/references/vscode-api#AuthenticationSession)>A thenable that resolves to an authentication session
 
-getSession(providerId: string, scopeListOrRequest: readonly string[] | [AuthenticationWwwAuthenticateRequest](https://code.visualstudio.com/api/references/vscode-api#AuthenticationWwwAuthenticateRequest), options?: [AuthenticationGetSessionOptions](https://code.visualstudio.com/api/references/vscode-api#AuthenticationGetSessionOptions)): Thenable<[AuthenticationSession](https://code.visualstudio.com/api/references/vscode-api#AuthenticationSession) | undefined>
+getSession(providerId: string, scopeListOrRequest: readonly string[] | [AuthenticationWwwAuthenticateRequest](https://code.visualstudio.com/api/references/vscode-api#AuthenticationWwwAuthenticateRequest), options?: [AuthenticationGetSessionOptions](https://code.visualstudio.com/api/references/vscode-api#AuthenticationGetSessionOptions)): Thenable<[AuthenticationSession](https://code.visualstudio.com/api/references/vscode-api#AuthenticationSession)>
 
 Get an authentication session matching the desired scopes or request. Rejects if a provider with providerId is not
 registered, or if the user does not consent to sharing authentication information with the extension. If there
@@ -121,7 +121,7 @@ scopeListOrRequest: readonly string[] &#124; [AuthenticationWwwAuthenticateReque
 options?: [AuthenticationGetSessionOptions](https://code.visualstudio.com/api/references/vscode-api#AuthenticationGetSessionOptions)The [AuthenticationGetSessionOptions](https://code.visualstudio.com/api/references/vscode-api#AuthenticationGetSessionOptions) to use
 
 ReturnsDescription
-Thenable<[AuthenticationSession](https://code.visualstudio.com/api/references/vscode-api#AuthenticationSession) &#124; undefined>A thenable that resolves to an authentication session or undefined if a silent flow was used and no session was found
+Thenable<[AuthenticationSession](https://code.visualstudio.com/api/references/vscode-api#AuthenticationSession)>A thenable that resolves to an authentication session or undefined if a silent flow was used and no session was found
 
 registerAuthenticationProvider(id: string, label: string, provider: [AuthenticationProvider](https://code.visualstudio.com/api/references/vscode-api#AuthenticationProvider), options?: [AuthenticationProviderOptions](https://code.visualstudio.com/api/references/vscode-api#AuthenticationProviderOptions)): [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)
 
@@ -717,7 +717,7 @@ installed, uninstalled, enabled or disabled.
 
 #### Functions
 
-getExtension<T>(extensionId: string): [Extension](https://code.visualstudio.com/api/references/vscode-api#Extension<T>)<T> | undefined
+getExtension<T>(extensionId: string): [Extension](https://code.visualstudio.com/api/references/vscode-api#Extension<T>)<T>
 
 Get an extension by its full identifier in the form of: `publisher.name`.
 
@@ -725,7 +725,7 @@ ParameterDescription
 extensionId: stringAn extension identifier.
 
 ReturnsDescription
-[Extension](https://code.visualstudio.com/api/references/vscode-api#Extension<T>)<T> &#124; undefinedAn extension or `undefined`.
+[Extension](https://code.visualstudio.com/api/references/vscode-api#Extension<T>)<T>An extension or `undefined`.
 
 ## l10n
 
@@ -972,7 +972,7 @@ provider: [CallHierarchyProvider](https://code.visualstudio.com/api/references/v
 ReturnsDescription
 [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)A [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable) that unregisters this provider when being disposed.
 
-registerCodeActionsProvider(selector: [DocumentSelector](https://code.visualstudio.com/api/references/vscode-api#DocumentSelector), provider: [CodeActionProvider](https://code.visualstudio.com/api/references/vscode-api#CodeActionProvider<T>)<[CodeAction](https://code.visualstudio.com/api/references/vscode-api#CodeAction)>, metadata?: [CodeActionProviderMetadata](https://code.visualstudio.com/api/references/vscode-api#CodeActionProviderMetadata)): [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)
+registerCodeActionsProvider(selector: [DocumentSelector](https://code.visualstudio.com/api/references/vscode-api#DocumentSelector), provider: [CodeActionProvider](https://code.visualstudio.com/api/references/vscode-api#CodeActionProvider<T>), metadata?: [CodeActionProviderMetadata](https://code.visualstudio.com/api/references/vscode-api#CodeActionProviderMetadata)): [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)
 
 Register a code action provider.
 
@@ -983,14 +983,14 @@ not cause a failure of the whole operation.
 ParameterDescription
 selector: [DocumentSelector](https://code.visualstudio.com/api/references/vscode-api#DocumentSelector)A selector that defines the documents this provider is applicable to.
 
-provider: [CodeActionProvider](https://code.visualstudio.com/api/references/vscode-api#CodeActionProvider<T>)<[CodeAction](https://code.visualstudio.com/api/references/vscode-api#CodeAction)>A code action provider.
+provider: [CodeActionProvider](https://code.visualstudio.com/api/references/vscode-api#CodeActionProvider<T>)A code action provider.
 
 metadata?: [CodeActionProviderMetadata](https://code.visualstudio.com/api/references/vscode-api#CodeActionProviderMetadata)Metadata about the kind of code actions the provider provides.
 
 ReturnsDescription
 [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)A [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable) that unregisters this provider when being disposed.
 
-registerCodeLensProvider(selector: [DocumentSelector](https://code.visualstudio.com/api/references/vscode-api#DocumentSelector), provider: [CodeLensProvider](https://code.visualstudio.com/api/references/vscode-api#CodeLensProvider<T>)<[CodeLens](https://code.visualstudio.com/api/references/vscode-api#CodeLens)>): [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)
+registerCodeLensProvider(selector: [DocumentSelector](https://code.visualstudio.com/api/references/vscode-api#DocumentSelector), provider: [CodeLensProvider](https://code.visualstudio.com/api/references/vscode-api#CodeLensProvider<T>)): [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)
 
 Register a code lens provider.
 
@@ -1001,7 +1001,7 @@ not cause a failure of the whole operation.
 ParameterDescription
 selector: [DocumentSelector](https://code.visualstudio.com/api/references/vscode-api#DocumentSelector)A selector that defines the documents this provider is applicable to.
 
-provider: [CodeLensProvider](https://code.visualstudio.com/api/references/vscode-api#CodeLensProvider<T>)<[CodeLens](https://code.visualstudio.com/api/references/vscode-api#CodeLens)>A code lens provider.
+provider: [CodeLensProvider](https://code.visualstudio.com/api/references/vscode-api#CodeLensProvider<T>)A code lens provider.
 
 ReturnsDescription
 [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)A [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable) that unregisters this provider when being disposed.
@@ -1022,7 +1022,7 @@ provider: [DocumentColorProvider](https://code.visualstudio.com/api/references/v
 ReturnsDescription
 [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)A [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable) that unregisters this provider when being disposed.
 
-registerCompletionItemProvider(selector: [DocumentSelector](https://code.visualstudio.com/api/references/vscode-api#DocumentSelector), provider: [CompletionItemProvider](https://code.visualstudio.com/api/references/vscode-api#CompletionItemProvider<T>)<[CompletionItem](https://code.visualstudio.com/api/references/vscode-api#CompletionItem)>, ...triggerCharacters: string[]): [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)
+registerCompletionItemProvider(selector: [DocumentSelector](https://code.visualstudio.com/api/references/vscode-api#DocumentSelector), provider: [CompletionItemProvider](https://code.visualstudio.com/api/references/vscode-api#CompletionItemProvider<T>), ...triggerCharacters: string[]): [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)
 
 Register a completion provider.
 
@@ -1040,7 +1040,7 @@ a common trigger character is `.` to trigger member completions.
 ParameterDescription
 selector: [DocumentSelector](https://code.visualstudio.com/api/references/vscode-api#DocumentSelector)A selector that defines the documents this provider is applicable to.
 
-provider: [CompletionItemProvider](https://code.visualstudio.com/api/references/vscode-api#CompletionItemProvider<T>)<[CompletionItem](https://code.visualstudio.com/api/references/vscode-api#CompletionItem)>A completion provider.
+provider: [CompletionItemProvider](https://code.visualstudio.com/api/references/vscode-api#CompletionItemProvider<T>)A completion provider.
 
 ...triggerCharacters: string[]Trigger completion when the user types one of the characters.
 
@@ -1079,7 +1079,7 @@ provider: [DefinitionProvider](https://code.visualstudio.com/api/references/vsco
 ReturnsDescription
 [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)A [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable) that unregisters this provider when being disposed.
 
-registerDocumentDropEditProvider(selector: [DocumentSelector](https://code.visualstudio.com/api/references/vscode-api#DocumentSelector), provider: [DocumentDropEditProvider](https://code.visualstudio.com/api/references/vscode-api#DocumentDropEditProvider<T>)<[DocumentDropEdit](https://code.visualstudio.com/api/references/vscode-api#DocumentDropEdit)>, metadata?: [DocumentDropEditProviderMetadata](https://code.visualstudio.com/api/references/vscode-api#DocumentDropEditProviderMetadata)): [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)
+registerDocumentDropEditProvider(selector: [DocumentSelector](https://code.visualstudio.com/api/references/vscode-api#DocumentSelector), provider: [DocumentDropEditProvider](https://code.visualstudio.com/api/references/vscode-api#DocumentDropEditProvider<T>), metadata?: [DocumentDropEditProviderMetadata](https://code.visualstudio.com/api/references/vscode-api#DocumentDropEditProviderMetadata)): [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)
 
 Registers a new [DocumentDropEditProvider](https://code.visualstudio.com/api/references/vscode-api#DocumentDropEditProvider).
 
@@ -1094,7 +1094,7 @@ are any additional edits, these will be shown to the user as selectable drop opt
 ParameterDescription
 selector: [DocumentSelector](https://code.visualstudio.com/api/references/vscode-api#DocumentSelector)A selector that defines the documents this provider applies to.
 
-provider: [DocumentDropEditProvider](https://code.visualstudio.com/api/references/vscode-api#DocumentDropEditProvider<T>)<[DocumentDropEdit](https://code.visualstudio.com/api/references/vscode-api#DocumentDropEdit)>A drop provider.
+provider: [DocumentDropEditProvider](https://code.visualstudio.com/api/references/vscode-api#DocumentDropEditProvider<T>)A drop provider.
 
 metadata?: [DocumentDropEditProviderMetadata](https://code.visualstudio.com/api/references/vscode-api#DocumentDropEditProviderMetadata)Additional metadata about the provider.
 
@@ -1133,7 +1133,7 @@ provider: [DocumentHighlightProvider](https://code.visualstudio.com/api/referenc
 ReturnsDescription
 [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)A [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable) that unregisters this provider when being disposed.
 
-registerDocumentLinkProvider(selector: [DocumentSelector](https://code.visualstudio.com/api/references/vscode-api#DocumentSelector), provider: [DocumentLinkProvider](https://code.visualstudio.com/api/references/vscode-api#DocumentLinkProvider<T>)<[DocumentLink](https://code.visualstudio.com/api/references/vscode-api#DocumentLink)>): [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)
+registerDocumentLinkProvider(selector: [DocumentSelector](https://code.visualstudio.com/api/references/vscode-api#DocumentSelector), provider: [DocumentLinkProvider](https://code.visualstudio.com/api/references/vscode-api#DocumentLinkProvider<T>)): [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)
 
 Register a document link provider.
 
@@ -1144,12 +1144,12 @@ not cause a failure of the whole operation.
 ParameterDescription
 selector: [DocumentSelector](https://code.visualstudio.com/api/references/vscode-api#DocumentSelector)A selector that defines the documents this provider is applicable to.
 
-provider: [DocumentLinkProvider](https://code.visualstudio.com/api/references/vscode-api#DocumentLinkProvider<T>)<[DocumentLink](https://code.visualstudio.com/api/references/vscode-api#DocumentLink)>A document link provider.
+provider: [DocumentLinkProvider](https://code.visualstudio.com/api/references/vscode-api#DocumentLinkProvider<T>)A document link provider.
 
 ReturnsDescription
 [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)A [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable) that unregisters this provider when being disposed.
 
-registerDocumentPasteEditProvider(selector: [DocumentSelector](https://code.visualstudio.com/api/references/vscode-api#DocumentSelector), provider: [DocumentPasteEditProvider](https://code.visualstudio.com/api/references/vscode-api#DocumentPasteEditProvider<T>)<[DocumentPasteEdit](https://code.visualstudio.com/api/references/vscode-api#DocumentPasteEdit)>, metadata: [DocumentPasteProviderMetadata](https://code.visualstudio.com/api/references/vscode-api#DocumentPasteProviderMetadata)): [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)
+registerDocumentPasteEditProvider(selector: [DocumentSelector](https://code.visualstudio.com/api/references/vscode-api#DocumentSelector), provider: [DocumentPasteEditProvider](https://code.visualstudio.com/api/references/vscode-api#DocumentPasteEditProvider<T>), metadata: [DocumentPasteProviderMetadata](https://code.visualstudio.com/api/references/vscode-api#DocumentPasteProviderMetadata)): [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)
 
 Registers a new [DocumentPasteEditProvider](https://code.visualstudio.com/api/references/vscode-api#DocumentPasteEditProvider).
 
@@ -1167,7 +1167,7 @@ and the rest of the edits will be shown to the user as selectable paste options 
 ParameterDescription
 selector: [DocumentSelector](https://code.visualstudio.com/api/references/vscode-api#DocumentSelector)A selector that defines the documents this provider applies to.
 
-provider: [DocumentPasteEditProvider](https://code.visualstudio.com/api/references/vscode-api#DocumentPasteEditProvider<T>)<[DocumentPasteEdit](https://code.visualstudio.com/api/references/vscode-api#DocumentPasteEdit)>A paste editor provider.
+provider: [DocumentPasteEditProvider](https://code.visualstudio.com/api/references/vscode-api#DocumentPasteEditProvider<T>)A paste editor provider.
 
 metadata: [DocumentPasteProviderMetadata](https://code.visualstudio.com/api/references/vscode-api#DocumentPasteProviderMetadata)Additional metadata about the provider.
 
@@ -1319,7 +1319,7 @@ provider: [ImplementationProvider](https://code.visualstudio.com/api/references/
 ReturnsDescription
 [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)A [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable) that unregisters this provider when being disposed.
 
-registerInlayHintsProvider(selector: [DocumentSelector](https://code.visualstudio.com/api/references/vscode-api#DocumentSelector), provider: [InlayHintsProvider](https://code.visualstudio.com/api/references/vscode-api#InlayHintsProvider<T>)<[InlayHint](https://code.visualstudio.com/api/references/vscode-api#InlayHint)>): [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)
+registerInlayHintsProvider(selector: [DocumentSelector](https://code.visualstudio.com/api/references/vscode-api#DocumentSelector), provider: [InlayHintsProvider](https://code.visualstudio.com/api/references/vscode-api#InlayHintsProvider<T>)): [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)
 
 Register a inlay hints provider.
 
@@ -1330,7 +1330,7 @@ not cause a failure of the whole operation.
 ParameterDescription
 selector: [DocumentSelector](https://code.visualstudio.com/api/references/vscode-api#DocumentSelector)A selector that defines the documents this provider is applicable to.
 
-provider: [InlayHintsProvider](https://code.visualstudio.com/api/references/vscode-api#InlayHintsProvider<T>)<[InlayHint](https://code.visualstudio.com/api/references/vscode-api#InlayHint)>An inlay hints provider.
+provider: [InlayHintsProvider](https://code.visualstudio.com/api/references/vscode-api#InlayHintsProvider<T>)An inlay hints provider.
 
 ReturnsDescription
 [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)A [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable) that unregisters this provider when being disposed.
@@ -1514,7 +1514,7 @@ provider: [TypeHierarchyProvider](https://code.visualstudio.com/api/references/v
 ReturnsDescription
 [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)A [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable) that unregisters this provider when being disposed.
 
-registerWorkspaceSymbolProvider(provider: [WorkspaceSymbolProvider](https://code.visualstudio.com/api/references/vscode-api#WorkspaceSymbolProvider<T>)<[SymbolInformation](https://code.visualstudio.com/api/references/vscode-api#SymbolInformation)>): [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)
+registerWorkspaceSymbolProvider(provider: [WorkspaceSymbolProvider](https://code.visualstudio.com/api/references/vscode-api#WorkspaceSymbolProvider<T>)): [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)
 
 Register a workspace symbol provider.
 
@@ -1523,7 +1523,7 @@ the results are merged. A failing provider (rejected promise or exception) will 
 a failure of the whole operation.
 
 ParameterDescription
-provider: [WorkspaceSymbolProvider](https://code.visualstudio.com/api/references/vscode-api#WorkspaceSymbolProvider<T>)<[SymbolInformation](https://code.visualstudio.com/api/references/vscode-api#SymbolInformation)>A workspace symbol provider.
+provider: [WorkspaceSymbolProvider](https://code.visualstudio.com/api/references/vscode-api#WorkspaceSymbolProvider<T>)A workspace symbol provider.
 
 ReturnsDescription
 [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)A [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable) that unregisters this provider when being disposed.
@@ -1607,7 +1607,7 @@ token?: [CancellationToken](https://code.visualstudio.com/api/references/vscode-
 ReturnsDescription
 Thenable<[LanguageModelToolResult](https://code.visualstudio.com/api/references/vscode-api#LanguageModelToolResult)>The result of the tool invocation.
 
-registerLanguageModelChatProvider(vendor: string, provider: [LanguageModelChatProvider](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChatProvider<T>)<[LanguageModelChatInformation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChatInformation)>): [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)
+registerLanguageModelChatProvider(vendor: string, provider: [LanguageModelChatProvider](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChatProvider<T>)): [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)
 
 Registers a [LanguageModelChatProvider](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChatProvider)
 Note: You must also define the language model chat provider via the `languageModelChatProviders` contribution point in package.json
@@ -1615,12 +1615,12 @@ Note: You must also define the language model chat provider via the `languageMod
 ParameterDescription
 vendor: stringThe vendor for this provider. Must be globally unique. An example is `copilot` or `openai`.
 
-provider: [LanguageModelChatProvider](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChatProvider<T>)<[LanguageModelChatInformation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChatInformation)>The provider to register
+provider: [LanguageModelChatProvider](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChatProvider<T>)The provider to register
 
 ReturnsDescription
 [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)A disposable that unregisters the provider when disposed
 
-registerMcpServerDefinitionProvider(id: string, provider: [McpServerDefinitionProvider](https://code.visualstudio.com/api/references/vscode-api#McpServerDefinitionProvider<T>)<[McpServerDefinition](https://code.visualstudio.com/api/references/vscode-api#McpServerDefinition)>): [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)
+registerMcpServerDefinitionProvider(id: string, provider: [McpServerDefinitionProvider](https://code.visualstudio.com/api/references/vscode-api#McpServerDefinitionProvider<T>)): [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)
 
 Registers a provider that publishes Model Context Protocol servers for the editor to
 consume. This allows MCP servers to be dynamically provided to the editor in
@@ -1649,7 +1649,7 @@ submitted. To enable this flow, extensions should call
 ParameterDescription
 id: stringThe ID of the provider, which is unique to the extension.
 
-provider: [McpServerDefinitionProvider](https://code.visualstudio.com/api/references/vscode-api#McpServerDefinitionProvider<T>)<[McpServerDefinition](https://code.visualstudio.com/api/references/vscode-api#McpServerDefinition)>The provider to register
+provider: [McpServerDefinitionProvider](https://code.visualstudio.com/api/references/vscode-api#McpServerDefinitionProvider<T>)The provider to register
 
 ReturnsDescription
 [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)A disposable that unregisters the provider when disposed.
@@ -1843,14 +1843,14 @@ filter?: [TaskFilter](https://code.visualstudio.com/api/references/vscode-api#Ta
 ReturnsDescription
 Thenable<[Task](https://code.visualstudio.com/api/references/vscode-api#Task)[]>A thenable that resolves to an array of tasks.
 
-registerTaskProvider(type: string, provider: [TaskProvider](https://code.visualstudio.com/api/references/vscode-api#TaskProvider<T>)<[Task](https://code.visualstudio.com/api/references/vscode-api#Task)>): [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)
+registerTaskProvider(type: string, provider: [TaskProvider](https://code.visualstudio.com/api/references/vscode-api#TaskProvider<T>)): [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)
 
 Register a task provider.
 
 ParameterDescription
 type: stringThe task kind type this provider is registered for.
 
-provider: [TaskProvider](https://code.visualstudio.com/api/references/vscode-api#TaskProvider<T>)<[Task](https://code.visualstudio.com/api/references/vscode-api#Task)>A task provider.
+provider: [TaskProvider](https://code.visualstudio.com/api/references/vscode-api#TaskProvider<T>)A task provider.
 
 ReturnsDescription
 [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)A [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable) that unregisters this provider when being disposed.
@@ -2212,12 +2212,12 @@ provider: [FileDecorationProvider](https://code.visualstudio.com/api/references/
 ReturnsDescription
 [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)A [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable) that unregisters the provider.
 
-registerTerminalLinkProvider(provider: [TerminalLinkProvider](https://code.visualstudio.com/api/references/vscode-api#TerminalLinkProvider<T>)<[TerminalLink](https://code.visualstudio.com/api/references/vscode-api#TerminalLink)>): [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)
+registerTerminalLinkProvider(provider: [TerminalLinkProvider](https://code.visualstudio.com/api/references/vscode-api#TerminalLinkProvider<T>)): [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)
 
 Register provider that enables the detection and handling of links within the terminal.
 
 ParameterDescription
-provider: [TerminalLinkProvider](https://code.visualstudio.com/api/references/vscode-api#TerminalLinkProvider<T>)<[TerminalLink](https://code.visualstudio.com/api/references/vscode-api#TerminalLink)>The provider that provides the terminal links.
+provider: [TerminalLinkProvider](https://code.visualstudio.com/api/references/vscode-api#TerminalLinkProvider<T>)The provider that provides the terminal links.
 
 ReturnsDescription
 [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)Disposable that unregisters the provider.
@@ -2277,7 +2277,7 @@ handler: [UriHandler](https://code.visualstudio.com/api/references/vscode-api#Ur
 ReturnsDescription
 [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)A [disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable) that unregisters the handler.
 
-registerWebviewPanelSerializer(viewType: string, serializer: [WebviewPanelSerializer](https://code.visualstudio.com/api/references/vscode-api#WebviewPanelSerializer<T>)<unknown>): [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)
+registerWebviewPanelSerializer(viewType: string, serializer: [WebviewPanelSerializer](https://code.visualstudio.com/api/references/vscode-api#WebviewPanelSerializer<T>)): [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)
 
 Registers a webview panel serializer.
 
@@ -2289,7 +2289,7 @@ Only a single serializer may be registered at a time for a given `viewType`.
 ParameterDescription
 viewType: stringType of the webview panel that can be serialized.
 
-serializer: [WebviewPanelSerializer](https://code.visualstudio.com/api/references/vscode-api#WebviewPanelSerializer<T>)<unknown>Webview serializer.
+serializer: [WebviewPanelSerializer](https://code.visualstudio.com/api/references/vscode-api#WebviewPanelSerializer<T>)Webview serializer.
 
 ReturnsDescription
 [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)A [disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable) that unregisters the serializer.
@@ -2348,7 +2348,7 @@ text: stringThe message to show, supports icon substitution as in status bar [it
 ReturnsDescription
 [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)A disposable which hides the status bar message.
 
-showErrorMessage<T extends string>(message: string, ...items: T[]): Thenable<T | undefined>
+showErrorMessage<T extends string>(message: string, ...items: T[]): Thenable<T>
 
 Show an error message.
 
@@ -2361,41 +2361,9 @@ message: stringThe message to show.
 ...items: T[]A set of items that will be rendered as actions in the message.
 
 ReturnsDescription
-Thenable<T &#124; undefined>A thenable that resolves to the selected item or `undefined` when being dismissed.
+Thenable<T>A thenable that resolves to the selected item or `undefined` when being dismissed.
 
-showErrorMessage<T extends string>(message: string, options: [MessageOptions](https://code.visualstudio.com/api/references/vscode-api#MessageOptions), ...items: T[]): Thenable<T | undefined>
-
-Show an error message.
-
-_See also_
-[showInformationMessage](https://code.visualstudio.com/api/references/vscode-api#window.showInformationMessage)
-
-ParameterDescription
-message: stringThe message to show.
-
-options: [MessageOptions](https://code.visualstudio.com/api/references/vscode-api#MessageOptions)Configures the behaviour of the message.
-
-...items: T[]A set of items that will be rendered as actions in the message.
-
-ReturnsDescription
-Thenable<T &#124; undefined>A thenable that resolves to the selected item or `undefined` when being dismissed.
-
-showErrorMessage<T extends [MessageItem](https://code.visualstudio.com/api/references/vscode-api#MessageItem)>(message: string, ...items: T[]): Thenable<T | undefined>
-
-Show an error message.
-
-_See also_
-[showInformationMessage](https://code.visualstudio.com/api/references/vscode-api#window.showInformationMessage)
-
-ParameterDescription
-message: stringThe message to show.
-
-...items: T[]A set of items that will be rendered as actions in the message.
-
-ReturnsDescription
-Thenable<T &#124; undefined>A thenable that resolves to the selected item or `undefined` when being dismissed.
-
-showErrorMessage<T extends [MessageItem](https://code.visualstudio.com/api/references/vscode-api#MessageItem)>(message: string, options: [MessageOptions](https://code.visualstudio.com/api/references/vscode-api#MessageOptions), ...items: T[]): Thenable<T | undefined>
+showErrorMessage<T extends string>(message: string, options: [MessageOptions](https://code.visualstudio.com/api/references/vscode-api#MessageOptions), ...items: T[]): Thenable<T>
 
 Show an error message.
 
@@ -2410,9 +2378,41 @@ options: [MessageOptions](https://code.visualstudio.com/api/references/vscode-ap
 ...items: T[]A set of items that will be rendered as actions in the message.
 
 ReturnsDescription
-Thenable<T &#124; undefined>A thenable that resolves to the selected item or `undefined` when being dismissed.
+Thenable<T>A thenable that resolves to the selected item or `undefined` when being dismissed.
 
-showInformationMessage<T extends string>(message: string, ...items: T[]): Thenable<T | undefined>
+showErrorMessage<T extends [MessageItem](https://code.visualstudio.com/api/references/vscode-api#MessageItem)>(message: string, ...items: T[]): Thenable<T>
+
+Show an error message.
+
+_See also_
+[showInformationMessage](https://code.visualstudio.com/api/references/vscode-api#window.showInformationMessage)
+
+ParameterDescription
+message: stringThe message to show.
+
+...items: T[]A set of items that will be rendered as actions in the message.
+
+ReturnsDescription
+Thenable<T>A thenable that resolves to the selected item or `undefined` when being dismissed.
+
+showErrorMessage<T extends [MessageItem](https://code.visualstudio.com/api/references/vscode-api#MessageItem)>(message: string, options: [MessageOptions](https://code.visualstudio.com/api/references/vscode-api#MessageOptions), ...items: T[]): Thenable<T>
+
+Show an error message.
+
+_See also_
+[showInformationMessage](https://code.visualstudio.com/api/references/vscode-api#window.showInformationMessage)
+
+ParameterDescription
+message: stringThe message to show.
+
+options: [MessageOptions](https://code.visualstudio.com/api/references/vscode-api#MessageOptions)Configures the behaviour of the message.
+
+...items: T[]A set of items that will be rendered as actions in the message.
+
+ReturnsDescription
+Thenable<T>A thenable that resolves to the selected item or `undefined` when being dismissed.
+
+showInformationMessage<T extends string>(message: string, ...items: T[]): Thenable<T>
 
 Show an information message to users. Optionally provide an array of items which will be presented as
 clickable buttons.
@@ -2423,9 +2423,9 @@ message: stringThe message to show.
 ...items: T[]A set of items that will be rendered as actions in the message.
 
 ReturnsDescription
-Thenable<T &#124; undefined>A thenable that resolves to the selected item or `undefined` when being dismissed.
+Thenable<T>A thenable that resolves to the selected item or `undefined` when being dismissed.
 
-showInformationMessage<T extends string>(message: string, options: [MessageOptions](https://code.visualstudio.com/api/references/vscode-api#MessageOptions), ...items: T[]): Thenable<T | undefined>
+showInformationMessage<T extends string>(message: string, options: [MessageOptions](https://code.visualstudio.com/api/references/vscode-api#MessageOptions), ...items: T[]): Thenable<T>
 
 Show an information message to users. Optionally provide an array of items which will be presented as
 clickable buttons.
@@ -2438,9 +2438,9 @@ options: [MessageOptions](https://code.visualstudio.com/api/references/vscode-ap
 ...items: T[]A set of items that will be rendered as actions in the message.
 
 ReturnsDescription
-Thenable<T &#124; undefined>A thenable that resolves to the selected item or `undefined` when being dismissed.
+Thenable<T>A thenable that resolves to the selected item or `undefined` when being dismissed.
 
-showInformationMessage<T extends [MessageItem](https://code.visualstudio.com/api/references/vscode-api#MessageItem)>(message: string, ...items: T[]): Thenable<T | undefined>
+showInformationMessage<T extends [MessageItem](https://code.visualstudio.com/api/references/vscode-api#MessageItem)>(message: string, ...items: T[]): Thenable<T>
 
 Show an information message.
 
@@ -2453,9 +2453,9 @@ message: stringThe message to show.
 ...items: T[]A set of items that will be rendered as actions in the message.
 
 ReturnsDescription
-Thenable<T &#124; undefined>A thenable that resolves to the selected item or `undefined` when being dismissed.
+Thenable<T>A thenable that resolves to the selected item or `undefined` when being dismissed.
 
-showInformationMessage<T extends [MessageItem](https://code.visualstudio.com/api/references/vscode-api#MessageItem)>(message: string, options: [MessageOptions](https://code.visualstudio.com/api/references/vscode-api#MessageOptions), ...items: T[]): Thenable<T | undefined>
+showInformationMessage<T extends [MessageItem](https://code.visualstudio.com/api/references/vscode-api#MessageItem)>(message: string, options: [MessageOptions](https://code.visualstudio.com/api/references/vscode-api#MessageOptions), ...items: T[]): Thenable<T>
 
 Show an information message.
 
@@ -2470,9 +2470,9 @@ options: [MessageOptions](https://code.visualstudio.com/api/references/vscode-ap
 ...items: T[]A set of items that will be rendered as actions in the message.
 
 ReturnsDescription
-Thenable<T &#124; undefined>A thenable that resolves to the selected item or `undefined` when being dismissed.
+Thenable<T>A thenable that resolves to the selected item or `undefined` when being dismissed.
 
-showInputBox(options?: [InputBoxOptions](https://code.visualstudio.com/api/references/vscode-api#InputBoxOptions), token?: [CancellationToken](https://code.visualstudio.com/api/references/vscode-api#CancellationToken)): Thenable<string | undefined>
+showInputBox(options?: [InputBoxOptions](https://code.visualstudio.com/api/references/vscode-api#InputBoxOptions), token?: [CancellationToken](https://code.visualstudio.com/api/references/vscode-api#CancellationToken)): Thenable<string>
 
 Opens an input box to ask the user for input.
 
@@ -2486,7 +2486,7 @@ options?: [InputBoxOptions](https://code.visualstudio.com/api/references/vscode-
 token?: [CancellationToken](https://code.visualstudio.com/api/references/vscode-api#CancellationToken)A token that can be used to signal cancellation.
 
 ReturnsDescription
-Thenable<string &#124; undefined>A thenable that resolves to a string the user provided or to `undefined` in case of dismissal.
+Thenable<string>A thenable that resolves to a string the user provided or to `undefined` in case of dismissal.
 
 showNotebookDocument(document: [NotebookDocument](https://code.visualstudio.com/api/references/vscode-api#NotebookDocument), options?: [NotebookDocumentShowOptions](https://code.visualstudio.com/api/references/vscode-api#NotebookDocumentShowOptions)): Thenable<[NotebookEditor](https://code.visualstudio.com/api/references/vscode-api#NotebookEditor)>
 
@@ -2500,7 +2500,7 @@ options?: [NotebookDocumentShowOptions](https://code.visualstudio.com/api/refere
 ReturnsDescription
 Thenable<[NotebookEditor](https://code.visualstudio.com/api/references/vscode-api#NotebookEditor)>A promise that resolves to an [notebook editor](https://code.visualstudio.com/api/references/vscode-api#NotebookEditor).
 
-showOpenDialog(options?: [OpenDialogOptions](https://code.visualstudio.com/api/references/vscode-api#OpenDialogOptions)): Thenable<[Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)[] | undefined>
+showOpenDialog(options?: [OpenDialogOptions](https://code.visualstudio.com/api/references/vscode-api#OpenDialogOptions)): Thenable<[Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)[]>
 
 Shows a file open dialog to the user which allows to select a file
 for opening-purposes.
@@ -2509,9 +2509,9 @@ ParameterDescription
 options?: [OpenDialogOptions](https://code.visualstudio.com/api/references/vscode-api#OpenDialogOptions)Options that control the dialog.
 
 ReturnsDescription
-Thenable<[Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)[] &#124; undefined>A promise that resolves to the selected resources or `undefined`.
+Thenable<[Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)[]>A promise that resolves to the selected resources or `undefined`.
 
-showQuickPick(items: readonly string[] | Thenable<readonly string[]>, options: [QuickPickOptions](https://code.visualstudio.com/api/references/vscode-api#QuickPickOptions) & {canPickMany: true}, token?: [CancellationToken](https://code.visualstudio.com/api/references/vscode-api#CancellationToken)): Thenable<string[] | undefined>
+showQuickPick(items: readonly string[] | Thenable<readonly string[]>, options: [QuickPickOptions](https://code.visualstudio.com/api/references/vscode-api#QuickPickOptions) & {canPickMany: true}, token?: [CancellationToken](https://code.visualstudio.com/api/references/vscode-api#CancellationToken)): Thenable<string[]>
 
 Shows a selection list allowing multiple selections.
 
@@ -2523,9 +2523,9 @@ options: [QuickPickOptions](https://code.visualstudio.com/api/references/vscode-
 token?: [CancellationToken](https://code.visualstudio.com/api/references/vscode-api#CancellationToken)A token that can be used to signal cancellation.
 
 ReturnsDescription
-Thenable<string[] &#124; undefined>A thenable that resolves to the selected items or `undefined`.
+Thenable<string[]>A thenable that resolves to the selected items or `undefined`.
 
-showQuickPick(items: readonly string[] | Thenable<readonly string[]>, options?: [QuickPickOptions](https://code.visualstudio.com/api/references/vscode-api#QuickPickOptions), token?: [CancellationToken](https://code.visualstudio.com/api/references/vscode-api#CancellationToken)): Thenable<string | undefined>
+showQuickPick(items: readonly string[] | Thenable<readonly string[]>, options?: [QuickPickOptions](https://code.visualstudio.com/api/references/vscode-api#QuickPickOptions), token?: [CancellationToken](https://code.visualstudio.com/api/references/vscode-api#CancellationToken)): Thenable<string>
 
 Shows a selection list.
 
@@ -2537,9 +2537,9 @@ options?: [QuickPickOptions](https://code.visualstudio.com/api/references/vscode
 token?: [CancellationToken](https://code.visualstudio.com/api/references/vscode-api#CancellationToken)A token that can be used to signal cancellation.
 
 ReturnsDescription
-Thenable<string &#124; undefined>A thenable that resolves to the selected string or `undefined`.
+Thenable<string>A thenable that resolves to the selected string or `undefined`.
 
-showQuickPick<T extends [QuickPickItem](https://code.visualstudio.com/api/references/vscode-api#QuickPickItem)>(items: readonly T[] | Thenable<readonly T[]>, options: [QuickPickOptions](https://code.visualstudio.com/api/references/vscode-api#QuickPickOptions) & {canPickMany: true}, token?: [CancellationToken](https://code.visualstudio.com/api/references/vscode-api#CancellationToken)): Thenable<T[] | undefined>
+showQuickPick<T extends [QuickPickItem](https://code.visualstudio.com/api/references/vscode-api#QuickPickItem)>(items: readonly T[] | Thenable<readonly T[]>, options: [QuickPickOptions](https://code.visualstudio.com/api/references/vscode-api#QuickPickOptions) & {canPickMany: true}, token?: [CancellationToken](https://code.visualstudio.com/api/references/vscode-api#CancellationToken)): Thenable<T[]>
 
 Shows a selection list allowing multiple selections.
 
@@ -2551,9 +2551,9 @@ options: [QuickPickOptions](https://code.visualstudio.com/api/references/vscode-
 token?: [CancellationToken](https://code.visualstudio.com/api/references/vscode-api#CancellationToken)A token that can be used to signal cancellation.
 
 ReturnsDescription
-Thenable<T[] &#124; undefined>A thenable that resolves to the selected items or `undefined`.
+Thenable<T[]>A thenable that resolves to the selected items or `undefined`.
 
-showQuickPick<T extends [QuickPickItem](https://code.visualstudio.com/api/references/vscode-api#QuickPickItem)>(items: readonly T[] | Thenable<readonly T[]>, options?: [QuickPickOptions](https://code.visualstudio.com/api/references/vscode-api#QuickPickOptions), token?: [CancellationToken](https://code.visualstudio.com/api/references/vscode-api#CancellationToken)): Thenable<T | undefined>
+showQuickPick<T extends [QuickPickItem](https://code.visualstudio.com/api/references/vscode-api#QuickPickItem)>(items: readonly T[] | Thenable<readonly T[]>, options?: [QuickPickOptions](https://code.visualstudio.com/api/references/vscode-api#QuickPickOptions), token?: [CancellationToken](https://code.visualstudio.com/api/references/vscode-api#CancellationToken)): Thenable<T>
 
 Shows a selection list.
 
@@ -2565,9 +2565,9 @@ options?: [QuickPickOptions](https://code.visualstudio.com/api/references/vscode
 token?: [CancellationToken](https://code.visualstudio.com/api/references/vscode-api#CancellationToken)A token that can be used to signal cancellation.
 
 ReturnsDescription
-Thenable<T &#124; undefined>A thenable that resolves to the selected item or `undefined`.
+Thenable<T>A thenable that resolves to the selected item or `undefined`.
 
-showSaveDialog(options?: [SaveDialogOptions](https://code.visualstudio.com/api/references/vscode-api#SaveDialogOptions)): Thenable<[Uri](https://code.visualstudio.com/api/references/vscode-api#Uri) | undefined>
+showSaveDialog(options?: [SaveDialogOptions](https://code.visualstudio.com/api/references/vscode-api#SaveDialogOptions)): Thenable<[Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)>
 
 Shows a file save dialog to the user which allows to select a file
 for saving-purposes.
@@ -2576,7 +2576,7 @@ ParameterDescription
 options?: [SaveDialogOptions](https://code.visualstudio.com/api/references/vscode-api#SaveDialogOptions)Options that control the dialog.
 
 ReturnsDescription
-Thenable<[Uri](https://code.visualstudio.com/api/references/vscode-api#Uri) &#124; undefined>A promise that resolves to the selected resource or `undefined`.
+Thenable<[Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)>A promise that resolves to the selected resource or `undefined`.
 
 showTextDocument(document: [TextDocument](https://code.visualstudio.com/api/references/vscode-api#TextDocument), column?: [ViewColumn](https://code.visualstudio.com/api/references/vscode-api#ViewColumn), preserveFocus?: boolean): Thenable<[TextEditor](https://code.visualstudio.com/api/references/vscode-api#TextEditor)>
 
@@ -2623,7 +2623,7 @@ options?: [TextDocumentShowOptions](https://code.visualstudio.com/api/references
 ReturnsDescription
 Thenable<[TextEditor](https://code.visualstudio.com/api/references/vscode-api#TextEditor)>A promise that resolves to an [editor](https://code.visualstudio.com/api/references/vscode-api#TextEditor).
 
-showWarningMessage<T extends string>(message: string, ...items: T[]): Thenable<T | undefined>
+showWarningMessage<T extends string>(message: string, ...items: T[]): Thenable<T>
 
 Show a warning message.
 
@@ -2636,41 +2636,9 @@ message: stringThe message to show.
 ...items: T[]A set of items that will be rendered as actions in the message.
 
 ReturnsDescription
-Thenable<T &#124; undefined>A thenable that resolves to the selected item or `undefined` when being dismissed.
+Thenable<T>A thenable that resolves to the selected item or `undefined` when being dismissed.
 
-showWarningMessage<T extends string>(message: string, options: [MessageOptions](https://code.visualstudio.com/api/references/vscode-api#MessageOptions), ...items: T[]): Thenable<T | undefined>
-
-Show a warning message.
-
-_See also_
-[showInformationMessage](https://code.visualstudio.com/api/references/vscode-api#window.showInformationMessage)
-
-ParameterDescription
-message: stringThe message to show.
-
-options: [MessageOptions](https://code.visualstudio.com/api/references/vscode-api#MessageOptions)Configures the behaviour of the message.
-
-...items: T[]A set of items that will be rendered as actions in the message.
-
-ReturnsDescription
-Thenable<T &#124; undefined>A thenable that resolves to the selected item or `undefined` when being dismissed.
-
-showWarningMessage<T extends [MessageItem](https://code.visualstudio.com/api/references/vscode-api#MessageItem)>(message: string, ...items: T[]): Thenable<T | undefined>
-
-Show a warning message.
-
-_See also_
-[showInformationMessage](https://code.visualstudio.com/api/references/vscode-api#window.showInformationMessage)
-
-ParameterDescription
-message: stringThe message to show.
-
-...items: T[]A set of items that will be rendered as actions in the message.
-
-ReturnsDescription
-Thenable<T &#124; undefined>A thenable that resolves to the selected item or `undefined` when being dismissed.
-
-showWarningMessage<T extends [MessageItem](https://code.visualstudio.com/api/references/vscode-api#MessageItem)>(message: string, options: [MessageOptions](https://code.visualstudio.com/api/references/vscode-api#MessageOptions), ...items: T[]): Thenable<T | undefined>
+showWarningMessage<T extends string>(message: string, options: [MessageOptions](https://code.visualstudio.com/api/references/vscode-api#MessageOptions), ...items: T[]): Thenable<T>
 
 Show a warning message.
 
@@ -2685,9 +2653,41 @@ options: [MessageOptions](https://code.visualstudio.com/api/references/vscode-ap
 ...items: T[]A set of items that will be rendered as actions in the message.
 
 ReturnsDescription
-Thenable<T &#124; undefined>A thenable that resolves to the selected item or `undefined` when being dismissed.
+Thenable<T>A thenable that resolves to the selected item or `undefined` when being dismissed.
 
-showWorkspaceFolderPick(options?: [WorkspaceFolderPickOptions](https://code.visualstudio.com/api/references/vscode-api#WorkspaceFolderPickOptions)): Thenable<[WorkspaceFolder](https://code.visualstudio.com/api/references/vscode-api#WorkspaceFolder) | undefined>
+showWarningMessage<T extends [MessageItem](https://code.visualstudio.com/api/references/vscode-api#MessageItem)>(message: string, ...items: T[]): Thenable<T>
+
+Show a warning message.
+
+_See also_
+[showInformationMessage](https://code.visualstudio.com/api/references/vscode-api#window.showInformationMessage)
+
+ParameterDescription
+message: stringThe message to show.
+
+...items: T[]A set of items that will be rendered as actions in the message.
+
+ReturnsDescription
+Thenable<T>A thenable that resolves to the selected item or `undefined` when being dismissed.
+
+showWarningMessage<T extends [MessageItem](https://code.visualstudio.com/api/references/vscode-api#MessageItem)>(message: string, options: [MessageOptions](https://code.visualstudio.com/api/references/vscode-api#MessageOptions), ...items: T[]): Thenable<T>
+
+Show a warning message.
+
+_See also_
+[showInformationMessage](https://code.visualstudio.com/api/references/vscode-api#window.showInformationMessage)
+
+ParameterDescription
+message: stringThe message to show.
+
+options: [MessageOptions](https://code.visualstudio.com/api/references/vscode-api#MessageOptions)Configures the behaviour of the message.
+
+...items: T[]A set of items that will be rendered as actions in the message.
+
+ReturnsDescription
+Thenable<T>A thenable that resolves to the selected item or `undefined` when being dismissed.
+
+showWorkspaceFolderPick(options?: [WorkspaceFolderPickOptions](https://code.visualstudio.com/api/references/vscode-api#WorkspaceFolderPickOptions)): Thenable<[WorkspaceFolder](https://code.visualstudio.com/api/references/vscode-api#WorkspaceFolder)>
 
 Shows a selection list of [workspace folders](https://code.visualstudio.com/api/references/vscode-api#workspace.workspaceFolders) to pick from.
 Returns `undefined` if no folder is open.
@@ -2696,7 +2696,7 @@ ParameterDescription
 options?: [WorkspaceFolderPickOptions](https://code.visualstudio.com/api/references/vscode-api#WorkspaceFolderPickOptions)Configures the behavior of the workspace folder list.
 
 ReturnsDescription
-Thenable<[WorkspaceFolder](https://code.visualstudio.com/api/references/vscode-api#WorkspaceFolder) &#124; undefined>A promise that resolves to the workspace folder or `undefined`.
+Thenable<[WorkspaceFolder](https://code.visualstudio.com/api/references/vscode-api#WorkspaceFolder)>A promise that resolves to the workspace folder or `undefined`.
 
 withProgress<R>(options: [ProgressOptions](https://code.visualstudio.com/api/references/vscode-api#ProgressOptions), task: (progress: [Progress](https://code.visualstudio.com/api/references/vscode-api#Progress<T>)<{increment: number, message: string}>, token: [CancellationToken](https://code.visualstudio.com/api/references/vscode-api#CancellationToken)) => Thenable<[R](https://code.visualstudio.com/api/references/vscode-api#R)>): Thenable<[R](https://code.visualstudio.com/api/references/vscode-api#R)>
 
@@ -3253,7 +3253,7 @@ options: {uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri
 ReturnsDescription
 Thenable<string>A thenable that resolves to the decoded `string`.
 
-encode(content: string): Thenable<Uint8Array>
+encode(content: string): Thenable<Uint8Array<ArrayBufferLike>>
 
 Encodes the content of a `string` to a `Uint8Array`.
 
@@ -3263,9 +3263,9 @@ ParameterDescription
 content: stringThe content to decode as a `string`.
 
 ReturnsDescription
-Thenable<Uint8Array>A thenable that resolves to the encoded `Uint8Array`.
+Thenable<Uint8Array<ArrayBufferLike>>A thenable that resolves to the encoded `Uint8Array`.
 
-encode(content: string, options: {encoding: string}): Thenable<Uint8Array>
+encode(content: string, options: {encoding: string}): Thenable<Uint8Array<ArrayBufferLike>>
 
 Encodes the content of a `string` to a `Uint8Array` using the
 provided encoding.
@@ -3276,9 +3276,9 @@ content: stringThe content to decode as a `string`.
 options: {encoding: string}Additional context for picking the encoding.
 
 ReturnsDescription
-Thenable<Uint8Array>A thenable that resolves to the encoded `Uint8Array`.
+Thenable<Uint8Array<ArrayBufferLike>>A thenable that resolves to the encoded `Uint8Array`.
 
-encode(content: string, options: {uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)}): Thenable<Uint8Array>
+encode(content: string, options: {uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)}): Thenable<Uint8Array<ArrayBufferLike>>
 
 Encodes the content of a `string` to a `Uint8Array`.
 
@@ -3290,7 +3290,7 @@ content: stringThe content to decode as a `string`.
 options: {uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)}Additional context for picking the encoding.
 
 ReturnsDescription
-Thenable<Uint8Array>A thenable that resolves to the encoded `Uint8Array`.
+Thenable<Uint8Array<ArrayBufferLike>>A thenable that resolves to the encoded `Uint8Array`.
 
 findFiles(include: [GlobPattern](https://code.visualstudio.com/api/references/vscode-api#GlobPattern), exclude?: [GlobPattern](https://code.visualstudio.com/api/references/vscode-api#GlobPattern), maxResults?: number, token?: [CancellationToken](https://code.visualstudio.com/api/references/vscode-api#CancellationToken)): Thenable<[Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)[]>
 
@@ -3339,7 +3339,7 @@ scope?: [ConfigurationScope](https://code.visualstudio.com/api/references/vscode
 ReturnsDescription
 [WorkspaceConfiguration](https://code.visualstudio.com/api/references/vscode-api#WorkspaceConfiguration)The full configuration or a subset.
 
-getWorkspaceFolder(uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)): [WorkspaceFolder](https://code.visualstudio.com/api/references/vscode-api#WorkspaceFolder) | undefined
+getWorkspaceFolder(uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)): [WorkspaceFolder](https://code.visualstudio.com/api/references/vscode-api#WorkspaceFolder)
 
 Returns the [workspace folder](https://code.visualstudio.com/api/references/vscode-api#WorkspaceFolder) that contains a given uri.
 
@@ -3351,7 +3351,7 @@ ParameterDescription
 uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)An uri.
 
 ReturnsDescription
-[WorkspaceFolder](https://code.visualstudio.com/api/references/vscode-api#WorkspaceFolder) &#124; undefinedA workspace folder or `undefined`
+[WorkspaceFolder](https://code.visualstudio.com/api/references/vscode-api#WorkspaceFolder)A workspace folder or `undefined`
 
 openNotebookDocument(uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)): Thenable<[NotebookDocument](https://code.visualstudio.com/api/references/vscode-api#NotebookDocument)>
 
@@ -3473,7 +3473,7 @@ options?: [NotebookDocumentContentOptions](https://code.visualstudio.com/api/ref
 ReturnsDescription
 [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)A [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable) that unregisters this serializer when being disposed.
 
-registerTaskProvider(type: string, provider: [TaskProvider](https://code.visualstudio.com/api/references/vscode-api#TaskProvider<T>)<[Task](https://code.visualstudio.com/api/references/vscode-api#Task)>): [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)
+registerTaskProvider(type: string, provider: [TaskProvider](https://code.visualstudio.com/api/references/vscode-api#TaskProvider<T>)): [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)
 
 Register a task provider.
 
@@ -3482,7 +3482,7 @@ Register a task provider.
 ParameterDescription
 type: stringThe task kind type this provider is registered for.
 
-provider: [TaskProvider](https://code.visualstudio.com/api/references/vscode-api#TaskProvider<T>)<[Task](https://code.visualstudio.com/api/references/vscode-api#Task)>A task provider.
+provider: [TaskProvider](https://code.visualstudio.com/api/references/vscode-api#TaskProvider<T>)A task provider.
 
 ReturnsDescription
 [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)A [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable) that unregisters this provider when being disposed.
@@ -3501,7 +3501,7 @@ provider: [TextDocumentContentProvider](https://code.visualstudio.com/api/refere
 ReturnsDescription
 [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)A [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable) that unregisters this provider when being disposed.
 
-save(uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)): Thenable<[Uri](https://code.visualstudio.com/api/references/vscode-api#Uri) | undefined>
+save(uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)): Thenable<[Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)>
 
 Saves the editor identified by the given resource and returns the resulting resource or `undefined`
 if save was not successful or no editor with the given resource was found.
@@ -3512,7 +3512,7 @@ ParameterDescription
 uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)the associated uri for the opened editor to save.
 
 ReturnsDescription
-Thenable<[Uri](https://code.visualstudio.com/api/references/vscode-api#Uri) &#124; undefined>A thenable that resolves when the save operation has finished.
+Thenable<[Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)>A thenable that resolves when the save operation has finished.
 
 saveAll(includeUntitled?: boolean): Thenable<boolean>
 
@@ -3525,7 +3525,7 @@ ReturnsDescription
 Thenable<boolean>A thenable that resolves when the files have been saved. Will return `false`
 for any file that failed to save.
 
-saveAs(uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)): Thenable<[Uri](https://code.visualstudio.com/api/references/vscode-api#Uri) | undefined>
+saveAs(uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)): Thenable<[Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)>
 
 Saves the editor identified by the given resource to a new file name as provided by the user and
 returns the resulting resource or `undefined` if save was not successful or cancelled or no editor
@@ -3537,7 +3537,7 @@ ParameterDescription
 uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)the associated uri for the opened editor to save as.
 
 ReturnsDescription
-Thenable<[Uri](https://code.visualstudio.com/api/references/vscode-api#Uri) &#124; undefined>A thenable that resolves when the save-as operation has finished.
+Thenable<[Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)>A thenable that resolves when the save-as operation has finished.
 
 updateWorkspaceFolders(start: number, deleteCount: number, ...workspaceFoldersToAdd: Array<{name: string, uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)}>): boolean
 
@@ -3919,7 +3919,7 @@ Contains coverage information for a branch of a [StatementCoverage](https://code
 
 #### Constructors
 
-new BranchCoverage(executed: number | boolean, location?: [Range](https://code.visualstudio.com/api/references/vscode-api#Range) | [Position](https://code.visualstudio.com/api/references/vscode-api#Position), label?: string): [BranchCoverage](https://code.visualstudio.com/api/references/vscode-api#BranchCoverage)
+BranchCoverage(executed: number | boolean, location?: [Range](https://code.visualstudio.com/api/references/vscode-api#Range) | [Position](https://code.visualstudio.com/api/references/vscode-api#Position), label?: string): [BranchCoverage](https://code.visualstudio.com/api/references/vscode-api#BranchCoverage)
 
 ParameterDescription
 executed: number &#124; booleanThe number of times this branch was executed, or a
@@ -3955,7 +3955,7 @@ The base class of all breakpoint types.
 
 #### Constructors
 
-new Breakpoint(enabled?: boolean, condition?: string, hitCondition?: string, logMessage?: string): [Breakpoint](https://code.visualstudio.com/api/references/vscode-api#Breakpoint)
+Breakpoint(enabled?: boolean, condition?: string, hitCondition?: string, logMessage?: string): [Breakpoint](https://code.visualstudio.com/api/references/vscode-api#Breakpoint)
 
 Creates a new breakpoint
 
@@ -4017,7 +4017,7 @@ Represents an incoming call, e.g. a caller of a method or constructor.
 
 #### Constructors
 
-new CallHierarchyIncomingCall(item: [CallHierarchyItem](https://code.visualstudio.com/api/references/vscode-api#CallHierarchyItem), fromRanges: [Range](https://code.visualstudio.com/api/references/vscode-api#Range)[]): [CallHierarchyIncomingCall](https://code.visualstudio.com/api/references/vscode-api#CallHierarchyIncomingCall)
+CallHierarchyIncomingCall(item: [CallHierarchyItem](https://code.visualstudio.com/api/references/vscode-api#CallHierarchyItem), fromRanges: [Range](https://code.visualstudio.com/api/references/vscode-api#Range)[]): [CallHierarchyIncomingCall](https://code.visualstudio.com/api/references/vscode-api#CallHierarchyIncomingCall)
 
 Create a new call object.
 
@@ -4047,7 +4047,7 @@ of call hierarchy.
 
 #### Constructors
 
-new CallHierarchyItem(kind: [SymbolKind](https://code.visualstudio.com/api/references/vscode-api#SymbolKind), name: string, detail: string, uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), range: [Range](https://code.visualstudio.com/api/references/vscode-api#Range), selectionRange: [Range](https://code.visualstudio.com/api/references/vscode-api#Range)): [CallHierarchyItem](https://code.visualstudio.com/api/references/vscode-api#CallHierarchyItem)
+CallHierarchyItem(kind: [SymbolKind](https://code.visualstudio.com/api/references/vscode-api#SymbolKind), name: string, detail: string, uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), range: [Range](https://code.visualstudio.com/api/references/vscode-api#Range), selectionRange: [Range](https://code.visualstudio.com/api/references/vscode-api#Range)): [CallHierarchyItem](https://code.visualstudio.com/api/references/vscode-api#CallHierarchyItem)
 
 Creates a new call hierarchy item.
 
@@ -4098,7 +4098,7 @@ Represents an outgoing call, e.g. calling a getter from a method or a method fro
 
 #### Constructors
 
-new CallHierarchyOutgoingCall(item: [CallHierarchyItem](https://code.visualstudio.com/api/references/vscode-api#CallHierarchyItem), fromRanges: [Range](https://code.visualstudio.com/api/references/vscode-api#Range)[]): [CallHierarchyOutgoingCall](https://code.visualstudio.com/api/references/vscode-api#CallHierarchyOutgoingCall)
+CallHierarchyOutgoingCall(item: [CallHierarchyItem](https://code.visualstudio.com/api/references/vscode-api#CallHierarchyItem), fromRanges: [Range](https://code.visualstudio.com/api/references/vscode-api#Range)[]): [CallHierarchyOutgoingCall](https://code.visualstudio.com/api/references/vscode-api#CallHierarchyOutgoingCall)
 
 Create a new call object.
 
@@ -4187,7 +4187,7 @@ executor of that operation.
 
 #### Constructors
 
-new CancellationError(): [CancellationError](https://code.visualstudio.com/api/references/vscode-api#CancellationError)
+CancellationError(): [CancellationError](https://code.visualstudio.com/api/references/vscode-api#CancellationError)
 
 Creates a new cancellation error.
 
@@ -4220,7 +4220,7 @@ A cancellation source creates and controls a [cancellation token](https://code.v
 
 #### Constructors
 
-new CancellationTokenSource(): [CancellationTokenSource](https://code.visualstudio.com/api/references/vscode-api#CancellationTokenSource)
+CancellationTokenSource(): [CancellationTokenSource](https://code.visualstudio.com/api/references/vscode-api#CancellationTokenSource)
 
 ParameterDescription
 ReturnsDescription
@@ -4467,6 +4467,8 @@ tool may contribute useful extra context for the user's request.
 
 ### ChatRequestHandler
 
+A chat request handler is a callback that will be invoked when a request is made to a chat participant.
+
 ChatRequestHandler: (request: [ChatRequest](https://code.visualstudio.com/api/references/vscode-api#ChatRequest), context: [ChatContext](https://code.visualstudio.com/api/references/vscode-api#ChatContext), response: [ChatResponseStream](https://code.visualstudio.com/api/references/vscode-api#ChatResponseStream), token: [CancellationToken](https://code.visualstudio.com/api/references/vscode-api#CancellationToken)) => [ProviderResult](https://code.visualstudio.com/api/references/vscode-api#ProviderResult<T>)<[ChatResult](https://code.visualstudio.com/api/references/vscode-api#ChatResult) | void>
 
 ### ChatRequestTurn
@@ -4506,7 +4508,7 @@ Represents a part of a chat response that is an anchor, that is rendered as a li
 
 #### Constructors
 
-new ChatResponseAnchorPart(value: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri) | [Location](https://code.visualstudio.com/api/references/vscode-api#Location), title?: string): [ChatResponseAnchorPart](https://code.visualstudio.com/api/references/vscode-api#ChatResponseAnchorPart)
+ChatResponseAnchorPart(value: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri) | [Location](https://code.visualstudio.com/api/references/vscode-api#Location), title?: string): [ChatResponseAnchorPart](https://code.visualstudio.com/api/references/vscode-api#ChatResponseAnchorPart)
 
 Create a new ChatResponseAnchorPart.
 
@@ -4534,7 +4536,7 @@ Represents a part of a chat response that is a button that executes a command.
 
 #### Constructors
 
-new ChatResponseCommandButtonPart(value: [Command](https://code.visualstudio.com/api/references/vscode-api#Command)): [ChatResponseCommandButtonPart](https://code.visualstudio.com/api/references/vscode-api#ChatResponseCommandButtonPart)
+ChatResponseCommandButtonPart(value: [Command](https://code.visualstudio.com/api/references/vscode-api#Command)): [ChatResponseCommandButtonPart](https://code.visualstudio.com/api/references/vscode-api#ChatResponseCommandButtonPart)
 
 Create a new ChatResponseCommandButtonPart.
 
@@ -4570,7 +4572,7 @@ Represents a part of a chat response that is a file tree.
 
 #### Constructors
 
-new ChatResponseFileTreePart(value: [ChatResponseFileTree](https://code.visualstudio.com/api/references/vscode-api#ChatResponseFileTree)[], baseUri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)): [ChatResponseFileTreePart](https://code.visualstudio.com/api/references/vscode-api#ChatResponseFileTreePart)
+ChatResponseFileTreePart(value: [ChatResponseFileTree](https://code.visualstudio.com/api/references/vscode-api#ChatResponseFileTree)[], baseUri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)): [ChatResponseFileTreePart](https://code.visualstudio.com/api/references/vscode-api#ChatResponseFileTreePart)
 
 Create a new ChatResponseFileTreePart.
 
@@ -4598,7 +4600,7 @@ Represents a part of a chat response that is formatted as Markdown.
 
 #### Constructors
 
-new ChatResponseMarkdownPart(value: string | [MarkdownString](https://code.visualstudio.com/api/references/vscode-api#MarkdownString)): [ChatResponseMarkdownPart](https://code.visualstudio.com/api/references/vscode-api#ChatResponseMarkdownPart)
+ChatResponseMarkdownPart(value: string | [MarkdownString](https://code.visualstudio.com/api/references/vscode-api#MarkdownString)): [ChatResponseMarkdownPart](https://code.visualstudio.com/api/references/vscode-api#ChatResponseMarkdownPart)
 
 Create a new ChatResponseMarkdownPart.
 
@@ -4626,7 +4628,7 @@ Represents a part of a chat response that is a progress message.
 
 #### Constructors
 
-new ChatResponseProgressPart(value: string): [ChatResponseProgressPart](https://code.visualstudio.com/api/references/vscode-api#ChatResponseProgressPart)
+ChatResponseProgressPart(value: string): [ChatResponseProgressPart](https://code.visualstudio.com/api/references/vscode-api#ChatResponseProgressPart)
 
 Create a new ChatResponseProgressPart.
 
@@ -4648,7 +4650,7 @@ Represents a part of a chat response that is a reference, rendered separately fr
 
 #### Constructors
 
-new ChatResponseReferencePart(value: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri) | [Location](https://code.visualstudio.com/api/references/vscode-api#Location), iconPath?: [IconPath](https://code.visualstudio.com/api/references/vscode-api#IconPath)): [ChatResponseReferencePart](https://code.visualstudio.com/api/references/vscode-api#ChatResponseReferencePart)
+ChatResponseReferencePart(value: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri) | [Location](https://code.visualstudio.com/api/references/vscode-api#Location), iconPath?: [IconPath](https://code.visualstudio.com/api/references/vscode-api#IconPath)): [ChatResponseReferencePart](https://code.visualstudio.com/api/references/vscode-api#ChatResponseReferencePart)
 
 Create a new ChatResponseReferencePart.
 
@@ -4863,7 +4865,7 @@ A CodeAction must set either [edit](https://code.visualstudio.com/api/references
 
 #### Constructors
 
-new CodeAction(title: string, kind?: [CodeActionKind](https://code.visualstudio.com/api/references/vscode-api#CodeActionKind)): [CodeAction](https://code.visualstudio.com/api/references/vscode-api#CodeAction)
+CodeAction(title: string, kind?: [CodeActionKind](https://code.visualstudio.com/api/references/vscode-api#CodeActionKind)): [CodeAction](https://code.visualstudio.com/api/references/vscode-api#CodeAction)
 
 Creates a new code action.
 
@@ -5080,18 +5082,6 @@ SourceOrganizeImports: [CodeActionKind](https://code.visualstudio.com/api/refere
 
 Base kind for an organize imports source action: `source.organizeImports`.
 
-#### Constructors
-
-new CodeActionKind(value: string): [CodeActionKind](https://code.visualstudio.com/api/references/vscode-api#CodeActionKind)
-
-Private constructor, use static `CodeActionKind.XYZ` to derive from an existing code action kind.
-
-ParameterDescription
-value: stringThe value of the kind, such as `refactor.extract.function`.
-
-ReturnsDescription
-[CodeActionKind](https://code.visualstudio.com/api/references/vscode-api#CodeActionKind)
-
 #### Properties
 
 value: string
@@ -5265,7 +5255,7 @@ _See also_
 
 #### Constructors
 
-new CodeLens(range: [Range](https://code.visualstudio.com/api/references/vscode-api#Range), command?: [Command](https://code.visualstudio.com/api/references/vscode-api#Command)): [CodeLens](https://code.visualstudio.com/api/references/vscode-api#CodeLens)
+CodeLens(range: [Range](https://code.visualstudio.com/api/references/vscode-api#Range), command?: [Command](https://code.visualstudio.com/api/references/vscode-api#Command)): [CodeLens](https://code.visualstudio.com/api/references/vscode-api#CodeLens)
 
 Creates a new code lens object.
 
@@ -5338,7 +5328,7 @@ Represents a color in RGBA space.
 
 #### Constructors
 
-new Color(red: number, green: number, blue: number, alpha: number): [Color](https://code.visualstudio.com/api/references/vscode-api#Color)
+Color(red: number, green: number, blue: number, alpha: number): [Color](https://code.visualstudio.com/api/references/vscode-api#Color)
 
 Creates a new color instance.
 
@@ -5378,7 +5368,7 @@ Represents a color range from a document.
 
 #### Constructors
 
-new ColorInformation(range: [Range](https://code.visualstudio.com/api/references/vscode-api#Range), color: [Color](https://code.visualstudio.com/api/references/vscode-api#Color)): [ColorInformation](https://code.visualstudio.com/api/references/vscode-api#ColorInformation)
+ColorInformation(range: [Range](https://code.visualstudio.com/api/references/vscode-api#Range), color: [Color](https://code.visualstudio.com/api/references/vscode-api#Color)): [ColorInformation](https://code.visualstudio.com/api/references/vscode-api#ColorInformation)
 
 Creates a new color range.
 
@@ -5411,7 +5401,7 @@ apply, e.g. `System.Drawing.Color.Red`.
 
 #### Constructors
 
-new ColorPresentation(label: string): [ColorPresentation](https://code.visualstudio.com/api/references/vscode-api#ColorPresentation)
+ColorPresentation(label: string): [ColorPresentation](https://code.visualstudio.com/api/references/vscode-api#ColorPresentation)
 
 Creates a new color presentation.
 
@@ -5880,7 +5870,7 @@ _See also_
 
 #### Constructors
 
-new CompletionItem(label: string | [CompletionItemLabel](https://code.visualstudio.com/api/references/vscode-api#CompletionItemLabel), kind?: [CompletionItemKind](https://code.visualstudio.com/api/references/vscode-api#CompletionItemKind)): [CompletionItem](https://code.visualstudio.com/api/references/vscode-api#CompletionItem)
+CompletionItem(label: string | [CompletionItemLabel](https://code.visualstudio.com/api/references/vscode-api#CompletionItemLabel), kind?: [CompletionItemKind](https://code.visualstudio.com/api/references/vscode-api#CompletionItemKind)): [CompletionItem](https://code.visualstudio.com/api/references/vscode-api#CompletionItem)
 
 Creates a new completion item.
 
@@ -6213,7 +6203,7 @@ in the editor.
 
 #### Constructors
 
-new CompletionList<T extends [CompletionItem](https://code.visualstudio.com/api/references/vscode-api#CompletionItem)>(items?: T[], isIncomplete?: boolean): [CompletionList](https://code.visualstudio.com/api/references/vscode-api#CompletionList<T>)<T>
+CompletionList<T extends [CompletionItem](https://code.visualstudio.com/api/references/vscode-api#CompletionItem)>(items?: T[], isIncomplete?: boolean): [CompletionList](https://code.visualstudio.com/api/references/vscode-api#CompletionList<T>)<T>
 
 Creates a new completion list.
 
@@ -6447,7 +6437,7 @@ The id of the backup to restore the document from or `undefined` if there is no 
 If this is provided, your extension should restore the editor from the backup instead of reading the file
 from the user's workspace.
 
-untitledDocumentData: Uint8Array
+untitledDocumentData: Uint8Array<ArrayBufferLike>
 
 If the URI is an untitled file, this will be populated with the byte data of that file
 
@@ -6620,7 +6610,7 @@ Class used to execute an extension callback as a task.
 
 #### Constructors
 
-new CustomExecution(callback: (resolvedDefinition: [TaskDefinition](https://code.visualstudio.com/api/references/vscode-api#TaskDefinition)) => Thenable<[Pseudoterminal](https://code.visualstudio.com/api/references/vscode-api#Pseudoterminal)>): [CustomExecution](https://code.visualstudio.com/api/references/vscode-api#CustomExecution)
+CustomExecution(callback: (resolvedDefinition: [TaskDefinition](https://code.visualstudio.com/api/references/vscode-api#TaskDefinition)) => Thenable<[Pseudoterminal](https://code.visualstudio.com/api/references/vscode-api#Pseudoterminal)>): [CustomExecution](https://code.visualstudio.com/api/references/vscode-api#CustomExecution)
 
 Constructs a CustomExecution task object. The callback will be executed when the task is run, at which point the
 extension should return the Pseudoterminal it will "run in". The task should wait to do further execution until
@@ -6728,7 +6718,7 @@ an element in the same drag and drop controller.
 
 #### Constructors
 
-new DataTransfer(): [DataTransfer](https://code.visualstudio.com/api/references/vscode-api#DataTransfer)
+DataTransfer(): [DataTransfer](https://code.visualstudio.com/api/references/vscode-api#DataTransfer)
 
 ParameterDescription
 ReturnsDescription
@@ -6804,13 +6794,13 @@ May be `undefined` on web.
 
 #### Methods
 
-data(): Thenable<Uint8Array>
+data(): Thenable<Uint8Array<ArrayBufferLike>>
 
 The full file contents of the file.
 
 ParameterDescription
 ReturnsDescription
-Thenable<Uint8Array>
+Thenable<Uint8Array<ArrayBufferLike>>
 
 ### DataTransferItem
 
@@ -6818,7 +6808,7 @@ Encapsulates data transferred during drag and drop operations.
 
 #### Constructors
 
-new DataTransferItem(value: any): [DataTransferItem](https://code.visualstudio.com/api/references/vscode-api#DataTransferItem)
+DataTransferItem(value: any): [DataTransferItem](https://code.visualstudio.com/api/references/vscode-api#DataTransferItem)
 
 ParameterDescription
 value: anyCustom data stored on this item. Can be retrieved using [DataTransferItem.value](https://code.visualstudio.com/api/references/vscode-api#DataTransferItem.value).
@@ -6934,7 +6924,7 @@ Represents a debug adapter executable and optional arguments and runtime options
 
 #### Constructors
 
-new DebugAdapterExecutable(command: string, args?: string[], options?: [DebugAdapterExecutableOptions](https://code.visualstudio.com/api/references/vscode-api#DebugAdapterExecutableOptions)): [DebugAdapterExecutable](https://code.visualstudio.com/api/references/vscode-api#DebugAdapterExecutable)
+DebugAdapterExecutable(command: string, args?: string[], options?: [DebugAdapterExecutableOptions](https://code.visualstudio.com/api/references/vscode-api#DebugAdapterExecutableOptions)): [DebugAdapterExecutable](https://code.visualstudio.com/api/references/vscode-api#DebugAdapterExecutable)
 
 Creates a description for a debug adapter based on an executable program.
 
@@ -6987,7 +6977,7 @@ A debug adapter descriptor for an inline implementation.
 
 #### Constructors
 
-new DebugAdapterInlineImplementation(implementation: [DebugAdapter](https://code.visualstudio.com/api/references/vscode-api#DebugAdapter)): [DebugAdapterInlineImplementation](https://code.visualstudio.com/api/references/vscode-api#DebugAdapterInlineImplementation)
+DebugAdapterInlineImplementation(implementation: [DebugAdapter](https://code.visualstudio.com/api/references/vscode-api#DebugAdapter)): [DebugAdapterInlineImplementation](https://code.visualstudio.com/api/references/vscode-api#DebugAdapterInlineImplementation)
 
 Create a descriptor for an inline implementation of a debug adapter.
 
@@ -7002,7 +6992,7 @@ Represents a debug adapter running as a Named Pipe (on Windows)/UNIX Domain Sock
 
 #### Constructors
 
-new DebugAdapterNamedPipeServer(path: string): [DebugAdapterNamedPipeServer](https://code.visualstudio.com/api/references/vscode-api#DebugAdapterNamedPipeServer)
+DebugAdapterNamedPipeServer(path: string): [DebugAdapterNamedPipeServer](https://code.visualstudio.com/api/references/vscode-api#DebugAdapterNamedPipeServer)
 
 Create a description for a debug adapter running as a Named Pipe (on Windows)/UNIX Domain Socket (on non-Windows) based server.
 
@@ -7023,7 +7013,7 @@ Represents a debug adapter running as a socket based server.
 
 #### Constructors
 
-new DebugAdapterServer(port: number, host?: string): [DebugAdapterServer](https://code.visualstudio.com/api/references/vscode-api#DebugAdapterServer)
+DebugAdapterServer(port: number, host?: string): [DebugAdapterServer](https://code.visualstudio.com/api/references/vscode-api#DebugAdapterServer)
 
 Create a description for a debug adapter running as a socket based server.
 
@@ -7450,7 +7440,7 @@ and language, this may be types such as functions, methods, or namespaces.
 
 #### Constructors
 
-new DeclarationCoverage(name: string, executed: number | boolean, location: [Range](https://code.visualstudio.com/api/references/vscode-api#Range) | [Position](https://code.visualstudio.com/api/references/vscode-api#Position)): [DeclarationCoverage](https://code.visualstudio.com/api/references/vscode-api#DeclarationCoverage)
+DeclarationCoverage(name: string, executed: number | boolean, location: [Range](https://code.visualstudio.com/api/references/vscode-api#Range) | [Position](https://code.visualstudio.com/api/references/vscode-api#Position)): [DeclarationCoverage](https://code.visualstudio.com/api/references/vscode-api#DeclarationCoverage)
 
 ParameterDescription
 name: string
@@ -7529,7 +7519,7 @@ Represents options for a specific decoration in a [decoration set](https://code.
 
 #### Properties
 
-hoverMessage?: [MarkdownString](https://code.visualstudio.com/api/references/vscode-api#MarkdownString) | [MarkedString](https://code.visualstudio.com/api/references/vscode-api#MarkedString) | Array<[MarkdownString](https://code.visualstudio.com/api/references/vscode-api#MarkdownString) | [MarkedString](https://code.visualstudio.com/api/references/vscode-api#MarkedString)>
+hoverMessage?: [MarkdownString](https://code.visualstudio.com/api/references/vscode-api#MarkdownString) | [MarkedString](https://code.visualstudio.com/api/references/vscode-api#MarkedString) | Array<MarkdownString | MarkedString>
 
 A message that should be rendered when hovering over the decoration.
 
@@ -7742,7 +7732,7 @@ are only valid in the scope of a file.
 
 #### Constructors
 
-new Diagnostic(range: [Range](https://code.visualstudio.com/api/references/vscode-api#Range), message: string, severity?: [DiagnosticSeverity](https://code.visualstudio.com/api/references/vscode-api#DiagnosticSeverity)): [Diagnostic](https://code.visualstudio.com/api/references/vscode-api#Diagnostic)
+Diagnostic(range: [Range](https://code.visualstudio.com/api/references/vscode-api#Range), message: string, severity?: [DiagnosticSeverity](https://code.visualstudio.com/api/references/vscode-api#DiagnosticSeverity)): [Diagnostic](https://code.visualstudio.com/api/references/vscode-api#Diagnostic)
 
 Creates a new diagnostic object.
 
@@ -7894,7 +7884,7 @@ diagnostics: readonly [Diagnostic](https://code.visualstudio.com/api/references/
 ReturnsDescription
 void
 
-set(entries: ReadonlyArray<[[Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), readonly Diagnostic[]]>): void
+set(entries: ReadonlyArray<[[Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), readonly [Diagnostic](https://code.visualstudio.com/api/references/vscode-api#Diagnostic)[]]>): void
 
 Replace diagnostics for multiple resources in this collection.
 
@@ -7904,7 +7894,7 @@ If a diagnostics item is `undefined` as in `[file1, undefined]`
 all previous but not subsequent diagnostics are removed.
 
 ParameterDescription
-entries: ReadonlyArray<[[Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), readonly Diagnostic[]]>An array of tuples, like `[[file1, [d1, d2]], [file2, [d3, d4, d5]]]`, or `undefined`.
+entries: ReadonlyArray<[[Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), readonly [Diagnostic](https://code.visualstudio.com/api/references/vscode-api#Diagnostic)[]]>An array of tuples, like `[[file1, [d1, d2]], [file2, [d3, d4, d5]]]`, or `undefined`.
 
 ReturnsDescription
 void
@@ -7917,7 +7907,7 @@ a symbol in a scope.
 
 #### Constructors
 
-new DiagnosticRelatedInformation(location: [Location](https://code.visualstudio.com/api/references/vscode-api#Location), message: string): [DiagnosticRelatedInformation](https://code.visualstudio.com/api/references/vscode-api#DiagnosticRelatedInformation)
+DiagnosticRelatedInformation(location: [Location](https://code.visualstudio.com/api/references/vscode-api#Location), message: string): [DiagnosticRelatedInformation](https://code.visualstudio.com/api/references/vscode-api#DiagnosticRelatedInformation)
 
 Creates a new related diagnostic information object.
 
@@ -8007,7 +7997,7 @@ dispose all provided disposables.
 
 #### Constructors
 
-new Disposable(callOnDispose: () => any): [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)
+Disposable(callOnDispose: () => any): [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)
 
 Creates a new disposable that calls the provided function
 on dispose.
@@ -8071,7 +8061,7 @@ An edit operation applied [on drop](https://code.visualstudio.com/api/references
 
 #### Constructors
 
-new DocumentDropEdit(insertText: string | [SnippetString](https://code.visualstudio.com/api/references/vscode-api#SnippetString), title?: string, kind?: [DocumentDropOrPasteEditKind](https://code.visualstudio.com/api/references/vscode-api#DocumentDropOrPasteEditKind)): [DocumentDropEdit](https://code.visualstudio.com/api/references/vscode-api#DocumentDropEdit)
+DocumentDropEdit(insertText: string | [SnippetString](https://code.visualstudio.com/api/references/vscode-api#SnippetString), title?: string, kind?: [DocumentDropOrPasteEditKind](https://code.visualstudio.com/api/references/vscode-api#DocumentDropOrPasteEditKind)): [DocumentDropEdit](https://code.visualstudio.com/api/references/vscode-api#DocumentDropEdit)
 
 ParameterDescription
 insertText: string &#124; [SnippetString](https://code.visualstudio.com/api/references/vscode-api#SnippetString)The text or snippet to insert at the drop location.
@@ -8197,17 +8187,6 @@ TextUpdateImports: [DocumentDropOrPasteEditKind](https://code.visualstudio.com/a
 
 Root kind for edits that update imports in a document in addition to inserting text.
 
-#### Constructors
-
-new DocumentDropOrPasteEditKind(value: string): [DocumentDropOrPasteEditKind](https://code.visualstudio.com/api/references/vscode-api#DocumentDropOrPasteEditKind)
-
-Use [DocumentDropOrPasteEditKind.Empty](https://code.visualstudio.com/api/references/vscode-api#DocumentDropOrPasteEditKind.Empty) instead.
-
-ParameterDescription
-value: string
-ReturnsDescription
-[DocumentDropOrPasteEditKind](https://code.visualstudio.com/api/references/vscode-api#DocumentDropOrPasteEditKind)
-
 #### Properties
 
 value: string
@@ -8260,7 +8239,6 @@ the [language](https://code.visualstudio.com/api/references/vscode-api#TextDocum
 its resource, or a glob-pattern that is applied to the [path](https://code.visualstudio.com/api/references/vscode-api#TextDocument.fileName).
 
 **Example**
-A language filter that applies to typescript files on disk
 
 
 ```
@@ -8268,7 +8246,6 @@ A language filter that applies to typescript files on disk
 ```
 
 **Example**
-A language filter that applies to all package.json paths
 
 
 ```
@@ -8291,7 +8268,6 @@ _Note_ that setting the `notebookType`-property changes how `scheme` and `patter
 they are evaluated against the [notebook uri](https://code.visualstudio.com/api/references/vscode-api#NotebookDocument.uri), not the document uri.
 
 **Example**
-Match python document inside jupyter notebook that aren't stored yet (`untitled`)
 
 
 ```
@@ -8338,7 +8314,7 @@ the background color of its range.
 
 #### Constructors
 
-new DocumentHighlight(range: [Range](https://code.visualstudio.com/api/references/vscode-api#Range), kind?: [DocumentHighlightKind](https://code.visualstudio.com/api/references/vscode-api#DocumentHighlightKind)): [DocumentHighlight](https://code.visualstudio.com/api/references/vscode-api#DocumentHighlight)
+DocumentHighlight(range: [Range](https://code.visualstudio.com/api/references/vscode-api#Range), kind?: [DocumentHighlightKind](https://code.visualstudio.com/api/references/vscode-api#DocumentHighlightKind)): [DocumentHighlight](https://code.visualstudio.com/api/references/vscode-api#DocumentHighlight)
 
 Creates a new document highlight object.
 
@@ -8408,7 +8384,7 @@ text document or a web site.
 
 #### Constructors
 
-new DocumentLink(range: [Range](https://code.visualstudio.com/api/references/vscode-api#Range), target?: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)): [DocumentLink](https://code.visualstudio.com/api/references/vscode-api#DocumentLink)
+DocumentLink(range: [Range](https://code.visualstudio.com/api/references/vscode-api#Range), target?: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)): [DocumentLink](https://code.visualstudio.com/api/references/vscode-api#DocumentLink)
 
 Creates a new document link.
 
@@ -8480,7 +8456,7 @@ An edit the applies a paste operation.
 
 #### Constructors
 
-new DocumentPasteEdit(insertText: string | [SnippetString](https://code.visualstudio.com/api/references/vscode-api#SnippetString), title: string, kind: [DocumentDropOrPasteEditKind](https://code.visualstudio.com/api/references/vscode-api#DocumentDropOrPasteEditKind)): [DocumentPasteEdit](https://code.visualstudio.com/api/references/vscode-api#DocumentPasteEdit)
+DocumentPasteEdit(insertText: string | [SnippetString](https://code.visualstudio.com/api/references/vscode-api#SnippetString), title: string, kind: [DocumentDropOrPasteEditKind](https://code.visualstudio.com/api/references/vscode-api#DocumentDropOrPasteEditKind)): [DocumentPasteEdit](https://code.visualstudio.com/api/references/vscode-api#DocumentPasteEdit)
 
 Create a new paste edit.
 
@@ -8892,7 +8868,7 @@ its most interesting range, e.g. the range of an identifier.
 
 #### Constructors
 
-new DocumentSymbol(name: string, detail: string, kind: [SymbolKind](https://code.visualstudio.com/api/references/vscode-api#SymbolKind), range: [Range](https://code.visualstudio.com/api/references/vscode-api#Range), selectionRange: [Range](https://code.visualstudio.com/api/references/vscode-api#Range)): [DocumentSymbol](https://code.visualstudio.com/api/references/vscode-api#DocumentSymbol)
+DocumentSymbol(name: string, detail: string, kind: [SymbolKind](https://code.visualstudio.com/api/references/vscode-api#SymbolKind), range: [Range](https://code.visualstudio.com/api/references/vscode-api#Range), selectionRange: [Range](https://code.visualstudio.com/api/references/vscode-api#Range)): [DocumentSymbol](https://code.visualstudio.com/api/references/vscode-api#DocumentSymbol)
 
 Creates a new document symbol.
 
@@ -9190,7 +9166,7 @@ In this case the range is still used to highlight the range in the document.
 
 #### Constructors
 
-new EvaluatableExpression(range: [Range](https://code.visualstudio.com/api/references/vscode-api#Range), expression?: string): [EvaluatableExpression](https://code.visualstudio.com/api/references/vscode-api#EvaluatableExpression)
+EvaluatableExpression(range: [Range](https://code.visualstudio.com/api/references/vscode-api#Range), expression?: string): [EvaluatableExpression](https://code.visualstudio.com/api/references/vscode-api#EvaluatableExpression)
 
 Creates a new evaluatable expression object.
 
@@ -9280,7 +9256,7 @@ API to other extensions.
 
 #### Constructors
 
-new EventEmitter<T>(): [EventEmitter](https://code.visualstudio.com/api/references/vscode-api#EventEmitter<T>)<T>
+EventEmitter<T>(): [EventEmitter](https://code.visualstudio.com/api/references/vscode-api#EventEmitter<T>)<T>
 
 ParameterDescription
 ReturnsDescription
@@ -9642,7 +9618,7 @@ ReturnsDescription
 
 #### Constructors
 
-new FileCoverage(uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), statementCoverage: [TestCoverageCount](https://code.visualstudio.com/api/references/vscode-api#TestCoverageCount), branchCoverage?: [TestCoverageCount](https://code.visualstudio.com/api/references/vscode-api#TestCoverageCount), declarationCoverage?: [TestCoverageCount](https://code.visualstudio.com/api/references/vscode-api#TestCoverageCount), includesTests?: [TestItem](https://code.visualstudio.com/api/references/vscode-api#TestItem)[]): [FileCoverage](https://code.visualstudio.com/api/references/vscode-api#FileCoverage)
+FileCoverage(uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), statementCoverage: [TestCoverageCount](https://code.visualstudio.com/api/references/vscode-api#TestCoverageCount), branchCoverage?: [TestCoverageCount](https://code.visualstudio.com/api/references/vscode-api#TestCoverageCount), declarationCoverage?: [TestCoverageCount](https://code.visualstudio.com/api/references/vscode-api#TestCoverageCount), includesTests?: [TestItem](https://code.visualstudio.com/api/references/vscode-api#TestItem)[]): [FileCoverage](https://code.visualstudio.com/api/references/vscode-api#FileCoverage)
 
 ParameterDescription
 uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)Covered file URI
@@ -9708,7 +9684,7 @@ A file decoration represents metadata that can be rendered with a file.
 
 #### Constructors
 
-new FileDecoration(badge?: string, tooltip?: string, color?: [ThemeColor](https://code.visualstudio.com/api/references/vscode-api#ThemeColor)): [FileDecoration](https://code.visualstudio.com/api/references/vscode-api#FileDecoration)
+FileDecoration(badge?: string, tooltip?: string, color?: [ThemeColor](https://code.visualstudio.com/api/references/vscode-api#ThemeColor)): [FileDecoration](https://code.visualstudio.com/api/references/vscode-api#FileDecoration)
 
 Creates a new decoration.
 
@@ -9925,7 +9901,7 @@ uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)The uri o
 ReturnsDescription
 Thenable<Array<[string, [FileType](https://code.visualstudio.com/api/references/vscode-api#FileType)]>>An array of name/type-tuples or a thenable that resolves to such.
 
-readFile(uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)): Thenable<Uint8Array>
+readFile(uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)): Thenable<Uint8Array<ArrayBufferLike>>
 
 Read the entire contents of a file.
 
@@ -9933,7 +9909,7 @@ ParameterDescription
 uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)The uri of the file.
 
 ReturnsDescription
-Thenable<Uint8Array>An array of bytes or a thenable that resolves to such.
+Thenable<Uint8Array<ArrayBufferLike>>An array of bytes or a thenable that resolves to such.
 
 rename(source: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), target: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), options?: {overwrite: boolean}): Thenable<void>
 
@@ -10044,7 +10020,7 @@ ReturnsDescription
 
 #### Constructors
 
-new FileSystemError(messageOrUri?: string | [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)): [FileSystemError](https://code.visualstudio.com/api/references/vscode-api#FileSystemError)
+FileSystemError(messageOrUri?: string | [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)): [FileSystemError](https://code.visualstudio.com/api/references/vscode-api#FileSystemError)
 
 Creates a new filesystem error.
 
@@ -10160,7 +10136,7 @@ uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)The uri o
 ReturnsDescription
 Array<[string, [FileType](https://code.visualstudio.com/api/references/vscode-api#FileType)]> &#124; Thenable<Array<[string, [FileType](https://code.visualstudio.com/api/references/vscode-api#FileType)]>>An array of name/type-tuples or a thenable that resolves to such.
 
-readFile(uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)): Uint8Array | Thenable<Uint8Array>
+readFile(uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)): Uint8Array<ArrayBufferLike> | Thenable<Uint8Array<ArrayBufferLike>>
 
 Read the entire contents of a file.
 
@@ -10170,7 +10146,7 @@ ParameterDescription
 uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)The uri of the file.
 
 ReturnsDescription
-Uint8Array &#124; Thenable<Uint8Array>An array of bytes or a thenable that resolves to such.
+Uint8Array<ArrayBufferLike> &#124; Thenable<Uint8Array<ArrayBufferLike>>An array of bytes or a thenable that resolves to such.
 
 rename(oldUri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), newUri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), options: {overwrite: boolean}): void | Thenable<void>
 
@@ -10520,7 +10496,7 @@ Invalid ranges will be ignored.
 
 #### Constructors
 
-new FoldingRange(start: number, end: number, kind?: [FoldingRangeKind](https://code.visualstudio.com/api/references/vscode-api#FoldingRangeKind)): [FoldingRange](https://code.visualstudio.com/api/references/vscode-api#FoldingRange)
+FoldingRange(start: number, end: number, kind?: [FoldingRangeKind](https://code.visualstudio.com/api/references/vscode-api#FoldingRangeKind)): [FoldingRange](https://code.visualstudio.com/api/references/vscode-api#FoldingRange)
 
 Creates a new folding range.
 
@@ -10623,7 +10599,7 @@ A breakpoint specified by a function name.
 
 #### Constructors
 
-new FunctionBreakpoint(functionName: string, enabled?: boolean, condition?: string, hitCondition?: string, logMessage?: string): [FunctionBreakpoint](https://code.visualstudio.com/api/references/vscode-api#FunctionBreakpoint)
+FunctionBreakpoint(functionName: string, enabled?: boolean, condition?: string, hitCondition?: string, logMessage?: string): [FunctionBreakpoint](https://code.visualstudio.com/api/references/vscode-api#FunctionBreakpoint)
 
 Create a new function breakpoint.
 
@@ -10829,12 +10805,12 @@ rendered in a tooltip-like widget.
 
 #### Constructors
 
-new Hover(contents: [MarkdownString](https://code.visualstudio.com/api/references/vscode-api#MarkdownString) | [MarkedString](https://code.visualstudio.com/api/references/vscode-api#MarkedString) | Array<[MarkdownString](https://code.visualstudio.com/api/references/vscode-api#MarkdownString) | [MarkedString](https://code.visualstudio.com/api/references/vscode-api#MarkedString)>, range?: [Range](https://code.visualstudio.com/api/references/vscode-api#Range)): [Hover](https://code.visualstudio.com/api/references/vscode-api#Hover)
+Hover(contents: [MarkdownString](https://code.visualstudio.com/api/references/vscode-api#MarkdownString) | [MarkedString](https://code.visualstudio.com/api/references/vscode-api#MarkedString) | Array<MarkdownString | MarkedString>, range?: [Range](https://code.visualstudio.com/api/references/vscode-api#Range)): [Hover](https://code.visualstudio.com/api/references/vscode-api#Hover)
 
 Creates a new hover object.
 
 ParameterDescription
-contents: [MarkdownString](https://code.visualstudio.com/api/references/vscode-api#MarkdownString) &#124; [MarkedString](https://code.visualstudio.com/api/references/vscode-api#MarkedString) &#124; Array<[MarkdownString](https://code.visualstudio.com/api/references/vscode-api#MarkdownString) &#124; [MarkedString](https://code.visualstudio.com/api/references/vscode-api#MarkedString)>The contents of the hover.
+contents: [MarkdownString](https://code.visualstudio.com/api/references/vscode-api#MarkdownString) &#124; [MarkedString](https://code.visualstudio.com/api/references/vscode-api#MarkedString) &#124; Array<MarkdownString | MarkedString>The contents of the hover.
 
 range?: [Range](https://code.visualstudio.com/api/references/vscode-api#Range)The range to which the hover applies.
 
@@ -10960,7 +10936,7 @@ Inlay hint information.
 
 #### Constructors
 
-new InlayHint(position: [Position](https://code.visualstudio.com/api/references/vscode-api#Position), label: string | [InlayHintLabelPart](https://code.visualstudio.com/api/references/vscode-api#InlayHintLabelPart)[], kind?: [InlayHintKind](https://code.visualstudio.com/api/references/vscode-api#InlayHintKind)): [InlayHint](https://code.visualstudio.com/api/references/vscode-api#InlayHint)
+InlayHint(position: [Position](https://code.visualstudio.com/api/references/vscode-api#Position), label: string | [InlayHintLabelPart](https://code.visualstudio.com/api/references/vscode-api#InlayHintLabelPart)[], kind?: [InlayHintKind](https://code.visualstudio.com/api/references/vscode-api#InlayHintKind)): [InlayHint](https://code.visualstudio.com/api/references/vscode-api#InlayHint)
 
 Creates a new inlay hint.
 
@@ -11046,7 +11022,7 @@ An inlay hint label part allows for interactive and composite labels of inlay hi
 
 #### Constructors
 
-new InlayHintLabelPart(value: string): [InlayHintLabelPart](https://code.visualstudio.com/api/references/vscode-api#InlayHintLabelPart)
+InlayHintLabelPart(value: string): [InlayHintLabelPart](https://code.visualstudio.com/api/references/vscode-api#InlayHintLabelPart)
 
 Creates a new inlay hint label part.
 
@@ -11166,7 +11142,7 @@ _See also_
 
 #### Constructors
 
-new InlineCompletionItem(insertText: string | [SnippetString](https://code.visualstudio.com/api/references/vscode-api#SnippetString), range?: [Range](https://code.visualstudio.com/api/references/vscode-api#Range), command?: [Command](https://code.visualstudio.com/api/references/vscode-api#Command)): [InlineCompletionItem](https://code.visualstudio.com/api/references/vscode-api#InlineCompletionItem)
+InlineCompletionItem(insertText: string | [SnippetString](https://code.visualstudio.com/api/references/vscode-api#SnippetString), range?: [Range](https://code.visualstudio.com/api/references/vscode-api#Range), command?: [Command](https://code.visualstudio.com/api/references/vscode-api#Command)): [InlineCompletionItem](https://code.visualstudio.com/api/references/vscode-api#InlineCompletionItem)
 
 Creates a new inline completion item.
 
@@ -11241,7 +11217,7 @@ in the editor.
 
 #### Constructors
 
-new InlineCompletionList(items: [InlineCompletionItem](https://code.visualstudio.com/api/references/vscode-api#InlineCompletionItem)[]): [InlineCompletionList](https://code.visualstudio.com/api/references/vscode-api#InlineCompletionList)
+InlineCompletionList(items: [InlineCompletionItem](https://code.visualstudio.com/api/references/vscode-api#InlineCompletionItem)[]): [InlineCompletionList](https://code.visualstudio.com/api/references/vscode-api#InlineCompletionList)
 
 Creates a new list of inline completion items.
 
@@ -11308,7 +11284,7 @@ An optional expression can be used to override the extracted expression.
 
 #### Constructors
 
-new InlineValueEvaluatableExpression(range: [Range](https://code.visualstudio.com/api/references/vscode-api#Range), expression?: string): [InlineValueEvaluatableExpression](https://code.visualstudio.com/api/references/vscode-api#InlineValueEvaluatableExpression)
+InlineValueEvaluatableExpression(range: [Range](https://code.visualstudio.com/api/references/vscode-api#Range), expression?: string): [InlineValueEvaluatableExpression](https://code.visualstudio.com/api/references/vscode-api#InlineValueEvaluatableExpression)
 
 Creates a new InlineValueEvaluatableExpression object.
 
@@ -11373,7 +11349,7 @@ Provide inline value as text.
 
 #### Constructors
 
-new InlineValueText(range: [Range](https://code.visualstudio.com/api/references/vscode-api#Range), text: string): [InlineValueText](https://code.visualstudio.com/api/references/vscode-api#InlineValueText)
+InlineValueText(range: [Range](https://code.visualstudio.com/api/references/vscode-api#Range), text: string): [InlineValueText](https://code.visualstudio.com/api/references/vscode-api#InlineValueText)
 
 Creates a new InlineValueText object.
 
@@ -11403,7 +11379,7 @@ An optional variable name can be used to override the extracted name.
 
 #### Constructors
 
-new InlineValueVariableLookup(range: [Range](https://code.visualstudio.com/api/references/vscode-api#Range), variableName?: string, caseSensitiveLookup?: boolean): [InlineValueVariableLookup](https://code.visualstudio.com/api/references/vscode-api#InlineValueVariableLookup)
+InlineValueVariableLookup(range: [Range](https://code.visualstudio.com/api/references/vscode-api#Range), variableName?: string, caseSensitiveLookup?: boolean): [InlineValueVariableLookup](https://code.visualstudio.com/api/references/vscode-api#InlineValueVariableLookup)
 
 Creates a new InlineValueVariableLookup object.
 
@@ -11926,7 +11902,7 @@ ReturnsDescription
 
 #### Constructors
 
-new LanguageModelChatMessage(role: [LanguageModelChatMessageRole](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChatMessageRole), content: string | [LanguageModelInputPart](https://code.visualstudio.com/api/references/vscode-api#LanguageModelInputPart)[], name?: string): [LanguageModelChatMessage](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChatMessage)
+LanguageModelChatMessage(role: [LanguageModelChatMessageRole](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChatMessageRole), content: string | [LanguageModelInputPart](https://code.visualstudio.com/api/references/vscode-api#LanguageModelInputPart)[], name?: string): [LanguageModelChatMessage](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChatMessage)
 
 Create a new user message.
 
@@ -12252,7 +12228,7 @@ ReturnsDescription
 
 #### Constructors
 
-new LanguageModelDataPart(data: Uint8Array, mimeType: string): [LanguageModelDataPart](https://code.visualstudio.com/api/references/vscode-api#LanguageModelDataPart)
+LanguageModelDataPart(data: Uint8Array, mimeType: string): [LanguageModelDataPart](https://code.visualstudio.com/api/references/vscode-api#LanguageModelDataPart)
 
 Construct a generic data part with the given content.
 
@@ -12315,7 +12291,7 @@ ReturnsDescription
 
 #### Constructors
 
-new LanguageModelError(message?: string): [LanguageModelError](https://code.visualstudio.com/api/references/vscode-api#LanguageModelError)
+LanguageModelError(message?: string): [LanguageModelError](https://code.visualstudio.com/api/references/vscode-api#LanguageModelError)
 
 ParameterDescription
 message?: string
@@ -12347,7 +12323,7 @@ _See also_
 
 #### Constructors
 
-new LanguageModelPromptTsxPart(value: unknown): [LanguageModelPromptTsxPart](https://code.visualstudio.com/api/references/vscode-api#LanguageModelPromptTsxPart)
+LanguageModelPromptTsxPart(value: unknown): [LanguageModelPromptTsxPart](https://code.visualstudio.com/api/references/vscode-api#LanguageModelPromptTsxPart)
 
 Construct a prompt-tsx part with the given content.
 
@@ -12375,7 +12351,7 @@ A language model response part containing a piece of text, returned from a [Lang
 
 #### Constructors
 
-new LanguageModelTextPart(value: string): [LanguageModelTextPart](https://code.visualstudio.com/api/references/vscode-api#LanguageModelTextPart)
+LanguageModelTextPart(value: string): [LanguageModelTextPart](https://code.visualstudio.com/api/references/vscode-api#LanguageModelTextPart)
 
 Construct a text part with the given content.
 
@@ -12432,7 +12408,7 @@ included as a content part on a [LanguageModelChatMessage](https://code.visualst
 
 #### Constructors
 
-new LanguageModelToolCallPart(callId: string, name: string, input: object): [LanguageModelToolCallPart](https://code.visualstudio.com/api/references/vscode-api#LanguageModelToolCallPart)
+LanguageModelToolCallPart(callId: string, name: string, input: object): [LanguageModelToolCallPart](https://code.visualstudio.com/api/references/vscode-api#LanguageModelToolCallPart)
 
 Create a new LanguageModelToolCallPart.
 
@@ -12543,7 +12519,7 @@ A result returned from a tool invocation. If using `vscode/prompt-tsx`, this res
 
 #### Constructors
 
-new LanguageModelToolResult(content: unknown[]): [LanguageModelToolResult](https://code.visualstudio.com/api/references/vscode-api#LanguageModelToolResult)
+LanguageModelToolResult(content: unknown[]): [LanguageModelToolResult](https://code.visualstudio.com/api/references/vscode-api#LanguageModelToolResult)
 
 Create a LanguageModelToolResult
 
@@ -12570,7 +12546,7 @@ it can only be included in the content of a User message
 
 #### Constructors
 
-new LanguageModelToolResultPart(callId: string, content: unknown[]): [LanguageModelToolResultPart](https://code.visualstudio.com/api/references/vscode-api#LanguageModelToolResultPart)
+LanguageModelToolResultPart(callId: string, content: unknown[]): [LanguageModelToolResultPart](https://code.visualstudio.com/api/references/vscode-api#LanguageModelToolResultPart)
 
 ParameterDescription
 callId: stringThe ID of the tool call.
@@ -12742,7 +12718,7 @@ Represents a list of ranges that can be edited together along with a word patter
 
 #### Constructors
 
-new LinkedEditingRanges(ranges: [Range](https://code.visualstudio.com/api/references/vscode-api#Range)[], wordPattern?: RegExp): [LinkedEditingRanges](https://code.visualstudio.com/api/references/vscode-api#LinkedEditingRanges)
+LinkedEditingRanges(ranges: [Range](https://code.visualstudio.com/api/references/vscode-api#Range)[], wordPattern?: RegExp): [LinkedEditingRanges](https://code.visualstudio.com/api/references/vscode-api#LinkedEditingRanges)
 
 Create a new linked editing ranges object.
 
@@ -12773,7 +12749,7 @@ inside a text file.
 
 #### Constructors
 
-new Location(uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), rangeOrPosition: [Range](https://code.visualstudio.com/api/references/vscode-api#Range) | [Position](https://code.visualstudio.com/api/references/vscode-api#Position)): [Location](https://code.visualstudio.com/api/references/vscode-api#Location)
+Location(uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), rangeOrPosition: [Range](https://code.visualstudio.com/api/references/vscode-api#Range) | [Position](https://code.visualstudio.com/api/references/vscode-api#Position)): [Location](https://code.visualstudio.com/api/references/vscode-api#Location)
 
 Creates a new location object.
 
@@ -13031,7 +13007,7 @@ Rendering of embedded html is supported when [supportHtml](https://code.visualst
 
 #### Constructors
 
-new MarkdownString(value?: string, supportThemeIcons?: boolean): [MarkdownString](https://code.visualstudio.com/api/references/vscode-api#MarkdownString)
+MarkdownString(value?: string, supportThemeIcons?: boolean): [MarkdownString](https://code.visualstudio.com/api/references/vscode-api#MarkdownString)
 
 Creates a new markdown string with the given value.
 
@@ -13145,7 +13121,7 @@ Streamable HTTP transport.
 
 #### Constructors
 
-new McpHttpServerDefinition(label: string, uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), headers?: Record<string, string>, version?: string): [McpHttpServerDefinition](https://code.visualstudio.com/api/references/vscode-api#McpHttpServerDefinition)
+McpHttpServerDefinition(label: string, uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), headers?: Record<string, string>, version?: string): [McpHttpServerDefinition](https://code.visualstudio.com/api/references/vscode-api#McpHttpServerDefinition)
 
 ParameterDescription
 label: stringThe human-readable name of the server.
@@ -13242,7 +13218,7 @@ will not run in a shell environment.
 
 #### Constructors
 
-new McpStdioServerDefinition(label: string, command: string, args?: string[], env?: Record<string, string | number>, version?: string): [McpStdioServerDefinition](https://code.visualstudio.com/api/references/vscode-api#McpStdioServerDefinition)
+McpStdioServerDefinition(label: string, command: string, args?: string[], env?: Record<string, string | number | null>, version?: string): [McpStdioServerDefinition](https://code.visualstudio.com/api/references/vscode-api#McpStdioServerDefinition)
 
 ParameterDescription
 label: stringThe human-readable name of the server.
@@ -13251,7 +13227,7 @@ command: stringThe command used to start the server.
 
 args?: string[]Additional command-line arguments passed to the server.
 
-env?: Record<string, string &#124; number>Optional additional environment information for the server.
+env?: Record<string, string &#124; number &#124; null>Optional additional environment information for the server.
 
 version?: stringOptional version identification for the server.
 
@@ -13273,7 +13249,7 @@ cwd?: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)
 
 The working directory used to start the server.
 
-env: Record<string, string | number>
+env: Record<string, string | number | null>
 
 Optional additional environment information for the server. Variables
 in this environment will overwrite or remove (if null) the default
@@ -13436,7 +13412,7 @@ NotebookCellData is the raw representation of notebook cells. Its is part of [No
 
 #### Constructors
 
-new NotebookCellData(kind: [NotebookCellKind](https://code.visualstudio.com/api/references/vscode-api#NotebookCellKind), value: string, languageId: string): [NotebookCellData](https://code.visualstudio.com/api/references/vscode-api#NotebookCellData)
+NotebookCellData(kind: [NotebookCellKind](https://code.visualstudio.com/api/references/vscode-api#NotebookCellKind), value: string, languageId: string): [NotebookCellData](https://code.visualstudio.com/api/references/vscode-api#NotebookCellData)
 
 Create new cell data. Minimal cell data specifies its kind, its source value, and the
 language identifier of its source.
@@ -13639,7 +13615,7 @@ use different MIME types.
 
 #### Constructors
 
-new NotebookCellOutput(items: [NotebookCellOutputItem](https://code.visualstudio.com/api/references/vscode-api#NotebookCellOutputItem)[], metadata?: ): [NotebookCellOutput](https://code.visualstudio.com/api/references/vscode-api#NotebookCellOutput)
+NotebookCellOutput(items: [NotebookCellOutputItem](https://code.visualstudio.com/api/references/vscode-api#NotebookCellOutputItem)[], metadata?: ): [NotebookCellOutput](https://code.visualstudio.com/api/references/vscode-api#NotebookCellOutput)
 
 Create new notebook output.
 
@@ -13745,7 +13721,7 @@ ReturnsDescription
 
 #### Constructors
 
-new NotebookCellOutputItem(data: Uint8Array, mime: string): [NotebookCellOutputItem](https://code.visualstudio.com/api/references/vscode-api#NotebookCellOutputItem)
+NotebookCellOutputItem(data: Uint8Array, mime: string): [NotebookCellOutputItem](https://code.visualstudio.com/api/references/vscode-api#NotebookCellOutputItem)
 
 Create a new notebook cell output item.
 
@@ -13791,7 +13767,7 @@ A contribution to a cell's status bar
 
 #### Constructors
 
-new NotebookCellStatusBarItem(text: string, alignment: [NotebookCellStatusBarAlignment](https://code.visualstudio.com/api/references/vscode-api#NotebookCellStatusBarAlignment)): [NotebookCellStatusBarItem](https://code.visualstudio.com/api/references/vscode-api#NotebookCellStatusBarItem)
+NotebookCellStatusBarItem(text: string, alignment: [NotebookCellStatusBarAlignment](https://code.visualstudio.com/api/references/vscode-api#NotebookCellStatusBarAlignment)): [NotebookCellStatusBarItem](https://code.visualstudio.com/api/references/vscode-api#NotebookCellStatusBarItem)
 
 Creates a new NotebookCellStatusBarItem.
 
@@ -14033,7 +14009,7 @@ _See also_
 
 #### Constructors
 
-new NotebookData(cells: [NotebookCellData](https://code.visualstudio.com/api/references/vscode-api#NotebookCellData)[]): [NotebookData](https://code.visualstudio.com/api/references/vscode-api#NotebookData)
+NotebookData(cells: [NotebookCellData](https://code.visualstudio.com/api/references/vscode-api#NotebookCellData)[]): [NotebookData](https://code.visualstudio.com/api/references/vscode-api#NotebookData)
 
 Create new notebook data.
 
@@ -14394,7 +14370,7 @@ ReturnsDescription
 
 #### Constructors
 
-new NotebookEdit(range: [NotebookRange](https://code.visualstudio.com/api/references/vscode-api#NotebookRange), newCells: [NotebookCellData](https://code.visualstudio.com/api/references/vscode-api#NotebookCellData)[]): [NotebookEdit](https://code.visualstudio.com/api/references/vscode-api#NotebookEdit)
+NotebookEdit(range: [NotebookRange](https://code.visualstudio.com/api/references/vscode-api#NotebookRange), newCells: [NotebookCellData](https://code.visualstudio.com/api/references/vscode-api#NotebookCellData)[]): [NotebookEdit](https://code.visualstudio.com/api/references/vscode-api#NotebookEdit)
 
 Create a new notebook edit.
 
@@ -14526,7 +14502,7 @@ It is guaranteed that start is less than or equal to end.
 
 #### Constructors
 
-new NotebookRange(start: number, end: number): [NotebookRange](https://code.visualstudio.com/api/references/vscode-api#NotebookRange)
+NotebookRange(start: number, end: number): [NotebookRange](https://code.visualstudio.com/api/references/vscode-api#NotebookRange)
 
 Create a new notebook range. If `start` is not
 before or equal to `end`, the values will be swapped.
@@ -14615,7 +14591,7 @@ token: [CancellationToken](https://code.visualstudio.com/api/references/vscode-a
 ReturnsDescription
 [NotebookData](https://code.visualstudio.com/api/references/vscode-api#NotebookData) &#124; Thenable<[NotebookData](https://code.visualstudio.com/api/references/vscode-api#NotebookData)>Notebook data or a thenable that resolves to such.
 
-serializeNotebook(data: [NotebookData](https://code.visualstudio.com/api/references/vscode-api#NotebookData), token: [CancellationToken](https://code.visualstudio.com/api/references/vscode-api#CancellationToken)): Uint8Array | Thenable<Uint8Array>
+serializeNotebook(data: [NotebookData](https://code.visualstudio.com/api/references/vscode-api#NotebookData), token: [CancellationToken](https://code.visualstudio.com/api/references/vscode-api#CancellationToken)): Uint8Array<ArrayBufferLike> | Thenable<Uint8Array<ArrayBufferLike>>
 
 Serialize notebook data into file contents.
 
@@ -14625,7 +14601,7 @@ data: [NotebookData](https://code.visualstudio.com/api/references/vscode-api#Not
 token: [CancellationToken](https://code.visualstudio.com/api/references/vscode-api#CancellationToken)A cancellation token.
 
 ReturnsDescription
-Uint8Array &#124; Thenable<Uint8Array>An array of bytes or a thenable that resolves to such.
+Uint8Array<ArrayBufferLike> &#124; Thenable<Uint8Array<ArrayBufferLike>>An array of bytes or a thenable that resolves to such.
 
 ### OnEnterRule
 
@@ -14856,7 +14832,7 @@ have a label and a doc-comment.
 
 #### Constructors
 
-new ParameterInformation(label: string | [number, number], documentation?: string | [MarkdownString](https://code.visualstudio.com/api/references/vscode-api#MarkdownString)): [ParameterInformation](https://code.visualstudio.com/api/references/vscode-api#ParameterInformation)
+ParameterInformation(label: string | [number, number], documentation?: string | [MarkdownString](https://code.visualstudio.com/api/references/vscode-api#MarkdownString)): [ParameterInformation](https://code.visualstudio.com/api/references/vscode-api#ParameterInformation)
 
 Creates a new parameter information object.
 
@@ -14894,7 +14870,7 @@ from an existing position.
 
 #### Constructors
 
-new Position(line: number, character: number): [Position](https://code.visualstudio.com/api/references/vscode-api#Position)
+Position(line: number, character: number): [Position](https://code.visualstudio.com/api/references/vscode-api#Position)
 
 ParameterDescription
 line: numberA zero-based line value.
@@ -15065,7 +15041,7 @@ without shell interaction.
 
 #### Constructors
 
-new ProcessExecution(process: string, options?: [ProcessExecutionOptions](https://code.visualstudio.com/api/references/vscode-api#ProcessExecutionOptions)): [ProcessExecution](https://code.visualstudio.com/api/references/vscode-api#ProcessExecution)
+ProcessExecution(process: string, options?: [ProcessExecutionOptions](https://code.visualstudio.com/api/references/vscode-api#ProcessExecutionOptions)): [ProcessExecution](https://code.visualstudio.com/api/references/vscode-api#ProcessExecution)
 
 Creates a process execution.
 
@@ -15077,7 +15053,7 @@ options?: [ProcessExecutionOptions](https://code.visualstudio.com/api/references
 ReturnsDescription
 [ProcessExecution](https://code.visualstudio.com/api/references/vscode-api#ProcessExecution)
 
-new ProcessExecution(process: string, args: string[], options?: [ProcessExecutionOptions](https://code.visualstudio.com/api/references/vscode-api#ProcessExecutionOptions)): [ProcessExecution](https://code.visualstudio.com/api/references/vscode-api#ProcessExecution)
+ProcessExecution(process: string, args: string[], options?: [ProcessExecutionOptions](https://code.visualstudio.com/api/references/vscode-api#ProcessExecutionOptions)): [ProcessExecution](https://code.visualstudio.com/api/references/vscode-api#ProcessExecution)
 
 Creates a process execution.
 
@@ -15961,7 +15937,7 @@ to derive new ranges from an existing range.
 
 #### Constructors
 
-new Range(start: [Position](https://code.visualstudio.com/api/references/vscode-api#Position), end: [Position](https://code.visualstudio.com/api/references/vscode-api#Position)): [Range](https://code.visualstudio.com/api/references/vscode-api#Range)
+Range(start: [Position](https://code.visualstudio.com/api/references/vscode-api#Position), end: [Position](https://code.visualstudio.com/api/references/vscode-api#Position)): [Range](https://code.visualstudio.com/api/references/vscode-api#Range)
 
 Create a new range from two positions. If `start` is not
 before or equal to `end`, the values will be swapped.
@@ -15974,7 +15950,7 @@ end: [Position](https://code.visualstudio.com/api/references/vscode-api#Position
 ReturnsDescription
 [Range](https://code.visualstudio.com/api/references/vscode-api#Range)
 
-new Range(startLine: number, startCharacter: number, endLine: number, endCharacter: number): [Range](https://code.visualstudio.com/api/references/vscode-api#Range)
+Range(startLine: number, startCharacter: number, endLine: number, endCharacter: number): [Range](https://code.visualstudio.com/api/references/vscode-api#Range)
 
 Create a new range from number coordinates. It is a shorter equivalent of
 using `new Range(new Position(startLine, startCharacter), new Position(endLine, endCharacter))`
@@ -16123,7 +16099,7 @@ preferred way of creating the relative pattern.
 
 #### Constructors
 
-new RelativePattern(base: string | [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri) | [WorkspaceFolder](https://code.visualstudio.com/api/references/vscode-api#WorkspaceFolder), pattern: string): [RelativePattern](https://code.visualstudio.com/api/references/vscode-api#RelativePattern)
+RelativePattern(base: string | [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri) | [WorkspaceFolder](https://code.visualstudio.com/api/references/vscode-api#WorkspaceFolder), pattern: string): [RelativePattern](https://code.visualstudio.com/api/references/vscode-api#RelativePattern)
 
 Creates a new relative pattern object with a base file path and pattern to match. This pattern
 will be matched on file paths relative to the base.
@@ -16355,7 +16331,7 @@ Represents a text selection in an editor.
 
 #### Constructors
 
-new Selection(anchor: [Position](https://code.visualstudio.com/api/references/vscode-api#Position), active: [Position](https://code.visualstudio.com/api/references/vscode-api#Position)): [Selection](https://code.visualstudio.com/api/references/vscode-api#Selection)
+Selection(anchor: [Position](https://code.visualstudio.com/api/references/vscode-api#Position), active: [Position](https://code.visualstudio.com/api/references/vscode-api#Position)): [Selection](https://code.visualstudio.com/api/references/vscode-api#Selection)
 
 Create a selection from two positions.
 
@@ -16367,7 +16343,7 @@ active: [Position](https://code.visualstudio.com/api/references/vscode-api#Posit
 ReturnsDescription
 [Selection](https://code.visualstudio.com/api/references/vscode-api#Selection)
 
-new Selection(anchorLine: number, anchorCharacter: number, activeLine: number, activeCharacter: number): [Selection](https://code.visualstudio.com/api/references/vscode-api#Selection)
+Selection(anchorLine: number, anchorCharacter: number, activeLine: number, activeCharacter: number): [Selection](https://code.visualstudio.com/api/references/vscode-api#Selection)
 
 Create a selection from four coordinates.
 
@@ -16492,7 +16468,7 @@ may have a parent selection range that contains it.
 
 #### Constructors
 
-new SelectionRange(range: [Range](https://code.visualstudio.com/api/references/vscode-api#Range), parent?: [SelectionRange](https://code.visualstudio.com/api/references/vscode-api#SelectionRange)): [SelectionRange](https://code.visualstudio.com/api/references/vscode-api#SelectionRange)
+SelectionRange(range: [Range](https://code.visualstudio.com/api/references/vscode-api#Range), parent?: [SelectionRange](https://code.visualstudio.com/api/references/vscode-api#SelectionRange)): [SelectionRange](https://code.visualstudio.com/api/references/vscode-api#SelectionRange)
 
 Creates a new selection range.
 
@@ -16551,7 +16527,7 @@ _See also_
 
 #### Constructors
 
-new SemanticTokens(data: Uint32Array, resultId?: string): [SemanticTokens](https://code.visualstudio.com/api/references/vscode-api#SemanticTokens)
+SemanticTokens(data: Uint32Array, resultId?: string): [SemanticTokens](https://code.visualstudio.com/api/references/vscode-api#SemanticTokens)
 
 Create new semantic tokens.
 
@@ -16585,7 +16561,7 @@ which contains delta encoded semantic tokens.
 
 #### Constructors
 
-new SemanticTokensBuilder(legend?: [SemanticTokensLegend](https://code.visualstudio.com/api/references/vscode-api#SemanticTokensLegend)): [SemanticTokensBuilder](https://code.visualstudio.com/api/references/vscode-api#SemanticTokensBuilder)
+SemanticTokensBuilder(legend?: [SemanticTokensLegend](https://code.visualstudio.com/api/references/vscode-api#SemanticTokensLegend)): [SemanticTokensBuilder](https://code.visualstudio.com/api/references/vscode-api#SemanticTokensBuilder)
 
 Creates a semantic tokens builder.
 
@@ -16647,7 +16623,7 @@ _See also_
 
 #### Constructors
 
-new SemanticTokensEdit(start: number, deleteCount: number, data?: Uint32Array): [SemanticTokensEdit](https://code.visualstudio.com/api/references/vscode-api#SemanticTokensEdit)
+SemanticTokensEdit(start: number, deleteCount: number, data?: Uint32Array): [SemanticTokensEdit](https://code.visualstudio.com/api/references/vscode-api#SemanticTokensEdit)
 
 Create a semantic token edit.
 
@@ -16663,7 +16639,7 @@ ReturnsDescription
 
 #### Properties
 
-data: Uint32Array
+data: Uint32Array<ArrayBufferLike>
 
 The elements to insert.
 
@@ -16684,7 +16660,7 @@ _See also_
 
 #### Constructors
 
-new SemanticTokensEdits(edits: [SemanticTokensEdit](https://code.visualstudio.com/api/references/vscode-api#SemanticTokensEdit)[], resultId?: string): [SemanticTokensEdits](https://code.visualstudio.com/api/references/vscode-api#SemanticTokensEdits)
+SemanticTokensEdits(edits: [SemanticTokensEdit](https://code.visualstudio.com/api/references/vscode-api#SemanticTokensEdit)[], resultId?: string): [SemanticTokensEdits](https://code.visualstudio.com/api/references/vscode-api#SemanticTokensEdits)
 
 Create new semantic tokens edits.
 
@@ -16716,7 +16692,7 @@ the integer encoded representation of semantic tokens.
 
 #### Constructors
 
-new SemanticTokensLegend(tokenTypes: string[], tokenModifiers?: string[]): [SemanticTokensLegend](https://code.visualstudio.com/api/references/vscode-api#SemanticTokensLegend)
+SemanticTokensLegend(tokenTypes: string[], tokenModifiers?: string[]): [SemanticTokensLegend](https://code.visualstudio.com/api/references/vscode-api#SemanticTokensLegend)
 
 Creates a semantic tokens legend.
 
@@ -16744,7 +16720,7 @@ Represents a task execution that happens inside a shell.
 
 #### Constructors
 
-new ShellExecution(commandLine: string, options?: [ShellExecutionOptions](https://code.visualstudio.com/api/references/vscode-api#ShellExecutionOptions)): [ShellExecution](https://code.visualstudio.com/api/references/vscode-api#ShellExecution)
+ShellExecution(commandLine: string, options?: [ShellExecutionOptions](https://code.visualstudio.com/api/references/vscode-api#ShellExecutionOptions)): [ShellExecution](https://code.visualstudio.com/api/references/vscode-api#ShellExecution)
 
 Creates a shell execution with a full command line.
 
@@ -16756,7 +16732,7 @@ options?: [ShellExecutionOptions](https://code.visualstudio.com/api/references/v
 ReturnsDescription
 [ShellExecution](https://code.visualstudio.com/api/references/vscode-api#ShellExecution)
 
-new ShellExecution(command: string | [ShellQuotedString](https://code.visualstudio.com/api/references/vscode-api#ShellQuotedString), args: Array<string | [ShellQuotedString](https://code.visualstudio.com/api/references/vscode-api#ShellQuotedString)>, options?: [ShellExecutionOptions](https://code.visualstudio.com/api/references/vscode-api#ShellExecutionOptions)): [ShellExecution](https://code.visualstudio.com/api/references/vscode-api#ShellExecution)
+ShellExecution(command: string | [ShellQuotedString](https://code.visualstudio.com/api/references/vscode-api#ShellQuotedString), args: Array<string | [ShellQuotedString](https://code.visualstudio.com/api/references/vscode-api#ShellQuotedString)>, options?: [ShellExecutionOptions](https://code.visualstudio.com/api/references/vscode-api#ShellExecutionOptions)): [ShellExecution](https://code.visualstudio.com/api/references/vscode-api#ShellExecution)
 
 Creates a shell execution with a command and arguments. For the real execution the editor will
 construct a command line from the command and the arguments. This is subject to interpretation
@@ -16894,7 +16870,7 @@ active and only one active parameter.
 
 #### Constructors
 
-new SignatureHelp(): [SignatureHelp](https://code.visualstudio.com/api/references/vscode-api#SignatureHelp)
+SignatureHelp(): [SignatureHelp](https://code.visualstudio.com/api/references/vscode-api#SignatureHelp)
 
 ParameterDescription
 ReturnsDescription
@@ -17013,7 +16989,7 @@ a set of parameters.
 
 #### Constructors
 
-new SignatureInformation(label: string, documentation?: string | [MarkdownString](https://code.visualstudio.com/api/references/vscode-api#MarkdownString)): [SignatureInformation](https://code.visualstudio.com/api/references/vscode-api#SignatureInformation)
+SignatureInformation(label: string, documentation?: string | [MarkdownString](https://code.visualstudio.com/api/references/vscode-api#MarkdownString)): [SignatureInformation](https://code.visualstudio.com/api/references/vscode-api#SignatureInformation)
 
 Creates a new signature information object.
 
@@ -17060,7 +17036,7 @@ the end of the snippet. Variables are defined with `$name` and
 
 #### Constructors
 
-new SnippetString(value?: string): [SnippetString](https://code.visualstudio.com/api/references/vscode-api#SnippetString)
+SnippetString(value?: string): [SnippetString](https://code.visualstudio.com/api/references/vscode-api#SnippetString)
 
 Create a new snippet string.
 
@@ -17182,7 +17158,7 @@ ReturnsDescription
 
 #### Constructors
 
-new SnippetTextEdit(range: [Range](https://code.visualstudio.com/api/references/vscode-api#Range), snippet: [SnippetString](https://code.visualstudio.com/api/references/vscode-api#SnippetString)): [SnippetTextEdit](https://code.visualstudio.com/api/references/vscode-api#SnippetTextEdit)
+SnippetTextEdit(range: [Range](https://code.visualstudio.com/api/references/vscode-api#Range), snippet: [SnippetString](https://code.visualstudio.com/api/references/vscode-api#SnippetString)): [SnippetTextEdit](https://code.visualstudio.com/api/references/vscode-api#SnippetTextEdit)
 
 Create a new snippet edit.
 
@@ -17214,7 +17190,7 @@ A breakpoint specified by a source location.
 
 #### Constructors
 
-new SourceBreakpoint(location: [Location](https://code.visualstudio.com/api/references/vscode-api#Location), enabled?: boolean, condition?: string, hitCondition?: string, logMessage?: string): [SourceBreakpoint](https://code.visualstudio.com/api/references/vscode-api#SourceBreakpoint)
+SourceBreakpoint(location: [Location](https://code.visualstudio.com/api/references/vscode-api#Location), enabled?: boolean, condition?: string, hitCondition?: string, logMessage?: string): [SourceBreakpoint](https://code.visualstudio.com/api/references/vscode-api#SourceBreakpoint)
 
 Create a new breakpoint for a source location.
 
@@ -17506,7 +17482,7 @@ Contains coverage information for a single statement or line.
 
 #### Constructors
 
-new StatementCoverage(executed: number | boolean, location: [Range](https://code.visualstudio.com/api/references/vscode-api#Range) | [Position](https://code.visualstudio.com/api/references/vscode-api#Position), branches?: [BranchCoverage](https://code.visualstudio.com/api/references/vscode-api#BranchCoverage)[]): [StatementCoverage](https://code.visualstudio.com/api/references/vscode-api#StatementCoverage)
+StatementCoverage(executed: number | boolean, location: [Range](https://code.visualstudio.com/api/references/vscode-api#Range) | [Position](https://code.visualstudio.com/api/references/vscode-api#Position), branches?: [BranchCoverage](https://code.visualstudio.com/api/references/vscode-api#BranchCoverage)[]): [StatementCoverage](https://code.visualstudio.com/api/references/vscode-api#StatementCoverage)
 
 ParameterDescription
 executed: number &#124; booleanThe number of times this statement was executed, or a
@@ -17660,7 +17636,7 @@ interfaces etc.
 
 #### Constructors
 
-new SymbolInformation(name: string, kind: [SymbolKind](https://code.visualstudio.com/api/references/vscode-api#SymbolKind), containerName: string, location: [Location](https://code.visualstudio.com/api/references/vscode-api#Location)): [SymbolInformation](https://code.visualstudio.com/api/references/vscode-api#SymbolInformation)
+SymbolInformation(name: string, kind: [SymbolKind](https://code.visualstudio.com/api/references/vscode-api#SymbolKind), containerName: string, location: [Location](https://code.visualstudio.com/api/references/vscode-api#Location)): [SymbolInformation](https://code.visualstudio.com/api/references/vscode-api#SymbolInformation)
 
 Creates a new symbol information object.
 
@@ -17676,7 +17652,7 @@ location: [Location](https://code.visualstudio.com/api/references/vscode-api#Loc
 ReturnsDescription
 [SymbolInformation](https://code.visualstudio.com/api/references/vscode-api#SymbolInformation)
 
-new SymbolInformation(name: string, kind: [SymbolKind](https://code.visualstudio.com/api/references/vscode-api#SymbolKind), range: [Range](https://code.visualstudio.com/api/references/vscode-api#Range), uri?: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), containerName?: string): [SymbolInformation](https://code.visualstudio.com/api/references/vscode-api#SymbolInformation)
+SymbolInformation(name: string, kind: [SymbolKind](https://code.visualstudio.com/api/references/vscode-api#SymbolKind), range: [Range](https://code.visualstudio.com/api/references/vscode-api#Range), uri?: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), containerName?: string): [SymbolInformation](https://code.visualstudio.com/api/references/vscode-api#SymbolInformation)
 
 Creates a new symbol information object.
 
@@ -18027,7 +18003,7 @@ The tab represents a custom editor.
 
 #### Constructors
 
-new TabInputCustom(uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), viewType: string): [TabInputCustom](https://code.visualstudio.com/api/references/vscode-api#TabInputCustom)
+TabInputCustom(uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), viewType: string): [TabInputCustom](https://code.visualstudio.com/api/references/vscode-api#TabInputCustom)
 
 Constructs a custom editor tab input.
 
@@ -18055,7 +18031,7 @@ The tab represents a notebook.
 
 #### Constructors
 
-new TabInputNotebook(uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), notebookType: string): [TabInputNotebook](https://code.visualstudio.com/api/references/vscode-api#TabInputNotebook)
+TabInputNotebook(uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), notebookType: string): [TabInputNotebook](https://code.visualstudio.com/api/references/vscode-api#TabInputNotebook)
 
 Constructs a new tab input for a notebook.
 
@@ -18083,7 +18059,7 @@ The tabs represents two notebooks in a diff configuration.
 
 #### Constructors
 
-new TabInputNotebookDiff(original: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), modified: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), notebookType: string): [TabInputNotebookDiff](https://code.visualstudio.com/api/references/vscode-api#TabInputNotebookDiff)
+TabInputNotebookDiff(original: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), modified: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), notebookType: string): [TabInputNotebookDiff](https://code.visualstudio.com/api/references/vscode-api#TabInputNotebookDiff)
 
 Constructs a notebook diff tab input.
 
@@ -18117,7 +18093,7 @@ The tab represents a terminal in the editor area.
 
 #### Constructors
 
-new TabInputTerminal(): [TabInputTerminal](https://code.visualstudio.com/api/references/vscode-api#TabInputTerminal)
+TabInputTerminal(): [TabInputTerminal](https://code.visualstudio.com/api/references/vscode-api#TabInputTerminal)
 
 Constructs a terminal tab input.
 
@@ -18131,7 +18107,7 @@ The tab represents a single text based resource.
 
 #### Constructors
 
-new TabInputText(uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)): [TabInputText](https://code.visualstudio.com/api/references/vscode-api#TabInputText)
+TabInputText(uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)): [TabInputText](https://code.visualstudio.com/api/references/vscode-api#TabInputText)
 
 Constructs a text tab input with the given URI.
 
@@ -18154,7 +18130,7 @@ being rendered as a diff.
 
 #### Constructors
 
-new TabInputTextDiff(original: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), modified: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)): [TabInputTextDiff](https://code.visualstudio.com/api/references/vscode-api#TabInputTextDiff)
+TabInputTextDiff(original: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), modified: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)): [TabInputTextDiff](https://code.visualstudio.com/api/references/vscode-api#TabInputTextDiff)
 
 Constructs a new text diff tab input with the given URIs.
 
@@ -18182,7 +18158,7 @@ The tab represents a webview.
 
 #### Constructors
 
-new TabInputWebview(viewType: string): [TabInputWebview](https://code.visualstudio.com/api/references/vscode-api#TabInputWebview)
+TabInputWebview(viewType: string): [TabInputWebview](https://code.visualstudio.com/api/references/vscode-api#TabInputWebview)
 
 Constructs a webview tab input with the given view type.
 
@@ -18204,7 +18180,7 @@ A task to execute
 
 #### Constructors
 
-new Task(taskDefinition: [TaskDefinition](https://code.visualstudio.com/api/references/vscode-api#TaskDefinition), scope: [WorkspaceFolder](https://code.visualstudio.com/api/references/vscode-api#WorkspaceFolder) | [Global](https://code.visualstudio.com/api/references/vscode-api#Global) | [Workspace](https://code.visualstudio.com/api/references/vscode-api#Workspace), name: string, source: string, execution?: [ProcessExecution](https://code.visualstudio.com/api/references/vscode-api#ProcessExecution) | [ShellExecution](https://code.visualstudio.com/api/references/vscode-api#ShellExecution) | [CustomExecution](https://code.visualstudio.com/api/references/vscode-api#CustomExecution), problemMatchers?: string | string[]): [Task](https://code.visualstudio.com/api/references/vscode-api#Task)
+Task(taskDefinition: [TaskDefinition](https://code.visualstudio.com/api/references/vscode-api#TaskDefinition), scope: [WorkspaceFolder](https://code.visualstudio.com/api/references/vscode-api#WorkspaceFolder) | [Global](https://code.visualstudio.com/api/references/vscode-api#Global) | [Workspace](https://code.visualstudio.com/api/references/vscode-api#Workspace), name: string, source: string, execution?: [ProcessExecution](https://code.visualstudio.com/api/references/vscode-api#ProcessExecution) | [ShellExecution](https://code.visualstudio.com/api/references/vscode-api#ShellExecution) | [CustomExecution](https://code.visualstudio.com/api/references/vscode-api#CustomExecution), problemMatchers?: string | string[]): [Task](https://code.visualstudio.com/api/references/vscode-api#Task)
 
 Creates a new task.
 
@@ -18226,7 +18202,7 @@ problemMatchers?: string &#124; string[]the names of problem matchers to use, li
 ReturnsDescription
 [Task](https://code.visualstudio.com/api/references/vscode-api#Task)
 
-new Task(taskDefinition: [TaskDefinition](https://code.visualstudio.com/api/references/vscode-api#TaskDefinition), name: string, source: string, execution?: [ProcessExecution](https://code.visualstudio.com/api/references/vscode-api#ProcessExecution) | [ShellExecution](https://code.visualstudio.com/api/references/vscode-api#ShellExecution), problemMatchers?: string | string[]): [Task](https://code.visualstudio.com/api/references/vscode-api#Task)
+Task(taskDefinition: [TaskDefinition](https://code.visualstudio.com/api/references/vscode-api#TaskDefinition), name: string, source: string, execution?: [ProcessExecution](https://code.visualstudio.com/api/references/vscode-api#ProcessExecution) | [ShellExecution](https://code.visualstudio.com/api/references/vscode-api#ShellExecution), problemMatchers?: string | string[]): [Task](https://code.visualstudio.com/api/references/vscode-api#Task)
 
 Creates a new task.
 
@@ -18398,20 +18374,6 @@ The rebuild all task group;
 Test: [TaskGroup](https://code.visualstudio.com/api/references/vscode-api#TaskGroup)
 
 The test all task group;
-
-#### Constructors
-
-new TaskGroup(id: string, label: string): [TaskGroup](https://code.visualstudio.com/api/references/vscode-api#TaskGroup)
-
-Private constructor
-
-ParameterDescription
-id: stringIdentifier of a task group.
-
-label: stringThe human-readable name of a task group.
-
-ReturnsDescription
-[TaskGroup](https://code.visualstudio.com/api/references/vscode-api#TaskGroup)
 
 #### Properties
 
@@ -18637,7 +18599,7 @@ ParameterDescription
 ReturnsDescription
 void
 
-logError(eventName: string, data?: Record<string, any>): void
+logError(eventName: string, data?: Record<string, any | [TelemetryTrustedValue](https://code.visualstudio.com/api/references/vscode-api#TelemetryTrustedValue<T>)>): void
 
 Log an error event.
 
@@ -18647,12 +18609,12 @@ Automatically supports echoing to extension telemetry output channel.
 ParameterDescription
 eventName: stringThe event name to log
 
-data?: Record<string, any>The data to log
+data?: Record<string, any &#124; [TelemetryTrustedValue](https://code.visualstudio.com/api/references/vscode-api#TelemetryTrustedValue<T>)>The data to log
 
 ReturnsDescription
 void
 
-logError(error: Error, data?: Record<string, any>): void
+logError(error: Error, data?: Record<string, any | [TelemetryTrustedValue](https://code.visualstudio.com/api/references/vscode-api#TelemetryTrustedValue<T>)>): void
 
 Log an error event.
 
@@ -18663,12 +18625,12 @@ Will also automatically log any exceptions thrown within the extension host proc
 ParameterDescription
 error: ErrorThe error object which contains the stack trace cleaned of PII
 
-data?: Record<string, any>Additional data to log alongside the stack trace
+data?: Record<string, any &#124; [TelemetryTrustedValue](https://code.visualstudio.com/api/references/vscode-api#TelemetryTrustedValue<T>)>Additional data to log alongside the stack trace
 
 ReturnsDescription
 void
 
-logUsage(eventName: string, data?: Record<string, any>): void
+logUsage(eventName: string, data?: Record<string, any | [TelemetryTrustedValue](https://code.visualstudio.com/api/references/vscode-api#TelemetryTrustedValue<T>)>): void
 
 Log a usage event.
 
@@ -18678,7 +18640,7 @@ Automatically supports echoing to extension telemetry output channel.
 ParameterDescription
 eventName: stringThe event name to log
 
-data?: Record<string, any>The data to log
+data?: Record<string, any &#124; [TelemetryTrustedValue](https://code.visualstudio.com/api/references/vscode-api#TelemetryTrustedValue<T>)>The data to log
 
 ReturnsDescription
 void
@@ -18763,7 +18725,7 @@ This is to be used when you can guarantee no identifiable information is contain
 
 #### Constructors
 
-new TelemetryTrustedValue<T>(value: T): [TelemetryTrustedValue](https://code.visualstudio.com/api/references/vscode-api#TelemetryTrustedValue<T>)<T>
+TelemetryTrustedValue<T>(value: T): [TelemetryTrustedValue](https://code.visualstudio.com/api/references/vscode-api#TelemetryTrustedValue<T>)<T>
 
 Creates a new telemetry trusted value.
 
@@ -18959,7 +18921,7 @@ A link on a terminal line.
 
 #### Constructors
 
-new TerminalLink(startIndex: number, length: number, tooltip?: string): [TerminalLink](https://code.visualstudio.com/api/references/vscode-api#TerminalLink)
+TerminalLink(startIndex: number, length: number, tooltip?: string): [TerminalLink](https://code.visualstudio.com/api/references/vscode-api#TerminalLink)
 
 Creates a new terminal link.
 
@@ -19140,7 +19102,7 @@ A terminal profile defines how a terminal will be launched.
 
 #### Constructors
 
-new TerminalProfile(options: [TerminalOptions](https://code.visualstudio.com/api/references/vscode-api#TerminalOptions) | [ExtensionTerminalOptions](https://code.visualstudio.com/api/references/vscode-api#ExtensionTerminalOptions)): [TerminalProfile](https://code.visualstudio.com/api/references/vscode-api#TerminalProfile)
+TerminalProfile(options: [TerminalOptions](https://code.visualstudio.com/api/references/vscode-api#TerminalOptions) | [ExtensionTerminalOptions](https://code.visualstudio.com/api/references/vscode-api#ExtensionTerminalOptions)): [TerminalProfile](https://code.visualstudio.com/api/references/vscode-api#TerminalProfile)
 
 Creates a new terminal profile.
 
@@ -19753,7 +19715,7 @@ be give for lines, branches, and declarations in a file.
 
 #### Constructors
 
-new TestCoverageCount(covered: number, total: number): [TestCoverageCount](https://code.visualstudio.com/api/references/vscode-api#TestCoverageCount)
+TestCoverageCount(covered: number, total: number): [TestCoverageCount](https://code.visualstudio.com/api/references/vscode-api#TestCoverageCount)
 
 ParameterDescription
 covered: numberValue for [TestCoverageCount.covered](https://code.visualstudio.com/api/references/vscode-api#TestCoverageCount.covered)
@@ -19942,7 +19904,7 @@ ReturnsDescription
 
 #### Constructors
 
-new TestMessage(message: string | [MarkdownString](https://code.visualstudio.com/api/references/vscode-api#MarkdownString)): [TestMessage](https://code.visualstudio.com/api/references/vscode-api#TestMessage)
+TestMessage(message: string | [MarkdownString](https://code.visualstudio.com/api/references/vscode-api#MarkdownString)): [TestMessage](https://code.visualstudio.com/api/references/vscode-api#TestMessage)
 
 Creates a new TestMessage instance.
 
@@ -20014,7 +19976,7 @@ A stack frame found in the [TestMessage.stackTrace](https://code.visualstudio.co
 
 #### Constructors
 
-new TestMessageStackFrame(label: string, uri?: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), position?: [Position](https://code.visualstudio.com/api/references/vscode-api#Position)): [TestMessageStackFrame](https://code.visualstudio.com/api/references/vscode-api#TestMessageStackFrame)
+TestMessageStackFrame(label: string, uri?: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), position?: [Position](https://code.visualstudio.com/api/references/vscode-api#Position)): [TestMessageStackFrame](https://code.visualstudio.com/api/references/vscode-api#TestMessageStackFrame)
 
 ParameterDescription
 label: stringThe name of the stack frame
@@ -20352,7 +20314,7 @@ requests and runs outside of the `runHandler`.
 
 #### Constructors
 
-new TestRunRequest(include?: readonly [TestItem](https://code.visualstudio.com/api/references/vscode-api#TestItem)[], exclude?: readonly [TestItem](https://code.visualstudio.com/api/references/vscode-api#TestItem)[], profile?: [TestRunProfile](https://code.visualstudio.com/api/references/vscode-api#TestRunProfile), continuous?: boolean, preserveFocus?: boolean): [TestRunRequest](https://code.visualstudio.com/api/references/vscode-api#TestRunRequest)
+TestRunRequest(include?: readonly [TestItem](https://code.visualstudio.com/api/references/vscode-api#TestItem)[], exclude?: readonly [TestItem](https://code.visualstudio.com/api/references/vscode-api#TestItem)[], profile?: [TestRunProfile](https://code.visualstudio.com/api/references/vscode-api#TestRunProfile), continuous?: boolean, preserveFocus?: boolean): [TestRunRequest](https://code.visualstudio.com/api/references/vscode-api#TestRunRequest)
 
 ParameterDescription
 include?: readonly [TestItem](https://code.visualstudio.com/api/references/vscode-api#TestItem)[]Array of specific tests to run, or undefined to run all tests
@@ -20414,7 +20376,7 @@ execute tests that include that tag in their [TestItem.tags](https://code.visual
 
 #### Constructors
 
-new TestTag(id: string): [TestTag](https://code.visualstudio.com/api/references/vscode-api#TestTag)
+TestTag(id: string): [TestTag](https://code.visualstudio.com/api/references/vscode-api#TestTag)
 
 Creates a new TestTag instance.
 
@@ -20875,7 +20837,7 @@ ReturnsDescription
 
 #### Constructors
 
-new TextEdit(range: [Range](https://code.visualstudio.com/api/references/vscode-api#Range), newText: string): [TextEdit](https://code.visualstudio.com/api/references/vscode-api#TextEdit)
+TextEdit(range: [Range](https://code.visualstudio.com/api/references/vscode-api#Range), newText: string): [TextEdit](https://code.visualstudio.com/api/references/vscode-api#TextEdit)
 
 Create a new TextEdit.
 
@@ -21523,7 +21485,7 @@ Using a theme color is preferred over a custom color as it gives theme authors a
 
 #### Constructors
 
-new ThemeColor(id: string): [ThemeColor](https://code.visualstudio.com/api/references/vscode-api#ThemeColor)
+ThemeColor(id: string): [ThemeColor](https://code.visualstudio.com/api/references/vscode-api#ThemeColor)
 
 Creates a reference to a theme color.
 
@@ -21560,7 +21522,7 @@ Reference to an icon representing a folder. The icon is taken from the current f
 
 #### Constructors
 
-new ThemeIcon(id: string, color?: [ThemeColor](https://code.visualstudio.com/api/references/vscode-api#ThemeColor)): [ThemeIcon](https://code.visualstudio.com/api/references/vscode-api#ThemeIcon)
+ThemeIcon(id: string, color?: [ThemeColor](https://code.visualstudio.com/api/references/vscode-api#ThemeColor)): [ThemeIcon](https://code.visualstudio.com/api/references/vscode-api#ThemeIcon)
 
 Creates a reference to a theme icon.
 
@@ -21751,7 +21713,7 @@ A tree item is an UI element of the tree. Tree items are created by the [data pr
 
 #### Constructors
 
-new TreeItem(label: string | [TreeItemLabel](https://code.visualstudio.com/api/references/vscode-api#TreeItemLabel), collapsibleState?: [TreeItemCollapsibleState](https://code.visualstudio.com/api/references/vscode-api#TreeItemCollapsibleState)): [TreeItem](https://code.visualstudio.com/api/references/vscode-api#TreeItem)
+TreeItem(label: string | [TreeItemLabel](https://code.visualstudio.com/api/references/vscode-api#TreeItemLabel), collapsibleState?: [TreeItemCollapsibleState](https://code.visualstudio.com/api/references/vscode-api#TreeItemCollapsibleState)): [TreeItem](https://code.visualstudio.com/api/references/vscode-api#TreeItem)
 
 ParameterDescription
 label: string &#124; [TreeItemLabel](https://code.visualstudio.com/api/references/vscode-api#TreeItemLabel)A human-readable string describing this item
@@ -21761,7 +21723,7 @@ collapsibleState?: [TreeItemCollapsibleState](https://code.visualstudio.com/api/
 ReturnsDescription
 [TreeItem](https://code.visualstudio.com/api/references/vscode-api#TreeItem)
 
-new TreeItem(resourceUri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), collapsibleState?: [TreeItemCollapsibleState](https://code.visualstudio.com/api/references/vscode-api#TreeItemCollapsibleState)): [TreeItem](https://code.visualstudio.com/api/references/vscode-api#TreeItem)
+TreeItem(resourceUri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), collapsibleState?: [TreeItemCollapsibleState](https://code.visualstudio.com/api/references/vscode-api#TreeItemCollapsibleState)): [TreeItem](https://code.visualstudio.com/api/references/vscode-api#TreeItem)
 
 ParameterDescription
 resourceUri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)The [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri) of the resource representing this item.
@@ -22120,7 +22082,7 @@ Represents an item of a type hierarchy, like a class or an interface.
 
 #### Constructors
 
-new TypeHierarchyItem(kind: [SymbolKind](https://code.visualstudio.com/api/references/vscode-api#SymbolKind), name: string, detail: string, uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), range: [Range](https://code.visualstudio.com/api/references/vscode-api#Range), selectionRange: [Range](https://code.visualstudio.com/api/references/vscode-api#Range)): [TypeHierarchyItem](https://code.visualstudio.com/api/references/vscode-api#TypeHierarchyItem)
+TypeHierarchyItem(kind: [SymbolKind](https://code.visualstudio.com/api/references/vscode-api#SymbolKind), name: string, detail: string, uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), range: [Range](https://code.visualstudio.com/api/references/vscode-api#Range), selectionRange: [Range](https://code.visualstudio.com/api/references/vscode-api#Range)): [TypeHierarchyItem](https://code.visualstudio.com/api/references/vscode-api#TypeHierarchyItem)
 
 Creates a new type hierarchy item.
 
@@ -22339,21 +22301,6 @@ strict?: booleanThrow an error when `value` is empty or when no `scheme` can be 
 
 ReturnsDescription
 [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)A new Uri instance.
-
-#### Constructors
-
-new Uri(scheme: string, authority: string, path: string, query: string, fragment: string): [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)
-
-Use the `file` and `parse` factory functions to create new `Uri` objects.
-
-ParameterDescription
-scheme: string
-authority: string
-path: string
-query: string
-fragment: string
-ReturnsDescription
-[Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)
 
 #### Properties
 
@@ -22978,7 +22925,7 @@ Provider for creating [WebviewView](https://code.visualstudio.com/api/references
 
 #### Methods
 
-resolveWebviewView(webviewView: [WebviewView](https://code.visualstudio.com/api/references/vscode-api#WebviewView), context: [WebviewViewResolveContext](https://code.visualstudio.com/api/references/vscode-api#WebviewViewResolveContext<T>)<unknown>, token: [CancellationToken](https://code.visualstudio.com/api/references/vscode-api#CancellationToken)): void | Thenable<void>
+resolveWebviewView(webviewView: [WebviewView](https://code.visualstudio.com/api/references/vscode-api#WebviewView), context: [WebviewViewResolveContext](https://code.visualstudio.com/api/references/vscode-api#WebviewViewResolveContext<T>), token: [CancellationToken](https://code.visualstudio.com/api/references/vscode-api#CancellationToken)): void | Thenable<void>
 
 Resolves a webview view.
 
@@ -22989,7 +22936,7 @@ ParameterDescription
 webviewView: [WebviewView](https://code.visualstudio.com/api/references/vscode-api#WebviewView)Webview view to restore. The provider should take ownership of this view. The
  provider must set the webview's `.html` and hook up all webview events it is interested in.
 
-context: [WebviewViewResolveContext](https://code.visualstudio.com/api/references/vscode-api#WebviewViewResolveContext<T>)<unknown>Additional metadata about the view being resolved.
+context: [WebviewViewResolveContext](https://code.visualstudio.com/api/references/vscode-api#WebviewViewResolveContext<T>)Additional metadata about the view being resolved.
 
 token: [CancellationToken](https://code.visualstudio.com/api/references/vscode-api#CancellationToken)Cancellation token indicating that the view being provided is no longer needed.
 
@@ -23236,7 +23183,7 @@ Use the [applyEdit](https://code.visualstudio.com/api/references/vscode-api#work
 
 #### Constructors
 
-new WorkspaceEdit(): [WorkspaceEdit](https://code.visualstudio.com/api/references/vscode-api#WorkspaceEdit)
+WorkspaceEdit(): [WorkspaceEdit](https://code.visualstudio.com/api/references/vscode-api#WorkspaceEdit)
 
 ParameterDescription
 ReturnsDescription
@@ -23250,14 +23197,14 @@ The number of affected resources of textual or resource changes.
 
 #### Methods
 
-createFile(uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), options?: {contents: Uint8Array | [DataTransferFile](https://code.visualstudio.com/api/references/vscode-api#DataTransferFile), ignoreIfExists: boolean, overwrite: boolean}, metadata?: [WorkspaceEditEntryMetadata](https://code.visualstudio.com/api/references/vscode-api#WorkspaceEditEntryMetadata)): void
+createFile(uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), options?: {contents: Uint8Array<ArrayBufferLike> | [DataTransferFile](https://code.visualstudio.com/api/references/vscode-api#DataTransferFile), ignoreIfExists: boolean, overwrite: boolean}, metadata?: [WorkspaceEditEntryMetadata](https://code.visualstudio.com/api/references/vscode-api#WorkspaceEditEntryMetadata)): void
 
 Create a regular file.
 
 ParameterDescription
 uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)Uri of the new file.
 
-options?: {contents: Uint8Array &#124; [DataTransferFile](https://code.visualstudio.com/api/references/vscode-api#DataTransferFile), ignoreIfExists: boolean, overwrite: boolean}Defines if an existing file should be overwritten or be
+options?: {contents: Uint8Array<ArrayBufferLike> &#124; [DataTransferFile](https://code.visualstudio.com/api/references/vscode-api#DataTransferFile), ignoreIfExists: boolean, overwrite: boolean}Defines if an existing file should be overwritten or be
 ignored. When `overwrite` and `ignoreIfExists` are both set `overwrite` wins.
 When both are unset and when the file already exists then the edit cannot
 be applied successfully. The `content`-property allows to set the initial contents

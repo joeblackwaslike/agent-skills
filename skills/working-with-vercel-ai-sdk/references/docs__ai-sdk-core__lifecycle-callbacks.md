@@ -1,13 +1,13 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/lifecycle-callbacks.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "609467662a48d78d7c846d2d91ceb2ea76d441dec55b7d1eafd810d71f3d92e7"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "ceb7cb4a3523d00dc4a833c750dc403408c10ee8371124ca7154583eb37d0170"
 ---
 
 # Lifecycle Callbacks
 
 Event callbacks let you run your own code at important points in an AI SDK call.
-You can attach them directly to `generateText`, `streamText`, `embed`, `embedMany`, and `rerank` calls to observe what happened, record usage, debug multi-step generations, and monitor tool execution.
+You can attach them directly to `generateText`, `streamText`, `embed`, `embedMany`, `rerank`, and `experimental_evaluate` calls to observe what happened, record usage, debug multi-step generations, and monitor tool execution.
 
 They are especially useful when you want application-specific logic close to the call site:
 
@@ -258,7 +258,7 @@ const { embeddings } = await embedMany({
 });
 
 const { ranking } = await rerank({
-  model: cohere.reranking('rerank-v3.5'),
+  model: cohere.reranking('rerank-v4.0-pro'),
   documents: values,
   query: 'talk about rain',
 
@@ -446,6 +446,25 @@ const result = await generateText({
       type: '(event: RerankEndEvent) => void | Promise<void>',
       description:
         'Called when the reranking operation completes, after the reranking model returns.',
+    },
+  ]}
+/>
+
+### `experimental_evaluate`
+
+<PropertiesTable
+  content={[
+    {
+      name: 'onStart',
+      type: '(event: Experimental_EvaluateStartEvent) => void | Promise<void>',
+      description:
+        'Called when the evaluation operation begins, before the evaluation model is called.',
+    },
+    {
+      name: 'onEnd',
+      type: '(event: Experimental_EvaluateEndEvent) => void | Promise<void>',
+      description:
+        'Called when the evaluation operation completes successfully.',
     },
   ]}
 />
@@ -1149,6 +1168,109 @@ For `embed`, `value` is a single string. For `embedMany`, `value` is an array of
       name: 'response',
       type: '{ id?: string; timestamp: Date; modelId: string; headers?: Record<string, string>; body?: unknown }',
       description: 'Response data including headers and body.',
+    },
+  ]}
+/>
+
+### Evaluation Events
+
+Evaluation callbacks are experimental. Their exported types are
+`Experimental_EvaluateStartEvent` and `Experimental_EvaluateEndEvent`.
+
+#### onStart
+
+<PropertiesTable
+  content={[
+    {
+      name: 'callId',
+      type: 'string',
+      description: 'Unique identifier for this evaluation call.',
+    },
+    {
+      name: 'operationId',
+      type: "'ai.evaluate'",
+      description: 'Evaluation operation identifier.',
+    },
+    {
+      name: 'runtimeContext',
+      type: 'RUNTIME_CONTEXT',
+      description: 'Full user-defined runtime context.',
+    },
+    {
+      name: 'provider',
+      type: 'string',
+      description: 'Provider identifier for the evaluation model.',
+    },
+    {
+      name: 'modelId',
+      type: 'string',
+      description: 'Evaluation model identifier.',
+    },
+    {
+      name: 'state',
+      type: 'string | object | array',
+      description: 'Shared state being evaluated.',
+    },
+    {
+      name: 'questions',
+      type: 'Readonly<Record<string, Experimental_EvaluationQuestion>>',
+      description: 'Questions being evaluated against the shared state.',
+    },
+    {
+      name: 'maxRetries',
+      type: 'number',
+      description: 'Maximum number of retries for the model call.',
+    },
+    {
+      name: 'headers',
+      type: 'Record<string, string> | undefined',
+      description: 'Additional HTTP headers sent with the request.',
+    },
+    {
+      name: 'providerOptions',
+      type: 'ProviderOptions',
+      description: 'Provider-specific options.',
+    },
+  ]}
+/>
+
+#### onEnd
+
+Includes every `onStart` field plus:
+
+<PropertiesTable
+  content={[
+    {
+      name: 'answers',
+      type: 'Record<string, Experimental_EvaluationAnswer>',
+      description: 'Exactly one typed answer per question ID.',
+    },
+    {
+      name: 'usage',
+      type: '{ inputTokens: number | undefined; outputTokens: number | undefined; totalTokens: number | undefined }',
+      description: 'Token usage for the evaluation operation.',
+    },
+    {
+      name: 'warnings',
+      type: 'Array<Warning>',
+      description: 'Warnings from the evaluation model.',
+    },
+    {
+      name: 'rounding',
+      type: '{ probabilityDecimals?: number; scoreDecimals?: number } | undefined',
+      description:
+        'Provider-declared decimal precision for probabilities and scores.',
+    },
+    {
+      name: 'providerMetadata',
+      type: 'ProviderMetadata | undefined',
+      description: 'Optional provider-specific metadata.',
+    },
+    {
+      name: 'response',
+      type: '{ id?: string; timestamp: Date; modelId: string; headers?: Record<string, string>; body?: unknown }',
+      description:
+        'Response metadata including the resolved model and timestamp.',
     },
   ]}
 />

@@ -17,8 +17,8 @@ related:
 summary: "In this quickstart guide, you'll discover how to create and execute a query to visualize the most popular posts on your website."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query/monitoring/quickstart.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "b054fdf39572b4f3c192b15a15ae2bf786418b88a9ddc27ab91b7f9599c6f86c"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "488a483ac0d9d0f622967ccdd5db97a42bfac942f4ec5d35a9cfc3b85a1d8d7e"
 ---
 
 # Monitoring Quickstart
@@ -32,12 +32,11 @@ Monitoring is now
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing Vercel Monitoring](https://vercel.com/blog/introducing-monitoring?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring%2Fquickstart&source_site=vercel-docs&relationship=related)
-- [Run and share custom queries in Observability Plus](https://vercel.com/changelog/run-and-share-custom-queries-in-observability-plus?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring%2Fquickstart&source_site=vercel-docs&relationship=related)
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring%2Fquickstart&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring%2Fquickstart&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
 - [Limits and Pricing for Monitoring](https://vercel.com/docs/query/monitoring/limits-and-pricing?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn about our limits and pricing when using Monitoring. Different limitations are applied depending on your plan.
-- [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring%2Fquickstart&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
+- [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring%2Fquickstart&source_site=vercel-docs&relationship=related) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
 
 Full cross-link map for this page: [/docs/query/monitoring/quickstart.graph.md](/docs/query/monitoring/quickstart.graph.md?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring%2Fquickstart&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

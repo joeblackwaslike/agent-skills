@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/generate-object-with-file-prompt.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "a5473f33ab3e7458c7c0284d2b9f0b5e6baa43672d7045e4dbe3b6fd21681ab1"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "3d80e2497ced67783b34cc422771b464d665429eb735f13aaa68b6f4b7111705"
 ---
 
 # Generate Object with File Prompt through Form Submission
@@ -86,7 +86,7 @@ export async function POST(request: Request) {
   const fileDataUrl = `data:application/pdf;base64,${base64Data}`;
 
   const result = await generateText({
-    model: 'openai/gpt-4o',
+    model: 'openai/gpt-6-astra',
     messages: [
       {
         role: 'user',

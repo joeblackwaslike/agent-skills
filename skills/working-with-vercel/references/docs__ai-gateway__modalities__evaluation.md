@@ -3,7 +3,7 @@ title: Evaluation
 product: vercel
 url: /docs/ai-gateway/modalities/evaluation
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/evaluation"
-last_updated: 2026-09-16
+last_updated: 2026-09-22
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/modalities
@@ -11,12 +11,13 @@ prerequisites:
 related:
   - /docs/ai-gateway/getting-started/evaluation
   - /docs/ai-gateway/sdks-and-apis/typesafe
+  - /docs/ai-gateway/models-and-providers/evaluation-fallbacks
   - /docs/ai-gateway/authentication-and-byok/byok
 summary: Evaluate shared state against typed questions and get back structured choices, scores, and boolean probabilities through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/evaluation.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "37b8ac38ffa8b9f98c2eae08ec44de83c8b43bd75a90737cd831ebed780d2a81"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "8b56aa2d0de371980e481120623e8c37565db041d5bf1bdc9e1bf08904d84baf"
 ---
 
 # Evaluation
@@ -29,17 +30,15 @@ Evaluate a piece of shared state against typed questions and get structured answ
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [TypeSafe AI's Jev now available on AI Gateway](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fevaluation&source_site=vercel-docs&relationship=related)
-- [How to automatically approve tool calls in eve with Jev](https://vercel.com/kb/guide/auto-approve-tool-calls-eve-jev?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fevaluation&source_site=vercel-docs&relationship=related) — Use Jev to review tool calls in eve, allow routine actions, and request human approval when needed. Configure the policy
-- [How to classify, route, and score with Jev and AI SDK](https://vercel.com/kb/guide/typesafe-jev-and-ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fevaluation&source_site=vercel-docs&relationship=related) — Use Jev from TypeSafe AI with AI SDK's experimental \\`evaluate\\` API to classify, route, score, and verify inside your a
 - [Evaluation](https://ai-sdk.dev/docs/ai-sdk-core/evaluation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fevaluation&source_site=vercel-docs&relationship=related)
+- [AI Gateway now supports TypeSafe clients and an HTTP API for Jev](https://vercel.com/changelog/ai-gateway-now-supports-typesafe-clients-and-http-api-for-jev?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fevaluation&source_site=vercel-docs&relationship=related)
+- [TypeSafe AI's Jev now available on AI Gateway](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fevaluation&source_site=vercel-docs&relationship=related)
 - [Automatic Model Selection](https://eve.dev/docs/guides/evaluate?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fevaluation&source_site=vercel-docs&relationship=related) — Choose agent models automatically or evaluate typed questions in your tools and application code.
 - [An Introduction to Evals](https://vercel.com/kb/guide/an-introduction-to-evals?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fevaluation&source_site=vercel-docs&relationship=related) — Evaluations test model and agent outputs to ensure they meet the standards and requirements you specify.
 - [Judge](https://eve.dev/docs/evals/judge?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fevaluation&source_site=vercel-docs&relationship=related) — Grade evals with evaluation models using criteria, typed questions, or batches, and set thresholds on each assertion.
-- [experimental_evaluate](https://ai-sdk.dev/docs/reference/ai-sdk-core/evaluate?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fevaluation&source_site=vercel-docs&relationship=related)
-- [TypeSafe](https://ai-sdk.dev/providers/ai-sdk-providers/typesafe-ai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fevaluation&source_site=vercel-docs&relationship=related)
-- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fevaluation&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
-- [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fevaluation&source_site=vercel-docs&relationship=related) — Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere
+- [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fevaluation&source_site=vercel-docs&relationship=related) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
+- [Eval-driven development: Build better AI faster](https://vercel.com/blog/eval-driven-development-build-better-ai-faster?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fevaluation&source_site=vercel-docs&relationship=related)
+- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fevaluation&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/evaluation.graph.md](/docs/ai-gateway/modalities/evaluation.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fevaluation&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -204,6 +203,12 @@ export async function GET() {
 }
 ```
 
+## Escalating uncertain evaluations
+
+Evaluation fallbacks can rerun a successful evaluation with another model when a Choice or Score has low confidence, a Boolean probability falls inside an uncertain band, or a compound condition matches. Configure the policy under `providerOptions.gateway.models` for AI SDK `evaluate`, `POST /v1/evaluate`, or the TypeSafe-compatible API.
+
+Evaluation fallbacks are opt-in and support one successful-response fallback stage. See [Evaluation Fallbacks](/docs/ai-gateway/models-and-providers/evaluation-fallbacks) for the condition contract, full-request rerun behavior, response metadata, and two-stage billing.
+
 ## Structured state
 
 `state` accepts a string, an object, or an array, so you can pass structured records or a message history directly without serializing them yourself.
@@ -310,6 +315,8 @@ Evaluation works with [BYOK](/docs/ai-gateway/authentication-and-byok/byok). If 
 }
 ```
 
+String entries in `providerOptions.gateway.models` can name native evaluation models or language models, and a language model answers through structured output. The array also accepts one conditional evaluation fallback object. Provider-specific namespaces, such as `providerOptions.openai`, carry to a matching fallback provider. See [Evaluation Fallbacks](/docs/ai-gateway/models-and-providers/evaluation-fallbacks#configure-a-choice-or-score-confidence-fallback) for complete requests.
+
 > **💡 Note:** Already using TypeSafe? The [TypeSafe
 > API](/docs/ai-gateway/sdks-and-apis/typesafe) accepts TypeSafe's own request
 > and response shapes, so an existing client only needs its base URL changed.
@@ -317,6 +324,8 @@ Evaluation works with [BYOK](/docs/ai-gateway/authentication-and-byok/byok). If 
 ## Usage and pricing
 
 Evaluation requests report token usage like any other model, and are billed from the model's per-token rates. Check the [AI Gateway Models page](/ai-gateway/models?capabilities=evaluation) for the rates on a specific model, since some evaluation models price input tokens only.
+
+When an evaluation fallback triggers, both stages are billed and the response usage totals both calls. The stages run sequentially, so the request also includes both model calls' latency. See [two-stage usage and latency](/docs/ai-gateway/models-and-providers/evaluation-fallbacks#account-for-two-stage-usage-and-latency) for details.
 
 ```typescript
 const result = await evaluate({
@@ -330,6 +339,13 @@ const result = await evaluate({
 console.log(result.usage);
 // { inputTokens: 283, outputTokens: 21 }
 ```
+
+## Next steps
+
+- Explore [Jev guides and use cases](/kb/jev-from-typesafe-ai)
+- Learn how to [classify, route, and score with Jev and AI SDK](/kb/guide/typesafe-jev-and-ai-sdk) and [route form submissions](/kb/guide/jev-ai-sdk-form-router)
+- Learn how to [automatically approve tool calls in eve with Jev](/kb/guide/auto-approve-tool-calls-eve-jev)
+- Build a [product review moderation workflow with Jev and TanStack AI](/kb/guide/moderate-product-reviews-jev-tanstack-ai)
 
 
 ---

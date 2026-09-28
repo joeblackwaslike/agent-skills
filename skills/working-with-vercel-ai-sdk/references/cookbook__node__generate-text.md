@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/node/generate-text.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "060286d9484725a8f1d5f105135469eb85c3c52c5aa1a9972bd1bb74e30862d8"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "277ac30bc066744ac329801153678607b28e39bdb3a0cf427ae9c1f59f812ea9"
 ---
 
 # Generate Text
@@ -14,7 +14,7 @@ The `generateText` function can be used to generate text based on the input prom
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: 'openai/gpt-4o',
+  model: 'openai/gpt-6-astra',
   prompt: 'Why is the sky blue?',
 });
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/generating-text.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "66f4795d468d35173cf1eb98f3c2dce4dfa636a1323d2d32f828b61bd920459f"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "77e4c6c08b2104cad02878218772d7e4464975af4045a4c1c61dd795db4a5644"
 ---
 
 # Generating and Streaming Text
@@ -718,7 +718,7 @@ When you use `generateText`, you can access the sources using the `sources` prop
 
 ```ts
 const result = await generateText({
-  model: 'google/gemini-2.5-flash',
+  model: 'google/gemini-3.8-flash',
   tools: {
     google_search: google.tools.googleSearch({}),
   },
@@ -740,7 +740,7 @@ When you use `streamText`, you can access the sources using the `stream` propert
 
 ```tsx
 const result = streamText({
-  model: 'google/gemini-2.5-flash',
+  model: 'google/gemini-3.8-flash',
   tools: {
     google_search: google.tools.googleSearch({}),
   },

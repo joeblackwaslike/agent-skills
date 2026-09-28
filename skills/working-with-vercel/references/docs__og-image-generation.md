@@ -16,8 +16,8 @@ related:
 summary: Learn how to optimize social media image generation through the Open Graph Protocol and @vercel/og library.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/og-image-generation.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "f0309952ab3fdfe0012cbff6802131f269381f07c41b8a42ca93101d31e58bfc"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "f15853a0d951ba6edacbeedef6de6657e10ef0003433905281627e0d28528a1f"
 ---
 
 # Open Graph (OG) Image Generation
@@ -41,7 +41,7 @@ To assist with generating dynamic [Open Graph (OG)](https://ogp.me/ "Open Graph 
 - [Introducing the Vercel Platforms Starter Kit](https://vercel.com/blog/platforms-starter-kit?from=related&source_path=%2Fdocs%2Fog-image-generation&source_site=vercel-docs&relationship=related)
 - [opengraph-image and twitter-image](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image?from=related&source_path=%2Fdocs%2Fog-image-generation&source_site=vercel-docs&relationship=related) — API Reference for the Open Graph Image and Twitter Image file conventions.
 - [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs?from=related&source_path=%2Fdocs%2Fog-image-generation&source_site=vercel-docs&relationship=related) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
-- [Frameworks on Vercel](https://vercel.com/docs/frameworks?from=related&source_path=%2Fdocs%2Fog-image-generation&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
+- [Image Optimization with Vercel](https://vercel.com/docs/image-optimization?from=related&source_path=%2Fdocs%2Fog-image-generation&source_site=vercel-docs&relationship=related) — Transform and optimize images to improve page load performance.
 
 Full cross-link map for this page: [/docs/og-image-generation.graph.md](/docs/og-image-generation.graph.md?from=related&source_path=%2Fdocs%2Fog-image-generation&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

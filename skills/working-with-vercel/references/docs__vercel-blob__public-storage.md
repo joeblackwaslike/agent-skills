@@ -16,8 +16,8 @@ related:
 summary: Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/public-storage.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "7b3076f5b50ad42719ee643a158aef440c158ae35794a1b4911763d1cf1d2360"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "4c8fc5d4d8059d581bff40bf7447719b8dc27d1bd6ed8ab60b240f7e0985e7ea"
 ---
 
 # Public Storage
@@ -53,7 +53,7 @@ You can create a public Blob store from the Vercel dashboard or the CLI:
 
 - **Dashboard**:
   1. Go to your project's [**Storage** tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fstores\&title=Go+to+Storage)
-  2. Select **Create Database**, then choose **Blob**
+  2. Select **Create Storage**, then choose **Blob**
   3. Select **Continue**, then set the access to **Public**
 - **[CLI](/docs/cli/blob)**: Run `vercel blob create-store [name] --access public`
 

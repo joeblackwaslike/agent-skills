@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/node/generate-object.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "ae33bf02569e40cc352234e385f825f23b2bacbe88a48492c4c98cef447400b9"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "a055c4dd4796dac153b0465b550ed7c9dd251eecfbe35ebc97b5194c4c00dcd5"
 ---
 
 # Generate Object
@@ -15,7 +15,7 @@ import { generateText, Output } from 'ai';
 import { z } from 'zod';
 
 const result = await generateText({
-  model: 'openai/gpt-4.1',
+  model: 'openai/gpt-6-astra',
   output: Output.object({
     schema: z.object({
       recipe: z.object({

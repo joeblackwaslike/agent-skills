@@ -13,16 +13,16 @@ related:
   - /docs/builds/managing-builds
   - /docs/plans/pro-plan/trials
   - /docs/domains/free-domain-with-pro
-summary: Learn about the Vercel Pro plan with credit-based billing, free viewer seats, and self-serve enterprise features for professional teams.
+summary: Learn about the Vercel Pro plan with credit-based billing, one free first-year domain, free viewer seats, and self-serve enterprise features for...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/pro-plan.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "ca85dfd0d662df1debb19baf96150ebdf6557c6f0564b29abcafe112d21f33cd"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "c9fe01cd420972a769cf034587d7ce8622f4bf2b75b7f1e40c5bea059879bc3f"
 ---
 
 # Vercel Pro Plan
 
-The Vercel Pro plan is designed for professional developers, freelancers, and businesses who need enhanced features and team collaboration.
+The Vercel Pro plan is designed for professional developers, freelancers, and businesses who need enhanced features and team collaboration. Paid Pro teams include one free first-year domain on an eligible TLD.
 
 
 <!-- docsgraph:related -->
@@ -50,17 +50,17 @@ Full cross-link map for this page: [/docs/plans/pro-plan.graph.md](/docs/plans/p
 
 ## Pro plan features
 
+- **[Free first-year domain with Pro](#free-first-year-domain-with-pro)**: One eligible TLD domain (`.app`, `.dev`, `.online`, `.site`, `.space`, `.store`, `.tech`, or `.website`) per paid Pro team. Renews at the standard rate after year one
 - **[Credit-based billing](#monthly-credit)**: Pro includes monthly credit that can be used flexibly across [usage dimensions](/docs/pricing#managed-infrastructure-billable-resources)
 - **[Free viewer seats](#viewer-team-seat)**: Unlimited read-only access to the Vercel dashboard so that project collaborators can view deployments, check analytics, and comment on previews
 - **[Elastic build machines](/docs/builds/managing-builds#elastic-build-machines)**: New teams use Elastic build machines by default. Elastic automatically selects a machine for each project based on its build workload
 - **[Paid add-ons](#paid-add-ons)**: Additional enterprise-grade features are available as add-ons
-- **[Free first-year domain with Pro](#free-first-year-domain-with-pro)**: One eligible TLD domain (`.app`, `.dev`, `.online`, `.site`, `.space`, `.store`, `.tech`, or `.website`) per paid Pro team. Renews at the standard rate after year one
 
 For a full breakdown of the features included in the Pro plan, see the [pricing page](https://vercel.com/pricing).
 
 ## Free first-year domain with Pro
 
-All paid Pro teams include one free first-year domain on an eligible TLD (`.app`, `.dev`, `.online`, `.site`, `.space`, `.store`, `.tech`, or `.website`). New Pro subscriptions can claim the domain at checkout during the upgrade. Existing Pro teams claim from domain search in the dashboard at [vercel.com/domains](https://vercel.com/domains). After the first year, the domain renews at the standard rate.
+Eligible TLDs are `.app`, `.dev`, `.online`, `.site`, `.space`, `.store`, `.tech`, and `.website`. New Pro subscriptions can claim the domain at checkout during the upgrade. Existing Pro teams claim from domain search in the dashboard at [vercel.com/domains](https://vercel.com/domains). After the first year, the domain renews at the standard rate.
 
 The offer is limited to one domain per team and excludes:
 

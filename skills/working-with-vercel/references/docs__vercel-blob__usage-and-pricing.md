@@ -3,7 +3,7 @@ title: Vercel Blob Pricing
 product: vercel
 url: /docs/vercel-blob/usage-and-pricing
 canonical_url: "https://vercel.com/docs/vercel-blob/usage-and-pricing"
-last_updated: 2026-09-08
+last_updated: 2026-09-23
 type: reference
 prerequisites:
   - /docs/vercel-blob
@@ -16,8 +16,8 @@ related:
 summary: Learn about the pricing for Vercel Blob.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/usage-and-pricing.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "786e233cc77229a0d79c232f3c69ba2051481a438caf12875be6f8e4b9360c95"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "ca4562fa608a1b4bc8b59f3aa79dcd06e862734cdcb8581989b635a08cb46eac"
 ---
 
 # Vercel Blob Pricing
@@ -35,6 +35,7 @@ Vercel Blob usage is measured based on the following:
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Increased Blob store limit for Hobby users](https://vercel.com/changelog/increased-blob-store-limit-for-hobby-users?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusage-and-pricing&source_site=vercel-docs&relationship=related)
+- [Unlimited Vercel Blob stores on every plan](https://vercel.com/changelog/unlimited-vercel-blob-stores-on-every-plan?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusage-and-pricing&source_site=vercel-docs&relationship=related)
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
 - [Vercel Blob vs Netlify Blobs](https://vercel.com/kb/guide/vercel-blob-vs-netlify-blobs?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Compare Vercel Blob and Netlify Blobs on storage model, public URLs, delivery, limits, and pricing to choose the right o
 - [Vercel Blob is now generally available: Cost-efficient, durable storage](https://vercel.com/blog/vercel-blob-now-generally-available?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusage-and-pricing&source_site=vercel-docs&relationship=related)
@@ -51,7 +52,7 @@ Full cross-link map for this page: [/docs/vercel-blob/usage-and-pricing.graph.md
 
 - **Storage Size**: Monthly average of your blob store size (GB-month)
 - **Simple Operations**: Counts when a blob is accessed by its URL and it's a cache MISS or when using the [`head()`](/docs/vercel-blob/using-blob-sdk#head) method
-- **Advanced Operations**: Counts when using [`put()`](/docs/vercel-blob/using-blob-sdk#put), [`copy()`](/docs/vercel-blob/using-blob-sdk#copy), or [`list()`](/docs/vercel-blob/using-blob-sdk#list) methods
+- **Advanced Operations**: Counts when using [`put()`](/docs/vercel-blob/using-blob-sdk#put), [`copy()`](/docs/vercel-blob/using-blob-sdk#copy), or [`list()`](/docs/vercel-blob/using-blob-sdk#list) methods, and when you create a Blob store
 - **Blob Data Transfer**: Charged when blobs are downloaded or viewed
 - **[Edge Requests](/docs/manage-cdn-usage#edge-requests)**: Each blob access by its URL counts as one Edge Request, regardless if it's a MISS or HIT
 - **[Fast Origin Transfer](/docs/manage-cdn-usage#fast-origin-transfer)**: Applied only for cache MISS scenarios
@@ -86,6 +87,7 @@ See the [usage details](#usage-details) and [pricing example](#pricing-example) 
 - Uploads do not incur data transfer charges when using [Client Uploads](/docs/vercel-blob/client-upload)
 - Uploads incur [Fast Data Transfer](/docs/manage-cdn-usage#fast-data-transfer) charges when using [Server Uploads](/docs/vercel-blob/server-upload) if your Vercel application is the one receiving the file upload
 - [Multipart uploads](/docs/vercel-blob/using-blob-sdk#multipart-uploads) count as multiple Advanced Operations: one when starting, one per part, one for completion
+- Creating a Blob store counts as one Advanced Operation; deleting a store is free
 - [`del()`](/docs/vercel-blob/using-blob-sdk#del) operations are free
 - **Dashboard interactions count as operations**: Each time you interact with the Vercel dashboard to browse your blob store, upload files, or view blob details, these actions count as Advanced Operations and will appear in your usage metrics.
 
@@ -146,15 +148,9 @@ Vercel Blob has certain [limits](/docs/limits) that you should be aware of when 
 
 ### Store limits
 
-The number of Blob stores you can create depends on your plan:
+You can create as many Blob stores as you need. Creating a store counts as one [Advanced Operation](#usage). Deleting a store is free.
 
-| Plan       | Blob stores |
-| ---------- | ----------- |
-| Hobby      | 100         |
-| Pro        | 500         |
-| Enterprise | 1,000       |
-
-Storage, operations, and data transfer are billed by usage and aren't affected by how many stores you create. Use separate stores to isolate projects, environments, or public and private content.
+You pay for storage, operations, and data transfer based on what you use. Splitting the same data across more stores doesn't change those costs. Use separate stores to isolate projects, environments, customers, or public and private content.
 
 ### Operation rate limits
 

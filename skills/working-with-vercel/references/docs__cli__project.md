@@ -10,14 +10,14 @@ prerequisites:
 related:
   - /docs/sandbox/concepts/regions
   - /docs/plans/pro-plan/trials
+  - /docs/cli/cache
+  - /docs/caching/cdn-cache
   - /docs/analytics
-  - /docs/analytics/limits-and-pricing
-  - /docs/speed-insights
 summary: "Perform the following commands from the terminal for your Vercel Projects: list, add, inspect, update settings, rename, remove, and configure access,..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/project.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "27a36b4259dcac33aaa419f1a370ec5ac46e987ae34476c2497b73376d946ea2"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "48fdfabfb632b77a54eea261d16920eefd6497e325176e9f4e44a80ea06d0e7c"
 ---
 
 # vercel project
@@ -32,11 +32,11 @@ The `vercel project` command manages your Vercel Projects from the terminal: lis
 
 - [Update Project Settings from the Vercel CLI](https://vercel.com/changelog/update-project-settings-from-the-vercel-cli?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=related)
 - [How do I change the name of my Vercel Project?](https://vercel.com/kb/guide/how-do-i-change-the-name-of-my-vercel-project?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=related) — Change your Vercel project name in the dashboard, CLI, or REST API, then update the environment variables, callbacks, an
-- [vercel connect](https://vercel.com/docs/cli/connect?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=related) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
-- [vercel integration](https://vercel.com/docs/cli/integration?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=related) — Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover avai
-- [vercel tokens](https://vercel.com/docs/cli/tokens?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=related) — Manage your personal Vercel authentication tokens from the CLI: list, create, and remove access tokens for use with the
-- [vercel env](https://vercel.com/docs/cli/env?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=related) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
 - [Managing projects](https://vercel.com/docs/projects/managing-projects?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=related) — Learn how to manage your projects through the Vercel Dashboard.
+- [vercel integration](https://vercel.com/docs/cli/integration?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=related) — Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover avai
+- [vercel traces](https://vercel.com/docs/cli/traces?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=related) — Search spans, inspect request traces, capture session traces, or manage trace sampling rules for a project from the term
+- [Audit Logs](https://vercel.com/docs/audit-log?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=related) — Learn how to track and analyze your team members' activities.
+- [Pause a project](https://vercel.com/docs/rest-api/projects/pause-a-project?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=related) — POST /v1/projects/{projectId}/pause — Pause a project by passing its project \\`id\\` in the URL. If the project does not
 
 Full cross-link map for this page: [/docs/cli/project.graph.md](/docs/cli/project.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -181,6 +181,26 @@ Remove a project.
 
 ```bash filename="terminal"
 vercel project rm <name>
+```
+
+### `dangerously-delete-immutable-static-asset`
+
+Permanently delete an immutable static asset from storage. Unlike [cache
+deletion](/docs/cli/cache), which flushes cached content that regenerates on
+the next request, this deletes the stored asset itself for both the production
+and preview environments: its URL serves a `410 Gone` response for seven days,
+then a `404`, and the project's build hash salt rotates so your next deployment
+emits different asset URLs. You cannot undo this operation.
+
+The command only runs interactively and asks you to type the asset path to
+confirm. The path must exactly match the stored asset path, start with
+`_vercel/immutable/` or `_next/static/immutable/`, and contain no leading
+slash. See [Deleting immutable static
+assets](/docs/caching/cdn-cache#deleting-immutable-static-assets) for details,
+including why deleting the asset does not delete the content.
+
+```bash filename="terminal"
+vercel project dangerously-delete-immutable-static-asset _next/static/immutable/chunks/example.js
 ```
 
 ### `checks`

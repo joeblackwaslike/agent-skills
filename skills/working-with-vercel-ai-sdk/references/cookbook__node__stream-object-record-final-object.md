@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/node/stream-object-record-final-object.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "ad48657e45b3805fabe58a7cf7681cd195731c4063fd95248b7b297b8ade3cf9"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "8df105f86a4308915ea731e7ae2b190ac15164ef9e33b82625e8f0ada039c1da"
 ---
 
 # Record Final Object after Streaming Object
@@ -17,7 +17,7 @@ import { streamText, Output } from 'ai';
 import { z } from 'zod';
 
 const result = streamText({
-  model: 'openai/gpt-4.1',
+  model: 'openai/gpt-6-astra',
   output: Output.object({
     schema: z.object({
       recipe: z.object({
@@ -54,7 +54,7 @@ import { streamText, Output } from 'ai';
 import { z } from 'zod';
 
 const result = streamText({
-  model: 'openai/gpt-4.1',
+  model: 'openai/gpt-6-astra',
   output: Output.object({
     schema: z.object({
       recipe: z.object({

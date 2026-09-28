@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/rest/using-the-rest-api/rate-limits-for-the-rest-api.md"
-fetched_at: "2026-07-13T06:58:22.643Z"
-sha256: "d8b60cf83ab85617433184340655556ed5c29a0649dea23c11995decb5197eb3"
+fetched_at: "2026-09-28T10:42:53.812Z"
+sha256: "254499696dbfda2762a71c53d36134b1d6806c9b7844e5a779fbe8208f4fecaa"
 ---
 
 {% ifversion ghes %}
@@ -88,7 +88,9 @@ Header name | Description
 `x-ratelimit-reset` | The time at which the current rate limit window resets, in UTC epoch seconds
 `x-ratelimit-resource` | The rate limit resource that the request counted against. For more information about the different resources, see [AUTOTITLE](/rest/rate-limit/rate-limit#get-rate-limit-status-for-the-authenticated-user).
 
-You can also call the `GET /rate_limit` endpoint to check your rate limit. Calling this endpoint does not count against your primary rate limit, but it can count against your secondary rate limit. See [AUTOTITLE](/rest/rate-limit/rate-limit). When possible, you should use the rate limit response headers instead of calling the API to check your rate limit.
+You can also call the `GET /rate_limit` endpoint to check your rate limit. Calling this endpoint does not count against your primary rate limit, but it can count against your secondary rate limit. See [AUTOTITLE](/rest/rate-limit/rate-limit).
+
+The `x-ratelimit-*` response headers are the authoritative source for your current rate limit status. Use them to pace and back off your requests. Use `GET /rate_limit` for a periodic overview of all resource families for the authenticated user, and treat the response headers as authoritative if the two disagree.
 
 There is not a way to check the status of your secondary rate limit.
 

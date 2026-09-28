@@ -16,8 +16,8 @@ related:
 summary: Find guides and reference documentation for building, deploying, and managing applications with Vercel, including the CLI, SDKs, and APIs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "b318c3083d6e505ab2403efe557adab6b9e1687886e0cecfe0fe1ca3c004a651"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "7197be639f6001c447b17444d6e3e824e1a6b75f120fc981d6e6bfc48bf6509f"
 ---
 
 # Vercel Documentation
@@ -93,10 +93,10 @@ Help me set up this project on Vercel. Read https://vercel.com/docs/getting-star
 
 The latest changes across the Vercel platform. Browse the full [changelog](https://vercel.com/changelog) for everything that shipped.
 
-- Sep 18, 2026: [Spend Management expands to Enterprise Flexible Commitment plans](https://vercel.com/changelog/spend-management-enterprise-flex). Enterprise teams on Flexible Commitment plans can now set a Spend Management budget, with email alerts, webhooks, and optional pausing of production deployments.
-- Sep 18, 2026: [WebMCP support now available in mcp-handler](https://vercel.com/changelog/webmcp-mcp-handler). mcp-handler adds experimental WebMCP support. Expose your MCP tools to in-browser agents with a single script tag, no separate OAuth flow required.
-- Sep 18, 2026: [v0 now reads npm credentials from shared environment variables](https://vercel.com/changelog/v0-now-reads-npm-credentials-from-shared-environment-variables). v0 can now install private packages from npm and custom registries. Add an NPM\_TOKEN or NPM\_RC environment variable to build with your team's internal packages, design systems, and component libraries in v0.
-- Sep 18, 2026: [GLM 5.3 FlashX now available on AI Gateway](https://vercel.com/changelog/glm-5-3-flashx-now-available-on-ai-gateway). Call Z.ai's GLM 5.3 FlashX through Vercel AI Gateway at 200 tokens per second, with one API key, automatic fallbacks, spend tracking, and request traces.
+- Sep 27, 2026: [Ember-1 from Fireworks now available on AI Gateway](https://vercel.com/changelog/ember-1-from-fireworks-now-available-on-ai-gateway). Ember-1 from Fireworks is now available on Vercel AI Gateway, a research-preview model for coding and agent workflows that reduces reasoning token usage.
+- Sep 25, 2026: [Push images to Vercel Container Registry from GitHub Actions](https://vercel.com/changelog/vcr-login-github-action). The vercel/vcr-action/login GitHub Action logs workflows in to Vercel Container Registry with GitHub OIDC, removing long-lived registry credentials from secrets.
+- Sep 25, 2026: [Pixel Canary is now available in stealth for free on AI Gateway](https://vercel.com/changelog/pixel-canary-is-now-available-in-stealth-for-free-on-ai-gateway). Pixel Canary is now available on Vercel AI Gateway, with strengths in coding, frontend development, and mobile app design.&#x20;
+- Sep 25, 2026: [Vercel Sandbox now supports memory observability](https://vercel.com/changelog/vercel-sandbox-now-supports-memory-observability). Vercel sandbox memory usage data can now be accessed in the dashboard and CLI.&#x20;
 
 ## Build with AI
 

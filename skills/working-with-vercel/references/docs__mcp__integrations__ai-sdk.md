@@ -3,7 +3,7 @@ title: AI SDK with MCP
 product: vercel
 url: /docs/mcp/integrations/ai-sdk
 canonical_url: "https://vercel.com/docs/mcp/integrations/ai-sdk"
-last_updated: 2026-09-15
+last_updated: 2026-09-18
 type: how-to
 prerequisites:
   - /docs/mcp/integrations
@@ -17,8 +17,8 @@ related:
 summary: Connect the AI SDK to an MCP server on Vercel, discover its tools, and call them with models served through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/mcp/integrations/ai-sdk.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "aa78274134dba96c8795942c205dd890c7755641a3cc969ad3d37c53bc615ac3"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "b0e4f3bd4b2f92c6551884fd46deeb5caff35fa572cc98c5b92691a321fa8573"
 ---
 
 # AI SDK with MCP
@@ -37,7 +37,7 @@ Use the [AI SDK](/docs/ai-sdk) to call tools from a [Model Context Protocol (MCP
 - [How to build an MCP server with Nuxt](https://vercel.com/kb/guide/how-to-build-an-mcp-server-with-nuxt?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations%2Fai-sdk&source_site=vercel-docs&relationship=related) — Add an MCP server to your Nuxt app with the Nuxt MCP Toolkit. Create tools, resources, and prompt templates that AI assi
 - [Model Context Protocol (MCP) explained: An FAQ](https://vercel.com/blog/model-context-protocol-mcp-explained?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations%2Fai-sdk&source_site=vercel-docs&relationship=related)
 - [Using xmcp with Next.js](https://vercel.com/kb/guide/using-xmcp-with-nextjs?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations%2Fai-sdk&source_site=vercel-docs&relationship=related) — Add an MCP server to an existing Next.js app with xmcp. Create typed tools, add authentication, and deploy to Vercel as
-- [Add MCP Apps to your AI SDK application](https://vercel.com/kb/guide/ai-sdk-mcp-apps?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations%2Fai-sdk&source_site=vercel-docs&relationship=related) — Build an MCP Apps host with the AI SDK using @ai-sdk/mcp and @ai-sdk/react to filter model-visible tools, read ui:// res
+- [TanStack AI with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations%2Fai-sdk&source_site=vercel-docs&relationship=related) — Connect TanStack AI to Vercel AI Gateway with the official adapter to authenticate requests and stream responses from AI
 
 Full cross-link map for this page: [/docs/mcp/integrations/ai-sdk.graph.md](/docs/mcp/integrations/ai-sdk.graph.md?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations%2Fai-sdk&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

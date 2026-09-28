@@ -3,7 +3,7 @@ title: Account Management
 product: vercel
 url: /docs/accounts
 canonical_url: "https://vercel.com/docs/accounts"
-last_updated: 2026-09-08
+last_updated: 2026-09-21
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your Vercel account and team members.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/accounts.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "0a92194912b26379d1395b3e5c63f66984421cd0c211aa4e8b01cce5cc0b55f2"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "8a1fed68430304fd251c9d3d7541d104c7c2bc1144afd560fd199c6a3bf3ef5c"
 ---
 
 # Account Management
@@ -39,9 +39,9 @@ When you first sign up for Vercel, you'll create an account. This account is use
 - [Using TanStack AI with Vercel Sandbox](https://vercel.com/kb/guide/tanstack-ai-vercel-sandbox?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — Run coding agents in isolated Vercel Sandbox microVMs with the @tanstack/ai-sandbox-vercel provider, with durable resume
 - [Teams](https://v0.app/docs/teams?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — Collaborate with your team on projects with shared resources.
 - [September 2020](https://vercel.com/blog/changelog-september-2020?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related)
-- [Account](https://v0.app/docs/account?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — Manage your account and billing information.
 - [Transition your Hobby team after EMU enrollment](https://vercel.com/docs/security/enterprise-managed-users-account-update?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — Explains the account update screen EMU members see at SSO sign-in and how to complete it.
 - [Troubleshoot project collaboration](https://vercel.com/docs/deployments/troubleshoot-project-collaboration?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — Learn about common reasons for deployment issues related to team member requirements and how to resolve them.
+- [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 
 Full cross-link map for this page: [/docs/accounts.graph.md](/docs/accounts.graph.md?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -278,13 +278,15 @@ There are two approval modes: **Auto Approval** and **Manual Approval**.
 
 When a commit author has a Vercel account linked to their Git provider, Vercel automatically adds them to your team with the [Developer role](/docs/rbac/access-roles#developer-role). Their deployment then continues immediately.
 
+On the [Pro plan](/docs/plans/pro-plan), the Developer role is a paid seat. With **Auto Approval** enabled, anyone who pushes a commit to a private repository connected to one of your team's projects, and has a Vercel account linked to their Git provider, is added to your team as a billed Developer seat with no confirmation step. If you want to decide who becomes a paid member of your team, use [Manual approval](#manual-approval) instead.
+
 Team owners receive a notification when a new member is added through auto approval.
 
 ### Manual approval
 
 When you enable manual approval, Vercel does not automatically add commit authors with a Vercel account to the team when they commit to your repository. Instead, Vercel blocks the deployment and team owners receive a notification to approve or decline the pending membership.
 
-After approval, Vercel adds the new member to your team with the [Developer role](/docs/rbac/access-roles#developer-role).
+After approval, Vercel adds the new member to your team with the [Developer role](/docs/rbac/access-roles#developer-role). Because the commit author does not join the team until an owner approves the membership, no seat is added or billed for them until approval.
 
 ### Shared responsibility
 
@@ -303,7 +305,14 @@ Team owners are notified in both approval modes:
 
 ### Billing
 
-Billing for members added through collaboration settings follows the same team seat pricing as members added through invitations or identity provider sync. See [Pro plan pricing](/docs/plans/pro-plan#additional-team-seats) for seat costs.
+Members added through collaboration settings receive the [Developer role](/docs/rbac/access-roles#developer-role) and are billed at the same seat pricing as members added through invitations or identity provider sync. See [Pro plan pricing](/docs/plans/pro-plan#additional-team-seats) for seat costs.
+
+The approval mode determines when a paid seat is added:
+
+- **Auto Approval**: a new Developer seat is added, and billed, as soon as an eligible commit author is automatically added to your team.
+- **Manual Approval**: no seat is added until a team owner approves the pending membership. Declining the request adds no seat.
+
+These settings apply to commits pushed to private repositories. Collaboration on public repositories is free.
 
 ## Managing emails
 

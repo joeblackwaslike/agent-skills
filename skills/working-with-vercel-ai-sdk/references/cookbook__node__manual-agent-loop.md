@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/node/manual-agent-loop.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "de9932fb980e2b2287684fa0ac6f8551cfadc7ffc1bd4c29687cb9e950f3975b"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "3ea7cf361f59b6c84f3c7664b032c0cf191ead951ddf981f1f9b9cedcd0fd784"
 ---
 
 # Manual Agent Loop
@@ -37,7 +37,7 @@ const messages: ModelMessage[] = [
 async function main() {
   while (true) {
     const result = streamText({
-      model: 'openai/gpt-4o',
+      model: 'openai/gpt-6-astra',
       messages,
       tools: {
         getWeather: tool({

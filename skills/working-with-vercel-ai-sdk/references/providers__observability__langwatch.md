@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/langwatch.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "a75fe83479bfaa3ffc8b3db70b5b32ef26820213c7da3ceee69d2d22059a2c96"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "8412f8a27bee72e80f08241a3c292d402c8af56b3f72991a4b2adf506eddaf50"
 ---
 
 # LangWatch Observability
@@ -105,7 +105,7 @@ import { generateText } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
 const result = await generateText({
-  model: openai('gpt-4o-mini'),
+  model: openai('gpt-6-luna'),
   prompt:
     'Explain why a chicken would make a terrible astronaut, be creative and humorous about it.',
   telemetry: {

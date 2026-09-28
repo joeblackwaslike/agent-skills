@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/rsc/generate-text.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "c873040a8579868df4e12d5346b5c70f183a55c47cde06f2183e2ef1f7fdfce9"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "136b37eb410778bd57fd0b90a6654d51c9ba8d0e5eef9f8ed6668bfa39ceb8fd"
 ---
 
 # Generate Text
@@ -61,7 +61,7 @@ import { generateText } from 'ai';
 
 export async function getAnswer(question: string) {
   const { text, finishReason, usage } = await generateText({
-    model: 'openai/gpt-5.4',
+    model: 'openai/gpt-6-astra',
     prompt: question,
   });
 

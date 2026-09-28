@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/openai-compatible-providers/nearai.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "4bc421f925775be5fdaf0c947b879871f4fe88a60efb20cd346806c913ae98fa"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "cbebaea96365db1aa4a47c0c03e5f37c399c575737c607a20c4052478f9b3a87"
 ---
 
 # NEAR AI Cloud Provider
@@ -106,6 +106,7 @@ You can use any supported `modelId` from the NEAR AI Cloud model catalog. Model 
 - [LM Studio](/providers/openai-compatible-providers/lmstudio)
 - [NVIDIA NIM](/providers/openai-compatible-providers/nim)
 - [ModelRush](/providers/openai-compatible-providers/modelrush)
+- [Cheaper Inference](/providers/openai-compatible-providers/cheaper-inference)
 - [Clarifai](/providers/openai-compatible-providers/clarifai)
 - [Heroku](/providers/openai-compatible-providers/heroku)
 - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)

@@ -17,8 +17,8 @@ related:
 summary: This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/enterprise/billing.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "59bc20cc04a142befe3e9f1cb880d3e48e3dc79fa40e7e418668d800ef773429"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "bd431f36f030308ccaf4dfcd3b74c86f6b33f414f490238c26e5fb995714002d"
 ---
 
 # Billing FAQ for Enterprise Plan
@@ -34,7 +34,6 @@ The Vercel Enterprise plan is perfect for [teams](/docs/accounts#creating-a-team
 - [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing?from=related&source_path=%2Fdocs%2Fplans%2Fenterprise%2Fbilling&source_site=vercel-docs&relationship=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 - [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing?from=related&source_path=%2Fdocs%2Fplans%2Fenterprise%2Fbilling&source_site=vercel-docs&relationship=related)
 - [Advanced Invoice Settings](https://vercel.com/blog/advanced-invoice-settings?from=related&source_path=%2Fdocs%2Fplans%2Fenterprise%2Fbilling&source_site=vercel-docs&relationship=related)
-- [Account](https://v0.app/docs/account?from=related&source_path=%2Fdocs%2Fplans%2Fenterprise%2Fbilling&source_site=vercel-docs&relationship=related) — Manage your account and billing information.
 - [Billing & Invoices](https://vercel.com/docs/pricing/understanding-my-invoice?from=related&source_path=%2Fdocs%2Fplans%2Fenterprise%2Fbilling&source_site=vercel-docs&relationship=related) — Learn how Vercel invoices are structured for Pro and Enterprise plans, including plan charges, credits, and usage-based
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fplans%2Fenterprise%2Fbilling&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Manage Billing and Refunds for Integrations](https://vercel.com/docs/integrations/create-integration/billing?from=related&source_path=%2Fdocs%2Fplans%2Fenterprise%2Fbilling&source_site=vercel-docs&relationship=related) — Learn how billing works for native integrations, including invoice lifecycle, pricing models, and refunds.

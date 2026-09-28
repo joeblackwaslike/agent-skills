@@ -3,7 +3,7 @@ title: provision-resource
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/provision-resource
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/provision-resource"
-last_updated: 2026-09-21
+last_updated: 2026-09-28
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn about provision-resource on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/provision-resource.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "5ace8860a66cda6be7ab6497f8559dda658c933fbc7a709d4c489278dfe72a0a"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "5813616434a3fdc85fa913f26d26d63dd99c472f87d7c9f526cc79d6b4289b49"
 ---
 
 # Provision Resource
@@ -233,7 +233,25 @@ Return the newly provisioned resource
       "preview": "string" // Value for preview environment,
       "production": "string" // Value for production environment
     }
-  ]
+  ],
+  "customClaims": {
+    "roles": [
+"string"
+    ],
+    "defaultRole": "value" // Role used when the deployment does not request one. Required when `roles` is set.,
+    "claimRules": [
+      "when": {
+        "role": [
+See schema: `#/properties/customClaims/properties/roles/items`
+
+        ],
+        "environment": [
+"string"
+        ]
+      },
+      "claims": "object" // required // Claims to set (string, number, or boolean), shallow-merged over earlier rules and over the default claims. `null` removes a claim. Reserved claims cannot be set; `aud` and `sub` can be overridden with a string but not removed.
+    ]
+  }
 }
 ```
 

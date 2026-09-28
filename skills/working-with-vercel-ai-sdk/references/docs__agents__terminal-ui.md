@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/agents/terminal-ui.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "64277be7471dfb9c9876a531537da02cb22d223bbeb4bc8aa799afdf8ede39a7"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "ff6db72a400b7cad4bfcbd1a028a56910fc52525457c54947152f3a6620036a4"
 ---
 
 # Terminal UI
@@ -31,7 +31,7 @@ import { ToolLoopAgent, tool } from 'ai';
 import { z } from 'zod';
 
 const agent = new ToolLoopAgent({
-  model: openai('gpt-5'),
+  model: openai('gpt-6-astra'),
   instructions:
     'You are a helpful terminal assistant. Answer in markdown and use tools when they help.',
   tools: {
@@ -83,17 +83,21 @@ Pass a sandbox session with the `sandbox` option when your agent tools need an
 execution environment:
 
 ```ts
-import { createJustBashSandbox } from '@ai-sdk/sandbox-just-bash';
+import { createJustBashNetworkSandboxSession } from '@ai-sdk/sandbox-just-bash';
 
-const sandboxSession = await createJustBashSandbox({
+const sandboxSession = await createJustBashNetworkSandboxSession({
   cwd: '/home/user',
-}).createSession();
-
-await runAgentTUI({
-  title: 'Sandbox Agent',
-  agent,
-  sandbox: sandboxSession.restricted(),
 });
+
+try {
+  await runAgentTUI({
+    title: 'Sandbox Agent',
+    agent,
+    sandbox: sandboxSession.restricted(),
+  });
+} finally {
+  await sandboxSession.destroy();
+}
 ```
 
 The terminal UI forwards the sandbox to every agent call as
@@ -141,7 +145,7 @@ tool call before the agent continues.
 
 ```ts
 const agent = new ToolLoopAgent({
-  model: openai('gpt-5'),
+  model: openai('gpt-6-astra'),
   tools: { weather },
   toolApproval: {
     weather: ({ location }) =>

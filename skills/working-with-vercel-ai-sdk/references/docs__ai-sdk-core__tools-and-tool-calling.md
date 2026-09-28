@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/tools-and-tool-calling.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "b7dbeecc260d8c789f4d849c8b98ec82e0469ea4073e6578e9d1f574c2875abe"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "6ebc29fb1edc8cb30b2e19d6994c4d2bb40b6fedfb1851242403e14c331f4d1e"
 ---
 
 # Tool Calling
@@ -1387,11 +1387,16 @@ orders the remaining tools.
   and Google (Gemini 3 models).
 </Note>
 
-For Google, use base64 inline-data file parts
+For Google Generative AI, use base64 inline-data file parts
 (`{ type: 'file', mediaType, data: { type: 'data', data } }`) or base64
 `data:` URLs in URL-style file parts
 (`{ type: 'file', mediaType, data: { type: 'url', url: new URL('data:...') } }`).
 Remote HTTP(S) URLs in tool-result URL parts are not supported.
+
+The [Google Vertex provider](/providers/ai-sdk-providers/google-vertex#tool-result-files)
+also supports direct `gs://` tool-result file references for Gemini 3 and later
+models with supported image and document MIME types. It downloads HTTP(S)
+tool-result URLs and sends their contents as inline data.
 
 In order to send multi-modal tool results, e.g. screenshots, back to the model,
 they need to be converted into a specific format.

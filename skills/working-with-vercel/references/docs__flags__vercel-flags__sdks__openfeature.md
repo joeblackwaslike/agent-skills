@@ -15,8 +15,8 @@ related:
 summary: Use the vendor-neutral OpenFeature API with Vercel Flags as your provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/sdks/openfeature.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "76d48a7eb18d29c259452fc4a3e1fab37e1a846f1b1288622ff8c7df77190bfb"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "42c85464a3b3f73b13a531d6e5b6713f1ec1a43c2726269559c3c9f00d87fc8c"
 ---
 
 # Using OpenFeature with Vercel Flags
@@ -32,9 +32,9 @@ sha256: "76d48a7eb18d29c259452fc4a3e1fab37e1a846f1b1288622ff8c7df77190bfb"
 - [Vercel Flags is now generally available](https://vercel.com/changelog/vercel-flags-ga?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fopenfeature&source_site=vercel-docs&relationship=related)
 - [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fopenfeature&source_site=vercel-docs&relationship=related)
 - [OpenFeature](https://flags-sdk.dev/docs/providers/openfeature?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fopenfeature&source_site=vercel-docs&relationship=related)
-- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fopenfeature&source_site=vercel-docs&relationship=related)
 - [Flags as code in Next.js](https://vercel.com/blog/flags-as-code-in-next-js?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fopenfeature&source_site=vercel-docs&relationship=related)
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fopenfeature&source_site=vercel-docs&relationship=related)
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fopenfeature&source_site=vercel-docs&relationship=related)
 - [Flags SDK now supports OpenFeature](https://vercel.com/changelog/flags-sdk-now-supports-openfeature?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fopenfeature&source_site=vercel-docs&relationship=related)
 - [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fopenfeature&source_site=vercel-docs&relationship=related) — API reference for the Flags SDK for Next.js and SvelteKit.
 - [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fopenfeature&source_site=vercel-docs&relationship=related) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags

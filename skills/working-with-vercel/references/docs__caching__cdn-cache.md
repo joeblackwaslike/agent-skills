@@ -16,8 +16,8 @@ related:
 summary: "Learn how Vercel's CDN cache stores your content across a global network to reduce latency and origin load."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/cdn-cache.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "30b8f1a503a333a2c2cea975e4d55a30800a8bc4ba2224de5de623f86c058bef"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "55e1227a540b7b94edf3868cd6e697b599fed9a04cd26415fd8817b9e2e2a9bc"
 ---
 
 # Vercel CDN Cache
@@ -36,12 +36,12 @@ Vercel's CDN caches your content (including pages, API responses, and static ass
 - [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
 - [Set cache control headers for functions](https://vercel.com/kb/guide/set-cache-control-headers?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache&source_site=vercel-docs&relationship=related) — Learn how to set headers to cache your function's responses.
 - [How to Configure the Cache-Control Response Header in Vercel Projects](https://vercel.com/kb/guide/how-to-configure-the-cache-control-response-header-in-vercel-projects?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache&source_site=vercel-docs&relationship=related) — After reviewing this guide, you will be able to set a cache-control header of any value to be returned when a specific p
+- [use cache](https://nextjs.org/docs/app/api-reference/directives/use-cache?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache&source_site=vercel-docs&relationship=related) — Learn how to use the "use cache" directive to cache data in your Next.js application.
+- [Migrating to Cache Components](https://nextjs.org/docs/app/guides/migrating-to-cache-components?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache&source_site=vercel-docs&relationship=related) — Learn how to migrate from route segment configs to Cache Components in Next.js.
+- [cacheLife](https://nextjs.org/docs/app/api-reference/functions/cacheLife?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache&source_site=vercel-docs&relationship=related) — Learn how to use the cacheLife function to set the cache expiration time for a cached function or component.
 - [use cache: remote](https://nextjs.org/docs/app/api-reference/directives/use-cache-remote?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache&source_site=vercel-docs&relationship=related) — Learn how to use the "use cache: remote" directive for persistent, shared caching using remote cache handlers.
-- [How to use Next.js as a backend for your frontend](https://nextjs.org/docs/app/guides/backend-for-frontend?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache&source_site=vercel-docs&relationship=related) — Learn how to use Next.js as a backend framework
+- [Data Cache for Next.js](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache&source_site=vercel-docs&relationship=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
 - [@vercel/functions API Reference \\(Node.js\\)](https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache&source_site=vercel-docs&relationship=related) — Learn about available APIs when working with Vercel Functions.
-- [Request headers](https://vercel.com/docs/headers/request-headers?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache&source_site=vercel-docs&relationship=related) — Learn about the request headers sent to each Vercel deployment and how to use them to process requests before sending a
-- [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache&source_site=vercel-docs&relationship=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
-- [Private Storage](https://vercel.com/docs/vercel-blob/private-storage?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache&source_site=vercel-docs&relationship=related) — Learn how to use private Vercel Blob storage to serve files with authentication
 
 Full cross-link map for this page: [/docs/caching/cdn-cache.graph.md](/docs/caching/cdn-cache.graph.md?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -236,6 +236,62 @@ Static files are **automatically cached on Vercel's global network** for the lif
 - `max-age=N, immutable`
 
 Where `N` is the number of seconds the response should be cached. The response must also meet the [caching criteria](/docs/caching/cdn-cache#how-to-cache-responses).
+
+#### Deleting immutable static assets
+
+Immutable static assets are files under `/_next/static/immutable/` and
+`/_vercel/immutable/`. They are content-addressed, and Vercel serves them with
+`Cache-Control: public, max-age=31536000, immutable`. If you accidentally ship
+a secret, credential, or other must-remove content inside an immutable bundle,
+you can delete the stored asset immediately instead of waiting for the cache to
+expire.
+
+> **⚠️ Warning:** You cannot undo this operation. For ordinary cache invalidation, use [cache
+> purging](/docs/caching/cdn-cache/purge) instead. This API is for content that
+> must never be servable again.
+
+Send a `POST` request with the asset's path, without a leading slash:
+
+```bash
+curl -X POST \
+  'https://api.vercel.com/v1/edge-cache/dangerously-delete-immutable-static?projectIdOrName=my-project&teamId=my-team' \
+  -H "Authorization: Bearer $VERCEL_TOKEN" \
+  -H 'Content-Type: application/json' \
+  -d '{"path": "_next/static/immutable/chunks/example-chunk.js"}'
+```
+
+A successful request does three things:
+
+- Permanently deletes the stored asset for both the production and preview
+  environments of the project
+- Blocks the asset's URL with a `410 Gone` response for seven days across
+  Vercel's CDN, effective immediately. This includes copies already cached at
+  the edge. After the block expires, the URL returns `404`
+- Rotates the project's build hash salt, so your next deployment emits
+  different asset URLs
+
+Keep these behaviors in mind:
+
+- **Deleting the asset does not delete the content.** The immutable store
+  addresses assets by their content. If the sensitive content still exists in
+  your source, your next deployment uploads the same bytes again. Remove or
+  replace the content in your source code, deploy, and then delete the old
+  asset
+- **To recover from a mistaken deletion, deploy again.** The build hash salt
+  rotation means the new build references new asset URLs, so your site works
+  immediately. The deleted URL keeps returning `410` or `404`, but nothing
+  references it anymore
+- The `path` must exactly match the stored asset path and start with
+  `_vercel/immutable/` or `_next/static/immutable/`. If no asset exists at the
+  path, the API returns `404 asset_not_found` and blocks nothing. Projects
+  using a [`basePath`](https://nextjs.org/docs/app/api-reference/config/next-config-js/basePath)
+  or a microfrontends service prefix store assets under that prefix, and you
+  cannot delete those assets with this endpoint
+- You need project-update permission on the team, and Vercel rate limits
+  requests
+- If you serve Vercel through your own CDN, purge it there too. The `410`
+  block covers Vercel's CDN, but your CDN may hold the asset with its original
+  one-year immutable cache header until you purge it
 
 ## Cache control options
 

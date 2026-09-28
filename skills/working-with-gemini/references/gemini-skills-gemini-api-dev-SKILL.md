@@ -1,9 +1,9 @@
 ---
 name: gemini-api-dev
-description: Use this skill when writing code that calls the Gemini API for text generation, multi-turn chat, multimodal understanding, image generation, video generation, streaming responses, background research tasks, function calling, structured output, or migrating from the old generateContent API. Covers SDK usage and best practices for Gemini models and agents in Python and TypeScript.
+description: Use this skill when writing code that calls the Gemini API for text generation, multi-turn chat, multimodal understanding, image generation, video generation, speech generation (TTS), voice design, voice replication, streaming responses, background research tasks, function calling, structured output, or migrating from the old generateContent API. Covers SDK usage and best practices for Gemini models and agents in Python and TypeScript.
 source: "https://raw.githubusercontent.com/google-gemini/gemini-skills/main/skills/gemini-api-dev/SKILL.md"
-fetched_at: "2026-09-21T09:41:39.746Z"
-sha256: "548960cfd4d8ef29aa9056389a79802b9ad897161a61e8939e377318210656b6"
+fetched_at: "2026-09-28T10:41:05.416Z"
+sha256: "c9525c9d88ba4caf71365bcc849899e1b08d1a9d807cdfd6ab2fc1492325b00a"
 ---
 
 # Gemini API Development Skill
@@ -23,7 +23,8 @@ sha256: "548960cfd4d8ef29aa9056389a79802b9ad897161a61e8939e377318210656b6"
 - `gemini-3-pro-image` (Nano Banana Pro): 65k / 32k tokens, high-quality image generation and editing
 - `gemini-3.1-flash-image` (Nano Banana 2): 65k / 32k tokens, fast, efficient image generation and editing
 - `gemini-3.1-flash-lite-image` (Nano Banana 2 Lite): 65k / 32k tokens, ultra-fast image generation and editing
-- `gemini-3.1-flash-tts-preview`: expressive text-to-speech with Director's Chair prompting
+- `gemini-3.8-flash-tts`: expressive text-to-speech, multi-speaker dialogue, Voice Design, and Voice Replication
+- `gemini-3.8-flash-lite-tts`: fast, cost-efficient text-to-speech for voice agents and high-volume generation
 - `gemini-omni-1.1-flash`: video generation, first-frame-to-video, first-and-last-frame transitions, video extensions (up to 40s), video editing, and reference-guided generation
 - `gemma-4-31b-it`: Gemma 4 dense model, 31B parameters
 - `gemma-4-26b-a4b-it`: Gemma 4 MoE model, 26B total / 4B active parameters
@@ -43,7 +44,7 @@ sha256: "548960cfd4d8ef29aa9056389a79802b9ad897161a61e8939e377318210656b6"
 
 ### Current SDKs
 
-- **Python**: `google-genai` >= `2.3.0` → `pip install -U google-genai`
+- **Python**: `google-genai` >= `2.25.0` → `pip install -U google-genai`
 - **JavaScript/TypeScript**: `@google/genai` >= `2.3.0` → `npm install @google/genai`
 
 > [!NOTE]
@@ -60,6 +61,7 @@ sha256: "548960cfd4d8ef29aa9056389a79802b9ad897161a61e8939e377318210656b6"
 - **Migrating from `generateContent`**: Read `references/migration.md` for the scoping, checklist, and before/after code examples. Always confirm scope with the user before editing.
 - **Model upgrades**: Drop-in, swap the model string. Deprecated models (`gemini-2.0-*`, `gemini-1.5-*`) must be replaced, see `references/migration.md`.
 - **Migrating to Gemini 3.8 Flash or Gemini 3.5 Flash-Lite**: Read `references/migration.md` for the scoping and checklist.
+- **Migrating to Gemini 3.8 TTS (`gemini-3.8-flash-tts` / `gemini-3.8-flash-lite-tts`)**: Read `references/migration.md` for breaking changes from `gemini-3.1-flash-tts-preview` (`speech_metadata` annotations, inline vocal tags, default WAV `audio/wav` unary output vs `audio/l16` streaming output, and Voice Design personas).
 
 ## Quick Start
 
@@ -351,7 +353,9 @@ For streaming with tools, thinking, agents, and image generation see the full [S
 - [Image Generation](https://ai.google.dev/gemini-api/docs/image-generation.md.txt)
 - [Image Understanding](https://ai.google.dev/gemini-api/docs/image-understanding.md.txt)
 - [Video Generation & Editing (Omni Flash)](https://ai.google.dev/gemini-api/docs/omni.md.txt)
-- [Speech Generation](https://ai.google.dev/gemini-api/docs/speech-generation.md.txt)
+- [Speech Generation (TTS)](https://ai.google.dev/gemini-api/docs/speech-generation.md.txt)
+- [Voice Design](https://ai.google.dev/gemini-api/docs/voice-design.md.txt)
+- [Voice Replication](https://ai.google.dev/gemini-api/docs/voice-replication.md.txt)
 - [Music Generation](https://ai.google.dev/gemini-api/docs/music-generation.md.txt)
 - [Embeddings](https://ai.google.dev/gemini-api/docs/embeddings.md.txt)
 
@@ -408,7 +412,7 @@ An `Interaction` response contains `steps`, an array of typed step objects repre
 - `file_search_call` / `file_search_result`: File search tool steps, can have a `signature` field.
 
 ### Content types (inside `content` array on `model_output` and `user_input` steps)
-- `text`: Text content (`text` field)
+- `text`: Text content (`text` field, plus optional `annotations` such as `{"type": "speech_metadata", "speaker": "...", "style": "..."}` for TTS)
 - `image` / `audio` / `document` / `video`: Content with `data`, `mime_type`, or `uri`
 
 ### Streaming Event Types

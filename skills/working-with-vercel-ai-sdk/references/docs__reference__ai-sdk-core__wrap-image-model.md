@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/wrap-image-model.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "98a201acf644536fb6c9dc617ea9d34a837673a8bbb4a6791e3e1107ddd36fbf"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "5fbe136c7387d448e1514f2b02f7b4583a48c645d6ee2be95a5cf4f35aaf39ca"
 ---
 
 # `wrapImageModel()`
@@ -14,7 +14,7 @@ import { generateImage, wrapImageModel } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
 const model = wrapImageModel({
-  model: openai.image('gpt-image-2'),
+  model: openai.image('gpt-image-2.5-sunburst'),
   middleware: yourImageModelMiddleware,
 });
 

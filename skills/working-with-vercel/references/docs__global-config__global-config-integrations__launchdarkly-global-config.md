@@ -17,8 +17,8 @@ related:
 summary: "Learn how to use Global Config with Vercel's LaunchDarkly integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-integrations/launchdarkly-global-config.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "9d1616c2079e53a19dbb157dda47a7d4ce839e15faf97b5b299f6ccbcece87d2"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "55a83ef249fdf5de47253d679e7983693151434af9e083532e58e6008fcc1f42"
 ---
 
 # Using Global Config with LaunchDarkly
@@ -32,8 +32,8 @@ This guide will help you get started with using Vercel's LaunchDarkly integratio
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Expanding the experimentation ecosystem with Edge Config and LaunchDarkly](https://vercel.com/blog/edge-config-and-launch-darkly?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Flaunchdarkly-global-config&source_site=vercel-docs&relationship=related)
-- [Global Config](https://flags-sdk.dev/docs/providers/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Flaunchdarkly-global-config&source_site=vercel-docs&relationship=related)
 - [LaunchDarkly is now available on the Vercel Marketplace](https://vercel.com/changelog/launchdarkly-is-now-available-on-the-vercel-marketplace?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Flaunchdarkly-global-config&source_site=vercel-docs&relationship=related)
+- [Global Config](https://flags-sdk.dev/docs/providers/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Flaunchdarkly-global-config&source_site=vercel-docs&relationship=related)
 - [Using Global Config with DevCycle](https://vercel.com/docs/global-config/global-config-integrations/devcycle-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Flaunchdarkly-global-config&source_site=vercel-docs&relationship=related) — Learn how to use Global Config with Vercel's DevCycle integration.
 - [Using Global Config with Statsig](https://vercel.com/docs/global-config/global-config-integrations/statsig-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Flaunchdarkly-global-config&source_site=vercel-docs&relationship=related) — Learn how to use Global Config with Vercel's Statsig integration.
 - [Using Global Config](https://vercel.com/docs/global-config/using-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Flaunchdarkly-global-config&source_site=vercel-docs&relationship=related) — Learn how to use Global Configs in your projects.

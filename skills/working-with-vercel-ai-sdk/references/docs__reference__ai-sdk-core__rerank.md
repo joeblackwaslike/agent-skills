@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/rerank.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "5371d98320f4d4a97b10ce8dc5782173c947d9ee06ad24a7ad89c1da72214f8d"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "e49e4bf32690459a616ded76da7c71f9efdc29c0d95fa0f7bde1bd6bc359082d"
 ---
 
 # `rerank()`
@@ -15,7 +15,7 @@ import { cohere } from '@ai-sdk/cohere';
 import { rerank } from 'ai';
 
 const { ranking } = await rerank({
-  model: cohere.reranking('rerank-v3.5'),
+  model: cohere.reranking('rerank-v4.0-pro'),
   documents: ['sunny day at the beach', 'rainy afternoon in the city'],
   query: 'talk about rain',
 });
@@ -35,7 +35,7 @@ const { ranking } = await rerank({
       name: 'model',
       type: 'RerankingModel',
       description:
-        "The reranking model to use. Example: cohere.reranking('rerank-v3.5')",
+        "The reranking model to use. Example: cohere.reranking('rerank-v4.0-pro')",
     },
     {
       name: 'documents',
@@ -263,7 +263,7 @@ import { cohere } from '@ai-sdk/cohere';
 import { rerank } from 'ai';
 
 const { ranking, rerankedDocuments } = await rerank({
-  model: cohere.reranking('rerank-v3.5'),
+  model: cohere.reranking('rerank-v4.0-pro'),
   documents: [
     'sunny day at the beach',
     'rainy afternoon in the city',
@@ -303,7 +303,7 @@ const documents = [
 ];
 
 const { ranking } = await rerank({
-  model: cohere.reranking('rerank-v3.5'),
+  model: cohere.reranking('rerank-v4.0-pro'),
   documents,
   query: 'Which pricing did we get from Oracle?',
   topN: 1,
@@ -320,7 +320,7 @@ import { cohere } from '@ai-sdk/cohere';
 import { rerank } from 'ai';
 
 const { ranking } = await rerank({
-  model: cohere.reranking('rerank-v3.5'),
+  model: cohere.reranking('rerank-v4.0-pro'),
   documents: ['sunny day at the beach', 'rainy afternoon in the city'],
   query: 'talk about rain',
   providerOptions: {

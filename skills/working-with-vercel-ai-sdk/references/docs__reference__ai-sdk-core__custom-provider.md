@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/custom-provider.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "c2492d45519a78eae52bf220ed67fc5ef562048ae57944954e10272cd9251448"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "e87349123f0ef51f4e75e0cca795cc6c07cceed2281a8081880ac8a72ab01c5e"
 ---
 
 # `customProvider()`
@@ -25,8 +25,8 @@ import { customProvider } from 'ai';
 export const myOpenAI = customProvider({
   languageModels: {
     // replacement model with custom settings:
-    'gpt-5': wrapLanguageModel({
-      model: openai('gpt-5'),
+    'gpt-6-astra': wrapLanguageModel({
+      model: openai('gpt-6-astra'),
       middleware: defaultSettingsMiddleware({
         settings: {
           providerOptions: {
@@ -38,8 +38,8 @@ export const myOpenAI = customProvider({
       }),
     }),
     // alias model with custom settings:
-    'gpt-4o-reasoning-high': wrapLanguageModel({
-      model: openai('gpt-4o'),
+    'gpt-6-astra-reasoning-high': wrapLanguageModel({
+      model: openai('gpt-6-astra'),
       middleware: defaultSettingsMiddleware({
         settings: {
           providerOptions: {

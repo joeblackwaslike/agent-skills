@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/node/call-tools-multiple-steps.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "bec0f9dc2f001dd18ff83cbd1f5f5d37a2008a33a29238663eb5e185bd1f4d28"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "1c187573f4d3a896266cc657c00c4a4210e0a2a8f1cb14df93ef2195101b4adb"
 ---
 
 # Call Tools in Multiple Steps
@@ -17,7 +17,7 @@ import { generateText, tool, isStepCount } from 'ai';
 import { z } from 'zod';
 
 const { text, steps } = await generateText({
-  model: 'openai/gpt-4.1',
+  model: 'openai/gpt-6-astra',
   stopWhen: isStepCount(5),
   tools: {
     weather: tool({

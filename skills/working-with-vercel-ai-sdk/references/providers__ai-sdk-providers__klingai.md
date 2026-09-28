@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/klingai.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "3e7b29d42cbbf6e57d4ca5d939c4dd4b898d671800b3b2d356720ffcd3b7662a"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "a41fa6012327aa4950c84a05b202a75da85cf0681f47f7e44cc93d3a9f8bacb6"
 ---
 
 # Kling AI Provider
@@ -106,7 +106,7 @@ import { klingai, type KlingAIVideoModelOptions } from '@ai-sdk/klingai';
 import { experimental_generateVideo as generateVideo } from 'ai';
 
 const { videos } = await generateVideo({
-  model: klingai.video('kling-v2.6-t2v'),
+  model: klingai.video('kling-v3.0-t2v'),
   prompt: 'A chicken flying into the sunset in the style of 90s anime.',
   aspectRatio: '16:9',
   duration: 5,
@@ -127,7 +127,7 @@ import { klingai, type KlingAIVideoModelOptions } from '@ai-sdk/klingai';
 import { experimental_generateVideo as generateVideo } from 'ai';
 
 const { videos } = await generateVideo({
-  model: klingai.video('kling-v2.6-i2v'),
+  model: klingai.video('kling-v3.0-i2v'),
   prompt: {
     image: 'https://example.com/start-frame.png',
     text: 'The cat slowly turns its head and blinks',

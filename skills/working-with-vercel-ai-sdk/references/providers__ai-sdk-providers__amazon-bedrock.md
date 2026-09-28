@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "6baaf04ec814c08b26ed3bfcb7d203e10eb840ee6e90d43d4bd564ca5c980a48"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "3768bbfa9a2cb4304cb3085938d550138cfa2e56ac35d609e7bc76e2a30c3f74"
 ---
 
 # Amazon Bedrock Provider
@@ -284,12 +284,12 @@ provider. It uses Bedrock's native InvokeModel API, which accepts application
 inference profile ARNs, and identifies the model as Anthropic automatically:
 
 ```ts
-import { amazonBedrockAnthropic } from '@ai-sdk/amazon-bedrock/anthropic';
+import { bedrockAnthropic } from '@ai-sdk/amazon-bedrock/anthropic';
 
 const profileArn =
   'arn:aws:bedrock:us-east-1:123456789012:application-inference-profile/qibm5eutlkcy';
 
-const model = amazonBedrockAnthropic(profileArn);
+const model = bedrockAnthropic(profileArn);
 ```
 
 Use `modelFamily: 'anthropic'` only when you need to use the generic
@@ -329,7 +329,7 @@ import { amazonBedrock } from '@ai-sdk/amazon-bedrock';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: amazonBedrock('anthropic.claude-3-haiku-20240307-v1:0'),
+  model: amazonBedrock('us.anthropic.claude-haiku-4-5-20251001-v1:0'),
   messages: [
     {
       role: 'user',
@@ -545,7 +545,7 @@ const cyberpunkAnalysis =
   '... literary analysis of cyberpunk themes and concepts ...';
 
 const result = await generateText({
-  model: amazonBedrock('anthropic.claude-3-5-sonnet-20241022-v2:0'),
+  model: amazonBedrock('us.anthropic.claude-sonnet-5'),
   messages: [
     {
       role: 'system',
@@ -581,7 +581,7 @@ const cyberpunkAnalysis =
   '... literary analysis of cyberpunk themes and concepts ...';
 
 const result = streamText({
-  model: amazonBedrock('anthropic.claude-3-5-sonnet-20241022-v2:0'),
+  model: amazonBedrock('us.anthropic.claude-sonnet-5'),
   messages: [
     {
       role: 'assistant',
@@ -1591,10 +1591,10 @@ You can use the following optional settings to customize the Bedrock Anthropic p
 ### Language Models
 
 You can create models that call the [Anthropic Messages API](https://docs.anthropic.com/claude/reference/messages_post) using the provider instance.
-The first argument is the model id, e.g. `us.anthropic.claude-3-5-sonnet-20241022-v2:0`.
+The first argument is the model id, e.g. `us.anthropic.claude-sonnet-5`.
 
 ```ts
-const model = bedrockAnthropic('us.anthropic.claude-3-5-sonnet-20241022-v2:0');
+const model = bedrockAnthropic('us.anthropic.claude-sonnet-5');
 ```
 
 You can use Bedrock Anthropic language models to generate text with the `generateText` function:
@@ -1604,7 +1604,7 @@ import { bedrockAnthropic } from '@ai-sdk/amazon-bedrock/anthropic';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: bedrockAnthropic('us.anthropic.claude-3-5-sonnet-20241022-v2:0'),
+  model: bedrockAnthropic('us.anthropic.claude-sonnet-5'),
   prompt: 'Write a vegetarian lasagna recipe for 4 people.',
 });
 ```
@@ -1628,7 +1628,7 @@ import { bedrockAnthropic } from '@ai-sdk/amazon-bedrock/anthropic';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: bedrockAnthropic('us.anthropic.claude-sonnet-4-5-20250929-v1:0'),
+  model: bedrockAnthropic('us.anthropic.claude-sonnet-5'),
   messages: [
     {
       role: 'system',
@@ -1824,7 +1824,7 @@ on how to integrate reasoning into your chatbot.
 
 ## Bedrock Mantle Provider Usage
 
-The Bedrock Mantle provider offers access to OpenAI-compatible models through Amazon Bedrock's Mantle API at `https://bedrock-mantle.{region}.api.aws/v1`. This endpoint supports the Chat Completions API and the Responses API, and provides access to models that may only be available through the Mantle endpoint (such as `openai.gpt-oss-120b`).
+The Bedrock Mantle provider offers access to OpenAI-compatible models through Amazon Bedrock's Mantle API. It automatically selects the `/v1` or `/openai/v1` route based on the model. These endpoints support the Chat Completions API and the Responses API, and provide access to models that may only be available through the Mantle endpoint (such as `openai.gpt-oss-120b`).
 
 ### Provider Instance
 
@@ -1880,7 +1880,9 @@ You can use the following optional settings to customize the Bedrock Mantle prov
 - **baseURL** _string_
 
   Base URL for the Bedrock Mantle API calls.
-  Defaults to `https://bedrock-mantle.{region}.api.aws/v1`.
+  By default, the provider selects either
+  `https://bedrock-mantle.{region}.api.aws/v1` or
+  `https://bedrock-mantle.{region}.api.aws/openai/v1` based on the model.
 
 - **headers** _Record&lt;string, string | undefined&gt;_
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/agents/loop-control.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "282f88751056a23245f3932ab2c2aa20171fb30cfd8fc086afbf8e36779e39b9"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "0988711553ff378b521f10c393fa3953d87377c34da625f44c54956a501be114"
 ---
 
 # Loop Control
@@ -162,7 +162,7 @@ import { ToolLoopAgent } from 'ai';
 __PROVIDER_IMPORT__;
 
 const agent = new ToolLoopAgent({
-  model: 'openai/gpt-4o-mini', // Default model
+  model: 'openai/gpt-6-luna', // Default model
   tools: {
     // your tools
   },

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/api-servers/hono.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "32c19e7591cf6d69d3b1e5dfd82ff50ee9874677c4b27d62e285ffa6de213894"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "3370d008df94e89470c0704918aa7848764d34a0dcdeadd566026e1bb77eebe9"
 ---
 
 # Hono
@@ -40,7 +40,7 @@ const app = new Hono();
 
 app.post('/', async c => {
   const result = streamText({
-    model: 'openai/gpt-4o',
+    model: 'openai/gpt-6-astra',
     prompt: 'Invent a new holiday and describe its traditions.',
   });
   return createUIMessageStreamResponse({
@@ -64,7 +64,7 @@ const app = new Hono();
 
 app.post('/text', async c => {
   const result = streamText({
-    model: 'openai/gpt-4o',
+    model: 'openai/gpt-6-astra',
     prompt: 'Write a short poem about coding.',
   });
   return createTextStreamResponse({
@@ -105,7 +105,7 @@ app.post('/stream-data', async c => {
       });
 
       const result = streamText({
-        model: 'openai/gpt-4o',
+        model: 'openai/gpt-6-astra',
         prompt: 'Invent a new holiday and describe its traditions.',
       });
 

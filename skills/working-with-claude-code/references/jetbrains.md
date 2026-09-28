@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/jetbrains.md"
-fetched_at: "2026-09-21T09:39:23.760Z"
-sha256: "ae9180b6e3ee1b4abaa2692daf222ad50cb8b20c1ee5ba71575ec01993dd3d0e"
+fetched_at: "2026-09-28T10:38:50.037Z"
+sha256: "63feac6be5ba731f05e71fe8a7f53774cde19ef344dcb33a788642a8005cd22d"
 ---
 
 > ## Documentation Index
@@ -211,7 +211,11 @@ When the plugin is active, it runs a local MCP server that the CLI connects to a
 
 The server is named `ide` and is hidden from `/mcp` because there's nothing to configure. If your organization uses a [`PreToolUse` hook](/docs/en/hooks#pretooluse) to allowlist MCP tools, though, you'll need to know it exists.
 
-**Selection and open-file context.** While connected, the CLI includes your current editor selection and the path of the active file as context on each prompt you send. The transcript shows a `⧉ Selected N lines from <file>` line when this happens. To exclude a sensitive file such as `.env`, add a [`Read` deny rule](/docs/en/permissions#read-and-edit) for its path. A matching deny rule prevents both the selected text and the open-file notice for that file from reaching Claude.
+**Selection and open-file context.** While connected, the CLI includes your current editor selection and the path of the active file as context on each prompt you send. The transcript shows a `⧉ Selected N lines from <file>` line when this happens.
+
+If you [queue a message while Claude works](/docs/en/interactive-mode#queue-messages-while-claude-works), it keeps the selection you had when you pressed `Enter`, whatever you select afterward.
+
+To exclude a sensitive file such as `.env`, add a [`Read` deny rule](/docs/en/permissions#read-and-edit) for its path. A matching deny rule prevents both the selected text and the open-file notice for that file from reaching Claude.
 
 **Transport and authentication.** The server listens on an OS-assigned ephemeral port, and the port is not configurable. The transport is unencrypted `ws://`; on loopback, any process that could capture the traffic can also read the token from the lock file, so TLS would not add protection against a local attacker. Each IDE start generates a fresh random auth token, writes it to a lock file at `~/.claude/ide/<port>.lock`, and the CLI must present it as the `X-Claude-Code-Ide-Authorization` header to connect. If `CLAUDE_CONFIG_DIR` is set, the lock file is written to `$CLAUDE_CONFIG_DIR/ide/` instead.
 

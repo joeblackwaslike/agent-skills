@@ -16,8 +16,8 @@ related:
 summary: "Understand how Vercel Sandbox billing works, what's included in each plan, and the quotas that apply."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/pricing.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "35bc2288236de3e0b99090938636249d2dd2165b7688e78af2b6b547e7ff464d"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "ae45fe16a256911688dc48970f33fda79fbbc5458ac232e90fe3ba287becbefb"
 ---
 
 # Vercel Sandbox pricing and quotas
@@ -31,17 +31,17 @@ Vercel Sandbox usage is metered across several dimensions. This page explains ho
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Data downloaded by Vercel Sandbox is now free](https://vercel.com/changelog/data-downloaded-by-vercel-sandbox-is-now-free?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related)
+- [Drives for Vercel Sandbox are now in public beta](https://vercel.com/changelog/drives-for-vercel-sandbox-are-now-in-public-beta?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related)
 - [Give every agent in Herdr its own Vercel Sandbox](https://vercel.com/changelog/give-every-agent-in-herdr-its-own-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related)
 - [More granular observability for Vercel Sandbox](https://vercel.com/changelog/more-granular-observability-for-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related)
 - [Vercel Sandbox can now run for up to 24 hours](https://vercel.com/changelog/vercel-sandbox-can-now-run-for-up-to-24-hours?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related)
-- [Vercel Sandbox is now available in all regions](https://vercel.com/changelog/vercel-sandbox-is-now-available-in-all-regions?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related)
 - [How to run Devin Outposts sessions on Vercel](https://vercel.com/kb/guide/devin-outposts-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related) — Run Devin Outposts sessions in isolated Vercel Sandbox microVMs. One browser authorization to set up, then sessions star
 - [Run Python code securely with AI SDK and Vercel Sandbox](https://vercel.com/kb/guide/python-ai-sdk-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related) — Add an \\`executeCode\\` tool to your AI SDK agent with the \\`ai-sdk-tool-code-execution\\` package to run Python 3.13 insi
+- [Run a research workspace on Vercel](https://vercel.com/kb/guide/run-research-workspace-vercel?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related) — Plan a durable research workspace on Vercel's Agentic Infrastructure with Workflows, internal API tools, Vercel Sandbox
 - [Run Terminal-Bench and any Harbor benchmark on Vercel Sandbox](https://vercel.com/kb/guide/run-terminal-bench-harbor-benchmarks-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related) — Run Terminal-Bench, SWE-bench, and any Harbor benchmark on Vercel Sandbox. Each trial executes in an isolated Firecracke
 - [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
-- [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
-- [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
+- [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 
 Full cross-link map for this page: [/docs/sandbox/pricing.graph.md](/docs/sandbox/pricing.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fpricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -145,18 +145,17 @@ The logical amount of data your sandbox writes to a mounted drive, measured in G
 
 ## Example calculations
 
-The following examples show estimated costs for common scenarios on Pro/Enterprise plans, using rates for the `iad1` region.
+The examples below show estimated Active CPU and Provisioned Memory costs for common Sandbox tasks using Pro rates in the `iad1` region.
 
-| Scenario           | Duration | vCPUs | Memory | Active CPU Cost | Memory Cost | Total  |
-| ------------------ | -------- | ----- | ------ | --------------- | ----------- | ------ |
-| Quick test         | 2 min    | 1     | 2 GB   | $0.004          | $0.001      | ~$0.01 |
-| AI code validation | 5 min    | 2     | 4 GB   | $0.02           | $0.007      | ~$0.03 |
-| Build and test     | 30 min   | 4     | 8 GB   | $0.26           | $0.08       | ~$0.34 |
-| Long-running task  | 2 hr     | 8     | 16 GB  | $2.05           | $0.68       | ~$2.73 |
+| Scenario | Duration | vCPUs | Memory | Active CPU cost | Memory cost | Estimated total* |
+| --- | --- | --- | --- | --- | --- | --- |
+| Quick test | 2 min | 1 | 2 GB | $0.0004 | $0.0014 | $0.0018 |
+| AI code validation | 5 min | 2 | 4 GB | $0.0021 | $0.0071 | $0.0092 |
+| Build and test | 30 min | 4 | 8 GB | $0.0256 | $0.0848 | $0.1104 |
+| Long-running task | 2 hr | 8 | 16 GB | $0.2048 | $0.6784 | $0.8832 |
 
-> **💡 Note:** These estimates assume 100% CPU utilization. Actual Active CPU costs are often lower because time spent waiting for I/O is not billed.
 
-Sandbox creation costs are minimal at $0.60 per million creations ($0.0000006 per creation).
+\* Each example assumes 10% CPU utilization, reflecting time spent waiting for LLM calls.
 
 ## Quotas and limits
 
@@ -170,7 +169,7 @@ Each sandbox created with Sandbox SDK 3.0.0 or above, or from a [custom image](/
 | Pro        | 8             | 16GB           | 15                 | 64 GB     |
 | Enterprise | 32            | 64GB           | 15                 | 64 GB     |
 
-A sandbox can mount up to 4 [drives](/docs/sandbox/concepts/drives) per run. A drive defaults to 1 TiB (1 GiB for Hobby) when you do not set a size, and the maximum quota is 16 TiB per drive. [Contact Vercel Support](/help) to request a quota above 16 TiB.
+A sandbox can mount up to 4 [drives](/docs/sandbox/concepts/drives) per run. A drive defaults to 1 TiB (1 GiB for Hobby) when you do not set a size. The default maximum quota is 16 TiB.
 
 ### Runtime limits
 

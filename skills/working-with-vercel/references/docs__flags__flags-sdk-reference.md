@@ -14,8 +14,8 @@ related:
 summary: API reference for the Flags SDK for Next.js and SvelteKit.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/flags-sdk-reference.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "4b069dffd009c5937011773fdf9a770509e7ec97ea09250d28e5fb8215e34768"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "efa0152f228984c00c65259f8748ba4f86c459c99a5ac4c10bbbec85df5a32a6"
 ---
 
 # Flags SDK Reference
@@ -29,10 +29,9 @@ The Flags SDK is a free, open-source library that gives you the tools you need t
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit?from=related&source_path=%2Fdocs%2Fflags%2Fflags-sdk-reference&source_site=vercel-docs&relationship=related) — Using the Flags SDK in SvelteKit
-- [Flags as Code](https://flags-sdk.dev/docs/principles/flags-as-code?from=related&source_path=%2Fdocs%2Fflags%2Fflags-sdk-reference&source_site=vercel-docs&relationship=related)
 - [Vercel Flags is now generally available](https://vercel.com/changelog/vercel-flags-ga?from=related&source_path=%2Fdocs%2Fflags%2Fflags-sdk-reference&source_site=vercel-docs&relationship=related)
+- [Flags as Code](https://flags-sdk.dev/docs/principles/flags-as-code?from=related&source_path=%2Fdocs%2Fflags%2Fflags-sdk-reference&source_site=vercel-docs&relationship=related)
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags?from=related&source_path=%2Fdocs%2Fflags%2Fflags-sdk-reference&source_site=vercel-docs&relationship=related)
-- [Reflag](https://flags-sdk.dev/docs/providers/reflag?from=related&source_path=%2Fdocs%2Fflags%2Fflags-sdk-reference&source_site=vercel-docs&relationship=related)
 - [Statsig](https://flags-sdk.dev/docs/providers/statsig?from=related&source_path=%2Fdocs%2Fflags%2Fflags-sdk-reference&source_site=vercel-docs&relationship=related)
 - [Using the Flags SDK with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk?from=related&source_path=%2Fdocs%2Fflags%2Fflags-sdk-reference&source_site=vercel-docs&relationship=related) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
 - [Flags Explorer](https://vercel.com/docs/flags/flags-explorer?from=related&source_path=%2Fdocs%2Fflags%2Fflags-sdk-reference&source_site=vercel-docs&relationship=related) — View and override your application's feature flags from the Vercel Toolbar

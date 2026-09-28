@@ -3,7 +3,7 @@ title: TanStack AI with Vercel Sandbox
 product: vercel
 url: /docs/sandbox/ecosystem/tanstack-ai
 canonical_url: "https://vercel.com/docs/sandbox/ecosystem/tanstack-ai"
-last_updated: 2026-09-15
+last_updated: 2026-09-18
 type: how-to
 prerequisites:
   - /docs/sandbox/ecosystem
@@ -17,8 +17,8 @@ related:
 summary: Run TanStack AI coding agents in isolated Vercel Sandbox microVMs with the dedicated provider, workspace configuration, and policies.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/ecosystem/tanstack-ai.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "d913bdc4099d726f87fbbf7927112d7da3070b58fc23378fd25b38d61bb710ca"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "a1ea6a7f809d6f165ff2ee1bba16dcd00842752c846549bec74fccec5468c067"
 ---
 
 # TanStack AI with Vercel Sandbox
@@ -34,10 +34,10 @@ Run [TanStack AI](https://tanstack.com/ai) coding agents in [Vercel Sandbox](/do
 - [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
 - [Run Python code securely with AI SDK and Vercel Sandbox](https://vercel.com/kb/guide/python-ai-sdk-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Add an \\`executeCode\\` tool to your AI SDK agent with the \\`ai-sdk-tool-code-execution\\` package to run Python 3.13 insi
+- [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
 - [Safely running AI generated code in your Next.js application](https://vercel.com/kb/guide/running-ai-generated-code-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — How to execute untrusted, AI‑generated code from a Next.js app using Vercel Sandbox, an isolated, ephemeral environment.
 - [TanStack AI with MCP](https://vercel.com/docs/mcp/integrations/tanstack-ai?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Connect TanStack AI to a Model Context Protocol server on Vercel and call its tools with models served through AI Gatewa
 - [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
-- [OpenAI SDK](https://vercel.com/docs/sandbox/ecosystem/openai-sdk?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Use OpenAI function calling with AI Gateway to execute model-generated code in an isolated Vercel Sandbox.
 - [TanStack Start on Vercel](https://vercel.com/docs/frameworks/full-stack/tanstack-start?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Deploy TanStack Start applications to Vercel with Nitro and configure Vercel Functions.
 
 Full cross-link map for this page: [/docs/sandbox/ecosystem/tanstack-ai.graph.md](/docs/sandbox/ecosystem/tanstack-ai.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Ftanstack-ai&source_site=vercel-docs&relationship=graph)

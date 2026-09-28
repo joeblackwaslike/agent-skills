@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T09:38:58.579Z",
+  "generated_at": "2026-09-28T10:38:26.255Z",
   "source": "Official Visual Studio Code developer documentation",
   "docs": [
     {
@@ -124,9 +124,9 @@
       "title": "VS Code API",
       "url": "https://code.visualstudio.com/api/references/vscode-api",
       "file": "vscode-api.md",
-      "fetched_at": "2026-09-07T08:58:30.097Z",
-      "sha256": "f56dae860e6bfcbe3576462f5cd459b5e3cb9bcab7aa5bfbd0618b8ba415a8d1",
-      "bytes": 1054289
+      "fetched_at": "2026-09-28T10:38:19.765Z",
+      "sha256": "fa88af03702e782401164694d98ce136ec80ed654c32c5afbb661c00f614cd14",
+      "bytes": 1049668
     }
   ]
 }

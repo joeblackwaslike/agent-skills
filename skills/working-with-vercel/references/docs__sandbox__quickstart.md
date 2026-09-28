@@ -16,8 +16,8 @@ related:
 summary: Learn how to run your first code in a Vercel Sandbox.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/quickstart.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "40347c7018b5bae04bae539378fdbf53ca69ce589684b6917b8e83e05f36927a"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "472123dee0689d6faa7db4830273862d08cf1be09d9094b0778ddd428dcc35e4"
 ---
 
 # Quickstart
@@ -34,11 +34,12 @@ This guide shows you how to run your first code in a Vercel Sandbox.
 - [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available?from=related&source_path=%2Fdocs%2Fsandbox%2Fquickstart&source_site=vercel-docs&relationship=related)
 - [Safely running AI generated code in your Next.js application](https://vercel.com/kb/guide/running-ai-generated-code-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fquickstart&source_site=vercel-docs&relationship=related) — How to execute untrusted, AI‑generated code from a Next.js app using Vercel Sandbox, an isolated, ephemeral environment.
 - [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
-- [Using TanStack AI with Vercel Sandbox](https://vercel.com/kb/guide/tanstack-ai-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fquickstart&source_site=vercel-docs&relationship=related) — Run coding agents in isolated Vercel Sandbox microVMs with the @tanstack/ai-sandbox-vercel provider, with durable resume
-- [Sandbox](https://v0.app/docs/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fquickstart&source_site=vercel-docs&relationship=related) — VM-backed chats run your project inside an isolated Vercel Sandbox that hosts your code, dev server, terminal, and agent
+- [Using private GitHub repositories with Vercel Sandbox](https://vercel.com/kb/guide/sandbox-private-github-repositories?from=related&source_path=%2Fdocs%2Fsandbox%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to use Vercel Sandbox with private GitHub repositories using fine-grained tokens, classic tokens, or GitHub Ap
+- [Running commands in a Vercel Sandbox](https://vercel.com/docs/sandbox/run-commands-in-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fquickstart&source_site=vercel-docs&relationship=related) — Create isolated sandbox environments to run builds, tests, and commands safely.
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fquickstart&source_site=vercel-docs&relationship=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 - [OpenAI SDK](https://vercel.com/docs/sandbox/ecosystem/openai-sdk?from=related&source_path=%2Fdocs%2Fsandbox%2Fquickstart&source_site=vercel-docs&relationship=related) — Use OpenAI function calling with AI Gateway to execute model-generated code in an isolated Vercel Sandbox.
+- [Run isolated AI agents in one sandbox](https://vercel.com/docs/sandbox/concepts/multi-agent?from=related&source_path=%2Fdocs%2Fsandbox%2Fquickstart&source_site=vercel-docs&relationship=related) — Give each AI agent an isolated Linux user in a Vercel Sandbox with the @vercel/sandbox createUser, createGroup, and asUs
 
 Full cross-link map for this page: [/docs/sandbox/quickstart.graph.md](/docs/sandbox/quickstart.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fquickstart&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -64,14 +65,14 @@ Help me set up Vercel Sandbox in this project. First, make sure the Vercel CLI i
 - ### Set up your environment
   Create a new directory and connect it to a Vercel project. This is the recommended way to authenticate because the project handles secure [OIDC token authentication](/docs/sandbox/concepts/authentication) for you.
 
-  **TypeScript**
-  ```bash filename="Terminal"
+  **Terminal**
+  ```bash filename="Terminal" framework=node
   mkdir my-sandbox-app && cd my-sandbox-app
   pnpm init
   vercel link
   ```
-  **Python**
-  ```bash filename="Terminal"
+  **Terminal**
+  ```bash filename="Terminal" framework=py
   mkdir my-sandbox-app && cd my-sandbox-app
   uv init
   vercel link
@@ -85,34 +86,32 @@ Help me set up Vercel Sandbox in this project. First, make sure the Vercel CLI i
   This creates a `.env.local` file containing a token that the SDK uses to authenticate your requests. When you deploy to Vercel, token management happens automatically.
 
 - ### Install the SDK
-  **TypeScript**
-  #### npm
-  ```bash filename="Terminal"
+  **Terminal**
+  ```bash filename="Terminal" framework=node package-manager="npm"
   npm install @vercel/sandbox dotenv @types/node tsx typescript
   ```
-  #### yarn
-  ```bash filename="Terminal"
+  **Terminal**
+  ```bash filename="Terminal" framework=node package-manager="yarn"
   yarn add @vercel/sandbox dotenv @types/node tsx typescript
   ```
-  #### pnpm
-  ```bash filename="Terminal"
+  **Terminal**
+  ```bash filename="Terminal" framework=node package-manager="pnpm"
   pnpm add @vercel/sandbox dotenv @types/node tsx typescript
   ```
-  #### bun
-  ```bash filename="Terminal"
+  **Terminal**
+  ```bash filename="Terminal" framework=node package-manager="bun"
   bun add @vercel/sandbox dotenv @types/node tsx typescript
   ```
-  `dotenv` is used to access environment variables within your application. The `tsx` package is a TypeScript runner that allows you to run your TypeScript code. The `typescript` package is the TypeScript compiler. The `@types/node` package is the TypeScript definitions for the Node.js API.
-
-  **Python**
-  ```bash filename="Terminal"
+  **Terminal**
+  ```bash filename="Terminal" framework=py
   uv add vercel python-dotenv
   ```
+  For TypeScript, `dotenv` provides access to environment variables, `tsx` runs TypeScript code, `typescript` provides the compiler, and `@types/node` provides Node.js type definitions.
 
 - ### Write your code
   Create a file that creates a sandbox and runs a command:
 
-  **TypeScript**
+  **index.ts**
   ```ts filename="index.ts"
   import { config } from 'dotenv';
   config({ path: '.env.local' });
@@ -128,8 +127,8 @@ Help me set up Vercel Sandbox in this project. First, make sure the Vercel CLI i
 
   main().catch(console.error);
   ```
-  **Python**
-  ```python filename="main.py"
+  **main.py**
+  ```py filename="main.py"
   import asyncio
 
   from dotenv import load_dotenv
@@ -153,12 +152,12 @@ Help me set up Vercel Sandbox in this project. First, make sure the Vercel CLI i
   ```
 
 - ### Run it
-  **TypeScript**
-  ```bash filename="Terminal"
+  **Terminal**
+  ```bash filename="Terminal" framework=node
   pnpm tsx index.ts
   ```
-  **Python**
-  ```bash filename="Terminal"
+  **Terminal**
+  ```bash filename="Terminal" framework=py
   uv run python main.py
   ```
   You should see: `Hello from Vercel Sandbox!`

@@ -3,7 +3,7 @@ title: Bulk Redirects
 product: vercel
 url: /docs/routing/redirects/bulk-redirects
 canonical_url: "https://vercel.com/docs/routing/redirects/bulk-redirects"
-last_updated: 2026-09-16
+last_updated: 2026-09-21
 type: reference
 prerequisites:
   - /docs/routing/redirects
@@ -16,8 +16,8 @@ related:
 summary: Learn how to import thousands of simple redirects from CSV, JSON, or JSONL files.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/redirects/bulk-redirects.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "85fdd8538ec7ca8439075b28460ee9f2a7ab1c297ad2f63a60207cd940623a4a"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "e235129d1551137b866ae99cb3987906cbe3e4e82bab7317d64ed4184e3f8d01"
 ---
 
 # Bulk Redirects

@@ -17,8 +17,8 @@ related:
 summary: "Learn how to use Global Config with Vercel's Split integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-integrations/split-global-config.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "21eca3a261359fa2eed292ca51e33ac9df3b16ac8c6326cecf30a28aabed9fe1"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "2a2e9082e2e3535a3b955f082e632d81103728b26a36f10fc031c5ee4bd678cc"
 ---
 
 # Using Global Config with Split
@@ -38,7 +38,7 @@ This guide will help you get started with using Vercel's Split integration with 
 - [Advanced Web Analytics Config with @vercel/analytics](https://vercel.com/docs/analytics/package?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — With the @vercel/analytics npm package, you are able to configure your application to send analytics data to Vercel.
 - [Routing Middleware API](https://vercel.com/docs/routing-middleware/api?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
 - [OG Image Generation Examples](https://vercel.com/docs/og-image-generation/examples?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — Learn how to use the @vercel/og library with examples.
-- [Using Global Config with DevCycle](https://vercel.com/docs/global-config/global-config-integrations/devcycle-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — Learn how to use Global Config with Vercel's DevCycle integration.
+- [Vercel CDN Cache](https://vercel.com/docs/caching/cdn-cache?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN cache stores your content across a global network to reduce latency and origin load.
 
 Full cross-link map for this page: [/docs/global-config/global-config-integrations/split-global-config.graph.md](/docs/global-config/global-config-integrations/split-global-config.graph.md?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

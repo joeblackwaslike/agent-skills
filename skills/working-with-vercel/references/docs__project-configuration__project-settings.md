@@ -3,7 +3,7 @@ title: Project settings
 product: vercel
 url: /docs/project-configuration/project-settings
 canonical_url: "https://vercel.com/docs/project-configuration/project-settings"
-last_updated: 2026-09-16
+last_updated: 2026-09-21
 type: reference
 prerequisites:
   - /docs/project-configuration
@@ -16,8 +16,8 @@ related:
 summary: Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection, functions, cron jobs, project...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/project-settings.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "66e70b45ec4888e54fddf5a665d26bf707c870a38f16193bb3f0d4aa38b6fb99"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "dd68c671a7538d89d002c126192ba5086a80a53f756ee6cf8f945a3ae049dc32"
 ---
 
 # Project settings
@@ -32,8 +32,8 @@ From the Vercel [dashboard](https://vercel.com/d?to=%2Fdashboard\&title=Open+Das
 
 - [How to use a non-default branch for production deployments on Vercel](https://vercel.com/kb/guide/can-i-use-a-non-default-branch-for-production?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fproject-settings&source_site=vercel-docs&relationship=related) — Learn how to set a non-default branch for production on Vercel. Open the Production environment, change branch tracking,
 - [Deploying Bitbucket Projects with Vercel](https://vercel.com/docs/git/vercel-for-bitbucket?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fproject-settings&source_site=vercel-docs&relationship=related) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
-- [Managing projects](https://vercel.com/docs/projects/managing-projects?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fproject-settings&source_site=vercel-docs&relationship=related) — Learn how to manage your projects through the Vercel Dashboard.
 - [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fproject-settings&source_site=vercel-docs&relationship=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
+- [Managing projects](https://vercel.com/docs/projects/managing-projects?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fproject-settings&source_site=vercel-docs&relationship=related) — Learn how to manage your projects through the Vercel Dashboard.
 - [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fproject-settings&source_site=vercel-docs&relationship=related) — Learn how to customize your deployments using Vercel's build features.
 - [Builds](https://vercel.com/docs/builds?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fproject-settings&source_site=vercel-docs&relationship=related) — Understand how the build step works when creating a Vercel Deployment.
 

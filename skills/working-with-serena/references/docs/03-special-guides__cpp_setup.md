@@ -1,7 +1,7 @@
 ---
 source: "https://oraios.github.io/serena/_sources/03-special-guides/cpp_setup.md"
-fetched_at: "2026-06-29T05:45:05.522Z"
-sha256: "7c391bcede5ff13c3dbffd0d267ce3f228396db873b1b13c8469c5e7884c91db"
+fetched_at: "2026-09-28T10:43:25.309Z"
+sha256: "17df781020ad58c61b06150ca540dee872bbd68a0b2a4da8130c36a26fc97abe"
 ---
 
 # C/C++ Setup Guide
@@ -46,8 +46,10 @@ You can customize this location via project settings:
 ```yaml
 # .serena/project.yml
 language_servers:
+  - cpp
+ls_specific_settings:
   cpp:
-    compile_commands_dir: custom/rel/path (defaults to .serena)
+    compile_commands_dir: custom/rel/path  # defaults to .serena
 ```
 
 ### With ccls
@@ -82,7 +84,7 @@ choco install ccls
 #### Configuration
 
 After installing ccls, configure Serena to use it via project settings (in `.serena/project.yml`)
-by adding `cpp_ccls` to the `languages` list. Replace `cpp` with `cpp_ccls` if you already have the `cpp` entry.
+by adding `cpp_ccls` to the `language_servers` list. Replace `cpp` with `cpp_ccls` if you already have the `cpp` entry.
 
 ccls can handle relative paths in `compile_commands.json`, so no transformation is necessary
 and no transformed `compile_commands.json` file will be created.

@@ -3,7 +3,7 @@ title: import-resource
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/import-resource
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/import-resource"
-last_updated: 2026-09-21
+last_updated: 2026-09-28
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about import-resource on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/import-resource.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "545465a689abfd800f364d461fd79023d8209fb72cea94e988980144c443bb2b"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "403513ee4cc89ab3d7fb96930b6619c2048b8e6c37c5617bda60e72b8ba61174"
 ---
 
 # Import Resource
@@ -80,7 +80,24 @@ This endpoint imports (upserts) a resource to Vercel's installation. This may be
       "preview": "string" // Value used for preview environment.,
       "production": "string" // Value used for production environment.
     }
-  ]
+  ],
+  "customClaims": {
+    "roles": [
+"string"
+    ],
+    "defaultRole": "string" // Role used when the deployment does not request one. Required when `roles` is set.,
+    "claimRules": [
+      "when": {
+        "role": [
+"string"
+        ],
+        "environment": [
+"string"
+        ]
+      },
+      "claims": "object" // required // Claims to set (string, number, or boolean), shallow-merged over earlier rules and over the default claims. `null` removes a claim. Reserved claims cannot be set; `aud` and `sub` can be overridden with a string but not removed.
+    ]
+  }
 }
 ```
 

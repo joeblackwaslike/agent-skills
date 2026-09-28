@@ -14,8 +14,8 @@ related:
 summary: Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/add-a-domain-to-environment.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "882f047e4d3baabebd6fc5e690f5465c9deddfebf5b2c15402f30dd1bc5322b1"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "7fef2c6f2a9fd2e8fc28cf3201b019037098ac2985f720762cbac77d5a25bc8a"
 ---
 
 # Assigning a custom domain to an environment
@@ -25,7 +25,7 @@ sha256: "882f047e4d3baabebd6fc5e690f5465c9deddfebf5b2c15402f30dd1bc5322b1"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to set up a staging environment on Vercel](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fadd-a-domain-to-environment&source_site=vercel-docs&relationship=related) — Set up a staging environment on Vercel with custom environments, staged production deployments, or a branch-based previe
-- [Custom domain](https://v0.app/docs/custom-domains?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fadd-a-domain-to-environment&source_site=vercel-docs&relationship=related) — Add custom domains to your v0 deployments to give your applications a professional, branded URL.
+- [How do I add a domain using the Vercel API?](https://vercel.com/kb/guide/how-do-i-add-a-domain-using-the-vercel-api?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fadd-a-domain-to-environment&source_site=vercel-docs&relationship=related) — Information on adding a domain using the Vercel API.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fadd-a-domain-to-environment&source_site=vercel-docs&relationship=related) — Add and configure a custom domain for your Vercel project using the CLI.
 - [Assigning a domain to a Git branch](https://vercel.com/docs/domains/working-with-domains/assign-domain-to-a-git-branch?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fadd-a-domain-to-environment&source_site=vercel-docs&relationship=related) — Learn how to assign a domain to a different Git branch with this guide.
 - [Deploying & Redirecting Domains](https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fadd-a-domain-to-environment&source_site=vercel-docs&relationship=related) — Learn how to deploy your domains and set up domain redirects with this guide.

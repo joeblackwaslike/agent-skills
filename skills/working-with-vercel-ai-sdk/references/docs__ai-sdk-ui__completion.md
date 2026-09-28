@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/completion.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "ea7754b443a2ff575df6e79752d4581dd4e53e010c06e610ca7113dd97f15aaa"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "91414df94a668a5951357c748041e7a8dd67f4df6bb900f0d14cbedf2de45add"
 ---
 
 # Completion
@@ -170,7 +170,7 @@ const { ... } = useCompletion({
 
 ## Configure Request Options
 
-By default, the `useCompletion` hook sends a HTTP POST request to the `/api/completion` endpoint with the prompt as part of the request body. You can customize the request by passing additional options to the `useCompletion` hook:
+By default, the `useCompletion` hook sends an HTTP POST request to the `/api/completion` endpoint with the prompt as part of the request body. You can customize the request by passing additional options to the `useCompletion` hook:
 
 ```tsx
 const { messages, input, handleInputChange, handleSubmit } = useCompletion({

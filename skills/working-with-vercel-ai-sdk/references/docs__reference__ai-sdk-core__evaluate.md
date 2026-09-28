@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/evaluate.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "3c0e96b254103f96dfe40e1de9935265957ac74e3870ca19a6375d10e6dce831"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "2967c9da9b4f68b164590b5b85d03badc6c427d6f2c4da51c7576b429595f5b7"
 ---
 
 # `experimental_evaluate()`
@@ -15,15 +15,22 @@ state. See [Evaluation](/docs/ai-sdk-core/evaluation) for examples and semantics
 
 ## Parameters
 
-| Parameter         | Type                                              | Description                                                                                                                                 |
-| ----------------- | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| `model`           | `Experimental_EvaluationModel`                    | Required experimental v4 model instance or a string ID resolved by Gateway or an explicitly configured evaluation-capable default provider. |
-| `state`           | `string \| object \| array`                       | Required JSON-compatible shared state.                                                                                                      |
-| `questions`       | `Record<string, Experimental_EvaluationQuestion>` | Required nonempty question map.                                                                                                             |
-| `maxRetries`      | `number`                                          | Nonnegative integer; defaults to 2.                                                                                                         |
-| `abortSignal`     | `AbortSignal`                                     | Cancels evaluation.                                                                                                                         |
-| `headers`         | `Record<string, string>`                          | Additional HTTP headers.                                                                                                                    |
-| `providerOptions` | `ProviderOptions`                                 | Provider-specific options.                                                                                                                  |
+| Parameter         | Type                                               | Description                                                                                                                                 |
+| ----------------- | -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `model`           | `Experimental_EvaluationModel`                     | Required experimental v4 model instance or a string ID resolved by Gateway or an explicitly configured evaluation-capable default provider. |
+| `state`           | `string \| object \| array`                        | Required JSON-compatible shared state.                                                                                                      |
+| `questions`       | `Record<string, Experimental_EvaluationQuestion>`  | Required nonempty question map.                                                                                                             |
+| `maxRetries`      | `number`                                           | Nonnegative integer; defaults to 2.                                                                                                         |
+| `abortSignal`     | `AbortSignal`                                      | Cancels evaluation.                                                                                                                         |
+| `headers`         | `Record<string, string>`                           | Additional HTTP headers.                                                                                                                    |
+| `providerOptions` | `ProviderOptions`                                  | Provider-specific options.                                                                                                                  |
+| `telemetry`       | `TelemetryOptions`                                 | Telemetry configuration, including per-call integrations, input/output recording, and a function ID.                                        |
+| `runtimeContext`  | `Record<string, unknown>`                          | Context available to lifecycle callbacks and selectively included in telemetry with `telemetry.includeRuntimeContext`.                      |
+| `onStart`         | `(event: Experimental_EvaluateStartEvent) => void` | Called when the evaluation operation begins.                                                                                                |
+| `onEnd`           | `(event: Experimental_EvaluateEndEvent) => void`   | Called when the evaluation operation completes successfully.                                                                                |
+
+See [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks#experimental_evaluate)
+for the complete `onStart` and `onEnd` event fields.
 
 ## Result
 

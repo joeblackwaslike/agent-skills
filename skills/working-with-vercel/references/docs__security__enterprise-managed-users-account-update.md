@@ -15,8 +15,8 @@ related:
 summary: Explains the account update screen EMU members see at SSO sign-in and how to complete it.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/enterprise-managed-users-account-update.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "6395d87f3adc0b7c80174970dd5a80799e4d4a8d7cd2d5242e1b2620ff8d681e"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "0b49407ff3c22649261a95f88b40e22f5760fff41056cee340bdaffe4fbb9903"
 ---
 
 # Transition your Hobby team after EMU enrollment
@@ -30,12 +30,11 @@ Enabling [Enterprise Managed Users](/docs/security/enterprise-managed-users) (EM
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Enterprise Managed Users is now generally available](https://vercel.com/changelog/enterprise-managed-users?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users-account-update&source_site=vercel-docs&relationship=related)
-- [Teams](https://v0.app/docs/teams?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users-account-update&source_site=vercel-docs&relationship=related) — Collaborate with your team on projects with shared resources.
 - [Enterprise](https://v0.app/docs/enterprise?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users-account-update&source_site=vercel-docs&relationship=related) — Learn how to manage v0 seats, access, and more in your Vercel Enterprise account.
 - [Easier transitions between hobby and pro](https://vercel.com/changelog/2024-01-account-changes?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users-account-update&source_site=vercel-docs&relationship=related)
+- [Teams](https://v0.app/docs/teams?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users-account-update&source_site=vercel-docs&relationship=related) — Collaborate with your team on projects with shared resources.
 - [September 2020](https://vercel.com/blog/changelog-september-2020?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users-account-update&source_site=vercel-docs&relationship=related)
 - [Projects can now be transferred without downtime](https://vercel.com/changelog/projects-can-now-be-transferred-without-downtime?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users-account-update&source_site=vercel-docs&relationship=related)
-- [Account](https://v0.app/docs/account?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users-account-update&source_site=vercel-docs&relationship=related) — Manage your account and billing information.
 - [Account Management](https://vercel.com/docs/accounts?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users-account-update&source_site=vercel-docs&relationship=related) — Learn how to manage your Vercel account and team members.
 - [Transferring a project](https://vercel.com/docs/projects/transferring-projects?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users-account-update&source_site=vercel-docs&relationship=related) — Learn how to transfer a project between Vercel teams.
 - [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users-account-update&source_site=vercel-docs&relationship=related) — Learn how to manage Sign in with Vercel from the Dashboard

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/acp.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "19f37c0fab90406eff3f1b47414b6485749a31f0b3661b4167051c0af847209e"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "1a3348d85503e7104b60dd4f1a3c111fd9b59d7071907ac9437963cc19f76c42"
 ---
 
 # Agent Client Protocol Harness
@@ -32,18 +32,19 @@ pass it to `HarnessAgent`:
 
 ```ts
 import { HarnessAgent } from '@ai-sdk/harness/agent';
-import { createVercelSandbox } from '@ai-sdk/sandbox-vercel';
+import { createVercelNetworkSandboxSession } from '@ai-sdk/sandbox-vercel';
 import { codexACPHarness } from './codex-acp-harness';
 
 const agent = new HarnessAgent({
   harness: codexACPHarness,
-  sandbox: createVercelSandbox({
-    runtime: 'node24',
-    ports: [4000],
-  }),
 });
 
-const session = await agent.createSession();
+const sandboxSession = await createVercelNetworkSandboxSession({
+  runtime: 'node24',
+  ports: [4000],
+  template: await agent.getSandboxTemplate(),
+});
+const session = await agent.createSession({ sandboxSession });
 try {
   const result = await agent.generate({
     session,
@@ -52,6 +53,7 @@ try {
   console.log(result.text);
 } finally {
   await session.destroy();
+  await sandboxSession.destroy();
 }
 ```
 
@@ -136,6 +138,13 @@ try {
   creation and restoration.
 - `port`: exposed bridge port override.
 - `startupTimeoutMs`: bridge startup timeout. The default is 120 seconds.
+- `reconnect`: reconnect timing after an established bridge WebSocket
+  connection drops. `maxElapsedMs` controls the total retry window, including
+  connection establishment and backoff delays, and defaults to 30 seconds.
+  `initialDelayMs` defaults to 50 milliseconds, and `maxDelayMs` defaults to
+  2 seconds. These retries use exponential backoff and are separate from
+  `startupTimeoutMs`. They cannot recover when the sandbox, bridge process, or
+  bridge endpoint is permanently unavailable.
 - `mintBridgeToken`: synchronous function that receives the sandbox id and
   returns the bridge authentication token. By default, the adapter generates a
   random 32-byte token. Custom implementations must return a suitably secret
@@ -306,9 +315,10 @@ Every ACP harness requires a network sandbox with at least one exposed port,
 e.g. `@ai-sdk/sandbox-vercel`:
 
 ```ts
-const sandbox = createVercelSandbox({
+const sandboxSession = await createVercelNetworkSandboxSession({
   runtime: 'node24',
   ports: [4000],
+  template: await agent.getSandboxTemplate(),
 });
 ```
 

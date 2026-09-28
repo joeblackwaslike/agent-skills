@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/chatbot-message-persistence.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "1c335cc040d9b14789f46f656dbefba3770f6041b8d1cc0a56f06b4e25a7c832"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "5729a9771487ad4167dd93d81cb287f009216e42f82e7ccca9643f6d5b0f02f0"
 ---
 
 # Chatbot Message Persistence
@@ -180,7 +180,7 @@ export async function POST(req: Request) {
   });
 
   const result = streamText({
-    model: 'openai/gpt-5-mini',
+    model: 'openai/gpt-6-luna',
     messages: convertToModelMessages(validatedMessages),
     tools,
   });
@@ -345,7 +345,7 @@ export async function POST(req: Request) {
     await req.json();
 
   const result = streamText({
-    model: 'openai/gpt-5-mini',
+    model: 'openai/gpt-6-luna',
     messages: await convertToModelMessages(messages),
   });
 
@@ -473,7 +473,7 @@ export async function POST(req: Request) {
       });
 
       const result = streamText({
-        model: 'openai/gpt-5-mini',
+        model: 'openai/gpt-6-luna',
         messages: await convertToModelMessages(messages),
       });
 

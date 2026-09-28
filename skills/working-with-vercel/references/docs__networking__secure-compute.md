@@ -3,7 +3,7 @@ title: Secure Compute
 product: vercel
 url: /docs/networking/secure-compute
 canonical_url: "https://vercel.com/docs/networking/secure-compute"
-last_updated: 2026-09-15
+last_updated: 2026-09-23
 type: reference
 prerequisites:
   - /docs/networking
@@ -16,8 +16,8 @@ related:
 summary: Secure Compute provides dedicated private networks with VPC peering for Enterprise teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/secure-compute.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "63db271e9e092cb6c1f985e578bb37e85995e2d919eced99b5a3c5a3f0bee248"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "cf7bb80302628cd89f2e86b294a57e940aa218673494283a5f9f7a396ef4252b"
 ---
 
 # Secure Compute
@@ -39,11 +39,11 @@ Secure Compute creates private connections between your [Vercel Functions](/docs
 - [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
 - [Running Docker on Vercel vs Render](https://vercel.com/kb/guide/docker-on-vercel-vs-render?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related) — Compare how Vercel and Render run Docker workloads, including deployment model, scaling, image sources, state, and netwo
 - [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
-- [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
 - [Secure Compute is now self-serve](https://vercel.com/changelog/secure-compute-is-now-self-serve?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related)
 - [VPC Peering now available as self-service for Vercel’s Secure Compute](https://vercel.com/changelog/vpc-peering-now-available-as-self-service-for-vercel-secure-compute?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related)
+- [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
 - [Improved infrastructure security with Vercel Secure Compute](https://vercel.com/changelog/improve-infrastructure-security-with-vercel-secure-compute?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related)
-- [Security & Compliance Measures](https://vercel.com/docs/security/compliance?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+- [Using Secure Compute with Sandbox](https://vercel.com/docs/sandbox/concepts/secure-compute?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related) — You can attach a Vercel Sandbox to a Secure Compute network to send its public-internet traffic through static IPs and r
 
 Full cross-link map for this page: [/docs/networking/secure-compute.graph.md](/docs/networking/secure-compute.graph.md?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -157,8 +157,6 @@ When you add a project to a Secure Compute network, you can choose to include th
 
 You can opt the [build container](/docs/builds) out of using the dedicated IP addresses. This is useful if your application **only** calls your data sources at run time and **not** at build time.
 
-By opting out of including the build container, you will not incur the 5s delay when provisioning a secure build container.
-
 To manage the build container during the [project connection](#add-a-project-to-your-secure-compute-network) process select **Include Builds**.
 
 To manage the build container *after* the project is connected to the Secure Compute network:
@@ -232,10 +230,6 @@ When data transfer costs apply:
 Monitor your usage in the **Team Settings** **Usage** section in the sidebar under the **Private Data Transfer** section.
 
 ## Limits
-
-### Build delay
-
-When connected to a Secure Compute network, builds experience up to a 5s delay as they provision a secure build container. When this happens, your build is marked as **Provisioning Container** in the dashboard.
 
 ### Beta enhancements
 

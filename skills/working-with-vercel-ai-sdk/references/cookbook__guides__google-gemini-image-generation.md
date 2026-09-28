@@ -1,16 +1,16 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides/google-gemini-image-generation.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "22d32bb6735d3ee0e316c378298ab2281be267e3e140393d62e327d9e01cbd23"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "8b4307662008b207e112706e0738267c64f9817bc37e2cf7404aa8ff64d73edc"
 ---
 
-# Generate and Edit Images with Google Gemini 2.5 Flash
+# Generate and Edit Images with Google Gemini 3.1 Flash
 
-This guide will show you how to generate and edit images with the AI SDK and Google's latest multimodal language model Gemini 2.5 Flash Image.
+This guide will show you how to generate and edit images with the AI SDK and Google's Gemini 3.1 Flash Image model.
 
 ## Generating Images
 
-As Gemini 2.5 Flash Image is a language model with multimodal capabilities, you can use the `generateText` or `streamText` functions (not `generateImage`) to create images. The model determines which modality to respond in based on your prompt and configuration. Here's how to create your first image:
+As Gemini 3.1 Flash Image is a language model with multimodal capabilities, you can use the `generateText` or `streamText` functions to create multimodal responses that include images. The model determines which modality to respond in based on your prompt and configuration. Here's how to create your first image:
 
 ```ts
 import { generateText } from 'ai';
@@ -19,7 +19,7 @@ import 'dotenv/config';
 
 async function generateImage() {
   const result = await generateText({
-    model: 'google/gemini-2.5-flash-image',
+    model: 'google/gemini-3.1-flash-image-preview',
     prompt:
       'Create a picture of a nano banana dish in a fancy restaurant with a Gemini theme',
   });
@@ -49,7 +49,7 @@ Here are some key points to remember:
 
 ## Editing Images
 
-Gemini 2.5 Flash Image excels at editing existing images with natural language instructions. You can add elements, modify styles, or transform images while maintaining their core characteristics:
+Gemini 3.1 Flash Image excels at editing existing images with natural language instructions. You can add elements, modify styles, or transform images while maintaining their core characteristics:
 
 ```ts
 import { generateText } from 'ai';
@@ -58,7 +58,7 @@ import 'dotenv/config';
 
 async function editImage() {
   const editResult = await generateText({
-    model: 'google/gemini-2.5-flash-image',
+    model: 'google/gemini-3.1-flash-image-preview',
     prompt: [
       {
         role: 'user',
@@ -100,7 +100,7 @@ editImage().catch(console.error);
 
 ## What's Next?
 
-You've learned how to generate new images from text prompts and edit existing images using natural language instructions with Google's Gemini 2.5 Flash Image model.
+You've learned how to generate new images from text prompts and edit existing images using natural language instructions with Google's Gemini 3.1 Flash Image model.
 
 For more advanced techniques, integration patterns, and practical examples, check out our [Cookbook](/cookbook) where you'll find comprehensive guides for building sophisticated AI-powered applications.
 

@@ -14,8 +14,8 @@ related:
 summary: Authenticate GitHub Actions with Vercel Container Registry using OIDC, then build and push images with your container tool.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/container-registry/github-actions.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "f6cd26b231119c6ab59a5056793a7f3fae9dddf0ab8cd669367f229ead08ea1c"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "91e803e7a4cd7609bccc1d2e97b48adcfebc71f78094ee0f884c6d7036ec55fd"
 ---
 
 # Push Images from GitHub Actions
@@ -28,6 +28,7 @@ Push images to Vercel Container Registry (VCR) from GitHub Actions without stori
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Push images to Vercel Container Registry from GitHub Actions](https://vercel.com/changelog/vcr-login-github-action?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fgithub-actions&source_site=vercel-docs&relationship=related)
 - [How to migrate from GHCR to Vercel Container Registry](https://vercel.com/kb/guide/migrate-ghcr-to-vcr?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fgithub-actions&source_site=vercel-docs&relationship=related) — Migrate container images from GitHub Container Registry \\(GHCR\\) to Vercel Container Registry \\(VCR\\), including authent
 - [How to use Vercel Container Registry](https://vercel.com/kb/guide/how-to-use-vercel-container-registry?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fgithub-actions&source_site=vercel-docs&relationship=related) — Push, store, and pull OCI container images with Vercel Container Registry, then deploy them to Vercel Functions and Verc
 - [Introducing VCR: Vercel Container Registry](https://vercel.com/changelog/introducing-vcr-vercel-container-registry?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fgithub-actions&source_site=vercel-docs&relationship=related)

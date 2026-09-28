@@ -16,8 +16,8 @@ related:
 summary: Review and manage Vercel Toolbar comment threads from the terminal with the vercel comments CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/comments.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "5fd619666c3a68f9af038720ac1501360fc8094ef274e5b5f0e376342b3e773d"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "054b1084a4fa50489bda7c48a6f6e4db93b942e1a4cb7a9f20f53f49f810cadb"
 ---
 
 # vercel comments
@@ -36,8 +36,8 @@ The `vercel comments` command lets you review and manage existing [Vercel Toolba
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fcomments&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel alerts](https://vercel.com/docs/cli/alerts?from=related&source_path=%2Fdocs%2Fcli%2Fcomments&source_site=vercel-docs&relationship=related) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fcomments&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel traces](https://vercel.com/docs/cli/traces?from=related&source_path=%2Fdocs%2Fcli%2Fcomments&source_site=vercel-docs&relationship=related) — Inspect a request trace in the terminal, open it in the Vercel Dashboard, or manage the trace sampling rules for a proje
 - [vercel connect](https://vercel.com/docs/cli/connect?from=related&source_path=%2Fdocs%2Fcli%2Fcomments&source_site=vercel-docs&relationship=related) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
+- [Integrations for Comments](https://vercel.com/docs/comments/integrations?from=related&source_path=%2Fdocs%2Fcli%2Fcomments&source_site=vercel-docs&relationship=related) — Learn how Comments integrates with Git providers like GitHub, GitLab, and BitBucket, as well as the Vercel app for Slack
 
 Full cross-link map for this page: [/docs/cli/comments.graph.md](/docs/cli/comments.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fcomments&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

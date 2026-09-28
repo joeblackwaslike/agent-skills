@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/getting-started/tanstack-start.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "1af037697f76a4eb7990a6b3cf1fb1069da0a339e83e6a14b34e419281e16e44"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "191633c6ea66f8e9e2fbdff99881996c19959e9ef55fb451fd29373267bb51b9"
 ---
 
 # TanStack Start Quickstart
@@ -122,11 +122,11 @@ You can also explicitly import and use the gateway provider in two other equival
 ```ts
 // Option 1: Import from 'ai' package (included by default)
 import { gateway } from 'ai';
-model: gateway('anthropic/claude-sonnet-4.5');
+model: gateway('anthropic/claude-sonnet-5');
 
 // Option 2: Install and import from '@ai-sdk/gateway' package
 import { gateway } from '@ai-sdk/gateway';
-model: gateway('anthropic/claude-sonnet-4.5');
+model: gateway('anthropic/claude-sonnet-5');
 ```
 
 ### Using other providers
@@ -138,7 +138,7 @@ To use a different provider, install its package and create a provider instance.
 ```ts
 import { openai } from '@ai-sdk/openai';
 
-model: openai('gpt-5.1');
+model: openai('gpt-6-astra');
 ```
 
 #### Updating the global provider

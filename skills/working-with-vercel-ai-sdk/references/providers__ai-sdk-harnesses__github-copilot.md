@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/github-copilot.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "ba9cc9ccec8485fcb42e1f4832176d3cb536a57738357eee8d13189e168bc2a6"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "aaf40540b4dc5e819d4b479daacc2028121277b5450f18f28582b4f06b1c8020"
 ---
 
 # GitHub Copilot Harness
@@ -43,18 +43,19 @@ configuration.
 ```ts
 import { HarnessAgent } from '@ai-sdk/harness/agent';
 import { githubCopilot } from '@ai-sdk/harness-github-copilot';
-import { createVercelSandbox } from '@ai-sdk/sandbox-vercel';
+import { createVercelNetworkSandboxSession } from '@ai-sdk/sandbox-vercel';
 
 const agent = new HarnessAgent({
   harness: githubCopilot,
   model: 'gpt-5.5',
-  sandbox: createVercelSandbox({
-    runtime: 'node24',
-    ports: [4000],
-  }),
 });
 
-const session = await agent.createSession();
+const sandboxSession = await createVercelNetworkSandboxSession({
+  runtime: 'node24',
+  ports: [4000],
+  template: await agent.getSandboxTemplate(),
+});
+const session = await agent.createSession({ sandboxSession });
 
 let exitCode = 0;
 try {
@@ -73,6 +74,7 @@ try {
   console.error(err);
 } finally {
   await session.destroy();
+  await sandboxSession.destroy();
   process.exit(exitCode);
 }
 ```
@@ -121,6 +123,13 @@ Settings:
 - `portEndpoint`: host endpoint for the ACP bridge when the sandbox session
   cannot expose ports directly.
 - `startupTimeoutMs`: maximum time to wait for the ACP bridge to start.
+- `reconnect`: reconnect timing after an established bridge WebSocket
+  connection drops. `maxElapsedMs` controls the total retry window, including
+  connection establishment and backoff delays, and defaults to 30 seconds.
+  `initialDelayMs` defaults to 50 milliseconds, and `maxDelayMs` defaults to
+  2 seconds. These retries use exponential backoff and are separate from
+  `startupTimeoutMs`. They cannot recover when the sandbox, bridge process, or
+  bridge endpoint is permanently unavailable.
 - `mintBridgeToken`: synchronous function that receives the sandbox id and
   returns the ACP bridge authentication token. By default, the adapter generates
   a random 32-byte token. Custom implementations must return a suitably secret
@@ -192,9 +201,10 @@ GitHub Copilot runs inside the sandbox through `@ai-sdk/harness-acp`. It
 requires a network sandbox with at least one exposed port:
 
 ```ts
-const sandbox = createVercelSandbox({
+const sandboxSession = await createVercelNetworkSandboxSession({
   runtime: 'node24',
   ports: [4000],
+  template: await agent.getSandboxTemplate(),
 });
 ```
 

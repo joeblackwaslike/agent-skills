@@ -3,7 +3,7 @@ title: Deploying Git Repositories with Vercel
 product: vercel
 url: /docs/git
 canonical_url: "https://vercel.com/docs/git"
-last_updated: 2026-09-08
+last_updated: 2026-09-18
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Vercel automatically deploys supported Git repositories on every branch push and when changes merge into the production branch.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "ab2f4334557897cbde52caefea757539a39dd335fd1c2df2575ea83e5c12650b"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "d0aedbfeb9885cceb48d8cea3b7cab0baf54d27520f296a9a28497b7d0fea9cc"
 ---
 
 # Deploying Git Repositories with Vercel
@@ -32,11 +32,11 @@ Vercel allows for **automatic deployments on every branch push** and merges onto
 
 - [Git repositories can now be searched for and imported easily](https://vercel.com/changelog/git-repositories-can-now-be-searched-for-and-imported-easily?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related)
 - [Projects can now be renamed](https://vercel.com/changelog/projects-can-now-be-renamed?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related)
-- [Avoiding duplicate-content SEO with vercel.app URLs and custom domains](https://vercel.com/kb/guide/avoiding-duplicate-content-with-vercel-app-urls?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — Discover why search engines may treat your vercel.app URL and custom domain as separate pages, and how to consolidate ra
 - [Deploy a Bolt.new app with Vercel Drop](https://vercel.com/kb/guide/bolt-vercel-drop?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — Export your Bolt.new project as a .zip and deploy it to Vercel with Vercel Drop. Vercel detects the framework and builds
 - [Build commission-free iOS checkouts with Vercel and Paddle](https://vercel.com/kb/guide/build-commission-free-ios-checkouts-with-vercel-and-paddle?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — A new ruling allows iOS apps to use external checkouts. Learn how to deploy a secure, high-performance external checkout
 - [How to use a non-default branch for production deployments on Vercel](https://vercel.com/kb/guide/can-i-use-a-non-default-branch-for-production?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — Learn how to set a non-default branch for production on Vercel. Open the Production environment, change branch tracking,
 - [Can I use Vercel to deploy to a private cloud?](https://vercel.com/kb/guide/can-i-use-vercel-to-deploy-to-a-private-cloud?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — Learn about if it's possible to deploy to a private cloud with Vercel.
+- [Deploy a Claude Design project to Vercel](https://vercel.com/kb/guide/claude-design?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — Publish a Claude Design project to Vercel for a live production URL with the Vercel connector, or by exporting a .zip to
 - [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related)
 - [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — Learn how to configure Git for your project through vercel.json or vercel.ts.

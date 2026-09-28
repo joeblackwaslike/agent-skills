@@ -16,8 +16,8 @@ related:
 summary: Categorize sandboxes by environment, team, or any other criteria using key-value tags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/tags.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "c13aeb0e101fbcf4dcdbf47f501b6994e349be7369dac8d52127de8c494f003f"
+fetched_at: "2026-09-28T10:45:21.491Z"
+sha256: "a4dcbc8425e8804ef8d29f133392d72a16fae1f310e93dd5c321bc1d4086f5eb"
 ---
 
 # Tags
@@ -48,7 +48,7 @@ Set, update, and filter on tags from the JS SDK using `Sandbox.create()`, `sandb
 
 Pass the `tags` field when creating a sandbox. You can assign up to five key-value tags:
 
-**TypeScript**
+**index.ts**
 
 ```ts filename="index.ts" highlight={5}
 import { Sandbox } from '@vercel/sandbox';
@@ -59,9 +59,9 @@ const sandbox = await Sandbox.create({
 });
 ```
 
-**Python**
+**main.py**
 
-```python filename="main.py"
+```py filename="main.py"
 import asyncio
 
 from vercel import sandbox
@@ -81,7 +81,7 @@ asyncio.run(main())
 
 Use `sandbox.update()` to change a sandbox's tags at any time. The provided object replaces the existing tag set, so pass every tag you want to keep:
 
-**TypeScript**
+**index.ts**
 
 ```ts filename="index.ts"
 await sandbox.update({
@@ -89,9 +89,9 @@ await sandbox.update({
 });
 ```
 
-**Python**
+**main.py**
 
-```python filename="main.py"
+```py filename="main.py"
 import asyncio
 
 from vercel import sandbox
@@ -109,7 +109,7 @@ asyncio.run(main())
 
 Pass a `tags` object to `Sandbox.list()` to filter results. You can filter by one tag at a time:
 
-**TypeScript**
+**index.ts**
 
 ```ts filename="index.ts"
 const productionSandboxes = await Sandbox.list({
@@ -121,9 +121,9 @@ for await (const sandbox of productionSandboxes) {
 }
 ```
 
-**Python**
+**main.py**
 
-```python filename="main.py"
+```py filename="main.py"
 import asyncio
 
 from vercel import sandbox

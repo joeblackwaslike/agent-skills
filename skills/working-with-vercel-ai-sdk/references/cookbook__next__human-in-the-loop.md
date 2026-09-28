@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/human-in-the-loop.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "b4431644485d3ef96cbdcf895694fddb30d7a06322d1f11893946ea9b05d2f1c"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "325f75cd6bc7db4f848a33079870f92702a748ce42c8da868d70e8b5b3ccb7e9"
 ---
 
 # Human-in-the-Loop with Next.js
@@ -84,7 +84,7 @@ export async function POST(req: Request) {
   const { messages } = await req.json();
 
   const result = streamText({
-    model: openai('gpt-4o'),
+    model: openai('gpt-6-astra'),
     messages,
     tools: {
       getWeatherInformation: tool({
@@ -130,7 +130,7 @@ export async function POST(req: Request) {
   const { messages } = await req.json();
 
   const result = streamText({
-    model: openai('gpt-4o'),
+    model: openai('gpt-6-astra'),
     messages,
     tools: {
       getWeatherInformation: tool({
@@ -304,7 +304,7 @@ export async function POST(req: Request) {
   const { messages } = await req.json();
 
   const result = streamText({
-    model: openai('gpt-4o'),
+    model: openai('gpt-6-astra'),
     messages,
     tools: {
       processPayment: tool({
@@ -335,7 +335,7 @@ When a user denies a tool execution, the model receives the denial and can respo
 
 ```ts highlight="5-6"
 const result = streamText({
-  model: openai('gpt-4o'),
+  model: openai('gpt-6-astra'),
   messages,
   instructions:
     'When a tool execution is not approved by the user, do not retry it. ' +

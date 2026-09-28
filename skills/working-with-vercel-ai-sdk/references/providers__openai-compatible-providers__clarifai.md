@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/openai-compatible-providers/clarifai.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "577a29de53e6eeb0cce759a0d5b1ed54d1a22157ef292f1060e50592feb3135c"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "b965c491fb69bdc28ba0d22aa2d066ee14f18dcc333af08b3d49c1aa98e6c50d"
 ---
 
 # Clarifai Provider
@@ -110,6 +110,7 @@ For full list of available models, you can refer to the [Clarifai Model Gallery]
 - [LM Studio](/providers/openai-compatible-providers/lmstudio)
 - [NVIDIA NIM](/providers/openai-compatible-providers/nim)
 - [ModelRush](/providers/openai-compatible-providers/modelrush)
+- [Cheaper Inference](/providers/openai-compatible-providers/cheaper-inference)
 - [Clarifai](/providers/openai-compatible-providers/clarifai)
 - [Heroku](/providers/openai-compatible-providers/heroku)
 - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)

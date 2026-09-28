@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/reasoning.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "22b9394828d69376d7e39612b843be4f10b43edeedeb626d58fadfcd5da60c51"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "6deff88aeee18f13b893fe4544c1ff33f858e7ebfc98a4e8a9cf89af34ecedfb"
 ---
 
 # Reasoning
@@ -14,7 +14,7 @@ Many language models support an internal "reasoning" phase (sometimes also calle
 import { generateText } from 'ai';
 
 const { text, reasoning, reasoningText } = await generateText({
-  model: 'anthropic/claude-sonnet-4.6',
+  model: 'anthropic/claude-sonnet-5',
   reasoning: 'medium',
   prompt: 'How many people will live in the world in 2040?',
 });
@@ -40,7 +40,7 @@ The `reasoning` parameter works the same way with `streamText`:
 import { streamText } from 'ai';
 
 const result = streamText({
-  model: 'google/gemini-3-flash-preview',
+  model: 'google/gemini-3.8-flash',
   reasoning: 'high',
   prompt: 'Explain the Riemann hypothesis in simple terms.',
 });
@@ -63,7 +63,7 @@ import { generateText } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
 const { text } = await generateText({
-  model: openai.responses('gpt-5.4'),
+  model: openai.responses('gpt-6-astra'),
   reasoning: 'low', // ignored because providerOptions.openai.reasoningEffort is set
   providerOptions: {
     openai: {
@@ -78,9 +78,9 @@ This design lets you use the portable `reasoning` parameter by default and fall 
 
 ## Provider Support
 
-The `reasoning` parameter is supported by the following providers: OpenAI, Anthropic, Google, xAI, Groq, DeepSeek, Fireworks, and Amazon Bedrock. Each provider translates the value to its native reasoning API. Some providers support all six levels natively, while others coerce to fewer levels (a warning is emitted when coercion occurs). Some providers use a numeric token budget instead of an enum for reasoning control; in those cases the top-level `reasoning` value is mapped to a budget calculated as a percentage of the model's maximum output tokens.
+The `reasoning` parameter is supported by the following providers: OpenAI, Anthropic, Google, xAI, Groq, DeepSeek, Fireworks, Amazon Bedrock, and Perplexity. Each provider translates the value to its native reasoning API. Some providers support all six levels natively, while others coerce to fewer levels (a warning is emitted when coercion occurs). Some providers use a numeric token budget instead of an enum for reasoning control; in those cases the top-level `reasoning` value is mapped to a budget calculated as a percentage of the model's maximum output tokens.
 
-Providers that do not support reasoning (e.g. Mistral, Perplexity, Cohere) emit an `unsupported` warning and ignore the parameter.
+Providers that do not support reasoning (e.g. Mistral and Cohere) emit an `unsupported` warning and ignore the parameter.
 
 ## Migrating from `providerOptions`
 
@@ -90,10 +90,11 @@ If you currently control reasoning via `providerOptions`, you can migrate to the
 
 ```ts
 const { text } = await generateText({
-  model: anthropic('claude-opus-4.6'),
+  model: anthropic('claude-opus-5-5'),
   providerOptions: {
     anthropic: {
-      thinking: { type: 'adaptive', effort: 'high' },
+      thinking: { type: 'adaptive' },
+      effort: 'high',
     },
   },
   prompt: 'How many people will live in the world in 2040?',
@@ -104,7 +105,7 @@ const { text } = await generateText({
 
 ```ts
 const { text } = await generateText({
-  model: anthropic('claude-opus-4.6'),
+  model: anthropic('claude-opus-5-5'),
   reasoning: 'high',
   prompt: 'How many people will live in the world in 2040?',
 });
@@ -140,10 +141,10 @@ If you need to enforce an exact token budget (e.g. exactly 12000 tokens), keep u
 
 ```ts
 const { text } = await generateText({
-  model: google('gemini-3-flash-preview'),
+  model: google('gemini-3.8-flash'),
   providerOptions: {
     google: {
-      thinkingConfig: { thinkingBudget: 4096, includeThoughts: true },
+      thinkingConfig: { thinkingLevel: 'high', includeThoughts: true },
     },
   },
   prompt: 'Explain the Riemann hypothesis in simple terms.',
@@ -154,8 +155,8 @@ const { text } = await generateText({
 
 ```ts
 const { text } = await generateText({
-  model: google('gemini-3-flash-preview'),
-  reasoning: 'medium',
+  model: google('gemini-3.8-flash'),
+  reasoning: 'high',
   providerOptions: {
     google: { thinkingConfig: { includeThoughts: true } },
   },
@@ -167,7 +168,7 @@ const { text } = await generateText({
 
 ```ts
 const { text } = await generateText({
-  model: openai.responses('o3'),
+  model: openai.responses('gpt-6-astra'),
   providerOptions: {
     openai: { reasoningEffort: 'high', reasoningSummary: 'auto' },
   },
@@ -179,7 +180,7 @@ const { text } = await generateText({
 
 ```ts
 const { text } = await generateText({
-  model: openai.responses('o3'),
+  model: openai.responses('gpt-6-astra'),
   reasoning: 'high',
   providerOptions: {
     openai: { reasoningSummary: 'auto' },

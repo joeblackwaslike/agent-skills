@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/node/stream-object-record-token-usage.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "a0a5792762fb6e106f83c1e6238d2758b1e83aaa424a9bb3cf5f846c79a87064"
+fetched_at: "2026-09-28T10:43:29.656Z"
+sha256: "4177849e50ca330aeffc595b6b6f84d54565a889ec855b70180b20e4a961755e"
 ---
 
 # Record Token Usage After Streaming Object
@@ -19,7 +19,7 @@ import { streamText, Output } from 'ai';
 import { z } from 'zod';
 
 const result = streamText({
-  model: 'openai/gpt-4.1',
+  model: 'openai/gpt-6-astra',
   output: Output.object({
     schema: z.object({
       recipe: z.object({
@@ -45,7 +45,7 @@ import { streamText, Output, LanguageModelUsage } from 'ai';
 import { z } from 'zod';
 
 const result = streamText({
-  model: 'openai/gpt-4.1',
+  model: 'openai/gpt-6-astra',
   output: Output.object({
     schema: z.object({
       recipe: z.object({

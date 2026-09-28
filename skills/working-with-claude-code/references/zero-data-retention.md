@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/zero-data-retention.md"
-fetched_at: "2026-09-21T09:39:23.760Z"
-sha256: "a05ce9c2d3cbb01e3364614f919f001b325d666ac6ac70ba8a4f24f727b8c819"
+fetched_at: "2026-09-28T10:38:50.037Z"
+sha256: "24c79ef0276402111aaa2b5944ce3b2e6632812149aeb53659e57410d58aeb5c"
 ---
 
 > ## Documentation Index
@@ -62,7 +62,7 @@ When ZDR is enabled for a Claude Code organization on Claude for Enterprise, cer
 | Feature                                                                                                                  | Reason                                                                                                     |
 | ------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------- |
 | [Cloud sessions](/docs/en/claude-code-on-the-web), including those started from the [Desktop app](/docs/en/desktop#cloud-sessions) | Requires server-side storage of session data, including conversation history with prompts and completions. |
-| [Claude Tag](/docs/en/claude-tag)                                                                                             | Retains channel memory and session transcripts.                                                            |
+| [Claude Tag](https://claude.com/docs/claude-tag)                                                                         | Retains channel memory and session transcripts.                                                            |
 | [Artifacts](/docs/en/artifacts)                                                                                               | Requires storing published page content on Anthropic-operated infrastructure.                              |
 | Feedback submission (`/feedback`, `/bug`, `/share`)                                                                      | Submitting feedback sends conversation data to Anthropic.                                                  |
 | [Remote Control](/docs/en/remote-control)                                                                                     | Stores the session transcript on Anthropic servers to sync the conversation across devices.                |
